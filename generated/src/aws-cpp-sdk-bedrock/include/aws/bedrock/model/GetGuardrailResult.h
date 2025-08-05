@@ -12,6 +12,7 @@
 #include <aws/bedrock/model/GuardrailWordPolicy.h>
 #include <aws/bedrock/model/GuardrailSensitiveInformationPolicy.h>
 #include <aws/bedrock/model/GuardrailContextualGroundingPolicy.h>
+#include <aws/bedrock/model/GuardrailAutomatedReasoningPolicy.h>
 #include <aws/bedrock/model/GuardrailCrossRegionDetails.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -162,6 +163,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The current Automated Reasoning policy configuration for the guardrail, if
+     * any is configured.</p>
+     */
+    inline const GuardrailAutomatedReasoningPolicy& GetAutomatedReasoningPolicy() const { return m_automatedReasoningPolicy; }
+    template<typename AutomatedReasoningPolicyT = GuardrailAutomatedReasoningPolicy>
+    void SetAutomatedReasoningPolicy(AutomatedReasoningPolicyT&& value) { m_automatedReasoningPolicyHasBeenSet = true; m_automatedReasoningPolicy = std::forward<AutomatedReasoningPolicyT>(value); }
+    template<typename AutomatedReasoningPolicyT = GuardrailAutomatedReasoningPolicy>
+    GetGuardrailResult& WithAutomatedReasoningPolicy(AutomatedReasoningPolicyT&& value) { SetAutomatedReasoningPolicy(std::forward<AutomatedReasoningPolicyT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Details about the system-defined guardrail profile that you're using with
      * your guardrail, including the guardrail profile ID and Amazon Resource Name
      * (ARN).</p>
@@ -298,6 +311,9 @@ namespace Model
 
     GuardrailContextualGroundingPolicy m_contextualGroundingPolicy;
     bool m_contextualGroundingPolicyHasBeenSet = false;
+
+    GuardrailAutomatedReasoningPolicy m_automatedReasoningPolicy;
+    bool m_automatedReasoningPolicyHasBeenSet = false;
 
     GuardrailCrossRegionDetails m_crossRegionDetails;
     bool m_crossRegionDetailsHasBeenSet = false;

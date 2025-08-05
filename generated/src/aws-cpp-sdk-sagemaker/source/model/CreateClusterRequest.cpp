@@ -72,6 +72,11 @@ Aws::String CreateClusterRequest::SerializePayload() const
    payload.WithString("NodeRecovery", ClusterNodeRecoveryMapper::GetNameForClusterNodeRecovery(m_nodeRecovery));
   }
 
+  if(m_nodeProvisioningModeHasBeenSet)
+  {
+   payload.WithString("NodeProvisioningMode", ClusterNodeProvisioningModeMapper::GetNameForClusterNodeProvisioningMode(m_nodeProvisioningMode));
+  }
+
   return payload.View().WriteReadable();
 }
 

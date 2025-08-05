@@ -60,6 +60,12 @@ Aws::String ListClusterNodesRequest::SerializePayload() const
    payload.WithString("SortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
   }
 
+  if(m_includeNodeLogicalIdsHasBeenSet)
+  {
+   payload.WithBool("IncludeNodeLogicalIds", m_includeNodeLogicalIds);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

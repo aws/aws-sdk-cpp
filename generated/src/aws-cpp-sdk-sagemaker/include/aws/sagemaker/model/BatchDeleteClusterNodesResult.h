@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/BatchDeleteClusterNodesError.h>
+#include <aws/sagemaker/model/BatchDeleteClusterNodeLogicalIdsError.h>
 #include <utility>
 
 namespace Aws
@@ -62,6 +63,34 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>A list of <code>NodeLogicalIds</code> that could not be deleted, along with
+     * error information explaining why the deletion failed.</p>
+     */
+    inline const Aws::Vector<BatchDeleteClusterNodeLogicalIdsError>& GetFailedNodeLogicalIds() const { return m_failedNodeLogicalIds; }
+    template<typename FailedNodeLogicalIdsT = Aws::Vector<BatchDeleteClusterNodeLogicalIdsError>>
+    void SetFailedNodeLogicalIds(FailedNodeLogicalIdsT&& value) { m_failedNodeLogicalIdsHasBeenSet = true; m_failedNodeLogicalIds = std::forward<FailedNodeLogicalIdsT>(value); }
+    template<typename FailedNodeLogicalIdsT = Aws::Vector<BatchDeleteClusterNodeLogicalIdsError>>
+    BatchDeleteClusterNodesResult& WithFailedNodeLogicalIds(FailedNodeLogicalIdsT&& value) { SetFailedNodeLogicalIds(std::forward<FailedNodeLogicalIdsT>(value)); return *this;}
+    template<typename FailedNodeLogicalIdsT = BatchDeleteClusterNodeLogicalIdsError>
+    BatchDeleteClusterNodesResult& AddFailedNodeLogicalIds(FailedNodeLogicalIdsT&& value) { m_failedNodeLogicalIdsHasBeenSet = true; m_failedNodeLogicalIds.emplace_back(std::forward<FailedNodeLogicalIdsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>A list of <code>NodeLogicalIds</code> that were successfully deleted from the
+     * cluster.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSuccessfulNodeLogicalIds() const { return m_successfulNodeLogicalIds; }
+    template<typename SuccessfulNodeLogicalIdsT = Aws::Vector<Aws::String>>
+    void SetSuccessfulNodeLogicalIds(SuccessfulNodeLogicalIdsT&& value) { m_successfulNodeLogicalIdsHasBeenSet = true; m_successfulNodeLogicalIds = std::forward<SuccessfulNodeLogicalIdsT>(value); }
+    template<typename SuccessfulNodeLogicalIdsT = Aws::Vector<Aws::String>>
+    BatchDeleteClusterNodesResult& WithSuccessfulNodeLogicalIds(SuccessfulNodeLogicalIdsT&& value) { SetSuccessfulNodeLogicalIds(std::forward<SuccessfulNodeLogicalIdsT>(value)); return *this;}
+    template<typename SuccessfulNodeLogicalIdsT = Aws::String>
+    BatchDeleteClusterNodesResult& AddSuccessfulNodeLogicalIds(SuccessfulNodeLogicalIdsT&& value) { m_successfulNodeLogicalIdsHasBeenSet = true; m_successfulNodeLogicalIds.emplace_back(std::forward<SuccessfulNodeLogicalIdsT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -76,6 +105,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_successful;
     bool m_successfulHasBeenSet = false;
+
+    Aws::Vector<BatchDeleteClusterNodeLogicalIdsError> m_failedNodeLogicalIds;
+    bool m_failedNodeLogicalIdsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_successfulNodeLogicalIds;
+    bool m_successfulNodeLogicalIdsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

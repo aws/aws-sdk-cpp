@@ -75,6 +75,31 @@ namespace Model
     template<typename DeploymentConfigT = DeploymentConfiguration>
     UpdateClusterSoftwareRequest& WithDeploymentConfig(DeploymentConfigT&& value) { SetDeploymentConfig(std::forward<DeploymentConfigT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>When configuring your HyperPod cluster, you can specify an image ID using one
+     * of the following options:</p> <ul> <li> <p> <code>HyperPodPublicAmiId</code>:
+     * Use a HyperPod public AMI</p> </li> <li> <p> <code>CustomAmiId</code>: Use your
+     * custom AMI</p> </li> <li> <p> <code>default</code>: Use the default latest
+     * system image</p> </li> </ul> <p>f you choose to use a custom AMI
+     * (<code>CustomAmiId</code>), ensure it meets the following requirements:</p> <ul>
+     * <li> <p>Encryption: The custom AMI must be unencrypted.</p> </li> <li>
+     * <p>Ownership: The custom AMI must be owned by the same Amazon Web Services
+     * account that is creating the HyperPod cluster.</p> </li> <li> <p>Volume support:
+     * Only the primary AMI snapshot volume is supported; additional AMI volumes are
+     * not supported.</p> </li> </ul> <p>When updating the instance group's AMI through
+     * the <code>UpdateClusterSoftware</code> operation, if an instance group uses a
+     * custom AMI, you must provide an <code>ImageId</code> or use the default as
+     * input.</p>
+     */
+    inline const Aws::String& GetImageId() const { return m_imageId; }
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
+    template<typename ImageIdT = Aws::String>
+    void SetImageId(ImageIdT&& value) { m_imageIdHasBeenSet = true; m_imageId = std::forward<ImageIdT>(value); }
+    template<typename ImageIdT = Aws::String>
+    UpdateClusterSoftwareRequest& WithImageId(ImageIdT&& value) { SetImageId(std::forward<ImageIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_clusterName;
@@ -85,6 +110,9 @@ namespace Model
 
     DeploymentConfiguration m_deploymentConfig;
     bool m_deploymentConfigHasBeenSet = false;
+
+    Aws::String m_imageId;
+    bool m_imageIdHasBeenSet = false;
   };
 
 } // namespace Model

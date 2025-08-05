@@ -106,6 +106,119 @@ namespace Bedrock
         }
 
         /**
+         * <p>Cancels a running Automated Reasoning policy build workflow. This stops the
+         * policy generation process and prevents further processing of the source
+         * documents.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CancelAutomatedReasoningPolicyBuildWorkflow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelAutomatedReasoningPolicyBuildWorkflowOutcome CancelAutomatedReasoningPolicyBuildWorkflow(const Model::CancelAutomatedReasoningPolicyBuildWorkflowRequest& request) const;
+
+        /**
+         * A Callable wrapper for CancelAutomatedReasoningPolicyBuildWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CancelAutomatedReasoningPolicyBuildWorkflowRequestT = Model::CancelAutomatedReasoningPolicyBuildWorkflowRequest>
+        Model::CancelAutomatedReasoningPolicyBuildWorkflowOutcomeCallable CancelAutomatedReasoningPolicyBuildWorkflowCallable(const CancelAutomatedReasoningPolicyBuildWorkflowRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::CancelAutomatedReasoningPolicyBuildWorkflow, request);
+        }
+
+        /**
+         * An Async wrapper for CancelAutomatedReasoningPolicyBuildWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CancelAutomatedReasoningPolicyBuildWorkflowRequestT = Model::CancelAutomatedReasoningPolicyBuildWorkflowRequest>
+        void CancelAutomatedReasoningPolicyBuildWorkflowAsync(const CancelAutomatedReasoningPolicyBuildWorkflowRequestT& request, const CancelAutomatedReasoningPolicyBuildWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::CancelAutomatedReasoningPolicyBuildWorkflow, request, handler, context);
+        }
+
+        /**
+         * <p>Creates an Automated Reasoning policy for Amazon Bedrock Guardrails.
+         * Automated Reasoning policies use mathematical techniques to detect
+         * hallucinations, suggest corrections, and highlight unstated assumptions in the
+         * responses of your GenAI application.</p> <p>To create a policy, you upload a
+         * source document that describes the rules that you're encoding. Automated
+         * Reasoning extracts important concepts from the source document that will become
+         * variables in the policy and infers policy rules.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateAutomatedReasoningPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAutomatedReasoningPolicyOutcome CreateAutomatedReasoningPolicy(const Model::CreateAutomatedReasoningPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAutomatedReasoningPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAutomatedReasoningPolicyRequestT = Model::CreateAutomatedReasoningPolicyRequest>
+        Model::CreateAutomatedReasoningPolicyOutcomeCallable CreateAutomatedReasoningPolicyCallable(const CreateAutomatedReasoningPolicyRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::CreateAutomatedReasoningPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAutomatedReasoningPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAutomatedReasoningPolicyRequestT = Model::CreateAutomatedReasoningPolicyRequest>
+        void CreateAutomatedReasoningPolicyAsync(const CreateAutomatedReasoningPolicyRequestT& request, const CreateAutomatedReasoningPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::CreateAutomatedReasoningPolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a test for an Automated Reasoning policy. Tests validate that your
+         * policy works as expected by providing sample inputs and expected outcomes. Use
+         * tests to verify policy behavior before deploying to production.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateAutomatedReasoningPolicyTestCase">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAutomatedReasoningPolicyTestCaseOutcome CreateAutomatedReasoningPolicyTestCase(const Model::CreateAutomatedReasoningPolicyTestCaseRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAutomatedReasoningPolicyTestCase that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAutomatedReasoningPolicyTestCaseRequestT = Model::CreateAutomatedReasoningPolicyTestCaseRequest>
+        Model::CreateAutomatedReasoningPolicyTestCaseOutcomeCallable CreateAutomatedReasoningPolicyTestCaseCallable(const CreateAutomatedReasoningPolicyTestCaseRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::CreateAutomatedReasoningPolicyTestCase, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAutomatedReasoningPolicyTestCase that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAutomatedReasoningPolicyTestCaseRequestT = Model::CreateAutomatedReasoningPolicyTestCaseRequest>
+        void CreateAutomatedReasoningPolicyTestCaseAsync(const CreateAutomatedReasoningPolicyTestCaseRequestT& request, const CreateAutomatedReasoningPolicyTestCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::CreateAutomatedReasoningPolicyTestCase, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a new version of an existing Automated Reasoning policy. This allows
+         * you to iterate on your policy rules while maintaining previous versions for
+         * rollback or comparison purposes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateAutomatedReasoningPolicyVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAutomatedReasoningPolicyVersionOutcome CreateAutomatedReasoningPolicyVersion(const Model::CreateAutomatedReasoningPolicyVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAutomatedReasoningPolicyVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAutomatedReasoningPolicyVersionRequestT = Model::CreateAutomatedReasoningPolicyVersionRequest>
+        Model::CreateAutomatedReasoningPolicyVersionOutcomeCallable CreateAutomatedReasoningPolicyVersionCallable(const CreateAutomatedReasoningPolicyVersionRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::CreateAutomatedReasoningPolicyVersion, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAutomatedReasoningPolicyVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAutomatedReasoningPolicyVersionRequestT = Model::CreateAutomatedReasoningPolicyVersionRequest>
+        void CreateAutomatedReasoningPolicyVersionAsync(const CreateAutomatedReasoningPolicyVersionRequestT& request, const CreateAutomatedReasoningPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::CreateAutomatedReasoningPolicyVersion, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new custom model in Amazon Bedrock. After the model is active, you
          * can use it for inference.</p> <p>To use the model for inference, you must
          * purchase Provisioned Throughput for it. You can't use On-demand inference with
@@ -556,6 +669,88 @@ namespace Bedrock
         }
 
         /**
+         * <p>Deletes an Automated Reasoning policy or policy version. This operation is
+         * idempotent. If you delete a policy more than once, each call succeeds. Deleting
+         * a policy removes it permanently and cannot be undone.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteAutomatedReasoningPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAutomatedReasoningPolicyOutcome DeleteAutomatedReasoningPolicy(const Model::DeleteAutomatedReasoningPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAutomatedReasoningPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAutomatedReasoningPolicyRequestT = Model::DeleteAutomatedReasoningPolicyRequest>
+        Model::DeleteAutomatedReasoningPolicyOutcomeCallable DeleteAutomatedReasoningPolicyCallable(const DeleteAutomatedReasoningPolicyRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::DeleteAutomatedReasoningPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAutomatedReasoningPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAutomatedReasoningPolicyRequestT = Model::DeleteAutomatedReasoningPolicyRequest>
+        void DeleteAutomatedReasoningPolicyAsync(const DeleteAutomatedReasoningPolicyRequestT& request, const DeleteAutomatedReasoningPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::DeleteAutomatedReasoningPolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an Automated Reasoning policy build workflow and its associated
+         * artifacts. This permanently removes the workflow history and any generated
+         * assets.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteAutomatedReasoningPolicyBuildWorkflow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAutomatedReasoningPolicyBuildWorkflowOutcome DeleteAutomatedReasoningPolicyBuildWorkflow(const Model::DeleteAutomatedReasoningPolicyBuildWorkflowRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAutomatedReasoningPolicyBuildWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAutomatedReasoningPolicyBuildWorkflowRequestT = Model::DeleteAutomatedReasoningPolicyBuildWorkflowRequest>
+        Model::DeleteAutomatedReasoningPolicyBuildWorkflowOutcomeCallable DeleteAutomatedReasoningPolicyBuildWorkflowCallable(const DeleteAutomatedReasoningPolicyBuildWorkflowRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::DeleteAutomatedReasoningPolicyBuildWorkflow, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAutomatedReasoningPolicyBuildWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAutomatedReasoningPolicyBuildWorkflowRequestT = Model::DeleteAutomatedReasoningPolicyBuildWorkflowRequest>
+        void DeleteAutomatedReasoningPolicyBuildWorkflowAsync(const DeleteAutomatedReasoningPolicyBuildWorkflowRequestT& request, const DeleteAutomatedReasoningPolicyBuildWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::DeleteAutomatedReasoningPolicyBuildWorkflow, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an Automated Reasoning policy test. This operation is idempotent; if
+         * you delete a test more than once, each call succeeds.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteAutomatedReasoningPolicyTestCase">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAutomatedReasoningPolicyTestCaseOutcome DeleteAutomatedReasoningPolicyTestCase(const Model::DeleteAutomatedReasoningPolicyTestCaseRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAutomatedReasoningPolicyTestCase that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAutomatedReasoningPolicyTestCaseRequestT = Model::DeleteAutomatedReasoningPolicyTestCaseRequest>
+        Model::DeleteAutomatedReasoningPolicyTestCaseOutcomeCallable DeleteAutomatedReasoningPolicyTestCaseCallable(const DeleteAutomatedReasoningPolicyTestCaseRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::DeleteAutomatedReasoningPolicyTestCase, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAutomatedReasoningPolicyTestCase that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAutomatedReasoningPolicyTestCaseRequestT = Model::DeleteAutomatedReasoningPolicyTestCaseRequest>
+        void DeleteAutomatedReasoningPolicyTestCaseAsync(const DeleteAutomatedReasoningPolicyTestCaseRequestT& request, const DeleteAutomatedReasoningPolicyTestCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::DeleteAutomatedReasoningPolicyTestCase, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a custom model that you created earlier. For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
          * models</a> in the <a
@@ -864,6 +1059,221 @@ namespace Bedrock
         void DeregisterMarketplaceModelEndpointAsync(const DeregisterMarketplaceModelEndpointRequestT& request, const DeregisterMarketplaceModelEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockClient::DeregisterMarketplaceModelEndpoint, request, handler, context);
+        }
+
+        /**
+         * <p>Exports the policy definition for an Automated Reasoning policy version.
+         * Returns the complete policy definition including rules, variables, and custom
+         * variable types in a structured format.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ExportAutomatedReasoningPolicyVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExportAutomatedReasoningPolicyVersionOutcome ExportAutomatedReasoningPolicyVersion(const Model::ExportAutomatedReasoningPolicyVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for ExportAutomatedReasoningPolicyVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ExportAutomatedReasoningPolicyVersionRequestT = Model::ExportAutomatedReasoningPolicyVersionRequest>
+        Model::ExportAutomatedReasoningPolicyVersionOutcomeCallable ExportAutomatedReasoningPolicyVersionCallable(const ExportAutomatedReasoningPolicyVersionRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::ExportAutomatedReasoningPolicyVersion, request);
+        }
+
+        /**
+         * An Async wrapper for ExportAutomatedReasoningPolicyVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ExportAutomatedReasoningPolicyVersionRequestT = Model::ExportAutomatedReasoningPolicyVersionRequest>
+        void ExportAutomatedReasoningPolicyVersionAsync(const ExportAutomatedReasoningPolicyVersionRequestT& request, const ExportAutomatedReasoningPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::ExportAutomatedReasoningPolicyVersion, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves details about an Automated Reasoning policy or policy version.
+         * Returns information including the policy definition, metadata, and
+         * timestamps.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAutomatedReasoningPolicyOutcome GetAutomatedReasoningPolicy(const Model::GetAutomatedReasoningPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAutomatedReasoningPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAutomatedReasoningPolicyRequestT = Model::GetAutomatedReasoningPolicyRequest>
+        Model::GetAutomatedReasoningPolicyOutcomeCallable GetAutomatedReasoningPolicyCallable(const GetAutomatedReasoningPolicyRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::GetAutomatedReasoningPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for GetAutomatedReasoningPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAutomatedReasoningPolicyRequestT = Model::GetAutomatedReasoningPolicyRequest>
+        void GetAutomatedReasoningPolicyAsync(const GetAutomatedReasoningPolicyRequestT& request, const GetAutomatedReasoningPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::GetAutomatedReasoningPolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the current annotations for an Automated Reasoning policy build
+         * workflow. Annotations contain corrections to the rules, variables and types to
+         * be applied to the policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyAnnotations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAutomatedReasoningPolicyAnnotationsOutcome GetAutomatedReasoningPolicyAnnotations(const Model::GetAutomatedReasoningPolicyAnnotationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAutomatedReasoningPolicyAnnotations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAutomatedReasoningPolicyAnnotationsRequestT = Model::GetAutomatedReasoningPolicyAnnotationsRequest>
+        Model::GetAutomatedReasoningPolicyAnnotationsOutcomeCallable GetAutomatedReasoningPolicyAnnotationsCallable(const GetAutomatedReasoningPolicyAnnotationsRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::GetAutomatedReasoningPolicyAnnotations, request);
+        }
+
+        /**
+         * An Async wrapper for GetAutomatedReasoningPolicyAnnotations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAutomatedReasoningPolicyAnnotationsRequestT = Model::GetAutomatedReasoningPolicyAnnotationsRequest>
+        void GetAutomatedReasoningPolicyAnnotationsAsync(const GetAutomatedReasoningPolicyAnnotationsRequestT& request, const GetAutomatedReasoningPolicyAnnotationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::GetAutomatedReasoningPolicyAnnotations, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves detailed information about an Automated Reasoning policy build
+         * workflow, including its status, configuration, and metadata.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyBuildWorkflow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAutomatedReasoningPolicyBuildWorkflowOutcome GetAutomatedReasoningPolicyBuildWorkflow(const Model::GetAutomatedReasoningPolicyBuildWorkflowRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAutomatedReasoningPolicyBuildWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAutomatedReasoningPolicyBuildWorkflowRequestT = Model::GetAutomatedReasoningPolicyBuildWorkflowRequest>
+        Model::GetAutomatedReasoningPolicyBuildWorkflowOutcomeCallable GetAutomatedReasoningPolicyBuildWorkflowCallable(const GetAutomatedReasoningPolicyBuildWorkflowRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::GetAutomatedReasoningPolicyBuildWorkflow, request);
+        }
+
+        /**
+         * An Async wrapper for GetAutomatedReasoningPolicyBuildWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAutomatedReasoningPolicyBuildWorkflowRequestT = Model::GetAutomatedReasoningPolicyBuildWorkflowRequest>
+        void GetAutomatedReasoningPolicyBuildWorkflowAsync(const GetAutomatedReasoningPolicyBuildWorkflowRequestT& request, const GetAutomatedReasoningPolicyBuildWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::GetAutomatedReasoningPolicyBuildWorkflow, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the resulting assets from a completed Automated Reasoning policy
+         * build workflow, including build logs, quality reports, and generated policy
+         * artifacts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyBuildWorkflowResultAssets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsOutcome GetAutomatedReasoningPolicyBuildWorkflowResultAssets(const Model::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAutomatedReasoningPolicyBuildWorkflowResultAssets that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAutomatedReasoningPolicyBuildWorkflowResultAssetsRequestT = Model::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsRequest>
+        Model::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsOutcomeCallable GetAutomatedReasoningPolicyBuildWorkflowResultAssetsCallable(const GetAutomatedReasoningPolicyBuildWorkflowResultAssetsRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::GetAutomatedReasoningPolicyBuildWorkflowResultAssets, request);
+        }
+
+        /**
+         * An Async wrapper for GetAutomatedReasoningPolicyBuildWorkflowResultAssets that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAutomatedReasoningPolicyBuildWorkflowResultAssetsRequestT = Model::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsRequest>
+        void GetAutomatedReasoningPolicyBuildWorkflowResultAssetsAsync(const GetAutomatedReasoningPolicyBuildWorkflowResultAssetsRequestT& request, const GetAutomatedReasoningPolicyBuildWorkflowResultAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::GetAutomatedReasoningPolicyBuildWorkflowResultAssets, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the next test scenario for validating an Automated Reasoning
+         * policy. This is used during the interactive policy refinement process to test
+         * policy behavior.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyNextScenario">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAutomatedReasoningPolicyNextScenarioOutcome GetAutomatedReasoningPolicyNextScenario(const Model::GetAutomatedReasoningPolicyNextScenarioRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAutomatedReasoningPolicyNextScenario that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAutomatedReasoningPolicyNextScenarioRequestT = Model::GetAutomatedReasoningPolicyNextScenarioRequest>
+        Model::GetAutomatedReasoningPolicyNextScenarioOutcomeCallable GetAutomatedReasoningPolicyNextScenarioCallable(const GetAutomatedReasoningPolicyNextScenarioRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::GetAutomatedReasoningPolicyNextScenario, request);
+        }
+
+        /**
+         * An Async wrapper for GetAutomatedReasoningPolicyNextScenario that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAutomatedReasoningPolicyNextScenarioRequestT = Model::GetAutomatedReasoningPolicyNextScenarioRequest>
+        void GetAutomatedReasoningPolicyNextScenarioAsync(const GetAutomatedReasoningPolicyNextScenarioRequestT& request, const GetAutomatedReasoningPolicyNextScenarioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::GetAutomatedReasoningPolicyNextScenario, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves details about a specific Automated Reasoning policy
+         * test.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyTestCase">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAutomatedReasoningPolicyTestCaseOutcome GetAutomatedReasoningPolicyTestCase(const Model::GetAutomatedReasoningPolicyTestCaseRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAutomatedReasoningPolicyTestCase that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAutomatedReasoningPolicyTestCaseRequestT = Model::GetAutomatedReasoningPolicyTestCaseRequest>
+        Model::GetAutomatedReasoningPolicyTestCaseOutcomeCallable GetAutomatedReasoningPolicyTestCaseCallable(const GetAutomatedReasoningPolicyTestCaseRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::GetAutomatedReasoningPolicyTestCase, request);
+        }
+
+        /**
+         * An Async wrapper for GetAutomatedReasoningPolicyTestCase that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAutomatedReasoningPolicyTestCaseRequestT = Model::GetAutomatedReasoningPolicyTestCaseRequest>
+        void GetAutomatedReasoningPolicyTestCaseAsync(const GetAutomatedReasoningPolicyTestCaseRequestT& request, const GetAutomatedReasoningPolicyTestCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::GetAutomatedReasoningPolicyTestCase, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the test result for a specific Automated Reasoning policy test.
+         * Returns detailed validation findings and execution status.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyTestResult">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAutomatedReasoningPolicyTestResultOutcome GetAutomatedReasoningPolicyTestResult(const Model::GetAutomatedReasoningPolicyTestResultRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAutomatedReasoningPolicyTestResult that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAutomatedReasoningPolicyTestResultRequestT = Model::GetAutomatedReasoningPolicyTestResultRequest>
+        Model::GetAutomatedReasoningPolicyTestResultOutcomeCallable GetAutomatedReasoningPolicyTestResultCallable(const GetAutomatedReasoningPolicyTestResultRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::GetAutomatedReasoningPolicyTestResult, request);
+        }
+
+        /**
+         * An Async wrapper for GetAutomatedReasoningPolicyTestResult that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAutomatedReasoningPolicyTestResultRequestT = Model::GetAutomatedReasoningPolicyTestResultRequest>
+        void GetAutomatedReasoningPolicyTestResultAsync(const GetAutomatedReasoningPolicyTestResultRequestT& request, const GetAutomatedReasoningPolicyTestResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::GetAutomatedReasoningPolicyTestResult, request, handler, context);
         }
 
         /**
@@ -1335,6 +1745,114 @@ namespace Bedrock
         void GetUseCaseForModelAccessAsync(const GetUseCaseForModelAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetUseCaseForModelAccessRequestT& request = {}) const
         {
             return SubmitAsync(&BedrockClient::GetUseCaseForModelAccess, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all Automated Reasoning policies in your account, with optional
+         * filtering by policy ARN. This helps you manage and discover existing
+         * policies.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAutomatedReasoningPolicies">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAutomatedReasoningPoliciesOutcome ListAutomatedReasoningPolicies(const Model::ListAutomatedReasoningPoliciesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListAutomatedReasoningPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAutomatedReasoningPoliciesRequestT = Model::ListAutomatedReasoningPoliciesRequest>
+        Model::ListAutomatedReasoningPoliciesOutcomeCallable ListAutomatedReasoningPoliciesCallable(const ListAutomatedReasoningPoliciesRequestT& request = {}) const
+        {
+            return SubmitCallable(&BedrockClient::ListAutomatedReasoningPolicies, request);
+        }
+
+        /**
+         * An Async wrapper for ListAutomatedReasoningPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAutomatedReasoningPoliciesRequestT = Model::ListAutomatedReasoningPoliciesRequest>
+        void ListAutomatedReasoningPoliciesAsync(const ListAutomatedReasoningPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAutomatedReasoningPoliciesRequestT& request = {}) const
+        {
+            return SubmitAsync(&BedrockClient::ListAutomatedReasoningPolicies, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all build workflows for an Automated Reasoning policy, showing the
+         * history of policy creation and modification attempts.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAutomatedReasoningPolicyBuildWorkflows">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAutomatedReasoningPolicyBuildWorkflowsOutcome ListAutomatedReasoningPolicyBuildWorkflows(const Model::ListAutomatedReasoningPolicyBuildWorkflowsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAutomatedReasoningPolicyBuildWorkflows that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAutomatedReasoningPolicyBuildWorkflowsRequestT = Model::ListAutomatedReasoningPolicyBuildWorkflowsRequest>
+        Model::ListAutomatedReasoningPolicyBuildWorkflowsOutcomeCallable ListAutomatedReasoningPolicyBuildWorkflowsCallable(const ListAutomatedReasoningPolicyBuildWorkflowsRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::ListAutomatedReasoningPolicyBuildWorkflows, request);
+        }
+
+        /**
+         * An Async wrapper for ListAutomatedReasoningPolicyBuildWorkflows that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAutomatedReasoningPolicyBuildWorkflowsRequestT = Model::ListAutomatedReasoningPolicyBuildWorkflowsRequest>
+        void ListAutomatedReasoningPolicyBuildWorkflowsAsync(const ListAutomatedReasoningPolicyBuildWorkflowsRequestT& request, const ListAutomatedReasoningPolicyBuildWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::ListAutomatedReasoningPolicyBuildWorkflows, request, handler, context);
+        }
+
+        /**
+         * <p>Lists tests for an Automated Reasoning policy. We recommend using pagination
+         * to ensure that the operation returns quickly and successfully.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAutomatedReasoningPolicyTestCases">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAutomatedReasoningPolicyTestCasesOutcome ListAutomatedReasoningPolicyTestCases(const Model::ListAutomatedReasoningPolicyTestCasesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAutomatedReasoningPolicyTestCases that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAutomatedReasoningPolicyTestCasesRequestT = Model::ListAutomatedReasoningPolicyTestCasesRequest>
+        Model::ListAutomatedReasoningPolicyTestCasesOutcomeCallable ListAutomatedReasoningPolicyTestCasesCallable(const ListAutomatedReasoningPolicyTestCasesRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::ListAutomatedReasoningPolicyTestCases, request);
+        }
+
+        /**
+         * An Async wrapper for ListAutomatedReasoningPolicyTestCases that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAutomatedReasoningPolicyTestCasesRequestT = Model::ListAutomatedReasoningPolicyTestCasesRequest>
+        void ListAutomatedReasoningPolicyTestCasesAsync(const ListAutomatedReasoningPolicyTestCasesRequestT& request, const ListAutomatedReasoningPolicyTestCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::ListAutomatedReasoningPolicyTestCases, request, handler, context);
+        }
+
+        /**
+         * <p>Lists test results for an Automated Reasoning policy, showing how the policy
+         * performed against various test scenarios and validation checks.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAutomatedReasoningPolicyTestResults">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAutomatedReasoningPolicyTestResultsOutcome ListAutomatedReasoningPolicyTestResults(const Model::ListAutomatedReasoningPolicyTestResultsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAutomatedReasoningPolicyTestResults that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAutomatedReasoningPolicyTestResultsRequestT = Model::ListAutomatedReasoningPolicyTestResultsRequest>
+        Model::ListAutomatedReasoningPolicyTestResultsOutcomeCallable ListAutomatedReasoningPolicyTestResultsCallable(const ListAutomatedReasoningPolicyTestResultsRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::ListAutomatedReasoningPolicyTestResults, request);
+        }
+
+        /**
+         * An Async wrapper for ListAutomatedReasoningPolicyTestResults that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAutomatedReasoningPolicyTestResultsRequestT = Model::ListAutomatedReasoningPolicyTestResultsRequest>
+        void ListAutomatedReasoningPolicyTestResultsAsync(const ListAutomatedReasoningPolicyTestResultsRequestT& request, const ListAutomatedReasoningPolicyTestResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::ListAutomatedReasoningPolicyTestResults, request, handler, context);
         }
 
         /**
@@ -1885,6 +2403,60 @@ namespace Bedrock
         }
 
         /**
+         * <p>Starts a new build workflow for an Automated Reasoning policy. This initiates
+         * the process of analyzing source documents and generating policy rules,
+         * variables, and types.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StartAutomatedReasoningPolicyBuildWorkflow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartAutomatedReasoningPolicyBuildWorkflowOutcome StartAutomatedReasoningPolicyBuildWorkflow(const Model::StartAutomatedReasoningPolicyBuildWorkflowRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartAutomatedReasoningPolicyBuildWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartAutomatedReasoningPolicyBuildWorkflowRequestT = Model::StartAutomatedReasoningPolicyBuildWorkflowRequest>
+        Model::StartAutomatedReasoningPolicyBuildWorkflowOutcomeCallable StartAutomatedReasoningPolicyBuildWorkflowCallable(const StartAutomatedReasoningPolicyBuildWorkflowRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::StartAutomatedReasoningPolicyBuildWorkflow, request);
+        }
+
+        /**
+         * An Async wrapper for StartAutomatedReasoningPolicyBuildWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartAutomatedReasoningPolicyBuildWorkflowRequestT = Model::StartAutomatedReasoningPolicyBuildWorkflowRequest>
+        void StartAutomatedReasoningPolicyBuildWorkflowAsync(const StartAutomatedReasoningPolicyBuildWorkflowRequestT& request, const StartAutomatedReasoningPolicyBuildWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::StartAutomatedReasoningPolicyBuildWorkflow, request, handler, context);
+        }
+
+        /**
+         * <p>Initiates a test workflow to validate Automated Reasoning policy tests. The
+         * workflow executes the specified tests against the policy and generates
+         * validation results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StartAutomatedReasoningPolicyTestWorkflow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartAutomatedReasoningPolicyTestWorkflowOutcome StartAutomatedReasoningPolicyTestWorkflow(const Model::StartAutomatedReasoningPolicyTestWorkflowRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartAutomatedReasoningPolicyTestWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartAutomatedReasoningPolicyTestWorkflowRequestT = Model::StartAutomatedReasoningPolicyTestWorkflowRequest>
+        Model::StartAutomatedReasoningPolicyTestWorkflowOutcomeCallable StartAutomatedReasoningPolicyTestWorkflowCallable(const StartAutomatedReasoningPolicyTestWorkflowRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::StartAutomatedReasoningPolicyTestWorkflow, request);
+        }
+
+        /**
+         * An Async wrapper for StartAutomatedReasoningPolicyTestWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartAutomatedReasoningPolicyTestWorkflowRequestT = Model::StartAutomatedReasoningPolicyTestWorkflowRequest>
+        void StartAutomatedReasoningPolicyTestWorkflowAsync(const StartAutomatedReasoningPolicyTestWorkflowRequestT& request, const StartAutomatedReasoningPolicyTestWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::StartAutomatedReasoningPolicyTestWorkflow, request, handler, context);
+        }
+
+        /**
          * <p>Stops an evaluation job that is current being created or
          * running.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StopEvaluationJob">AWS
@@ -2023,6 +2595,87 @@ namespace Bedrock
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Updates an existing Automated Reasoning policy with new rules, variables, or
+         * configuration. This creates a new version of the policy while preserving the
+         * previous version.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateAutomatedReasoningPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAutomatedReasoningPolicyOutcome UpdateAutomatedReasoningPolicy(const Model::UpdateAutomatedReasoningPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAutomatedReasoningPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAutomatedReasoningPolicyRequestT = Model::UpdateAutomatedReasoningPolicyRequest>
+        Model::UpdateAutomatedReasoningPolicyOutcomeCallable UpdateAutomatedReasoningPolicyCallable(const UpdateAutomatedReasoningPolicyRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::UpdateAutomatedReasoningPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAutomatedReasoningPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAutomatedReasoningPolicyRequestT = Model::UpdateAutomatedReasoningPolicyRequest>
+        void UpdateAutomatedReasoningPolicyAsync(const UpdateAutomatedReasoningPolicyRequestT& request, const UpdateAutomatedReasoningPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::UpdateAutomatedReasoningPolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the annotations for an Automated Reasoning policy build workflow.
+         * This allows you to modify extracted rules, variables, and types before
+         * finalizing the policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateAutomatedReasoningPolicyAnnotations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAutomatedReasoningPolicyAnnotationsOutcome UpdateAutomatedReasoningPolicyAnnotations(const Model::UpdateAutomatedReasoningPolicyAnnotationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAutomatedReasoningPolicyAnnotations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAutomatedReasoningPolicyAnnotationsRequestT = Model::UpdateAutomatedReasoningPolicyAnnotationsRequest>
+        Model::UpdateAutomatedReasoningPolicyAnnotationsOutcomeCallable UpdateAutomatedReasoningPolicyAnnotationsCallable(const UpdateAutomatedReasoningPolicyAnnotationsRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::UpdateAutomatedReasoningPolicyAnnotations, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAutomatedReasoningPolicyAnnotations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAutomatedReasoningPolicyAnnotationsRequestT = Model::UpdateAutomatedReasoningPolicyAnnotationsRequest>
+        void UpdateAutomatedReasoningPolicyAnnotationsAsync(const UpdateAutomatedReasoningPolicyAnnotationsRequestT& request, const UpdateAutomatedReasoningPolicyAnnotationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::UpdateAutomatedReasoningPolicyAnnotations, request, handler, context);
+        }
+
+        /**
+         * <p>Updates an existing Automated Reasoning policy test. You can modify the
+         * content, query, expected result, and confidence threshold.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateAutomatedReasoningPolicyTestCase">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAutomatedReasoningPolicyTestCaseOutcome UpdateAutomatedReasoningPolicyTestCase(const Model::UpdateAutomatedReasoningPolicyTestCaseRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAutomatedReasoningPolicyTestCase that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAutomatedReasoningPolicyTestCaseRequestT = Model::UpdateAutomatedReasoningPolicyTestCaseRequest>
+        Model::UpdateAutomatedReasoningPolicyTestCaseOutcomeCallable UpdateAutomatedReasoningPolicyTestCaseCallable(const UpdateAutomatedReasoningPolicyTestCaseRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::UpdateAutomatedReasoningPolicyTestCase, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAutomatedReasoningPolicyTestCase that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAutomatedReasoningPolicyTestCaseRequestT = Model::UpdateAutomatedReasoningPolicyTestCaseRequest>
+        void UpdateAutomatedReasoningPolicyTestCaseAsync(const UpdateAutomatedReasoningPolicyTestCaseRequestT& request, const UpdateAutomatedReasoningPolicyTestCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::UpdateAutomatedReasoningPolicyTestCase, request, handler, context);
         }
 
         /**

@@ -104,6 +104,27 @@ namespace Model
     inline void SetContentPolicyImageUnits(int value) { m_contentPolicyImageUnitsHasBeenSet = true; m_contentPolicyImageUnits = value; }
     inline GuardrailUsage& WithContentPolicyImageUnits(int value) { SetContentPolicyImageUnits(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The number of text units processed by the automated reasoning policy.</p>
+     */
+    inline int GetAutomatedReasoningPolicyUnits() const { return m_automatedReasoningPolicyUnits; }
+    inline bool AutomatedReasoningPolicyUnitsHasBeenSet() const { return m_automatedReasoningPolicyUnitsHasBeenSet; }
+    inline void SetAutomatedReasoningPolicyUnits(int value) { m_automatedReasoningPolicyUnitsHasBeenSet = true; m_automatedReasoningPolicyUnits = value; }
+    inline GuardrailUsage& WithAutomatedReasoningPolicyUnits(int value) { SetAutomatedReasoningPolicyUnits(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of automated reasoning policies that were processed during the
+     * guardrail evaluation.</p>
+     */
+    inline int GetAutomatedReasoningPolicies() const { return m_automatedReasoningPolicies; }
+    inline bool AutomatedReasoningPoliciesHasBeenSet() const { return m_automatedReasoningPoliciesHasBeenSet; }
+    inline void SetAutomatedReasoningPolicies(int value) { m_automatedReasoningPoliciesHasBeenSet = true; m_automatedReasoningPolicies = value; }
+    inline GuardrailUsage& WithAutomatedReasoningPolicies(int value) { SetAutomatedReasoningPolicies(value); return *this;}
+    ///@}
   private:
 
     int m_topicPolicyUnits{0};
@@ -126,6 +147,12 @@ namespace Model
 
     int m_contentPolicyImageUnits{0};
     bool m_contentPolicyImageUnitsHasBeenSet = false;
+
+    int m_automatedReasoningPolicyUnits{0};
+    bool m_automatedReasoningPolicyUnitsHasBeenSet = false;
+
+    int m_automatedReasoningPolicies{0};
+    bool m_automatedReasoningPoliciesHasBeenSet = false;
   };
 
 } // namespace Model

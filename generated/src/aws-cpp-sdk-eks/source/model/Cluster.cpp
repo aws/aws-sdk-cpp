@@ -163,6 +163,11 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_storageConfig = jsonValue.GetObject("storageConfig");
     m_storageConfigHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("deletionProtection"))
+  {
+    m_deletionProtection = jsonValue.GetBool("deletionProtection");
+    m_deletionProtectionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -331,6 +336,12 @@ JsonValue Cluster::Jsonize() const
   if(m_storageConfigHasBeenSet)
   {
    payload.WithObject("storageConfig", m_storageConfig.Jsonize());
+
+  }
+
+  if(m_deletionProtectionHasBeenSet)
+  {
+   payload.WithBool("deletionProtection", m_deletionProtection);
 
   }
 

@@ -80,6 +80,11 @@ GetGuardrailResult& GetGuardrailResult::operator =(const Aws::AmazonWebServiceRe
     m_contextualGroundingPolicy = jsonValue.GetObject("contextualGroundingPolicy");
     m_contextualGroundingPolicyHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("automatedReasoningPolicy"))
+  {
+    m_automatedReasoningPolicy = jsonValue.GetObject("automatedReasoningPolicy");
+    m_automatedReasoningPolicyHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("crossRegionDetails"))
   {
     m_crossRegionDetails = jsonValue.GetObject("crossRegionDetails");

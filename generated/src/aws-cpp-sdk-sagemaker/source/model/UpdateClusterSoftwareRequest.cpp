@@ -39,6 +39,12 @@ Aws::String UpdateClusterSoftwareRequest::SerializePayload() const
 
   }
 
+  if(m_imageIdHasBeenSet)
+  {
+   payload.WithString("ImageId", m_imageId);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

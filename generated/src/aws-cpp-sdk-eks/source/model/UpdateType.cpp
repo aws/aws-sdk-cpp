@@ -34,6 +34,7 @@ namespace Aws
         static const int ZonalShiftConfigUpdate_HASH = HashingUtils::HashString("ZonalShiftConfigUpdate");
         static const int AutoModeUpdate_HASH = HashingUtils::HashString("AutoModeUpdate");
         static const int RemoteNetworkConfigUpdate_HASH = HashingUtils::HashString("RemoteNetworkConfigUpdate");
+        static const int DeletionProtectionUpdate_HASH = HashingUtils::HashString("DeletionProtectionUpdate");
 
 
         UpdateType GetUpdateTypeForName(const Aws::String& name)
@@ -95,6 +96,10 @@ namespace Aws
           {
             return UpdateType::RemoteNetworkConfigUpdate;
           }
+          else if (hashCode == DeletionProtectionUpdate_HASH)
+          {
+            return UpdateType::DeletionProtectionUpdate;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -139,6 +144,8 @@ namespace Aws
             return "AutoModeUpdate";
           case UpdateType::RemoteNetworkConfigUpdate:
             return "RemoteNetworkConfigUpdate";
+          case UpdateType::DeletionProtectionUpdate:
+            return "DeletionProtectionUpdate";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

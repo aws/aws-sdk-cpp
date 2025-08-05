@@ -21,7 +21,8 @@ namespace Model
     Pending,
     ShuttingDown,
     SystemUpdating,
-    DeepHealthCheckInProgress
+    DeepHealthCheckInProgress,
+    NotFound
   };
 
 namespace ClusterInstanceStatusMapper

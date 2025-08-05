@@ -58,6 +58,12 @@ Aws::String CreateGuardrailRequest::SerializePayload() const
 
   }
 
+  if(m_automatedReasoningPolicyConfigHasBeenSet)
+  {
+   payload.WithObject("automatedReasoningPolicyConfig", m_automatedReasoningPolicyConfig.Jsonize());
+
+  }
+
   if(m_crossRegionConfigHasBeenSet)
   {
    payload.WithObject("crossRegionConfig", m_crossRegionConfig.Jsonize());

@@ -28,6 +28,12 @@ Aws::String DescribeClusterNodeRequest::SerializePayload() const
 
   }
 
+  if(m_nodeLogicalIdHasBeenSet)
+  {
+   payload.WithString("NodeLogicalId", m_nodeLogicalId);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

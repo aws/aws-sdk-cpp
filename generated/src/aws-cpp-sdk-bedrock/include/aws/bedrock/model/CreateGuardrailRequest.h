@@ -12,6 +12,7 @@
 #include <aws/bedrock/model/GuardrailWordPolicyConfig.h>
 #include <aws/bedrock/model/GuardrailSensitiveInformationPolicyConfig.h>
 #include <aws/bedrock/model/GuardrailContextualGroundingPolicyConfig.h>
+#include <aws/bedrock/model/GuardrailAutomatedReasoningPolicyConfig.h>
 #include <aws/bedrock/model/GuardrailCrossRegionConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock/model/Tag.h>
@@ -127,6 +128,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Optional configuration for integrating Automated Reasoning policies with the
+     * new guardrail.</p>
+     */
+    inline const GuardrailAutomatedReasoningPolicyConfig& GetAutomatedReasoningPolicyConfig() const { return m_automatedReasoningPolicyConfig; }
+    inline bool AutomatedReasoningPolicyConfigHasBeenSet() const { return m_automatedReasoningPolicyConfigHasBeenSet; }
+    template<typename AutomatedReasoningPolicyConfigT = GuardrailAutomatedReasoningPolicyConfig>
+    void SetAutomatedReasoningPolicyConfig(AutomatedReasoningPolicyConfigT&& value) { m_automatedReasoningPolicyConfigHasBeenSet = true; m_automatedReasoningPolicyConfig = std::forward<AutomatedReasoningPolicyConfigT>(value); }
+    template<typename AutomatedReasoningPolicyConfigT = GuardrailAutomatedReasoningPolicyConfig>
+    CreateGuardrailRequest& WithAutomatedReasoningPolicyConfig(AutomatedReasoningPolicyConfigT&& value) { SetAutomatedReasoningPolicyConfig(std::forward<AutomatedReasoningPolicyConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The system-defined guardrail profile that you're using with your guardrail.
      * Guardrail profiles define the destination Amazon Web Services Regions where
      * guardrail inference requests can be automatically routed.</p> <p>For more
@@ -229,6 +243,9 @@ namespace Model
 
     GuardrailContextualGroundingPolicyConfig m_contextualGroundingPolicyConfig;
     bool m_contextualGroundingPolicyConfigHasBeenSet = false;
+
+    GuardrailAutomatedReasoningPolicyConfig m_automatedReasoningPolicyConfig;
+    bool m_automatedReasoningPolicyConfigHasBeenSet = false;
 
     GuardrailCrossRegionConfig m_crossRegionConfig;
     bool m_crossRegionConfigHasBeenSet = false;

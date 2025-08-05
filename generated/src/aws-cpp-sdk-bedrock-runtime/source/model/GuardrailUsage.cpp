@@ -60,6 +60,16 @@ GuardrailUsage& GuardrailUsage::operator =(JsonView jsonValue)
     m_contentPolicyImageUnits = jsonValue.GetInteger("contentPolicyImageUnits");
     m_contentPolicyImageUnitsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("automatedReasoningPolicyUnits"))
+  {
+    m_automatedReasoningPolicyUnits = jsonValue.GetInteger("automatedReasoningPolicyUnits");
+    m_automatedReasoningPolicyUnitsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("automatedReasoningPolicies"))
+  {
+    m_automatedReasoningPolicies = jsonValue.GetInteger("automatedReasoningPolicies");
+    m_automatedReasoningPoliciesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -106,6 +116,18 @@ JsonValue GuardrailUsage::Jsonize() const
   if(m_contentPolicyImageUnitsHasBeenSet)
   {
    payload.WithInteger("contentPolicyImageUnits", m_contentPolicyImageUnits);
+
+  }
+
+  if(m_automatedReasoningPolicyUnitsHasBeenSet)
+  {
+   payload.WithInteger("automatedReasoningPolicyUnits", m_automatedReasoningPolicyUnits);
+
+  }
+
+  if(m_automatedReasoningPoliciesHasBeenSet)
+  {
+   payload.WithInteger("automatedReasoningPolicies", m_automatedReasoningPolicies);
 
   }
 

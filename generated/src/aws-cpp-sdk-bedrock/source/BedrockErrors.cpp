@@ -30,6 +30,7 @@ static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
+static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -51,6 +52,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == TOO_MANY_TAGS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == RESOURCE_IN_USE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

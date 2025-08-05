@@ -50,6 +50,11 @@ GuardrailAssessment& GuardrailAssessment::operator =(JsonView jsonValue)
     m_contextualGroundingPolicy = jsonValue.GetObject("contextualGroundingPolicy");
     m_contextualGroundingPolicyHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("automatedReasoningPolicy"))
+  {
+    m_automatedReasoningPolicy = jsonValue.GetObject("automatedReasoningPolicy");
+    m_automatedReasoningPolicyHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("invocationMetrics"))
   {
     m_invocationMetrics = jsonValue.GetObject("invocationMetrics");
@@ -89,6 +94,12 @@ JsonValue GuardrailAssessment::Jsonize() const
   if(m_contextualGroundingPolicyHasBeenSet)
   {
    payload.WithObject("contextualGroundingPolicy", m_contextualGroundingPolicy.Jsonize());
+
+  }
+
+  if(m_automatedReasoningPolicyHasBeenSet)
+  {
+   payload.WithObject("automatedReasoningPolicy", m_automatedReasoningPolicy.Jsonize());
 
   }
 

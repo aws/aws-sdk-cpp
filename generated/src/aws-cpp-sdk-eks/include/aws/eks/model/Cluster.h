@@ -405,6 +405,20 @@ namespace Model
     template<typename StorageConfigT = StorageConfigResponse>
     Cluster& WithStorageConfig(StorageConfigT&& value) { SetStorageConfig(std::forward<StorageConfigT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The current deletion protection setting for the cluster. When
+     * <code>true</code>, deletion protection is enabled and the cluster cannot be
+     * deleted until protection is disabled. When <code>false</code>, the cluster can
+     * be deleted normally. This setting only applies to clusters in an active
+     * state.</p>
+     */
+    inline bool GetDeletionProtection() const { return m_deletionProtection; }
+    inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+    inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
+    inline Cluster& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -484,6 +498,9 @@ namespace Model
 
     StorageConfigResponse m_storageConfig;
     bool m_storageConfigHasBeenSet = false;
+
+    bool m_deletionProtection{false};
+    bool m_deletionProtectionHasBeenSet = false;
   };
 
 } // namespace Model

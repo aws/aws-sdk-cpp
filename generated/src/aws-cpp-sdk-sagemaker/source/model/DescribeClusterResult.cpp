@@ -83,6 +83,11 @@ DescribeClusterResult& DescribeClusterResult::operator =(const Aws::AmazonWebSer
     m_nodeRecovery = ClusterNodeRecoveryMapper::GetClusterNodeRecoveryForName(jsonValue.GetString("NodeRecovery"));
     m_nodeRecoveryHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("NodeProvisioningMode"))
+  {
+    m_nodeProvisioningMode = ClusterNodeProvisioningModeMapper::GetClusterNodeProvisioningModeForName(jsonValue.GetString("NodeProvisioningMode"));
+    m_nodeProvisioningModeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -11,6 +11,7 @@
 #include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/sagemaker/model/ClusterOrchestrator.h>
 #include <aws/sagemaker/model/ClusterNodeRecovery.h>
+#include <aws/sagemaker/model/ClusterNodeProvisioningMode.h>
 #include <aws/sagemaker/model/ClusterInstanceGroupSpecification.h>
 #include <aws/sagemaker/model/ClusterRestrictedInstanceGroupSpecification.h>
 #include <aws/sagemaker/model/Tag.h>
@@ -162,6 +163,22 @@ namespace Model
     inline void SetNodeRecovery(ClusterNodeRecovery value) { m_nodeRecoveryHasBeenSet = true; m_nodeRecovery = value; }
     inline CreateClusterRequest& WithNodeRecovery(ClusterNodeRecovery value) { SetNodeRecovery(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The mode for provisioning nodes in the cluster. You can specify the following
+     * modes:</p> <ul> <li> <p> <b>Continuous</b>: Scaling behavior that enables 1)
+     * concurrent operation execution within instance groups, 2) continuous retry
+     * mechanisms for failed operations, 3) enhanced customer visibility into cluster
+     * events through detailed event streams, 4) partial provisioning capabilities.
+     * Your clusters and instance groups remain <code>InService</code> while scaling.
+     * This mode is only supported for EKS orchestrated clusters.</p> </li> </ul>
+     */
+    inline ClusterNodeProvisioningMode GetNodeProvisioningMode() const { return m_nodeProvisioningMode; }
+    inline bool NodeProvisioningModeHasBeenSet() const { return m_nodeProvisioningModeHasBeenSet; }
+    inline void SetNodeProvisioningMode(ClusterNodeProvisioningMode value) { m_nodeProvisioningModeHasBeenSet = true; m_nodeProvisioningMode = value; }
+    inline CreateClusterRequest& WithNodeProvisioningMode(ClusterNodeProvisioningMode value) { SetNodeProvisioningMode(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_clusterName;
@@ -184,6 +201,9 @@ namespace Model
 
     ClusterNodeRecovery m_nodeRecovery{ClusterNodeRecovery::NOT_SET};
     bool m_nodeRecoveryHasBeenSet = false;
+
+    ClusterNodeProvisioningMode m_nodeProvisioningMode{ClusterNodeProvisioningMode::NOT_SET};
+    bool m_nodeProvisioningModeHasBeenSet = false;
   };
 
 } // namespace Model

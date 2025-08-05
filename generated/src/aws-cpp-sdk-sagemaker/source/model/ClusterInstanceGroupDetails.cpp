@@ -103,6 +103,16 @@ ClusterInstanceGroupDetails& ClusterInstanceGroupDetails::operator =(JsonView js
     m_scheduledUpdateConfig = jsonValue.GetObject("ScheduledUpdateConfig");
     m_scheduledUpdateConfigHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("CurrentImageId"))
+  {
+    m_currentImageId = jsonValue.GetString("CurrentImageId");
+    m_currentImageIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("DesiredImageId"))
+  {
+    m_desiredImageId = jsonValue.GetString("DesiredImageId");
+    m_desiredImageIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -199,6 +209,18 @@ JsonValue ClusterInstanceGroupDetails::Jsonize() const
   if(m_scheduledUpdateConfigHasBeenSet)
   {
    payload.WithObject("ScheduledUpdateConfig", m_scheduledUpdateConfig.Jsonize());
+
+  }
+
+  if(m_currentImageIdHasBeenSet)
+  {
+   payload.WithString("CurrentImageId", m_currentImageId);
+
+  }
+
+  if(m_desiredImageIdHasBeenSet)
+  {
+   payload.WithString("DesiredImageId", m_desiredImageId);
 
   }
 
