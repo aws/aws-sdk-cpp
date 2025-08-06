@@ -149,6 +149,19 @@ namespace Model
     inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
     inline ListClusterNodesRequest& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to include nodes that are still being provisioned in the
+     * response. When set to true, the response includes all nodes regardless of their
+     * provisioning status. When set to <code>False</code> (default), only nodes with
+     * assigned <code>InstanceIds</code> are returned.</p>
+     */
+    inline bool GetIncludeNodeLogicalIds() const { return m_includeNodeLogicalIds; }
+    inline bool IncludeNodeLogicalIdsHasBeenSet() const { return m_includeNodeLogicalIdsHasBeenSet; }
+    inline void SetIncludeNodeLogicalIds(bool value) { m_includeNodeLogicalIdsHasBeenSet = true; m_includeNodeLogicalIds = value; }
+    inline ListClusterNodesRequest& WithIncludeNodeLogicalIds(bool value) { SetIncludeNodeLogicalIds(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_clusterName;
@@ -174,6 +187,9 @@ namespace Model
 
     SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
+
+    bool m_includeNodeLogicalIds{false};
+    bool m_includeNodeLogicalIdsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -234,6 +234,31 @@ namespace Model
     template<typename ScheduledUpdateConfigT = ScheduledUpdateConfig>
     ClusterInstanceGroupDetails& WithScheduledUpdateConfig(ScheduledUpdateConfigT&& value) { SetScheduledUpdateConfig(std::forward<ScheduledUpdateConfigT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Amazon Machine Image (AMI) currently in use by the instance
+     * group.</p>
+     */
+    inline const Aws::String& GetCurrentImageId() const { return m_currentImageId; }
+    inline bool CurrentImageIdHasBeenSet() const { return m_currentImageIdHasBeenSet; }
+    template<typename CurrentImageIdT = Aws::String>
+    void SetCurrentImageId(CurrentImageIdT&& value) { m_currentImageIdHasBeenSet = true; m_currentImageId = std::forward<CurrentImageIdT>(value); }
+    template<typename CurrentImageIdT = Aws::String>
+    ClusterInstanceGroupDetails& WithCurrentImageId(CurrentImageIdT&& value) { SetCurrentImageId(std::forward<CurrentImageIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Amazon Machine Image (AMI) desired for the instance group.</p>
+     */
+    inline const Aws::String& GetDesiredImageId() const { return m_desiredImageId; }
+    inline bool DesiredImageIdHasBeenSet() const { return m_desiredImageIdHasBeenSet; }
+    template<typename DesiredImageIdT = Aws::String>
+    void SetDesiredImageId(DesiredImageIdT&& value) { m_desiredImageIdHasBeenSet = true; m_desiredImageId = std::forward<DesiredImageIdT>(value); }
+    template<typename DesiredImageIdT = Aws::String>
+    ClusterInstanceGroupDetails& WithDesiredImageId(DesiredImageIdT&& value) { SetDesiredImageId(std::forward<DesiredImageIdT>(value)); return *this;}
+    ///@}
   private:
 
     int m_currentCount{0};
@@ -277,6 +302,12 @@ namespace Model
 
     ScheduledUpdateConfig m_scheduledUpdateConfig;
     bool m_scheduledUpdateConfigHasBeenSet = false;
+
+    Aws::String m_currentImageId;
+    bool m_currentImageIdHasBeenSet = false;
+
+    Aws::String m_desiredImageId;
+    bool m_desiredImageIdHasBeenSet = false;
   };
 
 } // namespace Model

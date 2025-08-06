@@ -20,8 +20,10 @@
 #include <aws/sagemaker/model/ActivationState.h>
 #include <aws/sagemaker/model/AddAssociationRequest.h>
 #include <aws/sagemaker/model/AddAssociationResult.h>
+#include <aws/sagemaker/model/AddClusterNodeSpecification.h>
 #include <aws/sagemaker/model/AddTagsRequest.h>
 #include <aws/sagemaker/model/AddTagsResult.h>
+#include <aws/sagemaker/model/AdditionalEnis.h>
 #include <aws/sagemaker/model/AdditionalInferenceSpecificationDefinition.h>
 #include <aws/sagemaker/model/AdditionalModelDataSource.h>
 #include <aws/sagemaker/model/AdditionalS3DataSource.h>
@@ -114,7 +116,12 @@
 #include <aws/sagemaker/model/Autotune.h>
 #include <aws/sagemaker/model/AutotuneMode.h>
 #include <aws/sagemaker/model/AwsManagedHumanLoopRequestSource.h>
+#include <aws/sagemaker/model/BatchAddClusterNodesError.h>
+#include <aws/sagemaker/model/BatchAddClusterNodesErrorCode.h>
+#include <aws/sagemaker/model/BatchAddClusterNodesRequest.h>
+#include <aws/sagemaker/model/BatchAddClusterNodesResult.h>
 #include <aws/sagemaker/model/BatchDataCaptureConfig.h>
+#include <aws/sagemaker/model/BatchDeleteClusterNodeLogicalIdsError.h>
 #include <aws/sagemaker/model/BatchDeleteClusterNodesError.h>
 #include <aws/sagemaker/model/BatchDeleteClusterNodesErrorCode.h>
 #include <aws/sagemaker/model/BatchDeleteClusterNodesRequest.h>
@@ -138,7 +145,9 @@
 #include <aws/sagemaker/model/CandidateStatus.h>
 #include <aws/sagemaker/model/CandidateStepType.h>
 #include <aws/sagemaker/model/CanvasAppSettings.h>
+#include <aws/sagemaker/model/CapacityReservation.h>
 #include <aws/sagemaker/model/CapacityReservationPreference.h>
+#include <aws/sagemaker/model/CapacityReservationType.h>
 #include <aws/sagemaker/model/CapacitySize.h>
 #include <aws/sagemaker/model/CapacitySizeConfig.h>
 #include <aws/sagemaker/model/CapacitySizeType.h>
@@ -169,6 +178,9 @@
 #include <aws/sagemaker/model/ClarifyTextGranularity.h>
 #include <aws/sagemaker/model/ClarifyTextLanguage.h>
 #include <aws/sagemaker/model/ClusterEbsVolumeConfig.h>
+#include <aws/sagemaker/model/ClusterEventDetail.h>
+#include <aws/sagemaker/model/ClusterEventResourceType.h>
+#include <aws/sagemaker/model/ClusterEventSummary.h>
 #include <aws/sagemaker/model/ClusterInstanceGroupDetails.h>
 #include <aws/sagemaker/model/ClusterInstanceGroupSpecification.h>
 #include <aws/sagemaker/model/ClusterInstancePlacement.h>
@@ -177,7 +189,9 @@
 #include <aws/sagemaker/model/ClusterInstanceStorageConfig.h>
 #include <aws/sagemaker/model/ClusterInstanceType.h>
 #include <aws/sagemaker/model/ClusterLifeCycleConfig.h>
+#include <aws/sagemaker/model/ClusterMetadata.h>
 #include <aws/sagemaker/model/ClusterNodeDetails.h>
+#include <aws/sagemaker/model/ClusterNodeProvisioningMode.h>
 #include <aws/sagemaker/model/ClusterNodeRecovery.h>
 #include <aws/sagemaker/model/ClusterNodeSummary.h>
 #include <aws/sagemaker/model/ClusterOrchestrator.h>
@@ -468,6 +482,8 @@
 #include <aws/sagemaker/model/DescribeAutoMLJobResult.h>
 #include <aws/sagemaker/model/DescribeAutoMLJobV2Request.h>
 #include <aws/sagemaker/model/DescribeAutoMLJobV2Result.h>
+#include <aws/sagemaker/model/DescribeClusterEventRequest.h>
+#include <aws/sagemaker/model/DescribeClusterEventResult.h>
 #include <aws/sagemaker/model/DescribeClusterNodeRequest.h>
 #include <aws/sagemaker/model/DescribeClusterNodeResult.h>
 #include <aws/sagemaker/model/DescribeClusterRequest.h>
@@ -663,6 +679,9 @@
 #include <aws/sagemaker/model/EnvironmentParameter.h>
 #include <aws/sagemaker/model/EnvironmentParameterRanges.h>
 #include <aws/sagemaker/model/ErrorInfo.h>
+#include <aws/sagemaker/model/EventDetails.h>
+#include <aws/sagemaker/model/EventMetadata.h>
+#include <aws/sagemaker/model/EventSortBy.h>
 #include <aws/sagemaker/model/ExecutionRoleIdentityConfig.h>
 #include <aws/sagemaker/model/ExecutionStatus.h>
 #include <aws/sagemaker/model/Experiment.h>
@@ -807,7 +826,10 @@
 #include <aws/sagemaker/model/InputConfig.h>
 #include <aws/sagemaker/model/InputMode.h>
 #include <aws/sagemaker/model/InstanceGroup.h>
+#include <aws/sagemaker/model/InstanceGroupMetadata.h>
+#include <aws/sagemaker/model/InstanceGroupScalingMetadata.h>
 #include <aws/sagemaker/model/InstanceGroupStatus.h>
+#include <aws/sagemaker/model/InstanceMetadata.h>
 #include <aws/sagemaker/model/InstanceMetadataServiceConfiguration.h>
 #include <aws/sagemaker/model/InstanceType.h>
 #include <aws/sagemaker/model/IntegerParameterRange.h>
@@ -861,6 +883,8 @@
 #include <aws/sagemaker/model/ListAutoMLJobsResult.h>
 #include <aws/sagemaker/model/ListCandidatesForAutoMLJobRequest.h>
 #include <aws/sagemaker/model/ListCandidatesForAutoMLJobResult.h>
+#include <aws/sagemaker/model/ListClusterEventsRequest.h>
+#include <aws/sagemaker/model/ListClusterEventsResult.h>
 #include <aws/sagemaker/model/ListClusterNodesRequest.h>
 #include <aws/sagemaker/model/ListClusterNodesResult.h>
 #include <aws/sagemaker/model/ListClusterSchedulerConfigsRequest.h>
@@ -1143,6 +1167,7 @@
 #include <aws/sagemaker/model/NeoVpcConfig.h>
 #include <aws/sagemaker/model/NestedFilters.h>
 #include <aws/sagemaker/model/NetworkConfig.h>
+#include <aws/sagemaker/model/NodeAdditionResult.h>
 #include <aws/sagemaker/model/NodeUnavailabilityType.h>
 #include <aws/sagemaker/model/NotebookInstanceAcceleratorType.h>
 #include <aws/sagemaker/model/NotebookInstanceLifecycleConfigSortKey.h>

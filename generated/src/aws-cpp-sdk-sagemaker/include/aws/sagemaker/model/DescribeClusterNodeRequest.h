@@ -58,6 +58,21 @@ namespace Model
     template<typename NodeIdT = Aws::String>
     DescribeClusterNodeRequest& WithNodeId(NodeIdT&& value) { SetNodeId(std::forward<NodeIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The logical identifier of the node to describe. You can specify either
+     * <code>NodeLogicalId</code> or <code>InstanceId</code>, but not both.
+     * <code>NodeLogicalId</code> can be used to describe nodes that are still being
+     * provisioned and don't yet have an <code>InstanceId</code> assigned.</p>
+     */
+    inline const Aws::String& GetNodeLogicalId() const { return m_nodeLogicalId; }
+    inline bool NodeLogicalIdHasBeenSet() const { return m_nodeLogicalIdHasBeenSet; }
+    template<typename NodeLogicalIdT = Aws::String>
+    void SetNodeLogicalId(NodeLogicalIdT&& value) { m_nodeLogicalIdHasBeenSet = true; m_nodeLogicalId = std::forward<NodeLogicalIdT>(value); }
+    template<typename NodeLogicalIdT = Aws::String>
+    DescribeClusterNodeRequest& WithNodeLogicalId(NodeLogicalIdT&& value) { SetNodeLogicalId(std::forward<NodeLogicalIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_clusterName;
@@ -65,6 +80,9 @@ namespace Model
 
     Aws::String m_nodeId;
     bool m_nodeIdHasBeenSet = false;
+
+    Aws::String m_nodeLogicalId;
+    bool m_nodeLogicalIdHasBeenSet = false;
   };
 
 } // namespace Model

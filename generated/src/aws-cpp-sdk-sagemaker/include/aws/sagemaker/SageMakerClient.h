@@ -221,6 +221,37 @@ namespace SageMaker
         }
 
         /**
+         * <p>Adds nodes to a HyperPod cluster by incrementing the target count for one or
+         * more instance groups. This operation returns a unique <code>NodeLogicalId</code>
+         * for each node being added, which can be used to track the provisioning status of
+         * the node. This API provides a safer alternative to <code>UpdateCluster</code>
+         * for scaling operations by avoiding unintended configuration changes.</p> 
+         * <p>This API is only supported for clusters using <code>Continuous</code> as the
+         * <code>NodeProvisioningMode</code>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchAddClusterNodes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchAddClusterNodesOutcome BatchAddClusterNodes(const Model::BatchAddClusterNodesRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchAddClusterNodes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchAddClusterNodesRequestT = Model::BatchAddClusterNodesRequest>
+        Model::BatchAddClusterNodesOutcomeCallable BatchAddClusterNodesCallable(const BatchAddClusterNodesRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::BatchAddClusterNodes, request);
+        }
+
+        /**
+         * An Async wrapper for BatchAddClusterNodes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchAddClusterNodesRequestT = Model::BatchAddClusterNodesRequest>
+        void BatchAddClusterNodesAsync(const BatchAddClusterNodesRequestT& request, const BatchAddClusterNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::BatchAddClusterNodes, request, handler, context);
+        }
+
+        /**
          * <p>Deletes specific nodes within a SageMaker HyperPod cluster.
          * <code>BatchDeleteClusterNodes</code> accepts a cluster name and a list of node
          * IDs.</p>  <ul> <li> <p>To safeguard your work, back up your data to
@@ -4340,6 +4371,34 @@ namespace SageMaker
         }
 
         /**
+         * <p>Retrieves detailed information about a specific event for a given HyperPod
+         * cluster. This functionality is only supported when the
+         * <code>NodeProvisioningMode</code> is set to
+         * <code>Continuous</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterEvent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeClusterEventOutcome DescribeClusterEvent(const Model::DescribeClusterEventRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeClusterEvent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeClusterEventRequestT = Model::DescribeClusterEventRequest>
+        Model::DescribeClusterEventOutcomeCallable DescribeClusterEventCallable(const DescribeClusterEventRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::DescribeClusterEvent, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeClusterEvent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeClusterEventRequestT = Model::DescribeClusterEventRequest>
+        void DescribeClusterEventAsync(const DescribeClusterEventRequestT& request, const DescribeClusterEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::DescribeClusterEvent, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves information of a node (also called a <i>instance</i>
          * interchangeably) of a SageMaker HyperPod cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterNode">AWS
@@ -6416,6 +6475,34 @@ namespace SageMaker
         void ListCandidatesForAutoMLJobAsync(const ListCandidatesForAutoMLJobRequestT& request, const ListCandidatesForAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SageMakerClient::ListCandidatesForAutoMLJob, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list of event summaries for a specified HyperPod cluster. The
+         * operation supports filtering, sorting, and pagination of results. This
+         * functionality is only supported when the <code>NodeProvisioningMode</code> is
+         * set to <code>Continuous</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterEvents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListClusterEventsOutcome ListClusterEvents(const Model::ListClusterEventsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListClusterEvents that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListClusterEventsRequestT = Model::ListClusterEventsRequest>
+        Model::ListClusterEventsOutcomeCallable ListClusterEventsCallable(const ListClusterEventsRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::ListClusterEvents, request);
+        }
+
+        /**
+         * An Async wrapper for ListClusterEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListClusterEventsRequestT = Model::ListClusterEventsRequest>
+        void ListClusterEventsAsync(const ListClusterEventsRequestT& request, const ListClusterEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::ListClusterEvents, request, handler, context);
         }
 
         /**

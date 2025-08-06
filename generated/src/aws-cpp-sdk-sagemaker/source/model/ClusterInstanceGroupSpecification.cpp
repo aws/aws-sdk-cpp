@@ -88,6 +88,11 @@ ClusterInstanceGroupSpecification& ClusterInstanceGroupSpecification::operator =
     m_scheduledUpdateConfig = jsonValue.GetObject("ScheduledUpdateConfig");
     m_scheduledUpdateConfigHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ImageId"))
+  {
+    m_imageId = jsonValue.GetString("ImageId");
+    m_imageIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -167,6 +172,12 @@ JsonValue ClusterInstanceGroupSpecification::Jsonize() const
   if(m_scheduledUpdateConfigHasBeenSet)
   {
    payload.WithObject("ScheduledUpdateConfig", m_scheduledUpdateConfig.Jsonize());
+
+  }
+
+  if(m_imageIdHasBeenSet)
+  {
+   payload.WithString("ImageId", m_imageId);
 
   }
 

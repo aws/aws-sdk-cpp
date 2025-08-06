@@ -540,6 +540,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_serverlessV2ScalingConfiguration = serverlessV2ScalingConfigurationNode;
       m_serverlessV2ScalingConfigurationHasBeenSet = true;
     }
+    XmlNode serverlessV2PlatformVersionNode = resultNode.FirstChild("ServerlessV2PlatformVersion");
+    if(!serverlessV2PlatformVersionNode.IsNull())
+    {
+      m_serverlessV2PlatformVersion = Aws::Utils::Xml::DecodeEscapedXmlText(serverlessV2PlatformVersionNode.GetText());
+      m_serverlessV2PlatformVersionHasBeenSet = true;
+    }
     XmlNode networkTypeNode = resultNode.FirstChild("NetworkType");
     if(!networkTypeNode.IsNull())
     {
@@ -1039,6 +1045,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       m_serverlessV2ScalingConfiguration.OutputToStream(oStream, serverlessV2ScalingConfigurationLocationAndMemberSs.str().c_str());
   }
 
+  if(m_serverlessV2PlatformVersionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ServerlessV2PlatformVersion=" << StringUtils::URLEncode(m_serverlessV2PlatformVersion.c_str()) << "&";
+  }
+
   if(m_networkTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
@@ -1457,6 +1468,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       Aws::String serverlessV2ScalingConfigurationLocationAndMember(location);
       serverlessV2ScalingConfigurationLocationAndMember += ".ServerlessV2ScalingConfiguration";
       m_serverlessV2ScalingConfiguration.OutputToStream(oStream, serverlessV2ScalingConfigurationLocationAndMember.c_str());
+  }
+  if(m_serverlessV2PlatformVersionHasBeenSet)
+  {
+      oStream << location << ".ServerlessV2PlatformVersion=" << StringUtils::URLEncode(m_serverlessV2PlatformVersion.c_str()) << "&";
   }
   if(m_networkTypeHasBeenSet)
   {

@@ -43,6 +43,24 @@ BatchDeleteClusterNodesResult& BatchDeleteClusterNodesResult::operator =(const A
     }
     m_successfulHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("FailedNodeLogicalIds"))
+  {
+    Aws::Utils::Array<JsonView> failedNodeLogicalIdsJsonList = jsonValue.GetArray("FailedNodeLogicalIds");
+    for(unsigned failedNodeLogicalIdsIndex = 0; failedNodeLogicalIdsIndex < failedNodeLogicalIdsJsonList.GetLength(); ++failedNodeLogicalIdsIndex)
+    {
+      m_failedNodeLogicalIds.push_back(failedNodeLogicalIdsJsonList[failedNodeLogicalIdsIndex].AsObject());
+    }
+    m_failedNodeLogicalIdsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("SuccessfulNodeLogicalIds"))
+  {
+    Aws::Utils::Array<JsonView> successfulNodeLogicalIdsJsonList = jsonValue.GetArray("SuccessfulNodeLogicalIds");
+    for(unsigned successfulNodeLogicalIdsIndex = 0; successfulNodeLogicalIdsIndex < successfulNodeLogicalIdsJsonList.GetLength(); ++successfulNodeLogicalIdsIndex)
+    {
+      m_successfulNodeLogicalIds.push_back(successfulNodeLogicalIdsJsonList[successfulNodeLogicalIdsIndex].AsString());
+    }
+    m_successfulNodeLogicalIdsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

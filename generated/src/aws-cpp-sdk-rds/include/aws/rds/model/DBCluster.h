@@ -46,9 +46,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB
-   * cluster.</p> <p>For an Amazon Aurora DB cluster, this data type is used as a
-   * response element in the operations <code>CreateDBCluster</code>,
+   * <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
+   * </p> <p>For an Amazon Aurora DB cluster, this data type is used as a response
+   * element in the operations <code>CreateDBCluster</code>,
    * <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
    * <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>,
    * <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>,
@@ -1020,6 +1020,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The version of the Aurora Serverless V2 platform used by the DB cluster. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using
+     * Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     */
+    inline const Aws::String& GetServerlessV2PlatformVersion() const { return m_serverlessV2PlatformVersion; }
+    inline bool ServerlessV2PlatformVersionHasBeenSet() const { return m_serverlessV2PlatformVersionHasBeenSet; }
+    template<typename ServerlessV2PlatformVersionT = Aws::String>
+    void SetServerlessV2PlatformVersion(ServerlessV2PlatformVersionT&& value) { m_serverlessV2PlatformVersionHasBeenSet = true; m_serverlessV2PlatformVersion = std::forward<ServerlessV2PlatformVersionT>(value); }
+    template<typename ServerlessV2PlatformVersionT = Aws::String>
+    DBCluster& WithServerlessV2PlatformVersion(ServerlessV2PlatformVersionT&& value) { SetServerlessV2PlatformVersion(std::forward<ServerlessV2PlatformVersionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The network type of the DB instance.</p> <p>The network type is determined by
      * the <code>DBSubnetGroup</code> specified for the DB cluster. A
      * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
@@ -1382,6 +1397,9 @@ namespace Model
 
     ServerlessV2ScalingConfigurationInfo m_serverlessV2ScalingConfiguration;
     bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
+
+    Aws::String m_serverlessV2PlatformVersion;
+    bool m_serverlessV2PlatformVersionHasBeenSet = false;
 
     Aws::String m_networkType;
     bool m_networkTypeHasBeenSet = false;

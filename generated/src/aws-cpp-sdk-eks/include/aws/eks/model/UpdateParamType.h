@@ -51,7 +51,8 @@ namespace Model
     ComputeConfig,
     StorageConfig,
     KubernetesNetworkConfig,
-    RemoteNetworkConfig
+    RemoteNetworkConfig,
+    DeletionProtection
   };
 
 namespace UpdateParamTypeMapper

@@ -22,6 +22,7 @@
 #include <aws/sagemaker/model/AddTagsResult.h>
 #include <aws/sagemaker/model/AssociateTrialComponentResult.h>
 #include <aws/sagemaker/model/AttachClusterNodeVolumeResult.h>
+#include <aws/sagemaker/model/BatchAddClusterNodesResult.h>
 #include <aws/sagemaker/model/BatchDeleteClusterNodesResult.h>
 #include <aws/sagemaker/model/BatchDescribeModelPackageResult.h>
 #include <aws/sagemaker/model/CreateActionResult.h>
@@ -114,6 +115,7 @@
 #include <aws/sagemaker/model/DescribeAutoMLJobResult.h>
 #include <aws/sagemaker/model/DescribeAutoMLJobV2Result.h>
 #include <aws/sagemaker/model/DescribeClusterResult.h>
+#include <aws/sagemaker/model/DescribeClusterEventResult.h>
 #include <aws/sagemaker/model/DescribeClusterNodeResult.h>
 #include <aws/sagemaker/model/DescribeClusterSchedulerConfigResult.h>
 #include <aws/sagemaker/model/DescribeCodeRepositoryResult.h>
@@ -193,6 +195,7 @@
 #include <aws/sagemaker/model/ListAssociationsResult.h>
 #include <aws/sagemaker/model/ListAutoMLJobsResult.h>
 #include <aws/sagemaker/model/ListCandidatesForAutoMLJobResult.h>
+#include <aws/sagemaker/model/ListClusterEventsResult.h>
 #include <aws/sagemaker/model/ListClusterNodesResult.h>
 #include <aws/sagemaker/model/ListClusterSchedulerConfigsResult.h>
 #include <aws/sagemaker/model/ListClustersResult.h>
@@ -438,6 +441,7 @@ namespace Aws
       class AddTagsRequest;
       class AssociateTrialComponentRequest;
       class AttachClusterNodeVolumeRequest;
+      class BatchAddClusterNodesRequest;
       class BatchDeleteClusterNodesRequest;
       class BatchDescribeModelPackageRequest;
       class CreateActionRequest;
@@ -570,6 +574,7 @@ namespace Aws
       class DescribeAutoMLJobRequest;
       class DescribeAutoMLJobV2Request;
       class DescribeClusterRequest;
+      class DescribeClusterEventRequest;
       class DescribeClusterNodeRequest;
       class DescribeClusterSchedulerConfigRequest;
       class DescribeCodeRepositoryRequest;
@@ -649,6 +654,7 @@ namespace Aws
       class ListAssociationsRequest;
       class ListAutoMLJobsRequest;
       class ListCandidatesForAutoMLJobRequest;
+      class ListClusterEventsRequest;
       class ListClusterNodesRequest;
       class ListClusterSchedulerConfigsRequest;
       class ListClustersRequest;
@@ -805,6 +811,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<AddTagsResult, SageMakerError> AddTagsOutcome;
       typedef Aws::Utils::Outcome<AssociateTrialComponentResult, SageMakerError> AssociateTrialComponentOutcome;
       typedef Aws::Utils::Outcome<AttachClusterNodeVolumeResult, SageMakerError> AttachClusterNodeVolumeOutcome;
+      typedef Aws::Utils::Outcome<BatchAddClusterNodesResult, SageMakerError> BatchAddClusterNodesOutcome;
       typedef Aws::Utils::Outcome<BatchDeleteClusterNodesResult, SageMakerError> BatchDeleteClusterNodesOutcome;
       typedef Aws::Utils::Outcome<BatchDescribeModelPackageResult, SageMakerError> BatchDescribeModelPackageOutcome;
       typedef Aws::Utils::Outcome<CreateActionResult, SageMakerError> CreateActionOutcome;
@@ -937,6 +944,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeAutoMLJobResult, SageMakerError> DescribeAutoMLJobOutcome;
       typedef Aws::Utils::Outcome<DescribeAutoMLJobV2Result, SageMakerError> DescribeAutoMLJobV2Outcome;
       typedef Aws::Utils::Outcome<DescribeClusterResult, SageMakerError> DescribeClusterOutcome;
+      typedef Aws::Utils::Outcome<DescribeClusterEventResult, SageMakerError> DescribeClusterEventOutcome;
       typedef Aws::Utils::Outcome<DescribeClusterNodeResult, SageMakerError> DescribeClusterNodeOutcome;
       typedef Aws::Utils::Outcome<DescribeClusterSchedulerConfigResult, SageMakerError> DescribeClusterSchedulerConfigOutcome;
       typedef Aws::Utils::Outcome<DescribeCodeRepositoryResult, SageMakerError> DescribeCodeRepositoryOutcome;
@@ -1016,6 +1024,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListAssociationsResult, SageMakerError> ListAssociationsOutcome;
       typedef Aws::Utils::Outcome<ListAutoMLJobsResult, SageMakerError> ListAutoMLJobsOutcome;
       typedef Aws::Utils::Outcome<ListCandidatesForAutoMLJobResult, SageMakerError> ListCandidatesForAutoMLJobOutcome;
+      typedef Aws::Utils::Outcome<ListClusterEventsResult, SageMakerError> ListClusterEventsOutcome;
       typedef Aws::Utils::Outcome<ListClusterNodesResult, SageMakerError> ListClusterNodesOutcome;
       typedef Aws::Utils::Outcome<ListClusterSchedulerConfigsResult, SageMakerError> ListClusterSchedulerConfigsOutcome;
       typedef Aws::Utils::Outcome<ListClustersResult, SageMakerError> ListClustersOutcome;
@@ -1172,6 +1181,7 @@ namespace Aws
       typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
       typedef std::future<AssociateTrialComponentOutcome> AssociateTrialComponentOutcomeCallable;
       typedef std::future<AttachClusterNodeVolumeOutcome> AttachClusterNodeVolumeOutcomeCallable;
+      typedef std::future<BatchAddClusterNodesOutcome> BatchAddClusterNodesOutcomeCallable;
       typedef std::future<BatchDeleteClusterNodesOutcome> BatchDeleteClusterNodesOutcomeCallable;
       typedef std::future<BatchDescribeModelPackageOutcome> BatchDescribeModelPackageOutcomeCallable;
       typedef std::future<CreateActionOutcome> CreateActionOutcomeCallable;
@@ -1304,6 +1314,7 @@ namespace Aws
       typedef std::future<DescribeAutoMLJobOutcome> DescribeAutoMLJobOutcomeCallable;
       typedef std::future<DescribeAutoMLJobV2Outcome> DescribeAutoMLJobV2OutcomeCallable;
       typedef std::future<DescribeClusterOutcome> DescribeClusterOutcomeCallable;
+      typedef std::future<DescribeClusterEventOutcome> DescribeClusterEventOutcomeCallable;
       typedef std::future<DescribeClusterNodeOutcome> DescribeClusterNodeOutcomeCallable;
       typedef std::future<DescribeClusterSchedulerConfigOutcome> DescribeClusterSchedulerConfigOutcomeCallable;
       typedef std::future<DescribeCodeRepositoryOutcome> DescribeCodeRepositoryOutcomeCallable;
@@ -1383,6 +1394,7 @@ namespace Aws
       typedef std::future<ListAssociationsOutcome> ListAssociationsOutcomeCallable;
       typedef std::future<ListAutoMLJobsOutcome> ListAutoMLJobsOutcomeCallable;
       typedef std::future<ListCandidatesForAutoMLJobOutcome> ListCandidatesForAutoMLJobOutcomeCallable;
+      typedef std::future<ListClusterEventsOutcome> ListClusterEventsOutcomeCallable;
       typedef std::future<ListClusterNodesOutcome> ListClusterNodesOutcomeCallable;
       typedef std::future<ListClusterSchedulerConfigsOutcome> ListClusterSchedulerConfigsOutcomeCallable;
       typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
@@ -1542,6 +1554,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::AddTagsRequest&, const Model::AddTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::AssociateTrialComponentRequest&, const Model::AssociateTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateTrialComponentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::AttachClusterNodeVolumeRequest&, const Model::AttachClusterNodeVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachClusterNodeVolumeResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::BatchAddClusterNodesRequest&, const Model::BatchAddClusterNodesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchAddClusterNodesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::BatchDeleteClusterNodesRequest&, const Model::BatchDeleteClusterNodesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteClusterNodesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::BatchDescribeModelPackageRequest&, const Model::BatchDescribeModelPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDescribeModelPackageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateActionRequest&, const Model::CreateActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateActionResponseReceivedHandler;
@@ -1674,6 +1687,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::DescribeAutoMLJobRequest&, const Model::DescribeAutoMLJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAutoMLJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeAutoMLJobV2Request&, const Model::DescribeAutoMLJobV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAutoMLJobV2ResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeClusterRequest&, const Model::DescribeClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeClusterEventRequest&, const Model::DescribeClusterEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterEventResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeClusterNodeRequest&, const Model::DescribeClusterNodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterNodeResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeClusterSchedulerConfigRequest&, const Model::DescribeClusterSchedulerConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterSchedulerConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeCodeRepositoryRequest&, const Model::DescribeCodeRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCodeRepositoryResponseReceivedHandler;
@@ -1753,6 +1767,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::ListAssociationsRequest&, const Model::ListAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociationsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListAutoMLJobsRequest&, const Model::ListAutoMLJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAutoMLJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListCandidatesForAutoMLJobRequest&, const Model::ListCandidatesForAutoMLJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCandidatesForAutoMLJobResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListClusterEventsRequest&, const Model::ListClusterEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClusterEventsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListClusterNodesRequest&, const Model::ListClusterNodesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClusterNodesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListClusterSchedulerConfigsRequest&, const Model::ListClusterSchedulerConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClusterSchedulerConfigsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;

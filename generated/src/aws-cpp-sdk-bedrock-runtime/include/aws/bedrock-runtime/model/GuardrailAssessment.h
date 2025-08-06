@@ -10,6 +10,7 @@
 #include <aws/bedrock-runtime/model/GuardrailWordPolicyAssessment.h>
 #include <aws/bedrock-runtime/model/GuardrailSensitiveInformationPolicyAssessment.h>
 #include <aws/bedrock-runtime/model/GuardrailContextualGroundingPolicyAssessment.h>
+#include <aws/bedrock-runtime/model/GuardrailAutomatedReasoningPolicyAssessment.h>
 #include <aws/bedrock-runtime/model/GuardrailInvocationMetrics.h>
 #include <utility>
 
@@ -105,6 +106,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The automated reasoning policy assessment results, including logical
+     * validation findings for the input content.</p>
+     */
+    inline const GuardrailAutomatedReasoningPolicyAssessment& GetAutomatedReasoningPolicy() const { return m_automatedReasoningPolicy; }
+    inline bool AutomatedReasoningPolicyHasBeenSet() const { return m_automatedReasoningPolicyHasBeenSet; }
+    template<typename AutomatedReasoningPolicyT = GuardrailAutomatedReasoningPolicyAssessment>
+    void SetAutomatedReasoningPolicy(AutomatedReasoningPolicyT&& value) { m_automatedReasoningPolicyHasBeenSet = true; m_automatedReasoningPolicy = std::forward<AutomatedReasoningPolicyT>(value); }
+    template<typename AutomatedReasoningPolicyT = GuardrailAutomatedReasoningPolicyAssessment>
+    GuardrailAssessment& WithAutomatedReasoningPolicy(AutomatedReasoningPolicyT&& value) { SetAutomatedReasoningPolicy(std::forward<AutomatedReasoningPolicyT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The invocation metrics for the guardrail assessment.</p>
      */
     inline const GuardrailInvocationMetrics& GetInvocationMetrics() const { return m_invocationMetrics; }
@@ -130,6 +144,9 @@ namespace Model
 
     GuardrailContextualGroundingPolicyAssessment m_contextualGroundingPolicy;
     bool m_contextualGroundingPolicyHasBeenSet = false;
+
+    GuardrailAutomatedReasoningPolicyAssessment m_automatedReasoningPolicy;
+    bool m_automatedReasoningPolicyHasBeenSet = false;
 
     GuardrailInvocationMetrics m_invocationMetrics;
     bool m_invocationMetricsHasBeenSet = false;

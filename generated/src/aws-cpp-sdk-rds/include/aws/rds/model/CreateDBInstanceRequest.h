@@ -456,8 +456,9 @@ namespace Model
     /**
      * <p>Specifies whether the DB instance is a Multi-AZ deployment. You can't set the
      * <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ
-     * deployment.</p> <p>This setting doesn't apply to Amazon Aurora because the DB
-     * instance Availability Zones (AZs) are managed by the DB cluster.</p>
+     * deployment.</p> <p>This setting doesn't apply to the following DB instances:</p>
+     * <ul> <li> <p>Amazon Aurora (DB instance Availability Zones (AZs) are managed by
+     * the DB cluster.)</p> </li> <li> <p>RDS Custom</p> </li> </ul>
      */
     inline bool GetMultiAZ() const { return m_multiAZ; }
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }

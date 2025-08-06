@@ -49,6 +49,7 @@ enum class BedrockErrors
 
   CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
+  RESOURCE_IN_USE,
   SERVICE_QUOTA_EXCEEDED,
   TOO_MANY_TAGS
 };

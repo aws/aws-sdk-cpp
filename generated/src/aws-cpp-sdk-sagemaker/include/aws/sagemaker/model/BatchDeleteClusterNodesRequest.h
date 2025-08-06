@@ -66,6 +66,23 @@ namespace Model
     template<typename NodeIdsT = Aws::String>
     BatchDeleteClusterNodesRequest& AddNodeIds(NodeIdsT&& value) { m_nodeIdsHasBeenSet = true; m_nodeIds.emplace_back(std::forward<NodeIdsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>A list of <code>NodeLogicalIds</code> identifying the nodes to be deleted.
+     * You can specify up to 50 <code>NodeLogicalIds</code>. You must specify either
+     * <code>NodeLogicalIds</code>, <code>InstanceIds</code>, or both, with a combined
+     * maximum of 50 identifiers.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetNodeLogicalIds() const { return m_nodeLogicalIds; }
+    inline bool NodeLogicalIdsHasBeenSet() const { return m_nodeLogicalIdsHasBeenSet; }
+    template<typename NodeLogicalIdsT = Aws::Vector<Aws::String>>
+    void SetNodeLogicalIds(NodeLogicalIdsT&& value) { m_nodeLogicalIdsHasBeenSet = true; m_nodeLogicalIds = std::forward<NodeLogicalIdsT>(value); }
+    template<typename NodeLogicalIdsT = Aws::Vector<Aws::String>>
+    BatchDeleteClusterNodesRequest& WithNodeLogicalIds(NodeLogicalIdsT&& value) { SetNodeLogicalIds(std::forward<NodeLogicalIdsT>(value)); return *this;}
+    template<typename NodeLogicalIdsT = Aws::String>
+    BatchDeleteClusterNodesRequest& AddNodeLogicalIds(NodeLogicalIdsT&& value) { m_nodeLogicalIdsHasBeenSet = true; m_nodeLogicalIds.emplace_back(std::forward<NodeLogicalIdsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_clusterName;
@@ -73,6 +90,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_nodeIds;
     bool m_nodeIdsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_nodeLogicalIds;
+    bool m_nodeLogicalIdsHasBeenSet = false;
   };
 
 } // namespace Model
