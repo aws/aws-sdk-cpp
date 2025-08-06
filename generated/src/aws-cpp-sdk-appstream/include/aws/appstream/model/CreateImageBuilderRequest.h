@@ -101,7 +101,18 @@ namespace Model
      * <p>stream.graphics.g4dn.12xlarge</p> </li> <li>
      * <p>stream.graphics.g4dn.16xlarge</p> </li> <li>
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
-     * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
+     * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> <li>
+     * <p>stream.graphics.g5.xlarge</p> </li> <li> <p>stream.graphics.g5.2xlarge</p>
+     * </li> <li> <p>stream.graphics.g5.4xlarge</p> </li> <li>
+     * <p>stream.graphics.g5.8xlarge</p> </li> <li> <p>stream.graphics.g5.16xlarge</p>
+     * </li> <li> <p>stream.graphics.g5.12xlarge</p> </li> <li>
+     * <p>stream.graphics.g5.24xlarge</p> </li> <li> <p>stream.graphics.g6.xlarge</p>
+     * </li> <li> <p>stream.graphics.g6.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g6.4xlarge</p> </li> <li> <p>stream.graphics.g6.8xlarge</p>
+     * </li> <li> <p>stream.graphics.g6.16xlarge</p> </li> <li>
+     * <p>stream.graphics.g6.12xlarge</p> </li> <li> <p>stream.graphics.g6.24xlarge</p>
+     * </li> <li> <p>stream.graphics.gr6.4xlarge</p> </li> <li>
+     * <p>stream.graphics.gr6.8xlarge</p> </li> </ul>
      */
     inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }

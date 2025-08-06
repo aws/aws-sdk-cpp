@@ -259,6 +259,37 @@ namespace OpenSearchServerless
         }
 
         /**
+         * <p>Creates an index within an OpenSearch Serverless collection. Unlike other
+         * OpenSearch indexes, indexes created by this API are automatically configured to
+         * conduct automatic semantic enrichment ingestion and search. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment">About
+         * automatic semantic enrichment</a> in the <i>OpenSearch User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateIndex">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateIndexOutcome CreateIndex(const Model::CreateIndexRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateIndex that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateIndexRequestT = Model::CreateIndexRequest>
+        Model::CreateIndexOutcomeCallable CreateIndexCallable(const CreateIndexRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServerlessClient::CreateIndex, request);
+        }
+
+        /**
+         * An Async wrapper for CreateIndex that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateIndexRequestT = Model::CreateIndexRequest>
+        void CreateIndexAsync(const CreateIndexRequestT& request, const CreateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServerlessClient::CreateIndex, request, handler, context);
+        }
+
+        /**
          * <p>Creates a lifecyle policy to be applied to OpenSearch Serverless indexes.
          * Lifecycle policies define the number of days or hours to retain the data on an
          * OpenSearch Serverless index. For more information, see <a
@@ -435,6 +466,35 @@ namespace OpenSearchServerless
         }
 
         /**
+         * <p>Deletes an index from an OpenSearch Serverless collection. Be aware that the
+         * index might be configured to conduct automatic semantic enrichment ingestion and
+         * search. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment">About
+         * automatic semantic enrichment</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteIndex">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteIndexOutcome DeleteIndex(const Model::DeleteIndexRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteIndex that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteIndexRequestT = Model::DeleteIndexRequest>
+        Model::DeleteIndexOutcomeCallable DeleteIndexCallable(const DeleteIndexRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServerlessClient::DeleteIndex, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteIndex that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteIndexRequestT = Model::DeleteIndexRequest>
+        void DeleteIndexAsync(const DeleteIndexRequestT& request, const DeleteIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServerlessClient::DeleteIndex, request, handler, context);
+        }
+
+        /**
          * <p>Deletes an OpenSearch Serverless lifecycle policy. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-delete">Deleting
@@ -598,6 +658,35 @@ namespace OpenSearchServerless
         void GetAccountSettingsAsync(const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAccountSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&OpenSearchServerlessClient::GetAccountSettings, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves information about an index in an OpenSearch Serverless collection,
+         * including its schema definition. The index might be configured to conduct
+         * automatic semantic enrichment ingestion and search. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment">About
+         * automatic semantic enrichment</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetIndex">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetIndexOutcome GetIndex(const Model::GetIndexRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetIndex that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetIndexRequestT = Model::GetIndexRequest>
+        Model::GetIndexOutcomeCallable GetIndexCallable(const GetIndexRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServerlessClient::GetIndex, request);
+        }
+
+        /**
+         * An Async wrapper for GetIndex that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetIndexRequestT = Model::GetIndexRequest>
+        void GetIndexAsync(const GetIndexRequestT& request, const GetIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServerlessClient::GetIndex, request, handler, context);
         }
 
         /**
@@ -1017,6 +1106,36 @@ namespace OpenSearchServerless
         void UpdateCollectionAsync(const UpdateCollectionRequestT& request, const UpdateCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OpenSearchServerlessClient::UpdateCollection, request, handler, context);
+        }
+
+        /**
+         * <p>Updates an existing index in an OpenSearch Serverless collection. This
+         * operation allows you to modify the index schema, including adding new fields or
+         * changing field mappings. You can also enable automatic semantic enrichment
+         * ingestion and search. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment">About
+         * automatic semantic enrichment</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateIndex">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateIndexOutcome UpdateIndex(const Model::UpdateIndexRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateIndex that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateIndexRequestT = Model::UpdateIndexRequest>
+        Model::UpdateIndexOutcomeCallable UpdateIndexCallable(const UpdateIndexRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServerlessClient::UpdateIndex, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateIndex that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateIndexRequestT = Model::UpdateIndexRequest>
+        void UpdateIndexAsync(const UpdateIndexRequestT& request, const UpdateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServerlessClient::UpdateIndex, request, handler, context);
         }
 
         /**

@@ -118,6 +118,52 @@ namespace Model
     template<typename TextMessageSegmentsT = TextSegment>
     SourceAttribution& AddTextMessageSegments(TextMessageSegmentsT&& value) { m_textMessageSegmentsHasBeenSet = true; m_textMessageSegments.emplace_back(std::forward<TextMessageSegmentsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The unique identifier of the source document used in the citation, obtained
+     * from the Amazon Q Business index during chat response generation. This ID is
+     * used as input to the <code>GetDocumentContent</code> API to retrieve the actual
+     * document content for user verification.</p>
+     */
+    inline const Aws::String& GetDocumentId() const { return m_documentId; }
+    inline bool DocumentIdHasBeenSet() const { return m_documentIdHasBeenSet; }
+    template<typename DocumentIdT = Aws::String>
+    void SetDocumentId(DocumentIdT&& value) { m_documentIdHasBeenSet = true; m_documentId = std::forward<DocumentIdT>(value); }
+    template<typename DocumentIdT = Aws::String>
+    SourceAttribution& WithDocumentId(DocumentIdT&& value) { SetDocumentId(std::forward<DocumentIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The identifier of the index containing the source document's metadata and
+     * access control information. This links the citation back to the specific Amazon
+     * Q Business index where the document's searchable content and permissions are
+     * stored.</p>
+     */
+    inline const Aws::String& GetIndexId() const { return m_indexId; }
+    inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
+    template<typename IndexIdT = Aws::String>
+    void SetIndexId(IndexIdT&& value) { m_indexIdHasBeenSet = true; m_indexId = std::forward<IndexIdT>(value); }
+    template<typename IndexIdT = Aws::String>
+    SourceAttribution& WithIndexId(IndexIdT&& value) { SetIndexId(std::forward<IndexIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The identifier of the data source from which the document was ingested. This
+     * field is not present if the document is ingested by directly calling the
+     * BatchPutDocument API (similar to checkDocumentAccess). If the document is from a
+     * file-upload data source, the datasource will be
+     * "uploaded-docs-file-stat-datasourceid".</p>
+     */
+    inline const Aws::String& GetDatasourceId() const { return m_datasourceId; }
+    inline bool DatasourceIdHasBeenSet() const { return m_datasourceIdHasBeenSet; }
+    template<typename DatasourceIdT = Aws::String>
+    void SetDatasourceId(DatasourceIdT&& value) { m_datasourceIdHasBeenSet = true; m_datasourceId = std::forward<DatasourceIdT>(value); }
+    template<typename DatasourceIdT = Aws::String>
+    SourceAttribution& WithDatasourceId(DatasourceIdT&& value) { SetDatasourceId(std::forward<DatasourceIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_title;
@@ -137,6 +183,15 @@ namespace Model
 
     Aws::Vector<TextSegment> m_textMessageSegments;
     bool m_textMessageSegmentsHasBeenSet = false;
+
+    Aws::String m_documentId;
+    bool m_documentIdHasBeenSet = false;
+
+    Aws::String m_indexId;
+    bool m_indexIdHasBeenSet = false;
+
+    Aws::String m_datasourceId;
+    bool m_datasourceIdHasBeenSet = false;
   };
 
 } // namespace Model

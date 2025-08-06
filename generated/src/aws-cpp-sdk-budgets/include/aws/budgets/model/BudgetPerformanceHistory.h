@@ -102,6 +102,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing
+     * view. The ARN is used to specify which particular billing view you want to
+     * interact with or retrieve information from when making API calls related to
+     * Amazon Web Services Billing and Cost Management features. The BillingViewArn can
+     * be retrieved by calling the ListBillingViews API.</p>
+     */
+    inline const Aws::String& GetBillingViewArn() const { return m_billingViewArn; }
+    inline bool BillingViewArnHasBeenSet() const { return m_billingViewArnHasBeenSet; }
+    template<typename BillingViewArnT = Aws::String>
+    void SetBillingViewArn(BillingViewArnT&& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = std::forward<BillingViewArnT>(value); }
+    template<typename BillingViewArnT = Aws::String>
+    BudgetPerformanceHistory& WithBillingViewArn(BillingViewArnT&& value) { SetBillingViewArn(std::forward<BillingViewArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A list of amounts of cost or usage that you created budgets for, which are
      * compared to your actual costs or usage.</p>
      */
@@ -130,6 +146,9 @@ namespace Model
 
     TimeUnit m_timeUnit{TimeUnit::NOT_SET};
     bool m_timeUnitHasBeenSet = false;
+
+    Aws::String m_billingViewArn;
+    bool m_billingViewArnHasBeenSet = false;
 
     Aws::Vector<BudgetedAndActualAmounts> m_budgetedAndActualAmountsList;
     bool m_budgetedAndActualAmountsListHasBeenSet = false;

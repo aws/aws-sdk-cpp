@@ -25,7 +25,11 @@ namespace Model
 {
 
   /**
-   * <p>The contents of a document.</p><p><h3>See Also:</h3>   <a
+   * <p>The contents of a document.</p>  <p>Documents have size limitations.
+   * The maximum file size for a document is 50 MB. The maximum amount of text that
+   * can be extracted from a single document is 5 MB. For more information, see <a
+   * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/doc-types.html">Supported
+   * document formats in Amazon Q Business</a>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DocumentContent">AWS
    * API Reference</a></p>
    */

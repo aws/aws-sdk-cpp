@@ -116,26 +116,6 @@ Aws::String RunInstancesRequest::SerializePayload() const
     ss << "UserData=" << StringUtils::URLEncode(m_userData.c_str()) << "&";
   }
 
-  if(m_elasticGpuSpecificationHasBeenSet)
-  {
-    unsigned elasticGpuSpecificationCount = 1;
-    for(auto& item : m_elasticGpuSpecification)
-    {
-      item.OutputToStream(ss, "ElasticGpuSpecification.", elasticGpuSpecificationCount, "");
-      elasticGpuSpecificationCount++;
-    }
-  }
-
-  if(m_elasticInferenceAcceleratorsHasBeenSet)
-  {
-    unsigned elasticInferenceAcceleratorsCount = 1;
-    for(auto& item : m_elasticInferenceAccelerators)
-    {
-      item.OutputToStream(ss, "ElasticInferenceAccelerator.", elasticInferenceAcceleratorsCount, "");
-      elasticInferenceAcceleratorsCount++;
-    }
-  }
-
   if(m_tagSpecificationsHasBeenSet)
   {
     unsigned tagSpecificationsCount = 1;

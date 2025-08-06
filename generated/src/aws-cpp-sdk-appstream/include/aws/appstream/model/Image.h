@@ -132,7 +132,8 @@ namespace Model
     ///@{
     /**
      * <p>The name of the image builder that was used to create the private image. If
-     * the image is shared, this value is null.</p>
+     * the image is shared, copied, or updated by using Managed Image Updates, this
+     * value is null.</p>
      */
     inline const Aws::String& GetImageBuilderName() const { return m_imageBuilderName; }
     inline bool ImageBuilderNameHasBeenSet() const { return m_imageBuilderNameHasBeenSet; }

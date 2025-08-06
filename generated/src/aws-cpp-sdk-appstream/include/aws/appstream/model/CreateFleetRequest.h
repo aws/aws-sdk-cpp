@@ -111,7 +111,13 @@ namespace Model
      * <p>stream.graphics.g5.16xlarge</p> </li> <li> <p>stream.graphics.g5.24xlarge</p>
      * </li> <li> <p>stream.graphics-pro.4xlarge</p> </li> <li>
      * <p>stream.graphics-pro.8xlarge</p> </li> <li>
-     * <p>stream.graphics-pro.16xlarge</p> </li> </ul> <p>The following instance types
+     * <p>stream.graphics-pro.16xlarge</p> </li> <li> <p>stream.graphics.g6.xlarge</p>
+     * </li> <li> <p>stream.graphics.g6.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g6.4xlarge</p> </li> <li> <p>stream.graphics.g6.8xlarge</p>
+     * </li> <li> <p>stream.graphics.g6.16xlarge</p> </li> <li>
+     * <p>stream.graphics.g6.12xlarge</p> </li> <li> <p>stream.graphics.g6.24xlarge</p>
+     * </li> <li> <p>stream.graphics.gr6.4xlarge</p> </li> <li>
+     * <p>stream.graphics.gr6.8xlarge</p> </li> </ul> <p>The following instance types
      * are available for Elastic fleets:</p> <ul> <li> <p>stream.standard.small</p>
      * </li> <li> <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p>
      * </li> <li> <p>stream.standard.xlarge</p> </li> <li>

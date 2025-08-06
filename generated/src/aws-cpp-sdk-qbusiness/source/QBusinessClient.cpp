@@ -60,6 +60,7 @@
 #include <aws/qbusiness/model/GetChatResponseConfigurationRequest.h>
 #include <aws/qbusiness/model/GetDataAccessorRequest.h>
 #include <aws/qbusiness/model/GetDataSourceRequest.h>
+#include <aws/qbusiness/model/GetDocumentContentRequest.h>
 #include <aws/qbusiness/model/GetGroupRequest.h>
 #include <aws/qbusiness/model/GetIndexRequest.h>
 #include <aws/qbusiness/model/GetMediaRequest.h>
@@ -1681,6 +1682,54 @@ GetDataSourceOutcome QBusinessClient::GetDataSource(const GetDataSourceRequest& 
       endpointResolutionOutcome.GetResult().AddPathSegments("/datasources/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSourceId());
       return GetDataSourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetDocumentContentOutcome QBusinessClient::GetDocumentContent(const GetDocumentContentRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetDocumentContent);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDocumentContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDocumentContent", "Required field: ApplicationId, is not set");
+    return GetDocumentContentOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.IndexIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDocumentContent", "Required field: IndexId, is not set");
+    return GetDocumentContentOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IndexId]", false));
+  }
+  if (!request.DocumentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDocumentContent", "Required field: DocumentId, is not set");
+    return GetDocumentContentOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetDocumentContent, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetDocumentContent, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetDocumentContent",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetDocumentContentOutcome>(
+    [&]()-> GetDocumentContentOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDocumentContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/index/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIndexId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/documents/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDocumentId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/content");
+      return GetDocumentContentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

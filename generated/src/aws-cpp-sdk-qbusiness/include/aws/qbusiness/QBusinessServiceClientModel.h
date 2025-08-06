@@ -54,6 +54,7 @@
 #include <aws/qbusiness/model/GetChatResponseConfigurationResult.h>
 #include <aws/qbusiness/model/GetDataAccessorResult.h>
 #include <aws/qbusiness/model/GetDataSourceResult.h>
+#include <aws/qbusiness/model/GetDocumentContentResult.h>
 #include <aws/qbusiness/model/GetGroupResult.h>
 #include <aws/qbusiness/model/GetIndexResult.h>
 #include <aws/qbusiness/model/GetMediaResult.h>
@@ -184,6 +185,7 @@ namespace Aws
       class GetChatResponseConfigurationRequest;
       class GetDataAccessorRequest;
       class GetDataSourceRequest;
+      class GetDocumentContentRequest;
       class GetGroupRequest;
       class GetIndexRequest;
       class GetMediaRequest;
@@ -269,6 +271,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetChatResponseConfigurationResult, QBusinessError> GetChatResponseConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetDataAccessorResult, QBusinessError> GetDataAccessorOutcome;
       typedef Aws::Utils::Outcome<GetDataSourceResult, QBusinessError> GetDataSourceOutcome;
+      typedef Aws::Utils::Outcome<GetDocumentContentResult, QBusinessError> GetDocumentContentOutcome;
       typedef Aws::Utils::Outcome<GetGroupResult, QBusinessError> GetGroupOutcome;
       typedef Aws::Utils::Outcome<GetIndexResult, QBusinessError> GetIndexOutcome;
       typedef Aws::Utils::Outcome<GetMediaResult, QBusinessError> GetMediaOutcome;
@@ -354,6 +357,7 @@ namespace Aws
       typedef std::future<GetChatResponseConfigurationOutcome> GetChatResponseConfigurationOutcomeCallable;
       typedef std::future<GetDataAccessorOutcome> GetDataAccessorOutcomeCallable;
       typedef std::future<GetDataSourceOutcome> GetDataSourceOutcomeCallable;
+      typedef std::future<GetDocumentContentOutcome> GetDocumentContentOutcomeCallable;
       typedef std::future<GetGroupOutcome> GetGroupOutcomeCallable;
       typedef std::future<GetIndexOutcome> GetIndexOutcomeCallable;
       typedef std::future<GetMediaOutcome> GetMediaOutcomeCallable;
@@ -443,6 +447,7 @@ namespace Aws
     typedef std::function<void(const QBusinessClient*, const Model::GetChatResponseConfigurationRequest&, const Model::GetChatResponseConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChatResponseConfigurationResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::GetDataAccessorRequest&, const Model::GetDataAccessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataAccessorResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::GetDataSourceRequest&, const Model::GetDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataSourceResponseReceivedHandler;
+    typedef std::function<void(const QBusinessClient*, const Model::GetDocumentContentRequest&, const Model::GetDocumentContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDocumentContentResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::GetGroupRequest&, const Model::GetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::GetIndexRequest&, const Model::GetIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIndexResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::GetMediaRequest&, const Model::GetMediaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMediaResponseReceivedHandler;
