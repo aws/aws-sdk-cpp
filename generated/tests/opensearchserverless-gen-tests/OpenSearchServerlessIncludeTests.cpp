@@ -40,6 +40,8 @@
 #include <aws/opensearchserverless/model/CreateCollectionRequest.h>
 #include <aws/opensearchserverless/model/CreateCollectionResult.h>
 #include <aws/opensearchserverless/model/CreateIamIdentityCenterConfigOptions.h>
+#include <aws/opensearchserverless/model/CreateIndexRequest.h>
+#include <aws/opensearchserverless/model/CreateIndexResult.h>
 #include <aws/opensearchserverless/model/CreateLifecyclePolicyRequest.h>
 #include <aws/opensearchserverless/model/CreateLifecyclePolicyResult.h>
 #include <aws/opensearchserverless/model/CreateSecurityConfigRequest.h>
@@ -54,6 +56,8 @@
 #include <aws/opensearchserverless/model/DeleteCollectionDetail.h>
 #include <aws/opensearchserverless/model/DeleteCollectionRequest.h>
 #include <aws/opensearchserverless/model/DeleteCollectionResult.h>
+#include <aws/opensearchserverless/model/DeleteIndexRequest.h>
+#include <aws/opensearchserverless/model/DeleteIndexResult.h>
 #include <aws/opensearchserverless/model/DeleteLifecyclePolicyRequest.h>
 #include <aws/opensearchserverless/model/DeleteLifecyclePolicyResult.h>
 #include <aws/opensearchserverless/model/DeleteSecurityConfigRequest.h>
@@ -69,6 +73,8 @@
 #include <aws/opensearchserverless/model/GetAccessPolicyResult.h>
 #include <aws/opensearchserverless/model/GetAccountSettingsRequest.h>
 #include <aws/opensearchserverless/model/GetAccountSettingsResult.h>
+#include <aws/opensearchserverless/model/GetIndexRequest.h>
+#include <aws/opensearchserverless/model/GetIndexResult.h>
 #include <aws/opensearchserverless/model/GetPoliciesStatsRequest.h>
 #include <aws/opensearchserverless/model/GetPoliciesStatsResult.h>
 #include <aws/opensearchserverless/model/GetSecurityConfigRequest.h>
@@ -125,6 +131,8 @@
 #include <aws/opensearchserverless/model/UpdateCollectionRequest.h>
 #include <aws/opensearchserverless/model/UpdateCollectionResult.h>
 #include <aws/opensearchserverless/model/UpdateIamIdentityCenterConfigOptions.h>
+#include <aws/opensearchserverless/model/UpdateIndexRequest.h>
+#include <aws/opensearchserverless/model/UpdateIndexResult.h>
 #include <aws/opensearchserverless/model/UpdateLifecyclePolicyRequest.h>
 #include <aws/opensearchserverless/model/UpdateLifecyclePolicyResult.h>
 #include <aws/opensearchserverless/model/UpdateSecurityConfigRequest.h>

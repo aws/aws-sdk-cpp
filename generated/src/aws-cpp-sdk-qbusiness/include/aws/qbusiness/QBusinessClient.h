@@ -531,7 +531,11 @@ namespace QBusiness
          * determines feature access for the user. For more information on subscriptions
          * and pricing tiers, see <a
          * href="https://aws.amazon.com/q/business/pricing/">Amazon Q Business
-         * pricing</a>.</p><p><h3>See Also:</h3>   <a
+         * pricing</a>.</p>  <p>For an example IAM role policy for assigning
+         * subscriptions, see <a
+         * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/setting-up.html#permissions">Set
+         * up required permissions</a> in the Amazon Q Business User Guide.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateSubscription">AWS
          * API Reference</a></p>
          */
@@ -1112,6 +1116,35 @@ namespace QBusiness
         void GetDataSourceAsync(const GetDataSourceRequestT& request, const GetDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QBusinessClient::GetDataSource, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the content of a document that was ingested into Amazon Q Business.
+         * This API validates user authorization against document ACLs before returning a
+         * pre-signed URL for secure document access. You can download or view source
+         * documents referenced in chat responses through the URL.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetDocumentContent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDocumentContentOutcome GetDocumentContent(const Model::GetDocumentContentRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDocumentContent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDocumentContentRequestT = Model::GetDocumentContentRequest>
+        Model::GetDocumentContentOutcomeCallable GetDocumentContentCallable(const GetDocumentContentRequestT& request) const
+        {
+            return SubmitCallable(&QBusinessClient::GetDocumentContent, request);
+        }
+
+        /**
+         * An Async wrapper for GetDocumentContent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDocumentContentRequestT = Model::GetDocumentContentRequest>
+        void GetDocumentContentAsync(const GetDocumentContentRequestT& request, const GetDocumentContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QBusinessClient::GetDocumentContent, request, handler, context);
         }
 
         /**

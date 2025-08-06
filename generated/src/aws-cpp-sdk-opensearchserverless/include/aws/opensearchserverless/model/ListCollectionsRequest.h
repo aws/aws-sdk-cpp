@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of filter names and values that you can use for requests.</p>
+     * <p> A list of filter names and values that you can use for requests.</p>
      */
     inline const CollectionFilters& GetCollectionFilters() const { return m_collectionFilters; }
     inline bool CollectionFiltersHasBeenSet() const { return m_collectionFiltersHasBeenSet; }

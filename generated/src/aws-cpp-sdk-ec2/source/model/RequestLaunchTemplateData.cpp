@@ -142,32 +142,6 @@ RequestLaunchTemplateData& RequestLaunchTemplateData::operator =(const XmlNode& 
 
       m_tagSpecificationsHasBeenSet = true;
     }
-    XmlNode elasticGpuSpecificationsNode = resultNode.FirstChild("ElasticGpuSpecification");
-    if(!elasticGpuSpecificationsNode.IsNull())
-    {
-      XmlNode elasticGpuSpecificationsMember = elasticGpuSpecificationsNode.FirstChild("ElasticGpuSpecification");
-      m_elasticGpuSpecificationsHasBeenSet = !elasticGpuSpecificationsMember.IsNull();
-      while(!elasticGpuSpecificationsMember.IsNull())
-      {
-        m_elasticGpuSpecifications.push_back(elasticGpuSpecificationsMember);
-        elasticGpuSpecificationsMember = elasticGpuSpecificationsMember.NextNode("ElasticGpuSpecification");
-      }
-
-      m_elasticGpuSpecificationsHasBeenSet = true;
-    }
-    XmlNode elasticInferenceAcceleratorsNode = resultNode.FirstChild("ElasticInferenceAccelerator");
-    if(!elasticInferenceAcceleratorsNode.IsNull())
-    {
-      XmlNode elasticInferenceAcceleratorsMember = elasticInferenceAcceleratorsNode.FirstChild("item");
-      m_elasticInferenceAcceleratorsHasBeenSet = !elasticInferenceAcceleratorsMember.IsNull();
-      while(!elasticInferenceAcceleratorsMember.IsNull())
-      {
-        m_elasticInferenceAccelerators.push_back(elasticInferenceAcceleratorsMember);
-        elasticInferenceAcceleratorsMember = elasticInferenceAcceleratorsMember.NextNode("item");
-      }
-
-      m_elasticInferenceAcceleratorsHasBeenSet = true;
-    }
     XmlNode securityGroupIdsNode = resultNode.FirstChild("SecurityGroupId");
     if(!securityGroupIdsNode.IsNull())
     {
@@ -391,28 +365,6 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
       }
   }
 
-  if(m_elasticGpuSpecificationsHasBeenSet)
-  {
-      unsigned elasticGpuSpecificationsIdx = 1;
-      for(auto& item : m_elasticGpuSpecifications)
-      {
-        Aws::StringStream elasticGpuSpecificationsSs;
-        elasticGpuSpecificationsSs << location << index << locationValue << ".ElasticGpuSpecification." << elasticGpuSpecificationsIdx++;
-        item.OutputToStream(oStream, elasticGpuSpecificationsSs.str().c_str());
-      }
-  }
-
-  if(m_elasticInferenceAcceleratorsHasBeenSet)
-  {
-      unsigned elasticInferenceAcceleratorsIdx = 1;
-      for(auto& item : m_elasticInferenceAccelerators)
-      {
-        Aws::StringStream elasticInferenceAcceleratorsSs;
-        elasticInferenceAcceleratorsSs << location << index << locationValue << ".ElasticInferenceAccelerator." << elasticInferenceAcceleratorsIdx++;
-        item.OutputToStream(oStream, elasticInferenceAcceleratorsSs.str().c_str());
-      }
-  }
-
   if(m_securityGroupIdsHasBeenSet)
   {
       unsigned securityGroupIdsIdx = 1;
@@ -617,26 +569,6 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
         Aws::StringStream tagSpecificationsSs;
         tagSpecificationsSs << location << ".TagSpecification." << tagSpecificationsIdx++;
         item.OutputToStream(oStream, tagSpecificationsSs.str().c_str());
-      }
-  }
-  if(m_elasticGpuSpecificationsHasBeenSet)
-  {
-      unsigned elasticGpuSpecificationsIdx = 1;
-      for(auto& item : m_elasticGpuSpecifications)
-      {
-        Aws::StringStream elasticGpuSpecificationsSs;
-        elasticGpuSpecificationsSs << location << ".ElasticGpuSpecification." << elasticGpuSpecificationsIdx++;
-        item.OutputToStream(oStream, elasticGpuSpecificationsSs.str().c_str());
-      }
-  }
-  if(m_elasticInferenceAcceleratorsHasBeenSet)
-  {
-      unsigned elasticInferenceAcceleratorsIdx = 1;
-      for(auto& item : m_elasticInferenceAccelerators)
-      {
-        Aws::StringStream elasticInferenceAcceleratorsSs;
-        elasticInferenceAcceleratorsSs << location << ".ElasticInferenceAccelerator." << elasticInferenceAcceleratorsIdx++;
-        item.OutputToStream(oStream, elasticInferenceAcceleratorsSs.str().c_str());
       }
   }
   if(m_securityGroupIdsHasBeenSet)

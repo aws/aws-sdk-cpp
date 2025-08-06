@@ -28,8 +28,6 @@
 #include <aws/ec2/model/LaunchTemplateBlockDeviceMappingRequest.h>
 #include <aws/ec2/model/LaunchTemplateInstanceNetworkInterfaceSpecificationRequest.h>
 #include <aws/ec2/model/LaunchTemplateTagSpecificationRequest.h>
-#include <aws/ec2/model/ElasticGpuSpecification.h>
-#include <aws/ec2/model/LaunchTemplateElasticInferenceAccelerator.h>
 #include <aws/ec2/model/LaunchTemplateLicenseConfigurationRequest.h>
 #include <utility>
 
@@ -297,39 +295,6 @@ namespace Model
     RequestLaunchTemplateData& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
     template<typename TagSpecificationsT = LaunchTemplateTagSpecificationRequest>
     RequestLaunchTemplateData& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
-     * January 8, 2024.</p> 
-     */
-    inline const Aws::Vector<ElasticGpuSpecification>& GetElasticGpuSpecifications() const { return m_elasticGpuSpecifications; }
-    inline bool ElasticGpuSpecificationsHasBeenSet() const { return m_elasticGpuSpecificationsHasBeenSet; }
-    template<typename ElasticGpuSpecificationsT = Aws::Vector<ElasticGpuSpecification>>
-    void SetElasticGpuSpecifications(ElasticGpuSpecificationsT&& value) { m_elasticGpuSpecificationsHasBeenSet = true; m_elasticGpuSpecifications = std::forward<ElasticGpuSpecificationsT>(value); }
-    template<typename ElasticGpuSpecificationsT = Aws::Vector<ElasticGpuSpecification>>
-    RequestLaunchTemplateData& WithElasticGpuSpecifications(ElasticGpuSpecificationsT&& value) { SetElasticGpuSpecifications(std::forward<ElasticGpuSpecificationsT>(value)); return *this;}
-    template<typename ElasticGpuSpecificationsT = ElasticGpuSpecification>
-    RequestLaunchTemplateData& AddElasticGpuSpecifications(ElasticGpuSpecificationsT&& value) { m_elasticGpuSpecificationsHasBeenSet = true; m_elasticGpuSpecifications.emplace_back(std::forward<ElasticGpuSpecificationsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     *  <p>Amazon Elastic Inference is no longer available.</p>  <p>An
-     * elastic inference accelerator to associate with the instance. Elastic inference
-     * accelerators are a resource you can attach to your Amazon EC2 instances to
-     * accelerate your Deep Learning (DL) inference workloads.</p> <p>You cannot
-     * specify accelerators from different generations in the same request.</p>
-     */
-    inline const Aws::Vector<LaunchTemplateElasticInferenceAccelerator>& GetElasticInferenceAccelerators() const { return m_elasticInferenceAccelerators; }
-    inline bool ElasticInferenceAcceleratorsHasBeenSet() const { return m_elasticInferenceAcceleratorsHasBeenSet; }
-    template<typename ElasticInferenceAcceleratorsT = Aws::Vector<LaunchTemplateElasticInferenceAccelerator>>
-    void SetElasticInferenceAccelerators(ElasticInferenceAcceleratorsT&& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators = std::forward<ElasticInferenceAcceleratorsT>(value); }
-    template<typename ElasticInferenceAcceleratorsT = Aws::Vector<LaunchTemplateElasticInferenceAccelerator>>
-    RequestLaunchTemplateData& WithElasticInferenceAccelerators(ElasticInferenceAcceleratorsT&& value) { SetElasticInferenceAccelerators(std::forward<ElasticInferenceAcceleratorsT>(value)); return *this;}
-    template<typename ElasticInferenceAcceleratorsT = LaunchTemplateElasticInferenceAccelerator>
-    RequestLaunchTemplateData& AddElasticInferenceAccelerators(ElasticInferenceAcceleratorsT&& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators.emplace_back(std::forward<ElasticInferenceAcceleratorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -631,12 +596,6 @@ namespace Model
 
     Aws::Vector<LaunchTemplateTagSpecificationRequest> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
-
-    Aws::Vector<ElasticGpuSpecification> m_elasticGpuSpecifications;
-    bool m_elasticGpuSpecificationsHasBeenSet = false;
-
-    Aws::Vector<LaunchTemplateElasticInferenceAccelerator> m_elasticInferenceAccelerators;
-    bool m_elasticInferenceAcceleratorsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet = false;

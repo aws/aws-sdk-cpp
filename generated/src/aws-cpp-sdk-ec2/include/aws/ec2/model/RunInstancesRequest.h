@@ -27,8 +27,6 @@
 #include <aws/ec2/model/IamInstanceProfileSpecification.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
-#include <aws/ec2/model/ElasticGpuSpecification.h>
-#include <aws/ec2/model/ElasticInferenceAccelerator.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <aws/ec2/model/LicenseConfigurationRequest.h>
 #include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
@@ -304,36 +302,6 @@ namespace Model
     void SetUserData(UserDataT&& value) { m_userDataHasBeenSet = true; m_userData = std::forward<UserDataT>(value); }
     template<typename UserDataT = Aws::String>
     RunInstancesRequest& WithUserData(UserDataT&& value) { SetUserData(std::forward<UserDataT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>An elastic GPU to associate with the instance.</p>  <p>Amazon Elastic
-     * Graphics reached end of life on January 8, 2024.</p> 
-     */
-    inline const Aws::Vector<ElasticGpuSpecification>& GetElasticGpuSpecification() const { return m_elasticGpuSpecification; }
-    inline bool ElasticGpuSpecificationHasBeenSet() const { return m_elasticGpuSpecificationHasBeenSet; }
-    template<typename ElasticGpuSpecificationT = Aws::Vector<ElasticGpuSpecification>>
-    void SetElasticGpuSpecification(ElasticGpuSpecificationT&& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification = std::forward<ElasticGpuSpecificationT>(value); }
-    template<typename ElasticGpuSpecificationT = Aws::Vector<ElasticGpuSpecification>>
-    RunInstancesRequest& WithElasticGpuSpecification(ElasticGpuSpecificationT&& value) { SetElasticGpuSpecification(std::forward<ElasticGpuSpecificationT>(value)); return *this;}
-    template<typename ElasticGpuSpecificationT = ElasticGpuSpecification>
-    RunInstancesRequest& AddElasticGpuSpecification(ElasticGpuSpecificationT&& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification.emplace_back(std::forward<ElasticGpuSpecificationT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>An elastic inference accelerator to associate with the instance.</p> 
-     * <p>Amazon Elastic Inference is no longer available.</p> 
-     */
-    inline const Aws::Vector<ElasticInferenceAccelerator>& GetElasticInferenceAccelerators() const { return m_elasticInferenceAccelerators; }
-    inline bool ElasticInferenceAcceleratorsHasBeenSet() const { return m_elasticInferenceAcceleratorsHasBeenSet; }
-    template<typename ElasticInferenceAcceleratorsT = Aws::Vector<ElasticInferenceAccelerator>>
-    void SetElasticInferenceAccelerators(ElasticInferenceAcceleratorsT&& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators = std::forward<ElasticInferenceAcceleratorsT>(value); }
-    template<typename ElasticInferenceAcceleratorsT = Aws::Vector<ElasticInferenceAccelerator>>
-    RunInstancesRequest& WithElasticInferenceAccelerators(ElasticInferenceAcceleratorsT&& value) { SetElasticInferenceAccelerators(std::forward<ElasticInferenceAcceleratorsT>(value)); return *this;}
-    template<typename ElasticInferenceAcceleratorsT = ElasticInferenceAccelerator>
-    RunInstancesRequest& AddElasticInferenceAccelerators(ElasticInferenceAcceleratorsT&& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators.emplace_back(std::forward<ElasticInferenceAcceleratorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -758,12 +726,6 @@ namespace Model
 
     Aws::String m_userData;
     bool m_userDataHasBeenSet = false;
-
-    Aws::Vector<ElasticGpuSpecification> m_elasticGpuSpecification;
-    bool m_elasticGpuSpecificationHasBeenSet = false;
-
-    Aws::Vector<ElasticInferenceAccelerator> m_elasticInferenceAccelerators;
-    bool m_elasticInferenceAcceleratorsHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;

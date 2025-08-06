@@ -195,6 +195,8 @@
 #include <aws/qbusiness/model/GetDataAccessorResult.h>
 #include <aws/qbusiness/model/GetDataSourceRequest.h>
 #include <aws/qbusiness/model/GetDataSourceResult.h>
+#include <aws/qbusiness/model/GetDocumentContentRequest.h>
+#include <aws/qbusiness/model/GetDocumentContentResult.h>
 #include <aws/qbusiness/model/GetGroupRequest.h>
 #include <aws/qbusiness/model/GetGroupResult.h>
 #include <aws/qbusiness/model/GetIndexRequest.h>
@@ -289,6 +291,7 @@
 #include <aws/qbusiness/model/OpenIDConnectProviderConfiguration.h>
 #include <aws/qbusiness/model/OrchestrationConfiguration.h>
 #include <aws/qbusiness/model/OrchestrationControl.h>
+#include <aws/qbusiness/model/OutputFormat.h>
 #include <aws/qbusiness/model/PermissionCondition.h>
 #include <aws/qbusiness/model/PermissionConditionOperator.h>
 #include <aws/qbusiness/model/PersonalizationConfiguration.h>

@@ -61,6 +61,11 @@ BudgetPerformanceHistory& BudgetPerformanceHistory::operator =(JsonView jsonValu
     m_timeUnit = TimeUnitMapper::GetTimeUnitForName(jsonValue.GetString("TimeUnit"));
     m_timeUnitHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("BillingViewArn"))
+  {
+    m_billingViewArn = jsonValue.GetString("BillingViewArn");
+    m_billingViewArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("BudgetedAndActualAmountsList"))
   {
     Aws::Utils::Array<JsonView> budgetedAndActualAmountsListJsonList = jsonValue.GetArray("BudgetedAndActualAmountsList");
@@ -113,6 +118,12 @@ JsonValue BudgetPerformanceHistory::Jsonize() const
   if(m_timeUnitHasBeenSet)
   {
    payload.WithString("TimeUnit", TimeUnitMapper::GetNameForTimeUnit(m_timeUnit));
+  }
+
+  if(m_billingViewArnHasBeenSet)
+  {
+   payload.WithString("BillingViewArn", m_billingViewArn);
+
   }
 
   if(m_budgetedAndActualAmountsListHasBeenSet)

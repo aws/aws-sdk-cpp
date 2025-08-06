@@ -16,6 +16,7 @@
 #include <aws/budgets/model/AutoAdjustData.h>
 #include <aws/budgets/model/Expression.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/budgets/model/HealthStatus.h>
 #include <aws/budgets/model/Metric.h>
 #include <utility>
 
@@ -234,6 +235,34 @@ namespace Model
     Budget& WithMetrics(MetricsT&& value) { SetMetrics(std::forward<MetricsT>(value)); return *this;}
     inline Budget& AddMetrics(Metric value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing
+     * view. The ARN is used to specify which particular billing view you want to
+     * interact with or retrieve information from when making API calls related to
+     * Amazon Web Services Billing and Cost Management features. The BillingViewArn can
+     * be retrieved by calling the ListBillingViews API.</p>
+     */
+    inline const Aws::String& GetBillingViewArn() const { return m_billingViewArn; }
+    inline bool BillingViewArnHasBeenSet() const { return m_billingViewArnHasBeenSet; }
+    template<typename BillingViewArnT = Aws::String>
+    void SetBillingViewArn(BillingViewArnT&& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = std::forward<BillingViewArnT>(value); }
+    template<typename BillingViewArnT = Aws::String>
+    Budget& WithBillingViewArn(BillingViewArnT&& value) { SetBillingViewArn(std::forward<BillingViewArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The current operational state of a Billing View derived resource.</p>
+     */
+    inline const HealthStatus& GetHealthStatus() const { return m_healthStatus; }
+    inline bool HealthStatusHasBeenSet() const { return m_healthStatusHasBeenSet; }
+    template<typename HealthStatusT = HealthStatus>
+    void SetHealthStatus(HealthStatusT&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = std::forward<HealthStatusT>(value); }
+    template<typename HealthStatusT = HealthStatus>
+    Budget& WithHealthStatus(HealthStatusT&& value) { SetHealthStatus(std::forward<HealthStatusT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_budgetName;
@@ -268,6 +297,12 @@ namespace Model
 
     Aws::Vector<Metric> m_metrics;
     bool m_metricsHasBeenSet = false;
+
+    Aws::String m_billingViewArn;
+    bool m_billingViewArnHasBeenSet = false;
+
+    HealthStatus m_healthStatus;
+    bool m_healthStatusHasBeenSet = false;
   };
 
 } // namespace Model

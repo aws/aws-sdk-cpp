@@ -24,18 +24,21 @@
 #include <aws/opensearchserverless/model/BatchGetVpcEndpointResult.h>
 #include <aws/opensearchserverless/model/CreateAccessPolicyResult.h>
 #include <aws/opensearchserverless/model/CreateCollectionResult.h>
+#include <aws/opensearchserverless/model/CreateIndexResult.h>
 #include <aws/opensearchserverless/model/CreateLifecyclePolicyResult.h>
 #include <aws/opensearchserverless/model/CreateSecurityConfigResult.h>
 #include <aws/opensearchserverless/model/CreateSecurityPolicyResult.h>
 #include <aws/opensearchserverless/model/CreateVpcEndpointResult.h>
 #include <aws/opensearchserverless/model/DeleteAccessPolicyResult.h>
 #include <aws/opensearchserverless/model/DeleteCollectionResult.h>
+#include <aws/opensearchserverless/model/DeleteIndexResult.h>
 #include <aws/opensearchserverless/model/DeleteLifecyclePolicyResult.h>
 #include <aws/opensearchserverless/model/DeleteSecurityConfigResult.h>
 #include <aws/opensearchserverless/model/DeleteSecurityPolicyResult.h>
 #include <aws/opensearchserverless/model/DeleteVpcEndpointResult.h>
 #include <aws/opensearchserverless/model/GetAccessPolicyResult.h>
 #include <aws/opensearchserverless/model/GetAccountSettingsResult.h>
+#include <aws/opensearchserverless/model/GetIndexResult.h>
 #include <aws/opensearchserverless/model/GetPoliciesStatsResult.h>
 #include <aws/opensearchserverless/model/GetSecurityConfigResult.h>
 #include <aws/opensearchserverless/model/GetSecurityPolicyResult.h>
@@ -51,6 +54,7 @@
 #include <aws/opensearchserverless/model/UpdateAccessPolicyResult.h>
 #include <aws/opensearchserverless/model/UpdateAccountSettingsResult.h>
 #include <aws/opensearchserverless/model/UpdateCollectionResult.h>
+#include <aws/opensearchserverless/model/UpdateIndexResult.h>
 #include <aws/opensearchserverless/model/UpdateLifecyclePolicyResult.h>
 #include <aws/opensearchserverless/model/UpdateSecurityConfigResult.h>
 #include <aws/opensearchserverless/model/UpdateSecurityPolicyResult.h>
@@ -107,18 +111,21 @@ namespace Aws
       class BatchGetVpcEndpointRequest;
       class CreateAccessPolicyRequest;
       class CreateCollectionRequest;
+      class CreateIndexRequest;
       class CreateLifecyclePolicyRequest;
       class CreateSecurityConfigRequest;
       class CreateSecurityPolicyRequest;
       class CreateVpcEndpointRequest;
       class DeleteAccessPolicyRequest;
       class DeleteCollectionRequest;
+      class DeleteIndexRequest;
       class DeleteLifecyclePolicyRequest;
       class DeleteSecurityConfigRequest;
       class DeleteSecurityPolicyRequest;
       class DeleteVpcEndpointRequest;
       class GetAccessPolicyRequest;
       class GetAccountSettingsRequest;
+      class GetIndexRequest;
       class GetPoliciesStatsRequest;
       class GetSecurityConfigRequest;
       class GetSecurityPolicyRequest;
@@ -134,6 +141,7 @@ namespace Aws
       class UpdateAccessPolicyRequest;
       class UpdateAccountSettingsRequest;
       class UpdateCollectionRequest;
+      class UpdateIndexRequest;
       class UpdateLifecyclePolicyRequest;
       class UpdateSecurityConfigRequest;
       class UpdateSecurityPolicyRequest;
@@ -147,18 +155,21 @@ namespace Aws
       typedef Aws::Utils::Outcome<BatchGetVpcEndpointResult, OpenSearchServerlessError> BatchGetVpcEndpointOutcome;
       typedef Aws::Utils::Outcome<CreateAccessPolicyResult, OpenSearchServerlessError> CreateAccessPolicyOutcome;
       typedef Aws::Utils::Outcome<CreateCollectionResult, OpenSearchServerlessError> CreateCollectionOutcome;
+      typedef Aws::Utils::Outcome<CreateIndexResult, OpenSearchServerlessError> CreateIndexOutcome;
       typedef Aws::Utils::Outcome<CreateLifecyclePolicyResult, OpenSearchServerlessError> CreateLifecyclePolicyOutcome;
       typedef Aws::Utils::Outcome<CreateSecurityConfigResult, OpenSearchServerlessError> CreateSecurityConfigOutcome;
       typedef Aws::Utils::Outcome<CreateSecurityPolicyResult, OpenSearchServerlessError> CreateSecurityPolicyOutcome;
       typedef Aws::Utils::Outcome<CreateVpcEndpointResult, OpenSearchServerlessError> CreateVpcEndpointOutcome;
       typedef Aws::Utils::Outcome<DeleteAccessPolicyResult, OpenSearchServerlessError> DeleteAccessPolicyOutcome;
       typedef Aws::Utils::Outcome<DeleteCollectionResult, OpenSearchServerlessError> DeleteCollectionOutcome;
+      typedef Aws::Utils::Outcome<DeleteIndexResult, OpenSearchServerlessError> DeleteIndexOutcome;
       typedef Aws::Utils::Outcome<DeleteLifecyclePolicyResult, OpenSearchServerlessError> DeleteLifecyclePolicyOutcome;
       typedef Aws::Utils::Outcome<DeleteSecurityConfigResult, OpenSearchServerlessError> DeleteSecurityConfigOutcome;
       typedef Aws::Utils::Outcome<DeleteSecurityPolicyResult, OpenSearchServerlessError> DeleteSecurityPolicyOutcome;
       typedef Aws::Utils::Outcome<DeleteVpcEndpointResult, OpenSearchServerlessError> DeleteVpcEndpointOutcome;
       typedef Aws::Utils::Outcome<GetAccessPolicyResult, OpenSearchServerlessError> GetAccessPolicyOutcome;
       typedef Aws::Utils::Outcome<GetAccountSettingsResult, OpenSearchServerlessError> GetAccountSettingsOutcome;
+      typedef Aws::Utils::Outcome<GetIndexResult, OpenSearchServerlessError> GetIndexOutcome;
       typedef Aws::Utils::Outcome<GetPoliciesStatsResult, OpenSearchServerlessError> GetPoliciesStatsOutcome;
       typedef Aws::Utils::Outcome<GetSecurityConfigResult, OpenSearchServerlessError> GetSecurityConfigOutcome;
       typedef Aws::Utils::Outcome<GetSecurityPolicyResult, OpenSearchServerlessError> GetSecurityPolicyOutcome;
@@ -174,6 +185,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateAccessPolicyResult, OpenSearchServerlessError> UpdateAccessPolicyOutcome;
       typedef Aws::Utils::Outcome<UpdateAccountSettingsResult, OpenSearchServerlessError> UpdateAccountSettingsOutcome;
       typedef Aws::Utils::Outcome<UpdateCollectionResult, OpenSearchServerlessError> UpdateCollectionOutcome;
+      typedef Aws::Utils::Outcome<UpdateIndexResult, OpenSearchServerlessError> UpdateIndexOutcome;
       typedef Aws::Utils::Outcome<UpdateLifecyclePolicyResult, OpenSearchServerlessError> UpdateLifecyclePolicyOutcome;
       typedef Aws::Utils::Outcome<UpdateSecurityConfigResult, OpenSearchServerlessError> UpdateSecurityConfigOutcome;
       typedef Aws::Utils::Outcome<UpdateSecurityPolicyResult, OpenSearchServerlessError> UpdateSecurityPolicyOutcome;
@@ -187,18 +199,21 @@ namespace Aws
       typedef std::future<BatchGetVpcEndpointOutcome> BatchGetVpcEndpointOutcomeCallable;
       typedef std::future<CreateAccessPolicyOutcome> CreateAccessPolicyOutcomeCallable;
       typedef std::future<CreateCollectionOutcome> CreateCollectionOutcomeCallable;
+      typedef std::future<CreateIndexOutcome> CreateIndexOutcomeCallable;
       typedef std::future<CreateLifecyclePolicyOutcome> CreateLifecyclePolicyOutcomeCallable;
       typedef std::future<CreateSecurityConfigOutcome> CreateSecurityConfigOutcomeCallable;
       typedef std::future<CreateSecurityPolicyOutcome> CreateSecurityPolicyOutcomeCallable;
       typedef std::future<CreateVpcEndpointOutcome> CreateVpcEndpointOutcomeCallable;
       typedef std::future<DeleteAccessPolicyOutcome> DeleteAccessPolicyOutcomeCallable;
       typedef std::future<DeleteCollectionOutcome> DeleteCollectionOutcomeCallable;
+      typedef std::future<DeleteIndexOutcome> DeleteIndexOutcomeCallable;
       typedef std::future<DeleteLifecyclePolicyOutcome> DeleteLifecyclePolicyOutcomeCallable;
       typedef std::future<DeleteSecurityConfigOutcome> DeleteSecurityConfigOutcomeCallable;
       typedef std::future<DeleteSecurityPolicyOutcome> DeleteSecurityPolicyOutcomeCallable;
       typedef std::future<DeleteVpcEndpointOutcome> DeleteVpcEndpointOutcomeCallable;
       typedef std::future<GetAccessPolicyOutcome> GetAccessPolicyOutcomeCallable;
       typedef std::future<GetAccountSettingsOutcome> GetAccountSettingsOutcomeCallable;
+      typedef std::future<GetIndexOutcome> GetIndexOutcomeCallable;
       typedef std::future<GetPoliciesStatsOutcome> GetPoliciesStatsOutcomeCallable;
       typedef std::future<GetSecurityConfigOutcome> GetSecurityConfigOutcomeCallable;
       typedef std::future<GetSecurityPolicyOutcome> GetSecurityPolicyOutcomeCallable;
@@ -214,6 +229,7 @@ namespace Aws
       typedef std::future<UpdateAccessPolicyOutcome> UpdateAccessPolicyOutcomeCallable;
       typedef std::future<UpdateAccountSettingsOutcome> UpdateAccountSettingsOutcomeCallable;
       typedef std::future<UpdateCollectionOutcome> UpdateCollectionOutcomeCallable;
+      typedef std::future<UpdateIndexOutcome> UpdateIndexOutcomeCallable;
       typedef std::future<UpdateLifecyclePolicyOutcome> UpdateLifecyclePolicyOutcomeCallable;
       typedef std::future<UpdateSecurityConfigOutcome> UpdateSecurityConfigOutcomeCallable;
       typedef std::future<UpdateSecurityPolicyOutcome> UpdateSecurityPolicyOutcomeCallable;
@@ -230,18 +246,21 @@ namespace Aws
     typedef std::function<void(const OpenSearchServerlessClient*, const Model::BatchGetVpcEndpointRequest&, const Model::BatchGetVpcEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetVpcEndpointResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServerlessClient*, const Model::CreateAccessPolicyRequest&, const Model::CreateAccessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccessPolicyResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServerlessClient*, const Model::CreateCollectionRequest&, const Model::CreateCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCollectionResponseReceivedHandler;
+    typedef std::function<void(const OpenSearchServerlessClient*, const Model::CreateIndexRequest&, const Model::CreateIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIndexResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServerlessClient*, const Model::CreateLifecyclePolicyRequest&, const Model::CreateLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLifecyclePolicyResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServerlessClient*, const Model::CreateSecurityConfigRequest&, const Model::CreateSecurityConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSecurityConfigResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServerlessClient*, const Model::CreateSecurityPolicyRequest&, const Model::CreateSecurityPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSecurityPolicyResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServerlessClient*, const Model::CreateVpcEndpointRequest&, const Model::CreateVpcEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVpcEndpointResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServerlessClient*, const Model::DeleteAccessPolicyRequest&, const Model::DeleteAccessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessPolicyResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServerlessClient*, const Model::DeleteCollectionRequest&, const Model::DeleteCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCollectionResponseReceivedHandler;
+    typedef std::function<void(const OpenSearchServerlessClient*, const Model::DeleteIndexRequest&, const Model::DeleteIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIndexResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServerlessClient*, const Model::DeleteLifecyclePolicyRequest&, const Model::DeleteLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLifecyclePolicyResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServerlessClient*, const Model::DeleteSecurityConfigRequest&, const Model::DeleteSecurityConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSecurityConfigResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServerlessClient*, const Model::DeleteSecurityPolicyRequest&, const Model::DeleteSecurityPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSecurityPolicyResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServerlessClient*, const Model::DeleteVpcEndpointRequest&, const Model::DeleteVpcEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVpcEndpointResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServerlessClient*, const Model::GetAccessPolicyRequest&, const Model::GetAccessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessPolicyResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServerlessClient*, const Model::GetAccountSettingsRequest&, const Model::GetAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountSettingsResponseReceivedHandler;
+    typedef std::function<void(const OpenSearchServerlessClient*, const Model::GetIndexRequest&, const Model::GetIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIndexResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServerlessClient*, const Model::GetPoliciesStatsRequest&, const Model::GetPoliciesStatsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPoliciesStatsResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServerlessClient*, const Model::GetSecurityConfigRequest&, const Model::GetSecurityConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSecurityConfigResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServerlessClient*, const Model::GetSecurityPolicyRequest&, const Model::GetSecurityPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSecurityPolicyResponseReceivedHandler;
@@ -257,6 +276,7 @@ namespace Aws
     typedef std::function<void(const OpenSearchServerlessClient*, const Model::UpdateAccessPolicyRequest&, const Model::UpdateAccessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccessPolicyResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServerlessClient*, const Model::UpdateAccountSettingsRequest&, const Model::UpdateAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccountSettingsResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServerlessClient*, const Model::UpdateCollectionRequest&, const Model::UpdateCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCollectionResponseReceivedHandler;
+    typedef std::function<void(const OpenSearchServerlessClient*, const Model::UpdateIndexRequest&, const Model::UpdateIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIndexResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServerlessClient*, const Model::UpdateLifecyclePolicyRequest&, const Model::UpdateLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLifecyclePolicyResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServerlessClient*, const Model::UpdateSecurityConfigRequest&, const Model::UpdateSecurityConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSecurityConfigResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServerlessClient*, const Model::UpdateSecurityPolicyRequest&, const Model::UpdateSecurityPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSecurityPolicyResponseReceivedHandler;

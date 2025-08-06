@@ -48,8 +48,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Resource filters (can be collection or indexes) that policies can apply
-     * to.</p>
+     * <p>Resource filters (can be collection or indexes) that policies can apply to.
+     * </p>
      */
     inline const Aws::Vector<Aws::String>& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }

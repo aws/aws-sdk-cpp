@@ -59,6 +59,21 @@ SourceAttribution& SourceAttribution::operator =(JsonView jsonValue)
     }
     m_textMessageSegmentsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("documentId"))
+  {
+    m_documentId = jsonValue.GetString("documentId");
+    m_documentIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("indexId"))
+  {
+    m_indexId = jsonValue.GetString("indexId");
+    m_indexIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("datasourceId"))
+  {
+    m_datasourceId = jsonValue.GetString("datasourceId");
+    m_datasourceIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -103,6 +118,24 @@ JsonValue SourceAttribution::Jsonize() const
      textMessageSegmentsJsonList[textMessageSegmentsIndex].AsObject(m_textMessageSegments[textMessageSegmentsIndex].Jsonize());
    }
    payload.WithArray("textMessageSegments", std::move(textMessageSegmentsJsonList));
+
+  }
+
+  if(m_documentIdHasBeenSet)
+  {
+   payload.WithString("documentId", m_documentId);
+
+  }
+
+  if(m_indexIdHasBeenSet)
+  {
+   payload.WithString("indexId", m_indexId);
+
+  }
+
+  if(m_datasourceIdHasBeenSet)
+  {
+   payload.WithString("datasourceId", m_datasourceId);
 
   }
 

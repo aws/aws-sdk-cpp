@@ -88,6 +88,16 @@ Budget& Budget::operator =(JsonView jsonValue)
     }
     m_metricsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("BillingViewArn"))
+  {
+    m_billingViewArn = jsonValue.GetString("BillingViewArn");
+    m_billingViewArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("HealthStatus"))
+  {
+    m_healthStatus = jsonValue.GetObject("HealthStatus");
+    m_healthStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -165,6 +175,18 @@ JsonValue Budget::Jsonize() const
      metricsJsonList[metricsIndex].AsString(MetricMapper::GetNameForMetric(m_metrics[metricsIndex]));
    }
    payload.WithArray("Metrics", std::move(metricsJsonList));
+
+  }
+
+  if(m_billingViewArnHasBeenSet)
+  {
+   payload.WithString("BillingViewArn", m_billingViewArn);
+
+  }
+
+  if(m_healthStatusHasBeenSet)
+  {
+   payload.WithObject("HealthStatus", m_healthStatus.Jsonize());
 
   }
 
