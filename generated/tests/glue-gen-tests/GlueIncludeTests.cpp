@@ -145,6 +145,7 @@
 #include <aws/glue/model/Condition.h>
 #include <aws/glue/model/ConditionExpression.h>
 #include <aws/glue/model/ConfigurationObject.h>
+#include <aws/glue/model/ConfigurationSource.h>
 #include <aws/glue/model/ConfusionMatrix.h>
 #include <aws/glue/model/Connection.h>
 #include <aws/glue/model/ConnectionInput.h>
@@ -575,6 +576,8 @@
 #include <aws/glue/model/IcebergCompactionMetrics.h>
 #include <aws/glue/model/IcebergInput.h>
 #include <aws/glue/model/IcebergNullOrder.h>
+#include <aws/glue/model/IcebergOptimizationProperties.h>
+#include <aws/glue/model/IcebergOptimizationPropertiesOutput.h>
 #include <aws/glue/model/IcebergOrphanFileDeletionConfiguration.h>
 #include <aws/glue/model/IcebergOrphanFileDeletionMetrics.h>
 #include <aws/glue/model/IcebergPartitionField.h>

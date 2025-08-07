@@ -246,7 +246,10 @@ namespace Model
      * that an IAM principal with the ability to call this API and set this parameter
      * can override the default settings. Moreover, we encourage that you use a
      * trustworthy buildspec location like a file in your source repository or a Amazon
-     * S3 bucket.</p> 
+     * S3 bucket. Alternatively, you can restrict overrides to the buildspec by using a
+     * condition key: <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html#action-context-keys-example-overridebuildspec.html">Prevent
+     * unauthorized modifications to project buildspec</a>.</p> 
      */
     inline const Aws::String& GetBuildspecOverride() const { return m_buildspecOverride; }
     inline bool BuildspecOverrideHasBeenSet() const { return m_buildspecOverrideHasBeenSet; }

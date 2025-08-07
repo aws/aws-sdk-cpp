@@ -46,18 +46,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The streaming capacity that is allocated and ready to handle stream requests
-     * without delay. You pay for this capacity whether it's in use or not. Best for
-     * quickest time from streaming request to streaming session.</p>
-     */
-    inline int GetAlwaysOnCapacity() const { return m_alwaysOnCapacity; }
-    inline bool AlwaysOnCapacityHasBeenSet() const { return m_alwaysOnCapacityHasBeenSet; }
-    inline void SetAlwaysOnCapacity(int value) { m_alwaysOnCapacityHasBeenSet = true; m_alwaysOnCapacity = value; }
-    inline LocationConfiguration& WithAlwaysOnCapacity(int value) { SetAlwaysOnCapacity(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p> A location's name. For example, <code>us-east-1</code>. For a complete list
      * of locations that Amazon GameLift Streams supports, refer to <a
      * href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions,
@@ -74,6 +62,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The streaming capacity that is allocated and ready to handle stream requests
+     * without delay. You pay for this capacity whether it's in use or not. Best for
+     * quickest time from streaming request to streaming session.</p>
+     */
+    inline int GetAlwaysOnCapacity() const { return m_alwaysOnCapacity; }
+    inline bool AlwaysOnCapacityHasBeenSet() const { return m_alwaysOnCapacityHasBeenSet; }
+    inline void SetAlwaysOnCapacity(int value) { m_alwaysOnCapacityHasBeenSet = true; m_alwaysOnCapacity = value; }
+    inline LocationConfiguration& WithAlwaysOnCapacity(int value) { SetAlwaysOnCapacity(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The streaming capacity that Amazon GameLift Streams can allocate in response
      * to stream requests, and then de-allocate when the session has terminated. This
      * offers a cost control measure at the expense of a greater startup time
@@ -86,11 +86,11 @@ namespace Model
     ///@}
   private:
 
-    int m_alwaysOnCapacity{0};
-    bool m_alwaysOnCapacityHasBeenSet = false;
-
     Aws::String m_locationName;
     bool m_locationNameHasBeenSet = false;
+
+    int m_alwaysOnCapacity{0};
+    bool m_alwaysOnCapacityHasBeenSet = false;
 
     int m_onDemandCapacity{0};
     bool m_onDemandCapacityHasBeenSet = false;

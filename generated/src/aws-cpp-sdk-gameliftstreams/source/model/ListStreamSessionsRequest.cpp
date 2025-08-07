@@ -23,17 +23,17 @@ Aws::String ListStreamSessionsRequest::SerializePayload() const
 void ListStreamSessionsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_statusHasBeenSet)
+    {
+      ss << StreamSessionStatusMapper::GetNameForStreamSessionStatus(m_status);
+      uri.AddQueryStringParameter("Status", ss.str());
+      ss.str("");
+    }
+
     if(m_exportFilesStatusHasBeenSet)
     {
       ss << ExportFilesStatusMapper::GetNameForExportFilesStatus(m_exportFilesStatus);
       uri.AddQueryStringParameter("ExportFilesStatus", ss.str());
-      ss.str("");
-    }
-
-    if(m_maxResultsHasBeenSet)
-    {
-      ss << m_maxResults;
-      uri.AddQueryStringParameter("MaxResults", ss.str());
       ss.str("");
     }
 
@@ -44,10 +44,10 @@ void ListStreamSessionsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
-    if(m_statusHasBeenSet)
+    if(m_maxResultsHasBeenSet)
     {
-      ss << StreamSessionStatusMapper::GetNameForStreamSessionStatus(m_status);
-      uri.AddQueryStringParameter("Status", ss.str());
+      ss << m_maxResults;
+      uri.AddQueryStringParameter("MaxResults", ss.str());
       ss.str("");
     }
 

@@ -30,39 +30,15 @@ GetStreamGroupResult& GetStreamGroupResult::operator =(const Aws::AmazonWebServi
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AssociatedApplications"))
-  {
-    Aws::Utils::Array<JsonView> associatedApplicationsJsonList = jsonValue.GetArray("AssociatedApplications");
-    for(unsigned associatedApplicationsIndex = 0; associatedApplicationsIndex < associatedApplicationsJsonList.GetLength(); ++associatedApplicationsIndex)
-    {
-      m_associatedApplications.push_back(associatedApplicationsJsonList[associatedApplicationsIndex].AsString());
-    }
-    m_associatedApplicationsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("CreatedAt"))
-  {
-    m_createdAt = jsonValue.GetDouble("CreatedAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("DefaultApplication"))
-  {
-    m_defaultApplication = jsonValue.GetObject("DefaultApplication");
-    m_defaultApplicationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Id"))
+  if(jsonValue.ValueExists("DefaultApplication"))
   {
-    m_id = jsonValue.GetString("Id");
-    m_idHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("LastUpdatedAt"))
-  {
-    m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
-    m_lastUpdatedAtHasBeenSet = true;
+    m_defaultApplication = jsonValue.GetObject("DefaultApplication");
+    m_defaultApplicationHasBeenSet = true;
   }
   if(jsonValue.ValueExists("LocationStates"))
   {
@@ -72,6 +48,16 @@ GetStreamGroupResult& GetStreamGroupResult::operator =(const Aws::AmazonWebServi
       m_locationStates.push_back(locationStatesJsonList[locationStatesIndex].AsObject());
     }
     m_locationStatesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("StreamClass"))
+  {
+    m_streamClass = StreamClassMapper::GetStreamClassForName(jsonValue.GetString("StreamClass"));
+    m_streamClassHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Id"))
+  {
+    m_id = jsonValue.GetString("Id");
+    m_idHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Status"))
   {
@@ -83,10 +69,24 @@ GetStreamGroupResult& GetStreamGroupResult::operator =(const Aws::AmazonWebServi
     m_statusReason = StreamGroupStatusReasonMapper::GetStreamGroupStatusReasonForName(jsonValue.GetString("StatusReason"));
     m_statusReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StreamClass"))
+  if(jsonValue.ValueExists("LastUpdatedAt"))
   {
-    m_streamClass = StreamClassMapper::GetStreamClassForName(jsonValue.GetString("StreamClass"));
-    m_streamClassHasBeenSet = true;
+    m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
+    m_lastUpdatedAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("CreatedAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("CreatedAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("AssociatedApplications"))
+  {
+    Aws::Utils::Array<JsonView> associatedApplicationsJsonList = jsonValue.GetArray("AssociatedApplications");
+    for(unsigned associatedApplicationsIndex = 0; associatedApplicationsIndex < associatedApplicationsJsonList.GetLength(); ++associatedApplicationsIndex)
+    {
+      m_associatedApplications.push_back(associatedApplicationsJsonList[associatedApplicationsIndex].AsString());
+    }
+    m_associatedApplicationsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

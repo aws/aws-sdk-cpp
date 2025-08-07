@@ -30,6 +30,16 @@ IcebergCompactionConfiguration& IcebergCompactionConfiguration::operator =(JsonV
     m_strategy = CompactionStrategyMapper::GetCompactionStrategyForName(jsonValue.GetString("strategy"));
     m_strategyHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("minInputFiles"))
+  {
+    m_minInputFiles = jsonValue.GetInteger("minInputFiles");
+    m_minInputFilesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("deleteFileThreshold"))
+  {
+    m_deleteFileThreshold = jsonValue.GetInteger("deleteFileThreshold");
+    m_deleteFileThresholdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +50,18 @@ JsonValue IcebergCompactionConfiguration::Jsonize() const
   if(m_strategyHasBeenSet)
   {
    payload.WithString("strategy", CompactionStrategyMapper::GetNameForCompactionStrategy(m_strategy));
+  }
+
+  if(m_minInputFilesHasBeenSet)
+  {
+   payload.WithInteger("minInputFiles", m_minInputFiles);
+
+  }
+
+  if(m_deleteFileThresholdHasBeenSet)
+  {
+   payload.WithInteger("deleteFileThreshold", m_deleteFileThreshold);
+
   }
 
   return payload;

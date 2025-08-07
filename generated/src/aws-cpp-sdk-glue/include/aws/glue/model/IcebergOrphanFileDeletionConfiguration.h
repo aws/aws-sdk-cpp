@@ -62,6 +62,19 @@ namespace Model
     template<typename LocationT = Aws::String>
     IcebergOrphanFileDeletionConfiguration& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The interval in hours between orphan file deletion job runs. This parameter
+     * controls how frequently the orphan file deletion optimizer will run to clean up
+     * orphan files. The value must be between 3 and 168 hours (7 days). If an input is
+     * not provided, the default value 24 will be used.</p>
+     */
+    inline int GetRunRateInHours() const { return m_runRateInHours; }
+    inline bool RunRateInHoursHasBeenSet() const { return m_runRateInHoursHasBeenSet; }
+    inline void SetRunRateInHours(int value) { m_runRateInHoursHasBeenSet = true; m_runRateInHours = value; }
+    inline IcebergOrphanFileDeletionConfiguration& WithRunRateInHours(int value) { SetRunRateInHours(value); return *this;}
+    ///@}
   private:
 
     int m_orphanFileRetentionPeriodInDays{0};
@@ -69,6 +82,9 @@ namespace Model
 
     Aws::String m_location;
     bool m_locationHasBeenSet = false;
+
+    int m_runRateInHours{0};
+    bool m_runRateInHoursHasBeenSet = false;
   };
 
 } // namespace Model

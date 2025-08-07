@@ -16,25 +16,26 @@ Aws::String StartStreamSessionRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_additionalEnvironmentVariablesHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-   JsonValue additionalEnvironmentVariablesJsonMap;
-   for(auto& additionalEnvironmentVariablesItem : m_additionalEnvironmentVariables)
-   {
-     additionalEnvironmentVariablesJsonMap.WithString(additionalEnvironmentVariablesItem.first, additionalEnvironmentVariablesItem.second);
-   }
-   payload.WithObject("AdditionalEnvironmentVariables", std::move(additionalEnvironmentVariablesJsonMap));
+   payload.WithString("ClientToken", m_clientToken);
 
   }
 
-  if(m_additionalLaunchArgsHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> additionalLaunchArgsJsonList(m_additionalLaunchArgs.size());
-   for(unsigned additionalLaunchArgsIndex = 0; additionalLaunchArgsIndex < additionalLaunchArgsJsonList.GetLength(); ++additionalLaunchArgsIndex)
-   {
-     additionalLaunchArgsJsonList[additionalLaunchArgsIndex].AsString(m_additionalLaunchArgs[additionalLaunchArgsIndex]);
-   }
-   payload.WithArray("AdditionalLaunchArgs", std::move(additionalLaunchArgsJsonList));
+   payload.WithString("Description", m_description);
+
+  }
+
+  if(m_protocolHasBeenSet)
+  {
+   payload.WithString("Protocol", ProtocolMapper::GetNameForProtocol(m_protocol));
+  }
+
+  if(m_signalRequestHasBeenSet)
+  {
+   payload.WithString("SignalRequest", m_signalRequest);
 
   }
 
@@ -44,21 +45,9 @@ Aws::String StartStreamSessionRequest::SerializePayload() const
 
   }
 
-  if(m_clientTokenHasBeenSet)
+  if(m_userIdHasBeenSet)
   {
-   payload.WithString("ClientToken", m_clientToken);
-
-  }
-
-  if(m_connectionTimeoutSecondsHasBeenSet)
-  {
-   payload.WithInteger("ConnectionTimeoutSeconds", m_connectionTimeoutSeconds);
-
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
+   payload.WithString("UserId", m_userId);
 
   }
 
@@ -73,9 +62,10 @@ Aws::String StartStreamSessionRequest::SerializePayload() const
 
   }
 
-  if(m_protocolHasBeenSet)
+  if(m_connectionTimeoutSecondsHasBeenSet)
   {
-   payload.WithString("Protocol", ProtocolMapper::GetNameForProtocol(m_protocol));
+   payload.WithInteger("ConnectionTimeoutSeconds", m_connectionTimeoutSeconds);
+
   }
 
   if(m_sessionLengthSecondsHasBeenSet)
@@ -84,15 +74,25 @@ Aws::String StartStreamSessionRequest::SerializePayload() const
 
   }
 
-  if(m_signalRequestHasBeenSet)
+  if(m_additionalLaunchArgsHasBeenSet)
   {
-   payload.WithString("SignalRequest", m_signalRequest);
+   Aws::Utils::Array<JsonValue> additionalLaunchArgsJsonList(m_additionalLaunchArgs.size());
+   for(unsigned additionalLaunchArgsIndex = 0; additionalLaunchArgsIndex < additionalLaunchArgsJsonList.GetLength(); ++additionalLaunchArgsIndex)
+   {
+     additionalLaunchArgsJsonList[additionalLaunchArgsIndex].AsString(m_additionalLaunchArgs[additionalLaunchArgsIndex]);
+   }
+   payload.WithArray("AdditionalLaunchArgs", std::move(additionalLaunchArgsJsonList));
 
   }
 
-  if(m_userIdHasBeenSet)
+  if(m_additionalEnvironmentVariablesHasBeenSet)
   {
-   payload.WithString("UserId", m_userId);
+   JsonValue additionalEnvironmentVariablesJsonMap;
+   for(auto& additionalEnvironmentVariablesItem : m_additionalEnvironmentVariables)
+   {
+     additionalEnvironmentVariablesJsonMap.WithString(additionalEnvironmentVariablesItem.first, additionalEnvironmentVariablesItem.second);
+   }
+   payload.WithObject("AdditionalEnvironmentVariables", std::move(additionalEnvironmentVariablesJsonMap));
 
   }
 

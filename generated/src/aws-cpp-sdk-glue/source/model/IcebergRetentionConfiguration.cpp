@@ -40,6 +40,11 @@ IcebergRetentionConfiguration& IcebergRetentionConfiguration::operator =(JsonVie
     m_cleanExpiredFiles = jsonValue.GetBool("cleanExpiredFiles");
     m_cleanExpiredFilesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("runRateInHours"))
+  {
+    m_runRateInHours = jsonValue.GetInteger("runRateInHours");
+    m_runRateInHoursHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +67,12 @@ JsonValue IcebergRetentionConfiguration::Jsonize() const
   if(m_cleanExpiredFilesHasBeenSet)
   {
    payload.WithBool("cleanExpiredFiles", m_cleanExpiredFiles);
+
+  }
+
+  if(m_runRateInHoursHasBeenSet)
+  {
+   payload.WithInteger("runRateInHours", m_runRateInHours);
 
   }
 

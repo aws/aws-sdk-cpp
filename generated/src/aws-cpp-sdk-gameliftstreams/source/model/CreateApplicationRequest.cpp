@@ -16,9 +16,27 @@ Aws::String CreateApplicationRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_applicationLogOutputUriHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithString("ApplicationLogOutputUri", m_applicationLogOutputUri);
+   payload.WithString("Description", m_description);
+
+  }
+
+  if(m_runtimeEnvironmentHasBeenSet)
+  {
+   payload.WithObject("RuntimeEnvironment", m_runtimeEnvironment.Jsonize());
+
+  }
+
+  if(m_executablePathHasBeenSet)
+  {
+   payload.WithString("ExecutablePath", m_executablePath);
+
+  }
+
+  if(m_applicationSourceUriHasBeenSet)
+  {
+   payload.WithString("ApplicationSourceUri", m_applicationSourceUri);
 
   }
 
@@ -33,33 +51,9 @@ Aws::String CreateApplicationRequest::SerializePayload() const
 
   }
 
-  if(m_applicationSourceUriHasBeenSet)
+  if(m_applicationLogOutputUriHasBeenSet)
   {
-   payload.WithString("ApplicationSourceUri", m_applicationSourceUri);
-
-  }
-
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("ClientToken", m_clientToken);
-
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
-  }
-
-  if(m_executablePathHasBeenSet)
-  {
-   payload.WithString("ExecutablePath", m_executablePath);
-
-  }
-
-  if(m_runtimeEnvironmentHasBeenSet)
-  {
-   payload.WithObject("RuntimeEnvironment", m_runtimeEnvironment.Jsonize());
+   payload.WithString("ApplicationLogOutputUri", m_applicationLogOutputUri);
 
   }
 
@@ -71,6 +65,12 @@ Aws::String CreateApplicationRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("ClientToken", m_clientToken);
 
   }
 

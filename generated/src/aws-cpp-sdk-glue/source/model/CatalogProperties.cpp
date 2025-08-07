@@ -30,6 +30,11 @@ CatalogProperties& CatalogProperties::operator =(JsonView jsonValue)
     m_dataLakeAccessProperties = jsonValue.GetObject("DataLakeAccessProperties");
     m_dataLakeAccessPropertiesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("IcebergOptimizationProperties"))
+  {
+    m_icebergOptimizationProperties = jsonValue.GetObject("IcebergOptimizationProperties");
+    m_icebergOptimizationPropertiesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("CustomProperties"))
   {
     Aws::Map<Aws::String, JsonView> customPropertiesJsonMap = jsonValue.GetObject("CustomProperties").GetAllObjects();
@@ -49,6 +54,12 @@ JsonValue CatalogProperties::Jsonize() const
   if(m_dataLakeAccessPropertiesHasBeenSet)
   {
    payload.WithObject("DataLakeAccessProperties", m_dataLakeAccessProperties.Jsonize());
+
+  }
+
+  if(m_icebergOptimizationPropertiesHasBeenSet)
+  {
+   payload.WithObject("IcebergOptimizationProperties", m_icebergOptimizationProperties.Jsonize());
 
   }
 

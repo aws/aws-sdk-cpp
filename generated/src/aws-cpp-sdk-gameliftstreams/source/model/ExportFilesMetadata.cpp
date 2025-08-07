@@ -25,11 +25,6 @@ ExportFilesMetadata::ExportFilesMetadata(JsonView jsonValue)
 
 ExportFilesMetadata& ExportFilesMetadata::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("OutputUri"))
-  {
-    m_outputUri = jsonValue.GetString("OutputUri");
-    m_outputUriHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ExportFilesStatusMapper::GetExportFilesStatusForName(jsonValue.GetString("Status"));
@@ -40,18 +35,17 @@ ExportFilesMetadata& ExportFilesMetadata::operator =(JsonView jsonValue)
     m_statusReason = jsonValue.GetString("StatusReason");
     m_statusReasonHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("OutputUri"))
+  {
+    m_outputUri = jsonValue.GetString("OutputUri");
+    m_outputUriHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue ExportFilesMetadata::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_outputUriHasBeenSet)
-  {
-   payload.WithString("OutputUri", m_outputUri);
-
-  }
 
   if(m_statusHasBeenSet)
   {
@@ -61,6 +55,12 @@ JsonValue ExportFilesMetadata::Jsonize() const
   if(m_statusReasonHasBeenSet)
   {
    payload.WithString("StatusReason", m_statusReason);
+
+  }
+
+  if(m_outputUriHasBeenSet)
+  {
+   payload.WithString("OutputUri", m_outputUri);
 
   }
 

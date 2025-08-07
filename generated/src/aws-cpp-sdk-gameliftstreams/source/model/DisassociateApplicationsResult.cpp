@@ -25,6 +25,11 @@ DisassociateApplicationsResult::DisassociateApplicationsResult(const Aws::Amazon
 DisassociateApplicationsResult& DisassociateApplicationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+    m_arnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ApplicationArns"))
   {
     Aws::Utils::Array<JsonView> applicationArnsJsonList = jsonValue.GetArray("ApplicationArns");
@@ -33,11 +38,6 @@ DisassociateApplicationsResult& DisassociateApplicationsResult::operator =(const
       m_applicationArns.push_back(applicationArnsJsonList[applicationArnsIndex].AsString());
     }
     m_applicationArnsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Arn"))
-  {
-    m_arn = jsonValue.GetString("Arn");
-    m_arnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

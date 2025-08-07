@@ -70,6 +70,19 @@ namespace Model
     inline void SetCleanExpiredFiles(bool value) { m_cleanExpiredFilesHasBeenSet = true; m_cleanExpiredFiles = value; }
     inline IcebergRetentionConfiguration& WithCleanExpiredFiles(bool value) { SetCleanExpiredFiles(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The interval in hours between retention job runs. This parameter controls how
+     * frequently the retention optimizer will run to clean up expired snapshots. The
+     * value must be between 3 and 168 hours (7 days). If an input is not provided, the
+     * default value 24 will be used.</p>
+     */
+    inline int GetRunRateInHours() const { return m_runRateInHours; }
+    inline bool RunRateInHoursHasBeenSet() const { return m_runRateInHoursHasBeenSet; }
+    inline void SetRunRateInHours(int value) { m_runRateInHoursHasBeenSet = true; m_runRateInHours = value; }
+    inline IcebergRetentionConfiguration& WithRunRateInHours(int value) { SetRunRateInHours(value); return *this;}
+    ///@}
   private:
 
     int m_snapshotRetentionPeriodInDays{0};
@@ -80,6 +93,9 @@ namespace Model
 
     bool m_cleanExpiredFiles{false};
     bool m_cleanExpiredFilesHasBeenSet = false;
+
+    int m_runRateInHours{0};
+    bool m_runRateInHoursHasBeenSet = false;
   };
 
 } // namespace Model

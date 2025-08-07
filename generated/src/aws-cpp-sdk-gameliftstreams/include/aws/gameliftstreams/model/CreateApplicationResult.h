@@ -6,11 +6,11 @@
 #pragma once
 #include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/gameliftstreams/model/RuntimeEnvironment.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gameliftstreams/model/ApplicationStatus.h>
 #include <aws/gameliftstreams/model/ApplicationStatusReason.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/gameliftstreams/model/ReplicationStatus.h>
 #include <utility>
 
@@ -40,15 +40,61 @@ namespace Model
 
     ///@{
     /**
-     * <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to
-     * save application logs. Required if you specify one or more
-     * <code>ApplicationLogPaths</code>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
+     * Resource Name (ARN)</a> that's assigned to an application resource and uniquely
+     * identifies it across all Amazon Web Services Regions. Format is
+     * <code>arn:aws:gameliftstreams:[AWS Region]:[AWS account]:application/[resource
+     * ID]</code>.</p>
      */
-    inline const Aws::String& GetApplicationLogOutputUri() const { return m_applicationLogOutputUri; }
-    template<typename ApplicationLogOutputUriT = Aws::String>
-    void SetApplicationLogOutputUri(ApplicationLogOutputUriT&& value) { m_applicationLogOutputUriHasBeenSet = true; m_applicationLogOutputUri = std::forward<ApplicationLogOutputUriT>(value); }
-    template<typename ApplicationLogOutputUriT = Aws::String>
-    CreateApplicationResult& WithApplicationLogOutputUri(ApplicationLogOutputUriT&& value) { SetApplicationLogOutputUri(std::forward<ApplicationLogOutputUriT>(value)); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CreateApplicationResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A human-readable label for the application. You can edit this value. </p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateApplicationResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> Configuration settings that identify the operating system for an application
+     * resource. This can also include a compatibility layer and other drivers. </p>
+     * <p>A runtime environment can be one of the following:</p> <ul> <li> <p> For
+     * Linux applications </p> <ul> <li> <p> Ubuntu 22.04 LTS (<code>Type=UBUNTU,
+     * Version=22_04_LTS</code>) </p> </li> </ul> </li> <li> <p> For Windows
+     * applications </p> <ul> <li> <p>Microsoft Windows Server 2022 Base
+     * (<code>Type=WINDOWS, Version=2022</code>)</p> </li> <li> <p>Proton 9.0-2
+     * (<code>Type=PROTON, Version=20250516</code>)</p> </li> <li> <p>Proton 8.0-5
+     * (<code>Type=PROTON, Version=20241007</code>)</p> </li> <li> <p>Proton 8.0-2c
+     * (<code>Type=PROTON, Version=20230704</code>)</p> </li> </ul> </li> </ul>
+     */
+    inline const RuntimeEnvironment& GetRuntimeEnvironment() const { return m_runtimeEnvironment; }
+    template<typename RuntimeEnvironmentT = RuntimeEnvironment>
+    void SetRuntimeEnvironment(RuntimeEnvironmentT&& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = std::forward<RuntimeEnvironmentT>(value); }
+    template<typename RuntimeEnvironmentT = RuntimeEnvironment>
+    CreateApplicationResult& WithRuntimeEnvironment(RuntimeEnvironmentT&& value) { SetRuntimeEnvironment(std::forward<RuntimeEnvironmentT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The path and file name of the executable file that launches the content for
+     * streaming.</p>
+     */
+    inline const Aws::String& GetExecutablePath() const { return m_executablePath; }
+    template<typename ExecutablePathT = Aws::String>
+    void SetExecutablePath(ExecutablePathT&& value) { m_executablePathHasBeenSet = true; m_executablePath = std::forward<ExecutablePathT>(value); }
+    template<typename ExecutablePathT = Aws::String>
+    CreateApplicationResult& WithExecutablePath(ExecutablePathT&& value) { SetExecutablePath(std::forward<ExecutablePathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,6 +117,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to
+     * save application logs. Required if you specify one or more
+     * <code>ApplicationLogPaths</code>.</p>
+     */
+    inline const Aws::String& GetApplicationLogOutputUri() const { return m_applicationLogOutputUri; }
+    template<typename ApplicationLogOutputUriT = Aws::String>
+    void SetApplicationLogOutputUri(ApplicationLogOutputUriT&& value) { m_applicationLogOutputUriHasBeenSet = true; m_applicationLogOutputUri = std::forward<ApplicationLogOutputUriT>(value); }
+    template<typename ApplicationLogOutputUriT = Aws::String>
+    CreateApplicationResult& WithApplicationLogOutputUri(ApplicationLogOutputUriT&& value) { SetApplicationLogOutputUri(std::forward<ApplicationLogOutputUriT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The original Amazon S3 location of uploaded stream content for the
      * application.</p>
      */
@@ -83,72 +142,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
-     * Resource Name (ARN)</a> that's assigned to an application resource and uniquely
-     * identifies it across all Amazon Web Services Regions. Format is
-     * <code>arn:aws:gameliftstreams:[AWS Region]:[AWS account]:application/[resource
-     * ID]</code>.</p>
-     */
-    inline const Aws::String& GetArn() const { return m_arn; }
-    template<typename ArnT = Aws::String>
-    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
-    template<typename ArnT = Aws::String>
-    CreateApplicationResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A newly created application is not associated to any stream groups. This
-     * value is empty.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetAssociatedStreamGroups() const { return m_associatedStreamGroups; }
-    template<typename AssociatedStreamGroupsT = Aws::Vector<Aws::String>>
-    void SetAssociatedStreamGroups(AssociatedStreamGroupsT&& value) { m_associatedStreamGroupsHasBeenSet = true; m_associatedStreamGroups = std::forward<AssociatedStreamGroupsT>(value); }
-    template<typename AssociatedStreamGroupsT = Aws::Vector<Aws::String>>
-    CreateApplicationResult& WithAssociatedStreamGroups(AssociatedStreamGroupsT&& value) { SetAssociatedStreamGroups(std::forward<AssociatedStreamGroupsT>(value)); return *this;}
-    template<typename AssociatedStreamGroupsT = Aws::String>
-    CreateApplicationResult& AddAssociatedStreamGroups(AssociatedStreamGroupsT&& value) { m_associatedStreamGroupsHasBeenSet = true; m_associatedStreamGroups.emplace_back(std::forward<AssociatedStreamGroupsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>A timestamp that indicates when this resource was created. Timestamps are
-     * expressed using in ISO8601 format, such as:
-     * <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    CreateApplicationResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A human-readable label for the application. You can edit this value. </p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    CreateApplicationResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The path and file name of the executable file that launches the content for
-     * streaming.</p>
-     */
-    inline const Aws::String& GetExecutablePath() const { return m_executablePath; }
-    template<typename ExecutablePathT = Aws::String>
-    void SetExecutablePath(ExecutablePathT&& value) { m_executablePathHasBeenSet = true; m_executablePath = std::forward<ExecutablePathT>(value); }
-    template<typename ExecutablePathT = Aws::String>
-    CreateApplicationResult& WithExecutablePath(ExecutablePathT&& value) { SetExecutablePath(std::forward<ExecutablePathT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A unique ID value that is assigned to the resource when it's created. Format
      * example: <code>a-9ZY8X7Wv6</code>.</p>
      */
@@ -157,51 +150,6 @@ namespace Model
     void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
     template<typename IdT = Aws::String>
     CreateApplicationResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A timestamp that indicates when this resource was last updated. Timestamps
-     * are expressed using in ISO8601 format, such as:
-     * <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
-    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
-    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
-    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
-    CreateApplicationResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A set of replication statuses for each location.</p>
-     */
-    inline const Aws::Vector<ReplicationStatus>& GetReplicationStatuses() const { return m_replicationStatuses; }
-    template<typename ReplicationStatusesT = Aws::Vector<ReplicationStatus>>
-    void SetReplicationStatuses(ReplicationStatusesT&& value) { m_replicationStatusesHasBeenSet = true; m_replicationStatuses = std::forward<ReplicationStatusesT>(value); }
-    template<typename ReplicationStatusesT = Aws::Vector<ReplicationStatus>>
-    CreateApplicationResult& WithReplicationStatuses(ReplicationStatusesT&& value) { SetReplicationStatuses(std::forward<ReplicationStatusesT>(value)); return *this;}
-    template<typename ReplicationStatusesT = ReplicationStatus>
-    CreateApplicationResult& AddReplicationStatuses(ReplicationStatusesT&& value) { m_replicationStatusesHasBeenSet = true; m_replicationStatuses.emplace_back(std::forward<ReplicationStatusesT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p> Configuration settings that identify the operating system for an application
-     * resource. This can also include a compatibility layer and other drivers. </p>
-     * <p>A runtime environment can be one of the following:</p> <ul> <li> <p> For
-     * Linux applications </p> <ul> <li> <p> Ubuntu 22.04 LTS (<code>Type=UBUNTU,
-     * Version=22_04_LTS</code>) </p> </li> </ul> </li> <li> <p> For Windows
-     * applications </p> <ul> <li> <p>Microsoft Windows Server 2022 Base
-     * (<code>Type=WINDOWS, Version=2022</code>)</p> </li> <li> <p>Proton 8.0-5
-     * (<code>Type=PROTON, Version=20241007</code>)</p> </li> <li> <p>Proton 8.0-2c
-     * (<code>Type=PROTON, Version=20230704</code>)</p> </li> </ul> </li> </ul>
-     */
-    inline const RuntimeEnvironment& GetRuntimeEnvironment() const { return m_runtimeEnvironment; }
-    template<typename RuntimeEnvironmentT = RuntimeEnvironment>
-    void SetRuntimeEnvironment(RuntimeEnvironmentT&& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = std::forward<RuntimeEnvironmentT>(value); }
-    template<typename RuntimeEnvironmentT = RuntimeEnvironment>
-    CreateApplicationResult& WithRuntimeEnvironment(RuntimeEnvironmentT&& value) { SetRuntimeEnvironment(std::forward<RuntimeEnvironmentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -234,6 +182,59 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>A set of replication statuses for each location.</p>
+     */
+    inline const Aws::Vector<ReplicationStatus>& GetReplicationStatuses() const { return m_replicationStatuses; }
+    template<typename ReplicationStatusesT = Aws::Vector<ReplicationStatus>>
+    void SetReplicationStatuses(ReplicationStatusesT&& value) { m_replicationStatusesHasBeenSet = true; m_replicationStatuses = std::forward<ReplicationStatusesT>(value); }
+    template<typename ReplicationStatusesT = Aws::Vector<ReplicationStatus>>
+    CreateApplicationResult& WithReplicationStatuses(ReplicationStatusesT&& value) { SetReplicationStatuses(std::forward<ReplicationStatusesT>(value)); return *this;}
+    template<typename ReplicationStatusesT = ReplicationStatus>
+    CreateApplicationResult& AddReplicationStatuses(ReplicationStatusesT&& value) { m_replicationStatusesHasBeenSet = true; m_replicationStatuses.emplace_back(std::forward<ReplicationStatusesT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>A timestamp that indicates when this resource was created. Timestamps are
+     * expressed using in ISO8601 format, such as:
+     * <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    CreateApplicationResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A timestamp that indicates when this resource was last updated. Timestamps
+     * are expressed using in ISO8601 format, such as:
+     * <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    CreateApplicationResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A newly created application is not associated to any stream groups. This
+     * value is empty.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAssociatedStreamGroups() const { return m_associatedStreamGroups; }
+    template<typename AssociatedStreamGroupsT = Aws::Vector<Aws::String>>
+    void SetAssociatedStreamGroups(AssociatedStreamGroupsT&& value) { m_associatedStreamGroupsHasBeenSet = true; m_associatedStreamGroups = std::forward<AssociatedStreamGroupsT>(value); }
+    template<typename AssociatedStreamGroupsT = Aws::Vector<Aws::String>>
+    CreateApplicationResult& WithAssociatedStreamGroups(AssociatedStreamGroupsT&& value) { SetAssociatedStreamGroups(std::forward<AssociatedStreamGroupsT>(value)); return *this;}
+    template<typename AssociatedStreamGroupsT = Aws::String>
+    CreateApplicationResult& AddAssociatedStreamGroups(AssociatedStreamGroupsT&& value) { m_associatedStreamGroupsHasBeenSet = true; m_associatedStreamGroups.emplace_back(std::forward<AssociatedStreamGroupsT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -243,47 +244,47 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_applicationLogOutputUri;
-    bool m_applicationLogOutputUriHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_applicationLogPaths;
-    bool m_applicationLogPathsHasBeenSet = false;
-
-    Aws::String m_applicationSourceUri;
-    bool m_applicationSourceUriHasBeenSet = false;
-
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_associatedStreamGroups;
-    bool m_associatedStreamGroupsHasBeenSet = false;
-
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
+    RuntimeEnvironment m_runtimeEnvironment;
+    bool m_runtimeEnvironmentHasBeenSet = false;
+
     Aws::String m_executablePath;
     bool m_executablePathHasBeenSet = false;
 
+    Aws::Vector<Aws::String> m_applicationLogPaths;
+    bool m_applicationLogPathsHasBeenSet = false;
+
+    Aws::String m_applicationLogOutputUri;
+    bool m_applicationLogOutputUriHasBeenSet = false;
+
+    Aws::String m_applicationSourceUri;
+    bool m_applicationSourceUriHasBeenSet = false;
+
     Aws::String m_id;
     bool m_idHasBeenSet = false;
-
-    Aws::Utils::DateTime m_lastUpdatedAt{};
-    bool m_lastUpdatedAtHasBeenSet = false;
-
-    Aws::Vector<ReplicationStatus> m_replicationStatuses;
-    bool m_replicationStatusesHasBeenSet = false;
-
-    RuntimeEnvironment m_runtimeEnvironment;
-    bool m_runtimeEnvironmentHasBeenSet = false;
 
     ApplicationStatus m_status{ApplicationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     ApplicationStatusReason m_statusReason{ApplicationStatusReason::NOT_SET};
     bool m_statusReasonHasBeenSet = false;
+
+    Aws::Vector<ReplicationStatus> m_replicationStatuses;
+    bool m_replicationStatusesHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_associatedStreamGroups;
+    bool m_associatedStreamGroupsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

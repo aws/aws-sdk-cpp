@@ -16,12 +16,6 @@ Aws::String UpdateStreamGroupRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
-  }
-
   if(m_locationConfigurationsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> locationConfigurationsJsonList(m_locationConfigurations.size());
@@ -30,6 +24,12 @@ Aws::String UpdateStreamGroupRequest::SerializePayload() const
      locationConfigurationsJsonList[locationConfigurationsIndex].AsObject(m_locationConfigurations[locationConfigurationsIndex].Jsonize());
    }
    payload.WithArray("LocationConfigurations", std::move(locationConfigurationsJsonList));
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
 
   }
 

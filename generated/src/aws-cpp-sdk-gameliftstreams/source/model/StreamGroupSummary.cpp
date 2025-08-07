@@ -30,40 +30,40 @@ StreamGroupSummary& StreamGroupSummary::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedAt"))
+  if(jsonValue.ValueExists("Id"))
   {
-    m_createdAt = jsonValue.GetDouble("CreatedAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("DefaultApplication"))
-  {
-    m_defaultApplication = jsonValue.GetObject("DefaultApplication");
-    m_defaultApplicationHasBeenSet = true;
+    m_id = jsonValue.GetString("Id");
+    m_idHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Id"))
+  if(jsonValue.ValueExists("DefaultApplication"))
   {
-    m_id = jsonValue.GetString("Id");
-    m_idHasBeenSet = true;
+    m_defaultApplication = jsonValue.GetObject("DefaultApplication");
+    m_defaultApplicationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastUpdatedAt"))
+  if(jsonValue.ValueExists("StreamClass"))
   {
-    m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
-    m_lastUpdatedAtHasBeenSet = true;
+    m_streamClass = StreamClassMapper::GetStreamClassForName(jsonValue.GetString("StreamClass"));
+    m_streamClassHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StreamGroupStatusMapper::GetStreamGroupStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StreamClass"))
+  if(jsonValue.ValueExists("CreatedAt"))
   {
-    m_streamClass = StreamClassMapper::GetStreamClassForName(jsonValue.GetString("StreamClass"));
-    m_streamClassHasBeenSet = true;
+    m_createdAt = jsonValue.GetDouble("CreatedAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("LastUpdatedAt"))
+  {
+    m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
+    m_lastUpdatedAtHasBeenSet = true;
   }
   return *this;
 }
@@ -78,14 +78,9 @@ JsonValue StreamGroupSummary::Jsonize() const
 
   }
 
-  if(m_createdAtHasBeenSet)
+  if(m_idHasBeenSet)
   {
-   payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
-  }
-
-  if(m_defaultApplicationHasBeenSet)
-  {
-   payload.WithObject("DefaultApplication", m_defaultApplication.Jsonize());
+   payload.WithString("Id", m_id);
 
   }
 
@@ -95,15 +90,15 @@ JsonValue StreamGroupSummary::Jsonize() const
 
   }
 
-  if(m_idHasBeenSet)
+  if(m_defaultApplicationHasBeenSet)
   {
-   payload.WithString("Id", m_id);
+   payload.WithObject("DefaultApplication", m_defaultApplication.Jsonize());
 
   }
 
-  if(m_lastUpdatedAtHasBeenSet)
+  if(m_streamClassHasBeenSet)
   {
-   payload.WithDouble("LastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
+   payload.WithString("StreamClass", StreamClassMapper::GetNameForStreamClass(m_streamClass));
   }
 
   if(m_statusHasBeenSet)
@@ -111,9 +106,14 @@ JsonValue StreamGroupSummary::Jsonize() const
    payload.WithString("Status", StreamGroupStatusMapper::GetNameForStreamGroupStatus(m_status));
   }
 
-  if(m_streamClassHasBeenSet)
+  if(m_createdAtHasBeenSet)
   {
-   payload.WithString("StreamClass", StreamClassMapper::GetNameForStreamClass(m_streamClass));
+   payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if(m_lastUpdatedAtHasBeenSet)
+  {
+   payload.WithDouble("LastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
   }
 
   return payload;

@@ -54,11 +54,11 @@ namespace Model
      * first compute environment is <code>LINUX</code>, the compute environment is
      * skipped and the next compute environment is checked until a Windows-based
      * compute environment is found.</p>   <p>Fargate Spot is not
-     * supported for <code>ARM64</code> and Windows-based containers on Fargate. A job
-     * queue will be blocked if a Fargate <code>ARM64</code> or Windows job is
-     * submitted to a job queue with only Fargate Spot compute environments. However,
-     * you can attach both <code>FARGATE</code> and <code>FARGATE_SPOT</code> compute
-     * environments to the same job queue.</p> 
+     * supported on Windows-based containers on Fargate. A job queue will be blocked if
+     * a Windows job is submitted to a job queue with only Fargate Spot compute
+     * environments. However, you can attach both <code>FARGATE</code> and
+     * <code>FARGATE_SPOT</code> compute environments to the same job queue.</p>
+     * 
      */
     inline const Aws::String& GetOperatingSystemFamily() const { return m_operatingSystemFamily; }
     inline bool OperatingSystemFamilyHasBeenSet() const { return m_operatingSystemFamilyHasBeenSet; }
@@ -70,15 +70,14 @@ namespace Model
 
     ///@{
     /**
-     * <p> The vCPU architecture. The default value is <code>X86_64</code>. Valid
-     * values are <code>X86_64</code> and <code>ARM64</code>.</p>  <p>This
-     * parameter must be set to <code>X86_64</code> for Windows containers.</p> 
-     *  <p>Fargate Spot is not supported for <code>ARM64</code> and Windows-based
-     * containers on Fargate. A job queue will be blocked if a Fargate
-     * <code>ARM64</code> or Windows job is submitted to a job queue with only Fargate
-     * Spot compute environments. However, you can attach both <code>FARGATE</code> and
-     * <code>FARGATE_SPOT</code> compute environments to the same job queue.</p>
-     * 
+     * <p>The vCPU architecture. The default value is <code>X86_64</code>. Valid values
+     * are <code>X86_64</code> and <code>ARM64</code>.</p>  <p>This parameter
+     * must be set to <code>X86_64</code> for Windows containers.</p>  
+     * <p>Fargate Spot is not supported on Windows-based containers on Fargate. A job
+     * queue will be blocked if a Windows job is submitted to a job queue with only
+     * Fargate Spot compute environments. However, you can attach both
+     * <code>FARGATE</code> and <code>FARGATE_SPOT</code> compute environments to the
+     * same job queue.</p> 
      */
     inline const Aws::String& GetCpuArchitecture() const { return m_cpuArchitecture; }
     inline bool CpuArchitectureHasBeenSet() const { return m_cpuArchitectureHasBeenSet; }

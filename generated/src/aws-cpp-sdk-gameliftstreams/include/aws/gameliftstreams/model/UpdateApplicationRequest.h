@@ -35,21 +35,31 @@ namespace Model
 
     ///@{
     /**
-     * <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to
-     * save application logs. Required if you specify one or more
-     * <code>ApplicationLogPaths</code>.</p>  <p>The log bucket must have
-     * permissions that give Amazon GameLift Streams access to write the log files. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/applications.html#application-bucket-permission-template">Application
-     * log bucket permission policy</a> in the <i>Amazon GameLift Streams Developer
-     * Guide</i>. </p> 
+     * <p>An <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
+     * Resource Name (ARN)</a> or ID that uniquely identifies the application resource.
+     * Example ARN:
+     * <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.
+     * Example ID: <code>a-9ZY8X7Wv6</code>. </p>
      */
-    inline const Aws::String& GetApplicationLogOutputUri() const { return m_applicationLogOutputUri; }
-    inline bool ApplicationLogOutputUriHasBeenSet() const { return m_applicationLogOutputUriHasBeenSet; }
-    template<typename ApplicationLogOutputUriT = Aws::String>
-    void SetApplicationLogOutputUri(ApplicationLogOutputUriT&& value) { m_applicationLogOutputUriHasBeenSet = true; m_applicationLogOutputUri = std::forward<ApplicationLogOutputUriT>(value); }
-    template<typename ApplicationLogOutputUriT = Aws::String>
-    UpdateApplicationRequest& WithApplicationLogOutputUri(ApplicationLogOutputUriT&& value) { SetApplicationLogOutputUri(std::forward<ApplicationLogOutputUriT>(value)); return *this;}
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
+    inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    UpdateApplicationRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A human-readable label for the application.</p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateApplicationRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,45 +85,35 @@ namespace Model
 
     ///@{
     /**
-     * <p>A human-readable label for the application.</p>
+     * <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to
+     * save application logs. Required if you specify one or more
+     * <code>ApplicationLogPaths</code>.</p>  <p>The log bucket must have
+     * permissions that give Amazon GameLift Streams access to write the log files. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/applications.html#application-bucket-permission-template">Application
+     * log bucket permission policy</a> in the <i>Amazon GameLift Streams Developer
+     * Guide</i>. </p> 
      */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    UpdateApplicationRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>An <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
-     * Resource Name (ARN)</a> or ID that uniquely identifies the application resource.
-     * Example ARN:
-     * <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.
-     * Example ID: <code>a-9ZY8X7Wv6</code>. </p>
-     */
-    inline const Aws::String& GetIdentifier() const { return m_identifier; }
-    inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    template<typename IdentifierT = Aws::String>
-    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
-    template<typename IdentifierT = Aws::String>
-    UpdateApplicationRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
+    inline const Aws::String& GetApplicationLogOutputUri() const { return m_applicationLogOutputUri; }
+    inline bool ApplicationLogOutputUriHasBeenSet() const { return m_applicationLogOutputUriHasBeenSet; }
+    template<typename ApplicationLogOutputUriT = Aws::String>
+    void SetApplicationLogOutputUri(ApplicationLogOutputUriT&& value) { m_applicationLogOutputUriHasBeenSet = true; m_applicationLogOutputUri = std::forward<ApplicationLogOutputUriT>(value); }
+    template<typename ApplicationLogOutputUriT = Aws::String>
+    UpdateApplicationRequest& WithApplicationLogOutputUri(ApplicationLogOutputUriT&& value) { SetApplicationLogOutputUri(std::forward<ApplicationLogOutputUriT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::String m_applicationLogOutputUri;
-    bool m_applicationLogOutputUriHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_applicationLogPaths;
-    bool m_applicationLogPathsHasBeenSet = false;
+    Aws::String m_identifier;
+    bool m_identifierHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::String m_identifier;
-    bool m_identifierHasBeenSet = false;
+    Aws::Vector<Aws::String> m_applicationLogPaths;
+    bool m_applicationLogPathsHasBeenSet = false;
+
+    Aws::String m_applicationLogOutputUri;
+    bool m_applicationLogOutputUriHasBeenSet = false;
   };
 
 } // namespace Model

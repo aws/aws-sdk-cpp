@@ -35,6 +35,11 @@ IcebergOrphanFileDeletionConfiguration& IcebergOrphanFileDeletionConfiguration::
     m_location = jsonValue.GetString("location");
     m_locationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("runRateInHours"))
+  {
+    m_runRateInHours = jsonValue.GetInteger("runRateInHours");
+    m_runRateInHoursHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -51,6 +56,12 @@ JsonValue IcebergOrphanFileDeletionConfiguration::Jsonize() const
   if(m_locationHasBeenSet)
   {
    payload.WithString("location", m_location);
+
+  }
+
+  if(m_runRateInHoursHasBeenSet)
+  {
+   payload.WithInteger("runRateInHours", m_runRateInHours);
 
   }
 

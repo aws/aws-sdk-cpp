@@ -61,6 +61,12 @@ Aws::String CreateWebhookRequest::SerializePayload() const
 
   }
 
+  if(m_pullRequestBuildPolicyHasBeenSet)
+  {
+   payload.WithObject("pullRequestBuildPolicy", m_pullRequestBuildPolicy.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

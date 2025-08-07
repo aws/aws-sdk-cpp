@@ -25,10 +25,25 @@ GetApplicationResult::GetApplicationResult(const Aws::AmazonWebServiceResult<Jso
 GetApplicationResult& GetApplicationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ApplicationLogOutputUri"))
+  if(jsonValue.ValueExists("Arn"))
   {
-    m_applicationLogOutputUri = jsonValue.GetString("ApplicationLogOutputUri");
-    m_applicationLogOutputUriHasBeenSet = true;
+    m_arn = jsonValue.GetString("Arn");
+    m_arnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+    m_descriptionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("RuntimeEnvironment"))
+  {
+    m_runtimeEnvironment = jsonValue.GetObject("RuntimeEnvironment");
+    m_runtimeEnvironmentHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ExecutablePath"))
+  {
+    m_executablePath = jsonValue.GetString("ExecutablePath");
+    m_executablePathHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ApplicationLogPaths"))
   {
@@ -39,63 +54,20 @@ GetApplicationResult& GetApplicationResult::operator =(const Aws::AmazonWebServi
     }
     m_applicationLogPathsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ApplicationLogOutputUri"))
+  {
+    m_applicationLogOutputUri = jsonValue.GetString("ApplicationLogOutputUri");
+    m_applicationLogOutputUriHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ApplicationSourceUri"))
   {
     m_applicationSourceUri = jsonValue.GetString("ApplicationSourceUri");
     m_applicationSourceUriHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Arn"))
-  {
-    m_arn = jsonValue.GetString("Arn");
-    m_arnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("AssociatedStreamGroups"))
-  {
-    Aws::Utils::Array<JsonView> associatedStreamGroupsJsonList = jsonValue.GetArray("AssociatedStreamGroups");
-    for(unsigned associatedStreamGroupsIndex = 0; associatedStreamGroupsIndex < associatedStreamGroupsJsonList.GetLength(); ++associatedStreamGroupsIndex)
-    {
-      m_associatedStreamGroups.push_back(associatedStreamGroupsJsonList[associatedStreamGroupsIndex].AsString());
-    }
-    m_associatedStreamGroupsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("CreatedAt"))
-  {
-    m_createdAt = jsonValue.GetDouble("CreatedAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Description"))
-  {
-    m_description = jsonValue.GetString("Description");
-    m_descriptionHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("ExecutablePath"))
-  {
-    m_executablePath = jsonValue.GetString("ExecutablePath");
-    m_executablePathHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("LastUpdatedAt"))
-  {
-    m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
-    m_lastUpdatedAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("ReplicationStatuses"))
-  {
-    Aws::Utils::Array<JsonView> replicationStatusesJsonList = jsonValue.GetArray("ReplicationStatuses");
-    for(unsigned replicationStatusesIndex = 0; replicationStatusesIndex < replicationStatusesJsonList.GetLength(); ++replicationStatusesIndex)
-    {
-      m_replicationStatuses.push_back(replicationStatusesJsonList[replicationStatusesIndex].AsObject());
-    }
-    m_replicationStatusesHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("RuntimeEnvironment"))
-  {
-    m_runtimeEnvironment = jsonValue.GetObject("RuntimeEnvironment");
-    m_runtimeEnvironmentHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Status"))
   {
@@ -106,6 +78,34 @@ GetApplicationResult& GetApplicationResult::operator =(const Aws::AmazonWebServi
   {
     m_statusReason = ApplicationStatusReasonMapper::GetApplicationStatusReasonForName(jsonValue.GetString("StatusReason"));
     m_statusReasonHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ReplicationStatuses"))
+  {
+    Aws::Utils::Array<JsonView> replicationStatusesJsonList = jsonValue.GetArray("ReplicationStatuses");
+    for(unsigned replicationStatusesIndex = 0; replicationStatusesIndex < replicationStatusesJsonList.GetLength(); ++replicationStatusesIndex)
+    {
+      m_replicationStatuses.push_back(replicationStatusesJsonList[replicationStatusesIndex].AsObject());
+    }
+    m_replicationStatusesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("CreatedAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("CreatedAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("LastUpdatedAt"))
+  {
+    m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
+    m_lastUpdatedAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("AssociatedStreamGroups"))
+  {
+    Aws::Utils::Array<JsonView> associatedStreamGroupsJsonList = jsonValue.GetArray("AssociatedStreamGroups");
+    for(unsigned associatedStreamGroupsIndex = 0; associatedStreamGroupsIndex < associatedStreamGroupsJsonList.GetLength(); ++associatedStreamGroupsIndex)
+    {
+      m_associatedStreamGroups.push_back(associatedStreamGroupsJsonList[associatedStreamGroupsIndex].AsString());
+    }
+    m_associatedStreamGroupsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

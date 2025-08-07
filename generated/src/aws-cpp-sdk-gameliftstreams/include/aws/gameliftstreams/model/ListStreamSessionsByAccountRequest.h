@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
 #include <aws/gameliftstreams/GameLiftStreamsRequest.h>
+#include <aws/gameliftstreams/model/StreamSessionStatus.h>
 #include <aws/gameliftstreams/model/ExportFilesStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/gameliftstreams/model/StreamSessionStatus.h>
 #include <utility>
 
 namespace Aws
@@ -42,6 +42,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>Filter by the stream session status. You can specify one status in each
+     * request to retrieve only sessions that are currently in that status.</p>
+     */
+    inline StreamSessionStatus GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(StreamSessionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListStreamSessionsByAccountRequest& WithStatus(StreamSessionStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Filter by the exported files status. You can specify one status in each
      * request to retrieve only sessions that currently have that exported files
      * status.</p>
@@ -50,18 +61,6 @@ namespace Model
     inline bool ExportFilesStatusHasBeenSet() const { return m_exportFilesStatusHasBeenSet; }
     inline void SetExportFilesStatus(ExportFilesStatus value) { m_exportFilesStatusHasBeenSet = true; m_exportFilesStatus = value; }
     inline ListStreamSessionsByAccountRequest& WithExportFilesStatus(ExportFilesStatus value) { SetExportFilesStatus(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The number of results to return. Use this parameter with
-     * <code>NextToken</code> to return results in sequential pages. Default value is
-     * <code>25</code>. </p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListStreamSessionsByAccountRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
 
     ///@{
@@ -81,27 +80,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>Filter by the stream session status. You can specify one status in each
-     * request to retrieve only sessions that are currently in that status.</p>
+     * <p>The number of results to return. Use this parameter with
+     * <code>NextToken</code> to return results in sequential pages. Default value is
+     * <code>25</code>. </p>
      */
-    inline StreamSessionStatus GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(StreamSessionStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline ListStreamSessionsByAccountRequest& WithStatus(StreamSessionStatus value) { SetStatus(value); return *this;}
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListStreamSessionsByAccountRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
+
+    StreamSessionStatus m_status{StreamSessionStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     ExportFilesStatus m_exportFilesStatus{ExportFilesStatus::NOT_SET};
     bool m_exportFilesStatusHasBeenSet = false;
 
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    StreamSessionStatus m_status{StreamSessionStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model
