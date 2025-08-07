@@ -910,6 +910,9 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, co
             if (compressOutcome.IsSuccess()) {
                 Aws::String compressionAlgorithmId = Aws::Client::GetCompressionAlgorithmId(selectedCompressionAlgorithm);
                 AppendHeaderValueToRequest(httpRequest, CONTENT_ENCODING_HEADER, compressionAlgorithmId);
+                if (selectedCompressionAlgorithm == Aws::Client::CompressionAlgorithm::GZIP) {
+                  request.AddUserAgentFeature(Aws::Client::UserAgentFeature::GZIP_REQUEST_COMPRESSION);
+                }
                 AddContentBodyToRequest(
                     httpRequest, compressOutcome.GetResult(),
                     request.ShouldComputeContentMd5(),
