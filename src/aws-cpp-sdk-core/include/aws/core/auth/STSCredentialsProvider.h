@@ -7,15 +7,11 @@
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/internal/AWSHttpResourceClient.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
-
-namespace Aws {
-namespace Crt {
-namespace Auth {
-class ICredentialsProvider;
-}
-}
-}
+#include <memory>
 
 namespace Aws
 {
@@ -31,7 +27,6 @@ namespace Aws
         public:
             STSAssumeRoleWebIdentityCredentialsProvider();
             STSAssumeRoleWebIdentityCredentialsProvider(Aws::Client::ClientConfiguration::CredentialProviderConfiguration config);
-            virtual ~STSAssumeRoleWebIdentityCredentialsProvider();
 
             /**
              * Retrieves the credentials if found, otherwise returns empty credential set.
@@ -42,14 +37,17 @@ namespace Aws
             void Reload() override;
 
         private:
-            enum class STATE {
-              INITIALIZED,
-              SHUT_DOWN,
-            } m_state{STATE::SHUT_DOWN};
-            std::mutex m_refreshMutex;
-            std::condition_variable m_refreshSignal;
-            std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_credentialsProvider;
-            std::chrono::milliseconds m_providerFuturesTimeoutMs;
+            void RefreshIfExpired();
+            Aws::String CalculateQueryString() const;
+
+            Aws::UniquePtr<Aws::Internal::STSCredentialsClient> m_client;
+            Aws::Auth::AWSCredentials m_credentials;
+            Aws::String m_roleArn;
+            Aws::String m_tokenFile;
+            Aws::String m_sessionName;
+            Aws::String m_token;
+            bool m_initialized;
+            bool ExpiresSoon() const;
         };
     } // namespace Auth
 } // namespace Aws

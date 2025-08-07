@@ -6,7 +6,6 @@
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
-#include <memory>
 
 namespace Aws
 {
