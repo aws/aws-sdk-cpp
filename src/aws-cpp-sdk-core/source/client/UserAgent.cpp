@@ -27,6 +27,7 @@ const std::pair<UserAgentFeature, const char*> BUSINESS_METRIC_MAPPING[] = {
     {UserAgentFeature::S3_TRANSFER, "G"},
     {UserAgentFeature::S3_CRYPTO_V1N, "H"},
     {UserAgentFeature::S3_CRYPTO_V2, "I"},
+    {UserAgentFeature::S3_EXPRESS_BUCKET, "J"},
     {UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC32, "U"},
     {UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC32C, "V"},
     {UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC64, "W"},
