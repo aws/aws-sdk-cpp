@@ -196,6 +196,8 @@ protected:
         config.scheme = Scheme::HTTP;
         config.connectTimeoutMs = 30000;
         config.requestTimeoutMs = 30000;
+        config.requestCompressionConfig.useRequestCompression = UseRequestCompression::ENABLE;
+        config.requestCompressionConfig.requestMinCompressionSizeBytes = 10240;
         auto countedRetryStrategy = Aws::MakeShared<CountedRetryStrategy>(ALLOCATION_TAG);
         config.retryStrategy = std::static_pointer_cast<DefaultRetryStrategy>(countedRetryStrategy);
 
@@ -330,3 +332,31 @@ TEST_F(MonitoringTestSuite, TestHttpClientMetrics)
     ASSERT_STREQ("SslLatency", GetHttpClientMetricNameByType(HttpClientMetricsType::SslLatency).c_str());
     ASSERT_STREQ("Unknown", GetHttpClientMetricNameByType(HttpClientMetricsType::Unknown).c_str());
 }
+
+TEST_F(MonitoringTestSuite, TestUserAgentCompressionTracking)
+{
+  HeaderValueCollection responseHeaders;
+  AmazonWebServiceRequestMock request;
+
+  // Create large request body to trigger compression
+  std::string largeBody(20000, 'A');
+  auto bodyStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
+  *bodyStream << largeBody;
+  request.SetBody(bodyStream);
+
+  QueueMockResponse(HttpResponseCode::OK, responseHeaders);
+  const auto outcome = client->MakeRequest(request);
+  AWS_ASSERT_SUCCESS(outcome);
+
+  const auto requestSeen = mockHttpClient->GetMostRecentHttpRequest();
+  EXPECT_TRUE(requestSeen.HasUserAgent());
+  const auto& userAgent = requestSeen.GetUserAgent();
+  EXPECT_TRUE(!userAgent.empty());
+  const auto userAgentParsed = Aws::Utils::StringUtils::Split(userAgent, ' ');
+
+  // Check for gzip compression business metric (L) in user agent
+  auto businessMetrics = std::find_if(userAgentParsed.begin(), userAgentParsed.end(),
+      [](const Aws::String& value) { return value.find("m/") != Aws::String::npos && value.find("L") != Aws::String::npos; });
+  EXPECT_TRUE(businessMetrics != userAgentParsed.end());
+}
+

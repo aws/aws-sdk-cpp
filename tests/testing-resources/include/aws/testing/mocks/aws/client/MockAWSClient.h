@@ -54,6 +54,18 @@ public:
         auto bodyString = ss.str();
         return bodyString.find("TestErrorInBodyOfResponse") != std::string::npos;
     }
+    
+    Aws::Client::CompressionAlgorithm GetSelectedCompressionAlgorithm(Aws::Client::RequestCompressionConfig config) const override {
+        if (config.useRequestCompression == Aws::Client::UseRequestCompression::ENABLE && m_body) {
+            m_body->seekg(0, m_body->end);
+            size_t bodySize = m_body->tellg();
+            m_body->seekg(0, m_body->beg);
+            if (bodySize >= config.requestMinCompressionSizeBytes) {
+                return Aws::Client::CompressionAlgorithm::GZIP;
+            }
+        }
+        return Aws::Client::CompressionAlgorithm::NONE;
+    }
 
 private:
     std::shared_ptr<Aws::IOStream> m_body;
