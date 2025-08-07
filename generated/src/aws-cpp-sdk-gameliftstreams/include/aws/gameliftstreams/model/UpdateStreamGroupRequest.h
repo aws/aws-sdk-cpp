@@ -36,18 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A descriptive label for the stream group.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    UpdateStreamGroupRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>An <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
      * Resource Name (ARN)</a> or ID that uniquely identifies the stream group
@@ -77,16 +65,28 @@ namespace Model
     template<typename LocationConfigurationsT = LocationConfiguration>
     UpdateStreamGroupRequest& AddLocationConfigurations(LocationConfigurationsT&& value) { m_locationConfigurationsHasBeenSet = true; m_locationConfigurations.emplace_back(std::forward<LocationConfigurationsT>(value)); return *this; }
     ///@}
-  private:
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
+    ///@{
+    /**
+     * <p>A descriptive label for the stream group.</p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateStreamGroupRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_identifier;
     bool m_identifierHasBeenSet = false;
 
     Aws::Vector<LocationConfiguration> m_locationConfigurations;
     bool m_locationConfigurationsHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

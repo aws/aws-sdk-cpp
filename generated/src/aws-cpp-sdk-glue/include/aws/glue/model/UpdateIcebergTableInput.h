@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains the update operations to be applied to an existing Iceberg table in
-   * AWS Glue Data Catalog, defining the new state of the table metadata.
+   * <p>Contains the update operations to be applied to an existing Iceberg table
+   * inGlue Data Catalog, defining the new state of the table metadata.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateIcebergTableInput">AWS
    * API Reference</a></p>

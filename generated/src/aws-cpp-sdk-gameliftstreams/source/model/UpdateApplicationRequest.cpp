@@ -16,9 +16,9 @@ Aws::String UpdateApplicationRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_applicationLogOutputUriHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithString("ApplicationLogOutputUri", m_applicationLogOutputUri);
+   payload.WithString("Description", m_description);
 
   }
 
@@ -33,9 +33,9 @@ Aws::String UpdateApplicationRequest::SerializePayload() const
 
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_applicationLogOutputUriHasBeenSet)
   {
-   payload.WithString("Description", m_description);
+   payload.WithString("ApplicationLogOutputUri", m_applicationLogOutputUri);
 
   }
 

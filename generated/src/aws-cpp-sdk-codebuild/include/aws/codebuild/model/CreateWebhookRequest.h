@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codebuild/model/WebhookBuildType.h>
 #include <aws/codebuild/model/ScopeConfiguration.h>
+#include <aws/codebuild/model/PullRequestBuildPolicy.h>
 #include <aws/codebuild/model/WebhookFilter.h>
 #include <utility>
 
@@ -128,6 +129,21 @@ namespace Model
     template<typename ScopeConfigurationT = ScopeConfiguration>
     CreateWebhookRequest& WithScopeConfiguration(ScopeConfigurationT&& value) { SetScopeConfiguration(std::forward<ScopeConfigurationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A PullRequestBuildPolicy object that defines comment-based approval
+     * requirements for triggering builds on pull requests. This policy helps control
+     * when automated builds are executed based on contributor permissions and approval
+     * workflows.</p>
+     */
+    inline const PullRequestBuildPolicy& GetPullRequestBuildPolicy() const { return m_pullRequestBuildPolicy; }
+    inline bool PullRequestBuildPolicyHasBeenSet() const { return m_pullRequestBuildPolicyHasBeenSet; }
+    template<typename PullRequestBuildPolicyT = PullRequestBuildPolicy>
+    void SetPullRequestBuildPolicy(PullRequestBuildPolicyT&& value) { m_pullRequestBuildPolicyHasBeenSet = true; m_pullRequestBuildPolicy = std::forward<PullRequestBuildPolicyT>(value); }
+    template<typename PullRequestBuildPolicyT = PullRequestBuildPolicy>
+    CreateWebhookRequest& WithPullRequestBuildPolicy(PullRequestBuildPolicyT&& value) { SetPullRequestBuildPolicy(std::forward<PullRequestBuildPolicyT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_projectName;
@@ -147,6 +163,9 @@ namespace Model
 
     ScopeConfiguration m_scopeConfiguration;
     bool m_scopeConfigurationHasBeenSet = false;
+
+    PullRequestBuildPolicy m_pullRequestBuildPolicy;
+    bool m_pullRequestBuildPolicyHasBeenSet = false;
   };
 
 } // namespace Model

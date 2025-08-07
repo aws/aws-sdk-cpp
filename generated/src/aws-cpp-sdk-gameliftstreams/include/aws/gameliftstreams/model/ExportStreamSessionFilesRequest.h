@@ -51,6 +51,23 @@ namespace Model
 
     ///@{
     /**
+     * <p>An <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
+     * Resource Name (ARN)</a> or ID that uniquely identifies the stream session
+     * resource. Example ARN:
+     * <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamsession/sg-1AB2C3De4/ABC123def4567</code>.
+     * Example ID: <code>ABC123def4567</code>. </p>
+     */
+    inline const Aws::String& GetStreamSessionIdentifier() const { return m_streamSessionIdentifier; }
+    inline bool StreamSessionIdentifierHasBeenSet() const { return m_streamSessionIdentifierHasBeenSet; }
+    template<typename StreamSessionIdentifierT = Aws::String>
+    void SetStreamSessionIdentifier(StreamSessionIdentifierT&& value) { m_streamSessionIdentifierHasBeenSet = true; m_streamSessionIdentifier = std::forward<StreamSessionIdentifierT>(value); }
+    template<typename StreamSessionIdentifierT = Aws::String>
+    ExportStreamSessionFilesRequest& WithStreamSessionIdentifier(StreamSessionIdentifierT&& value) { SetStreamSessionIdentifier(std::forward<StreamSessionIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p> The S3 bucket URI where Amazon GameLift Streams uploads the set of
      * compressed exported files for this stream session. Amazon GameLift Streams
      * generates a ZIP file name based on the stream session metadata. Alternatively,
@@ -71,33 +88,16 @@ namespace Model
     template<typename OutputUriT = Aws::String>
     ExportStreamSessionFilesRequest& WithOutputUri(OutputUriT&& value) { SetOutputUri(std::forward<OutputUriT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>An <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
-     * Resource Name (ARN)</a> or ID that uniquely identifies the stream session
-     * resource. Example ARN:
-     * <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamsession/sg-1AB2C3De4/ABC123def4567</code>.
-     * Example ID: <code>ABC123def4567</code>. </p>
-     */
-    inline const Aws::String& GetStreamSessionIdentifier() const { return m_streamSessionIdentifier; }
-    inline bool StreamSessionIdentifierHasBeenSet() const { return m_streamSessionIdentifierHasBeenSet; }
-    template<typename StreamSessionIdentifierT = Aws::String>
-    void SetStreamSessionIdentifier(StreamSessionIdentifierT&& value) { m_streamSessionIdentifierHasBeenSet = true; m_streamSessionIdentifier = std::forward<StreamSessionIdentifierT>(value); }
-    template<typename StreamSessionIdentifierT = Aws::String>
-    ExportStreamSessionFilesRequest& WithStreamSessionIdentifier(StreamSessionIdentifierT&& value) { SetStreamSessionIdentifier(std::forward<StreamSessionIdentifierT>(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_identifier;
     bool m_identifierHasBeenSet = false;
 
-    Aws::String m_outputUri;
-    bool m_outputUriHasBeenSet = false;
-
     Aws::String m_streamSessionIdentifier;
     bool m_streamSessionIdentifierHasBeenSet = false;
+
+    Aws::String m_outputUri;
+    bool m_outputUriHasBeenSet = false;
   };
 
 } // namespace Model

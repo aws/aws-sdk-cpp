@@ -7,8 +7,8 @@
 #include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
 #include <aws/gameliftstreams/GameLiftStreamsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gameliftstreams/model/StreamClass.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/gameliftstreams/model/LocationConfiguration.h>
 #include <utility>
@@ -39,45 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p> A unique identifier that represents a client request. The request is
-     * idempotent, which ensures that an API request completes only once. When users
-     * send a request, Amazon GameLift Streams automatically populates this field. </p>
-     */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    CreateStreamGroupRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The unique identifier of the Amazon GameLift Streams application that you
-     * want to associate to a stream group as the default application. The application
-     * must be in <code>READY</code> status. By setting the default application
-     * identifier, you will optimize startup performance of this application in your
-     * stream group. Once set, this application cannot be disassociated from the stream
-     * group, unlike applications that are associated using AssociateApplications. If
-     * not set when creating a stream group, you will need to call
-     * AssociateApplications later, before you can start streaming.</p> <p>This value
-     * is an <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
-     * Resource Name (ARN)</a> or ID that uniquely identifies the application resource.
-     * Example ARN:
-     * <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.
-     * Example ID: <code>a-9ZY8X7Wv6</code>. </p>
-     */
-    inline const Aws::String& GetDefaultApplicationIdentifier() const { return m_defaultApplicationIdentifier; }
-    inline bool DefaultApplicationIdentifierHasBeenSet() const { return m_defaultApplicationIdentifierHasBeenSet; }
-    template<typename DefaultApplicationIdentifierT = Aws::String>
-    void SetDefaultApplicationIdentifier(DefaultApplicationIdentifierT&& value) { m_defaultApplicationIdentifierHasBeenSet = true; m_defaultApplicationIdentifier = std::forward<DefaultApplicationIdentifierT>(value); }
-    template<typename DefaultApplicationIdentifierT = Aws::String>
-    CreateStreamGroupRequest& WithDefaultApplicationIdentifier(DefaultApplicationIdentifierT&& value) { SetDefaultApplicationIdentifier(std::forward<DefaultApplicationIdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A descriptive label for the stream group.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
@@ -86,21 +47,6 @@ namespace Model
     void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
     template<typename DescriptionT = Aws::String>
     CreateStreamGroupRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p> A set of one or more locations and the streaming capacity for each location.
-     * </p>
-     */
-    inline const Aws::Vector<LocationConfiguration>& GetLocationConfigurations() const { return m_locationConfigurations; }
-    inline bool LocationConfigurationsHasBeenSet() const { return m_locationConfigurationsHasBeenSet; }
-    template<typename LocationConfigurationsT = Aws::Vector<LocationConfiguration>>
-    void SetLocationConfigurations(LocationConfigurationsT&& value) { m_locationConfigurationsHasBeenSet = true; m_locationConfigurations = std::forward<LocationConfigurationsT>(value); }
-    template<typename LocationConfigurationsT = Aws::Vector<LocationConfiguration>>
-    CreateStreamGroupRequest& WithLocationConfigurations(LocationConfigurationsT&& value) { SetLocationConfigurations(std::forward<LocationConfigurationsT>(value)); return *this;}
-    template<typename LocationConfigurationsT = LocationConfiguration>
-    CreateStreamGroupRequest& AddLocationConfigurations(LocationConfigurationsT&& value) { m_locationConfigurationsHasBeenSet = true; m_locationConfigurations.emplace_back(std::forward<LocationConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -156,6 +102,46 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier of the Amazon GameLift Streams application that you
+     * want to associate to a stream group as the default application. The application
+     * must be in <code>READY</code> status. By setting the default application
+     * identifier, you will optimize startup performance of this application in your
+     * stream group. Once set, this application cannot be disassociated from the stream
+     * group, unlike applications that are associated using AssociateApplications. If
+     * not set when creating a stream group, you will need to call
+     * AssociateApplications later, before you can start streaming.</p> <p>This value
+     * is an <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
+     * Resource Name (ARN)</a> or ID that uniquely identifies the application resource.
+     * Example ARN:
+     * <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.
+     * Example ID: <code>a-9ZY8X7Wv6</code>. </p>
+     */
+    inline const Aws::String& GetDefaultApplicationIdentifier() const { return m_defaultApplicationIdentifier; }
+    inline bool DefaultApplicationIdentifierHasBeenSet() const { return m_defaultApplicationIdentifierHasBeenSet; }
+    template<typename DefaultApplicationIdentifierT = Aws::String>
+    void SetDefaultApplicationIdentifier(DefaultApplicationIdentifierT&& value) { m_defaultApplicationIdentifierHasBeenSet = true; m_defaultApplicationIdentifier = std::forward<DefaultApplicationIdentifierT>(value); }
+    template<typename DefaultApplicationIdentifierT = Aws::String>
+    CreateStreamGroupRequest& WithDefaultApplicationIdentifier(DefaultApplicationIdentifierT&& value) { SetDefaultApplicationIdentifier(std::forward<DefaultApplicationIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> A set of one or more locations and the streaming capacity for each location.
+     * </p>
+     */
+    inline const Aws::Vector<LocationConfiguration>& GetLocationConfigurations() const { return m_locationConfigurations; }
+    inline bool LocationConfigurationsHasBeenSet() const { return m_locationConfigurationsHasBeenSet; }
+    template<typename LocationConfigurationsT = Aws::Vector<LocationConfiguration>>
+    void SetLocationConfigurations(LocationConfigurationsT&& value) { m_locationConfigurationsHasBeenSet = true; m_locationConfigurations = std::forward<LocationConfigurationsT>(value); }
+    template<typename LocationConfigurationsT = Aws::Vector<LocationConfiguration>>
+    CreateStreamGroupRequest& WithLocationConfigurations(LocationConfigurationsT&& value) { SetLocationConfigurations(std::forward<LocationConfigurationsT>(value)); return *this;}
+    template<typename LocationConfigurationsT = LocationConfiguration>
+    CreateStreamGroupRequest& AddLocationConfigurations(LocationConfigurationsT&& value) { m_locationConfigurationsHasBeenSet = true; m_locationConfigurations.emplace_back(std::forward<LocationConfigurationsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>A list of labels to assign to the new stream group resource. Tags are
      * developer-defined key-value pairs. Tagging Amazon Web Services resources is
      * useful for resource management, access management and cost allocation. See <a
@@ -180,25 +166,39 @@ namespace Model
       m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
     }
     ///@}
+
+    ///@{
+    /**
+     * <p> A unique identifier that represents a client request. The request is
+     * idempotent, which ensures that an API request completes only once. When users
+     * send a request, Amazon GameLift Streams automatically populates this field. </p>
+     */
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateStreamGroupRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
+    ///@}
   private:
-
-    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-    bool m_clientTokenHasBeenSet = true;
-
-    Aws::String m_defaultApplicationIdentifier;
-    bool m_defaultApplicationIdentifierHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::Vector<LocationConfiguration> m_locationConfigurations;
-    bool m_locationConfigurationsHasBeenSet = false;
-
     StreamClass m_streamClass{StreamClass::NOT_SET};
     bool m_streamClassHasBeenSet = false;
 
+    Aws::String m_defaultApplicationIdentifier;
+    bool m_defaultApplicationIdentifierHasBeenSet = false;
+
+    Aws::Vector<LocationConfiguration> m_locationConfigurations;
+    bool m_locationConfigurationsHasBeenSet = false;
+
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
   };
 
 } // namespace Model

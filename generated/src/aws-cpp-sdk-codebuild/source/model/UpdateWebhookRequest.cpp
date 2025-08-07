@@ -55,6 +55,12 @@ Aws::String UpdateWebhookRequest::SerializePayload() const
    payload.WithString("buildType", WebhookBuildTypeMapper::GetNameForWebhookBuildType(m_buildType));
   }
 
+  if(m_pullRequestBuildPolicyHasBeenSet)
+  {
+   payload.WithObject("pullRequestBuildPolicy", m_pullRequestBuildPolicy.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

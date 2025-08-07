@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -35,6 +35,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>An <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
+     * Resource Name (ARN)</a> that uniquely identifies the stream group resource.
+     * Example ARN:
+     * <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamgroup/sg-1AB2C3De4</code>.
+     * </p>
+     */
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DisassociateApplicationsResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A set of applications that are disassociated from this stream group.</p>
      * <p>This value is a set of <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
@@ -53,22 +69,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>An <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
-     * Resource Name (ARN)</a> that uniquely identifies the stream group resource.
-     * Example ARN:
-     * <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamgroup/sg-1AB2C3De4</code>.
-     * </p>
-     */
-    inline const Aws::String& GetArn() const { return m_arn; }
-    template<typename ArnT = Aws::String>
-    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
-    template<typename ArnT = Aws::String>
-    DisassociateApplicationsResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -78,11 +78,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<Aws::String> m_applicationArns;
-    bool m_applicationArnsHasBeenSet = false;
-
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_applicationArns;
+    bool m_applicationArnsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

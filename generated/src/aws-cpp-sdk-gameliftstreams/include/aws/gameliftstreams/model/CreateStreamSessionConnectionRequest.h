@@ -68,21 +68,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A WebRTC ICE offer string to use when initializing a WebRTC connection. The
-     * offer is a very long JSON string. Provide the string as a text value in quotes.
-     * The offer must be newly generated, not the same offer provided to
-     * <code>StartStreamSession</code>. </p>
-     */
-    inline const Aws::String& GetSignalRequest() const { return m_signalRequest; }
-    inline bool SignalRequestHasBeenSet() const { return m_signalRequestHasBeenSet; }
-    template<typename SignalRequestT = Aws::String>
-    void SetSignalRequest(SignalRequestT&& value) { m_signalRequestHasBeenSet = true; m_signalRequest = std::forward<SignalRequestT>(value); }
-    template<typename SignalRequestT = Aws::String>
-    CreateStreamSessionConnectionRequest& WithSignalRequest(SignalRequestT&& value) { SetSignalRequest(std::forward<SignalRequestT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
      * Resource Name (ARN)</a> or ID that uniquely identifies the stream session
@@ -98,6 +83,21 @@ namespace Model
     template<typename StreamSessionIdentifierT = Aws::String>
     CreateStreamSessionConnectionRequest& WithStreamSessionIdentifier(StreamSessionIdentifierT&& value) { SetStreamSessionIdentifier(std::forward<StreamSessionIdentifierT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A WebRTC ICE offer string to use when initializing a WebRTC connection. The
+     * offer is a very long JSON string. Provide the string as a text value in quotes.
+     * The offer must be newly generated, not the same offer provided to
+     * <code>StartStreamSession</code>. </p>
+     */
+    inline const Aws::String& GetSignalRequest() const { return m_signalRequest; }
+    inline bool SignalRequestHasBeenSet() const { return m_signalRequestHasBeenSet; }
+    template<typename SignalRequestT = Aws::String>
+    void SetSignalRequest(SignalRequestT&& value) { m_signalRequestHasBeenSet = true; m_signalRequest = std::forward<SignalRequestT>(value); }
+    template<typename SignalRequestT = Aws::String>
+    CreateStreamSessionConnectionRequest& WithSignalRequest(SignalRequestT&& value) { SetSignalRequest(std::forward<SignalRequestT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
@@ -106,11 +106,11 @@ namespace Model
     Aws::String m_identifier;
     bool m_identifierHasBeenSet = false;
 
-    Aws::String m_signalRequest;
-    bool m_signalRequestHasBeenSet = false;
-
     Aws::String m_streamSessionIdentifier;
     bool m_streamSessionIdentifierHasBeenSet = false;
+
+    Aws::String m_signalRequest;
+    bool m_signalRequestHasBeenSet = false;
   };
 
 } // namespace Model

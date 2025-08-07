@@ -8,6 +8,7 @@
 #include <aws/glue/model/TableOptimizerType.h>
 #include <aws/glue/model/TableOptimizerConfiguration.h>
 #include <aws/glue/model/TableOptimizerRun.h>
+#include <aws/glue/model/ConfigurationSource.h>
 #include <utility>
 
 namespace Aws
@@ -80,6 +81,18 @@ namespace Model
     template<typename LastRunT = TableOptimizerRun>
     TableOptimizer& WithLastRun(LastRunT&& value) { SetLastRun(std::forward<LastRunT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> Specifies the source of the optimizer configuration. This indicates how the
+     * table optimizer was configured and which entity or service initiated the
+     * configuration. </p>
+     */
+    inline ConfigurationSource GetConfigurationSource() const { return m_configurationSource; }
+    inline bool ConfigurationSourceHasBeenSet() const { return m_configurationSourceHasBeenSet; }
+    inline void SetConfigurationSource(ConfigurationSource value) { m_configurationSourceHasBeenSet = true; m_configurationSource = value; }
+    inline TableOptimizer& WithConfigurationSource(ConfigurationSource value) { SetConfigurationSource(value); return *this;}
+    ///@}
   private:
 
     TableOptimizerType m_type{TableOptimizerType::NOT_SET};
@@ -90,6 +103,9 @@ namespace Model
 
     TableOptimizerRun m_lastRun;
     bool m_lastRunHasBeenSet = false;
+
+    ConfigurationSource m_configurationSource{ConfigurationSource::NOT_SET};
+    bool m_configurationSourceHasBeenSet = false;
   };
 
 } // namespace Model

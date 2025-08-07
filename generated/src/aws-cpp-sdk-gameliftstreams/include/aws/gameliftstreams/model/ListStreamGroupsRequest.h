@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of results to return. Use this parameter with
-     * <code>NextToken</code> to return results in sequential pages. Default value is
-     * <code>25</code>.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListStreamGroupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A token that marks the start of the next set of results. Use this token when
      * you retrieve results as sequential pages. To get the first page of results, omit
      * a token value. To get the remaining pages, provide the token returned with the
@@ -64,13 +52,25 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListStreamGroupsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-  private:
 
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The number of results to return. Use this parameter with
+     * <code>NextToken</code> to return results in sequential pages. Default value is
+     * <code>25</code>.</p>
+     */
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListStreamGroupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

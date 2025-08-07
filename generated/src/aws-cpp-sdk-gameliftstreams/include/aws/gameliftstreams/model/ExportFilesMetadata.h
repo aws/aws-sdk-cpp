@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gameliftstreams/model/ExportFilesStatus.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -41,29 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p> The S3 bucket URI where Amazon GameLift Streams uploaded the set of
-     * compressed exported files for a stream session. Amazon GameLift Streams
-     * generates a ZIP file name based on the stream session metadata. Alternatively,
-     * you can provide a custom file name with a <code>.zip</code> file extension.</p>
-     * <p> Example 1: If you provide an S3 URI called
-     * <code>s3://amzn-s3-demo-destination-bucket/MyGame_Session1.zip</code>, then
-     * Amazon GameLift Streams will save the files at that location. </p> <p> Example
-     * 2: If you provide an S3 URI called
-     * <code>s3://amzn-s3-demo-destination-bucket/MyGameSessions_ExportedFiles/</code>,
-     * then Amazon GameLift Streams will save the files at
-     * <code>s3://amzn-s3-demo-destination-bucket/MyGameSessions_ExportedFiles/YYYYMMDD-HHMMSS-appId-sg-Id-sessionId.zip</code>
-     * or another similar name. </p>
-     */
-    inline const Aws::String& GetOutputUri() const { return m_outputUri; }
-    inline bool OutputUriHasBeenSet() const { return m_outputUriHasBeenSet; }
-    template<typename OutputUriT = Aws::String>
-    void SetOutputUri(OutputUriT&& value) { m_outputUriHasBeenSet = true; m_outputUri = std::forward<OutputUriT>(value); }
-    template<typename OutputUriT = Aws::String>
-    ExportFilesMetadata& WithOutputUri(OutputUriT&& value) { SetOutputUri(std::forward<OutputUriT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The result of the <a
      * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ExportStreamSessionFiles.html">ExportStreamSessionFiles</a>
      * operation.</p>
@@ -86,16 +63,39 @@ namespace Model
     template<typename StatusReasonT = Aws::String>
     ExportFilesMetadata& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_outputUri;
-    bool m_outputUriHasBeenSet = false;
+    ///@{
+    /**
+     * <p> The S3 bucket URI where Amazon GameLift Streams uploaded the set of
+     * compressed exported files for a stream session. Amazon GameLift Streams
+     * generates a ZIP file name based on the stream session metadata. Alternatively,
+     * you can provide a custom file name with a <code>.zip</code> file extension.</p>
+     * <p> Example 1: If you provide an S3 URI called
+     * <code>s3://amzn-s3-demo-destination-bucket/MyGame_Session1.zip</code>, then
+     * Amazon GameLift Streams will save the files at that location. </p> <p> Example
+     * 2: If you provide an S3 URI called
+     * <code>s3://amzn-s3-demo-destination-bucket/MyGameSessions_ExportedFiles/</code>,
+     * then Amazon GameLift Streams will save the files at
+     * <code>s3://amzn-s3-demo-destination-bucket/MyGameSessions_ExportedFiles/YYYYMMDD-HHMMSS-appId-sg-Id-sessionId.zip</code>
+     * or another similar name. </p>
+     */
+    inline const Aws::String& GetOutputUri() const { return m_outputUri; }
+    inline bool OutputUriHasBeenSet() const { return m_outputUriHasBeenSet; }
+    template<typename OutputUriT = Aws::String>
+    void SetOutputUri(OutputUriT&& value) { m_outputUriHasBeenSet = true; m_outputUri = std::forward<OutputUriT>(value); }
+    template<typename OutputUriT = Aws::String>
+    ExportFilesMetadata& WithOutputUri(OutputUriT&& value) { SetOutputUri(std::forward<OutputUriT>(value)); return *this;}
+    ///@}
+  private:
 
     ExportFilesStatus m_status{ExportFilesStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet = false;
+
+    Aws::String m_outputUri;
+    bool m_outputUriHasBeenSet = false;
   };
 
 } // namespace Model

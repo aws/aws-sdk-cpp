@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/DataLakeAccessProperties.h>
+#include <aws/glue/model/IcebergOptimizationProperties.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -56,6 +57,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>A structure that specifies Iceberg table optimization properties for the
+     * catalog. This includes configuration for compaction, retention, and orphan file
+     * deletion operations that can be applied to Iceberg tables in this catalog.</p>
+     */
+    inline const IcebergOptimizationProperties& GetIcebergOptimizationProperties() const { return m_icebergOptimizationProperties; }
+    inline bool IcebergOptimizationPropertiesHasBeenSet() const { return m_icebergOptimizationPropertiesHasBeenSet; }
+    template<typename IcebergOptimizationPropertiesT = IcebergOptimizationProperties>
+    void SetIcebergOptimizationProperties(IcebergOptimizationPropertiesT&& value) { m_icebergOptimizationPropertiesHasBeenSet = true; m_icebergOptimizationProperties = std::forward<IcebergOptimizationPropertiesT>(value); }
+    template<typename IcebergOptimizationPropertiesT = IcebergOptimizationProperties>
+    CatalogProperties& WithIcebergOptimizationProperties(IcebergOptimizationPropertiesT&& value) { SetIcebergOptimizationProperties(std::forward<IcebergOptimizationPropertiesT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Additional key-value properties for the catalog, such as column statistics
      * optimizations.</p>
      */
@@ -74,6 +89,9 @@ namespace Model
 
     DataLakeAccessProperties m_dataLakeAccessProperties;
     bool m_dataLakeAccessPropertiesHasBeenSet = false;
+
+    IcebergOptimizationProperties m_icebergOptimizationProperties;
+    bool m_icebergOptimizationPropertiesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customProperties;
     bool m_customPropertiesHasBeenSet = false;

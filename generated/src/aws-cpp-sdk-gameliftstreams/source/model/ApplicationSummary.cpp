@@ -30,20 +30,25 @@ ApplicationSummary& ApplicationSummary::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedAt"))
+  if(jsonValue.ValueExists("Id"))
   {
-    m_createdAt = jsonValue.GetDouble("CreatedAt");
-    m_createdAtHasBeenSet = true;
+    m_id = jsonValue.GetString("Id");
+    m_idHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Id"))
+  if(jsonValue.ValueExists("Status"))
   {
-    m_id = jsonValue.GetString("Id");
-    m_idHasBeenSet = true;
+    m_status = ApplicationStatusMapper::GetApplicationStatusForName(jsonValue.GetString("Status"));
+    m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("CreatedAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("CreatedAt");
+    m_createdAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("LastUpdatedAt"))
   {
@@ -54,11 +59,6 @@ ApplicationSummary& ApplicationSummary::operator =(JsonView jsonValue)
   {
     m_runtimeEnvironment = jsonValue.GetObject("RuntimeEnvironment");
     m_runtimeEnvironmentHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Status"))
-  {
-    m_status = ApplicationStatusMapper::GetApplicationStatusForName(jsonValue.GetString("Status"));
-    m_statusHasBeenSet = true;
   }
   return *this;
 }
@@ -73,9 +73,10 @@ JsonValue ApplicationSummary::Jsonize() const
 
   }
 
-  if(m_createdAtHasBeenSet)
+  if(m_idHasBeenSet)
   {
-   payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
+   payload.WithString("Id", m_id);
+
   }
 
   if(m_descriptionHasBeenSet)
@@ -84,10 +85,14 @@ JsonValue ApplicationSummary::Jsonize() const
 
   }
 
-  if(m_idHasBeenSet)
+  if(m_statusHasBeenSet)
   {
-   payload.WithString("Id", m_id);
+   payload.WithString("Status", ApplicationStatusMapper::GetNameForApplicationStatus(m_status));
+  }
 
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   if(m_lastUpdatedAtHasBeenSet)
@@ -99,11 +104,6 @@ JsonValue ApplicationSummary::Jsonize() const
   {
    payload.WithObject("RuntimeEnvironment", m_runtimeEnvironment.Jsonize());
 
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", ApplicationStatusMapper::GetNameForApplicationStatus(m_status));
   }
 
   return payload;

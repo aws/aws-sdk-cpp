@@ -45,6 +45,11 @@ DnsRequestAction& DnsRequestAction::operator =(JsonView jsonValue)
     m_domainWithSuffix = jsonValue.GetString("domainWithSuffix");
     m_domainWithSuffixHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("vpcOwnerAccountId"))
+  {
+    m_vpcOwnerAccountId = jsonValue.GetString("vpcOwnerAccountId");
+    m_vpcOwnerAccountIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -73,6 +78,12 @@ JsonValue DnsRequestAction::Jsonize() const
   if(m_domainWithSuffixHasBeenSet)
   {
    payload.WithString("domainWithSuffix", m_domainWithSuffix);
+
+  }
+
+  if(m_vpcOwnerAccountIdHasBeenSet)
+  {
+   payload.WithString("vpcOwnerAccountId", m_vpcOwnerAccountId);
 
   }
 

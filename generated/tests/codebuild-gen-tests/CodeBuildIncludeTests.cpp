@@ -176,6 +176,9 @@
 #include <aws/codebuild/model/ProjectSourceVersion.h>
 #include <aws/codebuild/model/ProjectVisibilityType.h>
 #include <aws/codebuild/model/ProxyConfiguration.h>
+#include <aws/codebuild/model/PullRequestBuildApproverRole.h>
+#include <aws/codebuild/model/PullRequestBuildCommentApproval.h>
+#include <aws/codebuild/model/PullRequestBuildPolicy.h>
 #include <aws/codebuild/model/PutResourcePolicyRequest.h>
 #include <aws/codebuild/model/PutResourcePolicyResult.h>
 #include <aws/codebuild/model/RegistryCredential.h>

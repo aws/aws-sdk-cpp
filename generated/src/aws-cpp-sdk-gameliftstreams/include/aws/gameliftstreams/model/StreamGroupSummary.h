@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/gameliftstreams/model/DefaultApplication.h>
-#include <aws/gameliftstreams/model/StreamGroupStatus.h>
 #include <aws/gameliftstreams/model/StreamClass.h>
+#include <aws/gameliftstreams/model/StreamGroupStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -63,29 +63,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>A timestamp that indicates when this resource was created. Timestamps are
-     * expressed using in ISO8601 format, such as:
-     * <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
+     * <p>An ID that uniquely identifies the stream group resource. Example ID:
+     * <code>sg-1AB2C3De4</code>. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    StreamGroupSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Object that identifies the Amazon GameLift Streams application to stream with
-     * this stream group.</p>
-     */
-    inline const DefaultApplication& GetDefaultApplication() const { return m_defaultApplication; }
-    inline bool DefaultApplicationHasBeenSet() const { return m_defaultApplicationHasBeenSet; }
-    template<typename DefaultApplicationT = DefaultApplication>
-    void SetDefaultApplication(DefaultApplicationT&& value) { m_defaultApplicationHasBeenSet = true; m_defaultApplication = std::forward<DefaultApplicationT>(value); }
-    template<typename DefaultApplicationT = DefaultApplication>
-    StreamGroupSummary& WithDefaultApplication(DefaultApplicationT&& value) { SetDefaultApplication(std::forward<DefaultApplicationT>(value)); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    StreamGroupSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,50 +88,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>An ID that uniquely identifies the stream group resource. Example ID:
-     * <code>sg-1AB2C3De4</code>. </p>
+     * <p>Object that identifies the Amazon GameLift Streams application to stream with
+     * this stream group.</p>
      */
-    inline const Aws::String& GetId() const { return m_id; }
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    template<typename IdT = Aws::String>
-    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
-    template<typename IdT = Aws::String>
-    StreamGroupSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A timestamp that indicates when this resource was last updated. Timestamps
-     * are expressed using in ISO8601 format, such as:
-     * <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
-    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
-    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
-    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
-    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
-    StreamGroupSummary& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The current status of the stream group resource. Possible statuses include
-     * the following:</p> <ul> <li> <p> <code>ACTIVATING</code>: The stream group is
-     * deploying and isn't ready to host streams. </p> </li> <li> <p>
-     * <code>ACTIVE</code>: The stream group is ready to host streams. </p> </li> <li>
-     * <p> <code>ACTIVE_WITH_ERRORS</code>: One or more locations in the stream group
-     * are in an error state. Verify the details of individual locations and remove any
-     * locations which are in error. </p> </li> <li> <p> <code>ERROR</code>: An error
-     * occurred when the stream group deployed. See <code>StatusReason</code> for more
-     * information. </p> </li> <li> <p> <code>DELETING</code>: Amazon GameLift Streams
-     * is in the process of deleting the stream group. </p> </li> <li> <p>
-     * <code>UPDATING_LOCATIONS</code>: One or more locations in the stream group are
-     * in the process of updating (either activating or deleting). </p> </li> </ul>
-     */
-    inline StreamGroupStatus GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(StreamGroupStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline StreamGroupSummary& WithStatus(StreamGroupStatus value) { SetStatus(value); return *this;}
+    inline const DefaultApplication& GetDefaultApplication() const { return m_defaultApplication; }
+    inline bool DefaultApplicationHasBeenSet() const { return m_defaultApplicationHasBeenSet; }
+    template<typename DefaultApplicationT = DefaultApplication>
+    void SetDefaultApplication(DefaultApplicationT&& value) { m_defaultApplicationHasBeenSet = true; m_defaultApplication = std::forward<DefaultApplicationT>(value); }
+    template<typename DefaultApplicationT = DefaultApplication>
+    StreamGroupSummary& WithDefaultApplication(DefaultApplicationT&& value) { SetDefaultApplication(std::forward<DefaultApplicationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -195,31 +146,80 @@ namespace Model
     inline void SetStreamClass(StreamClass value) { m_streamClassHasBeenSet = true; m_streamClass = value; }
     inline StreamGroupSummary& WithStreamClass(StreamClass value) { SetStreamClass(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The current status of the stream group resource. Possible statuses include
+     * the following:</p> <ul> <li> <p> <code>ACTIVATING</code>: The stream group is
+     * deploying and isn't ready to host streams. </p> </li> <li> <p>
+     * <code>ACTIVE</code>: The stream group is ready to host streams. </p> </li> <li>
+     * <p> <code>ACTIVE_WITH_ERRORS</code>: One or more locations in the stream group
+     * are in an error state. Verify the details of individual locations and remove any
+     * locations which are in error. </p> </li> <li> <p> <code>ERROR</code>: An error
+     * occurred when the stream group deployed. See <code>StatusReason</code> for more
+     * information. </p> </li> <li> <p> <code>DELETING</code>: Amazon GameLift Streams
+     * is in the process of deleting the stream group. </p> </li> <li> <p>
+     * <code>UPDATING_LOCATIONS</code>: One or more locations in the stream group are
+     * in the process of updating (either activating or deleting). </p> </li> </ul>
+     */
+    inline StreamGroupStatus GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(StreamGroupStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline StreamGroupSummary& WithStatus(StreamGroupStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A timestamp that indicates when this resource was created. Timestamps are
+     * expressed using in ISO8601 format, such as:
+     * <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    StreamGroupSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A timestamp that indicates when this resource was last updated. Timestamps
+     * are expressed using in ISO8601 format, such as:
+     * <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    StreamGroupSummary& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
-
-    DefaultApplication m_defaultApplication;
-    bool m_defaultApplicationHasBeenSet = false;
+    Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
+    DefaultApplication m_defaultApplication;
+    bool m_defaultApplicationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt{};
-    bool m_lastUpdatedAtHasBeenSet = false;
+    StreamClass m_streamClass{StreamClass::NOT_SET};
+    bool m_streamClassHasBeenSet = false;
 
     StreamGroupStatus m_status{StreamGroupStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    StreamClass m_streamClass{StreamClass::NOT_SET};
-    bool m_streamClassHasBeenSet = false;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
   };
 
 } // namespace Model

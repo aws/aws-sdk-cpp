@@ -16,21 +16,20 @@ Aws::String CreateStreamGroupRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithString("ClientToken", m_clientToken);
+   payload.WithString("Description", m_description);
 
+  }
+
+  if(m_streamClassHasBeenSet)
+  {
+   payload.WithString("StreamClass", StreamClassMapper::GetNameForStreamClass(m_streamClass));
   }
 
   if(m_defaultApplicationIdentifierHasBeenSet)
   {
    payload.WithString("DefaultApplicationIdentifier", m_defaultApplicationIdentifier);
-
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
 
   }
 
@@ -45,11 +44,6 @@ Aws::String CreateStreamGroupRequest::SerializePayload() const
 
   }
 
-  if(m_streamClassHasBeenSet)
-  {
-   payload.WithString("StreamClass", StreamClassMapper::GetNameForStreamClass(m_streamClass));
-  }
-
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;
@@ -58,6 +52,12 @@ Aws::String CreateStreamGroupRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("ClientToken", m_clientToken);
 
   }
 

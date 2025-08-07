@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/DataLakeAccessPropertiesOutput.h>
+#include <aws/glue/model/IcebergOptimizationPropertiesOutput.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -56,6 +57,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>An <code>IcebergOptimizationPropertiesOutput</code> object that specifies
+     * Iceberg table optimization settings for the catalog, including configurations
+     * for compaction, retention, and orphan file deletion operations.</p>
+     */
+    inline const IcebergOptimizationPropertiesOutput& GetIcebergOptimizationProperties() const { return m_icebergOptimizationProperties; }
+    inline bool IcebergOptimizationPropertiesHasBeenSet() const { return m_icebergOptimizationPropertiesHasBeenSet; }
+    template<typename IcebergOptimizationPropertiesT = IcebergOptimizationPropertiesOutput>
+    void SetIcebergOptimizationProperties(IcebergOptimizationPropertiesT&& value) { m_icebergOptimizationPropertiesHasBeenSet = true; m_icebergOptimizationProperties = std::forward<IcebergOptimizationPropertiesT>(value); }
+    template<typename IcebergOptimizationPropertiesT = IcebergOptimizationPropertiesOutput>
+    CatalogPropertiesOutput& WithIcebergOptimizationProperties(IcebergOptimizationPropertiesT&& value) { SetIcebergOptimizationProperties(std::forward<IcebergOptimizationPropertiesT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Additional key-value properties for the catalog, such as column statistics
      * optimizations.</p>
      */
@@ -74,6 +89,9 @@ namespace Model
 
     DataLakeAccessPropertiesOutput m_dataLakeAccessProperties;
     bool m_dataLakeAccessPropertiesHasBeenSet = false;
+
+    IcebergOptimizationPropertiesOutput m_icebergOptimizationProperties;
+    bool m_icebergOptimizationPropertiesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customProperties;
     bool m_customPropertiesHasBeenSet = false;

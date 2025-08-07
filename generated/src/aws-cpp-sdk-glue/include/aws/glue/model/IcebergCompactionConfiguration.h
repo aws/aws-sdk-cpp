@@ -64,10 +64,44 @@ namespace Model
     inline void SetStrategy(CompactionStrategy value) { m_strategyHasBeenSet = true; m_strategy = value; }
     inline IcebergCompactionConfiguration& WithStrategy(CompactionStrategy value) { SetStrategy(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The minimum number of data files that must be present in a partition before
+     * compaction will actually compact files. This parameter helps control when
+     * compaction is triggered, preventing unnecessary compaction operations on
+     * partitions with few files. If an input is not provided, the default value 100
+     * will be used.</p>
+     */
+    inline int GetMinInputFiles() const { return m_minInputFiles; }
+    inline bool MinInputFilesHasBeenSet() const { return m_minInputFilesHasBeenSet; }
+    inline void SetMinInputFiles(int value) { m_minInputFilesHasBeenSet = true; m_minInputFiles = value; }
+    inline IcebergCompactionConfiguration& WithMinInputFiles(int value) { SetMinInputFiles(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The minimum number of deletes that must be present in a data file to make it
+     * eligible for compaction. This parameter helps optimize compaction by focusing on
+     * files that contain a significant number of delete operations, which can improve
+     * query performance by removing deleted records. If an input is not provided, the
+     * default value 1 will be used.</p>
+     */
+    inline int GetDeleteFileThreshold() const { return m_deleteFileThreshold; }
+    inline bool DeleteFileThresholdHasBeenSet() const { return m_deleteFileThresholdHasBeenSet; }
+    inline void SetDeleteFileThreshold(int value) { m_deleteFileThresholdHasBeenSet = true; m_deleteFileThreshold = value; }
+    inline IcebergCompactionConfiguration& WithDeleteFileThreshold(int value) { SetDeleteFileThreshold(value); return *this;}
+    ///@}
   private:
 
     CompactionStrategy m_strategy{CompactionStrategy::NOT_SET};
     bool m_strategyHasBeenSet = false;
+
+    int m_minInputFiles{0};
+    bool m_minInputFilesHasBeenSet = false;
+
+    int m_deleteFileThreshold{0};
+    bool m_deleteFileThresholdHasBeenSet = false;
   };
 
 } // namespace Model

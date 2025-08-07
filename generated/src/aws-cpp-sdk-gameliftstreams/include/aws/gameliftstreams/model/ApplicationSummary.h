@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/gameliftstreams/model/ApplicationStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/gameliftstreams/model/RuntimeEnvironment.h>
-#include <aws/gameliftstreams/model/ApplicationStatus.h>
 #include <utility>
 
 namespace Aws
@@ -61,16 +61,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>A timestamp that indicates when this resource was created. Timestamps are
-     * expressed using in ISO8601 format, such as:
-     * <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
+     * <p>An ID that uniquely identifies the application resource. Example ID:
+     * <code>a-9ZY8X7Wv6</code>. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    ApplicationSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ApplicationSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,15 +86,36 @@ namespace Model
 
     ///@{
     /**
-     * <p>An ID that uniquely identifies the application resource. Example ID:
-     * <code>a-9ZY8X7Wv6</code>. </p>
+     * <p>The current status of the application resource. Possible statuses include the
+     * following:</p> <ul> <li> <p> <code>INITIALIZED</code>: Amazon GameLift Streams
+     * has received the request and is initiating the work flow to create an
+     * application. </p> </li> <li> <p> <code>PROCESSING</code>: The create application
+     * work flow is in process. Amazon GameLift Streams is copying the content and
+     * caching for future deployment in a stream group.</p> </li> <li> <p>
+     * <code>READY</code>: The application is ready to deploy in a stream group.</p>
+     * </li> <li> <p> <code>ERROR</code>: An error occurred when setting up the
+     * application. See <code>StatusReason</code> for more information.</p> </li> <li>
+     * <p> <code>DELETING</code>: Amazon GameLift Streams is in the process of deleting
+     * the application.</p> </li> </ul>
      */
-    inline const Aws::String& GetId() const { return m_id; }
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    template<typename IdT = Aws::String>
-    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
-    template<typename IdT = Aws::String>
-    ApplicationSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
+    inline ApplicationStatus GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(ApplicationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ApplicationSummary& WithStatus(ApplicationStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A timestamp that indicates when this resource was created. Timestamps are
+     * expressed using in ISO8601 format, such as:
+     * <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    ApplicationSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,7 +140,8 @@ namespace Model
      * Linux applications </p> <ul> <li> <p> Ubuntu 22.04 LTS (<code>Type=UBUNTU,
      * Version=22_04_LTS</code>) </p> </li> </ul> </li> <li> <p> For Windows
      * applications </p> <ul> <li> <p>Microsoft Windows Server 2022 Base
-     * (<code>Type=WINDOWS, Version=2022</code>)</p> </li> <li> <p>Proton 8.0-5
+     * (<code>Type=WINDOWS, Version=2022</code>)</p> </li> <li> <p>Proton 9.0-2
+     * (<code>Type=PROTON, Version=20250516</code>)</p> </li> <li> <p>Proton 8.0-5
      * (<code>Type=PROTON, Version=20241007</code>)</p> </li> <li> <p>Proton 8.0-2c
      * (<code>Type=PROTON, Version=20230704</code>)</p> </li> </ul> </li> </ul>
      */
@@ -131,48 +152,28 @@ namespace Model
     template<typename RuntimeEnvironmentT = RuntimeEnvironment>
     ApplicationSummary& WithRuntimeEnvironment(RuntimeEnvironmentT&& value) { SetRuntimeEnvironment(std::forward<RuntimeEnvironmentT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The current status of the application resource. Possible statuses include the
-     * following:</p> <ul> <li> <p> <code>INITIALIZED</code>: Amazon GameLift Streams
-     * has received the request and is initiating the work flow to create an
-     * application. </p> </li> <li> <p> <code>PROCESSING</code>: The create application
-     * work flow is in process. Amazon GameLift Streams is copying the content and
-     * caching for future deployment in a stream group.</p> </li> <li> <p>
-     * <code>READY</code>: The application is ready to deploy in a stream group.</p>
-     * </li> <li> <p> <code>ERROR</code>: An error occurred when setting up the
-     * application. See <code>StatusReason</code> for more information.</p> </li> <li>
-     * <p> <code>DELETING</code>: Amazon GameLift Streams is in the process of deleting
-     * the application.</p> </li> </ul>
-     */
-    inline ApplicationStatus GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(ApplicationStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline ApplicationSummary& WithStatus(ApplicationStatus value) { SetStatus(value); return *this;}
-    ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
+    Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
+    ApplicationStatus m_status{ApplicationStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt{};
     bool m_lastUpdatedAtHasBeenSet = false;
 
     RuntimeEnvironment m_runtimeEnvironment;
     bool m_runtimeEnvironmentHasBeenSet = false;
-
-    ApplicationStatus m_status{ApplicationStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

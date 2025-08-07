@@ -87,6 +87,19 @@ namespace Model
     template<typename DomainWithSuffixT = Aws::String>
     DnsRequestAction& WithDomainWithSuffix(DomainWithSuffixT&& value) { SetDomainWithSuffix(std::forward<DomainWithSuffixT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Web Services account ID that owns the VPC through which the DNS
+     * request was made.</p>
+     */
+    inline const Aws::String& GetVpcOwnerAccountId() const { return m_vpcOwnerAccountId; }
+    inline bool VpcOwnerAccountIdHasBeenSet() const { return m_vpcOwnerAccountIdHasBeenSet; }
+    template<typename VpcOwnerAccountIdT = Aws::String>
+    void SetVpcOwnerAccountId(VpcOwnerAccountIdT&& value) { m_vpcOwnerAccountIdHasBeenSet = true; m_vpcOwnerAccountId = std::forward<VpcOwnerAccountIdT>(value); }
+    template<typename VpcOwnerAccountIdT = Aws::String>
+    DnsRequestAction& WithVpcOwnerAccountId(VpcOwnerAccountIdT&& value) { SetVpcOwnerAccountId(std::forward<VpcOwnerAccountIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_domain;
@@ -100,6 +113,9 @@ namespace Model
 
     Aws::String m_domainWithSuffix;
     bool m_domainWithSuffixHasBeenSet = false;
+
+    Aws::String m_vpcOwnerAccountId;
+    bool m_vpcOwnerAccountIdHasBeenSet = false;
   };
 
 } // namespace Model

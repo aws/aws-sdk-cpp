@@ -40,6 +40,11 @@ TableOptimizer& TableOptimizer::operator =(JsonView jsonValue)
     m_lastRun = jsonValue.GetObject("lastRun");
     m_lastRunHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("configurationSource"))
+  {
+    m_configurationSource = ConfigurationSourceMapper::GetConfigurationSourceForName(jsonValue.GetString("configurationSource"));
+    m_configurationSourceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +67,11 @@ JsonValue TableOptimizer::Jsonize() const
   {
    payload.WithObject("lastRun", m_lastRun.Jsonize());
 
+  }
+
+  if(m_configurationSourceHasBeenSet)
+  {
+   payload.WithString("configurationSource", ConfigurationSourceMapper::GetNameForConfigurationSource(m_configurationSource));
   }
 
   return payload;

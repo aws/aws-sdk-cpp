@@ -41,43 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>This value is the number of compute resources that a stream group has
-     * provisioned and is ready to stream. It includes resources that are currently
-     * streaming and resources that are idle and ready to respond to stream
-     * requests.</p>
-     */
-    inline int GetAllocatedCapacity() const { return m_allocatedCapacity; }
-    inline bool AllocatedCapacityHasBeenSet() const { return m_allocatedCapacityHasBeenSet; }
-    inline void SetAllocatedCapacity(int value) { m_allocatedCapacityHasBeenSet = true; m_allocatedCapacity = value; }
-    inline LocationState& WithAllocatedCapacity(int value) { SetAllocatedCapacity(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The streaming capacity that is allocated and ready to handle stream requests
-     * without delay. You pay for this capacity whether it's in use or not. Best for
-     * quickest time from streaming request to streaming session.</p>
-     */
-    inline int GetAlwaysOnCapacity() const { return m_alwaysOnCapacity; }
-    inline bool AlwaysOnCapacityHasBeenSet() const { return m_alwaysOnCapacityHasBeenSet; }
-    inline void SetAlwaysOnCapacity(int value) { m_alwaysOnCapacityHasBeenSet = true; m_alwaysOnCapacity = value; }
-    inline LocationState& WithAlwaysOnCapacity(int value) { SetAlwaysOnCapacity(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>This value is the amount of allocated capacity that is not currently
-     * streaming. It represents the stream group's availability to respond to new
-     * stream requests, but not including on-demand capacity.</p>
-     */
-    inline int GetIdleCapacity() const { return m_idleCapacity; }
-    inline bool IdleCapacityHasBeenSet() const { return m_idleCapacityHasBeenSet; }
-    inline void SetIdleCapacity(int value) { m_idleCapacityHasBeenSet = true; m_idleCapacity = value; }
-    inline LocationState& WithIdleCapacity(int value) { SetIdleCapacity(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p> A location's name. For example, <code>us-east-1</code>. For a complete list
      * of locations that Amazon GameLift Streams supports, refer to <a
      * href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions,
@@ -90,6 +53,38 @@ namespace Model
     void SetLocationName(LocationNameT&& value) { m_locationNameHasBeenSet = true; m_locationName = std::forward<LocationNameT>(value); }
     template<typename LocationNameT = Aws::String>
     LocationState& WithLocationName(LocationNameT&& value) { SetLocationName(std::forward<LocationNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>This value is set of locations, including their name, current status, and
+     * capacities. </p> <p> A location can be in one of the following states: </p> <ul>
+     * <li> <p> <b>ACTIVATING</b>: Amazon GameLift Streams is preparing the location.
+     * You cannot stream from, scale the capacity of, or remove this location yet. </p>
+     * </li> <li> <p> <b>ACTIVE</b>: The location is provisioned with initial capacity.
+     * You can now stream from, scale the capacity of, or remove this location. </p>
+     * </li> <li> <p> <b>ERROR</b>: Amazon GameLift Streams failed to set up this
+     * location. The StatusReason field describes the error. You can remove this
+     * location and try to add it again. </p> </li> <li> <p> <b>REMOVING</b>: Amazon
+     * GameLift Streams is working to remove this location. It releases all provisioned
+     * capacity for this location in this stream group. </p> </li> </ul>
+     */
+    inline StreamGroupLocationStatus GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(StreamGroupLocationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline LocationState& WithStatus(StreamGroupLocationStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The streaming capacity that is allocated and ready to handle stream requests
+     * without delay. You pay for this capacity whether it's in use or not. Best for
+     * quickest time from streaming request to streaming session.</p>
+     */
+    inline int GetAlwaysOnCapacity() const { return m_alwaysOnCapacity; }
+    inline bool AlwaysOnCapacityHasBeenSet() const { return m_alwaysOnCapacityHasBeenSet; }
+    inline void SetAlwaysOnCapacity(int value) { m_alwaysOnCapacityHasBeenSet = true; m_alwaysOnCapacity = value; }
+    inline LocationState& WithAlwaysOnCapacity(int value) { SetAlwaysOnCapacity(value); return *this;}
     ///@}
 
     ///@{
@@ -120,36 +115,38 @@ namespace Model
 
     ///@{
     /**
-     * <p>This value is set of locations, including their name, current status, and
-     * capacities. </p> <p> A location can be in one of the following states: </p> <ul>
-     * <li> <p> <b>ACTIVATING</b>: Amazon GameLift Streams is preparing the location.
-     * You cannot stream from, scale the capacity of, or remove this location yet. </p>
-     * </li> <li> <p> <b>ACTIVE</b>: The location is provisioned with initial capacity.
-     * You can now stream from, scale the capacity of, or remove this location. </p>
-     * </li> <li> <p> <b>ERROR</b>: Amazon GameLift Streams failed to set up this
-     * location. The StatusReason field describes the error. You can remove this
-     * location and try to add it again. </p> </li> <li> <p> <b>REMOVING</b>: Amazon
-     * GameLift Streams is working to remove this location. It releases all provisioned
-     * capacity for this location in this stream group. </p> </li> </ul>
+     * <p>This value is the number of compute resources that a stream group has
+     * provisioned and is ready to stream. It includes resources that are currently
+     * streaming and resources that are idle and ready to respond to stream
+     * requests.</p>
      */
-    inline StreamGroupLocationStatus GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(StreamGroupLocationStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline LocationState& WithStatus(StreamGroupLocationStatus value) { SetStatus(value); return *this;}
+    inline int GetAllocatedCapacity() const { return m_allocatedCapacity; }
+    inline bool AllocatedCapacityHasBeenSet() const { return m_allocatedCapacityHasBeenSet; }
+    inline void SetAllocatedCapacity(int value) { m_allocatedCapacityHasBeenSet = true; m_allocatedCapacity = value; }
+    inline LocationState& WithAllocatedCapacity(int value) { SetAllocatedCapacity(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>This value is the amount of allocated capacity that is not currently
+     * streaming. It represents the stream group's availability to respond to new
+     * stream requests, but not including on-demand capacity.</p>
+     */
+    inline int GetIdleCapacity() const { return m_idleCapacity; }
+    inline bool IdleCapacityHasBeenSet() const { return m_idleCapacityHasBeenSet; }
+    inline void SetIdleCapacity(int value) { m_idleCapacityHasBeenSet = true; m_idleCapacity = value; }
+    inline LocationState& WithIdleCapacity(int value) { SetIdleCapacity(value); return *this;}
     ///@}
   private:
 
-    int m_allocatedCapacity{0};
-    bool m_allocatedCapacityHasBeenSet = false;
+    Aws::String m_locationName;
+    bool m_locationNameHasBeenSet = false;
+
+    StreamGroupLocationStatus m_status{StreamGroupLocationStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     int m_alwaysOnCapacity{0};
     bool m_alwaysOnCapacityHasBeenSet = false;
-
-    int m_idleCapacity{0};
-    bool m_idleCapacityHasBeenSet = false;
-
-    Aws::String m_locationName;
-    bool m_locationNameHasBeenSet = false;
 
     int m_onDemandCapacity{0};
     bool m_onDemandCapacityHasBeenSet = false;
@@ -157,8 +154,11 @@ namespace Model
     int m_requestedCapacity{0};
     bool m_requestedCapacityHasBeenSet = false;
 
-    StreamGroupLocationStatus m_status{StreamGroupLocationStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
+    int m_allocatedCapacity{0};
+    bool m_allocatedCapacityHasBeenSet = false;
+
+    int m_idleCapacity{0};
+    bool m_idleCapacityHasBeenSet = false;
   };
 
 } // namespace Model
