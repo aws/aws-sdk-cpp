@@ -11,6 +11,8 @@
 #include <aws/core/monitoring/MonitoringFactory.h>
 #include <aws/core/monitoring/MonitoringManager.h>
 #include <aws/core/monitoring/DefaultMonitoring.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 using namespace Aws::Client;
 using namespace Aws::Http;
