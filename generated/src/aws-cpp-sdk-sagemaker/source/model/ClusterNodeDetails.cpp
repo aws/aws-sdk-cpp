@@ -114,6 +114,11 @@ ClusterNodeDetails& ClusterNodeDetails::operator =(JsonView jsonValue)
     m_desiredImageId = jsonValue.GetString("DesiredImageId");
     m_desiredImageIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("UltraServerInfo"))
+  {
+    m_ultraServerInfo = jsonValue.GetObject("UltraServerInfo");
+    m_ultraServerInfoHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -222,6 +227,12 @@ JsonValue ClusterNodeDetails::Jsonize() const
   if(m_desiredImageIdHasBeenSet)
   {
    payload.WithString("DesiredImageId", m_desiredImageId);
+
+  }
+
+  if(m_ultraServerInfoHasBeenSet)
+  {
+   payload.WithObject("UltraServerInfo", m_ultraServerInfo.Jsonize());
 
   }
 

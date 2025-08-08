@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/connect/model/HierarchyGroupCondition.h>
 #include <aws/connect/model/TagCondition.h>
 #include <utility>
 
@@ -52,10 +53,23 @@ namespace Model
     template<typename TagConditionsT = TagCondition>
     CommonAttributeAndCondition& AddTagConditions(TagConditionsT&& value) { m_tagConditionsHasBeenSet = true; m_tagConditions.emplace_back(std::forward<TagConditionsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    
+    inline const HierarchyGroupCondition& GetHierarchyGroupCondition() const { return m_hierarchyGroupCondition; }
+    inline bool HierarchyGroupConditionHasBeenSet() const { return m_hierarchyGroupConditionHasBeenSet; }
+    template<typename HierarchyGroupConditionT = HierarchyGroupCondition>
+    void SetHierarchyGroupCondition(HierarchyGroupConditionT&& value) { m_hierarchyGroupConditionHasBeenSet = true; m_hierarchyGroupCondition = std::forward<HierarchyGroupConditionT>(value); }
+    template<typename HierarchyGroupConditionT = HierarchyGroupCondition>
+    CommonAttributeAndCondition& WithHierarchyGroupCondition(HierarchyGroupConditionT&& value) { SetHierarchyGroupCondition(std::forward<HierarchyGroupConditionT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<TagCondition> m_tagConditions;
     bool m_tagConditionsHasBeenSet = false;
+
+    HierarchyGroupCondition m_hierarchyGroupCondition;
+    bool m_hierarchyGroupConditionHasBeenSet = false;
   };
 
 } // namespace Model

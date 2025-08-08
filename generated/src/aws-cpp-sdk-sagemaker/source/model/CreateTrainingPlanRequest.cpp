@@ -28,6 +28,12 @@ Aws::String CreateTrainingPlanRequest::SerializePayload() const
 
   }
 
+  if(m_spareInstanceCountPerUltraServerHasBeenSet)
+  {
+   payload.WithInteger("SpareInstanceCountPerUltraServer", m_spareInstanceCountPerUltraServer);
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());

@@ -159,6 +159,7 @@
 #include <aws/inspector2/model/Currency.h>
 #include <aws/inspector2/model/Cvss2.h>
 #include <aws/inspector2/model/Cvss3.h>
+#include <aws/inspector2/model/Cvss4.h>
 #include <aws/inspector2/model/CvssScore.h>
 #include <aws/inspector2/model/CvssScoreAdjustment.h>
 #include <aws/inspector2/model/CvssScoreDetails.h>

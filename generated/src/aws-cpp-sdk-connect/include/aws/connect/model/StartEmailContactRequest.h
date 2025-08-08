@@ -139,7 +139,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The addtional recipients address of the email.</p>
+     * <p>The additional recipients address of the email.</p>
      */
     inline const InboundAdditionalRecipients& GetAdditionalRecipients() const { return m_additionalRecipients; }
     inline bool AdditionalRecipientsHasBeenSet() const { return m_additionalRecipientsHasBeenSet; }

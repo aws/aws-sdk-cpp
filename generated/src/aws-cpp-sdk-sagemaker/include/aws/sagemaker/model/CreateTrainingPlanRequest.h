@@ -63,6 +63,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>Number of spare instances to reserve per UltraServer for enhanced resiliency.
+     * Default is 1.</p>
+     */
+    inline int GetSpareInstanceCountPerUltraServer() const { return m_spareInstanceCountPerUltraServer; }
+    inline bool SpareInstanceCountPerUltraServerHasBeenSet() const { return m_spareInstanceCountPerUltraServerHasBeenSet; }
+    inline void SetSpareInstanceCountPerUltraServer(int value) { m_spareInstanceCountPerUltraServerHasBeenSet = true; m_spareInstanceCountPerUltraServer = value; }
+    inline CreateTrainingPlanRequest& WithSpareInstanceCountPerUltraServer(int value) { SetSpareInstanceCountPerUltraServer(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An array of key-value pairs to apply to this training plan.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
@@ -81,6 +92,9 @@ namespace Model
 
     Aws::String m_trainingPlanOfferingId;
     bool m_trainingPlanOfferingIdHasBeenSet = false;
+
+    int m_spareInstanceCountPerUltraServer{0};
+    bool m_spareInstanceCountPerUltraServerHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

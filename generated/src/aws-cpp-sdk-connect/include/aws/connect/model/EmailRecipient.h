@@ -39,8 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Address of the email recipient.</p> <p>Type: String</p> <p>Length
-     * Constraints: Minimum length of 1. Maximum length of 256.</p>
+     * <p>Address of the email recipient.</p>
      */
     inline const Aws::String& GetAddress() const { return m_address; }
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
@@ -52,8 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Display name of the email recipient.</p> <p>Type: String</p> <p>Length
-     * Constraints: Minimum length of 1. Maximum length of 256.</p>
+     * <p>Display name of the email recipient.</p>
      */
     inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }

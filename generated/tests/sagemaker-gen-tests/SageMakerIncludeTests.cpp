@@ -582,6 +582,8 @@
 #include <aws/sagemaker/model/DescribeProcessingJobResult.h>
 #include <aws/sagemaker/model/DescribeProjectRequest.h>
 #include <aws/sagemaker/model/DescribeProjectResult.h>
+#include <aws/sagemaker/model/DescribeReservedCapacityRequest.h>
+#include <aws/sagemaker/model/DescribeReservedCapacityResult.h>
 #include <aws/sagemaker/model/DescribeSpaceRequest.h>
 #include <aws/sagemaker/model/DescribeSpaceResult.h>
 #include <aws/sagemaker/model/DescribeStudioLifecycleConfigRequest.h>
@@ -831,6 +833,7 @@
 #include <aws/sagemaker/model/InstanceGroupStatus.h>
 #include <aws/sagemaker/model/InstanceMetadata.h>
 #include <aws/sagemaker/model/InstanceMetadataServiceConfiguration.h>
+#include <aws/sagemaker/model/InstancePlacementConfig.h>
 #include <aws/sagemaker/model/InstanceType.h>
 #include <aws/sagemaker/model/IntegerParameterRange.h>
 #include <aws/sagemaker/model/IntegerParameterRangeSpecification.h>
@@ -1032,6 +1035,8 @@
 #include <aws/sagemaker/model/ListTrialComponentsResult.h>
 #include <aws/sagemaker/model/ListTrialsRequest.h>
 #include <aws/sagemaker/model/ListTrialsResult.h>
+#include <aws/sagemaker/model/ListUltraServersByReservedCapacityRequest.h>
+#include <aws/sagemaker/model/ListUltraServersByReservedCapacityResult.h>
 #include <aws/sagemaker/model/ListUserProfilesRequest.h>
 #include <aws/sagemaker/model/ListUserProfilesResult.h>
 #include <aws/sagemaker/model/ListWorkforcesRequest.h>
@@ -1237,6 +1242,7 @@
 #include <aws/sagemaker/model/PipelineSummary.h>
 #include <aws/sagemaker/model/PipelineVersion.h>
 #include <aws/sagemaker/model/PipelineVersionSummary.h>
+#include <aws/sagemaker/model/PlacementSpecification.h>
 #include <aws/sagemaker/model/PredefinedMetricSpecification.h>
 #include <aws/sagemaker/model/PreemptTeamTasks.h>
 #include <aws/sagemaker/model/PresignedUrlAccessConfig.h>
@@ -1337,6 +1343,7 @@
 #include <aws/sagemaker/model/ReservedCapacityOffering.h>
 #include <aws/sagemaker/model/ReservedCapacityStatus.h>
 #include <aws/sagemaker/model/ReservedCapacitySummary.h>
+#include <aws/sagemaker/model/ReservedCapacityType.h>
 #include <aws/sagemaker/model/ResolvedAttributes.h>
 #include <aws/sagemaker/model/ResourceCatalog.h>
 #include <aws/sagemaker/model/ResourceCatalogSortBy.h>
@@ -1566,6 +1573,10 @@
 #include <aws/sagemaker/model/UiConfig.h>
 #include <aws/sagemaker/model/UiTemplate.h>
 #include <aws/sagemaker/model/UiTemplateInfo.h>
+#include <aws/sagemaker/model/UltraServer.h>
+#include <aws/sagemaker/model/UltraServerHealthStatus.h>
+#include <aws/sagemaker/model/UltraServerInfo.h>
+#include <aws/sagemaker/model/UltraServerSummary.h>
 #include <aws/sagemaker/model/UnifiedStudioSettings.h>
 #include <aws/sagemaker/model/UpdateActionRequest.h>
 #include <aws/sagemaker/model/UpdateActionResult.h>

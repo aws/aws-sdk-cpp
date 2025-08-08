@@ -8,6 +8,7 @@
 #include <aws/sagemaker/model/TrainingInstanceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/InstancePlacementConfig.h>
 #include <aws/sagemaker/model/InstanceGroup.h>
 #include <utility>
 
@@ -162,6 +163,19 @@ namespace Model
     template<typename TrainingPlanArnT = Aws::String>
     ResourceConfig& WithTrainingPlanArn(TrainingPlanArnT&& value) { SetTrainingPlanArn(std::forward<TrainingPlanArnT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Configuration for how training job instances are placed and allocated within
+     * UltraServers. Only applicable for UltraServer capacity.</p>
+     */
+    inline const InstancePlacementConfig& GetInstancePlacementConfig() const { return m_instancePlacementConfig; }
+    inline bool InstancePlacementConfigHasBeenSet() const { return m_instancePlacementConfigHasBeenSet; }
+    template<typename InstancePlacementConfigT = InstancePlacementConfig>
+    void SetInstancePlacementConfig(InstancePlacementConfigT&& value) { m_instancePlacementConfigHasBeenSet = true; m_instancePlacementConfig = std::forward<InstancePlacementConfigT>(value); }
+    template<typename InstancePlacementConfigT = InstancePlacementConfig>
+    ResourceConfig& WithInstancePlacementConfig(InstancePlacementConfigT&& value) { SetInstancePlacementConfig(std::forward<InstancePlacementConfigT>(value)); return *this;}
+    ///@}
   private:
 
     TrainingInstanceType m_instanceType{TrainingInstanceType::NOT_SET};
@@ -184,6 +198,9 @@ namespace Model
 
     Aws::String m_trainingPlanArn;
     bool m_trainingPlanArnHasBeenSet = false;
+
+    InstancePlacementConfig m_instancePlacementConfig;
+    bool m_instancePlacementConfigHasBeenSet = false;
   };
 
 } // namespace Model

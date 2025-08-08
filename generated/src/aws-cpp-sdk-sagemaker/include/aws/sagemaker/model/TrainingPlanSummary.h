@@ -199,6 +199,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The total number of UltraServers allocated to this training plan.</p>
+     */
+    inline int GetTotalUltraServerCount() const { return m_totalUltraServerCount; }
+    inline bool TotalUltraServerCountHasBeenSet() const { return m_totalUltraServerCountHasBeenSet; }
+    inline void SetTotalUltraServerCount(int value) { m_totalUltraServerCountHasBeenSet = true; m_totalUltraServerCount = value; }
+    inline TrainingPlanSummary& WithTotalUltraServerCount(int value) { SetTotalUltraServerCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The target resources (e.g., training jobs, HyperPod clusters) that can use
      * this training plan.</p> <p>Training plans are specific to their target
      * resource.</p> <ul> <li> <p>A training plan designed for SageMaker training jobs
@@ -269,6 +279,9 @@ namespace Model
 
     int m_inUseInstanceCount{0};
     bool m_inUseInstanceCountHasBeenSet = false;
+
+    int m_totalUltraServerCount{0};
+    bool m_totalUltraServerCountHasBeenSet = false;
 
     Aws::Vector<SageMakerResourceName> m_targetResources;
     bool m_targetResourcesHasBeenSet = false;

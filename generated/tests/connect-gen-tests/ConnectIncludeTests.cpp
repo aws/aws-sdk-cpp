@@ -130,6 +130,10 @@
 #include <aws/connect/model/ContactFlowType.h>
 #include <aws/connect/model/ContactFlowVersionSummary.h>
 #include <aws/connect/model/ContactInitiationMethod.h>
+#include <aws/connect/model/ContactMetricInfo.h>
+#include <aws/connect/model/ContactMetricName.h>
+#include <aws/connect/model/ContactMetricResult.h>
+#include <aws/connect/model/ContactMetricValue.h>
 #include <aws/connect/model/ContactRecordingType.h>
 #include <aws/connect/model/ContactSearchSummary.h>
 #include <aws/connect/model/ContactSearchSummaryAgentInfo.h>
@@ -397,6 +401,8 @@
 #include <aws/connect/model/GetAttachedFileResult.h>
 #include <aws/connect/model/GetContactAttributesRequest.h>
 #include <aws/connect/model/GetContactAttributesResult.h>
+#include <aws/connect/model/GetContactMetricsRequest.h>
+#include <aws/connect/model/GetContactMetricsResult.h>
 #include <aws/connect/model/GetCurrentMetricDataRequest.h>
 #include <aws/connect/model/GetCurrentMetricDataResult.h>
 #include <aws/connect/model/GetCurrentUserDataRequest.h>

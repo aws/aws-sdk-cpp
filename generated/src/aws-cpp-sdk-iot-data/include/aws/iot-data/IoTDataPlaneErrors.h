@@ -48,6 +48,7 @@ enum class IoTDataPlaneErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  FORBIDDEN,
   INVALID_REQUEST,
   METHOD_NOT_ALLOWED,
   REQUEST_ENTITY_TOO_LARGE,

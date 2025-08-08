@@ -25,8 +25,11 @@ namespace Model
 {
 
   /**
-   * <p>That resource is already in use. Please try another.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>That resource is already in use (for example, you're trying to add a record
+   * with the same name as an existing record). If you are trying to delete a
+   * resource (for example, DeleteHoursOfOperation or DeletePredefinedAttribute),
+   * remove its reference from related resources and then try again.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResourceInUseException">AWS
    * API Reference</a></p>
    */

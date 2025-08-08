@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Metadata information about a SageMaker HyperPod cluster showing information
-   * about the cluster level operations, such as creating, updating, and
+   * <p>Metadata information about a HyperPod cluster showing information about the
+   * cluster level operations, such as creating, updating, and
    * deleting.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ClusterMetadata">AWS
    * API Reference</a></p>
@@ -56,8 +56,8 @@ namespace Model
     ///@{
     /**
      * <p>A list of Amazon EKS IAM role ARNs associated with the cluster. This is
-     * created by SageMaker HyperPod on your behalf and only applies for
-     * EKS-orchestrated clusters.</p>
+     * created by HyperPod on your behalf and only applies for EKS orchestrated
+     * clusters.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEksRoleAccessEntries() const { return m_eksRoleAccessEntries; }
     inline bool EksRoleAccessEntriesHasBeenSet() const { return m_eksRoleAccessEntriesHasBeenSet; }
@@ -72,8 +72,7 @@ namespace Model
     ///@{
     /**
      * <p>The Service-Linked Role (SLR) associated with the cluster. This is created by
-     * SageMaker HyperPod on your behalf and only applies for EKS-orchestrated
-     * clusters.</p>
+     * HyperPod on your behalf and only applies for EKS orchestrated clusters.</p>
      */
     inline const Aws::String& GetSlrAccessEntry() const { return m_slrAccessEntry; }
     inline bool SlrAccessEntryHasBeenSet() const { return m_slrAccessEntryHasBeenSet; }

@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the effective hours of operations</p>
+     * <p>Information about the effective hours of operations.</p>
      */
     inline const Aws::Vector<EffectiveHoursOfOperations>& GetEffectiveHoursOfOperationList() const { return m_effectiveHoursOfOperationList; }
     template<typename EffectiveHoursOfOperationListT = Aws::Vector<EffectiveHoursOfOperations>>

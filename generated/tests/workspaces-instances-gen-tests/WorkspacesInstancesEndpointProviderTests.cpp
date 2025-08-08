@@ -74,7 +74,7 @@ protected:
 };
 
 Aws::UniquePtrSafeDeleted<Aws::Vector<WorkspacesInstancesEndpointProviderEndpointTestCase>> WorkspacesInstancesEndpointProviderTests::TEST_CASES;
-const size_t WorkspacesInstancesEndpointProviderTests::TEST_CASES_SZ = 17;
+const size_t WorkspacesInstancesEndpointProviderTests::TEST_CASES_SZ = 9;
 
 Aws::Vector<WorkspacesInstancesEndpointProviderEndpointTestCase> WorkspacesInstancesEndpointProviderTests::getTestCase() {
 
@@ -149,78 +149,6 @@ Aws::Vector<WorkspacesInstancesEndpointProviderEndpointTestCase> WorkspacesInsta
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 8*/
-  {"For region us-iso-east-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://workspaces-instances-fips.us-iso-east-1.c2s.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 9*/
-  {"For region us-iso-east-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://workspaces-instances.us-iso-east-1.c2s.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 10*/
-  {"For region us-isob-east-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://workspaces-instances-fips.us-isob-east-1.sc2s.sgov.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 11*/
-  {"For region us-isob-east-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://workspaces-instances.us-isob-east-1.sc2s.sgov.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 12*/
-  {"For region eu-isoe-west-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-isoe-west-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://workspaces-instances-fips.eu-isoe-west-1.cloud.adc-e.uk",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 13*/
-  {"For region eu-isoe-west-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-isoe-west-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://workspaces-instances.eu-isoe-west-1.cloud.adc-e.uk",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 14*/
-  {"For region us-isof-south-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-isof-south-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://workspaces-instances-fips.us-isof-south-1.csp.hci.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 15*/
-  {"For region us-isof-south-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-isof-south-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://workspaces-instances.us-isof-south-1.csp.hci.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 16*/
   {"Missing region", // documentation
     {}, // params
     {}, // tags

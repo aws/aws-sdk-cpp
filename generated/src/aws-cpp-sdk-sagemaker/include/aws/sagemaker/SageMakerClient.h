@@ -193,7 +193,7 @@ namespace SageMaker
 
         /**
          * <p> Attaches your Amazon Elastic Block Store (Amazon EBS) volume to a node in
-         * your EKS-orchestrated HyperPod cluster. </p> <p> This API works with the Amazon
+         * your EKS orchestrated HyperPod cluster. </p> <p> This API works with the Amazon
          * Elastic Block Store (Amazon EBS) Container Storage Interface (CSI) driver to
          * manage the lifecycle of persistent storage in your HyperPod EKS clusters.
          * </p><p><h3>See Also:</h3>   <a
@@ -5650,6 +5650,31 @@ namespace SageMaker
         }
 
         /**
+         * <p>Retrieves details about a reserved capacity.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeReservedCapacity">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeReservedCapacityOutcome DescribeReservedCapacity(const Model::DescribeReservedCapacityRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeReservedCapacity that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeReservedCapacityRequestT = Model::DescribeReservedCapacityRequest>
+        Model::DescribeReservedCapacityOutcomeCallable DescribeReservedCapacityCallable(const DescribeReservedCapacityRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::DescribeReservedCapacity, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeReservedCapacity that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeReservedCapacityRequestT = Model::DescribeReservedCapacityRequest>
+        void DescribeReservedCapacityAsync(const DescribeReservedCapacityRequestT& request, const DescribeReservedCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::DescribeReservedCapacity, request, handler, context);
+        }
+
+        /**
          * <p>Describes the space.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeSpace">AWS
          * API Reference</a></p>
@@ -5945,7 +5970,7 @@ namespace SageMaker
 
         /**
          * <p> Detaches your Amazon Elastic Block Store (Amazon EBS) volume from a node in
-         * your EKS-orchestrated SageMaker HyperPod cluster.</p> <p> This API works with
+         * your EKS orchestrated SageMaker HyperPod cluster.</p> <p> This API works with
          * the Amazon Elastic Block Store (Amazon EBS) Container Storage Interface (CSI)
          * driver to manage the lifecycle of persistent storage in your HyperPod EKS
          * clusters. </p><p><h3>See Also:</h3>   <a
@@ -8339,6 +8364,32 @@ namespace SageMaker
         void ListTrialsAsync(const ListTrialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTrialsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListTrials, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all UltraServers that are part of a specified reserved
+         * capacity.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListUltraServersByReservedCapacity">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListUltraServersByReservedCapacityOutcome ListUltraServersByReservedCapacity(const Model::ListUltraServersByReservedCapacityRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListUltraServersByReservedCapacity that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListUltraServersByReservedCapacityRequestT = Model::ListUltraServersByReservedCapacityRequest>
+        Model::ListUltraServersByReservedCapacityOutcomeCallable ListUltraServersByReservedCapacityCallable(const ListUltraServersByReservedCapacityRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::ListUltraServersByReservedCapacity, request);
+        }
+
+        /**
+         * An Async wrapper for ListUltraServersByReservedCapacity that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListUltraServersByReservedCapacityRequestT = Model::ListUltraServersByReservedCapacityRequest>
+        void ListUltraServersByReservedCapacityAsync(const ListUltraServersByReservedCapacityRequestT& request, const ListUltraServersByReservedCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::ListUltraServersByReservedCapacity, request, handler, context);
         }
 
         /**

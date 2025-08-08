@@ -13,6 +13,7 @@
 #include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/ClusterInstancePlacement.h>
+#include <aws/sagemaker/model/UltraServerInfo.h>
 #include <aws/sagemaker/model/ClusterInstanceStorageConfig.h>
 #include <utility>
 
@@ -256,6 +257,18 @@ namespace Model
     template<typename DesiredImageIdT = Aws::String>
     ClusterNodeDetails& WithDesiredImageId(DesiredImageIdT&& value) { SetDesiredImageId(std::forward<DesiredImageIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains information about the UltraServer.</p>
+     */
+    inline const UltraServerInfo& GetUltraServerInfo() const { return m_ultraServerInfo; }
+    inline bool UltraServerInfoHasBeenSet() const { return m_ultraServerInfoHasBeenSet; }
+    template<typename UltraServerInfoT = UltraServerInfo>
+    void SetUltraServerInfo(UltraServerInfoT&& value) { m_ultraServerInfoHasBeenSet = true; m_ultraServerInfo = std::forward<UltraServerInfoT>(value); }
+    template<typename UltraServerInfoT = UltraServerInfo>
+    ClusterNodeDetails& WithUltraServerInfo(UltraServerInfoT&& value) { SetUltraServerInfo(std::forward<UltraServerInfoT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_instanceGroupName;
@@ -308,6 +321,9 @@ namespace Model
 
     Aws::String m_desiredImageId;
     bool m_desiredImageIdHasBeenSet = false;
+
+    UltraServerInfo m_ultraServerInfo;
+    bool m_ultraServerInfoHasBeenSet = false;
   };
 
 } // namespace Model

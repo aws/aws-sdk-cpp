@@ -74,7 +74,7 @@ protected:
 };
 
 Aws::UniquePtrSafeDeleted<Aws::Vector<MPAEndpointProviderEndpointTestCase>> MPAEndpointProviderTests::TEST_CASES;
-const size_t MPAEndpointProviderTests::TEST_CASES_SZ = 17;
+const size_t MPAEndpointProviderTests::TEST_CASES_SZ = 9;
 
 Aws::Vector<MPAEndpointProviderEndpointTestCase> MPAEndpointProviderTests::getTestCase() {
 
@@ -149,78 +149,6 @@ Aws::Vector<MPAEndpointProviderEndpointTestCase> MPAEndpointProviderTests::getTe
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 8*/
-  {"For region us-iso-east-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://mpa-fips.us-iso-east-1.c2s.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 9*/
-  {"For region us-iso-east-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://mpa.us-iso-east-1.c2s.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 10*/
-  {"For region us-isob-east-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://mpa-fips.us-isob-east-1.sc2s.sgov.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 11*/
-  {"For region us-isob-east-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://mpa.us-isob-east-1.sc2s.sgov.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 12*/
-  {"For region eu-isoe-west-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-isoe-west-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://mpa-fips.eu-isoe-west-1.cloud.adc-e.uk",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 13*/
-  {"For region eu-isoe-west-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-isoe-west-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://mpa.eu-isoe-west-1.cloud.adc-e.uk",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 14*/
-  {"For region us-isof-south-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-isof-south-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://mpa-fips.us-isof-south-1.csp.hci.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 15*/
-  {"For region us-isof-south-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-isof-south-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://mpa.us-isof-south-1.csp.hci.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 16*/
   {"Missing region", // documentation
     {}, // params
     {}, // tags

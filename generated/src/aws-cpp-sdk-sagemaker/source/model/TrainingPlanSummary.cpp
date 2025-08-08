@@ -90,6 +90,11 @@ TrainingPlanSummary& TrainingPlanSummary::operator =(JsonView jsonValue)
     m_inUseInstanceCount = jsonValue.GetInteger("InUseInstanceCount");
     m_inUseInstanceCountHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("TotalUltraServerCount"))
+  {
+    m_totalUltraServerCount = jsonValue.GetInteger("TotalUltraServerCount");
+    m_totalUltraServerCountHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("TargetResources"))
   {
     Aws::Utils::Array<JsonView> targetResourcesJsonList = jsonValue.GetArray("TargetResources");
@@ -187,6 +192,12 @@ JsonValue TrainingPlanSummary::Jsonize() const
   if(m_inUseInstanceCountHasBeenSet)
   {
    payload.WithInteger("InUseInstanceCount", m_inUseInstanceCount);
+
+  }
+
+  if(m_totalUltraServerCountHasBeenSet)
+  {
+   payload.WithInteger("TotalUltraServerCount", m_totalUltraServerCount);
 
   }
 

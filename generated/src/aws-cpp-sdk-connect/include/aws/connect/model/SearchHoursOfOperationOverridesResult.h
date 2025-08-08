@@ -50,8 +50,7 @@ namespace Model
     ///@{
     /**
      * <p>The token for the next set of results. Use the value returned in the previous
-     * response in the next request to retrieve the next set of results. Length
-     * Constraints: Minimum length of 1. Maximum length of 2500.</p>
+     * response in the next request to retrieve the next set of results. </p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     template<typename NextTokenT = Aws::String>

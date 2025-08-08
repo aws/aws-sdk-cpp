@@ -55,8 +55,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster associated
-     * with the event.</p>
+     * <p>The Amazon Resource Name (ARN) of the HyperPod cluster associated with the
+     * event.</p>
      */
     inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
     inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
@@ -68,7 +68,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the SageMaker HyperPod cluster associated with the event.</p>
+     * <p>The name of the HyperPod cluster associated with the event.</p>
      */
     inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
@@ -104,8 +104,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of resource associated with the event. Valid values are "Cluster",
-     * "InstanceGroup", or "Instance".</p>
+     * <p>The type of resource associated with the event. Valid values are
+     * <code>Cluster</code>, <code>InstanceGroup</code>, or <code>Instance</code>.</p>
      */
     inline ClusterEventResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

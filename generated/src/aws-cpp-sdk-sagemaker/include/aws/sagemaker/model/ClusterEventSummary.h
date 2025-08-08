@@ -26,8 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>A summary of an event in a SageMaker HyperPod cluster.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A summary of an event in a HyperPod cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ClusterEventSummary">AWS
    * API Reference</a></p>
    */
@@ -54,8 +53,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster associated
-     * with the event.</p>
+     * <p>The Amazon Resource Name (ARN) of the HyperPod cluster associated with the
+     * event.</p>
      */
     inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
     inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
@@ -67,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the SageMaker HyperPod cluster associated with the event.</p>
+     * <p>The name of the HyperPod cluster associated with the event.</p>
      */
     inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
@@ -91,7 +90,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The EC2 instance ID associated with the event, if applicable.</p>
+     * <p>The Amazon Elastic Compute Cloud (EC2) instance ID associated with the event,
+     * if applicable.</p>
      */
     inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
@@ -103,8 +103,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of resource associated with the event. Valid values are "Cluster",
-     * "InstanceGroup", or "Instance".</p>
+     * <p>The type of resource associated with the event. Valid values are
+     * <code>Cluster</code>, <code>InstanceGroup</code>, or <code>Instance</code>.</p>
      */
     inline ClusterEventResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

@@ -60,6 +60,11 @@ ClusterNodeSummary& ClusterNodeSummary::operator =(JsonView jsonValue)
     m_instanceStatus = jsonValue.GetObject("InstanceStatus");
     m_instanceStatusHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("UltraServerInfo"))
+  {
+    m_ultraServerInfo = jsonValue.GetObject("UltraServerInfo");
+    m_ultraServerInfoHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -103,6 +108,12 @@ JsonValue ClusterNodeSummary::Jsonize() const
   if(m_instanceStatusHasBeenSet)
   {
    payload.WithObject("InstanceStatus", m_instanceStatus.Jsonize());
+
+  }
+
+  if(m_ultraServerInfoHasBeenSet)
+  {
+   payload.WithObject("UltraServerInfo", m_ultraServerInfo.Jsonize());
 
   }
 

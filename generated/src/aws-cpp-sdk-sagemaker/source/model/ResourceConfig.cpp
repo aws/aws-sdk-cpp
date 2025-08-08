@@ -64,6 +64,11 @@ ResourceConfig& ResourceConfig::operator =(JsonView jsonValue)
     m_trainingPlanArn = jsonValue.GetString("TrainingPlanArn");
     m_trainingPlanArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("InstancePlacementConfig"))
+  {
+    m_instancePlacementConfig = jsonValue.GetObject("InstancePlacementConfig");
+    m_instancePlacementConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -114,6 +119,12 @@ JsonValue ResourceConfig::Jsonize() const
   if(m_trainingPlanArnHasBeenSet)
   {
    payload.WithString("TrainingPlanArn", m_trainingPlanArn);
+
+  }
+
+  if(m_instancePlacementConfigHasBeenSet)
+  {
+   payload.WithObject("InstancePlacementConfig", m_instancePlacementConfig.Jsonize());
 
   }
 

@@ -62,7 +62,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS Region where this resource was last modified.</p>
+     * <p>The Amazon Web Services Region where this resource was last modified.</p>
      */
     inline const Aws::String& GetLastModifiedRegion() const { return m_lastModifiedRegion; }
     template<typename LastModifiedRegionT = Aws::String>

@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/sagemaker/model/ReservedCapacityInstanceType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/SageMakerResourceName.h>
@@ -63,6 +64,28 @@ namespace Model
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline SearchTrainingPlanOfferingsRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of UltraServer to search for, such as ml.u-p6e-gb200x72.</p>
+     */
+    inline const Aws::String& GetUltraServerType() const { return m_ultraServerType; }
+    inline bool UltraServerTypeHasBeenSet() const { return m_ultraServerTypeHasBeenSet; }
+    template<typename UltraServerTypeT = Aws::String>
+    void SetUltraServerType(UltraServerTypeT&& value) { m_ultraServerTypeHasBeenSet = true; m_ultraServerType = std::forward<UltraServerTypeT>(value); }
+    template<typename UltraServerTypeT = Aws::String>
+    SearchTrainingPlanOfferingsRequest& WithUltraServerType(UltraServerTypeT&& value) { SetUltraServerType(std::forward<UltraServerTypeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of UltraServers to search for.</p>
+     */
+    inline int GetUltraServerCount() const { return m_ultraServerCount; }
+    inline bool UltraServerCountHasBeenSet() const { return m_ultraServerCountHasBeenSet; }
+    inline void SetUltraServerCount(int value) { m_ultraServerCountHasBeenSet = true; m_ultraServerCount = value; }
+    inline SearchTrainingPlanOfferingsRequest& WithUltraServerCount(int value) { SetUltraServerCount(value); return *this;}
     ///@}
 
     ///@{
@@ -125,6 +148,12 @@ namespace Model
 
     int m_instanceCount{0};
     bool m_instanceCountHasBeenSet = false;
+
+    Aws::String m_ultraServerType;
+    bool m_ultraServerTypeHasBeenSet = false;
+
+    int m_ultraServerCount{0};
+    bool m_ultraServerCountHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTimeAfter{};
     bool m_startTimeAfterHasBeenSet = false;

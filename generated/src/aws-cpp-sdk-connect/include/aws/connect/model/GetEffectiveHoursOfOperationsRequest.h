@@ -64,7 +64,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Date from when the hours of operation are listed.</p>
+     * <p>The date from when the hours of operation are listed.</p>
      */
     inline const Aws::String& GetFromDate() const { return m_fromDate; }
     inline bool FromDateHasBeenSet() const { return m_fromDateHasBeenSet; }
@@ -76,7 +76,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Date until when the hours of operation are listed.</p>
+     * <p>The date until when the hours of operation are listed.</p>
      */
     inline const Aws::String& GetToDate() const { return m_toDate; }
     inline bool ToDateHasBeenSet() const { return m_toDateHasBeenSet; }
