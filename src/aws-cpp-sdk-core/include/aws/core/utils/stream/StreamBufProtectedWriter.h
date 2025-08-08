@@ -10,6 +10,9 @@
 #include <aws/core/utils/Array.h>
 #include <streambuf>
 #include <functional>
+#include <cstdint>
+#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 namespace Aws
 {
