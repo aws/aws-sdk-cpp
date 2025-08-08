@@ -637,3 +637,13 @@ TEST_F(DocumentTest, TestEquality)
     built.WithString("AWS", "Amazon Web Services");
     ASSERT_NE(parsed, built);
 }
+
+TEST_F(DocumentTest, TestBooleanTrue)
+{
+  const auto doc = Document{}
+    .WithBool("time_marches_on", true)
+    .WithBool("and_the_age_of_a_new_king_draws_near", false);
+
+  ASSERT_TRUE(doc.View().GetBool("time_marches_on"));
+  ASSERT_FALSE(doc.View().GetBool("and_the_age_of_a_new_king_draws_near"));
+}
