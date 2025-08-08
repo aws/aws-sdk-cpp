@@ -141,7 +141,7 @@ namespace Model
     /**
      * <p>The type of orchestrator to use for the SageMaker HyperPod cluster.
      * Currently, the only supported value is <code>"eks"</code>, which is to use an
-     * Amazon Elastic Kubernetes Service (EKS) cluster as the orchestrator.</p>
+     * Amazon Elastic Kubernetes Service cluster as the orchestrator.</p>
      */
     inline const ClusterOrchestrator& GetOrchestrator() const { return m_orchestrator; }
     inline bool OrchestratorHasBeenSet() const { return m_orchestratorHasBeenSet; }

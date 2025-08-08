@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Metadata information about an instance group in a SageMaker HyperPod
+   * <p>Metadata information about an instance group in a HyperPod
    * cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/InstanceGroupMetadata">AWS
    * API Reference</a></p>

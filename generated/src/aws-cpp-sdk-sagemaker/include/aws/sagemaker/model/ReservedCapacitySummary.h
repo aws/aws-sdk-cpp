@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/ReservedCapacityType.h>
 #include <aws/sagemaker/model/ReservedCapacityInstanceType.h>
 #include <aws/sagemaker/model/ReservedCapacityStatus.h>
 #include <aws/core/utils/DateTime.h>
@@ -54,6 +55,39 @@ namespace Model
     void SetReservedCapacityArn(ReservedCapacityArnT&& value) { m_reservedCapacityArnHasBeenSet = true; m_reservedCapacityArn = std::forward<ReservedCapacityArnT>(value); }
     template<typename ReservedCapacityArnT = Aws::String>
     ReservedCapacitySummary& WithReservedCapacityArn(ReservedCapacityArnT&& value) { SetReservedCapacityArn(std::forward<ReservedCapacityArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of reserved capacity.</p>
+     */
+    inline ReservedCapacityType GetReservedCapacityType() const { return m_reservedCapacityType; }
+    inline bool ReservedCapacityTypeHasBeenSet() const { return m_reservedCapacityTypeHasBeenSet; }
+    inline void SetReservedCapacityType(ReservedCapacityType value) { m_reservedCapacityTypeHasBeenSet = true; m_reservedCapacityType = value; }
+    inline ReservedCapacitySummary& WithReservedCapacityType(ReservedCapacityType value) { SetReservedCapacityType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of UltraServer included in this reserved capacity, such as
+     * ml.u-p6e-gb200x72.</p>
+     */
+    inline const Aws::String& GetUltraServerType() const { return m_ultraServerType; }
+    inline bool UltraServerTypeHasBeenSet() const { return m_ultraServerTypeHasBeenSet; }
+    template<typename UltraServerTypeT = Aws::String>
+    void SetUltraServerType(UltraServerTypeT&& value) { m_ultraServerTypeHasBeenSet = true; m_ultraServerType = std::forward<UltraServerTypeT>(value); }
+    template<typename UltraServerTypeT = Aws::String>
+    ReservedCapacitySummary& WithUltraServerType(UltraServerTypeT&& value) { SetUltraServerType(std::forward<UltraServerTypeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of UltraServers included in this reserved capacity.</p>
+     */
+    inline int GetUltraServerCount() const { return m_ultraServerCount; }
+    inline bool UltraServerCountHasBeenSet() const { return m_ultraServerCountHasBeenSet; }
+    inline void SetUltraServerCount(int value) { m_ultraServerCountHasBeenSet = true; m_ultraServerCount = value; }
+    inline ReservedCapacitySummary& WithUltraServerCount(int value) { SetUltraServerCount(value); return *this;}
     ///@}
 
     ///@{
@@ -147,6 +181,15 @@ namespace Model
 
     Aws::String m_reservedCapacityArn;
     bool m_reservedCapacityArnHasBeenSet = false;
+
+    ReservedCapacityType m_reservedCapacityType{ReservedCapacityType::NOT_SET};
+    bool m_reservedCapacityTypeHasBeenSet = false;
+
+    Aws::String m_ultraServerType;
+    bool m_ultraServerTypeHasBeenSet = false;
+
+    int m_ultraServerCount{0};
+    bool m_ultraServerCountHasBeenSet = false;
 
     ReservedCapacityInstanceType m_instanceType{ReservedCapacityInstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;

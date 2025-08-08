@@ -66,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results to return per page. </p>
+     * <p>The maximum number of results to return per page.</p>
      */
     inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

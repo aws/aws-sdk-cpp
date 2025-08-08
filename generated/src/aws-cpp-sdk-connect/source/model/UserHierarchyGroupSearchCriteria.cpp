@@ -48,6 +48,11 @@ UserHierarchyGroupSearchCriteria& UserHierarchyGroupSearchCriteria::operator =(J
     m_stringCondition = jsonValue.GetObject("StringCondition");
     m_stringConditionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("HierarchyGroupCondition"))
+  {
+    m_hierarchyGroupCondition = jsonValue.GetObject("HierarchyGroupCondition");
+    m_hierarchyGroupConditionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -80,6 +85,12 @@ JsonValue UserHierarchyGroupSearchCriteria::Jsonize() const
   if(m_stringConditionHasBeenSet)
   {
    payload.WithObject("StringCondition", m_stringCondition.Jsonize());
+
+  }
+
+  if(m_hierarchyGroupConditionHasBeenSet)
+  {
+   payload.WithObject("HierarchyGroupCondition", m_hierarchyGroupCondition.Jsonize());
 
   }
 

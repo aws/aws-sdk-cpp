@@ -81,17 +81,17 @@ namespace Model
      * communicate with the source code management platform.</p> <p>
      * <code>INTERNAL_ERROR</code> - Amazon Inspector has encountered an internal error
      * for this resource. Amazon Inspector service will automatically resolve the issue
-     * and resume the scanning. No action required from the user.</p> <p> <code>NO
-     * INVENTORY</code> - Amazon Inspector couldn't find software application inventory
-     * to scan for vulnerabilities. This might be caused due to required Amazon
-     * Inspector associations being deleted or failing to run on your resource. Please
-     * verify the status of <code>InspectorInventoryCollection-do-not-delete</code>
-     * association in the SSM console for the resource. Additionally, you can verify
-     * the instance's inventory in the SSM Fleet Manager console.</p> <p>
-     * <code>NO_RESOURCES_FOUND</code> - Reserved for future use.</p> <p>
-     * <code>NO_SCAN_CONFIGURATION_ASSOCIATED</code> - The code repository resource
-     * doesn't have an associated scan configuration.</p> <p>
-     * <code>PENDING_DISABLE</code> - This resource is pending cleanup during
+     * and resume the scanning. No action required from the user.</p> <p>
+     * <code>NO_INVENTORY</code> - Amazon Inspector couldn't find software application
+     * inventory to scan for vulnerabilities. This might be caused due to required
+     * Amazon Inspector associations being deleted or failing to run on your resource.
+     * Please verify the status of
+     * <code>InspectorInventoryCollection-do-not-delete</code> association in the SSM
+     * console for the resource. Additionally, you can verify the instance's inventory
+     * in the SSM Fleet Manager console.</p> <p> <code>NO_RESOURCES_FOUND</code> -
+     * Reserved for future use.</p> <p> <code>NO_SCAN_CONFIGURATION_ASSOCIATED</code> -
+     * The code repository resource doesn't have an associated scan configuration.</p>
+     * <p> <code>PENDING_DISABLE</code> - This resource is pending cleanup during
      * disablement. The customer will not be billed while a resource is in the pending
      * disable status.</p> <p> <code>PENDING_INITIAL_SCAN</code> - This resource has
      * been identified for scanning, results will be available soon.</p> <p>

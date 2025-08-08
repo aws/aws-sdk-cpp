@@ -27,6 +27,18 @@ Aws::String SearchTrainingPlanOfferingsRequest::SerializePayload() const
 
   }
 
+  if(m_ultraServerTypeHasBeenSet)
+  {
+   payload.WithString("UltraServerType", m_ultraServerType);
+
+  }
+
+  if(m_ultraServerCountHasBeenSet)
+  {
+   payload.WithInteger("UltraServerCount", m_ultraServerCount);
+
+  }
+
   if(m_startTimeAfterHasBeenSet)
   {
    payload.WithDouble("StartTimeAfter", m_startTimeAfter.SecondsWithMSPrecision());

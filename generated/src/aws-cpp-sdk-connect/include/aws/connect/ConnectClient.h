@@ -377,9 +377,8 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Associates a set of quick connects with a queue.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Associates a set of quick connects with a queue.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateQueueQuickConnects">AWS
          * API Reference</a></p>
          */
@@ -727,8 +726,7 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Creates an agent status for the specified Amazon Connect
+         * <p>Creates an agent status for the specified Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateAgentStatus">AWS
          * API Reference</a></p>
@@ -933,8 +931,7 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Creates hours of operation. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates hours of operation. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateHoursOfOperation">AWS
          * API Reference</a></p>
          */
@@ -960,7 +957,7 @@ namespace Connect
 
         /**
          * <p>Creates an hours of operation override in an Amazon Connect hours of
-         * operation resource</p><p><h3>See Also:</h3>   <a
+         * operation resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateHoursOfOperationOverride">AWS
          * API Reference</a></p>
          */
@@ -1443,11 +1440,11 @@ namespace Connect
          * <p>Creates a user account for the specified Amazon Connect instance.</p>
          *  <p>Certain <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UserIdentityInfo.html">UserIdentityInfo</a>
-         * parameters are required in some situations. For example, <code>Email</code> is
-         * required if you are using SAML for identity management. <code>FirstName</code>
-         * and <code>LastName</code> are required if you are using Amazon Connect or SAML
-         * for identity management.</p>  <p>For information about how to create
-         * users using the Amazon Connect admin website, see <a
+         * parameters are required in some situations. For example, <code>Email</code>,
+         * <code>FirstName</code> and <code>LastName</code> are required if you are using
+         * Amazon Connect or SAML for identity management.</p>  <p>For
+         * information about how to create users using the Amazon Connect admin website,
+         * see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
          * Users</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1803,8 +1800,7 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Deletes an hours of operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an hours of operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteHoursOfOperation">AWS
          * API Reference</a></p>
          */
@@ -1830,7 +1826,7 @@ namespace Connect
 
         /**
          * <p>Deletes an hours of operation override in an Amazon Connect hours of
-         * operation resource</p><p><h3>See Also:</h3>   <a
+         * operation resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteHoursOfOperationOverride">AWS
          * API Reference</a></p>
          */
@@ -2353,8 +2349,7 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Describes an agent status.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes an agent status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeAgentStatus">AWS
          * API Reference</a></p>
          */
@@ -2584,8 +2579,7 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Describes the hours of operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the hours of operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperation">AWS
          * API Reference</a></p>
          */
@@ -2811,8 +2805,7 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Describes the specified queue.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified queue.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQueue">AWS
          * API Reference</a></p>
          */
@@ -3335,9 +3328,8 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Disassociates a set of quick connects from a queue.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Disassociates a set of quick connects from a queue.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateQueueQuickConnects">AWS
          * API Reference</a></p>
          */
@@ -3551,11 +3543,53 @@ namespace Connect
         }
 
         /**
+         * <p>Gets the real-time metrics of the specified contact.</p> <p> <b>Use cases</b>
+         * </p> <p>Following are common uses cases for this API:</p> <ul> <li> <p>You can
+         * use this API to retrieve the position of the contact in the queue.</p> </li>
+         * </ul> <p> <b>Endpoints</b>: See <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+         * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetContactMetrics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetContactMetricsOutcome GetContactMetrics(const Model::GetContactMetricsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetContactMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetContactMetricsRequestT = Model::GetContactMetricsRequest>
+        Model::GetContactMetricsOutcomeCallable GetContactMetricsCallable(const GetContactMetricsRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::GetContactMetrics, request);
+        }
+
+        /**
+         * An Async wrapper for GetContactMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetContactMetricsRequestT = Model::GetContactMetricsRequest>
+        void GetContactMetricsAsync(const GetContactMetricsRequestT& request, const GetContactMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::GetContactMetrics, request, handler, context);
+        }
+
+        /**
          * <p>Gets the real-time metric data from the specified Amazon Connect
          * instance.</p> <p>For a description of each metric, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
-         * definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> 
+         * <p>When you make a successful API request, you can expect the following metric
+         * values in the response:</p> <ol> <li> <p> <b>Metric value is null</b>: The
+         * calculation cannot be performed due to divide by zero or insufficient data</p>
+         * </li> <li> <p> <b>Metric value is a number (including 0) of defined type</b>:
+         * The number provided is the calculation result</p> </li> <li> <p> <b>MetricResult
+         * list is empty</b>: The request cannot find any data in the system</p> </li>
+         * </ol> <p>The following guidelines can help you work with the API:</p> <ul> <li>
+         * <p>Each dimension in the metric response must contain a value</p> </li> <li>
+         * <p>Each item in MetricResult must include all requested metrics</p> </li> <li>
+         * <p>If the response is slow due to large result sets, try these approaches:</p>
+         * <ul> <li> <p>Narrow the time range of your request</p> </li> <li> <p>Add filters
+         * to reduce the amount of data returned</p> </li> </ul> </li> </ul>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetCurrentMetricData">AWS
          * API Reference</a></p>
          */
@@ -3740,8 +3774,20 @@ namespace Connect
          * agent queues.</p> <p>For a description of the historical metrics that are
          * supported by <code>GetMetricDataV2</code> and <code>GetMetricData</code>, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
-         * definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> 
+         * <p>When you make a successful API request, you can expect the following metric
+         * values in the response:</p> <ol> <li> <p> <b>Metric value is null</b>: The
+         * calculation cannot be performed due to divide by zero or insufficient data</p>
+         * </li> <li> <p> <b>Metric value is a number (including 0) of defined type</b>:
+         * The number provided is the calculation result</p> </li> <li> <p> <b>MetricResult
+         * list is empty</b>: The request cannot find any data in the system</p> </li>
+         * </ol> <p>The following guidelines can help you work with the API:</p> <ul> <li>
+         * <p>Each dimension in the metric response must contain a value</p> </li> <li>
+         * <p>Each item in MetricResult must include all requested metrics</p> </li> <li>
+         * <p>If the response is slow due to large result sets, try these approaches:</p>
+         * <ul> <li> <p>Narrow the time range of your request</p> </li> <li> <p>Add filters
+         * to reduce the amount of data returned</p> </li> </ul> </li> </ul>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricDataV2">AWS
          * API Reference</a></p>
          */
@@ -3887,8 +3933,7 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Lists agent statuses.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists agent statuses.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAgentStatuses">AWS
          * API Reference</a></p>
          */
@@ -4670,9 +4715,8 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Lists the quick connects associated with a queue.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the quick connects associated with a queue.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQueueQuickConnects">AWS
          * API Reference</a></p>
          */
@@ -6759,8 +6803,7 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Updates agent status.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates agent status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateAgentStatus">AWS
          * API Reference</a></p>
          */
@@ -7172,8 +7215,7 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Updates the hours of operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the hours of operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateHoursOfOperation">AWS
          * API Reference</a></p>
          */
@@ -7462,9 +7504,8 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Updates the hours of operation for the specified
-         * queue.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the hours of operation for the specified queue.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueHoursOfOperation">AWS
          * API Reference</a></p>
          */
@@ -7489,9 +7530,8 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Updates the maximum number of contacts allowed in a queue before
-         * it is considered full.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the maximum number of contacts allowed in a queue before it is
+         * considered full.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueMaxContacts">AWS
          * API Reference</a></p>
          */
@@ -7516,10 +7556,8 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Updates the name and description of a queue. At least
-         * <code>Name</code> or <code>Description</code> must be provided.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the name and description of a queue. At least <code>Name</code> or
+         * <code>Description</code> must be provided.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueName">AWS
          * API Reference</a></p>
          */
@@ -7544,19 +7582,18 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Updates the outbound caller ID name, number, and outbound whisper
-         * flow for a specified queue.</p>  <ul> <li> <p>If the phone number is
-         * claimed to a traffic distribution group that was created in the same Region as
-         * the Amazon Connect instance where you are calling this API, then you can use a
-         * full phone number ARN or a UUID for <code>OutboundCallerIdNumberId</code>.
-         * However, if the phone number is claimed to a traffic distribution group that is
-         * in one Region, and you are calling this API from an instance in another Amazon
-         * Web Services Region that is associated with the traffic distribution group, you
-         * must provide a full phone number ARN. If a UUID is provided in this scenario,
-         * you will receive a <code>ResourceNotFoundException</code>.</p> </li> <li>
-         * <p>Only use the phone number ARN format that doesn't contain
-         * <code>instance</code> in the path, for example,
+         * <p>Updates the outbound caller ID name, number, and outbound whisper flow for a
+         * specified queue.</p>  <ul> <li> <p>If the phone number is claimed to
+         * a traffic distribution group that was created in the same Region as the Amazon
+         * Connect instance where you are calling this API, then you can use a full phone
+         * number ARN or a UUID for <code>OutboundCallerIdNumberId</code>. However, if the
+         * phone number is claimed to a traffic distribution group that is in one Region,
+         * and you are calling this API from an instance in another Amazon Web Services
+         * Region that is associated with the traffic distribution group, you must provide
+         * a full phone number ARN. If a UUID is provided in this scenario, you will
+         * receive a <code>ResourceNotFoundException</code>.</p> </li> <li> <p>Only use the
+         * phone number ARN format that doesn't contain <code>instance</code> in the path,
+         * for example,
          * <code>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</code>. This is the
          * same ARN format that is returned when you call the <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
@@ -7616,8 +7653,7 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Updates the status of the queue.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the status of the queue.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueStatus">AWS
          * API Reference</a></p>
          */

@@ -9,6 +9,7 @@
 #include <aws/sagemaker/model/ClusterInstanceType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/ClusterInstanceStatusDetails.h>
+#include <aws/sagemaker/model/UltraServerInfo.h>
 #include <utility>
 
 namespace Aws
@@ -127,6 +128,18 @@ namespace Model
     template<typename InstanceStatusT = ClusterInstanceStatusDetails>
     ClusterNodeSummary& WithInstanceStatus(InstanceStatusT&& value) { SetInstanceStatus(std::forward<InstanceStatusT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains information about the UltraServer.</p>
+     */
+    inline const UltraServerInfo& GetUltraServerInfo() const { return m_ultraServerInfo; }
+    inline bool UltraServerInfoHasBeenSet() const { return m_ultraServerInfoHasBeenSet; }
+    template<typename UltraServerInfoT = UltraServerInfo>
+    void SetUltraServerInfo(UltraServerInfoT&& value) { m_ultraServerInfoHasBeenSet = true; m_ultraServerInfo = std::forward<UltraServerInfoT>(value); }
+    template<typename UltraServerInfoT = UltraServerInfo>
+    ClusterNodeSummary& WithUltraServerInfo(UltraServerInfoT&& value) { SetUltraServerInfo(std::forward<UltraServerInfoT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_instanceGroupName;
@@ -149,6 +162,9 @@ namespace Model
 
     ClusterInstanceStatusDetails m_instanceStatus;
     bool m_instanceStatusHasBeenSet = false;
+
+    UltraServerInfo m_ultraServerInfo;
+    bool m_ultraServerInfoHasBeenSet = false;
   };
 
 } // namespace Model

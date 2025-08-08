@@ -52,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier for the hours of operation</p>
+     * <p>The identifier for the hours of operation.</p>
      */
     inline const Aws::String& GetHoursOfOperationId() const { return m_hoursOfOperationId; }
     inline bool HoursOfOperationIdHasBeenSet() const { return m_hoursOfOperationIdHasBeenSet; }
@@ -77,8 +77,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results to return per page. The default MaxResult size
-     * is 100. Valid Range: Minimum value of 1. Maximum value of 1000.</p>
+     * <p>The maximum number of results to return per page.</p>
      */
     inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

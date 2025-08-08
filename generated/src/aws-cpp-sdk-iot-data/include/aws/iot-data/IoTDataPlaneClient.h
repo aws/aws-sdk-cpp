@@ -88,6 +88,34 @@ namespace IoTDataPlane
         virtual ~IoTDataPlaneClient();
 
         /**
+         * <p>Disconnects a connected MQTT client from Amazon Web Services IoT Core. When
+         * you disconnect a client, Amazon Web Services IoT Core closes the client's
+         * network connection and optionally cleans the session state.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/DeleteConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteConnectionOutcome DeleteConnection(const Model::DeleteConnectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteConnection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteConnectionRequestT = Model::DeleteConnectionRequest>
+        Model::DeleteConnectionOutcomeCallable DeleteConnectionCallable(const DeleteConnectionRequestT& request) const
+        {
+            return SubmitCallable(&IoTDataPlaneClient::DeleteConnection, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteConnectionRequestT = Model::DeleteConnectionRequest>
+        void DeleteConnectionAsync(const DeleteConnectionRequestT& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTDataPlaneClient::DeleteConnection, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the shadow for the specified thing.</p> <p>Requires permission to
          * access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThingShadow</a>
@@ -124,7 +152,7 @@ namespace IoTDataPlane
          * call <a
          * href="https://docs.aws.amazon.com/iot/latest/apireference/API_iotdata_ListRetainedMessages.html">ListRetainedMessages</a>.</p>
          * <p>Requires permission to access the <a
-         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleethubfordevicemanagement.html#awsiotfleethubfordevicemanagement-actions-as-permissions">GetRetainedMessage</a>
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html">GetRetainedMessage</a>
          * action.</p> <p>For more information about messaging costs, see <a
          * href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon Web Services IoT
          * Core pricing - Messaging</a>.</p><p><h3>See Also:</h3>   <a
@@ -218,7 +246,7 @@ namespace IoTDataPlane
          * href="https://docs.aws.amazon.com/iot/latest/apireference/API_iotdata_GetRetainedMessage.html">GetRetainedMessage</a>
          * with the topic name of the retained message.</p> <p>Requires permission to
          * access the <a
-         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleethubfordevicemanagement.html#awsiotfleethubfordevicemanagement-actions-as-permissions">ListRetainedMessages</a>
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html">ListRetainedMessages</a>
          * action.</p> <p>For more information about messaging costs, see <a
          * href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon Web Services IoT
          * Core pricing - Messaging</a>.</p><p><h3>See Also:</h3>   <a

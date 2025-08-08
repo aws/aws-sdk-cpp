@@ -25,6 +25,21 @@ ReservedCapacityOffering::ReservedCapacityOffering(JsonView jsonValue)
 
 ReservedCapacityOffering& ReservedCapacityOffering::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("ReservedCapacityType"))
+  {
+    m_reservedCapacityType = ReservedCapacityTypeMapper::GetReservedCapacityTypeForName(jsonValue.GetString("ReservedCapacityType"));
+    m_reservedCapacityTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("UltraServerType"))
+  {
+    m_ultraServerType = jsonValue.GetString("UltraServerType");
+    m_ultraServerTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("UltraServerCount"))
+  {
+    m_ultraServerCount = jsonValue.GetInteger("UltraServerCount");
+    m_ultraServerCountHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = ReservedCapacityInstanceTypeMapper::GetReservedCapacityInstanceTypeForName(jsonValue.GetString("InstanceType"));
@@ -66,6 +81,23 @@ ReservedCapacityOffering& ReservedCapacityOffering::operator =(JsonView jsonValu
 JsonValue ReservedCapacityOffering::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_reservedCapacityTypeHasBeenSet)
+  {
+   payload.WithString("ReservedCapacityType", ReservedCapacityTypeMapper::GetNameForReservedCapacityType(m_reservedCapacityType));
+  }
+
+  if(m_ultraServerTypeHasBeenSet)
+  {
+   payload.WithString("UltraServerType", m_ultraServerType);
+
+  }
+
+  if(m_ultraServerCountHasBeenSet)
+  {
+   payload.WithInteger("UltraServerCount", m_ultraServerCount);
+
+  }
 
   if(m_instanceTypeHasBeenSet)
   {

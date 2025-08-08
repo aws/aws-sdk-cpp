@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/connect/model/StringCondition.h>
+#include <aws/connect/model/HierarchyGroupCondition.h>
 #include <utility>
 
 namespace Aws
@@ -83,6 +84,16 @@ namespace Model
     template<typename StringConditionT = StringCondition>
     UserHierarchyGroupSearchCriteria& WithStringCondition(StringConditionT&& value) { SetStringCondition(std::forward<StringConditionT>(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const HierarchyGroupCondition& GetHierarchyGroupCondition() const { return m_hierarchyGroupCondition; }
+    inline bool HierarchyGroupConditionHasBeenSet() const { return m_hierarchyGroupConditionHasBeenSet; }
+    template<typename HierarchyGroupConditionT = HierarchyGroupCondition>
+    void SetHierarchyGroupCondition(HierarchyGroupConditionT&& value) { m_hierarchyGroupConditionHasBeenSet = true; m_hierarchyGroupCondition = std::forward<HierarchyGroupConditionT>(value); }
+    template<typename HierarchyGroupConditionT = HierarchyGroupCondition>
+    UserHierarchyGroupSearchCriteria& WithHierarchyGroupCondition(HierarchyGroupConditionT&& value) { SetHierarchyGroupCondition(std::forward<HierarchyGroupConditionT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<UserHierarchyGroupSearchCriteria> m_orConditions;
@@ -93,6 +104,9 @@ namespace Model
 
     StringCondition m_stringCondition;
     bool m_stringConditionHasBeenSet = false;
+
+    HierarchyGroupCondition m_hierarchyGroupCondition;
+    bool m_hierarchyGroupConditionHasBeenSet = false;
   };
 
 } // namespace Model

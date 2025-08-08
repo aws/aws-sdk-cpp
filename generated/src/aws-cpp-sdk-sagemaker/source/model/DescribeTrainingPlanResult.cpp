@@ -90,6 +90,21 @@ DescribeTrainingPlanResult& DescribeTrainingPlanResult::operator =(const Aws::Am
     m_inUseInstanceCount = jsonValue.GetInteger("InUseInstanceCount");
     m_inUseInstanceCountHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("UnhealthyInstanceCount"))
+  {
+    m_unhealthyInstanceCount = jsonValue.GetInteger("UnhealthyInstanceCount");
+    m_unhealthyInstanceCountHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("AvailableSpareInstanceCount"))
+  {
+    m_availableSpareInstanceCount = jsonValue.GetInteger("AvailableSpareInstanceCount");
+    m_availableSpareInstanceCountHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("TotalUltraServerCount"))
+  {
+    m_totalUltraServerCount = jsonValue.GetInteger("TotalUltraServerCount");
+    m_totalUltraServerCountHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("TargetResources"))
   {
     Aws::Utils::Array<JsonView> targetResourcesJsonList = jsonValue.GetArray("TargetResources");

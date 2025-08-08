@@ -164,6 +164,7 @@
 #include <aws/sagemaker/model/DescribePipelineExecutionResult.h>
 #include <aws/sagemaker/model/DescribeProcessingJobResult.h>
 #include <aws/sagemaker/model/DescribeProjectResult.h>
+#include <aws/sagemaker/model/DescribeReservedCapacityResult.h>
 #include <aws/sagemaker/model/DescribeSpaceResult.h>
 #include <aws/sagemaker/model/DescribeStudioLifecycleConfigResult.h>
 #include <aws/sagemaker/model/DescribeSubscribedWorkteamResult.h>
@@ -266,6 +267,7 @@
 #include <aws/sagemaker/model/ListTransformJobsResult.h>
 #include <aws/sagemaker/model/ListTrialComponentsResult.h>
 #include <aws/sagemaker/model/ListTrialsResult.h>
+#include <aws/sagemaker/model/ListUltraServersByReservedCapacityResult.h>
 #include <aws/sagemaker/model/ListUserProfilesResult.h>
 #include <aws/sagemaker/model/ListWorkforcesResult.h>
 #include <aws/sagemaker/model/ListWorkteamsResult.h>
@@ -623,6 +625,7 @@ namespace Aws
       class DescribePipelineExecutionRequest;
       class DescribeProcessingJobRequest;
       class DescribeProjectRequest;
+      class DescribeReservedCapacityRequest;
       class DescribeSpaceRequest;
       class DescribeStudioLifecycleConfigRequest;
       class DescribeSubscribedWorkteamRequest;
@@ -725,6 +728,7 @@ namespace Aws
       class ListTransformJobsRequest;
       class ListTrialComponentsRequest;
       class ListTrialsRequest;
+      class ListUltraServersByReservedCapacityRequest;
       class ListUserProfilesRequest;
       class ListWorkforcesRequest;
       class ListWorkteamsRequest;
@@ -993,6 +997,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribePipelineExecutionResult, SageMakerError> DescribePipelineExecutionOutcome;
       typedef Aws::Utils::Outcome<DescribeProcessingJobResult, SageMakerError> DescribeProcessingJobOutcome;
       typedef Aws::Utils::Outcome<DescribeProjectResult, SageMakerError> DescribeProjectOutcome;
+      typedef Aws::Utils::Outcome<DescribeReservedCapacityResult, SageMakerError> DescribeReservedCapacityOutcome;
       typedef Aws::Utils::Outcome<DescribeSpaceResult, SageMakerError> DescribeSpaceOutcome;
       typedef Aws::Utils::Outcome<DescribeStudioLifecycleConfigResult, SageMakerError> DescribeStudioLifecycleConfigOutcome;
       typedef Aws::Utils::Outcome<DescribeSubscribedWorkteamResult, SageMakerError> DescribeSubscribedWorkteamOutcome;
@@ -1095,6 +1100,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListTransformJobsResult, SageMakerError> ListTransformJobsOutcome;
       typedef Aws::Utils::Outcome<ListTrialComponentsResult, SageMakerError> ListTrialComponentsOutcome;
       typedef Aws::Utils::Outcome<ListTrialsResult, SageMakerError> ListTrialsOutcome;
+      typedef Aws::Utils::Outcome<ListUltraServersByReservedCapacityResult, SageMakerError> ListUltraServersByReservedCapacityOutcome;
       typedef Aws::Utils::Outcome<ListUserProfilesResult, SageMakerError> ListUserProfilesOutcome;
       typedef Aws::Utils::Outcome<ListWorkforcesResult, SageMakerError> ListWorkforcesOutcome;
       typedef Aws::Utils::Outcome<ListWorkteamsResult, SageMakerError> ListWorkteamsOutcome;
@@ -1363,6 +1369,7 @@ namespace Aws
       typedef std::future<DescribePipelineExecutionOutcome> DescribePipelineExecutionOutcomeCallable;
       typedef std::future<DescribeProcessingJobOutcome> DescribeProcessingJobOutcomeCallable;
       typedef std::future<DescribeProjectOutcome> DescribeProjectOutcomeCallable;
+      typedef std::future<DescribeReservedCapacityOutcome> DescribeReservedCapacityOutcomeCallable;
       typedef std::future<DescribeSpaceOutcome> DescribeSpaceOutcomeCallable;
       typedef std::future<DescribeStudioLifecycleConfigOutcome> DescribeStudioLifecycleConfigOutcomeCallable;
       typedef std::future<DescribeSubscribedWorkteamOutcome> DescribeSubscribedWorkteamOutcomeCallable;
@@ -1465,6 +1472,7 @@ namespace Aws
       typedef std::future<ListTransformJobsOutcome> ListTransformJobsOutcomeCallable;
       typedef std::future<ListTrialComponentsOutcome> ListTrialComponentsOutcomeCallable;
       typedef std::future<ListTrialsOutcome> ListTrialsOutcomeCallable;
+      typedef std::future<ListUltraServersByReservedCapacityOutcome> ListUltraServersByReservedCapacityOutcomeCallable;
       typedef std::future<ListUserProfilesOutcome> ListUserProfilesOutcomeCallable;
       typedef std::future<ListWorkforcesOutcome> ListWorkforcesOutcomeCallable;
       typedef std::future<ListWorkteamsOutcome> ListWorkteamsOutcomeCallable;
@@ -1736,6 +1744,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::DescribePipelineExecutionRequest&, const Model::DescribePipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePipelineExecutionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeProcessingJobRequest&, const Model::DescribeProcessingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProcessingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeProjectRequest&, const Model::DescribeProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProjectResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeReservedCapacityRequest&, const Model::DescribeReservedCapacityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservedCapacityResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeSpaceRequest&, const Model::DescribeSpaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSpaceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeStudioLifecycleConfigRequest&, const Model::DescribeStudioLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStudioLifecycleConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeSubscribedWorkteamRequest&, const Model::DescribeSubscribedWorkteamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSubscribedWorkteamResponseReceivedHandler;
@@ -1838,6 +1847,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::ListTransformJobsRequest&, const Model::ListTransformJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTransformJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListTrialComponentsRequest&, const Model::ListTrialComponentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrialComponentsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListTrialsRequest&, const Model::ListTrialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrialsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListUltraServersByReservedCapacityRequest&, const Model::ListUltraServersByReservedCapacityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUltraServersByReservedCapacityResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListUserProfilesRequest&, const Model::ListUserProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserProfilesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListWorkforcesRequest&, const Model::ListWorkforcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkforcesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListWorkteamsRequest&, const Model::ListWorkteamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkteamsResponseReceivedHandler;

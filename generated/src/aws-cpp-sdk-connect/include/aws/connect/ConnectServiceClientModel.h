@@ -104,6 +104,7 @@
 #include <aws/connect/model/DismissUserContactResult.h>
 #include <aws/connect/model/GetAttachedFileResult.h>
 #include <aws/connect/model/GetContactAttributesResult.h>
+#include <aws/connect/model/GetContactMetricsResult.h>
 #include <aws/connect/model/GetCurrentMetricDataResult.h>
 #include <aws/connect/model/GetCurrentUserDataResult.h>
 #include <aws/connect/model/GetEffectiveHoursOfOperationsResult.h>
@@ -396,6 +397,7 @@ namespace Aws
       class DismissUserContactRequest;
       class GetAttachedFileRequest;
       class GetContactAttributesRequest;
+      class GetContactMetricsRequest;
       class GetCurrentMetricDataRequest;
       class GetCurrentUserDataRequest;
       class GetEffectiveHoursOfOperationsRequest;
@@ -681,6 +683,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DismissUserContactResult, ConnectError> DismissUserContactOutcome;
       typedef Aws::Utils::Outcome<GetAttachedFileResult, ConnectError> GetAttachedFileOutcome;
       typedef Aws::Utils::Outcome<GetContactAttributesResult, ConnectError> GetContactAttributesOutcome;
+      typedef Aws::Utils::Outcome<GetContactMetricsResult, ConnectError> GetContactMetricsOutcome;
       typedef Aws::Utils::Outcome<GetCurrentMetricDataResult, ConnectError> GetCurrentMetricDataOutcome;
       typedef Aws::Utils::Outcome<GetCurrentUserDataResult, ConnectError> GetCurrentUserDataOutcome;
       typedef Aws::Utils::Outcome<GetEffectiveHoursOfOperationsResult, ConnectError> GetEffectiveHoursOfOperationsOutcome;
@@ -966,6 +969,7 @@ namespace Aws
       typedef std::future<DismissUserContactOutcome> DismissUserContactOutcomeCallable;
       typedef std::future<GetAttachedFileOutcome> GetAttachedFileOutcomeCallable;
       typedef std::future<GetContactAttributesOutcome> GetContactAttributesOutcomeCallable;
+      typedef std::future<GetContactMetricsOutcome> GetContactMetricsOutcomeCallable;
       typedef std::future<GetCurrentMetricDataOutcome> GetCurrentMetricDataOutcomeCallable;
       typedef std::future<GetCurrentUserDataOutcome> GetCurrentUserDataOutcomeCallable;
       typedef std::future<GetEffectiveHoursOfOperationsOutcome> GetEffectiveHoursOfOperationsOutcomeCallable;
@@ -1254,6 +1258,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::DismissUserContactRequest&, const Model::DismissUserContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DismissUserContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::GetAttachedFileRequest&, const Model::GetAttachedFileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAttachedFileResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::GetContactAttributesRequest&, const Model::GetContactAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContactAttributesResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::GetContactMetricsRequest&, const Model::GetContactMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContactMetricsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::GetCurrentMetricDataRequest&, const Model::GetCurrentMetricDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCurrentMetricDataResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::GetCurrentUserDataRequest&, const Model::GetCurrentUserDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCurrentUserDataResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::GetEffectiveHoursOfOperationsRequest&, const Model::GetEffectiveHoursOfOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEffectiveHoursOfOperationsResponseReceivedHandler;

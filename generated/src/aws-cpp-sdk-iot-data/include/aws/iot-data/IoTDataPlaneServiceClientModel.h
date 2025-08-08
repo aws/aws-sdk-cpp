@@ -66,6 +66,7 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in IoTDataPlaneClient header */
+      class DeleteConnectionRequest;
       class DeleteThingShadowRequest;
       class GetRetainedMessageRequest;
       class GetThingShadowRequest;
@@ -76,6 +77,7 @@ namespace Aws
       /* End of service model forward declarations required in IoTDataPlaneClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<Aws::NoResult, IoTDataPlaneError> DeleteConnectionOutcome;
       typedef Aws::Utils::Outcome<DeleteThingShadowResult, IoTDataPlaneError> DeleteThingShadowOutcome;
       typedef Aws::Utils::Outcome<GetRetainedMessageResult, IoTDataPlaneError> GetRetainedMessageOutcome;
       typedef Aws::Utils::Outcome<GetThingShadowResult, IoTDataPlaneError> GetThingShadowOutcome;
@@ -86,6 +88,7 @@ namespace Aws
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
       typedef std::future<DeleteThingShadowOutcome> DeleteThingShadowOutcomeCallable;
       typedef std::future<GetRetainedMessageOutcome> GetRetainedMessageOutcomeCallable;
       typedef std::future<GetThingShadowOutcome> GetThingShadowOutcomeCallable;
@@ -99,6 +102,7 @@ namespace Aws
     class IoTDataPlaneClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const IoTDataPlaneClient*, const Model::DeleteConnectionRequest&, const Model::DeleteConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectionResponseReceivedHandler;
     typedef std::function<void(const IoTDataPlaneClient*, const Model::DeleteThingShadowRequest&, Model::DeleteThingShadowOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteThingShadowResponseReceivedHandler;
     typedef std::function<void(const IoTDataPlaneClient*, const Model::GetRetainedMessageRequest&, const Model::GetRetainedMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRetainedMessageResponseReceivedHandler;
     typedef std::function<void(const IoTDataPlaneClient*, const Model::GetThingShadowRequest&, Model::GetThingShadowOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetThingShadowResponseReceivedHandler;

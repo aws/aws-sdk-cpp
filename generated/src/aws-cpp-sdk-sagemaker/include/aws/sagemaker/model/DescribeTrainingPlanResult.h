@@ -177,6 +177,34 @@ namespace Model
 
     ///@{
     /**
+     * <p>The number of instances in the training plan that are currently in an
+     * unhealthy state.</p>
+     */
+    inline int GetUnhealthyInstanceCount() const { return m_unhealthyInstanceCount; }
+    inline void SetUnhealthyInstanceCount(int value) { m_unhealthyInstanceCountHasBeenSet = true; m_unhealthyInstanceCount = value; }
+    inline DescribeTrainingPlanResult& WithUnhealthyInstanceCount(int value) { SetUnhealthyInstanceCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of available spare instances in the training plan.</p>
+     */
+    inline int GetAvailableSpareInstanceCount() const { return m_availableSpareInstanceCount; }
+    inline void SetAvailableSpareInstanceCount(int value) { m_availableSpareInstanceCountHasBeenSet = true; m_availableSpareInstanceCount = value; }
+    inline DescribeTrainingPlanResult& WithAvailableSpareInstanceCount(int value) { SetAvailableSpareInstanceCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The total number of UltraServers reserved to this training plan.</p>
+     */
+    inline int GetTotalUltraServerCount() const { return m_totalUltraServerCount; }
+    inline void SetTotalUltraServerCount(int value) { m_totalUltraServerCountHasBeenSet = true; m_totalUltraServerCount = value; }
+    inline DescribeTrainingPlanResult& WithTotalUltraServerCount(int value) { SetTotalUltraServerCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod) that
      * can use this training plan.</p> <p>Training plans are specific to their target
      * resource.</p> <ul> <li> <p>A training plan designed for SageMaker training jobs
@@ -254,6 +282,15 @@ namespace Model
 
     int m_inUseInstanceCount{0};
     bool m_inUseInstanceCountHasBeenSet = false;
+
+    int m_unhealthyInstanceCount{0};
+    bool m_unhealthyInstanceCountHasBeenSet = false;
+
+    int m_availableSpareInstanceCount{0};
+    bool m_availableSpareInstanceCountHasBeenSet = false;
+
+    int m_totalUltraServerCount{0};
+    bool m_totalUltraServerCountHasBeenSet = false;
 
     Aws::Vector<SageMakerResourceName> m_targetResources;
     bool m_targetResourcesHasBeenSet = false;
