@@ -11,6 +11,8 @@
 #include <aws/core/monitoring/MonitoringFactory.h>
 #include <aws/core/monitoring/MonitoringManager.h>
 #include <aws/core/monitoring/DefaultMonitoring.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 using namespace Aws::Client;
 using namespace Aws::Http;
@@ -196,6 +198,8 @@ protected:
         config.scheme = Scheme::HTTP;
         config.connectTimeoutMs = 30000;
         config.requestTimeoutMs = 30000;
+        config.requestCompressionConfig.useRequestCompression = UseRequestCompression::ENABLE;
+        config.requestCompressionConfig.requestMinCompressionSizeBytes = 10240;
         auto countedRetryStrategy = Aws::MakeShared<CountedRetryStrategy>(ALLOCATION_TAG);
         config.retryStrategy = std::static_pointer_cast<DefaultRetryStrategy>(countedRetryStrategy);
 
@@ -330,3 +334,55 @@ TEST_F(MonitoringTestSuite, TestHttpClientMetrics)
     ASSERT_STREQ("SslLatency", GetHttpClientMetricNameByType(HttpClientMetricsType::SslLatency).c_str());
     ASSERT_STREQ("Unknown", GetHttpClientMetricNameByType(HttpClientMetricsType::Unknown).c_str());
 }
+
+TEST_F(MonitoringTestSuite, TestUserAgentCompressionTracking)
+{
+  std::cout << "=== Starting compression test ===" << std::endl;
+  HeaderValueCollection responseHeaders;
+  AmazonWebServiceRequestMock request;
+
+  // Create large request body to trigger compression
+  std::string largeBody(20000, 'A');
+  std::cout << "Created body with size: " << largeBody.size() << " bytes" << std::endl;
+  auto bodyStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
+  *bodyStream << largeBody;
+  request.SetBody(bodyStream);
+
+  QueueMockResponse(HttpResponseCode::OK, responseHeaders);
+  const auto outcome = client->MakeRequest(request);
+  AWS_ASSERT_SUCCESS(outcome);
+
+  const auto requestSeen = mockHttpClient->GetMostRecentHttpRequest();
+  EXPECT_TRUE(requestSeen.HasUserAgent());
+  const auto& userAgent = requestSeen.GetUserAgent();
+  EXPECT_TRUE(!userAgent.empty());
+  
+  std::cout << "User Agent: " << userAgent << std::endl;
+  
+  // Check if Content-Encoding header was set
+  if (requestSeen.HasHeader("Content-Encoding")) {
+    std::cout << "Content-Encoding: " << requestSeen.GetHeaderValue("Content-Encoding") << std::endl;
+  } else {
+    std::cout << "No Content-Encoding header found" << std::endl;
+  }
+  
+  const auto userAgentParsed = Aws::Utils::StringUtils::Split(userAgent, ' ');
+  std::cout << "User agent parts: ";
+  for (const auto& part : userAgentParsed) {
+    std::cout << "[" << part << "] ";
+  }
+  std::cout << std::endl;
+
+  // Check for gzip compression business metric (L) in user agent
+  auto businessMetrics = std::find_if(userAgentParsed.begin(), userAgentParsed.end(),
+      [](const Aws::String& value) { return value.find("m/") != Aws::String::npos && value.find("L") != Aws::String::npos; });
+  
+  if (businessMetrics != userAgentParsed.end()) {
+    std::cout << "Found business metrics: " << *businessMetrics << std::endl;
+  } else {
+    std::cout << "Business metrics with 'L' not found" << std::endl;
+  }
+  
+  EXPECT_TRUE(businessMetrics != userAgentParsed.end());
+}
+
