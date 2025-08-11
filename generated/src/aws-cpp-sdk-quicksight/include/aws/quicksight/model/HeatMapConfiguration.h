@@ -7,6 +7,7 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/HeatMapFieldWells.h>
 #include <aws/quicksight/model/HeatMapSortConfiguration.h>
+#include <aws/quicksight/model/AxisDisplayOptions.h>
 #include <aws/quicksight/model/ChartAxisLabelOptions.h>
 #include <aws/quicksight/model/ColorScale.h>
 #include <aws/quicksight/model/LegendOptions.h>
@@ -70,6 +71,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The options that determine the presentation of the row axis label.</p>
+     */
+    inline const AxisDisplayOptions& GetRowAxisDisplayOptions() const { return m_rowAxisDisplayOptions; }
+    inline bool RowAxisDisplayOptionsHasBeenSet() const { return m_rowAxisDisplayOptionsHasBeenSet; }
+    template<typename RowAxisDisplayOptionsT = AxisDisplayOptions>
+    void SetRowAxisDisplayOptions(RowAxisDisplayOptionsT&& value) { m_rowAxisDisplayOptionsHasBeenSet = true; m_rowAxisDisplayOptions = std::forward<RowAxisDisplayOptionsT>(value); }
+    template<typename RowAxisDisplayOptionsT = AxisDisplayOptions>
+    HeatMapConfiguration& WithRowAxisDisplayOptions(RowAxisDisplayOptionsT&& value) { SetRowAxisDisplayOptions(std::forward<RowAxisDisplayOptionsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The label options of the row that is displayed in a <code>heat
      * map</code>.</p>
      */
@@ -79,6 +92,18 @@ namespace Model
     void SetRowLabelOptions(RowLabelOptionsT&& value) { m_rowLabelOptionsHasBeenSet = true; m_rowLabelOptions = std::forward<RowLabelOptionsT>(value); }
     template<typename RowLabelOptionsT = ChartAxisLabelOptions>
     HeatMapConfiguration& WithRowLabelOptions(RowLabelOptionsT&& value) { SetRowLabelOptions(std::forward<RowLabelOptionsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The options that determine the presentation of the row axis label.</p>
+     */
+    inline const AxisDisplayOptions& GetColumnAxisDisplayOptions() const { return m_columnAxisDisplayOptions; }
+    inline bool ColumnAxisDisplayOptionsHasBeenSet() const { return m_columnAxisDisplayOptionsHasBeenSet; }
+    template<typename ColumnAxisDisplayOptionsT = AxisDisplayOptions>
+    void SetColumnAxisDisplayOptions(ColumnAxisDisplayOptionsT&& value) { m_columnAxisDisplayOptionsHasBeenSet = true; m_columnAxisDisplayOptions = std::forward<ColumnAxisDisplayOptionsT>(value); }
+    template<typename ColumnAxisDisplayOptionsT = AxisDisplayOptions>
+    HeatMapConfiguration& WithColumnAxisDisplayOptions(ColumnAxisDisplayOptionsT&& value) { SetColumnAxisDisplayOptions(std::forward<ColumnAxisDisplayOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -160,8 +185,14 @@ namespace Model
     HeatMapSortConfiguration m_sortConfiguration;
     bool m_sortConfigurationHasBeenSet = false;
 
+    AxisDisplayOptions m_rowAxisDisplayOptions;
+    bool m_rowAxisDisplayOptionsHasBeenSet = false;
+
     ChartAxisLabelOptions m_rowLabelOptions;
     bool m_rowLabelOptionsHasBeenSet = false;
+
+    AxisDisplayOptions m_columnAxisDisplayOptions;
+    bool m_columnAxisDisplayOptionsHasBeenSet = false;
 
     ChartAxisLabelOptions m_columnLabelOptions;
     bool m_columnLabelOptionsHasBeenSet = false;

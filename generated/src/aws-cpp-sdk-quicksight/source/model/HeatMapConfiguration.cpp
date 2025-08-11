@@ -35,10 +35,20 @@ HeatMapConfiguration& HeatMapConfiguration::operator =(JsonView jsonValue)
     m_sortConfiguration = jsonValue.GetObject("SortConfiguration");
     m_sortConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("RowAxisDisplayOptions"))
+  {
+    m_rowAxisDisplayOptions = jsonValue.GetObject("RowAxisDisplayOptions");
+    m_rowAxisDisplayOptionsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("RowLabelOptions"))
   {
     m_rowLabelOptions = jsonValue.GetObject("RowLabelOptions");
     m_rowLabelOptionsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ColumnAxisDisplayOptions"))
+  {
+    m_columnAxisDisplayOptions = jsonValue.GetObject("ColumnAxisDisplayOptions");
+    m_columnAxisDisplayOptionsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ColumnLabelOptions"))
   {
@@ -89,9 +99,21 @@ JsonValue HeatMapConfiguration::Jsonize() const
 
   }
 
+  if(m_rowAxisDisplayOptionsHasBeenSet)
+  {
+   payload.WithObject("RowAxisDisplayOptions", m_rowAxisDisplayOptions.Jsonize());
+
+  }
+
   if(m_rowLabelOptionsHasBeenSet)
   {
    payload.WithObject("RowLabelOptions", m_rowLabelOptions.Jsonize());
+
+  }
+
+  if(m_columnAxisDisplayOptionsHasBeenSet)
+  {
+   payload.WithObject("ColumnAxisDisplayOptions", m_columnAxisDisplayOptions.Jsonize());
 
   }
 

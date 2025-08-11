@@ -1134,6 +1134,36 @@ namespace SSOAdmin
         }
 
         /**
+         * <p>Retrieves the session configuration for an application in IAM Identity
+         * Center.</p> <p>The session configuration determines how users can access an
+         * application. This includes whether user background sessions are enabled. User
+         * background sessions allow users to start a job on a supported Amazon Web
+         * Services managed application without having to remain signed in to an active
+         * session while the job runs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationSessionConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetApplicationSessionConfigurationOutcome GetApplicationSessionConfiguration(const Model::GetApplicationSessionConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetApplicationSessionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetApplicationSessionConfigurationRequestT = Model::GetApplicationSessionConfigurationRequest>
+        Model::GetApplicationSessionConfigurationOutcomeCallable GetApplicationSessionConfigurationCallable(const GetApplicationSessionConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::GetApplicationSessionConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for GetApplicationSessionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetApplicationSessionConfigurationRequestT = Model::GetApplicationSessionConfigurationRequest>
+        void GetApplicationSessionConfigurationAsync(const GetApplicationSessionConfigurationRequestT& request, const GetApplicationSessionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::GetApplicationSessionConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Obtains the inline policy assigned to the permission set.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetInlinePolicyForPermissionSet">AWS
@@ -1889,6 +1919,36 @@ namespace SSOAdmin
         void PutApplicationGrantAsync(const PutApplicationGrantRequestT& request, const PutApplicationGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SSOAdminClient::PutApplicationGrant, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the session configuration for an application in IAM Identity
+         * Center.</p> <p>The session configuration determines how users can access an
+         * application. This includes whether user background sessions are enabled. User
+         * background sessions allow users to start a job on a supported Amazon Web
+         * Services managed application without having to remain signed in to an active
+         * session while the job runs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationSessionConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutApplicationSessionConfigurationOutcome PutApplicationSessionConfiguration(const Model::PutApplicationSessionConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutApplicationSessionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutApplicationSessionConfigurationRequestT = Model::PutApplicationSessionConfigurationRequest>
+        Model::PutApplicationSessionConfigurationOutcomeCallable PutApplicationSessionConfigurationCallable(const PutApplicationSessionConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&SSOAdminClient::PutApplicationSessionConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for PutApplicationSessionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutApplicationSessionConfigurationRequestT = Model::PutApplicationSessionConfigurationRequest>
+        void PutApplicationSessionConfigurationAsync(const PutApplicationSessionConfigurationRequestT& request, const PutApplicationSessionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSOAdminClient::PutApplicationSessionConfiguration, request, handler, context);
         }
 
         /**

@@ -35,11 +35,9 @@ namespace Model
 {
 
   /**
-   * <p> <p>Amazon EVS is in public preview release and is subject to
-   * change.</p>  <p>An object that represents an Amazon EVS
-   * environment.</p></p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/Environment">AWS API
-   * Reference</a></p>
+   * <p>An object that represents an Amazon EVS environment.</p><p><h3>See Also:</h3>
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/Environment">AWS
+   * API Reference</a></p>
    */
   class Environment
   {

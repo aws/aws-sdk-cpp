@@ -42,6 +42,23 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the Availability Zone of the instance.</p> <p>Either
+     * <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be
+     * specified, but not both. If neither is specified, Amazon EC2 automatically
+     * selects an Availability Zone based on the load balancing criteria for the
+     * Region.</p> <p>This parameter is not supported for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+    inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value); }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    Placement& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) { SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The affinity setting for the instance on the Dedicated Host.</p> <p>This
      * parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>
@@ -157,9 +174,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Availability Zone of the instance.</p> <p>If not specified, an
-     * Availability Zone will be automatically chosen for you based on the load
-     * balancing criteria for the Region.</p> <p>This parameter is not supported for <a
+     * <p>The Availability Zone of the instance.</p> <p>Either
+     * <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be
+     * specified, but not both. If neither is specified, Amazon EC2 automatically
+     * selects an Availability Zone based on the load balancing criteria for the
+     * Region.</p> <p>This parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
@@ -170,6 +189,9 @@ namespace Model
     Placement& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
   private:
+
+    Aws::String m_availabilityZoneId;
+    bool m_availabilityZoneIdHasBeenSet = false;
 
     Aws::String m_affinity;
     bool m_affinityHasBeenSet = false;

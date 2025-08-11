@@ -39,7 +39,10 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>The rule definition that specifies the formal logical expression and metadata
+     * for the new rule being added to the policy.</p>
+     */
     inline const AutomatedReasoningPolicyDefinitionRule& GetRule() const { return m_rule; }
     inline bool RuleHasBeenSet() const { return m_ruleHasBeenSet; }
     template<typename RuleT = AutomatedReasoningPolicyDefinitionRule>

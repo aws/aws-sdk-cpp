@@ -22,6 +22,7 @@ namespace Aws
 
         static const int on_demand_HASH = HashingUtils::HashString("on-demand");
         static const int spot_HASH = HashingUtils::HashString("spot");
+        static const int wait_and_save_HASH = HashingUtils::HashString("wait-and-save");
 
 
         Ec2MarketType GetEc2MarketTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == spot_HASH)
           {
             return Ec2MarketType::spot;
+          }
+          else if (hashCode == wait_and_save_HASH)
+          {
+            return Ec2MarketType::wait_and_save;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "on-demand";
           case Ec2MarketType::spot:
             return "spot";
+          case Ec2MarketType::wait_and_save:
+            return "wait-and-save";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

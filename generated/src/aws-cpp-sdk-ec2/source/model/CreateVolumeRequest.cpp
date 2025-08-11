@@ -19,6 +19,11 @@ Aws::String CreateVolumeRequest::SerializePayload() const
     ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
 
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+    ss << "AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
+
   if(m_encryptedHasBeenSet)
   {
     ss << "Encrypted=" << std::boolalpha << m_encrypted << "&";

@@ -14,6 +14,11 @@ Aws::String DescribeSpotPriceHistoryRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeSpotPriceHistory&";
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+    ss << "AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";

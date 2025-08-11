@@ -46,7 +46,7 @@ namespace Model
      * <p>The AMI attribute.</p> <p> <b>Note</b>: The <code>blockDeviceMapping</code>
      * attribute is deprecated. Using this attribute returns the
      * <code>Client.AuthFailure</code> error. To get information about the block device
-     * mappings for an AMI, describe the image instead.</p>
+     * mappings for an AMI, use the <a>DescribeImages</a> action.</p>
      */
     inline ImageAttributeName GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }

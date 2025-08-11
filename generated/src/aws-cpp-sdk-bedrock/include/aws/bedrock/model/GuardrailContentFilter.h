@@ -133,7 +133,7 @@ namespace Model
     ///@{
     /**
      * <p>The action to take when harmful content is detected in the input. Supported
-     * values include:</p> <ul> <li> <p> <code>BLOCK</code> – Block the content and
+     * values include:</p> <ul> <li> <p> <code>BLOCK</code> ��� Block the content and
      * replace it with blocked messaging.</p> </li> <li> <p> <code>NONE</code> – Take
      * no action but return detection information in the trace response.</p> </li>
      * </ul>

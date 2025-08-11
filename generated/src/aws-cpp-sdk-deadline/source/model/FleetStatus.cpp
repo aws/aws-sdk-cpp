@@ -25,6 +25,7 @@ namespace Aws
         static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_IN_PROGRESS");
         static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
         static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
+        static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
 
 
         FleetStatus GetFleetStatusForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == UPDATE_FAILED_HASH)
           {
             return FleetStatus::UPDATE_FAILED;
+          }
+          else if (hashCode == SUSPENDED_HASH)
+          {
+            return FleetStatus::SUSPENDED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +81,8 @@ namespace Aws
             return "CREATE_FAILED";
           case FleetStatus::UPDATE_FAILED:
             return "UPDATE_FAILED";
+          case FleetStatus::SUSPENDED:
+            return "SUSPENDED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

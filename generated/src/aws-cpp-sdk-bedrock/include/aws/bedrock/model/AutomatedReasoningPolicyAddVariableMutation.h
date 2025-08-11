@@ -39,7 +39,10 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>The variable definition that specifies the name, type, and description for
+     * the new variable being added to the policy.</p>
+     */
     inline const AutomatedReasoningPolicyDefinitionVariable& GetVariable() const { return m_variable; }
     inline bool VariableHasBeenSet() const { return m_variableHasBeenSet; }
     template<typename VariableT = AutomatedReasoningPolicyDefinitionVariable>

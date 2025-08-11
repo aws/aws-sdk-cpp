@@ -97,14 +97,16 @@ namespace Model
     ///@{
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
-     * Availability Zone of the instance.</p> </li> <li> <p> <code>event.code</code> -
-     * The code for the scheduled event (<code>instance-reboot</code> |
-     * <code>system-reboot</code> | <code>system-maintenance</code> |
-     * <code>instance-retirement</code> | <code>instance-stop</code>).</p> </li> <li>
-     * <p> <code>event.description</code> - A description of the event.</p> </li> <li>
-     * <p> <code>event.instance-event-id</code> - The ID of the event whose date and
-     * time you are modifying.</p> </li> <li> <p> <code>event.not-after</code> - The
-     * latest end time for the scheduled event (for example,
+     * Availability Zone of the instance.</p> </li> <li> <p>
+     * <code>availability-zone-id</code> - The ID of the Availability Zone of the
+     * instance.</p> </li> <li> <p> <code>event.code</code> - The code for the
+     * scheduled event (<code>instance-reboot</code> | <code>system-reboot</code> |
+     * <code>system-maintenance</code> | <code>instance-retirement</code> |
+     * <code>instance-stop</code>).</p> </li> <li> <p> <code>event.description</code> -
+     * A description of the event.</p> </li> <li> <p>
+     * <code>event.instance-event-id</code> - The ID of the event whose date and time
+     * you are modifying.</p> </li> <li> <p> <code>event.not-after</code> - The latest
+     * end time for the scheduled event (for example,
      * <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
      * <code>event.not-before</code> - The earliest start time for the scheduled event
      * (for example, <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>

@@ -24,13 +24,11 @@ namespace Model
 {
 
   /**
-   * <p> <p>Amazon EVS is in public preview release and is subject to
-   * change.</p>  <p>The DNS hostnames that Amazon EVS uses to install VMware
-   * vCenter Server, NSX, SDDC Manager, and Cloud Builder. Each hostname must be
-   * unique, and resolve to a domain name that you've registered in your DNS service
-   * of choice. Hostnames cannot be changed.</p> <p>VMware VCF requires the
-   * deployment of two NSX Edge nodes, and three NSX Manager virtual
-   * machines.</p></p><p><h3>See Also:</h3>   <a
+   * <p>The DNS hostnames that Amazon EVS uses to install VMware vCenter Server, NSX,
+   * SDDC Manager, and Cloud Builder. Each hostname must be unique, and resolve to a
+   * domain name that you've registered in your DNS service of choice. Hostnames
+   * cannot be changed.</p> <p>VMware VCF requires the deployment of two NSX Edge
+   * nodes, and three NSX Manager virtual machines.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/VcfHostnames">AWS
    * API Reference</a></p>
    */

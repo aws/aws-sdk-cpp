@@ -29,6 +29,11 @@ Aws::String CreateDefaultSubnetRequest::SerializePayload() const
     ss << "Ipv6Native=" << std::boolalpha << m_ipv6Native << "&";
   }
 
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+    ss << "AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

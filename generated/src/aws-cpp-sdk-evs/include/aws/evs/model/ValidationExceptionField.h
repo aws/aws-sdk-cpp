@@ -24,9 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> <p>Amazon EVS is in public preview release and is subject to
-   * change.</p>  <p>Stores information about a field passed inside a request
-   * that resulted in an exception.</p></p><p><h3>See Also:</h3>   <a
+   * <p>Stores information about a field passed inside a request that resulted in an
+   * exception.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/ValidationExceptionField">AWS
    * API Reference</a></p>
    */

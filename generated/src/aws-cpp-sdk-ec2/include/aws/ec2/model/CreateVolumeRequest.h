@@ -44,7 +44,8 @@ namespace Model
     ///@{
     /**
      * <p>The ID of the Availability Zone in which to create the volume. For example,
-     * <code>us-east-1a</code>.</p>
+     * <code>us-east-1a</code>.</p> <p>Either <code>AvailabilityZone</code> or
+     * <code>AvailabilityZoneId</code> must be specified, but not both.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
@@ -52,6 +53,20 @@ namespace Model
     void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
     template<typename AvailabilityZoneT = Aws::String>
     CreateVolumeRequest& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Availability Zone in which to create the volume. For example,
+     * <code>use1-az1</code>.</p> <p>Either <code>AvailabilityZone</code> or
+     * <code>AvailabilityZoneId</code> must be specified, but not both.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+    inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value); }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    CreateVolumeRequest& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) { SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -299,6 +314,9 @@ namespace Model
 
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet = false;
+
+    Aws::String m_availabilityZoneId;
+    bool m_availabilityZoneIdHasBeenSet = false;
 
     bool m_encrypted{false};
     bool m_encryptedHasBeenSet = false;

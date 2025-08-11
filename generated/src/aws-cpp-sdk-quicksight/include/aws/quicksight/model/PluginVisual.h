@@ -9,6 +9,8 @@
 #include <aws/quicksight/model/VisualTitleLabelOptions.h>
 #include <aws/quicksight/model/VisualSubtitleLabelOptions.h>
 #include <aws/quicksight/model/PluginVisualConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/quicksight/model/VisualCustomAction.h>
 #include <utility>
 
 namespace Aws
@@ -99,6 +101,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The list of custom actions that are configured for a visual.</p>
+     */
+    inline const Aws::Vector<VisualCustomAction>& GetActions() const { return m_actions; }
+    inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
+    template<typename ActionsT = Aws::Vector<VisualCustomAction>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<VisualCustomAction>>
+    PluginVisual& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = VisualCustomAction>
+    PluginVisual& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The alt text for the visual.</p>
      */
     inline const Aws::String& GetVisualContentAltText() const { return m_visualContentAltText; }
@@ -124,6 +140,9 @@ namespace Model
 
     PluginVisualConfiguration m_chartConfiguration;
     bool m_chartConfigurationHasBeenSet = false;
+
+    Aws::Vector<VisualCustomAction> m_actions;
+    bool m_actionsHasBeenSet = false;
 
     Aws::String m_visualContentAltText;
     bool m_visualContentAltTextHasBeenSet = false;

@@ -92,6 +92,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>A message that communicates a suspended status of the fleet.</p>
+     */
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    FleetSummary& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Auto Scaling status of a fleet.</p>
      */
     inline AutoScalingStatus GetAutoScalingStatus() const { return m_autoScalingStatus; }
@@ -212,6 +224,9 @@ namespace Model
 
     FleetStatus m_status{FleetStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet = false;
 
     AutoScalingStatus m_autoScalingStatus{AutoScalingStatus::NOT_SET};
     bool m_autoScalingStatusHasBeenSet = false;

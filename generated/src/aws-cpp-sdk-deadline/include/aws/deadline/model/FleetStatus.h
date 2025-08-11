@@ -20,7 +20,8 @@ namespace Model
     CREATE_IN_PROGRESS,
     UPDATE_IN_PROGRESS,
     CREATE_FAILED,
-    UPDATE_FAILED
+    UPDATE_FAILED,
+    SUSPENDED
   };
 
 namespace FleetStatusMapper

@@ -50,6 +50,11 @@ GetFleetResult& GetFleetResult::operator =(const Aws::AmazonWebServiceResult<Jso
     m_status = FleetStatusMapper::GetFleetStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("statusMessage"))
+  {
+    m_statusMessage = jsonValue.GetString("statusMessage");
+    m_statusMessageHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("autoScalingStatus"))
   {
     m_autoScalingStatus = AutoScalingStatusMapper::GetAutoScalingStatusForName(jsonValue.GetString("autoScalingStatus"));

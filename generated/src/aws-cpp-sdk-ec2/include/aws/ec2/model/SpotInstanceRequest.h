@@ -151,7 +151,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Availability Zone in which the request is launched.</p>
+     * <p>The Availability Zone in which the request is launched.</p> <p>Either
+     * <code>launchedAvailabilityZone</code> or <code>launchedAvailabilityZoneId</code>
+     * can be specified, but not both</p>
      */
     inline const Aws::String& GetLaunchedAvailabilityZone() const { return m_launchedAvailabilityZone; }
     inline bool LaunchedAvailabilityZoneHasBeenSet() const { return m_launchedAvailabilityZoneHasBeenSet; }
@@ -159,6 +161,20 @@ namespace Model
     void SetLaunchedAvailabilityZone(LaunchedAvailabilityZoneT&& value) { m_launchedAvailabilityZoneHasBeenSet = true; m_launchedAvailabilityZone = std::forward<LaunchedAvailabilityZoneT>(value); }
     template<typename LaunchedAvailabilityZoneT = Aws::String>
     SpotInstanceRequest& WithLaunchedAvailabilityZone(LaunchedAvailabilityZoneT&& value) { SetLaunchedAvailabilityZone(std::forward<LaunchedAvailabilityZoneT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Availability Zone in which the request is launched.</p>
+     * <p>Either <code>launchedAvailabilityZone</code> or
+     * <code>launchedAvailabilityZoneId</code> can be specified, but not both</p>
+     */
+    inline const Aws::String& GetLaunchedAvailabilityZoneId() const { return m_launchedAvailabilityZoneId; }
+    inline bool LaunchedAvailabilityZoneIdHasBeenSet() const { return m_launchedAvailabilityZoneIdHasBeenSet; }
+    template<typename LaunchedAvailabilityZoneIdT = Aws::String>
+    void SetLaunchedAvailabilityZoneId(LaunchedAvailabilityZoneIdT&& value) { m_launchedAvailabilityZoneIdHasBeenSet = true; m_launchedAvailabilityZoneId = std::forward<LaunchedAvailabilityZoneIdT>(value); }
+    template<typename LaunchedAvailabilityZoneIdT = Aws::String>
+    SpotInstanceRequest& WithLaunchedAvailabilityZoneId(LaunchedAvailabilityZoneIdT&& value) { SetLaunchedAvailabilityZoneId(std::forward<LaunchedAvailabilityZoneIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -319,6 +335,9 @@ namespace Model
 
     Aws::String m_launchedAvailabilityZone;
     bool m_launchedAvailabilityZoneHasBeenSet = false;
+
+    Aws::String m_launchedAvailabilityZoneId;
+    bool m_launchedAvailabilityZoneIdHasBeenSet = false;
 
     RIProductDescription m_productDescription{RIProductDescription::NOT_SET};
     bool m_productDescriptionHasBeenSet = false;
