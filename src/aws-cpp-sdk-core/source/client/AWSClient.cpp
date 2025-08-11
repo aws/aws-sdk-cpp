@@ -141,6 +141,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_userAgentInterceptor{Aws::MakeShared<smithy::client::UserAgentInterceptor>(AWS_CLIENT_LOG_TAG, configuration, m_retryStrategy->GetStrategyName(), m_serviceName)},
     m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG), m_userAgentInterceptor}
 {
+
 }
 
 AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
@@ -565,6 +566,11 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
         *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
         {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 
+    // Check for environment credentials
+    if (!Aws::Environment::GetEnv("AWS_ACCESS_KEY_ID").empty() &&
+        !Aws::Environment::GetEnv("AWS_SECRET_ACCESS_KEY").empty()) {
+      request.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS);
+        }
     InterceptorContext context{request};
     context.SetTransmitRequest(httpRequest);
     for (const auto& interceptor : m_interceptors)
