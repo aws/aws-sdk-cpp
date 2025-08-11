@@ -36,6 +36,7 @@ namespace Aws
     {
         class AWSCredentials;
         class AWSCredentialsProvider;
+        class CredentialsResolutionContext;
 
         enum class AWSSigningAlgorithm
         {
@@ -191,6 +192,7 @@ namespace Aws
 
         protected:
             virtual bool ServiceRequireUnsignedPayload(const Aws::String& serviceName) const;
+            void UpdateUserAgentWithCredentialFeatures(Aws::Http::HttpRequest& request, const Aws::Auth::CredentialsResolutionContext& context) const;
             bool m_includeSha256HashHeader;
 
         private:

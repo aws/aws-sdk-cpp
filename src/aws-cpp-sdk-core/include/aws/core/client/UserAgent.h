@@ -32,10 +32,12 @@ enum class UserAgentFeature {
   ACCOUNT_ID_MODE_REQUIRED,
   RESOLVED_ACCOUNT_ID,
   GZIP_REQUEST_COMPRESSION,
+  CREDENTIALS_ENV_VARS,
 };
 
 class AWS_CORE_API UserAgent {
  public:
+  static Aws::String BusinessMetricForFeature(UserAgentFeature feature);
   explicit UserAgent(const ClientConfiguration& clientConfiguration, const Aws::String& retryStrategyName, const Aws::String& apiName);
   Aws::String SerializeWithFeatures(const Aws::Set<UserAgentFeature>& features) const;
   void SetApiName(const Aws::String& apiName) { m_api = apiName; }
