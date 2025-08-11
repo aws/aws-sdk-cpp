@@ -45,6 +45,11 @@ FleetSummary& FleetSummary::operator =(JsonView jsonValue)
     m_status = FleetStatusMapper::GetFleetStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("statusMessage"))
+  {
+    m_statusMessage = jsonValue.GetString("statusMessage");
+    m_statusMessageHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("autoScalingStatus"))
   {
     m_autoScalingStatus = AutoScalingStatusMapper::GetAutoScalingStatusForName(jsonValue.GetString("autoScalingStatus"));
@@ -123,6 +128,12 @@ JsonValue FleetSummary::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", FleetStatusMapper::GetNameForFleetStatus(m_status));
+  }
+
+  if(m_statusMessageHasBeenSet)
+  {
+   payload.WithString("statusMessage", m_statusMessage);
+
   }
 
   if(m_autoScalingStatusHasBeenSet)

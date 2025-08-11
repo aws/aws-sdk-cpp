@@ -52,6 +52,7 @@
 #include <aws/sso-admin/model/GetApplicationAssignmentConfigurationResult.h>
 #include <aws/sso-admin/model/GetApplicationAuthenticationMethodResult.h>
 #include <aws/sso-admin/model/GetApplicationGrantResult.h>
+#include <aws/sso-admin/model/GetApplicationSessionConfigurationResult.h>
 #include <aws/sso-admin/model/GetInlinePolicyForPermissionSetResult.h>
 #include <aws/sso-admin/model/GetPermissionsBoundaryForPermissionSetResult.h>
 #include <aws/sso-admin/model/ListAccountAssignmentCreationStatusResult.h>
@@ -76,6 +77,7 @@
 #include <aws/sso-admin/model/ListTrustedTokenIssuersResult.h>
 #include <aws/sso-admin/model/ProvisionPermissionSetResult.h>
 #include <aws/sso-admin/model/PutApplicationAssignmentConfigurationResult.h>
+#include <aws/sso-admin/model/PutApplicationSessionConfigurationResult.h>
 #include <aws/sso-admin/model/PutInlinePolicyToPermissionSetResult.h>
 #include <aws/sso-admin/model/PutPermissionsBoundaryToPermissionSetResult.h>
 #include <aws/sso-admin/model/TagResourceResult.h>
@@ -166,6 +168,7 @@ namespace Aws
       class GetApplicationAssignmentConfigurationRequest;
       class GetApplicationAuthenticationMethodRequest;
       class GetApplicationGrantRequest;
+      class GetApplicationSessionConfigurationRequest;
       class GetInlinePolicyForPermissionSetRequest;
       class GetPermissionsBoundaryForPermissionSetRequest;
       class ListAccountAssignmentCreationStatusRequest;
@@ -193,6 +196,7 @@ namespace Aws
       class PutApplicationAssignmentConfigurationRequest;
       class PutApplicationAuthenticationMethodRequest;
       class PutApplicationGrantRequest;
+      class PutApplicationSessionConfigurationRequest;
       class PutInlinePolicyToPermissionSetRequest;
       class PutPermissionsBoundaryToPermissionSetRequest;
       class TagResourceRequest;
@@ -242,6 +246,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetApplicationAssignmentConfigurationResult, SSOAdminError> GetApplicationAssignmentConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetApplicationAuthenticationMethodResult, SSOAdminError> GetApplicationAuthenticationMethodOutcome;
       typedef Aws::Utils::Outcome<GetApplicationGrantResult, SSOAdminError> GetApplicationGrantOutcome;
+      typedef Aws::Utils::Outcome<GetApplicationSessionConfigurationResult, SSOAdminError> GetApplicationSessionConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetInlinePolicyForPermissionSetResult, SSOAdminError> GetInlinePolicyForPermissionSetOutcome;
       typedef Aws::Utils::Outcome<GetPermissionsBoundaryForPermissionSetResult, SSOAdminError> GetPermissionsBoundaryForPermissionSetOutcome;
       typedef Aws::Utils::Outcome<ListAccountAssignmentCreationStatusResult, SSOAdminError> ListAccountAssignmentCreationStatusOutcome;
@@ -269,6 +274,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<PutApplicationAssignmentConfigurationResult, SSOAdminError> PutApplicationAssignmentConfigurationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SSOAdminError> PutApplicationAuthenticationMethodOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SSOAdminError> PutApplicationGrantOutcome;
+      typedef Aws::Utils::Outcome<PutApplicationSessionConfigurationResult, SSOAdminError> PutApplicationSessionConfigurationOutcome;
       typedef Aws::Utils::Outcome<PutInlinePolicyToPermissionSetResult, SSOAdminError> PutInlinePolicyToPermissionSetOutcome;
       typedef Aws::Utils::Outcome<PutPermissionsBoundaryToPermissionSetResult, SSOAdminError> PutPermissionsBoundaryToPermissionSetOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, SSOAdminError> TagResourceOutcome;
@@ -318,6 +324,7 @@ namespace Aws
       typedef std::future<GetApplicationAssignmentConfigurationOutcome> GetApplicationAssignmentConfigurationOutcomeCallable;
       typedef std::future<GetApplicationAuthenticationMethodOutcome> GetApplicationAuthenticationMethodOutcomeCallable;
       typedef std::future<GetApplicationGrantOutcome> GetApplicationGrantOutcomeCallable;
+      typedef std::future<GetApplicationSessionConfigurationOutcome> GetApplicationSessionConfigurationOutcomeCallable;
       typedef std::future<GetInlinePolicyForPermissionSetOutcome> GetInlinePolicyForPermissionSetOutcomeCallable;
       typedef std::future<GetPermissionsBoundaryForPermissionSetOutcome> GetPermissionsBoundaryForPermissionSetOutcomeCallable;
       typedef std::future<ListAccountAssignmentCreationStatusOutcome> ListAccountAssignmentCreationStatusOutcomeCallable;
@@ -345,6 +352,7 @@ namespace Aws
       typedef std::future<PutApplicationAssignmentConfigurationOutcome> PutApplicationAssignmentConfigurationOutcomeCallable;
       typedef std::future<PutApplicationAuthenticationMethodOutcome> PutApplicationAuthenticationMethodOutcomeCallable;
       typedef std::future<PutApplicationGrantOutcome> PutApplicationGrantOutcomeCallable;
+      typedef std::future<PutApplicationSessionConfigurationOutcome> PutApplicationSessionConfigurationOutcomeCallable;
       typedef std::future<PutInlinePolicyToPermissionSetOutcome> PutInlinePolicyToPermissionSetOutcomeCallable;
       typedef std::future<PutPermissionsBoundaryToPermissionSetOutcome> PutPermissionsBoundaryToPermissionSetOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -397,6 +405,7 @@ namespace Aws
     typedef std::function<void(const SSOAdminClient*, const Model::GetApplicationAssignmentConfigurationRequest&, const Model::GetApplicationAssignmentConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationAssignmentConfigurationResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::GetApplicationAuthenticationMethodRequest&, const Model::GetApplicationAuthenticationMethodOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationAuthenticationMethodResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::GetApplicationGrantRequest&, const Model::GetApplicationGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationGrantResponseReceivedHandler;
+    typedef std::function<void(const SSOAdminClient*, const Model::GetApplicationSessionConfigurationRequest&, const Model::GetApplicationSessionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationSessionConfigurationResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::GetInlinePolicyForPermissionSetRequest&, const Model::GetInlinePolicyForPermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInlinePolicyForPermissionSetResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::GetPermissionsBoundaryForPermissionSetRequest&, const Model::GetPermissionsBoundaryForPermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPermissionsBoundaryForPermissionSetResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::ListAccountAssignmentCreationStatusRequest&, const Model::ListAccountAssignmentCreationStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountAssignmentCreationStatusResponseReceivedHandler;
@@ -424,6 +433,7 @@ namespace Aws
     typedef std::function<void(const SSOAdminClient*, const Model::PutApplicationAssignmentConfigurationRequest&, const Model::PutApplicationAssignmentConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutApplicationAssignmentConfigurationResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::PutApplicationAuthenticationMethodRequest&, const Model::PutApplicationAuthenticationMethodOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutApplicationAuthenticationMethodResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::PutApplicationGrantRequest&, const Model::PutApplicationGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutApplicationGrantResponseReceivedHandler;
+    typedef std::function<void(const SSOAdminClient*, const Model::PutApplicationSessionConfigurationRequest&, const Model::PutApplicationSessionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutApplicationSessionConfigurationResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::PutInlinePolicyToPermissionSetRequest&, const Model::PutInlinePolicyToPermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutInlinePolicyToPermissionSetResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::PutPermissionsBoundaryToPermissionSetRequest&, const Model::PutPermissionsBoundaryToPermissionSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPermissionsBoundaryToPermissionSetResponseReceivedHandler;
     typedef std::function<void(const SSOAdminClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;

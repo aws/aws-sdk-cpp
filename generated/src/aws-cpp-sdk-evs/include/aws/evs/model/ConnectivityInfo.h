@@ -25,11 +25,10 @@ namespace Model
 {
 
   /**
-   * <p> <p>Amazon EVS is in public preview release and is subject to
-   * change.</p>  <p>The connectivity configuration for the environment.
-   * Amazon EVS requires that you specify two route server peer IDs. During
-   * environment creation, the route server endpoints peer with the NSX uplink VLAN
-   * for connectivity to the NSX overlay network.</p></p><p><h3>See Also:</h3>   <a
+   * <p>The connectivity configuration for the environment. Amazon EVS requires that
+   * you specify two route server peer IDs. During environment creation, the route
+   * server endpoints peer with the NSX uplink VLAN for connectivity to the NSX
+   * overlay network.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/ConnectivityInfo">AWS
    * API Reference</a></p>
    */

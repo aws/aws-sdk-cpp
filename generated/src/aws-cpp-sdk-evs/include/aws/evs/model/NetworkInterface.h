@@ -24,12 +24,11 @@ namespace Model
 {
 
   /**
-   * <p> <p>Amazon EVS is in public preview release and is subject to
-   * change.</p>  <p>An elastic network interface (ENI) that connects hosts to
-   * the VLAN subnets. Amazon EVS provisions two identically configured ENIs in the
-   * VMkernel management subnet during host creation. One ENI is active, and the
-   * other is in standby mode for automatic switchover during a failure
-   * scenario.</p></p><p><h3>See Also:</h3>   <a
+   * <p>An elastic network interface (ENI) that connects hosts to the VLAN subnets.
+   * Amazon EVS provisions two identically configured ENIs in the VMkernel management
+   * subnet during host creation. One ENI is active, and the other is in standby mode
+   * for automatic switchover during a failure scenario.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/NetworkInterface">AWS
    * API Reference</a></p>
    */

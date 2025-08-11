@@ -14,6 +14,11 @@ Aws::String ImportVolumeRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ImportVolume&";
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+    ss << "AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";

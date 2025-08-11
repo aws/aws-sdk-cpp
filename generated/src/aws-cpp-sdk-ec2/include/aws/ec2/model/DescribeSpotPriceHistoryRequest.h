@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/InstanceType.h>
 #include <aws/ec2/model/Filter.h>
 #include <utility>
@@ -43,6 +43,20 @@ namespace Model
     AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
+    ///@{
+    /**
+     * <p>Filters the results by the specified ID of the Availability Zone.</p>
+     * <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can
+     * be specified, but not both</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+    inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value); }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    DescribeSpotPriceHistoryRequest& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) { SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -116,19 +130,20 @@ namespace Model
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone for which prices should be returned.</p> </li> <li> <p>
-     * <code>instance-type</code> - The type of instance (for example,
-     * <code>m3.medium</code>).</p> </li> <li> <p> <code>product-description</code> -
-     * The product description for the Spot price (<code>Linux/UNIX</code> | <code>Red
-     * Hat Enterprise Linux</code> | <code>SUSE Linux</code> | <code>Windows</code> |
-     * <code>Linux/UNIX (Amazon VPC)</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon
-     * VPC)</code>).</p> </li> <li> <p> <code>spot-price</code> - The Spot price. The
-     * value must match exactly (or use wildcards; greater than or less than comparison
-     * is not supported).</p> </li> <li> <p> <code>timestamp</code> - The time stamp of
-     * the Spot price history, in UTC format (for example, <i>ddd MMM dd
-     * HH</i>:<i>mm</i>:<i>ss</i> UTC <i>YYYY</i>). You can use wildcards
-     * (<code>*</code> and <code>?</code>). Greater than or less than comparison is not
-     * supported.</p> </li> </ul>
+     * <code>availability-zone-id</code> - The ID of the Availability Zone for which
+     * prices should be returned.</p> </li> <li> <p> <code>instance-type</code> - The
+     * type of instance (for example, <code>m3.medium</code>).</p> </li> <li> <p>
+     * <code>product-description</code> - The product description for the Spot price
+     * (<code>Linux/UNIX</code> | <code>Red Hat Enterprise Linux</code> | <code>SUSE
+     * Linux</code> | <code>Windows</code> | <code>Linux/UNIX (Amazon VPC)</code> |
+     * <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>SUSE Linux (Amazon
+     * VPC)</code> | <code>Windows (Amazon VPC)</code>).</p> </li> <li> <p>
+     * <code>spot-price</code> - The Spot price. The value must match exactly (or use
+     * wildcards; greater than or less than comparison is not supported).</p> </li>
+     * <li> <p> <code>timestamp</code> - The time stamp of the Spot price history, in
+     * UTC format (for example, <i>ddd MMM dd HH</i>:<i>mm</i>:<i>ss</i> UTC
+     * <i>YYYY</i>). You can use wildcards (<code>*</code> and <code>?</code>). Greater
+     * than or less than comparison is not supported.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
@@ -142,7 +157,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Filters the results by the specified Availability Zone.</p>
+     * <p>Filters the results by the specified Availability Zone.</p> <p>Either
+     * <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be
+     * specified, but not both</p>
      */
     inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
@@ -178,6 +195,9 @@ namespace Model
     DescribeSpotPriceHistoryRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
+
+    Aws::String m_availabilityZoneId;
+    bool m_availabilityZoneIdHasBeenSet = false;
 
     bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;

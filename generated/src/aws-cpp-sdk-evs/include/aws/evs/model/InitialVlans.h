@@ -24,11 +24,10 @@ namespace Model
 {
 
   /**
-   * <p> <p>Amazon EVS is in public preview release and is subject to
-   * change.</p>  <p>The initial VLAN subnets for the environment. Amazon EVS
-   * VLAN subnets have a minimum CIDR block size of /28 and a maximum size of /24.
-   * Amazon EVS VLAN subnet CIDR blocks must not overlap with other subnets in the
-   * VPC.</p></p><p><h3>See Also:</h3>   <a
+   * <p>The initial VLAN subnets for the environment. Amazon EVS VLAN subnets have a
+   * minimum CIDR block size of /28 and a maximum size of /24. Amazon EVS VLAN subnet
+   * CIDR blocks must not overlap with other subnets in the VPC.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/InitialVlans">AWS
    * API Reference</a></p>
    */

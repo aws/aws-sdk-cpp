@@ -41,7 +41,10 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>A variable element within the policy definition that represents a concept
+     * used in logical expressions and rules.</p>
+     */
     inline const AutomatedReasoningPolicyDefinitionVariable& GetPolicyDefinitionVariable() const { return m_policyDefinitionVariable; }
     inline bool PolicyDefinitionVariableHasBeenSet() const { return m_policyDefinitionVariableHasBeenSet; }
     template<typename PolicyDefinitionVariableT = AutomatedReasoningPolicyDefinitionVariable>
@@ -51,7 +54,10 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>A custom type element within the policy definition that defines a set of
+     * possible values for variables.</p>
+     */
     inline const AutomatedReasoningPolicyDefinitionType& GetPolicyDefinitionType() const { return m_policyDefinitionType; }
     inline bool PolicyDefinitionTypeHasBeenSet() const { return m_policyDefinitionTypeHasBeenSet; }
     template<typename PolicyDefinitionTypeT = AutomatedReasoningPolicyDefinitionType>
@@ -61,7 +67,10 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>A rule element within the policy definition that contains a formal logical
+     * expression used for validation.</p>
+     */
     inline const AutomatedReasoningPolicyDefinitionRule& GetPolicyDefinitionRule() const { return m_policyDefinitionRule; }
     inline bool PolicyDefinitionRuleHasBeenSet() const { return m_policyDefinitionRuleHasBeenSet; }
     template<typename PolicyDefinitionRuleT = AutomatedReasoningPolicyDefinitionRule>

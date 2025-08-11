@@ -38,7 +38,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Availability Zone in which to create the default subnet.</p>
+     * <p>The Availability Zone in which to create the default subnet.</p> <p>Either
+     * <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be
+     * specified, but not both.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
@@ -72,6 +74,19 @@ namespace Model
     inline void SetIpv6Native(bool value) { m_ipv6NativeHasBeenSet = true; m_ipv6Native = value; }
     inline CreateDefaultSubnetRequest& WithIpv6Native(bool value) { SetIpv6Native(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Availability Zone.</p> <p>Either <code>AvailabilityZone</code>
+     * or <code>AvailabilityZoneId</code> must be specified, but not both.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+    inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value); }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    CreateDefaultSubnetRequest& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) { SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_availabilityZone;
@@ -82,6 +97,9 @@ namespace Model
 
     bool m_ipv6Native{false};
     bool m_ipv6NativeHasBeenSet = false;
+
+    Aws::String m_availabilityZoneId;
+    bool m_availabilityZoneIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -85,6 +85,12 @@ SpotInstanceRequest& SpotInstanceRequest::operator =(const XmlNode& xmlNode)
       m_launchedAvailabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(launchedAvailabilityZoneNode.GetText());
       m_launchedAvailabilityZoneHasBeenSet = true;
     }
+    XmlNode launchedAvailabilityZoneIdNode = resultNode.FirstChild("launchedAvailabilityZoneId");
+    if(!launchedAvailabilityZoneIdNode.IsNull())
+    {
+      m_launchedAvailabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(launchedAvailabilityZoneIdNode.GetText());
+      m_launchedAvailabilityZoneIdHasBeenSet = true;
+    }
     XmlNode productDescriptionNode = resultNode.FirstChild("productDescription");
     if(!productDescriptionNode.IsNull())
     {
@@ -208,6 +214,11 @@ void SpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".LaunchedAvailabilityZone=" << StringUtils::URLEncode(m_launchedAvailabilityZone.c_str()) << "&";
   }
 
+  if(m_launchedAvailabilityZoneIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LaunchedAvailabilityZoneId=" << StringUtils::URLEncode(m_launchedAvailabilityZoneId.c_str()) << "&";
+  }
+
   if(m_productDescriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".ProductDescription=" << StringUtils::URLEncode(RIProductDescriptionMapper::GetNameForRIProductDescription(m_productDescription)) << "&";
@@ -309,6 +320,10 @@ void SpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_launchedAvailabilityZoneHasBeenSet)
   {
       oStream << location << ".LaunchedAvailabilityZone=" << StringUtils::URLEncode(m_launchedAvailabilityZone.c_str()) << "&";
+  }
+  if(m_launchedAvailabilityZoneIdHasBeenSet)
+  {
+      oStream << location << ".LaunchedAvailabilityZoneId=" << StringUtils::URLEncode(m_launchedAvailabilityZoneId.c_str()) << "&";
   }
   if(m_productDescriptionHasBeenSet)
   {

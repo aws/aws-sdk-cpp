@@ -16,14 +16,12 @@ namespace Aws
 namespace EVS
 {
   /**
-   * <p> <p>Amazon EVS is in public preview release and is subject to
-   * change.</p>  <p>Amazon Elastic VMware Service (Amazon EVS) is a service
-   * that you can use to deploy a VMware Cloud Foundation (VCF) software environment
-   * directly on EC2 bare metal instances within an Amazon Virtual Private Cloud
-   * (VPC).</p> <p>Workloads running on Amazon EVS are fully compatible with
-   * workloads running on any standard VMware vSphere environment. This means that
-   * you can migrate any VMware-based workload to Amazon EVS without workload
-   * modification.</p></p>
+   * <p>Amazon Elastic VMware Service (Amazon EVS) is a service that you can use to
+   * deploy a VMware Cloud Foundation (VCF) software environment directly on EC2 bare
+   * metal instances within an Amazon Virtual Private Cloud (VPC).</p> <p>Workloads
+   * running on Amazon EVS are fully compatible with workloads running on any
+   * standard VMware vSphere environment. This means that you can migrate any
+   * VMware-based workload to Amazon EVS without workload modification.</p>
    */
   class AWS_EVS_API EVSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EVSClient>
   {
@@ -84,18 +82,16 @@ namespace EVS
         virtual ~EVSClient();
 
         /**
-         * <p> <p>Amazon EVS is in public preview release and is subject to
-         * change.</p>  <p>Creates an Amazon EVS environment that runs VCF software,
-         * such as SDDC Manager, NSX Manager, and vCenter Server.</p> <p>During environment
-         * creation, Amazon EVS performs validations on DNS settings, provisions VLAN
-         * subnets and hosts, and deploys the supplied version of VCF.</p> <p>It can take
-         * several hours to create an environment. After the deployment completes, you can
-         * configure VCF in the vSphere user interface according to your needs.</p> 
-         * <p>You cannot use the <code>dedicatedHostId</code> and
-         * <code>placementGroupId</code> parameters together in the same
-         * <code>CreateEnvironment</code> action. This results in a
-         * <code>ValidationException</code> response.</p> </p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Creates an Amazon EVS environment that runs VCF software, such as SDDC
+         * Manager, NSX Manager, and vCenter Server.</p> <p>During environment creation,
+         * Amazon EVS performs validations on DNS settings, provisions VLAN subnets and
+         * hosts, and deploys the supplied version of VCF.</p> <p>It can take several hours
+         * to create an environment. After the deployment completes, you can configure VCF
+         * in the vSphere user interface according to your needs.</p>  <p>You cannot
+         * use the <code>dedicatedHostId</code> and <code>placementGroupId</code>
+         * parameters together in the same <code>CreateEnvironment</code> action. This
+         * results in a <code>ValidationException</code> response.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/CreateEnvironment">AWS
          * API Reference</a></p>
          */
@@ -120,21 +116,16 @@ namespace EVS
         }
 
         /**
-         * <p> <p>Amazon EVS is in public preview release and is subject to
-         * change.</p>  <p>Creates an ESXi host and adds it to an Amazon EVS
-         * environment. Amazon EVS supports 4-16 hosts per environment.</p> <p>This action
-         * can only be used after the Amazon EVS environment is deployed. All Amazon EVS
-         * hosts are created with the latest AMI release version for the respective VCF
-         * version of the environment. Amazon EVS hosts are commissioned in the SDDC
-         * Manager inventory as unassigned hosts.</p> <p>You can use the
+         * <p>Creates an ESXi host and adds it to an Amazon EVS environment. Amazon EVS
+         * supports 4-16 hosts per environment.</p> <p>This action can only be used after
+         * the Amazon EVS environment is deployed.</p> <p>You can use the
          * <code>dedicatedHostId</code> parameter to specify an Amazon EC2 Dedicated Host
          * for ESXi host creation.</p> <p> You can use the <code>placementGroupId</code>
          * parameter to specify a cluster or partition placement group to launch EC2
          * instances into.</p>  <p>You cannot use the <code>dedicatedHostId</code>
          * and <code>placementGroupId</code> parameters together in the same
          * <code>CreateEnvironmentHost</code> action. This results in a
-         * <code>ValidationException</code> response.</p> </p><p><h3>See Also:</h3> 
-         * <a
+         * <code>ValidationException</code> response.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/CreateEnvironmentHost">AWS
          * API Reference</a></p>
          */
@@ -159,13 +150,13 @@ namespace EVS
         }
 
         /**
-         * <p> <p>Amazon EVS is in public preview release and is subject to
-         * change.</p>  <p>Deletes an Amazon EVS environment.</p> <p>Amazon EVS
-         * environments will only be enabled for deletion once the hosts are deleted. You
-         * can delete hosts using the <code>DeleteEnvironmentHost</code> action.</p>
-         * <p>Environment deletion also deletes the associated Amazon EVS VLAN subnets.
-         * Other associated Amazon Web Services resources are not deleted. These resources
-         * may continue to incur costs.</p></p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Amazon EVS environment.</p> <p>Amazon EVS environments will only
+         * be enabled for deletion once the hosts are deleted. You can delete hosts using
+         * the <code>DeleteEnvironmentHost</code> action.</p> <p>Environment deletion also
+         * deletes the associated Amazon EVS VLAN subnets and Amazon Web Services Secrets
+         * Manager secrets that Amazon EVS created. Amazon Web Services resources that you
+         * create are not deleted. These resources may continue to incur
+         * costs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/DeleteEnvironment">AWS
          * API Reference</a></p>
          */
@@ -190,12 +181,10 @@ namespace EVS
         }
 
         /**
-         * <p> <p>Amazon EVS is in public preview release and is subject to
-         * change.</p>  <p>Deletes a host from an Amazon EVS environment.</p> 
-         * <p>Before deleting a host, you must unassign and decommission the host from
-         * within the SDDC Manager user interface. Not doing so could impact the
-         * availability of your virtual machines or result in data loss.</p>
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a host from an Amazon EVS environment.</p>  <p>Before deleting
+         * a host, you must unassign and decommission the host from within the SDDC Manager
+         * user interface. Not doing so could impact the availability of your virtual
+         * machines or result in data loss.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/DeleteEnvironmentHost">AWS
          * API Reference</a></p>
          */
@@ -220,9 +209,8 @@ namespace EVS
         }
 
         /**
-         * <p> <p>Amazon EVS is in public preview release and is subject to
-         * change.</p>  <p>Returns a description of the specified
-         * environment.</p></p><p><h3>See Also:</h3>   <a
+         * <p>Returns a description of the specified environment.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/GetEnvironment">AWS
          * API Reference</a></p>
          */
@@ -247,9 +235,7 @@ namespace EVS
         }
 
         /**
-         * <p> <p>Amazon EVS is in public preview release and is subject to
-         * change.</p>  <p>List the hosts within an environment.</p></p><p><h3>See
-         * Also:</h3>   <a
+         * <p>List the hosts within an environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/ListEnvironmentHosts">AWS
          * API Reference</a></p>
          */
@@ -274,9 +260,8 @@ namespace EVS
         }
 
         /**
-         * <p> <p>Amazon EVS is in public preview release and is subject to
-         * change.</p>  <p>Lists environment VLANs that are associated with the
-         * specified environment.</p></p><p><h3>See Also:</h3>   <a
+         * <p>Lists environment VLANs that are associated with the specified
+         * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/ListEnvironmentVlans">AWS
          * API Reference</a></p>
          */
@@ -301,10 +286,8 @@ namespace EVS
         }
 
         /**
-         * <p> <p>Amazon EVS is in public preview release and is subject to
-         * change.</p>  <p>Lists the Amazon EVS environments in your Amazon Web
-         * Services account in the specified Amazon Web Services Region.</p></p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the Amazon EVS environments in your Amazon Web Services account in the
+         * specified Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/ListEnvironments">AWS
          * API Reference</a></p>
          */
@@ -329,9 +312,7 @@ namespace EVS
         }
 
         /**
-         * <p> <p>Amazon EVS is in public preview release and is subject to
-         * change.</p>  <p>Lists the tags for an Amazon EVS
-         * resource.</p></p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tags for an Amazon EVS resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -356,15 +337,14 @@ namespace EVS
         }
 
         /**
-         * <p> <p>Amazon EVS is in public preview release and is subject to
-         * change.</p>  <p>Associates the specified tags to an Amazon EVS resource
-         * with the specified <code>resourceArn</code>. If existing tags on a resource are
-         * not specified in the request parameters, they aren't changed. When a resource is
-         * deleted, the tags associated with that resource are also deleted. Tags that you
-         * create for Amazon EVS resources don't propagate to any other resources
-         * associated with the environment. For example, if you tag an environment with
-         * this operation, that tag doesn't automatically propagate to the VLAN subnets and
-         * hosts associated with the environment.</p></p><p><h3>See Also:</h3>   <a
+         * <p>Associates the specified tags to an Amazon EVS resource with the specified
+         * <code>resourceArn</code>. If existing tags on a resource are not specified in
+         * the request parameters, they aren't changed. When a resource is deleted, the
+         * tags associated with that resource are also deleted. Tags that you create for
+         * Amazon EVS resources don't propagate to any other resources associated with the
+         * environment. For example, if you tag an environment with this operation, that
+         * tag doesn't automatically propagate to the VLAN subnets and hosts associated
+         * with the environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/TagResource">AWS API
          * Reference</a></p>
          */
@@ -389,9 +369,8 @@ namespace EVS
         }
 
         /**
-         * <p> <p>Amazon EVS is in public preview release and is subject to
-         * change.</p>  <p>Deletes specified tags from an Amazon EVS
-         * resource.</p></p><p><h3>See Also:</h3>   <a
+         * <p>Deletes specified tags from an Amazon EVS resource.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/UntagResource">AWS
          * API Reference</a></p>
          */

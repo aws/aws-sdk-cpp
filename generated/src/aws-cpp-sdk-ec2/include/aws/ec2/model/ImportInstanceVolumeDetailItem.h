@@ -55,6 +55,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the Availability Zone where the resulting instance will reside.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+    inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value); }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    ImportInstanceVolumeDetailItem& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) { SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The number of bytes converted so far.</p>
      */
     inline long long GetBytesConverted() const { return m_bytesConverted; }
@@ -126,6 +138,9 @@ namespace Model
 
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet = false;
+
+    Aws::String m_availabilityZoneId;
+    bool m_availabilityZoneIdHasBeenSet = false;
 
     long long m_bytesConverted{0};
     bool m_bytesConvertedHasBeenSet = false;

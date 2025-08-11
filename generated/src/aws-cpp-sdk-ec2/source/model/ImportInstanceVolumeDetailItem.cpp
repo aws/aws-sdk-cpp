@@ -37,6 +37,12 @@ ImportInstanceVolumeDetailItem& ImportInstanceVolumeDetailItem::operator =(const
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
     }
+    XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
+    if(!availabilityZoneIdNode.IsNull())
+    {
+      m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
+      m_availabilityZoneIdHasBeenSet = true;
+    }
     XmlNode bytesConvertedNode = resultNode.FirstChild("bytesConverted");
     if(!bytesConvertedNode.IsNull())
     {
@@ -85,6 +91,11 @@ void ImportInstanceVolumeDetailItem::OutputToStream(Aws::OStream& oStream, const
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
 
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
+
   if(m_bytesConvertedHasBeenSet)
   {
       oStream << location << index << locationValue << ".BytesConverted=" << m_bytesConverted << "&";
@@ -126,6 +137,10 @@ void ImportInstanceVolumeDetailItem::OutputToStream(Aws::OStream& oStream, const
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+      oStream << location << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
   if(m_bytesConvertedHasBeenSet)
   {

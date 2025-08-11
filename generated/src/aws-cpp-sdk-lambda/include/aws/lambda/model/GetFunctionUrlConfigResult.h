@@ -119,9 +119,7 @@ namespace Model
      * <code>RESPONSE_STREAM</code> – Your function streams payload results as they
      * become available. Lambda invokes your function using the
      * <code>InvokeWithResponseStream</code> API operation. The maximum response
-     * payload size is 20 MB, however, you can <a
-     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request
-     * a quota increase</a>.</p> </li> </ul>
+     * payload size is 200 MB.</p> </li> </ul>
      */
     inline InvokeMode GetInvokeMode() const { return m_invokeMode; }
     inline void SetInvokeMode(InvokeMode value) { m_invokeModeHasBeenSet = true; m_invokeMode = value; }

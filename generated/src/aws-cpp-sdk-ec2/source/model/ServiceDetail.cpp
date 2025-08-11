@@ -62,6 +62,19 @@ ServiceDetail& ServiceDetail::operator =(const XmlNode& xmlNode)
       m_serviceRegion = Aws::Utils::Xml::DecodeEscapedXmlText(serviceRegionNode.GetText());
       m_serviceRegionHasBeenSet = true;
     }
+    XmlNode availabilityZoneIdsNode = resultNode.FirstChild("availabilityZoneIdSet");
+    if(!availabilityZoneIdsNode.IsNull())
+    {
+      XmlNode availabilityZoneIdsMember = availabilityZoneIdsNode.FirstChild("item");
+      m_availabilityZoneIdsHasBeenSet = !availabilityZoneIdsMember.IsNull();
+      while(!availabilityZoneIdsMember.IsNull())
+      {
+        m_availabilityZoneIds.push_back(availabilityZoneIdsMember.GetText());
+        availabilityZoneIdsMember = availabilityZoneIdsMember.NextNode("item");
+      }
+
+      m_availabilityZoneIdsHasBeenSet = true;
+    }
     XmlNode availabilityZonesNode = resultNode.FirstChild("availabilityZoneSet");
     if(!availabilityZonesNode.IsNull())
     {
@@ -202,6 +215,15 @@ void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".ServiceRegion=" << StringUtils::URLEncode(m_serviceRegion.c_str()) << "&";
   }
 
+  if(m_availabilityZoneIdsHasBeenSet)
+  {
+      unsigned availabilityZoneIdsIdx = 1;
+      for(auto& item : m_availabilityZoneIds)
+      {
+        oStream << location << index << locationValue << ".AvailabilityZoneIdSet." << availabilityZoneIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
   if(m_availabilityZonesHasBeenSet)
   {
       unsigned availabilityZonesIdx = 1;
@@ -311,6 +333,14 @@ void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_serviceRegionHasBeenSet)
   {
       oStream << location << ".ServiceRegion=" << StringUtils::URLEncode(m_serviceRegion.c_str()) << "&";
+  }
+  if(m_availabilityZoneIdsHasBeenSet)
+  {
+      unsigned availabilityZoneIdsIdx = 1;
+      for(auto& item : m_availabilityZoneIds)
+      {
+        oStream << location << ".AvailabilityZoneIdSet." << availabilityZoneIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
   if(m_availabilityZonesHasBeenSet)
   {

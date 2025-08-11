@@ -39,7 +39,10 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>The type definition that specifies the name, description, and possible values
+     * for the new custom type being added to the policy.</p>
+     */
     inline const AutomatedReasoningPolicyDefinitionType& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
     template<typename TypeT = AutomatedReasoningPolicyDefinitionType>

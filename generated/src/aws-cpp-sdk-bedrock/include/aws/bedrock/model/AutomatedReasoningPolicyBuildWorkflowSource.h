@@ -41,7 +41,10 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>An existing policy definition that serves as the starting point for the build
+     * workflow, typically used in policy repair or update scenarios.</p>
+     */
     inline const AutomatedReasoningPolicyDefinition& GetPolicyDefinition() const { return m_policyDefinition; }
     inline bool PolicyDefinitionHasBeenSet() const { return m_policyDefinitionHasBeenSet; }
     template<typename PolicyDefinitionT = AutomatedReasoningPolicyDefinition>

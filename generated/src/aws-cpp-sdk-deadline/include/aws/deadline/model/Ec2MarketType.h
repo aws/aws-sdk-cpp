@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     on_demand,
-    spot
+    spot,
+    wait_and_save
   };
 
 namespace Ec2MarketTypeMapper

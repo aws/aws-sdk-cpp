@@ -76,8 +76,8 @@ namespace Model
     ///@{
     /**
      * <p>The filter expression, <code>AND</code> or <code>OR</code>, to use when
-     * searching among a group of search strings in a resource. You can use two
-     * groupings per search each within parenthesis <code>()</code>.</p>
+     * searching among a group of search strings in a resource. <p>You can use two
+     * groupings per search each within parenthesis <code>()</code>.</p></p>
      */
     inline const SearchGroupedFilterExpressions& GetFilterExpressions() const { return m_filterExpressions; }
     inline bool FilterExpressionsHasBeenSet() const { return m_filterExpressionsHasBeenSet; }

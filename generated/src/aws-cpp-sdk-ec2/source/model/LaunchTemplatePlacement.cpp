@@ -37,6 +37,12 @@ LaunchTemplatePlacement& LaunchTemplatePlacement::operator =(const XmlNode& xmlN
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
     }
+    XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
+    if(!availabilityZoneIdNode.IsNull())
+    {
+      m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
+      m_availabilityZoneIdHasBeenSet = true;
+    }
     XmlNode affinityNode = resultNode.FirstChild("affinity");
     if(!affinityNode.IsNull())
     {
@@ -97,6 +103,11 @@ void LaunchTemplatePlacement::OutputToStream(Aws::OStream& oStream, const char* 
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
 
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
+
   if(m_affinityHasBeenSet)
   {
       oStream << location << index << locationValue << ".Affinity=" << StringUtils::URLEncode(m_affinity.c_str()) << "&";
@@ -144,6 +155,10 @@ void LaunchTemplatePlacement::OutputToStream(Aws::OStream& oStream, const char* 
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+      oStream << location << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
   if(m_affinityHasBeenSet)
   {

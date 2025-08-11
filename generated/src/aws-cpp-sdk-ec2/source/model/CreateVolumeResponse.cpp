@@ -34,6 +34,12 @@ CreateVolumeResponse& CreateVolumeResponse::operator =(const Aws::AmazonWebServi
 
   if(!resultNode.IsNull())
   {
+    XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
+    if(!availabilityZoneIdNode.IsNull())
+    {
+      m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
+      m_availabilityZoneIdHasBeenSet = true;
+    }
     XmlNode outpostArnNode = resultNode.FirstChild("outpostArn");
     if(!outpostArnNode.IsNull())
     {

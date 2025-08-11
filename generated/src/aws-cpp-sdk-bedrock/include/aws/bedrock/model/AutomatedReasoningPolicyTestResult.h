@@ -46,7 +46,10 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>The test case that was executed, including the input content, expected
+     * results, and configuration parameters used during validation.</p>
+     */
     inline const AutomatedReasoningPolicyTestCase& GetTestCase() const { return m_testCase; }
     inline bool TestCaseHasBeenSet() const { return m_testCaseHasBeenSet; }
     template<typename TestCaseT = AutomatedReasoningPolicyTestCase>

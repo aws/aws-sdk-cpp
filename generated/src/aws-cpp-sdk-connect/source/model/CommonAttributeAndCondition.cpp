@@ -34,11 +34,6 @@ CommonAttributeAndCondition& CommonAttributeAndCondition::operator =(JsonView js
     }
     m_tagConditionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HierarchyGroupCondition"))
-  {
-    m_hierarchyGroupCondition = jsonValue.GetObject("HierarchyGroupCondition");
-    m_hierarchyGroupConditionHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -54,12 +49,6 @@ JsonValue CommonAttributeAndCondition::Jsonize() const
      tagConditionsJsonList[tagConditionsIndex].AsObject(m_tagConditions[tagConditionsIndex].Jsonize());
    }
    payload.WithArray("TagConditions", std::move(tagConditionsJsonList));
-
-  }
-
-  if(m_hierarchyGroupConditionHasBeenSet)
-  {
-   payload.WithObject("HierarchyGroupCondition", m_hierarchyGroupCondition.Jsonize());
 
   }
 

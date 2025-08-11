@@ -40,6 +40,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the Availability Zone for the resulting EBS volume.</p> <p>Either
+     * <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be
+     * specified, but not both.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+    inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value); }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    ImportVolumeRequest& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) { SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -53,7 +67,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Availability Zone for the resulting EBS volume.</p>
+     * <p>The Availability Zone for the resulting EBS volume.</p> <p>Either
+     * <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be
+     * specified, but not both.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
@@ -99,6 +115,9 @@ namespace Model
     ImportVolumeRequest& WithVolume(VolumeT&& value) { SetVolume(std::forward<VolumeT>(value)); return *this;}
     ///@}
   private:
+
+    Aws::String m_availabilityZoneId;
+    bool m_availabilityZoneIdHasBeenSet = false;
 
     bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;

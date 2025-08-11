@@ -98,7 +98,25 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Availability Zones in which the service is available.</p>
+     * <p>The IDs of the Availability Zones in which the service is available.</p>
+     * <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can
+     * be specified, but not both</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAvailabilityZoneIds() const { return m_availabilityZoneIds; }
+    inline bool AvailabilityZoneIdsHasBeenSet() const { return m_availabilityZoneIdsHasBeenSet; }
+    template<typename AvailabilityZoneIdsT = Aws::Vector<Aws::String>>
+    void SetAvailabilityZoneIds(AvailabilityZoneIdsT&& value) { m_availabilityZoneIdsHasBeenSet = true; m_availabilityZoneIds = std::forward<AvailabilityZoneIdsT>(value); }
+    template<typename AvailabilityZoneIdsT = Aws::Vector<Aws::String>>
+    ServiceConfiguration& WithAvailabilityZoneIds(AvailabilityZoneIdsT&& value) { SetAvailabilityZoneIds(std::forward<AvailabilityZoneIdsT>(value)); return *this;}
+    template<typename AvailabilityZoneIdsT = Aws::String>
+    ServiceConfiguration& AddAvailabilityZoneIds(AvailabilityZoneIdsT&& value) { m_availabilityZoneIdsHasBeenSet = true; m_availabilityZoneIds.emplace_back(std::forward<AvailabilityZoneIdsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Availability Zones in which the service is available.</p> <p>Either
+     * <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be
+     * specified, but not both</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const { return m_availabilityZones; }
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
@@ -274,6 +292,9 @@ namespace Model
 
     ServiceState m_serviceState{ServiceState::NOT_SET};
     bool m_serviceStateHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_availabilityZoneIds;
+    bool m_availabilityZoneIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet = false;

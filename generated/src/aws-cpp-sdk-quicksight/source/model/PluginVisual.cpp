@@ -50,6 +50,15 @@ PluginVisual& PluginVisual::operator =(JsonView jsonValue)
     m_chartConfiguration = jsonValue.GetObject("ChartConfiguration");
     m_chartConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Actions"))
+  {
+    Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
+    for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
+    {
+      m_actions.push_back(actionsJsonList[actionsIndex].AsObject());
+    }
+    m_actionsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("VisualContentAltText"))
   {
     m_visualContentAltText = jsonValue.GetString("VisualContentAltText");
@@ -89,6 +98,17 @@ JsonValue PluginVisual::Jsonize() const
   if(m_chartConfigurationHasBeenSet)
   {
    payload.WithObject("ChartConfiguration", m_chartConfiguration.Jsonize());
+
+  }
+
+  if(m_actionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> actionsJsonList(m_actions.size());
+   for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
+   {
+     actionsJsonList[actionsIndex].AsObject(m_actions[actionsIndex].Jsonize());
+   }
+   payload.WithArray("Actions", std::move(actionsJsonList));
 
   }
 

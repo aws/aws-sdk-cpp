@@ -106,6 +106,8 @@
 #include <aws/sso-admin/model/GetApplicationAuthenticationMethodResult.h>
 #include <aws/sso-admin/model/GetApplicationGrantRequest.h>
 #include <aws/sso-admin/model/GetApplicationGrantResult.h>
+#include <aws/sso-admin/model/GetApplicationSessionConfigurationRequest.h>
+#include <aws/sso-admin/model/GetApplicationSessionConfigurationResult.h>
 #include <aws/sso-admin/model/GetInlinePolicyForPermissionSetRequest.h>
 #include <aws/sso-admin/model/GetInlinePolicyForPermissionSetResult.h>
 #include <aws/sso-admin/model/GetPermissionsBoundaryForPermissionSetRequest.h>
@@ -181,6 +183,8 @@
 #include <aws/sso-admin/model/PutApplicationAssignmentConfigurationResult.h>
 #include <aws/sso-admin/model/PutApplicationAuthenticationMethodRequest.h>
 #include <aws/sso-admin/model/PutApplicationGrantRequest.h>
+#include <aws/sso-admin/model/PutApplicationSessionConfigurationRequest.h>
+#include <aws/sso-admin/model/PutApplicationSessionConfigurationResult.h>
 #include <aws/sso-admin/model/PutInlinePolicyToPermissionSetRequest.h>
 #include <aws/sso-admin/model/PutInlinePolicyToPermissionSetResult.h>
 #include <aws/sso-admin/model/PutPermissionsBoundaryToPermissionSetRequest.h>
@@ -214,6 +218,7 @@
 #include <aws/sso-admin/model/UpdatePermissionSetResult.h>
 #include <aws/sso-admin/model/UpdateTrustedTokenIssuerRequest.h>
 #include <aws/sso-admin/model/UpdateTrustedTokenIssuerResult.h>
+#include <aws/sso-admin/model/UserBackgroundSessionApplicationStatus.h>
 
 using SSOAdminIncludeTest = ::testing::Test;
 
