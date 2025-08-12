@@ -91,6 +91,11 @@ Webhook& Webhook::operator =(JsonView jsonValue)
     m_statusMessage = jsonValue.GetString("statusMessage");
     m_statusMessageHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("pullRequestBuildPolicy"))
+  {
+    m_pullRequestBuildPolicy = jsonValue.GetObject("pullRequestBuildPolicy");
+    m_pullRequestBuildPolicyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -168,6 +173,12 @@ JsonValue Webhook::Jsonize() const
   if(m_statusMessageHasBeenSet)
   {
    payload.WithString("statusMessage", m_statusMessage);
+
+  }
+
+  if(m_pullRequestBuildPolicyHasBeenSet)
+  {
+   payload.WithObject("pullRequestBuildPolicy", m_pullRequestBuildPolicy.Jsonize());
 
   }
 

@@ -61,6 +61,12 @@ RouteTableAssociation& RouteTableAssociation::operator =(const XmlNode& xmlNode)
       m_gatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(gatewayIdNode.GetText());
       m_gatewayIdHasBeenSet = true;
     }
+    XmlNode publicIpv4PoolNode = resultNode.FirstChild("publicIpv4Pool");
+    if(!publicIpv4PoolNode.IsNull())
+    {
+      m_publicIpv4Pool = Aws::Utils::Xml::DecodeEscapedXmlText(publicIpv4PoolNode.GetText());
+      m_publicIpv4PoolHasBeenSet = true;
+    }
     XmlNode associationStateNode = resultNode.FirstChild("associationState");
     if(!associationStateNode.IsNull())
     {
@@ -99,6 +105,11 @@ void RouteTableAssociation::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".GatewayId=" << StringUtils::URLEncode(m_gatewayId.c_str()) << "&";
   }
 
+  if(m_publicIpv4PoolHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PublicIpv4Pool=" << StringUtils::URLEncode(m_publicIpv4Pool.c_str()) << "&";
+  }
+
   if(m_associationStateHasBeenSet)
   {
       Aws::StringStream associationStateLocationAndMemberSs;
@@ -129,6 +140,10 @@ void RouteTableAssociation::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_gatewayIdHasBeenSet)
   {
       oStream << location << ".GatewayId=" << StringUtils::URLEncode(m_gatewayId.c_str()) << "&";
+  }
+  if(m_publicIpv4PoolHasBeenSet)
+  {
+      oStream << location << ".PublicIpv4Pool=" << StringUtils::URLEncode(m_publicIpv4Pool.c_str()) << "&";
   }
   if(m_associationStateHasBeenSet)
   {

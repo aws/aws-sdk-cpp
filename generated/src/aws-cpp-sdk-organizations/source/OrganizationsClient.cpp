@@ -55,10 +55,12 @@
 #include <aws/organizations/model/ListAWSServiceAccessForOrganizationRequest.h>
 #include <aws/organizations/model/ListAccountsRequest.h>
 #include <aws/organizations/model/ListAccountsForParentRequest.h>
+#include <aws/organizations/model/ListAccountsWithInvalidEffectivePolicyRequest.h>
 #include <aws/organizations/model/ListChildrenRequest.h>
 #include <aws/organizations/model/ListCreateAccountStatusRequest.h>
 #include <aws/organizations/model/ListDelegatedAdministratorsRequest.h>
 #include <aws/organizations/model/ListDelegatedServicesForAccountRequest.h>
+#include <aws/organizations/model/ListEffectivePolicyValidationErrorsRequest.h>
 #include <aws/organizations/model/ListHandshakesForAccountRequest.h>
 #include <aws/organizations/model/ListHandshakesForOrganizationRequest.h>
 #include <aws/organizations/model/ListOrganizationalUnitsForParentRequest.h>
@@ -1103,6 +1105,32 @@ ListAccountsForParentOutcome OrganizationsClient::ListAccountsForParent(const Li
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListAccountsWithInvalidEffectivePolicyOutcome OrganizationsClient::ListAccountsWithInvalidEffectivePolicy(const ListAccountsWithInvalidEffectivePolicyRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListAccountsWithInvalidEffectivePolicy);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAccountsWithInvalidEffectivePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListAccountsWithInvalidEffectivePolicy, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListAccountsWithInvalidEffectivePolicy, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListAccountsWithInvalidEffectivePolicy",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListAccountsWithInvalidEffectivePolicyOutcome>(
+    [&]()-> ListAccountsWithInvalidEffectivePolicyOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAccountsWithInvalidEffectivePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return ListAccountsWithInvalidEffectivePolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListChildrenOutcome OrganizationsClient::ListChildren(const ListChildrenRequest& request) const
 {
   AWS_OPERATION_GUARD(ListChildren);
@@ -1201,6 +1229,32 @@ ListDelegatedServicesForAccountOutcome OrganizationsClient::ListDelegatedService
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDelegatedServicesForAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       return ListDelegatedServicesForAccountOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListEffectivePolicyValidationErrorsOutcome OrganizationsClient::ListEffectivePolicyValidationErrors(const ListEffectivePolicyValidationErrorsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListEffectivePolicyValidationErrors);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEffectivePolicyValidationErrors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListEffectivePolicyValidationErrors, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListEffectivePolicyValidationErrors, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListEffectivePolicyValidationErrors",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListEffectivePolicyValidationErrorsOutcome>(
+    [&]()-> ListEffectivePolicyValidationErrorsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEffectivePolicyValidationErrors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return ListEffectivePolicyValidationErrorsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

@@ -11,6 +11,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/codebuild/model/ScopeConfiguration.h>
 #include <aws/codebuild/model/WebhookStatus.h>
+#include <aws/codebuild/model/PullRequestBuildPolicy.h>
 #include <aws/codebuild/model/WebhookFilter.h>
 #include <utility>
 
@@ -198,6 +199,16 @@ namespace Model
     template<typename StatusMessageT = Aws::String>
     Webhook& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const PullRequestBuildPolicy& GetPullRequestBuildPolicy() const { return m_pullRequestBuildPolicy; }
+    inline bool PullRequestBuildPolicyHasBeenSet() const { return m_pullRequestBuildPolicyHasBeenSet; }
+    template<typename PullRequestBuildPolicyT = PullRequestBuildPolicy>
+    void SetPullRequestBuildPolicy(PullRequestBuildPolicyT&& value) { m_pullRequestBuildPolicyHasBeenSet = true; m_pullRequestBuildPolicy = std::forward<PullRequestBuildPolicyT>(value); }
+    template<typename PullRequestBuildPolicyT = PullRequestBuildPolicy>
+    Webhook& WithPullRequestBuildPolicy(PullRequestBuildPolicyT&& value) { SetPullRequestBuildPolicy(std::forward<PullRequestBuildPolicyT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_url;
@@ -232,6 +243,9 @@ namespace Model
 
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet = false;
+
+    PullRequestBuildPolicy m_pullRequestBuildPolicy;
+    bool m_pullRequestBuildPolicyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/AppType.h>
 #include <aws/sagemaker/model/AppStatus.h>
+#include <aws/sagemaker/model/FeatureStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/ResourceSpec.h>
 #include <utility>
@@ -108,6 +109,18 @@ namespace Model
     inline AppStatus GetStatus() const { return m_status; }
     inline void SetStatus(AppStatus value) { m_statusHasBeenSet = true; m_status = value; }
     inline DescribeAppResult& WithStatus(AppStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The effective status of Trusted Identity Propagation (TIP) for this
+     * application. When enabled, user identities from IAM Identity Center are being
+     * propagated through the application to TIP enabled Amazon Web Services services.
+     * When disabled, standard IAM role-based access is used. </p>
+     */
+    inline FeatureStatus GetEffectiveTrustedIdentityPropagationStatus() const { return m_effectiveTrustedIdentityPropagationStatus; }
+    inline void SetEffectiveTrustedIdentityPropagationStatus(FeatureStatus value) { m_effectiveTrustedIdentityPropagationStatusHasBeenSet = true; m_effectiveTrustedIdentityPropagationStatus = value; }
+    inline DescribeAppResult& WithEffectiveTrustedIdentityPropagationStatus(FeatureStatus value) { SetEffectiveTrustedIdentityPropagationStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -226,6 +239,9 @@ namespace Model
 
     AppStatus m_status{AppStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    FeatureStatus m_effectiveTrustedIdentityPropagationStatus{FeatureStatus::NOT_SET};
+    bool m_effectiveTrustedIdentityPropagationStatusHasBeenSet = false;
 
     bool m_recoveryMode{false};
     bool m_recoveryModeHasBeenSet = false;

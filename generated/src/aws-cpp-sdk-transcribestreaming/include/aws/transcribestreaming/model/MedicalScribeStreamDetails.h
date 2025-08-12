@@ -231,6 +231,17 @@ namespace Model
     template<typename PostStreamAnalyticsResultT = MedicalScribePostStreamAnalyticsResult>
     MedicalScribeStreamDetails& WithPostStreamAnalyticsResult(PostStreamAnalyticsResultT&& value) { SetPostStreamAnalyticsResult(std::forward<PostStreamAnalyticsResultT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether the <code>MedicalScribeContext</code> object was provided
+     * when the stream was started.</p>
+     */
+    inline bool GetMedicalScribeContextProvided() const { return m_medicalScribeContextProvided; }
+    inline bool MedicalScribeContextProvidedHasBeenSet() const { return m_medicalScribeContextProvidedHasBeenSet; }
+    inline void SetMedicalScribeContextProvided(bool value) { m_medicalScribeContextProvidedHasBeenSet = true; m_medicalScribeContextProvided = value; }
+    inline MedicalScribeStreamDetails& WithMedicalScribeContextProvided(bool value) { SetMedicalScribeContextProvided(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_sessionId;
@@ -277,6 +288,9 @@ namespace Model
 
     MedicalScribePostStreamAnalyticsResult m_postStreamAnalyticsResult;
     bool m_postStreamAnalyticsResultHasBeenSet = false;
+
+    bool m_medicalScribeContextProvided{false};
+    bool m_medicalScribeContextProvidedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -314,9 +314,8 @@ namespace EC2
          * advertised, and then simultaneously stop advertising it from the current
          * location and start advertising it through Amazon Web Services.</p> <p>It can
          * take a few minutes before traffic to the specified addresses starts routing to
-         * Amazon Web Services because of BGP propagation delays.</p> <p>To stop
-         * advertising the BYOIP CIDR, use <a>WithdrawByoipCidr</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Amazon Web Services because of BGP propagation delays.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AdvertiseByoipCidr">AWS
          * API Reference</a></p>
          */
@@ -7267,9 +7266,8 @@ namespace EC2
          * <p>Releases the specified address range that you provisioned for use with your
          * Amazon Web Services resources through bring your own IP addresses (BYOIP) and
          * deletes the corresponding address pool.</p> <p>Before you can release an address
-         * range, you must stop advertising it using <a>WithdrawByoipCidr</a> and you must
-         * not have any IP addresses allocated from its address range.</p><p><h3>See
-         * Also:</h3>   <a
+         * range, you must stop advertising it and you must not have any IP addresses
+         * allocated from its address range.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionByoipCidr">AWS
          * API Reference</a></p>
          */
@@ -7771,11 +7769,9 @@ namespace EC2
         }
 
         /**
-         * <p>Describes the IP address ranges that were specified in calls to
-         * <a>ProvisionByoipCidr</a>.</p> <p>To describe the address pools that were
-         * created when you provisioned the address ranges, use
-         * <a>DescribePublicIpv4Pools</a> or <a>DescribeIpv6Pools</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the IP address ranges that were provisioned for use with Amazon Web
+         * Services resources through through bring your own IP addresses
+         * (BYOIP).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeByoipCidrs">AWS
          * API Reference</a></p>
          */
@@ -8943,11 +8939,12 @@ namespace EC2
          * each image. In <code>audit-mode</code>, the <code>imageAllowed</code> field is
          * set to <code>true</code> for images that meet the account's Allowed AMIs
          * criteria, and <code>false</code> for images that don't meet the criteria. For
-         * more information, see <a>EnableAllowedImagesSettings</a>.</p> <p>The Amazon EC2
-         * API follows an eventual consistency model. This means that the result of an API
-         * command you run that creates or modifies resources might not be immediately
-         * available to all subsequent commands you run. For guidance on how to manage
-         * eventual consistency, see <a
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Allowed
+         * AMIs</a>.</p> <p>The Amazon EC2 API follows an eventual consistency model. This
+         * means that the result of an API command you run that creates or modifies
+         * resources might not be immediately available to all subsequent commands you run.
+         * For guidance on how to manage eventual consistency, see <a
          * href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
          * consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer
          * Guide</i>.</p>  <p>We strongly recommend using only paginated
@@ -9994,8 +9991,7 @@ namespace EC2
 
         /**
          * <p>Describes your managed prefix lists and any Amazon Web Services-managed
-         * prefix lists.</p> <p>To view the entries for your prefix list, use
-         * <a>GetManagedPrefixListEntries</a>.</p><p><h3>See Also:</h3>   <a
+         * prefix lists.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeManagedPrefixLists">AWS
          * API Reference</a></p>
          */
@@ -10353,8 +10349,7 @@ namespace EC2
         /**
          * <p>Describes available Amazon Web Services services in a prefix list format,
          * which includes the prefix list name and prefix list ID of the service and the IP
-         * address range for the service.</p> <p>We recommend that you use
-         * <a>DescribeManagedPrefixLists</a> instead.</p><p><h3>See Also:</h3>   <a
+         * address range for the service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrefixLists">AWS
          * API Reference</a></p>
          */
@@ -14111,8 +14106,8 @@ namespace EC2
         /**
          * <p>Enables deregistration protection for an AMI. When deregistration protection
          * is enabled, the AMI can't be deregistered.</p> <p>To allow the AMI to be
-         * deregistered, you must first disable deregistration protection using
-         * <a>DisableImageDeregistrationProtection</a>.</p> <p>For more information, see <a
+         * deregistered, you must first disable deregistration protection.</p> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deregistration-protection.html">Protect
          * an Amazon EC2 AMI from deregistration</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -18784,9 +18779,8 @@ namespace EC2
          * from the EC2-Classic platform to the EC2-VPC platform. The Elastic IP address
          * must be allocated to your account for more than 24 hours, and it must not be
          * associated with an instance. After the Elastic IP address is moved, it is no
-         * longer available for use in the EC2-Classic platform, unless you move it back
-         * using the <a>RestoreAddressToClassic</a> request. You cannot move an Elastic IP
-         * address that was originally allocated for use in the EC2-VPC platform to the
+         * longer available for use in the EC2-Classic platform. You cannot move an Elastic
+         * IP address that was originally allocated for use in the EC2-VPC platform to the
          * EC2-Classic platform.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveAddressToVpc">AWS
          * API Reference</a></p>
@@ -18878,20 +18872,18 @@ namespace EC2
          * <p>Provisions an IPv4 or IPv6 address range for use with your Amazon Web
          * Services resources through bring your own IP addresses (BYOIP) and creates a
          * corresponding address pool. After the address range is provisioned, it is ready
-         * to be advertised using <a>AdvertiseByoipCidr</a>.</p> <p>Amazon Web Services
-         * verifies that you own the address range and are authorized to advertise it. You
-         * must ensure that the address range is registered to you and that you created an
-         * RPKI ROA to authorize Amazon ASNs 16509 and 14618 to advertise the address
-         * range. For more information, see <a
+         * to be advertised.</p> <p>Amazon Web Services verifies that you own the address
+         * range and are authorized to advertise it. You must ensure that the address range
+         * is registered to you and that you created an RPKI ROA to authorize Amazon ASNs
+         * 16509 and 14618 to advertise the address range. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
          * your own IP addresses (BYOIP)</a> in the <i>Amazon EC2 User Guide</i>.</p>
          * <p>Provisioning an address range is an asynchronous operation, so the call
          * returns immediately, but the address range is not ready to use until its status
-         * changes from <code>pending-provision</code> to <code>provisioned</code>. To
-         * monitor the status of an address range, use <a>DescribeByoipCidrs</a>. To
-         * allocate an Elastic IP address from your IPv4 address pool, use
-         * <a>AllocateAddress</a> with either the specific address from the address pool or
-         * the ID of the address pool.</p><p><h3>See Also:</h3>   <a
+         * changes from <code>pending-provision</code> to <code>provisioned</code>. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/byoip-onboard.html">Onboard
+         * your address range</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionByoipCidr">AWS
          * API Reference</a></p>
          */
@@ -19197,20 +19189,17 @@ namespace EC2
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html#creating-launching-ami-from-snapshot">Create
          * an AMI from a snapshot</a> and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-instance-store.html">Create
-         * an instance-store backed AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> 
-         * <p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and registers the
-         * AMI in a single request, so you don't have to register the AMI yourself. We
-         * recommend that you always use <a>CreateImage</a> unless you have a specific
-         * reason to use RegisterImage.</p>  <p>If needed, you can deregister an AMI
-         * at any time. Any modifications you make to an AMI backed by an instance store
-         * volume invalidates its registration. If you make changes to an image, deregister
-         * the previous image and register the new image.</p> <p> <b>Register a snapshot of
-         * a root device volume</b> </p> <p>You can use <code>RegisterImage</code> to
-         * create an Amazon EBS-backed Linux AMI from a snapshot of a root device volume.
-         * You specify the snapshot using a block device mapping. You can't set the
-         * encryption state of the volume using the block device mapping. If the snapshot
-         * is encrypted, or encryption by default is enabled, the root volume of an
-         * instance launched from the AMI is encrypted.</p> <p>For more information, see <a
+         * an instance-store backed AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>If
+         * needed, you can deregister an AMI at any time. Any modifications you make to an
+         * AMI backed by an instance store volume invalidates its registration. If you make
+         * changes to an image, deregister the previous image and register the new
+         * image.</p> <p> <b>Register a snapshot of a root device volume</b> </p> <p>You
+         * can use <code>RegisterImage</code> to create an Amazon EBS-backed Linux AMI from
+         * a snapshot of a root device volume. You specify the snapshot using a block
+         * device mapping. You can't set the encryption state of the volume using the block
+         * device mapping. If the snapshot is encrypted, or encryption by default is
+         * enabled, the root volume of an instance launched from the AMI is encrypted.</p>
+         * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html#creating-launching-ami-from-snapshot">Create
          * an AMI from a snapshot</a> and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Use
@@ -19228,16 +19217,16 @@ namespace EC2
          * was applied, check the <code>PlatformDetails</code> field on the new AMI. If the
          * field is empty or doesn't match the expected operating system code (for example,
          * Windows, RedHat, SUSE, or SQL), the AMI creation was unsuccessful, and you
-         * should discard the AMI and instead create the AMI from an instance using
-         * <a>CreateImage</a>. For more information, see <a
+         * should discard the AMI and instead create the AMI from an instance. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html#how-to-create-ebs-ami">Create
          * an AMI from an instance </a> in the <i>Amazon EC2 User Guide</i>.</p> <p>If you
          * purchase a Reserved Instance to apply to an On-Demand Instance that was launched
          * from an AMI with a billing product code, make sure that the Reserved Instance
          * has the matching billing product code. If you purchase a Reserved Instance
-         * without the matching billing product code, the Reserved Instance will not be
-         * applied to the On-Demand Instance. For information about how to obtain the
-         * platform details and billing information of an AMI, see <a
+         * without the matching billing product code, the Reserved Instance is not applied
+         * to the On-Demand Instance. For information about how to obtain the platform
+         * details and billing information of an AMI, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
          * AMI billing information</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -19528,18 +19517,18 @@ namespace EC2
         /**
          * <p>Releases the specified Elastic IP address.</p> <p>[Default VPC] Releasing an
          * Elastic IP address automatically disassociates it from any instance that it's
-         * associated with. To disassociate an Elastic IP address without releasing it, use
-         * <a>DisassociateAddress</a>.</p> <p>[Nondefault VPC] You must use
-         * <a>DisassociateAddress</a> to disassociate the Elastic IP address before you can
-         * release it. Otherwise, Amazon EC2 returns an error
+         * associated with. Alternatively, you can disassociate an Elastic IP address
+         * without releasing it.</p> <p>[Nondefault VPC] You must disassociate the Elastic
+         * IP address before you can release it. Otherwise, Amazon EC2 returns an error
          * (<code>InvalidIPAddress.InUse</code>).</p> <p>After releasing an Elastic IP
          * address, it is released to the IP address pool. Be sure to update your DNS
          * records and any servers or devices that communicate with the address. If you
          * attempt to release an Elastic IP address that you already released, you'll get
          * an <code>AuthFailure</code> error if the address is already allocated to another
          * Amazon Web Services account.</p> <p>After you release an Elastic IP address, you
-         * might be able to recover it. For more information, see
-         * <a>AllocateAddress</a>.</p><p><h3>See Also:</h3>   <a
+         * might be able to recover it. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing-eips-releasing.html">Release
+         * an Elastic IP address</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseAddress">AWS
          * API Reference</a></p>
          */
@@ -20648,9 +20637,9 @@ namespace EC2
          * <code>TargetId</code>, which can represent an individual account, or all the
          * accounts that fall under the specified organizational unit (OU) or root (the
          * entire Amazon Web Services Organization).</p> <p>The report is saved to your
-         * specified S3 bucket, using the following path structure (with the <i>italicized
-         * placeholders</i> representing your specific values):</p> <p>
-         * <code>s3://<i>amzn-s3-demo-bucket</i>/<i>your-optional-s3-prefix</i>/ec2_<i>targetId</i>_<i>reportId</i>_<i>yyyyMMdd</i>T<i>hhmm</i>Z.csv</code>
+         * specified S3 bucket, using the following path structure (with the capitalized
+         * placeholders representing your specific values):</p> <p>
+         * <code>s3://AMZN-S3-DEMO-BUCKET/YOUR-OPTIONAL-S3-PREFIX/ec2_TARGETID_REPORTID_YYYYMMDDTHHMMZ.csv</code>
          * </p> <p class="title"> <b>Prerequisites for generating a report</b> </p> <ul>
          * <li> <p>The <code>StartDeclarativePoliciesReport</code> API can only be called
          * by the management account or delegated administrators for the organization.</p>

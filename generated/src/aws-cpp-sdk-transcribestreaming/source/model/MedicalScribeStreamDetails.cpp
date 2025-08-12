@@ -104,6 +104,11 @@ MedicalScribeStreamDetails& MedicalScribeStreamDetails::operator =(JsonView json
     m_postStreamAnalyticsResult = jsonValue.GetObject("PostStreamAnalyticsResult");
     m_postStreamAnalyticsResultHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("MedicalScribeContextProvided"))
+  {
+    m_medicalScribeContextProvided = jsonValue.GetBool("MedicalScribeContextProvided");
+    m_medicalScribeContextProvidedHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -197,6 +202,12 @@ JsonValue MedicalScribeStreamDetails::Jsonize() const
   if(m_postStreamAnalyticsResultHasBeenSet)
   {
    payload.WithObject("PostStreamAnalyticsResult", m_postStreamAnalyticsResult.Jsonize());
+
+  }
+
+  if(m_medicalScribeContextProvidedHasBeenSet)
+  {
+   payload.WithBool("MedicalScribeContextProvided", m_medicalScribeContextProvided);
 
   }
 

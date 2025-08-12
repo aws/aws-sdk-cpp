@@ -85,6 +85,12 @@ Aws::String StartMedicalScribeJobRequest::SerializePayload() const
 
   }
 
+  if(m_medicalScribeContextHasBeenSet)
+  {
+   payload.WithObject("MedicalScribeContext", m_medicalScribeContext.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

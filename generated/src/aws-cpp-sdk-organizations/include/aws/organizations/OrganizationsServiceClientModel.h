@@ -41,10 +41,12 @@
 #include <aws/organizations/model/ListAWSServiceAccessForOrganizationResult.h>
 #include <aws/organizations/model/ListAccountsResult.h>
 #include <aws/organizations/model/ListAccountsForParentResult.h>
+#include <aws/organizations/model/ListAccountsWithInvalidEffectivePolicyResult.h>
 #include <aws/organizations/model/ListChildrenResult.h>
 #include <aws/organizations/model/ListCreateAccountStatusResult.h>
 #include <aws/organizations/model/ListDelegatedAdministratorsResult.h>
 #include <aws/organizations/model/ListDelegatedServicesForAccountResult.h>
+#include <aws/organizations/model/ListEffectivePolicyValidationErrorsResult.h>
 #include <aws/organizations/model/ListHandshakesForAccountResult.h>
 #include <aws/organizations/model/ListHandshakesForOrganizationResult.h>
 #include <aws/organizations/model/ListOrganizationalUnitsForParentResult.h>
@@ -146,10 +148,12 @@ namespace Aws
       class ListAWSServiceAccessForOrganizationRequest;
       class ListAccountsRequest;
       class ListAccountsForParentRequest;
+      class ListAccountsWithInvalidEffectivePolicyRequest;
       class ListChildrenRequest;
       class ListCreateAccountStatusRequest;
       class ListDelegatedAdministratorsRequest;
       class ListDelegatedServicesForAccountRequest;
+      class ListEffectivePolicyValidationErrorsRequest;
       class ListHandshakesForAccountRequest;
       class ListHandshakesForOrganizationRequest;
       class ListOrganizationalUnitsForParentRequest;
@@ -204,10 +208,12 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListAWSServiceAccessForOrganizationResult, OrganizationsError> ListAWSServiceAccessForOrganizationOutcome;
       typedef Aws::Utils::Outcome<ListAccountsResult, OrganizationsError> ListAccountsOutcome;
       typedef Aws::Utils::Outcome<ListAccountsForParentResult, OrganizationsError> ListAccountsForParentOutcome;
+      typedef Aws::Utils::Outcome<ListAccountsWithInvalidEffectivePolicyResult, OrganizationsError> ListAccountsWithInvalidEffectivePolicyOutcome;
       typedef Aws::Utils::Outcome<ListChildrenResult, OrganizationsError> ListChildrenOutcome;
       typedef Aws::Utils::Outcome<ListCreateAccountStatusResult, OrganizationsError> ListCreateAccountStatusOutcome;
       typedef Aws::Utils::Outcome<ListDelegatedAdministratorsResult, OrganizationsError> ListDelegatedAdministratorsOutcome;
       typedef Aws::Utils::Outcome<ListDelegatedServicesForAccountResult, OrganizationsError> ListDelegatedServicesForAccountOutcome;
+      typedef Aws::Utils::Outcome<ListEffectivePolicyValidationErrorsResult, OrganizationsError> ListEffectivePolicyValidationErrorsOutcome;
       typedef Aws::Utils::Outcome<ListHandshakesForAccountResult, OrganizationsError> ListHandshakesForAccountOutcome;
       typedef Aws::Utils::Outcome<ListHandshakesForOrganizationResult, OrganizationsError> ListHandshakesForOrganizationOutcome;
       typedef Aws::Utils::Outcome<ListOrganizationalUnitsForParentResult, OrganizationsError> ListOrganizationalUnitsForParentOutcome;
@@ -262,10 +268,12 @@ namespace Aws
       typedef std::future<ListAWSServiceAccessForOrganizationOutcome> ListAWSServiceAccessForOrganizationOutcomeCallable;
       typedef std::future<ListAccountsOutcome> ListAccountsOutcomeCallable;
       typedef std::future<ListAccountsForParentOutcome> ListAccountsForParentOutcomeCallable;
+      typedef std::future<ListAccountsWithInvalidEffectivePolicyOutcome> ListAccountsWithInvalidEffectivePolicyOutcomeCallable;
       typedef std::future<ListChildrenOutcome> ListChildrenOutcomeCallable;
       typedef std::future<ListCreateAccountStatusOutcome> ListCreateAccountStatusOutcomeCallable;
       typedef std::future<ListDelegatedAdministratorsOutcome> ListDelegatedAdministratorsOutcomeCallable;
       typedef std::future<ListDelegatedServicesForAccountOutcome> ListDelegatedServicesForAccountOutcomeCallable;
+      typedef std::future<ListEffectivePolicyValidationErrorsOutcome> ListEffectivePolicyValidationErrorsOutcomeCallable;
       typedef std::future<ListHandshakesForAccountOutcome> ListHandshakesForAccountOutcomeCallable;
       typedef std::future<ListHandshakesForOrganizationOutcome> ListHandshakesForOrganizationOutcomeCallable;
       typedef std::future<ListOrganizationalUnitsForParentOutcome> ListOrganizationalUnitsForParentOutcomeCallable;
@@ -323,10 +331,12 @@ namespace Aws
     typedef std::function<void(const OrganizationsClient*, const Model::ListAWSServiceAccessForOrganizationRequest&, const Model::ListAWSServiceAccessForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAWSServiceAccessForOrganizationResponseReceivedHandler;
     typedef std::function<void(const OrganizationsClient*, const Model::ListAccountsRequest&, const Model::ListAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountsResponseReceivedHandler;
     typedef std::function<void(const OrganizationsClient*, const Model::ListAccountsForParentRequest&, const Model::ListAccountsForParentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountsForParentResponseReceivedHandler;
+    typedef std::function<void(const OrganizationsClient*, const Model::ListAccountsWithInvalidEffectivePolicyRequest&, const Model::ListAccountsWithInvalidEffectivePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountsWithInvalidEffectivePolicyResponseReceivedHandler;
     typedef std::function<void(const OrganizationsClient*, const Model::ListChildrenRequest&, const Model::ListChildrenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChildrenResponseReceivedHandler;
     typedef std::function<void(const OrganizationsClient*, const Model::ListCreateAccountStatusRequest&, const Model::ListCreateAccountStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCreateAccountStatusResponseReceivedHandler;
     typedef std::function<void(const OrganizationsClient*, const Model::ListDelegatedAdministratorsRequest&, const Model::ListDelegatedAdministratorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDelegatedAdministratorsResponseReceivedHandler;
     typedef std::function<void(const OrganizationsClient*, const Model::ListDelegatedServicesForAccountRequest&, const Model::ListDelegatedServicesForAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDelegatedServicesForAccountResponseReceivedHandler;
+    typedef std::function<void(const OrganizationsClient*, const Model::ListEffectivePolicyValidationErrorsRequest&, const Model::ListEffectivePolicyValidationErrorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEffectivePolicyValidationErrorsResponseReceivedHandler;
     typedef std::function<void(const OrganizationsClient*, const Model::ListHandshakesForAccountRequest&, const Model::ListHandshakesForAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHandshakesForAccountResponseReceivedHandler;
     typedef std::function<void(const OrganizationsClient*, const Model::ListHandshakesForOrganizationRequest&, const Model::ListHandshakesForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHandshakesForOrganizationResponseReceivedHandler;
     typedef std::function<void(const OrganizationsClient*, const Model::ListOrganizationalUnitsForParentRequest&, const Model::ListOrganizationalUnitsForParentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOrganizationalUnitsForParentResponseReceivedHandler;

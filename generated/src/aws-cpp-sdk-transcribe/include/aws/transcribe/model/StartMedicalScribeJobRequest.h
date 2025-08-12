@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/transcribe/model/MedicalScribeSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/transcribe/model/MedicalScribeContext.h>
 #include <aws/transcribe/model/MedicalScribeChannelDefinition.h>
 #include <aws/transcribe/model/Tag.h>
 #include <utility>
@@ -87,17 +88,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of a KMS key that you want to use to encrypt
-     * your Medical Scribe output.</p> <p>KMS key ARNs have the format
-     * <code>arn:partition:kms:region:account:key/key-id</code>. For example:
-     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">
-     * KMS key ARNs</a>.</p> <p>If you do not specify an encryption key, your output is
-     * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>Note that the role
-     * making the request and the role specified in the <code>DataAccessRoleArn</code>
-     * request parameter (if present) must have permission to use the specified KMS
-     * key.</p>
+     * <p>The KMS key you want to use to encrypt your Medical Scribe output.</p> <p>If
+     * using a key located in the <b>current</b> Amazon Web Services account, you can
+     * specify your KMS key in one of four ways:</p> <ol> <li> <p>Use the KMS key ID
+     * itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+     * </li> <li> <p>Use an alias for the KMS key ID. For example,
+     * <code>alias/ExampleAlias</code>.</p> </li> <li> <p>Use the Amazon Resource Name
+     * (ARN) for the KMS key ID. For example,
+     * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+     * </li> <li> <p>Use the ARN for the KMS key alias. For example,
+     * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
+     * <p>If using a key located in a <b>different</b> Amazon Web Services account than
+     * the current Amazon Web Services account, you can specify your KMS key in one of
+     * two ways:</p> <ol> <li> <p>Use the ARN for the KMS key ID. For example,
+     * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+     * </li> <li> <p>Use the ARN for the KMS key alias. For example,
+     * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
+     * <p>If you do not specify an encryption key, your output is encrypted with the
+     * default Amazon S3 key (SSE-S3).</p> <p>Note that the role specified in the
+     * <code>DataAccessRoleArn</code> request parameter must have permission to use the
+     * specified KMS key.</p>
      */
     inline const Aws::String& GetOutputEncryptionKMSKeyId() const { return m_outputEncryptionKMSKeyId; }
     inline bool OutputEncryptionKMSKeyIdHasBeenSet() const { return m_outputEncryptionKMSKeyIdHasBeenSet; }
@@ -196,8 +206,8 @@ namespace Model
     ///@{
     /**
      * <p>Adds one or more custom tags, each in the form of a key:value pair, to the
-     * Medica Scribe job.</p> <p>To learn more about using tags with Amazon Transcribe,
-     * refer to <a
+     * Medical Scribe job.</p> <p>To learn more about using tags with Amazon
+     * Transcribe, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
      * resources</a>.</p>
      */
@@ -209,6 +219,20 @@ namespace Model
     StartMedicalScribeJobRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
     template<typename TagsT = Tag>
     StartMedicalScribeJobRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The <code>MedicalScribeContext</code> object that contains contextual
+     * information which is used during clinical note generation to add relevant
+     * context to the note.</p>
+     */
+    inline const MedicalScribeContext& GetMedicalScribeContext() const { return m_medicalScribeContext; }
+    inline bool MedicalScribeContextHasBeenSet() const { return m_medicalScribeContextHasBeenSet; }
+    template<typename MedicalScribeContextT = MedicalScribeContext>
+    void SetMedicalScribeContext(MedicalScribeContextT&& value) { m_medicalScribeContextHasBeenSet = true; m_medicalScribeContext = std::forward<MedicalScribeContextT>(value); }
+    template<typename MedicalScribeContextT = MedicalScribeContext>
+    StartMedicalScribeJobRequest& WithMedicalScribeContext(MedicalScribeContextT&& value) { SetMedicalScribeContext(std::forward<MedicalScribeContextT>(value)); return *this;}
     ///@}
   private:
 
@@ -238,6 +262,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    MedicalScribeContext m_medicalScribeContext;
+    bool m_medicalScribeContextHasBeenSet = false;
   };
 
 } // namespace Model

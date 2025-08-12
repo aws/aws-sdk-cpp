@@ -50,6 +50,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of a public IPv4 pool. A public IPv4 pool is a pool of IPv4 addresses
+     * that you've brought to Amazon Web Services with BYOIP.</p>
+     */
+    inline const Aws::String& GetPublicIpv4Pool() const { return m_publicIpv4Pool; }
+    inline bool PublicIpv4PoolHasBeenSet() const { return m_publicIpv4PoolHasBeenSet; }
+    template<typename PublicIpv4PoolT = Aws::String>
+    void SetPublicIpv4Pool(PublicIpv4PoolT&& value) { m_publicIpv4PoolHasBeenSet = true; m_publicIpv4Pool = std::forward<PublicIpv4PoolT>(value); }
+    template<typename PublicIpv4PoolT = Aws::String>
+    AssociateRouteTableRequest& WithPublicIpv4Pool(PublicIpv4PoolT&& value) { SetPublicIpv4Pool(std::forward<PublicIpv4PoolT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -88,6 +101,9 @@ namespace Model
 
     Aws::String m_gatewayId;
     bool m_gatewayIdHasBeenSet = false;
+
+    Aws::String m_publicIpv4Pool;
+    bool m_publicIpv4PoolHasBeenSet = false;
 
     bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;

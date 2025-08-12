@@ -159,8 +159,8 @@ namespace Model
      * existing volumes or snapshots. To create an AMI with volumes or snapshots that
      * have a different encryption status (for example, where the source volume and
      * snapshots are unencrypted, and you want to create an AMI with encrypted volumes
-     * or snapshots), use the <a>CopyImage</a> action.</p> </li> <li> <p>The only
-     * option that can be changed for existing mappings or snapshots is
+     * or snapshots), copy the image instead.</p> </li> <li> <p>The only option that
+     * can be changed for existing mappings or snapshots is
      * <code>DeleteOnTermination</code>.</p> </li> </ul>
      */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const { return m_blockDeviceMappings; }
