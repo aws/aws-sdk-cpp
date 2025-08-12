@@ -1523,6 +1523,38 @@ namespace Organizations
         }
 
         /**
+         * <p>Lists all the accounts in an organization that have invalid effective
+         * policies. An <i>invalid effective policy</i> is an <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_effective.html">effective
+         * policy</a> that fails validation checks, resulting in the effective policy not
+         * being fully enforced on all the intended accounts within an organization.</p>
+         * <p>This operation can be called only from the organization's management account
+         * or by a member account that is a delegated administrator.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccountsWithInvalidEffectivePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAccountsWithInvalidEffectivePolicyOutcome ListAccountsWithInvalidEffectivePolicy(const Model::ListAccountsWithInvalidEffectivePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAccountsWithInvalidEffectivePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAccountsWithInvalidEffectivePolicyRequestT = Model::ListAccountsWithInvalidEffectivePolicyRequest>
+        Model::ListAccountsWithInvalidEffectivePolicyOutcomeCallable ListAccountsWithInvalidEffectivePolicyCallable(const ListAccountsWithInvalidEffectivePolicyRequestT& request) const
+        {
+            return SubmitCallable(&OrganizationsClient::ListAccountsWithInvalidEffectivePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for ListAccountsWithInvalidEffectivePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAccountsWithInvalidEffectivePolicyRequestT = Model::ListAccountsWithInvalidEffectivePolicyRequest>
+        void ListAccountsWithInvalidEffectivePolicyAsync(const ListAccountsWithInvalidEffectivePolicyRequestT& request, const ListAccountsWithInvalidEffectivePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OrganizationsClient::ListAccountsWithInvalidEffectivePolicy, request, handler, context);
+        }
+
+        /**
          * <p>Lists all of the organizational units (OUs) or accounts that are contained in
          * the specified parent OU or root. This operation, along with <a>ListParents</a>
          * enables you to traverse the tree structure that makes up this root.</p> 
@@ -1644,6 +1676,35 @@ namespace Organizations
         void ListDelegatedServicesForAccountAsync(const ListDelegatedServicesForAccountRequestT& request, const ListDelegatedServicesForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OrganizationsClient::ListDelegatedServicesForAccount, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all the validation errors on an <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_effective.html">effective
+         * policy</a> for a specified account and policy type.</p> <p>This operation can be
+         * called only from the organization's management account or by a member account
+         * that is a delegated administrator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListEffectivePolicyValidationErrors">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEffectivePolicyValidationErrorsOutcome ListEffectivePolicyValidationErrors(const Model::ListEffectivePolicyValidationErrorsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListEffectivePolicyValidationErrors that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListEffectivePolicyValidationErrorsRequestT = Model::ListEffectivePolicyValidationErrorsRequest>
+        Model::ListEffectivePolicyValidationErrorsOutcomeCallable ListEffectivePolicyValidationErrorsCallable(const ListEffectivePolicyValidationErrorsRequestT& request) const
+        {
+            return SubmitCallable(&OrganizationsClient::ListEffectivePolicyValidationErrors, request);
+        }
+
+        /**
+         * An Async wrapper for ListEffectivePolicyValidationErrors that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListEffectivePolicyValidationErrorsRequestT = Model::ListEffectivePolicyValidationErrorsRequest>
+        void ListEffectivePolicyValidationErrorsAsync(const ListEffectivePolicyValidationErrorsRequestT& request, const ListEffectivePolicyValidationErrorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OrganizationsClient::ListEffectivePolicyValidationErrors, request, handler, context);
         }
 
         /**

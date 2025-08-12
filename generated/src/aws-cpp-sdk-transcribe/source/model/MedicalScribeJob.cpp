@@ -89,6 +89,11 @@ MedicalScribeJob& MedicalScribeJob::operator =(JsonView jsonValue)
     }
     m_channelDefinitionsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("MedicalScribeContextProvided"))
+  {
+    m_medicalScribeContextProvided = jsonValue.GetBool("MedicalScribeContextProvided");
+    m_medicalScribeContextProvidedHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -174,6 +179,12 @@ JsonValue MedicalScribeJob::Jsonize() const
      channelDefinitionsJsonList[channelDefinitionsIndex].AsObject(m_channelDefinitions[channelDefinitionsIndex].Jsonize());
    }
    payload.WithArray("ChannelDefinitions", std::move(channelDefinitionsJsonList));
+
+  }
+
+  if(m_medicalScribeContextProvidedHasBeenSet)
+  {
+   payload.WithBool("MedicalScribeContextProvided", m_medicalScribeContextProvided);
 
   }
 

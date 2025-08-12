@@ -19,6 +19,11 @@ Aws::String AssociateRouteTableRequest::SerializePayload() const
     ss << "GatewayId=" << StringUtils::URLEncode(m_gatewayId.c_str()) << "&";
   }
 
+  if(m_publicIpv4PoolHasBeenSet)
+  {
+    ss << "PublicIpv4Pool=" << StringUtils::URLEncode(m_publicIpv4Pool.c_str()) << "&";
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";

@@ -1160,7 +1160,7 @@ namespace TranscribeService
          * name you create for your MedicalScribe job that is unique within your Amazon Web
          * Services account.</p> </li> <li> <p> <code>OutputBucketName</code>: The Amazon
          * S3 bucket where you want your output files stored.</p> </li> <li> <p>
-         * <code>Settings</code>: A <code>MedicalScribeSettings</code> obect that must set
+         * <code>Settings</code>: A <code>MedicalScribeSettings</code> object that must set
          * exactly one of <code>ShowSpeakerLabels</code> or
          * <code>ChannelIdentification</code> to true. If <code>ShowSpeakerLabels</code> is
          * true, <code>MaxSpeakerLabels</code> must also be set. </p> </li> <li> <p>

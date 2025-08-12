@@ -1565,6 +1565,7 @@
 #include <aws/sagemaker/model/TrialComponentSummary.h>
 #include <aws/sagemaker/model/TrialSource.h>
 #include <aws/sagemaker/model/TrialSummary.h>
+#include <aws/sagemaker/model/TrustedIdentityPropagationSettings.h>
 #include <aws/sagemaker/model/TtlDuration.h>
 #include <aws/sagemaker/model/TtlDurationUnit.h>
 #include <aws/sagemaker/model/TuningJobCompletionCriteria.h>

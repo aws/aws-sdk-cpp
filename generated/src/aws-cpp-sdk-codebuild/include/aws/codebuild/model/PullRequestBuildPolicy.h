@@ -26,9 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Configuration policy that defines comment-based approval requirements for
-   * triggering builds on pull requests. This policy helps control when automated
-   * builds are executed based on contributor permissions and approval
+   * <p>A PullRequestBuildPolicy object that defines comment-based approval
+   * requirements for triggering builds on pull requests. This policy helps control
+   * when automated builds are executed based on contributor permissions and approval
    * workflows.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/PullRequestBuildPolicy">AWS
    * API Reference</a></p>

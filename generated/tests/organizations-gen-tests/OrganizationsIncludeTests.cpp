@@ -74,6 +74,7 @@
 #include <aws/organizations/model/DisablePolicyTypeResult.h>
 #include <aws/organizations/model/EffectivePolicy.h>
 #include <aws/organizations/model/EffectivePolicyType.h>
+#include <aws/organizations/model/EffectivePolicyValidationError.h>
 #include <aws/organizations/model/EnableAWSServiceAccessRequest.h>
 #include <aws/organizations/model/EnableAllFeaturesRequest.h>
 #include <aws/organizations/model/EnableAllFeaturesResult.h>
@@ -101,6 +102,8 @@
 #include <aws/organizations/model/ListAccountsForParentResult.h>
 #include <aws/organizations/model/ListAccountsRequest.h>
 #include <aws/organizations/model/ListAccountsResult.h>
+#include <aws/organizations/model/ListAccountsWithInvalidEffectivePolicyRequest.h>
+#include <aws/organizations/model/ListAccountsWithInvalidEffectivePolicyResult.h>
 #include <aws/organizations/model/ListChildrenRequest.h>
 #include <aws/organizations/model/ListChildrenResult.h>
 #include <aws/organizations/model/ListCreateAccountStatusRequest.h>
@@ -109,6 +112,8 @@
 #include <aws/organizations/model/ListDelegatedAdministratorsResult.h>
 #include <aws/organizations/model/ListDelegatedServicesForAccountRequest.h>
 #include <aws/organizations/model/ListDelegatedServicesForAccountResult.h>
+#include <aws/organizations/model/ListEffectivePolicyValidationErrorsRequest.h>
+#include <aws/organizations/model/ListEffectivePolicyValidationErrorsResult.h>
 #include <aws/organizations/model/ListHandshakesForAccountRequest.h>
 #include <aws/organizations/model/ListHandshakesForAccountResult.h>
 #include <aws/organizations/model/ListHandshakesForOrganizationRequest.h>

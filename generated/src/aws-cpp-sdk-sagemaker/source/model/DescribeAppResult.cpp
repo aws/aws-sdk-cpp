@@ -60,6 +60,11 @@ DescribeAppResult& DescribeAppResult::operator =(const Aws::AmazonWebServiceResu
     m_status = AppStatusMapper::GetAppStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("EffectiveTrustedIdentityPropagationStatus"))
+  {
+    m_effectiveTrustedIdentityPropagationStatus = FeatureStatusMapper::GetFeatureStatusForName(jsonValue.GetString("EffectiveTrustedIdentityPropagationStatus"));
+    m_effectiveTrustedIdentityPropagationStatusHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("RecoveryMode"))
   {
     m_recoveryMode = jsonValue.GetBool("RecoveryMode");

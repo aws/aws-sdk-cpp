@@ -507,7 +507,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>If you���re launching an instance into a dual-stack or IPv6-only subnet, you
+     * <p>If you’re launching an instance into a dual-stack or IPv6-only subnet, you
      * can enable assigning a primary IPv6 address. A primary IPv6 address is an IPv6
      * GUA address associated with an ENI that you have enabled to use a primary IPv6
      * address. Use this option if an instance relies on its IPv6 address not changing.

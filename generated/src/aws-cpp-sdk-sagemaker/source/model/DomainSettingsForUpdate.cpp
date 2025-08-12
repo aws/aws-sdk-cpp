@@ -44,6 +44,11 @@ DomainSettingsForUpdate& DomainSettingsForUpdate::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("TrustedIdentityPropagationSettings"))
+  {
+    m_trustedIdentityPropagationSettings = jsonValue.GetObject("TrustedIdentityPropagationSettings");
+    m_trustedIdentityPropagationSettingsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("DockerSettings"))
   {
     m_dockerSettings = jsonValue.GetObject("DockerSettings");
@@ -85,6 +90,12 @@ JsonValue DomainSettingsForUpdate::Jsonize() const
      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
    }
    payload.WithArray("SecurityGroupIds", std::move(securityGroupIdsJsonList));
+
+  }
+
+  if(m_trustedIdentityPropagationSettingsHasBeenSet)
+  {
+   payload.WithObject("TrustedIdentityPropagationSettings", m_trustedIdentityPropagationSettings.Jsonize());
 
   }
 

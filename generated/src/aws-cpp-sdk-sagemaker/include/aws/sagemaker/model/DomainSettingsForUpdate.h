@@ -8,6 +8,7 @@
 #include <aws/sagemaker/model/RStudioServerProDomainSettingsForUpdate.h>
 #include <aws/sagemaker/model/ExecutionRoleIdentityConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/TrustedIdentityPropagationSettings.h>
 #include <aws/sagemaker/model/DockerSettings.h>
 #include <aws/sagemaker/model/AmazonQSettings.h>
 #include <aws/sagemaker/model/UnifiedStudioSettings.h>
@@ -90,6 +91,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Trusted Identity Propagation (TIP) settings for the SageMaker domain.
+     * These settings determine how user identities from IAM Identity Center are
+     * propagated through the domain to TIP enabled Amazon Web Services services.</p>
+     */
+    inline const TrustedIdentityPropagationSettings& GetTrustedIdentityPropagationSettings() const { return m_trustedIdentityPropagationSettings; }
+    inline bool TrustedIdentityPropagationSettingsHasBeenSet() const { return m_trustedIdentityPropagationSettingsHasBeenSet; }
+    template<typename TrustedIdentityPropagationSettingsT = TrustedIdentityPropagationSettings>
+    void SetTrustedIdentityPropagationSettings(TrustedIdentityPropagationSettingsT&& value) { m_trustedIdentityPropagationSettingsHasBeenSet = true; m_trustedIdentityPropagationSettings = std::forward<TrustedIdentityPropagationSettingsT>(value); }
+    template<typename TrustedIdentityPropagationSettingsT = TrustedIdentityPropagationSettings>
+    DomainSettingsForUpdate& WithTrustedIdentityPropagationSettings(TrustedIdentityPropagationSettingsT&& value) { SetTrustedIdentityPropagationSettings(std::forward<TrustedIdentityPropagationSettingsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A collection of settings that configure the domain's Docker interaction.</p>
      */
     inline const DockerSettings& GetDockerSettings() const { return m_dockerSettings; }
@@ -135,6 +150,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet = false;
+
+    TrustedIdentityPropagationSettings m_trustedIdentityPropagationSettings;
+    bool m_trustedIdentityPropagationSettingsHasBeenSet = false;
 
     DockerSettings m_dockerSettings;
     bool m_dockerSettingsHasBeenSet = false;

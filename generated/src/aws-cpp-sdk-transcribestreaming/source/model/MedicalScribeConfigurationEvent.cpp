@@ -64,6 +64,11 @@ MedicalScribeConfigurationEvent& MedicalScribeConfigurationEvent::operator =(Jso
     m_postStreamAnalyticsSettings = jsonValue.GetObject("PostStreamAnalyticsSettings");
     m_postStreamAnalyticsSettingsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("MedicalScribeContext"))
+  {
+    m_medicalScribeContext = jsonValue.GetObject("MedicalScribeContext");
+    m_medicalScribeContextHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -114,6 +119,12 @@ JsonValue MedicalScribeConfigurationEvent::Jsonize() const
   if(m_postStreamAnalyticsSettingsHasBeenSet)
   {
    payload.WithObject("PostStreamAnalyticsSettings", m_postStreamAnalyticsSettings.Jsonize());
+
+  }
+
+  if(m_medicalScribeContextHasBeenSet)
+  {
+   payload.WithObject("MedicalScribeContext", m_medicalScribeContext.Jsonize());
 
   }
 

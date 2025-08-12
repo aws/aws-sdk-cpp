@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/transcribestreaming/model/MedicalScribeEncryptionSettings.h>
 #include <aws/transcribestreaming/model/MedicalScribePostStreamAnalyticsSettings.h>
+#include <aws/transcribestreaming/model/MedicalScribeContext.h>
 #include <aws/transcribestreaming/model/MedicalScribeChannelDefinition.h>
 #include <utility>
 
@@ -147,6 +148,19 @@ namespace Model
     template<typename PostStreamAnalyticsSettingsT = MedicalScribePostStreamAnalyticsSettings>
     MedicalScribeConfigurationEvent& WithPostStreamAnalyticsSettings(PostStreamAnalyticsSettingsT&& value) { SetPostStreamAnalyticsSettings(std::forward<PostStreamAnalyticsSettingsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The <code>MedicalScribeContext</code> object that contains contextual
+     * information used to generate customized clinical notes.</p>
+     */
+    inline const MedicalScribeContext& GetMedicalScribeContext() const { return m_medicalScribeContext; }
+    inline bool MedicalScribeContextHasBeenSet() const { return m_medicalScribeContextHasBeenSet; }
+    template<typename MedicalScribeContextT = MedicalScribeContext>
+    void SetMedicalScribeContext(MedicalScribeContextT&& value) { m_medicalScribeContextHasBeenSet = true; m_medicalScribeContext = std::forward<MedicalScribeContextT>(value); }
+    template<typename MedicalScribeContextT = MedicalScribeContext>
+    MedicalScribeConfigurationEvent& WithMedicalScribeContext(MedicalScribeContextT&& value) { SetMedicalScribeContext(std::forward<MedicalScribeContextT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_vocabularyName;
@@ -169,6 +183,9 @@ namespace Model
 
     MedicalScribePostStreamAnalyticsSettings m_postStreamAnalyticsSettings;
     bool m_postStreamAnalyticsSettingsHasBeenSet = false;
+
+    MedicalScribeContext m_medicalScribeContext;
+    bool m_medicalScribeContextHasBeenSet = false;
   };
 
 } // namespace Model

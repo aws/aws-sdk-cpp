@@ -44,6 +44,11 @@ DomainSettings& DomainSettings::operator =(JsonView jsonValue)
     m_executionRoleIdentityConfig = ExecutionRoleIdentityConfigMapper::GetExecutionRoleIdentityConfigForName(jsonValue.GetString("ExecutionRoleIdentityConfig"));
     m_executionRoleIdentityConfigHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("TrustedIdentityPropagationSettings"))
+  {
+    m_trustedIdentityPropagationSettings = jsonValue.GetObject("TrustedIdentityPropagationSettings");
+    m_trustedIdentityPropagationSettingsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("DockerSettings"))
   {
     m_dockerSettings = jsonValue.GetObject("DockerSettings");
@@ -86,6 +91,12 @@ JsonValue DomainSettings::Jsonize() const
   if(m_executionRoleIdentityConfigHasBeenSet)
   {
    payload.WithString("ExecutionRoleIdentityConfig", ExecutionRoleIdentityConfigMapper::GetNameForExecutionRoleIdentityConfig(m_executionRoleIdentityConfig));
+  }
+
+  if(m_trustedIdentityPropagationSettingsHasBeenSet)
+  {
+   payload.WithObject("TrustedIdentityPropagationSettings", m_trustedIdentityPropagationSettings.Jsonize());
+
   }
 
   if(m_dockerSettingsHasBeenSet)

@@ -243,9 +243,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates whether the <code>MedicalScribeContext</code> object was provided
+     * when the Medical Scribe job was started.</p>
+     */
+    inline bool GetMedicalScribeContextProvided() const { return m_medicalScribeContextProvided; }
+    inline bool MedicalScribeContextProvidedHasBeenSet() const { return m_medicalScribeContextProvidedHasBeenSet; }
+    inline void SetMedicalScribeContextProvided(bool value) { m_medicalScribeContextProvidedHasBeenSet = true; m_medicalScribeContextProvided = value; }
+    inline MedicalScribeJob& WithMedicalScribeContextProvided(bool value) { SetMedicalScribeContextProvided(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Adds one or more custom tags, each in the form of a key:value pair, to the
-     * Medica Scribe job.</p> <p>To learn more about using tags with Amazon Transcribe,
-     * refer to <a
+     * Medical Scribe job.</p> <p>To learn more about using tags with Amazon
+     * Transcribe, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
      * resources</a>.</p>
      */
@@ -295,6 +306,9 @@ namespace Model
 
     Aws::Vector<MedicalScribeChannelDefinition> m_channelDefinitions;
     bool m_channelDefinitionsHasBeenSet = false;
+
+    bool m_medicalScribeContextProvided{false};
+    bool m_medicalScribeContextProvidedHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
