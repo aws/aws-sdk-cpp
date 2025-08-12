@@ -43,6 +43,9 @@ TEST_F(EventBridgeSmokeTestSuite, DescribeRuleFailure )
     DescribeRuleRequest input;
     input.SetName("fake-rule");
     auto outcome = clientSp->DescribeRule(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "DescribeRule failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 TEST_F(EventBridgeSmokeTestSuite, ListRulesSuccess )
@@ -56,6 +59,9 @@ TEST_F(EventBridgeSmokeTestSuite, ListRulesSuccess )
     
     ListRulesRequest input;
     auto outcome = clientSp->ListRules(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "ListRules failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

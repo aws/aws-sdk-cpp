@@ -43,6 +43,9 @@ TEST_F(IoTManagedIntegrationsSmokeTestSuite, GetCustomEndpointSuccess )
     
     GetCustomEndpointRequest input;
     auto outcome = clientSp->GetCustomEndpoint(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "GetCustomEndpoint failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 TEST_F(IoTManagedIntegrationsSmokeTestSuite, ListTagsForResourceNotFound )
@@ -57,6 +60,9 @@ TEST_F(IoTManagedIntegrationsSmokeTestSuite, ListTagsForResourceNotFound )
     ListTagsForResourceRequest input;
     input.SetResourceArn("arn:aws:iotmanagedintegrations:us-east-1:123456789012:managed-thing/nonexistent");
     auto outcome = clientSp->ListTagsForResource(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "ListTagsForResource failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 TEST_F(IoTManagedIntegrationsSmokeTestSuite, ListTagsForResourceSuccess )
@@ -71,6 +77,9 @@ TEST_F(IoTManagedIntegrationsSmokeTestSuite, ListTagsForResourceSuccess )
     ListTagsForResourceRequest input;
     input.SetResourceArn("arn:aws:iotmanagedintegrations:us-east-1:123456789012:managed-thing/test123");
     auto outcome = clientSp->ListTagsForResource(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "ListTagsForResource failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

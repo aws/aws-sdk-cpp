@@ -40,8 +40,11 @@ TEST_F(ApplicationAutoScalingSmokeTestSuite, DescribeScalableTargetsSuccess )
     //populate input params
     
     DescribeScalableTargetsRequest input;
-    input.SetServiceNamespace({ServiceNamespace::ec2});
+    input.SetServiceNamespace(ServiceNamespace::ec2);
     auto outcome = clientSp->DescribeScalableTargets(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "DescribeScalableTargets failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

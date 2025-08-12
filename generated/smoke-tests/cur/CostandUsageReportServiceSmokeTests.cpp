@@ -41,6 +41,9 @@ TEST_F(CostandUsageReportServiceSmokeTestSuite, DescribeReportDefinitionsSuccess
     
     DescribeReportDefinitionsRequest input;
     auto outcome = clientSp->DescribeReportDefinitions(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "DescribeReportDefinitions failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

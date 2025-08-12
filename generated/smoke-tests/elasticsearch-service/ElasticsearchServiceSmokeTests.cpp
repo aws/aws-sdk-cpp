@@ -41,6 +41,9 @@ TEST_F(ElasticsearchServiceSmokeTestSuite, ListDomainNamesSuccess )
     
     ListDomainNamesRequest input;
     auto outcome = clientSp->ListDomainNames(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "ListDomainNames failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

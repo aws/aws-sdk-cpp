@@ -41,6 +41,9 @@ TEST_F(WorkSpacesSmokeTestSuite, DescribeWorkspacesSuccess )
     
     DescribeWorkspacesRequest input;
     auto outcome = clientSp->DescribeWorkspaces(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "DescribeWorkspaces failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

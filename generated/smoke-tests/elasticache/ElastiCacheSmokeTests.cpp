@@ -41,6 +41,9 @@ TEST_F(ElastiCacheSmokeTestSuite, DescribeEventsSuccess )
     
     DescribeEventsRequest input;
     auto outcome = clientSp->DescribeEvents(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "DescribeEvents failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

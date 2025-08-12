@@ -12,9 +12,9 @@ import shutil
 import subprocess
 from typing import List
 
-SMITHY_GENERATOR_LOCATION = "tools/code-generation/smithy/codegen"
+SMITHY_GENERATOR_LOCATION = "../code-generation/smithy/codegen"
 SMITHY_OUTPUT_DIR = "codegen_output"
-SMITHY_TO_C2J_MAP_FILE = "tools/code-generation/smithy/codegen/smithy2c2j_service_map.json"
+SMITHY_TO_C2J_MAP_FILE = "../code-generation/smithy/codegen/smithy2c2j_service_map.json"
 
 
 class SmokeTestsGen(object):
@@ -38,9 +38,9 @@ class SmokeTestsGen(object):
         print(f"Running code generator for smoke-tests for services:"+",".join(smithy_services))
         if self._generate_smoke_tests(smithy_services, json.dumps(self.smithy_c2j_data)):
             # move the output to generated folder
-            self._copy_cpp_codegen_contents(os.path.abspath("tools/code-generation/smithy/codegen"),
+            self._copy_cpp_codegen_contents(os.path.abspath("../code-generation/smithy/codegen"),
                                             "cpp-codegen-smoke-tests-plugin",
-                                            os.path.abspath("generated/smoke-tests"))
+                                            os.path.abspath("../../generated/smoke-tests"))
             return 0
         else:
             return -1

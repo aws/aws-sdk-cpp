@@ -41,6 +41,9 @@ TEST_F(ElasticTranscoderSmokeTestSuite, ListPresetsSuccess )
     
     ListPresetsRequest input;
     auto outcome = clientSp->ListPresets(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "ListPresets failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

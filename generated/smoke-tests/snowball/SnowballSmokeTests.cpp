@@ -41,6 +41,9 @@ TEST_F(SnowballSmokeTestSuite, DescribeAddressesSuccess )
     
     DescribeAddressesRequest input;
     auto outcome = clientSp->DescribeAddresses(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "DescribeAddresses failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

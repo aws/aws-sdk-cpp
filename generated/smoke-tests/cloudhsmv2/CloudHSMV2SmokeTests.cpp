@@ -41,6 +41,9 @@ TEST_F(CloudHSMV2SmokeTestSuite, DescribeClustersSuccess )
     
     DescribeClustersRequest input;
     auto outcome = clientSp->DescribeClusters(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "DescribeClusters failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

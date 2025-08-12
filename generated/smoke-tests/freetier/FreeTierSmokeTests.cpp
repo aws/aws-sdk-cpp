@@ -42,8 +42,11 @@ TEST_F(FreeTierSmokeTestSuite, GetAccountActivitySuccess )
     
     GetAccountActivityRequest input;
     input.SetActivityId("d622f48bf4014286a2686ab10cacfb2e");
-    input.SetLanguageCode({LanguageCode::en-US});
+    input.SetLanguageCode(LanguageCode::en_US);
     auto outcome = clientSp->GetAccountActivity(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "GetAccountActivity failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 TEST_F(FreeTierSmokeTestSuite, ListAccountActivitiesSuccess )
@@ -56,8 +59,11 @@ TEST_F(FreeTierSmokeTestSuite, ListAccountActivitiesSuccess )
     //populate input params
     
     ListAccountActivitiesRequest input;
-    input.SetLanguageCode({LanguageCode::en-US});
+    input.SetLanguageCode(LanguageCode::en_US);
     auto outcome = clientSp->ListAccountActivities(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "ListAccountActivities failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }
