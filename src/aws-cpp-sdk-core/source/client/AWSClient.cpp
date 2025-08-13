@@ -44,7 +44,6 @@
 #include <aws/core/platform/Environment.h>
 #include <aws/core/platform/OSVersionInfo.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
-#include <typeinfo>
 
 #include <smithy/tracing/TracingUtils.h>
 #include <smithy/client/features/ChecksumInterceptor.h>
@@ -143,7 +142,6 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_userAgentInterceptor{Aws::MakeShared<smithy::client::UserAgentInterceptor>(AWS_CLIENT_LOG_TAG, configuration, m_retryStrategy->GetStrategyName(), m_serviceName)},
     m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG), m_userAgentInterceptor}
 {
-
 }
 
 AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
@@ -568,11 +566,6 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
         *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
         {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 
-    // Check for environment credentials
-    if (!Aws::Environment::GetEnv("AWS_ACCESS_KEY_ID").empty() &&
-        !Aws::Environment::GetEnv("AWS_SECRET_ACCESS_KEY").empty()) {
-      request.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS);
-        }
     InterceptorContext context{request};
     context.SetTransmitRequest(httpRequest);
     for (const auto& interceptor : m_interceptors)
@@ -917,7 +910,6 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, co
         if (Aws::Client::CompressionAlgorithm::NONE != selectedCompressionAlgorithm) {
             Aws::Client::RequestCompression rc;
             auto compressOutcome = rc.compress(request.GetBody(), selectedCompressionAlgorithm);
-            // TODO: is this successful -- its not
             if (compressOutcome.IsSuccess()) {
                 Aws::String compressionAlgorithmId = Aws::Client::GetCompressionAlgorithmId(selectedCompressionAlgorithm);
                 AppendHeaderValueToRequest(httpRequest, CONTENT_ENCODING_HEADER, compressionAlgorithmId);
@@ -1085,33 +1077,26 @@ void AWSClient::TrackCredentialProviderUsage(const Aws::AmazonWebServiceRequest&
     {
         return;
     }
-    
-    // Check if using environment credentials
-    const auto& provider = *credentialsProvider;
-    const std::type_info& providerType = typeid(provider);
-    
-    if (providerType == typeid(Aws::Auth::DefaultAWSCredentialsProviderChain))
+
+    // Get the provider type
+    auto providerType = credentialsProvider->GetProviderType();
+
+    switch (providerType)
     {
-        // For provider chains, we need to check which provider was actually used
-        auto providerChain = std::dynamic_pointer_cast<Aws::Auth::DefaultAWSCredentialsProviderChain>(credentialsProvider);
-        if (providerChain)
-        {
-            // Check if environment variables are set (indicating env provider usage)
+        case Aws::Auth::CredentialProviderType::ENVIRONMENT:
+            // Environment credentials are being used
+            request.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS);
+            AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Added CREDENTIALS_ENV_VARS to User-Agent");
+            break;
+        
+        // Add more provider types as needed
+        default:
+            // For provider chains or unknown types, check environment variables as fallback
             if (!Aws::Environment::GetEnv("AWS_ACCESS_KEY_ID").empty())
             {
-                // Environment credentials are being used
                 request.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS);
-                AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Added CREDENTIALS_ENV_VARS to User-Agent");
+                AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Added CREDENTIALS_ENV_VARS to User-Agent (fallback detection)");
             }
-            // Add other providers
-        }
+            break;
     }
-    // direct provider usage
-    else if (providerType == typeid(Aws::Auth::EnvironmentAWSCredentialsProvider))
-    {
-        // Direct environment provider usage
-        request.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS);
-        AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Added CREDENTIALS_ENV_VARS to User-Agent");
-    }
-    // Add more provider types as needed
 }
