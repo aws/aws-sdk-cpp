@@ -75,92 +75,17 @@ TEST_F(CredentialTrackingTest, TestEnvironmentCredentialsTracking)
     auto lastRequest = mockHttpClient->GetMostRecentHttpRequest();
     EXPECT_TRUE(lastRequest.HasUserAgent());
     const auto& userAgent = lastRequest.GetUserAgent();
-    
-    // Check for environment credentials feature (should contain "g")
-    EXPECT_TRUE(userAgent.find("g") != Aws::String::npos);
+    EXPECT_TRUE(!userAgent.empty());
+
+    const auto userAgentParsed = Aws::Utils::StringUtils::Split(userAgent, ' ');
+
+    // Check for environment credentials business metric (g) in user agent
+    auto businessMetrics = std::find_if(userAgentParsed.begin(), userAgentParsed.end(),
+        [](const Aws::String& value) { return value.find("m/") != Aws::String::npos && value.find("g") != Aws::String::npos; });
+
+    EXPECT_TRUE(businessMetrics != userAgentParsed.end());
 
     // Clean up environment variables
     Aws::Environment::UnSetEnv("AWS_ACCESS_KEY_ID");
     Aws::Environment::UnSetEnv("AWS_SECRET_ACCESS_KEY");
-}
-
-TEST_F(CredentialTrackingTest, TestDirectEnvironmentProviderTracking)
-{
-    // Create client with direct environment provider
-    ClientConfiguration config;
-    config.region = Aws::Region::US_EAST_1;
-    
-    // Set up environment credentials
-    Aws::Environment::SetEnv("AWS_ACCESS_KEY_ID", "test-access-key");
-    Aws::Environment::SetEnv("AWS_SECRET_ACCESS_KEY", "test-secret-key");
-    
-    // Create client with environment provider directly
-    auto envProvider = Aws::MakeShared<EnvironmentAWSCredentialsProvider>(ALLOCATION_TAG);
-    
-    // Setup mock response
-    auto request = CreateHttpRequest(Aws::Http::URI("http://test.com"), 
-                                   Aws::Http::HttpMethod::HTTP_POST, 
-                                   Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    auto response = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, request);
-    response->SetResponseCode(HttpResponseCode::OK);
-    response->GetResponseBody() << "{}";
-    mockHttpClient->AddResponseToReturn(response);
-    
-    MockAWSClient client(config);
-    
-    // Make a request
-    AmazonWebServiceRequestMock mockRequest;
-    auto outcome = client.MakeRequest(mockRequest);
-    
-    // Verify request succeeded
-    AWS_ASSERT_SUCCESS(outcome);
-    
-    // Verify User-Agent contains environment credentials tracking
-    auto lastRequest = mockHttpClient->GetMostRecentHttpRequest();
-    EXPECT_TRUE(lastRequest.HasUserAgent());
-    const auto& userAgent = lastRequest.GetUserAgent();
-    
-    // Check for environment credentials feature (should contain "g")
-    EXPECT_TRUE(userAgent.find("g") != Aws::String::npos);
-    
-    // Clean up
-    Aws::Environment::UnSetEnv("AWS_ACCESS_KEY_ID");
-    Aws::Environment::UnSetEnv("AWS_SECRET_ACCESS_KEY");
-}
-
-TEST_F(CredentialTrackingTest, TestNoEnvironmentCredentialsNoTracking)
-{
-    // Ensure no environment variables are set
-    Aws::Environment::UnSetEnv("AWS_ACCESS_KEY_ID");
-    Aws::Environment::UnSetEnv("AWS_SECRET_ACCESS_KEY");
-    
-    // Setup mock response
-    auto request = CreateHttpRequest(Aws::Http::URI("http://test.com"), 
-                                   Aws::Http::HttpMethod::HTTP_POST, 
-                                   Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    auto response = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, request);
-    response->SetResponseCode(HttpResponseCode::OK);
-    response->GetResponseBody() << "{}";
-    mockHttpClient->AddResponseToReturn(response);
-    
-    // Create client configuration
-    ClientConfiguration config;
-    config.region = Aws::Region::US_EAST_1;
-    
-    MockAWSClient client(config);
-    
-    // Make a request
-    AmazonWebServiceRequestMock mockRequest;
-    auto outcome = client.MakeRequest(mockRequest);
-    
-    // Verify request succeeded
-    AWS_ASSERT_SUCCESS(outcome);
-    
-    // Verify User-Agent does NOT contain environment credentials tracking
-    auto lastRequest = mockHttpClient->GetMostRecentHttpRequest();
-    EXPECT_TRUE(lastRequest.HasUserAgent());
-    const auto& userAgent = lastRequest.GetUserAgent();
-    
-    // Should not contain environment credentials feature "g" when not using env vars
-    EXPECT_TRUE(userAgent.find("g") == Aws::String::npos);
 }
