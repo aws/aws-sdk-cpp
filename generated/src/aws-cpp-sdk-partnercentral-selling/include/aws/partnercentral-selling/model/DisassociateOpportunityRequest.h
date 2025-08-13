@@ -70,6 +70,23 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of the entity that you're disassociating from the opportunity. When
+     * you specify the entity type, it helps the system correctly process the
+     * disassociation request to ensure that the right connections are removed.</p>
+     * <p>Examples of entity types include Partner Solution, Amazon Web Services
+     * product, and Amazon Web Services Marketplaceoffer. Ensure that the value matches
+     * one of the expected entity types.</p> <p>Validation: Provide a valid entity type
+     * to help ensure successful disassociation. An invalid or incorrect entity type
+     * results in an error.</p>
+     */
+    inline RelatedEntityType GetRelatedEntityType() const { return m_relatedEntityType; }
+    inline bool RelatedEntityTypeHasBeenSet() const { return m_relatedEntityTypeHasBeenSet; }
+    inline void SetRelatedEntityType(RelatedEntityType value) { m_relatedEntityTypeHasBeenSet = true; m_relatedEntityType = value; }
+    inline DisassociateOpportunityRequest& WithRelatedEntityType(RelatedEntityType value) { SetRelatedEntityType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The related entity's identifier that you want to disassociate from the
      * opportunity. Depending on the type of entity, this could be a simple identifier
      * or an Amazon Resource Name (ARN) for entities managed through Amazon Web
@@ -89,23 +106,6 @@ namespace Model
     template<typename RelatedEntityIdentifierT = Aws::String>
     DisassociateOpportunityRequest& WithRelatedEntityIdentifier(RelatedEntityIdentifierT&& value) { SetRelatedEntityIdentifier(std::forward<RelatedEntityIdentifierT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of the entity that you're disassociating from the opportunity. When
-     * you specify the entity type, it helps the system correctly process the
-     * disassociation request to ensure that the right connections are removed.</p>
-     * <p>Examples of entity types include Partner Solution, Amazon Web Services
-     * product, and Amazon Web Services Marketplaceoffer. Ensure that the value matches
-     * one of the expected entity types.</p> <p>Validation: Provide a valid entity type
-     * to help ensure successful disassociation. An invalid or incorrect entity type
-     * results in an error.</p>
-     */
-    inline RelatedEntityType GetRelatedEntityType() const { return m_relatedEntityType; }
-    inline bool RelatedEntityTypeHasBeenSet() const { return m_relatedEntityTypeHasBeenSet; }
-    inline void SetRelatedEntityType(RelatedEntityType value) { m_relatedEntityTypeHasBeenSet = true; m_relatedEntityType = value; }
-    inline DisassociateOpportunityRequest& WithRelatedEntityType(RelatedEntityType value) { SetRelatedEntityType(value); return *this;}
-    ///@}
   private:
 
     Aws::String m_catalog;
@@ -114,11 +114,11 @@ namespace Model
     Aws::String m_opportunityIdentifier;
     bool m_opportunityIdentifierHasBeenSet = false;
 
-    Aws::String m_relatedEntityIdentifier;
-    bool m_relatedEntityIdentifierHasBeenSet = false;
-
     RelatedEntityType m_relatedEntityType{RelatedEntityType::NOT_SET};
     bool m_relatedEntityTypeHasBeenSet = false;
+
+    Aws::String m_relatedEntityIdentifier;
+    bool m_relatedEntityIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

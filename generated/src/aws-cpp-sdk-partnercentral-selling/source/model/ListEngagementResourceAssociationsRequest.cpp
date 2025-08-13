@@ -22,18 +22,6 @@ Aws::String ListEngagementResourceAssociationsRequest::SerializePayload() const
 
   }
 
-  if(m_createdByHasBeenSet)
-  {
-   payload.WithString("CreatedBy", m_createdBy);
-
-  }
-
-  if(m_engagementIdentifierHasBeenSet)
-  {
-   payload.WithString("EngagementIdentifier", m_engagementIdentifier);
-
-  }
-
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("MaxResults", m_maxResults);
@@ -46,15 +34,27 @@ Aws::String ListEngagementResourceAssociationsRequest::SerializePayload() const
 
   }
 
-  if(m_resourceIdentifierHasBeenSet)
+  if(m_engagementIdentifierHasBeenSet)
   {
-   payload.WithString("ResourceIdentifier", m_resourceIdentifier);
+   payload.WithString("EngagementIdentifier", m_engagementIdentifier);
 
   }
 
   if(m_resourceTypeHasBeenSet)
   {
    payload.WithString("ResourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+  }
+
+  if(m_resourceIdentifierHasBeenSet)
+  {
+   payload.WithString("ResourceIdentifier", m_resourceIdentifier);
+
+  }
+
+  if(m_createdByHasBeenSet)
+  {
+   payload.WithString("CreatedBy", m_createdBy);
+
   }
 
   return payload.View().WriteReadable();

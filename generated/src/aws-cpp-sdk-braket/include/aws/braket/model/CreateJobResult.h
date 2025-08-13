@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the Amazon Braket job created.</p>
+     * <p>The ARN of the Amazon Braket hybrid job created.</p>
      */
     inline const Aws::String& GetJobArn() const { return m_jobArn; }
     template<typename JobArnT = Aws::String>

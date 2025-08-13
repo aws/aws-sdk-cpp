@@ -25,6 +25,11 @@ LifeCycle::LifeCycle(JsonView jsonValue)
 
 LifeCycle& LifeCycle::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Stage"))
+  {
+    m_stage = StageMapper::GetStageForName(jsonValue.GetString("Stage"));
+    m_stageHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ClosedLostReason"))
   {
     m_closedLostReason = ClosedLostReasonMapper::GetClosedLostReasonForName(jsonValue.GetString("ClosedLostReason"));
@@ -35,6 +40,26 @@ LifeCycle& LifeCycle::operator =(JsonView jsonValue)
     m_nextSteps = jsonValue.GetString("NextSteps");
     m_nextStepsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("TargetCloseDate"))
+  {
+    m_targetCloseDate = jsonValue.GetString("TargetCloseDate");
+    m_targetCloseDateHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ReviewStatus"))
+  {
+    m_reviewStatus = ReviewStatusMapper::GetReviewStatusForName(jsonValue.GetString("ReviewStatus"));
+    m_reviewStatusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ReviewComments"))
+  {
+    m_reviewComments = jsonValue.GetString("ReviewComments");
+    m_reviewCommentsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ReviewStatusReason"))
+  {
+    m_reviewStatusReason = jsonValue.GetString("ReviewStatusReason");
+    m_reviewStatusReasonHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("NextStepsHistory"))
   {
     Aws::Utils::Array<JsonView> nextStepsHistoryJsonList = jsonValue.GetArray("NextStepsHistory");
@@ -44,37 +69,17 @@ LifeCycle& LifeCycle::operator =(JsonView jsonValue)
     }
     m_nextStepsHistoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReviewComments"))
-  {
-    m_reviewComments = jsonValue.GetString("ReviewComments");
-    m_reviewCommentsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("ReviewStatus"))
-  {
-    m_reviewStatus = ReviewStatusMapper::GetReviewStatusForName(jsonValue.GetString("ReviewStatus"));
-    m_reviewStatusHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("ReviewStatusReason"))
-  {
-    m_reviewStatusReason = jsonValue.GetString("ReviewStatusReason");
-    m_reviewStatusReasonHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Stage"))
-  {
-    m_stage = StageMapper::GetStageForName(jsonValue.GetString("Stage"));
-    m_stageHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("TargetCloseDate"))
-  {
-    m_targetCloseDate = jsonValue.GetString("TargetCloseDate");
-    m_targetCloseDateHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue LifeCycle::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_stageHasBeenSet)
+  {
+   payload.WithString("Stage", StageMapper::GetNameForStage(m_stage));
+  }
 
   if(m_closedLostReasonHasBeenSet)
   {
@@ -87,20 +92,9 @@ JsonValue LifeCycle::Jsonize() const
 
   }
 
-  if(m_nextStepsHistoryHasBeenSet)
+  if(m_targetCloseDateHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> nextStepsHistoryJsonList(m_nextStepsHistory.size());
-   for(unsigned nextStepsHistoryIndex = 0; nextStepsHistoryIndex < nextStepsHistoryJsonList.GetLength(); ++nextStepsHistoryIndex)
-   {
-     nextStepsHistoryJsonList[nextStepsHistoryIndex].AsObject(m_nextStepsHistory[nextStepsHistoryIndex].Jsonize());
-   }
-   payload.WithArray("NextStepsHistory", std::move(nextStepsHistoryJsonList));
-
-  }
-
-  if(m_reviewCommentsHasBeenSet)
-  {
-   payload.WithString("ReviewComments", m_reviewComments);
+   payload.WithString("TargetCloseDate", m_targetCloseDate);
 
   }
 
@@ -109,20 +103,26 @@ JsonValue LifeCycle::Jsonize() const
    payload.WithString("ReviewStatus", ReviewStatusMapper::GetNameForReviewStatus(m_reviewStatus));
   }
 
+  if(m_reviewCommentsHasBeenSet)
+  {
+   payload.WithString("ReviewComments", m_reviewComments);
+
+  }
+
   if(m_reviewStatusReasonHasBeenSet)
   {
    payload.WithString("ReviewStatusReason", m_reviewStatusReason);
 
   }
 
-  if(m_stageHasBeenSet)
+  if(m_nextStepsHistoryHasBeenSet)
   {
-   payload.WithString("Stage", StageMapper::GetNameForStage(m_stage));
-  }
-
-  if(m_targetCloseDateHasBeenSet)
-  {
-   payload.WithString("TargetCloseDate", m_targetCloseDate);
+   Aws::Utils::Array<JsonValue> nextStepsHistoryJsonList(m_nextStepsHistory.size());
+   for(unsigned nextStepsHistoryIndex = 0; nextStepsHistoryIndex < nextStepsHistoryJsonList.GetLength(); ++nextStepsHistoryIndex)
+   {
+     nextStepsHistoryJsonList[nextStepsHistoryIndex].AsObject(m_nextStepsHistory[nextStepsHistoryIndex].Jsonize());
+   }
+   payload.WithArray("NextStepsHistory", std::move(nextStepsHistoryJsonList));
 
   }
 

@@ -38,7 +38,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>The exception message.</p>
+     */
     inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
     template<typename MessageT = Aws::String>
@@ -49,8 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Element providing advice to clients on when the call can be safely
-     * retried.</p>
+     * <p>The number of seconds after which to retry the request.</p>
      */
     inline int GetRetryAfterSeconds() const { return m_retryAfterSeconds; }
     inline bool RetryAfterSecondsHasBeenSet() const { return m_retryAfterSecondsHasBeenSet; }

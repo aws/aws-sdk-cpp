@@ -14,6 +14,7 @@
 #include <aws/braket/BraketRequest.h>
 #include <aws/braket/BraketServiceClientModel.h>
 #include <aws/braket/Braket_EXPORTS.h>
+#include <aws/braket/model/ActionMetadata.h>
 #include <aws/braket/model/AlgorithmSpecification.h>
 #include <aws/braket/model/Association.h>
 #include <aws/braket/model/AssociationType.h>
@@ -54,6 +55,7 @@
 #include <aws/braket/model/JobSummary.h>
 #include <aws/braket/model/ListTagsForResourceRequest.h>
 #include <aws/braket/model/ListTagsForResourceResult.h>
+#include <aws/braket/model/ProgramSetValidationFailure.h>
 #include <aws/braket/model/QuantumTaskAdditionalAttributeName.h>
 #include <aws/braket/model/QuantumTaskQueueInfo.h>
 #include <aws/braket/model/QuantumTaskStatus.h>
@@ -77,6 +79,8 @@
 #include <aws/braket/model/TagResourceResult.h>
 #include <aws/braket/model/UntagResourceRequest.h>
 #include <aws/braket/model/UntagResourceResult.h>
+#include <aws/braket/model/ValidationException.h>
+#include <aws/braket/model/ValidationExceptionReason.h>
 
 using BraketIncludeTest = ::testing::Test;
 

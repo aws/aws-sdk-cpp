@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
+#include <aws/partnercentral-selling/model/Industry.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-selling/model/CountryCode.h>
-#include <aws/partnercentral-selling/model/Industry.h>
 #include <utility>
 
 namespace Aws
@@ -43,6 +43,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the industry to which the customer’s company belongs. This field
+     * helps categorize the opportunity based on the customer’s business sector.</p>
+     */
+    inline Industry GetIndustry() const { return m_industry; }
+    inline bool IndustryHasBeenSet() const { return m_industryHasBeenSet; }
+    inline void SetIndustry(Industry value) { m_industryHasBeenSet = true; m_industry = value; }
+    inline EngagementCustomer& WithIndustry(Industry value) { SetIndustry(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Represents the name of the customer’s company associated with the Engagement
      * Invitation. This field is used to identify the customer.</p>
      */
@@ -52,28 +63,6 @@ namespace Model
     void SetCompanyName(CompanyNameT&& value) { m_companyNameHasBeenSet = true; m_companyName = std::forward<CompanyNameT>(value); }
     template<typename CompanyNameT = Aws::String>
     EngagementCustomer& WithCompanyName(CompanyNameT&& value) { SetCompanyName(std::forward<CompanyNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Indicates the country in which the customer’s company operates. This field is
-     * useful for understanding regional requirements or compliance needs.</p>
-     */
-    inline CountryCode GetCountryCode() const { return m_countryCode; }
-    inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
-    inline void SetCountryCode(CountryCode value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
-    inline EngagementCustomer& WithCountryCode(CountryCode value) { SetCountryCode(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies the industry to which the customer’s company belongs. This field
-     * helps categorize the opportunity based on the customer’s business sector.</p>
-     */
-    inline Industry GetIndustry() const { return m_industry; }
-    inline bool IndustryHasBeenSet() const { return m_industryHasBeenSet; }
-    inline void SetIndustry(Industry value) { m_industryHasBeenSet = true; m_industry = value; }
-    inline EngagementCustomer& WithIndustry(Industry value) { SetIndustry(value); return *this;}
     ///@}
 
     ///@{
@@ -88,19 +77,30 @@ namespace Model
     template<typename WebsiteUrlT = Aws::String>
     EngagementCustomer& WithWebsiteUrl(WebsiteUrlT&& value) { SetWebsiteUrl(std::forward<WebsiteUrlT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates the country in which the customer’s company operates. This field is
+     * useful for understanding regional requirements or compliance needs.</p>
+     */
+    inline CountryCode GetCountryCode() const { return m_countryCode; }
+    inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
+    inline void SetCountryCode(CountryCode value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
+    inline EngagementCustomer& WithCountryCode(CountryCode value) { SetCountryCode(value); return *this;}
+    ///@}
   private:
-
-    Aws::String m_companyName;
-    bool m_companyNameHasBeenSet = false;
-
-    CountryCode m_countryCode{CountryCode::NOT_SET};
-    bool m_countryCodeHasBeenSet = false;
 
     Industry m_industry{Industry::NOT_SET};
     bool m_industryHasBeenSet = false;
 
+    Aws::String m_companyName;
+    bool m_companyNameHasBeenSet = false;
+
     Aws::String m_websiteUrl;
     bool m_websiteUrlHasBeenSet = false;
+
+    CountryCode m_countryCode{CountryCode::NOT_SET};
+    bool m_countryCodeHasBeenSet = false;
   };
 
 } // namespace Model

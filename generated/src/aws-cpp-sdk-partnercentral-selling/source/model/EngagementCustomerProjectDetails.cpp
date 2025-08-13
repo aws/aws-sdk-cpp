@@ -25,6 +25,11 @@ EngagementCustomerProjectDetails::EngagementCustomerProjectDetails(JsonView json
 
 EngagementCustomerProjectDetails& EngagementCustomerProjectDetails::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Title"))
+  {
+    m_title = jsonValue.GetString("Title");
+    m_titleHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("BusinessProblem"))
   {
     m_businessProblem = jsonValue.GetString("BusinessProblem");
@@ -35,17 +40,18 @@ EngagementCustomerProjectDetails& EngagementCustomerProjectDetails::operator =(J
     m_targetCompletionDate = jsonValue.GetString("TargetCompletionDate");
     m_targetCompletionDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Title"))
-  {
-    m_title = jsonValue.GetString("Title");
-    m_titleHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue EngagementCustomerProjectDetails::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_titleHasBeenSet)
+  {
+   payload.WithString("Title", m_title);
+
+  }
 
   if(m_businessProblemHasBeenSet)
   {
@@ -56,12 +62,6 @@ JsonValue EngagementCustomerProjectDetails::Jsonize() const
   if(m_targetCompletionDateHasBeenSet)
   {
    payload.WithString("TargetCompletionDate", m_targetCompletionDate);
-
-  }
-
-  if(m_titleHasBeenSet)
-  {
-   payload.WithString("Title", m_title);
 
   }
 

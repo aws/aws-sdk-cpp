@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingRequest.h>
-#include <aws/partnercentral-selling/model/AssigneeContact.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/partnercentral-selling/model/AssigneeContact.h>
 #include <utility>
 
 namespace Aws
@@ -34,21 +34,6 @@ namespace Model
 
     AWS_PARTNERCENTRALSELLING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    ///@{
-    /**
-     * <p>Specifies the user or team member responsible for managing the assigned
-     * opportunity. This field identifies the <i>Assignee</i> based on the partner's
-     * internal team structure. Ensure that the email address is associated with a
-     * registered user in your Partner Central account.</p>
-     */
-    inline const AssigneeContact& GetAssignee() const { return m_assignee; }
-    inline bool AssigneeHasBeenSet() const { return m_assigneeHasBeenSet; }
-    template<typename AssigneeT = AssigneeContact>
-    void SetAssignee(AssigneeT&& value) { m_assigneeHasBeenSet = true; m_assignee = std::forward<AssigneeT>(value); }
-    template<typename AssigneeT = AssigneeContact>
-    AssignOpportunityRequest& WithAssignee(AssigneeT&& value) { SetAssignee(std::forward<AssigneeT>(value)); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -80,16 +65,31 @@ namespace Model
     template<typename IdentifierT = Aws::String>
     AssignOpportunityRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
-  private:
 
-    AssigneeContact m_assignee;
-    bool m_assigneeHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Specifies the user or team member responsible for managing the assigned
+     * opportunity. This field identifies the <i>Assignee</i> based on the partner's
+     * internal team structure. Ensure that the email address is associated with a
+     * registered user in your Partner Central account.</p>
+     */
+    inline const AssigneeContact& GetAssignee() const { return m_assignee; }
+    inline bool AssigneeHasBeenSet() const { return m_assigneeHasBeenSet; }
+    template<typename AssigneeT = AssigneeContact>
+    void SetAssignee(AssigneeT&& value) { m_assigneeHasBeenSet = true; m_assignee = std::forward<AssigneeT>(value); }
+    template<typename AssigneeT = AssigneeContact>
+    AssignOpportunityRequest& WithAssignee(AssigneeT&& value) { SetAssignee(std::forward<AssigneeT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_catalog;
     bool m_catalogHasBeenSet = false;
 
     Aws::String m_identifier;
     bool m_identifierHasBeenSet = false;
+
+    AssigneeContact m_assignee;
+    bool m_assigneeHasBeenSet = false;
   };
 
 } // namespace Model

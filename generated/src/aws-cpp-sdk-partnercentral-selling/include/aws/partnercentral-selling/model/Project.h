@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-selling/model/CompetitorName.h>
 #include <aws/partnercentral-selling/model/DeliveryModel.h>
 #include <aws/partnercentral-selling/model/ExpectedCustomerSpend.h>
@@ -45,15 +45,57 @@ namespace Model
 
     ///@{
     /**
-     * <p>Captures additional comments or information for the <code>Opportunity</code>
-     * that weren't captured in other fields.</p>
+     * <p>Specifies the deployment or consumption model for your solution or service in
+     * the <code>Opportunity</code>'s context. You can select multiple options.</p>
+     * <p>Options' descriptions from the <code>Delivery Model</code> field are:</p>
+     * <ul> <li> <p>SaaS or PaaS: Your Amazon Web Services based solution deployed as
+     * SaaS or PaaS in your Amazon Web Services environment.</p> </li> <li> <p>BYOL or
+     * AMI: Your Amazon Web Services based solution deployed as BYOL or AMI in the end
+     * customer's Amazon Web Services environment.</p> </li> <li> <p>Managed Services:
+     * The end customer's Amazon Web Services business management (For example:
+     * Consulting, design, implementation, billing support, cost optimization,
+     * technical support).</p> </li> <li> <p>Professional Services: Offerings to help
+     * enterprise end customers achieve specific business outcomes for enterprise cloud
+     * adoption (For example: Advisory or transformation planning).</p> </li> <li>
+     * <p>Resell: Amazon Web Services accounts and billing management for your
+     * customers.</p> </li> <li> <p>Other: Delivery model not described above.</p>
+     * </li> </ul>
      */
-    inline const Aws::String& GetAdditionalComments() const { return m_additionalComments; }
-    inline bool AdditionalCommentsHasBeenSet() const { return m_additionalCommentsHasBeenSet; }
-    template<typename AdditionalCommentsT = Aws::String>
-    void SetAdditionalComments(AdditionalCommentsT&& value) { m_additionalCommentsHasBeenSet = true; m_additionalComments = std::forward<AdditionalCommentsT>(value); }
-    template<typename AdditionalCommentsT = Aws::String>
-    Project& WithAdditionalComments(AdditionalCommentsT&& value) { SetAdditionalComments(std::forward<AdditionalCommentsT>(value)); return *this;}
+    inline const Aws::Vector<DeliveryModel>& GetDeliveryModels() const { return m_deliveryModels; }
+    inline bool DeliveryModelsHasBeenSet() const { return m_deliveryModelsHasBeenSet; }
+    template<typename DeliveryModelsT = Aws::Vector<DeliveryModel>>
+    void SetDeliveryModels(DeliveryModelsT&& value) { m_deliveryModelsHasBeenSet = true; m_deliveryModels = std::forward<DeliveryModelsT>(value); }
+    template<typename DeliveryModelsT = Aws::Vector<DeliveryModel>>
+    Project& WithDeliveryModels(DeliveryModelsT&& value) { SetDeliveryModels(std::forward<DeliveryModelsT>(value)); return *this;}
+    inline Project& AddDeliveryModels(DeliveryModel value) { m_deliveryModelsHasBeenSet = true; m_deliveryModels.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Represents the estimated amount that the customer is expected to spend on AWS
+     * services related to the opportunity. This helps in evaluating the potential
+     * financial value of the opportunity for AWS.</p>
+     */
+    inline const Aws::Vector<ExpectedCustomerSpend>& GetExpectedCustomerSpend() const { return m_expectedCustomerSpend; }
+    inline bool ExpectedCustomerSpendHasBeenSet() const { return m_expectedCustomerSpendHasBeenSet; }
+    template<typename ExpectedCustomerSpendT = Aws::Vector<ExpectedCustomerSpend>>
+    void SetExpectedCustomerSpend(ExpectedCustomerSpendT&& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend = std::forward<ExpectedCustomerSpendT>(value); }
+    template<typename ExpectedCustomerSpendT = Aws::Vector<ExpectedCustomerSpend>>
+    Project& WithExpectedCustomerSpend(ExpectedCustomerSpendT&& value) { SetExpectedCustomerSpend(std::forward<ExpectedCustomerSpendT>(value)); return *this;}
+    template<typename ExpectedCustomerSpendT = ExpectedCustomerSpend>
+    Project& AddExpectedCustomerSpend(ExpectedCustomerSpendT&& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend.emplace_back(std::forward<ExpectedCustomerSpendT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the <code>Opportunity</code>'s title or name.</p>
+     */
+    inline const Aws::String& GetTitle() const { return m_title; }
+    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    Project& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,17 +118,6 @@ namespace Model
     Project& WithApnPrograms(ApnProgramsT&& value) { SetApnPrograms(std::forward<ApnProgramsT>(value)); return *this;}
     template<typename ApnProgramsT = Aws::String>
     Project& AddApnPrograms(ApnProgramsT&& value) { m_apnProgramsHasBeenSet = true; m_apnPrograms.emplace_back(std::forward<ApnProgramsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>Name of the <code>Opportunity</code>'s competitor (if any). Use
-     * <code>Other</code> to submit a value not in the picklist.</p>
-     */
-    inline CompetitorName GetCompetitorName() const { return m_competitorName; }
-    inline bool CompetitorNameHasBeenSet() const { return m_competitorNameHasBeenSet; }
-    inline void SetCompetitorName(CompetitorName value) { m_competitorNameHasBeenSet = true; m_competitorName = value; }
-    inline Project& WithCompetitorName(CompetitorName value) { SetCompetitorName(value); return *this;}
     ///@}
 
     ///@{
@@ -143,76 +174,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the deployment or consumption model for your solution or service in
-     * the <code>Opportunity</code>'s context. You can select multiple options.</p>
-     * <p>Options' descriptions from the <code>Delivery Model</code> field are:</p>
-     * <ul> <li> <p>SaaS or PaaS: Your Amazon Web Services based solution deployed as
-     * SaaS or PaaS in your Amazon Web Services environment.</p> </li> <li> <p>BYOL or
-     * AMI: Your Amazon Web Services based solution deployed as BYOL or AMI in the end
-     * customer's Amazon Web Services environment.</p> </li> <li> <p>Managed Services:
-     * The end customer's Amazon Web Services business management (For example:
-     * Consulting, design, implementation, billing support, cost optimization,
-     * technical support).</p> </li> <li> <p>Professional Services: Offerings to help
-     * enterprise end customers achieve specific business outcomes for enterprise cloud
-     * adoption (For example: Advisory or transformation planning).</p> </li> <li>
-     * <p>Resell: Amazon Web Services accounts and billing management for your
-     * customers.</p> </li> <li> <p>Other: Delivery model not described above.</p>
-     * </li> </ul>
-     */
-    inline const Aws::Vector<DeliveryModel>& GetDeliveryModels() const { return m_deliveryModels; }
-    inline bool DeliveryModelsHasBeenSet() const { return m_deliveryModelsHasBeenSet; }
-    template<typename DeliveryModelsT = Aws::Vector<DeliveryModel>>
-    void SetDeliveryModels(DeliveryModelsT&& value) { m_deliveryModelsHasBeenSet = true; m_deliveryModels = std::forward<DeliveryModelsT>(value); }
-    template<typename DeliveryModelsT = Aws::Vector<DeliveryModel>>
-    Project& WithDeliveryModels(DeliveryModelsT&& value) { SetDeliveryModels(std::forward<DeliveryModelsT>(value)); return *this;}
-    inline Project& AddDeliveryModels(DeliveryModel value) { m_deliveryModelsHasBeenSet = true; m_deliveryModels.push_back(value); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>Represents the estimated amount that the customer is expected to spend on AWS
-     * services related to the opportunity. This helps in evaluating the potential
-     * financial value of the opportunity for AWS.</p>
-     */
-    inline const Aws::Vector<ExpectedCustomerSpend>& GetExpectedCustomerSpend() const { return m_expectedCustomerSpend; }
-    inline bool ExpectedCustomerSpendHasBeenSet() const { return m_expectedCustomerSpendHasBeenSet; }
-    template<typename ExpectedCustomerSpendT = Aws::Vector<ExpectedCustomerSpend>>
-    void SetExpectedCustomerSpend(ExpectedCustomerSpendT&& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend = std::forward<ExpectedCustomerSpendT>(value); }
-    template<typename ExpectedCustomerSpendT = Aws::Vector<ExpectedCustomerSpend>>
-    Project& WithExpectedCustomerSpend(ExpectedCustomerSpendT&& value) { SetExpectedCustomerSpend(std::forward<ExpectedCustomerSpendT>(value)); return *this;}
-    template<typename ExpectedCustomerSpendT = ExpectedCustomerSpend>
-    Project& AddExpectedCustomerSpend(ExpectedCustomerSpendT&& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend.emplace_back(std::forward<ExpectedCustomerSpendT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>Only allowed when <code>CompetitorNames</code> has <code>Other</code>
-     * selected.</p>
-     */
-    inline const Aws::String& GetOtherCompetitorNames() const { return m_otherCompetitorNames; }
-    inline bool OtherCompetitorNamesHasBeenSet() const { return m_otherCompetitorNamesHasBeenSet; }
-    template<typename OtherCompetitorNamesT = Aws::String>
-    void SetOtherCompetitorNames(OtherCompetitorNamesT&& value) { m_otherCompetitorNamesHasBeenSet = true; m_otherCompetitorNames = std::forward<OtherCompetitorNamesT>(value); }
-    template<typename OtherCompetitorNamesT = Aws::String>
-    Project& WithOtherCompetitorNames(OtherCompetitorNamesT&& value) { SetOtherCompetitorNames(std::forward<OtherCompetitorNamesT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies the offered solution for the customer's business problem when the
-     * <code> RelatedEntityIdentifiers.Solutions</code> field value is
-     * <code>Other</code>.</p>
-     */
-    inline const Aws::String& GetOtherSolutionDescription() const { return m_otherSolutionDescription; }
-    inline bool OtherSolutionDescriptionHasBeenSet() const { return m_otherSolutionDescriptionHasBeenSet; }
-    template<typename OtherSolutionDescriptionT = Aws::String>
-    void SetOtherSolutionDescription(OtherSolutionDescriptionT&& value) { m_otherSolutionDescriptionHasBeenSet = true; m_otherSolutionDescription = std::forward<OtherSolutionDescriptionT>(value); }
-    template<typename OtherSolutionDescriptionT = Aws::String>
-    Project& WithOtherSolutionDescription(OtherSolutionDescriptionT&& value) { SetOtherSolutionDescription(std::forward<OtherSolutionDescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Specifies the current opportunity's parent opportunity identifier.</p>
      */
     inline const Aws::String& GetRelatedOpportunityIdentifier() const { return m_relatedOpportunityIdentifier; }
@@ -254,31 +215,55 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the <code>Opportunity</code>'s title or name.</p>
+     * <p>Name of the <code>Opportunity</code>'s competitor (if any). Use
+     * <code>Other</code> to submit a value not in the picklist.</p>
      */
-    inline const Aws::String& GetTitle() const { return m_title; }
-    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    template<typename TitleT = Aws::String>
-    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
-    template<typename TitleT = Aws::String>
-    Project& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
+    inline CompetitorName GetCompetitorName() const { return m_competitorName; }
+    inline bool CompetitorNameHasBeenSet() const { return m_competitorNameHasBeenSet; }
+    inline void SetCompetitorName(CompetitorName value) { m_competitorNameHasBeenSet = true; m_competitorName = value; }
+    inline Project& WithCompetitorName(CompetitorName value) { SetCompetitorName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Only allowed when <code>CompetitorNames</code> has <code>Other</code>
+     * selected.</p>
+     */
+    inline const Aws::String& GetOtherCompetitorNames() const { return m_otherCompetitorNames; }
+    inline bool OtherCompetitorNamesHasBeenSet() const { return m_otherCompetitorNamesHasBeenSet; }
+    template<typename OtherCompetitorNamesT = Aws::String>
+    void SetOtherCompetitorNames(OtherCompetitorNamesT&& value) { m_otherCompetitorNamesHasBeenSet = true; m_otherCompetitorNames = std::forward<OtherCompetitorNamesT>(value); }
+    template<typename OtherCompetitorNamesT = Aws::String>
+    Project& WithOtherCompetitorNames(OtherCompetitorNamesT&& value) { SetOtherCompetitorNames(std::forward<OtherCompetitorNamesT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the offered solution for the customer's business problem when the
+     * <code> RelatedEntityIdentifiers.Solutions</code> field value is
+     * <code>Other</code>.</p>
+     */
+    inline const Aws::String& GetOtherSolutionDescription() const { return m_otherSolutionDescription; }
+    inline bool OtherSolutionDescriptionHasBeenSet() const { return m_otherSolutionDescriptionHasBeenSet; }
+    template<typename OtherSolutionDescriptionT = Aws::String>
+    void SetOtherSolutionDescription(OtherSolutionDescriptionT&& value) { m_otherSolutionDescriptionHasBeenSet = true; m_otherSolutionDescription = std::forward<OtherSolutionDescriptionT>(value); }
+    template<typename OtherSolutionDescriptionT = Aws::String>
+    Project& WithOtherSolutionDescription(OtherSolutionDescriptionT&& value) { SetOtherSolutionDescription(std::forward<OtherSolutionDescriptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Captures additional comments or information for the <code>Opportunity</code>
+     * that weren't captured in other fields.</p>
+     */
+    inline const Aws::String& GetAdditionalComments() const { return m_additionalComments; }
+    inline bool AdditionalCommentsHasBeenSet() const { return m_additionalCommentsHasBeenSet; }
+    template<typename AdditionalCommentsT = Aws::String>
+    void SetAdditionalComments(AdditionalCommentsT&& value) { m_additionalCommentsHasBeenSet = true; m_additionalComments = std::forward<AdditionalCommentsT>(value); }
+    template<typename AdditionalCommentsT = Aws::String>
+    Project& WithAdditionalComments(AdditionalCommentsT&& value) { SetAdditionalComments(std::forward<AdditionalCommentsT>(value)); return *this;}
     ///@}
   private:
-
-    Aws::String m_additionalComments;
-    bool m_additionalCommentsHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_apnPrograms;
-    bool m_apnProgramsHasBeenSet = false;
-
-    CompetitorName m_competitorName{CompetitorName::NOT_SET};
-    bool m_competitorNameHasBeenSet = false;
-
-    Aws::String m_customerBusinessProblem;
-    bool m_customerBusinessProblemHasBeenSet = false;
-
-    Aws::String m_customerUseCase;
-    bool m_customerUseCaseHasBeenSet = false;
 
     Aws::Vector<DeliveryModel> m_deliveryModels;
     bool m_deliveryModelsHasBeenSet = false;
@@ -286,11 +271,17 @@ namespace Model
     Aws::Vector<ExpectedCustomerSpend> m_expectedCustomerSpend;
     bool m_expectedCustomerSpendHasBeenSet = false;
 
-    Aws::String m_otherCompetitorNames;
-    bool m_otherCompetitorNamesHasBeenSet = false;
+    Aws::String m_title;
+    bool m_titleHasBeenSet = false;
 
-    Aws::String m_otherSolutionDescription;
-    bool m_otherSolutionDescriptionHasBeenSet = false;
+    Aws::Vector<Aws::String> m_apnPrograms;
+    bool m_apnProgramsHasBeenSet = false;
+
+    Aws::String m_customerBusinessProblem;
+    bool m_customerBusinessProblemHasBeenSet = false;
+
+    Aws::String m_customerUseCase;
+    bool m_customerUseCaseHasBeenSet = false;
 
     Aws::String m_relatedOpportunityIdentifier;
     bool m_relatedOpportunityIdentifierHasBeenSet = false;
@@ -298,8 +289,17 @@ namespace Model
     Aws::Vector<SalesActivity> m_salesActivities;
     bool m_salesActivitiesHasBeenSet = false;
 
-    Aws::String m_title;
-    bool m_titleHasBeenSet = false;
+    CompetitorName m_competitorName{CompetitorName::NOT_SET};
+    bool m_competitorNameHasBeenSet = false;
+
+    Aws::String m_otherCompetitorNames;
+    bool m_otherCompetitorNamesHasBeenSet = false;
+
+    Aws::String m_otherSolutionDescription;
+    bool m_otherSolutionDescriptionHasBeenSet = false;
+
+    Aws::String m_additionalComments;
+    bool m_additionalCommentsHasBeenSet = false;
   };
 
 } // namespace Model

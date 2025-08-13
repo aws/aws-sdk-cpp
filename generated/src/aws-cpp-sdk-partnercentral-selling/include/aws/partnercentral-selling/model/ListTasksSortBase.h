@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
-#include <aws/partnercentral-selling/model/ListTasksSortName.h>
 #include <aws/partnercentral-selling/model/SortOrder.h>
+#include <aws/partnercentral-selling/model/ListTasksSortName.h>
 #include <utility>
 
 namespace Aws
@@ -42,16 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the field by which the task list should be sorted. </p>
-     */
-    inline ListTasksSortName GetSortBy() const { return m_sortBy; }
-    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(ListTasksSortName value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline ListTasksSortBase& WithSortBy(ListTasksSortName value) { SetSortBy(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p> Determines the order in which the sorted results are presented. </p>
      */
     inline SortOrder GetSortOrder() const { return m_sortOrder; }
@@ -59,13 +49,23 @@ namespace Model
     inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
     inline ListTasksSortBase& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
-  private:
 
-    ListTasksSortName m_sortBy{ListTasksSortName::NOT_SET};
-    bool m_sortByHasBeenSet = false;
+    ///@{
+    /**
+     * <p> Specifies the field by which the task list should be sorted. </p>
+     */
+    inline ListTasksSortName GetSortBy() const { return m_sortBy; }
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+    inline void SetSortBy(ListTasksSortName value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListTasksSortBase& WithSortBy(ListTasksSortName value) { SetSortBy(value); return *this;}
+    ///@}
+  private:
 
     SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
+
+    ListTasksSortName m_sortBy{ListTasksSortName::NOT_SET};
+    bool m_sortByHasBeenSet = false;
   };
 
 } // namespace Model

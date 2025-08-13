@@ -22,12 +22,6 @@ Aws::String ListResourceSnapshotJobsRequest::SerializePayload() const
 
   }
 
-  if(m_engagementIdentifierHasBeenSet)
-  {
-   payload.WithString("EngagementIdentifier", m_engagementIdentifier);
-
-  }
-
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("MaxResults", m_maxResults);
@@ -40,15 +34,21 @@ Aws::String ListResourceSnapshotJobsRequest::SerializePayload() const
 
   }
 
-  if(m_sortHasBeenSet)
+  if(m_engagementIdentifierHasBeenSet)
   {
-   payload.WithObject("Sort", m_sort.Jsonize());
+   payload.WithString("EngagementIdentifier", m_engagementIdentifier);
 
   }
 
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", ResourceSnapshotJobStatusMapper::GetNameForResourceSnapshotJobStatus(m_status));
+  }
+
+  if(m_sortHasBeenSet)
+  {
+   payload.WithObject("Sort", m_sort.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

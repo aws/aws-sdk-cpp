@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the Amazon Braket job to cancel.</p>
+     * <p>The ARN of the Amazon Braket hybrid job to cancel.</p>
      */
     inline const Aws::String& GetJobArn() const { return m_jobArn; }
     inline bool JobArnHasBeenSet() const { return m_jobArnHasBeenSet; }

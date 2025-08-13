@@ -22,16 +22,15 @@ Aws::String CreateResourceSnapshotRequest::SerializePayload() const
 
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("ClientToken", m_clientToken);
-
-  }
-
   if(m_engagementIdentifierHasBeenSet)
   {
    payload.WithString("EngagementIdentifier", m_engagementIdentifier);
 
+  }
+
+  if(m_resourceTypeHasBeenSet)
+  {
+   payload.WithString("ResourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
   }
 
   if(m_resourceIdentifierHasBeenSet)
@@ -46,9 +45,10 @@ Aws::String CreateResourceSnapshotRequest::SerializePayload() const
 
   }
 
-  if(m_resourceTypeHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-   payload.WithString("ResourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+   payload.WithString("ClientToken", m_clientToken);
+
   }
 
   return payload.View().WriteReadable();

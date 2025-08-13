@@ -65,6 +65,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the type of resource that was snapshotted. This field determines
+     * the structure and content of the snapshot payload. Valid value
+     * includes:<code>Opportunity</code>: For opportunity-related data. </p>
+     */
+    inline ResourceType GetResourceType() const { return m_resourceType; }
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline GetResourceSnapshotRequest& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The unique identifier of the specific resource that was snapshotted. The
      * format and constraints of this identifier depend on the ResourceType specified.
      * For <code>Opportunity</code> type, it will be an <code>opportunity ID</code>
@@ -95,18 +107,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the type of resource that was snapshotted. This field determines
-     * the structure and content of the snapshot payload. Valid value
-     * includes:<code>Opportunity</code>: For opportunity-related data. </p>
-     */
-    inline ResourceType GetResourceType() const { return m_resourceType; }
-    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline GetResourceSnapshotRequest& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Specifies which revision of the snapshot to retrieve. If omitted returns the
      * latest revision.</p>
      */
@@ -123,14 +123,14 @@ namespace Model
     Aws::String m_engagementIdentifier;
     bool m_engagementIdentifierHasBeenSet = false;
 
+    ResourceType m_resourceType{ResourceType::NOT_SET};
+    bool m_resourceTypeHasBeenSet = false;
+
     Aws::String m_resourceIdentifier;
     bool m_resourceIdentifierHasBeenSet = false;
 
     Aws::String m_resourceSnapshotTemplateIdentifier;
     bool m_resourceSnapshotTemplateIdentifierHasBeenSet = false;
-
-    ResourceType m_resourceType{ResourceType::NOT_SET};
-    bool m_resourceTypeHasBeenSet = false;
 
     int m_revision{0};
     bool m_revisionHasBeenSet = false;

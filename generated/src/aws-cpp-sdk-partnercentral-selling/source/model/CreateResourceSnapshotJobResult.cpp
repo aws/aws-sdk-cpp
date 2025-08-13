@@ -25,15 +25,15 @@ CreateResourceSnapshotJobResult::CreateResourceSnapshotJobResult(const Aws::Amaz
 CreateResourceSnapshotJobResult& CreateResourceSnapshotJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Arn"))
-  {
-    m_arn = jsonValue.GetString("Arn");
-    m_arnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+    m_arnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

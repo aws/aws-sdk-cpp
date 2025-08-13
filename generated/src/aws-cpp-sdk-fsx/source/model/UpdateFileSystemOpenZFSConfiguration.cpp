@@ -83,6 +83,11 @@ UpdateFileSystemOpenZFSConfiguration& UpdateFileSystemOpenZFSConfiguration::oper
     m_readCacheConfiguration = jsonValue.GetObject("ReadCacheConfiguration");
     m_readCacheConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("EndpointIpv6AddressRange"))
+  {
+    m_endpointIpv6AddressRange = jsonValue.GetString("EndpointIpv6AddressRange");
+    m_endpointIpv6AddressRangeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -157,6 +162,12 @@ JsonValue UpdateFileSystemOpenZFSConfiguration::Jsonize() const
   if(m_readCacheConfigurationHasBeenSet)
   {
    payload.WithObject("ReadCacheConfiguration", m_readCacheConfiguration.Jsonize());
+
+  }
+
+  if(m_endpointIpv6AddressRangeHasBeenSet)
+  {
+   payload.WithString("EndpointIpv6AddressRange", m_endpointIpv6AddressRange);
 
   }
 

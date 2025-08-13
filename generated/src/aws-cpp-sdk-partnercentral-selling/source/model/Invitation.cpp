@@ -30,15 +30,15 @@ Invitation& Invitation::operator =(JsonView jsonValue)
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Payload"))
-  {
-    m_payload = jsonValue.GetObject("Payload");
-    m_payloadHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Receiver"))
   {
     m_receiver = jsonValue.GetObject("Receiver");
     m_receiverHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Payload"))
+  {
+    m_payload = jsonValue.GetObject("Payload");
+    m_payloadHasBeenSet = true;
   }
   return *this;
 }
@@ -53,15 +53,15 @@ JsonValue Invitation::Jsonize() const
 
   }
 
-  if(m_payloadHasBeenSet)
-  {
-   payload.WithObject("Payload", m_payload.Jsonize());
-
-  }
-
   if(m_receiverHasBeenSet)
   {
    payload.WithObject("Receiver", m_receiver.Jsonize());
+
+  }
+
+  if(m_payloadHasBeenSet)
+  {
+   payload.WithObject("Payload", m_payload.Jsonize());
 
   }
 

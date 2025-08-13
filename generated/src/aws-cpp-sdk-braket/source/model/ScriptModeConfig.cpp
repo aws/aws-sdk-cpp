@@ -25,11 +25,6 @@ ScriptModeConfig::ScriptModeConfig(JsonView jsonValue)
 
 ScriptModeConfig& ScriptModeConfig::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("compressionType"))
-  {
-    m_compressionType = CompressionTypeMapper::GetCompressionTypeForName(jsonValue.GetString("compressionType"));
-    m_compressionTypeHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("entryPoint"))
   {
     m_entryPoint = jsonValue.GetString("entryPoint");
@@ -40,17 +35,17 @@ ScriptModeConfig& ScriptModeConfig::operator =(JsonView jsonValue)
     m_s3Uri = jsonValue.GetString("s3Uri");
     m_s3UriHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("compressionType"))
+  {
+    m_compressionType = CompressionTypeMapper::GetCompressionTypeForName(jsonValue.GetString("compressionType"));
+    m_compressionTypeHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue ScriptModeConfig::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_compressionTypeHasBeenSet)
-  {
-   payload.WithString("compressionType", CompressionTypeMapper::GetNameForCompressionType(m_compressionType));
-  }
 
   if(m_entryPointHasBeenSet)
   {
@@ -62,6 +57,11 @@ JsonValue ScriptModeConfig::Jsonize() const
   {
    payload.WithString("s3Uri", m_s3Uri);
 
+  }
+
+  if(m_compressionTypeHasBeenSet)
+  {
+   payload.WithString("compressionType", CompressionTypeMapper::GetNameForCompressionType(m_compressionType));
   }
 
   return payload;

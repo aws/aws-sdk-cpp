@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/braket/Braket_EXPORTS.h>
 #include <aws/braket/model/JobEventType.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Details about the type and time events occurred related to the Amazon Braket
-   * job.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about the type and time events that occurred related to the Amazon
+   * Braket hybrid job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/JobEventDetails">AWS
    * API Reference</a></p>
    */
@@ -42,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of event that occurred related to the Amazon Braket job.</p>
+     * <p>The type of event that occurred related to the Amazon Braket hybrid job.</p>
      */
     inline JobEventType GetEventType() const { return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
@@ -52,20 +52,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A message describing the event that occurred related to the Amazon Braket
+     * <p>The time of the event that occurred related to the Amazon Braket hybrid
      * job.</p>
-     */
-    inline const Aws::String& GetMessage() const { return m_message; }
-    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    template<typename MessageT = Aws::String>
-    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
-    template<typename MessageT = Aws::String>
-    JobEventDetails& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The type of event that occurred related to the Amazon Braket job.</p>
      */
     inline const Aws::Utils::DateTime& GetTimeOfEvent() const { return m_timeOfEvent; }
     inline bool TimeOfEventHasBeenSet() const { return m_timeOfEventHasBeenSet; }
@@ -74,16 +62,29 @@ namespace Model
     template<typename TimeOfEventT = Aws::Utils::DateTime>
     JobEventDetails& WithTimeOfEvent(TimeOfEventT&& value) { SetTimeOfEvent(std::forward<TimeOfEventT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A message describing the event that occurred related to the Amazon Braket
+     * hybrid job.</p>
+     */
+    inline const Aws::String& GetMessage() const { return m_message; }
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    JobEventDetails& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
+    ///@}
   private:
 
     JobEventType m_eventType{JobEventType::NOT_SET};
     bool m_eventTypeHasBeenSet = false;
 
-    Aws::String m_message;
-    bool m_messageHasBeenSet = false;
-
     Aws::Utils::DateTime m_timeOfEvent{};
     bool m_timeOfEventHasBeenSet = false;
+
+    Aws::String m_message;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

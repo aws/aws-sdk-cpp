@@ -30,6 +30,16 @@ ProjectDetails& ProjectDetails::operator =(JsonView jsonValue)
     m_businessProblem = jsonValue.GetString("BusinessProblem");
     m_businessProblemHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Title"))
+  {
+    m_title = jsonValue.GetString("Title");
+    m_titleHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("TargetCompletionDate"))
+  {
+    m_targetCompletionDate = jsonValue.GetString("TargetCompletionDate");
+    m_targetCompletionDateHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ExpectedCustomerSpend"))
   {
     Aws::Utils::Array<JsonView> expectedCustomerSpendJsonList = jsonValue.GetArray("ExpectedCustomerSpend");
@@ -38,16 +48,6 @@ ProjectDetails& ProjectDetails::operator =(JsonView jsonValue)
       m_expectedCustomerSpend.push_back(expectedCustomerSpendJsonList[expectedCustomerSpendIndex].AsObject());
     }
     m_expectedCustomerSpendHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("TargetCompletionDate"))
-  {
-    m_targetCompletionDate = jsonValue.GetString("TargetCompletionDate");
-    m_targetCompletionDateHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Title"))
-  {
-    m_title = jsonValue.GetString("Title");
-    m_titleHasBeenSet = true;
   }
   return *this;
 }
@@ -62,14 +62,9 @@ JsonValue ProjectDetails::Jsonize() const
 
   }
 
-  if(m_expectedCustomerSpendHasBeenSet)
+  if(m_titleHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> expectedCustomerSpendJsonList(m_expectedCustomerSpend.size());
-   for(unsigned expectedCustomerSpendIndex = 0; expectedCustomerSpendIndex < expectedCustomerSpendJsonList.GetLength(); ++expectedCustomerSpendIndex)
-   {
-     expectedCustomerSpendJsonList[expectedCustomerSpendIndex].AsObject(m_expectedCustomerSpend[expectedCustomerSpendIndex].Jsonize());
-   }
-   payload.WithArray("ExpectedCustomerSpend", std::move(expectedCustomerSpendJsonList));
+   payload.WithString("Title", m_title);
 
   }
 
@@ -79,9 +74,14 @@ JsonValue ProjectDetails::Jsonize() const
 
   }
 
-  if(m_titleHasBeenSet)
+  if(m_expectedCustomerSpendHasBeenSet)
   {
-   payload.WithString("Title", m_title);
+   Aws::Utils::Array<JsonValue> expectedCustomerSpendJsonList(m_expectedCustomerSpend.size());
+   for(unsigned expectedCustomerSpendIndex = 0; expectedCustomerSpendIndex < expectedCustomerSpendJsonList.GetLength(); ++expectedCustomerSpendIndex)
+   {
+     expectedCustomerSpendJsonList[expectedCustomerSpendIndex].AsObject(m_expectedCustomerSpend[expectedCustomerSpendIndex].Jsonize());
+   }
+   payload.WithArray("ExpectedCustomerSpend", std::move(expectedCustomerSpendJsonList));
 
   }
 

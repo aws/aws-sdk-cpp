@@ -25,11 +25,6 @@ ProjectView::ProjectView(JsonView jsonValue)
 
 ProjectView& ProjectView::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("CustomerUseCase"))
-  {
-    m_customerUseCase = jsonValue.GetString("CustomerUseCase");
-    m_customerUseCaseHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("DeliveryModels"))
   {
     Aws::Utils::Array<JsonView> deliveryModelsJsonList = jsonValue.GetArray("DeliveryModels");
@@ -48,10 +43,10 @@ ProjectView& ProjectView::operator =(JsonView jsonValue)
     }
     m_expectedCustomerSpendHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OtherSolutionDescription"))
+  if(jsonValue.ValueExists("CustomerUseCase"))
   {
-    m_otherSolutionDescription = jsonValue.GetString("OtherSolutionDescription");
-    m_otherSolutionDescriptionHasBeenSet = true;
+    m_customerUseCase = jsonValue.GetString("CustomerUseCase");
+    m_customerUseCaseHasBeenSet = true;
   }
   if(jsonValue.ValueExists("SalesActivities"))
   {
@@ -62,18 +57,17 @@ ProjectView& ProjectView::operator =(JsonView jsonValue)
     }
     m_salesActivitiesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("OtherSolutionDescription"))
+  {
+    m_otherSolutionDescription = jsonValue.GetString("OtherSolutionDescription");
+    m_otherSolutionDescriptionHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue ProjectView::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_customerUseCaseHasBeenSet)
-  {
-   payload.WithString("CustomerUseCase", m_customerUseCase);
-
-  }
 
   if(m_deliveryModelsHasBeenSet)
   {
@@ -97,9 +91,9 @@ JsonValue ProjectView::Jsonize() const
 
   }
 
-  if(m_otherSolutionDescriptionHasBeenSet)
+  if(m_customerUseCaseHasBeenSet)
   {
-   payload.WithString("OtherSolutionDescription", m_otherSolutionDescription);
+   payload.WithString("CustomerUseCase", m_customerUseCase);
 
   }
 
@@ -111,6 +105,12 @@ JsonValue ProjectView::Jsonize() const
      salesActivitiesJsonList[salesActivitiesIndex].AsString(SalesActivityMapper::GetNameForSalesActivity(m_salesActivities[salesActivitiesIndex]));
    }
    payload.WithArray("SalesActivities", std::move(salesActivitiesJsonList));
+
+  }
+
+  if(m_otherSolutionDescriptionHasBeenSet)
+  {
+   payload.WithString("OtherSolutionDescription", m_otherSolutionDescription);
 
   }
 

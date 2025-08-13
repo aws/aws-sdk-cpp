@@ -49,18 +49,6 @@ namespace Model
 
     ///@{
     /**
-     * <p> <code>DateTime</code> when the opportunity was last modified. When the
-     * <code>Opportunity</code> is created, its value is <code>CreatedDate</code>.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastModifiedDate() const { return m_lastModifiedDate; }
-    template<typename LastModifiedDateT = Aws::Utils::DateTime>
-    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
-    template<typename LastModifiedDateT = Aws::Utils::DateTime>
-    CreateOpportunityResult& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Specifies the opportunity's unique identifier in the partner's CRM system.
      * This value is essential to track and reconcile because it's included in the
      * outbound payload sent back to the partner.</p>
@@ -70,6 +58,18 @@ namespace Model
     void SetPartnerOpportunityIdentifier(PartnerOpportunityIdentifierT&& value) { m_partnerOpportunityIdentifierHasBeenSet = true; m_partnerOpportunityIdentifier = std::forward<PartnerOpportunityIdentifierT>(value); }
     template<typename PartnerOpportunityIdentifierT = Aws::String>
     CreateOpportunityResult& WithPartnerOpportunityIdentifier(PartnerOpportunityIdentifierT&& value) { SetPartnerOpportunityIdentifier(std::forward<PartnerOpportunityIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> <code>DateTime</code> when the opportunity was last modified. When the
+     * <code>Opportunity</code> is created, its value is <code>CreatedDate</code>.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const { return m_lastModifiedDate; }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    CreateOpportunityResult& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,11 +85,11 @@ namespace Model
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedDate{};
-    bool m_lastModifiedDateHasBeenSet = false;
-
     Aws::String m_partnerOpportunityIdentifier;
     bool m_partnerOpportunityIdentifierHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastModifiedDate{};
+    bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -25,11 +25,6 @@ ValidationExceptionError::ValidationExceptionError(JsonView jsonValue)
 
 ValidationExceptionError& ValidationExceptionError::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Code"))
-  {
-    m_code = ValidationExceptionErrorCodeMapper::GetValidationExceptionErrorCodeForName(jsonValue.GetString("Code"));
-    m_codeHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("FieldName"))
   {
     m_fieldName = jsonValue.GetString("FieldName");
@@ -40,17 +35,17 @@ ValidationExceptionError& ValidationExceptionError::operator =(JsonView jsonValu
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Code"))
+  {
+    m_code = ValidationExceptionErrorCodeMapper::GetValidationExceptionErrorCodeForName(jsonValue.GetString("Code"));
+    m_codeHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue ValidationExceptionError::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("Code", ValidationExceptionErrorCodeMapper::GetNameForValidationExceptionErrorCode(m_code));
-  }
 
   if(m_fieldNameHasBeenSet)
   {
@@ -62,6 +57,11 @@ JsonValue ValidationExceptionError::Jsonize() const
   {
    payload.WithString("Message", m_message);
 
+  }
+
+  if(m_codeHasBeenSet)
+  {
+   payload.WithString("Code", ValidationExceptionErrorCodeMapper::GetNameForValidationExceptionErrorCode(m_code));
   }
 
   return payload;

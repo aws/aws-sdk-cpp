@@ -25,16 +25,6 @@ AccountSummary::AccountSummary(JsonView jsonValue)
 
 AccountSummary& AccountSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Address"))
-  {
-    m_address = jsonValue.GetObject("Address");
-    m_addressHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("CompanyName"))
-  {
-    m_companyName = jsonValue.GetString("CompanyName");
-    m_companyNameHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Industry"))
   {
     m_industry = IndustryMapper::GetIndustryForName(jsonValue.GetString("Industry"));
@@ -45,10 +35,20 @@ AccountSummary& AccountSummary::operator =(JsonView jsonValue)
     m_otherIndustry = jsonValue.GetString("OtherIndustry");
     m_otherIndustryHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("CompanyName"))
+  {
+    m_companyName = jsonValue.GetString("CompanyName");
+    m_companyNameHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("WebsiteUrl"))
   {
     m_websiteUrl = jsonValue.GetString("WebsiteUrl");
     m_websiteUrlHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Address"))
+  {
+    m_address = jsonValue.GetObject("Address");
+    m_addressHasBeenSet = true;
   }
   return *this;
 }
@@ -56,18 +56,6 @@ AccountSummary& AccountSummary::operator =(JsonView jsonValue)
 JsonValue AccountSummary::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_addressHasBeenSet)
-  {
-   payload.WithObject("Address", m_address.Jsonize());
-
-  }
-
-  if(m_companyNameHasBeenSet)
-  {
-   payload.WithString("CompanyName", m_companyName);
-
-  }
 
   if(m_industryHasBeenSet)
   {
@@ -80,9 +68,21 @@ JsonValue AccountSummary::Jsonize() const
 
   }
 
+  if(m_companyNameHasBeenSet)
+  {
+   payload.WithString("CompanyName", m_companyName);
+
+  }
+
   if(m_websiteUrlHasBeenSet)
   {
    payload.WithString("WebsiteUrl", m_websiteUrl);
+
+  }
+
+  if(m_addressHasBeenSet)
+  {
+   payload.WithObject("Address", m_address.Jsonize());
 
   }
 

@@ -80,6 +80,11 @@ OpenZFSFileSystemConfiguration& OpenZFSFileSystemConfiguration::operator =(JsonV
     m_endpointIpAddressRange = jsonValue.GetString("EndpointIpAddressRange");
     m_endpointIpAddressRangeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("EndpointIpv6AddressRange"))
+  {
+    m_endpointIpv6AddressRange = jsonValue.GetString("EndpointIpv6AddressRange");
+    m_endpointIpv6AddressRangeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("RouteTableIds"))
   {
     Aws::Utils::Array<JsonView> routeTableIdsJsonList = jsonValue.GetArray("RouteTableIds");
@@ -93,6 +98,11 @@ OpenZFSFileSystemConfiguration& OpenZFSFileSystemConfiguration::operator =(JsonV
   {
     m_endpointIpAddress = jsonValue.GetString("EndpointIpAddress");
     m_endpointIpAddressHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("EndpointIpv6Address"))
+  {
+    m_endpointIpv6Address = jsonValue.GetString("EndpointIpv6Address");
+    m_endpointIpv6AddressHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ReadCacheConfiguration"))
   {
@@ -171,6 +181,12 @@ JsonValue OpenZFSFileSystemConfiguration::Jsonize() const
 
   }
 
+  if(m_endpointIpv6AddressRangeHasBeenSet)
+  {
+   payload.WithString("EndpointIpv6AddressRange", m_endpointIpv6AddressRange);
+
+  }
+
   if(m_routeTableIdsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> routeTableIdsJsonList(m_routeTableIds.size());
@@ -185,6 +201,12 @@ JsonValue OpenZFSFileSystemConfiguration::Jsonize() const
   if(m_endpointIpAddressHasBeenSet)
   {
    payload.WithString("EndpointIpAddress", m_endpointIpAddress);
+
+  }
+
+  if(m_endpointIpv6AddressHasBeenSet)
+  {
+   payload.WithString("EndpointIpv6Address", m_endpointIpv6Address);
 
   }
 

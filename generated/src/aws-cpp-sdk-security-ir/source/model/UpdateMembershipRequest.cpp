@@ -44,6 +44,18 @@ Aws::String UpdateMembershipRequest::SerializePayload() const
 
   }
 
+  if(m_membershipAccountsConfigurationsUpdateHasBeenSet)
+  {
+   payload.WithObject("membershipAccountsConfigurationsUpdate", m_membershipAccountsConfigurationsUpdate.Jsonize());
+
+  }
+
+  if(m_undoMembershipCancellationHasBeenSet)
+  {
+   payload.WithBool("undoMembershipCancellation", m_undoMembershipCancellation);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

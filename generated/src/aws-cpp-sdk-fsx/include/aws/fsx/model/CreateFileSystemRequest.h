@@ -14,6 +14,7 @@
 #include <aws/fsx/model/CreateFileSystemLustreConfiguration.h>
 #include <aws/fsx/model/CreateFileSystemOntapConfiguration.h>
 #include <aws/fsx/model/CreateFileSystemOpenZFSConfiguration.h>
+#include <aws/fsx/model/NetworkType.h>
 #include <aws/fsx/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -273,6 +274,19 @@ namespace Model
     template<typename OpenZFSConfigurationT = CreateFileSystemOpenZFSConfiguration>
     CreateFileSystemRequest& WithOpenZFSConfiguration(OpenZFSConfigurationT&& value) { SetOpenZFSConfiguration(std::forward<OpenZFSConfigurationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The network type of the Amazon FSx file system that you are creating. Valid
+     * values are <code>IPV4</code> (which supports IPv4 only) and <code>DUAL</code>
+     * (for dual-stack mode, which supports both IPv4 and IPv6). The default is
+     * <code>IPV4</code>. Supported only for Amazon FSx for OpenZFS file systems.</p>
+     */
+    inline NetworkType GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    inline void SetNetworkType(NetworkType value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline CreateFileSystemRequest& WithNetworkType(NetworkType value) { SetNetworkType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
@@ -313,6 +327,9 @@ namespace Model
 
     CreateFileSystemOpenZFSConfiguration m_openZFSConfiguration;
     bool m_openZFSConfigurationHasBeenSet = false;
+
+    NetworkType m_networkType{NetworkType::NOT_SET};
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

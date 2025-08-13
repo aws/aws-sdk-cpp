@@ -53,6 +53,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier for the Engagement.</p>
+     */
+    inline const Aws::String& GetId() const { return m_id; }
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    EngagementSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The title of the Engagement.</p>
+     */
+    inline const Aws::String& GetTitle() const { return m_title; }
+    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    EngagementSummary& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The date and time when the Engagement was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -77,18 +101,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier for the Engagement.</p>
-     */
-    inline const Aws::String& GetId() const { return m_id; }
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    template<typename IdT = Aws::String>
-    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
-    template<typename IdT = Aws::String>
-    EngagementSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The number of members in the Engagement.</p>
      */
     inline int GetMemberCount() const { return m_memberCount; }
@@ -96,22 +108,16 @@ namespace Model
     inline void SetMemberCount(int value) { m_memberCountHasBeenSet = true; m_memberCount = value; }
     inline EngagementSummary& WithMemberCount(int value) { SetMemberCount(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The title of the Engagement.</p>
-     */
-    inline const Aws::String& GetTitle() const { return m_title; }
-    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    template<typename TitleT = Aws::String>
-    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
-    template<typename TitleT = Aws::String>
-    EngagementSummary& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
+
+    Aws::String m_id;
+    bool m_idHasBeenSet = false;
+
+    Aws::String m_title;
+    bool m_titleHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
@@ -119,14 +125,8 @@ namespace Model
     Aws::String m_createdBy;
     bool m_createdByHasBeenSet = false;
 
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
-
     int m_memberCount{0};
     bool m_memberCountHasBeenSet = false;
-
-    Aws::String m_title;
-    bool m_titleHasBeenSet = false;
   };
 
 } // namespace Model

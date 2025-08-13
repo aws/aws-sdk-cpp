@@ -49,7 +49,11 @@ namespace Model
     ///@{
     /**
      * <p>Optional element to query the membership relationship status to a provided
-     * list of account IDs.</p>
+     * list of account IDs.</p>  <p> AWS account ID's may appear less than 12
+     * characters and need to be zero-prepended. An example would be
+     * <code>123123123</code> which is nine digits, and with zero-prepend would be
+     * <code>000123123123</code>. Not zero-prepending to 12 digits could result in
+     * errors. </p> 
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const { return m_accountIds; }
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }

@@ -30,11 +30,6 @@ Address& Address::operator =(JsonView jsonValue)
     m_city = jsonValue.GetString("City");
     m_cityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CountryCode"))
-  {
-    m_countryCode = CountryCodeMapper::GetCountryCodeForName(jsonValue.GetString("CountryCode"));
-    m_countryCodeHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("PostalCode"))
   {
     m_postalCode = jsonValue.GetString("PostalCode");
@@ -44,6 +39,11 @@ Address& Address::operator =(JsonView jsonValue)
   {
     m_stateOrRegion = jsonValue.GetString("StateOrRegion");
     m_stateOrRegionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("CountryCode"))
+  {
+    m_countryCode = CountryCodeMapper::GetCountryCodeForName(jsonValue.GetString("CountryCode"));
+    m_countryCodeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("StreetAddress"))
   {
@@ -63,11 +63,6 @@ JsonValue Address::Jsonize() const
 
   }
 
-  if(m_countryCodeHasBeenSet)
-  {
-   payload.WithString("CountryCode", CountryCodeMapper::GetNameForCountryCode(m_countryCode));
-  }
-
   if(m_postalCodeHasBeenSet)
   {
    payload.WithString("PostalCode", m_postalCode);
@@ -78,6 +73,11 @@ JsonValue Address::Jsonize() const
   {
    payload.WithString("StateOrRegion", m_stateOrRegion);
 
+  }
+
+  if(m_countryCodeHasBeenSet)
+  {
+   payload.WithString("CountryCode", CountryCodeMapper::GetNameForCountryCode(m_countryCode));
   }
 
   if(m_streetAddressHasBeenSet)

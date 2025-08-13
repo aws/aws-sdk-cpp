@@ -48,7 +48,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>An optional element used in combination with CreateCaseComment.</p>
+     * <p> <p>The <code>clientToken</code> field is an idempotency key used to
+     * ensure that repeated attempts for a single action will be ignored by the server
+     * during retries. A caller supplied unique ID (typically a UUID) should be
+     * provided. </p> </p>
      */
     inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }

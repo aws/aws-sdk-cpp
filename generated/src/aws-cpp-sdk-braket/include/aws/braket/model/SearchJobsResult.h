@@ -52,7 +52,7 @@ namespace Model
     /**
      * <p>A token used for pagination of results, or <code>null</code> if there are no
      * additional results. Use the token value in a subsequent request to continue
-     * results where the previous request ended.</p>
+     * search where the previous request ended.</p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     template<typename NextTokenT = Aws::String>

@@ -16,14 +16,9 @@ Aws::String SearchJobsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_filtersHasBeenSet)
+  if(m_nextTokenHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
-   for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
-   {
-     filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
-   }
-   payload.WithArray("filters", std::move(filtersJsonList));
+   payload.WithString("nextToken", m_nextToken);
 
   }
 
@@ -33,9 +28,14 @@ Aws::String SearchJobsRequest::SerializePayload() const
 
   }
 
-  if(m_nextTokenHasBeenSet)
+  if(m_filtersHasBeenSet)
   {
-   payload.WithString("nextToken", m_nextToken);
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
+   for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
+   {
+     filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
+   }
+   payload.WithArray("filters", std::move(filtersJsonList));
 
   }
 

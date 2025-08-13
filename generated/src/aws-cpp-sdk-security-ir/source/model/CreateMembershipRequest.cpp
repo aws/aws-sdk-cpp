@@ -61,6 +61,12 @@ Aws::String CreateMembershipRequest::SerializePayload() const
 
   }
 
+  if(m_coverEntireOrganizationHasBeenSet)
+  {
+   payload.WithBool("coverEntireOrganization", m_coverEntireOrganization);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

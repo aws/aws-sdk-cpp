@@ -67,23 +67,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A URL providing additional information or context about the spend
-     * estimation.</p>
-     */
-    inline const Aws::String& GetEstimationUrl() const { return m_estimationUrl; }
-    inline bool EstimationUrlHasBeenSet() const { return m_estimationUrlHasBeenSet; }
-    template<typename EstimationUrlT = Aws::String>
-    void SetEstimationUrl(EstimationUrlT&& value) { m_estimationUrlHasBeenSet = true; m_estimationUrl = std::forward<EstimationUrlT>(value); }
-    template<typename EstimationUrlT = Aws::String>
-    ExpectedCustomerSpend& WithEstimationUrl(EstimationUrlT&& value) { SetEstimationUrl(std::forward<EstimationUrlT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Indicates how frequently the customer is expected to spend the projected
-     * amount. This can include values such as <code>Monthly</code>,
-     * <code>Quarterly</code>, or <code>Annually</code>. The default value is
-     * <code>Monthly</code>, representing recurring monthly spend.</p>
+     * amount. Only the value <code>Monthly</code> is allowed for the
+     * <code>Frequency</code> field, representing recurring monthly spend.</p>
      */
     inline PaymentFrequency GetFrequency() const { return m_frequency; }
     inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
@@ -95,7 +81,9 @@ namespace Model
     /**
      * <p>Specifies the name of the partner company that is expected to generate
      * revenue from the opportunity. This field helps track the partner’s involvement
-     * in the opportunity.</p>
+     * in the opportunity. This field only accepts the value <code>AWS</code>. If any
+     * other value is provided, the system will automatically set it to
+     * <code>AWS</code>.</p>
      */
     inline const Aws::String& GetTargetCompany() const { return m_targetCompany; }
     inline bool TargetCompanyHasBeenSet() const { return m_targetCompanyHasBeenSet; }
@@ -103,6 +91,19 @@ namespace Model
     void SetTargetCompany(TargetCompanyT&& value) { m_targetCompanyHasBeenSet = true; m_targetCompany = std::forward<TargetCompanyT>(value); }
     template<typename TargetCompanyT = Aws::String>
     ExpectedCustomerSpend& WithTargetCompany(TargetCompanyT&& value) { SetTargetCompany(std::forward<TargetCompanyT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A URL providing additional information or context about the spend
+     * estimation.</p>
+     */
+    inline const Aws::String& GetEstimationUrl() const { return m_estimationUrl; }
+    inline bool EstimationUrlHasBeenSet() const { return m_estimationUrlHasBeenSet; }
+    template<typename EstimationUrlT = Aws::String>
+    void SetEstimationUrl(EstimationUrlT&& value) { m_estimationUrlHasBeenSet = true; m_estimationUrl = std::forward<EstimationUrlT>(value); }
+    template<typename EstimationUrlT = Aws::String>
+    ExpectedCustomerSpend& WithEstimationUrl(EstimationUrlT&& value) { SetEstimationUrl(std::forward<EstimationUrlT>(value)); return *this;}
     ///@}
   private:
 
@@ -112,14 +113,14 @@ namespace Model
     ExpectedCustomerSpendCurrencyCodeEnum m_currencyCode{ExpectedCustomerSpendCurrencyCodeEnum::NOT_SET};
     bool m_currencyCodeHasBeenSet = false;
 
-    Aws::String m_estimationUrl;
-    bool m_estimationUrlHasBeenSet = false;
-
     PaymentFrequency m_frequency{PaymentFrequency::NOT_SET};
     bool m_frequencyHasBeenSet = false;
 
     Aws::String m_targetCompany;
     bool m_targetCompanyHasBeenSet = false;
+
+    Aws::String m_estimationUrl;
+    bool m_estimationUrlHasBeenSet = false;
   };
 
 } // namespace Model

@@ -79,6 +79,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of resource for which the snapshot job is being created. Must be one
+     * of the supported resource types i.e. <code>Opportunity</code> </p>
+     */
+    inline ResourceType GetResourceType() const { return m_resourceType; }
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline CreateResourceSnapshotJobRequest& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies the identifier of the specific resource to be snapshotted. The
      * format depends on the <code> ResourceType</code>.</p>
      */
@@ -105,17 +116,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of resource for which the snapshot job is being created. Must be one
-     * of the supported resource types i.e. <code>Opportunity</code> </p>
-     */
-    inline ResourceType GetResourceType() const { return m_resourceType; }
-    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline CreateResourceSnapshotJobRequest& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A map of the key-value pairs of the tag or tags to assign.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
@@ -138,14 +138,14 @@ namespace Model
     Aws::String m_engagementIdentifier;
     bool m_engagementIdentifierHasBeenSet = false;
 
+    ResourceType m_resourceType{ResourceType::NOT_SET};
+    bool m_resourceTypeHasBeenSet = false;
+
     Aws::String m_resourceIdentifier;
     bool m_resourceIdentifierHasBeenSet = false;
 
     Aws::String m_resourceSnapshotTemplateIdentifier;
     bool m_resourceSnapshotTemplateIdentifierHasBeenSet = false;
-
-    ResourceType m_resourceType{ResourceType::NOT_SET};
-    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

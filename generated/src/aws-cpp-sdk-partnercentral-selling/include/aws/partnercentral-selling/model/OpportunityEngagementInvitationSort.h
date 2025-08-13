@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
-#include <aws/partnercentral-selling/model/OpportunityEngagementInvitationSortName.h>
 #include <aws/partnercentral-selling/model/SortOrder.h>
+#include <aws/partnercentral-selling/model/OpportunityEngagementInvitationSortName.h>
 #include <utility>
 
 namespace Aws
@@ -42,17 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the field by which the Engagement Invitations are sorted. Common
-     * values include <code>InvitationDate</code> and <code>Status</code>.</p>
-     */
-    inline OpportunityEngagementInvitationSortName GetSortBy() const { return m_sortBy; }
-    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(OpportunityEngagementInvitationSortName value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline OpportunityEngagementInvitationSort& WithSortBy(OpportunityEngagementInvitationSortName value) { SetSortBy(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Defines the order in which the Engagement Invitations are sorted. The values
      * can be <code>ASC</code> (ascending) or <code>DESC</code> (descending).</p>
      */
@@ -61,13 +50,24 @@ namespace Model
     inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
     inline OpportunityEngagementInvitationSort& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
-  private:
 
-    OpportunityEngagementInvitationSortName m_sortBy{OpportunityEngagementInvitationSortName::NOT_SET};
-    bool m_sortByHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Specifies the field by which the Engagement Invitations are sorted. Common
+     * values include <code>InvitationDate</code> and <code>Status</code>.</p>
+     */
+    inline OpportunityEngagementInvitationSortName GetSortBy() const { return m_sortBy; }
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+    inline void SetSortBy(OpportunityEngagementInvitationSortName value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline OpportunityEngagementInvitationSort& WithSortBy(OpportunityEngagementInvitationSortName value) { SetSortBy(value); return *this;}
+    ///@}
+  private:
 
     SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
+
+    OpportunityEngagementInvitationSortName m_sortBy{OpportunityEngagementInvitationSortName::NOT_SET};
+    bool m_sortByHasBeenSet = false;
   };
 
 } // namespace Model

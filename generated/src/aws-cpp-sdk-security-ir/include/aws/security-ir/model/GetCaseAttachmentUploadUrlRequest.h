@@ -36,7 +36,7 @@ namespace Model
     ///@{
     /**
      * <p>Required element for GetCaseAttachmentUploadUrl to identify the case ID for
-     * uploading an attachment to. </p>
+     * uploading an attachment. </p>
      */
     inline const Aws::String& GetCaseId() const { return m_caseId; }
     inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
@@ -61,7 +61,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Required element for GetCaseAttachmentUploadUrl to identify the size od the
+     * <p>Required element for GetCaseAttachmentUploadUrl to identify the size of the
      * file attachment.</p>
      */
     inline long long GetContentLength() const { return m_contentLength; }
@@ -72,7 +72,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Optional element for customer provided token.</p>
+     * <p> <p>The <code>clientToken</code> field is an idempotency key used to
+     * ensure that repeated attempts for a single action will be ignored by the server
+     * during retries. A caller supplied unique ID (typically a UUID) should be
+     * provided. </p> </p>
      */
     inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }

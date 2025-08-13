@@ -16,23 +16,6 @@ Aws::String CreateQuantumTaskRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithString("action", m_action);
-
-  }
-
-  if(m_associationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> associationsJsonList(m_associations.size());
-   for(unsigned associationsIndex = 0; associationsIndex < associationsJsonList.GetLength(); ++associationsIndex)
-   {
-     associationsJsonList[associationsIndex].AsObject(m_associations[associationsIndex].Jsonize());
-   }
-   payload.WithArray("associations", std::move(associationsJsonList));
-
-  }
-
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
@@ -51,9 +34,9 @@ Aws::String CreateQuantumTaskRequest::SerializePayload() const
 
   }
 
-  if(m_jobTokenHasBeenSet)
+  if(m_shotsHasBeenSet)
   {
-   payload.WithString("jobToken", m_jobToken);
+   payload.WithInt64("shots", m_shots);
 
   }
 
@@ -69,9 +52,9 @@ Aws::String CreateQuantumTaskRequest::SerializePayload() const
 
   }
 
-  if(m_shotsHasBeenSet)
+  if(m_actionHasBeenSet)
   {
-   payload.WithInt64("shots", m_shots);
+   payload.WithString("action", m_action);
 
   }
 
@@ -83,6 +66,23 @@ Aws::String CreateQuantumTaskRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_jobTokenHasBeenSet)
+  {
+   payload.WithString("jobToken", m_jobToken);
+
+  }
+
+  if(m_associationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> associationsJsonList(m_associations.size());
+   for(unsigned associationsIndex = 0; associationsIndex < associationsJsonList.GetLength(); ++associationsIndex)
+   {
+     associationsJsonList[associationsIndex].AsObject(m_associations[associationsIndex].Jsonize());
+   }
+   payload.WithArray("associations", std::move(associationsJsonList));
 
   }
 

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
-#include <aws/partnercentral-selling/model/SolutionSortName.h>
 #include <aws/partnercentral-selling/model/SortOrder.h>
+#include <aws/partnercentral-selling/model/SolutionSortName.h>
 #include <utility>
 
 namespace Aws
@@ -41,17 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the attribute to sort by, such as <code>Name</code>,
-     * <code>CreatedDate</code>, or <code>Status</code>.</p>
-     */
-    inline SolutionSortName GetSortBy() const { return m_sortBy; }
-    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(SolutionSortName value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline SolutionSort& WithSortBy(SolutionSortName value) { SetSortBy(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Specifies the sorting order, either <code>Ascending</code> or
      * <code>Descending</code>. The default is <code>Descending</code>.</p>
      */
@@ -60,13 +49,24 @@ namespace Model
     inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
     inline SolutionSort& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
-  private:
 
-    SolutionSortName m_sortBy{SolutionSortName::NOT_SET};
-    bool m_sortByHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Specifies the attribute to sort by, such as <code>Name</code>,
+     * <code>CreatedDate</code>, or <code>Status</code>.</p>
+     */
+    inline SolutionSortName GetSortBy() const { return m_sortBy; }
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+    inline void SetSortBy(SolutionSortName value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline SolutionSort& WithSortBy(SolutionSortName value) { SetSortBy(value); return *this;}
+    ///@}
+  private:
 
     SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
+
+    SolutionSortName m_sortBy{SolutionSortName::NOT_SET};
+    bool m_sortByHasBeenSet = false;
   };
 
 } // namespace Model

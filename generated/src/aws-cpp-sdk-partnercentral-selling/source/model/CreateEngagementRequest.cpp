@@ -28,14 +28,9 @@ Aws::String CreateEngagementRequest::SerializePayload() const
 
   }
 
-  if(m_contextsHasBeenSet)
+  if(m_titleHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> contextsJsonList(m_contexts.size());
-   for(unsigned contextsIndex = 0; contextsIndex < contextsJsonList.GetLength(); ++contextsIndex)
-   {
-     contextsJsonList[contextsIndex].AsObject(m_contexts[contextsIndex].Jsonize());
-   }
-   payload.WithArray("Contexts", std::move(contextsJsonList));
+   payload.WithString("Title", m_title);
 
   }
 
@@ -45,9 +40,14 @@ Aws::String CreateEngagementRequest::SerializePayload() const
 
   }
 
-  if(m_titleHasBeenSet)
+  if(m_contextsHasBeenSet)
   {
-   payload.WithString("Title", m_title);
+   Aws::Utils::Array<JsonValue> contextsJsonList(m_contexts.size());
+   for(unsigned contextsIndex = 0; contextsIndex < contextsJsonList.GetLength(); ++contextsIndex)
+   {
+     contextsJsonList[contextsIndex].AsObject(m_contexts[contextsIndex].Jsonize());
+   }
+   payload.WithArray("Contexts", std::move(contextsJsonList));
 
   }
 

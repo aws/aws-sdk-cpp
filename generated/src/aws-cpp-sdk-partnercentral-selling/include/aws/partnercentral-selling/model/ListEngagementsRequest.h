@@ -66,20 +66,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of strings representing engagement identifiers to retrieve.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetEngagementIdentifier() const { return m_engagementIdentifier; }
-    inline bool EngagementIdentifierHasBeenSet() const { return m_engagementIdentifierHasBeenSet; }
-    template<typename EngagementIdentifierT = Aws::Vector<Aws::String>>
-    void SetEngagementIdentifier(EngagementIdentifierT&& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier = std::forward<EngagementIdentifierT>(value); }
-    template<typename EngagementIdentifierT = Aws::Vector<Aws::String>>
-    ListEngagementsRequest& WithEngagementIdentifier(EngagementIdentifierT&& value) { SetEngagementIdentifier(std::forward<EngagementIdentifierT>(value)); return *this;}
-    template<typename EngagementIdentifierT = Aws::String>
-    ListEngagementsRequest& AddEngagementIdentifier(EngagementIdentifierT&& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier.emplace_back(std::forward<EngagementIdentifierT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>An array of strings representing AWS Account IDs. Use this to exclude
      * engagements created by specific users. </p>
      */
@@ -91,6 +77,16 @@ namespace Model
     ListEngagementsRequest& WithExcludeCreatedBy(ExcludeCreatedByT&& value) { SetExcludeCreatedBy(std::forward<ExcludeCreatedByT>(value)); return *this;}
     template<typename ExcludeCreatedByT = Aws::String>
     ListEngagementsRequest& AddExcludeCreatedBy(ExcludeCreatedByT&& value) { m_excludeCreatedByHasBeenSet = true; m_excludeCreatedBy.emplace_back(std::forward<ExcludeCreatedByT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    
+    inline const EngagementSort& GetSort() const { return m_sort; }
+    inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
+    template<typename SortT = EngagementSort>
+    void SetSort(SortT&& value) { m_sortHasBeenSet = true; m_sort = std::forward<SortT>(value); }
+    template<typename SortT = EngagementSort>
+    ListEngagementsRequest& WithSort(SortT&& value) { SetSort(std::forward<SortT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,13 +113,17 @@ namespace Model
     ///@}
 
     ///@{
-    
-    inline const EngagementSort& GetSort() const { return m_sort; }
-    inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
-    template<typename SortT = EngagementSort>
-    void SetSort(SortT&& value) { m_sortHasBeenSet = true; m_sort = std::forward<SortT>(value); }
-    template<typename SortT = EngagementSort>
-    ListEngagementsRequest& WithSort(SortT&& value) { SetSort(std::forward<SortT>(value)); return *this;}
+    /**
+     * <p>An array of strings representing engagement identifiers to retrieve.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetEngagementIdentifier() const { return m_engagementIdentifier; }
+    inline bool EngagementIdentifierHasBeenSet() const { return m_engagementIdentifierHasBeenSet; }
+    template<typename EngagementIdentifierT = Aws::Vector<Aws::String>>
+    void SetEngagementIdentifier(EngagementIdentifierT&& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier = std::forward<EngagementIdentifierT>(value); }
+    template<typename EngagementIdentifierT = Aws::Vector<Aws::String>>
+    ListEngagementsRequest& WithEngagementIdentifier(EngagementIdentifierT&& value) { SetEngagementIdentifier(std::forward<EngagementIdentifierT>(value)); return *this;}
+    template<typename EngagementIdentifierT = Aws::String>
+    ListEngagementsRequest& AddEngagementIdentifier(EngagementIdentifierT&& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier.emplace_back(std::forward<EngagementIdentifierT>(value)); return *this; }
     ///@}
   private:
 
@@ -133,11 +133,11 @@ namespace Model
     Aws::Vector<Aws::String> m_createdBy;
     bool m_createdByHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_engagementIdentifier;
-    bool m_engagementIdentifierHasBeenSet = false;
-
     Aws::Vector<Aws::String> m_excludeCreatedBy;
     bool m_excludeCreatedByHasBeenSet = false;
+
+    EngagementSort m_sort;
+    bool m_sortHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
@@ -145,8 +145,8 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    EngagementSort m_sort;
-    bool m_sortHasBeenSet = false;
+    Aws::Vector<Aws::String> m_engagementIdentifier;
+    bool m_engagementIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

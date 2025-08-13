@@ -8,6 +8,7 @@
 #include <aws/security-ir/SecurityIRRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/security-ir/model/MembershipAccountsConfigurationsUpdate.h>
 #include <aws/security-ir/model/IncidentResponder.h>
 #include <aws/security-ir/model/OptInFeature.h>
 #include <utility>
@@ -88,6 +89,41 @@ namespace Model
     template<typename OptInFeaturesT = OptInFeature>
     UpdateMembershipRequest& AddOptInFeatures(OptInFeaturesT&& value) { m_optInFeaturesHasBeenSet = true; m_optInFeatures.emplace_back(std::forward<OptInFeaturesT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The <code>membershipAccountsConfigurationsUpdate</code> field in the
+     * <code>UpdateMembershipRequest</code> structure allows you to update the
+     * configuration settings for accounts within a membership. </p> <p>This field is
+     * optional and contains a structure of type
+     * <code>MembershipAccountsConfigurationsUpdate </code> that specifies the updated
+     * account configurations for the membership. </p>
+     */
+    inline const MembershipAccountsConfigurationsUpdate& GetMembershipAccountsConfigurationsUpdate() const { return m_membershipAccountsConfigurationsUpdate; }
+    inline bool MembershipAccountsConfigurationsUpdateHasBeenSet() const { return m_membershipAccountsConfigurationsUpdateHasBeenSet; }
+    template<typename MembershipAccountsConfigurationsUpdateT = MembershipAccountsConfigurationsUpdate>
+    void SetMembershipAccountsConfigurationsUpdate(MembershipAccountsConfigurationsUpdateT&& value) { m_membershipAccountsConfigurationsUpdateHasBeenSet = true; m_membershipAccountsConfigurationsUpdate = std::forward<MembershipAccountsConfigurationsUpdateT>(value); }
+    template<typename MembershipAccountsConfigurationsUpdateT = MembershipAccountsConfigurationsUpdate>
+    UpdateMembershipRequest& WithMembershipAccountsConfigurationsUpdate(MembershipAccountsConfigurationsUpdateT&& value) { SetMembershipAccountsConfigurationsUpdate(std::forward<MembershipAccountsConfigurationsUpdateT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The <code>undoMembershipCancellation</code> parameter is a boolean flag that
+     * indicates whether to reverse a previously requested membership cancellation.
+     * When set to true, this will revoke the cancellation request and maintain the
+     * membership status. </p> <p>This parameter is optional and can be used in
+     * scenarios where you need to restore a membership that was marked for
+     * cancellation but hasn't been fully terminated yet. </p> <ul> <li> <p>If set to
+     * <code>true</code>, the cancellation request will be revoked </p> </li> <li>
+     * <p>If set to <code>false</code> the service will throw a ValidationException.
+     * </p> </li> </ul>
+     */
+    inline bool GetUndoMembershipCancellation() const { return m_undoMembershipCancellation; }
+    inline bool UndoMembershipCancellationHasBeenSet() const { return m_undoMembershipCancellationHasBeenSet; }
+    inline void SetUndoMembershipCancellation(bool value) { m_undoMembershipCancellationHasBeenSet = true; m_undoMembershipCancellation = value; }
+    inline UpdateMembershipRequest& WithUndoMembershipCancellation(bool value) { SetUndoMembershipCancellation(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_membershipId;
@@ -101,6 +137,12 @@ namespace Model
 
     Aws::Vector<OptInFeature> m_optInFeatures;
     bool m_optInFeaturesHasBeenSet = false;
+
+    MembershipAccountsConfigurationsUpdate m_membershipAccountsConfigurationsUpdate;
+    bool m_membershipAccountsConfigurationsUpdateHasBeenSet = false;
+
+    bool m_undoMembershipCancellation{false};
+    bool m_undoMembershipCancellationHasBeenSet = false;
   };
 
 } // namespace Model

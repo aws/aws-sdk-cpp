@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Response element providing the Amazon S3 presigned UTL to upload the
+     * <p>Response element providing the Amazon S3 presigned URL to upload the
      * attachment.</p>
      */
     inline const Aws::String& GetAttachmentPresignedUrl() const { return m_attachmentPresignedUrl; }

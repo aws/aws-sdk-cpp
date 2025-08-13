@@ -25,15 +25,14 @@ OpportunityInvitationPayload::OpportunityInvitationPayload(JsonView jsonValue)
 
 OpportunityInvitationPayload& OpportunityInvitationPayload::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Customer"))
+  if(jsonValue.ValueExists("SenderContacts"))
   {
-    m_customer = jsonValue.GetObject("Customer");
-    m_customerHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Project"))
-  {
-    m_project = jsonValue.GetObject("Project");
-    m_projectHasBeenSet = true;
+    Aws::Utils::Array<JsonView> senderContactsJsonList = jsonValue.GetArray("SenderContacts");
+    for(unsigned senderContactsIndex = 0; senderContactsIndex < senderContactsJsonList.GetLength(); ++senderContactsIndex)
+    {
+      m_senderContacts.push_back(senderContactsJsonList[senderContactsIndex].AsObject());
+    }
+    m_senderContactsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ReceiverResponsibilities"))
   {
@@ -44,14 +43,15 @@ OpportunityInvitationPayload& OpportunityInvitationPayload::operator =(JsonView 
     }
     m_receiverResponsibilitiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SenderContacts"))
+  if(jsonValue.ValueExists("Customer"))
   {
-    Aws::Utils::Array<JsonView> senderContactsJsonList = jsonValue.GetArray("SenderContacts");
-    for(unsigned senderContactsIndex = 0; senderContactsIndex < senderContactsJsonList.GetLength(); ++senderContactsIndex)
-    {
-      m_senderContacts.push_back(senderContactsJsonList[senderContactsIndex].AsObject());
-    }
-    m_senderContactsHasBeenSet = true;
+    m_customer = jsonValue.GetObject("Customer");
+    m_customerHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Project"))
+  {
+    m_project = jsonValue.GetObject("Project");
+    m_projectHasBeenSet = true;
   }
   return *this;
 }
@@ -60,15 +60,14 @@ JsonValue OpportunityInvitationPayload::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_customerHasBeenSet)
+  if(m_senderContactsHasBeenSet)
   {
-   payload.WithObject("Customer", m_customer.Jsonize());
-
-  }
-
-  if(m_projectHasBeenSet)
-  {
-   payload.WithObject("Project", m_project.Jsonize());
+   Aws::Utils::Array<JsonValue> senderContactsJsonList(m_senderContacts.size());
+   for(unsigned senderContactsIndex = 0; senderContactsIndex < senderContactsJsonList.GetLength(); ++senderContactsIndex)
+   {
+     senderContactsJsonList[senderContactsIndex].AsObject(m_senderContacts[senderContactsIndex].Jsonize());
+   }
+   payload.WithArray("SenderContacts", std::move(senderContactsJsonList));
 
   }
 
@@ -83,14 +82,15 @@ JsonValue OpportunityInvitationPayload::Jsonize() const
 
   }
 
-  if(m_senderContactsHasBeenSet)
+  if(m_customerHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> senderContactsJsonList(m_senderContacts.size());
-   for(unsigned senderContactsIndex = 0; senderContactsIndex < senderContactsJsonList.GetLength(); ++senderContactsIndex)
-   {
-     senderContactsJsonList[senderContactsIndex].AsObject(m_senderContacts[senderContactsIndex].Jsonize());
-   }
-   payload.WithArray("SenderContacts", std::move(senderContactsJsonList));
+   payload.WithObject("Customer", m_customer.Jsonize());
+
+  }
+
+  if(m_projectHasBeenSet)
+  {
+   payload.WithObject("Project", m_project.Jsonize());
 
   }
 

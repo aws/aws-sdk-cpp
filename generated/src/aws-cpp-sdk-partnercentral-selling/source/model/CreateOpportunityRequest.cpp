@@ -22,9 +22,25 @@ Aws::String CreateOpportunityRequest::SerializePayload() const
 
   }
 
-  if(m_clientTokenHasBeenSet)
+  if(m_primaryNeedsFromAwsHasBeenSet)
   {
-   payload.WithString("ClientToken", m_clientToken);
+   Aws::Utils::Array<JsonValue> primaryNeedsFromAwsJsonList(m_primaryNeedsFromAws.size());
+   for(unsigned primaryNeedsFromAwsIndex = 0; primaryNeedsFromAwsIndex < primaryNeedsFromAwsJsonList.GetLength(); ++primaryNeedsFromAwsIndex)
+   {
+     primaryNeedsFromAwsJsonList[primaryNeedsFromAwsIndex].AsString(PrimaryNeedFromAwsMapper::GetNameForPrimaryNeedFromAws(m_primaryNeedsFromAws[primaryNeedsFromAwsIndex]));
+   }
+   payload.WithArray("PrimaryNeedsFromAws", std::move(primaryNeedsFromAwsJsonList));
+
+  }
+
+  if(m_nationalSecurityHasBeenSet)
+  {
+   payload.WithString("NationalSecurity", NationalSecurityMapper::GetNameForNationalSecurity(m_nationalSecurity));
+  }
+
+  if(m_partnerOpportunityIdentifierHasBeenSet)
+  {
+   payload.WithString("PartnerOpportunityIdentifier", m_partnerOpportunityIdentifier);
 
   }
 
@@ -34,10 +50,15 @@ Aws::String CreateOpportunityRequest::SerializePayload() const
 
   }
 
-  if(m_lifeCycleHasBeenSet)
+  if(m_projectHasBeenSet)
   {
-   payload.WithObject("LifeCycle", m_lifeCycle.Jsonize());
+   payload.WithObject("Project", m_project.Jsonize());
 
+  }
+
+  if(m_opportunityTypeHasBeenSet)
+  {
+   payload.WithString("OpportunityType", OpportunityTypeMapper::GetNameForOpportunityType(m_opportunityType));
   }
 
   if(m_marketingHasBeenSet)
@@ -46,9 +67,27 @@ Aws::String CreateOpportunityRequest::SerializePayload() const
 
   }
 
-  if(m_nationalSecurityHasBeenSet)
+  if(m_softwareRevenueHasBeenSet)
   {
-   payload.WithString("NationalSecurity", NationalSecurityMapper::GetNameForNationalSecurity(m_nationalSecurity));
+   payload.WithObject("SoftwareRevenue", m_softwareRevenue.Jsonize());
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("ClientToken", m_clientToken);
+
+  }
+
+  if(m_lifeCycleHasBeenSet)
+  {
+   payload.WithObject("LifeCycle", m_lifeCycle.Jsonize());
+
+  }
+
+  if(m_originHasBeenSet)
+  {
+   payload.WithString("Origin", OpportunityOriginMapper::GetNameForOpportunityOrigin(m_origin));
   }
 
   if(m_opportunityTeamHasBeenSet)
@@ -62,42 +101,14 @@ Aws::String CreateOpportunityRequest::SerializePayload() const
 
   }
 
-  if(m_opportunityTypeHasBeenSet)
+  if(m_tagsHasBeenSet)
   {
-   payload.WithString("OpportunityType", OpportunityTypeMapper::GetNameForOpportunityType(m_opportunityType));
-  }
-
-  if(m_originHasBeenSet)
-  {
-   payload.WithString("Origin", OpportunityOriginMapper::GetNameForOpportunityOrigin(m_origin));
-  }
-
-  if(m_partnerOpportunityIdentifierHasBeenSet)
-  {
-   payload.WithString("PartnerOpportunityIdentifier", m_partnerOpportunityIdentifier);
-
-  }
-
-  if(m_primaryNeedsFromAwsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> primaryNeedsFromAwsJsonList(m_primaryNeedsFromAws.size());
-   for(unsigned primaryNeedsFromAwsIndex = 0; primaryNeedsFromAwsIndex < primaryNeedsFromAwsJsonList.GetLength(); ++primaryNeedsFromAwsIndex)
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
-     primaryNeedsFromAwsJsonList[primaryNeedsFromAwsIndex].AsString(PrimaryNeedFromAwsMapper::GetNameForPrimaryNeedFromAws(m_primaryNeedsFromAws[primaryNeedsFromAwsIndex]));
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
-   payload.WithArray("PrimaryNeedsFromAws", std::move(primaryNeedsFromAwsJsonList));
-
-  }
-
-  if(m_projectHasBeenSet)
-  {
-   payload.WithObject("Project", m_project.Jsonize());
-
-  }
-
-  if(m_softwareRevenueHasBeenSet)
-  {
-   payload.WithObject("SoftwareRevenue", m_softwareRevenue.Jsonize());
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
-#include <aws/partnercentral-selling/model/OpportunitySortName.h>
 #include <aws/partnercentral-selling/model/SortOrder.h>
+#include <aws/partnercentral-selling/model/OpportunitySortName.h>
 #include <utility>
 
 namespace Aws
@@ -40,16 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Field name to sort by.</p>
-     */
-    inline OpportunitySortName GetSortBy() const { return m_sortBy; }
-    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(OpportunitySortName value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline OpportunitySort& WithSortBy(OpportunitySortName value) { SetSortBy(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Sort order.</p> <p>Default: <code>Descending</code> </p>
      */
     inline SortOrder GetSortOrder() const { return m_sortOrder; }
@@ -57,13 +47,23 @@ namespace Model
     inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
     inline OpportunitySort& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
-  private:
 
-    OpportunitySortName m_sortBy{OpportunitySortName::NOT_SET};
-    bool m_sortByHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Field name to sort by.</p>
+     */
+    inline OpportunitySortName GetSortBy() const { return m_sortBy; }
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+    inline void SetSortBy(OpportunitySortName value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline OpportunitySort& WithSortBy(OpportunitySortName value) { SetSortBy(value); return *this;}
+    ///@}
+  private:
 
     SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
+
+    OpportunitySortName m_sortBy{OpportunitySortName::NOT_SET};
+    bool m_sortByHasBeenSet = false;
   };
 
 } // namespace Model

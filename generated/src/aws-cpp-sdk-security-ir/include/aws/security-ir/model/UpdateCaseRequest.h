@@ -236,7 +236,10 @@ namespace Model
     ///@{
     /**
      * <p>Optional element for UpdateCase to provide content to add accounts
-     * impacted.</p>
+     * impacted.</p>  <p> AWS account ID's may appear less than 12 characters and
+     * need to be zero-prepended. An example would be <code>123123123</code> which is
+     * nine digits, and with zero-prepend would be <code>000123123123</code>. Not
+     * zero-prepending to 12 digits could result in errors. </p> 
      */
     inline const Aws::Vector<Aws::String>& GetImpactedAccountsToAdd() const { return m_impactedAccountsToAdd; }
     inline bool ImpactedAccountsToAddHasBeenSet() const { return m_impactedAccountsToAddHasBeenSet; }
@@ -251,7 +254,10 @@ namespace Model
     ///@{
     /**
      * <p>Optional element for UpdateCase to provide content to add accounts
-     * impacted.</p>
+     * impacted.</p>  <p> AWS account ID's may appear less than 12 characters and
+     * need to be zero-prepended. An example would be <code>123123123</code> which is
+     * nine digits, and with zero-prepend would be <code>000123123123</code>. Not
+     * zero-prepending to 12 digits could result in errors. </p> 
      */
     inline const Aws::Vector<Aws::String>& GetImpactedAccountsToDelete() const { return m_impactedAccountsToDelete; }
     inline bool ImpactedAccountsToDeleteHasBeenSet() const { return m_impactedAccountsToDeleteHasBeenSet; }

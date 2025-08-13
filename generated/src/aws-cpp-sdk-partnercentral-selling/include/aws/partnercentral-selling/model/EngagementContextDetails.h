@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
-#include <aws/partnercentral-selling/model/EngagementContextPayload.h>
 #include <aws/partnercentral-selling/model/EngagementContextType.h>
+#include <aws/partnercentral-selling/model/EngagementContextPayload.h>
 #include <utility>
 
 namespace Aws
@@ -42,6 +42,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the type of Engagement context. Valid values are "CustomerProject"
+     * or "Document", indicating whether the context relates to a customer project or a
+     * document respectively. </p>
+     */
+    inline EngagementContextType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(EngagementContextType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline EngagementContextDetails& WithType(EngagementContextType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains the specific details of the Engagement context. The structure of
      * this payload varies depending on the Type field. </p>
      */
@@ -52,25 +64,13 @@ namespace Model
     template<typename PayloadT = EngagementContextPayload>
     EngagementContextDetails& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Specifies the type of Engagement context. Valid values are "CustomerProject"
-     * or "Document", indicating whether the context relates to a customer project or a
-     * document respectively. </p>
-     */
-    inline EngagementContextType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(EngagementContextType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline EngagementContextDetails& WithType(EngagementContextType value) { SetType(value); return *this;}
-    ///@}
   private:
-
-    EngagementContextPayload m_payload;
-    bool m_payloadHasBeenSet = false;
 
     EngagementContextType m_type{EngagementContextType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    EngagementContextPayload m_payload;
+    bool m_payloadHasBeenSet = false;
   };
 
 } // namespace Model

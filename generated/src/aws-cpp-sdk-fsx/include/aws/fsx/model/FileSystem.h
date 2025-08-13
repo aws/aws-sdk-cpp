@@ -17,6 +17,7 @@
 #include <aws/fsx/model/AdministrativeAction.h>
 #include <aws/fsx/model/OntapFileSystemConfiguration.h>
 #include <aws/fsx/model/OpenZFSFileSystemConfiguration.h>
+#include <aws/fsx/model/NetworkType.h>
 #include <aws/fsx/model/Tag.h>
 #include <utility>
 
@@ -351,6 +352,16 @@ namespace Model
     template<typename OpenZFSConfigurationT = OpenZFSFileSystemConfiguration>
     FileSystem& WithOpenZFSConfiguration(OpenZFSConfigurationT&& value) { SetOpenZFSConfiguration(std::forward<OpenZFSConfigurationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The network type of the file system.</p>
+     */
+    inline NetworkType GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    inline void SetNetworkType(NetworkType value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline FileSystem& WithNetworkType(NetworkType value) { SetNetworkType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_ownerId;
@@ -415,6 +426,9 @@ namespace Model
 
     OpenZFSFileSystemConfiguration m_openZFSConfiguration;
     bool m_openZFSConfigurationHasBeenSet = false;
+
+    NetworkType m_networkType{NetworkType::NOT_SET};
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

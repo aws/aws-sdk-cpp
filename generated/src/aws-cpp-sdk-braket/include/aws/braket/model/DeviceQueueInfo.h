@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/braket/Braket_EXPORTS.h>
 #include <aws/braket/model/QueueName.h>
-#include <aws/braket/model/QueuePriority.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/braket/model/QueuePriority.h>
 #include <utility>
 
 namespace Aws
@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about tasks and jobs queued on a device.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Information about quantum tasks and hybrid jobs queued on a
+   * device.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/DeviceQueueInfo">AWS
    * API Reference</a></p>
    */
@@ -52,18 +52,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Optional. Specifies the priority of the queue. Tasks in a priority queue are
-     * processed before the tasks in a normal queue.</p>
-     */
-    inline QueuePriority GetQueuePriority() const { return m_queuePriority; }
-    inline bool QueuePriorityHasBeenSet() const { return m_queuePriorityHasBeenSet; }
-    inline void SetQueuePriority(QueuePriority value) { m_queuePriorityHasBeenSet = true; m_queuePriority = value; }
-    inline DeviceQueueInfo& WithQueuePriority(QueuePriority value) { SetQueuePriority(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The number of jobs or tasks in the queue for a given device. </p>
+     * <p>The number of hybrid jobs or quantum tasks in the queue for a given device.
+     * </p>
      */
     inline const Aws::String& GetQueueSize() const { return m_queueSize; }
     inline bool QueueSizeHasBeenSet() const { return m_queueSizeHasBeenSet; }
@@ -72,16 +62,27 @@ namespace Model
     template<typename QueueSizeT = Aws::String>
     DeviceQueueInfo& WithQueueSize(QueueSizeT&& value) { SetQueueSize(std::forward<QueueSizeT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Optional. Specifies the priority of the queue. Quantum tasks in a priority
+     * queue are processed before the quantum tasks in a normal queue.</p>
+     */
+    inline QueuePriority GetQueuePriority() const { return m_queuePriority; }
+    inline bool QueuePriorityHasBeenSet() const { return m_queuePriorityHasBeenSet; }
+    inline void SetQueuePriority(QueuePriority value) { m_queuePriorityHasBeenSet = true; m_queuePriority = value; }
+    inline DeviceQueueInfo& WithQueuePriority(QueuePriority value) { SetQueuePriority(value); return *this;}
+    ///@}
   private:
 
     QueueName m_queue{QueueName::NOT_SET};
     bool m_queueHasBeenSet = false;
 
-    QueuePriority m_queuePriority{QueuePriority::NOT_SET};
-    bool m_queuePriorityHasBeenSet = false;
-
     Aws::String m_queueSize;
     bool m_queueSizeHasBeenSet = false;
+
+    QueuePriority m_queuePriority{QueuePriority::NOT_SET};
+    bool m_queuePriorityHasBeenSet = false;
   };
 
 } // namespace Model

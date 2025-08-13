@@ -16,23 +16,6 @@ Aws::String ListEngagementByAcceptingInvitationTasksRequest::SerializePayload() 
 {
   JsonValue payload;
 
-  if(m_catalogHasBeenSet)
-  {
-   payload.WithString("Catalog", m_catalog);
-
-  }
-
-  if(m_engagementInvitationIdentifierHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> engagementInvitationIdentifierJsonList(m_engagementInvitationIdentifier.size());
-   for(unsigned engagementInvitationIdentifierIndex = 0; engagementInvitationIdentifierIndex < engagementInvitationIdentifierJsonList.GetLength(); ++engagementInvitationIdentifierIndex)
-   {
-     engagementInvitationIdentifierJsonList[engagementInvitationIdentifierIndex].AsString(m_engagementInvitationIdentifier[engagementInvitationIdentifierIndex]);
-   }
-   payload.WithArray("EngagementInvitationIdentifier", std::move(engagementInvitationIdentifierJsonList));
-
-  }
-
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("MaxResults", m_maxResults);
@@ -42,6 +25,29 @@ Aws::String ListEngagementByAcceptingInvitationTasksRequest::SerializePayload() 
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_sortHasBeenSet)
+  {
+   payload.WithObject("Sort", m_sort.Jsonize());
+
+  }
+
+  if(m_catalogHasBeenSet)
+  {
+   payload.WithString("Catalog", m_catalog);
+
+  }
+
+  if(m_taskStatusHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> taskStatusJsonList(m_taskStatus.size());
+   for(unsigned taskStatusIndex = 0; taskStatusIndex < taskStatusJsonList.GetLength(); ++taskStatusIndex)
+   {
+     taskStatusJsonList[taskStatusIndex].AsString(TaskStatusMapper::GetNameForTaskStatus(m_taskStatus[taskStatusIndex]));
+   }
+   payload.WithArray("TaskStatus", std::move(taskStatusJsonList));
 
   }
 
@@ -56,9 +62,14 @@ Aws::String ListEngagementByAcceptingInvitationTasksRequest::SerializePayload() 
 
   }
 
-  if(m_sortHasBeenSet)
+  if(m_engagementInvitationIdentifierHasBeenSet)
   {
-   payload.WithObject("Sort", m_sort.Jsonize());
+   Aws::Utils::Array<JsonValue> engagementInvitationIdentifierJsonList(m_engagementInvitationIdentifier.size());
+   for(unsigned engagementInvitationIdentifierIndex = 0; engagementInvitationIdentifierIndex < engagementInvitationIdentifierJsonList.GetLength(); ++engagementInvitationIdentifierIndex)
+   {
+     engagementInvitationIdentifierJsonList[engagementInvitationIdentifierIndex].AsString(m_engagementInvitationIdentifier[engagementInvitationIdentifierIndex]);
+   }
+   payload.WithArray("EngagementInvitationIdentifier", std::move(engagementInvitationIdentifierJsonList));
 
   }
 
@@ -70,17 +81,6 @@ Aws::String ListEngagementByAcceptingInvitationTasksRequest::SerializePayload() 
      taskIdentifierJsonList[taskIdentifierIndex].AsString(m_taskIdentifier[taskIdentifierIndex]);
    }
    payload.WithArray("TaskIdentifier", std::move(taskIdentifierJsonList));
-
-  }
-
-  if(m_taskStatusHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> taskStatusJsonList(m_taskStatus.size());
-   for(unsigned taskStatusIndex = 0; taskStatusIndex < taskStatusJsonList.GetLength(); ++taskStatusIndex)
-   {
-     taskStatusJsonList[taskStatusIndex].AsString(TaskStatusMapper::GetNameForTaskStatus(m_taskStatus[taskStatusIndex]));
-   }
-   payload.WithArray("TaskStatus", std::move(taskStatusJsonList));
 
   }
 

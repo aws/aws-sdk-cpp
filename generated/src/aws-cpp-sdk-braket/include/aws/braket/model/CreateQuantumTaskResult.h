@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the task created by the request.</p>
+     * <p>The ARN of the quantum task created by the request.</p>
      */
     inline const Aws::String& GetQuantumTaskArn() const { return m_quantumTaskArn; }
     template<typename QuantumTaskArnT = Aws::String>

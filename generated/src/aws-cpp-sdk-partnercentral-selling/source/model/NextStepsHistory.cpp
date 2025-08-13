@@ -25,15 +25,15 @@ NextStepsHistory::NextStepsHistory(JsonView jsonValue)
 
 NextStepsHistory& NextStepsHistory::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Time"))
-  {
-    m_time = jsonValue.GetString("Time");
-    m_timeHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Time"))
+  {
+    m_time = jsonValue.GetString("Time");
+    m_timeHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue NextStepsHistory::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_timeHasBeenSet)
-  {
-   payload.WithString("Time", m_time.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
   if(m_valueHasBeenSet)
   {
    payload.WithString("Value", m_value);
 
+  }
+
+  if(m_timeHasBeenSet)
+  {
+   payload.WithString("Time", m_time.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

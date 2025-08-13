@@ -7,8 +7,8 @@
 #include <aws/braket/Braket_EXPORTS.h>
 #include <aws/braket/BraketRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/braket/model/Association.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -38,32 +38,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The action associated with the task.</p>
-     */
-    inline const Aws::String& GetAction() const { return m_action; }
-    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    template<typename ActionT = Aws::String>
-    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
-    template<typename ActionT = Aws::String>
-    CreateQuantumTaskRequest& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The list of Amazon Braket resources associated with the quantum task.</p>
-     */
-    inline const Aws::Vector<Association>& GetAssociations() const { return m_associations; }
-    inline bool AssociationsHasBeenSet() const { return m_associationsHasBeenSet; }
-    template<typename AssociationsT = Aws::Vector<Association>>
-    void SetAssociations(AssociationsT&& value) { m_associationsHasBeenSet = true; m_associations = std::forward<AssociationsT>(value); }
-    template<typename AssociationsT = Aws::Vector<Association>>
-    CreateQuantumTaskRequest& WithAssociations(AssociationsT&& value) { SetAssociations(std::forward<AssociationsT>(value)); return *this;}
-    template<typename AssociationsT = Association>
-    CreateQuantumTaskRequest& AddAssociations(AssociationsT&& value) { m_associationsHasBeenSet = true; m_associations.emplace_back(std::forward<AssociationsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The client token associated with the request.</p>
      */
     inline const Aws::String& GetClientToken() const { return m_clientToken; }
@@ -76,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the device to run the task on.</p>
+     * <p>The ARN of the device to run the quantum task on.</p>
      */
     inline const Aws::String& GetDeviceArn() const { return m_deviceArn; }
     inline bool DeviceArnHasBeenSet() const { return m_deviceArnHasBeenSet; }
@@ -88,7 +62,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The parameters for the device to run the task on.</p>
+     * <p>The parameters for the device to run the quantum task on.</p>
      */
     inline const Aws::String& GetDeviceParameters() const { return m_deviceParameters; }
     inline bool DeviceParametersHasBeenSet() const { return m_deviceParametersHasBeenSet; }
@@ -100,20 +74,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>The token for an Amazon Braket job that associates it with the quantum
-     * task.</p>
+     * <p>The number of shots to use for the quantum task.</p>
      */
-    inline const Aws::String& GetJobToken() const { return m_jobToken; }
-    inline bool JobTokenHasBeenSet() const { return m_jobTokenHasBeenSet; }
-    template<typename JobTokenT = Aws::String>
-    void SetJobToken(JobTokenT&& value) { m_jobTokenHasBeenSet = true; m_jobToken = std::forward<JobTokenT>(value); }
-    template<typename JobTokenT = Aws::String>
-    CreateQuantumTaskRequest& WithJobToken(JobTokenT&& value) { SetJobToken(std::forward<JobTokenT>(value)); return *this;}
+    inline long long GetShots() const { return m_shots; }
+    inline bool ShotsHasBeenSet() const { return m_shotsHasBeenSet; }
+    inline void SetShots(long long value) { m_shotsHasBeenSet = true; m_shots = value; }
+    inline CreateQuantumTaskRequest& WithShots(long long value) { SetShots(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The S3 bucket to store task result files in.</p>
+     * <p>The S3 bucket to store quantum task result files in.</p>
      */
     inline const Aws::String& GetOutputS3Bucket() const { return m_outputS3Bucket; }
     inline bool OutputS3BucketHasBeenSet() const { return m_outputS3BucketHasBeenSet; }
@@ -125,8 +96,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The key prefix for the location in the S3 bucket to store task results
-     * in.</p>
+     * <p>The key prefix for the location in the S3 bucket to store quantum task
+     * results in.</p>
      */
     inline const Aws::String& GetOutputS3KeyPrefix() const { return m_outputS3KeyPrefix; }
     inline bool OutputS3KeyPrefixHasBeenSet() const { return m_outputS3KeyPrefixHasBeenSet; }
@@ -138,12 +109,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of shots to use for the task.</p>
+     * <p>The action associated with the quantum task.</p>
      */
-    inline long long GetShots() const { return m_shots; }
-    inline bool ShotsHasBeenSet() const { return m_shotsHasBeenSet; }
-    inline void SetShots(long long value) { m_shotsHasBeenSet = true; m_shots = value; }
-    inline CreateQuantumTaskRequest& WithShots(long long value) { SetShots(value); return *this;}
+    inline const Aws::String& GetAction() const { return m_action; }
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+    template<typename ActionT = Aws::String>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = Aws::String>
+    CreateQuantumTaskRequest& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -161,13 +134,34 @@ namespace Model
       m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
     }
     ///@}
+
+    ///@{
+    /**
+     * <p>The token for an Amazon Braket hybrid job that associates it with the quantum
+     * task.</p>
+     */
+    inline const Aws::String& GetJobToken() const { return m_jobToken; }
+    inline bool JobTokenHasBeenSet() const { return m_jobTokenHasBeenSet; }
+    template<typename JobTokenT = Aws::String>
+    void SetJobToken(JobTokenT&& value) { m_jobTokenHasBeenSet = true; m_jobToken = std::forward<JobTokenT>(value); }
+    template<typename JobTokenT = Aws::String>
+    CreateQuantumTaskRequest& WithJobToken(JobTokenT&& value) { SetJobToken(std::forward<JobTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The list of Amazon Braket resources associated with the quantum task.</p>
+     */
+    inline const Aws::Vector<Association>& GetAssociations() const { return m_associations; }
+    inline bool AssociationsHasBeenSet() const { return m_associationsHasBeenSet; }
+    template<typename AssociationsT = Aws::Vector<Association>>
+    void SetAssociations(AssociationsT&& value) { m_associationsHasBeenSet = true; m_associations = std::forward<AssociationsT>(value); }
+    template<typename AssociationsT = Aws::Vector<Association>>
+    CreateQuantumTaskRequest& WithAssociations(AssociationsT&& value) { SetAssociations(std::forward<AssociationsT>(value)); return *this;}
+    template<typename AssociationsT = Association>
+    CreateQuantumTaskRequest& AddAssociations(AssociationsT&& value) { m_associationsHasBeenSet = true; m_associations.emplace_back(std::forward<AssociationsT>(value)); return *this; }
+    ///@}
   private:
-
-    Aws::String m_action;
-    bool m_actionHasBeenSet = false;
-
-    Aws::Vector<Association> m_associations;
-    bool m_associationsHasBeenSet = false;
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
@@ -178,8 +172,8 @@ namespace Model
     Aws::String m_deviceParameters;
     bool m_deviceParametersHasBeenSet = false;
 
-    Aws::String m_jobToken;
-    bool m_jobTokenHasBeenSet = false;
+    long long m_shots{0};
+    bool m_shotsHasBeenSet = false;
 
     Aws::String m_outputS3Bucket;
     bool m_outputS3BucketHasBeenSet = false;
@@ -187,11 +181,17 @@ namespace Model
     Aws::String m_outputS3KeyPrefix;
     bool m_outputS3KeyPrefixHasBeenSet = false;
 
-    long long m_shots{0};
-    bool m_shotsHasBeenSet = false;
+    Aws::String m_action;
+    bool m_actionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_jobToken;
+    bool m_jobTokenHasBeenSet = false;
+
+    Aws::Vector<Association> m_associations;
+    bool m_associationsHasBeenSet = false;
   };
 
 } // namespace Model

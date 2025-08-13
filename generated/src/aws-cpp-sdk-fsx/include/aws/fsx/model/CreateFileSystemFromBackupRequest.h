@@ -12,6 +12,7 @@
 #include <aws/fsx/model/CreateFileSystemLustreConfiguration.h>
 #include <aws/fsx/model/StorageType.h>
 #include <aws/fsx/model/CreateFileSystemOpenZFSConfiguration.h>
+#include <aws/fsx/model/NetworkType.h>
 #include <aws/fsx/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -227,6 +228,17 @@ namespace Model
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
     inline CreateFileSystemFromBackupRequest& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Sets the network type for the Amazon FSx for OpenZFS file system that you're
+     * creating from a backup.</p>
+     */
+    inline NetworkType GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    inline void SetNetworkType(NetworkType value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline CreateFileSystemFromBackupRequest& WithNetworkType(NetworkType value) { SetNetworkType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_backupId;
@@ -264,6 +276,9 @@ namespace Model
 
     int m_storageCapacity{0};
     bool m_storageCapacityHasBeenSet = false;
+
+    NetworkType m_networkType{NetworkType::NOT_SET};
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/partnercentral-selling/model/RevenueModel.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-selling/model/MonetaryValue.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -54,6 +54,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the payment value (amount and currency).</p>
+     */
+    inline const MonetaryValue& GetValue() const { return m_value; }
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+    template<typename ValueT = MonetaryValue>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = MonetaryValue>
+    SoftwareRevenue& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies the <code>Opportunity</code>'s customer engagement start date for
      * the contract's effectiveness.</p>
      */
@@ -78,31 +90,19 @@ namespace Model
     template<typename ExpirationDateT = Aws::String>
     SoftwareRevenue& WithExpirationDate(ExpirationDateT&& value) { SetExpirationDate(std::forward<ExpirationDateT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Specifies the payment value (amount and currency).</p>
-     */
-    inline const MonetaryValue& GetValue() const { return m_value; }
-    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    template<typename ValueT = MonetaryValue>
-    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
-    template<typename ValueT = MonetaryValue>
-    SoftwareRevenue& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
-    ///@}
   private:
 
     RevenueModel m_deliveryModel{RevenueModel::NOT_SET};
     bool m_deliveryModelHasBeenSet = false;
+
+    MonetaryValue m_value;
+    bool m_valueHasBeenSet = false;
 
     Aws::String m_effectiveDate;
     bool m_effectiveDateHasBeenSet = false;
 
     Aws::String m_expirationDate;
     bool m_expirationDateHasBeenSet = false;
-
-    MonetaryValue m_value;
-    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

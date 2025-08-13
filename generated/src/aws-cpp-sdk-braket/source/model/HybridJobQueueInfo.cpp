@@ -25,20 +25,20 @@ HybridJobQueueInfo::HybridJobQueueInfo(JsonView jsonValue)
 
 HybridJobQueueInfo& HybridJobQueueInfo::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("message"))
+  if(jsonValue.ValueExists("queue"))
   {
-    m_message = jsonValue.GetString("message");
-    m_messageHasBeenSet = true;
+    m_queue = QueueNameMapper::GetQueueNameForName(jsonValue.GetString("queue"));
+    m_queueHasBeenSet = true;
   }
   if(jsonValue.ValueExists("position"))
   {
     m_position = jsonValue.GetString("position");
     m_positionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("queue"))
+  if(jsonValue.ValueExists("message"))
   {
-    m_queue = QueueNameMapper::GetQueueNameForName(jsonValue.GetString("queue"));
-    m_queueHasBeenSet = true;
+    m_message = jsonValue.GetString("message");
+    m_messageHasBeenSet = true;
   }
   return *this;
 }
@@ -47,10 +47,9 @@ JsonValue HybridJobQueueInfo::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
+  if(m_queueHasBeenSet)
   {
-   payload.WithString("message", m_message);
-
+   payload.WithString("queue", QueueNameMapper::GetNameForQueueName(m_queue));
   }
 
   if(m_positionHasBeenSet)
@@ -59,9 +58,10 @@ JsonValue HybridJobQueueInfo::Jsonize() const
 
   }
 
-  if(m_queueHasBeenSet)
+  if(m_messageHasBeenSet)
   {
-   payload.WithString("queue", QueueNameMapper::GetNameForQueueName(m_queue));
+   payload.WithString("message", m_message);
+
   }
 
   return payload;

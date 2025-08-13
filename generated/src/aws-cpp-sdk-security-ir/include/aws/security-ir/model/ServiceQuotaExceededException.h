@@ -38,7 +38,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>The exception message.</p>
+     */
     inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
     template<typename MessageT = Aws::String>
@@ -49,7 +51,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Element that provides the ID of the resource affected.</p>
+     * <p>The ID of the requested resource which lead to the service quota
+     * exception.</p>
      */
     inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
@@ -61,7 +64,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Element that provides the type of the resource affected.</p>
+     * <p>The type of the requested resource which lead to the service quota
+     * exception.</p>
      */
     inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
@@ -73,7 +77,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Element that provides the originating service who made the call.</p>
+     * <p>The service code of the quota.</p>
      */
     inline const Aws::String& GetServiceCode() const { return m_serviceCode; }
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
@@ -85,7 +89,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Element that provides the quota that was exceeded.</p>
+     * <p>The code of the quota.</p>
      */
     inline const Aws::String& GetQuotaCode() const { return m_quotaCode; }
     inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }

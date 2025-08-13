@@ -38,7 +38,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>The exception message.</p>
+     */
     inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
     template<typename MessageT = Aws::String>
@@ -49,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Element providing the service code of the originating service.</p>
+     * <p>The service code of the exception.</p>
      */
     inline const Aws::String& GetServiceCode() const { return m_serviceCode; }
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
@@ -61,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Element providing the quota of the originating service.</p>
+     * <p>The quota code of the exception.</p>
      */
     inline const Aws::String& GetQuotaCode() const { return m_quotaCode; }
     inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
@@ -73,8 +75,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Element providing advice to clients on when the call can be safely
-     * retried.</p>
+     * <p>The number of seconds after which to retry the request.</p>
      */
     inline int GetRetryAfterSeconds() const { return m_retryAfterSeconds; }
     inline bool RetryAfterSecondsHasBeenSet() const { return m_retryAfterSecondsHasBeenSet; }

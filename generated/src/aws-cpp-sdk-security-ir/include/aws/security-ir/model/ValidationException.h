@@ -41,7 +41,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>The exception message.</p>
+     */
     inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
     template<typename MessageT = Aws::String>
@@ -52,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Element that provides the reason the request failed validation.</p>
+     * <p>The reason for the exception.</p>
      */
     inline ValidationExceptionReason GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
@@ -62,8 +64,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Element that provides the list of field(s) that caused the error, if
-     * applicable.</p>
+     * <p>The fields which lead to the exception.</p>
      */
     inline const Aws::Vector<ValidationExceptionField>& GetFieldList() const { return m_fieldList; }
     inline bool FieldListHasBeenSet() const { return m_fieldListHasBeenSet; }

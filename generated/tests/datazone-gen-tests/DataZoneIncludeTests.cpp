@@ -22,6 +22,9 @@
 #include <aws/datazone/model/AcceptSubscriptionRequestRequest.h>
 #include <aws/datazone/model/AcceptSubscriptionRequestResult.h>
 #include <aws/datazone/model/AcceptedAssetScope.h>
+#include <aws/datazone/model/AccountInfo.h>
+#include <aws/datazone/model/AccountPoolSummary.h>
+#include <aws/datazone/model/AccountSource.h>
 #include <aws/datazone/model/ActionParameters.h>
 #include <aws/datazone/model/AddEntityOwnerRequest.h>
 #include <aws/datazone/model/AddEntityOwnerResult.h>
@@ -81,6 +84,8 @@
 #include <aws/datazone/model/ConnectionStatus.h>
 #include <aws/datazone/model/ConnectionSummary.h>
 #include <aws/datazone/model/ConnectionType.h>
+#include <aws/datazone/model/CreateAccountPoolRequest.h>
+#include <aws/datazone/model/CreateAccountPoolResult.h>
 #include <aws/datazone/model/CreateAssetFilterRequest.h>
 #include <aws/datazone/model/CreateAssetFilterResult.h>
 #include <aws/datazone/model/CreateAssetRequest.h>
@@ -140,6 +145,7 @@
 #include <aws/datazone/model/CreateSubscriptionTargetResult.h>
 #include <aws/datazone/model/CreateUserProfileRequest.h>
 #include <aws/datazone/model/CreateUserProfileResult.h>
+#include <aws/datazone/model/CustomAccountPoolHandler.h>
 #include <aws/datazone/model/CustomParameter.h>
 #include <aws/datazone/model/DataAssetActivityStatus.h>
 #include <aws/datazone/model/DataProductItem.h>
@@ -163,6 +169,8 @@
 #include <aws/datazone/model/DataSourceStatus.h>
 #include <aws/datazone/model/DataSourceSummary.h>
 #include <aws/datazone/model/DataZoneEntityType.h>
+#include <aws/datazone/model/DeleteAccountPoolRequest.h>
+#include <aws/datazone/model/DeleteAccountPoolResult.h>
 #include <aws/datazone/model/DeleteAssetFilterRequest.h>
 #include <aws/datazone/model/DeleteAssetRequest.h>
 #include <aws/datazone/model/DeleteAssetResult.h>
@@ -239,6 +247,7 @@
 #include <aws/datazone/model/EnvironmentError.h>
 #include <aws/datazone/model/EnvironmentParameter.h>
 #include <aws/datazone/model/EnvironmentProfileSummary.h>
+#include <aws/datazone/model/EnvironmentResolvedAccount.h>
 #include <aws/datazone/model/EnvironmentStatus.h>
 #include <aws/datazone/model/EnvironmentSummary.h>
 #include <aws/datazone/model/EqualToExpression.h>
@@ -255,6 +264,8 @@
 #include <aws/datazone/model/FormOutput.h>
 #include <aws/datazone/model/FormTypeData.h>
 #include <aws/datazone/model/FormTypeStatus.h>
+#include <aws/datazone/model/GetAccountPoolRequest.h>
+#include <aws/datazone/model/GetAccountPoolResult.h>
 #include <aws/datazone/model/GetAssetFilterRequest.h>
 #include <aws/datazone/model/GetAssetFilterResult.h>
 #include <aws/datazone/model/GetAssetRequest.h>
@@ -382,6 +393,10 @@
 #include <aws/datazone/model/LineageRunDetails.h>
 #include <aws/datazone/model/LineageSqlQueryRunDetails.h>
 #include <aws/datazone/model/LineageSyncSchedule.h>
+#include <aws/datazone/model/ListAccountPoolsRequest.h>
+#include <aws/datazone/model/ListAccountPoolsResult.h>
+#include <aws/datazone/model/ListAccountsInAccountPoolRequest.h>
+#include <aws/datazone/model/ListAccountsInAccountPoolResult.h>
 #include <aws/datazone/model/ListAssetFiltersRequest.h>
 #include <aws/datazone/model/ListAssetFiltersResult.h>
 #include <aws/datazone/model/ListAssetRevisionsRequest.h>
@@ -539,6 +554,7 @@
 #include <aws/datazone/model/RemoveEntityOwnerResult.h>
 #include <aws/datazone/model/RemovePolicyGrantRequest.h>
 #include <aws/datazone/model/RemovePolicyGrantResult.h>
+#include <aws/datazone/model/ResolutionStrategy.h>
 #include <aws/datazone/model/Resource.h>
 #include <aws/datazone/model/RevokeSubscriptionRequest.h>
 #include <aws/datazone/model/RevokeSubscriptionResult.h>
@@ -580,6 +596,7 @@
 #include <aws/datazone/model/SelfGrantStatusDetail.h>
 #include <aws/datazone/model/SelfGrantStatusOutput.h>
 #include <aws/datazone/model/SingleSignOn.h>
+#include <aws/datazone/model/SortFieldAccountPool.h>
 #include <aws/datazone/model/SortFieldConnection.h>
 #include <aws/datazone/model/SortFieldProject.h>
 #include <aws/datazone/model/SortKey.h>
@@ -631,6 +648,8 @@
 #include <aws/datazone/model/Unit.h>
 #include <aws/datazone/model/UntagResourceRequest.h>
 #include <aws/datazone/model/UntagResourceResult.h>
+#include <aws/datazone/model/UpdateAccountPoolRequest.h>
+#include <aws/datazone/model/UpdateAccountPoolResult.h>
 #include <aws/datazone/model/UpdateAssetFilterRequest.h>
 #include <aws/datazone/model/UpdateAssetFilterResult.h>
 #include <aws/datazone/model/UpdateConnectionRequest.h>

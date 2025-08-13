@@ -16,7 +16,8 @@ namespace Model
   enum class MembershipAccountRelationshipType
   {
     NOT_SET,
-    Organization
+    Organization,
+    Unrelated
   };
 
 namespace MembershipAccountRelationshipTypeMapper

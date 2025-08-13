@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-selling/model/ValidationExceptionReason.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/partnercentral-selling/model/ValidationExceptionError.h>
 #include <utility>
 
@@ -44,21 +44,6 @@ namespace Model
 
 
     ///@{
-    /**
-     * <p>A list of issues that were discovered in the submitted request or the
-     * resource state.</p>
-     */
-    inline const Aws::Vector<ValidationExceptionError>& GetErrorList() const { return m_errorList; }
-    inline bool ErrorListHasBeenSet() const { return m_errorListHasBeenSet; }
-    template<typename ErrorListT = Aws::Vector<ValidationExceptionError>>
-    void SetErrorList(ErrorListT&& value) { m_errorListHasBeenSet = true; m_errorList = std::forward<ErrorListT>(value); }
-    template<typename ErrorListT = Aws::Vector<ValidationExceptionError>>
-    ValidationException& WithErrorList(ErrorListT&& value) { SetErrorList(std::forward<ErrorListT>(value)); return *this;}
-    template<typename ErrorListT = ValidationExceptionError>
-    ValidationException& AddErrorList(ErrorListT&& value) { m_errorListHasBeenSet = true; m_errorList.emplace_back(std::forward<ErrorListT>(value)); return *this; }
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
@@ -83,16 +68,31 @@ namespace Model
     inline void SetReason(ValidationExceptionReason value) { m_reasonHasBeenSet = true; m_reason = value; }
     inline ValidationException& WithReason(ValidationExceptionReason value) { SetReason(value); return *this;}
     ///@}
-  private:
 
-    Aws::Vector<ValidationExceptionError> m_errorList;
-    bool m_errorListHasBeenSet = false;
+    ///@{
+    /**
+     * <p>A list of issues that were discovered in the submitted request or the
+     * resource state.</p>
+     */
+    inline const Aws::Vector<ValidationExceptionError>& GetErrorList() const { return m_errorList; }
+    inline bool ErrorListHasBeenSet() const { return m_errorListHasBeenSet; }
+    template<typename ErrorListT = Aws::Vector<ValidationExceptionError>>
+    void SetErrorList(ErrorListT&& value) { m_errorListHasBeenSet = true; m_errorList = std::forward<ErrorListT>(value); }
+    template<typename ErrorListT = Aws::Vector<ValidationExceptionError>>
+    ValidationException& WithErrorList(ErrorListT&& value) { SetErrorList(std::forward<ErrorListT>(value)); return *this;}
+    template<typename ErrorListT = ValidationExceptionError>
+    ValidationException& AddErrorList(ErrorListT&& value) { m_errorListHasBeenSet = true; m_errorList.emplace_back(std::forward<ErrorListT>(value)); return *this; }
+    ///@}
+  private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
     ValidationExceptionReason m_reason{ValidationExceptionReason::NOT_SET};
     bool m_reasonHasBeenSet = false;
+
+    Aws::Vector<ValidationExceptionError> m_errorList;
+    bool m_errorListHasBeenSet = false;
   };
 
 } // namespace Model

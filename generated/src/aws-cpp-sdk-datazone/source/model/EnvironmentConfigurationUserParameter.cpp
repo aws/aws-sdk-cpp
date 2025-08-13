@@ -44,6 +44,11 @@ EnvironmentConfigurationUserParameter& EnvironmentConfigurationUserParameter::op
     }
     m_environmentParametersHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("environmentResolvedAccount"))
+  {
+    m_environmentResolvedAccount = jsonValue.GetObject("environmentResolvedAccount");
+    m_environmentResolvedAccountHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -71,6 +76,12 @@ JsonValue EnvironmentConfigurationUserParameter::Jsonize() const
      environmentParametersJsonList[environmentParametersIndex].AsObject(m_environmentParameters[environmentParametersIndex].Jsonize());
    }
    payload.WithArray("environmentParameters", std::move(environmentParametersJsonList));
+
+  }
+
+  if(m_environmentResolvedAccountHasBeenSet)
+  {
+   payload.WithObject("environmentResolvedAccount", m_environmentResolvedAccount.Jsonize());
 
   }
 

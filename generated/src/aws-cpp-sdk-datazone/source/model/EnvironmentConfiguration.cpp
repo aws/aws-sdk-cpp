@@ -25,6 +25,15 @@ EnvironmentConfiguration::EnvironmentConfiguration(JsonView jsonValue)
 
 EnvironmentConfiguration& EnvironmentConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("accountPools"))
+  {
+    Aws::Utils::Array<JsonView> accountPoolsJsonList = jsonValue.GetArray("accountPools");
+    for(unsigned accountPoolsIndex = 0; accountPoolsIndex < accountPoolsJsonList.GetLength(); ++accountPoolsIndex)
+    {
+      m_accountPools.push_back(accountPoolsJsonList[accountPoolsIndex].AsString());
+    }
+    m_accountPoolsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("awsAccount"))
   {
     m_awsAccount = jsonValue.GetObject("awsAccount");
@@ -76,6 +85,17 @@ EnvironmentConfiguration& EnvironmentConfiguration::operator =(JsonView jsonValu
 JsonValue EnvironmentConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_accountPoolsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> accountPoolsJsonList(m_accountPools.size());
+   for(unsigned accountPoolsIndex = 0; accountPoolsIndex < accountPoolsJsonList.GetLength(); ++accountPoolsIndex)
+   {
+     accountPoolsJsonList[accountPoolsIndex].AsString(m_accountPools[accountPoolsIndex]);
+   }
+   payload.WithArray("accountPools", std::move(accountPoolsJsonList));
+
+  }
 
   if(m_awsAccountHasBeenSet)
   {

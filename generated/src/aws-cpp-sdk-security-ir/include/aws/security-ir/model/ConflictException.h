@@ -38,7 +38,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>The exception message.</p>
+     */
     inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
     template<typename MessageT = Aws::String>
@@ -49,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Element providing the ID of the resource affected.</p>
+     * <p>The ID of the conflicting resource.</p>
      */
     inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
@@ -61,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Element providing the type of the resource affected.</p>
+     * <p>The type of the conflicting resource.</p>
      */
     inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

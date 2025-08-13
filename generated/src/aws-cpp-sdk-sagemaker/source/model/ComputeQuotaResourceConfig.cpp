@@ -35,6 +35,21 @@ ComputeQuotaResourceConfig& ComputeQuotaResourceConfig::operator =(JsonView json
     m_count = jsonValue.GetInteger("Count");
     m_countHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Accelerators"))
+  {
+    m_accelerators = jsonValue.GetInteger("Accelerators");
+    m_acceleratorsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("VCpu"))
+  {
+    m_vCpu = jsonValue.GetDouble("VCpu");
+    m_vCpuHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("MemoryInGiB"))
+  {
+    m_memoryInGiB = jsonValue.GetDouble("MemoryInGiB");
+    m_memoryInGiBHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -50,6 +65,24 @@ JsonValue ComputeQuotaResourceConfig::Jsonize() const
   if(m_countHasBeenSet)
   {
    payload.WithInteger("Count", m_count);
+
+  }
+
+  if(m_acceleratorsHasBeenSet)
+  {
+   payload.WithInteger("Accelerators", m_accelerators);
+
+  }
+
+  if(m_vCpuHasBeenSet)
+  {
+   payload.WithDouble("VCpu", m_vCpu);
+
+  }
+
+  if(m_memoryInGiBHasBeenSet)
+  {
+   payload.WithDouble("MemoryInGiB", m_memoryInGiB);
 
   }
 

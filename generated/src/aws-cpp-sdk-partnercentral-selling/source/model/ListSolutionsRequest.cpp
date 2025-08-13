@@ -22,28 +22,6 @@ Aws::String ListSolutionsRequest::SerializePayload() const
 
   }
 
-  if(m_categoryHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> categoryJsonList(m_category.size());
-   for(unsigned categoryIndex = 0; categoryIndex < categoryJsonList.GetLength(); ++categoryIndex)
-   {
-     categoryJsonList[categoryIndex].AsString(m_category[categoryIndex]);
-   }
-   payload.WithArray("Category", std::move(categoryJsonList));
-
-  }
-
-  if(m_identifierHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> identifierJsonList(m_identifier.size());
-   for(unsigned identifierIndex = 0; identifierIndex < identifierJsonList.GetLength(); ++identifierIndex)
-   {
-     identifierJsonList[identifierIndex].AsString(m_identifier[identifierIndex]);
-   }
-   payload.WithArray("Identifier", std::move(identifierJsonList));
-
-  }
-
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("MaxResults", m_maxResults);
@@ -70,6 +48,28 @@ Aws::String ListSolutionsRequest::SerializePayload() const
      statusJsonList[statusIndex].AsString(SolutionStatusMapper::GetNameForSolutionStatus(m_status[statusIndex]));
    }
    payload.WithArray("Status", std::move(statusJsonList));
+
+  }
+
+  if(m_identifierHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> identifierJsonList(m_identifier.size());
+   for(unsigned identifierIndex = 0; identifierIndex < identifierJsonList.GetLength(); ++identifierIndex)
+   {
+     identifierJsonList[identifierIndex].AsString(m_identifier[identifierIndex]);
+   }
+   payload.WithArray("Identifier", std::move(identifierJsonList));
+
+  }
+
+  if(m_categoryHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> categoryJsonList(m_category.size());
+   for(unsigned categoryIndex = 0; categoryIndex < categoryJsonList.GetLength(); ++categoryIndex)
+   {
+     categoryJsonList[categoryIndex].AsString(m_category[categoryIndex]);
+   }
+   payload.WithArray("Category", std::move(categoryJsonList));
 
   }
 

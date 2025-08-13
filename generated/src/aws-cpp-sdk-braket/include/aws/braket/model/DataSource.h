@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about the source of the data used by the Amazon Braket
-   * job.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the source of the input data used by the Amazon Braket
+   * hybrid job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/DataSource">AWS
    * API Reference</a></p>
    */
@@ -40,8 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the data stored in Amazon S3 used by the Amazon Braket
-     * job.</p>
+     * <p>Amazon S3 path of the input data used by the hybrid job.</p>
      */
     inline const S3DataSource& GetS3DataSource() const { return m_s3DataSource; }
     inline bool S3DataSourceHasBeenSet() const { return m_s3DataSourceHasBeenSet; }

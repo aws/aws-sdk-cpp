@@ -263,6 +263,31 @@ namespace DataZone
         }
 
         /**
+         * <p>Creates an account pool. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateAccountPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAccountPoolOutcome CreateAccountPool(const Model::CreateAccountPoolRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAccountPool that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAccountPoolRequestT = Model::CreateAccountPoolRequest>
+        Model::CreateAccountPoolOutcomeCallable CreateAccountPoolCallable(const CreateAccountPoolRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::CreateAccountPool, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAccountPool that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAccountPoolRequestT = Model::CreateAccountPoolRequest>
+        void CreateAccountPoolAsync(const CreateAccountPoolRequestT& request, const CreateAccountPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::CreateAccountPool, request, handler, context);
+        }
+
+        /**
          * <p>Creates an asset in Amazon DataZone catalog.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateAsset">AWS
          * API Reference</a></p>
@@ -929,6 +954,31 @@ namespace DataZone
         }
 
         /**
+         * <p>Deletes an account pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteAccountPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAccountPoolOutcome DeleteAccountPool(const Model::DeleteAccountPoolRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAccountPool that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAccountPoolRequestT = Model::DeleteAccountPoolRequest>
+        Model::DeleteAccountPoolOutcomeCallable DeleteAccountPoolCallable(const DeleteAccountPoolRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::DeleteAccountPool, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAccountPool that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAccountPoolRequestT = Model::DeleteAccountPoolRequest>
+        void DeleteAccountPoolAsync(const DeleteAccountPoolRequestT& request, const DeleteAccountPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::DeleteAccountPool, request, handler, context);
+        }
+
+        /**
          * <p>Deletes an asset in Amazon DataZone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteAsset">AWS
          * API Reference</a></p>
@@ -1572,6 +1622,31 @@ namespace DataZone
         void DisassociateEnvironmentRoleAsync(const DisassociateEnvironmentRoleRequestT& request, const DisassociateEnvironmentRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::DisassociateEnvironmentRole, request, handler, context);
+        }
+
+        /**
+         * <p>Gets the details of the account pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetAccountPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAccountPoolOutcome GetAccountPool(const Model::GetAccountPoolRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAccountPool that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAccountPoolRequestT = Model::GetAccountPoolRequest>
+        Model::GetAccountPoolOutcomeCallable GetAccountPoolCallable(const GetAccountPoolRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::GetAccountPool, request);
+        }
+
+        /**
+         * An Async wrapper for GetAccountPool that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAccountPoolRequestT = Model::GetAccountPoolRequest>
+        void GetAccountPoolAsync(const GetAccountPoolRequestT& request, const GetAccountPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::GetAccountPool, request, handler, context);
         }
 
         /**
@@ -2440,6 +2515,57 @@ namespace DataZone
         void GetUserProfileAsync(const GetUserProfileRequestT& request, const GetUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::GetUserProfile, request, handler, context);
+        }
+
+        /**
+         * <p>Lists existing account pools.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListAccountPools">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAccountPoolsOutcome ListAccountPools(const Model::ListAccountPoolsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAccountPools that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAccountPoolsRequestT = Model::ListAccountPoolsRequest>
+        Model::ListAccountPoolsOutcomeCallable ListAccountPoolsCallable(const ListAccountPoolsRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::ListAccountPools, request);
+        }
+
+        /**
+         * An Async wrapper for ListAccountPools that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAccountPoolsRequestT = Model::ListAccountPoolsRequest>
+        void ListAccountPoolsAsync(const ListAccountPoolsRequestT& request, const ListAccountPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::ListAccountPools, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the accounts in the specified account pool.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListAccountsInAccountPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAccountsInAccountPoolOutcome ListAccountsInAccountPool(const Model::ListAccountsInAccountPoolRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAccountsInAccountPool that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAccountsInAccountPoolRequestT = Model::ListAccountsInAccountPoolRequest>
+        Model::ListAccountsInAccountPoolOutcomeCallable ListAccountsInAccountPoolCallable(const ListAccountsInAccountPoolRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::ListAccountsInAccountPool, request);
+        }
+
+        /**
+         * An Async wrapper for ListAccountsInAccountPool that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAccountsInAccountPoolRequestT = Model::ListAccountsInAccountPoolRequest>
+        void ListAccountsInAccountPoolAsync(const ListAccountsInAccountPoolRequestT& request, const ListAccountsInAccountPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::ListAccountsInAccountPool, request, handler, context);
         }
 
         /**
@@ -3660,6 +3786,31 @@ namespace DataZone
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the account pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateAccountPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAccountPoolOutcome UpdateAccountPool(const Model::UpdateAccountPoolRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAccountPool that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAccountPoolRequestT = Model::UpdateAccountPoolRequest>
+        Model::UpdateAccountPoolOutcomeCallable UpdateAccountPoolCallable(const UpdateAccountPoolRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::UpdateAccountPool, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAccountPool that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAccountPoolRequestT = Model::UpdateAccountPoolRequest>
+        void UpdateAccountPoolAsync(const UpdateAccountPoolRequestT& request, const UpdateAccountPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::UpdateAccountPool, request, handler, context);
         }
 
         /**

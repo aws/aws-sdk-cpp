@@ -25,15 +25,15 @@ OpportunitySort::OpportunitySort(JsonView jsonValue)
 
 OpportunitySort& OpportunitySort::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("SortBy"))
-  {
-    m_sortBy = OpportunitySortNameMapper::GetOpportunitySortNameForName(jsonValue.GetString("SortBy"));
-    m_sortByHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("SortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("SortOrder"));
     m_sortOrderHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("SortBy"))
+  {
+    m_sortBy = OpportunitySortNameMapper::GetOpportunitySortNameForName(jsonValue.GetString("SortBy"));
+    m_sortByHasBeenSet = true;
   }
   return *this;
 }
@@ -42,14 +42,14 @@ JsonValue OpportunitySort::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_sortByHasBeenSet)
-  {
-   payload.WithString("SortBy", OpportunitySortNameMapper::GetNameForOpportunitySortName(m_sortBy));
-  }
-
   if(m_sortOrderHasBeenSet)
   {
    payload.WithString("SortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
+  }
+
+  if(m_sortByHasBeenSet)
+  {
+   payload.WithString("SortBy", OpportunitySortNameMapper::GetNameForOpportunitySortName(m_sortBy));
   }
 
   return payload;

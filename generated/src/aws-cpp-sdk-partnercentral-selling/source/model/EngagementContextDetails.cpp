@@ -25,15 +25,15 @@ EngagementContextDetails::EngagementContextDetails(JsonView jsonValue)
 
 EngagementContextDetails& EngagementContextDetails::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Payload"))
-  {
-    m_payload = jsonValue.GetObject("Payload");
-    m_payloadHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Type"))
   {
     m_type = EngagementContextTypeMapper::GetEngagementContextTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Payload"))
+  {
+    m_payload = jsonValue.GetObject("Payload");
+    m_payloadHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue EngagementContextDetails::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", EngagementContextTypeMapper::GetNameForEngagementContextType(m_type));
+  }
+
   if(m_payloadHasBeenSet)
   {
    payload.WithObject("Payload", m_payload.Jsonize());
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", EngagementContextTypeMapper::GetNameForEngagementContextType(m_type));
   }
 
   return payload;

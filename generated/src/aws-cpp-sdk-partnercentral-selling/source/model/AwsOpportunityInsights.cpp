@@ -25,15 +25,15 @@ AwsOpportunityInsights::AwsOpportunityInsights(JsonView jsonValue)
 
 AwsOpportunityInsights& AwsOpportunityInsights::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("EngagementScore"))
-  {
-    m_engagementScore = EngagementScoreMapper::GetEngagementScoreForName(jsonValue.GetString("EngagementScore"));
-    m_engagementScoreHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("NextBestActions"))
   {
     m_nextBestActions = jsonValue.GetString("NextBestActions");
     m_nextBestActionsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("EngagementScore"))
+  {
+    m_engagementScore = EngagementScoreMapper::GetEngagementScoreForName(jsonValue.GetString("EngagementScore"));
+    m_engagementScoreHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue AwsOpportunityInsights::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_engagementScoreHasBeenSet)
-  {
-   payload.WithString("EngagementScore", EngagementScoreMapper::GetNameForEngagementScore(m_engagementScore));
-  }
-
   if(m_nextBestActionsHasBeenSet)
   {
    payload.WithString("NextBestActions", m_nextBestActions);
 
+  }
+
+  if(m_engagementScoreHasBeenSet)
+  {
+   payload.WithString("EngagementScore", EngagementScoreMapper::GetNameForEngagementScore(m_engagementScore));
   }
 
   return payload;

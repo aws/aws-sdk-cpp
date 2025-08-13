@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/braket/Braket_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/braket/model/DeviceStatus.h>
 #include <aws/braket/model/DeviceType.h>
+#include <aws/braket/model/DeviceStatus.h>
 #include <utility>
 
 namespace Aws
@@ -65,12 +65,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the device.</p>
+     * <p>The provider of the device.</p>
      */
-    inline DeviceStatus GetDeviceStatus() const { return m_deviceStatus; }
-    inline bool DeviceStatusHasBeenSet() const { return m_deviceStatusHasBeenSet; }
-    inline void SetDeviceStatus(DeviceStatus value) { m_deviceStatusHasBeenSet = true; m_deviceStatus = value; }
-    inline DeviceSummary& WithDeviceStatus(DeviceStatus value) { SetDeviceStatus(value); return *this;}
+    inline const Aws::String& GetProviderName() const { return m_providerName; }
+    inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
+    template<typename ProviderNameT = Aws::String>
+    void SetProviderName(ProviderNameT&& value) { m_providerNameHasBeenSet = true; m_providerName = std::forward<ProviderNameT>(value); }
+    template<typename ProviderNameT = Aws::String>
+    DeviceSummary& WithProviderName(ProviderNameT&& value) { SetProviderName(std::forward<ProviderNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +87,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The provider of the device.</p>
+     * <p>The status of the device.</p>
      */
-    inline const Aws::String& GetProviderName() const { return m_providerName; }
-    inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
-    template<typename ProviderNameT = Aws::String>
-    void SetProviderName(ProviderNameT&& value) { m_providerNameHasBeenSet = true; m_providerName = std::forward<ProviderNameT>(value); }
-    template<typename ProviderNameT = Aws::String>
-    DeviceSummary& WithProviderName(ProviderNameT&& value) { SetProviderName(std::forward<ProviderNameT>(value)); return *this;}
+    inline DeviceStatus GetDeviceStatus() const { return m_deviceStatus; }
+    inline bool DeviceStatusHasBeenSet() const { return m_deviceStatusHasBeenSet; }
+    inline void SetDeviceStatus(DeviceStatus value) { m_deviceStatusHasBeenSet = true; m_deviceStatus = value; }
+    inline DeviceSummary& WithDeviceStatus(DeviceStatus value) { SetDeviceStatus(value); return *this;}
     ///@}
   private:
 
@@ -102,14 +102,14 @@ namespace Model
     Aws::String m_deviceName;
     bool m_deviceNameHasBeenSet = false;
 
-    DeviceStatus m_deviceStatus{DeviceStatus::NOT_SET};
-    bool m_deviceStatusHasBeenSet = false;
+    Aws::String m_providerName;
+    bool m_providerNameHasBeenSet = false;
 
     DeviceType m_deviceType{DeviceType::NOT_SET};
     bool m_deviceTypeHasBeenSet = false;
 
-    Aws::String m_providerName;
-    bool m_providerNameHasBeenSet = false;
+    DeviceStatus m_deviceStatus{DeviceStatus::NOT_SET};
+    bool m_deviceStatusHasBeenSet = false;
   };
 
 } // namespace Model

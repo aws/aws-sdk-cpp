@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about the data stored in Amazon S3 used by the Amazon Braket
+   * <p>Information about the Amazon S3 storage used by the Amazon Braket hybrid
    * job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/S3DataSource">AWS
    * API Reference</a></p>

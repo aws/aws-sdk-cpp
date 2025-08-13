@@ -799,9 +799,9 @@ namespace PartnerCentralSelling
          * well as sort options. This feature is available to partners from <a
          * href="https://partnercentral.awspartner.com/">Partner Central</a> using the
          * <code>ListOpportunities</code> API action.</p> <p>To synchronize your system
-         * with Amazon Web Services, only list the opportunities that were newly created or
+         * with Amazon Web Services, list only the opportunities that were newly created or
          * updated. We recommend you rely on events emitted by the service into your Amazon
-         * Web Services account’s Amazon EventBridge default event bus, you can also use
+         * Web Services account’s Amazon EventBridge default event bus. You can also use
          * the <code>ListOpportunities</code> action.</p> <p>We recommend the following
          * approach:</p> <ol> <li> <p>Find the latest <code>LastModifiedDate</code> that
          * you stored, and only use the values that came from Amazon Web Services. Don’t
@@ -1032,12 +1032,16 @@ namespace PartnerCentralSelling
         }
 
         /**
-         * <p>This action initiates the engagement process from an existing opportunity by
-         * accepting the engagement invitation and creating a corresponding opportunity in
-         * the partner’s system. Similar to
-         * <code>StartEngagementByAcceptingInvitationTask</code>, this action is
-         * asynchronous and performs multiple steps before completion.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Similar to <code>StartEngagementByAcceptingInvitationTask</code>, this action
+         * is asynchronous and performs multiple steps before completion. This action
+         * orchestrates a comprehensive workflow that combines multiple API operations into
+         * a single task to create and initiate an engagement from an existing opportunity.
+         * It automatically executes a sequence of operations including
+         * <code>GetOpportunity</code>, <code>CreateEngagement</code> (if it doesn't
+         * exist), <code>CreateResourceSnapshot</code>,
+         * <code>CreateResourceSnapshotJob</code>, <code>CreateEngagementInvitation</code>
+         * (if not already invited/accepted), and <code>SubmitOpportunity</code>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartEngagementFromOpportunityTask">AWS
          * API Reference</a></p>
          */

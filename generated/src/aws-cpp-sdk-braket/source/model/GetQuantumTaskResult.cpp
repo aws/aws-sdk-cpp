@@ -25,19 +25,20 @@ GetQuantumTaskResult::GetQuantumTaskResult(const Aws::AmazonWebServiceResult<Jso
 GetQuantumTaskResult& GetQuantumTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("associations"))
+  if(jsonValue.ValueExists("quantumTaskArn"))
   {
-    Aws::Utils::Array<JsonView> associationsJsonList = jsonValue.GetArray("associations");
-    for(unsigned associationsIndex = 0; associationsIndex < associationsJsonList.GetLength(); ++associationsIndex)
-    {
-      m_associations.push_back(associationsJsonList[associationsIndex].AsObject());
-    }
-    m_associationsHasBeenSet = true;
+    m_quantumTaskArn = jsonValue.GetString("quantumTaskArn");
+    m_quantumTaskArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("status"))
   {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
+    m_status = QuantumTaskStatusMapper::GetQuantumTaskStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("failureReason"))
+  {
+    m_failureReason = jsonValue.GetString("failureReason");
+    m_failureReasonHasBeenSet = true;
   }
   if(jsonValue.ValueExists("deviceArn"))
   {
@@ -49,20 +50,10 @@ GetQuantumTaskResult& GetQuantumTaskResult::operator =(const Aws::AmazonWebServi
     m_deviceParameters = jsonValue.GetString("deviceParameters");
     m_deviceParametersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("endedAt"))
+  if(jsonValue.ValueExists("shots"))
   {
-    m_endedAt = jsonValue.GetString("endedAt");
-    m_endedAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("failureReason"))
-  {
-    m_failureReason = jsonValue.GetString("failureReason");
-    m_failureReasonHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("jobArn"))
-  {
-    m_jobArn = jsonValue.GetString("jobArn");
-    m_jobArnHasBeenSet = true;
+    m_shots = jsonValue.GetInt64("shots");
+    m_shotsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("outputS3Bucket"))
   {
@@ -74,25 +65,15 @@ GetQuantumTaskResult& GetQuantumTaskResult::operator =(const Aws::AmazonWebServi
     m_outputS3Directory = jsonValue.GetString("outputS3Directory");
     m_outputS3DirectoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("quantumTaskArn"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_quantumTaskArn = jsonValue.GetString("quantumTaskArn");
-    m_quantumTaskArnHasBeenSet = true;
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("queueInfo"))
+  if(jsonValue.ValueExists("endedAt"))
   {
-    m_queueInfo = jsonValue.GetObject("queueInfo");
-    m_queueInfoHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("shots"))
-  {
-    m_shots = jsonValue.GetInt64("shots");
-    m_shotsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = QuantumTaskStatusMapper::GetQuantumTaskStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
+    m_endedAt = jsonValue.GetString("endedAt");
+    m_endedAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("tags"))
   {
@@ -102,6 +83,35 @@ GetQuantumTaskResult& GetQuantumTaskResult::operator =(const Aws::AmazonWebServi
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("jobArn"))
+  {
+    m_jobArn = jsonValue.GetString("jobArn");
+    m_jobArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("queueInfo"))
+  {
+    m_queueInfo = jsonValue.GetObject("queueInfo");
+    m_queueInfoHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("associations"))
+  {
+    Aws::Utils::Array<JsonView> associationsJsonList = jsonValue.GetArray("associations");
+    for(unsigned associationsIndex = 0; associationsIndex < associationsJsonList.GetLength(); ++associationsIndex)
+    {
+      m_associations.push_back(associationsJsonList[associationsIndex].AsObject());
+    }
+    m_associationsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("numSuccessfulShots"))
+  {
+    m_numSuccessfulShots = jsonValue.GetInt64("numSuccessfulShots");
+    m_numSuccessfulShotsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("actionMetadata"))
+  {
+    m_actionMetadata = jsonValue.GetObject("actionMetadata");
+    m_actionMetadataHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

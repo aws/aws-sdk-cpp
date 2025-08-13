@@ -33,17 +33,6 @@ Aws::String ListEngagementsRequest::SerializePayload() const
 
   }
 
-  if(m_engagementIdentifierHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> engagementIdentifierJsonList(m_engagementIdentifier.size());
-   for(unsigned engagementIdentifierIndex = 0; engagementIdentifierIndex < engagementIdentifierJsonList.GetLength(); ++engagementIdentifierIndex)
-   {
-     engagementIdentifierJsonList[engagementIdentifierIndex].AsString(m_engagementIdentifier[engagementIdentifierIndex]);
-   }
-   payload.WithArray("EngagementIdentifier", std::move(engagementIdentifierJsonList));
-
-  }
-
   if(m_excludeCreatedByHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> excludeCreatedByJsonList(m_excludeCreatedBy.size());
@@ -52,6 +41,12 @@ Aws::String ListEngagementsRequest::SerializePayload() const
      excludeCreatedByJsonList[excludeCreatedByIndex].AsString(m_excludeCreatedBy[excludeCreatedByIndex]);
    }
    payload.WithArray("ExcludeCreatedBy", std::move(excludeCreatedByJsonList));
+
+  }
+
+  if(m_sortHasBeenSet)
+  {
+   payload.WithObject("Sort", m_sort.Jsonize());
 
   }
 
@@ -67,9 +62,14 @@ Aws::String ListEngagementsRequest::SerializePayload() const
 
   }
 
-  if(m_sortHasBeenSet)
+  if(m_engagementIdentifierHasBeenSet)
   {
-   payload.WithObject("Sort", m_sort.Jsonize());
+   Aws::Utils::Array<JsonValue> engagementIdentifierJsonList(m_engagementIdentifier.size());
+   for(unsigned engagementIdentifierIndex = 0; engagementIdentifierIndex < engagementIdentifierJsonList.GetLength(); ++engagementIdentifierIndex)
+   {
+     engagementIdentifierJsonList[engagementIdentifierIndex].AsString(m_engagementIdentifier[engagementIdentifierIndex]);
+   }
+   payload.WithArray("EngagementIdentifier", std::move(engagementIdentifierJsonList));
 
   }
 

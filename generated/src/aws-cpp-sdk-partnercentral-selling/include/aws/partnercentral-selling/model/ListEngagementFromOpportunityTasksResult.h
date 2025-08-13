@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-selling/model/ListEngagementFromOpportunityTaskSummary.h>
 #include <utility>
 
@@ -36,20 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p> A token used for pagination to retrieve the next page of results. If there
-     * are more results available, this field will contain a token that can be used in
-     * a subsequent API call to retrieve the next page. If there are no more results,
-     * this field will be null or an empty string. </p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListEngagementFromOpportunityTasksResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p> TaskSummaries An array of TaskSummary objects containing details about each
      * task. </p>
      */
@@ -63,6 +49,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p> A token used for pagination to retrieve the next page of results. If there
+     * are more results available, this field will contain a token that can be used in
+     * a subsequent API call to retrieve the next page. If there are no more results,
+     * this field will be null or an empty string. </p>
+     */
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEngagementFromOpportunityTasksResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -72,11 +72,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
     Aws::Vector<ListEngagementFromOpportunityTaskSummary> m_taskSummaries;
     bool m_taskSummariesHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

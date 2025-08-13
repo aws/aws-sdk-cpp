@@ -25,11 +25,6 @@ ListEngagementFromOpportunityTasksResult::ListEngagementFromOpportunityTasksResu
 ListEngagementFromOpportunityTasksResult& ListEngagementFromOpportunityTasksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("TaskSummaries"))
   {
     Aws::Utils::Array<JsonView> taskSummariesJsonList = jsonValue.GetArray("TaskSummaries");
@@ -38,6 +33,11 @@ ListEngagementFromOpportunityTasksResult& ListEngagementFromOpportunityTasksResu
       m_taskSummaries.push_back(taskSummariesJsonList[taskSummariesIndex].AsObject());
     }
     m_taskSummariesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

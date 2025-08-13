@@ -51,20 +51,6 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies a unique, client-generated UUID to ensure that the request is
-     * handled exactly once. This token helps prevent duplicate snapshot creations.
-     * </p>
-     */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    CreateResourceSnapshotRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p> The unique identifier of the engagement associated with this snapshot. This
      * field links the snapshot to a specific engagement context. </p>
      */
@@ -74,6 +60,18 @@ namespace Model
     void SetEngagementIdentifier(EngagementIdentifierT&& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier = std::forward<EngagementIdentifierT>(value); }
     template<typename EngagementIdentifierT = Aws::String>
     CreateResourceSnapshotRequest& WithEngagementIdentifier(EngagementIdentifierT&& value) { SetEngagementIdentifier(std::forward<EngagementIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> Specifies the type of resource for which the snapshot is being created. This
+     * field determines the structure and content of the snapshot. Must be one of the
+     * supported resource types, such as: <code>Opportunity</code>. </p>
+     */
+    inline ResourceType GetResourceType() const { return m_resourceType; }
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline CreateResourceSnapshotRequest& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -108,25 +106,27 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the type of resource for which the snapshot is being created. This
-     * field determines the structure and content of the snapshot. Must be one of the
-     * supported resource types, such as: <code>Opportunity</code>. </p>
+     * <p> Specifies a unique, client-generated UUID to ensure that the request is
+     * handled exactly once. This token helps prevent duplicate snapshot creations.
+     * </p>
      */
-    inline ResourceType GetResourceType() const { return m_resourceType; }
-    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline CreateResourceSnapshotRequest& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateResourceSnapshotRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_catalog;
     bool m_catalogHasBeenSet = false;
 
-    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-    bool m_clientTokenHasBeenSet = true;
-
     Aws::String m_engagementIdentifier;
     bool m_engagementIdentifierHasBeenSet = false;
+
+    ResourceType m_resourceType{ResourceType::NOT_SET};
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceIdentifier;
     bool m_resourceIdentifierHasBeenSet = false;
@@ -134,8 +134,8 @@ namespace Model
     Aws::String m_resourceSnapshotTemplateIdentifier;
     bool m_resourceSnapshotTemplateIdentifierHasBeenSet = false;
 
-    ResourceType m_resourceType{ResourceType::NOT_SET};
-    bool m_resourceTypeHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
   };
 
 } // namespace Model

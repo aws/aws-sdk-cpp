@@ -30,10 +30,15 @@ ResourceSnapshotSummary& ResourceSnapshotSummary::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedBy"))
+  if(jsonValue.ValueExists("Revision"))
   {
-    m_createdBy = jsonValue.GetString("CreatedBy");
-    m_createdByHasBeenSet = true;
+    m_revision = jsonValue.GetInteger("Revision");
+    m_revisionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ResourceType"))
+  {
+    m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
+    m_resourceTypeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ResourceId"))
   {
@@ -45,15 +50,10 @@ ResourceSnapshotSummary& ResourceSnapshotSummary::operator =(JsonView jsonValue)
     m_resourceSnapshotTemplateName = jsonValue.GetString("ResourceSnapshotTemplateName");
     m_resourceSnapshotTemplateNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceType"))
+  if(jsonValue.ValueExists("CreatedBy"))
   {
-    m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
-    m_resourceTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Revision"))
-  {
-    m_revision = jsonValue.GetInteger("Revision");
-    m_revisionHasBeenSet = true;
+    m_createdBy = jsonValue.GetString("CreatedBy");
+    m_createdByHasBeenSet = true;
   }
   return *this;
 }
@@ -68,10 +68,15 @@ JsonValue ResourceSnapshotSummary::Jsonize() const
 
   }
 
-  if(m_createdByHasBeenSet)
+  if(m_revisionHasBeenSet)
   {
-   payload.WithString("CreatedBy", m_createdBy);
+   payload.WithInteger("Revision", m_revision);
 
+  }
+
+  if(m_resourceTypeHasBeenSet)
+  {
+   payload.WithString("ResourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
   }
 
   if(m_resourceIdHasBeenSet)
@@ -86,14 +91,9 @@ JsonValue ResourceSnapshotSummary::Jsonize() const
 
   }
 
-  if(m_resourceTypeHasBeenSet)
+  if(m_createdByHasBeenSet)
   {
-   payload.WithString("ResourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
-  }
-
-  if(m_revisionHasBeenSet)
-  {
-   payload.WithInteger("Revision", m_revision);
+   payload.WithString("CreatedBy", m_createdBy);
 
   }
 

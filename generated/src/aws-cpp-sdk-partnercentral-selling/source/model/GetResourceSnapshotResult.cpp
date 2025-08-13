@@ -25,35 +25,35 @@ GetResourceSnapshotResult::GetResourceSnapshotResult(const Aws::AmazonWebService
 GetResourceSnapshotResult& GetResourceSnapshotResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Arn"))
-  {
-    m_arn = jsonValue.GetString("Arn");
-    m_arnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Catalog"))
   {
     m_catalog = jsonValue.GetString("Catalog");
     m_catalogHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedAt"))
+  if(jsonValue.ValueExists("Arn"))
   {
-    m_createdAt = jsonValue.GetString("CreatedAt");
-    m_createdAtHasBeenSet = true;
+    m_arn = jsonValue.GetString("Arn");
+    m_arnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetString("CreatedBy");
     m_createdByHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("CreatedAt"))
+  {
+    m_createdAt = jsonValue.GetString("CreatedAt");
+    m_createdAtHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("EngagementId"))
   {
     m_engagementId = jsonValue.GetString("EngagementId");
     m_engagementIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Payload"))
+  if(jsonValue.ValueExists("ResourceType"))
   {
-    m_payload = jsonValue.GetObject("Payload");
-    m_payloadHasBeenSet = true;
+    m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
+    m_resourceTypeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ResourceId"))
   {
@@ -65,15 +65,15 @@ GetResourceSnapshotResult& GetResourceSnapshotResult::operator =(const Aws::Amaz
     m_resourceSnapshotTemplateName = jsonValue.GetString("ResourceSnapshotTemplateName");
     m_resourceSnapshotTemplateNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceType"))
-  {
-    m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
-    m_resourceTypeHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Revision"))
   {
     m_revision = jsonValue.GetInteger("Revision");
     m_revisionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Payload"))
+  {
+    m_payload = jsonValue.GetObject("Payload");
+    m_payloadHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

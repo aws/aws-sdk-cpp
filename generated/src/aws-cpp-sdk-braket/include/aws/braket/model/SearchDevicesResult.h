@@ -51,7 +51,7 @@ namespace Model
     ///@{
     /**
      * <p>A token used for pagination of results, or null if there are no additional
-     * results. Use the token value in a subsequent request to continue results where
+     * results. Use the token value in a subsequent request to continue search where
      * the previous request ended.</p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }

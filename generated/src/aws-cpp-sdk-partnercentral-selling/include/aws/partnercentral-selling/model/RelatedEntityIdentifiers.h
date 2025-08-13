@@ -63,28 +63,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Enables the association of specific Amazon Web Services products with the
-     * <code>Opportunity</code>. Partners can indicate the relevant Amazon Web Services
-     * products for the <code>Opportunity</code>'s solution and align with the
-     * customer's needs. Returns multiple values separated by commas. For example,
-     * <code>"AWSProducts" : ["AmazonRedshift", "AWSAppFabric",
-     * "AWSCleanRooms"]</code>.</p> <p>Use the file with the list of Amazon Web
-     * Services products hosted on GitHub: <a
-     * href="https://github.com/aws-samples/partner-crm-integration-samples/blob/main/resources/aws_products.json">
-     * Amazon Web Services products</a>.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetAwsProducts() const { return m_awsProducts; }
-    inline bool AwsProductsHasBeenSet() const { return m_awsProductsHasBeenSet; }
-    template<typename AwsProductsT = Aws::Vector<Aws::String>>
-    void SetAwsProducts(AwsProductsT&& value) { m_awsProductsHasBeenSet = true; m_awsProducts = std::forward<AwsProductsT>(value); }
-    template<typename AwsProductsT = Aws::Vector<Aws::String>>
-    RelatedEntityIdentifiers& WithAwsProducts(AwsProductsT&& value) { SetAwsProducts(std::forward<AwsProductsT>(value)); return *this;}
-    template<typename AwsProductsT = Aws::String>
-    RelatedEntityIdentifiers& AddAwsProducts(AwsProductsT&& value) { m_awsProductsHasBeenSet = true; m_awsProducts.emplace_back(std::forward<AwsProductsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>Enables partner solutions or offerings' association with an opportunity. To
      * associate a solution, provide the solution's unique identifier, which you can
      * obtain with the <code>ListSolutions</code> operation.</p> <p>If the specific
@@ -105,16 +83,38 @@ namespace Model
     template<typename SolutionsT = Aws::String>
     RelatedEntityIdentifiers& AddSolutions(SolutionsT&& value) { m_solutionsHasBeenSet = true; m_solutions.emplace_back(std::forward<SolutionsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Enables the association of specific Amazon Web Services products with the
+     * <code>Opportunity</code>. Partners can indicate the relevant Amazon Web Services
+     * products for the <code>Opportunity</code>'s solution and align with the
+     * customer's needs. Returns multiple values separated by commas. For example,
+     * <code>"AWSProducts" : ["AmazonRedshift", "AWSAppFabric",
+     * "AWSCleanRooms"]</code>.</p> <p>Use the file with the list of Amazon Web
+     * Services products hosted on GitHub: <a
+     * href="https://github.com/aws-samples/partner-crm-integration-samples/blob/main/resources/aws_products.json">
+     * Amazon Web Services products</a>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAwsProducts() const { return m_awsProducts; }
+    inline bool AwsProductsHasBeenSet() const { return m_awsProductsHasBeenSet; }
+    template<typename AwsProductsT = Aws::Vector<Aws::String>>
+    void SetAwsProducts(AwsProductsT&& value) { m_awsProductsHasBeenSet = true; m_awsProducts = std::forward<AwsProductsT>(value); }
+    template<typename AwsProductsT = Aws::Vector<Aws::String>>
+    RelatedEntityIdentifiers& WithAwsProducts(AwsProductsT&& value) { SetAwsProducts(std::forward<AwsProductsT>(value)); return *this;}
+    template<typename AwsProductsT = Aws::String>
+    RelatedEntityIdentifiers& AddAwsProducts(AwsProductsT&& value) { m_awsProductsHasBeenSet = true; m_awsProducts.emplace_back(std::forward<AwsProductsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_awsMarketplaceOffers;
     bool m_awsMarketplaceOffersHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_awsProducts;
-    bool m_awsProductsHasBeenSet = false;
-
     Aws::Vector<Aws::String> m_solutions;
     bool m_solutionsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_awsProducts;
+    bool m_awsProductsHasBeenSet = false;
   };
 
 } // namespace Model

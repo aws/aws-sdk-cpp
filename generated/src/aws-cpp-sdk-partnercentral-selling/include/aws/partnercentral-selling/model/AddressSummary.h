@@ -54,17 +54,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the end <code>Customer</code>'s country associated with the
-     * <code>Opportunity</code>.</p>
-     */
-    inline CountryCode GetCountryCode() const { return m_countryCode; }
-    inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
-    inline void SetCountryCode(CountryCode value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
-    inline AddressSummary& WithCountryCode(CountryCode value) { SetCountryCode(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Specifies the end <code>Customer</code>'s postal code associated with the
      * <code>Opportunity</code>.</p>
      */
@@ -98,19 +87,30 @@ namespace Model
     template<typename StateOrRegionT = Aws::String>
     AddressSummary& WithStateOrRegion(StateOrRegionT&& value) { SetStateOrRegion(std::forward<StateOrRegionT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the end <code>Customer</code>'s country associated with the
+     * <code>Opportunity</code>.</p>
+     */
+    inline CountryCode GetCountryCode() const { return m_countryCode; }
+    inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
+    inline void SetCountryCode(CountryCode value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
+    inline AddressSummary& WithCountryCode(CountryCode value) { SetCountryCode(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_city;
     bool m_cityHasBeenSet = false;
-
-    CountryCode m_countryCode{CountryCode::NOT_SET};
-    bool m_countryCodeHasBeenSet = false;
 
     Aws::String m_postalCode;
     bool m_postalCodeHasBeenSet = false;
 
     Aws::String m_stateOrRegion;
     bool m_stateOrRegionHasBeenSet = false;
+
+    CountryCode m_countryCode{CountryCode::NOT_SET};
+    bool m_countryCodeHasBeenSet = false;
   };
 
 } // namespace Model

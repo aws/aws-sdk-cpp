@@ -25,11 +25,6 @@ ListSolutionsResult::ListSolutionsResult(const Aws::AmazonWebServiceResult<JsonV
 ListSolutionsResult& ListSolutionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("SolutionSummaries"))
   {
     Aws::Utils::Array<JsonView> solutionSummariesJsonList = jsonValue.GetArray("SolutionSummaries");
@@ -38,6 +33,11 @@ ListSolutionsResult& ListSolutionsResult::operator =(const Aws::AmazonWebService
       m_solutionSummaries.push_back(solutionSummariesJsonList[solutionSummariesIndex].AsObject());
     }
     m_solutionSummariesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

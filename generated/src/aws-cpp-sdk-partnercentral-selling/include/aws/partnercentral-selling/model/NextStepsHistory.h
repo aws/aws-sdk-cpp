@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -41,18 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the step execution time.</p>
-     */
-    inline const Aws::Utils::DateTime& GetTime() const { return m_time; }
-    inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
-    template<typename TimeT = Aws::Utils::DateTime>
-    void SetTime(TimeT&& value) { m_timeHasBeenSet = true; m_time = std::forward<TimeT>(value); }
-    template<typename TimeT = Aws::Utils::DateTime>
-    NextStepsHistory& WithTime(TimeT&& value) { SetTime(std::forward<TimeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Indicates the step's execution details.</p>
      */
     inline const Aws::String& GetValue() const { return m_value; }
@@ -62,13 +50,25 @@ namespace Model
     template<typename ValueT = Aws::String>
     NextStepsHistory& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::Utils::DateTime m_time{};
-    bool m_timeHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Indicates the step execution time.</p>
+     */
+    inline const Aws::Utils::DateTime& GetTime() const { return m_time; }
+    inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
+    template<typename TimeT = Aws::Utils::DateTime>
+    void SetTime(TimeT&& value) { m_timeHasBeenSet = true; m_time = std::forward<TimeT>(value); }
+    template<typename TimeT = Aws::Utils::DateTime>
+    NextStepsHistory& WithTime(TimeT&& value) { SetTime(std::forward<TimeT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
+
+    Aws::Utils::DateTime m_time{};
+    bool m_timeHasBeenSet = false;
   };
 
 } // namespace Model

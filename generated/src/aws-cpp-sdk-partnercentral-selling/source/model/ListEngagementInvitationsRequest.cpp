@@ -22,17 +22,6 @@ Aws::String ListEngagementInvitationsRequest::SerializePayload() const
 
   }
 
-  if(m_engagementIdentifierHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> engagementIdentifierJsonList(m_engagementIdentifier.size());
-   for(unsigned engagementIdentifierIndex = 0; engagementIdentifierIndex < engagementIdentifierJsonList.GetLength(); ++engagementIdentifierIndex)
-   {
-     engagementIdentifierJsonList[engagementIdentifierIndex].AsString(m_engagementIdentifier[engagementIdentifierIndex]);
-   }
-   payload.WithArray("EngagementIdentifier", std::move(engagementIdentifierJsonList));
-
-  }
-
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("MaxResults", m_maxResults);
@@ -45,9 +34,10 @@ Aws::String ListEngagementInvitationsRequest::SerializePayload() const
 
   }
 
-  if(m_participantTypeHasBeenSet)
+  if(m_sortHasBeenSet)
   {
-   payload.WithString("ParticipantType", ParticipantTypeMapper::GetNameForParticipantType(m_participantType));
+   payload.WithObject("Sort", m_sort.Jsonize());
+
   }
 
   if(m_payloadTypeHasBeenSet)
@@ -61,21 +51,9 @@ Aws::String ListEngagementInvitationsRequest::SerializePayload() const
 
   }
 
-  if(m_senderAwsAccountIdHasBeenSet)
+  if(m_participantTypeHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> senderAwsAccountIdJsonList(m_senderAwsAccountId.size());
-   for(unsigned senderAwsAccountIdIndex = 0; senderAwsAccountIdIndex < senderAwsAccountIdJsonList.GetLength(); ++senderAwsAccountIdIndex)
-   {
-     senderAwsAccountIdJsonList[senderAwsAccountIdIndex].AsString(m_senderAwsAccountId[senderAwsAccountIdIndex]);
-   }
-   payload.WithArray("SenderAwsAccountId", std::move(senderAwsAccountIdJsonList));
-
-  }
-
-  if(m_sortHasBeenSet)
-  {
-   payload.WithObject("Sort", m_sort.Jsonize());
-
+   payload.WithString("ParticipantType", ParticipantTypeMapper::GetNameForParticipantType(m_participantType));
   }
 
   if(m_statusHasBeenSet)
@@ -86,6 +64,28 @@ Aws::String ListEngagementInvitationsRequest::SerializePayload() const
      statusJsonList[statusIndex].AsString(InvitationStatusMapper::GetNameForInvitationStatus(m_status[statusIndex]));
    }
    payload.WithArray("Status", std::move(statusJsonList));
+
+  }
+
+  if(m_engagementIdentifierHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> engagementIdentifierJsonList(m_engagementIdentifier.size());
+   for(unsigned engagementIdentifierIndex = 0; engagementIdentifierIndex < engagementIdentifierJsonList.GetLength(); ++engagementIdentifierIndex)
+   {
+     engagementIdentifierJsonList[engagementIdentifierIndex].AsString(m_engagementIdentifier[engagementIdentifierIndex]);
+   }
+   payload.WithArray("EngagementIdentifier", std::move(engagementIdentifierJsonList));
+
+  }
+
+  if(m_senderAwsAccountIdHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> senderAwsAccountIdJsonList(m_senderAwsAccountId.size());
+   for(unsigned senderAwsAccountIdIndex = 0; senderAwsAccountIdIndex < senderAwsAccountIdJsonList.GetLength(); ++senderAwsAccountIdIndex)
+   {
+     senderAwsAccountIdJsonList[senderAwsAccountIdIndex].AsString(m_senderAwsAccountId[senderAwsAccountIdIndex]);
+   }
+   payload.WithArray("SenderAwsAccountId", std::move(senderAwsAccountIdJsonList));
 
   }
 

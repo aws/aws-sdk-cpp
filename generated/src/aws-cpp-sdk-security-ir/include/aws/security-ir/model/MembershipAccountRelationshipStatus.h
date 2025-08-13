@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     Associated,
-    Disassociated
+    Disassociated,
+    Unassociated
   };
 
 namespace MembershipAccountRelationshipStatusMapper

@@ -36,7 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Optional request elements.</p>
+     * <p>An optional string that, if supplied on subsequent calls to ListComments,
+     * allows the API to fetch the next page of results. </p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     template<typename NextTokenT = Aws::String>

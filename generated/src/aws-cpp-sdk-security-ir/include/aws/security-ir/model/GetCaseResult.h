@@ -151,8 +151,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Response element for GetCase that provides identifies the case is waiting on
-     * customer input.</p>
+     * <p>Response element for GetCase that identifies the case is waiting on customer
+     * input.</p>
      */
     inline PendingAction GetPendingAction() const { return m_pendingAction; }
     inline void SetPendingAction(PendingAction value) { m_pendingActionHasBeenSet = true; m_pendingAction = value; }
@@ -221,8 +221,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Response element for GetCase that provides the current resolver types.
-     * Options include <code> self-supported | AWS-supported</code>. </p>
+     * <p>Response element for GetCase that provides the current resolver types.</p>
      */
     inline ResolverType GetResolverType() const { return m_resolverType; }
     inline void SetResolverType(ResolverType value) { m_resolverTypeHasBeenSet = true; m_resolverType = value; }

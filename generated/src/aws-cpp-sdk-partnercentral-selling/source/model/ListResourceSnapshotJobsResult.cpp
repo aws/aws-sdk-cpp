@@ -25,11 +25,6 @@ ListResourceSnapshotJobsResult::ListResourceSnapshotJobsResult(const Aws::Amazon
 ListResourceSnapshotJobsResult& ListResourceSnapshotJobsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("ResourceSnapshotJobSummaries"))
   {
     Aws::Utils::Array<JsonView> resourceSnapshotJobSummariesJsonList = jsonValue.GetArray("ResourceSnapshotJobSummaries");
@@ -38,6 +33,11 @@ ListResourceSnapshotJobsResult& ListResourceSnapshotJobsResult::operator =(const
       m_resourceSnapshotJobSummaries.push_back(resourceSnapshotJobSummariesJsonList[resourceSnapshotJobSummariesIndex].AsObject());
     }
     m_resourceSnapshotJobSummariesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

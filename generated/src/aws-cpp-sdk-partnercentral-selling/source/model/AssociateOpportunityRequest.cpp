@@ -28,15 +28,15 @@ Aws::String AssociateOpportunityRequest::SerializePayload() const
 
   }
 
+  if(m_relatedEntityTypeHasBeenSet)
+  {
+   payload.WithString("RelatedEntityType", RelatedEntityTypeMapper::GetNameForRelatedEntityType(m_relatedEntityType));
+  }
+
   if(m_relatedEntityIdentifierHasBeenSet)
   {
    payload.WithString("RelatedEntityIdentifier", m_relatedEntityIdentifier);
 
-  }
-
-  if(m_relatedEntityTypeHasBeenSet)
-  {
-   payload.WithString("RelatedEntityType", RelatedEntityTypeMapper::GetNameForRelatedEntityType(m_relatedEntityType));
   }
 
   return payload.View().WriteReadable();

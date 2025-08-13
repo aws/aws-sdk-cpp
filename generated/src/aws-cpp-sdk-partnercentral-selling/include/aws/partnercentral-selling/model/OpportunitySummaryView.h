@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
-#include <aws/partnercentral-selling/model/Customer.h>
+#include <aws/partnercentral-selling/model/OpportunityType.h>
 #include <aws/partnercentral-selling/model/LifeCycleForView.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/partnercentral-selling/model/OpportunityType.h>
+#include <aws/partnercentral-selling/model/Customer.h>
 #include <aws/partnercentral-selling/model/ProjectView.h>
 #include <aws/partnercentral-selling/model/RelatedEntityIdentifiers.h>
 #include <aws/partnercentral-selling/model/Contact.h>
@@ -47,13 +47,13 @@ namespace Model
 
 
     ///@{
-    
-    inline const Customer& GetCustomer() const { return m_customer; }
-    inline bool CustomerHasBeenSet() const { return m_customerHasBeenSet; }
-    template<typename CustomerT = Customer>
-    void SetCustomer(CustomerT&& value) { m_customerHasBeenSet = true; m_customer = std::forward<CustomerT>(value); }
-    template<typename CustomerT = Customer>
-    OpportunitySummaryView& WithCustomer(CustomerT&& value) { SetCustomer(std::forward<CustomerT>(value)); return *this;}
+    /**
+     * <p> Specifies the opportunity type. </p>
+     */
+    inline OpportunityType GetOpportunityType() const { return m_opportunityType; }
+    inline bool OpportunityTypeHasBeenSet() const { return m_opportunityTypeHasBeenSet; }
+    inline void SetOpportunityType(OpportunityType value) { m_opportunityTypeHasBeenSet = true; m_opportunityType = value; }
+    inline OpportunitySummaryView& WithOpportunityType(OpportunityType value) { SetOpportunityType(value); return *this;}
     ///@}
 
     ///@{
@@ -88,16 +88,6 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the opportunity type. </p>
-     */
-    inline OpportunityType GetOpportunityType() const { return m_opportunityType; }
-    inline bool OpportunityTypeHasBeenSet() const { return m_opportunityTypeHasBeenSet; }
-    inline void SetOpportunityType(OpportunityType value) { m_opportunityTypeHasBeenSet = true; m_opportunityType = value; }
-    inline OpportunitySummaryView& WithOpportunityType(OpportunityType value) { SetOpportunityType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p> Identifies the type of support the partner needs from AWS. </p>
      */
     inline const Aws::Vector<PrimaryNeedFromAws>& GetPrimaryNeedsFromAws() const { return m_primaryNeedsFromAws; }
@@ -107,6 +97,16 @@ namespace Model
     template<typename PrimaryNeedsFromAwsT = Aws::Vector<PrimaryNeedFromAws>>
     OpportunitySummaryView& WithPrimaryNeedsFromAws(PrimaryNeedsFromAwsT&& value) { SetPrimaryNeedsFromAws(std::forward<PrimaryNeedsFromAwsT>(value)); return *this;}
     inline OpportunitySummaryView& AddPrimaryNeedsFromAws(PrimaryNeedFromAws value) { m_primaryNeedsFromAwsHasBeenSet = true; m_primaryNeedsFromAws.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    
+    inline const Customer& GetCustomer() const { return m_customer; }
+    inline bool CustomerHasBeenSet() const { return m_customerHasBeenSet; }
+    template<typename CustomerT = Customer>
+    void SetCustomer(CustomerT&& value) { m_customerHasBeenSet = true; m_customer = std::forward<CustomerT>(value); }
+    template<typename CustomerT = Customer>
+    OpportunitySummaryView& WithCustomer(CustomerT&& value) { SetCustomer(std::forward<CustomerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,8 +134,8 @@ namespace Model
     ///@}
   private:
 
-    Customer m_customer;
-    bool m_customerHasBeenSet = false;
+    OpportunityType m_opportunityType{OpportunityType::NOT_SET};
+    bool m_opportunityTypeHasBeenSet = false;
 
     LifeCycleForView m_lifecycle;
     bool m_lifecycleHasBeenSet = false;
@@ -143,11 +143,11 @@ namespace Model
     Aws::Vector<Contact> m_opportunityTeam;
     bool m_opportunityTeamHasBeenSet = false;
 
-    OpportunityType m_opportunityType{OpportunityType::NOT_SET};
-    bool m_opportunityTypeHasBeenSet = false;
-
     Aws::Vector<PrimaryNeedFromAws> m_primaryNeedsFromAws;
     bool m_primaryNeedsFromAwsHasBeenSet = false;
+
+    Customer m_customer;
+    bool m_customerHasBeenSet = false;
 
     ProjectView m_project;
     bool m_projectHasBeenSet = false;

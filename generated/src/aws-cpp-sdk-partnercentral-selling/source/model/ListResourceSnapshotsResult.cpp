@@ -25,11 +25,6 @@ ListResourceSnapshotsResult::ListResourceSnapshotsResult(const Aws::AmazonWebSer
 ListResourceSnapshotsResult& ListResourceSnapshotsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("ResourceSnapshotSummaries"))
   {
     Aws::Utils::Array<JsonView> resourceSnapshotSummariesJsonList = jsonValue.GetArray("ResourceSnapshotSummaries");
@@ -38,6 +33,11 @@ ListResourceSnapshotsResult& ListResourceSnapshotsResult::operator =(const Aws::
       m_resourceSnapshotSummaries.push_back(resourceSnapshotSummariesJsonList[resourceSnapshotSummariesIndex].AsObject());
     }
     m_resourceSnapshotSummariesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

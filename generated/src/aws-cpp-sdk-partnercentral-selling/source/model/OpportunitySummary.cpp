@@ -25,50 +25,50 @@ OpportunitySummary::OpportunitySummary(JsonView jsonValue)
 
 OpportunitySummary& OpportunitySummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Arn"))
-  {
-    m_arn = jsonValue.GetString("Arn");
-    m_arnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Catalog"))
   {
     m_catalog = jsonValue.GetString("Catalog");
     m_catalogHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("CreatedDate"))
-  {
-    m_createdDate = jsonValue.GetString("CreatedDate");
-    m_createdDateHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Customer"))
-  {
-    m_customer = jsonValue.GetObject("Customer");
-    m_customerHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedDate"))
+  if(jsonValue.ValueExists("Arn"))
   {
-    m_lastModifiedDate = jsonValue.GetString("LastModifiedDate");
-    m_lastModifiedDateHasBeenSet = true;
+    m_arn = jsonValue.GetString("Arn");
+    m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LifeCycle"))
+  if(jsonValue.ValueExists("PartnerOpportunityIdentifier"))
   {
-    m_lifeCycle = jsonValue.GetObject("LifeCycle");
-    m_lifeCycleHasBeenSet = true;
+    m_partnerOpportunityIdentifier = jsonValue.GetString("PartnerOpportunityIdentifier");
+    m_partnerOpportunityIdentifierHasBeenSet = true;
   }
   if(jsonValue.ValueExists("OpportunityType"))
   {
     m_opportunityType = OpportunityTypeMapper::GetOpportunityTypeForName(jsonValue.GetString("OpportunityType"));
     m_opportunityTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PartnerOpportunityIdentifier"))
+  if(jsonValue.ValueExists("LastModifiedDate"))
   {
-    m_partnerOpportunityIdentifier = jsonValue.GetString("PartnerOpportunityIdentifier");
-    m_partnerOpportunityIdentifierHasBeenSet = true;
+    m_lastModifiedDate = jsonValue.GetString("LastModifiedDate");
+    m_lastModifiedDateHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("CreatedDate"))
+  {
+    m_createdDate = jsonValue.GetString("CreatedDate");
+    m_createdDateHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("LifeCycle"))
+  {
+    m_lifeCycle = jsonValue.GetObject("LifeCycle");
+    m_lifeCycleHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Customer"))
+  {
+    m_customer = jsonValue.GetObject("Customer");
+    m_customerHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Project"))
   {
@@ -82,26 +82,9 @@ JsonValue OpportunitySummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
-  }
-
   if(m_catalogHasBeenSet)
   {
    payload.WithString("Catalog", m_catalog);
-
-  }
-
-  if(m_createdDateHasBeenSet)
-  {
-   payload.WithString("CreatedDate", m_createdDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_customerHasBeenSet)
-  {
-   payload.WithObject("Customer", m_customer.Jsonize());
 
   }
 
@@ -111,14 +94,15 @@ JsonValue OpportunitySummary::Jsonize() const
 
   }
 
-  if(m_lastModifiedDateHasBeenSet)
+  if(m_arnHasBeenSet)
   {
-   payload.WithString("LastModifiedDate", m_lastModifiedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   payload.WithString("Arn", m_arn);
+
   }
 
-  if(m_lifeCycleHasBeenSet)
+  if(m_partnerOpportunityIdentifierHasBeenSet)
   {
-   payload.WithObject("LifeCycle", m_lifeCycle.Jsonize());
+   payload.WithString("PartnerOpportunityIdentifier", m_partnerOpportunityIdentifier);
 
   }
 
@@ -127,9 +111,25 @@ JsonValue OpportunitySummary::Jsonize() const
    payload.WithString("OpportunityType", OpportunityTypeMapper::GetNameForOpportunityType(m_opportunityType));
   }
 
-  if(m_partnerOpportunityIdentifierHasBeenSet)
+  if(m_lastModifiedDateHasBeenSet)
   {
-   payload.WithString("PartnerOpportunityIdentifier", m_partnerOpportunityIdentifier);
+   payload.WithString("LastModifiedDate", m_lastModifiedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_createdDateHasBeenSet)
+  {
+   payload.WithString("CreatedDate", m_createdDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_lifeCycleHasBeenSet)
+  {
+   payload.WithObject("LifeCycle", m_lifeCycle.Jsonize());
+
+  }
+
+  if(m_customerHasBeenSet)
+  {
+   payload.WithObject("Customer", m_customer.Jsonize());
 
   }
 

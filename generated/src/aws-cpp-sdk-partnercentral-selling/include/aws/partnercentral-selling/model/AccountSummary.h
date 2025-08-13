@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
-#include <aws/partnercentral-selling/model/AddressSummary.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-selling/model/Industry.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/partnercentral-selling/model/AddressSummary.h>
 #include <utility>
 
 namespace Aws
@@ -42,32 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the end <code>Customer</code>'s address details associated with the
-     * <code>Opportunity</code>.</p>
-     */
-    inline const AddressSummary& GetAddress() const { return m_address; }
-    inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-    template<typename AddressT = AddressSummary>
-    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
-    template<typename AddressT = AddressSummary>
-    AccountSummary& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies the end <code>Customer</code>'s company name associated with the
-     * <code>Opportunity</code>.</p>
-     */
-    inline const Aws::String& GetCompanyName() const { return m_companyName; }
-    inline bool CompanyNameHasBeenSet() const { return m_companyNameHasBeenSet; }
-    template<typename CompanyNameT = Aws::String>
-    void SetCompanyName(CompanyNameT&& value) { m_companyNameHasBeenSet = true; m_companyName = std::forward<CompanyNameT>(value); }
-    template<typename CompanyNameT = Aws::String>
-    AccountSummary& WithCompanyName(CompanyNameT&& value) { SetCompanyName(std::forward<CompanyNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Specifies which industry the end <code>Customer</code> belongs to associated
      * with the <code>Opportunity</code>. It refers to the category or sector that the
      * customer's business operates in.</p> <p>To submit a value outside the picklist,
@@ -98,6 +72,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the end <code>Customer</code>'s company name associated with the
+     * <code>Opportunity</code>.</p>
+     */
+    inline const Aws::String& GetCompanyName() const { return m_companyName; }
+    inline bool CompanyNameHasBeenSet() const { return m_companyNameHasBeenSet; }
+    template<typename CompanyNameT = Aws::String>
+    void SetCompanyName(CompanyNameT&& value) { m_companyNameHasBeenSet = true; m_companyName = std::forward<CompanyNameT>(value); }
+    template<typename CompanyNameT = Aws::String>
+    AccountSummary& WithCompanyName(CompanyNameT&& value) { SetCompanyName(std::forward<CompanyNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies the end customer's company website URL associated with the
      * <code>Opportunity</code>. This value is crucial to map the customer within the
      * Amazon Web Services CRM system.</p>
@@ -109,13 +96,20 @@ namespace Model
     template<typename WebsiteUrlT = Aws::String>
     AccountSummary& WithWebsiteUrl(WebsiteUrlT&& value) { SetWebsiteUrl(std::forward<WebsiteUrlT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the end <code>Customer</code>'s address details associated with the
+     * <code>Opportunity</code>.</p>
+     */
+    inline const AddressSummary& GetAddress() const { return m_address; }
+    inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
+    template<typename AddressT = AddressSummary>
+    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
+    template<typename AddressT = AddressSummary>
+    AccountSummary& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
+    ///@}
   private:
-
-    AddressSummary m_address;
-    bool m_addressHasBeenSet = false;
-
-    Aws::String m_companyName;
-    bool m_companyNameHasBeenSet = false;
 
     Industry m_industry{Industry::NOT_SET};
     bool m_industryHasBeenSet = false;
@@ -123,8 +117,14 @@ namespace Model
     Aws::String m_otherIndustry;
     bool m_otherIndustryHasBeenSet = false;
 
+    Aws::String m_companyName;
+    bool m_companyNameHasBeenSet = false;
+
     Aws::String m_websiteUrl;
     bool m_websiteUrlHasBeenSet = false;
+
+    AddressSummary m_address;
+    bool m_addressHasBeenSet = false;
   };
 
 } // namespace Model

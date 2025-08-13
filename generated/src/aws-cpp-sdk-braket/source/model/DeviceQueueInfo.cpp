@@ -30,15 +30,15 @@ DeviceQueueInfo& DeviceQueueInfo::operator =(JsonView jsonValue)
     m_queue = QueueNameMapper::GetQueueNameForName(jsonValue.GetString("queue"));
     m_queueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("queuePriority"))
-  {
-    m_queuePriority = QueuePriorityMapper::GetQueuePriorityForName(jsonValue.GetString("queuePriority"));
-    m_queuePriorityHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("queueSize"))
   {
     m_queueSize = jsonValue.GetString("queueSize");
     m_queueSizeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("queuePriority"))
+  {
+    m_queuePriority = QueuePriorityMapper::GetQueuePriorityForName(jsonValue.GetString("queuePriority"));
+    m_queuePriorityHasBeenSet = true;
   }
   return *this;
 }
@@ -52,15 +52,15 @@ JsonValue DeviceQueueInfo::Jsonize() const
    payload.WithString("queue", QueueNameMapper::GetNameForQueueName(m_queue));
   }
 
-  if(m_queuePriorityHasBeenSet)
-  {
-   payload.WithString("queuePriority", QueuePriorityMapper::GetNameForQueuePriority(m_queuePriority));
-  }
-
   if(m_queueSizeHasBeenSet)
   {
    payload.WithString("queueSize", m_queueSize);
 
+  }
+
+  if(m_queuePriorityHasBeenSet)
+  {
+   payload.WithString("queuePriority", QueuePriorityMapper::GetNameForQueuePriority(m_queuePriority));
   }
 
   return payload;

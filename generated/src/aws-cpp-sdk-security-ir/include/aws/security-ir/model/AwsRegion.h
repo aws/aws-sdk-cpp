@@ -18,6 +18,7 @@ namespace Model
     NOT_SET,
     af_south_1,
     ap_east_1,
+    ap_east_2,
     ap_northeast_1,
     ap_northeast_2,
     ap_northeast_3,

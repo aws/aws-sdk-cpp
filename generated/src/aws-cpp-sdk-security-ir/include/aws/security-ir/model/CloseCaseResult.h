@@ -37,7 +37,7 @@ namespace Model
     ///@{
     /**
      * <p>A response element providing responses for requests to CloseCase. This
-     * element responds with the case status following the action. </p>
+     * element responds <code>Closed </code> if successful. </p>
      */
     inline CaseStatus GetCaseStatus() const { return m_caseStatus; }
     inline void SetCaseStatus(CaseStatus value) { m_caseStatusHasBeenSet = true; m_caseStatus = value; }
@@ -47,7 +47,8 @@ namespace Model
     ///@{
     /**
      * <p>A response element providing responses for requests to CloseCase. This
-     * element responds with the case closure date following the action. </p>
+     * element responds with the ISO-8601 formatted timestamp of the moment when the
+     * case was closed. </p>
      */
     inline const Aws::Utils::DateTime& GetClosedDate() const { return m_closedDate; }
     template<typename ClosedDateT = Aws::Utils::DateTime>

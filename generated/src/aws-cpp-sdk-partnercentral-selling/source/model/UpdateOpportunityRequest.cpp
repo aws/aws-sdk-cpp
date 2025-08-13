@@ -22,51 +22,6 @@ Aws::String UpdateOpportunityRequest::SerializePayload() const
 
   }
 
-  if(m_customerHasBeenSet)
-  {
-   payload.WithObject("Customer", m_customer.Jsonize());
-
-  }
-
-  if(m_identifierHasBeenSet)
-  {
-   payload.WithString("Identifier", m_identifier);
-
-  }
-
-  if(m_lastModifiedDateHasBeenSet)
-  {
-   payload.WithString("LastModifiedDate", m_lastModifiedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_lifeCycleHasBeenSet)
-  {
-   payload.WithObject("LifeCycle", m_lifeCycle.Jsonize());
-
-  }
-
-  if(m_marketingHasBeenSet)
-  {
-   payload.WithObject("Marketing", m_marketing.Jsonize());
-
-  }
-
-  if(m_nationalSecurityHasBeenSet)
-  {
-   payload.WithString("NationalSecurity", NationalSecurityMapper::GetNameForNationalSecurity(m_nationalSecurity));
-  }
-
-  if(m_opportunityTypeHasBeenSet)
-  {
-   payload.WithString("OpportunityType", OpportunityTypeMapper::GetNameForOpportunityType(m_opportunityType));
-  }
-
-  if(m_partnerOpportunityIdentifierHasBeenSet)
-  {
-   payload.WithString("PartnerOpportunityIdentifier", m_partnerOpportunityIdentifier);
-
-  }
-
   if(m_primaryNeedsFromAwsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> primaryNeedsFromAwsJsonList(m_primaryNeedsFromAws.size());
@@ -78,15 +33,60 @@ Aws::String UpdateOpportunityRequest::SerializePayload() const
 
   }
 
+  if(m_nationalSecurityHasBeenSet)
+  {
+   payload.WithString("NationalSecurity", NationalSecurityMapper::GetNameForNationalSecurity(m_nationalSecurity));
+  }
+
+  if(m_partnerOpportunityIdentifierHasBeenSet)
+  {
+   payload.WithString("PartnerOpportunityIdentifier", m_partnerOpportunityIdentifier);
+
+  }
+
+  if(m_customerHasBeenSet)
+  {
+   payload.WithObject("Customer", m_customer.Jsonize());
+
+  }
+
   if(m_projectHasBeenSet)
   {
    payload.WithObject("Project", m_project.Jsonize());
 
   }
 
+  if(m_opportunityTypeHasBeenSet)
+  {
+   payload.WithString("OpportunityType", OpportunityTypeMapper::GetNameForOpportunityType(m_opportunityType));
+  }
+
+  if(m_marketingHasBeenSet)
+  {
+   payload.WithObject("Marketing", m_marketing.Jsonize());
+
+  }
+
   if(m_softwareRevenueHasBeenSet)
   {
    payload.WithObject("SoftwareRevenue", m_softwareRevenue.Jsonize());
+
+  }
+
+  if(m_lastModifiedDateHasBeenSet)
+  {
+   payload.WithString("LastModifiedDate", m_lastModifiedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_identifierHasBeenSet)
+  {
+   payload.WithString("Identifier", m_identifier);
+
+  }
+
+  if(m_lifeCycleHasBeenSet)
+  {
+   payload.WithObject("LifeCycle", m_lifeCycle.Jsonize());
 
   }
 
