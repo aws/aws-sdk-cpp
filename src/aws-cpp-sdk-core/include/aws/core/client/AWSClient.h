@@ -336,6 +336,11 @@ namespace Aws
              */
             static void AppendRecursionDetectionHeader(std::shared_ptr<Aws::Http::HttpRequest> ioRequest);
 
+            /**
+             * Track credential provider usage and add User-Agent features.
+             */
+            void TrackCredentialProviderUsage(const Aws::AmazonWebServiceRequest& request) const;
+
             static CoreErrors GuessBodylessErrorType(Aws::Http::HttpResponseCode responseCode);
             static bool DoesResponseGenerateError(const std::shared_ptr<Aws::Http::HttpResponse>& response);
             std::shared_ptr<smithy::components::tracing::TelemetryProvider> m_telemetryProvider;

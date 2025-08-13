@@ -43,6 +43,8 @@
 #include <aws/core/Version.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/core/platform/OSVersionInfo.h>
+#include <aws/core/auth/AWSCredentialsProviderChain.h>
+#include <typeinfo>
 
 #include <smithy/tracing/TracingUtils.h>
 #include <smithy/client/features/ChecksumInterceptor.h>
@@ -582,6 +584,9 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
         }
     }
 
+    // Track credential provider usage for User-Agent features
+    TrackCredentialProviderUsage(request);
+    
     auto signer = GetSignerByName(signerName);
     auto signedRequest = TracingUtils::MakeCallWithTiming<bool>([&]() -> bool {
             return signer->SignRequest(*httpRequest, signerRegionOverride, signerServiceNameOverride, true);
@@ -912,7 +917,7 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, co
         if (Aws::Client::CompressionAlgorithm::NONE != selectedCompressionAlgorithm) {
             Aws::Client::RequestCompression rc;
             auto compressOutcome = rc.compress(request.GetBody(), selectedCompressionAlgorithm);
-
+            // TODO: is this successful -- its not
             if (compressOutcome.IsSuccess()) {
                 Aws::String compressionAlgorithmId = Aws::Client::GetCompressionAlgorithmId(selectedCompressionAlgorithm);
                 AppendHeaderValueToRequest(httpRequest, CONTENT_ENCODING_HEADER, compressionAlgorithmId);
@@ -1071,4 +1076,42 @@ void AWSClient::AppendRecursionDetectionHeader(std::shared_ptr<Aws::Http::HttpRe
     xAmznTraceIdVal = xAmznTraceIdValEncodedStr.str();
 
     ioRequest->SetHeaderValue(Aws::Http::X_AMZN_TRACE_ID_HEADER, xAmznTraceIdVal);
+}
+
+void AWSClient::TrackCredentialProviderUsage(const Aws::AmazonWebServiceRequest& request) const
+{
+    auto credentialsProvider = GetCredentialsProvider();
+    if (!credentialsProvider)
+    {
+        return;
+    }
+    
+    // Check if using environment credentials
+    const auto& provider = *credentialsProvider;
+    const std::type_info& providerType = typeid(provider);
+    
+    if (providerType == typeid(Aws::Auth::DefaultAWSCredentialsProviderChain))
+    {
+        // For provider chains, we need to check which provider was actually used
+        auto providerChain = std::dynamic_pointer_cast<Aws::Auth::DefaultAWSCredentialsProviderChain>(credentialsProvider);
+        if (providerChain)
+        {
+            // Check if environment variables are set (indicating env provider usage)
+            if (!Aws::Environment::GetEnv("AWS_ACCESS_KEY_ID").empty())
+            {
+                // Environment credentials are being used
+                request.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS);
+                AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Added CREDENTIALS_ENV_VARS to User-Agent");
+            }
+            // Add other providers
+        }
+    }
+    // direct provider usage
+    else if (providerType == typeid(Aws::Auth::EnvironmentAWSCredentialsProvider))
+    {
+        // Direct environment provider usage
+        request.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS);
+        AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Added CREDENTIALS_ENV_VARS to User-Agent");
+    }
+    // Add more provider types as needed
 }
