@@ -33,6 +33,17 @@ namespace Aws
         constexpr int AWS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD = 5 * 1000;
 
         /**
+         * Enum to identify credential provider types for tracking purposes
+         */
+        enum class CredentialProviderType
+        {
+            DEFAULT,
+            ENVIRONMENT,
+            // ... add other types as needed
+
+        };
+
+        /**
          * Returns the full path of the config file.
          */
         AWS_CORE_API Aws::String GetConfigProfileFilename(); //defaults to "config"
@@ -62,9 +73,15 @@ namespace Aws
              * Initializes provider. Sets last Loaded time count to 0, forcing a refresh on the
              * first call to GetAWSCredentials.
              */
-            AWSCredentialsProvider() : m_lastLoadedMs(0)
+            AWSCredentialsProvider(CredentialProviderType providerType = CredentialProviderType::DEFAULT)
+                : m_lastLoadedMs(0), m_providerType(providerType)
             {
             }
+
+            /**
+             * Get the provider type for tracking purposes
+             */
+            CredentialProviderType GetProviderType() const { return m_providerType; }
 
             virtual ~AWSCredentialsProvider() = default;
 
@@ -83,6 +100,7 @@ namespace Aws
             mutable Aws::Utils::Threading::ReaderWriterLock m_reloadLock;
         private:
             long long m_lastLoadedMs;
+            CredentialProviderType m_providerType;
         };
 
         /**
@@ -139,6 +157,11 @@ namespace Aws
         class AWS_CORE_API EnvironmentAWSCredentialsProvider : public AWSCredentialsProvider
         {
         public:
+            /**
+            * Initializes environment credentials provider
+            */
+            EnvironmentAWSCredentialsProvider() : AWSCredentialsProvider(CredentialProviderType::ENVIRONMENT) {}
+            
             /**
             * Reads AWS credentials from the Environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY and AWS_SESSION_TOKEN if they exist. If they
             * are not found, empty credentials are returned. Credentials are not cached.
