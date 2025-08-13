@@ -25,35 +25,6 @@ Project::Project(JsonView jsonValue)
 
 Project& Project::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("AdditionalComments"))
-  {
-    m_additionalComments = jsonValue.GetString("AdditionalComments");
-    m_additionalCommentsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("ApnPrograms"))
-  {
-    Aws::Utils::Array<JsonView> apnProgramsJsonList = jsonValue.GetArray("ApnPrograms");
-    for(unsigned apnProgramsIndex = 0; apnProgramsIndex < apnProgramsJsonList.GetLength(); ++apnProgramsIndex)
-    {
-      m_apnPrograms.push_back(apnProgramsJsonList[apnProgramsIndex].AsString());
-    }
-    m_apnProgramsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("CompetitorName"))
-  {
-    m_competitorName = CompetitorNameMapper::GetCompetitorNameForName(jsonValue.GetString("CompetitorName"));
-    m_competitorNameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("CustomerBusinessProblem"))
-  {
-    m_customerBusinessProblem = jsonValue.GetString("CustomerBusinessProblem");
-    m_customerBusinessProblemHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("CustomerUseCase"))
-  {
-    m_customerUseCase = jsonValue.GetString("CustomerUseCase");
-    m_customerUseCaseHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("DeliveryModels"))
   {
     Aws::Utils::Array<JsonView> deliveryModelsJsonList = jsonValue.GetArray("DeliveryModels");
@@ -72,15 +43,29 @@ Project& Project::operator =(JsonView jsonValue)
     }
     m_expectedCustomerSpendHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OtherCompetitorNames"))
+  if(jsonValue.ValueExists("Title"))
   {
-    m_otherCompetitorNames = jsonValue.GetString("OtherCompetitorNames");
-    m_otherCompetitorNamesHasBeenSet = true;
+    m_title = jsonValue.GetString("Title");
+    m_titleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OtherSolutionDescription"))
+  if(jsonValue.ValueExists("ApnPrograms"))
   {
-    m_otherSolutionDescription = jsonValue.GetString("OtherSolutionDescription");
-    m_otherSolutionDescriptionHasBeenSet = true;
+    Aws::Utils::Array<JsonView> apnProgramsJsonList = jsonValue.GetArray("ApnPrograms");
+    for(unsigned apnProgramsIndex = 0; apnProgramsIndex < apnProgramsJsonList.GetLength(); ++apnProgramsIndex)
+    {
+      m_apnPrograms.push_back(apnProgramsJsonList[apnProgramsIndex].AsString());
+    }
+    m_apnProgramsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("CustomerBusinessProblem"))
+  {
+    m_customerBusinessProblem = jsonValue.GetString("CustomerBusinessProblem");
+    m_customerBusinessProblemHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("CustomerUseCase"))
+  {
+    m_customerUseCase = jsonValue.GetString("CustomerUseCase");
+    m_customerUseCaseHasBeenSet = true;
   }
   if(jsonValue.ValueExists("RelatedOpportunityIdentifier"))
   {
@@ -96,10 +81,25 @@ Project& Project::operator =(JsonView jsonValue)
     }
     m_salesActivitiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Title"))
+  if(jsonValue.ValueExists("CompetitorName"))
   {
-    m_title = jsonValue.GetString("Title");
-    m_titleHasBeenSet = true;
+    m_competitorName = CompetitorNameMapper::GetCompetitorNameForName(jsonValue.GetString("CompetitorName"));
+    m_competitorNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("OtherCompetitorNames"))
+  {
+    m_otherCompetitorNames = jsonValue.GetString("OtherCompetitorNames");
+    m_otherCompetitorNamesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("OtherSolutionDescription"))
+  {
+    m_otherSolutionDescription = jsonValue.GetString("OtherSolutionDescription");
+    m_otherSolutionDescriptionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("AdditionalComments"))
+  {
+    m_additionalComments = jsonValue.GetString("AdditionalComments");
+    m_additionalCommentsHasBeenSet = true;
   }
   return *this;
 }
@@ -107,40 +107,6 @@ Project& Project::operator =(JsonView jsonValue)
 JsonValue Project::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_additionalCommentsHasBeenSet)
-  {
-   payload.WithString("AdditionalComments", m_additionalComments);
-
-  }
-
-  if(m_apnProgramsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> apnProgramsJsonList(m_apnPrograms.size());
-   for(unsigned apnProgramsIndex = 0; apnProgramsIndex < apnProgramsJsonList.GetLength(); ++apnProgramsIndex)
-   {
-     apnProgramsJsonList[apnProgramsIndex].AsString(m_apnPrograms[apnProgramsIndex]);
-   }
-   payload.WithArray("ApnPrograms", std::move(apnProgramsJsonList));
-
-  }
-
-  if(m_competitorNameHasBeenSet)
-  {
-   payload.WithString("CompetitorName", CompetitorNameMapper::GetNameForCompetitorName(m_competitorName));
-  }
-
-  if(m_customerBusinessProblemHasBeenSet)
-  {
-   payload.WithString("CustomerBusinessProblem", m_customerBusinessProblem);
-
-  }
-
-  if(m_customerUseCaseHasBeenSet)
-  {
-   payload.WithString("CustomerUseCase", m_customerUseCase);
-
-  }
 
   if(m_deliveryModelsHasBeenSet)
   {
@@ -164,15 +130,32 @@ JsonValue Project::Jsonize() const
 
   }
 
-  if(m_otherCompetitorNamesHasBeenSet)
+  if(m_titleHasBeenSet)
   {
-   payload.WithString("OtherCompetitorNames", m_otherCompetitorNames);
+   payload.WithString("Title", m_title);
 
   }
 
-  if(m_otherSolutionDescriptionHasBeenSet)
+  if(m_apnProgramsHasBeenSet)
   {
-   payload.WithString("OtherSolutionDescription", m_otherSolutionDescription);
+   Aws::Utils::Array<JsonValue> apnProgramsJsonList(m_apnPrograms.size());
+   for(unsigned apnProgramsIndex = 0; apnProgramsIndex < apnProgramsJsonList.GetLength(); ++apnProgramsIndex)
+   {
+     apnProgramsJsonList[apnProgramsIndex].AsString(m_apnPrograms[apnProgramsIndex]);
+   }
+   payload.WithArray("ApnPrograms", std::move(apnProgramsJsonList));
+
+  }
+
+  if(m_customerBusinessProblemHasBeenSet)
+  {
+   payload.WithString("CustomerBusinessProblem", m_customerBusinessProblem);
+
+  }
+
+  if(m_customerUseCaseHasBeenSet)
+  {
+   payload.WithString("CustomerUseCase", m_customerUseCase);
 
   }
 
@@ -193,9 +176,26 @@ JsonValue Project::Jsonize() const
 
   }
 
-  if(m_titleHasBeenSet)
+  if(m_competitorNameHasBeenSet)
   {
-   payload.WithString("Title", m_title);
+   payload.WithString("CompetitorName", CompetitorNameMapper::GetNameForCompetitorName(m_competitorName));
+  }
+
+  if(m_otherCompetitorNamesHasBeenSet)
+  {
+   payload.WithString("OtherCompetitorNames", m_otherCompetitorNames);
+
+  }
+
+  if(m_otherSolutionDescriptionHasBeenSet)
+  {
+   payload.WithString("OtherSolutionDescription", m_otherSolutionDescription);
+
+  }
+
+  if(m_additionalCommentsHasBeenSet)
+  {
+   payload.WithString("AdditionalComments", m_additionalComments);
 
   }
 

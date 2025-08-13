@@ -11,6 +11,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/security-ir/model/CustomerType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/security-ir/model/MembershipAccountsConfigurations.h>
 #include <aws/security-ir/model/IncidentResponder.h>
 #include <aws/security-ir/model/OptInFeature.h>
 #include <utility>
@@ -53,8 +54,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Response element for GetMembership that provides the configured account for
-     * managing the membership. </p>
+     * <p>Response element for GetMembership that provides the account configured to
+     * manage the membership.</p>
      */
     inline const Aws::String& GetAccountId() const { return m_accountId; }
     template<typename AccountIdT = Aws::String>
@@ -65,8 +66,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Response element for GetMembership that provides the configured region for
-     * managing the membership.</p>
+     * <p>Response element for GetMembership that provides the region configured to
+     * manage the membership.</p>
      */
     inline AwsRegion GetRegion() const { return m_region; }
     inline void SetRegion(AwsRegion value) { m_regionHasBeenSet = true; m_region = value; }
@@ -179,6 +180,22 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The <code>membershipAccountsConfigurations</code> field contains the
+     * configuration details for member accounts within the Amazon Web Services
+     * Organizations membership structure. </p> <p>This field returns a structure
+     * containing information about:</p> <ul> <li> <p>Account configurations for member
+     * accounts</p> </li> <li> <p>Membership settings and preferences</p> </li> <li>
+     * <p>Account-level permissions and roles</p> </li> </ul>
+     */
+    inline const MembershipAccountsConfigurations& GetMembershipAccountsConfigurations() const { return m_membershipAccountsConfigurations; }
+    template<typename MembershipAccountsConfigurationsT = MembershipAccountsConfigurations>
+    void SetMembershipAccountsConfigurations(MembershipAccountsConfigurationsT&& value) { m_membershipAccountsConfigurationsHasBeenSet = true; m_membershipAccountsConfigurations = std::forward<MembershipAccountsConfigurationsT>(value); }
+    template<typename MembershipAccountsConfigurationsT = MembershipAccountsConfigurations>
+    GetMembershipResult& WithMembershipAccountsConfigurations(MembershipAccountsConfigurationsT&& value) { SetMembershipAccountsConfigurations(std::forward<MembershipAccountsConfigurationsT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -223,6 +240,9 @@ namespace Model
 
     Aws::Vector<OptInFeature> m_optInFeatures;
     bool m_optInFeaturesHasBeenSet = false;
+
+    MembershipAccountsConfigurations m_membershipAccountsConfigurations;
+    bool m_membershipAccountsConfigurationsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -25,19 +25,25 @@ GetEngagementResult::GetEngagementResult(const Aws::AmazonWebServiceResult<JsonV
 GetEngagementResult& GetEngagementResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("Id"))
+  {
+    m_id = jsonValue.GetString("Id");
+    m_idHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Contexts"))
+  if(jsonValue.ValueExists("Title"))
   {
-    Aws::Utils::Array<JsonView> contextsJsonList = jsonValue.GetArray("Contexts");
-    for(unsigned contextsIndex = 0; contextsIndex < contextsJsonList.GetLength(); ++contextsIndex)
-    {
-      m_contexts.push_back(contextsJsonList[contextsIndex].AsObject());
-    }
-    m_contextsHasBeenSet = true;
+    m_title = jsonValue.GetString("Title");
+    m_titleHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+    m_descriptionHasBeenSet = true;
   }
   if(jsonValue.ValueExists("CreatedAt"))
   {
@@ -49,25 +55,19 @@ GetEngagementResult& GetEngagementResult::operator =(const Aws::AmazonWebService
     m_createdBy = jsonValue.GetString("CreatedBy");
     m_createdByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
-    m_description = jsonValue.GetString("Description");
-    m_descriptionHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Id"))
-  {
-    m_id = jsonValue.GetString("Id");
-    m_idHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("MemberCount"))
   {
     m_memberCount = jsonValue.GetInteger("MemberCount");
     m_memberCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Title"))
+  if(jsonValue.ValueExists("Contexts"))
   {
-    m_title = jsonValue.GetString("Title");
-    m_titleHasBeenSet = true;
+    Aws::Utils::Array<JsonView> contextsJsonList = jsonValue.GetArray("Contexts");
+    for(unsigned contextsIndex = 0; contextsIndex < contextsJsonList.GetLength(); ++contextsIndex)
+    {
+      m_contexts.push_back(contextsJsonList[contextsIndex].AsObject());
+    }
+    m_contextsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

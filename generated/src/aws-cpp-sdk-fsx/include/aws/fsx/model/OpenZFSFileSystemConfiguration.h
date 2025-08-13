@@ -180,6 +180,23 @@ namespace Model
 
     ///@{
     /**
+     * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
+     * access your file system will be created. By default in the Amazon FSx API and
+     * Amazon FSx console, Amazon FSx selects an available /118 IP address range for
+     * you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP
+     * addresses for file systems deployed in the same VPC/route tables, as long as
+     * they don't overlap with any subnet.</p>
+     */
+    inline const Aws::String& GetEndpointIpv6AddressRange() const { return m_endpointIpv6AddressRange; }
+    inline bool EndpointIpv6AddressRangeHasBeenSet() const { return m_endpointIpv6AddressRangeHasBeenSet; }
+    template<typename EndpointIpv6AddressRangeT = Aws::String>
+    void SetEndpointIpv6AddressRange(EndpointIpv6AddressRangeT&& value) { m_endpointIpv6AddressRangeHasBeenSet = true; m_endpointIpv6AddressRange = std::forward<EndpointIpv6AddressRangeT>(value); }
+    template<typename EndpointIpv6AddressRangeT = Aws::String>
+    OpenZFSFileSystemConfiguration& WithEndpointIpv6AddressRange(EndpointIpv6AddressRangeT&& value) { SetEndpointIpv6AddressRange(std::forward<EndpointIpv6AddressRangeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints
      * are created.</p>
      */
@@ -204,6 +221,19 @@ namespace Model
     void SetEndpointIpAddress(EndpointIpAddressT&& value) { m_endpointIpAddressHasBeenSet = true; m_endpointIpAddress = std::forward<EndpointIpAddressT>(value); }
     template<typename EndpointIpAddressT = Aws::String>
     OpenZFSFileSystemConfiguration& WithEndpointIpAddress(EndpointIpAddressT&& value) { SetEndpointIpAddress(std::forward<EndpointIpAddressT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The IPv6 address of the endpoint that is used to access data or to manage the
+     * file system.</p>
+     */
+    inline const Aws::String& GetEndpointIpv6Address() const { return m_endpointIpv6Address; }
+    inline bool EndpointIpv6AddressHasBeenSet() const { return m_endpointIpv6AddressHasBeenSet; }
+    template<typename EndpointIpv6AddressT = Aws::String>
+    void SetEndpointIpv6Address(EndpointIpv6AddressT&& value) { m_endpointIpv6AddressHasBeenSet = true; m_endpointIpv6Address = std::forward<EndpointIpv6AddressT>(value); }
+    template<typename EndpointIpv6AddressT = Aws::String>
+    OpenZFSFileSystemConfiguration& WithEndpointIpv6Address(EndpointIpv6AddressT&& value) { SetEndpointIpv6Address(std::forward<EndpointIpv6AddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -254,11 +284,17 @@ namespace Model
     Aws::String m_endpointIpAddressRange;
     bool m_endpointIpAddressRangeHasBeenSet = false;
 
+    Aws::String m_endpointIpv6AddressRange;
+    bool m_endpointIpv6AddressRangeHasBeenSet = false;
+
     Aws::Vector<Aws::String> m_routeTableIds;
     bool m_routeTableIdsHasBeenSet = false;
 
     Aws::String m_endpointIpAddress;
     bool m_endpointIpAddressHasBeenSet = false;
+
+    Aws::String m_endpointIpv6Address;
+    bool m_endpointIpv6AddressHasBeenSet = false;
 
     OpenZFSReadCacheConfiguration m_readCacheConfiguration;
     bool m_readCacheConfigurationHasBeenSet = false;

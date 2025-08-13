@@ -7,8 +7,8 @@
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/partnercentral-selling/model/SortObject.h>
 #include <aws/partnercentral-selling/model/ResourceSnapshotJobStatus.h>
+#include <aws/partnercentral-selling/model/SortObject.h>
 #include <utility>
 
 namespace Aws
@@ -50,18 +50,6 @@ namespace Model
 
     ///@{
     /**
-     * <p> The identifier of the engagement to filter the response. </p>
-     */
-    inline const Aws::String& GetEngagementIdentifier() const { return m_engagementIdentifier; }
-    inline bool EngagementIdentifierHasBeenSet() const { return m_engagementIdentifierHasBeenSet; }
-    template<typename EngagementIdentifierT = Aws::String>
-    void SetEngagementIdentifier(EngagementIdentifierT&& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier = std::forward<EngagementIdentifierT>(value); }
-    template<typename EngagementIdentifierT = Aws::String>
-    ListResourceSnapshotJobsRequest& WithEngagementIdentifier(EngagementIdentifierT&& value) { SetEngagementIdentifier(std::forward<EngagementIdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p> The maximum number of results to return in a single call. If omitted,
      * defaults to 50. </p>
      */
@@ -85,15 +73,14 @@ namespace Model
 
     ///@{
     /**
-     * <p> Configures the sorting of the response. If omitted, results are sorted by
-     * <code>CreatedDate</code> in descending order. </p>
+     * <p> The identifier of the engagement to filter the response. </p>
      */
-    inline const SortObject& GetSort() const { return m_sort; }
-    inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
-    template<typename SortT = SortObject>
-    void SetSort(SortT&& value) { m_sortHasBeenSet = true; m_sort = std::forward<SortT>(value); }
-    template<typename SortT = SortObject>
-    ListResourceSnapshotJobsRequest& WithSort(SortT&& value) { SetSort(std::forward<SortT>(value)); return *this;}
+    inline const Aws::String& GetEngagementIdentifier() const { return m_engagementIdentifier; }
+    inline bool EngagementIdentifierHasBeenSet() const { return m_engagementIdentifierHasBeenSet; }
+    template<typename EngagementIdentifierT = Aws::String>
+    void SetEngagementIdentifier(EngagementIdentifierT&& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier = std::forward<EngagementIdentifierT>(value); }
+    template<typename EngagementIdentifierT = Aws::String>
+    ListResourceSnapshotJobsRequest& WithEngagementIdentifier(EngagementIdentifierT&& value) { SetEngagementIdentifier(std::forward<EngagementIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,13 +92,23 @@ namespace Model
     inline void SetStatus(ResourceSnapshotJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
     inline ListResourceSnapshotJobsRequest& WithStatus(ResourceSnapshotJobStatus value) { SetStatus(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> Configures the sorting of the response. If omitted, results are sorted by
+     * <code>CreatedDate</code> in descending order. </p>
+     */
+    inline const SortObject& GetSort() const { return m_sort; }
+    inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
+    template<typename SortT = SortObject>
+    void SetSort(SortT&& value) { m_sortHasBeenSet = true; m_sort = std::forward<SortT>(value); }
+    template<typename SortT = SortObject>
+    ListResourceSnapshotJobsRequest& WithSort(SortT&& value) { SetSort(std::forward<SortT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_catalog;
     bool m_catalogHasBeenSet = false;
-
-    Aws::String m_engagementIdentifier;
-    bool m_engagementIdentifierHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
@@ -119,11 +116,14 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    SortObject m_sort;
-    bool m_sortHasBeenSet = false;
+    Aws::String m_engagementIdentifier;
+    bool m_engagementIdentifierHasBeenSet = false;
 
     ResourceSnapshotJobStatus m_status{ResourceSnapshotJobStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    SortObject m_sort;
+    bool m_sortHasBeenSet = false;
   };
 
 } // namespace Model

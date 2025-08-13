@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/braket/Braket_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/braket/model/QuantumTaskStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -42,67 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time at which the task was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    QuantumTaskSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ARN of the device the task ran on.</p>
-     */
-    inline const Aws::String& GetDeviceArn() const { return m_deviceArn; }
-    inline bool DeviceArnHasBeenSet() const { return m_deviceArnHasBeenSet; }
-    template<typename DeviceArnT = Aws::String>
-    void SetDeviceArn(DeviceArnT&& value) { m_deviceArnHasBeenSet = true; m_deviceArn = std::forward<DeviceArnT>(value); }
-    template<typename DeviceArnT = Aws::String>
-    QuantumTaskSummary& WithDeviceArn(DeviceArnT&& value) { SetDeviceArn(std::forward<DeviceArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The time at which the task finished.</p>
-     */
-    inline const Aws::Utils::DateTime& GetEndedAt() const { return m_endedAt; }
-    inline bool EndedAtHasBeenSet() const { return m_endedAtHasBeenSet; }
-    template<typename EndedAtT = Aws::Utils::DateTime>
-    void SetEndedAt(EndedAtT&& value) { m_endedAtHasBeenSet = true; m_endedAt = std::forward<EndedAtT>(value); }
-    template<typename EndedAtT = Aws::Utils::DateTime>
-    QuantumTaskSummary& WithEndedAt(EndedAtT&& value) { SetEndedAt(std::forward<EndedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The S3 bucket where the task result file is stored..</p>
-     */
-    inline const Aws::String& GetOutputS3Bucket() const { return m_outputS3Bucket; }
-    inline bool OutputS3BucketHasBeenSet() const { return m_outputS3BucketHasBeenSet; }
-    template<typename OutputS3BucketT = Aws::String>
-    void SetOutputS3Bucket(OutputS3BucketT&& value) { m_outputS3BucketHasBeenSet = true; m_outputS3Bucket = std::forward<OutputS3BucketT>(value); }
-    template<typename OutputS3BucketT = Aws::String>
-    QuantumTaskSummary& WithOutputS3Bucket(OutputS3BucketT&& value) { SetOutputS3Bucket(std::forward<OutputS3BucketT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The folder in the S3 bucket where the task result file is stored.</p>
-     */
-    inline const Aws::String& GetOutputS3Directory() const { return m_outputS3Directory; }
-    inline bool OutputS3DirectoryHasBeenSet() const { return m_outputS3DirectoryHasBeenSet; }
-    template<typename OutputS3DirectoryT = Aws::String>
-    void SetOutputS3Directory(OutputS3DirectoryT&& value) { m_outputS3DirectoryHasBeenSet = true; m_outputS3Directory = std::forward<OutputS3DirectoryT>(value); }
-    template<typename OutputS3DirectoryT = Aws::String>
-    QuantumTaskSummary& WithOutputS3Directory(OutputS3DirectoryT&& value) { SetOutputS3Directory(std::forward<OutputS3DirectoryT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ARN of the task.</p>
+     * <p>The ARN of the quantum task.</p>
      */
     inline const Aws::String& GetQuantumTaskArn() const { return m_quantumTaskArn; }
     inline bool QuantumTaskArnHasBeenSet() const { return m_quantumTaskArnHasBeenSet; }
@@ -114,7 +54,29 @@ namespace Model
 
     ///@{
     /**
-     * <p>The shots used for the task.</p>
+     * <p>The status of the quantum task.</p>
+     */
+    inline QuantumTaskStatus GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(QuantumTaskStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline QuantumTaskSummary& WithStatus(QuantumTaskStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ARN of the device the quantum task ran on.</p>
+     */
+    inline const Aws::String& GetDeviceArn() const { return m_deviceArn; }
+    inline bool DeviceArnHasBeenSet() const { return m_deviceArnHasBeenSet; }
+    template<typename DeviceArnT = Aws::String>
+    void SetDeviceArn(DeviceArnT&& value) { m_deviceArnHasBeenSet = true; m_deviceArn = std::forward<DeviceArnT>(value); }
+    template<typename DeviceArnT = Aws::String>
+    QuantumTaskSummary& WithDeviceArn(DeviceArnT&& value) { SetDeviceArn(std::forward<DeviceArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The shots used for the quantum task.</p>
      */
     inline long long GetShots() const { return m_shots; }
     inline bool ShotsHasBeenSet() const { return m_shotsHasBeenSet; }
@@ -124,12 +86,50 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the task.</p>
+     * <p>The S3 bucket where the quantum task result file is stored.</p>
      */
-    inline QuantumTaskStatus GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(QuantumTaskStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline QuantumTaskSummary& WithStatus(QuantumTaskStatus value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetOutputS3Bucket() const { return m_outputS3Bucket; }
+    inline bool OutputS3BucketHasBeenSet() const { return m_outputS3BucketHasBeenSet; }
+    template<typename OutputS3BucketT = Aws::String>
+    void SetOutputS3Bucket(OutputS3BucketT&& value) { m_outputS3BucketHasBeenSet = true; m_outputS3Bucket = std::forward<OutputS3BucketT>(value); }
+    template<typename OutputS3BucketT = Aws::String>
+    QuantumTaskSummary& WithOutputS3Bucket(OutputS3BucketT&& value) { SetOutputS3Bucket(std::forward<OutputS3BucketT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The folder in the S3 bucket where the quantum task result file is stored.</p>
+     */
+    inline const Aws::String& GetOutputS3Directory() const { return m_outputS3Directory; }
+    inline bool OutputS3DirectoryHasBeenSet() const { return m_outputS3DirectoryHasBeenSet; }
+    template<typename OutputS3DirectoryT = Aws::String>
+    void SetOutputS3Directory(OutputS3DirectoryT&& value) { m_outputS3DirectoryHasBeenSet = true; m_outputS3Directory = std::forward<OutputS3DirectoryT>(value); }
+    template<typename OutputS3DirectoryT = Aws::String>
+    QuantumTaskSummary& WithOutputS3Directory(OutputS3DirectoryT&& value) { SetOutputS3Directory(std::forward<OutputS3DirectoryT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The time at which the quantum task was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    QuantumTaskSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The time at which the quantum task finished.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEndedAt() const { return m_endedAt; }
+    inline bool EndedAtHasBeenSet() const { return m_endedAtHasBeenSet; }
+    template<typename EndedAtT = Aws::Utils::DateTime>
+    void SetEndedAt(EndedAtT&& value) { m_endedAtHasBeenSet = true; m_endedAt = std::forward<EndedAtT>(value); }
+    template<typename EndedAtT = Aws::Utils::DateTime>
+    QuantumTaskSummary& WithEndedAt(EndedAtT&& value) { SetEndedAt(std::forward<EndedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,14 +149,17 @@ namespace Model
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
+    Aws::String m_quantumTaskArn;
+    bool m_quantumTaskArnHasBeenSet = false;
+
+    QuantumTaskStatus m_status{QuantumTaskStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_deviceArn;
     bool m_deviceArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endedAt{};
-    bool m_endedAtHasBeenSet = false;
+    long long m_shots{0};
+    bool m_shotsHasBeenSet = false;
 
     Aws::String m_outputS3Bucket;
     bool m_outputS3BucketHasBeenSet = false;
@@ -164,14 +167,11 @@ namespace Model
     Aws::String m_outputS3Directory;
     bool m_outputS3DirectoryHasBeenSet = false;
 
-    Aws::String m_quantumTaskArn;
-    bool m_quantumTaskArnHasBeenSet = false;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
-    long long m_shots{0};
-    bool m_shotsHasBeenSet = false;
-
-    QuantumTaskStatus m_status{QuantumTaskStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
+    Aws::Utils::DateTime m_endedAt{};
+    bool m_endedAtHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

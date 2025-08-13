@@ -25,15 +25,15 @@ SolutionSort::SolutionSort(JsonView jsonValue)
 
 SolutionSort& SolutionSort::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("SortBy"))
-  {
-    m_sortBy = SolutionSortNameMapper::GetSolutionSortNameForName(jsonValue.GetString("SortBy"));
-    m_sortByHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("SortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("SortOrder"));
     m_sortOrderHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("SortBy"))
+  {
+    m_sortBy = SolutionSortNameMapper::GetSolutionSortNameForName(jsonValue.GetString("SortBy"));
+    m_sortByHasBeenSet = true;
   }
   return *this;
 }
@@ -42,14 +42,14 @@ JsonValue SolutionSort::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_sortByHasBeenSet)
-  {
-   payload.WithString("SortBy", SolutionSortNameMapper::GetNameForSolutionSortName(m_sortBy));
-  }
-
   if(m_sortOrderHasBeenSet)
   {
    payload.WithString("SortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
+  }
+
+  if(m_sortByHasBeenSet)
+  {
+   payload.WithString("SortBy", SolutionSortNameMapper::GetNameForSolutionSortName(m_sortBy));
   }
 
   return payload;

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
-#include <aws/partnercentral-selling/model/EngagementSortName.h>
 #include <aws/partnercentral-selling/model/SortOrder.h>
+#include <aws/partnercentral-selling/model/EngagementSortName.h>
 #include <utility>
 
 namespace Aws
@@ -41,16 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The field by which to sort the results.</p>
-     */
-    inline EngagementSortName GetSortBy() const { return m_sortBy; }
-    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(EngagementSortName value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline EngagementSort& WithSortBy(EngagementSortName value) { SetSortBy(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The order in which to sort the results.</p>
      */
     inline SortOrder GetSortOrder() const { return m_sortOrder; }
@@ -58,13 +48,23 @@ namespace Model
     inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
     inline EngagementSort& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
-  private:
 
-    EngagementSortName m_sortBy{EngagementSortName::NOT_SET};
-    bool m_sortByHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The field by which to sort the results.</p>
+     */
+    inline EngagementSortName GetSortBy() const { return m_sortBy; }
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+    inline void SetSortBy(EngagementSortName value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline EngagementSort& WithSortBy(EngagementSortName value) { SetSortBy(value); return *this;}
+    ///@}
+  private:
 
     SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
+
+    EngagementSortName m_sortBy{EngagementSortName::NOT_SET};
+    bool m_sortByHasBeenSet = false;
   };
 
 } // namespace Model

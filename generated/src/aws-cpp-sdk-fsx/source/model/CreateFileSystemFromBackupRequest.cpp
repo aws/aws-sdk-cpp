@@ -102,6 +102,11 @@ Aws::String CreateFileSystemFromBackupRequest::SerializePayload() const
 
   }
 
+  if(m_networkTypeHasBeenSet)
+  {
+   payload.WithString("NetworkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
+  }
+
   return payload.View().WriteReadable();
 }
 

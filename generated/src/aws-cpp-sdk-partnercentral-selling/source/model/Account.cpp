@@ -25,26 +25,6 @@ Account::Account(JsonView jsonValue)
 
 Account& Account::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Address"))
-  {
-    m_address = jsonValue.GetObject("Address");
-    m_addressHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("AwsAccountId"))
-  {
-    m_awsAccountId = jsonValue.GetString("AwsAccountId");
-    m_awsAccountIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("CompanyName"))
-  {
-    m_companyName = jsonValue.GetString("CompanyName");
-    m_companyNameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Duns"))
-  {
-    m_duns = jsonValue.GetString("Duns");
-    m_dunsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Industry"))
   {
     m_industry = IndustryMapper::GetIndustryForName(jsonValue.GetString("Industry"));
@@ -55,10 +35,30 @@ Account& Account::operator =(JsonView jsonValue)
     m_otherIndustry = jsonValue.GetString("OtherIndustry");
     m_otherIndustryHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("CompanyName"))
+  {
+    m_companyName = jsonValue.GetString("CompanyName");
+    m_companyNameHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("WebsiteUrl"))
   {
     m_websiteUrl = jsonValue.GetString("WebsiteUrl");
     m_websiteUrlHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("AwsAccountId"))
+  {
+    m_awsAccountId = jsonValue.GetString("AwsAccountId");
+    m_awsAccountIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Address"))
+  {
+    m_address = jsonValue.GetObject("Address");
+    m_addressHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Duns"))
+  {
+    m_duns = jsonValue.GetString("Duns");
+    m_dunsHasBeenSet = true;
   }
   return *this;
 }
@@ -66,30 +66,6 @@ Account& Account::operator =(JsonView jsonValue)
 JsonValue Account::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_addressHasBeenSet)
-  {
-   payload.WithObject("Address", m_address.Jsonize());
-
-  }
-
-  if(m_awsAccountIdHasBeenSet)
-  {
-   payload.WithString("AwsAccountId", m_awsAccountId);
-
-  }
-
-  if(m_companyNameHasBeenSet)
-  {
-   payload.WithString("CompanyName", m_companyName);
-
-  }
-
-  if(m_dunsHasBeenSet)
-  {
-   payload.WithString("Duns", m_duns);
-
-  }
 
   if(m_industryHasBeenSet)
   {
@@ -102,9 +78,33 @@ JsonValue Account::Jsonize() const
 
   }
 
+  if(m_companyNameHasBeenSet)
+  {
+   payload.WithString("CompanyName", m_companyName);
+
+  }
+
   if(m_websiteUrlHasBeenSet)
   {
    payload.WithString("WebsiteUrl", m_websiteUrl);
+
+  }
+
+  if(m_awsAccountIdHasBeenSet)
+  {
+   payload.WithString("AwsAccountId", m_awsAccountId);
+
+  }
+
+  if(m_addressHasBeenSet)
+  {
+   payload.WithObject("Address", m_address.Jsonize());
+
+  }
+
+  if(m_dunsHasBeenSet)
+  {
+   payload.WithString("Duns", m_duns);
 
   }
 

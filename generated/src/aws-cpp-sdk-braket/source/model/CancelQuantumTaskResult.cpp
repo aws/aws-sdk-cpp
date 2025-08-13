@@ -25,15 +25,15 @@ CancelQuantumTaskResult::CancelQuantumTaskResult(const Aws::AmazonWebServiceResu
 CancelQuantumTaskResult& CancelQuantumTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("cancellationStatus"))
-  {
-    m_cancellationStatus = CancellationStatusMapper::GetCancellationStatusForName(jsonValue.GetString("cancellationStatus"));
-    m_cancellationStatusHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("quantumTaskArn"))
   {
     m_quantumTaskArn = jsonValue.GetString("quantumTaskArn");
     m_quantumTaskArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("cancellationStatus"))
+  {
+    m_cancellationStatus = CancellationStatusMapper::GetCancellationStatusForName(jsonValue.GetString("cancellationStatus"));
+    m_cancellationStatusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

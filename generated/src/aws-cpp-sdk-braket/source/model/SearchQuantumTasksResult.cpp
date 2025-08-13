@@ -25,11 +25,6 @@ SearchQuantumTasksResult::SearchQuantumTasksResult(const Aws::AmazonWebServiceRe
 SearchQuantumTasksResult& SearchQuantumTasksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("quantumTasks"))
   {
     Aws::Utils::Array<JsonView> quantumTasksJsonList = jsonValue.GetArray("quantumTasks");
@@ -38,6 +33,11 @@ SearchQuantumTasksResult& SearchQuantumTasksResult::operator =(const Aws::Amazon
       m_quantumTasks.push_back(quantumTasksJsonList[quantumTasksIndex].AsObject());
     }
     m_quantumTasksHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

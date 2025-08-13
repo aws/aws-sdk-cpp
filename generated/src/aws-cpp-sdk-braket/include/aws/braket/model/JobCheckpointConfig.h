@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the output locations for job checkpoint
+   * <p>Contains information about the output locations for hybrid job checkpoint
    * data.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/JobCheckpointConfig">AWS
    * API Reference</a></p>
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>(Optional) The local directory where checkpoints are written. The default
+     * <p>(Optional) The local directory where checkpoint data is stored. The default
      * directory is <code>/opt/braket/checkpoints/</code>.</p>
      */
     inline const Aws::String& GetLocalPath() const { return m_localPath; }
@@ -53,8 +53,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Identifies the S3 path where you want Amazon Braket to store checkpoints. For
-     * example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+     * <p>Identifies the S3 path where you want Amazon Braket to store checkpoint data.
+     * For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
      */
     inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }

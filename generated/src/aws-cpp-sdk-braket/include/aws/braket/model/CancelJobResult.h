@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/braket/Braket_EXPORTS.h>
-#include <aws/braket/model/CancellationStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/braket/model/CancellationStatus.h>
 #include <utility>
 
 namespace Aws
@@ -35,15 +35,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the job cancellation request.</p>
-     */
-    inline CancellationStatus GetCancellationStatus() const { return m_cancellationStatus; }
-    inline void SetCancellationStatus(CancellationStatus value) { m_cancellationStatusHasBeenSet = true; m_cancellationStatus = value; }
-    inline CancelJobResult& WithCancellationStatus(CancellationStatus value) { SetCancellationStatus(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ARN of the Amazon Braket job.</p>
      */
     inline const Aws::String& GetJobArn() const { return m_jobArn; }
@@ -51,6 +42,15 @@ namespace Model
     void SetJobArn(JobArnT&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::forward<JobArnT>(value); }
     template<typename JobArnT = Aws::String>
     CancelJobResult& WithJobArn(JobArnT&& value) { SetJobArn(std::forward<JobArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status of the hybrid job.</p>
+     */
+    inline CancellationStatus GetCancellationStatus() const { return m_cancellationStatus; }
+    inline void SetCancellationStatus(CancellationStatus value) { m_cancellationStatusHasBeenSet = true; m_cancellationStatus = value; }
+    inline CancelJobResult& WithCancellationStatus(CancellationStatus value) { SetCancellationStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -63,11 +63,11 @@ namespace Model
     ///@}
   private:
 
-    CancellationStatus m_cancellationStatus{CancellationStatus::NOT_SET};
-    bool m_cancellationStatusHasBeenSet = false;
-
     Aws::String m_jobArn;
     bool m_jobArnHasBeenSet = false;
+
+    CancellationStatus m_cancellationStatus{CancellationStatus::NOT_SET};
+    bool m_cancellationStatusHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

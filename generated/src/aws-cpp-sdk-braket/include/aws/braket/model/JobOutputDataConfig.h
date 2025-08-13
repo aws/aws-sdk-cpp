@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the path to the S3 location where you want to store job artifacts
-   * and the encryption key used to store them.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies the path to the S3 location where you want to store hybrid job
+   * artifacts and the encryption key used to store them.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/JobOutputDataConfig">AWS
    * API Reference</a></p>
    */
@@ -41,7 +42,7 @@ namespace Model
     ///@{
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to
-     * encrypt the job training artifacts at rest using Amazon S3 server-side
+     * encrypt the hybrid job training artifacts at rest using Amazon S3 server-side
      * encryption.</p>
      */
     inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
@@ -54,8 +55,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Identifies the S3 path where you want Amazon Braket to store the job training
-     * artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+     * <p>Identifies the S3 path where you want Amazon Braket to store the hybrid job
+     * training artifacts. For example,
+     * <code>s3://bucket-name/key-name-prefix</code>.</p>
      */
     inline const Aws::String& GetS3Path() const { return m_s3Path; }
     inline bool S3PathHasBeenSet() const { return m_s3PathHasBeenSet; }

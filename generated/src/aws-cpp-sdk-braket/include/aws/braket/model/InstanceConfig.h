@@ -40,19 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Configures the number of resource instances to use while running an Amazon
-     * Braket job on Amazon Braket. The default value is 1.</p>
-     */
-    inline int GetInstanceCount() const { return m_instanceCount; }
-    inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
-    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
-    inline InstanceConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Configures the type resource instances to use while running an Amazon Braket
-     * hybrid job.</p>
+     * <p>Configures the type of resource instances to use while running an Amazon
+     * Braket hybrid job.</p>
      */
     inline InstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
@@ -62,23 +51,34 @@ namespace Model
 
     ///@{
     /**
-     * <p>The size of the storage volume, in GB, that user wants to provision.</p>
+     * <p>The size of the storage volume, in GB, to provision.</p>
      */
     inline int GetVolumeSizeInGb() const { return m_volumeSizeInGb; }
     inline bool VolumeSizeInGbHasBeenSet() const { return m_volumeSizeInGbHasBeenSet; }
     inline void SetVolumeSizeInGb(int value) { m_volumeSizeInGbHasBeenSet = true; m_volumeSizeInGb = value; }
     inline InstanceConfig& WithVolumeSizeInGb(int value) { SetVolumeSizeInGb(value); return *this;}
     ///@}
-  private:
 
-    int m_instanceCount{0};
-    bool m_instanceCountHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Configures the number of resource instances to use while running an Amazon
+     * Braket hybrid job on Amazon Braket. The default value is 1.</p>
+     */
+    inline int GetInstanceCount() const { return m_instanceCount; }
+    inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
+    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
+    inline InstanceConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
+    ///@}
+  private:
 
     InstanceType m_instanceType{InstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
     int m_volumeSizeInGb{0};
     bool m_volumeSizeInGbHasBeenSet = false;
+
+    int m_instanceCount{0};
+    bool m_instanceCountHasBeenSet = false;
   };
 
 } // namespace Model

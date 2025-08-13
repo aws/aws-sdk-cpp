@@ -25,20 +25,25 @@ QuantumTaskSummary::QuantumTaskSummary(JsonView jsonValue)
 
 QuantumTaskSummary& QuantumTaskSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("quantumTaskArn"))
   {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
+    m_quantumTaskArn = jsonValue.GetString("quantumTaskArn");
+    m_quantumTaskArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = QuantumTaskStatusMapper::GetQuantumTaskStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
   }
   if(jsonValue.ValueExists("deviceArn"))
   {
     m_deviceArn = jsonValue.GetString("deviceArn");
     m_deviceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("endedAt"))
+  if(jsonValue.ValueExists("shots"))
   {
-    m_endedAt = jsonValue.GetString("endedAt");
-    m_endedAtHasBeenSet = true;
+    m_shots = jsonValue.GetInt64("shots");
+    m_shotsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("outputS3Bucket"))
   {
@@ -50,20 +55,15 @@ QuantumTaskSummary& QuantumTaskSummary::operator =(JsonView jsonValue)
     m_outputS3Directory = jsonValue.GetString("outputS3Directory");
     m_outputS3DirectoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("quantumTaskArn"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_quantumTaskArn = jsonValue.GetString("quantumTaskArn");
-    m_quantumTaskArnHasBeenSet = true;
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("shots"))
+  if(jsonValue.ValueExists("endedAt"))
   {
-    m_shots = jsonValue.GetInt64("shots");
-    m_shotsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = QuantumTaskStatusMapper::GetQuantumTaskStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
+    m_endedAt = jsonValue.GetString("endedAt");
+    m_endedAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("tags"))
   {
@@ -81,9 +81,15 @@ JsonValue QuantumTaskSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_createdAtHasBeenSet)
+  if(m_quantumTaskArnHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   payload.WithString("quantumTaskArn", m_quantumTaskArn);
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", QuantumTaskStatusMapper::GetNameForQuantumTaskStatus(m_status));
   }
 
   if(m_deviceArnHasBeenSet)
@@ -92,9 +98,10 @@ JsonValue QuantumTaskSummary::Jsonize() const
 
   }
 
-  if(m_endedAtHasBeenSet)
+  if(m_shotsHasBeenSet)
   {
-   payload.WithString("endedAt", m_endedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   payload.WithInt64("shots", m_shots);
+
   }
 
   if(m_outputS3BucketHasBeenSet)
@@ -109,21 +116,14 @@ JsonValue QuantumTaskSummary::Jsonize() const
 
   }
 
-  if(m_quantumTaskArnHasBeenSet)
+  if(m_createdAtHasBeenSet)
   {
-   payload.WithString("quantumTaskArn", m_quantumTaskArn);
-
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_shotsHasBeenSet)
+  if(m_endedAtHasBeenSet)
   {
-   payload.WithInt64("shots", m_shots);
-
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", QuantumTaskStatusMapper::GetNameForQuantumTaskStatus(m_status));
+   payload.WithString("endedAt", m_endedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_tagsHasBeenSet)

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
-#include <aws/partnercentral-selling/model/AwsMemberBusinessTitle.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/partnercentral-selling/model/AwsMemberBusinessTitle.h>
 #include <utility>
 
 namespace Aws
@@ -39,17 +39,6 @@ namespace Model
     AWS_PARTNERCENTRALSELLING_API AwsTeamMember& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
-
-    ///@{
-    /**
-     * <p>Specifies the Amazon Web Services team member's business title and indicates
-     * their organizational role.</p>
-     */
-    inline AwsMemberBusinessTitle GetBusinessTitle() const { return m_businessTitle; }
-    inline bool BusinessTitleHasBeenSet() const { return m_businessTitleHasBeenSet; }
-    inline void SetBusinessTitle(AwsMemberBusinessTitle value) { m_businessTitleHasBeenSet = true; m_businessTitle = value; }
-    inline AwsTeamMember& WithBusinessTitle(AwsMemberBusinessTitle value) { SetBusinessTitle(value); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -86,10 +75,18 @@ namespace Model
     template<typename LastNameT = Aws::String>
     AwsTeamMember& WithLastName(LastNameT&& value) { SetLastName(std::forward<LastNameT>(value)); return *this;}
     ///@}
-  private:
 
-    AwsMemberBusinessTitle m_businessTitle{AwsMemberBusinessTitle::NOT_SET};
-    bool m_businessTitleHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Specifies the Amazon Web Services team member's business title and indicates
+     * their organizational role.</p>
+     */
+    inline AwsMemberBusinessTitle GetBusinessTitle() const { return m_businessTitle; }
+    inline bool BusinessTitleHasBeenSet() const { return m_businessTitleHasBeenSet; }
+    inline void SetBusinessTitle(AwsMemberBusinessTitle value) { m_businessTitleHasBeenSet = true; m_businessTitle = value; }
+    inline AwsTeamMember& WithBusinessTitle(AwsMemberBusinessTitle value) { SetBusinessTitle(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_email;
     bool m_emailHasBeenSet = false;
@@ -99,6 +96,9 @@ namespace Model
 
     Aws::String m_lastName;
     bool m_lastNameHasBeenSet = false;
+
+    AwsMemberBusinessTitle m_businessTitle{AwsMemberBusinessTitle::NOT_SET};
+    bool m_businessTitleHasBeenSet = false;
   };
 
 } // namespace Model

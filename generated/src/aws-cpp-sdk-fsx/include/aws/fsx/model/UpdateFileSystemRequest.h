@@ -12,6 +12,7 @@
 #include <aws/fsx/model/UpdateFileSystemOntapConfiguration.h>
 #include <aws/fsx/model/UpdateFileSystemOpenZFSConfiguration.h>
 #include <aws/fsx/model/StorageType.h>
+#include <aws/fsx/model/NetworkType.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -180,6 +181,16 @@ namespace Model
     template<typename FileSystemTypeVersionT = Aws::String>
     UpdateFileSystemRequest& WithFileSystemTypeVersion(FileSystemTypeVersionT&& value) { SetFileSystemTypeVersion(std::forward<FileSystemTypeVersionT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Changes the network type of an FSx for OpenZFS file system.</p>
+     */
+    inline NetworkType GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    inline void SetNetworkType(NetworkType value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline UpdateFileSystemRequest& WithNetworkType(NetworkType value) { SetNetworkType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_fileSystemId;
@@ -208,6 +219,9 @@ namespace Model
 
     Aws::String m_fileSystemTypeVersion;
     bool m_fileSystemTypeVersionHasBeenSet = false;
+
+    NetworkType m_networkType{NetworkType::NOT_SET};
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

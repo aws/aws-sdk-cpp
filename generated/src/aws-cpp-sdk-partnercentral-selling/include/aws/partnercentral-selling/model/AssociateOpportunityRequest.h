@@ -67,6 +67,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the entity type that you're associating with the <code>
+     * Opportunity</code>. This helps to categorize and properly process the
+     * association.</p>
+     */
+    inline RelatedEntityType GetRelatedEntityType() const { return m_relatedEntityType; }
+    inline bool RelatedEntityTypeHasBeenSet() const { return m_relatedEntityTypeHasBeenSet; }
+    inline void SetRelatedEntityType(RelatedEntityType value) { m_relatedEntityTypeHasBeenSet = true; m_relatedEntityType = value; }
+    inline AssociateOpportunityRequest& WithRelatedEntityType(RelatedEntityType value) { SetRelatedEntityType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Requires the related entity's unique identifier when you want to associate it
      * with the <code> Opportunity</code>. For Amazon Web Services Marketplace
      * entities, provide the Amazon Resource Name (ARN). Use the <a
@@ -80,18 +92,6 @@ namespace Model
     template<typename RelatedEntityIdentifierT = Aws::String>
     AssociateOpportunityRequest& WithRelatedEntityIdentifier(RelatedEntityIdentifierT&& value) { SetRelatedEntityIdentifier(std::forward<RelatedEntityIdentifierT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Specifies the entity type that you're associating with the <code>
-     * Opportunity</code>. This helps to categorize and properly process the
-     * association.</p>
-     */
-    inline RelatedEntityType GetRelatedEntityType() const { return m_relatedEntityType; }
-    inline bool RelatedEntityTypeHasBeenSet() const { return m_relatedEntityTypeHasBeenSet; }
-    inline void SetRelatedEntityType(RelatedEntityType value) { m_relatedEntityTypeHasBeenSet = true; m_relatedEntityType = value; }
-    inline AssociateOpportunityRequest& WithRelatedEntityType(RelatedEntityType value) { SetRelatedEntityType(value); return *this;}
-    ///@}
   private:
 
     Aws::String m_catalog;
@@ -100,11 +100,11 @@ namespace Model
     Aws::String m_opportunityIdentifier;
     bool m_opportunityIdentifierHasBeenSet = false;
 
-    Aws::String m_relatedEntityIdentifier;
-    bool m_relatedEntityIdentifierHasBeenSet = false;
-
     RelatedEntityType m_relatedEntityType{RelatedEntityType::NOT_SET};
     bool m_relatedEntityTypeHasBeenSet = false;
+
+    Aws::String m_relatedEntityIdentifier;
+    bool m_relatedEntityIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

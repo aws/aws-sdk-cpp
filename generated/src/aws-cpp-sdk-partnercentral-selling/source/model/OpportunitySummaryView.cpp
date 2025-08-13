@@ -25,10 +25,10 @@ OpportunitySummaryView::OpportunitySummaryView(JsonView jsonValue)
 
 OpportunitySummaryView& OpportunitySummaryView::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Customer"))
+  if(jsonValue.ValueExists("OpportunityType"))
   {
-    m_customer = jsonValue.GetObject("Customer");
-    m_customerHasBeenSet = true;
+    m_opportunityType = OpportunityTypeMapper::GetOpportunityTypeForName(jsonValue.GetString("OpportunityType"));
+    m_opportunityTypeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Lifecycle"))
   {
@@ -44,11 +44,6 @@ OpportunitySummaryView& OpportunitySummaryView::operator =(JsonView jsonValue)
     }
     m_opportunityTeamHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OpportunityType"))
-  {
-    m_opportunityType = OpportunityTypeMapper::GetOpportunityTypeForName(jsonValue.GetString("OpportunityType"));
-    m_opportunityTypeHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("PrimaryNeedsFromAws"))
   {
     Aws::Utils::Array<JsonView> primaryNeedsFromAwsJsonList = jsonValue.GetArray("PrimaryNeedsFromAws");
@@ -57,6 +52,11 @@ OpportunitySummaryView& OpportunitySummaryView::operator =(JsonView jsonValue)
       m_primaryNeedsFromAws.push_back(PrimaryNeedFromAwsMapper::GetPrimaryNeedFromAwsForName(primaryNeedsFromAwsJsonList[primaryNeedsFromAwsIndex].AsString()));
     }
     m_primaryNeedsFromAwsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Customer"))
+  {
+    m_customer = jsonValue.GetObject("Customer");
+    m_customerHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Project"))
   {
@@ -75,10 +75,9 @@ JsonValue OpportunitySummaryView::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_customerHasBeenSet)
+  if(m_opportunityTypeHasBeenSet)
   {
-   payload.WithObject("Customer", m_customer.Jsonize());
-
+   payload.WithString("OpportunityType", OpportunityTypeMapper::GetNameForOpportunityType(m_opportunityType));
   }
 
   if(m_lifecycleHasBeenSet)
@@ -98,11 +97,6 @@ JsonValue OpportunitySummaryView::Jsonize() const
 
   }
 
-  if(m_opportunityTypeHasBeenSet)
-  {
-   payload.WithString("OpportunityType", OpportunityTypeMapper::GetNameForOpportunityType(m_opportunityType));
-  }
-
   if(m_primaryNeedsFromAwsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> primaryNeedsFromAwsJsonList(m_primaryNeedsFromAws.size());
@@ -111,6 +105,12 @@ JsonValue OpportunitySummaryView::Jsonize() const
      primaryNeedsFromAwsJsonList[primaryNeedsFromAwsIndex].AsString(PrimaryNeedFromAwsMapper::GetNameForPrimaryNeedFromAws(m_primaryNeedsFromAws[primaryNeedsFromAwsIndex]));
    }
    payload.WithArray("PrimaryNeedsFromAws", std::move(primaryNeedsFromAwsJsonList));
+
+  }
+
+  if(m_customerHasBeenSet)
+  {
+   payload.WithObject("Customer", m_customer.Jsonize());
 
   }
 

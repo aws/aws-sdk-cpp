@@ -34,7 +34,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Optional element for a customer provided token.</p>
+     * <p>An optional string that, if supplied, must be copied from the output of a
+     * previous call to ListCaseEdits. When provided in this manner, the API fetches
+     * the next page of results. </p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

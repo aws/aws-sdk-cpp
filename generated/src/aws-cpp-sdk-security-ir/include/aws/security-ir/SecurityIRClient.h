@@ -16,8 +16,8 @@ namespace Aws
 namespace SecurityIR
 {
   /**
-   * <p>This guide provides documents the action and response elements for customer
-   * use of the service.</p>
+   * <p>This guide documents the action and response elements for use of the
+   * service.</p>
    */
   class AWS_SECURITYIR_API SecurityIRClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SecurityIRClient>
   {
@@ -78,8 +78,12 @@ namespace SecurityIR
         virtual ~SecurityIRClient();
 
         /**
-         * <p>Grants permission to view an existing membership.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Provides information on whether the supplied account IDs are associated with
+         * a membership.</p>  <p> AWS account ID's may appear less than 12 characters
+         * and need to be zero-prepended. An example would be <code>123123123</code> which
+         * is nine digits, and with zero-prepend would be <code>000123123123</code>. Not
+         * zero-prepending to 12 digits could result in errors. </p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/BatchGetMemberAccountDetails">AWS
          * API Reference</a></p>
          */
@@ -104,8 +108,7 @@ namespace SecurityIR
         }
 
         /**
-         * <p>Grants permissions to cancel an existing membership.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Cancels an existing membership.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CancelMembership">AWS
          * API Reference</a></p>
          */
@@ -130,7 +133,7 @@ namespace SecurityIR
         }
 
         /**
-         * <p>Grants permission to close an existing case.</p><p><h3>See Also:</h3>   <a
+         * <p>Closes an existing case.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CloseCase">AWS
          * API Reference</a></p>
          */
@@ -155,7 +158,7 @@ namespace SecurityIR
         }
 
         /**
-         * <p>Grants permission to create a new case.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new case.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CreateCase">AWS
          * API Reference</a></p>
          */
@@ -180,8 +183,7 @@ namespace SecurityIR
         }
 
         /**
-         * <p>Grants permission to add a comment to an existing case.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds a comment to an existing case.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CreateCaseComment">AWS
          * API Reference</a></p>
          */
@@ -206,7 +208,7 @@ namespace SecurityIR
         }
 
         /**
-         * <p>Grants permissions to create a new membership.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new membership.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CreateMembership">AWS
          * API Reference</a></p>
          */
@@ -231,7 +233,7 @@ namespace SecurityIR
         }
 
         /**
-         * <p>Grant permission to view a designated case.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the attributes of a case.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetCase">AWS
          * API Reference</a></p>
          */
@@ -256,8 +258,8 @@ namespace SecurityIR
         }
 
         /**
-         * <p>Grants permission to obtain an Amazon S3 presigned URL to download an
-         * attachment.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a Pre-Signed URL for uploading attachments into a case.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetCaseAttachmentDownloadUrl">AWS
          * API Reference</a></p>
          */
@@ -282,8 +284,7 @@ namespace SecurityIR
         }
 
         /**
-         * <p>Grants permission to upload an attachment to a case.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Uploads an attachment to a case.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetCaseAttachmentUploadUrl">AWS
          * API Reference</a></p>
          */
@@ -308,8 +309,7 @@ namespace SecurityIR
         }
 
         /**
-         * <p>Grants permission to get details of a designated service
-         * membership.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the attributes of a membership.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetMembership">AWS
          * API Reference</a></p>
          */
@@ -334,8 +334,8 @@ namespace SecurityIR
         }
 
         /**
-         * <p>Grants permissions to view the aidt log for edits made to a designated
-         * case.</p><p><h3>See Also:</h3>   <a
+         * <p>Views the case history for edits made to a designated case.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListCaseEdits">AWS
          * API Reference</a></p>
          */
@@ -360,8 +360,7 @@ namespace SecurityIR
         }
 
         /**
-         * <p>Grants permission to list all cases the requester has access
-         * to.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all cases the requester has access to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListCases">AWS
          * API Reference</a></p>
          */
@@ -386,8 +385,7 @@ namespace SecurityIR
         }
 
         /**
-         * <p>Grants permissions to list and view comments for a designated
-         * case.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns comments for a designated case.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListComments">AWS
          * API Reference</a></p>
          */
@@ -412,8 +410,8 @@ namespace SecurityIR
         }
 
         /**
-         * <p>Grants permission to query the memberships a principal has access
-         * to.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the memberships that the calling principal can access.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListMemberships">AWS
          * API Reference</a></p>
          */
@@ -438,8 +436,8 @@ namespace SecurityIR
         }
 
         /**
-         * <p>Grants permission to view currently configured tags on a
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns currently configured tags on a resource.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -464,8 +462,7 @@ namespace SecurityIR
         }
 
         /**
-         * <p>Grants permission to add a tag(s) to a designated resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds a tag(s) to a designated resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/TagResource">AWS
          * API Reference</a></p>
          */
@@ -490,8 +487,7 @@ namespace SecurityIR
         }
 
         /**
-         * <p>Grants permission to remove a tag(s) from a designate resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes a tag(s) from a designate resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -516,7 +512,7 @@ namespace SecurityIR
         }
 
         /**
-         * <p>Grants permission to update an existing case.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing case.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateCase">AWS
          * API Reference</a></p>
          */
@@ -541,8 +537,7 @@ namespace SecurityIR
         }
 
         /**
-         * <p>Grants permission to update an existing case comment.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates an existing case comment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateCaseComment">AWS
          * API Reference</a></p>
          */
@@ -567,10 +562,17 @@ namespace SecurityIR
         }
 
         /**
-         * <p>Grants permission to update the status for a designated cases. Options
-         * include <code>Submitted | Detection and Analysis | Eradication, Containment and
-         * Recovery | Post-Incident Activities | Closed</code>. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Updates the state transitions for a designated cases.</p> <p>
+         * <b>Self-managed</b>: the following states are available for self-managed cases.
+         * </p> <ul> <li> <p>Submitted → Detection and Analysis</p> </li> <li> <p>Detection
+         * and Analysis → Containment, Eradication, and Recovery</p> </li> <li>
+         * <p>Detection and Analysis → Post-incident Activities</p> </li> <li>
+         * <p>Containment, Eradication, and Recovery → Detection and Analysis</p> </li>
+         * <li> <p>Containment, Eradication, and Recovery → Post-incident Activities</p>
+         * </li> <li> <p>Post-incident Activities → Containment, Eradication, and
+         * Recovery</p> </li> <li> <p>Post-incident Activities → Detection and Analysis</p>
+         * </li> <li> <p>Any → Closed</p> </li> </ul> <p> <b>AWS supported</b>: You must
+         * use the <code>CloseCase</code> API to close. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateCaseStatus">AWS
          * API Reference</a></p>
          */
@@ -595,8 +597,7 @@ namespace SecurityIR
         }
 
         /**
-         * <p>Grants access to UpdateMembership to change membership
-         * configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates membership configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateMembership">AWS
          * API Reference</a></p>
          */
@@ -621,9 +622,8 @@ namespace SecurityIR
         }
 
         /**
-         * <p>Grants permission to update the resolver type for a case.</p> 
-         * <p>This is a one-way action and cannot be reversed.</p>  <p>Options
-         * include self-supported &gt; AWS-supported.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the resolver type for a case.</p>  <p>This is a one-way
+         * action and cannot be reversed.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateResolverType">AWS
          * API Reference</a></p>
          */

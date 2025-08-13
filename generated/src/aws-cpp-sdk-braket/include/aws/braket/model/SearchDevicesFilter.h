@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The filter to use for searching devices.</p><p><h3>See Also:</h3>   <a
+   * <p>The filter used to search for devices.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/SearchDevicesFilter">AWS
    * API Reference</a></p>
    */
@@ -40,7 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name to use to filter results.</p>
+     * <p>The name of the device parameter to filter based on. Only
+     * <code>deviceArn</code> filter name is currently supported.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -52,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The values to use to filter results.</p>
+     * <p>The values used to filter devices based on the filter name.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }

@@ -25,10 +25,20 @@ AwsOpportunityLifeCycle::AwsOpportunityLifeCycle(JsonView jsonValue)
 
 AwsOpportunityLifeCycle& AwsOpportunityLifeCycle::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("TargetCloseDate"))
+  {
+    m_targetCloseDate = jsonValue.GetString("TargetCloseDate");
+    m_targetCloseDateHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ClosedLostReason"))
   {
     m_closedLostReason = AwsClosedLostReasonMapper::GetAwsClosedLostReasonForName(jsonValue.GetString("ClosedLostReason"));
     m_closedLostReasonHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Stage"))
+  {
+    m_stage = AwsOpportunityStageMapper::GetAwsOpportunityStageForName(jsonValue.GetString("Stage"));
+    m_stageHasBeenSet = true;
   }
   if(jsonValue.ValueExists("NextSteps"))
   {
@@ -44,16 +54,6 @@ AwsOpportunityLifeCycle& AwsOpportunityLifeCycle::operator =(JsonView jsonValue)
     }
     m_nextStepsHistoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Stage"))
-  {
-    m_stage = AwsOpportunityStageMapper::GetAwsOpportunityStageForName(jsonValue.GetString("Stage"));
-    m_stageHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("TargetCloseDate"))
-  {
-    m_targetCloseDate = jsonValue.GetString("TargetCloseDate");
-    m_targetCloseDateHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -61,9 +61,20 @@ JsonValue AwsOpportunityLifeCycle::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_targetCloseDateHasBeenSet)
+  {
+   payload.WithString("TargetCloseDate", m_targetCloseDate);
+
+  }
+
   if(m_closedLostReasonHasBeenSet)
   {
    payload.WithString("ClosedLostReason", AwsClosedLostReasonMapper::GetNameForAwsClosedLostReason(m_closedLostReason));
+  }
+
+  if(m_stageHasBeenSet)
+  {
+   payload.WithString("Stage", AwsOpportunityStageMapper::GetNameForAwsOpportunityStage(m_stage));
   }
 
   if(m_nextStepsHasBeenSet)
@@ -80,17 +91,6 @@ JsonValue AwsOpportunityLifeCycle::Jsonize() const
      nextStepsHistoryJsonList[nextStepsHistoryIndex].AsObject(m_nextStepsHistory[nextStepsHistoryIndex].Jsonize());
    }
    payload.WithArray("NextStepsHistory", std::move(nextStepsHistoryJsonList));
-
-  }
-
-  if(m_stageHasBeenSet)
-  {
-   payload.WithString("Stage", AwsOpportunityStageMapper::GetNameForAwsOpportunityStage(m_stage));
-  }
-
-  if(m_targetCloseDateHasBeenSet)
-  {
-   payload.WithString("TargetCloseDate", m_targetCloseDate);
 
   }
 

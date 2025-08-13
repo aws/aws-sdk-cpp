@@ -43,7 +43,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Required element used in combination with CreateCase.</p>
+     * <p> <p>The <code>clientToken</code> field is an idempotency key used to
+     * ensure that repeated attempts for a single action will be ignored by the server
+     * during retries. A caller supplied unique ID (typically a UUID) should be
+     * provided. </p> </p>
      */
     inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
@@ -56,7 +59,7 @@ namespace Model
     ///@{
     /**
      * <p>Required element used in combination with CreateCase to identify the resolver
-     * type. Available resolvers include self-supported | aws-supported. </p>
+     * type.</p>
      */
     inline ResolverType GetResolverType() const { return m_resolverType; }
     inline bool ResolverTypeHasBeenSet() const { return m_resolverTypeHasBeenSet; }
@@ -79,8 +82,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Required element used in combination with CreateCase to provide a description
-     * for the new case.</p>
+     * <p>Required element used in combination with CreateCase</p> <p>to provide a
+     * description for the new case.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -118,7 +121,11 @@ namespace Model
     ///@{
     /**
      * <p>Required element used in combination with CreateCase to provide a list of
-     * impacted accounts.</p>
+     * impacted accounts.</p>  <p> AWS account ID's may appear less than 12
+     * characters and need to be zero-prepended. An example would be
+     * <code>123123123</code> which is nine digits, and with zero-prepend would be
+     * <code>000123123123</code>. Not zero-prepending to 12 digits could result in
+     * errors. </p> 
      */
     inline const Aws::Vector<Aws::String>& GetImpactedAccounts() const { return m_impactedAccounts; }
     inline bool ImpactedAccountsHasBeenSet() const { return m_impactedAccountsHasBeenSet; }

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Configures the quantum processing units (QPUs) or simulator used to create
-   * and run an Amazon Braket job.</p><p><h3>See Also:</h3>   <a
+   * <p>Configures the primary device used to create and run an Amazon Braket hybrid
+   * job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/DeviceConfig">AWS
    * API Reference</a></p>
    */
@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The primary quantum processing unit (QPU) or simulator used to create and run
-     * an Amazon Braket job.</p>
+     * <p>The primary device ARN used to create and run an Amazon Braket hybrid
+     * job.</p>
      */
     inline const Aws::String& GetDevice() const { return m_device; }
     inline bool DeviceHasBeenSet() const { return m_deviceHasBeenSet; }

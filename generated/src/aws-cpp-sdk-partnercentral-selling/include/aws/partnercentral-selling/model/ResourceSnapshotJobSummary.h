@@ -41,6 +41,20 @@ namespace Model
 
     ///@{
     /**
+     * <p> The unique identifier for the resource snapshot job within the AWS Partner
+     * Central system. This ID is used for direct references to the job within the
+     * service. </p>
+     */
+    inline const Aws::String& GetId() const { return m_id; }
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ResourceSnapshotJobSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p> The Amazon Resource Name (ARN) for the resource snapshot job. </p>
      */
     inline const Aws::String& GetArn() const { return m_arn; }
@@ -65,20 +79,6 @@ namespace Model
 
     ///@{
     /**
-     * <p> The unique identifier for the resource snapshot job within the AWS Partner
-     * Central system. This ID is used for direct references to the job within the
-     * service. </p>
-     */
-    inline const Aws::String& GetId() const { return m_id; }
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    template<typename IdT = Aws::String>
-    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
-    template<typename IdT = Aws::String>
-    ResourceSnapshotJobSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The current status of the snapshot job.</p> <p>Valid values:</p> <ul> <li>
      * <p> STOPPED: The job is not currently running. </p> </li> <li> <p> RUNNING: The
      * job is actively executing. </p> </li> </ul>
@@ -90,14 +90,14 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_id;
+    bool m_idHasBeenSet = false;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
     Aws::String m_engagementId;
     bool m_engagementIdHasBeenSet = false;
-
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
 
     ResourceSnapshotJobStatus m_status{ResourceSnapshotJobStatus::NOT_SET};
     bool m_statusHasBeenSet = false;

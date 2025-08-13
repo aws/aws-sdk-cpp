@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The title of the project.</p>
+     */
+    inline const Aws::String& GetTitle() const { return m_title; }
+    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    EngagementCustomerProjectDetails& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A description of the business problem the project aims to solve.</p>
      */
     inline const Aws::String& GetBusinessProblem() const { return m_businessProblem; }
@@ -62,28 +74,16 @@ namespace Model
     template<typename TargetCompletionDateT = Aws::String>
     EngagementCustomerProjectDetails& WithTargetCompletionDate(TargetCompletionDateT&& value) { SetTargetCompletionDate(std::forward<TargetCompletionDateT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The title of the project.</p>
-     */
-    inline const Aws::String& GetTitle() const { return m_title; }
-    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    template<typename TitleT = Aws::String>
-    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
-    template<typename TitleT = Aws::String>
-    EngagementCustomerProjectDetails& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_title;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_businessProblem;
     bool m_businessProblemHasBeenSet = false;
 
     Aws::String m_targetCompletionDate;
     bool m_targetCompletionDateHasBeenSet = false;
-
-    Aws::String m_title;
-    bool m_titleHasBeenSet = false;
   };
 
 } // namespace Model

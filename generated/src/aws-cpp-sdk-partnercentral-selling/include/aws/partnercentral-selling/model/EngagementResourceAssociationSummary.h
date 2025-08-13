@@ -58,19 +58,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS account ID of the entity that owns the resource. Identifies the
-     * account responsible for or having primary control over the resource. </p>
-     */
-    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
-    inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-    template<typename CreatedByT = Aws::String>
-    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
-    template<typename CreatedByT = Aws::String>
-    EngagementResourceAssociationSummary& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p> A unique identifier for the engagement associated with the resource. </p>
      */
     inline const Aws::String& GetEngagementId() const { return m_engagementId; }
@@ -79,6 +66,16 @@ namespace Model
     void SetEngagementId(EngagementIdT&& value) { m_engagementIdHasBeenSet = true; m_engagementId = std::forward<EngagementIdT>(value); }
     template<typename EngagementIdT = Aws::String>
     EngagementResourceAssociationSummary& WithEngagementId(EngagementIdT&& value) { SetEngagementId(std::forward<EngagementIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> Categorizes the type of resource associated with the engagement. </p>
+     */
+    inline ResourceType GetResourceType() const { return m_resourceType; }
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline EngagementResourceAssociationSummary& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -96,29 +93,32 @@ namespace Model
 
     ///@{
     /**
-     * <p> Categorizes the type of resource associated with the engagement. </p>
+     * <p>The AWS account ID of the entity that owns the resource. Identifies the
+     * account responsible for or having primary control over the resource. </p>
      */
-    inline ResourceType GetResourceType() const { return m_resourceType; }
-    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline EngagementResourceAssociationSummary& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
+    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+    inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
+    template<typename CreatedByT = Aws::String>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = Aws::String>
+    EngagementResourceAssociationSummary& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_catalog;
     bool m_catalogHasBeenSet = false;
 
-    Aws::String m_createdBy;
-    bool m_createdByHasBeenSet = false;
-
     Aws::String m_engagementId;
     bool m_engagementIdHasBeenSet = false;
+
+    ResourceType m_resourceType{ResourceType::NOT_SET};
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    ResourceType m_resourceType{ResourceType::NOT_SET};
-    bool m_resourceTypeHasBeenSet = false;
+    Aws::String m_createdBy;
+    bool m_createdByHasBeenSet = false;
   };
 
 } // namespace Model

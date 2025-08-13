@@ -25,10 +25,10 @@ LifeCycleForView::LifeCycleForView(JsonView jsonValue)
 
 LifeCycleForView& LifeCycleForView::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("NextSteps"))
+  if(jsonValue.ValueExists("TargetCloseDate"))
   {
-    m_nextSteps = jsonValue.GetString("NextSteps");
-    m_nextStepsHasBeenSet = true;
+    m_targetCloseDate = jsonValue.GetString("TargetCloseDate");
+    m_targetCloseDateHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ReviewStatus"))
   {
@@ -40,10 +40,10 @@ LifeCycleForView& LifeCycleForView::operator =(JsonView jsonValue)
     m_stage = StageMapper::GetStageForName(jsonValue.GetString("Stage"));
     m_stageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TargetCloseDate"))
+  if(jsonValue.ValueExists("NextSteps"))
   {
-    m_targetCloseDate = jsonValue.GetString("TargetCloseDate");
-    m_targetCloseDateHasBeenSet = true;
+    m_nextSteps = jsonValue.GetString("NextSteps");
+    m_nextStepsHasBeenSet = true;
   }
   return *this;
 }
@@ -52,9 +52,9 @@ JsonValue LifeCycleForView::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_nextStepsHasBeenSet)
+  if(m_targetCloseDateHasBeenSet)
   {
-   payload.WithString("NextSteps", m_nextSteps);
+   payload.WithString("TargetCloseDate", m_targetCloseDate);
 
   }
 
@@ -68,9 +68,9 @@ JsonValue LifeCycleForView::Jsonize() const
    payload.WithString("Stage", StageMapper::GetNameForStage(m_stage));
   }
 
-  if(m_targetCloseDateHasBeenSet)
+  if(m_nextStepsHasBeenSet)
   {
-   payload.WithString("TargetCloseDate", m_targetCloseDate);
+   payload.WithString("NextSteps", m_nextSteps);
 
   }
 

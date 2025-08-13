@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
-#include <aws/partnercentral-selling/model/EngagementScore.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/partnercentral-selling/model/EngagementScore.h>
 #include <utility>
 
 namespace Aws
@@ -42,18 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Represents a score assigned by AWS to indicate the level of engagement and
-     * potential success for the opportunity. This score helps partners prioritize
-     * their efforts.</p>
-     */
-    inline EngagementScore GetEngagementScore() const { return m_engagementScore; }
-    inline bool EngagementScoreHasBeenSet() const { return m_engagementScoreHasBeenSet; }
-    inline void SetEngagementScore(EngagementScore value) { m_engagementScoreHasBeenSet = true; m_engagementScore = value; }
-    inline AwsOpportunityInsights& WithEngagementScore(EngagementScore value) { SetEngagementScore(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Provides recommendations from AWS on the next best actions to take in order
      * to move the opportunity forward and increase the likelihood of success.</p>
      */
@@ -64,13 +52,25 @@ namespace Model
     template<typename NextBestActionsT = Aws::String>
     AwsOpportunityInsights& WithNextBestActions(NextBestActionsT&& value) { SetNextBestActions(std::forward<NextBestActionsT>(value)); return *this;}
     ///@}
-  private:
 
-    EngagementScore m_engagementScore{EngagementScore::NOT_SET};
-    bool m_engagementScoreHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Represents a score assigned by AWS to indicate the level of engagement and
+     * potential success for the opportunity. This score helps partners prioritize
+     * their efforts.</p>
+     */
+    inline EngagementScore GetEngagementScore() const { return m_engagementScore; }
+    inline bool EngagementScoreHasBeenSet() const { return m_engagementScoreHasBeenSet; }
+    inline void SetEngagementScore(EngagementScore value) { m_engagementScoreHasBeenSet = true; m_engagementScore = value; }
+    inline AwsOpportunityInsights& WithEngagementScore(EngagementScore value) { SetEngagementScore(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_nextBestActions;
     bool m_nextBestActionsHasBeenSet = false;
+
+    EngagementScore m_engagementScore{EngagementScore::NOT_SET};
+    bool m_engagementScoreHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,6 +30,16 @@ EngagementSummary& EngagementSummary::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Id"))
+  {
+    m_id = jsonValue.GetString("Id");
+    m_idHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Title"))
+  {
+    m_title = jsonValue.GetString("Title");
+    m_titleHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
@@ -40,20 +50,10 @@ EngagementSummary& EngagementSummary::operator =(JsonView jsonValue)
     m_createdBy = jsonValue.GetString("CreatedBy");
     m_createdByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Id"))
-  {
-    m_id = jsonValue.GetString("Id");
-    m_idHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("MemberCount"))
   {
     m_memberCount = jsonValue.GetInteger("MemberCount");
     m_memberCountHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Title"))
-  {
-    m_title = jsonValue.GetString("Title");
-    m_titleHasBeenSet = true;
   }
   return *this;
 }
@@ -68,6 +68,18 @@ JsonValue EngagementSummary::Jsonize() const
 
   }
 
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("Id", m_id);
+
+  }
+
+  if(m_titleHasBeenSet)
+  {
+   payload.WithString("Title", m_title);
+
+  }
+
   if(m_createdAtHasBeenSet)
   {
    payload.WithString("CreatedAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
@@ -79,21 +91,9 @@ JsonValue EngagementSummary::Jsonize() const
 
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
-  }
-
   if(m_memberCountHasBeenSet)
   {
    payload.WithInteger("MemberCount", m_memberCount);
-
-  }
-
-  if(m_titleHasBeenSet)
-  {
-   payload.WithString("Title", m_title);
 
   }
 

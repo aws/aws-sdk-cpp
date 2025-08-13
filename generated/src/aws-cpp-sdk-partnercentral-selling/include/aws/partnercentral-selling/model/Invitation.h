@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/partnercentral-selling/model/Payload.h>
 #include <aws/partnercentral-selling/model/Receiver.h>
+#include <aws/partnercentral-selling/model/Payload.h>
 #include <utility>
 
 namespace Aws
@@ -55,16 +55,6 @@ namespace Model
 
     ///@{
     
-    inline const Payload& GetPayload() const { return m_payload; }
-    inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
-    template<typename PayloadT = Payload>
-    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
-    template<typename PayloadT = Payload>
-    Invitation& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    
     inline const Receiver& GetReceiver() const { return m_receiver; }
     inline bool ReceiverHasBeenSet() const { return m_receiverHasBeenSet; }
     template<typename ReceiverT = Receiver>
@@ -72,16 +62,26 @@ namespace Model
     template<typename ReceiverT = Receiver>
     Invitation& WithReceiver(ReceiverT&& value) { SetReceiver(std::forward<ReceiverT>(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const Payload& GetPayload() const { return m_payload; }
+    inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
+    template<typename PayloadT = Payload>
+    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
+    template<typename PayloadT = Payload>
+    Invitation& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    Payload m_payload;
-    bool m_payloadHasBeenSet = false;
-
     Receiver m_receiver;
     bool m_receiverHasBeenSet = false;
+
+    Payload m_payload;
+    bool m_payloadHasBeenSet = false;
   };
 
 } // namespace Model

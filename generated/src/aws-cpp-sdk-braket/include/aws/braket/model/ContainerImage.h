@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The container image used to create an Amazon Braket job.</p><p><h3>See
+   * <p>The container image used to create an Amazon Braket hybrid job.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/ContainerImage">AWS
    * API Reference</a></p>

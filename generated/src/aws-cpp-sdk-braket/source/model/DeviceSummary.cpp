@@ -35,20 +35,20 @@ DeviceSummary& DeviceSummary::operator =(JsonView jsonValue)
     m_deviceName = jsonValue.GetString("deviceName");
     m_deviceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("deviceStatus"))
+  if(jsonValue.ValueExists("providerName"))
   {
-    m_deviceStatus = DeviceStatusMapper::GetDeviceStatusForName(jsonValue.GetString("deviceStatus"));
-    m_deviceStatusHasBeenSet = true;
+    m_providerName = jsonValue.GetString("providerName");
+    m_providerNameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("deviceType"))
   {
     m_deviceType = DeviceTypeMapper::GetDeviceTypeForName(jsonValue.GetString("deviceType"));
     m_deviceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("providerName"))
+  if(jsonValue.ValueExists("deviceStatus"))
   {
-    m_providerName = jsonValue.GetString("providerName");
-    m_providerNameHasBeenSet = true;
+    m_deviceStatus = DeviceStatusMapper::GetDeviceStatusForName(jsonValue.GetString("deviceStatus"));
+    m_deviceStatusHasBeenSet = true;
   }
   return *this;
 }
@@ -69,9 +69,10 @@ JsonValue DeviceSummary::Jsonize() const
 
   }
 
-  if(m_deviceStatusHasBeenSet)
+  if(m_providerNameHasBeenSet)
   {
-   payload.WithString("deviceStatus", DeviceStatusMapper::GetNameForDeviceStatus(m_deviceStatus));
+   payload.WithString("providerName", m_providerName);
+
   }
 
   if(m_deviceTypeHasBeenSet)
@@ -79,10 +80,9 @@ JsonValue DeviceSummary::Jsonize() const
    payload.WithString("deviceType", DeviceTypeMapper::GetNameForDeviceType(m_deviceType));
   }
 
-  if(m_providerNameHasBeenSet)
+  if(m_deviceStatusHasBeenSet)
   {
-   payload.WithString("providerName", m_providerName);
-
+   payload.WithString("deviceStatus", DeviceStatusMapper::GetNameForDeviceStatus(m_deviceStatus));
   }
 
   return payload;

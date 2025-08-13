@@ -30,10 +30,15 @@ EngagementInvitationSummary& EngagementInvitationSummary::operator =(JsonView js
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Catalog"))
+  if(jsonValue.ValueExists("PayloadType"))
   {
-    m_catalog = jsonValue.GetString("Catalog");
-    m_catalogHasBeenSet = true;
+    m_payloadType = EngagementInvitationPayloadTypeMapper::GetEngagementInvitationPayloadTypeForName(jsonValue.GetString("PayloadType"));
+    m_payloadTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Id"))
+  {
+    m_id = jsonValue.GetString("Id");
+    m_idHasBeenSet = true;
   }
   if(jsonValue.ValueExists("EngagementId"))
   {
@@ -45,35 +50,20 @@ EngagementInvitationSummary& EngagementInvitationSummary::operator =(JsonView js
     m_engagementTitle = jsonValue.GetString("EngagementTitle");
     m_engagementTitleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExpirationDate"))
+  if(jsonValue.ValueExists("Status"))
   {
-    m_expirationDate = jsonValue.GetString("ExpirationDate");
-    m_expirationDateHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Id"))
-  {
-    m_id = jsonValue.GetString("Id");
-    m_idHasBeenSet = true;
+    m_status = InvitationStatusMapper::GetInvitationStatusForName(jsonValue.GetString("Status"));
+    m_statusHasBeenSet = true;
   }
   if(jsonValue.ValueExists("InvitationDate"))
   {
     m_invitationDate = jsonValue.GetString("InvitationDate");
     m_invitationDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ParticipantType"))
+  if(jsonValue.ValueExists("ExpirationDate"))
   {
-    m_participantType = ParticipantTypeMapper::GetParticipantTypeForName(jsonValue.GetString("ParticipantType"));
-    m_participantTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("PayloadType"))
-  {
-    m_payloadType = EngagementInvitationPayloadTypeMapper::GetEngagementInvitationPayloadTypeForName(jsonValue.GetString("PayloadType"));
-    m_payloadTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Receiver"))
-  {
-    m_receiver = jsonValue.GetObject("Receiver");
-    m_receiverHasBeenSet = true;
+    m_expirationDate = jsonValue.GetString("ExpirationDate");
+    m_expirationDateHasBeenSet = true;
   }
   if(jsonValue.ValueExists("SenderAwsAccountId"))
   {
@@ -85,10 +75,20 @@ EngagementInvitationSummary& EngagementInvitationSummary::operator =(JsonView js
     m_senderCompanyName = jsonValue.GetString("SenderCompanyName");
     m_senderCompanyNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
+  if(jsonValue.ValueExists("Receiver"))
   {
-    m_status = InvitationStatusMapper::GetInvitationStatusForName(jsonValue.GetString("Status"));
-    m_statusHasBeenSet = true;
+    m_receiver = jsonValue.GetObject("Receiver");
+    m_receiverHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Catalog"))
+  {
+    m_catalog = jsonValue.GetString("Catalog");
+    m_catalogHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ParticipantType"))
+  {
+    m_participantType = ParticipantTypeMapper::GetParticipantTypeForName(jsonValue.GetString("ParticipantType"));
+    m_participantTypeHasBeenSet = true;
   }
   return *this;
 }
@@ -103,9 +103,14 @@ JsonValue EngagementInvitationSummary::Jsonize() const
 
   }
 
-  if(m_catalogHasBeenSet)
+  if(m_payloadTypeHasBeenSet)
   {
-   payload.WithString("Catalog", m_catalog);
+   payload.WithString("PayloadType", EngagementInvitationPayloadTypeMapper::GetNameForEngagementInvitationPayloadType(m_payloadType));
+  }
+
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("Id", m_id);
 
   }
 
@@ -121,15 +126,9 @@ JsonValue EngagementInvitationSummary::Jsonize() const
 
   }
 
-  if(m_expirationDateHasBeenSet)
+  if(m_statusHasBeenSet)
   {
-   payload.WithString("ExpirationDate", m_expirationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+   payload.WithString("Status", InvitationStatusMapper::GetNameForInvitationStatus(m_status));
   }
 
   if(m_invitationDateHasBeenSet)
@@ -137,20 +136,9 @@ JsonValue EngagementInvitationSummary::Jsonize() const
    payload.WithString("InvitationDate", m_invitationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_participantTypeHasBeenSet)
+  if(m_expirationDateHasBeenSet)
   {
-   payload.WithString("ParticipantType", ParticipantTypeMapper::GetNameForParticipantType(m_participantType));
-  }
-
-  if(m_payloadTypeHasBeenSet)
-  {
-   payload.WithString("PayloadType", EngagementInvitationPayloadTypeMapper::GetNameForEngagementInvitationPayloadType(m_payloadType));
-  }
-
-  if(m_receiverHasBeenSet)
-  {
-   payload.WithObject("Receiver", m_receiver.Jsonize());
-
+   payload.WithString("ExpirationDate", m_expirationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_senderAwsAccountIdHasBeenSet)
@@ -165,9 +153,21 @@ JsonValue EngagementInvitationSummary::Jsonize() const
 
   }
 
-  if(m_statusHasBeenSet)
+  if(m_receiverHasBeenSet)
   {
-   payload.WithString("Status", InvitationStatusMapper::GetNameForInvitationStatus(m_status));
+   payload.WithObject("Receiver", m_receiver.Jsonize());
+
+  }
+
+  if(m_catalogHasBeenSet)
+  {
+   payload.WithString("Catalog", m_catalog);
+
+  }
+
+  if(m_participantTypeHasBeenSet)
+  {
+   payload.WithString("ParticipantType", ParticipantTypeMapper::GetNameForParticipantType(m_participantType));
   }
 
   return payload;

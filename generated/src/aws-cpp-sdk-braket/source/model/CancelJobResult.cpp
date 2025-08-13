@@ -25,15 +25,15 @@ CancelJobResult::CancelJobResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 CancelJobResult& CancelJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("cancellationStatus"))
-  {
-    m_cancellationStatus = CancellationStatusMapper::GetCancellationStatusForName(jsonValue.GetString("cancellationStatus"));
-    m_cancellationStatusHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("jobArn"))
   {
     m_jobArn = jsonValue.GetString("jobArn");
     m_jobArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("cancellationStatus"))
+  {
+    m_cancellationStatus = CancellationStatusMapper::GetCancellationStatusForName(jsonValue.GetString("cancellationStatus"));
+    m_cancellationStatusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
-#include <aws/partnercentral-selling/model/ValidationExceptionErrorCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/partnercentral-selling/model/ValidationExceptionErrorCode.h>
 #include <utility>
 
 namespace Aws
@@ -59,16 +59,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the error code for the invalid field value.</p>
-     */
-    inline ValidationExceptionErrorCode GetCode() const { return m_code; }
-    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(ValidationExceptionErrorCode value) { m_codeHasBeenSet = true; m_code = value; }
-    inline ValidationExceptionError& WithCode(ValidationExceptionErrorCode value) { SetCode(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Specifies the field name with the invalid value.</p>
      */
     inline const Aws::String& GetFieldName() const { return m_fieldName; }
@@ -90,16 +80,26 @@ namespace Model
     template<typename MessageT = Aws::String>
     ValidationExceptionError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
-  private:
 
-    ValidationExceptionErrorCode m_code{ValidationExceptionErrorCode::NOT_SET};
-    bool m_codeHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Specifies the error code for the invalid field value.</p>
+     */
+    inline ValidationExceptionErrorCode GetCode() const { return m_code; }
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+    inline void SetCode(ValidationExceptionErrorCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline ValidationExceptionError& WithCode(ValidationExceptionErrorCode value) { SetCode(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_fieldName;
     bool m_fieldNameHasBeenSet = false;
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
+
+    ValidationExceptionErrorCode m_code{ValidationExceptionErrorCode::NOT_SET};
+    bool m_codeHasBeenSet = false;
   };
 
 } // namespace Model

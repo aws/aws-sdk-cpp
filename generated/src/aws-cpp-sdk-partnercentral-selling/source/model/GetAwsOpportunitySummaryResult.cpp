@@ -30,25 +30,25 @@ GetAwsOpportunitySummaryResult& GetAwsOpportunitySummaryResult::operator =(const
     m_catalog = jsonValue.GetString("Catalog");
     m_catalogHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Customer"))
+  if(jsonValue.ValueExists("RelatedOpportunityId"))
   {
-    m_customer = jsonValue.GetObject("Customer");
-    m_customerHasBeenSet = true;
+    m_relatedOpportunityId = jsonValue.GetString("RelatedOpportunityId");
+    m_relatedOpportunityIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Insights"))
+  if(jsonValue.ValueExists("Origin"))
   {
-    m_insights = jsonValue.GetObject("Insights");
-    m_insightsHasBeenSet = true;
+    m_origin = OpportunityOriginMapper::GetOpportunityOriginForName(jsonValue.GetString("Origin"));
+    m_originHasBeenSet = true;
   }
   if(jsonValue.ValueExists("InvolvementType"))
   {
     m_involvementType = SalesInvolvementTypeMapper::GetSalesInvolvementTypeForName(jsonValue.GetString("InvolvementType"));
     m_involvementTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InvolvementTypeChangeReason"))
+  if(jsonValue.ValueExists("Visibility"))
   {
-    m_involvementTypeChangeReason = InvolvementTypeChangeReasonMapper::GetInvolvementTypeChangeReasonForName(jsonValue.GetString("InvolvementTypeChangeReason"));
-    m_involvementTypeChangeReasonHasBeenSet = true;
+    m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
+    m_visibilityHasBeenSet = true;
   }
   if(jsonValue.ValueExists("LifeCycle"))
   {
@@ -64,30 +64,30 @@ GetAwsOpportunitySummaryResult& GetAwsOpportunitySummaryResult::operator =(const
     }
     m_opportunityTeamHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Origin"))
+  if(jsonValue.ValueExists("Insights"))
   {
-    m_origin = OpportunityOriginMapper::GetOpportunityOriginForName(jsonValue.GetString("Origin"));
-    m_originHasBeenSet = true;
+    m_insights = jsonValue.GetObject("Insights");
+    m_insightsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Project"))
+  if(jsonValue.ValueExists("InvolvementTypeChangeReason"))
   {
-    m_project = jsonValue.GetObject("Project");
-    m_projectHasBeenSet = true;
+    m_involvementTypeChangeReason = InvolvementTypeChangeReasonMapper::GetInvolvementTypeChangeReasonForName(jsonValue.GetString("InvolvementTypeChangeReason"));
+    m_involvementTypeChangeReasonHasBeenSet = true;
   }
   if(jsonValue.ValueExists("RelatedEntityIds"))
   {
     m_relatedEntityIds = jsonValue.GetObject("RelatedEntityIds");
     m_relatedEntityIdsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RelatedOpportunityId"))
+  if(jsonValue.ValueExists("Customer"))
   {
-    m_relatedOpportunityId = jsonValue.GetString("RelatedOpportunityId");
-    m_relatedOpportunityIdHasBeenSet = true;
+    m_customer = jsonValue.GetObject("Customer");
+    m_customerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Visibility"))
+  if(jsonValue.ValueExists("Project"))
   {
-    m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-    m_visibilityHasBeenSet = true;
+    m_project = jsonValue.GetObject("Project");
+    m_projectHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

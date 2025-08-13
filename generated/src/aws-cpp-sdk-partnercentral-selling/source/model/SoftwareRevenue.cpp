@@ -30,6 +30,11 @@ SoftwareRevenue& SoftwareRevenue::operator =(JsonView jsonValue)
     m_deliveryModel = RevenueModelMapper::GetRevenueModelForName(jsonValue.GetString("DeliveryModel"));
     m_deliveryModelHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Value"))
+  {
+    m_value = jsonValue.GetObject("Value");
+    m_valueHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("EffectiveDate"))
   {
     m_effectiveDate = jsonValue.GetString("EffectiveDate");
@@ -39,11 +44,6 @@ SoftwareRevenue& SoftwareRevenue::operator =(JsonView jsonValue)
   {
     m_expirationDate = jsonValue.GetString("ExpirationDate");
     m_expirationDateHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Value"))
-  {
-    m_value = jsonValue.GetObject("Value");
-    m_valueHasBeenSet = true;
   }
   return *this;
 }
@@ -57,6 +57,12 @@ JsonValue SoftwareRevenue::Jsonize() const
    payload.WithString("DeliveryModel", RevenueModelMapper::GetNameForRevenueModel(m_deliveryModel));
   }
 
+  if(m_valueHasBeenSet)
+  {
+   payload.WithObject("Value", m_value.Jsonize());
+
+  }
+
   if(m_effectiveDateHasBeenSet)
   {
    payload.WithString("EffectiveDate", m_effectiveDate);
@@ -66,12 +72,6 @@ JsonValue SoftwareRevenue::Jsonize() const
   if(m_expirationDateHasBeenSet)
   {
    payload.WithString("ExpirationDate", m_expirationDate);
-
-  }
-
-  if(m_valueHasBeenSet)
-  {
-   payload.WithObject("Value", m_value.Jsonize());
 
   }
 

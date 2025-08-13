@@ -41,21 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the business title of the assignee managing the opportunity. This
-     * helps clarify the individual's role and responsibilities within the
-     * organization. Use the value <code>PartnerAccountManager</code> to update details
-     * of the opportunity owner.</p>
-     */
-    inline const Aws::String& GetBusinessTitle() const { return m_businessTitle; }
-    inline bool BusinessTitleHasBeenSet() const { return m_businessTitleHasBeenSet; }
-    template<typename BusinessTitleT = Aws::String>
-    void SetBusinessTitle(BusinessTitleT&& value) { m_businessTitleHasBeenSet = true; m_businessTitle = std::forward<BusinessTitleT>(value); }
-    template<typename BusinessTitleT = Aws::String>
-    AssigneeContact& WithBusinessTitle(BusinessTitleT&& value) { SetBusinessTitle(std::forward<BusinessTitleT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Provides the email address of the assignee. This email is used for
      * communications and notifications related to the opportunity.</p>
      */
@@ -94,10 +79,22 @@ namespace Model
     template<typename LastNameT = Aws::String>
     AssigneeContact& WithLastName(LastNameT&& value) { SetLastName(std::forward<LastNameT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_businessTitle;
-    bool m_businessTitleHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Specifies the business title of the assignee managing the opportunity. This
+     * helps clarify the individual's role and responsibilities within the
+     * organization. Use the value <code>PartnerAccountManager</code> to update details
+     * of the opportunity owner.</p>
+     */
+    inline const Aws::String& GetBusinessTitle() const { return m_businessTitle; }
+    inline bool BusinessTitleHasBeenSet() const { return m_businessTitleHasBeenSet; }
+    template<typename BusinessTitleT = Aws::String>
+    void SetBusinessTitle(BusinessTitleT&& value) { m_businessTitleHasBeenSet = true; m_businessTitle = std::forward<BusinessTitleT>(value); }
+    template<typename BusinessTitleT = Aws::String>
+    AssigneeContact& WithBusinessTitle(BusinessTitleT&& value) { SetBusinessTitle(std::forward<BusinessTitleT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_email;
     bool m_emailHasBeenSet = false;
@@ -107,6 +104,9 @@ namespace Model
 
     Aws::String m_lastName;
     bool m_lastNameHasBeenSet = false;
+
+    Aws::String m_businessTitle;
+    bool m_businessTitleHasBeenSet = false;
   };
 
 } // namespace Model

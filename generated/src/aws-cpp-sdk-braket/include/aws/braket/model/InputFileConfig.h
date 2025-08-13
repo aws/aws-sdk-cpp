@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A named input source that an Amazon Braket job can consume.</p>
+     * <p>A named input source that an Amazon Braket hybrid job can consume.</p>
      */
     inline const Aws::String& GetChannelName() const { return m_channelName; }
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
@@ -65,7 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The location of the channel data.</p>
+     * <p>The location of the input data.</p>
      */
     inline const DataSource& GetDataSource() const { return m_dataSource; }
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }

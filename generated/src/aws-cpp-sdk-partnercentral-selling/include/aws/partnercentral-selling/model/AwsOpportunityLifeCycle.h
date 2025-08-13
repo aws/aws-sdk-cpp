@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
-#include <aws/partnercentral-selling/model/AwsClosedLostReason.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/partnercentral-selling/model/AwsClosedLostReason.h>
 #include <aws/partnercentral-selling/model/AwsOpportunityStage.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/partnercentral-selling/model/ProfileNextStepsHistory.h>
 #include <utility>
 
@@ -45,6 +45,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates the expected date by which the opportunity is projected to close.
+     * This field helps in planning resources and timelines for both the partner and
+     * AWS.</p>
+     */
+    inline const Aws::String& GetTargetCloseDate() const { return m_targetCloseDate; }
+    inline bool TargetCloseDateHasBeenSet() const { return m_targetCloseDateHasBeenSet; }
+    template<typename TargetCloseDateT = Aws::String>
+    void SetTargetCloseDate(TargetCloseDateT&& value) { m_targetCloseDateHasBeenSet = true; m_targetCloseDate = std::forward<TargetCloseDateT>(value); }
+    template<typename TargetCloseDateT = Aws::String>
+    AwsOpportunityLifeCycle& WithTargetCloseDate(TargetCloseDateT&& value) { SetTargetCloseDate(std::forward<TargetCloseDateT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Indicates the reason why an opportunity was marked as <code>Closed
      * Lost</code>. This helps in understanding the context behind the lost opportunity
      * and aids in refining future strategies.</p>
@@ -53,6 +67,18 @@ namespace Model
     inline bool ClosedLostReasonHasBeenSet() const { return m_closedLostReasonHasBeenSet; }
     inline void SetClosedLostReason(AwsClosedLostReason value) { m_closedLostReasonHasBeenSet = true; m_closedLostReason = value; }
     inline AwsOpportunityLifeCycle& WithClosedLostReason(AwsClosedLostReason value) { SetClosedLostReason(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Represents the current stage of the opportunity in its lifecycle, such as
+     * <code>Qualification</code>, <code>Validation</code>, or <code>Closed Won</code>.
+     * This helps in understanding the opportunity's progress.</p>
+     */
+    inline AwsOpportunityStage GetStage() const { return m_stage; }
+    inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
+    inline void SetStage(AwsOpportunityStage value) { m_stageHasBeenSet = true; m_stage = value; }
+    inline AwsOpportunityLifeCycle& WithStage(AwsOpportunityStage value) { SetStage(value); return *this;}
     ///@}
 
     ///@{
@@ -84,48 +110,22 @@ namespace Model
     template<typename NextStepsHistoryT = ProfileNextStepsHistory>
     AwsOpportunityLifeCycle& AddNextStepsHistory(NextStepsHistoryT&& value) { m_nextStepsHistoryHasBeenSet = true; m_nextStepsHistory.emplace_back(std::forward<NextStepsHistoryT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>Represents the current stage of the opportunity in its lifecycle, such as
-     * <code>Qualification</code>, <code>Validation</code>, or <code>Closed Won</code>.
-     * This helps in understanding the opportunity's progress.</p>
-     */
-    inline AwsOpportunityStage GetStage() const { return m_stage; }
-    inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
-    inline void SetStage(AwsOpportunityStage value) { m_stageHasBeenSet = true; m_stage = value; }
-    inline AwsOpportunityLifeCycle& WithStage(AwsOpportunityStage value) { SetStage(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Indicates the expected date by which the opportunity is projected to close.
-     * This field helps in planning resources and timelines for both the partner and
-     * AWS.</p>
-     */
-    inline const Aws::String& GetTargetCloseDate() const { return m_targetCloseDate; }
-    inline bool TargetCloseDateHasBeenSet() const { return m_targetCloseDateHasBeenSet; }
-    template<typename TargetCloseDateT = Aws::String>
-    void SetTargetCloseDate(TargetCloseDateT&& value) { m_targetCloseDateHasBeenSet = true; m_targetCloseDate = std::forward<TargetCloseDateT>(value); }
-    template<typename TargetCloseDateT = Aws::String>
-    AwsOpportunityLifeCycle& WithTargetCloseDate(TargetCloseDateT&& value) { SetTargetCloseDate(std::forward<TargetCloseDateT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_targetCloseDate;
+    bool m_targetCloseDateHasBeenSet = false;
 
     AwsClosedLostReason m_closedLostReason{AwsClosedLostReason::NOT_SET};
     bool m_closedLostReasonHasBeenSet = false;
+
+    AwsOpportunityStage m_stage{AwsOpportunityStage::NOT_SET};
+    bool m_stageHasBeenSet = false;
 
     Aws::String m_nextSteps;
     bool m_nextStepsHasBeenSet = false;
 
     Aws::Vector<ProfileNextStepsHistory> m_nextStepsHistory;
     bool m_nextStepsHistoryHasBeenSet = false;
-
-    AwsOpportunityStage m_stage{AwsOpportunityStage::NOT_SET};
-    bool m_stageHasBeenSet = false;
-
-    Aws::String m_targetCloseDate;
-    bool m_targetCloseDateHasBeenSet = false;
   };
 
 } // namespace Model

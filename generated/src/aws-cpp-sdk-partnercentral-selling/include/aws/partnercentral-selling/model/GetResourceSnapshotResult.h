@@ -7,8 +7,8 @@
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/partnercentral-selling/model/ResourceSnapshotPayload.h>
 #include <aws/partnercentral-selling/model/ResourceType.h>
+#include <aws/partnercentral-selling/model/ResourceSnapshotPayload.h>
 #include <utility>
 
 namespace Aws
@@ -37,6 +37,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The catalog in which the snapshot was created. Matches the Catalog specified
+     * in the request.</p>
+     */
+    inline const Aws::String& GetCatalog() const { return m_catalog; }
+    template<typename CatalogT = Aws::String>
+    void SetCatalog(CatalogT&& value) { m_catalogHasBeenSet = true; m_catalog = std::forward<CatalogT>(value); }
+    template<typename CatalogT = Aws::String>
+    GetResourceSnapshotResult& WithCatalog(CatalogT&& value) { SetCatalog(std::forward<CatalogT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) that uniquely identifies the resource
      * snapshot.</p>
      */
@@ -49,14 +61,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The catalog in which the snapshot was created. Matches the Catalog specified
-     * in the request.</p>
+     * <p>The AWS account ID of the principal (user or role) who created the snapshot.
+     * This helps in tracking the origin of the snapshot. </p>
      */
-    inline const Aws::String& GetCatalog() const { return m_catalog; }
-    template<typename CatalogT = Aws::String>
-    void SetCatalog(CatalogT&& value) { m_catalogHasBeenSet = true; m_catalog = std::forward<CatalogT>(value); }
-    template<typename CatalogT = Aws::String>
-    GetResourceSnapshotResult& WithCatalog(CatalogT&& value) { SetCatalog(std::forward<CatalogT>(value)); return *this;}
+    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+    template<typename CreatedByT = Aws::String>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = Aws::String>
+    GetResourceSnapshotResult& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,18 +86,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS account ID of the principal (user or role) who created the snapshot.
-     * This helps in tracking the origin of the snapshot. </p>
-     */
-    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
-    template<typename CreatedByT = Aws::String>
-    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
-    template<typename CreatedByT = Aws::String>
-    GetResourceSnapshotResult& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the engagement associated with this snapshot. Matches the
      * EngagementIdentifier specified in the request. </p>
      */
@@ -97,12 +97,13 @@ namespace Model
     ///@}
 
     ///@{
-    
-    inline const ResourceSnapshotPayload& GetPayload() const { return m_payload; }
-    template<typename PayloadT = ResourceSnapshotPayload>
-    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
-    template<typename PayloadT = ResourceSnapshotPayload>
-    GetResourceSnapshotResult& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
+    /**
+     * <p>The type of the resource that was snapshotted. Matches the ResourceType
+     * specified in the request.</p>
+     */
+    inline ResourceType GetResourceType() const { return m_resourceType; }
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline GetResourceSnapshotResult& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -131,22 +132,21 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of the resource that was snapshotted. Matches the ResourceType
-     * specified in the request.</p>
-     */
-    inline ResourceType GetResourceType() const { return m_resourceType; }
-    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline GetResourceSnapshotResult& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The revision number of this snapshot. This is a positive integer that is
      * sequential and unique within the context of a resource view.</p>
      */
     inline int GetRevision() const { return m_revision; }
     inline void SetRevision(int value) { m_revisionHasBeenSet = true; m_revision = value; }
     inline GetResourceSnapshotResult& WithRevision(int value) { SetRevision(value); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const ResourceSnapshotPayload& GetPayload() const { return m_payload; }
+    template<typename PayloadT = ResourceSnapshotPayload>
+    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
+    template<typename PayloadT = ResourceSnapshotPayload>
+    GetResourceSnapshotResult& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -159,23 +159,23 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_arn;
-    bool m_arnHasBeenSet = false;
-
     Aws::String m_catalog;
     bool m_catalogHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_createdBy;
     bool m_createdByHasBeenSet = false;
 
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
+
     Aws::String m_engagementId;
     bool m_engagementIdHasBeenSet = false;
 
-    ResourceSnapshotPayload m_payload;
-    bool m_payloadHasBeenSet = false;
+    ResourceType m_resourceType{ResourceType::NOT_SET};
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
@@ -183,11 +183,11 @@ namespace Model
     Aws::String m_resourceSnapshotTemplateName;
     bool m_resourceSnapshotTemplateNameHasBeenSet = false;
 
-    ResourceType m_resourceType{ResourceType::NOT_SET};
-    bool m_resourceTypeHasBeenSet = false;
-
     int m_revision{0};
     bool m_revisionHasBeenSet = false;
+
+    ResourceSnapshotPayload m_payload;
+    bool m_payloadHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

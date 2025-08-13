@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/braket/Braket_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/braket/model/SearchJobsFilterOperator.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/braket/model/SearchJobsFilterOperator.h>
 #include <utility>
 
 namespace Aws
@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>A filter used to search for Amazon Braket jobs.</p><p><h3>See Also:</h3>   <a
+   * <p>A filter used to search for Amazon Braket hybrid jobs.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/SearchJobsFilter">AWS
    * API Reference</a></p>
    */
@@ -41,7 +42,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name to use for the jobs filter.</p>
+     * <p>The name of the hybrid job parameter to filter based on. Filter name can be
+     * either <code>jobArn</code> or <code>createdAt</code>. </p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -53,17 +55,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An operator to use for the jobs filter.</p>
-     */
-    inline SearchJobsFilterOperator GetOperator() const { return m_operator; }
-    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(SearchJobsFilterOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline SearchJobsFilter& WithOperator(SearchJobsFilterOperator value) { SetOperator(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The values to use for the jobs filter.</p>
+     * <p>The values used to filter hybrid jobs based on the filter name and
+     * operator.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
@@ -74,16 +67,26 @@ namespace Model
     template<typename ValuesT = Aws::String>
     SearchJobsFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>An operator to use for the filter.</p>
+     */
+    inline SearchJobsFilterOperator GetOperator() const { return m_operator; }
+    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+    inline void SetOperator(SearchJobsFilterOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline SearchJobsFilter& WithOperator(SearchJobsFilterOperator value) { SetOperator(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    SearchJobsFilterOperator m_operator{SearchJobsFilterOperator::NOT_SET};
-    bool m_operatorHasBeenSet = false;
-
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet = false;
+
+    SearchJobsFilterOperator m_operator{SearchJobsFilterOperator::NOT_SET};
+    bool m_operatorHasBeenSet = false;
   };
 
 } // namespace Model

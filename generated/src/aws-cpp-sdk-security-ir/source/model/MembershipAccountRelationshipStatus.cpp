@@ -22,6 +22,7 @@ namespace Aws
 
         static const int Associated_HASH = HashingUtils::HashString("Associated");
         static const int Disassociated_HASH = HashingUtils::HashString("Disassociated");
+        static const int Unassociated_HASH = HashingUtils::HashString("Unassociated");
 
 
         MembershipAccountRelationshipStatus GetMembershipAccountRelationshipStatusForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == Disassociated_HASH)
           {
             return MembershipAccountRelationshipStatus::Disassociated;
+          }
+          else if (hashCode == Unassociated_HASH)
+          {
+            return MembershipAccountRelationshipStatus::Unassociated;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "Associated";
           case MembershipAccountRelationshipStatus::Disassociated:
             return "Disassociated";
+          case MembershipAccountRelationshipStatus::Unassociated:
+            return "Unassociated";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

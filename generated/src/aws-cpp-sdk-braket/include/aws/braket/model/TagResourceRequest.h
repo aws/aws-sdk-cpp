@@ -48,7 +48,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specify the tags to add to the resource.</p>
+     * <p>Specify the tags to add to the resource. Tags can be specified as a key-value
+     * map.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

@@ -7,15 +7,15 @@
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/partnercentral-selling/model/NationalSecurity.h>
 #include <aws/partnercentral-selling/model/Customer.h>
+#include <aws/partnercentral-selling/model/Project.h>
+#include <aws/partnercentral-selling/model/OpportunityType.h>
+#include <aws/partnercentral-selling/model/Marketing.h>
+#include <aws/partnercentral-selling/model/SoftwareRevenue.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/partnercentral-selling/model/LifeCycle.h>
-#include <aws/partnercentral-selling/model/Marketing.h>
-#include <aws/partnercentral-selling/model/NationalSecurity.h>
-#include <aws/partnercentral-selling/model/OpportunityType.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/partnercentral-selling/model/Project.h>
-#include <aws/partnercentral-selling/model/SoftwareRevenue.h>
 #include <aws/partnercentral-selling/model/PrimaryNeedFromAws.h>
 #include <utility>
 
@@ -65,114 +65,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies details of the customer associated with the
-     * <code>Opportunity</code>.</p>
-     */
-    inline const Customer& GetCustomer() const { return m_customer; }
-    inline bool CustomerHasBeenSet() const { return m_customerHasBeenSet; }
-    template<typename CustomerT = Customer>
-    void SetCustomer(CustomerT&& value) { m_customerHasBeenSet = true; m_customer = std::forward<CustomerT>(value); }
-    template<typename CustomerT = Customer>
-    UpdateOpportunityRequest& WithCustomer(CustomerT&& value) { SetCustomer(std::forward<CustomerT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Read-only, system generated <code>Opportunity</code> unique identifier.</p>
-     */
-    inline const Aws::String& GetIdentifier() const { return m_identifier; }
-    inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    template<typename IdentifierT = Aws::String>
-    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
-    template<typename IdentifierT = Aws::String>
-    UpdateOpportunityRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p> <code>DateTime</code> when the opportunity was last modified.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastModifiedDate() const { return m_lastModifiedDate; }
-    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    template<typename LastModifiedDateT = Aws::Utils::DateTime>
-    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
-    template<typename LastModifiedDateT = Aws::Utils::DateTime>
-    UpdateOpportunityRequest& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>An object that contains lifecycle details for the
-     * <code>Opportunity</code>.</p>
-     */
-    inline const LifeCycle& GetLifeCycle() const { return m_lifeCycle; }
-    inline bool LifeCycleHasBeenSet() const { return m_lifeCycleHasBeenSet; }
-    template<typename LifeCycleT = LifeCycle>
-    void SetLifeCycle(LifeCycleT&& value) { m_lifeCycleHasBeenSet = true; m_lifeCycle = std::forward<LifeCycleT>(value); }
-    template<typename LifeCycleT = LifeCycle>
-    UpdateOpportunityRequest& WithLifeCycle(LifeCycleT&& value) { SetLifeCycle(std::forward<LifeCycleT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>An object that contains marketing details for the
-     * <code>Opportunity</code>.</p>
-     */
-    inline const Marketing& GetMarketing() const { return m_marketing; }
-    inline bool MarketingHasBeenSet() const { return m_marketingHasBeenSet; }
-    template<typename MarketingT = Marketing>
-    void SetMarketing(MarketingT&& value) { m_marketingHasBeenSet = true; m_marketing = std::forward<MarketingT>(value); }
-    template<typename MarketingT = Marketing>
-    UpdateOpportunityRequest& WithMarketing(MarketingT&& value) { SetMarketing(std::forward<MarketingT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies if the opportunity is associated with national security concerns.
-     * This flag is only applicable when the industry is <code>Government</code>. For
-     * national-security-related opportunities, validation and compliance rules may
-     * apply, impacting the opportunity's visibility and processing.</p>
-     */
-    inline NationalSecurity GetNationalSecurity() const { return m_nationalSecurity; }
-    inline bool NationalSecurityHasBeenSet() const { return m_nationalSecurityHasBeenSet; }
-    inline void SetNationalSecurity(NationalSecurity value) { m_nationalSecurityHasBeenSet = true; m_nationalSecurity = value; }
-    inline UpdateOpportunityRequest& WithNationalSecurity(NationalSecurity value) { SetNationalSecurity(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies the opportunity type as a renewal, new, or expansion.</p>
-     * <p>Opportunity types:</p> <ul> <li> <p>New opportunity: Represents a new
-     * business opportunity with a potential customer that's not previously engaged
-     * with your solutions or services.</p> </li> <li> <p>Renewal opportunity:
-     * Represents an opportunity to renew an existing contract or subscription with a
-     * current customer, ensuring continuity of service.</p> </li> <li> <p>Expansion
-     * opportunity: Represents an opportunity to expand the scope of an existing
-     * contract or subscription, either by adding new services or increasing the volume
-     * of existing services for a current customer.</p> </li> </ul>
-     */
-    inline OpportunityType GetOpportunityType() const { return m_opportunityType; }
-    inline bool OpportunityTypeHasBeenSet() const { return m_opportunityTypeHasBeenSet; }
-    inline void SetOpportunityType(OpportunityType value) { m_opportunityTypeHasBeenSet = true; m_opportunityType = value; }
-    inline UpdateOpportunityRequest& WithOpportunityType(OpportunityType value) { SetOpportunityType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies the opportunity's unique identifier in the partner's CRM system.
-     * This value is essential to track and reconcile because it's included in the
-     * outbound payload sent back to the partner.</p>
-     */
-    inline const Aws::String& GetPartnerOpportunityIdentifier() const { return m_partnerOpportunityIdentifier; }
-    inline bool PartnerOpportunityIdentifierHasBeenSet() const { return m_partnerOpportunityIdentifierHasBeenSet; }
-    template<typename PartnerOpportunityIdentifierT = Aws::String>
-    void SetPartnerOpportunityIdentifier(PartnerOpportunityIdentifierT&& value) { m_partnerOpportunityIdentifierHasBeenSet = true; m_partnerOpportunityIdentifier = std::forward<PartnerOpportunityIdentifierT>(value); }
-    template<typename PartnerOpportunityIdentifierT = Aws::String>
-    UpdateOpportunityRequest& WithPartnerOpportunityIdentifier(PartnerOpportunityIdentifierT&& value) { SetPartnerOpportunityIdentifier(std::forward<PartnerOpportunityIdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Identifies the type of support the partner needs from Amazon Web
      * Services.</p> <p>Valid values:</p> <ul> <li> <p>Cosell—Architectural Validation:
      * Confirmation from Amazon Web Services that the partner's proposed solution
@@ -206,6 +98,46 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies if the opportunity is associated with national security concerns.
+     * This flag is only applicable when the industry is <code>Government</code>. For
+     * national-security-related opportunities, validation and compliance rules may
+     * apply, impacting the opportunity's visibility and processing.</p>
+     */
+    inline NationalSecurity GetNationalSecurity() const { return m_nationalSecurity; }
+    inline bool NationalSecurityHasBeenSet() const { return m_nationalSecurityHasBeenSet; }
+    inline void SetNationalSecurity(NationalSecurity value) { m_nationalSecurityHasBeenSet = true; m_nationalSecurity = value; }
+    inline UpdateOpportunityRequest& WithNationalSecurity(NationalSecurity value) { SetNationalSecurity(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the opportunity's unique identifier in the partner's CRM system.
+     * This value is essential to track and reconcile because it's included in the
+     * outbound payload sent back to the partner.</p>
+     */
+    inline const Aws::String& GetPartnerOpportunityIdentifier() const { return m_partnerOpportunityIdentifier; }
+    inline bool PartnerOpportunityIdentifierHasBeenSet() const { return m_partnerOpportunityIdentifierHasBeenSet; }
+    template<typename PartnerOpportunityIdentifierT = Aws::String>
+    void SetPartnerOpportunityIdentifier(PartnerOpportunityIdentifierT&& value) { m_partnerOpportunityIdentifierHasBeenSet = true; m_partnerOpportunityIdentifier = std::forward<PartnerOpportunityIdentifierT>(value); }
+    template<typename PartnerOpportunityIdentifierT = Aws::String>
+    UpdateOpportunityRequest& WithPartnerOpportunityIdentifier(PartnerOpportunityIdentifierT&& value) { SetPartnerOpportunityIdentifier(std::forward<PartnerOpportunityIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies details of the customer associated with the
+     * <code>Opportunity</code>.</p>
+     */
+    inline const Customer& GetCustomer() const { return m_customer; }
+    inline bool CustomerHasBeenSet() const { return m_customerHasBeenSet; }
+    template<typename CustomerT = Customer>
+    void SetCustomer(CustomerT&& value) { m_customerHasBeenSet = true; m_customer = std::forward<CustomerT>(value); }
+    template<typename CustomerT = Customer>
+    UpdateOpportunityRequest& WithCustomer(CustomerT&& value) { SetCustomer(std::forward<CustomerT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An object that contains project details summary for the
      * <code>Opportunity</code>.</p>
      */
@@ -215,6 +147,37 @@ namespace Model
     void SetProject(ProjectT&& value) { m_projectHasBeenSet = true; m_project = std::forward<ProjectT>(value); }
     template<typename ProjectT = Project>
     UpdateOpportunityRequest& WithProject(ProjectT&& value) { SetProject(std::forward<ProjectT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the opportunity type as a renewal, new, or expansion.</p>
+     * <p>Opportunity types:</p> <ul> <li> <p>New opportunity: Represents a new
+     * business opportunity with a potential customer that's not previously engaged
+     * with your solutions or services.</p> </li> <li> <p>Renewal opportunity:
+     * Represents an opportunity to renew an existing contract or subscription with a
+     * current customer, ensuring continuity of service.</p> </li> <li> <p>Expansion
+     * opportunity: Represents an opportunity to expand the scope of an existing
+     * contract or subscription, either by adding new services or increasing the volume
+     * of existing services for a current customer.</p> </li> </ul>
+     */
+    inline OpportunityType GetOpportunityType() const { return m_opportunityType; }
+    inline bool OpportunityTypeHasBeenSet() const { return m_opportunityTypeHasBeenSet; }
+    inline void SetOpportunityType(OpportunityType value) { m_opportunityTypeHasBeenSet = true; m_opportunityType = value; }
+    inline UpdateOpportunityRequest& WithOpportunityType(OpportunityType value) { SetOpportunityType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An object that contains marketing details for the
+     * <code>Opportunity</code>.</p>
+     */
+    inline const Marketing& GetMarketing() const { return m_marketing; }
+    inline bool MarketingHasBeenSet() const { return m_marketingHasBeenSet; }
+    template<typename MarketingT = Marketing>
+    void SetMarketing(MarketingT&& value) { m_marketingHasBeenSet = true; m_marketing = std::forward<MarketingT>(value); }
+    template<typename MarketingT = Marketing>
+    UpdateOpportunityRequest& WithMarketing(MarketingT&& value) { SetMarketing(std::forward<MarketingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -229,43 +192,80 @@ namespace Model
     template<typename SoftwareRevenueT = SoftwareRevenue>
     UpdateOpportunityRequest& WithSoftwareRevenue(SoftwareRevenueT&& value) { SetSoftwareRevenue(std::forward<SoftwareRevenueT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> <code>DateTime</code> when the opportunity was last modified.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const { return m_lastModifiedDate; }
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    UpdateOpportunityRequest& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Read-only, system generated <code>Opportunity</code> unique identifier.</p>
+     */
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
+    inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    UpdateOpportunityRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An object that contains lifecycle details for the
+     * <code>Opportunity</code>.</p>
+     */
+    inline const LifeCycle& GetLifeCycle() const { return m_lifeCycle; }
+    inline bool LifeCycleHasBeenSet() const { return m_lifeCycleHasBeenSet; }
+    template<typename LifeCycleT = LifeCycle>
+    void SetLifeCycle(LifeCycleT&& value) { m_lifeCycleHasBeenSet = true; m_lifeCycle = std::forward<LifeCycleT>(value); }
+    template<typename LifeCycleT = LifeCycle>
+    UpdateOpportunityRequest& WithLifeCycle(LifeCycleT&& value) { SetLifeCycle(std::forward<LifeCycleT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_catalog;
     bool m_catalogHasBeenSet = false;
 
-    Customer m_customer;
-    bool m_customerHasBeenSet = false;
-
-    Aws::String m_identifier;
-    bool m_identifierHasBeenSet = false;
-
-    Aws::Utils::DateTime m_lastModifiedDate{};
-    bool m_lastModifiedDateHasBeenSet = false;
-
-    LifeCycle m_lifeCycle;
-    bool m_lifeCycleHasBeenSet = false;
-
-    Marketing m_marketing;
-    bool m_marketingHasBeenSet = false;
+    Aws::Vector<PrimaryNeedFromAws> m_primaryNeedsFromAws;
+    bool m_primaryNeedsFromAwsHasBeenSet = false;
 
     NationalSecurity m_nationalSecurity{NationalSecurity::NOT_SET};
     bool m_nationalSecurityHasBeenSet = false;
 
-    OpportunityType m_opportunityType{OpportunityType::NOT_SET};
-    bool m_opportunityTypeHasBeenSet = false;
-
     Aws::String m_partnerOpportunityIdentifier;
     bool m_partnerOpportunityIdentifierHasBeenSet = false;
 
-    Aws::Vector<PrimaryNeedFromAws> m_primaryNeedsFromAws;
-    bool m_primaryNeedsFromAwsHasBeenSet = false;
+    Customer m_customer;
+    bool m_customerHasBeenSet = false;
 
     Project m_project;
     bool m_projectHasBeenSet = false;
 
+    OpportunityType m_opportunityType{OpportunityType::NOT_SET};
+    bool m_opportunityTypeHasBeenSet = false;
+
+    Marketing m_marketing;
+    bool m_marketingHasBeenSet = false;
+
     SoftwareRevenue m_softwareRevenue;
     bool m_softwareRevenueHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastModifiedDate{};
+    bool m_lastModifiedDateHasBeenSet = false;
+
+    Aws::String m_identifier;
+    bool m_identifierHasBeenSet = false;
+
+    LifeCycle m_lifeCycle;
+    bool m_lifeCycleHasBeenSet = false;
   };
 
 } // namespace Model

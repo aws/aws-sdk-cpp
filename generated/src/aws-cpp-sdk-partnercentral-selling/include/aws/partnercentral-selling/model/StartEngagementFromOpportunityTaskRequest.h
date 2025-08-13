@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingRequest.h>
-#include <aws/partnercentral-selling/model/AwsSubmission.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/partnercentral-selling/model/AwsSubmission.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/partnercentral-selling/model/Tag.h>
 #include <utility>
@@ -37,16 +37,6 @@ namespace Model
 
     AWS_PARTNERCENTRALSELLING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    ///@{
-    
-    inline const AwsSubmission& GetAwsSubmission() const { return m_awsSubmission; }
-    inline bool AwsSubmissionHasBeenSet() const { return m_awsSubmissionHasBeenSet; }
-    template<typename AwsSubmissionT = AwsSubmission>
-    void SetAwsSubmission(AwsSubmissionT&& value) { m_awsSubmissionHasBeenSet = true; m_awsSubmission = std::forward<AwsSubmissionT>(value); }
-    template<typename AwsSubmissionT = AwsSubmission>
-    StartEngagementFromOpportunityTaskRequest& WithAwsSubmission(AwsSubmissionT&& value) { SetAwsSubmission(std::forward<AwsSubmissionT>(value)); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -90,6 +80,16 @@ namespace Model
     ///@}
 
     ///@{
+    
+    inline const AwsSubmission& GetAwsSubmission() const { return m_awsSubmission; }
+    inline bool AwsSubmissionHasBeenSet() const { return m_awsSubmissionHasBeenSet; }
+    template<typename AwsSubmissionT = AwsSubmission>
+    void SetAwsSubmission(AwsSubmissionT&& value) { m_awsSubmissionHasBeenSet = true; m_awsSubmission = std::forward<AwsSubmissionT>(value); }
+    template<typename AwsSubmissionT = AwsSubmission>
+    StartEngagementFromOpportunityTaskRequest& WithAwsSubmission(AwsSubmissionT&& value) { SetAwsSubmission(std::forward<AwsSubmissionT>(value)); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>A map of the key-value pairs of the tag or tags to assign.</p>
      */
@@ -104,9 +104,6 @@ namespace Model
     ///@}
   private:
 
-    AwsSubmission m_awsSubmission;
-    bool m_awsSubmissionHasBeenSet = false;
-
     Aws::String m_catalog;
     bool m_catalogHasBeenSet = false;
 
@@ -115,6 +112,9 @@ namespace Model
 
     Aws::String m_identifier;
     bool m_identifierHasBeenSet = false;
+
+    AwsSubmission m_awsSubmission;
+    bool m_awsSubmissionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

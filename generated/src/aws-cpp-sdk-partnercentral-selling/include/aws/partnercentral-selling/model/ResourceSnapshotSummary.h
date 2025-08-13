@@ -56,15 +56,24 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS account ID of the entity that owns the resource from which the
-     * snapshot was created.</p>
+     * <p>The revision number of the snapshot. This integer value is incremented each
+     * time the snapshot is updated, allowing for version tracking of the resource
+     * snapshot. </p>
      */
-    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
-    inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-    template<typename CreatedByT = Aws::String>
-    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
-    template<typename CreatedByT = Aws::String>
-    ResourceSnapshotSummary& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
+    inline int GetRevision() const { return m_revision; }
+    inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
+    inline void SetRevision(int value) { m_revisionHasBeenSet = true; m_revision = value; }
+    inline ResourceSnapshotSummary& WithRevision(int value) { SetRevision(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of resource snapshotted.</p>
+     */
+    inline ResourceType GetResourceType() const { return m_resourceType; }
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline ResourceSnapshotSummary& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -94,32 +103,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of resource snapshotted.</p>
+     * <p>The AWS account ID of the entity that owns the resource from which the
+     * snapshot was created.</p>
      */
-    inline ResourceType GetResourceType() const { return m_resourceType; }
-    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline ResourceSnapshotSummary& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The revision number of the snapshot. This integer value is incremented each
-     * time the snapshot is updated, allowing for version tracking of the resource
-     * snapshot. </p>
-     */
-    inline int GetRevision() const { return m_revision; }
-    inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
-    inline void SetRevision(int value) { m_revisionHasBeenSet = true; m_revision = value; }
-    inline ResourceSnapshotSummary& WithRevision(int value) { SetRevision(value); return *this;}
+    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+    inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
+    template<typename CreatedByT = Aws::String>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = Aws::String>
+    ResourceSnapshotSummary& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::String m_createdBy;
-    bool m_createdByHasBeenSet = false;
+    int m_revision{0};
+    bool m_revisionHasBeenSet = false;
+
+    ResourceType m_resourceType{ResourceType::NOT_SET};
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
@@ -127,11 +130,8 @@ namespace Model
     Aws::String m_resourceSnapshotTemplateName;
     bool m_resourceSnapshotTemplateNameHasBeenSet = false;
 
-    ResourceType m_resourceType{ResourceType::NOT_SET};
-    bool m_resourceTypeHasBeenSet = false;
-
-    int m_revision{0};
-    bool m_revisionHasBeenSet = false;
+    Aws::String m_createdBy;
+    bool m_createdByHasBeenSet = false;
   };
 
 } // namespace Model

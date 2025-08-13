@@ -30,15 +30,15 @@ GetEngagementInvitationResult& GetEngagementInvitationResult::operator =(const A
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Catalog"))
+  if(jsonValue.ValueExists("PayloadType"))
   {
-    m_catalog = jsonValue.GetString("Catalog");
-    m_catalogHasBeenSet = true;
+    m_payloadType = EngagementInvitationPayloadTypeMapper::GetEngagementInvitationPayloadTypeForName(jsonValue.GetString("PayloadType"));
+    m_payloadTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EngagementDescription"))
+  if(jsonValue.ValueExists("Id"))
   {
-    m_engagementDescription = jsonValue.GetString("EngagementDescription");
-    m_engagementDescriptionHasBeenSet = true;
+    m_id = jsonValue.GetString("Id");
+    m_idHasBeenSet = true;
   }
   if(jsonValue.ValueExists("EngagementId"))
   {
@@ -50,54 +50,20 @@ GetEngagementInvitationResult& GetEngagementInvitationResult::operator =(const A
     m_engagementTitle = jsonValue.GetString("EngagementTitle");
     m_engagementTitleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExistingMembers"))
+  if(jsonValue.ValueExists("Status"))
   {
-    Aws::Utils::Array<JsonView> existingMembersJsonList = jsonValue.GetArray("ExistingMembers");
-    for(unsigned existingMembersIndex = 0; existingMembersIndex < existingMembersJsonList.GetLength(); ++existingMembersIndex)
-    {
-      m_existingMembers.push_back(existingMembersJsonList[existingMembersIndex].AsObject());
-    }
-    m_existingMembersHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("ExpirationDate"))
-  {
-    m_expirationDate = jsonValue.GetString("ExpirationDate");
-    m_expirationDateHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Id"))
-  {
-    m_id = jsonValue.GetString("Id");
-    m_idHasBeenSet = true;
+    m_status = InvitationStatusMapper::GetInvitationStatusForName(jsonValue.GetString("Status"));
+    m_statusHasBeenSet = true;
   }
   if(jsonValue.ValueExists("InvitationDate"))
   {
     m_invitationDate = jsonValue.GetString("InvitationDate");
     m_invitationDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InvitationMessage"))
+  if(jsonValue.ValueExists("ExpirationDate"))
   {
-    m_invitationMessage = jsonValue.GetString("InvitationMessage");
-    m_invitationMessageHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Payload"))
-  {
-    m_payload = jsonValue.GetObject("Payload");
-    m_payloadHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("PayloadType"))
-  {
-    m_payloadType = EngagementInvitationPayloadTypeMapper::GetEngagementInvitationPayloadTypeForName(jsonValue.GetString("PayloadType"));
-    m_payloadTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Receiver"))
-  {
-    m_receiver = jsonValue.GetObject("Receiver");
-    m_receiverHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("RejectionReason"))
-  {
-    m_rejectionReason = jsonValue.GetString("RejectionReason");
-    m_rejectionReasonHasBeenSet = true;
+    m_expirationDate = jsonValue.GetString("ExpirationDate");
+    m_expirationDateHasBeenSet = true;
   }
   if(jsonValue.ValueExists("SenderAwsAccountId"))
   {
@@ -109,10 +75,44 @@ GetEngagementInvitationResult& GetEngagementInvitationResult::operator =(const A
     m_senderCompanyName = jsonValue.GetString("SenderCompanyName");
     m_senderCompanyNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
+  if(jsonValue.ValueExists("Receiver"))
   {
-    m_status = InvitationStatusMapper::GetInvitationStatusForName(jsonValue.GetString("Status"));
-    m_statusHasBeenSet = true;
+    m_receiver = jsonValue.GetObject("Receiver");
+    m_receiverHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Catalog"))
+  {
+    m_catalog = jsonValue.GetString("Catalog");
+    m_catalogHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("RejectionReason"))
+  {
+    m_rejectionReason = jsonValue.GetString("RejectionReason");
+    m_rejectionReasonHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Payload"))
+  {
+    m_payload = jsonValue.GetObject("Payload");
+    m_payloadHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("InvitationMessage"))
+  {
+    m_invitationMessage = jsonValue.GetString("InvitationMessage");
+    m_invitationMessageHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("EngagementDescription"))
+  {
+    m_engagementDescription = jsonValue.GetString("EngagementDescription");
+    m_engagementDescriptionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ExistingMembers"))
+  {
+    Aws::Utils::Array<JsonView> existingMembersJsonList = jsonValue.GetArray("ExistingMembers");
+    for(unsigned existingMembersIndex = 0; existingMembersIndex < existingMembersJsonList.GetLength(); ++existingMembersIndex)
+    {
+      m_existingMembers.push_back(existingMembersJsonList[existingMembersIndex].AsObject());
+    }
+    m_existingMembersHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

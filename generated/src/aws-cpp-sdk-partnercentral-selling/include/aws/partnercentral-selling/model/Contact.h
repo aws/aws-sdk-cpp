@@ -40,20 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The partner contact's title (job title or role) associated with the
-     * <code>Opportunity</code>. <code>BusinessTitle</code> supports either
-     * <code>PartnerAccountManager</code> or <code>OpportunityOwner</code>.</p>
-     */
-    inline const Aws::String& GetBusinessTitle() const { return m_businessTitle; }
-    inline bool BusinessTitleHasBeenSet() const { return m_businessTitleHasBeenSet; }
-    template<typename BusinessTitleT = Aws::String>
-    void SetBusinessTitle(BusinessTitleT&& value) { m_businessTitleHasBeenSet = true; m_businessTitle = std::forward<BusinessTitleT>(value); }
-    template<typename BusinessTitleT = Aws::String>
-    Contact& WithBusinessTitle(BusinessTitleT&& value) { SetBusinessTitle(std::forward<BusinessTitleT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The contact's email address associated with the <code>Opportunity</code>.</p>
      */
     inline const Aws::String& GetEmail() const { return m_email; }
@@ -90,6 +76,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The partner contact's title (job title or role) associated with the
+     * <code>Opportunity</code>. <code>BusinessTitle</code> supports either
+     * <code>PartnerAccountManager</code> or <code>OpportunityOwner</code>.</p>
+     */
+    inline const Aws::String& GetBusinessTitle() const { return m_businessTitle; }
+    inline bool BusinessTitleHasBeenSet() const { return m_businessTitleHasBeenSet; }
+    template<typename BusinessTitleT = Aws::String>
+    void SetBusinessTitle(BusinessTitleT&& value) { m_businessTitleHasBeenSet = true; m_businessTitle = std::forward<BusinessTitleT>(value); }
+    template<typename BusinessTitleT = Aws::String>
+    Contact& WithBusinessTitle(BusinessTitleT&& value) { SetBusinessTitle(std::forward<BusinessTitleT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The contact's phone number associated with the <code>Opportunity</code>.</p>
      */
     inline const Aws::String& GetPhone() const { return m_phone; }
@@ -101,9 +101,6 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_businessTitle;
-    bool m_businessTitleHasBeenSet = false;
-
     Aws::String m_email;
     bool m_emailHasBeenSet = false;
 
@@ -112,6 +109,9 @@ namespace Model
 
     Aws::String m_lastName;
     bool m_lastNameHasBeenSet = false;
+
+    Aws::String m_businessTitle;
+    bool m_businessTitleHasBeenSet = false;
 
     Aws::String m_phone;
     bool m_phoneHasBeenSet = false;

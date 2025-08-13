@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/model/AwsAccount.h>
 #include <aws/datazone/model/Region.h>
 #include <aws/datazone/model/EnvironmentConfigurationParametersDetails.h>
@@ -40,6 +41,20 @@ namespace Model
     AWS_DATAZONE_API EnvironmentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>The account pools used by a custom project profile.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAccountPools() const { return m_accountPools; }
+    inline bool AccountPoolsHasBeenSet() const { return m_accountPoolsHasBeenSet; }
+    template<typename AccountPoolsT = Aws::Vector<Aws::String>>
+    void SetAccountPools(AccountPoolsT&& value) { m_accountPoolsHasBeenSet = true; m_accountPools = std::forward<AccountPoolsT>(value); }
+    template<typename AccountPoolsT = Aws::Vector<Aws::String>>
+    EnvironmentConfiguration& WithAccountPools(AccountPoolsT&& value) { SetAccountPools(std::forward<AccountPoolsT>(value)); return *this;}
+    template<typename AccountPoolsT = Aws::String>
+    EnvironmentConfiguration& AddAccountPools(AccountPoolsT&& value) { m_accountPoolsHasBeenSet = true; m_accountPools.emplace_back(std::forward<AccountPoolsT>(value)); return *this; }
+    ///@}
 
     ///@{
     /**
@@ -145,6 +160,9 @@ namespace Model
     EnvironmentConfiguration& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
+
+    Aws::Vector<Aws::String> m_accountPools;
+    bool m_accountPoolsHasBeenSet = false;
 
     AwsAccount m_awsAccount;
     bool m_awsAccountHasBeenSet = false;

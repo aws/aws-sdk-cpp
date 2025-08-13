@@ -52,34 +52,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Filters the response to include only snapshots of resources owned by the
-     * specified AWS account ID. Use this when you want to find associations related to
-     * resources owned by a particular account. </p>
-     */
-    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
-    inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-    template<typename CreatedByT = Aws::String>
-    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
-    template<typename CreatedByT = Aws::String>
-    ListEngagementResourceAssociationsRequest& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Filters the results to include only associations related to the specified
-     * engagement. Use this when you want to find all resources associated with a
-     * specific engagement.</p>
-     */
-    inline const Aws::String& GetEngagementIdentifier() const { return m_engagementIdentifier; }
-    inline bool EngagementIdentifierHasBeenSet() const { return m_engagementIdentifierHasBeenSet; }
-    template<typename EngagementIdentifierT = Aws::String>
-    void SetEngagementIdentifier(EngagementIdentifierT&& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier = std::forward<EngagementIdentifierT>(value); }
-    template<typename EngagementIdentifierT = Aws::String>
-    ListEngagementResourceAssociationsRequest& WithEngagementIdentifier(EngagementIdentifierT&& value) { SetEngagementIdentifier(std::forward<EngagementIdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Limits the number of results returned in a single call. Use this to control
      * the number of results returned, especially useful for pagination.</p>
      */
@@ -104,6 +76,31 @@ namespace Model
 
     ///@{
     /**
+     * <p>Filters the results to include only associations related to the specified
+     * engagement. Use this when you want to find all resources associated with a
+     * specific engagement.</p>
+     */
+    inline const Aws::String& GetEngagementIdentifier() const { return m_engagementIdentifier; }
+    inline bool EngagementIdentifierHasBeenSet() const { return m_engagementIdentifierHasBeenSet; }
+    template<typename EngagementIdentifierT = Aws::String>
+    void SetEngagementIdentifier(EngagementIdentifierT&& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier = std::forward<EngagementIdentifierT>(value); }
+    template<typename EngagementIdentifierT = Aws::String>
+    ListEngagementResourceAssociationsRequest& WithEngagementIdentifier(EngagementIdentifierT&& value) { SetEngagementIdentifier(std::forward<EngagementIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> Filters the results to include only associations with resources of the
+     * specified type. </p>
+     */
+    inline ResourceType GetResourceType() const { return m_resourceType; }
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline ListEngagementResourceAssociationsRequest& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Filters the results to include only associations with the specified resource.
      * Varies depending on the resource type. Use this when you want to find all
      * engagements associated with a specific resource.</p>
@@ -118,24 +115,21 @@ namespace Model
 
     ///@{
     /**
-     * <p> Filters the results to include only associations with resources of the
-     * specified type. </p>
+     * <p>Filters the response to include only snapshots of resources owned by the
+     * specified AWS account ID. Use this when you want to find associations related to
+     * resources owned by a particular account. </p>
      */
-    inline ResourceType GetResourceType() const { return m_resourceType; }
-    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline ListEngagementResourceAssociationsRequest& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
+    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+    inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
+    template<typename CreatedByT = Aws::String>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = Aws::String>
+    ListEngagementResourceAssociationsRequest& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_catalog;
     bool m_catalogHasBeenSet = false;
-
-    Aws::String m_createdBy;
-    bool m_createdByHasBeenSet = false;
-
-    Aws::String m_engagementIdentifier;
-    bool m_engagementIdentifierHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
@@ -143,11 +137,17 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_resourceIdentifier;
-    bool m_resourceIdentifierHasBeenSet = false;
+    Aws::String m_engagementIdentifier;
+    bool m_engagementIdentifierHasBeenSet = false;
 
     ResourceType m_resourceType{ResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
+
+    Aws::String m_resourceIdentifier;
+    bool m_resourceIdentifierHasBeenSet = false;
+
+    Aws::String m_createdBy;
+    bool m_createdByHasBeenSet = false;
   };
 
 } // namespace Model

@@ -16,12 +16,6 @@ Aws::String AssignOpportunityRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_assigneeHasBeenSet)
-  {
-   payload.WithObject("Assignee", m_assignee.Jsonize());
-
-  }
-
   if(m_catalogHasBeenSet)
   {
    payload.WithString("Catalog", m_catalog);
@@ -31,6 +25,12 @@ Aws::String AssignOpportunityRequest::SerializePayload() const
   if(m_identifierHasBeenSet)
   {
    payload.WithString("Identifier", m_identifier);
+
+  }
+
+  if(m_assigneeHasBeenSet)
+  {
+   payload.WithObject("Assignee", m_assignee.Jsonize());
 
   }
 

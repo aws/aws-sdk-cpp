@@ -16,12 +16,6 @@ Aws::String StartEngagementFromOpportunityTaskRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_awsSubmissionHasBeenSet)
-  {
-   payload.WithObject("AwsSubmission", m_awsSubmission.Jsonize());
-
-  }
-
   if(m_catalogHasBeenSet)
   {
    payload.WithString("Catalog", m_catalog);
@@ -37,6 +31,12 @@ Aws::String StartEngagementFromOpportunityTaskRequest::SerializePayload() const
   if(m_identifierHasBeenSet)
   {
    payload.WithString("Identifier", m_identifier);
+
+  }
+
+  if(m_awsSubmissionHasBeenSet)
+  {
+   payload.WithObject("AwsSubmission", m_awsSubmission.Jsonize());
 
   }
 

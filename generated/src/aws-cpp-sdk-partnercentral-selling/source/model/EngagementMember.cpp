@@ -25,11 +25,6 @@ EngagementMember::EngagementMember(JsonView jsonValue)
 
 EngagementMember& EngagementMember::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("AccountId"))
-  {
-    m_accountId = jsonValue.GetString("AccountId");
-    m_accountIdHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("CompanyName"))
   {
     m_companyName = jsonValue.GetString("CompanyName");
@@ -40,18 +35,17 @@ EngagementMember& EngagementMember::operator =(JsonView jsonValue)
     m_websiteUrl = jsonValue.GetString("WebsiteUrl");
     m_websiteUrlHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AccountId"))
+  {
+    m_accountId = jsonValue.GetString("AccountId");
+    m_accountIdHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue EngagementMember::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("AccountId", m_accountId);
-
-  }
 
   if(m_companyNameHasBeenSet)
   {
@@ -62,6 +56,12 @@ JsonValue EngagementMember::Jsonize() const
   if(m_websiteUrlHasBeenSet)
   {
    payload.WithString("WebsiteUrl", m_websiteUrl);
+
+  }
+
+  if(m_accountIdHasBeenSet)
+  {
+   payload.WithString("AccountId", m_accountId);
 
   }
 

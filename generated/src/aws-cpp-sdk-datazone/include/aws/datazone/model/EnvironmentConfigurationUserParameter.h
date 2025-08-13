@@ -7,6 +7,7 @@
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datazone/model/EnvironmentResolvedAccount.h>
 #include <aws/datazone/model/EnvironmentParameter.h>
 #include <utility>
 
@@ -76,6 +77,19 @@ namespace Model
     template<typename EnvironmentParametersT = EnvironmentParameter>
     EnvironmentConfigurationUserParameter& AddEnvironmentParameters(EnvironmentParametersT&& value) { m_environmentParametersHasBeenSet = true; m_environmentParameters.emplace_back(std::forward<EnvironmentParametersT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the account/Region that is to be used during project creation for a
+     * particular blueprint.</p>
+     */
+    inline const EnvironmentResolvedAccount& GetEnvironmentResolvedAccount() const { return m_environmentResolvedAccount; }
+    inline bool EnvironmentResolvedAccountHasBeenSet() const { return m_environmentResolvedAccountHasBeenSet; }
+    template<typename EnvironmentResolvedAccountT = EnvironmentResolvedAccount>
+    void SetEnvironmentResolvedAccount(EnvironmentResolvedAccountT&& value) { m_environmentResolvedAccountHasBeenSet = true; m_environmentResolvedAccount = std::forward<EnvironmentResolvedAccountT>(value); }
+    template<typename EnvironmentResolvedAccountT = EnvironmentResolvedAccount>
+    EnvironmentConfigurationUserParameter& WithEnvironmentResolvedAccount(EnvironmentResolvedAccountT&& value) { SetEnvironmentResolvedAccount(std::forward<EnvironmentResolvedAccountT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_environmentConfigurationName;
@@ -86,6 +100,9 @@ namespace Model
 
     Aws::Vector<EnvironmentParameter> m_environmentParameters;
     bool m_environmentParametersHasBeenSet = false;
+
+    EnvironmentResolvedAccount m_environmentResolvedAccount;
+    bool m_environmentResolvedAccountHasBeenSet = false;
   };
 
 } // namespace Model

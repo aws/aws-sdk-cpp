@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/partnercentral-selling/model/SolutionStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -42,6 +42,32 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the catalog in which the solution is hosted, either
+     * <code>AWS</code> or <code>Sandbox</code>. This helps partners differentiate
+     * between live solutions and those in testing environments.</p>
+     */
+    inline const Aws::String& GetCatalog() const { return m_catalog; }
+    inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
+    template<typename CatalogT = Aws::String>
+    void SetCatalog(CatalogT&& value) { m_catalogHasBeenSet = true; m_catalog = std::forward<CatalogT>(value); }
+    template<typename CatalogT = Aws::String>
+    SolutionBase& WithCatalog(CatalogT&& value) { SetCatalog(std::forward<CatalogT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Enables the association of solutions (offerings) to opportunities.</p>
+     */
+    inline const Aws::String& GetId() const { return m_id; }
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    SolutionBase& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p> The SolutionBase structure provides essential information about a solution.
      * </p>
      */
@@ -55,16 +81,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the catalog in which the solution is hosted, either
-     * <code>AWS</code> or <code>Sandbox</code>. This helps partners differentiate
-     * between live solutions and those in testing environments.</p>
+     * <p>Specifies the solution name.</p>
      */
-    inline const Aws::String& GetCatalog() const { return m_catalog; }
-    inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
-    template<typename CatalogT = Aws::String>
-    void SetCatalog(CatalogT&& value) { m_catalogHasBeenSet = true; m_catalog = std::forward<CatalogT>(value); }
-    template<typename CatalogT = Aws::String>
-    SolutionBase& WithCatalog(CatalogT&& value) { SetCatalog(std::forward<CatalogT>(value)); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SolutionBase& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the solution's current status, which indicates its state in the
+     * system. Valid values: <code>Active</code> | <code>Inactive</code> |
+     * <code>Draft</code>. The status helps partners and Amazon Web Services track the
+     * solution's lifecycle and availability. Filter for <code>Active</code> solutions
+     * for association to an opportunity.</p>
+     */
+    inline SolutionStatus GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(SolutionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline SolutionBase& WithStatus(SolutionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -96,66 +134,28 @@ namespace Model
     template<typename CreatedDateT = Aws::Utils::DateTime>
     SolutionBase& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Enables the association of solutions (offerings) to opportunities.</p>
-     */
-    inline const Aws::String& GetId() const { return m_id; }
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    template<typename IdT = Aws::String>
-    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
-    template<typename IdT = Aws::String>
-    SolutionBase& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies the solution name.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    SolutionBase& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies the solution's current status, which indicates its state in the
-     * system. Valid values: <code>Active</code> | <code>Inactive</code> |
-     * <code>Draft</code>. The status helps partners and Amazon Web Services track the
-     * solution's lifecycle and availability. Filter for <code>Active</code> solutions
-     * for association to an opportunity.</p>
-     */
-    inline SolutionStatus GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(SolutionStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline SolutionBase& WithStatus(SolutionStatus value) { SetStatus(value); return *this;}
-    ///@}
   private:
-
-    Aws::String m_arn;
-    bool m_arnHasBeenSet = false;
 
     Aws::String m_catalog;
     bool m_catalogHasBeenSet = false;
 
-    Aws::String m_category;
-    bool m_categoryHasBeenSet = false;
-
-    Aws::Utils::DateTime m_createdDate{};
-    bool m_createdDateHasBeenSet = false;
-
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
     SolutionStatus m_status{SolutionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    Aws::String m_category;
+    bool m_categoryHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdDate{};
+    bool m_createdDateHasBeenSet = false;
   };
 
 } // namespace Model

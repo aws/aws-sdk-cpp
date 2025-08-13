@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int Organization_HASH = HashingUtils::HashString("Organization");
+        static const int Unrelated_HASH = HashingUtils::HashString("Unrelated");
 
 
         MembershipAccountRelationshipType GetMembershipAccountRelationshipTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == Organization_HASH)
           {
             return MembershipAccountRelationshipType::Organization;
+          }
+          else if (hashCode == Unrelated_HASH)
+          {
+            return MembershipAccountRelationshipType::Unrelated;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case MembershipAccountRelationshipType::Organization:
             return "Organization";
+          case MembershipAccountRelationshipType::Unrelated:
+            return "Unrelated";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

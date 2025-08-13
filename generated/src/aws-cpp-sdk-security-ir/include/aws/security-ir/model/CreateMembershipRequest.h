@@ -39,7 +39,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>An optional element used in combination with CreateMembership.</p>
+     * <p> <p>The <code>clientToken</code> field is an idempotency key used to
+     * ensure that repeated attempts for a single action will be ignored by the server
+     * during retries. A caller supplied unique ID (typically a UUID) should be
+     * provided. </p> </p>
      */
     inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
@@ -51,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Required element use in combination with CreateMembership to create a name
+     * <p>Required element used in combination with CreateMembership to create a name
      * for the membership.</p>
      */
     inline const Aws::String& GetMembershipName() const { return m_membershipName; }
@@ -64,7 +67,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Required element use in combination with CreateMembership to add customer
+     * <p>Required element used in combination with CreateMembership to add customer
      * incident response team members and trusted partners to the membership. </p>
      */
     inline const Aws::Vector<IncidentResponder>& GetIncidentResponseTeam() const { return m_incidentResponseTeam; }
@@ -107,6 +110,25 @@ namespace Model
       m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
     }
     ///@}
+
+    ///@{
+    /**
+     * <p>The <code>coverEntireOrganization</code> parameter is a boolean flag that
+     * determines whether the membership should be applied to the entire Amazon Web
+     * Services Organization. When set to true, the membership will be created for all
+     * accounts within the organization. When set to false, the membership will only be
+     * created for specified accounts. </p> <p>This parameter is optional. If not
+     * specified, the default value is false.</p> <ul> <li> <p>If set to <i>true</i>:
+     * The membership will automatically include all existing and future accounts in
+     * the Amazon Web Services Organization. </p> </li> <li> <p>If set to <i>false</i>:
+     * The membership will only apply to explicitly specified accounts. </p> </li>
+     * </ul>
+     */
+    inline bool GetCoverEntireOrganization() const { return m_coverEntireOrganization; }
+    inline bool CoverEntireOrganizationHasBeenSet() const { return m_coverEntireOrganizationHasBeenSet; }
+    inline void SetCoverEntireOrganization(bool value) { m_coverEntireOrganizationHasBeenSet = true; m_coverEntireOrganization = value; }
+    inline CreateMembershipRequest& WithCoverEntireOrganization(bool value) { SetCoverEntireOrganization(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
@@ -123,6 +145,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    bool m_coverEntireOrganization{false};
+    bool m_coverEntireOrganizationHasBeenSet = false;
   };
 
 } // namespace Model

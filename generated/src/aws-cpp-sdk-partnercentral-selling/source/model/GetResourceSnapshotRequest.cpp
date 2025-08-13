@@ -28,6 +28,11 @@ Aws::String GetResourceSnapshotRequest::SerializePayload() const
 
   }
 
+  if(m_resourceTypeHasBeenSet)
+  {
+   payload.WithString("ResourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+  }
+
   if(m_resourceIdentifierHasBeenSet)
   {
    payload.WithString("ResourceIdentifier", m_resourceIdentifier);
@@ -38,11 +43,6 @@ Aws::String GetResourceSnapshotRequest::SerializePayload() const
   {
    payload.WithString("ResourceSnapshotTemplateIdentifier", m_resourceSnapshotTemplateIdentifier);
 
-  }
-
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("ResourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
   }
 
   if(m_revisionHasBeenSet)

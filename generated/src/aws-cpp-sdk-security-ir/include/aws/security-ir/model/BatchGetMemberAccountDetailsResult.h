@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The response element providing errors messages for requests to
+     * <p>The response element providing error messages for requests to
      * GetMembershipAccountDetails.</p>
      */
     inline const Aws::Vector<GetMembershipAccountDetailError>& GetErrors() const { return m_errors; }

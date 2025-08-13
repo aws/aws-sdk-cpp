@@ -47,20 +47,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the unique identifier for the AWS account associated with the member
-     * organization. It's used for AWS-related operations and identity verification.
-     * </p>
-     */
-    inline const Aws::String& GetAccountId() const { return m_accountId; }
-    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    template<typename AccountIdT = Aws::String>
-    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
-    template<typename AccountIdT = Aws::String>
-    EngagementMember& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The official name of the member's company or organization.</p>
      */
     inline const Aws::String& GetCompanyName() const { return m_companyName; }
@@ -84,16 +70,30 @@ namespace Model
     template<typename WebsiteUrlT = Aws::String>
     EngagementMember& WithWebsiteUrl(WebsiteUrlT&& value) { SetWebsiteUrl(std::forward<WebsiteUrlT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_accountId;
-    bool m_accountIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>This is the unique identifier for the AWS account associated with the member
+     * organization. It's used for AWS-related operations and identity verification.
+     * </p>
+     */
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    EngagementMember& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_companyName;
     bool m_companyNameHasBeenSet = false;
 
     Aws::String m_websiteUrl;
     bool m_websiteUrlHasBeenSet = false;
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
   };
 
 } // namespace Model

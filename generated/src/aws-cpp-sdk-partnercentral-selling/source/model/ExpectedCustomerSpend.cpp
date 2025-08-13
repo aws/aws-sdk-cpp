@@ -35,11 +35,6 @@ ExpectedCustomerSpend& ExpectedCustomerSpend::operator =(JsonView jsonValue)
     m_currencyCode = ExpectedCustomerSpendCurrencyCodeEnumMapper::GetExpectedCustomerSpendCurrencyCodeEnumForName(jsonValue.GetString("CurrencyCode"));
     m_currencyCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EstimationUrl"))
-  {
-    m_estimationUrl = jsonValue.GetString("EstimationUrl");
-    m_estimationUrlHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Frequency"))
   {
     m_frequency = PaymentFrequencyMapper::GetPaymentFrequencyForName(jsonValue.GetString("Frequency"));
@@ -49,6 +44,11 @@ ExpectedCustomerSpend& ExpectedCustomerSpend::operator =(JsonView jsonValue)
   {
     m_targetCompany = jsonValue.GetString("TargetCompany");
     m_targetCompanyHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("EstimationUrl"))
+  {
+    m_estimationUrl = jsonValue.GetString("EstimationUrl");
+    m_estimationUrlHasBeenSet = true;
   }
   return *this;
 }
@@ -68,12 +68,6 @@ JsonValue ExpectedCustomerSpend::Jsonize() const
    payload.WithString("CurrencyCode", ExpectedCustomerSpendCurrencyCodeEnumMapper::GetNameForExpectedCustomerSpendCurrencyCodeEnum(m_currencyCode));
   }
 
-  if(m_estimationUrlHasBeenSet)
-  {
-   payload.WithString("EstimationUrl", m_estimationUrl);
-
-  }
-
   if(m_frequencyHasBeenSet)
   {
    payload.WithString("Frequency", PaymentFrequencyMapper::GetNameForPaymentFrequency(m_frequency));
@@ -82,6 +76,12 @@ JsonValue ExpectedCustomerSpend::Jsonize() const
   if(m_targetCompanyHasBeenSet)
   {
    payload.WithString("TargetCompany", m_targetCompany);
+
+  }
+
+  if(m_estimationUrlHasBeenSet)
+  {
+   payload.WithString("EstimationUrl", m_estimationUrl);
 
   }
 

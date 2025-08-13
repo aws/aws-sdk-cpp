@@ -25,11 +25,6 @@ AssigneeContact::AssigneeContact(JsonView jsonValue)
 
 AssigneeContact& AssigneeContact::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("BusinessTitle"))
-  {
-    m_businessTitle = jsonValue.GetString("BusinessTitle");
-    m_businessTitleHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Email"))
   {
     m_email = jsonValue.GetString("Email");
@@ -45,18 +40,17 @@ AssigneeContact& AssigneeContact::operator =(JsonView jsonValue)
     m_lastName = jsonValue.GetString("LastName");
     m_lastNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("BusinessTitle"))
+  {
+    m_businessTitle = jsonValue.GetString("BusinessTitle");
+    m_businessTitleHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue AssigneeContact::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_businessTitleHasBeenSet)
-  {
-   payload.WithString("BusinessTitle", m_businessTitle);
-
-  }
 
   if(m_emailHasBeenSet)
   {
@@ -73,6 +67,12 @@ JsonValue AssigneeContact::Jsonize() const
   if(m_lastNameHasBeenSet)
   {
    payload.WithString("LastName", m_lastName);
+
+  }
+
+  if(m_businessTitleHasBeenSet)
+  {
+   payload.WithString("BusinessTitle", m_businessTitle);
 
   }
 

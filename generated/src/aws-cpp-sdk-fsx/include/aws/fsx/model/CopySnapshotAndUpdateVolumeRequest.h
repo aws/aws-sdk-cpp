@@ -94,7 +94,7 @@ namespace Model
      * <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> and there are intermediate snapshots
      * on the destination, you can’t copy the snapshot.</p> <ul> <li> <p>
      * <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots on the
-     * destination volume that aren���t on the source volume.</p> </li> <li> <p>
+     * destination volume that aren’t on the source volume.</p> </li> <li> <p>
      * <code>DELETE_CLONED_VOLUMES</code> - Deletes snapshot clones on the destination
      * volume that aren't on the source volume.</p> </li> <li> <p>
      * <code>DELETE_INTERMEDIATE_DATA</code> - Overwrites snapshots on the destination

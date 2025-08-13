@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/braket/Braket_EXPORTS.h>
-#include <aws/braket/model/CancellationStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/braket/model/CancellationStatus.h>
 #include <utility>
 
 namespace Aws
@@ -35,22 +35,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the cancellation request.</p>
-     */
-    inline CancellationStatus GetCancellationStatus() const { return m_cancellationStatus; }
-    inline void SetCancellationStatus(CancellationStatus value) { m_cancellationStatusHasBeenSet = true; m_cancellationStatus = value; }
-    inline CancelQuantumTaskResult& WithCancellationStatus(CancellationStatus value) { SetCancellationStatus(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ARN of the task.</p>
+     * <p>The ARN of the quantum task.</p>
      */
     inline const Aws::String& GetQuantumTaskArn() const { return m_quantumTaskArn; }
     template<typename QuantumTaskArnT = Aws::String>
     void SetQuantumTaskArn(QuantumTaskArnT&& value) { m_quantumTaskArnHasBeenSet = true; m_quantumTaskArn = std::forward<QuantumTaskArnT>(value); }
     template<typename QuantumTaskArnT = Aws::String>
     CancelQuantumTaskResult& WithQuantumTaskArn(QuantumTaskArnT&& value) { SetQuantumTaskArn(std::forward<QuantumTaskArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status of the quantum task.</p>
+     */
+    inline CancellationStatus GetCancellationStatus() const { return m_cancellationStatus; }
+    inline void SetCancellationStatus(CancellationStatus value) { m_cancellationStatusHasBeenSet = true; m_cancellationStatus = value; }
+    inline CancelQuantumTaskResult& WithCancellationStatus(CancellationStatus value) { SetCancellationStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -63,11 +63,11 @@ namespace Model
     ///@}
   private:
 
-    CancellationStatus m_cancellationStatus{CancellationStatus::NOT_SET};
-    bool m_cancellationStatusHasBeenSet = false;
-
     Aws::String m_quantumTaskArn;
     bool m_quantumTaskArnHasBeenSet = false;
+
+    CancellationStatus m_cancellationStatus{CancellationStatus::NOT_SET};
+    bool m_cancellationStatusHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

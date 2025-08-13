@@ -34,17 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the engagement.</p>
-     */
-    inline const Aws::String& GetArn() const { return m_arn; }
-    template<typename ArnT = Aws::String>
-    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
-    template<typename ArnT = Aws::String>
-    CreateEngagementResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Unique identifier assigned to the newly created engagement.</p>
      */
     inline const Aws::String& GetId() const { return m_id; }
@@ -52,6 +41,17 @@ namespace Model
     void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
     template<typename IdT = Aws::String>
     CreateEngagementResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the engagement.</p>
+     */
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CreateEngagementResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,11 +64,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_arn;
-    bool m_arnHasBeenSet = false;
-
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

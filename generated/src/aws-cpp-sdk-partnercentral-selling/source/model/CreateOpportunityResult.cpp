@@ -30,15 +30,15 @@ CreateOpportunityResult& CreateOpportunityResult::operator =(const Aws::AmazonWe
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedDate"))
-  {
-    m_lastModifiedDate = jsonValue.GetString("LastModifiedDate");
-    m_lastModifiedDateHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("PartnerOpportunityIdentifier"))
   {
     m_partnerOpportunityIdentifier = jsonValue.GetString("PartnerOpportunityIdentifier");
     m_partnerOpportunityIdentifierHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("LastModifiedDate"))
+  {
+    m_lastModifiedDate = jsonValue.GetString("LastModifiedDate");
+    m_lastModifiedDateHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

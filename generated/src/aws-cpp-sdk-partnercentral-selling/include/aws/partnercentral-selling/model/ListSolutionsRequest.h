@@ -7,8 +7,8 @@
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/partnercentral-selling/model/SolutionSort.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/partnercentral-selling/model/SolutionStatus.h>
 #include <utility>
 
@@ -52,39 +52,6 @@ namespace Model
     void SetCatalog(CatalogT&& value) { m_catalogHasBeenSet = true; m_catalog = std::forward<CatalogT>(value); }
     template<typename CatalogT = Aws::String>
     ListSolutionsRequest& WithCatalog(CatalogT&& value) { SetCatalog(std::forward<CatalogT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Filters the solutions based on the category to which they belong. This allows
-     * partners to search for solutions within specific categories, such as
-     * <code>Software</code>, <code>Consulting</code>, or <code>Managed
-     * Services</code>.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetCategory() const { return m_category; }
-    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    template<typename CategoryT = Aws::Vector<Aws::String>>
-    void SetCategory(CategoryT&& value) { m_categoryHasBeenSet = true; m_category = std::forward<CategoryT>(value); }
-    template<typename CategoryT = Aws::Vector<Aws::String>>
-    ListSolutionsRequest& WithCategory(CategoryT&& value) { SetCategory(std::forward<CategoryT>(value)); return *this;}
-    template<typename CategoryT = Aws::String>
-    ListSolutionsRequest& AddCategory(CategoryT&& value) { m_categoryHasBeenSet = true; m_category.emplace_back(std::forward<CategoryT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>Filters the solutions based on their unique identifier. Use this filter to
-     * retrieve specific solutions by providing the solution's identifier for accurate
-     * results.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetIdentifier() const { return m_identifier; }
-    inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    template<typename IdentifierT = Aws::Vector<Aws::String>>
-    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
-    template<typename IdentifierT = Aws::Vector<Aws::String>>
-    ListSolutionsRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
-    template<typename IdentifierT = Aws::String>
-    ListSolutionsRequest& AddIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier.emplace_back(std::forward<IdentifierT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -139,16 +106,43 @@ namespace Model
     ListSolutionsRequest& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     inline ListSolutionsRequest& AddStatus(SolutionStatus value) { m_statusHasBeenSet = true; m_status.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Filters the solutions based on their unique identifier. Use this filter to
+     * retrieve specific solutions by providing the solution's identifier for accurate
+     * results.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetIdentifier() const { return m_identifier; }
+    inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
+    template<typename IdentifierT = Aws::Vector<Aws::String>>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::Vector<Aws::String>>
+    ListSolutionsRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
+    template<typename IdentifierT = Aws::String>
+    ListSolutionsRequest& AddIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier.emplace_back(std::forward<IdentifierT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Filters the solutions based on the category to which they belong. This allows
+     * partners to search for solutions within specific categories, such as
+     * <code>Software</code>, <code>Consulting</code>, or <code>Managed
+     * Services</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetCategory() const { return m_category; }
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+    template<typename CategoryT = Aws::Vector<Aws::String>>
+    void SetCategory(CategoryT&& value) { m_categoryHasBeenSet = true; m_category = std::forward<CategoryT>(value); }
+    template<typename CategoryT = Aws::Vector<Aws::String>>
+    ListSolutionsRequest& WithCategory(CategoryT&& value) { SetCategory(std::forward<CategoryT>(value)); return *this;}
+    template<typename CategoryT = Aws::String>
+    ListSolutionsRequest& AddCategory(CategoryT&& value) { m_categoryHasBeenSet = true; m_category.emplace_back(std::forward<CategoryT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_catalog;
     bool m_catalogHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_category;
-    bool m_categoryHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_identifier;
-    bool m_identifierHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
@@ -161,6 +155,12 @@ namespace Model
 
     Aws::Vector<SolutionStatus> m_status;
     bool m_statusHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_identifier;
+    bool m_identifierHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_category;
+    bool m_categoryHasBeenSet = false;
   };
 
 } // namespace Model

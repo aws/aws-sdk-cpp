@@ -233,11 +233,11 @@ namespace FSx
          * <p>Creates an S3 access point and attaches it to an Amazon FSx volume. For FSx
          * for OpenZFS file systems, the volume must be hosted on a high-availability file
          * system, either Single-AZ or Multi-AZ. For more information, see <a
-         * href="fsx/latest/OpenZFSGuide/s3accesspoints-for-FSx.html">Accessing your data
-         * using access points</a> in the Amazon FSx for OpenZFS User Guide. </p> <p>The
-         * requester requires the following permissions to perform these actions:</p> <ul>
-         * <li> <p> <code>fsx:CreateAndAttachS3AccessPoint</code> </p> </li> <li> <p>
-         * <code>s3:CreateAccessPoint</code> </p> </li> <li> <p>
+         * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/s3accesspoints-for-FSx.html">Accessing
+         * your data using Amazon S3 access points</a>. in the Amazon FSx for OpenZFS User
+         * Guide. </p> <p>The requester requires the following permissions to perform these
+         * actions:</p> <ul> <li> <p> <code>fsx:CreateAndAttachS3AccessPoint</code> </p>
+         * </li> <li> <p> <code>s3:CreateAccessPoint</code> </p> </li> <li> <p>
          * <code>s3:GetAccessPoint</code> </p> </li> <li> <p>
          * <code>s3:PutAccessPointPolicy</code> </p> </li> <li> <p>
          * <code>s3:DeleteAccessPoint</code> </p> </li> </ul> <p>The following actions are
@@ -784,10 +784,10 @@ namespace FSx
          * for OpenZFS file system, make sure that there aren't any Amazon S3 access points
          * attached to any volume. For more information on how to list S3 access points
          * that are attached to volumes, see <a
-         * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/access-points-list">Listing
+         * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/access-points-list.html">Listing
          * S3 access point attachments</a>. For more information on how to delete S3 access
          * points, see <a
-         * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/delete-points-list">Deleting
+         * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/delete-access-point.html">Deleting
          * an S3 access point attachment</a>.</p> <p>By default, when you delete an Amazon
          * FSx for Windows File Server file system, a final backup is created upon
          * deletion. This final backup isn't subject to the file system's retention policy,
@@ -1658,6 +1658,7 @@ namespace FSx
          * <code>CopyTagsToVolumes</code> </p> </li> <li> <p>
          * <code>DailyAutomaticBackupStartTime</code> </p> </li> <li> <p>
          * <code>DiskIopsConfiguration</code> </p> </li> <li> <p>
+         * <code>EndpointIpv6AddressRange</code> </p> </li> <li> <p>
          * <code>ReadCacheConfiguration</code> </p> </li> <li> <p>
          * <code>RemoveRouteTableIds</code> </p> </li> <li> <p>
          * <code>StorageCapacity</code> </p> </li> <li> <p> <code>ThroughputCapacity</code>

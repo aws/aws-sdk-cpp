@@ -42,14 +42,14 @@ namespace Model
 
     ///@{
     /**
-     * <p> Describes the next steps for the opportunity shared through a snapshot. </p>
+     * <p> The projected launch date of the opportunity shared through a snapshot. </p>
      */
-    inline const Aws::String& GetNextSteps() const { return m_nextSteps; }
-    inline bool NextStepsHasBeenSet() const { return m_nextStepsHasBeenSet; }
-    template<typename NextStepsT = Aws::String>
-    void SetNextSteps(NextStepsT&& value) { m_nextStepsHasBeenSet = true; m_nextSteps = std::forward<NextStepsT>(value); }
-    template<typename NextStepsT = Aws::String>
-    LifeCycleForView& WithNextSteps(NextStepsT&& value) { SetNextSteps(std::forward<NextStepsT>(value)); return *this;}
+    inline const Aws::String& GetTargetCloseDate() const { return m_targetCloseDate; }
+    inline bool TargetCloseDateHasBeenSet() const { return m_targetCloseDateHasBeenSet; }
+    template<typename TargetCloseDateT = Aws::String>
+    void SetTargetCloseDate(TargetCloseDateT&& value) { m_targetCloseDateHasBeenSet = true; m_targetCloseDate = std::forward<TargetCloseDateT>(value); }
+    template<typename TargetCloseDateT = Aws::String>
+    LifeCycleForView& WithTargetCloseDate(TargetCloseDateT&& value) { SetTargetCloseDate(std::forward<TargetCloseDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,19 +75,19 @@ namespace Model
 
     ///@{
     /**
-     * <p> The projected launch date of the opportunity shared through a snapshot. </p>
+     * <p> Describes the next steps for the opportunity shared through a snapshot. </p>
      */
-    inline const Aws::String& GetTargetCloseDate() const { return m_targetCloseDate; }
-    inline bool TargetCloseDateHasBeenSet() const { return m_targetCloseDateHasBeenSet; }
-    template<typename TargetCloseDateT = Aws::String>
-    void SetTargetCloseDate(TargetCloseDateT&& value) { m_targetCloseDateHasBeenSet = true; m_targetCloseDate = std::forward<TargetCloseDateT>(value); }
-    template<typename TargetCloseDateT = Aws::String>
-    LifeCycleForView& WithTargetCloseDate(TargetCloseDateT&& value) { SetTargetCloseDate(std::forward<TargetCloseDateT>(value)); return *this;}
+    inline const Aws::String& GetNextSteps() const { return m_nextSteps; }
+    inline bool NextStepsHasBeenSet() const { return m_nextStepsHasBeenSet; }
+    template<typename NextStepsT = Aws::String>
+    void SetNextSteps(NextStepsT&& value) { m_nextStepsHasBeenSet = true; m_nextSteps = std::forward<NextStepsT>(value); }
+    template<typename NextStepsT = Aws::String>
+    LifeCycleForView& WithNextSteps(NextStepsT&& value) { SetNextSteps(std::forward<NextStepsT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::String m_nextSteps;
-    bool m_nextStepsHasBeenSet = false;
+    Aws::String m_targetCloseDate;
+    bool m_targetCloseDateHasBeenSet = false;
 
     ReviewStatus m_reviewStatus{ReviewStatus::NOT_SET};
     bool m_reviewStatusHasBeenSet = false;
@@ -95,8 +95,8 @@ namespace Model
     Stage m_stage{Stage::NOT_SET};
     bool m_stageHasBeenSet = false;
 
-    Aws::String m_targetCloseDate;
-    bool m_targetCloseDateHasBeenSet = false;
+    Aws::String m_nextSteps;
+    bool m_nextStepsHasBeenSet = false;
   };
 
 } // namespace Model

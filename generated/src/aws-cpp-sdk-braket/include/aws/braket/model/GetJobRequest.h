@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/braket/Braket_EXPORTS.h>
 #include <aws/braket/BraketRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/braket/model/HybridJobAdditionalAttributeName.h>
 #include <utility>
 
@@ -42,7 +42,20 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of attributes to return information for.</p>
+     * <p>The ARN of the hybrid job to retrieve.</p>
+     */
+    inline const Aws::String& GetJobArn() const { return m_jobArn; }
+    inline bool JobArnHasBeenSet() const { return m_jobArnHasBeenSet; }
+    template<typename JobArnT = Aws::String>
+    void SetJobArn(JobArnT&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::forward<JobArnT>(value); }
+    template<typename JobArnT = Aws::String>
+    GetJobRequest& WithJobArn(JobArnT&& value) { SetJobArn(std::forward<JobArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A list of attributes to return additional information for. Only the QueueInfo
+     * additional attribute name is currently supported. </p>
      */
     inline const Aws::Vector<HybridJobAdditionalAttributeName>& GetAdditionalAttributeNames() const { return m_additionalAttributeNames; }
     inline bool AdditionalAttributeNamesHasBeenSet() const { return m_additionalAttributeNamesHasBeenSet; }
@@ -52,25 +65,13 @@ namespace Model
     GetJobRequest& WithAdditionalAttributeNames(AdditionalAttributeNamesT&& value) { SetAdditionalAttributeNames(std::forward<AdditionalAttributeNamesT>(value)); return *this;}
     inline GetJobRequest& AddAdditionalAttributeNames(HybridJobAdditionalAttributeName value) { m_additionalAttributeNamesHasBeenSet = true; m_additionalAttributeNames.push_back(value); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The ARN of the job to retrieve.</p>
-     */
-    inline const Aws::String& GetJobArn() const { return m_jobArn; }
-    inline bool JobArnHasBeenSet() const { return m_jobArnHasBeenSet; }
-    template<typename JobArnT = Aws::String>
-    void SetJobArn(JobArnT&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::forward<JobArnT>(value); }
-    template<typename JobArnT = Aws::String>
-    GetJobRequest& WithJobArn(JobArnT&& value) { SetJobArn(std::forward<JobArnT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::Vector<HybridJobAdditionalAttributeName> m_additionalAttributeNames;
-    bool m_additionalAttributeNamesHasBeenSet = false;
 
     Aws::String m_jobArn;
     bool m_jobArnHasBeenSet = false;
+
+    Aws::Vector<HybridJobAdditionalAttributeName> m_additionalAttributeNames;
+    bool m_additionalAttributeNamesHasBeenSet = false;
   };
 
 } // namespace Model

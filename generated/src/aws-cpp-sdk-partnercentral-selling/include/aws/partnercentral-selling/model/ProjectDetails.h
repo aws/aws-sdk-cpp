@@ -56,18 +56,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains revenue estimates for the partner related to the project. This field
-     * provides an idea of the financial potential of the opportunity for the
-     * partner.</p>
+     * <p>Specifies the title of the project. This title helps partners quickly
+     * identify and understand the focus of the project.</p>
      */
-    inline const Aws::Vector<ExpectedCustomerSpend>& GetExpectedCustomerSpend() const { return m_expectedCustomerSpend; }
-    inline bool ExpectedCustomerSpendHasBeenSet() const { return m_expectedCustomerSpendHasBeenSet; }
-    template<typename ExpectedCustomerSpendT = Aws::Vector<ExpectedCustomerSpend>>
-    void SetExpectedCustomerSpend(ExpectedCustomerSpendT&& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend = std::forward<ExpectedCustomerSpendT>(value); }
-    template<typename ExpectedCustomerSpendT = Aws::Vector<ExpectedCustomerSpend>>
-    ProjectDetails& WithExpectedCustomerSpend(ExpectedCustomerSpendT&& value) { SetExpectedCustomerSpend(std::forward<ExpectedCustomerSpendT>(value)); return *this;}
-    template<typename ExpectedCustomerSpendT = ExpectedCustomerSpend>
-    ProjectDetails& AddExpectedCustomerSpend(ExpectedCustomerSpendT&& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend.emplace_back(std::forward<ExpectedCustomerSpendT>(value)); return *this; }
+    inline const Aws::String& GetTitle() const { return m_title; }
+    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    ProjectDetails& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,29 +82,32 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the title of the project. This title helps partners quickly
-     * identify and understand the focus of the project.</p>
+     * <p>Contains revenue estimates for the partner related to the project. This field
+     * provides an idea of the financial potential of the opportunity for the
+     * partner.</p>
      */
-    inline const Aws::String& GetTitle() const { return m_title; }
-    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    template<typename TitleT = Aws::String>
-    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
-    template<typename TitleT = Aws::String>
-    ProjectDetails& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
+    inline const Aws::Vector<ExpectedCustomerSpend>& GetExpectedCustomerSpend() const { return m_expectedCustomerSpend; }
+    inline bool ExpectedCustomerSpendHasBeenSet() const { return m_expectedCustomerSpendHasBeenSet; }
+    template<typename ExpectedCustomerSpendT = Aws::Vector<ExpectedCustomerSpend>>
+    void SetExpectedCustomerSpend(ExpectedCustomerSpendT&& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend = std::forward<ExpectedCustomerSpendT>(value); }
+    template<typename ExpectedCustomerSpendT = Aws::Vector<ExpectedCustomerSpend>>
+    ProjectDetails& WithExpectedCustomerSpend(ExpectedCustomerSpendT&& value) { SetExpectedCustomerSpend(std::forward<ExpectedCustomerSpendT>(value)); return *this;}
+    template<typename ExpectedCustomerSpendT = ExpectedCustomerSpend>
+    ProjectDetails& AddExpectedCustomerSpend(ExpectedCustomerSpendT&& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend.emplace_back(std::forward<ExpectedCustomerSpendT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_businessProblem;
     bool m_businessProblemHasBeenSet = false;
 
-    Aws::Vector<ExpectedCustomerSpend> m_expectedCustomerSpend;
-    bool m_expectedCustomerSpendHasBeenSet = false;
+    Aws::String m_title;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_targetCompletionDate;
     bool m_targetCompletionDateHasBeenSet = false;
 
-    Aws::String m_title;
-    bool m_titleHasBeenSet = false;
+    Aws::Vector<ExpectedCustomerSpend> m_expectedCustomerSpend;
+    bool m_expectedCustomerSpendHasBeenSet = false;
   };
 
 } // namespace Model

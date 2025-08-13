@@ -36,7 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Optional element.</p>
+     * <p>An optional string that, if supplied on subsequent calls to ListCases, allows
+     * the API to fetch the next page of results. </p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     template<typename NextTokenT = Aws::String>

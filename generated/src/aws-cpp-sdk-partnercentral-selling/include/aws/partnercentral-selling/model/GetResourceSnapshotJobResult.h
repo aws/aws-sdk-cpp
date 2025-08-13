@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/partnercentral-selling/model/ResourceType.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/partnercentral-selling/model/ResourceSnapshotJobStatus.h>
 #include <utility>
 
@@ -37,19 +37,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the snapshot job. This globally unique
-     * identifier can be used for resource-specific operations across AWS services.
-     * </p>
-     */
-    inline const Aws::String& GetArn() const { return m_arn; }
-    template<typename ArnT = Aws::String>
-    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
-    template<typename ArnT = Aws::String>
-    GetResourceSnapshotJobResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The catalog in which the snapshot job was created. This will match the
      * Catalog specified in the request. </p>
      */
@@ -58,30 +45,6 @@ namespace Model
     void SetCatalog(CatalogT&& value) { m_catalogHasBeenSet = true; m_catalog = std::forward<CatalogT>(value); }
     template<typename CatalogT = Aws::String>
     GetResourceSnapshotJobResult& WithCatalog(CatalogT&& value) { SetCatalog(std::forward<CatalogT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The date and time when the snapshot job was created in ISO 8601 format (UTC).
-     * Example: "2023-05-01T20:37:46Z" </p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    GetResourceSnapshotJobResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The identifier of the engagement associated with this snapshot job. This
-     * links the job to a specific engagement context. </p>
-     */
-    inline const Aws::String& GetEngagementId() const { return m_engagementId; }
-    template<typename EngagementIdT = Aws::String>
-    void SetEngagementId(EngagementIdT&& value) { m_engagementIdHasBeenSet = true; m_engagementId = std::forward<EngagementIdT>(value); }
-    template<typename EngagementIdT = Aws::String>
-    GetResourceSnapshotJobResult& WithEngagementId(EngagementIdT&& value) { SetEngagementId(std::forward<EngagementIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,39 +61,37 @@ namespace Model
 
     ///@{
     /**
-     * <p>If the job has encountered any failures, this field contains the error
-     * message from the most recent failure. This can be useful for troubleshooting
-     * issues with the job. </p>
+     * <p>The Amazon Resource Name (ARN) of the snapshot job. This globally unique
+     * identifier can be used for resource-specific operations across AWS services.
+     * </p>
      */
-    inline const Aws::String& GetLastFailure() const { return m_lastFailure; }
-    template<typename LastFailureT = Aws::String>
-    void SetLastFailure(LastFailureT&& value) { m_lastFailureHasBeenSet = true; m_lastFailure = std::forward<LastFailureT>(value); }
-    template<typename LastFailureT = Aws::String>
-    GetResourceSnapshotJobResult& WithLastFailure(LastFailureT&& value) { SetLastFailure(std::forward<LastFailureT>(value)); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetResourceSnapshotJobResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The date and time of the last successful execution of the job, in ISO 8601
-     * format (UTC). Example: "2023-05-01T20:37:46Z" </p>
+     * <p>The identifier of the engagement associated with this snapshot job. This
+     * links the job to a specific engagement context. </p>
      */
-    inline const Aws::Utils::DateTime& GetLastSuccessfulExecutionDate() const { return m_lastSuccessfulExecutionDate; }
-    template<typename LastSuccessfulExecutionDateT = Aws::Utils::DateTime>
-    void SetLastSuccessfulExecutionDate(LastSuccessfulExecutionDateT&& value) { m_lastSuccessfulExecutionDateHasBeenSet = true; m_lastSuccessfulExecutionDate = std::forward<LastSuccessfulExecutionDateT>(value); }
-    template<typename LastSuccessfulExecutionDateT = Aws::Utils::DateTime>
-    GetResourceSnapshotJobResult& WithLastSuccessfulExecutionDate(LastSuccessfulExecutionDateT&& value) { SetLastSuccessfulExecutionDate(std::forward<LastSuccessfulExecutionDateT>(value)); return *this;}
+    inline const Aws::String& GetEngagementId() const { return m_engagementId; }
+    template<typename EngagementIdT = Aws::String>
+    void SetEngagementId(EngagementIdT&& value) { m_engagementIdHasBeenSet = true; m_engagementId = std::forward<EngagementIdT>(value); }
+    template<typename EngagementIdT = Aws::String>
+    GetResourceSnapshotJobResult& WithEngagementId(EngagementIdT&& value) { SetEngagementId(std::forward<EngagementIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource being snapshotted. This
-     * provides a globally unique identifier for the resource across AWS. </p>
+     * <p>The type of resource being snapshotted. This would have "Opportunity" as a
+     * value as it is dependent on the supported resource type.</p>
      */
-    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
-    template<typename ResourceArnT = Aws::String>
-    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
-    template<typename ResourceArnT = Aws::String>
-    GetResourceSnapshotJobResult& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
+    inline ResourceType GetResourceType() const { return m_resourceType; }
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline GetResourceSnapshotJobResult& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -147,6 +108,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) of the resource being snapshotted. This
+     * provides a globally unique identifier for the resource across AWS. </p>
+     */
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    GetResourceSnapshotJobResult& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the template used for creating the snapshot. This is the same as
      * the template name. It defines the structure and content of the snapshot.</p>
      */
@@ -159,12 +132,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of resource being snapshotted. This would have "Opportunity" as a
-     * value as it is dependent on the supported resource type.</p>
+     * <p>The date and time when the snapshot job was created in ISO 8601 format (UTC).
+     * Example: "2023-05-01T20:37:46Z" </p>
      */
-    inline ResourceType GetResourceType() const { return m_resourceType; }
-    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline GetResourceSnapshotJobResult& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetResourceSnapshotJobResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -179,6 +154,31 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The date and time of the last successful execution of the job, in ISO 8601
+     * format (UTC). Example: "2023-05-01T20:37:46Z" </p>
+     */
+    inline const Aws::Utils::DateTime& GetLastSuccessfulExecutionDate() const { return m_lastSuccessfulExecutionDate; }
+    template<typename LastSuccessfulExecutionDateT = Aws::Utils::DateTime>
+    void SetLastSuccessfulExecutionDate(LastSuccessfulExecutionDateT&& value) { m_lastSuccessfulExecutionDateHasBeenSet = true; m_lastSuccessfulExecutionDate = std::forward<LastSuccessfulExecutionDateT>(value); }
+    template<typename LastSuccessfulExecutionDateT = Aws::Utils::DateTime>
+    GetResourceSnapshotJobResult& WithLastSuccessfulExecutionDate(LastSuccessfulExecutionDateT&& value) { SetLastSuccessfulExecutionDate(std::forward<LastSuccessfulExecutionDateT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>If the job has encountered any failures, this field contains the error
+     * message from the most recent failure. This can be useful for troubleshooting
+     * issues with the job. </p>
+     */
+    inline const Aws::String& GetLastFailure() const { return m_lastFailure; }
+    template<typename LastFailureT = Aws::String>
+    void SetLastFailure(LastFailureT&& value) { m_lastFailureHasBeenSet = true; m_lastFailure = std::forward<LastFailureT>(value); }
+    template<typename LastFailureT = Aws::String>
+    GetResourceSnapshotJobResult& WithLastFailure(LastFailureT&& value) { SetLastFailure(std::forward<LastFailureT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -188,41 +188,41 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_arn;
-    bool m_arnHasBeenSet = false;
-
     Aws::String m_catalog;
     bool m_catalogHasBeenSet = false;
-
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
-
-    Aws::String m_engagementId;
-    bool m_engagementIdHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    Aws::String m_lastFailure;
-    bool m_lastFailureHasBeenSet = false;
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastSuccessfulExecutionDate{};
-    bool m_lastSuccessfulExecutionDateHasBeenSet = false;
-
-    Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet = false;
-
-    Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet = false;
-
-    Aws::String m_resourceSnapshotTemplateName;
-    bool m_resourceSnapshotTemplateNameHasBeenSet = false;
+    Aws::String m_engagementId;
+    bool m_engagementIdHasBeenSet = false;
 
     ResourceType m_resourceType{ResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
+    Aws::String m_resourceId;
+    bool m_resourceIdHasBeenSet = false;
+
+    Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet = false;
+
+    Aws::String m_resourceSnapshotTemplateName;
+    bool m_resourceSnapshotTemplateNameHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
+
     ResourceSnapshotJobStatus m_status{ResourceSnapshotJobStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastSuccessfulExecutionDate{};
+    bool m_lastSuccessfulExecutionDateHasBeenSet = false;
+
+    Aws::String m_lastFailure;
+    bool m_lastFailureHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

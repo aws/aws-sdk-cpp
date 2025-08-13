@@ -30,25 +30,25 @@ EngagementResourceAssociationSummary& EngagementResourceAssociationSummary::oper
     m_catalog = jsonValue.GetString("Catalog");
     m_catalogHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedBy"))
-  {
-    m_createdBy = jsonValue.GetString("CreatedBy");
-    m_createdByHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("EngagementId"))
   {
     m_engagementId = jsonValue.GetString("EngagementId");
     m_engagementIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ResourceType"))
+  {
+    m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
+    m_resourceTypeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
     m_resourceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceType"))
+  if(jsonValue.ValueExists("CreatedBy"))
   {
-    m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
-    m_resourceTypeHasBeenSet = true;
+    m_createdBy = jsonValue.GetString("CreatedBy");
+    m_createdByHasBeenSet = true;
   }
   return *this;
 }
@@ -63,16 +63,15 @@ JsonValue EngagementResourceAssociationSummary::Jsonize() const
 
   }
 
-  if(m_createdByHasBeenSet)
-  {
-   payload.WithString("CreatedBy", m_createdBy);
-
-  }
-
   if(m_engagementIdHasBeenSet)
   {
    payload.WithString("EngagementId", m_engagementId);
 
+  }
+
+  if(m_resourceTypeHasBeenSet)
+  {
+   payload.WithString("ResourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
   }
 
   if(m_resourceIdHasBeenSet)
@@ -81,9 +80,10 @@ JsonValue EngagementResourceAssociationSummary::Jsonize() const
 
   }
 
-  if(m_resourceTypeHasBeenSet)
+  if(m_createdByHasBeenSet)
   {
-   payload.WithString("ResourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+   payload.WithString("CreatedBy", m_createdBy);
+
   }
 
   return payload;

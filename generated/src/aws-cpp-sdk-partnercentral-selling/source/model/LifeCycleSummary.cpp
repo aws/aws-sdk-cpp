@@ -25,6 +25,11 @@ LifeCycleSummary::LifeCycleSummary(JsonView jsonValue)
 
 LifeCycleSummary& LifeCycleSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Stage"))
+  {
+    m_stage = StageMapper::GetStageForName(jsonValue.GetString("Stage"));
+    m_stageHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ClosedLostReason"))
   {
     m_closedLostReason = ClosedLostReasonMapper::GetClosedLostReasonForName(jsonValue.GetString("ClosedLostReason"));
@@ -35,30 +40,25 @@ LifeCycleSummary& LifeCycleSummary::operator =(JsonView jsonValue)
     m_nextSteps = jsonValue.GetString("NextSteps");
     m_nextStepsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReviewComments"))
+  if(jsonValue.ValueExists("TargetCloseDate"))
   {
-    m_reviewComments = jsonValue.GetString("ReviewComments");
-    m_reviewCommentsHasBeenSet = true;
+    m_targetCloseDate = jsonValue.GetString("TargetCloseDate");
+    m_targetCloseDateHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ReviewStatus"))
   {
     m_reviewStatus = ReviewStatusMapper::GetReviewStatusForName(jsonValue.GetString("ReviewStatus"));
     m_reviewStatusHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ReviewComments"))
+  {
+    m_reviewComments = jsonValue.GetString("ReviewComments");
+    m_reviewCommentsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ReviewStatusReason"))
   {
     m_reviewStatusReason = jsonValue.GetString("ReviewStatusReason");
     m_reviewStatusReasonHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Stage"))
-  {
-    m_stage = StageMapper::GetStageForName(jsonValue.GetString("Stage"));
-    m_stageHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("TargetCloseDate"))
-  {
-    m_targetCloseDate = jsonValue.GetString("TargetCloseDate");
-    m_targetCloseDateHasBeenSet = true;
   }
   return *this;
 }
@@ -66,6 +66,11 @@ LifeCycleSummary& LifeCycleSummary::operator =(JsonView jsonValue)
 JsonValue LifeCycleSummary::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_stageHasBeenSet)
+  {
+   payload.WithString("Stage", StageMapper::GetNameForStage(m_stage));
+  }
 
   if(m_closedLostReasonHasBeenSet)
   {
@@ -78,9 +83,9 @@ JsonValue LifeCycleSummary::Jsonize() const
 
   }
 
-  if(m_reviewCommentsHasBeenSet)
+  if(m_targetCloseDateHasBeenSet)
   {
-   payload.WithString("ReviewComments", m_reviewComments);
+   payload.WithString("TargetCloseDate", m_targetCloseDate);
 
   }
 
@@ -89,20 +94,15 @@ JsonValue LifeCycleSummary::Jsonize() const
    payload.WithString("ReviewStatus", ReviewStatusMapper::GetNameForReviewStatus(m_reviewStatus));
   }
 
+  if(m_reviewCommentsHasBeenSet)
+  {
+   payload.WithString("ReviewComments", m_reviewComments);
+
+  }
+
   if(m_reviewStatusReasonHasBeenSet)
   {
    payload.WithString("ReviewStatusReason", m_reviewStatusReason);
-
-  }
-
-  if(m_stageHasBeenSet)
-  {
-   payload.WithString("Stage", StageMapper::GetNameForStage(m_stage));
-  }
-
-  if(m_targetCloseDateHasBeenSet)
-  {
-   payload.WithString("TargetCloseDate", m_targetCloseDate);
 
   }
 

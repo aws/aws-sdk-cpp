@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-selling/model/DeliveryModel.h>
 #include <aws/partnercentral-selling/model/ExpectedCustomerSpend.h>
 #include <aws/partnercentral-selling/model/SalesActivity.h>
@@ -44,19 +44,6 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the proposed solution focus or type of workload for the project.
-     * </p>
-     */
-    inline const Aws::String& GetCustomerUseCase() const { return m_customerUseCase; }
-    inline bool CustomerUseCaseHasBeenSet() const { return m_customerUseCaseHasBeenSet; }
-    template<typename CustomerUseCaseT = Aws::String>
-    void SetCustomerUseCase(CustomerUseCaseT&& value) { m_customerUseCaseHasBeenSet = true; m_customerUseCase = std::forward<CustomerUseCaseT>(value); }
-    template<typename CustomerUseCaseT = Aws::String>
-    ProjectView& WithCustomerUseCase(CustomerUseCaseT&& value) { SetCustomerUseCase(std::forward<CustomerUseCaseT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p> Describes the deployment or consumption model for the partner solution or
      * offering. This field indicates how the project's solution will be delivered or
      * implemented for the customer. </p>
@@ -88,15 +75,15 @@ namespace Model
 
     ///@{
     /**
-     * <p> Offers a description of other solutions if the standard solutions do not
-     * adequately cover the project's scope. </p>
+     * <p> Specifies the proposed solution focus or type of workload for the project.
+     * </p>
      */
-    inline const Aws::String& GetOtherSolutionDescription() const { return m_otherSolutionDescription; }
-    inline bool OtherSolutionDescriptionHasBeenSet() const { return m_otherSolutionDescriptionHasBeenSet; }
-    template<typename OtherSolutionDescriptionT = Aws::String>
-    void SetOtherSolutionDescription(OtherSolutionDescriptionT&& value) { m_otherSolutionDescriptionHasBeenSet = true; m_otherSolutionDescription = std::forward<OtherSolutionDescriptionT>(value); }
-    template<typename OtherSolutionDescriptionT = Aws::String>
-    ProjectView& WithOtherSolutionDescription(OtherSolutionDescriptionT&& value) { SetOtherSolutionDescription(std::forward<OtherSolutionDescriptionT>(value)); return *this;}
+    inline const Aws::String& GetCustomerUseCase() const { return m_customerUseCase; }
+    inline bool CustomerUseCaseHasBeenSet() const { return m_customerUseCaseHasBeenSet; }
+    template<typename CustomerUseCaseT = Aws::String>
+    void SetCustomerUseCase(CustomerUseCaseT&& value) { m_customerUseCaseHasBeenSet = true; m_customerUseCase = std::forward<CustomerUseCaseT>(value); }
+    template<typename CustomerUseCaseT = Aws::String>
+    ProjectView& WithCustomerUseCase(CustomerUseCaseT&& value) { SetCustomerUseCase(std::forward<CustomerUseCaseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,10 +101,20 @@ namespace Model
     ProjectView& WithSalesActivities(SalesActivitiesT&& value) { SetSalesActivities(std::forward<SalesActivitiesT>(value)); return *this;}
     inline ProjectView& AddSalesActivities(SalesActivity value) { m_salesActivitiesHasBeenSet = true; m_salesActivities.push_back(value); return *this; }
     ///@}
-  private:
 
-    Aws::String m_customerUseCase;
-    bool m_customerUseCaseHasBeenSet = false;
+    ///@{
+    /**
+     * <p> Offers a description of other solutions if the standard solutions do not
+     * adequately cover the project's scope. </p>
+     */
+    inline const Aws::String& GetOtherSolutionDescription() const { return m_otherSolutionDescription; }
+    inline bool OtherSolutionDescriptionHasBeenSet() const { return m_otherSolutionDescriptionHasBeenSet; }
+    template<typename OtherSolutionDescriptionT = Aws::String>
+    void SetOtherSolutionDescription(OtherSolutionDescriptionT&& value) { m_otherSolutionDescriptionHasBeenSet = true; m_otherSolutionDescription = std::forward<OtherSolutionDescriptionT>(value); }
+    template<typename OtherSolutionDescriptionT = Aws::String>
+    ProjectView& WithOtherSolutionDescription(OtherSolutionDescriptionT&& value) { SetOtherSolutionDescription(std::forward<OtherSolutionDescriptionT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::Vector<DeliveryModel> m_deliveryModels;
     bool m_deliveryModelsHasBeenSet = false;
@@ -125,11 +122,14 @@ namespace Model
     Aws::Vector<ExpectedCustomerSpend> m_expectedCustomerSpend;
     bool m_expectedCustomerSpendHasBeenSet = false;
 
-    Aws::String m_otherSolutionDescription;
-    bool m_otherSolutionDescriptionHasBeenSet = false;
+    Aws::String m_customerUseCase;
+    bool m_customerUseCaseHasBeenSet = false;
 
     Aws::Vector<SalesActivity> m_salesActivities;
     bool m_salesActivitiesHasBeenSet = false;
+
+    Aws::String m_otherSolutionDescription;
+    bool m_otherSolutionDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

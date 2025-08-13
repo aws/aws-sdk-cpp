@@ -36,7 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Optional element.</p>
+     * <p>An optional string that, if supplied on subsequent calls to ListCaseEdits,
+     * allows the API to fetch the next page of results. </p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     template<typename NextTokenT = Aws::String>
@@ -47,7 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Response element for ListCaseEdits that includes the action, eventtimestamp,
+     * <p>Response element for ListCaseEdits that includes the action, event timestamp,
      * message, and principal for the response. </p>
      */
     inline const Aws::Vector<CaseEditItem>& GetItems() const { return m_items; }

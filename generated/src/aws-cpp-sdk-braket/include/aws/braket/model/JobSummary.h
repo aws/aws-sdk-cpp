@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/braket/Braket_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/braket/model/JobPrimaryStatus.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides summary information about an Amazon Braket job.</p><p><h3>See
+   * <p>Provides summary information about an Amazon Braket hybrid job.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/JobSummary">AWS
    * API Reference</a></p>
@@ -43,44 +43,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the Amazon Braket job was created.</p>
+     * <p>The status of the Amazon Braket hybrid job.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    JobSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    inline JobPrimaryStatus GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(JobPrimaryStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline JobSummary& WithStatus(JobPrimaryStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>Provides summary information about the primary device used by an Amazon
-     * Braket job.</p>
-     */
-    inline const Aws::String& GetDevice() const { return m_device; }
-    inline bool DeviceHasBeenSet() const { return m_deviceHasBeenSet; }
-    template<typename DeviceT = Aws::String>
-    void SetDevice(DeviceT&& value) { m_deviceHasBeenSet = true; m_device = std::forward<DeviceT>(value); }
-    template<typename DeviceT = Aws::String>
-    JobSummary& WithDevice(DeviceT&& value) { SetDevice(std::forward<DeviceT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The date and time that the Amazon Braket job ended.</p>
-     */
-    inline const Aws::Utils::DateTime& GetEndedAt() const { return m_endedAt; }
-    inline bool EndedAtHasBeenSet() const { return m_endedAtHasBeenSet; }
-    template<typename EndedAtT = Aws::Utils::DateTime>
-    void SetEndedAt(EndedAtT&& value) { m_endedAtHasBeenSet = true; m_endedAt = std::forward<EndedAtT>(value); }
-    template<typename EndedAtT = Aws::Utils::DateTime>
-    JobSummary& WithEndedAt(EndedAtT&& value) { SetEndedAt(std::forward<EndedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ARN of the Amazon Braket job.</p>
+     * <p>The ARN of the Amazon Braket hybrid job.</p>
      */
     inline const Aws::String& GetJobArn() const { return m_jobArn; }
     inline bool JobArnHasBeenSet() const { return m_jobArnHasBeenSet; }
@@ -92,7 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the Amazon Braket job.</p>
+     * <p>The name of the Amazon Braket hybrid job.</p>
      */
     inline const Aws::String& GetJobName() const { return m_jobName; }
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
@@ -104,7 +77,31 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the Amazon Braket job was started.</p>
+     * <p>The primary device used by an Amazon Braket hybrid job.</p>
+     */
+    inline const Aws::String& GetDevice() const { return m_device; }
+    inline bool DeviceHasBeenSet() const { return m_deviceHasBeenSet; }
+    template<typename DeviceT = Aws::String>
+    void SetDevice(DeviceT&& value) { m_deviceHasBeenSet = true; m_device = std::forward<DeviceT>(value); }
+    template<typename DeviceT = Aws::String>
+    JobSummary& WithDevice(DeviceT&& value) { SetDevice(std::forward<DeviceT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The time at which the Amazon Braket hybrid job was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    JobSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The time at which the Amazon Braket hybrid job was started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartedAt() const { return m_startedAt; }
     inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
@@ -116,18 +113,19 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the Amazon Braket job.</p>
+     * <p>The time at which the Amazon Braket hybrid job ended.</p>
      */
-    inline JobPrimaryStatus GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(JobPrimaryStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline JobSummary& WithStatus(JobPrimaryStatus value) { SetStatus(value); return *this;}
+    inline const Aws::Utils::DateTime& GetEndedAt() const { return m_endedAt; }
+    inline bool EndedAtHasBeenSet() const { return m_endedAtHasBeenSet; }
+    template<typename EndedAtT = Aws::Utils::DateTime>
+    void SetEndedAt(EndedAtT&& value) { m_endedAtHasBeenSet = true; m_endedAt = std::forward<EndedAtT>(value); }
+    template<typename EndedAtT = Aws::Utils::DateTime>
+    JobSummary& WithEndedAt(EndedAtT&& value) { SetEndedAt(std::forward<EndedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>A tag object that consists of a key and an optional value, used to manage
-     * metadata for Amazon Braket resources.</p>
+     * <p>Displays the key, value pairs of tags associated with this hybrid job.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -142,14 +140,8 @@ namespace Model
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
-
-    Aws::String m_device;
-    bool m_deviceHasBeenSet = false;
-
-    Aws::Utils::DateTime m_endedAt{};
-    bool m_endedAtHasBeenSet = false;
+    JobPrimaryStatus m_status{JobPrimaryStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_jobArn;
     bool m_jobArnHasBeenSet = false;
@@ -157,11 +149,17 @@ namespace Model
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet = false;
 
+    Aws::String m_device;
+    bool m_deviceHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
+
     Aws::Utils::DateTime m_startedAt{};
     bool m_startedAtHasBeenSet = false;
 
-    JobPrimaryStatus m_status{JobPrimaryStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
+    Aws::Utils::DateTime m_endedAt{};
+    bool m_endedAtHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

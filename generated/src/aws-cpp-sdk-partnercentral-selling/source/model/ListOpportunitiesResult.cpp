@@ -25,11 +25,6 @@ ListOpportunitiesResult::ListOpportunitiesResult(const Aws::AmazonWebServiceResu
 ListOpportunitiesResult& ListOpportunitiesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("OpportunitySummaries"))
   {
     Aws::Utils::Array<JsonView> opportunitySummariesJsonList = jsonValue.GetArray("OpportunitySummaries");
@@ -38,6 +33,11 @@ ListOpportunitiesResult& ListOpportunitiesResult::operator =(const Aws::AmazonWe
       m_opportunitySummaries.push_back(opportunitySummariesJsonList[opportunitySummariesIndex].AsObject());
     }
     m_opportunitySummariesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

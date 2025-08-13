@@ -93,6 +93,11 @@ GetMembershipResult& GetMembershipResult::operator =(const Aws::AmazonWebService
     }
     m_optInFeaturesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("membershipAccountsConfigurations"))
+  {
+    m_membershipAccountsConfigurations = jsonValue.GetObject("membershipAccountsConfigurations");
+    m_membershipAccountsConfigurationsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

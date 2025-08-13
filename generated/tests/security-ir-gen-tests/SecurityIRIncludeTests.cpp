@@ -63,6 +63,8 @@
 #include <aws/security-ir/model/ListTagsForResourceResult.h>
 #include <aws/security-ir/model/MembershipAccountRelationshipStatus.h>
 #include <aws/security-ir/model/MembershipAccountRelationshipType.h>
+#include <aws/security-ir/model/MembershipAccountsConfigurations.h>
+#include <aws/security-ir/model/MembershipAccountsConfigurationsUpdate.h>
 #include <aws/security-ir/model/MembershipStatus.h>
 #include <aws/security-ir/model/OptInFeature.h>
 #include <aws/security-ir/model/OptInFeatureName.h>

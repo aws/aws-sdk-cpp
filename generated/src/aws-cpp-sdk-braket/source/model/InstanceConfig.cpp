@@ -25,11 +25,6 @@ InstanceConfig::InstanceConfig(JsonView jsonValue)
 
 InstanceConfig& InstanceConfig::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("instanceCount"))
-  {
-    m_instanceCount = jsonValue.GetInteger("instanceCount");
-    m_instanceCountHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(jsonValue.GetString("instanceType"));
@@ -40,18 +35,17 @@ InstanceConfig& InstanceConfig::operator =(JsonView jsonValue)
     m_volumeSizeInGb = jsonValue.GetInteger("volumeSizeInGb");
     m_volumeSizeInGbHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("instanceCount"))
+  {
+    m_instanceCount = jsonValue.GetInteger("instanceCount");
+    m_instanceCountHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue InstanceConfig::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_instanceCountHasBeenSet)
-  {
-   payload.WithInteger("instanceCount", m_instanceCount);
-
-  }
 
   if(m_instanceTypeHasBeenSet)
   {
@@ -61,6 +55,12 @@ JsonValue InstanceConfig::Jsonize() const
   if(m_volumeSizeInGbHasBeenSet)
   {
    payload.WithInteger("volumeSizeInGb", m_volumeSizeInGb);
+
+  }
+
+  if(m_instanceCountHasBeenSet)
+  {
+   payload.WithInteger("instanceCount", m_instanceCount);
 
   }
 

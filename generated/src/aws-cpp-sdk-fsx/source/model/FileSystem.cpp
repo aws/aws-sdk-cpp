@@ -146,6 +146,11 @@ FileSystem& FileSystem::operator =(JsonView jsonValue)
     m_openZFSConfiguration = jsonValue.GetObject("OpenZFSConfiguration");
     m_openZFSConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("NetworkType"))
+  {
+    m_networkType = NetworkTypeMapper::GetNetworkTypeForName(jsonValue.GetString("NetworkType"));
+    m_networkTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -293,6 +298,11 @@ JsonValue FileSystem::Jsonize() const
   {
    payload.WithObject("OpenZFSConfiguration", m_openZFSConfiguration.Jsonize());
 
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+   payload.WithString("NetworkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
   }
 
   return payload;

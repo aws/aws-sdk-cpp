@@ -187,6 +187,7 @@
 #include <aws/fsx/model/LustreRootSquashConfiguration.h>
 #include <aws/fsx/model/MetadataConfigurationMode.h>
 #include <aws/fsx/model/NFSDataRepositoryConfiguration.h>
+#include <aws/fsx/model/NetworkType.h>
 #include <aws/fsx/model/NfsVersion.h>
 #include <aws/fsx/model/NotServiceResourceError.h>
 #include <aws/fsx/model/OntapDeploymentType.h>

@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies limits for how long an Amazon Braket job can run. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Specifies limits for how long an Amazon Braket hybrid job can run.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/JobStoppingCondition">AWS
    * API Reference</a></p>
    */
@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum length of time, in seconds, that an Amazon Braket job can
+     * <p>The maximum length of time, in seconds, that an Amazon Braket hybrid job can
      * run.</p>
      */
     inline int GetMaxRuntimeInSeconds() const { return m_maxRuntimeInSeconds; }

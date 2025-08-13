@@ -16,49 +16,15 @@ Aws::String CreateJobRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_algorithmSpecificationHasBeenSet)
-  {
-   payload.WithObject("algorithmSpecification", m_algorithmSpecification.Jsonize());
-
-  }
-
-  if(m_associationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> associationsJsonList(m_associations.size());
-   for(unsigned associationsIndex = 0; associationsIndex < associationsJsonList.GetLength(); ++associationsIndex)
-   {
-     associationsJsonList[associationsIndex].AsObject(m_associations[associationsIndex].Jsonize());
-   }
-   payload.WithArray("associations", std::move(associationsJsonList));
-
-  }
-
-  if(m_checkpointConfigHasBeenSet)
-  {
-   payload.WithObject("checkpointConfig", m_checkpointConfig.Jsonize());
-
-  }
-
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
 
   }
 
-  if(m_deviceConfigHasBeenSet)
+  if(m_algorithmSpecificationHasBeenSet)
   {
-   payload.WithObject("deviceConfig", m_deviceConfig.Jsonize());
-
-  }
-
-  if(m_hyperParametersHasBeenSet)
-  {
-   JsonValue hyperParametersJsonMap;
-   for(auto& hyperParametersItem : m_hyperParameters)
-   {
-     hyperParametersJsonMap.WithString(hyperParametersItem.first, hyperParametersItem.second);
-   }
-   payload.WithObject("hyperParameters", std::move(hyperParametersJsonMap));
+   payload.WithObject("algorithmSpecification", m_algorithmSpecification.Jsonize());
 
   }
 
@@ -73,21 +39,21 @@ Aws::String CreateJobRequest::SerializePayload() const
 
   }
 
-  if(m_instanceConfigHasBeenSet)
+  if(m_outputDataConfigHasBeenSet)
   {
-   payload.WithObject("instanceConfig", m_instanceConfig.Jsonize());
+   payload.WithObject("outputDataConfig", m_outputDataConfig.Jsonize());
+
+  }
+
+  if(m_checkpointConfigHasBeenSet)
+  {
+   payload.WithObject("checkpointConfig", m_checkpointConfig.Jsonize());
 
   }
 
   if(m_jobNameHasBeenSet)
   {
    payload.WithString("jobName", m_jobName);
-
-  }
-
-  if(m_outputDataConfigHasBeenSet)
-  {
-   payload.WithObject("outputDataConfig", m_outputDataConfig.Jsonize());
 
   }
 
@@ -103,6 +69,29 @@ Aws::String CreateJobRequest::SerializePayload() const
 
   }
 
+  if(m_instanceConfigHasBeenSet)
+  {
+   payload.WithObject("instanceConfig", m_instanceConfig.Jsonize());
+
+  }
+
+  if(m_hyperParametersHasBeenSet)
+  {
+   JsonValue hyperParametersJsonMap;
+   for(auto& hyperParametersItem : m_hyperParameters)
+   {
+     hyperParametersJsonMap.WithString(hyperParametersItem.first, hyperParametersItem.second);
+   }
+   payload.WithObject("hyperParameters", std::move(hyperParametersJsonMap));
+
+  }
+
+  if(m_deviceConfigHasBeenSet)
+  {
+   payload.WithObject("deviceConfig", m_deviceConfig.Jsonize());
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;
@@ -111,6 +100,17 @@ Aws::String CreateJobRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_associationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> associationsJsonList(m_associations.size());
+   for(unsigned associationsIndex = 0; associationsIndex < associationsJsonList.GetLength(); ++associationsIndex)
+   {
+     associationsJsonList[associationsIndex].AsObject(m_associations[associationsIndex].Jsonize());
+   }
+   payload.WithArray("associations", std::move(associationsJsonList));
 
   }
 

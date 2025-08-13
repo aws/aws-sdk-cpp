@@ -34,15 +34,6 @@ RelatedEntityIdentifiers& RelatedEntityIdentifiers::operator =(JsonView jsonValu
     }
     m_awsMarketplaceOffersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AwsProducts"))
-  {
-    Aws::Utils::Array<JsonView> awsProductsJsonList = jsonValue.GetArray("AwsProducts");
-    for(unsigned awsProductsIndex = 0; awsProductsIndex < awsProductsJsonList.GetLength(); ++awsProductsIndex)
-    {
-      m_awsProducts.push_back(awsProductsJsonList[awsProductsIndex].AsString());
-    }
-    m_awsProductsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Solutions"))
   {
     Aws::Utils::Array<JsonView> solutionsJsonList = jsonValue.GetArray("Solutions");
@@ -51,6 +42,15 @@ RelatedEntityIdentifiers& RelatedEntityIdentifiers::operator =(JsonView jsonValu
       m_solutions.push_back(solutionsJsonList[solutionsIndex].AsString());
     }
     m_solutionsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("AwsProducts"))
+  {
+    Aws::Utils::Array<JsonView> awsProductsJsonList = jsonValue.GetArray("AwsProducts");
+    for(unsigned awsProductsIndex = 0; awsProductsIndex < awsProductsJsonList.GetLength(); ++awsProductsIndex)
+    {
+      m_awsProducts.push_back(awsProductsJsonList[awsProductsIndex].AsString());
+    }
+    m_awsProductsHasBeenSet = true;
   }
   return *this;
 }
@@ -70,17 +70,6 @@ JsonValue RelatedEntityIdentifiers::Jsonize() const
 
   }
 
-  if(m_awsProductsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> awsProductsJsonList(m_awsProducts.size());
-   for(unsigned awsProductsIndex = 0; awsProductsIndex < awsProductsJsonList.GetLength(); ++awsProductsIndex)
-   {
-     awsProductsJsonList[awsProductsIndex].AsString(m_awsProducts[awsProductsIndex]);
-   }
-   payload.WithArray("AwsProducts", std::move(awsProductsJsonList));
-
-  }
-
   if(m_solutionsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> solutionsJsonList(m_solutions.size());
@@ -89,6 +78,17 @@ JsonValue RelatedEntityIdentifiers::Jsonize() const
      solutionsJsonList[solutionsIndex].AsString(m_solutions[solutionsIndex]);
    }
    payload.WithArray("Solutions", std::move(solutionsJsonList));
+
+  }
+
+  if(m_awsProductsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> awsProductsJsonList(m_awsProducts.size());
+   for(unsigned awsProductsIndex = 0; awsProductsIndex < awsProductsJsonList.GetLength(); ++awsProductsIndex)
+   {
+     awsProductsJsonList[awsProductsIndex].AsString(m_awsProducts[awsProductsIndex]);
+   }
+   payload.WithArray("AwsProducts", std::move(awsProductsJsonList));
 
   }
 
