@@ -369,9 +369,10 @@ namespace Aws
     } // namespace Client
 } // namespace Aws
 
-#if !defined(AWS_JSON_CLIENT_H) && !defined(AWS_XML_CLIENT_H)
+#if !defined(AWS_JSON_CLIENT_H) && !defined(AWS_XML_CLIENT_H) && !defined(AWS_CBOR_CLIENT_H)
 /* Legacy backward compatibility macros to not break the build for ones including just AWSClient.h */
 #include <aws/core/client/AWSJsonClient.h>
+#include <aws/core/client/AWSRpcV2CborClient.h>
 #include <aws/core/client/AWSXmlClient.h>
-#endif // !defined(AWS_JSON_CLIENT_H) && !defined(AWS_XML_CLIENT_H)
+#endif // !defined(AWS_JSON_CLIENT_H) && !defined(AWS_XML_CLIENT_H) && !defined(AWS_CBOR_CLIENT_H)
 #endif // !defined(AWS_CLIENT_H)
