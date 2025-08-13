@@ -157,6 +157,16 @@ TEST_F(STSWebIdentityProviderIntegrationTest, ShouldWork) {
   config.credentialProviderConfig.stsCredentialsProviderConfig.roleArn = testResourcesRAII.GetRoleArn();
   config.credentialProviderConfig.stsCredentialsProviderConfig.tokenFilePath = testResourcesRAII.GetTokenFileName();
   STSAssumeRoleWebIdentityCredentialsProvider provider{config.credentialProviderConfig};
-  const auto credentials = provider.GetAWSCredentials();
+  AWSCredentials credentials{};
+  size_t attempts = 0;
+  bool shouldSleep = false;
+  do {
+    if (shouldSleep) {
+      std::this_thread::sleep_for(IAM_CONSISTENCY_SLEEP);
+    }
+    credentials = provider.GetAWSCredentials();
+    shouldSleep = true;
+    attempts++;
+  } while (credentials.IsEmpty() && attempts < MAX_IAM_CONSISTENCY_RETRIES);
   EXPECT_FALSE(credentials.IsEmpty());
 }
