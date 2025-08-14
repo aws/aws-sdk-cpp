@@ -20,12 +20,11 @@
 #include <aws/core/utils/event/EventStream.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <smithy/tracing/TracingUtils.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <cassert>
 
-#include "aws/crt/cbor/Cbor.h"
 
 using namespace Aws;
 using namespace Aws::Client;
@@ -255,5 +254,5 @@ Aws::UniquePtr<Aws::Crt::Cbor::CborDecoder> AWSRpcV2CborClient::CreateCborDecode
     Aws::StringStream ss;
     ss << httpOutcome.GetResult()->GetResponseBody().rdbuf();
     Aws::Crt::ByteCursor cborDecoder= Aws::Crt::ByteCursorFromCString(ss.str().c_str());
-    return Aws::MakeUnique<Crt::Cbor::CborDecoder>("TODO:", cborDecoder);
+    return Aws::MakeUnique<Crt::Cbor::CborDecoder>(AWS_CBOR_CLIENT_LOG_TAG, cborDecoder);
 }
