@@ -578,7 +578,10 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
     }
 
     // Track credential provider usage for User-Agent features
-    TrackCredentialProviderUsage(request);
+    auto credentialsProvider = GetCredentialsProvider();
+    if (credentialsProvider) {
+        credentialsProvider->GetAWSCredentials(const_cast<Aws::AmazonWebServiceRequest&>(request));
+    }
     
     auto signer = GetSignerByName(signerName);
     auto signedRequest = TracingUtils::MakeCallWithTiming<bool>([&]() -> bool {
@@ -910,6 +913,7 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, co
         if (Aws::Client::CompressionAlgorithm::NONE != selectedCompressionAlgorithm) {
             Aws::Client::RequestCompression rc;
             auto compressOutcome = rc.compress(request.GetBody(), selectedCompressionAlgorithm);
+
             if (compressOutcome.IsSuccess()) {
                 Aws::String compressionAlgorithmId = Aws::Client::GetCompressionAlgorithmId(selectedCompressionAlgorithm);
                 AppendHeaderValueToRequest(httpRequest, CONTENT_ENCODING_HEADER, compressionAlgorithmId);
@@ -1034,63 +1038,37 @@ std::shared_ptr<Aws::Http::HttpResponse> AWSClient::MakeHttpRequest(std::shared_
     return m_httpClient->MakeRequest(request, m_readRateLimiter.get(), m_writeRateLimiter.get());
 }
 
-void AWSClient::AppendRecursionDetectionHeader(std::shared_ptr<Aws::Http::HttpRequest> ioRequest)
-{
-    if(!ioRequest || ioRequest->HasHeader(Aws::Http::X_AMZN_TRACE_ID_HEADER)) {
-        return;
-    }
-    Aws::String awsLambdaFunctionName = Aws::Environment::GetEnv(AWS_LAMBDA_FUNCTION_NAME);
-    if(awsLambdaFunctionName.empty()) {
-        return;
-    }
-    Aws::String xAmznTraceIdVal = Aws::Environment::GetEnv(X_AMZN_TRACE_ID);
-    if(xAmznTraceIdVal.empty()) {
-        return;
-    }
+void AWSClient::AppendRecursionDetectionHeader(std::shared_ptr<Aws::Http::HttpRequest> ioRequest) {
+  if(!ioRequest || ioRequest->HasHeader(Aws::Http::X_AMZN_TRACE_ID_HEADER)) {
+    return;
+  }
+  Aws::String awsLambdaFunctionName = Aws::Environment::GetEnv(AWS_LAMBDA_FUNCTION_NAME);
+  if(awsLambdaFunctionName.empty()) {
+    return;
+  }
+  Aws::String xAmznTraceIdVal = Aws::Environment::GetEnv(X_AMZN_TRACE_ID);
+  if(xAmznTraceIdVal.empty()) {
+    return;
+  }
 
-    // Escape all non-printable ASCII characters by percent encoding
-    Aws::OStringStream xAmznTraceIdValEncodedStr;
-    for(const char ch : xAmznTraceIdVal)
+  // Escape all non-printable ASCII characters by percent encoding
+  Aws::OStringStream xAmznTraceIdValEncodedStr;
+  for(const char ch : xAmznTraceIdVal)
+  {
+    if (ch >= 0x20 && ch <= 0x7e) // ascii chars [32-126] or [' ' to '~'] are not escaped
     {
-        if (ch >= 0x20 && ch <= 0x7e) // ascii chars [32-126] or [' ' to '~'] are not escaped
-        {
-            xAmznTraceIdValEncodedStr << ch;
-        }
-        else
-        {
-            // A percent-encoded octet is encoded as a character triplet
-            xAmznTraceIdValEncodedStr << '%' // consisting of the percent character "%"
-                                      << std::hex << std::setfill('0') << std::setw(2) << std::uppercase
-                                      << (size_t) ch //followed by the two hexadecimal digits representing that octet's numeric value
-                                      << std::dec << std::setfill(' ') << std::setw(0) << std::nouppercase;
-        }
+      xAmznTraceIdValEncodedStr << ch;
     }
-    xAmznTraceIdVal = xAmznTraceIdValEncodedStr.str();
-
-    ioRequest->SetHeaderValue(Aws::Http::X_AMZN_TRACE_ID_HEADER, xAmznTraceIdVal);
-}
-
-void AWSClient::TrackCredentialProviderUsage(const Aws::AmazonWebServiceRequest& request) const
-{
-    auto credentialsProvider = GetCredentialsProvider();
-    if (!credentialsProvider)
+    else
     {
-        return;
+      // A percent-encoded octet is encoded as a character triplet
+      xAmznTraceIdValEncodedStr << '%' // consisting of the percent character "%"
+                                << std::hex << std::setfill('0') << std::setw(2) << std::uppercase
+                                << (size_t) ch //followed by the two hexadecimal digits representing that octet's numeric value
+                                << std::dec << std::setfill(' ') << std::setw(0) << std::nouppercase;
     }
+  }
+  xAmznTraceIdVal = xAmznTraceIdValEncodedStr.str();
 
-    // Set up callback for credential tracking
-    if (credentialsProvider) {
-        credentialsProvider->SetCredentialTrackingCallback([&request]() {
-            request.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS);
-            AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Added CREDENTIALS_ENV_VARS to User-Agent");
-        });
-    }
-    
-    // Trigger credential retrieval to enable tracking
-    if (credentialsProvider) {
-        credentialsProvider->GetAWSCredentials();
-        
-        // Clear callback
-        credentialsProvider->SetCredentialTrackingCallback(nullptr);
-    }
+  ioRequest->SetHeaderValue(Aws::Http::X_AMZN_TRACE_ID_HEADER, xAmznTraceIdVal);
 }

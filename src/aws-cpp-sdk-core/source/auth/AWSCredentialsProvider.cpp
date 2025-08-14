@@ -70,7 +70,7 @@ bool AWSCredentialsProvider::IsTimeToRefresh(long reloadFrequency)
 static const char* ENVIRONMENT_LOG_TAG = "EnvironmentAWSCredentialsProvider";
 
 
-AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials() //pass in request or return request for tracking
+AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
 {
     auto accessKey = Aws::Environment::GetEnv(ACCESS_KEY_ENV_VAR);
     AWSCredentials credentials;
