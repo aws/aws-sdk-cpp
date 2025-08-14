@@ -34,6 +34,9 @@ AWSCredentials AWSCredentialsProviderChain::GetAWSCredentials()
         AWSCredentials credentials = credentialsProvider->GetAWSCredentials();
         if (!credentials.GetAWSAccessKeyId().empty() && !credentials.GetAWSSecretKey().empty())
         {
+            // TODO: issue of only chain, not overidden
+            // which credentials were used -- add it somethow
+            // request.addFeatureTrack(credential_type)
             m_cachedProvider = credentialsProvider;
             return credentials;
         }

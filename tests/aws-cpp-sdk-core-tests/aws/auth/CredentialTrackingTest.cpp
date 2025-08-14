@@ -45,8 +45,8 @@ protected:
 TEST_F(CredentialTrackingTest, TestEnvironmentCredentialsTracking)
 {
     // Set environment variables
-    Aws::Environment::SetEnv("AWS_ACCESS_KEY_ID", "test-access-key");
-    Aws::Environment::SetEnv("AWS_SECRET_ACCESS_KEY", "test-secret-key");
+    Aws::Environment::SetEnv("AWS_ACCESS_KEY_ID", "test-access-key", 1);
+    Aws::Environment::SetEnv("AWS_SECRET_ACCESS_KEY", "test-secret-key", 1);
 
     // Setup mock response
     auto request = CreateHttpRequest(Aws::Http::URI("http://test.com"), 
@@ -88,4 +88,13 @@ TEST_F(CredentialTrackingTest, TestEnvironmentCredentialsTracking)
     // Clean up environment variables
     Aws::Environment::UnSetEnv("AWS_ACCESS_KEY_ID");
     Aws::Environment::UnSetEnv("AWS_SECRET_ACCESS_KEY");
+}
+
+TEST_F(CredentialTrackingTest, TestEnvironmentProviderType)
+{
+    // Test that EnvironmentAWSCredentialsProvider has correct provider type
+    auto envProvider = Aws::MakeShared<EnvironmentAWSCredentialsProvider>(ALLOCATION_TAG);
+    
+    // Verify the provider type is set correctly
+    EXPECT_EQ(envProvider->GetProviderType(), Aws::Auth::CredentialProviderType::ENVIRONMENT);
 }

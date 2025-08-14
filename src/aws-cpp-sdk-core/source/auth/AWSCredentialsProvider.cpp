@@ -68,7 +68,7 @@ bool AWSCredentialsProvider::IsTimeToRefresh(long reloadFrequency)
 static const char* ENVIRONMENT_LOG_TAG = "EnvironmentAWSCredentialsProvider";
 
 
-AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
+AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials() //pass in request or return request for tracking
 {
     auto accessKey = Aws::Environment::GetEnv(ACCESS_KEY_ENV_VAR);
     AWSCredentials credentials;
@@ -101,6 +101,12 @@ AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
             credentials.SetAccountId(accountId);
             AWS_LOGSTREAM_DEBUG(ENVIRONMENT_LOG_TAG, "Found accountId");
         }
+    }
+
+    if (!credentials.IsEmpty()) {
+      // TODO: this will work
+      // TODO: how does request get here?????
+      // request.AddFeature(ENV_VAR)
     }
 
     return credentials;

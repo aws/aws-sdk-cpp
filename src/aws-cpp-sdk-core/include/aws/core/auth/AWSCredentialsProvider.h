@@ -114,6 +114,7 @@ namespace Aws
              * Returns empty credentials object.
              */
             inline AWSCredentials GetAWSCredentials() override { return AWSCredentials(); }
+
         };
 
         /**
