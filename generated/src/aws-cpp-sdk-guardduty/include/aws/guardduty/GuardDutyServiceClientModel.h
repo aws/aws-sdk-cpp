@@ -27,7 +27,9 @@
 #include <aws/guardduty/model/CreateMembersResult.h>
 #include <aws/guardduty/model/CreatePublishingDestinationResult.h>
 #include <aws/guardduty/model/CreateSampleFindingsResult.h>
+#include <aws/guardduty/model/CreateThreatEntitySetResult.h>
 #include <aws/guardduty/model/CreateThreatIntelSetResult.h>
+#include <aws/guardduty/model/CreateTrustedEntitySetResult.h>
 #include <aws/guardduty/model/DeclineInvitationsResult.h>
 #include <aws/guardduty/model/DeleteDetectorResult.h>
 #include <aws/guardduty/model/DeleteFilterResult.h>
@@ -35,7 +37,9 @@
 #include <aws/guardduty/model/DeleteInvitationsResult.h>
 #include <aws/guardduty/model/DeleteMembersResult.h>
 #include <aws/guardduty/model/DeletePublishingDestinationResult.h>
+#include <aws/guardduty/model/DeleteThreatEntitySetResult.h>
 #include <aws/guardduty/model/DeleteThreatIntelSetResult.h>
+#include <aws/guardduty/model/DeleteTrustedEntitySetResult.h>
 #include <aws/guardduty/model/DescribeMalwareScansResult.h>
 #include <aws/guardduty/model/DescribeOrganizationConfigurationResult.h>
 #include <aws/guardduty/model/DescribePublishingDestinationResult.h>
@@ -57,7 +61,9 @@
 #include <aws/guardduty/model/GetMembersResult.h>
 #include <aws/guardduty/model/GetOrganizationStatisticsResult.h>
 #include <aws/guardduty/model/GetRemainingFreeTrialDaysResult.h>
+#include <aws/guardduty/model/GetThreatEntitySetResult.h>
 #include <aws/guardduty/model/GetThreatIntelSetResult.h>
+#include <aws/guardduty/model/GetTrustedEntitySetResult.h>
 #include <aws/guardduty/model/GetUsageStatisticsResult.h>
 #include <aws/guardduty/model/InviteMembersResult.h>
 #include <aws/guardduty/model/ListCoverageResult.h>
@@ -71,7 +77,9 @@
 #include <aws/guardduty/model/ListOrganizationAdminAccountsResult.h>
 #include <aws/guardduty/model/ListPublishingDestinationsResult.h>
 #include <aws/guardduty/model/ListTagsForResourceResult.h>
+#include <aws/guardduty/model/ListThreatEntitySetsResult.h>
 #include <aws/guardduty/model/ListThreatIntelSetsResult.h>
+#include <aws/guardduty/model/ListTrustedEntitySetsResult.h>
 #include <aws/guardduty/model/StartMalwareScanResult.h>
 #include <aws/guardduty/model/StartMonitoringMembersResult.h>
 #include <aws/guardduty/model/StopMonitoringMembersResult.h>
@@ -86,7 +94,9 @@
 #include <aws/guardduty/model/UpdateMemberDetectorsResult.h>
 #include <aws/guardduty/model/UpdateOrganizationConfigurationResult.h>
 #include <aws/guardduty/model/UpdatePublishingDestinationResult.h>
+#include <aws/guardduty/model/UpdateThreatEntitySetResult.h>
 #include <aws/guardduty/model/UpdateThreatIntelSetResult.h>
+#include <aws/guardduty/model/UpdateTrustedEntitySetResult.h>
 #include <aws/guardduty/model/ListInvitationsRequest.h>
 #include <aws/guardduty/model/GetInvitationsCountRequest.h>
 #include <aws/guardduty/model/ListMalwareProtectionPlansRequest.h>
@@ -143,7 +153,9 @@ namespace Aws
       class CreateMembersRequest;
       class CreatePublishingDestinationRequest;
       class CreateSampleFindingsRequest;
+      class CreateThreatEntitySetRequest;
       class CreateThreatIntelSetRequest;
+      class CreateTrustedEntitySetRequest;
       class DeclineInvitationsRequest;
       class DeleteDetectorRequest;
       class DeleteFilterRequest;
@@ -152,7 +164,9 @@ namespace Aws
       class DeleteMalwareProtectionPlanRequest;
       class DeleteMembersRequest;
       class DeletePublishingDestinationRequest;
+      class DeleteThreatEntitySetRequest;
       class DeleteThreatIntelSetRequest;
+      class DeleteTrustedEntitySetRequest;
       class DescribeMalwareScansRequest;
       class DescribeOrganizationConfigurationRequest;
       class DescribePublishingDestinationRequest;
@@ -174,7 +188,9 @@ namespace Aws
       class GetMembersRequest;
       class GetOrganizationStatisticsRequest;
       class GetRemainingFreeTrialDaysRequest;
+      class GetThreatEntitySetRequest;
       class GetThreatIntelSetRequest;
+      class GetTrustedEntitySetRequest;
       class GetUsageStatisticsRequest;
       class InviteMembersRequest;
       class ListCoverageRequest;
@@ -188,7 +204,9 @@ namespace Aws
       class ListOrganizationAdminAccountsRequest;
       class ListPublishingDestinationsRequest;
       class ListTagsForResourceRequest;
+      class ListThreatEntitySetsRequest;
       class ListThreatIntelSetsRequest;
+      class ListTrustedEntitySetsRequest;
       class StartMalwareScanRequest;
       class StartMonitoringMembersRequest;
       class StopMonitoringMembersRequest;
@@ -204,7 +222,9 @@ namespace Aws
       class UpdateMemberDetectorsRequest;
       class UpdateOrganizationConfigurationRequest;
       class UpdatePublishingDestinationRequest;
+      class UpdateThreatEntitySetRequest;
       class UpdateThreatIntelSetRequest;
+      class UpdateTrustedEntitySetRequest;
       /* End of service model forward declarations required in GuardDutyClient header */
 
       /* Service model Outcome class definitions */
@@ -217,7 +237,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateMembersResult, GuardDutyError> CreateMembersOutcome;
       typedef Aws::Utils::Outcome<CreatePublishingDestinationResult, GuardDutyError> CreatePublishingDestinationOutcome;
       typedef Aws::Utils::Outcome<CreateSampleFindingsResult, GuardDutyError> CreateSampleFindingsOutcome;
+      typedef Aws::Utils::Outcome<CreateThreatEntitySetResult, GuardDutyError> CreateThreatEntitySetOutcome;
       typedef Aws::Utils::Outcome<CreateThreatIntelSetResult, GuardDutyError> CreateThreatIntelSetOutcome;
+      typedef Aws::Utils::Outcome<CreateTrustedEntitySetResult, GuardDutyError> CreateTrustedEntitySetOutcome;
       typedef Aws::Utils::Outcome<DeclineInvitationsResult, GuardDutyError> DeclineInvitationsOutcome;
       typedef Aws::Utils::Outcome<DeleteDetectorResult, GuardDutyError> DeleteDetectorOutcome;
       typedef Aws::Utils::Outcome<DeleteFilterResult, GuardDutyError> DeleteFilterOutcome;
@@ -226,7 +248,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, GuardDutyError> DeleteMalwareProtectionPlanOutcome;
       typedef Aws::Utils::Outcome<DeleteMembersResult, GuardDutyError> DeleteMembersOutcome;
       typedef Aws::Utils::Outcome<DeletePublishingDestinationResult, GuardDutyError> DeletePublishingDestinationOutcome;
+      typedef Aws::Utils::Outcome<DeleteThreatEntitySetResult, GuardDutyError> DeleteThreatEntitySetOutcome;
       typedef Aws::Utils::Outcome<DeleteThreatIntelSetResult, GuardDutyError> DeleteThreatIntelSetOutcome;
+      typedef Aws::Utils::Outcome<DeleteTrustedEntitySetResult, GuardDutyError> DeleteTrustedEntitySetOutcome;
       typedef Aws::Utils::Outcome<DescribeMalwareScansResult, GuardDutyError> DescribeMalwareScansOutcome;
       typedef Aws::Utils::Outcome<DescribeOrganizationConfigurationResult, GuardDutyError> DescribeOrganizationConfigurationOutcome;
       typedef Aws::Utils::Outcome<DescribePublishingDestinationResult, GuardDutyError> DescribePublishingDestinationOutcome;
@@ -248,7 +272,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetMembersResult, GuardDutyError> GetMembersOutcome;
       typedef Aws::Utils::Outcome<GetOrganizationStatisticsResult, GuardDutyError> GetOrganizationStatisticsOutcome;
       typedef Aws::Utils::Outcome<GetRemainingFreeTrialDaysResult, GuardDutyError> GetRemainingFreeTrialDaysOutcome;
+      typedef Aws::Utils::Outcome<GetThreatEntitySetResult, GuardDutyError> GetThreatEntitySetOutcome;
       typedef Aws::Utils::Outcome<GetThreatIntelSetResult, GuardDutyError> GetThreatIntelSetOutcome;
+      typedef Aws::Utils::Outcome<GetTrustedEntitySetResult, GuardDutyError> GetTrustedEntitySetOutcome;
       typedef Aws::Utils::Outcome<GetUsageStatisticsResult, GuardDutyError> GetUsageStatisticsOutcome;
       typedef Aws::Utils::Outcome<InviteMembersResult, GuardDutyError> InviteMembersOutcome;
       typedef Aws::Utils::Outcome<ListCoverageResult, GuardDutyError> ListCoverageOutcome;
@@ -262,7 +288,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListOrganizationAdminAccountsResult, GuardDutyError> ListOrganizationAdminAccountsOutcome;
       typedef Aws::Utils::Outcome<ListPublishingDestinationsResult, GuardDutyError> ListPublishingDestinationsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, GuardDutyError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<ListThreatEntitySetsResult, GuardDutyError> ListThreatEntitySetsOutcome;
       typedef Aws::Utils::Outcome<ListThreatIntelSetsResult, GuardDutyError> ListThreatIntelSetsOutcome;
+      typedef Aws::Utils::Outcome<ListTrustedEntitySetsResult, GuardDutyError> ListTrustedEntitySetsOutcome;
       typedef Aws::Utils::Outcome<StartMalwareScanResult, GuardDutyError> StartMalwareScanOutcome;
       typedef Aws::Utils::Outcome<StartMonitoringMembersResult, GuardDutyError> StartMonitoringMembersOutcome;
       typedef Aws::Utils::Outcome<StopMonitoringMembersResult, GuardDutyError> StopMonitoringMembersOutcome;
@@ -278,7 +306,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateMemberDetectorsResult, GuardDutyError> UpdateMemberDetectorsOutcome;
       typedef Aws::Utils::Outcome<UpdateOrganizationConfigurationResult, GuardDutyError> UpdateOrganizationConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdatePublishingDestinationResult, GuardDutyError> UpdatePublishingDestinationOutcome;
+      typedef Aws::Utils::Outcome<UpdateThreatEntitySetResult, GuardDutyError> UpdateThreatEntitySetOutcome;
       typedef Aws::Utils::Outcome<UpdateThreatIntelSetResult, GuardDutyError> UpdateThreatIntelSetOutcome;
+      typedef Aws::Utils::Outcome<UpdateTrustedEntitySetResult, GuardDutyError> UpdateTrustedEntitySetOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -291,7 +321,9 @@ namespace Aws
       typedef std::future<CreateMembersOutcome> CreateMembersOutcomeCallable;
       typedef std::future<CreatePublishingDestinationOutcome> CreatePublishingDestinationOutcomeCallable;
       typedef std::future<CreateSampleFindingsOutcome> CreateSampleFindingsOutcomeCallable;
+      typedef std::future<CreateThreatEntitySetOutcome> CreateThreatEntitySetOutcomeCallable;
       typedef std::future<CreateThreatIntelSetOutcome> CreateThreatIntelSetOutcomeCallable;
+      typedef std::future<CreateTrustedEntitySetOutcome> CreateTrustedEntitySetOutcomeCallable;
       typedef std::future<DeclineInvitationsOutcome> DeclineInvitationsOutcomeCallable;
       typedef std::future<DeleteDetectorOutcome> DeleteDetectorOutcomeCallable;
       typedef std::future<DeleteFilterOutcome> DeleteFilterOutcomeCallable;
@@ -300,7 +332,9 @@ namespace Aws
       typedef std::future<DeleteMalwareProtectionPlanOutcome> DeleteMalwareProtectionPlanOutcomeCallable;
       typedef std::future<DeleteMembersOutcome> DeleteMembersOutcomeCallable;
       typedef std::future<DeletePublishingDestinationOutcome> DeletePublishingDestinationOutcomeCallable;
+      typedef std::future<DeleteThreatEntitySetOutcome> DeleteThreatEntitySetOutcomeCallable;
       typedef std::future<DeleteThreatIntelSetOutcome> DeleteThreatIntelSetOutcomeCallable;
+      typedef std::future<DeleteTrustedEntitySetOutcome> DeleteTrustedEntitySetOutcomeCallable;
       typedef std::future<DescribeMalwareScansOutcome> DescribeMalwareScansOutcomeCallable;
       typedef std::future<DescribeOrganizationConfigurationOutcome> DescribeOrganizationConfigurationOutcomeCallable;
       typedef std::future<DescribePublishingDestinationOutcome> DescribePublishingDestinationOutcomeCallable;
@@ -322,7 +356,9 @@ namespace Aws
       typedef std::future<GetMembersOutcome> GetMembersOutcomeCallable;
       typedef std::future<GetOrganizationStatisticsOutcome> GetOrganizationStatisticsOutcomeCallable;
       typedef std::future<GetRemainingFreeTrialDaysOutcome> GetRemainingFreeTrialDaysOutcomeCallable;
+      typedef std::future<GetThreatEntitySetOutcome> GetThreatEntitySetOutcomeCallable;
       typedef std::future<GetThreatIntelSetOutcome> GetThreatIntelSetOutcomeCallable;
+      typedef std::future<GetTrustedEntitySetOutcome> GetTrustedEntitySetOutcomeCallable;
       typedef std::future<GetUsageStatisticsOutcome> GetUsageStatisticsOutcomeCallable;
       typedef std::future<InviteMembersOutcome> InviteMembersOutcomeCallable;
       typedef std::future<ListCoverageOutcome> ListCoverageOutcomeCallable;
@@ -336,7 +372,9 @@ namespace Aws
       typedef std::future<ListOrganizationAdminAccountsOutcome> ListOrganizationAdminAccountsOutcomeCallable;
       typedef std::future<ListPublishingDestinationsOutcome> ListPublishingDestinationsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<ListThreatEntitySetsOutcome> ListThreatEntitySetsOutcomeCallable;
       typedef std::future<ListThreatIntelSetsOutcome> ListThreatIntelSetsOutcomeCallable;
+      typedef std::future<ListTrustedEntitySetsOutcome> ListTrustedEntitySetsOutcomeCallable;
       typedef std::future<StartMalwareScanOutcome> StartMalwareScanOutcomeCallable;
       typedef std::future<StartMonitoringMembersOutcome> StartMonitoringMembersOutcomeCallable;
       typedef std::future<StopMonitoringMembersOutcome> StopMonitoringMembersOutcomeCallable;
@@ -352,7 +390,9 @@ namespace Aws
       typedef std::future<UpdateMemberDetectorsOutcome> UpdateMemberDetectorsOutcomeCallable;
       typedef std::future<UpdateOrganizationConfigurationOutcome> UpdateOrganizationConfigurationOutcomeCallable;
       typedef std::future<UpdatePublishingDestinationOutcome> UpdatePublishingDestinationOutcomeCallable;
+      typedef std::future<UpdateThreatEntitySetOutcome> UpdateThreatEntitySetOutcomeCallable;
       typedef std::future<UpdateThreatIntelSetOutcome> UpdateThreatIntelSetOutcomeCallable;
+      typedef std::future<UpdateTrustedEntitySetOutcome> UpdateTrustedEntitySetOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -368,7 +408,9 @@ namespace Aws
     typedef std::function<void(const GuardDutyClient*, const Model::CreateMembersRequest&, const Model::CreateMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMembersResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::CreatePublishingDestinationRequest&, const Model::CreatePublishingDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePublishingDestinationResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::CreateSampleFindingsRequest&, const Model::CreateSampleFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSampleFindingsResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::CreateThreatEntitySetRequest&, const Model::CreateThreatEntitySetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateThreatEntitySetResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::CreateThreatIntelSetRequest&, const Model::CreateThreatIntelSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateThreatIntelSetResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::CreateTrustedEntitySetRequest&, const Model::CreateTrustedEntitySetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrustedEntitySetResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DeclineInvitationsRequest&, const Model::DeclineInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeclineInvitationsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DeleteDetectorRequest&, const Model::DeleteDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDetectorResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DeleteFilterRequest&, const Model::DeleteFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFilterResponseReceivedHandler;
@@ -377,7 +419,9 @@ namespace Aws
     typedef std::function<void(const GuardDutyClient*, const Model::DeleteMalwareProtectionPlanRequest&, const Model::DeleteMalwareProtectionPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMalwareProtectionPlanResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DeleteMembersRequest&, const Model::DeleteMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMembersResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DeletePublishingDestinationRequest&, const Model::DeletePublishingDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePublishingDestinationResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::DeleteThreatEntitySetRequest&, const Model::DeleteThreatEntitySetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteThreatEntitySetResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DeleteThreatIntelSetRequest&, const Model::DeleteThreatIntelSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteThreatIntelSetResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::DeleteTrustedEntitySetRequest&, const Model::DeleteTrustedEntitySetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrustedEntitySetResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DescribeMalwareScansRequest&, const Model::DescribeMalwareScansOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMalwareScansResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DescribeOrganizationConfigurationRequest&, const Model::DescribeOrganizationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOrganizationConfigurationResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DescribePublishingDestinationRequest&, const Model::DescribePublishingDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePublishingDestinationResponseReceivedHandler;
@@ -399,7 +443,9 @@ namespace Aws
     typedef std::function<void(const GuardDutyClient*, const Model::GetMembersRequest&, const Model::GetMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMembersResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetOrganizationStatisticsRequest&, const Model::GetOrganizationStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOrganizationStatisticsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetRemainingFreeTrialDaysRequest&, const Model::GetRemainingFreeTrialDaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRemainingFreeTrialDaysResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::GetThreatEntitySetRequest&, const Model::GetThreatEntitySetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetThreatEntitySetResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetThreatIntelSetRequest&, const Model::GetThreatIntelSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetThreatIntelSetResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::GetTrustedEntitySetRequest&, const Model::GetTrustedEntitySetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrustedEntitySetResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetUsageStatisticsRequest&, const Model::GetUsageStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsageStatisticsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::InviteMembersRequest&, const Model::InviteMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InviteMembersResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::ListCoverageRequest&, const Model::ListCoverageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCoverageResponseReceivedHandler;
@@ -413,7 +459,9 @@ namespace Aws
     typedef std::function<void(const GuardDutyClient*, const Model::ListOrganizationAdminAccountsRequest&, const Model::ListOrganizationAdminAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOrganizationAdminAccountsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::ListPublishingDestinationsRequest&, const Model::ListPublishingDestinationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPublishingDestinationsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::ListThreatEntitySetsRequest&, const Model::ListThreatEntitySetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThreatEntitySetsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::ListThreatIntelSetsRequest&, const Model::ListThreatIntelSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThreatIntelSetsResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::ListTrustedEntitySetsRequest&, const Model::ListTrustedEntitySetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrustedEntitySetsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::StartMalwareScanRequest&, const Model::StartMalwareScanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMalwareScanResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::StartMonitoringMembersRequest&, const Model::StartMonitoringMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMonitoringMembersResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::StopMonitoringMembersRequest&, const Model::StopMonitoringMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopMonitoringMembersResponseReceivedHandler;
@@ -429,7 +477,9 @@ namespace Aws
     typedef std::function<void(const GuardDutyClient*, const Model::UpdateMemberDetectorsRequest&, const Model::UpdateMemberDetectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMemberDetectorsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::UpdateOrganizationConfigurationRequest&, const Model::UpdateOrganizationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOrganizationConfigurationResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::UpdatePublishingDestinationRequest&, const Model::UpdatePublishingDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePublishingDestinationResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::UpdateThreatEntitySetRequest&, const Model::UpdateThreatEntitySetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateThreatEntitySetResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::UpdateThreatIntelSetRequest&, const Model::UpdateThreatIntelSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateThreatIntelSetResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::UpdateTrustedEntitySetRequest&, const Model::UpdateTrustedEntitySetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrustedEntitySetResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace GuardDuty
 } // namespace Aws

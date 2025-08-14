@@ -30,7 +30,9 @@
 #include <aws/guardduty/model/CreateMembersRequest.h>
 #include <aws/guardduty/model/CreatePublishingDestinationRequest.h>
 #include <aws/guardduty/model/CreateSampleFindingsRequest.h>
+#include <aws/guardduty/model/CreateThreatEntitySetRequest.h>
 #include <aws/guardduty/model/CreateThreatIntelSetRequest.h>
+#include <aws/guardduty/model/CreateTrustedEntitySetRequest.h>
 #include <aws/guardduty/model/DeclineInvitationsRequest.h>
 #include <aws/guardduty/model/DeleteDetectorRequest.h>
 #include <aws/guardduty/model/DeleteFilterRequest.h>
@@ -39,7 +41,9 @@
 #include <aws/guardduty/model/DeleteMalwareProtectionPlanRequest.h>
 #include <aws/guardduty/model/DeleteMembersRequest.h>
 #include <aws/guardduty/model/DeletePublishingDestinationRequest.h>
+#include <aws/guardduty/model/DeleteThreatEntitySetRequest.h>
 #include <aws/guardduty/model/DeleteThreatIntelSetRequest.h>
+#include <aws/guardduty/model/DeleteTrustedEntitySetRequest.h>
 #include <aws/guardduty/model/DescribeMalwareScansRequest.h>
 #include <aws/guardduty/model/DescribeOrganizationConfigurationRequest.h>
 #include <aws/guardduty/model/DescribePublishingDestinationRequest.h>
@@ -61,7 +65,9 @@
 #include <aws/guardduty/model/GetMembersRequest.h>
 #include <aws/guardduty/model/GetOrganizationStatisticsRequest.h>
 #include <aws/guardduty/model/GetRemainingFreeTrialDaysRequest.h>
+#include <aws/guardduty/model/GetThreatEntitySetRequest.h>
 #include <aws/guardduty/model/GetThreatIntelSetRequest.h>
+#include <aws/guardduty/model/GetTrustedEntitySetRequest.h>
 #include <aws/guardduty/model/GetUsageStatisticsRequest.h>
 #include <aws/guardduty/model/InviteMembersRequest.h>
 #include <aws/guardduty/model/ListCoverageRequest.h>
@@ -75,7 +81,9 @@
 #include <aws/guardduty/model/ListOrganizationAdminAccountsRequest.h>
 #include <aws/guardduty/model/ListPublishingDestinationsRequest.h>
 #include <aws/guardduty/model/ListTagsForResourceRequest.h>
+#include <aws/guardduty/model/ListThreatEntitySetsRequest.h>
 #include <aws/guardduty/model/ListThreatIntelSetsRequest.h>
+#include <aws/guardduty/model/ListTrustedEntitySetsRequest.h>
 #include <aws/guardduty/model/StartMalwareScanRequest.h>
 #include <aws/guardduty/model/StartMonitoringMembersRequest.h>
 #include <aws/guardduty/model/StopMonitoringMembersRequest.h>
@@ -91,7 +99,9 @@
 #include <aws/guardduty/model/UpdateMemberDetectorsRequest.h>
 #include <aws/guardduty/model/UpdateOrganizationConfigurationRequest.h>
 #include <aws/guardduty/model/UpdatePublishingDestinationRequest.h>
+#include <aws/guardduty/model/UpdateThreatEntitySetRequest.h>
 #include <aws/guardduty/model/UpdateThreatIntelSetRequest.h>
+#include <aws/guardduty/model/UpdateTrustedEntitySetRequest.h>
 
 #include <smithy/tracing/TracingUtils.h>
 
@@ -527,6 +537,40 @@ CreateSampleFindingsOutcome GuardDutyClient::CreateSampleFindings(const CreateSa
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreateThreatEntitySetOutcome GuardDutyClient::CreateThreatEntitySet(const CreateThreatEntitySetRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateThreatEntitySet);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateThreatEntitySet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DetectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateThreatEntitySet", "Required field: DetectorId, is not set");
+    return CreateThreatEntitySetOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateThreatEntitySet, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateThreatEntitySet, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateThreatEntitySet",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateThreatEntitySetOutcome>(
+    [&]()-> CreateThreatEntitySetOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateThreatEntitySet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/detector/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/threatentityset");
+      return CreateThreatEntitySetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 CreateThreatIntelSetOutcome GuardDutyClient::CreateThreatIntelSet(const CreateThreatIntelSetRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateThreatIntelSet);
@@ -555,6 +599,40 @@ CreateThreatIntelSetOutcome GuardDutyClient::CreateThreatIntelSet(const CreateTh
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/threatintelset");
       return CreateThreatIntelSetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateTrustedEntitySetOutcome GuardDutyClient::CreateTrustedEntitySet(const CreateTrustedEntitySetRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateTrustedEntitySet);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTrustedEntitySet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DetectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateTrustedEntitySet", "Required field: DetectorId, is not set");
+    return CreateTrustedEntitySetOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateTrustedEntitySet, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateTrustedEntitySet, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateTrustedEntitySet",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateTrustedEntitySetOutcome>(
+    [&]()-> CreateTrustedEntitySetOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTrustedEntitySet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/detector/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/trustedentityset");
+      return CreateTrustedEntitySetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -835,6 +913,46 @@ DeletePublishingDestinationOutcome GuardDutyClient::DeletePublishingDestination(
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeleteThreatEntitySetOutcome GuardDutyClient::DeleteThreatEntitySet(const DeleteThreatEntitySetRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteThreatEntitySet);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteThreatEntitySet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DetectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteThreatEntitySet", "Required field: DetectorId, is not set");
+    return DeleteThreatEntitySetOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
+  }
+  if (!request.ThreatEntitySetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteThreatEntitySet", "Required field: ThreatEntitySetId, is not set");
+    return DeleteThreatEntitySetOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThreatEntitySetId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteThreatEntitySet, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteThreatEntitySet, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteThreatEntitySet",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteThreatEntitySetOutcome>(
+    [&]()-> DeleteThreatEntitySetOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteThreatEntitySet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/detector/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/threatentityset/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThreatEntitySetId());
+      return DeleteThreatEntitySetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteThreatIntelSetOutcome GuardDutyClient::DeleteThreatIntelSet(const DeleteThreatIntelSetRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteThreatIntelSet);
@@ -869,6 +987,46 @@ DeleteThreatIntelSetOutcome GuardDutyClient::DeleteThreatIntelSet(const DeleteTh
       endpointResolutionOutcome.GetResult().AddPathSegments("/threatintelset/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThreatIntelSetId());
       return DeleteThreatIntelSetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteTrustedEntitySetOutcome GuardDutyClient::DeleteTrustedEntitySet(const DeleteTrustedEntitySetRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteTrustedEntitySet);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTrustedEntitySet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DetectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteTrustedEntitySet", "Required field: DetectorId, is not set");
+    return DeleteTrustedEntitySetOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
+  }
+  if (!request.TrustedEntitySetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteTrustedEntitySet", "Required field: TrustedEntitySetId, is not set");
+    return DeleteTrustedEntitySetOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrustedEntitySetId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteTrustedEntitySet, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteTrustedEntitySet, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteTrustedEntitySet",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteTrustedEntitySetOutcome>(
+    [&]()-> DeleteTrustedEntitySetOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteTrustedEntitySet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/detector/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/trustedentityset/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrustedEntitySetId());
+      return DeleteTrustedEntitySetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1577,6 +1735,46 @@ GetRemainingFreeTrialDaysOutcome GuardDutyClient::GetRemainingFreeTrialDays(cons
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetThreatEntitySetOutcome GuardDutyClient::GetThreatEntitySet(const GetThreatEntitySetRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetThreatEntitySet);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetThreatEntitySet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DetectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetThreatEntitySet", "Required field: DetectorId, is not set");
+    return GetThreatEntitySetOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
+  }
+  if (!request.ThreatEntitySetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetThreatEntitySet", "Required field: ThreatEntitySetId, is not set");
+    return GetThreatEntitySetOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThreatEntitySetId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetThreatEntitySet, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetThreatEntitySet, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetThreatEntitySet",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetThreatEntitySetOutcome>(
+    [&]()-> GetThreatEntitySetOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetThreatEntitySet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/detector/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/threatentityset/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThreatEntitySetId());
+      return GetThreatEntitySetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetThreatIntelSetOutcome GuardDutyClient::GetThreatIntelSet(const GetThreatIntelSetRequest& request) const
 {
   AWS_OPERATION_GUARD(GetThreatIntelSet);
@@ -1611,6 +1809,46 @@ GetThreatIntelSetOutcome GuardDutyClient::GetThreatIntelSet(const GetThreatIntel
       endpointResolutionOutcome.GetResult().AddPathSegments("/threatintelset/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThreatIntelSetId());
       return GetThreatIntelSetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetTrustedEntitySetOutcome GuardDutyClient::GetTrustedEntitySet(const GetTrustedEntitySetRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetTrustedEntitySet);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTrustedEntitySet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DetectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetTrustedEntitySet", "Required field: DetectorId, is not set");
+    return GetTrustedEntitySetOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
+  }
+  if (!request.TrustedEntitySetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetTrustedEntitySet", "Required field: TrustedEntitySetId, is not set");
+    return GetTrustedEntitySetOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrustedEntitySetId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetTrustedEntitySet, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetTrustedEntitySet, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetTrustedEntitySet",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetTrustedEntitySetOutcome>(
+    [&]()-> GetTrustedEntitySetOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTrustedEntitySet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/detector/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/trustedentityset/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrustedEntitySetId());
+      return GetTrustedEntitySetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2030,6 +2268,40 @@ ListTagsForResourceOutcome GuardDutyClient::ListTagsForResource(const ListTagsFo
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListThreatEntitySetsOutcome GuardDutyClient::ListThreatEntitySets(const ListThreatEntitySetsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListThreatEntitySets);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListThreatEntitySets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DetectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListThreatEntitySets", "Required field: DetectorId, is not set");
+    return ListThreatEntitySetsOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListThreatEntitySets, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListThreatEntitySets, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListThreatEntitySets",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListThreatEntitySetsOutcome>(
+    [&]()-> ListThreatEntitySetsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListThreatEntitySets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/detector/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/threatentityset");
+      return ListThreatEntitySetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListThreatIntelSetsOutcome GuardDutyClient::ListThreatIntelSets(const ListThreatIntelSetsRequest& request) const
 {
   AWS_OPERATION_GUARD(ListThreatIntelSets);
@@ -2058,6 +2330,40 @@ ListThreatIntelSetsOutcome GuardDutyClient::ListThreatIntelSets(const ListThreat
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/threatintelset");
       return ListThreatIntelSetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListTrustedEntitySetsOutcome GuardDutyClient::ListTrustedEntitySets(const ListTrustedEntitySetsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListTrustedEntitySets);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTrustedEntitySets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DetectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTrustedEntitySets", "Required field: DetectorId, is not set");
+    return ListTrustedEntitySetsOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListTrustedEntitySets, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListTrustedEntitySets, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListTrustedEntitySets",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListTrustedEntitySetsOutcome>(
+    [&]()-> ListTrustedEntitySetsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTrustedEntitySets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/detector/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/trustedentityset");
+      return ListTrustedEntitySetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2586,6 +2892,46 @@ UpdatePublishingDestinationOutcome GuardDutyClient::UpdatePublishingDestination(
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+UpdateThreatEntitySetOutcome GuardDutyClient::UpdateThreatEntitySet(const UpdateThreatEntitySetRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateThreatEntitySet);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateThreatEntitySet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DetectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateThreatEntitySet", "Required field: DetectorId, is not set");
+    return UpdateThreatEntitySetOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
+  }
+  if (!request.ThreatEntitySetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateThreatEntitySet", "Required field: ThreatEntitySetId, is not set");
+    return UpdateThreatEntitySetOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThreatEntitySetId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateThreatEntitySet, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateThreatEntitySet, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateThreatEntitySet",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateThreatEntitySetOutcome>(
+    [&]()-> UpdateThreatEntitySetOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateThreatEntitySet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/detector/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/threatentityset/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThreatEntitySetId());
+      return UpdateThreatEntitySetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 UpdateThreatIntelSetOutcome GuardDutyClient::UpdateThreatIntelSet(const UpdateThreatIntelSetRequest& request) const
 {
   AWS_OPERATION_GUARD(UpdateThreatIntelSet);
@@ -2620,6 +2966,46 @@ UpdateThreatIntelSetOutcome GuardDutyClient::UpdateThreatIntelSet(const UpdateTh
       endpointResolutionOutcome.GetResult().AddPathSegments("/threatintelset/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThreatIntelSetId());
       return UpdateThreatIntelSetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateTrustedEntitySetOutcome GuardDutyClient::UpdateTrustedEntitySet(const UpdateTrustedEntitySetRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateTrustedEntitySet);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTrustedEntitySet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DetectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateTrustedEntitySet", "Required field: DetectorId, is not set");
+    return UpdateTrustedEntitySetOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
+  }
+  if (!request.TrustedEntitySetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateTrustedEntitySet", "Required field: TrustedEntitySetId, is not set");
+    return UpdateTrustedEntitySetOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrustedEntitySetId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateTrustedEntitySet, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateTrustedEntitySet, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateTrustedEntitySet",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateTrustedEntitySetOutcome>(
+    [&]()-> UpdateTrustedEntitySetOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateTrustedEntitySet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/detector/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/trustedentityset/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrustedEntitySetId());
+      return UpdateTrustedEntitySetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

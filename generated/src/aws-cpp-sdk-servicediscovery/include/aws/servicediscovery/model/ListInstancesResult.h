@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicediscovery/model/InstanceSummary.h>
 #include <utility>
 
@@ -33,6 +33,19 @@ namespace Model
     AWS_SERVICEDISCOVERY_API ListInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICEDISCOVERY_API ListInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+
+    ///@{
+    /**
+     * <p>The ID of the Amazon Web Services account that created the namespace that
+     * contains the specified service. If this isn't your account ID, it's the ID of
+     * the account that shared the namespace with your account.</p>
+     */
+    inline const Aws::String& GetResourceOwner() const { return m_resourceOwner; }
+    template<typename ResourceOwnerT = Aws::String>
+    void SetResourceOwner(ResourceOwnerT&& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = std::forward<ResourceOwnerT>(value); }
+    template<typename ResourceOwnerT = Aws::String>
+    ListInstancesResult& WithResourceOwner(ResourceOwnerT&& value) { SetResourceOwner(std::forward<ResourceOwnerT>(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -71,6 +84,9 @@ namespace Model
     ListInstancesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
+
+    Aws::String m_resourceOwner;
+    bool m_resourceOwnerHasBeenSet = false;
 
     Aws::Vector<InstanceSummary> m_instances;
     bool m_instancesHasBeenSet = false;

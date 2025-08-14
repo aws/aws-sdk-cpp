@@ -40,6 +40,11 @@ UpdateContributorInsightsResult& UpdateContributorInsightsResult::operator =(con
     m_contributorInsightsStatus = ContributorInsightsStatusMapper::GetContributorInsightsStatusForName(jsonValue.GetString("ContributorInsightsStatus"));
     m_contributorInsightsStatusHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ContributorInsightsMode"))
+  {
+    m_contributorInsightsMode = ContributorInsightsModeMapper::GetContributorInsightsModeForName(jsonValue.GetString("ContributorInsightsMode"));
+    m_contributorInsightsModeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

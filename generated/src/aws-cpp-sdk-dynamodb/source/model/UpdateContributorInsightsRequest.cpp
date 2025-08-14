@@ -33,6 +33,11 @@ Aws::String UpdateContributorInsightsRequest::SerializePayload() const
    payload.WithString("ContributorInsightsAction", ContributorInsightsActionMapper::GetNameForContributorInsightsAction(m_contributorInsightsAction));
   }
 
+  if(m_contributorInsightsModeHasBeenSet)
+  {
+   payload.WithString("ContributorInsightsMode", ContributorInsightsModeMapper::GetNameForContributorInsightsMode(m_contributorInsightsMode));
+  }
+
   return payload.View().WriteReadable();
 }
 

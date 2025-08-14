@@ -57,6 +57,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the Amazon Web Services account that owns the namespace associated
+     * with the operation.</p>
+     */
+    inline const Aws::String& GetOwnerAccount() const { return m_ownerAccount; }
+    inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
+    template<typename OwnerAccountT = Aws::String>
+    void SetOwnerAccount(OwnerAccountT&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::forward<OwnerAccountT>(value); }
+    template<typename OwnerAccountT = Aws::String>
+    Operation& WithOwnerAccount(OwnerAccountT&& value) { SetOwnerAccount(std::forward<OwnerAccountT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the operation that's associated with the specified ID.</p>
      */
     inline OperationType GetType() const { return m_type; }
@@ -167,6 +180,9 @@ namespace Model
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    Aws::String m_ownerAccount;
+    bool m_ownerAccountHasBeenSet = false;
 
     OperationType m_type{OperationType::NOT_SET};
     bool m_typeHasBeenSet = false;

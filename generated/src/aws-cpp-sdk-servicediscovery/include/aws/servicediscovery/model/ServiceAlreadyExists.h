@@ -71,6 +71,18 @@ namespace Model
     template<typename ServiceIdT = Aws::String>
     ServiceAlreadyExists& WithServiceId(ServiceIdT&& value) { SetServiceId(std::forward<ServiceIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ARN of the existing service.</p>
+     */
+    inline const Aws::String& GetServiceArn() const { return m_serviceArn; }
+    inline bool ServiceArnHasBeenSet() const { return m_serviceArnHasBeenSet; }
+    template<typename ServiceArnT = Aws::String>
+    void SetServiceArn(ServiceArnT&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::forward<ServiceArnT>(value); }
+    template<typename ServiceArnT = Aws::String>
+    ServiceAlreadyExists& WithServiceArn(ServiceArnT&& value) { SetServiceArn(std::forward<ServiceArnT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_message;
@@ -81,6 +93,9 @@ namespace Model
 
     Aws::String m_serviceId;
     bool m_serviceIdHasBeenSet = false;
+
+    Aws::String m_serviceArn;
+    bool m_serviceArnHasBeenSet = false;
   };
 
 } // namespace Model

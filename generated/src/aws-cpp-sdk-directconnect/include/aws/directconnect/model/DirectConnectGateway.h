@@ -68,7 +68,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+     * <p>The autonomous system number (AS) for the Amazon side of the connection.</p>
      */
     inline long long GetAmazonSideAsn() const { return m_amazonSideAsn; }
     inline bool AmazonSideAsnHasBeenSet() const { return m_amazonSideAsnHasBeenSet; }

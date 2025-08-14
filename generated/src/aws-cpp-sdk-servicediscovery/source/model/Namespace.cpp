@@ -35,6 +35,11 @@ Namespace& Namespace::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ResourceOwner"))
+  {
+    m_resourceOwner = jsonValue.GetString("ResourceOwner");
+    m_resourceOwnerHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
@@ -86,6 +91,12 @@ JsonValue Namespace::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("Arn", m_arn);
+
+  }
+
+  if(m_resourceOwnerHasBeenSet)
+  {
+   payload.WithString("ResourceOwner", m_resourceOwner);
 
   }
 

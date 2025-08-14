@@ -57,6 +57,7 @@
 #include <aws/dynamodb/model/ContinuousBackupsDescription.h>
 #include <aws/dynamodb/model/ContinuousBackupsStatus.h>
 #include <aws/dynamodb/model/ContributorInsightsAction.h>
+#include <aws/dynamodb/model/ContributorInsightsMode.h>
 #include <aws/dynamodb/model/ContributorInsightsStatus.h>
 #include <aws/dynamodb/model/ContributorInsightsSummary.h>
 #include <aws/dynamodb/model/CreateBackupRequest.h>
@@ -192,6 +193,7 @@
 #include <aws/dynamodb/model/ProjectionType.h>
 #include <aws/dynamodb/model/ProvisionedThroughput.h>
 #include <aws/dynamodb/model/ProvisionedThroughputDescription.h>
+#include <aws/dynamodb/model/ProvisionedThroughputExceededException.h>
 #include <aws/dynamodb/model/ProvisionedThroughputOverride.h>
 #include <aws/dynamodb/model/Put.h>
 #include <aws/dynamodb/model/PutItemRequest.h>
@@ -216,6 +218,7 @@
 #include <aws/dynamodb/model/ReplicaStatus.h>
 #include <aws/dynamodb/model/ReplicaUpdate.h>
 #include <aws/dynamodb/model/ReplicationGroupUpdate.h>
+#include <aws/dynamodb/model/RequestLimitExceeded.h>
 #include <aws/dynamodb/model/RestoreSummary.h>
 #include <aws/dynamodb/model/RestoreTableFromBackupRequest.h>
 #include <aws/dynamodb/model/RestoreTableFromBackupResult.h>
@@ -248,6 +251,8 @@
 #include <aws/dynamodb/model/TableWarmThroughputDescription.h>
 #include <aws/dynamodb/model/Tag.h>
 #include <aws/dynamodb/model/TagResourceRequest.h>
+#include <aws/dynamodb/model/ThrottlingException.h>
+#include <aws/dynamodb/model/ThrottlingReason.h>
 #include <aws/dynamodb/model/TimeToLiveDescription.h>
 #include <aws/dynamodb/model/TimeToLiveSpecification.h>
 #include <aws/dynamodb/model/TimeToLiveStatus.h>

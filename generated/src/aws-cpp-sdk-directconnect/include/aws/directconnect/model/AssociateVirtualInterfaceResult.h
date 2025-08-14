@@ -124,8 +124,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The autonomous system (AS) number for Border Gateway Protocol (BGP)
-     * configuration.</p> <p>The valid values are 1-2147483647.</p>
+     * <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646
+     * for Border Gateway Protocol (BGP) configuration. If you provide a number greater
+     * than the maximum, an error is returned. Use <code>asnLong</code> instead.</p>
+     *  <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We
+     * recommend using <code>asnLong</code> as it supports a greater pool of numbers.
+     * </p> <ul> <li> <p>The <code>asnLong</code> attribute accepts both ASN and long
+     * ASN ranges.</p> </li> <li> <p>If you provide a value in the same API call for
+     * both <code>asn</code> and <code>asnLong</code>, the API will only accept the
+     * value for <code>asnLong</code>.</p> </li> </ul> 
      */
     inline int GetAsn() const { return m_asn; }
     inline void SetAsn(int value) { m_asnHasBeenSet = true; m_asn = value; }
@@ -134,7 +141,23 @@ namespace Model
 
     ///@{
     /**
-     * <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+     * <p>The long ASN for the virtual interface. The valid range is from 1 to
+     * 4294967294 for BGP configuration.</p>  <p>You can use <code>asnLong</code>
+     * or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it
+     * supports a greater pool of numbers. </p> <ul> <li> <p>The <code>asnLong</code>
+     * attribute accepts both ASN and long ASN ranges.</p> </li> <li> <p>If you provide
+     * a value in the same API call for both <code>asn</code> and <code>asnLong</code>,
+     * the API will only accept the value for <code>asnLong</code>.</p> </li> </ul>
+     * 
+     */
+    inline long long GetAsnLong() const { return m_asnLong; }
+    inline void SetAsnLong(long long value) { m_asnLongHasBeenSet = true; m_asnLong = value; }
+    inline AssociateVirtualInterfaceResult& WithAsnLong(long long value) { SetAsnLong(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The autonomous system number (AS) for the Amazon side of the connection.</p>
      */
     inline long long GetAmazonSideAsn() const { return m_amazonSideAsn; }
     inline void SetAmazonSideAsn(long long value) { m_amazonSideAsnHasBeenSet = true; m_amazonSideAsn = value; }
@@ -386,6 +409,9 @@ namespace Model
 
     int m_asn{0};
     bool m_asnHasBeenSet = false;
+
+    long long m_asnLong{0};
+    bool m_asnLongHasBeenSet = false;
 
     long long m_amazonSideAsn{0};
     bool m_amazonSideAsnHasBeenSet = false;

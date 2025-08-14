@@ -17046,6 +17046,35 @@ namespace EC2
         }
 
         /**
+         * <p>Modifies the specified EC2 Instance Connect Endpoint.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/modify-ec2-instance-connect-endpoint.html">Modify
+         * an EC2 Instance Connect Endpoint</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceConnectEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyInstanceConnectEndpointOutcome ModifyInstanceConnectEndpoint(const Model::ModifyInstanceConnectEndpointRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyInstanceConnectEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyInstanceConnectEndpointRequestT = Model::ModifyInstanceConnectEndpointRequest>
+        Model::ModifyInstanceConnectEndpointOutcomeCallable ModifyInstanceConnectEndpointCallable(const ModifyInstanceConnectEndpointRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::ModifyInstanceConnectEndpoint, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyInstanceConnectEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyInstanceConnectEndpointRequestT = Model::ModifyInstanceConnectEndpointRequest>
+        void ModifyInstanceConnectEndpointAsync(const ModifyInstanceConnectEndpointRequestT& request, const ModifyInstanceConnectEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::ModifyInstanceConnectEndpoint, request, handler, context);
+        }
+
+        /**
          * <p>By default, all vCPUs for the instance type are active when you launch an
          * instance. When you configure the number of active vCPUs for the instance, it can
          * help you save on licensing costs and optimize performance. The base cost of the

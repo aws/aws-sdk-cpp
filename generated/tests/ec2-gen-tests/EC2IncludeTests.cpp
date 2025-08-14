@@ -1494,6 +1494,8 @@
 #include <aws/ec2/model/InstanceBlockDeviceMappingSpecification.h>
 #include <aws/ec2/model/InstanceBootModeValues.h>
 #include <aws/ec2/model/InstanceCapacity.h>
+#include <aws/ec2/model/InstanceConnectEndpointDnsNames.h>
+#include <aws/ec2/model/InstanceConnectEndpointPublicDnsNames.h>
 #include <aws/ec2/model/InstanceCount.h>
 #include <aws/ec2/model/InstanceCreditSpecification.h>
 #include <aws/ec2/model/InstanceCreditSpecificationRequest.h>
@@ -1775,6 +1777,8 @@
 #include <aws/ec2/model/ModifyInstanceAttributeRequest.h>
 #include <aws/ec2/model/ModifyInstanceCapacityReservationAttributesRequest.h>
 #include <aws/ec2/model/ModifyInstanceCapacityReservationAttributesResponse.h>
+#include <aws/ec2/model/ModifyInstanceConnectEndpointRequest.h>
+#include <aws/ec2/model/ModifyInstanceConnectEndpointResponse.h>
 #include <aws/ec2/model/ModifyInstanceCpuOptionsRequest.h>
 #include <aws/ec2/model/ModifyInstanceCpuOptionsResponse.h>
 #include <aws/ec2/model/ModifyInstanceCreditSpecificationRequest.h>

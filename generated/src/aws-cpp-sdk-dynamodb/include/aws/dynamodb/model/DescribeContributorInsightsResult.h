@@ -10,6 +10,7 @@
 #include <aws/dynamodb/model/ContributorInsightsStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/dynamodb/model/FailureException.h>
+#include <aws/dynamodb/model/ContributorInsightsMode.h>
 #include <utility>
 
 namespace Aws
@@ -113,6 +114,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The mode of CloudWatch Contributor Insights for DynamoDB that determines
+     * which events are emitted. Can be set to track all access and throttled events or
+     * throttled events only.</p>
+     */
+    inline ContributorInsightsMode GetContributorInsightsMode() const { return m_contributorInsightsMode; }
+    inline void SetContributorInsightsMode(ContributorInsightsMode value) { m_contributorInsightsModeHasBeenSet = true; m_contributorInsightsMode = value; }
+    inline DescribeContributorInsightsResult& WithContributorInsightsMode(ContributorInsightsMode value) { SetContributorInsightsMode(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -139,6 +151,9 @@ namespace Model
 
     FailureException m_failureException;
     bool m_failureExceptionHasBeenSet = false;
+
+    ContributorInsightsMode m_contributorInsightsMode{ContributorInsightsMode::NOT_SET};
+    bool m_contributorInsightsModeHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

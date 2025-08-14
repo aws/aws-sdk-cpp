@@ -59,6 +59,11 @@ DescribeContributorInsightsResult& DescribeContributorInsightsResult::operator =
     m_failureException = jsonValue.GetObject("FailureException");
     m_failureExceptionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ContributorInsightsMode"))
+  {
+    m_contributorInsightsMode = ContributorInsightsModeMapper::GetContributorInsightsModeForName(jsonValue.GetString("ContributorInsightsMode"));
+    m_contributorInsightsModeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

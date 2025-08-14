@@ -156,6 +156,23 @@ namespace Model
       m_attributesHasBeenSet = true; m_attributes.emplace(std::forward<AttributesKeyT>(key), std::forward<AttributesValueT>(value)); return *this;
     }
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Amazon Web Services account that registered the instance. If
+     * this isn't your account ID, it's the ID of the account that shared the namespace
+     * with your account or the ID of another account with which the namespace has been
+     * shared. For more information about shared namespaces, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account
+     * Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+     */
+    inline const Aws::String& GetCreatedByAccount() const { return m_createdByAccount; }
+    inline bool CreatedByAccountHasBeenSet() const { return m_createdByAccountHasBeenSet; }
+    template<typename CreatedByAccountT = Aws::String>
+    void SetCreatedByAccount(CreatedByAccountT&& value) { m_createdByAccountHasBeenSet = true; m_createdByAccount = std::forward<CreatedByAccountT>(value); }
+    template<typename CreatedByAccountT = Aws::String>
+    Instance& WithCreatedByAccount(CreatedByAccountT&& value) { SetCreatedByAccount(std::forward<CreatedByAccountT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -166,6 +183,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet = false;
+
+    Aws::String m_createdByAccount;
+    bool m_createdByAccountHasBeenSet = false;
   };
 
 } // namespace Model

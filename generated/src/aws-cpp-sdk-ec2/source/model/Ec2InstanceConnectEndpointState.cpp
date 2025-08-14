@@ -26,6 +26,9 @@ namespace Aws
         static const int delete_in_progress_HASH = HashingUtils::HashString("delete-in-progress");
         static const int delete_complete_HASH = HashingUtils::HashString("delete-complete");
         static const int delete_failed_HASH = HashingUtils::HashString("delete-failed");
+        static const int update_in_progress_HASH = HashingUtils::HashString("update-in-progress");
+        static const int update_complete_HASH = HashingUtils::HashString("update-complete");
+        static const int update_failed_HASH = HashingUtils::HashString("update-failed");
 
 
         Ec2InstanceConnectEndpointState GetEc2InstanceConnectEndpointStateForName(const Aws::String& name)
@@ -55,6 +58,18 @@ namespace Aws
           {
             return Ec2InstanceConnectEndpointState::delete_failed;
           }
+          else if (hashCode == update_in_progress_HASH)
+          {
+            return Ec2InstanceConnectEndpointState::update_in_progress;
+          }
+          else if (hashCode == update_complete_HASH)
+          {
+            return Ec2InstanceConnectEndpointState::update_complete;
+          }
+          else if (hashCode == update_failed_HASH)
+          {
+            return Ec2InstanceConnectEndpointState::update_failed;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +98,12 @@ namespace Aws
             return "delete-complete";
           case Ec2InstanceConnectEndpointState::delete_failed:
             return "delete-failed";
+          case Ec2InstanceConnectEndpointState::update_in_progress:
+            return "update-in-progress";
+          case Ec2InstanceConnectEndpointState::update_complete:
+            return "update-complete";
+          case Ec2InstanceConnectEndpointState::update_failed:
+            return "update-failed";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

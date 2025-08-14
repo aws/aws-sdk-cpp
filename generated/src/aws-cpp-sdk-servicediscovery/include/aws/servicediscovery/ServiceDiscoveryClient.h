@@ -574,7 +574,8 @@ namespace ServiceDiscovery
 
         /**
          * <p>Lists summary information about the namespaces that were created by the
-         * current Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
+         * current Amazon Web Services account and shared with the current Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListNamespaces">AWS
          * API Reference</a></p>
          */
@@ -895,9 +896,15 @@ namespace ServiceDiscovery
          * request, the configurations are deleted from the service.</p> </li> <li> <p>If
          * you omit an existing <code>HealthCheckCustomConfig</code> configuration from an
          * <code>UpdateService</code> request, the configuration isn't deleted from the
-         * service.</p> </li> </ul> <p>When you update settings for a service, Cloud Map
-         * also updates the corresponding settings in all the records and health checks
-         * that were created by using the specified service.</p><p><h3>See Also:</h3>   <a
+         * service.</p> </li> </ul>  <p>You can't call <code>UpdateService</code> and
+         * update settings in the following scenarios:</p> <ul> <li> <p>When the service is
+         * associated with an HTTP namespace</p> </li> <li> <p>When the service is
+         * associated with a shared namespace and contains instances that were registered
+         * by Amazon Web Services accounts other than the account making the
+         * <code>UpdateService</code> call</p> </li> </ul>  <p>When you update
+         * settings for a service, Cloud Map also updates the corresponding settings in all
+         * the records and health checks that were created by using the specified
+         * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateService">AWS
          * API Reference</a></p>
          */

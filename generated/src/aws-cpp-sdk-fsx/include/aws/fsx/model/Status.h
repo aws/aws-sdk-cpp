@@ -21,7 +21,9 @@ namespace Model
     PENDING,
     COMPLETED,
     UPDATED_OPTIMIZING,
-    OPTIMIZING
+    OPTIMIZING,
+    PAUSED,
+    CANCELLED
   };
 
 namespace StatusMapper

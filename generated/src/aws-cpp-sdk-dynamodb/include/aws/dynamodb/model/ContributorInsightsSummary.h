@@ -7,6 +7,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/ContributorInsightsStatus.h>
+#include <aws/dynamodb/model/ContributorInsightsMode.h>
 #include <utility>
 
 namespace Aws
@@ -73,6 +74,18 @@ namespace Model
     inline void SetContributorInsightsStatus(ContributorInsightsStatus value) { m_contributorInsightsStatusHasBeenSet = true; m_contributorInsightsStatus = value; }
     inline ContributorInsightsSummary& WithContributorInsightsStatus(ContributorInsightsStatus value) { SetContributorInsightsStatus(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates the current mode of CloudWatch Contributor Insights, specifying
+     * whether it tracks all access and throttled events or throttled events only for
+     * the DynamoDB table or index.</p>
+     */
+    inline ContributorInsightsMode GetContributorInsightsMode() const { return m_contributorInsightsMode; }
+    inline bool ContributorInsightsModeHasBeenSet() const { return m_contributorInsightsModeHasBeenSet; }
+    inline void SetContributorInsightsMode(ContributorInsightsMode value) { m_contributorInsightsModeHasBeenSet = true; m_contributorInsightsMode = value; }
+    inline ContributorInsightsSummary& WithContributorInsightsMode(ContributorInsightsMode value) { SetContributorInsightsMode(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_tableName;
@@ -83,6 +96,9 @@ namespace Model
 
     ContributorInsightsStatus m_contributorInsightsStatus{ContributorInsightsStatus::NOT_SET};
     bool m_contributorInsightsStatusHasBeenSet = false;
+
+    ContributorInsightsMode m_contributorInsightsMode{ContributorInsightsMode::NOT_SET};
+    bool m_contributorInsightsModeHasBeenSet = false;
   };
 
 } // namespace Model

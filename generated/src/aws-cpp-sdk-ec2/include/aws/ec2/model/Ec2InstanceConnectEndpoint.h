@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/IpAddressType.h>
+#include <aws/ec2/model/InstanceConnectEndpointPublicDnsNames.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
 
@@ -247,6 +248,18 @@ namespace Model
     inline void SetIpAddressType(IpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
     inline Ec2InstanceConnectEndpoint& WithIpAddressType(IpAddressType value) { SetIpAddressType(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The public DNS names of the endpoint.</p>
+     */
+    inline const InstanceConnectEndpointPublicDnsNames& GetPublicDnsNames() const { return m_publicDnsNames; }
+    inline bool PublicDnsNamesHasBeenSet() const { return m_publicDnsNamesHasBeenSet; }
+    template<typename PublicDnsNamesT = InstanceConnectEndpointPublicDnsNames>
+    void SetPublicDnsNames(PublicDnsNamesT&& value) { m_publicDnsNamesHasBeenSet = true; m_publicDnsNames = std::forward<PublicDnsNamesT>(value); }
+    template<typename PublicDnsNamesT = InstanceConnectEndpointPublicDnsNames>
+    Ec2InstanceConnectEndpoint& WithPublicDnsNames(PublicDnsNamesT&& value) { SetPublicDnsNames(std::forward<PublicDnsNamesT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_ownerId;
@@ -296,6 +309,9 @@ namespace Model
 
     IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
     bool m_ipAddressTypeHasBeenSet = false;
+
+    InstanceConnectEndpointPublicDnsNames m_publicDnsNames;
+    bool m_publicDnsNamesHasBeenSet = false;
   };
 
 } // namespace Model

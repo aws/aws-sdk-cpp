@@ -34,6 +34,11 @@ DescribeConnectionsResult& DescribeConnectionsResult::operator =(const Aws::Amaz
     }
     m_connectionsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

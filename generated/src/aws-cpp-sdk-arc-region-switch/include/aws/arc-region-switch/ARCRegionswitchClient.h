@@ -23,7 +23,11 @@ namespace ARCRegionswitch
    * Region to another. You can test your plans in practice mode before using them in
    * a real recovery scenario.</p> <p>Region switch provides a structured approach to
    * multi-Region failover, helping you to meet your recovery time objectives (RTOs)
-   * and maintain business continuity during regional disruptions.</p>
+   * and maintain business continuity during regional disruptions.</p> <p>For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/r53recovery/latest/dg/region-switch.html">Region
+   * switch in ARC</a> in the <i>Amazon Application Recovery Controller User
+   * Guide</i>.</p>
    */
   class AWS_ARCREGIONSWITCH_API ARCRegionswitchClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ARCRegionswitchClient>
   {

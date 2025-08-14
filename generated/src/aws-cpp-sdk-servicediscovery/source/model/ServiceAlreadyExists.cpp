@@ -40,6 +40,11 @@ ServiceAlreadyExists& ServiceAlreadyExists::operator =(JsonView jsonValue)
     m_serviceId = jsonValue.GetString("ServiceId");
     m_serviceIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ServiceArn"))
+  {
+    m_serviceArn = jsonValue.GetString("ServiceArn");
+    m_serviceArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +67,12 @@ JsonValue ServiceAlreadyExists::Jsonize() const
   if(m_serviceIdHasBeenSet)
   {
    payload.WithString("ServiceId", m_serviceId);
+
+  }
+
+  if(m_serviceArnHasBeenSet)
+  {
+   payload.WithString("ServiceArn", m_serviceArn);
 
   }
 

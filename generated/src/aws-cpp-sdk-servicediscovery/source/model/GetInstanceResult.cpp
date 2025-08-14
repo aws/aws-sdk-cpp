@@ -25,6 +25,11 @@ GetInstanceResult::GetInstanceResult(const Aws::AmazonWebServiceResult<JsonValue
 GetInstanceResult& GetInstanceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("ResourceOwner"))
+  {
+    m_resourceOwner = jsonValue.GetString("ResourceOwner");
+    m_resourceOwnerHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Instance"))
   {
     m_instance = jsonValue.GetObject("Instance");

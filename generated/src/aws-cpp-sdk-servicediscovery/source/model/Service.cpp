@@ -35,6 +35,11 @@ Service& Service::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ResourceOwner"))
+  {
+    m_resourceOwner = jsonValue.GetString("ResourceOwner");
+    m_resourceOwnerHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
@@ -85,6 +90,11 @@ Service& Service::operator =(JsonView jsonValue)
     m_creatorRequestId = jsonValue.GetString("CreatorRequestId");
     m_creatorRequestIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("CreatedByAccount"))
+  {
+    m_createdByAccount = jsonValue.GetString("CreatedByAccount");
+    m_createdByAccountHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -101,6 +111,12 @@ JsonValue Service::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("Arn", m_arn);
+
+  }
+
+  if(m_resourceOwnerHasBeenSet)
+  {
+   payload.WithString("ResourceOwner", m_resourceOwner);
 
   }
 
@@ -159,6 +175,12 @@ JsonValue Service::Jsonize() const
   if(m_creatorRequestIdHasBeenSet)
   {
    payload.WithString("CreatorRequestId", m_creatorRequestId);
+
+  }
+
+  if(m_createdByAccountHasBeenSet)
+  {
+   payload.WithString("CreatedByAccount", m_createdByAccount);
 
   }
 

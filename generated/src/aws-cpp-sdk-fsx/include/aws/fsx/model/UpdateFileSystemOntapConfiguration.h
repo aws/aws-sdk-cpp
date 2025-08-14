@@ -92,8 +92,8 @@ namespace Model
      * configuration consists of an IOPS mode (<code>AUTOMATIC</code> or
      * <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code>
      * IOPS, the total number of SSD IOPS provisioned. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/increase-primary-storage.html">Updating
-     * SSD storage capacity and IOPS</a>.</p>
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/storage-capacity-and-IOPS.html">File
+     * system storage capacity and IOPS</a>.</p>
      */
     inline const DiskIopsConfiguration& GetDiskIopsConfiguration() const { return m_diskIopsConfiguration; }
     inline bool DiskIopsConfigurationHasBeenSet() const { return m_diskIopsConfigurationHasBeenSet; }

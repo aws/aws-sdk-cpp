@@ -8,6 +8,7 @@
 #include <aws/dynamodb/DynamoDBRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/ContributorInsightsAction.h>
+#include <aws/dynamodb/model/ContributorInsightsMode.h>
 #include <utility>
 
 namespace Aws
@@ -73,6 +74,17 @@ namespace Model
     inline void SetContributorInsightsAction(ContributorInsightsAction value) { m_contributorInsightsActionHasBeenSet = true; m_contributorInsightsAction = value; }
     inline UpdateContributorInsightsRequest& WithContributorInsightsAction(ContributorInsightsAction value) { SetContributorInsightsAction(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to track all access and throttled events or throttled
+     * events only for the DynamoDB table or index.</p>
+     */
+    inline ContributorInsightsMode GetContributorInsightsMode() const { return m_contributorInsightsMode; }
+    inline bool ContributorInsightsModeHasBeenSet() const { return m_contributorInsightsModeHasBeenSet; }
+    inline void SetContributorInsightsMode(ContributorInsightsMode value) { m_contributorInsightsModeHasBeenSet = true; m_contributorInsightsMode = value; }
+    inline UpdateContributorInsightsRequest& WithContributorInsightsMode(ContributorInsightsMode value) { SetContributorInsightsMode(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_tableName;
@@ -83,6 +95,9 @@ namespace Model
 
     ContributorInsightsAction m_contributorInsightsAction{ContributorInsightsAction::NOT_SET};
     bool m_contributorInsightsActionHasBeenSet = false;
+
+    ContributorInsightsMode m_contributorInsightsMode{ContributorInsightsMode::NOT_SET};
+    bool m_contributorInsightsModeHasBeenSet = false;
   };
 
 } // namespace Model

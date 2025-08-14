@@ -21,7 +21,10 @@ namespace Model
     create_failed,
     delete_in_progress,
     delete_complete,
-    delete_failed
+    delete_failed,
+    update_in_progress,
+    update_complete,
+    update_failed
   };
 
 namespace Ec2InstanceConnectEndpointStateMapper

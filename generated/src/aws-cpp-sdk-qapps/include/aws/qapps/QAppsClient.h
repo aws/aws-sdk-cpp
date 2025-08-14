@@ -265,7 +265,11 @@ namespace QApps
          * use this URL to set a default file for a <code>FileUploadCard</code> in a Q App
          * definition or to provide a file for a single Q App run. The <code>scope</code>
          * parameter determines how the file will be used, either at the app definition
-         * level or the app session level.</p><p><h3>See Also:</h3>   <a
+         * level or the app session level.</p>  <p>The IAM permissions are derived
+         * from the <code>qapps:ImportDocument</code> action. For more information on the
+         * IAM policy for Amazon Q Apps, see <a
+         * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/deploy-q-apps-iam-permissions.html">IAM
+         * permissions for using Amazon Q Apps</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/CreatePresignedUrl">AWS
          * API Reference</a></p>
          */

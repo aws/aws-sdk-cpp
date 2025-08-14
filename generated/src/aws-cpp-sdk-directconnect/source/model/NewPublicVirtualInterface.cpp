@@ -40,6 +40,11 @@ NewPublicVirtualInterface& NewPublicVirtualInterface::operator =(JsonView jsonVa
     m_asn = jsonValue.GetInteger("asn");
     m_asnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("asnLong"))
+  {
+    m_asnLong = jsonValue.GetInt64("asnLong");
+    m_asnLongHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("authKey"))
   {
     m_authKey = jsonValue.GetString("authKey");
@@ -100,6 +105,12 @@ JsonValue NewPublicVirtualInterface::Jsonize() const
   if(m_asnHasBeenSet)
   {
    payload.WithInteger("asn", m_asn);
+
+  }
+
+  if(m_asnLongHasBeenSet)
+  {
+   payload.WithInt64("asnLong", m_asnLong);
 
   }
 

@@ -61,6 +61,12 @@ Aws::String DiscoverInstancesRequest::SerializePayload() const
    payload.WithString("HealthStatus", HealthStatusFilterMapper::GetNameForHealthStatusFilter(m_healthStatus));
   }
 
+  if(m_ownerAccountHasBeenSet)
+  {
+   payload.WithString("OwnerAccount", m_ownerAccount);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

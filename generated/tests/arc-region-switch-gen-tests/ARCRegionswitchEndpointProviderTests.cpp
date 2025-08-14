@@ -74,7 +74,7 @@ protected:
 };
 
 Aws::UniquePtrSafeDeleted<Aws::Vector<ARCRegionswitchEndpointProviderEndpointTestCase>> ARCRegionswitchEndpointProviderTests::TEST_CASES;
-const size_t ARCRegionswitchEndpointProviderTests::TEST_CASES_SZ = 30;
+const size_t ARCRegionswitchEndpointProviderTests::TEST_CASES_SZ = 22;
 
 Aws::Vector<ARCRegionswitchEndpointProviderEndpointTestCase> ARCRegionswitchEndpointProviderTests::getTestCase() {
 
@@ -149,84 +149,12 @@ Aws::Vector<ARCRegionswitchEndpointProviderEndpointTestCase> ARCRegionswitchEndp
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 8*/
-  {"For region us-iso-east-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://arc-region-switch-fips.us-iso-east-1.c2s.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 9*/
-  {"For region us-iso-east-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://arc-region-switch.us-iso-east-1.c2s.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 10*/
-  {"For region us-isob-east-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://arc-region-switch-fips.us-isob-east-1.sc2s.sgov.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 11*/
-  {"For region us-isob-east-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://arc-region-switch.us-isob-east-1.sc2s.sgov.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 12*/
-  {"For region eu-isoe-west-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-isoe-west-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://arc-region-switch-fips.eu-isoe-west-1.cloud.adc-e.uk",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 13*/
-  {"For region eu-isoe-west-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-isoe-west-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://arc-region-switch.eu-isoe-west-1.cloud.adc-e.uk",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 14*/
-  {"For region us-isof-south-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-isof-south-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://arc-region-switch-fips.us-isof-south-1.csp.hci.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 15*/
-  {"For region us-isof-south-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-isof-south-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://arc-region-switch.us-isof-south-1.csp.hci.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 16*/
   {"Missing region", // documentation
     {}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Missing Region"} // expect
   },
-  /*TEST CASE 17*/
+  /*TEST CASE 9*/
   {"Control plane operation with DualStack in us-west-2 routes to us-east-1 DualStack endpoint", // documentation
     {EpParam("UseControlPlaneEndpoint", true), EpParam("Region", "us-west-2")}, // params
     {}, // tags
@@ -235,7 +163,7 @@ Aws::Vector<ARCRegionswitchEndpointProviderEndpointTestCase> ARCRegionswitchEndp
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 18*/
+  /*TEST CASE 10*/
   {"Control plane operation with endpoint set in us-east-1 routes to provided endpoint", // documentation
     {EpParam("UseControlPlaneEndpoint", true), EpParam("Endpoint", "https://amazonaws.com"), EpParam("Region", "us-east-1")}, // params
     {}, // tags
@@ -244,7 +172,7 @@ Aws::Vector<ARCRegionswitchEndpointProviderEndpointTestCase> ARCRegionswitchEndp
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 19*/
+  /*TEST CASE 11*/
   {"Control plane operation with endpoint set in us-west-2 routes to provided endpoint", // documentation
     {EpParam("UseControlPlaneEndpoint", true), EpParam("Endpoint", "https://amazonaws.com"), EpParam("Region", "us-west-2")}, // params
     {}, // tags
@@ -253,7 +181,7 @@ Aws::Vector<ARCRegionswitchEndpointProviderEndpointTestCase> ARCRegionswitchEndp
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 20*/
+  /*TEST CASE 12*/
   {"Control plane operation in us-west-2 (standard partition) routes to us-east-1", // documentation
     {EpParam("UseControlPlaneEndpoint", true), EpParam("Region", "us-west-2")}, // params
     {}, // tags
@@ -262,7 +190,7 @@ Aws::Vector<ARCRegionswitchEndpointProviderEndpointTestCase> ARCRegionswitchEndp
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 21*/
+  /*TEST CASE 13*/
   {"Control plane operation in cn-north-1 (China partition) routes to cn-north-1 with China DNS suffix", // documentation
     {EpParam("UseControlPlaneEndpoint", true), EpParam("Region", "cn-north-1")}, // params
     {}, // tags
@@ -271,7 +199,7 @@ Aws::Vector<ARCRegionswitchEndpointProviderEndpointTestCase> ARCRegionswitchEndp
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 22*/
+  /*TEST CASE 14*/
   {"Control plane operation in cn-northwest-1 (China partition) routes to cn-north-1 with China DNS suffix", // documentation
     {EpParam("UseControlPlaneEndpoint", true), EpParam("Region", "cn-northwest-1")}, // params
     {}, // tags
@@ -280,7 +208,7 @@ Aws::Vector<ARCRegionswitchEndpointProviderEndpointTestCase> ARCRegionswitchEndp
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 23*/
+  /*TEST CASE 15*/
   {"Control plane operation in us-gov-west-1 (GovCloud partition) routes to us-gov-west-1 with GovCloud DNS suffix", // documentation
     {EpParam("UseControlPlaneEndpoint", true), EpParam("Region", "us-gov-west-1")}, // params
     {}, // tags
@@ -289,7 +217,7 @@ Aws::Vector<ARCRegionswitchEndpointProviderEndpointTestCase> ARCRegionswitchEndp
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 24*/
+  /*TEST CASE 16*/
   {"Control plane operation in us-gov-east-1 (GovCloud partition) routes to us-gov-west-1 with GovCloud DNS suffix", // documentation
     {EpParam("UseControlPlaneEndpoint", true), EpParam("Region", "us-gov-east-1")}, // params
     {}, // tags
@@ -298,7 +226,7 @@ Aws::Vector<ARCRegionswitchEndpointProviderEndpointTestCase> ARCRegionswitchEndp
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 25*/
+  /*TEST CASE 17*/
   {"Control plane operation with FIPS in us-west-2 routes to us-east-1 FIPS endpoint", // documentation
     {EpParam("UseControlPlaneEndpoint", true), EpParam("UseFIPS", true), EpParam("Region", "us-west-2")}, // params
     {}, // tags
@@ -307,7 +235,7 @@ Aws::Vector<ARCRegionswitchEndpointProviderEndpointTestCase> ARCRegionswitchEndp
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 26*/
+  /*TEST CASE 18*/
   {"Control plane operation with FIPS in us-east-1 routes to us-east-1 FIPS endpoint", // documentation
     {EpParam("UseControlPlaneEndpoint", true), EpParam("UseFIPS", true), EpParam("Region", "us-east-1")}, // params
     {}, // tags
@@ -316,19 +244,19 @@ Aws::Vector<ARCRegionswitchEndpointProviderEndpointTestCase> ARCRegionswitchEndp
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 27*/
+  /*TEST CASE 19*/
   {"Control plane operation with FIPS in CN returns an error", // documentation
     {EpParam("UseControlPlaneEndpoint", true), EpParam("UseFIPS", true), EpParam("Region", "cn-north-1")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS is not supported in this partition"} // expect
   },
-  /*TEST CASE 28*/
+  /*TEST CASE 20*/
   {"Control plane operation with endpoint set using FIPS in us-east-1 errors", // documentation
     {EpParam("UseControlPlaneEndpoint", true), EpParam("UseFIPS", true), EpParam("Endpoint", "https://amazonaws.com"), EpParam("Region", "us-east-1")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
   },
-  /*TEST CASE 29*/
+  /*TEST CASE 21*/
   {"Control plane operation with endpoint set using FIPS in us-west-2 routes to provided endpoint", // documentation
     {EpParam("UseControlPlaneEndpoint", true), EpParam("UseFIPS", true), EpParam("Endpoint", "https://amazonaws.com"), EpParam("Region", "us-west-2")}, // params
     {}, // tags

@@ -36,9 +36,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The <code>HttpName</code> name of the namespace. It's found in the
-     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
-     * namespace.</p>
+     * <p>The <code>HttpName</code> name of the namespace. The <code>HttpName</code> is
+     * found in the <code>HttpProperties</code> member of the <code>Properties</code>
+     * member of the namespace.</p>
      */
     inline const Aws::String& GetNamespaceName() const { return m_namespaceName; }
     inline bool NamespaceNameHasBeenSet() const { return m_namespaceNameHasBeenSet; }
@@ -60,6 +60,24 @@ namespace Model
     template<typename ServiceNameT = Aws::String>
     DiscoverInstancesRevisionRequest& WithServiceName(ServiceNameT&& value) { SetServiceName(std::forward<ServiceNameT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Amazon Web Services account that owns the namespace associated
+     * with the instance, as specified in the namespace <code>ResourceOwner</code>
+     * field. For instances associated with namespaces that are shared with your
+     * account, you must specify an <code>OwnerAccount</code>. For more information
+     * about shared namespaces, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account
+     * Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+     */
+    inline const Aws::String& GetOwnerAccount() const { return m_ownerAccount; }
+    inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
+    template<typename OwnerAccountT = Aws::String>
+    void SetOwnerAccount(OwnerAccountT&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::forward<OwnerAccountT>(value); }
+    template<typename OwnerAccountT = Aws::String>
+    DiscoverInstancesRevisionRequest& WithOwnerAccount(OwnerAccountT&& value) { SetOwnerAccount(std::forward<OwnerAccountT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_namespaceName;
@@ -67,6 +85,9 @@ namespace Model
 
     Aws::String m_serviceName;
     bool m_serviceNameHasBeenSet = false;
+
+    Aws::String m_ownerAccount;
+    bool m_ownerAccountHasBeenSet = false;
   };
 
 } // namespace Model

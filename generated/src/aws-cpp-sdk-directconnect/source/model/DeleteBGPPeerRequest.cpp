@@ -28,6 +28,12 @@ Aws::String DeleteBGPPeerRequest::SerializePayload() const
 
   }
 
+  if(m_asnLongHasBeenSet)
+  {
+   payload.WithInt64("asnLong", m_asnLong);
+
+  }
+
   if(m_customerAddressHasBeenSet)
   {
    payload.WithString("customerAddress", m_customerAddress);

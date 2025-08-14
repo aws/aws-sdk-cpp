@@ -37,7 +37,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the service that you want to update.</p>
+     * <p>The ID or Amazon Resource Name (ARN) of the service that you want to update.
+     * If the namespace associated with the service is shared with your Amazon Web
+     * Services account, specify the service ARN. For more information about shared
+     * namespaces, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account
+     * Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i> </p>
      */
     inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }

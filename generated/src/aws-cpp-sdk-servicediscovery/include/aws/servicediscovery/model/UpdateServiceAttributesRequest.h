@@ -37,7 +37,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the service that you want to update.</p>
+     * <p>The ID or Amazon Resource Name (ARN) of the service that you want to update.
+     * For services created in a namespace shared with your Amazon Web Services
+     * account, specify the service ARN.</p>
      */
     inline const Aws::String& GetServiceId() const { return m_serviceId; }
     inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }
