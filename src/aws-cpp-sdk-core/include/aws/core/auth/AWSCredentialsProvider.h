@@ -74,7 +74,7 @@ namespace Aws
              * The core of the credential provider interface. Override this method to control how credentials are retrieved.
              */
             virtual AWSCredentials GetAWSCredentials() = 0;
-            
+
             /**
              * Interface that allows providers to modify the request during credential retrieval.
              */
