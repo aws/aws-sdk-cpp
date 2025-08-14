@@ -390,17 +390,6 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
         {
             newUri.SetAuthority(newEndpoint);
         }
-
-        // Save checksum information from the original request if we haven't already - safe to assume that the checksum has been finalized, since we have sent and received a response
-        RetryContext context = request.GetRetryContext();
-        if (context.m_requestHash == nullptr) {
-          auto originalRequestHash = httpRequest->GetRequestHash();
-          if (originalRequestHash.second != nullptr) {
-            context.m_requestHash = Aws::MakeShared<std::pair<Aws::String, std::shared_ptr<Aws::Utils::Crypto::Hash>>>(AWS_CLIENT_LOG_TAG, originalRequestHash);
-            request.SetRetryContext(context);
-          }
-        }
-
         httpRequest = CreateHttpRequest(newUri, method, request.GetResponseStreamFactory());
 
         httpRequest->SetHeaderValue(Http::SDK_INVOCATION_ID_HEADER, invocationId);
@@ -577,12 +566,6 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
         }
     }
 
-    // Track credential provider usage for User-Agent features
-    auto credentialsProvider = GetCredentialsProvider();
-    if (credentialsProvider) {
-        credentialsProvider->GetAWSCredentials(const_cast<Aws::AmazonWebServiceRequest&>(request));
-    }
-    
     auto signer = GetSignerByName(signerName);
     auto signedRequest = TracingUtils::MakeCallWithTiming<bool>([&]() -> bool {
             return signer->SignRequest(*httpRequest, signerRegionOverride, signerServiceNameOverride, true);
@@ -594,6 +577,12 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
     {
         AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, "Request signing failed. Returning error.");
         return HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::CLIENT_SIGNING_FAILURE, "", "SDK failed to sign the request", false/*retryable*/));
+    }
+
+    // Track credential provider usage for User-Agent features
+    auto credentialsProvider = GetCredentialsProvider();
+    if (credentialsProvider) {
+      credentialsProvider->GetAWSCredentials(const_cast<Aws::AmazonWebServiceRequest&>(request));
     }
 
     if (request.GetRequestSignedHandler())
@@ -941,13 +930,6 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, co
     httpRequest->SetContinueRequestHandle(request.GetContinueRequestHandler());
     httpRequest->SetServiceSpecificParameters(request.GetServiceSpecificParameters());
     request.AddQueryStringParameters(httpRequest->GetUri());
-
-    // check for retry context, if present use it
-    RetryContext context = request.GetRetryContext();
-    if (context.m_requestHash != nullptr) {
-      const auto hash = Aws::MakeShared<Aws::Utils::Crypto::PrecalculatedHash>(smithy::client::AWS_SMITHY_CLIENT_CHECKSUM, HashingUtils::Base64Encode(context.m_requestHash->second->GetHash().GetResult()));
-      httpRequest->SetRequestHash(context.m_requestHash->first, hash);
-    }
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, long long expirationInSeconds, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> serviceSpecificParameter)
@@ -1038,37 +1020,38 @@ std::shared_ptr<Aws::Http::HttpResponse> AWSClient::MakeHttpRequest(std::shared_
     return m_httpClient->MakeRequest(request, m_readRateLimiter.get(), m_writeRateLimiter.get());
 }
 
-void AWSClient::AppendRecursionDetectionHeader(std::shared_ptr<Aws::Http::HttpRequest> ioRequest) {
-  if(!ioRequest || ioRequest->HasHeader(Aws::Http::X_AMZN_TRACE_ID_HEADER)) {
-    return;
-  }
-  Aws::String awsLambdaFunctionName = Aws::Environment::GetEnv(AWS_LAMBDA_FUNCTION_NAME);
-  if(awsLambdaFunctionName.empty()) {
-    return;
-  }
-  Aws::String xAmznTraceIdVal = Aws::Environment::GetEnv(X_AMZN_TRACE_ID);
-  if(xAmznTraceIdVal.empty()) {
-    return;
-  }
-
-  // Escape all non-printable ASCII characters by percent encoding
-  Aws::OStringStream xAmznTraceIdValEncodedStr;
-  for(const char ch : xAmznTraceIdVal)
-  {
-    if (ch >= 0x20 && ch <= 0x7e) // ascii chars [32-126] or [' ' to '~'] are not escaped
-    {
-      xAmznTraceIdValEncodedStr << ch;
+void AWSClient::AppendRecursionDetectionHeader(std::shared_ptr<Aws::Http::HttpRequest> ioRequest)
+{
+    if(!ioRequest || ioRequest->HasHeader(Aws::Http::X_AMZN_TRACE_ID_HEADER)) {
+        return;
     }
-    else
-    {
-      // A percent-encoded octet is encoded as a character triplet
-      xAmznTraceIdValEncodedStr << '%' // consisting of the percent character "%"
-                                << std::hex << std::setfill('0') << std::setw(2) << std::uppercase
-                                << (size_t) ch //followed by the two hexadecimal digits representing that octet's numeric value
-                                << std::dec << std::setfill(' ') << std::setw(0) << std::nouppercase;
+    Aws::String awsLambdaFunctionName = Aws::Environment::GetEnv(AWS_LAMBDA_FUNCTION_NAME);
+    if(awsLambdaFunctionName.empty()) {
+        return;
     }
-  }
-  xAmznTraceIdVal = xAmznTraceIdValEncodedStr.str();
+    Aws::String xAmznTraceIdVal = Aws::Environment::GetEnv(X_AMZN_TRACE_ID);
+    if(xAmznTraceIdVal.empty()) {
+        return;
+    }
 
-  ioRequest->SetHeaderValue(Aws::Http::X_AMZN_TRACE_ID_HEADER, xAmznTraceIdVal);
+    // Escape all non-printable ASCII characters by percent encoding
+    Aws::OStringStream xAmznTraceIdValEncodedStr;
+    for(const char ch : xAmznTraceIdVal)
+    {
+        if (ch >= 0x20 && ch <= 0x7e) // ascii chars [32-126] or [' ' to '~'] are not escaped
+        {
+            xAmznTraceIdValEncodedStr << ch;
+        }
+        else
+        {
+            // A percent-encoded octet is encoded as a character triplet
+            xAmznTraceIdValEncodedStr << '%' // consisting of the percent character "%"
+                                      << std::hex << std::setfill('0') << std::setw(2) << std::uppercase
+                                      << (size_t) ch //followed by the two hexadecimal digits representing that octet's numeric value
+                                      << std::dec << std::setfill(' ') << std::setw(0) << std::nouppercase;
+        }
+    }
+    xAmznTraceIdVal = xAmznTraceIdValEncodedStr.str();
+
+    ioRequest->SetHeaderValue(Aws::Http::X_AMZN_TRACE_ID_HEADER, xAmznTraceIdVal);
 }
