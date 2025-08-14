@@ -22,18 +22,17 @@ using namespace Aws::Http;
 
 static const char ALLOCATION_TAG[] = "CredentialTrackingTest";
 
-// Custom client that uses default credential provider chain for testing
+// Custom client that uses environment credential provider for testing
 class CredentialTestingClient : public Aws::Client::AWSClient
 {
 public:
     explicit CredentialTestingClient(const Aws::Client::ClientConfiguration& configuration)
         : AWSClient(configuration,
                    Aws::MakeShared<Aws::Client::AWSAuthV4Signer>(ALLOCATION_TAG,
-                       Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                       Aws::MakeShared<EnvironmentAWSCredentialsProvider>(ALLOCATION_TAG),
                        "service", configuration.region),
                    Aws::MakeShared<MockAWSErrorMarshaller>(ALLOCATION_TAG))
     {
-        // Client created with DefaultAWSCredentialsProviderChain
     }
 
     Aws::Client::HttpResponseOutcome MakeRequest(const Aws::AmazonWebServiceRequest& request)
