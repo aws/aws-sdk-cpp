@@ -11,8 +11,6 @@
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/auth/AWSAuthSigner.h>
-#include <aws/core/platform/Environment.h>
 #include <aws/core/utils/StringUtils.h>
 #include <iostream>
 
