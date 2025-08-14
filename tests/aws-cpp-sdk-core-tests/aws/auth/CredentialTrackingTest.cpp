@@ -8,11 +8,9 @@
 #include <aws/testing/mocks/aws/client/MockAWSClient.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
-#include <aws/core/auth/AWSCredentialsProviderChain.h>
-#include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/StringUtils.h>
-#include <iostream>
+#include <aws/core/platform/Environment.h>
 
 using namespace Aws::Client;
 using namespace Aws::Auth;
@@ -20,34 +18,7 @@ using namespace Aws::Http;
 
 static const char ALLOCATION_TAG[] = "CredentialTrackingTest";
 
-// Custom client that uses environment credential provider for testing
-class CredentialTestingClient : public Aws::Client::AWSClient
-{
-public:
-    explicit CredentialTestingClient(const Aws::Client::ClientConfiguration& configuration)
-        : AWSClient(configuration,
-                   Aws::MakeShared<Aws::Client::AWSAuthV4Signer>(ALLOCATION_TAG,
-                       Aws::MakeShared<EnvironmentAWSCredentialsProvider>(ALLOCATION_TAG),
-                       "service", configuration.region),
-                   Aws::MakeShared<MockAWSErrorMarshaller>(ALLOCATION_TAG))
-    {
-    }
 
-    Aws::Client::HttpResponseOutcome MakeRequest(const Aws::AmazonWebServiceRequest& request)
-    {
-        auto uri = Aws::Http::URI("https://test.com");
-        return AWSClient::AttemptExhaustively(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-    }
-
-    const char* GetServiceClientName() const override { return "CredentialTestingClient"; }
-
-protected:
-    Aws::Client::AWSError<Aws::Client::CoreErrors> BuildAWSError(const std::shared_ptr<Aws::Http::HttpResponse>& response) const override
-    {
-        AWS_UNREFERENCED_PARAM(response);
-        return Aws::Client::AWSError<Aws::Client::CoreErrors>(Aws::Client::CoreErrors::UNKNOWN, false);
-    }
-};
 
 class CredentialTrackingTest : public Aws::Testing::AwsCppSdkGTestSuite
 {
@@ -75,7 +46,6 @@ protected:
 
 TEST_F(CredentialTrackingTest, TestEnvironmentCredentialsTracking)
 {
-    // Set environment variables
     Aws::Environment::SetEnv("AWS_ACCESS_KEY_ID", "test-access-key", 1);
     Aws::Environment::SetEnv("AWS_SECRET_ACCESS_KEY", "test-secret-key", 1);
 
@@ -94,20 +64,22 @@ TEST_F(CredentialTrackingTest, TestEnvironmentCredentialsTracking)
     Aws::Client::ClientConfiguration clientConfig(cfgInit);
     clientConfig.region = Aws::Region::US_EAST_1;
 
-    // Create credential testing client that uses default provider chain
-    CredentialTestingClient client(clientConfig);
-
-    // Create mock request
+    // Create client with environment credentials signer
+    Aws::Client::AWSClient client(clientConfig,
+        Aws::MakeShared<Aws::Client::AWSAuthV4Signer>(ALLOCATION_TAG,
+            Aws::MakeShared<EnvironmentAWSCredentialsProvider>(ALLOCATION_TAG),
+            "service", clientConfig.region),
+        Aws::MakeShared<MockAWSErrorMarshaller>(ALLOCATION_TAG));
+    
     AmazonWebServiceRequestMock mockRequest;
-
-    // Make request
-    auto outcome = client.MakeRequest(mockRequest);
-    ASSERT_TRUE(outcome.IsSuccess());
+    auto outcome = client.AttemptExhaustively(Aws::Http::URI("https://test.com"), mockRequest, 
+                                             Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+    AWS_ASSERT_SUCCESS(outcome);
 
     // Verify User-Agent contains environment credentials tracking
     auto lastRequest = mockHttpClient->GetMostRecentHttpRequest();
-    EXPECT_TRUE(lastRequest.HasHeader(Aws::Http::USER_AGENT_HEADER));
-    const auto& userAgent = lastRequest.GetHeaderValue(Aws::Http::USER_AGENT_HEADER);
+    EXPECT_TRUE(lastRequest.HasUserAgent());
+    const auto& userAgent = lastRequest.GetUserAgent();
     EXPECT_FALSE(userAgent.empty());
 
     const auto userAgentParsed = Aws::Utils::StringUtils::Split(userAgent, ' ');
@@ -118,7 +90,6 @@ TEST_F(CredentialTrackingTest, TestEnvironmentCredentialsTracking)
 
     EXPECT_TRUE(businessMetrics != userAgentParsed.end());
 
-    // Clean up environment variables
     Aws::Environment::UnSetEnv("AWS_ACCESS_KEY_ID");
     Aws::Environment::UnSetEnv("AWS_SECRET_ACCESS_KEY");
 }
