@@ -19,9 +19,12 @@
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/client/RetryStrategy.h>
 #include <memory>
+#include <functional>
 
 namespace Aws
 {
+    class AmazonWebServiceRequest;
+    
     namespace Client
     {
         struct ClientConfiguration;
@@ -31,17 +34,6 @@ namespace Aws
         constexpr int REFRESH_THRESHOLD = 1000 * 60 * 5;
 
         constexpr int AWS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD = 5 * 1000;
-
-        /**
-         * Enum to identify credential provider types for tracking purposes
-         */
-        enum class CredentialProviderType
-        {
-            DEFAULT,
-            ENVIRONMENT,
-            // ... add other types as needed
-
-        };
 
         /**
          * Returns the full path of the config file.
@@ -73,15 +65,9 @@ namespace Aws
              * Initializes provider. Sets last Loaded time count to 0, forcing a refresh on the
              * first call to GetAWSCredentials.
              */
-            AWSCredentialsProvider(CredentialProviderType providerType = CredentialProviderType::DEFAULT)
-                : m_lastLoadedMs(0), m_providerType(providerType)
+            AWSCredentialsProvider() : m_lastLoadedMs(0)
             {
             }
-
-            /**
-             * Get the provider type for tracking purposes
-             */
-            CredentialProviderType GetProviderType() const { return m_providerType; }
 
             virtual ~AWSCredentialsProvider() = default;
 
@@ -89,6 +75,17 @@ namespace Aws
              * The core of the credential provider interface. Override this method to control how credentials are retrieved.
              */
             virtual AWSCredentials GetAWSCredentials() = 0;
+            
+            /**
+             * Set callback for credential usage tracking
+             */
+            virtual void SetCredentialTrackingCallback(std::function<void()> callback) { m_trackingCallback = callback; }
+            
+        protected:
+            /**
+             * Call this when credentials are successfully retrieved for tracking
+             */
+            void NotifyCredentialUsage() { if (m_trackingCallback) m_trackingCallback(); }
 
         protected:
             /**
@@ -100,7 +97,7 @@ namespace Aws
             mutable Aws::Utils::Threading::ReaderWriterLock m_reloadLock;
         private:
             long long m_lastLoadedMs;
-            CredentialProviderType m_providerType;
+            std::function<void()> m_trackingCallback;
         };
 
         /**
@@ -114,7 +111,6 @@ namespace Aws
              * Returns empty credentials object.
              */
             inline AWSCredentials GetAWSCredentials() override { return AWSCredentials(); }
-
         };
 
         /**
@@ -161,7 +157,7 @@ namespace Aws
             /**
             * Initializes environment credentials provider
             */
-            EnvironmentAWSCredentialsProvider() : AWSCredentialsProvider(CredentialProviderType::ENVIRONMENT) {}
+            EnvironmentAWSCredentialsProvider() = default;
             
             /**
             * Reads AWS credentials from the Environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY and AWS_SESSION_TOKEN if they exist. If they

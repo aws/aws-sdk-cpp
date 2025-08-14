@@ -27,7 +27,12 @@ namespace Aws
              * When a credentials provider in the chain returns empty credentials,
              * We go on to the next provider until we have either exhausted the installed providers in the chain or something returns non-empty credentials.
              */
-            virtual AWSCredentials GetAWSCredentials();
+            AWSCredentials GetAWSCredentials() override;
+            
+            /**
+             * Override to store and forward callback to providers in chain
+             */
+            void SetCredentialTrackingCallback(std::function<void()> callback) override { m_chainTrackingCallback = callback; }
 
             /**
              * Gets all providers stored in this chain.
@@ -50,6 +55,7 @@ namespace Aws
             Aws::Vector<std::shared_ptr<AWSCredentialsProvider> > m_providerChain;
             std::shared_ptr<AWSCredentialsProvider> m_cachedProvider;
             mutable Aws::Utils::Threading::ReaderWriterLock m_cachedProviderLock;
+            std::function<void()> m_chainTrackingCallback;
         };
 
         /**

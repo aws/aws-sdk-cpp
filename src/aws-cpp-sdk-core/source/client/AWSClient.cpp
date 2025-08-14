@@ -1078,25 +1078,19 @@ void AWSClient::TrackCredentialProviderUsage(const Aws::AmazonWebServiceRequest&
         return;
     }
 
-    // Get the provider type
-    auto providerType = credentialsProvider->GetProviderType();
-
-    switch (providerType)
-    {
-        case Aws::Auth::CredentialProviderType::ENVIRONMENT:
-            // Environment credentials are being used
+    // Set up callback for credential tracking
+    if (credentialsProvider) {
+        credentialsProvider->SetCredentialTrackingCallback([&request]() {
             request.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS);
             AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Added CREDENTIALS_ENV_VARS to User-Agent");
-            break;
+        });
+    }
+    
+    // Trigger credential retrieval to enable tracking
+    if (credentialsProvider) {
+        credentialsProvider->GetAWSCredentials();
         
-        // Add more provider types as needed
-        default:
-            // For provider chains or unknown types, check environment variables as fallback
-            if (!Aws::Environment::GetEnv("AWS_ACCESS_KEY_ID").empty())
-            {
-                request.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS);
-                AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Added CREDENTIALS_ENV_VARS to User-Agent (fallback detection)");
-            }
-            break;
+        // Clear callback
+        credentialsProvider->SetCredentialTrackingCallback(nullptr);
     }
 }

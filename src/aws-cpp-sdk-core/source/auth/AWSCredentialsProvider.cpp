@@ -18,6 +18,8 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/AmazonWebServiceRequest.h>
+#include <aws/core/client/UserAgent.h>
 #include <cstdlib>
 #include <fstream>
 #include <string.h>
@@ -102,11 +104,12 @@ AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials() //pass in 
             AWS_LOGSTREAM_DEBUG(ENVIRONMENT_LOG_TAG, "Found accountId");
         }
     }
-
+    
     if (!credentials.IsEmpty()) {
-      // TODO: this will work
-      // TODO: how does request get here?????
-      // request.AddFeature(ENV_VAR)
+        // TODO: this will work
+        // TODO: how does request get here?????
+        // request.AddFeature(ENV_VAR)
+        NotifyCredentialUsage();
     }
 
     return credentials;
