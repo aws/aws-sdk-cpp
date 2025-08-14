@@ -40,6 +40,11 @@ ContributorInsightsSummary& ContributorInsightsSummary::operator =(JsonView json
     m_contributorInsightsStatus = ContributorInsightsStatusMapper::GetContributorInsightsStatusForName(jsonValue.GetString("ContributorInsightsStatus"));
     m_contributorInsightsStatusHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ContributorInsightsMode"))
+  {
+    m_contributorInsightsMode = ContributorInsightsModeMapper::GetContributorInsightsModeForName(jsonValue.GetString("ContributorInsightsMode"));
+    m_contributorInsightsModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +67,11 @@ JsonValue ContributorInsightsSummary::Jsonize() const
   if(m_contributorInsightsStatusHasBeenSet)
   {
    payload.WithString("ContributorInsightsStatus", ContributorInsightsStatusMapper::GetNameForContributorInsightsStatus(m_contributorInsightsStatus));
+  }
+
+  if(m_contributorInsightsModeHasBeenSet)
+  {
+   payload.WithString("ContributorInsightsMode", ContributorInsightsModeMapper::GetNameForContributorInsightsMode(m_contributorInsightsMode));
   }
 
   return payload;

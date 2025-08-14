@@ -55,6 +55,7 @@
 #include <aws/workspaces/model/DescribeConnectClientAddInsResult.h>
 #include <aws/workspaces/model/DescribeConnectionAliasPermissionsResult.h>
 #include <aws/workspaces/model/DescribeConnectionAliasesResult.h>
+#include <aws/workspaces/model/DescribeCustomWorkspaceImageImportResult.h>
 #include <aws/workspaces/model/DescribeImageAssociationsResult.h>
 #include <aws/workspaces/model/DescribeIpGroupsResult.h>
 #include <aws/workspaces/model/DescribeTagsResult.h>
@@ -73,6 +74,7 @@
 #include <aws/workspaces/model/DisassociateWorkspaceApplicationResult.h>
 #include <aws/workspaces/model/GetAccountLinkResult.h>
 #include <aws/workspaces/model/ImportClientBrandingResult.h>
+#include <aws/workspaces/model/ImportCustomWorkspaceImageResult.h>
 #include <aws/workspaces/model/ImportWorkspaceImageResult.h>
 #include <aws/workspaces/model/ListAccountLinksResult.h>
 #include <aws/workspaces/model/ListAvailableManagementCidrRangesResult.h>
@@ -201,6 +203,7 @@ namespace Aws
       class DescribeConnectClientAddInsRequest;
       class DescribeConnectionAliasPermissionsRequest;
       class DescribeConnectionAliasesRequest;
+      class DescribeCustomWorkspaceImageImportRequest;
       class DescribeImageAssociationsRequest;
       class DescribeIpGroupsRequest;
       class DescribeTagsRequest;
@@ -219,6 +222,7 @@ namespace Aws
       class DisassociateWorkspaceApplicationRequest;
       class GetAccountLinkRequest;
       class ImportClientBrandingRequest;
+      class ImportCustomWorkspaceImageRequest;
       class ImportWorkspaceImageRequest;
       class ListAccountLinksRequest;
       class ListAvailableManagementCidrRangesRequest;
@@ -293,6 +297,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeConnectClientAddInsResult, WorkSpacesError> DescribeConnectClientAddInsOutcome;
       typedef Aws::Utils::Outcome<DescribeConnectionAliasPermissionsResult, WorkSpacesError> DescribeConnectionAliasPermissionsOutcome;
       typedef Aws::Utils::Outcome<DescribeConnectionAliasesResult, WorkSpacesError> DescribeConnectionAliasesOutcome;
+      typedef Aws::Utils::Outcome<DescribeCustomWorkspaceImageImportResult, WorkSpacesError> DescribeCustomWorkspaceImageImportOutcome;
       typedef Aws::Utils::Outcome<DescribeImageAssociationsResult, WorkSpacesError> DescribeImageAssociationsOutcome;
       typedef Aws::Utils::Outcome<DescribeIpGroupsResult, WorkSpacesError> DescribeIpGroupsOutcome;
       typedef Aws::Utils::Outcome<DescribeTagsResult, WorkSpacesError> DescribeTagsOutcome;
@@ -311,6 +316,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DisassociateWorkspaceApplicationResult, WorkSpacesError> DisassociateWorkspaceApplicationOutcome;
       typedef Aws::Utils::Outcome<GetAccountLinkResult, WorkSpacesError> GetAccountLinkOutcome;
       typedef Aws::Utils::Outcome<ImportClientBrandingResult, WorkSpacesError> ImportClientBrandingOutcome;
+      typedef Aws::Utils::Outcome<ImportCustomWorkspaceImageResult, WorkSpacesError> ImportCustomWorkspaceImageOutcome;
       typedef Aws::Utils::Outcome<ImportWorkspaceImageResult, WorkSpacesError> ImportWorkspaceImageOutcome;
       typedef Aws::Utils::Outcome<ListAccountLinksResult, WorkSpacesError> ListAccountLinksOutcome;
       typedef Aws::Utils::Outcome<ListAvailableManagementCidrRangesResult, WorkSpacesError> ListAvailableManagementCidrRangesOutcome;
@@ -385,6 +391,7 @@ namespace Aws
       typedef std::future<DescribeConnectClientAddInsOutcome> DescribeConnectClientAddInsOutcomeCallable;
       typedef std::future<DescribeConnectionAliasPermissionsOutcome> DescribeConnectionAliasPermissionsOutcomeCallable;
       typedef std::future<DescribeConnectionAliasesOutcome> DescribeConnectionAliasesOutcomeCallable;
+      typedef std::future<DescribeCustomWorkspaceImageImportOutcome> DescribeCustomWorkspaceImageImportOutcomeCallable;
       typedef std::future<DescribeImageAssociationsOutcome> DescribeImageAssociationsOutcomeCallable;
       typedef std::future<DescribeIpGroupsOutcome> DescribeIpGroupsOutcomeCallable;
       typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
@@ -403,6 +410,7 @@ namespace Aws
       typedef std::future<DisassociateWorkspaceApplicationOutcome> DisassociateWorkspaceApplicationOutcomeCallable;
       typedef std::future<GetAccountLinkOutcome> GetAccountLinkOutcomeCallable;
       typedef std::future<ImportClientBrandingOutcome> ImportClientBrandingOutcomeCallable;
+      typedef std::future<ImportCustomWorkspaceImageOutcome> ImportCustomWorkspaceImageOutcomeCallable;
       typedef std::future<ImportWorkspaceImageOutcome> ImportWorkspaceImageOutcomeCallable;
       typedef std::future<ListAccountLinksOutcome> ListAccountLinksOutcomeCallable;
       typedef std::future<ListAvailableManagementCidrRangesOutcome> ListAvailableManagementCidrRangesOutcomeCallable;
@@ -480,6 +488,7 @@ namespace Aws
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeConnectClientAddInsRequest&, const Model::DescribeConnectClientAddInsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConnectClientAddInsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeConnectionAliasPermissionsRequest&, const Model::DescribeConnectionAliasPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConnectionAliasPermissionsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeConnectionAliasesRequest&, const Model::DescribeConnectionAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConnectionAliasesResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::DescribeCustomWorkspaceImageImportRequest&, const Model::DescribeCustomWorkspaceImageImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCustomWorkspaceImageImportResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeImageAssociationsRequest&, const Model::DescribeImageAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImageAssociationsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeIpGroupsRequest&, const Model::DescribeIpGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIpGroupsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeTagsRequest&, const Model::DescribeTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTagsResponseReceivedHandler;
@@ -498,6 +507,7 @@ namespace Aws
     typedef std::function<void(const WorkSpacesClient*, const Model::DisassociateWorkspaceApplicationRequest&, const Model::DisassociateWorkspaceApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateWorkspaceApplicationResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::GetAccountLinkRequest&, const Model::GetAccountLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountLinkResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ImportClientBrandingRequest&, const Model::ImportClientBrandingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportClientBrandingResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::ImportCustomWorkspaceImageRequest&, const Model::ImportCustomWorkspaceImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportCustomWorkspaceImageResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ImportWorkspaceImageRequest&, const Model::ImportWorkspaceImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportWorkspaceImageResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ListAccountLinksRequest&, const Model::ListAccountLinksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountLinksResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ListAvailableManagementCidrRangesRequest&, const Model::ListAvailableManagementCidrRangesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAvailableManagementCidrRangesResponseReceivedHandler;

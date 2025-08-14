@@ -35,6 +35,11 @@ ServiceSummary& ServiceSummary::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ResourceOwner"))
+  {
+    m_resourceOwner = jsonValue.GetString("ResourceOwner");
+    m_resourceOwnerHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
@@ -75,6 +80,11 @@ ServiceSummary& ServiceSummary::operator =(JsonView jsonValue)
     m_createDate = jsonValue.GetDouble("CreateDate");
     m_createDateHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("CreatedByAccount"))
+  {
+    m_createdByAccount = jsonValue.GetString("CreatedByAccount");
+    m_createdByAccountHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -91,6 +101,12 @@ JsonValue ServiceSummary::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("Arn", m_arn);
+
+  }
+
+  if(m_resourceOwnerHasBeenSet)
+  {
+   payload.WithString("ResourceOwner", m_resourceOwner);
 
   }
 
@@ -138,6 +154,12 @@ JsonValue ServiceSummary::Jsonize() const
   if(m_createDateHasBeenSet)
   {
    payload.WithDouble("CreateDate", m_createDate.SecondsWithMSPrecision());
+  }
+
+  if(m_createdByAccountHasBeenSet)
+  {
+   payload.WithString("CreatedByAccount", m_createdByAccount);
+
   }
 
   return payload;

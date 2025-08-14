@@ -30,6 +30,11 @@ ServiceAttributes& ServiceAttributes::operator =(JsonView jsonValue)
     m_serviceArn = jsonValue.GetString("ServiceArn");
     m_serviceArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ResourceOwner"))
+  {
+    m_resourceOwner = jsonValue.GetString("ResourceOwner");
+    m_resourceOwnerHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
@@ -49,6 +54,12 @@ JsonValue ServiceAttributes::Jsonize() const
   if(m_serviceArnHasBeenSet)
   {
    payload.WithString("ServiceArn", m_serviceArn);
+
+  }
+
+  if(m_resourceOwnerHasBeenSet)
+  {
+   payload.WithString("ResourceOwner", m_resourceOwner);
 
   }
 

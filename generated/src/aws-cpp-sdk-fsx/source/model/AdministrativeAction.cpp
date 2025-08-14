@@ -78,6 +78,11 @@ AdministrativeAction& AdministrativeAction::operator =(JsonView jsonValue)
     m_remainingTransferBytes = jsonValue.GetInt64("RemainingTransferBytes");
     m_remainingTransferBytesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Message"))
+  {
+    m_message = jsonValue.GetString("Message");
+    m_messageHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -139,6 +144,12 @@ JsonValue AdministrativeAction::Jsonize() const
   if(m_remainingTransferBytesHasBeenSet)
   {
    payload.WithInt64("RemainingTransferBytes", m_remainingTransferBytes);
+
+  }
+
+  if(m_messageHasBeenSet)
+  {
+   payload.WithString("Message", m_message);
 
   }
 

@@ -538,6 +538,7 @@
 #include <aws/ec2/model/ModifyFpgaImageAttributeResponse.h>
 #include <aws/ec2/model/ModifyHostsResponse.h>
 #include <aws/ec2/model/ModifyInstanceCapacityReservationAttributesResponse.h>
+#include <aws/ec2/model/ModifyInstanceConnectEndpointResponse.h>
 #include <aws/ec2/model/ModifyInstanceCpuOptionsResponse.h>
 #include <aws/ec2/model/ModifyInstanceCreditSpecificationResponse.h>
 #include <aws/ec2/model/ModifyInstanceEventStartTimeResponse.h>
@@ -1459,6 +1460,7 @@ namespace Aws
       class ModifyImageAttributeRequest;
       class ModifyInstanceAttributeRequest;
       class ModifyInstanceCapacityReservationAttributesRequest;
+      class ModifyInstanceConnectEndpointRequest;
       class ModifyInstanceCpuOptionsRequest;
       class ModifyInstanceCreditSpecificationRequest;
       class ModifyInstanceEventStartTimeRequest;
@@ -2150,6 +2152,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ModifyImageAttributeOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ModifyInstanceAttributeOutcome;
       typedef Aws::Utils::Outcome<ModifyInstanceCapacityReservationAttributesResponse, EC2Error> ModifyInstanceCapacityReservationAttributesOutcome;
+      typedef Aws::Utils::Outcome<ModifyInstanceConnectEndpointResponse, EC2Error> ModifyInstanceConnectEndpointOutcome;
       typedef Aws::Utils::Outcome<ModifyInstanceCpuOptionsResponse, EC2Error> ModifyInstanceCpuOptionsOutcome;
       typedef Aws::Utils::Outcome<ModifyInstanceCreditSpecificationResponse, EC2Error> ModifyInstanceCreditSpecificationOutcome;
       typedef Aws::Utils::Outcome<ModifyInstanceEventStartTimeResponse, EC2Error> ModifyInstanceEventStartTimeOutcome;
@@ -2841,6 +2844,7 @@ namespace Aws
       typedef std::future<ModifyImageAttributeOutcome> ModifyImageAttributeOutcomeCallable;
       typedef std::future<ModifyInstanceAttributeOutcome> ModifyInstanceAttributeOutcomeCallable;
       typedef std::future<ModifyInstanceCapacityReservationAttributesOutcome> ModifyInstanceCapacityReservationAttributesOutcomeCallable;
+      typedef std::future<ModifyInstanceConnectEndpointOutcome> ModifyInstanceConnectEndpointOutcomeCallable;
       typedef std::future<ModifyInstanceCpuOptionsOutcome> ModifyInstanceCpuOptionsOutcomeCallable;
       typedef std::future<ModifyInstanceCreditSpecificationOutcome> ModifyInstanceCreditSpecificationOutcomeCallable;
       typedef std::future<ModifyInstanceEventStartTimeOutcome> ModifyInstanceEventStartTimeOutcomeCallable;
@@ -3535,6 +3539,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::ModifyImageAttributeRequest&, const Model::ModifyImageAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyImageAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceAttributeRequest&, const Model::ModifyInstanceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceCapacityReservationAttributesRequest&, const Model::ModifyInstanceCapacityReservationAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceCapacityReservationAttributesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyInstanceConnectEndpointRequest&, const Model::ModifyInstanceConnectEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceConnectEndpointResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceCpuOptionsRequest&, const Model::ModifyInstanceCpuOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceCpuOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceCreditSpecificationRequest&, const Model::ModifyInstanceCreditSpecificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceCreditSpecificationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceEventStartTimeRequest&, const Model::ModifyInstanceEventStartTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceEventStartTimeResponseReceivedHandler;

@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/fsx/model/Status.h>
 #include <aws/fsx/model/AdministrativeActionFailureDetails.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSAllocator.h>
 #include <utility>
 
@@ -187,6 +188,16 @@ namespace Model
     inline void SetRemainingTransferBytes(long long value) { m_remainingTransferBytesHasBeenSet = true; m_remainingTransferBytes = value; }
     inline AdministrativeAction& WithRemainingTransferBytes(long long value) { SetRemainingTransferBytes(value); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const Aws::String& GetMessage() const { return m_message; }
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    AdministrativeAction& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
+    ///@}
   private:
 
     AdministrativeActionType m_administrativeActionType{AdministrativeActionType::NOT_SET};
@@ -218,6 +229,9 @@ namespace Model
 
     long long m_remainingTransferBytes{0};
     bool m_remainingTransferBytesHasBeenSet = false;
+
+    Aws::String m_message;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

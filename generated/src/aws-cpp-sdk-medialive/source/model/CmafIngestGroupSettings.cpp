@@ -109,6 +109,15 @@ CmafIngestGroupSettings& CmafIngestGroupSettings::operator =(JsonView jsonValue)
     m_timedMetadataPassthrough = CmafTimedMetadataPassthroughMapper::GetCmafTimedMetadataPassthroughForName(jsonValue.GetString("timedMetadataPassthrough"));
     m_timedMetadataPassthroughHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("additionalDestinations"))
+  {
+    Aws::Utils::Array<JsonView> additionalDestinationsJsonList = jsonValue.GetArray("additionalDestinations");
+    for(unsigned additionalDestinationsIndex = 0; additionalDestinationsIndex < additionalDestinationsJsonList.GetLength(); ++additionalDestinationsIndex)
+    {
+      m_additionalDestinations.push_back(additionalDestinationsJsonList[additionalDestinationsIndex].AsObject());
+    }
+    m_additionalDestinationsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -208,6 +217,17 @@ JsonValue CmafIngestGroupSettings::Jsonize() const
   if(m_timedMetadataPassthroughHasBeenSet)
   {
    payload.WithString("timedMetadataPassthrough", CmafTimedMetadataPassthroughMapper::GetNameForCmafTimedMetadataPassthrough(m_timedMetadataPassthrough));
+  }
+
+  if(m_additionalDestinationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> additionalDestinationsJsonList(m_additionalDestinations.size());
+   for(unsigned additionalDestinationsIndex = 0; additionalDestinationsIndex < additionalDestinationsJsonList.GetLength(); ++additionalDestinationsIndex)
+   {
+     additionalDestinationsJsonList[additionalDestinationsIndex].AsObject(m_additionalDestinations[additionalDestinationsIndex].Jsonize());
+   }
+   payload.WithArray("additionalDestinations", std::move(additionalDestinationsJsonList));
+
   }
 
   return payload;

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Used to specify configuration options for a volume’s storage aggregate or
+   * <p>Used to specify configuration options for a volume���s storage aggregate or
    * aggregates.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/AggregateConfiguration">AWS
    * API Reference</a></p>

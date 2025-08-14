@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
-#include <aws/servicediscovery/model/Instance.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/servicediscovery/model/Instance.h>
 #include <utility>
 
 namespace Aws
@@ -35,6 +35,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the Amazon Web Services account that created the namespace that
+     * contains the service that the instance is associated with. If this isn't your
+     * account ID, it's the ID of the account that shared the namespace with your
+     * account.</p>
+     */
+    inline const Aws::String& GetResourceOwner() const { return m_resourceOwner; }
+    template<typename ResourceOwnerT = Aws::String>
+    void SetResourceOwner(ResourceOwnerT&& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = std::forward<ResourceOwnerT>(value); }
+    template<typename ResourceOwnerT = Aws::String>
+    GetInstanceResult& WithResourceOwner(ResourceOwnerT&& value) { SetResourceOwner(std::forward<ResourceOwnerT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A complex type that contains information about a specified instance.</p>
      */
     inline const Instance& GetInstance() const { return m_instance; }
@@ -53,6 +67,9 @@ namespace Model
     GetInstanceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
+
+    Aws::String m_resourceOwner;
+    bool m_resourceOwnerHasBeenSet = false;
 
     Instance m_instance;
     bool m_instanceHasBeenSet = false;

@@ -16,7 +16,8 @@ namespace Model
   enum class ServiceFilterName
   {
     NOT_SET,
-    NAMESPACE_ID
+    NAMESPACE_ID,
+    RESOURCE_OWNER
   };
 
 namespace ServiceFilterNameMapper

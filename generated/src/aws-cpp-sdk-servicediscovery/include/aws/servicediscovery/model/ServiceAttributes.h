@@ -53,6 +53,23 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the Amazon Web Services account that created the namespace with
+     * which the service is associated. If this isn't your account ID, it is the ID of
+     * the account that shared the namespace with your account. For more information
+     * about shared namespaces, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account
+     * Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+     */
+    inline const Aws::String& GetResourceOwner() const { return m_resourceOwner; }
+    inline bool ResourceOwnerHasBeenSet() const { return m_resourceOwnerHasBeenSet; }
+    template<typename ResourceOwnerT = Aws::String>
+    void SetResourceOwner(ResourceOwnerT&& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = std::forward<ResourceOwnerT>(value); }
+    template<typename ResourceOwnerT = Aws::String>
+    ServiceAttributes& WithResourceOwner(ResourceOwnerT&& value) { SetResourceOwner(std::forward<ResourceOwnerT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A string map that contains the following information for the service that you
      * specify in <code>ServiceArn</code>:</p> <ul> <li> <p>The attributes that apply
      * to the service. </p> </li> <li> <p>For each attribute, the applicable value.</p>
@@ -73,6 +90,9 @@ namespace Model
 
     Aws::String m_serviceArn;
     bool m_serviceArnHasBeenSet = false;
+
+    Aws::String m_resourceOwner;
+    bool m_resourceOwnerHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet = false;

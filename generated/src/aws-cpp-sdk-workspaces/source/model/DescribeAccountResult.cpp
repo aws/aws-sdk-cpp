@@ -40,6 +40,11 @@ DescribeAccountResult& DescribeAccountResult::operator =(const Aws::AmazonWebSer
     m_dedicatedTenancyAccountType = DedicatedTenancyAccountTypeMapper::GetDedicatedTenancyAccountTypeForName(jsonValue.GetString("DedicatedTenancyAccountType"));
     m_dedicatedTenancyAccountTypeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Message"))
+  {
+    m_message = jsonValue.GetString("Message");
+    m_messageHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

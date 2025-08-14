@@ -7,6 +7,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/ContributorInsightsStatus.h>
+#include <aws/dynamodb/model/ContributorInsightsMode.h>
 #include <utility>
 
 namespace Aws
@@ -65,6 +66,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The updated mode of CloudWatch Contributor Insights that determines whether
+     * to monitor all access and throttled events or to track throttled events
+     * exclusively.</p>
+     */
+    inline ContributorInsightsMode GetContributorInsightsMode() const { return m_contributorInsightsMode; }
+    inline void SetContributorInsightsMode(ContributorInsightsMode value) { m_contributorInsightsModeHasBeenSet = true; m_contributorInsightsMode = value; }
+    inline UpdateContributorInsightsResult& WithContributorInsightsMode(ContributorInsightsMode value) { SetContributorInsightsMode(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -82,6 +94,9 @@ namespace Model
 
     ContributorInsightsStatus m_contributorInsightsStatus{ContributorInsightsStatus::NOT_SET};
     bool m_contributorInsightsStatusHasBeenSet = false;
+
+    ContributorInsightsMode m_contributorInsightsMode{ContributorInsightsMode::NOT_SET};
+    bool m_contributorInsightsModeHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

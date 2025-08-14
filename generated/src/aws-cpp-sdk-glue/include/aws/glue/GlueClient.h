@@ -967,6 +967,33 @@ namespace Glue
         }
 
         /**
+         * <p>Creates a new Glue Identity Center configuration to enable integration
+         * between Glue and Amazon Web Services IAM Identity Center for authentication and
+         * authorization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateGlueIdentityCenterConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateGlueIdentityCenterConfigurationOutcome CreateGlueIdentityCenterConfiguration(const Model::CreateGlueIdentityCenterConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateGlueIdentityCenterConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateGlueIdentityCenterConfigurationRequestT = Model::CreateGlueIdentityCenterConfigurationRequest>
+        Model::CreateGlueIdentityCenterConfigurationOutcomeCallable CreateGlueIdentityCenterConfigurationCallable(const CreateGlueIdentityCenterConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::CreateGlueIdentityCenterConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for CreateGlueIdentityCenterConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateGlueIdentityCenterConfigurationRequestT = Model::CreateGlueIdentityCenterConfigurationRequest>
+        void CreateGlueIdentityCenterConfigurationAsync(const CreateGlueIdentityCenterConfigurationRequestT& request, const CreateGlueIdentityCenterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::CreateGlueIdentityCenterConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Creates a Zero-ETL integration in the caller's account between two resources
          * with Amazon Resource Names (ARNs): the <code>SourceArn</code> and
          * <code>TargetArn</code>.</p><p><h3>See Also:</h3>   <a
@@ -1791,6 +1818,33 @@ namespace Glue
         void DeleteDevEndpointAsync(const DeleteDevEndpointRequestT& request, const DeleteDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GlueClient::DeleteDevEndpoint, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the existing Glue Identity Center configuration, removing the
+         * integration between Glue and Amazon Web Services IAM Identity
+         * Center.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteGlueIdentityCenterConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteGlueIdentityCenterConfigurationOutcome DeleteGlueIdentityCenterConfiguration(const Model::DeleteGlueIdentityCenterConfigurationRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DeleteGlueIdentityCenterConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteGlueIdentityCenterConfigurationRequestT = Model::DeleteGlueIdentityCenterConfigurationRequest>
+        Model::DeleteGlueIdentityCenterConfigurationOutcomeCallable DeleteGlueIdentityCenterConfigurationCallable(const DeleteGlueIdentityCenterConfigurationRequestT& request = {}) const
+        {
+            return SubmitCallable(&GlueClient::DeleteGlueIdentityCenterConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteGlueIdentityCenterConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteGlueIdentityCenterConfigurationRequestT = Model::DeleteGlueIdentityCenterConfigurationRequest>
+        void DeleteGlueIdentityCenterConfigurationAsync(const DeleteGlueIdentityCenterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteGlueIdentityCenterConfigurationRequestT& request = {}) const
+        {
+            return SubmitAsync(&GlueClient::DeleteGlueIdentityCenterConfiguration, request, handler, context);
         }
 
         /**
@@ -3258,6 +3312,33 @@ namespace Glue
         void GetEntityRecordsAsync(const GetEntityRecordsRequestT& request, const GetEntityRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GlueClient::GetEntityRecords, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the current Glue Identity Center configuration details, including
+         * the associated Identity Center instance and application
+         * information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetGlueIdentityCenterConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetGlueIdentityCenterConfigurationOutcome GetGlueIdentityCenterConfiguration(const Model::GetGlueIdentityCenterConfigurationRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetGlueIdentityCenterConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetGlueIdentityCenterConfigurationRequestT = Model::GetGlueIdentityCenterConfigurationRequest>
+        Model::GetGlueIdentityCenterConfigurationOutcomeCallable GetGlueIdentityCenterConfigurationCallable(const GetGlueIdentityCenterConfigurationRequestT& request = {}) const
+        {
+            return SubmitCallable(&GlueClient::GetGlueIdentityCenterConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for GetGlueIdentityCenterConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetGlueIdentityCenterConfigurationRequestT = Model::GetGlueIdentityCenterConfigurationRequest>
+        void GetGlueIdentityCenterConfigurationAsync(const GetGlueIdentityCenterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetGlueIdentityCenterConfigurationRequestT& request = {}) const
+        {
+            return SubmitAsync(&GlueClient::GetGlueIdentityCenterConfiguration, request, handler, context);
         }
 
         /**
@@ -6523,6 +6604,33 @@ namespace Glue
         void UpdateDevEndpointAsync(const UpdateDevEndpointRequestT& request, const UpdateDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GlueClient::UpdateDevEndpoint, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the existing Glue Identity Center configuration, allowing
+         * modification of scopes and permissions for the integration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateGlueIdentityCenterConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateGlueIdentityCenterConfigurationOutcome UpdateGlueIdentityCenterConfiguration(const Model::UpdateGlueIdentityCenterConfigurationRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for UpdateGlueIdentityCenterConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateGlueIdentityCenterConfigurationRequestT = Model::UpdateGlueIdentityCenterConfigurationRequest>
+        Model::UpdateGlueIdentityCenterConfigurationOutcomeCallable UpdateGlueIdentityCenterConfigurationCallable(const UpdateGlueIdentityCenterConfigurationRequestT& request = {}) const
+        {
+            return SubmitCallable(&GlueClient::UpdateGlueIdentityCenterConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateGlueIdentityCenterConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateGlueIdentityCenterConfigurationRequestT = Model::UpdateGlueIdentityCenterConfigurationRequest>
+        void UpdateGlueIdentityCenterConfigurationAsync(const UpdateGlueIdentityCenterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateGlueIdentityCenterConfigurationRequestT& request = {}) const
+        {
+            return SubmitAsync(&GlueClient::UpdateGlueIdentityCenterConfiguration, request, handler, context);
         }
 
         /**

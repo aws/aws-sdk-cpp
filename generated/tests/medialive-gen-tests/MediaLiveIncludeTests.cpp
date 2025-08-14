@@ -34,6 +34,7 @@
 #include <aws/medialive/model/AcceptInputDeviceTransferResult.h>
 #include <aws/medialive/model/AccessibilityType.h>
 #include <aws/medialive/model/AccountConfiguration.h>
+#include <aws/medialive/model/AdditionalDestinations.h>
 #include <aws/medialive/model/AfdSignaling.h>
 #include <aws/medialive/model/Algorithm.h>
 #include <aws/medialive/model/AncillarySourceSettings.h>

@@ -28,6 +28,12 @@ Aws::String DiscoverInstancesRevisionRequest::SerializePayload() const
 
   }
 
+  if(m_ownerAccountHasBeenSet)
+  {
+   payload.WithString("OwnerAccount", m_ownerAccount);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

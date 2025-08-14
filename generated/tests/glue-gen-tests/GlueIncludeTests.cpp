@@ -190,6 +190,8 @@
 #include <aws/glue/model/CreateDatabaseResult.h>
 #include <aws/glue/model/CreateDevEndpointRequest.h>
 #include <aws/glue/model/CreateDevEndpointResult.h>
+#include <aws/glue/model/CreateGlueIdentityCenterConfigurationRequest.h>
+#include <aws/glue/model/CreateGlueIdentityCenterConfigurationResult.h>
 #include <aws/glue/model/CreateGrokClassifierRequest.h>
 #include <aws/glue/model/CreateIcebergTableInput.h>
 #include <aws/glue/model/CreateIntegrationRequest.h>
@@ -304,6 +306,8 @@
 #include <aws/glue/model/DeleteDatabaseResult.h>
 #include <aws/glue/model/DeleteDevEndpointRequest.h>
 #include <aws/glue/model/DeleteDevEndpointResult.h>
+#include <aws/glue/model/DeleteGlueIdentityCenterConfigurationRequest.h>
+#include <aws/glue/model/DeleteGlueIdentityCenterConfigurationResult.h>
 #include <aws/glue/model/DeleteIntegrationRequest.h>
 #include <aws/glue/model/DeleteIntegrationResult.h>
 #include <aws/glue/model/DeleteIntegrationTablePropertiesRequest.h>
@@ -470,6 +474,8 @@
 #include <aws/glue/model/GetDevEndpointsResult.h>
 #include <aws/glue/model/GetEntityRecordsRequest.h>
 #include <aws/glue/model/GetEntityRecordsResult.h>
+#include <aws/glue/model/GetGlueIdentityCenterConfigurationRequest.h>
+#include <aws/glue/model/GetGlueIdentityCenterConfigurationResult.h>
 #include <aws/glue/model/GetIntegrationResourcePropertyRequest.h>
 #include <aws/glue/model/GetIntegrationResourcePropertyResult.h>
 #include <aws/glue/model/GetIntegrationTablePropertiesRequest.h>
@@ -1000,6 +1006,8 @@
 #include <aws/glue/model/UpdateDatabaseResult.h>
 #include <aws/glue/model/UpdateDevEndpointRequest.h>
 #include <aws/glue/model/UpdateDevEndpointResult.h>
+#include <aws/glue/model/UpdateGlueIdentityCenterConfigurationRequest.h>
+#include <aws/glue/model/UpdateGlueIdentityCenterConfigurationResult.h>
 #include <aws/glue/model/UpdateGrokClassifierRequest.h>
 #include <aws/glue/model/UpdateIcebergInput.h>
 #include <aws/glue/model/UpdateIcebergTableInput.h>

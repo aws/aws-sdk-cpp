@@ -148,6 +148,12 @@ Ec2InstanceConnectEndpoint& Ec2InstanceConnectEndpoint::operator =(const XmlNode
       m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()));
       m_ipAddressTypeHasBeenSet = true;
     }
+    XmlNode publicDnsNamesNode = resultNode.FirstChild("publicDnsNames");
+    if(!publicDnsNamesNode.IsNull())
+    {
+      m_publicDnsNames = publicDnsNamesNode;
+      m_publicDnsNamesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -249,6 +255,13 @@ void Ec2InstanceConnectEndpoint::OutputToStream(Aws::OStream& oStream, const cha
       oStream << location << index << locationValue << ".IpAddressType=" << StringUtils::URLEncode(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType)) << "&";
   }
 
+  if(m_publicDnsNamesHasBeenSet)
+  {
+      Aws::StringStream publicDnsNamesLocationAndMemberSs;
+      publicDnsNamesLocationAndMemberSs << location << index << locationValue << ".PublicDnsNames";
+      m_publicDnsNames.OutputToStream(oStream, publicDnsNamesLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void Ec2InstanceConnectEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -330,6 +343,12 @@ void Ec2InstanceConnectEndpoint::OutputToStream(Aws::OStream& oStream, const cha
   if(m_ipAddressTypeHasBeenSet)
   {
       oStream << location << ".IpAddressType=" << StringUtils::URLEncode(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType)) << "&";
+  }
+  if(m_publicDnsNamesHasBeenSet)
+  {
+      Aws::String publicDnsNamesLocationAndMember(location);
+      publicDnsNamesLocationAndMember += ".PublicDnsNames";
+      m_publicDnsNames.OutputToStream(oStream, publicDnsNamesLocationAndMember.c_str());
   }
 }
 

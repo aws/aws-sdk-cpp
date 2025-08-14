@@ -25,6 +25,11 @@ ListInstancesResult::ListInstancesResult(const Aws::AmazonWebServiceResult<JsonV
 ListInstancesResult& ListInstancesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("ResourceOwner"))
+  {
+    m_resourceOwner = jsonValue.GetString("ResourceOwner");
+    m_resourceOwnerHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Instances"))
   {
     Aws::Utils::Array<JsonView> instancesJsonList = jsonValue.GetArray("Instances");

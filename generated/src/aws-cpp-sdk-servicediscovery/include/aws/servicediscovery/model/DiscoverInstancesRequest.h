@@ -38,11 +38,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The <code>HttpName</code> name of the namespace. It's found in the
-     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
-     * namespace. In most cases, <code>Name</code> and <code>HttpName</code> match.
-     * However, if you reuse <code>Name</code> for namespace creation, a generated hash
-     * is added to <code>HttpName</code> to distinguish the two.</p>
+     * <p>The <code>HttpName</code> name of the namespace. The <code>HttpName</code> is
+     * found in the <code>HttpProperties</code> member of the <code>Properties</code>
+     * member of the namespace. In most cases, <code>Name</code> and
+     * <code>HttpName</code> match. However, if you reuse <code>Name</code> for
+     * namespace creation, a generated hash is added to <code>HttpName</code> to
+     * distinguish the two.</p>
      */
     inline const Aws::String& GetNamespaceName() const { return m_namespaceName; }
     inline bool NamespaceNameHasBeenSet() const { return m_namespaceNameHasBeenSet; }
@@ -132,6 +133,21 @@ namespace Model
     inline void SetHealthStatus(HealthStatusFilter value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
     inline DiscoverInstancesRequest& WithHealthStatus(HealthStatusFilter value) { SetHealthStatus(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Amazon Web Services account that owns the namespace associated
+     * with the instance, as specified in the namespace <code>ResourceOwner</code>
+     * field. For instances associated with namespaces that are shared with your
+     * account, you must specify an <code>OwnerAccount</code>.</p>
+     */
+    inline const Aws::String& GetOwnerAccount() const { return m_ownerAccount; }
+    inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
+    template<typename OwnerAccountT = Aws::String>
+    void SetOwnerAccount(OwnerAccountT&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::forward<OwnerAccountT>(value); }
+    template<typename OwnerAccountT = Aws::String>
+    DiscoverInstancesRequest& WithOwnerAccount(OwnerAccountT&& value) { SetOwnerAccount(std::forward<OwnerAccountT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_namespaceName;
@@ -151,6 +167,9 @@ namespace Model
 
     HealthStatusFilter m_healthStatus{HealthStatusFilter::NOT_SET};
     bool m_healthStatusHasBeenSet = false;
+
+    Aws::String m_ownerAccount;
+    bool m_ownerAccountHasBeenSet = false;
   };
 
 } // namespace Model

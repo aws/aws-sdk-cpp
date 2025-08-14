@@ -58,9 +58,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the
-     * namespace. It's found in the <code>HttpProperties</code> member of the
-     * <code>Properties</code> member of the namespace.</p>
+     * <p>The <code>HttpName</code> name of the namespace. It's found in the
+     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
+     * namespace.</p>
      */
     inline const Aws::String& GetNamespaceName() const { return m_namespaceName; }
     inline bool NamespaceNameHasBeenSet() const { return m_namespaceNameHasBeenSet; }

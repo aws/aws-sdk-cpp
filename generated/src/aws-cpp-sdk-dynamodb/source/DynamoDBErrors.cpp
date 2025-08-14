@@ -8,6 +8,9 @@
 #include <aws/dynamodb/DynamoDBErrors.h>
 #include <aws/dynamodb/model/ConditionalCheckFailedException.h>
 #include <aws/dynamodb/model/TransactionCanceledException.h>
+#include <aws/dynamodb/model/ProvisionedThroughputExceededException.h>
+#include <aws/dynamodb/model/ThrottlingException.h>
+#include <aws/dynamodb/model/RequestLimitExceeded.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -28,6 +31,24 @@ template<> AWS_DYNAMODB_API TransactionCanceledException DynamoDBError::GetModel
 {
   assert(this->GetErrorType() == DynamoDBErrors::TRANSACTION_CANCELED);
   return TransactionCanceledException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DYNAMODB_API ProvisionedThroughputExceededException DynamoDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == DynamoDBErrors::PROVISIONED_THROUGHPUT_EXCEEDED);
+  return ProvisionedThroughputExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DYNAMODB_API ThrottlingException DynamoDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == DynamoDBErrors::THROTTLING);
+  return ThrottlingException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DYNAMODB_API RequestLimitExceeded DynamoDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == DynamoDBErrors::REQUEST_LIMIT_EXCEEDED);
+  return RequestLimitExceeded(this->GetJsonPayload().View());
 }
 
 namespace DynamoDBErrorMapper

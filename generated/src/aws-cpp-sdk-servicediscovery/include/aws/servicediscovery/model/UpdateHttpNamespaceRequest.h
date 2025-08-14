@@ -38,7 +38,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the namespace that you want to update.</p>
+     * <p>The ID or Amazon Resource Name (ARN) of the namespace that you want to
+     * update.</p>
      */
     inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }

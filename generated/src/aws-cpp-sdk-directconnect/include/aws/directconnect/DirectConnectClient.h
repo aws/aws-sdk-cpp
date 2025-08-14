@@ -1497,7 +1497,12 @@ namespace DirectConnect
          * with the connection are returned. If you specify a virtual interface ID, then
          * only a single virtual interface is returned.</p> <p>A virtual interface (VLAN)
          * transmits the traffic between the Direct Connect location and the customer
-         * network.</p><p><h3>See Also:</h3>   <a
+         * network.</p> <ul> <li> <p>If you're using an <code>asn</code>, the response
+         * includes ASN value in both the <code>asn</code> and <code>asnLong</code>
+         * fields.</p> </li> <li> <p>If you're using <code>asnLong</code>, the response
+         * returns a value of <code>0</code> (zero) for the <code>asn</code> attribute
+         * because it exceeds the highest ASN value of 2,147,483,647 that it can
+         * support</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces">AWS
          * API Reference</a></p>
          */

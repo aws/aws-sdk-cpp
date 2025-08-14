@@ -40,13 +40,24 @@ namespace Model
 
     ///@{
     /**
-     * <p>The autonomous system (AS) number for Border Gateway Protocol (BGP)
-     * configuration.</p>
+     * <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646
+     * for Border Gateway Protocol (BGP) configuration. If you provide a number greater
+     * than the maximum, an error is returned. Use <code>asnLong</code> instead.</p>
      */
     inline int GetAsn() const { return m_asn; }
     inline bool AsnHasBeenSet() const { return m_asnHasBeenSet; }
     inline void SetAsn(int value) { m_asnHasBeenSet = true; m_asn = value; }
     inline NewBGPPeer& WithAsn(int value) { SetAsn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The long ASN for a new BGP peer. The valid range is from 1 to 4294967294.</p>
+     */
+    inline long long GetAsnLong() const { return m_asnLong; }
+    inline bool AsnLongHasBeenSet() const { return m_asnLongHasBeenSet; }
+    inline void SetAsnLong(long long value) { m_asnLongHasBeenSet = true; m_asnLong = value; }
+    inline NewBGPPeer& WithAsnLong(long long value) { SetAsnLong(value); return *this;}
     ///@}
 
     ///@{
@@ -99,6 +110,9 @@ namespace Model
 
     int m_asn{0};
     bool m_asnHasBeenSet = false;
+
+    long long m_asnLong{0};
+    bool m_asnLongHasBeenSet = false;
 
     Aws::String m_authKey;
     bool m_authKeyHasBeenSet = false;

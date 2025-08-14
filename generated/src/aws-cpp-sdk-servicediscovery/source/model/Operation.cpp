@@ -30,6 +30,11 @@ Operation& Operation::operator =(JsonView jsonValue)
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("OwnerAccount"))
+  {
+    m_ownerAccount = jsonValue.GetString("OwnerAccount");
+    m_ownerAccountHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Type"))
   {
     m_type = OperationTypeMapper::GetOperationTypeForName(jsonValue.GetString("Type"));
@@ -79,6 +84,12 @@ JsonValue Operation::Jsonize() const
   if(m_idHasBeenSet)
   {
    payload.WithString("Id", m_id);
+
+  }
+
+  if(m_ownerAccountHasBeenSet)
+  {
+   payload.WithString("OwnerAccount", m_ownerAccount);
 
   }
 

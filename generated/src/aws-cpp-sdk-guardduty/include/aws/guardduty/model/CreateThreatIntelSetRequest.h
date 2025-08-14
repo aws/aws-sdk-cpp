@@ -38,7 +38,7 @@ namespace Model
     ///@{
     /**
      * <p>The unique ID of the detector of the GuardDuty account for which you want to
-     * create a <code>ThreatIntelSet</code>.</p> <p>To find the <code>detectorId</code>
+     * create a <code>threatIntelSet</code>.</p> <p>To find the <code>detectorId</code>
      * in the current Region, see the Settings page in the GuardDuty console, or run
      * the <a
      * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a>

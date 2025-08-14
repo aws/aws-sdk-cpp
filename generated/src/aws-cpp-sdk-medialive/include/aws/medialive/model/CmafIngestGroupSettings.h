@@ -16,6 +16,7 @@
 #include <aws/medialive/model/CmafTimedMetadataId3Frame.h>
 #include <aws/medialive/model/CmafTimedMetadataPassthrough.h>
 #include <aws/medialive/model/CmafIngestCaptionLanguageMapping.h>
+#include <aws/medialive/model/AdditionalDestinations.h>
 #include <utility>
 
 namespace Aws
@@ -245,6 +246,21 @@ namespace Model
     inline void SetTimedMetadataPassthrough(CmafTimedMetadataPassthrough value) { m_timedMetadataPassthroughHasBeenSet = true; m_timedMetadataPassthrough = value; }
     inline CmafIngestGroupSettings& WithTimedMetadataPassthrough(CmafTimedMetadataPassthrough value) { SetTimedMetadataPassthrough(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * Optional an array of additional destinational HTTP destinations for the
+     * OutputGroup outputs
+     */
+    inline const Aws::Vector<AdditionalDestinations>& GetAdditionalDestinations() const { return m_additionalDestinations; }
+    inline bool AdditionalDestinationsHasBeenSet() const { return m_additionalDestinationsHasBeenSet; }
+    template<typename AdditionalDestinationsT = Aws::Vector<AdditionalDestinations>>
+    void SetAdditionalDestinations(AdditionalDestinationsT&& value) { m_additionalDestinationsHasBeenSet = true; m_additionalDestinations = std::forward<AdditionalDestinationsT>(value); }
+    template<typename AdditionalDestinationsT = Aws::Vector<AdditionalDestinations>>
+    CmafIngestGroupSettings& WithAdditionalDestinations(AdditionalDestinationsT&& value) { SetAdditionalDestinations(std::forward<AdditionalDestinationsT>(value)); return *this;}
+    template<typename AdditionalDestinationsT = AdditionalDestinations>
+    CmafIngestGroupSettings& AddAdditionalDestinations(AdditionalDestinationsT&& value) { m_additionalDestinationsHasBeenSet = true; m_additionalDestinations.emplace_back(std::forward<AdditionalDestinationsT>(value)); return *this; }
+    ///@}
   private:
 
     OutputLocationRef m_destination;
@@ -294,6 +310,9 @@ namespace Model
 
     CmafTimedMetadataPassthrough m_timedMetadataPassthrough{CmafTimedMetadataPassthrough::NOT_SET};
     bool m_timedMetadataPassthroughHasBeenSet = false;
+
+    Aws::Vector<AdditionalDestinations> m_additionalDestinations;
+    bool m_additionalDestinationsHasBeenSet = false;
   };
 
 } // namespace Model

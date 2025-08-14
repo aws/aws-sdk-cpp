@@ -390,6 +390,35 @@ namespace GuardDuty
         }
 
         /**
+         * <p>Creates a new threat entity set. In a threat entity set, you can provide
+         * known malicious IP addresses and domains for your Amazon Web Services
+         * environment. GuardDuty generates findings based on the entries in the threat
+         * entity sets. Only users of the administrator account can manage entity sets,
+         * which automatically apply to member accounts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateThreatEntitySet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateThreatEntitySetOutcome CreateThreatEntitySet(const Model::CreateThreatEntitySetRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateThreatEntitySet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateThreatEntitySetRequestT = Model::CreateThreatEntitySetRequest>
+        Model::CreateThreatEntitySetOutcomeCallable CreateThreatEntitySetCallable(const CreateThreatEntitySetRequestT& request) const
+        {
+            return SubmitCallable(&GuardDutyClient::CreateThreatEntitySet, request);
+        }
+
+        /**
+         * An Async wrapper for CreateThreatEntitySet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateThreatEntitySetRequestT = Model::CreateThreatEntitySetRequest>
+        void CreateThreatEntitySetAsync(const CreateThreatEntitySetRequestT& request, const CreateThreatEntitySetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GuardDutyClient::CreateThreatEntitySet, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP
          * addresses. GuardDuty generates findings based on ThreatIntelSets. Only users of
          * the administrator account can use this operation.</p><p><h3>See Also:</h3>   <a
@@ -414,6 +443,37 @@ namespace GuardDuty
         void CreateThreatIntelSetAsync(const CreateThreatIntelSetRequestT& request, const CreateThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GuardDutyClient::CreateThreatIntelSet, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a new trusted entity set. In the trusted entity set, you can provide
+         * IP addresses and domains that you believe are secure for communication in your
+         * Amazon Web Services environment. GuardDuty will not generate findings for the
+         * entries that are specified in a trusted entity set. At any given time, you can
+         * have only one trusted entity set. </p> <p>Only users of the administrator
+         * account can manage the entity sets, which automatically apply to member
+         * accounts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateTrustedEntitySet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTrustedEntitySetOutcome CreateTrustedEntitySet(const Model::CreateTrustedEntitySetRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateTrustedEntitySet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateTrustedEntitySetRequestT = Model::CreateTrustedEntitySetRequest>
+        Model::CreateTrustedEntitySetOutcomeCallable CreateTrustedEntitySetCallable(const CreateTrustedEntitySetRequestT& request) const
+        {
+            return SubmitCallable(&GuardDutyClient::CreateTrustedEntitySet, request);
+        }
+
+        /**
+         * An Async wrapper for CreateTrustedEntitySet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateTrustedEntitySetRequestT = Model::CreateTrustedEntitySetRequest>
+        void CreateTrustedEntitySetAsync(const CreateTrustedEntitySetRequestT& request, const CreateTrustedEntitySetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GuardDutyClient::CreateTrustedEntitySet, request, handler, context);
         }
 
         /**
@@ -630,6 +690,32 @@ namespace GuardDuty
         }
 
         /**
+         * <p>Deletes the threat entity set that is associated with the specified
+         * <code>threatEntitySetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteThreatEntitySet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteThreatEntitySetOutcome DeleteThreatEntitySet(const Model::DeleteThreatEntitySetRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteThreatEntitySet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteThreatEntitySetRequestT = Model::DeleteThreatEntitySetRequest>
+        Model::DeleteThreatEntitySetOutcomeCallable DeleteThreatEntitySetCallable(const DeleteThreatEntitySetRequestT& request) const
+        {
+            return SubmitCallable(&GuardDutyClient::DeleteThreatEntitySet, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteThreatEntitySet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteThreatEntitySetRequestT = Model::DeleteThreatEntitySetRequest>
+        void DeleteThreatEntitySetAsync(const DeleteThreatEntitySetRequestT& request, const DeleteThreatEntitySetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GuardDutyClient::DeleteThreatEntitySet, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the ThreatIntelSet specified by the ThreatIntelSet ID.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteThreatIntelSet">AWS
@@ -653,6 +739,32 @@ namespace GuardDuty
         void DeleteThreatIntelSetAsync(const DeleteThreatIntelSetRequestT& request, const DeleteThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GuardDutyClient::DeleteThreatIntelSet, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the trusted entity set that is associated with the specified
+         * <code>trustedEntitySetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteTrustedEntitySet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTrustedEntitySetOutcome DeleteTrustedEntitySet(const Model::DeleteTrustedEntitySetRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteTrustedEntitySet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteTrustedEntitySetRequestT = Model::DeleteTrustedEntitySetRequest>
+        Model::DeleteTrustedEntitySetOutcomeCallable DeleteTrustedEntitySetCallable(const DeleteTrustedEntitySetRequestT& request) const
+        {
+            return SubmitCallable(&GuardDutyClient::DeleteTrustedEntitySet, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteTrustedEntitySet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteTrustedEntitySetRequestT = Model::DeleteTrustedEntitySetRequest>
+        void DeleteTrustedEntitySetAsync(const DeleteTrustedEntitySetRequestT& request, const DeleteTrustedEntitySetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GuardDutyClient::DeleteTrustedEntitySet, request, handler, context);
         }
 
         /**
@@ -1285,6 +1397,32 @@ namespace GuardDuty
         }
 
         /**
+         * <p>Retrieves the threat entity set associated with the specified
+         * <code>threatEntitySetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetThreatEntitySet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetThreatEntitySetOutcome GetThreatEntitySet(const Model::GetThreatEntitySetRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetThreatEntitySet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetThreatEntitySetRequestT = Model::GetThreatEntitySetRequest>
+        Model::GetThreatEntitySetOutcomeCallable GetThreatEntitySetCallable(const GetThreatEntitySetRequestT& request) const
+        {
+            return SubmitCallable(&GuardDutyClient::GetThreatEntitySet, request);
+        }
+
+        /**
+         * An Async wrapper for GetThreatEntitySet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetThreatEntitySetRequestT = Model::GetThreatEntitySetRequest>
+        void GetThreatEntitySetAsync(const GetThreatEntitySetRequestT& request, const GetThreatEntitySetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GuardDutyClient::GetThreatEntitySet, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the ThreatIntelSet that is specified by the ThreatIntelSet
          * ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetThreatIntelSet">AWS
@@ -1308,6 +1446,32 @@ namespace GuardDuty
         void GetThreatIntelSetAsync(const GetThreatIntelSetRequestT& request, const GetThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GuardDutyClient::GetThreatIntelSet, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the trusted entity set associated with the specified
+         * <code>trustedEntitySetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetTrustedEntitySet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTrustedEntitySetOutcome GetTrustedEntitySet(const Model::GetTrustedEntitySetRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetTrustedEntitySet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetTrustedEntitySetRequestT = Model::GetTrustedEntitySetRequest>
+        Model::GetTrustedEntitySetOutcomeCallable GetTrustedEntitySetCallable(const GetTrustedEntitySetRequestT& request) const
+        {
+            return SubmitCallable(&GuardDutyClient::GetTrustedEntitySet, request);
+        }
+
+        /**
+         * An Async wrapper for GetTrustedEntitySet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetTrustedEntitySetRequestT = Model::GetTrustedEntitySetRequest>
+        void GetTrustedEntitySetAsync(const GetTrustedEntitySetRequestT& request, const GetTrustedEntitySetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GuardDutyClient::GetTrustedEntitySet, request, handler, context);
         }
 
         /**
@@ -1699,6 +1863,34 @@ namespace GuardDuty
         }
 
         /**
+         * <p>Lists the threat entity sets associated with the specified GuardDuty detector
+         * ID. If you use this operation from a member account, the threat entity sets that
+         * are returned as a response, belong to the administrator account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListThreatEntitySets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListThreatEntitySetsOutcome ListThreatEntitySets(const Model::ListThreatEntitySetsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListThreatEntitySets that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListThreatEntitySetsRequestT = Model::ListThreatEntitySetsRequest>
+        Model::ListThreatEntitySetsOutcomeCallable ListThreatEntitySetsCallable(const ListThreatEntitySetsRequestT& request) const
+        {
+            return SubmitCallable(&GuardDutyClient::ListThreatEntitySets, request);
+        }
+
+        /**
+         * An Async wrapper for ListThreatEntitySets that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListThreatEntitySetsRequestT = Model::ListThreatEntitySetsRequest>
+        void ListThreatEntitySetsAsync(const ListThreatEntitySetsRequestT& request, const ListThreatEntitySetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GuardDutyClient::ListThreatEntitySets, request, handler, context);
+        }
+
+        /**
          * <p>Lists the ThreatIntelSets of the GuardDuty service specified by the detector
          * ID. If you use this operation from a member account, the ThreatIntelSets
          * associated with the administrator account are returned.</p><p><h3>See Also:</h3>
@@ -1724,6 +1916,34 @@ namespace GuardDuty
         void ListThreatIntelSetsAsync(const ListThreatIntelSetsRequestT& request, const ListThreatIntelSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GuardDutyClient::ListThreatIntelSets, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the trusted entity sets associated with the specified GuardDuty
+         * detector ID. If you use this operation from a member account, the trusted entity
+         * sets that are returned as a response, belong to the administrator
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListTrustedEntitySets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTrustedEntitySetsOutcome ListTrustedEntitySets(const Model::ListTrustedEntitySetsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTrustedEntitySets that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTrustedEntitySetsRequestT = Model::ListTrustedEntitySetsRequest>
+        Model::ListTrustedEntitySetsOutcomeCallable ListTrustedEntitySetsCallable(const ListTrustedEntitySetsRequestT& request) const
+        {
+            return SubmitCallable(&GuardDutyClient::ListTrustedEntitySets, request);
+        }
+
+        /**
+         * An Async wrapper for ListTrustedEntitySets that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTrustedEntitySetsRequestT = Model::ListTrustedEntitySetsRequest>
+        void ListTrustedEntitySetsAsync(const ListTrustedEntitySetsRequestT& request, const ListTrustedEntitySetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GuardDutyClient::ListTrustedEntitySets, request, handler, context);
         }
 
         /**
@@ -2160,6 +2380,32 @@ namespace GuardDuty
         }
 
         /**
+         * <p>Updates the threat entity set associated with the specified
+         * <code>threatEntitySetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateThreatEntitySet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateThreatEntitySetOutcome UpdateThreatEntitySet(const Model::UpdateThreatEntitySetRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateThreatEntitySet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateThreatEntitySetRequestT = Model::UpdateThreatEntitySetRequest>
+        Model::UpdateThreatEntitySetOutcomeCallable UpdateThreatEntitySetCallable(const UpdateThreatEntitySetRequestT& request) const
+        {
+            return SubmitCallable(&GuardDutyClient::UpdateThreatEntitySet, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateThreatEntitySet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateThreatEntitySetRequestT = Model::UpdateThreatEntitySetRequest>
+        void UpdateThreatEntitySetAsync(const UpdateThreatEntitySetRequestT& request, const UpdateThreatEntitySetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GuardDutyClient::UpdateThreatEntitySet, request, handler, context);
+        }
+
+        /**
          * <p>Updates the ThreatIntelSet specified by the ThreatIntelSet ID.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateThreatIntelSet">AWS
@@ -2183,6 +2429,32 @@ namespace GuardDuty
         void UpdateThreatIntelSetAsync(const UpdateThreatIntelSetRequestT& request, const UpdateThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GuardDutyClient::UpdateThreatIntelSet, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the trusted entity set associated with the specified
+         * <code>trustedEntitySetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateTrustedEntitySet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTrustedEntitySetOutcome UpdateTrustedEntitySet(const Model::UpdateTrustedEntitySetRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateTrustedEntitySet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateTrustedEntitySetRequestT = Model::UpdateTrustedEntitySetRequest>
+        Model::UpdateTrustedEntitySetOutcomeCallable UpdateTrustedEntitySetCallable(const UpdateTrustedEntitySetRequestT& request) const
+        {
+            return SubmitCallable(&GuardDutyClient::UpdateTrustedEntitySet, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateTrustedEntitySet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateTrustedEntitySetRequestT = Model::UpdateTrustedEntitySetRequest>
+        void UpdateTrustedEntitySetAsync(const UpdateTrustedEntitySetRequestT& request, const UpdateTrustedEntitySetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GuardDutyClient::UpdateTrustedEntitySet, request, handler, context);
         }
 
 

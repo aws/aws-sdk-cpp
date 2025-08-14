@@ -45,10 +45,28 @@ namespace Model
     template<typename OperationIdT = Aws::String>
     GetOperationRequest& WithOperationId(OperationIdT&& value) { SetOperationId(std::forward<OperationIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Amazon Web Services account that owns the namespace associated
+     * with the operation, as specified in the namespace <code>ResourceOwner</code>
+     * field. For operations associated with namespaces that are shared with your
+     * account, you must specify an <code>OwnerAccount</code>.</p>
+     */
+    inline const Aws::String& GetOwnerAccount() const { return m_ownerAccount; }
+    inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
+    template<typename OwnerAccountT = Aws::String>
+    void SetOwnerAccount(OwnerAccountT&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::forward<OwnerAccountT>(value); }
+    template<typename OwnerAccountT = Aws::String>
+    GetOperationRequest& WithOwnerAccount(OwnerAccountT&& value) { SetOwnerAccount(std::forward<OwnerAccountT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_operationId;
     bool m_operationIdHasBeenSet = false;
+
+    Aws::String m_ownerAccount;
+    bool m_ownerAccountHasBeenSet = false;
   };
 
 } // namespace Model

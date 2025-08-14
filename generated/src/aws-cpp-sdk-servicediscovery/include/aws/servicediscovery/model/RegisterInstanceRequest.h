@@ -38,7 +38,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the service that you want to use for settings for the instance.</p>
+     * <p>The ID or Amazon Resource Name (ARN) of the service that you want to use for
+     * settings for the instance. For services created in a shared namespace, specify
+     * the service ARN. For more information about shared namespaces, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account
+     * Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
      */
     inline const Aws::String& GetServiceId() const { return m_serviceId; }
     inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }

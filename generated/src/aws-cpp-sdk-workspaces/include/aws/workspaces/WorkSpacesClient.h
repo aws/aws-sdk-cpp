@@ -1161,6 +1161,32 @@ namespace WorkSpaces
         }
 
         /**
+         * <p>Retrieves information about a WorkSpace BYOL image being imported via
+         * ImportCustomWorkspaceImage.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeCustomWorkspaceImageImport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCustomWorkspaceImageImportOutcome DescribeCustomWorkspaceImageImport(const Model::DescribeCustomWorkspaceImageImportRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeCustomWorkspaceImageImport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeCustomWorkspaceImageImportRequestT = Model::DescribeCustomWorkspaceImageImportRequest>
+        Model::DescribeCustomWorkspaceImageImportOutcomeCallable DescribeCustomWorkspaceImageImportCallable(const DescribeCustomWorkspaceImageImportRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesClient::DescribeCustomWorkspaceImageImport, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeCustomWorkspaceImageImport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeCustomWorkspaceImageImportRequestT = Model::DescribeCustomWorkspaceImageImportRequest>
+        void DescribeCustomWorkspaceImageImportAsync(const DescribeCustomWorkspaceImageImportRequestT& request, const DescribeCustomWorkspaceImageImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesClient::DescribeCustomWorkspaceImageImport, request, handler, context);
+        }
+
+        /**
          * <p>Describes the associations between the applications and the specified
          * image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeImageAssociations">AWS
@@ -1646,6 +1672,36 @@ namespace WorkSpaces
         void ImportClientBrandingAsync(const ImportClientBrandingRequestT& request, const ImportClientBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WorkSpacesClient::ImportClientBranding, request, handler, context);
+        }
+
+        /**
+         * <p>Imports the specified Windows 10 or 11 Bring Your Own License (BYOL) image
+         * into Amazon WorkSpaces using EC2 Image Builder. The image must be an already
+         * licensed image that is in your Amazon Web Services account, and you must own the
+         * image. For more information about creating BYOL images, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+         * Bring Your Own Windows Desktop Licenses</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportCustomWorkspaceImage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ImportCustomWorkspaceImageOutcome ImportCustomWorkspaceImage(const Model::ImportCustomWorkspaceImageRequest& request) const;
+
+        /**
+         * A Callable wrapper for ImportCustomWorkspaceImage that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ImportCustomWorkspaceImageRequestT = Model::ImportCustomWorkspaceImageRequest>
+        Model::ImportCustomWorkspaceImageOutcomeCallable ImportCustomWorkspaceImageCallable(const ImportCustomWorkspaceImageRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesClient::ImportCustomWorkspaceImage, request);
+        }
+
+        /**
+         * An Async wrapper for ImportCustomWorkspaceImage that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ImportCustomWorkspaceImageRequestT = Model::ImportCustomWorkspaceImageRequest>
+        void ImportCustomWorkspaceImageAsync(const ImportCustomWorkspaceImageRequestT& request, const ImportCustomWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesClient::ImportCustomWorkspaceImage, request, handler, context);
         }
 
         /**

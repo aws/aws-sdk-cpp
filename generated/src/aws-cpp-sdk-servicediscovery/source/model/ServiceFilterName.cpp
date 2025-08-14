@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int NAMESPACE_ID_HASH = HashingUtils::HashString("NAMESPACE_ID");
+        static const int RESOURCE_OWNER_HASH = HashingUtils::HashString("RESOURCE_OWNER");
 
 
         ServiceFilterName GetServiceFilterNameForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == NAMESPACE_ID_HASH)
           {
             return ServiceFilterName::NAMESPACE_ID;
+          }
+          else if (hashCode == RESOURCE_OWNER_HASH)
+          {
+            return ServiceFilterName::RESOURCE_OWNER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case ServiceFilterName::NAMESPACE_ID:
             return "NAMESPACE_ID";
+          case ServiceFilterName::RESOURCE_OWNER:
+            return "RESOURCE_OWNER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

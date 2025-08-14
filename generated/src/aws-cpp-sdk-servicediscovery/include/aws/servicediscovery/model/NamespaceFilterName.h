@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     TYPE,
     NAME,
-    HTTP_NAME
+    HTTP_NAME,
+    RESOURCE_OWNER
   };
 
 namespace NamespaceFilterNameMapper

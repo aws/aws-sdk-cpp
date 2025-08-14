@@ -54,13 +54,37 @@ namespace Model
 
     ///@{
     /**
-     * <p>The autonomous system (AS) number for Border Gateway Protocol (BGP)
-     * configuration.</p>
+     * <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646
+     * for Border Gateway Protocol (BGP) configuration. If you provide a number greater
+     * than the maximum, an error is returned. Use <code>asnLong</code> instead.</p>
+     *  <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We
+     * recommend using <code>asnLong</code> as it supports a greater pool of numbers.
+     * </p> <ul> <li> <p>The <code>asnLong</code> attribute accepts both ASN and long
+     * ASN ranges.</p> </li> <li> <p>If you provide a value in the same API call for
+     * both <code>asn</code> and <code>asnLong</code>, the API will only accept the
+     * value for <code>asnLong</code>.</p> </li> </ul> 
      */
     inline int GetAsn() const { return m_asn; }
     inline bool AsnHasBeenSet() const { return m_asnHasBeenSet; }
     inline void SetAsn(int value) { m_asnHasBeenSet = true; m_asn = value; }
     inline BGPPeer& WithAsn(int value) { SetAsn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The long ASN for the BGP peer. The valid range is from 1 to 4294967294 for
+     * BGP configuration. </p>  <p>You can use <code>asnLong</code> or
+     * <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it
+     * supports a greater pool of numbers. </p> <ul> <li> <p>The <code>asnLong</code>
+     * attribute accepts both ASN and long ASN ranges.</p> </li> <li> <p>If you provide
+     * a value in the same API call for both <code>asn</code> and <code>asnLong</code>,
+     * the API will only accept the value for <code>asnLong</code>.</p> </li> </ul>
+     * 
+     */
+    inline long long GetAsnLong() const { return m_asnLong; }
+    inline bool AsnLongHasBeenSet() const { return m_asnLongHasBeenSet; }
+    inline void SetAsnLong(long long value) { m_asnLongHasBeenSet = true; m_asnLong = value; }
+    inline BGPPeer& WithAsnLong(long long value) { SetAsnLong(value); return *this;}
     ///@}
 
     ///@{
@@ -175,6 +199,9 @@ namespace Model
 
     int m_asn{0};
     bool m_asnHasBeenSet = false;
+
+    long long m_asnLong{0};
+    bool m_asnLongHasBeenSet = false;
 
     Aws::String m_authKey;
     bool m_authKeyHasBeenSet = false;

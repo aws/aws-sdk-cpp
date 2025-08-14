@@ -70,6 +70,23 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the Amazon Web Services account that created the namespace with
+     * which the service is associated. If this isn't your account ID, it is the ID of
+     * the account that shared the namespace with your account. For more information
+     * about shared namespaces, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account
+     * Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+     */
+    inline const Aws::String& GetResourceOwner() const { return m_resourceOwner; }
+    inline bool ResourceOwnerHasBeenSet() const { return m_resourceOwnerHasBeenSet; }
+    template<typename ResourceOwnerT = Aws::String>
+    void SetResourceOwner(ResourceOwnerT&& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = std::forward<ResourceOwnerT>(value); }
+    template<typename ResourceOwnerT = Aws::String>
+    ServiceSummary& WithResourceOwner(ResourceOwnerT&& value) { SetResourceOwner(std::forward<ResourceOwnerT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the service.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
@@ -181,6 +198,23 @@ namespace Model
     template<typename CreateDateT = Aws::Utils::DateTime>
     ServiceSummary& WithCreateDate(CreateDateT&& value) { SetCreateDate(std::forward<CreateDateT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Amazon Web Services account that created the service. If this
+     * isn't your account ID, it is the account ID of the namespace owner or of another
+     * account with which the namespace has been shared. For more information about
+     * shared namespaces, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account
+     * Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+     */
+    inline const Aws::String& GetCreatedByAccount() const { return m_createdByAccount; }
+    inline bool CreatedByAccountHasBeenSet() const { return m_createdByAccountHasBeenSet; }
+    template<typename CreatedByAccountT = Aws::String>
+    void SetCreatedByAccount(CreatedByAccountT&& value) { m_createdByAccountHasBeenSet = true; m_createdByAccount = std::forward<CreatedByAccountT>(value); }
+    template<typename CreatedByAccountT = Aws::String>
+    ServiceSummary& WithCreatedByAccount(CreatedByAccountT&& value) { SetCreatedByAccount(std::forward<CreatedByAccountT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -188,6 +222,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
+
+    Aws::String m_resourceOwner;
+    bool m_resourceOwnerHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
@@ -212,6 +249,9 @@ namespace Model
 
     Aws::Utils::DateTime m_createDate{};
     bool m_createDateHasBeenSet = false;
+
+    Aws::String m_createdByAccount;
+    bool m_createdByAccountHasBeenSet = false;
   };
 
 } // namespace Model

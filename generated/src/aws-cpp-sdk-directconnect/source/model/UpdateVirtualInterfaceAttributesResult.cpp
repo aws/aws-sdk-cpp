@@ -65,6 +65,11 @@ UpdateVirtualInterfaceAttributesResult& UpdateVirtualInterfaceAttributesResult::
     m_asn = jsonValue.GetInteger("asn");
     m_asnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("asnLong"))
+  {
+    m_asnLong = jsonValue.GetInt64("asnLong");
+    m_asnLongHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("amazonSideAsn"))
   {
     m_amazonSideAsn = jsonValue.GetInt64("amazonSideAsn");

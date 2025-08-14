@@ -39,6 +39,11 @@ InstanceSummary& InstanceSummary::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("CreatedByAccount"))
+  {
+    m_createdByAccount = jsonValue.GetString("CreatedByAccount");
+    m_createdByAccountHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -60,6 +65,12 @@ JsonValue InstanceSummary::Jsonize() const
      attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
    }
    payload.WithObject("Attributes", std::move(attributesJsonMap));
+
+  }
+
+  if(m_createdByAccountHasBeenSet)
+  {
+   payload.WithString("CreatedByAccount", m_createdByAccount);
 
   }
 
