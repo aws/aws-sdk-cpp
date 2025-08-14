@@ -1058,15 +1058,15 @@ void AWSClient::AppendRecursionDetectionHeader(std::shared_ptr<Aws::Http::HttpRe
     {
         if (ch >= 0x20 && ch <= 0x7e) // ascii chars [32-126] or [' ' to '~'] are not escaped
         {
-          xAmznTraceIdValEncodedStr << ch;
+            xAmznTraceIdValEncodedStr << ch;
         }
         else
         {
-          // A percent-encoded octet is encoded as a character triplet
-          xAmznTraceIdValEncodedStr << '%' // consisting of the percent character "%"
-                                    << std::hex << std::setfill('0') << std::setw(2) << std::uppercase
-                                    << (size_t) ch //followed by the two hexadecimal digits representing that octet's numeric value
-                                    << std::dec << std::setfill(' ') << std::setw(0) << std::nouppercase;
+            // A percent-encoded octet is encoded as a character triplet
+            xAmznTraceIdValEncodedStr << '%' // consisting of the percent character "%"
+                                      << std::hex << std::setfill('0') << std::setw(2) << std::uppercase
+                                      << (size_t) ch //followed by the two hexadecimal digits representing that octet's numeric value
+                                      << std::dec << std::setfill(' ') << std::setw(0) << std::nouppercase;
         }
     }
     xAmznTraceIdVal = xAmznTraceIdValEncodedStr.str();
