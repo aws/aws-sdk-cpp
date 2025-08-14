@@ -1038,37 +1038,38 @@ std::shared_ptr<Aws::Http::HttpResponse> AWSClient::MakeHttpRequest(std::shared_
     return m_httpClient->MakeRequest(request, m_readRateLimiter.get(), m_writeRateLimiter.get());
 }
 
-void AWSClient::AppendRecursionDetectionHeader(std::shared_ptr<Aws::Http::HttpRequest> ioRequest) {
-  if(!ioRequest || ioRequest->HasHeader(Aws::Http::X_AMZN_TRACE_ID_HEADER)) {
-    return;
-  }
-  Aws::String awsLambdaFunctionName = Aws::Environment::GetEnv(AWS_LAMBDA_FUNCTION_NAME);
-  if(awsLambdaFunctionName.empty()) {
-    return;
-  }
-  Aws::String xAmznTraceIdVal = Aws::Environment::GetEnv(X_AMZN_TRACE_ID);
-  if(xAmznTraceIdVal.empty()) {
-    return;
-  }
-
-  // Escape all non-printable ASCII characters by percent encoding
-  Aws::OStringStream xAmznTraceIdValEncodedStr;
-  for(const char ch : xAmznTraceIdVal)
-  {
-    if (ch >= 0x20 && ch <= 0x7e) // ascii chars [32-126] or [' ' to '~'] are not escaped
-    {
-      xAmznTraceIdValEncodedStr << ch;
+void AWSClient::AppendRecursionDetectionHeader(std::shared_ptr<Aws::Http::HttpRequest> ioRequest)
+{
+    if(!ioRequest || ioRequest->HasHeader(Aws::Http::X_AMZN_TRACE_ID_HEADER)) {
+      return;
     }
-    else
-    {
-      // A percent-encoded octet is encoded as a character triplet
-      xAmznTraceIdValEncodedStr << '%' // consisting of the percent character "%"
-                                << std::hex << std::setfill('0') << std::setw(2) << std::uppercase
-                                << (size_t) ch //followed by the two hexadecimal digits representing that octet's numeric value
-                                << std::dec << std::setfill(' ') << std::setw(0) << std::nouppercase;
+    Aws::String awsLambdaFunctionName = Aws::Environment::GetEnv(AWS_LAMBDA_FUNCTION_NAME);
+    if(awsLambdaFunctionName.empty()) {
+      return;
     }
-  }
-  xAmznTraceIdVal = xAmznTraceIdValEncodedStr.str();
+    Aws::String xAmznTraceIdVal = Aws::Environment::GetEnv(X_AMZN_TRACE_ID);
+    if(xAmznTraceIdVal.empty()) {
+      return;
+    }
 
-  ioRequest->SetHeaderValue(Aws::Http::X_AMZN_TRACE_ID_HEADER, xAmznTraceIdVal);
+    // Escape all non-printable ASCII characters by percent encoding
+    Aws::OStringStream xAmznTraceIdValEncodedStr;
+    for(const char ch : xAmznTraceIdVal)
+    {
+      if (ch >= 0x20 && ch <= 0x7e) // ascii chars [32-126] or [' ' to '~'] are not escaped
+      {
+        xAmznTraceIdValEncodedStr << ch;
+      }
+      else
+      {
+        // A percent-encoded octet is encoded as a character triplet
+        xAmznTraceIdValEncodedStr << '%' // consisting of the percent character "%"
+                                  << std::hex << std::setfill('0') << std::setw(2) << std::uppercase
+                                  << (size_t) ch //followed by the two hexadecimal digits representing that octet's numeric value
+                                  << std::dec << std::setfill(' ') << std::setw(0) << std::nouppercase;
+      }
+    }
+    xAmznTraceIdVal = xAmznTraceIdValEncodedStr.str();
+
+    ioRequest->SetHeaderValue(Aws::Http::X_AMZN_TRACE_ID_HEADER, xAmznTraceIdVal);
 }
