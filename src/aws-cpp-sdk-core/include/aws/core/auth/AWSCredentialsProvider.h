@@ -19,12 +19,11 @@
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/client/RetryStrategy.h>
 #include <memory>
-#include <functional>
 
 namespace Aws
 {
     class AmazonWebServiceRequest;
-    
+
     namespace Client
     {
         struct ClientConfiguration;
@@ -77,16 +76,13 @@ namespace Aws
             virtual AWSCredentials GetAWSCredentials() = 0;
             
             /**
-             * Set callback for credential usage tracking
+             * Interface that allows providers to modify the request during credential retrieval.
              */
-            virtual void SetCredentialTrackingCallback(std::function<void()> callback) { m_trackingCallback = callback; }
+            virtual AWSCredentials GetAWSCredentials(Aws::AmazonWebServiceRequest& request) {
+                AWS_UNREFERENCED_PARAM(request);
+                return GetAWSCredentials();
+            }
             
-        protected:
-            /**
-             * Call this when credentials are successfully retrieved for tracking
-             */
-            void NotifyCredentialUsage() { if (m_trackingCallback) m_trackingCallback(); }
-
         protected:
             /**
              * The default implementation keeps up with the cache times and lets you know if it's time to refresh your internal caching
@@ -97,7 +93,6 @@ namespace Aws
             mutable Aws::Utils::Threading::ReaderWriterLock m_reloadLock;
         private:
             long long m_lastLoadedMs;
-            std::function<void()> m_trackingCallback;
         };
 
         /**
@@ -155,15 +150,15 @@ namespace Aws
         {
         public:
             /**
-            * Initializes environment credentials provider
-            */
-            EnvironmentAWSCredentialsProvider() = default;
-            
-            /**
             * Reads AWS credentials from the Environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY and AWS_SESSION_TOKEN if they exist. If they
             * are not found, empty credentials are returned. Credentials are not cached.
             */
             AWSCredentials GetAWSCredentials() override;
+            
+            /**
+            * New interface that adds environment credential tracking to the request.
+            */
+            AWSCredentials GetAWSCredentials(Aws::AmazonWebServiceRequest& request) override;
         };
 
         /**

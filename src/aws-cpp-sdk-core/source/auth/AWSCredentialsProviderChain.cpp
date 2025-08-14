@@ -22,8 +22,6 @@ AWSCredentials AWSCredentialsProviderChain::GetAWSCredentials()
 {
     ReaderLockGuard lock(m_cachedProviderLock);
     if (m_cachedProvider) {
-      // Forward callback to cached provider
-      m_cachedProvider->SetCredentialTrackingCallback(m_chainTrackingCallback);
       AWSCredentials credentials = m_cachedProvider->GetAWSCredentials();
       if (!credentials.GetAWSAccessKeyId().empty() && !credentials.GetAWSSecretKey().empty())
       {
@@ -33,8 +31,6 @@ AWSCredentials AWSCredentialsProviderChain::GetAWSCredentials()
     lock.UpgradeToWriterLock();
     for (auto&& credentialsProvider : m_providerChain)
     {
-        // Forward callback to each provider in chain
-        credentialsProvider->SetCredentialTrackingCallback(m_chainTrackingCallback);
         AWSCredentials credentials = credentialsProvider->GetAWSCredentials();
         if (!credentials.GetAWSAccessKeyId().empty() && !credentials.GetAWSSecretKey().empty())
         {

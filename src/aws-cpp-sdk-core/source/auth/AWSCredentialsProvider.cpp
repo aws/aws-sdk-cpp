@@ -105,13 +105,15 @@ AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials() //pass in 
         }
     }
     
-    if (!credentials.IsEmpty()) {
-        // TODO: this will work
-        // TODO: how does request get here?????
-        // request.AddFeature(ENV_VAR)
-        NotifyCredentialUsage();
-    }
+    return credentials;
+}
 
+AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials(Aws::AmazonWebServiceRequest& request)
+{
+    AWSCredentials credentials = GetAWSCredentials();
+    if (!credentials.IsEmpty()) {
+        request.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS);
+    }
     return credentials;
 }
 
