@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/RedshiftServerlessAuthConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/RedshiftServerlessAuthConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ARN of the Amazon Redshift workgroup.</p>
+     */
+    inline const Aws::String& GetWorkgroupArn() const { return m_workgroupArn; }
+    inline bool WorkgroupArnHasBeenSet() const { return m_workgroupArnHasBeenSet; }
+    template<typename WorkgroupArnT = Aws::String>
+    void SetWorkgroupArn(WorkgroupArnT&& value) { m_workgroupArnHasBeenSet = true; m_workgroupArn = std::forward<WorkgroupArnT>(value); }
+    template<typename WorkgroupArnT = Aws::String>
+    RedshiftServerlessConfiguration& WithWorkgroupArn(WorkgroupArnT&& value) { SetWorkgroupArn(std::forward<WorkgroupArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies configurations for authentication to an Amazon Redshift provisioned
      * data warehouse.</p>
      */
@@ -51,25 +63,13 @@ namespace Model
     template<typename AuthConfigurationT = RedshiftServerlessAuthConfiguration>
     RedshiftServerlessConfiguration& WithAuthConfiguration(AuthConfigurationT&& value) { SetAuthConfiguration(std::forward<AuthConfigurationT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The ARN of the Amazon Redshift workgroup.</p>
-     */
-    inline const Aws::String& GetWorkgroupArn() const { return m_workgroupArn; }
-    inline bool WorkgroupArnHasBeenSet() const { return m_workgroupArnHasBeenSet; }
-    template<typename WorkgroupArnT = Aws::String>
-    void SetWorkgroupArn(WorkgroupArnT&& value) { m_workgroupArnHasBeenSet = true; m_workgroupArn = std::forward<WorkgroupArnT>(value); }
-    template<typename WorkgroupArnT = Aws::String>
-    RedshiftServerlessConfiguration& WithWorkgroupArn(WorkgroupArnT&& value) { SetWorkgroupArn(std::forward<WorkgroupArnT>(value)); return *this;}
-    ///@}
   private:
-
-    RedshiftServerlessAuthConfiguration m_authConfiguration;
-    bool m_authConfigurationHasBeenSet = false;
 
     Aws::String m_workgroupArn;
     bool m_workgroupArnHasBeenSet = false;
+
+    RedshiftServerlessAuthConfiguration m_authConfiguration;
+    bool m_authConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

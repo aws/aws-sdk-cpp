@@ -25,30 +25,30 @@ RdsFieldMapping::RdsFieldMapping(JsonView jsonValue)
 
 RdsFieldMapping& RdsFieldMapping::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("customMetadataField"))
-  {
-    m_customMetadataField = jsonValue.GetString("customMetadataField");
-    m_customMetadataFieldHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("metadataField"))
-  {
-    m_metadataField = jsonValue.GetString("metadataField");
-    m_metadataFieldHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("primaryKeyField"))
   {
     m_primaryKeyField = jsonValue.GetString("primaryKeyField");
     m_primaryKeyFieldHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("vectorField"))
+  {
+    m_vectorField = jsonValue.GetString("vectorField");
+    m_vectorFieldHasBeenSet = true;
   }
   if(jsonValue.ValueExists("textField"))
   {
     m_textField = jsonValue.GetString("textField");
     m_textFieldHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vectorField"))
+  if(jsonValue.ValueExists("metadataField"))
   {
-    m_vectorField = jsonValue.GetString("vectorField");
-    m_vectorFieldHasBeenSet = true;
+    m_metadataField = jsonValue.GetString("metadataField");
+    m_metadataFieldHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("customMetadataField"))
+  {
+    m_customMetadataField = jsonValue.GetString("customMetadataField");
+    m_customMetadataFieldHasBeenSet = true;
   }
   return *this;
 }
@@ -57,21 +57,15 @@ JsonValue RdsFieldMapping::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_customMetadataFieldHasBeenSet)
-  {
-   payload.WithString("customMetadataField", m_customMetadataField);
-
-  }
-
-  if(m_metadataFieldHasBeenSet)
-  {
-   payload.WithString("metadataField", m_metadataField);
-
-  }
-
   if(m_primaryKeyFieldHasBeenSet)
   {
    payload.WithString("primaryKeyField", m_primaryKeyField);
+
+  }
+
+  if(m_vectorFieldHasBeenSet)
+  {
+   payload.WithString("vectorField", m_vectorField);
 
   }
 
@@ -81,9 +75,15 @@ JsonValue RdsFieldMapping::Jsonize() const
 
   }
 
-  if(m_vectorFieldHasBeenSet)
+  if(m_metadataFieldHasBeenSet)
   {
-   payload.WithString("vectorField", m_vectorField);
+   payload.WithString("metadataField", m_metadataField);
+
+  }
+
+  if(m_customMetadataFieldHasBeenSet)
+  {
+   payload.WithString("customMetadataField", m_customMetadataField);
 
   }
 

@@ -22,11 +22,6 @@ Aws::String UpdateAgentAliasRequest::SerializePayload() const
 
   }
 
-  if(m_aliasInvocationStateHasBeenSet)
-  {
-   payload.WithString("aliasInvocationState", AliasInvocationStateMapper::GetNameForAliasInvocationState(m_aliasInvocationState));
-  }
-
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
@@ -42,6 +37,11 @@ Aws::String UpdateAgentAliasRequest::SerializePayload() const
    }
    payload.WithArray("routingConfiguration", std::move(routingConfigurationJsonList));
 
+  }
+
+  if(m_aliasInvocationStateHasBeenSet)
+  {
+   payload.WithString("aliasInvocationState", AliasInvocationStateMapper::GetNameForAliasInvocationState(m_aliasInvocationState));
   }
 
   return payload.View().WriteReadable();

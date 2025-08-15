@@ -35,6 +35,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier of the agent that the alias belongs to.</p>
+     */
+    inline const Aws::String& GetAgentId() const { return m_agentId; }
+    template<typename AgentIdT = Aws::String>
+    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
+    template<typename AgentIdT = Aws::String>
+    DeleteAgentAliasResult& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The unique identifier of the alias that was deleted.</p>
      */
     inline const Aws::String& GetAgentAliasId() const { return m_agentAliasId; }
@@ -54,17 +65,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The unique identifier of the agent that the alias belongs to.</p>
-     */
-    inline const Aws::String& GetAgentId() const { return m_agentId; }
-    template<typename AgentIdT = Aws::String>
-    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
-    template<typename AgentIdT = Aws::String>
-    DeleteAgentAliasResult& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -74,14 +74,14 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_agentId;
+    bool m_agentIdHasBeenSet = false;
+
     Aws::String m_agentAliasId;
     bool m_agentAliasIdHasBeenSet = false;
 
     AgentAliasStatus m_agentAliasStatus{AgentAliasStatus::NOT_SET};
     bool m_agentAliasStatusHasBeenSet = false;
-
-    Aws::String m_agentId;
-    bool m_agentIdHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

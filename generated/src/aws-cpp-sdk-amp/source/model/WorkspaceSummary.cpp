@@ -25,6 +25,11 @@ WorkspaceSummary::WorkspaceSummary(JsonView jsonValue)
 
 WorkspaceSummary& WorkspaceSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("workspaceId"))
+  {
+    m_workspaceId = jsonValue.GetString("workspaceId");
+    m_workspaceIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("alias"))
   {
     m_alias = jsonValue.GetString("alias");
@@ -35,20 +40,15 @@ WorkspaceSummary& WorkspaceSummary::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("kmsKeyArn"))
-  {
-    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-    m_kmsKeyArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
     m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("tags"))
   {
@@ -59,10 +59,10 @@ WorkspaceSummary& WorkspaceSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("workspaceId"))
+  if(jsonValue.ValueExists("kmsKeyArn"))
   {
-    m_workspaceId = jsonValue.GetString("workspaceId");
-    m_workspaceIdHasBeenSet = true;
+    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
+    m_kmsKeyArnHasBeenSet = true;
   }
   return *this;
 }
@@ -70,6 +70,12 @@ WorkspaceSummary& WorkspaceSummary::operator =(JsonView jsonValue)
 JsonValue WorkspaceSummary::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_workspaceIdHasBeenSet)
+  {
+   payload.WithString("workspaceId", m_workspaceId);
+
+  }
 
   if(m_aliasHasBeenSet)
   {
@@ -83,21 +89,15 @@ JsonValue WorkspaceSummary::Jsonize() const
 
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
-  }
-
-  if(m_kmsKeyArnHasBeenSet)
-  {
-   payload.WithString("kmsKeyArn", m_kmsKeyArn);
-
-  }
-
   if(m_statusHasBeenSet)
   {
    payload.WithObject("status", m_status.Jsonize());
 
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   if(m_tagsHasBeenSet)
@@ -111,9 +111,9 @@ JsonValue WorkspaceSummary::Jsonize() const
 
   }
 
-  if(m_workspaceIdHasBeenSet)
+  if(m_kmsKeyArnHasBeenSet)
   {
-   payload.WithString("workspaceId", m_workspaceId);
+   payload.WithString("kmsKeyArn", m_kmsKeyArn);
 
   }
 

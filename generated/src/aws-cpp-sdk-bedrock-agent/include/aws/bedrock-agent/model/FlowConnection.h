@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/FlowConnectionConfiguration.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/FlowConnectionType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/FlowConnectionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -42,14 +42,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration of the connection.</p>
+     * <p>Whether the source node that the connection begins from is a condition node
+     * (<code>Conditional</code>) or not (<code>Data</code>).</p>
      */
-    inline const FlowConnectionConfiguration& GetConfiguration() const { return m_configuration; }
-    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    template<typename ConfigurationT = FlowConnectionConfiguration>
-    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
-    template<typename ConfigurationT = FlowConnectionConfiguration>
-    FlowConnection& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
+    inline FlowConnectionType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(FlowConnectionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline FlowConnection& WithType(FlowConnectionType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -90,18 +89,19 @@ namespace Model
 
     ///@{
     /**
-     * <p>Whether the source node that the connection begins from is a condition node
-     * (<code>Conditional</code>) or not (<code>Data</code>).</p>
+     * <p>The configuration of the connection.</p>
      */
-    inline FlowConnectionType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(FlowConnectionType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline FlowConnection& WithType(FlowConnectionType value) { SetType(value); return *this;}
+    inline const FlowConnectionConfiguration& GetConfiguration() const { return m_configuration; }
+    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
+    template<typename ConfigurationT = FlowConnectionConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = FlowConnectionConfiguration>
+    FlowConnection& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    FlowConnectionConfiguration m_configuration;
-    bool m_configurationHasBeenSet = false;
+    FlowConnectionType m_type{FlowConnectionType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
@@ -112,8 +112,8 @@ namespace Model
     Aws::String m_target;
     bool m_targetHasBeenSet = false;
 
-    FlowConnectionType m_type{FlowConnectionType::NOT_SET};
-    bool m_typeHasBeenSet = false;
+    FlowConnectionConfiguration m_configuration;
+    bool m_configurationHasBeenSet = false;
   };
 
 } // namespace Model

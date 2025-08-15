@@ -25,15 +25,15 @@ NeptuneAnalyticsFieldMapping::NeptuneAnalyticsFieldMapping(JsonView jsonValue)
 
 NeptuneAnalyticsFieldMapping& NeptuneAnalyticsFieldMapping::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("metadataField"))
-  {
-    m_metadataField = jsonValue.GetString("metadataField");
-    m_metadataFieldHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("textField"))
   {
     m_textField = jsonValue.GetString("textField");
     m_textFieldHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("metadataField"))
+  {
+    m_metadataField = jsonValue.GetString("metadataField");
+    m_metadataFieldHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue NeptuneAnalyticsFieldMapping::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_metadataFieldHasBeenSet)
-  {
-   payload.WithString("metadataField", m_metadataField);
-
-  }
-
   if(m_textFieldHasBeenSet)
   {
    payload.WithString("textField", m_textField);
+
+  }
+
+  if(m_metadataFieldHasBeenSet)
+  {
+   payload.WithString("metadataField", m_metadataField);
 
   }
 

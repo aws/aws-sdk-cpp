@@ -25,6 +25,11 @@ SalesforceSourceConfiguration::SalesforceSourceConfiguration(JsonView jsonValue)
 
 SalesforceSourceConfiguration& SalesforceSourceConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("hostUrl"))
+  {
+    m_hostUrl = jsonValue.GetString("hostUrl");
+    m_hostUrlHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("authType"))
   {
     m_authType = SalesforceAuthTypeMapper::GetSalesforceAuthTypeForName(jsonValue.GetString("authType"));
@@ -35,17 +40,18 @@ SalesforceSourceConfiguration& SalesforceSourceConfiguration::operator =(JsonVie
     m_credentialsSecretArn = jsonValue.GetString("credentialsSecretArn");
     m_credentialsSecretArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("hostUrl"))
-  {
-    m_hostUrl = jsonValue.GetString("hostUrl");
-    m_hostUrlHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue SalesforceSourceConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_hostUrlHasBeenSet)
+  {
+   payload.WithString("hostUrl", m_hostUrl);
+
+  }
 
   if(m_authTypeHasBeenSet)
   {
@@ -55,12 +61,6 @@ JsonValue SalesforceSourceConfiguration::Jsonize() const
   if(m_credentialsSecretArnHasBeenSet)
   {
    payload.WithString("credentialsSecretArn", m_credentialsSecretArn);
-
-  }
-
-  if(m_hostUrlHasBeenSet)
-  {
-   payload.WithString("hostUrl", m_hostUrl);
 
   }
 

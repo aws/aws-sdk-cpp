@@ -30,20 +30,20 @@ CustomContent& CustomContent::operator =(JsonView jsonValue)
     m_customDocumentIdentifier = jsonValue.GetObject("customDocumentIdentifier");
     m_customDocumentIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("inlineContent"))
+  if(jsonValue.ValueExists("sourceType"))
   {
-    m_inlineContent = jsonValue.GetObject("inlineContent");
-    m_inlineContentHasBeenSet = true;
+    m_sourceType = CustomSourceTypeMapper::GetCustomSourceTypeForName(jsonValue.GetString("sourceType"));
+    m_sourceTypeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("s3Location"))
   {
     m_s3Location = jsonValue.GetObject("s3Location");
     m_s3LocationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sourceType"))
+  if(jsonValue.ValueExists("inlineContent"))
   {
-    m_sourceType = CustomSourceTypeMapper::GetCustomSourceTypeForName(jsonValue.GetString("sourceType"));
-    m_sourceTypeHasBeenSet = true;
+    m_inlineContent = jsonValue.GetObject("inlineContent");
+    m_inlineContentHasBeenSet = true;
   }
   return *this;
 }
@@ -58,10 +58,9 @@ JsonValue CustomContent::Jsonize() const
 
   }
 
-  if(m_inlineContentHasBeenSet)
+  if(m_sourceTypeHasBeenSet)
   {
-   payload.WithObject("inlineContent", m_inlineContent.Jsonize());
-
+   payload.WithString("sourceType", CustomSourceTypeMapper::GetNameForCustomSourceType(m_sourceType));
   }
 
   if(m_s3LocationHasBeenSet)
@@ -70,9 +69,10 @@ JsonValue CustomContent::Jsonize() const
 
   }
 
-  if(m_sourceTypeHasBeenSet)
+  if(m_inlineContentHasBeenSet)
   {
-   payload.WithString("sourceType", CustomSourceTypeMapper::GetNameForCustomSourceType(m_sourceType));
+   payload.WithObject("inlineContent", m_inlineContent.Jsonize());
+
   }
 
   return payload;

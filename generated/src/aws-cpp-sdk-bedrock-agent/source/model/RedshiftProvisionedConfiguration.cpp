@@ -25,15 +25,15 @@ RedshiftProvisionedConfiguration::RedshiftProvisionedConfiguration(JsonView json
 
 RedshiftProvisionedConfiguration& RedshiftProvisionedConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("authConfiguration"))
-  {
-    m_authConfiguration = jsonValue.GetObject("authConfiguration");
-    m_authConfigurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("clusterIdentifier"))
   {
     m_clusterIdentifier = jsonValue.GetString("clusterIdentifier");
     m_clusterIdentifierHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("authConfiguration"))
+  {
+    m_authConfiguration = jsonValue.GetObject("authConfiguration");
+    m_authConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue RedshiftProvisionedConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_authConfigurationHasBeenSet)
-  {
-   payload.WithObject("authConfiguration", m_authConfiguration.Jsonize());
-
-  }
-
   if(m_clusterIdentifierHasBeenSet)
   {
    payload.WithString("clusterIdentifier", m_clusterIdentifier);
+
+  }
+
+  if(m_authConfigurationHasBeenSet)
+  {
+   payload.WithObject("authConfiguration", m_authConfiguration.Jsonize());
 
   }
 

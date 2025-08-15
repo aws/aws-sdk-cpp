@@ -25,15 +25,15 @@ FlowConnectionConfiguration::FlowConnectionConfiguration(JsonView jsonValue)
 
 FlowConnectionConfiguration& FlowConnectionConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("conditional"))
-  {
-    m_conditional = jsonValue.GetObject("conditional");
-    m_conditionalHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("data"))
   {
     m_data = jsonValue.GetObject("data");
     m_dataHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("conditional"))
+  {
+    m_conditional = jsonValue.GetObject("conditional");
+    m_conditionalHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue FlowConnectionConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_conditionalHasBeenSet)
-  {
-   payload.WithObject("conditional", m_conditional.Jsonize());
-
-  }
-
   if(m_dataHasBeenSet)
   {
    payload.WithObject("data", m_data.Jsonize());
+
+  }
+
+  if(m_conditionalHasBeenSet)
+  {
+   payload.WithObject("conditional", m_conditional.Jsonize());
 
   }
 

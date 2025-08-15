@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the action group to delete.</p>
-     */
-    inline const Aws::String& GetActionGroupId() const { return m_actionGroupId; }
-    inline bool ActionGroupIdHasBeenSet() const { return m_actionGroupIdHasBeenSet; }
-    template<typename ActionGroupIdT = Aws::String>
-    void SetActionGroupId(ActionGroupIdT&& value) { m_actionGroupIdHasBeenSet = true; m_actionGroupId = std::forward<ActionGroupIdT>(value); }
-    template<typename ActionGroupIdT = Aws::String>
-    DeleteAgentActionGroupRequest& WithActionGroupId(ActionGroupIdT&& value) { SetActionGroupId(std::forward<ActionGroupIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique identifier of the agent that the action group belongs to.</p>
      */
     inline const Aws::String& GetAgentId() const { return m_agentId; }
@@ -76,6 +64,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier of the action group to delete.</p>
+     */
+    inline const Aws::String& GetActionGroupId() const { return m_actionGroupId; }
+    inline bool ActionGroupIdHasBeenSet() const { return m_actionGroupIdHasBeenSet; }
+    template<typename ActionGroupIdT = Aws::String>
+    void SetActionGroupId(ActionGroupIdT&& value) { m_actionGroupIdHasBeenSet = true; m_actionGroupId = std::forward<ActionGroupIdT>(value); }
+    template<typename ActionGroupIdT = Aws::String>
+    DeleteAgentActionGroupRequest& WithActionGroupId(ActionGroupIdT&& value) { SetActionGroupId(std::forward<ActionGroupIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>By default, this value is <code>false</code> and deletion is stopped if the
      * resource is in use. If you set it to <code>true</code>, the resource will be
      * deleted even if the resource is in use.</p>
@@ -87,14 +87,14 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_actionGroupId;
-    bool m_actionGroupIdHasBeenSet = false;
-
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet = false;
 
     Aws::String m_agentVersion;
     bool m_agentVersionHasBeenSet = false;
+
+    Aws::String m_actionGroupId;
+    bool m_actionGroupIdHasBeenSet = false;
 
     bool m_skipResourceInUseCheck{false};
     bool m_skipResourceInUseCheckHasBeenSet = false;

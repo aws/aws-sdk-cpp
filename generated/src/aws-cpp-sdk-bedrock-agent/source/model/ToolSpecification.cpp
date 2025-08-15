@@ -25,6 +25,11 @@ ToolSpecification::ToolSpecification(JsonView jsonValue)
 
 ToolSpecification& ToolSpecification::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
@@ -35,17 +40,18 @@ ToolSpecification& ToolSpecification::operator =(JsonView jsonValue)
     m_inputSchema = jsonValue.GetObject("inputSchema");
     m_inputSchemaHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue ToolSpecification::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
 
   if(m_descriptionHasBeenSet)
   {
@@ -56,12 +62,6 @@ JsonValue ToolSpecification::Jsonize() const
   if(m_inputSchemaHasBeenSet)
   {
    payload.WithObject("inputSchema", m_inputSchema.Jsonize());
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
 
   }
 

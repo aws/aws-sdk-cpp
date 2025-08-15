@@ -25,45 +25,45 @@ MongoDbAtlasConfiguration::MongoDbAtlasConfiguration(JsonView jsonValue)
 
 MongoDbAtlasConfiguration& MongoDbAtlasConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("collectionName"))
+  if(jsonValue.ValueExists("endpoint"))
   {
-    m_collectionName = jsonValue.GetString("collectionName");
-    m_collectionNameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("credentialsSecretArn"))
-  {
-    m_credentialsSecretArn = jsonValue.GetString("credentialsSecretArn");
-    m_credentialsSecretArnHasBeenSet = true;
+    m_endpoint = jsonValue.GetString("endpoint");
+    m_endpointHasBeenSet = true;
   }
   if(jsonValue.ValueExists("databaseName"))
   {
     m_databaseName = jsonValue.GetString("databaseName");
     m_databaseNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("endpoint"))
+  if(jsonValue.ValueExists("collectionName"))
   {
-    m_endpoint = jsonValue.GetString("endpoint");
-    m_endpointHasBeenSet = true;
+    m_collectionName = jsonValue.GetString("collectionName");
+    m_collectionNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("endpointServiceName"))
+  if(jsonValue.ValueExists("vectorIndexName"))
   {
-    m_endpointServiceName = jsonValue.GetString("endpointServiceName");
-    m_endpointServiceNameHasBeenSet = true;
+    m_vectorIndexName = jsonValue.GetString("vectorIndexName");
+    m_vectorIndexNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("credentialsSecretArn"))
+  {
+    m_credentialsSecretArn = jsonValue.GetString("credentialsSecretArn");
+    m_credentialsSecretArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("fieldMapping"))
   {
     m_fieldMapping = jsonValue.GetObject("fieldMapping");
     m_fieldMappingHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("endpointServiceName"))
+  {
+    m_endpointServiceName = jsonValue.GetString("endpointServiceName");
+    m_endpointServiceNameHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("textIndexName"))
   {
     m_textIndexName = jsonValue.GetString("textIndexName");
     m_textIndexNameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("vectorIndexName"))
-  {
-    m_vectorIndexName = jsonValue.GetString("vectorIndexName");
-    m_vectorIndexNameHasBeenSet = true;
   }
   return *this;
 }
@@ -72,15 +72,9 @@ JsonValue MongoDbAtlasConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_collectionNameHasBeenSet)
+  if(m_endpointHasBeenSet)
   {
-   payload.WithString("collectionName", m_collectionName);
-
-  }
-
-  if(m_credentialsSecretArnHasBeenSet)
-  {
-   payload.WithString("credentialsSecretArn", m_credentialsSecretArn);
+   payload.WithString("endpoint", m_endpoint);
 
   }
 
@@ -90,15 +84,21 @@ JsonValue MongoDbAtlasConfiguration::Jsonize() const
 
   }
 
-  if(m_endpointHasBeenSet)
+  if(m_collectionNameHasBeenSet)
   {
-   payload.WithString("endpoint", m_endpoint);
+   payload.WithString("collectionName", m_collectionName);
 
   }
 
-  if(m_endpointServiceNameHasBeenSet)
+  if(m_vectorIndexNameHasBeenSet)
   {
-   payload.WithString("endpointServiceName", m_endpointServiceName);
+   payload.WithString("vectorIndexName", m_vectorIndexName);
+
+  }
+
+  if(m_credentialsSecretArnHasBeenSet)
+  {
+   payload.WithString("credentialsSecretArn", m_credentialsSecretArn);
 
   }
 
@@ -108,15 +108,15 @@ JsonValue MongoDbAtlasConfiguration::Jsonize() const
 
   }
 
-  if(m_textIndexNameHasBeenSet)
+  if(m_endpointServiceNameHasBeenSet)
   {
-   payload.WithString("textIndexName", m_textIndexName);
+   payload.WithString("endpointServiceName", m_endpointServiceName);
 
   }
 
-  if(m_vectorIndexNameHasBeenSet)
+  if(m_textIndexNameHasBeenSet)
   {
-   payload.WithString("vectorIndexName", m_vectorIndexName);
+   payload.WithString("textIndexName", m_textIndexName);
 
   }
 

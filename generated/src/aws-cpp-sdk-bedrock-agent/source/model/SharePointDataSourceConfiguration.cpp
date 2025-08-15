@@ -25,15 +25,15 @@ SharePointDataSourceConfiguration::SharePointDataSourceConfiguration(JsonView js
 
 SharePointDataSourceConfiguration& SharePointDataSourceConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("crawlerConfiguration"))
-  {
-    m_crawlerConfiguration = jsonValue.GetObject("crawlerConfiguration");
-    m_crawlerConfigurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("sourceConfiguration"))
   {
     m_sourceConfiguration = jsonValue.GetObject("sourceConfiguration");
     m_sourceConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("crawlerConfiguration"))
+  {
+    m_crawlerConfiguration = jsonValue.GetObject("crawlerConfiguration");
+    m_crawlerConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue SharePointDataSourceConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_crawlerConfigurationHasBeenSet)
-  {
-   payload.WithObject("crawlerConfiguration", m_crawlerConfiguration.Jsonize());
-
-  }
-
   if(m_sourceConfigurationHasBeenSet)
   {
    payload.WithObject("sourceConfiguration", m_sourceConfiguration.Jsonize());
+
+  }
+
+  if(m_crawlerConfigurationHasBeenSet)
+  {
+   payload.WithObject("crawlerConfiguration", m_crawlerConfiguration.Jsonize());
 
   }
 

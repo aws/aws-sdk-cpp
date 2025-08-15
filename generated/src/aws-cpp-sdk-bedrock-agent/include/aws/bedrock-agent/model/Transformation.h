@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/StepType.h>
 #include <aws/bedrock-agent/model/TransformationFunction.h>
+#include <aws/bedrock-agent/model/StepType.h>
 #include <utility>
 
 namespace Aws
@@ -42,16 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>When the service applies the transformation.</p>
-     */
-    inline StepType GetStepToApply() const { return m_stepToApply; }
-    inline bool StepToApplyHasBeenSet() const { return m_stepToApplyHasBeenSet; }
-    inline void SetStepToApply(StepType value) { m_stepToApplyHasBeenSet = true; m_stepToApply = value; }
-    inline Transformation& WithStepToApply(StepType value) { SetStepToApply(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A Lambda function that processes documents.</p>
      */
     inline const TransformationFunction& GetTransformationFunction() const { return m_transformationFunction; }
@@ -61,13 +51,23 @@ namespace Model
     template<typename TransformationFunctionT = TransformationFunction>
     Transformation& WithTransformationFunction(TransformationFunctionT&& value) { SetTransformationFunction(std::forward<TransformationFunctionT>(value)); return *this;}
     ///@}
-  private:
 
-    StepType m_stepToApply{StepType::NOT_SET};
-    bool m_stepToApplyHasBeenSet = false;
+    ///@{
+    /**
+     * <p>When the service applies the transformation.</p>
+     */
+    inline StepType GetStepToApply() const { return m_stepToApply; }
+    inline bool StepToApplyHasBeenSet() const { return m_stepToApplyHasBeenSet; }
+    inline void SetStepToApply(StepType value) { m_stepToApplyHasBeenSet = true; m_stepToApply = value; }
+    inline Transformation& WithStepToApply(StepType value) { SetStepToApply(value); return *this;}
+    ///@}
+  private:
 
     TransformationFunction m_transformationFunction;
     bool m_transformationFunctionHasBeenSet = false;
+
+    StepType m_stepToApply{StepType::NOT_SET};
+    bool m_stepToApplyHasBeenSet = false;
   };
 
 } // namespace Model

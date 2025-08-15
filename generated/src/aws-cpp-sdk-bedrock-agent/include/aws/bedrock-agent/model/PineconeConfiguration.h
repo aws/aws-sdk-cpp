@@ -68,6 +68,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The namespace to be used to write new data to your database.</p>
+     */
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
+    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    PineconeConfiguration& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains the names of the fields to which to map information about the vector
      * store.</p>
      */
@@ -78,18 +90,6 @@ namespace Model
     template<typename FieldMappingT = PineconeFieldMapping>
     PineconeConfiguration& WithFieldMapping(FieldMappingT&& value) { SetFieldMapping(std::forward<FieldMappingT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The namespace to be used to write new data to your database.</p>
-     */
-    inline const Aws::String& GetNamespace() const { return m_namespace; }
-    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    template<typename NamespaceT = Aws::String>
-    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
-    template<typename NamespaceT = Aws::String>
-    PineconeConfiguration& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_connectionString;
@@ -98,11 +98,11 @@ namespace Model
     Aws::String m_credentialsSecretArn;
     bool m_credentialsSecretArnHasBeenSet = false;
 
-    PineconeFieldMapping m_fieldMapping;
-    bool m_fieldMappingHasBeenSet = false;
-
     Aws::String m_namespace;
     bool m_namespaceHasBeenSet = false;
+
+    PineconeFieldMapping m_fieldMapping;
+    bool m_fieldMappingHasBeenSet = false;
   };
 
 } // namespace Model

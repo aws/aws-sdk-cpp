@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/CachePointBlock.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/PromptInputVariable.h>
 #include <utility>
 
@@ -44,6 +44,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The message for the prompt.</p>
+     */
+    inline const Aws::String& GetText() const { return m_text; }
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    TextPromptTemplateConfiguration& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A cache checkpoint within a template configuration.</p>
      */
     inline const CachePointBlock& GetCachePoint() const { return m_cachePoint; }
@@ -67,28 +79,16 @@ namespace Model
     template<typename InputVariablesT = PromptInputVariable>
     TextPromptTemplateConfiguration& AddInputVariables(InputVariablesT&& value) { m_inputVariablesHasBeenSet = true; m_inputVariables.emplace_back(std::forward<InputVariablesT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The message for the prompt.</p>
-     */
-    inline const Aws::String& GetText() const { return m_text; }
-    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    template<typename TextT = Aws::String>
-    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
-    template<typename TextT = Aws::String>
-    TextPromptTemplateConfiguration& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_text;
+    bool m_textHasBeenSet = false;
 
     CachePointBlock m_cachePoint;
     bool m_cachePointHasBeenSet = false;
 
     Aws::Vector<PromptInputVariable> m_inputVariables;
     bool m_inputVariablesHasBeenSet = false;
-
-    Aws::String m_text;
-    bool m_textHasBeenSet = false;
   };
 
 } // namespace Model

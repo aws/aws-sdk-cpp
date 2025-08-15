@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/MetadataValueType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -42,12 +42,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The value of the Boolean metadata attribute.</p>
+     * <p>The type of the metadata attribute.</p>
      */
-    inline bool GetBooleanValue() const { return m_booleanValue; }
-    inline bool BooleanValueHasBeenSet() const { return m_booleanValueHasBeenSet; }
-    inline void SetBooleanValue(bool value) { m_booleanValueHasBeenSet = true; m_booleanValue = value; }
-    inline MetadataAttributeValue& WithBooleanValue(bool value) { SetBooleanValue(value); return *this;}
+    inline MetadataValueType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(MetadataValueType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline MetadataAttributeValue& WithType(MetadataValueType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -62,16 +62,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of strings that define the value of the metadata attribute.</p>
+     * <p>The value of the Boolean metadata attribute.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStringListValue() const { return m_stringListValue; }
-    inline bool StringListValueHasBeenSet() const { return m_stringListValueHasBeenSet; }
-    template<typename StringListValueT = Aws::Vector<Aws::String>>
-    void SetStringListValue(StringListValueT&& value) { m_stringListValueHasBeenSet = true; m_stringListValue = std::forward<StringListValueT>(value); }
-    template<typename StringListValueT = Aws::Vector<Aws::String>>
-    MetadataAttributeValue& WithStringListValue(StringListValueT&& value) { SetStringListValue(std::forward<StringListValueT>(value)); return *this;}
-    template<typename StringListValueT = Aws::String>
-    MetadataAttributeValue& AddStringListValue(StringListValueT&& value) { m_stringListValueHasBeenSet = true; m_stringListValue.emplace_back(std::forward<StringListValueT>(value)); return *this; }
+    inline bool GetBooleanValue() const { return m_booleanValue; }
+    inline bool BooleanValueHasBeenSet() const { return m_booleanValueHasBeenSet; }
+    inline void SetBooleanValue(bool value) { m_booleanValueHasBeenSet = true; m_booleanValue = value; }
+    inline MetadataAttributeValue& WithBooleanValue(bool value) { SetBooleanValue(value); return *this;}
     ///@}
 
     ///@{
@@ -88,29 +84,33 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of the metadata attribute.</p>
+     * <p>An array of strings that define the value of the metadata attribute.</p>
      */
-    inline MetadataValueType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(MetadataValueType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline MetadataAttributeValue& WithType(MetadataValueType value) { SetType(value); return *this;}
+    inline const Aws::Vector<Aws::String>& GetStringListValue() const { return m_stringListValue; }
+    inline bool StringListValueHasBeenSet() const { return m_stringListValueHasBeenSet; }
+    template<typename StringListValueT = Aws::Vector<Aws::String>>
+    void SetStringListValue(StringListValueT&& value) { m_stringListValueHasBeenSet = true; m_stringListValue = std::forward<StringListValueT>(value); }
+    template<typename StringListValueT = Aws::Vector<Aws::String>>
+    MetadataAttributeValue& WithStringListValue(StringListValueT&& value) { SetStringListValue(std::forward<StringListValueT>(value)); return *this;}
+    template<typename StringListValueT = Aws::String>
+    MetadataAttributeValue& AddStringListValue(StringListValueT&& value) { m_stringListValueHasBeenSet = true; m_stringListValue.emplace_back(std::forward<StringListValueT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_booleanValue{false};
-    bool m_booleanValueHasBeenSet = false;
+    MetadataValueType m_type{MetadataValueType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     double m_numberValue{0.0};
     bool m_numberValueHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_stringListValue;
-    bool m_stringListValueHasBeenSet = false;
+    bool m_booleanValue{false};
+    bool m_booleanValueHasBeenSet = false;
 
     Aws::String m_stringValue;
     bool m_stringValueHasBeenSet = false;
 
-    MetadataValueType m_type{MetadataValueType::NOT_SET};
-    bool m_typeHasBeenSet = false;
+    Aws::Vector<Aws::String> m_stringListValue;
+    bool m_stringListValueHasBeenSet = false;
   };
 
 } // namespace Model

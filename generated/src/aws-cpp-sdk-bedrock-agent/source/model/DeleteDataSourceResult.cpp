@@ -25,15 +25,15 @@ DeleteDataSourceResult::DeleteDataSourceResult(const Aws::AmazonWebServiceResult
 DeleteDataSourceResult& DeleteDataSourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("dataSourceId"))
-  {
-    m_dataSourceId = jsonValue.GetString("dataSourceId");
-    m_dataSourceIdHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("knowledgeBaseId"))
   {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
     m_knowledgeBaseIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("dataSourceId"))
+  {
+    m_dataSourceId = jsonValue.GetString("dataSourceId");
+    m_dataSourceIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("status"))
   {

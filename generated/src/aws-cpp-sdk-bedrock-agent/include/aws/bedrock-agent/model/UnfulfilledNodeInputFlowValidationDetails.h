@@ -40,6 +40,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the node containing the unfulfilled input.</p>
+     */
+    inline const Aws::String& GetNode() const { return m_node; }
+    inline bool NodeHasBeenSet() const { return m_nodeHasBeenSet; }
+    template<typename NodeT = Aws::String>
+    void SetNode(NodeT&& value) { m_nodeHasBeenSet = true; m_node = std::forward<NodeT>(value); }
+    template<typename NodeT = Aws::String>
+    UnfulfilledNodeInputFlowValidationDetails& WithNode(NodeT&& value) { SetNode(std::forward<NodeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the unfulfilled input. An input is unfulfilled if there are no
      * data connections to it.</p>
      */
@@ -50,25 +62,13 @@ namespace Model
     template<typename InputT = Aws::String>
     UnfulfilledNodeInputFlowValidationDetails& WithInput(InputT&& value) { SetInput(std::forward<InputT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The name of the node containing the unfulfilled input.</p>
-     */
-    inline const Aws::String& GetNode() const { return m_node; }
-    inline bool NodeHasBeenSet() const { return m_nodeHasBeenSet; }
-    template<typename NodeT = Aws::String>
-    void SetNode(NodeT&& value) { m_nodeHasBeenSet = true; m_node = std::forward<NodeT>(value); }
-    template<typename NodeT = Aws::String>
-    UnfulfilledNodeInputFlowValidationDetails& WithNode(NodeT&& value) { SetNode(std::forward<NodeT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::String m_input;
-    bool m_inputHasBeenSet = false;
 
     Aws::String m_node;
     bool m_nodeHasBeenSet = false;
+
+    Aws::String m_input;
+    bool m_inputHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/amp/model/WorkspaceConfigurationStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/amp/model/LimitsPerLabelSet.h>
 #include <utility>
 
@@ -42,6 +42,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>This structure displays the current status of the workspace configuration,
+     * and might also contain a reason for that status.</p>
+     */
+    inline const WorkspaceConfigurationStatus& GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    template<typename StatusT = WorkspaceConfigurationStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = WorkspaceConfigurationStatus>
+    WorkspaceConfigurationDescription& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>This is an array of structures, where each structure displays one label sets
      * for the workspace and the limits for that label set.</p>
      */
@@ -65,29 +78,16 @@ namespace Model
     inline void SetRetentionPeriodInDays(int value) { m_retentionPeriodInDaysHasBeenSet = true; m_retentionPeriodInDays = value; }
     inline WorkspaceConfigurationDescription& WithRetentionPeriodInDays(int value) { SetRetentionPeriodInDays(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>This structure displays the current status of the workspace configuration,
-     * and might also contain a reason for that status.</p>
-     */
-    inline const WorkspaceConfigurationStatus& GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    template<typename StatusT = WorkspaceConfigurationStatus>
-    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
-    template<typename StatusT = WorkspaceConfigurationStatus>
-    WorkspaceConfigurationDescription& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
-    ///@}
   private:
+
+    WorkspaceConfigurationStatus m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<LimitsPerLabelSet> m_limitsPerLabelSet;
     bool m_limitsPerLabelSetHasBeenSet = false;
 
     int m_retentionPeriodInDays{0};
     bool m_retentionPeriodInDaysHasBeenSet = false;
-
-    WorkspaceConfigurationStatus m_status;
-    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

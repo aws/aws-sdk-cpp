@@ -25,25 +25,25 @@ KnowledgeBaseDocumentDetail::KnowledgeBaseDocumentDetail(JsonView jsonValue)
 
 KnowledgeBaseDocumentDetail& KnowledgeBaseDocumentDetail::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("dataSourceId"))
-  {
-    m_dataSourceId = jsonValue.GetString("dataSourceId");
-    m_dataSourceIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("identifier"))
-  {
-    m_identifier = jsonValue.GetObject("identifier");
-    m_identifierHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("knowledgeBaseId"))
   {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
     m_knowledgeBaseIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("dataSourceId"))
+  {
+    m_dataSourceId = jsonValue.GetString("dataSourceId");
+    m_dataSourceIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("status"))
   {
     m_status = DocumentStatusMapper::GetDocumentStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("identifier"))
+  {
+    m_identifier = jsonValue.GetObject("identifier");
+    m_identifierHasBeenSet = true;
   }
   if(jsonValue.ValueExists("statusReason"))
   {
@@ -62,27 +62,27 @@ JsonValue KnowledgeBaseDocumentDetail::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_dataSourceIdHasBeenSet)
-  {
-   payload.WithString("dataSourceId", m_dataSourceId);
-
-  }
-
-  if(m_identifierHasBeenSet)
-  {
-   payload.WithObject("identifier", m_identifier.Jsonize());
-
-  }
-
   if(m_knowledgeBaseIdHasBeenSet)
   {
    payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
 
   }
 
+  if(m_dataSourceIdHasBeenSet)
+  {
+   payload.WithString("dataSourceId", m_dataSourceId);
+
+  }
+
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", DocumentStatusMapper::GetNameForDocumentStatus(m_status));
+  }
+
+  if(m_identifierHasBeenSet)
+  {
+   payload.WithObject("identifier", m_identifier.Jsonize());
+
   }
 
   if(m_statusReasonHasBeenSet)

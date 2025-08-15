@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/model/CustomDocumentIdentifier.h>
-#include <aws/bedrock-agent/model/InlineContent.h>
-#include <aws/bedrock-agent/model/CustomS3Location.h>
 #include <aws/bedrock-agent/model/CustomSourceType.h>
+#include <aws/bedrock-agent/model/CustomS3Location.h>
+#include <aws/bedrock-agent/model/InlineContent.h>
 #include <utility>
 
 namespace Aws
@@ -56,15 +56,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains information about content defined inline to ingest into a knowledge
-     * base.</p>
+     * <p>The source of the data to ingest.</p>
      */
-    inline const InlineContent& GetInlineContent() const { return m_inlineContent; }
-    inline bool InlineContentHasBeenSet() const { return m_inlineContentHasBeenSet; }
-    template<typename InlineContentT = InlineContent>
-    void SetInlineContent(InlineContentT&& value) { m_inlineContentHasBeenSet = true; m_inlineContent = std::forward<InlineContentT>(value); }
-    template<typename InlineContentT = InlineContent>
-    CustomContent& WithInlineContent(InlineContentT&& value) { SetInlineContent(std::forward<InlineContentT>(value)); return *this;}
+    inline CustomSourceType GetSourceType() const { return m_sourceType; }
+    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+    inline void SetSourceType(CustomSourceType value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+    inline CustomContent& WithSourceType(CustomSourceType value) { SetSourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -82,26 +79,29 @@ namespace Model
 
     ///@{
     /**
-     * <p>The source of the data to ingest.</p>
+     * <p>Contains information about content defined inline to ingest into a knowledge
+     * base.</p>
      */
-    inline CustomSourceType GetSourceType() const { return m_sourceType; }
-    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-    inline void SetSourceType(CustomSourceType value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-    inline CustomContent& WithSourceType(CustomSourceType value) { SetSourceType(value); return *this;}
+    inline const InlineContent& GetInlineContent() const { return m_inlineContent; }
+    inline bool InlineContentHasBeenSet() const { return m_inlineContentHasBeenSet; }
+    template<typename InlineContentT = InlineContent>
+    void SetInlineContent(InlineContentT&& value) { m_inlineContentHasBeenSet = true; m_inlineContent = std::forward<InlineContentT>(value); }
+    template<typename InlineContentT = InlineContent>
+    CustomContent& WithInlineContent(InlineContentT&& value) { SetInlineContent(std::forward<InlineContentT>(value)); return *this;}
     ///@}
   private:
 
     CustomDocumentIdentifier m_customDocumentIdentifier;
     bool m_customDocumentIdentifierHasBeenSet = false;
 
-    InlineContent m_inlineContent;
-    bool m_inlineContentHasBeenSet = false;
+    CustomSourceType m_sourceType{CustomSourceType::NOT_SET};
+    bool m_sourceTypeHasBeenSet = false;
 
     CustomS3Location m_s3Location;
     bool m_s3LocationHasBeenSet = false;
 
-    CustomSourceType m_sourceType{CustomSourceType::NOT_SET};
-    bool m_sourceTypeHasBeenSet = false;
+    InlineContent m_inlineContent;
+    bool m_inlineContentHasBeenSet = false;
   };
 
 } // namespace Model

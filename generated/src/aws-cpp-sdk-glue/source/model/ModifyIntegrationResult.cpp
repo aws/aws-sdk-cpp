@@ -97,6 +97,11 @@ ModifyIntegrationResult& ModifyIntegrationResult::operator =(const Aws::AmazonWe
     m_dataFilter = jsonValue.GetString("DataFilter");
     m_dataFilterHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("IntegrationConfig"))
+  {
+    m_integrationConfig = jsonValue.GetObject("IntegrationConfig");
+    m_integrationConfigHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

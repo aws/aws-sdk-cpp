@@ -25,11 +25,6 @@ ToolConfiguration::ToolConfiguration(JsonView jsonValue)
 
 ToolConfiguration& ToolConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("toolChoice"))
-  {
-    m_toolChoice = jsonValue.GetObject("toolChoice");
-    m_toolChoiceHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("tools"))
   {
     Aws::Utils::Array<JsonView> toolsJsonList = jsonValue.GetArray("tools");
@@ -39,18 +34,17 @@ ToolConfiguration& ToolConfiguration::operator =(JsonView jsonValue)
     }
     m_toolsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("toolChoice"))
+  {
+    m_toolChoice = jsonValue.GetObject("toolChoice");
+    m_toolChoiceHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue ToolConfiguration::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_toolChoiceHasBeenSet)
-  {
-   payload.WithObject("toolChoice", m_toolChoice.Jsonize());
-
-  }
 
   if(m_toolsHasBeenSet)
   {
@@ -60,6 +54,12 @@ JsonValue ToolConfiguration::Jsonize() const
      toolsJsonList[toolsIndex].AsObject(m_tools[toolsIndex].Jsonize());
    }
    payload.WithArray("tools", std::move(toolsJsonList));
+
+  }
+
+  if(m_toolChoiceHasBeenSet)
+  {
+   payload.WithObject("toolChoice", m_toolChoice.Jsonize());
 
   }
 

@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/ConfluenceAuthType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/ConfluenceHostType.h>
+#include <aws/bedrock-agent/model/ConfluenceAuthType.h>
 #include <utility>
 
 namespace Aws
@@ -42,6 +42,28 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Confluence host URL or instance URL.</p>
+     */
+    inline const Aws::String& GetHostUrl() const { return m_hostUrl; }
+    inline bool HostUrlHasBeenSet() const { return m_hostUrlHasBeenSet; }
+    template<typename HostUrlT = Aws::String>
+    void SetHostUrl(HostUrlT&& value) { m_hostUrlHasBeenSet = true; m_hostUrl = std::forward<HostUrlT>(value); }
+    template<typename HostUrlT = Aws::String>
+    ConfluenceSourceConfiguration& WithHostUrl(HostUrlT&& value) { SetHostUrl(std::forward<HostUrlT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The supported host type, whether online/cloud or server/on-premises.</p>
+     */
+    inline ConfluenceHostType GetHostType() const { return m_hostType; }
+    inline bool HostTypeHasBeenSet() const { return m_hostTypeHasBeenSet; }
+    inline void SetHostType(ConfluenceHostType value) { m_hostTypeHasBeenSet = true; m_hostType = value; }
+    inline ConfluenceSourceConfiguration& WithHostType(ConfluenceHostType value) { SetHostType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The supported authentication type to authenticate and connect to your
      * Confluence instance.</p>
      */
@@ -67,41 +89,19 @@ namespace Model
     template<typename CredentialsSecretArnT = Aws::String>
     ConfluenceSourceConfiguration& WithCredentialsSecretArn(CredentialsSecretArnT&& value) { SetCredentialsSecretArn(std::forward<CredentialsSecretArnT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The supported host type, whether online/cloud or server/on-premises.</p>
-     */
-    inline ConfluenceHostType GetHostType() const { return m_hostType; }
-    inline bool HostTypeHasBeenSet() const { return m_hostTypeHasBeenSet; }
-    inline void SetHostType(ConfluenceHostType value) { m_hostTypeHasBeenSet = true; m_hostType = value; }
-    inline ConfluenceSourceConfiguration& WithHostType(ConfluenceHostType value) { SetHostType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Confluence host URL or instance URL.</p>
-     */
-    inline const Aws::String& GetHostUrl() const { return m_hostUrl; }
-    inline bool HostUrlHasBeenSet() const { return m_hostUrlHasBeenSet; }
-    template<typename HostUrlT = Aws::String>
-    void SetHostUrl(HostUrlT&& value) { m_hostUrlHasBeenSet = true; m_hostUrl = std::forward<HostUrlT>(value); }
-    template<typename HostUrlT = Aws::String>
-    ConfluenceSourceConfiguration& WithHostUrl(HostUrlT&& value) { SetHostUrl(std::forward<HostUrlT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_hostUrl;
+    bool m_hostUrlHasBeenSet = false;
+
+    ConfluenceHostType m_hostType{ConfluenceHostType::NOT_SET};
+    bool m_hostTypeHasBeenSet = false;
 
     ConfluenceAuthType m_authType{ConfluenceAuthType::NOT_SET};
     bool m_authTypeHasBeenSet = false;
 
     Aws::String m_credentialsSecretArn;
     bool m_credentialsSecretArnHasBeenSet = false;
-
-    ConfluenceHostType m_hostType{ConfluenceHostType::NOT_SET};
-    bool m_hostTypeHasBeenSet = false;
-
-    Aws::String m_hostUrl;
-    bool m_hostUrlHasBeenSet = false;
   };
 
 } // namespace Model

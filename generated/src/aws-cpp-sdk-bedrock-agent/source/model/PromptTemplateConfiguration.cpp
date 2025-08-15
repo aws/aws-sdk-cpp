@@ -25,15 +25,15 @@ PromptTemplateConfiguration::PromptTemplateConfiguration(JsonView jsonValue)
 
 PromptTemplateConfiguration& PromptTemplateConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("chat"))
-  {
-    m_chat = jsonValue.GetObject("chat");
-    m_chatHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetObject("text");
     m_textHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("chat"))
+  {
+    m_chat = jsonValue.GetObject("chat");
+    m_chatHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue PromptTemplateConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_chatHasBeenSet)
-  {
-   payload.WithObject("chat", m_chat.Jsonize());
-
-  }
-
   if(m_textHasBeenSet)
   {
    payload.WithObject("text", m_text.Jsonize());
+
+  }
+
+  if(m_chatHasBeenSet)
+  {
+   payload.WithObject("chat", m_chat.Jsonize());
 
   }
 

@@ -43,6 +43,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the tool.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ToolSpecification& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The description of the tool.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
@@ -64,28 +76,16 @@ namespace Model
     template<typename InputSchemaT = ToolInputSchema>
     ToolSpecification& WithInputSchema(InputSchemaT&& value) { SetInputSchema(std::forward<InputSchemaT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The name of the tool.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    ToolSpecification& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
     ToolInputSchema m_inputSchema;
     bool m_inputSchemaHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

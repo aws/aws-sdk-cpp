@@ -40,14 +40,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The error message describing why the condition expression is malformed.</p>
+     * <p>The name of the node containing the malformed condition expression.</p>
      */
-    inline const Aws::String& GetCause() const { return m_cause; }
-    inline bool CauseHasBeenSet() const { return m_causeHasBeenSet; }
-    template<typename CauseT = Aws::String>
-    void SetCause(CauseT&& value) { m_causeHasBeenSet = true; m_cause = std::forward<CauseT>(value); }
-    template<typename CauseT = Aws::String>
-    MalformedConditionExpressionFlowValidationDetails& WithCause(CauseT&& value) { SetCause(std::forward<CauseT>(value)); return *this;}
+    inline const Aws::String& GetNode() const { return m_node; }
+    inline bool NodeHasBeenSet() const { return m_nodeHasBeenSet; }
+    template<typename NodeT = Aws::String>
+    void SetNode(NodeT&& value) { m_nodeHasBeenSet = true; m_node = std::forward<NodeT>(value); }
+    template<typename NodeT = Aws::String>
+    MalformedConditionExpressionFlowValidationDetails& WithNode(NodeT&& value) { SetNode(std::forward<NodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,25 +64,25 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the node containing the malformed condition expression.</p>
+     * <p>The error message describing why the condition expression is malformed.</p>
      */
-    inline const Aws::String& GetNode() const { return m_node; }
-    inline bool NodeHasBeenSet() const { return m_nodeHasBeenSet; }
-    template<typename NodeT = Aws::String>
-    void SetNode(NodeT&& value) { m_nodeHasBeenSet = true; m_node = std::forward<NodeT>(value); }
-    template<typename NodeT = Aws::String>
-    MalformedConditionExpressionFlowValidationDetails& WithNode(NodeT&& value) { SetNode(std::forward<NodeT>(value)); return *this;}
+    inline const Aws::String& GetCause() const { return m_cause; }
+    inline bool CauseHasBeenSet() const { return m_causeHasBeenSet; }
+    template<typename CauseT = Aws::String>
+    void SetCause(CauseT&& value) { m_causeHasBeenSet = true; m_cause = std::forward<CauseT>(value); }
+    template<typename CauseT = Aws::String>
+    MalformedConditionExpressionFlowValidationDetails& WithCause(CauseT&& value) { SetCause(std::forward<CauseT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::String m_cause;
-    bool m_causeHasBeenSet = false;
+    Aws::String m_node;
+    bool m_nodeHasBeenSet = false;
 
     Aws::String m_condition;
     bool m_conditionHasBeenSet = false;
 
-    Aws::String m_node;
-    bool m_nodeHasBeenSet = false;
+    Aws::String m_cause;
+    bool m_causeHasBeenSet = false;
   };
 
 } // namespace Model

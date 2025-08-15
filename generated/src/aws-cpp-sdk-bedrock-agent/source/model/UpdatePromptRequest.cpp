@@ -16,15 +16,9 @@ Aws::String UpdatePromptRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_customerEncryptionKeyArnHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("customerEncryptionKeyArn", m_customerEncryptionKeyArn);
-
-  }
-
-  if(m_defaultVariantHasBeenSet)
-  {
-   payload.WithString("defaultVariant", m_defaultVariant);
+   payload.WithString("name", m_name);
 
   }
 
@@ -34,9 +28,15 @@ Aws::String UpdatePromptRequest::SerializePayload() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_customerEncryptionKeyArnHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithString("customerEncryptionKeyArn", m_customerEncryptionKeyArn);
+
+  }
+
+  if(m_defaultVariantHasBeenSet)
+  {
+   payload.WithString("defaultVariant", m_defaultVariant);
 
   }
 

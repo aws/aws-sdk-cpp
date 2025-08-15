@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/SharePointCrawlerConfiguration.h>
 #include <aws/bedrock-agent/model/SharePointSourceConfiguration.h>
+#include <aws/bedrock-agent/model/SharePointCrawlerConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The endpoint information to connect to your SharePoint data source.</p>
+     */
+    inline const SharePointSourceConfiguration& GetSourceConfiguration() const { return m_sourceConfiguration; }
+    inline bool SourceConfigurationHasBeenSet() const { return m_sourceConfigurationHasBeenSet; }
+    template<typename SourceConfigurationT = SharePointSourceConfiguration>
+    void SetSourceConfiguration(SourceConfigurationT&& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = std::forward<SourceConfigurationT>(value); }
+    template<typename SourceConfigurationT = SharePointSourceConfiguration>
+    SharePointDataSourceConfiguration& WithSourceConfiguration(SourceConfigurationT&& value) { SetSourceConfiguration(std::forward<SourceConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The configuration of the SharePoint content. For example, configuring
      * specific types of SharePoint content.</p>
      */
@@ -51,25 +63,13 @@ namespace Model
     template<typename CrawlerConfigurationT = SharePointCrawlerConfiguration>
     SharePointDataSourceConfiguration& WithCrawlerConfiguration(CrawlerConfigurationT&& value) { SetCrawlerConfiguration(std::forward<CrawlerConfigurationT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The endpoint information to connect to your SharePoint data source.</p>
-     */
-    inline const SharePointSourceConfiguration& GetSourceConfiguration() const { return m_sourceConfiguration; }
-    inline bool SourceConfigurationHasBeenSet() const { return m_sourceConfigurationHasBeenSet; }
-    template<typename SourceConfigurationT = SharePointSourceConfiguration>
-    void SetSourceConfiguration(SourceConfigurationT&& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = std::forward<SourceConfigurationT>(value); }
-    template<typename SourceConfigurationT = SharePointSourceConfiguration>
-    SharePointDataSourceConfiguration& WithSourceConfiguration(SourceConfigurationT&& value) { SetSourceConfiguration(std::forward<SourceConfigurationT>(value)); return *this;}
-    ///@}
   private:
-
-    SharePointCrawlerConfiguration m_crawlerConfiguration;
-    bool m_crawlerConfigurationHasBeenSet = false;
 
     SharePointSourceConfiguration m_sourceConfiguration;
     bool m_sourceConfigurationHasBeenSet = false;
+
+    SharePointCrawlerConfiguration m_crawlerConfiguration;
+    bool m_crawlerConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

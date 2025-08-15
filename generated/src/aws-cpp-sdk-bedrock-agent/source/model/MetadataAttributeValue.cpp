@@ -25,15 +25,25 @@ MetadataAttributeValue::MetadataAttributeValue(JsonView jsonValue)
 
 MetadataAttributeValue& MetadataAttributeValue::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("booleanValue"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_booleanValue = jsonValue.GetBool("booleanValue");
-    m_booleanValueHasBeenSet = true;
+    m_type = MetadataValueTypeMapper::GetMetadataValueTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("numberValue"))
   {
     m_numberValue = jsonValue.GetDouble("numberValue");
     m_numberValueHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("booleanValue"))
+  {
+    m_booleanValue = jsonValue.GetBool("booleanValue");
+    m_booleanValueHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("stringValue"))
+  {
+    m_stringValue = jsonValue.GetString("stringValue");
+    m_stringValueHasBeenSet = true;
   }
   if(jsonValue.ValueExists("stringListValue"))
   {
@@ -44,16 +54,6 @@ MetadataAttributeValue& MetadataAttributeValue::operator =(JsonView jsonValue)
     }
     m_stringListValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("stringValue"))
-  {
-    m_stringValue = jsonValue.GetString("stringValue");
-    m_stringValueHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = MetadataValueTypeMapper::GetMetadataValueTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -61,15 +61,26 @@ JsonValue MetadataAttributeValue::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", MetadataValueTypeMapper::GetNameForMetadataValueType(m_type));
+  }
+
+  if(m_numberValueHasBeenSet)
+  {
+   payload.WithDouble("numberValue", m_numberValue);
+
+  }
+
   if(m_booleanValueHasBeenSet)
   {
    payload.WithBool("booleanValue", m_booleanValue);
 
   }
 
-  if(m_numberValueHasBeenSet)
+  if(m_stringValueHasBeenSet)
   {
-   payload.WithDouble("numberValue", m_numberValue);
+   payload.WithString("stringValue", m_stringValue);
 
   }
 
@@ -82,17 +93,6 @@ JsonValue MetadataAttributeValue::Jsonize() const
    }
    payload.WithArray("stringListValue", std::move(stringListValueJsonList));
 
-  }
-
-  if(m_stringValueHasBeenSet)
-  {
-   payload.WithString("stringValue", m_stringValue);
-
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", MetadataValueTypeMapper::GetNameForMetadataValueType(m_type));
   }
 
   return payload;

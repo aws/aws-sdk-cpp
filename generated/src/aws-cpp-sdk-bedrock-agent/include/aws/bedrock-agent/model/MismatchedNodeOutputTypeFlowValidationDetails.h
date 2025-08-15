@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/FlowNodeIODataType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/FlowNodeIODataType.h>
 #include <utility>
 
 namespace Aws
@@ -41,16 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The expected data type for the node output.</p>
-     */
-    inline FlowNodeIODataType GetExpectedType() const { return m_expectedType; }
-    inline bool ExpectedTypeHasBeenSet() const { return m_expectedTypeHasBeenSet; }
-    inline void SetExpectedType(FlowNodeIODataType value) { m_expectedTypeHasBeenSet = true; m_expectedType = value; }
-    inline MismatchedNodeOutputTypeFlowValidationDetails& WithExpectedType(FlowNodeIODataType value) { SetExpectedType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the node containing the output with the mismatched data type.</p>
      */
     inline const Aws::String& GetNode() const { return m_node; }
@@ -72,16 +62,26 @@ namespace Model
     template<typename OutputT = Aws::String>
     MismatchedNodeOutputTypeFlowValidationDetails& WithOutput(OutputT&& value) { SetOutput(std::forward<OutputT>(value)); return *this;}
     ///@}
-  private:
 
-    FlowNodeIODataType m_expectedType{FlowNodeIODataType::NOT_SET};
-    bool m_expectedTypeHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The expected data type for the node output.</p>
+     */
+    inline FlowNodeIODataType GetExpectedType() const { return m_expectedType; }
+    inline bool ExpectedTypeHasBeenSet() const { return m_expectedTypeHasBeenSet; }
+    inline void SetExpectedType(FlowNodeIODataType value) { m_expectedTypeHasBeenSet = true; m_expectedType = value; }
+    inline MismatchedNodeOutputTypeFlowValidationDetails& WithExpectedType(FlowNodeIODataType value) { SetExpectedType(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_node;
     bool m_nodeHasBeenSet = false;
 
     Aws::String m_output;
     bool m_outputHasBeenSet = false;
+
+    FlowNodeIODataType m_expectedType{FlowNodeIODataType::NOT_SET};
+    bool m_expectedTypeHasBeenSet = false;
   };
 
 } // namespace Model

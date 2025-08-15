@@ -26,6 +26,16 @@ FlowNode::FlowNode(JsonView jsonValue)
 
 FlowNode& FlowNode::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = FlowNodeTypeMapper::GetFlowNodeTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("configuration"))
   {
     m_configuration = Aws::MakeShared<FlowNodeConfiguration>("FlowNode", jsonValue.GetObject("configuration"));
@@ -40,11 +50,6 @@ FlowNode& FlowNode::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("outputs"))
   {
     Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("outputs");
@@ -54,17 +59,23 @@ FlowNode& FlowNode::operator =(JsonView jsonValue)
     }
     m_outputsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = FlowNodeTypeMapper::GetFlowNodeTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue FlowNode::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", FlowNodeTypeMapper::GetNameForFlowNodeType(m_type));
+  }
 
   if(m_configurationHasBeenSet)
   {
@@ -83,12 +94,6 @@ JsonValue FlowNode::Jsonize() const
 
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
-  }
-
   if(m_outputsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> outputsJsonList(m_outputs.size());
@@ -98,11 +103,6 @@ JsonValue FlowNode::Jsonize() const
    }
    payload.WithArray("outputs", std::move(outputsJsonList));
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", FlowNodeTypeMapper::GetNameForFlowNodeType(m_type));
   }
 
   return payload;

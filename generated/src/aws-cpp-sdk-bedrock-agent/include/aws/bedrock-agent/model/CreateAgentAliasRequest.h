@@ -38,18 +38,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the alias.</p>
-     */
-    inline const Aws::String& GetAgentAliasName() const { return m_agentAliasName; }
-    inline bool AgentAliasNameHasBeenSet() const { return m_agentAliasNameHasBeenSet; }
-    template<typename AgentAliasNameT = Aws::String>
-    void SetAgentAliasName(AgentAliasNameT&& value) { m_agentAliasNameHasBeenSet = true; m_agentAliasName = std::forward<AgentAliasNameT>(value); }
-    template<typename AgentAliasNameT = Aws::String>
-    CreateAgentAliasRequest& WithAgentAliasName(AgentAliasNameT&& value) { SetAgentAliasName(std::forward<AgentAliasNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique identifier of the agent.</p>
      */
     inline const Aws::String& GetAgentId() const { return m_agentId; }
@@ -58,6 +46,18 @@ namespace Model
     void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
     template<typename AgentIdT = Aws::String>
     CreateAgentAliasRequest& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the alias.</p>
+     */
+    inline const Aws::String& GetAgentAliasName() const { return m_agentAliasName; }
+    inline bool AgentAliasNameHasBeenSet() const { return m_agentAliasNameHasBeenSet; }
+    template<typename AgentAliasNameT = Aws::String>
+    void SetAgentAliasName(AgentAliasNameT&& value) { m_agentAliasNameHasBeenSet = true; m_agentAliasName = std::forward<AgentAliasNameT>(value); }
+    template<typename AgentAliasNameT = Aws::String>
+    CreateAgentAliasRequest& WithAgentAliasName(AgentAliasNameT&& value) { SetAgentAliasName(std::forward<AgentAliasNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,11 +119,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_agentAliasName;
-    bool m_agentAliasNameHasBeenSet = false;
-
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet = false;
+
+    Aws::String m_agentAliasName;
+    bool m_agentAliasNameHasBeenSet = false;
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;

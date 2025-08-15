@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/amp/model/QueryLoggingConfigurationStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/amp/model/LoggingDestination.h>
 #include <utility>
 
@@ -43,44 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time when the query logging configuration was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    QueryLoggingConfigurationMetadata& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The configured destinations for the query logging configuration.</p>
-     */
-    inline const Aws::Vector<LoggingDestination>& GetDestinations() const { return m_destinations; }
-    inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
-    template<typename DestinationsT = Aws::Vector<LoggingDestination>>
-    void SetDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations = std::forward<DestinationsT>(value); }
-    template<typename DestinationsT = Aws::Vector<LoggingDestination>>
-    QueryLoggingConfigurationMetadata& WithDestinations(DestinationsT&& value) { SetDestinations(std::forward<DestinationsT>(value)); return *this;}
-    template<typename DestinationsT = LoggingDestination>
-    QueryLoggingConfigurationMetadata& AddDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations.emplace_back(std::forward<DestinationsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The date and time when the query logging configuration was last modified.</p>
-     */
-    inline const Aws::Utils::DateTime& GetModifiedAt() const { return m_modifiedAt; }
-    inline bool ModifiedAtHasBeenSet() const { return m_modifiedAtHasBeenSet; }
-    template<typename ModifiedAtT = Aws::Utils::DateTime>
-    void SetModifiedAt(ModifiedAtT&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::forward<ModifiedAtT>(value); }
-    template<typename ModifiedAtT = Aws::Utils::DateTime>
-    QueryLoggingConfigurationMetadata& WithModifiedAt(ModifiedAtT&& value) { SetModifiedAt(std::forward<ModifiedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The current status of the query logging configuration.</p>
      */
     inline const QueryLoggingConfigurationStatus& GetStatus() const { return m_status; }
@@ -102,22 +64,60 @@ namespace Model
     template<typename WorkspaceT = Aws::String>
     QueryLoggingConfigurationMetadata& WithWorkspace(WorkspaceT&& value) { SetWorkspace(std::forward<WorkspaceT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The configured destinations for the query logging configuration.</p>
+     */
+    inline const Aws::Vector<LoggingDestination>& GetDestinations() const { return m_destinations; }
+    inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
+    template<typename DestinationsT = Aws::Vector<LoggingDestination>>
+    void SetDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations = std::forward<DestinationsT>(value); }
+    template<typename DestinationsT = Aws::Vector<LoggingDestination>>
+    QueryLoggingConfigurationMetadata& WithDestinations(DestinationsT&& value) { SetDestinations(std::forward<DestinationsT>(value)); return *this;}
+    template<typename DestinationsT = LoggingDestination>
+    QueryLoggingConfigurationMetadata& AddDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations.emplace_back(std::forward<DestinationsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time when the query logging configuration was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    QueryLoggingConfigurationMetadata& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time when the query logging configuration was last modified.</p>
+     */
+    inline const Aws::Utils::DateTime& GetModifiedAt() const { return m_modifiedAt; }
+    inline bool ModifiedAtHasBeenSet() const { return m_modifiedAtHasBeenSet; }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    void SetModifiedAt(ModifiedAtT&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::forward<ModifiedAtT>(value); }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    QueryLoggingConfigurationMetadata& WithModifiedAt(ModifiedAtT&& value) { SetModifiedAt(std::forward<ModifiedAtT>(value)); return *this;}
+    ///@}
   private:
-
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
-
-    Aws::Vector<LoggingDestination> m_destinations;
-    bool m_destinationsHasBeenSet = false;
-
-    Aws::Utils::DateTime m_modifiedAt{};
-    bool m_modifiedAtHasBeenSet = false;
 
     QueryLoggingConfigurationStatus m_status;
     bool m_statusHasBeenSet = false;
 
     Aws::String m_workspace;
     bool m_workspaceHasBeenSet = false;
+
+    Aws::Vector<LoggingDestination> m_destinations;
+    bool m_destinationsHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
+
+    Aws::Utils::DateTime m_modifiedAt{};
+    bool m_modifiedAtHasBeenSet = false;
   };
 
 } // namespace Model

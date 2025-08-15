@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/BedrockDataAutomationConfiguration.h>
-#include <aws/bedrock-agent/model/BedrockFoundationModelConfiguration.h>
 #include <aws/bedrock-agent/model/ParsingStrategy.h>
+#include <aws/bedrock-agent/model/BedrockFoundationModelConfiguration.h>
+#include <aws/bedrock-agent/model/BedrockDataAutomationConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -50,16 +50,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>If you specify <code>BEDROCK_DATA_AUTOMATION</code> as the parsing strategy
-     * for ingesting your data source, use this object to modify configurations for
-     * using the Amazon Bedrock Data Automation parser.</p>
+     * <p>The parsing strategy for the data source.</p>
      */
-    inline const BedrockDataAutomationConfiguration& GetBedrockDataAutomationConfiguration() const { return m_bedrockDataAutomationConfiguration; }
-    inline bool BedrockDataAutomationConfigurationHasBeenSet() const { return m_bedrockDataAutomationConfigurationHasBeenSet; }
-    template<typename BedrockDataAutomationConfigurationT = BedrockDataAutomationConfiguration>
-    void SetBedrockDataAutomationConfiguration(BedrockDataAutomationConfigurationT&& value) { m_bedrockDataAutomationConfigurationHasBeenSet = true; m_bedrockDataAutomationConfiguration = std::forward<BedrockDataAutomationConfigurationT>(value); }
-    template<typename BedrockDataAutomationConfigurationT = BedrockDataAutomationConfiguration>
-    ParsingConfiguration& WithBedrockDataAutomationConfiguration(BedrockDataAutomationConfigurationT&& value) { SetBedrockDataAutomationConfiguration(std::forward<BedrockDataAutomationConfigurationT>(value)); return *this;}
+    inline ParsingStrategy GetParsingStrategy() const { return m_parsingStrategy; }
+    inline bool ParsingStrategyHasBeenSet() const { return m_parsingStrategyHasBeenSet; }
+    inline void SetParsingStrategy(ParsingStrategy value) { m_parsingStrategyHasBeenSet = true; m_parsingStrategy = value; }
+    inline ParsingConfiguration& WithParsingStrategy(ParsingStrategy value) { SetParsingStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -78,23 +74,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>The parsing strategy for the data source.</p>
+     * <p>If you specify <code>BEDROCK_DATA_AUTOMATION</code> as the parsing strategy
+     * for ingesting your data source, use this object to modify configurations for
+     * using the Amazon Bedrock Data Automation parser.</p>
      */
-    inline ParsingStrategy GetParsingStrategy() const { return m_parsingStrategy; }
-    inline bool ParsingStrategyHasBeenSet() const { return m_parsingStrategyHasBeenSet; }
-    inline void SetParsingStrategy(ParsingStrategy value) { m_parsingStrategyHasBeenSet = true; m_parsingStrategy = value; }
-    inline ParsingConfiguration& WithParsingStrategy(ParsingStrategy value) { SetParsingStrategy(value); return *this;}
+    inline const BedrockDataAutomationConfiguration& GetBedrockDataAutomationConfiguration() const { return m_bedrockDataAutomationConfiguration; }
+    inline bool BedrockDataAutomationConfigurationHasBeenSet() const { return m_bedrockDataAutomationConfigurationHasBeenSet; }
+    template<typename BedrockDataAutomationConfigurationT = BedrockDataAutomationConfiguration>
+    void SetBedrockDataAutomationConfiguration(BedrockDataAutomationConfigurationT&& value) { m_bedrockDataAutomationConfigurationHasBeenSet = true; m_bedrockDataAutomationConfiguration = std::forward<BedrockDataAutomationConfigurationT>(value); }
+    template<typename BedrockDataAutomationConfigurationT = BedrockDataAutomationConfiguration>
+    ParsingConfiguration& WithBedrockDataAutomationConfiguration(BedrockDataAutomationConfigurationT&& value) { SetBedrockDataAutomationConfiguration(std::forward<BedrockDataAutomationConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    BedrockDataAutomationConfiguration m_bedrockDataAutomationConfiguration;
-    bool m_bedrockDataAutomationConfigurationHasBeenSet = false;
+    ParsingStrategy m_parsingStrategy{ParsingStrategy::NOT_SET};
+    bool m_parsingStrategyHasBeenSet = false;
 
     BedrockFoundationModelConfiguration m_bedrockFoundationModelConfiguration;
     bool m_bedrockFoundationModelConfigurationHasBeenSet = false;
 
-    ParsingStrategy m_parsingStrategy{ParsingStrategy::NOT_SET};
-    bool m_parsingStrategyHasBeenSet = false;
+    BedrockDataAutomationConfiguration m_bedrockDataAutomationConfiguration;
+    bool m_bedrockDataAutomationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

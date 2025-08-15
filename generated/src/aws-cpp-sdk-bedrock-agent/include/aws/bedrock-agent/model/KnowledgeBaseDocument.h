@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/DocumentContent.h>
 #include <aws/bedrock-agent/model/DocumentMetadata.h>
+#include <aws/bedrock-agent/model/DocumentContent.h>
 #include <utility>
 
 namespace Aws
@@ -41,18 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains the content of the document.</p>
-     */
-    inline const DocumentContent& GetContent() const { return m_content; }
-    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    template<typename ContentT = DocumentContent>
-    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
-    template<typename ContentT = DocumentContent>
-    KnowledgeBaseDocument& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Contains the metadata to associate with the document.</p>
      */
     inline const DocumentMetadata& GetMetadata() const { return m_metadata; }
@@ -62,13 +50,25 @@ namespace Model
     template<typename MetadataT = DocumentMetadata>
     KnowledgeBaseDocument& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
-  private:
 
-    DocumentContent m_content;
-    bool m_contentHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Contains the content of the document.</p>
+     */
+    inline const DocumentContent& GetContent() const { return m_content; }
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
+    template<typename ContentT = DocumentContent>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = DocumentContent>
+    KnowledgeBaseDocument& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
+    ///@}
+  private:
 
     DocumentMetadata m_metadata;
     bool m_metadataHasBeenSet = false;
+
+    DocumentContent m_content;
+    bool m_contentHasBeenSet = false;
   };
 
 } // namespace Model

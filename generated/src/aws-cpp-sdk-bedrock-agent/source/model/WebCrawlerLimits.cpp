@@ -25,15 +25,15 @@ WebCrawlerLimits::WebCrawlerLimits(JsonView jsonValue)
 
 WebCrawlerLimits& WebCrawlerLimits::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("maxPages"))
-  {
-    m_maxPages = jsonValue.GetInteger("maxPages");
-    m_maxPagesHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("rateLimit"))
   {
     m_rateLimit = jsonValue.GetInteger("rateLimit");
     m_rateLimitHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("maxPages"))
+  {
+    m_maxPages = jsonValue.GetInteger("maxPages");
+    m_maxPagesHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue WebCrawlerLimits::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_maxPagesHasBeenSet)
-  {
-   payload.WithInteger("maxPages", m_maxPages);
-
-  }
-
   if(m_rateLimitHasBeenSet)
   {
    payload.WithInteger("rateLimit", m_rateLimit);
+
+  }
+
+  if(m_maxPagesHasBeenSet)
+  {
+   payload.WithInteger("maxPages", m_maxPages);
 
   }
 

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/RedshiftProvisionedAuthType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -44,6 +44,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of authentication to use.</p>
+     */
+    inline RedshiftProvisionedAuthType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(RedshiftProvisionedAuthType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RedshiftProvisionedAuthConfiguration& WithType(RedshiftProvisionedAuthType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The database username for authentication to an Amazon Redshift provisioned
      * data warehouse.</p>
      */
@@ -53,16 +63,6 @@ namespace Model
     void SetDatabaseUser(DatabaseUserT&& value) { m_databaseUserHasBeenSet = true; m_databaseUser = std::forward<DatabaseUserT>(value); }
     template<typename DatabaseUserT = Aws::String>
     RedshiftProvisionedAuthConfiguration& WithDatabaseUser(DatabaseUserT&& value) { SetDatabaseUser(std::forward<DatabaseUserT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The type of authentication to use.</p>
-     */
-    inline RedshiftProvisionedAuthType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(RedshiftProvisionedAuthType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline RedshiftProvisionedAuthConfiguration& WithType(RedshiftProvisionedAuthType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -78,11 +78,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_databaseUser;
-    bool m_databaseUserHasBeenSet = false;
-
     RedshiftProvisionedAuthType m_type{RedshiftProvisionedAuthType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    Aws::String m_databaseUser;
+    bool m_databaseUserHasBeenSet = false;
 
     Aws::String m_usernamePasswordSecretArn;
     bool m_usernamePasswordSecretArnHasBeenSet = false;

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent/model/ConversationRole.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent/model/ContentBlock.h>
 #include <utility>
 
@@ -43,6 +43,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The role that the message belongs to.</p>
+     */
+    inline ConversationRole GetRole() const { return m_role; }
+    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
+    inline void SetRole(ConversationRole value) { m_roleHasBeenSet = true; m_role = value; }
+    inline Message& WithRole(ConversationRole value) { SetRole(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The content in the message.</p>
      */
     inline const Aws::Vector<ContentBlock>& GetContent() const { return m_content; }
@@ -54,23 +64,13 @@ namespace Model
     template<typename ContentT = ContentBlock>
     Message& AddContent(ContentT&& value) { m_contentHasBeenSet = true; m_content.emplace_back(std::forward<ContentT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The role that the message belongs to.</p>
-     */
-    inline ConversationRole GetRole() const { return m_role; }
-    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(ConversationRole value) { m_roleHasBeenSet = true; m_role = value; }
-    inline Message& WithRole(ConversationRole value) { SetRole(value); return *this;}
-    ///@}
   private:
-
-    Aws::Vector<ContentBlock> m_content;
-    bool m_contentHasBeenSet = false;
 
     ConversationRole m_role{ConversationRole::NOT_SET};
     bool m_roleHasBeenSet = false;
+
+    Aws::Vector<ContentBlock> m_content;
+    bool m_contentHasBeenSet = false;
   };
 
 } // namespace Model

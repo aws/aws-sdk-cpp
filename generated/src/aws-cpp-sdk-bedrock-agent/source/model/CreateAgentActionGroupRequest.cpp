@@ -16,26 +16,9 @@ Aws::String CreateAgentActionGroupRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_actionGroupExecutorHasBeenSet)
-  {
-   payload.WithObject("actionGroupExecutor", m_actionGroupExecutor.Jsonize());
-
-  }
-
   if(m_actionGroupNameHasBeenSet)
   {
    payload.WithString("actionGroupName", m_actionGroupName);
-
-  }
-
-  if(m_actionGroupStateHasBeenSet)
-  {
-   payload.WithString("actionGroupState", ActionGroupStateMapper::GetNameForActionGroupState(m_actionGroupState));
-  }
-
-  if(m_apiSchemaHasBeenSet)
-  {
-   payload.WithObject("apiSchema", m_apiSchema.Jsonize());
 
   }
 
@@ -48,12 +31,6 @@ Aws::String CreateAgentActionGroupRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
-
-  }
-
-  if(m_functionSchemaHasBeenSet)
-  {
-   payload.WithObject("functionSchema", m_functionSchema.Jsonize());
 
   }
 
@@ -70,6 +47,29 @@ Aws::String CreateAgentActionGroupRequest::SerializePayload() const
      parentActionGroupSignatureParamsJsonMap.WithString(parentActionGroupSignatureParamsItem.first, parentActionGroupSignatureParamsItem.second);
    }
    payload.WithObject("parentActionGroupSignatureParams", std::move(parentActionGroupSignatureParamsJsonMap));
+
+  }
+
+  if(m_actionGroupExecutorHasBeenSet)
+  {
+   payload.WithObject("actionGroupExecutor", m_actionGroupExecutor.Jsonize());
+
+  }
+
+  if(m_apiSchemaHasBeenSet)
+  {
+   payload.WithObject("apiSchema", m_apiSchema.Jsonize());
+
+  }
+
+  if(m_actionGroupStateHasBeenSet)
+  {
+   payload.WithString("actionGroupState", ActionGroupStateMapper::GetNameForActionGroupState(m_actionGroupState));
+  }
+
+  if(m_functionSchemaHasBeenSet)
+  {
+   payload.WithObject("functionSchema", m_functionSchema.Jsonize());
 
   }
 

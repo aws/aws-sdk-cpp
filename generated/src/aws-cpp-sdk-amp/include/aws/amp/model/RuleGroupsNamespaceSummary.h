@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/amp/model/RuleGroupsNamespaceStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -56,31 +56,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the rule groups namespace was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    RuleGroupsNamespaceSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The date and time that the rule groups namespace was most recently
-     * changed.</p>
-     */
-    inline const Aws::Utils::DateTime& GetModifiedAt() const { return m_modifiedAt; }
-    inline bool ModifiedAtHasBeenSet() const { return m_modifiedAtHasBeenSet; }
-    template<typename ModifiedAtT = Aws::Utils::DateTime>
-    void SetModifiedAt(ModifiedAtT&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::forward<ModifiedAtT>(value); }
-    template<typename ModifiedAtT = Aws::Utils::DateTime>
-    RuleGroupsNamespaceSummary& WithModifiedAt(ModifiedAtT&& value) { SetModifiedAt(std::forward<ModifiedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the rule groups namespace.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
@@ -106,6 +81,31 @@ namespace Model
 
     ///@{
     /**
+     * <p>The date and time that the rule groups namespace was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    RuleGroupsNamespaceSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time that the rule groups namespace was most recently
+     * changed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetModifiedAt() const { return m_modifiedAt; }
+    inline bool ModifiedAtHasBeenSet() const { return m_modifiedAtHasBeenSet; }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    void SetModifiedAt(ModifiedAtT&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::forward<ModifiedAtT>(value); }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    RuleGroupsNamespaceSummary& WithModifiedAt(ModifiedAtT&& value) { SetModifiedAt(std::forward<ModifiedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The list of tag keys and values that are associated with the rule groups
      * namespace.</p>
      */
@@ -125,17 +125,17 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
-
-    Aws::Utils::DateTime m_modifiedAt{};
-    bool m_modifiedAtHasBeenSet = false;
-
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
     RuleGroupsNamespaceStatus m_status;
     bool m_statusHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
+
+    Aws::Utils::DateTime m_modifiedAt{};
+    bool m_modifiedAtHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

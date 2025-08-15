@@ -16,12 +16,6 @@ Aws::String UpdateQueryLoggingConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
-  }
-
   if(m_destinationsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> destinationsJsonList(m_destinations.size());
@@ -30,6 +24,12 @@ Aws::String UpdateQueryLoggingConfigurationRequest::SerializePayload() const
      destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
    }
    payload.WithArray("destinations", std::move(destinationsJsonList));
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

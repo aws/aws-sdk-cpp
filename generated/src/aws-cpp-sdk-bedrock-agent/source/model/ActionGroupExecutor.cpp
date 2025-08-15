@@ -25,15 +25,15 @@ ActionGroupExecutor::ActionGroupExecutor(JsonView jsonValue)
 
 ActionGroupExecutor& ActionGroupExecutor::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("customControl"))
-  {
-    m_customControl = CustomControlMethodMapper::GetCustomControlMethodForName(jsonValue.GetString("customControl"));
-    m_customControlHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("lambda"))
   {
     m_lambda = jsonValue.GetString("lambda");
     m_lambdaHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("customControl"))
+  {
+    m_customControl = CustomControlMethodMapper::GetCustomControlMethodForName(jsonValue.GetString("customControl"));
+    m_customControlHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue ActionGroupExecutor::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_customControlHasBeenSet)
-  {
-   payload.WithString("customControl", CustomControlMethodMapper::GetNameForCustomControlMethod(m_customControl));
-  }
-
   if(m_lambdaHasBeenSet)
   {
    payload.WithString("lambda", m_lambda);
 
+  }
+
+  if(m_customControlHasBeenSet)
+  {
+   payload.WithString("customControl", CustomControlMethodMapper::GetNameForCustomControlMethod(m_customControl));
   }
 
   return payload;

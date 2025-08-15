@@ -39,6 +39,11 @@ IntegrationConfig& IntegrationConfig::operator =(JsonView jsonValue)
     }
     m_sourcePropertiesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ContinuousSync"))
+  {
+    m_continuousSync = jsonValue.GetBool("ContinuousSync");
+    m_continuousSyncHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -60,6 +65,12 @@ JsonValue IntegrationConfig::Jsonize() const
      sourcePropertiesJsonMap.WithString(sourcePropertiesItem.first, sourcePropertiesItem.second);
    }
    payload.WithObject("SourceProperties", std::move(sourcePropertiesJsonMap));
+
+  }
+
+  if(m_continuousSyncHasBeenSet)
+  {
+   payload.WithBool("ContinuousSync", m_continuousSync);
 
   }
 

@@ -25,15 +25,15 @@ NeptuneAnalyticsConfiguration::NeptuneAnalyticsConfiguration(JsonView jsonValue)
 
 NeptuneAnalyticsConfiguration& NeptuneAnalyticsConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("fieldMapping"))
-  {
-    m_fieldMapping = jsonValue.GetObject("fieldMapping");
-    m_fieldMappingHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("graphArn"))
   {
     m_graphArn = jsonValue.GetString("graphArn");
     m_graphArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("fieldMapping"))
+  {
+    m_fieldMapping = jsonValue.GetObject("fieldMapping");
+    m_fieldMappingHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue NeptuneAnalyticsConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_fieldMappingHasBeenSet)
-  {
-   payload.WithObject("fieldMapping", m_fieldMapping.Jsonize());
-
-  }
-
   if(m_graphArnHasBeenSet)
   {
    payload.WithString("graphArn", m_graphArn);
+
+  }
+
+  if(m_fieldMappingHasBeenSet)
+  {
+   payload.WithObject("fieldMapping", m_fieldMapping.Jsonize());
 
   }
 

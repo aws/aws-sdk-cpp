@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/AgentDescriptor.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
+#include <aws/bedrock-agent/model/AgentDescriptor.h>
 #include <aws/bedrock-agent/model/RelayConversationHistory.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -42,18 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The collaborator's agent descriptor.</p>
-     */
-    inline const AgentDescriptor& GetAgentDescriptor() const { return m_agentDescriptor; }
-    inline bool AgentDescriptorHasBeenSet() const { return m_agentDescriptorHasBeenSet; }
-    template<typename AgentDescriptorT = AgentDescriptor>
-    void SetAgentDescriptor(AgentDescriptorT&& value) { m_agentDescriptorHasBeenSet = true; m_agentDescriptor = std::forward<AgentDescriptorT>(value); }
-    template<typename AgentDescriptorT = AgentDescriptor>
-    AgentCollaboratorSummary& WithAgentDescriptor(AgentDescriptorT&& value) { SetAgentDescriptor(std::forward<AgentDescriptorT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The collaborator's agent ID.</p>
      */
     inline const Aws::String& GetAgentId() const { return m_agentId; }
@@ -78,6 +66,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>The collaborator's ID.</p>
+     */
+    inline const Aws::String& GetCollaboratorId() const { return m_collaboratorId; }
+    inline bool CollaboratorIdHasBeenSet() const { return m_collaboratorIdHasBeenSet; }
+    template<typename CollaboratorIdT = Aws::String>
+    void SetCollaboratorId(CollaboratorIdT&& value) { m_collaboratorIdHasBeenSet = true; m_collaboratorId = std::forward<CollaboratorIdT>(value); }
+    template<typename CollaboratorIdT = Aws::String>
+    AgentCollaboratorSummary& WithCollaboratorId(CollaboratorIdT&& value) { SetCollaboratorId(std::forward<CollaboratorIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The collaborator's agent descriptor.</p>
+     */
+    inline const AgentDescriptor& GetAgentDescriptor() const { return m_agentDescriptor; }
+    inline bool AgentDescriptorHasBeenSet() const { return m_agentDescriptorHasBeenSet; }
+    template<typename AgentDescriptorT = AgentDescriptor>
+    void SetAgentDescriptor(AgentDescriptorT&& value) { m_agentDescriptorHasBeenSet = true; m_agentDescriptor = std::forward<AgentDescriptorT>(value); }
+    template<typename AgentDescriptorT = AgentDescriptor>
+    AgentCollaboratorSummary& WithAgentDescriptor(AgentDescriptorT&& value) { SetAgentDescriptor(std::forward<AgentDescriptorT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The collaborator's collaboration instruction.</p>
      */
     inline const Aws::String& GetCollaborationInstruction() const { return m_collaborationInstruction; }
@@ -90,14 +102,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The collaborator's ID.</p>
+     * <p>The collaborator's relay conversation history.</p>
      */
-    inline const Aws::String& GetCollaboratorId() const { return m_collaboratorId; }
-    inline bool CollaboratorIdHasBeenSet() const { return m_collaboratorIdHasBeenSet; }
-    template<typename CollaboratorIdT = Aws::String>
-    void SetCollaboratorId(CollaboratorIdT&& value) { m_collaboratorIdHasBeenSet = true; m_collaboratorId = std::forward<CollaboratorIdT>(value); }
-    template<typename CollaboratorIdT = Aws::String>
-    AgentCollaboratorSummary& WithCollaboratorId(CollaboratorIdT&& value) { SetCollaboratorId(std::forward<CollaboratorIdT>(value)); return *this;}
+    inline RelayConversationHistory GetRelayConversationHistory() const { return m_relayConversationHistory; }
+    inline bool RelayConversationHistoryHasBeenSet() const { return m_relayConversationHistoryHasBeenSet; }
+    inline void SetRelayConversationHistory(RelayConversationHistory value) { m_relayConversationHistoryHasBeenSet = true; m_relayConversationHistory = value; }
+    inline AgentCollaboratorSummary& WithRelayConversationHistory(RelayConversationHistory value) { SetRelayConversationHistory(value); return *this;}
     ///@}
 
     ///@{
@@ -135,20 +145,7 @@ namespace Model
     template<typename LastUpdatedAtT = Aws::Utils::DateTime>
     AgentCollaboratorSummary& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The collaborator's relay conversation history.</p>
-     */
-    inline RelayConversationHistory GetRelayConversationHistory() const { return m_relayConversationHistory; }
-    inline bool RelayConversationHistoryHasBeenSet() const { return m_relayConversationHistoryHasBeenSet; }
-    inline void SetRelayConversationHistory(RelayConversationHistory value) { m_relayConversationHistoryHasBeenSet = true; m_relayConversationHistory = value; }
-    inline AgentCollaboratorSummary& WithRelayConversationHistory(RelayConversationHistory value) { SetRelayConversationHistory(value); return *this;}
-    ///@}
   private:
-
-    AgentDescriptor m_agentDescriptor;
-    bool m_agentDescriptorHasBeenSet = false;
 
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet = false;
@@ -156,11 +153,17 @@ namespace Model
     Aws::String m_agentVersion;
     bool m_agentVersionHasBeenSet = false;
 
+    Aws::String m_collaboratorId;
+    bool m_collaboratorIdHasBeenSet = false;
+
+    AgentDescriptor m_agentDescriptor;
+    bool m_agentDescriptorHasBeenSet = false;
+
     Aws::String m_collaborationInstruction;
     bool m_collaborationInstructionHasBeenSet = false;
 
-    Aws::String m_collaboratorId;
-    bool m_collaboratorIdHasBeenSet = false;
+    RelayConversationHistory m_relayConversationHistory{RelayConversationHistory::NOT_SET};
+    bool m_relayConversationHistoryHasBeenSet = false;
 
     Aws::String m_collaboratorName;
     bool m_collaboratorNameHasBeenSet = false;
@@ -170,9 +173,6 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedAt{};
     bool m_lastUpdatedAtHasBeenSet = false;
-
-    RelayConversationHistory m_relayConversationHistory{RelayConversationHistory::NOT_SET};
-    bool m_relayConversationHistoryHasBeenSet = false;
   };
 
 } // namespace Model

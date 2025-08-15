@@ -25,11 +25,6 @@ AgentCollaborator::AgentCollaborator(JsonView jsonValue)
 
 AgentCollaborator& AgentCollaborator::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("agentDescriptor"))
-  {
-    m_agentDescriptor = jsonValue.GetObject("agentDescriptor");
-    m_agentDescriptorHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("agentId"))
   {
     m_agentId = jsonValue.GetString("agentId");
@@ -40,20 +35,20 @@ AgentCollaborator& AgentCollaborator::operator =(JsonView jsonValue)
     m_agentVersion = jsonValue.GetString("agentVersion");
     m_agentVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clientToken"))
+  if(jsonValue.ValueExists("agentDescriptor"))
   {
-    m_clientToken = jsonValue.GetString("clientToken");
-    m_clientTokenHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("collaborationInstruction"))
-  {
-    m_collaborationInstruction = jsonValue.GetString("collaborationInstruction");
-    m_collaborationInstructionHasBeenSet = true;
+    m_agentDescriptor = jsonValue.GetObject("agentDescriptor");
+    m_agentDescriptorHasBeenSet = true;
   }
   if(jsonValue.ValueExists("collaboratorId"))
   {
     m_collaboratorId = jsonValue.GetString("collaboratorId");
     m_collaboratorIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("collaborationInstruction"))
+  {
+    m_collaborationInstruction = jsonValue.GetString("collaborationInstruction");
+    m_collaborationInstructionHasBeenSet = true;
   }
   if(jsonValue.ValueExists("collaboratorName"))
   {
@@ -75,18 +70,17 @@ AgentCollaborator& AgentCollaborator::operator =(JsonView jsonValue)
     m_relayConversationHistory = RelayConversationHistoryMapper::GetRelayConversationHistoryForName(jsonValue.GetString("relayConversationHistory"));
     m_relayConversationHistoryHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("clientToken"))
+  {
+    m_clientToken = jsonValue.GetString("clientToken");
+    m_clientTokenHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue AgentCollaborator::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_agentDescriptorHasBeenSet)
-  {
-   payload.WithObject("agentDescriptor", m_agentDescriptor.Jsonize());
-
-  }
 
   if(m_agentIdHasBeenSet)
   {
@@ -100,21 +94,21 @@ JsonValue AgentCollaborator::Jsonize() const
 
   }
 
-  if(m_clientTokenHasBeenSet)
+  if(m_agentDescriptorHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
-
-  }
-
-  if(m_collaborationInstructionHasBeenSet)
-  {
-   payload.WithString("collaborationInstruction", m_collaborationInstruction);
+   payload.WithObject("agentDescriptor", m_agentDescriptor.Jsonize());
 
   }
 
   if(m_collaboratorIdHasBeenSet)
   {
    payload.WithString("collaboratorId", m_collaboratorId);
+
+  }
+
+  if(m_collaborationInstructionHasBeenSet)
+  {
+   payload.WithString("collaborationInstruction", m_collaborationInstruction);
 
   }
 
@@ -137,6 +131,12 @@ JsonValue AgentCollaborator::Jsonize() const
   if(m_relayConversationHistoryHasBeenSet)
   {
    payload.WithString("relayConversationHistory", RelayConversationHistoryMapper::GetNameForRelayConversationHistory(m_relayConversationHistory));
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
+
   }
 
   return payload;

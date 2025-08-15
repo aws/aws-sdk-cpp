@@ -35,27 +35,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key to encrypt the flow.</p>
+     * <p>A name for the flow.</p>
      */
-    inline const Aws::String& GetCustomerEncryptionKeyArn() const { return m_customerEncryptionKeyArn; }
-    inline bool CustomerEncryptionKeyArnHasBeenSet() const { return m_customerEncryptionKeyArnHasBeenSet; }
-    template<typename CustomerEncryptionKeyArnT = Aws::String>
-    void SetCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn = std::forward<CustomerEncryptionKeyArnT>(value); }
-    template<typename CustomerEncryptionKeyArnT = Aws::String>
-    UpdateFlowRequest& WithCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) { SetCustomerEncryptionKeyArn(std::forward<CustomerEncryptionKeyArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A definition of the nodes and the connections between the nodes in the
-     * flow.</p>
-     */
-    inline const FlowDefinition& GetDefinition() const { return m_definition; }
-    inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-    template<typename DefinitionT = FlowDefinition>
-    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
-    template<typename DefinitionT = FlowDefinition>
-    UpdateFlowRequest& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateFlowRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,6 +75,31 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key to encrypt the flow.</p>
+     */
+    inline const Aws::String& GetCustomerEncryptionKeyArn() const { return m_customerEncryptionKeyArn; }
+    inline bool CustomerEncryptionKeyArnHasBeenSet() const { return m_customerEncryptionKeyArnHasBeenSet; }
+    template<typename CustomerEncryptionKeyArnT = Aws::String>
+    void SetCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn = std::forward<CustomerEncryptionKeyArnT>(value); }
+    template<typename CustomerEncryptionKeyArnT = Aws::String>
+    UpdateFlowRequest& WithCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) { SetCustomerEncryptionKeyArn(std::forward<CustomerEncryptionKeyArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A definition of the nodes and the connections between the nodes in the
+     * flow.</p>
+     */
+    inline const FlowDefinition& GetDefinition() const { return m_definition; }
+    inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
+    template<typename DefinitionT = FlowDefinition>
+    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
+    template<typename DefinitionT = FlowDefinition>
+    UpdateFlowRequest& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The unique identifier of the flow.</p>
      */
     inline const Aws::String& GetFlowIdentifier() const { return m_flowIdentifier; }
@@ -97,25 +109,10 @@ namespace Model
     template<typename FlowIdentifierT = Aws::String>
     UpdateFlowRequest& WithFlowIdentifier(FlowIdentifierT&& value) { SetFlowIdentifier(std::forward<FlowIdentifierT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>A name for the flow.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    UpdateFlowRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
   private:
 
-    Aws::String m_customerEncryptionKeyArn;
-    bool m_customerEncryptionKeyArnHasBeenSet = false;
-
-    FlowDefinition m_definition;
-    bool m_definitionHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
@@ -123,11 +120,14 @@ namespace Model
     Aws::String m_executionRoleArn;
     bool m_executionRoleArnHasBeenSet = false;
 
+    Aws::String m_customerEncryptionKeyArn;
+    bool m_customerEncryptionKeyArnHasBeenSet = false;
+
+    FlowDefinition m_definition;
+    bool m_definitionHasBeenSet = false;
+
     Aws::String m_flowIdentifier;
     bool m_flowIdentifierHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

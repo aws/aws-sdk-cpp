@@ -46,15 +46,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the agent version.</p>
-     */
-    inline AgentStatus GetAgentStatus() const { return m_agentStatus; }
-    inline void SetAgentStatus(AgentStatus value) { m_agentStatusHasBeenSet = true; m_agentStatus = value; }
-    inline DeleteAgentVersionResult& WithAgentStatus(AgentStatus value) { SetAgentStatus(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The version that was deleted.</p>
      */
     inline const Aws::String& GetAgentVersion() const { return m_agentVersion; }
@@ -62,6 +53,15 @@ namespace Model
     void SetAgentVersion(AgentVersionT&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::forward<AgentVersionT>(value); }
     template<typename AgentVersionT = Aws::String>
     DeleteAgentVersionResult& WithAgentVersion(AgentVersionT&& value) { SetAgentVersion(std::forward<AgentVersionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status of the agent version.</p>
+     */
+    inline AgentStatus GetAgentStatus() const { return m_agentStatus; }
+    inline void SetAgentStatus(AgentStatus value) { m_agentStatusHasBeenSet = true; m_agentStatus = value; }
+    inline DeleteAgentVersionResult& WithAgentStatus(AgentStatus value) { SetAgentStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -77,11 +77,11 @@ namespace Model
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet = false;
 
-    AgentStatus m_agentStatus{AgentStatus::NOT_SET};
-    bool m_agentStatusHasBeenSet = false;
-
     Aws::String m_agentVersion;
     bool m_agentVersionHasBeenSet = false;
+
+    AgentStatus m_agentStatus{AgentStatus::NOT_SET};
+    bool m_agentStatusHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -23,6 +23,13 @@ Aws::String ListPromptsRequest::SerializePayload() const
 void ListPromptsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_promptIdentifierHasBeenSet)
+    {
+      ss << m_promptIdentifier;
+      uri.AddQueryStringParameter("promptIdentifier", ss.str());
+      ss.str("");
+    }
+
     if(m_maxResultsHasBeenSet)
     {
       ss << m_maxResults;
@@ -34,13 +41,6 @@ void ListPromptsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
-      ss.str("");
-    }
-
-    if(m_promptIdentifierHasBeenSet)
-    {
-      ss << m_promptIdentifier;
-      uri.AddQueryStringParameter("promptIdentifier", ss.str());
       ss.str("");
     }
 

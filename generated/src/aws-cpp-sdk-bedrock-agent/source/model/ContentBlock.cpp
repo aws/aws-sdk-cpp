@@ -25,15 +25,15 @@ ContentBlock::ContentBlock(JsonView jsonValue)
 
 ContentBlock& ContentBlock::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("cachePoint"))
-  {
-    m_cachePoint = jsonValue.GetObject("cachePoint");
-    m_cachePointHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("cachePoint"))
+  {
+    m_cachePoint = jsonValue.GetObject("cachePoint");
+    m_cachePointHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue ContentBlock::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_cachePointHasBeenSet)
-  {
-   payload.WithObject("cachePoint", m_cachePoint.Jsonize());
-
-  }
-
   if(m_textHasBeenSet)
   {
    payload.WithString("text", m_text);
+
+  }
+
+  if(m_cachePointHasBeenSet)
+  {
+   payload.WithObject("cachePoint", m_cachePoint.Jsonize());
 
   }
 

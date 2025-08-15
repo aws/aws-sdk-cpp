@@ -25,15 +25,15 @@ CrawlFilterConfiguration::CrawlFilterConfiguration(JsonView jsonValue)
 
 CrawlFilterConfiguration& CrawlFilterConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("patternObjectFilter"))
-  {
-    m_patternObjectFilter = jsonValue.GetObject("patternObjectFilter");
-    m_patternObjectFilterHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("type"))
   {
     m_type = CrawlFilterConfigurationTypeMapper::GetCrawlFilterConfigurationTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("patternObjectFilter"))
+  {
+    m_patternObjectFilter = jsonValue.GetObject("patternObjectFilter");
+    m_patternObjectFilterHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue CrawlFilterConfiguration::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", CrawlFilterConfigurationTypeMapper::GetNameForCrawlFilterConfigurationType(m_type));
+  }
+
   if(m_patternObjectFilterHasBeenSet)
   {
    payload.WithObject("patternObjectFilter", m_patternObjectFilter.Jsonize());
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", CrawlFilterConfigurationTypeMapper::GetNameForCrawlFilterConfigurationType(m_type));
   }
 
   return payload;

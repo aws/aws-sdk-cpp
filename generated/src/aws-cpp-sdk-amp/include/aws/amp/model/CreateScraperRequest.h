@@ -7,10 +7,10 @@
 #include <aws/amp/PrometheusService_EXPORTS.h>
 #include <aws/amp/PrometheusServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/amp/model/Destination.h>
-#include <aws/amp/model/RoleConfiguration.h>
 #include <aws/amp/model/ScrapeConfiguration.h>
 #include <aws/amp/model/Source.h>
+#include <aws/amp/model/Destination.h>
+#include <aws/amp/model/RoleConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -57,15 +57,30 @@ namespace Model
 
     ///@{
     /**
-     * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
-     * the idempotency of the request.</p>
+     * <p>The configuration file to use in the new scraper. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper
+     * configuration</a> in the <i>Amazon Managed Service for Prometheus User
+     * Guide</i>.</p>
      */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    CreateScraperRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
+    inline const ScrapeConfiguration& GetScrapeConfiguration() const { return m_scrapeConfiguration; }
+    inline bool ScrapeConfigurationHasBeenSet() const { return m_scrapeConfigurationHasBeenSet; }
+    template<typename ScrapeConfigurationT = ScrapeConfiguration>
+    void SetScrapeConfiguration(ScrapeConfigurationT&& value) { m_scrapeConfigurationHasBeenSet = true; m_scrapeConfiguration = std::forward<ScrapeConfigurationT>(value); }
+    template<typename ScrapeConfigurationT = ScrapeConfiguration>
+    CreateScraperRequest& WithScrapeConfiguration(ScrapeConfigurationT&& value) { SetScrapeConfiguration(std::forward<ScrapeConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon EKS cluster from which the scraper will collect metrics.</p>
+     */
+    inline const Source& GetSource() const { return m_source; }
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+    template<typename SourceT = Source>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Source>
+    CreateScraperRequest& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,30 +110,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration file to use in the new scraper. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper
-     * configuration</a> in the <i>Amazon Managed Service for Prometheus User
-     * Guide</i>.</p>
+     * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
+     * the idempotency of the request.</p>
      */
-    inline const ScrapeConfiguration& GetScrapeConfiguration() const { return m_scrapeConfiguration; }
-    inline bool ScrapeConfigurationHasBeenSet() const { return m_scrapeConfigurationHasBeenSet; }
-    template<typename ScrapeConfigurationT = ScrapeConfiguration>
-    void SetScrapeConfiguration(ScrapeConfigurationT&& value) { m_scrapeConfigurationHasBeenSet = true; m_scrapeConfiguration = std::forward<ScrapeConfigurationT>(value); }
-    template<typename ScrapeConfigurationT = ScrapeConfiguration>
-    CreateScraperRequest& WithScrapeConfiguration(ScrapeConfigurationT&& value) { SetScrapeConfiguration(std::forward<ScrapeConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon EKS cluster from which the scraper will collect metrics.</p>
-     */
-    inline const Source& GetSource() const { return m_source; }
-    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    template<typename SourceT = Source>
-    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
-    template<typename SourceT = Source>
-    CreateScraperRequest& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateScraperRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,8 +141,11 @@ namespace Model
     Aws::String m_alias;
     bool m_aliasHasBeenSet = false;
 
-    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-    bool m_clientTokenHasBeenSet = true;
+    ScrapeConfiguration m_scrapeConfiguration;
+    bool m_scrapeConfigurationHasBeenSet = false;
+
+    Source m_source;
+    bool m_sourceHasBeenSet = false;
 
     Destination m_destination;
     bool m_destinationHasBeenSet = false;
@@ -150,11 +153,8 @@ namespace Model
     RoleConfiguration m_roleConfiguration;
     bool m_roleConfigurationHasBeenSet = false;
 
-    ScrapeConfiguration m_scrapeConfiguration;
-    bool m_scrapeConfigurationHasBeenSet = false;
-
-    Source m_source;
-    bool m_sourceHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

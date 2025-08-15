@@ -25,15 +25,25 @@ DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue)
 
 DataSourceConfiguration& DataSourceConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("confluenceConfiguration"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_confluenceConfiguration = jsonValue.GetObject("confluenceConfiguration");
-    m_confluenceConfigurationHasBeenSet = true;
+    m_type = DataSourceTypeMapper::GetDataSourceTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("s3Configuration"))
   {
     m_s3Configuration = jsonValue.GetObject("s3Configuration");
     m_s3ConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("webConfiguration"))
+  {
+    m_webConfiguration = jsonValue.GetObject("webConfiguration");
+    m_webConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("confluenceConfiguration"))
+  {
+    m_confluenceConfiguration = jsonValue.GetObject("confluenceConfiguration");
+    m_confluenceConfigurationHasBeenSet = true;
   }
   if(jsonValue.ValueExists("salesforceConfiguration"))
   {
@@ -45,16 +55,6 @@ DataSourceConfiguration& DataSourceConfiguration::operator =(JsonView jsonValue)
     m_sharePointConfiguration = jsonValue.GetObject("sharePointConfiguration");
     m_sharePointConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = DataSourceTypeMapper::GetDataSourceTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("webConfiguration"))
-  {
-    m_webConfiguration = jsonValue.GetObject("webConfiguration");
-    m_webConfigurationHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -62,15 +62,26 @@ JsonValue DataSourceConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_confluenceConfigurationHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithObject("confluenceConfiguration", m_confluenceConfiguration.Jsonize());
-
+   payload.WithString("type", DataSourceTypeMapper::GetNameForDataSourceType(m_type));
   }
 
   if(m_s3ConfigurationHasBeenSet)
   {
    payload.WithObject("s3Configuration", m_s3Configuration.Jsonize());
+
+  }
+
+  if(m_webConfigurationHasBeenSet)
+  {
+   payload.WithObject("webConfiguration", m_webConfiguration.Jsonize());
+
+  }
+
+  if(m_confluenceConfigurationHasBeenSet)
+  {
+   payload.WithObject("confluenceConfiguration", m_confluenceConfiguration.Jsonize());
 
   }
 
@@ -83,17 +94,6 @@ JsonValue DataSourceConfiguration::Jsonize() const
   if(m_sharePointConfigurationHasBeenSet)
   {
    payload.WithObject("sharePointConfiguration", m_sharePointConfiguration.Jsonize());
-
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", DataSourceTypeMapper::GetNameForDataSourceType(m_type));
-  }
-
-  if(m_webConfigurationHasBeenSet)
-  {
-   payload.WithObject("webConfiguration", m_webConfiguration.Jsonize());
 
   }
 

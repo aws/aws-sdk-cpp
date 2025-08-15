@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/ToolChoice.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock-agent/model/ToolChoice.h>
 #include <aws/bedrock-agent/model/Tool.h>
 #include <utility>
 
@@ -45,18 +45,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Defines which tools the model should request when invoked.</p>
-     */
-    inline const ToolChoice& GetToolChoice() const { return m_toolChoice; }
-    inline bool ToolChoiceHasBeenSet() const { return m_toolChoiceHasBeenSet; }
-    template<typename ToolChoiceT = ToolChoice>
-    void SetToolChoice(ToolChoiceT&& value) { m_toolChoiceHasBeenSet = true; m_toolChoice = std::forward<ToolChoiceT>(value); }
-    template<typename ToolChoiceT = ToolChoice>
-    ToolConfiguration& WithToolChoice(ToolChoiceT&& value) { SetToolChoice(std::forward<ToolChoiceT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>An array of tools to pass to a model.</p>
      */
     inline const Aws::Vector<Tool>& GetTools() const { return m_tools; }
@@ -68,13 +56,25 @@ namespace Model
     template<typename ToolsT = Tool>
     ToolConfiguration& AddTools(ToolsT&& value) { m_toolsHasBeenSet = true; m_tools.emplace_back(std::forward<ToolsT>(value)); return *this; }
     ///@}
-  private:
 
-    ToolChoice m_toolChoice;
-    bool m_toolChoiceHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Defines which tools the model should request when invoked.</p>
+     */
+    inline const ToolChoice& GetToolChoice() const { return m_toolChoice; }
+    inline bool ToolChoiceHasBeenSet() const { return m_toolChoiceHasBeenSet; }
+    template<typename ToolChoiceT = ToolChoice>
+    void SetToolChoice(ToolChoiceT&& value) { m_toolChoiceHasBeenSet = true; m_toolChoice = std::forward<ToolChoiceT>(value); }
+    template<typename ToolChoiceT = ToolChoice>
+    ToolConfiguration& WithToolChoice(ToolChoiceT&& value) { SetToolChoice(std::forward<ToolChoiceT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::Vector<Tool> m_tools;
     bool m_toolsHasBeenSet = false;
+
+    ToolChoice m_toolChoice;
+    bool m_toolChoiceHasBeenSet = false;
   };
 
 } // namespace Model

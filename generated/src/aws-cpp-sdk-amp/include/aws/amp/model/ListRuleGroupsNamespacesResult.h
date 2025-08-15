@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/amp/model/RuleGroupsNamespaceSummary.h>
 #include <utility>
 
@@ -42,19 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A token indicating that there are more results to retrieve. You can use this
-     * token as part of your next <code>ListRuleGroupsNamespaces</code> request to
-     * retrieve those results.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListRuleGroupsNamespacesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The returned list of rule groups namespaces.</p>
      */
     inline const Aws::Vector<RuleGroupsNamespaceSummary>& GetRuleGroupsNamespaces() const { return m_ruleGroupsNamespaces; }
@@ -67,6 +54,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>A token indicating that there are more results to retrieve. You can use this
+     * token as part of your next <code>ListRuleGroupsNamespaces</code> request to
+     * retrieve those results.</p>
+     */
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRuleGroupsNamespacesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -76,11 +76,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
     Aws::Vector<RuleGroupsNamespaceSummary> m_ruleGroupsNamespaces;
     bool m_ruleGroupsNamespacesHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

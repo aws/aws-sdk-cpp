@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/Document.h>
 #include <utility>
 
@@ -42,6 +42,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Bedrock reranker model.</p>
+     */
+    inline const Aws::String& GetModelArn() const { return m_modelArn; }
+    inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
+    template<typename ModelArnT = Aws::String>
+    void SetModelArn(ModelArnT&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::forward<ModelArnT>(value); }
+    template<typename ModelArnT = Aws::String>
+    VectorSearchBedrockRerankingModelConfiguration& WithModelArn(ModelArnT&& value) { SetModelArn(std::forward<ModelArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies additional model-specific request parameters as key-value pairs
      * that are included in the request to the Amazon Bedrock reranker model.</p>
      */
@@ -56,25 +68,13 @@ namespace Model
       m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields.emplace(std::forward<AdditionalModelRequestFieldsKeyT>(key), std::forward<AdditionalModelRequestFieldsValueT>(value)); return *this;
     }
     ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Bedrock reranker model.</p>
-     */
-    inline const Aws::String& GetModelArn() const { return m_modelArn; }
-    inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
-    template<typename ModelArnT = Aws::String>
-    void SetModelArn(ModelArnT&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::forward<ModelArnT>(value); }
-    template<typename ModelArnT = Aws::String>
-    VectorSearchBedrockRerankingModelConfiguration& WithModelArn(ModelArnT&& value) { SetModelArn(std::forward<ModelArnT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::Map<Aws::String, Aws::Utils::Document> m_additionalModelRequestFields;
-    bool m_additionalModelRequestFieldsHasBeenSet = false;
 
     Aws::String m_modelArn;
     bool m_modelArnHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::Utils::Document> m_additionalModelRequestFields;
+    bool m_additionalModelRequestFieldsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,14 +25,10 @@ PatternObjectFilter::PatternObjectFilter(JsonView jsonValue)
 
 PatternObjectFilter& PatternObjectFilter::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("exclusionFilters"))
+  if(jsonValue.ValueExists("objectType"))
   {
-    Aws::Utils::Array<JsonView> exclusionFiltersJsonList = jsonValue.GetArray("exclusionFilters");
-    for(unsigned exclusionFiltersIndex = 0; exclusionFiltersIndex < exclusionFiltersJsonList.GetLength(); ++exclusionFiltersIndex)
-    {
-      m_exclusionFilters.push_back(exclusionFiltersJsonList[exclusionFiltersIndex].AsString());
-    }
-    m_exclusionFiltersHasBeenSet = true;
+    m_objectType = jsonValue.GetString("objectType");
+    m_objectTypeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("inclusionFilters"))
   {
@@ -43,10 +39,14 @@ PatternObjectFilter& PatternObjectFilter::operator =(JsonView jsonValue)
     }
     m_inclusionFiltersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("objectType"))
+  if(jsonValue.ValueExists("exclusionFilters"))
   {
-    m_objectType = jsonValue.GetString("objectType");
-    m_objectTypeHasBeenSet = true;
+    Aws::Utils::Array<JsonView> exclusionFiltersJsonList = jsonValue.GetArray("exclusionFilters");
+    for(unsigned exclusionFiltersIndex = 0; exclusionFiltersIndex < exclusionFiltersJsonList.GetLength(); ++exclusionFiltersIndex)
+    {
+      m_exclusionFilters.push_back(exclusionFiltersJsonList[exclusionFiltersIndex].AsString());
+    }
+    m_exclusionFiltersHasBeenSet = true;
   }
   return *this;
 }
@@ -55,14 +55,9 @@ JsonValue PatternObjectFilter::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_exclusionFiltersHasBeenSet)
+  if(m_objectTypeHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> exclusionFiltersJsonList(m_exclusionFilters.size());
-   for(unsigned exclusionFiltersIndex = 0; exclusionFiltersIndex < exclusionFiltersJsonList.GetLength(); ++exclusionFiltersIndex)
-   {
-     exclusionFiltersJsonList[exclusionFiltersIndex].AsString(m_exclusionFilters[exclusionFiltersIndex]);
-   }
-   payload.WithArray("exclusionFilters", std::move(exclusionFiltersJsonList));
+   payload.WithString("objectType", m_objectType);
 
   }
 
@@ -77,9 +72,14 @@ JsonValue PatternObjectFilter::Jsonize() const
 
   }
 
-  if(m_objectTypeHasBeenSet)
+  if(m_exclusionFiltersHasBeenSet)
   {
-   payload.WithString("objectType", m_objectType);
+   Aws::Utils::Array<JsonValue> exclusionFiltersJsonList(m_exclusionFilters.size());
+   for(unsigned exclusionFiltersIndex = 0; exclusionFiltersIndex < exclusionFiltersJsonList.GetLength(); ++exclusionFiltersIndex)
+   {
+     exclusionFiltersJsonList[exclusionFiltersIndex].AsString(m_exclusionFilters[exclusionFiltersIndex]);
+   }
+   payload.WithArray("exclusionFilters", std::move(exclusionFiltersJsonList));
 
   }
 

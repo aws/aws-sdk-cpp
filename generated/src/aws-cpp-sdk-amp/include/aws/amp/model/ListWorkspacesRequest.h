@@ -44,6 +44,24 @@ namespace Model
 
     ///@{
     /**
+     * <p>The token for the next set of items to return. You receive this token from a
+     * previous call, and use it to get the next page of results. The other parameters
+     * must be the same as the initial call.</p> <p>For example, if your initial
+     * request has <code>maxResults</code> of 10, and there are 12 workspaces to
+     * return, then your initial request will return 10 and a <code>nextToken</code>.
+     * Using the next token in a subsequent call will return the remaining 2
+     * workspaces.</p>
+     */
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListWorkspacesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>If this is included, it filters the results to only the workspaces with names
      * that start with the value that you specify here.</p> <p>Amazon Managed Service
      * for Prometheus will automatically strip any blank spaces from the beginning and
@@ -67,34 +85,16 @@ namespace Model
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListWorkspacesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The token for the next set of items to return. You receive this token from a
-     * previous call, and use it to get the next page of results. The other parameters
-     * must be the same as the initial call.</p> <p>For example, if your initial
-     * request has <code>maxResults</code> of 10, and there are 12 workspaces to
-     * return, then your initial request will return 10 and a <code>nextToken</code>.
-     * Using the next token in a subsequent call will return the remaining 2
-     * workspaces.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListWorkspacesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_alias;
     bool m_aliasHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

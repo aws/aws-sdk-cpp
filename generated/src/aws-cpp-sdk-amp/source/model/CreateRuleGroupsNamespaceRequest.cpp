@@ -17,9 +17,9 @@ Aws::String CreateRuleGroupsNamespaceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithString("name", m_name);
 
   }
 
@@ -28,9 +28,9 @@ Aws::String CreateRuleGroupsNamespaceRequest::SerializePayload() const
    payload.WithString("data", HashingUtils::Base64Encode(m_data));
   }
 
-  if(m_nameHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

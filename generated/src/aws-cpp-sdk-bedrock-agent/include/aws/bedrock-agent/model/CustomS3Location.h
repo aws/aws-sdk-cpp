@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The S3 URI of the file containing the content to ingest.</p>
+     */
+    inline const Aws::String& GetUri() const { return m_uri; }
+    inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
+    template<typename UriT = Aws::String>
+    void SetUri(UriT&& value) { m_uriHasBeenSet = true; m_uri = std::forward<UriT>(value); }
+    template<typename UriT = Aws::String>
+    CustomS3Location& WithUri(UriT&& value) { SetUri(std::forward<UriT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The identifier of the Amazon Web Services account that owns the S3 bucket
      * containing the content to ingest.</p>
      */
@@ -51,25 +63,13 @@ namespace Model
     template<typename BucketOwnerAccountIdT = Aws::String>
     CustomS3Location& WithBucketOwnerAccountId(BucketOwnerAccountIdT&& value) { SetBucketOwnerAccountId(std::forward<BucketOwnerAccountIdT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The S3 URI of the file containing the content to ingest.</p>
-     */
-    inline const Aws::String& GetUri() const { return m_uri; }
-    inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
-    template<typename UriT = Aws::String>
-    void SetUri(UriT&& value) { m_uriHasBeenSet = true; m_uri = std::forward<UriT>(value); }
-    template<typename UriT = Aws::String>
-    CustomS3Location& WithUri(UriT&& value) { SetUri(std::forward<UriT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::String m_bucketOwnerAccountId;
-    bool m_bucketOwnerAccountIdHasBeenSet = false;
 
     Aws::String m_uri;
     bool m_uriHasBeenSet = false;
+
+    Aws::String m_bucketOwnerAccountId;
+    bool m_bucketOwnerAccountIdHasBeenSet = false;
   };
 
 } // namespace Model

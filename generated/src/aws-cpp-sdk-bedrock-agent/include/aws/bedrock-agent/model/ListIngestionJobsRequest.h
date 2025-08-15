@@ -37,6 +37,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier of the knowledge base for the list of data ingestion
+     * jobs.</p>
+     */
+    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
+    inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    ListIngestionJobsRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The unique identifier of the data source for the list of data ingestion
      * jobs.</p>
      */
@@ -64,15 +77,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the knowledge base for the list of data ingestion
-     * jobs.</p>
+     * <p>Contains details about how to sort the data.</p>
      */
-    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
-    inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-    template<typename KnowledgeBaseIdT = Aws::String>
-    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
-    template<typename KnowledgeBaseIdT = Aws::String>
-    ListIngestionJobsRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
+    inline const IngestionJobSortBy& GetSortBy() const { return m_sortBy; }
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+    template<typename SortByT = IngestionJobSortBy>
+    void SetSortBy(SortByT&& value) { m_sortByHasBeenSet = true; m_sortBy = std::forward<SortByT>(value); }
+    template<typename SortByT = IngestionJobSortBy>
+    ListIngestionJobsRequest& WithSortBy(SortByT&& value) { SetSortBy(std::forward<SortByT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,19 +114,10 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListIngestionJobsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Contains details about how to sort the data.</p>
-     */
-    inline const IngestionJobSortBy& GetSortBy() const { return m_sortBy; }
-    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    template<typename SortByT = IngestionJobSortBy>
-    void SetSortBy(SortByT&& value) { m_sortByHasBeenSet = true; m_sortBy = std::forward<SortByT>(value); }
-    template<typename SortByT = IngestionJobSortBy>
-    ListIngestionJobsRequest& WithSortBy(SortByT&& value) { SetSortBy(std::forward<SortByT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_knowledgeBaseId;
+    bool m_knowledgeBaseIdHasBeenSet = false;
 
     Aws::String m_dataSourceId;
     bool m_dataSourceIdHasBeenSet = false;
@@ -122,17 +125,14 @@ namespace Model
     Aws::Vector<IngestionJobFilter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    Aws::String m_knowledgeBaseId;
-    bool m_knowledgeBaseIdHasBeenSet = false;
+    IngestionJobSortBy m_sortBy;
+    bool m_sortByHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
-
-    IngestionJobSortBy m_sortBy;
-    bool m_sortByHasBeenSet = false;
   };
 
 } // namespace Model

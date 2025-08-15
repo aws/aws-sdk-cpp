@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/Array.h>
 #include <utility>
 
 namespace Aws
@@ -41,18 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The base64-encoded string of the content.</p>
-     */
-    inline const Aws::Utils::CryptoBuffer& GetData() const { return m_data; }
-    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    template<typename DataT = Aws::Utils::CryptoBuffer>
-    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
-    template<typename DataT = Aws::Utils::CryptoBuffer>
-    ByteContentDoc& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The MIME type of the content. For a list of MIME types, see <a
      * href="https://www.iana.org/assignments/media-types/media-types.xhtml">Media
      * Types</a>. The following MIME types are supported:</p> <ul> <li>
@@ -83,13 +71,25 @@ namespace Model
     template<typename MimeTypeT = Aws::String>
     ByteContentDoc& WithMimeType(MimeTypeT&& value) { SetMimeType(std::forward<MimeTypeT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::Utils::CryptoBuffer m_data{};
-    bool m_dataHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The base64-encoded string of the content.</p>
+     */
+    inline const Aws::Utils::CryptoBuffer& GetData() const { return m_data; }
+    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
+    template<typename DataT = Aws::Utils::CryptoBuffer>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = Aws::Utils::CryptoBuffer>
+    ByteContentDoc& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_mimeType;
     bool m_mimeTypeHasBeenSet = false;
+
+    Aws::Utils::CryptoBuffer m_data{};
+    bool m_dataHasBeenSet = false;
   };
 
 } // namespace Model

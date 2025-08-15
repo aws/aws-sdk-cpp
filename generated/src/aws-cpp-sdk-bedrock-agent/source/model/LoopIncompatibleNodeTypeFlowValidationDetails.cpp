@@ -25,20 +25,20 @@ LoopIncompatibleNodeTypeFlowValidationDetails::LoopIncompatibleNodeTypeFlowValid
 
 LoopIncompatibleNodeTypeFlowValidationDetails& LoopIncompatibleNodeTypeFlowValidationDetails::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("incompatibleNodeName"))
+  if(jsonValue.ValueExists("node"))
   {
-    m_incompatibleNodeName = jsonValue.GetString("incompatibleNodeName");
-    m_incompatibleNodeNameHasBeenSet = true;
+    m_node = jsonValue.GetString("node");
+    m_nodeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("incompatibleNodeType"))
   {
     m_incompatibleNodeType = IncompatibleLoopNodeTypeMapper::GetIncompatibleLoopNodeTypeForName(jsonValue.GetString("incompatibleNodeType"));
     m_incompatibleNodeTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("node"))
+  if(jsonValue.ValueExists("incompatibleNodeName"))
   {
-    m_node = jsonValue.GetString("node");
-    m_nodeHasBeenSet = true;
+    m_incompatibleNodeName = jsonValue.GetString("incompatibleNodeName");
+    m_incompatibleNodeNameHasBeenSet = true;
   }
   return *this;
 }
@@ -47,9 +47,9 @@ JsonValue LoopIncompatibleNodeTypeFlowValidationDetails::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_incompatibleNodeNameHasBeenSet)
+  if(m_nodeHasBeenSet)
   {
-   payload.WithString("incompatibleNodeName", m_incompatibleNodeName);
+   payload.WithString("node", m_node);
 
   }
 
@@ -58,9 +58,9 @@ JsonValue LoopIncompatibleNodeTypeFlowValidationDetails::Jsonize() const
    payload.WithString("incompatibleNodeType", IncompatibleLoopNodeTypeMapper::GetNameForIncompatibleLoopNodeType(m_incompatibleNodeType));
   }
 
-  if(m_nodeHasBeenSet)
+  if(m_incompatibleNodeNameHasBeenSet)
   {
-   payload.WithString("node", m_node);
+   payload.WithString("incompatibleNodeName", m_incompatibleNodeName);
 
   }
 

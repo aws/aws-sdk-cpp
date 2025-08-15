@@ -74,18 +74,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Optional) The maximum number of scrapers to return in one
-     * <code>ListScrapers</code> operation. The range is 1-1000.</p> <p>If you omit
-     * this parameter, the default of 100 is used.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListScrapersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>(Optional) The token for the next set of items to return. (You received this
      * token from a previous call.)</p>
      */
@@ -96,16 +84,28 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListScrapersRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Optional) The maximum number of scrapers to return in one
+     * <code>ListScrapers</code> operation. The range is 1-1000.</p> <p>If you omit
+     * this parameter, the default of 100 is used.</p>
+     */
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListScrapersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
   private:
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/SalesforceAuthType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/SalesforceAuthType.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Salesforce host URL or instance URL.</p>
+     */
+    inline const Aws::String& GetHostUrl() const { return m_hostUrl; }
+    inline bool HostUrlHasBeenSet() const { return m_hostUrlHasBeenSet; }
+    template<typename HostUrlT = Aws::String>
+    void SetHostUrl(HostUrlT&& value) { m_hostUrlHasBeenSet = true; m_hostUrl = std::forward<HostUrlT>(value); }
+    template<typename HostUrlT = Aws::String>
+    SalesforceSourceConfiguration& WithHostUrl(HostUrlT&& value) { SetHostUrl(std::forward<HostUrlT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The supported authentication type to authenticate and connect to your
      * Salesforce instance.</p>
      */
@@ -66,28 +78,16 @@ namespace Model
     template<typename CredentialsSecretArnT = Aws::String>
     SalesforceSourceConfiguration& WithCredentialsSecretArn(CredentialsSecretArnT&& value) { SetCredentialsSecretArn(std::forward<CredentialsSecretArnT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The Salesforce host URL or instance URL.</p>
-     */
-    inline const Aws::String& GetHostUrl() const { return m_hostUrl; }
-    inline bool HostUrlHasBeenSet() const { return m_hostUrlHasBeenSet; }
-    template<typename HostUrlT = Aws::String>
-    void SetHostUrl(HostUrlT&& value) { m_hostUrlHasBeenSet = true; m_hostUrl = std::forward<HostUrlT>(value); }
-    template<typename HostUrlT = Aws::String>
-    SalesforceSourceConfiguration& WithHostUrl(HostUrlT&& value) { SetHostUrl(std::forward<HostUrlT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_hostUrl;
+    bool m_hostUrlHasBeenSet = false;
 
     SalesforceAuthType m_authType{SalesforceAuthType::NOT_SET};
     bool m_authTypeHasBeenSet = false;
 
     Aws::String m_credentialsSecretArn;
     bool m_credentialsSecretArnHasBeenSet = false;
-
-    Aws::String m_hostUrl;
-    bool m_hostUrlHasBeenSet = false;
   };
 
 } // namespace Model

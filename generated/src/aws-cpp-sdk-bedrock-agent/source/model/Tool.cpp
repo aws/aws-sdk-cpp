@@ -25,15 +25,15 @@ Tool::Tool(JsonView jsonValue)
 
 Tool& Tool::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("cachePoint"))
-  {
-    m_cachePoint = jsonValue.GetObject("cachePoint");
-    m_cachePointHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("toolSpec"))
   {
     m_toolSpec = jsonValue.GetObject("toolSpec");
     m_toolSpecHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("cachePoint"))
+  {
+    m_cachePoint = jsonValue.GetObject("cachePoint");
+    m_cachePointHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue Tool::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_cachePointHasBeenSet)
-  {
-   payload.WithObject("cachePoint", m_cachePoint.Jsonize());
-
-  }
-
   if(m_toolSpecHasBeenSet)
   {
    payload.WithObject("toolSpec", m_toolSpec.Jsonize());
+
+  }
+
+  if(m_cachePointHasBeenSet)
+  {
+   payload.WithObject("cachePoint", m_cachePoint.Jsonize());
 
   }
 

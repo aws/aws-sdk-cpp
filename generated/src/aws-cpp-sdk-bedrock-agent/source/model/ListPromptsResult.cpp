@@ -25,11 +25,6 @@ ListPromptsResult::ListPromptsResult(const Aws::AmazonWebServiceResult<JsonValue
 ListPromptsResult& ListPromptsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("promptSummaries"))
   {
     Aws::Utils::Array<JsonView> promptSummariesJsonList = jsonValue.GetArray("promptSummaries");
@@ -38,6 +33,11 @@ ListPromptsResult& ListPromptsResult::operator =(const Aws::AmazonWebServiceResu
       m_promptSummaries.push_back(promptSummariesJsonList[promptSummariesIndex].AsObject());
     }
     m_promptSummariesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

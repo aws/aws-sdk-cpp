@@ -39,6 +39,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>A name for the condition that you can reference.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    FlowCondition& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Defines the condition. You must refer to at least one of the inputs in the
      * condition. For more information, expand the Condition node section in <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-how-it-works.html#flows-nodes">Node
@@ -51,25 +63,13 @@ namespace Model
     template<typename ExpressionT = Aws::String>
     FlowCondition& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>A name for the condition that you can reference.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    FlowCondition& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::String m_expression;
-    bool m_expressionHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_expression;
+    bool m_expressionHasBeenSet = false;
   };
 
 } // namespace Model

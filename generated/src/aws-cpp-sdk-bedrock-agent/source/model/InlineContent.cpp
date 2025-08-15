@@ -25,6 +25,11 @@ InlineContent::InlineContent(JsonView jsonValue)
 
 InlineContent& InlineContent::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = InlineContentTypeMapper::GetInlineContentTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("byteContent"))
   {
     m_byteContent = jsonValue.GetObject("byteContent");
@@ -35,17 +40,17 @@ InlineContent& InlineContent::operator =(JsonView jsonValue)
     m_textContent = jsonValue.GetObject("textContent");
     m_textContentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = InlineContentTypeMapper::GetInlineContentTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue InlineContent::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", InlineContentTypeMapper::GetNameForInlineContentType(m_type));
+  }
 
   if(m_byteContentHasBeenSet)
   {
@@ -57,11 +62,6 @@ JsonValue InlineContent::Jsonize() const
   {
    payload.WithObject("textContent", m_textContent.Jsonize());
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", InlineContentTypeMapper::GetNameForInlineContentType(m_type));
   }
 
   return payload;

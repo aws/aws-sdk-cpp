@@ -30,15 +30,6 @@ WebCrawlerConfiguration& WebCrawlerConfiguration::operator =(JsonView jsonValue)
     m_crawlerLimits = jsonValue.GetObject("crawlerLimits");
     m_crawlerLimitsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("exclusionFilters"))
-  {
-    Aws::Utils::Array<JsonView> exclusionFiltersJsonList = jsonValue.GetArray("exclusionFilters");
-    for(unsigned exclusionFiltersIndex = 0; exclusionFiltersIndex < exclusionFiltersJsonList.GetLength(); ++exclusionFiltersIndex)
-    {
-      m_exclusionFilters.push_back(exclusionFiltersJsonList[exclusionFiltersIndex].AsString());
-    }
-    m_exclusionFiltersHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("inclusionFilters"))
   {
     Aws::Utils::Array<JsonView> inclusionFiltersJsonList = jsonValue.GetArray("inclusionFilters");
@@ -47,6 +38,15 @@ WebCrawlerConfiguration& WebCrawlerConfiguration::operator =(JsonView jsonValue)
       m_inclusionFilters.push_back(inclusionFiltersJsonList[inclusionFiltersIndex].AsString());
     }
     m_inclusionFiltersHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("exclusionFilters"))
+  {
+    Aws::Utils::Array<JsonView> exclusionFiltersJsonList = jsonValue.GetArray("exclusionFilters");
+    for(unsigned exclusionFiltersIndex = 0; exclusionFiltersIndex < exclusionFiltersJsonList.GetLength(); ++exclusionFiltersIndex)
+    {
+      m_exclusionFilters.push_back(exclusionFiltersJsonList[exclusionFiltersIndex].AsString());
+    }
+    m_exclusionFiltersHasBeenSet = true;
   }
   if(jsonValue.ValueExists("scope"))
   {
@@ -76,17 +76,6 @@ JsonValue WebCrawlerConfiguration::Jsonize() const
 
   }
 
-  if(m_exclusionFiltersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> exclusionFiltersJsonList(m_exclusionFilters.size());
-   for(unsigned exclusionFiltersIndex = 0; exclusionFiltersIndex < exclusionFiltersJsonList.GetLength(); ++exclusionFiltersIndex)
-   {
-     exclusionFiltersJsonList[exclusionFiltersIndex].AsString(m_exclusionFilters[exclusionFiltersIndex]);
-   }
-   payload.WithArray("exclusionFilters", std::move(exclusionFiltersJsonList));
-
-  }
-
   if(m_inclusionFiltersHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> inclusionFiltersJsonList(m_inclusionFilters.size());
@@ -95,6 +84,17 @@ JsonValue WebCrawlerConfiguration::Jsonize() const
      inclusionFiltersJsonList[inclusionFiltersIndex].AsString(m_inclusionFilters[inclusionFiltersIndex]);
    }
    payload.WithArray("inclusionFilters", std::move(inclusionFiltersJsonList));
+
+  }
+
+  if(m_exclusionFiltersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> exclusionFiltersJsonList(m_exclusionFilters.size());
+   for(unsigned exclusionFiltersIndex = 0; exclusionFiltersIndex < exclusionFiltersJsonList.GetLength(); ++exclusionFiltersIndex)
+   {
+     exclusionFiltersJsonList[exclusionFiltersIndex].AsString(m_exclusionFilters[exclusionFiltersIndex]);
+   }
+   payload.WithArray("exclusionFilters", std::move(exclusionFiltersJsonList));
 
   }
 

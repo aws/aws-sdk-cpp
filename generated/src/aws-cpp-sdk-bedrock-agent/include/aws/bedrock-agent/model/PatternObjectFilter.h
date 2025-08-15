@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -41,19 +41,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of one or more exclusion regular expression patterns to exclude
-     * certain object types that adhere to the pattern. If you specify an inclusion and
-     * exclusion filter/pattern and both match a document, the exclusion filter takes
-     * precedence and the document isn’t crawled.</p>
+     * <p>The supported object type or content type of the data source.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExclusionFilters() const { return m_exclusionFilters; }
-    inline bool ExclusionFiltersHasBeenSet() const { return m_exclusionFiltersHasBeenSet; }
-    template<typename ExclusionFiltersT = Aws::Vector<Aws::String>>
-    void SetExclusionFilters(ExclusionFiltersT&& value) { m_exclusionFiltersHasBeenSet = true; m_exclusionFilters = std::forward<ExclusionFiltersT>(value); }
-    template<typename ExclusionFiltersT = Aws::Vector<Aws::String>>
-    PatternObjectFilter& WithExclusionFilters(ExclusionFiltersT&& value) { SetExclusionFilters(std::forward<ExclusionFiltersT>(value)); return *this;}
-    template<typename ExclusionFiltersT = Aws::String>
-    PatternObjectFilter& AddExclusionFilters(ExclusionFiltersT&& value) { m_exclusionFiltersHasBeenSet = true; m_exclusionFilters.emplace_back(std::forward<ExclusionFiltersT>(value)); return *this; }
+    inline const Aws::String& GetObjectType() const { return m_objectType; }
+    inline bool ObjectTypeHasBeenSet() const { return m_objectTypeHasBeenSet; }
+    template<typename ObjectTypeT = Aws::String>
+    void SetObjectType(ObjectTypeT&& value) { m_objectTypeHasBeenSet = true; m_objectType = std::forward<ObjectTypeT>(value); }
+    template<typename ObjectTypeT = Aws::String>
+    PatternObjectFilter& WithObjectType(ObjectTypeT&& value) { SetObjectType(std::forward<ObjectTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,25 +70,30 @@ namespace Model
 
     ///@{
     /**
-     * <p>The supported object type or content type of the data source.</p>
+     * <p>A list of one or more exclusion regular expression patterns to exclude
+     * certain object types that adhere to the pattern. If you specify an inclusion and
+     * exclusion filter/pattern and both match a document, the exclusion filter takes
+     * precedence and the document isn’t crawled.</p>
      */
-    inline const Aws::String& GetObjectType() const { return m_objectType; }
-    inline bool ObjectTypeHasBeenSet() const { return m_objectTypeHasBeenSet; }
-    template<typename ObjectTypeT = Aws::String>
-    void SetObjectType(ObjectTypeT&& value) { m_objectTypeHasBeenSet = true; m_objectType = std::forward<ObjectTypeT>(value); }
-    template<typename ObjectTypeT = Aws::String>
-    PatternObjectFilter& WithObjectType(ObjectTypeT&& value) { SetObjectType(std::forward<ObjectTypeT>(value)); return *this;}
+    inline const Aws::Vector<Aws::String>& GetExclusionFilters() const { return m_exclusionFilters; }
+    inline bool ExclusionFiltersHasBeenSet() const { return m_exclusionFiltersHasBeenSet; }
+    template<typename ExclusionFiltersT = Aws::Vector<Aws::String>>
+    void SetExclusionFilters(ExclusionFiltersT&& value) { m_exclusionFiltersHasBeenSet = true; m_exclusionFilters = std::forward<ExclusionFiltersT>(value); }
+    template<typename ExclusionFiltersT = Aws::Vector<Aws::String>>
+    PatternObjectFilter& WithExclusionFilters(ExclusionFiltersT&& value) { SetExclusionFilters(std::forward<ExclusionFiltersT>(value)); return *this;}
+    template<typename ExclusionFiltersT = Aws::String>
+    PatternObjectFilter& AddExclusionFilters(ExclusionFiltersT&& value) { m_exclusionFiltersHasBeenSet = true; m_exclusionFilters.emplace_back(std::forward<ExclusionFiltersT>(value)); return *this; }
     ///@}
   private:
 
-    Aws::Vector<Aws::String> m_exclusionFilters;
-    bool m_exclusionFiltersHasBeenSet = false;
+    Aws::String m_objectType;
+    bool m_objectTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionFilters;
     bool m_inclusionFiltersHasBeenSet = false;
 
-    Aws::String m_objectType;
-    bool m_objectTypeHasBeenSet = false;
+    Aws::Vector<Aws::String> m_exclusionFilters;
+    bool m_exclusionFiltersHasBeenSet = false;
   };
 
 } // namespace Model

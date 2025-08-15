@@ -25,20 +25,20 @@ RedshiftQueryEngineConfiguration::RedshiftQueryEngineConfiguration(JsonView json
 
 RedshiftQueryEngineConfiguration& RedshiftQueryEngineConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("provisionedConfiguration"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_provisionedConfiguration = jsonValue.GetObject("provisionedConfiguration");
-    m_provisionedConfigurationHasBeenSet = true;
+    m_type = RedshiftQueryEngineTypeMapper::GetRedshiftQueryEngineTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("serverlessConfiguration"))
   {
     m_serverlessConfiguration = jsonValue.GetObject("serverlessConfiguration");
     m_serverlessConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("provisionedConfiguration"))
   {
-    m_type = RedshiftQueryEngineTypeMapper::GetRedshiftQueryEngineTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+    m_provisionedConfiguration = jsonValue.GetObject("provisionedConfiguration");
+    m_provisionedConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -47,10 +47,9 @@ JsonValue RedshiftQueryEngineConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_provisionedConfigurationHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithObject("provisionedConfiguration", m_provisionedConfiguration.Jsonize());
-
+   payload.WithString("type", RedshiftQueryEngineTypeMapper::GetNameForRedshiftQueryEngineType(m_type));
   }
 
   if(m_serverlessConfigurationHasBeenSet)
@@ -59,9 +58,10 @@ JsonValue RedshiftQueryEngineConfiguration::Jsonize() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_provisionedConfigurationHasBeenSet)
   {
-   payload.WithString("type", RedshiftQueryEngineTypeMapper::GetNameForRedshiftQueryEngineType(m_type));
+   payload.WithObject("provisionedConfiguration", m_provisionedConfiguration.Jsonize());
+
   }
 
   return payload;

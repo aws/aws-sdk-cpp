@@ -25,25 +25,25 @@ OpenSearchManagedClusterConfiguration::OpenSearchManagedClusterConfiguration(Jso
 
 OpenSearchManagedClusterConfiguration& OpenSearchManagedClusterConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("domainArn"))
-  {
-    m_domainArn = jsonValue.GetString("domainArn");
-    m_domainArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("domainEndpoint"))
   {
     m_domainEndpoint = jsonValue.GetString("domainEndpoint");
     m_domainEndpointHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("fieldMapping"))
+  if(jsonValue.ValueExists("domainArn"))
   {
-    m_fieldMapping = jsonValue.GetObject("fieldMapping");
-    m_fieldMappingHasBeenSet = true;
+    m_domainArn = jsonValue.GetString("domainArn");
+    m_domainArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("vectorIndexName"))
   {
     m_vectorIndexName = jsonValue.GetString("vectorIndexName");
     m_vectorIndexNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("fieldMapping"))
+  {
+    m_fieldMapping = jsonValue.GetObject("fieldMapping");
+    m_fieldMappingHasBeenSet = true;
   }
   return *this;
 }
@@ -52,27 +52,27 @@ JsonValue OpenSearchManagedClusterConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_domainArnHasBeenSet)
-  {
-   payload.WithString("domainArn", m_domainArn);
-
-  }
-
   if(m_domainEndpointHasBeenSet)
   {
    payload.WithString("domainEndpoint", m_domainEndpoint);
 
   }
 
-  if(m_fieldMappingHasBeenSet)
+  if(m_domainArnHasBeenSet)
   {
-   payload.WithObject("fieldMapping", m_fieldMapping.Jsonize());
+   payload.WithString("domainArn", m_domainArn);
 
   }
 
   if(m_vectorIndexNameHasBeenSet)
   {
    payload.WithString("vectorIndexName", m_vectorIndexName);
+
+  }
+
+  if(m_fieldMappingHasBeenSet)
+  {
+   payload.WithObject("fieldMapping", m_fieldMapping.Jsonize());
 
   }
 

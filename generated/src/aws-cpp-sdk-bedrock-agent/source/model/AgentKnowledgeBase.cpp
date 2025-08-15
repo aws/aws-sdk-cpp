@@ -35,30 +35,30 @@ AgentKnowledgeBase& AgentKnowledgeBase::operator =(JsonView jsonValue)
     m_agentVersion = jsonValue.GetString("agentVersion");
     m_agentVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("knowledgeBaseId"))
   {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
+    m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
+    m_knowledgeBaseIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("knowledgeBaseId"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
-    m_knowledgeBaseIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("knowledgeBaseState"))
-  {
-    m_knowledgeBaseState = KnowledgeBaseStateMapper::GetKnowledgeBaseStateForName(jsonValue.GetString("knowledgeBaseState"));
-    m_knowledgeBaseStateHasBeenSet = true;
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
     m_updatedAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("knowledgeBaseState"))
+  {
+    m_knowledgeBaseState = KnowledgeBaseStateMapper::GetKnowledgeBaseStateForName(jsonValue.GetString("knowledgeBaseState"));
+    m_knowledgeBaseStateHasBeenSet = true;
   }
   return *this;
 }
@@ -79,9 +79,10 @@ JsonValue AgentKnowledgeBase::Jsonize() const
 
   }
 
-  if(m_createdAtHasBeenSet)
+  if(m_knowledgeBaseIdHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
+
   }
 
   if(m_descriptionHasBeenSet)
@@ -90,20 +91,19 @@ JsonValue AgentKnowledgeBase::Jsonize() const
 
   }
 
-  if(m_knowledgeBaseIdHasBeenSet)
+  if(m_createdAtHasBeenSet)
   {
-   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
-
-  }
-
-  if(m_knowledgeBaseStateHasBeenSet)
-  {
-   payload.WithString("knowledgeBaseState", KnowledgeBaseStateMapper::GetNameForKnowledgeBaseState(m_knowledgeBaseState));
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_updatedAtHasBeenSet)
   {
    payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_knowledgeBaseStateHasBeenSet)
+  {
+   payload.WithString("knowledgeBaseState", KnowledgeBaseStateMapper::GetNameForKnowledgeBaseState(m_knowledgeBaseState));
   }
 
   return payload;

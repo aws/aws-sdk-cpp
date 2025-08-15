@@ -40,6 +40,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier of the prompt for whose versions you want to return
+     * information. Omit this field to list information about all prompts in an
+     * account.</p>
+     */
+    inline const Aws::String& GetPromptIdentifier() const { return m_promptIdentifier; }
+    inline bool PromptIdentifierHasBeenSet() const { return m_promptIdentifierHasBeenSet; }
+    template<typename PromptIdentifierT = Aws::String>
+    void SetPromptIdentifier(PromptIdentifierT&& value) { m_promptIdentifierHasBeenSet = true; m_promptIdentifier = std::forward<PromptIdentifierT>(value); }
+    template<typename PromptIdentifierT = Aws::String>
+    ListPromptsRequest& WithPromptIdentifier(PromptIdentifierT&& value) { SetPromptIdentifier(std::forward<PromptIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The maximum number of results to return in the response. If the total number
      * of results is greater than this value, use the token returned in the response in
      * the <code>nextToken</code> field when making another request to return the next
@@ -65,30 +79,16 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListPromptsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The unique identifier of the prompt for whose versions you want to return
-     * information. Omit this field to list information about all prompts in an
-     * account.</p>
-     */
-    inline const Aws::String& GetPromptIdentifier() const { return m_promptIdentifier; }
-    inline bool PromptIdentifierHasBeenSet() const { return m_promptIdentifierHasBeenSet; }
-    template<typename PromptIdentifierT = Aws::String>
-    void SetPromptIdentifier(PromptIdentifierT&& value) { m_promptIdentifierHasBeenSet = true; m_promptIdentifier = std::forward<PromptIdentifierT>(value); }
-    template<typename PromptIdentifierT = Aws::String>
-    ListPromptsRequest& WithPromptIdentifier(PromptIdentifierT&& value) { SetPromptIdentifier(std::forward<PromptIdentifierT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_promptIdentifier;
+    bool m_promptIdentifierHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
-
-    Aws::String m_promptIdentifier;
-    bool m_promptIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

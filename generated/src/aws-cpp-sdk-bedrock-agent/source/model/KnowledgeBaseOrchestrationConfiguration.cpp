@@ -25,6 +25,16 @@ KnowledgeBaseOrchestrationConfiguration::KnowledgeBaseOrchestrationConfiguration
 
 KnowledgeBaseOrchestrationConfiguration& KnowledgeBaseOrchestrationConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("promptTemplate"))
+  {
+    m_promptTemplate = jsonValue.GetObject("promptTemplate");
+    m_promptTemplateHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("inferenceConfig"))
+  {
+    m_inferenceConfig = jsonValue.GetObject("inferenceConfig");
+    m_inferenceConfigHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("additionalModelRequestFields"))
   {
     Aws::Map<Aws::String, JsonView> additionalModelRequestFieldsJsonMap = jsonValue.GetObject("additionalModelRequestFields").GetAllObjects();
@@ -34,20 +44,10 @@ KnowledgeBaseOrchestrationConfiguration& KnowledgeBaseOrchestrationConfiguration
     }
     m_additionalModelRequestFieldsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("inferenceConfig"))
-  {
-    m_inferenceConfig = jsonValue.GetObject("inferenceConfig");
-    m_inferenceConfigHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("performanceConfig"))
   {
     m_performanceConfig = jsonValue.GetObject("performanceConfig");
     m_performanceConfigHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("promptTemplate"))
-  {
-    m_promptTemplate = jsonValue.GetObject("promptTemplate");
-    m_promptTemplateHasBeenSet = true;
   }
   return *this;
 }
@@ -55,6 +55,18 @@ KnowledgeBaseOrchestrationConfiguration& KnowledgeBaseOrchestrationConfiguration
 JsonValue KnowledgeBaseOrchestrationConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_promptTemplateHasBeenSet)
+  {
+   payload.WithObject("promptTemplate", m_promptTemplate.Jsonize());
+
+  }
+
+  if(m_inferenceConfigHasBeenSet)
+  {
+   payload.WithObject("inferenceConfig", m_inferenceConfig.Jsonize());
+
+  }
 
   if(m_additionalModelRequestFieldsHasBeenSet)
   {
@@ -67,21 +79,9 @@ JsonValue KnowledgeBaseOrchestrationConfiguration::Jsonize() const
 
   }
 
-  if(m_inferenceConfigHasBeenSet)
-  {
-   payload.WithObject("inferenceConfig", m_inferenceConfig.Jsonize());
-
-  }
-
   if(m_performanceConfigHasBeenSet)
   {
    payload.WithObject("performanceConfig", m_performanceConfig.Jsonize());
-
-  }
-
-  if(m_promptTemplateHasBeenSet)
-  {
-   payload.WithObject("promptTemplate", m_promptTemplate.Jsonize());
 
   }
 

@@ -25,15 +25,15 @@ FlowAliasConcurrencyConfiguration::FlowAliasConcurrencyConfiguration(JsonView js
 
 FlowAliasConcurrencyConfiguration& FlowAliasConcurrencyConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("maxConcurrency"))
-  {
-    m_maxConcurrency = jsonValue.GetInteger("maxConcurrency");
-    m_maxConcurrencyHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("type"))
   {
     m_type = ConcurrencyTypeMapper::GetConcurrencyTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("maxConcurrency"))
+  {
+    m_maxConcurrency = jsonValue.GetInteger("maxConcurrency");
+    m_maxConcurrencyHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue FlowAliasConcurrencyConfiguration::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", ConcurrencyTypeMapper::GetNameForConcurrencyType(m_type));
+  }
+
   if(m_maxConcurrencyHasBeenSet)
   {
    payload.WithInteger("maxConcurrency", m_maxConcurrency);
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", ConcurrencyTypeMapper::GetNameForConcurrencyType(m_type));
   }
 
   return payload;

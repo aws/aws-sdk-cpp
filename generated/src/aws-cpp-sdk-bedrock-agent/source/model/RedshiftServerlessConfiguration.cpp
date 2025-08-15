@@ -25,15 +25,15 @@ RedshiftServerlessConfiguration::RedshiftServerlessConfiguration(JsonView jsonVa
 
 RedshiftServerlessConfiguration& RedshiftServerlessConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("authConfiguration"))
-  {
-    m_authConfiguration = jsonValue.GetObject("authConfiguration");
-    m_authConfigurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("workgroupArn"))
   {
     m_workgroupArn = jsonValue.GetString("workgroupArn");
     m_workgroupArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("authConfiguration"))
+  {
+    m_authConfiguration = jsonValue.GetObject("authConfiguration");
+    m_authConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue RedshiftServerlessConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_authConfigurationHasBeenSet)
-  {
-   payload.WithObject("authConfiguration", m_authConfiguration.Jsonize());
-
-  }
-
   if(m_workgroupArnHasBeenSet)
   {
    payload.WithString("workgroupArn", m_workgroupArn);
+
+  }
+
+  if(m_authConfigurationHasBeenSet)
+  {
+   payload.WithObject("authConfiguration", m_authConfiguration.Jsonize());
 
   }
 

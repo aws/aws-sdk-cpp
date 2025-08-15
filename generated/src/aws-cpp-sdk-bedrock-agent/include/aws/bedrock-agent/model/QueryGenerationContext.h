@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/bedrock-agent/model/CuratedQuery.h>
 #include <aws/bedrock-agent/model/QueryGenerationTable.h>
+#include <aws/bedrock-agent/model/CuratedQuery.h>
 #include <utility>
 
 namespace Aws
@@ -42,21 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of objects, each of which defines information about example queries
-     * to help the query engine generate appropriate SQL queries.</p>
-     */
-    inline const Aws::Vector<CuratedQuery>& GetCuratedQueries() const { return m_curatedQueries; }
-    inline bool CuratedQueriesHasBeenSet() const { return m_curatedQueriesHasBeenSet; }
-    template<typename CuratedQueriesT = Aws::Vector<CuratedQuery>>
-    void SetCuratedQueries(CuratedQueriesT&& value) { m_curatedQueriesHasBeenSet = true; m_curatedQueries = std::forward<CuratedQueriesT>(value); }
-    template<typename CuratedQueriesT = Aws::Vector<CuratedQuery>>
-    QueryGenerationContext& WithCuratedQueries(CuratedQueriesT&& value) { SetCuratedQueries(std::forward<CuratedQueriesT>(value)); return *this;}
-    template<typename CuratedQueriesT = CuratedQuery>
-    QueryGenerationContext& AddCuratedQueries(CuratedQueriesT&& value) { m_curatedQueriesHasBeenSet = true; m_curatedQueries.emplace_back(std::forward<CuratedQueriesT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>An array of objects, each of which defines information about a table in the
      * database.</p>
      */
@@ -69,13 +54,28 @@ namespace Model
     template<typename TablesT = QueryGenerationTable>
     QueryGenerationContext& AddTables(TablesT&& value) { m_tablesHasBeenSet = true; m_tables.emplace_back(std::forward<TablesT>(value)); return *this; }
     ///@}
-  private:
 
-    Aws::Vector<CuratedQuery> m_curatedQueries;
-    bool m_curatedQueriesHasBeenSet = false;
+    ///@{
+    /**
+     * <p>An array of objects, each of which defines information about example queries
+     * to help the query engine generate appropriate SQL queries.</p>
+     */
+    inline const Aws::Vector<CuratedQuery>& GetCuratedQueries() const { return m_curatedQueries; }
+    inline bool CuratedQueriesHasBeenSet() const { return m_curatedQueriesHasBeenSet; }
+    template<typename CuratedQueriesT = Aws::Vector<CuratedQuery>>
+    void SetCuratedQueries(CuratedQueriesT&& value) { m_curatedQueriesHasBeenSet = true; m_curatedQueries = std::forward<CuratedQueriesT>(value); }
+    template<typename CuratedQueriesT = Aws::Vector<CuratedQuery>>
+    QueryGenerationContext& WithCuratedQueries(CuratedQueriesT&& value) { SetCuratedQueries(std::forward<CuratedQueriesT>(value)); return *this;}
+    template<typename CuratedQueriesT = CuratedQuery>
+    QueryGenerationContext& AddCuratedQueries(CuratedQueriesT&& value) { m_curatedQueriesHasBeenSet = true; m_curatedQueries.emplace_back(std::forward<CuratedQueriesT>(value)); return *this; }
+    ///@}
+  private:
 
     Aws::Vector<QueryGenerationTable> m_tables;
     bool m_tablesHasBeenSet = false;
+
+    Aws::Vector<CuratedQuery> m_curatedQueries;
+    bool m_curatedQueriesHasBeenSet = false;
   };
 
 } // namespace Model

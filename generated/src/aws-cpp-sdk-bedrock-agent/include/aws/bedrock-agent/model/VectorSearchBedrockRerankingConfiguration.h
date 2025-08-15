@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/MetadataConfigurationForReranking.h>
 #include <aws/bedrock-agent/model/VectorSearchBedrockRerankingModelConfiguration.h>
+#include <aws/bedrock-agent/model/MetadataConfigurationForReranking.h>
 #include <utility>
 
 namespace Aws
@@ -41,19 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies how metadata fields should be handled during the reranking
-     * process.</p>
-     */
-    inline const MetadataConfigurationForReranking& GetMetadataConfiguration() const { return m_metadataConfiguration; }
-    inline bool MetadataConfigurationHasBeenSet() const { return m_metadataConfigurationHasBeenSet; }
-    template<typename MetadataConfigurationT = MetadataConfigurationForReranking>
-    void SetMetadataConfiguration(MetadataConfigurationT&& value) { m_metadataConfigurationHasBeenSet = true; m_metadataConfiguration = std::forward<MetadataConfigurationT>(value); }
-    template<typename MetadataConfigurationT = MetadataConfigurationForReranking>
-    VectorSearchBedrockRerankingConfiguration& WithMetadataConfiguration(MetadataConfigurationT&& value) { SetMetadataConfiguration(std::forward<MetadataConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Specifies the configuration for the Amazon Bedrock reranker model.</p>
      */
     inline const VectorSearchBedrockRerankingModelConfiguration& GetModelConfiguration() const { return m_modelConfiguration; }
@@ -73,16 +60,29 @@ namespace Model
     inline void SetNumberOfRerankedResults(int value) { m_numberOfRerankedResultsHasBeenSet = true; m_numberOfRerankedResults = value; }
     inline VectorSearchBedrockRerankingConfiguration& WithNumberOfRerankedResults(int value) { SetNumberOfRerankedResults(value); return *this;}
     ///@}
-  private:
 
-    MetadataConfigurationForReranking m_metadataConfiguration;
-    bool m_metadataConfigurationHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Specifies how metadata fields should be handled during the reranking
+     * process.</p>
+     */
+    inline const MetadataConfigurationForReranking& GetMetadataConfiguration() const { return m_metadataConfiguration; }
+    inline bool MetadataConfigurationHasBeenSet() const { return m_metadataConfigurationHasBeenSet; }
+    template<typename MetadataConfigurationT = MetadataConfigurationForReranking>
+    void SetMetadataConfiguration(MetadataConfigurationT&& value) { m_metadataConfigurationHasBeenSet = true; m_metadataConfiguration = std::forward<MetadataConfigurationT>(value); }
+    template<typename MetadataConfigurationT = MetadataConfigurationForReranking>
+    VectorSearchBedrockRerankingConfiguration& WithMetadataConfiguration(MetadataConfigurationT&& value) { SetMetadataConfiguration(std::forward<MetadataConfigurationT>(value)); return *this;}
+    ///@}
+  private:
 
     VectorSearchBedrockRerankingModelConfiguration m_modelConfiguration;
     bool m_modelConfigurationHasBeenSet = false;
 
     int m_numberOfRerankedResults{0};
     bool m_numberOfRerankedResultsHasBeenSet = false;
+
+    MetadataConfigurationForReranking m_metadataConfiguration;
+    bool m_metadataConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

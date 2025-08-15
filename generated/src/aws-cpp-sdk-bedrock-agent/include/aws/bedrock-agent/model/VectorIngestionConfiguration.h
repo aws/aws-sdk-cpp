@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/model/ChunkingConfiguration.h>
-#include <aws/bedrock-agent/model/ContextEnrichmentConfiguration.h>
 #include <aws/bedrock-agent/model/CustomTransformationConfiguration.h>
 #include <aws/bedrock-agent/model/ParsingConfiguration.h>
+#include <aws/bedrock-agent/model/ContextEnrichmentConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -57,19 +57,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The context enrichment configuration used for ingestion of the data into the
-     * vector store.</p>
-     */
-    inline const ContextEnrichmentConfiguration& GetContextEnrichmentConfiguration() const { return m_contextEnrichmentConfiguration; }
-    inline bool ContextEnrichmentConfigurationHasBeenSet() const { return m_contextEnrichmentConfigurationHasBeenSet; }
-    template<typename ContextEnrichmentConfigurationT = ContextEnrichmentConfiguration>
-    void SetContextEnrichmentConfiguration(ContextEnrichmentConfigurationT&& value) { m_contextEnrichmentConfigurationHasBeenSet = true; m_contextEnrichmentConfiguration = std::forward<ContextEnrichmentConfigurationT>(value); }
-    template<typename ContextEnrichmentConfigurationT = ContextEnrichmentConfiguration>
-    VectorIngestionConfiguration& WithContextEnrichmentConfiguration(ContextEnrichmentConfigurationT&& value) { SetContextEnrichmentConfiguration(std::forward<ContextEnrichmentConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A custom document transformer for parsed data source documents.</p>
      */
     inline const CustomTransformationConfiguration& GetCustomTransformationConfiguration() const { return m_customTransformationConfiguration; }
@@ -92,19 +79,32 @@ namespace Model
     template<typename ParsingConfigurationT = ParsingConfiguration>
     VectorIngestionConfiguration& WithParsingConfiguration(ParsingConfigurationT&& value) { SetParsingConfiguration(std::forward<ParsingConfigurationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The context enrichment configuration used for ingestion of the data into the
+     * vector store.</p>
+     */
+    inline const ContextEnrichmentConfiguration& GetContextEnrichmentConfiguration() const { return m_contextEnrichmentConfiguration; }
+    inline bool ContextEnrichmentConfigurationHasBeenSet() const { return m_contextEnrichmentConfigurationHasBeenSet; }
+    template<typename ContextEnrichmentConfigurationT = ContextEnrichmentConfiguration>
+    void SetContextEnrichmentConfiguration(ContextEnrichmentConfigurationT&& value) { m_contextEnrichmentConfigurationHasBeenSet = true; m_contextEnrichmentConfiguration = std::forward<ContextEnrichmentConfigurationT>(value); }
+    template<typename ContextEnrichmentConfigurationT = ContextEnrichmentConfiguration>
+    VectorIngestionConfiguration& WithContextEnrichmentConfiguration(ContextEnrichmentConfigurationT&& value) { SetContextEnrichmentConfiguration(std::forward<ContextEnrichmentConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     ChunkingConfiguration m_chunkingConfiguration;
     bool m_chunkingConfigurationHasBeenSet = false;
-
-    ContextEnrichmentConfiguration m_contextEnrichmentConfiguration;
-    bool m_contextEnrichmentConfigurationHasBeenSet = false;
 
     CustomTransformationConfiguration m_customTransformationConfiguration;
     bool m_customTransformationConfigurationHasBeenSet = false;
 
     ParsingConfiguration m_parsingConfiguration;
     bool m_parsingConfigurationHasBeenSet = false;
+
+    ContextEnrichmentConfiguration m_contextEnrichmentConfiguration;
+    bool m_contextEnrichmentConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

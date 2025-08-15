@@ -34,15 +34,15 @@ MemoryConfiguration& MemoryConfiguration::operator =(JsonView jsonValue)
     }
     m_enabledMemoryTypesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sessionSummaryConfiguration"))
-  {
-    m_sessionSummaryConfiguration = jsonValue.GetObject("sessionSummaryConfiguration");
-    m_sessionSummaryConfigurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("storageDays"))
   {
     m_storageDays = jsonValue.GetInteger("storageDays");
     m_storageDaysHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("sessionSummaryConfiguration"))
+  {
+    m_sessionSummaryConfiguration = jsonValue.GetObject("sessionSummaryConfiguration");
+    m_sessionSummaryConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -62,15 +62,15 @@ JsonValue MemoryConfiguration::Jsonize() const
 
   }
 
-  if(m_sessionSummaryConfigurationHasBeenSet)
-  {
-   payload.WithObject("sessionSummaryConfiguration", m_sessionSummaryConfiguration.Jsonize());
-
-  }
-
   if(m_storageDaysHasBeenSet)
   {
    payload.WithInteger("storageDays", m_storageDays);
+
+  }
+
+  if(m_sessionSummaryConfigurationHasBeenSet)
+  {
+   payload.WithObject("sessionSummaryConfiguration", m_sessionSummaryConfiguration.Jsonize());
 
   }
 

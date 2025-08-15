@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/GuardrailConfiguration.h>
 #include <aws/bedrock-agent/model/PromptFlowNodeSourceConfiguration.h>
+#include <aws/bedrock-agent/model/GuardrailConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -47,6 +47,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies whether the prompt is from Prompt management or defined inline.</p>
+     */
+    inline const PromptFlowNodeSourceConfiguration& GetSourceConfiguration() const { return m_sourceConfiguration; }
+    inline bool SourceConfigurationHasBeenSet() const { return m_sourceConfigurationHasBeenSet; }
+    template<typename SourceConfigurationT = PromptFlowNodeSourceConfiguration>
+    void SetSourceConfiguration(SourceConfigurationT&& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = std::forward<SourceConfigurationT>(value); }
+    template<typename SourceConfigurationT = PromptFlowNodeSourceConfiguration>
+    PromptFlowNodeConfiguration& WithSourceConfiguration(SourceConfigurationT&& value) { SetSourceConfiguration(std::forward<SourceConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains configurations for a guardrail to apply to the prompt in this node
      * and the response generated from it.</p>
      */
@@ -57,25 +69,13 @@ namespace Model
     template<typename GuardrailConfigurationT = GuardrailConfiguration>
     PromptFlowNodeConfiguration& WithGuardrailConfiguration(GuardrailConfigurationT&& value) { SetGuardrailConfiguration(std::forward<GuardrailConfigurationT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Specifies whether the prompt is from Prompt management or defined inline.</p>
-     */
-    inline const PromptFlowNodeSourceConfiguration& GetSourceConfiguration() const { return m_sourceConfiguration; }
-    inline bool SourceConfigurationHasBeenSet() const { return m_sourceConfigurationHasBeenSet; }
-    template<typename SourceConfigurationT = PromptFlowNodeSourceConfiguration>
-    void SetSourceConfiguration(SourceConfigurationT&& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = std::forward<SourceConfigurationT>(value); }
-    template<typename SourceConfigurationT = PromptFlowNodeSourceConfiguration>
-    PromptFlowNodeConfiguration& WithSourceConfiguration(SourceConfigurationT&& value) { SetSourceConfiguration(std::forward<SourceConfigurationT>(value)); return *this;}
-    ///@}
   private:
-
-    GuardrailConfiguration m_guardrailConfiguration;
-    bool m_guardrailConfigurationHasBeenSet = false;
 
     PromptFlowNodeSourceConfiguration m_sourceConfiguration;
     bool m_sourceConfigurationHasBeenSet = false;
+
+    GuardrailConfiguration m_guardrailConfiguration;
+    bool m_guardrailConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

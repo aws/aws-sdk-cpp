@@ -25,11 +25,6 @@ AgentCollaboratorSummary::AgentCollaboratorSummary(JsonView jsonValue)
 
 AgentCollaboratorSummary& AgentCollaboratorSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("agentDescriptor"))
-  {
-    m_agentDescriptor = jsonValue.GetObject("agentDescriptor");
-    m_agentDescriptorHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("agentId"))
   {
     m_agentId = jsonValue.GetString("agentId");
@@ -40,15 +35,25 @@ AgentCollaboratorSummary& AgentCollaboratorSummary::operator =(JsonView jsonValu
     m_agentVersion = jsonValue.GetString("agentVersion");
     m_agentVersionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("collaboratorId"))
+  {
+    m_collaboratorId = jsonValue.GetString("collaboratorId");
+    m_collaboratorIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("agentDescriptor"))
+  {
+    m_agentDescriptor = jsonValue.GetObject("agentDescriptor");
+    m_agentDescriptorHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("collaborationInstruction"))
   {
     m_collaborationInstruction = jsonValue.GetString("collaborationInstruction");
     m_collaborationInstructionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("collaboratorId"))
+  if(jsonValue.ValueExists("relayConversationHistory"))
   {
-    m_collaboratorId = jsonValue.GetString("collaboratorId");
-    m_collaboratorIdHasBeenSet = true;
+    m_relayConversationHistory = RelayConversationHistoryMapper::GetRelayConversationHistoryForName(jsonValue.GetString("relayConversationHistory"));
+    m_relayConversationHistoryHasBeenSet = true;
   }
   if(jsonValue.ValueExists("collaboratorName"))
   {
@@ -65,23 +70,12 @@ AgentCollaboratorSummary& AgentCollaboratorSummary::operator =(JsonView jsonValu
     m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("relayConversationHistory"))
-  {
-    m_relayConversationHistory = RelayConversationHistoryMapper::GetRelayConversationHistoryForName(jsonValue.GetString("relayConversationHistory"));
-    m_relayConversationHistoryHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue AgentCollaboratorSummary::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_agentDescriptorHasBeenSet)
-  {
-   payload.WithObject("agentDescriptor", m_agentDescriptor.Jsonize());
-
-  }
 
   if(m_agentIdHasBeenSet)
   {
@@ -95,16 +89,27 @@ JsonValue AgentCollaboratorSummary::Jsonize() const
 
   }
 
+  if(m_collaboratorIdHasBeenSet)
+  {
+   payload.WithString("collaboratorId", m_collaboratorId);
+
+  }
+
+  if(m_agentDescriptorHasBeenSet)
+  {
+   payload.WithObject("agentDescriptor", m_agentDescriptor.Jsonize());
+
+  }
+
   if(m_collaborationInstructionHasBeenSet)
   {
    payload.WithString("collaborationInstruction", m_collaborationInstruction);
 
   }
 
-  if(m_collaboratorIdHasBeenSet)
+  if(m_relayConversationHistoryHasBeenSet)
   {
-   payload.WithString("collaboratorId", m_collaboratorId);
-
+   payload.WithString("relayConversationHistory", RelayConversationHistoryMapper::GetNameForRelayConversationHistory(m_relayConversationHistory));
   }
 
   if(m_collaboratorNameHasBeenSet)
@@ -121,11 +126,6 @@ JsonValue AgentCollaboratorSummary::Jsonize() const
   if(m_lastUpdatedAtHasBeenSet)
   {
    payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_relayConversationHistoryHasBeenSet)
-  {
-   payload.WithString("relayConversationHistory", RelayConversationHistoryMapper::GetNameForRelayConversationHistory(m_relayConversationHistory));
   }
 
   return payload;

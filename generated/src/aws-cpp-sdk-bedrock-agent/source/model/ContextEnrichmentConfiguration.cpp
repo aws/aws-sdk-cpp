@@ -25,15 +25,15 @@ ContextEnrichmentConfiguration::ContextEnrichmentConfiguration(JsonView jsonValu
 
 ContextEnrichmentConfiguration& ContextEnrichmentConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("bedrockFoundationModelConfiguration"))
-  {
-    m_bedrockFoundationModelConfiguration = jsonValue.GetObject("bedrockFoundationModelConfiguration");
-    m_bedrockFoundationModelConfigurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("type"))
   {
     m_type = ContextEnrichmentTypeMapper::GetContextEnrichmentTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("bedrockFoundationModelConfiguration"))
+  {
+    m_bedrockFoundationModelConfiguration = jsonValue.GetObject("bedrockFoundationModelConfiguration");
+    m_bedrockFoundationModelConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue ContextEnrichmentConfiguration::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", ContextEnrichmentTypeMapper::GetNameForContextEnrichmentType(m_type));
+  }
+
   if(m_bedrockFoundationModelConfigurationHasBeenSet)
   {
    payload.WithObject("bedrockFoundationModelConfiguration", m_bedrockFoundationModelConfiguration.Jsonize());
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", ContextEnrichmentTypeMapper::GetNameForContextEnrichmentType(m_type));
   }
 
   return payload;

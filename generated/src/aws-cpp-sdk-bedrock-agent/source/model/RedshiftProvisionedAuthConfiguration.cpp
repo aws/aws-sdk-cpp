@@ -25,15 +25,15 @@ RedshiftProvisionedAuthConfiguration::RedshiftProvisionedAuthConfiguration(JsonV
 
 RedshiftProvisionedAuthConfiguration& RedshiftProvisionedAuthConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("databaseUser"))
-  {
-    m_databaseUser = jsonValue.GetString("databaseUser");
-    m_databaseUserHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("type"))
   {
     m_type = RedshiftProvisionedAuthTypeMapper::GetRedshiftProvisionedAuthTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("databaseUser"))
+  {
+    m_databaseUser = jsonValue.GetString("databaseUser");
+    m_databaseUserHasBeenSet = true;
   }
   if(jsonValue.ValueExists("usernamePasswordSecretArn"))
   {
@@ -47,15 +47,15 @@ JsonValue RedshiftProvisionedAuthConfiguration::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", RedshiftProvisionedAuthTypeMapper::GetNameForRedshiftProvisionedAuthType(m_type));
+  }
+
   if(m_databaseUserHasBeenSet)
   {
    payload.WithString("databaseUser", m_databaseUser);
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", RedshiftProvisionedAuthTypeMapper::GetNameForRedshiftProvisionedAuthType(m_type));
   }
 
   if(m_usernamePasswordSecretArnHasBeenSet)

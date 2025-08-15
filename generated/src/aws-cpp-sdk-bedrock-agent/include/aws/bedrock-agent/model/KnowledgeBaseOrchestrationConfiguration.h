@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/bedrock-agent/model/PromptInferenceConfiguration.h>
-#include <aws/bedrock-agent/model/PerformanceConfiguration.h>
 #include <aws/bedrock-agent/model/KnowledgeBasePromptTemplate.h>
+#include <aws/bedrock-agent/model/PromptInferenceConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/bedrock-agent/model/PerformanceConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Document.h>
 #include <utility>
@@ -46,6 +46,31 @@ namespace Model
 
     ///@{
     /**
+     * <p>A custom prompt template for orchestrating the retrieval and generation
+     * process.</p>
+     */
+    inline const KnowledgeBasePromptTemplate& GetPromptTemplate() const { return m_promptTemplate; }
+    inline bool PromptTemplateHasBeenSet() const { return m_promptTemplateHasBeenSet; }
+    template<typename PromptTemplateT = KnowledgeBasePromptTemplate>
+    void SetPromptTemplate(PromptTemplateT&& value) { m_promptTemplateHasBeenSet = true; m_promptTemplate = std::forward<PromptTemplateT>(value); }
+    template<typename PromptTemplateT = KnowledgeBasePromptTemplate>
+    KnowledgeBaseOrchestrationConfiguration& WithPromptTemplate(PromptTemplateT&& value) { SetPromptTemplate(std::forward<PromptTemplateT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains inference configurations for the prompt.</p>
+     */
+    inline const PromptInferenceConfiguration& GetInferenceConfig() const { return m_inferenceConfig; }
+    inline bool InferenceConfigHasBeenSet() const { return m_inferenceConfigHasBeenSet; }
+    template<typename InferenceConfigT = PromptInferenceConfiguration>
+    void SetInferenceConfig(InferenceConfigT&& value) { m_inferenceConfigHasBeenSet = true; m_inferenceConfig = std::forward<InferenceConfigT>(value); }
+    template<typename InferenceConfigT = PromptInferenceConfiguration>
+    KnowledgeBaseOrchestrationConfiguration& WithInferenceConfig(InferenceConfigT&& value) { SetInferenceConfig(std::forward<InferenceConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The additional model-specific request parameters as key-value pairs to be
      * included in the request to the foundation model.</p>
      */
@@ -63,18 +88,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains inference configurations for the prompt.</p>
-     */
-    inline const PromptInferenceConfiguration& GetInferenceConfig() const { return m_inferenceConfig; }
-    inline bool InferenceConfigHasBeenSet() const { return m_inferenceConfigHasBeenSet; }
-    template<typename InferenceConfigT = PromptInferenceConfiguration>
-    void SetInferenceConfig(InferenceConfigT&& value) { m_inferenceConfigHasBeenSet = true; m_inferenceConfig = std::forward<InferenceConfigT>(value); }
-    template<typename InferenceConfigT = PromptInferenceConfiguration>
-    KnowledgeBaseOrchestrationConfiguration& WithInferenceConfig(InferenceConfigT&& value) { SetInferenceConfig(std::forward<InferenceConfigT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The performance configuration options for the knowledge base retrieval and
      * generation process.</p>
      */
@@ -85,32 +98,19 @@ namespace Model
     template<typename PerformanceConfigT = PerformanceConfiguration>
     KnowledgeBaseOrchestrationConfiguration& WithPerformanceConfig(PerformanceConfigT&& value) { SetPerformanceConfig(std::forward<PerformanceConfigT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>A custom prompt template for orchestrating the retrieval and generation
-     * process.</p>
-     */
-    inline const KnowledgeBasePromptTemplate& GetPromptTemplate() const { return m_promptTemplate; }
-    inline bool PromptTemplateHasBeenSet() const { return m_promptTemplateHasBeenSet; }
-    template<typename PromptTemplateT = KnowledgeBasePromptTemplate>
-    void SetPromptTemplate(PromptTemplateT&& value) { m_promptTemplateHasBeenSet = true; m_promptTemplate = std::forward<PromptTemplateT>(value); }
-    template<typename PromptTemplateT = KnowledgeBasePromptTemplate>
-    KnowledgeBaseOrchestrationConfiguration& WithPromptTemplate(PromptTemplateT&& value) { SetPromptTemplate(std::forward<PromptTemplateT>(value)); return *this;}
-    ///@}
   private:
 
-    Aws::Map<Aws::String, Aws::Utils::Document> m_additionalModelRequestFields;
-    bool m_additionalModelRequestFieldsHasBeenSet = false;
+    KnowledgeBasePromptTemplate m_promptTemplate;
+    bool m_promptTemplateHasBeenSet = false;
 
     PromptInferenceConfiguration m_inferenceConfig;
     bool m_inferenceConfigHasBeenSet = false;
 
+    Aws::Map<Aws::String, Aws::Utils::Document> m_additionalModelRequestFields;
+    bool m_additionalModelRequestFieldsHasBeenSet = false;
+
     PerformanceConfiguration m_performanceConfig;
     bool m_performanceConfigHasBeenSet = false;
-
-    KnowledgeBasePromptTemplate m_promptTemplate;
-    bool m_promptTemplateHasBeenSet = false;
   };
 
 } // namespace Model

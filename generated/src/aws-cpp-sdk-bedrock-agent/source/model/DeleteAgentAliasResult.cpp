@@ -25,6 +25,11 @@ DeleteAgentAliasResult::DeleteAgentAliasResult(const Aws::AmazonWebServiceResult
 DeleteAgentAliasResult& DeleteAgentAliasResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("agentId"))
+  {
+    m_agentId = jsonValue.GetString("agentId");
+    m_agentIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("agentAliasId"))
   {
     m_agentAliasId = jsonValue.GetString("agentAliasId");
@@ -34,11 +39,6 @@ DeleteAgentAliasResult& DeleteAgentAliasResult::operator =(const Aws::AmazonWebS
   {
     m_agentAliasStatus = AgentAliasStatusMapper::GetAgentAliasStatusForName(jsonValue.GetString("agentAliasStatus"));
     m_agentAliasStatusHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("agentId"))
-  {
-    m_agentId = jsonValue.GetString("agentId");
-    m_agentIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

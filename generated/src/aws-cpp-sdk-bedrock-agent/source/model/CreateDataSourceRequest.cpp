@@ -22,14 +22,9 @@ Aws::String CreateDataSourceRequest::SerializePayload() const
 
   }
 
-  if(m_dataDeletionPolicyHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("dataDeletionPolicy", DataDeletionPolicyMapper::GetNameForDataDeletionPolicy(m_dataDeletionPolicy));
-  }
-
-  if(m_dataSourceConfigurationHasBeenSet)
-  {
-   payload.WithObject("dataSourceConfiguration", m_dataSourceConfiguration.Jsonize());
+   payload.WithString("name", m_name);
 
   }
 
@@ -39,10 +34,15 @@ Aws::String CreateDataSourceRequest::SerializePayload() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_dataSourceConfigurationHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithObject("dataSourceConfiguration", m_dataSourceConfiguration.Jsonize());
 
+  }
+
+  if(m_dataDeletionPolicyHasBeenSet)
+  {
+   payload.WithString("dataDeletionPolicy", DataDeletionPolicyMapper::GetNameForDataDeletionPolicy(m_dataDeletionPolicy));
   }
 
   if(m_serverSideEncryptionConfigurationHasBeenSet)

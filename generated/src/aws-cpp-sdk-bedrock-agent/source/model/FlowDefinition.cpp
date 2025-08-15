@@ -25,15 +25,6 @@ FlowDefinition::FlowDefinition(JsonView jsonValue)
 
 FlowDefinition& FlowDefinition::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("connections"))
-  {
-    Aws::Utils::Array<JsonView> connectionsJsonList = jsonValue.GetArray("connections");
-    for(unsigned connectionsIndex = 0; connectionsIndex < connectionsJsonList.GetLength(); ++connectionsIndex)
-    {
-      m_connections.push_back(connectionsJsonList[connectionsIndex].AsObject());
-    }
-    m_connectionsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("nodes"))
   {
     Aws::Utils::Array<JsonView> nodesJsonList = jsonValue.GetArray("nodes");
@@ -43,23 +34,21 @@ FlowDefinition& FlowDefinition::operator =(JsonView jsonValue)
     }
     m_nodesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("connections"))
+  {
+    Aws::Utils::Array<JsonView> connectionsJsonList = jsonValue.GetArray("connections");
+    for(unsigned connectionsIndex = 0; connectionsIndex < connectionsJsonList.GetLength(); ++connectionsIndex)
+    {
+      m_connections.push_back(connectionsJsonList[connectionsIndex].AsObject());
+    }
+    m_connectionsHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue FlowDefinition::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_connectionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> connectionsJsonList(m_connections.size());
-   for(unsigned connectionsIndex = 0; connectionsIndex < connectionsJsonList.GetLength(); ++connectionsIndex)
-   {
-     connectionsJsonList[connectionsIndex].AsObject(m_connections[connectionsIndex].Jsonize());
-   }
-   payload.WithArray("connections", std::move(connectionsJsonList));
-
-  }
 
   if(m_nodesHasBeenSet)
   {
@@ -69,6 +58,17 @@ JsonValue FlowDefinition::Jsonize() const
      nodesJsonList[nodesIndex].AsObject(m_nodes[nodesIndex].Jsonize());
    }
    payload.WithArray("nodes", std::move(nodesJsonList));
+
+  }
+
+  if(m_connectionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> connectionsJsonList(m_connections.size());
+   for(unsigned connectionsIndex = 0; connectionsIndex < connectionsJsonList.GetLength(); ++connectionsIndex)
+   {
+     connectionsJsonList[connectionsIndex].AsObject(m_connections[connectionsIndex].Jsonize());
+   }
+   payload.WithArray("connections", std::move(connectionsJsonList));
 
   }
 

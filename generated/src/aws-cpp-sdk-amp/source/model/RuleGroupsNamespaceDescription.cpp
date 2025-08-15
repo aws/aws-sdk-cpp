@@ -31,21 +31,6 @@ RuleGroupsNamespaceDescription& RuleGroupsNamespaceDescription::operator =(JsonV
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("data"))
-  {
-    m_data = HashingUtils::Base64Decode(jsonValue.GetString("data"));
-    m_dataHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("modifiedAt"))
-  {
-    m_modifiedAt = jsonValue.GetDouble("modifiedAt");
-    m_modifiedAtHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -55,6 +40,21 @@ RuleGroupsNamespaceDescription& RuleGroupsNamespaceDescription::operator =(JsonV
   {
     m_status = jsonValue.GetObject("status");
     m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("data"))
+  {
+    m_data = HashingUtils::Base64Decode(jsonValue.GetString("data"));
+    m_dataHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("modifiedAt"))
+  {
+    m_modifiedAt = jsonValue.GetDouble("modifiedAt");
+    m_modifiedAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("tags"))
   {
@@ -78,21 +78,6 @@ JsonValue RuleGroupsNamespaceDescription::Jsonize() const
 
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
-  }
-
-  if(m_dataHasBeenSet)
-  {
-   payload.WithString("data", HashingUtils::Base64Encode(m_data));
-  }
-
-  if(m_modifiedAtHasBeenSet)
-  {
-   payload.WithDouble("modifiedAt", m_modifiedAt.SecondsWithMSPrecision());
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
@@ -103,6 +88,21 @@ JsonValue RuleGroupsNamespaceDescription::Jsonize() const
   {
    payload.WithObject("status", m_status.Jsonize());
 
+  }
+
+  if(m_dataHasBeenSet)
+  {
+   payload.WithString("data", HashingUtils::Base64Encode(m_data));
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if(m_modifiedAtHasBeenSet)
+  {
+   payload.WithDouble("modifiedAt", m_modifiedAt.SecondsWithMSPrecision());
   }
 
   if(m_tagsHasBeenSet)

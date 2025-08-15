@@ -35,6 +35,7 @@
 #include <aws/amp/model/DeleteAlertManagerDefinitionRequest.h>
 #include <aws/amp/model/DeleteLoggingConfigurationRequest.h>
 #include <aws/amp/model/DeleteQueryLoggingConfigurationRequest.h>
+#include <aws/amp/model/DeleteResourcePolicyRequest.h>
 #include <aws/amp/model/DeleteRuleGroupsNamespaceRequest.h>
 #include <aws/amp/model/DeleteScraperRequest.h>
 #include <aws/amp/model/DeleteScraperResult.h>
@@ -45,6 +46,8 @@
 #include <aws/amp/model/DescribeLoggingConfigurationResult.h>
 #include <aws/amp/model/DescribeQueryLoggingConfigurationRequest.h>
 #include <aws/amp/model/DescribeQueryLoggingConfigurationResult.h>
+#include <aws/amp/model/DescribeResourcePolicyRequest.h>
+#include <aws/amp/model/DescribeResourcePolicyResult.h>
 #include <aws/amp/model/DescribeRuleGroupsNamespaceRequest.h>
 #include <aws/amp/model/DescribeRuleGroupsNamespaceResult.h>
 #include <aws/amp/model/DescribeScraperRequest.h>
@@ -75,6 +78,8 @@
 #include <aws/amp/model/LoggingFilter.h>
 #include <aws/amp/model/PutAlertManagerDefinitionRequest.h>
 #include <aws/amp/model/PutAlertManagerDefinitionResult.h>
+#include <aws/amp/model/PutResourcePolicyRequest.h>
+#include <aws/amp/model/PutResourcePolicyResult.h>
 #include <aws/amp/model/PutRuleGroupsNamespaceRequest.h>
 #include <aws/amp/model/PutRuleGroupsNamespaceResult.h>
 #include <aws/amp/model/QueryLoggingConfigurationMetadata.h>
@@ -114,6 +119,7 @@
 #include <aws/amp/model/WorkspaceConfigurationStatus.h>
 #include <aws/amp/model/WorkspaceConfigurationStatusCode.h>
 #include <aws/amp/model/WorkspaceDescription.h>
+#include <aws/amp/model/WorkspacePolicyStatusCode.h>
 #include <aws/amp/model/WorkspaceStatus.h>
 #include <aws/amp/model/WorkspaceStatusCode.h>
 #include <aws/amp/model/WorkspaceSummary.h>

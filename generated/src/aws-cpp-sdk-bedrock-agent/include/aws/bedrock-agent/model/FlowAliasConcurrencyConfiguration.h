@@ -40,17 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of nodes that can be executed concurrently in the
-     * flow.</p>
-     */
-    inline int GetMaxConcurrency() const { return m_maxConcurrency; }
-    inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
-    inline void SetMaxConcurrency(int value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
-    inline FlowAliasConcurrencyConfiguration& WithMaxConcurrency(int value) { SetMaxConcurrency(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The type of concurrency to use for parallel node execution. Specify one of
      * the following options:</p> <ul> <li> <p> <code>Automatic</code> - Amazon Bedrock
      * determines which nodes can be executed in parallel based on the flow definition
@@ -62,13 +51,24 @@ namespace Model
     inline void SetType(ConcurrencyType value) { m_typeHasBeenSet = true; m_type = value; }
     inline FlowAliasConcurrencyConfiguration& WithType(ConcurrencyType value) { SetType(value); return *this;}
     ///@}
-  private:
 
-    int m_maxConcurrency{0};
-    bool m_maxConcurrencyHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The maximum number of nodes that can be executed concurrently in the
+     * flow.</p>
+     */
+    inline int GetMaxConcurrency() const { return m_maxConcurrency; }
+    inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
+    inline void SetMaxConcurrency(int value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
+    inline FlowAliasConcurrencyConfiguration& WithMaxConcurrency(int value) { SetMaxConcurrency(value); return *this;}
+    ///@}
+  private:
 
     ConcurrencyType m_type{ConcurrencyType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    int m_maxConcurrency{0};
+    bool m_maxConcurrencyHasBeenSet = false;
   };
 
 } // namespace Model

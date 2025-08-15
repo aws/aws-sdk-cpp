@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/SalesforceCrawlerConfiguration.h>
 #include <aws/bedrock-agent/model/SalesforceSourceConfiguration.h>
+#include <aws/bedrock-agent/model/SalesforceCrawlerConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The endpoint information to connect to your Salesforce data source.</p>
+     */
+    inline const SalesforceSourceConfiguration& GetSourceConfiguration() const { return m_sourceConfiguration; }
+    inline bool SourceConfigurationHasBeenSet() const { return m_sourceConfigurationHasBeenSet; }
+    template<typename SourceConfigurationT = SalesforceSourceConfiguration>
+    void SetSourceConfiguration(SourceConfigurationT&& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = std::forward<SourceConfigurationT>(value); }
+    template<typename SourceConfigurationT = SalesforceSourceConfiguration>
+    SalesforceDataSourceConfiguration& WithSourceConfiguration(SourceConfigurationT&& value) { SetSourceConfiguration(std::forward<SourceConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The configuration of the Salesforce content. For example, configuring
      * specific types of Salesforce content.</p>
      */
@@ -51,25 +63,13 @@ namespace Model
     template<typename CrawlerConfigurationT = SalesforceCrawlerConfiguration>
     SalesforceDataSourceConfiguration& WithCrawlerConfiguration(CrawlerConfigurationT&& value) { SetCrawlerConfiguration(std::forward<CrawlerConfigurationT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The endpoint information to connect to your Salesforce data source.</p>
-     */
-    inline const SalesforceSourceConfiguration& GetSourceConfiguration() const { return m_sourceConfiguration; }
-    inline bool SourceConfigurationHasBeenSet() const { return m_sourceConfigurationHasBeenSet; }
-    template<typename SourceConfigurationT = SalesforceSourceConfiguration>
-    void SetSourceConfiguration(SourceConfigurationT&& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = std::forward<SourceConfigurationT>(value); }
-    template<typename SourceConfigurationT = SalesforceSourceConfiguration>
-    SalesforceDataSourceConfiguration& WithSourceConfiguration(SourceConfigurationT&& value) { SetSourceConfiguration(std::forward<SourceConfigurationT>(value)); return *this;}
-    ///@}
   private:
-
-    SalesforceCrawlerConfiguration m_crawlerConfiguration;
-    bool m_crawlerConfigurationHasBeenSet = false;
 
     SalesforceSourceConfiguration m_sourceConfiguration;
     bool m_sourceConfigurationHasBeenSet = false;
+
+    SalesforceCrawlerConfiguration m_crawlerConfiguration;
+    bool m_crawlerConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/IngestionJobStatus.h>
+#include <aws/bedrock-agent/model/IngestionJobStatistics.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/bedrock-agent/model/IngestionJobStatistics.h>
-#include <aws/bedrock-agent/model/IngestionJobStatus.h>
 #include <utility>
 
 namespace Aws
@@ -51,6 +51,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier of the knowledge for the data ingestion job.</p>
+     */
+    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
+    inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    IngestionJob& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The unique identifier of the data source for the data ingestion job.</p>
      */
     inline const Aws::String& GetDataSourceId() const { return m_dataSourceId; }
@@ -63,6 +75,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier of the data ingestion job.</p>
+     */
+    inline const Aws::String& GetIngestionJobId() const { return m_ingestionJobId; }
+    inline bool IngestionJobIdHasBeenSet() const { return m_ingestionJobIdHasBeenSet; }
+    template<typename IngestionJobIdT = Aws::String>
+    void SetIngestionJobId(IngestionJobIdT&& value) { m_ingestionJobIdHasBeenSet = true; m_ingestionJobId = std::forward<IngestionJobIdT>(value); }
+    template<typename IngestionJobIdT = Aws::String>
+    IngestionJob& WithIngestionJobId(IngestionJobIdT&& value) { SetIngestionJobId(std::forward<IngestionJobIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The description of the data ingestion job.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
@@ -71,6 +95,28 @@ namespace Model
     void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
     template<typename DescriptionT = Aws::String>
     IngestionJob& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status of the data ingestion job.</p>
+     */
+    inline IngestionJobStatus GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(IngestionJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline IngestionJob& WithStatus(IngestionJobStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains statistics about the data ingestion job.</p>
+     */
+    inline const IngestionJobStatistics& GetStatistics() const { return m_statistics; }
+    inline bool StatisticsHasBeenSet() const { return m_statisticsHasBeenSet; }
+    template<typename StatisticsT = IngestionJobStatistics>
+    void SetStatistics(StatisticsT&& value) { m_statisticsHasBeenSet = true; m_statistics = std::forward<StatisticsT>(value); }
+    template<typename StatisticsT = IngestionJobStatistics>
+    IngestionJob& WithStatistics(StatisticsT&& value) { SetStatistics(std::forward<StatisticsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,30 +135,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the data ingestion job.</p>
-     */
-    inline const Aws::String& GetIngestionJobId() const { return m_ingestionJobId; }
-    inline bool IngestionJobIdHasBeenSet() const { return m_ingestionJobIdHasBeenSet; }
-    template<typename IngestionJobIdT = Aws::String>
-    void SetIngestionJobId(IngestionJobIdT&& value) { m_ingestionJobIdHasBeenSet = true; m_ingestionJobId = std::forward<IngestionJobIdT>(value); }
-    template<typename IngestionJobIdT = Aws::String>
-    IngestionJob& WithIngestionJobId(IngestionJobIdT&& value) { SetIngestionJobId(std::forward<IngestionJobIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The unique identifier of the knowledge for the data ingestion job.</p>
-     */
-    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
-    inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-    template<typename KnowledgeBaseIdT = Aws::String>
-    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
-    template<typename KnowledgeBaseIdT = Aws::String>
-    IngestionJob& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The time the data ingestion job started.</p> <p>If you stop a data ingestion
      * job, the <code>startedAt</code> time is the time the job was started before the
      * job was stopped.</p>
@@ -123,28 +145,6 @@ namespace Model
     void SetStartedAt(StartedAtT&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::forward<StartedAtT>(value); }
     template<typename StartedAtT = Aws::Utils::DateTime>
     IngestionJob& WithStartedAt(StartedAtT&& value) { SetStartedAt(std::forward<StartedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Contains statistics about the data ingestion job.</p>
-     */
-    inline const IngestionJobStatistics& GetStatistics() const { return m_statistics; }
-    inline bool StatisticsHasBeenSet() const { return m_statisticsHasBeenSet; }
-    template<typename StatisticsT = IngestionJobStatistics>
-    void SetStatistics(StatisticsT&& value) { m_statisticsHasBeenSet = true; m_statistics = std::forward<StatisticsT>(value); }
-    template<typename StatisticsT = IngestionJobStatistics>
-    IngestionJob& WithStatistics(StatisticsT&& value) { SetStatistics(std::forward<StatisticsT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The status of the data ingestion job.</p>
-     */
-    inline IngestionJobStatus GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(IngestionJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline IngestionJob& WithStatus(IngestionJobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -162,29 +162,29 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_knowledgeBaseId;
+    bool m_knowledgeBaseIdHasBeenSet = false;
+
     Aws::String m_dataSourceId;
     bool m_dataSourceIdHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_failureReasons;
-    bool m_failureReasonsHasBeenSet = false;
 
     Aws::String m_ingestionJobId;
     bool m_ingestionJobIdHasBeenSet = false;
 
-    Aws::String m_knowledgeBaseId;
-    bool m_knowledgeBaseIdHasBeenSet = false;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startedAt{};
-    bool m_startedAtHasBeenSet = false;
+    IngestionJobStatus m_status{IngestionJobStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     IngestionJobStatistics m_statistics;
     bool m_statisticsHasBeenSet = false;
 
-    IngestionJobStatus m_status{IngestionJobStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
+    Aws::Vector<Aws::String> m_failureReasons;
+    bool m_failureReasonsHasBeenSet = false;
+
+    Aws::Utils::DateTime m_startedAt{};
+    bool m_startedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;

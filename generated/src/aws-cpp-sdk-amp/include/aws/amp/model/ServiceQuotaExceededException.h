@@ -52,18 +52,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Service quotas code of the originating quota.</p>
-     */
-    inline const Aws::String& GetQuotaCode() const { return m_quotaCode; }
-    inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
-    template<typename QuotaCodeT = Aws::String>
-    void SetQuotaCode(QuotaCodeT&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::forward<QuotaCodeT>(value); }
-    template<typename QuotaCodeT = Aws::String>
-    ServiceQuotaExceededException& WithQuotaCode(QuotaCodeT&& value) { SetQuotaCode(std::forward<QuotaCodeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Identifier of the resource affected.</p>
      */
     inline const Aws::String& GetResourceId() const { return m_resourceId; }
@@ -97,13 +85,22 @@ namespace Model
     template<typename ServiceCodeT = Aws::String>
     ServiceQuotaExceededException& WithServiceCode(ServiceCodeT&& value) { SetServiceCode(std::forward<ServiceCodeT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Service quotas code of the originating quota.</p>
+     */
+    inline const Aws::String& GetQuotaCode() const { return m_quotaCode; }
+    inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
+    template<typename QuotaCodeT = Aws::String>
+    void SetQuotaCode(QuotaCodeT&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::forward<QuotaCodeT>(value); }
+    template<typename QuotaCodeT = Aws::String>
+    ServiceQuotaExceededException& WithQuotaCode(QuotaCodeT&& value) { SetQuotaCode(std::forward<QuotaCodeT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
-
-    Aws::String m_quotaCode;
-    bool m_quotaCodeHasBeenSet = false;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
@@ -113,6 +110,9 @@ namespace Model
 
     Aws::String m_serviceCode;
     bool m_serviceCodeHasBeenSet = false;
+
+    Aws::String m_quotaCode;
+    bool m_quotaCodeHasBeenSet = false;
   };
 
 } // namespace Model

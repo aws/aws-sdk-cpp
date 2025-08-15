@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/bedrock-agent/model/AgentAliasRoutingConfigurationListItem.h>
 #include <utility>
 
@@ -42,19 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date that the alias stopped being associated to the version in the
-     * <code>routingConfiguration</code> object</p>
-     */
-    inline const Aws::Utils::DateTime& GetEndDate() const { return m_endDate; }
-    inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
-    template<typename EndDateT = Aws::Utils::DateTime>
-    void SetEndDate(EndDateT&& value) { m_endDateHasBeenSet = true; m_endDate = std::forward<EndDateT>(value); }
-    template<typename EndDateT = Aws::Utils::DateTime>
-    AgentAliasHistoryEvent& WithEndDate(EndDateT&& value) { SetEndDate(std::forward<EndDateT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Contains details about the version of the agent with which the alias is
      * associated.</p>
      */
@@ -66,6 +53,19 @@ namespace Model
     AgentAliasHistoryEvent& WithRoutingConfiguration(RoutingConfigurationT&& value) { SetRoutingConfiguration(std::forward<RoutingConfigurationT>(value)); return *this;}
     template<typename RoutingConfigurationT = AgentAliasRoutingConfigurationListItem>
     AgentAliasHistoryEvent& AddRoutingConfiguration(RoutingConfigurationT&& value) { m_routingConfigurationHasBeenSet = true; m_routingConfiguration.emplace_back(std::forward<RoutingConfigurationT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date that the alias stopped being associated to the version in the
+     * <code>routingConfiguration</code> object</p>
+     */
+    inline const Aws::Utils::DateTime& GetEndDate() const { return m_endDate; }
+    inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
+    template<typename EndDateT = Aws::Utils::DateTime>
+    void SetEndDate(EndDateT&& value) { m_endDateHasBeenSet = true; m_endDate = std::forward<EndDateT>(value); }
+    template<typename EndDateT = Aws::Utils::DateTime>
+    AgentAliasHistoryEvent& WithEndDate(EndDateT&& value) { SetEndDate(std::forward<EndDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,11 +82,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::Utils::DateTime m_endDate{};
-    bool m_endDateHasBeenSet = false;
-
     Aws::Vector<AgentAliasRoutingConfigurationListItem> m_routingConfiguration;
     bool m_routingConfigurationHasBeenSet = false;
+
+    Aws::Utils::DateTime m_endDate{};
+    bool m_endDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_startDate{};
     bool m_startDateHasBeenSet = false;

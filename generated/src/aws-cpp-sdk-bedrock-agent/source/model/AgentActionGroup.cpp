@@ -25,10 +25,15 @@ AgentActionGroup::AgentActionGroup(JsonView jsonValue)
 
 AgentActionGroup& AgentActionGroup::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("actionGroupExecutor"))
+  if(jsonValue.ValueExists("agentId"))
   {
-    m_actionGroupExecutor = jsonValue.GetObject("actionGroupExecutor");
-    m_actionGroupExecutorHasBeenSet = true;
+    m_agentId = jsonValue.GetString("agentId");
+    m_agentIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("agentVersion"))
+  {
+    m_agentVersion = jsonValue.GetString("agentVersion");
+    m_agentVersionHasBeenSet = true;
   }
   if(jsonValue.ValueExists("actionGroupId"))
   {
@@ -40,45 +45,30 @@ AgentActionGroup& AgentActionGroup::operator =(JsonView jsonValue)
     m_actionGroupName = jsonValue.GetString("actionGroupName");
     m_actionGroupNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("actionGroupState"))
-  {
-    m_actionGroupState = ActionGroupStateMapper::GetActionGroupStateForName(jsonValue.GetString("actionGroupState"));
-    m_actionGroupStateHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("agentId"))
-  {
-    m_agentId = jsonValue.GetString("agentId");
-    m_agentIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("agentVersion"))
-  {
-    m_agentVersion = jsonValue.GetString("agentVersion");
-    m_agentVersionHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("apiSchema"))
-  {
-    m_apiSchema = jsonValue.GetObject("apiSchema");
-    m_apiSchemaHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("clientToken"))
   {
     m_clientToken = jsonValue.GetString("clientToken");
     m_clientTokenHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("functionSchema"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_functionSchema = jsonValue.GetObject("functionSchema");
-    m_functionSchemaHasBeenSet = true;
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("updatedAt"))
+  {
+    m_updatedAt = jsonValue.GetString("updatedAt");
+    m_updatedAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("parentActionSignature"))
+  {
+    m_parentActionSignature = ActionGroupSignatureMapper::GetActionGroupSignatureForName(jsonValue.GetString("parentActionSignature"));
+    m_parentActionSignatureHasBeenSet = true;
   }
   if(jsonValue.ValueExists("parentActionGroupSignatureParams"))
   {
@@ -89,15 +79,25 @@ AgentActionGroup& AgentActionGroup::operator =(JsonView jsonValue)
     }
     m_parentActionGroupSignatureParamsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("parentActionSignature"))
+  if(jsonValue.ValueExists("actionGroupExecutor"))
   {
-    m_parentActionSignature = ActionGroupSignatureMapper::GetActionGroupSignatureForName(jsonValue.GetString("parentActionSignature"));
-    m_parentActionSignatureHasBeenSet = true;
+    m_actionGroupExecutor = jsonValue.GetObject("actionGroupExecutor");
+    m_actionGroupExecutorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("updatedAt"))
+  if(jsonValue.ValueExists("apiSchema"))
   {
-    m_updatedAt = jsonValue.GetString("updatedAt");
-    m_updatedAtHasBeenSet = true;
+    m_apiSchema = jsonValue.GetObject("apiSchema");
+    m_apiSchemaHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("functionSchema"))
+  {
+    m_functionSchema = jsonValue.GetObject("functionSchema");
+    m_functionSchemaHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("actionGroupState"))
+  {
+    m_actionGroupState = ActionGroupStateMapper::GetActionGroupStateForName(jsonValue.GetString("actionGroupState"));
+    m_actionGroupStateHasBeenSet = true;
   }
   return *this;
 }
@@ -106,9 +106,15 @@ JsonValue AgentActionGroup::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_actionGroupExecutorHasBeenSet)
+  if(m_agentIdHasBeenSet)
   {
-   payload.WithObject("actionGroupExecutor", m_actionGroupExecutor.Jsonize());
+   payload.WithString("agentId", m_agentId);
+
+  }
+
+  if(m_agentVersionHasBeenSet)
+  {
+   payload.WithString("agentVersion", m_agentVersion);
 
   }
 
@@ -124,38 +130,10 @@ JsonValue AgentActionGroup::Jsonize() const
 
   }
 
-  if(m_actionGroupStateHasBeenSet)
-  {
-   payload.WithString("actionGroupState", ActionGroupStateMapper::GetNameForActionGroupState(m_actionGroupState));
-  }
-
-  if(m_agentIdHasBeenSet)
-  {
-   payload.WithString("agentId", m_agentId);
-
-  }
-
-  if(m_agentVersionHasBeenSet)
-  {
-   payload.WithString("agentVersion", m_agentVersion);
-
-  }
-
-  if(m_apiSchemaHasBeenSet)
-  {
-   payload.WithObject("apiSchema", m_apiSchema.Jsonize());
-
-  }
-
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
 
-  }
-
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_descriptionHasBeenSet)
@@ -164,10 +142,19 @@ JsonValue AgentActionGroup::Jsonize() const
 
   }
 
-  if(m_functionSchemaHasBeenSet)
+  if(m_createdAtHasBeenSet)
   {
-   payload.WithObject("functionSchema", m_functionSchema.Jsonize());
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
 
+  if(m_updatedAtHasBeenSet)
+  {
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_parentActionSignatureHasBeenSet)
+  {
+   payload.WithString("parentActionSignature", ActionGroupSignatureMapper::GetNameForActionGroupSignature(m_parentActionSignature));
   }
 
   if(m_parentActionGroupSignatureParamsHasBeenSet)
@@ -181,14 +168,27 @@ JsonValue AgentActionGroup::Jsonize() const
 
   }
 
-  if(m_parentActionSignatureHasBeenSet)
+  if(m_actionGroupExecutorHasBeenSet)
   {
-   payload.WithString("parentActionSignature", ActionGroupSignatureMapper::GetNameForActionGroupSignature(m_parentActionSignature));
+   payload.WithObject("actionGroupExecutor", m_actionGroupExecutor.Jsonize());
+
   }
 
-  if(m_updatedAtHasBeenSet)
+  if(m_apiSchemaHasBeenSet)
   {
-   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   payload.WithObject("apiSchema", m_apiSchema.Jsonize());
+
+  }
+
+  if(m_functionSchemaHasBeenSet)
+  {
+   payload.WithObject("functionSchema", m_functionSchema.Jsonize());
+
+  }
+
+  if(m_actionGroupStateHasBeenSet)
+  {
+   payload.WithString("actionGroupState", ActionGroupStateMapper::GetNameForActionGroupState(m_actionGroupState));
   }
 
   return payload;

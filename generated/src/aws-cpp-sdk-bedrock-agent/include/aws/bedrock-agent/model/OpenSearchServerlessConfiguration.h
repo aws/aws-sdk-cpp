@@ -55,6 +55,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the vector store.</p>
+     */
+    inline const Aws::String& GetVectorIndexName() const { return m_vectorIndexName; }
+    inline bool VectorIndexNameHasBeenSet() const { return m_vectorIndexNameHasBeenSet; }
+    template<typename VectorIndexNameT = Aws::String>
+    void SetVectorIndexName(VectorIndexNameT&& value) { m_vectorIndexNameHasBeenSet = true; m_vectorIndexName = std::forward<VectorIndexNameT>(value); }
+    template<typename VectorIndexNameT = Aws::String>
+    OpenSearchServerlessConfiguration& WithVectorIndexName(VectorIndexNameT&& value) { SetVectorIndexName(std::forward<VectorIndexNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains the names of the fields to which to map information about the vector
      * store.</p>
      */
@@ -65,28 +77,16 @@ namespace Model
     template<typename FieldMappingT = OpenSearchServerlessFieldMapping>
     OpenSearchServerlessConfiguration& WithFieldMapping(FieldMappingT&& value) { SetFieldMapping(std::forward<FieldMappingT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The name of the vector store.</p>
-     */
-    inline const Aws::String& GetVectorIndexName() const { return m_vectorIndexName; }
-    inline bool VectorIndexNameHasBeenSet() const { return m_vectorIndexNameHasBeenSet; }
-    template<typename VectorIndexNameT = Aws::String>
-    void SetVectorIndexName(VectorIndexNameT&& value) { m_vectorIndexNameHasBeenSet = true; m_vectorIndexName = std::forward<VectorIndexNameT>(value); }
-    template<typename VectorIndexNameT = Aws::String>
-    OpenSearchServerlessConfiguration& WithVectorIndexName(VectorIndexNameT&& value) { SetVectorIndexName(std::forward<VectorIndexNameT>(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_collectionArn;
     bool m_collectionArnHasBeenSet = false;
 
-    OpenSearchServerlessFieldMapping m_fieldMapping;
-    bool m_fieldMappingHasBeenSet = false;
-
     Aws::String m_vectorIndexName;
     bool m_vectorIndexNameHasBeenSet = false;
+
+    OpenSearchServerlessFieldMapping m_fieldMapping;
+    bool m_fieldMappingHasBeenSet = false;
   };
 
 } // namespace Model

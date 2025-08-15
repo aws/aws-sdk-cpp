@@ -25,15 +25,15 @@ PromptFlowNodeSourceConfiguration::PromptFlowNodeSourceConfiguration(JsonView js
 
 PromptFlowNodeSourceConfiguration& PromptFlowNodeSourceConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("inline"))
-  {
-    m_inline = jsonValue.GetObject("inline");
-    m_inlineHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetObject("resource");
     m_resourceHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("inline"))
+  {
+    m_inline = jsonValue.GetObject("inline");
+    m_inlineHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue PromptFlowNodeSourceConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_inlineHasBeenSet)
-  {
-   payload.WithObject("inline", m_inline.Jsonize());
-
-  }
-
   if(m_resourceHasBeenSet)
   {
    payload.WithObject("resource", m_resource.Jsonize());
+
+  }
+
+  if(m_inlineHasBeenSet)
+  {
+   payload.WithObject("inline", m_inline.Jsonize());
 
   }
 

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/WebCrawlerConfiguration.h>
 #include <aws/bedrock-agent/model/WebSourceConfiguration.h>
+#include <aws/bedrock-agent/model/WebCrawlerConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -41,18 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Web Crawler configuration details for the web data source.</p>
-     */
-    inline const WebCrawlerConfiguration& GetCrawlerConfiguration() const { return m_crawlerConfiguration; }
-    inline bool CrawlerConfigurationHasBeenSet() const { return m_crawlerConfigurationHasBeenSet; }
-    template<typename CrawlerConfigurationT = WebCrawlerConfiguration>
-    void SetCrawlerConfiguration(CrawlerConfigurationT&& value) { m_crawlerConfigurationHasBeenSet = true; m_crawlerConfiguration = std::forward<CrawlerConfigurationT>(value); }
-    template<typename CrawlerConfigurationT = WebCrawlerConfiguration>
-    WebDataSourceConfiguration& WithCrawlerConfiguration(CrawlerConfigurationT&& value) { SetCrawlerConfiguration(std::forward<CrawlerConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The source configuration details for the web data source.</p>
      */
     inline const WebSourceConfiguration& GetSourceConfiguration() const { return m_sourceConfiguration; }
@@ -62,13 +50,25 @@ namespace Model
     template<typename SourceConfigurationT = WebSourceConfiguration>
     WebDataSourceConfiguration& WithSourceConfiguration(SourceConfigurationT&& value) { SetSourceConfiguration(std::forward<SourceConfigurationT>(value)); return *this;}
     ///@}
-  private:
 
-    WebCrawlerConfiguration m_crawlerConfiguration;
-    bool m_crawlerConfigurationHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The Web Crawler configuration details for the web data source.</p>
+     */
+    inline const WebCrawlerConfiguration& GetCrawlerConfiguration() const { return m_crawlerConfiguration; }
+    inline bool CrawlerConfigurationHasBeenSet() const { return m_crawlerConfigurationHasBeenSet; }
+    template<typename CrawlerConfigurationT = WebCrawlerConfiguration>
+    void SetCrawlerConfiguration(CrawlerConfigurationT&& value) { m_crawlerConfigurationHasBeenSet = true; m_crawlerConfiguration = std::forward<CrawlerConfigurationT>(value); }
+    template<typename CrawlerConfigurationT = WebCrawlerConfiguration>
+    WebDataSourceConfiguration& WithCrawlerConfiguration(CrawlerConfigurationT&& value) { SetCrawlerConfiguration(std::forward<CrawlerConfigurationT>(value)); return *this;}
+    ///@}
+  private:
 
     WebSourceConfiguration m_sourceConfiguration;
     bool m_sourceConfigurationHasBeenSet = false;
+
+    WebCrawlerConfiguration m_crawlerConfiguration;
+    bool m_crawlerConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

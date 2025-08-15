@@ -25,15 +25,15 @@ SqlKnowledgeBaseConfiguration::SqlKnowledgeBaseConfiguration(JsonView jsonValue)
 
 SqlKnowledgeBaseConfiguration& SqlKnowledgeBaseConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("redshiftConfiguration"))
-  {
-    m_redshiftConfiguration = jsonValue.GetObject("redshiftConfiguration");
-    m_redshiftConfigurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("type"))
   {
     m_type = QueryEngineTypeMapper::GetQueryEngineTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("redshiftConfiguration"))
+  {
+    m_redshiftConfiguration = jsonValue.GetObject("redshiftConfiguration");
+    m_redshiftConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue SqlKnowledgeBaseConfiguration::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", QueryEngineTypeMapper::GetNameForQueryEngineType(m_type));
+  }
+
   if(m_redshiftConfigurationHasBeenSet)
   {
    payload.WithObject("redshiftConfiguration", m_redshiftConfiguration.Jsonize());
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", QueryEngineTypeMapper::GetNameForQueryEngineType(m_type));
   }
 
   return payload;

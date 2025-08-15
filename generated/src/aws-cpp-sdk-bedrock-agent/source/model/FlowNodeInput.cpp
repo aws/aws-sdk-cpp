@@ -25,16 +25,6 @@ FlowNodeInput::FlowNodeInput(JsonView jsonValue)
 
 FlowNodeInput& FlowNodeInput::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("category"))
-  {
-    m_category = FlowNodeInputCategoryMapper::GetFlowNodeInputCategoryForName(jsonValue.GetString("category"));
-    m_categoryHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("expression"))
-  {
-    m_expression = jsonValue.GetString("expression");
-    m_expressionHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -45,23 +35,22 @@ FlowNodeInput& FlowNodeInput::operator =(JsonView jsonValue)
     m_type = FlowNodeIODataTypeMapper::GetFlowNodeIODataTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("expression"))
+  {
+    m_expression = jsonValue.GetString("expression");
+    m_expressionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("category"))
+  {
+    m_category = FlowNodeInputCategoryMapper::GetFlowNodeInputCategoryForName(jsonValue.GetString("category"));
+    m_categoryHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue FlowNodeInput::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_categoryHasBeenSet)
-  {
-   payload.WithString("category", FlowNodeInputCategoryMapper::GetNameForFlowNodeInputCategory(m_category));
-  }
-
-  if(m_expressionHasBeenSet)
-  {
-   payload.WithString("expression", m_expression);
-
-  }
 
   if(m_nameHasBeenSet)
   {
@@ -72,6 +61,17 @@ JsonValue FlowNodeInput::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", FlowNodeIODataTypeMapper::GetNameForFlowNodeIODataType(m_type));
+  }
+
+  if(m_expressionHasBeenSet)
+  {
+   payload.WithString("expression", m_expression);
+
+  }
+
+  if(m_categoryHasBeenSet)
+  {
+   payload.WithString("category", FlowNodeInputCategoryMapper::GetNameForFlowNodeInputCategory(m_category));
   }
 
   return payload;

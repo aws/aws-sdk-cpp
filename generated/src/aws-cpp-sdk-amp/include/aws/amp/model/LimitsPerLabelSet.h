@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/amp/model/LimitsPerLabelSetEntry.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -46,6 +46,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>This structure contains the information about the limits that apply to time
+     * series that match this label set.</p>
+     */
+    inline const LimitsPerLabelSetEntry& GetLimits() const { return m_limits; }
+    inline bool LimitsHasBeenSet() const { return m_limitsHasBeenSet; }
+    template<typename LimitsT = LimitsPerLabelSetEntry>
+    void SetLimits(LimitsT&& value) { m_limitsHasBeenSet = true; m_limits = std::forward<LimitsT>(value); }
+    template<typename LimitsT = LimitsPerLabelSetEntry>
+    LimitsPerLabelSet& WithLimits(LimitsT&& value) { SetLimits(std::forward<LimitsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>This defines one label set that will have an enforced active time series
      * limit. </p> <p>Label values accept ASCII characters and must contain at least
      * one character that isn't whitespace. ASCII control characters are not accepted.
@@ -64,26 +77,13 @@ namespace Model
       m_labelSetHasBeenSet = true; m_labelSet.emplace(std::forward<LabelSetKeyT>(key), std::forward<LabelSetValueT>(value)); return *this;
     }
     ///@}
-
-    ///@{
-    /**
-     * <p>This structure contains the information about the limits that apply to time
-     * series that match this label set.</p>
-     */
-    inline const LimitsPerLabelSetEntry& GetLimits() const { return m_limits; }
-    inline bool LimitsHasBeenSet() const { return m_limitsHasBeenSet; }
-    template<typename LimitsT = LimitsPerLabelSetEntry>
-    void SetLimits(LimitsT&& value) { m_limitsHasBeenSet = true; m_limits = std::forward<LimitsT>(value); }
-    template<typename LimitsT = LimitsPerLabelSetEntry>
-    LimitsPerLabelSet& WithLimits(LimitsT&& value) { SetLimits(std::forward<LimitsT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::Map<Aws::String, Aws::String> m_labelSet;
-    bool m_labelSetHasBeenSet = false;
 
     LimitsPerLabelSetEntry m_limits;
     bool m_limitsHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_labelSet;
+    bool m_labelSetHasBeenSet = false;
   };
 
 } // namespace Model
