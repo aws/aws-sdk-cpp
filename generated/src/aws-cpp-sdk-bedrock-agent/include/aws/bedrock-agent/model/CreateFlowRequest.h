@@ -37,42 +37,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique, case-sensitive identifier to ensure that the API request completes
-     * no more than one time. If this token matches a previous request, Amazon Bedrock
-     * ignores the request, but does not return an error. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * idempotency</a>.</p>
+     * <p>A name for the flow.</p>
      */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    CreateFlowRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key to encrypt the flow.</p>
-     */
-    inline const Aws::String& GetCustomerEncryptionKeyArn() const { return m_customerEncryptionKeyArn; }
-    inline bool CustomerEncryptionKeyArnHasBeenSet() const { return m_customerEncryptionKeyArnHasBeenSet; }
-    template<typename CustomerEncryptionKeyArnT = Aws::String>
-    void SetCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn = std::forward<CustomerEncryptionKeyArnT>(value); }
-    template<typename CustomerEncryptionKeyArnT = Aws::String>
-    CreateFlowRequest& WithCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) { SetCustomerEncryptionKeyArn(std::forward<CustomerEncryptionKeyArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A definition of the nodes and connections between nodes in the flow.</p>
-     */
-    inline const FlowDefinition& GetDefinition() const { return m_definition; }
-    inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-    template<typename DefinitionT = FlowDefinition>
-    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
-    template<typename DefinitionT = FlowDefinition>
-    CreateFlowRequest& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateFlowRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +77,42 @@ namespace Model
 
     ///@{
     /**
-     * <p>A name for the flow.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to encrypt the flow.</p>
      */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    CreateFlowRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    inline const Aws::String& GetCustomerEncryptionKeyArn() const { return m_customerEncryptionKeyArn; }
+    inline bool CustomerEncryptionKeyArnHasBeenSet() const { return m_customerEncryptionKeyArnHasBeenSet; }
+    template<typename CustomerEncryptionKeyArnT = Aws::String>
+    void SetCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn = std::forward<CustomerEncryptionKeyArnT>(value); }
+    template<typename CustomerEncryptionKeyArnT = Aws::String>
+    CreateFlowRequest& WithCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) { SetCustomerEncryptionKeyArn(std::forward<CustomerEncryptionKeyArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A definition of the nodes and connections between nodes in the flow.</p>
+     */
+    inline const FlowDefinition& GetDefinition() const { return m_definition; }
+    inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
+    template<typename DefinitionT = FlowDefinition>
+    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
+    template<typename DefinitionT = FlowDefinition>
+    CreateFlowRequest& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A unique, case-sensitive identifier to ensure that the API request completes
+     * no more than one time. If this token matches a previous request, Amazon Bedrock
+     * ignores the request, but does not return an error. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
+     */
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateFlowRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,14 +134,8 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-    bool m_clientTokenHasBeenSet = true;
-
-    Aws::String m_customerEncryptionKeyArn;
-    bool m_customerEncryptionKeyArnHasBeenSet = false;
-
-    FlowDefinition m_definition;
-    bool m_definitionHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
@@ -149,8 +143,14 @@ namespace Model
     Aws::String m_executionRoleArn;
     bool m_executionRoleArnHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+    Aws::String m_customerEncryptionKeyArn;
+    bool m_customerEncryptionKeyArnHasBeenSet = false;
+
+    FlowDefinition m_definition;
+    bool m_definitionHasBeenSet = false;
+
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent/model/ValidationExceptionField.h>
 #include <utility>
 
@@ -41,6 +41,16 @@ namespace Model
 
 
     ///@{
+    
+    inline const Aws::String& GetMessage() const { return m_message; }
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ValidationException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>A list of objects containing fields that caused validation errors and their
      * corresponding validation error messages.</p>
@@ -54,23 +64,13 @@ namespace Model
     template<typename FieldListT = ValidationExceptionField>
     ValidationException& AddFieldList(FieldListT&& value) { m_fieldListHasBeenSet = true; m_fieldList.emplace_back(std::forward<FieldListT>(value)); return *this; }
     ///@}
-
-    ///@{
-    
-    inline const Aws::String& GetMessage() const { return m_message; }
-    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    template<typename MessageT = Aws::String>
-    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
-    template<typename MessageT = Aws::String>
-    ValidationException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::Vector<ValidationExceptionField> m_fieldList;
-    bool m_fieldListHasBeenSet = false;
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
+
+    Aws::Vector<ValidationExceptionField> m_fieldList;
+    bool m_fieldListHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,20 +25,20 @@ OpenSearchServerlessFieldMapping::OpenSearchServerlessFieldMapping(JsonView json
 
 OpenSearchServerlessFieldMapping& OpenSearchServerlessFieldMapping::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("metadataField"))
+  if(jsonValue.ValueExists("vectorField"))
   {
-    m_metadataField = jsonValue.GetString("metadataField");
-    m_metadataFieldHasBeenSet = true;
+    m_vectorField = jsonValue.GetString("vectorField");
+    m_vectorFieldHasBeenSet = true;
   }
   if(jsonValue.ValueExists("textField"))
   {
     m_textField = jsonValue.GetString("textField");
     m_textFieldHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vectorField"))
+  if(jsonValue.ValueExists("metadataField"))
   {
-    m_vectorField = jsonValue.GetString("vectorField");
-    m_vectorFieldHasBeenSet = true;
+    m_metadataField = jsonValue.GetString("metadataField");
+    m_metadataFieldHasBeenSet = true;
   }
   return *this;
 }
@@ -47,9 +47,9 @@ JsonValue OpenSearchServerlessFieldMapping::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_metadataFieldHasBeenSet)
+  if(m_vectorFieldHasBeenSet)
   {
-   payload.WithString("metadataField", m_metadataField);
+   payload.WithString("vectorField", m_vectorField);
 
   }
 
@@ -59,9 +59,9 @@ JsonValue OpenSearchServerlessFieldMapping::Jsonize() const
 
   }
 
-  if(m_vectorFieldHasBeenSet)
+  if(m_metadataFieldHasBeenSet)
   {
-   payload.WithString("vectorField", m_vectorField);
+   payload.WithString("metadataField", m_metadataField);
 
   }
 

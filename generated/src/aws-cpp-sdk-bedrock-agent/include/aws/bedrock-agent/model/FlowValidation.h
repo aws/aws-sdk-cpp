@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/FlowValidationDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/FlowValidationSeverity.h>
+#include <aws/bedrock-agent/model/FlowValidationDetails.h>
 #include <aws/bedrock-agent/model/FlowValidationType.h>
 #include <utility>
 
@@ -47,18 +47,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specific details about the validation issue encountered in the flow.</p>
-     */
-    inline const FlowValidationDetails& GetDetails() const { return m_details; }
-    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    template<typename DetailsT = FlowValidationDetails>
-    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
-    template<typename DetailsT = FlowValidationDetails>
-    FlowValidation& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A message describing the validation error.</p>
      */
     inline const Aws::String& GetMessage() const { return m_message; }
@@ -81,6 +69,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specific details about the validation issue encountered in the flow.</p>
+     */
+    inline const FlowValidationDetails& GetDetails() const { return m_details; }
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
+    template<typename DetailsT = FlowValidationDetails>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = FlowValidationDetails>
+    FlowValidation& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The type of validation issue encountered in the flow.</p>
      */
     inline FlowValidationType GetType() const { return m_type; }
@@ -90,14 +90,14 @@ namespace Model
     ///@}
   private:
 
-    FlowValidationDetails m_details;
-    bool m_detailsHasBeenSet = false;
-
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
     FlowValidationSeverity m_severity{FlowValidationSeverity::NOT_SET};
     bool m_severityHasBeenSet = false;
+
+    FlowValidationDetails m_details;
+    bool m_detailsHasBeenSet = false;
 
     FlowValidationType m_type{FlowValidationType::NOT_SET};
     bool m_typeHasBeenSet = false;

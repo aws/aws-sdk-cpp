@@ -7,6 +7,7 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/GlueRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/model/IntegrationConfig.h>
 #include <utility>
 
 namespace Aws
@@ -71,6 +72,16 @@ namespace Model
     ///@}
 
     ///@{
+    
+    inline const IntegrationConfig& GetIntegrationConfig() const { return m_integrationConfig; }
+    inline bool IntegrationConfigHasBeenSet() const { return m_integrationConfigHasBeenSet; }
+    template<typename IntegrationConfigT = IntegrationConfig>
+    void SetIntegrationConfig(IntegrationConfigT&& value) { m_integrationConfigHasBeenSet = true; m_integrationConfig = std::forward<IntegrationConfigT>(value); }
+    template<typename IntegrationConfigT = IntegrationConfig>
+    ModifyIntegrationRequest& WithIntegrationConfig(IntegrationConfigT&& value) { SetIntegrationConfig(std::forward<IntegrationConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>A unique name for an integration in Glue.</p>
      */
@@ -91,6 +102,9 @@ namespace Model
 
     Aws::String m_dataFilter;
     bool m_dataFilterHasBeenSet = false;
+
+    IntegrationConfig m_integrationConfig;
+    bool m_integrationConfigHasBeenSet = false;
 
     Aws::String m_integrationName;
     bool m_integrationNameHasBeenSet = false;

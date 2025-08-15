@@ -30,15 +30,15 @@ DeleteAgentVersionResult& DeleteAgentVersionResult::operator =(const Aws::Amazon
     m_agentId = jsonValue.GetString("agentId");
     m_agentIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("agentStatus"))
-  {
-    m_agentStatus = AgentStatusMapper::GetAgentStatusForName(jsonValue.GetString("agentStatus"));
-    m_agentStatusHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("agentVersion"))
   {
     m_agentVersion = jsonValue.GetString("agentVersion");
     m_agentVersionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("agentStatus"))
+  {
+    m_agentStatus = AgentStatusMapper::GetAgentStatusForName(jsonValue.GetString("agentStatus"));
+    m_agentStatusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

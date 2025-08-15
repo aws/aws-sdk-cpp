@@ -43,6 +43,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The endpoint URL the OpenSearch domain.</p>
+     */
+    inline const Aws::String& GetDomainEndpoint() const { return m_domainEndpoint; }
+    inline bool DomainEndpointHasBeenSet() const { return m_domainEndpointHasBeenSet; }
+    template<typename DomainEndpointT = Aws::String>
+    void SetDomainEndpoint(DomainEndpointT&& value) { m_domainEndpointHasBeenSet = true; m_domainEndpoint = std::forward<DomainEndpointT>(value); }
+    template<typename DomainEndpointT = Aws::String>
+    OpenSearchManagedClusterConfiguration& WithDomainEndpoint(DomainEndpointT&& value) { SetDomainEndpoint(std::forward<DomainEndpointT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the OpenSearch domain.</p>
      */
     inline const Aws::String& GetDomainArn() const { return m_domainArn; }
@@ -55,14 +67,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The endpoint URL the OpenSearch domain.</p>
+     * <p>The name of the vector store.</p>
      */
-    inline const Aws::String& GetDomainEndpoint() const { return m_domainEndpoint; }
-    inline bool DomainEndpointHasBeenSet() const { return m_domainEndpointHasBeenSet; }
-    template<typename DomainEndpointT = Aws::String>
-    void SetDomainEndpoint(DomainEndpointT&& value) { m_domainEndpointHasBeenSet = true; m_domainEndpoint = std::forward<DomainEndpointT>(value); }
-    template<typename DomainEndpointT = Aws::String>
-    OpenSearchManagedClusterConfiguration& WithDomainEndpoint(DomainEndpointT&& value) { SetDomainEndpoint(std::forward<DomainEndpointT>(value)); return *this;}
+    inline const Aws::String& GetVectorIndexName() const { return m_vectorIndexName; }
+    inline bool VectorIndexNameHasBeenSet() const { return m_vectorIndexNameHasBeenSet; }
+    template<typename VectorIndexNameT = Aws::String>
+    void SetVectorIndexName(VectorIndexNameT&& value) { m_vectorIndexNameHasBeenSet = true; m_vectorIndexName = std::forward<VectorIndexNameT>(value); }
+    template<typename VectorIndexNameT = Aws::String>
+    OpenSearchManagedClusterConfiguration& WithVectorIndexName(VectorIndexNameT&& value) { SetVectorIndexName(std::forward<VectorIndexNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,31 +89,19 @@ namespace Model
     template<typename FieldMappingT = OpenSearchManagedClusterFieldMapping>
     OpenSearchManagedClusterConfiguration& WithFieldMapping(FieldMappingT&& value) { SetFieldMapping(std::forward<FieldMappingT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The name of the vector store.</p>
-     */
-    inline const Aws::String& GetVectorIndexName() const { return m_vectorIndexName; }
-    inline bool VectorIndexNameHasBeenSet() const { return m_vectorIndexNameHasBeenSet; }
-    template<typename VectorIndexNameT = Aws::String>
-    void SetVectorIndexName(VectorIndexNameT&& value) { m_vectorIndexNameHasBeenSet = true; m_vectorIndexName = std::forward<VectorIndexNameT>(value); }
-    template<typename VectorIndexNameT = Aws::String>
-    OpenSearchManagedClusterConfiguration& WithVectorIndexName(VectorIndexNameT&& value) { SetVectorIndexName(std::forward<VectorIndexNameT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::String m_domainArn;
-    bool m_domainArnHasBeenSet = false;
 
     Aws::String m_domainEndpoint;
     bool m_domainEndpointHasBeenSet = false;
 
-    OpenSearchManagedClusterFieldMapping m_fieldMapping;
-    bool m_fieldMappingHasBeenSet = false;
+    Aws::String m_domainArn;
+    bool m_domainArnHasBeenSet = false;
 
     Aws::String m_vectorIndexName;
     bool m_vectorIndexNameHasBeenSet = false;
+
+    OpenSearchManagedClusterFieldMapping m_fieldMapping;
+    bool m_fieldMappingHasBeenSet = false;
   };
 
 } // namespace Model

@@ -43,6 +43,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) of the vector store.</p>
+     */
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    RdsConfiguration& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
      * Manager that is linked to your Amazon RDS database.</p>
      */
@@ -68,6 +80,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the table in the database.</p>
+     */
+    inline const Aws::String& GetTableName() const { return m_tableName; }
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    RdsConfiguration& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains the names of the fields to which to map information about the vector
      * store.</p>
      */
@@ -78,31 +102,10 @@ namespace Model
     template<typename FieldMappingT = RdsFieldMapping>
     RdsConfiguration& WithFieldMapping(FieldMappingT&& value) { SetFieldMapping(std::forward<FieldMappingT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the vector store.</p>
-     */
-    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
-    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    template<typename ResourceArnT = Aws::String>
-    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
-    template<typename ResourceArnT = Aws::String>
-    RdsConfiguration& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the table in the database.</p>
-     */
-    inline const Aws::String& GetTableName() const { return m_tableName; }
-    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    template<typename TableNameT = Aws::String>
-    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
-    template<typename TableNameT = Aws::String>
-    RdsConfiguration& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_credentialsSecretArn;
     bool m_credentialsSecretArnHasBeenSet = false;
@@ -110,14 +113,11 @@ namespace Model
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet = false;
 
-    RdsFieldMapping m_fieldMapping;
-    bool m_fieldMappingHasBeenSet = false;
-
-    Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet = false;
-
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet = false;
+
+    RdsFieldMapping m_fieldMapping;
+    bool m_fieldMappingHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent/model/FlowNode.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent/model/FlowConnection.h>
 #include <utility>
 
@@ -43,20 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of connection definitions in the flow.</p>
-     */
-    inline const Aws::Vector<FlowConnection>& GetConnections() const { return m_connections; }
-    inline bool ConnectionsHasBeenSet() const { return m_connectionsHasBeenSet; }
-    template<typename ConnectionsT = Aws::Vector<FlowConnection>>
-    void SetConnections(ConnectionsT&& value) { m_connectionsHasBeenSet = true; m_connections = std::forward<ConnectionsT>(value); }
-    template<typename ConnectionsT = Aws::Vector<FlowConnection>>
-    FlowDefinition& WithConnections(ConnectionsT&& value) { SetConnections(std::forward<ConnectionsT>(value)); return *this;}
-    template<typename ConnectionsT = FlowConnection>
-    FlowDefinition& AddConnections(ConnectionsT&& value) { m_connectionsHasBeenSet = true; m_connections.emplace_back(std::forward<ConnectionsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>An array of node definitions in the flow.</p>
      */
     inline const Aws::Vector<FlowNode>& GetNodes() const { return m_nodes; }
@@ -68,13 +54,27 @@ namespace Model
     template<typename NodesT = FlowNode>
     FlowDefinition& AddNodes(NodesT&& value) { m_nodesHasBeenSet = true; m_nodes.emplace_back(std::forward<NodesT>(value)); return *this; }
     ///@}
-  private:
 
-    Aws::Vector<FlowConnection> m_connections;
-    bool m_connectionsHasBeenSet = false;
+    ///@{
+    /**
+     * <p>An array of connection definitions in the flow.</p>
+     */
+    inline const Aws::Vector<FlowConnection>& GetConnections() const { return m_connections; }
+    inline bool ConnectionsHasBeenSet() const { return m_connectionsHasBeenSet; }
+    template<typename ConnectionsT = Aws::Vector<FlowConnection>>
+    void SetConnections(ConnectionsT&& value) { m_connectionsHasBeenSet = true; m_connections = std::forward<ConnectionsT>(value); }
+    template<typename ConnectionsT = Aws::Vector<FlowConnection>>
+    FlowDefinition& WithConnections(ConnectionsT&& value) { SetConnections(std::forward<ConnectionsT>(value)); return *this;}
+    template<typename ConnectionsT = FlowConnection>
+    FlowDefinition& AddConnections(ConnectionsT&& value) { m_connectionsHasBeenSet = true; m_connections.emplace_back(std::forward<ConnectionsT>(value)); return *this; }
+    ///@}
+  private:
 
     Aws::Vector<FlowNode> m_nodes;
     bool m_nodesHasBeenSet = false;
+
+    Aws::Vector<FlowConnection> m_connections;
+    bool m_connectionsHasBeenSet = false;
   };
 
 } // namespace Model

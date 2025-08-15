@@ -25,6 +25,11 @@ TextPromptTemplateConfiguration::TextPromptTemplateConfiguration(JsonView jsonVa
 
 TextPromptTemplateConfiguration& TextPromptTemplateConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("text"))
+  {
+    m_text = jsonValue.GetString("text");
+    m_textHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("cachePoint"))
   {
     m_cachePoint = jsonValue.GetObject("cachePoint");
@@ -39,17 +44,18 @@ TextPromptTemplateConfiguration& TextPromptTemplateConfiguration::operator =(Jso
     }
     m_inputVariablesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("text"))
-  {
-    m_text = jsonValue.GetString("text");
-    m_textHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue TextPromptTemplateConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_textHasBeenSet)
+  {
+   payload.WithString("text", m_text);
+
+  }
 
   if(m_cachePointHasBeenSet)
   {
@@ -65,12 +71,6 @@ JsonValue TextPromptTemplateConfiguration::Jsonize() const
      inputVariablesJsonList[inputVariablesIndex].AsObject(m_inputVariables[inputVariablesIndex].Jsonize());
    }
    payload.WithArray("inputVariables", std::move(inputVariablesJsonList));
-
-  }
-
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("text", m_text);
 
   }
 

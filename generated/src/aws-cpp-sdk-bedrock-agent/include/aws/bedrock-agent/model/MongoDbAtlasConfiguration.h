@@ -41,6 +41,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>The endpoint URL of your MongoDB Atlas cluster for your knowledge base.</p>
+     */
+    inline const Aws::String& GetEndpoint() const { return m_endpoint; }
+    inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
+    template<typename EndpointT = Aws::String>
+    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
+    template<typename EndpointT = Aws::String>
+    MongoDbAtlasConfiguration& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The database name in your MongoDB Atlas cluster for your knowledge base.</p>
+     */
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    MongoDbAtlasConfiguration& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The collection name of the knowledge base in MongoDB Atlas.</p>
      */
     inline const Aws::String& GetCollectionName() const { return m_collectionName; }
@@ -49,6 +73,18 @@ namespace Model
     void SetCollectionName(CollectionNameT&& value) { m_collectionNameHasBeenSet = true; m_collectionName = std::forward<CollectionNameT>(value); }
     template<typename CollectionNameT = Aws::String>
     MongoDbAtlasConfiguration& WithCollectionName(CollectionNameT&& value) { SetCollectionName(std::forward<CollectionNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the MongoDB Atlas vector search index.</p>
+     */
+    inline const Aws::String& GetVectorIndexName() const { return m_vectorIndexName; }
+    inline bool VectorIndexNameHasBeenSet() const { return m_vectorIndexNameHasBeenSet; }
+    template<typename VectorIndexNameT = Aws::String>
+    void SetVectorIndexName(VectorIndexNameT&& value) { m_vectorIndexNameHasBeenSet = true; m_vectorIndexName = std::forward<VectorIndexNameT>(value); }
+    template<typename VectorIndexNameT = Aws::String>
+    MongoDbAtlasConfiguration& WithVectorIndexName(VectorIndexNameT&& value) { SetVectorIndexName(std::forward<VectorIndexNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,26 +102,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The database name in your MongoDB Atlas cluster for your knowledge base.</p>
+     * <p>Contains the names of the fields to which to map information about the vector
+     * store.</p>
      */
-    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
-    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    template<typename DatabaseNameT = Aws::String>
-    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
-    template<typename DatabaseNameT = Aws::String>
-    MongoDbAtlasConfiguration& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The endpoint URL of your MongoDB Atlas cluster for your knowledge base.</p>
-     */
-    inline const Aws::String& GetEndpoint() const { return m_endpoint; }
-    inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
-    template<typename EndpointT = Aws::String>
-    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
-    template<typename EndpointT = Aws::String>
-    MongoDbAtlasConfiguration& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
+    inline const MongoDbAtlasFieldMapping& GetFieldMapping() const { return m_fieldMapping; }
+    inline bool FieldMappingHasBeenSet() const { return m_fieldMappingHasBeenSet; }
+    template<typename FieldMappingT = MongoDbAtlasFieldMapping>
+    void SetFieldMapping(FieldMappingT&& value) { m_fieldMappingHasBeenSet = true; m_fieldMapping = std::forward<FieldMappingT>(value); }
+    template<typename FieldMappingT = MongoDbAtlasFieldMapping>
+    MongoDbAtlasConfiguration& WithFieldMapping(FieldMappingT&& value) { SetFieldMapping(std::forward<FieldMappingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,19 +128,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains the names of the fields to which to map information about the vector
-     * store.</p>
-     */
-    inline const MongoDbAtlasFieldMapping& GetFieldMapping() const { return m_fieldMapping; }
-    inline bool FieldMappingHasBeenSet() const { return m_fieldMappingHasBeenSet; }
-    template<typename FieldMappingT = MongoDbAtlasFieldMapping>
-    void SetFieldMapping(FieldMappingT&& value) { m_fieldMappingHasBeenSet = true; m_fieldMapping = std::forward<FieldMappingT>(value); }
-    template<typename FieldMappingT = MongoDbAtlasFieldMapping>
-    MongoDbAtlasConfiguration& WithFieldMapping(FieldMappingT&& value) { SetFieldMapping(std::forward<FieldMappingT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the text search index in the MongoDB collection. This is required
      * for using the hybrid search feature.</p>
      */
@@ -126,43 +138,31 @@ namespace Model
     template<typename TextIndexNameT = Aws::String>
     MongoDbAtlasConfiguration& WithTextIndexName(TextIndexNameT&& value) { SetTextIndexName(std::forward<TextIndexNameT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The name of the MongoDB Atlas vector search index.</p>
-     */
-    inline const Aws::String& GetVectorIndexName() const { return m_vectorIndexName; }
-    inline bool VectorIndexNameHasBeenSet() const { return m_vectorIndexNameHasBeenSet; }
-    template<typename VectorIndexNameT = Aws::String>
-    void SetVectorIndexName(VectorIndexNameT&& value) { m_vectorIndexNameHasBeenSet = true; m_vectorIndexName = std::forward<VectorIndexNameT>(value); }
-    template<typename VectorIndexNameT = Aws::String>
-    MongoDbAtlasConfiguration& WithVectorIndexName(VectorIndexNameT&& value) { SetVectorIndexName(std::forward<VectorIndexNameT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::String m_collectionName;
-    bool m_collectionNameHasBeenSet = false;
-
-    Aws::String m_credentialsSecretArn;
-    bool m_credentialsSecretArnHasBeenSet = false;
-
-    Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet = false;
 
-    Aws::String m_endpointServiceName;
-    bool m_endpointServiceNameHasBeenSet = false;
+    Aws::String m_databaseName;
+    bool m_databaseNameHasBeenSet = false;
+
+    Aws::String m_collectionName;
+    bool m_collectionNameHasBeenSet = false;
+
+    Aws::String m_vectorIndexName;
+    bool m_vectorIndexNameHasBeenSet = false;
+
+    Aws::String m_credentialsSecretArn;
+    bool m_credentialsSecretArnHasBeenSet = false;
 
     MongoDbAtlasFieldMapping m_fieldMapping;
     bool m_fieldMappingHasBeenSet = false;
 
+    Aws::String m_endpointServiceName;
+    bool m_endpointServiceNameHasBeenSet = false;
+
     Aws::String m_textIndexName;
     bool m_textIndexNameHasBeenSet = false;
-
-    Aws::String m_vectorIndexName;
-    bool m_vectorIndexNameHasBeenSet = false;
   };
 
 } // namespace Model

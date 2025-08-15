@@ -43,6 +43,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>The endpoint URL of the Redis Enterprise Cloud database.</p>
+     */
+    inline const Aws::String& GetEndpoint() const { return m_endpoint; }
+    inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
+    template<typename EndpointT = Aws::String>
+    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
+    template<typename EndpointT = Aws::String>
+    RedisEnterpriseCloudConfiguration& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the vector index.</p>
+     */
+    inline const Aws::String& GetVectorIndexName() const { return m_vectorIndexName; }
+    inline bool VectorIndexNameHasBeenSet() const { return m_vectorIndexNameHasBeenSet; }
+    template<typename VectorIndexNameT = Aws::String>
+    void SetVectorIndexName(VectorIndexNameT&& value) { m_vectorIndexNameHasBeenSet = true; m_vectorIndexName = std::forward<VectorIndexNameT>(value); }
+    template<typename VectorIndexNameT = Aws::String>
+    RedisEnterpriseCloudConfiguration& WithVectorIndexName(VectorIndexNameT&& value) { SetVectorIndexName(std::forward<VectorIndexNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
      * Manager that is linked to your Redis Enterprise Cloud database.</p>
      */
@@ -52,18 +76,6 @@ namespace Model
     void SetCredentialsSecretArn(CredentialsSecretArnT&& value) { m_credentialsSecretArnHasBeenSet = true; m_credentialsSecretArn = std::forward<CredentialsSecretArnT>(value); }
     template<typename CredentialsSecretArnT = Aws::String>
     RedisEnterpriseCloudConfiguration& WithCredentialsSecretArn(CredentialsSecretArnT&& value) { SetCredentialsSecretArn(std::forward<CredentialsSecretArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The endpoint URL of the Redis Enterprise Cloud database.</p>
-     */
-    inline const Aws::String& GetEndpoint() const { return m_endpoint; }
-    inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
-    template<typename EndpointT = Aws::String>
-    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
-    template<typename EndpointT = Aws::String>
-    RedisEnterpriseCloudConfiguration& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,31 +90,19 @@ namespace Model
     template<typename FieldMappingT = RedisEnterpriseCloudFieldMapping>
     RedisEnterpriseCloudConfiguration& WithFieldMapping(FieldMappingT&& value) { SetFieldMapping(std::forward<FieldMappingT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The name of the vector index.</p>
-     */
-    inline const Aws::String& GetVectorIndexName() const { return m_vectorIndexName; }
-    inline bool VectorIndexNameHasBeenSet() const { return m_vectorIndexNameHasBeenSet; }
-    template<typename VectorIndexNameT = Aws::String>
-    void SetVectorIndexName(VectorIndexNameT&& value) { m_vectorIndexNameHasBeenSet = true; m_vectorIndexName = std::forward<VectorIndexNameT>(value); }
-    template<typename VectorIndexNameT = Aws::String>
-    RedisEnterpriseCloudConfiguration& WithVectorIndexName(VectorIndexNameT&& value) { SetVectorIndexName(std::forward<VectorIndexNameT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::String m_credentialsSecretArn;
-    bool m_credentialsSecretArnHasBeenSet = false;
 
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet = false;
 
-    RedisEnterpriseCloudFieldMapping m_fieldMapping;
-    bool m_fieldMappingHasBeenSet = false;
-
     Aws::String m_vectorIndexName;
     bool m_vectorIndexNameHasBeenSet = false;
+
+    Aws::String m_credentialsSecretArn;
+    bool m_credentialsSecretArnHasBeenSet = false;
+
+    RedisEnterpriseCloudFieldMapping m_fieldMapping;
+    bool m_fieldMappingHasBeenSet = false;
   };
 
 } // namespace Model

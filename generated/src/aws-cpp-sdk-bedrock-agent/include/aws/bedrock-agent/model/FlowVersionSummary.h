@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/bedrock-agent/model/FlowStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -44,6 +44,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier of the flow.</p>
+     */
+    inline const Aws::String& GetId() const { return m_id; }
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    FlowVersionSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the flow that the version belongs to.</p>
      */
     inline const Aws::String& GetArn() const { return m_arn; }
@@ -52,6 +64,16 @@ namespace Model
     void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
     template<typename ArnT = Aws::String>
     FlowVersionSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status of the flow.</p>
+     */
+    inline FlowStatus GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(FlowStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline FlowVersionSummary& WithStatus(FlowStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -68,28 +90,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the flow.</p>
-     */
-    inline const Aws::String& GetId() const { return m_id; }
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    template<typename IdT = Aws::String>
-    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
-    template<typename IdT = Aws::String>
-    FlowVersionSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The status of the flow.</p>
-     */
-    inline FlowStatus GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(FlowStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline FlowVersionSummary& WithStatus(FlowStatus value) { SetStatus(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The version of the flow.</p>
      */
     inline const Aws::String& GetVersion() const { return m_version; }
@@ -101,17 +101,17 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_arn;
-    bool m_arnHasBeenSet = false;
-
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
-
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
+
     FlowStatus m_status{FlowStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_version;
     bool m_versionHasBeenSet = false;

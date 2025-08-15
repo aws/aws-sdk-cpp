@@ -88,6 +88,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The time at which the version was last updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    AgentVersionSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The description of the version of the agent.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
@@ -109,18 +121,6 @@ namespace Model
     template<typename GuardrailConfigurationT = GuardrailConfiguration>
     AgentVersionSummary& WithGuardrailConfiguration(GuardrailConfigurationT&& value) { SetGuardrailConfiguration(std::forward<GuardrailConfigurationT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The time at which the version was last updated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
-    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    template<typename UpdatedAtT = Aws::Utils::DateTime>
-    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
-    template<typename UpdatedAtT = Aws::Utils::DateTime>
-    AgentVersionSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_agentName;
@@ -135,14 +135,14 @@ namespace Model
     Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
+    Aws::Utils::DateTime m_updatedAt{};
+    bool m_updatedAtHasBeenSet = false;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
     GuardrailConfiguration m_guardrailConfiguration;
     bool m_guardrailConfigurationHasBeenSet = false;
-
-    Aws::Utils::DateTime m_updatedAt{};
-    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

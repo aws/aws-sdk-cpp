@@ -25,15 +25,6 @@ ChatPromptTemplateConfiguration::ChatPromptTemplateConfiguration(JsonView jsonVa
 
 ChatPromptTemplateConfiguration& ChatPromptTemplateConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("inputVariables"))
-  {
-    Aws::Utils::Array<JsonView> inputVariablesJsonList = jsonValue.GetArray("inputVariables");
-    for(unsigned inputVariablesIndex = 0; inputVariablesIndex < inputVariablesJsonList.GetLength(); ++inputVariablesIndex)
-    {
-      m_inputVariables.push_back(inputVariablesJsonList[inputVariablesIndex].AsObject());
-    }
-    m_inputVariablesHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("messages"))
   {
     Aws::Utils::Array<JsonView> messagesJsonList = jsonValue.GetArray("messages");
@@ -52,6 +43,15 @@ ChatPromptTemplateConfiguration& ChatPromptTemplateConfiguration::operator =(Jso
     }
     m_systemHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("inputVariables"))
+  {
+    Aws::Utils::Array<JsonView> inputVariablesJsonList = jsonValue.GetArray("inputVariables");
+    for(unsigned inputVariablesIndex = 0; inputVariablesIndex < inputVariablesJsonList.GetLength(); ++inputVariablesIndex)
+    {
+      m_inputVariables.push_back(inputVariablesJsonList[inputVariablesIndex].AsObject());
+    }
+    m_inputVariablesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("toolConfiguration"))
   {
     m_toolConfiguration = jsonValue.GetObject("toolConfiguration");
@@ -63,17 +63,6 @@ ChatPromptTemplateConfiguration& ChatPromptTemplateConfiguration::operator =(Jso
 JsonValue ChatPromptTemplateConfiguration::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_inputVariablesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> inputVariablesJsonList(m_inputVariables.size());
-   for(unsigned inputVariablesIndex = 0; inputVariablesIndex < inputVariablesJsonList.GetLength(); ++inputVariablesIndex)
-   {
-     inputVariablesJsonList[inputVariablesIndex].AsObject(m_inputVariables[inputVariablesIndex].Jsonize());
-   }
-   payload.WithArray("inputVariables", std::move(inputVariablesJsonList));
-
-  }
 
   if(m_messagesHasBeenSet)
   {
@@ -94,6 +83,17 @@ JsonValue ChatPromptTemplateConfiguration::Jsonize() const
      systemJsonList[systemIndex].AsObject(m_system[systemIndex].Jsonize());
    }
    payload.WithArray("system", std::move(systemJsonList));
+
+  }
+
+  if(m_inputVariablesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> inputVariablesJsonList(m_inputVariables.size());
+   for(unsigned inputVariablesIndex = 0; inputVariablesIndex < inputVariablesJsonList.GetLength(); ++inputVariablesIndex)
+   {
+     inputVariablesJsonList[inputVariablesIndex].AsObject(m_inputVariables[inputVariablesIndex].Jsonize());
+   }
+   payload.WithArray("inputVariables", std::move(inputVariablesJsonList));
 
   }
 

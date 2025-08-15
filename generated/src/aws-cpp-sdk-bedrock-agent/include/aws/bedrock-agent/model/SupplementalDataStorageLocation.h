@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/S3Location.h>
 #include <aws/bedrock-agent/model/SupplementalDataStorageLocationType.h>
+#include <aws/bedrock-agent/model/S3Location.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the storage service used for this location.</p>
+     */
+    inline SupplementalDataStorageLocationType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(SupplementalDataStorageLocationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline SupplementalDataStorageLocation& WithType(SupplementalDataStorageLocationType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains information about the Amazon S3 location for the extracted
      * images.</p>
      */
@@ -51,23 +61,13 @@ namespace Model
     template<typename S3LocationT = S3Location>
     SupplementalDataStorageLocation& WithS3Location(S3LocationT&& value) { SetS3Location(std::forward<S3LocationT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Specifies the storage service used for this location.</p>
-     */
-    inline SupplementalDataStorageLocationType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(SupplementalDataStorageLocationType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline SupplementalDataStorageLocation& WithType(SupplementalDataStorageLocationType value) { SetType(value); return *this;}
-    ///@}
   private:
-
-    S3Location m_s3Location;
-    bool m_s3LocationHasBeenSet = false;
 
     SupplementalDataStorageLocationType m_type{SupplementalDataStorageLocationType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    S3Location m_s3Location;
+    bool m_s3LocationHasBeenSet = false;
   };
 
 } // namespace Model

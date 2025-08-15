@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/AgentDescriptor.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/AgentDescriptor.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/bedrock-agent/model/RelayConversationHistory.h>
 #include <utility>
@@ -42,18 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The collaborator's agent descriptor.</p>
-     */
-    inline const AgentDescriptor& GetAgentDescriptor() const { return m_agentDescriptor; }
-    inline bool AgentDescriptorHasBeenSet() const { return m_agentDescriptorHasBeenSet; }
-    template<typename AgentDescriptorT = AgentDescriptor>
-    void SetAgentDescriptor(AgentDescriptorT&& value) { m_agentDescriptorHasBeenSet = true; m_agentDescriptor = std::forward<AgentDescriptorT>(value); }
-    template<typename AgentDescriptorT = AgentDescriptor>
-    AgentCollaborator& WithAgentDescriptor(AgentDescriptorT&& value) { SetAgentDescriptor(std::forward<AgentDescriptorT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The collaborator's agent ID.</p>
      */
     inline const Aws::String& GetAgentId() const { return m_agentId; }
@@ -78,26 +66,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The collaborator's client token.</p>
+     * <p>The collaborator's agent descriptor.</p>
      */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    AgentCollaborator& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The collaborator's instructions.</p>
-     */
-    inline const Aws::String& GetCollaborationInstruction() const { return m_collaborationInstruction; }
-    inline bool CollaborationInstructionHasBeenSet() const { return m_collaborationInstructionHasBeenSet; }
-    template<typename CollaborationInstructionT = Aws::String>
-    void SetCollaborationInstruction(CollaborationInstructionT&& value) { m_collaborationInstructionHasBeenSet = true; m_collaborationInstruction = std::forward<CollaborationInstructionT>(value); }
-    template<typename CollaborationInstructionT = Aws::String>
-    AgentCollaborator& WithCollaborationInstruction(CollaborationInstructionT&& value) { SetCollaborationInstruction(std::forward<CollaborationInstructionT>(value)); return *this;}
+    inline const AgentDescriptor& GetAgentDescriptor() const { return m_agentDescriptor; }
+    inline bool AgentDescriptorHasBeenSet() const { return m_agentDescriptorHasBeenSet; }
+    template<typename AgentDescriptorT = AgentDescriptor>
+    void SetAgentDescriptor(AgentDescriptorT&& value) { m_agentDescriptorHasBeenSet = true; m_agentDescriptor = std::forward<AgentDescriptorT>(value); }
+    template<typename AgentDescriptorT = AgentDescriptor>
+    AgentCollaborator& WithAgentDescriptor(AgentDescriptorT&& value) { SetAgentDescriptor(std::forward<AgentDescriptorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,6 +86,18 @@ namespace Model
     void SetCollaboratorId(CollaboratorIdT&& value) { m_collaboratorIdHasBeenSet = true; m_collaboratorId = std::forward<CollaboratorIdT>(value); }
     template<typename CollaboratorIdT = Aws::String>
     AgentCollaborator& WithCollaboratorId(CollaboratorIdT&& value) { SetCollaboratorId(std::forward<CollaboratorIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The collaborator's instructions.</p>
+     */
+    inline const Aws::String& GetCollaborationInstruction() const { return m_collaborationInstruction; }
+    inline bool CollaborationInstructionHasBeenSet() const { return m_collaborationInstructionHasBeenSet; }
+    template<typename CollaborationInstructionT = Aws::String>
+    void SetCollaborationInstruction(CollaborationInstructionT&& value) { m_collaborationInstructionHasBeenSet = true; m_collaborationInstruction = std::forward<CollaborationInstructionT>(value); }
+    template<typename CollaborationInstructionT = Aws::String>
+    AgentCollaborator& WithCollaborationInstruction(CollaborationInstructionT&& value) { SetCollaborationInstruction(std::forward<CollaborationInstructionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -157,10 +145,19 @@ namespace Model
     inline void SetRelayConversationHistory(RelayConversationHistory value) { m_relayConversationHistoryHasBeenSet = true; m_relayConversationHistory = value; }
     inline AgentCollaborator& WithRelayConversationHistory(RelayConversationHistory value) { SetRelayConversationHistory(value); return *this;}
     ///@}
-  private:
 
-    AgentDescriptor m_agentDescriptor;
-    bool m_agentDescriptorHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The collaborator's client token.</p>
+     */
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    AgentCollaborator& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet = false;
@@ -168,14 +165,14 @@ namespace Model
     Aws::String m_agentVersion;
     bool m_agentVersionHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
-
-    Aws::String m_collaborationInstruction;
-    bool m_collaborationInstructionHasBeenSet = false;
+    AgentDescriptor m_agentDescriptor;
+    bool m_agentDescriptorHasBeenSet = false;
 
     Aws::String m_collaboratorId;
     bool m_collaboratorIdHasBeenSet = false;
+
+    Aws::String m_collaborationInstruction;
+    bool m_collaborationInstructionHasBeenSet = false;
 
     Aws::String m_collaboratorName;
     bool m_collaboratorNameHasBeenSet = false;
@@ -188,6 +185,9 @@ namespace Model
 
     RelayConversationHistory m_relayConversationHistory{RelayConversationHistory::NOT_SET};
     bool m_relayConversationHistoryHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

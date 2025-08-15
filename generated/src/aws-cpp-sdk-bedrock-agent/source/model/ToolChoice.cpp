@@ -25,15 +25,15 @@ ToolChoice::ToolChoice(JsonView jsonValue)
 
 ToolChoice& ToolChoice::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("any"))
-  {
-    m_any = jsonValue.GetObject("any");
-    m_anyHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("auto"))
   {
     m_auto = jsonValue.GetObject("auto");
     m_autoHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("any"))
+  {
+    m_any = jsonValue.GetObject("any");
+    m_anyHasBeenSet = true;
   }
   if(jsonValue.ValueExists("tool"))
   {
@@ -47,15 +47,15 @@ JsonValue ToolChoice::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_anyHasBeenSet)
-  {
-   payload.WithObject("any", m_any.Jsonize());
-
-  }
-
   if(m_autoHasBeenSet)
   {
    payload.WithObject("auto", m_auto.Jsonize());
+
+  }
+
+  if(m_anyHasBeenSet)
+  {
+   payload.WithObject("any", m_any.Jsonize());
 
   }
 

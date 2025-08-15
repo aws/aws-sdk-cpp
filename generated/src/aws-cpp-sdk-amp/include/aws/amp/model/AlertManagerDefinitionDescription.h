@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/Array.h>
 #include <aws/amp/model/AlertManagerDefinitionStatus.h>
+#include <aws/core/utils/Array.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -43,14 +43,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the alert manager definition was created.</p>
+     * <p>A structure that displays the current status of the alert manager
+     * definition..</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    AlertManagerDefinitionDescription& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    inline const AlertManagerDefinitionStatus& GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    template<typename StatusT = AlertManagerDefinitionStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = AlertManagerDefinitionStatus>
+    AlertManagerDefinitionDescription& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,6 +70,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The date and time that the alert manager definition was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    AlertManagerDefinitionDescription& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The date and time that the alert manager definition was most recently
      * changed.</p>
      */
@@ -79,32 +92,19 @@ namespace Model
     template<typename ModifiedAtT = Aws::Utils::DateTime>
     AlertManagerDefinitionDescription& WithModifiedAt(ModifiedAtT&& value) { SetModifiedAt(std::forward<ModifiedAtT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>A structure that displays the current status of the alert manager
-     * definition..</p>
-     */
-    inline const AlertManagerDefinitionStatus& GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    template<typename StatusT = AlertManagerDefinitionStatus>
-    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
-    template<typename StatusT = AlertManagerDefinitionStatus>
-    AlertManagerDefinitionDescription& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
-    ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
+    AlertManagerDefinitionStatus m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_data{};
     bool m_dataHasBeenSet = false;
 
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
+
     Aws::Utils::DateTime m_modifiedAt{};
     bool m_modifiedAtHasBeenSet = false;
-
-    AlertManagerDefinitionStatus m_status;
-    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

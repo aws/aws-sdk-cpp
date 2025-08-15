@@ -34,18 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the data source.</p>
-     */
-    inline const Aws::String& GetDataSourceId() const { return m_dataSourceId; }
-    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
-    template<typename DataSourceIdT = Aws::String>
-    void SetDataSourceId(DataSourceIdT&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::forward<DataSourceIdT>(value); }
-    template<typename DataSourceIdT = Aws::String>
-    GetDataSourceRequest& WithDataSourceId(DataSourceIdT&& value) { SetDataSourceId(std::forward<DataSourceIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique identifier of the knowledge base for the data source.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
@@ -55,13 +43,25 @@ namespace Model
     template<typename KnowledgeBaseIdT = Aws::String>
     GetDataSourceRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The unique identifier of the data source.</p>
+     */
+    inline const Aws::String& GetDataSourceId() const { return m_dataSourceId; }
+    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
+    template<typename DataSourceIdT = Aws::String>
+    void SetDataSourceId(DataSourceIdT&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::forward<DataSourceIdT>(value); }
+    template<typename DataSourceIdT = Aws::String>
+    GetDataSourceRequest& WithDataSourceId(DataSourceIdT&& value) { SetDataSourceId(std::forward<DataSourceIdT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
+
+    Aws::String m_dataSourceId;
+    bool m_dataSourceIdHasBeenSet = false;
   };
 
 } // namespace Model

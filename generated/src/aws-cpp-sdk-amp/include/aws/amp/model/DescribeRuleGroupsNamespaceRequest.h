@@ -38,18 +38,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the rule groups namespace that you want information for.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    DescribeRuleGroupsNamespaceRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID of the workspace containing the rule groups namespace.</p>
      */
     inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
@@ -59,13 +47,25 @@ namespace Model
     template<typename WorkspaceIdT = Aws::String>
     DescribeRuleGroupsNamespaceRequest& WithWorkspaceId(WorkspaceIdT&& value) { SetWorkspaceId(std::forward<WorkspaceIdT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The name of the rule groups namespace that you want information for.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DescribeRuleGroupsNamespaceRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_workspaceId;
     bool m_workspaceIdHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

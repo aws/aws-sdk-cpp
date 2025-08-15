@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the column for which the other fields in this object apply.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    QueryGenerationColumn& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A description of the column that helps the query engine understand the
      * contents of the column.</p>
      */
@@ -63,28 +75,16 @@ namespace Model
     inline void SetInclusion(IncludeExclude value) { m_inclusionHasBeenSet = true; m_inclusion = value; }
     inline QueryGenerationColumn& WithInclusion(IncludeExclude value) { SetInclusion(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The name of the column for which the other fields in this object apply.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    QueryGenerationColumn& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
     IncludeExclude m_inclusion{IncludeExclude::NOT_SET};
     bool m_inclusionHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

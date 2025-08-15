@@ -16,15 +16,15 @@ Aws::String AssociateAgentKnowledgeBaseRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
-
   if(m_knowledgeBaseIdHasBeenSet)
   {
    payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
 
   }
 

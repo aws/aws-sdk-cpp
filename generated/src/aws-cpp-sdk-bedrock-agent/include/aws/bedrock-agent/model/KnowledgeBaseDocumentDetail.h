@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/bedrock-agent/model/DocumentIdentifier.h>
 #include <aws/bedrock-agent/model/DocumentStatus.h>
+#include <aws/bedrock-agent/model/DocumentIdentifier.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -43,31 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the data source connected to the knowledge base that the
-     * document was ingested into or deleted from.</p>
-     */
-    inline const Aws::String& GetDataSourceId() const { return m_dataSourceId; }
-    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
-    template<typename DataSourceIdT = Aws::String>
-    void SetDataSourceId(DataSourceIdT&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::forward<DataSourceIdT>(value); }
-    template<typename DataSourceIdT = Aws::String>
-    KnowledgeBaseDocumentDetail& WithDataSourceId(DataSourceIdT&& value) { SetDataSourceId(std::forward<DataSourceIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Contains information that identifies the document.</p>
-     */
-    inline const DocumentIdentifier& GetIdentifier() const { return m_identifier; }
-    inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    template<typename IdentifierT = DocumentIdentifier>
-    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
-    template<typename IdentifierT = DocumentIdentifier>
-    KnowledgeBaseDocumentDetail& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the knowledge base that the document was ingested into or
      * deleted from.</p>
      */
@@ -77,6 +52,19 @@ namespace Model
     void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
     template<typename KnowledgeBaseIdT = Aws::String>
     KnowledgeBaseDocumentDetail& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The identifier of the data source connected to the knowledge base that the
+     * document was ingested into or deleted from.</p>
+     */
+    inline const Aws::String& GetDataSourceId() const { return m_dataSourceId; }
+    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
+    template<typename DataSourceIdT = Aws::String>
+    void SetDataSourceId(DataSourceIdT&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::forward<DataSourceIdT>(value); }
+    template<typename DataSourceIdT = Aws::String>
+    KnowledgeBaseDocumentDetail& WithDataSourceId(DataSourceIdT&& value) { SetDataSourceId(std::forward<DataSourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,6 +88,18 @@ namespace Model
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
     inline void SetStatus(DocumentStatus value) { m_statusHasBeenSet = true; m_status = value; }
     inline KnowledgeBaseDocumentDetail& WithStatus(DocumentStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains information that identifies the document.</p>
+     */
+    inline const DocumentIdentifier& GetIdentifier() const { return m_identifier; }
+    inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
+    template<typename IdentifierT = DocumentIdentifier>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = DocumentIdentifier>
+    KnowledgeBaseDocumentDetail& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,17 +128,17 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet = false;
-
-    DocumentIdentifier m_identifier;
-    bool m_identifierHasBeenSet = false;
-
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
 
+    Aws::String m_dataSourceId;
+    bool m_dataSourceIdHasBeenSet = false;
+
     DocumentStatus m_status{DocumentStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    DocumentIdentifier m_identifier;
+    bool m_identifierHasBeenSet = false;
 
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet = false;

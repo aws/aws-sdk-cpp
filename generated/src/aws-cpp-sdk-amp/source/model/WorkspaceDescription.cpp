@@ -25,6 +25,11 @@ WorkspaceDescription::WorkspaceDescription(JsonView jsonValue)
 
 WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("workspaceId"))
+  {
+    m_workspaceId = jsonValue.GetString("workspaceId");
+    m_workspaceIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("alias"))
   {
     m_alias = jsonValue.GetString("alias");
@@ -35,25 +40,20 @@ WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("status"))
   {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("kmsKeyArn"))
-  {
-    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-    m_kmsKeyArnHasBeenSet = true;
+    m_status = jsonValue.GetObject("status");
+    m_statusHasBeenSet = true;
   }
   if(jsonValue.ValueExists("prometheusEndpoint"))
   {
     m_prometheusEndpoint = jsonValue.GetString("prometheusEndpoint");
     m_prometheusEndpointHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_status = jsonValue.GetObject("status");
-    m_statusHasBeenSet = true;
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("tags"))
   {
@@ -64,10 +64,10 @@ WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("workspaceId"))
+  if(jsonValue.ValueExists("kmsKeyArn"))
   {
-    m_workspaceId = jsonValue.GetString("workspaceId");
-    m_workspaceIdHasBeenSet = true;
+    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
+    m_kmsKeyArnHasBeenSet = true;
   }
   return *this;
 }
@@ -75,6 +75,12 @@ WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
 JsonValue WorkspaceDescription::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_workspaceIdHasBeenSet)
+  {
+   payload.WithString("workspaceId", m_workspaceId);
+
+  }
 
   if(m_aliasHasBeenSet)
   {
@@ -88,14 +94,9 @@ JsonValue WorkspaceDescription::Jsonize() const
 
   }
 
-  if(m_createdAtHasBeenSet)
+  if(m_statusHasBeenSet)
   {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
-  }
-
-  if(m_kmsKeyArnHasBeenSet)
-  {
-   payload.WithString("kmsKeyArn", m_kmsKeyArn);
+   payload.WithObject("status", m_status.Jsonize());
 
   }
 
@@ -105,10 +106,9 @@ JsonValue WorkspaceDescription::Jsonize() const
 
   }
 
-  if(m_statusHasBeenSet)
+  if(m_createdAtHasBeenSet)
   {
-   payload.WithObject("status", m_status.Jsonize());
-
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   if(m_tagsHasBeenSet)
@@ -122,9 +122,9 @@ JsonValue WorkspaceDescription::Jsonize() const
 
   }
 
-  if(m_workspaceIdHasBeenSet)
+  if(m_kmsKeyArnHasBeenSet)
   {
-   payload.WithString("workspaceId", m_workspaceId);
+   payload.WithString("kmsKeyArn", m_kmsKeyArn);
 
   }
 

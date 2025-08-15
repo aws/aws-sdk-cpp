@@ -25,6 +25,11 @@ LimitsPerLabelSet::LimitsPerLabelSet(JsonView jsonValue)
 
 LimitsPerLabelSet& LimitsPerLabelSet::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("limits"))
+  {
+    m_limits = jsonValue.GetObject("limits");
+    m_limitsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("labelSet"))
   {
     Aws::Map<Aws::String, JsonView> labelSetJsonMap = jsonValue.GetObject("labelSet").GetAllObjects();
@@ -34,17 +39,18 @@ LimitsPerLabelSet& LimitsPerLabelSet::operator =(JsonView jsonValue)
     }
     m_labelSetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("limits"))
-  {
-    m_limits = jsonValue.GetObject("limits");
-    m_limitsHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue LimitsPerLabelSet::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_limitsHasBeenSet)
+  {
+   payload.WithObject("limits", m_limits.Jsonize());
+
+  }
 
   if(m_labelSetHasBeenSet)
   {
@@ -54,12 +60,6 @@ JsonValue LimitsPerLabelSet::Jsonize() const
      labelSetJsonMap.WithString(labelSetItem.first, labelSetItem.second);
    }
    payload.WithObject("labelSet", std::move(labelSetJsonMap));
-
-  }
-
-  if(m_limitsHasBeenSet)
-  {
-   payload.WithObject("limits", m_limits.Jsonize());
 
   }
 

@@ -6,14 +6,14 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/BedrockAgentRequest.h>
-#include <aws/bedrock-agent/model/AgentCollaboration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/OrchestrationType.h>
 #include <aws/bedrock-agent/model/CustomOrchestration.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/bedrock-agent/model/PromptOverrideConfiguration.h>
 #include <aws/bedrock-agent/model/GuardrailConfiguration.h>
 #include <aws/bedrock-agent/model/MemoryConfiguration.h>
-#include <aws/bedrock-agent/model/OrchestrationType.h>
-#include <aws/bedrock-agent/model/PromptOverrideConfiguration.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/bedrock-agent/model/AgentCollaboration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -42,16 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The agent's collaboration role.</p>
-     */
-    inline AgentCollaboration GetAgentCollaboration() const { return m_agentCollaboration; }
-    inline bool AgentCollaborationHasBeenSet() const { return m_agentCollaborationHasBeenSet; }
-    inline void SetAgentCollaboration(AgentCollaboration value) { m_agentCollaborationHasBeenSet = true; m_agentCollaboration = value; }
-    inline CreateAgentRequest& WithAgentCollaboration(AgentCollaboration value) { SetAgentCollaboration(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A name for the agent that you create.</p>
      */
     inline const Aws::String& GetAgentName() const { return m_agentName; }
@@ -60,19 +50,6 @@ namespace Model
     void SetAgentName(AgentNameT&& value) { m_agentNameHasBeenSet = true; m_agentName = std::forward<AgentNameT>(value); }
     template<typename AgentNameT = Aws::String>
     CreateAgentRequest& WithAgentName(AgentNameT&& value) { SetAgentName(std::forward<AgentNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
-     * operations on the agent.</p>
-     */
-    inline const Aws::String& GetAgentResourceRoleArn() const { return m_agentResourceRoleArn; }
-    inline bool AgentResourceRoleArnHasBeenSet() const { return m_agentResourceRoleArnHasBeenSet; }
-    template<typename AgentResourceRoleArnT = Aws::String>
-    void SetAgentResourceRoleArn(AgentResourceRoleArnT&& value) { m_agentResourceRoleArnHasBeenSet = true; m_agentResourceRoleArn = std::forward<AgentResourceRoleArnT>(value); }
-    template<typename AgentResourceRoleArnT = Aws::String>
-    CreateAgentRequest& WithAgentResourceRoleArn(AgentResourceRoleArnT&& value) { SetAgentResourceRoleArn(std::forward<AgentResourceRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,39 +70,15 @@ namespace Model
 
     ///@{
     /**
-     * <p> Contains details of the custom orchestration configured for the agent. </p>
+     * <p>Instructions that tell the agent what it should do and how it should interact
+     * with users.</p>
      */
-    inline const CustomOrchestration& GetCustomOrchestration() const { return m_customOrchestration; }
-    inline bool CustomOrchestrationHasBeenSet() const { return m_customOrchestrationHasBeenSet; }
-    template<typename CustomOrchestrationT = CustomOrchestration>
-    void SetCustomOrchestration(CustomOrchestrationT&& value) { m_customOrchestrationHasBeenSet = true; m_customOrchestration = std::forward<CustomOrchestrationT>(value); }
-    template<typename CustomOrchestrationT = CustomOrchestration>
-    CreateAgentRequest& WithCustomOrchestration(CustomOrchestrationT&& value) { SetCustomOrchestration(std::forward<CustomOrchestrationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the
-     * agent.</p>
-     */
-    inline const Aws::String& GetCustomerEncryptionKeyArn() const { return m_customerEncryptionKeyArn; }
-    inline bool CustomerEncryptionKeyArnHasBeenSet() const { return m_customerEncryptionKeyArnHasBeenSet; }
-    template<typename CustomerEncryptionKeyArnT = Aws::String>
-    void SetCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn = std::forward<CustomerEncryptionKeyArnT>(value); }
-    template<typename CustomerEncryptionKeyArnT = Aws::String>
-    CreateAgentRequest& WithCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) { SetCustomerEncryptionKeyArn(std::forward<CustomerEncryptionKeyArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A description of the agent.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    CreateAgentRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    inline const Aws::String& GetInstruction() const { return m_instruction; }
+    inline bool InstructionHasBeenSet() const { return m_instructionHasBeenSet; }
+    template<typename InstructionT = Aws::String>
+    void SetInstruction(InstructionT&& value) { m_instructionHasBeenSet = true; m_instruction = std::forward<InstructionT>(value); }
+    template<typename InstructionT = Aws::String>
+    CreateAgentRequest& WithInstruction(InstructionT&& value) { SetInstruction(std::forward<InstructionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,15 +120,37 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique Guardrail configuration assigned to the agent when it is
-     * created.</p>
+     * <p>A description of the agent.</p>
      */
-    inline const GuardrailConfiguration& GetGuardrailConfiguration() const { return m_guardrailConfiguration; }
-    inline bool GuardrailConfigurationHasBeenSet() const { return m_guardrailConfigurationHasBeenSet; }
-    template<typename GuardrailConfigurationT = GuardrailConfiguration>
-    void SetGuardrailConfiguration(GuardrailConfigurationT&& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = std::forward<GuardrailConfigurationT>(value); }
-    template<typename GuardrailConfigurationT = GuardrailConfiguration>
-    CreateAgentRequest& WithGuardrailConfiguration(GuardrailConfigurationT&& value) { SetGuardrailConfiguration(std::forward<GuardrailConfigurationT>(value)); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateAgentRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> Specifies the type of orchestration strategy for the agent. This is set to
+     * <code>DEFAULT</code> orchestration type, by default. </p>
+     */
+    inline OrchestrationType GetOrchestrationType() const { return m_orchestrationType; }
+    inline bool OrchestrationTypeHasBeenSet() const { return m_orchestrationTypeHasBeenSet; }
+    inline void SetOrchestrationType(OrchestrationType value) { m_orchestrationTypeHasBeenSet = true; m_orchestrationType = value; }
+    inline CreateAgentRequest& WithOrchestrationType(OrchestrationType value) { SetOrchestrationType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> Contains details of the custom orchestration configured for the agent. </p>
+     */
+    inline const CustomOrchestration& GetCustomOrchestration() const { return m_customOrchestration; }
+    inline bool CustomOrchestrationHasBeenSet() const { return m_customOrchestrationHasBeenSet; }
+    template<typename CustomOrchestrationT = CustomOrchestration>
+    void SetCustomOrchestration(CustomOrchestrationT&& value) { m_customOrchestrationHasBeenSet = true; m_customOrchestration = std::forward<CustomOrchestrationT>(value); }
+    template<typename CustomOrchestrationT = CustomOrchestration>
+    CreateAgentRequest& WithCustomOrchestration(CustomOrchestrationT&& value) { SetCustomOrchestration(std::forward<CustomOrchestrationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -194,38 +169,44 @@ namespace Model
 
     ///@{
     /**
-     * <p>Instructions that tell the agent what it should do and how it should interact
-     * with users.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the agent.</p>
      */
-    inline const Aws::String& GetInstruction() const { return m_instruction; }
-    inline bool InstructionHasBeenSet() const { return m_instructionHasBeenSet; }
-    template<typename InstructionT = Aws::String>
-    void SetInstruction(InstructionT&& value) { m_instructionHasBeenSet = true; m_instruction = std::forward<InstructionT>(value); }
-    template<typename InstructionT = Aws::String>
-    CreateAgentRequest& WithInstruction(InstructionT&& value) { SetInstruction(std::forward<InstructionT>(value)); return *this;}
+    inline const Aws::String& GetAgentResourceRoleArn() const { return m_agentResourceRoleArn; }
+    inline bool AgentResourceRoleArnHasBeenSet() const { return m_agentResourceRoleArnHasBeenSet; }
+    template<typename AgentResourceRoleArnT = Aws::String>
+    void SetAgentResourceRoleArn(AgentResourceRoleArnT&& value) { m_agentResourceRoleArnHasBeenSet = true; m_agentResourceRoleArn = std::forward<AgentResourceRoleArnT>(value); }
+    template<typename AgentResourceRoleArnT = Aws::String>
+    CreateAgentRequest& WithAgentResourceRoleArn(AgentResourceRoleArnT&& value) { SetAgentResourceRoleArn(std::forward<AgentResourceRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p> Contains the details of the memory configured for the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the
+     * agent.</p>
      */
-    inline const MemoryConfiguration& GetMemoryConfiguration() const { return m_memoryConfiguration; }
-    inline bool MemoryConfigurationHasBeenSet() const { return m_memoryConfigurationHasBeenSet; }
-    template<typename MemoryConfigurationT = MemoryConfiguration>
-    void SetMemoryConfiguration(MemoryConfigurationT&& value) { m_memoryConfigurationHasBeenSet = true; m_memoryConfiguration = std::forward<MemoryConfigurationT>(value); }
-    template<typename MemoryConfigurationT = MemoryConfiguration>
-    CreateAgentRequest& WithMemoryConfiguration(MemoryConfigurationT&& value) { SetMemoryConfiguration(std::forward<MemoryConfigurationT>(value)); return *this;}
+    inline const Aws::String& GetCustomerEncryptionKeyArn() const { return m_customerEncryptionKeyArn; }
+    inline bool CustomerEncryptionKeyArnHasBeenSet() const { return m_customerEncryptionKeyArnHasBeenSet; }
+    template<typename CustomerEncryptionKeyArnT = Aws::String>
+    void SetCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn = std::forward<CustomerEncryptionKeyArnT>(value); }
+    template<typename CustomerEncryptionKeyArnT = Aws::String>
+    CreateAgentRequest& WithCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) { SetCustomerEncryptionKeyArn(std::forward<CustomerEncryptionKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p> Specifies the type of orchestration strategy for the agent. This is set to
-     * <code>DEFAULT</code> orchestration type, by default. </p>
+     * <p>Any tags that you want to attach to the agent.</p>
      */
-    inline OrchestrationType GetOrchestrationType() const { return m_orchestrationType; }
-    inline bool OrchestrationTypeHasBeenSet() const { return m_orchestrationTypeHasBeenSet; }
-    inline void SetOrchestrationType(OrchestrationType value) { m_orchestrationTypeHasBeenSet = true; m_orchestrationType = value; }
-    inline CreateAgentRequest& WithOrchestrationType(OrchestrationType value) { SetOrchestrationType(value); return *this;}
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateAgentRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateAgentRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -245,65 +226,84 @@ namespace Model
 
     ///@{
     /**
-     * <p>Any tags that you want to attach to the agent.</p>
+     * <p>The unique Guardrail configuration assigned to the agent when it is
+     * created.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
-    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
-    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
-    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
-    CreateAgentRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
-    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
-    CreateAgentRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
-      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
-    }
+    inline const GuardrailConfiguration& GetGuardrailConfiguration() const { return m_guardrailConfiguration; }
+    inline bool GuardrailConfigurationHasBeenSet() const { return m_guardrailConfigurationHasBeenSet; }
+    template<typename GuardrailConfigurationT = GuardrailConfiguration>
+    void SetGuardrailConfiguration(GuardrailConfigurationT&& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = std::forward<GuardrailConfigurationT>(value); }
+    template<typename GuardrailConfigurationT = GuardrailConfiguration>
+    CreateAgentRequest& WithGuardrailConfiguration(GuardrailConfigurationT&& value) { SetGuardrailConfiguration(std::forward<GuardrailConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> Contains the details of the memory configured for the agent.</p>
+     */
+    inline const MemoryConfiguration& GetMemoryConfiguration() const { return m_memoryConfiguration; }
+    inline bool MemoryConfigurationHasBeenSet() const { return m_memoryConfigurationHasBeenSet; }
+    template<typename MemoryConfigurationT = MemoryConfiguration>
+    void SetMemoryConfiguration(MemoryConfigurationT&& value) { m_memoryConfigurationHasBeenSet = true; m_memoryConfiguration = std::forward<MemoryConfigurationT>(value); }
+    template<typename MemoryConfigurationT = MemoryConfiguration>
+    CreateAgentRequest& WithMemoryConfiguration(MemoryConfigurationT&& value) { SetMemoryConfiguration(std::forward<MemoryConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The agent's collaboration role.</p>
+     */
+    inline AgentCollaboration GetAgentCollaboration() const { return m_agentCollaboration; }
+    inline bool AgentCollaborationHasBeenSet() const { return m_agentCollaborationHasBeenSet; }
+    inline void SetAgentCollaboration(AgentCollaboration value) { m_agentCollaborationHasBeenSet = true; m_agentCollaboration = value; }
+    inline CreateAgentRequest& WithAgentCollaboration(AgentCollaboration value) { SetAgentCollaboration(value); return *this;}
     ///@}
   private:
-
-    AgentCollaboration m_agentCollaboration{AgentCollaboration::NOT_SET};
-    bool m_agentCollaborationHasBeenSet = false;
 
     Aws::String m_agentName;
     bool m_agentNameHasBeenSet = false;
 
-    Aws::String m_agentResourceRoleArn;
-    bool m_agentResourceRoleArnHasBeenSet = false;
-
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
-
-    CustomOrchestration m_customOrchestration;
-    bool m_customOrchestrationHasBeenSet = false;
-
-    Aws::String m_customerEncryptionKeyArn;
-    bool m_customerEncryptionKeyArnHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    Aws::String m_foundationModel;
-    bool m_foundationModelHasBeenSet = false;
-
-    GuardrailConfiguration m_guardrailConfiguration;
-    bool m_guardrailConfigurationHasBeenSet = false;
-
-    int m_idleSessionTTLInSeconds{0};
-    bool m_idleSessionTTLInSecondsHasBeenSet = false;
 
     Aws::String m_instruction;
     bool m_instructionHasBeenSet = false;
 
-    MemoryConfiguration m_memoryConfiguration;
-    bool m_memoryConfigurationHasBeenSet = false;
+    Aws::String m_foundationModel;
+    bool m_foundationModelHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     OrchestrationType m_orchestrationType{OrchestrationType::NOT_SET};
     bool m_orchestrationTypeHasBeenSet = false;
 
-    PromptOverrideConfiguration m_promptOverrideConfiguration;
-    bool m_promptOverrideConfigurationHasBeenSet = false;
+    CustomOrchestration m_customOrchestration;
+    bool m_customOrchestrationHasBeenSet = false;
+
+    int m_idleSessionTTLInSeconds{0};
+    bool m_idleSessionTTLInSecondsHasBeenSet = false;
+
+    Aws::String m_agentResourceRoleArn;
+    bool m_agentResourceRoleArnHasBeenSet = false;
+
+    Aws::String m_customerEncryptionKeyArn;
+    bool m_customerEncryptionKeyArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    PromptOverrideConfiguration m_promptOverrideConfiguration;
+    bool m_promptOverrideConfigurationHasBeenSet = false;
+
+    GuardrailConfiguration m_guardrailConfiguration;
+    bool m_guardrailConfigurationHasBeenSet = false;
+
+    MemoryConfiguration m_memoryConfiguration;
+    bool m_memoryConfigurationHasBeenSet = false;
+
+    AgentCollaboration m_agentCollaboration{AgentCollaboration::NOT_SET};
+    bool m_agentCollaborationHasBeenSet = false;
   };
 
 } // namespace Model

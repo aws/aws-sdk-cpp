@@ -42,18 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of the knowledge base associated with an agent.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    AgentKnowledgeBaseSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique identifier of the knowledge base associated with an agent.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
@@ -62,6 +50,18 @@ namespace Model
     void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
     template<typename KnowledgeBaseIdT = Aws::String>
     AgentKnowledgeBaseSummary& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The description of the knowledge base associated with an agent.</p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    AgentKnowledgeBaseSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,11 +90,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     KnowledgeBaseState m_knowledgeBaseState{KnowledgeBaseState::NOT_SET};
     bool m_knowledgeBaseStateHasBeenSet = false;

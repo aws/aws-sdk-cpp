@@ -25,25 +25,29 @@ FlowAliasSummary::FlowAliasSummary(JsonView jsonValue)
 
 FlowAliasSummary& FlowAliasSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("arn"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("concurrencyConfiguration"))
-  {
-    m_concurrencyConfiguration = jsonValue.GetObject("concurrencyConfiguration");
-    m_concurrencyConfigurationHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("routingConfiguration"))
+  {
+    Aws::Utils::Array<JsonView> routingConfigurationJsonList = jsonValue.GetArray("routingConfiguration");
+    for(unsigned routingConfigurationIndex = 0; routingConfigurationIndex < routingConfigurationJsonList.GetLength(); ++routingConfigurationIndex)
+    {
+      m_routingConfiguration.push_back(routingConfigurationJsonList[routingConfigurationIndex].AsObject());
+    }
+    m_routingConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("concurrencyConfiguration"))
+  {
+    m_concurrencyConfiguration = jsonValue.GetObject("concurrencyConfiguration");
+    m_concurrencyConfigurationHasBeenSet = true;
   }
   if(jsonValue.ValueExists("flowId"))
   {
@@ -55,19 +59,15 @@ FlowAliasSummary& FlowAliasSummary::operator =(JsonView jsonValue)
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("arn"))
   {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("routingConfiguration"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    Aws::Utils::Array<JsonView> routingConfigurationJsonList = jsonValue.GetArray("routingConfiguration");
-    for(unsigned routingConfigurationIndex = 0; routingConfigurationIndex < routingConfigurationJsonList.GetLength(); ++routingConfigurationIndex)
-    {
-      m_routingConfiguration.push_back(routingConfigurationJsonList[routingConfigurationIndex].AsObject());
-    }
-    m_routingConfigurationHasBeenSet = true;
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("updatedAt"))
   {
@@ -81,26 +81,32 @@ JsonValue FlowAliasSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("arn", m_arn);
+   payload.WithString("name", m_name);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
+  }
+
+  if(m_routingConfigurationHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> routingConfigurationJsonList(m_routingConfiguration.size());
+   for(unsigned routingConfigurationIndex = 0; routingConfigurationIndex < routingConfigurationJsonList.GetLength(); ++routingConfigurationIndex)
+   {
+     routingConfigurationJsonList[routingConfigurationIndex].AsObject(m_routingConfiguration[routingConfigurationIndex].Jsonize());
+   }
+   payload.WithArray("routingConfiguration", std::move(routingConfigurationJsonList));
 
   }
 
   if(m_concurrencyConfigurationHasBeenSet)
   {
    payload.WithObject("concurrencyConfiguration", m_concurrencyConfiguration.Jsonize());
-
-  }
-
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
 
   }
 
@@ -116,21 +122,15 @@ JsonValue FlowAliasSummary::Jsonize() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_arnHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithString("arn", m_arn);
 
   }
 
-  if(m_routingConfigurationHasBeenSet)
+  if(m_createdAtHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> routingConfigurationJsonList(m_routingConfiguration.size());
-   for(unsigned routingConfigurationIndex = 0; routingConfigurationIndex < routingConfigurationJsonList.GetLength(); ++routingConfigurationIndex)
-   {
-     routingConfigurationJsonList[routingConfigurationIndex].AsObject(m_routingConfiguration[routingConfigurationIndex].Jsonize());
-   }
-   payload.WithArray("routingConfiguration", std::move(routingConfigurationJsonList));
-
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_updatedAtHasBeenSet)

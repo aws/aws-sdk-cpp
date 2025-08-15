@@ -25,15 +25,6 @@ QueryGenerationContext::QueryGenerationContext(JsonView jsonValue)
 
 QueryGenerationContext& QueryGenerationContext::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("curatedQueries"))
-  {
-    Aws::Utils::Array<JsonView> curatedQueriesJsonList = jsonValue.GetArray("curatedQueries");
-    for(unsigned curatedQueriesIndex = 0; curatedQueriesIndex < curatedQueriesJsonList.GetLength(); ++curatedQueriesIndex)
-    {
-      m_curatedQueries.push_back(curatedQueriesJsonList[curatedQueriesIndex].AsObject());
-    }
-    m_curatedQueriesHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("tables"))
   {
     Aws::Utils::Array<JsonView> tablesJsonList = jsonValue.GetArray("tables");
@@ -43,23 +34,21 @@ QueryGenerationContext& QueryGenerationContext::operator =(JsonView jsonValue)
     }
     m_tablesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("curatedQueries"))
+  {
+    Aws::Utils::Array<JsonView> curatedQueriesJsonList = jsonValue.GetArray("curatedQueries");
+    for(unsigned curatedQueriesIndex = 0; curatedQueriesIndex < curatedQueriesJsonList.GetLength(); ++curatedQueriesIndex)
+    {
+      m_curatedQueries.push_back(curatedQueriesJsonList[curatedQueriesIndex].AsObject());
+    }
+    m_curatedQueriesHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue QueryGenerationContext::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_curatedQueriesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> curatedQueriesJsonList(m_curatedQueries.size());
-   for(unsigned curatedQueriesIndex = 0; curatedQueriesIndex < curatedQueriesJsonList.GetLength(); ++curatedQueriesIndex)
-   {
-     curatedQueriesJsonList[curatedQueriesIndex].AsObject(m_curatedQueries[curatedQueriesIndex].Jsonize());
-   }
-   payload.WithArray("curatedQueries", std::move(curatedQueriesJsonList));
-
-  }
 
   if(m_tablesHasBeenSet)
   {
@@ -69,6 +58,17 @@ JsonValue QueryGenerationContext::Jsonize() const
      tablesJsonList[tablesIndex].AsObject(m_tables[tablesIndex].Jsonize());
    }
    payload.WithArray("tables", std::move(tablesJsonList));
+
+  }
+
+  if(m_curatedQueriesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> curatedQueriesJsonList(m_curatedQueries.size());
+   for(unsigned curatedQueriesIndex = 0; curatedQueriesIndex < curatedQueriesJsonList.GetLength(); ++curatedQueriesIndex)
+   {
+     curatedQueriesJsonList[curatedQueriesIndex].AsObject(m_curatedQueries[curatedQueriesIndex].Jsonize());
+   }
+   payload.WithArray("curatedQueries", std::move(curatedQueriesJsonList));
 
   }
 

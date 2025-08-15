@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
+#include <aws/bedrock-agent/model/InlineContentType.h>
 #include <aws/bedrock-agent/model/ByteContentDoc.h>
 #include <aws/bedrock-agent/model/TextContentDoc.h>
-#include <aws/bedrock-agent/model/InlineContentType.h>
 #include <utility>
 
 namespace Aws
@@ -43,6 +43,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of inline content to define.</p>
+     */
+    inline InlineContentType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(InlineContentType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline InlineContent& WithType(InlineContentType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains information about content defined inline in bytes.</p>
      */
     inline const ByteContentDoc& GetByteContent() const { return m_byteContent; }
@@ -64,26 +74,16 @@ namespace Model
     template<typename TextContentT = TextContentDoc>
     InlineContent& WithTextContent(TextContentT&& value) { SetTextContent(std::forward<TextContentT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of inline content to define.</p>
-     */
-    inline InlineContentType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(InlineContentType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline InlineContent& WithType(InlineContentType value) { SetType(value); return *this;}
-    ///@}
   private:
+
+    InlineContentType m_type{InlineContentType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     ByteContentDoc m_byteContent;
     bool m_byteContentHasBeenSet = false;
 
     TextContentDoc m_textContent;
     bool m_textContentHasBeenSet = false;
-
-    InlineContentType m_type{InlineContentType::NOT_SET};
-    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

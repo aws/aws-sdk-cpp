@@ -25,15 +25,15 @@ FlowCondition::FlowCondition(JsonView jsonValue)
 
 FlowCondition& FlowCondition::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("expression"))
-  {
-    m_expression = jsonValue.GetString("expression");
-    m_expressionHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("expression"))
+  {
+    m_expression = jsonValue.GetString("expression");
+    m_expressionHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue FlowCondition::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_expressionHasBeenSet)
-  {
-   payload.WithString("expression", m_expression);
-
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_expressionHasBeenSet)
+  {
+   payload.WithString("expression", m_expression);
 
   }
 

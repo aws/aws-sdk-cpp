@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/amp/model/WorkspaceSummary.h>
 #include <utility>
 
@@ -42,19 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A token indicating that there are more results to retrieve. You can use this
-     * token as part of your next <code>ListWorkspaces</code> request to retrieve those
-     * results.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListWorkspacesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>An array of <code>WorkspaceSummary</code> structures containing information
      * about the workspaces requested.</p>
      */
@@ -68,6 +55,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>A token indicating that there are more results to retrieve. You can use this
+     * token as part of your next <code>ListWorkspaces</code> request to retrieve those
+     * results.</p>
+     */
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListWorkspacesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -77,11 +77,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
     Aws::Vector<WorkspaceSummary> m_workspaces;
     bool m_workspacesHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

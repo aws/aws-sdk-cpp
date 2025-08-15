@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/bedrock-agent/model/ParsingModality.h>
 #include <aws/bedrock-agent/model/ParsingPrompt.h>
+#include <aws/bedrock-agent/model/ParsingModality.h>
 #include <utility>
 
 namespace Aws
@@ -54,17 +54,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies whether to enable parsing of multimodal data, including both text
-     * and/or images.</p>
-     */
-    inline ParsingModality GetParsingModality() const { return m_parsingModality; }
-    inline bool ParsingModalityHasBeenSet() const { return m_parsingModalityHasBeenSet; }
-    inline void SetParsingModality(ParsingModality value) { m_parsingModalityHasBeenSet = true; m_parsingModality = value; }
-    inline BedrockFoundationModelConfiguration& WithParsingModality(ParsingModality value) { SetParsingModality(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Instructions for interpreting the contents of a document.</p>
      */
     inline const ParsingPrompt& GetParsingPrompt() const { return m_parsingPrompt; }
@@ -74,16 +63,27 @@ namespace Model
     template<typename ParsingPromptT = ParsingPrompt>
     BedrockFoundationModelConfiguration& WithParsingPrompt(ParsingPromptT&& value) { SetParsingPrompt(std::forward<ParsingPromptT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to enable parsing of multimodal data, including both text
+     * and/or images.</p>
+     */
+    inline ParsingModality GetParsingModality() const { return m_parsingModality; }
+    inline bool ParsingModalityHasBeenSet() const { return m_parsingModalityHasBeenSet; }
+    inline void SetParsingModality(ParsingModality value) { m_parsingModalityHasBeenSet = true; m_parsingModality = value; }
+    inline BedrockFoundationModelConfiguration& WithParsingModality(ParsingModality value) { SetParsingModality(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_modelArn;
     bool m_modelArnHasBeenSet = false;
 
-    ParsingModality m_parsingModality{ParsingModality::NOT_SET};
-    bool m_parsingModalityHasBeenSet = false;
-
     ParsingPrompt m_parsingPrompt;
     bool m_parsingPromptHasBeenSet = false;
+
+    ParsingModality m_parsingModality{ParsingModality::NOT_SET};
+    bool m_parsingModalityHasBeenSet = false;
   };
 
 } // namespace Model

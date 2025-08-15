@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/FlowStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/bedrock-agent/model/FlowDefinition.h>
-#include <aws/bedrock-agent/model/FlowStatus.h>
 #include <utility>
 
 namespace Aws
@@ -37,46 +37,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow.</p>
+     * <p>The name of the version.</p>
      */
-    inline const Aws::String& GetArn() const { return m_arn; }
-    template<typename ArnT = Aws::String>
-    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
-    template<typename ArnT = Aws::String>
-    CreateFlowVersionResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The time at which the flow was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    CreateFlowVersionResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The KMS key that the flow is encrypted with.</p>
-     */
-    inline const Aws::String& GetCustomerEncryptionKeyArn() const { return m_customerEncryptionKeyArn; }
-    template<typename CustomerEncryptionKeyArnT = Aws::String>
-    void SetCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn = std::forward<CustomerEncryptionKeyArnT>(value); }
-    template<typename CustomerEncryptionKeyArnT = Aws::String>
-    CreateFlowVersionResult& WithCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) { SetCustomerEncryptionKeyArn(std::forward<CustomerEncryptionKeyArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A definition of the nodes and connections in the flow.</p>
-     */
-    inline const FlowDefinition& GetDefinition() const { return m_definition; }
-    template<typename DefinitionT = FlowDefinition>
-    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
-    template<typename DefinitionT = FlowDefinition>
-    CreateFlowVersionResult& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateFlowVersionResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,6 +74,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The KMS key that the flow is encrypted with.</p>
+     */
+    inline const Aws::String& GetCustomerEncryptionKeyArn() const { return m_customerEncryptionKeyArn; }
+    template<typename CustomerEncryptionKeyArnT = Aws::String>
+    void SetCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn = std::forward<CustomerEncryptionKeyArnT>(value); }
+    template<typename CustomerEncryptionKeyArnT = Aws::String>
+    CreateFlowVersionResult& WithCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) { SetCustomerEncryptionKeyArn(std::forward<CustomerEncryptionKeyArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The unique identifier of the flow.</p>
      */
     inline const Aws::String& GetId() const { return m_id; }
@@ -118,13 +96,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the version.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow.</p>
      */
-    inline const Aws::String& GetName() const { return m_name; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    CreateFlowVersionResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CreateFlowVersionResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,6 +112,17 @@ namespace Model
     inline FlowStatus GetStatus() const { return m_status; }
     inline void SetStatus(FlowStatus value) { m_statusHasBeenSet = true; m_status = value; }
     inline CreateFlowVersionResult& WithStatus(FlowStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The time at which the flow was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    CreateFlowVersionResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,6 +138,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>A definition of the nodes and connections in the flow.</p>
+     */
+    inline const FlowDefinition& GetDefinition() const { return m_definition; }
+    template<typename DefinitionT = FlowDefinition>
+    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
+    template<typename DefinitionT = FlowDefinition>
+    CreateFlowVersionResult& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -158,17 +158,8 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_arn;
-    bool m_arnHasBeenSet = false;
-
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
-
-    Aws::String m_customerEncryptionKeyArn;
-    bool m_customerEncryptionKeyArnHasBeenSet = false;
-
-    FlowDefinition m_definition;
-    bool m_definitionHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
@@ -176,17 +167,26 @@ namespace Model
     Aws::String m_executionRoleArn;
     bool m_executionRoleArnHasBeenSet = false;
 
+    Aws::String m_customerEncryptionKeyArn;
+    bool m_customerEncryptionKeyArnHasBeenSet = false;
+
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     FlowStatus m_status{FlowStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
+
     Aws::String m_version;
     bool m_versionHasBeenSet = false;
+
+    FlowDefinition m_definition;
+    bool m_definitionHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

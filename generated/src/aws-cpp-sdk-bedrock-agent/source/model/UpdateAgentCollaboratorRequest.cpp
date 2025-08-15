@@ -22,15 +22,15 @@ Aws::String UpdateAgentCollaboratorRequest::SerializePayload() const
 
   }
 
-  if(m_collaborationInstructionHasBeenSet)
-  {
-   payload.WithString("collaborationInstruction", m_collaborationInstruction);
-
-  }
-
   if(m_collaboratorNameHasBeenSet)
   {
    payload.WithString("collaboratorName", m_collaboratorName);
+
+  }
+
+  if(m_collaborationInstructionHasBeenSet)
+  {
+   payload.WithString("collaborationInstruction", m_collaborationInstruction);
 
   }
 

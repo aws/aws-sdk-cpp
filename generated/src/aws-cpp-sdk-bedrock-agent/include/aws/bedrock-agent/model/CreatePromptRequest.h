@@ -7,8 +7,8 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/BedrockAgentRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/bedrock-agent/model/PromptVariant.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -38,18 +38,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique, case-sensitive identifier to ensure that the API request completes
-     * no more than one time. If this token matches a previous request, Amazon Bedrock
-     * ignores the request, but does not return an error. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * idempotency</a>.</p>
+     * <p>A name for the prompt.</p>
      */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    CreatePromptRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreatePromptRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A description for the prompt.</p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreatePromptRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,26 +89,32 @@ namespace Model
 
     ///@{
     /**
-     * <p>A description for the prompt.</p>
+     * <p>A list of objects, each containing details about a variant of the prompt.</p>
      */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    CreatePromptRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    inline const Aws::Vector<PromptVariant>& GetVariants() const { return m_variants; }
+    inline bool VariantsHasBeenSet() const { return m_variantsHasBeenSet; }
+    template<typename VariantsT = Aws::Vector<PromptVariant>>
+    void SetVariants(VariantsT&& value) { m_variantsHasBeenSet = true; m_variants = std::forward<VariantsT>(value); }
+    template<typename VariantsT = Aws::Vector<PromptVariant>>
+    CreatePromptRequest& WithVariants(VariantsT&& value) { SetVariants(std::forward<VariantsT>(value)); return *this;}
+    template<typename VariantsT = PromptVariant>
+    CreatePromptRequest& AddVariants(VariantsT&& value) { m_variantsHasBeenSet = true; m_variants.emplace_back(std::forward<VariantsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
-     * <p>A name for the prompt.</p>
+     * <p>A unique, case-sensitive identifier to ensure that the API request completes
+     * no more than one time. If this token matches a previous request, Amazon Bedrock
+     * ignores the request, but does not return an error. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
      */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    CreatePromptRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreatePromptRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,24 +134,13 @@ namespace Model
       m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
     }
     ///@}
-
-    ///@{
-    /**
-     * <p>A list of objects, each containing details about a variant of the prompt.</p>
-     */
-    inline const Aws::Vector<PromptVariant>& GetVariants() const { return m_variants; }
-    inline bool VariantsHasBeenSet() const { return m_variantsHasBeenSet; }
-    template<typename VariantsT = Aws::Vector<PromptVariant>>
-    void SetVariants(VariantsT&& value) { m_variantsHasBeenSet = true; m_variants = std::forward<VariantsT>(value); }
-    template<typename VariantsT = Aws::Vector<PromptVariant>>
-    CreatePromptRequest& WithVariants(VariantsT&& value) { SetVariants(std::forward<VariantsT>(value)); return *this;}
-    template<typename VariantsT = PromptVariant>
-    CreatePromptRequest& AddVariants(VariantsT&& value) { m_variantsHasBeenSet = true; m_variants.emplace_back(std::forward<VariantsT>(value)); return *this; }
-    ///@}
   private:
 
-    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-    bool m_clientTokenHasBeenSet = true;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_customerEncryptionKeyArn;
     bool m_customerEncryptionKeyArnHasBeenSet = false;
@@ -145,17 +148,14 @@ namespace Model
     Aws::String m_defaultVariant;
     bool m_defaultVariantHasBeenSet = false;
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
+    Aws::Vector<PromptVariant> m_variants;
+    bool m_variantsHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
-
-    Aws::Vector<PromptVariant> m_variants;
-    bool m_variantsHasBeenSet = false;
   };
 
 } // namespace Model

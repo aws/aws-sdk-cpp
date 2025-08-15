@@ -25,6 +25,11 @@ RdsConfiguration::RdsConfiguration(JsonView jsonValue)
 
 RdsConfiguration& RdsConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("resourceArn"))
+  {
+    m_resourceArn = jsonValue.GetString("resourceArn");
+    m_resourceArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("credentialsSecretArn"))
   {
     m_credentialsSecretArn = jsonValue.GetString("credentialsSecretArn");
@@ -35,20 +40,15 @@ RdsConfiguration& RdsConfiguration::operator =(JsonView jsonValue)
     m_databaseName = jsonValue.GetString("databaseName");
     m_databaseNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("fieldMapping"))
-  {
-    m_fieldMapping = jsonValue.GetObject("fieldMapping");
-    m_fieldMappingHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("resourceArn"))
-  {
-    m_resourceArn = jsonValue.GetString("resourceArn");
-    m_resourceArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("tableName"))
   {
     m_tableName = jsonValue.GetString("tableName");
     m_tableNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("fieldMapping"))
+  {
+    m_fieldMapping = jsonValue.GetObject("fieldMapping");
+    m_fieldMappingHasBeenSet = true;
   }
   return *this;
 }
@@ -56,6 +56,12 @@ RdsConfiguration& RdsConfiguration::operator =(JsonView jsonValue)
 JsonValue RdsConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_resourceArnHasBeenSet)
+  {
+   payload.WithString("resourceArn", m_resourceArn);
+
+  }
 
   if(m_credentialsSecretArnHasBeenSet)
   {
@@ -69,21 +75,15 @@ JsonValue RdsConfiguration::Jsonize() const
 
   }
 
-  if(m_fieldMappingHasBeenSet)
-  {
-   payload.WithObject("fieldMapping", m_fieldMapping.Jsonize());
-
-  }
-
-  if(m_resourceArnHasBeenSet)
-  {
-   payload.WithString("resourceArn", m_resourceArn);
-
-  }
-
   if(m_tableNameHasBeenSet)
   {
    payload.WithString("tableName", m_tableName);
+
+  }
+
+  if(m_fieldMappingHasBeenSet)
+  {
+   payload.WithObject("fieldMapping", m_fieldMapping.Jsonize());
 
   }
 

@@ -25,15 +25,15 @@ PromptFlowNodeConfiguration::PromptFlowNodeConfiguration(JsonView jsonValue)
 
 PromptFlowNodeConfiguration& PromptFlowNodeConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("guardrailConfiguration"))
-  {
-    m_guardrailConfiguration = jsonValue.GetObject("guardrailConfiguration");
-    m_guardrailConfigurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("sourceConfiguration"))
   {
     m_sourceConfiguration = jsonValue.GetObject("sourceConfiguration");
     m_sourceConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("guardrailConfiguration"))
+  {
+    m_guardrailConfiguration = jsonValue.GetObject("guardrailConfiguration");
+    m_guardrailConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue PromptFlowNodeConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_guardrailConfigurationHasBeenSet)
-  {
-   payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
-
-  }
-
   if(m_sourceConfigurationHasBeenSet)
   {
    payload.WithObject("sourceConfiguration", m_sourceConfiguration.Jsonize());
+
+  }
+
+  if(m_guardrailConfigurationHasBeenSet)
+  {
+   payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
 
   }
 

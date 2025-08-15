@@ -25,30 +25,30 @@ PromptFlowNodeInlineConfiguration::PromptFlowNodeInlineConfiguration(JsonView js
 
 PromptFlowNodeInlineConfiguration& PromptFlowNodeInlineConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("additionalModelRequestFields"))
+  if(jsonValue.ValueExists("templateType"))
   {
-    m_additionalModelRequestFields = jsonValue.GetObject("additionalModelRequestFields");
-    m_additionalModelRequestFieldsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("inferenceConfiguration"))
-  {
-    m_inferenceConfiguration = jsonValue.GetObject("inferenceConfiguration");
-    m_inferenceConfigurationHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("modelId"))
-  {
-    m_modelId = jsonValue.GetString("modelId");
-    m_modelIdHasBeenSet = true;
+    m_templateType = PromptTemplateTypeMapper::GetPromptTemplateTypeForName(jsonValue.GetString("templateType"));
+    m_templateTypeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("templateConfiguration"))
   {
     m_templateConfiguration = jsonValue.GetObject("templateConfiguration");
     m_templateConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("templateType"))
+  if(jsonValue.ValueExists("modelId"))
   {
-    m_templateType = PromptTemplateTypeMapper::GetPromptTemplateTypeForName(jsonValue.GetString("templateType"));
-    m_templateTypeHasBeenSet = true;
+    m_modelId = jsonValue.GetString("modelId");
+    m_modelIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("inferenceConfiguration"))
+  {
+    m_inferenceConfiguration = jsonValue.GetObject("inferenceConfiguration");
+    m_inferenceConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("additionalModelRequestFields"))
+  {
+    m_additionalModelRequestFields = jsonValue.GetObject("additionalModelRequestFields");
+    m_additionalModelRequestFieldsHasBeenSet = true;
   }
   return *this;
 }
@@ -57,17 +57,14 @@ JsonValue PromptFlowNodeInlineConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_additionalModelRequestFieldsHasBeenSet)
+  if(m_templateTypeHasBeenSet)
   {
-    if(!m_additionalModelRequestFields.View().IsNull())
-    {
-       payload.WithObject("additionalModelRequestFields", JsonValue(m_additionalModelRequestFields.View()));
-    }
+   payload.WithString("templateType", PromptTemplateTypeMapper::GetNameForPromptTemplateType(m_templateType));
   }
 
-  if(m_inferenceConfigurationHasBeenSet)
+  if(m_templateConfigurationHasBeenSet)
   {
-   payload.WithObject("inferenceConfiguration", m_inferenceConfiguration.Jsonize());
+   payload.WithObject("templateConfiguration", m_templateConfiguration.Jsonize());
 
   }
 
@@ -77,15 +74,18 @@ JsonValue PromptFlowNodeInlineConfiguration::Jsonize() const
 
   }
 
-  if(m_templateConfigurationHasBeenSet)
+  if(m_inferenceConfigurationHasBeenSet)
   {
-   payload.WithObject("templateConfiguration", m_templateConfiguration.Jsonize());
+   payload.WithObject("inferenceConfiguration", m_inferenceConfiguration.Jsonize());
 
   }
 
-  if(m_templateTypeHasBeenSet)
+  if(m_additionalModelRequestFieldsHasBeenSet)
   {
-   payload.WithString("templateType", PromptTemplateTypeMapper::GetNameForPromptTemplateType(m_templateType));
+    if(!m_additionalModelRequestFields.View().IsNull())
+    {
+       payload.WithObject("additionalModelRequestFields", JsonValue(m_additionalModelRequestFields.View()));
+    }
   }
 
   return payload;

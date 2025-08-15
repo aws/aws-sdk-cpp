@@ -25,15 +25,35 @@ IngestionJob::IngestionJob(JsonView jsonValue)
 
 IngestionJob& IngestionJob::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("knowledgeBaseId"))
+  {
+    m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
+    m_knowledgeBaseIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("dataSourceId"))
   {
     m_dataSourceId = jsonValue.GetString("dataSourceId");
     m_dataSourceIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ingestionJobId"))
+  {
+    m_ingestionJobId = jsonValue.GetString("ingestionJobId");
+    m_ingestionJobIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = IngestionJobStatusMapper::GetIngestionJobStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("statistics"))
+  {
+    m_statistics = jsonValue.GetObject("statistics");
+    m_statisticsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("failureReasons"))
   {
@@ -44,30 +64,10 @@ IngestionJob& IngestionJob::operator =(JsonView jsonValue)
     }
     m_failureReasonsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ingestionJobId"))
-  {
-    m_ingestionJobId = jsonValue.GetString("ingestionJobId");
-    m_ingestionJobIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("knowledgeBaseId"))
-  {
-    m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
-    m_knowledgeBaseIdHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetString("startedAt");
     m_startedAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("statistics"))
-  {
-    m_statistics = jsonValue.GetObject("statistics");
-    m_statisticsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = IngestionJobStatusMapper::GetIngestionJobStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
   }
   if(jsonValue.ValueExists("updatedAt"))
   {
@@ -81,15 +81,38 @@ JsonValue IngestionJob::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_knowledgeBaseIdHasBeenSet)
+  {
+   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
+
+  }
+
   if(m_dataSourceIdHasBeenSet)
   {
    payload.WithString("dataSourceId", m_dataSourceId);
 
   }
 
+  if(m_ingestionJobIdHasBeenSet)
+  {
+   payload.WithString("ingestionJobId", m_ingestionJobId);
+
+  }
+
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", IngestionJobStatusMapper::GetNameForIngestionJobStatus(m_status));
+  }
+
+  if(m_statisticsHasBeenSet)
+  {
+   payload.WithObject("statistics", m_statistics.Jsonize());
 
   }
 
@@ -104,32 +127,9 @@ JsonValue IngestionJob::Jsonize() const
 
   }
 
-  if(m_ingestionJobIdHasBeenSet)
-  {
-   payload.WithString("ingestionJobId", m_ingestionJobId);
-
-  }
-
-  if(m_knowledgeBaseIdHasBeenSet)
-  {
-   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
-
-  }
-
   if(m_startedAtHasBeenSet)
   {
    payload.WithString("startedAt", m_startedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_statisticsHasBeenSet)
-  {
-   payload.WithObject("statistics", m_statistics.Jsonize());
-
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", IngestionJobStatusMapper::GetNameForIngestionJobStatus(m_status));
   }
 
   if(m_updatedAtHasBeenSet)

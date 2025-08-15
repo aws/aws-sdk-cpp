@@ -25,15 +25,10 @@ FlowSummary::FlowSummary(JsonView jsonValue)
 
 FlowSummary& FlowSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("arn"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("description"))
   {
@@ -45,15 +40,20 @@ FlowSummary& FlowSummary::operator =(JsonView jsonValue)
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("arn"))
   {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("status"))
   {
     m_status = FlowStatusMapper::GetFlowStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("updatedAt"))
   {
@@ -72,15 +72,10 @@ JsonValue FlowSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("arn", m_arn);
+   payload.WithString("name", m_name);
 
-  }
-
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_descriptionHasBeenSet)
@@ -95,15 +90,20 @@ JsonValue FlowSummary::Jsonize() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_arnHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithString("arn", m_arn);
 
   }
 
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", FlowStatusMapper::GetNameForFlowStatus(m_status));
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_updatedAtHasBeenSet)

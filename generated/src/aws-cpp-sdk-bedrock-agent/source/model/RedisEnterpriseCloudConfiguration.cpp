@@ -25,25 +25,25 @@ RedisEnterpriseCloudConfiguration::RedisEnterpriseCloudConfiguration(JsonView js
 
 RedisEnterpriseCloudConfiguration& RedisEnterpriseCloudConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("credentialsSecretArn"))
-  {
-    m_credentialsSecretArn = jsonValue.GetString("credentialsSecretArn");
-    m_credentialsSecretArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("endpoint"))
   {
     m_endpoint = jsonValue.GetString("endpoint");
     m_endpointHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("fieldMapping"))
-  {
-    m_fieldMapping = jsonValue.GetObject("fieldMapping");
-    m_fieldMappingHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("vectorIndexName"))
   {
     m_vectorIndexName = jsonValue.GetString("vectorIndexName");
     m_vectorIndexNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("credentialsSecretArn"))
+  {
+    m_credentialsSecretArn = jsonValue.GetString("credentialsSecretArn");
+    m_credentialsSecretArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("fieldMapping"))
+  {
+    m_fieldMapping = jsonValue.GetObject("fieldMapping");
+    m_fieldMappingHasBeenSet = true;
   }
   return *this;
 }
@@ -52,27 +52,27 @@ JsonValue RedisEnterpriseCloudConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_credentialsSecretArnHasBeenSet)
-  {
-   payload.WithString("credentialsSecretArn", m_credentialsSecretArn);
-
-  }
-
   if(m_endpointHasBeenSet)
   {
    payload.WithString("endpoint", m_endpoint);
 
   }
 
-  if(m_fieldMappingHasBeenSet)
-  {
-   payload.WithObject("fieldMapping", m_fieldMapping.Jsonize());
-
-  }
-
   if(m_vectorIndexNameHasBeenSet)
   {
    payload.WithString("vectorIndexName", m_vectorIndexName);
+
+  }
+
+  if(m_credentialsSecretArnHasBeenSet)
+  {
+   payload.WithString("credentialsSecretArn", m_credentialsSecretArn);
+
+  }
+
+  if(m_fieldMappingHasBeenSet)
+  {
+   payload.WithObject("fieldMapping", m_fieldMapping.Jsonize());
 
   }
 

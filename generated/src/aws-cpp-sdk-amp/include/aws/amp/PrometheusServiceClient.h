@@ -358,6 +358,32 @@ namespace PrometheusService
         }
 
         /**
+         * <p>Deletes the resource-based policy attached to an Amazon Managed Service for
+         * Prometheus workspace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const DeleteResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&PrometheusServiceClient::DeleteResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        void DeleteResourcePolicyAsync(const DeleteResourcePolicyRequestT& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PrometheusServiceClient::DeleteResourcePolicy, request, handler, context);
+        }
+
+        /**
          * <p>Deletes one rule groups namespace and its associated rule groups
          * definition.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteRuleGroupsNamespace">AWS
@@ -513,6 +539,32 @@ namespace PrometheusService
         void DescribeQueryLoggingConfigurationAsync(const DescribeQueryLoggingConfigurationRequestT& request, const DescribeQueryLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PrometheusServiceClient::DescribeQueryLoggingConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information about the resource-based policy attached to an Amazon
+         * Managed Service for Prometheus workspace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeResourcePolicyOutcome DescribeResourcePolicy(const Model::DescribeResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeResourcePolicyRequestT = Model::DescribeResourcePolicyRequest>
+        Model::DescribeResourcePolicyOutcomeCallable DescribeResourcePolicyCallable(const DescribeResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&PrometheusServiceClient::DescribeResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeResourcePolicyRequestT = Model::DescribeResourcePolicyRequest>
+        void DescribeResourcePolicyAsync(const DescribeResourcePolicyRequestT& request, const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PrometheusServiceClient::DescribeResourcePolicy, request, handler, context);
         }
 
         /**
@@ -782,6 +834,49 @@ namespace PrometheusService
         void PutAlertManagerDefinitionAsync(const PutAlertManagerDefinitionRequestT& request, const PutAlertManagerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PrometheusServiceClient::PutAlertManagerDefinition, request, handler, context);
+        }
+
+        /**
+         * <p>Creates or updates a resource-based policy for an Amazon Managed Service for
+         * Prometheus workspace. Use resource-based policies to grant permissions to other
+         * AWS accounts or services to access your workspace.</p> <p>Only
+         * Prometheus-compatible APIs can be used for workspace sharing. You can add
+         * non-Prometheus-compatible APIs to the policy, but they will be ignored. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-Prometheus-Compatible-Apis.html">Prometheus-compatible
+         * APIs</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
+         * <p>If your workspace uses customer-managed KMS keys for encryption, you must
+         * grant the principals in your resource-based policy access to those KMS keys. You
+         * can do this by creating KMS grants. For more information, see <a
+         * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a>
+         * in the <i>AWS Key Management Service API Reference</i> and <a
+         * href="https://docs.aws.amazon.com/prometheus/latest/userguide/encryption-at-rest-Amazon-Service-Prometheus.html">Encryption
+         * at rest</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
+         * <p>For more information about working with IAM, see <a
+         * href="https://docs.aws.amazon.com/prometheus/latest/userguide/security_iam_service-with-iam.html">Using
+         * Amazon Managed Service for Prometheus with IAM</a> in the <i>Amazon Managed
+         * Service for Prometheus User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+        Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const PutResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&PrometheusServiceClient::PutResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+        void PutResourcePolicyAsync(const PutResourcePolicyRequestT& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PrometheusServiceClient::PutResourcePolicy, request, handler, context);
         }
 
         /**

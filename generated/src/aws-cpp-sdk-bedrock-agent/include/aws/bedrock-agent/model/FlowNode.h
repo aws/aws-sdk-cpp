@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/FlowNodeType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent/model/FlowNodeInput.h>
 #include <aws/bedrock-agent/model/FlowNodeOutput.h>
 #include <aws/core/utils/memory/stl/AWSAllocator.h>
@@ -46,6 +46,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>A name for the node.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    FlowNode& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of node. This value must match the name of the key that you provide
+     * in the configuration you provide in the <code>FlowNodeConfiguration</code>
+     * field.</p>
+     */
+    inline FlowNodeType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(FlowNodeType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline FlowNode& WithType(FlowNodeType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains configurations for the node.</p>
      */
     inline const FlowNodeConfiguration& GetConfiguration() const{
@@ -78,18 +102,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A name for the node.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    FlowNode& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A list of objects, each of which contains information about an output from
      * the node.</p>
      */
@@ -102,19 +114,13 @@ namespace Model
     template<typename OutputsT = FlowNodeOutput>
     FlowNode& AddOutputs(OutputsT&& value) { m_outputsHasBeenSet = true; m_outputs.emplace_back(std::forward<OutputsT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of node. This value must match the name of the key that you provide
-     * in the configuration you provide in the <code>FlowNodeConfiguration</code>
-     * field.</p>
-     */
-    inline FlowNodeType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(FlowNodeType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline FlowNode& WithType(FlowNodeType value) { SetType(value); return *this;}
-    ///@}
   private:
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
+    FlowNodeType m_type{FlowNodeType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     std::shared_ptr<FlowNodeConfiguration> m_configuration;
     bool m_configurationHasBeenSet = false;
@@ -122,14 +128,8 @@ namespace Model
     Aws::Vector<FlowNodeInput> m_inputs;
     bool m_inputsHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
     Aws::Vector<FlowNodeOutput> m_outputs;
     bool m_outputsHasBeenSet = false;
-
-    FlowNodeType m_type{FlowNodeType::NOT_SET};
-    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

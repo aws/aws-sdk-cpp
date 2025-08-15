@@ -25,11 +25,6 @@ ListScrapersResult::ListScrapersResult(const Aws::AmazonWebServiceResult<JsonVal
 ListScrapersResult& ListScrapersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("scrapers"))
   {
     Aws::Utils::Array<JsonView> scrapersJsonList = jsonValue.GetArray("scrapers");
@@ -38,6 +33,11 @@ ListScrapersResult& ListScrapersResult::operator =(const Aws::AmazonWebServiceRe
       m_scrapers.push_back(scrapersJsonList[scrapersIndex].AsObject());
     }
     m_scrapersHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

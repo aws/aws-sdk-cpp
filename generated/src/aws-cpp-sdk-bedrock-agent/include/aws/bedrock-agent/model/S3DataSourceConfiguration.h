@@ -53,18 +53,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The account ID for the owner of the S3 bucket.</p>
-     */
-    inline const Aws::String& GetBucketOwnerAccountId() const { return m_bucketOwnerAccountId; }
-    inline bool BucketOwnerAccountIdHasBeenSet() const { return m_bucketOwnerAccountIdHasBeenSet; }
-    template<typename BucketOwnerAccountIdT = Aws::String>
-    void SetBucketOwnerAccountId(BucketOwnerAccountIdT&& value) { m_bucketOwnerAccountIdHasBeenSet = true; m_bucketOwnerAccountId = std::forward<BucketOwnerAccountIdT>(value); }
-    template<typename BucketOwnerAccountIdT = Aws::String>
-    S3DataSourceConfiguration& WithBucketOwnerAccountId(BucketOwnerAccountIdT&& value) { SetBucketOwnerAccountId(std::forward<BucketOwnerAccountIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A list of S3 prefixes to include certain files or content. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
@@ -79,16 +67,28 @@ namespace Model
     template<typename InclusionPrefixesT = Aws::String>
     S3DataSourceConfiguration& AddInclusionPrefixes(InclusionPrefixesT&& value) { m_inclusionPrefixesHasBeenSet = true; m_inclusionPrefixes.emplace_back(std::forward<InclusionPrefixesT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The account ID for the owner of the S3 bucket.</p>
+     */
+    inline const Aws::String& GetBucketOwnerAccountId() const { return m_bucketOwnerAccountId; }
+    inline bool BucketOwnerAccountIdHasBeenSet() const { return m_bucketOwnerAccountIdHasBeenSet; }
+    template<typename BucketOwnerAccountIdT = Aws::String>
+    void SetBucketOwnerAccountId(BucketOwnerAccountIdT&& value) { m_bucketOwnerAccountIdHasBeenSet = true; m_bucketOwnerAccountId = std::forward<BucketOwnerAccountIdT>(value); }
+    template<typename BucketOwnerAccountIdT = Aws::String>
+    S3DataSourceConfiguration& WithBucketOwnerAccountId(BucketOwnerAccountIdT&& value) { SetBucketOwnerAccountId(std::forward<BucketOwnerAccountIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_bucketArn;
     bool m_bucketArnHasBeenSet = false;
 
-    Aws::String m_bucketOwnerAccountId;
-    bool m_bucketOwnerAccountIdHasBeenSet = false;
-
     Aws::Vector<Aws::String> m_inclusionPrefixes;
     bool m_inclusionPrefixesHasBeenSet = false;
+
+    Aws::String m_bucketOwnerAccountId;
+    bool m_bucketOwnerAccountIdHasBeenSet = false;
   };
 
 } // namespace Model

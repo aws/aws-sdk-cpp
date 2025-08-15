@@ -54,6 +54,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The number of days the agent is configured to retain the conversational
+     * context.</p>
+     */
+    inline int GetStorageDays() const { return m_storageDays; }
+    inline bool StorageDaysHasBeenSet() const { return m_storageDaysHasBeenSet; }
+    inline void SetStorageDays(int value) { m_storageDaysHasBeenSet = true; m_storageDays = value; }
+    inline MemoryConfiguration& WithStorageDays(int value) { SetStorageDays(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains the configuration for SESSION_SUMMARY memory type enabled for the
      * agent. </p>
      */
@@ -64,27 +75,16 @@ namespace Model
     template<typename SessionSummaryConfigurationT = SessionSummaryConfiguration>
     MemoryConfiguration& WithSessionSummaryConfiguration(SessionSummaryConfigurationT&& value) { SetSessionSummaryConfiguration(std::forward<SessionSummaryConfigurationT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The number of days the agent is configured to retain the conversational
-     * context.</p>
-     */
-    inline int GetStorageDays() const { return m_storageDays; }
-    inline bool StorageDaysHasBeenSet() const { return m_storageDaysHasBeenSet; }
-    inline void SetStorageDays(int value) { m_storageDaysHasBeenSet = true; m_storageDays = value; }
-    inline MemoryConfiguration& WithStorageDays(int value) { SetStorageDays(value); return *this;}
-    ///@}
   private:
 
     Aws::Vector<MemoryType> m_enabledMemoryTypes;
     bool m_enabledMemoryTypesHasBeenSet = false;
 
-    SessionSummaryConfiguration m_sessionSummaryConfiguration;
-    bool m_sessionSummaryConfigurationHasBeenSet = false;
-
     int m_storageDays{0};
     bool m_storageDaysHasBeenSet = false;
+
+    SessionSummaryConfiguration m_sessionSummaryConfiguration;
+    bool m_sessionSummaryConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

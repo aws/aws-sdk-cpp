@@ -30,15 +30,15 @@ BedrockFoundationModelConfiguration& BedrockFoundationModelConfiguration::operat
     m_modelArn = jsonValue.GetString("modelArn");
     m_modelArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("parsingModality"))
-  {
-    m_parsingModality = ParsingModalityMapper::GetParsingModalityForName(jsonValue.GetString("parsingModality"));
-    m_parsingModalityHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("parsingPrompt"))
   {
     m_parsingPrompt = jsonValue.GetObject("parsingPrompt");
     m_parsingPromptHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("parsingModality"))
+  {
+    m_parsingModality = ParsingModalityMapper::GetParsingModalityForName(jsonValue.GetString("parsingModality"));
+    m_parsingModalityHasBeenSet = true;
   }
   return *this;
 }
@@ -53,15 +53,15 @@ JsonValue BedrockFoundationModelConfiguration::Jsonize() const
 
   }
 
-  if(m_parsingModalityHasBeenSet)
-  {
-   payload.WithString("parsingModality", ParsingModalityMapper::GetNameForParsingModality(m_parsingModality));
-  }
-
   if(m_parsingPromptHasBeenSet)
   {
    payload.WithObject("parsingPrompt", m_parsingPrompt.Jsonize());
 
+  }
+
+  if(m_parsingModalityHasBeenSet)
+  {
+   payload.WithString("parsingModality", ParsingModalityMapper::GetNameForParsingModality(m_parsingModality));
   }
 
   return payload;

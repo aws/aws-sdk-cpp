@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/CachePointBlock.h>
 #include <aws/bedrock-agent/model/ToolSpecification.h>
+#include <aws/bedrock-agent/model/CachePointBlock.h>
 #include <utility>
 
 namespace Aws
@@ -44,18 +44,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Creates a cache checkpoint within a tool designation</p>
-     */
-    inline const CachePointBlock& GetCachePoint() const { return m_cachePoint; }
-    inline bool CachePointHasBeenSet() const { return m_cachePointHasBeenSet; }
-    template<typename CachePointT = CachePointBlock>
-    void SetCachePoint(CachePointT&& value) { m_cachePointHasBeenSet = true; m_cachePoint = std::forward<CachePointT>(value); }
-    template<typename CachePointT = CachePointBlock>
-    Tool& WithCachePoint(CachePointT&& value) { SetCachePoint(std::forward<CachePointT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The specification for the tool.</p>
      */
     inline const ToolSpecification& GetToolSpec() const { return m_toolSpec; }
@@ -65,13 +53,25 @@ namespace Model
     template<typename ToolSpecT = ToolSpecification>
     Tool& WithToolSpec(ToolSpecT&& value) { SetToolSpec(std::forward<ToolSpecT>(value)); return *this;}
     ///@}
-  private:
 
-    CachePointBlock m_cachePoint;
-    bool m_cachePointHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Creates a cache checkpoint within a tool designation</p>
+     */
+    inline const CachePointBlock& GetCachePoint() const { return m_cachePoint; }
+    inline bool CachePointHasBeenSet() const { return m_cachePointHasBeenSet; }
+    template<typename CachePointT = CachePointBlock>
+    void SetCachePoint(CachePointT&& value) { m_cachePointHasBeenSet = true; m_cachePoint = std::forward<CachePointT>(value); }
+    template<typename CachePointT = CachePointBlock>
+    Tool& WithCachePoint(CachePointT&& value) { SetCachePoint(std::forward<CachePointT>(value)); return *this;}
+    ///@}
+  private:
 
     ToolSpecification m_toolSpec;
     bool m_toolSpecHasBeenSet = false;
+
+    CachePointBlock m_cachePoint;
+    bool m_cachePointHasBeenSet = false;
   };
 
 } // namespace Model

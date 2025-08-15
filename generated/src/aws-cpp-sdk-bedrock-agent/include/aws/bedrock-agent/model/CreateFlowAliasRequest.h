@@ -7,8 +7,8 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/BedrockAgentRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/bedrock-agent/model/FlowAliasConcurrencyConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock-agent/model/FlowAliasConcurrencyConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/bedrock-agent/model/FlowAliasRoutingConfigurationListItem.h>
 #include <utility>
@@ -39,18 +39,40 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique, case-sensitive identifier to ensure that the API request completes
-     * no more than one time. If this token matches a previous request, Amazon Bedrock
-     * ignores the request, but does not return an error. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * idempotency</a>.</p>
+     * <p>A name for the alias.</p>
      */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    CreateFlowAliasRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateFlowAliasRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A description for the alias.</p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateFlowAliasRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains information about the version to which to map the alias.</p>
+     */
+    inline const Aws::Vector<FlowAliasRoutingConfigurationListItem>& GetRoutingConfiguration() const { return m_routingConfiguration; }
+    inline bool RoutingConfigurationHasBeenSet() const { return m_routingConfigurationHasBeenSet; }
+    template<typename RoutingConfigurationT = Aws::Vector<FlowAliasRoutingConfigurationListItem>>
+    void SetRoutingConfiguration(RoutingConfigurationT&& value) { m_routingConfigurationHasBeenSet = true; m_routingConfiguration = std::forward<RoutingConfigurationT>(value); }
+    template<typename RoutingConfigurationT = Aws::Vector<FlowAliasRoutingConfigurationListItem>>
+    CreateFlowAliasRequest& WithRoutingConfiguration(RoutingConfigurationT&& value) { SetRoutingConfiguration(std::forward<RoutingConfigurationT>(value)); return *this;}
+    template<typename RoutingConfigurationT = FlowAliasRoutingConfigurationListItem>
+    CreateFlowAliasRequest& AddRoutingConfiguration(RoutingConfigurationT&& value) { m_routingConfigurationHasBeenSet = true; m_routingConfiguration.emplace_back(std::forward<RoutingConfigurationT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -68,18 +90,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A description for the alias.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    CreateFlowAliasRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique identifier of the flow for which to create an alias.</p>
      */
     inline const Aws::String& GetFlowIdentifier() const { return m_flowIdentifier; }
@@ -92,28 +102,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>A name for the alias.</p>
+     * <p>A unique, case-sensitive identifier to ensure that the API request completes
+     * no more than one time. If this token matches a previous request, Amazon Bedrock
+     * ignores the request, but does not return an error. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
      */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    CreateFlowAliasRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Contains information about the version to which to map the alias.</p>
-     */
-    inline const Aws::Vector<FlowAliasRoutingConfigurationListItem>& GetRoutingConfiguration() const { return m_routingConfiguration; }
-    inline bool RoutingConfigurationHasBeenSet() const { return m_routingConfigurationHasBeenSet; }
-    template<typename RoutingConfigurationT = Aws::Vector<FlowAliasRoutingConfigurationListItem>>
-    void SetRoutingConfiguration(RoutingConfigurationT&& value) { m_routingConfigurationHasBeenSet = true; m_routingConfiguration = std::forward<RoutingConfigurationT>(value); }
-    template<typename RoutingConfigurationT = Aws::Vector<FlowAliasRoutingConfigurationListItem>>
-    CreateFlowAliasRequest& WithRoutingConfiguration(RoutingConfigurationT&& value) { SetRoutingConfiguration(std::forward<RoutingConfigurationT>(value)); return *this;}
-    template<typename RoutingConfigurationT = FlowAliasRoutingConfigurationListItem>
-    CreateFlowAliasRequest& AddRoutingConfiguration(RoutingConfigurationT&& value) { m_routingConfigurationHasBeenSet = true; m_routingConfiguration.emplace_back(std::forward<RoutingConfigurationT>(value)); return *this; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateFlowAliasRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,23 +136,23 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-    bool m_clientTokenHasBeenSet = true;
-
-    FlowAliasConcurrencyConfiguration m_concurrencyConfiguration;
-    bool m_concurrencyConfigurationHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
+    Aws::Vector<FlowAliasRoutingConfigurationListItem> m_routingConfiguration;
+    bool m_routingConfigurationHasBeenSet = false;
+
+    FlowAliasConcurrencyConfiguration m_concurrencyConfiguration;
+    bool m_concurrencyConfigurationHasBeenSet = false;
+
     Aws::String m_flowIdentifier;
     bool m_flowIdentifierHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
-    Aws::Vector<FlowAliasRoutingConfigurationListItem> m_routingConfiguration;
-    bool m_routingConfigurationHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

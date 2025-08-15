@@ -25,6 +25,11 @@ S3VectorsConfiguration::S3VectorsConfiguration(JsonView jsonValue)
 
 S3VectorsConfiguration& S3VectorsConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("vectorBucketArn"))
+  {
+    m_vectorBucketArn = jsonValue.GetString("vectorBucketArn");
+    m_vectorBucketArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("indexArn"))
   {
     m_indexArn = jsonValue.GetString("indexArn");
@@ -35,17 +40,18 @@ S3VectorsConfiguration& S3VectorsConfiguration::operator =(JsonView jsonValue)
     m_indexName = jsonValue.GetString("indexName");
     m_indexNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vectorBucketArn"))
-  {
-    m_vectorBucketArn = jsonValue.GetString("vectorBucketArn");
-    m_vectorBucketArnHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue S3VectorsConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_vectorBucketArnHasBeenSet)
+  {
+   payload.WithString("vectorBucketArn", m_vectorBucketArn);
+
+  }
 
   if(m_indexArnHasBeenSet)
   {
@@ -56,12 +62,6 @@ JsonValue S3VectorsConfiguration::Jsonize() const
   if(m_indexNameHasBeenSet)
   {
    payload.WithString("indexName", m_indexName);
-
-  }
-
-  if(m_vectorBucketArnHasBeenSet)
-  {
-   payload.WithString("vectorBucketArn", m_vectorBucketArn);
 
   }
 

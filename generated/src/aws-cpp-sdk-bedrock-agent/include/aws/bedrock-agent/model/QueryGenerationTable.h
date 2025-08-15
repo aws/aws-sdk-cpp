@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/IncludeExclude.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent/model/QueryGenerationColumn.h>
 #include <utility>
 
@@ -43,17 +43,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of objects, each of which defines information about a column in the
-     * table.</p>
+     * <p>The name of the table for which the other fields in this object apply.</p>
      */
-    inline const Aws::Vector<QueryGenerationColumn>& GetColumns() const { return m_columns; }
-    inline bool ColumnsHasBeenSet() const { return m_columnsHasBeenSet; }
-    template<typename ColumnsT = Aws::Vector<QueryGenerationColumn>>
-    void SetColumns(ColumnsT&& value) { m_columnsHasBeenSet = true; m_columns = std::forward<ColumnsT>(value); }
-    template<typename ColumnsT = Aws::Vector<QueryGenerationColumn>>
-    QueryGenerationTable& WithColumns(ColumnsT&& value) { SetColumns(std::forward<ColumnsT>(value)); return *this;}
-    template<typename ColumnsT = QueryGenerationColumn>
-    QueryGenerationTable& AddColumns(ColumnsT&& value) { m_columnsHasBeenSet = true; m_columns.emplace_back(std::forward<ColumnsT>(value)); return *this; }
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    QueryGenerationTable& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,19 +80,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the table for which the other fields in this object apply.</p>
+     * <p>An array of objects, each of which defines information about a column in the
+     * table.</p>
      */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    QueryGenerationTable& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    inline const Aws::Vector<QueryGenerationColumn>& GetColumns() const { return m_columns; }
+    inline bool ColumnsHasBeenSet() const { return m_columnsHasBeenSet; }
+    template<typename ColumnsT = Aws::Vector<QueryGenerationColumn>>
+    void SetColumns(ColumnsT&& value) { m_columnsHasBeenSet = true; m_columns = std::forward<ColumnsT>(value); }
+    template<typename ColumnsT = Aws::Vector<QueryGenerationColumn>>
+    QueryGenerationTable& WithColumns(ColumnsT&& value) { SetColumns(std::forward<ColumnsT>(value)); return *this;}
+    template<typename ColumnsT = QueryGenerationColumn>
+    QueryGenerationTable& AddColumns(ColumnsT&& value) { m_columnsHasBeenSet = true; m_columns.emplace_back(std::forward<ColumnsT>(value)); return *this; }
     ///@}
   private:
 
-    Aws::Vector<QueryGenerationColumn> m_columns;
-    bool m_columnsHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
@@ -103,8 +103,8 @@ namespace Model
     IncludeExclude m_inclusion{IncludeExclude::NOT_SET};
     bool m_inclusionHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+    Aws::Vector<QueryGenerationColumn> m_columns;
+    bool m_columnsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,9 +22,9 @@ Aws::String AssociateAgentCollaboratorRequest::SerializePayload() const
 
   }
 
-  if(m_clientTokenHasBeenSet)
+  if(m_collaboratorNameHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithString("collaboratorName", m_collaboratorName);
 
   }
 
@@ -34,15 +34,15 @@ Aws::String AssociateAgentCollaboratorRequest::SerializePayload() const
 
   }
 
-  if(m_collaboratorNameHasBeenSet)
-  {
-   payload.WithString("collaboratorName", m_collaboratorName);
-
-  }
-
   if(m_relayConversationHistoryHasBeenSet)
   {
    payload.WithString("relayConversationHistory", RelayConversationHistoryMapper::GetNameForRelayConversationHistory(m_relayConversationHistory));
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
+
   }
 
   return payload.View().WriteReadable();

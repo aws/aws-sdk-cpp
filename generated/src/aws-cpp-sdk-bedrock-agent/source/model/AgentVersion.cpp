@@ -25,16 +25,6 @@ AgentVersion::AgentVersion(JsonView jsonValue)
 
 AgentVersion& AgentVersion::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("agentArn"))
-  {
-    m_agentArn = jsonValue.GetString("agentArn");
-    m_agentArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("agentCollaboration"))
-  {
-    m_agentCollaboration = AgentCollaborationMapper::GetAgentCollaborationForName(jsonValue.GetString("agentCollaboration"));
-    m_agentCollaborationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("agentId"))
   {
     m_agentId = jsonValue.GetString("agentId");
@@ -45,30 +35,60 @@ AgentVersion& AgentVersion::operator =(JsonView jsonValue)
     m_agentName = jsonValue.GetString("agentName");
     m_agentNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("agentResourceRoleArn"))
+  if(jsonValue.ValueExists("agentArn"))
   {
-    m_agentResourceRoleArn = jsonValue.GetString("agentResourceRoleArn");
-    m_agentResourceRoleArnHasBeenSet = true;
+    m_agentArn = jsonValue.GetString("agentArn");
+    m_agentArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("version"))
+  {
+    m_version = jsonValue.GetString("version");
+    m_versionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("instruction"))
+  {
+    m_instruction = jsonValue.GetString("instruction");
+    m_instructionHasBeenSet = true;
   }
   if(jsonValue.ValueExists("agentStatus"))
   {
     m_agentStatus = AgentStatusMapper::GetAgentStatusForName(jsonValue.GetString("agentStatus"));
     m_agentStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("foundationModel"))
   {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
+    m_foundationModel = jsonValue.GetString("foundationModel");
+    m_foundationModelHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("idleSessionTTLInSeconds"))
+  {
+    m_idleSessionTTLInSeconds = jsonValue.GetInteger("idleSessionTTLInSeconds");
+    m_idleSessionTTLInSecondsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("agentResourceRoleArn"))
+  {
+    m_agentResourceRoleArn = jsonValue.GetString("agentResourceRoleArn");
+    m_agentResourceRoleArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("customerEncryptionKeyArn"))
   {
     m_customerEncryptionKeyArn = jsonValue.GetString("customerEncryptionKeyArn");
     m_customerEncryptionKeyArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("updatedAt"))
+  {
+    m_updatedAt = jsonValue.GetString("updatedAt");
+    m_updatedAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("failureReasons"))
   {
@@ -79,36 +99,6 @@ AgentVersion& AgentVersion::operator =(JsonView jsonValue)
     }
     m_failureReasonsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("foundationModel"))
-  {
-    m_foundationModel = jsonValue.GetString("foundationModel");
-    m_foundationModelHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("guardrailConfiguration"))
-  {
-    m_guardrailConfiguration = jsonValue.GetObject("guardrailConfiguration");
-    m_guardrailConfigurationHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("idleSessionTTLInSeconds"))
-  {
-    m_idleSessionTTLInSeconds = jsonValue.GetInteger("idleSessionTTLInSeconds");
-    m_idleSessionTTLInSecondsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("instruction"))
-  {
-    m_instruction = jsonValue.GetString("instruction");
-    m_instructionHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("memoryConfiguration"))
-  {
-    m_memoryConfiguration = jsonValue.GetObject("memoryConfiguration");
-    m_memoryConfigurationHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("promptOverrideConfiguration"))
-  {
-    m_promptOverrideConfiguration = jsonValue.GetObject("promptOverrideConfiguration");
-    m_promptOverrideConfigurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("recommendedActions"))
   {
     Aws::Utils::Array<JsonView> recommendedActionsJsonList = jsonValue.GetArray("recommendedActions");
@@ -118,15 +108,25 @@ AgentVersion& AgentVersion::operator =(JsonView jsonValue)
     }
     m_recommendedActionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("updatedAt"))
+  if(jsonValue.ValueExists("promptOverrideConfiguration"))
   {
-    m_updatedAt = jsonValue.GetString("updatedAt");
-    m_updatedAtHasBeenSet = true;
+    m_promptOverrideConfiguration = jsonValue.GetObject("promptOverrideConfiguration");
+    m_promptOverrideConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("version"))
+  if(jsonValue.ValueExists("guardrailConfiguration"))
   {
-    m_version = jsonValue.GetString("version");
-    m_versionHasBeenSet = true;
+    m_guardrailConfiguration = jsonValue.GetObject("guardrailConfiguration");
+    m_guardrailConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("memoryConfiguration"))
+  {
+    m_memoryConfiguration = jsonValue.GetObject("memoryConfiguration");
+    m_memoryConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("agentCollaboration"))
+  {
+    m_agentCollaboration = AgentCollaborationMapper::GetAgentCollaborationForName(jsonValue.GetString("agentCollaboration"));
+    m_agentCollaborationHasBeenSet = true;
   }
   return *this;
 }
@@ -134,17 +134,6 @@ AgentVersion& AgentVersion::operator =(JsonView jsonValue)
 JsonValue AgentVersion::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_agentArnHasBeenSet)
-  {
-   payload.WithString("agentArn", m_agentArn);
-
-  }
-
-  if(m_agentCollaborationHasBeenSet)
-  {
-   payload.WithString("agentCollaboration", AgentCollaborationMapper::GetNameForAgentCollaboration(m_agentCollaboration));
-  }
 
   if(m_agentIdHasBeenSet)
   {
@@ -158,9 +147,21 @@ JsonValue AgentVersion::Jsonize() const
 
   }
 
-  if(m_agentResourceRoleArnHasBeenSet)
+  if(m_agentArnHasBeenSet)
   {
-   payload.WithString("agentResourceRoleArn", m_agentResourceRoleArn);
+   payload.WithString("agentArn", m_agentArn);
+
+  }
+
+  if(m_versionHasBeenSet)
+  {
+   payload.WithString("version", m_version);
+
+  }
+
+  if(m_instructionHasBeenSet)
+  {
+   payload.WithString("instruction", m_instruction);
 
   }
 
@@ -169,9 +170,28 @@ JsonValue AgentVersion::Jsonize() const
    payload.WithString("agentStatus", AgentStatusMapper::GetNameForAgentStatus(m_agentStatus));
   }
 
-  if(m_createdAtHasBeenSet)
+  if(m_foundationModelHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   payload.WithString("foundationModel", m_foundationModel);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
+  }
+
+  if(m_idleSessionTTLInSecondsHasBeenSet)
+  {
+   payload.WithInteger("idleSessionTTLInSeconds", m_idleSessionTTLInSeconds);
+
+  }
+
+  if(m_agentResourceRoleArnHasBeenSet)
+  {
+   payload.WithString("agentResourceRoleArn", m_agentResourceRoleArn);
+
   }
 
   if(m_customerEncryptionKeyArnHasBeenSet)
@@ -180,10 +200,14 @@ JsonValue AgentVersion::Jsonize() const
 
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_createdAtHasBeenSet)
   {
-   payload.WithString("description", m_description);
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
 
+  if(m_updatedAtHasBeenSet)
+  {
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_failureReasonsHasBeenSet)
@@ -194,42 +218,6 @@ JsonValue AgentVersion::Jsonize() const
      failureReasonsJsonList[failureReasonsIndex].AsString(m_failureReasons[failureReasonsIndex]);
    }
    payload.WithArray("failureReasons", std::move(failureReasonsJsonList));
-
-  }
-
-  if(m_foundationModelHasBeenSet)
-  {
-   payload.WithString("foundationModel", m_foundationModel);
-
-  }
-
-  if(m_guardrailConfigurationHasBeenSet)
-  {
-   payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
-
-  }
-
-  if(m_idleSessionTTLInSecondsHasBeenSet)
-  {
-   payload.WithInteger("idleSessionTTLInSeconds", m_idleSessionTTLInSeconds);
-
-  }
-
-  if(m_instructionHasBeenSet)
-  {
-   payload.WithString("instruction", m_instruction);
-
-  }
-
-  if(m_memoryConfigurationHasBeenSet)
-  {
-   payload.WithObject("memoryConfiguration", m_memoryConfiguration.Jsonize());
-
-  }
-
-  if(m_promptOverrideConfigurationHasBeenSet)
-  {
-   payload.WithObject("promptOverrideConfiguration", m_promptOverrideConfiguration.Jsonize());
 
   }
 
@@ -244,15 +232,27 @@ JsonValue AgentVersion::Jsonize() const
 
   }
 
-  if(m_updatedAtHasBeenSet)
+  if(m_promptOverrideConfigurationHasBeenSet)
   {
-   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   payload.WithObject("promptOverrideConfiguration", m_promptOverrideConfiguration.Jsonize());
+
   }
 
-  if(m_versionHasBeenSet)
+  if(m_guardrailConfigurationHasBeenSet)
   {
-   payload.WithString("version", m_version);
+   payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
 
+  }
+
+  if(m_memoryConfigurationHasBeenSet)
+  {
+   payload.WithObject("memoryConfiguration", m_memoryConfiguration.Jsonize());
+
+  }
+
+  if(m_agentCollaborationHasBeenSet)
+  {
+   payload.WithString("agentCollaboration", AgentCollaborationMapper::GetNameForAgentCollaboration(m_agentCollaboration));
   }
 
   return payload;

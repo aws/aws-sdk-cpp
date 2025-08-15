@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
+#include <aws/bedrock-agent/model/RedshiftQueryEngineStorageType.h>
 #include <aws/bedrock-agent/model/RedshiftQueryEngineAwsDataCatalogStorageConfiguration.h>
 #include <aws/bedrock-agent/model/RedshiftQueryEngineRedshiftStorageConfiguration.h>
-#include <aws/bedrock-agent/model/RedshiftQueryEngineStorageType.h>
 #include <utility>
 
 namespace Aws
@@ -46,6 +46,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The data storage service to use.</p>
+     */
+    inline RedshiftQueryEngineStorageType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(RedshiftQueryEngineStorageType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RedshiftQueryEngineStorageConfiguration& WithType(RedshiftQueryEngineStorageType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies configurations for storage in Glue Data Catalog.</p>
      */
     inline const RedshiftQueryEngineAwsDataCatalogStorageConfiguration& GetAwsDataCatalogConfiguration() const { return m_awsDataCatalogConfiguration; }
@@ -67,26 +77,16 @@ namespace Model
     template<typename RedshiftConfigurationT = RedshiftQueryEngineRedshiftStorageConfiguration>
     RedshiftQueryEngineStorageConfiguration& WithRedshiftConfiguration(RedshiftConfigurationT&& value) { SetRedshiftConfiguration(std::forward<RedshiftConfigurationT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The data storage service to use.</p>
-     */
-    inline RedshiftQueryEngineStorageType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(RedshiftQueryEngineStorageType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline RedshiftQueryEngineStorageConfiguration& WithType(RedshiftQueryEngineStorageType value) { SetType(value); return *this;}
-    ///@}
   private:
+
+    RedshiftQueryEngineStorageType m_type{RedshiftQueryEngineStorageType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     RedshiftQueryEngineAwsDataCatalogStorageConfiguration m_awsDataCatalogConfiguration;
     bool m_awsDataCatalogConfigurationHasBeenSet = false;
 
     RedshiftQueryEngineRedshiftStorageConfiguration m_redshiftConfiguration;
     bool m_redshiftConfigurationHasBeenSet = false;
-
-    RedshiftQueryEngineStorageType m_type{RedshiftQueryEngineStorageType::NOT_SET};
-    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,15 +17,15 @@ Aws::String PutAlertManagerDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_dataHasBeenSet)
+  {
+   payload.WithString("data", HashingUtils::Base64Encode(m_data));
+  }
+
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
 
-  }
-
-  if(m_dataHasBeenSet)
-  {
-   payload.WithString("data", HashingUtils::Base64Encode(m_data));
   }
 
   return payload.View().WriteReadable();

@@ -34,18 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the alias to be deleted.</p>
-     */
-    inline const Aws::String& GetAliasIdentifier() const { return m_aliasIdentifier; }
-    inline bool AliasIdentifierHasBeenSet() const { return m_aliasIdentifierHasBeenSet; }
-    template<typename AliasIdentifierT = Aws::String>
-    void SetAliasIdentifier(AliasIdentifierT&& value) { m_aliasIdentifierHasBeenSet = true; m_aliasIdentifier = std::forward<AliasIdentifierT>(value); }
-    template<typename AliasIdentifierT = Aws::String>
-    DeleteFlowAliasRequest& WithAliasIdentifier(AliasIdentifierT&& value) { SetAliasIdentifier(std::forward<AliasIdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique identifier of the flow that the alias belongs to.</p>
      */
     inline const Aws::String& GetFlowIdentifier() const { return m_flowIdentifier; }
@@ -55,13 +43,25 @@ namespace Model
     template<typename FlowIdentifierT = Aws::String>
     DeleteFlowAliasRequest& WithFlowIdentifier(FlowIdentifierT&& value) { SetFlowIdentifier(std::forward<FlowIdentifierT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_aliasIdentifier;
-    bool m_aliasIdentifierHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The unique identifier of the alias to be deleted.</p>
+     */
+    inline const Aws::String& GetAliasIdentifier() const { return m_aliasIdentifier; }
+    inline bool AliasIdentifierHasBeenSet() const { return m_aliasIdentifierHasBeenSet; }
+    template<typename AliasIdentifierT = Aws::String>
+    void SetAliasIdentifier(AliasIdentifierT&& value) { m_aliasIdentifierHasBeenSet = true; m_aliasIdentifier = std::forward<AliasIdentifierT>(value); }
+    template<typename AliasIdentifierT = Aws::String>
+    DeleteFlowAliasRequest& WithAliasIdentifier(AliasIdentifierT&& value) { SetAliasIdentifier(std::forward<AliasIdentifierT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_flowIdentifier;
     bool m_flowIdentifierHasBeenSet = false;
+
+    Aws::String m_aliasIdentifier;
+    bool m_aliasIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

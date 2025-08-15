@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/NeptuneAnalyticsFieldMapping.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/NeptuneAnalyticsFieldMapping.h>
 #include <utility>
 
 namespace Aws
@@ -43,6 +43,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) of the Neptune Analytics vector store.</p>
+     */
+    inline const Aws::String& GetGraphArn() const { return m_graphArn; }
+    inline bool GraphArnHasBeenSet() const { return m_graphArnHasBeenSet; }
+    template<typename GraphArnT = Aws::String>
+    void SetGraphArn(GraphArnT&& value) { m_graphArnHasBeenSet = true; m_graphArn = std::forward<GraphArnT>(value); }
+    template<typename GraphArnT = Aws::String>
+    NeptuneAnalyticsConfiguration& WithGraphArn(GraphArnT&& value) { SetGraphArn(std::forward<GraphArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains the names of the fields to which to map information about the vector
      * store.</p>
      */
@@ -53,25 +65,13 @@ namespace Model
     template<typename FieldMappingT = NeptuneAnalyticsFieldMapping>
     NeptuneAnalyticsConfiguration& WithFieldMapping(FieldMappingT&& value) { SetFieldMapping(std::forward<FieldMappingT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Neptune Analytics vector store.</p>
-     */
-    inline const Aws::String& GetGraphArn() const { return m_graphArn; }
-    inline bool GraphArnHasBeenSet() const { return m_graphArnHasBeenSet; }
-    template<typename GraphArnT = Aws::String>
-    void SetGraphArn(GraphArnT&& value) { m_graphArnHasBeenSet = true; m_graphArn = std::forward<GraphArnT>(value); }
-    template<typename GraphArnT = Aws::String>
-    NeptuneAnalyticsConfiguration& WithGraphArn(GraphArnT&& value) { SetGraphArn(std::forward<GraphArnT>(value)); return *this;}
-    ///@}
   private:
-
-    NeptuneAnalyticsFieldMapping m_fieldMapping;
-    bool m_fieldMappingHasBeenSet = false;
 
     Aws::String m_graphArn;
     bool m_graphArnHasBeenSet = false;
+
+    NeptuneAnalyticsFieldMapping m_fieldMapping;
+    bool m_fieldMappingHasBeenSet = false;
   };
 
 } // namespace Model

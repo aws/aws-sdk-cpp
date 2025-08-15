@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/FlowConditionalConnectionConfiguration.h>
 #include <aws/bedrock-agent/model/FlowDataConnectionConfiguration.h>
+#include <aws/bedrock-agent/model/FlowConditionalConnectionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration of a connection originating from a Condition node.</p>
-     */
-    inline const FlowConditionalConnectionConfiguration& GetConditional() const { return m_conditional; }
-    inline bool ConditionalHasBeenSet() const { return m_conditionalHasBeenSet; }
-    template<typename ConditionalT = FlowConditionalConnectionConfiguration>
-    void SetConditional(ConditionalT&& value) { m_conditionalHasBeenSet = true; m_conditional = std::forward<ConditionalT>(value); }
-    template<typename ConditionalT = FlowConditionalConnectionConfiguration>
-    FlowConnectionConfiguration& WithConditional(ConditionalT&& value) { SetConditional(std::forward<ConditionalT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The configuration of a connection originating from a node that isn't a
      * Condition node.</p>
      */
@@ -62,13 +50,25 @@ namespace Model
     template<typename DataT = FlowDataConnectionConfiguration>
     FlowConnectionConfiguration& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
     ///@}
-  private:
 
-    FlowConditionalConnectionConfiguration m_conditional;
-    bool m_conditionalHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The configuration of a connection originating from a Condition node.</p>
+     */
+    inline const FlowConditionalConnectionConfiguration& GetConditional() const { return m_conditional; }
+    inline bool ConditionalHasBeenSet() const { return m_conditionalHasBeenSet; }
+    template<typename ConditionalT = FlowConditionalConnectionConfiguration>
+    void SetConditional(ConditionalT&& value) { m_conditionalHasBeenSet = true; m_conditional = std::forward<ConditionalT>(value); }
+    template<typename ConditionalT = FlowConditionalConnectionConfiguration>
+    FlowConnectionConfiguration& WithConditional(ConditionalT&& value) { SetConditional(std::forward<ConditionalT>(value)); return *this;}
+    ///@}
+  private:
 
     FlowDataConnectionConfiguration m_data;
     bool m_dataHasBeenSet = false;
+
+    FlowConditionalConnectionConfiguration m_conditional;
+    bool m_conditionalHasBeenSet = false;
   };
 
 } // namespace Model

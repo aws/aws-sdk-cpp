@@ -43,6 +43,28 @@ namespace Model
 
     ///@{
     /**
+     * <p>Controls the randomness of the response. Choose a lower value for more
+     * predictable outputs and a higher value for more surprising outputs.</p>
+     */
+    inline double GetTemperature() const { return m_temperature; }
+    inline bool TemperatureHasBeenSet() const { return m_temperatureHasBeenSet; }
+    inline void SetTemperature(double value) { m_temperatureHasBeenSet = true; m_temperature = value; }
+    inline PromptModelInferenceConfiguration& WithTemperature(double value) { SetTemperature(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The percentage of most-likely candidates that the model considers for the
+     * next token.</p>
+     */
+    inline double GetTopP() const { return m_topP; }
+    inline bool TopPHasBeenSet() const { return m_topPHasBeenSet; }
+    inline void SetTopP(double value) { m_topPHasBeenSet = true; m_topP = value; }
+    inline PromptModelInferenceConfiguration& WithTopP(double value) { SetTopP(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The maximum number of tokens to return in the response.</p>
      */
     inline int GetMaxTokens() const { return m_maxTokens; }
@@ -65,41 +87,19 @@ namespace Model
     template<typename StopSequencesT = Aws::String>
     PromptModelInferenceConfiguration& AddStopSequences(StopSequencesT&& value) { m_stopSequencesHasBeenSet = true; m_stopSequences.emplace_back(std::forward<StopSequencesT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>Controls the randomness of the response. Choose a lower value for more
-     * predictable outputs and a higher value for more surprising outputs.</p>
-     */
-    inline double GetTemperature() const { return m_temperature; }
-    inline bool TemperatureHasBeenSet() const { return m_temperatureHasBeenSet; }
-    inline void SetTemperature(double value) { m_temperatureHasBeenSet = true; m_temperature = value; }
-    inline PromptModelInferenceConfiguration& WithTemperature(double value) { SetTemperature(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The percentage of most-likely candidates that the model considers for the
-     * next token.</p>
-     */
-    inline double GetTopP() const { return m_topP; }
-    inline bool TopPHasBeenSet() const { return m_topPHasBeenSet; }
-    inline void SetTopP(double value) { m_topPHasBeenSet = true; m_topP = value; }
-    inline PromptModelInferenceConfiguration& WithTopP(double value) { SetTopP(value); return *this;}
-    ///@}
   private:
-
-    int m_maxTokens{0};
-    bool m_maxTokensHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_stopSequences;
-    bool m_stopSequencesHasBeenSet = false;
 
     double m_temperature{0.0};
     bool m_temperatureHasBeenSet = false;
 
     double m_topP{0.0};
     bool m_topPHasBeenSet = false;
+
+    int m_maxTokens{0};
+    bool m_maxTokensHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_stopSequences;
+    bool m_stopSequencesHasBeenSet = false;
   };
 
 } // namespace Model

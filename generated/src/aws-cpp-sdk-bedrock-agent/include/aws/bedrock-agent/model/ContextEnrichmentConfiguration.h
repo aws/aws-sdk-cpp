@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/BedrockFoundationModelContextEnrichmentConfiguration.h>
 #include <aws/bedrock-agent/model/ContextEnrichmentType.h>
+#include <aws/bedrock-agent/model/BedrockFoundationModelContextEnrichmentConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The method used for context enrichment. It must be Amazon Bedrock foundation
+     * models.</p>
+     */
+    inline ContextEnrichmentType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(ContextEnrichmentType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ContextEnrichmentConfiguration& WithType(ContextEnrichmentType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The configuration of the Amazon Bedrock foundation model used for context
      * enrichment.</p>
      */
@@ -51,24 +62,13 @@ namespace Model
     template<typename BedrockFoundationModelConfigurationT = BedrockFoundationModelContextEnrichmentConfiguration>
     ContextEnrichmentConfiguration& WithBedrockFoundationModelConfiguration(BedrockFoundationModelConfigurationT&& value) { SetBedrockFoundationModelConfiguration(std::forward<BedrockFoundationModelConfigurationT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The method used for context enrichment. It must be Amazon Bedrock foundation
-     * models.</p>
-     */
-    inline ContextEnrichmentType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(ContextEnrichmentType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline ContextEnrichmentConfiguration& WithType(ContextEnrichmentType value) { SetType(value); return *this;}
-    ///@}
   private:
-
-    BedrockFoundationModelContextEnrichmentConfiguration m_bedrockFoundationModelConfiguration;
-    bool m_bedrockFoundationModelConfigurationHasBeenSet = false;
 
     ContextEnrichmentType m_type{ContextEnrichmentType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    BedrockFoundationModelContextEnrichmentConfiguration m_bedrockFoundationModelConfiguration;
+    bool m_bedrockFoundationModelConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -16,20 +16,9 @@ Aws::String CreateAgentRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_agentCollaborationHasBeenSet)
-  {
-   payload.WithString("agentCollaboration", AgentCollaborationMapper::GetNameForAgentCollaboration(m_agentCollaboration));
-  }
-
   if(m_agentNameHasBeenSet)
   {
    payload.WithString("agentName", m_agentName);
-
-  }
-
-  if(m_agentResourceRoleArnHasBeenSet)
-  {
-   payload.WithString("agentResourceRoleArn", m_agentResourceRoleArn);
 
   }
 
@@ -39,21 +28,9 @@ Aws::String CreateAgentRequest::SerializePayload() const
 
   }
 
-  if(m_customOrchestrationHasBeenSet)
+  if(m_instructionHasBeenSet)
   {
-   payload.WithObject("customOrchestration", m_customOrchestration.Jsonize());
-
-  }
-
-  if(m_customerEncryptionKeyArnHasBeenSet)
-  {
-   payload.WithString("customerEncryptionKeyArn", m_customerEncryptionKeyArn);
-
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
+   payload.WithString("instruction", m_instruction);
 
   }
 
@@ -63,9 +40,20 @@ Aws::String CreateAgentRequest::SerializePayload() const
 
   }
 
-  if(m_guardrailConfigurationHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
+   payload.WithString("description", m_description);
+
+  }
+
+  if(m_orchestrationTypeHasBeenSet)
+  {
+   payload.WithString("orchestrationType", OrchestrationTypeMapper::GetNameForOrchestrationType(m_orchestrationType));
+  }
+
+  if(m_customOrchestrationHasBeenSet)
+  {
+   payload.WithObject("customOrchestration", m_customOrchestration.Jsonize());
 
   }
 
@@ -75,26 +63,15 @@ Aws::String CreateAgentRequest::SerializePayload() const
 
   }
 
-  if(m_instructionHasBeenSet)
+  if(m_agentResourceRoleArnHasBeenSet)
   {
-   payload.WithString("instruction", m_instruction);
+   payload.WithString("agentResourceRoleArn", m_agentResourceRoleArn);
 
   }
 
-  if(m_memoryConfigurationHasBeenSet)
+  if(m_customerEncryptionKeyArnHasBeenSet)
   {
-   payload.WithObject("memoryConfiguration", m_memoryConfiguration.Jsonize());
-
-  }
-
-  if(m_orchestrationTypeHasBeenSet)
-  {
-   payload.WithString("orchestrationType", OrchestrationTypeMapper::GetNameForOrchestrationType(m_orchestrationType));
-  }
-
-  if(m_promptOverrideConfigurationHasBeenSet)
-  {
-   payload.WithObject("promptOverrideConfiguration", m_promptOverrideConfiguration.Jsonize());
+   payload.WithString("customerEncryptionKeyArn", m_customerEncryptionKeyArn);
 
   }
 
@@ -107,6 +84,29 @@ Aws::String CreateAgentRequest::SerializePayload() const
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
 
+  }
+
+  if(m_promptOverrideConfigurationHasBeenSet)
+  {
+   payload.WithObject("promptOverrideConfiguration", m_promptOverrideConfiguration.Jsonize());
+
+  }
+
+  if(m_guardrailConfigurationHasBeenSet)
+  {
+   payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
+
+  }
+
+  if(m_memoryConfigurationHasBeenSet)
+  {
+   payload.WithObject("memoryConfiguration", m_memoryConfiguration.Jsonize());
+
+  }
+
+  if(m_agentCollaborationHasBeenSet)
+  {
+   payload.WithString("agentCollaboration", AgentCollaborationMapper::GetNameForAgentCollaboration(m_agentCollaboration));
   }
 
   return payload.View().WriteReadable();

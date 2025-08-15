@@ -25,15 +25,10 @@ PromptSummary::PromptSummary(JsonView jsonValue)
 
 PromptSummary& PromptSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("arn"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("description"))
   {
@@ -45,20 +40,25 @@ PromptSummary& PromptSummary::operator =(JsonView jsonValue)
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("arn"))
   {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("updatedAt"))
-  {
-    m_updatedAt = jsonValue.GetString("updatedAt");
-    m_updatedAtHasBeenSet = true;
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
     m_versionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("updatedAt"))
+  {
+    m_updatedAt = jsonValue.GetString("updatedAt");
+    m_updatedAtHasBeenSet = true;
   }
   return *this;
 }
@@ -67,15 +67,10 @@ JsonValue PromptSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("arn", m_arn);
+   payload.WithString("name", m_name);
 
-  }
-
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_descriptionHasBeenSet)
@@ -90,21 +85,26 @@ JsonValue PromptSummary::Jsonize() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_arnHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithString("arn", m_arn);
 
-  }
-
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_versionHasBeenSet)
   {
    payload.WithString("version", m_version);
 
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_updatedAtHasBeenSet)
+  {
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

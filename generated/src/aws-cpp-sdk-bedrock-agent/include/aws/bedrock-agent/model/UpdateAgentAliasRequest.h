@@ -7,8 +7,8 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/BedrockAgentRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/bedrock-agent/model/AliasInvocationState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock-agent/model/AliasInvocationState.h>
 #include <aws/bedrock-agent/model/AgentAliasRoutingConfigurationListItem.h>
 #include <utility>
 
@@ -37,6 +37,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier of the agent.</p>
+     */
+    inline const Aws::String& GetAgentId() const { return m_agentId; }
+    inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
+    template<typename AgentIdT = Aws::String>
+    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
+    template<typename AgentIdT = Aws::String>
+    UpdateAgentAliasRequest& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The unique identifier of the alias.</p>
      */
     inline const Aws::String& GetAgentAliasId() const { return m_agentAliasId; }
@@ -57,32 +69,6 @@ namespace Model
     void SetAgentAliasName(AgentAliasNameT&& value) { m_agentAliasNameHasBeenSet = true; m_agentAliasName = std::forward<AgentAliasNameT>(value); }
     template<typename AgentAliasNameT = Aws::String>
     UpdateAgentAliasRequest& WithAgentAliasName(AgentAliasNameT&& value) { SetAgentAliasName(std::forward<AgentAliasNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The unique identifier of the agent.</p>
-     */
-    inline const Aws::String& GetAgentId() const { return m_agentId; }
-    inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-    template<typename AgentIdT = Aws::String>
-    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
-    template<typename AgentIdT = Aws::String>
-    UpdateAgentAliasRequest& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The invocation state for the agent alias. To pause the agent alias, set the
-     * value to <code>REJECT_INVOCATIONS</code>. To start the agent alias running
-     * again, set the value to <code>ACCEPT_INVOCATIONS</code>. Use the
-     * <code>GetAgentAlias</code>, or <code>ListAgentAliases</code>, operation to get
-     * the invocation state of an agent alias.</p>
-     */
-    inline AliasInvocationState GetAliasInvocationState() const { return m_aliasInvocationState; }
-    inline bool AliasInvocationStateHasBeenSet() const { return m_aliasInvocationStateHasBeenSet; }
-    inline void SetAliasInvocationState(AliasInvocationState value) { m_aliasInvocationStateHasBeenSet = true; m_aliasInvocationState = value; }
-    inline UpdateAgentAliasRequest& WithAliasInvocationState(AliasInvocationState value) { SetAliasInvocationState(value); return *this;}
     ///@}
 
     ///@{
@@ -110,7 +96,24 @@ namespace Model
     template<typename RoutingConfigurationT = AgentAliasRoutingConfigurationListItem>
     UpdateAgentAliasRequest& AddRoutingConfiguration(RoutingConfigurationT&& value) { m_routingConfigurationHasBeenSet = true; m_routingConfiguration.emplace_back(std::forward<RoutingConfigurationT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The invocation state for the agent alias. To pause the agent alias, set the
+     * value to <code>REJECT_INVOCATIONS</code>. To start the agent alias running
+     * again, set the value to <code>ACCEPT_INVOCATIONS</code>. Use the
+     * <code>GetAgentAlias</code>, or <code>ListAgentAliases</code>, operation to get
+     * the invocation state of an agent alias.</p>
+     */
+    inline AliasInvocationState GetAliasInvocationState() const { return m_aliasInvocationState; }
+    inline bool AliasInvocationStateHasBeenSet() const { return m_aliasInvocationStateHasBeenSet; }
+    inline void SetAliasInvocationState(AliasInvocationState value) { m_aliasInvocationStateHasBeenSet = true; m_aliasInvocationState = value; }
+    inline UpdateAgentAliasRequest& WithAliasInvocationState(AliasInvocationState value) { SetAliasInvocationState(value); return *this;}
+    ///@}
   private:
+
+    Aws::String m_agentId;
+    bool m_agentIdHasBeenSet = false;
 
     Aws::String m_agentAliasId;
     bool m_agentAliasIdHasBeenSet = false;
@@ -118,17 +121,14 @@ namespace Model
     Aws::String m_agentAliasName;
     bool m_agentAliasNameHasBeenSet = false;
 
-    Aws::String m_agentId;
-    bool m_agentIdHasBeenSet = false;
-
-    AliasInvocationState m_aliasInvocationState{AliasInvocationState::NOT_SET};
-    bool m_aliasInvocationStateHasBeenSet = false;
-
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<AgentAliasRoutingConfigurationListItem> m_routingConfiguration;
     bool m_routingConfigurationHasBeenSet = false;
+
+    AliasInvocationState m_aliasInvocationState{AliasInvocationState::NOT_SET};
+    bool m_aliasInvocationStateHasBeenSet = false;
   };
 
 } // namespace Model

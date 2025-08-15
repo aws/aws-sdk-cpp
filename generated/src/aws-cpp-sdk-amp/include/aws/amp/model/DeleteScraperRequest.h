@@ -45,6 +45,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the scraper to delete.</p>
+     */
+    inline const Aws::String& GetScraperId() const { return m_scraperId; }
+    inline bool ScraperIdHasBeenSet() const { return m_scraperIdHasBeenSet; }
+    template<typename ScraperIdT = Aws::String>
+    void SetScraperId(ScraperIdT&& value) { m_scraperIdHasBeenSet = true; m_scraperId = std::forward<ScraperIdT>(value); }
+    template<typename ScraperIdT = Aws::String>
+    DeleteScraperRequest& WithScraperId(ScraperIdT&& value) { SetScraperId(std::forward<ScraperIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
      * the idempotency of the request.</p>
      */
@@ -55,25 +67,13 @@ namespace Model
     template<typename ClientTokenT = Aws::String>
     DeleteScraperRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the scraper to delete.</p>
-     */
-    inline const Aws::String& GetScraperId() const { return m_scraperId; }
-    inline bool ScraperIdHasBeenSet() const { return m_scraperIdHasBeenSet; }
-    template<typename ScraperIdT = Aws::String>
-    void SetScraperId(ScraperIdT&& value) { m_scraperIdHasBeenSet = true; m_scraperId = std::forward<ScraperIdT>(value); }
-    template<typename ScraperIdT = Aws::String>
-    DeleteScraperRequest& WithScraperId(ScraperIdT&& value) { SetScraperId(std::forward<ScraperIdT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-    bool m_clientTokenHasBeenSet = true;
 
     Aws::String m_scraperId;
     bool m_scraperIdHasBeenSet = false;
+
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
   };
 
 } // namespace Model

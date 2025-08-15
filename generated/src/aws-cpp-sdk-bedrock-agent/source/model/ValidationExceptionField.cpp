@@ -25,15 +25,15 @@ ValidationExceptionField::ValidationExceptionField(JsonView jsonValue)
 
 ValidationExceptionField& ValidationExceptionField::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("message"))
-  {
-    m_message = jsonValue.GetString("message");
-    m_messageHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("message"))
+  {
+    m_message = jsonValue.GetString("message");
+    m_messageHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue ValidationExceptionField::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_messageHasBeenSet)
+  {
+   payload.WithString("message", m_message);
 
   }
 

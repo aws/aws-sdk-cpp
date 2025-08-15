@@ -30,11 +30,6 @@ VectorIngestionConfiguration& VectorIngestionConfiguration::operator =(JsonView 
     m_chunkingConfiguration = jsonValue.GetObject("chunkingConfiguration");
     m_chunkingConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("contextEnrichmentConfiguration"))
-  {
-    m_contextEnrichmentConfiguration = jsonValue.GetObject("contextEnrichmentConfiguration");
-    m_contextEnrichmentConfigurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("customTransformationConfiguration"))
   {
     m_customTransformationConfiguration = jsonValue.GetObject("customTransformationConfiguration");
@@ -44,6 +39,11 @@ VectorIngestionConfiguration& VectorIngestionConfiguration::operator =(JsonView 
   {
     m_parsingConfiguration = jsonValue.GetObject("parsingConfiguration");
     m_parsingConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("contextEnrichmentConfiguration"))
+  {
+    m_contextEnrichmentConfiguration = jsonValue.GetObject("contextEnrichmentConfiguration");
+    m_contextEnrichmentConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -58,12 +58,6 @@ JsonValue VectorIngestionConfiguration::Jsonize() const
 
   }
 
-  if(m_contextEnrichmentConfigurationHasBeenSet)
-  {
-   payload.WithObject("contextEnrichmentConfiguration", m_contextEnrichmentConfiguration.Jsonize());
-
-  }
-
   if(m_customTransformationConfigurationHasBeenSet)
   {
    payload.WithObject("customTransformationConfiguration", m_customTransformationConfiguration.Jsonize());
@@ -73,6 +67,12 @@ JsonValue VectorIngestionConfiguration::Jsonize() const
   if(m_parsingConfigurationHasBeenSet)
   {
    payload.WithObject("parsingConfiguration", m_parsingConfiguration.Jsonize());
+
+  }
+
+  if(m_contextEnrichmentConfigurationHasBeenSet)
+  {
+   payload.WithObject("contextEnrichmentConfiguration", m_contextEnrichmentConfiguration.Jsonize());
 
   }
 

@@ -16,56 +16,9 @@ Aws::String UpdateAgentRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_agentCollaborationHasBeenSet)
-  {
-   payload.WithString("agentCollaboration", AgentCollaborationMapper::GetNameForAgentCollaboration(m_agentCollaboration));
-  }
-
   if(m_agentNameHasBeenSet)
   {
    payload.WithString("agentName", m_agentName);
-
-  }
-
-  if(m_agentResourceRoleArnHasBeenSet)
-  {
-   payload.WithString("agentResourceRoleArn", m_agentResourceRoleArn);
-
-  }
-
-  if(m_customOrchestrationHasBeenSet)
-  {
-   payload.WithObject("customOrchestration", m_customOrchestration.Jsonize());
-
-  }
-
-  if(m_customerEncryptionKeyArnHasBeenSet)
-  {
-   payload.WithString("customerEncryptionKeyArn", m_customerEncryptionKeyArn);
-
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
-
-  if(m_foundationModelHasBeenSet)
-  {
-   payload.WithString("foundationModel", m_foundationModel);
-
-  }
-
-  if(m_guardrailConfigurationHasBeenSet)
-  {
-   payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
-
-  }
-
-  if(m_idleSessionTTLInSecondsHasBeenSet)
-  {
-   payload.WithInteger("idleSessionTTLInSeconds", m_idleSessionTTLInSeconds);
 
   }
 
@@ -75,9 +28,15 @@ Aws::String UpdateAgentRequest::SerializePayload() const
 
   }
 
-  if(m_memoryConfigurationHasBeenSet)
+  if(m_foundationModelHasBeenSet)
   {
-   payload.WithObject("memoryConfiguration", m_memoryConfiguration.Jsonize());
+   payload.WithString("foundationModel", m_foundationModel);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
 
   }
 
@@ -86,10 +45,51 @@ Aws::String UpdateAgentRequest::SerializePayload() const
    payload.WithString("orchestrationType", OrchestrationTypeMapper::GetNameForOrchestrationType(m_orchestrationType));
   }
 
+  if(m_customOrchestrationHasBeenSet)
+  {
+   payload.WithObject("customOrchestration", m_customOrchestration.Jsonize());
+
+  }
+
+  if(m_idleSessionTTLInSecondsHasBeenSet)
+  {
+   payload.WithInteger("idleSessionTTLInSeconds", m_idleSessionTTLInSeconds);
+
+  }
+
+  if(m_agentResourceRoleArnHasBeenSet)
+  {
+   payload.WithString("agentResourceRoleArn", m_agentResourceRoleArn);
+
+  }
+
+  if(m_customerEncryptionKeyArnHasBeenSet)
+  {
+   payload.WithString("customerEncryptionKeyArn", m_customerEncryptionKeyArn);
+
+  }
+
   if(m_promptOverrideConfigurationHasBeenSet)
   {
    payload.WithObject("promptOverrideConfiguration", m_promptOverrideConfiguration.Jsonize());
 
+  }
+
+  if(m_guardrailConfigurationHasBeenSet)
+  {
+   payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
+
+  }
+
+  if(m_memoryConfigurationHasBeenSet)
+  {
+   payload.WithObject("memoryConfiguration", m_memoryConfiguration.Jsonize());
+
+  }
+
+  if(m_agentCollaborationHasBeenSet)
+  {
+   payload.WithString("agentCollaboration", AgentCollaborationMapper::GetNameForAgentCollaboration(m_agentCollaboration));
   }
 
   return payload.View().WriteReadable();

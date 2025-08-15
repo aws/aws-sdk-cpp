@@ -67,15 +67,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time at which the association between the agent and the knowledge base
-     * was created.</p>
+     * <p>The unique identifier of the association between the agent and the knowledge
+     * base.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    AgentKnowledgeBase& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
+    inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    AgentKnowledgeBase& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,27 +93,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the association between the agent and the knowledge
-     * base.</p>
+     * <p>The time at which the association between the agent and the knowledge base
+     * was created.</p>
      */
-    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
-    inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-    template<typename KnowledgeBaseIdT = Aws::String>
-    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
-    template<typename KnowledgeBaseIdT = Aws::String>
-    AgentKnowledgeBase& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies whether to use the knowledge base or not when sending an <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html">InvokeAgent</a>
-     * request.</p>
-     */
-    inline KnowledgeBaseState GetKnowledgeBaseState() const { return m_knowledgeBaseState; }
-    inline bool KnowledgeBaseStateHasBeenSet() const { return m_knowledgeBaseStateHasBeenSet; }
-    inline void SetKnowledgeBaseState(KnowledgeBaseState value) { m_knowledgeBaseStateHasBeenSet = true; m_knowledgeBaseState = value; }
-    inline AgentKnowledgeBase& WithKnowledgeBaseState(KnowledgeBaseState value) { SetKnowledgeBaseState(value); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    AgentKnowledgeBase& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,6 +116,18 @@ namespace Model
     template<typename UpdatedAtT = Aws::Utils::DateTime>
     AgentKnowledgeBase& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to use the knowledge base or not when sending an <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html">InvokeAgent</a>
+     * request.</p>
+     */
+    inline KnowledgeBaseState GetKnowledgeBaseState() const { return m_knowledgeBaseState; }
+    inline bool KnowledgeBaseStateHasBeenSet() const { return m_knowledgeBaseStateHasBeenSet; }
+    inline void SetKnowledgeBaseState(KnowledgeBaseState value) { m_knowledgeBaseStateHasBeenSet = true; m_knowledgeBaseState = value; }
+    inline AgentKnowledgeBase& WithKnowledgeBaseState(KnowledgeBaseState value) { SetKnowledgeBaseState(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_agentId;
@@ -136,20 +136,20 @@ namespace Model
     Aws::String m_agentVersion;
     bool m_agentVersionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
+    Aws::String m_knowledgeBaseId;
+    bool m_knowledgeBaseIdHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::String m_knowledgeBaseId;
-    bool m_knowledgeBaseIdHasBeenSet = false;
-
-    KnowledgeBaseState m_knowledgeBaseState{KnowledgeBaseState::NOT_SET};
-    bool m_knowledgeBaseStateHasBeenSet = false;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
+
+    KnowledgeBaseState m_knowledgeBaseState{KnowledgeBaseState::NOT_SET};
+    bool m_knowledgeBaseStateHasBeenSet = false;
   };
 
 } // namespace Model

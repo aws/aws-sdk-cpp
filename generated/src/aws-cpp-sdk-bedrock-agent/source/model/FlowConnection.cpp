@@ -25,10 +25,10 @@ FlowConnection::FlowConnection(JsonView jsonValue)
 
 FlowConnection& FlowConnection::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("configuration"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_configuration = jsonValue.GetObject("configuration");
-    m_configurationHasBeenSet = true;
+    m_type = FlowConnectionTypeMapper::GetFlowConnectionTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("name"))
   {
@@ -45,10 +45,10 @@ FlowConnection& FlowConnection::operator =(JsonView jsonValue)
     m_target = jsonValue.GetString("target");
     m_targetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("configuration"))
   {
-    m_type = FlowConnectionTypeMapper::GetFlowConnectionTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+    m_configuration = jsonValue.GetObject("configuration");
+    m_configurationHasBeenSet = true;
   }
   return *this;
 }
@@ -57,10 +57,9 @@ JsonValue FlowConnection::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_configurationHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithObject("configuration", m_configuration.Jsonize());
-
+   payload.WithString("type", FlowConnectionTypeMapper::GetNameForFlowConnectionType(m_type));
   }
 
   if(m_nameHasBeenSet)
@@ -81,9 +80,10 @@ JsonValue FlowConnection::Jsonize() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_configurationHasBeenSet)
   {
-   payload.WithString("type", FlowConnectionTypeMapper::GetNameForFlowConnectionType(m_type));
+   payload.WithObject("configuration", m_configuration.Jsonize());
+
   }
 
   return payload;

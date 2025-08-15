@@ -34,6 +34,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier of the knowledge base for the data ingestion job you
+     * want to get information on.</p>
+     */
+    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
+    inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    GetIngestionJobRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The unique identifier of the data source for the data ingestion job you want
      * to get information on.</p>
      */
@@ -57,29 +70,16 @@ namespace Model
     template<typename IngestionJobIdT = Aws::String>
     GetIngestionJobRequest& WithIngestionJobId(IngestionJobIdT&& value) { SetIngestionJobId(std::forward<IngestionJobIdT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The unique identifier of the knowledge base for the data ingestion job you
-     * want to get information on.</p>
-     */
-    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
-    inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-    template<typename KnowledgeBaseIdT = Aws::String>
-    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
-    template<typename KnowledgeBaseIdT = Aws::String>
-    GetIngestionJobRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_knowledgeBaseId;
+    bool m_knowledgeBaseIdHasBeenSet = false;
 
     Aws::String m_dataSourceId;
     bool m_dataSourceIdHasBeenSet = false;
 
     Aws::String m_ingestionJobId;
     bool m_ingestionJobIdHasBeenSet = false;
-
-    Aws::String m_knowledgeBaseId;
-    bool m_knowledgeBaseIdHasBeenSet = false;
   };
 
 } // namespace Model

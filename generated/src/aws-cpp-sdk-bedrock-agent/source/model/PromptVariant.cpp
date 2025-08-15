@@ -25,15 +25,25 @@ PromptVariant::PromptVariant(JsonView jsonValue)
 
 PromptVariant& PromptVariant::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("additionalModelRequestFields"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_additionalModelRequestFields = jsonValue.GetObject("additionalModelRequestFields");
-    m_additionalModelRequestFieldsHasBeenSet = true;
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("genAiResource"))
+  if(jsonValue.ValueExists("templateType"))
   {
-    m_genAiResource = jsonValue.GetObject("genAiResource");
-    m_genAiResourceHasBeenSet = true;
+    m_templateType = PromptTemplateTypeMapper::GetPromptTemplateTypeForName(jsonValue.GetString("templateType"));
+    m_templateTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("templateConfiguration"))
+  {
+    m_templateConfiguration = jsonValue.GetObject("templateConfiguration");
+    m_templateConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("modelId"))
+  {
+    m_modelId = jsonValue.GetString("modelId");
+    m_modelIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("inferenceConfiguration"))
   {
@@ -49,25 +59,15 @@ PromptVariant& PromptVariant::operator =(JsonView jsonValue)
     }
     m_metadataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("modelId"))
+  if(jsonValue.ValueExists("additionalModelRequestFields"))
   {
-    m_modelId = jsonValue.GetString("modelId");
-    m_modelIdHasBeenSet = true;
+    m_additionalModelRequestFields = jsonValue.GetObject("additionalModelRequestFields");
+    m_additionalModelRequestFieldsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("genAiResource"))
   {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("templateConfiguration"))
-  {
-    m_templateConfiguration = jsonValue.GetObject("templateConfiguration");
-    m_templateConfigurationHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("templateType"))
-  {
-    m_templateType = PromptTemplateTypeMapper::GetPromptTemplateTypeForName(jsonValue.GetString("templateType"));
-    m_templateTypeHasBeenSet = true;
+    m_genAiResource = jsonValue.GetObject("genAiResource");
+    m_genAiResourceHasBeenSet = true;
   }
   return *this;
 }
@@ -76,17 +76,26 @@ JsonValue PromptVariant::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_additionalModelRequestFieldsHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-    if(!m_additionalModelRequestFields.View().IsNull())
-    {
-       payload.WithObject("additionalModelRequestFields", JsonValue(m_additionalModelRequestFields.View()));
-    }
+   payload.WithString("name", m_name);
+
   }
 
-  if(m_genAiResourceHasBeenSet)
+  if(m_templateTypeHasBeenSet)
   {
-   payload.WithObject("genAiResource", m_genAiResource.Jsonize());
+   payload.WithString("templateType", PromptTemplateTypeMapper::GetNameForPromptTemplateType(m_templateType));
+  }
+
+  if(m_templateConfigurationHasBeenSet)
+  {
+   payload.WithObject("templateConfiguration", m_templateConfiguration.Jsonize());
+
+  }
+
+  if(m_modelIdHasBeenSet)
+  {
+   payload.WithString("modelId", m_modelId);
 
   }
 
@@ -107,27 +116,18 @@ JsonValue PromptVariant::Jsonize() const
 
   }
 
-  if(m_modelIdHasBeenSet)
+  if(m_additionalModelRequestFieldsHasBeenSet)
   {
-   payload.WithString("modelId", m_modelId);
-
+    if(!m_additionalModelRequestFields.View().IsNull())
+    {
+       payload.WithObject("additionalModelRequestFields", JsonValue(m_additionalModelRequestFields.View()));
+    }
   }
 
-  if(m_nameHasBeenSet)
+  if(m_genAiResourceHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithObject("genAiResource", m_genAiResource.Jsonize());
 
-  }
-
-  if(m_templateConfigurationHasBeenSet)
-  {
-   payload.WithObject("templateConfiguration", m_templateConfiguration.Jsonize());
-
-  }
-
-  if(m_templateTypeHasBeenSet)
-  {
-   payload.WithString("templateType", PromptTemplateTypeMapper::GetNameForPromptTemplateType(m_templateType));
   }
 
   return payload;

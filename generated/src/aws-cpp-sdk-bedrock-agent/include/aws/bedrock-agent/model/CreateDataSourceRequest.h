@@ -7,8 +7,8 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/BedrockAgentRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/bedrock-agent/model/DataDeletionPolicy.h>
 #include <aws/bedrock-agent/model/DataSourceConfiguration.h>
+#include <aws/bedrock-agent/model/DataDeletionPolicy.h>
 #include <aws/bedrock-agent/model/ServerSideEncryptionConfiguration.h>
 #include <aws/bedrock-agent/model/VectorIngestionConfiguration.h>
 #include <utility>
@@ -39,6 +39,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier of the knowledge base to which to add the data
+     * source.</p>
+     */
+    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
+    inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    CreateDataSourceRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A unique, case-sensitive identifier to ensure that the API request completes
      * no more than one time. If this token matches a previous request, Amazon Bedrock
      * ignores the request, but does not return an error. For more information, see <a
@@ -51,6 +64,42 @@ namespace Model
     void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
     template<typename ClientTokenT = Aws::String>
     CreateDataSourceRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the data source.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateDataSourceRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A description of the data source.</p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateDataSourceRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The connection configuration for the data source.</p>
+     */
+    inline const DataSourceConfiguration& GetDataSourceConfiguration() const { return m_dataSourceConfiguration; }
+    inline bool DataSourceConfigurationHasBeenSet() const { return m_dataSourceConfigurationHasBeenSet; }
+    template<typename DataSourceConfigurationT = DataSourceConfiguration>
+    void SetDataSourceConfiguration(DataSourceConfigurationT&& value) { m_dataSourceConfigurationHasBeenSet = true; m_dataSourceConfiguration = std::forward<DataSourceConfigurationT>(value); }
+    template<typename DataSourceConfigurationT = DataSourceConfiguration>
+    CreateDataSourceRequest& WithDataSourceConfiguration(DataSourceConfigurationT&& value) { SetDataSourceConfiguration(std::forward<DataSourceConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,55 +118,6 @@ namespace Model
     inline bool DataDeletionPolicyHasBeenSet() const { return m_dataDeletionPolicyHasBeenSet; }
     inline void SetDataDeletionPolicy(DataDeletionPolicy value) { m_dataDeletionPolicyHasBeenSet = true; m_dataDeletionPolicy = value; }
     inline CreateDataSourceRequest& WithDataDeletionPolicy(DataDeletionPolicy value) { SetDataDeletionPolicy(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The connection configuration for the data source.</p>
-     */
-    inline const DataSourceConfiguration& GetDataSourceConfiguration() const { return m_dataSourceConfiguration; }
-    inline bool DataSourceConfigurationHasBeenSet() const { return m_dataSourceConfigurationHasBeenSet; }
-    template<typename DataSourceConfigurationT = DataSourceConfiguration>
-    void SetDataSourceConfiguration(DataSourceConfigurationT&& value) { m_dataSourceConfigurationHasBeenSet = true; m_dataSourceConfiguration = std::forward<DataSourceConfigurationT>(value); }
-    template<typename DataSourceConfigurationT = DataSourceConfiguration>
-    CreateDataSourceRequest& WithDataSourceConfiguration(DataSourceConfigurationT&& value) { SetDataSourceConfiguration(std::forward<DataSourceConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A description of the data source.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    CreateDataSourceRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The unique identifier of the knowledge base to which to add the data
-     * source.</p>
-     */
-    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
-    inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-    template<typename KnowledgeBaseIdT = Aws::String>
-    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
-    template<typename KnowledgeBaseIdT = Aws::String>
-    CreateDataSourceRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the data source.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    CreateDataSourceRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,23 +145,23 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_knowledgeBaseId;
+    bool m_knowledgeBaseIdHasBeenSet = false;
+
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
 
-    DataDeletionPolicy m_dataDeletionPolicy{DataDeletionPolicy::NOT_SET};
-    bool m_dataDeletionPolicyHasBeenSet = false;
-
-    DataSourceConfiguration m_dataSourceConfiguration;
-    bool m_dataSourceConfigurationHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::String m_knowledgeBaseId;
-    bool m_knowledgeBaseIdHasBeenSet = false;
+    DataSourceConfiguration m_dataSourceConfiguration;
+    bool m_dataSourceConfigurationHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+    DataDeletionPolicy m_dataDeletionPolicy{DataDeletionPolicy::NOT_SET};
+    bool m_dataDeletionPolicyHasBeenSet = false;
 
     ServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
     bool m_serverSideEncryptionConfigurationHasBeenSet = false;

@@ -7,9 +7,9 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent/model/ToolConfiguration.h>
-#include <aws/bedrock-agent/model/PromptInputVariable.h>
 #include <aws/bedrock-agent/model/Message.h>
 #include <aws/bedrock-agent/model/SystemContentBlock.h>
+#include <aws/bedrock-agent/model/PromptInputVariable.h>
 #include <utility>
 
 namespace Aws
@@ -46,20 +46,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of the variables in the prompt template.</p>
-     */
-    inline const Aws::Vector<PromptInputVariable>& GetInputVariables() const { return m_inputVariables; }
-    inline bool InputVariablesHasBeenSet() const { return m_inputVariablesHasBeenSet; }
-    template<typename InputVariablesT = Aws::Vector<PromptInputVariable>>
-    void SetInputVariables(InputVariablesT&& value) { m_inputVariablesHasBeenSet = true; m_inputVariables = std::forward<InputVariablesT>(value); }
-    template<typename InputVariablesT = Aws::Vector<PromptInputVariable>>
-    ChatPromptTemplateConfiguration& WithInputVariables(InputVariablesT&& value) { SetInputVariables(std::forward<InputVariablesT>(value)); return *this;}
-    template<typename InputVariablesT = PromptInputVariable>
-    ChatPromptTemplateConfiguration& AddInputVariables(InputVariablesT&& value) { m_inputVariablesHasBeenSet = true; m_inputVariables.emplace_back(std::forward<InputVariablesT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>Contains messages in the chat for the prompt.</p>
      */
     inline const Aws::Vector<Message>& GetMessages() const { return m_messages; }
@@ -89,6 +75,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>An array of the variables in the prompt template.</p>
+     */
+    inline const Aws::Vector<PromptInputVariable>& GetInputVariables() const { return m_inputVariables; }
+    inline bool InputVariablesHasBeenSet() const { return m_inputVariablesHasBeenSet; }
+    template<typename InputVariablesT = Aws::Vector<PromptInputVariable>>
+    void SetInputVariables(InputVariablesT&& value) { m_inputVariablesHasBeenSet = true; m_inputVariables = std::forward<InputVariablesT>(value); }
+    template<typename InputVariablesT = Aws::Vector<PromptInputVariable>>
+    ChatPromptTemplateConfiguration& WithInputVariables(InputVariablesT&& value) { SetInputVariables(std::forward<InputVariablesT>(value)); return *this;}
+    template<typename InputVariablesT = PromptInputVariable>
+    ChatPromptTemplateConfiguration& AddInputVariables(InputVariablesT&& value) { m_inputVariablesHasBeenSet = true; m_inputVariables.emplace_back(std::forward<InputVariablesT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Configuration information for the tools that the model can use when
      * generating a response.</p>
      */
@@ -101,14 +101,14 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<PromptInputVariable> m_inputVariables;
-    bool m_inputVariablesHasBeenSet = false;
-
     Aws::Vector<Message> m_messages;
     bool m_messagesHasBeenSet = false;
 
     Aws::Vector<SystemContentBlock> m_system;
     bool m_systemHasBeenSet = false;
+
+    Aws::Vector<PromptInputVariable> m_inputVariables;
+    bool m_inputVariablesHasBeenSet = false;
 
     ToolConfiguration m_toolConfiguration;
     bool m_toolConfigurationHasBeenSet = false;

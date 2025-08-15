@@ -37,6 +37,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the workspace that you want to update. To find the IDs of your
+     * workspaces, use the <a
+     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/API_ListWorkspaces.htm">ListWorkspaces</a>
+     * operation.</p>
+     */
+    inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
+    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
+    template<typename WorkspaceIdT = Aws::String>
+    void SetWorkspaceId(WorkspaceIdT&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::forward<WorkspaceIdT>(value); }
+    template<typename WorkspaceIdT = Aws::String>
+    UpdateWorkspaceConfigurationRequest& WithWorkspaceId(WorkspaceIdT&& value) { SetWorkspaceId(std::forward<WorkspaceIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>You can include a token in your operation to make it an idempotent opeartion.
      * </p>
      */
@@ -73,22 +88,10 @@ namespace Model
     inline void SetRetentionPeriodInDays(int value) { m_retentionPeriodInDaysHasBeenSet = true; m_retentionPeriodInDays = value; }
     inline UpdateWorkspaceConfigurationRequest& WithRetentionPeriodInDays(int value) { SetRetentionPeriodInDays(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the workspace that you want to update. To find the IDs of your
-     * workspaces, use the <a
-     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/API_ListWorkspaces.htm">ListWorkspaces</a>
-     * operation.</p>
-     */
-    inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
-    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-    template<typename WorkspaceIdT = Aws::String>
-    void SetWorkspaceId(WorkspaceIdT&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::forward<WorkspaceIdT>(value); }
-    template<typename WorkspaceIdT = Aws::String>
-    UpdateWorkspaceConfigurationRequest& WithWorkspaceId(WorkspaceIdT&& value) { SetWorkspaceId(std::forward<WorkspaceIdT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_workspaceId;
+    bool m_workspaceIdHasBeenSet = false;
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
@@ -98,9 +101,6 @@ namespace Model
 
     int m_retentionPeriodInDays{0};
     bool m_retentionPeriodInDaysHasBeenSet = false;
-
-    Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet = false;
   };
 
 } // namespace Model

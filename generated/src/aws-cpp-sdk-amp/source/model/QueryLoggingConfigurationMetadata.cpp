@@ -25,25 +25,6 @@ QueryLoggingConfigurationMetadata::QueryLoggingConfigurationMetadata(JsonView js
 
 QueryLoggingConfigurationMetadata& QueryLoggingConfigurationMetadata::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("destinations"))
-  {
-    Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("destinations");
-    for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
-    {
-      m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
-    }
-    m_destinationsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("modifiedAt"))
-  {
-    m_modifiedAt = jsonValue.GetDouble("modifiedAt");
-    m_modifiedAtHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
@@ -54,6 +35,25 @@ QueryLoggingConfigurationMetadata& QueryLoggingConfigurationMetadata::operator =
     m_workspace = jsonValue.GetString("workspace");
     m_workspaceHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("destinations"))
+  {
+    Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("destinations");
+    for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
+    {
+      m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
+    }
+    m_destinationsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("modifiedAt"))
+  {
+    m_modifiedAt = jsonValue.GetDouble("modifiedAt");
+    m_modifiedAtHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -61,9 +61,16 @@ JsonValue QueryLoggingConfigurationMetadata::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_createdAtHasBeenSet)
+  if(m_statusHasBeenSet)
   {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+   payload.WithObject("status", m_status.Jsonize());
+
+  }
+
+  if(m_workspaceHasBeenSet)
+  {
+   payload.WithString("workspace", m_workspace);
+
   }
 
   if(m_destinationsHasBeenSet)
@@ -77,21 +84,14 @@ JsonValue QueryLoggingConfigurationMetadata::Jsonize() const
 
   }
 
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
   if(m_modifiedAtHasBeenSet)
   {
    payload.WithDouble("modifiedAt", m_modifiedAt.SecondsWithMSPrecision());
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithObject("status", m_status.Jsonize());
-
-  }
-
-  if(m_workspaceHasBeenSet)
-  {
-   payload.WithString("workspace", m_workspace);
-
   }
 
   return payload;

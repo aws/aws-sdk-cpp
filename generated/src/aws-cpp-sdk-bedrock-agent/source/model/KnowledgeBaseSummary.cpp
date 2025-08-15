@@ -25,11 +25,6 @@ KnowledgeBaseSummary::KnowledgeBaseSummary(JsonView jsonValue)
 
 KnowledgeBaseSummary& KnowledgeBaseSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("knowledgeBaseId"))
   {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
@@ -39,6 +34,11 @@ KnowledgeBaseSummary& KnowledgeBaseSummary::operator =(JsonView jsonValue)
   {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
   if(jsonValue.ValueExists("status"))
   {
@@ -57,12 +57,6 @@ JsonValue KnowledgeBaseSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
-
   if(m_knowledgeBaseIdHasBeenSet)
   {
    payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
@@ -72,6 +66,12 @@ JsonValue KnowledgeBaseSummary::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
 
   }
 

@@ -36,18 +36,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique, case-sensitive identifier to ensure that the API request completes
-     * no more than one time. If this token matches a previous request, Amazon Bedrock
-     * ignores the request, but does not return an error. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * idempotency</a>.</p>
+     * <p>The unique identifier of the prompt that you want to create a version of.</p>
      */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    CreatePromptVersionRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
+    inline const Aws::String& GetPromptIdentifier() const { return m_promptIdentifier; }
+    inline bool PromptIdentifierHasBeenSet() const { return m_promptIdentifierHasBeenSet; }
+    template<typename PromptIdentifierT = Aws::String>
+    void SetPromptIdentifier(PromptIdentifierT&& value) { m_promptIdentifierHasBeenSet = true; m_promptIdentifier = std::forward<PromptIdentifierT>(value); }
+    template<typename PromptIdentifierT = Aws::String>
+    CreatePromptVersionRequest& WithPromptIdentifier(PromptIdentifierT&& value) { SetPromptIdentifier(std::forward<PromptIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +60,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the prompt that you want to create a version of.</p>
+     * <p>A unique, case-sensitive identifier to ensure that the API request completes
+     * no more than one time. If this token matches a previous request, Amazon Bedrock
+     * ignores the request, but does not return an error. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
      */
-    inline const Aws::String& GetPromptIdentifier() const { return m_promptIdentifier; }
-    inline bool PromptIdentifierHasBeenSet() const { return m_promptIdentifierHasBeenSet; }
-    template<typename PromptIdentifierT = Aws::String>
-    void SetPromptIdentifier(PromptIdentifierT&& value) { m_promptIdentifierHasBeenSet = true; m_promptIdentifier = std::forward<PromptIdentifierT>(value); }
-    template<typename PromptIdentifierT = Aws::String>
-    CreatePromptVersionRequest& WithPromptIdentifier(PromptIdentifierT&& value) { SetPromptIdentifier(std::forward<PromptIdentifierT>(value)); return *this;}
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreatePromptVersionRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,14 +94,14 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-    bool m_clientTokenHasBeenSet = true;
+    Aws::String m_promptIdentifier;
+    bool m_promptIdentifierHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::String m_promptIdentifier;
-    bool m_promptIdentifierHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

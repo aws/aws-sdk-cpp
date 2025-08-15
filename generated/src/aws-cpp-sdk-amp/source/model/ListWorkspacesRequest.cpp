@@ -23,6 +23,13 @@ Aws::String ListWorkspacesRequest::SerializePayload() const
 void ListWorkspacesRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_nextTokenHasBeenSet)
+    {
+      ss << m_nextToken;
+      uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
+    }
+
     if(m_aliasHasBeenSet)
     {
       ss << m_alias;
@@ -34,13 +41,6 @@ void ListWorkspacesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_maxResults;
       uri.AddQueryStringParameter("maxResults", ss.str());
-      ss.str("");
-    }
-
-    if(m_nextTokenHasBeenSet)
-    {
-      ss << m_nextToken;
-      uri.AddQueryStringParameter("nextToken", ss.str());
       ss.str("");
     }
 

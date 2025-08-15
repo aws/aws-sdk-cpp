@@ -34,18 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the data source that contains the documents.</p>
-     */
-    inline const Aws::String& GetDataSourceId() const { return m_dataSourceId; }
-    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
-    template<typename DataSourceIdT = Aws::String>
-    void SetDataSourceId(DataSourceIdT&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::forward<DataSourceIdT>(value); }
-    template<typename DataSourceIdT = Aws::String>
-    ListKnowledgeBaseDocumentsRequest& WithDataSourceId(DataSourceIdT&& value) { SetDataSourceId(std::forward<DataSourceIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique identifier of the knowledge base that is connected to the data
      * source.</p>
      */
@@ -55,6 +43,18 @@ namespace Model
     void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
     template<typename KnowledgeBaseIdT = Aws::String>
     ListKnowledgeBaseDocumentsRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The unique identifier of the data source that contains the documents.</p>
+     */
+    inline const Aws::String& GetDataSourceId() const { return m_dataSourceId; }
+    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
+    template<typename DataSourceIdT = Aws::String>
+    void SetDataSourceId(DataSourceIdT&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::forward<DataSourceIdT>(value); }
+    template<typename DataSourceIdT = Aws::String>
+    ListKnowledgeBaseDocumentsRequest& WithDataSourceId(DataSourceIdT&& value) { SetDataSourceId(std::forward<DataSourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,11 +86,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet = false;
-
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
+
+    Aws::String m_dataSourceId;
+    bool m_dataSourceIdHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;

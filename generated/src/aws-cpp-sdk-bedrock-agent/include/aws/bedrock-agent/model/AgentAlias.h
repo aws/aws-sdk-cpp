@@ -7,11 +7,11 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/bedrock-agent/model/AgentAliasStatus.h>
 #include <aws/bedrock-agent/model/AliasInvocationState.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/bedrock-agent/model/AgentAliasHistoryEvent.h>
 #include <aws/bedrock-agent/model/AgentAliasRoutingConfigurationListItem.h>
+#include <aws/bedrock-agent/model/AgentAliasHistoryEvent.h>
 #include <utility>
 
 namespace Aws
@@ -45,28 +45,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the alias of the agent.</p>
+     * <p>The unique identifier of the agent.</p>
      */
-    inline const Aws::String& GetAgentAliasArn() const { return m_agentAliasArn; }
-    inline bool AgentAliasArnHasBeenSet() const { return m_agentAliasArnHasBeenSet; }
-    template<typename AgentAliasArnT = Aws::String>
-    void SetAgentAliasArn(AgentAliasArnT&& value) { m_agentAliasArnHasBeenSet = true; m_agentAliasArn = std::forward<AgentAliasArnT>(value); }
-    template<typename AgentAliasArnT = Aws::String>
-    AgentAlias& WithAgentAliasArn(AgentAliasArnT&& value) { SetAgentAliasArn(std::forward<AgentAliasArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Contains details about the history of the alias.</p>
-     */
-    inline const Aws::Vector<AgentAliasHistoryEvent>& GetAgentAliasHistoryEvents() const { return m_agentAliasHistoryEvents; }
-    inline bool AgentAliasHistoryEventsHasBeenSet() const { return m_agentAliasHistoryEventsHasBeenSet; }
-    template<typename AgentAliasHistoryEventsT = Aws::Vector<AgentAliasHistoryEvent>>
-    void SetAgentAliasHistoryEvents(AgentAliasHistoryEventsT&& value) { m_agentAliasHistoryEventsHasBeenSet = true; m_agentAliasHistoryEvents = std::forward<AgentAliasHistoryEventsT>(value); }
-    template<typename AgentAliasHistoryEventsT = Aws::Vector<AgentAliasHistoryEvent>>
-    AgentAlias& WithAgentAliasHistoryEvents(AgentAliasHistoryEventsT&& value) { SetAgentAliasHistoryEvents(std::forward<AgentAliasHistoryEventsT>(value)); return *this;}
-    template<typename AgentAliasHistoryEventsT = AgentAliasHistoryEvent>
-    AgentAlias& AddAgentAliasHistoryEvents(AgentAliasHistoryEventsT&& value) { m_agentAliasHistoryEventsHasBeenSet = true; m_agentAliasHistoryEvents.emplace_back(std::forward<AgentAliasHistoryEventsT>(value)); return *this; }
+    inline const Aws::String& GetAgentId() const { return m_agentId; }
+    inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
+    template<typename AgentIdT = Aws::String>
+    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
+    template<typename AgentIdT = Aws::String>
+    AgentAlias& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,44 +81,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the alias of the agent and whether it is ready for use. The
-     * following statuses are possible:</p> <ul> <li> <p>CREATING – The agent alias is
-     * being created.</p> </li> <li> <p>PREPARED – The agent alias is finished being
-     * created or updated and is ready to be invoked.</p> </li> <li> <p>FAILED – The
-     * agent alias API operation failed.</p> </li> <li> <p>UPDATING – The agent alias
-     * is being updated.</p> </li> <li> <p>DELETING – The agent alias is being
-     * deleted.</p> </li> <li> <p>DISSOCIATED - The agent alias has no version
-     * associated with it.</p> </li> </ul>
+     * <p>The Amazon Resource Name (ARN) of the alias of the agent.</p>
      */
-    inline AgentAliasStatus GetAgentAliasStatus() const { return m_agentAliasStatus; }
-    inline bool AgentAliasStatusHasBeenSet() const { return m_agentAliasStatusHasBeenSet; }
-    inline void SetAgentAliasStatus(AgentAliasStatus value) { m_agentAliasStatusHasBeenSet = true; m_agentAliasStatus = value; }
-    inline AgentAlias& WithAgentAliasStatus(AgentAliasStatus value) { SetAgentAliasStatus(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The unique identifier of the agent.</p>
-     */
-    inline const Aws::String& GetAgentId() const { return m_agentId; }
-    inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-    template<typename AgentIdT = Aws::String>
-    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
-    template<typename AgentIdT = Aws::String>
-    AgentAlias& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The invocation state for the agent alias. If the agent alias is running, the
-     * value is <code>ACCEPT_INVOCATIONS</code>. If the agent alias is paused, the
-     * value is <code>REJECT_INVOCATIONS</code>. Use the <code>UpdateAgentAlias</code>
-     * operation to change the invocation state.</p>
-     */
-    inline AliasInvocationState GetAliasInvocationState() const { return m_aliasInvocationState; }
-    inline bool AliasInvocationStateHasBeenSet() const { return m_aliasInvocationStateHasBeenSet; }
-    inline void SetAliasInvocationState(AliasInvocationState value) { m_aliasInvocationStateHasBeenSet = true; m_aliasInvocationState = value; }
-    inline AgentAlias& WithAliasInvocationState(AliasInvocationState value) { SetAliasInvocationState(value); return *this;}
+    inline const Aws::String& GetAgentAliasArn() const { return m_agentAliasArn; }
+    inline bool AgentAliasArnHasBeenSet() const { return m_agentAliasArnHasBeenSet; }
+    template<typename AgentAliasArnT = Aws::String>
+    void SetAgentAliasArn(AgentAliasArnT&& value) { m_agentAliasArnHasBeenSet = true; m_agentAliasArn = std::forward<AgentAliasArnT>(value); }
+    template<typename AgentAliasArnT = Aws::String>
+    AgentAlias& WithAgentAliasArn(AgentAliasArnT&& value) { SetAgentAliasArn(std::forward<AgentAliasArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,6 +109,32 @@ namespace Model
 
     ///@{
     /**
+     * <p>The description of the alias of the agent.</p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    AgentAlias& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains details about the routing configuration of the alias.</p>
+     */
+    inline const Aws::Vector<AgentAliasRoutingConfigurationListItem>& GetRoutingConfiguration() const { return m_routingConfiguration; }
+    inline bool RoutingConfigurationHasBeenSet() const { return m_routingConfigurationHasBeenSet; }
+    template<typename RoutingConfigurationT = Aws::Vector<AgentAliasRoutingConfigurationListItem>>
+    void SetRoutingConfiguration(RoutingConfigurationT&& value) { m_routingConfigurationHasBeenSet = true; m_routingConfiguration = std::forward<RoutingConfigurationT>(value); }
+    template<typename RoutingConfigurationT = Aws::Vector<AgentAliasRoutingConfigurationListItem>>
+    AgentAlias& WithRoutingConfiguration(RoutingConfigurationT&& value) { SetRoutingConfiguration(std::forward<RoutingConfigurationT>(value)); return *this;}
+    template<typename RoutingConfigurationT = AgentAliasRoutingConfigurationListItem>
+    AgentAlias& AddRoutingConfiguration(RoutingConfigurationT&& value) { m_routingConfigurationHasBeenSet = true; m_routingConfiguration.emplace_back(std::forward<RoutingConfigurationT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The time at which the alias of the agent was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -165,14 +147,45 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of the alias of the agent.</p>
+     * <p>The time at which the alias was last updated.</p>
      */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    AgentAlias& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    AgentAlias& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains details about the history of the alias.</p>
+     */
+    inline const Aws::Vector<AgentAliasHistoryEvent>& GetAgentAliasHistoryEvents() const { return m_agentAliasHistoryEvents; }
+    inline bool AgentAliasHistoryEventsHasBeenSet() const { return m_agentAliasHistoryEventsHasBeenSet; }
+    template<typename AgentAliasHistoryEventsT = Aws::Vector<AgentAliasHistoryEvent>>
+    void SetAgentAliasHistoryEvents(AgentAliasHistoryEventsT&& value) { m_agentAliasHistoryEventsHasBeenSet = true; m_agentAliasHistoryEvents = std::forward<AgentAliasHistoryEventsT>(value); }
+    template<typename AgentAliasHistoryEventsT = Aws::Vector<AgentAliasHistoryEvent>>
+    AgentAlias& WithAgentAliasHistoryEvents(AgentAliasHistoryEventsT&& value) { SetAgentAliasHistoryEvents(std::forward<AgentAliasHistoryEventsT>(value)); return *this;}
+    template<typename AgentAliasHistoryEventsT = AgentAliasHistoryEvent>
+    AgentAlias& AddAgentAliasHistoryEvents(AgentAliasHistoryEventsT&& value) { m_agentAliasHistoryEventsHasBeenSet = true; m_agentAliasHistoryEvents.emplace_back(std::forward<AgentAliasHistoryEventsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status of the alias of the agent and whether it is ready for use. The
+     * following statuses are possible:</p> <ul> <li> <p>CREATING – The agent alias is
+     * being created.</p> </li> <li> <p>PREPARED – The agent alias is finished being
+     * created or updated and is ready to be invoked.</p> </li> <li> <p>FAILED – The
+     * agent alias API operation failed.</p> </li> <li> <p>UPDATING – The agent alias
+     * is being updated.</p> </li> <li> <p>DELETING – The agent alias is being
+     * deleted.</p> </li> <li> <p>DISSOCIATED - The agent alias has no version
+     * associated with it.</p> </li> </ul>
+     */
+    inline AgentAliasStatus GetAgentAliasStatus() const { return m_agentAliasStatus; }
+    inline bool AgentAliasStatusHasBeenSet() const { return m_agentAliasStatusHasBeenSet; }
+    inline void SetAgentAliasStatus(AgentAliasStatus value) { m_agentAliasStatusHasBeenSet = true; m_agentAliasStatus = value; }
+    inline AgentAlias& WithAgentAliasStatus(AgentAliasStatus value) { SetAgentAliasStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -192,36 +205,20 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains details about the routing configuration of the alias.</p>
+     * <p>The invocation state for the agent alias. If the agent alias is running, the
+     * value is <code>ACCEPT_INVOCATIONS</code>. If the agent alias is paused, the
+     * value is <code>REJECT_INVOCATIONS</code>. Use the <code>UpdateAgentAlias</code>
+     * operation to change the invocation state.</p>
      */
-    inline const Aws::Vector<AgentAliasRoutingConfigurationListItem>& GetRoutingConfiguration() const { return m_routingConfiguration; }
-    inline bool RoutingConfigurationHasBeenSet() const { return m_routingConfigurationHasBeenSet; }
-    template<typename RoutingConfigurationT = Aws::Vector<AgentAliasRoutingConfigurationListItem>>
-    void SetRoutingConfiguration(RoutingConfigurationT&& value) { m_routingConfigurationHasBeenSet = true; m_routingConfiguration = std::forward<RoutingConfigurationT>(value); }
-    template<typename RoutingConfigurationT = Aws::Vector<AgentAliasRoutingConfigurationListItem>>
-    AgentAlias& WithRoutingConfiguration(RoutingConfigurationT&& value) { SetRoutingConfiguration(std::forward<RoutingConfigurationT>(value)); return *this;}
-    template<typename RoutingConfigurationT = AgentAliasRoutingConfigurationListItem>
-    AgentAlias& AddRoutingConfiguration(RoutingConfigurationT&& value) { m_routingConfigurationHasBeenSet = true; m_routingConfiguration.emplace_back(std::forward<RoutingConfigurationT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The time at which the alias was last updated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
-    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    template<typename UpdatedAtT = Aws::Utils::DateTime>
-    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
-    template<typename UpdatedAtT = Aws::Utils::DateTime>
-    AgentAlias& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
+    inline AliasInvocationState GetAliasInvocationState() const { return m_aliasInvocationState; }
+    inline bool AliasInvocationStateHasBeenSet() const { return m_aliasInvocationStateHasBeenSet; }
+    inline void SetAliasInvocationState(AliasInvocationState value) { m_aliasInvocationStateHasBeenSet = true; m_aliasInvocationState = value; }
+    inline AgentAlias& WithAliasInvocationState(AliasInvocationState value) { SetAliasInvocationState(value); return *this;}
     ///@}
   private:
 
-    Aws::String m_agentAliasArn;
-    bool m_agentAliasArnHasBeenSet = false;
-
-    Aws::Vector<AgentAliasHistoryEvent> m_agentAliasHistoryEvents;
-    bool m_agentAliasHistoryEventsHasBeenSet = false;
+    Aws::String m_agentId;
+    bool m_agentIdHasBeenSet = false;
 
     Aws::String m_agentAliasId;
     bool m_agentAliasIdHasBeenSet = false;
@@ -229,32 +226,35 @@ namespace Model
     Aws::String m_agentAliasName;
     bool m_agentAliasNameHasBeenSet = false;
 
-    AgentAliasStatus m_agentAliasStatus{AgentAliasStatus::NOT_SET};
-    bool m_agentAliasStatusHasBeenSet = false;
-
-    Aws::String m_agentId;
-    bool m_agentIdHasBeenSet = false;
-
-    AliasInvocationState m_aliasInvocationState{AliasInvocationState::NOT_SET};
-    bool m_aliasInvocationStateHasBeenSet = false;
+    Aws::String m_agentAliasArn;
+    bool m_agentAliasArnHasBeenSet = false;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
-
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_failureReasons;
-    bool m_failureReasonsHasBeenSet = false;
 
     Aws::Vector<AgentAliasRoutingConfigurationListItem> m_routingConfiguration;
     bool m_routingConfigurationHasBeenSet = false;
 
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
+
     Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
+
+    Aws::Vector<AgentAliasHistoryEvent> m_agentAliasHistoryEvents;
+    bool m_agentAliasHistoryEventsHasBeenSet = false;
+
+    AgentAliasStatus m_agentAliasStatus{AgentAliasStatus::NOT_SET};
+    bool m_agentAliasStatusHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_failureReasons;
+    bool m_failureReasonsHasBeenSet = false;
+
+    AliasInvocationState m_aliasInvocationState{AliasInvocationState::NOT_SET};
+    bool m_aliasInvocationStateHasBeenSet = false;
   };
 
 } // namespace Model

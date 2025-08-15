@@ -25,20 +25,20 @@ SemanticChunkingConfiguration::SemanticChunkingConfiguration(JsonView jsonValue)
 
 SemanticChunkingConfiguration& SemanticChunkingConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("breakpointPercentileThreshold"))
+  if(jsonValue.ValueExists("maxTokens"))
   {
-    m_breakpointPercentileThreshold = jsonValue.GetInteger("breakpointPercentileThreshold");
-    m_breakpointPercentileThresholdHasBeenSet = true;
+    m_maxTokens = jsonValue.GetInteger("maxTokens");
+    m_maxTokensHasBeenSet = true;
   }
   if(jsonValue.ValueExists("bufferSize"))
   {
     m_bufferSize = jsonValue.GetInteger("bufferSize");
     m_bufferSizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("maxTokens"))
+  if(jsonValue.ValueExists("breakpointPercentileThreshold"))
   {
-    m_maxTokens = jsonValue.GetInteger("maxTokens");
-    m_maxTokensHasBeenSet = true;
+    m_breakpointPercentileThreshold = jsonValue.GetInteger("breakpointPercentileThreshold");
+    m_breakpointPercentileThresholdHasBeenSet = true;
   }
   return *this;
 }
@@ -47,9 +47,9 @@ JsonValue SemanticChunkingConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_breakpointPercentileThresholdHasBeenSet)
+  if(m_maxTokensHasBeenSet)
   {
-   payload.WithInteger("breakpointPercentileThreshold", m_breakpointPercentileThreshold);
+   payload.WithInteger("maxTokens", m_maxTokens);
 
   }
 
@@ -59,9 +59,9 @@ JsonValue SemanticChunkingConfiguration::Jsonize() const
 
   }
 
-  if(m_maxTokensHasBeenSet)
+  if(m_breakpointPercentileThresholdHasBeenSet)
   {
-   payload.WithInteger("maxTokens", m_maxTokens);
+   payload.WithInteger("breakpointPercentileThreshold", m_breakpointPercentileThreshold);
 
   }
 

@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The duplicated condition expression.</p>
-     */
-    inline const Aws::String& GetExpression() const { return m_expression; }
-    inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    template<typename ExpressionT = Aws::String>
-    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
-    template<typename ExpressionT = Aws::String>
-    DuplicateConditionExpressionFlowValidationDetails& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the node containing the duplicate condition expressions.</p>
      */
     inline const Aws::String& GetNode() const { return m_node; }
@@ -61,13 +49,25 @@ namespace Model
     template<typename NodeT = Aws::String>
     DuplicateConditionExpressionFlowValidationDetails& WithNode(NodeT&& value) { SetNode(std::forward<NodeT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_expression;
-    bool m_expressionHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The duplicated condition expression.</p>
+     */
+    inline const Aws::String& GetExpression() const { return m_expression; }
+    inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
+    template<typename ExpressionT = Aws::String>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Aws::String>
+    DuplicateConditionExpressionFlowValidationDetails& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_node;
     bool m_nodeHasBeenSet = false;
+
+    Aws::String m_expression;
+    bool m_expressionHasBeenSet = false;
   };
 
 } // namespace Model

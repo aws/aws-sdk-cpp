@@ -25,15 +25,15 @@ UpdatePromptResult::UpdatePromptResult(const Aws::AmazonWebServiceResult<JsonVal
 UpdatePromptResult& UpdatePromptResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("arn"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("description"))
   {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
   if(jsonValue.ValueExists("customerEncryptionKeyArn"))
   {
@@ -45,26 +45,6 @@ UpdatePromptResult& UpdatePromptResult::operator =(const Aws::AmazonWebServiceRe
     m_defaultVariant = jsonValue.GetString("defaultVariant");
     m_defaultVariantHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("id"))
-  {
-    m_id = jsonValue.GetString("id");
-    m_idHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("updatedAt"))
-  {
-    m_updatedAt = jsonValue.GetString("updatedAt");
-    m_updatedAtHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("variants"))
   {
     Aws::Utils::Array<JsonView> variantsJsonList = jsonValue.GetArray("variants");
@@ -74,10 +54,30 @@ UpdatePromptResult& UpdatePromptResult::operator =(const Aws::AmazonWebServiceRe
     }
     m_variantsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
     m_versionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("updatedAt"))
+  {
+    m_updatedAt = jsonValue.GetString("updatedAt");
+    m_updatedAtHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -7,9 +7,9 @@
 #include <aws/amp/PrometheusService_EXPORTS.h>
 #include <aws/amp/PrometheusServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/amp/model/ScrapeConfiguration.h>
 #include <aws/amp/model/Destination.h>
 #include <aws/amp/model/RoleConfiguration.h>
-#include <aws/amp/model/ScrapeConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -38,6 +38,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the scraper to update.</p>
+     */
+    inline const Aws::String& GetScraperId() const { return m_scraperId; }
+    inline bool ScraperIdHasBeenSet() const { return m_scraperIdHasBeenSet; }
+    template<typename ScraperIdT = Aws::String>
+    void SetScraperId(ScraperIdT&& value) { m_scraperIdHasBeenSet = true; m_scraperId = std::forward<ScraperIdT>(value); }
+    template<typename ScraperIdT = Aws::String>
+    UpdateScraperRequest& WithScraperId(ScraperIdT&& value) { SetScraperId(std::forward<ScraperIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The new alias of the scraper.</p>
      */
     inline const Aws::String& GetAlias() const { return m_alias; }
@@ -50,15 +62,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique identifier that you can provide to ensure the idempotency of the
-     * request. Case-sensitive.</p>
+     * <p>Contains the base-64 encoded YAML configuration for the scraper.</p> 
+     * <p>For more information about configuring a scraper, see <a
+     * href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html">Using
+     * an Amazon Web Services managed collector</a> in the <i>Amazon Managed Service
+     * for Prometheus User Guide</i>.</p> 
      */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    UpdateScraperRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
+    inline const ScrapeConfiguration& GetScrapeConfiguration() const { return m_scrapeConfiguration; }
+    inline bool ScrapeConfigurationHasBeenSet() const { return m_scrapeConfigurationHasBeenSet; }
+    template<typename ScrapeConfigurationT = ScrapeConfiguration>
+    void SetScrapeConfiguration(ScrapeConfigurationT&& value) { m_scrapeConfigurationHasBeenSet = true; m_scrapeConfiguration = std::forward<ScrapeConfigurationT>(value); }
+    template<typename ScrapeConfigurationT = ScrapeConfiguration>
+    UpdateScraperRequest& WithScrapeConfiguration(ScrapeConfigurationT&& value) { SetScrapeConfiguration(std::forward<ScrapeConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,38 +104,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains the base-64 encoded YAML configuration for the scraper.</p> 
-     * <p>For more information about configuring a scraper, see <a
-     * href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html">Using
-     * an Amazon Web Services managed collector</a> in the <i>Amazon Managed Service
-     * for Prometheus User Guide</i>.</p> 
+     * <p>A unique identifier that you can provide to ensure the idempotency of the
+     * request. Case-sensitive.</p>
      */
-    inline const ScrapeConfiguration& GetScrapeConfiguration() const { return m_scrapeConfiguration; }
-    inline bool ScrapeConfigurationHasBeenSet() const { return m_scrapeConfigurationHasBeenSet; }
-    template<typename ScrapeConfigurationT = ScrapeConfiguration>
-    void SetScrapeConfiguration(ScrapeConfigurationT&& value) { m_scrapeConfigurationHasBeenSet = true; m_scrapeConfiguration = std::forward<ScrapeConfigurationT>(value); }
-    template<typename ScrapeConfigurationT = ScrapeConfiguration>
-    UpdateScraperRequest& WithScrapeConfiguration(ScrapeConfigurationT&& value) { SetScrapeConfiguration(std::forward<ScrapeConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the scraper to update.</p>
-     */
-    inline const Aws::String& GetScraperId() const { return m_scraperId; }
-    inline bool ScraperIdHasBeenSet() const { return m_scraperIdHasBeenSet; }
-    template<typename ScraperIdT = Aws::String>
-    void SetScraperId(ScraperIdT&& value) { m_scraperIdHasBeenSet = true; m_scraperId = std::forward<ScraperIdT>(value); }
-    template<typename ScraperIdT = Aws::String>
-    UpdateScraperRequest& WithScraperId(ScraperIdT&& value) { SetScraperId(std::forward<ScraperIdT>(value)); return *this;}
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateScraperRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
+
+    Aws::String m_scraperId;
+    bool m_scraperIdHasBeenSet = false;
 
     Aws::String m_alias;
     bool m_aliasHasBeenSet = false;
 
-    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-    bool m_clientTokenHasBeenSet = true;
+    ScrapeConfiguration m_scrapeConfiguration;
+    bool m_scrapeConfigurationHasBeenSet = false;
 
     Destination m_destination;
     bool m_destinationHasBeenSet = false;
@@ -128,11 +131,8 @@ namespace Model
     RoleConfiguration m_roleConfiguration;
     bool m_roleConfigurationHasBeenSet = false;
 
-    ScrapeConfiguration m_scrapeConfiguration;
-    bool m_scrapeConfigurationHasBeenSet = false;
-
-    Aws::String m_scraperId;
-    bool m_scraperIdHasBeenSet = false;
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
   };
 
 } // namespace Model

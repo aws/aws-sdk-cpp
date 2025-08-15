@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/CustomContent.h>
 #include <aws/bedrock-agent/model/ContentDataSourceType.h>
+#include <aws/bedrock-agent/model/CustomContent.h>
 #include <aws/bedrock-agent/model/S3Content.h>
 #include <utility>
 
@@ -43,6 +43,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of data source that is connected to the knowledge base to which to
+     * ingest this document.</p>
+     */
+    inline ContentDataSourceType GetDataSourceType() const { return m_dataSourceType; }
+    inline bool DataSourceTypeHasBeenSet() const { return m_dataSourceTypeHasBeenSet; }
+    inline void SetDataSourceType(ContentDataSourceType value) { m_dataSourceTypeHasBeenSet = true; m_dataSourceType = value; }
+    inline DocumentContent& WithDataSourceType(ContentDataSourceType value) { SetDataSourceType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains information about the content to ingest into a knowledge base
      * connected to a custom data source.</p>
      */
@@ -52,17 +63,6 @@ namespace Model
     void SetCustom(CustomT&& value) { m_customHasBeenSet = true; m_custom = std::forward<CustomT>(value); }
     template<typename CustomT = CustomContent>
     DocumentContent& WithCustom(CustomT&& value) { SetCustom(std::forward<CustomT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The type of data source that is connected to the knowledge base to which to
-     * ingest this document.</p>
-     */
-    inline ContentDataSourceType GetDataSourceType() const { return m_dataSourceType; }
-    inline bool DataSourceTypeHasBeenSet() const { return m_dataSourceTypeHasBeenSet; }
-    inline void SetDataSourceType(ContentDataSourceType value) { m_dataSourceTypeHasBeenSet = true; m_dataSourceType = value; }
-    inline DocumentContent& WithDataSourceType(ContentDataSourceType value) { SetDataSourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -79,11 +79,11 @@ namespace Model
     ///@}
   private:
 
-    CustomContent m_custom;
-    bool m_customHasBeenSet = false;
-
     ContentDataSourceType m_dataSourceType{ContentDataSourceType::NOT_SET};
     bool m_dataSourceTypeHasBeenSet = false;
+
+    CustomContent m_custom;
+    bool m_customHasBeenSet = false;
 
     S3Content m_s3;
     bool m_s3HasBeenSet = false;

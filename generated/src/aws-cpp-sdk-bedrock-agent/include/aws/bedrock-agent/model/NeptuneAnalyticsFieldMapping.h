@@ -40,19 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the field in which Amazon Bedrock stores metadata about the
-     * vector store.</p>
-     */
-    inline const Aws::String& GetMetadataField() const { return m_metadataField; }
-    inline bool MetadataFieldHasBeenSet() const { return m_metadataFieldHasBeenSet; }
-    template<typename MetadataFieldT = Aws::String>
-    void SetMetadataField(MetadataFieldT&& value) { m_metadataFieldHasBeenSet = true; m_metadataField = std::forward<MetadataFieldT>(value); }
-    template<typename MetadataFieldT = Aws::String>
-    NeptuneAnalyticsFieldMapping& WithMetadataField(MetadataFieldT&& value) { SetMetadataField(std::forward<MetadataFieldT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the field in which Amazon Bedrock stores the raw text from your
      * data. The text is split according to the chunking strategy you choose.</p>
      */
@@ -63,13 +50,26 @@ namespace Model
     template<typename TextFieldT = Aws::String>
     NeptuneAnalyticsFieldMapping& WithTextField(TextFieldT&& value) { SetTextField(std::forward<TextFieldT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_metadataField;
-    bool m_metadataFieldHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The name of the field in which Amazon Bedrock stores metadata about the
+     * vector store.</p>
+     */
+    inline const Aws::String& GetMetadataField() const { return m_metadataField; }
+    inline bool MetadataFieldHasBeenSet() const { return m_metadataFieldHasBeenSet; }
+    template<typename MetadataFieldT = Aws::String>
+    void SetMetadataField(MetadataFieldT&& value) { m_metadataFieldHasBeenSet = true; m_metadataField = std::forward<MetadataFieldT>(value); }
+    template<typename MetadataFieldT = Aws::String>
+    NeptuneAnalyticsFieldMapping& WithMetadataField(MetadataFieldT&& value) { SetMetadataField(std::forward<MetadataFieldT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_textField;
     bool m_textFieldHasBeenSet = false;
+
+    Aws::String m_metadataField;
+    bool m_metadataFieldHasBeenSet = false;
   };
 
 } // namespace Model

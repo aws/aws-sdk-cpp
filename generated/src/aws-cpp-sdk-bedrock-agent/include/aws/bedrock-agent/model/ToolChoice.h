@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/AnyToolChoice.h>
 #include <aws/bedrock-agent/model/AutoToolChoice.h>
+#include <aws/bedrock-agent/model/AnyToolChoice.h>
 #include <aws/bedrock-agent/model/SpecificToolChoice.h>
 #include <utility>
 
@@ -45,6 +45,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Defines tools. The model automatically decides whether to call a tool or to
+     * generate text instead.</p>
+     */
+    inline const AutoToolChoice& GetAuto() const { return m_auto; }
+    inline bool AutoHasBeenSet() const { return m_autoHasBeenSet; }
+    template<typename AutoT = AutoToolChoice>
+    void SetAuto(AutoT&& value) { m_autoHasBeenSet = true; m_auto = std::forward<AutoT>(value); }
+    template<typename AutoT = AutoToolChoice>
+    ToolChoice& WithAuto(AutoT&& value) { SetAuto(std::forward<AutoT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Defines tools, at least one of which must be requested by the model. No text
      * is generated but the results of tool use are sent back to the model to help
      * generate a response.</p>
@@ -55,19 +68,6 @@ namespace Model
     void SetAny(AnyT&& value) { m_anyHasBeenSet = true; m_any = std::forward<AnyT>(value); }
     template<typename AnyT = AnyToolChoice>
     ToolChoice& WithAny(AnyT&& value) { SetAny(std::forward<AnyT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Defines tools. The model automatically decides whether to call a tool or to
-     * generate text instead.</p>
-     */
-    inline const AutoToolChoice& GetAuto() const { return m_auto; }
-    inline bool AutoHasBeenSet() const { return m_autoHasBeenSet; }
-    template<typename AutoT = AutoToolChoice>
-    void SetAuto(AutoT&& value) { m_autoHasBeenSet = true; m_auto = std::forward<AutoT>(value); }
-    template<typename AutoT = AutoToolChoice>
-    ToolChoice& WithAuto(AutoT&& value) { SetAuto(std::forward<AutoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,11 +85,11 @@ namespace Model
     ///@}
   private:
 
-    AnyToolChoice m_any;
-    bool m_anyHasBeenSet = false;
-
     AutoToolChoice m_auto;
     bool m_autoHasBeenSet = false;
+
+    AnyToolChoice m_any;
+    bool m_anyHasBeenSet = false;
 
     SpecificToolChoice m_tool;
     bool m_toolHasBeenSet = false;

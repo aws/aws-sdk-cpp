@@ -25,14 +25,10 @@ QueryGenerationTable::QueryGenerationTable(JsonView jsonValue)
 
 QueryGenerationTable& QueryGenerationTable::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("columns"))
+  if(jsonValue.ValueExists("name"))
   {
-    Aws::Utils::Array<JsonView> columnsJsonList = jsonValue.GetArray("columns");
-    for(unsigned columnsIndex = 0; columnsIndex < columnsJsonList.GetLength(); ++columnsIndex)
-    {
-      m_columns.push_back(columnsJsonList[columnsIndex].AsObject());
-    }
-    m_columnsHasBeenSet = true;
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("description"))
   {
@@ -44,10 +40,14 @@ QueryGenerationTable& QueryGenerationTable::operator =(JsonView jsonValue)
     m_inclusion = IncludeExcludeMapper::GetIncludeExcludeForName(jsonValue.GetString("inclusion"));
     m_inclusionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("columns"))
   {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
+    Aws::Utils::Array<JsonView> columnsJsonList = jsonValue.GetArray("columns");
+    for(unsigned columnsIndex = 0; columnsIndex < columnsJsonList.GetLength(); ++columnsIndex)
+    {
+      m_columns.push_back(columnsJsonList[columnsIndex].AsObject());
+    }
+    m_columnsHasBeenSet = true;
   }
   return *this;
 }
@@ -56,14 +56,9 @@ JsonValue QueryGenerationTable::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_columnsHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> columnsJsonList(m_columns.size());
-   for(unsigned columnsIndex = 0; columnsIndex < columnsJsonList.GetLength(); ++columnsIndex)
-   {
-     columnsJsonList[columnsIndex].AsObject(m_columns[columnsIndex].Jsonize());
-   }
-   payload.WithArray("columns", std::move(columnsJsonList));
+   payload.WithString("name", m_name);
 
   }
 
@@ -78,9 +73,14 @@ JsonValue QueryGenerationTable::Jsonize() const
    payload.WithString("inclusion", IncludeExcludeMapper::GetNameForIncludeExclude(m_inclusion));
   }
 
-  if(m_nameHasBeenSet)
+  if(m_columnsHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   Aws::Utils::Array<JsonValue> columnsJsonList(m_columns.size());
+   for(unsigned columnsIndex = 0; columnsIndex < columnsJsonList.GetLength(); ++columnsIndex)
+   {
+     columnsJsonList[columnsIndex].AsObject(m_columns[columnsIndex].Jsonize());
+   }
+   payload.WithArray("columns", std::move(columnsJsonList));
 
   }
 

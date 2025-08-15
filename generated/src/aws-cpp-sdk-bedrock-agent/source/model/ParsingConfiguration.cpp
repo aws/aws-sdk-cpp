@@ -25,20 +25,20 @@ ParsingConfiguration::ParsingConfiguration(JsonView jsonValue)
 
 ParsingConfiguration& ParsingConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("bedrockDataAutomationConfiguration"))
+  if(jsonValue.ValueExists("parsingStrategy"))
   {
-    m_bedrockDataAutomationConfiguration = jsonValue.GetObject("bedrockDataAutomationConfiguration");
-    m_bedrockDataAutomationConfigurationHasBeenSet = true;
+    m_parsingStrategy = ParsingStrategyMapper::GetParsingStrategyForName(jsonValue.GetString("parsingStrategy"));
+    m_parsingStrategyHasBeenSet = true;
   }
   if(jsonValue.ValueExists("bedrockFoundationModelConfiguration"))
   {
     m_bedrockFoundationModelConfiguration = jsonValue.GetObject("bedrockFoundationModelConfiguration");
     m_bedrockFoundationModelConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("parsingStrategy"))
+  if(jsonValue.ValueExists("bedrockDataAutomationConfiguration"))
   {
-    m_parsingStrategy = ParsingStrategyMapper::GetParsingStrategyForName(jsonValue.GetString("parsingStrategy"));
-    m_parsingStrategyHasBeenSet = true;
+    m_bedrockDataAutomationConfiguration = jsonValue.GetObject("bedrockDataAutomationConfiguration");
+    m_bedrockDataAutomationConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -47,10 +47,9 @@ JsonValue ParsingConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_bedrockDataAutomationConfigurationHasBeenSet)
+  if(m_parsingStrategyHasBeenSet)
   {
-   payload.WithObject("bedrockDataAutomationConfiguration", m_bedrockDataAutomationConfiguration.Jsonize());
-
+   payload.WithString("parsingStrategy", ParsingStrategyMapper::GetNameForParsingStrategy(m_parsingStrategy));
   }
 
   if(m_bedrockFoundationModelConfigurationHasBeenSet)
@@ -59,9 +58,10 @@ JsonValue ParsingConfiguration::Jsonize() const
 
   }
 
-  if(m_parsingStrategyHasBeenSet)
+  if(m_bedrockDataAutomationConfigurationHasBeenSet)
   {
-   payload.WithString("parsingStrategy", ParsingStrategyMapper::GetNameForParsingStrategy(m_parsingStrategy));
+   payload.WithObject("bedrockDataAutomationConfiguration", m_bedrockDataAutomationConfiguration.Jsonize());
+
   }
 
   return payload;

@@ -25,16 +25,6 @@ KnowledgeBaseFlowNodeConfiguration::KnowledgeBaseFlowNodeConfiguration(JsonView 
 
 KnowledgeBaseFlowNodeConfiguration& KnowledgeBaseFlowNodeConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("guardrailConfiguration"))
-  {
-    m_guardrailConfiguration = jsonValue.GetObject("guardrailConfiguration");
-    m_guardrailConfigurationHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("inferenceConfiguration"))
-  {
-    m_inferenceConfiguration = jsonValue.GetObject("inferenceConfiguration");
-    m_inferenceConfigurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("knowledgeBaseId"))
   {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
@@ -45,25 +35,35 @@ KnowledgeBaseFlowNodeConfiguration& KnowledgeBaseFlowNodeConfiguration::operator
     m_modelId = jsonValue.GetString("modelId");
     m_modelIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("guardrailConfiguration"))
+  {
+    m_guardrailConfiguration = jsonValue.GetObject("guardrailConfiguration");
+    m_guardrailConfigurationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("numberOfResults"))
   {
     m_numberOfResults = jsonValue.GetInteger("numberOfResults");
     m_numberOfResultsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("orchestrationConfiguration"))
-  {
-    m_orchestrationConfiguration = jsonValue.GetObject("orchestrationConfiguration");
-    m_orchestrationConfigurationHasBeenSet = true;
   }
   if(jsonValue.ValueExists("promptTemplate"))
   {
     m_promptTemplate = jsonValue.GetObject("promptTemplate");
     m_promptTemplateHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("inferenceConfiguration"))
+  {
+    m_inferenceConfiguration = jsonValue.GetObject("inferenceConfiguration");
+    m_inferenceConfigurationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("rerankingConfiguration"))
   {
     m_rerankingConfiguration = jsonValue.GetObject("rerankingConfiguration");
     m_rerankingConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("orchestrationConfiguration"))
+  {
+    m_orchestrationConfiguration = jsonValue.GetObject("orchestrationConfiguration");
+    m_orchestrationConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -71,18 +71,6 @@ KnowledgeBaseFlowNodeConfiguration& KnowledgeBaseFlowNodeConfiguration::operator
 JsonValue KnowledgeBaseFlowNodeConfiguration::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_guardrailConfigurationHasBeenSet)
-  {
-   payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
-
-  }
-
-  if(m_inferenceConfigurationHasBeenSet)
-  {
-   payload.WithObject("inferenceConfiguration", m_inferenceConfiguration.Jsonize());
-
-  }
 
   if(m_knowledgeBaseIdHasBeenSet)
   {
@@ -96,15 +84,15 @@ JsonValue KnowledgeBaseFlowNodeConfiguration::Jsonize() const
 
   }
 
-  if(m_numberOfResultsHasBeenSet)
+  if(m_guardrailConfigurationHasBeenSet)
   {
-   payload.WithInteger("numberOfResults", m_numberOfResults);
+   payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
 
   }
 
-  if(m_orchestrationConfigurationHasBeenSet)
+  if(m_numberOfResultsHasBeenSet)
   {
-   payload.WithObject("orchestrationConfiguration", m_orchestrationConfiguration.Jsonize());
+   payload.WithInteger("numberOfResults", m_numberOfResults);
 
   }
 
@@ -114,9 +102,21 @@ JsonValue KnowledgeBaseFlowNodeConfiguration::Jsonize() const
 
   }
 
+  if(m_inferenceConfigurationHasBeenSet)
+  {
+   payload.WithObject("inferenceConfiguration", m_inferenceConfiguration.Jsonize());
+
+  }
+
   if(m_rerankingConfigurationHasBeenSet)
   {
    payload.WithObject("rerankingConfiguration", m_rerankingConfiguration.Jsonize());
+
+  }
+
+  if(m_orchestrationConfigurationHasBeenSet)
+  {
+   payload.WithObject("orchestrationConfiguration", m_orchestrationConfiguration.Jsonize());
 
   }
 

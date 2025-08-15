@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/PatternObjectFilterConfiguration.h>
 #include <aws/bedrock-agent/model/CrawlFilterConfigurationType.h>
+#include <aws/bedrock-agent/model/PatternObjectFilterConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -42,6 +42,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of filtering that you want to apply to certain objects or content of
+     * the data source. For example, the <code>PATTERN</code> type is regular
+     * expression patterns you can apply to filter your content.</p>
+     */
+    inline CrawlFilterConfigurationType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(CrawlFilterConfigurationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CrawlFilterConfiguration& WithType(CrawlFilterConfigurationType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The configuration of filtering certain objects or content types of the data
      * source.</p>
      */
@@ -52,25 +64,13 @@ namespace Model
     template<typename PatternObjectFilterT = PatternObjectFilterConfiguration>
     CrawlFilterConfiguration& WithPatternObjectFilter(PatternObjectFilterT&& value) { SetPatternObjectFilter(std::forward<PatternObjectFilterT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of filtering that you want to apply to certain objects or content of
-     * the data source. For example, the <code>PATTERN</code> type is regular
-     * expression patterns you can apply to filter your content.</p>
-     */
-    inline CrawlFilterConfigurationType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(CrawlFilterConfigurationType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline CrawlFilterConfiguration& WithType(CrawlFilterConfigurationType value) { SetType(value); return *this;}
-    ///@}
   private:
-
-    PatternObjectFilterConfiguration m_patternObjectFilter;
-    bool m_patternObjectFilterHasBeenSet = false;
 
     CrawlFilterConfigurationType m_type{CrawlFilterConfigurationType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    PatternObjectFilterConfiguration m_patternObjectFilter;
+    bool m_patternObjectFilterHasBeenSet = false;
   };
 
 } // namespace Model

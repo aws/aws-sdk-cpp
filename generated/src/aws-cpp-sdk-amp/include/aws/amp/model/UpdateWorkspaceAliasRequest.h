@@ -39,6 +39,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the workspace to update.</p>
+     */
+    inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
+    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
+    template<typename WorkspaceIdT = Aws::String>
+    void SetWorkspaceId(WorkspaceIdT&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::forward<WorkspaceIdT>(value); }
+    template<typename WorkspaceIdT = Aws::String>
+    UpdateWorkspaceAliasRequest& WithWorkspaceId(WorkspaceIdT&& value) { SetWorkspaceId(std::forward<WorkspaceIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The new alias for the workspace. It does not need to be unique.</p> <p>Amazon
      * Managed Service for Prometheus will automatically strip any blank spaces from
      * the beginning and end of the alias that you specify.</p>
@@ -63,28 +75,16 @@ namespace Model
     template<typename ClientTokenT = Aws::String>
     UpdateWorkspaceAliasRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the workspace to update.</p>
-     */
-    inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
-    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-    template<typename WorkspaceIdT = Aws::String>
-    void SetWorkspaceId(WorkspaceIdT&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::forward<WorkspaceIdT>(value); }
-    template<typename WorkspaceIdT = Aws::String>
-    UpdateWorkspaceAliasRequest& WithWorkspaceId(WorkspaceIdT&& value) { SetWorkspaceId(std::forward<WorkspaceIdT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_workspaceId;
+    bool m_workspaceIdHasBeenSet = false;
 
     Aws::String m_alias;
     bool m_aliasHasBeenSet = false;
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
-
-    Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,18 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the alias for which to get information.</p>
-     */
-    inline const Aws::String& GetAgentAliasId() const { return m_agentAliasId; }
-    inline bool AgentAliasIdHasBeenSet() const { return m_agentAliasIdHasBeenSet; }
-    template<typename AgentAliasIdT = Aws::String>
-    void SetAgentAliasId(AgentAliasIdT&& value) { m_agentAliasIdHasBeenSet = true; m_agentAliasId = std::forward<AgentAliasIdT>(value); }
-    template<typename AgentAliasIdT = Aws::String>
-    GetAgentAliasRequest& WithAgentAliasId(AgentAliasIdT&& value) { SetAgentAliasId(std::forward<AgentAliasIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique identifier of the agent to which the alias to get information
      * belongs.</p>
      */
@@ -56,13 +44,25 @@ namespace Model
     template<typename AgentIdT = Aws::String>
     GetAgentAliasRequest& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_agentAliasId;
-    bool m_agentAliasIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The unique identifier of the alias for which to get information.</p>
+     */
+    inline const Aws::String& GetAgentAliasId() const { return m_agentAliasId; }
+    inline bool AgentAliasIdHasBeenSet() const { return m_agentAliasIdHasBeenSet; }
+    template<typename AgentAliasIdT = Aws::String>
+    void SetAgentAliasId(AgentAliasIdT&& value) { m_agentAliasIdHasBeenSet = true; m_agentAliasId = std::forward<AgentAliasIdT>(value); }
+    template<typename AgentAliasIdT = Aws::String>
+    GetAgentAliasRequest& WithAgentAliasId(AgentAliasIdT&& value) { SetAgentAliasId(std::forward<AgentAliasIdT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet = false;
+
+    Aws::String m_agentAliasId;
+    bool m_agentAliasIdHasBeenSet = false;
   };
 
 } // namespace Model

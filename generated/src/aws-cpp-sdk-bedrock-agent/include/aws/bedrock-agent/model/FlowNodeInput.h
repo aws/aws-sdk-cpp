@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/FlowNodeInputCategory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/FlowNodeIODataType.h>
+#include <aws/bedrock-agent/model/FlowNodeInputCategory.h>
 #include <utility>
 
 namespace Aws
@@ -42,39 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies how input data flows between iterations in a DoWhile loop.</p> <ul>
-     * <li> <p> <code>LoopCondition</code> - Controls whether the loop continues by
-     * evaluating condition expressions against the input data. Use this category to
-     * define the condition that determines if the loop should continue. </p> </li>
-     * <li> <p> <code>ReturnValueToLoopStart</code> - Defines data to pass back to the
-     * start of the loop's next iteration. Use this category for variables that you
-     * want to update for each loop iteration.</p> </li> <li> <p> <code>ExitLoop</code>
-     * - Defines the value that's available once the loop ends. Use this category to
-     * expose loop results to nodes outside the loop.</p> </li> </ul>
-     */
-    inline FlowNodeInputCategory GetCategory() const { return m_category; }
-    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(FlowNodeInputCategory value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline FlowNodeInput& WithCategory(FlowNodeInputCategory value) { SetCategory(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>An expression that formats the input for the node. For an explanation of how
-     * to create expressions, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-expressions.html">Expressions
-     * in Prompt flows in Amazon Bedrock</a>.</p>
-     */
-    inline const Aws::String& GetExpression() const { return m_expression; }
-    inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    template<typename ExpressionT = Aws::String>
-    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
-    template<typename ExpressionT = Aws::String>
-    FlowNodeInput& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Specifies a name for the input that you can reference.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
@@ -95,19 +62,52 @@ namespace Model
     inline void SetType(FlowNodeIODataType value) { m_typeHasBeenSet = true; m_type = value; }
     inline FlowNodeInput& WithType(FlowNodeIODataType value) { SetType(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An expression that formats the input for the node. For an explanation of how
+     * to create expressions, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-expressions.html">Expressions
+     * in Prompt flows in Amazon Bedrock</a>.</p>
+     */
+    inline const Aws::String& GetExpression() const { return m_expression; }
+    inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
+    template<typename ExpressionT = Aws::String>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Aws::String>
+    FlowNodeInput& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies how input data flows between iterations in a DoWhile loop.</p> <ul>
+     * <li> <p> <code>LoopCondition</code> - Controls whether the loop continues by
+     * evaluating condition expressions against the input data. Use this category to
+     * define the condition that determines if the loop should continue. </p> </li>
+     * <li> <p> <code>ReturnValueToLoopStart</code> - Defines data to pass back to the
+     * start of the loop's next iteration. Use this category for variables that you
+     * want to update for each loop iteration.</p> </li> <li> <p> <code>ExitLoop</code>
+     * - Defines the value that's available once the loop ends. Use this category to
+     * expose loop results to nodes outside the loop.</p> </li> </ul>
+     */
+    inline FlowNodeInputCategory GetCategory() const { return m_category; }
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+    inline void SetCategory(FlowNodeInputCategory value) { m_categoryHasBeenSet = true; m_category = value; }
+    inline FlowNodeInput& WithCategory(FlowNodeInputCategory value) { SetCategory(value); return *this;}
+    ///@}
   private:
-
-    FlowNodeInputCategory m_category{FlowNodeInputCategory::NOT_SET};
-    bool m_categoryHasBeenSet = false;
-
-    Aws::String m_expression;
-    bool m_expressionHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
     FlowNodeIODataType m_type{FlowNodeIODataType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    Aws::String m_expression;
+    bool m_expressionHasBeenSet = false;
+
+    FlowNodeInputCategory m_category{FlowNodeInputCategory::NOT_SET};
+    bool m_categoryHasBeenSet = false;
   };
 
 } // namespace Model

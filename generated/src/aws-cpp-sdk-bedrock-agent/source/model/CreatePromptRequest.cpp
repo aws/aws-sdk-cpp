@@ -16,9 +16,15 @@ Aws::String CreatePromptRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithString("name", m_name);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
 
   }
 
@@ -34,15 +40,20 @@ Aws::String CreatePromptRequest::SerializePayload() const
 
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_variantsHasBeenSet)
   {
-   payload.WithString("description", m_description);
+   Aws::Utils::Array<JsonValue> variantsJsonList(m_variants.size());
+   for(unsigned variantsIndex = 0; variantsIndex < variantsJsonList.GetLength(); ++variantsIndex)
+   {
+     variantsJsonList[variantsIndex].AsObject(m_variants[variantsIndex].Jsonize());
+   }
+   payload.WithArray("variants", std::move(variantsJsonList));
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithString("clientToken", m_clientToken);
 
   }
 
@@ -54,17 +65,6 @@ Aws::String CreatePromptRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
-
-  }
-
-  if(m_variantsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> variantsJsonList(m_variants.size());
-   for(unsigned variantsIndex = 0; variantsIndex < variantsJsonList.GetLength(); ++variantsIndex)
-   {
-     variantsJsonList[variantsIndex].AsObject(m_variants[variantsIndex].Jsonize());
-   }
-   payload.WithArray("variants", std::move(variantsJsonList));
 
   }
 

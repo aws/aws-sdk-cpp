@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/ChatPromptTemplateConfiguration.h>
 #include <aws/bedrock-agent/model/TextPromptTemplateConfiguration.h>
+#include <aws/bedrock-agent/model/ChatPromptTemplateConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -43,18 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains configurations to use the prompt in a conversational format.</p>
-     */
-    inline const ChatPromptTemplateConfiguration& GetChat() const { return m_chat; }
-    inline bool ChatHasBeenSet() const { return m_chatHasBeenSet; }
-    template<typename ChatT = ChatPromptTemplateConfiguration>
-    void SetChat(ChatT&& value) { m_chatHasBeenSet = true; m_chat = std::forward<ChatT>(value); }
-    template<typename ChatT = ChatPromptTemplateConfiguration>
-    PromptTemplateConfiguration& WithChat(ChatT&& value) { SetChat(std::forward<ChatT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Contains configurations for the text in a message for a prompt.</p>
      */
     inline const TextPromptTemplateConfiguration& GetText() const { return m_text; }
@@ -64,13 +52,25 @@ namespace Model
     template<typename TextT = TextPromptTemplateConfiguration>
     PromptTemplateConfiguration& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
-  private:
 
-    ChatPromptTemplateConfiguration m_chat;
-    bool m_chatHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Contains configurations to use the prompt in a conversational format.</p>
+     */
+    inline const ChatPromptTemplateConfiguration& GetChat() const { return m_chat; }
+    inline bool ChatHasBeenSet() const { return m_chatHasBeenSet; }
+    template<typename ChatT = ChatPromptTemplateConfiguration>
+    void SetChat(ChatT&& value) { m_chatHasBeenSet = true; m_chat = std::forward<ChatT>(value); }
+    template<typename ChatT = ChatPromptTemplateConfiguration>
+    PromptTemplateConfiguration& WithChat(ChatT&& value) { SetChat(std::forward<ChatT>(value)); return *this;}
+    ///@}
+  private:
 
     TextPromptTemplateConfiguration m_text;
     bool m_textHasBeenSet = false;
+
+    ChatPromptTemplateConfiguration m_chat;
+    bool m_chatHasBeenSet = false;
   };
 
 } // namespace Model

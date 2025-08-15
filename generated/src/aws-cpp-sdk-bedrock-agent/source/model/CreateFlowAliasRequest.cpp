@@ -16,27 +16,15 @@ Aws::String CreateFlowAliasRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
-
-  }
-
-  if(m_concurrencyConfigurationHasBeenSet)
-  {
-   payload.WithObject("concurrencyConfiguration", m_concurrencyConfiguration.Jsonize());
+   payload.WithString("name", m_name);
 
   }
 
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
 
   }
 
@@ -48,6 +36,18 @@ Aws::String CreateFlowAliasRequest::SerializePayload() const
      routingConfigurationJsonList[routingConfigurationIndex].AsObject(m_routingConfiguration[routingConfigurationIndex].Jsonize());
    }
    payload.WithArray("routingConfiguration", std::move(routingConfigurationJsonList));
+
+  }
+
+  if(m_concurrencyConfigurationHasBeenSet)
+  {
+   payload.WithObject("concurrencyConfiguration", m_concurrencyConfiguration.Jsonize());
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

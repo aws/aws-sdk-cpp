@@ -34,18 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the action group for which to get information.</p>
-     */
-    inline const Aws::String& GetActionGroupId() const { return m_actionGroupId; }
-    inline bool ActionGroupIdHasBeenSet() const { return m_actionGroupIdHasBeenSet; }
-    template<typename ActionGroupIdT = Aws::String>
-    void SetActionGroupId(ActionGroupIdT&& value) { m_actionGroupIdHasBeenSet = true; m_actionGroupId = std::forward<ActionGroupIdT>(value); }
-    template<typename ActionGroupIdT = Aws::String>
-    GetAgentActionGroupRequest& WithActionGroupId(ActionGroupIdT&& value) { SetActionGroupId(std::forward<ActionGroupIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique identifier of the agent that the action group belongs to.</p>
      */
     inline const Aws::String& GetAgentId() const { return m_agentId; }
@@ -67,16 +55,28 @@ namespace Model
     template<typename AgentVersionT = Aws::String>
     GetAgentActionGroupRequest& WithAgentVersion(AgentVersionT&& value) { SetAgentVersion(std::forward<AgentVersionT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_actionGroupId;
-    bool m_actionGroupIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The unique identifier of the action group for which to get information.</p>
+     */
+    inline const Aws::String& GetActionGroupId() const { return m_actionGroupId; }
+    inline bool ActionGroupIdHasBeenSet() const { return m_actionGroupIdHasBeenSet; }
+    template<typename ActionGroupIdT = Aws::String>
+    void SetActionGroupId(ActionGroupIdT&& value) { m_actionGroupIdHasBeenSet = true; m_actionGroupId = std::forward<ActionGroupIdT>(value); }
+    template<typename ActionGroupIdT = Aws::String>
+    GetAgentActionGroupRequest& WithActionGroupId(ActionGroupIdT&& value) { SetActionGroupId(std::forward<ActionGroupIdT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet = false;
 
     Aws::String m_agentVersion;
     bool m_agentVersionHasBeenSet = false;
+
+    Aws::String m_actionGroupId;
+    bool m_actionGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

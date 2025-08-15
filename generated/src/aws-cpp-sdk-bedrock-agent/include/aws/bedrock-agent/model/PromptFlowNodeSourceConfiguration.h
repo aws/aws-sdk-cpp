@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/PromptFlowNodeInlineConfiguration.h>
 #include <aws/bedrock-agent/model/PromptFlowNodeResourceConfiguration.h>
+#include <aws/bedrock-agent/model/PromptFlowNodeInlineConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -41,18 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains configurations for a prompt that is defined inline</p>
-     */
-    inline const PromptFlowNodeInlineConfiguration& GetInline() const { return m_inline; }
-    inline bool InlineHasBeenSet() const { return m_inlineHasBeenSet; }
-    template<typename InlineT = PromptFlowNodeInlineConfiguration>
-    void SetInline(InlineT&& value) { m_inlineHasBeenSet = true; m_inline = std::forward<InlineT>(value); }
-    template<typename InlineT = PromptFlowNodeInlineConfiguration>
-    PromptFlowNodeSourceConfiguration& WithInline(InlineT&& value) { SetInline(std::forward<InlineT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Contains configurations for a prompt from Prompt management.</p>
      */
     inline const PromptFlowNodeResourceConfiguration& GetResource() const { return m_resource; }
@@ -62,13 +50,25 @@ namespace Model
     template<typename ResourceT = PromptFlowNodeResourceConfiguration>
     PromptFlowNodeSourceConfiguration& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
-  private:
 
-    PromptFlowNodeInlineConfiguration m_inline;
-    bool m_inlineHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Contains configurations for a prompt that is defined inline</p>
+     */
+    inline const PromptFlowNodeInlineConfiguration& GetInline() const { return m_inline; }
+    inline bool InlineHasBeenSet() const { return m_inlineHasBeenSet; }
+    template<typename InlineT = PromptFlowNodeInlineConfiguration>
+    void SetInline(InlineT&& value) { m_inlineHasBeenSet = true; m_inline = std::forward<InlineT>(value); }
+    template<typename InlineT = PromptFlowNodeInlineConfiguration>
+    PromptFlowNodeSourceConfiguration& WithInline(InlineT&& value) { SetInline(std::forward<InlineT>(value)); return *this;}
+    ///@}
+  private:
 
     PromptFlowNodeResourceConfiguration m_resource;
     bool m_resourceHasBeenSet = false;
+
+    PromptFlowNodeInlineConfiguration m_inline;
+    bool m_inlineHasBeenSet = false;
   };
 
 } // namespace Model

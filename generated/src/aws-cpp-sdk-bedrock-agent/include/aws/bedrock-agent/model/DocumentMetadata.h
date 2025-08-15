@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
+#include <aws/bedrock-agent/model/MetadataSourceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent/model/CustomS3Location.h>
-#include <aws/bedrock-agent/model/MetadataSourceType.h>
 #include <aws/bedrock-agent/model/MetadataAttribute.h>
 #include <utility>
 
@@ -44,6 +44,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of the source source from which to add metadata.</p>
+     */
+    inline MetadataSourceType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(MetadataSourceType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DocumentMetadata& WithType(MetadataSourceType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An array of objects, each of which defines a metadata attribute to associate
      * with the content to ingest. You define the attributes inline.</p>
      */
@@ -69,26 +79,16 @@ namespace Model
     template<typename S3LocationT = CustomS3Location>
     DocumentMetadata& WithS3Location(S3LocationT&& value) { SetS3Location(std::forward<S3LocationT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of the source source from which to add metadata.</p>
-     */
-    inline MetadataSourceType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(MetadataSourceType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline DocumentMetadata& WithType(MetadataSourceType value) { SetType(value); return *this;}
-    ///@}
   private:
+
+    MetadataSourceType m_type{MetadataSourceType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<MetadataAttribute> m_inlineAttributes;
     bool m_inlineAttributesHasBeenSet = false;
 
     CustomS3Location m_s3Location;
     bool m_s3LocationHasBeenSet = false;
-
-    MetadataSourceType m_type{MetadataSourceType::NOT_SET};
-    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

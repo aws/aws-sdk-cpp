@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/CachePointBlock.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/CachePointBlock.h>
 #include <utility>
 
 namespace Aws
@@ -43,18 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Creates a cache checkpoint within a tool designation</p>
-     */
-    inline const CachePointBlock& GetCachePoint() const { return m_cachePoint; }
-    inline bool CachePointHasBeenSet() const { return m_cachePointHasBeenSet; }
-    template<typename CachePointT = CachePointBlock>
-    void SetCachePoint(CachePointT&& value) { m_cachePointHasBeenSet = true; m_cachePoint = std::forward<CachePointT>(value); }
-    template<typename CachePointT = CachePointBlock>
-    SystemContentBlock& WithCachePoint(CachePointT&& value) { SetCachePoint(std::forward<CachePointT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The text in the system prompt.</p>
      */
     inline const Aws::String& GetText() const { return m_text; }
@@ -64,13 +52,25 @@ namespace Model
     template<typename TextT = Aws::String>
     SystemContentBlock& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
-  private:
 
-    CachePointBlock m_cachePoint;
-    bool m_cachePointHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Creates a cache checkpoint within a tool designation</p>
+     */
+    inline const CachePointBlock& GetCachePoint() const { return m_cachePoint; }
+    inline bool CachePointHasBeenSet() const { return m_cachePointHasBeenSet; }
+    template<typename CachePointT = CachePointBlock>
+    void SetCachePoint(CachePointT&& value) { m_cachePointHasBeenSet = true; m_cachePoint = std::forward<CachePointT>(value); }
+    template<typename CachePointT = CachePointBlock>
+    SystemContentBlock& WithCachePoint(CachePointT&& value) { SetCachePoint(std::forward<CachePointT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_text;
     bool m_textHasBeenSet = false;
+
+    CachePointBlock m_cachePoint;
+    bool m_cachePointHasBeenSet = false;
   };
 
 } // namespace Model

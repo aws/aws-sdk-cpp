@@ -41,14 +41,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The node that's incompatible in the DoWhile loop.</p>
+     * <p>The <code>Loop</code> container node that contains an incompatible node.</p>
      */
-    inline const Aws::String& GetIncompatibleNodeName() const { return m_incompatibleNodeName; }
-    inline bool IncompatibleNodeNameHasBeenSet() const { return m_incompatibleNodeNameHasBeenSet; }
-    template<typename IncompatibleNodeNameT = Aws::String>
-    void SetIncompatibleNodeName(IncompatibleNodeNameT&& value) { m_incompatibleNodeNameHasBeenSet = true; m_incompatibleNodeName = std::forward<IncompatibleNodeNameT>(value); }
-    template<typename IncompatibleNodeNameT = Aws::String>
-    LoopIncompatibleNodeTypeFlowValidationDetails& WithIncompatibleNodeName(IncompatibleNodeNameT&& value) { SetIncompatibleNodeName(std::forward<IncompatibleNodeNameT>(value)); return *this;}
+    inline const Aws::String& GetNode() const { return m_node; }
+    inline bool NodeHasBeenSet() const { return m_nodeHasBeenSet; }
+    template<typename NodeT = Aws::String>
+    void SetNode(NodeT&& value) { m_nodeHasBeenSet = true; m_node = std::forward<NodeT>(value); }
+    template<typename NodeT = Aws::String>
+    LoopIncompatibleNodeTypeFlowValidationDetails& WithNode(NodeT&& value) { SetNode(std::forward<NodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,25 +64,25 @@ namespace Model
 
     ///@{
     /**
-     * <p>The <code>Loop</code> container node that contains an incompatible node.</p>
+     * <p>The node that's incompatible in the DoWhile loop.</p>
      */
-    inline const Aws::String& GetNode() const { return m_node; }
-    inline bool NodeHasBeenSet() const { return m_nodeHasBeenSet; }
-    template<typename NodeT = Aws::String>
-    void SetNode(NodeT&& value) { m_nodeHasBeenSet = true; m_node = std::forward<NodeT>(value); }
-    template<typename NodeT = Aws::String>
-    LoopIncompatibleNodeTypeFlowValidationDetails& WithNode(NodeT&& value) { SetNode(std::forward<NodeT>(value)); return *this;}
+    inline const Aws::String& GetIncompatibleNodeName() const { return m_incompatibleNodeName; }
+    inline bool IncompatibleNodeNameHasBeenSet() const { return m_incompatibleNodeNameHasBeenSet; }
+    template<typename IncompatibleNodeNameT = Aws::String>
+    void SetIncompatibleNodeName(IncompatibleNodeNameT&& value) { m_incompatibleNodeNameHasBeenSet = true; m_incompatibleNodeName = std::forward<IncompatibleNodeNameT>(value); }
+    template<typename IncompatibleNodeNameT = Aws::String>
+    LoopIncompatibleNodeTypeFlowValidationDetails& WithIncompatibleNodeName(IncompatibleNodeNameT&& value) { SetIncompatibleNodeName(std::forward<IncompatibleNodeNameT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::String m_incompatibleNodeName;
-    bool m_incompatibleNodeNameHasBeenSet = false;
+    Aws::String m_node;
+    bool m_nodeHasBeenSet = false;
 
     IncompatibleLoopNodeType m_incompatibleNodeType{IncompatibleLoopNodeType::NOT_SET};
     bool m_incompatibleNodeTypeHasBeenSet = false;
 
-    Aws::String m_node;
-    bool m_nodeHasBeenSet = false;
+    Aws::String m_incompatibleNodeName;
+    bool m_incompatibleNodeNameHasBeenSet = false;
   };
 
 } // namespace Model

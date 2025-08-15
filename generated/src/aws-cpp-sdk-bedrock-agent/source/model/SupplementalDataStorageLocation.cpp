@@ -25,15 +25,15 @@ SupplementalDataStorageLocation::SupplementalDataStorageLocation(JsonView jsonVa
 
 SupplementalDataStorageLocation& SupplementalDataStorageLocation::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("s3Location"))
-  {
-    m_s3Location = jsonValue.GetObject("s3Location");
-    m_s3LocationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("type"))
   {
     m_type = SupplementalDataStorageLocationTypeMapper::GetSupplementalDataStorageLocationTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("s3Location"))
+  {
+    m_s3Location = jsonValue.GetObject("s3Location");
+    m_s3LocationHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue SupplementalDataStorageLocation::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", SupplementalDataStorageLocationTypeMapper::GetNameForSupplementalDataStorageLocationType(m_type));
+  }
+
   if(m_s3LocationHasBeenSet)
   {
    payload.WithObject("s3Location", m_s3Location.Jsonize());
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", SupplementalDataStorageLocationTypeMapper::GetNameForSupplementalDataStorageLocationType(m_type));
   }
 
   return payload;

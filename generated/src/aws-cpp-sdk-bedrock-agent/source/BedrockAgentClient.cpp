@@ -674,11 +674,6 @@ DeleteAgentActionGroupOutcome BedrockAgentClient::DeleteAgentActionGroup(const D
 {
   AWS_OPERATION_GUARD(DeleteAgentActionGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAgentActionGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ActionGroupIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteAgentActionGroup", "Required field: ActionGroupId, is not set");
-    return DeleteAgentActionGroupOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ActionGroupId]", false));
-  }
   if (!request.AgentIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteAgentActionGroup", "Required field: AgentId, is not set");
@@ -688,6 +683,11 @@ DeleteAgentActionGroupOutcome BedrockAgentClient::DeleteAgentActionGroup(const D
   {
     AWS_LOGSTREAM_ERROR("DeleteAgentActionGroup", "Required field: AgentVersion, is not set");
     return DeleteAgentActionGroupOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentVersion]", false));
+  }
+  if (!request.ActionGroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAgentActionGroup", "Required field: ActionGroupId, is not set");
+    return DeleteAgentActionGroupOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ActionGroupId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteAgentActionGroup, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -721,15 +721,15 @@ DeleteAgentAliasOutcome BedrockAgentClient::DeleteAgentAlias(const DeleteAgentAl
 {
   AWS_OPERATION_GUARD(DeleteAgentAlias);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAgentAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AgentAliasIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteAgentAlias", "Required field: AgentAliasId, is not set");
-    return DeleteAgentAliasOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentAliasId]", false));
-  }
   if (!request.AgentIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteAgentAlias", "Required field: AgentId, is not set");
     return DeleteAgentAliasOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentId]", false));
+  }
+  if (!request.AgentAliasIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAgentAlias", "Required field: AgentAliasId, is not set");
+    return DeleteAgentAliasOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentAliasId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteAgentAlias, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -801,15 +801,15 @@ DeleteDataSourceOutcome BedrockAgentClient::DeleteDataSource(const DeleteDataSou
 {
   AWS_OPERATION_GUARD(DeleteDataSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.DataSourceIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteDataSource", "Required field: DataSourceId, is not set");
-    return DeleteDataSourceOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
-  }
   if (!request.KnowledgeBaseIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteDataSource", "Required field: KnowledgeBaseId, is not set");
     return DeleteDataSourceOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+  if (!request.DataSourceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDataSource", "Required field: DataSourceId, is not set");
+    return DeleteDataSourceOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteDataSource, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -874,15 +874,15 @@ DeleteFlowAliasOutcome BedrockAgentClient::DeleteFlowAlias(const DeleteFlowAlias
 {
   AWS_OPERATION_GUARD(DeleteFlowAlias);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFlowAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AliasIdentifierHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteFlowAlias", "Required field: AliasIdentifier, is not set");
-    return DeleteFlowAliasOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AliasIdentifier]", false));
-  }
   if (!request.FlowIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteFlowAlias", "Required field: FlowIdentifier, is not set");
     return DeleteFlowAliasOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowIdentifier]", false));
+  }
+  if (!request.AliasIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFlowAlias", "Required field: AliasIdentifier, is not set");
+    return DeleteFlowAliasOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AliasIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteFlowAlias, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -987,15 +987,15 @@ DeleteKnowledgeBaseDocumentsOutcome BedrockAgentClient::DeleteKnowledgeBaseDocum
 {
   AWS_OPERATION_GUARD(DeleteKnowledgeBaseDocuments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteKnowledgeBaseDocuments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.DataSourceIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteKnowledgeBaseDocuments", "Required field: DataSourceId, is not set");
-    return DeleteKnowledgeBaseDocumentsOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
-  }
   if (!request.KnowledgeBaseIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteKnowledgeBaseDocuments", "Required field: KnowledgeBaseId, is not set");
     return DeleteKnowledgeBaseDocumentsOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+  if (!request.DataSourceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteKnowledgeBaseDocuments", "Required field: DataSourceId, is not set");
+    return DeleteKnowledgeBaseDocumentsOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteKnowledgeBaseDocuments, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1188,11 +1188,6 @@ GetAgentActionGroupOutcome BedrockAgentClient::GetAgentActionGroup(const GetAgen
 {
   AWS_OPERATION_GUARD(GetAgentActionGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAgentActionGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ActionGroupIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetAgentActionGroup", "Required field: ActionGroupId, is not set");
-    return GetAgentActionGroupOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ActionGroupId]", false));
-  }
   if (!request.AgentIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetAgentActionGroup", "Required field: AgentId, is not set");
@@ -1202,6 +1197,11 @@ GetAgentActionGroupOutcome BedrockAgentClient::GetAgentActionGroup(const GetAgen
   {
     AWS_LOGSTREAM_ERROR("GetAgentActionGroup", "Required field: AgentVersion, is not set");
     return GetAgentActionGroupOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentVersion]", false));
+  }
+  if (!request.ActionGroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAgentActionGroup", "Required field: ActionGroupId, is not set");
+    return GetAgentActionGroupOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ActionGroupId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetAgentActionGroup, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1235,15 +1235,15 @@ GetAgentAliasOutcome BedrockAgentClient::GetAgentAlias(const GetAgentAliasReques
 {
   AWS_OPERATION_GUARD(GetAgentAlias);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAgentAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AgentAliasIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetAgentAlias", "Required field: AgentAliasId, is not set");
-    return GetAgentAliasOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentAliasId]", false));
-  }
   if (!request.AgentIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetAgentAlias", "Required field: AgentId, is not set");
     return GetAgentAliasOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentId]", false));
+  }
+  if (!request.AgentAliasIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAgentAlias", "Required field: AgentAliasId, is not set");
+    return GetAgentAliasOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentAliasId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetAgentAlias, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1409,15 +1409,15 @@ GetDataSourceOutcome BedrockAgentClient::GetDataSource(const GetDataSourceReques
 {
   AWS_OPERATION_GUARD(GetDataSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.DataSourceIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetDataSource", "Required field: DataSourceId, is not set");
-    return GetDataSourceOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
-  }
   if (!request.KnowledgeBaseIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetDataSource", "Required field: KnowledgeBaseId, is not set");
     return GetDataSourceOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+  if (!request.DataSourceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDataSource", "Required field: DataSourceId, is not set");
+    return GetDataSourceOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetDataSource, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1482,15 +1482,15 @@ GetFlowAliasOutcome BedrockAgentClient::GetFlowAlias(const GetFlowAliasRequest& 
 {
   AWS_OPERATION_GUARD(GetFlowAlias);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFlowAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AliasIdentifierHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetFlowAlias", "Required field: AliasIdentifier, is not set");
-    return GetFlowAliasOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AliasIdentifier]", false));
-  }
   if (!request.FlowIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetFlowAlias", "Required field: FlowIdentifier, is not set");
     return GetFlowAliasOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowIdentifier]", false));
+  }
+  if (!request.AliasIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetFlowAlias", "Required field: AliasIdentifier, is not set");
+    return GetFlowAliasOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AliasIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetFlowAlias, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1562,6 +1562,11 @@ GetIngestionJobOutcome BedrockAgentClient::GetIngestionJob(const GetIngestionJob
 {
   AWS_OPERATION_GUARD(GetIngestionJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIngestionJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.KnowledgeBaseIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetIngestionJob", "Required field: KnowledgeBaseId, is not set");
+    return GetIngestionJobOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
   if (!request.DataSourceIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetIngestionJob", "Required field: DataSourceId, is not set");
@@ -1571,11 +1576,6 @@ GetIngestionJobOutcome BedrockAgentClient::GetIngestionJob(const GetIngestionJob
   {
     AWS_LOGSTREAM_ERROR("GetIngestionJob", "Required field: IngestionJobId, is not set");
     return GetIngestionJobOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IngestionJobId]", false));
-  }
-  if (!request.KnowledgeBaseIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetIngestionJob", "Required field: KnowledgeBaseId, is not set");
-    return GetIngestionJobOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetIngestionJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1642,15 +1642,15 @@ GetKnowledgeBaseDocumentsOutcome BedrockAgentClient::GetKnowledgeBaseDocuments(c
 {
   AWS_OPERATION_GUARD(GetKnowledgeBaseDocuments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetKnowledgeBaseDocuments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.DataSourceIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetKnowledgeBaseDocuments", "Required field: DataSourceId, is not set");
-    return GetKnowledgeBaseDocumentsOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
-  }
   if (!request.KnowledgeBaseIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetKnowledgeBaseDocuments", "Required field: KnowledgeBaseId, is not set");
     return GetKnowledgeBaseDocumentsOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+  if (!request.DataSourceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetKnowledgeBaseDocuments", "Required field: DataSourceId, is not set");
+    return GetKnowledgeBaseDocumentsOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetKnowledgeBaseDocuments, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1716,15 +1716,15 @@ IngestKnowledgeBaseDocumentsOutcome BedrockAgentClient::IngestKnowledgeBaseDocum
 {
   AWS_OPERATION_GUARD(IngestKnowledgeBaseDocuments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, IngestKnowledgeBaseDocuments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.DataSourceIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("IngestKnowledgeBaseDocuments", "Required field: DataSourceId, is not set");
-    return IngestKnowledgeBaseDocumentsOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
-  }
   if (!request.KnowledgeBaseIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("IngestKnowledgeBaseDocuments", "Required field: KnowledgeBaseId, is not set");
     return IngestKnowledgeBaseDocumentsOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+  if (!request.DataSourceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("IngestKnowledgeBaseDocuments", "Required field: DataSourceId, is not set");
+    return IngestKnowledgeBaseDocumentsOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, IngestKnowledgeBaseDocuments, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -2104,15 +2104,15 @@ ListIngestionJobsOutcome BedrockAgentClient::ListIngestionJobs(const ListIngesti
 {
   AWS_OPERATION_GUARD(ListIngestionJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListIngestionJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.DataSourceIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListIngestionJobs", "Required field: DataSourceId, is not set");
-    return ListIngestionJobsOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
-  }
   if (!request.KnowledgeBaseIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListIngestionJobs", "Required field: KnowledgeBaseId, is not set");
     return ListIngestionJobsOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+  if (!request.DataSourceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListIngestionJobs", "Required field: DataSourceId, is not set");
+    return ListIngestionJobsOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListIngestionJobs, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -2145,15 +2145,15 @@ ListKnowledgeBaseDocumentsOutcome BedrockAgentClient::ListKnowledgeBaseDocuments
 {
   AWS_OPERATION_GUARD(ListKnowledgeBaseDocuments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListKnowledgeBaseDocuments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.DataSourceIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListKnowledgeBaseDocuments", "Required field: DataSourceId, is not set");
-    return ListKnowledgeBaseDocumentsOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
-  }
   if (!request.KnowledgeBaseIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListKnowledgeBaseDocuments", "Required field: KnowledgeBaseId, is not set");
     return ListKnowledgeBaseDocumentsOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+  if (!request.DataSourceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListKnowledgeBaseDocuments", "Required field: DataSourceId, is not set");
+    return ListKnowledgeBaseDocumentsOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListKnowledgeBaseDocuments, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -2339,15 +2339,15 @@ StartIngestionJobOutcome BedrockAgentClient::StartIngestionJob(const StartIngest
 {
   AWS_OPERATION_GUARD(StartIngestionJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartIngestionJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.DataSourceIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("StartIngestionJob", "Required field: DataSourceId, is not set");
-    return StartIngestionJobOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
-  }
   if (!request.KnowledgeBaseIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StartIngestionJob", "Required field: KnowledgeBaseId, is not set");
     return StartIngestionJobOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+  if (!request.DataSourceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartIngestionJob", "Required field: DataSourceId, is not set");
+    return StartIngestionJobOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartIngestionJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -2380,6 +2380,11 @@ StopIngestionJobOutcome BedrockAgentClient::StopIngestionJob(const StopIngestion
 {
   AWS_OPERATION_GUARD(StopIngestionJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopIngestionJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.KnowledgeBaseIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopIngestionJob", "Required field: KnowledgeBaseId, is not set");
+    return StopIngestionJobOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
   if (!request.DataSourceIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StopIngestionJob", "Required field: DataSourceId, is not set");
@@ -2389,11 +2394,6 @@ StopIngestionJobOutcome BedrockAgentClient::StopIngestionJob(const StopIngestion
   {
     AWS_LOGSTREAM_ERROR("StopIngestionJob", "Required field: IngestionJobId, is not set");
     return StopIngestionJobOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IngestionJobId]", false));
-  }
-  if (!request.KnowledgeBaseIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("StopIngestionJob", "Required field: KnowledgeBaseId, is not set");
-    return StopIngestionJobOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StopIngestionJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -2532,11 +2532,6 @@ UpdateAgentActionGroupOutcome BedrockAgentClient::UpdateAgentActionGroup(const U
 {
   AWS_OPERATION_GUARD(UpdateAgentActionGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAgentActionGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ActionGroupIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdateAgentActionGroup", "Required field: ActionGroupId, is not set");
-    return UpdateAgentActionGroupOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ActionGroupId]", false));
-  }
   if (!request.AgentIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateAgentActionGroup", "Required field: AgentId, is not set");
@@ -2546,6 +2541,11 @@ UpdateAgentActionGroupOutcome BedrockAgentClient::UpdateAgentActionGroup(const U
   {
     AWS_LOGSTREAM_ERROR("UpdateAgentActionGroup", "Required field: AgentVersion, is not set");
     return UpdateAgentActionGroupOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentVersion]", false));
+  }
+  if (!request.ActionGroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAgentActionGroup", "Required field: ActionGroupId, is not set");
+    return UpdateAgentActionGroupOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ActionGroupId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateAgentActionGroup, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -2579,15 +2579,15 @@ UpdateAgentAliasOutcome BedrockAgentClient::UpdateAgentAlias(const UpdateAgentAl
 {
   AWS_OPERATION_GUARD(UpdateAgentAlias);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAgentAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AgentAliasIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdateAgentAlias", "Required field: AgentAliasId, is not set");
-    return UpdateAgentAliasOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentAliasId]", false));
-  }
   if (!request.AgentIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateAgentAlias", "Required field: AgentId, is not set");
     return UpdateAgentAliasOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentId]", false));
+  }
+  if (!request.AgentAliasIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAgentAlias", "Required field: AgentAliasId, is not set");
+    return UpdateAgentAliasOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentAliasId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateAgentAlias, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -2713,15 +2713,15 @@ UpdateDataSourceOutcome BedrockAgentClient::UpdateDataSource(const UpdateDataSou
 {
   AWS_OPERATION_GUARD(UpdateDataSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDataSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.DataSourceIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdateDataSource", "Required field: DataSourceId, is not set");
-    return UpdateDataSourceOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
-  }
   if (!request.KnowledgeBaseIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateDataSource", "Required field: KnowledgeBaseId, is not set");
     return UpdateDataSourceOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+  if (!request.DataSourceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateDataSource", "Required field: DataSourceId, is not set");
+    return UpdateDataSourceOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateDataSource, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -2786,15 +2786,15 @@ UpdateFlowAliasOutcome BedrockAgentClient::UpdateFlowAlias(const UpdateFlowAlias
 {
   AWS_OPERATION_GUARD(UpdateFlowAlias);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFlowAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AliasIdentifierHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdateFlowAlias", "Required field: AliasIdentifier, is not set");
-    return UpdateFlowAliasOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AliasIdentifier]", false));
-  }
   if (!request.FlowIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateFlowAlias", "Required field: FlowIdentifier, is not set");
     return UpdateFlowAliasOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowIdentifier]", false));
+  }
+  if (!request.AliasIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFlowAlias", "Required field: AliasIdentifier, is not set");
+    return UpdateFlowAliasOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AliasIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateFlowAlias, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});

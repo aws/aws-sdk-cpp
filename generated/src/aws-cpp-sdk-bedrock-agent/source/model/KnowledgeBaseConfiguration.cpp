@@ -25,16 +25,6 @@ KnowledgeBaseConfiguration::KnowledgeBaseConfiguration(JsonView jsonValue)
 
 KnowledgeBaseConfiguration& KnowledgeBaseConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("kendraKnowledgeBaseConfiguration"))
-  {
-    m_kendraKnowledgeBaseConfiguration = jsonValue.GetObject("kendraKnowledgeBaseConfiguration");
-    m_kendraKnowledgeBaseConfigurationHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("sqlKnowledgeBaseConfiguration"))
-  {
-    m_sqlKnowledgeBaseConfiguration = jsonValue.GetObject("sqlKnowledgeBaseConfiguration");
-    m_sqlKnowledgeBaseConfigurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("type"))
   {
     m_type = KnowledgeBaseTypeMapper::GetKnowledgeBaseTypeForName(jsonValue.GetString("type"));
@@ -45,12 +35,33 @@ KnowledgeBaseConfiguration& KnowledgeBaseConfiguration::operator =(JsonView json
     m_vectorKnowledgeBaseConfiguration = jsonValue.GetObject("vectorKnowledgeBaseConfiguration");
     m_vectorKnowledgeBaseConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("kendraKnowledgeBaseConfiguration"))
+  {
+    m_kendraKnowledgeBaseConfiguration = jsonValue.GetObject("kendraKnowledgeBaseConfiguration");
+    m_kendraKnowledgeBaseConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("sqlKnowledgeBaseConfiguration"))
+  {
+    m_sqlKnowledgeBaseConfiguration = jsonValue.GetObject("sqlKnowledgeBaseConfiguration");
+    m_sqlKnowledgeBaseConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue KnowledgeBaseConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", KnowledgeBaseTypeMapper::GetNameForKnowledgeBaseType(m_type));
+  }
+
+  if(m_vectorKnowledgeBaseConfigurationHasBeenSet)
+  {
+   payload.WithObject("vectorKnowledgeBaseConfiguration", m_vectorKnowledgeBaseConfiguration.Jsonize());
+
+  }
 
   if(m_kendraKnowledgeBaseConfigurationHasBeenSet)
   {
@@ -61,17 +72,6 @@ JsonValue KnowledgeBaseConfiguration::Jsonize() const
   if(m_sqlKnowledgeBaseConfigurationHasBeenSet)
   {
    payload.WithObject("sqlKnowledgeBaseConfiguration", m_sqlKnowledgeBaseConfiguration.Jsonize());
-
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", KnowledgeBaseTypeMapper::GetNameForKnowledgeBaseType(m_type));
-  }
-
-  if(m_vectorKnowledgeBaseConfigurationHasBeenSet)
-  {
-   payload.WithObject("vectorKnowledgeBaseConfiguration", m_vectorKnowledgeBaseConfiguration.Jsonize());
 
   }
 

@@ -38,6 +38,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The max rate at which pages are crawled, up to 300 per minute per host.</p>
+     */
+    inline int GetRateLimit() const { return m_rateLimit; }
+    inline bool RateLimitHasBeenSet() const { return m_rateLimitHasBeenSet; }
+    inline void SetRateLimit(int value) { m_rateLimitHasBeenSet = true; m_rateLimit = value; }
+    inline WebCrawlerLimits& WithRateLimit(int value) { SetRateLimit(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p> The max number of web pages crawled from your source URLs, up to 25,000
      * pages. If the web pages exceed this limit, the data source sync will fail and no
      * web pages will be ingested. </p>
@@ -47,23 +57,13 @@ namespace Model
     inline void SetMaxPages(int value) { m_maxPagesHasBeenSet = true; m_maxPages = value; }
     inline WebCrawlerLimits& WithMaxPages(int value) { SetMaxPages(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The max rate at which pages are crawled, up to 300 per minute per host.</p>
-     */
-    inline int GetRateLimit() const { return m_rateLimit; }
-    inline bool RateLimitHasBeenSet() const { return m_rateLimitHasBeenSet; }
-    inline void SetRateLimit(int value) { m_rateLimitHasBeenSet = true; m_rateLimit = value; }
-    inline WebCrawlerLimits& WithRateLimit(int value) { SetRateLimit(value); return *this;}
-    ///@}
   private:
-
-    int m_maxPages{0};
-    bool m_maxPagesHasBeenSet = false;
 
     int m_rateLimit{0};
     bool m_rateLimitHasBeenSet = false;
+
+    int m_maxPages{0};
+    bool m_maxPagesHasBeenSet = false;
   };
 
 } // namespace Model

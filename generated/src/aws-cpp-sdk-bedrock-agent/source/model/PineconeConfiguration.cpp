@@ -35,15 +35,15 @@ PineconeConfiguration& PineconeConfiguration::operator =(JsonView jsonValue)
     m_credentialsSecretArn = jsonValue.GetString("credentialsSecretArn");
     m_credentialsSecretArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("fieldMapping"))
-  {
-    m_fieldMapping = jsonValue.GetObject("fieldMapping");
-    m_fieldMappingHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("namespace"))
   {
     m_namespace = jsonValue.GetString("namespace");
     m_namespaceHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("fieldMapping"))
+  {
+    m_fieldMapping = jsonValue.GetObject("fieldMapping");
+    m_fieldMappingHasBeenSet = true;
   }
   return *this;
 }
@@ -64,15 +64,15 @@ JsonValue PineconeConfiguration::Jsonize() const
 
   }
 
-  if(m_fieldMappingHasBeenSet)
-  {
-   payload.WithObject("fieldMapping", m_fieldMapping.Jsonize());
-
-  }
-
   if(m_namespaceHasBeenSet)
   {
    payload.WithString("namespace", m_namespace);
+
+  }
+
+  if(m_fieldMappingHasBeenSet)
+  {
+   payload.WithObject("fieldMapping", m_fieldMapping.Jsonize());
 
   }
 

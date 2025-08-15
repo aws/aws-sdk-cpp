@@ -25,25 +25,15 @@ SharePointSourceConfiguration::SharePointSourceConfiguration(JsonView jsonValue)
 
 SharePointSourceConfiguration& SharePointSourceConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("authType"))
+  if(jsonValue.ValueExists("tenantId"))
   {
-    m_authType = SharePointAuthTypeMapper::GetSharePointAuthTypeForName(jsonValue.GetString("authType"));
-    m_authTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("credentialsSecretArn"))
-  {
-    m_credentialsSecretArn = jsonValue.GetString("credentialsSecretArn");
-    m_credentialsSecretArnHasBeenSet = true;
+    m_tenantId = jsonValue.GetString("tenantId");
+    m_tenantIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("domain"))
   {
     m_domain = jsonValue.GetString("domain");
     m_domainHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("hostType"))
-  {
-    m_hostType = SharePointHostTypeMapper::GetSharePointHostTypeForName(jsonValue.GetString("hostType"));
-    m_hostTypeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("siteUrls"))
   {
@@ -54,10 +44,20 @@ SharePointSourceConfiguration& SharePointSourceConfiguration::operator =(JsonVie
     }
     m_siteUrlsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tenantId"))
+  if(jsonValue.ValueExists("hostType"))
   {
-    m_tenantId = jsonValue.GetString("tenantId");
-    m_tenantIdHasBeenSet = true;
+    m_hostType = SharePointHostTypeMapper::GetSharePointHostTypeForName(jsonValue.GetString("hostType"));
+    m_hostTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("authType"))
+  {
+    m_authType = SharePointAuthTypeMapper::GetSharePointAuthTypeForName(jsonValue.GetString("authType"));
+    m_authTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("credentialsSecretArn"))
+  {
+    m_credentialsSecretArn = jsonValue.GetString("credentialsSecretArn");
+    m_credentialsSecretArnHasBeenSet = true;
   }
   return *this;
 }
@@ -66,14 +66,9 @@ JsonValue SharePointSourceConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_authTypeHasBeenSet)
+  if(m_tenantIdHasBeenSet)
   {
-   payload.WithString("authType", SharePointAuthTypeMapper::GetNameForSharePointAuthType(m_authType));
-  }
-
-  if(m_credentialsSecretArnHasBeenSet)
-  {
-   payload.WithString("credentialsSecretArn", m_credentialsSecretArn);
+   payload.WithString("tenantId", m_tenantId);
 
   }
 
@@ -81,11 +76,6 @@ JsonValue SharePointSourceConfiguration::Jsonize() const
   {
    payload.WithString("domain", m_domain);
 
-  }
-
-  if(m_hostTypeHasBeenSet)
-  {
-   payload.WithString("hostType", SharePointHostTypeMapper::GetNameForSharePointHostType(m_hostType));
   }
 
   if(m_siteUrlsHasBeenSet)
@@ -99,9 +89,19 @@ JsonValue SharePointSourceConfiguration::Jsonize() const
 
   }
 
-  if(m_tenantIdHasBeenSet)
+  if(m_hostTypeHasBeenSet)
   {
-   payload.WithString("tenantId", m_tenantId);
+   payload.WithString("hostType", SharePointHostTypeMapper::GetNameForSharePointHostType(m_hostType));
+  }
+
+  if(m_authTypeHasBeenSet)
+  {
+   payload.WithString("authType", SharePointAuthTypeMapper::GetNameForSharePointAuthType(m_authType));
+  }
+
+  if(m_credentialsSecretArnHasBeenSet)
+  {
+   payload.WithString("credentialsSecretArn", m_credentialsSecretArn);
 
   }
 

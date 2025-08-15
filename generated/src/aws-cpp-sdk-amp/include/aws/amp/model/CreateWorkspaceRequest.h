@@ -67,22 +67,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>(optional) The ARN for a customer managed KMS key to use for encrypting data
-     * within your workspace. For more information about using your own key in your
-     * workspace, see <a
-     * href="https://docs.aws.amazon.com/prometheus/latest/userguide/encryption-at-rest-Amazon-Service-Prometheus.html">Encryption
-     * at rest</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
-     */
-    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
-    inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-    template<typename KmsKeyArnT = Aws::String>
-    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
-    template<typename KmsKeyArnT = Aws::String>
-    CreateWorkspaceRequest& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The list of tag keys and values to associate with the workspace.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -96,6 +80,22 @@ namespace Model
       m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
     }
     ///@}
+
+    ///@{
+    /**
+     * <p>(optional) The ARN for a customer managed KMS key to use for encrypting data
+     * within your workspace. For more information about using your own key in your
+     * workspace, see <a
+     * href="https://docs.aws.amazon.com/prometheus/latest/userguide/encryption-at-rest-Amazon-Service-Prometheus.html">Encryption
+     * at rest</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
+     */
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+    inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    CreateWorkspaceRequest& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_alias;
@@ -104,11 +104,11 @@ namespace Model
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
 
-    Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet = false;
-
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_kmsKeyArn;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

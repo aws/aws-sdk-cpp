@@ -25,6 +25,11 @@ QueryGenerationColumn::QueryGenerationColumn(JsonView jsonValue)
 
 QueryGenerationColumn& QueryGenerationColumn::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
@@ -35,17 +40,18 @@ QueryGenerationColumn& QueryGenerationColumn::operator =(JsonView jsonValue)
     m_inclusion = IncludeExcludeMapper::GetIncludeExcludeForName(jsonValue.GetString("inclusion"));
     m_inclusionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue QueryGenerationColumn::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
 
   if(m_descriptionHasBeenSet)
   {
@@ -56,12 +62,6 @@ JsonValue QueryGenerationColumn::Jsonize() const
   if(m_inclusionHasBeenSet)
   {
    payload.WithString("inclusion", IncludeExcludeMapper::GetNameForIncludeExclude(m_inclusion));
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
   }
 
   return payload;

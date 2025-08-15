@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/amp/model/LoggingConfigurationStatus.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -43,44 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the logging configuration was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    LoggingConfigurationMetadata& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ARN of the CloudWatch log group to which the vended log data will be
-     * published.</p>
-     */
-    inline const Aws::String& GetLogGroupArn() const { return m_logGroupArn; }
-    inline bool LogGroupArnHasBeenSet() const { return m_logGroupArnHasBeenSet; }
-    template<typename LogGroupArnT = Aws::String>
-    void SetLogGroupArn(LogGroupArnT&& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = std::forward<LogGroupArnT>(value); }
-    template<typename LogGroupArnT = Aws::String>
-    LoggingConfigurationMetadata& WithLogGroupArn(LogGroupArnT&& value) { SetLogGroupArn(std::forward<LogGroupArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The date and time that the logging configuration was most recently
-     * changed.</p>
-     */
-    inline const Aws::Utils::DateTime& GetModifiedAt() const { return m_modifiedAt; }
-    inline bool ModifiedAtHasBeenSet() const { return m_modifiedAtHasBeenSet; }
-    template<typename ModifiedAtT = Aws::Utils::DateTime>
-    void SetModifiedAt(ModifiedAtT&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::forward<ModifiedAtT>(value); }
-    template<typename ModifiedAtT = Aws::Utils::DateTime>
-    LoggingConfigurationMetadata& WithModifiedAt(ModifiedAtT&& value) { SetModifiedAt(std::forward<ModifiedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The current status of the logging configuration.</p>
      */
     inline const LoggingConfigurationStatus& GetStatus() const { return m_status; }
@@ -102,22 +64,60 @@ namespace Model
     template<typename WorkspaceT = Aws::String>
     LoggingConfigurationMetadata& WithWorkspace(WorkspaceT&& value) { SetWorkspace(std::forward<WorkspaceT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ARN of the CloudWatch log group to which the vended log data will be
+     * published.</p>
+     */
+    inline const Aws::String& GetLogGroupArn() const { return m_logGroupArn; }
+    inline bool LogGroupArnHasBeenSet() const { return m_logGroupArnHasBeenSet; }
+    template<typename LogGroupArnT = Aws::String>
+    void SetLogGroupArn(LogGroupArnT&& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = std::forward<LogGroupArnT>(value); }
+    template<typename LogGroupArnT = Aws::String>
+    LoggingConfigurationMetadata& WithLogGroupArn(LogGroupArnT&& value) { SetLogGroupArn(std::forward<LogGroupArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time that the logging configuration was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    LoggingConfigurationMetadata& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time that the logging configuration was most recently
+     * changed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetModifiedAt() const { return m_modifiedAt; }
+    inline bool ModifiedAtHasBeenSet() const { return m_modifiedAtHasBeenSet; }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    void SetModifiedAt(ModifiedAtT&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::forward<ModifiedAtT>(value); }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    LoggingConfigurationMetadata& WithModifiedAt(ModifiedAtT&& value) { SetModifiedAt(std::forward<ModifiedAtT>(value)); return *this;}
+    ///@}
   private:
-
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
-
-    Aws::String m_logGroupArn;
-    bool m_logGroupArnHasBeenSet = false;
-
-    Aws::Utils::DateTime m_modifiedAt{};
-    bool m_modifiedAtHasBeenSet = false;
 
     LoggingConfigurationStatus m_status;
     bool m_statusHasBeenSet = false;
 
     Aws::String m_workspace;
     bool m_workspaceHasBeenSet = false;
+
+    Aws::String m_logGroupArn;
+    bool m_logGroupArnHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
+
+    Aws::Utils::DateTime m_modifiedAt{};
+    bool m_modifiedAtHasBeenSet = false;
   };
 
 } // namespace Model

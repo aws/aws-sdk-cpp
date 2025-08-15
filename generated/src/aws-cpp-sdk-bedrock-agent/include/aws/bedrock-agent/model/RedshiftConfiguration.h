@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent/model/RedshiftQueryEngineConfiguration.h>
 #include <aws/bedrock-agent/model/QueryGenerationConfiguration.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent/model/RedshiftQueryEngineStorageConfiguration.h>
 #include <utility>
 
@@ -46,6 +46,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies configurations for Amazon Redshift database storage.</p>
+     */
+    inline const Aws::Vector<RedshiftQueryEngineStorageConfiguration>& GetStorageConfigurations() const { return m_storageConfigurations; }
+    inline bool StorageConfigurationsHasBeenSet() const { return m_storageConfigurationsHasBeenSet; }
+    template<typename StorageConfigurationsT = Aws::Vector<RedshiftQueryEngineStorageConfiguration>>
+    void SetStorageConfigurations(StorageConfigurationsT&& value) { m_storageConfigurationsHasBeenSet = true; m_storageConfigurations = std::forward<StorageConfigurationsT>(value); }
+    template<typename StorageConfigurationsT = Aws::Vector<RedshiftQueryEngineStorageConfiguration>>
+    RedshiftConfiguration& WithStorageConfigurations(StorageConfigurationsT&& value) { SetStorageConfigurations(std::forward<StorageConfigurationsT>(value)); return *this;}
+    template<typename StorageConfigurationsT = RedshiftQueryEngineStorageConfiguration>
+    RedshiftConfiguration& AddStorageConfigurations(StorageConfigurationsT&& value) { m_storageConfigurationsHasBeenSet = true; m_storageConfigurations.emplace_back(std::forward<StorageConfigurationsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies configurations for an Amazon Redshift query engine.</p>
      */
     inline const RedshiftQueryEngineConfiguration& GetQueryEngineConfiguration() const { return m_queryEngineConfiguration; }
@@ -67,30 +81,16 @@ namespace Model
     template<typename QueryGenerationConfigurationT = QueryGenerationConfiguration>
     RedshiftConfiguration& WithQueryGenerationConfiguration(QueryGenerationConfigurationT&& value) { SetQueryGenerationConfiguration(std::forward<QueryGenerationConfigurationT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Specifies configurations for Amazon Redshift database storage.</p>
-     */
-    inline const Aws::Vector<RedshiftQueryEngineStorageConfiguration>& GetStorageConfigurations() const { return m_storageConfigurations; }
-    inline bool StorageConfigurationsHasBeenSet() const { return m_storageConfigurationsHasBeenSet; }
-    template<typename StorageConfigurationsT = Aws::Vector<RedshiftQueryEngineStorageConfiguration>>
-    void SetStorageConfigurations(StorageConfigurationsT&& value) { m_storageConfigurationsHasBeenSet = true; m_storageConfigurations = std::forward<StorageConfigurationsT>(value); }
-    template<typename StorageConfigurationsT = Aws::Vector<RedshiftQueryEngineStorageConfiguration>>
-    RedshiftConfiguration& WithStorageConfigurations(StorageConfigurationsT&& value) { SetStorageConfigurations(std::forward<StorageConfigurationsT>(value)); return *this;}
-    template<typename StorageConfigurationsT = RedshiftQueryEngineStorageConfiguration>
-    RedshiftConfiguration& AddStorageConfigurations(StorageConfigurationsT&& value) { m_storageConfigurationsHasBeenSet = true; m_storageConfigurations.emplace_back(std::forward<StorageConfigurationsT>(value)); return *this; }
-    ///@}
   private:
+
+    Aws::Vector<RedshiftQueryEngineStorageConfiguration> m_storageConfigurations;
+    bool m_storageConfigurationsHasBeenSet = false;
 
     RedshiftQueryEngineConfiguration m_queryEngineConfiguration;
     bool m_queryEngineConfigurationHasBeenSet = false;
 
     QueryGenerationConfiguration m_queryGenerationConfiguration;
     bool m_queryGenerationConfigurationHasBeenSet = false;
-
-    Aws::Vector<RedshiftQueryEngineStorageConfiguration> m_storageConfigurations;
-    bool m_storageConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

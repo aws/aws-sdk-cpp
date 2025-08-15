@@ -55,23 +55,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of one or more exclusion regular expression patterns to exclude
-     * certain URLs. If you specify an inclusion and exclusion filter/pattern and both
-     * match a URL, the exclusion filter takes precedence and the web content of the
-     * URL isn’t crawled.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetExclusionFilters() const { return m_exclusionFilters; }
-    inline bool ExclusionFiltersHasBeenSet() const { return m_exclusionFiltersHasBeenSet; }
-    template<typename ExclusionFiltersT = Aws::Vector<Aws::String>>
-    void SetExclusionFilters(ExclusionFiltersT&& value) { m_exclusionFiltersHasBeenSet = true; m_exclusionFilters = std::forward<ExclusionFiltersT>(value); }
-    template<typename ExclusionFiltersT = Aws::Vector<Aws::String>>
-    WebCrawlerConfiguration& WithExclusionFilters(ExclusionFiltersT&& value) { SetExclusionFilters(std::forward<ExclusionFiltersT>(value)); return *this;}
-    template<typename ExclusionFiltersT = Aws::String>
-    WebCrawlerConfiguration& AddExclusionFilters(ExclusionFiltersT&& value) { m_exclusionFiltersHasBeenSet = true; m_exclusionFilters.emplace_back(std::forward<ExclusionFiltersT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>A list of one or more inclusion regular expression patterns to include
      * certain URLs. If you specify an inclusion and exclusion filter/pattern and both
      * match a URL, the exclusion filter takes precedence and the web content of the
@@ -85,6 +68,23 @@ namespace Model
     WebCrawlerConfiguration& WithInclusionFilters(InclusionFiltersT&& value) { SetInclusionFilters(std::forward<InclusionFiltersT>(value)); return *this;}
     template<typename InclusionFiltersT = Aws::String>
     WebCrawlerConfiguration& AddInclusionFilters(InclusionFiltersT&& value) { m_inclusionFiltersHasBeenSet = true; m_inclusionFilters.emplace_back(std::forward<InclusionFiltersT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>A list of one or more exclusion regular expression patterns to exclude
+     * certain URLs. If you specify an inclusion and exclusion filter/pattern and both
+     * match a URL, the exclusion filter takes precedence and the web content of the
+     * URL isn’t crawled.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetExclusionFilters() const { return m_exclusionFilters; }
+    inline bool ExclusionFiltersHasBeenSet() const { return m_exclusionFiltersHasBeenSet; }
+    template<typename ExclusionFiltersT = Aws::Vector<Aws::String>>
+    void SetExclusionFilters(ExclusionFiltersT&& value) { m_exclusionFiltersHasBeenSet = true; m_exclusionFilters = std::forward<ExclusionFiltersT>(value); }
+    template<typename ExclusionFiltersT = Aws::Vector<Aws::String>>
+    WebCrawlerConfiguration& WithExclusionFilters(ExclusionFiltersT&& value) { SetExclusionFilters(std::forward<ExclusionFiltersT>(value)); return *this;}
+    template<typename ExclusionFiltersT = Aws::String>
+    WebCrawlerConfiguration& AddExclusionFilters(ExclusionFiltersT&& value) { m_exclusionFiltersHasBeenSet = true; m_exclusionFilters.emplace_back(std::forward<ExclusionFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -136,11 +136,11 @@ namespace Model
     WebCrawlerLimits m_crawlerLimits;
     bool m_crawlerLimitsHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_exclusionFilters;
-    bool m_exclusionFiltersHasBeenSet = false;
-
     Aws::Vector<Aws::String> m_inclusionFilters;
     bool m_inclusionFiltersHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_exclusionFilters;
+    bool m_exclusionFiltersHasBeenSet = false;
 
     WebScopeType m_scope{WebScopeType::NOT_SET};
     bool m_scopeHasBeenSet = false;

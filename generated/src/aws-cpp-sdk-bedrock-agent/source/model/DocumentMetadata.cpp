@@ -25,6 +25,11 @@ DocumentMetadata::DocumentMetadata(JsonView jsonValue)
 
 DocumentMetadata& DocumentMetadata::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = MetadataSourceTypeMapper::GetMetadataSourceTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("inlineAttributes"))
   {
     Aws::Utils::Array<JsonView> inlineAttributesJsonList = jsonValue.GetArray("inlineAttributes");
@@ -39,17 +44,17 @@ DocumentMetadata& DocumentMetadata::operator =(JsonView jsonValue)
     m_s3Location = jsonValue.GetObject("s3Location");
     m_s3LocationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = MetadataSourceTypeMapper::GetMetadataSourceTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue DocumentMetadata::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", MetadataSourceTypeMapper::GetNameForMetadataSourceType(m_type));
+  }
 
   if(m_inlineAttributesHasBeenSet)
   {
@@ -66,11 +71,6 @@ JsonValue DocumentMetadata::Jsonize() const
   {
    payload.WithObject("s3Location", m_s3Location.Jsonize());
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", MetadataSourceTypeMapper::GetNameForMetadataSourceType(m_type));
   }
 
   return payload;

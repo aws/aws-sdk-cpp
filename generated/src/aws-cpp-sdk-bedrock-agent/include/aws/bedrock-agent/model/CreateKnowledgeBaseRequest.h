@@ -54,30 +54,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A description of the knowledge base.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    CreateKnowledgeBaseRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Contains details about the embeddings model used for the knowledge base.</p>
-     */
-    inline const KnowledgeBaseConfiguration& GetKnowledgeBaseConfiguration() const { return m_knowledgeBaseConfiguration; }
-    inline bool KnowledgeBaseConfigurationHasBeenSet() const { return m_knowledgeBaseConfigurationHasBeenSet; }
-    template<typename KnowledgeBaseConfigurationT = KnowledgeBaseConfiguration>
-    void SetKnowledgeBaseConfiguration(KnowledgeBaseConfigurationT&& value) { m_knowledgeBaseConfigurationHasBeenSet = true; m_knowledgeBaseConfiguration = std::forward<KnowledgeBaseConfigurationT>(value); }
-    template<typename KnowledgeBaseConfigurationT = KnowledgeBaseConfiguration>
-    CreateKnowledgeBaseRequest& WithKnowledgeBaseConfiguration(KnowledgeBaseConfigurationT&& value) { SetKnowledgeBaseConfiguration(std::forward<KnowledgeBaseConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A name for the knowledge base.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
@@ -86,6 +62,18 @@ namespace Model
     void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
     template<typename NameT = Aws::String>
     CreateKnowledgeBaseRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A description of the knowledge base.</p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateKnowledgeBaseRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,6 +87,18 @@ namespace Model
     void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
     template<typename RoleArnT = Aws::String>
     CreateKnowledgeBaseRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains details about the embeddings model used for the knowledge base.</p>
+     */
+    inline const KnowledgeBaseConfiguration& GetKnowledgeBaseConfiguration() const { return m_knowledgeBaseConfiguration; }
+    inline bool KnowledgeBaseConfigurationHasBeenSet() const { return m_knowledgeBaseConfigurationHasBeenSet; }
+    template<typename KnowledgeBaseConfigurationT = KnowledgeBaseConfiguration>
+    void SetKnowledgeBaseConfiguration(KnowledgeBaseConfigurationT&& value) { m_knowledgeBaseConfigurationHasBeenSet = true; m_knowledgeBaseConfiguration = std::forward<KnowledgeBaseConfigurationT>(value); }
+    template<typename KnowledgeBaseConfigurationT = KnowledgeBaseConfiguration>
+    CreateKnowledgeBaseRequest& WithKnowledgeBaseConfiguration(KnowledgeBaseConfigurationT&& value) { SetKnowledgeBaseConfiguration(std::forward<KnowledgeBaseConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,17 +135,17 @@ namespace Model
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    KnowledgeBaseConfiguration m_knowledgeBaseConfiguration;
-    bool m_knowledgeBaseConfigurationHasBeenSet = false;
-
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
+
+    KnowledgeBaseConfiguration m_knowledgeBaseConfiguration;
+    bool m_knowledgeBaseConfigurationHasBeenSet = false;
 
     StorageConfiguration m_storageConfiguration;
     bool m_storageConfigurationHasBeenSet = false;

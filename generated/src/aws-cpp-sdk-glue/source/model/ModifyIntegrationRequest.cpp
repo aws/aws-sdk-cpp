@@ -34,6 +34,12 @@ Aws::String ModifyIntegrationRequest::SerializePayload() const
 
   }
 
+  if(m_integrationConfigHasBeenSet)
+  {
+   payload.WithObject("IntegrationConfig", m_integrationConfig.Jsonize());
+
+  }
+
   if(m_integrationNameHasBeenSet)
   {
    payload.WithString("IntegrationName", m_integrationName);

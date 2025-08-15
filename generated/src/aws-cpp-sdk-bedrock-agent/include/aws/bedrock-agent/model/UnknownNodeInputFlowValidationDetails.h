@@ -39,18 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the node with the unknown input.</p>
-     */
-    inline const Aws::String& GetInput() const { return m_input; }
-    inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
-    template<typename InputT = Aws::String>
-    void SetInput(InputT&& value) { m_inputHasBeenSet = true; m_input = std::forward<InputT>(value); }
-    template<typename InputT = Aws::String>
-    UnknownNodeInputFlowValidationDetails& WithInput(InputT&& value) { SetInput(std::forward<InputT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the unknown input.</p>
      */
     inline const Aws::String& GetNode() const { return m_node; }
@@ -60,13 +48,25 @@ namespace Model
     template<typename NodeT = Aws::String>
     UnknownNodeInputFlowValidationDetails& WithNode(NodeT&& value) { SetNode(std::forward<NodeT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_input;
-    bool m_inputHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The name of the node with the unknown input.</p>
+     */
+    inline const Aws::String& GetInput() const { return m_input; }
+    inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
+    template<typename InputT = Aws::String>
+    void SetInput(InputT&& value) { m_inputHasBeenSet = true; m_input = std::forward<InputT>(value); }
+    template<typename InputT = Aws::String>
+    UnknownNodeInputFlowValidationDetails& WithInput(InputT&& value) { SetInput(std::forward<InputT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_node;
     bool m_nodeHasBeenSet = false;
+
+    Aws::String m_input;
+    bool m_inputHasBeenSet = false;
   };
 
 } // namespace Model

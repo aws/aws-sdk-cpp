@@ -73,6 +73,18 @@ namespace Model
       m_sourcePropertiesHasBeenSet = true; m_sourceProperties.emplace(std::forward<SourcePropertiesKeyT>(key), std::forward<SourcePropertiesValueT>(value)); return *this;
     }
     ///@}
+
+    ///@{
+    /**
+     * <p>Enables continuous synchronization for on-demand data extractions from SaaS
+     * applications to Amazon Web Services data services like Amazon Redshift and
+     * Amazon S3.</p>
+     */
+    inline bool GetContinuousSync() const { return m_continuousSync; }
+    inline bool ContinuousSyncHasBeenSet() const { return m_continuousSyncHasBeenSet; }
+    inline void SetContinuousSync(bool value) { m_continuousSyncHasBeenSet = true; m_continuousSync = value; }
+    inline IntegrationConfig& WithContinuousSync(bool value) { SetContinuousSync(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_refreshInterval;
@@ -80,6 +92,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_sourceProperties;
     bool m_sourcePropertiesHasBeenSet = false;
+
+    bool m_continuousSync{false};
+    bool m_continuousSyncHasBeenSet = false;
   };
 
 } // namespace Model

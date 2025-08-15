@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/FlowNodeIODataType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/FlowNodeIODataType.h>
 #include <utility>
 
 namespace Aws
@@ -41,12 +41,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The expected data type for the node input.</p>
+     * <p>The name of the node containing the input with the mismatched data type.</p>
      */
-    inline FlowNodeIODataType GetExpectedType() const { return m_expectedType; }
-    inline bool ExpectedTypeHasBeenSet() const { return m_expectedTypeHasBeenSet; }
-    inline void SetExpectedType(FlowNodeIODataType value) { m_expectedTypeHasBeenSet = true; m_expectedType = value; }
-    inline MismatchedNodeInputTypeFlowValidationDetails& WithExpectedType(FlowNodeIODataType value) { SetExpectedType(value); return *this;}
+    inline const Aws::String& GetNode() const { return m_node; }
+    inline bool NodeHasBeenSet() const { return m_nodeHasBeenSet; }
+    template<typename NodeT = Aws::String>
+    void SetNode(NodeT&& value) { m_nodeHasBeenSet = true; m_node = std::forward<NodeT>(value); }
+    template<typename NodeT = Aws::String>
+    MismatchedNodeInputTypeFlowValidationDetails& WithNode(NodeT&& value) { SetNode(std::forward<NodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,25 +65,23 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the node containing the input with the mismatched data type.</p>
+     * <p>The expected data type for the node input.</p>
      */
-    inline const Aws::String& GetNode() const { return m_node; }
-    inline bool NodeHasBeenSet() const { return m_nodeHasBeenSet; }
-    template<typename NodeT = Aws::String>
-    void SetNode(NodeT&& value) { m_nodeHasBeenSet = true; m_node = std::forward<NodeT>(value); }
-    template<typename NodeT = Aws::String>
-    MismatchedNodeInputTypeFlowValidationDetails& WithNode(NodeT&& value) { SetNode(std::forward<NodeT>(value)); return *this;}
+    inline FlowNodeIODataType GetExpectedType() const { return m_expectedType; }
+    inline bool ExpectedTypeHasBeenSet() const { return m_expectedTypeHasBeenSet; }
+    inline void SetExpectedType(FlowNodeIODataType value) { m_expectedTypeHasBeenSet = true; m_expectedType = value; }
+    inline MismatchedNodeInputTypeFlowValidationDetails& WithExpectedType(FlowNodeIODataType value) { SetExpectedType(value); return *this;}
     ///@}
   private:
 
-    FlowNodeIODataType m_expectedType{FlowNodeIODataType::NOT_SET};
-    bool m_expectedTypeHasBeenSet = false;
+    Aws::String m_node;
+    bool m_nodeHasBeenSet = false;
 
     Aws::String m_input;
     bool m_inputHasBeenSet = false;
 
-    Aws::String m_node;
-    bool m_nodeHasBeenSet = false;
+    FlowNodeIODataType m_expectedType{FlowNodeIODataType::NOT_SET};
+    bool m_expectedTypeHasBeenSet = false;
   };
 
 } // namespace Model

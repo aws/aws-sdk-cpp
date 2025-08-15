@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/CustomDocumentIdentifier.h>
 #include <aws/bedrock-agent/model/ContentDataSourceType.h>
 #include <aws/bedrock-agent/model/S3Location.h>
+#include <aws/bedrock-agent/model/CustomDocumentIdentifier.h>
 #include <utility>
 
 namespace Aws
@@ -42,19 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains information that identifies the document in a custom data
-     * source.</p>
-     */
-    inline const CustomDocumentIdentifier& GetCustom() const { return m_custom; }
-    inline bool CustomHasBeenSet() const { return m_customHasBeenSet; }
-    template<typename CustomT = CustomDocumentIdentifier>
-    void SetCustom(CustomT&& value) { m_customHasBeenSet = true; m_custom = std::forward<CustomT>(value); }
-    template<typename CustomT = CustomDocumentIdentifier>
-    DocumentIdentifier& WithCustom(CustomT&& value) { SetCustom(std::forward<CustomT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The type of data source connected to the knowledge base that contains the
      * document.</p>
      */
@@ -75,16 +62,29 @@ namespace Model
     template<typename S3T = S3Location>
     DocumentIdentifier& WithS3(S3T&& value) { SetS3(std::forward<S3T>(value)); return *this;}
     ///@}
-  private:
 
-    CustomDocumentIdentifier m_custom;
-    bool m_customHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Contains information that identifies the document in a custom data
+     * source.</p>
+     */
+    inline const CustomDocumentIdentifier& GetCustom() const { return m_custom; }
+    inline bool CustomHasBeenSet() const { return m_customHasBeenSet; }
+    template<typename CustomT = CustomDocumentIdentifier>
+    void SetCustom(CustomT&& value) { m_customHasBeenSet = true; m_custom = std::forward<CustomT>(value); }
+    template<typename CustomT = CustomDocumentIdentifier>
+    DocumentIdentifier& WithCustom(CustomT&& value) { SetCustom(std::forward<CustomT>(value)); return *this;}
+    ///@}
+  private:
 
     ContentDataSourceType m_dataSourceType{ContentDataSourceType::NOT_SET};
     bool m_dataSourceTypeHasBeenSet = false;
 
     S3Location m_s3;
     bool m_s3HasBeenSet = false;
+
+    CustomDocumentIdentifier m_custom;
+    bool m_customHasBeenSet = false;
   };
 
 } // namespace Model

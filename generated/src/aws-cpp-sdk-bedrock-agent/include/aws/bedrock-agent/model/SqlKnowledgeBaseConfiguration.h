@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/bedrock-agent/model/RedshiftConfiguration.h>
 #include <aws/bedrock-agent/model/QueryEngineType.h>
+#include <aws/bedrock-agent/model/RedshiftConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -45,6 +45,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of SQL database to connect to the knowledge base.</p>
+     */
+    inline QueryEngineType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(QueryEngineType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline SqlKnowledgeBaseConfiguration& WithType(QueryEngineType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies configurations for a knowledge base connected to an Amazon Redshift
      * database.</p>
      */
@@ -55,23 +65,13 @@ namespace Model
     template<typename RedshiftConfigurationT = RedshiftConfiguration>
     SqlKnowledgeBaseConfiguration& WithRedshiftConfiguration(RedshiftConfigurationT&& value) { SetRedshiftConfiguration(std::forward<RedshiftConfigurationT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of SQL database to connect to the knowledge base.</p>
-     */
-    inline QueryEngineType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(QueryEngineType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline SqlKnowledgeBaseConfiguration& WithType(QueryEngineType value) { SetType(value); return *this;}
-    ///@}
   private:
-
-    RedshiftConfiguration m_redshiftConfiguration;
-    bool m_redshiftConfigurationHasBeenSet = false;
 
     QueryEngineType m_type{QueryEngineType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    RedshiftConfiguration m_redshiftConfiguration;
+    bool m_redshiftConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

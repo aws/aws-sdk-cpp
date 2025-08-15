@@ -25,6 +25,15 @@ RedshiftConfiguration::RedshiftConfiguration(JsonView jsonValue)
 
 RedshiftConfiguration& RedshiftConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("storageConfigurations"))
+  {
+    Aws::Utils::Array<JsonView> storageConfigurationsJsonList = jsonValue.GetArray("storageConfigurations");
+    for(unsigned storageConfigurationsIndex = 0; storageConfigurationsIndex < storageConfigurationsJsonList.GetLength(); ++storageConfigurationsIndex)
+    {
+      m_storageConfigurations.push_back(storageConfigurationsJsonList[storageConfigurationsIndex].AsObject());
+    }
+    m_storageConfigurationsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("queryEngineConfiguration"))
   {
     m_queryEngineConfiguration = jsonValue.GetObject("queryEngineConfiguration");
@@ -35,21 +44,23 @@ RedshiftConfiguration& RedshiftConfiguration::operator =(JsonView jsonValue)
     m_queryGenerationConfiguration = jsonValue.GetObject("queryGenerationConfiguration");
     m_queryGenerationConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("storageConfigurations"))
-  {
-    Aws::Utils::Array<JsonView> storageConfigurationsJsonList = jsonValue.GetArray("storageConfigurations");
-    for(unsigned storageConfigurationsIndex = 0; storageConfigurationsIndex < storageConfigurationsJsonList.GetLength(); ++storageConfigurationsIndex)
-    {
-      m_storageConfigurations.push_back(storageConfigurationsJsonList[storageConfigurationsIndex].AsObject());
-    }
-    m_storageConfigurationsHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue RedshiftConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_storageConfigurationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> storageConfigurationsJsonList(m_storageConfigurations.size());
+   for(unsigned storageConfigurationsIndex = 0; storageConfigurationsIndex < storageConfigurationsJsonList.GetLength(); ++storageConfigurationsIndex)
+   {
+     storageConfigurationsJsonList[storageConfigurationsIndex].AsObject(m_storageConfigurations[storageConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("storageConfigurations", std::move(storageConfigurationsJsonList));
+
+  }
 
   if(m_queryEngineConfigurationHasBeenSet)
   {
@@ -60,17 +71,6 @@ JsonValue RedshiftConfiguration::Jsonize() const
   if(m_queryGenerationConfigurationHasBeenSet)
   {
    payload.WithObject("queryGenerationConfiguration", m_queryGenerationConfiguration.Jsonize());
-
-  }
-
-  if(m_storageConfigurationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> storageConfigurationsJsonList(m_storageConfigurations.size());
-   for(unsigned storageConfigurationsIndex = 0; storageConfigurationsIndex < storageConfigurationsJsonList.GetLength(); ++storageConfigurationsIndex)
-   {
-     storageConfigurationsJsonList[storageConfigurationsIndex].AsObject(m_storageConfigurations[storageConfigurationsIndex].Jsonize());
-   }
-   payload.WithArray("storageConfigurations", std::move(storageConfigurationsJsonList));
 
   }
 

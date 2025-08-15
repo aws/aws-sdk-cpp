@@ -42,6 +42,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique ID for the new workspace.</p>
+     */
+    inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
+    template<typename WorkspaceIdT = Aws::String>
+    void SetWorkspaceId(WorkspaceIdT&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::forward<WorkspaceIdT>(value); }
+    template<typename WorkspaceIdT = Aws::String>
+    CreateWorkspaceResult& WithWorkspaceId(WorkspaceIdT&& value) { SetWorkspaceId(std::forward<WorkspaceIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ARN for the new workspace.</p>
      */
     inline const Aws::String& GetArn() const { return m_arn; }
@@ -49,18 +60,6 @@ namespace Model
     void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
     template<typename ArnT = Aws::String>
     CreateWorkspaceResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>(optional) If the workspace was created with a customer managed KMS key, the
-     * ARN for the key used.</p>
-     */
-    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
-    template<typename KmsKeyArnT = Aws::String>
-    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
-    template<typename KmsKeyArnT = Aws::String>
-    CreateWorkspaceResult& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,13 +91,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique ID for the new workspace.</p>
+     * <p>(optional) If the workspace was created with a customer managed KMS key, the
+     * ARN for the key used.</p>
      */
-    inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
-    template<typename WorkspaceIdT = Aws::String>
-    void SetWorkspaceId(WorkspaceIdT&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::forward<WorkspaceIdT>(value); }
-    template<typename WorkspaceIdT = Aws::String>
-    CreateWorkspaceResult& WithWorkspaceId(WorkspaceIdT&& value) { SetWorkspaceId(std::forward<WorkspaceIdT>(value)); return *this;}
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    CreateWorkspaceResult& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,11 +111,11 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_workspaceId;
+    bool m_workspaceIdHasBeenSet = false;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
-
-    Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet = false;
 
     WorkspaceStatus m_status;
     bool m_statusHasBeenSet = false;
@@ -123,8 +123,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet = false;
+    Aws::String m_kmsKeyArn;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

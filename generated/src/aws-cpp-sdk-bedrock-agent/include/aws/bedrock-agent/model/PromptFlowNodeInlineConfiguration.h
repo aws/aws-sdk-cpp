@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/core/utils/Document.h>
-#include <aws/bedrock-agent/model/PromptInferenceConfiguration.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/bedrock-agent/model/PromptTemplateConfiguration.h>
 #include <aws/bedrock-agent/model/PromptTemplateType.h>
+#include <aws/bedrock-agent/model/PromptTemplateConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/PromptInferenceConfiguration.h>
+#include <aws/core/utils/Document.h>
 #include <utility>
 
 namespace Aws
@@ -44,27 +44,25 @@ namespace Model
 
     ///@{
     /**
-     * <p>Additional fields to be included in the model request for the Prompt
-     * node.</p>
+     * <p>The type of prompt template.</p>
      */
-    inline Aws::Utils::DocumentView GetAdditionalModelRequestFields() const { return m_additionalModelRequestFields; }
-    inline bool AdditionalModelRequestFieldsHasBeenSet() const { return m_additionalModelRequestFieldsHasBeenSet; }
-    template<typename AdditionalModelRequestFieldsT = Aws::Utils::Document>
-    void SetAdditionalModelRequestFields(AdditionalModelRequestFieldsT&& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields = std::forward<AdditionalModelRequestFieldsT>(value); }
-    template<typename AdditionalModelRequestFieldsT = Aws::Utils::Document>
-    PromptFlowNodeInlineConfiguration& WithAdditionalModelRequestFields(AdditionalModelRequestFieldsT&& value) { SetAdditionalModelRequestFields(std::forward<AdditionalModelRequestFieldsT>(value)); return *this;}
+    inline PromptTemplateType GetTemplateType() const { return m_templateType; }
+    inline bool TemplateTypeHasBeenSet() const { return m_templateTypeHasBeenSet; }
+    inline void SetTemplateType(PromptTemplateType value) { m_templateTypeHasBeenSet = true; m_templateType = value; }
+    inline PromptFlowNodeInlineConfiguration& WithTemplateType(PromptTemplateType value) { SetTemplateType(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>Contains inference configurations for the prompt.</p>
+     * <p>Contains a prompt and variables in the prompt that can be replaced with
+     * values at runtime.</p>
      */
-    inline const PromptInferenceConfiguration& GetInferenceConfiguration() const { return m_inferenceConfiguration; }
-    inline bool InferenceConfigurationHasBeenSet() const { return m_inferenceConfigurationHasBeenSet; }
-    template<typename InferenceConfigurationT = PromptInferenceConfiguration>
-    void SetInferenceConfiguration(InferenceConfigurationT&& value) { m_inferenceConfigurationHasBeenSet = true; m_inferenceConfiguration = std::forward<InferenceConfigurationT>(value); }
-    template<typename InferenceConfigurationT = PromptInferenceConfiguration>
-    PromptFlowNodeInlineConfiguration& WithInferenceConfiguration(InferenceConfigurationT&& value) { SetInferenceConfiguration(std::forward<InferenceConfigurationT>(value)); return *this;}
+    inline const PromptTemplateConfiguration& GetTemplateConfiguration() const { return m_templateConfiguration; }
+    inline bool TemplateConfigurationHasBeenSet() const { return m_templateConfigurationHasBeenSet; }
+    template<typename TemplateConfigurationT = PromptTemplateConfiguration>
+    void SetTemplateConfiguration(TemplateConfigurationT&& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = std::forward<TemplateConfigurationT>(value); }
+    template<typename TemplateConfigurationT = PromptTemplateConfiguration>
+    PromptFlowNodeInlineConfiguration& WithTemplateConfiguration(TemplateConfigurationT&& value) { SetTemplateConfiguration(std::forward<TemplateConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,42 +81,44 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains a prompt and variables in the prompt that can be replaced with
-     * values at runtime.</p>
+     * <p>Contains inference configurations for the prompt.</p>
      */
-    inline const PromptTemplateConfiguration& GetTemplateConfiguration() const { return m_templateConfiguration; }
-    inline bool TemplateConfigurationHasBeenSet() const { return m_templateConfigurationHasBeenSet; }
-    template<typename TemplateConfigurationT = PromptTemplateConfiguration>
-    void SetTemplateConfiguration(TemplateConfigurationT&& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = std::forward<TemplateConfigurationT>(value); }
-    template<typename TemplateConfigurationT = PromptTemplateConfiguration>
-    PromptFlowNodeInlineConfiguration& WithTemplateConfiguration(TemplateConfigurationT&& value) { SetTemplateConfiguration(std::forward<TemplateConfigurationT>(value)); return *this;}
+    inline const PromptInferenceConfiguration& GetInferenceConfiguration() const { return m_inferenceConfiguration; }
+    inline bool InferenceConfigurationHasBeenSet() const { return m_inferenceConfigurationHasBeenSet; }
+    template<typename InferenceConfigurationT = PromptInferenceConfiguration>
+    void SetInferenceConfiguration(InferenceConfigurationT&& value) { m_inferenceConfigurationHasBeenSet = true; m_inferenceConfiguration = std::forward<InferenceConfigurationT>(value); }
+    template<typename InferenceConfigurationT = PromptInferenceConfiguration>
+    PromptFlowNodeInlineConfiguration& WithInferenceConfiguration(InferenceConfigurationT&& value) { SetInferenceConfiguration(std::forward<InferenceConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The type of prompt template.</p>
+     * <p>Additional fields to be included in the model request for the Prompt
+     * node.</p>
      */
-    inline PromptTemplateType GetTemplateType() const { return m_templateType; }
-    inline bool TemplateTypeHasBeenSet() const { return m_templateTypeHasBeenSet; }
-    inline void SetTemplateType(PromptTemplateType value) { m_templateTypeHasBeenSet = true; m_templateType = value; }
-    inline PromptFlowNodeInlineConfiguration& WithTemplateType(PromptTemplateType value) { SetTemplateType(value); return *this;}
+    inline Aws::Utils::DocumentView GetAdditionalModelRequestFields() const { return m_additionalModelRequestFields; }
+    inline bool AdditionalModelRequestFieldsHasBeenSet() const { return m_additionalModelRequestFieldsHasBeenSet; }
+    template<typename AdditionalModelRequestFieldsT = Aws::Utils::Document>
+    void SetAdditionalModelRequestFields(AdditionalModelRequestFieldsT&& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields = std::forward<AdditionalModelRequestFieldsT>(value); }
+    template<typename AdditionalModelRequestFieldsT = Aws::Utils::Document>
+    PromptFlowNodeInlineConfiguration& WithAdditionalModelRequestFields(AdditionalModelRequestFieldsT&& value) { SetAdditionalModelRequestFields(std::forward<AdditionalModelRequestFieldsT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::Document m_additionalModelRequestFields;
-    bool m_additionalModelRequestFieldsHasBeenSet = false;
-
-    PromptInferenceConfiguration m_inferenceConfiguration;
-    bool m_inferenceConfigurationHasBeenSet = false;
-
-    Aws::String m_modelId;
-    bool m_modelIdHasBeenSet = false;
+    PromptTemplateType m_templateType{PromptTemplateType::NOT_SET};
+    bool m_templateTypeHasBeenSet = false;
 
     PromptTemplateConfiguration m_templateConfiguration;
     bool m_templateConfigurationHasBeenSet = false;
 
-    PromptTemplateType m_templateType{PromptTemplateType::NOT_SET};
-    bool m_templateTypeHasBeenSet = false;
+    Aws::String m_modelId;
+    bool m_modelIdHasBeenSet = false;
+
+    PromptInferenceConfiguration m_inferenceConfiguration;
+    bool m_inferenceConfigurationHasBeenSet = false;
+
+    Aws::Utils::Document m_additionalModelRequestFields;
+    bool m_additionalModelRequestFieldsHasBeenSet = false;
   };
 
 } // namespace Model

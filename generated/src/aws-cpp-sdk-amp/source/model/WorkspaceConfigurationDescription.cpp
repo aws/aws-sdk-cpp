@@ -25,6 +25,11 @@ WorkspaceConfigurationDescription::WorkspaceConfigurationDescription(JsonView js
 
 WorkspaceConfigurationDescription& WorkspaceConfigurationDescription::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = jsonValue.GetObject("status");
+    m_statusHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("limitsPerLabelSet"))
   {
     Aws::Utils::Array<JsonView> limitsPerLabelSetJsonList = jsonValue.GetArray("limitsPerLabelSet");
@@ -39,17 +44,18 @@ WorkspaceConfigurationDescription& WorkspaceConfigurationDescription::operator =
     m_retentionPeriodInDays = jsonValue.GetInteger("retentionPeriodInDays");
     m_retentionPeriodInDaysHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = jsonValue.GetObject("status");
-    m_statusHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue WorkspaceConfigurationDescription::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithObject("status", m_status.Jsonize());
+
+  }
 
   if(m_limitsPerLabelSetHasBeenSet)
   {
@@ -65,12 +71,6 @@ JsonValue WorkspaceConfigurationDescription::Jsonize() const
   if(m_retentionPeriodInDaysHasBeenSet)
   {
    payload.WithInteger("retentionPeriodInDays", m_retentionPeriodInDays);
-
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithObject("status", m_status.Jsonize());
 
   }
 

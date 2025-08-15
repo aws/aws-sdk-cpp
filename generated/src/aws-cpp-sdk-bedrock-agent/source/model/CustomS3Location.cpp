@@ -25,15 +25,15 @@ CustomS3Location::CustomS3Location(JsonView jsonValue)
 
 CustomS3Location& CustomS3Location::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("bucketOwnerAccountId"))
-  {
-    m_bucketOwnerAccountId = jsonValue.GetString("bucketOwnerAccountId");
-    m_bucketOwnerAccountIdHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("uri"))
   {
     m_uri = jsonValue.GetString("uri");
     m_uriHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("bucketOwnerAccountId"))
+  {
+    m_bucketOwnerAccountId = jsonValue.GetString("bucketOwnerAccountId");
+    m_bucketOwnerAccountIdHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue CustomS3Location::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_bucketOwnerAccountIdHasBeenSet)
-  {
-   payload.WithString("bucketOwnerAccountId", m_bucketOwnerAccountId);
-
-  }
-
   if(m_uriHasBeenSet)
   {
    payload.WithString("uri", m_uri);
+
+  }
+
+  if(m_bucketOwnerAccountIdHasBeenSet)
+  {
+   payload.WithString("bucketOwnerAccountId", m_bucketOwnerAccountId);
 
   }
 

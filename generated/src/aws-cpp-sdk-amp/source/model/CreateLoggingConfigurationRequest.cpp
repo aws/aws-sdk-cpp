@@ -16,15 +16,15 @@ Aws::String CreateLoggingConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
-  }
-
   if(m_logGroupArnHasBeenSet)
   {
    payload.WithString("logGroupArn", m_logGroupArn);
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

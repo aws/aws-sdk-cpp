@@ -25,11 +25,6 @@ MismatchedNodeOutputTypeFlowValidationDetails::MismatchedNodeOutputTypeFlowValid
 
 MismatchedNodeOutputTypeFlowValidationDetails& MismatchedNodeOutputTypeFlowValidationDetails::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("expectedType"))
-  {
-    m_expectedType = FlowNodeIODataTypeMapper::GetFlowNodeIODataTypeForName(jsonValue.GetString("expectedType"));
-    m_expectedTypeHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("node"))
   {
     m_node = jsonValue.GetString("node");
@@ -40,17 +35,17 @@ MismatchedNodeOutputTypeFlowValidationDetails& MismatchedNodeOutputTypeFlowValid
     m_output = jsonValue.GetString("output");
     m_outputHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("expectedType"))
+  {
+    m_expectedType = FlowNodeIODataTypeMapper::GetFlowNodeIODataTypeForName(jsonValue.GetString("expectedType"));
+    m_expectedTypeHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue MismatchedNodeOutputTypeFlowValidationDetails::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_expectedTypeHasBeenSet)
-  {
-   payload.WithString("expectedType", FlowNodeIODataTypeMapper::GetNameForFlowNodeIODataType(m_expectedType));
-  }
 
   if(m_nodeHasBeenSet)
   {
@@ -62,6 +57,11 @@ JsonValue MismatchedNodeOutputTypeFlowValidationDetails::Jsonize() const
   {
    payload.WithString("output", m_output);
 
+  }
+
+  if(m_expectedTypeHasBeenSet)
+  {
+   payload.WithString("expectedType", FlowNodeIODataTypeMapper::GetNameForFlowNodeIODataType(m_expectedType));
   }
 
   return payload;

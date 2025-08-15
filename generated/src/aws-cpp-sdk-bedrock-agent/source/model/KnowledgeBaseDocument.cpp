@@ -25,15 +25,15 @@ KnowledgeBaseDocument::KnowledgeBaseDocument(JsonView jsonValue)
 
 KnowledgeBaseDocument& KnowledgeBaseDocument::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("content"))
-  {
-    m_content = jsonValue.GetObject("content");
-    m_contentHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("metadata"))
   {
     m_metadata = jsonValue.GetObject("metadata");
     m_metadataHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("content"))
+  {
+    m_content = jsonValue.GetObject("content");
+    m_contentHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue KnowledgeBaseDocument::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithObject("content", m_content.Jsonize());
-
-  }
-
   if(m_metadataHasBeenSet)
   {
    payload.WithObject("metadata", m_metadata.Jsonize());
+
+  }
+
+  if(m_contentHasBeenSet)
+  {
+   payload.WithObject("content", m_content.Jsonize());
 
   }
 

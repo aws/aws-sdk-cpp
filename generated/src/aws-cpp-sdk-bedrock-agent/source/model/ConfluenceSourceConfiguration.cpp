@@ -25,6 +25,16 @@ ConfluenceSourceConfiguration::ConfluenceSourceConfiguration(JsonView jsonValue)
 
 ConfluenceSourceConfiguration& ConfluenceSourceConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("hostUrl"))
+  {
+    m_hostUrl = jsonValue.GetString("hostUrl");
+    m_hostUrlHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("hostType"))
+  {
+    m_hostType = ConfluenceHostTypeMapper::GetConfluenceHostTypeForName(jsonValue.GetString("hostType"));
+    m_hostTypeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("authType"))
   {
     m_authType = ConfluenceAuthTypeMapper::GetConfluenceAuthTypeForName(jsonValue.GetString("authType"));
@@ -35,22 +45,23 @@ ConfluenceSourceConfiguration& ConfluenceSourceConfiguration::operator =(JsonVie
     m_credentialsSecretArn = jsonValue.GetString("credentialsSecretArn");
     m_credentialsSecretArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("hostType"))
-  {
-    m_hostType = ConfluenceHostTypeMapper::GetConfluenceHostTypeForName(jsonValue.GetString("hostType"));
-    m_hostTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("hostUrl"))
-  {
-    m_hostUrl = jsonValue.GetString("hostUrl");
-    m_hostUrlHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue ConfluenceSourceConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_hostUrlHasBeenSet)
+  {
+   payload.WithString("hostUrl", m_hostUrl);
+
+  }
+
+  if(m_hostTypeHasBeenSet)
+  {
+   payload.WithString("hostType", ConfluenceHostTypeMapper::GetNameForConfluenceHostType(m_hostType));
+  }
 
   if(m_authTypeHasBeenSet)
   {
@@ -60,17 +71,6 @@ JsonValue ConfluenceSourceConfiguration::Jsonize() const
   if(m_credentialsSecretArnHasBeenSet)
   {
    payload.WithString("credentialsSecretArn", m_credentialsSecretArn);
-
-  }
-
-  if(m_hostTypeHasBeenSet)
-  {
-   payload.WithString("hostType", ConfluenceHostTypeMapper::GetNameForConfluenceHostType(m_hostType));
-  }
-
-  if(m_hostUrlHasBeenSet)
-  {
-   payload.WithString("hostUrl", m_hostUrl);
 
   }
 

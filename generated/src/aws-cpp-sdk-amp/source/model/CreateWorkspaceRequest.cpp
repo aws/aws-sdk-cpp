@@ -28,12 +28,6 @@ Aws::String CreateWorkspaceRequest::SerializePayload() const
 
   }
 
-  if(m_kmsKeyArnHasBeenSet)
-  {
-   payload.WithString("kmsKeyArn", m_kmsKeyArn);
-
-  }
-
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;
@@ -42,6 +36,12 @@ Aws::String CreateWorkspaceRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_kmsKeyArnHasBeenSet)
+  {
+   payload.WithString("kmsKeyArn", m_kmsKeyArn);
 
   }
 

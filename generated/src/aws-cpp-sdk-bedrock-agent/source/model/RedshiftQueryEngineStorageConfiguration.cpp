@@ -25,6 +25,11 @@ RedshiftQueryEngineStorageConfiguration::RedshiftQueryEngineStorageConfiguration
 
 RedshiftQueryEngineStorageConfiguration& RedshiftQueryEngineStorageConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = RedshiftQueryEngineStorageTypeMapper::GetRedshiftQueryEngineStorageTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("awsDataCatalogConfiguration"))
   {
     m_awsDataCatalogConfiguration = jsonValue.GetObject("awsDataCatalogConfiguration");
@@ -35,17 +40,17 @@ RedshiftQueryEngineStorageConfiguration& RedshiftQueryEngineStorageConfiguration
     m_redshiftConfiguration = jsonValue.GetObject("redshiftConfiguration");
     m_redshiftConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = RedshiftQueryEngineStorageTypeMapper::GetRedshiftQueryEngineStorageTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue RedshiftQueryEngineStorageConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", RedshiftQueryEngineStorageTypeMapper::GetNameForRedshiftQueryEngineStorageType(m_type));
+  }
 
   if(m_awsDataCatalogConfigurationHasBeenSet)
   {
@@ -57,11 +62,6 @@ JsonValue RedshiftQueryEngineStorageConfiguration::Jsonize() const
   {
    payload.WithObject("redshiftConfiguration", m_redshiftConfiguration.Jsonize());
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", RedshiftQueryEngineStorageTypeMapper::GetNameForRedshiftQueryEngineStorageType(m_type));
   }
 
   return payload;

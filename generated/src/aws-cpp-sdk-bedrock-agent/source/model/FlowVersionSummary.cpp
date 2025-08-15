@@ -25,25 +25,25 @@ FlowVersionSummary::FlowVersionSummary(JsonView jsonValue)
 
 FlowVersionSummary& FlowVersionSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("arn"))
-  {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("status"))
   {
     m_status = FlowStatusMapper::GetFlowStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("version"))
   {
@@ -57,26 +57,26 @@ JsonValue FlowVersionSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
-  }
-
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
 
   }
 
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("arn", m_arn);
+
+  }
+
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", FlowStatusMapper::GetNameForFlowStatus(m_status));
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_versionHasBeenSet)

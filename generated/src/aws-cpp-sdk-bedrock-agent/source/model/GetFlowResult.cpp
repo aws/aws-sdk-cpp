@@ -25,25 +25,10 @@ GetFlowResult::GetFlowResult(const Aws::AmazonWebServiceResult<JsonValue>& resul
 GetFlowResult& GetFlowResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("arn"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("customerEncryptionKeyArn"))
-  {
-    m_customerEncryptionKeyArn = jsonValue.GetString("customerEncryptionKeyArn");
-    m_customerEncryptionKeyArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("definition"))
-  {
-    m_definition = jsonValue.GetObject("definition");
-    m_definitionHasBeenSet = true;
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("description"))
   {
@@ -55,25 +40,45 @@ GetFlowResult& GetFlowResult::operator =(const Aws::AmazonWebServiceResult<JsonV
     m_executionRoleArn = jsonValue.GetString("executionRoleArn");
     m_executionRoleArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("customerEncryptionKeyArn"))
+  {
+    m_customerEncryptionKeyArn = jsonValue.GetString("customerEncryptionKeyArn");
+    m_customerEncryptionKeyArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("arn"))
   {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("status"))
   {
     m_status = FlowStatusMapper::GetFlowStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
     m_updatedAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("version"))
+  {
+    m_version = jsonValue.GetString("version");
+    m_versionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("definition"))
+  {
+    m_definition = jsonValue.GetObject("definition");
+    m_definitionHasBeenSet = true;
   }
   if(jsonValue.ValueExists("validations"))
   {
@@ -83,11 +88,6 @@ GetFlowResult& GetFlowResult::operator =(const Aws::AmazonWebServiceResult<JsonV
       m_validations.push_back(validationsJsonList[validationsIndex].AsObject());
     }
     m_validationsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("version"))
-  {
-    m_version = jsonValue.GetString("version");
-    m_versionHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

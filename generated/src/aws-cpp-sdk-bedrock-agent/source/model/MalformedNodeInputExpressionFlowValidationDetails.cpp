@@ -25,20 +25,20 @@ MalformedNodeInputExpressionFlowValidationDetails::MalformedNodeInputExpressionF
 
 MalformedNodeInputExpressionFlowValidationDetails& MalformedNodeInputExpressionFlowValidationDetails::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("cause"))
+  if(jsonValue.ValueExists("node"))
   {
-    m_cause = jsonValue.GetString("cause");
-    m_causeHasBeenSet = true;
+    m_node = jsonValue.GetString("node");
+    m_nodeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetString("input");
     m_inputHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("node"))
+  if(jsonValue.ValueExists("cause"))
   {
-    m_node = jsonValue.GetString("node");
-    m_nodeHasBeenSet = true;
+    m_cause = jsonValue.GetString("cause");
+    m_causeHasBeenSet = true;
   }
   return *this;
 }
@@ -47,9 +47,9 @@ JsonValue MalformedNodeInputExpressionFlowValidationDetails::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_causeHasBeenSet)
+  if(m_nodeHasBeenSet)
   {
-   payload.WithString("cause", m_cause);
+   payload.WithString("node", m_node);
 
   }
 
@@ -59,9 +59,9 @@ JsonValue MalformedNodeInputExpressionFlowValidationDetails::Jsonize() const
 
   }
 
-  if(m_nodeHasBeenSet)
+  if(m_causeHasBeenSet)
   {
-   payload.WithString("node", m_node);
+   payload.WithString("cause", m_cause);
 
   }
 

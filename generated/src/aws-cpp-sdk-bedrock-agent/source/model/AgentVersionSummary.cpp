@@ -45,6 +45,11 @@ AgentVersionSummary& AgentVersionSummary::operator =(JsonView jsonValue)
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("updatedAt"))
+  {
+    m_updatedAt = jsonValue.GetString("updatedAt");
+    m_updatedAtHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
@@ -54,11 +59,6 @@ AgentVersionSummary& AgentVersionSummary::operator =(JsonView jsonValue)
   {
     m_guardrailConfiguration = jsonValue.GetObject("guardrailConfiguration");
     m_guardrailConfigurationHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("updatedAt"))
-  {
-    m_updatedAt = jsonValue.GetString("updatedAt");
-    m_updatedAtHasBeenSet = true;
   }
   return *this;
 }
@@ -89,6 +89,11 @@ JsonValue AgentVersionSummary::Jsonize() const
    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
+  if(m_updatedAtHasBeenSet)
+  {
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
@@ -99,11 +104,6 @@ JsonValue AgentVersionSummary::Jsonize() const
   {
    payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
 
-  }
-
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

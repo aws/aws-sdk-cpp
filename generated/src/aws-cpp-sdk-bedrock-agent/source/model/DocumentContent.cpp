@@ -25,15 +25,15 @@ DocumentContent::DocumentContent(JsonView jsonValue)
 
 DocumentContent& DocumentContent::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("custom"))
-  {
-    m_custom = jsonValue.GetObject("custom");
-    m_customHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("dataSourceType"))
   {
     m_dataSourceType = ContentDataSourceTypeMapper::GetContentDataSourceTypeForName(jsonValue.GetString("dataSourceType"));
     m_dataSourceTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("custom"))
+  {
+    m_custom = jsonValue.GetObject("custom");
+    m_customHasBeenSet = true;
   }
   if(jsonValue.ValueExists("s3"))
   {
@@ -47,15 +47,15 @@ JsonValue DocumentContent::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_dataSourceTypeHasBeenSet)
+  {
+   payload.WithString("dataSourceType", ContentDataSourceTypeMapper::GetNameForContentDataSourceType(m_dataSourceType));
+  }
+
   if(m_customHasBeenSet)
   {
    payload.WithObject("custom", m_custom.Jsonize());
 
-  }
-
-  if(m_dataSourceTypeHasBeenSet)
-  {
-   payload.WithString("dataSourceType", ContentDataSourceTypeMapper::GetNameForContentDataSourceType(m_dataSourceType));
   }
 
   if(m_s3HasBeenSet)
