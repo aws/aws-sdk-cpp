@@ -8,7 +8,7 @@
 #define AWS_CBOR_CLIENT_H
 
 #include <aws/core/Core_EXPORTS.h>
-#include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSProtocolClient.h>
 #include <aws/crt/cbor/Cbor.h>
 
 namespace Aws
@@ -24,10 +24,10 @@ namespace Aws
          *  AWSClient that handles marshalling cbor response bodies. You would inherit from this class
          *  to create a client that uses Cbor as its payload format.
          */
-        class AWS_CORE_API AWSRpcV2CborClient : public AWSClient
+        class AWS_CORE_API AWSRpcV2CborClient : public AWSProtocolClient<RpcV2CborOutcome, Aws::UniquePtr<Crt::Cbor::CborDecoder>>
         {
         public:
-            typedef AWSClient BASECLASS;
+            typedef AWSProtocolClient<RpcV2CborOutcome, Aws::UniquePtr<Crt::Cbor::CborDecoder>> BASECLASS;
 
             /**
              * Simply calls AWSClient constructor.
@@ -47,64 +47,17 @@ namespace Aws
 
         protected:
             template <typename OutcomeT, typename ClientT, typename AWSEndpointT, typename RequestT, typename HandlerT>
-            friend class BidirectionalEventStreamingTask; // allow BidirectionalEventStreamingTask to MakeRequests
-            /**
-             * Converts/Parses an http response into a meaningful AWSError object using the cbor message structure.
-             */
+            friend class BidirectionalEventStreamingTask;
+
             virtual AWSError<CoreErrors> BuildAWSError(const std::shared_ptr<Aws::Http::HttpResponse>& response) const override;
 
-            /**
-             * Returns a pointer to a Cbor decoder or an error from the request. Does some marshalling cbor and raw streams,
-             * then just calls AttemptExhaustively.
-             *
-             * method defaults to POST
-             */
-            RpcV2CborOutcome MakeRequest(const Aws::AmazonWebServiceRequest& request,
-                                    const Aws::Endpoint::AWSEndpoint& endpoint,
-                                    Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
-                                    const char* signerName = Aws::Auth::SIGV4_SIGNER,
-                                    const char* signerRegionOverride = nullptr,
-                                    const char* signerServiceNameOverride = nullptr) const;
-
-            RpcV2CborOutcome MakeRequest(const Aws::Endpoint::AWSEndpoint& endpoint,
-                                    Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
-                                    const char* signerName = Aws::Auth::SIGV4_SIGNER,
-                                    const char* signerRegionOverride = nullptr,
-                                    const char* signerServiceNameOverride = nullptr) const;
-
-            /**
-             * Returns a pointer to a Cbor decoder or an error from the request. Does some marshalling cbor and raw streams,
-             * then just calls AttemptExhaustively.
-             *
-             * method defaults to POST
-             */
-            RpcV2CborOutcome MakeRequest(const Aws::Http::URI& uri,
-                const Aws::AmazonWebServiceRequest& request,
-                Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
-                const char* signerName = Aws::Auth::SIGV4_SIGNER,
-                const char* signerRegionOverride = nullptr,
-                const char* signerServiceNameOverride = nullptr) const;
-
-            /**
-             * Returns a pointer to a Cbor decoder or an error from the request. Does some marshalling json and raw streams,
-             * then just calls AttemptExhaustively.
-             *
-             * requestName is used for metrics and defaults to empty string, to avoid empty names in metrics provide a valid
-             * name.
-             *
-             * method defaults to POST
-             */
-            RpcV2CborOutcome MakeRequest(const Aws::Http::URI& uri,
-                Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
-                const char* signerName = Aws::Auth::SIGV4_SIGNER,
-                const char* requestName = "",
-                const char* signerRegionOverride = nullptr,
-                const char* signerServiceNameOverride = nullptr) const;
-
-            RpcV2CborOutcome MakeEventStreamRequest(std::shared_ptr<Aws::Http::HttpRequest>& request) const;
-
         private:
-          Aws::UniquePtr<Aws::Crt::Cbor::CborDecoder> CreateCborDecoder(const HttpResponseOutcome& response) const;
+            Aws::UniquePtr<Crt::Cbor::CborDecoder> ParseResponse(const HttpResponseOutcome& httpOutcome) const override;
+            bool HasParseError(const Aws::UniquePtr<Crt::Cbor::CborDecoder>& response) const override;
+            AWSError<CoreErrors> CreateParseError() const override;
+            Aws::UniquePtr<Crt::Cbor::CborDecoder> CreateEmptyResponse() const override;
+            const char* GetClientLogTag() const override;
+            Aws::UniquePtr<Aws::Crt::Cbor::CborDecoder> CreateCborDecoder(const HttpResponseOutcome& response) const;
         };
     } // namespace Client
 } // namespace Aws

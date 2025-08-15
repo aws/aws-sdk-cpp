@@ -8,7 +8,7 @@
 #define AWS_JSON_CLIENT_H
 
 #include <aws/core/Core_EXPORTS.h>
-#include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSProtocolClient.h>
 
 namespace Aws
 {
@@ -31,10 +31,10 @@ namespace Aws
          *  AWSClient that handles marshalling json response bodies. You would inherit from this class
          *  to create a client that uses Json as its payload format.
          */
-        class AWS_CORE_API AWSJsonClient : public AWSClient
+        class AWS_CORE_API AWSJsonClient : public AWSProtocolClient<JsonOutcome, Utils::Json::JsonValue>
         {
         public:
-            typedef AWSClient BASECLASS;
+            typedef AWSProtocolClient<JsonOutcome, Utils::Json::JsonValue> BASECLASS;
 
             /**
              * Simply calls AWSClient constructor.
@@ -60,55 +60,12 @@ namespace Aws
              */
             virtual AWSError<CoreErrors> BuildAWSError(const std::shared_ptr<Aws::Http::HttpResponse>& response) const override;
 
-            /**
-             * Returns a Json document or an error from the request. Does some marshalling json and raw streams,
-             * then just calls AttemptExhaustively.
-             *
-             * method defaults to POST
-             */
-            JsonOutcome MakeRequest(const Aws::AmazonWebServiceRequest& request,
-                                    const Aws::Endpoint::AWSEndpoint& endpoint,
-                                    Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
-                                    const char* signerName = Aws::Auth::SIGV4_SIGNER,
-                                    const char* signerRegionOverride = nullptr,
-                                    const char* signerServiceNameOverride = nullptr) const;
-
-            JsonOutcome MakeRequest(const Aws::Endpoint::AWSEndpoint& endpoint,
-                                    Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
-                                    const char* signerName = Aws::Auth::SIGV4_SIGNER,
-                                    const char* signerRegionOverride = nullptr,
-                                    const char* signerServiceNameOverride = nullptr) const;
-
-            /**
-             * Returns a Json document or an error from the request. Does some marshalling json and raw streams,
-             * then just calls AttemptExhaustively.
-             *
-             * method defaults to POST
-             */
-            JsonOutcome MakeRequest(const Aws::Http::URI& uri,
-                const Aws::AmazonWebServiceRequest& request,
-                Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
-                const char* signerName = Aws::Auth::SIGV4_SIGNER,
-                const char* signerRegionOverride = nullptr,
-                const char* signerServiceNameOverride = nullptr) const;
-
-            /**
-             * Returns a Json document or an error from the request. Does some marshalling json and raw streams,
-             * then just calls AttemptExhaustively.
-             *
-             * requestName is used for metrics and defaults to empty string, to avoid empty names in metrics provide a valid
-             * name.
-             *
-             * method defaults to POST
-             */
-            JsonOutcome MakeRequest(const Aws::Http::URI& uri,
-                Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
-                const char* signerName = Aws::Auth::SIGV4_SIGNER,
-                const char* requestName = "",
-                const char* signerRegionOverride = nullptr,
-                const char* signerServiceNameOverride = nullptr) const;
-
-            JsonOutcome MakeEventStreamRequest(std::shared_ptr<Aws::Http::HttpRequest>& request) const;
+        private:
+            Utils::Json::JsonValue ParseResponse(const HttpResponseOutcome& httpOutcome) const override;
+            bool HasParseError(const Utils::Json::JsonValue& response) const override;
+            AWSError<CoreErrors> CreateParseError() const override;
+            const char* GetClientLogTag() const override;
+            Utils::Json::JsonValue CreateEmptyResponse() const override;
         };
     } // namespace Client
 } // namespace Aws
