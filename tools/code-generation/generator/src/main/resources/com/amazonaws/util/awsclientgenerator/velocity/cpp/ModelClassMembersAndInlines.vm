@@ -138,7 +138,7 @@
     ///@}
 #end##if(!($CppViewHelper.isStreamingPayloadMember($shape, $member.key) && $shape.request))
 #end##foreach($member in $shape.members.entrySet())
-#if($shape.members.size() > 0)##next contains private only
+#if($shape.members.size() > 0 || $operation.result.shape.hasEventStreamMembers())##next contains private only
   private:
 #foreach($member in $shape.members.entrySet())
 

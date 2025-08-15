@@ -12,7 +12,7 @@
 #if(!$operation.documentation)
 #set($operation.documentation = '')
 #end
-#if($operation.isRequestlessDefault())
+#if($operation.isRequestlessDefault() && !$operation.result.shape.hasEventStreamMembers())
 #set($defaultOp = " = {}")
 #else
 #set($defaultOp = "")
@@ -61,7 +61,7 @@
 #if($serviceModel.metadata.serviceId == "S3" && $operation.s3CrtEnabled)
 ##S3 CRT-backed Operations are primarly based on Async implementation not sync blocking calls
         $virtual void ${operation.name}Async(${constText}Model::${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-#elseif($operation.isRequestlessDefault())
+#elseif($operation.isRequestlessDefault() && !$operation.result.shape.hasEventStreamMembers())
         template<typename ${operation.name}RequestT = Model::${operation.request.shape.name}>
         void ${operation.name}Async(const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, ${constText}${operation.name}RequestT& request${defaultOp}) const
         {
