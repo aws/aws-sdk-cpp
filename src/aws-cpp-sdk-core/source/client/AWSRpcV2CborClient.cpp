@@ -3,24 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/AmazonWebServiceRequest.h>
-#include <aws/core/auth/AWSAuthSignerProvider.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
 #include <aws/core/client/AWSRpcV2CborClient.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
-#include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
-#include <aws/core/http/URI.h>
-#include <aws/core/monitoring/MonitoringManager.h>
 #include <aws/core/utils/Outcome.h>
-#include <aws/core/utils/UUID.h>
-#include <aws/core/utils/event/EventStream.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
-#include <smithy/tracing/TracingUtils.h>
 #include <aws/crt/cbor/Cbor.h>
 
 #include <cassert>
@@ -48,172 +40,29 @@ AWSRpcV2CborClient::AWSRpcV2CborClient(const Aws::Client::ClientConfiguration& c
 {
 }
 
-RpcV2CborOutcome AWSRpcV2CborClient::MakeRequest(const Aws::AmazonWebServiceRequest& request,
-                                       const Aws::Endpoint::AWSEndpoint& endpoint,
-                                       Http::HttpMethod method /* = Http::HttpMethod::HTTP_POST */,
-                                       const char* signerName /* = Aws::Auth::NULL_SIGNER */,
-                                       const char* signerRegionOverride /* = nullptr */,
-                                       const char* signerServiceNameOverride /* = nullptr */) const
+Aws::UniquePtr<Crt::Cbor::CborDecoder> AWSRpcV2CborClient::ParseResponse(const HttpResponseOutcome& httpOutcome) const
 {
-    const Aws::Http::URI& uri = endpoint.GetURI();
-    if (endpoint.GetAttributes()) {
-        signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
-        if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
-            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
-        }
-        if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
-            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
-        }
-        if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
-            signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
-        }
-    }
-    return MakeRequest(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride);
+    return CreateCborDecoder(httpOutcome);
 }
 
-RpcV2CborOutcome AWSRpcV2CborClient::MakeRequest(const Aws::Endpoint::AWSEndpoint& endpoint,
-                                       Http::HttpMethod method /* = Http::HttpMethod::HTTP_POST */,
-                                       const char* signerName /* = Aws::Auth::NULL_SIGNER */,
-                                       const char* signerRegionOverride /* = nullptr */,
-                                       const char* signerServiceNameOverride /* = nullptr */) const
+bool AWSRpcV2CborClient::HasParseError(const Aws::UniquePtr<Crt::Cbor::CborDecoder>& response) const
 {
-    const Aws::Http::URI& uri = endpoint.GetURI();
-    if (endpoint.GetAttributes()) {
-        signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
-        if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
-            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
-        }
-        if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
-            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
-        }
-        if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
-            signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
-        }
-    }
-    return MakeRequest(uri, method, signerName, signerRegionOverride, signerServiceNameOverride);
+    return response == nullptr;
 }
 
-RpcV2CborOutcome AWSRpcV2CborClient::MakeRequest(const Aws::Http::URI& uri,
-    const Aws::AmazonWebServiceRequest& request,
-    Http::HttpMethod method,
-    const char* signerName,
-    const char* signerRegionOverride,
-    const char* signerServiceNameOverride) const
+AWSError<CoreErrors> AWSRpcV2CborClient::CreateParseError() const
 {
-    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride));
-    if (!httpOutcome.IsSuccess())
-    {
-        return smithy::components::tracing::TracingUtils::MakeCallWithTiming<RpcV2CborOutcome>(
-            [&]() -> RpcV2CborOutcome {
-                return RpcV2CborOutcome(std::move(httpOutcome));
-            },
-            TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
-            *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-    }
-
-    if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0){
-        return smithy::components::tracing::TracingUtils::MakeCallWithTiming<RpcV2CborOutcome>(
-            [&]() -> RpcV2CborOutcome {
-                auto ptr = CreateCborDecoder(httpOutcome);
-                return RpcV2CborOutcome(AmazonWebServiceResult<Aws::UniquePtr<Crt::Cbor::CborDecoder>>(std::move(ptr),
-                    httpOutcome.GetResult()->GetHeaders(),
-                    httpOutcome.GetResult()->GetResponseCode()));
-            },
-            TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
-            *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-    }
-    return smithy::components::tracing::TracingUtils::MakeCallWithTiming<RpcV2CborOutcome>(
-        [&]() -> RpcV2CborOutcome {
-            return RpcV2CborOutcome(AmazonWebServiceResult<Aws::UniquePtr<Crt::Cbor::CborDecoder>>(nullptr, httpOutcome.GetResult()->GetHeaders()));
-        },
-        TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
-        *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
-        {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+    return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "Cbor Parser Error", "Failed to parse CBOR response", false);
 }
 
-RpcV2CborOutcome AWSRpcV2CborClient::MakeRequest(const Aws::Http::URI& uri,
-    Http::HttpMethod method,
-    const char* signerName,
-    const char* requestName,
-    const char* signerRegionOverride,
-    const char* signerServiceNameOverride) const
+Aws::UniquePtr<Crt::Cbor::CborDecoder> AWSRpcV2CborClient::CreateEmptyResponse() const
 {
-    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, method, signerName, requestName, signerRegionOverride, signerServiceNameOverride));
-    if (!httpOutcome.IsSuccess())
-    {
-        return smithy::components::tracing::TracingUtils::MakeCallWithTiming<RpcV2CborOutcome>(
-            [&]() -> RpcV2CborOutcome {
-                return {std::move(httpOutcome)};
-            },
-            TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
-            *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, requestName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-    }
-
-    if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
-    {
-        auto cborDecoder = CreateCborDecoder(httpOutcome);
-        if (cborDecoder != nullptr) {
-            return smithy::components::tracing::TracingUtils::MakeCallWithTiming<RpcV2CborOutcome>(
-                [&]() -> RpcV2CborOutcome {
-                    return RpcV2CborOutcome(AWSError<CoreErrors>(CoreErrors::UNKNOWN, "Cbor Parser Error", "SAARTHI ERROR", false));
-                },
-                TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
-                *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
-                {{TracingUtils::SMITHY_METHOD_DIMENSION, requestName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        }
-
-        return smithy::components::tracing::TracingUtils::MakeCallWithTiming<RpcV2CborOutcome>(
-            [&]() -> RpcV2CborOutcome {
-                auto ptr = CreateCborDecoder(httpOutcome);
-                return RpcV2CborOutcome(AmazonWebServiceResult<Aws::UniquePtr<Crt::Cbor::CborDecoder>>(std::move(ptr),
-                    httpOutcome.GetResult()->GetHeaders(),
-                    httpOutcome.GetResult()->GetResponseCode()));
-            },
-            TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
-            *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, requestName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-    }
-
-    return smithy::components::tracing::TracingUtils::MakeCallWithTiming<RpcV2CborOutcome>(
-        [&]() -> RpcV2CborOutcome {
-            return RpcV2CborOutcome(AmazonWebServiceResult<Aws::UniquePtr<Crt::Cbor::CborDecoder>>(nullptr, httpOutcome.GetResult()->GetHeaders()));
-        },
-        TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
-        *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
-        {{TracingUtils::SMITHY_METHOD_DIMENSION, requestName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+    return nullptr;
 }
 
-RpcV2CborOutcome AWSRpcV2CborClient::MakeEventStreamRequest(std::shared_ptr<Aws::Http::HttpRequest>& request) const {
-  // request is assumed to be signed
-  std::shared_ptr<HttpResponse> httpResponse = MakeHttpRequest(request);
-
-  if (DoesResponseGenerateError(httpResponse)) {
-    AWS_LOGSTREAM_DEBUG(AWS_CBOR_CLIENT_LOG_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
-    auto error = BuildAWSError(httpResponse);
-    return RpcV2CborOutcome(std::move(error));
-  }
-
-  AWS_LOGSTREAM_DEBUG(AWS_CBOR_CLIENT_LOG_TAG, "Request returned successful response.");
-
-  HttpResponseOutcome httpOutcome(std::move(httpResponse));
-
-  if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0) {
-    Aws::StringStream ss;
-    ss << httpOutcome.GetResult()->GetResponseBody().rdbuf();
-    Aws::Crt::ByteCursor cborValue = Aws::Crt::ByteCursorFromCString(ss.str().c_str());
-    if (cborValue.ptr != nullptr) {
-      return RpcV2CborOutcome(AWSError<CoreErrors>(CoreErrors::UNKNOWN, "Cbor Parser Error", "SAARTHI ERROR", false));
-    }
-
-    auto ptr = CreateCborDecoder(httpOutcome);
-    return RpcV2CborOutcome(AmazonWebServiceResult<Aws::UniquePtr<Crt::Cbor::CborDecoder>>(std::move(ptr), httpOutcome.GetResult()->GetHeaders(),
-                                                                    httpOutcome.GetResult()->GetResponseCode()));
-  }
-
-  return RpcV2CborOutcome(AmazonWebServiceResult<Aws::UniquePtr<Crt::Cbor::CborDecoder>>(nullptr, httpOutcome.GetResult()->GetHeaders()));
+const char* AWSRpcV2CborClient::GetClientLogTag() const
+{
+  return AWS_CBOR_CLIENT_LOG_TAG;
 }
 
 AWSError<CoreErrors> AWSRpcV2CborClient::BuildAWSError(
@@ -244,7 +93,7 @@ AWSError<CoreErrors> AWSRpcV2CborClient::BuildAWSError(
     error.SetResponseHeaders(httpResponse->GetHeaders());
     error.SetResponseCode(httpResponse->GetResponseCode());
     error.SetRemoteHostIpAddress(httpResponse->GetOriginatingRequest().GetResolvedRemoteHost());
-    AWS_LOGSTREAM_ERROR(AWS_CBOR_CLIENT_LOG_TAG, error);
+    AWS_LOGSTREAM_ERROR(GetClientLogTag(), error);
     return error;
 }
 
@@ -253,6 +102,6 @@ Aws::UniquePtr<Aws::Crt::Cbor::CborDecoder> AWSRpcV2CborClient::CreateCborDecode
 {
     Aws::StringStream ss;
     ss << httpOutcome.GetResult()->GetResponseBody().rdbuf();
-    Aws::Crt::ByteCursor cborDecoder= Aws::Crt::ByteCursorFromCString(ss.str().c_str());
-    return Aws::MakeUnique<Crt::Cbor::CborDecoder>(AWS_CBOR_CLIENT_LOG_TAG, cborDecoder);
+    const Aws::Crt::ByteCursor cborDecoder = Aws::Crt::ByteCursorFromCString(ss.str().c_str());
+    return Aws::MakeUnique<Crt::Cbor::CborDecoder>(GetClientLogTag(), cborDecoder);
 }
