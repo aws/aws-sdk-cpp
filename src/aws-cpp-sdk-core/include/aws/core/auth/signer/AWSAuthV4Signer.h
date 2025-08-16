@@ -27,6 +27,8 @@ namespace smithy
 
 namespace Aws
 {
+    class AmazonWebServiceRequest;
+    
     namespace Http
     {
         class HttpRequest;
@@ -143,6 +145,13 @@ namespace Aws
             bool SignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, bool signBody) const override;
 
             /**
+             * Uses AWS Auth V4 signing method with SHA256 HMAC algorithm. If signBody is false
+             * and https is being used then the body of the payload will not be signed.
+             * This overload passes the AWS request to the credentials provider for user agent feature tracking.
+             */
+            bool SignRequest(Aws::Http::HttpRequest& request, Aws::AmazonWebServiceRequest& awsRequest, const char* region, const char* serviceName, bool signBody) const;
+
+            /**
             * Takes a request and signs the URI based on the HttpMethod, URI and other info from the request.
             * the region the signer was initialized with will be used for the signature.
             * The URI can then be used in a normal HTTP call until expiration.
@@ -182,6 +191,8 @@ namespace Aws
 
 
             virtual Aws::Auth::AWSCredentials GetCredentials(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) const;
+
+            virtual Aws::Auth::AWSCredentials GetCredentials(Aws::AmazonWebServiceRequest& awsRequest, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) const;
 
             Aws::String GetServiceName() const { return m_serviceName; }
             Aws::String GetRegion() const { return m_region; }

@@ -22,6 +22,8 @@
 
 namespace Aws
 {
+    class AmazonWebServiceRequest;
+
     namespace Client
     {
         struct ClientConfiguration;
@@ -73,6 +75,14 @@ namespace Aws
              */
             virtual AWSCredentials GetAWSCredentials() = 0;
 
+            /**
+             * Interface that allows providers to modify the request during credential retrieval.
+             */
+            virtual AWSCredentials GetAWSCredentials(Aws::AmazonWebServiceRequest& request) {
+                AWS_UNREFERENCED_PARAM(request);
+                return GetAWSCredentials();
+            }
+            
         protected:
             /**
              * The default implementation keeps up with the cache times and lets you know if it's time to refresh your internal caching
@@ -144,6 +154,11 @@ namespace Aws
             * are not found, empty credentials are returned. Credentials are not cached.
             */
             AWSCredentials GetAWSCredentials() override;
+            
+            /**
+            * New interface that adds environment credential tracking to the request.
+            */
+            AWSCredentials GetAWSCredentials(Aws::AmazonWebServiceRequest& request) override;
         };
 
         /**

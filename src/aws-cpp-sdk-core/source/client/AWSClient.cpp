@@ -7,6 +7,7 @@
 #include <aws/core/AmazonWebServiceRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSAuthSignerProvider.h>
+#include <aws/core/auth/signer/AWSAuthV4Signer.h>
 #include <aws/core/client/AWSUrlPresigner.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
@@ -43,6 +44,7 @@
 #include <aws/core/Version.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/core/platform/OSVersionInfo.h>
+#include <aws/core/auth/AWSCredentialsProviderChain.h>
 
 #include <smithy/tracing/TracingUtils.h>
 #include <smithy/client/features/ChecksumInterceptor.h>
@@ -578,6 +580,11 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
 
     auto signer = GetSignerByName(signerName);
     auto signedRequest = TracingUtils::MakeCallWithTiming<bool>([&]() -> bool {
+            // Use request-aware signing for credential tracking
+            auto* v4Signer = dynamic_cast<AWSAuthV4Signer*>(signer);
+            if (v4Signer) {
+                return v4Signer->SignRequest(*httpRequest, const_cast<Aws::AmazonWebServiceRequest&>(request), signerRegionOverride, signerServiceNameOverride, true);
+            }
             return signer->SignRequest(*httpRequest, signerRegionOverride, signerServiceNameOverride, true);
         },
         TracingUtils::SMITHY_CLIENT_SIGNING_METRIC,

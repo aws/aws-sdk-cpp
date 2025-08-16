@@ -41,6 +41,32 @@ AWSCredentials AWSCredentialsProviderChain::GetAWSCredentials()
     return AWSCredentials();
 }
 
+AWSCredentials AWSCredentialsProviderChain::GetAWSCredentials(Aws::AmazonWebServiceRequest& request)
+{
+    ReaderLockGuard lock(m_cachedProviderLock);
+    if (m_cachedProvider) {
+      AWSCredentials credentials = m_cachedProvider->GetAWSCredentials(request);
+      if (!credentials.GetAWSAccessKeyId().empty() && !credentials.GetAWSSecretKey().empty())
+      {
+        return credentials;
+      }
+    }
+    lock.UpgradeToWriterLock();
+    for (auto&& credentialsProvider : m_providerChain)
+    {
+        AWSCredentials credentials = credentialsProvider->GetAWSCredentials(request);
+        if (!credentials.GetAWSAccessKeyId().empty() && !credentials.GetAWSSecretKey().empty())
+        {
+            // TODO: issue of only chain, not overidden
+            // which credentials were used -- add it somethow
+            // request.addFeatureTrack(credential_type)
+            m_cachedProvider = credentialsProvider;
+            return credentials;
+        }
+    }
+    return AWSCredentials();
+}
+
 DefaultAWSCredentialsProviderChain::DefaultAWSCredentialsProviderChain() : AWSCredentialsProviderChain()
 {
     AddProvider(Aws::MakeShared<EnvironmentAWSCredentialsProvider>(DefaultCredentialsProviderChainTag));

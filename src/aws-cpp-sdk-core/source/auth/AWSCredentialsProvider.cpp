@@ -18,6 +18,8 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/AmazonWebServiceRequest.h>
+#include <aws/core/client/UserAgent.h>
 #include <cstdlib>
 #include <fstream>
 #include <string.h>
@@ -102,7 +104,16 @@ AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
             AWS_LOGSTREAM_DEBUG(ENVIRONMENT_LOG_TAG, "Found accountId");
         }
     }
+    
+    return credentials;
+}
 
+AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials(Aws::AmazonWebServiceRequest& request)
+{
+    AWSCredentials credentials = GetAWSCredentials();
+    if (!credentials.IsEmpty()) {
+        request.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS);
+    }
     return credentials;
 }
 
