@@ -9,6 +9,7 @@
 #include <aws/testing/mocks/http/MockHttpClient.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/StringUtils.h>
 
@@ -25,7 +26,7 @@ public:
     explicit CredentialTestingClient(const Aws::Client::ClientConfiguration& configuration)
         : AWSClient(configuration,
                    Aws::MakeShared<Aws::Client::AWSAuthV4Signer>(ALLOCATION_TAG,
-                       Aws::MakeShared<EnvironmentAWSCredentialsProvider>(ALLOCATION_TAG),
+                       Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                        "service", configuration.region),
                    Aws::MakeShared<MockAWSErrorMarshaller>(ALLOCATION_TAG))
     {
