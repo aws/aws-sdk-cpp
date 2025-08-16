@@ -339,6 +339,12 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
     return SignRequestWithCreds(request, credentials, region, serviceName, signBody);
 }
 
+bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, Aws::AmazonWebServiceRequest& awsRequest, const char* region, const char* serviceName, bool signBody) const
+{
+    AWSCredentials credentials = GetCredentials(awsRequest, request.GetServiceSpecificParameters());
+    return SignRequestWithCreds(request, credentials, region, serviceName, signBody);
+}
+
 bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, long long expirationTimeInSeconds) const
 {
     return PresignRequest(request, m_region.c_str(), expirationTimeInSeconds);
@@ -594,4 +600,9 @@ Aws::Utils::ByteBuffer AWSAuthV4Signer::ComputeHash(const Aws::String& secretKey
 Aws::Auth::AWSCredentials AWSAuthV4Signer::GetCredentials(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) const {
     AWS_UNREFERENCED_PARAM(serviceSpecificParameters);
     return m_credentialsProvider->GetAWSCredentials();
+}
+
+Aws::Auth::AWSCredentials AWSAuthV4Signer::GetCredentials(Aws::AmazonWebServiceRequest& awsRequest, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) const {
+    AWS_UNREFERENCED_PARAM(serviceSpecificParameters);
+    return m_credentialsProvider->GetAWSCredentials(awsRequest);
 }
