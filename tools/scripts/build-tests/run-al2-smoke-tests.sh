@@ -19,4 +19,4 @@ echo "Setting the run environment"
 export LD_LIBRARY_PATH="${CODEBUILD_SRC_DIR}/al2-install/lib:${CODEBUILD_SRC_DIR}/al2-build/tests/testing-resources/"
 cd "${CODEBUILD_SRC_DIR}/al2-build"
 if [ -f "${CODEBUILD_SRC_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt" ]; then export LSAN_OPTIONS=suppressions="${CODEBUILD_SRC_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt"; fi
-python3 ../aws-sdk-cpp/tools/scripts/run_smoke_tests_simple.py --testDir ./tests
+python3 ../aws-sdk-cpp/tools/scripts/run_smoke_tests_simple.py --testDir .

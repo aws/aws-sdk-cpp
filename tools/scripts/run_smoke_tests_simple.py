@@ -9,7 +9,7 @@ def main():
     args = parser.parse_args()
     
     # Path to built smoke tests
-    smoke_tests_dir = os.path.join(args.testDir, "../generated/smoke-tests")
+    smoke_tests_dir = os.path.join(args.testDir, "generated/smoke-tests")
 
     # Get all service directories
     services = [d for d in os.listdir(smoke_tests_dir) if os.path.isdir(os.path.join(smoke_tests_dir, d))]
