@@ -10,11 +10,10 @@
 
 set -e
 
-if [ "$#" -ne 3 ]; then
-  echo "Usage: ${0} CODEBUILD_SRC_DIR"
+if [ -z "$CODEBUILD_SRC_DIR" ]; then
+  echo "Error: CODEBUILD_SRC_DIR environment variable is not set"
   exit 1
 fi
-CODEBUILD_SRC_DIR="$1"
 
 echo "Setting the run environment"
 export LD_LIBRARY_PATH="${CODEBUILD_SRC_DIR}/al2-install/lib:${CODEBUILD_SRC_DIR}/al2-build/tests/testing-resources/"
