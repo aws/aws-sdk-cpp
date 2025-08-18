@@ -20,7 +20,8 @@ if [ -z "$CATAPULT_TEST_ACCOUNT" ]; then
   exit 1
 fi
 
-echo "Using current AWS credentials for smoke tests"
+echo "Setting up AWS authentication"
+ada credentials update --account=${CATAPULT_TEST_ACCOUNT} --provider=isengard --role=Admin --once
 aws sts get-caller-identity
 
 echo "Setting the run environment"
