@@ -581,11 +581,7 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
     auto signer = GetSignerByName(signerName);
     auto signedRequest = TracingUtils::MakeCallWithTiming<bool>([&]() -> bool {
             // Use request-aware signing for credential tracking
-            auto* v4Signer = dynamic_cast<AWSAuthV4Signer*>(signer);
-            if (v4Signer) {
-                return v4Signer->SignRequest(*httpRequest, const_cast<Aws::AmazonWebServiceRequest&>(request), signerRegionOverride, signerServiceNameOverride, true);
-            }
-            return signer->SignRequest(*httpRequest, signerRegionOverride, signerServiceNameOverride, true);
+            return signer->SignRequest(*httpRequest, const_cast<Aws::AmazonWebServiceRequest&>(request), signerRegionOverride, signerServiceNameOverride, true);
         },
         TracingUtils::SMITHY_CLIENT_SIGNING_METRIC,
         *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),

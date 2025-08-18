@@ -149,7 +149,7 @@ namespace Aws
              * and https is being used then the body of the payload will not be signed.
              * This overload passes the AWS request to the credentials provider for user agent feature tracking.
              */
-            bool SignRequest(Aws::Http::HttpRequest& request, Aws::AmazonWebServiceRequest& awsRequest, const char* region, const char* serviceName, bool signBody) const;
+            bool SignRequest(Aws::Http::HttpRequest& request, Aws::AmazonWebServiceRequest& awsRequest, const char* region, const char* serviceName, bool signBody) const override;
 
             /**
             * Takes a request and signs the URI based on the HttpMethod, URI and other info from the request.

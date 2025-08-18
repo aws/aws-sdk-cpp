@@ -14,6 +14,8 @@
 
 namespace Aws
 {
+    class AmazonWebServiceRequest;
+
     namespace Http
     {
         class HttpRequest;
@@ -80,6 +82,16 @@ namespace Aws
                 AWS_UNREFERENCED_PARAM(region);
                 AWS_UNREFERENCED_PARAM(serviceName);
                 return SignRequest(request);
+            }
+
+            /**
+             * Signs the request itself with access to the original AmazonWebServiceRequest for credential tracking.
+             * Default implementation calls the standard SignRequest method.
+             */
+            virtual bool SignRequest(Aws::Http::HttpRequest& request, Aws::AmazonWebServiceRequest& awsRequest, const char* region, const char* serviceName, bool signBody) const
+            {
+                AWS_UNREFERENCED_PARAM(awsRequest);
+                return SignRequest(request, region, serviceName, signBody);
             }
 
             /**
