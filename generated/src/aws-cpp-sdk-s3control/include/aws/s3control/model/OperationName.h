@@ -24,7 +24,8 @@ namespace Model
     S3InitiateRestoreObject,
     S3PutObjectLegalHold,
     S3PutObjectRetention,
-    S3ReplicateObject
+    S3ReplicateObject,
+    S3ComputeObjectChecksum
   };
 
 namespace OperationNameMapper

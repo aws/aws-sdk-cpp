@@ -1,0 +1,50 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/connectparticipant/model/AudioFeatures.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ConnectParticipant
+{
+namespace Model
+{
+
+AudioFeatures::AudioFeatures(JsonView jsonValue)
+{
+  *this = jsonValue;
+}
+
+AudioFeatures& AudioFeatures::operator =(JsonView jsonValue)
+{
+  if(jsonValue.ValueExists("EchoReduction"))
+  {
+    m_echoReduction = MeetingFeatureStatusMapper::GetMeetingFeatureStatusForName(jsonValue.GetString("EchoReduction"));
+    m_echoReductionHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue AudioFeatures::Jsonize() const
+{
+  JsonValue payload;
+
+  if(m_echoReductionHasBeenSet)
+  {
+   payload.WithString("EchoReduction", MeetingFeatureStatusMapper::GetNameForMeetingFeatureStatus(m_echoReduction));
+  }
+
+  return payload;
+}
+
+} // namespace Model
+} // namespace ConnectParticipant
+} // namespace Aws

@@ -19,6 +19,7 @@ namespace Model
     ml_p4d_24xlarge,
     ml_p4de_24xlarge,
     ml_p5_48xlarge,
+    ml_p6e_gb200_36xlarge,
     ml_trn1_32xlarge,
     ml_trn1n_32xlarge,
     ml_g5_xlarge,

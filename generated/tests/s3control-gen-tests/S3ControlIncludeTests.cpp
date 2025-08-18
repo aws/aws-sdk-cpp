@@ -35,6 +35,8 @@
 #include <aws/s3control/model/BucketLocationConstraint.h>
 #include <aws/s3control/model/BucketVersioningStatus.h>
 #include <aws/s3control/model/CloudWatchMetrics.h>
+#include <aws/s3control/model/ComputeObjectChecksumAlgorithm.h>
+#include <aws/s3control/model/ComputeObjectChecksumType.h>
 #include <aws/s3control/model/CreateAccessGrantRequest.h>
 #include <aws/s3control/model/CreateAccessGrantResult.h>
 #include <aws/s3control/model/CreateAccessGrantsInstanceRequest.h>
@@ -288,6 +290,7 @@
 #include <aws/s3control/model/S3BucketDestination.h>
 #include <aws/s3control/model/S3CannedAccessControlList.h>
 #include <aws/s3control/model/S3ChecksumAlgorithm.h>
+#include <aws/s3control/model/S3ComputeObjectChecksumOperation.h>
 #include <aws/s3control/model/S3CopyObjectOperation.h>
 #include <aws/s3control/model/S3DeleteObjectTaggingOperation.h>
 #include <aws/s3control/model/S3GeneratedManifestDescriptor.h>

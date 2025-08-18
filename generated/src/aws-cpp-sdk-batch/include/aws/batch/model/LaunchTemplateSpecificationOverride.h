@@ -114,9 +114,10 @@ namespace Model
      * applied to.</p> <p>This parameter is required when defining a launch template
      * override.</p> <p>Information included in this parameter must meet the following
      * requirements:</p> <ul> <li> <p>Must be a valid Amazon EC2 instance type or
-     * family.</p> </li> <li> <p> <code>optimal</code> isn't allowed.</p> </li> <li>
-     * <p> <code>targetInstanceTypes</code> can target only instance types and families
-     * that are included within the <a
+     * family.</p> </li> <li> <p>The following Batch <code>InstanceTypes</code> are not
+     * allowed: <code>optimal</code>, <code>default_x86_64</code>, and
+     * <code>default_arm64</code>.</p> </li> <li> <p> <code>targetInstanceTypes</code>
+     * can target only instance types and families that are included within the <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_ComputeResource.html#Batch-Type-ComputeResource-instanceTypes">
      * <code>ComputeResource.instanceTypes</code> </a> set.
      * <code>targetInstanceTypes</code> doesn't need to include all of the instances

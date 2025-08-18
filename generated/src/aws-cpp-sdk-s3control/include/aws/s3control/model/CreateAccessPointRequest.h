@@ -167,7 +167,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html">Using
      * tags with Amazon S3</a>. For information about tagging access points, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#using-tags-for-abac">Using
-     * tags for attribute-based access control (ABAC)</a>.</p>
+     * tags for attribute-based access control (ABAC)</a>.</p>  <ul> <li> <p>You
+     * must have the <code>s3:TagResource</code> permission to create an access point
+     * with tags for a general purpose bucket. </p> </li> <li> <p>You must have the
+     * <code>s3express:TagResource</code> permission to create an access point with
+     * tags for a directory bucket.</p> </li> </ul> 
      */
     inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

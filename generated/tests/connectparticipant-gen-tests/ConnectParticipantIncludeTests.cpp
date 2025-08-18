@@ -16,12 +16,15 @@
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
 #include <aws/connectparticipant/model/ArtifactStatus.h>
 #include <aws/connectparticipant/model/AttachmentItem.h>
+#include <aws/connectparticipant/model/Attendee.h>
+#include <aws/connectparticipant/model/AudioFeatures.h>
 #include <aws/connectparticipant/model/CancelParticipantAuthenticationRequest.h>
 #include <aws/connectparticipant/model/CancelParticipantAuthenticationResult.h>
 #include <aws/connectparticipant/model/ChatItemType.h>
 #include <aws/connectparticipant/model/CompleteAttachmentUploadRequest.h>
 #include <aws/connectparticipant/model/CompleteAttachmentUploadResult.h>
 #include <aws/connectparticipant/model/ConnectionCredentials.h>
+#include <aws/connectparticipant/model/ConnectionData.h>
 #include <aws/connectparticipant/model/ConnectionType.h>
 #include <aws/connectparticipant/model/CreateParticipantConnectionRequest.h>
 #include <aws/connectparticipant/model/CreateParticipantConnectionResult.h>
@@ -36,6 +39,10 @@
 #include <aws/connectparticipant/model/GetTranscriptRequest.h>
 #include <aws/connectparticipant/model/GetTranscriptResult.h>
 #include <aws/connectparticipant/model/Item.h>
+#include <aws/connectparticipant/model/MediaPlacement.h>
+#include <aws/connectparticipant/model/Meeting.h>
+#include <aws/connectparticipant/model/MeetingFeatureStatus.h>
+#include <aws/connectparticipant/model/MeetingFeaturesConfiguration.h>
 #include <aws/connectparticipant/model/MessageMetadata.h>
 #include <aws/connectparticipant/model/ParticipantRole.h>
 #include <aws/connectparticipant/model/Receipt.h>

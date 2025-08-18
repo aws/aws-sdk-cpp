@@ -7,6 +7,7 @@
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
 #include <aws/connectparticipant/model/Websocket.h>
 #include <aws/connectparticipant/model/ConnectionCredentials.h>
+#include <aws/connectparticipant/model/ConnectionData.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -58,6 +59,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Creates the participant's WebRTC connection data required for the client
+     * application (mobile application or website) to connect to the call. </p>
+     */
+    inline const ConnectionData& GetWebRTCConnection() const { return m_webRTCConnection; }
+    template<typename WebRTCConnectionT = ConnectionData>
+    void SetWebRTCConnection(WebRTCConnectionT&& value) { m_webRTCConnectionHasBeenSet = true; m_webRTCConnection = std::forward<WebRTCConnectionT>(value); }
+    template<typename WebRTCConnectionT = ConnectionData>
+    CreateParticipantConnectionResult& WithWebRTCConnection(WebRTCConnectionT&& value) { SetWebRTCConnection(std::forward<WebRTCConnectionT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -72,6 +85,9 @@ namespace Model
 
     ConnectionCredentials m_connectionCredentials;
     bool m_connectionCredentialsHasBeenSet = false;
+
+    ConnectionData m_webRTCConnection;
+    bool m_webRTCConnectionHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -1046,11 +1046,12 @@ namespace Connect
         }
 
         /**
-         * <p>Adds a new participant into an on-going chat contact. For more information,
-         * see <a
+         * <p>Adds a new participant into an on-going chat contact or webRTC call. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-customize-flow.html">Customize
-         * chat flow experiences by integrating custom participants</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * chat flow experiences by integrating custom participants</a> or <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-multiuser-inapp.html">Enable
+         * multi-user web, in-app, and video calling</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateParticipant">AWS
          * API Reference</a></p>
          */
@@ -3587,9 +3588,8 @@ namespace Connect
          * <p>Each dimension in the metric response must contain a value</p> </li> <li>
          * <p>Each item in MetricResult must include all requested metrics</p> </li> <li>
          * <p>If the response is slow due to large result sets, try these approaches:</p>
-         * <ul> <li> <p>Narrow the time range of your request</p> </li> <li> <p>Add filters
-         * to reduce the amount of data returned</p> </li> </ul> </li> </ul>
-         * <p><h3>See Also:</h3>   <a
+         * <ul> <li> <p>Add filters to reduce the amount of data returned</p> </li> </ul>
+         * </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetCurrentMetricData">AWS
          * API Reference</a></p>
          */

@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,10 +53,54 @@ namespace Model
     inline void SetVolumeSizeInGB(int value) { m_volumeSizeInGBHasBeenSet = true; m_volumeSizeInGB = value; }
     inline ClusterEbsVolumeConfig& WithVolumeSizeInGB(int value) { SetVolumeSizeInGB(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of a KMS key to encrypt the Amazon EBS volume.</p>
+     */
+    inline const Aws::String& GetVolumeKmsKeyId() const { return m_volumeKmsKeyId; }
+    inline bool VolumeKmsKeyIdHasBeenSet() const { return m_volumeKmsKeyIdHasBeenSet; }
+    template<typename VolumeKmsKeyIdT = Aws::String>
+    void SetVolumeKmsKeyId(VolumeKmsKeyIdT&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::forward<VolumeKmsKeyIdT>(value); }
+    template<typename VolumeKmsKeyIdT = Aws::String>
+    ClusterEbsVolumeConfig& WithVolumeKmsKeyId(VolumeKmsKeyIdT&& value) { SetVolumeKmsKeyId(std::forward<VolumeKmsKeyIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether the configuration is for the cluster's root or secondary
+     * Amazon EBS volume. You can specify two <code>ClusterEbsVolumeConfig</code>
+     * fields to configure both the root and secondary volumes. Set the value to
+     * <code>True</code> if you'd like to provide your own customer managed Amazon Web
+     * Services KMS key to encrypt the root volume. When <code>True</code>:</p> <ul>
+     * <li> <p>The configuration is applied to the root volume.</p> </li> <li> <p>You
+     * can't specify the <code>VolumeSizeInGB</code> field. The size of the root volume
+     * is determined for you.</p> </li> <li> <p>You must specify a KMS key ID for
+     * <code>VolumeKmsKeyId</code> to encrypt the root volume with your own KMS key
+     * instead of an Amazon Web Services owned KMS key.</p> </li> </ul> <p>Otherwise,
+     * by default, the value is <code>False</code>, and the following applies:</p> <ul>
+     * <li> <p>The configuration is applied to the secondary volume, while the root
+     * volume is encrypted with an Amazon Web Services owned key.</p> </li> <li> <p>You
+     * must specify the <code>VolumeSizeInGB</code> field.</p> </li> <li> <p>You can
+     * optionally specify the <code>VolumeKmsKeyId</code> to encrypt the secondary
+     * volume with your own KMS key instead of an Amazon Web Services owned KMS
+     * key.</p> </li> </ul>
+     */
+    inline bool GetRootVolume() const { return m_rootVolume; }
+    inline bool RootVolumeHasBeenSet() const { return m_rootVolumeHasBeenSet; }
+    inline void SetRootVolume(bool value) { m_rootVolumeHasBeenSet = true; m_rootVolume = value; }
+    inline ClusterEbsVolumeConfig& WithRootVolume(bool value) { SetRootVolume(value); return *this;}
+    ///@}
   private:
 
     int m_volumeSizeInGB{0};
     bool m_volumeSizeInGBHasBeenSet = false;
+
+    Aws::String m_volumeKmsKeyId;
+    bool m_volumeKmsKeyIdHasBeenSet = false;
+
+    bool m_rootVolume{false};
+    bool m_rootVolumeHasBeenSet = false;
   };
 
 } // namespace Model

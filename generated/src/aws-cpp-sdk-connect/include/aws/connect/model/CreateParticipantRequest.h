@@ -50,8 +50,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the contact in this instance of Amazon Connect. Only
-     * contacts in the CHAT channel are supported.</p>
+     * <p>The identifier of the contact in this instance of Amazon Connect. Supports
+     * contacts in the CHAT channel and VOICE (WebRTC) channels. For WebRTC calls, this
+     * should be the initial contact ID that was generated when the contact was first
+     * created (from the StartWebRTCContact API) in the VOICE channel</p>
      */
     inline const Aws::String& GetContactId() const { return m_contactId; }
     inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
@@ -79,9 +81,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information identifying the participant.</p>  <p>The only Valid
-     * value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>. </p> <p>
-     * <code>DisplayName</code> is <b>Required</b>.</p> 
+     * <p>Information identifying the participant.</p>  <p>The only valid
+     * value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code> for chat
+     * contact and <code>CUSTOMER</code> for voice contact.</p> 
      */
     inline const ParticipantDetailsToAdd& GetParticipantDetails() const { return m_participantDetails; }
     inline bool ParticipantDetailsHasBeenSet() const { return m_participantDetailsHasBeenSet; }

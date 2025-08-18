@@ -30,6 +30,16 @@ ClusterEbsVolumeConfig& ClusterEbsVolumeConfig::operator =(JsonView jsonValue)
     m_volumeSizeInGB = jsonValue.GetInteger("VolumeSizeInGB");
     m_volumeSizeInGBHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("VolumeKmsKeyId"))
+  {
+    m_volumeKmsKeyId = jsonValue.GetString("VolumeKmsKeyId");
+    m_volumeKmsKeyIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("RootVolume"))
+  {
+    m_rootVolume = jsonValue.GetBool("RootVolume");
+    m_rootVolumeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +50,18 @@ JsonValue ClusterEbsVolumeConfig::Jsonize() const
   if(m_volumeSizeInGBHasBeenSet)
   {
    payload.WithInteger("VolumeSizeInGB", m_volumeSizeInGB);
+
+  }
+
+  if(m_volumeKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("VolumeKmsKeyId", m_volumeKmsKeyId);
+
+  }
+
+  if(m_rootVolumeHasBeenSet)
+  {
+   payload.WithBool("RootVolume", m_rootVolume);
 
   }
 

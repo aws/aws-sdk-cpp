@@ -22,6 +22,7 @@ namespace Aws
 
         static const int WEBSOCKET_HASH = HashingUtils::HashString("WEBSOCKET");
         static const int CONNECTION_CREDENTIALS_HASH = HashingUtils::HashString("CONNECTION_CREDENTIALS");
+        static const int WEBRTC_CONNECTION_HASH = HashingUtils::HashString("WEBRTC_CONNECTION");
 
 
         ConnectionType GetConnectionTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == CONNECTION_CREDENTIALS_HASH)
           {
             return ConnectionType::CONNECTION_CREDENTIALS;
+          }
+          else if (hashCode == WEBRTC_CONNECTION_HASH)
+          {
+            return ConnectionType::WEBRTC_CONNECTION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "WEBSOCKET";
           case ConnectionType::CONNECTION_CREDENTIALS:
             return "CONNECTION_CREDENTIALS";
+          case ConnectionType::WEBRTC_CONNECTION:
+            return "WEBRTC_CONNECTION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

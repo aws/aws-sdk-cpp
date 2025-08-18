@@ -35,6 +35,11 @@ CreateParticipantConnectionResult& CreateParticipantConnectionResult::operator =
     m_connectionCredentials = jsonValue.GetObject("ConnectionCredentials");
     m_connectionCredentialsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("WebRTCConnection"))
+  {
+    m_webRTCConnection = jsonValue.GetObject("WebRTCConnection");
+    m_webRTCConnectionHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -14,6 +14,7 @@
 #include <aws/s3control/model/S3SetObjectLegalHoldOperation.h>
 #include <aws/s3control/model/S3SetObjectRetentionOperation.h>
 #include <aws/s3control/model/S3ReplicateObjectOperation.h>
+#include <aws/s3control/model/S3ComputeObjectChecksumOperation.h>
 #include <utility>
 
 namespace Aws
@@ -163,6 +164,19 @@ namespace Model
     template<typename S3ReplicateObjectT = S3ReplicateObjectOperation>
     JobOperation& WithS3ReplicateObject(S3ReplicateObjectT&& value) { SetS3ReplicateObject(std::forward<S3ReplicateObjectT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Directs the specified job to compute checksum values for every object in the
+     * manifest.</p>
+     */
+    inline const S3ComputeObjectChecksumOperation& GetS3ComputeObjectChecksum() const { return m_s3ComputeObjectChecksum; }
+    inline bool S3ComputeObjectChecksumHasBeenSet() const { return m_s3ComputeObjectChecksumHasBeenSet; }
+    template<typename S3ComputeObjectChecksumT = S3ComputeObjectChecksumOperation>
+    void SetS3ComputeObjectChecksum(S3ComputeObjectChecksumT&& value) { m_s3ComputeObjectChecksumHasBeenSet = true; m_s3ComputeObjectChecksum = std::forward<S3ComputeObjectChecksumT>(value); }
+    template<typename S3ComputeObjectChecksumT = S3ComputeObjectChecksumOperation>
+    JobOperation& WithS3ComputeObjectChecksum(S3ComputeObjectChecksumT&& value) { SetS3ComputeObjectChecksum(std::forward<S3ComputeObjectChecksumT>(value)); return *this;}
+    ///@}
   private:
 
     LambdaInvokeOperation m_lambdaInvoke;
@@ -191,6 +205,9 @@ namespace Model
 
     S3ReplicateObjectOperation m_s3ReplicateObject;
     bool m_s3ReplicateObjectHasBeenSet = false;
+
+    S3ComputeObjectChecksumOperation m_s3ComputeObjectChecksum;
+    bool m_s3ComputeObjectChecksumHasBeenSet = false;
   };
 
 } // namespace Model
