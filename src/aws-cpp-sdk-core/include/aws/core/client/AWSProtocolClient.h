@@ -74,10 +74,10 @@ namespace Aws
             */
             OutcomeType MakeRequest(const Aws::Http::URI& uri,
                 const Aws::AmazonWebServiceRequest& request,
-                Http::HttpMethod method,
-                const char* signerName,
-                const char* signerRegionOverride,
-                const char* signerServiceNameOverride) const
+                Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
+                const char* signerName = Aws::Auth::SIGV4_SIGNER,
+                const char* signerRegionOverride = nullptr,
+                const char* signerServiceNameOverride = nullptr) const
             {
                 HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride));
                 return ProcessHttpResponse(httpOutcome, request.GetServiceRequestName());
@@ -94,11 +94,11 @@ namespace Aws
             * method defaults to POST
             */
             OutcomeType MakeRequest(const Aws::Http::URI& uri,
-                Http::HttpMethod method,
-                const char* signerName,
-                const char* requestName,
-                const char* signerRegionOverride,
-                const char* signerServiceNameOverride) const
+                Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
+                const char* signerName = Aws::Auth::SIGV4_SIGNER,
+                const char* requestName = "",
+                const char* signerRegionOverride = nullptr,
+                const char* signerServiceNameOverride = nullptr) const
             {
                 HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, method, signerName, requestName, signerRegionOverride, signerServiceNameOverride));
                 return ProcessHttpResponse(httpOutcome, requestName);
