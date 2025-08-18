@@ -21,8 +21,20 @@ if [ -z "$CATAPULT_TEST_ACCOUNT" ]; then
 fi
 
 echo "Setting up AWS authentication"
-ada credentials update --account=${CATAPULT_TEST_ACCOUNT} --provider=isengard --role=Admin --once
-aws sts get-caller-identity
+export TEST_ASSUME_ROLE_ARN=arn:aws:iam::${CATAPULT_TEST_ACCOUNT}:role/SmokeTest
+echo "Attempting to assume role: $TEST_ASSUME_ROLE_ARN"
+if export sts=$(aws sts assume-role --role-arn "$TEST_ASSUME_ROLE_ARN" --role-session-name "catapult-smoke-test" --query 'Credentials.[AccessKeyId,SecretAccessKey,SessionToken]' 2>/dev/null) && [ -n "$sts" ] && [ "$sts" != "null" ]; then
+    echo "Successfully assumed SmokeTest role"
+    export profile=sdk-smoke-test
+    aws configure set aws_access_key_id $(echo "$sts" | jq -r '.[0]') --profile "$profile"
+    aws configure set aws_secret_access_key $(echo "$sts" | jq -r '.[1]') --profile "$profile"
+    aws configure set aws_session_token $(echo "$sts" | jq -r '.[2]') --profile "$profile"
+    aws configure list --profile "$profile"
+    export AWS_PROFILE=$profile
+else
+    echo "Failed to assume SmokeTest role, using current credentials"
+    aws sts get-caller-identity
+fi
 
 echo "Setting the run environment"
 export LD_LIBRARY_PATH="${CODEBUILD_SRC_DIR}/al2-install/lib:${CODEBUILD_SRC_DIR}/al2-build/tests/testing-resources/"

@@ -27,15 +27,20 @@ def main():
         if os.path.exists(executable):
             print(f"Running {service}... ", end="", flush=True)
             try:
-                result = subprocess.run([executable], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=60)
+                result = subprocess.run([executable], stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=60, text=True)
                 if result.returncode == 0:
                     print("PASSED")
                     passed += 1
                 else:
-                    print("FAILED")
+                    print(f"FAILED (exit code {result.returncode})")
+                    if result.stderr.strip():
+                        print(f"  Error: {result.stderr.strip()}")
                     failed += 1
-            except:
-                print("ERROR")
+            except subprocess.TimeoutExpired:
+                print("TIMEOUT")
+                failed += 1
+            except Exception as e:
+                print(f"ERROR: {e}")
                 failed += 1
         else:
             print(f"Skipping {service} (executable not found)")
