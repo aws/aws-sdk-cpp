@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     WEBSOCKET,
-    CONNECTION_CREDENTIALS
+    CONNECTION_CREDENTIALS,
+    WEBRTC_CONNECTION
   };
 
 namespace ConnectionTypeMapper

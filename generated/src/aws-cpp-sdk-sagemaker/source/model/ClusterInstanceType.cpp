@@ -23,6 +23,7 @@ namespace Aws
         static const int ml_p4d_24xlarge_HASH = HashingUtils::HashString("ml.p4d.24xlarge");
         static const int ml_p4de_24xlarge_HASH = HashingUtils::HashString("ml.p4de.24xlarge");
         static const int ml_p5_48xlarge_HASH = HashingUtils::HashString("ml.p5.48xlarge");
+        static const int ml_p6e_gb200_36xlarge_HASH = HashingUtils::HashString("ml.p6e-gb200.36xlarge");
         static const int ml_trn1_32xlarge_HASH = HashingUtils::HashString("ml.trn1.32xlarge");
         static const int ml_trn1n_32xlarge_HASH = HashingUtils::HashString("ml.trn1n.32xlarge");
         static const int ml_g5_xlarge_HASH = HashingUtils::HashString("ml.g5.xlarge");
@@ -148,6 +149,10 @@ namespace Aws
           else if (hashCode == ml_p5_48xlarge_HASH)
           {
             return ClusterInstanceType::ml_p5_48xlarge;
+          }
+          else if (hashCode == ml_p6e_gb200_36xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_p6e_gb200_36xlarge;
           }
           else if (hashCode == ml_trn1_32xlarge_HASH)
           {
@@ -607,6 +612,8 @@ namespace Aws
             return "ml.p4de.24xlarge";
           case ClusterInstanceType::ml_p5_48xlarge:
             return "ml.p5.48xlarge";
+          case ClusterInstanceType::ml_p6e_gb200_36xlarge:
+            return "ml.p6e-gb200.36xlarge";
           case ClusterInstanceType::ml_trn1_32xlarge:
             return "ml.trn1.32xlarge";
           case ClusterInstanceType::ml_trn1n_32xlarge:

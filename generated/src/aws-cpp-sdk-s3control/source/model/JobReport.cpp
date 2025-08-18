@@ -61,6 +61,12 @@ JobReport& JobReport::operator =(const XmlNode& xmlNode)
       m_reportScope = JobReportScopeMapper::GetJobReportScopeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(reportScopeNode.GetText()).c_str()));
       m_reportScopeHasBeenSet = true;
     }
+    XmlNode expectedBucketOwnerNode = resultNode.FirstChild("ExpectedBucketOwner");
+    if(!expectedBucketOwnerNode.IsNull())
+    {
+      m_expectedBucketOwner = Aws::Utils::Xml::DecodeEscapedXmlText(expectedBucketOwnerNode.GetText());
+      m_expectedBucketOwnerHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -99,6 +105,12 @@ void JobReport::AddToNode(XmlNode& parentNode) const
   {
    XmlNode reportScopeNode = parentNode.CreateChildElement("ReportScope");
    reportScopeNode.SetText(JobReportScopeMapper::GetNameForJobReportScope(m_reportScope));
+  }
+
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+   XmlNode expectedBucketOwnerNode = parentNode.CreateChildElement("ExpectedBucketOwner");
+   expectedBucketOwnerNode.SetText(m_expectedBucketOwner);
   }
 
 }

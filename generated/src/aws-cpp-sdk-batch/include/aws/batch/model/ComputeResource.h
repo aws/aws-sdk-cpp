@@ -161,17 +161,47 @@ namespace Model
      * <p>The instances types that can be launched. You can specify instance families
      * to launch any instance type within those families (for example, <code>c5</code>
      * or <code>p3</code>), or you can specify specific sizes within a family (such as
-     * <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to select
-     * instance types (from the C4, M4, and R4 instance families) that match the demand
-     * of your job queues.</p>  <p>This parameter isn't applicable to jobs that
-     * are running on Fargate resources. Don't specify it.</p>   <p>When
-     * you create a compute environment, the instance types that you select for the
-     * compute environment must share the same architecture. For example, you can't mix
-     * x86 and ARM instances in the same compute environment.</p>  
-     * <p>Currently, <code>optimal</code> uses instance types from the C4, M4, and R4
-     * instance families. In Regions that don't have instance types from those instance
-     * families, instance types from the C5, M5, and R5 instance families are used.</p>
-     * 
+     * <code>c5.8xlarge</code>). </p> <p>Batch can select the instance type for you if
+     * you choose one of the following:</p> <ul> <li> <p> <code>optimal</code> to
+     * select instance types (from the <code>c4</code>, <code>m4</code>,
+     * <code>r4</code>, <code>c5</code>, <code>m5</code>, and <code>r5</code> instance
+     * families) that match the demand of your job queues. </p> </li> <li> <p>
+     * <code>default_x86_64</code> to choose x86 based instance types (from the
+     * <code>m6i</code>, <code>c6i</code>, <code>r6i</code>, and <code>c7i</code>
+     * instance families) that matches the resource demands of the job queue.</p> </li>
+     * <li> <p> <code>default_arm64</code> to choose x86 based instance types (from the
+     * <code>m6g</code>, <code>c6g</code>, <code>r6g</code>, and <code>c7g</code>
+     * instance families) that matches the resource demands of the job queue.</p> </li>
+     * </ul>  <p>Starting on 11/01/2025 the behavior of <code>optimal</code> is
+     * going to be changed to match <code>default_x86_64</code>. During the change your
+     * instance families could be updated to a newer generation. You do not need to
+     * perform any actions for the upgrade to happen. For more information about
+     * change, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/optimal-default-instance-troubleshooting.html">Optimal
+     * instance type configuration to receive automatic instance family
+     * updates</a>.</p>   <p>Instance family availability varies by Amazon
+     * Web Services Region. For example, some Amazon Web Services Regions may not have
+     * any fourth generation instance families but have fifth and sixth generation
+     * instance families.</p> <p>When using <code>default_x86_64</code> or
+     * <code>default_arm64</code> instance bundles, Batch selects instance families
+     * based on a balance of cost-effectiveness and performance. While newer generation
+     * instances often provide better price-performance, Batch may choose an earlier
+     * generation instance family if it provides the optimal combination of
+     * availability, cost, and performance for your workload. For example, in an Amazon
+     * Web Services Region where both c6i and c7i instances are available, Batch might
+     * select c6i instances if they offer better cost-effectiveness for your specific
+     * job requirements. For more information on Batch instance types and Amazon Web
+     * Services Region availability, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/instance-type-compute-table.html">Instance
+     * type compute table</a> in the <i>Batch User Guide</i>.</p> <p>Batch periodically
+     * updates your instances in default bundles to newer, more cost-effective options.
+     * Updates happen automatically without requiring any action from you. Your
+     * workloads continue running during updates with no interruption </p> 
+     *  <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources. Don't specify it.</p>   <p>When you create a compute
+     * environment, the instance types that you select for the compute environment must
+     * share the same architecture. For example, you can't mix x86 and ARM instances in
+     * the same compute environment.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetInstanceTypes() const { return m_instanceTypes; }
     inline bool InstanceTypesHasBeenSet() const { return m_instanceTypesHasBeenSet; }

@@ -100,6 +100,19 @@ namespace Model
     inline void SetReportScope(JobReportScope value) { m_reportScopeHasBeenSet = true; m_reportScope = value; }
     inline JobReport& WithReportScope(JobReportScope value) { SetReportScope(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Lists the Amazon Web Services account ID that owns the target bucket, where
+     * the completion report is received.</p>
+     */
+    inline const Aws::String& GetExpectedBucketOwner() const { return m_expectedBucketOwner; }
+    inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
+    template<typename ExpectedBucketOwnerT = Aws::String>
+    void SetExpectedBucketOwner(ExpectedBucketOwnerT&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::forward<ExpectedBucketOwnerT>(value); }
+    template<typename ExpectedBucketOwnerT = Aws::String>
+    JobReport& WithExpectedBucketOwner(ExpectedBucketOwnerT&& value) { SetExpectedBucketOwner(std::forward<ExpectedBucketOwnerT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_bucket;
@@ -116,6 +129,9 @@ namespace Model
 
     JobReportScope m_reportScope{JobReportScope::NOT_SET};
     bool m_reportScopeHasBeenSet = false;
+
+    Aws::String m_expectedBucketOwner;
+    bool m_expectedBucketOwnerHasBeenSet = false;
   };
 
 } // namespace Model

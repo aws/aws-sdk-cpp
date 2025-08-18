@@ -80,9 +80,8 @@ namespace Model
     /**
      * <p>If this parameter is specified and two update requests with identical
      * payloads and <code>clientToken</code>s are received, these requests are
-     * considered the same request and the second request is rejected. A
-     * <code>clientToken</code> is valid for 8 hours or until one hour after the
-     * consumable resource is deleted, whichever is less.</p>
+     * considered the same request. Both requests will succeed, but the update will
+     * only happen once. A <code>clientToken</code> is valid for 8 hours.</p>
      */
     inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }

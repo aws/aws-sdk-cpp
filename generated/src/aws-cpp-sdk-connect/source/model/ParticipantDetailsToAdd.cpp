@@ -35,6 +35,11 @@ ParticipantDetailsToAdd& ParticipantDetailsToAdd::operator =(JsonView jsonValue)
     m_displayName = jsonValue.GetString("DisplayName");
     m_displayNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ParticipantCapabilities"))
+  {
+    m_participantCapabilities = jsonValue.GetObject("ParticipantCapabilities");
+    m_participantCapabilitiesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -50,6 +55,12 @@ JsonValue ParticipantDetailsToAdd::Jsonize() const
   if(m_displayNameHasBeenSet)
   {
    payload.WithString("DisplayName", m_displayName);
+
+  }
+
+  if(m_participantCapabilitiesHasBeenSet)
+  {
+   payload.WithObject("ParticipantCapabilities", m_participantCapabilities.Jsonize());
 
   }
 

@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/ParticipantRole.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/connect/model/ParticipantCapabilities.h>
 #include <utility>
 
 namespace Aws
@@ -59,6 +60,16 @@ namespace Model
     template<typename DisplayNameT = Aws::String>
     ParticipantDetailsToAdd& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const ParticipantCapabilities& GetParticipantCapabilities() const { return m_participantCapabilities; }
+    inline bool ParticipantCapabilitiesHasBeenSet() const { return m_participantCapabilitiesHasBeenSet; }
+    template<typename ParticipantCapabilitiesT = ParticipantCapabilities>
+    void SetParticipantCapabilities(ParticipantCapabilitiesT&& value) { m_participantCapabilitiesHasBeenSet = true; m_participantCapabilities = std::forward<ParticipantCapabilitiesT>(value); }
+    template<typename ParticipantCapabilitiesT = ParticipantCapabilities>
+    ParticipantDetailsToAdd& WithParticipantCapabilities(ParticipantCapabilitiesT&& value) { SetParticipantCapabilities(std::forward<ParticipantCapabilitiesT>(value)); return *this;}
+    ///@}
   private:
 
     ParticipantRole m_participantRole{ParticipantRole::NOT_SET};
@@ -66,6 +77,9 @@ namespace Model
 
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
+
+    ParticipantCapabilities m_participantCapabilities;
+    bool m_participantCapabilitiesHasBeenSet = false;
   };
 
 } // namespace Model
