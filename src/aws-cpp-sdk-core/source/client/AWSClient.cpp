@@ -596,6 +596,11 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
         return HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::CLIENT_SIGNING_FAILURE, "", "SDK failed to sign the request", false/*retryable*/));
     }
 
+    // Update User-Agent with credential tracking features added during signing
+    if (m_userAgentInterceptor) {
+        m_userAgentInterceptor->UpdateUserAgentWithRequestFeatures(request, httpRequest);
+    }
+
     if (request.GetRequestSignedHandler())
     {
         request.GetRequestSignedHandler()(*httpRequest);
