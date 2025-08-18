@@ -43,7 +43,7 @@ JsonValue AWSJsonClient::ParseResponse(const HttpResponseOutcome& httpOutcome) c
     return JsonValue(httpOutcome.GetResult()->GetResponseBody());
 }
 
-bool AWSJsonClient::HasParseError(const Utils::Json::JsonValue& response) const
+bool AWSJsonClient::HasParseError(const Aws::Utils::Json::JsonValue& response) const
 {
     return !response.WasParseSuccessful();
 }
