@@ -19,7 +19,7 @@ using namespace Aws::Http;
 
 static const char ALLOCATION_TAG[] = "CredentialTrackingTest";
 
-// Custom client that uses environment credential provider for testing
+// Custom client that uses default credential provider for testing
 class CredentialTestingClient : public Aws::Client::AWSClient
 {
 public:
