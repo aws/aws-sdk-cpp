@@ -7,8 +7,6 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/RetryStrategy.h>
 #include <aws/core/client/UserAgent.h>
-#include <aws/core/AmazonWebServiceRequest.h>
-#include <aws/core/http/HttpRequest.h>
 #include <smithy/interceptor/Interceptor.h>
 
 #include <utility>
@@ -40,10 +38,6 @@ class UserAgentInterceptor : public interceptor::Interceptor {
   void SetApiName(const Aws::String& apiName) { m_userAgent.SetApiName(apiName); }
 
   void AddLegacyFeaturesToUserAgent(const Aws::String& valueToAppend) { m_userAgent.AddLegacyFeature(valueToAppend); }
-
-  void UpdateUserAgentWithRequestFeatures(const Aws::AmazonWebServiceRequest& request, const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest) {
-    httpRequest->SetUserAgent(m_userAgent.SerializeWithFeatures(request.GetUserAgentFeatures()));
-  }
 
  private:
   Aws::Client::UserAgent m_userAgent;
