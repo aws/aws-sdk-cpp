@@ -53,9 +53,7 @@ namespace Model
      * this will result in an error. For information on Amazon Polly voices and which
      * voices are available for each engine, see <a
      * href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
-     * Voices</a>.</p> <p>Type: String</p> <p>Valid Values: <code>standard</code> |
-     * <code>neural</code> | <code>long-form</code> | <code>generative</code> </p>
-     * <p>Required: Yes</p>
+     * Voices</a>.</p>
      */
     inline Engine GetEngine() const { return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
@@ -115,11 +113,11 @@ namespace Model
     ///@{
     /**
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
-     * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
-     * standard voices is "22050". The default value for neural voices is "24000". The
-     * default value for long-form voices is "24000". The default value for generative
-     * voices is "24000".</p> <p>Valid values for pcm are "8000" and "16000" The
-     * default value is "16000". </p>
+     * ogg_vorbis are "8000", "16000", "22050", "24000", "44100" and "48000". The
+     * default value for standard voices is "22050". The default value for neural
+     * voices is "24000". The default value for long-form voices is "24000". The
+     * default value for generative voices is "24000".</p> <p>Valid values for pcm are
+     * "8000" and "16000" The default value is "16000". </p>
      */
     inline const Aws::String& GetSampleRate() const { return m_sampleRate; }
     inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }

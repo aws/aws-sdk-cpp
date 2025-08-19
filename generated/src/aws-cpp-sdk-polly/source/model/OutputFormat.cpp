@@ -22,6 +22,7 @@ namespace Aws
 
         static const int json_HASH = HashingUtils::HashString("json");
         static const int mp3_HASH = HashingUtils::HashString("mp3");
+        static const int ogg_opus_HASH = HashingUtils::HashString("ogg_opus");
         static const int ogg_vorbis_HASH = HashingUtils::HashString("ogg_vorbis");
         static const int pcm_HASH = HashingUtils::HashString("pcm");
 
@@ -36,6 +37,10 @@ namespace Aws
           else if (hashCode == mp3_HASH)
           {
             return OutputFormat::mp3;
+          }
+          else if (hashCode == ogg_opus_HASH)
+          {
+            return OutputFormat::ogg_opus;
           }
           else if (hashCode == ogg_vorbis_HASH)
           {
@@ -65,6 +70,8 @@ namespace Aws
             return "json";
           case OutputFormat::mp3:
             return "mp3";
+          case OutputFormat::ogg_opus:
+            return "ogg_opus";
           case OutputFormat::ogg_vorbis:
             return "ogg_vorbis";
           case OutputFormat::pcm:

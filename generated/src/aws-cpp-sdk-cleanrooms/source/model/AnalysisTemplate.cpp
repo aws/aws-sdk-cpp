@@ -113,6 +113,11 @@ AnalysisTemplate& AnalysisTemplate::operator =(JsonView jsonValue)
     }
     m_validationsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("errorMessageConfiguration"))
+  {
+    m_errorMessageConfiguration = jsonValue.GetObject("errorMessageConfiguration");
+    m_errorMessageConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -220,6 +225,12 @@ JsonValue AnalysisTemplate::Jsonize() const
      validationsJsonList[validationsIndex].AsObject(m_validations[validationsIndex].Jsonize());
    }
    payload.WithArray("validations", std::move(validationsJsonList));
+
+  }
+
+  if(m_errorMessageConfigurationHasBeenSet)
+  {
+   payload.WithObject("errorMessageConfiguration", m_errorMessageConfiguration.Jsonize());
 
   }
 

@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cleanrooms/model/AnalysisSchema.h>
+#include <aws/cleanrooms/model/ErrorMessageConfiguration.h>
 #include <aws/cleanrooms/model/AnalysisParameter.h>
 #include <utility>
 
@@ -138,6 +139,23 @@ namespace Model
     template<typename SchemaT = AnalysisSchema>
     CreateAnalysisTemplateRequest& WithSchema(SchemaT&& value) { SetSchema(std::forward<SchemaT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The configuration that specifies the level of detail in error messages
+     * returned by analyses using this template. When set to <code>DETAILED</code>,
+     * error messages include more information to help troubleshoot issues with PySpark
+     * jobs. Detailed error messages may expose underlying data, including sensitive
+     * information. Recommended for faster troubleshooting in development and testing
+     * environments.</p>
+     */
+    inline const ErrorMessageConfiguration& GetErrorMessageConfiguration() const { return m_errorMessageConfiguration; }
+    inline bool ErrorMessageConfigurationHasBeenSet() const { return m_errorMessageConfigurationHasBeenSet; }
+    template<typename ErrorMessageConfigurationT = ErrorMessageConfiguration>
+    void SetErrorMessageConfiguration(ErrorMessageConfigurationT&& value) { m_errorMessageConfigurationHasBeenSet = true; m_errorMessageConfiguration = std::forward<ErrorMessageConfigurationT>(value); }
+    template<typename ErrorMessageConfigurationT = ErrorMessageConfiguration>
+    CreateAnalysisTemplateRequest& WithErrorMessageConfiguration(ErrorMessageConfigurationT&& value) { SetErrorMessageConfiguration(std::forward<ErrorMessageConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_description;
@@ -163,6 +181,9 @@ namespace Model
 
     AnalysisSchema m_schema;
     bool m_schemaHasBeenSet = false;
+
+    ErrorMessageConfiguration m_errorMessageConfiguration;
+    bool m_errorMessageConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     ok,
     impaired,
-    insufficient_data
+    insufficient_data,
+    warning
   };
 
 namespace VolumeStatusInfoStatusMapper
