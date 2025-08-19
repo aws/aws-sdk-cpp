@@ -55,10 +55,6 @@ namespace Aws
         protected:
             template <typename OutcomeT, typename ClientT, typename AWSEndpointT, typename RequestT, typename HandlerT>
             friend class BidirectionalEventStreamingTask; // allow BidirectionalEventStreamingTask to MakeRequests
-            /**
-             * Converts/Parses an http response into a meaningful AWSError object using the json message structure.
-             */
-            virtual AWSError<CoreErrors> BuildAWSError(const std::shared_ptr<Aws::Http::HttpResponse>& response) const override;
 
         private:
             Utils::Json::JsonValue ParseResponse(const HttpResponseOutcome& httpOutcome) const override;

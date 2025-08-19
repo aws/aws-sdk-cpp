@@ -62,35 +62,3 @@ const char* AWSJsonClient::GetClientLogTag() const
 {
   return AWS_JSON_CLIENT_LOG_TAG;
 }
-
-AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
-    const std::shared_ptr<Aws::Http::HttpResponse>& httpResponse) const
-{
-    AWSError<CoreErrors> error;
-    if (httpResponse->HasClientError())
-    {
-        bool retryable = httpResponse->GetClientErrorType() == CoreErrors::NETWORK_CONNECTION ? true : false;
-        error = AWSError<CoreErrors>(httpResponse->GetClientErrorType(), "", httpResponse->GetClientErrorMessage(), retryable);
-    }
-    else if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().tellp() < 1)
-    {
-        auto responseCode = httpResponse->GetResponseCode();
-        auto errorCode = AWSClient::GuessBodylessErrorType(responseCode);
-
-        Aws::StringStream ss;
-        ss << "No response body.";
-        error = AWSError<CoreErrors>(errorCode, "", ss.str(),
-            IsRetryableHttpResponseCode(responseCode));
-    }
-    else
-    {
-        assert(httpResponse->GetResponseCode() != HttpResponseCode::OK);
-        error = GetErrorMarshaller()->Marshall(*httpResponse);
-    }
-
-    error.SetResponseHeaders(httpResponse->GetHeaders());
-    error.SetResponseCode(httpResponse->GetResponseCode());
-    error.SetRemoteHostIpAddress(httpResponse->GetOriginatingRequest().GetResolvedRemoteHost());
-    AWS_LOGSTREAM_ERROR(GetClientLogTag(), error);
-    return error;
-}

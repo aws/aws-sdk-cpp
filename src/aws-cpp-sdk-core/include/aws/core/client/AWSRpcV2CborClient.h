@@ -49,8 +49,6 @@ namespace Aws
             template <typename OutcomeT, typename ClientT, typename AWSEndpointT, typename RequestT, typename HandlerT>
             friend class BidirectionalEventStreamingTask;
 
-            virtual AWSError<CoreErrors> BuildAWSError(const std::shared_ptr<Aws::Http::HttpResponse>& response) const override;
-
         private:
             Aws::UniquePtr<Crt::Cbor::CborDecoder> ParseResponse(const HttpResponseOutcome& httpOutcome) const override;
             bool HasParseError(const Aws::UniquePtr<Crt::Cbor::CborDecoder>& response) const override;
