@@ -160,6 +160,8 @@
 #include <aws/cleanrooms/model/DifferentialPrivacyTemplateParametersOutput.h>
 #include <aws/cleanrooms/model/DifferentialPrivacyTemplateUpdateParameters.h>
 #include <aws/cleanrooms/model/DirectAnalysisConfigurationDetails.h>
+#include <aws/cleanrooms/model/ErrorMessageConfiguration.h>
+#include <aws/cleanrooms/model/ErrorMessageType.h>
 #include <aws/cleanrooms/model/FilterableMemberStatus.h>
 #include <aws/cleanrooms/model/GetAnalysisTemplateRequest.h>
 #include <aws/cleanrooms/model/GetAnalysisTemplateResult.h>

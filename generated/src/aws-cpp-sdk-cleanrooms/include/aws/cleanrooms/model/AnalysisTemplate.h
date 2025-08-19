@@ -12,6 +12,7 @@
 #include <aws/cleanrooms/model/AnalysisSource.h>
 #include <aws/cleanrooms/model/AnalysisSourceMetadata.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cleanrooms/model/ErrorMessageConfiguration.h>
 #include <aws/cleanrooms/model/AnalysisParameter.h>
 #include <aws/cleanrooms/model/AnalysisTemplateValidationStatusDetail.h>
 #include <utility>
@@ -239,6 +240,23 @@ namespace Model
     template<typename ValidationsT = AnalysisTemplateValidationStatusDetail>
     AnalysisTemplate& AddValidations(ValidationsT&& value) { m_validationsHasBeenSet = true; m_validations.emplace_back(std::forward<ValidationsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The configuration that specifies the level of detail in error messages
+     * returned by analyses using this template. When set to <code>DETAILED</code>,
+     * error messages include more information to help troubleshoot issues with PySpark
+     * jobs. Detailed error messages may expose underlying data, including sensitive
+     * information. Recommended for faster troubleshooting in development and testing
+     * environments.</p>
+     */
+    inline const ErrorMessageConfiguration& GetErrorMessageConfiguration() const { return m_errorMessageConfiguration; }
+    inline bool ErrorMessageConfigurationHasBeenSet() const { return m_errorMessageConfigurationHasBeenSet; }
+    template<typename ErrorMessageConfigurationT = ErrorMessageConfiguration>
+    void SetErrorMessageConfiguration(ErrorMessageConfigurationT&& value) { m_errorMessageConfigurationHasBeenSet = true; m_errorMessageConfiguration = std::forward<ErrorMessageConfigurationT>(value); }
+    template<typename ErrorMessageConfigurationT = ErrorMessageConfiguration>
+    AnalysisTemplate& WithErrorMessageConfiguration(ErrorMessageConfigurationT&& value) { SetErrorMessageConfiguration(std::forward<ErrorMessageConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -288,6 +306,9 @@ namespace Model
 
     Aws::Vector<AnalysisTemplateValidationStatusDetail> m_validations;
     bool m_validationsHasBeenSet = false;
+
+    ErrorMessageConfiguration m_errorMessageConfiguration;
+    bool m_errorMessageConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

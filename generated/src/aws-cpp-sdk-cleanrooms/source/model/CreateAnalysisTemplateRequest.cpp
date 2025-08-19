@@ -67,6 +67,12 @@ Aws::String CreateAnalysisTemplateRequest::SerializePayload() const
 
   }
 
+  if(m_errorMessageConfigurationHasBeenSet)
+  {
+   payload.WithObject("errorMessageConfiguration", m_errorMessageConfiguration.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -23,6 +23,7 @@ namespace Aws
         static const int ok_HASH = HashingUtils::HashString("ok");
         static const int impaired_HASH = HashingUtils::HashString("impaired");
         static const int insufficient_data_HASH = HashingUtils::HashString("insufficient-data");
+        static const int warning_HASH = HashingUtils::HashString("warning");
 
 
         VolumeStatusInfoStatus GetVolumeStatusInfoStatusForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == insufficient_data_HASH)
           {
             return VolumeStatusInfoStatus::insufficient_data;
+          }
+          else if (hashCode == warning_HASH)
+          {
+            return VolumeStatusInfoStatus::warning;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "impaired";
           case VolumeStatusInfoStatus::insufficient_data:
             return "insufficient-data";
+          case VolumeStatusInfoStatus::warning:
+            return "warning";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -18,6 +18,7 @@ namespace Model
     NOT_SET,
     json,
     mp3,
+    ogg_opus,
     ogg_vorbis,
     pcm
   };
