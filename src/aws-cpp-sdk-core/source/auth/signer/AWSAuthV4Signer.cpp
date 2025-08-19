@@ -27,6 +27,7 @@
 
 #include <iomanip>
 #include <cstring>
+#include <map>
 
 using namespace Aws;
 using namespace Aws::Client;
@@ -614,46 +615,69 @@ Aws::Auth::AWSCredentials AWSAuthV4Signer::GetCredentials(Aws::AmazonWebServiceR
 }
 
 void AWSAuthV4Signer::UpdateUserAgentWithCredentialFeatures(Aws::Http::HttpRequest& request, const Aws::AmazonWebServiceRequest& awsRequest) const {
-    if (request.HasHeader(USER_AGENT)) {
-        auto existingUA = request.GetHeaderValue(USER_AGENT);
-        auto features = awsRequest.GetUserAgentFeatures();
-        
-        if (!features.empty()) {
-            // Build business metrics string from features
-            Aws::String businessMetrics = "m/";
-            bool first = true;
-            for (const auto& feature : features) {
-                if (!first) businessMetrics += ",";
-                first = false;
-                
-                // Map features to their character codes
-                switch (feature) {
-                    case Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS:
-                        businessMetrics += "g";
-                        break;
-                    // Add other feature mappings as needed
-                    default:
-                        // Skip unknown features
-                        break;
-                }
+    if (!request.HasHeader(USER_AGENT)) {
+        return;
+    }
+
+    const auto& features = awsRequest.GetUserAgentFeatures();
+    if (features.empty()) {
+        return;
+    }
+
+    // Get existing User-Agent
+    Aws::String existingUA = request.GetHeaderValue(USER_AGENT);
+    
+    // Build credential metrics string
+    Aws::StringStream credentialMetrics;
+    bool firstFeature = true;
+
+    static const std::map<Aws::Client::UserAgentFeature, char> featureMap = {
+        {Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS, 'g'},
+        // Add other credential mappings as needed
+    };
+
+    for (const auto& feature : features) {
+        auto it = featureMap.find(feature);
+        if (it != featureMap.end()) {
+            if (!firstFeature) {
+                credentialMetrics << ",";
             }
-            
-            // Parse existing User-Agent and replace business metrics section
-            auto parts = Aws::Utils::StringUtils::Split(existingUA, ' ');
-            for (auto& part : parts) {
-                if (part.find("m/") == 0) {
-                    part = businessMetrics;
-                    break;
-                }
-            }
-            
-            // Rejoin and update
-            Aws::String updatedUA;
-            for (size_t i = 0; i < parts.size(); ++i) {
-                if (i > 0) updatedUA += " ";
-                updatedUA += parts[i];
-            }
-            request.SetUserAgent(updatedUA);
+            credentialMetrics << it->second;
+            firstFeature = false;
         }
     }
+
+    if (credentialMetrics.str().empty()) {
+        return;
+    }
+
+    // Parse and update existing User-Agent
+    bool metricsUpdated = false;
+    Aws::StringStream updatedUA;
+    const auto parts = Aws::Utils::StringUtils::Split(existingUA, ' ');
+    
+    for (size_t i = 0; i < parts.size(); ++i) {
+        if (i > 0) {
+            updatedUA << ' ';
+        }
+
+        if (parts[i].find("m/") == 0) {
+            // Add credentials to business metrics
+            updatedUA << parts[i];
+            if (!parts[i].empty() && parts[i].back() != '/') {
+                updatedUA << ',';
+            }
+            updatedUA << credentialMetrics.str();
+            metricsUpdated = true;
+        } else {
+            updatedUA << parts[i];
+        }
+    }
+
+    // If no metrics section found, add one
+    if (!metricsUpdated) {
+        updatedUA << " m/" << credentialMetrics.str();
+    }
+
+    request.SetUserAgent(updatedUA.str());
 }
