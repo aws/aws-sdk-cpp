@@ -15,8 +15,6 @@ if [ -z "$CODEBUILD_SRC_DIR" ]; then
   exit 1
 fi
 
-echo "Setting the run environment"
 echo "Contents of CODEBUILD_SRC_DIR: ${CODEBUILD_SRC_DIR}"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${CODEBUILD_SRC_DIR}/al2-install/lib64/"
-cd "${CODEBUILD_SRC_DIR}/al2-build"
 python3 ../aws-sdk-cpp/tools/scripts/run_smoke_tests_simple.py --testDir "${CODEBUILD_SRC_DIR}/al2-build"

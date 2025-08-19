@@ -11,11 +11,6 @@ def main():
     # Path to built smoke tests
     smoke_tests_dir = os.path.join(args.testDir, "generated/smoke-tests")
 
-    print(f"--testDir:{args}")
-    print(f"Test directory: {args.testDir}")
-    print(f"Current working directory: {os.getcwd()}")
-    print(f"Smoke tests directory: {smoke_tests_dir}")
-
     # Check if smoke tests directory exists
     if not os.path.exists(smoke_tests_dir):
         print(f"Error: Smoke tests directory not found: {smoke_tests_dir}")
@@ -31,8 +26,7 @@ def main():
                 services.append(d)
     services.sort()
     
-    print(f"Found {len(services)} smoke test services")
-    print("=" * 50)
+    print(f"1..{len(services)}")
     
     passed = 0
     failed = 0
@@ -40,26 +34,25 @@ def main():
     for service in services:
         executable = os.path.join(smoke_tests_dir, service, f"{service}-smoke-tests")
         
-        print(f"Running {service}... ", end="", flush=True)
         try:
             result = subprocess.run([executable], stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=60, text=True)
             if result.returncode == 0:
-                print("PASSED")
+                print(f"ok {service} SmokeTest - no error expected from service")
                 passed += 1
             else:
-                print(f"FAILED (exit code {result.returncode})")
+                print(f"not ok {service} SmokeTest - no error expected from service")
                 if result.stderr.strip():
-                    print(f"  Error: {result.stderr.strip()}")
+                    for line in result.stderr.strip().split('\n'):
+                        print(f"# {line}")
                 failed += 1
         except subprocess.TimeoutExpired:
-            print("TIMEOUT")
+            print(f"not ok {service} SmokeTest - no error expected from service")
+            print("# Test timeout after 60 seconds")
             failed += 1
         except Exception as e:
-            print(f"ERROR: {e}")
+            print(f"not ok {service} SmokeTest - no error expected from service")
+            print(f"# Error: {e}")
             failed += 1
-
-    print("=" * 50)
-    print(f"Results: {passed} passed, {failed} failed")
     return 0 if failed == 0 else 1
 
 if __name__ == "__main__":
