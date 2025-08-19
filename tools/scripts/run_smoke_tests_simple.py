@@ -11,6 +11,11 @@ def main():
     # Path to built smoke tests
     smoke_tests_dir = os.path.join(args.testDir, "generated/smoke-tests")
 
+    print(f"--testDir:{args}")
+    print(f"Test directory: {args.testDir}")
+    print(f"Current working directory: {os.getcwd()}")
+    print(f"Smoke tests directory: {smoke_tests_dir}")
+
     # Get all service directories
     services = [d for d in os.listdir(smoke_tests_dir) if os.path.isdir(os.path.join(smoke_tests_dir, d))]
     services.sort()
