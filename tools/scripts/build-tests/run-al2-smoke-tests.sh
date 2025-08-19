@@ -15,6 +15,11 @@ if [ -z "$CODEBUILD_SRC_DIR" ]; then
   exit 1
 fi
 
+if [ -z "$PREFIX_DIR" ]; then
+  echo "Error: PREFIX_DIR environment variable is not set"
+  exit 1
+fi
+
 if [ -z "$CATAPULT_TEST_ACCOUNT" ]; then
   echo "Error: CATAPULT_TEST_ACCOUNT environment variable is not set"
   exit 1
@@ -39,6 +44,7 @@ fi
 echo "Setting the run environment"
 echo "Contents of CODEBUILD_SRC_DIR: ${CODEBUILD_SRC_DIR}"
 ls -la "${CODEBUILD_SRC_DIR}"
+ls -la "${PREFIX_DIR}"
 export LD_LIBRARY_PATH="${CODEBUILD_SRC_DIR}/al2-install/lib:${CODEBUILD_SRC_DIR}/al2-build/tests/testing-resources/"
 cd "${CODEBUILD_SRC_DIR}/al2-build"
 if [ -f "${CODEBUILD_SRC_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt" ]; then export LSAN_OPTIONS=suppressions="${CODEBUILD_SRC_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt"; fi
