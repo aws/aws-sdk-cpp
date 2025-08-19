@@ -44,7 +44,6 @@
 #include <aws/core/Version.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/core/platform/OSVersionInfo.h>
-#include <aws/core/auth/AWSCredentialsProviderChain.h>
 
 #include <smithy/tracing/TracingUtils.h>
 #include <smithy/client/features/ChecksumInterceptor.h>
@@ -590,11 +589,6 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
     {
         AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, "Request signing failed. Returning error.");
         return HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::CLIENT_SIGNING_FAILURE, "", "SDK failed to sign the request", false/*retryable*/));
-    }
-
-    // Update User-Agent with credential tracking features added during signing
-    if (m_userAgentInterceptor) {
-        m_userAgentInterceptor->UpdateUserAgentWithRequestFeatures(request, httpRequest);
     }
 
     if (request.GetRequestSignedHandler())

@@ -202,6 +202,7 @@ namespace Aws
 
         protected:
             virtual bool ServiceRequireUnsignedPayload(const Aws::String& serviceName) const;
+            void UpdateUserAgentWithCredentialFeatures(Aws::Http::HttpRequest& request, const Aws::AmazonWebServiceRequest& awsRequest) const;
             bool m_includeSha256HashHeader;
 
         private:

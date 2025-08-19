@@ -7,7 +7,9 @@
 #include <aws/core/auth/signer/AWSAuthSignerCommon.h>
 #include <aws/core/auth/signer/AWSAuthSignerHelper.h>
 
+#include <aws/core/AmazonWebServiceRequest.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/http/HttpRequest.h>
 #include <aws/core/http/URI.h>
 #include <aws/core/utils/DateTime.h>
@@ -342,6 +344,10 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
 bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, Aws::AmazonWebServiceRequest& awsRequest, const char* region, const char* serviceName, bool signBody) const
 {
     AWSCredentials credentials = GetCredentials(awsRequest, request.GetServiceSpecificParameters());
+    
+    // Update User-Agent with credential tracking features added during credential resolution
+    UpdateUserAgentWithCredentialFeatures(request, awsRequest);
+    
     return SignRequestWithCreds(request, credentials, region, serviceName, signBody);
 }
 
@@ -605,4 +611,49 @@ Aws::Auth::AWSCredentials AWSAuthV4Signer::GetCredentials(const std::shared_ptr<
 Aws::Auth::AWSCredentials AWSAuthV4Signer::GetCredentials(Aws::AmazonWebServiceRequest& awsRequest, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) const {
     AWS_UNREFERENCED_PARAM(serviceSpecificParameters);
     return m_credentialsProvider->GetAWSCredentials(awsRequest);
+}
+
+void AWSAuthV4Signer::UpdateUserAgentWithCredentialFeatures(Aws::Http::HttpRequest& request, const Aws::AmazonWebServiceRequest& awsRequest) const {
+    if (request.HasHeader(USER_AGENT)) {
+        auto existingUA = request.GetHeaderValue(USER_AGENT);
+        auto features = awsRequest.GetUserAgentFeatures();
+        
+        if (!features.empty()) {
+            // Build business metrics string from features
+            Aws::String businessMetrics = "m/";
+            bool first = true;
+            for (const auto& feature : features) {
+                if (!first) businessMetrics += ",";
+                first = false;
+                
+                // Map features to their character codes
+                switch (feature) {
+                    case Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS:
+                        businessMetrics += "g";
+                        break;
+                    // Add other feature mappings as needed
+                    default:
+                        // Skip unknown features
+                        break;
+                }
+            }
+            
+            // Parse existing User-Agent and replace business metrics section
+            auto parts = Aws::Utils::StringUtils::Split(existingUA, ' ');
+            for (auto& part : parts) {
+                if (part.find("m/") == 0) {
+                    part = businessMetrics;
+                    break;
+                }
+            }
+            
+            // Rejoin and update
+            Aws::String updatedUA;
+            for (size_t i = 0; i < parts.size(); ++i) {
+                if (i > 0) updatedUA += " ";
+                updatedUA += parts[i];
+            }
+            request.SetUserAgent(updatedUA);
+        }
+    }
 }
