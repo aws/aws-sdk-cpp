@@ -45,4 +45,4 @@ ls -la "${CODEBUILD_SRC_DIR}/al2-build/tests/testing-resources"
 export LD_LIBRARY_PATH="${CODEBUILD_SRC_DIR}/al2-install/lib:${CODEBUILD_SRC_DIR}/al2-build/lib"
 cd "${CODEBUILD_SRC_DIR}/al2-build"
 if [ -f "${CODEBUILD_SRC_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt" ]; then export LSAN_OPTIONS=suppressions="${CODEBUILD_SRC_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt"; fi
-python3 ../aws-sdk-cpp/tools/scripts/run_smoke_tests_simple.py --testDir
+python3 ../aws-sdk-cpp/tools/scripts/run_smoke_tests_simple.py --testDir "${CODEBUILD_SRC_DIR}/al2-build"
