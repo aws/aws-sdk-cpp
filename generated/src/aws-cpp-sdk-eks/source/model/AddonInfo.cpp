@@ -59,6 +59,11 @@ AddonInfo& AddonInfo::operator =(JsonView jsonValue)
     m_marketplaceInformation = jsonValue.GetObject("marketplaceInformation");
     m_marketplaceInformationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("defaultNamespace"))
+  {
+    m_defaultNamespace = jsonValue.GetString("defaultNamespace");
+    m_defaultNamespaceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -104,6 +109,12 @@ JsonValue AddonInfo::Jsonize() const
   if(m_marketplaceInformationHasBeenSet)
   {
    payload.WithObject("marketplaceInformation", m_marketplaceInformation.Jsonize());
+
+  }
+
+  if(m_defaultNamespaceHasBeenSet)
+  {
+   payload.WithString("defaultNamespace", m_defaultNamespace);
 
   }
 

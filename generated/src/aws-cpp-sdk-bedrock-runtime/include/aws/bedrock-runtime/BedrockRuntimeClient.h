@@ -245,6 +245,50 @@ namespace BedrockRuntime
         }
 
         /**
+         * <p>Returns the token count for a given inference request. This operation helps
+         * you estimate token usage before sending requests to foundation models by
+         * returning the token count that would be used if the same input were sent to the
+         * model in an inference request.</p> <p>Token counting is model-specific because
+         * different models use different tokenization strategies. The token count returned
+         * by this operation will match the token count that would be charged if the same
+         * input were sent to the model in an <code>InvokeModel</code> or
+         * <code>Converse</code> request.</p> <p>You can use this operation to:</p> <ul>
+         * <li> <p>Estimate costs before sending inference requests.</p> </li> <li>
+         * <p>Optimize prompts to fit within token limits.</p> </li> <li> <p>Plan for token
+         * usage in your applications.</p> </li> </ul> <p>This operation accepts the same
+         * input formats as <code>InvokeModel</code> and <code>Converse</code>, allowing
+         * you to count tokens for both raw text inputs and structured conversation
+         * formats.</p> <p>The following operations are related to
+         * <code>CountTokens</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/API/API_runtime_InvokeModel.html">InvokeModel</a>
+         * - Sends inference requests to foundation models</p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/API/API_runtime_Converse.html">Converse</a>
+         * - Sends conversation-based inference requests to foundation models</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/CountTokens">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CountTokensOutcome CountTokens(const Model::CountTokensRequest& request) const;
+
+        /**
+         * A Callable wrapper for CountTokens that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CountTokensRequestT = Model::CountTokensRequest>
+        Model::CountTokensOutcomeCallable CountTokensCallable(const CountTokensRequestT& request) const
+        {
+            return SubmitCallable(&BedrockRuntimeClient::CountTokens, request);
+        }
+
+        /**
+         * An Async wrapper for CountTokens that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CountTokensRequestT = Model::CountTokensRequest>
+        void CountTokensAsync(const CountTokensRequestT& request, const CountTokensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockRuntimeClient::CountTokens, request, handler, context);
+        }
+
+        /**
          * <p>Retrieve information about an asynchronous invocation.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/GetAsyncInvoke">AWS

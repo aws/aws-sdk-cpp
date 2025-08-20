@@ -70,8 +70,8 @@ namespace Model
     /**
      * <p>When true, applies the default branding style options. This option reverts to
      * default style options that are managed by Amazon Cognito. You can modify them
-     * later in the branding designer.</p> <p>When you specify <code>true</code> for
-     * this option, you must also omit values for <code>Settings</code> and
+     * later in the branding editor.</p> <p>When you specify <code>true</code> for this
+     * option, you must also omit values for <code>Settings</code> and
      * <code>Assets</code> in the request.</p>
      */
     inline bool GetUseCognitoProvidedValues() const { return m_useCognitoProvidedValues; }
@@ -83,7 +83,13 @@ namespace Model
     ///@{
     /**
      * <p>A JSON file, encoded as a <code>Document</code> type, with the the settings
-     * that you want to apply to your style.</p>
+     * that you want to apply to your style.</p> <p>The following components are not
+     * currently implemented and reserved for future use:</p> <ul> <li> <p>
+     * <code>signUp</code> </p> </li> <li> <p> <code>instructions</code> </p> </li>
+     * <li> <p> <code>sessionTimerDisplay</code> </p> </li> <li> <p>
+     * <code>languageSelector</code> (for localization, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-localization">Managed
+     * login localization)</a> </p> </li> </ul>
      */
     inline Aws::Utils::DocumentView GetSettings() const { return m_settings; }
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }

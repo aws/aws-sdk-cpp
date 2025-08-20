@@ -33,6 +33,7 @@ namespace Aws
         static const int registration_attachment_HASH = HashingUtils::HashString("registration-attachment");
         static const int verified_destination_number_HASH = HashingUtils::HashString("verified-destination-number");
         static const int protect_configuration_HASH = HashingUtils::HashString("protect-configuration");
+        static const int message_template_HASH = HashingUtils::HashString("message-template");
         static const int policy_HASH = HashingUtils::HashString("policy");
         static const int message_HASH = HashingUtils::HashString("message");
 
@@ -92,6 +93,10 @@ namespace Aws
           {
             return ResourceType::protect_configuration;
           }
+          else if (hashCode == message_template_HASH)
+          {
+            return ResourceType::message_template;
+          }
           else if (hashCode == policy_HASH)
           {
             return ResourceType::policy;
@@ -142,6 +147,8 @@ namespace Aws
             return "verified-destination-number";
           case ResourceType::protect_configuration:
             return "protect-configuration";
+          case ResourceType::message_template:
+            return "message-template";
           case ResourceType::policy:
             return "policy";
           case ResourceType::message:

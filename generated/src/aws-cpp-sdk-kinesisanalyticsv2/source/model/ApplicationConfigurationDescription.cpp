@@ -74,6 +74,11 @@ ApplicationConfigurationDescription& ApplicationConfigurationDescription::operat
     m_zeppelinApplicationConfigurationDescription = jsonValue.GetObject("ZeppelinApplicationConfigurationDescription");
     m_zeppelinApplicationConfigurationDescriptionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ApplicationEncryptionConfigurationDescription"))
+  {
+    m_applicationEncryptionConfigurationDescription = jsonValue.GetObject("ApplicationEncryptionConfigurationDescription");
+    m_applicationEncryptionConfigurationDescriptionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -137,6 +142,12 @@ JsonValue ApplicationConfigurationDescription::Jsonize() const
   if(m_zeppelinApplicationConfigurationDescriptionHasBeenSet)
   {
    payload.WithObject("ZeppelinApplicationConfigurationDescription", m_zeppelinApplicationConfigurationDescription.Jsonize());
+
+  }
+
+  if(m_applicationEncryptionConfigurationDescriptionHasBeenSet)
+  {
+   payload.WithObject("ApplicationEncryptionConfigurationDescription", m_applicationEncryptionConfigurationDescription.Jsonize());
 
   }
 

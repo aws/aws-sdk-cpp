@@ -61,6 +61,12 @@ Aws::String RequestPhoneNumberRequest::SerializePayload() const
 
   }
 
+  if(m_internationalSendingEnabledHasBeenSet)
+  {
+   payload.WithBool("InternationalSendingEnabled", m_internationalSendingEnabled);
+
+  }
+
   if(m_deletionProtectionEnabledHasBeenSet)
   {
    payload.WithBool("DeletionProtectionEnabled", m_deletionProtectionEnabled);

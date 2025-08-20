@@ -865,9 +865,13 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>Resets the specified user's password in a user pool. This operation doesn't
-         * change the user's password, but sends a password-reset code.</p> <p>To use this
-         * API operation, your user pool must have self-service account recovery
+         * <p>Begins the password reset process. Sets the requested user’s account into a
+         * <code>RESET_REQUIRED</code> status, and sends them a password-reset code. Your
+         * user pool also sends the user a notification with a reset code and the
+         * information that their password has been reset. At sign-in, your application or
+         * the managed login session receives a challenge to complete the reset by
+         * confirming the code and setting a new password.</p> <p>To use this API
+         * operation, your user pool must have self-service account recovery
          * configured.</p>  <p>This action might generate an SMS text message.
          * Starting June 1, 2021, US telecom carriers require you to register an
          * origination phone number before you can send SMS messages to US phone numbers.
@@ -1605,7 +1609,7 @@ namespace CognitoIdentityProvider
         /**
          * <p>Creates a new set of branding settings for a user pool style and associates
          * it with an app client. This operation is the programmatic option for the
-         * creation of a new style in the branding designer.</p> <p>Provides values for UI
+         * creation of a new style in the branding editor.</p> <p>Provides values for UI
          * customization in a <code>Settings</code> JSON object and image files in an
          * <code>Assets</code> array. To send the JSON object <code>Document</code> type
          * parameter in <code>Settings</code>, you might need to update to the most recent
@@ -1686,6 +1690,54 @@ namespace CognitoIdentityProvider
         void CreateResourceServerAsync(const CreateResourceServerRequestT& request, const CreateResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CognitoIdentityProviderClient::CreateResourceServer, request, handler, context);
+        }
+
+        /**
+         * <p>Creates terms documents for the requested app client. When Terms and
+         * conditions and Privacy policy documents are configured, the app client displays
+         * links to them in the sign-up page of managed login for the app client.</p>
+         * <p>You can provide URLs for terms documents in the languages that are supported
+         * by <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-localization">managed
+         * login localization</a>. Amazon Cognito directs users to the terms documents for
+         * their current language, with fallback to <code>default</code> if no document
+         * exists for the language.</p> <p>Each request accepts one type of terms document
+         * and a map of language-to-link for that document type. You must provide both
+         * types of terms documents in at least one language before Amazon Cognito displays
+         * your terms documents. Supply each type in separate requests.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-terms-documents">Terms
+         * documents</a>.</p>  <p>Amazon Cognito evaluates Identity and Access
+         * Management (IAM) policies in requests for this API operation. For this
+         * operation, you must use IAM credentials to authorize requests, and you must
+         * grant yourself the corresponding IAM permission in a policy.</p> <p
+         * class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+         * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+         * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateTerms">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTermsOutcome CreateTerms(const Model::CreateTermsRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateTerms that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateTermsRequestT = Model::CreateTermsRequest>
+        Model::CreateTermsOutcomeCallable CreateTermsCallable(const CreateTermsRequestT& request) const
+        {
+            return SubmitCallable(&CognitoIdentityProviderClient::CreateTerms, request);
+        }
+
+        /**
+         * An Async wrapper for CreateTerms that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateTermsRequestT = Model::CreateTermsRequest>
+        void CreateTermsAsync(const CreateTermsRequestT& request, const CreateTermsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CognitoIdentityProviderClient::CreateTerms, request, handler, context);
         }
 
         /**
@@ -2018,6 +2070,41 @@ namespace CognitoIdentityProvider
         }
 
         /**
+         * <p>Deletes the terms documents with the requested ID from your app client.</p>
+         *  <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies
+         * in requests for this API operation. For this operation, you must use IAM
+         * credentials to authorize requests, and you must grant yourself the corresponding
+         * IAM permission in a policy.</p> <p class="title"> <b>Learn more</b> </p> <ul>
+         * <li> <p> <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+         * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+         * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteTerms">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTermsOutcome DeleteTerms(const Model::DeleteTermsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteTerms that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteTermsRequestT = Model::DeleteTermsRequest>
+        Model::DeleteTermsOutcomeCallable DeleteTermsCallable(const DeleteTermsRequestT& request) const
+        {
+            return SubmitCallable(&CognitoIdentityProviderClient::DeleteTerms, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteTerms that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteTermsRequestT = Model::DeleteTermsRequest>
+        void DeleteTermsAsync(const DeleteTermsRequestT& request, const DeleteTermsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CognitoIdentityProviderClient::DeleteTerms, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the profile of the currently signed-in user. A deleted user profile
          * can no longer be used to sign in and can't be restored.</p> <p>Authorize this
          * action with a signed-in user's access token. It must include the scope
@@ -2347,6 +2434,43 @@ namespace CognitoIdentityProvider
         }
 
         /**
+         * <p>Returns details for the requested terms documents ID. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-terms-documents">Terms
+         * documents</a>.</p>  <p>Amazon Cognito evaluates Identity and Access
+         * Management (IAM) policies in requests for this API operation. For this
+         * operation, you must use IAM credentials to authorize requests, and you must
+         * grant yourself the corresponding IAM permission in a policy.</p> <p
+         * class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+         * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+         * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeTerms">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTermsOutcome DescribeTerms(const Model::DescribeTermsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeTerms that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeTermsRequestT = Model::DescribeTermsRequest>
+        Model::DescribeTermsOutcomeCallable DescribeTermsCallable(const DescribeTermsRequestT& request) const
+        {
+            return SubmitCallable(&CognitoIdentityProviderClient::DescribeTerms, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeTerms that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeTermsRequestT = Model::DescribeTermsRequest>
+        void DescribeTermsAsync(const DescribeTermsRequestT& request, const DescribeTermsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CognitoIdentityProviderClient::DescribeTerms, request, handler, context);
+        }
+
+        /**
          * <p>Describes a user import job. For more information about user CSV import, see
          * <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-using-import-tool.html">Importing
@@ -2522,17 +2646,20 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>Sends a password-reset confirmation code for the currently signed-in
-         * user.</p> <p>For the <code>Username</code> parameter, you can use the username
-         * or user alias.</p> <p>If neither a verified phone number nor a verified email
-         * exists, Amazon Cognito responds with an <code>InvalidParameterException</code>
-         * error . If your app client has a client secret and you don't provide a
-         * <code>SECRET_HASH</code> parameter, this API returns
-         * <code>NotAuthorizedException</code>.</p>  <p>Amazon Cognito doesn't
-         * evaluate Identity and Access Management (IAM) policies in requests for this API
-         * operation. For this operation, you can't use IAM credentials to authorize
-         * requests, and you can't grant IAM permissions in policies. For more information
-         * about authorization models in Amazon Cognito, see <a
+         * <p>Sends a password-reset confirmation code to the email address or phone number
+         * of the requested username. The message delivery method is determined by the
+         * user's available attributes and the <code>AccountRecoverySetting</code>
+         * configuration of the user pool.</p> <p>For the <code>Username</code> parameter,
+         * you can use the username or an email, phone, or preferred username alias.</p>
+         * <p>If neither a verified phone number nor a verified email exists, Amazon
+         * Cognito responds with an <code>InvalidParameterException</code> error . If your
+         * app client has a client secret and you don't provide a <code>SECRET_HASH</code>
+         * parameter, this API returns <code>NotAuthorizedException</code>.</p> 
+         * <p>Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies
+         * in requests for this API operation. For this operation, you can't use IAM
+         * credentials to authorize requests, and you can't grant IAM permissions in
+         * policies. For more information about authorization models in Amazon Cognito, see
+         * <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
          * the Amazon Cognito user pools API and user pool endpoints</a>.</p> 
          *  <p>This action might generate an SMS text message. Starting June 1, 2021,
@@ -3304,6 +3431,41 @@ namespace CognitoIdentityProvider
         void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CognitoIdentityProviderClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p>Returns details about all terms documents for the requested user pool.</p>
+         *  <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies
+         * in requests for this API operation. For this operation, you must use IAM
+         * credentials to authorize requests, and you must grant yourself the corresponding
+         * IAM permission in a policy.</p> <p class="title"> <b>Learn more</b> </p> <ul>
+         * <li> <p> <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+         * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+         * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListTerms">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTermsOutcome ListTerms(const Model::ListTermsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTerms that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTermsRequestT = Model::ListTermsRequest>
+        Model::ListTermsOutcomeCallable ListTermsCallable(const ListTermsRequestT& request) const
+        {
+            return SubmitCallable(&CognitoIdentityProviderClient::ListTerms, request);
+        }
+
+        /**
+         * An Async wrapper for ListTerms that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTermsRequestT = Model::ListTermsRequest>
+        void ListTermsAsync(const ListTermsRequestT& request, const ListTermsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CognitoIdentityProviderClient::ListTerms, request, handler, context);
         }
 
         /**
@@ -4119,7 +4281,7 @@ namespace CognitoIdentityProvider
          * potentially suspicious authentication events. Users invoke this operation when
          * they select the link that corresponds to <code>{one-click-link-valid}</code> or
          * <code>{one-click-link-invalid}</code> in your notification template. Because
-         * <code>FeedbackToken</code> is a required parameter, you can' make requests to
+         * <code>FeedbackToken</code> is a required parameter, you can't make requests to
          * <code>UpdateAuthEventFeedback</code> without the contents of the notification
          * email message.</p>  <p>Amazon Cognito doesn't evaluate Identity and Access
          * Management (IAM) policies in requests for this API operation. For this
@@ -4273,19 +4435,19 @@ namespace CognitoIdentityProvider
 
         /**
          * <p>Configures the branding settings for a user pool style. This operation is the
-         * programmatic option for the configuration of a style in the branding
-         * designer.</p> <p>Provides values for UI customization in a <code>Settings</code>
-         * JSON object and image files in an <code>Assets</code> array.</p> <p> This
-         * operation has a 2-megabyte request-size limit and include the CSS settings and
-         * image assets for your app client. Your branding settings might exceed 2MB in
-         * size. Amazon Cognito doesn't require that you pass all parameters in one request
-         * and preserves existing style settings that you don't specify. If your request is
-         * larger than 2MB, separate it into multiple requests, each with a size smaller
-         * than the limit.</p>  <p>Amazon Cognito evaluates Identity and Access
-         * Management (IAM) policies in requests for this API operation. For this
-         * operation, you must use IAM credentials to authorize requests, and you must
-         * grant yourself the corresponding IAM permission in a policy.</p> <p
-         * class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
+         * programmatic option for the configuration of a style in the branding editor.</p>
+         * <p>Provides values for UI customization in a <code>Settings</code> JSON object
+         * and image files in an <code>Assets</code> array.</p> <p> This operation has a
+         * 2-megabyte request-size limit and include the CSS settings and image assets for
+         * your app client. Your branding settings might exceed 2MB in size. Amazon Cognito
+         * doesn't require that you pass all parameters in one request and preserves
+         * existing style settings that you don't specify. If your request is larger than
+         * 2MB, separate it into multiple requests, each with a size smaller than the
+         * limit.</p>  <p>Amazon Cognito evaluates Identity and Access Management
+         * (IAM) policies in requests for this API operation. For this operation, you must
+         * use IAM credentials to authorize requests, and you must grant yourself the
+         * corresponding IAM permission in a policy.</p> <p class="title"> <b>Learn
+         * more</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
          * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
@@ -4351,6 +4513,54 @@ namespace CognitoIdentityProvider
         void UpdateResourceServerAsync(const UpdateResourceServerRequestT& request, const UpdateResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CognitoIdentityProviderClient::UpdateResourceServer, request, handler, context);
+        }
+
+        /**
+         * <p>Modifies existing terms documents for the requested app client. When Terms
+         * and conditions and Privacy policy documents are configured, the app client
+         * displays links to them in the sign-up page of managed login for the app
+         * client.</p> <p>You can provide URLs for terms documents in the languages that
+         * are supported by <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-localization">managed
+         * login localization</a>. Amazon Cognito directs users to the terms documents for
+         * their current language, with fallback to <code>default</code> if no document
+         * exists for the language.</p> <p>Each request accepts one type of terms document
+         * and a map of language-to-link for that document type. You must provide both
+         * types of terms documents in at least one language before Amazon Cognito displays
+         * your terms documents. Supply each type in separate requests.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-terms-documents">Terms
+         * documents</a>.</p>  <p>Amazon Cognito evaluates Identity and Access
+         * Management (IAM) policies in requests for this API operation. For this
+         * operation, you must use IAM credentials to authorize requests, and you must
+         * grant yourself the corresponding IAM permission in a policy.</p> <p
+         * class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+         * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+         * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateTerms">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTermsOutcome UpdateTerms(const Model::UpdateTermsRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateTerms that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateTermsRequestT = Model::UpdateTermsRequest>
+        Model::UpdateTermsOutcomeCallable UpdateTermsCallable(const UpdateTermsRequestT& request) const
+        {
+            return SubmitCallable(&CognitoIdentityProviderClient::UpdateTerms, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateTerms that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateTermsRequestT = Model::UpdateTermsRequest>
+        void UpdateTermsAsync(const UpdateTermsRequestT& request, const UpdateTermsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CognitoIdentityProviderClient::UpdateTerms, request, handler, context);
         }
 
         /**

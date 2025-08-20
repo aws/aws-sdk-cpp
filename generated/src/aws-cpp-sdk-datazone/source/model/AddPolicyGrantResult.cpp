@@ -24,7 +24,12 @@ AddPolicyGrantResult::AddPolicyGrantResult(const Aws::AmazonWebServiceResult<Jso
 
 AddPolicyGrantResult& AddPolicyGrantResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  AWS_UNREFERENCED_PARAM(result);
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("grantId"))
+  {
+    m_grantId = jsonValue.GetString("grantId");
+    m_grantIdHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * Describes system rollback configuration for a Managed Service for Apache Flink
-   * application<p><h3>See Also:</h3>   <a
+   * <p>Describes the system rollback configuration for a Managed Service for Apache
+   * Flink application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationSystemRollbackConfigurationDescription">AWS
    * API Reference</a></p>
    */
@@ -38,8 +38,8 @@ namespace Model
 
     ///@{
     /**
-     * Describes whether system rollbacks are enabled for a Managed Service for Apache
-     * Flink application
+     * <p>Describes whether system rollbacks are enabled for a Managed Service for
+     * Apache Flink application.</p>
      */
     inline bool GetRollbackEnabled() const { return m_rollbackEnabled; }
     inline bool RollbackEnabledHasBeenSet() const { return m_rollbackEnabledHasBeenSet; }

@@ -99,6 +99,11 @@ UpdatePhoneNumberResult& UpdatePhoneNumberResult::operator =(const Aws::AmazonWe
     m_optOutListName = jsonValue.GetString("OptOutListName");
     m_optOutListNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("InternationalSendingEnabled"))
+  {
+    m_internationalSendingEnabled = jsonValue.GetBool("InternationalSendingEnabled");
+    m_internationalSendingEnabledHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("DeletionProtectionEnabled"))
   {
     m_deletionProtectionEnabled = jsonValue.GetBool("DeletionProtectionEnabled");

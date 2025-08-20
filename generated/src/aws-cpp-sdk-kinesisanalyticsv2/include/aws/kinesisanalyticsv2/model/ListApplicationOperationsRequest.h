@@ -18,7 +18,8 @@ namespace Model
 {
 
   /**
-   * Request to list operations performed on an application<p><h3>See Also:</h3>   <a
+   * <p>A request for a list of operations performed on an application.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationOperationsRequest">AWS
    * API Reference</a></p>
    */

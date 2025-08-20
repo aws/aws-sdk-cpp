@@ -73,6 +73,12 @@ Aws::String CreateAddonRequest::SerializePayload() const
 
   }
 
+  if(m_namespaceConfigHasBeenSet)
+  {
+   payload.WithObject("namespaceConfig", m_namespaceConfig.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * Provides a description of the operation failure<p><h3>See Also:</h3>   <a
+   * <p>Provides a description of the operation failure.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/OperationFailureDetails">AWS
    * API Reference</a></p>
    */
@@ -40,8 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * Provides the operation ID of a system-rollback operation executed due to failure
-     * in the current operation
+     * <p>The rollback operation ID of the system-rollback operation that executed due
+     * to failure in the current operation.</p>
      */
     inline const Aws::String& GetRollbackOperationId() const { return m_rollbackOperationId; }
     inline bool RollbackOperationIdHasBeenSet() const { return m_rollbackOperationIdHasBeenSet; }

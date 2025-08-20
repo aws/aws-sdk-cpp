@@ -27,8 +27,8 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
   /**
-   * Response with the list of operations for an application<p><h3>See Also:</h3>  
-   * <a
+   * <p>A response that returns a list of operations for an
+   * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationOperationsResponse">AWS
    * API Reference</a></p>
    */

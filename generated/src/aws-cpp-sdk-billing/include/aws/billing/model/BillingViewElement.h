@@ -55,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> A list of names of the billing view. </p>
+     * <p> The account name of the billing view. </p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -89,7 +89,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The list of owners of the billing view. </p>
+     * <p>The account owner of the billing view. </p>
      */
     inline const Aws::String& GetOwnerAccountId() const { return m_ownerAccountId; }
     inline bool OwnerAccountIdHasBeenSet() const { return m_ownerAccountIdHasBeenSet; }
@@ -102,7 +102,7 @@ namespace Model
     ///@{
     /**
      * <p> See <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>.
      * Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.
      * </p>
      */

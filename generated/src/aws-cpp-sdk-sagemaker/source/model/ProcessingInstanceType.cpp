@@ -140,6 +140,7 @@ namespace Aws
         static const int ml_r7i_16xlarge_HASH = HashingUtils::HashString("ml.r7i.16xlarge");
         static const int ml_r7i_24xlarge_HASH = HashingUtils::HashString("ml.r7i.24xlarge");
         static const int ml_r7i_48xlarge_HASH = HashingUtils::HashString("ml.r7i.48xlarge");
+        static const int ml_p5_4xlarge_HASH = HashingUtils::HashString("ml.p5.4xlarge");
 
 
         ProcessingInstanceType GetProcessingInstanceTypeForName(const Aws::String& name)
@@ -625,6 +626,10 @@ namespace Aws
           {
             return ProcessingInstanceType::ml_r7i_48xlarge;
           }
+          else if (hashCode == ml_p5_4xlarge_HASH)
+          {
+            return ProcessingInstanceType::ml_p5_4xlarge;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -881,6 +886,8 @@ namespace Aws
             return "ml.r7i.24xlarge";
           case ProcessingInstanceType::ml_r7i_48xlarge:
             return "ml.r7i.48xlarge";
+          case ProcessingInstanceType::ml_p5_4xlarge:
+            return "ml.p5.4xlarge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -47,7 +47,11 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>Contains the result when the automated reasoning evaluation determines that
+     * the claims in the input are logically valid and definitively true based on the
+     * provided premises and policy rules.</p>
+     */
     inline const GuardrailAutomatedReasoningValidFinding& GetValid() const { return m_valid; }
     inline bool ValidHasBeenSet() const { return m_validHasBeenSet; }
     template<typename ValidT = GuardrailAutomatedReasoningValidFinding>
@@ -57,7 +61,11 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>Contains the result when the automated reasoning evaluation determines that
+     * the claims in the input are logically invalid and contradict the established
+     * premises or policy rules.</p>
+     */
     inline const GuardrailAutomatedReasoningInvalidFinding& GetInvalid() const { return m_invalid; }
     inline bool InvalidHasBeenSet() const { return m_invalidHasBeenSet; }
     template<typename InvalidT = GuardrailAutomatedReasoningInvalidFinding>
@@ -67,7 +75,11 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>Contains the result when the automated reasoning evaluation determines that
+     * the claims in the input could be either true or false depending on additional
+     * assumptions not provided in the input context.</p>
+     */
     inline const GuardrailAutomatedReasoningSatisfiableFinding& GetSatisfiable() const { return m_satisfiable; }
     inline bool SatisfiableHasBeenSet() const { return m_satisfiableHasBeenSet; }
     template<typename SatisfiableT = GuardrailAutomatedReasoningSatisfiableFinding>
@@ -77,7 +89,11 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>Contains the result when the automated reasoning evaluation determines that
+     * no valid logical conclusions can be drawn due to contradictions in the premises
+     * or policy rules themselves.</p>
+     */
     inline const GuardrailAutomatedReasoningImpossibleFinding& GetImpossible() const { return m_impossible; }
     inline bool ImpossibleHasBeenSet() const { return m_impossibleHasBeenSet; }
     template<typename ImpossibleT = GuardrailAutomatedReasoningImpossibleFinding>
@@ -87,7 +103,11 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>Contains the result when the automated reasoning evaluation detects that the
+     * input has multiple valid logical interpretations, requiring additional context
+     * or clarification to proceed with validation.</p>
+     */
     inline const GuardrailAutomatedReasoningTranslationAmbiguousFinding& GetTranslationAmbiguous() const { return m_translationAmbiguous; }
     inline bool TranslationAmbiguousHasBeenSet() const { return m_translationAmbiguousHasBeenSet; }
     template<typename TranslationAmbiguousT = GuardrailAutomatedReasoningTranslationAmbiguousFinding>
@@ -97,7 +117,11 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>Contains the result when the automated reasoning evaluation cannot process
+     * the input due to its complexity or volume exceeding the system's processing
+     * capacity for logical analysis.</p>
+     */
     inline const GuardrailAutomatedReasoningTooComplexFinding& GetTooComplex() const { return m_tooComplex; }
     inline bool TooComplexHasBeenSet() const { return m_tooComplexHasBeenSet; }
     template<typename TooComplexT = GuardrailAutomatedReasoningTooComplexFinding>
@@ -107,7 +131,11 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>Contains the result when the automated reasoning evaluation cannot extract
+     * any relevant logical information from the input that can be validated against
+     * the policy rules.</p>
+     */
     inline const GuardrailAutomatedReasoningNoTranslationsFinding& GetNoTranslations() const { return m_noTranslations; }
     inline bool NoTranslationsHasBeenSet() const { return m_noTranslationsHasBeenSet; }
     template<typename NoTranslationsT = GuardrailAutomatedReasoningNoTranslationsFinding>

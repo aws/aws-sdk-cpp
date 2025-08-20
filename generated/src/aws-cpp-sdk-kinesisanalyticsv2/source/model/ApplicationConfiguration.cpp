@@ -69,6 +69,11 @@ ApplicationConfiguration& ApplicationConfiguration::operator =(JsonView jsonValu
     m_zeppelinApplicationConfiguration = jsonValue.GetObject("ZeppelinApplicationConfiguration");
     m_zeppelinApplicationConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ApplicationEncryptionConfiguration"))
+  {
+    m_applicationEncryptionConfiguration = jsonValue.GetObject("ApplicationEncryptionConfiguration");
+    m_applicationEncryptionConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -126,6 +131,12 @@ JsonValue ApplicationConfiguration::Jsonize() const
   if(m_zeppelinApplicationConfigurationHasBeenSet)
   {
    payload.WithObject("ZeppelinApplicationConfiguration", m_zeppelinApplicationConfiguration.Jsonize());
+
+  }
+
+  if(m_applicationEncryptionConfigurationHasBeenSet)
+  {
+   payload.WithObject("ApplicationEncryptionConfiguration", m_applicationEncryptionConfiguration.Jsonize());
 
   }
 

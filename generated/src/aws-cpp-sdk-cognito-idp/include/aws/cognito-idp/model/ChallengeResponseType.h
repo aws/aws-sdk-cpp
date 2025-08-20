@@ -53,25 +53,32 @@ namespace Model
    * "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "SMS_OTP", "USERNAME":
    * "[username]"}</code> </p> </li> <li> <p> <code>"ChallengeName":
    * "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "EMAIL_OTP", "USERNAME":
-   * "[username]"}</code> </p> </li> </ul> </dd> <dt>SMS_OTP</dt> <dd> <p>
-   * <code>"ChallengeName": "SMS_OTP", "ChallengeResponses": {"SMS_OTP_CODE":
-   * "[code]", "USERNAME": "[username]"}</code> </p> </dd> <dt>EMAIL_OTP</dt> <dd>
-   * <p> <code>"ChallengeName": "EMAIL_OTP", "ChallengeResponses": {"EMAIL_OTP_CODE":
-   * "[code]", "USERNAME": "[username]"}</code> </p> </dd> <dt>SMS_MFA</dt> <dd> <p>
-   * <code>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE":
-   * "[code]", "USERNAME": "[username]"}</code> </p> </dd> <dt>PASSWORD_VERIFIER</dt>
-   * <dd> <p>This challenge response is part of the SRP flow. Amazon Cognito requires
-   * that your application respond to this challenge within a few seconds. When the
-   * response time exceeds this period, your user pool returns a
+   * "[username]"}</code> </p> </li> </ul> </dd> <dt>WEB_AUTHN</dt> <dd> <p>
+   * <code>"ChallengeName": "WEB_AUTHN", "ChallengeResponses": { "USERNAME":
+   * "[username]", "CREDENTIAL": "[AuthenticationResponseJSON]"}</code> </p> <p>See
+   * <a href="https://www.w3.org/TR/WebAuthn-3/#dictdef-authenticationresponsejson">
+   * AuthenticationResponseJSON</a>.</p> </dd> <dt>PASSWORD</dt> <dd> <p>
+   * <code>"ChallengeName": "PASSWORD", "ChallengeResponses": { "USERNAME":
+   * "[username]", "PASSWORD": "[password]"}</code> </p> </dd> <dt>PASSWORD_SRP</dt>
+   * <dd> <p> <code>"ChallengeName": "PASSWORD_SRP", "ChallengeResponses": {
+   * "USERNAME": "[username]", "SRP_A": "[SRP_A]"}</code> </p> </dd> <dt>SMS_OTP</dt>
+   * <dd> <p> <code>"ChallengeName": "SMS_OTP", "ChallengeResponses":
+   * {"SMS_OTP_CODE": "[code]", "USERNAME": "[username]"}</code> </p> </dd>
+   * <dt>EMAIL_OTP</dt> <dd> <p> <code>"ChallengeName": "EMAIL_OTP",
+   * "ChallengeResponses": {"EMAIL_OTP_CODE": "[code]", "USERNAME":
+   * "[username]"}</code> </p> </dd> <dt>SMS_MFA</dt> <dd> <p> <code>"ChallengeName":
+   * "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "[code]", "USERNAME":
+   * "[username]"}</code> </p> </dd> <dt>PASSWORD_VERIFIER</dt> <dd> <p>This
+   * challenge response is part of the SRP flow. Amazon Cognito requires that your
+   * application respond to this challenge within a few seconds. When the response
+   * time exceeds this period, your user pool returns a
    * <code>NotAuthorizedException</code> error.</p> <p> <code>"ChallengeName":
    * "PASSWORD_VERIFIER", "ChallengeResponses": {"PASSWORD_CLAIM_SIGNATURE":
    * "[claim_signature]", "PASSWORD_CLAIM_SECRET_BLOCK": "[secret_block]",
-   * "TIMESTAMP": [timestamp], "USERNAME": "[username]"}</code> </p> <p>Add
-   * <code>"DEVICE_KEY"</code> when you sign in with a remembered device.</p> </dd>
+   * "TIMESTAMP": [timestamp], "USERNAME": "[username]"}</code> </p> </dd>
    * <dt>CUSTOM_CHALLENGE</dt> <dd> <p> <code>"ChallengeName": "CUSTOM_CHALLENGE",
    * "ChallengeResponses": {"USERNAME": "[username]", "ANSWER":
-   * "[challenge_answer]"}</code> </p> <p>Add <code>"DEVICE_KEY"</code> when you sign
-   * in with a remembered device.</p> </dd> <dt>NEW_PASSWORD_REQUIRED</dt> <dd> <p>
+   * "[challenge_answer]"}</code> </p> </dd> <dt>NEW_PASSWORD_REQUIRED</dt> <dd> <p>
    * <code>"ChallengeName": "NEW_PASSWORD_REQUIRED", "ChallengeResponses":
    * {"NEW_PASSWORD": "[new_password]", "USERNAME": "[username]"}</code> </p> <p>To
    * set any required attributes that <code>InitiateAuth</code> returned in an
@@ -99,7 +106,7 @@ namespace Model
    * "[username]"}, "SESSION": "[Session ID from VerifySoftwareToken]"</code> </p>
    * </dd> <dt>SELECT_MFA_TYPE</dt> <dd> <p> <code>"ChallengeName":
    * "SELECT_MFA_TYPE", "ChallengeResponses": {"USERNAME": "[username]", "ANSWER":
-   * "[SMS_MFA or SOFTWARE_TOKEN_MFA]"}</code> </p> </dd> </dl> <p>For more
+   * "[SMS_MFA|EMAIL_MFA|SOFTWARE_TOKEN_MFA]"}</code> </p> </dd> </dl> <p>For more
    * information about <code>SECRET_HASH</code>, see <a
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
    * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a

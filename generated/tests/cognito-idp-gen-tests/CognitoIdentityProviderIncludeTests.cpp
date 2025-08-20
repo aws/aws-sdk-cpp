@@ -116,6 +116,8 @@
 #include <aws/cognito-idp/model/CreateManagedLoginBrandingResult.h>
 #include <aws/cognito-idp/model/CreateResourceServerRequest.h>
 #include <aws/cognito-idp/model/CreateResourceServerResult.h>
+#include <aws/cognito-idp/model/CreateTermsRequest.h>
+#include <aws/cognito-idp/model/CreateTermsResult.h>
 #include <aws/cognito-idp/model/CreateUserImportJobRequest.h>
 #include <aws/cognito-idp/model/CreateUserImportJobResult.h>
 #include <aws/cognito-idp/model/CreateUserPoolClientRequest.h>
@@ -134,6 +136,7 @@
 #include <aws/cognito-idp/model/DeleteIdentityProviderRequest.h>
 #include <aws/cognito-idp/model/DeleteManagedLoginBrandingRequest.h>
 #include <aws/cognito-idp/model/DeleteResourceServerRequest.h>
+#include <aws/cognito-idp/model/DeleteTermsRequest.h>
 #include <aws/cognito-idp/model/DeleteUserAttributesRequest.h>
 #include <aws/cognito-idp/model/DeleteUserAttributesResult.h>
 #include <aws/cognito-idp/model/DeleteUserPoolClientRequest.h>
@@ -155,6 +158,8 @@
 #include <aws/cognito-idp/model/DescribeResourceServerResult.h>
 #include <aws/cognito-idp/model/DescribeRiskConfigurationRequest.h>
 #include <aws/cognito-idp/model/DescribeRiskConfigurationResult.h>
+#include <aws/cognito-idp/model/DescribeTermsRequest.h>
+#include <aws/cognito-idp/model/DescribeTermsResult.h>
 #include <aws/cognito-idp/model/DescribeUserImportJobRequest.h>
 #include <aws/cognito-idp/model/DescribeUserImportJobResult.h>
 #include <aws/cognito-idp/model/DescribeUserPoolClientRequest.h>
@@ -231,6 +236,8 @@
 #include <aws/cognito-idp/model/ListResourceServersResult.h>
 #include <aws/cognito-idp/model/ListTagsForResourceRequest.h>
 #include <aws/cognito-idp/model/ListTagsForResourceResult.h>
+#include <aws/cognito-idp/model/ListTermsRequest.h>
+#include <aws/cognito-idp/model/ListTermsResult.h>
 #include <aws/cognito-idp/model/ListUserImportJobsRequest.h>
 #include <aws/cognito-idp/model/ListUserImportJobsResult.h>
 #include <aws/cognito-idp/model/ListUserPoolClientsRequest.h>
@@ -307,6 +314,10 @@
 #include <aws/cognito-idp/model/StringAttributeConstraintsType.h>
 #include <aws/cognito-idp/model/TagResourceRequest.h>
 #include <aws/cognito-idp/model/TagResourceResult.h>
+#include <aws/cognito-idp/model/TermsDescriptionType.h>
+#include <aws/cognito-idp/model/TermsEnforcementType.h>
+#include <aws/cognito-idp/model/TermsSourceType.h>
+#include <aws/cognito-idp/model/TermsType.h>
 #include <aws/cognito-idp/model/TimeUnitsType.h>
 #include <aws/cognito-idp/model/TokenValidityUnitsType.h>
 #include <aws/cognito-idp/model/UICustomizationType.h>
@@ -324,6 +335,8 @@
 #include <aws/cognito-idp/model/UpdateManagedLoginBrandingResult.h>
 #include <aws/cognito-idp/model/UpdateResourceServerRequest.h>
 #include <aws/cognito-idp/model/UpdateResourceServerResult.h>
+#include <aws/cognito-idp/model/UpdateTermsRequest.h>
+#include <aws/cognito-idp/model/UpdateTermsResult.h>
 #include <aws/cognito-idp/model/UpdateUserAttributesRequest.h>
 #include <aws/cognito-idp/model/UpdateUserAttributesResult.h>
 #include <aws/cognito-idp/model/UpdateUserPoolClientRequest.h>

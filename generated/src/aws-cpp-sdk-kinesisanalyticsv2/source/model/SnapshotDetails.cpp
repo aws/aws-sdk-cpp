@@ -50,6 +50,11 @@ SnapshotDetails& SnapshotDetails::operator =(JsonView jsonValue)
     m_runtimeEnvironment = RuntimeEnvironmentMapper::GetRuntimeEnvironmentForName(jsonValue.GetString("RuntimeEnvironment"));
     m_runtimeEnvironmentHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ApplicationEncryptionConfigurationDescription"))
+  {
+    m_applicationEncryptionConfigurationDescription = jsonValue.GetObject("ApplicationEncryptionConfigurationDescription");
+    m_applicationEncryptionConfigurationDescriptionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -82,6 +87,12 @@ JsonValue SnapshotDetails::Jsonize() const
   if(m_runtimeEnvironmentHasBeenSet)
   {
    payload.WithString("RuntimeEnvironment", RuntimeEnvironmentMapper::GetNameForRuntimeEnvironment(m_runtimeEnvironment));
+  }
+
+  if(m_applicationEncryptionConfigurationDescriptionHasBeenSet)
+  {
+   payload.WithObject("ApplicationEncryptionConfigurationDescription", m_applicationEncryptionConfigurationDescription.Jsonize());
+
   }
 
   return payload;

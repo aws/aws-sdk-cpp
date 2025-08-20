@@ -9,6 +9,7 @@
 #include <aws/kinesisanalyticsv2/model/SnapshotStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/kinesisanalyticsv2/model/RuntimeEnvironment.h>
+#include <aws/kinesisanalyticsv2/model/ApplicationEncryptionConfigurationDescription.h>
 #include <utility>
 
 namespace Aws
@@ -94,6 +95,19 @@ namespace Model
     inline void SetRuntimeEnvironment(RuntimeEnvironment value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = value; }
     inline SnapshotDetails& WithRuntimeEnvironment(RuntimeEnvironment value) { SetRuntimeEnvironment(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the encryption settings of data at rest for the application
+     * snapshot.</p>
+     */
+    inline const ApplicationEncryptionConfigurationDescription& GetApplicationEncryptionConfigurationDescription() const { return m_applicationEncryptionConfigurationDescription; }
+    inline bool ApplicationEncryptionConfigurationDescriptionHasBeenSet() const { return m_applicationEncryptionConfigurationDescriptionHasBeenSet; }
+    template<typename ApplicationEncryptionConfigurationDescriptionT = ApplicationEncryptionConfigurationDescription>
+    void SetApplicationEncryptionConfigurationDescription(ApplicationEncryptionConfigurationDescriptionT&& value) { m_applicationEncryptionConfigurationDescriptionHasBeenSet = true; m_applicationEncryptionConfigurationDescription = std::forward<ApplicationEncryptionConfigurationDescriptionT>(value); }
+    template<typename ApplicationEncryptionConfigurationDescriptionT = ApplicationEncryptionConfigurationDescription>
+    SnapshotDetails& WithApplicationEncryptionConfigurationDescription(ApplicationEncryptionConfigurationDescriptionT&& value) { SetApplicationEncryptionConfigurationDescription(std::forward<ApplicationEncryptionConfigurationDescriptionT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_snapshotName;
@@ -110,6 +124,9 @@ namespace Model
 
     RuntimeEnvironment m_runtimeEnvironment{RuntimeEnvironment::NOT_SET};
     bool m_runtimeEnvironmentHasBeenSet = false;
+
+    ApplicationEncryptionConfigurationDescription m_applicationEncryptionConfigurationDescription;
+    bool m_applicationEncryptionConfigurationDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

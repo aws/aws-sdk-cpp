@@ -39,7 +39,8 @@ namespace Model
     /**
      * <p>A valid refresh token that can authorize the request for new tokens. When
      * refresh token rotation is active in the requested app client, this token is
-     * invalidated after the request is complete.</p>
+     * invalidated after the request is complete and after an optional grace
+     * period.</p>
      */
     inline const Aws::String& GetRefreshToken() const { return m_refreshToken; }
     inline bool RefreshTokenHasBeenSet() const { return m_refreshTokenHasBeenSet; }

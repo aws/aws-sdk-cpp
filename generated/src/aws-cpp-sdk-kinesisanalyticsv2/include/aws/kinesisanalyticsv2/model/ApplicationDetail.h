@@ -215,7 +215,7 @@ namespace Model
 
     ///@{
     /**
-     * The current timestamp when the application version was created.
+     * <p>The timestamp that indicates when the application version was created.</p>
      */
     inline const Aws::Utils::DateTime& GetApplicationVersionCreateTimestamp() const { return m_applicationVersionCreateTimestamp; }
     inline bool ApplicationVersionCreateTimestampHasBeenSet() const { return m_applicationVersionCreateTimestampHasBeenSet; }

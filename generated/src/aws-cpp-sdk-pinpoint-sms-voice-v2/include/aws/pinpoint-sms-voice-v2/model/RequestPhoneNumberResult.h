@@ -198,6 +198,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>By default this is set to false. When set to true the international sending
+     * of phone number is Enabled. </p>
+     */
+    inline bool GetInternationalSendingEnabled() const { return m_internationalSendingEnabled; }
+    inline void SetInternationalSendingEnabled(bool value) { m_internationalSendingEnabledHasBeenSet = true; m_internationalSendingEnabled = value; }
+    inline RequestPhoneNumberResult& WithInternationalSendingEnabled(bool value) { SetInternationalSendingEnabled(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>By default this is set to false. When set to true the phone number can't be
      * deleted. </p>
      */
@@ -305,6 +315,9 @@ namespace Model
 
     Aws::String m_optOutListName;
     bool m_optOutListNameHasBeenSet = false;
+
+    bool m_internationalSendingEnabled{false};
+    bool m_internationalSendingEnabledHasBeenSet = false;
 
     bool m_deletionProtectionEnabled{false};
     bool m_deletionProtectionEnabledHasBeenSet = false;

@@ -85,6 +85,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the policy grant that is to be removed from a specified entity.</p>
+     */
+    inline const Aws::String& GetGrantIdentifier() const { return m_grantIdentifier; }
+    inline bool GrantIdentifierHasBeenSet() const { return m_grantIdentifierHasBeenSet; }
+    template<typename GrantIdentifierT = Aws::String>
+    void SetGrantIdentifier(GrantIdentifierT&& value) { m_grantIdentifierHasBeenSet = true; m_grantIdentifier = std::forward<GrantIdentifierT>(value); }
+    template<typename GrantIdentifierT = Aws::String>
+    RemovePolicyGrantRequest& WithGrantIdentifier(GrantIdentifierT&& value) { SetGrantIdentifier(std::forward<GrantIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The type of the policy that you want to remove.</p>
      */
     inline ManagedPolicyType GetPolicyType() const { return m_policyType; }
@@ -117,6 +129,9 @@ namespace Model
 
     TargetEntityType m_entityType{TargetEntityType::NOT_SET};
     bool m_entityTypeHasBeenSet = false;
+
+    Aws::String m_grantIdentifier;
+    bool m_grantIdentifierHasBeenSet = false;
 
     ManagedPolicyType m_policyType{ManagedPolicyType::NOT_SET};
     bool m_policyTypeHasBeenSet = false;

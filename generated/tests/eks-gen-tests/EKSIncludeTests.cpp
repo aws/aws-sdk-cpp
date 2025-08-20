@@ -26,6 +26,8 @@
 #include <aws/eks/model/AddonInfo.h>
 #include <aws/eks/model/AddonIssue.h>
 #include <aws/eks/model/AddonIssueCode.h>
+#include <aws/eks/model/AddonNamespaceConfigRequest.h>
+#include <aws/eks/model/AddonNamespaceConfigResponse.h>
 #include <aws/eks/model/AddonPodIdentityAssociations.h>
 #include <aws/eks/model/AddonPodIdentityConfiguration.h>
 #include <aws/eks/model/AddonStatus.h>

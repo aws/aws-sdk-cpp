@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * Provides a description of the operation failure error<p><h3>See Also:</h3>   <a
+   * <p>A description of the error that caused an operation to fail.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ErrorInfo">AWS
    * API Reference</a></p>
    */

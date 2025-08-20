@@ -57,7 +57,7 @@ namespace Model
      * <code>CurrentParallelism</code> value in response to application load. The
      * service can increase <code>CurrentParallelism</code> up to the maximum
      * parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for
-     * the application. The maximum KPUs for an application is 32 by default, and can
+     * the application. The maximum KPUs for an application is 64 by default, and can
      * be increased by requesting a limit increase. If application load is reduced, the
      * service can reduce the <code>CurrentParallelism</code> value down to the
      * <code>Parallelism</code> setting.</p>
