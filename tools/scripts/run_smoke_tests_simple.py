@@ -78,19 +78,30 @@ def main():
                 test_result = subprocess.run(test_command, capture_output=True, text=True)
 
                 if test_result.returncode == 0:
-                    print(f"ok {service} {test_name} - {GREEN}no{RESET} error expected {BOLD}from service{RESET}")
+                    print(f"ok {service} {test_name} - no error expected from service")
                 else:
-                    print(f"{BOLD}not{RESET} ok {service} {test_name} - error expected {BOLD}from service{RESET}")
-                    print(f"# Error details for {service} {test_name}:")
-                    if test_result.stderr.strip():
-                        print(f"# stderr: {test_result.stderr.strip()}")
-                    if test_result.stdout.strip():
-                        print(f"# stdout: {test_result.stdout.strip()}")
-                    if not test_result.stderr.strip() and not test_result.stdout.strip():
-                        print(f"# No output captured (return code: {test_result.returncode})")
+                    print(f"not ok {service} {test_name} - no error expected from service")
+                    # Extract error message from stdout for stack trace
+                    stdout_lines = test_result.stdout.strip().split('\n') if test_result.stdout.strip() else []
+                    error_msg = None
+                    
+                    # Look for failure message in stdout
+                    for line in stdout_lines:
+                        if 'failed:' in line.lower() or 'failure' in line.lower():
+                            if ':' in line:
+                                error_msg = line.split(':', 1)[1].strip()
+                                break
+                    
+                    if not error_msg and test_result.stderr.strip():
+                        error_msg = test_result.stderr.strip()
+                    
+                    if error_msg:
+                        print(f"# Stack trace: {error_msg}")
+                    else:
+                        print(f"# Stack trace: Test failed with return code {test_result.returncode}")
             except Exception as e:
-                print(f"{BOLD}not{RESET} ok {service} {test_name} - error expected {BOLD}from service{RESET}")
-                print(f"# Exception occurred: {str(e)}")
+                print(f"not ok {service} {test_name} - no error expected from service")
+                print(f"# Stack trace: {str(e)}")
 
     return 0
 
