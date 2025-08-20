@@ -108,6 +108,11 @@ Addon& Addon::operator =(JsonView jsonValue)
     }
     m_podIdentityAssociationsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("namespaceConfig"))
+  {
+    m_namespaceConfig = jsonValue.GetObject("namespaceConfig");
+    m_namespaceConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -209,6 +214,12 @@ JsonValue Addon::Jsonize() const
      podIdentityAssociationsJsonList[podIdentityAssociationsIndex].AsString(m_podIdentityAssociations[podIdentityAssociationsIndex]);
    }
    payload.WithArray("podIdentityAssociations", std::move(podIdentityAssociationsJsonList));
+
+  }
+
+  if(m_namespaceConfigHasBeenSet)
+  {
+   payload.WithObject("namespaceConfig", m_namespaceConfig.Jsonize());
 
   }
 

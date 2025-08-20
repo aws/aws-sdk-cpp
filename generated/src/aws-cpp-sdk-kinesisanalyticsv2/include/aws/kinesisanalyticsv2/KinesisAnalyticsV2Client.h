@@ -574,8 +574,11 @@ namespace KinesisAnalyticsV2
         }
 
         /**
-         * Returns information about a specific operation performed on a Managed Service
-         * for Apache Flink application<p><h3>See Also:</h3>   <a
+         * <p>Provides a detailed description of a specified application operation. To see
+         * a list of all the operations of an application, invoke the
+         * <a>ListApplicationOperations</a> operation.</p>  <p>This operation is
+         * supported only for Managed Service for Apache Flink.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationOperation">AWS
          * API Reference</a></p>
          */
@@ -688,8 +691,12 @@ namespace KinesisAnalyticsV2
         }
 
         /**
-         * Lists information about operations performed on a Managed Service for Apache
-         * Flink application<p><h3>See Also:</h3>   <a
+         * <p>Lists all the operations performed for the specified application such as
+         * UpdateApplication, StartApplication etc. The response also includes a summary of
+         * the operation.</p> <p>To get the complete description of a specific operation,
+         * invoke the <a>DescribeApplicationOperation</a> operation.</p>  <p>This
+         * operation is supported only for Managed Service for Apache Flink.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationOperations">AWS
          * API Reference</a></p>
          */

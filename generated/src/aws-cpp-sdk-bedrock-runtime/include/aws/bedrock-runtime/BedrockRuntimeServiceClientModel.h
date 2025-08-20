@@ -20,6 +20,7 @@
 /* Service model headers required in BedrockRuntimeClient header */
 #include <aws/bedrock-runtime/model/ApplyGuardrailResult.h>
 #include <aws/bedrock-runtime/model/ConverseResult.h>
+#include <aws/bedrock-runtime/model/CountTokensResult.h>
 #include <aws/bedrock-runtime/model/GetAsyncInvokeResult.h>
 #include <aws/bedrock-runtime/model/InvokeModelResult.h>
 #include <aws/bedrock-runtime/model/ListAsyncInvokesResult.h>
@@ -74,6 +75,7 @@ namespace Aws
       class ApplyGuardrailRequest;
       class ConverseRequest;
       class ConverseStreamRequest;
+      class CountTokensRequest;
       class GetAsyncInvokeRequest;
       class InvokeModelRequest;
       class InvokeModelWithBidirectionalStreamRequest;
@@ -87,6 +89,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ApplyGuardrailResult, BedrockRuntimeError> ApplyGuardrailOutcome;
       typedef Aws::Utils::Outcome<ConverseResult, BedrockRuntimeError> ConverseOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, BedrockRuntimeError> ConverseStreamOutcome;
+      typedef Aws::Utils::Outcome<CountTokensResult, BedrockRuntimeError> CountTokensOutcome;
       typedef Aws::Utils::Outcome<GetAsyncInvokeResult, BedrockRuntimeError> GetAsyncInvokeOutcome;
       typedef Aws::Utils::Outcome<InvokeModelResult, BedrockRuntimeError> InvokeModelOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, BedrockRuntimeError> InvokeModelWithBidirectionalStreamOutcome;
@@ -99,6 +102,7 @@ namespace Aws
       typedef std::future<ApplyGuardrailOutcome> ApplyGuardrailOutcomeCallable;
       typedef std::future<ConverseOutcome> ConverseOutcomeCallable;
       typedef std::future<ConverseStreamOutcome> ConverseStreamOutcomeCallable;
+      typedef std::future<CountTokensOutcome> CountTokensOutcomeCallable;
       typedef std::future<GetAsyncInvokeOutcome> GetAsyncInvokeOutcomeCallable;
       typedef std::future<InvokeModelOutcome> InvokeModelOutcomeCallable;
       typedef std::future<InvokeModelWithBidirectionalStreamOutcome> InvokeModelWithBidirectionalStreamOutcomeCallable;
@@ -114,6 +118,7 @@ namespace Aws
     typedef std::function<void(const BedrockRuntimeClient*, const Model::ApplyGuardrailRequest&, const Model::ApplyGuardrailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ApplyGuardrailResponseReceivedHandler;
     typedef std::function<void(const BedrockRuntimeClient*, const Model::ConverseRequest&, const Model::ConverseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConverseResponseReceivedHandler;
     typedef std::function<void(const BedrockRuntimeClient*, const Model::ConverseStreamRequest&, const Model::ConverseStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConverseStreamResponseReceivedHandler;
+    typedef std::function<void(const BedrockRuntimeClient*, const Model::CountTokensRequest&, const Model::CountTokensOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CountTokensResponseReceivedHandler;
     typedef std::function<void(const BedrockRuntimeClient*, const Model::GetAsyncInvokeRequest&, const Model::GetAsyncInvokeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAsyncInvokeResponseReceivedHandler;
     typedef std::function<void(const BedrockRuntimeClient*, const Model::InvokeModelRequest&, Model::InvokeModelOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeModelResponseReceivedHandler;
     typedef std::function<void(Model::InvokeModelWithBidirectionalStreamInput&)> InvokeModelWithBidirectionalStreamStreamReadyHandler;

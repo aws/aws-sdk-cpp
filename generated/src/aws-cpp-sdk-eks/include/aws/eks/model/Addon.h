@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/eks/model/MarketplaceInformation.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/eks/model/AddonNamespaceConfigResponse.h>
 #include <utility>
 
 namespace Aws
@@ -237,6 +238,19 @@ namespace Model
     template<typename PodIdentityAssociationsT = Aws::String>
     Addon& AddPodIdentityAssociations(PodIdentityAssociationsT&& value) { m_podIdentityAssociationsHasBeenSet = true; m_podIdentityAssociations.emplace_back(std::forward<PodIdentityAssociationsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The namespace configuration for the addon. This specifies the Kubernetes
+     * namespace where the addon is installed.</p>
+     */
+    inline const AddonNamespaceConfigResponse& GetNamespaceConfig() const { return m_namespaceConfig; }
+    inline bool NamespaceConfigHasBeenSet() const { return m_namespaceConfigHasBeenSet; }
+    template<typename NamespaceConfigT = AddonNamespaceConfigResponse>
+    void SetNamespaceConfig(NamespaceConfigT&& value) { m_namespaceConfigHasBeenSet = true; m_namespaceConfig = std::forward<NamespaceConfigT>(value); }
+    template<typename NamespaceConfigT = AddonNamespaceConfigResponse>
+    Addon& WithNamespaceConfig(NamespaceConfigT&& value) { SetNamespaceConfig(std::forward<NamespaceConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_addonName;
@@ -283,6 +297,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_podIdentityAssociations;
     bool m_podIdentityAssociationsHasBeenSet = false;
+
+    AddonNamespaceConfigResponse m_namespaceConfig;
+    bool m_namespaceConfigHasBeenSet = false;
   };
 
 } // namespace Model

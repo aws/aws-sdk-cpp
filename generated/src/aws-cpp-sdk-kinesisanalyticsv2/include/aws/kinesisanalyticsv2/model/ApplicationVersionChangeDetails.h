@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * Contains information about the application version changes due to an
-   * operation<p><h3>See Also:</h3>   <a
+   * <p>Contains information about the version changes that the operation applied to
+   * the application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationVersionChangeDetails">AWS
    * API Reference</a></p>
    */
@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * The operation was performed on this version of the application
+     * <p>The new version that the application was updated to.</p>
      */
     inline long long GetApplicationVersionUpdatedFrom() const { return m_applicationVersionUpdatedFrom; }
     inline bool ApplicationVersionUpdatedFromHasBeenSet() const { return m_applicationVersionUpdatedFromHasBeenSet; }
@@ -48,8 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * The operation execution resulted in the transition to the following version of
-     * the application
+     * <p>The version that the operation execution applied to the applicartion.</p>
      */
     inline long long GetApplicationVersionUpdatedTo() const { return m_applicationVersionUpdatedTo; }
     inline bool ApplicationVersionUpdatedToHasBeenSet() const { return m_applicationVersionUpdatedToHasBeenSet; }

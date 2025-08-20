@@ -26,6 +26,7 @@ namespace Aws
         static const int DESTINATION_COUNTRY_BLOCKED_HASH = HashingUtils::HashString("DESTINATION_COUNTRY_BLOCKED");
         static const int FIELD_VALIDATION_FAILED_HASH = HashingUtils::HashString("FIELD_VALIDATION_FAILED");
         static const int ATTACHMENT_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("ATTACHMENT_TYPE_NOT_SUPPORTED");
+        static const int INTERNATIONAL_SENDING_NOT_SUPPORTED_HASH = HashingUtils::HashString("INTERNATIONAL_SENDING_NOT_SUPPORTED");
         static const int INVALID_ARN_HASH = HashingUtils::HashString("INVALID_ARN");
         static const int INVALID_FILTER_VALUES_HASH = HashingUtils::HashString("INVALID_FILTER_VALUES");
         static const int INVALID_IDENTITY_FOR_DESTINATION_COUNTRY_HASH = HashingUtils::HashString("INVALID_IDENTITY_FOR_DESTINATION_COUNTRY");
@@ -88,6 +89,10 @@ namespace Aws
           else if (hashCode == ATTACHMENT_TYPE_NOT_SUPPORTED_HASH)
           {
             return ValidationExceptionReason::ATTACHMENT_TYPE_NOT_SUPPORTED;
+          }
+          else if (hashCode == INTERNATIONAL_SENDING_NOT_SUPPORTED_HASH)
+          {
+            return ValidationExceptionReason::INTERNATIONAL_SENDING_NOT_SUPPORTED;
           }
           else if (hashCode == INVALID_ARN_HASH)
           {
@@ -253,6 +258,8 @@ namespace Aws
             return "FIELD_VALIDATION_FAILED";
           case ValidationExceptionReason::ATTACHMENT_TYPE_NOT_SUPPORTED:
             return "ATTACHMENT_TYPE_NOT_SUPPORTED";
+          case ValidationExceptionReason::INTERNATIONAL_SENDING_NOT_SUPPORTED:
+            return "INTERNATIONAL_SENDING_NOT_SUPPORTED";
           case ValidationExceptionReason::INVALID_ARN:
             return "INVALID_ARN";
           case ValidationExceptionReason::INVALID_FILTER_VALUES:

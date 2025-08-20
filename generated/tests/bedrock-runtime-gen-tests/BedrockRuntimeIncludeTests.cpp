@@ -52,7 +52,11 @@
 #include <aws/bedrock-runtime/model/ConverseStreamOutput.h>
 #include <aws/bedrock-runtime/model/ConverseStreamRequest.h>
 #include <aws/bedrock-runtime/model/ConverseStreamTrace.h>
+#include <aws/bedrock-runtime/model/ConverseTokensRequest.h>
 #include <aws/bedrock-runtime/model/ConverseTrace.h>
+#include <aws/bedrock-runtime/model/CountTokensInput.h>
+#include <aws/bedrock-runtime/model/CountTokensRequest.h>
+#include <aws/bedrock-runtime/model/CountTokensResult.h>
 #include <aws/bedrock-runtime/model/DocumentBlock.h>
 #include <aws/bedrock-runtime/model/DocumentCharLocation.h>
 #include <aws/bedrock-runtime/model/DocumentChunkLocation.h>
@@ -136,6 +140,7 @@
 #include <aws/bedrock-runtime/model/InferenceConfiguration.h>
 #include <aws/bedrock-runtime/model/InvokeModelRequest.h>
 #include <aws/bedrock-runtime/model/InvokeModelResult.h>
+#include <aws/bedrock-runtime/model/InvokeModelTokensRequest.h>
 #include <aws/bedrock-runtime/model/InvokeModelWithBidirectionalStreamHandler.h>
 #include <aws/bedrock-runtime/model/InvokeModelWithBidirectionalStreamInitialResponse.h>
 #include <aws/bedrock-runtime/model/InvokeModelWithBidirectionalStreamInput.h>

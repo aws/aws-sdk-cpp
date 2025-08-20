@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * Provides a description of the operation, such as the type and status of
-   * operation<p><h3>See Also:</h3>   <a
+   * <p>A description of the aplication operation that provides information about the
+   * updates that were made to the application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationOperationInfo">AWS
    * API Reference</a></p>
    */
@@ -62,7 +62,7 @@ namespace Model
 
     ///@{
     /**
-     * The timestamp at which the operation was created
+     * <p>The timestamp that indicates when the operation was created.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
@@ -74,7 +74,7 @@ namespace Model
 
     ///@{
     /**
-     * The timestamp at which the operation finished for the application
+     * <p>The timestamp that indicates when the operation finished.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }

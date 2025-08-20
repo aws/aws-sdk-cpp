@@ -78,6 +78,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the policy grant.</p>
+     */
+    inline const Aws::String& GetGrantId() const { return m_grantId; }
+    inline bool GrantIdHasBeenSet() const { return m_grantIdHasBeenSet; }
+    template<typename GrantIdT = Aws::String>
+    void SetGrantId(GrantIdT&& value) { m_grantIdHasBeenSet = true; m_grantId = std::forward<GrantIdT>(value); }
+    template<typename GrantIdT = Aws::String>
+    PolicyGrantMember& WithGrantId(GrantIdT&& value) { SetGrantId(std::forward<GrantIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The principal of the policy grant member.</p>
      */
     inline const PolicyGrantPrincipal& GetPrincipal() const { return m_principal; }
@@ -97,6 +109,9 @@ namespace Model
 
     PolicyGrantDetail m_detail;
     bool m_detailHasBeenSet = false;
+
+    Aws::String m_grantId;
+    bool m_grantIdHasBeenSet = false;
 
     PolicyGrantPrincipal m_principal;
     bool m_principalHasBeenSet = false;

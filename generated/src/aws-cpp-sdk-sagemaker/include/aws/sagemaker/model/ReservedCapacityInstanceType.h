@@ -24,7 +24,8 @@ namespace Model
     ml_trn2_48xlarge,
     ml_p6_b200_48xlarge,
     ml_p4de_24xlarge,
-    ml_p6e_gb200_36xlarge
+    ml_p6e_gb200_36xlarge,
+    ml_p5_4xlarge
   };
 
 namespace ReservedCapacityInstanceTypeMapper

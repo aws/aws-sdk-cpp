@@ -40,6 +40,11 @@ PolicyGrantMember& PolicyGrantMember::operator =(JsonView jsonValue)
     m_detail = jsonValue.GetObject("detail");
     m_detailHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("grantId"))
+  {
+    m_grantId = jsonValue.GetString("grantId");
+    m_grantIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("principal"))
   {
     m_principal = jsonValue.GetObject("principal");
@@ -66,6 +71,12 @@ JsonValue PolicyGrantMember::Jsonize() const
   if(m_detailHasBeenSet)
   {
    payload.WithObject("detail", m_detail.Jsonize());
+
+  }
+
+  if(m_grantIdHasBeenSet)
+  {
+   payload.WithString("grantId", m_grantId);
 
   }
 

@@ -31,6 +31,7 @@ static const int UNSUPPORTED_USER_STATE_HASH = HashingUtils::HashString("Unsuppo
 static const int ALIAS_EXISTS_HASH = HashingUtils::HashString("AliasExistsException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int FEATURE_UNAVAILABLE_IN_TIER_HASH = HashingUtils::HashString("FeatureUnavailableInTierException");
+static const int TERMS_EXISTS_HASH = HashingUtils::HashString("TermsExistsException");
 static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalErrorException");
 static const int USER_NOT_CONFIRMED_HASH = HashingUtils::HashString("UserNotConfirmedException");
 static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
@@ -104,6 +105,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == FEATURE_UNAVAILABLE_IN_TIER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::FEATURE_UNAVAILABLE_IN_TIER), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == TERMS_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::TERMS_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_ERROR_HASH)
   {

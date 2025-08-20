@@ -46,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * Operation ID for tracking UpdateApplication request
+     * <p>The operation ID that can be used to track the request.</p>
      */
     inline const Aws::String& GetOperationId() const { return m_operationId; }
     template<typename OperationIdT = Aws::String>

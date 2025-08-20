@@ -14,6 +14,7 @@
 #include <aws/kinesisanalyticsv2/model/ApplicationSystemRollbackConfigurationDescription.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kinesisanalyticsv2/model/ZeppelinApplicationConfigurationDescription.h>
+#include <aws/kinesisanalyticsv2/model/ApplicationEncryptionConfigurationDescription.h>
 #include <aws/kinesisanalyticsv2/model/VpcConfigurationDescription.h>
 #include <utility>
 
@@ -125,7 +126,10 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>Describes whether system rollbacks are enabled for a Managed Service for
+     * Apache Flink application.</p>
+     */
     inline const ApplicationSystemRollbackConfigurationDescription& GetApplicationSystemRollbackConfigurationDescription() const { return m_applicationSystemRollbackConfigurationDescription; }
     inline bool ApplicationSystemRollbackConfigurationDescriptionHasBeenSet() const { return m_applicationSystemRollbackConfigurationDescriptionHasBeenSet; }
     template<typename ApplicationSystemRollbackConfigurationDescriptionT = ApplicationSystemRollbackConfigurationDescription>
@@ -161,6 +165,18 @@ namespace Model
     template<typename ZeppelinApplicationConfigurationDescriptionT = ZeppelinApplicationConfigurationDescription>
     ApplicationConfigurationDescription& WithZeppelinApplicationConfigurationDescription(ZeppelinApplicationConfigurationDescriptionT&& value) { SetZeppelinApplicationConfigurationDescription(std::forward<ZeppelinApplicationConfigurationDescriptionT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Describes the encryption at rest configuration.</p>
+     */
+    inline const ApplicationEncryptionConfigurationDescription& GetApplicationEncryptionConfigurationDescription() const { return m_applicationEncryptionConfigurationDescription; }
+    inline bool ApplicationEncryptionConfigurationDescriptionHasBeenSet() const { return m_applicationEncryptionConfigurationDescriptionHasBeenSet; }
+    template<typename ApplicationEncryptionConfigurationDescriptionT = ApplicationEncryptionConfigurationDescription>
+    void SetApplicationEncryptionConfigurationDescription(ApplicationEncryptionConfigurationDescriptionT&& value) { m_applicationEncryptionConfigurationDescriptionHasBeenSet = true; m_applicationEncryptionConfigurationDescription = std::forward<ApplicationEncryptionConfigurationDescriptionT>(value); }
+    template<typename ApplicationEncryptionConfigurationDescriptionT = ApplicationEncryptionConfigurationDescription>
+    ApplicationConfigurationDescription& WithApplicationEncryptionConfigurationDescription(ApplicationEncryptionConfigurationDescriptionT&& value) { SetApplicationEncryptionConfigurationDescription(std::forward<ApplicationEncryptionConfigurationDescriptionT>(value)); return *this;}
+    ///@}
   private:
 
     SqlApplicationConfigurationDescription m_sqlApplicationConfigurationDescription;
@@ -189,6 +205,9 @@ namespace Model
 
     ZeppelinApplicationConfigurationDescription m_zeppelinApplicationConfigurationDescription;
     bool m_zeppelinApplicationConfigurationDescriptionHasBeenSet = false;
+
+    ApplicationEncryptionConfigurationDescription m_applicationEncryptionConfigurationDescription;
+    bool m_applicationEncryptionConfigurationDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -114,6 +114,19 @@ namespace Model
     template<typename MarketplaceInformationT = MarketplaceInformation>
     AddonInfo& WithMarketplaceInformation(MarketplaceInformationT&& value) { SetMarketplaceInformation(std::forward<MarketplaceInformationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The default Kubernetes namespace where this addon is typically installed if
+     * no custom namespace is specified.</p>
+     */
+    inline const Aws::String& GetDefaultNamespace() const { return m_defaultNamespace; }
+    inline bool DefaultNamespaceHasBeenSet() const { return m_defaultNamespaceHasBeenSet; }
+    template<typename DefaultNamespaceT = Aws::String>
+    void SetDefaultNamespace(DefaultNamespaceT&& value) { m_defaultNamespaceHasBeenSet = true; m_defaultNamespace = std::forward<DefaultNamespaceT>(value); }
+    template<typename DefaultNamespaceT = Aws::String>
+    AddonInfo& WithDefaultNamespace(DefaultNamespaceT&& value) { SetDefaultNamespace(std::forward<DefaultNamespaceT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_addonName;
@@ -133,6 +146,9 @@ namespace Model
 
     MarketplaceInformation m_marketplaceInformation;
     bool m_marketplaceInformationHasBeenSet = false;
+
+    Aws::String m_defaultNamespace;
+    bool m_defaultNamespaceHasBeenSet = false;
   };
 
 } // namespace Model

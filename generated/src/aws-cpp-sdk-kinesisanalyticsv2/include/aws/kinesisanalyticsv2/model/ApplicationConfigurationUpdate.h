@@ -13,6 +13,7 @@
 #include <aws/kinesisanalyticsv2/model/ApplicationSystemRollbackConfigurationUpdate.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kinesisanalyticsv2/model/ZeppelinApplicationConfigurationUpdate.h>
+#include <aws/kinesisanalyticsv2/model/ApplicationEncryptionConfigurationUpdate.h>
 #include <aws/kinesisanalyticsv2/model/VpcConfigurationUpdate.h>
 #include <utility>
 
@@ -111,7 +112,10 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>Describes whether system rollbacks are enabled for a Managed Service for
+     * Apache Flink application.</p>
+     */
     inline const ApplicationSystemRollbackConfigurationUpdate& GetApplicationSystemRollbackConfigurationUpdate() const { return m_applicationSystemRollbackConfigurationUpdate; }
     inline bool ApplicationSystemRollbackConfigurationUpdateHasBeenSet() const { return m_applicationSystemRollbackConfigurationUpdateHasBeenSet; }
     template<typename ApplicationSystemRollbackConfigurationUpdateT = ApplicationSystemRollbackConfigurationUpdate>
@@ -147,6 +151,18 @@ namespace Model
     template<typename ZeppelinApplicationConfigurationUpdateT = ZeppelinApplicationConfigurationUpdate>
     ApplicationConfigurationUpdate& WithZeppelinApplicationConfigurationUpdate(ZeppelinApplicationConfigurationUpdateT&& value) { SetZeppelinApplicationConfigurationUpdate(std::forward<ZeppelinApplicationConfigurationUpdateT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Represents an update for encryption at rest configuration.</p>
+     */
+    inline const ApplicationEncryptionConfigurationUpdate& GetApplicationEncryptionConfigurationUpdate() const { return m_applicationEncryptionConfigurationUpdate; }
+    inline bool ApplicationEncryptionConfigurationUpdateHasBeenSet() const { return m_applicationEncryptionConfigurationUpdateHasBeenSet; }
+    template<typename ApplicationEncryptionConfigurationUpdateT = ApplicationEncryptionConfigurationUpdate>
+    void SetApplicationEncryptionConfigurationUpdate(ApplicationEncryptionConfigurationUpdateT&& value) { m_applicationEncryptionConfigurationUpdateHasBeenSet = true; m_applicationEncryptionConfigurationUpdate = std::forward<ApplicationEncryptionConfigurationUpdateT>(value); }
+    template<typename ApplicationEncryptionConfigurationUpdateT = ApplicationEncryptionConfigurationUpdate>
+    ApplicationConfigurationUpdate& WithApplicationEncryptionConfigurationUpdate(ApplicationEncryptionConfigurationUpdateT&& value) { SetApplicationEncryptionConfigurationUpdate(std::forward<ApplicationEncryptionConfigurationUpdateT>(value)); return *this;}
+    ///@}
   private:
 
     SqlApplicationConfigurationUpdate m_sqlApplicationConfigurationUpdate;
@@ -172,6 +188,9 @@ namespace Model
 
     ZeppelinApplicationConfigurationUpdate m_zeppelinApplicationConfigurationUpdate;
     bool m_zeppelinApplicationConfigurationUpdateHasBeenSet = false;
+
+    ApplicationEncryptionConfigurationUpdate m_applicationEncryptionConfigurationUpdate;
+    bool m_applicationEncryptionConfigurationUpdateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -51,6 +51,7 @@
 #include <aws/cognito-idp/model/CreateIdentityProviderResult.h>
 #include <aws/cognito-idp/model/CreateManagedLoginBrandingResult.h>
 #include <aws/cognito-idp/model/CreateResourceServerResult.h>
+#include <aws/cognito-idp/model/CreateTermsResult.h>
 #include <aws/cognito-idp/model/CreateUserImportJobResult.h>
 #include <aws/cognito-idp/model/CreateUserPoolResult.h>
 #include <aws/cognito-idp/model/CreateUserPoolClientResult.h>
@@ -63,6 +64,7 @@
 #include <aws/cognito-idp/model/DescribeManagedLoginBrandingByClientResult.h>
 #include <aws/cognito-idp/model/DescribeResourceServerResult.h>
 #include <aws/cognito-idp/model/DescribeRiskConfigurationResult.h>
+#include <aws/cognito-idp/model/DescribeTermsResult.h>
 #include <aws/cognito-idp/model/DescribeUserImportJobResult.h>
 #include <aws/cognito-idp/model/DescribeUserPoolResult.h>
 #include <aws/cognito-idp/model/DescribeUserPoolClientResult.h>
@@ -87,6 +89,7 @@
 #include <aws/cognito-idp/model/ListIdentityProvidersResult.h>
 #include <aws/cognito-idp/model/ListResourceServersResult.h>
 #include <aws/cognito-idp/model/ListTagsForResourceResult.h>
+#include <aws/cognito-idp/model/ListTermsResult.h>
 #include <aws/cognito-idp/model/ListUserImportJobsResult.h>
 #include <aws/cognito-idp/model/ListUserPoolClientsResult.h>
 #include <aws/cognito-idp/model/ListUserPoolsResult.h>
@@ -114,6 +117,7 @@
 #include <aws/cognito-idp/model/UpdateIdentityProviderResult.h>
 #include <aws/cognito-idp/model/UpdateManagedLoginBrandingResult.h>
 #include <aws/cognito-idp/model/UpdateResourceServerResult.h>
+#include <aws/cognito-idp/model/UpdateTermsResult.h>
 #include <aws/cognito-idp/model/UpdateUserAttributesResult.h>
 #include <aws/cognito-idp/model/UpdateUserPoolResult.h>
 #include <aws/cognito-idp/model/UpdateUserPoolClientResult.h>
@@ -200,6 +204,7 @@ namespace Aws
       class CreateIdentityProviderRequest;
       class CreateManagedLoginBrandingRequest;
       class CreateResourceServerRequest;
+      class CreateTermsRequest;
       class CreateUserImportJobRequest;
       class CreateUserPoolRequest;
       class CreateUserPoolClientRequest;
@@ -208,6 +213,7 @@ namespace Aws
       class DeleteIdentityProviderRequest;
       class DeleteManagedLoginBrandingRequest;
       class DeleteResourceServerRequest;
+      class DeleteTermsRequest;
       class DeleteUserRequest;
       class DeleteUserAttributesRequest;
       class DeleteUserPoolRequest;
@@ -219,6 +225,7 @@ namespace Aws
       class DescribeManagedLoginBrandingByClientRequest;
       class DescribeResourceServerRequest;
       class DescribeRiskConfigurationRequest;
+      class DescribeTermsRequest;
       class DescribeUserImportJobRequest;
       class DescribeUserPoolRequest;
       class DescribeUserPoolClientRequest;
@@ -244,6 +251,7 @@ namespace Aws
       class ListIdentityProvidersRequest;
       class ListResourceServersRequest;
       class ListTagsForResourceRequest;
+      class ListTermsRequest;
       class ListUserImportJobsRequest;
       class ListUserPoolClientsRequest;
       class ListUserPoolsRequest;
@@ -271,6 +279,7 @@ namespace Aws
       class UpdateIdentityProviderRequest;
       class UpdateManagedLoginBrandingRequest;
       class UpdateResourceServerRequest;
+      class UpdateTermsRequest;
       class UpdateUserAttributesRequest;
       class UpdateUserPoolRequest;
       class UpdateUserPoolClientRequest;
@@ -317,6 +326,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateIdentityProviderResult, CognitoIdentityProviderError> CreateIdentityProviderOutcome;
       typedef Aws::Utils::Outcome<CreateManagedLoginBrandingResult, CognitoIdentityProviderError> CreateManagedLoginBrandingOutcome;
       typedef Aws::Utils::Outcome<CreateResourceServerResult, CognitoIdentityProviderError> CreateResourceServerOutcome;
+      typedef Aws::Utils::Outcome<CreateTermsResult, CognitoIdentityProviderError> CreateTermsOutcome;
       typedef Aws::Utils::Outcome<CreateUserImportJobResult, CognitoIdentityProviderError> CreateUserImportJobOutcome;
       typedef Aws::Utils::Outcome<CreateUserPoolResult, CognitoIdentityProviderError> CreateUserPoolOutcome;
       typedef Aws::Utils::Outcome<CreateUserPoolClientResult, CognitoIdentityProviderError> CreateUserPoolClientOutcome;
@@ -325,6 +335,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> DeleteIdentityProviderOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> DeleteManagedLoginBrandingOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> DeleteResourceServerOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> DeleteTermsOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> DeleteUserOutcome;
       typedef Aws::Utils::Outcome<DeleteUserAttributesResult, CognitoIdentityProviderError> DeleteUserAttributesOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> DeleteUserPoolOutcome;
@@ -336,6 +347,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeManagedLoginBrandingByClientResult, CognitoIdentityProviderError> DescribeManagedLoginBrandingByClientOutcome;
       typedef Aws::Utils::Outcome<DescribeResourceServerResult, CognitoIdentityProviderError> DescribeResourceServerOutcome;
       typedef Aws::Utils::Outcome<DescribeRiskConfigurationResult, CognitoIdentityProviderError> DescribeRiskConfigurationOutcome;
+      typedef Aws::Utils::Outcome<DescribeTermsResult, CognitoIdentityProviderError> DescribeTermsOutcome;
       typedef Aws::Utils::Outcome<DescribeUserImportJobResult, CognitoIdentityProviderError> DescribeUserImportJobOutcome;
       typedef Aws::Utils::Outcome<DescribeUserPoolResult, CognitoIdentityProviderError> DescribeUserPoolOutcome;
       typedef Aws::Utils::Outcome<DescribeUserPoolClientResult, CognitoIdentityProviderError> DescribeUserPoolClientOutcome;
@@ -361,6 +373,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListIdentityProvidersResult, CognitoIdentityProviderError> ListIdentityProvidersOutcome;
       typedef Aws::Utils::Outcome<ListResourceServersResult, CognitoIdentityProviderError> ListResourceServersOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, CognitoIdentityProviderError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<ListTermsResult, CognitoIdentityProviderError> ListTermsOutcome;
       typedef Aws::Utils::Outcome<ListUserImportJobsResult, CognitoIdentityProviderError> ListUserImportJobsOutcome;
       typedef Aws::Utils::Outcome<ListUserPoolClientsResult, CognitoIdentityProviderError> ListUserPoolClientsOutcome;
       typedef Aws::Utils::Outcome<ListUserPoolsResult, CognitoIdentityProviderError> ListUserPoolsOutcome;
@@ -388,6 +401,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateIdentityProviderResult, CognitoIdentityProviderError> UpdateIdentityProviderOutcome;
       typedef Aws::Utils::Outcome<UpdateManagedLoginBrandingResult, CognitoIdentityProviderError> UpdateManagedLoginBrandingOutcome;
       typedef Aws::Utils::Outcome<UpdateResourceServerResult, CognitoIdentityProviderError> UpdateResourceServerOutcome;
+      typedef Aws::Utils::Outcome<UpdateTermsResult, CognitoIdentityProviderError> UpdateTermsOutcome;
       typedef Aws::Utils::Outcome<UpdateUserAttributesResult, CognitoIdentityProviderError> UpdateUserAttributesOutcome;
       typedef Aws::Utils::Outcome<UpdateUserPoolResult, CognitoIdentityProviderError> UpdateUserPoolOutcome;
       typedef Aws::Utils::Outcome<UpdateUserPoolClientResult, CognitoIdentityProviderError> UpdateUserPoolClientOutcome;
@@ -434,6 +448,7 @@ namespace Aws
       typedef std::future<CreateIdentityProviderOutcome> CreateIdentityProviderOutcomeCallable;
       typedef std::future<CreateManagedLoginBrandingOutcome> CreateManagedLoginBrandingOutcomeCallable;
       typedef std::future<CreateResourceServerOutcome> CreateResourceServerOutcomeCallable;
+      typedef std::future<CreateTermsOutcome> CreateTermsOutcomeCallable;
       typedef std::future<CreateUserImportJobOutcome> CreateUserImportJobOutcomeCallable;
       typedef std::future<CreateUserPoolOutcome> CreateUserPoolOutcomeCallable;
       typedef std::future<CreateUserPoolClientOutcome> CreateUserPoolClientOutcomeCallable;
@@ -442,6 +457,7 @@ namespace Aws
       typedef std::future<DeleteIdentityProviderOutcome> DeleteIdentityProviderOutcomeCallable;
       typedef std::future<DeleteManagedLoginBrandingOutcome> DeleteManagedLoginBrandingOutcomeCallable;
       typedef std::future<DeleteResourceServerOutcome> DeleteResourceServerOutcomeCallable;
+      typedef std::future<DeleteTermsOutcome> DeleteTermsOutcomeCallable;
       typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
       typedef std::future<DeleteUserAttributesOutcome> DeleteUserAttributesOutcomeCallable;
       typedef std::future<DeleteUserPoolOutcome> DeleteUserPoolOutcomeCallable;
@@ -453,6 +469,7 @@ namespace Aws
       typedef std::future<DescribeManagedLoginBrandingByClientOutcome> DescribeManagedLoginBrandingByClientOutcomeCallable;
       typedef std::future<DescribeResourceServerOutcome> DescribeResourceServerOutcomeCallable;
       typedef std::future<DescribeRiskConfigurationOutcome> DescribeRiskConfigurationOutcomeCallable;
+      typedef std::future<DescribeTermsOutcome> DescribeTermsOutcomeCallable;
       typedef std::future<DescribeUserImportJobOutcome> DescribeUserImportJobOutcomeCallable;
       typedef std::future<DescribeUserPoolOutcome> DescribeUserPoolOutcomeCallable;
       typedef std::future<DescribeUserPoolClientOutcome> DescribeUserPoolClientOutcomeCallable;
@@ -478,6 +495,7 @@ namespace Aws
       typedef std::future<ListIdentityProvidersOutcome> ListIdentityProvidersOutcomeCallable;
       typedef std::future<ListResourceServersOutcome> ListResourceServersOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<ListTermsOutcome> ListTermsOutcomeCallable;
       typedef std::future<ListUserImportJobsOutcome> ListUserImportJobsOutcomeCallable;
       typedef std::future<ListUserPoolClientsOutcome> ListUserPoolClientsOutcomeCallable;
       typedef std::future<ListUserPoolsOutcome> ListUserPoolsOutcomeCallable;
@@ -505,6 +523,7 @@ namespace Aws
       typedef std::future<UpdateIdentityProviderOutcome> UpdateIdentityProviderOutcomeCallable;
       typedef std::future<UpdateManagedLoginBrandingOutcome> UpdateManagedLoginBrandingOutcomeCallable;
       typedef std::future<UpdateResourceServerOutcome> UpdateResourceServerOutcomeCallable;
+      typedef std::future<UpdateTermsOutcome> UpdateTermsOutcomeCallable;
       typedef std::future<UpdateUserAttributesOutcome> UpdateUserAttributesOutcomeCallable;
       typedef std::future<UpdateUserPoolOutcome> UpdateUserPoolOutcomeCallable;
       typedef std::future<UpdateUserPoolClientOutcome> UpdateUserPoolClientOutcomeCallable;
@@ -554,6 +573,7 @@ namespace Aws
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::CreateIdentityProviderRequest&, const Model::CreateIdentityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIdentityProviderResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::CreateManagedLoginBrandingRequest&, const Model::CreateManagedLoginBrandingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateManagedLoginBrandingResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::CreateResourceServerRequest&, const Model::CreateResourceServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateResourceServerResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::CreateTermsRequest&, const Model::CreateTermsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTermsResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::CreateUserImportJobRequest&, const Model::CreateUserImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserImportJobResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::CreateUserPoolRequest&, const Model::CreateUserPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserPoolResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::CreateUserPoolClientRequest&, const Model::CreateUserPoolClientOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserPoolClientResponseReceivedHandler;
@@ -562,6 +582,7 @@ namespace Aws
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteIdentityProviderRequest&, const Model::DeleteIdentityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIdentityProviderResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteManagedLoginBrandingRequest&, const Model::DeleteManagedLoginBrandingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteManagedLoginBrandingResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteResourceServerRequest&, const Model::DeleteResourceServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourceServerResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteTermsRequest&, const Model::DeleteTermsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTermsResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteUserAttributesRequest&, const Model::DeleteUserAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserAttributesResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteUserPoolRequest&, const Model::DeleteUserPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserPoolResponseReceivedHandler;
@@ -573,6 +594,7 @@ namespace Aws
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeManagedLoginBrandingByClientRequest&, const Model::DescribeManagedLoginBrandingByClientOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeManagedLoginBrandingByClientResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeResourceServerRequest&, const Model::DescribeResourceServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResourceServerResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeRiskConfigurationRequest&, const Model::DescribeRiskConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRiskConfigurationResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeTermsRequest&, const Model::DescribeTermsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTermsResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeUserImportJobRequest&, const Model::DescribeUserImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserImportJobResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeUserPoolRequest&, const Model::DescribeUserPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserPoolResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeUserPoolClientRequest&, const Model::DescribeUserPoolClientOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserPoolClientResponseReceivedHandler;
@@ -598,6 +620,7 @@ namespace Aws
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ListIdentityProvidersRequest&, const Model::ListIdentityProvidersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIdentityProvidersResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ListResourceServersRequest&, const Model::ListResourceServersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceServersResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ListTermsRequest&, const Model::ListTermsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTermsResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ListUserImportJobsRequest&, const Model::ListUserImportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserImportJobsResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ListUserPoolClientsRequest&, const Model::ListUserPoolClientsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserPoolClientsResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ListUserPoolsRequest&, const Model::ListUserPoolsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserPoolsResponseReceivedHandler;
@@ -625,6 +648,7 @@ namespace Aws
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateIdentityProviderRequest&, const Model::UpdateIdentityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIdentityProviderResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateManagedLoginBrandingRequest&, const Model::UpdateManagedLoginBrandingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateManagedLoginBrandingResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateResourceServerRequest&, const Model::UpdateResourceServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResourceServerResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateTermsRequest&, const Model::UpdateTermsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTermsResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateUserAttributesRequest&, const Model::UpdateUserAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserAttributesResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateUserPoolRequest&, const Model::UpdateUserPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserPoolResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateUserPoolClientRequest&, const Model::UpdateUserPoolClientOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserPoolClientResponseReceivedHandler;

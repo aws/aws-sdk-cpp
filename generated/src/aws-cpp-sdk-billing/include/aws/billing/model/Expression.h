@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p> See <a
-   * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+   * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>.
    * Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/Expression">AWS

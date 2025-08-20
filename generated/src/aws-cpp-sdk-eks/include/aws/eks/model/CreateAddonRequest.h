@@ -10,6 +10,7 @@
 #include <aws/eks/model/ResolveConflicts.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/eks/model/AddonNamespaceConfigRequest.h>
 #include <aws/eks/model/AddonPodIdentityAssociations.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -188,6 +189,19 @@ namespace Model
     template<typename PodIdentityAssociationsT = AddonPodIdentityAssociations>
     CreateAddonRequest& AddPodIdentityAssociations(PodIdentityAssociationsT&& value) { m_podIdentityAssociationsHasBeenSet = true; m_podIdentityAssociations.emplace_back(std::forward<PodIdentityAssociationsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The namespace configuration for the addon. If specified, this will override
+     * the default namespace for the addon.</p>
+     */
+    inline const AddonNamespaceConfigRequest& GetNamespaceConfig() const { return m_namespaceConfig; }
+    inline bool NamespaceConfigHasBeenSet() const { return m_namespaceConfigHasBeenSet; }
+    template<typename NamespaceConfigT = AddonNamespaceConfigRequest>
+    void SetNamespaceConfig(NamespaceConfigT&& value) { m_namespaceConfigHasBeenSet = true; m_namespaceConfig = std::forward<NamespaceConfigT>(value); }
+    template<typename NamespaceConfigT = AddonNamespaceConfigRequest>
+    CreateAddonRequest& WithNamespaceConfig(NamespaceConfigT&& value) { SetNamespaceConfig(std::forward<NamespaceConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_clusterName;
@@ -216,6 +230,9 @@ namespace Model
 
     Aws::Vector<AddonPodIdentityAssociations> m_podIdentityAssociations;
     bool m_podIdentityAssociationsHasBeenSet = false;
+
+    AddonNamespaceConfigRequest m_namespaceConfig;
+    bool m_namespaceConfigHasBeenSet = false;
   };
 
 } // namespace Model

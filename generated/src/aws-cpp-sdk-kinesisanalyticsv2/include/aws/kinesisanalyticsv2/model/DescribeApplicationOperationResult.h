@@ -26,8 +26,8 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
   /**
-   * Provides details of the operation corresponding to the operation-ID on a Managed
-   * Service for Apache Flink application<p><h3>See Also:</h3>   <a
+   * <p>Provides details of the operation that corresponds to the operation ID on a
+   * Managed Service for Apache Flink application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationOperationResponse">AWS
    * API Reference</a></p>
    */

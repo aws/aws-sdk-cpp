@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>A version number that indicates the state of managed login for your domain.
      * Version <code>1</code> is hosted UI (classic). Version <code>2</code> is the
-     * newer managed login with the branding designer. For more information, see <a
+     * newer managed login with the branding editor. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">Managed
      * login</a>.</p>
      */

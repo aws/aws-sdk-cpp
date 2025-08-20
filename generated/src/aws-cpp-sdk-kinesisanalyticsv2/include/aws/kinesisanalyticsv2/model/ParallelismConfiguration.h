@@ -27,9 +27,9 @@ namespace Model
    * <p>Describes parameters for how a Managed Service for Apache Flink application
    * executes multiple tasks simultaneously. For more information about parallelism,
    * see <a
-   * href="https://nightlies.apache.org/flink/flink-docs-release-1.19/dev/parallel.html">Parallel
+   * href="https://nightlies.apache.org/flink/flink-docs-release-1.20/dev/parallel.html">Parallel
    * Execution</a> in the <a
-   * href="https://nightlies.apache.org/flink/flink-docs-release-1.19/">Apache Flink
+   * href="https://nightlies.apache.org/flink/flink-docs-release-1.20/">Apache Flink
    * Documentation</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ParallelismConfiguration">AWS
    * API Reference</a></p>
@@ -65,7 +65,7 @@ namespace Model
      * <code>CurrentParallelism</code> value in response to application load. The
      * service can increase the <code>CurrentParallelism</code> value up to the maximum
      * parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for
-     * the application. The maximum KPUs for an application is 32 by default, and can
+     * the application. The maximum KPUs for an application is 64 by default, and can
      * be increased by requesting a limit increase. If application load is reduced, the
      * service can reduce the <code>CurrentParallelism</code> value down to the
      * <code>Parallelism</code> setting.</p>

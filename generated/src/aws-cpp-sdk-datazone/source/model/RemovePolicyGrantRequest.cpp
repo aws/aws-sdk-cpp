@@ -22,6 +22,12 @@ Aws::String RemovePolicyGrantRequest::SerializePayload() const
 
   }
 
+  if(m_grantIdentifierHasBeenSet)
+  {
+   payload.WithString("grantIdentifier", m_grantIdentifier);
+
+  }
+
   if(m_policyTypeHasBeenSet)
   {
    payload.WithString("policyType", ManagedPolicyTypeMapper::GetNameForManagedPolicyType(m_policyType));
