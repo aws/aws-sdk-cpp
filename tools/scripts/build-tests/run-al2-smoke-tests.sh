@@ -17,4 +17,4 @@ fi
 
 echo "Contents of CODEBUILD_SRC_DIR: ${CODEBUILD_SRC_DIR}"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${CODEBUILD_SRC_DIR}/al2-install/lib64/"
-python3 ../aws-sdk-cpp/tools/scripts/run_smoke_tests_simple.py --testDir "${CODEBUILD_SRC_DIR}/al2-build"
+python3 "${CODEBUILD_SRC_DIR}/tools/scripts/run_smoke_tests_simple.py" --testDir "${CODEBUILD_SRC_DIR}/al2-build"
