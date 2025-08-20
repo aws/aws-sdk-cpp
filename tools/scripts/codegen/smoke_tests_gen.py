@@ -35,10 +35,7 @@ class SmokeTestsGen(object):
         """
         # Block specific smoke tests
         blocked_services = {
-            'elastictranscoder',
             'es',
-            'iot-managed-integrations',
-            'freetier'
         }
         clients_to_build = clients_to_build - blocked_services
         
