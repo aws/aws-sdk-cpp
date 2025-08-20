@@ -41,6 +41,9 @@ TEST_F(CloudTrailSmokeTestSuite, DescribeTrailsSuccess )
     
     DescribeTrailsRequest input;
     auto outcome = clientSp->DescribeTrails(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "DescribeTrails failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

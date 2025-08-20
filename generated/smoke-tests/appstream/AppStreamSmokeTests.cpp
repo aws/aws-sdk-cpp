@@ -41,6 +41,9 @@ TEST_F(AppStreamSmokeTestSuite, DescribeStacksSuccess )
     
     DescribeStacksRequest input;
     auto outcome = clientSp->DescribeStacks(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "DescribeStacks failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

@@ -43,6 +43,9 @@ TEST_F(ACMSmokeTestSuite, GetCertificateFailure )
     GetCertificateRequest input;
     input.SetCertificateArn("arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012");
     auto outcome = clientSp->GetCertificate(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "GetCertificate failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 TEST_F(ACMSmokeTestSuite, ListCertificatesSuccess )
@@ -56,6 +59,9 @@ TEST_F(ACMSmokeTestSuite, ListCertificatesSuccess )
     
     ListCertificatesRequest input;
     auto outcome = clientSp->ListCertificates(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "ListCertificates failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

@@ -41,6 +41,9 @@ TEST_F(AthenaSmokeTestSuite, ListNamedQueriesSuccess )
     
     ListNamedQueriesRequest input;
     auto outcome = clientSp->ListNamedQueries(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "ListNamedQueries failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

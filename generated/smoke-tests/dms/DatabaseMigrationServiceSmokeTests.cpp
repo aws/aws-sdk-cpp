@@ -41,6 +41,9 @@ TEST_F(DatabaseMigrationServiceSmokeTestSuite, DescribeEndpointsSuccess )
     
     DescribeEndpointsRequest input;
     auto outcome = clientSp->DescribeEndpoints(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "DescribeEndpoints failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

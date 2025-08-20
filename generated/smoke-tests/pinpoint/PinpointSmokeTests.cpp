@@ -43,6 +43,9 @@ TEST_F(PinpointSmokeTestSuite, GetAppFailure )
     GetAppRequest input;
     input.SetApplicationId("InvalidApplicationId");
     auto outcome = clientSp->GetApp(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "GetApp failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 TEST_F(PinpointSmokeTestSuite, GetAppsSuccess )
@@ -56,6 +59,9 @@ TEST_F(PinpointSmokeTestSuite, GetAppsSuccess )
     
     GetAppsRequest input;
     auto outcome = clientSp->GetApps(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "GetApps failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

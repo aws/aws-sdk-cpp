@@ -41,6 +41,9 @@ TEST_F(GameLiftSmokeTestSuite, ListBuildsSuccess )
     
     ListBuildsRequest input;
     auto outcome = clientSp->ListBuilds(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "ListBuilds failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

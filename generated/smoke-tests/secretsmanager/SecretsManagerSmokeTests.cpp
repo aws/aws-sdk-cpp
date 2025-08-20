@@ -43,6 +43,9 @@ TEST_F(SecretsManagerSmokeTestSuite, DescribeSecretFailure )
     DescribeSecretRequest input;
     input.SetSecretId("fake-secret-id");
     auto outcome = clientSp->DescribeSecret(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "DescribeSecret failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 TEST_F(SecretsManagerSmokeTestSuite, ListSecretsSuccess )
@@ -56,6 +59,9 @@ TEST_F(SecretsManagerSmokeTestSuite, ListSecretsSuccess )
     
     ListSecretsRequest input;
     auto outcome = clientSp->ListSecrets(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "ListSecrets failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }
