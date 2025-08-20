@@ -631,20 +631,22 @@ void AWSAuthV4Signer::UpdateUserAgentWithCredentialFeatures(Aws::Http::HttpReque
     Aws::StringStream credentialMetrics;
     bool firstFeature = true;
 
-    static const std::map<Aws::Client::UserAgentFeature, char> featureMap = {
-        {Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS, 'g'},
-        // Add other credential mappings as needed
-    };
-
     for (const auto& feature : features) {
-        auto it = featureMap.find(feature);
-        if (it != featureMap.end()) {
-            if (!firstFeature) {
-                credentialMetrics << ",";
-            }
-            credentialMetrics << it->second;
-            firstFeature = false;
+        char featureChar = 0;
+        switch (feature) {
+            case Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS:
+                featureChar = 'g';
+                break;
+            // Add other credential feature mappings as needed
+            default:
+                continue; // Skip non-credential features
         }
+        
+        if (!firstFeature) {
+            credentialMetrics << ",";
+        }
+        credentialMetrics << featureChar;
+        firstFeature = false;
     }
 
     if (credentialMetrics.str().empty()) {
