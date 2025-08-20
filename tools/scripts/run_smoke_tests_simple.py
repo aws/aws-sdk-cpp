@@ -73,14 +73,18 @@ def main():
 
         for test_suite, test_name in test_cases[service]:
             full_test_name = f"{test_suite}{test_name}"
+            
+            # Determine if test expects an error based on test name
+            error_expected = "error expected from service" if "Failure" in test_name or "Error" in test_name else "no error expected from service"
+            
             try:
                 test_command = [executable, f'--gtest_filter={full_test_name}']
                 test_result = subprocess.run(test_command, capture_output=True, text=True)
 
                 if test_result.returncode == 0:
-                    print(f"ok {service} {test_name} - no error expected from service")
+                    print(f"ok {service} {test_name} - {error_expected}")
                 else:
-                    print(f"not ok {service} {test_name} - no error expected from service")
+                    print(f"not ok {service} {test_name} - {error_expected}")
                     # Extract error message from stdout for stack trace
                     stdout_lines = test_result.stdout.strip().split('\n') if test_result.stdout.strip() else []
                     error_msg = None
@@ -100,7 +104,8 @@ def main():
                     else:
                         print(f"# Stack trace: Test failed with return code {test_result.returncode}")
             except Exception as e:
-                print(f"not ok {service} {test_name} - no error expected from service")
+                error_expected = "error expected from service" if "Failure" in test_name or "Error" in test_name else "no error expected from service"
+                print(f"not ok {service} {test_name} - {error_expected}")
                 print(f"# Stack trace: {str(e)}")
 
     return 0
