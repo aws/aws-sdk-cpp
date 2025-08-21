@@ -255,6 +255,7 @@
 #include <aws/glue/model/DataQualityEncryption.h>
 #include <aws/glue/model/DataQualityEncryptionMode.h>
 #include <aws/glue/model/DataQualityEvaluationRunAdditionalRunOptions.h>
+#include <aws/glue/model/DataQualityGlueTable.h>
 #include <aws/glue/model/DataQualityMetricValues.h>
 #include <aws/glue/model/DataQualityModelStatus.h>
 #include <aws/glue/model/DataQualityObservation.h>

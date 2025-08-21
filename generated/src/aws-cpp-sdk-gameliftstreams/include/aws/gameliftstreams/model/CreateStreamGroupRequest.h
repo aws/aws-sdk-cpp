@@ -103,14 +103,14 @@ namespace Model
     ///@{
     /**
      * <p>The unique identifier of the Amazon GameLift Streams application that you
-     * want to associate to a stream group as the default application. The application
-     * must be in <code>READY</code> status. By setting the default application
-     * identifier, you will optimize startup performance of this application in your
-     * stream group. Once set, this application cannot be disassociated from the stream
-     * group, unlike applications that are associated using AssociateApplications. If
-     * not set when creating a stream group, you will need to call
-     * AssociateApplications later, before you can start streaming.</p> <p>This value
-     * is an <a
+     * want to set as the default application in a stream group. The application that
+     * you specify must be in <code>READY</code> status. The default application is
+     * pre-cached on always-on compute resources, reducing stream startup times. Other
+     * applications are automatically cached as needed.</p> <p>If you do not link an
+     * application when you create a stream group, you will need to link one later,
+     * before you can start streaming, using <a
+     * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_AssociateApplications.html">AssociateApplications</a>.</p>
+     * <p>This value is an <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
      * Resource Name (ARN)</a> or ID that uniquely identifies the application resource.
      * Example ARN:

@@ -70,8 +70,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of contact, either <code>PERSONAL</code> or
-     * <code>ESCALATION</code>.</p>
+     * <p>The type of contact.</p>
      */
     inline ContactType GetType() const { return m_type; }
     inline void SetType(ContactType value) { m_typeHasBeenSet = true; m_type = value; }

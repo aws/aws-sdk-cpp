@@ -52,8 +52,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of minutes to wait to retry sending engagement in the case the
-     * engagement initially fails.</p>
+     * <p>The number of minutes to wait before retrying to send engagement if the
+     * engagement initially failed.</p>
      */
     inline int GetRetryIntervalInMinutes() const { return m_retryIntervalInMinutes; }
     inline bool RetryIntervalInMinutesHasBeenSet() const { return m_retryIntervalInMinutesHasBeenSet; }

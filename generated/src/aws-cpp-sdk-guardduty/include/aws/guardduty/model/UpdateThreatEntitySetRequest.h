@@ -63,9 +63,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A user-friendly name to identify the trusted entity set.</p> <p> <b>List
-     * naming constraints</b> - The name of your list can include lowercase letters,
-     * uppercase letters, numbers, dash (-), and underscore (_).</p>
+     * <p>A user-friendly name to identify the trusted entity set.</p> <p>The name of
+     * your list can include lowercase letters, uppercase letters, numbers, dash (-),
+     * and underscore (_).</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

@@ -77,7 +77,7 @@ namespace Model
     ///@{
     /**
      * <p>The number of instantiations of the task to place and keep running in your
-     * service.</p>
+     * service.</p> <p>This parameter doesn't trigger a new service deployment.</p>
      */
     inline int GetDesiredCount() const { return m_desiredCount; }
     inline bool DesiredCountHasBeenSet() const { return m_desiredCountHasBeenSet; }
@@ -93,6 +93,7 @@ namespace Model
      * <code>ACTIVE</code> revision is used. If you modify the task definition with
      * <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the
      * task definition and then stops an old task after the new version is running.</p>
+     * <p>This parameter triggers a new service deployment.</p>
      */
     inline const Aws::String& GetTaskDefinition() const { return m_taskDefinition; }
     inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }
@@ -120,7 +121,8 @@ namespace Model
      * <code>capacityProviderStrategy</code> parameter.</p> </li> </ul> <p>For
      * information about Amazon Web Services CDK considerations, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/update-service-parameters.html">Amazon
-     * Web Services CDK considerations</a>.</p>
+     * Web Services CDK considerations</a>.</p> <p>This parameter doesn't trigger a new
+     * service deployment.</p>
      */
     inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const { return m_capacityProviderStrategy; }
     inline bool CapacityProviderStrategyHasBeenSet() const { return m_capacityProviderStrategyHasBeenSet; }
@@ -135,7 +137,8 @@ namespace Model
     ///@{
     /**
      * <p>Optional deployment parameters that control how many tasks run during the
-     * deployment and the ordering of stopping and starting tasks.</p>
+     * deployment and the ordering of stopping and starting tasks.</p> <p>This
+     * parameter doesn't trigger a new service deployment.</p>
      */
     inline const DeploymentConfiguration& GetDeploymentConfiguration() const { return m_deploymentConfiguration; }
     inline bool DeploymentConfigurationHasBeenSet() const { return m_deploymentConfigurationHasBeenSet; }
@@ -151,7 +154,8 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing
      * an Amazon ECS service across Availability Zones</a> in the <i> <i>Amazon Elastic
-     * Container Service Developer Guide</i> </i>.</p>
+     * Container Service Developer Guide</i> </i>.</p> <p>This parameter doesn't
+     * trigger a new service deployment.</p>
      */
     inline AvailabilityZoneRebalancing GetAvailabilityZoneRebalancing() const { return m_availabilityZoneRebalancing; }
     inline bool AvailabilityZoneRebalancingHasBeenSet() const { return m_availabilityZoneRebalancingHasBeenSet; }
@@ -161,7 +165,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object representing the network configuration for the service.</p>
+     * <p>An object representing the network configuration for the service.</p> <p>This
+     * parameter triggers a new service deployment.</p>
      */
     inline const NetworkConfiguration& GetNetworkConfiguration() const { return m_networkConfiguration; }
     inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
@@ -179,7 +184,8 @@ namespace Model
      * placement constraints defined for the service. To remove all existing placement
      * constraints, specify an empty array.</p> <p>You can specify a maximum of 10
      * constraints for each task. This limit includes constraints in the task
-     * definition and those specified at runtime.</p>
+     * definition and those specified at runtime.</p> <p>This parameter doesn't trigger
+     * a new service deployment.</p>
      */
     inline const Aws::Vector<PlacementConstraint>& GetPlacementConstraints() const { return m_placementConstraints; }
     inline bool PlacementConstraintsHasBeenSet() const { return m_placementConstraintsHasBeenSet; }
@@ -198,7 +204,8 @@ namespace Model
      * unchanged. If this value is specified, it will override the existing placement
      * strategy defined for the service. To remove an existing placement strategy,
      * specify an empty object.</p> <p>You can specify a maximum of five strategy rules
-     * for each service.</p>
+     * for each service.</p> <p>This parameter doesn't trigger a new service
+     * deployment.</p>
      */
     inline const Aws::Vector<PlacementStrategy>& GetPlacementStrategy() const { return m_placementStrategy; }
     inline bool PlacementStrategyHasBeenSet() const { return m_placementStrategyHasBeenSet; }
@@ -218,7 +225,7 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>This parameter triggers a new service deployment.</p>
      */
     inline const Aws::String& GetPlatformVersion() const { return m_platformVersion; }
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
@@ -255,7 +262,7 @@ namespace Model
      * (about 69 years). During that time, the Amazon ECS service scheduler ignores
      * health check status. This grace period can prevent the service scheduler from
      * marking tasks as unhealthy and stopping them before they have time to come
-     * up.</p>
+     * up.</p> <p>This parameter doesn't trigger a new service deployment.</p>
      */
     inline int GetHealthCheckGracePeriodSeconds() const { return m_healthCheckGracePeriodSeconds; }
     inline bool HealthCheckGracePeriodSecondsHasBeenSet() const { return m_healthCheckGracePeriodSecondsHasBeenSet; }
@@ -278,7 +285,7 @@ namespace Model
      * <p>If <code>true</code>, this enables execute command functionality on all task
      * containers.</p> <p>If you do not want to override the value that was set when
      * the service was created, you can set this to <code>null</code> when performing
-     * this action.</p>
+     * this action.</p> <p>This parameter doesn't trigger a new service deployment.</p>
      */
     inline bool GetEnableExecuteCommand() const { return m_enableExecuteCommand; }
     inline bool EnableExecuteCommandHasBeenSet() const { return m_enableExecuteCommandHasBeenSet; }
@@ -295,7 +302,7 @@ namespace Model
      * Developer Guide</i>.</p> <p>Only tasks launched after the update will reflect
      * the update. To update the tags on all tasks, set <code>forceNewDeployment</code>
      * to <code>true</code>, so that Amazon ECS starts new tasks with the updated
-     * tags.</p>
+     * tags.</p> <p>This parameter doesn't trigger a new service deployment.</p>
      */
     inline bool GetEnableECSManagedTags() const { return m_enableECSManagedTags; }
     inline bool EnableECSManagedTagsHasBeenSet() const { return m_enableECSManagedTagsHasBeenSet; }
@@ -330,7 +337,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Register
      * multiple target groups with a service</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>. </p> <p>You can remove existing
-     * <code>loadBalancers</code> by passing an empty list.</p>
+     * <code>loadBalancers</code> by passing an empty list.</p> <p>This parameter
+     * triggers a new service deployment.</p>
      */
     inline const Aws::Vector<LoadBalancer>& GetLoadBalancers() const { return m_loadBalancers; }
     inline bool LoadBalancersHasBeenSet() const { return m_loadBalancersHasBeenSet; }
@@ -348,7 +356,8 @@ namespace Model
      * service to the task. If no value is specified, the tags aren't propagated.</p>
      * <p>Only tasks launched after the update will reflect the update. To update the
      * tags on all tasks, set <code>forceNewDeployment</code> to <code>true</code>, so
-     * that Amazon ECS starts new tasks with the updated tags.</p>
+     * that Amazon ECS starts new tasks with the updated tags.</p> <p>This parameter
+     * doesn't trigger a new service deployment.</p>
      */
     inline PropagateTags GetPropagateTags() const { return m_propagateTags; }
     inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
@@ -369,7 +378,7 @@ namespace Model
      * configuration, Amazon ECS starts new tasks with the updated service registries
      * configuration, and then stops the old tasks when the new tasks are running.</p>
      * <p>You can remove existing <code>serviceRegistries</code> by passing an empty
-     * list.</p>
+     * list.</p> <p>This parameter triggers a new service deployment.</p>
      */
     inline const Aws::Vector<ServiceRegistry>& GetServiceRegistries() const { return m_serviceRegistries; }
     inline bool ServiceRegistriesHasBeenSet() const { return m_serviceRegistriesHasBeenSet; }
@@ -392,6 +401,7 @@ namespace Model
      * create are supported with Service Connect. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
      * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     * <p>This parameter triggers a new service deployment.</p>
      */
     inline const ServiceConnectConfiguration& GetServiceConnectConfiguration() const { return m_serviceConnectConfiguration; }
     inline bool ServiceConnectConfigurationHasBeenSet() const { return m_serviceConnectConfigurationHasBeenSet; }
@@ -409,7 +419,7 @@ namespace Model
      * The <code>name</code> of the volume must match the <code>name</code> from the
      * task definition. If set to null, no new deployment is triggered. Otherwise, if
      * this configuration differs from the existing one, it triggers a new
-     * deployment.</p>
+     * deployment.</p> <p>This parameter triggers a new service deployment.</p>
      */
     inline const Aws::Vector<ServiceVolumeConfiguration>& GetVolumeConfigurations() const { return m_volumeConfigurations; }
     inline bool VolumeConfigurationsHasBeenSet() const { return m_volumeConfigurationsHasBeenSet; }
@@ -424,7 +434,7 @@ namespace Model
     ///@{
     /**
      * <p>An object representing the VPC Lattice configuration for the service being
-     * updated.</p>
+     * updated.</p> <p>This parameter triggers a new service deployment.</p>
      */
     inline const Aws::Vector<VpcLatticeConfiguration>& GetVpcLatticeConfigurations() const { return m_vpcLatticeConfigurations; }
     inline bool VpcLatticeConfigurationsHasBeenSet() const { return m_vpcLatticeConfigurationsHasBeenSet; }

@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a Amazon GameLift Streams stream session. To retrieve additional
+   * <p>Describes an Amazon GameLift Streams stream session. To retrieve additional
    * details for the stream session, call <a
    * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a>.</p><p><h3>See
    * Also:</h3>   <a
@@ -75,18 +75,30 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current status of the stream session resource. Possible statuses include
-     * the following: </p> <ul> <li> <p> <code>ACTIVATING</code>: The stream session is
-     * starting and preparing to stream.</p> </li> <li> <p> <code>ACTIVE</code>: The
-     * stream session is ready to accept client connections.</p> </li> <li> <p>
-     * <code>CONNECTED</code>: The stream session has a connected client.</p> </li>
-     * <li> <p> <code>PENDING_CLIENT_RECONNECTION</code>: A client has recently
-     * disconnected, and the stream session is waiting for the client to reconnect.
-     * After a short time, if the client doesn't reconnect, the stream session status
-     * transitions to <code>TERMINATED</code>.</p> </li> <li> <p>
-     * <code>TERMINATING</code>: The stream session is ending.</p> </li> <li> <p>
-     * <code>TERMINATED</code>: The stream session has ended.</p> </li> <li> <p>
-     * <code>ERROR</code>: The stream session failed to activate.</p> </li> </ul>
+     * <p>The current status of the stream session resource.</p> <ul> <li> <p>
+     * <code>ACTIVATING</code>: The stream session is starting and preparing to
+     * stream.</p> </li> <li> <p> <code>ACTIVE</code>: The stream session is ready and
+     * waiting for a client connection. A client has
+     * <code>ConnectionTimeoutSeconds</code> (specified in
+     * <code>StartStreamSession</code>) from when the session reaches
+     * <code>ACTIVE</code> state to establish a connection. If no client connects
+     * within this timeframe, the session automatically terminates.</p> </li> <li> <p>
+     * <code>CONNECTED</code>: The stream session has a connected client. A session
+     * will automatically terminate if there is no user input for 60 minutes, or if the
+     * maximum length of a session specified by <code>SessionLengthSeconds</code> in
+     * <code>StartStreamSession</code> is exceeded.</p> </li> <li> <p>
+     * <code>ERROR</code>: The stream session failed to activate.</p> </li> <li> <p>
+     * <code>PENDING_CLIENT_RECONNECTION</code>: A client has recently disconnected and
+     * the stream session is waiting for the client to reconnect. A client has
+     * <code>ConnectionTimeoutSeconds</code> (specified in
+     * <code>StartStreamSession</code>) from when the session reaches
+     * <code>PENDING_CLIENT_RECONNECTION</code> state to re-establish a connection. If
+     * no client connects within this timeframe, the session automatically
+     * terminates.</p> </li> <li> <p> <code>RECONNECTING</code>: A client has initiated
+     * a reconnect to a session that was in <code>PENDING_CLIENT_RECONNECTION</code>
+     * state.</p> </li> <li> <p> <code>TERMINATING</code>: The stream session is
+     * ending.</p> </li> <li> <p> <code>TERMINATED</code>: The stream session has
+     * ended.</p> </li> </ul>
      */
     inline StreamSessionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -163,9 +175,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The location where Amazon GameLift Streams is hosting the stream session.</p>
-     * <p> A location's name. For example, <code>us-east-1</code>. For a complete list
-     * of locations that Amazon GameLift Streams supports, refer to <a
+     * <p>The location where Amazon GameLift Streams hosts and streams your
+     * application. For example, <code>us-east-1</code>. For a complete list of
+     * locations that Amazon GameLift Streams supports, refer to <a
      * href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions,
      * quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer
      * Guide</i>. </p>

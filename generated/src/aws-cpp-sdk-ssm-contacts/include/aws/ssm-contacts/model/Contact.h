@@ -77,8 +77,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code>
-     * and an escalation plan is type <code>ESCALATION</code>.</p>
+     * <p>The type of contact.</p> <ul> <li> <p> <code>PERSONAL</code>: A single,
+     * individual contact.</p> </li> <li> <p> <code>ESCALATION</code>: An escalation
+     * plan.</p> </li> <li> <p> <code>ONCALL_SCHEDULE</code>: An on-call schedule.</p>
+     * </li> </ul>
      */
     inline ContactType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

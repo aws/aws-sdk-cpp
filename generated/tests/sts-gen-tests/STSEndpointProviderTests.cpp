@@ -74,7 +74,7 @@ protected:
 };
 
 Aws::UniquePtrSafeDeleted<Aws::Vector<STSEndpointProviderEndpointTestCase>> STSEndpointProviderTests::TEST_CASES;
-const size_t STSEndpointProviderTests::TEST_CASES_SZ = 73;
+const size_t STSEndpointProviderTests::TEST_CASES_SZ = 69;
 
 Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTestCase() {
 
@@ -458,12 +458,6 @@ Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTe
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 42*/
-  {"For region us-iso-east-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"FIPS and DualStack are enabled, but this partition does not support one or both"} // expect
-  },
-  /*TEST CASE 43*/
   {"For region us-iso-east-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -472,13 +466,7 @@ Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 44*/
-  {"For region us-iso-east-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"DualStack is enabled but this partition does not support DualStack"} // expect
-  },
-  /*TEST CASE 45*/
+  /*TEST CASE 43*/
   {"For region us-isob-east-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -487,13 +475,7 @@ Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 46*/
-  {"For region us-isob-east-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"FIPS and DualStack are enabled, but this partition does not support one or both"} // expect
-  },
-  /*TEST CASE 47*/
+  /*TEST CASE 44*/
   {"For region us-isob-east-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -502,13 +484,7 @@ Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 48*/
-  {"For region us-isob-east-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"DualStack is enabled but this partition does not support DualStack"} // expect
-  },
-  /*TEST CASE 49*/
+  /*TEST CASE 45*/
   {"For custom endpoint with region set and fips disabled and dualstack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -517,7 +493,7 @@ Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 50*/
+  /*TEST CASE 46*/
   {"For custom endpoint with region not set and fips disabled and dualstack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -526,25 +502,25 @@ Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 51*/
+  /*TEST CASE 47*/
   {"For custom endpoint with fips enabled and dualstack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
   },
-  /*TEST CASE 52*/
+  /*TEST CASE 48*/
   {"For custom endpoint with fips disabled and dualstack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
   },
-  /*TEST CASE 53*/
+  /*TEST CASE 49*/
   {"Missing region", // documentation
     {}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Missing Region"} // expect
   },
-  /*TEST CASE 54*/
+  /*TEST CASE 50*/
   {"UseGlobalEndpoint with legacy region `ap-northeast-1`", // documentation
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -553,7 +529,7 @@ Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 55*/
+  /*TEST CASE 51*/
   {"UseGlobalEndpoint with legacy region `ap-south-1`", // documentation
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "ap-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -562,7 +538,7 @@ Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 56*/
+  /*TEST CASE 52*/
   {"UseGlobalEndpoint with legacy region `ap-southeast-1`", // documentation
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -571,7 +547,7 @@ Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 57*/
+  /*TEST CASE 53*/
   {"UseGlobalEndpoint with legacy region `ap-southeast-2`", // documentation
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -580,7 +556,7 @@ Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 58*/
+  /*TEST CASE 54*/
   {"UseGlobalEndpoint with legacy region `aws-global`", // documentation
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "aws-global"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -589,7 +565,7 @@ Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 59*/
+  /*TEST CASE 55*/
   {"UseGlobalEndpoint with legacy region `ca-central-1`", // documentation
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "ca-central-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -598,7 +574,7 @@ Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 60*/
+  /*TEST CASE 56*/
   {"UseGlobalEndpoint with legacy region `eu-central-1`", // documentation
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "eu-central-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -607,7 +583,7 @@ Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 61*/
+  /*TEST CASE 57*/
   {"UseGlobalEndpoint with legacy region `eu-north-1`", // documentation
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "eu-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -616,7 +592,7 @@ Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 62*/
+  /*TEST CASE 58*/
   {"UseGlobalEndpoint with legacy region `eu-west-1`", // documentation
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "eu-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -625,7 +601,7 @@ Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 63*/
+  /*TEST CASE 59*/
   {"UseGlobalEndpoint with legacy region `eu-west-2`", // documentation
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "eu-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -634,7 +610,7 @@ Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 64*/
+  /*TEST CASE 60*/
   {"UseGlobalEndpoint with legacy region `eu-west-3`", // documentation
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "eu-west-3"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -643,7 +619,7 @@ Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 65*/
+  /*TEST CASE 61*/
   {"UseGlobalEndpoint with legacy region `sa-east-1`", // documentation
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "sa-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -652,7 +628,7 @@ Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 66*/
+  /*TEST CASE 62*/
   {"UseGlobalEndpoint with legacy region `us-east-1`", // documentation
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -661,7 +637,7 @@ Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 67*/
+  /*TEST CASE 63*/
   {"UseGlobalEndpoint with legacy region `us-east-2`", // documentation
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -670,7 +646,7 @@ Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 68*/
+  /*TEST CASE 64*/
   {"UseGlobalEndpoint with legacy region `us-west-1`", // documentation
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "us-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -679,7 +655,7 @@ Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 69*/
+  /*TEST CASE 65*/
   {"UseGlobalEndpoint with legacy region `us-west-2`", // documentation
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -688,7 +664,7 @@ Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 70*/
+  /*TEST CASE 66*/
   {"UseGlobalEndpoint with Non-legacy region `us-east-3`", // documentation
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Region", "us-east-3"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -697,7 +673,7 @@ Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 71*/
+  /*TEST CASE 67*/
   {"UseGlobalEndpoint with legacy region and custom endpoint", // documentation
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -706,7 +682,7 @@ Aws::Vector<STSEndpointProviderEndpointTestCase> STSEndpointProviderTests::getTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 72*/
+  /*TEST CASE 68*/
   {"UseGlobalEndpoint with unset region and custom endpoint", // documentation
     {EpParam("UseGlobalEndpoint", false), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("UseDualStack", false)}, // params
     {}, // tags

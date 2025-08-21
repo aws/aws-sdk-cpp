@@ -140,12 +140,11 @@ namespace Model
     ///@{
     /**
      * <p> A list of locations, in order of priority, where you want Amazon GameLift
-     * Streams to start a stream from. Amazon GameLift Streams selects the location
-     * with the next available capacity to start a single stream session in. If this
-     * value is empty, Amazon GameLift Streams attempts to start a stream session in
-     * the primary location. </p> <p> This value is A set of location names. For
-     * example, <code>us-east-1</code>. For a complete list of locations that Amazon
-     * GameLift Streams supports, refer to <a
+     * Streams to start a stream from. For example, <code>us-east-1</code>. Amazon
+     * GameLift Streams selects the location with the next available capacity to start
+     * a single stream session in. If this value is empty, Amazon GameLift Streams
+     * attempts to start a stream session in the primary location. </p> <p> For a
+     * complete list of locations that Amazon GameLift Streams supports, refer to <a
      * href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions,
      * quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer
      * Guide</i>. </p>
@@ -163,10 +162,10 @@ namespace Model
     ///@{
     /**
      * <p>Length of time (in seconds) that Amazon GameLift Streams should wait for a
-     * client to connect or reconnect to the stream session. This time span starts when
-     * the stream session reaches <code>ACTIVE</code> status. If no client connects
-     * before the timeout, Amazon GameLift Streams stops the stream session with status
-     * of <code>TERMINATED</code>. Default value is 120.</p>
+     * client to connect or reconnect to the stream session. Applies to both connection
+     * and reconnection scenarios. This time span starts when the stream session
+     * reaches <code>ACTIVE</code> state. If no client connects before the timeout,
+     * Amazon GameLift Streams terminates the stream session. Default value is 120.</p>
      */
     inline int GetConnectionTimeoutSeconds() const { return m_connectionTimeoutSeconds; }
     inline bool ConnectionTimeoutSecondsHasBeenSet() const { return m_connectionTimeoutSecondsHasBeenSet; }
@@ -176,10 +175,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum length of time (in seconds) that Amazon GameLift Streams keeps
-     * the stream session open. At this point, Amazon GameLift Streams ends the stream
-     * session regardless of any existing client connections. Default value is
-     * 43200.</p>
+     * <p>The maximum duration of a session. Amazon GameLift Streams will automatically
+     * terminate a session after this amount of time has elapsed, regardless of any
+     * existing client connections. Default value is 43200 (12 hours).</p>
      */
     inline int GetSessionLengthSeconds() const { return m_sessionLengthSeconds; }
     inline bool SessionLengthSecondsHasBeenSet() const { return m_sessionLengthSecondsHasBeenSet; }

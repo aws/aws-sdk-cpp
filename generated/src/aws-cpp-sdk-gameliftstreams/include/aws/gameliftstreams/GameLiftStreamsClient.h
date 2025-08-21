@@ -123,8 +123,11 @@ namespace GameLiftStreams
          * GameLift Streams can launch the application using the stream group's allocated
          * compute resources. The stream group must be in <code>ACTIVE</code> status. You
          * can reverse this action by using <a
-         * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_DisassociateApplications.html">DisassociateApplications</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_DisassociateApplications.html">DisassociateApplications</a>.</p>
+         * <p>If a stream group does not already have a linked application, Amazon GameLift
+         * Streams will automatically assign the first application provided in
+         * <code>ApplicationIdentifiers</code> as the default.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/AssociateApplications">AWS
          * API Reference</a></p>
          */
@@ -201,12 +204,14 @@ namespace GameLiftStreams
          * are two types of capacity, always-on and on-demand: </p> <ul> <li> <p>
          * <b>Always-on</b>: The streaming capacity that is allocated and ready to handle
          * stream requests without delay. You pay for this capacity whether it's in use or
-         * not. Best for quickest time from streaming request to streaming session. </p>
-         * </li> <li> <p> <b>On-demand</b>: The streaming capacity that Amazon GameLift
-         * Streams can allocate in response to stream requests, and then de-allocate when
-         * the session has terminated. This offers a cost control measure at the expense of
-         * a greater startup time (typically under 5 minutes). </p> </li> </ul> <p> To
-         * adjust the capacity of any <code>ACTIVE</code> stream group, call <a
+         * not. Best for quickest time from streaming request to streaming session. Default
+         * is 1 when creating a stream group or adding a location. </p> </li> <li> <p>
+         * <b>On-demand</b>: The streaming capacity that Amazon GameLift Streams can
+         * allocate in response to stream requests, and then de-allocate when the session
+         * has terminated. This offers a cost control measure at the expense of a greater
+         * startup time (typically under 5 minutes). Default is 0 when creating a stream
+         * group or adding a location. </p> </li> </ul> <p> To adjust the capacity of any
+         * <code>ACTIVE</code> stream group, call <a
          * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateStreamGroup.html">UpdateStreamGroup</a>.
          * </p> <p> If the request is successful, Amazon GameLift Streams begins creating
          * the stream group. Amazon GameLift Streams assigns a unique ID to the stream
@@ -241,25 +246,31 @@ namespace GameLiftStreams
         }
 
         /**
-         * <p>Allows clients to reconnect to a recently disconnected stream session without
-         * losing any data from the last session.</p> <p>A client can reconnect to a stream
-         * session that's in <code>PENDING_CLIENT_RECONNECTION</code> or
-         * <code>ACTIVE</code> status. In the stream session life cycle, when the client
-         * disconnects from the stream session, the stream session transitions from
-         * <code>CONNECTED</code> to <code>PENDING_CLIENT_RECONNECTION</code> status. When
-         * a client requests to reconnect by calling
-         * <code>CreateStreamSessionConnection</code>, the stream session transitions to
-         * <code>RECONNECTING</code> status. When the reconnection is successful, the
-         * stream session transitions to <code>ACTIVE</code> status. After a stream session
-         * is disconnected for longer than <code>ConnectionTimeoutSeconds</code>, the
-         * stream session transitions to the <code>TERMINATED</code> status.</p> <p>To
-         * connect to an existing stream session, specify the stream group ID and stream
-         * session ID that you want to reconnect to, as well as the signal request settings
-         * to use with the stream.</p> <p> <code>ConnectionTimeoutSeconds</code> defines
-         * the amount of time after the stream session disconnects that a reconnection is
-         * allowed. If a client is disconnected from the stream for longer than
-         * <code>ConnectionTimeoutSeconds</code>, the stream session ends.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Enables clients to reconnect to a stream session while preserving all session
+         * state and data in the disconnected session. This reconnection process can be
+         * initiated when a stream session is in either
+         * <code>PENDING_CLIENT_RECONNECTION</code> or <code>ACTIVE</code> status. The
+         * process works as follows: </p> <ol> <li> <p>Initial disconnect:</p> <ul> <li>
+         * <p>When a client disconnects or loses connection, the stream session transitions
+         * from <code>CONNECTED</code> to <code>PENDING_CLIENT_RECONNECTION</code> </p>
+         * </li> </ul> </li> <li> <p>Reconnection time window:</p> <ul> <li> <p>Clients
+         * have <code>ConnectionTimeoutSeconds</code> (defined in <a
+         * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_StartStreamSession.html">StartStreamSession</a>)
+         * to reconnect before session termination</p> </li> <li> <p>Your backend server
+         * must call <b>CreateStreamSessionConnection</b> to initiate reconnection</p>
+         * </li> <li> <p>Session transitions to <code>RECONNECTING</code> status</p> </li>
+         * </ul> </li> <li> <p>Reconnection completion:</p> <ul> <li> <p>On successful
+         * <b>CreateStreamSessionConnection</b>, session status changes to
+         * <code>ACTIVE</code> </p> </li> <li> <p>Provide the new connection information to
+         * the requesting client</p> </li> <li> <p>Client must establish connection within
+         * <code>ConnectionTimeoutSeconds</code> </p> </li> <li> <p>Session terminates
+         * automatically if client fails to connect in time</p> </li> </ul> </li> </ol>
+         * <p>For more information about the stream session lifecycle, see <a
+         * href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/stream-sessions.html">Stream
+         * sessions</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p> <p>To
+         * begin re-connecting to an existing stream session, specify the stream group ID
+         * and stream session ID that you want to reconnect to, and the signal request to
+         * use with the stream.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/CreateStreamSessionConnection">AWS
          * API Reference</a></p>
          */
@@ -366,12 +377,15 @@ namespace GameLiftStreams
          * can no longer stream this application by using that stream group's allocated
          * compute resources. Any streams in process will continue until they terminate,
          * which helps avoid interrupting an end-user's stream. Amazon GameLift Streams
-         * will not initiate new streams using this stream group. The disassociate action
-         * does not affect the stream capacity of a stream group. </p> <p> You can only
-         * disassociate an application if it's not a default application of the stream
-         * group. Check <code>DefaultApplicationIdentifier</code> by calling <a
-         * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamGroup.html">GetStreamGroup</a>.
-         * </p><p><h3>See Also:</h3>   <a
+         * will not initiate new streams in the stream group using the disassociated
+         * application. The disassociate action does not affect the stream capacity of a
+         * stream group. </p> <p> If you disassociate the default application, Amazon
+         * GameLift Streams will automatically choose a new default application from the
+         * remaining associated applications. To change which application is the default
+         * application, call <a
+         * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateStreamGroup.html">UpdateStreamGroup</a>
+         * and specify a new <code>DefaultApplicationIdentifier</code>. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/DisassociateApplications">AWS
          * API Reference</a></p>
          */
@@ -714,31 +728,65 @@ namespace GameLiftStreams
          * information that clients can use to access the stream. A stream session refers
          * to an instance of a stream that Amazon GameLift Streams transmits from the
          * server to the end-user. A stream session runs on a compute resource that a
-         * stream group has allocated. </p> <p>To start a new stream session, specify a
-         * stream group and application ID, along with the transport protocol and signal
-         * request settings to use with the stream. You must have associated at least one
-         * application to the stream group before starting a stream session, either when
-         * creating the stream group, or by using <a
-         * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_AssociateApplications.html">AssociateApplications</a>.</p>
-         * <p> For stream groups that have multiple locations, provide a set of locations
-         * ordered by priority using a <code>Locations</code> parameter. Amazon GameLift
-         * Streams will start a single stream session in the next available location. An
-         * application must be finished replicating in a remote location before the remote
-         * location can host a stream. </p> <p> If the request is successful, Amazon
-         * GameLift Streams begins to prepare the stream. Amazon GameLift Streams assigns
-         * an Amazon Resource Name (ARN) value to the stream session resource and sets the
-         * status to <code>ACTIVATING</code>. During the stream preparation process, Amazon
-         * GameLift Streams queues the request and searches for available stream capacity
-         * to run the stream. This results in one of the following: </p> <ul> <li> <p>
-         * Amazon GameLift Streams identifies an available compute resource to run the
-         * application content and start the stream. When the stream is ready, the stream
-         * session's status changes to <code>ACTIVE</code> and includes stream connection
-         * information. Provide the connection information to the requesting client to join
-         * the stream session.</p> </li> <li> <p> Amazon GameLift Streams doesn't identify
-         * an available resource within a certain time, set by <code>ClientToken</code>. In
-         * this case, Amazon GameLift Streams stops processing the request, and the stream
-         * session object status changes to <code>ERROR</code> with status reason
-         * <code>placementTimeout</code>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * stream group has allocated. The start stream session process works as follows:
+         * </p> <ol> <li> <p>Prerequisites:</p> <ul> <li> <p>You must have a stream group
+         * in <code>ACTIVE</code> state</p> </li> <li> <p>You must have idle or on-demand
+         * capacity in a stream group in the location you want to stream from</p> </li>
+         * <li> <p>You must have at least one application associated to the stream group
+         * (use <a
+         * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_AssociateApplications.html">AssociateApplications</a>
+         * if needed)</p> </li> </ul> </li> <li> <p>Start stream request:</p> <ul> <li>
+         * <p>Your backend server calls <b>StartStreamSession</b> to initiate
+         * connection</p> </li> <li> <p>Amazon GameLift Streams creates the stream session
+         * resource, assigns an Amazon Resource Name (ARN) value, and begins searching for
+         * available stream capacity to run the stream</p> </li> <li> <p>Session
+         * transitions to <code>ACTIVATING</code> status</p> </li> </ul> </li> <li>
+         * <p>Placement completion:</p> <ul> <li> <p>If Amazon GameLift Streams is
+         * successful in finding capacity for the stream, the stream session status changes
+         * to <code>ACTIVE</code> status and <b>StartStreamSession</b> returns stream
+         * connection information</p> </li> <li> <p>If Amazon GameLift Streams was not
+         * successful in finding capacity within the placement timeout period (defined
+         * according to the capacity type and platform type), the stream session status
+         * changes to <code>ERROR</code> status and <b>StartStreamSession</b> returns a
+         * <code>StatusReason</code> of <code>placementTimeout</code> </p> </li> </ul>
+         * </li> <li> <p>Connection completion:</p> <ul> <li> <p>Provide the new connection
+         * information to the requesting client</p> </li> <li> <p>Client must establish
+         * connection within <code>ConnectionTimeoutSeconds</code> (specified in
+         * <b>StartStreamSession</b> parameters)</p> </li> <li> <p>Session terminates
+         * automatically if client fails to connect in time</p> </li> </ul> </li> </ol>
+         * <p>For more information about the stream session lifecycle, see <a
+         * href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/stream-sessions.html">Stream
+         * sessions</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
+         * <p>Timeouts to be aware of that affect a stream session:</p> <ul> <li> <p>
+         * <b>Placement timeout</b>: The amount of time that Amazon GameLift Streams has to
+         * find capacity for a stream request. Placement timeout varies based on the
+         * capacity type used to fulfill your stream request:</p> <ul> <li> <p>
+         * <b>Always-on capacity</b>: 75 seconds</p> </li> <li> <p> <b>On-demand
+         * capacity</b>:</p> <ul> <li> <p>Linux/Proton runtimes: 90 seconds</p> </li> <li>
+         * <p>Windows runtime: 10 minutes</p> </li> </ul> </li> </ul> </li> <li> <p>
+         * <b>Connection timeout</b>: The amount of time that Amazon GameLift Streams waits
+         * for a client to connect to a stream session in <code>ACTIVE</code> status, or
+         * reconnect to a stream session in <code>PENDING_CLIENT_RECONNECTION</code>
+         * status, the latter of which occurs when a client disconnects or loses connection
+         * from a stream session. If no client connects before the timeout, Amazon GameLift
+         * Streams terminates the stream session. This value is specified by
+         * <code>ConnectionTimeoutSeconds</code> in the <code>StartStreamSession</code>
+         * parameters.</p> </li> <li> <p> <b>Idle timeout</b>: A stream session will be
+         * terminated if no user input has been received for 60 minutes.</p> </li> <li> <p>
+         * <b>Maximum session length</b>: A stream session will be terminated after this
+         * amount of time has elapsed since it started, regardless of any existing client
+         * connections. This value is specified by <code>SessionLengthSeconds</code> in the
+         * <code>StartStreamSession</code> parameters.</p> </li> </ul> <p>To start a new
+         * stream session, specify a stream group ID and application ID, along with the
+         * transport protocol and signal request to use with the stream session.</p> <p>For
+         * stream groups that have multiple locations, provide a set of locations ordered
+         * by priority using a <code>Locations</code> parameter. Amazon GameLift Streams
+         * will start a single stream session in the next available location. An
+         * application must be finished replicating to a remote location before the remote
+         * location can host a stream.</p> <p>To reconnect to a stream session after a
+         * client disconnects or loses connection, use <a
+         * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_CreateStreamSessionConnection.html">CreateStreamSessionConnection</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/StartStreamSession">AWS
          * API Reference</a></p>
          */
@@ -892,14 +940,16 @@ namespace GameLiftStreams
          * always-on and on-demand: </p> <ul> <li> <p> <b>Always-on</b>: The streaming
          * capacity that is allocated and ready to handle stream requests without delay.
          * You pay for this capacity whether it's in use or not. Best for quickest time
-         * from streaming request to streaming session. </p> </li> <li> <p>
-         * <b>On-demand</b>: The streaming capacity that Amazon GameLift Streams can
-         * allocate in response to stream requests, and then de-allocate when the session
-         * has terminated. This offers a cost control measure at the expense of a greater
-         * startup time (typically under 5 minutes). </p> </li> </ul> <p>To update a stream
-         * group, specify the stream group's Amazon Resource Name (ARN) and provide the new
-         * values. If the request is successful, Amazon GameLift Streams returns the
-         * complete updated metadata for the stream group.</p><p><h3>See Also:</h3>   <a
+         * from streaming request to streaming session. Default is 1 when creating a stream
+         * group or adding a location. </p> </li> <li> <p> <b>On-demand</b>: The streaming
+         * capacity that Amazon GameLift Streams can allocate in response to stream
+         * requests, and then de-allocate when the session has terminated. This offers a
+         * cost control measure at the expense of a greater startup time (typically under 5
+         * minutes). Default is 0 when creating a stream group or adding a location. </p>
+         * </li> </ul> <p>To update a stream group, specify the stream group's Amazon
+         * Resource Name (ARN) and provide the new values. If the request is successful,
+         * Amazon GameLift Streams returns the complete updated metadata for the stream
+         * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/UpdateStreamGroup">AWS
          * API Reference</a></p>
          */

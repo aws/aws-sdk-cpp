@@ -269,10 +269,11 @@ namespace SSMContacts
 
         /**
          * <p>To remove a contact from Incident Manager, you can delete the contact.
-         * Deleting a contact removes them from all escalation plans and related response
-         * plans. Deleting an escalation plan removes it from all related response plans.
-         * You will have to recreate the contact and its contact channels before you can
-         * use it again.</p><p><h3>See Also:</h3>   <a
+         * However, deleting a contact does not remove it from escalation plans and related
+         * response plans. Deleting an escalation plan also does not remove it from all
+         * related response plans. To modify an escalation plan, we recommend using the
+         * <a>UpdateContact</a> action to specify a different existing
+         * contact.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeleteContact">AWS
          * API Reference</a></p>
          */
@@ -297,11 +298,11 @@ namespace SSMContacts
         }
 
         /**
-         * <p>To no longer receive engagements on a contact channel, you can delete the
-         * channel from a contact. Deleting the contact channel removes it from the
-         * contact's engagement plan. If you delete the only contact channel for a contact,
-         * you won't be able to engage that contact during an incident.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>To stop receiving engagements on a contact channel, you can delete the
+         * channel from a contact. Deleting the contact channel does not remove it from the
+         * contact's engagement plan, but the stage that includes the channel will be
+         * ignored. If you delete the only contact channel for a contact, you'll no longer
+         * be able to engage that contact during an incident.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeleteContactChannel">AWS
          * API Reference</a></p>
          */
@@ -851,8 +852,8 @@ namespace SSMContacts
         }
 
         /**
-         * <p>Lists the tags of an escalation plan or contact.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists the tags of a contact, escalation plan, rotation, or on-call
+         * schedule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListTagsForResource">AWS
          * API Reference</a></p>
          */
