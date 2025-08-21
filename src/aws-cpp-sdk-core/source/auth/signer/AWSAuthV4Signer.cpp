@@ -617,62 +617,23 @@ void AWSAuthV4Signer::UpdateUserAgentWithCredentialFeatures(Aws::Http::HttpReque
         return;
     }
 
-    // Get existing User-Agent
-    Aws::String existingUA = request.GetHeaderValue(USER_AGENT);
-    
-    // Build credential metrics string
-    Aws::StringStream credentialMetrics;
-    bool firstFeature = true;
-
+    // Build credential features string
+    Aws::StringStream credentialFeatures;
     for (const auto& feature : features) {
-        char featureChar = 0;
         switch (feature) {
             case Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS:
-                featureChar = 'g';
+                credentialFeatures << "g";
                 break;
-            // Add other credential feature mappings as needed
             default:
-                continue; // Skip non-credential features
+                // Skip non-credential features
+                break;
         }
-        
-        if (!firstFeature) {
-            credentialMetrics << ",";
-        }
-        credentialMetrics << featureChar;
-        firstFeature = false;
     }
 
-    if (credentialMetrics.str().empty()) {
-        return;
-    }
-
-    // Parse and update existing User-Agent
-    bool metricsUpdated = false;
+    // Append credential features to existing UA
+    Aws::String existingUA = request.GetHeaderValue(USER_AGENT);
     Aws::StringStream updatedUA;
-    const auto parts = Aws::Utils::StringUtils::Split(existingUA, ' ');
+    updatedUA << existingUA << " m/" << credentialFeatures.str();
     
-    for (size_t i = 0; i < parts.size(); ++i) {
-        if (i > 0) {
-            updatedUA << ' ';
-        }
-
-        if (parts[i].find("m/") == 0) {
-            // Add credentials to business metrics
-            updatedUA << parts[i];
-            if (!parts[i].empty() && parts[i].back() != '/') {
-                updatedUA << ',';
-            }
-            updatedUA << credentialMetrics.str();
-            metricsUpdated = true;
-        } else {
-            updatedUA << parts[i];
-        }
-    }
-
-    // If no metrics section found, add one
-    if (!metricsUpdated) {
-        updatedUA << " m/" << credentialMetrics.str();
-    }
-
     request.SetUserAgent(updatedUA.str());
 }
