@@ -24,8 +24,6 @@
 
 namespace Aws
 {
-    class AmazonWebServiceRequest;
-
     namespace Client
     {
         struct ClientConfiguration;

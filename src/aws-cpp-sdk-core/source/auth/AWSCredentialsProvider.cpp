@@ -18,7 +18,6 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
-#include <aws/core/AmazonWebServiceRequest.h>
 #include <aws/core/client/UserAgent.h>
 #include <cstdlib>
 #include <fstream>

@@ -7,7 +7,6 @@
 #include <aws/core/AmazonWebServiceRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSAuthSignerProvider.h>
-#include <aws/core/auth/signer/AWSAuthV4Signer.h>
 #include <aws/core/client/AWSUrlPresigner.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
