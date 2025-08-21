@@ -489,8 +489,10 @@ namespace Glue
         }
 
         /**
-         * <p>Annotate datapoints over time for a specific data quality
-         * statistic.</p><p><h3>See Also:</h3>   <a
+         * <p>Annotate datapoints over time for a specific data quality statistic. The API
+         * requires both profileID and statisticID as part of the InclusionAnnotation
+         * input. The API only works for a single statisticId across multiple
+         * profiles.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchPutDataQualityStatisticAnnotation">AWS
          * API Reference</a></p>
          */

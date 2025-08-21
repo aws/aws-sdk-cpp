@@ -30,6 +30,11 @@ DataSource& DataSource::operator =(JsonView jsonValue)
     m_glueTable = jsonValue.GetObject("GlueTable");
     m_glueTableHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("DataQualityGlueTable"))
+  {
+    m_dataQualityGlueTable = jsonValue.GetObject("DataQualityGlueTable");
+    m_dataQualityGlueTableHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +45,12 @@ JsonValue DataSource::Jsonize() const
   if(m_glueTableHasBeenSet)
   {
    payload.WithObject("GlueTable", m_glueTable.Jsonize());
+
+  }
+
+  if(m_dataQualityGlueTableHasBeenSet)
+  {
+   payload.WithObject("DataQualityGlueTable", m_dataQualityGlueTable.Jsonize());
 
   }
 

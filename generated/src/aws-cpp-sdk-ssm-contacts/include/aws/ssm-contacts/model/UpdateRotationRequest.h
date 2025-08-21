@@ -52,8 +52,11 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated
-     * rotation. </p> <p>The order in which you list the contacts is their shift order
-     * in the rotation schedule.</p>
+     * rotation. </p>  <p>Only the <code>PERSONAL</code> contact type is
+     * supported. The contact types <code>ESCALATION</code> and
+     * <code>ONCALL_SCHEDULE</code> are not supported for this operation. </p> 
+     * <p>The order in which you list the contacts is their shift order in the rotation
+     * schedule.</p>
      */
     inline const Aws::Vector<Aws::String>& GetContactIds() const { return m_contactIds; }
     inline bool ContactIdsHasBeenSet() const { return m_contactIdsHasBeenSet; }
@@ -84,8 +87,8 @@ namespace Model
      * "UTC", or "Asia/Seoul". For more information, see the <a
      * href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
      * website.</p>  <p>Designators for time zones that don’t support Daylight
-     * Savings Time Rules, such as Pacific Standard Time (PST) and Pacific Daylight
-     * Time (PDT), aren't supported.</p> 
+     * Savings Time Rules, such as Pacific Standard Time (PST), aren't supported.</p>
+     * 
      */
     inline const Aws::String& GetTimeZoneId() const { return m_timeZoneId; }
     inline bool TimeZoneIdHasBeenSet() const { return m_timeZoneIdHasBeenSet; }

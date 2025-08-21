@@ -190,7 +190,7 @@ namespace Model
      * <code>logConfiguration</code> as <code>blocking</code>.</p> </li> <li> <p>Set
      * the <code>defaultLogDriverMode</code> account setting to
      * <code>blocking</code>.</p> </li> </ul>  </dd> <dt>max-buffer-size</dt>
-     * <dd> <p>Required: No</p> <p>Default value: <code>1m</code> </p> <p>When
+     * <dd> <p>Required: No</p> <p>Default value: <code>10m</code> </p> <p>When
      * <code>non-blocking</code> mode is used, the <code>max-buffer-size</code> log
      * option controls the size of the buffer that's used for intermediate message
      * storage. Make sure to specify an adequate buffer size based on your application.

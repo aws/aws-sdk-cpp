@@ -56,11 +56,11 @@ namespace Model
      * <p>Filter by the exported files status. You can specify one status in each
      * request to retrieve only sessions that currently have that exported files
      * status.</p> <p> Exported files can be in one of the following states: </p> <ul>
-     * <li> <p> <b>SUCCEEDED</b>: The exported files are successfully stored in S3
-     * bucket. </p> </li> <li> <p> <b>FAILED</b>: The session ended but Amazon GameLift
-     * Streams couldn't collect and upload the to S3. </p> </li> <li> <p>
-     * <b>PENDING</b>: Either the stream session is still in progress, or uploading the
-     * exported files to the S3 bucket is in progress. </p> </li> </ul>
+     * <li> <p> <code>SUCCEEDED</code>: The exported files are successfully stored in
+     * an S3 bucket.</p> </li> <li> <p> <code>FAILED</code>: The session ended but
+     * Amazon GameLift Streams couldn't collect and upload the files to S3.</p> </li>
+     * <li> <p> <code>PENDING</code>: Either the stream session is still in progress,
+     * or uploading the exported files to the S3 bucket is in progress.</p> </li> </ul>
      */
     inline ExportFilesStatus GetExportFilesStatus() const { return m_exportFilesStatus; }
     inline bool ExportFilesStatusHasBeenSet() const { return m_exportFilesStatusHasBeenSet; }

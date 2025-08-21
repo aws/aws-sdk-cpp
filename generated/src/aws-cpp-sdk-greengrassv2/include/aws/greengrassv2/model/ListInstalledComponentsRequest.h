@@ -76,7 +76,7 @@ namespace Model
     ///@{
     /**
      * <p>The filter for the list of components. Choose from the following options:</p>
-     * <ul> <li> <p> <code>ALL</code> – The list includes all components installed on
+     * <ul> <li> <p> <code>ALL</code> ��� The list includes all components installed on
      * the core device.</p> </li> <li> <p> <code>ROOT</code> – The list includes only
      * <i>root</i> components, which are components that you specify in a deployment.
      * When you choose this option, the list doesn't include components that the core

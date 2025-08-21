@@ -64,7 +64,8 @@ namespace Model
     /**
      * <p>The streaming capacity that is allocated and ready to handle stream requests
      * without delay. You pay for this capacity whether it's in use or not. Best for
-     * quickest time from streaming request to streaming session.</p>
+     * quickest time from streaming request to streaming session. Default is 1 when
+     * creating a stream group or adding a location.</p>
      */
     inline int GetAlwaysOnCapacity() const { return m_alwaysOnCapacity; }
     inline bool AlwaysOnCapacityHasBeenSet() const { return m_alwaysOnCapacityHasBeenSet; }
@@ -77,7 +78,8 @@ namespace Model
      * <p>The streaming capacity that Amazon GameLift Streams can allocate in response
      * to stream requests, and then de-allocate when the session has terminated. This
      * offers a cost control measure at the expense of a greater startup time
-     * (typically under 5 minutes).</p>
+     * (typically under 5 minutes). Default is 0 when creating a stream group or adding
+     * a location.</p>
      */
     inline int GetOnDemandCapacity() const { return m_onDemandCapacity; }
     inline bool OnDemandCapacityHasBeenSet() const { return m_onDemandCapacityHasBeenSet; }

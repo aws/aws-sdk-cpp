@@ -89,9 +89,9 @@ namespace Model
     ///@{
     /**
      * <p>The number of contacts, or shift team members designated to be on call
-     * concurrently during a shift. For example, in an on-call schedule containing ten
-     * contacts, a value of <code>2</code> designates that two of them are on call at
-     * any given time.</p>
+     * concurrently during a shift. For example, in an on-call schedule that contains
+     * ten contacts, a value of <code>2</code> designates that two of them are on call
+     * at any given time.</p>
      */
     inline int GetNumberOfOnCalls() const { return m_numberOfOnCalls; }
     inline bool NumberOfOnCallsHasBeenSet() const { return m_numberOfOnCallsHasBeenSet; }
@@ -101,8 +101,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the days of the week included in on-call rotation
-     * coverage.</p>
+     * <p>Information about the days of the week that the on-call rotation coverage
+     * includes.</p>
      */
     inline const Aws::Map<DayOfWeek, Aws::Vector<CoverageTime>>& GetShiftCoverages() const { return m_shiftCoverages; }
     inline bool ShiftCoveragesHasBeenSet() const { return m_shiftCoveragesHasBeenSet; }

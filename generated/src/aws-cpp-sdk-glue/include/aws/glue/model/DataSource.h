@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/GlueTable.h>
+#include <aws/glue/model/DataQualityGlueTable.h>
 #include <utility>
 
 namespace Aws
@@ -49,10 +50,25 @@ namespace Model
     template<typename GlueTableT = GlueTable>
     DataSource& WithGlueTable(GlueTableT&& value) { SetGlueTable(std::forward<GlueTableT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An Glue table for Data Quality Operations.</p>
+     */
+    inline const DataQualityGlueTable& GetDataQualityGlueTable() const { return m_dataQualityGlueTable; }
+    inline bool DataQualityGlueTableHasBeenSet() const { return m_dataQualityGlueTableHasBeenSet; }
+    template<typename DataQualityGlueTableT = DataQualityGlueTable>
+    void SetDataQualityGlueTable(DataQualityGlueTableT&& value) { m_dataQualityGlueTableHasBeenSet = true; m_dataQualityGlueTable = std::forward<DataQualityGlueTableT>(value); }
+    template<typename DataQualityGlueTableT = DataQualityGlueTable>
+    DataSource& WithDataQualityGlueTable(DataQualityGlueTableT&& value) { SetDataQualityGlueTable(std::forward<DataQualityGlueTableT>(value)); return *this;}
+    ///@}
   private:
 
     GlueTable m_glueTable;
     bool m_glueTableHasBeenSet = false;
+
+    DataQualityGlueTable m_dataQualityGlueTable;
+    bool m_dataQualityGlueTableHasBeenSet = false;
   };
 
 } // namespace Model

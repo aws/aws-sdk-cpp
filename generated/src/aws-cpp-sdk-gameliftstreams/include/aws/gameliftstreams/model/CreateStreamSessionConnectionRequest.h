@@ -56,7 +56,7 @@ namespace Model
      * <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamgroup/sg-1AB2C3De4</code>.
      * Example ID: <code>sg-1AB2C3De4</code>. </p> <p> The stream group that you want
      * to run this stream session with. The stream group must be in <code>ACTIVE</code>
-     * status and have idle stream capacity. </p>
+     * status. </p>
      */
     inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }

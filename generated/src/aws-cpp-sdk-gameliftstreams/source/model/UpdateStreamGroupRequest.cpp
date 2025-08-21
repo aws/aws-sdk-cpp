@@ -33,6 +33,12 @@ Aws::String UpdateStreamGroupRequest::SerializePayload() const
 
   }
 
+  if(m_defaultApplicationIdentifierHasBeenSet)
+  {
+   payload.WithString("DefaultApplicationIdentifier", m_defaultApplicationIdentifier);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -38,7 +38,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of <code>DatapointInclusionAnnotation</code>'s.</p>
+     * <p>A list of <code>DatapointInclusionAnnotation</code>'s. The
+     * InclusionAnnotations must contain a profileId and statisticId. If there are
+     * multiple InclusionAnnotations, the list must refer to a single statisticId
+     * across multiple profileIds.</p>
      */
     inline const Aws::Vector<DatapointInclusionAnnotation>& GetInclusionAnnotations() const { return m_inclusionAnnotations; }
     inline bool InclusionAnnotationsHasBeenSet() const { return m_inclusionAnnotationsHasBeenSet; }

@@ -36,7 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+     * <p>The Amazon Resource Name (ARN) of the contact, escalation plan, rotation, or
+     * on-call schedule.</p>
      */
     inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }

@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the contact channel Incident Manager is engaging.</p>
+     * <p>Information about the contact channel that Incident Manager engages.</p>
      */
     inline const ChannelTargetInfo& GetChannelTargetInfo() const { return m_channelTargetInfo; }
     inline bool ChannelTargetInfoHasBeenSet() const { return m_channelTargetInfoHasBeenSet; }
@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the contact that Incident Manager is engaging.</p>
+     * <p>Information about the contact that Incident Manager engages.</p>
      */
     inline const ContactTargetInfo& GetContactTargetInfo() const { return m_contactTargetInfo; }
     inline bool ContactTargetInfoHasBeenSet() const { return m_contactTargetInfoHasBeenSet; }

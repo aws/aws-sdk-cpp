@@ -93,8 +93,31 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current status of the stream session. A stream session can host clients
-     * when in <code>ACTIVE</code> status.</p>
+     * <p>The current status of the stream session. A stream session is ready for a
+     * client to connect when in <code>ACTIVE</code> status.</p> <ul> <li> <p>
+     * <code>ACTIVATING</code>: The stream session is starting and preparing to
+     * stream.</p> </li> <li> <p> <code>ACTIVE</code>: The stream session is ready and
+     * waiting for a client connection. A client has
+     * <code>ConnectionTimeoutSeconds</code> (specified in
+     * <code>StartStreamSession</code>) from when the session reaches
+     * <code>ACTIVE</code> state to establish a connection. If no client connects
+     * within this timeframe, the session automatically terminates.</p> </li> <li> <p>
+     * <code>CONNECTED</code>: The stream session has a connected client. A session
+     * will automatically terminate if there is no user input for 60 minutes, or if the
+     * maximum length of a session specified by <code>SessionLengthSeconds</code> in
+     * <code>StartStreamSession</code> is exceeded.</p> </li> <li> <p>
+     * <code>ERROR</code>: The stream session failed to activate.</p> </li> <li> <p>
+     * <code>PENDING_CLIENT_RECONNECTION</code>: A client has recently disconnected and
+     * the stream session is waiting for the client to reconnect. A client has
+     * <code>ConnectionTimeoutSeconds</code> (specified in
+     * <code>StartStreamSession</code>) from when the session reaches
+     * <code>PENDING_CLIENT_RECONNECTION</code> state to re-establish a connection. If
+     * no client connects within this timeframe, the session automatically
+     * terminates.</p> </li> <li> <p> <code>RECONNECTING</code>: A client has initiated
+     * a reconnect to a session that was in <code>PENDING_CLIENT_RECONNECTION</code>
+     * state.</p> </li> <li> <p> <code>TERMINATING</code>: The stream session is
+     * ending.</p> </li> <li> <p> <code>TERMINATED</code>: The stream session has
+     * ended.</p> </li> </ul>
      */
     inline StreamSessionStatus GetStatus() const { return m_status; }
     inline void SetStatus(StreamSessionStatus value) { m_statusHasBeenSet = true; m_status = value; }
@@ -122,9 +145,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> The location where Amazon GameLift Streams is streaming your application
-     * from. </p> <p> A location's name. For example, <code>us-east-1</code>. For a
-     * complete list of locations that Amazon GameLift Streams supports, refer to <a
+     * <p>The location where Amazon GameLift Streams hosts and streams your
+     * application. For example, <code>us-east-1</code>. For a complete list of
+     * locations that Amazon GameLift Streams supports, refer to <a
      * href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions,
      * quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer
      * Guide</i>. </p>
@@ -162,9 +185,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum length of time (in seconds) that Amazon GameLift Streams keeps
-     * the stream session open. At this point, Amazon GameLift Streams ends the stream
-     * session regardless of any existing client connections.</p>
+     * <p>The length of time that Amazon GameLift Streams should wait for a client to
+     * connect or reconnect to the stream session. This time span starts when the
+     * stream session reaches <code>ACTIVE</code> or
+     * <code>PENDING_CLIENT_RECONNECTION</code> state. If no client connects (or
+     * reconnects) before the timeout, Amazon GameLift Streams terminates the stream
+     * session.</p>
      */
     inline int GetConnectionTimeoutSeconds() const { return m_connectionTimeoutSeconds; }
     inline void SetConnectionTimeoutSeconds(int value) { m_connectionTimeoutSecondsHasBeenSet = true; m_connectionTimeoutSeconds = value; }
@@ -173,8 +199,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The length of time that Amazon GameLift Streams keeps the game session
-     * open.</p>
+     * <p>The maximum duration of a session. Amazon GameLift Streams will automatically
+     * terminate a session after this amount of time has elapsed, regardless of any
+     * existing client connections.</p>
      */
     inline int GetSessionLengthSeconds() const { return m_sessionLengthSeconds; }
     inline void SetSessionLengthSeconds(int value) { m_sessionLengthSecondsHasBeenSet = true; m_sessionLengthSeconds = value; }
@@ -283,7 +310,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An <a
+     * <p>The application streaming in this session.</p> <p>This value is an <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
      * Resource Name (ARN)</a> that uniquely identifies the application resource.
      * Example ARN:
