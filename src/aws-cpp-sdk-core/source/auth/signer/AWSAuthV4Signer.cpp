@@ -7,7 +7,6 @@
 #include <aws/core/auth/signer/AWSAuthSignerCommon.h>
 #include <aws/core/auth/signer/AWSAuthSignerHelper.h>
 
-#include <aws/core/AmazonWebServiceRequest.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/http/HttpRequest.h>
@@ -27,7 +26,6 @@
 
 #include <iomanip>
 #include <cstring>
-#include <map>
 
 using namespace Aws;
 using namespace Aws::Client;
@@ -338,16 +336,11 @@ bool AWSAuthV4Signer::SignRequestWithCreds(Aws::Http::HttpRequest& request, cons
 
 bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, bool signBody) const
 {
-    AWSCredentials credentials = GetCredentials(request.GetServiceSpecificParameters());
-    return SignRequestWithCreds(request, credentials, region, serviceName, signBody);
-}
-
-bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, Aws::AmazonWebServiceRequest& awsRequest, const char* region, const char* serviceName, bool signBody) const
-{
-    AWSCredentials credentials = GetCredentials(awsRequest, request.GetServiceSpecificParameters());
+    Aws::Auth::CredentialsResolutionContext context;
+    AWSCredentials credentials = GetCredentials(context, request.GetServiceSpecificParameters());
     
-    // Update User-Agent with credential tracking features added during credential resolution
-    UpdateUserAgentWithCredentialFeatures(request, awsRequest);
+    // Update User-Agent with credential tracking features from context
+    UpdateUserAgentWithCredentialFeatures(request, context);
     
     return SignRequestWithCreds(request, credentials, region, serviceName, signBody);
 }
@@ -609,17 +602,17 @@ Aws::Auth::AWSCredentials AWSAuthV4Signer::GetCredentials(const std::shared_ptr<
     return m_credentialsProvider->GetAWSCredentials();
 }
 
-Aws::Auth::AWSCredentials AWSAuthV4Signer::GetCredentials(Aws::AmazonWebServiceRequest& awsRequest, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) const {
+Aws::Auth::AWSCredentials AWSAuthV4Signer::GetCredentials(Aws::Auth::CredentialsResolutionContext& context, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) const {
     AWS_UNREFERENCED_PARAM(serviceSpecificParameters);
-    return m_credentialsProvider->GetAWSCredentials(awsRequest);
+    return m_credentialsProvider->GetAWSCredentials(context);
 }
 
-void AWSAuthV4Signer::UpdateUserAgentWithCredentialFeatures(Aws::Http::HttpRequest& request, const Aws::AmazonWebServiceRequest& awsRequest) const {
+void AWSAuthV4Signer::UpdateUserAgentWithCredentialFeatures(Aws::Http::HttpRequest& request, const Aws::Auth::CredentialsResolutionContext& context) const {
     if (!request.HasHeader(USER_AGENT)) {
         return;
     }
 
-    const auto& features = awsRequest.GetUserAgentFeatures();
+    const auto& features = context.GetUserAgentFeatures();
     if (features.empty()) {
         return;
     }

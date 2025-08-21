@@ -27,8 +27,6 @@ namespace smithy
 
 namespace Aws
 {
-    class AmazonWebServiceRequest;
-    
     namespace Http
     {
         class HttpRequest;
@@ -38,6 +36,7 @@ namespace Aws
     {
         class AWSCredentials;
         class AWSCredentialsProvider;
+        class CredentialsResolutionContext;
 
         enum class AWSSigningAlgorithm
         {
@@ -143,14 +142,6 @@ namespace Aws
              * Using m_region by default if parameter region is nullptr.
              */
             bool SignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, bool signBody) const override;
-
-            /**
-             * Uses AWS Auth V4 signing method with SHA256 HMAC algorithm. If signBody is false
-             * and https is being used then the body of the payload will not be signed.
-             * This overload passes the AWS request to the credentials provider for user agent feature tracking.
-             */
-            bool SignRequest(Aws::Http::HttpRequest& request, Aws::AmazonWebServiceRequest& awsRequest, const char* region, const char* serviceName, bool signBody) const override;
-
             /**
             * Takes a request and signs the URI based on the HttpMethod, URI and other info from the request.
             * the region the signer was initialized with will be used for the signature.
@@ -192,7 +183,7 @@ namespace Aws
 
             virtual Aws::Auth::AWSCredentials GetCredentials(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) const;
 
-            virtual Aws::Auth::AWSCredentials GetCredentials(Aws::AmazonWebServiceRequest& awsRequest, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) const;
+            virtual Aws::Auth::AWSCredentials GetCredentials(Aws::Auth::CredentialsResolutionContext& context, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) const;
 
             Aws::String GetServiceName() const { return m_serviceName; }
             Aws::String GetRegion() const { return m_region; }
@@ -202,7 +193,7 @@ namespace Aws
 
         protected:
             virtual bool ServiceRequireUnsignedPayload(const Aws::String& serviceName) const;
-            void UpdateUserAgentWithCredentialFeatures(Aws::Http::HttpRequest& request, const Aws::AmazonWebServiceRequest& awsRequest) const;
+            void UpdateUserAgentWithCredentialFeatures(Aws::Http::HttpRequest& request, const Aws::Auth::CredentialsResolutionContext& context) const;
             bool m_includeSha256HashHeader;
 
         private:

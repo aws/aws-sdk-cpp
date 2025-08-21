@@ -108,11 +108,11 @@ AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
     return credentials;
 }
 
-AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials(Aws::AmazonWebServiceRequest& request)
+AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials(CredentialsResolutionContext& context)
 {
     AWSCredentials credentials = GetAWSCredentials();
     if (!credentials.IsEmpty()) {
-        request.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS);
+        context.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS);
     }
     return credentials;
 }

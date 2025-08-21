@@ -18,6 +18,8 @@
 #include <aws/core/auth/AWSCredentials.h>
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/UserAgent.h>
+#include <aws/core/utils/memory/stl/AWSSet.h>
 #include <memory>
 
 namespace Aws
@@ -30,6 +32,37 @@ namespace Aws
     }
     namespace Auth
     {
+        /**
+         * Context class for credential resolution that tracks features used during credential retrieval.
+         */
+        class AWS_CORE_API CredentialsResolutionContext
+        {
+        public:
+            // Default constructor - no features tracked
+            CredentialsResolutionContext() = default;
+
+            explicit CredentialsResolutionContext(Aws::Set<Aws::Client::UserAgentFeature> features)
+                : m_features(std::move(features)) {}
+            
+            /**
+             * Add a user agent feature to track credential usage.
+             */
+            void AddUserAgentFeature(Aws::Client::UserAgentFeature feature)
+            {
+                m_features.insert(feature);
+            }
+            
+            /**
+             * Get all tracked credential features.
+             */
+            const Aws::Set<Aws::Client::UserAgentFeature>& GetUserAgentFeatures() const
+            {
+                return m_features;
+            }
+
+        private:
+            Aws::Set<Aws::Client::UserAgentFeature> m_features;
+        };
         constexpr int REFRESH_THRESHOLD = 1000 * 60 * 5;
 
         constexpr int AWS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD = 5 * 1000;
@@ -76,10 +109,10 @@ namespace Aws
             virtual AWSCredentials GetAWSCredentials() = 0;
 
             /**
-             * Interface that allows providers to modify the request during credential retrieval.
+             * Interface that allows providers to populate context during credential retrieval.
              */
-            virtual AWSCredentials GetAWSCredentials(Aws::AmazonWebServiceRequest& request) {
-                AWS_UNREFERENCED_PARAM(request);
+            virtual AWSCredentials GetAWSCredentials(CredentialsResolutionContext& context) {
+                AWS_UNREFERENCED_PARAM(context);
                 return GetAWSCredentials();
             }
             
@@ -156,9 +189,9 @@ namespace Aws
             AWSCredentials GetAWSCredentials() override;
             
             /**
-            * New interface that adds environment credential tracking to the request.
+            * Context-based interface that adds environment credential tracking.
             */
-            AWSCredentials GetAWSCredentials(Aws::AmazonWebServiceRequest& request) override;
+            AWSCredentials GetAWSCredentials(CredentialsResolutionContext& context) override;
         };
 
         /**

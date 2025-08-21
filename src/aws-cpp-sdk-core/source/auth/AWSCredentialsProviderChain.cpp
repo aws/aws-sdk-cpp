@@ -41,11 +41,11 @@ AWSCredentials AWSCredentialsProviderChain::GetAWSCredentials()
     return AWSCredentials();
 }
 
-AWSCredentials AWSCredentialsProviderChain::GetAWSCredentials(Aws::AmazonWebServiceRequest& request)
+AWSCredentials AWSCredentialsProviderChain::GetAWSCredentials(CredentialsResolutionContext& context)
 {
     ReaderLockGuard lock(m_cachedProviderLock);
     if (m_cachedProvider) {
-      AWSCredentials credentials = m_cachedProvider->GetAWSCredentials(request);
+      AWSCredentials credentials = m_cachedProvider->GetAWSCredentials(context);
       if (!credentials.GetAWSAccessKeyId().empty() && !credentials.GetAWSSecretKey().empty())
       {
         return credentials;
@@ -54,7 +54,7 @@ AWSCredentials AWSCredentialsProviderChain::GetAWSCredentials(Aws::AmazonWebServ
     lock.UpgradeToWriterLock();
     for (auto&& credentialsProvider : m_providerChain)
     {
-        AWSCredentials credentials = credentialsProvider->GetAWSCredentials(request);
+        AWSCredentials credentials = credentialsProvider->GetAWSCredentials(context);
         if (!credentials.GetAWSAccessKeyId().empty() && !credentials.GetAWSSecretKey().empty())
         {
             m_cachedProvider = credentialsProvider;
