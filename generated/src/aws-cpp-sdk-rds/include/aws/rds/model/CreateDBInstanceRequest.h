@@ -456,9 +456,8 @@ namespace Model
     /**
      * <p>Specifies whether the DB instance is a Multi-AZ deployment. You can't set the
      * <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ
-     * deployment.</p> <p>This setting doesn't apply to the following DB instances:</p>
-     * <ul> <li> <p>Amazon Aurora (DB instance Availability Zones (AZs) are managed by
-     * the DB cluster.)</p> </li> <li> <p>RDS Custom</p> </li> </ul>
+     * deployment.</p> <p>This setting doesn't apply to Amazon Aurora because the DB
+     * instance Availability Zones (AZs) are managed by the DB cluster.</p>
      */
     inline bool GetMultiAZ() const { return m_multiAZ; }
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
@@ -531,8 +530,8 @@ namespace Model
     ///@{
     /**
      * <p>The license model information for this DB instance.</p>  <p>License
-     * models for RDS for Db2 require additional configuration. The Bring Your Own
-     * License (BYOL) model requires a custom parameter group and an Amazon Web
+     * models for RDS for Db2 require additional configuration. The bring your own
+     * license (BYOL) model requires a custom parameter group and an Amazon Web
      * Services License Manager self-managed license. The Db2 license through Amazon
      * Web Services Marketplace model requires an Amazon Web Services Marketplace
      * subscription. For more information, see <a

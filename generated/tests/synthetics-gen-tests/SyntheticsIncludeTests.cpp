@@ -19,6 +19,8 @@
 #include <aws/synthetics/model/AssociateResourceRequest.h>
 #include <aws/synthetics/model/AssociateResourceResult.h>
 #include <aws/synthetics/model/BaseScreenshot.h>
+#include <aws/synthetics/model/BrowserConfig.h>
+#include <aws/synthetics/model/BrowserType.h>
 #include <aws/synthetics/model/Canary.h>
 #include <aws/synthetics/model/CanaryCodeInput.h>
 #include <aws/synthetics/model/CanaryCodeOutput.h>
@@ -58,6 +60,7 @@
 #include <aws/synthetics/model/DisassociateResourceResult.h>
 #include <aws/synthetics/model/DryRunConfigOutput.h>
 #include <aws/synthetics/model/EncryptionMode.h>
+#include <aws/synthetics/model/EngineConfig.h>
 #include <aws/synthetics/model/GetCanaryRequest.h>
 #include <aws/synthetics/model/GetCanaryResult.h>
 #include <aws/synthetics/model/GetCanaryRunsRequest.h>

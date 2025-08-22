@@ -109,6 +109,21 @@ namespace Model
     template<typename DescriptionT = Aws::String>
     UpdateAIPromptRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The identifier of the model used for this AI Prompt.</p>  <p>For more
+     * information on supported models, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported
+     * models for system and custom prompts</a>.</p> 
+     */
+    inline const Aws::String& GetModelId() const { return m_modelId; }
+    inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }
+    template<typename ModelIdT = Aws::String>
+    void SetModelId(ModelIdT&& value) { m_modelIdHasBeenSet = true; m_modelId = std::forward<ModelIdT>(value); }
+    template<typename ModelIdT = Aws::String>
+    UpdateAIPromptRequest& WithModelId(ModelIdT&& value) { SetModelId(std::forward<ModelIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
@@ -128,6 +143,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    Aws::String m_modelId;
+    bool m_modelIdHasBeenSet = false;
   };
 
 } // namespace Model

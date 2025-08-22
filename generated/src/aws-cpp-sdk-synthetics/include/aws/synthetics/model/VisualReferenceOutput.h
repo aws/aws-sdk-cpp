@@ -7,6 +7,7 @@
 #include <aws/synthetics/Synthetics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/synthetics/model/BrowserType.h>
 #include <aws/synthetics/model/BaseScreenshot.h>
 #include <utility>
 
@@ -71,6 +72,16 @@ namespace Model
     template<typename BaseCanaryRunIdT = Aws::String>
     VisualReferenceOutput& WithBaseCanaryRunId(BaseCanaryRunIdT&& value) { SetBaseCanaryRunId(std::forward<BaseCanaryRunIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The browser type associated with this visual reference.</p>
+     */
+    inline BrowserType GetBrowserType() const { return m_browserType; }
+    inline bool BrowserTypeHasBeenSet() const { return m_browserTypeHasBeenSet; }
+    inline void SetBrowserType(BrowserType value) { m_browserTypeHasBeenSet = true; m_browserType = value; }
+    inline VisualReferenceOutput& WithBrowserType(BrowserType value) { SetBrowserType(value); return *this;}
+    ///@}
   private:
 
     Aws::Vector<BaseScreenshot> m_baseScreenshots;
@@ -78,6 +89,9 @@ namespace Model
 
     Aws::String m_baseCanaryRunId;
     bool m_baseCanaryRunIdHasBeenSet = false;
+
+    BrowserType m_browserType{BrowserType::NOT_SET};
+    bool m_browserTypeHasBeenSet = false;
   };
 
 } // namespace Model

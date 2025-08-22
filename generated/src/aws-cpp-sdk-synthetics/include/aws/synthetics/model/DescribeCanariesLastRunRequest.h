@@ -8,6 +8,7 @@
 #include <aws/synthetics/SyntheticsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/synthetics/model/BrowserType.h>
 #include <utility>
 
 namespace Aws
@@ -81,6 +82,16 @@ namespace Model
     template<typename NamesT = Aws::String>
     DescribeCanariesLastRunRequest& AddNames(NamesT&& value) { m_namesHasBeenSet = true; m_names.emplace_back(std::forward<NamesT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The type of browser to use for the canary run.</p>
+     */
+    inline BrowserType GetBrowserType() const { return m_browserType; }
+    inline bool BrowserTypeHasBeenSet() const { return m_browserTypeHasBeenSet; }
+    inline void SetBrowserType(BrowserType value) { m_browserTypeHasBeenSet = true; m_browserType = value; }
+    inline DescribeCanariesLastRunRequest& WithBrowserType(BrowserType value) { SetBrowserType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_nextToken;
@@ -91,6 +102,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_names;
     bool m_namesHasBeenSet = false;
+
+    BrowserType m_browserType{BrowserType::NOT_SET};
+    bool m_browserTypeHasBeenSet = false;
   };
 
 } // namespace Model

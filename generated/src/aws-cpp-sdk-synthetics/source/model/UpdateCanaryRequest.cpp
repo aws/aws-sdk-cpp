@@ -93,6 +93,28 @@ Aws::String UpdateCanaryRequest::SerializePayload() const
 
   }
 
+  if(m_visualReferencesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> visualReferencesJsonList(m_visualReferences.size());
+   for(unsigned visualReferencesIndex = 0; visualReferencesIndex < visualReferencesJsonList.GetLength(); ++visualReferencesIndex)
+   {
+     visualReferencesJsonList[visualReferencesIndex].AsObject(m_visualReferences[visualReferencesIndex].Jsonize());
+   }
+   payload.WithArray("VisualReferences", std::move(visualReferencesJsonList));
+
+  }
+
+  if(m_browserConfigsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> browserConfigsJsonList(m_browserConfigs.size());
+   for(unsigned browserConfigsIndex = 0; browserConfigsIndex < browserConfigsJsonList.GetLength(); ++browserConfigsIndex)
+   {
+     browserConfigsJsonList[browserConfigsIndex].AsObject(m_browserConfigs[browserConfigsIndex].Jsonize());
+   }
+   payload.WithArray("BrowserConfigs", std::move(browserConfigsJsonList));
+
+  }
+
   return payload.View().WriteReadable();
 }
 

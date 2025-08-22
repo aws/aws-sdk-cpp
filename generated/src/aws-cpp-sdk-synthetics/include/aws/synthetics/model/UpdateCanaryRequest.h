@@ -14,6 +14,8 @@
 #include <aws/synthetics/model/VisualReferenceInput.h>
 #include <aws/synthetics/model/ArtifactConfigInput.h>
 #include <aws/synthetics/model/ProvisionedResourceCleanupSetting.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/synthetics/model/BrowserConfig.h>
 #include <utility>
 
 namespace Aws
@@ -254,6 +256,54 @@ namespace Model
     template<typename DryRunIdT = Aws::String>
     UpdateCanaryRequest& WithDryRunId(DryRunIdT&& value) { SetDryRunId(std::forward<DryRunIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A list of visual reference configurations for the canary, one for each
+     * browser type that the canary is configured to run on. Visual references are used
+     * for visual monitoring comparisons.</p> <p>
+     * <code>syn-nodejs-puppeteer-11.0</code> and above, and
+     * <code>syn-nodejs-playwright-3.0</code> and above, only supports
+     * <code>visualReferences</code>. <code>visualReference</code> field is not
+     * supported.</p> <p>Versions older than <code>syn-nodejs-puppeteer-11.0</code>
+     * supports both <code>visualReference</code> and <code>visualReferences</code> for
+     * backward compatibility. It is recommended to use <code>visualReferences</code>
+     * for consistency and future compatibility.</p> <p>For multibrowser visual
+     * monitoring, you can update the baseline for all configured browsers in a single
+     * update call by specifying a list of VisualReference objects, one per browser.
+     * Each VisualReference object maps to a specific browser configuration, allowing
+     * you to manage visual baselines for multiple browsers simultaneously.</p> <p>For
+     * single configuration canaries using Chrome browser (default browser), use
+     * visualReferences for <code>syn-nodejs-puppeteer-11.0</code> and above, and
+     * <code>syn-nodejs-playwright-3.0</code> and above canaries. The browserType in
+     * the visualReference object is not mandatory.</p>
+     */
+    inline const Aws::Vector<VisualReferenceInput>& GetVisualReferences() const { return m_visualReferences; }
+    inline bool VisualReferencesHasBeenSet() const { return m_visualReferencesHasBeenSet; }
+    template<typename VisualReferencesT = Aws::Vector<VisualReferenceInput>>
+    void SetVisualReferences(VisualReferencesT&& value) { m_visualReferencesHasBeenSet = true; m_visualReferences = std::forward<VisualReferencesT>(value); }
+    template<typename VisualReferencesT = Aws::Vector<VisualReferenceInput>>
+    UpdateCanaryRequest& WithVisualReferences(VisualReferencesT&& value) { SetVisualReferences(std::forward<VisualReferencesT>(value)); return *this;}
+    template<typename VisualReferencesT = VisualReferenceInput>
+    UpdateCanaryRequest& AddVisualReferences(VisualReferencesT&& value) { m_visualReferencesHasBeenSet = true; m_visualReferences.emplace_back(std::forward<VisualReferencesT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>A structure that specifies the browser type to use for a canary run.
+     * CloudWatch Synthetics supports running canaries on both <code>CHROME</code> and
+     * <code>FIREFOX</code> browsers.</p>  <p>If not specified,
+     * <code>browserConfigs</code> defaults to Chrome.</p> 
+     */
+    inline const Aws::Vector<BrowserConfig>& GetBrowserConfigs() const { return m_browserConfigs; }
+    inline bool BrowserConfigsHasBeenSet() const { return m_browserConfigsHasBeenSet; }
+    template<typename BrowserConfigsT = Aws::Vector<BrowserConfig>>
+    void SetBrowserConfigs(BrowserConfigsT&& value) { m_browserConfigsHasBeenSet = true; m_browserConfigs = std::forward<BrowserConfigsT>(value); }
+    template<typename BrowserConfigsT = Aws::Vector<BrowserConfig>>
+    UpdateCanaryRequest& WithBrowserConfigs(BrowserConfigsT&& value) { SetBrowserConfigs(std::forward<BrowserConfigsT>(value)); return *this;}
+    template<typename BrowserConfigsT = BrowserConfig>
+    UpdateCanaryRequest& AddBrowserConfigs(BrowserConfigsT&& value) { m_browserConfigsHasBeenSet = true; m_browserConfigs.emplace_back(std::forward<BrowserConfigsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_name;
@@ -297,6 +347,12 @@ namespace Model
 
     Aws::String m_dryRunId;
     bool m_dryRunIdHasBeenSet = false;
+
+    Aws::Vector<VisualReferenceInput> m_visualReferences;
+    bool m_visualReferencesHasBeenSet = false;
+
+    Aws::Vector<BrowserConfig> m_browserConfigs;
+    bool m_browserConfigsHasBeenSet = false;
   };
 
 } // namespace Model

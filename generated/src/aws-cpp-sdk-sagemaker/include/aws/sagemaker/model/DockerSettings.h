@@ -64,6 +64,17 @@ namespace Model
     template<typename VpcOnlyTrustedAccountsT = Aws::String>
     DockerSettings& AddVpcOnlyTrustedAccounts(VpcOnlyTrustedAccountsT&& value) { m_vpcOnlyTrustedAccountsHasBeenSet = true; m_vpcOnlyTrustedAccounts.emplace_back(std::forward<VpcOnlyTrustedAccountsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether to use rootless Docker. Default value is
+     * <code>DISABLED</code>.</p>
+     */
+    inline FeatureStatus GetRootlessDocker() const { return m_rootlessDocker; }
+    inline bool RootlessDockerHasBeenSet() const { return m_rootlessDockerHasBeenSet; }
+    inline void SetRootlessDocker(FeatureStatus value) { m_rootlessDockerHasBeenSet = true; m_rootlessDocker = value; }
+    inline DockerSettings& WithRootlessDocker(FeatureStatus value) { SetRootlessDocker(value); return *this;}
+    ///@}
   private:
 
     FeatureStatus m_enableDockerAccess{FeatureStatus::NOT_SET};
@@ -71,6 +82,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_vpcOnlyTrustedAccounts;
     bool m_vpcOnlyTrustedAccountsHasBeenSet = false;
+
+    FeatureStatus m_rootlessDocker{FeatureStatus::NOT_SET};
+    bool m_rootlessDockerHasBeenSet = false;
   };
 
 } // namespace Model

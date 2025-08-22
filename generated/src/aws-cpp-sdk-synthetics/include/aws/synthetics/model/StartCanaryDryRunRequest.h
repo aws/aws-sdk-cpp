@@ -13,6 +13,8 @@
 #include <aws/synthetics/model/VisualReferenceInput.h>
 #include <aws/synthetics/model/ArtifactConfigInput.h>
 #include <aws/synthetics/model/ProvisionedResourceCleanupSetting.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/synthetics/model/BrowserConfig.h>
 #include <utility>
 
 namespace Aws
@@ -189,6 +191,46 @@ namespace Model
     inline void SetProvisionedResourceCleanup(ProvisionedResourceCleanupSetting value) { m_provisionedResourceCleanupHasBeenSet = true; m_provisionedResourceCleanup = value; }
     inline StartCanaryDryRunRequest& WithProvisionedResourceCleanup(ProvisionedResourceCleanupSetting value) { SetProvisionedResourceCleanup(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A structure that specifies the browser type to use for a canary run.
+     * CloudWatch Synthetics supports running canaries on both <code>CHROME</code> and
+     * <code>FIREFOX</code> browsers.</p>  <p>If not specified,
+     * <code>browserConfigs</code> defaults to Chrome.</p> 
+     */
+    inline const Aws::Vector<BrowserConfig>& GetBrowserConfigs() const { return m_browserConfigs; }
+    inline bool BrowserConfigsHasBeenSet() const { return m_browserConfigsHasBeenSet; }
+    template<typename BrowserConfigsT = Aws::Vector<BrowserConfig>>
+    void SetBrowserConfigs(BrowserConfigsT&& value) { m_browserConfigsHasBeenSet = true; m_browserConfigs = std::forward<BrowserConfigsT>(value); }
+    template<typename BrowserConfigsT = Aws::Vector<BrowserConfig>>
+    StartCanaryDryRunRequest& WithBrowserConfigs(BrowserConfigsT&& value) { SetBrowserConfigs(std::forward<BrowserConfigsT>(value)); return *this;}
+    template<typename BrowserConfigsT = BrowserConfig>
+    StartCanaryDryRunRequest& AddBrowserConfigs(BrowserConfigsT&& value) { m_browserConfigsHasBeenSet = true; m_browserConfigs.emplace_back(std::forward<BrowserConfigsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>A list of visual reference configurations for the canary, one for each
+     * browser type that the canary is configured to run on. Visual references are used
+     * for visual monitoring comparisons.</p> <p>
+     * <code>syn-nodejs-puppeteer-11.0</code> and above, and
+     * <code>syn-nodejs-playwright-3.0</code> and above, only supports
+     * <code>visualReferences</code>. <code>visualReference</code> field is not
+     * supported.</p> <p>Versions older than <code>syn-nodejs-puppeteer-11.0</code>
+     * supports both <code>visualReference</code> and <code>visualReferences</code> for
+     * backward compatibility. It is recommended to use <code>visualReferences</code>
+     * for consistency and future compatibility.</p>
+     */
+    inline const Aws::Vector<VisualReferenceInput>& GetVisualReferences() const { return m_visualReferences; }
+    inline bool VisualReferencesHasBeenSet() const { return m_visualReferencesHasBeenSet; }
+    template<typename VisualReferencesT = Aws::Vector<VisualReferenceInput>>
+    void SetVisualReferences(VisualReferencesT&& value) { m_visualReferencesHasBeenSet = true; m_visualReferences = std::forward<VisualReferencesT>(value); }
+    template<typename VisualReferencesT = Aws::Vector<VisualReferenceInput>>
+    StartCanaryDryRunRequest& WithVisualReferences(VisualReferencesT&& value) { SetVisualReferences(std::forward<VisualReferencesT>(value)); return *this;}
+    template<typename VisualReferencesT = VisualReferenceInput>
+    StartCanaryDryRunRequest& AddVisualReferences(VisualReferencesT&& value) { m_visualReferencesHasBeenSet = true; m_visualReferences.emplace_back(std::forward<VisualReferencesT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_name;
@@ -226,6 +268,12 @@ namespace Model
 
     ProvisionedResourceCleanupSetting m_provisionedResourceCleanup{ProvisionedResourceCleanupSetting::NOT_SET};
     bool m_provisionedResourceCleanupHasBeenSet = false;
+
+    Aws::Vector<BrowserConfig> m_browserConfigs;
+    bool m_browserConfigsHasBeenSet = false;
+
+    Aws::Vector<VisualReferenceInput> m_visualReferences;
+    bool m_visualReferencesHasBeenSet = false;
   };
 
 } // namespace Model

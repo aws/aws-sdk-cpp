@@ -39,6 +39,11 @@ VisualReferenceOutput& VisualReferenceOutput::operator =(JsonView jsonValue)
     m_baseCanaryRunId = jsonValue.GetString("BaseCanaryRunId");
     m_baseCanaryRunIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("BrowserType"))
+  {
+    m_browserType = BrowserTypeMapper::GetBrowserTypeForName(jsonValue.GetString("BrowserType"));
+    m_browserTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -61,6 +66,11 @@ JsonValue VisualReferenceOutput::Jsonize() const
   {
    payload.WithString("BaseCanaryRunId", m_baseCanaryRunId);
 
+  }
+
+  if(m_browserTypeHasBeenSet)
+  {
+   payload.WithString("BrowserType", BrowserTypeMapper::GetNameForBrowserType(m_browserType));
   }
 
   return payload;

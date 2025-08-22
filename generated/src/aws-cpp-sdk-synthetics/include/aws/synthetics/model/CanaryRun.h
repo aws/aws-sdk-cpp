@@ -9,6 +9,7 @@
 #include <aws/synthetics/model/CanaryRunStatus.h>
 #include <aws/synthetics/model/CanaryRunTimeline.h>
 #include <aws/synthetics/model/CanaryDryRunConfigOutput.h>
+#include <aws/synthetics/model/BrowserType.h>
 #include <utility>
 
 namespace Aws
@@ -135,6 +136,16 @@ namespace Model
     template<typename DryRunConfigT = CanaryDryRunConfigOutput>
     CanaryRun& WithDryRunConfig(DryRunConfigT&& value) { SetDryRunConfig(std::forward<DryRunConfigT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The browser type associated with this canary run.</p>
+     */
+    inline BrowserType GetBrowserType() const { return m_browserType; }
+    inline bool BrowserTypeHasBeenSet() const { return m_browserTypeHasBeenSet; }
+    inline void SetBrowserType(BrowserType value) { m_browserTypeHasBeenSet = true; m_browserType = value; }
+    inline CanaryRun& WithBrowserType(BrowserType value) { SetBrowserType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -160,6 +171,9 @@ namespace Model
 
     CanaryDryRunConfigOutput m_dryRunConfig;
     bool m_dryRunConfigHasBeenSet = false;
+
+    BrowserType m_browserType{BrowserType::NOT_SET};
+    bool m_browserTypeHasBeenSet = false;
   };
 
 } // namespace Model

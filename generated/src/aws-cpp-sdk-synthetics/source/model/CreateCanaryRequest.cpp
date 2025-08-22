@@ -92,6 +92,17 @@ Aws::String CreateCanaryRequest::SerializePayload() const
    payload.WithString("ProvisionedResourceCleanup", ProvisionedResourceCleanupSettingMapper::GetNameForProvisionedResourceCleanupSetting(m_provisionedResourceCleanup));
   }
 
+  if(m_browserConfigsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> browserConfigsJsonList(m_browserConfigs.size());
+   for(unsigned browserConfigsIndex = 0; browserConfigsIndex < browserConfigsJsonList.GetLength(); ++browserConfigsIndex)
+   {
+     browserConfigsJsonList[browserConfigsIndex].AsObject(m_browserConfigs[browserConfigsIndex].Jsonize());
+   }
+   payload.WithArray("BrowserConfigs", std::move(browserConfigsJsonList));
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;

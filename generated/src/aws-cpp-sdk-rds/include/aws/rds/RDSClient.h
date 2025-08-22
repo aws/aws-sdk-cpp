@@ -800,23 +800,20 @@ namespace Aws
         /**
          * <p>Creates a new DB instance that acts as a read replica for an existing source
          * DB instance or Multi-AZ DB cluster. You can create a read replica for a DB
-         * instance running MariaDB, MySQL, Oracle, PostgreSQL, or SQL Server. You can
+         * instance running Db2, MariaDB, MySQL, Oracle, PostgreSQL, or SQL Server. You can
          * create a read replica for a Multi-AZ DB cluster running MySQL or PostgreSQL. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
          * with read replicas</a> and <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html#multi-az-db-clusters-migrating-to-instance-with-read-replica">Migrating
          * from a Multi-AZ DB cluster to a DB instance using a read replica</a> in the
-         * <i>Amazon RDS User Guide</i>.</p> <p>Amazon RDS for Db2 supports this operation
-         * for standby replicas. To create a standby replica for a DB instance running Db2,
-         * you must set <code>ReplicaMode</code> to <code>mounted</code>.</p> <p>Amazon
-         * Aurora doesn't support this operation. To create a DB instance for an Aurora DB
-         * cluster, use the <code>CreateDBInstance</code> operation.</p> <p>RDS creates
-         * read replicas with backups disabled. All other attributes (including DB security
-         * groups and DB parameter groups) are inherited from the source DB instance or
-         * cluster, except as specified.</p>  <p>Your source DB instance or
-         * cluster must have backup retention enabled.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <i>Amazon RDS User Guide</i>.</p> <p>Amazon Aurora doesn't support this
+         * operation. To create a DB instance for an Aurora DB cluster, use the
+         * <code>CreateDBInstance</code> operation.</p> <p>RDS creates read replicas with
+         * backups disabled. All other attributes (including DB security groups and DB
+         * parameter groups) are inherited from the source DB instance or cluster, except
+         * as specified.</p>  <p>Your source DB instance or cluster must have
+         * backup retention enabled.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">AWS
          * API Reference</a></p>
          */
@@ -3939,8 +3936,9 @@ namespace Aws
         /**
          * <p>Updates a manual DB snapshot with a new engine version. The snapshot can be
          * encrypted or unencrypted, but not shared or public. </p> <p>Amazon RDS supports
-         * upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This operation doesn't
-         * apply to RDS Custom or RDS for Db2.</p><p><h3>See Also:</h3>   <a
+         * upgrading DB snapshots for MariaDB, MySQL, PostgreSQL, and Oracle. This
+         * operation doesn't apply to RDS Custom or RDS for Db2.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">AWS
          * API Reference</a></p>
          */
@@ -4788,8 +4786,8 @@ namespace Aws
          * database, store it on Amazon Simple Storage Service (Amazon S3), and then
          * restore the backup file onto a new Amazon RDS DB instance running MySQL. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing
-         * Data into an Amazon RDS MySQL DB Instance</a> in the <i>Amazon RDS User
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Restoring
+         * a backup into an Amazon RDS for MySQL DB instance</a> in the <i>Amazon RDS User
          * Guide.</i> </p> <p>This operation doesn't apply to RDS Custom.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3">AWS

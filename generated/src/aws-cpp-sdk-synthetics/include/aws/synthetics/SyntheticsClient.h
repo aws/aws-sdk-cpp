@@ -735,8 +735,13 @@ namespace Synthetics
 
         /**
          * <p>Updates the configuration of a canary that has already been created.</p>
-         * <p>You can't use this operation to update the tags of an existing canary. To
-         * change the tags of an existing canary, use <a
+         * <p>For multibrowser canaries, you can add or remove browsers by updating the
+         * browserConfig list in the update call. For example:</p> <ul> <li> <p>To add
+         * Firefox to a canary that currently uses Chrome, specify browserConfigs as
+         * [CHROME, FIREFOX]</p> </li> <li> <p>To remove Firefox and keep only Chrome,
+         * specify browserConfigs as [CHROME]</p> </li> </ul> <p>You can't use this
+         * operation to update the tags of an existing canary. To change the tags of an
+         * existing canary, use <a
          * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
          *  <p>When you use the <code>dryRunId</code> field when updating a canary,
          * the only other field you can provide is the <code>Schedule</code>. Adding any

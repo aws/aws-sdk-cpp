@@ -13,6 +13,7 @@
 #include <aws/medialive/model/DvbSubDestinationOutlineColor.h>
 #include <aws/medialive/model/DvbSubDestinationShadowColor.h>
 #include <aws/medialive/model/DvbSubDestinationTeletextGridControl.h>
+#include <aws/medialive/model/DvbSubDestinationSubtitleRows.h>
 #include <utility>
 
 namespace Aws
@@ -265,6 +266,22 @@ namespace Model
     inline void SetYPosition(int value) { m_yPositionHasBeenSet = true; m_yPosition = value; }
     inline DvbSubDestinationSettings& WithYPosition(int value) { SetYPosition(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * Applies only when the input captions are Teletext and the output captions are
+     * DVB-Sub or Burn-In. Choose the number of lines for the captions bitmap. The
+     * captions bitmap is 700 wide × 576 high and will be laid over the video. For
+     * example, a value of 16 divides the bitmap into 16 lines, with each line 36
+     * pixels high (16 × 36 = 576). The default is 24 (24 pixels high). Enter the same
+     * number in every encode in every output that converts the same Teletext source to
+     * DVB-Sub or Burn-in.
+     */
+    inline DvbSubDestinationSubtitleRows GetSubtitleRows() const { return m_subtitleRows; }
+    inline bool SubtitleRowsHasBeenSet() const { return m_subtitleRowsHasBeenSet; }
+    inline void SetSubtitleRows(DvbSubDestinationSubtitleRows value) { m_subtitleRowsHasBeenSet = true; m_subtitleRows = value; }
+    inline DvbSubDestinationSettings& WithSubtitleRows(DvbSubDestinationSubtitleRows value) { SetSubtitleRows(value); return *this;}
+    ///@}
   private:
 
     DvbSubDestinationAlignment m_alignment{DvbSubDestinationAlignment::NOT_SET};
@@ -317,6 +334,9 @@ namespace Model
 
     int m_yPosition{0};
     bool m_yPositionHasBeenSet = false;
+
+    DvbSubDestinationSubtitleRows m_subtitleRows{DvbSubDestinationSubtitleRows::NOT_SET};
+    bool m_subtitleRowsHasBeenSet = false;
   };
 
 } // namespace Model

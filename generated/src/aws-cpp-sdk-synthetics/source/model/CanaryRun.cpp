@@ -65,6 +65,11 @@ CanaryRun& CanaryRun::operator =(JsonView jsonValue)
     m_dryRunConfig = jsonValue.GetObject("DryRunConfig");
     m_dryRunConfigHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("BrowserType"))
+  {
+    m_browserType = BrowserTypeMapper::GetBrowserTypeForName(jsonValue.GetString("BrowserType"));
+    m_browserTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -118,6 +123,11 @@ JsonValue CanaryRun::Jsonize() const
   {
    payload.WithObject("DryRunConfig", m_dryRunConfig.Jsonize());
 
+  }
+
+  if(m_browserTypeHasBeenSet)
+  {
+   payload.WithString("BrowserType", BrowserTypeMapper::GetNameForBrowserType(m_browserType));
   }
 
   return payload;

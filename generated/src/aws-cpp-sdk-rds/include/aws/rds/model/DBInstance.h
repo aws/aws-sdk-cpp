@@ -417,7 +417,7 @@ namespace Model
      * <p>The open mode of a Db2 or an Oracle read replica. The default is
      * <code>open-read-only</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working
-     * with read replicas for Amazon RDS for Db2</a> and <a
+     * with replicas for Amazon RDS for Db2</a> and <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
      * with read replicas for Amazon RDS for Oracle</a> in the <i>Amazon RDS User
      * Guide</i>. </p>  <p>This attribute is only supported in RDS for Db2, RDS
