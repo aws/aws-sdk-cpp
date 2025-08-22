@@ -38,24 +38,9 @@ AWSJsonClient::AWSJsonClient(const Aws::Client::ClientConfiguration& configurati
 {
 }
 
-JsonValue AWSJsonClient::ParseResponse(const HttpResponseOutcome& httpOutcome) const
-{
-    return JsonValue(httpOutcome.GetResult()->GetResponseBody());
-}
-
-bool AWSJsonClient::HasParseError(const Aws::Utils::Json::JsonValue& response) const
-{
-    return !response.WasParseSuccessful();
-}
-
 AWSError<CoreErrors> AWSJsonClient::CreateParseError() const
 {
     return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "Json Parser Error", "Failed to parse JSON response", false);
-}
-
-JsonValue AWSJsonClient::CreateEmptyResponse() const
-{
-    return JsonValue();
 }
 
 const char* AWSJsonClient::GetClientLogTag() const

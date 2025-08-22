@@ -9,19 +9,14 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
-#include <aws/core/http/HttpResponse.h>
-#include <aws/core/utils/Outcome.h>
-#include <aws/core/utils/logging/LogMacros.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
-#include <aws/crt/cbor/Cbor.h>
+#include <aws/core/utils/cbor/CborValue.h>
 
 #include <cassert>
-
 
 using namespace Aws;
 using namespace Aws::Client;
 using namespace Aws::Http;
-using namespace Aws::Utils;
+using namespace Aws::Utils::Cbor;
 using namespace smithy::components::tracing;
 
 static const char AWS_CBOR_CLIENT_LOG_TAG[] = "AWSRpcV2CborClient";
@@ -40,24 +35,9 @@ AWSRpcV2CborClient::AWSRpcV2CborClient(const Aws::Client::ClientConfiguration& c
 {
 }
 
-Aws::UniquePtr<Crt::Cbor::CborDecoder> AWSRpcV2CborClient::ParseResponse(const HttpResponseOutcome& httpOutcome) const
-{
-    return CreateCborDecoder(httpOutcome);
-}
-
-bool AWSRpcV2CborClient::HasParseError(const Aws::UniquePtr<Crt::Cbor::CborDecoder>& response) const
-{
-    return response == nullptr;
-}
-
 AWSError<CoreErrors> AWSRpcV2CborClient::CreateParseError() const
 {
     return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "Cbor Parser Error", "Failed to parse CBOR response", false);
-}
-
-Aws::UniquePtr<Crt::Cbor::CborDecoder> AWSRpcV2CborClient::CreateEmptyResponse() const
-{
-    return nullptr;
 }
 
 const char* AWSRpcV2CborClient::GetClientLogTag() const
@@ -65,11 +45,3 @@ const char* AWSRpcV2CborClient::GetClientLogTag() const
   return AWS_CBOR_CLIENT_LOG_TAG;
 }
 
-Aws::UniquePtr<Aws::Crt::Cbor::CborDecoder> AWSRpcV2CborClient::CreateCborDecoder(
-    const HttpResponseOutcome& httpOutcome) const
-{
-    Aws::StringStream ss;
-    ss << httpOutcome.GetResult()->GetResponseBody().rdbuf();
-    const Aws::Crt::ByteCursor cborDecoder = Aws::Crt::ByteCursorFromCString(ss.str().c_str());
-    return Aws::MakeUnique<Crt::Cbor::CborDecoder>(GetClientLogTag(), cborDecoder);
-}

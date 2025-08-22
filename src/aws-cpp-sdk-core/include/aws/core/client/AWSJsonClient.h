@@ -57,11 +57,8 @@ namespace Aws
             friend class BidirectionalEventStreamingTask; // allow BidirectionalEventStreamingTask to MakeRequests
 
         private:
-            Utils::Json::JsonValue ParseResponse(const HttpResponseOutcome& httpOutcome) const override;
-            bool HasParseError(const Utils::Json::JsonValue& response) const override;
             AWSError<CoreErrors> CreateParseError() const override;
             const char* GetClientLogTag() const override;
-            Utils::Json::JsonValue CreateEmptyResponse() const override;
         };
     } // namespace Client
 } // namespace Aws
