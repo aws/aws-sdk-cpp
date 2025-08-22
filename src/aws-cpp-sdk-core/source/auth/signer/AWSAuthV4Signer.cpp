@@ -630,10 +630,11 @@ void AWSAuthV4Signer::UpdateUserAgentWithCredentialFeatures(Aws::Http::HttpReque
         }
     }
 
-    // Append credential features to existing UA
-    Aws::String existingUA = request.GetHeaderValue(USER_AGENT);
-    Aws::StringStream updatedUA;
-    updatedUA << existingUA << " m/" << credentialFeatures.str();
-    
-    request.SetUserAgent(updatedUA.str());
+    // Only append if we have credential features
+    if (!credentialFeatures.str().empty()) {
+        Aws::String existingUA = request.GetHeaderValue(USER_AGENT);
+        Aws::StringStream updatedUA;
+        updatedUA << existingUA << " m/" << credentialFeatures.str();
+        request.SetUserAgent(updatedUA.str());
+    }
 }
