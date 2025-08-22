@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -93,5 +93,10 @@ bool S3ExpressSigner::ServiceRequireUnsignedPayload(const Aws::String &serviceNa
 
 Aws::Auth::AWSCredentials S3ExpressSigner::GetCredentials(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) const {
     auto identity = m_S3ExpressIdentityProvider->GetS3ExpressIdentity(serviceSpecificParameters);
+    return {identity.getAccessKeyId(), identity.getSecretKeyId()};
+}
+
+Aws::Auth::AWSCredentials S3ExpressSigner::GetCredentials(Aws::Auth::CredentialsResolutionContext& context, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) const {
+    auto identity = m_S3ExpressIdentityProvider->GetS3ExpressIdentity(context, serviceSpecificParameters);
     return {identity.getAccessKeyId(), identity.getSecretKeyId()};
 }

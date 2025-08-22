@@ -338,7 +338,7 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
 {
     Aws::Auth::CredentialsResolutionContext context;
     AWSCredentials credentials = GetCredentials(context, request.GetServiceSpecificParameters());
-    
+
     // Update User-Agent with credential tracking features from context
     UpdateUserAgentWithCredentialFeatures(request, context);
     

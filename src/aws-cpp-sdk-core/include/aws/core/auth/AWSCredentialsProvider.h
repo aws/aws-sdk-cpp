@@ -218,6 +218,11 @@ namespace Aws
             * Retrieves the credentials if found, otherwise returns empty credential set.
             */
             AWSCredentials GetAWSCredentials() override;
+            
+            /**
+            * Context-based interface that adds profile credential tracking.
+            */
+            AWSCredentials GetAWSCredentials(CredentialsResolutionContext& context) override;
 
             /**
              * Returns the fullpath of the calculated credentials profile file
@@ -271,6 +276,11 @@ namespace Aws
             * Retrieves the credentials if found, otherwise returns empty credential set.
             */
             AWSCredentials GetAWSCredentials() override;
+            
+            /**
+            * Context-based interface that adds instance profile credential tracking.
+            */
+            AWSCredentials GetAWSCredentials(CredentialsResolutionContext& context) override;
 
         protected:
             void Reload() override;

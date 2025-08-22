@@ -43,6 +43,8 @@ const std::pair<UserAgentFeature, const char*> BUSINESS_METRIC_MAPPING[] = {
     {UserAgentFeature::RESOLVED_ACCOUNT_ID, "T"},
     {UserAgentFeature::GZIP_REQUEST_COMPRESSION, "L"},
     {UserAgentFeature::CREDENTIALS_ENV_VARS, "g"},
+    {UserAgentFeature::CREDENTIALS_IMDS, "0"},
+    {UserAgentFeature::CREDENTIALS_PROFILE, "n"},
 };
 
 Aws::String BusinessMetricForFeature(UserAgentFeature feature) {

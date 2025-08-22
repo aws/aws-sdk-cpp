@@ -212,6 +212,14 @@ AWSCredentials ProfileConfigFileAWSCredentialsProvider::GetAWSCredentials()
     return AWSCredentials();
 }
 
+AWSCredentials ProfileConfigFileAWSCredentialsProvider::GetAWSCredentials(CredentialsResolutionContext& context)
+{
+    AWSCredentials credentials = GetAWSCredentials();
+    if (!credentials.IsEmpty()) {
+        context.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_PROFILE);
+    }
+    return credentials;
+}
 
 void ProfileConfigFileAWSCredentialsProvider::Reload()
 {
@@ -279,6 +287,15 @@ AWSCredentials InstanceProfileCredentialsProvider::GetAWSCredentials()
     }
 
     return AWSCredentials();
+}
+
+AWSCredentials InstanceProfileCredentialsProvider::GetAWSCredentials(CredentialsResolutionContext& context)
+{
+    AWSCredentials credentials = GetAWSCredentials();
+    if (!credentials.IsEmpty()) {
+        context.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_IMDS);
+    }
+    return credentials;
 }
 
 bool InstanceProfileCredentialsProvider::ExpiresSoon() const
