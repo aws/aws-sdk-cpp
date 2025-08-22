@@ -1001,16 +1001,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The open mode of a replica database.</p>  <p>This parameter is only
-     * supported for Db2 DB instances and Oracle DB instances.</p>  <dl>
-     * <dt>Db2</dt> <dd> <p>Standby DB replicas are included in Db2 Advanced Edition
-     * (AE) and Db2 Standard Edition (SE). The main use case for standby replicas is
-     * cross-Region disaster recovery. Because it doesn't accept user connections, a
-     * standby replica can't serve a read-only workload.</p> <p>You can create a
-     * combination of standby and read-only DB replicas for the same primary DB
-     * instance. For more information, see <a
+     * <p>The open mode of a replica database.</p> <p>This parameter is only supported
+     * for Db2 DB instances and Oracle DB instances.</p> <dl> <dt>Db2</dt> <dd>
+     * <p>Standby DB replicas are included in Db2 Advanced Edition (AE) and Db2
+     * Standard Edition (SE). The main use case for standby replicas is cross-Region
+     * disaster recovery. Because it doesn't accept user connections, a standby replica
+     * can't serve a read-only workload.</p> <p>You can create a combination of standby
+     * and read-only DB replicas for the same primary DB instance. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working
-     * with read replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User
+     * with replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>To create standby DB replicas for RDS for Db2, set this
      * parameter to <code>mounted</code>.</p> </dd> <dt>Oracle</dt> <dd> <p>Mounted DB
      * replicas are included in Oracle Database Enterprise Edition. The main use case

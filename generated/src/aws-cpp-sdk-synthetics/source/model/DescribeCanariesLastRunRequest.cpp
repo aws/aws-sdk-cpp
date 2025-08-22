@@ -39,6 +39,11 @@ Aws::String DescribeCanariesLastRunRequest::SerializePayload() const
 
   }
 
+  if(m_browserTypeHasBeenSet)
+  {
+   payload.WithString("BrowserType", BrowserTypeMapper::GetNameForBrowserType(m_browserType));
+  }
+
   return payload.View().WriteReadable();
 }
 

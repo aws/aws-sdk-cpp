@@ -211,8 +211,8 @@ namespace Model
     ///@{
     /**
      * <p>The license model information for the restored DB instance.</p> 
-     * <p>License models for RDS for Db2 require additional configuration. The Bring
-     * Your Own License (BYOL) model requires a custom parameter group and an Amazon
+     * <p>License models for RDS for Db2 require additional configuration. The bring
+     * your own license (BYOL) model requires a custom parameter group and an Amazon
      * Web Services License Manager self-managed license. The Db2 license through
      * Amazon Web Services Marketplace model requires an Amazon Web Services
      * Marketplace subscription. For more information, see <a

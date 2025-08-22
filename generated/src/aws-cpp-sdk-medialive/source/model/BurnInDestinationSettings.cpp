@@ -110,6 +110,11 @@ BurnInDestinationSettings& BurnInDestinationSettings::operator =(JsonView jsonVa
     m_yPosition = jsonValue.GetInteger("yPosition");
     m_yPositionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("subtitleRows"))
+  {
+    m_subtitleRows = BurnInDestinationSubtitleRowsMapper::GetBurnInDestinationSubtitleRowsForName(jsonValue.GetString("subtitleRows"));
+    m_subtitleRowsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -211,6 +216,11 @@ JsonValue BurnInDestinationSettings::Jsonize() const
   {
    payload.WithInteger("yPosition", m_yPosition);
 
+  }
+
+  if(m_subtitleRowsHasBeenSet)
+  {
+   payload.WithString("subtitleRows", BurnInDestinationSubtitleRowsMapper::GetNameForBurnInDestinationSubtitleRows(m_subtitleRows));
   }
 
   return payload;

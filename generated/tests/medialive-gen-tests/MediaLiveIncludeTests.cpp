@@ -105,6 +105,7 @@
 #include <aws/medialive/model/BurnInAlignment.h>
 #include <aws/medialive/model/BurnInBackgroundColor.h>
 #include <aws/medialive/model/BurnInDestinationSettings.h>
+#include <aws/medialive/model/BurnInDestinationSubtitleRows.h>
 #include <aws/medialive/model/BurnInFontColor.h>
 #include <aws/medialive/model/BurnInOutlineColor.h>
 #include <aws/medialive/model/BurnInShadowColor.h>
@@ -275,6 +276,7 @@
 #include <aws/medialive/model/DvbSubDestinationOutlineColor.h>
 #include <aws/medialive/model/DvbSubDestinationSettings.h>
 #include <aws/medialive/model/DvbSubDestinationShadowColor.h>
+#include <aws/medialive/model/DvbSubDestinationSubtitleRows.h>
 #include <aws/medialive/model/DvbSubDestinationTeletextGridControl.h>
 #include <aws/medialive/model/DvbSubOcrLanguage.h>
 #include <aws/medialive/model/DvbSubSourceSettings.h>

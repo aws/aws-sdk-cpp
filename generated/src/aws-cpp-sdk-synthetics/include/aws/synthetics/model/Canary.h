@@ -14,9 +14,12 @@
 #include <aws/synthetics/model/VpcConfigOutput.h>
 #include <aws/synthetics/model/VisualReferenceOutput.h>
 #include <aws/synthetics/model/ProvisionedResourceCleanupSetting.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/synthetics/model/ArtifactConfigOutput.h>
 #include <aws/synthetics/model/DryRunConfigOutput.h>
+#include <aws/synthetics/model/BrowserConfig.h>
+#include <aws/synthetics/model/EngineConfig.h>
 #include <utility>
 
 namespace Aws
@@ -257,6 +260,67 @@ namespace Model
 
     ///@{
     /**
+     * <p>A structure that specifies the browser type to use for a canary run.
+     * CloudWatch Synthetics supports running canaries on both <code>CHROME</code> and
+     * <code>FIREFOX</code> browsers.</p>  <p>If not specified,
+     * <code>browserConfigs</code> defaults to Chrome.</p> 
+     */
+    inline const Aws::Vector<BrowserConfig>& GetBrowserConfigs() const { return m_browserConfigs; }
+    inline bool BrowserConfigsHasBeenSet() const { return m_browserConfigsHasBeenSet; }
+    template<typename BrowserConfigsT = Aws::Vector<BrowserConfig>>
+    void SetBrowserConfigs(BrowserConfigsT&& value) { m_browserConfigsHasBeenSet = true; m_browserConfigs = std::forward<BrowserConfigsT>(value); }
+    template<typename BrowserConfigsT = Aws::Vector<BrowserConfig>>
+    Canary& WithBrowserConfigs(BrowserConfigsT&& value) { SetBrowserConfigs(std::forward<BrowserConfigsT>(value)); return *this;}
+    template<typename BrowserConfigsT = BrowserConfig>
+    Canary& AddBrowserConfigs(BrowserConfigsT&& value) { m_browserConfigsHasBeenSet = true; m_browserConfigs.emplace_back(std::forward<BrowserConfigsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>A list of engine configurations for the canary, one for each browser type
+     * that the canary is configured to run on.</p> <p>All runtime versions
+     * <code>syn-nodejs-puppeteer-11.0</code> and above, and
+     * <code>syn-nodejs-playwright-3.0</code> and above, use <code>engineConfigs</code>
+     * only. You can no longer use <code>engineArn</code> in these versions.</p>
+     * <p>Runtime versions older than <code>syn-nodejs-puppeteer-11.0</code> and
+     * <code>syn-nodejs-playwright-3.0</code> continue to support
+     * <code>engineArn</code> to ensure backward compatibility.</p>
+     */
+    inline const Aws::Vector<EngineConfig>& GetEngineConfigs() const { return m_engineConfigs; }
+    inline bool EngineConfigsHasBeenSet() const { return m_engineConfigsHasBeenSet; }
+    template<typename EngineConfigsT = Aws::Vector<EngineConfig>>
+    void SetEngineConfigs(EngineConfigsT&& value) { m_engineConfigsHasBeenSet = true; m_engineConfigs = std::forward<EngineConfigsT>(value); }
+    template<typename EngineConfigsT = Aws::Vector<EngineConfig>>
+    Canary& WithEngineConfigs(EngineConfigsT&& value) { SetEngineConfigs(std::forward<EngineConfigsT>(value)); return *this;}
+    template<typename EngineConfigsT = EngineConfig>
+    Canary& AddEngineConfigs(EngineConfigsT&& value) { m_engineConfigsHasBeenSet = true; m_engineConfigs.emplace_back(std::forward<EngineConfigsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>A list of visual reference configurations for the canary, one for each
+     * browser type that the canary is configured to run on. Visual references are used
+     * for visual monitoring comparisons.</p> <p>
+     * <code>syn-nodejs-puppeteer-11.0</code> and above, and
+     * <code>syn-nodejs-playwright-3.0</code> and above, only supports
+     * <code>visualReferences</code>. <code>visualReference</code> field is not
+     * supported.</p> <p>Versions older than <code>syn-nodejs-puppeteer-11.0</code>
+     * supports both <code>visualReference</code> and <code>visualReferences</code> for
+     * backward compatibility. It is recommended to use <code>visualReferences</code>
+     * for consistency and future compatibility.</p>
+     */
+    inline const Aws::Vector<VisualReferenceOutput>& GetVisualReferences() const { return m_visualReferences; }
+    inline bool VisualReferencesHasBeenSet() const { return m_visualReferencesHasBeenSet; }
+    template<typename VisualReferencesT = Aws::Vector<VisualReferenceOutput>>
+    void SetVisualReferences(VisualReferencesT&& value) { m_visualReferencesHasBeenSet = true; m_visualReferences = std::forward<VisualReferencesT>(value); }
+    template<typename VisualReferencesT = Aws::Vector<VisualReferenceOutput>>
+    Canary& WithVisualReferences(VisualReferencesT&& value) { SetVisualReferences(std::forward<VisualReferencesT>(value)); return *this;}
+    template<typename VisualReferencesT = VisualReferenceOutput>
+    Canary& AddVisualReferences(VisualReferencesT&& value) { m_visualReferencesHasBeenSet = true; m_visualReferences.emplace_back(std::forward<VisualReferencesT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The list of key-value pairs that are associated with the canary.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -345,6 +409,15 @@ namespace Model
 
     ProvisionedResourceCleanupSetting m_provisionedResourceCleanup{ProvisionedResourceCleanupSetting::NOT_SET};
     bool m_provisionedResourceCleanupHasBeenSet = false;
+
+    Aws::Vector<BrowserConfig> m_browserConfigs;
+    bool m_browserConfigsHasBeenSet = false;
+
+    Aws::Vector<EngineConfig> m_engineConfigs;
+    bool m_engineConfigsHasBeenSet = false;
+
+    Aws::Vector<VisualReferenceOutput> m_visualReferences;
+    bool m_visualReferencesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

@@ -39,6 +39,12 @@ Aws::String UpdateAIPromptRequest::SerializePayload() const
 
   }
 
+  if(m_modelIdHasBeenSet)
+  {
+   payload.WithString("modelId", m_modelId);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

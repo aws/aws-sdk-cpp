@@ -39,6 +39,11 @@ DockerSettings& DockerSettings::operator =(JsonView jsonValue)
     }
     m_vpcOnlyTrustedAccountsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("RootlessDocker"))
+  {
+    m_rootlessDocker = FeatureStatusMapper::GetFeatureStatusForName(jsonValue.GetString("RootlessDocker"));
+    m_rootlessDockerHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -60,6 +65,11 @@ JsonValue DockerSettings::Jsonize() const
    }
    payload.WithArray("VpcOnlyTrustedAccounts", std::move(vpcOnlyTrustedAccountsJsonList));
 
+  }
+
+  if(m_rootlessDockerHasBeenSet)
+  {
+   payload.WithString("RootlessDocker", FeatureStatusMapper::GetNameForFeatureStatus(m_rootlessDocker));
   }
 
   return payload;

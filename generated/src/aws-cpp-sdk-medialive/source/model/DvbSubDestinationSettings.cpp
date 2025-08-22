@@ -110,6 +110,11 @@ DvbSubDestinationSettings& DvbSubDestinationSettings::operator =(JsonView jsonVa
     m_yPosition = jsonValue.GetInteger("yPosition");
     m_yPositionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("subtitleRows"))
+  {
+    m_subtitleRows = DvbSubDestinationSubtitleRowsMapper::GetDvbSubDestinationSubtitleRowsForName(jsonValue.GetString("subtitleRows"));
+    m_subtitleRowsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -211,6 +216,11 @@ JsonValue DvbSubDestinationSettings::Jsonize() const
   {
    payload.WithInteger("yPosition", m_yPosition);
 
+  }
+
+  if(m_subtitleRowsHasBeenSet)
+  {
+   payload.WithString("subtitleRows", DvbSubDestinationSubtitleRowsMapper::GetNameForDvbSubDestinationSubtitleRows(m_subtitleRows));
   }
 
   return payload;

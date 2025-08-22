@@ -82,7 +82,7 @@ namespace Model
      * of the following options:</p> <ul> <li> <p> <code>HyperPodPublicAmiId</code>:
      * Use a HyperPod public AMI</p> </li> <li> <p> <code>CustomAmiId</code>: Use your
      * custom AMI</p> </li> <li> <p> <code>default</code>: Use the default latest
-     * system image</p> </li> </ul> <p>f you choose to use a custom AMI
+     * system image</p> </li> </ul> <p>If you choose to use a custom AMI
      * (<code>CustomAmiId</code>), ensure it meets the following requirements:</p> <ul>
      * <li> <p>Encryption: The custom AMI must be unencrypted.</p> </li> <li>
      * <p>Ownership: The custom AMI must be owned by the same Amazon Web Services
@@ -91,7 +91,9 @@ namespace Model
      * not supported.</p> </li> </ul> <p>When updating the instance group's AMI through
      * the <code>UpdateClusterSoftware</code> operation, if an instance group uses a
      * custom AMI, you must provide an <code>ImageId</code> or use the default as
-     * input.</p>
+     * input. Note that if you don't specify an instance group in your
+     * <code>UpdateClusterSoftware</code> request, then all of the instance groups are
+     * patched with the specified image.</p>
      */
     inline const Aws::String& GetImageId() const { return m_imageId; }
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }

@@ -105,6 +105,33 @@ Canary& Canary::operator =(JsonView jsonValue)
     m_provisionedResourceCleanup = ProvisionedResourceCleanupSettingMapper::GetProvisionedResourceCleanupSettingForName(jsonValue.GetString("ProvisionedResourceCleanup"));
     m_provisionedResourceCleanupHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("BrowserConfigs"))
+  {
+    Aws::Utils::Array<JsonView> browserConfigsJsonList = jsonValue.GetArray("BrowserConfigs");
+    for(unsigned browserConfigsIndex = 0; browserConfigsIndex < browserConfigsJsonList.GetLength(); ++browserConfigsIndex)
+    {
+      m_browserConfigs.push_back(browserConfigsJsonList[browserConfigsIndex].AsObject());
+    }
+    m_browserConfigsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("EngineConfigs"))
+  {
+    Aws::Utils::Array<JsonView> engineConfigsJsonList = jsonValue.GetArray("EngineConfigs");
+    for(unsigned engineConfigsIndex = 0; engineConfigsIndex < engineConfigsJsonList.GetLength(); ++engineConfigsIndex)
+    {
+      m_engineConfigs.push_back(engineConfigsJsonList[engineConfigsIndex].AsObject());
+    }
+    m_engineConfigsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("VisualReferences"))
+  {
+    Aws::Utils::Array<JsonView> visualReferencesJsonList = jsonValue.GetArray("VisualReferences");
+    for(unsigned visualReferencesIndex = 0; visualReferencesIndex < visualReferencesJsonList.GetLength(); ++visualReferencesIndex)
+    {
+      m_visualReferences.push_back(visualReferencesJsonList[visualReferencesIndex].AsObject());
+    }
+    m_visualReferencesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -224,6 +251,39 @@ JsonValue Canary::Jsonize() const
   if(m_provisionedResourceCleanupHasBeenSet)
   {
    payload.WithString("ProvisionedResourceCleanup", ProvisionedResourceCleanupSettingMapper::GetNameForProvisionedResourceCleanupSetting(m_provisionedResourceCleanup));
+  }
+
+  if(m_browserConfigsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> browserConfigsJsonList(m_browserConfigs.size());
+   for(unsigned browserConfigsIndex = 0; browserConfigsIndex < browserConfigsJsonList.GetLength(); ++browserConfigsIndex)
+   {
+     browserConfigsJsonList[browserConfigsIndex].AsObject(m_browserConfigs[browserConfigsIndex].Jsonize());
+   }
+   payload.WithArray("BrowserConfigs", std::move(browserConfigsJsonList));
+
+  }
+
+  if(m_engineConfigsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> engineConfigsJsonList(m_engineConfigs.size());
+   for(unsigned engineConfigsIndex = 0; engineConfigsIndex < engineConfigsJsonList.GetLength(); ++engineConfigsIndex)
+   {
+     engineConfigsJsonList[engineConfigsIndex].AsObject(m_engineConfigs[engineConfigsIndex].Jsonize());
+   }
+   payload.WithArray("EngineConfigs", std::move(engineConfigsJsonList));
+
+  }
+
+  if(m_visualReferencesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> visualReferencesJsonList(m_visualReferences.size());
+   for(unsigned visualReferencesIndex = 0; visualReferencesIndex < visualReferencesJsonList.GetLength(); ++visualReferencesIndex)
+   {
+     visualReferencesJsonList[visualReferencesIndex].AsObject(m_visualReferences[visualReferencesIndex].Jsonize());
+   }
+   payload.WithArray("VisualReferences", std::move(visualReferencesJsonList));
+
   }
 
   if(m_tagsHasBeenSet)

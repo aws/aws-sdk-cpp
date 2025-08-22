@@ -17,6 +17,7 @@
 #include <aws/wafv2/model/ChallengeConfig.h>
 #include <aws/wafv2/model/AssociationConfig.h>
 #include <aws/wafv2/model/OnSourceDDoSProtectionConfig.h>
+#include <aws/wafv2/model/ApplicationConfig.h>
 #include <aws/wafv2/model/Rule.h>
 #include <aws/wafv2/model/CustomResponseBody.h>
 #include <utility>
@@ -293,6 +294,25 @@ namespace Model
     template<typename OnSourceDDoSProtectionConfigT = OnSourceDDoSProtectionConfig>
     UpdateWebACLRequest& WithOnSourceDDoSProtectionConfig(OnSourceDDoSProtectionConfigT&& value) { SetOnSourceDDoSProtectionConfig(std::forward<OnSourceDDoSProtectionConfigT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Configures the ability for the WAF console to store and retrieve application
+     * attributes. Application attributes help WAF give recommendations for protection
+     * packs.</p> <p>When using <code>UpdateWebACL</code>,
+     * <code>ApplicationConfig</code> follows these rules:</p> <ul> <li> <p>If you omit
+     * <code>ApplicationConfig</code> from the request, all existing entries in the web
+     * ACL are retained.</p> </li> <li> <p>If you include
+     * <code>ApplicationConfig</code>, entries must match the existing values exactly.
+     * Any attempt to modify existing entries will result in an error.</p> </li> </ul>
+     */
+    inline const ApplicationConfig& GetApplicationConfig() const { return m_applicationConfig; }
+    inline bool ApplicationConfigHasBeenSet() const { return m_applicationConfigHasBeenSet; }
+    template<typename ApplicationConfigT = ApplicationConfig>
+    void SetApplicationConfig(ApplicationConfigT&& value) { m_applicationConfigHasBeenSet = true; m_applicationConfig = std::forward<ApplicationConfigT>(value); }
+    template<typename ApplicationConfigT = ApplicationConfig>
+    UpdateWebACLRequest& WithApplicationConfig(ApplicationConfigT&& value) { SetApplicationConfig(std::forward<ApplicationConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -339,6 +359,9 @@ namespace Model
 
     OnSourceDDoSProtectionConfig m_onSourceDDoSProtectionConfig;
     bool m_onSourceDDoSProtectionConfigHasBeenSet = false;
+
+    ApplicationConfig m_applicationConfig;
+    bool m_applicationConfigHasBeenSet = false;
   };
 
 } // namespace Model

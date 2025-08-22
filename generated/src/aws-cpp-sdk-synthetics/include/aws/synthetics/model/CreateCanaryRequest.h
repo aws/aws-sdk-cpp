@@ -16,6 +16,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/synthetics/model/ArtifactConfigInput.h>
 #include <aws/synthetics/model/ResourceToTag.h>
+#include <aws/synthetics/model/BrowserConfig.h>
 #include <utility>
 
 namespace Aws
@@ -233,6 +234,26 @@ namespace Model
 
     ///@{
     /**
+     * <p>CloudWatch Synthetics now supports multibrowser canaries for
+     * <code>syn-nodejs-puppeteer-11.0</code> and
+     * <code>syn-nodejs-playwright-3.0</code> runtimes. This feature allows you to run
+     * your canaries on both Firefox and Chrome browsers. To create a multibrowser
+     * canary, you need to specify the BrowserConfigs with a list of browsers you want
+     * to use.</p>  <p>If not specified, <code>browserConfigs</code> defaults to
+     * Chrome.</p> 
+     */
+    inline const Aws::Vector<BrowserConfig>& GetBrowserConfigs() const { return m_browserConfigs; }
+    inline bool BrowserConfigsHasBeenSet() const { return m_browserConfigsHasBeenSet; }
+    template<typename BrowserConfigsT = Aws::Vector<BrowserConfig>>
+    void SetBrowserConfigs(BrowserConfigsT&& value) { m_browserConfigsHasBeenSet = true; m_browserConfigs = std::forward<BrowserConfigsT>(value); }
+    template<typename BrowserConfigsT = Aws::Vector<BrowserConfig>>
+    CreateCanaryRequest& WithBrowserConfigs(BrowserConfigsT&& value) { SetBrowserConfigs(std::forward<BrowserConfigsT>(value)); return *this;}
+    template<typename BrowserConfigsT = BrowserConfig>
+    CreateCanaryRequest& AddBrowserConfigs(BrowserConfigsT&& value) { m_browserConfigsHasBeenSet = true; m_browserConfigs.emplace_back(std::forward<BrowserConfigsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>A list of key-value pairs to associate with the canary. You can associate as
      * many as 50 tags with a canary.</p> <p>Tags can help you organize and categorize
      * your resources. You can also use them to scope user permissions, by granting a
@@ -303,6 +324,9 @@ namespace Model
 
     ProvisionedResourceCleanupSetting m_provisionedResourceCleanup{ProvisionedResourceCleanupSetting::NOT_SET};
     bool m_provisionedResourceCleanupHasBeenSet = false;
+
+    Aws::Vector<BrowserConfig> m_browserConfigs;
+    bool m_browserConfigsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
