@@ -119,15 +119,15 @@ namespace Aws
 
                 HttpResponseOutcome httpOutcome(std::move(httpResponse));
                 if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0) {
-                    auto response = ParseResponse(httpOutcome);
-                    if (HasParseError(response)) {
+                    auto response = ResponseType(httpOutcome.GetResult()->GetResponseBody());
+                    if (!response.WasParseSuccessful()) {
                         return OutcomeType(CreateParseError());
                     }
                     return OutcomeType(AmazonWebServiceResult<ResponseType>(std::move(response),
                         httpOutcome.GetResult()->GetHeaders(),
                         httpOutcome.GetResult()->GetResponseCode()));
                 }
-                return OutcomeType(AmazonWebServiceResult<ResponseType>(CreateEmptyResponse(), httpOutcome.GetResult()->GetHeaders()));
+                return OutcomeType(AmazonWebServiceResult<ResponseType>(ResponseType(), httpOutcome.GetResult()->GetHeaders()));
             }
 
             /**
@@ -198,8 +198,8 @@ namespace Aws
                 if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0) {
                     return smithy::components::tracing::TracingUtils::MakeCallWithTiming<OutcomeType>(
                         [&]() -> OutcomeType {
-                            auto response = ParseResponse(httpOutcome);
-                            if (HasParseError(response)) {
+                            auto response = ResponseType(httpOutcome.GetResult()->GetResponseBody());
+                            if (!response.WasParseSuccessful()) {
                                 return OutcomeType(CreateParseError());
                             }
                             return OutcomeType(AmazonWebServiceResult<ResponseType>(std::move(response),
@@ -214,7 +214,7 @@ namespace Aws
 
                 return smithy::components::tracing::TracingUtils::MakeCallWithTiming<OutcomeType>(
                     [&]() -> OutcomeType {
-                        return OutcomeType(AmazonWebServiceResult<ResponseType>(CreateEmptyResponse(), httpOutcome.GetResult()->GetHeaders()));
+                        return OutcomeType(AmazonWebServiceResult<ResponseType>(ResponseType(), httpOutcome.GetResult()->GetHeaders()));
                     },
                     smithy::components::tracing::TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
                     *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
@@ -223,10 +223,7 @@ namespace Aws
             }
 
             // Pure virtual functions for protocol-specific behavior
-            virtual ResponseType ParseResponse(const HttpResponseOutcome& httpOutcome) const = 0;
-            virtual bool HasParseError(const ResponseType& response) const = 0;
             virtual AWSError<CoreErrors> CreateParseError() const = 0;
-            virtual ResponseType CreateEmptyResponse() const = 0;
             virtual const char* GetClientLogTag() const { return "AWSProtocolClient"; };
         };
     }
