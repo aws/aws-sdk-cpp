@@ -2,6 +2,9 @@
 import os
 import subprocess
 import argparse
+import tempfile
+import json
+from collections import defaultdict
 
 GREEN = '\033[32m'
 BOLD = '\033[1m'
@@ -11,6 +14,7 @@ def should_run_service(service):
     service_ids = os.environ.get('AWS_SMOKE_TEST_SERVICE_IDS', '')
     if not service_ids:
         return True
+    print("AWS_SMOKE_TEST_SERVICE_IDS:",service_ids)
     allowed_services = service_ids.split(',')
     return service in allowed_services
 
@@ -35,78 +39,53 @@ def main():
     services.sort()
 
     total_tests = 0
-    test_cases = {}  # Dictionary to group tests by service
+    all_results = defaultdict(list)
 
-    # First, collect all tests
     for service in services:
+        if not should_run_service(service):
+            continue
         executable = os.path.join(smoke_tests_dir, service, f"{service}-smoke-tests")
-        list_command = [executable, '--gtest_list_tests']
-        result = subprocess.run(list_command, capture_output=True, text=True)
-
-        test_suite = None
-        if service not in test_cases:
-            test_cases[service] = []
-
-        for line in result.stdout.splitlines():
-            if not line.startswith('  '):
-                test_suite = line.strip()
-            else:
-                test_name = line.strip()
-                if test_suite and test_name:
-                    total_tests += 1
-                    test_cases[service].append((test_suite, test_name))
+        
+        with tempfile.NamedTemporaryFile(mode='w+', suffix='.json', delete=False) as temp_file:
+            json_output_path = temp_file.name
+        
+        try:
+            test_command = [executable, f'--gtest_output=json:{json_output_path}']
+            subprocess.run(test_command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            
+            with open(json_output_path, 'r') as f:
+                test_results = json.load(f)
+            
+            for test_suite in test_results.get('testsuites', []):
+                total_tests += test_suite['tests']
+                for test in test_suite.get('testsuite', []):
+                        all_results[service].append({
+                            'service': service,
+                            'name': test['name'],
+                            'status': test['status'],
+                            'failure': test.get('failure'),
+                            
+                        })
+        finally:
+            os.unlink(json_output_path)
 
     print(f"1..{total_tests}")
-
-    for service in services:
-        if not test_cases[service]:
-            continue
-
+    
+    for service in all_results.keys():
         print(f"# {service} tests")
+        for result in all_results[service]:
+            service = result['service']
+            test_name = result['name']
+            status = result['status']
+            failure = result['failure']
+            error_expected = f"error expected {BOLD}from service{RESET}" if "Failure" in test_name or "Error" in test_name else f"{GREEN}no{RESET} error expected {BOLD}from service{RESET}"
 
-        if not should_run_service(service):
-            for _, test_name in test_cases[service]:
-                print(f"ok {service} {test_name} # skip")
-            continue
-
-        executable = os.path.join(smoke_tests_dir, service, f"{service}-smoke-tests")
-
-        for test_suite, test_name in test_cases[service]:
-            full_test_name = f"{test_suite}{test_name}"
-            
-            # Determine if test expects an error based on test name
-            error_expected = "error expected from service" if "Failure" in test_name or "Error" in test_name else "no error expected from service"
-            
-            try:
-                test_command = [executable, f'--gtest_filter={full_test_name}']
-                test_result = subprocess.run(test_command, capture_output=True, text=True)
-
-                if test_result.returncode == 0:
-                    print(f"ok {service} {test_name} - {error_expected}")
-                else:
-                    print(f"not ok {service} {test_name} - {error_expected}")
-                    # Extract error message from stdout for stack trace
-                    stdout_lines = test_result.stdout.strip().split('\n') if test_result.stdout.strip() else []
-                    error_msg = None
-                    
-                    # Look for failure message in stdout
-                    for line in stdout_lines:
-                        if 'failed:' in line.lower() or 'failure' in line.lower():
-                            if ':' in line:
-                                error_msg = line.split(':', 1)[1].strip()
-                                break
-                    
-                    if not error_msg and test_result.stderr.strip():
-                        error_msg = test_result.stderr.strip()
-                    
-                    if error_msg:
-                        print(f"# Stack trace: {error_msg}")
-                    else:
-                        print(f"# Stack trace: Test failed with return code {test_result.returncode}")
-            except Exception as e:
-                error_expected = "error expected from service" if "Failure" in test_name or "Error" in test_name else "no error expected from service"
-                print(f"not ok {service} {test_name} - {error_expected}")
-                print(f"# Stack trace: {str(e)}")
+            if status == 'RUN':
+                print(f"ok {service} {test_name} - {error_expected}")
+            else:
+                print(f"{BOLD}not{RESET} ok {service} {test_name}")
+                if failure:
+                    print(f"# {failure}")
 
     return 0
 
