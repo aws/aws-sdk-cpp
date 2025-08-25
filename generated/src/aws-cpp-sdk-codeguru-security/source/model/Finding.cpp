@@ -35,25 +35,6 @@ Finding& Finding::operator =(JsonView jsonValue)
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("detectorId"))
-  {
-    m_detectorId = jsonValue.GetString("detectorId");
-    m_detectorIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("detectorName"))
-  {
-    m_detectorName = jsonValue.GetString("detectorName");
-    m_detectorNameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("detectorTags"))
-  {
-    Aws::Utils::Array<JsonView> detectorTagsJsonList = jsonValue.GetArray("detectorTags");
-    for(unsigned detectorTagsIndex = 0; detectorTagsIndex < detectorTagsJsonList.GetLength(); ++detectorTagsIndex)
-    {
-      m_detectorTags.push_back(detectorTagsJsonList[detectorTagsIndex].AsString());
-    }
-    m_detectorTagsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("generatorId"))
   {
     m_generatorId = jsonValue.GetString("generatorId");
@@ -64,50 +45,69 @@ Finding& Finding::operator =(JsonView jsonValue)
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("remediation"))
+  if(jsonValue.ValueExists("updatedAt"))
   {
-    m_remediation = jsonValue.GetObject("remediation");
-    m_remediationHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("resource"))
-  {
-    m_resource = jsonValue.GetObject("resource");
-    m_resourceHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("ruleId"))
-  {
-    m_ruleId = jsonValue.GetString("ruleId");
-    m_ruleIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("severity"))
-  {
-    m_severity = SeverityMapper::GetSeverityForName(jsonValue.GetString("severity"));
-    m_severityHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("title"))
-  {
-    m_title = jsonValue.GetString("title");
-    m_titleHasBeenSet = true;
+    m_updatedAt = jsonValue.GetDouble("updatedAt");
+    m_updatedAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("updatedAt"))
+  if(jsonValue.ValueExists("status"))
   {
-    m_updatedAt = jsonValue.GetDouble("updatedAt");
-    m_updatedAtHasBeenSet = true;
+    m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("resource"))
+  {
+    m_resource = jsonValue.GetObject("resource");
+    m_resourceHasBeenSet = true;
   }
   if(jsonValue.ValueExists("vulnerability"))
   {
     m_vulnerability = jsonValue.GetObject("vulnerability");
     m_vulnerabilityHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("severity"))
+  {
+    m_severity = SeverityMapper::GetSeverityForName(jsonValue.GetString("severity"));
+    m_severityHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("remediation"))
+  {
+    m_remediation = jsonValue.GetObject("remediation");
+    m_remediationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("title"))
+  {
+    m_title = jsonValue.GetString("title");
+    m_titleHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("detectorTags"))
+  {
+    Aws::Utils::Array<JsonView> detectorTagsJsonList = jsonValue.GetArray("detectorTags");
+    for(unsigned detectorTagsIndex = 0; detectorTagsIndex < detectorTagsJsonList.GetLength(); ++detectorTagsIndex)
+    {
+      m_detectorTags.push_back(detectorTagsJsonList[detectorTagsIndex].AsString());
+    }
+    m_detectorTagsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("detectorId"))
+  {
+    m_detectorId = jsonValue.GetString("detectorId");
+    m_detectorIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("detectorName"))
+  {
+    m_detectorName = jsonValue.GetString("detectorName");
+    m_detectorNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ruleId"))
+  {
+    m_ruleId = jsonValue.GetString("ruleId");
+    m_ruleIdHasBeenSet = true;
   }
   return *this;
 }
@@ -127,15 +127,60 @@ JsonValue Finding::Jsonize() const
 
   }
 
-  if(m_detectorIdHasBeenSet)
+  if(m_generatorIdHasBeenSet)
   {
-   payload.WithString("detectorId", m_detectorId);
+   payload.WithString("generatorId", m_generatorId);
 
   }
 
-  if(m_detectorNameHasBeenSet)
+  if(m_idHasBeenSet)
   {
-   payload.WithString("detectorName", m_detectorName);
+   payload.WithString("id", m_id);
+
+  }
+
+  if(m_updatedAtHasBeenSet)
+  {
+   payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", m_type);
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", StatusMapper::GetNameForStatus(m_status));
+  }
+
+  if(m_resourceHasBeenSet)
+  {
+   payload.WithObject("resource", m_resource.Jsonize());
+
+  }
+
+  if(m_vulnerabilityHasBeenSet)
+  {
+   payload.WithObject("vulnerability", m_vulnerability.Jsonize());
+
+  }
+
+  if(m_severityHasBeenSet)
+  {
+   payload.WithString("severity", SeverityMapper::GetNameForSeverity(m_severity));
+  }
+
+  if(m_remediationHasBeenSet)
+  {
+   payload.WithObject("remediation", m_remediation.Jsonize());
+
+  }
+
+  if(m_titleHasBeenSet)
+  {
+   payload.WithString("title", m_title);
 
   }
 
@@ -150,66 +195,21 @@ JsonValue Finding::Jsonize() const
 
   }
 
-  if(m_generatorIdHasBeenSet)
+  if(m_detectorIdHasBeenSet)
   {
-   payload.WithString("generatorId", m_generatorId);
+   payload.WithString("detectorId", m_detectorId);
 
   }
 
-  if(m_idHasBeenSet)
+  if(m_detectorNameHasBeenSet)
   {
-   payload.WithString("id", m_id);
-
-  }
-
-  if(m_remediationHasBeenSet)
-  {
-   payload.WithObject("remediation", m_remediation.Jsonize());
-
-  }
-
-  if(m_resourceHasBeenSet)
-  {
-   payload.WithObject("resource", m_resource.Jsonize());
+   payload.WithString("detectorName", m_detectorName);
 
   }
 
   if(m_ruleIdHasBeenSet)
   {
    payload.WithString("ruleId", m_ruleId);
-
-  }
-
-  if(m_severityHasBeenSet)
-  {
-   payload.WithString("severity", SeverityMapper::GetNameForSeverity(m_severity));
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", StatusMapper::GetNameForStatus(m_status));
-  }
-
-  if(m_titleHasBeenSet)
-  {
-   payload.WithString("title", m_title);
-
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", m_type);
-
-  }
-
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
-  }
-
-  if(m_vulnerabilityHasBeenSet)
-  {
-   payload.WithObject("vulnerability", m_vulnerability.Jsonize());
 
   }
 

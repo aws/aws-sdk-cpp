@@ -203,6 +203,18 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator =(const XmlNode& xmlNode)
       m_disconnectOnSessionTimeout = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(disconnectOnSessionTimeoutNode.GetText()).c_str()).c_str());
       m_disconnectOnSessionTimeoutHasBeenSet = true;
     }
+    XmlNode endpointIpAddressTypeNode = resultNode.FirstChild("endpointIpAddressType");
+    if(!endpointIpAddressTypeNode.IsNull())
+    {
+      m_endpointIpAddressType = EndpointIpAddressTypeMapper::GetEndpointIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endpointIpAddressTypeNode.GetText()).c_str()));
+      m_endpointIpAddressTypeHasBeenSet = true;
+    }
+    XmlNode trafficIpAddressTypeNode = resultNode.FirstChild("trafficIpAddressType");
+    if(!trafficIpAddressTypeNode.IsNull())
+    {
+      m_trafficIpAddressType = TrafficIpAddressTypeMapper::GetTrafficIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trafficIpAddressTypeNode.GetText()).c_str()));
+      m_trafficIpAddressTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -360,6 +372,16 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".DisconnectOnSessionTimeout=" << std::boolalpha << m_disconnectOnSessionTimeout << "&";
   }
 
+  if(m_endpointIpAddressTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EndpointIpAddressType=" << StringUtils::URLEncode(EndpointIpAddressTypeMapper::GetNameForEndpointIpAddressType(m_endpointIpAddressType)) << "&";
+  }
+
+  if(m_trafficIpAddressTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TrafficIpAddressType=" << StringUtils::URLEncode(TrafficIpAddressTypeMapper::GetNameForTrafficIpAddressType(m_trafficIpAddressType)) << "&";
+  }
+
 }
 
 void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -489,6 +511,14 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_disconnectOnSessionTimeoutHasBeenSet)
   {
       oStream << location << ".DisconnectOnSessionTimeout=" << std::boolalpha << m_disconnectOnSessionTimeout << "&";
+  }
+  if(m_endpointIpAddressTypeHasBeenSet)
+  {
+      oStream << location << ".EndpointIpAddressType=" << StringUtils::URLEncode(EndpointIpAddressTypeMapper::GetNameForEndpointIpAddressType(m_endpointIpAddressType)) << "&";
+  }
+  if(m_trafficIpAddressTypeHasBeenSet)
+  {
+      oStream << location << ".TrafficIpAddressType=" << StringUtils::URLEncode(TrafficIpAddressTypeMapper::GetNameForTrafficIpAddressType(m_trafficIpAddressType)) << "&";
   }
 }
 

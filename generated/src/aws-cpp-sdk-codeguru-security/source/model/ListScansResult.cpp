@@ -25,11 +25,6 @@ ListScansResult::ListScansResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 ListScansResult& ListScansResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("summaries"))
   {
     Aws::Utils::Array<JsonView> summariesJsonList = jsonValue.GetArray("summaries");
@@ -38,6 +33,11 @@ ListScansResult& ListScansResult::operator =(const Aws::AmazonWebServiceResult<J
       m_summaries.push_back(summariesJsonList[summariesIndex].AsObject());
     }
     m_summariesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

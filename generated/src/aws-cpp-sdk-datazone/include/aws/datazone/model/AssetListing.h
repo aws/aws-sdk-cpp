@@ -121,6 +121,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The restricted glossary terms associated with an asset.</p>
+     */
+    inline const Aws::Vector<DetailedGlossaryTerm>& GetGovernedGlossaryTerms() const { return m_governedGlossaryTerms; }
+    inline bool GovernedGlossaryTermsHasBeenSet() const { return m_governedGlossaryTermsHasBeenSet; }
+    template<typename GovernedGlossaryTermsT = Aws::Vector<DetailedGlossaryTerm>>
+    void SetGovernedGlossaryTerms(GovernedGlossaryTermsT&& value) { m_governedGlossaryTermsHasBeenSet = true; m_governedGlossaryTerms = std::forward<GovernedGlossaryTermsT>(value); }
+    template<typename GovernedGlossaryTermsT = Aws::Vector<DetailedGlossaryTerm>>
+    AssetListing& WithGovernedGlossaryTerms(GovernedGlossaryTermsT&& value) { SetGovernedGlossaryTerms(std::forward<GovernedGlossaryTermsT>(value)); return *this;}
+    template<typename GovernedGlossaryTermsT = DetailedGlossaryTerm>
+    AssetListing& AddGovernedGlossaryTerms(GovernedGlossaryTermsT&& value) { m_governedGlossaryTermsHasBeenSet = true; m_governedGlossaryTerms.emplace_back(std::forward<GovernedGlossaryTermsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The latest time series data points forms included in the additional
      * attributes of an asset.</p>
      */
@@ -165,6 +179,9 @@ namespace Model
 
     Aws::Vector<DetailedGlossaryTerm> m_glossaryTerms;
     bool m_glossaryTermsHasBeenSet = false;
+
+    Aws::Vector<DetailedGlossaryTerm> m_governedGlossaryTerms;
+    bool m_governedGlossaryTermsHasBeenSet = false;
 
     Aws::Vector<TimeSeriesDataPointSummaryFormOutput> m_latestTimeSeriesDataPointForms;
     bool m_latestTimeSeriesDataPointFormsHasBeenSet = false;

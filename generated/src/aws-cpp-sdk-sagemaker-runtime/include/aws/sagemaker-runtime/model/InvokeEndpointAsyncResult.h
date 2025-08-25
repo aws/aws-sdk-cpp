@@ -35,8 +35,8 @@ namespace Model
     ///@{
     /**
      * <p>Identifier for an inference request. This will be the same as the
-     * <code>InferenceId</code> specified in the input. Amazon SageMaker will generate
-     * an identifier for you if you do not specify one.</p>
+     * <code>InferenceId</code> specified in the input. Amazon SageMaker AI will
+     * generate an identifier for you if you do not specify one.</p>
      */
     inline const Aws::String& GetInferenceId() const { return m_inferenceId; }
     template<typename InferenceIdT = Aws::String>

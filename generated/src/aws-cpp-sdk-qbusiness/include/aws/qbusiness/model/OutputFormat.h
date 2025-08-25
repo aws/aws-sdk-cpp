@@ -16,7 +16,8 @@ namespace Model
   enum class OutputFormat
   {
     NOT_SET,
-    RAW
+    RAW,
+    EXTRACTED
   };
 
 namespace OutputFormatMapper

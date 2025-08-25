@@ -104,6 +104,11 @@ Job& Job::operator =(JsonView jsonValue)
     m_jobTemplate = jsonValue.GetString("jobTemplate");
     m_jobTemplateHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("lastShareDetails"))
+  {
+    m_lastShareDetails = jsonValue.GetString("lastShareDetails");
+    m_lastShareDetailsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("messages"))
   {
     m_messages = jsonValue.GetObject("messages");
@@ -151,6 +156,11 @@ Job& Job::operator =(JsonView jsonValue)
   {
     m_settings = jsonValue.GetObject("settings");
     m_settingsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("shareStatus"))
+  {
+    m_shareStatus = ShareStatusMapper::GetShareStatusForName(jsonValue.GetString("shareStatus"));
+    m_shareStatusHasBeenSet = true;
   }
   if(jsonValue.ValueExists("simulateReservedQueue"))
   {
@@ -288,6 +298,12 @@ JsonValue Job::Jsonize() const
 
   }
 
+  if(m_lastShareDetailsHasBeenSet)
+  {
+   payload.WithString("lastShareDetails", m_lastShareDetails);
+
+  }
+
   if(m_messagesHasBeenSet)
   {
    payload.WithObject("messages", m_messages.Jsonize());
@@ -344,6 +360,11 @@ JsonValue Job::Jsonize() const
   {
    payload.WithObject("settings", m_settings.Jsonize());
 
+  }
+
+  if(m_shareStatusHasBeenSet)
+  {
+   payload.WithString("shareStatus", ShareStatusMapper::GetNameForShareStatus(m_shareStatus));
   }
 
   if(m_simulateReservedQueueHasBeenSet)

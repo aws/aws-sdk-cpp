@@ -25,30 +25,30 @@ CreateScanResult::CreateScanResult(const Aws::AmazonWebServiceResult<JsonValue>&
 CreateScanResult& CreateScanResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("resourceId"))
+  if(jsonValue.ValueExists("scanName"))
   {
-    m_resourceId = jsonValue.GetObject("resourceId");
-    m_resourceIdHasBeenSet = true;
+    m_scanName = jsonValue.GetString("scanName");
+    m_scanNameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("runId"))
   {
     m_runId = jsonValue.GetString("runId");
     m_runIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("scanName"))
+  if(jsonValue.ValueExists("resourceId"))
   {
-    m_scanName = jsonValue.GetString("scanName");
-    m_scanNameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("scanNameArn"))
-  {
-    m_scanNameArn = jsonValue.GetString("scanNameArn");
-    m_scanNameArnHasBeenSet = true;
+    m_resourceId = jsonValue.GetObject("resourceId");
+    m_resourceIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("scanState"))
   {
     m_scanState = ScanStateMapper::GetScanStateForName(jsonValue.GetString("scanState"));
     m_scanStateHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("scanNameArn"))
+  {
+    m_scanNameArn = jsonValue.GetString("scanNameArn");
+    m_scanNameArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

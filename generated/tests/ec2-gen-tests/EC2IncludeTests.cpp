@@ -1230,6 +1230,7 @@
 #include <aws/ec2/model/EnclaveOptions.h>
 #include <aws/ec2/model/EnclaveOptionsRequest.h>
 #include <aws/ec2/model/EndDateType.h>
+#include <aws/ec2/model/EndpointIpAddressType.h>
 #include <aws/ec2/model/EphemeralNvmeSupport.h>
 #include <aws/ec2/model/EventCode.h>
 #include <aws/ec2/model/EventInformation.h>
@@ -2356,6 +2357,7 @@
 #include <aws/ec2/model/TotalLocalStorageGBRequest.h>
 #include <aws/ec2/model/TpmSupportValues.h>
 #include <aws/ec2/model/TrafficDirection.h>
+#include <aws/ec2/model/TrafficIpAddressType.h>
 #include <aws/ec2/model/TrafficMirrorFilter.h>
 #include <aws/ec2/model/TrafficMirrorFilterRule.h>
 #include <aws/ec2/model/TrafficMirrorFilterRuleField.h>

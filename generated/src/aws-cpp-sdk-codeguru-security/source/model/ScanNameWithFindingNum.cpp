@@ -25,15 +25,15 @@ ScanNameWithFindingNum::ScanNameWithFindingNum(JsonView jsonValue)
 
 ScanNameWithFindingNum& ScanNameWithFindingNum::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("findingNumber"))
-  {
-    m_findingNumber = jsonValue.GetInteger("findingNumber");
-    m_findingNumberHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("scanName"))
   {
     m_scanName = jsonValue.GetString("scanName");
     m_scanNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("findingNumber"))
+  {
+    m_findingNumber = jsonValue.GetInteger("findingNumber");
+    m_findingNumberHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue ScanNameWithFindingNum::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_findingNumberHasBeenSet)
-  {
-   payload.WithInteger("findingNumber", m_findingNumber);
-
-  }
-
   if(m_scanNameHasBeenSet)
   {
    payload.WithString("scanName", m_scanName);
+
+  }
+
+  if(m_findingNumberHasBeenSet)
+  {
+   payload.WithInteger("findingNumber", m_findingNumber);
 
   }
 

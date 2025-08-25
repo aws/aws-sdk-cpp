@@ -21,7 +21,8 @@ namespace Model
     DELETING,
     AVAILABLE,
     FAILED,
-    DELETED
+    DELETED,
+    MAINTENANCE
   };
 
 namespace ClusterStatusMapper

@@ -56,7 +56,8 @@ namespace Model
      * access this connection, so ensure the role has the
      * events:RetrieveConnectionCredentials, secretsmanager:DescribeSecret, and
      * secretsmanager:GetSecretValue permissions. Format:
-     * arn:aws:events:region:account-id:connection/connection-name/unique-id
+     * arn:aws:events:region:account-id:connection/connection-name/unique-id This
+     * setting is required when you include TAMS settings in your job.
      */
     inline const Aws::String& GetAuthConnectionArn() const { return m_authConnectionArn; }
     inline bool AuthConnectionArnHasBeenSet() const { return m_authConnectionArnHasBeenSet; }
@@ -92,8 +93,8 @@ namespace Model
      * media source registered in your TAMS server. This source must be of type
      * urn:x-nmos:format:multi, and can can reference multiple flows for audio, video,
      * or combined audio/video content. MediaConvert automatically selects the highest
-     * quality flows available for your job. This setting is required when include TAMS
-     * settings in your job.
+     * quality flows available for your job. This setting is required when you include
+     * TAMS settings in your job.
      */
     inline const Aws::String& GetSourceId() const { return m_sourceId; }
     inline bool SourceIdHasBeenSet() const { return m_sourceIdHasBeenSet; }
@@ -110,7 +111,7 @@ namespace Model
      * format specified by your TAMS server implementation. This must be two timestamp
      * values with the format {sign?}{seconds}:{nanoseconds}, separated by an
      * underscore, surrounded by either parentheses or square brackets.  Example:
-     * [15:0_35:0) This setting is required when include TAMS settings in your job.
+     * [15:0_35:0) This setting is required when you include TAMS settings in your job.
      */
     inline const Aws::String& GetTimerange() const { return m_timerange; }
     inline bool TimerangeHasBeenSet() const { return m_timerangeHasBeenSet; }

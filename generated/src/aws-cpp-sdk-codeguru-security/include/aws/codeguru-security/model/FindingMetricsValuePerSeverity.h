@@ -39,26 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A numeric value corresponding to a critical finding.</p>
-     */
-    inline double GetCritical() const { return m_critical; }
-    inline bool CriticalHasBeenSet() const { return m_criticalHasBeenSet; }
-    inline void SetCritical(double value) { m_criticalHasBeenSet = true; m_critical = value; }
-    inline FindingMetricsValuePerSeverity& WithCritical(double value) { SetCritical(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A numeric value corresponding to a high severity finding.</p>
-     */
-    inline double GetHigh() const { return m_high; }
-    inline bool HighHasBeenSet() const { return m_highHasBeenSet; }
-    inline void SetHigh(double value) { m_highHasBeenSet = true; m_high = value; }
-    inline FindingMetricsValuePerSeverity& WithHigh(double value) { SetHigh(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A numeric value corresponding to an informational finding.</p>
      */
     inline double GetInfo() const { return m_info; }
@@ -86,13 +66,27 @@ namespace Model
     inline void SetMedium(double value) { m_mediumHasBeenSet = true; m_medium = value; }
     inline FindingMetricsValuePerSeverity& WithMedium(double value) { SetMedium(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A numeric value corresponding to a high severity finding.</p>
+     */
+    inline double GetHigh() const { return m_high; }
+    inline bool HighHasBeenSet() const { return m_highHasBeenSet; }
+    inline void SetHigh(double value) { m_highHasBeenSet = true; m_high = value; }
+    inline FindingMetricsValuePerSeverity& WithHigh(double value) { SetHigh(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A numeric value corresponding to a critical finding.</p>
+     */
+    inline double GetCritical() const { return m_critical; }
+    inline bool CriticalHasBeenSet() const { return m_criticalHasBeenSet; }
+    inline void SetCritical(double value) { m_criticalHasBeenSet = true; m_critical = value; }
+    inline FindingMetricsValuePerSeverity& WithCritical(double value) { SetCritical(value); return *this;}
+    ///@}
   private:
-
-    double m_critical{0.0};
-    bool m_criticalHasBeenSet = false;
-
-    double m_high{0.0};
-    bool m_highHasBeenSet = false;
 
     double m_info{0.0};
     bool m_infoHasBeenSet = false;
@@ -102,6 +96,12 @@ namespace Model
 
     double m_medium{0.0};
     bool m_mediumHasBeenSet = false;
+
+    double m_high{0.0};
+    bool m_highHasBeenSet = false;
+
+    double m_critical{0.0};
+    bool m_criticalHasBeenSet = false;
   };
 
 } // namespace Model

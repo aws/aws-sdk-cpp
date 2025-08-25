@@ -8,6 +8,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datazone/model/GlossaryStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datazone/model/GlossaryUsageRestriction.h>
 #include <utility>
 
 namespace Aws
@@ -144,6 +146,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The usage restriction of the restricted glossary.</p>
+     */
+    inline const Aws::Vector<GlossaryUsageRestriction>& GetUsageRestrictions() const { return m_usageRestrictions; }
+    template<typename UsageRestrictionsT = Aws::Vector<GlossaryUsageRestriction>>
+    void SetUsageRestrictions(UsageRestrictionsT&& value) { m_usageRestrictionsHasBeenSet = true; m_usageRestrictions = std::forward<UsageRestrictionsT>(value); }
+    template<typename UsageRestrictionsT = Aws::Vector<GlossaryUsageRestriction>>
+    GetGlossaryResult& WithUsageRestrictions(UsageRestrictionsT&& value) { SetUsageRestrictions(std::forward<UsageRestrictionsT>(value)); return *this;}
+    inline GetGlossaryResult& AddUsageRestrictions(GlossaryUsageRestriction value) { m_usageRestrictionsHasBeenSet = true; m_usageRestrictions.push_back(value); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -182,6 +196,9 @@ namespace Model
 
     Aws::String m_updatedBy;
     bool m_updatedByHasBeenSet = false;
+
+    Aws::Vector<GlossaryUsageRestriction> m_usageRestrictions;
+    bool m_usageRestrictionsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

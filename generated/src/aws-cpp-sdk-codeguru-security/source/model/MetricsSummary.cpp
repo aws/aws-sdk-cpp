@@ -25,15 +25,6 @@ MetricsSummary::MetricsSummary(JsonView jsonValue)
 
 MetricsSummary& MetricsSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("categoriesWithMostFindings"))
-  {
-    Aws::Utils::Array<JsonView> categoriesWithMostFindingsJsonList = jsonValue.GetArray("categoriesWithMostFindings");
-    for(unsigned categoriesWithMostFindingsIndex = 0; categoriesWithMostFindingsIndex < categoriesWithMostFindingsJsonList.GetLength(); ++categoriesWithMostFindingsIndex)
-    {
-      m_categoriesWithMostFindings.push_back(categoriesWithMostFindingsJsonList[categoriesWithMostFindingsIndex].AsObject());
-    }
-    m_categoriesWithMostFindingsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("date"))
   {
     m_date = jsonValue.GetDouble("date");
@@ -44,14 +35,14 @@ MetricsSummary& MetricsSummary::operator =(JsonView jsonValue)
     m_openFindings = jsonValue.GetObject("openFindings");
     m_openFindingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("scansWithMostOpenCriticalFindings"))
+  if(jsonValue.ValueExists("categoriesWithMostFindings"))
   {
-    Aws::Utils::Array<JsonView> scansWithMostOpenCriticalFindingsJsonList = jsonValue.GetArray("scansWithMostOpenCriticalFindings");
-    for(unsigned scansWithMostOpenCriticalFindingsIndex = 0; scansWithMostOpenCriticalFindingsIndex < scansWithMostOpenCriticalFindingsJsonList.GetLength(); ++scansWithMostOpenCriticalFindingsIndex)
+    Aws::Utils::Array<JsonView> categoriesWithMostFindingsJsonList = jsonValue.GetArray("categoriesWithMostFindings");
+    for(unsigned categoriesWithMostFindingsIndex = 0; categoriesWithMostFindingsIndex < categoriesWithMostFindingsJsonList.GetLength(); ++categoriesWithMostFindingsIndex)
     {
-      m_scansWithMostOpenCriticalFindings.push_back(scansWithMostOpenCriticalFindingsJsonList[scansWithMostOpenCriticalFindingsIndex].AsObject());
+      m_categoriesWithMostFindings.push_back(categoriesWithMostFindingsJsonList[categoriesWithMostFindingsIndex].AsObject());
     }
-    m_scansWithMostOpenCriticalFindingsHasBeenSet = true;
+    m_categoriesWithMostFindingsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("scansWithMostOpenFindings"))
   {
@@ -62,23 +53,21 @@ MetricsSummary& MetricsSummary::operator =(JsonView jsonValue)
     }
     m_scansWithMostOpenFindingsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("scansWithMostOpenCriticalFindings"))
+  {
+    Aws::Utils::Array<JsonView> scansWithMostOpenCriticalFindingsJsonList = jsonValue.GetArray("scansWithMostOpenCriticalFindings");
+    for(unsigned scansWithMostOpenCriticalFindingsIndex = 0; scansWithMostOpenCriticalFindingsIndex < scansWithMostOpenCriticalFindingsJsonList.GetLength(); ++scansWithMostOpenCriticalFindingsIndex)
+    {
+      m_scansWithMostOpenCriticalFindings.push_back(scansWithMostOpenCriticalFindingsJsonList[scansWithMostOpenCriticalFindingsIndex].AsObject());
+    }
+    m_scansWithMostOpenCriticalFindingsHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue MetricsSummary::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_categoriesWithMostFindingsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> categoriesWithMostFindingsJsonList(m_categoriesWithMostFindings.size());
-   for(unsigned categoriesWithMostFindingsIndex = 0; categoriesWithMostFindingsIndex < categoriesWithMostFindingsJsonList.GetLength(); ++categoriesWithMostFindingsIndex)
-   {
-     categoriesWithMostFindingsJsonList[categoriesWithMostFindingsIndex].AsObject(m_categoriesWithMostFindings[categoriesWithMostFindingsIndex].Jsonize());
-   }
-   payload.WithArray("categoriesWithMostFindings", std::move(categoriesWithMostFindingsJsonList));
-
-  }
 
   if(m_dateHasBeenSet)
   {
@@ -91,14 +80,14 @@ JsonValue MetricsSummary::Jsonize() const
 
   }
 
-  if(m_scansWithMostOpenCriticalFindingsHasBeenSet)
+  if(m_categoriesWithMostFindingsHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> scansWithMostOpenCriticalFindingsJsonList(m_scansWithMostOpenCriticalFindings.size());
-   for(unsigned scansWithMostOpenCriticalFindingsIndex = 0; scansWithMostOpenCriticalFindingsIndex < scansWithMostOpenCriticalFindingsJsonList.GetLength(); ++scansWithMostOpenCriticalFindingsIndex)
+   Aws::Utils::Array<JsonValue> categoriesWithMostFindingsJsonList(m_categoriesWithMostFindings.size());
+   for(unsigned categoriesWithMostFindingsIndex = 0; categoriesWithMostFindingsIndex < categoriesWithMostFindingsJsonList.GetLength(); ++categoriesWithMostFindingsIndex)
    {
-     scansWithMostOpenCriticalFindingsJsonList[scansWithMostOpenCriticalFindingsIndex].AsObject(m_scansWithMostOpenCriticalFindings[scansWithMostOpenCriticalFindingsIndex].Jsonize());
+     categoriesWithMostFindingsJsonList[categoriesWithMostFindingsIndex].AsObject(m_categoriesWithMostFindings[categoriesWithMostFindingsIndex].Jsonize());
    }
-   payload.WithArray("scansWithMostOpenCriticalFindings", std::move(scansWithMostOpenCriticalFindingsJsonList));
+   payload.WithArray("categoriesWithMostFindings", std::move(categoriesWithMostFindingsJsonList));
 
   }
 
@@ -110,6 +99,17 @@ JsonValue MetricsSummary::Jsonize() const
      scansWithMostOpenFindingsJsonList[scansWithMostOpenFindingsIndex].AsObject(m_scansWithMostOpenFindings[scansWithMostOpenFindingsIndex].Jsonize());
    }
    payload.WithArray("scansWithMostOpenFindings", std::move(scansWithMostOpenFindingsJsonList));
+
+  }
+
+  if(m_scansWithMostOpenCriticalFindingsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> scansWithMostOpenCriticalFindingsJsonList(m_scansWithMostOpenCriticalFindings.size());
+   for(unsigned scansWithMostOpenCriticalFindingsIndex = 0; scansWithMostOpenCriticalFindingsIndex < scansWithMostOpenCriticalFindingsJsonList.GetLength(); ++scansWithMostOpenCriticalFindingsIndex)
+   {
+     scansWithMostOpenCriticalFindingsJsonList[scansWithMostOpenCriticalFindingsIndex].AsObject(m_scansWithMostOpenCriticalFindings[scansWithMostOpenCriticalFindingsIndex].Jsonize());
+   }
+   payload.WithArray("scansWithMostOpenCriticalFindings", std::move(scansWithMostOpenCriticalFindingsJsonList));
 
   }
 

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Name/Value pair of a parameter to start execution of a SageMaker Model
+   * <p>Name/Value pair of a parameter to start execution of a SageMaker AI Model
    * Building Pipeline.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/SageMakerPipelineParameter">AWS
    * API Reference</a></p>
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Name of parameter to start execution of a SageMaker Model Building
+     * <p>Name of parameter to start execution of a SageMaker AI Model Building
      * Pipeline.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Value of parameter to start execution of a SageMaker Model Building
+     * <p>Value of parameter to start execution of a SageMaker AI Model Building
      * Pipeline.</p>
      */
     inline const Aws::String& GetValue() const { return m_value; }

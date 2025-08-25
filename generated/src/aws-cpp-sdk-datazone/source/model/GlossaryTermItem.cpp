@@ -90,6 +90,15 @@ GlossaryTermItem& GlossaryTermItem::operator =(JsonView jsonValue)
     m_updatedBy = jsonValue.GetString("updatedBy");
     m_updatedByHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("usageRestrictions"))
+  {
+    Aws::Utils::Array<JsonView> usageRestrictionsJsonList = jsonValue.GetArray("usageRestrictions");
+    for(unsigned usageRestrictionsIndex = 0; usageRestrictionsIndex < usageRestrictionsJsonList.GetLength(); ++usageRestrictionsIndex)
+    {
+      m_usageRestrictions.push_back(GlossaryUsageRestrictionMapper::GetGlossaryUsageRestrictionForName(usageRestrictionsJsonList[usageRestrictionsIndex].AsString()));
+    }
+    m_usageRestrictionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -169,6 +178,17 @@ JsonValue GlossaryTermItem::Jsonize() const
   if(m_updatedByHasBeenSet)
   {
    payload.WithString("updatedBy", m_updatedBy);
+
+  }
+
+  if(m_usageRestrictionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> usageRestrictionsJsonList(m_usageRestrictions.size());
+   for(unsigned usageRestrictionsIndex = 0; usageRestrictionsIndex < usageRestrictionsJsonList.GetLength(); ++usageRestrictionsIndex)
+   {
+     usageRestrictionsJsonList[usageRestrictionsIndex].AsString(GlossaryUsageRestrictionMapper::GetNameForGlossaryUsageRestriction(m_usageRestrictions[usageRestrictionsIndex]));
+   }
+   payload.WithArray("usageRestrictions", std::move(usageRestrictionsJsonList));
 
   }
 

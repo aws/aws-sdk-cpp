@@ -61,6 +61,24 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Returns an array of validation messages generated during EDI validation.
+     * These messages provide detailed information about validation errors, warnings,
+     * or confirmations based on the configured X12 validation rules such as element
+     * length constraints, code list validations, and element requirement checks. This
+     * field is populated when the <code>TestParsing</code> API validates EDI
+     * documents.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetValidationMessages() const { return m_validationMessages; }
+    template<typename ValidationMessagesT = Aws::Vector<Aws::String>>
+    void SetValidationMessages(ValidationMessagesT&& value) { m_validationMessagesHasBeenSet = true; m_validationMessages = std::forward<ValidationMessagesT>(value); }
+    template<typename ValidationMessagesT = Aws::Vector<Aws::String>>
+    TestParsingResult& WithValidationMessages(ValidationMessagesT&& value) { SetValidationMessages(std::forward<ValidationMessagesT>(value)); return *this;}
+    template<typename ValidationMessagesT = Aws::String>
+    TestParsingResult& AddValidationMessages(ValidationMessagesT&& value) { m_validationMessagesHasBeenSet = true; m_validationMessages.emplace_back(std::forward<ValidationMessagesT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -75,6 +93,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_parsedSplitFileContents;
     bool m_parsedSplitFileContentsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_validationMessages;
+    bool m_validationMessagesHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

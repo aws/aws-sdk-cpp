@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier for a finding.</p>
-     */
-    inline const Aws::String& GetFindingId() const { return m_findingId; }
-    inline bool FindingIdHasBeenSet() const { return m_findingIdHasBeenSet; }
-    template<typename FindingIdT = Aws::String>
-    void SetFindingId(FindingIdT&& value) { m_findingIdHasBeenSet = true; m_findingId = std::forward<FindingIdT>(value); }
-    template<typename FindingIdT = Aws::String>
-    FindingIdentifier& WithFindingId(FindingIdT&& value) { SetFindingId(std::forward<FindingIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the scan that generated the finding. </p>
      */
     inline const Aws::String& GetScanName() const { return m_scanName; }
@@ -61,13 +49,25 @@ namespace Model
     template<typename ScanNameT = Aws::String>
     FindingIdentifier& WithScanName(ScanNameT&& value) { SetScanName(std::forward<ScanNameT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_findingId;
-    bool m_findingIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The identifier for a finding.</p>
+     */
+    inline const Aws::String& GetFindingId() const { return m_findingId; }
+    inline bool FindingIdHasBeenSet() const { return m_findingIdHasBeenSet; }
+    template<typename FindingIdT = Aws::String>
+    void SetFindingId(FindingIdT&& value) { m_findingIdHasBeenSet = true; m_findingId = std::forward<FindingIdT>(value); }
+    template<typename FindingIdT = Aws::String>
+    FindingIdentifier& WithFindingId(FindingIdT&& value) { SetFindingId(std::forward<FindingIdT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_scanName;
     bool m_scanNameHasBeenSet = false;
+
+    Aws::String m_findingId;
+    bool m_findingIdHasBeenSet = false;
   };
 
 } // namespace Model

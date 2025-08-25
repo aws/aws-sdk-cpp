@@ -20,7 +20,8 @@ namespace Model
     DELETING,
     DELETE_FAILED,
     UPDATING,
-    UPDATE_FAILED
+    UPDATE_FAILED,
+    MOVING
   };
 
 namespace ProjectStatusMapper

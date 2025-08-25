@@ -46,7 +46,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
+     * <p>The ARN of the Amazon Q Developer in chat applications topic to unsubscribe
+     * from the notification rule.</p>
      */
     inline const Aws::String& GetTargetAddress() const { return m_targetAddress; }
     inline bool TargetAddressHasBeenSet() const { return m_targetAddressHasBeenSet; }

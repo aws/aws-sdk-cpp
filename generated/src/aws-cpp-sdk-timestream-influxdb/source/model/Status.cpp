@@ -29,6 +29,7 @@ namespace Aws
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int UPDATING_DEPLOYMENT_TYPE_HASH = HashingUtils::HashString("UPDATING_DEPLOYMENT_TYPE");
         static const int UPDATING_INSTANCE_TYPE_HASH = HashingUtils::HashString("UPDATING_INSTANCE_TYPE");
+        static const int MAINTENANCE_HASH = HashingUtils::HashString("MAINTENANCE");
 
 
         Status GetStatusForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return Status::UPDATING_INSTANCE_TYPE;
           }
+          else if (hashCode == MAINTENANCE_HASH)
+          {
+            return Status::MAINTENANCE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -104,6 +109,8 @@ namespace Aws
             return "UPDATING_DEPLOYMENT_TYPE";
           case Status::UPDATING_INSTANCE_TYPE:
             return "UPDATING_INSTANCE_TYPE";
+          case Status::MAINTENANCE:
+            return "MAINTENANCE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

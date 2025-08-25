@@ -27,10 +27,11 @@ namespace Model
   /**
    * <p>Information about a filter to apply to the list of returned targets. You can
    * filter by target type, address, or status. For example, to filter results to
-   * notification rules that have active Chatbot topics as targets, you could specify
-   * a ListTargetsFilter Name as <code>TargetType</code> and a Value of
-   * <code>SNS</code>, and a Name of <code>TARGET_STATUS</code> and a Value of
-   * <code>ACTIVE</code>.</p><p><h3>See Also:</h3>   <a
+   * notification rules that have active Amazon Q Developer in chat applications
+   * topics as targets, you could specify a ListTargetsFilter Name as
+   * <code>TargetType</code> and a Value of <code>SNS</code>, and a Name of
+   * <code>TARGET_STATUS</code> and a Value of <code>ACTIVE</code>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/ListTargetsFilter">AWS
    * API Reference</a></p>
    */

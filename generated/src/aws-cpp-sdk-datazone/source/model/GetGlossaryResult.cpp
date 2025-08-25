@@ -75,6 +75,15 @@ GetGlossaryResult& GetGlossaryResult::operator =(const Aws::AmazonWebServiceResu
     m_updatedBy = jsonValue.GetString("updatedBy");
     m_updatedByHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("usageRestrictions"))
+  {
+    Aws::Utils::Array<JsonView> usageRestrictionsJsonList = jsonValue.GetArray("usageRestrictions");
+    for(unsigned usageRestrictionsIndex = 0; usageRestrictionsIndex < usageRestrictionsJsonList.GetLength(); ++usageRestrictionsIndex)
+    {
+      m_usageRestrictions.push_back(GlossaryUsageRestrictionMapper::GetGlossaryUsageRestrictionForName(usageRestrictionsJsonList[usageRestrictionsIndex].AsString()));
+    }
+    m_usageRestrictionsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

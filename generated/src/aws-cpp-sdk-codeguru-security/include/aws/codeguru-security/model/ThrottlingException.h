@@ -64,18 +64,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier for the originating quota.</p>
-     */
-    inline const Aws::String& GetQuotaCode() const { return m_quotaCode; }
-    inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
-    template<typename QuotaCodeT = Aws::String>
-    void SetQuotaCode(QuotaCodeT&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::forward<QuotaCodeT>(value); }
-    template<typename QuotaCodeT = Aws::String>
-    ThrottlingException& WithQuotaCode(QuotaCodeT&& value) { SetQuotaCode(std::forward<QuotaCodeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier for the originating service.</p>
      */
     inline const Aws::String& GetServiceCode() const { return m_serviceCode; }
@@ -85,6 +73,18 @@ namespace Model
     template<typename ServiceCodeT = Aws::String>
     ThrottlingException& WithServiceCode(ServiceCodeT&& value) { SetServiceCode(std::forward<ServiceCodeT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The identifier for the originating quota.</p>
+     */
+    inline const Aws::String& GetQuotaCode() const { return m_quotaCode; }
+    inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
+    template<typename QuotaCodeT = Aws::String>
+    void SetQuotaCode(QuotaCodeT&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::forward<QuotaCodeT>(value); }
+    template<typename QuotaCodeT = Aws::String>
+    ThrottlingException& WithQuotaCode(QuotaCodeT&& value) { SetQuotaCode(std::forward<QuotaCodeT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_errorCode;
@@ -93,11 +93,11 @@ namespace Model
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    Aws::String m_quotaCode;
-    bool m_quotaCodeHasBeenSet = false;
-
     Aws::String m_serviceCode;
     bool m_serviceCodeHasBeenSet = false;
+
+    Aws::String m_quotaCode;
+    bool m_quotaCodeHasBeenSet = false;
   };
 
 } // namespace Model

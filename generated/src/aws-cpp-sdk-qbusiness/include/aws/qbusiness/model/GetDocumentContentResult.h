@@ -48,8 +48,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The MIME type of the document content (e.g., application/pdf, text/plain,
-     * application/vnd.openxmlformats-officedocument.wordprocessingml.document).</p>
+     * <p>The MIME type of the document content. When outputFormat is RAW, this
+     * corresponds to the original document's MIME type (e.g., application/pdf,
+     * text/plain,
+     * application/vnd.openxmlformats-officedocument.wordprocessingml.document). When
+     * outputFormat is EXTRACTED, the MIME type is always application/json.</p>
      */
     inline const Aws::String& GetMimeType() const { return m_mimeType; }
     template<typename MimeTypeT = Aws::String>

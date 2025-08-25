@@ -9,6 +9,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datazone/model/GlossaryStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datazone/model/GlossaryUsageRestriction.h>
 #include <utility>
 
 namespace Aws
@@ -170,6 +172,19 @@ namespace Model
     template<typename UpdatedByT = Aws::String>
     GlossaryItem& WithUpdatedBy(UpdatedByT&& value) { SetUpdatedBy(std::forward<UpdatedByT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The usage restrictions associated with a goverened glossary term.</p>
+     */
+    inline const Aws::Vector<GlossaryUsageRestriction>& GetUsageRestrictions() const { return m_usageRestrictions; }
+    inline bool UsageRestrictionsHasBeenSet() const { return m_usageRestrictionsHasBeenSet; }
+    template<typename UsageRestrictionsT = Aws::Vector<GlossaryUsageRestriction>>
+    void SetUsageRestrictions(UsageRestrictionsT&& value) { m_usageRestrictionsHasBeenSet = true; m_usageRestrictions = std::forward<UsageRestrictionsT>(value); }
+    template<typename UsageRestrictionsT = Aws::Vector<GlossaryUsageRestriction>>
+    GlossaryItem& WithUsageRestrictions(UsageRestrictionsT&& value) { SetUsageRestrictions(std::forward<UsageRestrictionsT>(value)); return *this;}
+    inline GlossaryItem& AddUsageRestrictions(GlossaryUsageRestriction value) { m_usageRestrictionsHasBeenSet = true; m_usageRestrictions.push_back(value); return *this; }
+    ///@}
   private:
 
     GlossaryItemAdditionalAttributes m_additionalAttributes;
@@ -204,6 +219,9 @@ namespace Model
 
     Aws::String m_updatedBy;
     bool m_updatedByHasBeenSet = false;
+
+    Aws::Vector<GlossaryUsageRestriction> m_usageRestrictions;
+    bool m_usageRestrictionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -39,6 +39,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The code line number.</p>
+     */
+    inline int GetNumber() const { return m_number; }
+    inline bool NumberHasBeenSet() const { return m_numberHasBeenSet; }
+    inline void SetNumber(int value) { m_numberHasBeenSet = true; m_number = value; }
+    inline CodeLine& WithNumber(int value) { SetNumber(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The code that contains a vulnerability.</p>
      */
     inline const Aws::String& GetContent() const { return m_content; }
@@ -48,23 +58,13 @@ namespace Model
     template<typename ContentT = Aws::String>
     CodeLine& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The code line number.</p>
-     */
-    inline int GetNumber() const { return m_number; }
-    inline bool NumberHasBeenSet() const { return m_numberHasBeenSet; }
-    inline void SetNumber(int value) { m_numberHasBeenSet = true; m_number = value; }
-    inline CodeLine& WithNumber(int value) { SetNumber(value); return *this;}
-    ///@}
   private:
-
-    Aws::String m_content;
-    bool m_contentHasBeenSet = false;
 
     int m_number{0};
     bool m_numberHasBeenSet = false;
+
+    Aws::String m_content;
+    bool m_contentHasBeenSet = false;
   };
 
 } // namespace Model

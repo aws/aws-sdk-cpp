@@ -175,6 +175,8 @@
 #include <aws/mediaconvert/model/CreatePresetResult.h>
 #include <aws/mediaconvert/model/CreateQueueRequest.h>
 #include <aws/mediaconvert/model/CreateQueueResult.h>
+#include <aws/mediaconvert/model/CreateResourceShareRequest.h>
+#include <aws/mediaconvert/model/CreateResourceShareResult.h>
 #include <aws/mediaconvert/model/DashAdditionalManifest.h>
 #include <aws/mediaconvert/model/DashIsoEncryptionSettings.h>
 #include <aws/mediaconvert/model/DashIsoGroupAudioChannelConfigSchemeIdUri.h>
@@ -476,6 +478,7 @@
 #include <aws/mediaconvert/model/MovPaddingControl.h>
 #include <aws/mediaconvert/model/MovReference.h>
 #include <aws/mediaconvert/model/MovSettings.h>
+#include <aws/mediaconvert/model/Mp2AudioDescriptionMix.h>
 #include <aws/mediaconvert/model/Mp2Settings.h>
 #include <aws/mediaconvert/model/Mp3RateControlMode.h>
 #include <aws/mediaconvert/model/Mp3Settings.h>
@@ -602,6 +605,7 @@
 #include <aws/mediaconvert/model/SearchJobsRequest.h>
 #include <aws/mediaconvert/model/SearchJobsResult.h>
 #include <aws/mediaconvert/model/ServiceOverride.h>
+#include <aws/mediaconvert/model/ShareStatus.h>
 #include <aws/mediaconvert/model/SimulateReservedQueue.h>
 #include <aws/mediaconvert/model/SpekeKeyProvider.h>
 #include <aws/mediaconvert/model/SpekeKeyProviderCmaf.h>
@@ -672,6 +676,7 @@
 #include <aws/mediaconvert/model/VideoPreprocessor.h>
 #include <aws/mediaconvert/model/VideoProperties.h>
 #include <aws/mediaconvert/model/VideoSelector.h>
+#include <aws/mediaconvert/model/VideoSelectorType.h>
 #include <aws/mediaconvert/model/VideoTimecodeInsertion.h>
 #include <aws/mediaconvert/model/VorbisSettings.h>
 #include <aws/mediaconvert/model/Vp8FramerateControl.h>

@@ -41,7 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Q Developer in chat applications
+     * topic or Amazon Q Developer in chat applications client.</p>
      */
     inline const Aws::String& GetTargetAddress() const { return m_targetAddress; }
     inline bool TargetAddressHasBeenSet() const { return m_targetAddressHasBeenSet; }
@@ -54,7 +55,8 @@ namespace Model
     ///@{
     /**
      * <p>The type of the target (for example, <code>SNS</code>).</p> <ul> <li>
-     * <p>Chatbot topics are specified as <code>SNS</code>.</p> </li> <li> <p>Chatbot
+     * <p>Amazon Q Developer in chat applications topics are specified as
+     * <code>SNS</code>.</p> </li> <li> <p>Amazon Q Developer in chat applications
      * clients are specified as <code>AWSChatbotSlack</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetTargetType() const { return m_targetType; }

@@ -212,6 +212,31 @@ namespace DataZone
         }
 
         /**
+         * <p>Associates governed terms with an asset.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AssociateGovernedTerms">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateGovernedTermsOutcome AssociateGovernedTerms(const Model::AssociateGovernedTermsRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateGovernedTerms that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateGovernedTermsRequestT = Model::AssociateGovernedTermsRequest>
+        Model::AssociateGovernedTermsOutcomeCallable AssociateGovernedTermsCallable(const AssociateGovernedTermsRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::AssociateGovernedTerms, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateGovernedTerms that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateGovernedTermsRequestT = Model::AssociateGovernedTermsRequest>
+        void AssociateGovernedTermsAsync(const AssociateGovernedTermsRequestT& request, const AssociateGovernedTermsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::AssociateGovernedTerms, request, handler, context);
+        }
+
+        /**
          * <p>Cancels the metadata generation run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CancelMetadataGenerationRun">AWS
          * API Reference</a></p>
@@ -1622,6 +1647,31 @@ namespace DataZone
         void DisassociateEnvironmentRoleAsync(const DisassociateEnvironmentRoleRequestT& request, const DisassociateEnvironmentRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::DisassociateEnvironmentRole, request, handler, context);
+        }
+
+        /**
+         * <p>Disassociates restricted terms from an asset.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DisassociateGovernedTerms">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateGovernedTermsOutcome DisassociateGovernedTerms(const Model::DisassociateGovernedTermsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateGovernedTerms that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateGovernedTermsRequestT = Model::DisassociateGovernedTermsRequest>
+        Model::DisassociateGovernedTermsOutcomeCallable DisassociateGovernedTermsCallable(const DisassociateGovernedTermsRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::DisassociateGovernedTerms, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateGovernedTerms that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateGovernedTermsRequestT = Model::DisassociateGovernedTermsRequest>
+        void DisassociateGovernedTermsAsync(const DisassociateGovernedTermsRequestT& request, const DisassociateGovernedTermsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::DisassociateGovernedTerms, request, handler, context);
         }
 
         /**

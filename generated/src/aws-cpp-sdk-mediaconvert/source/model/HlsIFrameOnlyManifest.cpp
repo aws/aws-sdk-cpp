@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int INCLUDE_HASH = HashingUtils::HashString("INCLUDE");
+        static const int INCLUDE_AS_TS_HASH = HashingUtils::HashString("INCLUDE_AS_TS");
         static const int EXCLUDE_HASH = HashingUtils::HashString("EXCLUDE");
 
 
@@ -30,6 +31,10 @@ namespace Aws
           if (hashCode == INCLUDE_HASH)
           {
             return HlsIFrameOnlyManifest::INCLUDE;
+          }
+          else if (hashCode == INCLUDE_AS_TS_HASH)
+          {
+            return HlsIFrameOnlyManifest::INCLUDE_AS_TS;
           }
           else if (hashCode == EXCLUDE_HASH)
           {
@@ -53,6 +58,8 @@ namespace Aws
             return {};
           case HlsIFrameOnlyManifest::INCLUDE:
             return "INCLUDE";
+          case HlsIFrameOnlyManifest::INCLUDE_AS_TS:
+            return "INCLUDE_AS_TS";
           case HlsIFrameOnlyManifest::EXCLUDE:
             return "EXCLUDE";
           default:

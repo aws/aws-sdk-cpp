@@ -41,6 +41,7 @@
 #include <aws/b2bi/model/DeleteTransformerRequest.h>
 #include <aws/b2bi/model/EdiConfiguration.h>
 #include <aws/b2bi/model/EdiType.h>
+#include <aws/b2bi/model/ElementRequirement.h>
 #include <aws/b2bi/model/FileFormat.h>
 #include <aws/b2bi/model/FormatOptions.h>
 #include <aws/b2bi/model/FromFormat.h>
@@ -113,9 +114,12 @@
 #include <aws/b2bi/model/WrapOptions.h>
 #include <aws/b2bi/model/X12AcknowledgmentOptions.h>
 #include <aws/b2bi/model/X12AdvancedOptions.h>
+#include <aws/b2bi/model/X12CodeListValidationRule.h>
 #include <aws/b2bi/model/X12ControlNumbers.h>
 #include <aws/b2bi/model/X12Delimiters.h>
 #include <aws/b2bi/model/X12Details.h>
+#include <aws/b2bi/model/X12ElementLengthValidationRule.h>
+#include <aws/b2bi/model/X12ElementRequirementValidationRule.h>
 #include <aws/b2bi/model/X12Envelope.h>
 #include <aws/b2bi/model/X12FunctionalAcknowledgment.h>
 #include <aws/b2bi/model/X12FunctionalGroupHeaders.h>
@@ -127,6 +131,8 @@
 #include <aws/b2bi/model/X12SplitOptions.h>
 #include <aws/b2bi/model/X12TechnicalAcknowledgment.h>
 #include <aws/b2bi/model/X12TransactionSet.h>
+#include <aws/b2bi/model/X12ValidationOptions.h>
+#include <aws/b2bi/model/X12ValidationRule.h>
 #include <aws/b2bi/model/X12Version.h>
 
 using B2BIIncludeTest = ::testing::Test;

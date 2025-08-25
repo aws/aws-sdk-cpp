@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about the Chatbot topics or Chatbot clients associated with a
-   * notification rule.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the Amazon Q Developer in chat applications topics or
+   * Amazon Q Developer in chat applications clients associated with a notification
+   * rule.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/Target">AWS
    * API Reference</a></p>
    */
@@ -40,9 +41,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The target type. Can be an Chatbot topic or Chatbot client.</p> <ul> <li>
-     * <p>Chatbot topics are specified as <code>SNS</code>.</p> </li> <li> <p>Chatbot
-     * clients are specified as <code>AWSChatbotSlack</code>.</p> </li> </ul>
+     * <p>The target type. Can be an Amazon Q Developer in chat applications topic or
+     * Amazon Q Developer in chat applications client.</p> <ul> <li> <p>Amazon Q
+     * Developer in chat applications topics are specified as <code>SNS</code>.</p>
+     * </li> <li> <p>Amazon Q Developer in chat applications clients are specified as
+     * <code>AWSChatbotSlack</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetTargetType() const { return m_targetType; }
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
@@ -54,7 +57,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Q Developer in chat applications
+     * topic or Amazon Q Developer in chat applications client.</p>
      */
     inline const Aws::String& GetTargetAddress() const { return m_targetAddress; }
     inline bool TargetAddressHasBeenSet() const { return m_targetAddressHasBeenSet; }

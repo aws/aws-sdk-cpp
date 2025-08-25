@@ -25,50 +25,50 @@ GetScanResult::GetScanResult(const Aws::AmazonWebServiceResult<JsonValue>& resul
 GetScanResult& GetScanResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("analysisType"))
+  if(jsonValue.ValueExists("scanName"))
   {
-    m_analysisType = AnalysisTypeMapper::GetAnalysisTypeForName(jsonValue.GetString("analysisType"));
-    m_analysisTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("errorMessage"))
-  {
-    m_errorMessage = jsonValue.GetString("errorMessage");
-    m_errorMessageHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("numberOfRevisions"))
-  {
-    m_numberOfRevisions = jsonValue.GetInt64("numberOfRevisions");
-    m_numberOfRevisionsHasBeenSet = true;
+    m_scanName = jsonValue.GetString("scanName");
+    m_scanNameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("runId"))
   {
     m_runId = jsonValue.GetString("runId");
     m_runIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("scanName"))
+  if(jsonValue.ValueExists("scanState"))
   {
-    m_scanName = jsonValue.GetString("scanName");
-    m_scanNameHasBeenSet = true;
+    m_scanState = ScanStateMapper::GetScanStateForName(jsonValue.GetString("scanState"));
+    m_scanStateHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("analysisType"))
+  {
+    m_analysisType = AnalysisTypeMapper::GetAnalysisTypeForName(jsonValue.GetString("analysisType"));
+    m_analysisTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("updatedAt"))
+  {
+    m_updatedAt = jsonValue.GetDouble("updatedAt");
+    m_updatedAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("numberOfRevisions"))
+  {
+    m_numberOfRevisions = jsonValue.GetInt64("numberOfRevisions");
+    m_numberOfRevisionsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("scanNameArn"))
   {
     m_scanNameArn = jsonValue.GetString("scanNameArn");
     m_scanNameArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("scanState"))
+  if(jsonValue.ValueExists("errorMessage"))
   {
-    m_scanState = ScanStateMapper::GetScanStateForName(jsonValue.GetString("scanState"));
-    m_scanStateHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("updatedAt"))
-  {
-    m_updatedAt = jsonValue.GetDouble("updatedAt");
-    m_updatedAtHasBeenSet = true;
+    m_errorMessage = jsonValue.GetString("errorMessage");
+    m_errorMessageHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

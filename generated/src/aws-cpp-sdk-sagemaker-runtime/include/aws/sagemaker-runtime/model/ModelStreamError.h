@@ -27,7 +27,7 @@ namespace Model
    * <p> An error occurred while streaming the response body. This error can have the
    * following error codes:</p> <dl> <dt>ModelInvocationTimeExceeded</dt> <dd> <p>The
    * model failed to finish sending the response within the timeout period allowed by
-   * Amazon SageMaker.</p> </dd> <dt>StreamBroken</dt> <dd> <p>The Transmission
+   * Amazon SageMaker AI.</p> </dd> <dt>StreamBroken</dt> <dd> <p>The Transmission
    * Control Protocol (TCP) connection between the client and the model was reset or
    * closed.</p> </dd> </dl><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/ModelStreamError">AWS
@@ -56,7 +56,7 @@ namespace Model
     /**
      * <p>This error can have the following error codes:</p> <dl>
      * <dt>ModelInvocationTimeExceeded</dt> <dd> <p>The model failed to finish sending
-     * the response within the timeout period allowed by Amazon SageMaker.</p> </dd>
+     * the response within the timeout period allowed by Amazon SageMaker AI.</p> </dd>
      * <dt>StreamBroken</dt> <dd> <p>The Transmission Control Protocol (TCP) connection
      * between the client and the model was reset or closed.</p> </dd> </dl>
      */

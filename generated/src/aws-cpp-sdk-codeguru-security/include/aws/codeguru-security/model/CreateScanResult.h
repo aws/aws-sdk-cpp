@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/codeguru-security/CodeGuruSecurity_EXPORTS.h>
-#include <aws/codeguru-security/model/ResourceId.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/codeguru-security/model/ResourceId.h>
 #include <aws/codeguru-security/model/ScanState.h>
 #include <utility>
 
@@ -36,14 +36,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier for the resource object that contains resources that were
-     * scanned.</p>
+     * <p>The name of the scan.</p>
      */
-    inline const ResourceId& GetResourceId() const { return m_resourceId; }
-    template<typename ResourceIdT = ResourceId>
-    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
-    template<typename ResourceIdT = ResourceId>
-    CreateScanResult& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
+    inline const Aws::String& GetScanName() const { return m_scanName; }
+    template<typename ScanNameT = Aws::String>
+    void SetScanName(ScanNameT&& value) { m_scanNameHasBeenSet = true; m_scanName = std::forward<ScanNameT>(value); }
+    template<typename ScanNameT = Aws::String>
+    CreateScanResult& WithScanName(ScanNameT&& value) { SetScanName(std::forward<ScanNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,13 +58,24 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the scan.</p>
+     * <p>The identifier for the resource object that contains resources that were
+     * scanned.</p>
      */
-    inline const Aws::String& GetScanName() const { return m_scanName; }
-    template<typename ScanNameT = Aws::String>
-    void SetScanName(ScanNameT&& value) { m_scanNameHasBeenSet = true; m_scanName = std::forward<ScanNameT>(value); }
-    template<typename ScanNameT = Aws::String>
-    CreateScanResult& WithScanName(ScanNameT&& value) { SetScanName(std::forward<ScanNameT>(value)); return *this;}
+    inline const ResourceId& GetResourceId() const { return m_resourceId; }
+    template<typename ResourceIdT = ResourceId>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = ResourceId>
+    CreateScanResult& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The current state of the scan. Returns either <code>InProgress</code>,
+     * <code>Successful</code>, or <code>Failed</code>.</p>
+     */
+    inline ScanState GetScanState() const { return m_scanState; }
+    inline void SetScanState(ScanState value) { m_scanStateHasBeenSet = true; m_scanState = value; }
+    inline CreateScanResult& WithScanState(ScanState value) { SetScanState(value); return *this;}
     ///@}
 
     ///@{
@@ -80,16 +90,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The current state of the scan. Returns either <code>InProgress</code>,
-     * <code>Successful</code>, or <code>Failed</code>.</p>
-     */
-    inline ScanState GetScanState() const { return m_scanState; }
-    inline void SetScanState(ScanState value) { m_scanStateHasBeenSet = true; m_scanState = value; }
-    inline CreateScanResult& WithScanState(ScanState value) { SetScanState(value); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -99,20 +99,20 @@ namespace Model
     ///@}
   private:
 
-    ResourceId m_resourceId;
-    bool m_resourceIdHasBeenSet = false;
+    Aws::String m_scanName;
+    bool m_scanNameHasBeenSet = false;
 
     Aws::String m_runId;
     bool m_runIdHasBeenSet = false;
 
-    Aws::String m_scanName;
-    bool m_scanNameHasBeenSet = false;
-
-    Aws::String m_scanNameArn;
-    bool m_scanNameArnHasBeenSet = false;
+    ResourceId m_resourceId;
+    bool m_resourceIdHasBeenSet = false;
 
     ScanState m_scanState{ScanState::NOT_SET};
     bool m_scanStateHasBeenSet = false;
+
+    Aws::String m_scanNameArn;
+    bool m_scanNameArnHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

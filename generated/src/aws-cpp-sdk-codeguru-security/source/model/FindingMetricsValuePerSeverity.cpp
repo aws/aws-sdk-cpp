@@ -25,16 +25,6 @@ FindingMetricsValuePerSeverity::FindingMetricsValuePerSeverity(JsonView jsonValu
 
 FindingMetricsValuePerSeverity& FindingMetricsValuePerSeverity::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("critical"))
-  {
-    m_critical = jsonValue.GetDouble("critical");
-    m_criticalHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("high"))
-  {
-    m_high = jsonValue.GetDouble("high");
-    m_highHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("info"))
   {
     m_info = jsonValue.GetDouble("info");
@@ -50,24 +40,22 @@ FindingMetricsValuePerSeverity& FindingMetricsValuePerSeverity::operator =(JsonV
     m_medium = jsonValue.GetDouble("medium");
     m_mediumHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("high"))
+  {
+    m_high = jsonValue.GetDouble("high");
+    m_highHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("critical"))
+  {
+    m_critical = jsonValue.GetDouble("critical");
+    m_criticalHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue FindingMetricsValuePerSeverity::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_criticalHasBeenSet)
-  {
-   payload.WithDouble("critical", m_critical);
-
-  }
-
-  if(m_highHasBeenSet)
-  {
-   payload.WithDouble("high", m_high);
-
-  }
 
   if(m_infoHasBeenSet)
   {
@@ -84,6 +72,18 @@ JsonValue FindingMetricsValuePerSeverity::Jsonize() const
   if(m_mediumHasBeenSet)
   {
    payload.WithDouble("medium", m_medium);
+
+  }
+
+  if(m_highHasBeenSet)
+  {
+   payload.WithDouble("high", m_high);
+
+  }
+
+  if(m_criticalHasBeenSet)
+  {
+   payload.WithDouble("critical", m_critical);
 
   }
 

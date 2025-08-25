@@ -23,10 +23,10 @@ Aws::String ListFindingsMetricsRequest::SerializePayload() const
 void ListFindingsMetricsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
-    if(m_endDateHasBeenSet)
+    if(m_nextTokenHasBeenSet)
     {
-      ss << m_endDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
-      uri.AddQueryStringParameter("endDate", ss.str());
+      ss << m_nextToken;
+      uri.AddQueryStringParameter("nextToken", ss.str());
       ss.str("");
     }
 
@@ -37,17 +37,17 @@ void ListFindingsMetricsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
-    if(m_nextTokenHasBeenSet)
-    {
-      ss << m_nextToken;
-      uri.AddQueryStringParameter("nextToken", ss.str());
-      ss.str("");
-    }
-
     if(m_startDateHasBeenSet)
     {
       ss << m_startDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("startDate", ss.str());
+      ss.str("");
+    }
+
+    if(m_endDateHasBeenSet)
+    {
+      ss << m_endDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
+      uri.AddQueryStringParameter("endDate", ss.str());
       ss.str("");
     }
 

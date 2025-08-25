@@ -16,9 +16,9 @@ namespace Aws
 namespace CodeStarNotifications
 {
   /**
-   * <p>This AWS CodeStar Notifications API Reference provides descriptions and usage
-   * examples of the operations and data types for the AWS CodeStar Notifications
-   * API. You can use the AWS CodeStar Notifications API to work with the following
+   * <p>This CodeStar Notifications API Reference provides descriptions and usage
+   * examples of the operations and data types for the CodeStar Notifications API.
+   * You can use the CodeStar Notifications API to work with the following
    * objects:</p> <p>Notification rules, by calling the following: </p> <ul> <li> <p>
    * <a>CreateNotificationRule</a>, which creates a notification rule for a resource
    * in your account. </p> </li> <li> <p> <a>DeleteNotificationRule</a>, which
@@ -41,7 +41,7 @@ namespace CodeStarNotifications
    * </li> <li> <p> <a>TagResource</a>, which associates a tag you provide with a
    * notification rule in your account. </p> </li> <li> <p> <a>UntagResource</a>,
    * which removes a tag from a notification rule in your account. </p> </li> </ul>
-   * <p> For information about how to use AWS CodeStar Notifications, see the <a
+   * <p> For information about how to use CodeStar Notifications, see the <a
    * href="https://docs.aws.amazon.com/dtconsole/latest/userguide/what-is-dtconsole.html">Amazon
    * Web Services Developer Tools Console User Guide</a>. </p>
    */
@@ -105,9 +105,10 @@ namespace CodeStarNotifications
 
         /**
          * <p>Creates a notification rule for a resource. The rule specifies the events you
-         * want notifications about and the targets (such as Chatbot topics or Chatbot
-         * clients configured for Slack) where you want to receive them.</p><p><h3>See
-         * Also:</h3>   <a
+         * want notifications about and the targets (such as Amazon Q Developer in chat
+         * applications topics or Amazon Q Developer in chat applications clients
+         * configured for Slack) where you want to receive them.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/CreateNotificationRule">AWS
          * API Reference</a></p>
          */
@@ -312,9 +313,10 @@ namespace CodeStarNotifications
         }
 
         /**
-         * <p>Creates an association between a notification rule and an Chatbot topic or
-         * Chatbot client so that the associated target can receive notifications when the
-         * events described in the rule are triggered.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an association between a notification rule and an Amazon Q Developer
+         * in chat applications topic or Amazon Q Developer in chat applications client so
+         * that the associated target can receive notifications when the events described
+         * in the rule are triggered.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/Subscribe">AWS
          * API Reference</a></p>
          */
@@ -365,9 +367,10 @@ namespace CodeStarNotifications
         }
 
         /**
-         * <p>Removes an association between a notification rule and an Chatbot topic so
-         * that subscribers to that topic stop receiving notifications when the events
-         * described in the rule are triggered.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes an association between a notification rule and an Amazon Q Developer
+         * in chat applications topic so that subscribers to that topic stop receiving
+         * notifications when the events described in the rule are triggered.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/Unsubscribe">AWS
          * API Reference</a></p>
          */

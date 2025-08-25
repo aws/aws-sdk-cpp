@@ -30,6 +30,11 @@ X12AdvancedOptions& X12AdvancedOptions::operator =(JsonView jsonValue)
     m_splitOptions = jsonValue.GetObject("splitOptions");
     m_splitOptionsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("validationOptions"))
+  {
+    m_validationOptions = jsonValue.GetObject("validationOptions");
+    m_validationOptionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +45,12 @@ JsonValue X12AdvancedOptions::Jsonize() const
   if(m_splitOptionsHasBeenSet)
   {
    payload.WithObject("splitOptions", m_splitOptions.Jsonize());
+
+  }
+
+  if(m_validationOptionsHasBeenSet)
+  {
+   payload.WithObject("validationOptions", m_validationOptions.Jsonize());
 
   }
 

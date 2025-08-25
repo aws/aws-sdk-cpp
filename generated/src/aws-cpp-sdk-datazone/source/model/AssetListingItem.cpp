@@ -64,6 +64,15 @@ AssetListingItem& AssetListingItem::operator =(JsonView jsonValue)
     }
     m_glossaryTermsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("governedGlossaryTerms"))
+  {
+    Aws::Utils::Array<JsonView> governedGlossaryTermsJsonList = jsonValue.GetArray("governedGlossaryTerms");
+    for(unsigned governedGlossaryTermsIndex = 0; governedGlossaryTermsIndex < governedGlossaryTermsJsonList.GetLength(); ++governedGlossaryTermsIndex)
+    {
+      m_governedGlossaryTerms.push_back(governedGlossaryTermsJsonList[governedGlossaryTermsIndex].AsObject());
+    }
+    m_governedGlossaryTermsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("listingCreatedBy"))
   {
     m_listingCreatedBy = jsonValue.GetString("listingCreatedBy");
@@ -144,6 +153,17 @@ JsonValue AssetListingItem::Jsonize() const
      glossaryTermsJsonList[glossaryTermsIndex].AsObject(m_glossaryTerms[glossaryTermsIndex].Jsonize());
    }
    payload.WithArray("glossaryTerms", std::move(glossaryTermsJsonList));
+
+  }
+
+  if(m_governedGlossaryTermsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> governedGlossaryTermsJsonList(m_governedGlossaryTerms.size());
+   for(unsigned governedGlossaryTermsIndex = 0; governedGlossaryTermsIndex < governedGlossaryTermsJsonList.GetLength(); ++governedGlossaryTermsIndex)
+   {
+     governedGlossaryTermsJsonList[governedGlossaryTermsIndex].AsObject(m_governedGlossaryTerms[governedGlossaryTermsIndex].Jsonize());
+   }
+   payload.WithArray("governedGlossaryTerms", std::move(governedGlossaryTermsJsonList));
 
   }
 

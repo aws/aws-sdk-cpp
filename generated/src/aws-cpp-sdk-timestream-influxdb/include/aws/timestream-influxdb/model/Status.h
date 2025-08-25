@@ -24,7 +24,8 @@ namespace Model
     DELETED,
     FAILED,
     UPDATING_DEPLOYMENT_TYPE,
-    UPDATING_INSTANCE_TYPE
+    UPDATING_INSTANCE_TYPE,
+    MAINTENANCE
   };
 
 namespace StatusMapper

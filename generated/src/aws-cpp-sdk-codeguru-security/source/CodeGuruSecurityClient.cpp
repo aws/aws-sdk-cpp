@@ -387,15 +387,15 @@ ListFindingsMetricsOutcome CodeGuruSecurityClient::ListFindingsMetrics(const Lis
 {
   AWS_OPERATION_GUARD(ListFindingsMetrics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFindingsMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.EndDateHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListFindingsMetrics", "Required field: EndDate, is not set");
-    return ListFindingsMetricsOutcome(Aws::Client::AWSError<CodeGuruSecurityErrors>(CodeGuruSecurityErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndDate]", false));
-  }
   if (!request.StartDateHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListFindingsMetrics", "Required field: StartDate, is not set");
     return ListFindingsMetricsOutcome(Aws::Client::AWSError<CodeGuruSecurityErrors>(CodeGuruSecurityErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StartDate]", false));
+  }
+  if (!request.EndDateHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListFindingsMetrics", "Required field: EndDate, is not set");
+    return ListFindingsMetricsOutcome(Aws::Client::AWSError<CodeGuruSecurityErrors>(CodeGuruSecurityErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndDate]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListFindingsMetrics, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});

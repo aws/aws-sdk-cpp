@@ -25,25 +25,25 @@ BatchGetFindingsError::BatchGetFindingsError(JsonView jsonValue)
 
 BatchGetFindingsError& BatchGetFindingsError::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("errorCode"))
+  if(jsonValue.ValueExists("scanName"))
   {
-    m_errorCode = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("errorCode"));
-    m_errorCodeHasBeenSet = true;
+    m_scanName = jsonValue.GetString("scanName");
+    m_scanNameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("findingId"))
   {
     m_findingId = jsonValue.GetString("findingId");
     m_findingIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("errorCode"))
+  {
+    m_errorCode = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("errorCode"));
+    m_errorCodeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("scanName"))
-  {
-    m_scanName = jsonValue.GetString("scanName");
-    m_scanNameHasBeenSet = true;
   }
   return *this;
 }
@@ -52,9 +52,10 @@ JsonValue BatchGetFindingsError::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_errorCodeHasBeenSet)
+  if(m_scanNameHasBeenSet)
   {
-   payload.WithString("errorCode", ErrorCodeMapper::GetNameForErrorCode(m_errorCode));
+   payload.WithString("scanName", m_scanName);
+
   }
 
   if(m_findingIdHasBeenSet)
@@ -63,15 +64,14 @@ JsonValue BatchGetFindingsError::Jsonize() const
 
   }
 
+  if(m_errorCodeHasBeenSet)
+  {
+   payload.WithString("errorCode", ErrorCodeMapper::GetNameForErrorCode(m_errorCode));
+  }
+
   if(m_messageHasBeenSet)
   {
    payload.WithString("message", m_message);
-
-  }
-
-  if(m_scanNameHasBeenSet)
-  {
-   payload.WithString("scanName", m_scanName);
 
   }
 

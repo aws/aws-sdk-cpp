@@ -25,30 +25,30 @@ AccountFindingsMetric::AccountFindingsMetric(JsonView jsonValue)
 
 AccountFindingsMetric& AccountFindingsMetric::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("closedFindings"))
-  {
-    m_closedFindings = jsonValue.GetObject("closedFindings");
-    m_closedFindingsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("date"))
   {
     m_date = jsonValue.GetDouble("date");
     m_dateHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("meanTimeToClose"))
-  {
-    m_meanTimeToClose = jsonValue.GetObject("meanTimeToClose");
-    m_meanTimeToCloseHasBeenSet = true;
   }
   if(jsonValue.ValueExists("newFindings"))
   {
     m_newFindings = jsonValue.GetObject("newFindings");
     m_newFindingsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("closedFindings"))
+  {
+    m_closedFindings = jsonValue.GetObject("closedFindings");
+    m_closedFindingsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("openFindings"))
   {
     m_openFindings = jsonValue.GetObject("openFindings");
     m_openFindingsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("meanTimeToClose"))
+  {
+    m_meanTimeToClose = jsonValue.GetObject("meanTimeToClose");
+    m_meanTimeToCloseHasBeenSet = true;
   }
   return *this;
 }
@@ -57,21 +57,9 @@ JsonValue AccountFindingsMetric::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_closedFindingsHasBeenSet)
-  {
-   payload.WithObject("closedFindings", m_closedFindings.Jsonize());
-
-  }
-
   if(m_dateHasBeenSet)
   {
    payload.WithDouble("date", m_date.SecondsWithMSPrecision());
-  }
-
-  if(m_meanTimeToCloseHasBeenSet)
-  {
-   payload.WithObject("meanTimeToClose", m_meanTimeToClose.Jsonize());
-
   }
 
   if(m_newFindingsHasBeenSet)
@@ -80,9 +68,21 @@ JsonValue AccountFindingsMetric::Jsonize() const
 
   }
 
+  if(m_closedFindingsHasBeenSet)
+  {
+   payload.WithObject("closedFindings", m_closedFindings.Jsonize());
+
+  }
+
   if(m_openFindingsHasBeenSet)
   {
    payload.WithObject("openFindings", m_openFindings.Jsonize());
+
+  }
+
+  if(m_meanTimeToCloseHasBeenSet)
+  {
+   payload.WithObject("meanTimeToClose", m_meanTimeToClose.Jsonize());
 
   }
 

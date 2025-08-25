@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/codeguru-security/CodeGuruSecurity_EXPORTS.h>
 #include <aws/codeguru-security/CodeGuruSecurityRequest.h>
-#include <aws/codeguru-security/model/AnalysisType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codeguru-security/model/ResourceId.h>
 #include <aws/codeguru-security/model/ScanType.h>
+#include <aws/codeguru-security/model/AnalysisType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -36,20 +36,6 @@ namespace Model
 
     AWS_CODEGURUSECURITY_API Aws::String SerializePayload() const override;
 
-
-    ///@{
-    /**
-     * <p>The type of analysis you want CodeGuru Security to perform in the scan,
-     * either <code>Security</code> or <code>All</code>. The <code>Security</code> type
-     * only generates findings related to security. The <code>All</code> type generates
-     * both security findings and quality findings. Defaults to <code>Security</code>
-     * type if missing.</p>
-     */
-    inline AnalysisType GetAnalysisType() const { return m_analysisType; }
-    inline bool AnalysisTypeHasBeenSet() const { return m_analysisTypeHasBeenSet; }
-    inline void SetAnalysisType(AnalysisType value) { m_analysisTypeHasBeenSet = true; m_analysisType = value; }
-    inline CreateScanRequest& WithAnalysisType(AnalysisType value) { SetAnalysisType(value); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -107,6 +93,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of analysis you want CodeGuru Security to perform in the scan,
+     * either <code>Security</code> or <code>All</code>. The <code>Security</code> type
+     * only generates findings related to security. The <code>All</code> type generates
+     * both security findings and quality findings. Defaults to <code>Security</code>
+     * type if missing.</p>
+     */
+    inline AnalysisType GetAnalysisType() const { return m_analysisType; }
+    inline bool AnalysisTypeHasBeenSet() const { return m_analysisTypeHasBeenSet; }
+    inline void SetAnalysisType(AnalysisType value) { m_analysisTypeHasBeenSet = true; m_analysisType = value; }
+    inline CreateScanRequest& WithAnalysisType(AnalysisType value) { SetAnalysisType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An array of key-value pairs used to tag a scan. A tag is a custom attribute
      * label with two parts:</p> <ul> <li> <p>A tag key. For example,
      * <code>CostCenter</code>, <code>Environment</code>, or <code>Secret</code>. Tag
@@ -128,9 +128,6 @@ namespace Model
     ///@}
   private:
 
-    AnalysisType m_analysisType{AnalysisType::NOT_SET};
-    bool m_analysisTypeHasBeenSet = false;
-
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
 
@@ -142,6 +139,9 @@ namespace Model
 
     ScanType m_scanType{ScanType::NOT_SET};
     bool m_scanTypeHasBeenSet = false;
+
+    AnalysisType m_analysisType{AnalysisType::NOT_SET};
+    bool m_analysisTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

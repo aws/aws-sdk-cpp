@@ -40,7 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Returns information about the device configuration for an Snowcone job.</p>
+     * <p>Returns information about the device configuration for an Snowball Edge
+     * job.</p>
      */
     inline const SnowconeDeviceConfiguration& GetSnowconeDeviceConfiguration() const { return m_snowconeDeviceConfiguration; }
     inline bool SnowconeDeviceConfigurationHasBeenSet() const { return m_snowconeDeviceConfigurationHasBeenSet; }

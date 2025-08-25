@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/codeguru-security/CodeGuruSecurity_EXPORTS.h>
-#include <aws/codeguru-security/model/ErrorCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/codeguru-security/model/ErrorCode.h>
 #include <utility>
 
 namespace Aws
@@ -41,12 +41,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>A code associated with the type of error.</p>
+     * <p>The name of the scan that generated the finding.</p>
      */
-    inline ErrorCode GetErrorCode() const { return m_errorCode; }
-    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(ErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline BatchGetFindingsError& WithErrorCode(ErrorCode value) { SetErrorCode(value); return *this;}
+    inline const Aws::String& GetScanName() const { return m_scanName; }
+    inline bool ScanNameHasBeenSet() const { return m_scanNameHasBeenSet; }
+    template<typename ScanNameT = Aws::String>
+    void SetScanName(ScanNameT&& value) { m_scanNameHasBeenSet = true; m_scanName = std::forward<ScanNameT>(value); }
+    template<typename ScanNameT = Aws::String>
+    BatchGetFindingsError& WithScanName(ScanNameT&& value) { SetScanName(std::forward<ScanNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,6 +65,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>A code associated with the type of error.</p>
+     */
+    inline ErrorCode GetErrorCode() const { return m_errorCode; }
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
+    inline void SetErrorCode(ErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline BatchGetFindingsError& WithErrorCode(ErrorCode value) { SetErrorCode(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Describes the error.</p>
      */
     inline const Aws::String& GetMessage() const { return m_message; }
@@ -72,31 +84,19 @@ namespace Model
     template<typename MessageT = Aws::String>
     BatchGetFindingsError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The name of the scan that generated the finding.</p>
-     */
-    inline const Aws::String& GetScanName() const { return m_scanName; }
-    inline bool ScanNameHasBeenSet() const { return m_scanNameHasBeenSet; }
-    template<typename ScanNameT = Aws::String>
-    void SetScanName(ScanNameT&& value) { m_scanNameHasBeenSet = true; m_scanName = std::forward<ScanNameT>(value); }
-    template<typename ScanNameT = Aws::String>
-    BatchGetFindingsError& WithScanName(ScanNameT&& value) { SetScanName(std::forward<ScanNameT>(value)); return *this;}
-    ///@}
   private:
 
-    ErrorCode m_errorCode{ErrorCode::NOT_SET};
-    bool m_errorCodeHasBeenSet = false;
+    Aws::String m_scanName;
+    bool m_scanNameHasBeenSet = false;
 
     Aws::String m_findingId;
     bool m_findingIdHasBeenSet = false;
 
+    ErrorCode m_errorCode{ErrorCode::NOT_SET};
+    bool m_errorCodeHasBeenSet = false;
+
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
-
-    Aws::String m_scanName;
-    bool m_scanNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,6 +25,11 @@ Mp2Settings::Mp2Settings(JsonView jsonValue)
 
 Mp2Settings& Mp2Settings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("audioDescriptionMix"))
+  {
+    m_audioDescriptionMix = Mp2AudioDescriptionMixMapper::GetMp2AudioDescriptionMixForName(jsonValue.GetString("audioDescriptionMix"));
+    m_audioDescriptionMixHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("bitrate"))
   {
     m_bitrate = jsonValue.GetInteger("bitrate");
@@ -46,6 +51,11 @@ Mp2Settings& Mp2Settings::operator =(JsonView jsonValue)
 JsonValue Mp2Settings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_audioDescriptionMixHasBeenSet)
+  {
+   payload.WithString("audioDescriptionMix", Mp2AudioDescriptionMixMapper::GetNameForMp2AudioDescriptionMix(m_audioDescriptionMix));
+  }
 
   if(m_bitrateHasBeenSet)
   {

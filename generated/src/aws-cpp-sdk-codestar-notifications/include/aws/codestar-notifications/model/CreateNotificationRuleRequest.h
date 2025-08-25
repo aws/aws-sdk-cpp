@@ -83,7 +83,8 @@ namespace Model
     ///@{
     /**
      * <p>A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service
-     * topics and Chatbot clients to associate with the notification rule.</p>
+     * topics and Amazon Q Developer in chat applications clients to associate with the
+     * notification rule.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const { return m_targets; }
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
@@ -100,7 +101,7 @@ namespace Model
      * <p>The level of detail to include in the notifications for this resource.
      * <code>BASIC</code> will include only the contents of the event as it would
      * appear in Amazon CloudWatch. <code>FULL</code> will include any supplemental
-     * information provided by AWS CodeStar Notifications and/or the service for the
+     * information provided by CodeStar Notifications and/or the service for the
      * resource for which the notification is created.</p>
      */
     inline DetailType GetDetailType() const { return m_detailType; }

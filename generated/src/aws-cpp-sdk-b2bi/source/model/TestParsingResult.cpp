@@ -39,6 +39,15 @@ TestParsingResult& TestParsingResult::operator =(const Aws::AmazonWebServiceResu
     }
     m_parsedSplitFileContentsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("validationMessages"))
+  {
+    Aws::Utils::Array<JsonView> validationMessagesJsonList = jsonValue.GetArray("validationMessages");
+    for(unsigned validationMessagesIndex = 0; validationMessagesIndex < validationMessagesJsonList.GetLength(); ++validationMessagesIndex)
+    {
+      m_validationMessages.push_back(validationMessagesJsonList[validationMessagesIndex].AsString());
+    }
+    m_validationMessagesHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

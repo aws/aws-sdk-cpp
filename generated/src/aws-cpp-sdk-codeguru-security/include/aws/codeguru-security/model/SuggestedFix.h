@@ -40,6 +40,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>A description of the suggested code fix and why it is being suggested. </p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    SuggestedFix& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The suggested code fix. If applicable, includes code patch to replace your
      * source code. </p>
      */
@@ -50,25 +62,13 @@ namespace Model
     template<typename CodeT = Aws::String>
     SuggestedFix& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>A description of the suggested code fix and why it is being suggested. </p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    SuggestedFix& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::String m_code;
-    bool m_codeHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    Aws::String m_code;
+    bool m_codeHasBeenSet = false;
   };
 
 } // namespace Model

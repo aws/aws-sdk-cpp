@@ -34,8 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to
-     * delete.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Q Developer in chat applications
+     * topic or Amazon Q Developer in chat applications client to delete.</p>
      */
     inline const Aws::String& GetTargetAddress() const { return m_targetAddress; }
     inline bool TargetAddressHasBeenSet() const { return m_targetAddressHasBeenSet; }
@@ -47,10 +47,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>A Boolean value that can be used to delete all associations with this Chatbot
-     * topic. The default value is FALSE. If set to TRUE, all associations between that
-     * target and every notification rule in your Amazon Web Services account are
-     * deleted.</p>
+     * <p>A Boolean value that can be used to delete all associations with this Amazon
+     * Q Developer in chat applications topic. The default value is FALSE. If set to
+     * TRUE, all associations between that target and every notification rule in your
+     * Amazon Web Services account are deleted.</p>
      */
     inline bool GetForceUnsubscribeAll() const { return m_forceUnsubscribeAll; }
     inline bool ForceUnsubscribeAllHasBeenSet() const { return m_forceUnsubscribeAllHasBeenSet; }

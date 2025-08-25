@@ -40,20 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results to return in the response. Use this parameter
-     * when paginating results. If additional results exist beyond the number you
-     * specify, the <code>nextToken</code> element is returned in the response. Use
-     * <code>nextToken</code> in a subsequent request to retrieve additional results.
-     * If not specified, returns 100 results.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListScansRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A token to use for paginating results that are returned in the response. Set
      * the value of this parameter to null for the first request. For subsequent calls,
      * use the <code>nextToken</code> value returned from the previous request to
@@ -66,13 +52,27 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListScansRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-  private:
 
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The maximum number of results to return in the response. Use this parameter
+     * when paginating results. If additional results exist beyond the number you
+     * specify, the <code>nextToken</code> element is returned in the response. Use
+     * <code>nextToken</code> in a subsequent request to retrieve additional results.
+     * If not specified, returns 100 results.</p>
+     */
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListScansRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -8,6 +8,8 @@
 #include <aws/datazone/DataZoneRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datazone/model/GlossaryStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datazone/model/GlossaryUsageRestriction.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -105,6 +107,19 @@ namespace Model
     inline void SetStatus(GlossaryStatus value) { m_statusHasBeenSet = true; m_status = value; }
     inline CreateGlossaryRequest& WithStatus(GlossaryStatus value) { SetStatus(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The usage restriction of the restricted glossary.</p>
+     */
+    inline const Aws::Vector<GlossaryUsageRestriction>& GetUsageRestrictions() const { return m_usageRestrictions; }
+    inline bool UsageRestrictionsHasBeenSet() const { return m_usageRestrictionsHasBeenSet; }
+    template<typename UsageRestrictionsT = Aws::Vector<GlossaryUsageRestriction>>
+    void SetUsageRestrictions(UsageRestrictionsT&& value) { m_usageRestrictionsHasBeenSet = true; m_usageRestrictions = std::forward<UsageRestrictionsT>(value); }
+    template<typename UsageRestrictionsT = Aws::Vector<GlossaryUsageRestriction>>
+    CreateGlossaryRequest& WithUsageRestrictions(UsageRestrictionsT&& value) { SetUsageRestrictions(std::forward<UsageRestrictionsT>(value)); return *this;}
+    inline CreateGlossaryRequest& AddUsageRestrictions(GlossaryUsageRestriction value) { m_usageRestrictionsHasBeenSet = true; m_usageRestrictions.push_back(value); return *this; }
+    ///@}
   private:
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
@@ -124,6 +139,9 @@ namespace Model
 
     GlossaryStatus m_status{GlossaryStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    Aws::Vector<GlossaryUsageRestriction> m_usageRestrictions;
+    bool m_usageRestrictionsHasBeenSet = false;
   };
 
 } // namespace Model

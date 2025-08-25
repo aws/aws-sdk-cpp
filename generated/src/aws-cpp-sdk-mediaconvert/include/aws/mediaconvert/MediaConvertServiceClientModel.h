@@ -24,6 +24,7 @@
 #include <aws/mediaconvert/model/CreateJobTemplateResult.h>
 #include <aws/mediaconvert/model/CreatePresetResult.h>
 #include <aws/mediaconvert/model/CreateQueueResult.h>
+#include <aws/mediaconvert/model/CreateResourceShareResult.h>
 #include <aws/mediaconvert/model/DeleteJobTemplateResult.h>
 #include <aws/mediaconvert/model/DeletePolicyResult.h>
 #include <aws/mediaconvert/model/DeletePresetResult.h>
@@ -103,6 +104,7 @@ namespace Aws
       class CreateJobTemplateRequest;
       class CreatePresetRequest;
       class CreateQueueRequest;
+      class CreateResourceShareRequest;
       class DeleteJobTemplateRequest;
       class DeletePolicyRequest;
       class DeletePresetRequest;
@@ -136,6 +138,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateJobTemplateResult, MediaConvertError> CreateJobTemplateOutcome;
       typedef Aws::Utils::Outcome<CreatePresetResult, MediaConvertError> CreatePresetOutcome;
       typedef Aws::Utils::Outcome<CreateQueueResult, MediaConvertError> CreateQueueOutcome;
+      typedef Aws::Utils::Outcome<CreateResourceShareResult, MediaConvertError> CreateResourceShareOutcome;
       typedef Aws::Utils::Outcome<DeleteJobTemplateResult, MediaConvertError> DeleteJobTemplateOutcome;
       typedef Aws::Utils::Outcome<DeletePolicyResult, MediaConvertError> DeletePolicyOutcome;
       typedef Aws::Utils::Outcome<DeletePresetResult, MediaConvertError> DeletePresetOutcome;
@@ -169,6 +172,7 @@ namespace Aws
       typedef std::future<CreateJobTemplateOutcome> CreateJobTemplateOutcomeCallable;
       typedef std::future<CreatePresetOutcome> CreatePresetOutcomeCallable;
       typedef std::future<CreateQueueOutcome> CreateQueueOutcomeCallable;
+      typedef std::future<CreateResourceShareOutcome> CreateResourceShareOutcomeCallable;
       typedef std::future<DeleteJobTemplateOutcome> DeleteJobTemplateOutcomeCallable;
       typedef std::future<DeletePolicyOutcome> DeletePolicyOutcomeCallable;
       typedef std::future<DeletePresetOutcome> DeletePresetOutcomeCallable;
@@ -205,6 +209,7 @@ namespace Aws
     typedef std::function<void(const MediaConvertClient*, const Model::CreateJobTemplateRequest&, const Model::CreateJobTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJobTemplateResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::CreatePresetRequest&, const Model::CreatePresetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePresetResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::CreateQueueRequest&, const Model::CreateQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQueueResponseReceivedHandler;
+    typedef std::function<void(const MediaConvertClient*, const Model::CreateResourceShareRequest&, const Model::CreateResourceShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateResourceShareResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::DeleteJobTemplateRequest&, const Model::DeleteJobTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteJobTemplateResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::DeletePolicyRequest&, const Model::DeletePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePolicyResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::DeletePresetRequest&, const Model::DeletePresetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePresetResponseReceivedHandler;

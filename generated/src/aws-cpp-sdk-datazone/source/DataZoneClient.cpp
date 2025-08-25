@@ -26,6 +26,7 @@
 #include <aws/datazone/model/AddEntityOwnerRequest.h>
 #include <aws/datazone/model/AddPolicyGrantRequest.h>
 #include <aws/datazone/model/AssociateEnvironmentRoleRequest.h>
+#include <aws/datazone/model/AssociateGovernedTermsRequest.h>
 #include <aws/datazone/model/CancelMetadataGenerationRunRequest.h>
 #include <aws/datazone/model/CancelSubscriptionRequest.h>
 #include <aws/datazone/model/CreateAccountPoolRequest.h>
@@ -81,6 +82,7 @@
 #include <aws/datazone/model/DeleteSubscriptionTargetRequest.h>
 #include <aws/datazone/model/DeleteTimeSeriesDataPointsRequest.h>
 #include <aws/datazone/model/DisassociateEnvironmentRoleRequest.h>
+#include <aws/datazone/model/DisassociateGovernedTermsRequest.h>
 #include <aws/datazone/model/GetAccountPoolRequest.h>
 #include <aws/datazone/model/GetAssetRequest.h>
 #include <aws/datazone/model/GetAssetFilterRequest.h>
@@ -545,6 +547,53 @@ AssociateEnvironmentRoleOutcome DataZoneClient::AssociateEnvironmentRole(const A
       endpointResolutionOutcome.GetResult().AddPathSegments("/roles/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentRoleArn());
       return AssociateEnvironmentRoleOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+AssociateGovernedTermsOutcome DataZoneClient::AssociateGovernedTerms(const AssociateGovernedTermsRequest& request) const
+{
+  AWS_OPERATION_GUARD(AssociateGovernedTerms);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateGovernedTerms, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateGovernedTerms", "Required field: DomainIdentifier, is not set");
+    return AssociateGovernedTermsOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.EntityIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateGovernedTerms", "Required field: EntityIdentifier, is not set");
+    return AssociateGovernedTermsOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EntityIdentifier]", false));
+  }
+  if (!request.EntityTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateGovernedTerms", "Required field: EntityType, is not set");
+    return AssociateGovernedTermsOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EntityType]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssociateGovernedTerms, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, AssociateGovernedTerms, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AssociateGovernedTerms",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<AssociateGovernedTermsOutcome>(
+    [&]()-> AssociateGovernedTermsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateGovernedTerms, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/entities/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(GovernedEntityTypeMapper::GetNameForGovernedEntityType(request.GetEntityType()));
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEntityIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/associate-governed-terms");
+      return AssociateGovernedTermsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2654,6 +2703,53 @@ DisassociateEnvironmentRoleOutcome DataZoneClient::DisassociateEnvironmentRole(c
       endpointResolutionOutcome.GetResult().AddPathSegments("/roles/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentRoleArn());
       return DisassociateEnvironmentRoleOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DisassociateGovernedTermsOutcome DataZoneClient::DisassociateGovernedTerms(const DisassociateGovernedTermsRequest& request) const
+{
+  AWS_OPERATION_GUARD(DisassociateGovernedTerms);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateGovernedTerms, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateGovernedTerms", "Required field: DomainIdentifier, is not set");
+    return DisassociateGovernedTermsOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.EntityIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateGovernedTerms", "Required field: EntityIdentifier, is not set");
+    return DisassociateGovernedTermsOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EntityIdentifier]", false));
+  }
+  if (!request.EntityTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateGovernedTerms", "Required field: EntityType, is not set");
+    return DisassociateGovernedTermsOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EntityType]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DisassociateGovernedTerms, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DisassociateGovernedTerms, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DisassociateGovernedTerms",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DisassociateGovernedTermsOutcome>(
+    [&]()-> DisassociateGovernedTermsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateGovernedTerms, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/entities/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(GovernedEntityTypeMapper::GetNameForGovernedEntityType(request.GetEntityType()));
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEntityIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/disassociate-governed-terms");
+      return DisassociateGovernedTermsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/codeguru-security/CodeGuruSecurity_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codeguru-security/model/CodeLine.h>
 #include <utility>
 
@@ -42,32 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of <code>CodeLine</code> objects that describe where the security
-     * vulnerability appears in your code.</p>
-     */
-    inline const Aws::Vector<CodeLine>& GetCodeSnippet() const { return m_codeSnippet; }
-    inline bool CodeSnippetHasBeenSet() const { return m_codeSnippetHasBeenSet; }
-    template<typename CodeSnippetT = Aws::Vector<CodeLine>>
-    void SetCodeSnippet(CodeSnippetT&& value) { m_codeSnippetHasBeenSet = true; m_codeSnippet = std::forward<CodeSnippetT>(value); }
-    template<typename CodeSnippetT = Aws::Vector<CodeLine>>
-    FilePath& WithCodeSnippet(CodeSnippetT&& value) { SetCodeSnippet(std::forward<CodeSnippetT>(value)); return *this;}
-    template<typename CodeSnippetT = CodeLine>
-    FilePath& AddCodeSnippet(CodeSnippetT&& value) { m_codeSnippetHasBeenSet = true; m_codeSnippet.emplace_back(std::forward<CodeSnippetT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The last line number of the code snippet where the security vulnerability
-     * appears in your code.</p>
-     */
-    inline int GetEndLine() const { return m_endLine; }
-    inline bool EndLineHasBeenSet() const { return m_endLineHasBeenSet; }
-    inline void SetEndLine(int value) { m_endLineHasBeenSet = true; m_endLine = value; }
-    inline FilePath& WithEndLine(int value) { SetEndLine(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the file.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
@@ -100,13 +74,33 @@ namespace Model
     inline void SetStartLine(int value) { m_startLineHasBeenSet = true; m_startLine = value; }
     inline FilePath& WithStartLine(int value) { SetStartLine(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The last line number of the code snippet where the security vulnerability
+     * appears in your code.</p>
+     */
+    inline int GetEndLine() const { return m_endLine; }
+    inline bool EndLineHasBeenSet() const { return m_endLineHasBeenSet; }
+    inline void SetEndLine(int value) { m_endLineHasBeenSet = true; m_endLine = value; }
+    inline FilePath& WithEndLine(int value) { SetEndLine(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A list of <code>CodeLine</code> objects that describe where the security
+     * vulnerability appears in your code.</p>
+     */
+    inline const Aws::Vector<CodeLine>& GetCodeSnippet() const { return m_codeSnippet; }
+    inline bool CodeSnippetHasBeenSet() const { return m_codeSnippetHasBeenSet; }
+    template<typename CodeSnippetT = Aws::Vector<CodeLine>>
+    void SetCodeSnippet(CodeSnippetT&& value) { m_codeSnippetHasBeenSet = true; m_codeSnippet = std::forward<CodeSnippetT>(value); }
+    template<typename CodeSnippetT = Aws::Vector<CodeLine>>
+    FilePath& WithCodeSnippet(CodeSnippetT&& value) { SetCodeSnippet(std::forward<CodeSnippetT>(value)); return *this;}
+    template<typename CodeSnippetT = CodeLine>
+    FilePath& AddCodeSnippet(CodeSnippetT&& value) { m_codeSnippetHasBeenSet = true; m_codeSnippet.emplace_back(std::forward<CodeSnippetT>(value)); return *this; }
+    ///@}
   private:
-
-    Aws::Vector<CodeLine> m_codeSnippet;
-    bool m_codeSnippetHasBeenSet = false;
-
-    int m_endLine{0};
-    bool m_endLineHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
@@ -116,6 +110,12 @@ namespace Model
 
     int m_startLine{0};
     bool m_startLineHasBeenSet = false;
+
+    int m_endLine{0};
+    bool m_endLineHasBeenSet = false;
+
+    Aws::Vector<CodeLine> m_codeSnippet;
+    bool m_codeSnippetHasBeenSet = false;
   };
 
 } // namespace Model

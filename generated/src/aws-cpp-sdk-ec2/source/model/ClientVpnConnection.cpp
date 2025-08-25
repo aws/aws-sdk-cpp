@@ -91,6 +91,12 @@ ClientVpnConnection& ClientVpnConnection::operator =(const XmlNode& xmlNode)
       m_clientIp = Aws::Utils::Xml::DecodeEscapedXmlText(clientIpNode.GetText());
       m_clientIpHasBeenSet = true;
     }
+    XmlNode clientIpv6AddressNode = resultNode.FirstChild("clientIpv6Address");
+    if(!clientIpv6AddressNode.IsNull())
+    {
+      m_clientIpv6Address = Aws::Utils::Xml::DecodeEscapedXmlText(clientIpv6AddressNode.GetText());
+      m_clientIpv6AddressHasBeenSet = true;
+    }
     XmlNode commonNameNode = resultNode.FirstChild("commonName");
     if(!commonNameNode.IsNull())
     {
@@ -179,6 +185,11 @@ void ClientVpnConnection::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".ClientIp=" << StringUtils::URLEncode(m_clientIp.c_str()) << "&";
   }
 
+  if(m_clientIpv6AddressHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ClientIpv6Address=" << StringUtils::URLEncode(m_clientIpv6Address.c_str()) << "&";
+  }
+
   if(m_commonNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".CommonName=" << StringUtils::URLEncode(m_commonName.c_str()) << "&";
@@ -248,6 +259,10 @@ void ClientVpnConnection::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_clientIpHasBeenSet)
   {
       oStream << location << ".ClientIp=" << StringUtils::URLEncode(m_clientIp.c_str()) << "&";
+  }
+  if(m_clientIpv6AddressHasBeenSet)
+  {
+      oStream << location << ".ClientIpv6Address=" << StringUtils::URLEncode(m_clientIpv6Address.c_str()) << "&";
   }
   if(m_commonNameHasBeenSet)
   {
