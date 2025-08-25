@@ -18,6 +18,7 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/client/UserAgent.h>
 #include <cstdlib>
 #include <fstream>
 #include <string.h>
@@ -102,7 +103,16 @@ AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
             AWS_LOGSTREAM_DEBUG(ENVIRONMENT_LOG_TAG, "Found accountId");
         }
     }
+    
+    return credentials;
+}
 
+AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials(CredentialsResolutionContext& context)
+{
+    AWSCredentials credentials = GetAWSCredentials();
+    if (!credentials.IsEmpty()) {
+        context.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS);
+    }
     return credentials;
 }
 
@@ -202,6 +212,14 @@ AWSCredentials ProfileConfigFileAWSCredentialsProvider::GetAWSCredentials()
     return AWSCredentials();
 }
 
+AWSCredentials ProfileConfigFileAWSCredentialsProvider::GetAWSCredentials(CredentialsResolutionContext& context)
+{
+    AWSCredentials credentials = GetAWSCredentials();
+    if (!credentials.IsEmpty()) {
+        context.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_PROFILE);
+    }
+    return credentials;
+}
 
 void ProfileConfigFileAWSCredentialsProvider::Reload()
 {
@@ -269,6 +287,15 @@ AWSCredentials InstanceProfileCredentialsProvider::GetAWSCredentials()
     }
 
     return AWSCredentials();
+}
+
+AWSCredentials InstanceProfileCredentialsProvider::GetAWSCredentials(CredentialsResolutionContext& context)
+{
+    AWSCredentials credentials = GetAWSCredentials();
+    if (!credentials.IsEmpty()) {
+        context.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_IMDS);
+    }
+    return credentials;
 }
 
 bool InstanceProfileCredentialsProvider::ExpiresSoon() const

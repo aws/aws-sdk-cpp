@@ -8,6 +8,7 @@
 #include <aws/core/auth/signer/AWSAuthSignerHelper.h>
 
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/http/HttpRequest.h>
 #include <aws/core/http/URI.h>
 #include <aws/core/utils/DateTime.h>
@@ -335,7 +336,12 @@ bool AWSAuthV4Signer::SignRequestWithCreds(Aws::Http::HttpRequest& request, cons
 
 bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, bool signBody) const
 {
-    AWSCredentials credentials = GetCredentials(request.GetServiceSpecificParameters());
+    Aws::Auth::CredentialsResolutionContext context;
+    AWSCredentials credentials = GetCredentials(context, request.GetServiceSpecificParameters());
+
+    // Update User-Agent with credential tracking features from context
+    UpdateUserAgentWithCredentialFeatures(request, context);
+    
     return SignRequestWithCreds(request, credentials, region, serviceName, signBody);
 }
 
@@ -594,4 +600,41 @@ Aws::Utils::ByteBuffer AWSAuthV4Signer::ComputeHash(const Aws::String& secretKey
 Aws::Auth::AWSCredentials AWSAuthV4Signer::GetCredentials(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) const {
     AWS_UNREFERENCED_PARAM(serviceSpecificParameters);
     return m_credentialsProvider->GetAWSCredentials();
+}
+
+Aws::Auth::AWSCredentials AWSAuthV4Signer::GetCredentials(Aws::Auth::CredentialsResolutionContext& context, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) const {
+    AWS_UNREFERENCED_PARAM(serviceSpecificParameters);
+    return m_credentialsProvider->GetAWSCredentials(context);
+}
+
+void AWSAuthV4Signer::UpdateUserAgentWithCredentialFeatures(Aws::Http::HttpRequest& request, const Aws::Auth::CredentialsResolutionContext& context) const {
+    if (!request.HasHeader(USER_AGENT)) {
+        return;
+    }
+
+    const auto& features = context.GetUserAgentFeatures();
+    if (features.empty()) {
+        return;
+    }
+
+    // Build credential features string
+    Aws::StringStream credentialFeatures;
+    for (const auto& feature : features) {
+        switch (feature) {
+            case Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS:
+                credentialFeatures << "g";
+                break;
+            default:
+                // Skip non-credential features
+                break;
+        }
+    }
+
+    // Only append if we have credential features
+    if (!credentialFeatures.str().empty()) {
+        Aws::String existingUA = request.GetHeaderValue(USER_AGENT);
+        Aws::StringStream updatedUA;
+        updatedUA << existingUA << " m/" << credentialFeatures.str();
+        request.SetUserAgent(updatedUA.str());
+    }
 }

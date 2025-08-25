@@ -43,6 +43,8 @@ namespace ${rootNamespace} {
 
             Aws::Auth::AWSCredentials GetCredentials(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) const override;
 
+            Aws::Auth::AWSCredentials GetCredentials(Aws::Auth::CredentialsResolutionContext& context, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) const override;
+
         protected:
             bool ServiceRequireUnsignedPayload(const String &serviceName) const override;
 

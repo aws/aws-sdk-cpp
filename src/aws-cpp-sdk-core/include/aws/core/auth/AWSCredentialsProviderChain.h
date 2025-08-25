@@ -30,6 +30,13 @@ namespace Aws
             virtual AWSCredentials GetAWSCredentials();
 
             /**
+             * When a credentials provider in the chain returns empty credentials,
+             * We go on to the next provider until we have either exhausted the installed providers in the chain or something returns non-empty credentials.
+             * This overload populates the context with credential tracking information.
+             */
+            virtual AWSCredentials GetAWSCredentials(CredentialsResolutionContext& context);
+
+            /**
              * Gets all providers stored in this chain.
              */
             const Aws::Vector<std::shared_ptr<AWSCredentialsProvider>>& GetProviders() const { return m_providerChain; }

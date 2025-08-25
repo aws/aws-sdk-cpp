@@ -41,6 +41,29 @@ AWSCredentials AWSCredentialsProviderChain::GetAWSCredentials()
     return AWSCredentials();
 }
 
+AWSCredentials AWSCredentialsProviderChain::GetAWSCredentials(CredentialsResolutionContext& context)
+{
+    ReaderLockGuard lock(m_cachedProviderLock);
+    if (m_cachedProvider) {
+      AWSCredentials credentials = m_cachedProvider->GetAWSCredentials(context);
+      if (!credentials.GetAWSAccessKeyId().empty() && !credentials.GetAWSSecretKey().empty())
+      {
+        return credentials;
+      }
+    }
+    lock.UpgradeToWriterLock();
+    for (auto&& credentialsProvider : m_providerChain)
+    {
+        AWSCredentials credentials = credentialsProvider->GetAWSCredentials(context);
+        if (!credentials.GetAWSAccessKeyId().empty() && !credentials.GetAWSSecretKey().empty())
+        {
+            m_cachedProvider = credentialsProvider;
+            return credentials;
+        }
+    }
+    return AWSCredentials();
+}
+
 DefaultAWSCredentialsProviderChain::DefaultAWSCredentialsProviderChain() : AWSCredentialsProviderChain()
 {
     AddProvider(Aws::MakeShared<EnvironmentAWSCredentialsProvider>(DefaultCredentialsProviderChainTag));
