@@ -12,9 +12,9 @@ RESET = '\033[0m'
 
 def should_run_service(service):
     service_ids = os.environ.get('AWS_SMOKE_TEST_SERVICE_IDS', '')
+    print("AWS_SMOKE_TEST_SERVICE_IDS:",service_ids)
     if not service_ids:
         return True
-    print("AWS_SMOKE_TEST_SERVICE_IDS:",service_ids)
     allowed_services = service_ids.split(',')
     return service in allowed_services
 
