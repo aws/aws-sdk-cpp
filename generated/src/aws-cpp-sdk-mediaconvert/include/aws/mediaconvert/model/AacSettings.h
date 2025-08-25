@@ -90,7 +90,8 @@ namespace Model
      * audio performance at lower bitrates: Choose HEV1 or HEV2. HEV1 (AAC-HE v1) adds
      * spectral band replication to improve speech audio at low bitrates. HEV2 (AAC-HE
      * v2) adds parametric stereo, which optimizes for encoding stereo audio at very
-     * low bitrates.
+     * low bitrates. For improved audio quality at lower bitrates, adaptive audio
+     * bitrate switching, and loudness control: Choose XHE.
      */
     inline AacCodecProfile GetCodecProfile() const { return m_codecProfile; }
     inline bool CodecProfileHasBeenSet() const { return m_codecProfileHasBeenSet; }

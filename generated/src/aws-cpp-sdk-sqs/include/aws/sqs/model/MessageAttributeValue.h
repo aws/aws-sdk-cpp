@@ -32,7 +32,7 @@ namespace Model
    * <p> <code>Name</code>, <code>type</code>, <code>value</code> and the message
    * body must not be empty or null. All parts of the message attribute, including
    * <code>Name</code>, <code>Type</code>, and <code>Value</code>, are part of the
-   * message size restriction (256 KiB or 262,144 bytes).</p><p><h3>See Also:</h3>  
+   * message size restriction (1 MiB or 1,048,576 bytes).</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/MessageAttributeValue">AWS
    * API Reference</a></p>

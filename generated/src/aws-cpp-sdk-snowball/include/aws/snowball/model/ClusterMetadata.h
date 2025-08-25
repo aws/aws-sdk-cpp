@@ -122,7 +122,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of Snowcone device to use for this cluster. </p>  <p>For
+     * <p>The type of Snowball Edge device to use for this cluster. </p>  <p>For
      * cluster jobs, Amazon Web Services Snow Family currently supports only the
      * <code>EDGE</code> device type.</p> 
      */

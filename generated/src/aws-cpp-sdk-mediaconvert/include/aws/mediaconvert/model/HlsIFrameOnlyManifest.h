@@ -17,6 +17,7 @@ namespace Model
   {
     NOT_SET,
     INCLUDE,
+    INCLUDE_AS_TS,
     EXCLUDE
   };
 

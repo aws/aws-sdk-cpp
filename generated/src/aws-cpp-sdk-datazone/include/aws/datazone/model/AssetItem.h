@@ -155,6 +155,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The restricted glossary terms accociated with an asset.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetGovernedGlossaryTerms() const { return m_governedGlossaryTerms; }
+    inline bool GovernedGlossaryTermsHasBeenSet() const { return m_governedGlossaryTermsHasBeenSet; }
+    template<typename GovernedGlossaryTermsT = Aws::Vector<Aws::String>>
+    void SetGovernedGlossaryTerms(GovernedGlossaryTermsT&& value) { m_governedGlossaryTermsHasBeenSet = true; m_governedGlossaryTerms = std::forward<GovernedGlossaryTermsT>(value); }
+    template<typename GovernedGlossaryTermsT = Aws::Vector<Aws::String>>
+    AssetItem& WithGovernedGlossaryTerms(GovernedGlossaryTermsT&& value) { SetGovernedGlossaryTerms(std::forward<GovernedGlossaryTermsT>(value)); return *this;}
+    template<typename GovernedGlossaryTermsT = Aws::String>
+    AssetItem& AddGovernedGlossaryTerms(GovernedGlossaryTermsT&& value) { m_governedGlossaryTermsHasBeenSet = true; m_governedGlossaryTerms.emplace_back(std::forward<GovernedGlossaryTermsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>the identifier of the Amazon DataZone inventory asset.</p>
      */
     inline const Aws::String& GetIdentifier() const { return m_identifier; }
@@ -242,6 +256,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_glossaryTerms;
     bool m_glossaryTermsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_governedGlossaryTerms;
+    bool m_governedGlossaryTermsHasBeenSet = false;
 
     Aws::String m_identifier;
     bool m_identifierHasBeenSet = false;

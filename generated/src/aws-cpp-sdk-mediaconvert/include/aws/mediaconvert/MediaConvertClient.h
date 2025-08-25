@@ -240,6 +240,32 @@ namespace MediaConvert
         }
 
         /**
+         * Create a new resource share request for MediaConvert resources with AWS
+         * Support.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CreateResourceShare">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateResourceShareOutcome CreateResourceShare(const Model::CreateResourceShareRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateResourceShare that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateResourceShareRequestT = Model::CreateResourceShareRequest>
+        Model::CreateResourceShareOutcomeCallable CreateResourceShareCallable(const CreateResourceShareRequestT& request) const
+        {
+            return SubmitCallable(&MediaConvertClient::CreateResourceShare, request);
+        }
+
+        /**
+         * An Async wrapper for CreateResourceShare that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateResourceShareRequestT = Model::CreateResourceShareRequest>
+        void CreateResourceShareAsync(const CreateResourceShareRequestT& request, const CreateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConvertClient::CreateResourceShare, request, handler, context);
+        }
+
+        /**
          * Permanently delete a job template you have created.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DeleteJobTemplate">AWS
          * API Reference</a></p>

@@ -42,6 +42,8 @@ namespace Model
     ///@{
     /**
      * <p>A list of phrases blocked from a Amazon Q Business web experience chat.</p>
+     *  <p>Each phrase can contain a maximum of 36 characters. The list can
+     * contain a maximum of 20 phrases.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetBlockedPhrases() const { return m_blockedPhrases; }
     inline bool BlockedPhrasesHasBeenSet() const { return m_blockedPhrasesHasBeenSet; }

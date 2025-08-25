@@ -35,14 +35,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier for the uploaded code resource. Pass this to
-     * <code>CreateScan</code> to use the uploaded resources.</p>
+     * <p>A pre-signed S3 URL. You can upload the code file you want to scan with the
+     * required <code>requestHeaders</code> using any HTTP client.</p>
      */
-    inline const Aws::String& GetCodeArtifactId() const { return m_codeArtifactId; }
-    template<typename CodeArtifactIdT = Aws::String>
-    void SetCodeArtifactId(CodeArtifactIdT&& value) { m_codeArtifactIdHasBeenSet = true; m_codeArtifactId = std::forward<CodeArtifactIdT>(value); }
-    template<typename CodeArtifactIdT = Aws::String>
-    CreateUploadUrlResult& WithCodeArtifactId(CodeArtifactIdT&& value) { SetCodeArtifactId(std::forward<CodeArtifactIdT>(value)); return *this;}
+    inline const Aws::String& GetS3Url() const { return m_s3Url; }
+    template<typename S3UrlT = Aws::String>
+    void SetS3Url(S3UrlT&& value) { m_s3UrlHasBeenSet = true; m_s3Url = std::forward<S3UrlT>(value); }
+    template<typename S3UrlT = Aws::String>
+    CreateUploadUrlResult& WithS3Url(S3UrlT&& value) { SetS3Url(std::forward<S3UrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +63,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>A pre-signed S3 URL. You can upload the code file you want to scan with the
-     * required <code>requestHeaders</code> using any HTTP client.</p>
+     * <p>The identifier for the uploaded code resource. Pass this to
+     * <code>CreateScan</code> to use the uploaded resources.</p>
      */
-    inline const Aws::String& GetS3Url() const { return m_s3Url; }
-    template<typename S3UrlT = Aws::String>
-    void SetS3Url(S3UrlT&& value) { m_s3UrlHasBeenSet = true; m_s3Url = std::forward<S3UrlT>(value); }
-    template<typename S3UrlT = Aws::String>
-    CreateUploadUrlResult& WithS3Url(S3UrlT&& value) { SetS3Url(std::forward<S3UrlT>(value)); return *this;}
+    inline const Aws::String& GetCodeArtifactId() const { return m_codeArtifactId; }
+    template<typename CodeArtifactIdT = Aws::String>
+    void SetCodeArtifactId(CodeArtifactIdT&& value) { m_codeArtifactIdHasBeenSet = true; m_codeArtifactId = std::forward<CodeArtifactIdT>(value); }
+    template<typename CodeArtifactIdT = Aws::String>
+    CreateUploadUrlResult& WithCodeArtifactId(CodeArtifactIdT&& value) { SetCodeArtifactId(std::forward<CodeArtifactIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +83,14 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_codeArtifactId;
-    bool m_codeArtifactIdHasBeenSet = false;
+    Aws::String m_s3Url;
+    bool m_s3UrlHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_requestHeaders;
     bool m_requestHeadersHasBeenSet = false;
 
-    Aws::String m_s3Url;
-    bool m_s3UrlHasBeenSet = false;
+    Aws::String m_codeArtifactId;
+    bool m_codeArtifactIdHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

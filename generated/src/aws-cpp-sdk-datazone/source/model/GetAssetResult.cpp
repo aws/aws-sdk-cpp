@@ -78,6 +78,15 @@ GetAssetResult& GetAssetResult::operator =(const Aws::AmazonWebServiceResult<Jso
     }
     m_glossaryTermsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("governedGlossaryTerms"))
+  {
+    Aws::Utils::Array<JsonView> governedGlossaryTermsJsonList = jsonValue.GetArray("governedGlossaryTerms");
+    for(unsigned governedGlossaryTermsIndex = 0; governedGlossaryTermsIndex < governedGlossaryTermsJsonList.GetLength(); ++governedGlossaryTermsIndex)
+    {
+      m_governedGlossaryTerms.push_back(governedGlossaryTermsJsonList[governedGlossaryTermsIndex].AsString());
+    }
+    m_governedGlossaryTermsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");

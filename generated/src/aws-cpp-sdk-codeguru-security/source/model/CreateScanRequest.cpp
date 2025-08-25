@@ -16,11 +16,6 @@ Aws::String CreateScanRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_analysisTypeHasBeenSet)
-  {
-   payload.WithString("analysisType", AnalysisTypeMapper::GetNameForAnalysisType(m_analysisType));
-  }
-
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
@@ -42,6 +37,11 @@ Aws::String CreateScanRequest::SerializePayload() const
   if(m_scanTypeHasBeenSet)
   {
    payload.WithString("scanType", ScanTypeMapper::GetNameForScanType(m_scanType));
+  }
+
+  if(m_analysisTypeHasBeenSet)
+  {
+   payload.WithString("analysisType", AnalysisTypeMapper::GetNameForAnalysisType(m_analysisType));
   }
 
   if(m_tagsHasBeenSet)

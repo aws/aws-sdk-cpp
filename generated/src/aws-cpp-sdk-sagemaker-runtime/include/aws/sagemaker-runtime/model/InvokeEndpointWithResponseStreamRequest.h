@@ -86,7 +86,7 @@ namespace Model
     ///@{
     /**
      * <p>Provides additional information about a request for an inference submitted to
-     * a model hosted at an Amazon SageMaker endpoint. The information is an opaque
+     * a model hosted at an Amazon SageMaker AI endpoint. The information is an opaque
      * value that is forwarded verbatim. You could use this value, for example, to
      * provide an ID that you can use to track a request or to provide other metadata
      * that a service endpoint was programmed to process. The value must consist of no
@@ -99,7 +99,7 @@ namespace Model
      * represents the trace ID, your model can prepend the custom attribute with
      * <code>Trace ID:</code> in your post-processing function. </p> <p>This feature is
      * currently supported in the Amazon Web Services SDKs but not in the Amazon
-     * SageMaker Python SDK. </p>
+     * SageMaker AI Python SDK. </p>
      */
     inline const Aws::String& GetCustomAttributes() const { return m_customAttributes; }
     inline bool CustomAttributesHasBeenSet() const { return m_customAttributesHasBeenSet; }

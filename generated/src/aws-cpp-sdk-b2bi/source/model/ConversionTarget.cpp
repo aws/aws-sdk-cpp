@@ -40,6 +40,11 @@ ConversionTarget& ConversionTarget::operator =(JsonView jsonValue)
     m_outputSampleFile = jsonValue.GetObject("outputSampleFile");
     m_outputSampleFileHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("advancedOptions"))
+  {
+    m_advancedOptions = jsonValue.GetObject("advancedOptions");
+    m_advancedOptionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -61,6 +66,12 @@ JsonValue ConversionTarget::Jsonize() const
   if(m_outputSampleFileHasBeenSet)
   {
    payload.WithObject("outputSampleFile", m_outputSampleFile.Jsonize());
+
+  }
+
+  if(m_advancedOptionsHasBeenSet)
+  {
+   payload.WithObject("advancedOptions", m_advancedOptions.Jsonize());
 
   }
 

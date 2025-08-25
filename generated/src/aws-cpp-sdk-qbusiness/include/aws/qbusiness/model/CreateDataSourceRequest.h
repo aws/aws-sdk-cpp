@@ -171,7 +171,8 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the
-     * data source and required resources.</p>
+     * data source and required resources. This field is required for all connector
+     * types except custom connectors, where it is optional.</p>
      */
     inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }

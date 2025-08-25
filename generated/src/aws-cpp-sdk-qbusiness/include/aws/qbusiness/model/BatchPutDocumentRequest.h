@@ -60,7 +60,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>One or more documents to add to the index.</p>
+     * <p>One or more documents to add to the index.</p>  <p>Ensure that the
+     * name of your document doesn't contain any confidential information. Amazon Q
+     * Business returns document names in chat responses and citations when
+     * relevant.</p> 
      */
     inline const Aws::Vector<Document>& GetDocuments() const { return m_documents; }
     inline bool DocumentsHasBeenSet() const { return m_documentsHasBeenSet; }

@@ -96,7 +96,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Raw document outputFormat.</p>
+     * <p>Document outputFormat. Defaults to RAW if not selected.</p>
      */
     inline OutputFormat GetOutputFormat() const { return m_outputFormat; }
     inline bool OutputFormatHasBeenSet() const { return m_outputFormatHasBeenSet; }

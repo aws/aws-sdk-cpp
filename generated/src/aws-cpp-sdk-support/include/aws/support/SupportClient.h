@@ -41,10 +41,11 @@ namespace Support
    * and <a>AddAttachmentsToSet</a> operations retrieve and add communications and
    * attachments to Amazon Web Services Support cases.</p> </li> <li> <p>The
    * <a>DescribeServices</a> and <a>DescribeSeverityLevels</a> operations return
-   * Amazon Web Service names, service codes, service categories, and problem
-   * severity levels. You use these values when you call the <a>CreateCase</a>
-   * operation.</p> </li> </ul> <p>You can also use the Amazon Web Services Support
-   * API to call the Trusted Advisor operations. For more information, see <a
+   * Amazon Web Services service names, service codes, service categories, and
+   * problem severity levels. You use these values when you call the
+   * <a>CreateCase</a> operation.</p> </li> </ul> <p>You can also use the Amazon Web
+   * Services Support API to call the Trusted Advisor operations. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html">Trusted
    * Advisor</a> in the <i>Amazon Web Services Support User Guide</i>.</p> <p>For
    * authentication of requests, Amazon Web Services Support uses <a

@@ -35,15 +35,15 @@ ThrottlingException& ThrottlingException::operator =(JsonView jsonValue)
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("quotaCode"))
-  {
-    m_quotaCode = jsonValue.GetString("quotaCode");
-    m_quotaCodeHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("serviceCode"))
   {
     m_serviceCode = jsonValue.GetString("serviceCode");
     m_serviceCodeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("quotaCode"))
+  {
+    m_quotaCode = jsonValue.GetString("quotaCode");
+    m_quotaCodeHasBeenSet = true;
   }
   return *this;
 }
@@ -64,15 +64,15 @@ JsonValue ThrottlingException::Jsonize() const
 
   }
 
-  if(m_quotaCodeHasBeenSet)
-  {
-   payload.WithString("quotaCode", m_quotaCode);
-
-  }
-
   if(m_serviceCodeHasBeenSet)
   {
    payload.WithString("serviceCode", m_serviceCode);
+
+  }
+
+  if(m_quotaCodeHasBeenSet)
+  {
+   payload.WithString("quotaCode", m_quotaCode);
 
   }
 

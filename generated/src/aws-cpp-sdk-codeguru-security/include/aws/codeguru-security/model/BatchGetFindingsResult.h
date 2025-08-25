@@ -7,8 +7,8 @@
 #include <aws/codeguru-security/CodeGuruSecurity_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/codeguru-security/model/BatchGetFindingsError.h>
 #include <aws/codeguru-security/model/Finding.h>
+#include <aws/codeguru-security/model/BatchGetFindingsError.h>
 #include <utility>
 
 namespace Aws
@@ -37,6 +37,19 @@ namespace Model
 
     ///@{
     /**
+     * <p> A list of all findings which were successfully fetched.</p>
+     */
+    inline const Aws::Vector<Finding>& GetFindings() const { return m_findings; }
+    template<typename FindingsT = Aws::Vector<Finding>>
+    void SetFindings(FindingsT&& value) { m_findingsHasBeenSet = true; m_findings = std::forward<FindingsT>(value); }
+    template<typename FindingsT = Aws::Vector<Finding>>
+    BatchGetFindingsResult& WithFindings(FindingsT&& value) { SetFindings(std::forward<FindingsT>(value)); return *this;}
+    template<typename FindingsT = Finding>
+    BatchGetFindingsResult& AddFindings(FindingsT&& value) { m_findingsHasBeenSet = true; m_findings.emplace_back(std::forward<FindingsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>A list of errors for individual findings which were not fetched. Each
      * BatchGetFindingsError contains the <code>scanName</code>,
      * <code>findingId</code>, <code>errorCode</code> and error
@@ -52,19 +65,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p> A list of all findings which were successfully fetched.</p>
-     */
-    inline const Aws::Vector<Finding>& GetFindings() const { return m_findings; }
-    template<typename FindingsT = Aws::Vector<Finding>>
-    void SetFindings(FindingsT&& value) { m_findingsHasBeenSet = true; m_findings = std::forward<FindingsT>(value); }
-    template<typename FindingsT = Aws::Vector<Finding>>
-    BatchGetFindingsResult& WithFindings(FindingsT&& value) { SetFindings(std::forward<FindingsT>(value)); return *this;}
-    template<typename FindingsT = Finding>
-    BatchGetFindingsResult& AddFindings(FindingsT&& value) { m_findingsHasBeenSet = true; m_findings.emplace_back(std::forward<FindingsT>(value)); return *this; }
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -74,11 +74,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<BatchGetFindingsError> m_failedFindings;
-    bool m_failedFindingsHasBeenSet = false;
-
     Aws::Vector<Finding> m_findings;
     bool m_findingsHasBeenSet = false;
+
+    Aws::Vector<BatchGetFindingsError> m_failedFindings;
+    bool m_failedFindingsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

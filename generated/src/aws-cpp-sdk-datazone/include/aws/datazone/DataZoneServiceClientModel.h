@@ -23,6 +23,7 @@
 #include <aws/datazone/model/AddEntityOwnerResult.h>
 #include <aws/datazone/model/AddPolicyGrantResult.h>
 #include <aws/datazone/model/AssociateEnvironmentRoleResult.h>
+#include <aws/datazone/model/AssociateGovernedTermsResult.h>
 #include <aws/datazone/model/CancelMetadataGenerationRunResult.h>
 #include <aws/datazone/model/CancelSubscriptionResult.h>
 #include <aws/datazone/model/CreateAccountPoolResult.h>
@@ -72,6 +73,7 @@
 #include <aws/datazone/model/DeleteSubscriptionGrantResult.h>
 #include <aws/datazone/model/DeleteTimeSeriesDataPointsResult.h>
 #include <aws/datazone/model/DisassociateEnvironmentRoleResult.h>
+#include <aws/datazone/model/DisassociateGovernedTermsResult.h>
 #include <aws/datazone/model/GetAccountPoolResult.h>
 #include <aws/datazone/model/GetAssetResult.h>
 #include <aws/datazone/model/GetAssetFilterResult.h>
@@ -223,6 +225,7 @@ namespace Aws
       class AddEntityOwnerRequest;
       class AddPolicyGrantRequest;
       class AssociateEnvironmentRoleRequest;
+      class AssociateGovernedTermsRequest;
       class CancelMetadataGenerationRunRequest;
       class CancelSubscriptionRequest;
       class CreateAccountPoolRequest;
@@ -278,6 +281,7 @@ namespace Aws
       class DeleteSubscriptionTargetRequest;
       class DeleteTimeSeriesDataPointsRequest;
       class DisassociateEnvironmentRoleRequest;
+      class DisassociateGovernedTermsRequest;
       class GetAccountPoolRequest;
       class GetAssetRequest;
       class GetAssetFilterRequest;
@@ -390,6 +394,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<AddEntityOwnerResult, DataZoneError> AddEntityOwnerOutcome;
       typedef Aws::Utils::Outcome<AddPolicyGrantResult, DataZoneError> AddPolicyGrantOutcome;
       typedef Aws::Utils::Outcome<AssociateEnvironmentRoleResult, DataZoneError> AssociateEnvironmentRoleOutcome;
+      typedef Aws::Utils::Outcome<AssociateGovernedTermsResult, DataZoneError> AssociateGovernedTermsOutcome;
       typedef Aws::Utils::Outcome<CancelMetadataGenerationRunResult, DataZoneError> CancelMetadataGenerationRunOutcome;
       typedef Aws::Utils::Outcome<CancelSubscriptionResult, DataZoneError> CancelSubscriptionOutcome;
       typedef Aws::Utils::Outcome<CreateAccountPoolResult, DataZoneError> CreateAccountPoolOutcome;
@@ -445,6 +450,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, DataZoneError> DeleteSubscriptionTargetOutcome;
       typedef Aws::Utils::Outcome<DeleteTimeSeriesDataPointsResult, DataZoneError> DeleteTimeSeriesDataPointsOutcome;
       typedef Aws::Utils::Outcome<DisassociateEnvironmentRoleResult, DataZoneError> DisassociateEnvironmentRoleOutcome;
+      typedef Aws::Utils::Outcome<DisassociateGovernedTermsResult, DataZoneError> DisassociateGovernedTermsOutcome;
       typedef Aws::Utils::Outcome<GetAccountPoolResult, DataZoneError> GetAccountPoolOutcome;
       typedef Aws::Utils::Outcome<GetAssetResult, DataZoneError> GetAssetOutcome;
       typedef Aws::Utils::Outcome<GetAssetFilterResult, DataZoneError> GetAssetFilterOutcome;
@@ -557,6 +563,7 @@ namespace Aws
       typedef std::future<AddEntityOwnerOutcome> AddEntityOwnerOutcomeCallable;
       typedef std::future<AddPolicyGrantOutcome> AddPolicyGrantOutcomeCallable;
       typedef std::future<AssociateEnvironmentRoleOutcome> AssociateEnvironmentRoleOutcomeCallable;
+      typedef std::future<AssociateGovernedTermsOutcome> AssociateGovernedTermsOutcomeCallable;
       typedef std::future<CancelMetadataGenerationRunOutcome> CancelMetadataGenerationRunOutcomeCallable;
       typedef std::future<CancelSubscriptionOutcome> CancelSubscriptionOutcomeCallable;
       typedef std::future<CreateAccountPoolOutcome> CreateAccountPoolOutcomeCallable;
@@ -612,6 +619,7 @@ namespace Aws
       typedef std::future<DeleteSubscriptionTargetOutcome> DeleteSubscriptionTargetOutcomeCallable;
       typedef std::future<DeleteTimeSeriesDataPointsOutcome> DeleteTimeSeriesDataPointsOutcomeCallable;
       typedef std::future<DisassociateEnvironmentRoleOutcome> DisassociateEnvironmentRoleOutcomeCallable;
+      typedef std::future<DisassociateGovernedTermsOutcome> DisassociateGovernedTermsOutcomeCallable;
       typedef std::future<GetAccountPoolOutcome> GetAccountPoolOutcomeCallable;
       typedef std::future<GetAssetOutcome> GetAssetOutcomeCallable;
       typedef std::future<GetAssetFilterOutcome> GetAssetFilterOutcomeCallable;
@@ -727,6 +735,7 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::AddEntityOwnerRequest&, const Model::AddEntityOwnerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddEntityOwnerResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::AddPolicyGrantRequest&, const Model::AddPolicyGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddPolicyGrantResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::AssociateEnvironmentRoleRequest&, const Model::AssociateEnvironmentRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateEnvironmentRoleResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::AssociateGovernedTermsRequest&, const Model::AssociateGovernedTermsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateGovernedTermsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CancelMetadataGenerationRunRequest&, const Model::CancelMetadataGenerationRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelMetadataGenerationRunResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CancelSubscriptionRequest&, const Model::CancelSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelSubscriptionResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateAccountPoolRequest&, const Model::CreateAccountPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccountPoolResponseReceivedHandler;
@@ -782,6 +791,7 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::DeleteSubscriptionTargetRequest&, const Model::DeleteSubscriptionTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSubscriptionTargetResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteTimeSeriesDataPointsRequest&, const Model::DeleteTimeSeriesDataPointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTimeSeriesDataPointsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DisassociateEnvironmentRoleRequest&, const Model::DisassociateEnvironmentRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateEnvironmentRoleResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::DisassociateGovernedTermsRequest&, const Model::DisassociateGovernedTermsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateGovernedTermsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetAccountPoolRequest&, const Model::GetAccountPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountPoolResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetAssetRequest&, const Model::GetAssetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssetResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetAssetFilterRequest&, const Model::GetAssetFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssetFilterResponseReceivedHandler;

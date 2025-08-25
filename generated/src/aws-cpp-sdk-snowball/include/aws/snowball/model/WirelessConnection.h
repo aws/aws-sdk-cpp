@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p>Configures the wireless connection on an Snowcone device.</p><p><h3>See
+   * <p>Configures the wireless connection on an Snowball Edge device.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/WirelessConnection">AWS
    * API Reference</a></p>
@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Enables the Wi-Fi adapter on an Snowcone device.</p>
+     * <p>Enables the Wi-Fi adapter on an Snowball Edge device.</p>
      */
     inline bool GetIsWifiEnabled() const { return m_isWifiEnabled; }
     inline bool IsWifiEnabledHasBeenSet() const { return m_isWifiEnabledHasBeenSet; }

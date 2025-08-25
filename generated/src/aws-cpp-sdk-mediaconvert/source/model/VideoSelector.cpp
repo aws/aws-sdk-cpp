@@ -80,6 +80,20 @@ VideoSelector& VideoSelector::operator =(JsonView jsonValue)
     m_sampleRange = InputSampleRangeMapper::GetInputSampleRangeForName(jsonValue.GetString("sampleRange"));
     m_sampleRangeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("selectorType"))
+  {
+    m_selectorType = VideoSelectorTypeMapper::GetVideoSelectorTypeForName(jsonValue.GetString("selectorType"));
+    m_selectorTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("streams"))
+  {
+    Aws::Utils::Array<JsonView> streamsJsonList = jsonValue.GetArray("streams");
+    for(unsigned streamsIndex = 0; streamsIndex < streamsJsonList.GetLength(); ++streamsIndex)
+    {
+      m_streams.push_back(streamsJsonList[streamsIndex].AsInteger());
+    }
+    m_streamsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -144,6 +158,22 @@ JsonValue VideoSelector::Jsonize() const
   if(m_sampleRangeHasBeenSet)
   {
    payload.WithString("sampleRange", InputSampleRangeMapper::GetNameForInputSampleRange(m_sampleRange));
+  }
+
+  if(m_selectorTypeHasBeenSet)
+  {
+   payload.WithString("selectorType", VideoSelectorTypeMapper::GetNameForVideoSelectorType(m_selectorType));
+  }
+
+  if(m_streamsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> streamsJsonList(m_streams.size());
+   for(unsigned streamsIndex = 0; streamsIndex < streamsJsonList.GetLength(); ++streamsIndex)
+   {
+     streamsJsonList[streamsIndex].AsInteger(m_streams[streamsIndex]);
+   }
+   payload.WithArray("streams", std::move(streamsJsonList));
+
   }
 
   return payload;

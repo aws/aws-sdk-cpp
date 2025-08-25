@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int RAW_HASH = HashingUtils::HashString("RAW");
+        static const int EXTRACTED_HASH = HashingUtils::HashString("EXTRACTED");
 
 
         OutputFormat GetOutputFormatForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == RAW_HASH)
           {
             return OutputFormat::RAW;
+          }
+          else if (hashCode == EXTRACTED_HASH)
+          {
+            return OutputFormat::EXTRACTED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case OutputFormat::RAW:
             return "RAW";
+          case OutputFormat::EXTRACTED:
+            return "EXTRACTED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

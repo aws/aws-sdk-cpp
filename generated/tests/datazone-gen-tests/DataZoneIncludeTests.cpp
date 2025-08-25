@@ -52,6 +52,8 @@
 #include <aws/datazone/model/AssetTypesForRule.h>
 #include <aws/datazone/model/AssociateEnvironmentRoleRequest.h>
 #include <aws/datazone/model/AssociateEnvironmentRoleResult.h>
+#include <aws/datazone/model/AssociateGovernedTermsRequest.h>
+#include <aws/datazone/model/AssociateGovernedTermsResult.h>
 #include <aws/datazone/model/AthenaPropertiesInput.h>
 #include <aws/datazone/model/AthenaPropertiesOutput.h>
 #include <aws/datazone/model/AthenaPropertiesPatch.h>
@@ -221,6 +223,8 @@
 #include <aws/datazone/model/DetailedGlossaryTerm.h>
 #include <aws/datazone/model/DisassociateEnvironmentRoleRequest.h>
 #include <aws/datazone/model/DisassociateEnvironmentRoleResult.h>
+#include <aws/datazone/model/DisassociateGovernedTermsRequest.h>
+#include <aws/datazone/model/DisassociateGovernedTermsResult.h>
 #include <aws/datazone/model/DomainStatus.h>
 #include <aws/datazone/model/DomainSummary.h>
 #include <aws/datazone/model/DomainUnitDesignation.h>
@@ -340,6 +344,7 @@
 #include <aws/datazone/model/GlossaryTermItem.h>
 #include <aws/datazone/model/GlossaryTermItemAdditionalAttributes.h>
 #include <aws/datazone/model/GlossaryTermStatus.h>
+#include <aws/datazone/model/GlossaryUsageRestriction.h>
 #include <aws/datazone/model/GlueConnection.h>
 #include <aws/datazone/model/GlueConnectionInput.h>
 #include <aws/datazone/model/GlueConnectionPatch.h>
@@ -352,6 +357,7 @@
 #include <aws/datazone/model/GlueRunConfigurationOutput.h>
 #include <aws/datazone/model/GlueSelfGrantStatusOutput.h>
 #include <aws/datazone/model/GovernanceType.h>
+#include <aws/datazone/model/GovernedEntityType.h>
 #include <aws/datazone/model/GrantedEntity.h>
 #include <aws/datazone/model/GrantedEntityInput.h>
 #include <aws/datazone/model/GreaterThanExpression.h>

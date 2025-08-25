@@ -56,9 +56,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The message to send. The minimum size is one character. The maximum size is
-     * 256 KiB.</p>  <p>A message can include only XML, JSON, and
-     * unformatted text. The following Unicode characters are allowed. For more
+     * <p>The message to send. The minimum size is one character. The maximum size is 1
+     * MiB or 1,048,576 bytes</p>  <p>A message can include only XML, JSON,
+     * and unformatted text. The following Unicode characters are allowed. For more
      * information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C
      * specification for characters</a>.</p> <p> <code>#x9</code> | <code>#xA</code> |
      * <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |

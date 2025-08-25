@@ -40,6 +40,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the scan you want to view details about.</p>
+     */
+    inline const Aws::String& GetScanName() const { return m_scanName; }
+    inline bool ScanNameHasBeenSet() const { return m_scanNameHasBeenSet; }
+    template<typename ScanNameT = Aws::String>
+    void SetScanName(ScanNameT&& value) { m_scanNameHasBeenSet = true; m_scanName = std::forward<ScanNameT>(value); }
+    template<typename ScanNameT = Aws::String>
+    GetScanRequest& WithScanName(ScanNameT&& value) { SetScanName(std::forward<ScanNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>UUID that identifies the individual scan run you want to view details about.
      * You retrieve this when you call the <code>CreateScan</code> operation. Defaults
      * to the latest scan run if missing.</p>
@@ -51,25 +63,13 @@ namespace Model
     template<typename RunIdT = Aws::String>
     GetScanRequest& WithRunId(RunIdT&& value) { SetRunId(std::forward<RunIdT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The name of the scan you want to view details about.</p>
-     */
-    inline const Aws::String& GetScanName() const { return m_scanName; }
-    inline bool ScanNameHasBeenSet() const { return m_scanNameHasBeenSet; }
-    template<typename ScanNameT = Aws::String>
-    void SetScanName(ScanNameT&& value) { m_scanNameHasBeenSet = true; m_scanName = std::forward<ScanNameT>(value); }
-    template<typename ScanNameT = Aws::String>
-    GetScanRequest& WithScanName(ScanNameT&& value) { SetScanName(std::forward<ScanNameT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::String m_runId;
-    bool m_runIdHasBeenSet = false;
 
     Aws::String m_scanName;
     bool m_scanNameHasBeenSet = false;
+
+    Aws::String m_runId;
+    bool m_runIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -83,7 +83,11 @@ namespace Model
     ///@{
     /**
      * <p>Specifies whether or not to validate the EDI for this X12 object:
-     * <code>TRUE</code> or <code>FALSE</code>.</p>
+     * <code>TRUE</code> or <code>FALSE</code>. When enabled, this performs both
+     * standard EDI validation and applies any configured custom validation rules
+     * including element length constraints, code list validations, and element
+     * requirement checks. Validation results are returned in the response validation
+     * messages.</p>
      */
     inline bool GetValidateEdi() const { return m_validateEdi; }
     inline bool ValidateEdiHasBeenSet() const { return m_validateEdiHasBeenSet; }

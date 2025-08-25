@@ -8,6 +8,7 @@
 #include <aws/b2bi/model/ConversionTargetFormat.h>
 #include <aws/b2bi/model/ConversionTargetFormatDetails.h>
 #include <aws/b2bi/model/OutputSampleFileSource.h>
+#include <aws/b2bi/model/AdvancedOptions.h>
 #include <utility>
 
 namespace Aws
@@ -75,6 +76,16 @@ namespace Model
     template<typename OutputSampleFileT = OutputSampleFileSource>
     ConversionTarget& WithOutputSampleFile(OutputSampleFileT&& value) { SetOutputSampleFile(std::forward<OutputSampleFileT>(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const AdvancedOptions& GetAdvancedOptions() const { return m_advancedOptions; }
+    inline bool AdvancedOptionsHasBeenSet() const { return m_advancedOptionsHasBeenSet; }
+    template<typename AdvancedOptionsT = AdvancedOptions>
+    void SetAdvancedOptions(AdvancedOptionsT&& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions = std::forward<AdvancedOptionsT>(value); }
+    template<typename AdvancedOptionsT = AdvancedOptions>
+    ConversionTarget& WithAdvancedOptions(AdvancedOptionsT&& value) { SetAdvancedOptions(std::forward<AdvancedOptionsT>(value)); return *this;}
+    ///@}
   private:
 
     ConversionTargetFormat m_fileFormat{ConversionTargetFormat::NOT_SET};
@@ -85,6 +96,9 @@ namespace Model
 
     OutputSampleFileSource m_outputSampleFile;
     bool m_outputSampleFileHasBeenSet = false;
+
+    AdvancedOptions m_advancedOptions;
+    bool m_advancedOptionsHasBeenSet = false;
   };
 
 } // namespace Model

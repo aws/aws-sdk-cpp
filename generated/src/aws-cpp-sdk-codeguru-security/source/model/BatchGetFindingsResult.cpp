@@ -25,15 +25,6 @@ BatchGetFindingsResult::BatchGetFindingsResult(const Aws::AmazonWebServiceResult
 BatchGetFindingsResult& BatchGetFindingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("failedFindings"))
-  {
-    Aws::Utils::Array<JsonView> failedFindingsJsonList = jsonValue.GetArray("failedFindings");
-    for(unsigned failedFindingsIndex = 0; failedFindingsIndex < failedFindingsJsonList.GetLength(); ++failedFindingsIndex)
-    {
-      m_failedFindings.push_back(failedFindingsJsonList[failedFindingsIndex].AsObject());
-    }
-    m_failedFindingsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("findings"))
   {
     Aws::Utils::Array<JsonView> findingsJsonList = jsonValue.GetArray("findings");
@@ -42,6 +33,15 @@ BatchGetFindingsResult& BatchGetFindingsResult::operator =(const Aws::AmazonWebS
       m_findings.push_back(findingsJsonList[findingsIndex].AsObject());
     }
     m_findingsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("failedFindings"))
+  {
+    Aws::Utils::Array<JsonView> failedFindingsJsonList = jsonValue.GetArray("failedFindings");
+    for(unsigned failedFindingsIndex = 0; failedFindingsIndex < failedFindingsJsonList.GetLength(); ++failedFindingsIndex)
+    {
+      m_failedFindings.push_back(failedFindingsJsonList[failedFindingsIndex].AsObject());
+    }
+    m_failedFindingsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

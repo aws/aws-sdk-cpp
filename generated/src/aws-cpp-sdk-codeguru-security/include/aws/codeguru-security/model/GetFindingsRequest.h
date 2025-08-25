@@ -41,16 +41,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results to return in the response. Use this parameter
-     * when paginating results. If additional results exist beyond the number you
-     * specify, the <code>nextToken</code> element is returned in the response. Use
-     * <code>nextToken</code> in a subsequent request to retrieve additional results.
-     * If not specified, returns 1000 results.</p>
+     * <p>The name of the scan you want to retrieve findings from.</p>
      */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline GetFindingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline const Aws::String& GetScanName() const { return m_scanName; }
+    inline bool ScanNameHasBeenSet() const { return m_scanNameHasBeenSet; }
+    template<typename ScanNameT = Aws::String>
+    void SetScanName(ScanNameT&& value) { m_scanNameHasBeenSet = true; m_scanName = std::forward<ScanNameT>(value); }
+    template<typename ScanNameT = Aws::String>
+    GetFindingsRequest& WithScanName(ScanNameT&& value) { SetScanName(std::forward<ScanNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the scan you want to retrieve findings from.</p>
+     * <p>The maximum number of results to return in the response. Use this parameter
+     * when paginating results. If additional results exist beyond the number you
+     * specify, the <code>nextToken</code> element is returned in the response. Use
+     * <code>nextToken</code> in a subsequent request to retrieve additional results.
+     * If not specified, returns 1000 results.</p>
      */
-    inline const Aws::String& GetScanName() const { return m_scanName; }
-    inline bool ScanNameHasBeenSet() const { return m_scanNameHasBeenSet; }
-    template<typename ScanNameT = Aws::String>
-    void SetScanName(ScanNameT&& value) { m_scanNameHasBeenSet = true; m_scanName = std::forward<ScanNameT>(value); }
-    template<typename ScanNameT = Aws::String>
-    GetFindingsRequest& WithScanName(ScanNameT&& value) { SetScanName(std::forward<ScanNameT>(value)); return *this;}
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline GetFindingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
 
     ///@{
@@ -92,14 +92,14 @@ namespace Model
     ///@}
   private:
 
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
+    Aws::String m_scanName;
+    bool m_scanNameHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_scanName;
-    bool m_scanNameHasBeenSet = false;
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
 
     Status m_status{Status::NOT_SET};
     bool m_statusHasBeenSet = false;

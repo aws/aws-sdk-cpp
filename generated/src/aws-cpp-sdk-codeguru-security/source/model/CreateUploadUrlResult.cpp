@@ -25,10 +25,10 @@ CreateUploadUrlResult::CreateUploadUrlResult(const Aws::AmazonWebServiceResult<J
 CreateUploadUrlResult& CreateUploadUrlResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("codeArtifactId"))
+  if(jsonValue.ValueExists("s3Url"))
   {
-    m_codeArtifactId = jsonValue.GetString("codeArtifactId");
-    m_codeArtifactIdHasBeenSet = true;
+    m_s3Url = jsonValue.GetString("s3Url");
+    m_s3UrlHasBeenSet = true;
   }
   if(jsonValue.ValueExists("requestHeaders"))
   {
@@ -39,10 +39,10 @@ CreateUploadUrlResult& CreateUploadUrlResult::operator =(const Aws::AmazonWebSer
     }
     m_requestHeadersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("s3Url"))
+  if(jsonValue.ValueExists("codeArtifactId"))
   {
-    m_s3Url = jsonValue.GetString("s3Url");
-    m_s3UrlHasBeenSet = true;
+    m_codeArtifactId = jsonValue.GetString("codeArtifactId");
+    m_codeArtifactIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

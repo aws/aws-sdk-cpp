@@ -14,6 +14,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/JobMessages.h>
 #include <aws/mediaconvert/model/JobSettings.h>
+#include <aws/mediaconvert/model/ShareStatus.h>
 #include <aws/mediaconvert/model/SimulateReservedQueue.h>
 #include <aws/mediaconvert/model/JobStatus.h>
 #include <aws/mediaconvert/model/StatusUpdateInterval.h>
@@ -264,6 +265,20 @@ namespace Model
 
     ///@{
     /**
+     * Contains information about the most recent share attempt for the job. For more
+     * information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/creating-resource-share.html
+     */
+    inline const Aws::String& GetLastShareDetails() const { return m_lastShareDetails; }
+    inline bool LastShareDetailsHasBeenSet() const { return m_lastShareDetailsHasBeenSet; }
+    template<typename LastShareDetailsT = Aws::String>
+    void SetLastShareDetails(LastShareDetailsT&& value) { m_lastShareDetailsHasBeenSet = true; m_lastShareDetails = std::forward<LastShareDetailsT>(value); }
+    template<typename LastShareDetailsT = Aws::String>
+    Job& WithLastShareDetails(LastShareDetailsT&& value) { SetLastShareDetails(std::forward<LastShareDetailsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * Provides messages from the service about jobs that you have already successfully
      * submitted.
      */
@@ -363,6 +378,16 @@ namespace Model
     void SetSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings = std::forward<SettingsT>(value); }
     template<typename SettingsT = JobSettings>
     Job& WithSettings(SettingsT&& value) { SetSettings(std::forward<SettingsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * A job's share status can be NOT_SHARED, INITIATED, or SHARED
+     */
+    inline ShareStatus GetShareStatus() const { return m_shareStatus; }
+    inline bool ShareStatusHasBeenSet() const { return m_shareStatusHasBeenSet; }
+    inline void SetShareStatus(ShareStatus value) { m_shareStatusHasBeenSet = true; m_shareStatus = value; }
+    inline Job& WithShareStatus(ShareStatus value) { SetShareStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -493,6 +518,9 @@ namespace Model
     Aws::String m_jobTemplate;
     bool m_jobTemplateHasBeenSet = false;
 
+    Aws::String m_lastShareDetails;
+    bool m_lastShareDetailsHasBeenSet = false;
+
     JobMessages m_messages;
     bool m_messagesHasBeenSet = false;
 
@@ -516,6 +544,9 @@ namespace Model
 
     JobSettings m_settings;
     bool m_settingsHasBeenSet = false;
+
+    ShareStatus m_shareStatus{ShareStatus::NOT_SET};
+    bool m_shareStatusHasBeenSet = false;
 
     SimulateReservedQueue m_simulateReservedQueue{SimulateReservedQueue::NOT_SET};
     bool m_simulateReservedQueueHasBeenSet = false;

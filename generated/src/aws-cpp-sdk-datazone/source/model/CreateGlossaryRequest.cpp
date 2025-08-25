@@ -45,6 +45,17 @@ Aws::String CreateGlossaryRequest::SerializePayload() const
    payload.WithString("status", GlossaryStatusMapper::GetNameForGlossaryStatus(m_status));
   }
 
+  if(m_usageRestrictionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> usageRestrictionsJsonList(m_usageRestrictions.size());
+   for(unsigned usageRestrictionsIndex = 0; usageRestrictionsIndex < usageRestrictionsJsonList.GetLength(); ++usageRestrictionsIndex)
+   {
+     usageRestrictionsJsonList[usageRestrictionsIndex].AsString(GlossaryUsageRestrictionMapper::GetNameForGlossaryUsageRestriction(m_usageRestrictions[usageRestrictionsIndex]));
+   }
+   payload.WithArray("usageRestrictions", std::move(usageRestrictionsJsonList));
+
+  }
+
   return payload.View().WriteReadable();
 }
 

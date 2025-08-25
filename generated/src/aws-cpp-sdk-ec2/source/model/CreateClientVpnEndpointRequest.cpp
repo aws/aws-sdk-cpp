@@ -136,6 +136,16 @@ Aws::String CreateClientVpnEndpointRequest::SerializePayload() const
     ss << "DisconnectOnSessionTimeout=" << std::boolalpha << m_disconnectOnSessionTimeout << "&";
   }
 
+  if(m_endpointIpAddressTypeHasBeenSet)
+  {
+    ss << "EndpointIpAddressType=" << StringUtils::URLEncode(EndpointIpAddressTypeMapper::GetNameForEndpointIpAddressType(m_endpointIpAddressType)) << "&";
+  }
+
+  if(m_trafficIpAddressTypeHasBeenSet)
+  {
+    ss << "TrafficIpAddressType=" << StringUtils::URLEncode(TrafficIpAddressTypeMapper::GetNameForTrafficIpAddressType(m_trafficIpAddressType)) << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

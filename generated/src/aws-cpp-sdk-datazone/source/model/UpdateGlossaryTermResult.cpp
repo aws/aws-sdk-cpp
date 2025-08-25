@@ -65,6 +65,15 @@ UpdateGlossaryTermResult& UpdateGlossaryTermResult::operator =(const Aws::Amazon
     m_termRelations = jsonValue.GetObject("termRelations");
     m_termRelationsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("usageRestrictions"))
+  {
+    Aws::Utils::Array<JsonView> usageRestrictionsJsonList = jsonValue.GetArray("usageRestrictions");
+    for(unsigned usageRestrictionsIndex = 0; usageRestrictionsIndex < usageRestrictionsJsonList.GetLength(); ++usageRestrictionsIndex)
+    {
+      m_usageRestrictions.push_back(GlossaryUsageRestrictionMapper::GetGlossaryUsageRestrictionForName(usageRestrictionsJsonList[usageRestrictionsIndex].AsString()));
+    }
+    m_usageRestrictionsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

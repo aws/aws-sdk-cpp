@@ -88,8 +88,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of the Chatbot topics and Chatbot clients associated with the
-     * notification rule.</p>
+     * <p>A list of the Amazon Q Developer in chat applications topics and Amazon Q
+     * Developer in chat applications clients associated with the notification
+     * rule.</p>
      */
     inline const Aws::Vector<TargetSummary>& GetTargets() const { return m_targets; }
     template<typename TargetsT = Aws::Vector<TargetSummary>>
@@ -104,9 +105,9 @@ namespace Model
     /**
      * <p>The level of detail included in the notifications for this resource. BASIC
      * will include only the contents of the event as it would appear in Amazon
-     * CloudWatch. FULL will include any supplemental information provided by AWS
-     * CodeStar Notifications and/or the service for the resource for which the
-     * notification is created.</p>
+     * CloudWatch. FULL will include any supplemental information provided by CodeStar
+     * Notifications and/or the service for the resource for which the notification is
+     * created.</p>
      */
     inline DetailType GetDetailType() const { return m_detailType; }
     inline void SetDetailType(DetailType value) { m_detailTypeHasBeenSet = true; m_detailType = value; }

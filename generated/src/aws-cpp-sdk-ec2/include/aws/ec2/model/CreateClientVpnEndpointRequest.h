@@ -14,6 +14,8 @@
 #include <aws/ec2/model/ClientConnectOptions.h>
 #include <aws/ec2/model/ClientLoginBannerOptions.h>
 #include <aws/ec2/model/ClientRouteEnforcementOptions.h>
+#include <aws/ec2/model/EndpointIpAddressType.h>
+#include <aws/ec2/model/TrafficIpAddressType.h>
 #include <aws/ec2/model/ClientVpnAuthenticationRequest.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
@@ -326,6 +328,34 @@ namespace Model
     inline void SetDisconnectOnSessionTimeout(bool value) { m_disconnectOnSessionTimeoutHasBeenSet = true; m_disconnectOnSessionTimeout = value; }
     inline CreateClientVpnEndpointRequest& WithDisconnectOnSessionTimeout(bool value) { SetDisconnectOnSessionTimeout(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The IP address type for the Client VPN endpoint. Valid values are
+     * <code>ipv4</code> (default) for IPv4 addressing only, <code>ipv6</code> for IPv6
+     * addressing only, or <code>dual-stack</code> for both IPv4 and IPv6 addressing.
+     * When set to <code>dual-stack,</code> clients can connect to the endpoint using
+     * either IPv4 or IPv6 addresses..</p>
+     */
+    inline EndpointIpAddressType GetEndpointIpAddressType() const { return m_endpointIpAddressType; }
+    inline bool EndpointIpAddressTypeHasBeenSet() const { return m_endpointIpAddressTypeHasBeenSet; }
+    inline void SetEndpointIpAddressType(EndpointIpAddressType value) { m_endpointIpAddressTypeHasBeenSet = true; m_endpointIpAddressType = value; }
+    inline CreateClientVpnEndpointRequest& WithEndpointIpAddressType(EndpointIpAddressType value) { SetEndpointIpAddressType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The IP address type for traffic within the Client VPN tunnel. Valid values
+     * are <code>ipv4</code> (default) for IPv4 traffic only, <code>ipv6</code> for
+     * IPv6 addressing only, or <code>dual-stack</code> for both IPv4 and IPv6 traffic.
+     * When set to <code>dual-stack</code>, clients can access both IPv4 and IPv6
+     * resources through the VPN .</p>
+     */
+    inline TrafficIpAddressType GetTrafficIpAddressType() const { return m_trafficIpAddressType; }
+    inline bool TrafficIpAddressTypeHasBeenSet() const { return m_trafficIpAddressTypeHasBeenSet; }
+    inline void SetTrafficIpAddressType(TrafficIpAddressType value) { m_trafficIpAddressTypeHasBeenSet = true; m_trafficIpAddressType = value; }
+    inline CreateClientVpnEndpointRequest& WithTrafficIpAddressType(TrafficIpAddressType value) { SetTrafficIpAddressType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_clientCidrBlock;
@@ -387,6 +417,12 @@ namespace Model
 
     bool m_disconnectOnSessionTimeout{false};
     bool m_disconnectOnSessionTimeoutHasBeenSet = false;
+
+    EndpointIpAddressType m_endpointIpAddressType{EndpointIpAddressType::NOT_SET};
+    bool m_endpointIpAddressTypeHasBeenSet = false;
+
+    TrafficIpAddressType m_trafficIpAddressType{TrafficIpAddressType::NOT_SET};
+    bool m_trafficIpAddressTypeHasBeenSet = false;
   };
 
 } // namespace Model

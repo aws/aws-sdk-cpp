@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/b2bi/B2BI_EXPORTS.h>
 #include <aws/b2bi/model/X12SplitOptions.h>
+#include <aws/b2bi/model/X12ValidationOptions.h>
 #include <utility>
 
 namespace Aws
@@ -50,10 +51,28 @@ namespace Model
     template<typename SplitOptionsT = X12SplitOptions>
     X12AdvancedOptions& WithSplitOptions(SplitOptionsT&& value) { SetSplitOptions(std::forward<SplitOptionsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies validation options for X12 EDI processing. These options control
+     * how validation rules are applied during EDI document processing, including
+     * custom validation rules for element length constraints, code list validations,
+     * and element requirement checks.</p>
+     */
+    inline const X12ValidationOptions& GetValidationOptions() const { return m_validationOptions; }
+    inline bool ValidationOptionsHasBeenSet() const { return m_validationOptionsHasBeenSet; }
+    template<typename ValidationOptionsT = X12ValidationOptions>
+    void SetValidationOptions(ValidationOptionsT&& value) { m_validationOptionsHasBeenSet = true; m_validationOptions = std::forward<ValidationOptionsT>(value); }
+    template<typename ValidationOptionsT = X12ValidationOptions>
+    X12AdvancedOptions& WithValidationOptions(ValidationOptionsT&& value) { SetValidationOptions(std::forward<ValidationOptionsT>(value)); return *this;}
+    ///@}
   private:
 
     X12SplitOptions m_splitOptions;
     bool m_splitOptionsHasBeenSet = false;
+
+    X12ValidationOptions m_validationOptions;
+    bool m_validationOptionsHasBeenSet = false;
   };
 
 } // namespace Model

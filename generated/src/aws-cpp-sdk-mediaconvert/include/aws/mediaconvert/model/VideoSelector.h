@@ -13,6 +13,8 @@
 #include <aws/mediaconvert/model/PadVideo.h>
 #include <aws/mediaconvert/model/InputRotate.h>
 #include <aws/mediaconvert/model/InputSampleRange.h>
+#include <aws/mediaconvert/model/VideoSelectorType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -225,6 +227,35 @@ namespace Model
     inline void SetSampleRange(InputSampleRange value) { m_sampleRangeHasBeenSet = true; m_sampleRange = value; }
     inline VideoSelector& WithSampleRange(InputSampleRange value) { SetSampleRange(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * Choose the video selector type for your HLS input. Use to specify which video
+     * rendition MediaConvert uses from your HLS input. To have MediaConvert
+     * automatically use the highest bitrate rendition from your HLS input: Keep the
+     * default value, Auto. To manually specify a rendition: Choose Stream. Then enter
+     * the unique stream number in the Streams array, starting at 1, corresponding to
+     * the stream order in the manifest.
+     */
+    inline VideoSelectorType GetSelectorType() const { return m_selectorType; }
+    inline bool SelectorTypeHasBeenSet() const { return m_selectorTypeHasBeenSet; }
+    inline void SetSelectorType(VideoSelectorType value) { m_selectorTypeHasBeenSet = true; m_selectorType = value; }
+    inline VideoSelector& WithSelectorType(VideoSelectorType value) { SetSelectorType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * Specify a stream for MediaConvert to use from your HLS input. Enter an integer
+     * corresponding to the stream order in your HLS manifest.
+     */
+    inline const Aws::Vector<int>& GetStreams() const { return m_streams; }
+    inline bool StreamsHasBeenSet() const { return m_streamsHasBeenSet; }
+    template<typename StreamsT = Aws::Vector<int>>
+    void SetStreams(StreamsT&& value) { m_streamsHasBeenSet = true; m_streams = std::forward<StreamsT>(value); }
+    template<typename StreamsT = Aws::Vector<int>>
+    VideoSelector& WithStreams(StreamsT&& value) { SetStreams(std::forward<StreamsT>(value)); return *this;}
+    inline VideoSelector& AddStreams(int value) { m_streamsHasBeenSet = true; m_streams.push_back(value); return *this; }
+    ///@}
   private:
 
     AlphaBehavior m_alphaBehavior{AlphaBehavior::NOT_SET};
@@ -259,6 +290,12 @@ namespace Model
 
     InputSampleRange m_sampleRange{InputSampleRange::NOT_SET};
     bool m_sampleRangeHasBeenSet = false;
+
+    VideoSelectorType m_selectorType{VideoSelectorType::NOT_SET};
+    bool m_selectorTypeHasBeenSet = false;
+
+    Aws::Vector<int> m_streams;
+    bool m_streamsHasBeenSet = false;
   };
 
 } // namespace Model

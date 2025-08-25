@@ -16,7 +16,7 @@ namespace Aws
 namespace SageMakerRuntime
 {
   /**
-   * <p> The Amazon SageMaker runtime API. </p>
+   * <p> The Amazon SageMaker AI runtime API. </p>
    */
   class AWS_SAGEMAKERRUNTIME_API SageMakerRuntimeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SageMakerRuntimeClient>
   {
@@ -77,16 +77,16 @@ namespace SageMakerRuntime
         virtual ~SageMakerRuntimeClient();
 
         /**
-         * <p>After you deploy a model into production using Amazon SageMaker hosting
+         * <p>After you deploy a model into production using Amazon SageMaker AI hosting
          * services, your client applications use this API to get inferences from the model
-         * hosted at the specified endpoint. </p> <p>For an overview of Amazon SageMaker,
-         * see <a
+         * hosted at the specified endpoint. </p> <p>For an overview of Amazon SageMaker
+         * AI, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
-         * Works</a>. </p> <p>Amazon SageMaker strips all POST headers except those
-         * supported by the API. Amazon SageMaker might add additional headers. You should
-         * not rely on the behavior of headers outside those enumerated in the request
-         * syntax. </p> <p>Calls to <code>InvokeEndpoint</code> are authenticated by using
-         * Amazon Web Services Signature Version 4. For information, see <a
+         * Works</a>. </p> <p>Amazon SageMaker AI strips all POST headers except those
+         * supported by the API. Amazon SageMaker AI might add additional headers. You
+         * should not rely on the behavior of headers outside those enumerated in the
+         * request syntax. </p> <p>Calls to <code>InvokeEndpoint</code> are authenticated
+         * by using Amazon Web Services Signature Version 4. For information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
          * Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API
          * Reference</i>.</p> <p>A customer's model containers must respond to requests
@@ -94,7 +94,7 @@ namespace SageMakerRuntime
          * seconds before responding to invocations. If your model is going to take 50-60
          * seconds of processing time, the SDK socket timeout should be set to be 70
          * seconds.</p>  <p>Endpoints are scoped to an individual account, and are
-         * not public. The URL does not contain the account ID, but Amazon SageMaker
+         * not public. The URL does not contain the account ID, but Amazon SageMaker AI
          * determines the account ID from the authentication token that is supplied by the
          * caller.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpoint">AWS
@@ -121,16 +121,16 @@ namespace SageMakerRuntime
         }
 
         /**
-         * <p>After you deploy a model into production using Amazon SageMaker hosting
+         * <p>After you deploy a model into production using Amazon SageMaker AI hosting
          * services, your client applications use this API to get inferences from the model
          * hosted at the specified endpoint in an asynchronous manner.</p> <p>Inference
          * requests sent to this API are enqueued for asynchronous processing. The
          * processing of the inference request may or may not complete before you receive a
          * response from this API. The response from this API will not contain the result
          * of the inference request but contain information about where you can locate
-         * it.</p> <p>Amazon SageMaker strips all POST headers except those supported by
-         * the API. Amazon SageMaker might add additional headers. You should not rely on
-         * the behavior of headers outside those enumerated in the request syntax. </p>
+         * it.</p> <p>Amazon SageMaker AI strips all POST headers except those supported by
+         * the API. Amazon SageMaker AI might add additional headers. You should not rely
+         * on the behavior of headers outside those enumerated in the request syntax. </p>
          * <p>Calls to <code>InvokeEndpointAsync</code> are authenticated by using Amazon
          * Web Services Signature Version 4. For information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
@@ -163,23 +163,23 @@ namespace SageMakerRuntime
          * <p>Invokes a model at the specified endpoint to return the inference response as
          * a stream. The inference stream provides the response payload incrementally as a
          * series of parts. Before you can get an inference stream, you must have access to
-         * a model that's deployed using Amazon SageMaker hosting services, and the
+         * a model that's deployed using Amazon SageMaker AI hosting services, and the
          * container for that model must support inference streaming.</p> <p>For more
          * information that can help you use this API, see the following sections in the
-         * <i>Amazon SageMaker Developer Guide</i>:</p> <ul> <li> <p>For information about
-         * how to add streaming support to a model, see <a
+         * <i>Amazon SageMaker AI Developer Guide</i>:</p> <ul> <li> <p>For information
+         * about how to add streaming support to a model, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-code-how-containe-serves-requests">How
          * Containers Serve Requests</a>.</p> </li> <li> <p>For information about how to
          * process the streaming response, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints-test-endpoints.html">Invoke
          * real-time endpoints</a>.</p> </li> </ul> <p>Before you can use this operation,
          * your IAM permissions must allow the <code>sagemaker:InvokeEndpoint</code>
-         * action. For more information about Amazon SageMaker actions for IAM policies,
+         * action. For more information about Amazon SageMaker AI actions for IAM policies,
          * see <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html">Actions,
-         * resources, and condition keys for Amazon SageMaker</a> in the <i>IAM Service
-         * Authorization Reference</i>.</p> <p>Amazon SageMaker strips all POST headers
-         * except those supported by the API. Amazon SageMaker might add additional
+         * resources, and condition keys for Amazon SageMaker AI</a> in the <i>IAM Service
+         * Authorization Reference</i>.</p> <p>Amazon SageMaker AI strips all POST headers
+         * except those supported by the API. Amazon SageMaker AI might add additional
          * headers. You should not rely on the behavior of headers outside those enumerated
          * in the request syntax. </p> <p>Calls to
          * <code>InvokeEndpointWithResponseStream</code> are authenticated by using Amazon

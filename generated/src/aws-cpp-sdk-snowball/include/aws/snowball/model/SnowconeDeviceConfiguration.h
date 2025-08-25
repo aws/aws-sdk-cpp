@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the device configuration for an Snowcone job.</p><p><h3>See
+   * <p>Specifies the device configuration for an Snowball Edge job.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/SnowconeDeviceConfiguration">AWS
    * API Reference</a></p>
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Configures the wireless connection for the Snowcone device.</p>
+     * <p>Configures the wireless connection for the Snowball Edge device.</p>
      */
     inline const WirelessConnection& GetWirelessConnection() const { return m_wirelessConnection; }
     inline bool WirelessConnectionHasBeenSet() const { return m_wirelessConnectionHasBeenSet; }

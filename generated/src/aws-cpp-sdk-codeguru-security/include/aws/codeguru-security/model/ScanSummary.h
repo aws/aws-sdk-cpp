@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/codeguru-security/CodeGuruSecurity_EXPORTS.h>
+#include <aws/codeguru-security/model/ScanState.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/codeguru-security/model/ScanState.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The state of the scan. A scan can be <code>In Progress</code>,
+     * <code>Complete</code>, or <code>Failed</code>. </p>
+     */
+    inline ScanState GetScanState() const { return m_scanState; }
+    inline bool ScanStateHasBeenSet() const { return m_scanStateHasBeenSet; }
+    inline void SetScanState(ScanState value) { m_scanStateHasBeenSet = true; m_scanState = value; }
+    inline ScanSummary& WithScanState(ScanState value) { SetScanState(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p> The time when the scan was created. </p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -53,14 +64,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier for the scan run. </p>
+     * <p>The time the scan was last updated. A scan is updated when it is re-run.</p>
      */
-    inline const Aws::String& GetRunId() const { return m_runId; }
-    inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
-    template<typename RunIdT = Aws::String>
-    void SetRunId(RunIdT&& value) { m_runIdHasBeenSet = true; m_runId = std::forward<RunIdT>(value); }
-    template<typename RunIdT = Aws::String>
-    ScanSummary& WithRunId(RunIdT&& value) { SetRunId(std::forward<RunIdT>(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    ScanSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,6 +88,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The identifier for the scan run. </p>
+     */
+    inline const Aws::String& GetRunId() const { return m_runId; }
+    inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
+    template<typename RunIdT = Aws::String>
+    void SetRunId(RunIdT&& value) { m_runIdHasBeenSet = true; m_runId = std::forward<RunIdT>(value); }
+    template<typename RunIdT = Aws::String>
+    ScanSummary& WithRunId(RunIdT&& value) { SetRunId(std::forward<RunIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ARN for the scan name.</p>
      */
     inline const Aws::String& GetScanNameArn() const { return m_scanNameArn; }
@@ -86,48 +109,25 @@ namespace Model
     template<typename ScanNameArnT = Aws::String>
     ScanSummary& WithScanNameArn(ScanNameArnT&& value) { SetScanNameArn(std::forward<ScanNameArnT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The state of the scan. A scan can be <code>In Progress</code>,
-     * <code>Complete</code>, or <code>Failed</code>. </p>
-     */
-    inline ScanState GetScanState() const { return m_scanState; }
-    inline bool ScanStateHasBeenSet() const { return m_scanStateHasBeenSet; }
-    inline void SetScanState(ScanState value) { m_scanStateHasBeenSet = true; m_scanState = value; }
-    inline ScanSummary& WithScanState(ScanState value) { SetScanState(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The time the scan was last updated. A scan is updated when it is re-run.</p>
-     */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
-    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    template<typename UpdatedAtT = Aws::Utils::DateTime>
-    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
-    template<typename UpdatedAtT = Aws::Utils::DateTime>
-    ScanSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
-
-    Aws::String m_runId;
-    bool m_runIdHasBeenSet = false;
-
-    Aws::String m_scanName;
-    bool m_scanNameHasBeenSet = false;
-
-    Aws::String m_scanNameArn;
-    bool m_scanNameArnHasBeenSet = false;
 
     ScanState m_scanState{ScanState::NOT_SET};
     bool m_scanStateHasBeenSet = false;
 
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
+
     Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
+
+    Aws::String m_scanName;
+    bool m_scanNameHasBeenSet = false;
+
+    Aws::String m_runId;
+    bool m_runIdHasBeenSet = false;
+
+    Aws::String m_scanNameArn;
+    bool m_scanNameArnHasBeenSet = false;
   };
 
 } // namespace Model

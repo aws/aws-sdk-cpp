@@ -165,6 +165,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The IPv6 address assigned to the client connection when using a dual-stack
+     * Client VPN endpoint. This field is only populated when the endpoint is
+     * configured for dual-stack addressing, and the client is using IPv6 for
+     * connectivity.</p>
+     */
+    inline const Aws::String& GetClientIpv6Address() const { return m_clientIpv6Address; }
+    inline bool ClientIpv6AddressHasBeenSet() const { return m_clientIpv6AddressHasBeenSet; }
+    template<typename ClientIpv6AddressT = Aws::String>
+    void SetClientIpv6Address(ClientIpv6AddressT&& value) { m_clientIpv6AddressHasBeenSet = true; m_clientIpv6Address = std::forward<ClientIpv6AddressT>(value); }
+    template<typename ClientIpv6AddressT = Aws::String>
+    ClientVpnConnection& WithClientIpv6Address(ClientIpv6AddressT&& value) { SetClientIpv6Address(std::forward<ClientIpv6AddressT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The common name associated with the client. This is either the name of the
      * client certificate, or the Active Directory user name.</p>
      */
@@ -245,6 +260,9 @@ namespace Model
 
     Aws::String m_clientIp;
     bool m_clientIpHasBeenSet = false;
+
+    Aws::String m_clientIpv6Address;
+    bool m_clientIpv6AddressHasBeenSet = false;
 
     Aws::String m_commonName;
     bool m_commonNameHasBeenSet = false;

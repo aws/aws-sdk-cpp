@@ -25,6 +25,7 @@ namespace Aws
         static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
         static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
         static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
+        static const int MOVING_HASH = HashingUtils::HashString("MOVING");
 
 
         ProjectStatus GetProjectStatusForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == UPDATE_FAILED_HASH)
           {
             return ProjectStatus::UPDATE_FAILED;
+          }
+          else if (hashCode == MOVING_HASH)
+          {
+            return ProjectStatus::MOVING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +81,8 @@ namespace Aws
             return "UPDATING";
           case ProjectStatus::UPDATE_FAILED:
             return "UPDATE_FAILED";
+          case ProjectStatus::MOVING:
+            return "MOVING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

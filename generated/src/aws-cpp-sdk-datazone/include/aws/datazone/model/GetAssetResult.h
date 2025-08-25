@@ -142,6 +142,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The restricted glossary terms attached to an asset.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetGovernedGlossaryTerms() const { return m_governedGlossaryTerms; }
+    template<typename GovernedGlossaryTermsT = Aws::Vector<Aws::String>>
+    void SetGovernedGlossaryTerms(GovernedGlossaryTermsT&& value) { m_governedGlossaryTermsHasBeenSet = true; m_governedGlossaryTerms = std::forward<GovernedGlossaryTermsT>(value); }
+    template<typename GovernedGlossaryTermsT = Aws::Vector<Aws::String>>
+    GetAssetResult& WithGovernedGlossaryTerms(GovernedGlossaryTermsT&& value) { SetGovernedGlossaryTerms(std::forward<GovernedGlossaryTermsT>(value)); return *this;}
+    template<typename GovernedGlossaryTermsT = Aws::String>
+    GetAssetResult& AddGovernedGlossaryTerms(GovernedGlossaryTermsT&& value) { m_governedGlossaryTermsHasBeenSet = true; m_governedGlossaryTerms.emplace_back(std::forward<GovernedGlossaryTermsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the asset.</p>
      */
     inline const Aws::String& GetId() const { return m_id; }
@@ -280,6 +293,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_glossaryTerms;
     bool m_glossaryTermsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_governedGlossaryTerms;
+    bool m_governedGlossaryTermsHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
