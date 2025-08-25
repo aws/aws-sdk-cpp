@@ -115,6 +115,11 @@ S3ExpressIdentity DefaultS3ExpressIdentityProvider::GetS3ExpressIdentity(const s
     return identity;
 }
 
+S3ExpressIdentity DefaultS3ExpressIdentityProvider::GetS3ExpressIdentity(Aws::Auth::CredentialsResolutionContext& context, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) {
+    AWS_UNREFERENCED_PARAM(context);
+    return GetS3ExpressIdentity(serviceSpecificParameters);
+}
+
 Aws::${serviceNamespace}::DefaultAsyncS3ExpressIdentityProvider::DefaultAsyncS3ExpressIdentityProvider(
     const ${metadata.classNamePrefix}Client &s3Client,
     std::chrono::minutes refreshPeriod) :
@@ -190,6 +195,11 @@ S3ExpressIdentity DefaultAsyncS3ExpressIdentityProvider::GetS3ExpressIdentity(co
             std::chrono::milliseconds(identity.getExpiration().Millis() - Aws::Utils::DateTime::Now().Millis()));
     }
     return identity;
+}
+
+S3ExpressIdentity DefaultAsyncS3ExpressIdentityProvider::GetS3ExpressIdentity(Aws::Auth::CredentialsResolutionContext& context, const std::shared_ptr<ServiceSpecificParameters> &serviceSpecificParameters) {
+    AWS_UNREFERENCED_PARAM(context);
+    return GetS3ExpressIdentity(serviceSpecificParameters);
 }
 
 void DefaultAsyncS3ExpressIdentityProvider::threadSafeKeyEmpty() {

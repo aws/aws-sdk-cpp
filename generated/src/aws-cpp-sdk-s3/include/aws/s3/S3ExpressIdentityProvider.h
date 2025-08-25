@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/ConcurrentCache.h>
 #include <aws/core/auth/signer/AWSAuthSignerBase.h>
+#include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/s3/S3ExpressIdentity.h>
 #include <smithy/identity/resolver/AwsIdentityResolverBase.h>
 #include <thread>
@@ -27,6 +28,12 @@ namespace Aws {
 
             virtual S3ExpressIdentity
             GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) = 0;
+
+            virtual S3ExpressIdentity
+            GetS3ExpressIdentity(Aws::Auth::CredentialsResolutionContext& context, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) {
+                AWS_UNREFERENCED_PARAM(context);
+                return GetS3ExpressIdentity(serviceSpecificParameters);
+            }
 
             ResolveIdentityFutureOutcome
             getIdentity(const IdentityProperties& identityProperties, const AdditionalParameters& additionalParameters) override;
@@ -60,6 +67,8 @@ namespace Aws {
 
             S3ExpressIdentity GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) override;
 
+            S3ExpressIdentity GetS3ExpressIdentity(Aws::Auth::CredentialsResolutionContext& context, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) override;
+
         private:
             mutable std::shared_ptr<Aws::Utils::ConcurrentCache<Aws::String, S3ExpressIdentity>> m_credentialsCache;
         };
@@ -81,6 +90,8 @@ namespace Aws {
             virtual ~DefaultAsyncS3ExpressIdentityProvider() override;
 
             S3ExpressIdentity GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) override;
+
+            S3ExpressIdentity GetS3ExpressIdentity(Aws::Auth::CredentialsResolutionContext& context, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) override;
 
         private:
             void refreshIdentities(std::chrono::minutes refreshPeriod);

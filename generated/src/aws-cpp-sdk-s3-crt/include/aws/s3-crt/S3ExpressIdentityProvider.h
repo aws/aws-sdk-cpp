@@ -28,7 +28,7 @@ namespace Aws {
 
             virtual S3ExpressIdentity
             GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) = 0;
-            
+
             virtual S3ExpressIdentity
             GetS3ExpressIdentity(Aws::Auth::CredentialsResolutionContext& context, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) {
                 AWS_UNREFERENCED_PARAM(context);
@@ -66,7 +66,7 @@ namespace Aws {
             virtual ~DefaultS3ExpressIdentityProvider() override = default;
 
             S3ExpressIdentity GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) override;
-            
+
             S3ExpressIdentity GetS3ExpressIdentity(Aws::Auth::CredentialsResolutionContext& context, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) override;
 
         private:
@@ -90,7 +90,7 @@ namespace Aws {
             virtual ~DefaultAsyncS3ExpressIdentityProvider() override;
 
             S3ExpressIdentity GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) override;
-            
+
             S3ExpressIdentity GetS3ExpressIdentity(Aws::Auth::CredentialsResolutionContext& context, const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) override;
 
         private:
