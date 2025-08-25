@@ -38,14 +38,14 @@ CborValue& CborValue::operator=(const CborValue& other)
     return *this;
 }
 
-CborValue::CborValue(CborValue&& value) :
+CborValue::CborValue(CborValue&& value) noexcept :
     m_body(std::move(value.m_body))
 {
     auto cursor = Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(m_body.c_str()), m_body.length());
     m_decoder = std::make_shared<CborDecoder>(cursor);
 }
 
-CborValue& CborValue::operator=(CborValue&& other)
+CborValue& CborValue::operator=(CborValue&& other) noexcept
 {
     if (this != &other) {
         m_body = std::move(other.m_body);
