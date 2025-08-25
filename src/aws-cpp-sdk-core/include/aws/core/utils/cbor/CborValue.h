@@ -30,19 +30,34 @@ namespace Aws
               CborValue(Aws::IStream& istream);
 
               /**
+               * Copy constructor.
+               */
+              CborValue(const CborValue& other);
+
+              /**
+               * Copy assignment operator.
+               */
+              CborValue& operator=(const CborValue& other);
+
+              /**
                * Moves the ownership of the CborValue.
                * No copying is performed.
                */
               CborValue(CborValue&& value);
 
+              /**
+               * Move assignment operator.
+               */
+              CborValue& operator=(CborValue&& other);
+
               ~CborValue();
 
-              Aws::UniquePtr<Aws::Crt::Cbor::CborDecoder> GetDecoder() const { return std::move(m_decoder); };
+              std::shared_ptr<Aws::Crt::Cbor::CborDecoder> GetDecoder() const { return m_decoder; };
 
               inline bool WasParseSuccessful() const { return m_decoder != nullptr; };
 
             private:
-              mutable Aws::UniquePtr<Crt::Cbor::CborDecoder> m_decoder;
+              mutable std::shared_ptr<Crt::Cbor::CborDecoder> m_decoder;
               Aws::String m_body;
             };
         } //Cbor
