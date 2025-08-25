@@ -4,57 +4,59 @@
  */
 
 #pragma once
-#if !defined(AWS_JSON_CLIENT_H)
-#define AWS_JSON_CLIENT_H
+#if !defined(AWS_CBOR_CLIENT_H)
+#define AWS_CBOR_CLIENT_H
 
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/client/AWSProtocolClient.h>
+#include <aws/crt/cbor/Cbor.h>
+#include <aws/core/utils/cbor/CborValue.h>
 
 namespace Aws
 {
     namespace Utils
     {
-        namespace Json
+        namespace Cbor
         {
-            class JsonValue;
-        } // namespace Json
+            class CborValue;
+        } // namespace Cbor
     } // namespace Utils
 
     namespace Client
     {
-        using JsonOutcome = Utils::Outcome<AmazonWebServiceResult<Utils::Json::JsonValue>, AWSError<CoreErrors>>;
+        using RpcV2CborOutcome = Utils::Outcome<AmazonWebServiceResult<Utils::Cbor::CborValue>, AWSError<CoreErrors>>;
 
         template <typename OutcomeT, typename ClientT, typename AWSEndpointT, typename RequestT, typename HandlerT>
         class BidirectionalEventStreamingTask;
 
         /**
-         *  AWSClient that handles marshalling json response bodies. You would inherit from this class
-         *  to create a client that uses Json as its payload format.
+         *  AWSClient that handles marshalling cbor response bodies. You would inherit from this class
+         *  to create a client that uses Cbor as its payload format.
          */
-        class AWS_CORE_API AWSJsonClient : public AWSProtocolClient<JsonOutcome, Utils::Json::JsonValue>
+        class AWS_CORE_API AWSRpcV2CborClient : public AWSProtocolClient<RpcV2CborOutcome, Utils::Cbor::CborValue>
         {
         public:
-            typedef AWSProtocolClient<JsonOutcome, Utils::Json::JsonValue> BASECLASS;
+            typedef AWSProtocolClient<RpcV2CborOutcome, Utils::Cbor::CborValue> BASECLASS;
 
             /**
              * Simply calls AWSClient constructor.
              */
-            AWSJsonClient(const Aws::Client::ClientConfiguration& configuration,
+            AWSRpcV2CborClient(const Aws::Client::ClientConfiguration& configuration,
                 const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
                 const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller);
 
             /**
              * Simply calls AWSClient constructor.
              */
-            AWSJsonClient(const Aws::Client::ClientConfiguration& configuration,
+            AWSRpcV2CborClient(const Aws::Client::ClientConfiguration& configuration,
                     const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
                     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller);
 
-            virtual ~AWSJsonClient() = default;
+            virtual ~AWSRpcV2CborClient() = default;
 
         protected:
             template <typename OutcomeT, typename ClientT, typename AWSEndpointT, typename RequestT, typename HandlerT>
-            friend class BidirectionalEventStreamingTask; // allow BidirectionalEventStreamingTask to MakeRequests
+            friend class BidirectionalEventStreamingTask;
 
         private:
             AWSError<CoreErrors> CreateParseError() const override;
@@ -63,4 +65,4 @@ namespace Aws
     } // namespace Client
 } // namespace Aws
 
-#endif // !defined(AWS_JSON_CLIENT_H)
+#endif // !defined(AWS_CBOR_CLIENT_H)
