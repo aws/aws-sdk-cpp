@@ -10,13 +10,13 @@ GREEN = '\033[32m'
 BOLD = '\033[1m'
 RESET = '\033[0m'
 
-def should_run_service(service):
+def should_run_service(services):
     service_ids = os.environ.get('AWS_SMOKE_TEST_SERVICE_IDS', '')
     print("AWS_SMOKE_TEST_SERVICE_IDS:",service_ids)
     if not service_ids:
-        return True
+        return services
     allowed_services = service_ids.split(',')
-    return service in allowed_services
+    return [service for service in services if service in allowed_services]
 
 def main():
     parser = argparse.ArgumentParser(description='Run smoke tests')
@@ -41,9 +41,9 @@ def main():
     total_tests = 0
     all_results = defaultdict(list)
 
+    services=should_run_service(services)
+
     for service in services:
-        if not should_run_service(service):
-            continue
         executable = os.path.join(smoke_tests_dir, service, f"{service}-smoke-tests")
         
         with tempfile.NamedTemporaryFile(mode='w+', suffix='.json', delete=False) as temp_file:
