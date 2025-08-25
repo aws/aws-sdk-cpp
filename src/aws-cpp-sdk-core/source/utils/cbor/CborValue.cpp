@@ -39,20 +39,20 @@ CborValue& CborValue::operator=(const CborValue& other)
 }
 
 CborValue::CborValue(CborValue&& value) :
-    m_body(std::move(value.m_body)),
-    m_decoder(std::move(value.m_decoder))
+    m_body(std::move(value.m_body))
 {
+    auto cursor = Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(m_body.c_str()), m_body.length());
+    m_decoder = std::make_shared<CborDecoder>(cursor);
 }
 
 CborValue& CborValue::operator=(CborValue&& other)
 {
     if (this != &other) {
         m_body = std::move(other.m_body);
-        m_decoder = std::move(other.m_decoder);
+        auto cursor = Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(m_body.c_str()), m_body.length());
+        m_decoder = std::make_shared<CborDecoder>(cursor);
     }
     return *this;
 }
 
-CborValue::~CborValue()
-{
-}
+CborValue::~CborValue() = default;

@@ -43,12 +43,12 @@ namespace Aws
                * Moves the ownership of the CborValue.
                * No copying is performed.
                */
-              CborValue(CborValue&& value);
+              CborValue(CborValue&& value) noexcept;
 
               /**
                * Move assignment operator.
                */
-              CborValue& operator=(CborValue&& other);
+              CborValue& operator=(CborValue&& other) noexcept;
 
               ~CborValue();
 
