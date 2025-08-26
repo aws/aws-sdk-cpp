@@ -41,6 +41,9 @@ TEST_F(RekognitionSmokeTestSuite, ListCollectionsSuccess )
     
     ListCollectionsRequest input;
     auto outcome = clientSp->ListCollections(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "ListCollections failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

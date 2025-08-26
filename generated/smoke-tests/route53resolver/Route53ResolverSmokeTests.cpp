@@ -41,6 +41,9 @@ TEST_F(Route53ResolverSmokeTestSuite, ListResolverEndpointsSuccess )
     
     ListResolverEndpointsRequest input;
     auto outcome = clientSp->ListResolverEndpoints(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "ListResolverEndpoints failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

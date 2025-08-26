@@ -43,6 +43,9 @@ TEST_F(CloudWatchLogsSmokeTestSuite, DescribeLogGroupsSuccess )
     
     DescribeLogGroupsRequest input;
     auto outcome = clientSp->DescribeLogGroups(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "DescribeLogGroups failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 TEST_F(CloudWatchLogsSmokeTestSuite, GetLogEventsFailure )
@@ -58,6 +61,9 @@ TEST_F(CloudWatchLogsSmokeTestSuite, GetLogEventsFailure )
     input.SetLogGroupName("fakegroup");
     input.SetLogStreamName("fakestream");
     auto outcome = clientSp->GetLogEvents(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "GetLogEvents failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 }

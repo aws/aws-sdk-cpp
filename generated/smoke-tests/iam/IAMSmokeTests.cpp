@@ -43,6 +43,9 @@ TEST_F(IAMSmokeTestSuite, GetUserFailure )
     GetUserRequest input;
     input.SetUserName("fake_user");
     auto outcome = clientSp->GetUser(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "GetUser failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 TEST_F(IAMSmokeTestSuite, ListUsersSuccess )
@@ -56,6 +59,9 @@ TEST_F(IAMSmokeTestSuite, ListUsersSuccess )
     
     ListUsersRequest input;
     auto outcome = clientSp->ListUsers(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "ListUsers failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

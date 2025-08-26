@@ -43,6 +43,9 @@ TEST_F(Route53SmokeTestSuite, GetHostedZoneFailure )
     GetHostedZoneRequest input;
     input.SetId("fake-zone");
     auto outcome = clientSp->GetHostedZone(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "GetHostedZone failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 TEST_F(Route53SmokeTestSuite, ListHostedZonesSuccess )
@@ -56,6 +59,9 @@ TEST_F(Route53SmokeTestSuite, ListHostedZonesSuccess )
     
     ListHostedZonesRequest input;
     auto outcome = clientSp->ListHostedZones(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "ListHostedZones failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

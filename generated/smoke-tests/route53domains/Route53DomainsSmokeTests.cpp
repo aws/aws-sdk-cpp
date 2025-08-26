@@ -43,6 +43,9 @@ TEST_F(Route53DomainsSmokeTestSuite, GetDomainDetailFailure )
     GetDomainDetailRequest input;
     input.SetDomainName("fake-domain-name");
     auto outcome = clientSp->GetDomainDetail(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "GetDomainDetail failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 TEST_F(Route53DomainsSmokeTestSuite, ListDomainsSuccess )
@@ -56,6 +59,9 @@ TEST_F(Route53DomainsSmokeTestSuite, ListDomainsSuccess )
     
     ListDomainsRequest input;
     auto outcome = clientSp->ListDomains(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "ListDomains failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

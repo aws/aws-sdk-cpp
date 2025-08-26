@@ -52,6 +52,9 @@ TEST_F(EC2SmokeTestSuite, DescribeInstancesFailure )
     DescribeInstancesRequest input;
     input.SetInstanceIds(GetdescribeinstancesElemLvl0Idx0());
     auto outcome = clientSp->DescribeInstances(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "DescribeInstances failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 TEST_F(EC2SmokeTestSuite, DescribeRegionsSuccess )
@@ -65,6 +68,9 @@ TEST_F(EC2SmokeTestSuite, DescribeRegionsSuccess )
     
     DescribeRegionsRequest input;
     auto outcome = clientSp->DescribeRegions(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "DescribeRegions failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

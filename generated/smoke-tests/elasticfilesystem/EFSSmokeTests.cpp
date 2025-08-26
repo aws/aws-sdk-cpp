@@ -41,6 +41,9 @@ TEST_F(EFSSmokeTestSuite, DescribeFileSystemsSuccess )
     
     DescribeFileSystemsRequest input;
     auto outcome = clientSp->DescribeFileSystems(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "DescribeFileSystems failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

@@ -41,6 +41,9 @@ TEST_F(SESSmokeTestSuite, ListIdentitiesSuccess )
     
     ListIdentitiesRequest input;
     auto outcome = clientSp->ListIdentities(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "ListIdentities failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

@@ -43,6 +43,9 @@ TEST_F(RDSSmokeTestSuite, DescribeDBEngineVersionsSuccess )
     
     DescribeDBEngineVersionsRequest input;
     auto outcome = clientSp->DescribeDBEngineVersions(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "DescribeDBEngineVersions failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 TEST_F(RDSSmokeTestSuite, DescribeDBInstancesFailure )
@@ -57,6 +60,9 @@ TEST_F(RDSSmokeTestSuite, DescribeDBInstancesFailure )
     DescribeDBInstancesRequest input;
     input.SetDBInstanceIdentifier("fake-id");
     auto outcome = clientSp->DescribeDBInstances(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "DescribeDBInstances failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 }

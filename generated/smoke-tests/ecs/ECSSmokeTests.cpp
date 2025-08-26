@@ -41,6 +41,9 @@ TEST_F(ECSSmokeTestSuite, ListClustersSuccess )
     
     ListClustersRequest input;
     auto outcome = clientSp->ListClusters(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "ListClusters failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

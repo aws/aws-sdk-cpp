@@ -42,6 +42,9 @@ TEST_F(DynamoDBSmokeTestSuite, ListTablesSuccess )
     ListTablesRequest input;
     input.SetLimit(1);
     auto outcome = clientSp->ListTables(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "ListTables failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

@@ -41,6 +41,9 @@ TEST_F(SSMSmokeTestSuite, ListDocumentsSuccess )
     
     ListDocumentsRequest input;
     auto outcome = clientSp->ListDocuments(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "ListDocuments failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

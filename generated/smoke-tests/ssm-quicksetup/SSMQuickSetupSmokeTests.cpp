@@ -43,6 +43,9 @@ TEST_F(SSMQuickSetupSmokeTestSuite, GetConfigurationManagerFailure )
     GetConfigurationManagerRequest input;
     input.SetManagerArn("arn:aws:ssm-quicksetup:us-east-1:602768233532:configuration-manager/7cac1a1b-64a9-4c9a-97e8-8c68928b8f13");
     auto outcome = clientSp->GetConfigurationManager(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "GetConfigurationManager failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 TEST_F(SSMQuickSetupSmokeTestSuite, ListConfigurationManagersSuccess )
@@ -56,6 +59,9 @@ TEST_F(SSMQuickSetupSmokeTestSuite, ListConfigurationManagersSuccess )
     
     ListConfigurationManagersRequest input;
     auto outcome = clientSp->ListConfigurationManagers(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "ListConfigurationManagers failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

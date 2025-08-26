@@ -41,6 +41,9 @@ TEST_F(InvoicingSmokeTestSuite, ListInvoiceUnitsSuccess )
     
     ListInvoiceUnitsRequest input;
     auto outcome = clientSp->ListInvoiceUnits(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "ListInvoiceUnits failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

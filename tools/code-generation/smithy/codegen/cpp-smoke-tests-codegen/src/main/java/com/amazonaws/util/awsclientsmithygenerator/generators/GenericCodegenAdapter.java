@@ -199,7 +199,8 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
         else if (isString(value) && isEnumShape(shape))
         {
             String shapeName = getShapeName(shape);
-            functionName = String.format("{%s::%s}",shapeName,value);
+            String enumValue = getString(value).replace("-", "_");
+            functionName = String.format("%s::%s",shapeName,enumValue);
         }
         else if(isTimestampShape(shape))
         {

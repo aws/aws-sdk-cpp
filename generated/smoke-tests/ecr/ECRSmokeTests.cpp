@@ -43,6 +43,9 @@ TEST_F(ECRSmokeTestSuite, DescribeRepositoriesSuccess )
     
     DescribeRepositoriesRequest input;
     auto outcome = clientSp->DescribeRepositories(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "DescribeRepositories failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 TEST_F(ECRSmokeTestSuite, ListImagesFailure )
@@ -57,6 +60,9 @@ TEST_F(ECRSmokeTestSuite, ListImagesFailure )
     ListImagesRequest input;
     input.SetRepositoryName("not-a-real-repository");
     auto outcome = clientSp->ListImages(input);
+    if (!outcome.IsSuccess()) {
+        std::cout << "ListImages failed: " << outcome.GetError().GetMessage() << std::endl;
+    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 }
