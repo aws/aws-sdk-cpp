@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/connectparticipant/model/Meeting.h>
+#include <aws/connectparticipant/model/WebRTCMeeting.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -18,18 +18,13 @@ namespace ConnectParticipant
 namespace Model
 {
 
-Meeting::Meeting(JsonView jsonValue)
+WebRTCMeeting::WebRTCMeeting(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-Meeting& Meeting::operator =(JsonView jsonValue)
+WebRTCMeeting& WebRTCMeeting::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("MediaRegion"))
-  {
-    m_mediaRegion = jsonValue.GetString("MediaRegion");
-    m_mediaRegionHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("MediaPlacement"))
   {
     m_mediaPlacement = jsonValue.GetObject("MediaPlacement");
@@ -48,15 +43,9 @@ Meeting& Meeting::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Meeting::Jsonize() const
+JsonValue WebRTCMeeting::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_mediaRegionHasBeenSet)
-  {
-   payload.WithString("MediaRegion", m_mediaRegion);
-
-  }
 
   if(m_mediaPlacementHasBeenSet)
   {

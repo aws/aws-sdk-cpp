@@ -37,6 +37,7 @@ namespace Aws
         static const int fpga_image_HASH = HashingUtils::HashString("fpga-image");
         static const int host_reservation_HASH = HashingUtils::HashString("host-reservation");
         static const int image_HASH = HashingUtils::HashString("image");
+        static const int image_usage_report_HASH = HashingUtils::HashString("image-usage-report");
         static const int import_image_task_HASH = HashingUtils::HashString("import-image-task");
         static const int import_snapshot_task_HASH = HashingUtils::HashString("import-snapshot-task");
         static const int instance_HASH = HashingUtils::HashString("instance");
@@ -188,6 +189,10 @@ namespace Aws
           else if (hashCode == image_HASH)
           {
             return ResourceType::image;
+          }
+          else if (hashCode == image_usage_report_HASH)
+          {
+            return ResourceType::image_usage_report;
           }
           else if (hashCode == import_image_task_HASH)
           {
@@ -555,6 +560,8 @@ namespace Aws
             return "host-reservation";
           case ResourceType::image:
             return "image";
+          case ResourceType::image_usage_report:
+            return "image-usage-report";
           case ResourceType::import_image_task:
             return "import-image-task";
           case ResourceType::import_snapshot_task:

@@ -31,6 +31,7 @@ namespace Aws
         static const int PracticeBlockingAlarmsRed_HASH = HashingUtils::HashString("PracticeBlockingAlarmsRed");
         static const int PracticeInBlockedDates_HASH = HashingUtils::HashString("PracticeInBlockedDates");
         static const int PracticeInBlockedWindows_HASH = HashingUtils::HashString("PracticeInBlockedWindows");
+        static const int PracticeOutsideAllowedWindows_HASH = HashingUtils::HashString("PracticeOutsideAllowedWindows");
 
 
         ConflictExceptionReason GetConflictExceptionReasonForName(const Aws::String& name)
@@ -80,6 +81,10 @@ namespace Aws
           {
             return ConflictExceptionReason::PracticeInBlockedWindows;
           }
+          else if (hashCode == PracticeOutsideAllowedWindows_HASH)
+          {
+            return ConflictExceptionReason::PracticeOutsideAllowedWindows;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -118,6 +123,8 @@ namespace Aws
             return "PracticeInBlockedDates";
           case ConflictExceptionReason::PracticeInBlockedWindows:
             return "PracticeInBlockedWindows";
+          case ConflictExceptionReason::PracticeOutsideAllowedWindows:
+            return "PracticeOutsideAllowedWindows";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

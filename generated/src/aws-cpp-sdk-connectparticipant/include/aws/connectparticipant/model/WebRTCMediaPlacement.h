@@ -26,15 +26,15 @@ namespace Model
   /**
    * <p>A set of endpoints used by clients to connect to the media service group for
    * an Amazon Chime SDK meeting.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/MediaPlacement">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/WebRTCMediaPlacement">AWS
    * API Reference</a></p>
    */
-  class MediaPlacement
+  class WebRTCMediaPlacement
   {
   public:
-    AWS_CONNECTPARTICIPANT_API MediaPlacement() = default;
-    AWS_CONNECTPARTICIPANT_API MediaPlacement(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CONNECTPARTICIPANT_API MediaPlacement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTPARTICIPANT_API WebRTCMediaPlacement() = default;
+    AWS_CONNECTPARTICIPANT_API WebRTCMediaPlacement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTPARTICIPANT_API WebRTCMediaPlacement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTPARTICIPANT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -47,7 +47,7 @@ namespace Model
     template<typename AudioHostUrlT = Aws::String>
     void SetAudioHostUrl(AudioHostUrlT&& value) { m_audioHostUrlHasBeenSet = true; m_audioHostUrl = std::forward<AudioHostUrlT>(value); }
     template<typename AudioHostUrlT = Aws::String>
-    MediaPlacement& WithAudioHostUrl(AudioHostUrlT&& value) { SetAudioHostUrl(std::forward<AudioHostUrlT>(value)); return *this;}
+    WebRTCMediaPlacement& WithAudioHostUrl(AudioHostUrlT&& value) { SetAudioHostUrl(std::forward<AudioHostUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +59,7 @@ namespace Model
     template<typename AudioFallbackUrlT = Aws::String>
     void SetAudioFallbackUrl(AudioFallbackUrlT&& value) { m_audioFallbackUrlHasBeenSet = true; m_audioFallbackUrl = std::forward<AudioFallbackUrlT>(value); }
     template<typename AudioFallbackUrlT = Aws::String>
-    MediaPlacement& WithAudioFallbackUrl(AudioFallbackUrlT&& value) { SetAudioFallbackUrl(std::forward<AudioFallbackUrlT>(value)); return *this;}
+    WebRTCMediaPlacement& WithAudioFallbackUrl(AudioFallbackUrlT&& value) { SetAudioFallbackUrl(std::forward<AudioFallbackUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,19 +71,7 @@ namespace Model
     template<typename SignalingUrlT = Aws::String>
     void SetSignalingUrl(SignalingUrlT&& value) { m_signalingUrlHasBeenSet = true; m_signalingUrl = std::forward<SignalingUrlT>(value); }
     template<typename SignalingUrlT = Aws::String>
-    MediaPlacement& WithSignalingUrl(SignalingUrlT&& value) { SetSignalingUrl(std::forward<SignalingUrlT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The turn control URL.</p>
-     */
-    inline const Aws::String& GetTurnControlUrl() const { return m_turnControlUrl; }
-    inline bool TurnControlUrlHasBeenSet() const { return m_turnControlUrlHasBeenSet; }
-    template<typename TurnControlUrlT = Aws::String>
-    void SetTurnControlUrl(TurnControlUrlT&& value) { m_turnControlUrlHasBeenSet = true; m_turnControlUrl = std::forward<TurnControlUrlT>(value); }
-    template<typename TurnControlUrlT = Aws::String>
-    MediaPlacement& WithTurnControlUrl(TurnControlUrlT&& value) { SetTurnControlUrl(std::forward<TurnControlUrlT>(value)); return *this;}
+    WebRTCMediaPlacement& WithSignalingUrl(SignalingUrlT&& value) { SetSignalingUrl(std::forward<SignalingUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,7 +83,7 @@ namespace Model
     template<typename EventIngestionUrlT = Aws::String>
     void SetEventIngestionUrl(EventIngestionUrlT&& value) { m_eventIngestionUrlHasBeenSet = true; m_eventIngestionUrl = std::forward<EventIngestionUrlT>(value); }
     template<typename EventIngestionUrlT = Aws::String>
-    MediaPlacement& WithEventIngestionUrl(EventIngestionUrlT&& value) { SetEventIngestionUrl(std::forward<EventIngestionUrlT>(value)); return *this;}
+    WebRTCMediaPlacement& WithEventIngestionUrl(EventIngestionUrlT&& value) { SetEventIngestionUrl(std::forward<EventIngestionUrlT>(value)); return *this;}
     ///@}
   private:
 
@@ -107,9 +95,6 @@ namespace Model
 
     Aws::String m_signalingUrl;
     bool m_signalingUrlHasBeenSet = false;
-
-    Aws::String m_turnControlUrl;
-    bool m_turnControlUrlHasBeenSet = false;
 
     Aws::String m_eventIngestionUrl;
     bool m_eventIngestionUrlHasBeenSet = false;

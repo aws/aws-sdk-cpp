@@ -33,6 +33,8 @@ namespace Aws
         static const int FISExperimentUpdateNotAllowed_HASH = HashingUtils::HashString("FISExperimentUpdateNotAllowed");
         static const int AutoshiftUpdateNotAllowed_HASH = HashingUtils::HashString("AutoshiftUpdateNotAllowed");
         static const int UnsupportedPracticeCancelShiftType_HASH = HashingUtils::HashString("UnsupportedPracticeCancelShiftType");
+        static const int InvalidPracticeAllowedWindow_HASH = HashingUtils::HashString("InvalidPracticeAllowedWindow");
+        static const int InvalidPracticeWindows_HASH = HashingUtils::HashString("InvalidPracticeWindows");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
@@ -90,6 +92,14 @@ namespace Aws
           {
             return ValidationExceptionReason::UnsupportedPracticeCancelShiftType;
           }
+          else if (hashCode == InvalidPracticeAllowedWindow_HASH)
+          {
+            return ValidationExceptionReason::InvalidPracticeAllowedWindow;
+          }
+          else if (hashCode == InvalidPracticeWindows_HASH)
+          {
+            return ValidationExceptionReason::InvalidPracticeWindows;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -132,6 +142,10 @@ namespace Aws
             return "AutoshiftUpdateNotAllowed";
           case ValidationExceptionReason::UnsupportedPracticeCancelShiftType:
             return "UnsupportedPracticeCancelShiftType";
+          case ValidationExceptionReason::InvalidPracticeAllowedWindow:
+            return "InvalidPracticeAllowedWindow";
+          case ValidationExceptionReason::InvalidPracticeWindows:
+            return "InvalidPracticeWindows";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
