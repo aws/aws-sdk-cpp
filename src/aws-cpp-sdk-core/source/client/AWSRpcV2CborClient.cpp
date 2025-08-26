@@ -3,47 +3,45 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/client/AWSJsonClient.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/core/client/AWSRpcV2CborClient.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
-#include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/client/RetryStrategy.h>
+#include <aws/core/utils/cbor/CborValue.h>
 
 #include <cassert>
-
 
 using namespace Aws;
 using namespace Aws::Client;
 using namespace Aws::Http;
-using namespace Aws::Utils;
-using namespace Aws::Utils::Json;
+using namespace Aws::Utils::Cbor;
 using namespace smithy::components::tracing;
 
-static const char AWS_JSON_CLIENT_LOG_TAG[] = "AWSJsonClient";
+static const char AWS_CBOR_CLIENT_LOG_TAG[] = "AWSRpcV2CborClient";
 
-AWSJsonClient::AWSJsonClient(const Aws::Client::ClientConfiguration& configuration,
+AWSRpcV2CborClient::AWSRpcV2CborClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
     BASECLASS(configuration, signer, errorMarshaller)
 {
 }
 
-AWSJsonClient::AWSJsonClient(const Aws::Client::ClientConfiguration& configuration,
+AWSRpcV2CborClient::AWSRpcV2CborClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
     BASECLASS(configuration, signerProvider, errorMarshaller)
 {
 }
 
-AWSError<CoreErrors> AWSJsonClient::CreateParseError() const
+AWSError<CoreErrors> AWSRpcV2CborClient::CreateParseError() const
 {
-    return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "Json Parser Error", "Failed to parse JSON response", false);
+    return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "Cbor Parser Error", "Failed to parse CBOR response", false);
 }
 
-const char* AWSJsonClient::GetClientLogTag() const
+const char* AWSRpcV2CborClient::GetClientLogTag() const
 {
-  return AWS_JSON_CLIENT_LOG_TAG;
+  return AWS_CBOR_CLIENT_LOG_TAG;
 }
+
