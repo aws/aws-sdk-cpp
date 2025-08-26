@@ -62,6 +62,7 @@ file(GLOB UTILS_EVENT_HEADERS "include/aws/core/utils/event/*.h")
 file(GLOB UTILS_BASE64_HEADERS "include/aws/core/utils/base64/*.h")
 file(GLOB UTILS_CRYPTO_HEADERS "include/aws/core/utils/crypto/*.h")
 file(GLOB UTILS_JSON_HEADERS "include/aws/core/utils/json/*.h")
+file(GLOB UTILS_CBOR_HEADERS "include/aws/core/utils/cbor/*.h")
 file(GLOB UTILS_THREADING_HEADERS "include/aws/core/utils/threading/*.h")
 file(GLOB UTILS_XML_HEADERS "include/aws/core/utils/xml/*.h")
 file(GLOB UTILS_MEMORY_HEADERS "include/aws/core/utils/memory/*.h")
@@ -115,6 +116,7 @@ file(GLOB UTILS_EVENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/event/*.c
 file(GLOB UTILS_BASE64_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/base64/*.cpp")
 file(GLOB UTILS_CRYPTO_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/*.cpp")
 file(GLOB UTILS_JSON_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/json/*.cpp")
+file(GLOB UTILS_CBOR_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/cbor/*.cpp")
 file(GLOB UTILS_THREADING_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/threading/*.cpp")
 file(GLOB UTILS_XML_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/xml/*.cpp")
 file(GLOB UTILS_LOGGING_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/logging/*.cpp")
@@ -268,6 +270,7 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${UTILS_BASE64_HEADERS}
   ${UTILS_CRYPTO_HEADERS}
   ${UTILS_JSON_HEADERS}
+  ${UTILS_CBOR_HEADERS}
   ${UTILS_THREADING_HEADERS}
   ${UTILS_RETRY_HEADERS}
   ${UTILS_XML_HEADERS}
@@ -348,6 +351,7 @@ file(GLOB AWS_NATIVE_SDK_NON_UNITY_SRC
     ${MONITORING_SOURCE}
     ${UTILS_CRYPTO_FACTORY_SOURCE}
     ${UTILS_JSON_SOURCE}
+    ${UTILS_CBOR_SOURCE}
     ${UTILS_EVENT_SOURCE}
     ${UTILS_SOURCE}
     ${NET_SOURCE}
@@ -406,6 +410,7 @@ if(MSVC)
     source_group("Header Files\\aws\\core\\utils\\event" FILES ${UTILS_EVENT_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\exceptions" FILES ${UTILS_EXCEPTIONS_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\json" FILES ${UTILS_JSON_HEADERS})
+    source_group("Header Files\\aws\\core\\utils\\cbor" FILES ${UTILS_CBOR_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\threading" FILES ${UTILS_THREADING_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\xml" FILES ${UTILS_XML_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\logging" FILES ${UTILS_LOGGING_HEADERS})
@@ -473,6 +478,7 @@ if(MSVC)
     source_group("Source Files\\utils\\event" FILES ${UTILS_EVENT_SOURCE})
     source_group("Source Files\\utils\\exceptions" FILES ${UTILS_EXCEPTIONS_SOURCE})
     source_group("Source Files\\utils\\json" FILES ${UTILS_JSON_SOURCE})
+    source_group("Source Files\\utils\\cbor" FILES ${UTILS_CBOR_SOURCE})
     source_group("Source Files\\utils\\threading" FILES ${UTILS_THREADING_SOURCE})
     source_group("Source Files\\utils\\xml" FILES ${UTILS_XML_SOURCE})
     source_group("Source Files\\utils\\stream" FILES ${UTILS_STREAM_SOURCE})
@@ -684,6 +690,7 @@ install (FILES ${UTILS_EVENT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/
 install (FILES ${UTILS_BASE64_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/base64)
 install (FILES ${UTILS_CRYPTO_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/crypto)
 install (FILES ${UTILS_JSON_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/json)
+install (FILES ${UTILS_CBOR_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/cbor)
 install (FILES ${UTILS_RETRY_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/retry)
 install (FILES ${UTILS_XML_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/xml)
 install (FILES ${UTILS_LOGGING_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/logging)
