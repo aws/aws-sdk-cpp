@@ -66,9 +66,11 @@ namespace Model
      * for practice runs are in UTC. Also, be aware of potential time adjustments that
      * might be required for daylight saving time differences. Separate multiple
      * blocked windows with spaces.</p> <p>For example, say you run business report
-     * summaries three days a week. For this scenario, you might set the following
-     * recurring days and times as blocked windows, for example: <code>MON-20:30-21:30
-     * WED-20:30-21:30 FRI-20:30-21:30</code>.</p>
+     * summaries three days a week. For this scenario, you could set the following
+     * recurring days and times as blocked windows, for example:
+     * <code>Mon:00:00-Mon:10:00 Wed-20:30-Wed:21:30 Fri-20:30-Fri:21:30</code>.</p>
+     *  <p>The <code>blockedWindows</code> have to start and end on the same
+     * day. Windows that span multiple days aren't supported.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetBlockedWindows() const { return m_blockedWindows; }
     inline bool BlockedWindowsHasBeenSet() const { return m_blockedWindowsHasBeenSet; }
@@ -102,10 +104,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>An Amazon CloudWatch alarm that you can specify for zonal autoshift practice
-     * runs. This alarm blocks ARC from starting practice run zonal shifts, and ends a
-     * practice run that's in progress, when the alarm is in an <code>ALARM</code>
-     * state. </p>
+     * <p> <i>Blocking alarms</i> for practice runs are optional alarms that you can
+     * specify that block practice runs when one or more of the alarms is in an
+     * <code>ALARM</code> state.</p>
      */
     inline const Aws::Vector<ControlCondition>& GetBlockingAlarms() const { return m_blockingAlarms; }
     inline bool BlockingAlarmsHasBeenSet() const { return m_blockingAlarmsHasBeenSet; }
@@ -119,14 +120,37 @@ namespace Model
 
     ///@{
     /**
-     * <p>The <i>outcome alarm</i> for practice runs is a required Amazon CloudWatch
-     * alarm that you specify that ends a practice run when the alarm is in an
-     * <code>ALARM</code> state.</p> <p>Configure the alarm to monitor the health of
+     * <p>Optionally, you can allow ARC to start practice runs for specific windows of
+     * days and times. </p> <p>The format for allowed windows is: DAY:HH:SS-DAY:HH:SS.
+     * Keep in mind, when you specify dates, that dates and times for practice runs are
+     * in UTC. Also, be aware of potential time adjustments that might be required for
+     * daylight saving time differences. Separate multiple allowed windows with
+     * spaces.</p> <p>For example, say you want to allow practice runs only on
+     * Wednesdays and Fridays from noon to 5 p.m. For this scenario, you could set the
+     * following recurring days and times as allowed windows, for example:
+     * <code>Wed-12:00-Wed:17:00 Fri-12:00-Fri:17:00</code>.</p>  <p>The
+     * <code>allowedWindows</code> have to start and end on the same day. Windows that
+     * span multiple days aren't supported.</p> 
+     */
+    inline const Aws::Vector<Aws::String>& GetAllowedWindows() const { return m_allowedWindows; }
+    inline bool AllowedWindowsHasBeenSet() const { return m_allowedWindowsHasBeenSet; }
+    template<typename AllowedWindowsT = Aws::Vector<Aws::String>>
+    void SetAllowedWindows(AllowedWindowsT&& value) { m_allowedWindowsHasBeenSet = true; m_allowedWindows = std::forward<AllowedWindowsT>(value); }
+    template<typename AllowedWindowsT = Aws::Vector<Aws::String>>
+    CreatePracticeRunConfigurationRequest& WithAllowedWindows(AllowedWindowsT&& value) { SetAllowedWindows(std::forward<AllowedWindowsT>(value)); return *this;}
+    template<typename AllowedWindowsT = Aws::String>
+    CreatePracticeRunConfigurationRequest& AddAllowedWindows(AllowedWindowsT&& value) { m_allowedWindowsHasBeenSet = true; m_allowedWindows.emplace_back(std::forward<AllowedWindowsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p> <i>Outcome alarms</i> for practice runs are alarms that you specify that end
+     * a practice run when one or more of the alarms is in an <code>ALARM</code>
+     * state.</p> <p>Configure one or more of these alarms to monitor the health of
      * your application when traffic is shifted away from an Availability Zone during
-     * each practice run. You should configure the alarm to go into an
-     * <code>ALARM</code> state if your application is impacted by the zonal shift, and
-     * you want to stop the zonal shift, to let traffic for the resource return to the
-     * Availability Zone.</p>
+     * each practice run. You should configure these alarms to go into an
+     * <code>ALARM</code> state if you want to stop a zonal shift, to let traffic for
+     * the resource return to the original Availability Zone.</p>
      */
     inline const Aws::Vector<ControlCondition>& GetOutcomeAlarms() const { return m_outcomeAlarms; }
     inline bool OutcomeAlarmsHasBeenSet() const { return m_outcomeAlarmsHasBeenSet; }
@@ -150,6 +174,9 @@ namespace Model
 
     Aws::Vector<ControlCondition> m_blockingAlarms;
     bool m_blockingAlarmsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_allowedWindows;
+    bool m_allowedWindowsHasBeenSet = false;
 
     Aws::Vector<ControlCondition> m_outcomeAlarms;
     bool m_outcomeAlarmsHasBeenSet = false;

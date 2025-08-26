@@ -24,7 +24,6 @@
 #include <aws/connectparticipant/model/CompleteAttachmentUploadRequest.h>
 #include <aws/connectparticipant/model/CompleteAttachmentUploadResult.h>
 #include <aws/connectparticipant/model/ConnectionCredentials.h>
-#include <aws/connectparticipant/model/ConnectionData.h>
 #include <aws/connectparticipant/model/ConnectionType.h>
 #include <aws/connectparticipant/model/CreateParticipantConnectionRequest.h>
 #include <aws/connectparticipant/model/CreateParticipantConnectionResult.h>
@@ -39,8 +38,6 @@
 #include <aws/connectparticipant/model/GetTranscriptRequest.h>
 #include <aws/connectparticipant/model/GetTranscriptResult.h>
 #include <aws/connectparticipant/model/Item.h>
-#include <aws/connectparticipant/model/MediaPlacement.h>
-#include <aws/connectparticipant/model/Meeting.h>
 #include <aws/connectparticipant/model/MeetingFeatureStatus.h>
 #include <aws/connectparticipant/model/MeetingFeaturesConfiguration.h>
 #include <aws/connectparticipant/model/MessageMetadata.h>
@@ -60,6 +57,9 @@
 #include <aws/connectparticipant/model/UploadMetadata.h>
 #include <aws/connectparticipant/model/View.h>
 #include <aws/connectparticipant/model/ViewContent.h>
+#include <aws/connectparticipant/model/WebRTCConnection.h>
+#include <aws/connectparticipant/model/WebRTCMediaPlacement.h>
+#include <aws/connectparticipant/model/WebRTCMeeting.h>
 #include <aws/connectparticipant/model/Websocket.h>
 
 using ConnectParticipantIncludeTest = ::testing::Test;

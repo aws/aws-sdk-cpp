@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/connectparticipant/model/MediaPlacement.h>
+#include <aws/connectparticipant/model/WebRTCMediaPlacement.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -18,12 +18,12 @@ namespace ConnectParticipant
 namespace Model
 {
 
-MediaPlacement::MediaPlacement(JsonView jsonValue)
+WebRTCMediaPlacement::WebRTCMediaPlacement(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-MediaPlacement& MediaPlacement::operator =(JsonView jsonValue)
+WebRTCMediaPlacement& WebRTCMediaPlacement::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AudioHostUrl"))
   {
@@ -40,11 +40,6 @@ MediaPlacement& MediaPlacement::operator =(JsonView jsonValue)
     m_signalingUrl = jsonValue.GetString("SignalingUrl");
     m_signalingUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TurnControlUrl"))
-  {
-    m_turnControlUrl = jsonValue.GetString("TurnControlUrl");
-    m_turnControlUrlHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("EventIngestionUrl"))
   {
     m_eventIngestionUrl = jsonValue.GetString("EventIngestionUrl");
@@ -53,7 +48,7 @@ MediaPlacement& MediaPlacement::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue MediaPlacement::Jsonize() const
+JsonValue WebRTCMediaPlacement::Jsonize() const
 {
   JsonValue payload;
 
@@ -72,12 +67,6 @@ JsonValue MediaPlacement::Jsonize() const
   if(m_signalingUrlHasBeenSet)
   {
    payload.WithString("SignalingUrl", m_signalingUrl);
-
-  }
-
-  if(m_turnControlUrlHasBeenSet)
-  {
-   payload.WithString("TurnControlUrl", m_turnControlUrl);
 
   }
 

@@ -2588,6 +2588,37 @@ namespace EC2
         }
 
         /**
+         * <p>Creates a report that shows how your image is used across other Amazon Web
+         * Services accounts. The report provides visibility into which accounts are using
+         * the specified image, and how many resources (EC2 instances or launch templates)
+         * are referencing it.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+         * your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImageUsageReport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateImageUsageReportOutcome CreateImageUsageReport(const Model::CreateImageUsageReportRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateImageUsageReport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateImageUsageReportRequestT = Model::CreateImageUsageReportRequest>
+        Model::CreateImageUsageReportOutcomeCallable CreateImageUsageReportCallable(const CreateImageUsageReportRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::CreateImageUsageReport, request);
+        }
+
+        /**
+         * An Async wrapper for CreateImageUsageReport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateImageUsageReportRequestT = Model::CreateImageUsageReportRequest>
+        void CreateImageUsageReportAsync(const CreateImageUsageReportRequestT& request, const CreateImageUsageReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::CreateImageUsageReport, request, handler, context);
+        }
+
+        /**
          * <p>Creates an EC2 Instance Connect Endpoint.</p> <p>An EC2 Instance Connect
          * Endpoint allows you to connect to an instance, without requiring the instance to
          * have a public IPv4 or public IPv6 address. For more information, see <a
@@ -5324,6 +5355,34 @@ namespace EC2
         void DeleteFpgaImageAsync(const DeleteFpgaImageRequestT& request, const DeleteFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::DeleteFpgaImage, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the specified image usage report.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+         * your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteImageUsageReport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteImageUsageReportOutcome DeleteImageUsageReport(const Model::DeleteImageUsageReportRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteImageUsageReport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteImageUsageReportRequestT = Model::DeleteImageUsageReportRequest>
+        Model::DeleteImageUsageReportOutcomeCallable DeleteImageUsageReportCallable(const DeleteImageUsageReportRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DeleteImageUsageReport, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteImageUsageReport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteImageUsageReportRequestT = Model::DeleteImageUsageReportRequest>
+        void DeleteImageUsageReportAsync(const DeleteImageUsageReportRequestT& request, const DeleteImageUsageReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DeleteImageUsageReport, request, handler, context);
         }
 
         /**
@@ -8923,6 +8982,94 @@ namespace EC2
         void DescribeImageAttributeAsync(const DescribeImageAttributeRequestT& request, const DescribeImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::DescribeImageAttribute, request, handler, context);
+        }
+
+        /**
+         * <p>Describes your Amazon Web Services resources that are referencing the
+         * specified images. </p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-references.html">Identiy
+         * your resources referencing selected AMIs</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageReferences">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeImageReferencesOutcome DescribeImageReferences(const Model::DescribeImageReferencesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeImageReferences that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeImageReferencesRequestT = Model::DescribeImageReferencesRequest>
+        Model::DescribeImageReferencesOutcomeCallable DescribeImageReferencesCallable(const DescribeImageReferencesRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DescribeImageReferences, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeImageReferences that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeImageReferencesRequestT = Model::DescribeImageReferencesRequest>
+        void DescribeImageReferencesAsync(const DescribeImageReferencesRequestT& request, const DescribeImageReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DescribeImageReferences, request, handler, context);
+        }
+
+        /**
+         * <p>Describes the entries in image usage reports, showing how your images are
+         * used across other Amazon Web Services accounts.</p> <p>For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+         * your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageUsageReportEntries">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeImageUsageReportEntriesOutcome DescribeImageUsageReportEntries(const Model::DescribeImageUsageReportEntriesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeImageUsageReportEntries that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeImageUsageReportEntriesRequestT = Model::DescribeImageUsageReportEntriesRequest>
+        Model::DescribeImageUsageReportEntriesOutcomeCallable DescribeImageUsageReportEntriesCallable(const DescribeImageUsageReportEntriesRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::DescribeImageUsageReportEntries, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeImageUsageReportEntries that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeImageUsageReportEntriesRequestT = Model::DescribeImageUsageReportEntriesRequest>
+        void DescribeImageUsageReportEntriesAsync(const DescribeImageUsageReportEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeImageUsageReportEntriesRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::DescribeImageUsageReportEntries, request, handler, context);
+        }
+
+        /**
+         * <p>Describes the configuration and status of image usage reports, filtered by
+         * report IDs or image IDs.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+         * your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageUsageReports">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeImageUsageReportsOutcome DescribeImageUsageReports(const Model::DescribeImageUsageReportsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeImageUsageReports that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeImageUsageReportsRequestT = Model::DescribeImageUsageReportsRequest>
+        Model::DescribeImageUsageReportsOutcomeCallable DescribeImageUsageReportsCallable(const DescribeImageUsageReportsRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::DescribeImageUsageReports, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeImageUsageReports that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeImageUsageReportsRequestT = Model::DescribeImageUsageReportsRequest>
+        void DescribeImageUsageReportsAsync(const DescribeImageUsageReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeImageUsageReportsRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::DescribeImageUsageReports, request, handler, context);
         }
 
         /**

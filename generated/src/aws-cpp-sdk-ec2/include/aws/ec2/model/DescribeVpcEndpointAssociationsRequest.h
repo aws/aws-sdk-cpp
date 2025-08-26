@@ -78,7 +78,9 @@ namespace Model
      * Resource Name (ARN) of the associated service network. Only VPC endpoints of
      * type service network will be returned.</p> </li> <li> <p>
      * <code>resource-configuration-group-arn</code> - The Amazon Resource Name (ARN)
-     * of the resource configuration of type GROUP.</p> </li> </ul>
+     * of the resource configuration of type GROUP.</p> </li> <li> <p>
+     * <code>service-network-resource-association-id</code> - The ID of the
+     * association.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

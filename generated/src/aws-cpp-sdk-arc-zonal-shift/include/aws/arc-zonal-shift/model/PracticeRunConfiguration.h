@@ -51,9 +51,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The <i>blocking alarm</i> for practice runs is an optional alarm that you can
-     * specify that blocks practice runs when the alarm is in an <code>ALARM</code>
-     * state.</p>
+     * <p> <i>Blocking alarms</i> for practice runs are optional alarms that you can
+     * specify that block practice runs when one or more of the alarms is in an
+     * <code>ALARM</code> state.</p>
      */
     inline const Aws::Vector<ControlCondition>& GetBlockingAlarms() const { return m_blockingAlarms; }
     inline bool BlockingAlarmsHasBeenSet() const { return m_blockingAlarmsHasBeenSet; }
@@ -67,8 +67,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The <i>outcome alarm</i> for practice runs is an alarm that you specify that
-     * ends a practice run when the alarm is in an <code>ALARM</code> state.</p>
+     * <p> <i>Outcome alarms</i> for practice runs are alarms that you specify that end
+     * a practice run when one or more of the alarms is in an <code>ALARM</code>
+     * state.</p>
      */
     inline const Aws::Vector<ControlCondition>& GetOutcomeAlarms() const { return m_outcomeAlarms; }
     inline bool OutcomeAlarmsHasBeenSet() const { return m_outcomeAlarmsHasBeenSet; }
@@ -85,7 +86,9 @@ namespace Model
      * <p>An array of one or more windows of days and times that you can block ARC from
      * starting practice runs for a resource.</p> <p>Specify the blocked windows in
      * UTC, using the format <code>DAY:HH:MM-DAY:HH:MM</code>, separated by spaces. For
-     * example, <code>MON:18:30-MON:19:30 TUE:18:30-TUE:19:30</code>.</p>
+     * example, <code>MON:18:30-MON:19:30 TUE:18:30-TUE:19:30</code>.</p> <p>The
+     * <code>blockedWindows</code> have to start and end on the same day. Windows that
+     * span multiple days aren't supported.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBlockedWindows() const { return m_blockedWindows; }
     inline bool BlockedWindowsHasBeenSet() const { return m_blockedWindowsHasBeenSet; }
@@ -95,6 +98,26 @@ namespace Model
     PracticeRunConfiguration& WithBlockedWindows(BlockedWindowsT&& value) { SetBlockedWindows(std::forward<BlockedWindowsT>(value)); return *this;}
     template<typename BlockedWindowsT = Aws::String>
     PracticeRunConfiguration& AddBlockedWindows(BlockedWindowsT&& value) { m_blockedWindowsHasBeenSet = true; m_blockedWindows.emplace_back(std::forward<BlockedWindowsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>An array of one or more windows of days and times that you can allow ARC to
+     * start practice runs for a resource.</p> <p>For example, say you want to allow
+     * practice runs only on Wednesdays and Fridays from noon to 5 p.m. For this
+     * scenario, you could set the following recurring days and times as allowed
+     * windows, for example: <code>Wed-12:00-Wed:17:00 Fri-12:00-Fri:17:00</code>.</p>
+     * <p>The <code>allowedWindows</code> have to start and end on the same day.
+     * Windows that span multiple days aren't supported.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAllowedWindows() const { return m_allowedWindows; }
+    inline bool AllowedWindowsHasBeenSet() const { return m_allowedWindowsHasBeenSet; }
+    template<typename AllowedWindowsT = Aws::Vector<Aws::String>>
+    void SetAllowedWindows(AllowedWindowsT&& value) { m_allowedWindowsHasBeenSet = true; m_allowedWindows = std::forward<AllowedWindowsT>(value); }
+    template<typename AllowedWindowsT = Aws::Vector<Aws::String>>
+    PracticeRunConfiguration& WithAllowedWindows(AllowedWindowsT&& value) { SetAllowedWindows(std::forward<AllowedWindowsT>(value)); return *this;}
+    template<typename AllowedWindowsT = Aws::String>
+    PracticeRunConfiguration& AddAllowedWindows(AllowedWindowsT&& value) { m_allowedWindowsHasBeenSet = true; m_allowedWindows.emplace_back(std::forward<AllowedWindowsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -122,6 +145,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_blockedWindows;
     bool m_blockedWindowsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_allowedWindows;
+    bool m_allowedWindowsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_blockedDates;
     bool m_blockedDatesHasBeenSet = false;

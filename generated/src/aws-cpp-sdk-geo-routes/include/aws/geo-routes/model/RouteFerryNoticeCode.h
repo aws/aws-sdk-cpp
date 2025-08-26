@@ -21,7 +21,8 @@ namespace Model
     Other,
     ViolatedAvoidFerry,
     ViolatedAvoidRailFerry,
-    SeasonalClosure
+    SeasonalClosure,
+    PotentialViolatedVehicleRestrictionUsage
   };
 
 namespace RouteFerryNoticeCodeMapper

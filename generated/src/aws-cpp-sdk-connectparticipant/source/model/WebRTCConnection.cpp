@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/connectparticipant/model/ConnectionData.h>
+#include <aws/connectparticipant/model/WebRTCConnection.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -18,12 +18,12 @@ namespace ConnectParticipant
 namespace Model
 {
 
-ConnectionData::ConnectionData(JsonView jsonValue)
+WebRTCConnection::WebRTCConnection(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-ConnectionData& ConnectionData::operator =(JsonView jsonValue)
+WebRTCConnection& WebRTCConnection::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Attendee"))
   {
@@ -38,7 +38,7 @@ ConnectionData& ConnectionData::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ConnectionData::Jsonize() const
+JsonValue WebRTCConnection::Jsonize() const
 {
   JsonValue payload;
 

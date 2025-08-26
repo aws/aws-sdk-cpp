@@ -51,7 +51,7 @@ namespace Model
     ///@{
     /**
      * <p>The status of cluster creation.</p> <ul> <li> <p>PENDING – The cluster is
-     * pending creation.</p> </li> <li> <p>CREATING – The cluster creation process is
+     * pending creation.</p> </li> <li> <p>CREATING �� The cluster creation process is
      * in progress.</p> </li> <li> <p>CREATE_FAILED – The cluster creation process has
      * failed.</p> </li> <li> <p>RUNNING – The cluster creation process is running.</p>
      * </li> <li> <p>UPDATING – The cluster is in the process of being updated.</p>

@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/connectparticipant/model/MediaPlacement.h>
+#include <aws/connectparticipant/model/WebRTCMediaPlacement.h>
 #include <aws/connectparticipant/model/MeetingFeaturesConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -27,52 +27,38 @@ namespace Model
 
   /**
    * <p>A meeting created using the Amazon Chime SDK.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/Meeting">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/WebRTCMeeting">AWS
    * API Reference</a></p>
    */
-  class Meeting
+  class WebRTCMeeting
   {
   public:
-    AWS_CONNECTPARTICIPANT_API Meeting() = default;
-    AWS_CONNECTPARTICIPANT_API Meeting(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CONNECTPARTICIPANT_API Meeting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTPARTICIPANT_API WebRTCMeeting() = default;
+    AWS_CONNECTPARTICIPANT_API WebRTCMeeting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTPARTICIPANT_API WebRTCMeeting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTPARTICIPANT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     ///@{
     /**
-     * <p>The Amazon Web Services Region in which you create the meeting.</p>
-     */
-    inline const Aws::String& GetMediaRegion() const { return m_mediaRegion; }
-    inline bool MediaRegionHasBeenSet() const { return m_mediaRegionHasBeenSet; }
-    template<typename MediaRegionT = Aws::String>
-    void SetMediaRegion(MediaRegionT&& value) { m_mediaRegionHasBeenSet = true; m_mediaRegion = std::forward<MediaRegionT>(value); }
-    template<typename MediaRegionT = Aws::String>
-    Meeting& WithMediaRegion(MediaRegionT&& value) { SetMediaRegion(std::forward<MediaRegionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The media placement for the meeting.</p>
      */
-    inline const MediaPlacement& GetMediaPlacement() const { return m_mediaPlacement; }
+    inline const WebRTCMediaPlacement& GetMediaPlacement() const { return m_mediaPlacement; }
     inline bool MediaPlacementHasBeenSet() const { return m_mediaPlacementHasBeenSet; }
-    template<typename MediaPlacementT = MediaPlacement>
+    template<typename MediaPlacementT = WebRTCMediaPlacement>
     void SetMediaPlacement(MediaPlacementT&& value) { m_mediaPlacementHasBeenSet = true; m_mediaPlacement = std::forward<MediaPlacementT>(value); }
-    template<typename MediaPlacementT = MediaPlacement>
-    Meeting& WithMediaPlacement(MediaPlacementT&& value) { SetMediaPlacement(std::forward<MediaPlacementT>(value)); return *this;}
+    template<typename MediaPlacementT = WebRTCMediaPlacement>
+    WebRTCMeeting& WithMediaPlacement(MediaPlacementT&& value) { SetMediaPlacement(std::forward<MediaPlacementT>(value)); return *this;}
     ///@}
 
     ///@{
-    /**
-     * <p>The configuration settings of the features available to a meeting.</p>
-     */
+    
     inline const MeetingFeaturesConfiguration& GetMeetingFeatures() const { return m_meetingFeatures; }
     inline bool MeetingFeaturesHasBeenSet() const { return m_meetingFeaturesHasBeenSet; }
     template<typename MeetingFeaturesT = MeetingFeaturesConfiguration>
     void SetMeetingFeatures(MeetingFeaturesT&& value) { m_meetingFeaturesHasBeenSet = true; m_meetingFeatures = std::forward<MeetingFeaturesT>(value); }
     template<typename MeetingFeaturesT = MeetingFeaturesConfiguration>
-    Meeting& WithMeetingFeatures(MeetingFeaturesT&& value) { SetMeetingFeatures(std::forward<MeetingFeaturesT>(value)); return *this;}
+    WebRTCMeeting& WithMeetingFeatures(MeetingFeaturesT&& value) { SetMeetingFeatures(std::forward<MeetingFeaturesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +70,11 @@ namespace Model
     template<typename MeetingIdT = Aws::String>
     void SetMeetingId(MeetingIdT&& value) { m_meetingIdHasBeenSet = true; m_meetingId = std::forward<MeetingIdT>(value); }
     template<typename MeetingIdT = Aws::String>
-    Meeting& WithMeetingId(MeetingIdT&& value) { SetMeetingId(std::forward<MeetingIdT>(value)); return *this;}
+    WebRTCMeeting& WithMeetingId(MeetingIdT&& value) { SetMeetingId(std::forward<MeetingIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::String m_mediaRegion;
-    bool m_mediaRegionHasBeenSet = false;
-
-    MediaPlacement m_mediaPlacement;
+    WebRTCMediaPlacement m_mediaPlacement;
     bool m_mediaPlacementHasBeenSet = false;
 
     MeetingFeaturesConfiguration m_meetingFeatures;

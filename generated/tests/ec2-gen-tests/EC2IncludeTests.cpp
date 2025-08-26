@@ -362,6 +362,8 @@
 #include <aws/ec2/model/CreateFpgaImageResponse.h>
 #include <aws/ec2/model/CreateImageRequest.h>
 #include <aws/ec2/model/CreateImageResponse.h>
+#include <aws/ec2/model/CreateImageUsageReportRequest.h>
+#include <aws/ec2/model/CreateImageUsageReportResponse.h>
 #include <aws/ec2/model/CreateInstanceConnectEndpointRequest.h>
 #include <aws/ec2/model/CreateInstanceConnectEndpointResponse.h>
 #include <aws/ec2/model/CreateInstanceEventWindowRequest.h>
@@ -558,6 +560,8 @@
 #include <aws/ec2/model/DeleteFlowLogsResponse.h>
 #include <aws/ec2/model/DeleteFpgaImageRequest.h>
 #include <aws/ec2/model/DeleteFpgaImageResponse.h>
+#include <aws/ec2/model/DeleteImageUsageReportRequest.h>
+#include <aws/ec2/model/DeleteImageUsageReportResponse.h>
 #include <aws/ec2/model/DeleteInstanceConnectEndpointRequest.h>
 #include <aws/ec2/model/DeleteInstanceConnectEndpointResponse.h>
 #include <aws/ec2/model/DeleteInstanceEventWindowRequest.h>
@@ -804,6 +808,12 @@
 #include <aws/ec2/model/DescribeIdentityIdFormatResponse.h>
 #include <aws/ec2/model/DescribeImageAttributeRequest.h>
 #include <aws/ec2/model/DescribeImageAttributeResponse.h>
+#include <aws/ec2/model/DescribeImageReferencesRequest.h>
+#include <aws/ec2/model/DescribeImageReferencesResponse.h>
+#include <aws/ec2/model/DescribeImageUsageReportEntriesRequest.h>
+#include <aws/ec2/model/DescribeImageUsageReportEntriesResponse.h>
+#include <aws/ec2/model/DescribeImageUsageReportsRequest.h>
+#include <aws/ec2/model/DescribeImageUsageReportsResponse.h>
 #include <aws/ec2/model/DescribeImagesRequest.h>
 #include <aws/ec2/model/DescribeImagesResponse.h>
 #include <aws/ec2/model/DescribeImportImageTasksRequest.h>
@@ -1457,8 +1467,17 @@
 #include <aws/ec2/model/ImageDiskContainer.h>
 #include <aws/ec2/model/ImageMetadata.h>
 #include <aws/ec2/model/ImageRecycleBinInfo.h>
+#include <aws/ec2/model/ImageReference.h>
+#include <aws/ec2/model/ImageReferenceOptionName.h>
+#include <aws/ec2/model/ImageReferenceResourceType.h>
 #include <aws/ec2/model/ImageState.h>
 #include <aws/ec2/model/ImageTypeValues.h>
+#include <aws/ec2/model/ImageUsageReport.h>
+#include <aws/ec2/model/ImageUsageReportEntry.h>
+#include <aws/ec2/model/ImageUsageResourceType.h>
+#include <aws/ec2/model/ImageUsageResourceTypeOption.h>
+#include <aws/ec2/model/ImageUsageResourceTypeOptionRequest.h>
+#include <aws/ec2/model/ImageUsageResourceTypeRequest.h>
 #include <aws/ec2/model/ImdsSupportValues.h>
 #include <aws/ec2/model/ImportClientVpnClientCertificateRevocationListRequest.h>
 #include <aws/ec2/model/ImportClientVpnClientCertificateRevocationListResponse.h>
@@ -2146,6 +2165,8 @@
 #include <aws/ec2/model/ResourceStatement.h>
 #include <aws/ec2/model/ResourceStatementRequest.h>
 #include <aws/ec2/model/ResourceType.h>
+#include <aws/ec2/model/ResourceTypeOption.h>
+#include <aws/ec2/model/ResourceTypeRequest.h>
 #include <aws/ec2/model/ResponseError.h>
 #include <aws/ec2/model/ResponseLaunchTemplateData.h>
 #include <aws/ec2/model/ResponseMetadata.h>

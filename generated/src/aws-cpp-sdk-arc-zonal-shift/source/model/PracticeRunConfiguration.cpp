@@ -52,6 +52,15 @@ PracticeRunConfiguration& PracticeRunConfiguration::operator =(JsonView jsonValu
     }
     m_blockedWindowsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("allowedWindows"))
+  {
+    Aws::Utils::Array<JsonView> allowedWindowsJsonList = jsonValue.GetArray("allowedWindows");
+    for(unsigned allowedWindowsIndex = 0; allowedWindowsIndex < allowedWindowsJsonList.GetLength(); ++allowedWindowsIndex)
+    {
+      m_allowedWindows.push_back(allowedWindowsJsonList[allowedWindowsIndex].AsString());
+    }
+    m_allowedWindowsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("blockedDates"))
   {
     Aws::Utils::Array<JsonView> blockedDatesJsonList = jsonValue.GetArray("blockedDates");
@@ -98,6 +107,17 @@ JsonValue PracticeRunConfiguration::Jsonize() const
      blockedWindowsJsonList[blockedWindowsIndex].AsString(m_blockedWindows[blockedWindowsIndex]);
    }
    payload.WithArray("blockedWindows", std::move(blockedWindowsJsonList));
+
+  }
+
+  if(m_allowedWindowsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> allowedWindowsJsonList(m_allowedWindows.size());
+   for(unsigned allowedWindowsIndex = 0; allowedWindowsIndex < allowedWindowsJsonList.GetLength(); ++allowedWindowsIndex)
+   {
+     allowedWindowsJsonList[allowedWindowsIndex].AsString(m_allowedWindows[allowedWindowsIndex]);
+   }
+   payload.WithArray("allowedWindows", std::move(allowedWindowsJsonList));
 
   }
 

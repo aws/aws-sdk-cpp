@@ -26,7 +26,8 @@ namespace Model
     PracticeOutcomeAlarmsRed,
     PracticeBlockingAlarmsRed,
     PracticeInBlockedDates,
-    PracticeInBlockedWindows
+    PracticeInBlockedWindows,
+    PracticeOutsideAllowedWindows
   };
 
 namespace ConflictExceptionReasonMapper

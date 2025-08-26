@@ -93,8 +93,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Add, change, or remove the Amazon CloudWatch alarm that you optionally
-     * specify as the blocking alarm for practice runs.</p>
+     * <p>Add, change, or remove the Amazon CloudWatch alarms that you optionally
+     * specify as the blocking alarms for practice runs.</p>
      */
     inline const Aws::Vector<ControlCondition>& GetBlockingAlarms() const { return m_blockingAlarms; }
     inline bool BlockingAlarmsHasBeenSet() const { return m_blockingAlarmsHasBeenSet; }
@@ -108,8 +108,33 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specify a new the Amazon CloudWatch alarm as the outcome alarm for practice
-     * runs.</p>
+     * <p>Add, change, or remove windows of days and times for when you can,
+     * optionally, allow ARC to start a practice run for a resource.</p> <p>The format
+     * for allowed windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind, when you specify
+     * dates, that dates and times for practice runs are in UTC. Also, be aware of
+     * potential time adjustments that might be required for daylight saving time
+     * differences. Separate multiple allowed windows with spaces.</p> <p>For example,
+     * say you want to allow practice runs only on Wednesdays and Fridays from noon to
+     * 5 p.m. For this scenario, you could set the following recurring days and times
+     * as allowed windows, for example: <code>Wed-12:00-Wed:17:00
+     * Fri-12:00-Fri:17:00</code>.</p>  <p>The <code>allowedWindows</code>
+     * have to start and end on the same day. Windows that span multiple days aren't
+     * supported.</p> 
+     */
+    inline const Aws::Vector<Aws::String>& GetAllowedWindows() const { return m_allowedWindows; }
+    inline bool AllowedWindowsHasBeenSet() const { return m_allowedWindowsHasBeenSet; }
+    template<typename AllowedWindowsT = Aws::Vector<Aws::String>>
+    void SetAllowedWindows(AllowedWindowsT&& value) { m_allowedWindowsHasBeenSet = true; m_allowedWindows = std::forward<AllowedWindowsT>(value); }
+    template<typename AllowedWindowsT = Aws::Vector<Aws::String>>
+    UpdatePracticeRunConfigurationRequest& WithAllowedWindows(AllowedWindowsT&& value) { SetAllowedWindows(std::forward<AllowedWindowsT>(value)); return *this;}
+    template<typename AllowedWindowsT = Aws::String>
+    UpdatePracticeRunConfigurationRequest& AddAllowedWindows(AllowedWindowsT&& value) { m_allowedWindowsHasBeenSet = true; m_allowedWindows.emplace_back(std::forward<AllowedWindowsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specify one or more Amazon CloudWatch alarms as the outcome alarms for
+     * practice runs.</p>
      */
     inline const Aws::Vector<ControlCondition>& GetOutcomeAlarms() const { return m_outcomeAlarms; }
     inline bool OutcomeAlarmsHasBeenSet() const { return m_outcomeAlarmsHasBeenSet; }
@@ -133,6 +158,9 @@ namespace Model
 
     Aws::Vector<ControlCondition> m_blockingAlarms;
     bool m_blockingAlarmsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_allowedWindows;
+    bool m_allowedWindowsHasBeenSet = false;
 
     Aws::Vector<ControlCondition> m_outcomeAlarms;
     bool m_outcomeAlarmsHasBeenSet = false;
