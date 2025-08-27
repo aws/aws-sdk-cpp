@@ -43,9 +43,6 @@ TEST_F(WAFV2SmokeTestSuite, ListWebACLsSuccess )
     input.SetScope(Scope::REGIONAL);
     input.SetLimit(20);
     auto outcome = clientSp->ListWebACLs(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "ListWebACLs failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

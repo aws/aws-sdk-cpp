@@ -41,9 +41,6 @@ TEST_F(ConfigServiceSmokeTestSuite, DescribeConfigurationRecordersSuccess )
     
     DescribeConfigurationRecordersRequest input;
     auto outcome = clientSp->DescribeConfigurationRecorders(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "DescribeConfigurationRecorders failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

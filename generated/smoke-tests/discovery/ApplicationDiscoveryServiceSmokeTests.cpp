@@ -41,9 +41,6 @@ TEST_F(ApplicationDiscoveryServiceSmokeTestSuite, DescribeAgentsSuccess )
     
     DescribeAgentsRequest input;
     auto outcome = clientSp->DescribeAgents(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "DescribeAgents failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

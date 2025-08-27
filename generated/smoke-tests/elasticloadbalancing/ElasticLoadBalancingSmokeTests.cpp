@@ -42,9 +42,6 @@ TEST_F(ElasticLoadBalancingSmokeTestSuite, DescribeLoadBalancersSuccess )
     
     DescribeLoadBalancersRequest input;
     auto outcome = clientSp->DescribeLoadBalancers(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "DescribeLoadBalancers failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 TEST_F(ElasticLoadBalancingSmokeTestSuite, DescribeLoadBalancersFailure )
@@ -68,9 +65,6 @@ TEST_F(ElasticLoadBalancingSmokeTestSuite, DescribeLoadBalancersFailure )
     DescribeLoadBalancersRequest input;
     input.SetLoadBalancerNames(GetdescribeloadbalancersElemLvl0Idx0());
     auto outcome = clientSp->DescribeLoadBalancers(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "DescribeLoadBalancers failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 }

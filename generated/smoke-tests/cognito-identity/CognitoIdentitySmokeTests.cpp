@@ -42,9 +42,6 @@ TEST_F(CognitoIdentitySmokeTestSuite, ListIdentityPoolsSuccess )
     ListIdentityPoolsRequest input;
     input.SetMaxResults(10);
     auto outcome = clientSp->ListIdentityPools(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "ListIdentityPools failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

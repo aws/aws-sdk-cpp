@@ -43,9 +43,6 @@ TEST_F(CodePipelineSmokeTestSuite, GetPipelineFailure )
     GetPipelineRequest input;
     input.SetName("fake-pipeline");
     auto outcome = clientSp->GetPipeline(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "GetPipeline failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 TEST_F(CodePipelineSmokeTestSuite, ListPipelinesSuccess )
@@ -59,9 +56,6 @@ TEST_F(CodePipelineSmokeTestSuite, ListPipelinesSuccess )
     
     ListPipelinesRequest input;
     auto outcome = clientSp->ListPipelines(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "ListPipelines failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

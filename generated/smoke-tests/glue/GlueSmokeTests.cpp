@@ -41,9 +41,6 @@ TEST_F(GlueSmokeTestSuite, GetCatalogImportStatusSuccess )
     
     GetCatalogImportStatusRequest input;
     auto outcome = clientSp->GetCatalogImportStatus(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "GetCatalogImportStatus failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

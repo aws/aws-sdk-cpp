@@ -43,9 +43,6 @@ TEST_F(SocialMessagingSmokeTestSuite, ListTagsFailure )
     ListTagsForResourceRequest input;
     input.SetResourceArn("arn:aws:social-messaging:us-east-1:9923825:phone-number-id/45c1973a7577");
     auto outcome = clientSp->ListTagsForResource(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "ListTagsForResource failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 }

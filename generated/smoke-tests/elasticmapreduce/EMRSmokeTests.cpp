@@ -43,9 +43,6 @@ TEST_F(EMRSmokeTestSuite, DescribeClusterFailure )
     DescribeClusterRequest input;
     input.SetClusterId("fake_cluster");
     auto outcome = clientSp->DescribeCluster(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "DescribeCluster failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 TEST_F(EMRSmokeTestSuite, ListClustersSuccess )
@@ -59,9 +56,6 @@ TEST_F(EMRSmokeTestSuite, ListClustersSuccess )
     
     ListClustersRequest input;
     auto outcome = clientSp->ListClusters(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "ListClusters failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

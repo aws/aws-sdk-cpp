@@ -45,9 +45,6 @@ TEST_F(DirectoryServiceDataSmokeTestSuite, DescribeGroupFailure )
     input.SetDirectoryId("d-1111111111");
     input.SetSAMAccountName("test-group");
     auto outcome = clientSp->DescribeGroup(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "DescribeGroup failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 TEST_F(DirectoryServiceDataSmokeTestSuite, DescribeUserFailure )
@@ -63,9 +60,6 @@ TEST_F(DirectoryServiceDataSmokeTestSuite, DescribeUserFailure )
     input.SetDirectoryId("d-1111111111");
     input.SetSAMAccountName("test-user");
     auto outcome = clientSp->DescribeUser(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "DescribeUser failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 }

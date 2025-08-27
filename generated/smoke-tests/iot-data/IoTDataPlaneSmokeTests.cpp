@@ -43,9 +43,6 @@ TEST_F(IoTDataPlaneSmokeTestSuite, GetThingShadowFailure )
     GetThingShadowRequest input;
     input.SetThingName("fake-thing");
     auto outcome = clientSp->GetThingShadow(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "GetThingShadow failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 }

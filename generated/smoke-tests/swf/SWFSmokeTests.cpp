@@ -42,9 +42,6 @@ TEST_F(SWFSmokeTestSuite, ListDomainsSuccess )
     ListDomainsRequest input;
     input.SetRegistrationStatus(RegistrationStatus::REGISTERED);
     auto outcome = clientSp->ListDomains(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "ListDomains failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

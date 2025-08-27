@@ -41,9 +41,6 @@ TEST_F(SNSSmokeTestSuite, ListTopicsSuccess )
     
     ListTopicsRequest input;
     auto outcome = clientSp->ListTopics(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "ListTopics failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

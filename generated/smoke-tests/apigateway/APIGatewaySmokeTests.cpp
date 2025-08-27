@@ -41,9 +41,6 @@ TEST_F(APIGatewaySmokeTestSuite, GetDomainNamesSuccess )
     
     GetDomainNamesRequest input;
     auto outcome = clientSp->GetDomainNames(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "GetDomainNames failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

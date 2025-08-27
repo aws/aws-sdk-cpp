@@ -41,9 +41,6 @@ TEST_F(CodeDeploySmokeTestSuite, ListApplicationsSuccess )
     
     ListApplicationsRequest input;
     auto outcome = clientSp->ListApplications(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "ListApplications failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

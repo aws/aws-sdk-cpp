@@ -41,9 +41,6 @@ TEST_F(PollySmokeTestSuite, DescribeVoicesSuccess )
     
     DescribeVoicesRequest input;
     auto outcome = clientSp->DescribeVoices(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "DescribeVoices failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

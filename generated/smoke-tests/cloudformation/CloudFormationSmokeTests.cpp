@@ -44,9 +44,6 @@ TEST_F(CloudFormationSmokeTestSuite, CreateStackFailure )
     input.SetStackName("fakestack");
     input.SetTemplateURL("http://s3.amazonaws.com/foo/bar");
     auto outcome = clientSp->CreateStack(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "CreateStack failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 TEST_F(CloudFormationSmokeTestSuite, ListStacksSuccess )
@@ -60,9 +57,6 @@ TEST_F(CloudFormationSmokeTestSuite, ListStacksSuccess )
     
     ListStacksRequest input;
     auto outcome = clientSp->ListStacks(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "ListStacks failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

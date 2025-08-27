@@ -42,9 +42,6 @@ TEST_F(DirectConnectSmokeTestSuite, DescribeConnectionsSuccess )
     
     DescribeConnectionsRequest input;
     auto outcome = clientSp->DescribeConnections(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "DescribeConnections failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 TEST_F(DirectConnectSmokeTestSuite, DescribeConnectionsFailure )
@@ -59,9 +56,6 @@ TEST_F(DirectConnectSmokeTestSuite, DescribeConnectionsFailure )
     DescribeConnectionsRequest input;
     input.SetConnectionId("fake-connection");
     auto outcome = clientSp->DescribeConnections(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "DescribeConnections failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 }

@@ -41,9 +41,6 @@ TEST_F(KeyspacesStreamsSmokeTestSuite, ListStreamsSuccess )
     
     ListStreamsRequest input;
     auto outcome = clientSp->ListStreams(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "ListStreams failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

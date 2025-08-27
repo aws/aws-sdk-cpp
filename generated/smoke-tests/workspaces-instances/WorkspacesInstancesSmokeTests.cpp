@@ -41,9 +41,6 @@ TEST_F(WorkspacesInstancesSmokeTestSuite, ListRegionsSuccess )
     
     ListRegionsRequest input;
     auto outcome = clientSp->ListRegions(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "ListRegions failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

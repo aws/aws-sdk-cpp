@@ -41,9 +41,6 @@ TEST_F(BatchSmokeTestSuite, DescribeComputeEnvironmentsSuccess )
     
     DescribeComputeEnvironmentsRequest input;
     auto outcome = clientSp->DescribeComputeEnvironments(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "DescribeComputeEnvironments failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

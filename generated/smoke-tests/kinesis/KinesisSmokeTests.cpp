@@ -43,9 +43,6 @@ TEST_F(KinesisSmokeTestSuite, DescribeStreamFailure )
     DescribeStreamRequest input;
     input.SetStreamName("bogus-stream-name");
     auto outcome = clientSp->DescribeStream(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "DescribeStream failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 TEST_F(KinesisSmokeTestSuite, ListStreamsSuccess )
@@ -59,9 +56,6 @@ TEST_F(KinesisSmokeTestSuite, ListStreamsSuccess )
     
     ListStreamsRequest input;
     auto outcome = clientSp->ListStreams(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "ListStreams failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

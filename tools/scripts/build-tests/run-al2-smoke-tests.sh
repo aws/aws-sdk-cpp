@@ -20,4 +20,4 @@ export AWS_SMOKE_TEST_SERVICE_IDS=$(cat $CODEBUILD_SRC_DIR/feature-service-id.js
 ls -la
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${CODEBUILD_SRC_DIR}/al2-install/lib64/"
 cd "${CODEBUILD_SRC_DIR}/al2-build"
-python3 "../aws-sdk-cpp/tools/scripts/run_smoke_tests_simple.py" --testDir "${CODEBUILD_SRC_DIR}/al2-build" | tee -a results.txt
+python3 "../aws-sdk-cpp/tools/scripts/run_smoke_tests.py" --testDir "${CODEBUILD_SRC_DIR}/al2-build" | tee -a results.txt

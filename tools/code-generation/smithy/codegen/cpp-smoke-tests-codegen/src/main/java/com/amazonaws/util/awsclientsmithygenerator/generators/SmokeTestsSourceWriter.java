@@ -79,9 +79,6 @@ public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceW
         write("//populate input params").
         write("${L|}", test.getRequestBlock());
         write("auto outcome = clientSp->$L(input);",test.getOperationName());
-        write("if (!outcome.IsSuccess()) {");
-        write("    std::cout << \"$L failed: \" << outcome.GetError().GetMessage() << std::endl;", test.getOperationName());
-        write("}");
         if (test.isExpectSuccess())
         {
             write("EXPECT_TRUE( outcome.IsSuccess());");

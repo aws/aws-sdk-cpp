@@ -41,9 +41,6 @@ TEST_F(SFNSmokeTestSuite, ListActivitiesSuccess )
     
     ListActivitiesRequest input;
     auto outcome = clientSp->ListActivities(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "ListActivities failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

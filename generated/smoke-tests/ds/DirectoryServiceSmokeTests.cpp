@@ -41,9 +41,6 @@ TEST_F(DirectoryServiceSmokeTestSuite, DescribeDirectoriesSuccess )
     
     DescribeDirectoriesRequest input;
     auto outcome = clientSp->DescribeDirectories(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "DescribeDirectories failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

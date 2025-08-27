@@ -42,9 +42,6 @@ TEST_F(WAFSmokeTestSuite, ListRulesSuccess )
     ListRulesRequest input;
     input.SetLimit(20);
     auto outcome = clientSp->ListRules(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "ListRules failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

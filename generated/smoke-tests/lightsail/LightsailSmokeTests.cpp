@@ -41,9 +41,6 @@ TEST_F(LightsailSmokeTestSuite, GetActiveNamesSuccess )
     
     GetActiveNamesRequest input;
     auto outcome = clientSp->GetActiveNames(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "GetActiveNames failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

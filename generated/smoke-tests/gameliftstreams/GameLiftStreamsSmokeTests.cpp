@@ -47,9 +47,6 @@ TEST_F(GameLiftStreamsSmokeTestSuite, GetStreamSession )
     input.SetIdentifier("abcdefghi");
     input.SetStreamSessionIdentifier("jklmnopqr");
     auto outcome = clientSp->GetStreamSession(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "GetStreamSession failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 TEST_F(GameLiftStreamsSmokeTestSuite, ListStreamSessions )
@@ -64,9 +61,6 @@ TEST_F(GameLiftStreamsSmokeTestSuite, ListStreamSessions )
     ListStreamSessionsRequest input;
     input.SetIdentifier("abcdefghi");
     auto outcome = clientSp->ListStreamSessions(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "ListStreamSessions failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 TEST_F(GameLiftStreamsSmokeTestSuite, ListStreamSessionsByAccount )
@@ -80,9 +74,6 @@ TEST_F(GameLiftStreamsSmokeTestSuite, ListStreamSessionsByAccount )
     
     ListStreamSessionsByAccountRequest input;
     auto outcome = clientSp->ListStreamSessionsByAccount(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "ListStreamSessionsByAccount failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 TEST_F(GameLiftStreamsSmokeTestSuite, ListTagsForResource )
@@ -97,9 +88,6 @@ TEST_F(GameLiftStreamsSmokeTestSuite, ListTagsForResource )
     ListTagsForResourceRequest input;
     input.SetResourceArn("arn:aws:gameliftstreams:us-west-2:012345678901:abcdefghi");
     auto outcome = clientSp->ListTagsForResource(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "ListTagsForResource failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_FALSE( outcome.IsSuccess());
 }
 }

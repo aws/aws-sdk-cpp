@@ -41,29 +41,25 @@ def main():
 
     for service in services:
         executable = os.path.join(smoke_tests_dir, service, f"{service}-smoke-tests")
-        
-        with tempfile.NamedTemporaryFile(mode='w+', suffix='.json', delete=False) as temp_file:
+
+        with tempfile.NamedTemporaryFile(mode='w+', suffix='.json') as temp_file:
             json_output_path = temp_file.name
-        
-        try:
+            temp_file.close()  # Close it so other processes can write to it
             test_command = [executable, f'--gtest_output=json:{json_output_path}']
             subprocess.run(test_command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            
+
             with open(json_output_path, 'r') as f:
                 test_results = json.load(f)
-            
+
             for test_suite in test_results.get('testsuites', []):
                 total_tests += test_suite['tests']
                 for test in test_suite.get('testsuite', []):
-                        all_results[service].append({
-                            'service': service,
-                            'name': test['name'],
-                            'status': test['status'],
-                            'failure': test.get('failure'),
-                            
-                        })
-        finally:
-            os.unlink(json_output_path)
+                    all_results[service].append({
+                        'service': service,
+                        'name': test['name'],
+                        'status': test['status'],
+                        'failure': test.get('failure'),
+                    })
 
     print(f"1..{total_tests}")
     

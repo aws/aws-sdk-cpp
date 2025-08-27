@@ -51,9 +51,6 @@ TEST_F(BillingSmokeTestSuite, ListBillingViewsSuccess )
     ListBillingViewsRequest input;
     input.SetActiveTimeRange(GetlistbillingviewsElemLvl0Idx0());
     auto outcome = clientSp->ListBillingViews(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "ListBillingViews failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }

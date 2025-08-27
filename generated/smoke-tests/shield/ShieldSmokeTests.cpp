@@ -41,9 +41,6 @@ TEST_F(ShieldSmokeTestSuite, ListAttacksSuccess )
     
     ListAttacksRequest input;
     auto outcome = clientSp->ListAttacks(input);
-    if (!outcome.IsSuccess()) {
-        std::cout << "ListAttacks failed: " << outcome.GetError().GetMessage() << std::endl;
-    }
     EXPECT_TRUE( outcome.IsSuccess());
 }
 }
