@@ -16,7 +16,7 @@ namespace Aws
     {
         /**
          * Templated base class for protocol-specific AWS clients (JSON, CBOR)
-         * Eliminates code duplication by parameterizing the response type and parsing logic.
+         * Eliminates code duplication by templating the response type and parsing logic.
          */
         template<typename OutcomeType, typename ResponseType>
         class AWSProtocolClient : public AWSClient

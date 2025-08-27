@@ -299,7 +299,9 @@
     "OTLP",
     // Region
     "eusc",
-    "EUSC"
+    "EUSC",
+    "CBOR",
+    "cbor"
   ],
   "ignoreWords": [
     // variables defined in ConcurrentStreamBuf
