@@ -984,6 +984,32 @@ namespace EKS
         }
 
         /**
+         * <p>Returns the status of the latest on-demand cluster insights refresh
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeInsightsRefresh">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeInsightsRefreshOutcome DescribeInsightsRefresh(const Model::DescribeInsightsRefreshRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeInsightsRefresh that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeInsightsRefreshRequestT = Model::DescribeInsightsRefreshRequest>
+        Model::DescribeInsightsRefreshOutcomeCallable DescribeInsightsRefreshCallable(const DescribeInsightsRefreshRequestT& request) const
+        {
+            return SubmitCallable(&EKSClient::DescribeInsightsRefresh, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeInsightsRefresh that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeInsightsRefreshRequestT = Model::DescribeInsightsRefreshRequest>
+        void DescribeInsightsRefreshAsync(const DescribeInsightsRefreshRequestT& request, const DescribeInsightsRefreshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EKSClient::DescribeInsightsRefresh, request, handler, context);
+        }
+
+        /**
          * <p>Describes a managed node group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeNodegroup">AWS
          * API Reference</a></p>
@@ -1503,6 +1529,33 @@ namespace EKS
         void RegisterClusterAsync(const RegisterClusterRequestT& request, const RegisterClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EKSClient::RegisterCluster, request, handler, context);
+        }
+
+        /**
+         * <p>Initiates an on-demand refresh operation for cluster insights, getting the
+         * latest analysis outside of the standard refresh schedule.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/StartInsightsRefresh">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartInsightsRefreshOutcome StartInsightsRefresh(const Model::StartInsightsRefreshRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartInsightsRefresh that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartInsightsRefreshRequestT = Model::StartInsightsRefreshRequest>
+        Model::StartInsightsRefreshOutcomeCallable StartInsightsRefreshCallable(const StartInsightsRefreshRequestT& request) const
+        {
+            return SubmitCallable(&EKSClient::StartInsightsRefresh, request);
+        }
+
+        /**
+         * An Async wrapper for StartInsightsRefresh that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartInsightsRefreshRequestT = Model::StartInsightsRefreshRequest>
+        void StartInsightsRefreshAsync(const StartInsightsRefreshRequestT& request, const StartInsightsRefreshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EKSClient::StartInsightsRefresh, request, handler, context);
         }
 
         /**

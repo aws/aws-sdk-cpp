@@ -31,6 +31,7 @@
 #include <aws/ds/model/AssessmentValidation.h>
 #include <aws/ds/model/Attribute.h>
 #include <aws/ds/model/AuthenticationFailedException.h>
+#include <aws/ds/model/CaEnrollmentPolicyStatus.h>
 #include <aws/ds/model/CancelSchemaExtensionRequest.h>
 #include <aws/ds/model/CancelSchemaExtensionResult.h>
 #include <aws/ds/model/Certificate.h>
@@ -87,6 +88,8 @@
 #include <aws/ds/model/DeregisterEventTopicResult.h>
 #include <aws/ds/model/DescribeADAssessmentRequest.h>
 #include <aws/ds/model/DescribeADAssessmentResult.h>
+#include <aws/ds/model/DescribeCAEnrollmentPolicyRequest.h>
+#include <aws/ds/model/DescribeCAEnrollmentPolicyResult.h>
 #include <aws/ds/model/DescribeCertificateRequest.h>
 #include <aws/ds/model/DescribeCertificateResult.h>
 #include <aws/ds/model/DescribeClientAuthenticationSettingsRequest.h>
@@ -135,6 +138,9 @@
 #include <aws/ds/model/DirectoryUnavailableException.h>
 #include <aws/ds/model/DirectoryVpcSettings.h>
 #include <aws/ds/model/DirectoryVpcSettingsDescription.h>
+#include <aws/ds/model/DisableAlreadyInProgressException.h>
+#include <aws/ds/model/DisableCAEnrollmentPolicyRequest.h>
+#include <aws/ds/model/DisableCAEnrollmentPolicyResult.h>
 #include <aws/ds/model/DisableClientAuthenticationRequest.h>
 #include <aws/ds/model/DisableClientAuthenticationResult.h>
 #include <aws/ds/model/DisableDirectoryDataAccessRequest.h>
@@ -148,6 +154,9 @@
 #include <aws/ds/model/DomainController.h>
 #include <aws/ds/model/DomainControllerLimitExceededException.h>
 #include <aws/ds/model/DomainControllerStatus.h>
+#include <aws/ds/model/EnableAlreadyInProgressException.h>
+#include <aws/ds/model/EnableCAEnrollmentPolicyRequest.h>
+#include <aws/ds/model/EnableCAEnrollmentPolicyResult.h>
 #include <aws/ds/model/EnableClientAuthenticationRequest.h>
 #include <aws/ds/model/EnableClientAuthenticationResult.h>
 #include <aws/ds/model/EnableDirectoryDataAccessRequest.h>

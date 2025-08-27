@@ -49,7 +49,9 @@
 #include <aws/neptune-graph/model/ResetGraphRequest.h>
 #include <aws/neptune-graph/model/RestoreGraphFromSnapshotRequest.h>
 #include <aws/neptune-graph/model/StartExportTaskRequest.h>
+#include <aws/neptune-graph/model/StartGraphRequest.h>
 #include <aws/neptune-graph/model/StartImportTaskRequest.h>
+#include <aws/neptune-graph/model/StopGraphRequest.h>
 #include <aws/neptune-graph/model/TagResourceRequest.h>
 #include <aws/neptune-graph/model/UntagResourceRequest.h>
 #include <aws/neptune-graph/model/UpdateGraphRequest.h>
@@ -1116,6 +1118,40 @@ StartExportTaskOutcome NeptuneGraphClient::StartExportTask(const StartExportTask
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+StartGraphOutcome NeptuneGraphClient::StartGraph(const StartGraphRequest& request) const
+{
+  AWS_OPERATION_GUARD(StartGraph);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartGraph, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.GraphIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartGraph", "Required field: GraphIdentifier, is not set");
+    return StartGraphOutcome(Aws::Client::AWSError<NeptuneGraphErrors>(NeptuneGraphErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GraphIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartGraph, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StartGraph, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartGraph",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StartGraphOutcome>(
+    [&]()-> StartGraphOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartGraph, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/graphs/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGraphIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/start");
+      return StartGraphOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 StartImportTaskOutcome NeptuneGraphClient::StartImportTask(const StartImportTaskRequest& request) const
 {
   AWS_OPERATION_GUARD(StartImportTask);
@@ -1144,6 +1180,40 @@ StartImportTaskOutcome NeptuneGraphClient::StartImportTask(const StartImportTask
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGraphIdentifier());
       endpointResolutionOutcome.GetResult().AddPathSegments("/importtasks");
       return StartImportTaskOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StopGraphOutcome NeptuneGraphClient::StopGraph(const StopGraphRequest& request) const
+{
+  AWS_OPERATION_GUARD(StopGraph);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopGraph, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.GraphIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopGraph", "Required field: GraphIdentifier, is not set");
+    return StopGraphOutcome(Aws::Client::AWSError<NeptuneGraphErrors>(NeptuneGraphErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GraphIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StopGraph, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StopGraph, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StopGraph",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StopGraphOutcome>(
+    [&]()-> StopGraphOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopGraph, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/graphs/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGraphIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
+      return StopGraphOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

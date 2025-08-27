@@ -77,6 +77,18 @@ Aws::String CreateClusterRequest::SerializePayload() const
    payload.WithString("NodeProvisioningMode", ClusterNodeProvisioningModeMapper::GetNameForClusterNodeProvisioningMode(m_nodeProvisioningMode));
   }
 
+  if(m_clusterRoleHasBeenSet)
+  {
+   payload.WithString("ClusterRole", m_clusterRole);
+
+  }
+
+  if(m_autoScalingHasBeenSet)
+  {
+   payload.WithObject("AutoScaling", m_autoScaling.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

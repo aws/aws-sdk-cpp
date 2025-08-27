@@ -65,7 +65,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * Linux 2023</a>: Batch supports Amazon Linux 2023.</p>  <p>Amazon Linux
      * 2023 does not support <code>A1</code> instances.</p>  </dd>
-     * <dt>ECS_AL1</dt> <dd> <p> <a
+     * <dt>ECS_AL2023_NVIDIA</dt> <dd> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon
+     * Linux 2023 (GPU)</a>: For all GPU instance families and can be used for all non
+     * Amazon Web Services Graviton-based instance types.</p> 
+     * <p>ECS_AL2023_NVIDIA doesn't support <code>p3</code> and <code>g3</code>
+     * instance types.</p>  </dd> <dt>ECS_AL1</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
      * Linux</a>. Amazon Linux has reached the end-of-life of standard support. For
      * more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon
@@ -75,7 +80,18 @@ namespace Model
      * EKS-optimized Amazon Linux AMI</a> (<code>EKS_AL2</code>) is used. If a new
      * image type is specified in an update, but neither an <code>imageId</code> nor a
      * <code>imageIdOverride</code> parameter is specified, then the latest Amazon EKS
-     * optimized AMI for that image type that Batch supports is used.</p> <dl>
+     * optimized AMI for that image type that Batch supports is used.</p> 
+     * <p>Starting end of October 2025 Amazon EKS optimized Amazon Linux 2023 AMIs will
+     * be the default on Batch for EKS versions prior to 1.33. Starting from Kubernetes
+     * version 1.33, EKS optimized Amazon Linux 2023 AMIs will be the default when it
+     * becomes supported on Batch.</p> <p>Amazon Web Services will end support for
+     * Amazon EKS AL2-optimized and AL2-accelerated AMIs, starting 11/26/25. You can
+     * continue using Batch-provided Amazon EKS optimized Amazon Linux 2 AMIs on your
+     * Amazon EKS compute environments beyond the 11/26/25 end-of-support date, these
+     * compute environments will no longer receive any new software updates, security
+     * patches, or bug fixes from Amazon Web Services. For more information on
+     * upgrading from AL2 to AL2023, see <a href="">How to upgrade from EKS AL2 to EKS
+     * AL2023</a> in the <i>Batch User Guide</i>.</p>  <dl>
      * <dt>EKS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon
      * Linux 2</a>: Default for all non-GPU instance families.</p> </dd>

@@ -12,6 +12,7 @@
 #include <aws/sagemaker/model/ClusterOrchestrator.h>
 #include <aws/sagemaker/model/ClusterNodeRecovery.h>
 #include <aws/sagemaker/model/ClusterNodeProvisioningMode.h>
+#include <aws/sagemaker/model/ClusterAutoScalingConfig.h>
 #include <aws/sagemaker/model/ClusterInstanceGroupSpecification.h>
 #include <aws/sagemaker/model/ClusterRestrictedInstanceGroupSpecification.h>
 #include <aws/sagemaker/model/Tag.h>
@@ -179,6 +180,36 @@ namespace Model
     inline void SetNodeProvisioningMode(ClusterNodeProvisioningMode value) { m_nodeProvisioningModeHasBeenSet = true; m_nodeProvisioningMode = value; }
     inline CreateClusterRequest& WithNodeProvisioningMode(ClusterNodeProvisioningMode value) { SetNodeProvisioningMode(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes to
+     * perform cluster autoscaling operations. This role must have permissions for
+     * <code>sagemaker:BatchAddClusterNodes</code> and
+     * <code>sagemaker:BatchDeleteClusterNodes</code>. This is only required when
+     * autoscaling is enabled and when HyperPod is performing autoscaling
+     * operations.</p>
+     */
+    inline const Aws::String& GetClusterRole() const { return m_clusterRole; }
+    inline bool ClusterRoleHasBeenSet() const { return m_clusterRoleHasBeenSet; }
+    template<typename ClusterRoleT = Aws::String>
+    void SetClusterRole(ClusterRoleT&& value) { m_clusterRoleHasBeenSet = true; m_clusterRole = std::forward<ClusterRoleT>(value); }
+    template<typename ClusterRoleT = Aws::String>
+    CreateClusterRequest& WithClusterRole(ClusterRoleT&& value) { SetClusterRole(std::forward<ClusterRoleT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The autoscaling configuration for the cluster. Enables automatic scaling of
+     * cluster nodes based on workload demand using a Karpenter-based system.</p>
+     */
+    inline const ClusterAutoScalingConfig& GetAutoScaling() const { return m_autoScaling; }
+    inline bool AutoScalingHasBeenSet() const { return m_autoScalingHasBeenSet; }
+    template<typename AutoScalingT = ClusterAutoScalingConfig>
+    void SetAutoScaling(AutoScalingT&& value) { m_autoScalingHasBeenSet = true; m_autoScaling = std::forward<AutoScalingT>(value); }
+    template<typename AutoScalingT = ClusterAutoScalingConfig>
+    CreateClusterRequest& WithAutoScaling(AutoScalingT&& value) { SetAutoScaling(std::forward<AutoScalingT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_clusterName;
@@ -204,6 +235,12 @@ namespace Model
 
     ClusterNodeProvisioningMode m_nodeProvisioningMode{ClusterNodeProvisioningMode::NOT_SET};
     bool m_nodeProvisioningModeHasBeenSet = false;
+
+    Aws::String m_clusterRole;
+    bool m_clusterRoleHasBeenSet = false;
+
+    ClusterAutoScalingConfig m_autoScaling;
+    bool m_autoScalingHasBeenSet = false;
   };
 
 } // namespace Model

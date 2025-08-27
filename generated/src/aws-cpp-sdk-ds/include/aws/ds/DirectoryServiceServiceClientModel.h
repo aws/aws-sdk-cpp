@@ -42,6 +42,7 @@
 #include <aws/ds/model/DeregisterCertificateResult.h>
 #include <aws/ds/model/DeregisterEventTopicResult.h>
 #include <aws/ds/model/DescribeADAssessmentResult.h>
+#include <aws/ds/model/DescribeCAEnrollmentPolicyResult.h>
 #include <aws/ds/model/DescribeCertificateResult.h>
 #include <aws/ds/model/DescribeClientAuthenticationSettingsResult.h>
 #include <aws/ds/model/DescribeConditionalForwardersResult.h>
@@ -57,11 +58,13 @@
 #include <aws/ds/model/DescribeSnapshotsResult.h>
 #include <aws/ds/model/DescribeTrustsResult.h>
 #include <aws/ds/model/DescribeUpdateDirectoryResult.h>
+#include <aws/ds/model/DisableCAEnrollmentPolicyResult.h>
 #include <aws/ds/model/DisableClientAuthenticationResult.h>
 #include <aws/ds/model/DisableDirectoryDataAccessResult.h>
 #include <aws/ds/model/DisableLDAPSResult.h>
 #include <aws/ds/model/DisableRadiusResult.h>
 #include <aws/ds/model/DisableSsoResult.h>
+#include <aws/ds/model/EnableCAEnrollmentPolicyResult.h>
 #include <aws/ds/model/EnableClientAuthenticationResult.h>
 #include <aws/ds/model/EnableDirectoryDataAccessResult.h>
 #include <aws/ds/model/EnableLDAPSResult.h>
@@ -167,6 +170,7 @@ namespace Aws
       class DeregisterCertificateRequest;
       class DeregisterEventTopicRequest;
       class DescribeADAssessmentRequest;
+      class DescribeCAEnrollmentPolicyRequest;
       class DescribeCertificateRequest;
       class DescribeClientAuthenticationSettingsRequest;
       class DescribeConditionalForwardersRequest;
@@ -182,11 +186,13 @@ namespace Aws
       class DescribeSnapshotsRequest;
       class DescribeTrustsRequest;
       class DescribeUpdateDirectoryRequest;
+      class DisableCAEnrollmentPolicyRequest;
       class DisableClientAuthenticationRequest;
       class DisableDirectoryDataAccessRequest;
       class DisableLDAPSRequest;
       class DisableRadiusRequest;
       class DisableSsoRequest;
+      class EnableCAEnrollmentPolicyRequest;
       class EnableClientAuthenticationRequest;
       class EnableDirectoryDataAccessRequest;
       class EnableLDAPSRequest;
@@ -247,6 +253,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeregisterCertificateResult, DirectoryServiceError> DeregisterCertificateOutcome;
       typedef Aws::Utils::Outcome<DeregisterEventTopicResult, DirectoryServiceError> DeregisterEventTopicOutcome;
       typedef Aws::Utils::Outcome<DescribeADAssessmentResult, DirectoryServiceError> DescribeADAssessmentOutcome;
+      typedef Aws::Utils::Outcome<DescribeCAEnrollmentPolicyResult, DirectoryServiceError> DescribeCAEnrollmentPolicyOutcome;
       typedef Aws::Utils::Outcome<DescribeCertificateResult, DirectoryServiceError> DescribeCertificateOutcome;
       typedef Aws::Utils::Outcome<DescribeClientAuthenticationSettingsResult, DirectoryServiceError> DescribeClientAuthenticationSettingsOutcome;
       typedef Aws::Utils::Outcome<DescribeConditionalForwardersResult, DirectoryServiceError> DescribeConditionalForwardersOutcome;
@@ -262,11 +269,13 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeSnapshotsResult, DirectoryServiceError> DescribeSnapshotsOutcome;
       typedef Aws::Utils::Outcome<DescribeTrustsResult, DirectoryServiceError> DescribeTrustsOutcome;
       typedef Aws::Utils::Outcome<DescribeUpdateDirectoryResult, DirectoryServiceError> DescribeUpdateDirectoryOutcome;
+      typedef Aws::Utils::Outcome<DisableCAEnrollmentPolicyResult, DirectoryServiceError> DisableCAEnrollmentPolicyOutcome;
       typedef Aws::Utils::Outcome<DisableClientAuthenticationResult, DirectoryServiceError> DisableClientAuthenticationOutcome;
       typedef Aws::Utils::Outcome<DisableDirectoryDataAccessResult, DirectoryServiceError> DisableDirectoryDataAccessOutcome;
       typedef Aws::Utils::Outcome<DisableLDAPSResult, DirectoryServiceError> DisableLDAPSOutcome;
       typedef Aws::Utils::Outcome<DisableRadiusResult, DirectoryServiceError> DisableRadiusOutcome;
       typedef Aws::Utils::Outcome<DisableSsoResult, DirectoryServiceError> DisableSsoOutcome;
+      typedef Aws::Utils::Outcome<EnableCAEnrollmentPolicyResult, DirectoryServiceError> EnableCAEnrollmentPolicyOutcome;
       typedef Aws::Utils::Outcome<EnableClientAuthenticationResult, DirectoryServiceError> EnableClientAuthenticationOutcome;
       typedef Aws::Utils::Outcome<EnableDirectoryDataAccessResult, DirectoryServiceError> EnableDirectoryDataAccessOutcome;
       typedef Aws::Utils::Outcome<EnableLDAPSResult, DirectoryServiceError> EnableLDAPSOutcome;
@@ -327,6 +336,7 @@ namespace Aws
       typedef std::future<DeregisterCertificateOutcome> DeregisterCertificateOutcomeCallable;
       typedef std::future<DeregisterEventTopicOutcome> DeregisterEventTopicOutcomeCallable;
       typedef std::future<DescribeADAssessmentOutcome> DescribeADAssessmentOutcomeCallable;
+      typedef std::future<DescribeCAEnrollmentPolicyOutcome> DescribeCAEnrollmentPolicyOutcomeCallable;
       typedef std::future<DescribeCertificateOutcome> DescribeCertificateOutcomeCallable;
       typedef std::future<DescribeClientAuthenticationSettingsOutcome> DescribeClientAuthenticationSettingsOutcomeCallable;
       typedef std::future<DescribeConditionalForwardersOutcome> DescribeConditionalForwardersOutcomeCallable;
@@ -342,11 +352,13 @@ namespace Aws
       typedef std::future<DescribeSnapshotsOutcome> DescribeSnapshotsOutcomeCallable;
       typedef std::future<DescribeTrustsOutcome> DescribeTrustsOutcomeCallable;
       typedef std::future<DescribeUpdateDirectoryOutcome> DescribeUpdateDirectoryOutcomeCallable;
+      typedef std::future<DisableCAEnrollmentPolicyOutcome> DisableCAEnrollmentPolicyOutcomeCallable;
       typedef std::future<DisableClientAuthenticationOutcome> DisableClientAuthenticationOutcomeCallable;
       typedef std::future<DisableDirectoryDataAccessOutcome> DisableDirectoryDataAccessOutcomeCallable;
       typedef std::future<DisableLDAPSOutcome> DisableLDAPSOutcomeCallable;
       typedef std::future<DisableRadiusOutcome> DisableRadiusOutcomeCallable;
       typedef std::future<DisableSsoOutcome> DisableSsoOutcomeCallable;
+      typedef std::future<EnableCAEnrollmentPolicyOutcome> EnableCAEnrollmentPolicyOutcomeCallable;
       typedef std::future<EnableClientAuthenticationOutcome> EnableClientAuthenticationOutcomeCallable;
       typedef std::future<EnableDirectoryDataAccessOutcome> EnableDirectoryDataAccessOutcomeCallable;
       typedef std::future<EnableLDAPSOutcome> EnableLDAPSOutcomeCallable;
@@ -410,6 +422,7 @@ namespace Aws
     typedef std::function<void(const DirectoryServiceClient*, const Model::DeregisterCertificateRequest&, const Model::DeregisterCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterCertificateResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DeregisterEventTopicRequest&, const Model::DeregisterEventTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterEventTopicResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeADAssessmentRequest&, const Model::DescribeADAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeADAssessmentResponseReceivedHandler;
+    typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeCAEnrollmentPolicyRequest&, const Model::DescribeCAEnrollmentPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCAEnrollmentPolicyResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeCertificateRequest&, const Model::DescribeCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCertificateResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeClientAuthenticationSettingsRequest&, const Model::DescribeClientAuthenticationSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClientAuthenticationSettingsResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeConditionalForwardersRequest&, const Model::DescribeConditionalForwardersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConditionalForwardersResponseReceivedHandler;
@@ -425,11 +438,13 @@ namespace Aws
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeSnapshotsRequest&, const Model::DescribeSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSnapshotsResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeTrustsRequest&, const Model::DescribeTrustsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrustsResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeUpdateDirectoryRequest&, const Model::DescribeUpdateDirectoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUpdateDirectoryResponseReceivedHandler;
+    typedef std::function<void(const DirectoryServiceClient*, const Model::DisableCAEnrollmentPolicyRequest&, const Model::DisableCAEnrollmentPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableCAEnrollmentPolicyResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DisableClientAuthenticationRequest&, const Model::DisableClientAuthenticationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableClientAuthenticationResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DisableDirectoryDataAccessRequest&, const Model::DisableDirectoryDataAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableDirectoryDataAccessResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DisableLDAPSRequest&, const Model::DisableLDAPSOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableLDAPSResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DisableRadiusRequest&, const Model::DisableRadiusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableRadiusResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DisableSsoRequest&, const Model::DisableSsoOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableSsoResponseReceivedHandler;
+    typedef std::function<void(const DirectoryServiceClient*, const Model::EnableCAEnrollmentPolicyRequest&, const Model::EnableCAEnrollmentPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableCAEnrollmentPolicyResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::EnableClientAuthenticationRequest&, const Model::EnableClientAuthenticationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableClientAuthenticationResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::EnableDirectoryDataAccessRequest&, const Model::EnableDirectoryDataAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableDirectoryDataAccessResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::EnableLDAPSRequest&, const Model::EnableLDAPSOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableLDAPSResponseReceivedHandler;

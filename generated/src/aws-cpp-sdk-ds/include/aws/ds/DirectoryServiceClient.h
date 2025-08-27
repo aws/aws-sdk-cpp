@@ -777,6 +777,34 @@ namespace DirectoryService
         }
 
         /**
+         * <p>Retrieves detailed information about the certificate authority (CA)
+         * enrollment policy for the specified directory. This policy determines how client
+         * certificates are automatically enrolled and managed through Amazon Web Services
+         * Private Certificate Authority. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeCAEnrollmentPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCAEnrollmentPolicyOutcome DescribeCAEnrollmentPolicy(const Model::DescribeCAEnrollmentPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeCAEnrollmentPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeCAEnrollmentPolicyRequestT = Model::DescribeCAEnrollmentPolicyRequest>
+        Model::DescribeCAEnrollmentPolicyOutcomeCallable DescribeCAEnrollmentPolicyCallable(const DescribeCAEnrollmentPolicyRequestT& request) const
+        {
+            return SubmitCallable(&DirectoryServiceClient::DescribeCAEnrollmentPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeCAEnrollmentPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeCAEnrollmentPolicyRequestT = Model::DescribeCAEnrollmentPolicyRequest>
+        void DescribeCAEnrollmentPolicyAsync(const DescribeCAEnrollmentPolicyRequestT& request, const DescribeCAEnrollmentPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DirectoryServiceClient::DescribeCAEnrollmentPolicy, request, handler, context);
+        }
+
+        /**
          * <p>Displays information about the certificate registered for secure LDAP or
          * client certificate authentication.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeCertificate">AWS
@@ -1191,6 +1219,36 @@ namespace DirectoryService
         }
 
         /**
+         * <p>Disables the certificate authority (CA) enrollment policy for the specified
+         * directory. This stops automatic certificate enrollment and management for
+         * domain-joined clients, but does not affect existing certificates.</p>
+         *  <p>Disabling the CA enrollment policy prevents new certificates from
+         * being automatically enrolled, but existing certificates remain valid and
+         * functional until they expire.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableCAEnrollmentPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableCAEnrollmentPolicyOutcome DisableCAEnrollmentPolicy(const Model::DisableCAEnrollmentPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisableCAEnrollmentPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisableCAEnrollmentPolicyRequestT = Model::DisableCAEnrollmentPolicyRequest>
+        Model::DisableCAEnrollmentPolicyOutcomeCallable DisableCAEnrollmentPolicyCallable(const DisableCAEnrollmentPolicyRequestT& request) const
+        {
+            return SubmitCallable(&DirectoryServiceClient::DisableCAEnrollmentPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DisableCAEnrollmentPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisableCAEnrollmentPolicyRequestT = Model::DisableCAEnrollmentPolicyRequest>
+        void DisableCAEnrollmentPolicyAsync(const DisableCAEnrollmentPolicyRequestT& request, const DisableCAEnrollmentPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DirectoryServiceClient::DisableCAEnrollmentPolicy, request, handler, context);
+        }
+
+        /**
          * <p>Disables alternative client authentication methods for the specified
          * directory. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableClientAuthentication">AWS
@@ -1320,6 +1378,37 @@ namespace DirectoryService
         void DisableSsoAsync(const DisableSsoRequestT& request, const DisableSsoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DirectoryServiceClient::DisableSso, request, handler, context);
+        }
+
+        /**
+         * <p>Enables certificate authority (CA) enrollment policy for the specified
+         * directory. This allows domain-joined clients to automatically request and
+         * receive certificates from the specified Amazon Web Services Private Certificate
+         * Authority.</p>  <p>Before enabling CA enrollment, ensure that the PCA
+         * connector is properly configured and accessible from the directory. The
+         * connector must be in an active state and have the necessary permissions.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableCAEnrollmentPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableCAEnrollmentPolicyOutcome EnableCAEnrollmentPolicy(const Model::EnableCAEnrollmentPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for EnableCAEnrollmentPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EnableCAEnrollmentPolicyRequestT = Model::EnableCAEnrollmentPolicyRequest>
+        Model::EnableCAEnrollmentPolicyOutcomeCallable EnableCAEnrollmentPolicyCallable(const EnableCAEnrollmentPolicyRequestT& request) const
+        {
+            return SubmitCallable(&DirectoryServiceClient::EnableCAEnrollmentPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for EnableCAEnrollmentPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EnableCAEnrollmentPolicyRequestT = Model::EnableCAEnrollmentPolicyRequest>
+        void EnableCAEnrollmentPolicyAsync(const EnableCAEnrollmentPolicyRequestT& request, const EnableCAEnrollmentPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DirectoryServiceClient::EnableCAEnrollmentPolicy, request, handler, context);
         }
 
         /**

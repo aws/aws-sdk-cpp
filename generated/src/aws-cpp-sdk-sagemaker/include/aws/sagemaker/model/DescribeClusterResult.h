@@ -13,6 +13,7 @@
 #include <aws/sagemaker/model/ClusterOrchestrator.h>
 #include <aws/sagemaker/model/ClusterNodeRecovery.h>
 #include <aws/sagemaker/model/ClusterNodeProvisioningMode.h>
+#include <aws/sagemaker/model/ClusterAutoScalingConfigOutput.h>
 #include <aws/sagemaker/model/ClusterInstanceGroupDetails.h>
 #include <aws/sagemaker/model/ClusterRestrictedInstanceGroupDetails.h>
 #include <utility>
@@ -160,6 +161,29 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod uses for cluster
+     * autoscaling operations.</p>
+     */
+    inline const Aws::String& GetClusterRole() const { return m_clusterRole; }
+    template<typename ClusterRoleT = Aws::String>
+    void SetClusterRole(ClusterRoleT&& value) { m_clusterRoleHasBeenSet = true; m_clusterRole = std::forward<ClusterRoleT>(value); }
+    template<typename ClusterRoleT = Aws::String>
+    DescribeClusterResult& WithClusterRole(ClusterRoleT&& value) { SetClusterRole(std::forward<ClusterRoleT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The current autoscaling configuration and status for the autoscaler.</p>
+     */
+    inline const ClusterAutoScalingConfigOutput& GetAutoScaling() const { return m_autoScaling; }
+    template<typename AutoScalingT = ClusterAutoScalingConfigOutput>
+    void SetAutoScaling(AutoScalingT&& value) { m_autoScalingHasBeenSet = true; m_autoScaling = std::forward<AutoScalingT>(value); }
+    template<typename AutoScalingT = ClusterAutoScalingConfigOutput>
+    DescribeClusterResult& WithAutoScaling(AutoScalingT&& value) { SetAutoScaling(std::forward<AutoScalingT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -201,6 +225,12 @@ namespace Model
 
     ClusterNodeProvisioningMode m_nodeProvisioningMode{ClusterNodeProvisioningMode::NOT_SET};
     bool m_nodeProvisioningModeHasBeenSet = false;
+
+    Aws::String m_clusterRole;
+    bool m_clusterRoleHasBeenSet = false;
+
+    ClusterAutoScalingConfigOutput m_autoScaling;
+    bool m_autoScalingHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;
