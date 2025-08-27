@@ -33,6 +33,15 @@ class SmokeTestsGen(object):
         :param clients_to_build: a set of service client names to generate
         :return:
         """
+        # Block specific smoke tests
+        blocked_services = {
+            'es',
+            'iot-managed-integrations',
+            'elastictranscoder',
+            'freetier',
+        }
+        clients_to_build = clients_to_build - blocked_services
+        
         # get smithy names
         smithy_services = [self.c2j_smithy_data.get(service, service) for service in clients_to_build]
         print(f"Running code generator for smoke-tests for services:"+",".join(smithy_services))

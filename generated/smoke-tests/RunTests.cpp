@@ -16,7 +16,6 @@ int main(int argc, char** argv)
     // Created dir by this process will be set with mode 0777, so that multiple users can build on the same machine
     umask(0);
 #endif
-    Aws::Testing::RedirectHomeToTempIfAppropriate();
 
     // Disable EC2 metadata in client configuration to avoid requests retrieving EC2 metadata in unit tests.
     Aws::Testing::SaveEnvironmentVariable("AWS_EC2_METADATA_DISABLED");

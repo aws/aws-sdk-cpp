@@ -40,7 +40,7 @@ TEST_F(WAFV2SmokeTestSuite, ListWebACLsSuccess )
     //populate input params
     
     ListWebACLsRequest input;
-    input.SetScope({Scope::REGIONAL});
+    input.SetScope(Scope::REGIONAL);
     input.SetLimit(20);
     auto outcome = clientSp->ListWebACLs(input);
     EXPECT_TRUE( outcome.IsSuccess());
