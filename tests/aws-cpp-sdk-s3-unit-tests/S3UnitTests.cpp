@@ -378,6 +378,41 @@ TEST_F(S3UnitTest, PutObjectShouldHaveCorrectUserAgent) {
   EXPECT_TRUE(archMetadata < businessMetrics);
 }
 
+TEST_F(S3UnitTest, PutObjectShouldOverrideUserAgent) {
+  auto request = PutObjectRequest()
+    .WithBucket("ocelot")
+    .WithKey("revolver");
+
+  std::shared_ptr<IOStream> body = Aws::MakeShared<StringStream>(ALLOCATION_TAG, "lalilulelo");
+  request.SetBody(body);
+
+  auto mockRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "major.com/zero", HttpMethod::HTTP_PUT);
+  mockRequest->SetResponseStreamFactory([]() -> IOStream* {
+    return Aws::New<StringStream>(ALLOCATION_TAG, "", std::ios_base::in | std::ios_base::binary);
+  });
+  auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
+  mockResponse->SetResponseCode(HttpResponseCode::OK);
+
+  _mockHttpClient->AddResponseToReturn(mockResponse);
+
+  const AWSCredentials credentials{"mock", "credentials"};
+  const auto epProvider = Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG);
+  ClientConfigurationInitValues initValues;
+  initValues.shouldDisableIMDS = true;
+  S3ClientConfiguration configuration{initValues};
+  configuration.region = "us-east-1";
+  configuration.retryStrategy = Aws::MakeShared<NoRetry>(ALLOCATION_TAG);
+  configuration.userAgent = "youre-pretty-good";
+  const S3Client customUaClient{configuration};
+
+  const auto response = customUaClient.PutObject(request);
+  const auto requestSeen = _mockHttpClient->GetMostRecentHttpRequest();
+  EXPECT_TRUE(requestSeen.HasUserAgent());
+  const auto& userAgent = requestSeen.GetUserAgent();
+  EXPECT_TRUE(!userAgent.empty());
+  EXPECT_EQ("youre-pretty-good", userAgent);
+}
+
 TEST_F(S3UnitTest, PutObjectS3ExpressShouldHaveJMetric) {
   auto request = PutObjectRequest()
     .WithBucket("o-worthy-heart--usw2-az1--x-s3")  // S3Express bucket pattern

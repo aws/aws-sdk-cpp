@@ -53,6 +53,7 @@ class AWS_CORE_API UserAgent {
   const Aws::String m_retryStrategyName;
   const Aws::String m_execEnv;
   const Aws::String m_appId;
+  const Aws::String m_overrideUserAgent;
   const Aws::String m_customizations;
   Aws::Set<UserAgentFeature> m_features;
 };

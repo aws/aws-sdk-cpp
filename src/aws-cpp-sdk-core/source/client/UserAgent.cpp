@@ -109,7 +109,8 @@ UserAgent::UserAgent(const ClientConfiguration& clientConfiguration,
       m_compilerMetadata{FilterUserAgentToken(Version::GetCompilerVersionString())},
       m_retryStrategyName{retryStrategyName},
       m_execEnv{FilterUserAgentToken(Aws::Environment::GetEnv(EXEC_ENV_VAR).c_str())},
-      m_appId{FilterUserAgentToken(clientConfiguration.appId.c_str())}
+      m_appId{FilterUserAgentToken(clientConfiguration.appId.c_str())},
+      m_overrideUserAgent{clientConfiguration.userAgent}
 #if defined(AWS_USER_AGENT_CUSTOMIZATION)
 #define XSTR(V) STR(V)
 #define STR(V) #V
@@ -125,6 +126,10 @@ UserAgent::UserAgent(const ClientConfiguration& clientConfiguration,
 }
 
 Aws::String UserAgent::SerializeWithFeatures(const Aws::Set<UserAgentFeature>& features) const {
+  if (!m_overrideUserAgent.empty()) {
+    return m_overrideUserAgent;
+  }
+
   // Need to be in order
   Aws::StringStream userAgentValue;
 
