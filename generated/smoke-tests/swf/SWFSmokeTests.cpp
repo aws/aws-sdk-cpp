@@ -40,7 +40,7 @@ TEST_F(SWFSmokeTestSuite, ListDomainsSuccess )
     //populate input params
     
     ListDomainsRequest input;
-    input.SetRegistrationStatus({RegistrationStatus::REGISTERED});
+    input.SetRegistrationStatus(RegistrationStatus::REGISTERED);
     auto outcome = clientSp->ListDomains(input);
     EXPECT_TRUE( outcome.IsSuccess());
 }

@@ -40,7 +40,7 @@ TEST_F(ApplicationAutoScalingSmokeTestSuite, DescribeScalableTargetsSuccess )
     //populate input params
     
     DescribeScalableTargetsRequest input;
-    input.SetServiceNamespace({ServiceNamespace::ec2});
+    input.SetServiceNamespace(ServiceNamespace::ec2);
     auto outcome = clientSp->DescribeScalableTargets(input);
     EXPECT_TRUE( outcome.IsSuccess());
 }
