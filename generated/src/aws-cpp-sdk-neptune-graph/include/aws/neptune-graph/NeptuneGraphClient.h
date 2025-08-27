@@ -805,6 +805,31 @@ namespace NeptuneGraph
         }
 
         /**
+         * <p>Starts the specific graph.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StartGraph">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartGraphOutcome StartGraph(const Model::StartGraphRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartGraph that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartGraphRequestT = Model::StartGraphRequest>
+        Model::StartGraphOutcomeCallable StartGraphCallable(const StartGraphRequestT& request) const
+        {
+            return SubmitCallable(&NeptuneGraphClient::StartGraph, request);
+        }
+
+        /**
+         * An Async wrapper for StartGraph that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartGraphRequestT = Model::StartGraphRequest>
+        void StartGraphAsync(const StartGraphRequestT& request, const StartGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NeptuneGraphClient::StartGraph, request, handler, context);
+        }
+
+        /**
          * <p>Import data into existing Neptune Analytics graph from Amazon Simple Storage
          * Service (S3). The graph needs to be empty and in the AVAILABLE
          * state.</p><p><h3>See Also:</h3>   <a
@@ -829,6 +854,31 @@ namespace NeptuneGraph
         void StartImportTaskAsync(const StartImportTaskRequestT& request, const StartImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&NeptuneGraphClient::StartImportTask, request, handler, context);
+        }
+
+        /**
+         * <p>Stops the specific graph.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StopGraph">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopGraphOutcome StopGraph(const Model::StopGraphRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopGraph that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopGraphRequestT = Model::StopGraphRequest>
+        Model::StopGraphOutcomeCallable StopGraphCallable(const StopGraphRequestT& request) const
+        {
+            return SubmitCallable(&NeptuneGraphClient::StopGraph, request);
+        }
+
+        /**
+         * An Async wrapper for StopGraph that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopGraphRequestT = Model::StopGraphRequest>
+        void StopGraphAsync(const StopGraphRequestT& request, const StopGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NeptuneGraphClient::StopGraph, request, handler, context);
         }
 
         /**
