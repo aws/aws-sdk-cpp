@@ -28,7 +28,9 @@ namespace Model
     InvalidPracticeBlocker,
     FISExperimentUpdateNotAllowed,
     AutoshiftUpdateNotAllowed,
-    UnsupportedPracticeCancelShiftType
+    UnsupportedPracticeCancelShiftType,
+    InvalidPracticeAllowedWindow,
+    InvalidPracticeWindows
   };
 
 namespace ValidationExceptionReasonMapper

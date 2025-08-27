@@ -104,8 +104,12 @@
 #include <aws/neptune-graph/model/SnapshotStatus.h>
 #include <aws/neptune-graph/model/StartExportTaskRequest.h>
 #include <aws/neptune-graph/model/StartExportTaskResult.h>
+#include <aws/neptune-graph/model/StartGraphRequest.h>
+#include <aws/neptune-graph/model/StartGraphResult.h>
 #include <aws/neptune-graph/model/StartImportTaskRequest.h>
 #include <aws/neptune-graph/model/StartImportTaskResult.h>
+#include <aws/neptune-graph/model/StopGraphRequest.h>
+#include <aws/neptune-graph/model/StopGraphResult.h>
 #include <aws/neptune-graph/model/TagResourceRequest.h>
 #include <aws/neptune-graph/model/TagResourceResult.h>
 #include <aws/neptune-graph/model/UnprocessableException.h>

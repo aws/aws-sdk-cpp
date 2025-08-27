@@ -115,6 +115,8 @@
 #include <aws/eks/model/DescribeIdentityProviderConfigResult.h>
 #include <aws/eks/model/DescribeInsightRequest.h>
 #include <aws/eks/model/DescribeInsightResult.h>
+#include <aws/eks/model/DescribeInsightsRefreshRequest.h>
+#include <aws/eks/model/DescribeInsightsRefreshResult.h>
 #include <aws/eks/model/DescribeNodegroupRequest.h>
 #include <aws/eks/model/DescribeNodegroupResult.h>
 #include <aws/eks/model/DescribePodIdentityAssociationRequest.h>
@@ -150,6 +152,7 @@
 #include <aws/eks/model/InsightStatusValue.h>
 #include <aws/eks/model/InsightSummary.h>
 #include <aws/eks/model/InsightsFilter.h>
+#include <aws/eks/model/InsightsRefreshStatus.h>
 #include <aws/eks/model/InvalidParameterException.h>
 #include <aws/eks/model/InvalidRequestException.h>
 #include <aws/eks/model/InvalidStateException.h>
@@ -218,6 +221,8 @@
 #include <aws/eks/model/ResourceLimitExceededException.h>
 #include <aws/eks/model/ResourceNotFoundException.h>
 #include <aws/eks/model/ServerException.h>
+#include <aws/eks/model/StartInsightsRefreshRequest.h>
+#include <aws/eks/model/StartInsightsRefreshResult.h>
 #include <aws/eks/model/StorageConfigRequest.h>
 #include <aws/eks/model/StorageConfigResponse.h>
 #include <aws/eks/model/SupportType.h>

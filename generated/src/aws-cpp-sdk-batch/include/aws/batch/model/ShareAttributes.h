@@ -46,7 +46,7 @@ namespace Model
      * identifiers that start with that prefix. The list of share identifiers in a
      * fair-share policy can't overlap. For example, you can't have one that specifies
      * a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies
-     * a <code>shareIdentifier</code> of <code>UserA-1</code>.</p> <p>There can be no
+     * a <code>shareIdentifier</code> of <code>UserA1</code>.</p> <p>There can be no
      * more than 500 share identifiers active in a job queue.</p> <p>The string is
      * limited to 255 alphanumeric characters, and can be followed by an asterisk
      * (*).</p>

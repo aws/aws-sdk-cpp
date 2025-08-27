@@ -33,6 +33,7 @@ namespace Model
     fpga_image,
     host_reservation,
     image,
+    image_usage_report,
     import_image_task,
     import_snapshot_task,
     instance,

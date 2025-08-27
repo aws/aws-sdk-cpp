@@ -54,12 +54,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The progress of the EC2 Fleet. If there is an error, the status is
-     * <code>error</code>. After all requests are placed, the status is
-     * <code>pending_fulfillment</code>. If the size of the EC2 Fleet is equal to or
-     * greater than its target capacity, the status is <code>fulfilled</code>. If the
-     * size of the EC2 Fleet is decreased, the status is
-     * <code>pending_termination</code> while instances are terminating.</p>
+     * <p>The progress of the EC2 Fleet.</p> <p>For fleets of type
+     * <code>instant</code>, the status is <code>fulfilled</code> after all requests
+     * are placed, regardless of whether target capacity is met (this is the only
+     * possible status for <code>instant</code> fleets).</p> <p>For fleets of type
+     * <code>request</code> or <code>maintain</code>, the status is
+     * <code>pending_fulfillment</code> after all requests are placed,
+     * <code>fulfilled</code> when the fleet size meets or exceeds target capacity,
+     * <code>pending_termination</code> while instances are terminating when fleet size
+     * is decreased, and <code>error</code> if there's an error.</p>
      */
     inline FleetActivityStatus GetActivityStatus() const { return m_activityStatus; }
     inline bool ActivityStatusHasBeenSet() const { return m_activityStatusHasBeenSet; }

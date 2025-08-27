@@ -88,6 +88,16 @@ DescribeClusterResult& DescribeClusterResult::operator =(const Aws::AmazonWebSer
     m_nodeProvisioningMode = ClusterNodeProvisioningModeMapper::GetClusterNodeProvisioningModeForName(jsonValue.GetString("NodeProvisioningMode"));
     m_nodeProvisioningModeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ClusterRole"))
+  {
+    m_clusterRole = jsonValue.GetString("ClusterRole");
+    m_clusterRoleHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("AutoScaling"))
+  {
+    m_autoScaling = jsonValue.GetObject("AutoScaling");
+    m_autoScalingHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

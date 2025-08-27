@@ -8,6 +8,7 @@
 #include <aws/ds/DirectoryServiceErrors.h>
 #include <aws/ds/model/ClientException.h>
 #include <aws/ds/model/EntityAlreadyExistsException.h>
+#include <aws/ds/model/DisableAlreadyInProgressException.h>
 #include <aws/ds/model/UnsupportedSettingsException.h>
 #include <aws/ds/model/DirectoryAlreadySharedException.h>
 #include <aws/ds/model/DirectoryAlreadyInRegionException.h>
@@ -16,6 +17,7 @@
 #include <aws/ds/model/UserDoesNotExistException.h>
 #include <aws/ds/model/EntityDoesNotExistException.h>
 #include <aws/ds/model/AuthenticationFailedException.h>
+#include <aws/ds/model/EnableAlreadyInProgressException.h>
 #include <aws/ds/model/InsufficientPermissionsException.h>
 #include <aws/ds/model/InvalidNextTokenException.h>
 #include <aws/ds/model/DirectoryInDesiredStateException.h>
@@ -66,6 +68,12 @@ template<> AWS_DIRECTORYSERVICE_API EntityAlreadyExistsException DirectoryServic
   return EntityAlreadyExistsException(this->GetJsonPayload().View());
 }
 
+template<> AWS_DIRECTORYSERVICE_API DisableAlreadyInProgressException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::DISABLE_ALREADY_IN_PROGRESS);
+  return DisableAlreadyInProgressException(this->GetJsonPayload().View());
+}
+
 template<> AWS_DIRECTORYSERVICE_API UnsupportedSettingsException DirectoryServiceError::GetModeledError()
 {
   assert(this->GetErrorType() == DirectoryServiceErrors::UNSUPPORTED_SETTINGS);
@@ -112,6 +120,12 @@ template<> AWS_DIRECTORYSERVICE_API AuthenticationFailedException DirectoryServi
 {
   assert(this->GetErrorType() == DirectoryServiceErrors::AUTHENTICATION_FAILED);
   return AuthenticationFailedException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API EnableAlreadyInProgressException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::ENABLE_ALREADY_IN_PROGRESS);
+  return EnableAlreadyInProgressException(this->GetJsonPayload().View());
 }
 
 template<> AWS_DIRECTORYSERVICE_API InsufficientPermissionsException DirectoryServiceError::GetModeledError()
@@ -287,6 +301,7 @@ namespace DirectoryServiceErrorMapper
 
 static const int CLIENT_HASH = HashingUtils::HashString("ClientException");
 static const int ENTITY_ALREADY_EXISTS_HASH = HashingUtils::HashString("EntityAlreadyExistsException");
+static const int DISABLE_ALREADY_IN_PROGRESS_HASH = HashingUtils::HashString("DisableAlreadyInProgressException");
 static const int UNSUPPORTED_SETTINGS_HASH = HashingUtils::HashString("UnsupportedSettingsException");
 static const int DIRECTORY_ALREADY_SHARED_HASH = HashingUtils::HashString("DirectoryAlreadySharedException");
 static const int DIRECTORY_ALREADY_IN_REGION_HASH = HashingUtils::HashString("DirectoryAlreadyInRegionException");
@@ -295,6 +310,7 @@ static const int DIRECTORY_UNAVAILABLE_HASH = HashingUtils::HashString("Director
 static const int USER_DOES_NOT_EXIST_HASH = HashingUtils::HashString("UserDoesNotExistException");
 static const int ENTITY_DOES_NOT_EXIST_HASH = HashingUtils::HashString("EntityDoesNotExistException");
 static const int AUTHENTICATION_FAILED_HASH = HashingUtils::HashString("AuthenticationFailedException");
+static const int ENABLE_ALREADY_IN_PROGRESS_HASH = HashingUtils::HashString("EnableAlreadyInProgressException");
 static const int INSUFFICIENT_PERMISSIONS_HASH = HashingUtils::HashString("InsufficientPermissionsException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
 static const int DIRECTORY_IN_DESIRED_STATE_HASH = HashingUtils::HashString("DirectoryInDesiredStateException");
@@ -336,6 +352,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::ENTITY_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
+  else if (hashCode == DISABLE_ALREADY_IN_PROGRESS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::DISABLE_ALREADY_IN_PROGRESS), RetryableType::NOT_RETRYABLE);
+  }
   else if (hashCode == UNSUPPORTED_SETTINGS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::UNSUPPORTED_SETTINGS), RetryableType::NOT_RETRYABLE);
@@ -367,6 +387,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == AUTHENTICATION_FAILED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::AUTHENTICATION_FAILED), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == ENABLE_ALREADY_IN_PROGRESS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::ENABLE_ALREADY_IN_PROGRESS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INSUFFICIENT_PERMISSIONS_HASH)
   {

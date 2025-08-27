@@ -74,7 +74,7 @@ protected:
 };
 
 Aws::UniquePtrSafeDeleted<Aws::Vector<WAFRegionalEndpointProviderEndpointTestCase>> WAFRegionalEndpointProviderTests::TEST_CASES;
-const size_t WAFRegionalEndpointProviderTests::TEST_CASES_SZ = 71;
+const size_t WAFRegionalEndpointProviderTests::TEST_CASES_SZ = 67;
 
 Aws::Vector<WAFRegionalEndpointProviderEndpointTestCase> WAFRegionalEndpointProviderTests::getTestCase() {
 
@@ -602,12 +602,6 @@ Aws::Vector<WAFRegionalEndpointProviderEndpointTestCase> WAFRegionalEndpointProv
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 58*/
-  {"For region us-iso-east-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"FIPS and DualStack are enabled, but this partition does not support one or both"} // expect
-  },
-  /*TEST CASE 59*/
   {"For region us-iso-east-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -616,13 +610,7 @@ Aws::Vector<WAFRegionalEndpointProviderEndpointTestCase> WAFRegionalEndpointProv
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 60*/
-  {"For region us-iso-east-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"DualStack is enabled but this partition does not support DualStack"} // expect
-  },
-  /*TEST CASE 61*/
+  /*TEST CASE 59*/
   {"For region us-iso-east-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -631,13 +619,7 @@ Aws::Vector<WAFRegionalEndpointProviderEndpointTestCase> WAFRegionalEndpointProv
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 62*/
-  {"For region us-isob-east-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"FIPS and DualStack are enabled, but this partition does not support one or both"} // expect
-  },
-  /*TEST CASE 63*/
+  /*TEST CASE 60*/
   {"For region us-isob-east-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -646,13 +628,7 @@ Aws::Vector<WAFRegionalEndpointProviderEndpointTestCase> WAFRegionalEndpointProv
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 64*/
-  {"For region us-isob-east-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"DualStack is enabled but this partition does not support DualStack"} // expect
-  },
-  /*TEST CASE 65*/
+  /*TEST CASE 61*/
   {"For region us-isob-east-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -661,7 +637,7 @@ Aws::Vector<WAFRegionalEndpointProviderEndpointTestCase> WAFRegionalEndpointProv
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 66*/
+  /*TEST CASE 62*/
   {"For custom endpoint with region set and fips disabled and dualstack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -670,7 +646,7 @@ Aws::Vector<WAFRegionalEndpointProviderEndpointTestCase> WAFRegionalEndpointProv
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 67*/
+  /*TEST CASE 63*/
   {"For custom endpoint with region not set and fips disabled and dualstack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -679,19 +655,19 @@ Aws::Vector<WAFRegionalEndpointProviderEndpointTestCase> WAFRegionalEndpointProv
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 68*/
+  /*TEST CASE 64*/
   {"For custom endpoint with fips enabled and dualstack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
   },
-  /*TEST CASE 69*/
+  /*TEST CASE 65*/
   {"For custom endpoint with fips disabled and dualstack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
   },
-  /*TEST CASE 70*/
+  /*TEST CASE 66*/
   {"Missing region", // documentation
     {}, // params
     {}, // tags

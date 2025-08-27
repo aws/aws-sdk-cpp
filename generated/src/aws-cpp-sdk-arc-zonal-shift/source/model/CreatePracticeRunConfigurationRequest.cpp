@@ -55,6 +55,17 @@ Aws::String CreatePracticeRunConfigurationRequest::SerializePayload() const
 
   }
 
+  if(m_allowedWindowsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> allowedWindowsJsonList(m_allowedWindows.size());
+   for(unsigned allowedWindowsIndex = 0; allowedWindowsIndex < allowedWindowsJsonList.GetLength(); ++allowedWindowsIndex)
+   {
+     allowedWindowsJsonList[allowedWindowsIndex].AsString(m_allowedWindows[allowedWindowsIndex]);
+   }
+   payload.WithArray("allowedWindows", std::move(allowedWindowsJsonList));
+
+  }
+
   if(m_outcomeAlarmsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> outcomeAlarmsJsonList(m_outcomeAlarms.size());
