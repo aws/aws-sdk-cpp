@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p> The customer-managed-key(CMK) used when creating a data store. If a customer
-   * owned key is not specified, an AWS owned key will be used for encryption.
+   * <p>The customer-managed-key (CMK) used when creating a data store. If a
+   * customer-owned key is not specified, an AWS-owned key is used for encryption.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/KmsEncryptionConfig">AWS
    * API Reference</a></p>
@@ -42,8 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The type of customer-managed-key(CMK) used for encryption. The two types of
-     * supported CMKs are customer owned CMKs and AWS owned CMKs. </p>
+     * <p>The type of customer-managed-key (CMK) used for encryption.</p>
      */
     inline CmkType GetCmkType() const { return m_cmkType; }
     inline bool CmkTypeHasBeenSet() const { return m_cmkTypeHasBeenSet; }
@@ -53,8 +52,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The KMS encryption key id/alias used to encrypt the data store contents at
-     * rest. </p>
+     * <p>The Key Management Service (KMS) encryption key id/alias used to encrypt the
+     * data store contents at rest.</p>
      */
     inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }

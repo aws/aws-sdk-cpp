@@ -84,7 +84,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The store's SSE settings.</p>
+     * <p>Server-side encryption (SSE) settings for the store. This contains the KMS
+     * key ARN that is used to encrypt read set objects.</p>
      */
     inline const SseConfig& GetSseConfig() const { return m_sseConfig; }
     template<typename SseConfigT = SseConfig>

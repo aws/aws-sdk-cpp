@@ -76,7 +76,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Tags for the store.</p>
+     * <p>Tags for the store. You can configure up to 50 tags.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -92,8 +92,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>To ensure that requests don't run multiple times, specify a unique token for
-     * each request.</p>
+     * <p>An idempotency token used to dedupe retry requests so that duplicate runs are
+     * not created.</p>
      */
     inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
@@ -105,8 +105,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>An S3 location that is used to store files that have failed a direct
-     * upload.</p>
+     * <p>An S3 location that is used to store files that have failed a direct upload.
+     * You can add or change the <code>fallbackLocation</code> after creating a
+     * sequence store. This is not required if you are uploading files from a different
+     * S3 bucket.</p>
      */
     inline const Aws::String& GetFallbackLocation() const { return m_fallbackLocation; }
     inline bool FallbackLocationHasBeenSet() const { return m_fallbackLocationHasBeenSet; }
@@ -118,7 +120,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ETag algorithm family to use for ingested read sets.</p>
+     * <p>The ETag algorithm family to use for ingested read sets. The default value is
+     * MD5up. For more information on ETags, see <a
+     * href="https://docs.aws.amazon.com/omics/latest/dev/etags-and-provenance.html">ETags
+     * and data provenance</a> in the <i>Amazon Web Services HealthOmics User
+     * Guide</i>.</p>
      */
     inline ETagAlgorithmFamily GetETagAlgorithmFamily() const { return m_eTagAlgorithmFamily; }
     inline bool ETagAlgorithmFamilyHasBeenSet() const { return m_eTagAlgorithmFamilyHasBeenSet; }
@@ -129,7 +135,8 @@ namespace Model
     ///@{
     /**
      * <p>The tags keys to propagate to the S3 objects associated with read sets in the
-     * sequence store.</p>
+     * sequence store. These tags can be used as input to add metadata to your read
+     * sets.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPropagatedSetLevelTags() const { return m_propagatedSetLevelTags; }
     inline bool PropagatedSetLevelTagsHasBeenSet() const { return m_propagatedSetLevelTagsHasBeenSet; }
@@ -143,7 +150,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>S3 access configuration parameters</p>
+     * <p>S3 access configuration parameters. This specifies the parameters needed to
+     * access logs stored in S3 buckets. The S3 bucket must be in the same region and
+     * account as the sequence store. </p>
      */
     inline const S3AccessConfig& GetS3AccessConfig() const { return m_s3AccessConfig; }
     inline bool S3AccessConfigHasBeenSet() const { return m_s3AccessConfigHasBeenSet; }

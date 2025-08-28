@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS-generated data store ID.</p>
+     * <p>The data store identifier.</p>
      */
     inline const Aws::String& GetDatastoreId() const { return m_datastoreId; }
     inline bool DatastoreIdHasBeenSet() const { return m_datastoreIdHasBeenSet; }

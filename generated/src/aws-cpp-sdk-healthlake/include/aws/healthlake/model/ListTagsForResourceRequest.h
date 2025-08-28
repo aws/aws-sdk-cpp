@@ -36,8 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The Amazon Resource Name(ARN) of the data store for which tags are being
-     * added. </p>
+     * <p>The Amazon Resource Name (ARN) of the data store to which tags are being
+     * added.</p>
      */
     inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }

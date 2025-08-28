@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The AWS-generated ID for the data store to be deleted.</p>
+     * <p> The AWS-generated identifier for the data store to be deleted.</p>
      */
     inline const Aws::String& GetDatastoreId() const { return m_datastoreId; }
     inline bool DatastoreIdHasBeenSet() const { return m_datastoreIdHasBeenSet; }

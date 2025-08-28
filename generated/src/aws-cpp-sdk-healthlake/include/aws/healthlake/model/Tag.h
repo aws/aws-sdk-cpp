@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> A tag is a label consisting of a user-defined key and value. The form for
-   * tags is {"Key", "Value"} </p><p><h3>See Also:</h3>   <a
+   * <p>A label consisting of a user-defined key and value. The form for tags is
+   * {"Key", "Value"}</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/Tag">AWS API
    * Reference</a></p>
    */
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The key portion of a tag. Tag keys are case sensitive. </p>
+     * <p>The key portion of a tag. Tag keys are case sensitive. </p>
      */
     inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
@@ -52,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The value portion of a tag. Tag values are case sensitive. </p>
+     * <p> The value portion of a tag. Tag values are case-sensitive.</p>
      */
     inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }

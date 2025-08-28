@@ -2376,7 +2376,7 @@ namespace Connect
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to change.
-         * To request access to this API, contact Amazon Web ServicesSupport.</p>
+         * To request access to this API, contact Amazon Web Services Support.</p>
          * <p>Describes the target authentication profile.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeAuthenticationProfile">AWS
          * API Reference</a></p>
@@ -3908,7 +3908,7 @@ namespace Connect
          * service level quota of 99 phone numbers, and in any 180 day period you release
          * 99, claim 99, and then release 99, you will have exceeded the 200% limit. At
          * that point you are blocked from claiming any more numbers until you open an
-         * Amazon Web ServicesSupport ticket. </p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services Support ticket. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ImportPhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -4064,7 +4064,7 @@ namespace Connect
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to change.
-         * To request access to this API, contact Amazon Web ServicesSupport.</p>
+         * To request access to this API, contact Amazon Web Services Support.</p>
          * <p>Provides summary information about the authentication profiles in a specified
          * Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAuthenticationProfiles">AWS
@@ -5386,7 +5386,7 @@ namespace Connect
          * <p>After releasing a phone number, the phone number enters into a cooldown
          * period for up to 180 days. It cannot be searched for or claimed again until the
          * period has ended. If you accidentally release a phone number, contact Amazon Web
-         * ServicesSupport.</p>  <p>If you plan to claim and release numbers
+         * Services Support.</p>  <p>If you plan to claim and release numbers
          * frequently, contact us for a service quota exception. Otherwise, it is possible
          * you will be blocked from claiming and releasing any more numbers until up to 180
          * days past the oldest number released has expired.</p> <p>By default you can
@@ -6109,7 +6109,7 @@ namespace Connect
          * <code>LimitExceededException</code>.</p> </li> </ul> <p>If you use the
          * <code>ChatDurationInMinutes</code> parameter and receive a 400 error, your
          * account may not support the ability to configure custom chat durations. For more
-         * information, contact Amazon Web ServicesSupport. </p> <p>For more information
+         * information, contact Amazon Web Services Support. </p> <p>For more information
          * about chat, see the following topics in the <i>Amazon Connect Administrator
          * Guide</i>: </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/web-and-mobile-chat.html">Concepts:
@@ -6829,7 +6829,7 @@ namespace Connect
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to change.
-         * To request access to this API, contact Amazon Web ServicesSupport.</p>
+         * To request access to this API, contact Amazon Web Services Support.</p>
          * <p>Updates the selected authentication profile.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateAuthenticationProfile">AWS
          * API Reference</a></p>

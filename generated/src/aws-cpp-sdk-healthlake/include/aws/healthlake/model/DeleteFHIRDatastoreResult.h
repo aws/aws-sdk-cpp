@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS-generated ID for the data store to be deleted.</p>
+     * <p>The AWS-generated ID for the deleted data store.</p>
      */
     inline const Aws::String& GetDatastoreId() const { return m_datastoreId; }
     template<typename DatastoreIdT = Aws::String>
@@ -46,8 +46,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access
-     * permission.</p>
+     * <p>The Amazon Resource Name (ARN) that grants access permission to AWS
+     * HealthLake.</p>
      */
     inline const Aws::String& GetDatastoreArn() const { return m_datastoreArn; }
     template<typename DatastoreArnT = Aws::String>
@@ -58,7 +58,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the data store that the user has requested to be deleted. </p>
+     * <p>The data store status.</p>
      */
     inline DatastoreStatus GetDatastoreStatus() const { return m_datastoreStatus; }
     inline void SetDatastoreStatus(DatastoreStatus value) { m_datastoreStatusHasBeenSet = true; m_datastoreStatus = value; }
@@ -67,7 +67,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS endpoint for the data store the user has requested to be deleted.</p>
+     * <p>The AWS endpoint of the data store to be deleted.</p>
      */
     inline const Aws::String& GetDatastoreEndpoint() const { return m_datastoreEndpoint; }
     template<typename DatastoreEndpointT = Aws::String>

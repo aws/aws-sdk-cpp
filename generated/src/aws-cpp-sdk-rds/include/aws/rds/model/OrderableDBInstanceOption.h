@@ -458,6 +458,16 @@ namespace Model
     inline void SetSupportsDedicatedLogVolume(bool value) { m_supportsDedicatedLogVolumeHasBeenSet = true; m_supportsDedicatedLogVolume = value; }
     inline OrderableDBInstanceOption& WithSupportsDedicatedLogVolume(bool value) { SetSupportsDedicatedLogVolume(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether a DB instance supports HTTP endpoints.</p>
+     */
+    inline bool GetSupportsHttpEndpoint() const { return m_supportsHttpEndpoint; }
+    inline bool SupportsHttpEndpointHasBeenSet() const { return m_supportsHttpEndpointHasBeenSet; }
+    inline void SetSupportsHttpEndpoint(bool value) { m_supportsHttpEndpointHasBeenSet = true; m_supportsHttpEndpoint = value; }
+    inline OrderableDBInstanceOption& WithSupportsHttpEndpoint(bool value) { SetSupportsHttpEndpoint(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_engine;
@@ -567,6 +577,9 @@ namespace Model
 
     bool m_supportsDedicatedLogVolume{false};
     bool m_supportsDedicatedLogVolumeHasBeenSet = false;
+
+    bool m_supportsHttpEndpoint{false};
+    bool m_supportsHttpEndpointHasBeenSet = false;
   };
 
 } // namespace Model

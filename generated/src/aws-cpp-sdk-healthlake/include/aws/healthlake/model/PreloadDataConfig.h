@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> The input properties for the preloaded data store. Only data preloaded from
-   * Synthea is supported.</p><p><h3>See Also:</h3>   <a
+   * <p>The input properties for the preloaded (Synthea) data store.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/PreloadDataConfig">AWS
    * API Reference</a></p>
    */

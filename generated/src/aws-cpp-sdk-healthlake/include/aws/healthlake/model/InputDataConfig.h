@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p> The input properties for an import job.</p><p><h3>See Also:</h3>   <a
+   * <p> The import job input properties.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/InputDataConfig">AWS
    * API Reference</a></p>
    */
@@ -39,8 +39,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The S3Uri is the user specified S3 location of the FHIR data to be imported
-     * into AWS HealthLake. </p>
+     * <p>The <code>S3Uri</code> is the user-specified S3 location of the FHIR data to
+     * be imported into AWS HealthLake.</p>
      */
     inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }

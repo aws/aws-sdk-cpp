@@ -45,6 +45,11 @@ Dimensions& Dimensions::operator =(JsonView jsonValue)
     m_routingStepExpression = jsonValue.GetString("RoutingStepExpression");
     m_routingStepExpressionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AgentStatus"))
+  {
+    m_agentStatus = jsonValue.GetObject("AgentStatus");
+    m_agentStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -72,6 +77,12 @@ JsonValue Dimensions::Jsonize() const
   if(m_routingStepExpressionHasBeenSet)
   {
    payload.WithString("RoutingStepExpression", m_routingStepExpression);
+
+  }
+
+  if(m_agentStatusHasBeenSet)
+  {
+   payload.WithObject("AgentStatus", m_agentStatus.Jsonize());
 
   }
 

@@ -24,6 +24,7 @@ namespace Aws
         static const int CHANNEL_HASH = HashingUtils::HashString("CHANNEL");
         static const int ROUTING_PROFILE_HASH = HashingUtils::HashString("ROUTING_PROFILE");
         static const int ROUTING_STEP_EXPRESSION_HASH = HashingUtils::HashString("ROUTING_STEP_EXPRESSION");
+        static const int AGENT_STATUS_HASH = HashingUtils::HashString("AGENT_STATUS");
 
 
         Grouping GetGroupingForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == ROUTING_STEP_EXPRESSION_HASH)
           {
             return Grouping::ROUTING_STEP_EXPRESSION;
+          }
+          else if (hashCode == AGENT_STATUS_HASH)
+          {
+            return Grouping::AGENT_STATUS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "ROUTING_PROFILE";
           case Grouping::ROUTING_STEP_EXPRESSION:
             return "ROUTING_STEP_EXPRESSION";
+          case Grouping::AGENT_STATUS:
+            return "AGENT_STATUS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

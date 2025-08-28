@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p>The progress report of an import job.</p><p><h3>See Also:</h3>   <a
+   * <p>The progress report for the import job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/JobProgressReport">AWS
    * API Reference</a></p>
    */
@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of files scanned from input S3 bucket.</p>
+     * <p>The number of files scanned from the S3 input bucket.</p>
      */
     inline long long GetTotalNumberOfScannedFiles() const { return m_totalNumberOfScannedFiles; }
     inline bool TotalNumberOfScannedFilesHasBeenSet() const { return m_totalNumberOfScannedFilesHasBeenSet; }
@@ -47,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The size (in MB) of the files scanned from the input S3 bucket.</p>
+     * <p>The size (in MB) of files scanned from the S3 input bucket.</p>
      */
     inline double GetTotalSizeOfScannedFilesInMB() const { return m_totalSizeOfScannedFilesInMB; }
     inline bool TotalSizeOfScannedFilesInMBHasBeenSet() const { return m_totalSizeOfScannedFilesInMBHasBeenSet; }
@@ -57,7 +57,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of files imported so far.</p>
+     * <p>The number of files imported.</p>
      */
     inline long long GetTotalNumberOfImportedFiles() const { return m_totalNumberOfImportedFiles; }
     inline bool TotalNumberOfImportedFilesHasBeenSet() const { return m_totalNumberOfImportedFilesHasBeenSet; }
@@ -67,7 +67,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of resources scanned from the input S3 bucket.</p>
+     * <p>The number of resources scanned from the S3 input bucket.</p>
      */
     inline long long GetTotalNumberOfResourcesScanned() const { return m_totalNumberOfResourcesScanned; }
     inline bool TotalNumberOfResourcesScannedHasBeenSet() const { return m_totalNumberOfResourcesScannedHasBeenSet; }
@@ -77,7 +77,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of resources imported so far.</p>
+     * <p>The number of resources imported.</p>
      */
     inline long long GetTotalNumberOfResourcesImported() const { return m_totalNumberOfResourcesImported; }
     inline bool TotalNumberOfResourcesImportedHasBeenSet() const { return m_totalNumberOfResourcesImportedHasBeenSet; }
@@ -97,7 +97,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of files that failed to be read from the input S3 bucket due to
+     * <p>The number of files that failed to be read from the S3 input bucket due to
      * customer error.</p>
      */
     inline long long GetTotalNumberOfFilesReadWithCustomerError() const { return m_totalNumberOfFilesReadWithCustomerError; }
@@ -108,7 +108,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The throughput (in MB/sec) of the import job.</p>
+     * <p>The transaction rate the import job is processed at.</p>
      */
     inline double GetThroughput() const { return m_throughput; }
     inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }

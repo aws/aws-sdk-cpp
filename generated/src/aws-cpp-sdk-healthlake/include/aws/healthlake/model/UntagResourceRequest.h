@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name(ARN) of the data store for which tags are being
+     * <p>The Amazon Resource Name (ARN) of the data store from which tags are being
      * removed.</p>
      */
     inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The keys for the tags to be removed from the HealthLake data store. </p>
+     * <p>The keys for the tags to be removed from the data store.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const { return m_tagKeys; }
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }

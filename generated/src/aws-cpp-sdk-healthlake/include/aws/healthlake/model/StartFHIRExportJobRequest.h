@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user generated name for an export job.</p>
+     * <p>The export job name.</p>
      */
     inline const Aws::String& GetJobName() const { return m_jobName; }
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
@@ -50,8 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The output data configuration that was supplied when the export job was
-     * created.</p>
+     * <p>The output data configuration supplied when the export job was started.</p>
      */
     inline const OutputDataConfig& GetOutputDataConfig() const { return m_outputDataConfig; }
     inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
@@ -63,8 +62,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS generated ID for the data store from which files are being exported
-     * for an export job.</p>
+     * <p>The data store identifier from which files are being exported.</p>
      */
     inline const Aws::String& GetDatastoreId() const { return m_datastoreId; }
     inline bool DatastoreIdHasBeenSet() const { return m_datastoreIdHasBeenSet; }
@@ -76,7 +74,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name used during the initiation of the job.</p>
+     * <p>The Amazon Resource Name (ARN) used during initiation of the export job.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const { return m_dataAccessRoleArn; }
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
@@ -88,7 +86,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An optional user provided token used for ensuring idempotency.</p>
+     * <p>An optional user provided token used for ensuring API idempotency.</p>
      */
     inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }

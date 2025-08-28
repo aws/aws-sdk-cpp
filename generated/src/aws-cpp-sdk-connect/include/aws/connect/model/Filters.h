@@ -98,6 +98,20 @@ namespace Model
     template<typename RoutingStepExpressionsT = Aws::String>
     Filters& AddRoutingStepExpressions(RoutingStepExpressionsT&& value) { m_routingStepExpressionsHasBeenSet = true; m_routingStepExpressions.emplace_back(std::forward<RoutingStepExpressionsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>A list of up to 50 agent status IDs or ARNs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAgentStatuses() const { return m_agentStatuses; }
+    inline bool AgentStatusesHasBeenSet() const { return m_agentStatusesHasBeenSet; }
+    template<typename AgentStatusesT = Aws::Vector<Aws::String>>
+    void SetAgentStatuses(AgentStatusesT&& value) { m_agentStatusesHasBeenSet = true; m_agentStatuses = std::forward<AgentStatusesT>(value); }
+    template<typename AgentStatusesT = Aws::Vector<Aws::String>>
+    Filters& WithAgentStatuses(AgentStatusesT&& value) { SetAgentStatuses(std::forward<AgentStatusesT>(value)); return *this;}
+    template<typename AgentStatusesT = Aws::String>
+    Filters& AddAgentStatuses(AgentStatusesT&& value) { m_agentStatusesHasBeenSet = true; m_agentStatuses.emplace_back(std::forward<AgentStatusesT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_queues;
@@ -111,6 +125,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_routingStepExpressions;
     bool m_routingStepExpressionsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_agentStatuses;
+    bool m_agentStatusesHasBeenSet = false;
   };
 
 } // namespace Model

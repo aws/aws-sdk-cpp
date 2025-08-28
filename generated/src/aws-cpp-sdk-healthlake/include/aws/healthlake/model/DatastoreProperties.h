@@ -31,8 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Displays the properties of the data store, including the ID, ARN, name, and
-   * the status of the data store.</p><p><h3>See Also:</h3>   <a
+   * <p>The data store properties.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DatastoreProperties">AWS
    * API Reference</a></p>
    */
@@ -47,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS-generated ID number for the data store.</p>
+     * <p>The data store identifier.</p>
      */
     inline const Aws::String& GetDatastoreId() const { return m_datastoreId; }
     inline bool DatastoreIdHasBeenSet() const { return m_datastoreIdHasBeenSet; }
@@ -59,7 +58,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name used in the creation of the data store.</p>
+     * <p>The Amazon Resource Name (ARN) used in the creation of the data store.</p>
      */
     inline const Aws::String& GetDatastoreArn() const { return m_datastoreArn; }
     inline bool DatastoreArnHasBeenSet() const { return m_datastoreArnHasBeenSet; }
@@ -71,7 +70,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user-generated name for the data store.</p>
+     * <p>The data store name.</p>
      */
     inline const Aws::String& GetDatastoreName() const { return m_datastoreName; }
     inline bool DatastoreNameHasBeenSet() const { return m_datastoreNameHasBeenSet; }
@@ -83,7 +82,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the data store.</p>
+     * <p>The data store status.</p>
      */
     inline DatastoreStatus GetDatastoreStatus() const { return m_datastoreStatus; }
     inline bool DatastoreStatusHasBeenSet() const { return m_datastoreStatusHasBeenSet; }
@@ -93,7 +92,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time that a data store was created. </p>
+     * <p>The time the data store was created. </p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
@@ -105,7 +104,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The FHIR version. Only R4 version data is supported.</p>
+     * <p>The FHIR release version supported by the data store. Current support is for
+     * version <code>R4</code>.</p>
      */
     inline FHIRVersion GetDatastoreTypeVersion() const { return m_datastoreTypeVersion; }
     inline bool DatastoreTypeVersionHasBeenSet() const { return m_datastoreTypeVersionHasBeenSet; }
@@ -115,8 +115,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS endpoint for the data store. Each data store will have it's own
-     * endpoint with data store ID in the endpoint URL.</p>
+     * <p>The AWS endpoint for the data store.</p>
      */
     inline const Aws::String& GetDatastoreEndpoint() const { return m_datastoreEndpoint; }
     inline bool DatastoreEndpointHasBeenSet() const { return m_datastoreEndpointHasBeenSet; }
@@ -129,7 +128,7 @@ namespace Model
     ///@{
     /**
      * <p> The server-side encryption key configuration for a customer provided
-     * encryption key (CMK). </p>
+     * encryption key.</p>
      */
     inline const SseConfiguration& GetSseConfiguration() const { return m_sseConfiguration; }
     inline bool SseConfigurationHasBeenSet() const { return m_sseConfigurationHasBeenSet; }
@@ -141,8 +140,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The preloaded data configuration for the data store. Only data preloaded from
-     * Synthea is supported.</p>
+     * <p>The preloaded Synthea data configuration for the data store.</p>
      */
     inline const PreloadDataConfig& GetPreloadDataConfig() const { return m_preloadDataConfig; }
     inline bool PreloadDataConfigHasBeenSet() const { return m_preloadDataConfigHasBeenSet; }
@@ -154,7 +152,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identity provider that you selected when you created the data store.</p>
+     * <p>The identity provider selected during data store creation.</p>
      */
     inline const IdentityProviderConfiguration& GetIdentityProviderConfiguration() const { return m_identityProviderConfiguration; }
     inline bool IdentityProviderConfigurationHasBeenSet() const { return m_identityProviderConfigurationHasBeenSet; }

@@ -61,6 +61,15 @@ Filters& Filters::operator =(JsonView jsonValue)
     }
     m_routingStepExpressionsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AgentStatuses"))
+  {
+    Aws::Utils::Array<JsonView> agentStatusesJsonList = jsonValue.GetArray("AgentStatuses");
+    for(unsigned agentStatusesIndex = 0; agentStatusesIndex < agentStatusesJsonList.GetLength(); ++agentStatusesIndex)
+    {
+      m_agentStatuses.push_back(agentStatusesJsonList[agentStatusesIndex].AsString());
+    }
+    m_agentStatusesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -109,6 +118,17 @@ JsonValue Filters::Jsonize() const
      routingStepExpressionsJsonList[routingStepExpressionsIndex].AsString(m_routingStepExpressions[routingStepExpressionsIndex]);
    }
    payload.WithArray("RoutingStepExpressions", std::move(routingStepExpressionsJsonList));
+
+  }
+
+  if(m_agentStatusesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> agentStatusesJsonList(m_agentStatuses.size());
+   for(unsigned agentStatusesIndex = 0; agentStatusesIndex < agentStatusesJsonList.GetLength(); ++agentStatusesIndex)
+   {
+     agentStatusesJsonList[agentStatusesIndex].AsString(m_agentStatuses[agentStatusesIndex]);
+   }
+   payload.WithArray("AgentStatuses", std::move(agentStatusesJsonList));
 
   }
 

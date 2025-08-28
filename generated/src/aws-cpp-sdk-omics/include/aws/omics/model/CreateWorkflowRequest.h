@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/omics/model/Accelerators.h>
 #include <aws/omics/model/StorageType.h>
+#include <aws/omics/model/ContainerRegistryMap.h>
 #include <aws/omics/model/DefinitionRepository.h>
 #include <aws/omics/model/WorkflowParameter.h>
 #include <utility>
@@ -219,6 +220,34 @@ namespace Model
 
     ///@{
     /**
+     * <p>(Optional) Use a container registry map to specify mappings between the ECR
+     * private repository and one or more upstream registries. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container
+     * images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>. </p>
+     */
+    inline const ContainerRegistryMap& GetContainerRegistryMap() const { return m_containerRegistryMap; }
+    inline bool ContainerRegistryMapHasBeenSet() const { return m_containerRegistryMapHasBeenSet; }
+    template<typename ContainerRegistryMapT = ContainerRegistryMap>
+    void SetContainerRegistryMap(ContainerRegistryMapT&& value) { m_containerRegistryMapHasBeenSet = true; m_containerRegistryMap = std::forward<ContainerRegistryMapT>(value); }
+    template<typename ContainerRegistryMapT = ContainerRegistryMap>
+    CreateWorkflowRequest& WithContainerRegistryMap(ContainerRegistryMapT&& value) { SetContainerRegistryMap(std::forward<ContainerRegistryMapT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>(Optional) URI of the S3 location for the registry mapping file.</p>
+     */
+    inline const Aws::String& GetContainerRegistryMapUri() const { return m_containerRegistryMapUri; }
+    inline bool ContainerRegistryMapUriHasBeenSet() const { return m_containerRegistryMapUriHasBeenSet; }
+    template<typename ContainerRegistryMapUriT = Aws::String>
+    void SetContainerRegistryMapUri(ContainerRegistryMapUriT&& value) { m_containerRegistryMapUriHasBeenSet = true; m_containerRegistryMapUri = std::forward<ContainerRegistryMapUriT>(value); }
+    template<typename ContainerRegistryMapUriT = Aws::String>
+    CreateWorkflowRequest& WithContainerRegistryMapUri(ContainerRegistryMapUriT&& value) { SetContainerRegistryMapUri(std::forward<ContainerRegistryMapUriT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The markdown content for the workflow's README file. This provides
      * documentation and usage information for users of the workflow.</p>
      */
@@ -339,6 +368,12 @@ namespace Model
 
     StorageType m_storageType{StorageType::NOT_SET};
     bool m_storageTypeHasBeenSet = false;
+
+    ContainerRegistryMap m_containerRegistryMap;
+    bool m_containerRegistryMapHasBeenSet = false;
+
+    Aws::String m_containerRegistryMapUri;
+    bool m_containerRegistryMapUriHasBeenSet = false;
 
     Aws::String m_readmeMarkdown;
     bool m_readmeMarkdownHasBeenSet = false;

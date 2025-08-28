@@ -74,7 +74,7 @@ protected:
 };
 
 Aws::UniquePtrSafeDeleted<Aws::Vector<SESV2EndpointProviderEndpointTestCase>> SESV2EndpointProviderTests::TEST_CASES;
-const size_t SESV2EndpointProviderTests::TEST_CASES_SZ = 53;
+const size_t SESV2EndpointProviderTests::TEST_CASES_SZ = 52;
 
 Aws::Vector<SESV2EndpointProviderEndpointTestCase> SESV2EndpointProviderTests::getTestCase() {
 
@@ -522,12 +522,6 @@ Aws::Vector<SESV2EndpointProviderEndpointTestCase> SESV2EndpointProviderTests::g
     {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS is not supported with multi-region endpoints"} // expect
-  },
-  /*TEST CASE 52*/
-  {"Valid EndpointId with DualStack enabled and partition does not support DualStack", // documentation
-    {EpParam("EndpointId", "abc123.456def"), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"DualStack is enabled but this partition does not support DualStack"} // expect
   }
   };
   return test_cases;

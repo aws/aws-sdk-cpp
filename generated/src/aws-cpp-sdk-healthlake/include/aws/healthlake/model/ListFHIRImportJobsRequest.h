@@ -38,8 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> This parameter limits the response to the import job with the specified data
-     * store ID. </p>
+     * <p>Limits the response to the import job with the specified data store ID. </p>
      */
     inline const Aws::String& GetDatastoreId() const { return m_datastoreId; }
     inline bool DatastoreIdHasBeenSet() const { return m_datastoreIdHasBeenSet; }
@@ -51,8 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> A pagination token used to identify the next page of results to return for a
-     * ListFHIRImportJobs query. </p>
+     * <p>The pagination token used to identify the next page of results to return.</p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -64,8 +62,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> This parameter limits the number of results returned for a
-     * ListFHIRImportJobs to a maximum quantity specified by the user. </p>
+     * <p>Limits the number of results returned for <code>ListFHIRImportJobs</code> to
+     * a maximum quantity specified by the user.</p>
      */
     inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -75,8 +73,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> This parameter limits the response to the import job with the specified job
-     * name. </p>
+     * <p>Limits the response to the import job with the specified job name. </p>
      */
     inline const Aws::String& GetJobName() const { return m_jobName; }
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
@@ -88,8 +85,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> This parameter limits the response to the import job with the specified job
-     * status. </p>
+     * <p>Limits the response to the import job with the specified job status. </p>
      */
     inline JobStatus GetJobStatus() const { return m_jobStatus; }
     inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
@@ -99,8 +95,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> This parameter limits the response to FHIR import jobs submitted before a
-     * user specified date. </p>
+     * <p>Limits the response to FHIR import jobs submitted before a user- specified
+     * date. </p>
      */
     inline const Aws::Utils::DateTime& GetSubmittedBefore() const { return m_submittedBefore; }
     inline bool SubmittedBeforeHasBeenSet() const { return m_submittedBeforeHasBeenSet; }
@@ -112,8 +108,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> This parameter limits the response to FHIR import jobs submitted after a
-     * user specified date. </p>
+     * <p>Limits the response to FHIR import jobs submitted after a user-specified
+     * date.</p>
      */
     inline const Aws::Utils::DateTime& GetSubmittedAfter() const { return m_submittedAfter; }
     inline bool SubmittedAfterHasBeenSet() const { return m_submittedAfterHasBeenSet; }

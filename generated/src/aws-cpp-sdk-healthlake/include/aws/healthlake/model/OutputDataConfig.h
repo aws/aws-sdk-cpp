@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The output data configuration that was supplied when the export job was
+   * <p>The output data configuration supplied when the export job was
    * created.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/OutputDataConfig">AWS
    * API Reference</a></p>
@@ -40,8 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The output data configuration that was supplied when the export job was
-     * created. </p>
+     * <p>The output data configuration supplied when the export job was created. </p>
      */
     inline const S3Configuration& GetS3Configuration() const { return m_s3Configuration; }
     inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }

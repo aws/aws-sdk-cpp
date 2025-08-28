@@ -137,6 +137,11 @@ GetWorkflowVersionResult& GetWorkflowVersionResult::operator =(const Aws::Amazon
     m_workflowBucketOwnerId = jsonValue.GetString("workflowBucketOwnerId");
     m_workflowBucketOwnerIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("containerRegistryMap"))
+  {
+    m_containerRegistryMap = jsonValue.GetObject("containerRegistryMap");
+    m_containerRegistryMapHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("readme"))
   {
     m_readme = jsonValue.GetString("readme");

@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS-generated job ID.</p>
+     * <p>The import job identifier.</p>
      */
     inline const Aws::String& GetJobId() const { return m_jobId; }
     template<typename JobIdT = Aws::String>
@@ -46,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of an import job.</p>
+     * <p>The import job status.</p>
      */
     inline JobStatus GetJobStatus() const { return m_jobStatus; }
     inline void SetJobStatus(JobStatus value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
@@ -55,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS-generated data store ID.</p>
+     * <p>The data store identifier.</p>
      */
     inline const Aws::String& GetDatastoreId() const { return m_datastoreId; }
     template<typename DatastoreIdT = Aws::String>

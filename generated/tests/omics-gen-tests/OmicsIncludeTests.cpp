@@ -39,6 +39,7 @@
 #include <aws/omics/model/CompleteMultipartReadSetUploadRequest.h>
 #include <aws/omics/model/CompleteMultipartReadSetUploadResult.h>
 #include <aws/omics/model/CompleteReadSetUploadPartListItem.h>
+#include <aws/omics/model/ContainerRegistryMap.h>
 #include <aws/omics/model/CreateAnnotationStoreRequest.h>
 #include <aws/omics/model/CreateAnnotationStoreResult.h>
 #include <aws/omics/model/CreateAnnotationStoreVersionRequest.h>
@@ -144,6 +145,8 @@
 #include <aws/omics/model/GetWorkflowResult.h>
 #include <aws/omics/model/GetWorkflowVersionRequest.h>
 #include <aws/omics/model/GetWorkflowVersionResult.h>
+#include <aws/omics/model/ImageDetails.h>
+#include <aws/omics/model/ImageMapping.h>
 #include <aws/omics/model/ImportReadSetFilter.h>
 #include <aws/omics/model/ImportReadSetJobItem.h>
 #include <aws/omics/model/ImportReadSetSourceItem.h>
@@ -233,6 +236,7 @@
 #include <aws/omics/model/ReferenceStatus.h>
 #include <aws/omics/model/ReferenceStoreDetail.h>
 #include <aws/omics/model/ReferenceStoreFilter.h>
+#include <aws/omics/model/RegistryMapping.h>
 #include <aws/omics/model/ResourceOwner.h>
 #include <aws/omics/model/RunCacheListItem.h>
 #include <aws/omics/model/RunCacheStatus.h>

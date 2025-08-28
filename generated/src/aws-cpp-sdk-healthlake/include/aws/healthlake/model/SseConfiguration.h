@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> The server-side encryption key configuration for a customer provided
-   * encryption key. </p><p><h3>See Also:</h3>   <a
+   * <p>The server-side encryption key configuration for a customer-provided
+   * encryption key.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/SseConfiguration">AWS
    * API Reference</a></p>
    */
@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The KMS encryption configuration used to provide details for data
-     * encryption. </p>
+     * <p>The Key Management Service (KMS) encryption configuration used to provide
+     * details for data encryption.</p>
      */
     inline const KmsEncryptionConfig& GetKmsEncryptionConfig() const { return m_kmsEncryptionConfig; }
     inline bool KmsEncryptionConfigHasBeenSet() const { return m_kmsEncryptionConfigHasBeenSet; }

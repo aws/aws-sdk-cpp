@@ -13,6 +13,7 @@
 #include <aws/omics/model/WorkflowStatus.h>
 #include <aws/omics/model/StorageType.h>
 #include <aws/omics/model/WorkflowType.h>
+#include <aws/omics/model/ContainerRegistryMap.h>
 #include <aws/omics/model/DefinitionRepositoryDetails.h>
 #include <aws/omics/model/WorkflowParameter.h>
 #include <utility>
@@ -263,6 +264,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The registry map that this workflow version uses.</p>
+     */
+    inline const ContainerRegistryMap& GetContainerRegistryMap() const { return m_containerRegistryMap; }
+    template<typename ContainerRegistryMapT = ContainerRegistryMap>
+    void SetContainerRegistryMap(ContainerRegistryMapT&& value) { m_containerRegistryMapHasBeenSet = true; m_containerRegistryMap = std::forward<ContainerRegistryMapT>(value); }
+    template<typename ContainerRegistryMapT = ContainerRegistryMap>
+    GetWorkflowVersionResult& WithContainerRegistryMap(ContainerRegistryMapT&& value) { SetContainerRegistryMap(std::forward<ContainerRegistryMapT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The README content for the workflow version, providing documentation and
      * usage information specific to this version.</p>
      */
@@ -368,6 +380,9 @@ namespace Model
 
     Aws::String m_workflowBucketOwnerId;
     bool m_workflowBucketOwnerIdHasBeenSet = false;
+
+    ContainerRegistryMap m_containerRegistryMap;
+    bool m_containerRegistryMapHasBeenSet = false;
 
     Aws::String m_readme;
     bool m_readmeHasBeenSet = false;

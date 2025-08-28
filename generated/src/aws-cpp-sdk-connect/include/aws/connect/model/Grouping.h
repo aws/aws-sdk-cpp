@@ -19,7 +19,8 @@ namespace Model
     QUEUE,
     CHANNEL,
     ROUTING_PROFILE,
-    ROUTING_STEP_EXPRESSION
+    ROUTING_STEP_EXPRESSION,
+    AGENT_STATUS
   };
 
 namespace GroupingMapper

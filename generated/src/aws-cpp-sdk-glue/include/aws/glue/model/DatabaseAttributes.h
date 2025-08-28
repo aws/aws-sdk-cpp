@@ -16,7 +16,8 @@ namespace Model
   enum class DatabaseAttributes
   {
     NOT_SET,
-    NAME
+    NAME,
+    TARGET_DATABASE
   };
 
 namespace DatabaseAttributesMapper

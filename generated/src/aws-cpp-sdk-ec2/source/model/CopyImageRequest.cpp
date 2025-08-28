@@ -74,6 +74,16 @@ Aws::String CopyImageRequest::SerializePayload() const
     ss << "SnapshotCopyCompletionDurationMinutes=" << m_snapshotCopyCompletionDurationMinutes << "&";
   }
 
+  if(m_destinationAvailabilityZoneHasBeenSet)
+  {
+    ss << "DestinationAvailabilityZone=" << StringUtils::URLEncode(m_destinationAvailabilityZone.c_str()) << "&";
+  }
+
+  if(m_destinationAvailabilityZoneIdHasBeenSet)
+  {
+    ss << "DestinationAvailabilityZoneId=" << StringUtils::URLEncode(m_destinationAvailabilityZoneId.c_str()) << "&";
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";

@@ -184,6 +184,32 @@ namespace SsmSap
         }
 
         /**
+         * <p>Gets the details of a configuration check operation by specifying the
+         * operation ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetConfigurationCheckOperation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetConfigurationCheckOperationOutcome GetConfigurationCheckOperation(const Model::GetConfigurationCheckOperationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetConfigurationCheckOperation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetConfigurationCheckOperationRequestT = Model::GetConfigurationCheckOperationRequest>
+        Model::GetConfigurationCheckOperationOutcomeCallable GetConfigurationCheckOperationCallable(const GetConfigurationCheckOperationRequestT& request) const
+        {
+            return SubmitCallable(&SsmSapClient::GetConfigurationCheckOperation, request);
+        }
+
+        /**
+         * An Async wrapper for GetConfigurationCheckOperation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetConfigurationCheckOperationRequestT = Model::GetConfigurationCheckOperationRequest>
+        void GetConfigurationCheckOperationAsync(const GetConfigurationCheckOperationRequestT& request, const GetConfigurationCheckOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SsmSapClient::GetConfigurationCheckOperation, request, handler, context);
+        }
+
+        /**
          * <p>Gets the SAP HANA database of an application registered with AWS Systems
          * Manager for SAP.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetDatabase">AWS
@@ -314,6 +340,58 @@ namespace SsmSap
         }
 
         /**
+         * <p>Lists all configuration check types supported by AWS Systems Manager for
+         * SAP.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListConfigurationCheckDefinitions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListConfigurationCheckDefinitionsOutcome ListConfigurationCheckDefinitions(const Model::ListConfigurationCheckDefinitionsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListConfigurationCheckDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListConfigurationCheckDefinitionsRequestT = Model::ListConfigurationCheckDefinitionsRequest>
+        Model::ListConfigurationCheckDefinitionsOutcomeCallable ListConfigurationCheckDefinitionsCallable(const ListConfigurationCheckDefinitionsRequestT& request = {}) const
+        {
+            return SubmitCallable(&SsmSapClient::ListConfigurationCheckDefinitions, request);
+        }
+
+        /**
+         * An Async wrapper for ListConfigurationCheckDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListConfigurationCheckDefinitionsRequestT = Model::ListConfigurationCheckDefinitionsRequest>
+        void ListConfigurationCheckDefinitionsAsync(const ListConfigurationCheckDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListConfigurationCheckDefinitionsRequestT& request = {}) const
+        {
+            return SubmitAsync(&SsmSapClient::ListConfigurationCheckDefinitions, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the configuration check operations performed by AWS Systems Manager for
+         * SAP.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListConfigurationCheckOperations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListConfigurationCheckOperationsOutcome ListConfigurationCheckOperations(const Model::ListConfigurationCheckOperationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListConfigurationCheckOperations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListConfigurationCheckOperationsRequestT = Model::ListConfigurationCheckOperationsRequest>
+        Model::ListConfigurationCheckOperationsOutcomeCallable ListConfigurationCheckOperationsCallable(const ListConfigurationCheckOperationsRequestT& request) const
+        {
+            return SubmitCallable(&SsmSapClient::ListConfigurationCheckOperations, request);
+        }
+
+        /**
+         * An Async wrapper for ListConfigurationCheckOperations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListConfigurationCheckOperationsRequestT = Model::ListConfigurationCheckOperationsRequest>
+        void ListConfigurationCheckOperationsAsync(const ListConfigurationCheckOperationsRequestT& request, const ListConfigurationCheckOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SsmSapClient::ListConfigurationCheckOperations, request, handler, context);
+        }
+
+        /**
          * <p>Lists the SAP HANA databases of an application registered with AWS Systems
          * Manager for SAP.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListDatabases">AWS
@@ -391,6 +469,58 @@ namespace SsmSap
         void ListOperationsAsync(const ListOperationsRequestT& request, const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SsmSapClient::ListOperations, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the sub-check results of a specified configuration check
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListSubCheckResults">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSubCheckResultsOutcome ListSubCheckResults(const Model::ListSubCheckResultsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSubCheckResults that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListSubCheckResultsRequestT = Model::ListSubCheckResultsRequest>
+        Model::ListSubCheckResultsOutcomeCallable ListSubCheckResultsCallable(const ListSubCheckResultsRequestT& request) const
+        {
+            return SubmitCallable(&SsmSapClient::ListSubCheckResults, request);
+        }
+
+        /**
+         * An Async wrapper for ListSubCheckResults that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListSubCheckResultsRequestT = Model::ListSubCheckResultsRequest>
+        void ListSubCheckResultsAsync(const ListSubCheckResultsRequestT& request, const ListSubCheckResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SsmSapClient::ListSubCheckResults, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the rules of a specified sub-check belonging to a configuration check
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListSubCheckRuleResults">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSubCheckRuleResultsOutcome ListSubCheckRuleResults(const Model::ListSubCheckRuleResultsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSubCheckRuleResults that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListSubCheckRuleResultsRequestT = Model::ListSubCheckRuleResultsRequest>
+        Model::ListSubCheckRuleResultsOutcomeCallable ListSubCheckRuleResultsCallable(const ListSubCheckRuleResultsRequestT& request) const
+        {
+            return SubmitCallable(&SsmSapClient::ListSubCheckRuleResults, request);
+        }
+
+        /**
+         * An Async wrapper for ListSubCheckRuleResults that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListSubCheckRuleResultsRequestT = Model::ListSubCheckRuleResultsRequest>
+        void ListSubCheckRuleResultsAsync(const ListSubCheckRuleResultsRequestT& request, const ListSubCheckRuleResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SsmSapClient::ListSubCheckRuleResults, request, handler, context);
         }
 
         /**
@@ -524,6 +654,32 @@ namespace SsmSap
         void StartApplicationRefreshAsync(const StartApplicationRefreshRequestT& request, const StartApplicationRefreshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SsmSapClient::StartApplicationRefresh, request, handler, context);
+        }
+
+        /**
+         * <p>Initiates configuration check operations against a specified
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartConfigurationChecks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartConfigurationChecksOutcome StartConfigurationChecks(const Model::StartConfigurationChecksRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartConfigurationChecks that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartConfigurationChecksRequestT = Model::StartConfigurationChecksRequest>
+        Model::StartConfigurationChecksOutcomeCallable StartConfigurationChecksCallable(const StartConfigurationChecksRequestT& request) const
+        {
+            return SubmitCallable(&SsmSapClient::StartConfigurationChecks, request);
+        }
+
+        /**
+         * An Async wrapper for StartConfigurationChecks that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartConfigurationChecksRequestT = Model::StartConfigurationChecksRequest>
+        void StartConfigurationChecksAsync(const StartConfigurationChecksRequestT& request, const StartConfigurationChecksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SsmSapClient::StartConfigurationChecks, request, handler, context);
         }
 
         /**

@@ -282,6 +282,12 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
       m_supportsDedicatedLogVolume = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsDedicatedLogVolumeNode.GetText()).c_str()).c_str());
       m_supportsDedicatedLogVolumeHasBeenSet = true;
     }
+    XmlNode supportsHttpEndpointNode = resultNode.FirstChild("SupportsHttpEndpoint");
+    if(!supportsHttpEndpointNode.IsNull())
+    {
+      m_supportsHttpEndpoint = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsHttpEndpointNode.GetText()).c_str()).c_str());
+      m_supportsHttpEndpointHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -493,6 +499,11 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << index << locationValue << ".SupportsDedicatedLogVolume=" << std::boolalpha << m_supportsDedicatedLogVolume << "&";
   }
 
+  if(m_supportsHttpEndpointHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsHttpEndpoint=" << std::boolalpha << m_supportsHttpEndpoint << "&";
+  }
+
 }
 
 void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -664,6 +675,10 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   if(m_supportsDedicatedLogVolumeHasBeenSet)
   {
       oStream << location << ".SupportsDedicatedLogVolume=" << std::boolalpha << m_supportsDedicatedLogVolume << "&";
+  }
+  if(m_supportsHttpEndpointHasBeenSet)
+  {
+      oStream << location << ".SupportsHttpEndpoint=" << std::boolalpha << m_supportsHttpEndpoint << "&";
   }
 }
 

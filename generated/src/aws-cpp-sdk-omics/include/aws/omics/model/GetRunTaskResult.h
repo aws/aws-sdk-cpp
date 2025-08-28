@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/omics/model/TaskStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/omics/model/ImageDetails.h>
 #include <utility>
 
 namespace Aws
@@ -191,6 +192,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Details about the container image that this task uses.</p>
+     */
+    inline const ImageDetails& GetImageDetails() const { return m_imageDetails; }
+    template<typename ImageDetailsT = ImageDetails>
+    void SetImageDetails(ImageDetailsT&& value) { m_imageDetailsHasBeenSet = true; m_imageDetails = std::forward<ImageDetailsT>(value); }
+    template<typename ImageDetailsT = ImageDetails>
+    GetRunTaskResult& WithImageDetails(ImageDetailsT&& value) { SetImageDetails(std::forward<ImageDetailsT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -244,6 +256,9 @@ namespace Model
 
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet = false;
+
+    ImageDetails m_imageDetails;
+    bool m_imageDetailsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

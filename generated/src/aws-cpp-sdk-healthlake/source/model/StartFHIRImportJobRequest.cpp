@@ -52,6 +52,11 @@ Aws::String StartFHIRImportJobRequest::SerializePayload() const
 
   }
 
+  if(m_validationLevelHasBeenSet)
+  {
+   payload.WithString("ValidationLevel", ValidationLevelMapper::GetNameForValidationLevel(m_validationLevel));
+  }
+
   return payload.View().WriteReadable();
 }
 

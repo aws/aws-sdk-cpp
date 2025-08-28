@@ -52,12 +52,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.
-     * Only specify this parameter when copying a snapshot from an Amazon Web Services
-     * Region to an Outpost. The snapshot must be in the Region for the destination
-     * Outpost. You cannot copy a snapshot from an Outpost to a Region, from one
-     * Outpost to another, or within the same Outpost.</p> <p>For more information, see
-     * <a
+     * <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the
+     * snapshot.</p>  <p>Only supported when copying a snapshot to an
+     * Outpost.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots">
      * Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the
      * <i>Amazon EBS User Guide</i>.</p>
@@ -196,9 +193,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specify a completion duration, in 15 minute increments, to initiate a
-     * time-based snapshot copy. Time-based snapshot copy operations complete within
-     * the specified duration. For more information, see <a
+     *  <p>Not supported when copying snapshots to or from Local Zones or
+     * Outposts.</p>  <p>Specify a completion duration, in 15 minute increments,
+     * to initiate a time-based snapshot copy. Time-based snapshot copy operations
+     * complete within the specified duration. For more information, see <a
      * href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html">
      * Time-based copies</a>.</p> <p>If you do not specify a value, the snapshot copy
      * operation is completed on a best-effort basis.</p>
@@ -207,6 +205,20 @@ namespace Model
     inline bool CompletionDurationMinutesHasBeenSet() const { return m_completionDurationMinutesHasBeenSet; }
     inline void SetCompletionDurationMinutes(int value) { m_completionDurationMinutesHasBeenSet = true; m_completionDurationMinutes = value; }
     inline CopySnapshotRequest& WithCompletionDurationMinutes(int value) { SetCompletionDurationMinutes(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Local Zone, for example, <code>cn-north-1-pkx-1a</code> to which to copy
+     * the snapshot.</p>  <p>Only supported when copying a snapshot to a Local
+     * Zone.</p> 
+     */
+    inline const Aws::String& GetDestinationAvailabilityZone() const { return m_destinationAvailabilityZone; }
+    inline bool DestinationAvailabilityZoneHasBeenSet() const { return m_destinationAvailabilityZoneHasBeenSet; }
+    template<typename DestinationAvailabilityZoneT = Aws::String>
+    void SetDestinationAvailabilityZone(DestinationAvailabilityZoneT&& value) { m_destinationAvailabilityZoneHasBeenSet = true; m_destinationAvailabilityZone = std::forward<DestinationAvailabilityZoneT>(value); }
+    template<typename DestinationAvailabilityZoneT = Aws::String>
+    CopySnapshotRequest& WithDestinationAvailabilityZone(DestinationAvailabilityZoneT&& value) { SetDestinationAvailabilityZone(std::forward<DestinationAvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -252,6 +264,9 @@ namespace Model
 
     int m_completionDurationMinutes{0};
     bool m_completionDurationMinutesHasBeenSet = false;
+
+    Aws::String m_destinationAvailabilityZone;
+    bool m_destinationAvailabilityZoneHasBeenSet = false;
 
     bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;

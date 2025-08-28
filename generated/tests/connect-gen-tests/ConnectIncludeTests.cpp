@@ -27,6 +27,7 @@
 #include <aws/connect/model/AgentInfo.h>
 #include <aws/connect/model/AgentQualityMetrics.h>
 #include <aws/connect/model/AgentStatus.h>
+#include <aws/connect/model/AgentStatusIdentifier.h>
 #include <aws/connect/model/AgentStatusReference.h>
 #include <aws/connect/model/AgentStatusSearchCriteria.h>
 #include <aws/connect/model/AgentStatusSearchFilter.h>

@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The workflow's ID.</p>
+     * <p>The workflow's ID. The <code>workflowId</code> is not the UUID.</p>
      */
     inline const Aws::String& GetWorkflowId() const { return m_workflowId; }
     inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
@@ -63,7 +63,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Amazon Web Services Id of the owner of the workflow.</p>
+     * <p>The 12-digit account ID of the workflow owner. The workflow owner ID can be
+     * retrieved using the <code>GetShare</code> API operation. If you are the workflow
+     * owner, you do not need to include this ID.</p>
      */
     inline const Aws::String& GetWorkflowOwnerId() const { return m_workflowOwnerId; }
     inline bool WorkflowOwnerIdHasBeenSet() const { return m_workflowOwnerIdHasBeenSet; }

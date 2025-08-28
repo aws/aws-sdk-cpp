@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>The filters applied to data store query.</p><p><h3>See Also:</h3>   <a
+   * <p>The filters applied to a data store query.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DatastoreFilter">AWS
    * API Reference</a></p>
    */
@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Allows the user to filter data store results by name.</p>
+     * <p>Filter data store results by name.</p>
      */
     inline const Aws::String& GetDatastoreName() const { return m_datastoreName; }
     inline bool DatastoreNameHasBeenSet() const { return m_datastoreNameHasBeenSet; }
@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Allows the user to filter data store results by status.</p>
+     * <p>Filter data store results by status.</p>
      */
     inline DatastoreStatus GetDatastoreStatus() const { return m_datastoreStatus; }
     inline bool DatastoreStatusHasBeenSet() const { return m_datastoreStatusHasBeenSet; }
@@ -63,8 +63,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A filter that allows the user to set cutoff dates for records. All data
-     * stores created before the specified date will be included in the results. </p>
+     * <p>Filter to set cutoff dates for records. All data stores created before the
+     * specified date are included in the results. </p>
      */
     inline const Aws::Utils::DateTime& GetCreatedBefore() const { return m_createdBefore; }
     inline bool CreatedBeforeHasBeenSet() const { return m_createdBeforeHasBeenSet; }
@@ -76,8 +76,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A filter that allows the user to set cutoff dates for records. All data
-     * stores created after the specified date will be included in the results.</p>
+     * <p>Filter to set cutoff dates for records. All data stores created after the
+     * specified date are included in the results.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAfter() const { return m_createdAfter; }
     inline bool CreatedAfterHasBeenSet() const { return m_createdAfterHasBeenSet; }

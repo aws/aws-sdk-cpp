@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The identity provider configuration that you gave when the data store was
+   * <p>The identity provider configuration selected when the data store was
    * created.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/IdentityProviderConfiguration">AWS
    * API Reference</a></p>
@@ -41,8 +41,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The authorization strategy that you selected when you created the data
-     * store.</p>
+     * <p>The authorization strategy selected when the HealthLake data store is
+     * created.</p>  <p>HealthLake provides support for both SMART on FHIR V1 and
+     * V2 as described below.</p> <ul> <li> <p> <code>SMART_ON_FHIR_V1</code> – Support
+     * for only SMART on FHIR V1, which includes <code>read</code> (read/search) and
+     * <code>write</code> (create/update/delete) permissions.</p> </li> <li> <p>
+     * <code>SMART_ON_FHIR</code> – Support for both SMART on FHIR V1 and V2, which
+     * includes <code>create</code>, <code>read</code>, <code>update</code>,
+     * <code>delete</code>, and <code>search</code> permissions.</p> </li> <li> <p>
+     * <code>AWS_AUTH</code> – The default HealthLake authorization strategy; not
+     * affiliated with SMART on FHIR.</p> </li> </ul> 
      */
     inline AuthorizationStrategy GetAuthorizationStrategy() const { return m_authorizationStrategy; }
     inline bool AuthorizationStrategyHasBeenSet() const { return m_authorizationStrategyHasBeenSet; }
@@ -52,7 +60,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>If you enabled fine-grained authorization when you created the data
+     * <p>The parameter to enable SMART on FHIR fine-grained authorization for the data
      * store.</p>
      */
     inline bool GetFineGrainedAuthorizationEnabled() const { return m_fineGrainedAuthorizationEnabled; }
@@ -63,9 +71,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The JSON metadata elements that you want to use in your identity provider
-     * configuration. Required elements are listed based on the launch specification of
-     * the SMART application. For more information on all possible elements, see <a
+     * <p>The JSON metadata elements to use in your identity provider configuration.
+     * Required elements are listed based on the launch specification of the SMART
+     * application. For more information on all possible elements, see <a
      * href="https://build.fhir.org/ig/HL7/smart-app-launch/conformance.html#metadata">Metadata</a>
      * in SMART's App Launch specification.</p> <p>
      * <code>authorization_endpoint</code>: The URL to the OAuth2 authorization
@@ -89,8 +97,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function that you want to use to
-     * decode the access token created by the authorization server.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function to use to decode the
+     * access token created by the authorization server.</p>
      */
     inline const Aws::String& GetIdpLambdaArn() const { return m_idpLambdaArn; }
     inline bool IdpLambdaArnHasBeenSet() const { return m_idpLambdaArnHasBeenSet; }

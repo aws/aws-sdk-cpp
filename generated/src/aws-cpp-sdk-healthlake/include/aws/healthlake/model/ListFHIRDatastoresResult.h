@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>All properties associated with the listed data stores.</p>
+     * <p>The properties associated with all listed data stores.</p>
      */
     inline const Aws::Vector<DatastoreProperties>& GetDatastorePropertiesList() const { return m_datastorePropertiesList; }
     template<typename DatastorePropertiesListT = Aws::Vector<DatastoreProperties>>
@@ -49,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Pagination token that can be used to retrieve the next page of results.</p>
+     * <p>The pagination token used to retrieve the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     template<typename NextTokenT = Aws::String>
