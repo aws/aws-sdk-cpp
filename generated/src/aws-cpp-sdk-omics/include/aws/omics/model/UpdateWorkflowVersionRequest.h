@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The workflow's ID.</p>
+     * <p>The workflow's ID. The <code>workflowId</code> is not the UUID.</p>
      */
     inline const Aws::String& GetWorkflowId() const { return m_workflowId; }
     inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
@@ -71,12 +71,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The default storage type for runs that use this workflow. STATIC storage
-     * allocates a fixed amount of storage. DYNAMIC storage dynamically scales the
-     * storage up or down, based on file system utilization. For more information about
-     * static and dynamic storage, see <a
-     * href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running
-     * workflows</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+     * <p>The default storage type for runs that use this workflow version. The
+     * <code>storageType</code> can be overridden at run time. <code>DYNAMIC</code>
+     * storage dynamically scales the storage up or down, based on file system
+     * utilization. STATIC storage allocates a fixed amount of storage. For more
+     * information about dynamic and static storage types, see <a
+     * href="https://docs.aws.amazon.com/omics/latest/dev/workflows-run-types.html">Run
+     * storage types</a> in the <i>in the <i>Amazon Web Services HealthOmics User
+     * Guide</i> </i>.</p>
      */
     inline StorageType GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
@@ -87,7 +89,9 @@ namespace Model
     ///@{
     /**
      * <p>The default static storage capacity (in gibibytes) for runs that use this
-     * workflow or workflow version.</p>
+     * workflow version. The <code>storageCapacity</code> can be overwritten at run
+     * time. The storage capacity is not required for runs with a <code>DYNAMIC</code>
+     * storage type.</p>
      */
     inline int GetStorageCapacity() const { return m_storageCapacity; }
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }

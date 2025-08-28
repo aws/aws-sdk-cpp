@@ -60,7 +60,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A description for the new AMI in the destination Region.</p>
+     * <p>A description for the new AMI.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -72,11 +72,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies whether the destination snapshots of the copied image should be
-     * encrypted. You can encrypt a copy of an unencrypted snapshot, but you cannot
-     * create an unencrypted copy of an encrypted snapshot. The default KMS key for
-     * Amazon EBS is used unless you specify a non-default Key Management Service (KMS)
-     * KMS key using <code>KmsKeyId</code>. For more information, see <a
+     * <p>Specifies whether to encrypt the snapshots of the copied image.</p> <p>You
+     * can encrypt a copy of an unencrypted snapshot, but you cannot create an
+     * unencrypted copy of an encrypted snapshot. The default KMS key for Amazon EBS is
+     * used unless you specify a non-default Key Management Service (KMS) KMS key using
+     * <code>KmsKeyId</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Use
      * encryption with EBS-backed AMIs</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
@@ -113,7 +113,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the new AMI in the destination Region.</p>
+     * <p>The name of the new AMI.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -149,14 +149,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the AMI. Only
+     * <p>The Amazon Resource Name (ARN) of the Outpost for the new AMI.</p> <p>Only
      * specify this parameter when copying an AMI from an Amazon Web Services Region to
-     * an Outpost. The AMI must be in the Region of the destination Outpost. You cannot
+     * an Outpost. The AMI must be in the Region of the destination Outpost. You can't
      * copy an AMI from an Outpost to a Region, from one Outpost to another, or within
      * the same Outpost.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-amis">Copy
      * AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS
-     * User Guide</i>.</p>
+     * User Guide</i>.</p> <p>Only one of <code>DestinationAvailabilityZone</code>,
+     * <code>DestinationAvailabilityZoneId</code>, or
+     * <code>DestinationOutpostArn</code> can be specified.</p>
      */
     inline const Aws::String& GetDestinationOutpostArn() const { return m_destinationOutpostArn; }
     inline bool DestinationOutpostArnHasBeenSet() const { return m_destinationOutpostArnHasBeenSet; }
@@ -168,9 +170,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether to include your user-defined AMI tags when copying the
-     * AMI.</p> <p>The following tags will not be copied:</p> <ul> <li> <p>System tags
-     * (prefixed with <code>aws:</code>)</p> </li> <li> <p>For public and shared AMIs,
+     * <p>Specifies whether to copy your user-defined AMI tags to the new AMI.</p>
+     * <p>The following tags are not be copied:</p> <ul> <li> <p>System tags (prefixed
+     * with <code>aws:</code>)</p> </li> <li> <p>For public and shared AMIs,
      * user-defined tags that are attached by other Amazon Web Services accounts</p>
      * </li> </ul> <p>Default: Your user-defined AMI tags are not copied.</p>
      */
@@ -210,7 +212,9 @@ namespace Model
      * completed within the specified completion duration, with copy throughput
      * automatically adjusted for each snapshot based on its size to meet the timing
      * target.</p> <p>If you do not specify a value, the AMI copy operation is
-     * completed on a best-effort basis.</p> <p>For more information, see <a
+     * completed on a best-effort basis.</p>  <p>This parameter is not supported
+     * when copying an AMI to or from a Local Zone, or to an Outpost.</p> 
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html">Time-based
      * copies for Amazon EBS snapshots and EBS-backed AMIs</a>.</p>
      */
@@ -218,6 +222,38 @@ namespace Model
     inline bool SnapshotCopyCompletionDurationMinutesHasBeenSet() const { return m_snapshotCopyCompletionDurationMinutesHasBeenSet; }
     inline void SetSnapshotCopyCompletionDurationMinutes(long long value) { m_snapshotCopyCompletionDurationMinutesHasBeenSet = true; m_snapshotCopyCompletionDurationMinutes = value; }
     inline CopyImageRequest& WithSnapshotCopyCompletionDurationMinutes(long long value) { SetSnapshotCopyCompletionDurationMinutes(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Local Zone for the new AMI (for example,
+     * <code>cn-north-1-pkx-1a</code>).</p> <p>Only one of
+     * <code>DestinationAvailabilityZone</code>,
+     * <code>DestinationAvailabilityZoneId</code>, or
+     * <code>DestinationOutpostArn</code> can be specified.</p>
+     */
+    inline const Aws::String& GetDestinationAvailabilityZone() const { return m_destinationAvailabilityZone; }
+    inline bool DestinationAvailabilityZoneHasBeenSet() const { return m_destinationAvailabilityZoneHasBeenSet; }
+    template<typename DestinationAvailabilityZoneT = Aws::String>
+    void SetDestinationAvailabilityZone(DestinationAvailabilityZoneT&& value) { m_destinationAvailabilityZoneHasBeenSet = true; m_destinationAvailabilityZone = std::forward<DestinationAvailabilityZoneT>(value); }
+    template<typename DestinationAvailabilityZoneT = Aws::String>
+    CopyImageRequest& WithDestinationAvailabilityZone(DestinationAvailabilityZoneT&& value) { SetDestinationAvailabilityZone(std::forward<DestinationAvailabilityZoneT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Local Zone for the new AMI (for example,
+     * <code>cnn1-pkx1-az1</code>).</p> <p>Only one of
+     * <code>DestinationAvailabilityZone</code>,
+     * <code>DestinationAvailabilityZoneId</code>, or
+     * <code>DestinationOutpostArn</code> can be specified.</p>
+     */
+    inline const Aws::String& GetDestinationAvailabilityZoneId() const { return m_destinationAvailabilityZoneId; }
+    inline bool DestinationAvailabilityZoneIdHasBeenSet() const { return m_destinationAvailabilityZoneIdHasBeenSet; }
+    template<typename DestinationAvailabilityZoneIdT = Aws::String>
+    void SetDestinationAvailabilityZoneId(DestinationAvailabilityZoneIdT&& value) { m_destinationAvailabilityZoneIdHasBeenSet = true; m_destinationAvailabilityZoneId = std::forward<DestinationAvailabilityZoneIdT>(value); }
+    template<typename DestinationAvailabilityZoneIdT = Aws::String>
+    CopyImageRequest& WithDestinationAvailabilityZoneId(DestinationAvailabilityZoneIdT&& value) { SetDestinationAvailabilityZoneId(std::forward<DestinationAvailabilityZoneIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -266,6 +302,12 @@ namespace Model
 
     long long m_snapshotCopyCompletionDurationMinutes{0};
     bool m_snapshotCopyCompletionDurationMinutesHasBeenSet = false;
+
+    Aws::String m_destinationAvailabilityZone;
+    bool m_destinationAvailabilityZoneHasBeenSet = false;
+
+    Aws::String m_destinationAvailabilityZoneId;
+    bool m_destinationAvailabilityZoneIdHasBeenSet = false;
 
     bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;

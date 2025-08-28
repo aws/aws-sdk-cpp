@@ -9,6 +9,7 @@
 #include <aws/connect/model/Channel.h>
 #include <aws/connect/model/RoutingProfileReference.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/connect/model/AgentStatusIdentifier.h>
 #include <utility>
 
 namespace Aws
@@ -84,6 +85,18 @@ namespace Model
     template<typename RoutingStepExpressionT = Aws::String>
     Dimensions& WithRoutingStepExpression(RoutingStepExpressionT&& value) { SetRoutingStepExpression(std::forward<RoutingStepExpressionT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Information about the agent status assigned to the user.</p>
+     */
+    inline const AgentStatusIdentifier& GetAgentStatus() const { return m_agentStatus; }
+    inline bool AgentStatusHasBeenSet() const { return m_agentStatusHasBeenSet; }
+    template<typename AgentStatusT = AgentStatusIdentifier>
+    void SetAgentStatus(AgentStatusT&& value) { m_agentStatusHasBeenSet = true; m_agentStatus = std::forward<AgentStatusT>(value); }
+    template<typename AgentStatusT = AgentStatusIdentifier>
+    Dimensions& WithAgentStatus(AgentStatusT&& value) { SetAgentStatus(std::forward<AgentStatusT>(value)); return *this;}
+    ///@}
   private:
 
     QueueReference m_queue;
@@ -97,6 +110,9 @@ namespace Model
 
     Aws::String m_routingStepExpression;
     bool m_routingStepExpressionHasBeenSet = false;
+
+    AgentStatusIdentifier m_agentStatus;
+    bool m_agentStatusHasBeenSet = false;
   };
 
 } // namespace Model

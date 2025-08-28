@@ -35,8 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS-generated data store id. This id is in the output from the initial
-     * data store creation call.</p>
+     * <p>The data store identifier.</p>
      */
     inline const Aws::String& GetDatastoreId() const { return m_datastoreId; }
     template<typename DatastoreIdT = Aws::String>
@@ -47,8 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The data store ARN is generated during the creation of the data store and can
-     * be found in the output from the initial data store creation call.</p>
+     * <p>The Amazon Resource Name (ARN) for the data store.</p>
      */
     inline const Aws::String& GetDatastoreArn() const { return m_datastoreArn; }
     template<typename DatastoreArnT = Aws::String>
@@ -59,7 +57,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the FHIR data store.</p>
+     * <p>The data store status.</p>
      */
     inline DatastoreStatus GetDatastoreStatus() const { return m_datastoreStatus; }
     inline void SetDatastoreStatus(DatastoreStatus value) { m_datastoreStatusHasBeenSet = true; m_datastoreStatus = value; }
@@ -68,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS endpoint for the created data store.</p>
+     * <p>The AWS endpoint created for the data store.</p>
      */
     inline const Aws::String& GetDatastoreEndpoint() const { return m_datastoreEndpoint; }
     template<typename DatastoreEndpointT = Aws::String>

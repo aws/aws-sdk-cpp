@@ -11,6 +11,7 @@
 #include <aws/healthlake/model/InputDataConfig.h>
 #include <aws/healthlake/model/OutputDataConfig.h>
 #include <aws/healthlake/model/JobProgressReport.h>
+#include <aws/healthlake/model/ValidationLevel.h>
 #include <utility>
 
 namespace Aws
@@ -29,9 +30,7 @@ namespace Model
 {
 
   /**
-   * <p>Displays the properties of the import job, including the ID, Arn, Name, the
-   * status of the job, and the progress report of the job.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>The import job properties.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ImportJobProperties">AWS
    * API Reference</a></p>
    */
@@ -46,7 +45,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS-generated id number for the Import job.</p>
+     * <p>The import job identifier.</p>
      */
     inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
@@ -58,7 +57,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user-generated name for an Import job.</p>
+     * <p>The import job name.</p>
      */
     inline const Aws::String& GetJobName() const { return m_jobName; }
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
@@ -70,8 +69,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The job status for an Import job. Possible statuses are SUBMITTED,
-     * IN_PROGRESS, COMPLETED_WITH_ERRORS, COMPLETED, FAILED.</p>
+     * <p>The import job status.</p>
      */
     inline JobStatus GetJobStatus() const { return m_jobStatus; }
     inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
@@ -81,7 +79,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time that the Import job was submitted for processing.</p>
+     * <p>The time the import job was submitted for processing.</p>
      */
     inline const Aws::Utils::DateTime& GetSubmitTime() const { return m_submitTime; }
     inline bool SubmitTimeHasBeenSet() const { return m_submitTimeHasBeenSet; }
@@ -93,7 +91,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time that the Import job was completed.</p>
+     * <p>The time the import job was completed.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
@@ -105,7 +103,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The datastore id used when the Import job was created. </p>
+     * <p>The data store identifier. </p>
      */
     inline const Aws::String& GetDatastoreId() const { return m_datastoreId; }
     inline bool DatastoreIdHasBeenSet() const { return m_datastoreIdHasBeenSet; }
@@ -117,8 +115,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The input data configuration that was supplied when the Import job was
-     * created.</p>
+     * <p>The input data configuration supplied when the import job was created.</p>
      */
     inline const InputDataConfig& GetInputDataConfig() const { return m_inputDataConfig; }
     inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
@@ -141,7 +138,7 @@ namespace Model
     ///@{
     /**
      * <p>Displays the progress of the import job, including total resources scanned,
-     * total resources ingested, and total size of data ingested.</p>
+     * total resources imported, and total size of data imported.</p>
      */
     inline const JobProgressReport& GetJobProgressReport() const { return m_jobProgressReport; }
     inline bool JobProgressReportHasBeenSet() const { return m_jobProgressReportHasBeenSet; }
@@ -153,7 +150,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access to your input
+     * <p>The Amazon Resource Name (ARN) that grants AWS HealthLake access to the input
      * data.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const { return m_dataAccessRoleArn; }
@@ -166,8 +163,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An explanation of any errors that may have occurred during the FHIR import
-     * job. </p>
+     * <p>An explanation of any errors that might have occurred during the FHIR import
+     * job.</p>
      */
     inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
@@ -175,6 +172,16 @@ namespace Model
     void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
     template<typename MessageT = Aws::String>
     ImportJobProperties& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The validation level of the import job.</p>
+     */
+    inline ValidationLevel GetValidationLevel() const { return m_validationLevel; }
+    inline bool ValidationLevelHasBeenSet() const { return m_validationLevelHasBeenSet; }
+    inline void SetValidationLevel(ValidationLevel value) { m_validationLevelHasBeenSet = true; m_validationLevel = value; }
+    inline ImportJobProperties& WithValidationLevel(ValidationLevel value) { SetValidationLevel(value); return *this;}
     ///@}
   private:
 
@@ -210,6 +217,9 @@ namespace Model
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
+
+    ValidationLevel m_validationLevel{ValidationLevel::NOT_SET};
+    bool m_validationLevelHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS generated ID for an export job.</p>
+     * <p>The export job identifier.</p>
      */
     inline const Aws::String& GetJobId() const { return m_jobId; }
     template<typename JobIdT = Aws::String>
@@ -46,8 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of a FHIR export job. Possible statuses are SUBMITTED,
-     * IN_PROGRESS, COMPLETED, or FAILED.</p>
+     * <p>The export job status.</p>
      */
     inline JobStatus GetJobStatus() const { return m_jobStatus; }
     inline void SetJobStatus(JobStatus value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
@@ -56,8 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS generated ID for the data store from which files are being exported
-     * for an export job.</p>
+     * <p>The data store identifier from which files are being exported.</p>
      */
     inline const Aws::String& GetDatastoreId() const { return m_datastoreId; }
     template<typename DatastoreIdT = Aws::String>

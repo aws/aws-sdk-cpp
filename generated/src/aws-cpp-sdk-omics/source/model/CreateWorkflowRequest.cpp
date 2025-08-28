@@ -95,6 +95,18 @@ Aws::String CreateWorkflowRequest::SerializePayload() const
    payload.WithString("storageType", StorageTypeMapper::GetNameForStorageType(m_storageType));
   }
 
+  if(m_containerRegistryMapHasBeenSet)
+  {
+   payload.WithObject("containerRegistryMap", m_containerRegistryMap.Jsonize());
+
+  }
+
+  if(m_containerRegistryMapUriHasBeenSet)
+  {
+   payload.WithString("containerRegistryMapUri", m_containerRegistryMapUri);
+
+  }
+
   if(m_readmeMarkdownHasBeenSet)
   {
    payload.WithString("readmeMarkdown", m_readmeMarkdown);

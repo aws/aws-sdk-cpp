@@ -12,6 +12,7 @@
 #include <aws/omics/model/WorkflowEngine.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/omics/model/StorageType.h>
+#include <aws/omics/model/ContainerRegistryMap.h>
 #include <aws/omics/model/DefinitionRepository.h>
 #include <aws/omics/model/WorkflowParameter.h>
 #include <utility>
@@ -42,7 +43,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the workflow where you are creating the new version.</p>
+     * <p>The ID of the workflow where you are creating the new version. The
+     * <code>workflowId</code> is not the UUID.</p>
      */
     inline const Aws::String& GetWorkflowId() const { return m_workflowId; }
     inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
@@ -72,8 +74,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>A zip archive containing the workflow definition for this workflow
-     * version.</p>
+     * <p>A ZIP archive containing the main workflow definition file and dependencies
+     * that it imports for this workflow version. You can use a file with a ://fileb
+     * prefix instead of the Base64 string. For more information, see Workflow
+     * definition requirements in the <i>Amazon Web Services HealthOmics User
+     * Guide</i>.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetDefinitionZip() const { return m_definitionZip; }
     inline bool DefinitionZipHasBeenSet() const { return m_definitionZipHasBeenSet; }
@@ -85,8 +90,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The URI specifies the location of the workflow definition for this workflow
-     * version.</p>
+     * <p>The S3 URI of a definition for this workflow version. The S3 bucket must be
+     * in the same region as this workflow version.</p>
      */
     inline const Aws::String& GetDefinitionUri() const { return m_definitionUri; }
     inline bool DefinitionUriHasBeenSet() const { return m_definitionUriHasBeenSet; }
@@ -120,7 +125,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The workflow engine for this workflow version.</p>
+     * <p>The workflow engine for this workflow version. This is only required if you
+     * have workflow definition files from more than one engine in your zip file.
+     * Otherwise, the service can detect the engine automatically from your workflow
+     * definition.</p>
      */
     inline WorkflowEngine GetEngine() const { return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
@@ -130,7 +138,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The path of the main definition file for this workflow version.</p>
+     * <p>The path of the main definition file for this workflow version. This
+     * parameter is not required if the ZIP archive contains only one workflow
+     * definition file, or if the main definition file is named “main”. An example path
+     * is: <code>workflow-definition/main-file.wdl</code>. </p>
      */
     inline const Aws::String& GetMain() const { return m_main; }
     inline bool MainHasBeenSet() const { return m_mainHasBeenSet; }
@@ -142,8 +153,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The parameter template defines the input parameters for runs that use this
-     * workflow version.</p>
+     * <p>A parameter template for this workflow version. If this field is blank,
+     * Amazon Web Services HealthOmics will automatically parse the parameter template
+     * values from your workflow definition file. To override these service generated
+     * default values, provide a parameter template. To view an example of a parameter
+     * template, see <a
+     * href="https://docs.aws.amazon.com/omics/latest/dev/parameter-templates.html">Parameter
+     * template files</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, WorkflowParameter>& GetParameterTemplate() const { return m_parameterTemplate; }
     inline bool ParameterTemplateHasBeenSet() const { return m_parameterTemplateHasBeenSet; }
@@ -159,8 +175,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>To ensure that requests don't run multiple times, specify a unique ID for
-     * each request.</p>
+     * <p>An idempotency token to ensure that duplicate workflows are not created when
+     * Amazon Web Services HealthOmics submits retry requests.</p>
      */
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
@@ -172,12 +188,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The default storage type for runs that use this workflow. STATIC storage
-     * allocates a fixed amount of storage. DYNAMIC storage dynamically scales the
-     * storage up or down, based on file system utilization. For more information about
-     * static and dynamic storage, see <a
-     * href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running
-     * workflows</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+     * <p>The default storage type for runs that use this workflow version. The
+     * <code>storageType</code> can be overridden at run time. <code>DYNAMIC</code>
+     * storage dynamically scales the storage up or down, based on file system
+     * utilization. STATIC storage allocates a fixed amount of storage. For more
+     * information about dynamic and static storage types, see <a
+     * href="https://docs.aws.amazon.com/omics/latest/dev/workflows-run-types.html">Run
+     * storage types</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
      */
     inline StorageType GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
@@ -188,7 +205,9 @@ namespace Model
     ///@{
     /**
      * <p>The default static storage capacity (in gibibytes) for runs that use this
-     * workflow or workflow version.</p>
+     * workflow version. The <code>storageCapacity</code> can be overwritten at run
+     * time. The storage capacity is not required for runs with a <code>DYNAMIC</code>
+     * storage type.</p>
      */
     inline int GetStorageCapacity() const { return m_storageCapacity; }
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
@@ -198,7 +217,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Optional tags to associate with this workflow version.</p>
+     * <p>Tags for this workflow version. You can define up to 50 tags for the
+     * workflow. For more information, see <a
+     * href="https://docs.aws.amazon.com/omics/latest/dev/add-a-tag.html">Adding a
+     * tag</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -224,6 +246,34 @@ namespace Model
     void SetWorkflowBucketOwnerId(WorkflowBucketOwnerIdT&& value) { m_workflowBucketOwnerIdHasBeenSet = true; m_workflowBucketOwnerId = std::forward<WorkflowBucketOwnerIdT>(value); }
     template<typename WorkflowBucketOwnerIdT = Aws::String>
     CreateWorkflowVersionRequest& WithWorkflowBucketOwnerId(WorkflowBucketOwnerIdT&& value) { SetWorkflowBucketOwnerId(std::forward<WorkflowBucketOwnerIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>(Optional) Use a container registry map to specify mappings between the ECR
+     * private repository and one or more upstream registries. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container
+     * images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>. </p>
+     */
+    inline const ContainerRegistryMap& GetContainerRegistryMap() const { return m_containerRegistryMap; }
+    inline bool ContainerRegistryMapHasBeenSet() const { return m_containerRegistryMapHasBeenSet; }
+    template<typename ContainerRegistryMapT = ContainerRegistryMap>
+    void SetContainerRegistryMap(ContainerRegistryMapT&& value) { m_containerRegistryMapHasBeenSet = true; m_containerRegistryMap = std::forward<ContainerRegistryMapT>(value); }
+    template<typename ContainerRegistryMapT = ContainerRegistryMap>
+    CreateWorkflowVersionRequest& WithContainerRegistryMap(ContainerRegistryMapT&& value) { SetContainerRegistryMap(std::forward<ContainerRegistryMapT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>(Optional) URI of the S3 location for the registry mapping file.</p>
+     */
+    inline const Aws::String& GetContainerRegistryMapUri() const { return m_containerRegistryMapUri; }
+    inline bool ContainerRegistryMapUriHasBeenSet() const { return m_containerRegistryMapUriHasBeenSet; }
+    template<typename ContainerRegistryMapUriT = Aws::String>
+    void SetContainerRegistryMapUri(ContainerRegistryMapUriT&& value) { m_containerRegistryMapUriHasBeenSet = true; m_containerRegistryMapUri = std::forward<ContainerRegistryMapUriT>(value); }
+    template<typename ContainerRegistryMapUriT = Aws::String>
+    CreateWorkflowVersionRequest& WithContainerRegistryMapUri(ContainerRegistryMapUriT&& value) { SetContainerRegistryMapUri(std::forward<ContainerRegistryMapUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -343,6 +393,12 @@ namespace Model
 
     Aws::String m_workflowBucketOwnerId;
     bool m_workflowBucketOwnerIdHasBeenSet = false;
+
+    ContainerRegistryMap m_containerRegistryMap;
+    bool m_containerRegistryMapHasBeenSet = false;
+
+    Aws::String m_containerRegistryMapUri;
+    bool m_containerRegistryMapUriHasBeenSet = false;
 
     Aws::String m_readmeMarkdown;
     bool m_readmeMarkdownHasBeenSet = false;

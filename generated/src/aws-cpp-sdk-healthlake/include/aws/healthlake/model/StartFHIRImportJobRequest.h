@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/healthlake/model/InputDataConfig.h>
 #include <aws/healthlake/model/OutputDataConfig.h>
+#include <aws/healthlake/model/ValidationLevel.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -39,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the FHIR Import job in the StartFHIRImport job request.</p>
+     * <p>The import job name.</p>
      */
     inline const Aws::String& GetJobName() const { return m_jobName; }
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
@@ -51,8 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The input properties of the FHIR Import job in the StartFHIRImport job
-     * request.</p>
+     * <p>The input properties for the import job request.</p>
      */
     inline const InputDataConfig& GetInputDataConfig() const { return m_inputDataConfig; }
     inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
@@ -74,7 +74,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS-generated data store ID.</p>
+     * <p>The data store identifier.</p>
      */
     inline const Aws::String& GetDatastoreId() const { return m_datastoreId; }
     inline bool DatastoreIdHasBeenSet() const { return m_datastoreIdHasBeenSet; }
@@ -86,8 +86,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access
-     * permission.</p>
+     * <p>The Amazon Resource Name (ARN) that grants access permission to AWS
+     * HealthLake.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const { return m_dataAccessRoleArn; }
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
@@ -99,7 +99,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Optional user provided token used for ensuring idempotency.</p>
+     * <p>The optional user-provided token used for ensuring API idempotency.</p>
      */
     inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
@@ -107,6 +107,16 @@ namespace Model
     void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
     template<typename ClientTokenT = Aws::String>
     StartFHIRImportJobRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The validation level of the import job.</p>
+     */
+    inline ValidationLevel GetValidationLevel() const { return m_validationLevel; }
+    inline bool ValidationLevelHasBeenSet() const { return m_validationLevelHasBeenSet; }
+    inline void SetValidationLevel(ValidationLevel value) { m_validationLevelHasBeenSet = true; m_validationLevel = value; }
+    inline StartFHIRImportJobRequest& WithValidationLevel(ValidationLevel value) { SetValidationLevel(value); return *this;}
     ///@}
   private:
 
@@ -127,6 +137,9 @@ namespace Model
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
+
+    ValidationLevel m_validationLevel{ValidationLevel::NOT_SET};
+    bool m_validationLevelHasBeenSet = false;
   };
 
 } // namespace Model

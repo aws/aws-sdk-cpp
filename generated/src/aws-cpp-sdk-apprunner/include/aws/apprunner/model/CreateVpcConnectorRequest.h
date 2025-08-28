@@ -53,7 +53,8 @@ namespace Model
      * <p>A list of IDs of subnets that App Runner should use when it associates your
      * service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC.
      * App Runner determines the Amazon VPC from the subnets you specify.</p> 
-     * <p> App Runner currently only provides support for IPv4. </p> 
+     * <p> App Runner only supports subnets of IP address type <i>IPv4</i> and <i>dual
+     * stack</i> (IPv4 and IPv6).</p> 
      */
     inline const Aws::Vector<Aws::String>& GetSubnets() const { return m_subnets; }
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }

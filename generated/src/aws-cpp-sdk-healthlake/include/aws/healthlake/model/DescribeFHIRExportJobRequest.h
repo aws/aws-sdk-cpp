@@ -36,8 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS generated ID for the data store from which files are being exported
-     * from for an export job.</p>
+     * <p>The data store identifier from which FHIR data is being exported from.</p>
      */
     inline const Aws::String& GetDatastoreId() const { return m_datastoreId; }
     inline bool DatastoreIdHasBeenSet() const { return m_datastoreIdHasBeenSet; }
@@ -49,7 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS generated ID for an export job.</p>
+     * <p>The export job identifier.</p>
      */
     inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }

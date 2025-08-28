@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Lists all filters associated with a FHIR data store request.</p>
+     * <p>List all filters associated with a FHIR data store request.</p>
      */
     inline const DatastoreFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
@@ -49,7 +49,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Fetches the next page of data stores when results are paginated.</p>
+     * <p>The token used to retrieve the next page of data stores when results are
+     * paginated.</p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -61,8 +62,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of data stores returned in a single page of a
-     * ListFHIRDatastoresRequest call.</p>
+     * <p>The maximum number of data stores returned on a page.</p>
      */
     inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

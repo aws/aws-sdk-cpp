@@ -101,6 +101,18 @@ Aws::String CreateWorkflowVersionRequest::SerializePayload() const
 
   }
 
+  if(m_containerRegistryMapHasBeenSet)
+  {
+   payload.WithObject("containerRegistryMap", m_containerRegistryMap.Jsonize());
+
+  }
+
+  if(m_containerRegistryMapUriHasBeenSet)
+  {
+   payload.WithString("containerRegistryMapUri", m_containerRegistryMapUri);
+
+  }
+
   if(m_readmeMarkdownHasBeenSet)
   {
    payload.WithString("readmeMarkdown", m_readmeMarkdown);

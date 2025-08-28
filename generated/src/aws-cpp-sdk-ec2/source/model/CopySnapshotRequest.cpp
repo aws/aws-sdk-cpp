@@ -64,6 +64,11 @@ Aws::String CopySnapshotRequest::SerializePayload() const
     ss << "CompletionDurationMinutes=" << m_completionDurationMinutes << "&";
   }
 
+  if(m_destinationAvailabilityZoneHasBeenSet)
+  {
+    ss << "DestinationAvailabilityZone=" << StringUtils::URLEncode(m_destinationAvailabilityZone.c_str()) << "&";
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";

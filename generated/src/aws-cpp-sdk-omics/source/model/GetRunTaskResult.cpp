@@ -100,6 +100,11 @@ GetRunTaskResult& GetRunTaskResult::operator =(const Aws::AmazonWebServiceResult
     m_failureReason = jsonValue.GetString("failureReason");
     m_failureReasonHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("imageDetails"))
+  {
+    m_imageDetails = jsonValue.GetObject("imageDetails");
+    m_imageDetailsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

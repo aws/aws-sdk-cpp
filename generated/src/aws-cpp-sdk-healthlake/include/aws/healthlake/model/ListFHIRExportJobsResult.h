@@ -36,8 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The properties of listed FHIR export jobs, including the ID, ARN, name, and
-     * the status of the job. </p>
+     * <p>The properties of listed FHIR export jobs.</p>
      */
     inline const Aws::Vector<ExportJobProperties>& GetExportJobPropertiesList() const { return m_exportJobPropertiesList; }
     template<typename ExportJobPropertiesListT = Aws::Vector<ExportJobProperties>>
@@ -50,8 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> A pagination token used to identify the next page of results to return for a
-     * ListFHIRExportJobs query. </p>
+     * <p>The pagination token used to identify the next page of results to return.</p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     template<typename NextTokenT = Aws::String>

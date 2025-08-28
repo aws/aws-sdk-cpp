@@ -67,15 +67,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>App Runner provides you with the option to choose between <i>Internet
-     * Protocol version 4 (IPv4)</i> and <i>dual stack</i> (IPv4 and IPv6) for your
-     * incoming public network configuration. This is an optional parameter. If you do
-     * not specify an <code>IpAddressType</code>, it defaults to select IPv4.</p>
-     *  <p> Currently, App Runner supports dual stack for only Public endpoint.
-     * Only IPv4 is supported for Private endpoint. If you update a service that's
-     * using dual-stack Public endpoint to a Private endpoint, your App Runner service
-     * will default to support only IPv4 for Private endpoint and fail to receive
-     * traffic originating from IPv6 endpoint. </p> 
+     * <p>App Runner provides you with the option to choose between <i>IPv4</i> and
+     * <i>dual stack</i> (IPv4 and IPv6). This is an optional parameter. If you do not
+     * specify an <code>IpAddressType</code>, it defaults to select IPv4.</p>
      */
     inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }

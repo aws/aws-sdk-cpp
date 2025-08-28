@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The error info of the create/delete data store operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The error information for <code>CreateFHIRDatastore</code> and
+   * <code>DeleteFHIRDatastore</code> actions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ErrorCause">AWS
    * API Reference</a></p>
    */
@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The text of the error message.</p>
+     * <p>The error message text for <code>ErrorCause</code>.</p>
      */
     inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
@@ -53,8 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The error category of the create/delete data store operation. Possible
-     * statuses are RETRYABLE_ERROR or NON_RETRYABLE_ERROR.</p>
+     * <p>The error category for <code>ErrorCause</code>.</p>
      */
     inline ErrorCategory GetErrorCategory() const { return m_errorCategory; }
     inline bool ErrorCategoryHasBeenSet() const { return m_errorCategoryHasBeenSet; }

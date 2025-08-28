@@ -61,6 +61,7 @@
 #include <aws/healthlake/model/TagResourceResult.h>
 #include <aws/healthlake/model/UntagResourceRequest.h>
 #include <aws/healthlake/model/UntagResourceResult.h>
+#include <aws/healthlake/model/ValidationLevel.h>
 
 using HealthLakeIncludeTest = ::testing::Test;
 

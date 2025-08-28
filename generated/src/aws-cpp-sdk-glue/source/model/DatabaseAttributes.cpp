@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int NAME_HASH = HashingUtils::HashString("NAME");
+        static const int TARGET_DATABASE_HASH = HashingUtils::HashString("TARGET_DATABASE");
 
 
         DatabaseAttributes GetDatabaseAttributesForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == NAME_HASH)
           {
             return DatabaseAttributes::NAME;
+          }
+          else if (hashCode == TARGET_DATABASE_HASH)
+          {
+            return DatabaseAttributes::TARGET_DATABASE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case DatabaseAttributes::NAME:
             return "NAME";
+          case DatabaseAttributes::TARGET_DATABASE:
+            return "TARGET_DATABASE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

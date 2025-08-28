@@ -80,6 +80,11 @@ ImportJobProperties& ImportJobProperties::operator =(JsonView jsonValue)
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ValidationLevel"))
+  {
+    m_validationLevel = ValidationLevelMapper::GetValidationLevelForName(jsonValue.GetString("ValidationLevel"));
+    m_validationLevelHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -148,6 +153,11 @@ JsonValue ImportJobProperties::Jsonize() const
   {
    payload.WithString("Message", m_message);
 
+  }
+
+  if(m_validationLevelHasBeenSet)
+  {
+   payload.WithString("ValidationLevel", ValidationLevelMapper::GetNameForValidationLevel(m_validationLevel));
   }
 
   return payload;

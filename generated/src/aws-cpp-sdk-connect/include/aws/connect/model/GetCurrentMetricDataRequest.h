@@ -56,14 +56,16 @@ namespace Model
      * <p>The filters to apply to returned metrics. You can filter up to the following
      * limits:</p> <ul> <li> <p>Queues: 100</p> </li> <li> <p>Routing profiles: 100</p>
      * </li> <li> <p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p>
-     * </li> <li> <p>RoutingStepExpressions: 50</p> </li> </ul> <p>Metric data is
-     * retrieved only for the resources associated with the queues or routing profiles,
-     * and by any channels included in the filter. (You cannot filter by both queue AND
-     * routing profile.) You can include both resource IDs and resource ARNs in the
-     * same request.</p> <p>When using the <code>RoutingStepExpression</code> filter,
-     * you need to pass exactly one <code>QueueId</code>. The filter is also case
-     * sensitive so when using the <code>RoutingStepExpression</code> filter, grouping
-     * by <code>ROUTING_STEP_EXPRESSION</code> is required.</p> <p>Currently tagging is
+     * </li> <li> <p>RoutingStepExpressions: 50</p> </li> <li> <p>AgentStatuses: 50</p>
+     * </li> </ul> <p>Metric data is retrieved only for the resources associated with
+     * the queues or routing profiles, and by any channels included in the filter. (You
+     * cannot filter by both queue AND routing profile.) You can include both resource
+     * IDs and resource ARNs in the same request.</p> <p>When using
+     * <code>AgentStatuses</code> as filter make sure Queues is added as primary
+     * filter.</p> <p>When using the <code>RoutingStepExpression</code> filter, you
+     * need to pass exactly one <code>QueueId</code>. The filter is also case sensitive
+     * so when using the <code>RoutingStepExpression</code> filter, grouping by
+     * <code>ROUTING_STEP_EXPRESSION</code> is required.</p> <p>Currently tagging is
      * only supported on the resources that are passed in the filter.</p>
      */
     inline const Filters& GetFilters() const { return m_filters; }
@@ -76,17 +78,24 @@ namespace Model
 
     ///@{
     /**
-     * <p>The grouping applied to the metrics returned. For example, when grouped by
+     * <p>Defines the level of aggregation for metrics data by a dimension(s). Its
+     * similar to sorting items into buckets based on a common characteristic, then
+     * counting or calculating something for each bucket. For example, when grouped by
      * <code>QUEUE</code>, the metrics returned apply to each queue rather than
-     * aggregated for all queues. </p> <ul> <li> <p>If you group by
-     * <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and
-     * TASK channels are supported.</p> </li> <li> <p>If you group by
+     * aggregated for all queues. </p> <p>The grouping list is an ordered list, with
+     * the first item in the list defined as the primary grouping. If no grouping is
+     * included in the request, the aggregation happens at the instance-level.</p> <ul>
+     * <li> <p>If you group by <code>CHANNEL</code>, you should include a Channels
+     * filter. VOICE, CHAT, and TASK channels are supported.</p> </li> <li> <p>If you
+     * group by <code>AGENT_STATUS</code>, you must include the <code>QUEUE</code> as
+     * the primary grouping and use queue filter. When you group by
+     * <code>AGENT_STATUS</code>, the only metric available is the
+     * <code>AGENTS_ONLINE</code> metric.</p> </li> <li> <p>If you group by
      * <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile
      * filter. In addition, a routing profile filter is required for metrics
      * <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code>
-     * OLDEST_CONTACT_AGE</code>.</p> </li> <li> <p>If no <code>Grouping</code> is
-     * included in the request, a summary of metrics is returned.</p> </li> <li>
-     * <p>When using the <code>RoutingStepExpression</code> filter, group by
+     * OLDEST_CONTACT_AGE</code>.</p> </li> <li> <p>When using the
+     * <code>RoutingStepExpression</code> filter, group by
      * <code>ROUTING_STEP_EXPRESSION</code> is required.</p> </li> </ul>
      */
     inline const Aws::Vector<Grouping>& GetGroupings() const { return m_groupings; }

@@ -59,10 +59,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Services Region-unique, immutable identifier for the global
-     * database cluster. This identifier is found in Amazon Web Services CloudTrail log
-     * entries whenever the Amazon Web Services KMS key for the DB cluster is
-     * accessed.</p>
+     * <p>The Amazon Web Services <a
+     * href="https://docs.aws.amazon.com/glossary/latest/reference/glos-chap.html?id=docs_gateway#partition">partition</a>-unique,
+     * immutable identifier for the global database cluster. This identifier is found
+     * in Amazon Web Services CloudTrail log entries whenever the Amazon Web Services
+     * KMS key for the DB cluster is accessed.</p>
      */
     inline const Aws::String& GetGlobalClusterResourceId() const { return m_globalClusterResourceId; }
     inline bool GlobalClusterResourceIdHasBeenSet() const { return m_globalClusterResourceIdHasBeenSet; }

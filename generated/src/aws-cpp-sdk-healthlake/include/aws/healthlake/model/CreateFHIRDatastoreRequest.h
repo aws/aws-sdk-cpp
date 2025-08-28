@@ -43,7 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user generated name for the data store.</p>
+     * <p>The data store name (user-generated).</p>
      */
     inline const Aws::String& GetDatastoreName() const { return m_datastoreName; }
     inline bool DatastoreNameHasBeenSet() const { return m_datastoreNameHasBeenSet; }
@@ -55,7 +55,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The FHIR version of the data store. The only supported version is R4.</p>
+     * <p>The FHIR release version supported by the data store. Current support is for
+     * version <code>R4</code>.</p>
      */
     inline FHIRVersion GetDatastoreTypeVersion() const { return m_datastoreTypeVersion; }
     inline bool DatastoreTypeVersionHasBeenSet() const { return m_datastoreTypeVersionHasBeenSet; }
@@ -65,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The server-side encryption key configuration for a customer provided
+     * <p>The server-side encryption key configuration for a customer-provided
      * encryption key specified for creating a data store. </p>
      */
     inline const SseConfiguration& GetSseConfiguration() const { return m_sseConfiguration; }
@@ -78,9 +79,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Optional parameter to preload data upon creation of the data store.
-     * Currently, the only supported preloaded data is synthetic data generated from
-     * Synthea.</p>
+     * <p>An optional parameter to preload (import) open source Synthea FHIR data upon
+     * creation of the data store.</p>
      */
     inline const PreloadDataConfig& GetPreloadDataConfig() const { return m_preloadDataConfig; }
     inline bool PreloadDataConfigHasBeenSet() const { return m_preloadDataConfigHasBeenSet; }
@@ -92,7 +92,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Optional user provided token used for ensuring idempotency.</p>
+     * <p>An optional user-provided token to ensure API idempotency.</p>
      */
     inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
@@ -104,7 +104,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> Resource tags that are applied to a data store when it is created. </p>
+     * <p>The resource tags applied to a data store when it is created.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -118,8 +118,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration of the identity provider that you want to use for your data
-     * store.</p>
+     * <p>The identity provider configuration to use for the data store.</p>
      */
     inline const IdentityProviderConfiguration& GetIdentityProviderConfiguration() const { return m_identityProviderConfiguration; }
     inline bool IdentityProviderConfigurationHasBeenSet() const { return m_identityProviderConfigurationHasBeenSet; }

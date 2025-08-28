@@ -1911,18 +1911,39 @@ namespace EC2
         }
 
         /**
-         * <p>Initiates an AMI copy operation. You can copy an AMI from one Region to
-         * another, or from a Region to an Outpost. You can't copy an AMI from an Outpost
-         * to a Region, from one Outpost to another, or within the same Outpost. To copy an
-         * AMI to another partition, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html">CreateStoreImageTask</a>.</p>
-         * <p>When you copy an AMI from one Region to another, the destination Region is
-         * the current Region.</p> <p>When you copy an AMI from a Region to an Outpost,
-         * specify the ARN of the Outpost as the destination. Backing snapshots copied to
+         * <p>Initiates an AMI copy operation. You must specify the source AMI ID and both
+         * the source and destination locations. The copy operation must be initiated in
+         * the destination Region.</p> <p class="title"> <b>CopyImage supports the
+         * following source to destination copies:</b> </p> <ul> <li> <p>Region to
+         * Region</p> </li> <li> <p>Region to Outpost</p> </li> <li> <p>Parent Region to
+         * Local Zone</p> </li> <li> <p>Local Zone to parent Region</p> </li> <li>
+         * <p>Between Local Zones with the same parent Region (only supported for certain
+         * Local Zones)</p> </li> </ul> <p class="title"> <b>CopyImage does not support the
+         * following source to destination copies:</b> </p> <ul> <li> <p>Local Zone to
+         * non-parent Regions</p> </li> <li> <p>Between Local Zones with different parent
+         * Regions</p> </li> <li> <p>Local Zone to Outpost</p> </li> <li> <p>Outpost to
+         * Local Zone</p> </li> <li> <p>Outpost to Region</p> </li> <li> <p>Between
+         * Outposts</p> </li> <li> <p>Within same Outpost</p> </li> <li> <p>Cross-partition
+         * copies (use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html">CreateStoreImageTask</a>
+         * instead)</p> </li> </ul> <p class="title"> <b>Destination specification</b> </p>
+         * <ul> <li> <p>Region to Region: The destination Region is the Region in which you
+         * initiate the copy operation.</p> </li> <li> <p>Region to Outpost: Specify the
+         * destination using the <code>DestinationOutpostArn</code> parameter (the ARN of
+         * the Outpost)</p> </li> <li> <p>Region to Local Zone, and Local Zone to Local
+         * Zone copies: Specify the destination using the
+         * <code>DestinationAvailabilityZone</code> parameter (the name of the destination
+         * Local Zone) or <code>DestinationAvailabilityZoneId</code> parameter (the ID of
+         * the destination Local Zone).</p> </li> </ul> <p class="title"> <b>Snapshot
+         * encryption</b> </p> <ul> <li> <p>Region to Outpost: Backing snapshots copied to
          * an Outpost are encrypted by default using the default encryption key for the
          * Region or the key that you specify. Outposts do not support unencrypted
-         * snapshots.</p> <p>For information about the prerequisites when copying an AMI,
-         * see <a
+         * snapshots.</p> </li> <li> <p>Region to Local Zone, and Local Zone to Local Zone:
+         * Not all Local Zones require encrypted snapshots. In Local Zones that require
+         * encrypted snapshots, backing snapshots are automatically encrypted during copy.
+         * In Local Zones where encryption is not required, snapshots retain their original
+         * encryption state (encrypted or unencrypted) by default.</p> </li> </ul> <p>For
+         * more information, including the required permissions for copying an AMI, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy
          * an Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1950,25 +1971,29 @@ namespace EC2
         }
 
         /**
-         * <p>Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3.
-         * You can copy a snapshot within the same Region, from one Region to another, or
-         * from a Region to an Outpost. You can't copy a snapshot from an Outpost to a
-         * Region, from one Outpost to another, or within the same Outpost.</p> <p>You can
-         * use the snapshot to create EBS volumes or Amazon Machine Images (AMIs).</p>
-         * <p>When copying snapshots to a Region, copies of encrypted EBS snapshots remain
-         * encrypted. Copies of unencrypted snapshots remain unencrypted, unless you enable
-         * encryption for the snapshot copy operation. By default, encrypted snapshot
-         * copies use the default KMS key; however, you can specify a different KMS key. To
-         * copy an encrypted snapshot that has been shared from another account, you must
-         * have permissions for the KMS key used to encrypt the snapshot.</p> <p>Snapshots
-         * copied to an Outpost are encrypted by default using the default encryption key
-         * for the Region, or a different key that you specify in the request using
+         * <p>Creates an exact copy of an Amazon EBS snapshot.</p> <p>The location of the
+         * source snapshot determines whether you can copy it or not, and the allowed
+         * destinations for the snapshot copy.</p> <ul> <li> <p>If the source snapshot is
+         * in a Region, you can copy it within that Region, to another Region, to an
+         * Outpost associated with that Region, or to a Local Zone in that Region.</p>
+         * </li> <li> <p>If the source snapshot is in a Local Zone, you can copy it within
+         * that Local Zone, to another Local Zone in the same zone group, or to the parent
+         * Region of the Local Zone.</p> </li> <li> <p>If the source snapshot is on an
+         * Outpost, you can't copy it.</p> </li> </ul> <p>When copying snapshots to a
+         * Region, copies of encrypted EBS snapshots remain encrypted. Copies of
+         * unencrypted snapshots remain unencrypted, unless you enable encryption for the
+         * snapshot copy operation. By default, encrypted snapshot copies use the default
+         * KMS key; however, you can specify a different KMS key. To copy an encrypted
+         * snapshot that has been shared from another account, you must have permissions
+         * for the KMS key used to encrypt the snapshot.</p> <p>Snapshots copied to an
+         * Outpost are encrypted by default using the default encryption key for the
+         * Region, or a different key that you specify in the request using
          * <b>KmsKeyId</b>. Outposts do not support unencrypted snapshots. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon
          * EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
-         * <p>Snapshots created by copying another snapshot have an arbitrary volume ID
-         * that should not be used for any purpose.</p> <p>For more information, see <a
+         *  <p>Snapshots copies have an arbitrary source volume ID. Do not use this
+         * volume ID for any purpose.</p>  <p>For more information, see <a
          * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-copy-snapshot.html">Copy
          * an Amazon EBS snapshot</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2592,7 +2617,7 @@ namespace EC2
          * Services accounts. The report provides visibility into which accounts are using
          * the specified image, and how many resources (EC2 instances or launch templates)
          * are referencing it.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/your-ec2-ami-usage.html">View
          * your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImageUsageReport">AWS
@@ -5359,7 +5384,7 @@ namespace EC2
 
         /**
          * <p>Deletes the specified image usage report.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/your-ec2-ami-usage.html">View
          * your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteImageUsageReport">AWS
@@ -8986,9 +9011,9 @@ namespace EC2
 
         /**
          * <p>Describes your Amazon Web Services resources that are referencing the
-         * specified images. </p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-references.html">Identiy
-         * your resources referencing selected AMIs</a> in the <i>Amazon EC2 User
+         * specified images.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-references.html">Identify
+         * your resources referencing specified AMIs</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageReferences">AWS
          * API Reference</a></p>
@@ -9017,7 +9042,7 @@ namespace EC2
          * <p>Describes the entries in image usage reports, showing how your images are
          * used across other Amazon Web Services accounts.</p> <p>For more information, see
          * <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/your-ec2-ami-usage.html">View
          * your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageUsageReportEntries">AWS
@@ -9046,7 +9071,7 @@ namespace EC2
         /**
          * <p>Describes the configuration and status of image usage reports, filtered by
          * report IDs or image IDs.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/your-ec2-ami-usage.html">View
          * your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageUsageReports">AWS

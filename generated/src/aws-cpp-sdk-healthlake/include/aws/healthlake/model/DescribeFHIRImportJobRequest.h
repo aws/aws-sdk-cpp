@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS-generated ID of the data store.</p>
+     * <p>The data store identifier.</p>
      */
     inline const Aws::String& GetDatastoreId() const { return m_datastoreId; }
     inline bool DatastoreIdHasBeenSet() const { return m_datastoreIdHasBeenSet; }
@@ -48,7 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS-generated job ID.</p>
+     * <p>The import job identifier.</p>
      */
     inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }

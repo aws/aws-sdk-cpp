@@ -13,6 +13,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/omics/model/Accelerators.h>
 #include <aws/omics/model/StorageType.h>
+#include <aws/omics/model/ContainerRegistryMap.h>
 #include <aws/omics/model/DefinitionRepositoryDetails.h>
 #include <aws/omics/model/WorkflowParameter.h>
 #include <utility>
@@ -253,6 +254,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The registry map that this workflow is using.</p>
+     */
+    inline const ContainerRegistryMap& GetContainerRegistryMap() const { return m_containerRegistryMap; }
+    template<typename ContainerRegistryMapT = ContainerRegistryMap>
+    void SetContainerRegistryMap(ContainerRegistryMapT&& value) { m_containerRegistryMapHasBeenSet = true; m_containerRegistryMap = std::forward<ContainerRegistryMapT>(value); }
+    template<typename ContainerRegistryMapT = ContainerRegistryMap>
+    GetWorkflowResult& WithContainerRegistryMap(ContainerRegistryMapT&& value) { SetContainerRegistryMap(std::forward<ContainerRegistryMapT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The README content for the workflow, providing documentation and usage
      * information.</p>
      */
@@ -355,6 +367,9 @@ namespace Model
 
     Aws::String m_uuid;
     bool m_uuidHasBeenSet = false;
+
+    ContainerRegistryMap m_containerRegistryMap;
+    bool m_containerRegistryMapHasBeenSet = false;
 
     Aws::String m_readme;
     bool m_readmeHasBeenSet = false;

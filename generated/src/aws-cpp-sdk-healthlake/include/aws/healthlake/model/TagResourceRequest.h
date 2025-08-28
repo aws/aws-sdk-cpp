@@ -38,8 +38,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The Amazon Resource Name(ARN)that gives AWS HealthLake access to the data
-     * store which tags are being added to. </p>
+     * <p>The Amazon Resource Name (ARN) that grants access to the data store tags are
+     * being added to.</p>
      */
     inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The user specified key and value pair tags being added to a data store. </p>
+     * <p>The user-specified key and value pair tags being added to a data store.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

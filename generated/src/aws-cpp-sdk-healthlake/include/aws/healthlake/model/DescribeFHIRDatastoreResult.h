@@ -35,9 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>All properties associated with a data store, including the data store ID,
-     * data store ARN, data store name, data store status, when the data store was
-     * created, data store type version, and the data store's endpoint.</p>
+     * <p>The data store properties.</p>
      */
     inline const DatastoreProperties& GetDatastoreProperties() const { return m_datastoreProperties; }
     template<typename DatastorePropertiesT = DatastoreProperties>

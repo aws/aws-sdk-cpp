@@ -132,6 +132,11 @@ GetWorkflowResult& GetWorkflowResult::operator =(const Aws::AmazonWebServiceResu
     m_uuid = jsonValue.GetString("uuid");
     m_uuidHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("containerRegistryMap"))
+  {
+    m_containerRegistryMap = jsonValue.GetObject("containerRegistryMap");
+    m_containerRegistryMapHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("readme"))
   {
     m_readme = jsonValue.GetString("readme");

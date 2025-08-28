@@ -35,8 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Displays the properties of the export job, including the ID, Arn, Name, and
-     * the status of the job. </p>
+     * <p>The export job properties.</p>
      */
     inline const ExportJobProperties& GetExportJobProperties() const { return m_exportJobProperties; }
     template<typename ExportJobPropertiesT = ExportJobProperties>

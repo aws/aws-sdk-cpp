@@ -27,8 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>The properties of a FHIR export job, including the ID, ARN, name, and the
-   * status of the job.</p><p><h3>See Also:</h3>   <a
+   * <p>The properties of a FHIR export job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ExportJobProperties">AWS
    * API Reference</a></p>
    */
@@ -43,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS generated ID for an export job.</p>
+     * <p>The export job identifier.</p>
      */
     inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
@@ -55,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user generated name for an export job.</p>
+     * <p>The export job name.</p>
      */
     inline const Aws::String& GetJobName() const { return m_jobName; }
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
@@ -67,8 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of a FHIR export job. Possible statuses are SUBMITTED,
-     * IN_PROGRESS, COMPLETED, or FAILED.</p>
+     * <p>The export job status.</p>
      */
     inline JobStatus GetJobStatus() const { return m_jobStatus; }
     inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
@@ -78,7 +76,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time an export job was initiated.</p>
+     * <p>The time the export job was initiated.</p>
      */
     inline const Aws::Utils::DateTime& GetSubmitTime() const { return m_submitTime; }
     inline bool SubmitTimeHasBeenSet() const { return m_submitTimeHasBeenSet; }
@@ -90,7 +88,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time an export job completed.</p>
+     * <p>The time the export job completed.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
@@ -102,8 +100,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS generated ID for the data store from which files are being exported
-     * for an export job.</p>
+     * <p>The data store identifier from which files are being exported.</p>
      */
     inline const Aws::String& GetDatastoreId() const { return m_datastoreId; }
     inline bool DatastoreIdHasBeenSet() const { return m_datastoreIdHasBeenSet; }
@@ -115,8 +112,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The output data configuration that was supplied when the export job was
-     * created.</p>
+     * <p>The output data configuration supplied when the export job was created.</p>
      */
     inline const OutputDataConfig& GetOutputDataConfig() const { return m_outputDataConfig; }
     inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
@@ -128,7 +124,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name used during the initiation of the job.</p>
+     * <p>The Amazon Resource Name (ARN) used during the initiation of the export
+     * job.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const { return m_dataAccessRoleArn; }
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
@@ -140,7 +137,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An explanation of any errors that may have occurred during the export
+     * <p>An explanation of any errors that might have occurred during the export
      * job.</p>
      */
     inline const Aws::String& GetMessage() const { return m_message; }

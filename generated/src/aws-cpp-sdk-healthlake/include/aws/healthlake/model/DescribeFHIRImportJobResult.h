@@ -35,8 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The properties of the Import job request, including the ID, ARN, name, status
-     * of the job, and the progress report of the job.</p>
+     * <p>The import job properties.</p>
      */
     inline const ImportJobProperties& GetImportJobProperties() const { return m_importJobProperties; }
     template<typename ImportJobPropertiesT = ImportJobProperties>

@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> Returns a list of tags associated with a data store. </p>
+     * <p>Returns a list of tags associated with a data store. </p>
      */
     inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     template<typename TagsT = Aws::Vector<Tag>>
