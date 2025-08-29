@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     active,
-    blackhole
+    blackhole,
+    filtered
   };
 
 namespace RouteStateMapper

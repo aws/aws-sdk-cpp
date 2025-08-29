@@ -55,8 +55,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The length of time in seconds between the start time of the root segment and
-     * the end time of the last segment that completed.</p>
+     * <p>The length of time in seconds between the start time of the earliest segment
+     * that started and the end time of the last segment that completed.</p>
      */
     inline double GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }

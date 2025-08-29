@@ -22,6 +22,7 @@ namespace Aws
 
         static const int active_HASH = HashingUtils::HashString("active");
         static const int blackhole_HASH = HashingUtils::HashString("blackhole");
+        static const int filtered_HASH = HashingUtils::HashString("filtered");
 
 
         RouteState GetRouteStateForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == blackhole_HASH)
           {
             return RouteState::blackhole;
+          }
+          else if (hashCode == filtered_HASH)
+          {
+            return RouteState::filtered;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "active";
           case RouteState::blackhole:
             return "blackhole";
+          case RouteState::filtered:
+            return "filtered";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

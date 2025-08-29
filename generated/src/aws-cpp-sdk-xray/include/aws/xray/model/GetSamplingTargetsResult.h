@@ -80,6 +80,21 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Information about <a
+     * href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingBoostStatisticsDocument.html">SamplingBoostStatisticsDocument</a>
+     * that X-Ray could not process.</p>
+     */
+    inline const Aws::Vector<UnprocessedStatistics>& GetUnprocessedBoostStatistics() const { return m_unprocessedBoostStatistics; }
+    template<typename UnprocessedBoostStatisticsT = Aws::Vector<UnprocessedStatistics>>
+    void SetUnprocessedBoostStatistics(UnprocessedBoostStatisticsT&& value) { m_unprocessedBoostStatisticsHasBeenSet = true; m_unprocessedBoostStatistics = std::forward<UnprocessedBoostStatisticsT>(value); }
+    template<typename UnprocessedBoostStatisticsT = Aws::Vector<UnprocessedStatistics>>
+    GetSamplingTargetsResult& WithUnprocessedBoostStatistics(UnprocessedBoostStatisticsT&& value) { SetUnprocessedBoostStatistics(std::forward<UnprocessedBoostStatisticsT>(value)); return *this;}
+    template<typename UnprocessedBoostStatisticsT = UnprocessedStatistics>
+    GetSamplingTargetsResult& AddUnprocessedBoostStatistics(UnprocessedBoostStatisticsT&& value) { m_unprocessedBoostStatisticsHasBeenSet = true; m_unprocessedBoostStatistics.emplace_back(std::forward<UnprocessedBoostStatisticsT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -97,6 +112,9 @@ namespace Model
 
     Aws::Vector<UnprocessedStatistics> m_unprocessedStatistics;
     bool m_unprocessedStatisticsHasBeenSet = false;
+
+    Aws::Vector<UnprocessedStatistics> m_unprocessedBoostStatistics;
+    bool m_unprocessedBoostStatisticsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

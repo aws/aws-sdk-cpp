@@ -125,6 +125,9 @@
 #include <aws/xray/model/RetrievedService.h>
 #include <aws/xray/model/RetrievedTrace.h>
 #include <aws/xray/model/RootCauseException.h>
+#include <aws/xray/model/SamplingBoost.h>
+#include <aws/xray/model/SamplingBoostStatisticsDocument.h>
+#include <aws/xray/model/SamplingRateBoost.h>
 #include <aws/xray/model/SamplingRule.h>
 #include <aws/xray/model/SamplingRuleRecord.h>
 #include <aws/xray/model/SamplingRuleUpdate.h>

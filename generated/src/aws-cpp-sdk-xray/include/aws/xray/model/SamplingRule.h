@@ -7,6 +7,7 @@
 #include <aws/xray/XRay_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/xray/model/SamplingRateBoost.h>
 #include <utility>
 
 namespace Aws
@@ -200,6 +201,20 @@ namespace Model
       m_attributesHasBeenSet = true; m_attributes.emplace(std::forward<AttributesKeyT>(key), std::forward<AttributesValueT>(value)); return *this;
     }
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the multiplier applied to the base sampling rate. This boost allows
+     * you to temporarily increase sampling without changing the rule's
+     * configuration.</p>
+     */
+    inline const SamplingRateBoost& GetSamplingRateBoost() const { return m_samplingRateBoost; }
+    inline bool SamplingRateBoostHasBeenSet() const { return m_samplingRateBoostHasBeenSet; }
+    template<typename SamplingRateBoostT = SamplingRateBoost>
+    void SetSamplingRateBoost(SamplingRateBoostT&& value) { m_samplingRateBoostHasBeenSet = true; m_samplingRateBoost = std::forward<SamplingRateBoostT>(value); }
+    template<typename SamplingRateBoostT = SamplingRateBoost>
+    SamplingRule& WithSamplingRateBoost(SamplingRateBoostT&& value) { SetSamplingRateBoost(std::forward<SamplingRateBoostT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_ruleName;
@@ -240,6 +255,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet = false;
+
+    SamplingRateBoost m_samplingRateBoost;
+    bool m_samplingRateBoostHasBeenSet = false;
   };
 
 } // namespace Model
