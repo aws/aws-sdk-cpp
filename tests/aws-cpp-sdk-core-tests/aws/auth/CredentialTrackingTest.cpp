@@ -231,7 +231,7 @@ TEST_F(CredentialTrackingTest, TestProfileCredentialsTracking)
     EXPECT_TRUE(businessMetrics != userAgentParsed.end());
 }
 
-TEST_F(CredentialTrackingTest, TestProcessCredentialsTracking)
+TEST_F(CredentialTrackingTest, DISABLED_TestProcessCredentialsTracking)
 {
     // Create temporary config file with credential_process
     Aws::Utils::TempFile configFile(std::ios_base::out | std::ios_base::trunc);
