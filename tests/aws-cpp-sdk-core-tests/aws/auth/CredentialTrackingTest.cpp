@@ -371,6 +371,7 @@ TEST_F(CredentialTrackingTest, TestSSOCredentialsTracking)
 
     // Write test SSO token file (directory structure already set up in SetUp)
     Aws::OFStream tokenFile(m_ssoTokenFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    ASSERT_TRUE(tokenFile.good());
     tokenFile << R"({
     "accessToken": "test-sso-access-token",
     "expiresAt": "2099-12-31T23:59:59Z",
