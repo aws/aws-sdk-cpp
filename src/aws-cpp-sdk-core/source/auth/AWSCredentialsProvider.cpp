@@ -201,7 +201,11 @@ AWSCredentials ProfileConfigFileAWSCredentialsProvider::GetAWSCredentials()
 
     if(credsFileProfileIter != profiles.end())
     {
-        return credsFileProfileIter->second.GetCredentials();
+        AWSCredentials credentials = credsFileProfileIter->second.GetCredentials();
+        if (!credentials.IsEmpty()) {
+            credentials.AddUserAgentFeature(UserAgentFeature::CREDENTIALS_PROFILE);
+        }
+        return credentials;
     }
 
     return AWSCredentials();
@@ -265,7 +269,11 @@ AWSCredentials InstanceProfileCredentialsProvider::GetAWSCredentials()
         auto profileIter = profiles.find(Aws::Config::INSTANCE_PROFILE_KEY);
 
         if (profileIter != profiles.end()) {
-            return profileIter->second.GetCredentials();
+            AWSCredentials credentials = profileIter->second.GetCredentials();
+            if (!credentials.IsEmpty()) {
+                credentials.AddUserAgentFeature(UserAgentFeature::CREDENTIALS_IMDS);
+            }
+            return credentials;
         }
     }
     else
@@ -357,6 +365,9 @@ void ProcessCredentialsProvider::Reload()
         return;
     }
     m_credentials = GetCredentialsFromProcess(command);
+    if (!m_credentials.IsEmpty()) {
+        m_credentials.AddUserAgentFeature(UserAgentFeature::CREDENTIALS_PROCESS);
+    }
 }
 
 void ProcessCredentialsProvider::RefreshIfExpired()
