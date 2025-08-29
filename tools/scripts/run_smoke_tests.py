@@ -28,11 +28,13 @@ def main():
 
     total_tests = 0
     all_results = defaultdict(list)
-
+    print(os.environ.get('AWS_SMOKE_TEST_SERVICE_IDS', ''))
     service_id = os.environ.get('AWS_SMOKE_TEST_SERVICE_IDS', '').strip().lower().replace(' ', '-') if os.environ.get('AWS_SMOKE_TEST_SERVICE_IDS', '').strip() else []
+    print(service_id,services)
     if service_id:
         filtered_services = [s for s in services if s in service_id]
         services = filtered_services if filtered_services else services
+    print(services)
 
     for service in services:
         executable = os.path.join(smoke_tests_dir, service, f"{service}-smoke-tests")
