@@ -15,9 +15,6 @@ if [ -z "$CODEBUILD_SRC_DIR" ]; then
   exit 1
 fi
 
-echo "Contents of CODEBUILD_SRC_DIR: ${CODEBUILD_SRC_DIR}"
-export AWS_SMOKE_TEST_SERVICE_IDS=$(cat $CODEBUILD_SRC_DIR/feature-service-id.json | sed 's/[^:]*:"\\([^"]*\\)"/\\1,/g' | sed 's/,}$//')
-ls -la
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${CODEBUILD_SRC_DIR}/al2-install/lib64/"
 cd "${CODEBUILD_SRC_DIR}/al2-build"
 python3 "../aws-sdk-cpp/tools/scripts/run_smoke_tests.py" --testDir "${CODEBUILD_SRC_DIR}/al2-build" | tee -a results.txt
