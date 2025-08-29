@@ -27,6 +27,15 @@ using namespace Aws::Http;
 
 static const char ALLOCATION_TAG[] = "CredentialTrackingTest";
 
+static Aws::String WrapEchoStringWithSingleQuoteForUnixShell(Aws::String str)
+{
+#ifndef _WIN32
+  str.insert(0, 1, '\'');
+  str.append(1, '\'');
+#endif
+  return str;
+}
+
 // Custom client that uses default credential provider for testing
 class CredentialTestingClient : public Aws::Client::AWSClient
 {
@@ -231,13 +240,13 @@ TEST_F(CredentialTrackingTest, TestProfileCredentialsTracking)
     EXPECT_TRUE(businessMetrics != userAgentParsed.end());
 }
 
-TEST_F(CredentialTrackingTest, DISABLED_TestProcessCredentialsTracking)
+TEST_F(CredentialTrackingTest, TestProcessCredentialsTracking)
 {
     // Create temporary config file with credential_process
     Aws::Utils::TempFile configFile(std::ios_base::out | std::ios_base::trunc);
     ASSERT_TRUE(configFile.good());
     configFile << "[default]" << std::endl;
-    configFile << "credential_process = echo '{\"Version\": 1, \"AccessKeyId\": \"test-process-key\", \"SecretAccessKey\": \"test-process-secret\"}'" << std::endl;
+    configFile << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"test-process-key\", \"SecretAccessKey\": \"test-process-secret\"}") << std::endl;
     configFile.close();
 
     // Set environment to use our test config file
