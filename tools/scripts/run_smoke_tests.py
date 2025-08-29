@@ -29,7 +29,7 @@ def main():
     total_tests = 0
     all_results = defaultdict(list)
 
-    service_id = os.environ.get('AWS_SMOKE_TEST_SERVICE_IDS', '').split(",") if os.environ.get('AWS_SMOKE_TEST_SERVICE_IDS', '').strip() else []
+    service_id = os.environ.get('AWS_SMOKE_TEST_SERVICE_IDS', '').strip().lower().replace(' ', '-') if os.environ.get('AWS_SMOKE_TEST_SERVICE_IDS', '').strip() else []
     if service_id:
         filtered_services = [s for s in services if s in service_id]
         services = filtered_services if filtered_services else services
