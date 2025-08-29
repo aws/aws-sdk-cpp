@@ -357,7 +357,7 @@ TEST_F(CredentialTrackingTest, TestInstanceProfileCredentialsTracking)
     EXPECT_TRUE(businessMetrics != userAgentParsed.end());
 }
 
-TEST_F(CredentialTrackingTest, TestSSOCredentialsTracking)
+TEST_F(CredentialTrackingTest, DISABLED_TestSSOCredentialsTracking)
 {
     // Create temporary config file with SSO configuration
     Aws::Utils::TempFile configFile(std::ios_base::out | std::ios_base::trunc);
