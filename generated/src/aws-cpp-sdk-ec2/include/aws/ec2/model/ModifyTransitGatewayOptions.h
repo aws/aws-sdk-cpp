@@ -145,8 +145,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Enable or disable automatic propagation of routes to the default propagation
-     * route table.</p>
+     * <p>Indicates whether resource attachments automatically propagate routes to the
+     * default propagation route table. Enabled by default. If
+     * <code>defaultRouteTablePropagation</code> is set to <code>enable</code>, Amazon
+     * Web Services Transit Gateway will create the default transit gateway route
+     * table.</p>
      */
     inline DefaultRouteTablePropagationValue GetDefaultRouteTablePropagation() const { return m_defaultRouteTablePropagation; }
     inline bool DefaultRouteTablePropagationHasBeenSet() const { return m_defaultRouteTablePropagationHasBeenSet; }

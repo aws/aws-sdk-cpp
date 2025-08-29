@@ -7,6 +7,7 @@
 #include <aws/xray/XRay_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/xray/model/SamplingBoost.h>
 #include <utility>
 
 namespace Aws
@@ -97,6 +98,18 @@ namespace Model
     inline void SetInterval(int value) { m_intervalHasBeenSet = true; m_interval = value; }
     inline SamplingTargetDocument& WithInterval(int value) { SetInterval(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The sampling boost that X-Ray allocated for this service.</p>
+     */
+    inline const SamplingBoost& GetSamplingBoost() const { return m_samplingBoost; }
+    inline bool SamplingBoostHasBeenSet() const { return m_samplingBoostHasBeenSet; }
+    template<typename SamplingBoostT = SamplingBoost>
+    void SetSamplingBoost(SamplingBoostT&& value) { m_samplingBoostHasBeenSet = true; m_samplingBoost = std::forward<SamplingBoostT>(value); }
+    template<typename SamplingBoostT = SamplingBoost>
+    SamplingTargetDocument& WithSamplingBoost(SamplingBoostT&& value) { SetSamplingBoost(std::forward<SamplingBoostT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_ruleName;
@@ -113,6 +126,9 @@ namespace Model
 
     int m_interval{0};
     bool m_intervalHasBeenSet = false;
+
+    SamplingBoost m_samplingBoost;
+    bool m_samplingBoostHasBeenSet = false;
   };
 
 } // namespace Model

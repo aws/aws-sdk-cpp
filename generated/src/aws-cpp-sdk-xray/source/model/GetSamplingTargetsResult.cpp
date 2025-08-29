@@ -48,6 +48,15 @@ GetSamplingTargetsResult& GetSamplingTargetsResult::operator =(const Aws::Amazon
     }
     m_unprocessedStatisticsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("UnprocessedBoostStatistics"))
+  {
+    Aws::Utils::Array<JsonView> unprocessedBoostStatisticsJsonList = jsonValue.GetArray("UnprocessedBoostStatistics");
+    for(unsigned unprocessedBoostStatisticsIndex = 0; unprocessedBoostStatisticsIndex < unprocessedBoostStatisticsJsonList.GetLength(); ++unprocessedBoostStatisticsIndex)
+    {
+      m_unprocessedBoostStatistics.push_back(unprocessedBoostStatisticsJsonList[unprocessedBoostStatisticsIndex].AsObject());
+    }
+    m_unprocessedBoostStatisticsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -27,6 +27,17 @@ Aws::String GetSamplingTargetsRequest::SerializePayload() const
 
   }
 
+  if(m_samplingBoostStatisticsDocumentsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> samplingBoostStatisticsDocumentsJsonList(m_samplingBoostStatisticsDocuments.size());
+   for(unsigned samplingBoostStatisticsDocumentsIndex = 0; samplingBoostStatisticsDocumentsIndex < samplingBoostStatisticsDocumentsJsonList.GetLength(); ++samplingBoostStatisticsDocumentsIndex)
+   {
+     samplingBoostStatisticsDocumentsJsonList[samplingBoostStatisticsDocumentsIndex].AsObject(m_samplingBoostStatisticsDocuments[samplingBoostStatisticsDocumentsIndex].Jsonize());
+   }
+   payload.WithArray("SamplingBoostStatisticsDocuments", std::move(samplingBoostStatisticsDocumentsJsonList));
+
+  }
+
   return payload.View().WriteReadable();
 }
 

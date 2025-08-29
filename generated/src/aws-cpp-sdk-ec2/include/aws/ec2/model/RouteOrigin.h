@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     CreateRouteTable,
     CreateRoute,
-    EnableVgwRoutePropagation
+    EnableVgwRoutePropagation,
+    Advertisement
   };
 
 namespace RouteOriginMapper

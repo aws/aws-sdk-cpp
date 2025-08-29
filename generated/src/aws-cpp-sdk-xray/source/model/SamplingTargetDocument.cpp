@@ -50,6 +50,11 @@ SamplingTargetDocument& SamplingTargetDocument::operator =(JsonView jsonValue)
     m_interval = jsonValue.GetInteger("Interval");
     m_intervalHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("SamplingBoost"))
+  {
+    m_samplingBoost = jsonValue.GetObject("SamplingBoost");
+    m_samplingBoostHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -83,6 +88,12 @@ JsonValue SamplingTargetDocument::Jsonize() const
   if(m_intervalHasBeenSet)
   {
    payload.WithInteger("Interval", m_interval);
+
+  }
+
+  if(m_samplingBoostHasBeenSet)
+  {
+   payload.WithObject("SamplingBoost", m_samplingBoost.Jsonize());
 
   }
 

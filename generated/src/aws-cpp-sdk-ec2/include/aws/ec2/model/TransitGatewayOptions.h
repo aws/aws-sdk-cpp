@@ -86,9 +86,10 @@ namespace Model
     ///@{
     /**
      * <p>Indicates whether resource attachments are automatically associated with the
-     * default association route table. Enabled by default. If
-     * <code>defaultRouteTableAssociation</code> is set to <code>enable</code>, Amazon
-     * Web Services Transit Gateway will create the default transit gateway route
+     * default association route table. Enabled by default. Either
+     * <code>defaultRouteTableAssociation</code> or
+     * <code>defaultRouteTablePropagation</code> must be set to <code>enable</code> for
+     * Amazon Web Services Transit Gateway to create the default transit gateway route
      * table.</p>
      */
     inline DefaultRouteTableAssociationValue GetDefaultRouteTableAssociation() const { return m_defaultRouteTableAssociation; }
@@ -114,7 +115,7 @@ namespace Model
      * <p>Indicates whether resource attachments automatically propagate routes to the
      * default propagation route table. Enabled by default. If
      * <code>defaultRouteTablePropagation</code> is set to <code>enable</code>, Amazon
-     * Web Services Transit Gateway will create the default transit gateway route
+     * Web Services Transit Gateway creates the default transit gateway route
      * table.</p>
      */
     inline DefaultRouteTablePropagationValue GetDefaultRouteTablePropagation() const { return m_defaultRouteTablePropagation; }

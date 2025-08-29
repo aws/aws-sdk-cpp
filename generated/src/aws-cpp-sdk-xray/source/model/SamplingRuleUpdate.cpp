@@ -89,6 +89,11 @@ SamplingRuleUpdate& SamplingRuleUpdate::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("SamplingRateBoost"))
+  {
+    m_samplingRateBoost = jsonValue.GetObject("SamplingRateBoost");
+    m_samplingRateBoostHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -170,6 +175,12 @@ JsonValue SamplingRuleUpdate::Jsonize() const
      attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
    }
    payload.WithObject("Attributes", std::move(attributesJsonMap));
+
+  }
+
+  if(m_samplingRateBoostHasBeenSet)
+  {
+   payload.WithObject("SamplingRateBoost", m_samplingRateBoost.Jsonize());
 
   }
 
