@@ -16,6 +16,8 @@
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/platform/FileSystem.h>
+#include <aws/testing/TestingEnvironment.h>
+#include <aws/core/utils/FileSystemUtils.h>
 #include <fstream>
 #include <sys/stat.h>
 
@@ -70,6 +72,7 @@ class CredentialTrackingTest : public Aws::Testing::AwsCppSdkGTestSuite
 protected:
     std::shared_ptr<MockHttpClient> mockHttpClient;
     std::shared_ptr<MockHttpClientFactory> mockHttpClientFactory;
+    Aws::String m_ssoTokenFileName;
 
     void SetUp() override
     {
@@ -77,6 +80,21 @@ protected:
         mockHttpClientFactory = Aws::MakeShared<MockHttpClientFactory>(ALLOCATION_TAG);
         mockHttpClientFactory->SetClient(mockHttpClient);
         SetHttpClientFactory(mockHttpClientFactory);
+
+        // Setup SSO token directory structure
+        auto profileDirectory = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
+        Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
+        Aws::StringStream ssCachedTokenDirectory;
+        ssCachedTokenDirectory << profileDirectory << Aws::FileSystem::PATH_DELIM << "sso";
+        Aws::FileSystem::CreateDirectoryIfNotExists(ssCachedTokenDirectory.str().c_str());
+        ssCachedTokenDirectory << Aws::FileSystem::PATH_DELIM << "cache";
+        Aws::FileSystem::CreateDirectoryIfNotExists(ssCachedTokenDirectory.str().c_str());
+
+        // Calculate SSO token file name for "https://test.awsapps.com/start"
+        Aws::String startUrl = "https://test.awsapps.com/start";
+        auto hash = Aws::Utils::HashingUtils::CalculateSHA1(startUrl);
+        Aws::String tokenFileName = Aws::Utils::HashingUtils::HexEncode(hash) + ".json";
+        m_ssoTokenFileName = ssCachedTokenDirectory.str() + Aws::FileSystem::PATH_DELIM + tokenFileName;
     }
 
     void TearDown() override
@@ -86,6 +104,9 @@ protected:
         mockHttpClientFactory = nullptr;
         Aws::Http::CleanupHttp();
         Aws::Http::InitHttp();
+        
+        // Cleanup SSO token file
+        Aws::FileSystem::RemoveFileIfExists(m_ssoTokenFileName.c_str());
     }
 };
 
@@ -147,26 +168,19 @@ TEST_F(CredentialTrackingTest, TestEnvironmentCredentialsTracking)
 
 TEST_F(CredentialTrackingTest, TestProfileCredentialsTracking)
 {
-    // Create a temporary credentials file
-    Aws::String tempDir = "/tmp";
-    Aws::String awsDir = tempDir + "/.aws";
-    Aws::String credentialsFile = awsDir + "/credentials";
-
-    // Ensure directory exists
-    mkdir(tempDir.c_str(), 0755);
-    mkdir(awsDir.c_str(), 0755);
-
-    // Write test credentials to file
-    std::ofstream credFile(credentialsFile.c_str());
-    credFile << "[default]\n";
-    credFile << "aws_access_key_id = test-profile-access-key\n";
-    credFile << "aws_secret_access_key = test-profile-secret-key\n";
-    credFile.close();
+    // Create temporary credentials file
+    Aws::Utils::TempFile credentialsFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(credentialsFile.good());
+    credentialsFile << "[default]" << std::endl;
+    credentialsFile << "aws_access_key_id = test-profile-access-key" << std::endl;
+    credentialsFile << "aws_secret_access_key = test-profile-secret-key" << std::endl;
+    credentialsFile.close();
 
     // Set environment to use our test credentials file
     Aws::Environment::EnvironmentRAII testEnvironment{{
-        {"AWS_SHARED_CREDENTIALS_FILE", credentialsFile},
+        {"AWS_SHARED_CREDENTIALS_FILE", credentialsFile.GetFileName().c_str()},
     }};
+    Aws::Config::ReloadCachedCredentialsFile();
 
     // Setup mock response
     std::shared_ptr<HttpRequest> requestTmp =
@@ -215,31 +229,20 @@ TEST_F(CredentialTrackingTest, TestProfileCredentialsTracking)
         [](const Aws::String& value) { return value.find("m/") != Aws::String::npos && value.find("n") != Aws::String::npos; });
 
     EXPECT_TRUE(businessMetrics != userAgentParsed.end());
-
-    // Cleanup
-    std::remove(credentialsFile.c_str());
 }
 
 TEST_F(CredentialTrackingTest, TestProcessCredentialsTracking)
 {
-    // Create a temporary config file with credential_process
-    Aws::String tempDir = "/tmp";
-    Aws::String awsDir = tempDir + "/.aws";
-    Aws::String configFile = awsDir + "/config";
-
-    // Ensure directory exists
-    mkdir(tempDir.c_str(), 0755);
-    mkdir(awsDir.c_str(), 0755);
-
-    // Write test config with credential_process
-    std::ofstream confFile(configFile.c_str());
-    confFile << "[default]\n";
-    confFile << "credential_process = echo '{\"Version\": 1, \"AccessKeyId\": \"test-process-key\", \"SecretAccessKey\": \"test-process-secret\"}'\n";
-    confFile.close();
+    // Create temporary config file with credential_process
+    Aws::Utils::TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(configFile.good());
+    configFile << "[default]" << std::endl;
+    configFile << "credential_process = echo '{\"Version\": 1, \"AccessKeyId\": \"test-process-key\", \"SecretAccessKey\": \"test-process-secret\"}'" << std::endl;
+    configFile.close();
 
     // Set environment to use our test config file
     Aws::Environment::EnvironmentRAII testEnvironment{{
-        {"AWS_CONFIG_FILE", configFile},
+        {"AWS_CONFIG_FILE", configFile.GetFileName().c_str()},
     }};
 
     // Force reload config file after setting environment variable
@@ -292,9 +295,6 @@ TEST_F(CredentialTrackingTest, TestProcessCredentialsTracking)
         [](const Aws::String& value) { return value.find("m/") != Aws::String::npos && value.find("w") != Aws::String::npos; });
 
     EXPECT_TRUE(businessMetrics != userAgentParsed.end());
-
-    // Cleanup
-    std::remove(configFile.c_str());
 }
 
 TEST_F(CredentialTrackingTest, TestInstanceProfileCredentialsTracking)
@@ -359,46 +359,29 @@ TEST_F(CredentialTrackingTest, TestInstanceProfileCredentialsTracking)
 
 TEST_F(CredentialTrackingTest, TestSSOCredentialsTracking)
 {
-    // Use home directory instead of /tmp to match SSO provider expectations
-    Aws::String homeDir = Aws::FileSystem::GetHomeDirectory();
-    Aws::String awsDir = homeDir + "/.aws";
-    Aws::String ssoDir = awsDir + "/sso/cache";
-    Aws::String configFile = awsDir + "/config";
-    Aws::String tokenFile = ssoDir + "/d033e22ae348aeb5660fc2140aec35850c4da997.json";
+    // Create temporary config file with SSO configuration
+    Aws::Utils::TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(configFile.good());
+    configFile << "[default]" << std::endl;
+    configFile << "sso_account_id = 123456789012" << std::endl;
+    configFile << "sso_region = us-east-1" << std::endl;
+    configFile << "sso_role_name = TestRole" << std::endl;
+    configFile << "sso_start_url = https://test.awsapps.com/start" << std::endl;
+    configFile.close();
 
-    // Ensure directories exist
-    mkdir(awsDir.c_str(), 0755);
-    mkdir((awsDir + "/sso").c_str(), 0755);
-    mkdir(ssoDir.c_str(), 0755);
-
-    // Write test config with legacy SSO configuration
-    std::ofstream confFile(configFile.c_str());
-    confFile << "[default]\n";
-    confFile << "sso_account_id = 123456789012\n";
-    confFile << "sso_region = us-east-1\n";
-    confFile << "sso_role_name = TestRole\n";
-    confFile << "sso_start_url = https://test.awsapps.com/start\n";
-    confFile.close();
-
-    // Calculate correct token file name based on SHA1 hash of start URL
-    Aws::String startUrl = "https://test.awsapps.com/start";
-    auto hash = Aws::Utils::HashingUtils::CalculateSHA1(startUrl);
-    Aws::String tokenFileName = Aws::Utils::HashingUtils::HexEncode(hash) + ".json";
-    Aws::String correctTokenFile = ssoDir + "/" + tokenFileName;
-
-    // Write test SSO token file with correct name
-    std::ofstream tokenFileStream(correctTokenFile.c_str());
-    tokenFileStream << "{\n";
-    tokenFileStream << "  \"accessToken\": \"test-sso-access-token\",\n";
-    tokenFileStream << "  \"expiresAt\": \"2099-12-31T23:59:59Z\"\n";
-    tokenFileStream << "}\n";
-    tokenFileStream.close();
+    // Write test SSO token file (directory structure already set up in SetUp)
+    Aws::OFStream tokenFile(m_ssoTokenFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    tokenFile << R"({
+    "accessToken": "test-sso-access-token",
+    "expiresAt": "2099-12-31T23:59:59Z",
+    "region": "us-east-1",
+    "startUrl": "https://test.awsapps.com/start"
+})";
+    tokenFile.close();
 
     // Set environment to use our test config file
     Aws::Environment::EnvironmentRAII testEnvironment{{
-        {"AWS_CONFIG_FILE", configFile},
-        {"AWS_ACCESS_KEY_ID", ""},
-        {"AWS_SECRET_ACCESS_KEY", ""},
+        {"AWS_CONFIG_FILE", configFile.GetFileName().c_str()},
     }};
 
     // Force reload config file after setting environment variable
@@ -461,8 +444,4 @@ TEST_F(CredentialTrackingTest, TestSSOCredentialsTracking)
         [](const Aws::String& value) { return value.find("m/") != Aws::String::npos && value.find("s") != Aws::String::npos; });
 
     EXPECT_TRUE(businessMetrics != userAgentParsed.end());
-
-    // Cleanup
-    std::remove(correctTokenFile.c_str());
-    std::remove(configFile.c_str());
 }
