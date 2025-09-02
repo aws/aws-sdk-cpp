@@ -93,7 +93,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p/>
+     */
     inline const ManagedNotificationEventSummary& GetNotificationEvent() const { return m_notificationEvent; }
     inline bool NotificationEventHasBeenSet() const { return m_notificationEventHasBeenSet; }
     template<typename NotificationEventT = ManagedNotificationEventSummary>

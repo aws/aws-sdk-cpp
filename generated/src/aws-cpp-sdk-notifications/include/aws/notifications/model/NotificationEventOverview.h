@@ -144,6 +144,19 @@ namespace Model
     template<typename AggregationSummaryT = AggregationSummary>
     NotificationEventOverview& WithAggregationSummary(AggregationSummaryT&& value) { SetAggregationSummary(std::forward<AggregationSummaryT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The unique identifier of the organizational unit in the notification event
+     * overview.</p>
+     */
+    inline const Aws::String& GetOrganizationalUnitId() const { return m_organizationalUnitId; }
+    inline bool OrganizationalUnitIdHasBeenSet() const { return m_organizationalUnitIdHasBeenSet; }
+    template<typename OrganizationalUnitIdT = Aws::String>
+    void SetOrganizationalUnitId(OrganizationalUnitIdT&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::forward<OrganizationalUnitIdT>(value); }
+    template<typename OrganizationalUnitIdT = Aws::String>
+    NotificationEventOverview& WithOrganizationalUnitId(OrganizationalUnitIdT&& value) { SetOrganizationalUnitId(std::forward<OrganizationalUnitIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -169,6 +182,9 @@ namespace Model
 
     AggregationSummary m_aggregationSummary;
     bool m_aggregationSummaryHasBeenSet = false;
+
+    Aws::String m_organizationalUnitId;
+    bool m_organizationalUnitIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,8 +35,9 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Channel to associate with the
-     * <code>NotificationConfiguration</code>.</p> <p>Supported ARNs include Chatbot,
-     * the Console Mobile Application, and notifications-contacts.</p>
+     * <code>NotificationConfiguration</code>.</p> <p>Supported ARNs include Amazon Q
+     * Developer in chat applications, the Console Mobile Application, and
+     * notifications-contacts.</p>
      */
     inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }

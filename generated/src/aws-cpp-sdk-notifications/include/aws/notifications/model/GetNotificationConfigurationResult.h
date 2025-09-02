@@ -9,6 +9,7 @@
 #include <aws/notifications/model/NotificationConfigurationStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/notifications/model/AggregationDuration.h>
+#include <aws/notifications/model/NotificationConfigurationSubtype.h>
 #include <utility>
 
 namespace Aws
@@ -104,6 +105,15 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The subtype of the notification configuration returned in the response.</p>
+     */
+    inline NotificationConfigurationSubtype GetSubtype() const { return m_subtype; }
+    inline void SetSubtype(NotificationConfigurationSubtype value) { m_subtypeHasBeenSet = true; m_subtype = value; }
+    inline GetNotificationConfigurationResult& WithSubtype(NotificationConfigurationSubtype value) { SetSubtype(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -130,6 +140,9 @@ namespace Model
 
     AggregationDuration m_aggregationDuration{AggregationDuration::NOT_SET};
     bool m_aggregationDurationHasBeenSet = false;
+
+    NotificationConfigurationSubtype m_subtype{NotificationConfigurationSubtype::NOT_SET};
+    bool m_subtypeHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

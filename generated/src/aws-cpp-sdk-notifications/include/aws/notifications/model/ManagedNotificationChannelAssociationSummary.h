@@ -60,10 +60,10 @@ namespace Model
      * Notification Service.</p> </li> </ul> </li> <li> <p> <code>MOBILE</code> </p>
      * <ul> <li> <p>Delivers notifications through the Amazon Web Services Console
      * Mobile Application to mobile devices.</p> </li> </ul> </li> <li> <p>
-     * <code>CHATBOT</code> </p> <ul> <li> <p>Delivers notifications through Chatbot to
-     * collaboration platforms (Slack, Chime).</p> </li> </ul> </li> <li> <p>
-     * <code>EMAIL</code> </p> <ul> <li> <p>Delivers notifications to email
-     * addresses.</p> </li> </ul> </li> </ul> </li> </ul>
+     * <code>CHATBOT</code> </p> <ul> <li> <p>Delivers notifications through Amazon Q
+     * Developer in chat applications to collaboration platforms (Slack, Chime).</p>
+     * </li> </ul> </li> <li> <p> <code>EMAIL</code> </p> <ul> <li> <p>Delivers
+     * notifications to email addresses.</p> </li> </ul> </li> </ul> </li> </ul>
      */
     inline ChannelType GetChannelType() const { return m_channelType; }
     inline bool ChannelTypeHasBeenSet() const { return m_channelTypeHasBeenSet; }

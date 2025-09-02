@@ -55,6 +55,11 @@ NotificationConfigurationStructure& NotificationConfigurationStructure::operator
     m_aggregationDuration = AggregationDurationMapper::GetAggregationDurationForName(jsonValue.GetString("aggregationDuration"));
     m_aggregationDurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("subtype"))
+  {
+    m_subtype = NotificationConfigurationSubtypeMapper::GetNotificationConfigurationSubtypeForName(jsonValue.GetString("subtype"));
+    m_subtypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -93,6 +98,11 @@ JsonValue NotificationConfigurationStructure::Jsonize() const
   if(m_aggregationDurationHasBeenSet)
   {
    payload.WithString("aggregationDuration", AggregationDurationMapper::GetNameForAggregationDuration(m_aggregationDuration));
+  }
+
+  if(m_subtypeHasBeenSet)
+  {
+   payload.WithString("subtype", NotificationConfigurationSubtypeMapper::GetNameForNotificationConfigurationSubtype(m_subtype));
   }
 
   return payload;

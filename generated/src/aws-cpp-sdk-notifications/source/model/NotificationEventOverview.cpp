@@ -65,6 +65,11 @@ NotificationEventOverview& NotificationEventOverview::operator =(JsonView jsonVa
     m_aggregationSummary = jsonValue.GetObject("aggregationSummary");
     m_aggregationSummaryHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("organizationalUnitId"))
+  {
+    m_organizationalUnitId = jsonValue.GetString("organizationalUnitId");
+    m_organizationalUnitIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -115,6 +120,12 @@ JsonValue NotificationEventOverview::Jsonize() const
   if(m_aggregationSummaryHasBeenSet)
   {
    payload.WithObject("aggregationSummary", m_aggregationSummary.Jsonize());
+
+  }
+
+  if(m_organizationalUnitIdHasBeenSet)
+  {
+   payload.WithString("organizationalUnitId", m_organizationalUnitId);
 
   }
 

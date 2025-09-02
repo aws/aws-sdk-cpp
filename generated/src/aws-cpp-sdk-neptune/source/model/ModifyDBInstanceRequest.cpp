@@ -180,6 +180,11 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
     ss << "DBPortNumber=" << m_dBPortNumber << "&";
   }
 
+  if(m_publiclyAccessibleHasBeenSet)
+  {
+    ss << "PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
+  }
+
   if(m_monitoringRoleArnHasBeenSet)
   {
     ss << "MonitoringRoleArn=" << StringUtils::URLEncode(m_monitoringRoleArn.c_str()) << "&";

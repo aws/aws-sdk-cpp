@@ -10,6 +10,7 @@
 #include <aws/ec2/model/EbsEncryptionSupport.h>
 #include <aws/ec2/model/EbsOptimizedInfo.h>
 #include <aws/ec2/model/EbsNvmeSupport.h>
+#include <aws/ec2/model/AttachmentLimitType.h>
 #include <utility>
 
 namespace Aws
@@ -87,6 +88,34 @@ namespace Model
     inline void SetNvmeSupport(EbsNvmeSupport value) { m_nvmeSupportHasBeenSet = true; m_nvmeSupport = value; }
     inline EbsInfo& WithNvmeSupport(EbsNvmeSupport value) { SetNvmeSupport(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates the maximum number of Amazon EBS volumes that can be attached to
+     * the instance type. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_limits.html">Amazon
+     * EBS volume limits for Amazon EC2 instances</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
+     */
+    inline int GetMaximumEbsAttachments() const { return m_maximumEbsAttachments; }
+    inline bool MaximumEbsAttachmentsHasBeenSet() const { return m_maximumEbsAttachmentsHasBeenSet; }
+    inline void SetMaximumEbsAttachments(int value) { m_maximumEbsAttachmentsHasBeenSet = true; m_maximumEbsAttachments = value; }
+    inline EbsInfo& WithMaximumEbsAttachments(int value) { SetMaximumEbsAttachments(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether the instance type features a shared or dedicated Amazon EBS
+     * volume attachment limit. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_limits.html">Amazon
+     * EBS volume limits for Amazon EC2 instances</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
+     */
+    inline AttachmentLimitType GetAttachmentLimitType() const { return m_attachmentLimitType; }
+    inline bool AttachmentLimitTypeHasBeenSet() const { return m_attachmentLimitTypeHasBeenSet; }
+    inline void SetAttachmentLimitType(AttachmentLimitType value) { m_attachmentLimitTypeHasBeenSet = true; m_attachmentLimitType = value; }
+    inline EbsInfo& WithAttachmentLimitType(AttachmentLimitType value) { SetAttachmentLimitType(value); return *this;}
+    ///@}
   private:
 
     EbsOptimizedSupport m_ebsOptimizedSupport{EbsOptimizedSupport::NOT_SET};
@@ -100,6 +129,12 @@ namespace Model
 
     EbsNvmeSupport m_nvmeSupport{EbsNvmeSupport::NOT_SET};
     bool m_nvmeSupportHasBeenSet = false;
+
+    int m_maximumEbsAttachments{0};
+    bool m_maximumEbsAttachmentsHasBeenSet = false;
+
+    AttachmentLimitType m_attachmentLimitType{AttachmentLimitType::NOT_SET};
+    bool m_attachmentLimitTypeHasBeenSet = false;
   };
 
 } // namespace Model

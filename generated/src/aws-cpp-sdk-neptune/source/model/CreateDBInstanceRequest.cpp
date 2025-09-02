@@ -155,6 +155,11 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
     ss << "CharacterSetName=" << StringUtils::URLEncode(m_characterSetName.c_str()) << "&";
   }
 
+  if(m_publiclyAccessibleHasBeenSet)
+  {
+    ss << "PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
+  }
+
   if(m_tagsHasBeenSet)
   {
     if (m_tags.empty())

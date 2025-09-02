@@ -8,6 +8,7 @@
 #include <aws/notifications/NotificationsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/notifications/model/NotificationConfigurationStatus.h>
+#include <aws/notifications/model/NotificationConfigurationSubtype.h>
 #include <utility>
 
 namespace Aws
@@ -92,6 +93,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The subtype used to filter the notification configurations in the
+     * request.</p>
+     */
+    inline NotificationConfigurationSubtype GetSubtype() const { return m_subtype; }
+    inline bool SubtypeHasBeenSet() const { return m_subtypeHasBeenSet; }
+    inline void SetSubtype(NotificationConfigurationSubtype value) { m_subtypeHasBeenSet = true; m_subtype = value; }
+    inline ListNotificationConfigurationsRequest& WithSubtype(NotificationConfigurationSubtype value) { SetSubtype(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The maximum number of results to be returned in this call. Defaults to
      * 20.</p>
      */
@@ -123,6 +135,9 @@ namespace Model
 
     NotificationConfigurationStatus m_status{NotificationConfigurationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    NotificationConfigurationSubtype m_subtype{NotificationConfigurationSubtype::NOT_SET};
+    bool m_subtypeHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;

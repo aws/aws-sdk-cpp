@@ -54,8 +54,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A paragraph long or multiple sentence summary. For example, Chatbot
-     * notifications.</p>
+     * <p>A paragraph long or multiple sentence summary. For example, Amazon Q
+     * Developer in chat applications notifications.</p>
      */
     inline const Aws::String& GetParagraphSummary() const { return m_paragraphSummary; }
     inline bool ParagraphSummaryHasBeenSet() const { return m_paragraphSummaryHasBeenSet; }

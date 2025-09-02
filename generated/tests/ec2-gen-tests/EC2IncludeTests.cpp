@@ -155,6 +155,7 @@
 #include <aws/ec2/model/AttachVpnGatewayResponse.h>
 #include <aws/ec2/model/AttachmentEnaSrdSpecification.h>
 #include <aws/ec2/model/AttachmentEnaSrdUdpSpecification.h>
+#include <aws/ec2/model/AttachmentLimitType.h>
 #include <aws/ec2/model/AttachmentStatus.h>
 #include <aws/ec2/model/AttributeBooleanValue.h>
 #include <aws/ec2/model/AttributeSummary.h>

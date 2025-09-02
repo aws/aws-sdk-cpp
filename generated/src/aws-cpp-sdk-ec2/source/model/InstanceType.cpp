@@ -979,6 +979,32 @@ namespace Aws
         static const int c8gn_metal_48xl_HASH = HashingUtils::HashString("c8gn.metal-48xl");
         static const int f2_6xlarge_HASH = HashingUtils::HashString("f2.6xlarge");
         static const int p6e_gb200_36xlarge_HASH = HashingUtils::HashString("p6e-gb200.36xlarge");
+        static const int g6f_large_HASH = HashingUtils::HashString("g6f.large");
+        static const int g6f_xlarge_HASH = HashingUtils::HashString("g6f.xlarge");
+        static const int g6f_2xlarge_HASH = HashingUtils::HashString("g6f.2xlarge");
+        static const int g6f_4xlarge_HASH = HashingUtils::HashString("g6f.4xlarge");
+        static const int gr6f_4xlarge_HASH = HashingUtils::HashString("gr6f.4xlarge");
+        static const int p5_4xlarge_HASH = HashingUtils::HashString("p5.4xlarge");
+        static const int r8i_large_HASH = HashingUtils::HashString("r8i.large");
+        static const int r8i_xlarge_HASH = HashingUtils::HashString("r8i.xlarge");
+        static const int r8i_2xlarge_HASH = HashingUtils::HashString("r8i.2xlarge");
+        static const int r8i_4xlarge_HASH = HashingUtils::HashString("r8i.4xlarge");
+        static const int r8i_8xlarge_HASH = HashingUtils::HashString("r8i.8xlarge");
+        static const int r8i_12xlarge_HASH = HashingUtils::HashString("r8i.12xlarge");
+        static const int r8i_16xlarge_HASH = HashingUtils::HashString("r8i.16xlarge");
+        static const int r8i_24xlarge_HASH = HashingUtils::HashString("r8i.24xlarge");
+        static const int r8i_32xlarge_HASH = HashingUtils::HashString("r8i.32xlarge");
+        static const int r8i_48xlarge_HASH = HashingUtils::HashString("r8i.48xlarge");
+        static const int r8i_96xlarge_HASH = HashingUtils::HashString("r8i.96xlarge");
+        static const int r8i_metal_48xl_HASH = HashingUtils::HashString("r8i.metal-48xl");
+        static const int r8i_metal_96xl_HASH = HashingUtils::HashString("r8i.metal-96xl");
+        static const int r8i_flex_large_HASH = HashingUtils::HashString("r8i-flex.large");
+        static const int r8i_flex_xlarge_HASH = HashingUtils::HashString("r8i-flex.xlarge");
+        static const int r8i_flex_2xlarge_HASH = HashingUtils::HashString("r8i-flex.2xlarge");
+        static const int r8i_flex_4xlarge_HASH = HashingUtils::HashString("r8i-flex.4xlarge");
+        static const int r8i_flex_8xlarge_HASH = HashingUtils::HashString("r8i-flex.8xlarge");
+        static const int r8i_flex_12xlarge_HASH = HashingUtils::HashString("r8i-flex.12xlarge");
+        static const int r8i_flex_16xlarge_HASH = HashingUtils::HashString("r8i-flex.16xlarge");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -5810,6 +5836,140 @@ namespace Aws
             enumValue = InstanceType::p6e_gb200_36xlarge;
             return true;
           }
+          else if (hashCode == g6f_large_HASH)
+          {
+            enumValue = InstanceType::g6f_large;
+            return true;
+          }
+          else if (hashCode == g6f_xlarge_HASH)
+          {
+            enumValue = InstanceType::g6f_xlarge;
+            return true;
+          }
+          else if (hashCode == g6f_2xlarge_HASH)
+          {
+            enumValue = InstanceType::g6f_2xlarge;
+            return true;
+          }
+          else if (hashCode == g6f_4xlarge_HASH)
+          {
+            enumValue = InstanceType::g6f_4xlarge;
+            return true;
+          }
+          else if (hashCode == gr6f_4xlarge_HASH)
+          {
+            enumValue = InstanceType::gr6f_4xlarge;
+            return true;
+          }
+          else if (hashCode == p5_4xlarge_HASH)
+          {
+            enumValue = InstanceType::p5_4xlarge;
+            return true;
+          }
+          else if (hashCode == r8i_large_HASH)
+          {
+            enumValue = InstanceType::r8i_large;
+            return true;
+          }
+          else if (hashCode == r8i_xlarge_HASH)
+          {
+            enumValue = InstanceType::r8i_xlarge;
+            return true;
+          }
+          else if (hashCode == r8i_2xlarge_HASH)
+          {
+            enumValue = InstanceType::r8i_2xlarge;
+            return true;
+          }
+          else if (hashCode == r8i_4xlarge_HASH)
+          {
+            enumValue = InstanceType::r8i_4xlarge;
+            return true;
+          }
+          else if (hashCode == r8i_8xlarge_HASH)
+          {
+            enumValue = InstanceType::r8i_8xlarge;
+            return true;
+          }
+          else if (hashCode == r8i_12xlarge_HASH)
+          {
+            enumValue = InstanceType::r8i_12xlarge;
+            return true;
+          }
+          else if (hashCode == r8i_16xlarge_HASH)
+          {
+            enumValue = InstanceType::r8i_16xlarge;
+            return true;
+          }
+          else if (hashCode == r8i_24xlarge_HASH)
+          {
+            enumValue = InstanceType::r8i_24xlarge;
+            return true;
+          }
+          else if (hashCode == r8i_32xlarge_HASH)
+          {
+            enumValue = InstanceType::r8i_32xlarge;
+            return true;
+          }
+          else if (hashCode == r8i_48xlarge_HASH)
+          {
+            enumValue = InstanceType::r8i_48xlarge;
+            return true;
+          }
+          else if (hashCode == r8i_96xlarge_HASH)
+          {
+            enumValue = InstanceType::r8i_96xlarge;
+            return true;
+          }
+          return false;
+        }
+        static bool GetEnumForNameHelper8(int hashCode, InstanceType& enumValue)
+        {
+          if (hashCode == r8i_metal_48xl_HASH)
+          {
+            enumValue = InstanceType::r8i_metal_48xl;
+            return true;
+          }
+          else if (hashCode == r8i_metal_96xl_HASH)
+          {
+            enumValue = InstanceType::r8i_metal_96xl;
+            return true;
+          }
+          else if (hashCode == r8i_flex_large_HASH)
+          {
+            enumValue = InstanceType::r8i_flex_large;
+            return true;
+          }
+          else if (hashCode == r8i_flex_xlarge_HASH)
+          {
+            enumValue = InstanceType::r8i_flex_xlarge;
+            return true;
+          }
+          else if (hashCode == r8i_flex_2xlarge_HASH)
+          {
+            enumValue = InstanceType::r8i_flex_2xlarge;
+            return true;
+          }
+          else if (hashCode == r8i_flex_4xlarge_HASH)
+          {
+            enumValue = InstanceType::r8i_flex_4xlarge;
+            return true;
+          }
+          else if (hashCode == r8i_flex_8xlarge_HASH)
+          {
+            enumValue = InstanceType::r8i_flex_8xlarge;
+            return true;
+          }
+          else if (hashCode == r8i_flex_12xlarge_HASH)
+          {
+            enumValue = InstanceType::r8i_flex_12xlarge;
+            return true;
+          }
+          else if (hashCode == r8i_flex_16xlarge_HASH)
+          {
+            enumValue = InstanceType::r8i_flex_16xlarge;
+            return true;
+          }
           return false;
         }
 
@@ -8750,6 +8910,92 @@ namespace Aws
           case InstanceType::p6e_gb200_36xlarge:
             value = "p6e-gb200.36xlarge";
             return true;
+          case InstanceType::g6f_large:
+            value = "g6f.large";
+            return true;
+          case InstanceType::g6f_xlarge:
+            value = "g6f.xlarge";
+            return true;
+          case InstanceType::g6f_2xlarge:
+            value = "g6f.2xlarge";
+            return true;
+          case InstanceType::g6f_4xlarge:
+            value = "g6f.4xlarge";
+            return true;
+          case InstanceType::gr6f_4xlarge:
+            value = "gr6f.4xlarge";
+            return true;
+          case InstanceType::p5_4xlarge:
+            value = "p5.4xlarge";
+            return true;
+          case InstanceType::r8i_large:
+            value = "r8i.large";
+            return true;
+          case InstanceType::r8i_xlarge:
+            value = "r8i.xlarge";
+            return true;
+          case InstanceType::r8i_2xlarge:
+            value = "r8i.2xlarge";
+            return true;
+          case InstanceType::r8i_4xlarge:
+            value = "r8i.4xlarge";
+            return true;
+          case InstanceType::r8i_8xlarge:
+            value = "r8i.8xlarge";
+            return true;
+          case InstanceType::r8i_12xlarge:
+            value = "r8i.12xlarge";
+            return true;
+          case InstanceType::r8i_16xlarge:
+            value = "r8i.16xlarge";
+            return true;
+          case InstanceType::r8i_24xlarge:
+            value = "r8i.24xlarge";
+            return true;
+          case InstanceType::r8i_32xlarge:
+            value = "r8i.32xlarge";
+            return true;
+          case InstanceType::r8i_48xlarge:
+            value = "r8i.48xlarge";
+            return true;
+          case InstanceType::r8i_96xlarge:
+            value = "r8i.96xlarge";
+            return true;
+          default:
+            return false;
+          }
+        }
+        static bool GetNameForEnumHelper8(InstanceType enumValue, Aws::String& value)
+        {
+          switch(enumValue)
+          {
+          case InstanceType::r8i_metal_48xl:
+            value = "r8i.metal-48xl";
+            return true;
+          case InstanceType::r8i_metal_96xl:
+            value = "r8i.metal-96xl";
+            return true;
+          case InstanceType::r8i_flex_large:
+            value = "r8i-flex.large";
+            return true;
+          case InstanceType::r8i_flex_xlarge:
+            value = "r8i-flex.xlarge";
+            return true;
+          case InstanceType::r8i_flex_2xlarge:
+            value = "r8i-flex.2xlarge";
+            return true;
+          case InstanceType::r8i_flex_4xlarge:
+            value = "r8i-flex.4xlarge";
+            return true;
+          case InstanceType::r8i_flex_8xlarge:
+            value = "r8i-flex.8xlarge";
+            return true;
+          case InstanceType::r8i_flex_12xlarge:
+            value = "r8i-flex.12xlarge";
+            return true;
+          case InstanceType::r8i_flex_16xlarge:
+            value = "r8i-flex.16xlarge";
+            return true;
           default:
             return false;
           }
@@ -8788,6 +9034,10 @@ namespace Aws
              return enumValue;
           }
           else if (GetEnumForNameHelper7(hashCode, enumValue))
+          {
+             return enumValue;
+          }
+          else if (GetEnumForNameHelper8(hashCode, enumValue))
           {
              return enumValue;
           }
@@ -8833,6 +9083,10 @@ namespace Aws
             return value;
           }
           else if (GetNameForEnumHelper7(enumValue, value))
+          {
+            return value;
+          }
+          else if (GetNameForEnumHelper8(enumValue, value))
           {
             return value;
           }

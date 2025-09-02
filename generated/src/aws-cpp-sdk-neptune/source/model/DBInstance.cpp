@@ -253,6 +253,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_secondaryAvailabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(secondaryAvailabilityZoneNode.GetText());
       m_secondaryAvailabilityZoneHasBeenSet = true;
     }
+    XmlNode publiclyAccessibleNode = resultNode.FirstChild("PubliclyAccessible");
+    if(!publiclyAccessibleNode.IsNull())
+    {
+      m_publiclyAccessible = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(publiclyAccessibleNode.GetText()).c_str()).c_str());
+      m_publiclyAccessibleHasBeenSet = true;
+    }
     XmlNode statusInfosNode = resultNode.FirstChild("StatusInfos");
     if(!statusInfosNode.IsNull())
     {
@@ -601,6 +607,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".SecondaryAvailabilityZone=" << StringUtils::URLEncode(m_secondaryAvailabilityZone.c_str()) << "&";
   }
 
+  if(m_publiclyAccessibleHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
+  }
+
   if(m_statusInfosHasBeenSet)
   {
       unsigned statusInfosIdx = 1;
@@ -888,6 +899,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_secondaryAvailabilityZoneHasBeenSet)
   {
       oStream << location << ".SecondaryAvailabilityZone=" << StringUtils::URLEncode(m_secondaryAvailabilityZone.c_str()) << "&";
+  }
+  if(m_publiclyAccessibleHasBeenSet)
+  {
+      oStream << location << ".PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
   }
   if(m_statusInfosHasBeenSet)
   {
