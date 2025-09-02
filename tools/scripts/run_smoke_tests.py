@@ -6,14 +6,6 @@ import tempfile
 import json
 from collections import defaultdict
 
-def should_run_service(services):
-    service_ids = os.environ.get('AWS_SMOKE_TEST_SERVICE_IDS', '')
-    print("AWS_SMOKE_TEST_SERVICE_IDS:",service_ids)
-    if not service_ids:
-        return services
-    allowed_services = service_ids.split(',')
-    return [service for service in services if service in allowed_services]
-
 def main():
     parser = argparse.ArgumentParser(description='Run smoke tests')
     parser.add_argument('--testDir', default='./build', help='Path to build directory')
@@ -36,15 +28,16 @@ def main():
 
     total_tests = 0
     all_results = defaultdict(list)
-
-    services=should_run_service(services)
+    service_id = os.environ.get('AWS_SMOKE_TEST_SERVICE_IDS', '').strip().lower().replace(' ', '-') if os.environ.get('AWS_SMOKE_TEST_SERVICE_IDS', '').strip() else []
+    if service_id:
+        services = [s for s in services if s in service_id]
 
     for service in services:
         executable = os.path.join(smoke_tests_dir, service, f"{service}-smoke-tests")
 
         with tempfile.NamedTemporaryFile(mode='w+', suffix='.json') as temp_file:
             json_output_path = temp_file.name
-            temp_file.close()  # Close it so other processes can write to it
+            temp_file.close()
             test_command = [executable, f'--gtest_output=json:{json_output_path}']
             subprocess.run(test_command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
