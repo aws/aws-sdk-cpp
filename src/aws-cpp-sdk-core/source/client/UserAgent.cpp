@@ -42,8 +42,18 @@ const std::pair<UserAgentFeature, const char*> BUSINESS_METRIC_MAPPING[] = {
     {UserAgentFeature::ACCOUNT_ID_MODE_REQUIRED, "R"},
     {UserAgentFeature::RESOLVED_ACCOUNT_ID, "T"},
     {UserAgentFeature::GZIP_REQUEST_COMPRESSION, "L"},
-    {UserAgentFeature::CREDENTIALS_ENV_VARS, "g"},
 };
+
+Aws::String BusinessMetricForFeature(UserAgentFeature feature) {
+  const auto* const metric =
+      std::find_if(std::begin(BUSINESS_METRIC_MAPPING), std::end(BUSINESS_METRIC_MAPPING),
+                   [feature](const std::pair<UserAgentFeature, const char*>& pair) -> bool { return pair.first == feature; });
+  if (metric == std::end(BUSINESS_METRIC_MAPPING)) {
+    AWS_LOGSTREAM_ERROR(LOG_TAG, "business metric mapping not found for feature");
+    return {};
+  }
+  return metric->second;
+}
 
 const std::pair<const char*, UserAgentFeature> RETRY_FEATURE_MAPPING[] = {
     {"default", UserAgentFeature::RETRY_MODE_LEGACY},
@@ -85,17 +95,6 @@ const char* EXEC_ENV = "exec-env";
 const char* APP_ID = "app";
 const char* BUSINESS_METRICS = "m";
 }  // namespace
-
-Aws::String UserAgent::BusinessMetricForFeature(UserAgentFeature feature) {
-  const auto* const metric =
-      std::find_if(std::begin(BUSINESS_METRIC_MAPPING), std::end(BUSINESS_METRIC_MAPPING),
-                   [feature](const std::pair<UserAgentFeature, const char*>& pair) -> bool { return pair.first == feature; });
-  if (metric == std::end(BUSINESS_METRIC_MAPPING)) {
-    AWS_LOGSTREAM_ERROR(LOG_TAG, "business metric mapping not found for feature");
-    return {};
-  }
-  return metric->second;
-}
 
 UserAgent::UserAgent(const ClientConfiguration& clientConfiguration,
   const Aws::String& retryStrategyName,
