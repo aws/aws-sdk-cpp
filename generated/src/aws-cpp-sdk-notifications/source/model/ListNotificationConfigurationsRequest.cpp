@@ -44,6 +44,13 @@ void ListNotificationConfigurationsRequest::AddQueryStringParameters(URI& uri) c
       ss.str("");
     }
 
+    if(m_subtypeHasBeenSet)
+    {
+      ss << NotificationConfigurationSubtypeMapper::GetNameForNotificationConfigurationSubtype(m_subtype);
+      uri.AddQueryStringParameter("subtype", ss.str());
+      ss.str("");
+    }
+
     if(m_maxResultsHasBeenSet)
     {
       ss << m_maxResults;

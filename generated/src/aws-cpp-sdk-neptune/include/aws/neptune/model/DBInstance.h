@@ -434,6 +434,24 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates whether the DB instance is publicly accessible.</p> <p>When the DB
+     * instance is publicly accessible and you connect from outside of the DB
+     * instance's virtual private cloud (VPC), its Domain Name System (DNS) endpoint
+     * resolves to the public IP address. When you connect from within the same VPC as
+     * the DB instance, the endpoint resolves to the private IP address. Access to the
+     * DB instance is ultimately controlled by the security group it uses. That public
+     * access isn't permitted if the security group assigned to the DB cluster doesn't
+     * permit it.</p> <p>When the DB instance isn't publicly accessible, it is an
+     * internal DB instance with a DNS name that resolves to a private IP address.</p>
+     */
+    inline bool GetPubliclyAccessible() const { return m_publiclyAccessible; }
+    inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
+    inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
+    inline DBInstance& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The status of a Read Replica. If the instance is not a Read Replica, this is
      * blank.</p>
      */
@@ -794,6 +812,9 @@ namespace Model
 
     Aws::String m_secondaryAvailabilityZone;
     bool m_secondaryAvailabilityZoneHasBeenSet = false;
+
+    bool m_publiclyAccessible{false};
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     Aws::Vector<DBInstanceStatusInfo> m_statusInfos;
     bool m_statusInfosHasBeenSet = false;

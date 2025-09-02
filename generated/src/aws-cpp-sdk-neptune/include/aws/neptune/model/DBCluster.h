@@ -624,7 +624,7 @@ namespace Model
      * <p>The storage type used by the DB cluster.</p> <p>Valid Values:</p> <ul> <li>
      * <p> <b> <code>standard</code> </b>   –   ( <i>the default</i> ) Provides
      * cost-effective database storage for applications with moderate to small I/O
-     * usage.</p> </li> <li> <p> <b> <code>iopt1</code> </b>   – �� Enables <a
+     * usage.</p> </li> <li> <p> <b> <code>iopt1</code> </b>   –   Enables <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/storage-types.html#provisioned-iops-storage">I/O-Optimized
      * storage</a> that's designed to meet the needs of I/O-intensive graph workloads
      * that require predictable pricing with low I/O latency and consistent I/O

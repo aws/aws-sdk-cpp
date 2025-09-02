@@ -140,6 +140,19 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListNotificationEventsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The unique identifier of the organizational unit used to filter notification
+     * events.</p>
+     */
+    inline const Aws::String& GetOrganizationalUnitId() const { return m_organizationalUnitId; }
+    inline bool OrganizationalUnitIdHasBeenSet() const { return m_organizationalUnitIdHasBeenSet; }
+    template<typename OrganizationalUnitIdT = Aws::String>
+    void SetOrganizationalUnitId(OrganizationalUnitIdT&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::forward<OrganizationalUnitIdT>(value); }
+    template<typename OrganizationalUnitIdT = Aws::String>
+    ListNotificationEventsRequest& WithOrganizationalUnitId(OrganizationalUnitIdT&& value) { SetOrganizationalUnitId(std::forward<OrganizationalUnitIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::Utils::DateTime m_startTime{};
@@ -165,6 +178,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::String m_organizationalUnitId;
+    bool m_organizationalUnitIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,6 +24,7 @@
 #include <aws/notifications/model/AssociateChannelRequest.h>
 #include <aws/notifications/model/AssociateManagedNotificationAccountContactRequest.h>
 #include <aws/notifications/model/AssociateManagedNotificationAdditionalChannelRequest.h>
+#include <aws/notifications/model/AssociateOrganizationalUnitRequest.h>
 #include <aws/notifications/model/CreateEventRuleRequest.h>
 #include <aws/notifications/model/CreateNotificationConfigurationRequest.h>
 #include <aws/notifications/model/DeleteEventRuleRequest.h>
@@ -33,6 +34,7 @@
 #include <aws/notifications/model/DisassociateChannelRequest.h>
 #include <aws/notifications/model/DisassociateManagedNotificationAccountContactRequest.h>
 #include <aws/notifications/model/DisassociateManagedNotificationAdditionalChannelRequest.h>
+#include <aws/notifications/model/DisassociateOrganizationalUnitRequest.h>
 #include <aws/notifications/model/EnableNotificationsAccessForOrganizationRequest.h>
 #include <aws/notifications/model/GetEventRuleRequest.h>
 #include <aws/notifications/model/GetManagedNotificationChildEventRequest.h>
@@ -47,9 +49,11 @@
 #include <aws/notifications/model/ListManagedNotificationChildEventsRequest.h>
 #include <aws/notifications/model/ListManagedNotificationConfigurationsRequest.h>
 #include <aws/notifications/model/ListManagedNotificationEventsRequest.h>
+#include <aws/notifications/model/ListMemberAccountsRequest.h>
 #include <aws/notifications/model/ListNotificationConfigurationsRequest.h>
 #include <aws/notifications/model/ListNotificationEventsRequest.h>
 #include <aws/notifications/model/ListNotificationHubsRequest.h>
+#include <aws/notifications/model/ListOrganizationalUnitsRequest.h>
 #include <aws/notifications/model/ListTagsForResourceRequest.h>
 #include <aws/notifications/model/RegisterNotificationHubRequest.h>
 #include <aws/notifications/model/TagResourceRequest.h>
@@ -292,6 +296,39 @@ AssociateManagedNotificationAdditionalChannelOutcome NotificationsClient::Associ
       endpointResolutionOutcome.GetResult().AddPathSegments("/channels/associate-managed-notification/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
       return AssociateManagedNotificationAdditionalChannelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+AssociateOrganizationalUnitOutcome NotificationsClient::AssociateOrganizationalUnit(const AssociateOrganizationalUnitRequest& request) const
+{
+  AWS_OPERATION_GUARD(AssociateOrganizationalUnit);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateOrganizationalUnit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.OrganizationalUnitIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateOrganizationalUnit", "Required field: OrganizationalUnitId, is not set");
+    return AssociateOrganizationalUnitOutcome(Aws::Client::AWSError<NotificationsErrors>(NotificationsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OrganizationalUnitId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssociateOrganizationalUnit, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, AssociateOrganizationalUnit, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AssociateOrganizationalUnit",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<AssociateOrganizationalUnitOutcome>(
+    [&]()-> AssociateOrganizationalUnitOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateOrganizationalUnit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/organizational-units/associate/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOrganizationalUnitId());
+      return AssociateOrganizationalUnitOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -571,6 +608,39 @@ DisassociateManagedNotificationAdditionalChannelOutcome NotificationsClient::Dis
       endpointResolutionOutcome.GetResult().AddPathSegments("/channels/disassociate-managed-notification/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
       return DisassociateManagedNotificationAdditionalChannelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DisassociateOrganizationalUnitOutcome NotificationsClient::DisassociateOrganizationalUnit(const DisassociateOrganizationalUnitRequest& request) const
+{
+  AWS_OPERATION_GUARD(DisassociateOrganizationalUnit);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateOrganizationalUnit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.OrganizationalUnitIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateOrganizationalUnit", "Required field: OrganizationalUnitId, is not set");
+    return DisassociateOrganizationalUnitOutcome(Aws::Client::AWSError<NotificationsErrors>(NotificationsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OrganizationalUnitId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DisassociateOrganizationalUnit, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DisassociateOrganizationalUnit, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DisassociateOrganizationalUnit",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DisassociateOrganizationalUnitOutcome>(
+    [&]()-> DisassociateOrganizationalUnitOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateOrganizationalUnit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/organizational-units/disassociate/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOrganizationalUnitId());
+      return DisassociateOrganizationalUnitOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1012,6 +1082,38 @@ ListManagedNotificationEventsOutcome NotificationsClient::ListManagedNotificatio
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListMemberAccountsOutcome NotificationsClient::ListMemberAccounts(const ListMemberAccountsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListMemberAccounts);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMemberAccounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.NotificationConfigurationArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListMemberAccounts", "Required field: NotificationConfigurationArn, is not set");
+    return ListMemberAccountsOutcome(Aws::Client::AWSError<NotificationsErrors>(NotificationsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NotificationConfigurationArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListMemberAccounts, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListMemberAccounts, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListMemberAccounts",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListMemberAccountsOutcome>(
+    [&]()-> ListMemberAccountsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMemberAccounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/list-member-accounts");
+      return ListMemberAccountsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListNotificationConfigurationsOutcome NotificationsClient::ListNotificationConfigurations(const ListNotificationConfigurationsRequest& request) const
 {
   AWS_OPERATION_GUARD(ListNotificationConfigurations);
@@ -1087,6 +1189,38 @@ ListNotificationHubsOutcome NotificationsClient::ListNotificationHubs(const List
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListNotificationHubs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/notification-hubs");
       return ListNotificationHubsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListOrganizationalUnitsOutcome NotificationsClient::ListOrganizationalUnits(const ListOrganizationalUnitsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListOrganizationalUnits);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOrganizationalUnits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.NotificationConfigurationArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListOrganizationalUnits", "Required field: NotificationConfigurationArn, is not set");
+    return ListOrganizationalUnitsOutcome(Aws::Client::AWSError<NotificationsErrors>(NotificationsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NotificationConfigurationArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListOrganizationalUnits, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListOrganizationalUnits, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListOrganizationalUnits",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListOrganizationalUnitsOutcome>(
+    [&]()-> ListOrganizationalUnitsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOrganizationalUnits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/organizational-units");
+      return ListOrganizationalUnitsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

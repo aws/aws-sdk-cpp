@@ -79,6 +79,13 @@ void ListNotificationEventsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
+    if(m_organizationalUnitIdHasBeenSet)
+    {
+      ss << m_organizationalUnitId;
+      uri.AddQueryStringParameter("organizationalUnitId", ss.str());
+      ss.str("");
+    }
+
 }
 
 

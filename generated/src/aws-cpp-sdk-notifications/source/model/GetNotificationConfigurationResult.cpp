@@ -55,6 +55,11 @@ GetNotificationConfigurationResult& GetNotificationConfigurationResult::operator
     m_aggregationDuration = AggregationDurationMapper::GetAggregationDurationForName(jsonValue.GetString("aggregationDuration"));
     m_aggregationDurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("subtype"))
+  {
+    m_subtype = NotificationConfigurationSubtypeMapper::GetNotificationConfigurationSubtypeForName(jsonValue.GetString("subtype"));
+    m_subtypeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

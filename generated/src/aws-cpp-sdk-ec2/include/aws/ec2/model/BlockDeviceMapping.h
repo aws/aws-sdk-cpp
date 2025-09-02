@@ -70,8 +70,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The device name (for example, <code>/dev/sdh</code> or
-     * <code>xvdh</code>).</p>
+     * <p>The device name. For available device names, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device
+     * names for volumes</a>.</p>
      */
     inline const Aws::String& GetDeviceName() const { return m_deviceName; }
     inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }

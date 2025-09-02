@@ -351,6 +351,24 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates whether the DB instance is publicly accessible.</p> <p>When the DB
+     * instance is publicly accessible and you connect from outside of the DB
+     * instance's virtual private cloud (VPC), its Domain Name System (DNS) endpoint
+     * resolves to the public IP address. When you connect from within the same VPC as
+     * the DB instance, the endpoint resolves to the private IP address. Access to the
+     * DB instance is ultimately controlled by the security group it uses. That public
+     * access isn't permitted if the security group assigned to the DB cluster doesn't
+     * permit it.</p> <p>When the DB instance isn't publicly accessible, it is an
+     * internal DB instance with a DNS name that resolves to a private IP address.</p>
+     */
+    inline bool GetPubliclyAccessible() const { return m_publiclyAccessible; }
+    inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
+    inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
+    inline CreateDBInstanceRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The tags to assign to the new instance.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
@@ -671,6 +689,9 @@ namespace Model
 
     Aws::String m_characterSetName;
     bool m_characterSetNameHasBeenSet = false;
+
+    bool m_publiclyAccessible{false};
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

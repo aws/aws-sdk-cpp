@@ -50,7 +50,8 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM Role associated with the email
-     * monitoring configuration.</p>
+     * monitoring configuration. If absent, the IAM Role Arn of
+     * AWSServiceRoleForAmazonWorkMailEvents will be used.</p>
      */
     inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }

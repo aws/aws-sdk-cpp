@@ -16,10 +16,10 @@ namespace Aws
 namespace Notifications
 {
   /**
-   * <p>The <i>Amazon Web Services User Notifications API Reference</i> provides
-   * descriptions, API request parameters, and the JSON response for each of the User
-   * Notification API actions.</p> <p>User Notification control plane APIs are
-   * currently available in US East (Virginia) - <code>us-east-1</code>.</p> <p> <a
+   * <p>The <i>User Notifications API Reference</i> provides descriptions, API
+   * request parameters, and the JSON response for each of the User Notifications API
+   * actions.</p> <p>User Notification control plane APIs are currently available in
+   * US East (Virginia) - <code>us-east-1</code>.</p> <p> <a
    * href="https://docs.aws.amazon.com/notifications/latest/APIReference/API_GetNotificationEvent.html">GetNotificationEvent</a>
    * and <a
    * href="https://docs.aws.amazon.com/notifications/latest/APIReference/API_ListNotificationEvents.html">ListNotificationEvents</a>
@@ -29,7 +29,11 @@ namespace Notifications
    * which they're called.</p> <p>The User Notifications console can only be used in
    * US East (Virginia). Your data however, is stored in each Region chosen as a <a
    * href="https://docs.aws.amazon.com/notifications/latest/userguide/notification-hubs.html">notification
-   * hub</a> in addition to US East (Virginia).</p>
+   * hub</a> in addition to US East (Virginia).</p>  <p>For information about
+   * descriptions, API request parameters, and the JSON response for email contact
+   * related API actions, see the <a
+   * href="https://docs.aws.amazon.com/notificationscontacts/latest/APIReference/Welcome.html">User
+   * Notifications Contacts API Reference Guide</a>.</p> 
    */
   class AWS_NOTIFICATIONS_API NotificationsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<NotificationsClient>
   {
@@ -93,8 +97,8 @@ namespace Notifications
          * <p>Associates a delivery <a
          * href="https://docs.aws.amazon.com/notifications/latest/userguide/managing-delivery-channels.html">Channel</a>
          * with a particular <code>NotificationConfiguration</code>. Supported Channels
-         * include Chatbot, the Console Mobile Application, and emails
-         * (notifications-contacts).</p><p><h3>See Also:</h3>   <a
+         * include Amazon Q Developer in chat applications, the Console Mobile Application,
+         * and emails (notifications-contacts).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/AssociateChannel">AWS
          * API Reference</a></p>
          */
@@ -147,8 +151,8 @@ namespace Notifications
         /**
          * <p>Associates an additional Channel with a particular
          * <code>ManagedNotificationConfiguration</code>.</p> <p>Supported Channels include
-         * Chatbot, the Console Mobile Application, and emails
-         * (notifications-contacts).</p><p><h3>See Also:</h3>   <a
+         * Amazon Q Developer in chat applications, the Console Mobile Application, and
+         * emails (notifications-contacts).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/AssociateManagedNotificationAdditionalChannel">AWS
          * API Reference</a></p>
          */
@@ -170,6 +174,32 @@ namespace Notifications
         void AssociateManagedNotificationAdditionalChannelAsync(const AssociateManagedNotificationAdditionalChannelRequestT& request, const AssociateManagedNotificationAdditionalChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&NotificationsClient::AssociateManagedNotificationAdditionalChannel, request, handler, context);
+        }
+
+        /**
+         * <p>Associates an organizational unit with a notification
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/AssociateOrganizationalUnit">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateOrganizationalUnitOutcome AssociateOrganizationalUnit(const Model::AssociateOrganizationalUnitRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateOrganizationalUnit that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateOrganizationalUnitRequestT = Model::AssociateOrganizationalUnitRequest>
+        Model::AssociateOrganizationalUnitOutcomeCallable AssociateOrganizationalUnitCallable(const AssociateOrganizationalUnitRequestT& request) const
+        {
+            return SubmitCallable(&NotificationsClient::AssociateOrganizationalUnit, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateOrganizationalUnit that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateOrganizationalUnitRequestT = Model::AssociateOrganizationalUnitRequest>
+        void AssociateOrganizationalUnitAsync(const AssociateOrganizationalUnitRequestT& request, const AssociateOrganizationalUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NotificationsClient::AssociateOrganizationalUnit, request, handler, context);
         }
 
         /**
@@ -335,9 +365,9 @@ namespace Notifications
 
         /**
          * <p>Disassociates a Channel from a specified
-         * <code>NotificationConfiguration</code>. Supported Channels include Chatbot, the
-         * Console Mobile Application, and emails (notifications-contacts).</p><p><h3>See
-         * Also:</h3>   <a
+         * <code>NotificationConfiguration</code>. Supported Channels include Amazon Q
+         * Developer in chat applications, the Console Mobile Application, and emails
+         * (notifications-contacts).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisassociateChannel">AWS
          * API Reference</a></p>
          */
@@ -390,8 +420,8 @@ namespace Notifications
         /**
          * <p>Disassociates an additional Channel from a particular
          * <code>ManagedNotificationConfiguration</code>.</p> <p>Supported Channels include
-         * Chatbot, the Console Mobile Application, and emails
-         * (notifications-contacts).</p><p><h3>See Also:</h3>   <a
+         * Amazon Q Developer in chat applications, the Console Mobile Application, and
+         * emails (notifications-contacts).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisassociateManagedNotificationAdditionalChannel">AWS
          * API Reference</a></p>
          */
@@ -413,6 +443,32 @@ namespace Notifications
         void DisassociateManagedNotificationAdditionalChannelAsync(const DisassociateManagedNotificationAdditionalChannelRequestT& request, const DisassociateManagedNotificationAdditionalChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&NotificationsClient::DisassociateManagedNotificationAdditionalChannel, request, handler, context);
+        }
+
+        /**
+         * <p>Removes the association between an organizational unit and a notification
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisassociateOrganizationalUnit">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateOrganizationalUnitOutcome DisassociateOrganizationalUnit(const Model::DisassociateOrganizationalUnitRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateOrganizationalUnit that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateOrganizationalUnitRequestT = Model::DisassociateOrganizationalUnitRequest>
+        Model::DisassociateOrganizationalUnitOutcomeCallable DisassociateOrganizationalUnitCallable(const DisassociateOrganizationalUnitRequestT& request) const
+        {
+            return SubmitCallable(&NotificationsClient::DisassociateOrganizationalUnit, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateOrganizationalUnit that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateOrganizationalUnitRequestT = Model::DisassociateOrganizationalUnitRequest>
+        void DisassociateOrganizationalUnitAsync(const DisassociateOrganizationalUnitRequestT& request, const DisassociateOrganizationalUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NotificationsClient::DisassociateOrganizationalUnit, request, handler, context);
         }
 
         /**
@@ -792,6 +848,32 @@ namespace Notifications
         }
 
         /**
+         * <p>Returns a list of member accounts associated with a notification
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListMemberAccounts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMemberAccountsOutcome ListMemberAccounts(const Model::ListMemberAccountsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListMemberAccounts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListMemberAccountsRequestT = Model::ListMemberAccountsRequest>
+        Model::ListMemberAccountsOutcomeCallable ListMemberAccountsCallable(const ListMemberAccountsRequestT& request) const
+        {
+            return SubmitCallable(&NotificationsClient::ListMemberAccounts, request);
+        }
+
+        /**
+         * An Async wrapper for ListMemberAccounts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListMemberAccountsRequestT = Model::ListMemberAccountsRequest>
+        void ListMemberAccountsAsync(const ListMemberAccountsRequestT& request, const ListMemberAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NotificationsClient::ListMemberAccounts, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of abbreviated <code>NotificationConfigurations</code>
          * according to specified filters, in reverse chronological order (newest
          * first).</p><p><h3>See Also:</h3>   <a
@@ -878,6 +960,32 @@ namespace Notifications
         void ListNotificationHubsAsync(const ListNotificationHubsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListNotificationHubsRequestT& request = {}) const
         {
             return SubmitAsync(&NotificationsClient::ListNotificationHubs, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of organizational units associated with a notification
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListOrganizationalUnits">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListOrganizationalUnitsOutcome ListOrganizationalUnits(const Model::ListOrganizationalUnitsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListOrganizationalUnits that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListOrganizationalUnitsRequestT = Model::ListOrganizationalUnitsRequest>
+        Model::ListOrganizationalUnitsOutcomeCallable ListOrganizationalUnitsCallable(const ListOrganizationalUnitsRequestT& request) const
+        {
+            return SubmitCallable(&NotificationsClient::ListOrganizationalUnits, request);
+        }
+
+        /**
+         * An Async wrapper for ListOrganizationalUnits that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListOrganizationalUnitsRequestT = Model::ListOrganizationalUnitsRequest>
+        void ListOrganizationalUnitsAsync(const ListOrganizationalUnitsRequestT& request, const ListOrganizationalUnitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NotificationsClient::ListOrganizationalUnits, request, handler, context);
         }
 
         /**

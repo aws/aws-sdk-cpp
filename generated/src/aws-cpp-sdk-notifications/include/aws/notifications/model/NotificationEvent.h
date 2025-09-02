@@ -252,6 +252,19 @@ namespace Model
     template<typename MediaT = MediaElement>
     NotificationEvent& AddMedia(MediaT&& value) { m_mediaHasBeenSet = true; m_media.emplace_back(std::forward<MediaT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The unique identifier of the organizational unit associated with the
+     * notification event.</p>
+     */
+    inline const Aws::String& GetOrganizationalUnitId() const { return m_organizationalUnitId; }
+    inline bool OrganizationalUnitIdHasBeenSet() const { return m_organizationalUnitIdHasBeenSet; }
+    template<typename OrganizationalUnitIdT = Aws::String>
+    void SetOrganizationalUnitId(OrganizationalUnitIdT&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::forward<OrganizationalUnitIdT>(value); }
+    template<typename OrganizationalUnitIdT = Aws::String>
+    NotificationEvent& WithOrganizationalUnitId(OrganizationalUnitIdT&& value) { SetOrganizationalUnitId(std::forward<OrganizationalUnitIdT>(value)); return *this;}
+    ///@}
   private:
 
     SchemaVersion m_schemaVersion{SchemaVersion::NOT_SET};
@@ -298,6 +311,9 @@ namespace Model
 
     Aws::Vector<MediaElement> m_media;
     bool m_mediaHasBeenSet = false;
+
+    Aws::String m_organizationalUnitId;
+    bool m_organizationalUnitIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -108,6 +108,11 @@ NotificationEvent& NotificationEvent::operator =(JsonView jsonValue)
     }
     m_mediaHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("organizationalUnitId"))
+  {
+    m_organizationalUnitId = jsonValue.GetString("organizationalUnitId");
+    m_organizationalUnitIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -206,6 +211,12 @@ JsonValue NotificationEvent::Jsonize() const
      mediaJsonList[mediaIndex].AsObject(m_media[mediaIndex].Jsonize());
    }
    payload.WithArray("media", std::move(mediaJsonList));
+
+  }
+
+  if(m_organizationalUnitIdHasBeenSet)
+  {
+   payload.WithString("organizationalUnitId", m_organizationalUnitId);
 
   }
 

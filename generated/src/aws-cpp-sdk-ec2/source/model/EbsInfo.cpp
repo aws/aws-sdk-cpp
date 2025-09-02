@@ -55,6 +55,18 @@ EbsInfo& EbsInfo::operator =(const XmlNode& xmlNode)
       m_nvmeSupport = EbsNvmeSupportMapper::GetEbsNvmeSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nvmeSupportNode.GetText()).c_str()));
       m_nvmeSupportHasBeenSet = true;
     }
+    XmlNode maximumEbsAttachmentsNode = resultNode.FirstChild("maximumEbsAttachments");
+    if(!maximumEbsAttachmentsNode.IsNull())
+    {
+      m_maximumEbsAttachments = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumEbsAttachmentsNode.GetText()).c_str()).c_str());
+      m_maximumEbsAttachmentsHasBeenSet = true;
+    }
+    XmlNode attachmentLimitTypeNode = resultNode.FirstChild("attachmentLimitType");
+    if(!attachmentLimitTypeNode.IsNull())
+    {
+      m_attachmentLimitType = AttachmentLimitTypeMapper::GetAttachmentLimitTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attachmentLimitTypeNode.GetText()).c_str()));
+      m_attachmentLimitTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -84,6 +96,16 @@ void EbsInfo::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".NvmeSupport=" << StringUtils::URLEncode(EbsNvmeSupportMapper::GetNameForEbsNvmeSupport(m_nvmeSupport)) << "&";
   }
 
+  if(m_maximumEbsAttachmentsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MaximumEbsAttachments=" << m_maximumEbsAttachments << "&";
+  }
+
+  if(m_attachmentLimitTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AttachmentLimitType=" << StringUtils::URLEncode(AttachmentLimitTypeMapper::GetNameForAttachmentLimitType(m_attachmentLimitType)) << "&";
+  }
+
 }
 
 void EbsInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -105,6 +127,14 @@ void EbsInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_nvmeSupportHasBeenSet)
   {
       oStream << location << ".NvmeSupport=" << StringUtils::URLEncode(EbsNvmeSupportMapper::GetNameForEbsNvmeSupport(m_nvmeSupport)) << "&";
+  }
+  if(m_maximumEbsAttachmentsHasBeenSet)
+  {
+      oStream << location << ".MaximumEbsAttachments=" << m_maximumEbsAttachments << "&";
+  }
+  if(m_attachmentLimitTypeHasBeenSet)
+  {
+      oStream << location << ".AttachmentLimitType=" << StringUtils::URLEncode(AttachmentLimitTypeMapper::GetNameForAttachmentLimitType(m_attachmentLimitType)) << "&";
   }
 }
 

@@ -42,11 +42,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the Availability Zone of the instance.</p> <p>Either
-     * <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be
-     * specified, but not both. If neither is specified, Amazon EC2 automatically
-     * selects an Availability Zone based on the load balancing criteria for the
-     * Region.</p> <p>This parameter is not supported for <a
+     * <p>The ID of the Availability Zone of the instance.</p> <p>On input, you can
+     * specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>, but
+     * not both. If you specify neither one, Amazon EC2 automatically selects an
+     * Availability Zone for you.</p> <p>This parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
      */
     inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
@@ -75,8 +74,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the placement group that the instance is in. If you specify
-     * <code>GroupName</code>, you can't specify <code>GroupId</code>.</p>
+     * <p>The name of the placement group that the instance is in.</p> <p>On input, you
+     * can specify <code>GroupId</code> or <code>GroupName</code>, but not both.</p>
      */
     inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
@@ -147,8 +146,9 @@ namespace Model
     ///@{
     /**
      * <p>The ARN of the host resource group in which to launch the instances.</p>
-     * <p>If you specify this parameter, either omit the <b>Tenancy</b> parameter or
-     * set it to <code>host</code>.</p> <p>This parameter is not supported for <a
+     * <p>On input, if you specify this parameter, either omit the <b>Tenancy</b>
+     * parameter or set it to <code>host</code>.</p> <p>This parameter is not supported
+     * for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
      */
     inline const Aws::String& GetHostResourceGroupArn() const { return m_hostResourceGroupArn; }
@@ -161,8 +161,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the placement group that the instance is in. If you specify
-     * <code>GroupId</code>, you can't specify <code>GroupName</code>.</p>
+     * <p>The ID of the placement group that the instance is in.</p> <p>On input, you
+     * can specify <code>GroupId</code> or <code>GroupName</code>, but not both.</p>
      */
     inline const Aws::String& GetGroupId() const { return m_groupId; }
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
@@ -174,11 +174,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Availability Zone of the instance.</p> <p>Either
-     * <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be
-     * specified, but not both. If neither is specified, Amazon EC2 automatically
-     * selects an Availability Zone based on the load balancing criteria for the
-     * Region.</p> <p>This parameter is not supported for <a
+     * <p>The Availability Zone of the instance.</p> <p>On input, you can specify
+     * <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>, but not both.
+     * If you specify neither one, Amazon EC2 automatically selects an Availability
+     * Zone for you.</p> <p>This parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }

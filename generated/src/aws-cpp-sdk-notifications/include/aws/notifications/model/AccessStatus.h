@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     ENABLED,
     DISABLED,
-    PENDING
+    PENDING,
+    FAILED
   };
 
 namespace AccessStatusMapper
