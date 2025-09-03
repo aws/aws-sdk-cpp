@@ -613,9 +613,13 @@ void AWSAuthV4Signer::UpdateUserAgentWithCredentialFeatures(Aws::Http::HttpReque
     }
 
     const auto userAgent = request.GetHeaderValue(USER_AGENT);
-    if (userAgent.find("m/") == Aws::String::npos) {
-      AWS_LOGSTREAM_DEBUG(v4LogTag, "Custom User-Agent detected (no m/ prefix), skipping credential feature update");
-      return;
+    auto userAgentParsed = Aws::Utils::StringUtils::Split(userAgent, ' ');
+    auto metricsSegment = std::find_if(userAgentParsed.begin(), userAgentParsed.end(),
+        [](const Aws::String& value) { return value.find("m/") != Aws::String::npos; });
+
+    if (metricsSegment == userAgentParsed.end()) {
+        AWS_LOGSTREAM_DEBUG(v4LogTag, "Custom User-Agent detected (no m/ prefix), skipping credential feature update");
+        return;
     }
 
     const auto features = context.GetUserAgentFeatures();
@@ -637,17 +641,7 @@ void AWSAuthV4Signer::UpdateUserAgentWithCredentialFeatures(Aws::Http::HttpReque
         return a + "," + b;
       });
 
-    auto userAgentParsed = Aws::Utils::StringUtils::Split(userAgent, ' ');
-    auto metricsSegment = std::find_if(userAgentParsed.begin(), userAgentParsed.end(),
-        [](const Aws::String& value) { return value.find("m/") != Aws::String::npos; });
-
-    if (metricsSegment != userAgentParsed.end()) {
-        // Add new metrics to existing metrics section
-        *metricsSegment = Aws::String{*metricsSegment + "," + credentialFeatures};
-    } else {
-        // No metrics section exists, add new one
-        userAgentParsed.push_back("m/" + credentialFeatures);
-    }
+    *metricsSegment = Aws::String{*metricsSegment + "," + credentialFeatures};
 
     // Reassemble all parts with spaces
     const auto newUserAgent =  std::accumulate(std::next(userAgentParsed.begin()),
