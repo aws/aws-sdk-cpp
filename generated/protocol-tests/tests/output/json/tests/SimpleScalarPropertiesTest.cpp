@@ -27,8 +27,8 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson11SupportsNaNFloatInputs) {
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const SimpleScalarPropertiesResult& result = outcome.GetResult();
   /* expectedResult = R"( {"floatValue":"NaN","doubleValue":"NaN"} )" */
-  EXPECT_EQ(std::numeric_limits<double>::quiet_NaN(), result.GetFloatValue());
-  EXPECT_EQ(std::numeric_limits<double>::quiet_NaN(), result.GetDoubleValue());
+  EXPECT_TRUE(std::isnan(result.GetFloatValue()));
+  EXPECT_TRUE(std::isnan(result.GetDoubleValue()));
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson11SupportsInfinityFloatInputs) {

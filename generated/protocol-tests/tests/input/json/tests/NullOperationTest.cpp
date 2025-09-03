@@ -17,7 +17,6 @@ AWS_PROTOCOL_TEST(NullOperation, AwsJson11StructuresDontSerializeNullValues) {
   SetMockResponse();
 
   NullOperationRequest request;
-  request.SetString(R"(null)");
 
   auto outcome = client.NullOperation(request);
   ExpectedRequest expectedRq;
