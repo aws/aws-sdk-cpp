@@ -11,6 +11,7 @@
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
+#include <aws/core/auth/GeneralHTTPCredentialsProvider.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -22,6 +23,7 @@
 using namespace Aws::Client;
 using namespace Aws::Auth;
 using namespace Aws::Http;
+using namespace Aws::Http::Standard;
 
 namespace {
 const char* TEST_LOG_TAG =  "CredentialTrackingTest";
@@ -213,4 +215,30 @@ TEST_F(CredentialTrackingTest, TestInstanceProfileCredentialsTracking)
         Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(TEST_LOG_TAG, mockClient), 1000);
 
     RunTestWithCredentialsProvider(std::move(imdsProvider), "0");
+}
+
+TEST_F(CredentialTrackingTest, TestHTTPCredentialsTracking)
+{
+    // First mock: Response for credentials retrieval
+    std::shared_ptr<HttpRequest> requestTmp =
+        CreateHttpRequest(Aws::Http::URI("dummy"), Aws::Http::HttpMethod::HTTP_GET,
+                        Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    auto successResponse = Aws::MakeShared<Standard::StandardHttpResponse>(TEST_LOG_TAG, requestTmp);
+    successResponse->SetResponseCode(HttpResponseCode::OK);
+    successResponse->GetResponseBody() << R"({
+        "AccessKeyId": "test-http-access-key",
+        "SecretAccessKey": "test-http-secret-key",
+        "Token": "test-http-token",
+        "Expiration": "2037-04-19T00:00:00Z"
+    })";
+    mockHttpClient->AddResponseToReturn(successResponse);
+
+    // Set environment for HTTP credentials provider
+    Aws::Environment::EnvironmentRAII testEnvironment{{
+        {"AWS_CONTAINER_CREDENTIALS_FULL_URI", "http://127.0.0.1/credentials"},
+    }};
+
+    auto credsProvider = Aws::MakeShared<Aws::Auth::GeneralHTTPCredentialsProvider>(TEST_LOG_TAG,
+        "", "http://127.0.0.1/credentials", "", "");
+    RunTestWithCredentialsProvider(std::move(credsProvider), "z");
 }
