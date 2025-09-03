@@ -13,11 +13,16 @@ using namespace Aws::Utils;
 
 namespace {
 const char* STS_LOG_TAG = "STSAssumeRoleWebIdentityCredentialsProvider";
+
+struct SettingResult {
+    Aws::String value;
+    bool fromEnv;
+};
 }
 
 STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentialsProvider(
     Aws::Client::ClientConfiguration::CredentialProviderConfiguration credentialsConfig)
-    : m_credentialsProvider(nullptr), m_providerFuturesTimeoutMs(credentialsConfig.stsCredentialsProviderConfig.retrieveCredentialsFutureTimeout)
+    : m_credentialsProvider(nullptr), m_providerFuturesTimeoutMs(credentialsConfig.stsCredentialsProviderConfig.retrieveCredentialsFutureTimeout), m_usedEnvVars(false)
 {
   Aws::Crt::Auth::CredentialsProviderSTSWebIdentityConfig stsConfig{};
   stsConfig.Bootstrap = GetDefaultClientBootstrap();
@@ -44,32 +49,42 @@ STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentials
   }
 }
 
-Aws::String GetLegacySettingFromEnvOrProfile(const Aws::String& envVar,
-  std::function<Aws::String (Aws::Config::Profile)> profileFetchFunction)
-{
-  auto value = Aws::Environment::GetEnv(envVar.c_str());
-  if (value.empty()) {
+SettingResult GetLegacySettingFromEnvOrProfile(const Aws::String& envVar,
+    std::function<Aws::String (Aws::Config::Profile)> profileFetchFunction) {
+    auto value = Aws::Environment::GetEnv(envVar.c_str());
+    if (!value.empty()) {
+        return {value, true};
+    }
     auto profile = Aws::Config::GetCachedConfigProfile(Aws::Auth::GetConfigProfileName());
-    value = profileFetchFunction(profile);
-  }
-  return value;
+    return {profileFetchFunction(profile), false};
 }
 
 STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentialsProvider()
     : STSAssumeRoleWebIdentityCredentialsProvider(
-          Aws::Client::ClientConfiguration::CredentialProviderConfiguration{
-            Aws::Auth::GetConfigProfileName(),
-            GetLegacySettingFromEnvOrProfile("AWS_DEFAULT_REGION",
-              [](const Aws::Config::Profile& profile) -> Aws::String { return profile.GetRegion(); }),
-            {},
-            {
-              GetLegacySettingFromEnvOrProfile("AWS_ROLE_ARN",
-                [](const Aws::Config::Profile& profile) -> Aws::String { return profile.GetRoleArn(); }),
-              GetLegacySettingFromEnvOrProfile("AWS_ROLE_SESSION_NAME",
-                [](const Aws::Config::Profile& profile) -> Aws::String { return profile.GetValue("role_session_name"); }),
-              GetLegacySettingFromEnvOrProfile("AWS_WEB_IDENTITY_TOKEN_FILE",
-                [](const Aws::Config::Profile& profile) -> Aws::String { return profile.GetValue("web_identity_token_file"); })
-            }})
+          [&]() {
+              auto roleArn = GetLegacySettingFromEnvOrProfile("AWS_ROLE_ARN",
+                  [](const Aws::Config::Profile& profile) -> Aws::String { return profile.GetRoleArn(); });
+              auto tokenFile = GetLegacySettingFromEnvOrProfile("AWS_WEB_IDENTITY_TOKEN_FILE",
+                  [](const Aws::Config::Profile& profile) -> Aws::String { return profile.GetValue("web_identity_token_file"); });
+              
+              m_usedEnvVars = roleArn.fromEnv && tokenFile.fromEnv && 
+                              !roleArn.value.empty() && !tokenFile.value.empty();
+
+              return Aws::Client::ClientConfiguration::CredentialProviderConfiguration{
+                  Aws::Auth::GetConfigProfileName(),
+                  GetLegacySettingFromEnvOrProfile("AWS_DEFAULT_REGION",
+                      [](const Aws::Config::Profile& profile) -> Aws::String { return profile.GetRegion(); }).value,
+                  {},
+                  {
+                      roleArn.value,
+                      GetLegacySettingFromEnvOrProfile("AWS_ROLE_SESSION_NAME",
+                          [](const Aws::Config::Profile& profile) -> Aws::String { 
+                              return profile.GetValue("role_session_name"); 
+                          }).value,
+                      tokenFile.value
+                  }
+              };
+          }())
 {}
 
 STSAssumeRoleWebIdentityCredentialsProvider::~STSAssumeRoleWebIdentityCredentialsProvider()  = default;
@@ -107,6 +122,10 @@ AWSCredentials STSAssumeRoleWebIdentityCredentialsProvider::GetAWSCredentials() 
 
   if (!credentials.IsEmpty()) {
     credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_STS_ASSUME_ROLE);
+    
+    if (m_usedEnvVars) {
+      credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS_STS_WEB_ID_TOKEN);
+    }
   }
 
   return credentials;
