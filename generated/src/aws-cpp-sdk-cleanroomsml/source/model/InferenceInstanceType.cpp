@@ -38,7 +38,6 @@ namespace Aws
         static const int ml_r6i_large_HASH = HashingUtils::HashString("ml.r6i.large");
         static const int ml_g5_2xlarge_HASH = HashingUtils::HashString("ml.g5.2xlarge");
         static const int ml_m5_large_HASH = HashingUtils::HashString("ml.m5.large");
-        static const int ml_p3_16xlarge_HASH = HashingUtils::HashString("ml.p3.16xlarge");
         static const int ml_m7i_48xlarge_HASH = HashingUtils::HashString("ml.m7i.48xlarge");
         static const int ml_m6i_16xlarge_HASH = HashingUtils::HashString("ml.m6i.16xlarge");
         static const int ml_p2_16xlarge_HASH = HashingUtils::HashString("ml.p2.16xlarge");
@@ -86,7 +85,6 @@ namespace Aws
         static const int ml_m6i_2xlarge_HASH = HashingUtils::HashString("ml.m6i.2xlarge");
         static const int ml_g5_16xlarge_HASH = HashingUtils::HashString("ml.g5.16xlarge");
         static const int ml_m7i_4xlarge_HASH = HashingUtils::HashString("ml.m7i.4xlarge");
-        static const int ml_p3_2xlarge_HASH = HashingUtils::HashString("ml.p3.2xlarge");
         static const int ml_r6i_32xlarge_HASH = HashingUtils::HashString("ml.r6i.32xlarge");
         static const int ml_m6i_4xlarge_HASH = HashingUtils::HashString("ml.m6i.4xlarge");
         static const int ml_m5_xlarge_HASH = HashingUtils::HashString("ml.m5.xlarge");
@@ -112,8 +110,10 @@ namespace Aws
         static const int ml_p2_8xlarge_HASH = HashingUtils::HashString("ml.p2.8xlarge");
         static const int ml_r6i_4xlarge_HASH = HashingUtils::HashString("ml.r6i.4xlarge");
         static const int ml_m6i_32xlarge_HASH = HashingUtils::HashString("ml.m6i.32xlarge");
-        static const int ml_p3_8xlarge_HASH = HashingUtils::HashString("ml.p3.8xlarge");
         static const int ml_m4_4xlarge_HASH = HashingUtils::HashString("ml.m4.4xlarge");
+        static const int ml_p3_16xlarge_HASH = HashingUtils::HashString("ml.p3.16xlarge");
+        static const int ml_p3_2xlarge_HASH = HashingUtils::HashString("ml.p3.2xlarge");
+        static const int ml_p3_8xlarge_HASH = HashingUtils::HashString("ml.p3.8xlarge");
 
 
         InferenceInstanceType GetInferenceInstanceTypeForName(const Aws::String& name)
@@ -190,10 +190,6 @@ namespace Aws
           else if (hashCode == ml_m5_large_HASH)
           {
             return InferenceInstanceType::ml_m5_large;
-          }
-          else if (hashCode == ml_p3_16xlarge_HASH)
-          {
-            return InferenceInstanceType::ml_p3_16xlarge;
           }
           else if (hashCode == ml_m7i_48xlarge_HASH)
           {
@@ -383,10 +379,6 @@ namespace Aws
           {
             return InferenceInstanceType::ml_m7i_4xlarge;
           }
-          else if (hashCode == ml_p3_2xlarge_HASH)
-          {
-            return InferenceInstanceType::ml_p3_2xlarge;
-          }
           else if (hashCode == ml_r6i_32xlarge_HASH)
           {
             return InferenceInstanceType::ml_r6i_32xlarge;
@@ -487,13 +479,21 @@ namespace Aws
           {
             return InferenceInstanceType::ml_m6i_32xlarge;
           }
-          else if (hashCode == ml_p3_8xlarge_HASH)
-          {
-            return InferenceInstanceType::ml_p3_8xlarge;
-          }
           else if (hashCode == ml_m4_4xlarge_HASH)
           {
             return InferenceInstanceType::ml_m4_4xlarge;
+          }
+          else if (hashCode == ml_p3_16xlarge_HASH)
+          {
+            return InferenceInstanceType::ml_p3_16xlarge;
+          }
+          else if (hashCode == ml_p3_2xlarge_HASH)
+          {
+            return InferenceInstanceType::ml_p3_2xlarge;
+          }
+          else if (hashCode == ml_p3_8xlarge_HASH)
+          {
+            return InferenceInstanceType::ml_p3_8xlarge;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -547,8 +547,6 @@ namespace Aws
             return "ml.g5.2xlarge";
           case InferenceInstanceType::ml_m5_large:
             return "ml.m5.large";
-          case InferenceInstanceType::ml_p3_16xlarge:
-            return "ml.p3.16xlarge";
           case InferenceInstanceType::ml_m7i_48xlarge:
             return "ml.m7i.48xlarge";
           case InferenceInstanceType::ml_m6i_16xlarge:
@@ -643,8 +641,6 @@ namespace Aws
             return "ml.g5.16xlarge";
           case InferenceInstanceType::ml_m7i_4xlarge:
             return "ml.m7i.4xlarge";
-          case InferenceInstanceType::ml_p3_2xlarge:
-            return "ml.p3.2xlarge";
           case InferenceInstanceType::ml_r6i_32xlarge:
             return "ml.r6i.32xlarge";
           case InferenceInstanceType::ml_m6i_4xlarge:
@@ -695,10 +691,14 @@ namespace Aws
             return "ml.r6i.4xlarge";
           case InferenceInstanceType::ml_m6i_32xlarge:
             return "ml.m6i.32xlarge";
-          case InferenceInstanceType::ml_p3_8xlarge:
-            return "ml.p3.8xlarge";
           case InferenceInstanceType::ml_m4_4xlarge:
             return "ml.m4.4xlarge";
+          case InferenceInstanceType::ml_p3_16xlarge:
+            return "ml.p3.16xlarge";
+          case InferenceInstanceType::ml_p3_2xlarge:
+            return "ml.p3.2xlarge";
+          case InferenceInstanceType::ml_p3_8xlarge:
+            return "ml.p3.8xlarge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

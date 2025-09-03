@@ -13,6 +13,7 @@
 #include <aws/rds/model/DatabaseInsightsMode.h>
 #include <aws/rds/model/ServerlessV2ScalingConfiguration.h>
 #include <aws/rds/model/ClusterScalabilityType.h>
+#include <aws/rds/model/MasterUserAuthenticationType.h>
 #include <aws/rds/model/Tag.h>
 #include <utility>
 
@@ -1079,6 +1080,24 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the authentication type for the master user. With IAM master user
+     * authentication, you can configure the master DB user with IAM database
+     * authentication when you create a DB cluster.</p> <p>You can specify one of the
+     * following values:</p> <ul> <li> <p> <code>password</code> - Use standard
+     * database authentication with a password.</p> </li> <li> <p>
+     * <code>iam-db-auth</code> - Use IAM database authentication for the master
+     * user.</p> </li> </ul> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ
+     * DB clusters</p> <p>This option is only valid for RDS for PostgreSQL and Aurora
+     * PostgreSQL engines.</p>
+     */
+    inline MasterUserAuthenticationType GetMasterUserAuthenticationType() const { return m_masterUserAuthenticationType; }
+    inline bool MasterUserAuthenticationTypeHasBeenSet() const { return m_masterUserAuthenticationTypeHasBeenSet; }
+    inline void SetMasterUserAuthenticationType(MasterUserAuthenticationType value) { m_masterUserAuthenticationTypeHasBeenSet = true; m_masterUserAuthenticationType = value; }
+    inline CreateDBClusterRequest& WithMasterUserAuthenticationType(MasterUserAuthenticationType value) { SetMasterUserAuthenticationType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
      */
     inline const Aws::String& GetSourceRegion() const { return m_sourceRegion; }
@@ -1257,6 +1276,9 @@ namespace Model
 
     Aws::String m_engineLifecycleSupport;
     bool m_engineLifecycleSupportHasBeenSet = false;
+
+    MasterUserAuthenticationType m_masterUserAuthenticationType{MasterUserAuthenticationType::NOT_SET};
+    bool m_masterUserAuthenticationTypeHasBeenSet = false;
 
     Aws::String m_sourceRegion;
     bool m_sourceRegionHasBeenSet = false;

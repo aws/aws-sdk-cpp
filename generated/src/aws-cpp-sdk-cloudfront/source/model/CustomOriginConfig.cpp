@@ -67,6 +67,12 @@ CustomOriginConfig& CustomOriginConfig::operator =(const XmlNode& xmlNode)
       m_originKeepaliveTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originKeepaliveTimeoutNode.GetText()).c_str()).c_str());
       m_originKeepaliveTimeoutHasBeenSet = true;
     }
+    XmlNode ipAddressTypeNode = resultNode.FirstChild("IpAddressType");
+    if(!ipAddressTypeNode.IsNull())
+    {
+      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()));
+      m_ipAddressTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -117,6 +123,12 @@ void CustomOriginConfig::AddToNode(XmlNode& parentNode) const
    ss << m_originKeepaliveTimeout;
    originKeepaliveTimeoutNode.SetText(ss.str());
    ss.str("");
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+   XmlNode ipAddressTypeNode = parentNode.CreateChildElement("IpAddressType");
+   ipAddressTypeNode.SetText(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
   }
 
 }

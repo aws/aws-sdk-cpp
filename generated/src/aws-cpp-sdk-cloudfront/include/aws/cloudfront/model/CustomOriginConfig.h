@@ -7,6 +7,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/OriginProtocolPolicy.h>
 #include <aws/cloudfront/model/OriginSslProtocols.h>
+#include <aws/cloudfront/model/IpAddressType.h>
 #include <utility>
 
 namespace Aws
@@ -127,6 +128,18 @@ namespace Model
     inline void SetOriginKeepaliveTimeout(int value) { m_originKeepaliveTimeoutHasBeenSet = true; m_originKeepaliveTimeout = value; }
     inline CustomOriginConfig& WithOriginKeepaliveTimeout(int value) { SetOriginKeepaliveTimeout(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies which IP protocol CloudFront uses when connecting to your origin.
+     * If your origin uses both IPv4 and IPv6 protocols, you can choose
+     * <code>dualstack</code> to help optimize reliability.</p>
+     */
+    inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+    inline void SetIpAddressType(IpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline CustomOriginConfig& WithIpAddressType(IpAddressType value) { SetIpAddressType(value); return *this;}
+    ///@}
   private:
 
     int m_hTTPPort{0};
@@ -146,6 +159,9 @@ namespace Model
 
     int m_originKeepaliveTimeout{0};
     bool m_originKeepaliveTimeoutHasBeenSet = false;
+
+    IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
+    bool m_ipAddressTypeHasBeenSet = false;
   };
 
 } // namespace Model

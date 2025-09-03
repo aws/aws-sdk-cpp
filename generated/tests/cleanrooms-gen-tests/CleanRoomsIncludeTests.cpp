@@ -47,6 +47,7 @@
 #include <aws/cleanrooms/model/AnalysisType.h>
 #include <aws/cleanrooms/model/AnalyticsEngine.h>
 #include <aws/cleanrooms/model/AthenaTableReference.h>
+#include <aws/cleanrooms/model/AutoApprovedChangeType.h>
 #include <aws/cleanrooms/model/BatchGetCollaborationAnalysisTemplateError.h>
 #include <aws/cleanrooms/model/BatchGetCollaborationAnalysisTemplateRequest.h>
 #include <aws/cleanrooms/model/BatchGetCollaborationAnalysisTemplateResult.h>
@@ -58,9 +59,17 @@
 #include <aws/cleanrooms/model/BatchGetSchemaResult.h>
 #include <aws/cleanrooms/model/BilledJobResourceUtilization.h>
 #include <aws/cleanrooms/model/BilledResourceUtilization.h>
+#include <aws/cleanrooms/model/Change.h>
+#include <aws/cleanrooms/model/ChangeInput.h>
+#include <aws/cleanrooms/model/ChangeRequestStatus.h>
+#include <aws/cleanrooms/model/ChangeSpecification.h>
+#include <aws/cleanrooms/model/ChangeSpecificationType.h>
+#include <aws/cleanrooms/model/ChangeType.h>
 #include <aws/cleanrooms/model/Collaboration.h>
 #include <aws/cleanrooms/model/CollaborationAnalysisTemplate.h>
 #include <aws/cleanrooms/model/CollaborationAnalysisTemplateSummary.h>
+#include <aws/cleanrooms/model/CollaborationChangeRequest.h>
+#include <aws/cleanrooms/model/CollaborationChangeRequestSummary.h>
 #include <aws/cleanrooms/model/CollaborationConfiguredAudienceModelAssociation.h>
 #include <aws/cleanrooms/model/CollaborationConfiguredAudienceModelAssociationSummary.h>
 #include <aws/cleanrooms/model/CollaborationIdNamespaceAssociation.h>
@@ -100,6 +109,8 @@
 #include <aws/cleanrooms/model/ConsolidatedPolicyV1.h>
 #include <aws/cleanrooms/model/CreateAnalysisTemplateRequest.h>
 #include <aws/cleanrooms/model/CreateAnalysisTemplateResult.h>
+#include <aws/cleanrooms/model/CreateCollaborationChangeRequestRequest.h>
+#include <aws/cleanrooms/model/CreateCollaborationChangeRequestResult.h>
 #include <aws/cleanrooms/model/CreateCollaborationRequest.h>
 #include <aws/cleanrooms/model/CreateCollaborationResult.h>
 #include <aws/cleanrooms/model/CreateConfiguredAudienceModelAssociationRequest.h>
@@ -167,6 +178,8 @@
 #include <aws/cleanrooms/model/GetAnalysisTemplateResult.h>
 #include <aws/cleanrooms/model/GetCollaborationAnalysisTemplateRequest.h>
 #include <aws/cleanrooms/model/GetCollaborationAnalysisTemplateResult.h>
+#include <aws/cleanrooms/model/GetCollaborationChangeRequestRequest.h>
+#include <aws/cleanrooms/model/GetCollaborationChangeRequestResult.h>
 #include <aws/cleanrooms/model/GetCollaborationConfiguredAudienceModelAssociationRequest.h>
 #include <aws/cleanrooms/model/GetCollaborationConfiguredAudienceModelAssociationResult.h>
 #include <aws/cleanrooms/model/GetCollaborationIdNamespaceAssociationRequest.h>
@@ -223,6 +236,8 @@
 #include <aws/cleanrooms/model/ListAnalysisTemplatesResult.h>
 #include <aws/cleanrooms/model/ListCollaborationAnalysisTemplatesRequest.h>
 #include <aws/cleanrooms/model/ListCollaborationAnalysisTemplatesResult.h>
+#include <aws/cleanrooms/model/ListCollaborationChangeRequestsRequest.h>
+#include <aws/cleanrooms/model/ListCollaborationChangeRequestsResult.h>
 #include <aws/cleanrooms/model/ListCollaborationConfiguredAudienceModelAssociationsRequest.h>
 #include <aws/cleanrooms/model/ListCollaborationConfiguredAudienceModelAssociationsResult.h>
 #include <aws/cleanrooms/model/ListCollaborationIdNamespaceAssociationsRequest.h>
@@ -262,6 +277,7 @@
 #include <aws/cleanrooms/model/MLMemberAbilities.h>
 #include <aws/cleanrooms/model/MLPaymentConfig.h>
 #include <aws/cleanrooms/model/MemberAbility.h>
+#include <aws/cleanrooms/model/MemberChangeSpecification.h>
 #include <aws/cleanrooms/model/MemberSpecification.h>
 #include <aws/cleanrooms/model/MemberStatus.h>
 #include <aws/cleanrooms/model/MemberSummary.h>

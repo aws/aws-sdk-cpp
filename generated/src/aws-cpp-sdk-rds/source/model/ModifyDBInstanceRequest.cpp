@@ -370,6 +370,11 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
     ss << "MultiTenant=" << std::boolalpha << m_multiTenant << "&";
   }
 
+  if(m_masterUserAuthenticationTypeHasBeenSet)
+  {
+    ss << "MasterUserAuthenticationType=" << StringUtils::URLEncode(MasterUserAuthenticationTypeMapper::GetNameForMasterUserAuthenticationType(m_masterUserAuthenticationType)) << "&";
+  }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

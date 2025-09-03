@@ -7,6 +7,8 @@
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cleanroomsml/model/LogType.h>
+#include <aws/cleanroomsml/model/LogRedactionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -65,6 +67,29 @@ namespace Model
     template<typename FilterPatternT = Aws::String>
     LogsConfigurationPolicy& WithFilterPattern(FilterPatternT&& value) { SetFilterPattern(std::forward<FilterPatternT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the type of log this policy applies to. The currently supported
+     * policies are ALL or ERROR_SUMMARY.</p>
+     */
+    inline LogType GetLogType() const { return m_logType; }
+    inline bool LogTypeHasBeenSet() const { return m_logTypeHasBeenSet; }
+    inline void SetLogType(LogType value) { m_logTypeHasBeenSet = true; m_logType = value; }
+    inline LogsConfigurationPolicy& WithLogType(LogType value) { SetLogType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the log redaction configuration for this policy.</p>
+     */
+    inline const LogRedactionConfiguration& GetLogRedactionConfiguration() const { return m_logRedactionConfiguration; }
+    inline bool LogRedactionConfigurationHasBeenSet() const { return m_logRedactionConfigurationHasBeenSet; }
+    template<typename LogRedactionConfigurationT = LogRedactionConfiguration>
+    void SetLogRedactionConfiguration(LogRedactionConfigurationT&& value) { m_logRedactionConfigurationHasBeenSet = true; m_logRedactionConfiguration = std::forward<LogRedactionConfigurationT>(value); }
+    template<typename LogRedactionConfigurationT = LogRedactionConfiguration>
+    LogsConfigurationPolicy& WithLogRedactionConfiguration(LogRedactionConfigurationT&& value) { SetLogRedactionConfiguration(std::forward<LogRedactionConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_allowedAccountIds;
@@ -72,6 +97,12 @@ namespace Model
 
     Aws::String m_filterPattern;
     bool m_filterPatternHasBeenSet = false;
+
+    LogType m_logType{LogType::NOT_SET};
+    bool m_logTypeHasBeenSet = false;
+
+    LogRedactionConfiguration m_logRedactionConfiguration;
+    bool m_logRedactionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

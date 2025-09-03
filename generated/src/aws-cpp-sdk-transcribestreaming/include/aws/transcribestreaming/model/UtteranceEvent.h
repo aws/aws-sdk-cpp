@@ -9,9 +9,11 @@
 #include <aws/transcribestreaming/model/ParticipantRole.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/transcribestreaming/model/Sentiment.h>
+#include <aws/transcribestreaming/model/CallAnalyticsLanguageCode.h>
 #include <aws/transcribestreaming/model/CallAnalyticsItem.h>
 #include <aws/transcribestreaming/model/CallAnalyticsEntity.h>
 #include <aws/transcribestreaming/model/IssueDetected.h>
+#include <aws/transcribestreaming/model/CallAnalyticsLanguageWithScore.h>
 #include <utility>
 
 namespace Aws
@@ -168,6 +170,31 @@ namespace Model
     template<typename IssuesDetectedT = IssueDetected>
     UtteranceEvent& AddIssuesDetected(IssuesDetectedT&& value) { m_issuesDetectedHasBeenSet = true; m_issuesDetected.emplace_back(std::forward<IssuesDetectedT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The language code that represents the language spoken in your audio
+     * stream.</p>
+     */
+    inline CallAnalyticsLanguageCode GetLanguageCode() const { return m_languageCode; }
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
+    inline void SetLanguageCode(CallAnalyticsLanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline UtteranceEvent& WithLanguageCode(CallAnalyticsLanguageCode value) { SetLanguageCode(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The language code of the dominant language identified in your stream.</p>
+     */
+    inline const Aws::Vector<CallAnalyticsLanguageWithScore>& GetLanguageIdentification() const { return m_languageIdentification; }
+    inline bool LanguageIdentificationHasBeenSet() const { return m_languageIdentificationHasBeenSet; }
+    template<typename LanguageIdentificationT = Aws::Vector<CallAnalyticsLanguageWithScore>>
+    void SetLanguageIdentification(LanguageIdentificationT&& value) { m_languageIdentificationHasBeenSet = true; m_languageIdentification = std::forward<LanguageIdentificationT>(value); }
+    template<typename LanguageIdentificationT = Aws::Vector<CallAnalyticsLanguageWithScore>>
+    UtteranceEvent& WithLanguageIdentification(LanguageIdentificationT&& value) { SetLanguageIdentification(std::forward<LanguageIdentificationT>(value)); return *this;}
+    template<typename LanguageIdentificationT = CallAnalyticsLanguageWithScore>
+    UtteranceEvent& AddLanguageIdentification(LanguageIdentificationT&& value) { m_languageIdentificationHasBeenSet = true; m_languageIdentification.emplace_back(std::forward<LanguageIdentificationT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_utteranceId;
@@ -199,6 +226,12 @@ namespace Model
 
     Aws::Vector<IssueDetected> m_issuesDetected;
     bool m_issuesDetectedHasBeenSet = false;
+
+    CallAnalyticsLanguageCode m_languageCode{CallAnalyticsLanguageCode::NOT_SET};
+    bool m_languageCodeHasBeenSet = false;
+
+    Aws::Vector<CallAnalyticsLanguageWithScore> m_languageIdentification;
+    bool m_languageIdentificationHasBeenSet = false;
   };
 
 } // namespace Model

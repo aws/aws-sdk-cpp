@@ -207,6 +207,103 @@ namespace Model
 
     ///@{
     /**
+     * <p>Enables automatic language identification for your Call Analytics
+     * transcription.</p> <p>If you include <code>IdentifyLanguage</code>, you must
+     * include a list of language codes, using <code>LanguageOptions</code>, that you
+     * think may be present in your audio stream. You must provide a minimum of two
+     * language selections.</p> <p>You can also include a preferred language using
+     * <code>PreferredLanguage</code>. Adding a preferred language can help Amazon
+     * Transcribe identify the language faster than if you omit this parameter.</p>
+     * <p>Note that you must include either <code>LanguageCode</code> or
+     * <code>IdentifyLanguage</code> in your request. If you include both parameters,
+     * your transcription job fails.</p>
+     */
+    inline bool GetIdentifyLanguage() const { return m_identifyLanguage; }
+    inline bool IdentifyLanguageHasBeenSet() const { return m_identifyLanguageHasBeenSet; }
+    inline void SetIdentifyLanguage(bool value) { m_identifyLanguageHasBeenSet = true; m_identifyLanguage = value; }
+    inline StartCallAnalyticsStreamTranscriptionRequest& WithIdentifyLanguage(bool value) { SetIdentifyLanguage(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specify two or more language codes that represent the languages you think may
+     * be present in your media.</p> <p>Including language options can improve the
+     * accuracy of language identification.</p> <p>If you include
+     * <code>LanguageOptions</code> in your request, you must also include
+     * <code>IdentifyLanguage</code>.</p> <p>For a list of languages supported with
+     * Call Analytics streaming, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+     * languages</a> table.</p>  <p>You can only include one language
+     * dialect per language per stream. For example, you cannot include
+     * <code>en-US</code> and <code>en-AU</code> in the same request.</p> 
+     */
+    inline const Aws::String& GetLanguageOptions() const { return m_languageOptions; }
+    inline bool LanguageOptionsHasBeenSet() const { return m_languageOptionsHasBeenSet; }
+    template<typename LanguageOptionsT = Aws::String>
+    void SetLanguageOptions(LanguageOptionsT&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = std::forward<LanguageOptionsT>(value); }
+    template<typename LanguageOptionsT = Aws::String>
+    StartCallAnalyticsStreamTranscriptionRequest& WithLanguageOptions(LanguageOptionsT&& value) { SetLanguageOptions(std::forward<LanguageOptionsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specify a preferred language from the subset of languages codes you specified
+     * in <code>LanguageOptions</code>.</p> <p>You can only use this parameter if
+     * you've included <code>IdentifyLanguage</code> and <code>LanguageOptions</code>
+     * in your request.</p>
+     */
+    inline CallAnalyticsLanguageCode GetPreferredLanguage() const { return m_preferredLanguage; }
+    inline bool PreferredLanguageHasBeenSet() const { return m_preferredLanguageHasBeenSet; }
+    inline void SetPreferredLanguage(CallAnalyticsLanguageCode value) { m_preferredLanguageHasBeenSet = true; m_preferredLanguage = value; }
+    inline StartCallAnalyticsStreamTranscriptionRequest& WithPreferredLanguage(CallAnalyticsLanguageCode value) { SetPreferredLanguage(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specify the names of the custom vocabularies that you want to use when
+     * processing your Call Analytics transcription. Note that vocabulary names are
+     * case sensitive.</p> <p>If the custom vocabulary's language doesn't match the
+     * identified media language, it won't be applied to the transcription.</p>
+     *  <p>This parameter is only intended for use <b>with</b> the
+     * <code>IdentifyLanguage</code> parameter. If you're <b>not</b> including
+     * <code>IdentifyLanguage</code> in your request and want to use a custom
+     * vocabulary with your transcription, use the <code>VocabularyName</code>
+     * parameter instead.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
+     * vocabularies</a>.</p>
+     */
+    inline const Aws::String& GetVocabularyNames() const { return m_vocabularyNames; }
+    inline bool VocabularyNamesHasBeenSet() const { return m_vocabularyNamesHasBeenSet; }
+    template<typename VocabularyNamesT = Aws::String>
+    void SetVocabularyNames(VocabularyNamesT&& value) { m_vocabularyNamesHasBeenSet = true; m_vocabularyNames = std::forward<VocabularyNamesT>(value); }
+    template<typename VocabularyNamesT = Aws::String>
+    StartCallAnalyticsStreamTranscriptionRequest& WithVocabularyNames(VocabularyNamesT&& value) { SetVocabularyNames(std::forward<VocabularyNamesT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specify the names of the custom vocabulary filters that you want to use when
+     * processing your Call Analytics transcription. Note that vocabulary filter names
+     * are case sensitive.</p> <p>These filters serve to customize the transcript
+     * output.</p>  <p>This parameter is only intended for use <b>with</b>
+     * the <code>IdentifyLanguage</code> parameter. If you're <b>not</b> including
+     * <code>IdentifyLanguage</code> in your request and want to use a custom
+     * vocabulary filter with your transcription, use the
+     * <code>VocabularyFilterName</code> parameter instead.</p>  <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using
+     * vocabulary filtering with unwanted words</a>.</p>
+     */
+    inline const Aws::String& GetVocabularyFilterNames() const { return m_vocabularyFilterNames; }
+    inline bool VocabularyFilterNamesHasBeenSet() const { return m_vocabularyFilterNamesHasBeenSet; }
+    template<typename VocabularyFilterNamesT = Aws::String>
+    void SetVocabularyFilterNames(VocabularyFilterNamesT&& value) { m_vocabularyFilterNamesHasBeenSet = true; m_vocabularyFilterNames = std::forward<VocabularyFilterNamesT>(value); }
+    template<typename VocabularyFilterNamesT = Aws::String>
+    StartCallAnalyticsStreamTranscriptionRequest& WithVocabularyFilterNames(VocabularyFilterNamesT&& value) { SetVocabularyFilterNames(std::forward<VocabularyFilterNamesT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Enables partial result stabilization for your transcription. Partial result
      * stabilization can reduce latency in your output, but may impact accuracy. For
      * more information, see <a
@@ -323,6 +420,21 @@ namespace Model
 
     Aws::String m_languageModelName;
     bool m_languageModelNameHasBeenSet = false;
+
+    bool m_identifyLanguage{false};
+    bool m_identifyLanguageHasBeenSet = false;
+
+    Aws::String m_languageOptions;
+    bool m_languageOptionsHasBeenSet = false;
+
+    CallAnalyticsLanguageCode m_preferredLanguage{CallAnalyticsLanguageCode::NOT_SET};
+    bool m_preferredLanguageHasBeenSet = false;
+
+    Aws::String m_vocabularyNames;
+    bool m_vocabularyNamesHasBeenSet = false;
+
+    Aws::String m_vocabularyFilterNames;
+    bool m_vocabularyFilterNamesHasBeenSet = false;
 
     bool m_enablePartialResultsStabilization{false};
     bool m_enablePartialResultsStabilizationHasBeenSet = false;

@@ -25,16 +25,6 @@ GetMLInputChannelResult::GetMLInputChannelResult(const Aws::AmazonWebServiceResu
 GetMLInputChannelResult& GetMLInputChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("createTime"))
-  {
-    m_createTime = jsonValue.GetString("createTime");
-    m_createTimeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("updateTime"))
-  {
-    m_updateTime = jsonValue.GetString("updateTime");
-    m_updateTimeHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("membershipIdentifier"))
   {
     m_membershipIdentifier = jsonValue.GetString("membershipIdentifier");
@@ -44,16 +34,6 @@ GetMLInputChannelResult& GetMLInputChannelResult::operator =(const Aws::AmazonWe
   {
     m_collaborationIdentifier = jsonValue.GetString("collaborationIdentifier");
     m_collaborationIdentifierHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("inputChannel"))
-  {
-    m_inputChannel = jsonValue.GetObject("inputChannel");
-    m_inputChannelHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("protectedQueryIdentifier"))
-  {
-    m_protectedQueryIdentifier = jsonValue.GetString("protectedQueryIdentifier");
-    m_protectedQueryIdentifierHasBeenSet = true;
   }
   if(jsonValue.ValueExists("mlInputChannelArn"))
   {
@@ -94,6 +74,31 @@ GetMLInputChannelResult& GetMLInputChannelResult::operator =(const Aws::AmazonWe
     m_numberOfRecords = jsonValue.GetInt64("numberOfRecords");
     m_numberOfRecordsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createTime"))
+  {
+    m_createTime = jsonValue.GetString("createTime");
+    m_createTimeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("updateTime"))
+  {
+    m_updateTime = jsonValue.GetString("updateTime");
+    m_updateTimeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("inputChannel"))
+  {
+    m_inputChannel = jsonValue.GetObject("inputChannel");
+    m_inputChannelHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("protectedQueryIdentifier"))
+  {
+    m_protectedQueryIdentifier = jsonValue.GetString("protectedQueryIdentifier");
+    m_protectedQueryIdentifierHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("numberOfFiles"))
   {
     m_numberOfFiles = jsonValue.GetDouble("numberOfFiles");
@@ -103,11 +108,6 @@ GetMLInputChannelResult& GetMLInputChannelResult::operator =(const Aws::AmazonWe
   {
     m_sizeInGb = jsonValue.GetDouble("sizeInGb");
     m_sizeInGbHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
   }
   if(jsonValue.ValueExists("kmsKeyArn"))
   {

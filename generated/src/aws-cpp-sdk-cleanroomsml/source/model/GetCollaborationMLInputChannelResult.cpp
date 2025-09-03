@@ -25,21 +25,6 @@ GetCollaborationMLInputChannelResult::GetCollaborationMLInputChannelResult(const
 GetCollaborationMLInputChannelResult& GetCollaborationMLInputChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("createTime"))
-  {
-    m_createTime = jsonValue.GetString("createTime");
-    m_createTimeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("updateTime"))
-  {
-    m_updateTime = jsonValue.GetString("updateTime");
-    m_updateTimeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("creatorAccountId"))
-  {
-    m_creatorAccountId = jsonValue.GetString("creatorAccountId");
-    m_creatorAccountIdHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("membershipIdentifier"))
   {
     m_membershipIdentifier = jsonValue.GetString("membershipIdentifier");
@@ -93,6 +78,21 @@ GetCollaborationMLInputChannelResult& GetCollaborationMLInputChannelResult::oper
   {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createTime"))
+  {
+    m_createTime = jsonValue.GetString("createTime");
+    m_createTimeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("updateTime"))
+  {
+    m_updateTime = jsonValue.GetString("updateTime");
+    m_updateTimeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("creatorAccountId"))
+  {
+    m_creatorAccountId = jsonValue.GetString("creatorAccountId");
+    m_creatorAccountIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

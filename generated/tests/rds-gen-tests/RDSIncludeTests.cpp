@@ -311,6 +311,7 @@
 #include <aws/rds/model/ListTagsForResourceRequest.h>
 #include <aws/rds/model/ListTagsForResourceResult.h>
 #include <aws/rds/model/LocalWriteForwardingStatus.h>
+#include <aws/rds/model/MasterUserAuthenticationType.h>
 #include <aws/rds/model/MasterUserSecret.h>
 #include <aws/rds/model/Metric.h>
 #include <aws/rds/model/MetricQuery.h>

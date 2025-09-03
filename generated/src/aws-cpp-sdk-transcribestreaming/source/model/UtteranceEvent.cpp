@@ -87,6 +87,20 @@ UtteranceEvent& UtteranceEvent::operator =(JsonView jsonValue)
     }
     m_issuesDetectedHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("LanguageCode"))
+  {
+    m_languageCode = CallAnalyticsLanguageCodeMapper::GetCallAnalyticsLanguageCodeForName(jsonValue.GetString("LanguageCode"));
+    m_languageCodeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("LanguageIdentification"))
+  {
+    Aws::Utils::Array<JsonView> languageIdentificationJsonList = jsonValue.GetArray("LanguageIdentification");
+    for(unsigned languageIdentificationIndex = 0; languageIdentificationIndex < languageIdentificationJsonList.GetLength(); ++languageIdentificationIndex)
+    {
+      m_languageIdentification.push_back(languageIdentificationJsonList[languageIdentificationIndex].AsObject());
+    }
+    m_languageIdentificationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -164,6 +178,22 @@ JsonValue UtteranceEvent::Jsonize() const
      issuesDetectedJsonList[issuesDetectedIndex].AsObject(m_issuesDetected[issuesDetectedIndex].Jsonize());
    }
    payload.WithArray("IssuesDetected", std::move(issuesDetectedJsonList));
+
+  }
+
+  if(m_languageCodeHasBeenSet)
+  {
+   payload.WithString("LanguageCode", CallAnalyticsLanguageCodeMapper::GetNameForCallAnalyticsLanguageCode(m_languageCode));
+  }
+
+  if(m_languageIdentificationHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> languageIdentificationJsonList(m_languageIdentification.size());
+   for(unsigned languageIdentificationIndex = 0; languageIdentificationIndex < languageIdentificationJsonList.GetLength(); ++languageIdentificationIndex)
+   {
+     languageIdentificationJsonList[languageIdentificationIndex].AsObject(m_languageIdentification[languageIdentificationIndex].Jsonize());
+   }
+   payload.WithArray("LanguageIdentification", std::move(languageIdentificationJsonList));
 
   }
 

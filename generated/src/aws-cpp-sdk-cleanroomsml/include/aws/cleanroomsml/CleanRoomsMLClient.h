@@ -29,7 +29,7 @@ namespace CleanRoomsML
    * Rooms User Guide</a>.</p> <p>To learn more about SQL commands, functions, and
    * conditions supported in Clean Rooms, see the <a
    * href="https://docs.aws.amazon.com/clean-rooms/latest/sql-reference/sql-reference.html">Clean
-   * Rooms SQL Reference</a>.</p>
+   * Rooms SQL Reference</a>.</p> <p/>
    */
   class AWS_CLEANROOMSML_API CleanRoomsMLClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CleanRoomsMLClient>
   {

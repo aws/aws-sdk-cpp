@@ -214,12 +214,6 @@ void TranscribeStreamingServiceClient::StartCallAnalyticsStreamTranscriptionAsyn
     handler(this, request, StartCallAnalyticsStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Endpoint provider is not initialized", false)), handlerContext);
     return;
   }
-  if (!request.LanguageCodeHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("StartCallAnalyticsStreamTranscription", "Required field: LanguageCode, is not set");
-    handler(this, request, StartCallAnalyticsStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LanguageCode]", false)), handlerContext);
-    return;
-  }
   if (!request.MediaSampleRateHertzHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StartCallAnalyticsStreamTranscription", "Required field: MediaSampleRateHertz, is not set");

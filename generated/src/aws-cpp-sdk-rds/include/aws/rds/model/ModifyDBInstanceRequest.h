@@ -12,6 +12,7 @@
 #include <aws/rds/model/CloudwatchLogsExportConfiguration.h>
 #include <aws/rds/model/ReplicaMode.h>
 #include <aws/rds/model/AutomationMode.h>
+#include <aws/rds/model/MasterUserAuthenticationType.h>
 #include <aws/rds/model/ProcessorFeature.h>
 #include <utility>
 
@@ -1252,6 +1253,22 @@ namespace Model
     inline void SetMultiTenant(bool value) { m_multiTenantHasBeenSet = true; m_multiTenant = value; }
     inline ModifyDBInstanceRequest& WithMultiTenant(bool value) { SetMultiTenant(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the authentication type for the master user. With IAM master user
+     * authentication, you can change the master DB user to use IAM database
+     * authentication.</p> <p>You can specify one of the following values:</p> <ul>
+     * <li> <p> <code>password</code> - Use standard database authentication with a
+     * password.</p> </li> <li> <p> <code>iam-db-auth</code> - Use IAM database
+     * authentication for the master user.</p> </li> </ul> <p>This option is only valid
+     * for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
+     */
+    inline MasterUserAuthenticationType GetMasterUserAuthenticationType() const { return m_masterUserAuthenticationType; }
+    inline bool MasterUserAuthenticationTypeHasBeenSet() const { return m_masterUserAuthenticationTypeHasBeenSet; }
+    inline void SetMasterUserAuthenticationType(MasterUserAuthenticationType value) { m_masterUserAuthenticationTypeHasBeenSet = true; m_masterUserAuthenticationType = value; }
+    inline ModifyDBInstanceRequest& WithMasterUserAuthenticationType(MasterUserAuthenticationType value) { SetMasterUserAuthenticationType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -1436,6 +1453,9 @@ namespace Model
 
     bool m_multiTenant{false};
     bool m_multiTenantHasBeenSet = false;
+
+    MasterUserAuthenticationType m_masterUserAuthenticationType{MasterUserAuthenticationType::NOT_SET};
+    bool m_masterUserAuthenticationTypeHasBeenSet = false;
   };
 
 } // namespace Model

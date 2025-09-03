@@ -148,6 +148,67 @@ namespace Model
 
     ///@{
     /**
+     * <p>Shows whether automatic language identification was enabled for your Call
+     * Analytics transcription.</p>
+     */
+    inline bool GetIdentifyLanguage() const { return m_identifyLanguage; }
+    inline bool IdentifyLanguageHasBeenSet() const { return m_identifyLanguageHasBeenSet; }
+    inline void SetIdentifyLanguage(bool value) { m_identifyLanguageHasBeenSet = true; m_identifyLanguage = value; }
+    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithIdentifyLanguage(bool value) { SetIdentifyLanguage(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Provides the language codes that you specified in your Call Analytics
+     * request.</p>
+     */
+    inline const Aws::String& GetLanguageOptions() const { return m_languageOptions; }
+    inline bool LanguageOptionsHasBeenSet() const { return m_languageOptionsHasBeenSet; }
+    template<typename LanguageOptionsT = Aws::String>
+    void SetLanguageOptions(LanguageOptionsT&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = std::forward<LanguageOptionsT>(value); }
+    template<typename LanguageOptionsT = Aws::String>
+    StartCallAnalyticsStreamTranscriptionInitialResponse& WithLanguageOptions(LanguageOptionsT&& value) { SetLanguageOptions(std::forward<LanguageOptionsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Provides the preferred language that you specified in your Call Analytics
+     * request.</p>
+     */
+    inline CallAnalyticsLanguageCode GetPreferredLanguage() const { return m_preferredLanguage; }
+    inline bool PreferredLanguageHasBeenSet() const { return m_preferredLanguageHasBeenSet; }
+    inline void SetPreferredLanguage(CallAnalyticsLanguageCode value) { m_preferredLanguageHasBeenSet = true; m_preferredLanguage = value; }
+    inline StartCallAnalyticsStreamTranscriptionInitialResponse& WithPreferredLanguage(CallAnalyticsLanguageCode value) { SetPreferredLanguage(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Provides the names of the custom vocabularies that you specified in your Call
+     * Analytics request.</p>
+     */
+    inline const Aws::String& GetVocabularyNames() const { return m_vocabularyNames; }
+    inline bool VocabularyNamesHasBeenSet() const { return m_vocabularyNamesHasBeenSet; }
+    template<typename VocabularyNamesT = Aws::String>
+    void SetVocabularyNames(VocabularyNamesT&& value) { m_vocabularyNamesHasBeenSet = true; m_vocabularyNames = std::forward<VocabularyNamesT>(value); }
+    template<typename VocabularyNamesT = Aws::String>
+    StartCallAnalyticsStreamTranscriptionInitialResponse& WithVocabularyNames(VocabularyNamesT&& value) { SetVocabularyNames(std::forward<VocabularyNamesT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Provides the names of the custom vocabulary filters that you specified in
+     * your Call Analytics request.</p>
+     */
+    inline const Aws::String& GetVocabularyFilterNames() const { return m_vocabularyFilterNames; }
+    inline bool VocabularyFilterNamesHasBeenSet() const { return m_vocabularyFilterNamesHasBeenSet; }
+    template<typename VocabularyFilterNamesT = Aws::String>
+    void SetVocabularyFilterNames(VocabularyFilterNamesT&& value) { m_vocabularyFilterNamesHasBeenSet = true; m_vocabularyFilterNames = std::forward<VocabularyFilterNamesT>(value); }
+    template<typename VocabularyFilterNamesT = Aws::String>
+    StartCallAnalyticsStreamTranscriptionInitialResponse& WithVocabularyFilterNames(VocabularyFilterNamesT&& value) { SetVocabularyFilterNames(std::forward<VocabularyFilterNamesT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Shows whether partial results stabilization was enabled for your Call
      * Analytics transcription.</p>
      */
@@ -228,6 +289,21 @@ namespace Model
 
     Aws::String m_languageModelName;
     bool m_languageModelNameHasBeenSet = false;
+
+    bool m_identifyLanguage{false};
+    bool m_identifyLanguageHasBeenSet = false;
+
+    Aws::String m_languageOptions;
+    bool m_languageOptionsHasBeenSet = false;
+
+    CallAnalyticsLanguageCode m_preferredLanguage{CallAnalyticsLanguageCode::NOT_SET};
+    bool m_preferredLanguageHasBeenSet = false;
+
+    Aws::String m_vocabularyNames;
+    bool m_vocabularyNamesHasBeenSet = false;
+
+    Aws::String m_vocabularyFilterNames;
+    bool m_vocabularyFilterNamesHasBeenSet = false;
 
     bool m_enablePartialResultsStabilization{false};
     bool m_enablePartialResultsStabilizationHasBeenSet = false;
