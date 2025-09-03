@@ -37,7 +37,6 @@ def main():
 
         with tempfile.NamedTemporaryFile(mode='w+', suffix='.json') as temp_file:
             json_output_path = temp_file.name
-            temp_file.close()
             test_command = [executable, f'--gtest_output=json:{json_output_path}']
             subprocess.run(test_command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
@@ -47,11 +46,14 @@ def main():
             for test_suite in test_results.get('testsuites', []):
                 total_tests += test_suite['tests']
                 for test in test_suite.get('testsuite', []):
+                    failure_msg = None
+                    if 'failures' in test and test['failures']:
+                        failure_msg = test['failures'][0].get('failure', '')
                     all_results[service].append({
                         'service': service,
                         'name': test['name'],
                         'status': test['status'],
-                        'failure': test.get('failure'),
+                        'failure': failure_msg,
                     })
 
     print(f"1..{total_tests}")
@@ -65,12 +67,14 @@ def main():
             failure = result['failure']
             error_expected = "error expected from service" if "Failure" in test_name or "Error" in test_name else "no error expected from service"
 
-            if status == 'RUN':
+            if status == 'RUN' and not failure:
                 print(f"ok {service} {test_name} - {error_expected}")
             else:
                 print(f"not ok {service} {test_name}")
                 if failure:
-                    print(f"# {failure}")
+                    for line in failure.split('\n'):
+                        if line.strip():
+                            print(f"# {line}")
 
     return 0
 
