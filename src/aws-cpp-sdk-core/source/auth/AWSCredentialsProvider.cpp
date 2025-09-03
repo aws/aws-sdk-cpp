@@ -366,7 +366,7 @@ void ProcessCredentialsProvider::Reload()
     }
     m_credentials = GetCredentialsFromProcess(command);
     if (!m_credentials.IsEmpty()) {
-        m_credentials.AddUserAgentFeature(UserAgentFeature::CREDENTIALS_PROFILE_PROCESS);
+        m_credentials.AddUserAgentFeature(UserAgentFeature::CREDENTIALS_PROCESS);
     }
 }
 
