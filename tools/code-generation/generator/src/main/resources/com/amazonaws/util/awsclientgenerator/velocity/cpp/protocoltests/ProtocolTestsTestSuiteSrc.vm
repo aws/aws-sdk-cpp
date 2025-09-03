@@ -16,7 +16,16 @@ using namespace Aws::$serviceNs::Model;
 AWS_PROTOCOL_TEST($testSuite.name, $case.id) {
   $serviceClient client(mockCredentials, mockConfig);
 
-#if($case.output)
+#if($case.input && $serviceModel.metadata.protocol == "smithy-rpc-v2-cbor")
+  //Cbor specific
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+#if($case.input.get().serialized.body)
+  mockRs.body = "${case.input.get().serialized.body}";
+#end
+  SetMockResponse(mockRs);
+
+#elseif($case.output)
   OutputResponse mockRs;
   mockRs.statusCode = ${case.output.get().response.status_code};
 #if($case.output.get().response.headers)
@@ -74,7 +83,11 @@ AWS_PROTOCOL_TEST($testSuite.name, $case.id) {
 #end
 };
 #end
+#if($serviceModel.metadata.protocol == "smithy-rpc-v2-cbor")
+  ValidateRequestSent(expectedRq, true);
+#else
   ValidateRequestSent(expectedRq);
+#end
 #else
   ValidateRequestSent();
 #end

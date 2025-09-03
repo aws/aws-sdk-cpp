@@ -28,6 +28,10 @@ namespace Aws
         {
             class JsonValue;
         }
+        namespace Cbor
+        {
+            class CborValue;
+        }
     }
 
     namespace Client
@@ -114,6 +118,23 @@ namespace Aws
 
          protected:
           const Aws::Utils::Xml::XmlDocument& GetXmlPayloadFromError(const AWSError<CoreErrors>&) const;
+        };
+
+        class AWS_CORE_API RpcV2ErrorMarshaller : public AWSErrorMarshaller {
+          using AWSErrorMarshaller::Marshall;
+
+        public:
+          /**
+           * Converts an exceptionName and message into an Error object, if it can be parsed. Otherwise, it returns
+           * and AWSError with CoreErrors::UNKNOWN as the error type.
+           */
+          AWSError<CoreErrors> Marshall(const Aws::Http::HttpResponse& response) const override;
+
+          AWSError<CoreErrors> BuildAWSError(const std::shared_ptr<Http::HttpResponse>& httpResponse) const override;
+
+        protected:
+          const Aws::Utils::Cbor::CborValue& GetCborPayloadFromError(const AWSError<CoreErrors>&) const;
+          static Aws::Utils::Cbor::CborValue GetCborPayloadHttpResponse(const Http::HttpResponse& httpResponse);
         };
 
     } // namespace Client

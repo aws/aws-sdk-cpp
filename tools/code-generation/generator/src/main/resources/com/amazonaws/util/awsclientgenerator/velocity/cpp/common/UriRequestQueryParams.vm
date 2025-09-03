@@ -36,6 +36,9 @@ ${indent}          CoreErrors::ENDPOINT_RESOLUTION_FAILURE, "ENDPOINT_RESOLUTION
 ${indent}      return;
 ${indent}  }
 #end
+#if($serviceModel.metadata.protocol == "smithy-rpc-v2-cbor")
+${indent}  endpointResolutionOutcome.GetResult().AddPathSegment("/service/${serviceModel.metadata.targetPrefix}/operation/${operation.name}");
+#end
 #if($operation.http.requestUri.contains("?"))
 ${indent}  Aws::StringStream ss;
 #end

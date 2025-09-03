@@ -8,6 +8,7 @@ package com.amazonaws.util.awsclientgenerator.config;
 import com.amazonaws.util.awsclientgenerator.SdkSpec;
 import com.amazonaws.util.awsclientgenerator.config.exceptions.GeneratorNotImplementedException;
 import com.amazonaws.util.awsclientgenerator.generators.ClientGenerator;
+import com.amazonaws.util.awsclientgenerator.generators.cpp.CborCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.JsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.QueryCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.RestXmlCppClientGenerator;
@@ -73,6 +74,7 @@ public class ServiceGeneratorConfig {
 
             // protocol tests clients
             SPEC_OVERRIDE_MAPPING.put("cpp-ec2-protocol-ec2", new Ec2CppClientGenerator());
+            SPEC_OVERRIDE_MAPPING.put("cpp-rpcv2protocol-smithy-rpc-v2-cbor", new CborCppClientGenerator());
         } catch (Exception e) {
             e.printStackTrace();
         }
