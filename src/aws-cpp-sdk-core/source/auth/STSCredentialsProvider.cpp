@@ -17,12 +17,13 @@ const char* STS_LOG_TAG = "STSAssumeRoleWebIdentityCredentialsProvider";
 struct SettingResult {
     Aws::String value;
     bool fromEnv;
+    bool fromProfile;
 };
 }
 
 STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentialsProvider(
     Aws::Client::ClientConfiguration::CredentialProviderConfiguration credentialsConfig)
-    : m_credentialsProvider(nullptr), m_providerFuturesTimeoutMs(credentialsConfig.stsCredentialsProviderConfig.retrieveCredentialsFutureTimeout), m_usedEnvVars(false)
+    : m_credentialsProvider(nullptr), m_providerFuturesTimeoutMs(credentialsConfig.stsCredentialsProviderConfig.retrieveCredentialsFutureTimeout), m_usedEnvVars(false), m_usedSourceProfile(false)
 {
   Aws::Crt::Auth::CredentialsProviderSTSWebIdentityConfig stsConfig{};
   stsConfig.Bootstrap = GetDefaultClientBootstrap();
@@ -53,10 +54,11 @@ SettingResult GetLegacySettingFromEnvOrProfile(const Aws::String& envVar,
     std::function<Aws::String (Aws::Config::Profile)> profileFetchFunction) {
     auto value = Aws::Environment::GetEnv(envVar.c_str());
     if (!value.empty()) {
-        return {value, true};
+        return {value, true, false};
     }
     auto profile = Aws::Config::GetCachedConfigProfile(Aws::Auth::GetConfigProfileName());
-    return {profileFetchFunction(profile), false};
+    auto profileValue = profileFetchFunction(profile);
+    return {profileValue, false, !profileValue.empty()};
 }
 
 STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentialsProvider()
@@ -69,6 +71,9 @@ STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentials
               
               m_usedEnvVars = roleArn.fromEnv && tokenFile.fromEnv && 
                               !roleArn.value.empty() && !tokenFile.value.empty();
+              
+              m_usedSourceProfile = roleArn.fromProfile && tokenFile.fromProfile && 
+                                  !roleArn.value.empty() && !tokenFile.value.empty();
 
               return Aws::Client::ClientConfiguration::CredentialProviderConfiguration{
                   Aws::Auth::GetConfigProfileName(),
@@ -125,6 +130,10 @@ AWSCredentials STSAssumeRoleWebIdentityCredentialsProvider::GetAWSCredentials() 
     
     if (m_usedEnvVars) {
       credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS_STS_WEB_ID_TOKEN);
+    }
+    
+    if (m_usedSourceProfile) {
+      credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_PROFILE_SOURCE_PROFILE);
     }
   }
 

@@ -51,6 +51,7 @@ namespace Aws
             std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_credentialsProvider;
             std::chrono::milliseconds m_providerFuturesTimeoutMs;
             bool m_usedEnvVars;
+            bool m_usedSourceProfile;
         };
     } // namespace Auth
 } // namespace Aws

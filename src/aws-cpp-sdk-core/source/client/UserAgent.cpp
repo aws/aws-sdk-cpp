@@ -45,6 +45,7 @@ const std::pair<UserAgentFeature, const char*> BUSINESS_METRIC_MAPPING[] = {
     {UserAgentFeature::CREDENTIALS_ENV_VARS, "g"},
     {UserAgentFeature::CREDENTIALS_ENV_VARS_STS_WEB_ID_TOKEN, "h"},
     {UserAgentFeature::CREDENTIALS_PROFILE, "n"},
+    {UserAgentFeature::CREDENTIALS_PROFILE_SOURCE_PROFILE, "o"},
     {UserAgentFeature::CREDENTIALS_PROCESS, "w"},
     {UserAgentFeature::CREDENTIALS_IMDS, "0"},
     {UserAgentFeature::CREDENTIALS_STS_ASSUME_ROLE, "i"},
