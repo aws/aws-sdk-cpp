@@ -45,6 +45,7 @@ public class ServiceGeneratorConfig {
             LANGUAGE_PROTOCOL_DEFAULT_MAPPING.put("cpp-application-json", new JsonCppClientGenerator());
             LANGUAGE_PROTOCOL_DEFAULT_MAPPING.put("cpp-rest-xml", new RestXmlCppClientGenerator());
             LANGUAGE_PROTOCOL_DEFAULT_MAPPING.put("cpp-query", new QueryCppClientGenerator());
+            LANGUAGE_PROTOCOL_DEFAULT_MAPPING.put("cpp-smithy-rpc-v2-cbor", new CborCppClientGenerator());
         } catch (Exception e) {
             e.printStackTrace();
         }
