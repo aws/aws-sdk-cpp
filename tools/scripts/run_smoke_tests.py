@@ -9,7 +9,12 @@ from collections import defaultdict
 def main():
     parser = argparse.ArgumentParser(description='Run smoke tests')
     parser.add_argument('--testDir', default='./build', help='Path to build directory')
+    parser.add_argument('--test-failures', action='store_true', help='Use invalid credentials to test failure messages')
     args = parser.parse_args()
+    
+    if args.test_failures:
+        os.environ['AWS_ACCESS_KEY_ID'] = 'INVALID_KEY'
+        os.environ['AWS_SECRET_ACCESS_KEY'] = 'INVALID_SECRET'
 
     smoke_tests_dir = os.path.join(args.testDir, "generated/smoke-tests")
 
@@ -35,13 +40,17 @@ def main():
     for service in services:
         executable = os.path.join(smoke_tests_dir, service, f"{service}-smoke-tests")
 
-        with tempfile.NamedTemporaryFile(mode='w+', suffix='.json') as temp_file:
-            json_output_path = temp_file.name
+        fd, json_output_path = tempfile.mkstemp(suffix='.json')
+        os.close(fd)  # Close the file descriptor so subprocess can write
+        
+        try:
             test_command = [executable, f'--gtest_output=json:{json_output_path}']
             subprocess.run(test_command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
             with open(json_output_path, 'r') as f:
                 test_results = json.load(f)
+        finally:
+            os.unlink(json_output_path)
 
             for test_suite in test_results.get('testsuites', []):
                 total_tests += test_suite['tests']
