@@ -195,8 +195,8 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonSupportsNaNFloatHeaderOutpu
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const InputAndOutputWithHeadersResult& result = outcome.GetResult();
   /* expectedResult = R"( {"headerFloat":"NaN","headerDouble":"NaN"} )" */
-  EXPECT_EQ(std::numeric_limits<double>::quiet_NaN(), result.GetHeaderFloat());
-  EXPECT_EQ(std::numeric_limits<double>::quiet_NaN(), result.GetHeaderDouble());
+  EXPECT_TRUE(std::isnan(result.GetHeaderFloat()));
+  EXPECT_TRUE(std::isnan(result.GetHeaderDouble()));
 }
 
 AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonSupportsInfinityFloatHeaderOutputs) {

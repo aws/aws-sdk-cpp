@@ -51,7 +51,7 @@ QueryCompatibleJSONRPC10Client::QueryCompatibleJSONRPC10Client(const QueryCompat
                                                                std::shared_ptr<QueryCompatibleJSONRPC10EndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<QueryCompatibleJSONRPC10ErrorMarshaller>(ALLOCATION_TAG)),

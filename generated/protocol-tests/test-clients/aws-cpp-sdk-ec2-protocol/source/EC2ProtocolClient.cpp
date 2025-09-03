@@ -76,7 +76,7 @@ EC2ProtocolClient::EC2ProtocolClient(const EC2Protocol::EC2ProtocolClientConfigu
                                      std::shared_ptr<EC2ProtocolEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<EC2ProtocolErrorMarshaller>(ALLOCATION_TAG)),

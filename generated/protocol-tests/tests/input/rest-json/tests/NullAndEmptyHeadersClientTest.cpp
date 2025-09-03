@@ -17,7 +17,6 @@ AWS_PROTOCOL_TEST(NullAndEmptyHeadersClient, RestJsonNullAndEmptyHeaders) {
   SetMockResponse();
 
   NullAndEmptyHeadersClientRequest request;
-  request.SetA(R"(null)");
   request.SetB(R"()");
   request.SetC({});
 

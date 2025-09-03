@@ -44,7 +44,6 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RestJsonDoesntSerializeNullStructureVa
   SetMockResponse();
 
   SimpleScalarPropertiesRequest request;
-  request.SetStringValue(R"(null)");
 
   auto outcome = client.SimpleScalarProperties(request);
   ExpectedRequest expectedRq;

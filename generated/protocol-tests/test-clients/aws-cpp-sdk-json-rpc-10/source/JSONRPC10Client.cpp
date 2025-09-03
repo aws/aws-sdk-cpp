@@ -61,7 +61,7 @@ JSONRPC10Client::JSONRPC10Client(const JSONRPC10::JSONRPC10ClientConfiguration& 
                                  std::shared_ptr<JSONRPC10EndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<JSONRPC10ErrorMarshaller>(ALLOCATION_TAG)),

@@ -17,7 +17,6 @@ AWS_PROTOCOL_TEST(OmitsNullSerializesEmptyString, RestJsonOmitsNullQuery) {
   SetMockResponse();
 
   OmitsNullSerializesEmptyStringRequest request;
-  request.SetNullValue(R"(null)");
 
   auto outcome = client.OmitsNullSerializesEmptyString(request);
   ExpectedRequest expectedRq;
