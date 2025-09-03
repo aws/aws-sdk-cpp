@@ -110,7 +110,7 @@ public:
     AWS_ASSERT_SUCCESS(setNextResponse);
   }
 
-  void ValidateRequestSent(const ExpectedRequest& expected = ExpectedRequest()) const {
+  void ValidateRequestSent(const ExpectedRequest& expected = ExpectedRequest(), const bool ignoreBody = false) const {
     auto requestsReceivedOutcome = mockClient.GetRequestsReceived();
     AWS_ASSERT_SUCCESS(requestsReceivedOutcome);
     ASSERT_EQ(1u, requestsReceivedOutcome.GetResult().GetRequests().size());
@@ -119,7 +119,7 @@ public:
     if (!expected.method.empty()) {
       EXPECT_STREQ(expected.method.c_str(), receivedRequest.GetMethod().c_str());
     }
-    if (!expected.body.empty()) {
+    if (!expected.body.empty() && !ignoreBody) {
       const auto expectedBodyBuf = Aws::Utils::HashingUtils::Base64Decode(expected.body);
       const auto receivedBodyBuf = Aws::Utils::HashingUtils::Base64Decode(receivedRequest.GetBody());
       const auto expectedBodyStr = Aws::String(reinterpret_cast<char*>(expectedBodyBuf.GetUnderlyingData()), expectedBodyBuf.GetLength());
