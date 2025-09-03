@@ -23,7 +23,7 @@ struct SettingResult {
 
 STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentialsProvider(
     Aws::Client::ClientConfiguration::CredentialProviderConfiguration credentialsConfig)
-    : m_credentialsProvider(nullptr), m_providerFuturesTimeoutMs(credentialsConfig.stsCredentialsProviderConfig.retrieveCredentialsFutureTimeout), m_usedEnvVars(false), m_usedSourceProfile(false)
+    : m_credentialsProvider(nullptr), m_providerFuturesTimeoutMs(credentialsConfig.stsCredentialsProviderConfig.retrieveCredentialsFutureTimeout), m_usedEnvToken(false), m_usedProfileToken(false), m_usedSourceProfile(false), m_usedNamedProvider(false)
 {
   Aws::Crt::Auth::CredentialsProviderSTSWebIdentityConfig stsConfig{};
   stsConfig.Bootstrap = GetDefaultClientBootstrap();
@@ -69,11 +69,22 @@ STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentials
               auto tokenFile = GetLegacySettingFromEnvOrProfile("AWS_WEB_IDENTITY_TOKEN_FILE",
                   [](const Aws::Config::Profile& profile) -> Aws::String { return profile.GetValue("web_identity_token_file"); });
               
-              m_usedEnvVars = roleArn.fromEnv && tokenFile.fromEnv && 
+              m_usedEnvToken = roleArn.fromEnv && tokenFile.fromEnv && 
                               !roleArn.value.empty() && !tokenFile.value.empty();
               
-              m_usedSourceProfile = roleArn.fromProfile && tokenFile.fromProfile && 
-                                  !roleArn.value.empty() && !tokenFile.value.empty();
+              m_usedProfileToken = roleArn.fromProfile && tokenFile.fromProfile && 
+                                   !roleArn.value.empty() && !tokenFile.value.empty();
+
+              // Check for source_profile usage when role comes from profile but no token file
+              if (roleArn.fromProfile && !tokenFile.fromProfile && !roleArn.value.empty()) {
+                auto profile = Aws::Config::GetCachedConfigProfile(Aws::Auth::GetConfigProfileName());
+                m_usedSourceProfile = !profile.GetSourceProfile().empty();
+                // Check if source profile is a named provider (has assume role config)
+                if (m_usedSourceProfile) {
+                  auto sourceProfile = Aws::Config::GetCachedConfigProfile(profile.GetSourceProfile());
+                  m_usedNamedProvider = !sourceProfile.GetRoleArn().empty();
+                }
+              }
 
               return Aws::Client::ClientConfiguration::CredentialProviderConfiguration{
                   Aws::Auth::GetConfigProfileName(),
@@ -128,12 +139,23 @@ AWSCredentials STSAssumeRoleWebIdentityCredentialsProvider::GetAWSCredentials() 
   if (!credentials.IsEmpty()) {
     credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_STS_ASSUME_ROLE);
     
-    if (m_usedEnvVars) {
+    if (m_usedEnvToken) {
       credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_ENV_VARS_STS_WEB_ID_TOKEN);
     }
     
+    if (m_usedProfileToken) {
+      // Profile has web_identity_token_file directly
+      credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_PROFILE_STS_WEB_ID_TOKEN);
+    }
+    
     if (m_usedSourceProfile) {
-      credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_PROFILE_SOURCE_PROFILE);
+      if (m_usedNamedProvider) {
+        // Profile uses source_profile AND the source profile is a named provider
+        credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_PROFILE_NAMED_PROVIDER);
+      } else {
+        // Profile uses source_profile but source profile has static credentials
+        credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_PROFILE_SOURCE_PROFILE);
+      }
     }
   }
 

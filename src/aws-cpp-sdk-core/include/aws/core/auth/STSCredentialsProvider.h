@@ -50,8 +50,10 @@ namespace Aws
             std::condition_variable m_refreshSignal;
             std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_credentialsProvider;
             std::chrono::milliseconds m_providerFuturesTimeoutMs;
-            bool m_usedEnvVars;
+            bool m_usedEnvToken;
+            bool m_usedProfileToken;
             bool m_usedSourceProfile;
+            bool m_usedNamedProvider;
         };
     } // namespace Auth
 } // namespace Aws
