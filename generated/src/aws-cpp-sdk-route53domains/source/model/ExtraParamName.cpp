@@ -51,6 +51,9 @@ namespace Aws
         static const int UK_COMPANY_NUMBER_HASH = HashingUtils::HashString("UK_COMPANY_NUMBER");
         static const int EU_COUNTRY_OF_CITIZENSHIP_HASH = HashingUtils::HashString("EU_COUNTRY_OF_CITIZENSHIP");
         static const int AU_PRIORITY_TOKEN_HASH = HashingUtils::HashString("AU_PRIORITY_TOKEN");
+        static const int AU_ELIGIBILITY_TYPE_HASH = HashingUtils::HashString("AU_ELIGIBILITY_TYPE");
+        static const int AU_POLICY_REASON_HASH = HashingUtils::HashString("AU_POLICY_REASON");
+        static const int AU_REGISTRANT_NAME_HASH = HashingUtils::HashString("AU_REGISTRANT_NAME");
 
 
         ExtraParamName GetExtraParamNameForName(const Aws::String& name)
@@ -180,6 +183,18 @@ namespace Aws
           {
             return ExtraParamName::AU_PRIORITY_TOKEN;
           }
+          else if (hashCode == AU_ELIGIBILITY_TYPE_HASH)
+          {
+            return ExtraParamName::AU_ELIGIBILITY_TYPE;
+          }
+          else if (hashCode == AU_POLICY_REASON_HASH)
+          {
+            return ExtraParamName::AU_POLICY_REASON;
+          }
+          else if (hashCode == AU_REGISTRANT_NAME_HASH)
+          {
+            return ExtraParamName::AU_REGISTRANT_NAME;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -258,6 +273,12 @@ namespace Aws
             return "EU_COUNTRY_OF_CITIZENSHIP";
           case ExtraParamName::AU_PRIORITY_TOKEN:
             return "AU_PRIORITY_TOKEN";
+          case ExtraParamName::AU_ELIGIBILITY_TYPE:
+            return "AU_ELIGIBILITY_TYPE";
+          case ExtraParamName::AU_POLICY_REASON:
+            return "AU_POLICY_REASON";
+          case ExtraParamName::AU_REGISTRANT_NAME:
+            return "AU_REGISTRANT_NAME";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

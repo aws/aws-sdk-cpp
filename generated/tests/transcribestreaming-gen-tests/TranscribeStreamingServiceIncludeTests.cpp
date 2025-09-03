@@ -20,6 +20,7 @@
 #include <aws/transcribestreaming/model/CallAnalyticsEntity.h>
 #include <aws/transcribestreaming/model/CallAnalyticsItem.h>
 #include <aws/transcribestreaming/model/CallAnalyticsLanguageCode.h>
+#include <aws/transcribestreaming/model/CallAnalyticsLanguageWithScore.h>
 #include <aws/transcribestreaming/model/CallAnalyticsTranscriptResultStream.h>
 #include <aws/transcribestreaming/model/CategoryEvent.h>
 #include <aws/transcribestreaming/model/ChannelDefinition.h>

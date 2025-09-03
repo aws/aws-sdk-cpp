@@ -100,6 +100,15 @@ Collaboration& Collaboration::operator =(JsonView jsonValue)
     m_analyticsEngine = AnalyticsEngineMapper::GetAnalyticsEngineForName(jsonValue.GetString("analyticsEngine"));
     m_analyticsEngineHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("autoApprovedChangeTypes"))
+  {
+    Aws::Utils::Array<JsonView> autoApprovedChangeTypesJsonList = jsonValue.GetArray("autoApprovedChangeTypes");
+    for(unsigned autoApprovedChangeTypesIndex = 0; autoApprovedChangeTypesIndex < autoApprovedChangeTypesJsonList.GetLength(); ++autoApprovedChangeTypesIndex)
+    {
+      m_autoApprovedChangeTypes.push_back(AutoApprovedChangeTypeMapper::GetAutoApprovedChangeTypeForName(autoApprovedChangeTypesJsonList[autoApprovedChangeTypesIndex].AsString()));
+    }
+    m_autoApprovedChangeTypesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -189,6 +198,17 @@ JsonValue Collaboration::Jsonize() const
   if(m_analyticsEngineHasBeenSet)
   {
    payload.WithString("analyticsEngine", AnalyticsEngineMapper::GetNameForAnalyticsEngine(m_analyticsEngine));
+  }
+
+  if(m_autoApprovedChangeTypesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> autoApprovedChangeTypesJsonList(m_autoApprovedChangeTypes.size());
+   for(unsigned autoApprovedChangeTypesIndex = 0; autoApprovedChangeTypesIndex < autoApprovedChangeTypesJsonList.GetLength(); ++autoApprovedChangeTypesIndex)
+   {
+     autoApprovedChangeTypesJsonList[autoApprovedChangeTypesIndex].AsString(AutoApprovedChangeTypeMapper::GetNameForAutoApprovedChangeType(m_autoApprovedChangeTypes[autoApprovedChangeTypesIndex]));
+   }
+   payload.WithArray("autoApprovedChangeTypes", std::move(autoApprovedChangeTypesJsonList));
+
   }
 
   return payload;

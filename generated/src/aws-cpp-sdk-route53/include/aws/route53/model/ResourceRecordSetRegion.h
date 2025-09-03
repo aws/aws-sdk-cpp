@@ -52,7 +52,8 @@ namespace Model
     ap_southeast_7,
     us_gov_east_1,
     us_gov_west_1,
-    ap_east_2
+    ap_east_2,
+    ap_southeast_6
   };
 
 namespace ResourceRecordSetRegionMapper

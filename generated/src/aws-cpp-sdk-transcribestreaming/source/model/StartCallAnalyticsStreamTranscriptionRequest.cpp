@@ -75,6 +75,39 @@ Aws::Http::HeaderValueCollection StartCallAnalyticsStreamTranscriptionRequest::G
     ss.str("");
   }
 
+  if(m_identifyLanguageHasBeenSet)
+  {
+    ss << std::boolalpha << m_identifyLanguage;
+    headers.emplace("x-amzn-transcribe-identify-language", ss.str());
+    ss.str("");
+  }
+
+  if(m_languageOptionsHasBeenSet)
+  {
+    ss << m_languageOptions;
+    headers.emplace("x-amzn-transcribe-language-options",  ss.str());
+    ss.str("");
+  }
+
+  if(m_preferredLanguageHasBeenSet && m_preferredLanguage != CallAnalyticsLanguageCode::NOT_SET)
+  {
+    headers.emplace("x-amzn-transcribe-preferred-language", CallAnalyticsLanguageCodeMapper::GetNameForCallAnalyticsLanguageCode(m_preferredLanguage));
+  }
+
+  if(m_vocabularyNamesHasBeenSet)
+  {
+    ss << m_vocabularyNames;
+    headers.emplace("x-amzn-transcribe-vocabulary-names",  ss.str());
+    ss.str("");
+  }
+
+  if(m_vocabularyFilterNamesHasBeenSet)
+  {
+    ss << m_vocabularyFilterNames;
+    headers.emplace("x-amzn-transcribe-vocabulary-filter-names",  ss.str());
+    ss.str("");
+  }
+
   if(m_enablePartialResultsStabilizationHasBeenSet)
   {
     ss << std::boolalpha << m_enablePartialResultsStabilization;

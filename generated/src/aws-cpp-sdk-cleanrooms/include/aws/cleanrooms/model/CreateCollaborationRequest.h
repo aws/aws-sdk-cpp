@@ -17,6 +17,7 @@
 #include <aws/cleanrooms/model/AnalyticsEngine.h>
 #include <aws/cleanrooms/model/MemberSpecification.h>
 #include <aws/cleanrooms/model/MemberAbility.h>
+#include <aws/cleanrooms/model/AutoApprovedChangeType.h>
 #include <utility>
 
 namespace Aws
@@ -201,6 +202,20 @@ namespace Model
     inline void SetAnalyticsEngine(AnalyticsEngine value) { m_analyticsEngineHasBeenSet = true; m_analyticsEngine = value; }
     inline CreateCollaborationRequest& WithAnalyticsEngine(AnalyticsEngine value) { SetAnalyticsEngine(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The types of change requests that are automatically approved for this
+     * collaboration.</p>
+     */
+    inline const Aws::Vector<AutoApprovedChangeType>& GetAutoApprovedChangeRequestTypes() const { return m_autoApprovedChangeRequestTypes; }
+    inline bool AutoApprovedChangeRequestTypesHasBeenSet() const { return m_autoApprovedChangeRequestTypesHasBeenSet; }
+    template<typename AutoApprovedChangeRequestTypesT = Aws::Vector<AutoApprovedChangeType>>
+    void SetAutoApprovedChangeRequestTypes(AutoApprovedChangeRequestTypesT&& value) { m_autoApprovedChangeRequestTypesHasBeenSet = true; m_autoApprovedChangeRequestTypes = std::forward<AutoApprovedChangeRequestTypesT>(value); }
+    template<typename AutoApprovedChangeRequestTypesT = Aws::Vector<AutoApprovedChangeType>>
+    CreateCollaborationRequest& WithAutoApprovedChangeRequestTypes(AutoApprovedChangeRequestTypesT&& value) { SetAutoApprovedChangeRequestTypes(std::forward<AutoApprovedChangeRequestTypesT>(value)); return *this;}
+    inline CreateCollaborationRequest& AddAutoApprovedChangeRequestTypes(AutoApprovedChangeType value) { m_autoApprovedChangeRequestTypesHasBeenSet = true; m_autoApprovedChangeRequestTypes.push_back(value); return *this; }
+    ///@}
   private:
 
     Aws::Vector<MemberSpecification> m_members;
@@ -238,6 +253,9 @@ namespace Model
 
     AnalyticsEngine m_analyticsEngine{AnalyticsEngine::NOT_SET};
     bool m_analyticsEngineHasBeenSet = false;
+
+    Aws::Vector<AutoApprovedChangeType> m_autoApprovedChangeRequestTypes;
+    bool m_autoApprovedChangeRequestTypesHasBeenSet = false;
   };
 
 } // namespace Model

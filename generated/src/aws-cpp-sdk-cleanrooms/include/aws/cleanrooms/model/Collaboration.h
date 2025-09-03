@@ -12,6 +12,8 @@
 #include <aws/cleanrooms/model/CollaborationQueryLogStatus.h>
 #include <aws/cleanrooms/model/CollaborationJobLogStatus.h>
 #include <aws/cleanrooms/model/AnalyticsEngine.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cleanrooms/model/AutoApprovedChangeType.h>
 #include <utility>
 
 namespace Aws
@@ -225,6 +227,20 @@ namespace Model
     inline void SetAnalyticsEngine(AnalyticsEngine value) { m_analyticsEngineHasBeenSet = true; m_analyticsEngine = value; }
     inline Collaboration& WithAnalyticsEngine(AnalyticsEngine value) { SetAnalyticsEngine(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The types of change requests that are automatically approved for this
+     * collaboration.</p>
+     */
+    inline const Aws::Vector<AutoApprovedChangeType>& GetAutoApprovedChangeTypes() const { return m_autoApprovedChangeTypes; }
+    inline bool AutoApprovedChangeTypesHasBeenSet() const { return m_autoApprovedChangeTypesHasBeenSet; }
+    template<typename AutoApprovedChangeTypesT = Aws::Vector<AutoApprovedChangeType>>
+    void SetAutoApprovedChangeTypes(AutoApprovedChangeTypesT&& value) { m_autoApprovedChangeTypesHasBeenSet = true; m_autoApprovedChangeTypes = std::forward<AutoApprovedChangeTypesT>(value); }
+    template<typename AutoApprovedChangeTypesT = Aws::Vector<AutoApprovedChangeType>>
+    Collaboration& WithAutoApprovedChangeTypes(AutoApprovedChangeTypesT&& value) { SetAutoApprovedChangeTypes(std::forward<AutoApprovedChangeTypesT>(value)); return *this;}
+    inline Collaboration& AddAutoApprovedChangeTypes(AutoApprovedChangeType value) { m_autoApprovedChangeTypesHasBeenSet = true; m_autoApprovedChangeTypes.push_back(value); return *this; }
+    ///@}
   private:
 
     Aws::String m_id;
@@ -271,6 +287,9 @@ namespace Model
 
     AnalyticsEngine m_analyticsEngine{AnalyticsEngine::NOT_SET};
     bool m_analyticsEngineHasBeenSet = false;
+
+    Aws::Vector<AutoApprovedChangeType> m_autoApprovedChangeTypes;
+    bool m_autoApprovedChangeTypesHasBeenSet = false;
   };
 
 } // namespace Model

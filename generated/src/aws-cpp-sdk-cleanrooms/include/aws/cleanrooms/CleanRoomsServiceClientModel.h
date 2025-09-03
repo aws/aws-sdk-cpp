@@ -23,6 +23,7 @@
 #include <aws/cleanrooms/model/BatchGetSchemaAnalysisRuleResult.h>
 #include <aws/cleanrooms/model/CreateAnalysisTemplateResult.h>
 #include <aws/cleanrooms/model/CreateCollaborationResult.h>
+#include <aws/cleanrooms/model/CreateCollaborationChangeRequestResult.h>
 #include <aws/cleanrooms/model/CreateConfiguredAudienceModelAssociationResult.h>
 #include <aws/cleanrooms/model/CreateConfiguredTableResult.h>
 #include <aws/cleanrooms/model/CreateConfiguredTableAnalysisRuleResult.h>
@@ -47,6 +48,7 @@
 #include <aws/cleanrooms/model/GetAnalysisTemplateResult.h>
 #include <aws/cleanrooms/model/GetCollaborationResult.h>
 #include <aws/cleanrooms/model/GetCollaborationAnalysisTemplateResult.h>
+#include <aws/cleanrooms/model/GetCollaborationChangeRequestResult.h>
 #include <aws/cleanrooms/model/GetCollaborationConfiguredAudienceModelAssociationResult.h>
 #include <aws/cleanrooms/model/GetCollaborationIdNamespaceAssociationResult.h>
 #include <aws/cleanrooms/model/GetCollaborationPrivacyBudgetTemplateResult.h>
@@ -65,6 +67,7 @@
 #include <aws/cleanrooms/model/GetSchemaAnalysisRuleResult.h>
 #include <aws/cleanrooms/model/ListAnalysisTemplatesResult.h>
 #include <aws/cleanrooms/model/ListCollaborationAnalysisTemplatesResult.h>
+#include <aws/cleanrooms/model/ListCollaborationChangeRequestsResult.h>
 #include <aws/cleanrooms/model/ListCollaborationConfiguredAudienceModelAssociationsResult.h>
 #include <aws/cleanrooms/model/ListCollaborationIdNamespaceAssociationsResult.h>
 #include <aws/cleanrooms/model/ListCollaborationPrivacyBudgetTemplatesResult.h>
@@ -150,6 +153,7 @@ namespace Aws
       class BatchGetSchemaAnalysisRuleRequest;
       class CreateAnalysisTemplateRequest;
       class CreateCollaborationRequest;
+      class CreateCollaborationChangeRequestRequest;
       class CreateConfiguredAudienceModelAssociationRequest;
       class CreateConfiguredTableRequest;
       class CreateConfiguredTableAnalysisRuleRequest;
@@ -174,6 +178,7 @@ namespace Aws
       class GetAnalysisTemplateRequest;
       class GetCollaborationRequest;
       class GetCollaborationAnalysisTemplateRequest;
+      class GetCollaborationChangeRequestRequest;
       class GetCollaborationConfiguredAudienceModelAssociationRequest;
       class GetCollaborationIdNamespaceAssociationRequest;
       class GetCollaborationPrivacyBudgetTemplateRequest;
@@ -192,6 +197,7 @@ namespace Aws
       class GetSchemaAnalysisRuleRequest;
       class ListAnalysisTemplatesRequest;
       class ListCollaborationAnalysisTemplatesRequest;
+      class ListCollaborationChangeRequestsRequest;
       class ListCollaborationConfiguredAudienceModelAssociationsRequest;
       class ListCollaborationIdNamespaceAssociationsRequest;
       class ListCollaborationPrivacyBudgetTemplatesRequest;
@@ -237,6 +243,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<BatchGetSchemaAnalysisRuleResult, CleanRoomsError> BatchGetSchemaAnalysisRuleOutcome;
       typedef Aws::Utils::Outcome<CreateAnalysisTemplateResult, CleanRoomsError> CreateAnalysisTemplateOutcome;
       typedef Aws::Utils::Outcome<CreateCollaborationResult, CleanRoomsError> CreateCollaborationOutcome;
+      typedef Aws::Utils::Outcome<CreateCollaborationChangeRequestResult, CleanRoomsError> CreateCollaborationChangeRequestOutcome;
       typedef Aws::Utils::Outcome<CreateConfiguredAudienceModelAssociationResult, CleanRoomsError> CreateConfiguredAudienceModelAssociationOutcome;
       typedef Aws::Utils::Outcome<CreateConfiguredTableResult, CleanRoomsError> CreateConfiguredTableOutcome;
       typedef Aws::Utils::Outcome<CreateConfiguredTableAnalysisRuleResult, CleanRoomsError> CreateConfiguredTableAnalysisRuleOutcome;
@@ -261,6 +268,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetAnalysisTemplateResult, CleanRoomsError> GetAnalysisTemplateOutcome;
       typedef Aws::Utils::Outcome<GetCollaborationResult, CleanRoomsError> GetCollaborationOutcome;
       typedef Aws::Utils::Outcome<GetCollaborationAnalysisTemplateResult, CleanRoomsError> GetCollaborationAnalysisTemplateOutcome;
+      typedef Aws::Utils::Outcome<GetCollaborationChangeRequestResult, CleanRoomsError> GetCollaborationChangeRequestOutcome;
       typedef Aws::Utils::Outcome<GetCollaborationConfiguredAudienceModelAssociationResult, CleanRoomsError> GetCollaborationConfiguredAudienceModelAssociationOutcome;
       typedef Aws::Utils::Outcome<GetCollaborationIdNamespaceAssociationResult, CleanRoomsError> GetCollaborationIdNamespaceAssociationOutcome;
       typedef Aws::Utils::Outcome<GetCollaborationPrivacyBudgetTemplateResult, CleanRoomsError> GetCollaborationPrivacyBudgetTemplateOutcome;
@@ -279,6 +287,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetSchemaAnalysisRuleResult, CleanRoomsError> GetSchemaAnalysisRuleOutcome;
       typedef Aws::Utils::Outcome<ListAnalysisTemplatesResult, CleanRoomsError> ListAnalysisTemplatesOutcome;
       typedef Aws::Utils::Outcome<ListCollaborationAnalysisTemplatesResult, CleanRoomsError> ListCollaborationAnalysisTemplatesOutcome;
+      typedef Aws::Utils::Outcome<ListCollaborationChangeRequestsResult, CleanRoomsError> ListCollaborationChangeRequestsOutcome;
       typedef Aws::Utils::Outcome<ListCollaborationConfiguredAudienceModelAssociationsResult, CleanRoomsError> ListCollaborationConfiguredAudienceModelAssociationsOutcome;
       typedef Aws::Utils::Outcome<ListCollaborationIdNamespaceAssociationsResult, CleanRoomsError> ListCollaborationIdNamespaceAssociationsOutcome;
       typedef Aws::Utils::Outcome<ListCollaborationPrivacyBudgetTemplatesResult, CleanRoomsError> ListCollaborationPrivacyBudgetTemplatesOutcome;
@@ -324,6 +333,7 @@ namespace Aws
       typedef std::future<BatchGetSchemaAnalysisRuleOutcome> BatchGetSchemaAnalysisRuleOutcomeCallable;
       typedef std::future<CreateAnalysisTemplateOutcome> CreateAnalysisTemplateOutcomeCallable;
       typedef std::future<CreateCollaborationOutcome> CreateCollaborationOutcomeCallable;
+      typedef std::future<CreateCollaborationChangeRequestOutcome> CreateCollaborationChangeRequestOutcomeCallable;
       typedef std::future<CreateConfiguredAudienceModelAssociationOutcome> CreateConfiguredAudienceModelAssociationOutcomeCallable;
       typedef std::future<CreateConfiguredTableOutcome> CreateConfiguredTableOutcomeCallable;
       typedef std::future<CreateConfiguredTableAnalysisRuleOutcome> CreateConfiguredTableAnalysisRuleOutcomeCallable;
@@ -348,6 +358,7 @@ namespace Aws
       typedef std::future<GetAnalysisTemplateOutcome> GetAnalysisTemplateOutcomeCallable;
       typedef std::future<GetCollaborationOutcome> GetCollaborationOutcomeCallable;
       typedef std::future<GetCollaborationAnalysisTemplateOutcome> GetCollaborationAnalysisTemplateOutcomeCallable;
+      typedef std::future<GetCollaborationChangeRequestOutcome> GetCollaborationChangeRequestOutcomeCallable;
       typedef std::future<GetCollaborationConfiguredAudienceModelAssociationOutcome> GetCollaborationConfiguredAudienceModelAssociationOutcomeCallable;
       typedef std::future<GetCollaborationIdNamespaceAssociationOutcome> GetCollaborationIdNamespaceAssociationOutcomeCallable;
       typedef std::future<GetCollaborationPrivacyBudgetTemplateOutcome> GetCollaborationPrivacyBudgetTemplateOutcomeCallable;
@@ -366,6 +377,7 @@ namespace Aws
       typedef std::future<GetSchemaAnalysisRuleOutcome> GetSchemaAnalysisRuleOutcomeCallable;
       typedef std::future<ListAnalysisTemplatesOutcome> ListAnalysisTemplatesOutcomeCallable;
       typedef std::future<ListCollaborationAnalysisTemplatesOutcome> ListCollaborationAnalysisTemplatesOutcomeCallable;
+      typedef std::future<ListCollaborationChangeRequestsOutcome> ListCollaborationChangeRequestsOutcomeCallable;
       typedef std::future<ListCollaborationConfiguredAudienceModelAssociationsOutcome> ListCollaborationConfiguredAudienceModelAssociationsOutcomeCallable;
       typedef std::future<ListCollaborationIdNamespaceAssociationsOutcome> ListCollaborationIdNamespaceAssociationsOutcomeCallable;
       typedef std::future<ListCollaborationPrivacyBudgetTemplatesOutcome> ListCollaborationPrivacyBudgetTemplatesOutcomeCallable;
@@ -414,6 +426,7 @@ namespace Aws
     typedef std::function<void(const CleanRoomsClient*, const Model::BatchGetSchemaAnalysisRuleRequest&, const Model::BatchGetSchemaAnalysisRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetSchemaAnalysisRuleResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::CreateAnalysisTemplateRequest&, const Model::CreateAnalysisTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAnalysisTemplateResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::CreateCollaborationRequest&, const Model::CreateCollaborationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCollaborationResponseReceivedHandler;
+    typedef std::function<void(const CleanRoomsClient*, const Model::CreateCollaborationChangeRequestRequest&, const Model::CreateCollaborationChangeRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCollaborationChangeRequestResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::CreateConfiguredAudienceModelAssociationRequest&, const Model::CreateConfiguredAudienceModelAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConfiguredAudienceModelAssociationResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::CreateConfiguredTableRequest&, const Model::CreateConfiguredTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConfiguredTableResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::CreateConfiguredTableAnalysisRuleRequest&, const Model::CreateConfiguredTableAnalysisRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConfiguredTableAnalysisRuleResponseReceivedHandler;
@@ -438,6 +451,7 @@ namespace Aws
     typedef std::function<void(const CleanRoomsClient*, const Model::GetAnalysisTemplateRequest&, const Model::GetAnalysisTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAnalysisTemplateResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::GetCollaborationRequest&, const Model::GetCollaborationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCollaborationResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::GetCollaborationAnalysisTemplateRequest&, const Model::GetCollaborationAnalysisTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCollaborationAnalysisTemplateResponseReceivedHandler;
+    typedef std::function<void(const CleanRoomsClient*, const Model::GetCollaborationChangeRequestRequest&, const Model::GetCollaborationChangeRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCollaborationChangeRequestResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::GetCollaborationConfiguredAudienceModelAssociationRequest&, const Model::GetCollaborationConfiguredAudienceModelAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCollaborationConfiguredAudienceModelAssociationResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::GetCollaborationIdNamespaceAssociationRequest&, const Model::GetCollaborationIdNamespaceAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCollaborationIdNamespaceAssociationResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::GetCollaborationPrivacyBudgetTemplateRequest&, const Model::GetCollaborationPrivacyBudgetTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCollaborationPrivacyBudgetTemplateResponseReceivedHandler;
@@ -456,6 +470,7 @@ namespace Aws
     typedef std::function<void(const CleanRoomsClient*, const Model::GetSchemaAnalysisRuleRequest&, const Model::GetSchemaAnalysisRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSchemaAnalysisRuleResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::ListAnalysisTemplatesRequest&, const Model::ListAnalysisTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnalysisTemplatesResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::ListCollaborationAnalysisTemplatesRequest&, const Model::ListCollaborationAnalysisTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCollaborationAnalysisTemplatesResponseReceivedHandler;
+    typedef std::function<void(const CleanRoomsClient*, const Model::ListCollaborationChangeRequestsRequest&, const Model::ListCollaborationChangeRequestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCollaborationChangeRequestsResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::ListCollaborationConfiguredAudienceModelAssociationsRequest&, const Model::ListCollaborationConfiguredAudienceModelAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCollaborationConfiguredAudienceModelAssociationsResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::ListCollaborationIdNamespaceAssociationsRequest&, const Model::ListCollaborationIdNamespaceAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCollaborationIdNamespaceAssociationsResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::ListCollaborationPrivacyBudgetTemplatesRequest&, const Model::ListCollaborationPrivacyBudgetTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCollaborationPrivacyBudgetTemplatesResponseReceivedHandler;

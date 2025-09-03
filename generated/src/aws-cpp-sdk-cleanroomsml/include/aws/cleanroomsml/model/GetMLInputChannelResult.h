@@ -5,12 +5,12 @@
 
 #pragma once
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/cleanroomsml/model/InputChannel.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cleanroomsml/model/MLInputChannelStatus.h>
 #include <aws/cleanroomsml/model/StatusDetails.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/cleanroomsml/model/InputChannel.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -40,28 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time at which the ML input channel was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
-    template<typename CreateTimeT = Aws::Utils::DateTime>
-    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
-    template<typename CreateTimeT = Aws::Utils::DateTime>
-    GetMLInputChannelResult& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The most recent time at which the ML input channel was updated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const { return m_updateTime; }
-    template<typename UpdateTimeT = Aws::Utils::DateTime>
-    void SetUpdateTime(UpdateTimeT&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::forward<UpdateTimeT>(value); }
-    template<typename UpdateTimeT = Aws::Utils::DateTime>
-    GetMLInputChannelResult& WithUpdateTime(UpdateTimeT&& value) { SetUpdateTime(std::forward<UpdateTimeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The membership ID of the membership that contains the ML input channel.</p>
      */
     inline const Aws::String& GetMembershipIdentifier() const { return m_membershipIdentifier; }
@@ -81,29 +59,6 @@ namespace Model
     void SetCollaborationIdentifier(CollaborationIdentifierT&& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = std::forward<CollaborationIdentifierT>(value); }
     template<typename CollaborationIdentifierT = Aws::String>
     GetMLInputChannelResult& WithCollaborationIdentifier(CollaborationIdentifierT&& value) { SetCollaborationIdentifier(std::forward<CollaborationIdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The input channel that was used to create the ML input channel.</p>
-     */
-    inline const InputChannel& GetInputChannel() const { return m_inputChannel; }
-    template<typename InputChannelT = InputChannel>
-    void SetInputChannel(InputChannelT&& value) { m_inputChannelHasBeenSet = true; m_inputChannel = std::forward<InputChannelT>(value); }
-    template<typename InputChannelT = InputChannel>
-    GetMLInputChannelResult& WithInputChannel(InputChannelT&& value) { SetInputChannel(std::forward<InputChannelT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the protected query that was used to create the ML input
-     * channel.</p>
-     */
-    inline const Aws::String& GetProtectedQueryIdentifier() const { return m_protectedQueryIdentifier; }
-    template<typename ProtectedQueryIdentifierT = Aws::String>
-    void SetProtectedQueryIdentifier(ProtectedQueryIdentifierT&& value) { m_protectedQueryIdentifierHasBeenSet = true; m_protectedQueryIdentifier = std::forward<ProtectedQueryIdentifierT>(value); }
-    template<typename ProtectedQueryIdentifierT = Aws::String>
-    GetMLInputChannelResult& WithProtectedQueryIdentifier(ProtectedQueryIdentifierT&& value) { SetProtectedQueryIdentifier(std::forward<ProtectedQueryIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -180,6 +135,62 @@ namespace Model
 
     ///@{
     /**
+     * <p>The description of the ML input channel.</p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetMLInputChannelResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The time at which the ML input channel was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    GetMLInputChannelResult& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The most recent time at which the ML input channel was updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdateTime() const { return m_updateTime; }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    void SetUpdateTime(UpdateTimeT&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::forward<UpdateTimeT>(value); }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    GetMLInputChannelResult& WithUpdateTime(UpdateTimeT&& value) { SetUpdateTime(std::forward<UpdateTimeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The input channel that was used to create the ML input channel.</p>
+     */
+    inline const InputChannel& GetInputChannel() const { return m_inputChannel; }
+    template<typename InputChannelT = InputChannel>
+    void SetInputChannel(InputChannelT&& value) { m_inputChannelHasBeenSet = true; m_inputChannel = std::forward<InputChannelT>(value); }
+    template<typename InputChannelT = InputChannel>
+    GetMLInputChannelResult& WithInputChannel(InputChannelT&& value) { SetInputChannel(std::forward<InputChannelT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the protected query that was used to create the ML input
+     * channel.</p>
+     */
+    inline const Aws::String& GetProtectedQueryIdentifier() const { return m_protectedQueryIdentifier; }
+    template<typename ProtectedQueryIdentifierT = Aws::String>
+    void SetProtectedQueryIdentifier(ProtectedQueryIdentifierT&& value) { m_protectedQueryIdentifierHasBeenSet = true; m_protectedQueryIdentifier = std::forward<ProtectedQueryIdentifierT>(value); }
+    template<typename ProtectedQueryIdentifierT = Aws::String>
+    GetMLInputChannelResult& WithProtectedQueryIdentifier(ProtectedQueryIdentifierT&& value) { SetProtectedQueryIdentifier(std::forward<ProtectedQueryIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The number of files in the ML input channel.</p>
      */
     inline double GetNumberOfFiles() const { return m_numberOfFiles; }
@@ -194,17 +205,6 @@ namespace Model
     inline double GetSizeInGb() const { return m_sizeInGb; }
     inline void SetSizeInGb(double value) { m_sizeInGbHasBeenSet = true; m_sizeInGb = value; }
     inline GetMLInputChannelResult& WithSizeInGb(double value) { SetSizeInGb(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The description of the ML input channel.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    GetMLInputChannelResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -261,23 +261,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createTime{};
-    bool m_createTimeHasBeenSet = false;
-
-    Aws::Utils::DateTime m_updateTime{};
-    bool m_updateTimeHasBeenSet = false;
-
     Aws::String m_membershipIdentifier;
     bool m_membershipIdentifierHasBeenSet = false;
 
     Aws::String m_collaborationIdentifier;
     bool m_collaborationIdentifierHasBeenSet = false;
-
-    InputChannel m_inputChannel;
-    bool m_inputChannelHasBeenSet = false;
-
-    Aws::String m_protectedQueryIdentifier;
-    bool m_protectedQueryIdentifierHasBeenSet = false;
 
     Aws::String m_mlInputChannelArn;
     bool m_mlInputChannelArnHasBeenSet = false;
@@ -300,14 +288,26 @@ namespace Model
     long long m_numberOfRecords{0};
     bool m_numberOfRecordsHasBeenSet = false;
 
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createTime{};
+    bool m_createTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_updateTime{};
+    bool m_updateTimeHasBeenSet = false;
+
+    InputChannel m_inputChannel;
+    bool m_inputChannelHasBeenSet = false;
+
+    Aws::String m_protectedQueryIdentifier;
+    bool m_protectedQueryIdentifierHasBeenSet = false;
+
     double m_numberOfFiles{0.0};
     bool m_numberOfFilesHasBeenSet = false;
 
     double m_sizeInGb{0.0};
     bool m_sizeInGbHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
     bool m_kmsKeyArnHasBeenSet = false;

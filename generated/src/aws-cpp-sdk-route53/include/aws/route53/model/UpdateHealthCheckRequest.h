@@ -278,8 +278,9 @@ namespace Model
      * monitoring the corresponding CloudWatch metrics.</p> </li> </ul> <p>After you
      * disable a health check, Route 53 considers the status of the health check to
      * always be healthy. If you configured DNS failover, Route 53 continues to route
-     * traffic to the corresponding resources. If you want to stop routing traffic to a
-     * resource, change the value of <a
+     * traffic to the corresponding resources. Additionally, in disabled state, you can
+     * also invert the status of the health check to route traffic differently. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted">Inverted</a>.
      * </p> <p>Charges for a health check still apply when the health check is
      * disabled. For more information, see <a

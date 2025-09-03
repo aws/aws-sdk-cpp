@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cleanroomsml/model/MLInputChannelStatus.h>
 #include <aws/cleanroomsml/model/StatusDetails.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -35,39 +35,6 @@ namespace Model
     AWS_CLEANROOMSML_API GetCollaborationMLInputChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLEANROOMSML_API GetCollaborationMLInputChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-
-    ///@{
-    /**
-     * <p>The time at which the ML input channel was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
-    template<typename CreateTimeT = Aws::Utils::DateTime>
-    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
-    template<typename CreateTimeT = Aws::Utils::DateTime>
-    GetCollaborationMLInputChannelResult& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The most recent time at which the ML input channel was updated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const { return m_updateTime; }
-    template<typename UpdateTimeT = Aws::Utils::DateTime>
-    void SetUpdateTime(UpdateTimeT&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::forward<UpdateTimeT>(value); }
-    template<typename UpdateTimeT = Aws::Utils::DateTime>
-    GetCollaborationMLInputChannelResult& WithUpdateTime(UpdateTimeT&& value) { SetUpdateTime(std::forward<UpdateTimeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The account ID of the member who created the ML input channel.</p>
-     */
-    inline const Aws::String& GetCreatorAccountId() const { return m_creatorAccountId; }
-    template<typename CreatorAccountIdT = Aws::String>
-    void SetCreatorAccountId(CreatorAccountIdT&& value) { m_creatorAccountIdHasBeenSet = true; m_creatorAccountId = std::forward<CreatorAccountIdT>(value); }
-    template<typename CreatorAccountIdT = Aws::String>
-    GetCollaborationMLInputChannelResult& WithCreatorAccountId(CreatorAccountIdT&& value) { SetCreatorAccountId(std::forward<CreatorAccountIdT>(value)); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -176,6 +143,39 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The time at which the ML input channel was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    GetCollaborationMLInputChannelResult& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The most recent time at which the ML input channel was updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdateTime() const { return m_updateTime; }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    void SetUpdateTime(UpdateTimeT&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::forward<UpdateTimeT>(value); }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    GetCollaborationMLInputChannelResult& WithUpdateTime(UpdateTimeT&& value) { SetUpdateTime(std::forward<UpdateTimeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The account ID of the member who created the ML input channel.</p>
+     */
+    inline const Aws::String& GetCreatorAccountId() const { return m_creatorAccountId; }
+    template<typename CreatorAccountIdT = Aws::String>
+    void SetCreatorAccountId(CreatorAccountIdT&& value) { m_creatorAccountIdHasBeenSet = true; m_creatorAccountId = std::forward<CreatorAccountIdT>(value); }
+    template<typename CreatorAccountIdT = Aws::String>
+    GetCollaborationMLInputChannelResult& WithCreatorAccountId(CreatorAccountIdT&& value) { SetCreatorAccountId(std::forward<CreatorAccountIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -184,15 +184,6 @@ namespace Model
     GetCollaborationMLInputChannelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
-
-    Aws::Utils::DateTime m_createTime{};
-    bool m_createTimeHasBeenSet = false;
-
-    Aws::Utils::DateTime m_updateTime{};
-    bool m_updateTimeHasBeenSet = false;
-
-    Aws::String m_creatorAccountId;
-    bool m_creatorAccountIdHasBeenSet = false;
 
     Aws::String m_membershipIdentifier;
     bool m_membershipIdentifierHasBeenSet = false;
@@ -223,6 +214,15 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createTime{};
+    bool m_createTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_updateTime{};
+    bool m_updateTimeHasBeenSet = false;
+
+    Aws::String m_creatorAccountId;
+    bool m_creatorAccountIdHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

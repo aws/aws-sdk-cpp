@@ -97,6 +97,41 @@ StartCallAnalyticsStreamTranscriptionInitialResponse::StartCallAnalyticsStreamTr
     m_languageModelNameHasBeenSet = true;
   }
 
+  const auto& identifyLanguageIter = headers.find("x-amzn-transcribe-identify-language");
+  if(identifyLanguageIter != headers.end())
+  {
+    m_identifyLanguage = StringUtils::ConvertToBool(identifyLanguageIter->second.c_str());
+    m_identifyLanguageHasBeenSet = true;
+  }
+
+  const auto& languageOptionsIter = headers.find("x-amzn-transcribe-language-options");
+  if(languageOptionsIter != headers.end())
+  {
+    m_languageOptions = languageOptionsIter->second;
+    m_languageOptionsHasBeenSet = true;
+  }
+
+  const auto& preferredLanguageIter = headers.find("x-amzn-transcribe-preferred-language");
+  if(preferredLanguageIter != headers.end())
+  {
+    m_preferredLanguage = CallAnalyticsLanguageCodeMapper::GetCallAnalyticsLanguageCodeForName(preferredLanguageIter->second);
+    m_preferredLanguageHasBeenSet = true;
+  }
+
+  const auto& vocabularyNamesIter = headers.find("x-amzn-transcribe-vocabulary-names");
+  if(vocabularyNamesIter != headers.end())
+  {
+    m_vocabularyNames = vocabularyNamesIter->second;
+    m_vocabularyNamesHasBeenSet = true;
+  }
+
+  const auto& vocabularyFilterNamesIter = headers.find("x-amzn-transcribe-vocabulary-filter-names");
+  if(vocabularyFilterNamesIter != headers.end())
+  {
+    m_vocabularyFilterNames = vocabularyFilterNamesIter->second;
+    m_vocabularyFilterNamesHasBeenSet = true;
+  }
+
   const auto& enablePartialResultsStabilizationIter = headers.find("x-amzn-transcribe-enable-partial-results-stabilization");
   if(enablePartialResultsStabilizationIter != headers.end())
   {

@@ -39,6 +39,16 @@ LogsConfigurationPolicy& LogsConfigurationPolicy::operator =(JsonView jsonValue)
     m_filterPattern = jsonValue.GetString("filterPattern");
     m_filterPatternHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("logType"))
+  {
+    m_logType = LogTypeMapper::GetLogTypeForName(jsonValue.GetString("logType"));
+    m_logTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("logRedactionConfiguration"))
+  {
+    m_logRedactionConfiguration = jsonValue.GetObject("logRedactionConfiguration");
+    m_logRedactionConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -60,6 +70,17 @@ JsonValue LogsConfigurationPolicy::Jsonize() const
   if(m_filterPatternHasBeenSet)
   {
    payload.WithString("filterPattern", m_filterPattern);
+
+  }
+
+  if(m_logTypeHasBeenSet)
+  {
+   payload.WithString("logType", LogTypeMapper::GetNameForLogType(m_logType));
+  }
+
+  if(m_logRedactionConfigurationHasBeenSet)
+  {
+   payload.WithObject("logRedactionConfiguration", m_logRedactionConfiguration.Jsonize());
 
   }
 

@@ -34,7 +34,6 @@ namespace Model
     ml_r6i_large,
     ml_g5_2xlarge,
     ml_m5_large,
-    ml_p3_16xlarge,
     ml_m7i_48xlarge,
     ml_m6i_16xlarge,
     ml_p2_16xlarge,
@@ -82,7 +81,6 @@ namespace Model
     ml_m6i_2xlarge,
     ml_g5_16xlarge,
     ml_m7i_4xlarge,
-    ml_p3_2xlarge,
     ml_r6i_32xlarge,
     ml_m6i_4xlarge,
     ml_m5_xlarge,
@@ -108,8 +106,10 @@ namespace Model
     ml_p2_8xlarge,
     ml_r6i_4xlarge,
     ml_m6i_32xlarge,
-    ml_p3_8xlarge,
-    ml_m4_4xlarge
+    ml_m4_4xlarge,
+    ml_p3_16xlarge,
+    ml_p3_2xlarge,
+    ml_p3_8xlarge
   };
 
 namespace InferenceInstanceTypeMapper

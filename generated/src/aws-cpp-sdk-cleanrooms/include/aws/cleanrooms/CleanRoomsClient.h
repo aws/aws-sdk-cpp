@@ -215,6 +215,33 @@ namespace CleanRooms
         }
 
         /**
+         * <p>Creates a new change request to modify an existing collaboration. This
+         * enables post-creation modifications to collaborations through a structured
+         * API-driven approach.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateCollaborationChangeRequest">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCollaborationChangeRequestOutcome CreateCollaborationChangeRequest(const Model::CreateCollaborationChangeRequestRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateCollaborationChangeRequest that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateCollaborationChangeRequestRequestT = Model::CreateCollaborationChangeRequestRequest>
+        Model::CreateCollaborationChangeRequestOutcomeCallable CreateCollaborationChangeRequestCallable(const CreateCollaborationChangeRequestRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsClient::CreateCollaborationChangeRequest, request);
+        }
+
+        /**
+         * An Async wrapper for CreateCollaborationChangeRequest that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateCollaborationChangeRequestRequestT = Model::CreateCollaborationChangeRequestRequest>
+        void CreateCollaborationChangeRequestAsync(const CreateCollaborationChangeRequestRequestT& request, const CreateCollaborationChangeRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsClient::CreateCollaborationChangeRequest, request, handler, context);
+        }
+
+        /**
          * <p>Provides the details necessary to create a configured audience model
          * association.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateConfiguredAudienceModelAssociation">AWS
@@ -833,6 +860,32 @@ namespace CleanRooms
         }
 
         /**
+         * <p>Retrieves detailed information about a specific collaboration change
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationChangeRequest">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCollaborationChangeRequestOutcome GetCollaborationChangeRequest(const Model::GetCollaborationChangeRequestRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCollaborationChangeRequest that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCollaborationChangeRequestRequestT = Model::GetCollaborationChangeRequestRequest>
+        Model::GetCollaborationChangeRequestOutcomeCallable GetCollaborationChangeRequestCallable(const GetCollaborationChangeRequestRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsClient::GetCollaborationChangeRequest, request);
+        }
+
+        /**
+         * An Async wrapper for GetCollaborationChangeRequest that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCollaborationChangeRequestRequestT = Model::GetCollaborationChangeRequestRequest>
+        void GetCollaborationChangeRequestAsync(const GetCollaborationChangeRequestRequestT& request, const GetCollaborationChangeRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsClient::GetCollaborationChangeRequest, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves a configured audience model association within a
          * collaboration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationConfiguredAudienceModelAssociation">AWS
@@ -1289,6 +1342,32 @@ namespace CleanRooms
         void ListCollaborationAnalysisTemplatesAsync(const ListCollaborationAnalysisTemplatesRequestT& request, const ListCollaborationAnalysisTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CleanRoomsClient::ListCollaborationAnalysisTemplates, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all change requests for a collaboration with pagination support.
+         * Returns change requests sorted by creation time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationChangeRequests">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCollaborationChangeRequestsOutcome ListCollaborationChangeRequests(const Model::ListCollaborationChangeRequestsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCollaborationChangeRequests that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCollaborationChangeRequestsRequestT = Model::ListCollaborationChangeRequestsRequest>
+        Model::ListCollaborationChangeRequestsOutcomeCallable ListCollaborationChangeRequestsCallable(const ListCollaborationChangeRequestsRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsClient::ListCollaborationChangeRequests, request);
+        }
+
+        /**
+         * An Async wrapper for ListCollaborationChangeRequests that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCollaborationChangeRequestsRequestT = Model::ListCollaborationChangeRequestsRequest>
+        void ListCollaborationChangeRequestsAsync(const ListCollaborationChangeRequestsRequestT& request, const ListCollaborationChangeRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsClient::ListCollaborationChangeRequests, request, handler, context);
         }
 
         /**

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     SIMPLE,
-    LDAP
+    LDAP,
+    CONFIG_MANAGED
   };
 
 namespace AuthenticationStrategyMapper

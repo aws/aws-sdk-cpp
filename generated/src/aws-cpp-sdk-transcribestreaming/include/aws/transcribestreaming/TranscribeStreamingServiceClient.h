@@ -125,9 +125,10 @@ namespace TranscribeStreamingService
          * application. Use this operation for <a
          * href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Call
          * Analytics</a> transcriptions.</p> <p>The following parameters are required:</p>
-         * <ul> <li> <p> <code>language-code</code> </p> </li> <li> <p>
-         * <code>media-encoding</code> </p> </li> <li> <p> <code>sample-rate</code> </p>
-         * </li> </ul> <p>For more information on streaming with Amazon Transcribe, see <a
+         * <ul> <li> <p> <code>language-code</code> or <code>identify-language</code> </p>
+         * </li> <li> <p> <code>media-encoding</code> </p> </li> <li> <p>
+         * <code>sample-rate</code> </p> </li> </ul> <p>For more information on streaming
+         * with Amazon Transcribe, see <a
          * href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing
          * streaming audio</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/StartCallAnalyticsStreamTranscription">AWS

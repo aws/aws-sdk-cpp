@@ -56,6 +56,7 @@
 #include <aws/cleanroomsml/model/CreateTrainedModelResult.h>
 #include <aws/cleanroomsml/model/CreateTrainingDatasetRequest.h>
 #include <aws/cleanroomsml/model/CreateTrainingDatasetResult.h>
+#include <aws/cleanroomsml/model/CustomEntityConfig.h>
 #include <aws/cleanroomsml/model/DataSource.h>
 #include <aws/cleanroomsml/model/Dataset.h>
 #include <aws/cleanroomsml/model/DatasetInputConfig.h>
@@ -71,6 +72,7 @@
 #include <aws/cleanroomsml/model/DeleteTrainedModelOutputRequest.h>
 #include <aws/cleanroomsml/model/DeleteTrainingDatasetRequest.h>
 #include <aws/cleanroomsml/model/Destination.h>
+#include <aws/cleanroomsml/model/EntityType.h>
 #include <aws/cleanroomsml/model/GetAudienceGenerationJobRequest.h>
 #include <aws/cleanroomsml/model/GetAudienceGenerationJobResult.h>
 #include <aws/cleanroomsml/model/GetAudienceModelRequest.h>
@@ -145,6 +147,8 @@
 #include <aws/cleanroomsml/model/ListTrainedModelsResult.h>
 #include <aws/cleanroomsml/model/ListTrainingDatasetsRequest.h>
 #include <aws/cleanroomsml/model/ListTrainingDatasetsResult.h>
+#include <aws/cleanroomsml/model/LogRedactionConfiguration.h>
+#include <aws/cleanroomsml/model/LogType.h>
 #include <aws/cleanroomsml/model/LogsConfigurationPolicy.h>
 #include <aws/cleanroomsml/model/LogsStatus.h>
 #include <aws/cleanroomsml/model/MLInputChannelStatus.h>

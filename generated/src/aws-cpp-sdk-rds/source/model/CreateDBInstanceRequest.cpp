@@ -410,6 +410,11 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
     ss << "EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str()) << "&";
   }
 
+  if(m_masterUserAuthenticationTypeHasBeenSet)
+  {
+    ss << "MasterUserAuthenticationType=" << StringUtils::URLEncode(MasterUserAuthenticationTypeMapper::GetNameForMasterUserAuthenticationType(m_masterUserAuthenticationType)) << "&";
+  }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

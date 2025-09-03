@@ -22,6 +22,7 @@ namespace Aws
 
         static const int SIMPLE_HASH = HashingUtils::HashString("SIMPLE");
         static const int LDAP_HASH = HashingUtils::HashString("LDAP");
+        static const int CONFIG_MANAGED_HASH = HashingUtils::HashString("CONFIG_MANAGED");
 
 
         AuthenticationStrategy GetAuthenticationStrategyForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == LDAP_HASH)
           {
             return AuthenticationStrategy::LDAP;
+          }
+          else if (hashCode == CONFIG_MANAGED_HASH)
+          {
+            return AuthenticationStrategy::CONFIG_MANAGED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "SIMPLE";
           case AuthenticationStrategy::LDAP:
             return "LDAP";
+          case AuthenticationStrategy::CONFIG_MANAGED:
+            return "CONFIG_MANAGED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

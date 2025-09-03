@@ -100,6 +100,17 @@ Aws::String CreateCollaborationRequest::SerializePayload() const
    payload.WithString("analyticsEngine", AnalyticsEngineMapper::GetNameForAnalyticsEngine(m_analyticsEngine));
   }
 
+  if(m_autoApprovedChangeRequestTypesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> autoApprovedChangeRequestTypesJsonList(m_autoApprovedChangeRequestTypes.size());
+   for(unsigned autoApprovedChangeRequestTypesIndex = 0; autoApprovedChangeRequestTypesIndex < autoApprovedChangeRequestTypesJsonList.GetLength(); ++autoApprovedChangeRequestTypesIndex)
+   {
+     autoApprovedChangeRequestTypesJsonList[autoApprovedChangeRequestTypesIndex].AsString(AutoApprovedChangeTypeMapper::GetNameForAutoApprovedChangeType(m_autoApprovedChangeRequestTypes[autoApprovedChangeRequestTypesIndex]));
+   }
+   payload.WithArray("autoApprovedChangeRequestTypes", std::move(autoApprovedChangeRequestTypesJsonList));
+
+  }
+
   return payload.View().WriteReadable();
 }
 

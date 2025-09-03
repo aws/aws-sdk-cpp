@@ -277,6 +277,7 @@
 #include <aws/cloudfront/model/InvalidationBatch.h>
 #include <aws/cloudfront/model/InvalidationList.h>
 #include <aws/cloudfront/model/InvalidationSummary.h>
+#include <aws/cloudfront/model/IpAddressType.h>
 #include <aws/cloudfront/model/ItemSelection.h>
 #include <aws/cloudfront/model/KGKeyPairIds.h>
 #include <aws/cloudfront/model/KeyGroup.h>

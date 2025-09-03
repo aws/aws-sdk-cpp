@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/DatabaseInsightsMode.h>
+#include <aws/rds/model/MasterUserAuthenticationType.h>
 #include <aws/rds/model/Tag.h>
 #include <aws/rds/model/ProcessorFeature.h>
 #include <utility>
@@ -1327,6 +1328,23 @@ namespace Model
     template<typename EngineLifecycleSupportT = Aws::String>
     CreateDBInstanceRequest& WithEngineLifecycleSupport(EngineLifecycleSupportT&& value) { SetEngineLifecycleSupport(std::forward<EngineLifecycleSupportT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the authentication type for the master user. With IAM master user
+     * authentication, you can configure the master DB user with IAM database
+     * authentication when you create a DB instance.</p> <p>You can specify one of the
+     * following values:</p> <ul> <li> <p> <code>password</code> - Use standard
+     * database authentication with a password.</p> </li> <li> <p>
+     * <code>iam-db-auth</code> - Use IAM database authentication for the master
+     * user.</p> </li> </ul> <p>This option is only valid for RDS for PostgreSQL and
+     * Aurora PostgreSQL engines.</p>
+     */
+    inline MasterUserAuthenticationType GetMasterUserAuthenticationType() const { return m_masterUserAuthenticationType; }
+    inline bool MasterUserAuthenticationTypeHasBeenSet() const { return m_masterUserAuthenticationTypeHasBeenSet; }
+    inline void SetMasterUserAuthenticationType(MasterUserAuthenticationType value) { m_masterUserAuthenticationTypeHasBeenSet = true; m_masterUserAuthenticationType = value; }
+    inline CreateDBInstanceRequest& WithMasterUserAuthenticationType(MasterUserAuthenticationType value) { SetMasterUserAuthenticationType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_dBName;
@@ -1520,6 +1538,9 @@ namespace Model
 
     Aws::String m_engineLifecycleSupport;
     bool m_engineLifecycleSupportHasBeenSet = false;
+
+    MasterUserAuthenticationType m_masterUserAuthenticationType{MasterUserAuthenticationType::NOT_SET};
+    bool m_masterUserAuthenticationTypeHasBeenSet = false;
   };
 
 } // namespace Model
