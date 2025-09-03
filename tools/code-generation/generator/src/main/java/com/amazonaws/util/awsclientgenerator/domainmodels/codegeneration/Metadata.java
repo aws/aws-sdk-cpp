@@ -17,6 +17,7 @@ import java.util.Objects;
 @Data
 public class Metadata {
     private static List<String> supportedProtocols = ImmutableList.of(
+            "smithy-rpc-v2-cbor",
             "json",
             "rest-json",
             "rest-xml",

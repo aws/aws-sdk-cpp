@@ -68,7 +68,7 @@ public class C2jProtocolTestToGeneratorModelTransformer {
                     input.get().setSerialized(inputTestCase.getSerialized());
                     if (input.get().getSerialized().getBody() != null) {
                         input.get().getSerialized().setBody(
-                            Base64.getEncoder().encodeToString(input.get().getSerialized().getBody().getBytes())
+                            c2jTestSuite.getName().equals("smithy-rpc-v2-cbor") ? input.get().getSerialized().getBody() : Base64.getEncoder().encodeToString(input.get().getSerialized().getBody().getBytes())
                         );
                     }
                     testCase.setInput(input);
@@ -103,7 +103,7 @@ public class C2jProtocolTestToGeneratorModelTransformer {
                     output.get().setResponse(outputTestCase.getResponse());
                     if (output.get().getResponse().getBody() != null) {
                         output.get().getResponse().setBody(
-                            Base64.getEncoder().encodeToString(output.get().getResponse().getBody().getBytes())
+                            c2jTestSuite.getName().equals("smithy-rpc-v2-cbor") ? output.get().getResponse().getBody() : Base64.getEncoder().encodeToString(output.get().getResponse().getBody().getBytes())
                         );
                     }
 

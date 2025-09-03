@@ -117,6 +117,7 @@ public class CppViewHelper {
         CORAL_PROTOCOL_TO_PAYLOAD_TYPE_MAPPING.put("ec2", "xml");
         CORAL_PROTOCOL_TO_PAYLOAD_TYPE_MAPPING.put("application-json", "json");
         CORAL_PROTOCOL_TO_PAYLOAD_TYPE_MAPPING.put("api-gateway", "json");
+        CORAL_PROTOCOL_TO_PAYLOAD_TYPE_MAPPING.put("smithy-rpc-v2-cbor", "smithy-rpc-v2-cbor");
 
         C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.put("rfc822", "RFC822");
         C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.put("iso8601", "ISO_8601");
