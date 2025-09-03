@@ -18,6 +18,7 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/client/UserAgent.h>
 #include <cstdlib>
 #include <fstream>
 #include <string.h>
@@ -101,6 +102,10 @@ AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
             credentials.SetAccountId(accountId);
             AWS_LOGSTREAM_DEBUG(ENVIRONMENT_LOG_TAG, "Found accountId");
         }
+    }
+
+    if (!credentials.IsEmpty()) {
+      credentials.AddUserAgentFeature(UserAgentFeature::CREDENTIALS_ENV_VARS);
     }
 
     return credentials;
