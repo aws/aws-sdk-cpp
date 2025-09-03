@@ -26,9 +26,8 @@ PROTOCOL_TESTS_MOCK_TEST_RULES = "protocol-mock-endpoint-rule-set.json"
 PROTOCOL_TESTS_GENERATED_CLIENTS_DIR = "generated/protocol-tests/test-clients"
 PROTOCOL_GENERATED_TESTS_DIR = "generated/protocol-tests/tests"
 
-UNSUPPORTED_CLIENTS = {"rpcv2protocol"  # RPC V2 CBOR support is not implemented on this SDK
-                       }
-UNSUPPORTED_TESTS = {"smithy-rpc-v2-cbor"}
+UNSUPPORTED_CLIENTS = {}
+UNSUPPORTED_TESTS = {}
 
 # Regexp to parse C2J model filename to extract service name and date version
 TEST_DEFINITION_FILENAME_PATTERN = re.compile(
