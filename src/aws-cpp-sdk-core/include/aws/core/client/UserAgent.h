@@ -39,6 +39,7 @@ enum class UserAgentFeature {
   CREDENTIALS_IMDS,
   CREDENTIALS_STS_ASSUME_ROLE,
   CREDENTIALS_HTTP,
+  CREDENTIALS_SSO,
 };
 
 class AWS_CORE_API UserAgent {
