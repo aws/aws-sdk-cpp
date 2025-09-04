@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies target details for an activated hook.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies target details for an activated Hook.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ChangeSetHookTargetDetails">AWS
    * API Reference</a></p>
    */

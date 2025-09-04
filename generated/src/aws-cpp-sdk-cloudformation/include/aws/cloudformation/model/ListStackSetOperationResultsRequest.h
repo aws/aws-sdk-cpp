@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name or unique ID of the stack set that you want to get operation results
+     * <p>The name or unique ID of the StackSet that you want to get operation results
      * for.</p>
      */
     inline const Aws::String& GetStackSetName() const { return m_stackSetName; }
@@ -54,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the stack set operation.</p>
+     * <p>The ID of the StackSet operation.</p>
      */
     inline const Aws::String& GetOperationId() const { return m_operationId; }
     inline bool OperationIdHasBeenSet() const { return m_operationIdHasBeenSet; }
@@ -99,7 +99,7 @@ namespace Model
      * <p>[Service-managed permissions] Specifies whether you are acting as an account
      * administrator in the organization's management account or as a delegated
      * administrator in a member account.</p> <p>By default, <code>SELF</code> is
-     * specified. Use <code>SELF</code> for stack sets with self-managed
+     * specified. Use <code>SELF</code> for StackSets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
      * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon

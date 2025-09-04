@@ -46,8 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) for the configuration data, in this account
-     * and Region.</p>
+     * <p>The ARN for the configuration data, in this account and Region.</p>
      */
     inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
@@ -100,9 +99,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) for the extension, in this account and
-     * Region.</p> <p>For public extensions, this will be the ARN assigned when you
-     * call the <a
+     * <p>The ARN for the extension, in this account and Region.</p> <p>For public
+     * extensions, this will be the ARN assigned when you call the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
      * API operation in this account and Region. For private extensions, this will be
      * the ARN assigned when you call the <a

@@ -42,8 +42,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the stack set. The name must be unique in the Region where you
-     * create your stack set.</p>
+     * <p>The name of the StackSet. The name must be unique in the Region where you
+     * create your StackSet.</p>
      */
     inline const Aws::String& GetStackSetName() const { return m_stackSetName; }
     inline bool StackSetNameHasBeenSet() const { return m_stackSetNameHasBeenSet; }
@@ -55,8 +55,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IDs of the stacks you are importing into a stack set. You import up to 10
-     * stacks per stack set at a time.</p> <p>Specify either <code>StackIds</code> or
+     * <p>The IDs of the stacks you are importing into a StackSet. You import up to 10
+     * stacks per StackSet at a time.</p> <p>Specify either <code>StackIds</code> or
      * <code>StackIdsUrl</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStackIds() const { return m_stackIds; }
@@ -84,8 +84,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of OU ID's to which the stacks being imported has to be mapped as
-     * deployment target.</p>
+     * <p>The list of OU ID's to which the imported stacks must be mapped as deployment
+     * targets.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOrganizationalUnitIds() const { return m_organizationalUnitIds; }
     inline bool OrganizationalUnitIdsHasBeenSet() const { return m_organizationalUnitIdsHasBeenSet; }
@@ -99,11 +99,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user-specified preferences for how CloudFormation performs a stack set
+     * <p>The user-specified preferences for how CloudFormation performs a StackSet
      * operation.</p> <p>For more information about maximum concurrent accounts and
      * failure tolerance, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-ops-options">Stack
-     * set operation options</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">StackSet
+     * operation options</a>.</p>
      */
     inline const StackSetOperationPreferences& GetOperationPreferences() const { return m_operationPreferences; }
     inline bool OperationPreferencesHasBeenSet() const { return m_operationPreferencesHasBeenSet; }
@@ -115,7 +115,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique, user defined, identifier for the stack set operation.</p>
+     * <p>A unique, user defined, identifier for the StackSet operation.</p>
      */
     inline const Aws::String& GetOperationId() const { return m_operationId; }
     inline bool OperationIdHasBeenSet() const { return m_operationIdHasBeenSet; }
@@ -127,10 +127,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack
-     * sets with self-managed permissions.</p> <ul> <li> <p>If you are signed in to the
-     * management account, specify <code>SELF</code>.</p> </li> <li> <p>For service
-     * managed stack sets, specify <code>DELEGATED_ADMIN</code>.</p> </li> </ul>
+     * <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for
+     * StackSets with self-managed permissions.</p> <ul> <li> <p>If you are signed in
+     * to the management account, specify <code>SELF</code>.</p> </li> <li> <p>For
+     * service managed StackSets, specify <code>DELEGATED_ADMIN</code>.</p> </li> </ul>
      */
     inline CallAs GetCallAs() const { return m_callAs; }
     inline bool CallAsHasBeenSet() const { return m_callAsHasBeenSet; }

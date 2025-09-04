@@ -50,7 +50,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> The number of workers.</p>
+     * <p> The number of workers.</p> <p>SQL queries support a minimum value of 2 and a
+     * maximum value of 400. </p> <p>PySpark jobs support a minimum value of 4 and a
+     * maximum value of 128.</p>
      */
     inline int GetNumber() const { return m_number; }
     inline bool NumberHasBeenSet() const { return m_numberHasBeenSet; }

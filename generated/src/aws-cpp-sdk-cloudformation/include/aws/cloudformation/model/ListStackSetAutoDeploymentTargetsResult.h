@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of summaries of the deployment targets for the stack set.</p>
+     * <p>An array of summaries of the deployment targets for the StackSet.</p>
      */
     inline const Aws::Vector<StackSetAutoDeploymentTargetSummary>& GetSummaries() const { return m_summaries; }
     template<typename SummariesT = Aws::Vector<StackSetAutoDeploymentTargetSummary>>

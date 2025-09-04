@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cleanrooms/model/ProtectedJobParameters.h>
 #include <aws/cleanrooms/model/ProtectedJobResultConfigurationInput.h>
+#include <aws/cleanrooms/model/ProtectedJobComputeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -81,6 +82,18 @@ namespace Model
     template<typename ResultConfigurationT = ProtectedJobResultConfigurationInput>
     StartProtectedJobRequest& WithResultConfiguration(ResultConfigurationT&& value) { SetResultConfiguration(std::forward<ResultConfigurationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The compute configuration for the protected job.</p>
+     */
+    inline const ProtectedJobComputeConfiguration& GetComputeConfiguration() const { return m_computeConfiguration; }
+    inline bool ComputeConfigurationHasBeenSet() const { return m_computeConfigurationHasBeenSet; }
+    template<typename ComputeConfigurationT = ProtectedJobComputeConfiguration>
+    void SetComputeConfiguration(ComputeConfigurationT&& value) { m_computeConfigurationHasBeenSet = true; m_computeConfiguration = std::forward<ComputeConfigurationT>(value); }
+    template<typename ComputeConfigurationT = ProtectedJobComputeConfiguration>
+    StartProtectedJobRequest& WithComputeConfiguration(ComputeConfigurationT&& value) { SetComputeConfiguration(std::forward<ComputeConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     ProtectedJobType m_type{ProtectedJobType::NOT_SET};
@@ -94,6 +107,9 @@ namespace Model
 
     ProtectedJobResultConfigurationInput m_resultConfiguration;
     bool m_resultConfigurationHasBeenSet = false;
+
+    ProtectedJobComputeConfiguration m_computeConfiguration;
+    bool m_computeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

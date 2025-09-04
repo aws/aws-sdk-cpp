@@ -40,14 +40,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>When <code>true</code>, StackSets performs non-conflicting operations
+     * <p>When <code>true</code>, CloudFormation performs non-conflicting operations
      * concurrently and queues conflicting operations. After conflicting operations
-     * finish, StackSets starts queued operations in request order.</p>  <p>If
-     * there are already running or queued operations, StackSets queues all incoming
-     * operations even if they are non-conflicting.</p> <p>You can't modify your stack
-     * set's execution configuration while there are running or queued operations for
-     * that stack set.</p>  <p>When <code>false</code> (default), StackSets
-     * performs one operation at a time in request order.</p>
+     * finish, CloudFormation starts queued operations in request order.</p> 
+     * <p>If there are already running or queued operations, CloudFormation queues all
+     * incoming operations even if they are non-conflicting.</p> <p>You can't modify
+     * your StackSet's execution configuration while there are running or queued
+     * operations for that StackSet.</p>  <p>When <code>false</code> (default),
+     * StackSets performs one operation at a time in request order.</p>
      */
     inline bool GetActive() const { return m_active; }
     inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }

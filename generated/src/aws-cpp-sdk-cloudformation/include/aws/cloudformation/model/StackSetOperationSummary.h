@@ -47,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique ID of the stack set operation.</p>
+     * <p>The unique ID of the StackSet operation.</p>
      */
     inline const Aws::String& GetOperationId() const { return m_operationId; }
     inline bool OperationIdHasBeenSet() const { return m_operationIdHasBeenSet; }
@@ -61,8 +61,8 @@ namespace Model
     /**
      * <p>The type of operation: <code>CREATE</code>, <code>UPDATE</code>, or
      * <code>DELETE</code>. Create and delete operations affect only the specified
-     * stack instances that are associated with the specified stack set. Update
-     * operations affect both the stack set itself and <i>all</i> associated stack set
+     * stack instances that are associated with the specified StackSet. Update
+     * operations affect both the StackSet itself and <i>all</i> associated StackSet
      * instances.</p>
      */
     inline StackSetOperationAction GetAction() const { return m_action; }
@@ -83,14 +83,14 @@ namespace Model
      * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
      * permissions] For automatic deployments that require a sequence of operations,
      * the operation is queued to be performed. For more information, see the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-status-codes">stack
-     * set operation status codes</a> in the <i>CloudFormation User Guide</i>.</p>
-     * </li> <li> <p> <code>RUNNING</code>: The operation is currently being
-     * performed.</p> </li> <li> <p> <code>STOPPED</code>: The user has canceled the
-     * operation.</p> </li> <li> <p> <code>STOPPING</code>: The operation is in the
-     * process of stopping, at user request.</p> </li> <li> <p> <code>SUCCEEDED</code>:
-     * The operation completed creating or updating all the specified stacks without
-     * exceeding the failure tolerance for the operation.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">StackSet
+     * status codes</a> in the <i>CloudFormation User Guide</i>.</p> </li> <li> <p>
+     * <code>RUNNING</code>: The operation is currently being performed.</p> </li> <li>
+     * <p> <code>STOPPED</code>: The user has canceled the operation.</p> </li> <li>
+     * <p> <code>STOPPING</code>: The operation is in the process of stopping, at user
+     * request.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation completed
+     * creating or updating all the specified stacks without exceeding the failure
+     * tolerance for the operation.</p> </li> </ul>
      */
     inline StackSetOperationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -101,10 +101,10 @@ namespace Model
     ///@{
     /**
      * <p>The time at which the operation was initiated. Note that the creation times
-     * for the stack set operation might differ from the creation time of the
-     * individual stacks themselves. This is because CloudFormation needs to perform
-     * preparatory work for the operation, such as dispatching the work to the
-     * requested Regions, before actually creating the first stacks.</p>
+     * for the StackSet operation might differ from the creation time of the individual
+     * stacks themselves. This is because CloudFormation needs to perform preparatory
+     * work for the operation, such as dispatching the work to the requested Regions,
+     * before actually creating the first stacks.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTimestamp() const { return m_creationTimestamp; }
     inline bool CreationTimestampHasBeenSet() const { return m_creationTimestampHasBeenSet; }
@@ -116,8 +116,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time at which the stack set operation ended, across all accounts and
-     * Regions specified. Note that this doesn't necessarily mean that the stack set
+     * <p>The time at which the StackSet operation ended, across all accounts and
+     * Regions specified. Note that this doesn't necessarily mean that the StackSet
      * operation was successful, or even attempted, in each account or Region.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTimestamp() const { return m_endTimestamp; }
@@ -142,7 +142,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Detailed information about the stack set operation.</p>
+     * <p>Detailed information about the StackSet operation.</p>
      */
     inline const StackSetOperationStatusDetails& GetStatusDetails() const { return m_statusDetails; }
     inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
@@ -154,11 +154,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user-specified preferences for how CloudFormation performs a stack set
+     * <p>The user-specified preferences for how CloudFormation performs a StackSet
      * operation.</p> <p>For more information about maximum concurrent accounts and
      * failure tolerance, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-ops-options">Stack
-     * set operation options</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">StackSet
+     * operation options</a>.</p>
      */
     inline const StackSetOperationPreferences& GetOperationPreferences() const { return m_operationPreferences; }
     inline bool OperationPreferencesHasBeenSet() const { return m_operationPreferencesHasBeenSet; }

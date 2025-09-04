@@ -67,8 +67,7 @@ namespace Model
     ///@{
     /**
      * <p>The ID of a specific version of the extension. The version ID is the value at
-     * the end of the Amazon Resource Name (ARN) assigned to the extension version when
-     * it's registered.</p>
+     * the end of the ARN assigned to the extension version when it's registered.</p>
      */
     inline const Aws::String& GetVersionId() const { return m_versionId; }
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
@@ -93,7 +92,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the extension version.</p>
+     * <p>The ARN of the extension version.</p>
      */
     inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }

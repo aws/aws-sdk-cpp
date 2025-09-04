@@ -44,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name or unique ID of the stack set associated with the stack
+     * <p>The name or unique ID of the StackSet associated with the stack
      * instances.</p>
      */
     inline const Aws::String& GetStackSetName() const { return m_stackSetName; }
@@ -58,7 +58,7 @@ namespace Model
     ///@{
     /**
      * <p>[Self-managed permissions] The account IDs of one or more Amazon Web Services
-     * accounts for which you want to update parameter values for stack instances. The
+     * accounts in which you want to update parameter values for stack instances. The
      * overridden parameter values will be applied to all stack instances in the
      * specified accounts and Amazon Web Services Regions.</p> <p>You can specify
      * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
@@ -75,8 +75,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>[Service-managed permissions] The Organizations accounts for which you want
-     * to update parameter values for stack instances. If your update targets OUs, the
+     * <p>[Service-managed permissions] The Organizations accounts in which you want to
+     * update parameter values for stack instances. If your update targets OUs, the
      * overridden parameter values only apply to the accounts that are currently in the
      * target OUs and their child OUs. Accounts added to the target OUs and their child
      * OUs in the future won't use the overridden values.</p> <p>You can specify
@@ -119,19 +119,19 @@ namespace Model
      * value, include the parameter and specify <code>UsePreviousValue</code> as
      * <code>true</code>. (You can't specify both a value and set
      * <code>UsePreviousValue</code> to <code>true</code>.)</p> </li> <li> <p>To set an
-     * overridden parameter back to the value specified in the stack set, specify a
+     * overridden parameter back to the value specified in the StackSet, specify a
      * parameter list but don't include the parameter in the list.</p> </li> <li> <p>To
      * leave all parameters set to their present values, don't specify this property at
-     * all.</p> </li> </ul> <p>During stack set updates, any parameter values
-     * overridden for a stack instance aren't updated, but retain their overridden
-     * value.</p> <p>You can only override the parameter <i>values</i> that are
-     * specified in the stack set; to add or delete a parameter itself, use
-     * <code>UpdateStackSet</code> to update the stack set template. If you add a
-     * parameter to a template, before you can override the parameter value specified
-     * in the stack set you must first use <a
+     * all.</p> </li> </ul> <p>During StackSet updates, any parameter values overridden
+     * for a stack instance aren't updated, but retain their overridden value.</p>
+     * <p>You can only override the parameter <i>values</i> that are specified in the
+     * StackSet. To add or delete a parameter itself, use <code>UpdateStackSet</code>
+     * to update the StackSet template. If you add a parameter to a template, before
+     * you can override the parameter value specified in the StackSet you must first
+     * use <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
      * to update all stack instances with the updated template and parameter value
-     * specified in the stack set. Once a stack instance has been updated with the new
+     * specified in the StackSet. Once a stack instance has been updated with the new
      * parameter, you can then override the parameter value using
      * <code>UpdateStackInstances</code>.</p>
      */
@@ -147,7 +147,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Preferences for how CloudFormation performs this stack set operation.</p>
+     * <p>Preferences for how CloudFormation performs this StackSet operation.</p>
      */
     inline const StackSetOperationPreferences& GetOperationPreferences() const { return m_operationPreferences; }
     inline bool OperationPreferencesHasBeenSet() const { return m_operationPreferencesHasBeenSet; }
@@ -159,10 +159,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier for this stack set operation.</p> <p>The operation ID
+     * <p>The unique identifier for this StackSet operation.</p> <p>The operation ID
      * also functions as an idempotency token, to ensure that CloudFormation performs
-     * the stack set operation only once, even if you retry the request multiple times.
-     * You might retry stack set operation requests to ensure that CloudFormation
+     * the StackSet operation only once, even if you retry the request multiple times.
+     * You might retry StackSet operation requests to ensure that CloudFormation
      * successfully received them.</p> <p>If you don't specify an operation ID, the SDK
      * generates one automatically.</p>
      */
@@ -179,7 +179,7 @@ namespace Model
      * <p>[Service-managed permissions] Specifies whether you are acting as an account
      * administrator in the organization's management account or as a delegated
      * administrator in a member account.</p> <p>By default, <code>SELF</code> is
-     * specified. Use <code>SELF</code> for stack sets with self-managed
+     * specified. Use <code>SELF</code> for StackSets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
      * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon

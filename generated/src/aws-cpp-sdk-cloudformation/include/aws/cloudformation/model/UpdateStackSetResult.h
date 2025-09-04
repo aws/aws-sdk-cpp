@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique ID for this stack set operation.</p>
+     * <p>The unique ID for this StackSet operation.</p>
      */
     inline const Aws::String& GetOperationId() const { return m_operationId; }
     template<typename OperationIdT = Aws::String>

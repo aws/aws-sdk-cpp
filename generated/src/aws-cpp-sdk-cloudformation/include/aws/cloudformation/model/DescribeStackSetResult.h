@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The specified stack set.</p>
+     * <p>The specified StackSet.</p>
      */
     inline const StackSet& GetStackSet() const { return m_stackSet; }
     template<typename StackSetT = StackSet>
