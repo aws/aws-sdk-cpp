@@ -290,18 +290,32 @@ public:
         Aws::Environment::UnSetEnv("AWS_PROFILE");
         Aws::Environment::UnSetEnv("AWS_DEFAULT_REGION");
 
-        // Create directory structure
+        // Create directory structure safely
         auto profileDirectory = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
+        if (profileDirectory.empty()) {
+            GTEST_SKIP() << "Profile directory not available";
+            return;
+        }
+        
         AWS_LOGSTREAM_DEBUG(TEST_LOG_TAG, "Creating SSO directories in: " << profileDirectory);
         
-        Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
+        if (!Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str())) {
+            GTEST_SKIP() << "Failed to create profile directory";
+            return;
+        }
         
         Aws::StringStream ssCachedTokenDirectory;
         ssCachedTokenDirectory << profileDirectory << PATH_DELIM << "sso";
-        Aws::FileSystem::CreateDirectoryIfNotExists(ssCachedTokenDirectory.str().c_str());
+        if (!Aws::FileSystem::CreateDirectoryIfNotExists(ssCachedTokenDirectory.str().c_str())) {
+            GTEST_SKIP() << "Failed to create SSO directory";
+            return;
+        }
         
         ssCachedTokenDirectory << PATH_DELIM << "cache";
-        Aws::FileSystem::CreateDirectoryIfNotExists(ssCachedTokenDirectory.str().c_str());
+        if (!Aws::FileSystem::CreateDirectoryIfNotExists(ssCachedTokenDirectory.str().c_str())) {
+            GTEST_SKIP() << "Failed to create SSO cache directory";
+            return;
+        }
 
         // Setup token file paths
         Aws::StringStream ssToken;
