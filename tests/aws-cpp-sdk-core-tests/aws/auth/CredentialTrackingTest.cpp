@@ -214,3 +214,29 @@ TEST_F(CredentialTrackingTest, TestInstanceProfileCredentialsTracking)
 
     RunTestWithCredentialsProvider(std::move(imdsProvider), "0");
 }
+
+TEST_F(CredentialTrackingTest, TestHTTPCredentialsTracking)
+{
+    // Create mock HTTP response with valid credentials
+    std::shared_ptr<HttpRequest> requestTmp =
+        CreateHttpRequest(Aws::Http::URI("dummy"), Aws::Http::HttpMethod::HTTP_GET,
+                        Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    auto successResponse = Aws::MakeShared<Standard::StandardHttpResponse>(TEST_LOG_TAG, requestTmp);
+    successResponse->SetResponseCode(HttpResponseCode::OK);
+    successResponse->GetResponseBody() << R"({
+        "AccessKeyId": "test-http-access-key",
+        "SecretAccessKey": "test-http-secret-key",
+        "Token": "test-http-token",
+        "Expiration": "2037-04-19T00:00:00Z"
+    })";
+    mockHttpClient->AddResponseToReturn(successResponse);
+
+    // Set environment for HTTP credentials provider
+    Aws::Environment::EnvironmentRAII testEnvironment{{
+        {"AWS_CONTAINER_CREDENTIALS_FULL_URI", "http://127.0.0.1/credentials"},
+    }};
+
+    auto credsProvider = Aws::MakeShared<Aws::Auth::GeneralHTTPCredentialsProvider>(TEST_LOG_TAG,
+        "", "http://127.0.0.1/credentials", "", "");
+    RunTestWithCredentialsProvider(std::move(credsProvider), "z");
+}
