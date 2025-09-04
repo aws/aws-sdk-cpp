@@ -344,6 +344,7 @@ void setConfigFromEnvOrProfile(ClientConfiguration &config)
           AWS_WEB_IDENTITY_TOKEN_FILE_CONFIG_FILE_OPTION,
           {}, /* allowed values */
           "" /* default value */);
+  //TODO: use that return value somehow, maybe add it to credentialProviderConfig.stsCredentialsProviderConfig..why? becayse we useragent from client configuration
 }
 
 ClientConfiguration::ClientConfiguration()
@@ -552,6 +553,7 @@ std::shared_ptr<RetryStrategy> InitRetryStrategy(Aws::String retryMode)
     return InitRetryStrategy(maxAttempts, retryMode);
 }
 
+//TODO: return a more complex type, where was it from? env or profile?
 Aws::String ClientConfiguration::LoadConfigFromEnvOrProfile(const Aws::String& envKey,
                                                             const Aws::String& profile,
                                                             const Aws::String& profileProperty,

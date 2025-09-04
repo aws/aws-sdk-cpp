@@ -641,6 +641,8 @@ void AWSAuthV4Signer::UpdateUserAgentWithCredentialFeatures(Aws::Http::HttpReque
         return a + "," + b;
       });
 
+    //TODO: do we want to filer out the env/configuraiton variable if they are not used by the credentials provider?
+
     *metricsSegment = Aws::String{*metricsSegment + "," + credentialFeatures};
 
     // Reassemble all parts with spaces

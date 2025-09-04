@@ -132,6 +132,12 @@ UserAgent::UserAgent(const ClientConfiguration& clientConfiguration,
   if (accountIdMode.has_value()) {
     m_features.emplace(accountIdMode.value());
   }
+  //TODO
+  /*
+  if (clientConfiguration.credentialProviderConfig.ssoWhatever) {
+    m_features.emplace(..)
+  }
+   */
 }
 
 Aws::String UserAgent::SerializeWithFeatures(const Aws::Set<UserAgentFeature>& features) const {
