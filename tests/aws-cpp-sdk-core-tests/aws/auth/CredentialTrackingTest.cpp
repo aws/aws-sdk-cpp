@@ -314,13 +314,23 @@ public:
 
     void TearDown() override
     {
-        // Cleanup files
+        // Force cleanup of cached config before file removal
+        Aws::Config::ReloadCachedConfigFile();
+        
+        // Cleanup files with explicit sync
         AWS_LOGSTREAM_DEBUG(TEST_LOG_TAG, "Cleaning up test files");
-        Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
-        Aws::FileSystem::RemoveFileIfExists(m_ssoTokenFileName.c_str());
+        if (Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str())) {
+            AWS_LOGSTREAM_DEBUG(TEST_LOG_TAG, "Removed config file: " << m_configFileName);
+        }
+        if (Aws::FileSystem::RemoveFileIfExists(m_ssoTokenFileName.c_str())) {
+            AWS_LOGSTREAM_DEBUG(TEST_LOG_TAG, "Removed token file: " << m_ssoTokenFileName);
+        }
 
-        // Restore environment
+        // Restore environment before parent cleanup
         RestoreEnvironmentVariables();
+        
+        // Force another config reload after environment restore
+        Aws::Config::ReloadCachedConfigFile();
 
         CredentialTrackingTest::TearDown();
     }
