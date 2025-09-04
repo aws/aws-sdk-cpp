@@ -86,7 +86,7 @@ if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
         }
     }
 #elseif($shapeMember.structure)
-    #if($shapeMember.isMutuallyReferencedWith($shape) || $shapeMember.getName() == $shape.getName())
+    #if($member.shape.isMutuallyReferencedWith($shape) || $member.shape.getName() == $shape.getName())
         ${value}[keyStr] = Aws::MakeShared<${shapeMember.name}>("${typeInfo.className}", ${shapeMember.name}(decoder));
     #else
         ${value}[keyStr] = ${shapeMember.name}(decoder);

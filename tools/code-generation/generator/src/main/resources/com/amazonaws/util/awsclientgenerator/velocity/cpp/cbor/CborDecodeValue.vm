@@ -80,7 +80,7 @@ if (tag.has_value() && tag.value() == 1) //1 represents Epoch-based date/time. S
     }
 }
 #elseif($shapeMember.structure)
-    #if($shapeMember.isMutuallyReferencedWith($shape) || $shapeMember.getName() == $shape.getName())
+    #if($member.shape.isMutuallyReferencedWith($shape) || $member.shape.getName() == $shape.getName())
         ${memberVarName} = Aws::MakeShared<${shapeMember.name}>("${typeInfo.className}", ${shapeMember.name}(decoder));
     #else
         ${memberVarName} = ${member.shape.name}(decoder);
