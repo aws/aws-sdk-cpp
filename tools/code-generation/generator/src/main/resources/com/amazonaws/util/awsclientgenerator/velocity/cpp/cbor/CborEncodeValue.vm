@@ -26,7 +26,7 @@ encoder.WriteFloat(${value});
 #elseif($shapeMember.float)
 encoder.WriteFloat(${value});
 #elseif($shapeMember.structure)
-    #if($shapeMember.isMutuallyReferencedWith($shape) || $shapeMember.getName() == $shape.getName()) ##pointer or not
+    #if($member.shape.isMutuallyReferencedWith($shape) || $member.shape.getName() == $shape.getName()) ##pointer or not
         ${value}->CborEncode(encoder);
     #else
         ${value}.CborEncode(encoder);
