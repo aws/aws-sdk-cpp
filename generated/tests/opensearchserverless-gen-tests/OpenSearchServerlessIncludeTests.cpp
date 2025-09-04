@@ -69,6 +69,7 @@
 #include <aws/opensearchserverless/model/DeleteVpcEndpointResult.h>
 #include <aws/opensearchserverless/model/EffectiveLifecyclePolicyDetail.h>
 #include <aws/opensearchserverless/model/EffectiveLifecyclePolicyErrorDetail.h>
+#include <aws/opensearchserverless/model/FipsEndpoints.h>
 #include <aws/opensearchserverless/model/GetAccessPolicyRequest.h>
 #include <aws/opensearchserverless/model/GetAccessPolicyResult.h>
 #include <aws/opensearchserverless/model/GetAccountSettingsRequest.h>

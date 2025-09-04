@@ -33,6 +33,12 @@ Aws::String StartProtectedJobRequest::SerializePayload() const
 
   }
 
+  if(m_computeConfigurationHasBeenSet)
+  {
+   payload.WithObject("computeConfiguration", m_computeConfiguration.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

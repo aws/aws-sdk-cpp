@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/EngineFamily.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds/model/EndpointNetworkType.h>
+#include <aws/rds/model/TargetConnectionNetworkType.h>
 #include <aws/rds/model/UserAuthConfig.h>
 #include <aws/rds/model/Tag.h>
 #include <utility>
@@ -178,6 +180,44 @@ namespace Model
     template<typename TagsT = Tag>
     CreateDBProxyRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The network type of the DB proxy endpoint. The network type determines the IP
+     * version that the proxy endpoint supports.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> - The proxy endpoint supports IPv4 only.</p> </li> <li> <p>
+     * <code>IPV6</code> - The proxy endpoint supports IPv6 only.</p> </li> <li> <p>
+     * <code>DUAL</code> - The proxy endpoint supports both IPv4 and IPv6.</p> </li>
+     * </ul> <p>Default: <code>IPV4</code> </p> <p>Constraints:</p> <ul> <li> <p>If you
+     * specify <code>IPV6</code> or <code>DUAL</code>, the VPC and all subnets must
+     * have an IPv6 CIDR block.</p> </li> <li> <p>If you specify <code>IPV6</code> or
+     * <code>DUAL</code>, the VPC tenancy cannot be <code>dedicated</code>.</p> </li>
+     * </ul>
+     */
+    inline EndpointNetworkType GetEndpointNetworkType() const { return m_endpointNetworkType; }
+    inline bool EndpointNetworkTypeHasBeenSet() const { return m_endpointNetworkTypeHasBeenSet; }
+    inline void SetEndpointNetworkType(EndpointNetworkType value) { m_endpointNetworkTypeHasBeenSet = true; m_endpointNetworkType = value; }
+    inline CreateDBProxyRequest& WithEndpointNetworkType(EndpointNetworkType value) { SetEndpointNetworkType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The network type that the proxy uses to connect to the target database. The
+     * network type determines the IP version that the proxy uses for connections to
+     * the database.</p> <p>Valid values:</p> <ul> <li> <p> <code>IPV4</code> - The
+     * proxy connects to the database using IPv4 only.</p> </li> <li> <p>
+     * <code>IPV6</code> - The proxy connects to the database using IPv6 only.</p>
+     * </li> </ul> <p>Default: <code>IPV4</code> </p> <p>Constraints:</p> <ul> <li>
+     * <p>If you specify <code>IPV6</code>, the database must support dual-stack mode.
+     * RDS doesn't support IPv6-only databases.</p> </li> <li> <p>All targets
+     * registered with the proxy must be compatible with the specified network
+     * type.</p> </li> </ul>
+     */
+    inline TargetConnectionNetworkType GetTargetConnectionNetworkType() const { return m_targetConnectionNetworkType; }
+    inline bool TargetConnectionNetworkTypeHasBeenSet() const { return m_targetConnectionNetworkTypeHasBeenSet; }
+    inline void SetTargetConnectionNetworkType(TargetConnectionNetworkType value) { m_targetConnectionNetworkTypeHasBeenSet = true; m_targetConnectionNetworkType = value; }
+    inline CreateDBProxyRequest& WithTargetConnectionNetworkType(TargetConnectionNetworkType value) { SetTargetConnectionNetworkType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_dBProxyName;
@@ -209,6 +249,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    EndpointNetworkType m_endpointNetworkType{EndpointNetworkType::NOT_SET};
+    bool m_endpointNetworkTypeHasBeenSet = false;
+
+    TargetConnectionNetworkType m_targetConnectionNetworkType{TargetConnectionNetworkType::NOT_SET};
+    bool m_targetConnectionNetworkTypeHasBeenSet = false;
   };
 
 } // namespace Model

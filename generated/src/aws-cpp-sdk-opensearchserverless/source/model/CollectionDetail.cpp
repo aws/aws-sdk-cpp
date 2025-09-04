@@ -85,6 +85,11 @@ CollectionDetail& CollectionDetail::operator =(JsonView jsonValue)
     m_dashboardEndpoint = jsonValue.GetString("dashboardEndpoint");
     m_dashboardEndpointHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("fipsEndpoints"))
+  {
+    m_fipsEndpoints = jsonValue.GetObject("fipsEndpoints");
+    m_fipsEndpointsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("failureCode"))
   {
     m_failureCode = jsonValue.GetString("failureCode");
@@ -168,6 +173,12 @@ JsonValue CollectionDetail::Jsonize() const
   if(m_dashboardEndpointHasBeenSet)
   {
    payload.WithString("dashboardEndpoint", m_dashboardEndpoint);
+
+  }
+
+  if(m_fipsEndpointsHasBeenSet)
+  {
+   payload.WithObject("fipsEndpoints", m_fipsEndpoints.Jsonize());
 
   }
 

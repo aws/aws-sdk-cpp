@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>One of the targets for the stack set. Returned by the <a
+   * <p>One of the targets for the StackSet. Returned by the <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">ListStackSetAutoDeploymentTargets</a>
    * API operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSetAutoDeploymentTargetSummary">AWS
@@ -44,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The organization root ID or organizational unit (OU) IDs where the stack set
+     * <p>The organization root ID or organizational unit (OU) IDs where the StackSet
      * is targeted.</p>
      */
     inline const Aws::String& GetOrganizationalUnitId() const { return m_organizationalUnitId; }

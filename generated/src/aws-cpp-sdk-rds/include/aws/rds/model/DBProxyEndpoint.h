@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/rds/model/DBProxyEndpointTargetRole.h>
+#include <aws/rds/model/EndpointNetworkType.h>
 #include <utility>
 
 namespace Aws
@@ -189,6 +190,21 @@ namespace Model
     inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
     inline DBProxyEndpoint& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The network type of the DB proxy endpoint. The network type determines the IP
+     * version that the proxy endpoint supports.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> - The proxy endpoint supports IPv4 only.</p> </li> <li> <p>
+     * <code>IPV6</code> - The proxy endpoint supports IPv6 only.</p> </li> <li> <p>
+     * <code>DUAL</code> - The proxy endpoint supports both IPv4 and IPv6.</p> </li>
+     * </ul>
+     */
+    inline EndpointNetworkType GetEndpointNetworkType() const { return m_endpointNetworkType; }
+    inline bool EndpointNetworkTypeHasBeenSet() const { return m_endpointNetworkTypeHasBeenSet; }
+    inline void SetEndpointNetworkType(EndpointNetworkType value) { m_endpointNetworkTypeHasBeenSet = true; m_endpointNetworkType = value; }
+    inline DBProxyEndpoint& WithEndpointNetworkType(EndpointNetworkType value) { SetEndpointNetworkType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_dBProxyEndpointName;
@@ -223,6 +239,9 @@ namespace Model
 
     bool m_isDefault{false};
     bool m_isDefaultHasBeenSet = false;
+
+    EndpointNetworkType m_endpointNetworkType{EndpointNetworkType::NOT_SET};
+    bool m_endpointNetworkTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the resource, the hook, and the hook version to be
+   * <p>Specifies the resource, the Hook, and the Hook version to be
    * invoked.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ChangeSetHook">AWS
    * API Reference</a></p>
@@ -45,7 +45,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the points in provisioning logic where a hook is invoked.</p>
+     * <p>The specific point in the provisioning process where the Hook is invoked.</p>
      */
     inline HookInvocationPoint GetInvocationPoint() const { return m_invocationPoint; }
     inline bool InvocationPointHasBeenSet() const { return m_invocationPointHasBeenSet; }
@@ -55,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specify the hook failure mode for non-compliant resources in the followings
+     * <p>Specify the Hook failure mode for non-compliant resources in the followings
      * ways.</p> <ul> <li> <p> <code>FAIL</code> Stops provisioning resources.</p>
      * </li> <li> <p> <code>WARN</code> Allows provisioning to continue with a warning
      * message.</p> </li> </ul>
@@ -68,10 +68,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique name for your hook. Specifies a three-part namespace for your
-     * hook, with a recommended pattern of
+     * <p>The unique name for your Hook. Specifies a three-part namespace for your
+     * Hook, with a recommended pattern of
      * <code>Organization::Service::Hook</code>.</p>  <p>The following
-     * organization namespaces are reserved and can't be used in your hook type
+     * organization namespaces are reserved and can't be used in your Hook type
      * names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li> <li> <p>
      * <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li> <li> <p>
      * <code>ASK</code> </p> </li> <li> <p> <code>AWS</code> </p> </li> <li> <p>
@@ -112,7 +112,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies details about the target that the hook will run against.</p>
+     * <p>Specifies details about the target that the Hook will run against.</p>
      */
     inline const ChangeSetHookTargetDetails& GetTargetDetails() const { return m_targetDetails; }
     inline bool TargetDetailsHasBeenSet() const { return m_targetDetailsHasBeenSet; }

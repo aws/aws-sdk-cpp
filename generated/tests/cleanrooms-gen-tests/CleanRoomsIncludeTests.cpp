@@ -317,6 +317,7 @@
 #include <aws/cleanrooms/model/PrivacyImpact.h>
 #include <aws/cleanrooms/model/ProtectedJob.h>
 #include <aws/cleanrooms/model/ProtectedJobAnalysisType.h>
+#include <aws/cleanrooms/model/ProtectedJobComputeConfiguration.h>
 #include <aws/cleanrooms/model/ProtectedJobConfigurationDetails.h>
 #include <aws/cleanrooms/model/ProtectedJobDirectAnalysisConfigurationDetails.h>
 #include <aws/cleanrooms/model/ProtectedJobError.h>
@@ -338,6 +339,8 @@
 #include <aws/cleanrooms/model/ProtectedJobStatus.h>
 #include <aws/cleanrooms/model/ProtectedJobSummary.h>
 #include <aws/cleanrooms/model/ProtectedJobType.h>
+#include <aws/cleanrooms/model/ProtectedJobWorkerComputeConfiguration.h>
+#include <aws/cleanrooms/model/ProtectedJobWorkerComputeType.h>
 #include <aws/cleanrooms/model/ProtectedQuery.h>
 #include <aws/cleanrooms/model/ProtectedQueryDistributeOutput.h>
 #include <aws/cleanrooms/model/ProtectedQueryDistributeOutputConfiguration.h>

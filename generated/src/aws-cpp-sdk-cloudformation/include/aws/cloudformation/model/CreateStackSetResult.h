@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the stack set that you're creating.</p>
+     * <p>The ID of the StackSet that you're creating.</p>
      */
     inline const Aws::String& GetStackSetId() const { return m_stackSetId; }
     template<typename StackSetIdT = Aws::String>

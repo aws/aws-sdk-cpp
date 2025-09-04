@@ -59,7 +59,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique ID of this event.</p>
+     * <p>The unique identifier of this event.</p>
      */
     inline const Aws::String& GetEventId() const { return m_eventId; }
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
@@ -192,7 +192,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the hook.</p>
+     * <p>The name of the Hook.</p>
      */
     inline const Aws::String& GetHookType() const { return m_hookType; }
     inline bool HookTypeHasBeenSet() const { return m_hookTypeHasBeenSet; }
@@ -204,7 +204,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Provides the status of the change set hook.</p>
+     * <p>Provides the status of the change set Hook.</p>
      */
     inline HookStatus GetHookStatus() const { return m_hookStatus; }
     inline bool HookStatusHasBeenSet() const { return m_hookStatusHasBeenSet; }
@@ -214,7 +214,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Provides the reason for the hook status.</p>
+     * <p>Provides the reason for the Hook status.</p>
      */
     inline const Aws::String& GetHookStatusReason() const { return m_hookStatusReason; }
     inline bool HookStatusReasonHasBeenSet() const { return m_hookStatusReasonHasBeenSet; }
@@ -226,8 +226,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Invocation points are points in provisioning logic where Hooks are
-     * initiated.</p>
+     * <p>The specific point in the provisioning process where the Hook is invoked.</p>
      */
     inline HookInvocationPoint GetHookInvocationPoint() const { return m_hookInvocationPoint; }
     inline bool HookInvocationPointHasBeenSet() const { return m_hookInvocationPointHasBeenSet; }
@@ -237,7 +236,19 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specify the hook failure mode for non-compliant resources in the followings
+     * <p>The unique identifier of the Hook invocation.</p>
+     */
+    inline const Aws::String& GetHookInvocationId() const { return m_hookInvocationId; }
+    inline bool HookInvocationIdHasBeenSet() const { return m_hookInvocationIdHasBeenSet; }
+    template<typename HookInvocationIdT = Aws::String>
+    void SetHookInvocationId(HookInvocationIdT&& value) { m_hookInvocationIdHasBeenSet = true; m_hookInvocationId = std::forward<HookInvocationIdT>(value); }
+    template<typename HookInvocationIdT = Aws::String>
+    StackEvent& WithHookInvocationId(HookInvocationIdT&& value) { SetHookInvocationId(std::forward<HookInvocationIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specify the Hook failure mode for non-compliant resources in the followings
      * ways.</p> <ul> <li> <p> <code>FAIL</code> Stops provisioning resources.</p>
      * </li> <li> <p> <code>WARN</code> Allows provisioning to continue with a warning
      * message.</p> </li> </ul>
@@ -311,6 +322,9 @@ namespace Model
 
     HookInvocationPoint m_hookInvocationPoint{HookInvocationPoint::NOT_SET};
     bool m_hookInvocationPointHasBeenSet = false;
+
+    Aws::String m_hookInvocationId;
+    bool m_hookInvocationIdHasBeenSet = false;
 
     HookFailureMode m_hookFailureMode{HookFailureMode::NOT_SET};
     bool m_hookFailureModeHasBeenSet = false;

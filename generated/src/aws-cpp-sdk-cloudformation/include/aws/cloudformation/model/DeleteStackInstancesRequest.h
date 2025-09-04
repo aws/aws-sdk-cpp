@@ -43,8 +43,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name or unique ID of the stack set that you want to delete stack
-     * instances for.</p>
+     * <p>The name or unique ID of the StackSet that you want to delete stack instances
+     * for.</p>
      */
     inline const Aws::String& GetStackSetName() const { return m_stackSetName; }
     inline bool StackSetNameHasBeenSet() const { return m_stackSetNameHasBeenSet; }
@@ -86,7 +86,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Services Regions where you want to delete stack set
+     * <p>The Amazon Web Services Regions where you want to delete StackSet
      * instances.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegions() const { return m_regions; }
@@ -101,7 +101,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Preferences for how CloudFormation performs this stack set operation.</p>
+     * <p>Preferences for how CloudFormation performs this StackSet operation.</p>
      */
     inline const StackSetOperationPreferences& GetOperationPreferences() const { return m_operationPreferences; }
     inline bool OperationPreferencesHasBeenSet() const { return m_operationPreferencesHasBeenSet; }
@@ -113,11 +113,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Removes the stack instances from the specified stack set, but doesn't delete
+     * <p>Removes the stack instances from the specified StackSet, but doesn't delete
      * the stacks. You can't reassociate a retained stack or add an existing, saved
      * stack to a new stack set.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-ops-options">Stack
-     * set operation options</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">StackSet
+     * operation options</a>.</p>
      */
     inline bool GetRetainStacks() const { return m_retainStacks; }
     inline bool RetainStacksHasBeenSet() const { return m_retainStacksHasBeenSet; }
@@ -127,12 +127,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier for this stack set operation.</p> <p>If you don't
+     * <p>The unique identifier for this StackSet operation.</p> <p>If you don't
      * specify an operation ID, the SDK generates one automatically.</p> <p>The
      * operation ID also functions as an idempotency token, to ensure that
-     * CloudFormation performs the stack set operation only once, even if you retry the
-     * request multiple times. You can retry stack set operation requests to ensure
-     * that CloudFormation successfully received them.</p> <p>Repeating this stack set
+     * CloudFormation performs the StackSet operation only once, even if you retry the
+     * request multiple times. You can retry StackSet operation requests to ensure that
+     * CloudFormation successfully received them.</p> <p>Repeating this StackSet
      * operation with a new operation ID retries all stack instances whose status is
      * <code>OUTDATED</code>.</p>
      */
@@ -149,7 +149,7 @@ namespace Model
      * <p>[Service-managed permissions] Specifies whether you are acting as an account
      * administrator in the organization's management account or as a delegated
      * administrator in a member account.</p> <p>By default, <code>SELF</code> is
-     * specified. Use <code>SELF</code> for stack sets with self-managed
+     * specified. Use <code>SELF</code> for StackSets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
      * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon

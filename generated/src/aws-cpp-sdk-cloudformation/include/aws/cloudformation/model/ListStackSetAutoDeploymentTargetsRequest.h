@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name or unique ID of the stack set that you want to get automatic
+     * <p>The name or unique ID of the StackSet that you want to get automatic
      * deployment targets for.</p>
      */
     inline const Aws::String& GetStackSetName() const { return m_stackSetName; }
@@ -52,8 +52,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A string that identifies the next page of stack set deployment targets that
-     * you want to retrieve.</p>
+     * <p>A string that identifies the next page of deployment targets that you want to
+     * retrieve.</p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

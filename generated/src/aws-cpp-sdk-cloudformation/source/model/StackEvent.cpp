@@ -121,6 +121,12 @@ StackEvent& StackEvent::operator =(const XmlNode& xmlNode)
       m_hookInvocationPoint = HookInvocationPointMapper::GetHookInvocationPointForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hookInvocationPointNode.GetText()).c_str()));
       m_hookInvocationPointHasBeenSet = true;
     }
+    XmlNode hookInvocationIdNode = resultNode.FirstChild("HookInvocationId");
+    if(!hookInvocationIdNode.IsNull())
+    {
+      m_hookInvocationId = Aws::Utils::Xml::DecodeEscapedXmlText(hookInvocationIdNode.GetText());
+      m_hookInvocationIdHasBeenSet = true;
+    }
     XmlNode hookFailureModeNode = resultNode.FirstChild("HookFailureMode");
     if(!hookFailureModeNode.IsNull())
     {
@@ -215,6 +221,11 @@ void StackEvent::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".HookInvocationPoint=" << StringUtils::URLEncode(HookInvocationPointMapper::GetNameForHookInvocationPoint(m_hookInvocationPoint)) << "&";
   }
 
+  if(m_hookInvocationIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".HookInvocationId=" << StringUtils::URLEncode(m_hookInvocationId.c_str()) << "&";
+  }
+
   if(m_hookFailureModeHasBeenSet)
   {
       oStream << location << index << locationValue << ".HookFailureMode=" << StringUtils::URLEncode(HookFailureModeMapper::GetNameForHookFailureMode(m_hookFailureMode)) << "&";
@@ -288,6 +299,10 @@ void StackEvent::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_hookInvocationPointHasBeenSet)
   {
       oStream << location << ".HookInvocationPoint=" << StringUtils::URLEncode(HookInvocationPointMapper::GetNameForHookInvocationPoint(m_hookInvocationPoint)) << "&";
+  }
+  if(m_hookInvocationIdHasBeenSet)
+  {
+      oStream << location << ".HookInvocationId=" << StringUtils::URLEncode(m_hookInvocationId.c_str()) << "&";
   }
   if(m_hookFailureModeHasBeenSet)
   {

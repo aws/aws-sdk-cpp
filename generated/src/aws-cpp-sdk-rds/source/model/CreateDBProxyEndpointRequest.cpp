@@ -82,6 +82,11 @@ Aws::String CreateDBProxyEndpointRequest::SerializePayload() const
     }
   }
 
+  if(m_endpointNetworkTypeHasBeenSet)
+  {
+    ss << "EndpointNetworkType=" << StringUtils::URLEncode(EndpointNetworkTypeMapper::GetNameForEndpointNetworkType(m_endpointNetworkType)) << "&";
+  }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

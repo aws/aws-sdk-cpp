@@ -60,7 +60,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>List of hook objects.</p>
+     * <p>List of Hook objects.</p>
      */
     inline const Aws::Vector<ChangeSetHook>& GetHooks() const { return m_hooks; }
     template<typename HooksT = Aws::Vector<ChangeSetHook>>

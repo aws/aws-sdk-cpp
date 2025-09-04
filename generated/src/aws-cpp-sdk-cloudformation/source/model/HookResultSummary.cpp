@@ -31,6 +31,12 @@ HookResultSummary& HookResultSummary::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
+    XmlNode hookResultIdNode = resultNode.FirstChild("HookResultId");
+    if(!hookResultIdNode.IsNull())
+    {
+      m_hookResultId = Aws::Utils::Xml::DecodeEscapedXmlText(hookResultIdNode.GetText());
+      m_hookResultIdHasBeenSet = true;
+    }
     XmlNode invocationPointNode = resultNode.FirstChild("InvocationPoint");
     if(!invocationPointNode.IsNull())
     {
@@ -73,6 +79,36 @@ HookResultSummary& HookResultSummary::operator =(const XmlNode& xmlNode)
       m_hookStatusReason = Aws::Utils::Xml::DecodeEscapedXmlText(hookStatusReasonNode.GetText());
       m_hookStatusReasonHasBeenSet = true;
     }
+    XmlNode invokedAtNode = resultNode.FirstChild("InvokedAt");
+    if(!invokedAtNode.IsNull())
+    {
+      m_invokedAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(invokedAtNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_invokedAtHasBeenSet = true;
+    }
+    XmlNode targetTypeNode = resultNode.FirstChild("TargetType");
+    if(!targetTypeNode.IsNull())
+    {
+      m_targetType = ListHookResultsTargetTypeMapper::GetListHookResultsTargetTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetTypeNode.GetText()).c_str()));
+      m_targetTypeHasBeenSet = true;
+    }
+    XmlNode targetIdNode = resultNode.FirstChild("TargetId");
+    if(!targetIdNode.IsNull())
+    {
+      m_targetId = Aws::Utils::Xml::DecodeEscapedXmlText(targetIdNode.GetText());
+      m_targetIdHasBeenSet = true;
+    }
+    XmlNode typeArnNode = resultNode.FirstChild("TypeArn");
+    if(!typeArnNode.IsNull())
+    {
+      m_typeArn = Aws::Utils::Xml::DecodeEscapedXmlText(typeArnNode.GetText());
+      m_typeArnHasBeenSet = true;
+    }
+    XmlNode hookExecutionTargetNode = resultNode.FirstChild("HookExecutionTarget");
+    if(!hookExecutionTargetNode.IsNull())
+    {
+      m_hookExecutionTarget = Aws::Utils::Xml::DecodeEscapedXmlText(hookExecutionTargetNode.GetText());
+      m_hookExecutionTargetHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -80,6 +116,11 @@ HookResultSummary& HookResultSummary::operator =(const XmlNode& xmlNode)
 
 void HookResultSummary::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_hookResultIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".HookResultId=" << StringUtils::URLEncode(m_hookResultId.c_str()) << "&";
+  }
+
   if(m_invocationPointHasBeenSet)
   {
       oStream << location << index << locationValue << ".InvocationPoint=" << StringUtils::URLEncode(HookInvocationPointMapper::GetNameForHookInvocationPoint(m_invocationPoint)) << "&";
@@ -115,10 +156,39 @@ void HookResultSummary::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".HookStatusReason=" << StringUtils::URLEncode(m_hookStatusReason.c_str()) << "&";
   }
 
+  if(m_invokedAtHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InvokedAt=" << StringUtils::URLEncode(m_invokedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_targetTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TargetType=" << StringUtils::URLEncode(ListHookResultsTargetTypeMapper::GetNameForListHookResultsTargetType(m_targetType)) << "&";
+  }
+
+  if(m_targetIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TargetId=" << StringUtils::URLEncode(m_targetId.c_str()) << "&";
+  }
+
+  if(m_typeArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TypeArn=" << StringUtils::URLEncode(m_typeArn.c_str()) << "&";
+  }
+
+  if(m_hookExecutionTargetHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".HookExecutionTarget=" << StringUtils::URLEncode(m_hookExecutionTarget.c_str()) << "&";
+  }
+
 }
 
 void HookResultSummary::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_hookResultIdHasBeenSet)
+  {
+      oStream << location << ".HookResultId=" << StringUtils::URLEncode(m_hookResultId.c_str()) << "&";
+  }
   if(m_invocationPointHasBeenSet)
   {
       oStream << location << ".InvocationPoint=" << StringUtils::URLEncode(HookInvocationPointMapper::GetNameForHookInvocationPoint(m_invocationPoint)) << "&";
@@ -146,6 +216,26 @@ void HookResultSummary::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_hookStatusReasonHasBeenSet)
   {
       oStream << location << ".HookStatusReason=" << StringUtils::URLEncode(m_hookStatusReason.c_str()) << "&";
+  }
+  if(m_invokedAtHasBeenSet)
+  {
+      oStream << location << ".InvokedAt=" << StringUtils::URLEncode(m_invokedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_targetTypeHasBeenSet)
+  {
+      oStream << location << ".TargetType=" << StringUtils::URLEncode(ListHookResultsTargetTypeMapper::GetNameForListHookResultsTargetType(m_targetType)) << "&";
+  }
+  if(m_targetIdHasBeenSet)
+  {
+      oStream << location << ".TargetId=" << StringUtils::URLEncode(m_targetId.c_str()) << "&";
+  }
+  if(m_typeArnHasBeenSet)
+  {
+      oStream << location << ".TypeArn=" << StringUtils::URLEncode(m_typeArn.c_str()) << "&";
+  }
+  if(m_hookExecutionTargetHasBeenSet)
+  {
+      oStream << location << ".HookExecutionTarget=" << StringUtils::URLEncode(m_hookExecutionTarget.c_str()) << "&";
   }
 }
 

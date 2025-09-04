@@ -129,6 +129,7 @@
 #include <aws/cloudformation/model/ActivateTypeRequest.h>
 #include <aws/cloudformation/model/ListTypesRequest.h>
 #include <aws/cloudformation/model/EstimateTemplateCostRequest.h>
+#include <aws/cloudformation/model/ListHookResultsRequest.h>
 #include <aws/cloudformation/model/ListGeneratedTemplatesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in CloudFormationClient header */

@@ -142,6 +142,18 @@ DBProxy& DBProxy::operator =(const XmlNode& xmlNode)
       m_updatedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updatedDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_updatedDateHasBeenSet = true;
     }
+    XmlNode endpointNetworkTypeNode = resultNode.FirstChild("EndpointNetworkType");
+    if(!endpointNetworkTypeNode.IsNull())
+    {
+      m_endpointNetworkType = EndpointNetworkTypeMapper::GetEndpointNetworkTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endpointNetworkTypeNode.GetText()).c_str()));
+      m_endpointNetworkTypeHasBeenSet = true;
+    }
+    XmlNode targetConnectionNetworkTypeNode = resultNode.FirstChild("TargetConnectionNetworkType");
+    if(!targetConnectionNetworkTypeNode.IsNull())
+    {
+      m_targetConnectionNetworkType = TargetConnectionNetworkTypeMapper::GetTargetConnectionNetworkTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetConnectionNetworkTypeNode.GetText()).c_str()));
+      m_targetConnectionNetworkTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -238,6 +250,16 @@ void DBProxy::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".UpdatedDate=" << StringUtils::URLEncode(m_updatedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_endpointNetworkTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EndpointNetworkType=" << StringUtils::URLEncode(EndpointNetworkTypeMapper::GetNameForEndpointNetworkType(m_endpointNetworkType)) << "&";
+  }
+
+  if(m_targetConnectionNetworkTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TargetConnectionNetworkType=" << StringUtils::URLEncode(TargetConnectionNetworkTypeMapper::GetNameForTargetConnectionNetworkType(m_targetConnectionNetworkType)) << "&";
+  }
+
 }
 
 void DBProxy::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -315,6 +337,14 @@ void DBProxy::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_updatedDateHasBeenSet)
   {
       oStream << location << ".UpdatedDate=" << StringUtils::URLEncode(m_updatedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_endpointNetworkTypeHasBeenSet)
+  {
+      oStream << location << ".EndpointNetworkType=" << StringUtils::URLEncode(EndpointNetworkTypeMapper::GetNameForEndpointNetworkType(m_endpointNetworkType)) << "&";
+  }
+  if(m_targetConnectionNetworkTypeHasBeenSet)
+  {
+      oStream << location << ".TargetConnectionNetworkType=" << StringUtils::URLEncode(TargetConnectionNetworkTypeMapper::GetNameForTargetConnectionNetworkType(m_targetConnectionNetworkType)) << "&";
   }
 }
 

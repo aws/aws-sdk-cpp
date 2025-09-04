@@ -26,13 +26,15 @@ namespace Model
 {
 
   /**
-   * <p>[Service-managed permissions] The Organizations accounts to which StackSets
-   * deploys. StackSets doesn't deploy stack instances to the organization management
-   * account, even if the organization management account is in your organization or
-   * in an OU in your organization.</p> <p>For update operations, you can specify
-   * either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create
-   * and delete operations, specify <code>OrganizationalUnitIds</code>.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Specifies the Organizations accounts where you want to create, update, or
+   * delete stack instances. You can target either your entire organization or
+   * specific accounts using organizational units (OUs) and account filter
+   * options.</p> <p>CloudFormation doesn't deploy stack instances to the
+   * organization management account, even if the organization management account is
+   * in your organization or in an OU in your organization.</p> <p>When performing
+   * create operations, if you specify both <code>OrganizationalUnitIds</code> and
+   * <code>Accounts</code>, you must also specify the <code>AccountFilterType</code>
+   * property.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeploymentTargets">AWS
    * API Reference</a></p>
    */
@@ -49,7 +51,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The account IDs of the Amazon Web Services accounts. If you have many account
+     * <p>The Amazon Web Services account IDs where you want to perform stack
+     * operations. How these accounts are used depends on the
+     * <code>AccountFilterType</code> property.</p> <p>If you have many account
      * numbers, you can provide those accounts using the <code>AccountsUrl</code>
      * property instead.</p>
      */
@@ -69,7 +73,8 @@ namespace Model
      * account IDs. The file format must be either <code>.csv</code> or
      * <code>.txt</code>, and the data can be comma-separated or new-line-separated.
      * There is currently a 10MB limit for the data (approximately 800,000
-     * accounts).</p> <p/>
+     * accounts).</p> <p>This property serves the same purpose as <code>Accounts</code>
+     * but allows you to specify a large number of accounts.</p>
      */
     inline const Aws::String& GetAccountsUrl() const { return m_accountsUrl; }
     inline bool AccountsUrlHasBeenSet() const { return m_accountsUrlHasBeenSet; }
@@ -81,7 +86,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The organization root ID or organizational unit (OU) IDs.</p>
+     * <p>The organization root ID or organizational unit (OU) IDs where you want to
+     * perform stack operations. CloudFormation will perform operations on accounts
+     * within these OUs and their child OUs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOrganizationalUnitIds() const { return m_organizationalUnitIds; }
     inline bool OrganizationalUnitIdsHasBeenSet() const { return m_organizationalUnitIdsHasBeenSet; }
@@ -95,19 +102,24 @@ namespace Model
 
     ///@{
     /**
-     * <p>Limit deployment targets to individual accounts or include additional
-     * accounts with provided OUs.</p> <p>The following is a list of possible values
-     * for the <code>AccountFilterType</code> operation.</p> <ul> <li> <p>
-     * <code>INTERSECTION</code>: StackSets deploys to the accounts specified in
-     * <code>Accounts</code> parameter. </p> </li> <li> <p> <code>DIFFERENCE</code>:
-     * StackSets excludes the accounts specified in <code>Accounts</code> parameter.
-     * This enables user to avoid certain accounts within an OU such as suspended
-     * accounts.</p> </li> <li> <p> <code>UNION</code>: StackSets includes additional
-     * accounts deployment targets. </p> <p>This is the default value if
-     * <code>AccountFilterType</code> is not provided. This enables user to update an
-     * entire OU and individual accounts from a different OU in one request, which used
-     * to be two separate requests.</p> </li> <li> <p> <code>NONE</code>: Deploys to
-     * all the accounts in specified organizational units (OU).</p> </li> </ul>
+     * <p>Refines which accounts will have stack operations performed on them by
+     * specifying how to use the <code>Accounts</code> and
+     * <code>OrganizationalUnitIds</code> properties together.</p> <p>The following
+     * values determine how CloudFormation selects target accounts:</p> <ul> <li> <p>
+     * <code>INTERSECTION</code>: Performs stack operations only on specific individual
+     * accounts within the selected OUs. Only accounts that are both specified in the
+     * <code>Accounts</code> property and belong to the specified OUs will be
+     * targeted.</p> </li> <li> <p> <code>DIFFERENCE</code>: Performs stack operations
+     * on all accounts in the selected OUs except for specific accounts listed in the
+     * <code>Accounts</code> property. This enables you to exclude certain accounts
+     * within an OU, such as suspended accounts.</p> </li> <li> <p> <code>UNION</code>:
+     * Performs stack operations on the specified OUs plus additional individual
+     * accounts listed in the <code>Accounts</code> property. This is the default value
+     * if <code>AccountFilterType</code> is not provided. This lets you target an
+     * entire OU and individual accounts from a different OU in one request. Note that
+     * <code>UNION</code> is not supported for <code>CreateStackInstances</code>
+     * operations.</p> </li> <li> <p> <code>NONE</code>: Performs stack operations on
+     * all accounts in the specified organizational units (OUs).</p> </li> </ul>
      */
     inline AccountFilterType GetAccountFilterType() const { return m_accountFilterType; }
     inline bool AccountFilterTypeHasBeenSet() const { return m_accountFilterTypeHasBeenSet; }

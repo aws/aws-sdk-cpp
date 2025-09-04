@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>Contains information about a policy created by instantiating a policy
-   * template. </p> <p>This </p><p><h3>See Also:</h3>   <a
+   * template. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/TemplateLinkedPolicyDefinitionItem">AWS
    * API Reference</a></p>
    */

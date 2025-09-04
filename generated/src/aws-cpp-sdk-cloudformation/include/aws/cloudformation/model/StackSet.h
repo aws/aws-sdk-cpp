@@ -33,11 +33,11 @@ namespace Model
 {
 
   /**
-   * <p>A structure that contains information about a stack set. A stack set enables
-   * you to provision stacks into Amazon Web Services accounts and across Regions by
-   * using a single CloudFormation template. In the stack set, you specify the
-   * template to use, in addition to any parameters and capabilities that the
-   * template requires.</p><p><h3>See Also:</h3>   <a
+   * <p>A structure that contains information about a StackSet. With StackSets, you
+   * can provision stacks across Amazon Web Services accounts and Regions from a
+   * single CloudFormation template. Each stack is based on the same CloudFormation
+   * template, but you can customize individual stacks using
+   * parameters.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSet">AWS
    * API Reference</a></p>
    */
@@ -54,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name that's associated with the stack set.</p>
+     * <p>The name that's associated with the StackSet.</p>
      */
     inline const Aws::String& GetStackSetName() const { return m_stackSetName; }
     inline bool StackSetNameHasBeenSet() const { return m_stackSetNameHasBeenSet; }
@@ -66,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the stack set.</p>
+     * <p>The ID of the StackSet.</p>
      */
     inline const Aws::String& GetStackSetId() const { return m_stackSetId; }
     inline bool StackSetIdHasBeenSet() const { return m_stackSetIdHasBeenSet; }
@@ -78,7 +78,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A description of the stack set that you specify when the stack set is created
+     * <p>A description of the StackSet that you specify when the StackSet is created
      * or updated.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
@@ -91,7 +91,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the stack set.</p>
+     * <p>The status of the StackSet.</p>
      */
     inline StackSetStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -102,7 +102,7 @@ namespace Model
     ///@{
     /**
      * <p>The structure that contains the body of the template that was used to create
-     * or update the stack set.</p>
+     * or update the StackSet.</p>
      */
     inline const Aws::String& GetTemplateBody() const { return m_templateBody; }
     inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
@@ -114,7 +114,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of input parameters for a stack set.</p>
+     * <p>A list of input parameters for a StackSet.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
@@ -128,7 +128,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The capabilities that are allowed in the stack set. Some stack set templates
+     * <p>The capabilities that are allowed in the StackSet. Some StackSet templates
      * might include resources that can affect permissions in your Amazon Web Services
      * account—for example, by creating new Identity and Access Management (IAM) users.
      * For more information, see <a
@@ -146,7 +146,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of tags that specify information about the stack set. A maximum number
+     * <p>A list of tags that specify information about the StackSet. A maximum number
      * of 50 tags can be specified.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
@@ -161,7 +161,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the stack set.</p>
+     * <p>The Amazon Resource Name (ARN) of the StackSet.</p>
      */
     inline const Aws::String& GetStackSetARN() const { return m_stackSetARN; }
     inline bool StackSetARNHasBeenSet() const { return m_stackSetARNHasBeenSet; }
@@ -175,7 +175,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role used to create or update the
      * stack set.</p> <p>Use customized administrator roles to control which users or
-     * groups can manage specific stack sets within the same administrator account. For
+     * groups can manage specific StackSets within the same administrator account. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites
      * for using CloudFormation StackSets</a> in the <i>CloudFormation User
@@ -191,9 +191,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the IAM execution role used to create or update the stack
-     * set.</p> <p>Use customized execution roles to control which stack resources
-     * users and groups can include in their stack sets.</p>
+     * <p>The name of the IAM execution role used to create or update the StackSet.</p>
+     * <p>Use customized execution roles to control which stack resources users and
+     * groups can include in their StackSets.</p>
      */
     inline const Aws::String& GetExecutionRoleName() const { return m_executionRoleName; }
     inline bool ExecutionRoleNameHasBeenSet() const { return m_executionRoleNameHasBeenSet; }
@@ -205,9 +205,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Detailed information about the drift status of the stack set.</p> <p>For
-     * stack sets, contains information about the last <i>completed</i> drift operation
-     * performed on the stack set. Information about drift operations currently in
+     * <p>Detailed information about the drift status of the StackSet.</p> <p>For
+     * StackSets, contains information about the last <i>completed</i> drift operation
+     * performed on the StackSet. Information about drift operations currently in
      * progress isn't included.</p>
      */
     inline const StackSetDriftDetectionDetails& GetStackSetDriftDetectionDetails() const { return m_stackSetDriftDetectionDetails; }
@@ -220,9 +220,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>[Service-managed permissions] Describes whether StackSets automatically
-     * deploys to Organizations accounts that are added to a target organization or
-     * organizational unit (OU).</p>
+     * <p>Describes whether StackSets automatically deploys to Organizations accounts
+     * that are added to a target organization or organizational unit (OU). Valid only
+     * if the StackSet uses service-managed permissions.</p>
      */
     inline const AutoDeployment& GetAutoDeployment() const { return m_autoDeployment; }
     inline bool AutoDeploymentHasBeenSet() const { return m_autoDeploymentHasBeenSet; }
@@ -234,17 +234,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>Describes how the IAM roles required for stack set operations are
-     * created.</p> <ul> <li> <p>With <code>self-managed</code> permissions, you must
-     * create the administrator and execution roles required to deploy to target
-     * accounts. For more information, see <a
+     * <p>Describes how the IAM roles required for StackSet operations are created.</p>
+     * <ul> <li> <p>With <code>self-managed</code> permissions, you must create the
+     * administrator and execution roles required to deploy to target accounts. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
      * self-managed permissions</a>.</p> </li> <li> <p>With
      * <code>service-managed</code> permissions, StackSets automatically creates the
      * IAM roles required to deploy to accounts managed by Organizations. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate
-     * trusted access for stack sets with Organizations</a>.</p> </li> </ul>
+     * trusted access for StackSets with Organizations</a>.</p> </li> </ul>
      */
     inline PermissionModels GetPermissionModel() const { return m_permissionModel; }
     inline bool PermissionModelHasBeenSet() const { return m_permissionModelHasBeenSet; }

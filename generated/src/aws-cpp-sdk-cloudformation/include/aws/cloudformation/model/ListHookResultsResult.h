@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of operation being targeted by the Hook.</p>
+     * <p>The target type.</p>
      */
     inline ListHookResultsTargetType GetTargetType() const { return m_targetType; }
     inline void SetTargetType(ListHookResultsTargetType value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
@@ -47,12 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The logical ID of the target the operation is acting on by the Hook. If the
-     * target is a change set, it's the ARN of the change set.</p> <p>If the target is
-     * a Cloud Control API operation, this will be the <code>HooksRequestToken</code>
-     * returned by the Cloud Control API operation request. For more information on the
-     * <code>HooksRequestToken</code>, see <a
-     * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_ProgressEvent.html">ProgressEvent</a>.</p>
+     * <p>The unique identifier of the Hook invocation target.</p>
      */
     inline const Aws::String& GetTargetId() const { return m_targetId; }
     template<typename TargetIdT = Aws::String>

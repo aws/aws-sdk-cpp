@@ -24,6 +24,16 @@ Aws::String ListHookResultsRequest::SerializePayload() const
     ss << "TargetId=" << StringUtils::URLEncode(m_targetId.c_str()) << "&";
   }
 
+  if(m_typeArnHasBeenSet)
+  {
+    ss << "TypeArn=" << StringUtils::URLEncode(m_typeArn.c_str()) << "&";
+  }
+
+  if(m_statusHasBeenSet)
+  {
+    ss << "Status=" << StringUtils::URLEncode(HookStatusMapper::GetNameForHookStatus(m_status)) << "&";
+  }
+
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";

@@ -70,7 +70,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the stack sets that you want to get summary information
+     * <p>The status of the StackSets that you want to get summary information
      * about.</p>
      */
     inline StackSetStatus GetStatus() const { return m_status; }
@@ -84,7 +84,7 @@ namespace Model
      * <p>[Service-managed permissions] Specifies whether you are acting as an account
      * administrator in the management account or as a delegated administrator in a
      * member account.</p> <p>By default, <code>SELF</code> is specified. Use
-     * <code>SELF</code> for stack sets with self-managed permissions.</p> <ul> <li>
+     * <code>SELF</code> for StackSets with self-managed permissions.</p> <ul> <li>
      * <p>If you are signed in to the management account, specify
      * <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
      * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon

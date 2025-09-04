@@ -38,7 +38,7 @@ namespace Model
     ///@{
     /**
      * <p>A list of <code>StackSetOperationSummary</code> structures that contain
-     * summary information about operations for the specified stack set.</p>
+     * summary information about operations for the specified StackSet.</p>
      */
     inline const Aws::Vector<StackSetOperationSummary>& GetSummaries() const { return m_summaries; }
     template<typename SummariesT = Aws::Vector<StackSetOperationSummary>>

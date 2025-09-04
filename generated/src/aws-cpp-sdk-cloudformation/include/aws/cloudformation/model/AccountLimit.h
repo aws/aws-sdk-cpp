@@ -24,11 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>The AccountLimit data type.</p> <p>CloudFormation has the following limits
-   * per account:</p> <ul> <li> <p>Number of concurrent resources</p> </li> <li>
-   * <p>Number of stacks</p> </li> <li> <p>Number of stack outputs</p> </li> </ul>
-   * <p>For more information about these account limits, and other CloudFormation
-   * limits, see <a
+   * <p>Describes the current CloudFormation limits for your account.</p>
+   * <p>CloudFormation has the following limits per account:</p> <ul> <li> <p>Number
+   * of concurrent resources</p> </li> <li> <p>Number of stacks</p> </li> <li>
+   * <p>Number of stack outputs</p> </li> </ul> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Understand
    * CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
