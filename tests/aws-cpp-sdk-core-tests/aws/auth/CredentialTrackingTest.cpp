@@ -99,7 +99,7 @@ protected:
         Aws::Http::InitHttp();
     }
 
-    void RunTestWithCredentialsProvider(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider, std::string id) {
+    void RunTestWithCredentialsProvider(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider, const Aws::String& id) {
       // Setup mock response
       std::shared_ptr<HttpRequest> requestTmp =
           CreateHttpRequest(Aws::Http::URI("dummy"), Aws::Http::HttpMethod::HTTP_POST,
@@ -180,7 +180,7 @@ TEST_F(CredentialTrackingTest, TestProfileCredentialsTracking)
     RunTestWithCredentialsProvider(std::move(credsProvider), "n");
 }
 
-TEST_F(CredentialTrackingTest, TestProcessCredentialsTracking)
+TEST_F(CredentialTrackingTest, TestProfileProcessCredentialsTracking)
 {
     // Create temporary config file with credential_process
     Aws::Utils::TempFile configFile(std::ios_base::out | std::ios_base::trunc);
@@ -198,7 +198,7 @@ TEST_F(CredentialTrackingTest, TestProcessCredentialsTracking)
     Aws::Config::ReloadCachedConfigFile();
 
     auto credsProvider = Aws::MakeShared<Aws::Auth::ProcessCredentialsProvider>(TEST_LOG_TAG);
-    RunTestWithCredentialsProvider(std::move(credsProvider), "w");
+    RunTestWithCredentialsProvider(std::move(credsProvider), "v");
 }
 
 TEST_F(CredentialTrackingTest, TestInstanceProfileCredentialsTracking)
