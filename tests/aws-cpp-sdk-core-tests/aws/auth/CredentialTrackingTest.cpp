@@ -11,6 +11,8 @@
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
+#include <aws/core/auth/SSOCredentialsProvider.h>
+#include <aws/core/auth/GeneralHTTPCredentialsProvider.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -18,10 +20,13 @@
 #include <aws/core/utils/FileSystemUtils.h>
 #include <fstream>
 #include <sys/stat.h>
+#include <thread>
 
 using namespace Aws::Client;
 using namespace Aws::Auth;
 using namespace Aws::Http;
+using namespace Aws::FileSystem;
+using namespace Aws::Http::Standard;
 
 namespace {
 const char* TEST_LOG_TAG =  "CredentialTrackingTest";
@@ -81,6 +86,7 @@ class CredentialTrackingTest : public Aws::Testing::AwsCppSdkGTestSuite
 protected:
     std::shared_ptr<MockHttpClient> mockHttpClient;
     std::shared_ptr<MockHttpClientFactory> mockHttpClientFactory;
+    Aws::Vector<std::pair<const char*, Aws::String>> m_environment;
 
     void SetUp() override
     {
@@ -97,6 +103,26 @@ protected:
         mockHttpClientFactory = nullptr;
         Aws::Http::CleanupHttp();
         Aws::Http::InitHttp();
+    }
+
+    void SaveEnvironmentVariable(const char* variableName)
+    {
+        m_environment.emplace_back(variableName, Aws::Environment::GetEnv(variableName));
+    }
+
+    void RestoreEnvironmentVariables()
+    {
+        for(const auto& iter : m_environment)
+        {
+            if(iter.second.empty())
+            {
+                Aws::Environment::UnSetEnv(iter.first);
+            }
+            else
+            {
+                Aws::Environment::SetEnv(iter.first, iter.second.c_str(), 1);
+            }
+        }
     }
 
     void RunTestWithCredentialsProvider(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider, const Aws::String& id) {
@@ -239,4 +265,116 @@ TEST_F(CredentialTrackingTest, TestHTTPCredentialsTracking)
     auto credsProvider = Aws::MakeShared<Aws::Auth::GeneralHTTPCredentialsProvider>(TEST_LOG_TAG,
         "", "http://127.0.0.1/credentials", "", "");
     RunTestWithCredentialsProvider(std::move(credsProvider), "z");
+}
+
+class SSOCredentialsProviderTest : public CredentialTrackingTest
+{
+public:
+    void SetUp() override
+    {
+        CredentialTrackingTest::SetUp();
+
+        SaveEnvironmentVariable("AWS_CONFIG_FILE");
+        SaveEnvironmentVariable("AWS_DEFAULT_PROFILE");
+        SaveEnvironmentVariable("AWS_PROFILE");
+        SaveEnvironmentVariable("AWS_DEFAULT_REGION");
+
+        // Create unique config filename
+        Aws::StringStream ssConfig;
+        ssConfig << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();
+        m_configFileName = ssConfig.str();
+        
+        // Set environment variables
+        Aws::Environment::SetEnv("AWS_CONFIG_FILE", m_configFileName.c_str(), 1);
+        Aws::Environment::UnSetEnv("AWS_DEFAULT_PROFILE");
+        Aws::Environment::UnSetEnv("AWS_PROFILE");
+        Aws::Environment::UnSetEnv("AWS_DEFAULT_REGION");
+
+        // Create directory structure
+        auto profileDirectory = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
+        AWS_LOGSTREAM_DEBUG(TEST_LOG_TAG, "Creating SSO directories in: " << profileDirectory);
+        
+        Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
+        
+        Aws::StringStream ssCachedTokenDirectory;
+        ssCachedTokenDirectory << profileDirectory << PATH_DELIM << "sso";
+        Aws::FileSystem::CreateDirectoryIfNotExists(ssCachedTokenDirectory.str().c_str());
+        
+        ssCachedTokenDirectory << PATH_DELIM << "cache";
+        Aws::FileSystem::CreateDirectoryIfNotExists(ssCachedTokenDirectory.str().c_str());
+
+        // Setup token file paths
+        Aws::StringStream ssToken;
+        ssToken << ssCachedTokenDirectory.str() << PATH_DELIM 
+                << "13f9d35043871d073ab260e020f0ffde092cb14b.json";  // SHA1 of SSO URL
+        m_ssoTokenFileName = ssToken.str();
+
+        AWS_LOGSTREAM_DEBUG(TEST_LOG_TAG, "SSO token file will be created at: " << m_ssoTokenFileName);
+    }
+
+    void TearDown() override
+    {
+        // Cleanup files
+        AWS_LOGSTREAM_DEBUG(TEST_LOG_TAG, "Cleaning up test files");
+        Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
+        Aws::FileSystem::RemoveFileIfExists(m_ssoTokenFileName.c_str());
+
+        // Restore environment
+        RestoreEnvironmentVariables();
+
+        CredentialTrackingTest::TearDown();
+    }
+
+protected:
+    Aws::String m_configFileName;
+    Aws::String m_ssoTokenFileName;
+};
+
+TEST_F(SSOCredentialsProviderTest, TestSSOCredentialsTracking)
+{
+    // Create config file
+    Aws::OFStream configFile(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    ASSERT_TRUE(configFile.good());
+    configFile << "[default]" << std::endl;
+    configFile << "sso_account_id = [REDACTED:BANK_ACCOUNT_NUMBER]" << std::endl;
+    configFile << "sso_region = us-east-1" << std::endl;
+    configFile << "sso_role_name = TestRole" << std::endl;
+    configFile << "sso_start_url = https://test.awsapps.com/start" << std::endl;
+    configFile.close();
+
+    // Create token file
+    Aws::OFStream tokenFile(m_ssoTokenFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    ASSERT_TRUE(tokenFile.good());
+    tokenFile << R"({
+    "accessToken": "test-sso-access-token",
+    "expiresAt": ")" << Aws::Utils::DateTime::Now().GetYear() + 1 << R"(-01-02T00:00:00Z",
+    "region": "us-east-1",
+    "startUrl": "https://test.awsapps.com/start"
+})";
+    tokenFile.close();
+
+    // Force reload config file
+    Aws::Config::ReloadCachedConfigFile();
+
+    // Setup mock response
+    std::shared_ptr<HttpRequest> requestTmp = CreateHttpRequest(
+        Aws::Http::URI("https://portal.sso.us-east-1.amazonaws.com/federation/credentials"), 
+        Aws::Http::HttpMethod::HTTP_GET,
+        Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+
+    auto goodResponse = Aws::MakeShared<StandardHttpResponse>(TEST_LOG_TAG, requestTmp);
+    goodResponse->SetResponseCode(HttpResponseCode::OK);
+    goodResponse->GetResponseBody() << R"({
+        "roleCredentials": {
+            "accessKeyId": "test-sso-access-key",
+            "secretAccessKey": "test-sso-secret-key",
+            "sessionToken": "test-sso-session-token",
+            "expiration": 9999999999000
+        }
+    })";
+    mockHttpClient->AddResponseToReturn(goodResponse);
+
+    // Run test
+    auto ssoProvider = Aws::MakeShared<SSOCredentialsProvider>(TEST_LOG_TAG);
+    RunTestWithCredentialsProvider(std::move(ssoProvider), "s");
 }
