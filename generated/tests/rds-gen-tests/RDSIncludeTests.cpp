@@ -282,6 +282,7 @@
 #include <aws/rds/model/EnableHttpEndpointRequest.h>
 #include <aws/rds/model/EnableHttpEndpointResult.h>
 #include <aws/rds/model/Endpoint.h>
+#include <aws/rds/model/EndpointNetworkType.h>
 #include <aws/rds/model/EngineDefaults.h>
 #include <aws/rds/model/EngineFamily.h>
 #include <aws/rds/model/Event.h>
@@ -469,6 +470,7 @@
 #include <aws/rds/model/SwitchoverReadReplicaRequest.h>
 #include <aws/rds/model/SwitchoverReadReplicaResult.h>
 #include <aws/rds/model/Tag.h>
+#include <aws/rds/model/TargetConnectionNetworkType.h>
 #include <aws/rds/model/TargetHealth.h>
 #include <aws/rds/model/TargetHealthReason.h>
 #include <aws/rds/model/TargetRole.h>

@@ -26,18 +26,18 @@ namespace Model
 
   /**
    * <p>Structure that contains the results of the account gate function which
-   * CloudFormation invokes, if present, before proceeding with a stack set operation
+   * CloudFormation invokes, if present, before proceeding with a StackSet operation
    * in an account and Region.</p> <p>For each account and Region, CloudFormation
    * lets you specify a Lambda function that encapsulates any requirements that must
-   * be met before CloudFormation can proceed with a stack set operation in that
-   * account and Region. CloudFormation invokes the function each time a stack set
+   * be met before CloudFormation can proceed with a StackSet operation in that
+   * account and Region. CloudFormation invokes the function each time a StackSet
    * operation is requested for that account and Region; if the function returns
    * <code>FAILED</code>, CloudFormation cancels the operation in that account and
-   * Region, and sets the stack set operation result status for that account and
+   * Region, and sets the StackSet operation result status for that account and
    * Region to <code>FAILED</code>.</p> <p>For more information, see <a
-   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html">Configuring
-   * a target account gate in StackSets</a> in the <i>CloudFormation User
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html">Prevent
+   * failed StackSets deployments using target account gates</a> in the
+   * <i>CloudFormation User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/AccountGateResult">AWS
    * API Reference</a></p>
    */
@@ -56,24 +56,24 @@ namespace Model
     /**
      * <p>The status of the account gate function.</p> <ul> <li> <p>
      * <code>SUCCEEDED</code>: The account gate function has determined that the
-     * account and Region passes any requirements for a stack set operation to occur.
+     * account and Region passes any requirements for a StackSet operation to occur.
      * CloudFormation proceeds with the stack operation in that account and Region.</p>
      * </li> <li> <p> <code>FAILED</code>: The account gate function has determined
-     * that the account and Region doesn't meet the requirements for a stack set
-     * operation to occur. CloudFormation cancels the stack set operation in that
-     * account and Region, and sets the stack set operation result status for that
+     * that the account and Region doesn't meet the requirements for a StackSet
+     * operation to occur. CloudFormation cancels the StackSet operation in that
+     * account and Region, and sets the StackSet operation result status for that
      * account and Region to <code>FAILED</code>.</p> </li> <li> <p>
      * <code>SKIPPED</code>: CloudFormation has skipped calling the account gate
      * function for this account and Region, for one of the following reasons:</p> <ul>
      * <li> <p>An account gate function hasn't been specified for the account and
-     * Region. CloudFormation proceeds with the stack set operation in this account and
+     * Region. CloudFormation proceeds with the StackSet operation in this account and
      * Region.</p> </li> <li> <p>The
-     * <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set
-     * administration account lacks permissions to invoke the function. CloudFormation
-     * proceeds with the stack set operation in this account and Region.</p> </li> <li>
-     * <p>Either no action is necessary, or no action is possible, on the stack.
-     * CloudFormation skips the stack set operation in this account and Region.</p>
-     * </li> </ul> </li> </ul>
+     * <code>AWSCloudFormationStackSetExecutionRole</code> of the administration
+     * account lacks permissions to invoke the function. CloudFormation proceeds with
+     * the StackSet operation in this account and Region.</p> </li> <li> <p>Either no
+     * action is necessary, or no action is possible, on the stack. CloudFormation
+     * skips the StackSet operation in this account and Region.</p> </li> </ul> </li>
+     * </ul>
      */
     inline AccountGateStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -84,7 +84,7 @@ namespace Model
     ///@{
     /**
      * <p>The reason for the account gate status assigned to this account and Region
-     * for the stack set operation.</p>
+     * for the StackSet operation.</p>
      */
     inline const Aws::String& GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }

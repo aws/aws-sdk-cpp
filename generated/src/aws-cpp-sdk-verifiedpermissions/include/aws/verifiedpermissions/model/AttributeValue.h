@@ -164,6 +164,34 @@ namespace Model
     template<typename DecimalT = Aws::String>
     AttributeValue& WithDecimal(DecimalT&& value) { SetDecimal(std::forward<DecimalT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An attribute value of <a
+     * href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-datetime">datetime</a>
+     * type.</p> <p>Example: <code>{"datetime": "2024-10-15T11:35:00Z"}</code> </p>
+     */
+    inline const Aws::String& GetDatetime() const { return m_datetime; }
+    inline bool DatetimeHasBeenSet() const { return m_datetimeHasBeenSet; }
+    template<typename DatetimeT = Aws::String>
+    void SetDatetime(DatetimeT&& value) { m_datetimeHasBeenSet = true; m_datetime = std::forward<DatetimeT>(value); }
+    template<typename DatetimeT = Aws::String>
+    AttributeValue& WithDatetime(DatetimeT&& value) { SetDatetime(std::forward<DatetimeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An attribute value of <a
+     * href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-duration">duration</a>
+     * type.</p> <p>Example: <code>{"duration": "1h30m"}</code> </p>
+     */
+    inline const Aws::String& GetDuration() const { return m_duration; }
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+    template<typename DurationT = Aws::String>
+    void SetDuration(DurationT&& value) { m_durationHasBeenSet = true; m_duration = std::forward<DurationT>(value); }
+    template<typename DurationT = Aws::String>
+    AttributeValue& WithDuration(DurationT&& value) { SetDuration(std::forward<DurationT>(value)); return *this;}
+    ///@}
   private:
 
     bool m_boolean{false};
@@ -189,6 +217,12 @@ namespace Model
 
     Aws::String m_decimal;
     bool m_decimalHasBeenSet = false;
+
+    Aws::String m_datetime;
+    bool m_datetimeHasBeenSet = false;
+
+    Aws::String m_duration;
+    bool m_durationHasBeenSet = false;
   };
 
 } // namespace Model

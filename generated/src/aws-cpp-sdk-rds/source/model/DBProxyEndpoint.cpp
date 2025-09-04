@@ -111,6 +111,12 @@ DBProxyEndpoint& DBProxyEndpoint::operator =(const XmlNode& xmlNode)
       m_isDefault = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDefaultNode.GetText()).c_str()).c_str());
       m_isDefaultHasBeenSet = true;
     }
+    XmlNode endpointNetworkTypeNode = resultNode.FirstChild("EndpointNetworkType");
+    if(!endpointNetworkTypeNode.IsNull())
+    {
+      m_endpointNetworkType = EndpointNetworkTypeMapper::GetEndpointNetworkTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endpointNetworkTypeNode.GetText()).c_str()));
+      m_endpointNetworkTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -181,6 +187,11 @@ void DBProxyEndpoint::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
   }
 
+  if(m_endpointNetworkTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EndpointNetworkType=" << StringUtils::URLEncode(EndpointNetworkTypeMapper::GetNameForEndpointNetworkType(m_endpointNetworkType)) << "&";
+  }
+
 }
 
 void DBProxyEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -236,6 +247,10 @@ void DBProxyEndpoint::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_isDefaultHasBeenSet)
   {
       oStream << location << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
+  }
+  if(m_endpointNetworkTypeHasBeenSet)
+  {
+      oStream << location << ".EndpointNetworkType=" << StringUtils::URLEncode(EndpointNetworkTypeMapper::GetNameForEndpointNetworkType(m_endpointNetworkType)) << "&";
   }
 }
 

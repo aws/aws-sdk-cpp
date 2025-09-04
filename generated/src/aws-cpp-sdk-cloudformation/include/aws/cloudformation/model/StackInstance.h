@@ -31,11 +31,11 @@ namespace Model
 
   /**
    * <p>A CloudFormation stack, in a specific account and Region, that's part of a
-   * stack set operation. A stack instance is a reference to an attempted or actual
+   * StackSet operation. A stack instance is a reference to an attempted or actual
    * stack in a given account within a given Region. A stack instance can exist
    * without a stack—for example, if the stack couldn't be created for some reason. A
-   * stack instance is associated with only one stack set. Each stack instance
-   * contains the ID of its associated stack set, in addition to the ID of the actual
+   * stack instance is associated with only one StackSet. Each stack instance
+   * contains the ID of its associated StackSet, in addition to the ID of the actual
    * stack and the stack status.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackInstance">AWS
    * API Reference</a></p>
@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name or unique ID of the stack set that the stack instance is associated
+     * <p>The name or unique ID of the StackSet that the stack instance is associated
      * with.</p>
      */
     inline const Aws::String& GetStackSetId() const { return m_stackSetId; }
@@ -104,7 +104,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of parameters from the stack set template whose values have been
+     * <p>A list of parameters from the StackSet template whose values have been
      * overridden in this stack instance.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameterOverrides() const { return m_parameterOverrides; }
@@ -131,13 +131,13 @@ namespace Model
      * the failures are fixed. To see if this is due to a failed import, look at the
      * <code>DetailedStatus</code> member in the <code>StackInstanceSummary</code>
      * member that is a peer to this <code>Status</code> member.</p> </li> <li> <p>
-     * <code>OUTDATED</code>: The stack isn't currently up to date with the stack set
+     * <code>OUTDATED</code>: The stack isn't currently up to date with the StackSet
      * because:</p> <ul> <li> <p>The associated stack failed during a
      * <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p> </li>
      * <li> <p>The stack was part of a <code>CreateStackSet</code> or
      * <code>UpdateStackSet</code> operation that failed or was stopped before the
      * stack was created or updated.</p> </li> </ul> </li> <li> <p>
-     * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
+     * <code>CURRENT</code>: The stack is currently up to date with the StackSet.</p>
      * </li> </ul>
      */
     inline StackInstanceStatus GetStatus() const { return m_status; }
@@ -188,16 +188,16 @@ namespace Model
     ///@{
     /**
      * <p>Status of the stack instance's actual configuration compared to the expected
-     * template and parameter configuration of the stack set to which it belongs.</p>
-     * <ul> <li> <p> <code>DRIFTED</code>: The stack differs from the expected template
-     * and parameter configuration of the stack set to which it belongs. A stack
-     * instance is considered to have drifted if one or more of the resources in the
-     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
-     * CloudFormation hasn't checked if the stack instance differs from its expected
-     * stack set configuration.</p> </li> <li> <p> <code>IN_SYNC</code>: The stack
-     * instance's actual configuration matches its expected stack set
-     * configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is reserved
-     * for future use.</p> </li> </ul>
+     * template and parameter configuration of the StackSet it belongs to.</p> <ul>
+     * <li> <p> <code>DRIFTED</code>: The stack differs from the expected template and
+     * parameter configuration of the StackSet it belongs to. A stack instance is
+     * considered to have drifted if one or more of the resources in the associated
+     * stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation
+     * hasn't checked if the stack instance differs from its expected StackSet
+     * configuration.</p> </li> <li> <p> <code>IN_SYNC</code>: The stack instance's
+     * actual configuration matches its expected StackSset configuration.</p> </li>
+     * <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
+     * </ul>
      */
     inline StackDriftStatus GetDriftStatus() const { return m_driftStatus; }
     inline bool DriftStatusHasBeenSet() const { return m_driftStatusHasBeenSet; }
@@ -209,7 +209,7 @@ namespace Model
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack instance. This value will be <code>NULL</code> for any stack instance
-     * on which drift detection hasn't yet been performed.</p>
+     * that drift detection hasn't yet been performed on.</p>
      */
     inline const Aws::Utils::DateTime& GetLastDriftCheckTimestamp() const { return m_lastDriftCheckTimestamp; }
     inline bool LastDriftCheckTimestampHasBeenSet() const { return m_lastDriftCheckTimestampHasBeenSet; }

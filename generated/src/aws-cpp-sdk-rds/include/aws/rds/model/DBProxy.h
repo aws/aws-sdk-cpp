@@ -10,6 +10,8 @@
 #include <aws/rds/model/DBProxyStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/rds/model/EndpointNetworkType.h>
+#include <aws/rds/model/TargetConnectionNetworkType.h>
 #include <aws/rds/model/UserAuthConfigInfo.h>
 #include <utility>
 
@@ -243,6 +245,36 @@ namespace Model
     template<typename UpdatedDateT = Aws::Utils::DateTime>
     DBProxy& WithUpdatedDate(UpdatedDateT&& value) { SetUpdatedDate(std::forward<UpdatedDateT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The network type of the DB proxy endpoint. The network type determines the IP
+     * version that the proxy endpoint supports.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> - The proxy endpoint supports IPv4 only.</p> </li> <li> <p>
+     * <code>IPV6</code> - The proxy endpoint supports IPv6 only.</p> </li> <li> <p>
+     * <code>DUAL</code> - The proxy endpoint supports both IPv4 and IPv6.</p> </li>
+     * </ul>
+     */
+    inline EndpointNetworkType GetEndpointNetworkType() const { return m_endpointNetworkType; }
+    inline bool EndpointNetworkTypeHasBeenSet() const { return m_endpointNetworkTypeHasBeenSet; }
+    inline void SetEndpointNetworkType(EndpointNetworkType value) { m_endpointNetworkTypeHasBeenSet = true; m_endpointNetworkType = value; }
+    inline DBProxy& WithEndpointNetworkType(EndpointNetworkType value) { SetEndpointNetworkType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The network type that the proxy uses to connect to the target database. The
+     * network type determines the IP version that the proxy uses for connections to
+     * the database.</p> <p>Valid values:</p> <ul> <li> <p> <code>IPV4</code> - The
+     * proxy connects to the database using IPv4 only.</p> </li> <li> <p>
+     * <code>IPV6</code> - The proxy connects to the database using IPv6 only.</p>
+     * </li> </ul>
+     */
+    inline TargetConnectionNetworkType GetTargetConnectionNetworkType() const { return m_targetConnectionNetworkType; }
+    inline bool TargetConnectionNetworkTypeHasBeenSet() const { return m_targetConnectionNetworkTypeHasBeenSet; }
+    inline void SetTargetConnectionNetworkType(TargetConnectionNetworkType value) { m_targetConnectionNetworkTypeHasBeenSet = true; m_targetConnectionNetworkType = value; }
+    inline DBProxy& WithTargetConnectionNetworkType(TargetConnectionNetworkType value) { SetTargetConnectionNetworkType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_dBProxyName;
@@ -289,6 +321,12 @@ namespace Model
 
     Aws::Utils::DateTime m_updatedDate{};
     bool m_updatedDateHasBeenSet = false;
+
+    EndpointNetworkType m_endpointNetworkType{EndpointNetworkType::NOT_SET};
+    bool m_endpointNetworkTypeHasBeenSet = false;
+
+    TargetConnectionNetworkType m_targetConnectionNetworkType{TargetConnectionNetworkType::NOT_SET};
+    bool m_targetConnectionNetworkTypeHasBeenSet = false;
   };
 
 } // namespace Model

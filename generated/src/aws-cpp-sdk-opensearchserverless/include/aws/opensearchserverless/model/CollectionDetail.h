@@ -9,6 +9,7 @@
 #include <aws/opensearchserverless/model/CollectionStatus.h>
 #include <aws/opensearchserverless/model/CollectionType.h>
 #include <aws/opensearchserverless/model/StandbyReplicas.h>
+#include <aws/opensearchserverless/model/FipsEndpoints.h>
 #include <utility>
 
 namespace Aws
@@ -28,7 +29,8 @@ namespace Model
 
   /**
    * <p>Details about each OpenSearch Serverless collection, including the collection
-   * endpoint and the OpenSearch Dashboards endpoint.</p><p><h3>See Also:</h3>   <a
+   * endpoint, the OpenSearch Dashboards endpoint, and FIPS-compliant endpoints for
+   * federal government workloads.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CollectionDetail">AWS
    * API Reference</a></p>
    */
@@ -179,6 +181,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>FIPS-compliant endpoints for the collection. These endpoints use FIPS 140-3
+     * validated cryptographic modules and are required for federal government
+     * workloads that must comply with FedRAMP security standards.</p>
+     */
+    inline const FipsEndpoints& GetFipsEndpoints() const { return m_fipsEndpoints; }
+    inline bool FipsEndpointsHasBeenSet() const { return m_fipsEndpointsHasBeenSet; }
+    template<typename FipsEndpointsT = FipsEndpoints>
+    void SetFipsEndpoints(FipsEndpointsT&& value) { m_fipsEndpointsHasBeenSet = true; m_fipsEndpoints = std::forward<FipsEndpointsT>(value); }
+    template<typename FipsEndpointsT = FipsEndpoints>
+    CollectionDetail& WithFipsEndpoints(FipsEndpointsT&& value) { SetFipsEndpoints(std::forward<FipsEndpointsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A failure code associated with the request.</p>
      */
     inline const Aws::String& GetFailureCode() const { return m_failureCode; }
@@ -237,6 +253,9 @@ namespace Model
 
     Aws::String m_dashboardEndpoint;
     bool m_dashboardEndpointHasBeenSet = false;
+
+    FipsEndpoints m_fipsEndpoints;
+    bool m_fipsEndpointsHasBeenSet = false;
 
     Aws::String m_failureCode;
     bool m_failureCodeHasBeenSet = false;

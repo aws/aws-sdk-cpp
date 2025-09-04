@@ -13,6 +13,7 @@
 #include <aws/cleanrooms/model/ProtectedJobStatistics.h>
 #include <aws/cleanrooms/model/ProtectedJobResult.h>
 #include <aws/cleanrooms/model/ProtectedJobError.h>
+#include <aws/cleanrooms/model/ProtectedJobComputeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -162,6 +163,18 @@ namespace Model
     template<typename ErrorT = ProtectedJobError>
     ProtectedJob& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The compute configuration for the protected job.</p>
+     */
+    inline const ProtectedJobComputeConfiguration& GetComputeConfiguration() const { return m_computeConfiguration; }
+    inline bool ComputeConfigurationHasBeenSet() const { return m_computeConfigurationHasBeenSet; }
+    template<typename ComputeConfigurationT = ProtectedJobComputeConfiguration>
+    void SetComputeConfiguration(ComputeConfigurationT&& value) { m_computeConfigurationHasBeenSet = true; m_computeConfiguration = std::forward<ComputeConfigurationT>(value); }
+    template<typename ComputeConfigurationT = ProtectedJobComputeConfiguration>
+    ProtectedJob& WithComputeConfiguration(ComputeConfigurationT&& value) { SetComputeConfiguration(std::forward<ComputeConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -193,6 +206,9 @@ namespace Model
 
     ProtectedJobError m_error;
     bool m_errorHasBeenSet = false;
+
+    ProtectedJobComputeConfiguration m_computeConfiguration;
+    bool m_computeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

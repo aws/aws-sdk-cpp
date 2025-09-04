@@ -44,8 +44,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name or unique ID of the stack set that you want to create stack
-     * instances from.</p>
+     * <p>The name or unique ID of the StackSet that you want to create stack instances
+     * from.</p>
      */
     inline const Aws::String& GetStackSetName() const { return m_stackSetName; }
     inline bool StackSetNameHasBeenSet() const { return m_stackSetNameHasBeenSet; }
@@ -74,7 +74,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>[Service-managed permissions] The Organizations accounts for which to create
+     * <p>[Service-managed permissions] The Organizations accounts in which to create
      * stack instances in the specified Amazon Web Services Regions.</p> <p>You can
      * specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
      * both.</p>
@@ -104,7 +104,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of stack set parameters whose values you want to override in the
+     * <p>A list of StackSet parameters whose values you want to override in the
      * selected stack instances.</p> <p>Any overridden parameter values will be applied
      * to all stack instances in the specified accounts and Amazon Web Services
      * Regions. When specifying parameters and their values, be aware of how
@@ -114,15 +114,15 @@ namespace Model
      * present value, include the parameter and specify <code>UsePreviousValue</code>
      * as <code>true</code>. (You can't specify both a value and set
      * <code>UsePreviousValue</code> to <code>true</code>.)</p> </li> <li> <p>To set an
-     * overridden parameter back to the value specified in the stack set, specify a
+     * overridden parameter back to the value specified in the StackSet, specify a
      * parameter list but don't include the parameter in the list.</p> </li> <li> <p>To
      * leave all parameters set to their present values, don't specify this property at
-     * all.</p> </li> </ul> <p>During stack set updates, any parameter values
-     * overridden for a stack instance aren't updated, but retain their overridden
-     * value.</p> <p>You can only override the parameter <i>values</i> that are
-     * specified in the stack set; to add or delete a parameter itself, use <a
+     * all.</p> </li> </ul> <p>During StackSet updates, any parameter values overridden
+     * for a stack instance aren't updated, but retain their overridden value.</p>
+     * <p>You can only override the parameter <i>values</i> that are specified in the
+     * StackSet; to add or delete a parameter itself, use <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
-     * to update the stack set template.</p>
+     * to update the StackSet template.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameterOverrides() const { return m_parameterOverrides; }
     inline bool ParameterOverridesHasBeenSet() const { return m_parameterOverridesHasBeenSet; }
@@ -136,7 +136,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Preferences for how CloudFormation performs this stack set operation.</p>
+     * <p>Preferences for how CloudFormation performs this StackSet operation.</p>
      */
     inline const StackSetOperationPreferences& GetOperationPreferences() const { return m_operationPreferences; }
     inline bool OperationPreferencesHasBeenSet() const { return m_operationPreferencesHasBeenSet; }
@@ -148,13 +148,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier for this stack set operation.</p> <p>The operation ID
+     * <p>The unique identifier for this StackSet operation.</p> <p>The operation ID
      * also functions as an idempotency token, to ensure that CloudFormation performs
-     * the stack set operation only once, even if you retry the request multiple times.
-     * You might retry stack set operation requests to ensure that CloudFormation
+     * the StackSet operation only once, even if you retry the request multiple times.
+     * You might retry StackSet operation requests to ensure that CloudFormation
      * successfully received them.</p> <p>If you don't specify an operation ID, the SDK
-     * generates one automatically.</p> <p>Repeating this stack set operation with a
-     * new operation ID retries all stack instances whose status is
+     * generates one automatically.</p> <p>Repeating this StackSet operation with a new
+     * operation ID retries all stack instances whose status is
      * <code>OUTDATED</code>.</p>
      */
     inline const Aws::String& GetOperationId() const { return m_operationId; }
@@ -170,7 +170,7 @@ namespace Model
      * <p>[Service-managed permissions] Specifies whether you are acting as an account
      * administrator in the organization's management account or as a delegated
      * administrator in a member account.</p> <p>By default, <code>SELF</code> is
-     * specified. Use <code>SELF</code> for stack sets with self-managed
+     * specified. Use <code>SELF</code> for StackSets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
      * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon

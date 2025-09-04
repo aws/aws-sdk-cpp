@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/DBProxyEndpointTargetRole.h>
+#include <aws/rds/model/EndpointNetworkType.h>
 #include <aws/rds/model/Tag.h>
 #include <utility>
 
@@ -119,6 +120,25 @@ namespace Model
     template<typename TagsT = Tag>
     CreateDBProxyEndpointRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The network type of the DB proxy endpoint. The network type determines the IP
+     * version that the proxy endpoint supports.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> - The proxy endpoint supports IPv4 only.</p> </li> <li> <p>
+     * <code>IPV6</code> - The proxy endpoint supports IPv6 only.</p> </li> <li> <p>
+     * <code>DUAL</code> - The proxy endpoint supports both IPv4 and IPv6.</p> </li>
+     * </ul> <p>Default: <code>IPV4</code> </p> <p>Constraints:</p> <ul> <li> <p>If you
+     * specify <code>IPV6</code> or <code>DUAL</code>, the VPC and all subnets must
+     * have an IPv6 CIDR block.</p> </li> <li> <p>If you specify <code>IPV6</code> or
+     * <code>DUAL</code>, the VPC tenancy cannot be <code>dedicated</code>.</p> </li>
+     * </ul>
+     */
+    inline EndpointNetworkType GetEndpointNetworkType() const { return m_endpointNetworkType; }
+    inline bool EndpointNetworkTypeHasBeenSet() const { return m_endpointNetworkTypeHasBeenSet; }
+    inline void SetEndpointNetworkType(EndpointNetworkType value) { m_endpointNetworkTypeHasBeenSet = true; m_endpointNetworkType = value; }
+    inline CreateDBProxyEndpointRequest& WithEndpointNetworkType(EndpointNetworkType value) { SetEndpointNetworkType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_dBProxyName;
@@ -138,6 +158,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    EndpointNetworkType m_endpointNetworkType{EndpointNetworkType::NOT_SET};
+    bool m_endpointNetworkTypeHasBeenSet = false;
   };
 
 } // namespace Model

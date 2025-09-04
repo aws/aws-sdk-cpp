@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The specified stack set operation.</p>
+     * <p>The specified StackSet operation.</p>
      */
     inline const StackSetOperation& GetStackSetOperation() const { return m_stackSetOperation; }
     template<typename StackSetOperationT = StackSetOperation>

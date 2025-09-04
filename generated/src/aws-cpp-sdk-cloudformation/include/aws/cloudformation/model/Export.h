@@ -25,7 +25,10 @@ namespace Model
 
   /**
    * <p>The <code>Export</code> structure describes the exported output values for a
-   * stack.</p><p><h3>See Also:</h3>   <a
+   * stack.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">Get
+   * exported outputs from a deployed CloudFormation stack</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Export">AWS
    * API Reference</a></p>
    */

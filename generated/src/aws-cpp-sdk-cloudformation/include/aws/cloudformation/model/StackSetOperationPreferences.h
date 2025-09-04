@@ -27,14 +27,13 @@ namespace Model
 {
 
   /**
-   * <p>The user-specified preferences for how CloudFormation performs a stack set
+   * <p>The user-specified preferences for how CloudFormation performs a StackSet
    * operation.</p> <p>For more information about maximum concurrent accounts and
    * failure tolerance, see <a
-   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-ops-options">Stack
-   * set operation options</a>.</p>  <p>
-   * <code>StackSetOperationPreferences</code> don't apply to
-   * <code>AutoDeployment</code>, even if it's enabled.</p> <p><h3>See
-   * Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">StackSet
+   * operation options</a>.</p>  <p> <code>StackSetOperationPreferences</code>
+   * don't apply to <code>AutoDeployment</code>, even if it's enabled.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSetOperationPreferences">AWS
    * API Reference</a></p>
    */
@@ -76,7 +75,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of accounts, per Region, for which this operation can fail before
+     * <p>The number of accounts per Region this operation can fail in before
      * CloudFormation stops the operation in that Region. If the operation is stopped
      * in a Region, CloudFormation doesn't attempt the operation in any subsequent
      * Regions.</p> <p>You can specify either <code>FailureToleranceCount</code> or
@@ -91,12 +90,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The percentage of accounts, per Region, for which this stack operation can
-     * fail before CloudFormation stops the operation in that Region. If the operation
-     * is stopped in a Region, CloudFormation doesn't attempt the operation in any
-     * subsequent Regions.</p> <p>When calculating the number of accounts based on the
-     * specified percentage, CloudFormation rounds <i>down</i> to the next whole
-     * number.</p> <p>You can specify either <code>FailureToleranceCount</code> or
+     * <p>The percentage of accounts per Region this stack operation can fail in before
+     * CloudFormation stops the operation in that Region. If the operation is stopped
+     * in a Region, CloudFormation doesn't attempt the operation in any subsequent
+     * Regions.</p> <p>When calculating the number of accounts based on the specified
+     * percentage, CloudFormation rounds <i>down</i> to the next whole number.</p>
+     * <p>You can specify either <code>FailureToleranceCount</code> or
      * <code>FailureTolerancePercentage</code>, but not both.</p> <p>By default,
      * <code>0</code> is specified.</p>
      */
@@ -157,8 +156,8 @@ namespace Model
      * <p>If failure tolerance or Maximum concurrent accounts are set to percentages,
      * the behavior is similar.</p> </li> <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>:
      * This option decouples <code>FailureToleranceCount</code> from the actual
-     * concurrency. This allows stack set operations to run at the concurrency level
-     * set by the <code>MaxConcurrentCount</code> value, or
+     * concurrency. This allows StackSet operations to run at the concurrency level set
+     * by the <code>MaxConcurrentCount</code> value, or
      * <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p>
      * </li> </ul>
      */

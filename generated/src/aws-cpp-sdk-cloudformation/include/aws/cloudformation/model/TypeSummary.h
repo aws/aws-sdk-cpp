@@ -90,7 +90,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the extension.</p>
+     * <p>The ARN of the extension.</p>
      */
     inline const Aws::String& GetTypeArn() const { return m_typeArn; }
     inline bool TypeArnHasBeenSet() const { return m_typeArnHasBeenSet; }

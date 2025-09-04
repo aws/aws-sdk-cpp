@@ -73,6 +73,16 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
     m_decimal = jsonValue.GetString("decimal");
     m_decimalHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("datetime"))
+  {
+    m_datetime = jsonValue.GetString("datetime");
+    m_datetimeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("duration"))
+  {
+    m_duration = jsonValue.GetString("duration");
+    m_durationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -135,6 +145,18 @@ JsonValue AttributeValue::Jsonize() const
   if(m_decimalHasBeenSet)
   {
    payload.WithString("decimal", m_decimal);
+
+  }
+
+  if(m_datetimeHasBeenSet)
+  {
+   payload.WithString("datetime", m_datetime);
+
+  }
+
+  if(m_durationHasBeenSet)
+  {
+   payload.WithString("duration", m_duration);
 
   }
 

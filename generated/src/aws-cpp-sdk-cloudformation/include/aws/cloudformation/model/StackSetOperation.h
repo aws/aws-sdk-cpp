@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>The structure that contains information about a stack set
+   * <p>The structure that contains information about a StackSet
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSetOperation">AWS
    * API Reference</a></p>
@@ -49,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique ID of a stack set operation.</p>
+     * <p>The unique ID of a StackSet operation.</p>
      */
     inline const Aws::String& GetOperationId() const { return m_operationId; }
     inline bool OperationIdHasBeenSet() const { return m_operationIdHasBeenSet; }
@@ -61,7 +61,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the stack set.</p>
+     * <p>The ID of the StackSet.</p>
      */
     inline const Aws::String& GetStackSetId() const { return m_stackSetId; }
     inline bool StackSetIdHasBeenSet() const { return m_stackSetIdHasBeenSet; }
@@ -73,11 +73,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of stack set operation: <code>CREATE</code>, <code>UPDATE</code>, or
+     * <p>The type of StackSet operation: <code>CREATE</code>, <code>UPDATE</code>, or
      * <code>DELETE</code>. Create and delete operations affect only the specified
-     * stack set instances that are associated with the specified stack set. Update
-     * operations affect both the stack set itself, in addition to <i>all</i>
-     * associated stack set instances.</p>
+     * stack instances that are associated with the specified StackSet. Update
+     * operations affect both the StackSet itself, in addition to <i>all</i> associated
+     * stack instances.</p>
      */
     inline StackSetOperationAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
@@ -97,7 +97,7 @@ namespace Model
      * Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed permissions]
      * For automatic deployments that require a sequence of operations, the operation
      * is queued to be performed. For more information, see the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-status-codes">StackSets
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">StackSets
      * status codes</a> in the <i>CloudFormation User Guide</i>.</p> </li> <li> <p>
      * <code>RUNNING</code>: The operation is currently being performed.</p> </li> <li>
      * <p> <code>STOPPED</code>: The user has canceled the operation.</p> </li> <li>
@@ -114,7 +114,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The preferences for how CloudFormation performs this stack set operation.</p>
+     * <p>The preferences for how CloudFormation performs this StackSet operation.</p>
      */
     inline const StackSetOperationPreferences& GetOperationPreferences() const { return m_operationPreferences; }
     inline bool OperationPreferencesHasBeenSet() const { return m_operationPreferencesHasBeenSet; }
@@ -126,10 +126,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>For stack set operations of action type <code>DELETE</code>, specifies
-     * whether to remove the stack instances from the specified stack set, but doesn't
-     * delete the stacks. You can't re-associate a retained stack, or add an existing,
-     * saved stack to a new stack set.</p>
+     * <p>For StackSet operations of action type <code>DELETE</code>, specifies whether
+     * to remove the stack instances from the specified StackSet, but doesn't delete
+     * the stacks. You can't re-associate a retained stack, or add an existing, saved
+     * stack to a new StackSet.</p>
      */
     inline bool GetRetainStacks() const { return m_retainStacks; }
     inline bool RetainStacksHasBeenSet() const { return m_retainStacksHasBeenSet; }
@@ -139,9 +139,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role used to perform this stack set
+     * <p>The Amazon Resource Name (ARN) of the IAM role used to perform this StackSet
      * operation.</p> <p>Use customized administrator roles to control which users or
-     * groups can manage specific stack sets within the same administrator account. For
+     * groups can manage specific StackSets within the same administrator account. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
      * self-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -156,9 +156,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the IAM execution role used to create or update the stack
-     * set.</p> <p>Use customized execution roles to control which stack resources
-     * users and groups can include in their stack sets.</p>
+     * <p>The name of the IAM execution role used to create or update the StackSet.</p>
+     * <p>Use customized execution roles to control which stack resources users and
+     * groups can include in their StackSets.</p>
      */
     inline const Aws::String& GetExecutionRoleName() const { return m_executionRoleName; }
     inline bool ExecutionRoleNameHasBeenSet() const { return m_executionRoleNameHasBeenSet; }
@@ -186,8 +186,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time at which the stack set operation ended, across all accounts and
-     * Regions specified. Note that this doesn't necessarily mean that the stack set
+     * <p>The time at which the StackSet operation ended, across all accounts and
+     * Regions specified. Note that this doesn't necessarily mean that the StackSet
      * operation was successful, or even attempted, in each account or Region.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTimestamp() const { return m_endTimestamp; }
@@ -200,8 +200,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>[Service-managed permissions] The Organizations accounts affected by the
-     * stack operation.</p>
+     * <p>The Organizations accounts affected by the stack operation. Valid only if the
+     * StackSet uses service-managed permissions.</p>
      */
     inline const DeploymentTargets& GetDeploymentTargets() const { return m_deploymentTargets; }
     inline bool DeploymentTargetsHasBeenSet() const { return m_deploymentTargetsHasBeenSet; }
@@ -213,10 +213,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Detailed information about the drift status of the stack set. This includes
-     * information about drift operations currently being performed on the stack
-     * set.</p> <p>This information will only be present for stack set operations whose
-     * <code>Action</code> type is <code>DETECT_DRIFT</code>.</p> <p>For more
+     * <p>Detailed information about the drift status of the StackSet. This includes
+     * information about drift operations currently being performed on the
+     * StackSet.</p> <p>This information will only be present for StackSet operations
+     * whose <code>Action</code> type is <code>DETECT_DRIFT</code>.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Performing
      * drift detection on CloudFormation StackSets</a> in the <i>CloudFormation User

@@ -128,15 +128,24 @@ namespace CloudFormation
         }
 
         /**
-         * <p>Activates a public third-party extension, making it available for use in
-         * stack templates. Once you have activated a public third-party extension in your
-         * account and Region, use <a
+         * <p>Activates a public third-party extension, such as a resource or module, to
+         * make it available for use in stack templates in your current account and Region.
+         * It can also create CloudFormation Hooks, which allow you to evaluate resource
+         * configurations before CloudFormation provisions them. Hooks integrate with both
+         * CloudFormation and Cloud Control API operations.</p> <p>After you activate an
+         * extension, you can use <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
-         * to specify configuration properties for the extension. For more information, see
-         * <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html">Using
-         * public extensions</a> in the <i>CloudFormation User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * to set specific properties for the extension.</p> <p>To see which extensions
+         * have been activated, use <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListTypes.html">ListTypes</a>.
+         * To see configuration details for an extension, use <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.</p>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public-activate-extension.html">Activate
+         * a third-party public extension in your account</a> in the <i>CloudFormation User
+         * Guide</i>. For information about creating Hooks, see the <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/what-is-cloudformation-hooks.html">CloudFormation
+         * Hooks User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ActivateType">AWS
          * API Reference</a></p>
          */
@@ -162,7 +171,7 @@ namespace CloudFormation
 
         /**
          * <p>Returns configuration data for the specified CloudFormation extensions, from
-         * the CloudFormation registry for the account and Region.</p> <p>For more
+         * the CloudFormation registry in your current account and Region.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit
          * configuration data for extensions in your account</a> in the <i>CloudFormation
@@ -219,19 +228,23 @@ namespace CloudFormation
         }
 
         /**
-         * <p>For a specified stack that's in the <code>UPDATE_ROLLBACK_FAILED</code>
-         * state, continues rolling it back to the <code>UPDATE_ROLLBACK_COMPLETE</code>
-         * state. Depending on the cause of the failure, you can manually <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">fix
-         * the error</a> and continue the rollback. By continuing the rollback, you can
-         * return your stack to a working state (the <code>UPDATE_ROLLBACK_COMPLETE</code>
-         * state), and then try to update the stack again.</p> <p>A stack goes into the
-         * <code>UPDATE_ROLLBACK_FAILED</code> state when CloudFormation can't roll back
-         * all changes after a failed stack update. For example, you might have a stack
-         * that's rolling back to an old database instance that was deleted outside of
-         * CloudFormation. Because CloudFormation doesn't know the database was deleted, it
-         * assumes that the database instance still exists and attempts to roll back to it,
-         * causing the update rollback to fail.</p><p><h3>See Also:</h3>   <a
+         * <p>Continues rolling back a stack from <code>UPDATE_ROLLBACK_FAILED</code> to
+         * <code>UPDATE_ROLLBACK_COMPLETE</code> state. Depending on the cause of the
+         * failure, you can manually fix the error and continue the rollback. By continuing
+         * the rollback, you can return your stack to a working state (the
+         * <code>UPDATE_ROLLBACK_COMPLETE</code> state) and then try to update the stack
+         * again.</p> <p>A stack enters the <code>UPDATE_ROLLBACK_FAILED</code> state when
+         * CloudFormation can't roll back all changes after a failed stack update. For
+         * example, this might occur when a stack attempts to roll back to an old database
+         * that was deleted outside of CloudFormation. Because CloudFormation doesn't know
+         * the instance was deleted, it assumes the instance still exists and attempts to
+         * roll back to it, causing the update rollback to fail.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue
+         * rolling back an update</a> in the <i>CloudFormation User Guide</i>. For
+         * information for troubleshooting a failed update rollback, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">Update
+         * rollback failed</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ContinueUpdateRollback">AWS
          * API Reference</a></p>
          */
@@ -422,7 +435,7 @@ namespace CloudFormation
         }
 
         /**
-         * <p>Creates a stack set.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a StackSet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackSet">AWS
          * API Reference</a></p>
          */
@@ -475,12 +488,19 @@ namespace CloudFormation
         }
 
         /**
-         * <p>Deactivates a public extension that was previously activated in this account
-         * and Region.</p> <p>Once deactivated, an extension can't be used in any
-         * CloudFormation operation. This includes stack update operations where the stack
-         * template includes the extension, even if no updates are being made to the
-         * extension. In addition, deactivated extensions aren't automatically updated if a
-         * new version of the extension is released.</p><p><h3>See Also:</h3>   <a
+         * <p>Deactivates a public third-party extension, such as a resource or module, or
+         * a CloudFormation Hook when you no longer use it.</p> <p>Deactivating an
+         * extension deletes the configuration details that are associated with it. To
+         * temporary disable a CloudFormation Hook instead, you can use <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.</p>
+         * <p>Once deactivated, an extension can't be used in any CloudFormation operation.
+         * This includes stack update operations where the stack template includes the
+         * extension, even if no updates are being made to the extension. In addition,
+         * deactivated extensions aren't automatically updated if a new version of the
+         * extension is released.</p> <p>To see which extensions are currently activated,
+         * use <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListTypes.html">ListTypes</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeactivateType">AWS
          * API Reference</a></p>
          */
@@ -626,7 +646,7 @@ namespace CloudFormation
         }
 
         /**
-         * <p>Deletes a stack set. Before you can delete a stack set, all its member stack
+         * <p>Deletes a StackSet. Before you can delete a StackSet, all its member stack
          * instances must be deleted. For more information about how to complete this, see
          * <a>DeleteStackInstances</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackSet">AWS
@@ -664,8 +684,11 @@ namespace CloudFormation
          * extension. If you do deregister the default version of an extension, the
          * extension type itself is deregistered as well and marked as deprecated.</p>
          * <p>To view the deprecation status of an extension or extension version, use <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.</p>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private-deregister-extension.html">Remove
+         * third-party private extensions from your account</a> in the <i>CloudFormation
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeregisterType">AWS
          * API Reference</a></p>
          */
@@ -1208,10 +1231,11 @@ namespace CloudFormation
         }
 
         /**
-         * <p>Returns detailed information about an extension that has been registered.</p>
-         * <p>If you specify a <code>VersionId</code>, <code>DescribeType</code> returns
-         * information about that specific extension version. Otherwise, it returns
-         * information about the default extension version.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns detailed information about an extension from the CloudFormation
+         * registry in your current account and Region.</p> <p>If you specify a
+         * <code>VersionId</code>, <code>DescribeType</code> returns information about that
+         * specific extension version. Otherwise, it returns information about the default
+         * extension version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeType">AWS
          * API Reference</a></p>
          */
@@ -1356,28 +1380,28 @@ namespace CloudFormation
         }
 
         /**
-         * <p>Detect drift on a stack set. When CloudFormation performs drift detection on
-         * a stack set, it performs drift detection on the stack associated with each stack
-         * instance in the stack set. For more information, see <a
+         * <p>Detect drift on a StackSet. When CloudFormation performs drift detection on a
+         * StackSet, it performs drift detection on the stack associated with each stack
+         * instance in the StackSet. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Performing
          * drift detection on CloudFormation StackSets</a>.</p> <p>
          * <code>DetectStackSetDrift</code> returns the <code>OperationId</code> of the
-         * stack set drift detection operation. Use this operation id with
+         * StackSet drift detection operation. Use this operation id with
          * <a>DescribeStackSetOperation</a> to monitor the progress of the drift detection
          * operation. The drift detection operation may take some time, depending on the
-         * number of stack instances included in the stack set, in addition to the number
-         * of resources included in each stack.</p> <p>Once the operation has completed,
-         * use the following actions to return drift information:</p> <ul> <li> <p>Use
+         * number of stack instances included in the StackSet, in addition to the number of
+         * resources included in each stack.</p> <p>Once the operation has completed, use
+         * the following actions to return drift information:</p> <ul> <li> <p>Use
          * <a>DescribeStackSet</a> to return detailed information about the stack set,
          * including detailed information about the last <i>completed</i> drift operation
-         * performed on the stack set. (Information about drift operations that are in
+         * performed on the StackSet. (Information about drift operations that are in
          * progress isn't included.)</p> </li> <li> <p>Use <a>ListStackInstances</a> to
-         * return a list of stack instances belonging to the stack set, including the drift
+         * return a list of stack instances belonging to the StackSet, including the drift
          * status and last drift time checked of each instance.</p> </li> <li> <p>Use
          * <a>DescribeStackInstance</a> to return detailed information about a specific
          * stack instance, including its drift status and last drift time checked.</p>
          * </li> </ul> <p>You can only run a single drift detection operation on a given
-         * stack set at one time.</p> <p>To stop a drift detection stack set operation, use
+         * StackSet at one time.</p> <p>To stop a drift detection StackSet operation, use
          * <a>StopStackSetOperation</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackSetDrift">AWS
          * API Reference</a></p>
@@ -1579,9 +1603,9 @@ namespace CloudFormation
          * <p>Returns information about a new or existing template. The
          * <code>GetTemplateSummary</code> action is useful for viewing parameter
          * information, such as default parameter values and parameter types, before you
-         * create or update a stack or stack set.</p> <p>You can use the
+         * create or update a stack or StackSet.</p> <p>You can use the
          * <code>GetTemplateSummary</code> action when you submit a template, or you can
-         * get template information for a stack set, or a running or deleted stack.</p>
+         * get template information for a StackSet, or a running or deleted stack.</p>
          * <p>For deleted stacks, <code>GetTemplateSummary</code> returns the template
          * information for up to 90 days after the stack has been deleted. If the template
          * doesn't exist, a <code>ValidationError</code> is returned.</p><p><h3>See
@@ -1610,8 +1634,8 @@ namespace CloudFormation
         }
 
         /**
-         * <p>Import existing stacks into a new stack sets. Use the stack import operation
-         * to import up to 10 stacks into a new stack set in the same account as the source
+         * <p>Import existing stacks into a new StackSets. Use the stack import operation
+         * to import up to 10 stacks into a new StackSet in the same account as the source
          * stack or in a different administrator account and Region, by specifying the
          * stack ID of the stack you intend to import.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ImportStacksToStackSet">AWS
@@ -1668,7 +1692,7 @@ namespace CloudFormation
          * <p>Lists all exported output values in the account and Region in which you call
          * this action. Use this action to see the exported output values that you can
          * import into other stacks. To import values, use the <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/intrinsic-function-reference-importvalue.html">
          * Fn::ImportValue</a> function.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">Get
          * exported outputs from a deployed CloudFormation stack</a>.</p><p><h3>See
@@ -1722,18 +1746,26 @@ namespace CloudFormation
         }
 
         /**
-         * <p>Returns summaries of invoked Hooks when a change set or Cloud Control API
-         * operation target is provided.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns summaries of invoked Hooks. For more information, see <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/hooks-view-invocations.html">View
+         * CloudFormation Hooks invocations</a> in the <i>CloudFormation Hooks User
+         * Guide</i>.</p> <p>This operation supports the following parameter
+         * combinations:</p> <ul> <li> <p>No parameters: Returns all Hook invocation
+         * summaries.</p> </li> <li> <p> <code>TypeArn</code> only: Returns summaries for a
+         * specific Hook.</p> </li> <li> <p> <code>TypeArn</code> and <code>Status</code>:
+         * Returns summaries for a specific Hook filtered by status.</p> </li> <li> <p>
+         * <code>TargetId</code> and <code>TargetType</code>: Returns summaries for a
+         * specific Hook invocation target.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListHookResults">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListHookResultsOutcome ListHookResults(const Model::ListHookResultsRequest& request) const;
+        virtual Model::ListHookResultsOutcome ListHookResults(const Model::ListHookResultsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListHookResults that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListHookResultsRequestT = Model::ListHookResultsRequest>
-        Model::ListHookResultsOutcomeCallable ListHookResultsCallable(const ListHookResultsRequestT& request) const
+        Model::ListHookResultsOutcomeCallable ListHookResultsCallable(const ListHookResultsRequestT& request = {}) const
         {
             return SubmitCallable(&CloudFormationClient::ListHookResults, request);
         }
@@ -1742,7 +1774,7 @@ namespace CloudFormation
          * An Async wrapper for ListHookResults that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListHookResultsRequestT = Model::ListHookResultsRequest>
-        void ListHookResultsAsync(const ListHookResultsRequestT& request, const ListHookResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListHookResultsAsync(const ListHookResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListHookResultsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudFormationClient::ListHookResults, request, handler, context);
         }
@@ -1753,7 +1785,7 @@ namespace CloudFormation
          * using it. To see the exported output values in your account, see
          * <a>ListExports</a>.</p> <p>For more information about importing an exported
          * output value, see the <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">Fn::ImportValue</a>
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/intrinsic-function-reference-importvalue.html">Fn::ImportValue</a>
          * function.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListImports">AWS
          * API Reference</a></p>
@@ -1890,7 +1922,7 @@ namespace CloudFormation
 
         /**
          * <p>Returns summary information about stack instances that are associated with
-         * the specified stack set. You can filter for stack instances that are associated
+         * the specified StackSet. You can filter for stack instances that are associated
          * with a specific Amazon Web Services account name or Region, or that have a
          * specific status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstances">AWS
@@ -1996,8 +2028,8 @@ namespace CloudFormation
         }
 
         /**
-         * <p>Returns summary information about deployment targets for a stack
-         * set.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns summary information about deployment targets for a
+         * StackSet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetAutoDeploymentTargets">AWS
          * API Reference</a></p>
          */
@@ -2022,7 +2054,7 @@ namespace CloudFormation
         }
 
         /**
-         * <p>Returns summary information about the results of a stack set operation.</p>
+         * <p>Returns summary information about the results of a StackSet operation.</p>
          *  <p>This API provides <i>eventually consistent</i> reads meaning it may
          * take some time but will eventually return the most up-to-date data.</p>
          * <p><h3>See Also:</h3>   <a
@@ -2050,7 +2082,7 @@ namespace CloudFormation
         }
 
         /**
-         * <p>Returns summary information about operations performed on a stack set.</p>
+         * <p>Returns summary information about operations performed on a StackSet.</p>
          *  <p>This API provides <i>eventually consistent</i> reads meaning it may
          * take some time but will eventually return the most up-to-date data.</p>
          * <p><h3>See Also:</h3>   <a
@@ -2078,20 +2110,20 @@ namespace CloudFormation
         }
 
         /**
-         * <p>Returns summary information about stack sets that are associated with the
+         * <p>Returns summary information about StackSets that are associated with the
          * user.</p>  <p>This API provides <i>strongly consistent</i> reads meaning
          * it will always return the most up-to-date data.</p>  <ul> <li>
          * <p>[Self-managed permissions] If you set the <code>CallAs</code> parameter to
          * <code>SELF</code> while signed in to your Amazon Web Services account,
-         * <code>ListStackSets</code> returns all self-managed stack sets in your Amazon
-         * Web Services account.</p> </li> <li> <p>[Service-managed permissions] If you set
-         * the <code>CallAs</code> parameter to <code>SELF</code> while signed in to the
-         * organization's management account, <code>ListStackSets</code> returns all stack
-         * sets in the management account.</p> </li> <li> <p>[Service-managed permissions]
-         * If you set the <code>CallAs</code> parameter to <code>DELEGATED_ADMIN</code>
-         * while signed in to your member account, <code>ListStackSets</code> returns all
-         * stack sets with service-managed permissions in the management account.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <code>ListStackSets</code> returns all self-managed StackSets in your Amazon Web
+         * Services account.</p> </li> <li> <p>[Service-managed permissions] If you set the
+         * <code>CallAs</code> parameter to <code>SELF</code> while signed in to the
+         * organization's management account, <code>ListStackSets</code> returns all
+         * StackSets in the management account.</p> </li> <li> <p>[Service-managed
+         * permissions] If you set the <code>CallAs</code> parameter to
+         * <code>DELEGATED_ADMIN</code> while signed in to your member account,
+         * <code>ListStackSets</code> returns all StackSets with service-managed
+         * permissions in the management account.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSets">AWS
          * API Reference</a></p>
          */
@@ -2198,8 +2230,9 @@ namespace CloudFormation
         }
 
         /**
-         * <p>Returns summary information about extension that have been registered with
-         * CloudFormation.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns summary information about all extensions, including your private
+         * resource types, modules, and Hooks as well as all public extensions from Amazon
+         * Web Services and third-party publishers.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypes">AWS
          * API Reference</a></p>
          */
@@ -2551,7 +2584,7 @@ namespace CloudFormation
         }
 
         /**
-         * <p>Stops an in-progress operation on a stack set and its associated stack
+         * <p>Stops an in-progress operation on a StackSet and its associated stack
          * instances. StackSets will cancel all the unstarted stack instance deployments
          * and wait for those are in-progress to complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StopStackSetOperation">AWS
@@ -2693,17 +2726,17 @@ namespace CloudFormation
          * instances in Amazon Web Services Regions and accounts where they already exist;
          * to create additional stack instances, use <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">CreateStackInstances</a>.</p>
-         * <p>During stack set updates, any parameters overridden for a stack instance
+         * <p>During StackSet updates, any parameters overridden for a stack instance
          * aren't updated, but retain their overridden value.</p> <p>You can only update
-         * the parameter <i>values</i> that are specified in the stack set; to add or
-         * delete a parameter itself, use <a
+         * the parameter <i>values</i> that are specified in the StackSet. To add or delete
+         * a parameter itself, use <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
-         * to update the stack set template. If you add a parameter to a template, before
-         * you can override the parameter value specified in the stack set you must first
+         * to update the StackSet template. If you add a parameter to a template, before
+         * you can override the parameter value specified in the StackSet you must first
          * use <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
          * to update all stack instances with the updated template and parameter value
-         * specified in the stack set. Once a stack instance has been updated with the new
+         * specified in the StackSet. Once a stack instance has been updated with the new
          * parameter, you can then override the parameter value using
          * <code>UpdateStackInstances</code>.</p>  <p>The maximum number of
          * organizational unit (OUs) supported by a <code>UpdateStackInstances</code>
@@ -2737,12 +2770,12 @@ namespace CloudFormation
         }
 
         /**
-         * <p>Updates the stack set and associated stack instances in the specified
-         * accounts and Amazon Web Services Regions.</p> <p>Even if the stack set operation
-         * created by updating the stack set fails (completely or partially, below or above
-         * a specified failure tolerance), the stack set is updated with your changes.
-         * Subsequent <a>CreateStackInstances</a> calls on the specified stack set use the
-         * updated stack set.</p>  <p>The maximum number of organizational unit (OUs)
+         * <p>Updates the StackSet and associated stack instances in the specified accounts
+         * and Amazon Web Services Regions.</p> <p>Even if the StackSet operation created
+         * by updating the StackSet fails (completely or partially, below or above a
+         * specified failure tolerance), the StackSet is updated with your changes.
+         * Subsequent <a>CreateStackInstances</a> calls on the specified StackSet use the
+         * updated StackSet.</p>  <p>The maximum number of organizational unit (OUs)
          * supported by a <code>UpdateStackSet</code> operation is 50.</p> <p>If you need
          * more than 50, consider the following options:</p> <ul> <li> <p> <i>Batch
          * processing:</i> If you don't want to expose your OU hierarchy, split up the

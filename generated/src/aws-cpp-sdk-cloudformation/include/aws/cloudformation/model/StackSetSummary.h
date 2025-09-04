@@ -30,8 +30,8 @@ namespace Model
 {
 
   /**
-   * <p>The structures that contain summary information about the specified stack
-   * set.</p><p><h3>See Also:</h3>   <a
+   * <p>The structures that contain summary information about the specified
+   * StackSet.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSetSummary">AWS
    * API Reference</a></p>
    */
@@ -48,7 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the stack set.</p>
+     * <p>The name of the StackSet.</p>
      */
     inline const Aws::String& GetStackSetName() const { return m_stackSetName; }
     inline bool StackSetNameHasBeenSet() const { return m_stackSetNameHasBeenSet; }
@@ -60,7 +60,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the stack set.</p>
+     * <p>The ID of the StackSet.</p>
      */
     inline const Aws::String& GetStackSetId() const { return m_stackSetId; }
     inline bool StackSetIdHasBeenSet() const { return m_stackSetIdHasBeenSet; }
@@ -72,7 +72,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A description of the stack set that you specify when the stack set is created
+     * <p>A description of the StackSet that you specify when the StackSet is created
      * or updated.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
@@ -85,7 +85,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the stack set.</p>
+     * <p>The status of the StackSet.</p>
      */
     inline StackSetStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -109,17 +109,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>Describes how the IAM roles required for stack set operations are
-     * created.</p> <ul> <li> <p>With <code>self-managed</code> permissions, you must
-     * create the administrator and execution roles required to deploy to target
-     * accounts. For more information, see <a
+     * <p>Describes how the IAM roles required for StackSet operations are created.</p>
+     * <ul> <li> <p>With <code>self-managed</code> permissions, you must create the
+     * administrator and execution roles required to deploy to target accounts. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
      * self-managed permissions</a>.</p> </li> <li> <p>With
      * <code>service-managed</code> permissions, StackSets automatically creates the
      * IAM roles required to deploy to accounts managed by Organizations. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate
-     * trusted access for stack sets with Organizations</a>.</p> </li> </ul>
+     * trusted access for StackSets with Organizations</a>.</p> </li> </ul>
      */
     inline PermissionModels GetPermissionModel() const { return m_permissionModel; }
     inline bool PermissionModelHasBeenSet() const { return m_permissionModelHasBeenSet; }
@@ -129,18 +129,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>Status of the stack set's actual configuration compared to its expected
-     * template and parameter configuration. A stack set is considered to have drifted
-     * if one or more of its stack instances have drifted from their expected template
-     * and parameter configuration.</p> <ul> <li> <p> <code>DRIFTED</code>: One or more
-     * of the stack instances belonging to the stack set stack differs from the
+     * <p>Status of the StackSet's actual configuration compared to its expected
+     * template and parameter configuration.</p> <ul> <li> <p> <code>DRIFTED</code>:
+     * One or more of the stack instances belonging to the StackSet differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
      * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't
-     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All
-     * the stack instances belonging to the stack set stack match from the expected
-     * template and parameter configuration.</p> </li> <li> <p> <code>UNKNOWN</code>:
-     * This value is reserved for future use.</p> </li> </ul>
+     * checked the StackSet for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All the
+     * stack instances belonging to the StackSet match the expected template and
+     * parameter configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is
+     * reserved for future use.</p> </li> </ul>
      */
     inline StackDriftStatus GetDriftStatus() const { return m_driftStatus; }
     inline bool DriftStatusHasBeenSet() const { return m_driftStatusHasBeenSet; }
@@ -151,8 +149,8 @@ namespace Model
     ///@{
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
-     * the stack set. This value will be <code>NULL</code> for any stack set on which
-     * drift detection hasn't yet been performed.</p>
+     * the StackSet. This value will be <code>NULL</code> for any StackSet that drift
+     * detection hasn't yet been performed on.</p>
      */
     inline const Aws::Utils::DateTime& GetLastDriftCheckTimestamp() const { return m_lastDriftCheckTimestamp; }
     inline bool LastDriftCheckTimestampHasBeenSet() const { return m_lastDriftCheckTimestampHasBeenSet; }

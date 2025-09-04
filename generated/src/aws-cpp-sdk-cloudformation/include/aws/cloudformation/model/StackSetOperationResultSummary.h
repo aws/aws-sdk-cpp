@@ -69,14 +69,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The result status of the stack set operation for the given account in the
+     * <p>The result status of the StackSet operation for the given account in the
      * given Region.</p> <ul> <li> <p> <code>CANCELLED</code>: The operation in the
      * specified account and Region has been canceled. This is either because a user
-     * has stopped the stack set operation, or because the failure tolerance of the
-     * stack set operation has been exceeded.</p> </li> <li> <p> <code>FAILED</code>:
-     * The operation in the specified account and Region failed.</p> <p>If the stack
-     * set operation fails in enough accounts within a Region, the failure tolerance
-     * for the stack set operation as a whole might be exceeded.</p> </li> <li> <p>
+     * has stopped the StackSet operation, or because the failure tolerance of the
+     * StackSet operation has been exceeded.</p> </li> <li> <p> <code>FAILED</code>:
+     * The operation in the specified account and Region failed.</p> <p>If the StackSet
+     * operation fails in enough accounts within a Region, the failure tolerance for
+     * the StackSet operation as a whole might be exceeded.</p> </li> <li> <p>
      * <code>RUNNING</code>: The operation in the specified account and Region is
      * currently in progress.</p> </li> <li> <p> <code>PENDING</code>: The operation in
      * the specified account and Region has yet to start.</p> </li> <li> <p>
@@ -104,7 +104,7 @@ namespace Model
     ///@{
     /**
      * <p>The results of the account gate function CloudFormation invokes, if present,
-     * before proceeding with stack set operations in an account.</p>
+     * before proceeding with StackSet operations in an account.</p>
      */
     inline const AccountGateResult& GetAccountGateResult() const { return m_accountGateResult; }
     inline bool AccountGateResultHasBeenSet() const { return m_accountGateResultHasBeenSet; }

@@ -75,6 +75,11 @@ ProtectedJob& ProtectedJob::operator =(JsonView jsonValue)
     m_error = jsonValue.GetObject("error");
     m_errorHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("computeConfiguration"))
+  {
+    m_computeConfiguration = jsonValue.GetObject("computeConfiguration");
+    m_computeConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -137,6 +142,12 @@ JsonValue ProtectedJob::Jsonize() const
   if(m_errorHasBeenSet)
   {
    payload.WithObject("error", m_error.Jsonize());
+
+  }
+
+  if(m_computeConfigurationHasBeenSet)
+  {
+   payload.WithObject("computeConfiguration", m_computeConfiguration.Jsonize());
 
   }
 
