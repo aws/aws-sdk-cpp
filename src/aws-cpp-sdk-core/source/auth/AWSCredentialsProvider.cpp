@@ -366,7 +366,7 @@ void ProcessCredentialsProvider::Reload()
     }
     m_credentials = GetCredentialsFromProcess(command);
     if (!m_credentials.IsEmpty()) {
-        m_credentials.AddUserAgentFeature(UserAgentFeature::CREDENTIALS_PROCESS);
+        m_credentials.AddUserAgentFeature(UserAgentFeature::CREDENTIALS_PROFILE_PROCESS);
     }
 }
 
@@ -444,6 +444,10 @@ AWSCredentials Aws::Auth::GetCredentialsFromProcess(const Aws::String& process)
     if (credentialsView.KeyExists("AccountId"))
     {
       credentials.SetAccountId(credentialsView.GetString("AccountId"));
+    }
+
+    if (!credentials.IsEmpty()) {
+        credentials.AddUserAgentFeature(UserAgentFeature::CREDENTIALS_PROCESS);
     }
 
     AWS_LOGSTREAM_DEBUG(PROFILE_LOG_TAG, "Successfully pulled credentials from process credential with AccessKey: " << accessKey << ", Expiration:" << credentialsView.GetString("Expiration"));
