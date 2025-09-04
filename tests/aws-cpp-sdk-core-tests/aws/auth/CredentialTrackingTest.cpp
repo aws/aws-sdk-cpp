@@ -23,7 +23,9 @@ using namespace Aws::Client;
 using namespace Aws::Auth;
 using namespace Aws::Http;
 
-static const char ALLOCATION_TAG[] = "CredentialTrackingTest";
+namespace {
+const char* TEST_LOG_TAG =  "CredentialTrackingTest";
+}
 
 static Aws::String WrapEchoStringWithSingleQuoteForUnixShell(Aws::String str)
 {
@@ -40,10 +42,10 @@ class CredentialTestingClient : public Aws::Client::AWSClient
 public:
     explicit CredentialTestingClient(const Aws::Client::ClientConfiguration& configuration)
         : AWSClient(configuration,
-                   Aws::MakeShared<Aws::Client::AWSAuthV4Signer>(ALLOCATION_TAG,
-                       Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                   Aws::MakeShared<Aws::Client::AWSAuthV4Signer>(TEST_LOG_TAG,
+                       Aws::MakeShared<DefaultAWSCredentialsProviderChain>(TEST_LOG_TAG),
                        "service", configuration.region),
-                   Aws::MakeShared<MockAWSErrorMarshaller>(ALLOCATION_TAG))
+                   Aws::MakeShared<MockAWSErrorMarshaller>(TEST_LOG_TAG))
     {
     }
 
@@ -51,10 +53,10 @@ public:
     explicit CredentialTestingClient(const Aws::Client::ClientConfiguration& configuration,
                                    std::shared_ptr<AWSCredentialsProvider> credentialsProvider)
         : AWSClient(configuration,
-                   Aws::MakeShared<Aws::Client::AWSAuthV4Signer>(ALLOCATION_TAG,
+                   Aws::MakeShared<Aws::Client::AWSAuthV4Signer>(TEST_LOG_TAG,
                        credentialsProvider,
                        "service", configuration.region),
-                   Aws::MakeShared<MockAWSErrorMarshaller>(ALLOCATION_TAG))
+                   Aws::MakeShared<MockAWSErrorMarshaller>(TEST_LOG_TAG))
     {
     }
 
@@ -82,8 +84,8 @@ protected:
 
     void SetUp() override
     {
-        mockHttpClient = Aws::MakeShared<MockHttpClient>(ALLOCATION_TAG);
-        mockHttpClientFactory = Aws::MakeShared<MockHttpClientFactory>(ALLOCATION_TAG);
+        mockHttpClient = Aws::MakeShared<MockHttpClient>(TEST_LOG_TAG);
+        mockHttpClientFactory = Aws::MakeShared<MockHttpClientFactory>(TEST_LOG_TAG);
         mockHttpClientFactory->SetClient(mockHttpClient);
         SetHttpClientFactory(mockHttpClientFactory);
     }
@@ -96,6 +98,56 @@ protected:
         Aws::Http::CleanupHttp();
         Aws::Http::InitHttp();
     }
+
+    void RunTestWithCredentialsProvider(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider, std::string id) {
+      // Setup mock response
+      std::shared_ptr<HttpRequest> requestTmp =
+          CreateHttpRequest(Aws::Http::URI("dummy"), Aws::Http::HttpMethod::HTTP_POST,
+                          Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+      auto successResponse = Aws::MakeShared<Standard::StandardHttpResponse>(TEST_LOG_TAG, requestTmp);
+      successResponse->SetResponseCode(HttpResponseCode::OK);
+      successResponse->GetResponseBody() << "{}";
+      mockHttpClient->AddResponseToReturn(successResponse);
+
+      // Create client configuration
+      Aws::Client::ClientConfigurationInitValues cfgInit;
+      cfgInit.shouldDisableIMDS = true;
+      Aws::Client::ClientConfiguration clientConfig(cfgInit);
+      clientConfig.region = Aws::Region::US_EAST_1;
+
+      // Create credential testing client that uses default provider chain
+      CredentialTestingClient client(clientConfig, credentialsProvider);
+
+      // Create mock request
+      AmazonWebServiceRequestMock mockRequest;
+
+      // Make request
+      auto outcome = client.MakeRequest(mockRequest);
+      ASSERT_TRUE(outcome.IsSuccess());
+
+      // Verify User-Agent contains environment credentials tracking
+      auto lastRequest = mockHttpClient->GetMostRecentHttpRequest();
+      EXPECT_TRUE(lastRequest.HasHeader(Aws::Http::USER_AGENT_HEADER));
+      const auto& userAgent = lastRequest.GetHeaderValue(Aws::Http::USER_AGENT_HEADER);
+      EXPECT_FALSE(userAgent.empty());
+
+      const auto userAgentParsed = Aws::Utils::StringUtils::Split(userAgent, ' ');
+
+      // Verify there's only one m/ section (no duplicate m/ sections)
+      int mSectionCount = 0;
+      for (const auto& part : userAgentParsed) {
+          if (part.find("m/") != Aws::String::npos) {
+              mSectionCount++;
+          }
+      }
+      EXPECT_EQ(1, mSectionCount);
+
+      // Check for environment credentials business metric (g) in user agent
+      auto businessMetrics = std::find_if(userAgentParsed.begin(), userAgentParsed.end(),
+          [&id](const Aws::String& value) { return value.find("m/") != Aws::String::npos && value.find(id) != Aws::String::npos; });
+
+      EXPECT_TRUE(businessMetrics != userAgentParsed.end());
+    }
 };
 
 TEST_F(CredentialTrackingTest, TestEnvironmentCredentialsTracking)
@@ -104,54 +156,8 @@ TEST_F(CredentialTrackingTest, TestEnvironmentCredentialsTracking)
         {"AWS_ACCESS_KEY_ID", "test-access-key"},
         {"AWS_SECRET_ACCESS_KEY", "test-secret-key"},
     }};
-
-    // Setup mock response
-    std::shared_ptr<HttpRequest> requestTmp =
-        CreateHttpRequest(Aws::Http::URI("dummy"), Aws::Http::HttpMethod::HTTP_POST,
-                        Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    auto successResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, requestTmp);
-    successResponse->SetResponseCode(HttpResponseCode::OK);
-    successResponse->GetResponseBody() << "{}";
-    mockHttpClient->AddResponseToReturn(successResponse);
-
-    // Create client configuration
-    Aws::Client::ClientConfigurationInitValues cfgInit;
-    cfgInit.shouldDisableIMDS = true;
-    Aws::Client::ClientConfiguration clientConfig(cfgInit);
-    clientConfig.region = Aws::Region::US_EAST_1;
-
-    // Create credential testing client that uses default provider chain
-    CredentialTestingClient client(clientConfig);
-
-    // Create mock request
-    AmazonWebServiceRequestMock mockRequest;
-
-    // Make request
-    auto outcome = client.MakeRequest(mockRequest);
-    ASSERT_TRUE(outcome.IsSuccess());
-
-    // Verify User-Agent contains environment credentials tracking
-    auto lastRequest = mockHttpClient->GetMostRecentHttpRequest();
-    EXPECT_TRUE(lastRequest.HasHeader(Aws::Http::USER_AGENT_HEADER));
-    const auto& userAgent = lastRequest.GetHeaderValue(Aws::Http::USER_AGENT_HEADER);
-    EXPECT_FALSE(userAgent.empty());
-
-    const auto userAgentParsed = Aws::Utils::StringUtils::Split(userAgent, ' ');
-
-    // Verify there's only one m/ section (no duplicate m/ sections)
-    int mSectionCount = 0;
-    for (const auto& part : userAgentParsed) {
-        if (part.find("m/") != Aws::String::npos) {
-            mSectionCount++;
-        }
-    }
-    EXPECT_EQ(1, mSectionCount);
-
-    // Check for environment credentials business metric (g) in user agent
-    auto businessMetrics = std::find_if(userAgentParsed.begin(), userAgentParsed.end(),
-        [](const Aws::String& value) { return value.find("m/") != Aws::String::npos && value.find("g") != Aws::String::npos; });
-
-    EXPECT_TRUE(businessMetrics != userAgentParsed.end());
+    auto credsProvider = Aws::MakeShared<Aws::Auth::EnvironmentAWSCredentialsProvider>(TEST_LOG_TAG);
+    RunTestWithCredentialsProvider(std::move(credsProvider), "g");
 }
 
 TEST_F(CredentialTrackingTest, TestProfileCredentialsTracking)
@@ -170,53 +176,8 @@ TEST_F(CredentialTrackingTest, TestProfileCredentialsTracking)
     }};
     Aws::Config::ReloadCachedCredentialsFile();
 
-    // Setup mock response
-    std::shared_ptr<HttpRequest> requestTmp =
-        CreateHttpRequest(Aws::Http::URI("dummy"), Aws::Http::HttpMethod::HTTP_POST,
-                        Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    auto successResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, requestTmp);
-    successResponse->SetResponseCode(HttpResponseCode::OK);
-    successResponse->GetResponseBody() << "{}";
-    mockHttpClient->AddResponseToReturn(successResponse);
-
-    // Create client configuration
-    Aws::Client::ClientConfigurationInitValues cfgInit;
-    cfgInit.shouldDisableIMDS = true;
-    Aws::Client::ClientConfiguration clientConfig(cfgInit);
-    clientConfig.region = Aws::Region::US_EAST_1;
-
-    // Create credential testing client that uses default provider chain
-    CredentialTestingClient client(clientConfig);
-
-    // Create mock request
-    AmazonWebServiceRequestMock mockRequest;
-
-    // Make request
-    auto outcome = client.MakeRequest(mockRequest);
-    ASSERT_TRUE(outcome.IsSuccess());
-
-    // Verify User-Agent contains profile credentials tracking
-    auto lastRequest = mockHttpClient->GetMostRecentHttpRequest();
-    EXPECT_TRUE(lastRequest.HasHeader(Aws::Http::USER_AGENT_HEADER));
-    const auto& userAgent = lastRequest.GetHeaderValue(Aws::Http::USER_AGENT_HEADER);
-    EXPECT_FALSE(userAgent.empty());
-
-    const auto userAgentParsed = Aws::Utils::StringUtils::Split(userAgent, ' ');
-
-    // Verify there's only one m/ section (no duplicate m/ sections)
-    int mSectionCount = 0;
-    for (const auto& part : userAgentParsed) {
-        if (part.find("m/") != Aws::String::npos) {
-            mSectionCount++;
-        }
-    }
-    EXPECT_EQ(1, mSectionCount);
-
-    // Check for profile credentials business metric (n) in user agent
-    auto businessMetrics = std::find_if(userAgentParsed.begin(), userAgentParsed.end(),
-        [](const Aws::String& value) { return value.find("m/") != Aws::String::npos && value.find("n") != Aws::String::npos; });
-
-    EXPECT_TRUE(businessMetrics != userAgentParsed.end());
+    auto credsProvider = Aws::MakeShared<Aws::Auth::ProfileConfigFileAWSCredentialsProvider>(TEST_LOG_TAG);
+    RunTestWithCredentialsProvider(std::move(credsProvider), "n");
 }
 
 TEST_F(CredentialTrackingTest, TestProcessCredentialsTracking)
@@ -236,111 +197,20 @@ TEST_F(CredentialTrackingTest, TestProcessCredentialsTracking)
     // Force reload config file after setting environment variable
     Aws::Config::ReloadCachedConfigFile();
 
-    // Setup mock response
-    std::shared_ptr<HttpRequest> requestTmp =
-        CreateHttpRequest(Aws::Http::URI("dummy"), Aws::Http::HttpMethod::HTTP_POST,
-                        Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    auto successResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, requestTmp);
-    successResponse->SetResponseCode(HttpResponseCode::OK);
-    successResponse->GetResponseBody() << "{}";
-    mockHttpClient->AddResponseToReturn(successResponse);
-
-    // Create client configuration
-    Aws::Client::ClientConfigurationInitValues cfgInit;
-    cfgInit.shouldDisableIMDS = true;
-    Aws::Client::ClientConfiguration clientConfig(cfgInit);
-    clientConfig.region = Aws::Region::US_EAST_1;
-
-    // Create credential testing client that uses default provider chain
-    CredentialTestingClient client(clientConfig);
-
-    // Create mock request
-    AmazonWebServiceRequestMock mockRequest;
-
-    // Make request
-    auto outcome = client.MakeRequest(mockRequest);
-    ASSERT_TRUE(outcome.IsSuccess());
-
-    // Verify User-Agent contains process credentials tracking
-    auto lastRequest = mockHttpClient->GetMostRecentHttpRequest();
-    EXPECT_TRUE(lastRequest.HasHeader(Aws::Http::USER_AGENT_HEADER));
-    const auto& userAgent = lastRequest.GetHeaderValue(Aws::Http::USER_AGENT_HEADER);
-    EXPECT_FALSE(userAgent.empty());
-
-    const auto userAgentParsed = Aws::Utils::StringUtils::Split(userAgent, ' ');
-
-    // Verify there's only one m/ section (no duplicate m/ sections)
-    int mSectionCount = 0;
-    for (const auto& part : userAgentParsed) {
-        if (part.find("m/") != Aws::String::npos) {
-            mSectionCount++;
-        }
-    }
-    EXPECT_EQ(1, mSectionCount);
-
-    // Check for process credentials business metric (w) in user agent
-    auto businessMetrics = std::find_if(userAgentParsed.begin(), userAgentParsed.end(),
-        [](const Aws::String& value) { return value.find("m/") != Aws::String::npos && value.find("w") != Aws::String::npos; });
-
-    EXPECT_TRUE(businessMetrics != userAgentParsed.end());
+    auto credsProvider = Aws::MakeShared<Aws::Auth::ProcessCredentialsProvider>(TEST_LOG_TAG);
+    RunTestWithCredentialsProvider(std::move(credsProvider), "w");
 }
 
 TEST_F(CredentialTrackingTest, TestInstanceProfileCredentialsTracking)
 {
     // Create mock EC2 metadata client with valid credentials
-    auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(ALLOCATION_TAG);
+    auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(TEST_LOG_TAG);
     const char* validCredentials = R"({ "AccessKeyId": "test-imds-access-key", "SecretAccessKey": "test-imds-secret-key", "Token": "test-imds-token", "Code": "Success", "Expiration": "2037-04-19T00:00:00Z" })";
     mockClient->SetMockedCredentialsValue(validCredentials);
 
     // Create IMDS credential provider with mock client
-    auto imdsProvider = Aws::MakeShared<InstanceProfileCredentialsProvider>(ALLOCATION_TAG,
-        Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(ALLOCATION_TAG, mockClient), 1000 * 60 * 15);
+    auto imdsProvider = Aws::MakeShared<InstanceProfileCredentialsProvider>(TEST_LOG_TAG,
+        Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(TEST_LOG_TAG, mockClient), 1000);
 
-    // Setup mock response for service call
-    std::shared_ptr<HttpRequest> requestTmp =
-        CreateHttpRequest(Aws::Http::URI("dummy"), Aws::Http::HttpMethod::HTTP_POST,
-                        Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    auto successResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, requestTmp);
-    successResponse->SetResponseCode(HttpResponseCode::OK);
-    successResponse->GetResponseBody() << "{}";
-    mockHttpClient->AddResponseToReturn(successResponse);
-
-    // Create client configuration
-    Aws::Client::ClientConfigurationInitValues cfgInit;
-    cfgInit.shouldDisableIMDS = false;
-    Aws::Client::ClientConfiguration clientConfig(cfgInit);
-    clientConfig.region = Aws::Region::US_EAST_1;
-
-    // Create credential testing client with IMDS provider
-    CredentialTestingClient client(clientConfig, imdsProvider);
-
-    // Create mock request
-    AmazonWebServiceRequestMock mockRequest;
-
-    // Make request
-    auto outcome = client.MakeRequest(mockRequest);
-    ASSERT_TRUE(outcome.IsSuccess());
-
-    // Verify User-Agent contains IMDS credentials tracking
-    auto lastRequest = mockHttpClient->GetMostRecentHttpRequest();
-    EXPECT_TRUE(lastRequest.HasHeader(Aws::Http::USER_AGENT_HEADER));
-    const auto& userAgent = lastRequest.GetHeaderValue(Aws::Http::USER_AGENT_HEADER);
-    EXPECT_FALSE(userAgent.empty());
-
-    const auto userAgentParsed = Aws::Utils::StringUtils::Split(userAgent, ' ');
-
-    // Verify there's only one m/ section (no duplicate m/ sections)
-    int mSectionCount = 0;
-    for (const auto& part : userAgentParsed) {
-        if (part.find("m/") != Aws::String::npos) {
-            mSectionCount++;
-        }
-    }
-    EXPECT_EQ(1, mSectionCount);
-
-    // Check for IMDS credentials business metric (0) in user agent
-    auto businessMetrics = std::find_if(userAgentParsed.begin(), userAgentParsed.end(),
-        [](const Aws::String& value) { return value.find("m/") != Aws::String::npos && value.find("0") != Aws::String::npos; });
-
-    EXPECT_TRUE(businessMetrics != userAgentParsed.end());
+    RunTestWithCredentialsProvider(std::move(imdsProvider), "0");
 }
