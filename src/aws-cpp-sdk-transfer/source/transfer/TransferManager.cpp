@@ -863,6 +863,8 @@ namespace Aws
                 TriggerDownloadProgressCallback(handle);
             });
 
+            request.SetIfMatch(handle->GetEtag());
+
             auto getObjectOutcome = m_transferConfig.s3Client->GetObject(request);
             if (getObjectOutcome.IsSuccess())
             {
