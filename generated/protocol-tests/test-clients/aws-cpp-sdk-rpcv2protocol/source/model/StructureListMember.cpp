@@ -28,23 +28,23 @@ StructureListMember& StructureListMember::operator =(const std::shared_ptr<Aws::
 {
     if (decoder != nullptr)
 {
-    auto peekType = decoder->PeekType();
-    if (peekType.has_value() && (peekType.value() == CborType::MapStart || peekType.value() == CborType::IndefMapStart))
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart))
     {
-        if (peekType.value() == CborType::MapStart)
+        if (initialMapType.value() == CborType::MapStart)
         {
             auto mapSize = decoder->PopNextMapStart();
             if (mapSize.has_value())
             {
                 for (size_t i = 0; i < mapSize.value(); ++i)
                 {
-                    auto key = decoder->PopNextTextVal();
-                    if (key.has_value())
+                    auto initialKey = decoder->PopNextTextVal();
+                    if (initialKey.has_value())
                     {
-                        Aws::String keyStr(reinterpret_cast<const char*>(key.value().ptr), key.value().len);
+                        Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
                             
 
-    if (keyStr == "a")
+    if (initialKeyStr == "a")
   {
           if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
     auto val = decoder->PopNextTextVal();
@@ -75,7 +75,7 @@ StructureListMember& StructureListMember::operator =(const std::shared_ptr<Aws::
   
     
 
-     else if (keyStr == "b")
+     else if (initialKeyStr == "b")
   {
           if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
     auto val = decoder->PopNextTextVal();
@@ -128,13 +128,13 @@ else
                     break;
                 }
 
-                auto key = decoder->PopNextTextVal();
-                if (key.has_value())
+                auto initialKey = decoder->PopNextTextVal();
+                if (initialKey.has_value())
                 {
-                    Aws::String keyStr(reinterpret_cast<const char*>(key.value().ptr), key.value().len);
+                    Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
                         
 
-    if (keyStr == "a")
+    if (initialKeyStr == "a")
   {
           if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
     auto val = decoder->PopNextTextVal();
@@ -165,7 +165,7 @@ else
   
     
 
-     else if (keyStr == "b")
+     else if (initialKeyStr == "b")
   {
           if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
     auto val = decoder->PopNextTextVal();
@@ -213,8 +213,12 @@ void StructureListMember::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const
 
     // Calculate map size
     size_t mapSize = 0;
-                                        if(m_aHasBeenSet) mapSize++;
-                                                            if(m_bHasBeenSet) mapSize++;
+                                        if(m_aHasBeenSet){
+                    mapSize++;
+                }
+                                                            if(m_bHasBeenSet){
+                    mapSize++;
+                }
                         
   encoder.WriteMapStart(mapSize);
     
@@ -222,14 +226,14 @@ void StructureListMember::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const
     if(m_aHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("a"));
-        encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_a.c_str()));
+                encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_a.c_str()));
      }
 
 
     if(m_bHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("b"));
-        encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_b.c_str()));
+                encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_b.c_str()));
      }
 }
 

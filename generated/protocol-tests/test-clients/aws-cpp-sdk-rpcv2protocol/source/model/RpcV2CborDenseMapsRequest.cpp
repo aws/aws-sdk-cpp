@@ -19,11 +19,21 @@
         
         // Calculate map size
         size_t mapSize = 0;
-                                                        if(m_denseStructMapHasBeenSet) mapSize++;
-                                                                                    if(m_denseNumberMapHasBeenSet) mapSize++;
-                                                                                    if(m_denseBooleanMapHasBeenSet) mapSize++;
-                                                                                    if(m_denseStringMapHasBeenSet) mapSize++;
-                                                                                    if(m_denseSetMapHasBeenSet) mapSize++;
+                                                        if(m_denseStructMapHasBeenSet){
+                        mapSize++;
+                    }
+                                                                                    if(m_denseNumberMapHasBeenSet){
+                        mapSize++;
+                    }
+                                                                                    if(m_denseBooleanMapHasBeenSet){
+                        mapSize++;
+                    }
+                                                                                    if(m_denseStringMapHasBeenSet){
+                        mapSize++;
+                    }
+                                                                                    if(m_denseSetMapHasBeenSet){
+                        mapSize++;
+                    }
                                                                 
         encoder.WriteMapStart(mapSize);
 
@@ -32,10 +42,10 @@
     if(m_denseStructMapHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("denseStructMap"));
-        encoder.WriteMapStart(m_denseStructMap.size());
-for(const auto& item : m_denseStructMap) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(item.first.c_str()));
-            item.second.CborEncode(encoder);
+                encoder.WriteMapStart(m_denseStructMap.size());
+for(const auto& item_0 : m_denseStructMap) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.first.c_str()));
+            item_0.second.CborEncode(encoder);
     }
      }
 
@@ -43,10 +53,10 @@ for(const auto& item : m_denseStructMap) {
     if(m_denseNumberMapHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("denseNumberMap"));
-        encoder.WriteMapStart(m_denseNumberMap.size());
-for(const auto& item : m_denseNumberMap) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(item.first.c_str()));
-(item.second >= 0) ? encoder.WriteUInt(item.second) : encoder.WriteNegInt(item.second);
+                encoder.WriteMapStart(m_denseNumberMap.size());
+for(const auto& item_0 : m_denseNumberMap) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.first.c_str()));
+(item_0.second >= 0) ? encoder.WriteUInt(item_0.second) : encoder.WriteNegInt(item_0.second);
 }
      }
 
@@ -54,10 +64,10 @@ for(const auto& item : m_denseNumberMap) {
     if(m_denseBooleanMapHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("denseBooleanMap"));
-        encoder.WriteMapStart(m_denseBooleanMap.size());
-for(const auto& item : m_denseBooleanMap) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(item.first.c_str()));
-encoder.WriteBool(item.second);
+                encoder.WriteMapStart(m_denseBooleanMap.size());
+for(const auto& item_0 : m_denseBooleanMap) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.first.c_str()));
+encoder.WriteBool(item_0.second);
 }
      }
 
@@ -65,10 +75,10 @@ encoder.WriteBool(item.second);
     if(m_denseStringMapHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("denseStringMap"));
-        encoder.WriteMapStart(m_denseStringMap.size());
-for(const auto& item : m_denseStringMap) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(item.first.c_str()));
-encoder.WriteText(Aws::Crt::ByteCursorFromCString(item.second.c_str()));
+                encoder.WriteMapStart(m_denseStringMap.size());
+for(const auto& item_0 : m_denseStringMap) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.first.c_str()));
+encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.second.c_str()));
 }
      }
 
@@ -76,12 +86,12 @@ encoder.WriteText(Aws::Crt::ByteCursorFromCString(item.second.c_str()));
     if(m_denseSetMapHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("denseSetMap"));
-        encoder.WriteMapStart(m_denseSetMap.size());
-for(const auto& item : m_denseSetMap) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(item.first.c_str()));
-encoder.WriteArrayStart(item.second.size());
-for(const auto& item : item.second) {
-encoder.WriteText(Aws::Crt::ByteCursorFromCString(item.c_str()));
+                encoder.WriteMapStart(m_denseSetMap.size());
+for(const auto& item_0 : m_denseSetMap) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.first.c_str()));
+encoder.WriteArrayStart(item_0.second.size());
+for(const auto& item_1 : item_0.second) {
+encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_1.c_str()));
 }
 }
      }

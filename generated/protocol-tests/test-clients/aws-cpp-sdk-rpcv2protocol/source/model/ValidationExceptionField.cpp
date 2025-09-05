@@ -28,23 +28,23 @@ ValidationExceptionField& ValidationExceptionField::operator =(const std::shared
 {
     if (decoder != nullptr)
 {
-    auto peekType = decoder->PeekType();
-    if (peekType.has_value() && (peekType.value() == CborType::MapStart || peekType.value() == CborType::IndefMapStart))
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart))
     {
-        if (peekType.value() == CborType::MapStart)
+        if (initialMapType.value() == CborType::MapStart)
         {
             auto mapSize = decoder->PopNextMapStart();
             if (mapSize.has_value())
             {
                 for (size_t i = 0; i < mapSize.value(); ++i)
                 {
-                    auto key = decoder->PopNextTextVal();
-                    if (key.has_value())
+                    auto initialKey = decoder->PopNextTextVal();
+                    if (initialKey.has_value())
                     {
-                        Aws::String keyStr(reinterpret_cast<const char*>(key.value().ptr), key.value().len);
+                        Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
                             
 
-    if (keyStr == "path")
+    if (initialKeyStr == "path")
   {
           if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
     auto val = decoder->PopNextTextVal();
@@ -75,7 +75,7 @@ ValidationExceptionField& ValidationExceptionField::operator =(const std::shared
   
     
 
-     else if (keyStr == "message")
+     else if (initialKeyStr == "message")
   {
           if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
     auto val = decoder->PopNextTextVal();
@@ -128,13 +128,13 @@ else
                     break;
                 }
 
-                auto key = decoder->PopNextTextVal();
-                if (key.has_value())
+                auto initialKey = decoder->PopNextTextVal();
+                if (initialKey.has_value())
                 {
-                    Aws::String keyStr(reinterpret_cast<const char*>(key.value().ptr), key.value().len);
+                    Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
                         
 
-    if (keyStr == "path")
+    if (initialKeyStr == "path")
   {
           if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
     auto val = decoder->PopNextTextVal();
@@ -165,7 +165,7 @@ else
   
     
 
-     else if (keyStr == "message")
+     else if (initialKeyStr == "message")
   {
           if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
     auto val = decoder->PopNextTextVal();
@@ -213,8 +213,12 @@ void ValidationExceptionField::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) 
 
     // Calculate map size
     size_t mapSize = 0;
-                                        if(m_pathHasBeenSet) mapSize++;
-                                                            if(m_messageHasBeenSet) mapSize++;
+                                        if(m_pathHasBeenSet){
+                    mapSize++;
+                }
+                                                            if(m_messageHasBeenSet){
+                    mapSize++;
+                }
                         
   encoder.WriteMapStart(mapSize);
     
@@ -222,14 +226,14 @@ void ValidationExceptionField::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) 
     if(m_pathHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("path"));
-        encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_path.c_str()));
+                encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_path.c_str()));
      }
 
 
     if(m_messageHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("message"));
-        encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_message.c_str()));
+                encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_message.c_str()));
      }
 }
 

@@ -33,23 +33,23 @@ using namespace Aws;
 
         if (decoder != nullptr)
 {
-    auto peekType = decoder->PeekType();
-    if (peekType.has_value() && (peekType.value() == CborType::MapStart || peekType.value() == CborType::IndefMapStart))
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart))
     {
-        if (peekType.value() == CborType::MapStart)
+        if (initialMapType.value() == CborType::MapStart)
         {
             auto mapSize = decoder->PopNextMapStart();
             if (mapSize.has_value())
             {
                 for (size_t i = 0; i < mapSize.value(); ++i)
                 {
-                    auto key = decoder->PopNextTextVal();
-                    if (key.has_value())
+                    auto initialKey = decoder->PopNextTextVal();
+                    if (initialKey.has_value())
                     {
-                        Aws::String keyStr(reinterpret_cast<const char*>(key.value().ptr), key.value().len);
+                        Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
                             
 
-    if (keyStr == "trueBooleanValue")
+    if (initialKeyStr == "trueBooleanValue")
   {
           auto val = decoder->PopNextBooleanVal();
 if (val.has_value()) {
@@ -60,7 +60,7 @@ if (val.has_value()) {
   
     
 
-     else if (keyStr == "falseBooleanValue")
+     else if (initialKeyStr == "falseBooleanValue")
   {
           auto val = decoder->PopNextBooleanVal();
 if (val.has_value()) {
@@ -71,7 +71,7 @@ if (val.has_value()) {
   
     
 
-     else if (keyStr == "byteValue")
+     else if (initialKeyStr == "byteValue")
   {
           auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
 if (val.has_value()) {
@@ -82,7 +82,7 @@ if (val.has_value()) {
   
     
 
-     else if (keyStr == "doubleValue")
+     else if (initialKeyStr == "doubleValue")
   {
           auto val = decoder->PopNextFloatVal();
 if (val.has_value()) {
@@ -93,7 +93,7 @@ if (val.has_value()) {
   
     
 
-     else if (keyStr == "floatValue")
+     else if (initialKeyStr == "floatValue")
   {
           auto val = decoder->PopNextFloatVal();
 if (val.has_value()) {
@@ -104,7 +104,7 @@ if (val.has_value()) {
   
     
 
-     else if (keyStr == "integerValue")
+     else if (initialKeyStr == "integerValue")
   {
           auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
 if (val.has_value()) {
@@ -115,7 +115,7 @@ if (val.has_value()) {
   
     
 
-     else if (keyStr == "longValue")
+     else if (initialKeyStr == "longValue")
   {
           auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
 if (val.has_value()) {
@@ -126,7 +126,7 @@ if (val.has_value()) {
   
     
 
-     else if (keyStr == "shortValue")
+     else if (initialKeyStr == "shortValue")
   {
           auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
 if (val.has_value()) {
@@ -137,7 +137,7 @@ if (val.has_value()) {
   
     
 
-     else if (keyStr == "stringValue")
+     else if (initialKeyStr == "stringValue")
   {
           if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
     auto val = decoder->PopNextTextVal();
@@ -168,7 +168,7 @@ if (val.has_value()) {
   
     
 
-     else if (keyStr == "blobValue")
+     else if (initialKeyStr == "blobValue")
   {
           auto val = decoder->PopNextBytesVal();
 if (val.has_value()) {
@@ -179,7 +179,7 @@ if (val.has_value()) {
   
     
 
-     else if (keyStr == "x-amzn-requestid")
+     else if (initialKeyStr == "x-amzn-requestid")
   {
           if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
     auto val = decoder->PopNextTextVal();
@@ -232,13 +232,13 @@ else
                     break;
                 }
 
-                auto key = decoder->PopNextTextVal();
-                if (key.has_value())
+                auto initialKey = decoder->PopNextTextVal();
+                if (initialKey.has_value())
                 {
-                    Aws::String keyStr(reinterpret_cast<const char*>(key.value().ptr), key.value().len);
+                    Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
                         
 
-    if (keyStr == "trueBooleanValue")
+    if (initialKeyStr == "trueBooleanValue")
   {
           auto val = decoder->PopNextBooleanVal();
 if (val.has_value()) {
@@ -249,7 +249,7 @@ if (val.has_value()) {
   
     
 
-     else if (keyStr == "falseBooleanValue")
+     else if (initialKeyStr == "falseBooleanValue")
   {
           auto val = decoder->PopNextBooleanVal();
 if (val.has_value()) {
@@ -260,7 +260,7 @@ if (val.has_value()) {
   
     
 
-     else if (keyStr == "byteValue")
+     else if (initialKeyStr == "byteValue")
   {
           auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
 if (val.has_value()) {
@@ -271,7 +271,7 @@ if (val.has_value()) {
   
     
 
-     else if (keyStr == "doubleValue")
+     else if (initialKeyStr == "doubleValue")
   {
           auto val = decoder->PopNextFloatVal();
 if (val.has_value()) {
@@ -282,7 +282,7 @@ if (val.has_value()) {
   
     
 
-     else if (keyStr == "floatValue")
+     else if (initialKeyStr == "floatValue")
   {
           auto val = decoder->PopNextFloatVal();
 if (val.has_value()) {
@@ -293,7 +293,7 @@ if (val.has_value()) {
   
     
 
-     else if (keyStr == "integerValue")
+     else if (initialKeyStr == "integerValue")
   {
           auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
 if (val.has_value()) {
@@ -304,7 +304,7 @@ if (val.has_value()) {
   
     
 
-     else if (keyStr == "longValue")
+     else if (initialKeyStr == "longValue")
   {
           auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
 if (val.has_value()) {
@@ -315,7 +315,7 @@ if (val.has_value()) {
   
     
 
-     else if (keyStr == "shortValue")
+     else if (initialKeyStr == "shortValue")
   {
           auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
 if (val.has_value()) {
@@ -326,7 +326,7 @@ if (val.has_value()) {
   
     
 
-     else if (keyStr == "stringValue")
+     else if (initialKeyStr == "stringValue")
   {
           if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
     auto val = decoder->PopNextTextVal();
@@ -357,7 +357,7 @@ if (val.has_value()) {
   
     
 
-     else if (keyStr == "blobValue")
+     else if (initialKeyStr == "blobValue")
   {
           auto val = decoder->PopNextBytesVal();
 if (val.has_value()) {
@@ -368,7 +368,7 @@ if (val.has_value()) {
   
     
 
-     else if (keyStr == "x-amzn-requestid")
+     else if (initialKeyStr == "x-amzn-requestid")
   {
           if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
     auto val = decoder->PopNextTextVal();

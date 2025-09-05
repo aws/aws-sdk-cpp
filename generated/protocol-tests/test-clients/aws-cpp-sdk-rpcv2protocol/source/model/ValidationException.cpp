@@ -28,23 +28,23 @@ ValidationException& ValidationException::operator =(const std::shared_ptr<Aws::
 {
     if (decoder != nullptr)
 {
-    auto peekType = decoder->PeekType();
-    if (peekType.has_value() && (peekType.value() == CborType::MapStart || peekType.value() == CborType::IndefMapStart))
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart))
     {
-        if (peekType.value() == CborType::MapStart)
+        if (initialMapType.value() == CborType::MapStart)
         {
             auto mapSize = decoder->PopNextMapStart();
             if (mapSize.has_value())
             {
                 for (size_t i = 0; i < mapSize.value(); ++i)
                 {
-                    auto key = decoder->PopNextTextVal();
-                    if (key.has_value())
+                    auto initialKey = decoder->PopNextTextVal();
+                    if (initialKey.has_value())
                     {
-                        Aws::String keyStr(reinterpret_cast<const char*>(key.value().ptr), key.value().len);
+                        Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
                             
 
-    if (keyStr == "message")
+    if (initialKeyStr == "message")
   {
           if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
     auto val = decoder->PopNextTextVal();
@@ -75,7 +75,7 @@ ValidationException& ValidationException::operator =(const std::shared_ptr<Aws::
   
     
 
-     else if (keyStr == "fieldList")
+     else if (initialKeyStr == "fieldList")
   {
           
 auto peekType_0 = decoder->PeekType();
@@ -135,13 +135,13 @@ else
                     break;
                 }
 
-                auto key = decoder->PopNextTextVal();
-                if (key.has_value())
+                auto initialKey = decoder->PopNextTextVal();
+                if (initialKey.has_value())
                 {
-                    Aws::String keyStr(reinterpret_cast<const char*>(key.value().ptr), key.value().len);
+                    Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
                         
 
-    if (keyStr == "message")
+    if (initialKeyStr == "message")
   {
           if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
     auto val = decoder->PopNextTextVal();
@@ -172,7 +172,7 @@ else
   
     
 
-     else if (keyStr == "fieldList")
+     else if (initialKeyStr == "fieldList")
   {
           
 auto peekType_0 = decoder->PeekType();
@@ -227,8 +227,12 @@ void ValidationException::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const
 
     // Calculate map size
     size_t mapSize = 0;
-                                        if(m_messageHasBeenSet) mapSize++;
-                                                            if(m_fieldListHasBeenSet) mapSize++;
+                                        if(m_messageHasBeenSet){
+                    mapSize++;
+                }
+                                                            if(m_fieldListHasBeenSet){
+                    mapSize++;
+                }
                         
   encoder.WriteMapStart(mapSize);
     
@@ -236,16 +240,16 @@ void ValidationException::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const
     if(m_messageHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("message"));
-        encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_message.c_str()));
+                encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_message.c_str()));
      }
 
 
     if(m_fieldListHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("fieldList"));
-        encoder.WriteArrayStart(m_fieldList.size());
-for(const auto& item : m_fieldList) {
-            item.CborEncode(encoder);
+                encoder.WriteArrayStart(m_fieldList.size());
+for(const auto& item_0 : m_fieldList) {
+            item_0.CborEncode(encoder);
     }
      }
 }

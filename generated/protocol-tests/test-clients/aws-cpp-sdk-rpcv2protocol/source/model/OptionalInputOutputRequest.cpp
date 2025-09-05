@@ -19,7 +19,9 @@
         
         // Calculate map size
         size_t mapSize = 0;
-                                                        if(m_valueHasBeenSet) mapSize++;
+                                                        if(m_valueHasBeenSet){
+                        mapSize++;
+                    }
                                                                 
         encoder.WriteMapStart(mapSize);
 
@@ -28,7 +30,7 @@
     if(m_valueHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("value"));
-        encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_value.c_str()));
+                encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_value.c_str()));
      }
 
         const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
