@@ -128,7 +128,7 @@ if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
           #set($recursionDepth = $recursionDepth - 1)
         }
       }
-      #if($recursionDepth > 0)
+      #if($recursionDepth > 1)
         #set($parentDepth = $recursionDepth - 1)
         nestedList_${parentDepth}.push_back(${value});
       #else
@@ -174,7 +174,7 @@ if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
           #set($recursionDepth = $recursionDepth - 1)
         }
       }
-      #if($recursionDepth > 0)
+      #if($recursionDepth > 1)
         #set($parentDepth = $recursionDepth - 1)
         nestedList_${parentDepth}.push_back(${value});
       #else

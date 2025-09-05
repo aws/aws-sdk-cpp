@@ -12,7 +12,9 @@ if (peekType_${recursionDepth}.has_value() && (peekType_${recursionDepth}.value(
     if(listSize_${recursionDepth}.has_value()){
         for (size_t j_${recursionDepth} = 0; j_${recursionDepth} < listSize_${recursionDepth}.value(); j_${recursionDepth}++) {
         #set($shapeMember = $originalShapeMember.listMember.shape)
+        #set($recursionDepth= $recursionDepth + 1)
         #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborDecodeListValue.vm")
+        #set($recursionDepth= $recursionDepth - 1)
         }
     }
   }
@@ -31,7 +33,9 @@ if (peekType_${recursionDepth}.has_value() && (peekType_${recursionDepth}.value(
         break;
       }
       #set($shapeMember = $originalShapeMember.listMember.shape)
+      #set($recursionDepth= $recursionDepth + 1)
       #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborDecodeListValue.vm")
+      #set($recursionDepth= $recursionDepth - 1)
     }
   }
 }
@@ -45,7 +49,9 @@ if (peekType_${recursionDepth}.has_value() && (peekType_${recursionDepth}.value(
     if(mapSize_${recursionDepth}.has_value()){
         for (size_t j_${recursionDepth} = 0; j_${recursionDepth} < mapSize_${recursionDepth}.value(); j_${recursionDepth}++) {
         #set($shapeMember = $originalShapeMember.mapValue.shape)
+        #set($recursionDepth= $recursionDepth + 1)
         #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborDecodeMapValue.vm")
+        #set($recursionDepth= $recursionDepth - 1)
         }
     }
   }
@@ -64,7 +70,9 @@ if (peekType_${recursionDepth}.has_value() && (peekType_${recursionDepth}.value(
         break;
       }
       #set($shapeMember = $originalShapeMember.mapValue.shape)
+      #set($recursionDepth= $recursionDepth + 1)
       #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborDecodeMapValue.vm")
+      #set($recursionDepth= $recursionDepth - 1)
     }
   }
 }
