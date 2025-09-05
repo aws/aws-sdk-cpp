@@ -83,7 +83,6 @@ class CredentialTrackingTest : public Aws::Testing::AwsCppSdkGTestSuite
 protected:
     std::shared_ptr<MockHttpClient> mockHttpClient;
     std::shared_ptr<MockHttpClientFactory> mockHttpClientFactory;
-    Aws::Vector<std::pair<const char*, Aws::String>> m_environment;
 
     void SetUp() override
     {
