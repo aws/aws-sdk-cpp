@@ -39,7 +39,9 @@
             #if($member.usedForPayload)
                 #set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($entry.key))
                 #if(!$member.required)
-                    if($varNameHasBeenSet) mapSize++;
+                    if($varNameHasBeenSet){
+                        mapSize++;
+                    }
                 #else
                     mapSize++;
                 #end
