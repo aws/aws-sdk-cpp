@@ -104,6 +104,11 @@ AWSCredentials STSAssumeRoleWebIdentityCredentialsProvider::GetAWSCredentials() 
 
   std::unique_lock<std::mutex> lock{m_refreshMutex};
   m_refreshSignal.wait_for(lock, m_providerFuturesTimeoutMs, [&refreshDone]() -> bool { return refreshDone; });
+
+  if (!credentials.IsEmpty()) {
+    credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_STS_ASSUME_ROLE);
+  }
+
   return credentials;
 }
 
