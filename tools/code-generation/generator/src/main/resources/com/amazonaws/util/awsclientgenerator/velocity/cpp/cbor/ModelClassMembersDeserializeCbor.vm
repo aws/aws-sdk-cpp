@@ -12,7 +12,7 @@
   #set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($entry.key))
   #set($shapeMember = $member.shape)
   #set($containerVar = "val")
-  #if($first)if#else else if#end (keyStr == "${memberName}")
+  #if($first)if#else else if#end (initialKeyStr == "${memberName}")
   {
     #if($member.shape.map || $member.shape.list)
       #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/ModelInternalMapOrListCborDeserializer.vm")
