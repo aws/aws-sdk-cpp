@@ -1,257 +1,208 @@
+// SSOCredentialTrackingTest.cpp
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
-#include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/mocks/aws/client/MockAWSClient.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
-#include <aws/testing/mocks/aws/auth/MockAWSHttpResourceClient.h>
 #include <aws/testing/platform/PlatformTesting.h>
+
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/auth/SSOCredentialsProvider.h>
-#include <aws/core/auth/GeneralHTTPCredentialsProvider.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/http/standard/StandardHttpResponse.h>
+#include <aws/core/platform/Environment.h>
 #include <aws/core/platform/FileSystem.h>
-#include <aws/core/utils/FileSystemUtils.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/config/AWSProfileConfigLoader.h>
+
 #include <fstream>
-#include <sys/stat.h>
 #include <thread>
 
-using namespace Aws::Client;
+using namespace Aws;
 using namespace Aws::Auth;
+using namespace Aws::Client;
 using namespace Aws::Http;
-using namespace Aws::FileSystem;
 using namespace Aws::Http::Standard;
+using namespace Aws::Utils;
+using namespace Aws::FileSystem;
 
 namespace {
-const char* TEST_LOG_TAG =  "CredentialTrackingTest";
+const char* TEST_LOG_TAG = "CredentialTrackingTest";
 }
 
+Aws::String computeHashedStartUrl(const Aws::String& startUrl) {
+  auto sha1 = HashingUtils::CalculateSHA1(startUrl);
+  return HashingUtils::HexEncode(sha1); // lower-case hex the same as provider
+}
 
-// Custom client that uses default credential provider for testing
-class CredentialTestingClient : public Aws::Client::AWSClient
-{
+// Minimal AWSClient wrapper so we can make a signed call and inspect User-Agent
+class CredentialTestingClient : public AWSClient {
 public:
-  explicit CredentialTestingClient(const Aws::Client::ClientConfiguration& configuration)
-      : AWSClient(configuration,
-                 Aws::MakeShared<Aws::Client::AWSAuthV4Signer>(TEST_LOG_TAG,
-                     Aws::MakeShared<DefaultAWSCredentialsProviderChain>(TEST_LOG_TAG),
-                     "service", configuration.region),
-                 Aws::MakeShared<MockAWSErrorMarshaller>(TEST_LOG_TAG))
-  {
-  }
+  explicit CredentialTestingClient(const ClientConfiguration& config,
+                                   const std::shared_ptr<AWSCredentialsProvider>& provider)
+      : AWSClient(config,
+                  Aws::MakeShared<Aws::Client::AWSAuthV4Signer>(TEST_LOG_TAG, provider, "service", config.region),
+                  Aws::MakeShared<MockAWSErrorMarshaller>(TEST_LOG_TAG)) {}
 
-  // Constructor with custom credential provider for IMDS test
-  explicit CredentialTestingClient(const Aws::Client::ClientConfiguration& configuration,
-                                 std::shared_ptr<AWSCredentialsProvider> credentialsProvider)
-      : AWSClient(configuration,
-                 Aws::MakeShared<Aws::Client::AWSAuthV4Signer>(TEST_LOG_TAG,
-                     credentialsProvider,
-                     "service", configuration.region),
-                 Aws::MakeShared<MockAWSErrorMarshaller>(TEST_LOG_TAG))
-  {
+  HttpResponseOutcome MakeRequest(const Aws::AmazonWebServiceRequest& request) {
+    URI uri("https://test.com");
+    return AttemptExhaustively(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   }
-
-  Aws::Client::HttpResponseOutcome MakeRequest(const Aws::AmazonWebServiceRequest& request)
-  {
-    auto uri = Aws::Http::URI("https://test.com");
-    return AWSClient::AttemptExhaustively(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  }
-
   const char* GetServiceClientName() const override { return "CredentialTestingClient"; }
 
 protected:
-  Aws::Client::AWSError<Aws::Client::CoreErrors> BuildAWSError(const std::shared_ptr<Aws::Http::HttpResponse>& response) const override
-  {
-    AWS_UNREFERENCED_PARAM(response);
-    return Aws::Client::AWSError<Aws::Client::CoreErrors>(Aws::Client::CoreErrors::UNKNOWN, false);
+  AWSError<CoreErrors> BuildAWSError(const std::shared_ptr<HttpResponse>&) const override {
+    return {CoreErrors::UNKNOWN, false};
   }
 };
 
-class SSOCredentialsProviderTest : public Aws::Testing::AwsCppSdkGTestSuite
-{
+class SSOCredentialsProviderTrackingTest : public Aws::Testing::AwsCppSdkGTestSuite {
 protected:
-    void SetUp() override
-    {
-        AwsCppSdkGTestSuite::SetUp();
+  void SetUp() override {
+    AwsCppSdkGTestSuite::SetUp();
 
-        // Create test directories
-        Aws::String uuid = Aws::Utils::UUID::RandomUUID();
-        m_testDir = "/tmp/aws_sso_test_" + uuid;
-        m_configPath = m_testDir + "/config";
-        m_ssoDir = m_testDir + "/sso/cache";
+    // Build paths the same way the SDK does
+    const Aws::String profileDir = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
+    const Aws::String ssoDir     = profileDir + PATH_DELIM + "sso";
+    const Aws::String cacheDir   = ssoDir    + PATH_DELIM + "cache";
 
-        Aws::FileSystem::CreateDirectoryIfNotExists(m_testDir.c_str());
-        Aws::FileSystem::CreateDirectoryIfNotExists((m_testDir + "/sso").c_str());
-        Aws::FileSystem::CreateDirectoryIfNotExists(m_ssoDir.c_str());
+    CreateDirectoryIfNotExists(profileDir.c_str());
+    CreateDirectoryIfNotExists(ssoDir.c_str());
+    CreateDirectoryIfNotExists(cacheDir.c_str());
 
-        // Save original AWS_CONFIG_FILE value
-        m_originalConfigFile = Aws::Environment::GetEnv("AWS_CONFIG_FILE");
+    // Point AWS_CONFIG_FILE at a unique temp path the provider will read
+    StringStream ss;
+    ss << Aws::Auth::GetConfigProfileFilename() << "_blah" << std::this_thread::get_id();
+    m_configPath = ss.str();
+    Aws::Environment::SetEnv("AWS_CONFIG_FILE", m_configPath.c_str(), 1);
 
-        // Set AWS_CONFIG_FILE to our test config
-        Aws::Environment::SetEnv("AWS_CONFIG_FILE", m_configPath.c_str(), 1);
+    m_profileDir = profileDir;
+    m_ssoCacheDir = cacheDir;
 
-        // Set up mock HTTP client
-        mockHttpClient = Aws::MakeShared<MockHttpClient>("SSOTest");
-        mockHttpClientFactory = Aws::MakeShared<MockHttpClientFactory>("SSOTest");
-        mockHttpClientFactory->SetClient(mockHttpClient);
-        SetHttpClientFactory(mockHttpClientFactory);
-    }
+    // Mock HTTP client
+    mockHttpClient = Aws::MakeShared<MockHttpClient>(TEST_LOG_TAG);
+    mockHttpClientFactory = Aws::MakeShared<MockHttpClientFactory>(TEST_LOG_TAG);
+    mockHttpClientFactory->SetClient(mockHttpClient);
+    SetHttpClientFactory(mockHttpClientFactory);
+  }
 
-    void TearDown() override
-    {
-        // Restore original AWS_CONFIG_FILE
-        if (!m_originalConfigFile.empty())
-        {
-            Aws::Environment::SetEnv("AWS_CONFIG_FILE", m_originalConfigFile.c_str(), 1);
-        }
-        else
-        {
-            Aws::Environment::UnSetEnv("AWS_CONFIG_FILE");
-        }
+  void TearDown() override {
+    if (mockHttpClient) { mockHttpClient->Reset(); mockHttpClient = nullptr; }
+    mockHttpClientFactory = nullptr;
+    Aws::FileSystem::RemoveFileIfExists(m_configPath.c_str());
+    AwsCppSdkGTestSuite::TearDown();
+  }
 
-        // Reset HTTP clients
-        if (mockHttpClient) {
-            mockHttpClient->Reset();
-            mockHttpClient = nullptr;
-        }
-        if (mockHttpClientFactory) {
-            mockHttpClientFactory = nullptr;
-        }
-        
-        // Cleanup test files
-        Aws::FileSystem::RemoveFileIfExists(m_configPath.c_str());
+  void CreateTestConfig(const Aws::String& startUrl) {
+    std::ofstream cfg(m_configPath.c_str());
+    cfg << "[default]\n"
+           "sso_account_id = 123456789012\n"
+           "sso_region = us-east-1\n"
+           "sso_role_name = TestRole\n"
+           "sso_start_url = " << startUrl << "\n";
+    cfg.close();
 
-        //AwsCppSdkGTestSuite::TearDown();
-    }
+    std::ifstream check(m_configPath.c_str());
+    ASSERT_TRUE(check.good()) << "Config not created at: " << m_configPath;
+    check.close();
 
-    void CreateTestConfig(const Aws::String& startUrl = "https://test.awsapps.com/start")
-    {
-        std::ofstream configFile(m_configPath.c_str());
-        configFile << "[default]\n"
-                  << "sso_account_id = 123456789012\n"
-                  << "sso_region = us-east-1\n"
-                  << "sso_role_name = TestRole\n"
-                  << "sso_start_url = " << startUrl << std::endl;
-        configFile.close();
-    }
+    Aws::Config::ReloadCachedConfigFile();
+  }
 
-    void CreateSSOTokenFile(const Aws::String& startUrl)
-    {
-        // Use a simple hash for the test (SHA1 of the start URL)
-        Aws::String hashedStartUrl = "d033e22ae348aeb5660fc2140aec35850c4da997"; // Simple test hash
-        Aws::String tokenPath = m_ssoDir + "/" + hashedStartUrl + ".json";
+  void CreateSSOTokenFile(const Aws::String& startUrl) {
+    const Aws::String hash = computeHashedStartUrl(startUrl);
+    const Aws::String tokenPath = m_ssoCacheDir + PATH_DELIM + hash + ".json";
 
-        // Create token file with future expiration
-        std::ofstream tokenFile(tokenPath.c_str());
-        auto futureTime = Aws::Utils::DateTime::Now() + std::chrono::hours(1);
+    std::ofstream tokenFile(tokenPath.c_str());
+    ASSERT_TRUE(tokenFile.good()) << "Failed to open " << tokenPath;
 
-        tokenFile << "{\n"
-                 << "  \"accessToken\": \"test-token\",\n"
-                 << "  \"expiresAt\": \"" << futureTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601) << "\",\n"
-                 << "  \"region\": \"us-east-1\",\n"
-                 << "  \"startUrl\": \"" << startUrl << "\"\n"
-                 << "}" << std::endl;
-        tokenFile.close();
-    }
+    const auto futureTime = DateTime::Now() + std::chrono::hours(1);
+    tokenFile << "{\n"
+                 "  \"accessToken\": \"test-token\",\n"
+                 "  \"expiresAt\": \"" << futureTime.ToGmtString(DateFormat::ISO_8601) << "\",\n"
+                 "  \"region\": \"us-east-1\",\n"
+                 "  \"startUrl\": \"" << startUrl << "\"\n"
+                 "}\n";
+    tokenFile.close();
 
+    std::ifstream check(tokenPath.c_str());
+    ASSERT_TRUE(check.good()) << "Token not created at: " << tokenPath;
+    check.close();
+  }
 
-    void RunTestWithCredentialsProvider(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider, const Aws::String& id) {
-      // Setup mock response
-      std::shared_ptr<HttpRequest> requestTmp =
-          CreateHttpRequest(Aws::Http::URI("dummy"), Aws::Http::HttpMethod::HTTP_POST,
-                          Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-      auto successResponse = Aws::MakeShared<Standard::StandardHttpResponse>(TEST_LOG_TAG, requestTmp);
-      successResponse->SetResponseCode(HttpResponseCode::OK);
-      successResponse->GetResponseBody() << "{}";
-      mockHttpClient->AddResponseToReturn(successResponse);
+  void RunTrackingProbe(const std::shared_ptr<AWSCredentialsProvider>& provider, const Aws::String& marker) {
+    // 200 OK dummy response for the signed call
+    auto req = CreateHttpRequest(URI("dummy"), HttpMethod::HTTP_POST, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    auto ok  = Aws::MakeShared<StandardHttpResponse>(TEST_LOG_TAG, req);
+    ok->SetResponseCode(HttpResponseCode::OK);
+    ok->GetResponseBody() << "{}";
+    mockHttpClient->AddResponseToReturn(ok);
 
-      // Create client configuration
-      Aws::Client::ClientConfigurationInitValues cfgInit;
-      cfgInit.shouldDisableIMDS = true;
-      Aws::Client::ClientConfiguration clientConfig(cfgInit);
-      clientConfig.region = Aws::Region::US_EAST_1;
+    ClientConfigurationInitValues initVals; initVals.shouldDisableIMDS = true;
+    ClientConfiguration cfg(initVals);
+    cfg.region = Aws::Region::US_EAST_1;
 
-      // Create credential testing client that uses default provider chain
-      CredentialTestingClient client(clientConfig, credentialsProvider);
+    CredentialTestingClient client(cfg, provider);
+    AmazonWebServiceRequestMock mockReq;
+    auto outcome = client.MakeRequest(mockReq);
+    ASSERT_TRUE(outcome.IsSuccess());
 
-      // Create mock request
-      AmazonWebServiceRequestMock mockRequest;
+    auto last = mockHttpClient->GetMostRecentHttpRequest();
+    ASSERT_TRUE(last.HasHeader(USER_AGENT_HEADER));
+    const auto userAgent = last.GetHeaderValue(USER_AGENT_HEADER);
+    ASSERT_FALSE(userAgent.empty());
 
-      // Make request
-      auto outcome = client.MakeRequest(mockRequest);
-      ASSERT_TRUE(outcome.IsSuccess());
+    const auto parts = StringUtils::Split(userAgent, ' ');
+    int mCount = 0;
+    for (const auto& p : parts) if (p.find("m/") != Aws::String::npos) ++mCount;
+    EXPECT_EQ(1, mCount); // only one m/ section
 
-      // Verify User-Agent contains environment credentials tracking
-      auto lastRequest = mockHttpClient->GetMostRecentHttpRequest();
-      EXPECT_TRUE(lastRequest.HasHeader(Aws::Http::USER_AGENT_HEADER));
-      const auto& userAgent = lastRequest.GetHeaderValue(Aws::Http::USER_AGENT_HEADER);
-      EXPECT_FALSE(userAgent.empty());
+    auto it = std::find_if(parts.begin(), parts.end(),
+                           [&marker](const Aws::String& v){ return v.find("m/") != Aws::String::npos && v.find(marker) != Aws::String::npos; });
+    EXPECT_TRUE(it != parts.end());
+  }
 
-      const auto userAgentParsed = Aws::Utils::StringUtils::Split(userAgent, ' ');
+  Aws::String m_profileDir;
+  Aws::String m_ssoCacheDir;
+  Aws::String m_configPath;
 
-      // Verify there's only one m/ section (no duplicate m/ sections)
-      int mSectionCount = 0;
-      for (const auto& part : userAgentParsed) {
-          if (part.find("m/") != Aws::String::npos) {
-              mSectionCount++;
-          }
-      }
-      EXPECT_EQ(1, mSectionCount);
-
-      // Check for environment credentials business metric (g) in user agent
-      auto businessMetrics = std::find_if(userAgentParsed.begin(), userAgentParsed.end(),
-          [&id](const Aws::String& value) { return value.find("m/") != Aws::String::npos && value.find(id) != Aws::String::npos; });
-
-      EXPECT_TRUE(businessMetrics != userAgentParsed.end());
-    }
-
-    Aws::String m_testDir;
-    Aws::String m_configPath;
-    Aws::String m_ssoDir;
-    Aws::String m_originalConfigFile;
-    std::shared_ptr<MockHttpClient> mockHttpClient;
-    std::shared_ptr<MockHttpClientFactory> mockHttpClientFactory;
+  std::shared_ptr<MockHttpClient>        mockHttpClient;
+  std::shared_ptr<MockHttpClientFactory> mockHttpClientFactory;
 };
 
-TEST_F(SSOCredentialsProviderTest, TestSSOCredentialsTracking)
-{
-    const Aws::String startUrl = "https://test.awsapps.com/start";
+TEST_F(SSOCredentialsProviderTrackingTest, TestSSOCredentialsTracking){
+  const Aws::String startUrl = "https://test.awsapps.com/start";
 
-    // Create test configuration
-    CreateTestConfig(startUrl);
-    CreateSSOTokenFile(startUrl);
+  CreateTestConfig(startUrl);
+  CreateSSOTokenFile(startUrl);
 
-    // Mock SSO credentials API response
-    std::shared_ptr<Aws::Http::HttpRequest> ssoRequest = CreateHttpRequest(
-        Aws::Http::URI("https://portal.sso.us-east-1.amazonaws.com/federation/credentials"),
-        Aws::Http::HttpMethod::HTTP_GET,
-        Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+  // Prepare mock SSO GetRoleCredentials response
+  auto ssoReq = CreateHttpRequest(
+      URI("https://portal.sso.us-east-1.amazonaws.com/federation/credentials"),
+      HttpMethod::HTTP_GET,
+      Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
 
-    auto ssoResponse = Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>("SSOTest", ssoRequest);
-    ssoResponse->SetResponseCode(Aws::Http::HttpResponseCode::OK);
-    ssoResponse->GetResponseBody() << R"({
-        "roleCredentials": {
-            "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
-            "secretAccessKey": "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY",
-            "sessionToken": "AQoDYXdzEJr...",
-            "expiration": )" << (Aws::Utils::DateTime::Now().Millis() + 3600000) << R"(
-        }
-    })";
-    mockHttpClient->AddResponseToReturn(ssoResponse);
+  auto ssoResp = Aws::MakeShared<StandardHttpResponse>(TEST_LOG_TAG, ssoReq);
+  ssoResp->SetResponseCode(HttpResponseCode::OK);
+  ssoResp->GetResponseBody()
+      << R"({"roleCredentials":{
+                "accessKeyId":"AKIAIOSFODNN7EXAMPLE",
+                "secretAccessKey":"wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY",
+                "sessionToken":"AQoDYXdzEJr...",
+                "expiration":)"
+      << (DateTime::Now().Millis() + 3600000) << "}}";
+  mockHttpClient->AddResponseToReturn(ssoResp);
 
-    // Create SSO credentials provider as shared_ptr
-    auto ssoProvider = Aws::MakeShared<SSOCredentialsProvider>(TEST_LOG_TAG);
+  // Provider should read config + token from the real cache dir and call mock
+  auto provider = Aws::MakeShared<SSOCredentialsProvider>(TEST_LOG_TAG);
+  auto creds = provider->GetAWSCredentials();
 
-    // Get credentials using regular method
-    auto credentials = ssoProvider->GetAWSCredentials();
+  ASSERT_FALSE(creds.IsEmpty());
+  EXPECT_EQ("AKIAIOSFODNN7EXAMPLE", creds.GetAWSAccessKeyId());
+  EXPECT_EQ("wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY", creds.GetAWSSecretKey());
 
-    // Verify credentials were retrieved
-    EXPECT_FALSE(credentials.IsEmpty());
-    EXPECT_EQ("AKIAIOSFODNN7EXAMPLE", credentials.GetAWSAccessKeyId());
-    EXPECT_EQ("wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY", credentials.GetAWSSecretKey());
-    
-    // Test credential tracking
-    RunTestWithCredentialsProvider(ssoProvider, "s");
+  // Fire a signed request and assert the business metric appears once
+  RunTrackingProbe(provider, "s");
 }
