@@ -73,9 +73,16 @@ if (val.has_value()) {
 
      else if (initialKeyStr == "byteValue")
   {
-          auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
-if (val.has_value()) {
-    m_byteValue = val.value();
+          if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+    auto val = decoder->PopNextUnsignedIntVal();
+    if (val.has_value()) {
+        m_byteValue = static_cast<int>(val.value());
+    }
+} else {
+    auto val = decoder->PopNextNegativeIntVal();
+    if (val.has_value()) {
+        m_byteValue = static_cast<int>(1 - val.value());
+    }
 }
         m_byteValueHasBeenSet = true;
   }
@@ -106,9 +113,16 @@ if (val.has_value()) {
 
      else if (initialKeyStr == "integerValue")
   {
-          auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
-if (val.has_value()) {
-    m_integerValue = val.value();
+          if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+    auto val = decoder->PopNextUnsignedIntVal();
+    if (val.has_value()) {
+        m_integerValue = static_cast<int>(val.value());
+    }
+} else {
+    auto val = decoder->PopNextNegativeIntVal();
+    if (val.has_value()) {
+        m_integerValue = static_cast<int>(1 - val.value());
+    }
 }
         m_integerValueHasBeenSet = true;
   }
@@ -117,9 +131,16 @@ if (val.has_value()) {
 
      else if (initialKeyStr == "longValue")
   {
-          auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
-if (val.has_value()) {
-    m_longValue = val.value();
+          if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+    auto val = decoder->PopNextUnsignedIntVal();
+    if (val.has_value()) {
+        m_longValue = static_cast<int>(val.value());
+    }
+} else {
+    auto val = decoder->PopNextNegativeIntVal();
+    if (val.has_value()) {
+        m_longValue = static_cast<int>(1 - val.value());
+    }
 }
         m_longValueHasBeenSet = true;
   }
@@ -128,9 +149,16 @@ if (val.has_value()) {
 
      else if (initialKeyStr == "shortValue")
   {
-          auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
-if (val.has_value()) {
-    m_shortValue = val.value();
+          if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+    auto val = decoder->PopNextUnsignedIntVal();
+    if (val.has_value()) {
+        m_shortValue = static_cast<int>(val.value());
+    }
+} else {
+    auto val = decoder->PopNextNegativeIntVal();
+    if (val.has_value()) {
+        m_shortValue = static_cast<int>(1 - val.value());
+    }
 }
         m_shortValueHasBeenSet = true;
   }
@@ -262,9 +290,16 @@ if (val.has_value()) {
 
      else if (initialKeyStr == "byteValue")
   {
-          auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
-if (val.has_value()) {
-    m_byteValue = val.value();
+          if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+    auto val = decoder->PopNextUnsignedIntVal();
+    if (val.has_value()) {
+        m_byteValue = static_cast<int>(val.value());
+    }
+} else {
+    auto val = decoder->PopNextNegativeIntVal();
+    if (val.has_value()) {
+        m_byteValue = static_cast<int>(1 - val.value());
+    }
 }
         m_byteValueHasBeenSet = true;
   }
@@ -295,9 +330,16 @@ if (val.has_value()) {
 
      else if (initialKeyStr == "integerValue")
   {
-          auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
-if (val.has_value()) {
-    m_integerValue = val.value();
+          if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+    auto val = decoder->PopNextUnsignedIntVal();
+    if (val.has_value()) {
+        m_integerValue = static_cast<int>(val.value());
+    }
+} else {
+    auto val = decoder->PopNextNegativeIntVal();
+    if (val.has_value()) {
+        m_integerValue = static_cast<int>(1 - val.value());
+    }
 }
         m_integerValueHasBeenSet = true;
   }
@@ -306,9 +348,16 @@ if (val.has_value()) {
 
      else if (initialKeyStr == "longValue")
   {
-          auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
-if (val.has_value()) {
-    m_longValue = val.value();
+          if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+    auto val = decoder->PopNextUnsignedIntVal();
+    if (val.has_value()) {
+        m_longValue = static_cast<int>(val.value());
+    }
+} else {
+    auto val = decoder->PopNextNegativeIntVal();
+    if (val.has_value()) {
+        m_longValue = static_cast<int>(1 - val.value());
+    }
 }
         m_longValueHasBeenSet = true;
   }
@@ -317,9 +366,16 @@ if (val.has_value()) {
 
      else if (initialKeyStr == "shortValue")
   {
-          auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
-if (val.has_value()) {
-    m_shortValue = val.value();
+          if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+    auto val = decoder->PopNextUnsignedIntVal();
+    if (val.has_value()) {
+        m_shortValue = static_cast<int>(val.value());
+    }
+} else {
+    auto val = decoder->PopNextNegativeIntVal();
+    if (val.has_value()) {
+        m_shortValue = static_cast<int>(1 - val.value());
+    }
 }
         m_shortValueHasBeenSet = true;
   }

@@ -228,9 +228,16 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
     auto listSize_0 = decoder->PopNextArrayStart();
     if(listSize_0.has_value()){
         for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
-                    auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
-    if (val.has_value()) {
-    m_integerList.push_back(val.value());
+                    if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+        auto val = decoder->PopNextUnsignedIntVal();
+        if (val.has_value()) {
+            m_integerList.push_back(static_cast<int>(val.value()));
+        }
+    } else {
+        auto val = decoder->PopNextNegativeIntVal();
+        if (val.has_value()) {
+            m_integerList.push_back(static_cast<int>(1 - val.value()));
+        }
     }
         }
     }
@@ -249,9 +256,16 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
         }
         break;
       }
-                auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
-    if (val.has_value()) {
-    m_integerList.push_back(val.value());
+                if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+        auto val = decoder->PopNextUnsignedIntVal();
+        if (val.has_value()) {
+            m_integerList.push_back(static_cast<int>(val.value()));
+        }
+    } else {
+        auto val = decoder->PopNextNegativeIntVal();
+        if (val.has_value()) {
+            m_integerList.push_back(static_cast<int>(1 - val.value()));
+        }
     }
     }
   }
@@ -456,9 +470,16 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
     auto listSize_0 = decoder->PopNextArrayStart();
     if(listSize_0.has_value()){
         for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
-                    auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
-    if (val.has_value()) {
-    m_intEnumList.push_back(val.value());
+                    if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+        auto val = decoder->PopNextUnsignedIntVal();
+        if (val.has_value()) {
+            m_intEnumList.push_back(static_cast<int>(val.value()));
+        }
+    } else {
+        auto val = decoder->PopNextNegativeIntVal();
+        if (val.has_value()) {
+            m_intEnumList.push_back(static_cast<int>(1 - val.value()));
+        }
     }
         }
     }
@@ -477,9 +498,16 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
         }
         break;
       }
-                auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
-    if (val.has_value()) {
-    m_intEnumList.push_back(val.value());
+                if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+        auto val = decoder->PopNextUnsignedIntVal();
+        if (val.has_value()) {
+            m_intEnumList.push_back(static_cast<int>(val.value()));
+        }
+    } else {
+        auto val = decoder->PopNextNegativeIntVal();
+        if (val.has_value()) {
+            m_intEnumList.push_back(static_cast<int>(1 - val.value()));
+        }
     }
     }
   }
@@ -1007,9 +1035,16 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
     auto listSize_0 = decoder->PopNextArrayStart();
     if(listSize_0.has_value()){
         for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
-                    auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
-    if (val.has_value()) {
-    m_integerList.push_back(val.value());
+                    if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+        auto val = decoder->PopNextUnsignedIntVal();
+        if (val.has_value()) {
+            m_integerList.push_back(static_cast<int>(val.value()));
+        }
+    } else {
+        auto val = decoder->PopNextNegativeIntVal();
+        if (val.has_value()) {
+            m_integerList.push_back(static_cast<int>(1 - val.value()));
+        }
     }
         }
     }
@@ -1028,9 +1063,16 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
         }
         break;
       }
-                auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
-    if (val.has_value()) {
-    m_integerList.push_back(val.value());
+                if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+        auto val = decoder->PopNextUnsignedIntVal();
+        if (val.has_value()) {
+            m_integerList.push_back(static_cast<int>(val.value()));
+        }
+    } else {
+        auto val = decoder->PopNextNegativeIntVal();
+        if (val.has_value()) {
+            m_integerList.push_back(static_cast<int>(1 - val.value()));
+        }
     }
     }
   }
@@ -1235,9 +1277,16 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
     auto listSize_0 = decoder->PopNextArrayStart();
     if(listSize_0.has_value()){
         for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
-                    auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
-    if (val.has_value()) {
-    m_intEnumList.push_back(val.value());
+                    if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+        auto val = decoder->PopNextUnsignedIntVal();
+        if (val.has_value()) {
+            m_intEnumList.push_back(static_cast<int>(val.value()));
+        }
+    } else {
+        auto val = decoder->PopNextNegativeIntVal();
+        if (val.has_value()) {
+            m_intEnumList.push_back(static_cast<int>(1 - val.value()));
+        }
     }
         }
     }
@@ -1256,9 +1305,16 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
         }
         break;
       }
-                auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
-    if (val.has_value()) {
-    m_intEnumList.push_back(val.value());
+                if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+        auto val = decoder->PopNextUnsignedIntVal();
+        if (val.has_value()) {
+            m_intEnumList.push_back(static_cast<int>(val.value()));
+        }
+    } else {
+        auto val = decoder->PopNextNegativeIntVal();
+        if (val.has_value()) {
+            m_intEnumList.push_back(static_cast<int>(1 - val.value()));
+        }
     }
     }
   }
