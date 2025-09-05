@@ -102,10 +102,10 @@ else
             decoder->ConsumeNextSingleElement(); // consume the IndefMapStart
             while (decoder->LastError() == AWS_ERROR_UNKNOWN)
             {
-                auto nextType = decoder->PeekType();
-                if (!nextType.has_value() || nextType.value() == CborType::Break)
+                auto outerMapNextType = decoder->PeekType();
+                if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break)
                 {
-                    if (nextType.has_value())
+                    if (outerMapNextType.has_value())
                     {
                         decoder->ConsumeNextSingleElement(); // consume the Break
                     }
