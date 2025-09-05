@@ -44,6 +44,12 @@ Aws::String UpdateClusterRequest::SerializePayload() const
 
   }
 
+  if(m_tieredStorageConfigHasBeenSet)
+  {
+   payload.WithObject("TieredStorageConfig", m_tieredStorageConfig.Jsonize());
+
+  }
+
   if(m_nodeRecoveryHasBeenSet)
   {
    payload.WithString("NodeRecovery", ClusterNodeRecoveryMapper::GetNameForClusterNodeRecovery(m_nodeRecovery));

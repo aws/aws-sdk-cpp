@@ -78,6 +78,11 @@ DescribeClusterResult& DescribeClusterResult::operator =(const Aws::AmazonWebSer
     m_orchestrator = jsonValue.GetObject("Orchestrator");
     m_orchestratorHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("TieredStorageConfig"))
+  {
+    m_tieredStorageConfig = jsonValue.GetObject("TieredStorageConfig");
+    m_tieredStorageConfigHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("NodeRecovery"))
   {
     m_nodeRecovery = ClusterNodeRecoveryMapper::GetClusterNodeRecoveryForName(jsonValue.GetString("NodeRecovery"));

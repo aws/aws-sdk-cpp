@@ -44,6 +44,11 @@ Aws::String CreateNotebookInstanceRequest::SerializePayload() const
 
   }
 
+  if(m_ipAddressTypeHasBeenSet)
+  {
+   payload.WithString("IpAddressType", IPAddressTypeMapper::GetNameForIPAddressType(m_ipAddressType));
+  }
+
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("RoleArn", m_roleArn);

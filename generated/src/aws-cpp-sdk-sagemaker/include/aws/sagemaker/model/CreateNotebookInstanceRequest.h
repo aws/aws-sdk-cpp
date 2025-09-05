@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/InstanceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/IPAddressType.h>
 #include <aws/sagemaker/model/DirectInternetAccess.h>
 #include <aws/sagemaker/model/RootAccess.h>
 #include <aws/sagemaker/model/InstanceMetadataServiceConfiguration.h>
@@ -89,6 +90,19 @@ namespace Model
     CreateNotebookInstanceRequest& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
     template<typename SecurityGroupIdsT = Aws::String>
     CreateNotebookInstanceRequest& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The IP address type for the notebook instance. Specify <code>ipv4</code> for
+     * IPv4-only connectivity or <code>dualstack</code> for both IPv4 and IPv6
+     * connectivity. When you specify <code>dualstack</code>, the subnet must support
+     * IPv6 CIDR blocks. If not specified, defaults to <code>ipv4</code>.</p>
+     */
+    inline IPAddressType GetIpAddressType() const { return m_ipAddressType; }
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+    inline void SetIpAddressType(IPAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline CreateNotebookInstanceRequest& WithIpAddressType(IPAddressType value) { SetIpAddressType(value); return *this;}
     ///@}
 
     ///@{
@@ -300,6 +314,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet = false;
+
+    IPAddressType m_ipAddressType{IPAddressType::NOT_SET};
+    bool m_ipAddressTypeHasBeenSet = false;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;

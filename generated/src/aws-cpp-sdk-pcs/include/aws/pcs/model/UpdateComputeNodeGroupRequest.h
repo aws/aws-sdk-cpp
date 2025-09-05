@@ -67,9 +67,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the Amazon Machine Image (AMI) that Amazon Web Services PCS uses to
-     * launch instances. If not provided, Amazon Web Services PCS uses the AMI ID
-     * specified in the custom launch template.</p>
+     * <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances.
+     * If not provided, PCS uses the AMI ID specified in the custom launch
+     * template.</p>
      */
     inline const Aws::String& GetAmiId() const { return m_amiId; }
     inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }

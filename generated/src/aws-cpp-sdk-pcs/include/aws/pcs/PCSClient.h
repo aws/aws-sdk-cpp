@@ -16,29 +16,27 @@ namespace Aws
 namespace PCS
 {
   /**
-   * <p>Amazon Web Services Parallel Computing Service (Amazon Web Services PCS) is a
-   * managed service that makes it easier for you to run and scale your high
-   * performance computing (HPC) workloads, and build scientific and engineering
-   * models on Amazon Web Services using Slurm. For more information, see the <a
-   * href="https://docs.aws.amazon.com/pcs/latest/userguide">Amazon Web Services
-   * Parallel Computing Service User Guide</a>.</p> <p>This reference describes the
-   * actions and data types of the service management API. You can use the Amazon Web
-   * Services SDKs to call the API actions in software, or use the Command Line
-   * Interface (CLI) to call the API actions manually. These API actions manage the
-   * service through an Amazon Web Services account.</p> <p>The API actions operate
-   * on Amazon Web Services PCS resources. A <i>resource</i> is an entity in Amazon
-   * Web Services that you can work with. Amazon Web Services services create
-   * resources when you use the features of the service. Examples of Amazon Web
-   * Services PCS resources include clusters, compute node groups, and queues. For
-   * more information about resources in Amazon Web Services, see <a
+   * <p>Parallel Computing Service (PCS) is a managed service that makes it easier
+   * for you to run and scale your high performance computing (HPC) workloads, and
+   * build scientific and engineering models on Amazon Web Services using Slurm. For
+   * more information, see the <a
+   * href="https://docs.aws.amazon.com/pcs/latest/userguide">Parallel Computing
+   * Service User Guide</a>.</p> <p>This reference describes the actions and data
+   * types of the service management API. You can use the Amazon Web Services SDKs to
+   * call the API actions in software, or use the Command Line Interface (CLI) to
+   * call the API actions manually. These API actions manage the service through an
+   * Amazon Web Services account.</p> <p>The API actions operate on PCS resources. A
+   * <i>resource</i> is an entity in Amazon Web Services that you can work with.
+   * Amazon Web Services services create resources when you use the features of the
+   * service. Examples of PCS resources include clusters, compute node groups, and
+   * queues. For more information about resources in Amazon Web Services, see <a
    * href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/getting-started-terms-and-concepts.html#term-resource">Resource</a>
-   * in the <i>Resource Explorer User Guide</i>. </p> <p>An Amazon Web Services PCS
-   * <i>compute node</i> is an Amazon EC2 instance. You don't launch compute nodes
-   * directly. Amazon Web Services PCS uses configuration information that you
-   * provide to launch compute nodes in your Amazon Web Services account. You receive
-   * billing charges for your running compute nodes. Amazon Web Services PCS
-   * automatically terminates your compute nodes when you delete the Amazon Web
-   * Services PCS resources related to those compute nodes.</p>
+   * in the <i>Resource Explorer User Guide</i>. </p> <p>An PCS <i>compute node</i>
+   * is an Amazon EC2 instance. You don't launch compute nodes directly. PCS uses
+   * configuration information that you provide to launch compute nodes in your
+   * Amazon Web Services account. You receive billing charges for your running
+   * compute nodes. PCS automatically terminates your compute nodes when you delete
+   * the PCS resources related to those compute nodes.</p>
    */
   class AWS_PCS_API PCSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PCSClient>
   {
@@ -99,16 +97,16 @@ namespace PCS
         virtual ~PCSClient();
 
         /**
-         * <p>Creates a cluster in your account. Amazon Web Services PCS creates the
-         * cluster controller in a service-owned account. The cluster controller
-         * communicates with the cluster resources in your account. The subnets and
-         * security groups for the cluster must already exist before you use this API
-         * action.</p>  <p>It takes time for Amazon Web Services PCS to create the
-         * cluster. The cluster is in a <code>Creating</code> state until it is ready to
-         * use. There can only be 1 cluster in a <code>Creating</code> state per Amazon Web
-         * Services Region per Amazon Web Services account. <code>CreateCluster</code>
-         * fails with a <code>ServiceQuotaExceededException</code> if there is already a
-         * cluster in a <code>Creating</code> state.</p> <p><h3>See Also:</h3>   <a
+         * <p>Creates a cluster in your account. PCS creates the cluster controller in a
+         * service-owned account. The cluster controller communicates with the cluster
+         * resources in your account. The subnets and security groups for the cluster must
+         * already exist before you use this API action.</p>  <p>It takes time for
+         * PCS to create the cluster. The cluster is in a <code>Creating</code> state until
+         * it is ready to use. There can only be 1 cluster in a <code>Creating</code> state
+         * per Amazon Web Services Region per Amazon Web Services account.
+         * <code>CreateCluster</code> fails with a
+         * <code>ServiceQuotaExceededException</code> if there is already a cluster in a
+         * <code>Creating</code> state.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/CreateCluster">AWS
          * API Reference</a></p>
          */
@@ -134,14 +132,13 @@ namespace PCS
 
         /**
          * <p>Creates a managed set of compute nodes. You associate a compute node group
-         * with a cluster through 1 or more Amazon Web Services PCS queues or as part of
-         * the login fleet. A compute node group includes the definition of the compute
-         * properties and lifecycle management. Amazon Web Services PCS uses the
-         * information you provide to this API action to launch compute nodes in your
-         * account. You can only specify subnets in the same Amazon VPC as your cluster.
-         * You receive billing charges for the compute nodes that Amazon Web Services PCS
-         * launches in your account. You must already have a launch template before you
-         * call this API. For more information, see <a
+         * with a cluster through 1 or more PCS queues or as part of the login fleet. A
+         * compute node group includes the definition of the compute properties and
+         * lifecycle management. PCS uses the information you provide to this API action to
+         * launch compute nodes in your account. You can only specify subnets in the same
+         * Amazon VPC as your cluster. You receive billing charges for the compute nodes
+         * that PCS launches in your account. You must already have a launch template
+         * before you call this API. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launch
          * an instance from a launch template</a> in the <i>Amazon Elastic Compute Cloud
          * User Guide for Linux Instances</i>.</p><p><h3>See Also:</h3>   <a
@@ -250,8 +247,8 @@ namespace PCS
 
         /**
          * <p>Deletes a job queue. If the compute node group associated with this queue
-         * isn't associated with any other queues, Amazon Web Services PCS terminates all
-         * the compute nodes for this queue.</p><p><h3>See Also:</h3>   <a
+         * isn't associated with any other queues, PCS terminates all the compute nodes for
+         * this queue.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/DeleteQueue">AWS API
          * Reference</a></p>
          */
@@ -435,8 +432,7 @@ namespace PCS
         }
 
         /**
-         * <p>Returns a list of all tags on an Amazon Web Services PCS
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all tags on an PCS resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -462,8 +458,8 @@ namespace PCS
 
         /**
          * <p> <p>This API action isn't intended for you to use.</p>
-         *  <p>Amazon Web Services PCS uses this API action to register the
-         * compute nodes it launches in your account.</p></p><p><h3>See Also:</h3>   <a
+         *  <p>PCS uses this API action to register the compute nodes it
+         * launches in your account.</p></p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/RegisterComputeNodeGroupInstance">AWS
          * API Reference</a></p>
          */
@@ -488,11 +484,11 @@ namespace PCS
         }
 
         /**
-         * <p>Adds or edits tags on an Amazon Web Services PCS resource. Each tag consists
-         * of a tag key and a tag value. The tag key and tag value are case-sensitive
-         * strings. The tag value can be an empty (null) string. To add a tag, specify a
-         * new tag key and a tag value. To edit a tag, specify an existing tag key and a
-         * new tag value.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds or edits tags on an PCS resource. Each tag consists of a tag key and a
+         * tag value. The tag key and tag value are case-sensitive strings. The tag value
+         * can be an empty (null) string. To add a tag, specify a new tag key and a tag
+         * value. To edit a tag, specify an existing tag key and a new tag
+         * value.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/TagResource">AWS API
          * Reference</a></p>
          */
@@ -517,9 +513,9 @@ namespace PCS
         }
 
         /**
-         * <p>Deletes tags from an Amazon Web Services PCS resource. To delete a tag,
-         * specify the tag key and the Amazon Resource Name (ARN) of the Amazon Web
-         * Services PCS resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes tags from an PCS resource. To delete a tag, specify the tag key and
+         * the Amazon Resource Name (ARN) of the PCS resource.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/UntagResource">AWS
          * API Reference</a></p>
          */

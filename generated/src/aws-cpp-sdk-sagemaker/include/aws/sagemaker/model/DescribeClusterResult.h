@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/sagemaker/model/ClusterOrchestrator.h>
+#include <aws/sagemaker/model/ClusterTieredStorageConfig.h>
 #include <aws/sagemaker/model/ClusterNodeRecovery.h>
 #include <aws/sagemaker/model/ClusterNodeProvisioningMode.h>
 #include <aws/sagemaker/model/ClusterAutoScalingConfigOutput.h>
@@ -144,6 +145,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The current configuration for managed tier checkpointing on the HyperPod
+     * cluster. For example, this shows whether the feature is enabled and the
+     * percentage of cluster memory allocated for checkpoint storage.</p>
+     */
+    inline const ClusterTieredStorageConfig& GetTieredStorageConfig() const { return m_tieredStorageConfig; }
+    template<typename TieredStorageConfigT = ClusterTieredStorageConfig>
+    void SetTieredStorageConfig(TieredStorageConfigT&& value) { m_tieredStorageConfigHasBeenSet = true; m_tieredStorageConfig = std::forward<TieredStorageConfigT>(value); }
+    template<typename TieredStorageConfigT = ClusterTieredStorageConfig>
+    DescribeClusterResult& WithTieredStorageConfig(TieredStorageConfigT&& value) { SetTieredStorageConfig(std::forward<TieredStorageConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The node recovery mode configured for the SageMaker HyperPod cluster.</p>
      */
     inline ClusterNodeRecovery GetNodeRecovery() const { return m_nodeRecovery; }
@@ -219,6 +233,9 @@ namespace Model
 
     ClusterOrchestrator m_orchestrator;
     bool m_orchestratorHasBeenSet = false;
+
+    ClusterTieredStorageConfig m_tieredStorageConfig;
+    bool m_tieredStorageConfigHasBeenSet = false;
 
     ClusterNodeRecovery m_nodeRecovery{ClusterNodeRecovery::NOT_SET};
     bool m_nodeRecoveryHasBeenSet = false;
