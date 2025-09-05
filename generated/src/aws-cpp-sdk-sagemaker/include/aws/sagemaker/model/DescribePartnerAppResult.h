@@ -74,7 +74,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the SageMaker Partner AI App.</p>
+     * <p>The status of the SageMaker Partner AI App.</p> <ul> <li> <p>Creating:
+     * SageMaker AI is creating the partner AI app. The partner AI app is not available
+     * during creation.</p> </li> <li> <p>Updating: SageMaker AI is updating the
+     * partner AI app. The partner AI app is not available when updating.</p> </li>
+     * <li> <p>Deleting: SageMaker AI is deleting the partner AI app. The partner AI
+     * app is not available during deletion.</p> </li> <li> <p>Available: The partner
+     * AI app is provisioned and accessible.</p> </li> <li> <p>Failed: The partner AI
+     * app is in a failed state and isn't available. SageMaker AI is investigating the
+     * issue. For further guidance, contact Amazon Web Services Support.</p> </li> <li>
+     * <p>UpdateFailed: The partner AI app couldn't be updated but is available.</p>
+     * </li> <li> <p>Deleted: The partner AI app is permanently deleted and not
+     * available.</p> </li> </ul>
      */
     inline PartnerAppStatus GetStatus() const { return m_status; }
     inline void SetStatus(PartnerAppStatus value) { m_statusHasBeenSet = true; m_status = value; }

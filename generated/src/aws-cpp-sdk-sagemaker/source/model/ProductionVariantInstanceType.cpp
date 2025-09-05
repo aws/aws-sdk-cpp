@@ -283,6 +283,7 @@ namespace Aws
         static const int ml_c6in_32xlarge_HASH = HashingUtils::HashString("ml.c6in.32xlarge");
         static const int ml_p6_b200_48xlarge_HASH = HashingUtils::HashString("ml.p6-b200.48xlarge");
         static const int ml_p6e_gb200_36xlarge_HASH = HashingUtils::HashString("ml.p6e-gb200.36xlarge");
+        static const int ml_p5_4xlarge_HASH = HashingUtils::HashString("ml.p5.4xlarge");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -1614,6 +1615,11 @@ namespace Aws
             enumValue = ProductionVariantInstanceType::ml_p6e_gb200_36xlarge;
             return true;
           }
+          else if (hashCode == ml_p5_4xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_p5_4xlarge;
+            return true;
+          }
           return false;
         }
 
@@ -2425,6 +2431,9 @@ namespace Aws
             return true;
           case ProductionVariantInstanceType::ml_p6e_gb200_36xlarge:
             value = "ml.p6e-gb200.36xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_p5_4xlarge:
+            value = "ml.p5.4xlarge";
             return true;
           default:
             return false;

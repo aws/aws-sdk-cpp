@@ -182,6 +182,7 @@
 #include <aws/sagemaker/model/ClusterAutoScalingConfigOutput.h>
 #include <aws/sagemaker/model/ClusterAutoScalingMode.h>
 #include <aws/sagemaker/model/ClusterAutoScalingStatus.h>
+#include <aws/sagemaker/model/ClusterConfigMode.h>
 #include <aws/sagemaker/model/ClusterEbsVolumeConfig.h>
 #include <aws/sagemaker/model/ClusterEventDetail.h>
 #include <aws/sagemaker/model/ClusterEventResourceType.h>
@@ -207,6 +208,7 @@
 #include <aws/sagemaker/model/ClusterSortBy.h>
 #include <aws/sagemaker/model/ClusterStatus.h>
 #include <aws/sagemaker/model/ClusterSummary.h>
+#include <aws/sagemaker/model/ClusterTieredStorageConfig.h>
 #include <aws/sagemaker/model/CodeEditorAppImageConfig.h>
 #include <aws/sagemaker/model/CodeEditorAppSettings.h>
 #include <aws/sagemaker/model/CodeRepository.h>
@@ -784,6 +786,7 @@
 #include <aws/sagemaker/model/HyperParameterTuningJobWarmStartType.h>
 #include <aws/sagemaker/model/HyperParameterTuningResourceConfig.h>
 #include <aws/sagemaker/model/HyperbandStrategyConfig.h>
+#include <aws/sagemaker/model/IPAddressType.h>
 #include <aws/sagemaker/model/IamIdentity.h>
 #include <aws/sagemaker/model/IamPolicyConstraints.h>
 #include <aws/sagemaker/model/IdentityProviderOAuthSetting.h>

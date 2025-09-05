@@ -11,6 +11,7 @@
 #include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/sagemaker/model/ClusterOrchestrator.h>
 #include <aws/sagemaker/model/ClusterNodeRecovery.h>
+#include <aws/sagemaker/model/ClusterTieredStorageConfig.h>
 #include <aws/sagemaker/model/ClusterNodeProvisioningMode.h>
 #include <aws/sagemaker/model/ClusterAutoScalingConfig.h>
 #include <aws/sagemaker/model/ClusterInstanceGroupSpecification.h>
@@ -167,6 +168,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The configuration for managed tier checkpointing on the HyperPod cluster.
+     * When enabled, this feature uses a multi-tier storage approach for storing model
+     * checkpoints, providing faster checkpoint operations and improved fault tolerance
+     * across cluster nodes.</p>
+     */
+    inline const ClusterTieredStorageConfig& GetTieredStorageConfig() const { return m_tieredStorageConfig; }
+    inline bool TieredStorageConfigHasBeenSet() const { return m_tieredStorageConfigHasBeenSet; }
+    template<typename TieredStorageConfigT = ClusterTieredStorageConfig>
+    void SetTieredStorageConfig(TieredStorageConfigT&& value) { m_tieredStorageConfigHasBeenSet = true; m_tieredStorageConfig = std::forward<TieredStorageConfigT>(value); }
+    template<typename TieredStorageConfigT = ClusterTieredStorageConfig>
+    CreateClusterRequest& WithTieredStorageConfig(TieredStorageConfigT&& value) { SetTieredStorageConfig(std::forward<TieredStorageConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The mode for provisioning nodes in the cluster. You can specify the following
      * modes:</p> <ul> <li> <p> <b>Continuous</b>: Scaling behavior that enables 1)
      * concurrent operation execution within instance groups, 2) continuous retry
@@ -232,6 +248,9 @@ namespace Model
 
     ClusterNodeRecovery m_nodeRecovery{ClusterNodeRecovery::NOT_SET};
     bool m_nodeRecoveryHasBeenSet = false;
+
+    ClusterTieredStorageConfig m_tieredStorageConfig;
+    bool m_tieredStorageConfigHasBeenSet = false;
 
     ClusterNodeProvisioningMode m_nodeProvisioningMode{ClusterNodeProvisioningMode::NOT_SET};
     bool m_nodeProvisioningModeHasBeenSet = false;
