@@ -67,27 +67,20 @@ def main():
     # Count skipped tests
     for service in skipped_services:
         executable = os.path.join(smoke_tests_dir, service, f"{service}-smoke-tests")
-        fd, json_output_path = tempfile.mkstemp(suffix='.json')
-        os.close(fd)
-        
-        try:
-            test_command = [executable, f'--gtest_output=json:{json_output_path}']
-            subprocess.run(test_command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            with open(json_output_path, 'r') as f:
-                test_results = json.load(f)
-            for test_suite in test_results.get('testsuites', []):
-                total_tests += test_suite['tests']
-                for test in test_suite.get('testsuite', []):
+        if os.path.exists(executable):
+            result = subprocess.run([executable, '--gtest_list_tests'], 
+                                  capture_output=True, text=True)
+            if result.returncode == 0:
+                lines = result.stdout.strip().split('\n')
+                for line in lines[1:]:
+                    test_name = f"{line.strip()}"
+                    total_tests += 1
                     all_results[service].append({
                         'service': service,
-                        'name': test['name'],
+                        'name': test_name,
                         'status': 'SKIPPED',
                         'failure': None,
                     })
-        except (FileNotFoundError, json.JSONDecodeError):
-            pass
-        finally:
-            os.unlink(json_output_path)
 
     print(f"1..{total_tests}")
     
