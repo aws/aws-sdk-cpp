@@ -42,11 +42,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the subnet where Amazon Web Services PCS creates an Elastic Network
-     * Interface (ENI) to enable communication between managed controllers and Amazon
-     * Web Services PCS resources. The subnet must have an available IP address, cannot
-     * reside in AWS Outposts, AWS Wavelength, or an AWS Local Zone.</p> <p> Example:
-     * <code>subnet-abcd1234</code> </p>
+     * <p>The ID of the subnet where PCS creates an Elastic Network Interface (ENI) to
+     * enable communication between managed controllers and PCS resources. The subnet
+     * must have an available IP address, cannot reside in Outposts, Wavelength, or an
+     * Amazon Web Services Local Zone.</p> <p> Example: <code>subnet-abcd1234</code>
+     * </p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }

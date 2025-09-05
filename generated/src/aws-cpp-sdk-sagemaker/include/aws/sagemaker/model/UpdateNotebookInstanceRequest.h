@@ -8,6 +8,7 @@
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/InstanceType.h>
+#include <aws/sagemaker/model/IPAddressType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/RootAccess.h>
 #include <aws/sagemaker/model/InstanceMetadataServiceConfiguration.h>
@@ -59,6 +60,20 @@ namespace Model
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
     inline void SetInstanceType(InstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
     inline UpdateNotebookInstanceRequest& WithInstanceType(InstanceType value) { SetInstanceType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The IP address type for the notebook instance. Specify <code>ipv4</code> for
+     * IPv4-only connectivity or <code>dualstack</code> for both IPv4 and IPv6
+     * connectivity. The notebook instance must be stopped before updating this
+     * setting. When you specify <code>dualstack</code>, the subnet must support IPv6
+     * addressing.</p>
+     */
+    inline IPAddressType GetIpAddressType() const { return m_ipAddressType; }
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+    inline void SetIpAddressType(IPAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline UpdateNotebookInstanceRequest& WithIpAddressType(IPAddressType value) { SetIpAddressType(value); return *this;}
     ///@}
 
     ///@{
@@ -248,6 +263,9 @@ namespace Model
 
     InstanceType m_instanceType{InstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
+
+    IPAddressType m_ipAddressType{IPAddressType::NOT_SET};
+    bool m_ipAddressTypeHasBeenSet = false;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;

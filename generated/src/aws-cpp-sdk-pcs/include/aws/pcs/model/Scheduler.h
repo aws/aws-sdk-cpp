@@ -41,8 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The software Amazon Web Services PCS uses to manage cluster scaling and job
-     * scheduling.</p>
+     * <p>The software PCS uses to manage cluster scaling and job scheduling.</p>
      */
     inline SchedulerType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -52,11 +51,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The version of the specified scheduling software that Amazon Web Services PCS
-     * uses to manage cluster scaling and job scheduling. For more information, see <a
+     * <p>The version of the specified scheduling software that PCS uses to manage
+     * cluster scaling and job scheduling. For more information, see <a
      * href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-versions.html">Slurm
-     * versions in Amazon Web Services PCS</a> in the <i>Amazon Web Services PCS User
-     * Guide</i>.</p> <p>Valid Values: <code>23.11 | 24.05 | 24.11</code> </p>
+     * versions in PCS</a> in the <i>PCS User Guide</i>.</p> <p>Valid Values:
+     * <code>23.11 | 24.05 | 24.11</code> </p>
      */
     inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }

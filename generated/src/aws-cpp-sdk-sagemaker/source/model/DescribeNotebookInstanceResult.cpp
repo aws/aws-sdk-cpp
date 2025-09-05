@@ -55,6 +55,11 @@ DescribeNotebookInstanceResult& DescribeNotebookInstanceResult::operator =(const
     m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(jsonValue.GetString("InstanceType"));
     m_instanceTypeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("IpAddressType"))
+  {
+    m_ipAddressType = IPAddressTypeMapper::GetIPAddressTypeForName(jsonValue.GetString("IpAddressType"));
+    m_ipAddressTypeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("SubnetId"))
   {
     m_subnetId = jsonValue.GetString("SubnetId");

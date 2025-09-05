@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>An Amazon EC2 launch template Amazon Web Services PCS uses to launch compute
-   * nodes.</p><p><h3>See Also:</h3>   <a
+   * <p>An Amazon EC2 launch template PCS uses to launch compute nodes.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/CustomLaunchTemplate">AWS
    * API Reference</a></p>
    */

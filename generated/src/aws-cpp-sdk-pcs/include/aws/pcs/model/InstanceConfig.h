@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>An EC2 instance configuration Amazon Web Services PCS uses to launch compute
-   * nodes.</p><p><h3>See Also:</h3>   <a
+   * <p>An EC2 instance configuration PCS uses to launch compute nodes.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/InstanceConfig">AWS
    * API Reference</a></p>
    */
@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The EC2 instance type that Amazon Web Services PCS can provision in the
-     * compute node group.</p> <p> Example: <code>t2.xlarge</code> </p>
+     * <p>The EC2 instance type that PCS can provision in the compute node group.</p>
+     * <p> Example: <code>t2.xlarge</code> </p>
      */
     inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }

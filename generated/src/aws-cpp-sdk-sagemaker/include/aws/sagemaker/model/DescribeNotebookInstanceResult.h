@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/NotebookInstanceStatus.h>
 #include <aws/sagemaker/model/InstanceType.h>
+#include <aws/sagemaker/model/IPAddressType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/DirectInternetAccess.h>
@@ -101,6 +102,17 @@ namespace Model
     inline InstanceType GetInstanceType() const { return m_instanceType; }
     inline void SetInstanceType(InstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
     inline DescribeNotebookInstanceResult& WithInstanceType(InstanceType value) { SetInstanceType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The IP address type configured for the notebook instance. Returns
+     * <code>ipv4</code> for IPv4-only connectivity or <code>dualstack</code> for both
+     * IPv4 and IPv6 connectivity.</p>
+     */
+    inline IPAddressType GetIpAddressType() const { return m_ipAddressType; }
+    inline void SetIpAddressType(IPAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline DescribeNotebookInstanceResult& WithIpAddressType(IPAddressType value) { SetIpAddressType(value); return *this;}
     ///@}
 
     ///@{
@@ -341,6 +353,9 @@ namespace Model
 
     InstanceType m_instanceType{InstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
+
+    IPAddressType m_ipAddressType{IPAddressType::NOT_SET};
+    bool m_ipAddressTypeHasBeenSet = false;
 
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet = false;

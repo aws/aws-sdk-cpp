@@ -40,15 +40,21 @@ namespace Model
 
     ///@{
     /**
-     * <p>Amazon Web Services PCS supports configuration of the following Slurm
-     * parameters:</p> <ul> <li> <p>For <b>clusters</b> </p> <ul> <li> <p> <a
+     * <p>PCS supports configuration of the following Slurm parameters:</p> <ul> <li>
+     * <p>For <b>clusters</b> </p> <ul> <li> <p> <a
      * href="https://slurm.schedmd.com/slurm.conf.html#OPT_Prolog_1">
      * <code>Prolog</code> </a> </p> </li> <li> <p> <a
      * href="https://slurm.schedmd.com/slurm.conf.html#OPT_Epilog_1">
      * <code>Epilog</code> </a> </p> </li> <li> <p> <a
      * href="https://slurm.schedmd.com/slurm.conf.html#OPT_SelectTypeParameters">
-     * <code>SelectTypeParameters</code> </a> </p> </li> </ul> </li> <li> <p>For
-     * <b>compute node groups</b> </p> <ul> <li> <p> <a
+     * <code>SelectTypeParameters</code> </a> </p> </li> <li> <p> <a
+     * href="https://slurm.schedmd.com/slurm.conf.html#OPT_AccountingStorageEnforce">
+     * <code>AccountingStorageEnforce</code> </a> </p>  <p>PCS supports a
+     * subset of the options for <code>AccountingStorageEnforce</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-accounting.html">Slurm
+     * accounting in PCS</a> in the <i>PCS User Guide</i>.</p>  </li> </ul>
+     * </li> <li> <p>For <b>compute node groups</b> </p> <ul> <li> <p> <a
      * href="https://slurm.schedmd.com/slurm.conf.html#OPT_Weight"> <code>Weight</code>
      * </a> </p> </li> <li> <p> <a
      * href="https://slurm.schedmd.com/slurm.conf.html#OPT_Weight">
