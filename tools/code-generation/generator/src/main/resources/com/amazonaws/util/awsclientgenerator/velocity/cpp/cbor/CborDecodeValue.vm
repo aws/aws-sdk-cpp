@@ -86,8 +86,15 @@ if (tag.has_value() && tag.value() == 1) //1 represents Epoch-based date/time. S
         ${memberVarName} = ${member.shape.name}(decoder);
     #end
 #else
-auto ${containerVar} = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
-if (${containerVar}.has_value()) {
-    ${memberVarName} = ${containerVar}.value();
+if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+    auto ${containerVar} = decoder->PopNextUnsignedIntVal();
+    if (${containerVar}.has_value()) {
+        ${memberVarName} = static_cast<int>(${containerVar}.value());
+    }
+} else {
+    auto ${containerVar} = decoder->PopNextNegativeIntVal();
+    if (${containerVar}.has_value()) {
+        ${memberVarName} = static_cast<int>(1 - ${containerVar}.value());
+    }
 }
 #end

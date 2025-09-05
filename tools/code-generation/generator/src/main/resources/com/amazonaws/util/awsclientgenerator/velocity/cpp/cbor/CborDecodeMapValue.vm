@@ -184,9 +184,16 @@ if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
       #end
     }
 #else
-    auto ${containerVar} = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
-    if (${containerVar}.has_value()) {
-        ${value}[keyStr_${recursionDepth}] = ${containerVar}.value();
+    if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+        auto ${containerVar} = decoder->PopNextUnsignedIntVal();
+        if (${containerVar}.has_value()) {
+            ${value}[keyStr_${recursionDepth}] = static_cast<int>(${containerVar}.value());
+        }
+    } else {
+        auto ${containerVar} = decoder->PopNextNegativeIntVal();
+        if (${containerVar}.has_value()) {
+            ${value}[keyStr_${recursionDepth}] = static_cast<int>(1 - ${containerVar}.value());
+        }
     }
 #end
 }

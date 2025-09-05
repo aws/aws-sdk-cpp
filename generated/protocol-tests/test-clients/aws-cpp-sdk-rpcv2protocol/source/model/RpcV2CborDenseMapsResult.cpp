@@ -106,9 +106,16 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::MapStart || peekT
                 auto key_1 = decoder->PopNextTextVal();
 if (key_1.has_value()) {
     Aws::String keyStr_1 = Aws::String(reinterpret_cast<const char*>(key_1.value().ptr), key_1.value().len);
-    auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
-    if (val.has_value()) {
-        m_denseNumberMap[keyStr_1] = val.value();
+    if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+        auto val = decoder->PopNextUnsignedIntVal();
+        if (val.has_value()) {
+            m_denseNumberMap[keyStr_1] = static_cast<int>(val.value());
+        }
+    } else {
+        auto val = decoder->PopNextNegativeIntVal();
+        if (val.has_value()) {
+            m_denseNumberMap[keyStr_1] = static_cast<int>(1 - val.value());
+        }
     }
 }        }
     }
@@ -130,9 +137,16 @@ if (key_1.has_value()) {
             auto key_1 = decoder->PopNextTextVal();
 if (key_1.has_value()) {
     Aws::String keyStr_1 = Aws::String(reinterpret_cast<const char*>(key_1.value().ptr), key_1.value().len);
-    auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
-    if (val.has_value()) {
-        m_denseNumberMap[keyStr_1] = val.value();
+    if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+        auto val = decoder->PopNextUnsignedIntVal();
+        if (val.has_value()) {
+            m_denseNumberMap[keyStr_1] = static_cast<int>(val.value());
+        }
+    } else {
+        auto val = decoder->PopNextNegativeIntVal();
+        if (val.has_value()) {
+            m_denseNumberMap[keyStr_1] = static_cast<int>(1 - val.value());
+        }
     }
 }    }
   }
@@ -597,9 +611,16 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::MapStart || peekT
                 auto key_1 = decoder->PopNextTextVal();
 if (key_1.has_value()) {
     Aws::String keyStr_1 = Aws::String(reinterpret_cast<const char*>(key_1.value().ptr), key_1.value().len);
-    auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
-    if (val.has_value()) {
-        m_denseNumberMap[keyStr_1] = val.value();
+    if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+        auto val = decoder->PopNextUnsignedIntVal();
+        if (val.has_value()) {
+            m_denseNumberMap[keyStr_1] = static_cast<int>(val.value());
+        }
+    } else {
+        auto val = decoder->PopNextNegativeIntVal();
+        if (val.has_value()) {
+            m_denseNumberMap[keyStr_1] = static_cast<int>(1 - val.value());
+        }
     }
 }        }
     }
@@ -621,9 +642,16 @@ if (key_1.has_value()) {
             auto key_1 = decoder->PopNextTextVal();
 if (key_1.has_value()) {
     Aws::String keyStr_1 = Aws::String(reinterpret_cast<const char*>(key_1.value().ptr), key_1.value().len);
-    auto val = decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt ? decoder->PopNextUnsignedIntVal() : decoder->PopNextNegativeIntVal();
-    if (val.has_value()) {
-        m_denseNumberMap[keyStr_1] = val.value();
+    if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+        auto val = decoder->PopNextUnsignedIntVal();
+        if (val.has_value()) {
+            m_denseNumberMap[keyStr_1] = static_cast<int>(val.value());
+        }
+    } else {
+        auto val = decoder->PopNextNegativeIntVal();
+        if (val.has_value()) {
+            m_denseNumberMap[keyStr_1] = static_cast<int>(1 - val.value());
+        }
     }
 }    }
   }
