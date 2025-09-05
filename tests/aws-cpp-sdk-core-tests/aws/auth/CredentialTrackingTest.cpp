@@ -243,7 +243,7 @@ TEST_F(CredentialTrackingTest, TestInstanceProfileCredentialsTracking)
 
 TEST_F(CredentialTrackingTest, TestHTTPCredentialsTracking)
 {
-    // Create mock HTTP response with valid credentials
+    // First mock: Response for credentials retrieval
     std::shared_ptr<HttpRequest> requestTmp =
         CreateHttpRequest(Aws::Http::URI("dummy"), Aws::Http::HttpMethod::HTTP_GET,
                         Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
