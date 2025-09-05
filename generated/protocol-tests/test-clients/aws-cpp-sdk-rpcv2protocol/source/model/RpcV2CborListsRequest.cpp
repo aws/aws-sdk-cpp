@@ -20,16 +20,36 @@
         
         // Calculate map size
         size_t mapSize = 0;
-                                                        if(m_stringListHasBeenSet) mapSize++;
-                                                                                    if(m_stringSetHasBeenSet) mapSize++;
-                                                                                    if(m_integerListHasBeenSet) mapSize++;
-                                                                                    if(m_booleanListHasBeenSet) mapSize++;
-                                                                                    if(m_timestampListHasBeenSet) mapSize++;
-                                                                                    if(m_enumListHasBeenSet) mapSize++;
-                                                                                    if(m_intEnumListHasBeenSet) mapSize++;
-                                                                                    if(m_nestedStringListHasBeenSet) mapSize++;
-                                                                                    if(m_structureListHasBeenSet) mapSize++;
-                                                                                    if(m_blobListHasBeenSet) mapSize++;
+                                                        if(m_stringListHasBeenSet){
+                        mapSize++;
+                    }
+                                                                                    if(m_stringSetHasBeenSet){
+                        mapSize++;
+                    }
+                                                                                    if(m_integerListHasBeenSet){
+                        mapSize++;
+                    }
+                                                                                    if(m_booleanListHasBeenSet){
+                        mapSize++;
+                    }
+                                                                                    if(m_timestampListHasBeenSet){
+                        mapSize++;
+                    }
+                                                                                    if(m_enumListHasBeenSet){
+                        mapSize++;
+                    }
+                                                                                    if(m_intEnumListHasBeenSet){
+                        mapSize++;
+                    }
+                                                                                    if(m_nestedStringListHasBeenSet){
+                        mapSize++;
+                    }
+                                                                                    if(m_structureListHasBeenSet){
+                        mapSize++;
+                    }
+                                                                                    if(m_blobListHasBeenSet){
+                        mapSize++;
+                    }
                                                                 
         encoder.WriteMapStart(mapSize);
 
@@ -38,9 +58,9 @@
     if(m_stringListHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("stringList"));
-        encoder.WriteArrayStart(m_stringList.size());
-for(const auto& item : m_stringList) {
-encoder.WriteText(Aws::Crt::ByteCursorFromCString(item.c_str()));
+                encoder.WriteArrayStart(m_stringList.size());
+for(const auto& item_0 : m_stringList) {
+encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
 }
      }
 
@@ -48,9 +68,9 @@ encoder.WriteText(Aws::Crt::ByteCursorFromCString(item.c_str()));
     if(m_stringSetHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("stringSet"));
-        encoder.WriteArrayStart(m_stringSet.size());
-for(const auto& item : m_stringSet) {
-encoder.WriteText(Aws::Crt::ByteCursorFromCString(item.c_str()));
+                encoder.WriteArrayStart(m_stringSet.size());
+for(const auto& item_0 : m_stringSet) {
+encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
 }
      }
 
@@ -58,9 +78,9 @@ encoder.WriteText(Aws::Crt::ByteCursorFromCString(item.c_str()));
     if(m_integerListHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("integerList"));
-        encoder.WriteArrayStart(m_integerList.size());
-for(const auto& item : m_integerList) {
-(item >= 0) ? encoder.WriteUInt(item) : encoder.WriteNegInt(item);
+                encoder.WriteArrayStart(m_integerList.size());
+for(const auto& item_0 : m_integerList) {
+(item_0 >= 0) ? encoder.WriteUInt(item_0) : encoder.WriteNegInt(item_0);
 }
      }
 
@@ -68,9 +88,9 @@ for(const auto& item : m_integerList) {
     if(m_booleanListHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("booleanList"));
-        encoder.WriteArrayStart(m_booleanList.size());
-for(const auto& item : m_booleanList) {
-encoder.WriteBool(item);
+                encoder.WriteArrayStart(m_booleanList.size());
+for(const auto& item_0 : m_booleanList) {
+encoder.WriteBool(item_0);
 }
      }
 
@@ -78,10 +98,10 @@ encoder.WriteBool(item);
     if(m_timestampListHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("timestampList"));
-        encoder.WriteArrayStart(m_timestampList.size());
-for(const auto& item : m_timestampList) {
+                encoder.WriteArrayStart(m_timestampList.size());
+for(const auto& item_0 : m_timestampList) {
 encoder.WriteTag(1); //1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
-encoder.WriteUInt(item.Millis());
+encoder.WriteUInt(item_0.Millis());
 }
      }
 
@@ -89,9 +109,9 @@ encoder.WriteUInt(item.Millis());
     if(m_enumListHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("enumList"));
-        encoder.WriteArrayStart(m_enumList.size());
-for(const auto& item : m_enumList) {
-encoder.WriteText(Aws::Crt::ByteCursorFromCString(FooEnumMapper::GetNameForFooEnum(item).c_str()));
+                encoder.WriteArrayStart(m_enumList.size());
+for(const auto& item_0 : m_enumList) {
+encoder.WriteText(Aws::Crt::ByteCursorFromCString(FooEnumMapper::GetNameForFooEnum(item_0).c_str()));
 }
      }
 
@@ -99,9 +119,9 @@ encoder.WriteText(Aws::Crt::ByteCursorFromCString(FooEnumMapper::GetNameForFooEn
     if(m_intEnumListHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("intEnumList"));
-        encoder.WriteArrayStart(m_intEnumList.size());
-for(const auto& item : m_intEnumList) {
-(item >= 0) ? encoder.WriteUInt(item) : encoder.WriteNegInt(item);
+                encoder.WriteArrayStart(m_intEnumList.size());
+for(const auto& item_0 : m_intEnumList) {
+(item_0 >= 0) ? encoder.WriteUInt(item_0) : encoder.WriteNegInt(item_0);
 }
      }
 
@@ -109,11 +129,11 @@ for(const auto& item : m_intEnumList) {
     if(m_nestedStringListHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("nestedStringList"));
-        encoder.WriteArrayStart(m_nestedStringList.size());
-for(const auto& item : m_nestedStringList) {
-encoder.WriteArrayStart(item.size());
-for(const auto& item : item) {
-encoder.WriteText(Aws::Crt::ByteCursorFromCString(item.c_str()));
+                encoder.WriteArrayStart(m_nestedStringList.size());
+for(const auto& item_0 : m_nestedStringList) {
+encoder.WriteArrayStart(item_0.size());
+for(const auto& item_1 : item_0) {
+encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_1.c_str()));
 }
 }
      }
@@ -122,9 +142,9 @@ encoder.WriteText(Aws::Crt::ByteCursorFromCString(item.c_str()));
     if(m_structureListHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("structureList"));
-        encoder.WriteArrayStart(m_structureList.size());
-for(const auto& item : m_structureList) {
-            item.CborEncode(encoder);
+                encoder.WriteArrayStart(m_structureList.size());
+for(const auto& item_0 : m_structureList) {
+            item_0.CborEncode(encoder);
     }
      }
 
@@ -132,9 +152,9 @@ for(const auto& item : m_structureList) {
     if(m_blobListHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("blobList"));
-        encoder.WriteArrayStart(m_blobList.size());
-for(const auto& item : m_blobList) {
-encoder.WriteBytes(Aws::Crt::ByteCursorFromCString(reinterpret_cast<const char*>(item.GetUnderlyingData())));
+                encoder.WriteArrayStart(m_blobList.size());
+for(const auto& item_0 : m_blobList) {
+encoder.WriteBytes(Aws::Crt::ByteCursorFromCString(reinterpret_cast<const char*>(item_0.GetUnderlyingData())));
 }
      }
 

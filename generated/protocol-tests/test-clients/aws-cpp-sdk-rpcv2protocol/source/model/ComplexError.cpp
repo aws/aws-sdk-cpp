@@ -28,23 +28,23 @@ ComplexError& ComplexError::operator =(const std::shared_ptr<Aws::Crt::Cbor::Cbo
 {
     if (decoder != nullptr)
 {
-    auto peekType = decoder->PeekType();
-    if (peekType.has_value() && (peekType.value() == CborType::MapStart || peekType.value() == CborType::IndefMapStart))
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart))
     {
-        if (peekType.value() == CborType::MapStart)
+        if (initialMapType.value() == CborType::MapStart)
         {
             auto mapSize = decoder->PopNextMapStart();
             if (mapSize.has_value())
             {
                 for (size_t i = 0; i < mapSize.value(); ++i)
                 {
-                    auto key = decoder->PopNextTextVal();
-                    if (key.has_value())
+                    auto initialKey = decoder->PopNextTextVal();
+                    if (initialKey.has_value())
                     {
-                        Aws::String keyStr(reinterpret_cast<const char*>(key.value().ptr), key.value().len);
+                        Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
                             
 
-    if (keyStr == "TopLevel")
+    if (initialKeyStr == "TopLevel")
   {
           if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
     auto val = decoder->PopNextTextVal();
@@ -75,7 +75,7 @@ ComplexError& ComplexError::operator =(const std::shared_ptr<Aws::Crt::Cbor::Cbo
   
     
 
-     else if (keyStr == "Nested")
+     else if (initialKeyStr == "Nested")
   {
                       m_nested = ComplexNestedErrorData(decoder);
             m_nestedHasBeenSet = true;
@@ -105,13 +105,13 @@ else
                     break;
                 }
 
-                auto key = decoder->PopNextTextVal();
-                if (key.has_value())
+                auto initialKey = decoder->PopNextTextVal();
+                if (initialKey.has_value())
                 {
-                    Aws::String keyStr(reinterpret_cast<const char*>(key.value().ptr), key.value().len);
+                    Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
                         
 
-    if (keyStr == "TopLevel")
+    if (initialKeyStr == "TopLevel")
   {
           if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
     auto val = decoder->PopNextTextVal();
@@ -142,7 +142,7 @@ else
   
     
 
-     else if (keyStr == "Nested")
+     else if (initialKeyStr == "Nested")
   {
                       m_nested = ComplexNestedErrorData(decoder);
             m_nestedHasBeenSet = true;
@@ -167,8 +167,12 @@ void ComplexError::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const
 
     // Calculate map size
     size_t mapSize = 0;
-                                        if(m_topLevelHasBeenSet) mapSize++;
-                                                            if(m_nestedHasBeenSet) mapSize++;
+                                        if(m_topLevelHasBeenSet){
+                    mapSize++;
+                }
+                                                            if(m_nestedHasBeenSet){
+                    mapSize++;
+                }
                         
   encoder.WriteMapStart(mapSize);
     
@@ -176,14 +180,14 @@ void ComplexError::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const
     if(m_topLevelHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("TopLevel"));
-        encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_topLevel.c_str()));
+                encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_topLevel.c_str()));
      }
 
 
     if(m_nestedHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("Nested"));
-                    m_nested.CborEncode(encoder);
+                            m_nested.CborEncode(encoder);
          }
 }
 

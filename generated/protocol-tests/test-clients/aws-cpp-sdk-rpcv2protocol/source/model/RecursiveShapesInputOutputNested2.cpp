@@ -29,23 +29,23 @@ RecursiveShapesInputOutputNested2& RecursiveShapesInputOutputNested2::operator =
 {
     if (decoder != nullptr)
 {
-    auto peekType = decoder->PeekType();
-    if (peekType.has_value() && (peekType.value() == CborType::MapStart || peekType.value() == CborType::IndefMapStart))
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart))
     {
-        if (peekType.value() == CborType::MapStart)
+        if (initialMapType.value() == CborType::MapStart)
         {
             auto mapSize = decoder->PopNextMapStart();
             if (mapSize.has_value())
             {
                 for (size_t i = 0; i < mapSize.value(); ++i)
                 {
-                    auto key = decoder->PopNextTextVal();
-                    if (key.has_value())
+                    auto initialKey = decoder->PopNextTextVal();
+                    if (initialKey.has_value())
                     {
-                        Aws::String keyStr(reinterpret_cast<const char*>(key.value().ptr), key.value().len);
+                        Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
                             
 
-    if (keyStr == "bar")
+    if (initialKeyStr == "bar")
   {
           if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
     auto val = decoder->PopNextTextVal();
@@ -76,7 +76,7 @@ RecursiveShapesInputOutputNested2& RecursiveShapesInputOutputNested2::operator =
   
     
 
-     else if (keyStr == "recursiveMember")
+     else if (initialKeyStr == "recursiveMember")
   {
                       m_recursiveMember = Aws::MakeShared<RecursiveShapesInputOutputNested1>("RecursiveShapesInputOutputNested2", RecursiveShapesInputOutputNested1(decoder));
             m_recursiveMemberHasBeenSet = true;
@@ -106,13 +106,13 @@ else
                     break;
                 }
 
-                auto key = decoder->PopNextTextVal();
-                if (key.has_value())
+                auto initialKey = decoder->PopNextTextVal();
+                if (initialKey.has_value())
                 {
-                    Aws::String keyStr(reinterpret_cast<const char*>(key.value().ptr), key.value().len);
+                    Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
                         
 
-    if (keyStr == "bar")
+    if (initialKeyStr == "bar")
   {
           if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
     auto val = decoder->PopNextTextVal();
@@ -143,7 +143,7 @@ else
   
     
 
-     else if (keyStr == "recursiveMember")
+     else if (initialKeyStr == "recursiveMember")
   {
                       m_recursiveMember = Aws::MakeShared<RecursiveShapesInputOutputNested1>("RecursiveShapesInputOutputNested2", RecursiveShapesInputOutputNested1(decoder));
             m_recursiveMemberHasBeenSet = true;
@@ -168,8 +168,12 @@ void RecursiveShapesInputOutputNested2::CborEncode(Aws::Crt::Cbor::CborEncoder& 
 
     // Calculate map size
     size_t mapSize = 0;
-                                        if(m_barHasBeenSet) mapSize++;
-                                                            if(m_recursiveMemberHasBeenSet) mapSize++;
+                                        if(m_barHasBeenSet){
+                    mapSize++;
+                }
+                                                            if(m_recursiveMemberHasBeenSet){
+                    mapSize++;
+                }
                         
   encoder.WriteMapStart(mapSize);
     
@@ -177,14 +181,14 @@ void RecursiveShapesInputOutputNested2::CborEncode(Aws::Crt::Cbor::CborEncoder& 
     if(m_barHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("bar"));
-        encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_bar.c_str()));
+                encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_bar.c_str()));
      }
 
 
     if(m_recursiveMemberHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("recursiveMember"));
-                     m_recursiveMember->CborEncode(encoder);
+                             m_recursiveMember->CborEncode(encoder);
          }
 }
 

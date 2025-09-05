@@ -29,23 +29,23 @@ RecursiveShapesInputOutputNested1& RecursiveShapesInputOutputNested1::operator =
 {
     if (decoder != nullptr)
 {
-    auto peekType = decoder->PeekType();
-    if (peekType.has_value() && (peekType.value() == CborType::MapStart || peekType.value() == CborType::IndefMapStart))
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart))
     {
-        if (peekType.value() == CborType::MapStart)
+        if (initialMapType.value() == CborType::MapStart)
         {
             auto mapSize = decoder->PopNextMapStart();
             if (mapSize.has_value())
             {
                 for (size_t i = 0; i < mapSize.value(); ++i)
                 {
-                    auto key = decoder->PopNextTextVal();
-                    if (key.has_value())
+                    auto initialKey = decoder->PopNextTextVal();
+                    if (initialKey.has_value())
                     {
-                        Aws::String keyStr(reinterpret_cast<const char*>(key.value().ptr), key.value().len);
+                        Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
                             
 
-    if (keyStr == "foo")
+    if (initialKeyStr == "foo")
   {
           if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
     auto val = decoder->PopNextTextVal();
@@ -76,7 +76,7 @@ RecursiveShapesInputOutputNested1& RecursiveShapesInputOutputNested1::operator =
   
     
 
-     else if (keyStr == "nested")
+     else if (initialKeyStr == "nested")
   {
                       m_nested = Aws::MakeShared<RecursiveShapesInputOutputNested2>("RecursiveShapesInputOutputNested1", RecursiveShapesInputOutputNested2(decoder));
             m_nestedHasBeenSet = true;
@@ -106,13 +106,13 @@ else
                     break;
                 }
 
-                auto key = decoder->PopNextTextVal();
-                if (key.has_value())
+                auto initialKey = decoder->PopNextTextVal();
+                if (initialKey.has_value())
                 {
-                    Aws::String keyStr(reinterpret_cast<const char*>(key.value().ptr), key.value().len);
+                    Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
                         
 
-    if (keyStr == "foo")
+    if (initialKeyStr == "foo")
   {
           if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
     auto val = decoder->PopNextTextVal();
@@ -143,7 +143,7 @@ else
   
     
 
-     else if (keyStr == "nested")
+     else if (initialKeyStr == "nested")
   {
                       m_nested = Aws::MakeShared<RecursiveShapesInputOutputNested2>("RecursiveShapesInputOutputNested1", RecursiveShapesInputOutputNested2(decoder));
             m_nestedHasBeenSet = true;
@@ -168,8 +168,12 @@ void RecursiveShapesInputOutputNested1::CborEncode(Aws::Crt::Cbor::CborEncoder& 
 
     // Calculate map size
     size_t mapSize = 0;
-                                        if(m_fooHasBeenSet) mapSize++;
-                                                            if(m_nestedHasBeenSet) mapSize++;
+                                        if(m_fooHasBeenSet){
+                    mapSize++;
+                }
+                                                            if(m_nestedHasBeenSet){
+                    mapSize++;
+                }
                         
   encoder.WriteMapStart(mapSize);
     
@@ -177,14 +181,14 @@ void RecursiveShapesInputOutputNested1::CborEncode(Aws::Crt::Cbor::CborEncoder& 
     if(m_fooHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("foo"));
-        encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_foo.c_str()));
+                encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_foo.c_str()));
      }
 
 
     if(m_nestedHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("nested"));
-                     m_nested->CborEncode(encoder);
+                             m_nested->CborEncode(encoder);
          }
 }
 

@@ -19,7 +19,9 @@
         
         // Calculate map size
         size_t mapSize = 0;
-                                                        if(m_nestedHasBeenSet) mapSize++;
+                                                        if(m_nestedHasBeenSet){
+                        mapSize++;
+                    }
                                                                 
         encoder.WriteMapStart(mapSize);
 
@@ -28,7 +30,7 @@
     if(m_nestedHasBeenSet)
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("nested"));
-                    m_nested.CborEncode(encoder);
+                            m_nested.CborEncode(encoder);
          }
 
         const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
