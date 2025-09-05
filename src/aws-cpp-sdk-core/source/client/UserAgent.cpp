@@ -44,12 +44,10 @@ const std::pair<UserAgentFeature, const char*> BUSINESS_METRIC_MAPPING[] = {
     {UserAgentFeature::GZIP_REQUEST_COMPRESSION, "L"},
     {UserAgentFeature::CREDENTIALS_ENV_VARS, "g"},
     {UserAgentFeature::CREDENTIALS_PROFILE, "n"},
-    {UserAgentFeature::CREDENTIALS_PROCESS, "w"},
     {UserAgentFeature::CREDENTIALS_PROFILE_PROCESS, "v"},
     {UserAgentFeature::CREDENTIALS_IMDS, "0"},
     {UserAgentFeature::CREDENTIALS_STS_ASSUME_ROLE, "i"},
     {UserAgentFeature::CREDENTIALS_HTTP, "z"},
-    {UserAgentFeature::CREDENTIALS_SSO, "s"},
 };
 
 const std::pair<const char*, UserAgentFeature> RETRY_FEATURE_MAPPING[] = {
