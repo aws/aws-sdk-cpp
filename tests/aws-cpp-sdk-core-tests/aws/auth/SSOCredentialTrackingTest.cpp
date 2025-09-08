@@ -98,9 +98,12 @@ protected:
   void CreateTestConfig(const Aws::String& startUrl) {
     std::ofstream cfg(m_configPath.c_str());
     cfg << "[default]\n"
+           "sso_session = my-sso\n"
            "sso_account_id = 123456789012\n"
-           "sso_region = us-east-1\n"
            "sso_role_name = TestRole\n"
+           "\n"
+           "[sso-session my-sso]\n"
+           "sso_region = us-east-1\n"
            "sso_start_url = " << startUrl << "\n";
     cfg.close();
 
@@ -132,6 +135,27 @@ protected:
     check.close();
   }
 
+  void CreateSSOSessionTokenFile(const Aws::String& sessionName /* e.g., "my-sso" */) {
+    const Aws::String hash = Aws::Utils::HashingUtils::HexEncode(
+        Aws::Utils::HashingUtils::CalculateSHA1(sessionName));
+    const Aws::String tokenPath = m_ssoCacheDir + PATH_DELIM + hash + ".json";
+
+    std::ofstream tokenFile(tokenPath.c_str());
+    ASSERT_TRUE(tokenFile.good()) << "Failed to open " << tokenPath;
+
+    const auto futureTime = Aws::Utils::DateTime::Now() + std::chrono::hours(1);
+    tokenFile << "{\n"
+                 "  \"accessToken\": \"test-token\",\n"
+                 "  \"expiresAt\": \"" << futureTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601) << "\"\n"
+                 // (region/startUrl fields are optional on this path)
+                 "}\n";
+    tokenFile.close();
+
+    std::ifstream check(tokenPath.c_str());
+    ASSERT_TRUE(check.good()) << "Token not created at: " << tokenPath;
+    check.close();
+  }
+
   void RunTrackingProbe(const std::shared_ptr<AWSCredentialsProvider>& provider, const Aws::String& marker) {
     // 200 OK dummy response for the signed call
     auto req = CreateHttpRequest(URI("dummy"), HttpMethod::HTTP_POST, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
@@ -154,14 +178,14 @@ protected:
     const auto userAgent = last.GetHeaderValue(USER_AGENT_HEADER);
     ASSERT_FALSE(userAgent.empty());
 
-    const auto parts = StringUtils::Split(userAgent, ' ');
+    const auto userAgentParsed = StringUtils::Split(userAgent, ' ');
     int mCount = 0;
-    for (const auto& p : parts) if (p.find("m/") != Aws::String::npos) ++mCount;
+    for (const auto& p : userAgentParsed) if (p.find("m/") != Aws::String::npos) ++mCount;
     EXPECT_EQ(1, mCount); // only one m/ section
 
-    auto it = std::find_if(parts.begin(), parts.end(),
+    auto businessMetrics = std::find_if(userAgentParsed.begin(), userAgentParsed.end(),
                            [&marker](const Aws::String& v){ return v.find("m/") != Aws::String::npos && v.find(marker) != Aws::String::npos; });
-    EXPECT_TRUE(it != parts.end());
+    EXPECT_TRUE(businessMetrics != userAgentParsed.end());
   }
 
   Aws::String m_profileDir;
@@ -176,7 +200,7 @@ TEST_F(SSOCredentialsProviderTrackingTest, TestSSOCredentialsTracking){
   const Aws::String startUrl = "https://test.awsapps.com/start";
 
   CreateTestConfig(startUrl);
-  CreateSSOTokenFile(startUrl);
+  CreateSSOSessionTokenFile("my-sso");
 
   // Prepare mock SSO GetRoleCredentials response
   auto ssoReq = CreateHttpRequest(
