@@ -441,12 +441,32 @@ namespace Aws
               ResponseChecksumValidation responseChecksumValidation = ResponseChecksumValidation::WHEN_SUPPORTED;
             } checksumConfig;
 
+            enum class ConfigSourceType {
+                ENVIRONMENT,
+                PROFILE,
+                DEFAULT_VALUE
+            };
+
+            struct ConfigSource {
+                Aws::String value;
+                ConfigSourceType source;
+                
+                ConfigSource(const Aws::String& val, ConfigSourceType src) : value(val), source(src) {}
+            };
+
             /**
              * A helper function to read config value from env variable or aws profile config
              */
             static Aws::String LoadConfigFromEnvOrProfile(const Aws::String& envKey, const Aws::String& profile,
                                                           const Aws::String& profileProperty, const Aws::Vector<Aws::String>& allowedValues,
                                                           const Aws::String& defaultValue);
+
+            /**
+             * A helper function to read config value from env variable or aws profile config with source tracking
+             */
+            static ConfigSource LoadConfigFromEnvOrProfileWithSource(const Aws::String& envKey, const Aws::String& profile,
+                                                                     const Aws::String& profileProperty, const Aws::Vector<Aws::String>& allowedValues,
+                                                                     const Aws::String& defaultValue);
 
             /**
              * A wrapper for interfacing with telemetry functionality. Defaults to Noop provider.
@@ -544,6 +564,42 @@ namespace Aws
                * Time out for the credentials future call.
                */
               std::chrono::milliseconds retrieveCredentialsFutureTimeout = std::chrono::seconds(10);
+              
+              /**
+               * Source of the STS credentials for user agent tracking
+               * Values: "web_identity", "assume_role", or empty string
+               */
+              Aws::String credentialSource;
+              
+              /**
+               * Source profile name for assume role chaining
+               */
+              Aws::String sourceProfile;
+              
+              /**
+               * Named credential source (e.g., "Ec2InstanceMetadata", "Environment")
+               */
+              Aws::String namedCredentialSource;
+              
+              /**
+               * MFA serial number for session token operations
+               */
+              Aws::String mfaSerial;
+              
+              /**
+               * Federation token name for federation token operations
+               */
+              Aws::String federationTokenName;
+              
+              /**
+               * SAML assertion for SAML-based assume role operations
+               */
+              Aws::String samlAssertion;
+              
+              /**
+               * Role session name for AssumeRoleWithWebIdentity operations
+               */
+              Aws::String webIdentityRoleSessionName;
             } stsCredentialsProviderConfig;
           } credentialProviderConfig;
         };
