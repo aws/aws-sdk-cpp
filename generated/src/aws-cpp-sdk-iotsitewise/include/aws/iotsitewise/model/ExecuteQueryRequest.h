@@ -60,7 +60,7 @@ namespace Model
     ///@{
     /**
      * <p>The maximum number of results to return at one time.</p> <ul> <li> <p>Minimum
-     * is 1</p> </li> <li> <p>Maximum is 20000</p> </li> <li> <p>Default is 250</p>
+     * is 1</p> </li> <li> <p>Maximum is 20000</p> </li> <li> <p>Default is 20000</p>
      * </li> </ul>
      */
     inline int GetMaxResults() const { return m_maxResults; }
