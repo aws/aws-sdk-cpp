@@ -15,6 +15,10 @@ if (decoder != nullptr)
                     {
                         Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
                         #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/ModelClassMembersDeserializeCbor.vm")
+                        if((decoder->LastError() != AWS_ERROR_UNKNOWN)){
+                            AWS_LOG_ERROR("${typeInfo.className}", "Invalid data received for %s", initialKeyStr.c_str());
+                            break;
+                        }
                     }
                 }
             }
