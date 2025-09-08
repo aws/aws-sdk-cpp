@@ -7,30 +7,33 @@ if (key_${recursionDepth}.has_value()) {
         ${value}[keyStr_${recursionDepth}] = ${shapeMember.name}Mapper::Get${shapeMember.name}ForName(Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len));
     }
 #elseif($shapeMember.string)
-if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto ${containerVar} = decoder->PopNextTextVal();
-    if (${containerVar}.has_value()) {
-        ${value}[keyStr_${recursionDepth}] = Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len);
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss_${recursionDepth};
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType_${recursionDepth} = decoder->PeekType();
-        if (!nextType_${recursionDepth}.has_value() || nextType_${recursionDepth}.value() == CborType::Break) {
-            if (nextType_${recursionDepth}.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+auto peekType_${recursionDepth} = decoder->PeekType();
+if(peekType_${recursionDepth}){
+    if (peekType_${recursionDepth}.value() == Aws::Crt::Cbor::CborType::Text) {
         auto ${containerVar} = decoder->PopNextTextVal();
         if (${containerVar}.has_value()) {
-            ss_${recursionDepth} << Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len);
+            ${value}[keyStr_${recursionDepth}] = Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len);
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss_${recursionDepth};
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType_${recursionDepth} = decoder->PeekType();
+            if (!nextType_${recursionDepth}.has_value() || nextType_${recursionDepth}.value() == CborType::Break) {
+                if (nextType_${recursionDepth}.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto ${containerVar} = decoder->PopNextTextVal();
+            if (${containerVar}.has_value()) {
+                ss_${recursionDepth} << Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len);
+            }
+        }
+            ${value}[keyStr_${recursionDepth}] = ss_${recursionDepth}.str();
+            ss_${recursionDepth}.clear();
     }
-        ${value}[keyStr_${recursionDepth}] = ss_${recursionDepth}.str();
-        ss_${recursionDepth}.clear();
-    }
+}
 #elseif($shapeMember.boolean)
     auto ${containerVar} = decoder->PopNextBooleanVal();
     if (${containerVar}.has_value()) {
@@ -47,12 +50,32 @@ if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
         ${value}[keyStr_${recursionDepth}] = ${containerVar}.value();
     }
 #elseif($shapeMember.blob)
-    if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::IndefBytesStart){
-        decoder->ConsumeNextSingleElement();
-    }
-    auto ${containerVar} = decoder->PopNextBytesVal();
-    if (${containerVar}.has_value()) {
-        ${value}[keyStr_${recursionDepth}] = Aws::Utils::ByteBuffer(${containerVar}.value().ptr, ${containerVar}.value().len);
+    auto peekType_${recursionDepth} = decoder->PeekType();
+    if (peekType_${recursionDepth}.has_value()){
+        if (peekType_${recursionDepth}.value() == Aws::Crt::Cbor::CborType::Bytes) {
+            auto ${containerVar} = decoder->PopNextBytesVal();
+            if (${containerVar}.has_value()) {
+                ${value}[keyStr_${recursionDepth}] = Aws::Utils::ByteBuffer(${containerVar}.value().ptr, ${containerVar}.value().len);
+            }
+        } else {
+            decoder->ConsumeNextSingleElement();
+            Aws::StringStream ss_${recursionDepth};
+            while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                auto nextType_${recursionDepth} = decoder->PeekType();
+                if (!nextType_${recursionDepth}.has_value() || nextType_${recursionDepth}.value() == CborType::Break) {
+                    if (nextType_${recursionDepth}.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                    }
+                    break;
+                }
+                auto ${containerVar} = decoder->PopNextBytesVal();
+                if (${containerVar}.has_value()) {
+                    ss_${recursionDepth} << Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len);
+                }
+            }
+            ${value}[keyStr_${recursionDepth}] = ss_${recursionDepth}.str();
+            ss_${recursionDepth}.clear();
+        }
     }
 #elseif($shapeMember.timeStamp)
     auto tag = decoder->PopNextTagVal();
@@ -68,18 +91,10 @@ if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
                     ${value}[keyStr_${recursionDepth}] = Aws::Utils::DateTime(${containerVar}.value());
                 }
             }
-            else if (dateType.value() == Aws::Crt::Cbor::CborType::UInt)
+            else
             {
                 auto ${containerVar} = decoder->PopNextUnsignedIntVal();
                 if (${containerVar}.has_value()) {
-                    ${value}[keyStr_${recursionDepth}] = Aws::Utils::DateTime(${containerVar}.value());
-                }
-            }
-            else
-            {
-                auto ${containerVar} = decoder->PopNextNegativeIntVal();
-                if (${containerVar}.has_value())
-                {
                     ${value}[keyStr_${recursionDepth}] = Aws::Utils::DateTime(${containerVar}.value());
                 }
             }
@@ -184,7 +199,9 @@ if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
       #end
     }
 #else
-    if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+auto peekType_${recursionDepth} = decoder->PeekType();
+if(peekType_${recursionDepth}){
+    if(peekType_${recursionDepth}.value() == Aws::Crt::Cbor::CborType::UInt){
         auto ${containerVar} = decoder->PopNextUnsignedIntVal();
         if (${containerVar}.has_value()) {
             ${value}[keyStr_${recursionDepth}] = static_cast<int>(${containerVar}.value());
@@ -195,5 +212,6 @@ if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
             ${value}[keyStr_${recursionDepth}] = static_cast<int>(1 - ${containerVar}.value());
         }
     }
+}
 #end
 }
