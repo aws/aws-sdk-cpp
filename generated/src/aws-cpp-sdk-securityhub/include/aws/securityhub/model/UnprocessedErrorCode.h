@@ -19,6 +19,7 @@ namespace Model
     INVALID_INPUT,
     ACCESS_DENIED,
     NOT_FOUND,
+    RESOURCE_NOT_FOUND,
     LIMIT_EXCEEDED
   };
 

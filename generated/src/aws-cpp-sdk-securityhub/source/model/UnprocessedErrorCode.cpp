@@ -23,6 +23,7 @@ namespace Aws
         static const int INVALID_INPUT_HASH = HashingUtils::HashString("INVALID_INPUT");
         static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
         static const int NOT_FOUND_HASH = HashingUtils::HashString("NOT_FOUND");
+        static const int RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("RESOURCE_NOT_FOUND");
         static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LIMIT_EXCEEDED");
 
 
@@ -40,6 +41,10 @@ namespace Aws
           else if (hashCode == NOT_FOUND_HASH)
           {
             return UnprocessedErrorCode::NOT_FOUND;
+          }
+          else if (hashCode == RESOURCE_NOT_FOUND_HASH)
+          {
+            return UnprocessedErrorCode::RESOURCE_NOT_FOUND;
           }
           else if (hashCode == LIMIT_EXCEEDED_HASH)
           {
@@ -67,6 +72,8 @@ namespace Aws
             return "ACCESS_DENIED";
           case UnprocessedErrorCode::NOT_FOUND:
             return "NOT_FOUND";
+          case UnprocessedErrorCode::RESOURCE_NOT_FOUND:
+            return "RESOURCE_NOT_FOUND";
           case UnprocessedErrorCode::LIMIT_EXCEEDED:
             return "LIMIT_EXCEEDED";
           default:
