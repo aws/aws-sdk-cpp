@@ -96,7 +96,7 @@ protected:
   }
 
   void CreateTestConfig(const Aws::String& startUrl) {
-    std::ofstream cfg(m_configPath.c_str());
+    Aws::OFStream cfg(m_configPath.c_str());
     cfg << "[default]\n"
            "sso_session = my-sso\n"
            "sso_account_id = 123456789012\n"
@@ -107,7 +107,7 @@ protected:
            "sso_start_url = " << startUrl << "\n";
     cfg.close();
 
-    std::ifstream check(m_configPath.c_str());
+    Aws::IFStream check(m_configPath.c_str());
     ASSERT_TRUE(check.good()) << "Config not created at: " << m_configPath;
     check.close();
 
@@ -118,7 +118,7 @@ protected:
     const Aws::String hash = computeHashedStartUrl(startUrl);
     const Aws::String tokenPath = m_ssoCacheDir + PATH_DELIM + hash + ".json";
 
-    std::ofstream tokenFile(tokenPath.c_str());
+    Aws::OFStream tokenFile(tokenPath.c_str());
     ASSERT_TRUE(tokenFile.good()) << "Failed to open " << tokenPath;
 
     const auto futureTime = DateTime::Now() + std::chrono::hours(1);
@@ -130,7 +130,7 @@ protected:
                  "}\n";
     tokenFile.close();
 
-    std::ifstream check(tokenPath.c_str());
+    Aws::IFStream check(tokenPath.c_str());
     ASSERT_TRUE(check.good()) << "Token not created at: " << tokenPath;
     check.close();
   }
@@ -140,7 +140,7 @@ protected:
         Aws::Utils::HashingUtils::CalculateSHA1(sessionName));
     const Aws::String tokenPath = m_ssoCacheDir + PATH_DELIM + hash + ".json";
 
-    std::ofstream tokenFile(tokenPath.c_str());
+    Aws::OFStream tokenFile(tokenPath.c_str());
     ASSERT_TRUE(tokenFile.good()) << "Failed to open " << tokenPath;
 
     const auto futureTime = Aws::Utils::DateTime::Now().Millis() + 3600000;
@@ -152,12 +152,12 @@ protected:
                  "}\n";
     tokenFile.close();
 
-    std::ifstream check(tokenPath.c_str());
+    Aws::IFStream check(tokenPath.c_str());
     ASSERT_TRUE(check.good()) << "Token not created at: " << tokenPath;
     check.close();
   }
 
-  void RunTrackingProbe(const std::shared_ptr<AWSCredentialsProvider>& provider, const Aws::String& marker) {
+  void RunTestWithCredentialsProvider(const std::shared_ptr<AWSCredentialsProvider>& provider, const Aws::String& marker) {
     // 200 OK dummy response for the signed call
     auto req = CreateHttpRequest(URI("dummy"), HttpMethod::HTTP_POST, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     auto ok  = Aws::MakeShared<StandardHttpResponse>(TEST_LOG_TAG, req);
@@ -229,14 +229,14 @@ TEST_F(SSOCredentialsProviderTrackingTest, TestSSOCredentialsTracking){
   EXPECT_EQ("wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY", creds.GetAWSSecretKey());
 
   // Fire a signed request and assert the business metric appears once
-  RunTrackingProbe(provider, "s");
+  RunTestWithCredentialsProvider(provider, "s");
 }
 
 TEST_F(SSOCredentialsProviderTrackingTest, TestSSOLegacyCredentialsTracking){
   const Aws::String startUrl = "https://test.awsapps.com/start";
 
   // Create legacy SSO config (without sso_session)
-  std::ofstream cfg(m_configPath.c_str());
+  Aws::OFStream cfg(m_configPath.c_str());
   cfg << "[default]\n"
          "sso_account_id = 123456789012\n"
          "sso_region = us-east-1\n"
@@ -271,5 +271,5 @@ TEST_F(SSOCredentialsProviderTrackingTest, TestSSOLegacyCredentialsTracking){
   EXPECT_EQ("wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY", creds.GetAWSSecretKey());
 
   // Fire a signed request and assert the legacy SSO business metric appears
-  RunTrackingProbe(provider, "u");
+  RunTestWithCredentialsProvider(provider, "u");
 }
