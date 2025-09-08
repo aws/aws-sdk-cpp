@@ -189,9 +189,9 @@ public class CppViewHelper {
         return computeJsonizeString(shape, false);
     }
 
-    public static String computeCppType(Shape shape) {
+    static String computeCppTypeInternal(Shape shape, Map<String, String> typeMapping) {
         String sensitivePrefix = shape.isSensitive() ? "sensitive_" : "";
-        String cppType =  CORAL_TYPE_TO_CPP_TYPE_MAPPING.get(sensitivePrefix + shape.getType());
+        String cppType = typeMapping.get(sensitivePrefix + shape.getType());
 
         //enum types show up as string
         if(cppType != null && !shape.isEnum()) {
@@ -209,19 +209,23 @@ public class CppViewHelper {
         }
 
         else if(shape.isList()) {
-            String type = computeCppType(shape.getListMember().getShape());
+            String type = computeCppTypeInternal(shape.getListMember().getShape(), typeMapping);
             return String.format("Aws::Vector<%s>", type);
         }
 
         else if(shape.isMap()) {
-            String key = computeCppType(shape.getMapKey().getShape());
-            String value = computeCppType(shape.getMapValue().getShape());
+            String key = computeCppTypeInternal(shape.getMapKey().getShape(), typeMapping);
+            String value = computeCppTypeInternal(shape.getMapValue().getShape(), typeMapping);
             return String.format("Aws::Map<%s, %s>", key, value);
         }
 
         else {
             return "Aws::String";
         }
+    }
+
+    public static String computeCppType(Shape shape) {
+        return computeCppTypeInternal(shape, CORAL_TYPE_TO_CPP_TYPE_MAPPING);
     }
 
     public static boolean isStreamingPayloadMember(Shape parent, String member) {
