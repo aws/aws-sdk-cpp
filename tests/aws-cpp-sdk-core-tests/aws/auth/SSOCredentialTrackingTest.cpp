@@ -135,7 +135,7 @@ protected:
     check.close();
   }
 
-  void CreateSSOSessionTokenFile(const Aws::String& sessionName /* e.g., "my-sso" */) {
+  void CreateSSOSessionTokenFile(const Aws::String& sessionName) {
     const Aws::String hash = Aws::Utils::HashingUtils::HexEncode(
         Aws::Utils::HashingUtils::CalculateSHA1(sessionName));
     const Aws::String tokenPath = m_ssoCacheDir + PATH_DELIM + hash + ".json";
@@ -143,10 +143,11 @@ protected:
     std::ofstream tokenFile(tokenPath.c_str());
     ASSERT_TRUE(tokenFile.good()) << "Failed to open " << tokenPath;
 
-    const auto futureTime = Aws::Utils::DateTime::Now() + std::chrono::hours(1);
+    const auto futureTime = Aws::Utils::DateTime::Now().Millis() + 3600000;
+    const auto futureDateTime = Aws::Utils::DateTime(futureTime);
     tokenFile << "{\n"
                  "  \"accessToken\": \"test-token\",\n"
-                 "  \"expiresAt\": \"" << futureTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601) << "\"\n"
+                 "  \"expiresAt\": \"" << futureDateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601) << "\"\n"
                  // (region/startUrl fields are optional on this path)
                  "}\n";
     tokenFile.close();
