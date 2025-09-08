@@ -11,7 +11,6 @@
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
-#include <aws/core/auth/SSOCredentialsProvider.h>
 #include <aws/core/auth/GeneralHTTPCredentialsProvider.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/StringUtils.h>
@@ -20,12 +19,10 @@
 #include <aws/core/utils/FileSystemUtils.h>
 #include <fstream>
 #include <sys/stat.h>
-#include <thread>
 
 using namespace Aws::Client;
 using namespace Aws::Auth;
 using namespace Aws::Http;
-using namespace Aws::FileSystem;
 using namespace Aws::Http::Standard;
 
 namespace {
@@ -86,7 +83,6 @@ class CredentialTrackingTest : public Aws::Testing::AwsCppSdkGTestSuite
 protected:
     std::shared_ptr<MockHttpClient> mockHttpClient;
     std::shared_ptr<MockHttpClientFactory> mockHttpClientFactory;
-    Aws::Vector<std::pair<const char*, Aws::String>> m_environment;
 
     void SetUp() override
     {
@@ -103,26 +99,6 @@ protected:
         mockHttpClientFactory = nullptr;
         Aws::Http::CleanupHttp();
         Aws::Http::InitHttp();
-    }
-
-    void SaveEnvironmentVariable(const char* variableName)
-    {
-        m_environment.emplace_back(variableName, Aws::Environment::GetEnv(variableName));
-    }
-
-    void RestoreEnvironmentVariables()
-    {
-        for(const auto& iter : m_environment)
-        {
-            if(iter.second.empty())
-            {
-                Aws::Environment::UnSetEnv(iter.first);
-            }
-            else
-            {
-                Aws::Environment::SetEnv(iter.first, iter.second.c_str(), 1);
-            }
-        }
     }
 
     void RunTestWithCredentialsProvider(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider, const Aws::String& id) {
@@ -266,71 +242,3 @@ TEST_F(CredentialTrackingTest, TestHTTPCredentialsTracking)
         "", "http://127.0.0.1/credentials", "", "");
     RunTestWithCredentialsProvider(std::move(credsProvider), "z");
 }
-
-// TEST_F(CredentialTrackingTest, TestSSOCredentialsTracking)
-// {
-//     // Create temporary config file with SSO configuration
-//     Aws::Utils::TempFile configFile(std::ios_base::out | std::ios_base::trunc);
-//     ASSERT_TRUE(configFile.good());
-//     configFile << "[default]" << std::endl
-//                << "sso_account_id = [REDACTED:BANK_ACCOUNT_NUMBER]" << std::endl
-//                << "sso_region = us-east-1" << std::endl
-//                << "sso_role_name = TestRole" << std::endl
-//                << "sso_start_url = https://d-test.awsapps.com/start" << std::endl;
-//     configFile.close();
-//
-//     // Create SSO token cache directory and file
-//     Aws::String cacheDir = "/tmp/.aws/sso/cache";
-//     Aws::FileSystem::CreateDirectoryIfNotExists("/tmp/.aws");
-//     Aws::FileSystem::CreateDirectoryIfNotExists(("/tmp/.aws/sso"));
-//     Aws::FileSystem::CreateDirectoryIfNotExists(cacheDir.c_str());
-//
-//     // Calculate token filename using SHA1 hash of start URL
-//     Aws::String startUrl = "https://d-test.awsapps.com/start";
-//     Aws::String hashedStartUrl = Aws::Utils::HashingUtils::HexEncode(
-//         Aws::Utils::HashingUtils::CalculateSHA1(startUrl));
-//     Aws::String tokenPath = cacheDir + "/" + hashedStartUrl + ".json";
-//
-//     // Create SSO token cache file with future expiration
-//     Aws::OFStream tokenFile(tokenPath.c_str());
-//     ASSERT_TRUE(tokenFile.is_open());
-//     tokenFile << R"({
-//         "accessToken": "test-sso-token",
-//         "expiresAt": "2037-04-19T00:00:00Z",
-//         "region": "us-east-1",
-//         "startUrl": "https://d-test.awsapps.com/start"
-//     })";
-//     tokenFile.close();
-//
-//     // Set up mock response for SSO GetRoleCredentials
-//     std::shared_ptr<HttpRequest> requestTmp =
-//         CreateHttpRequest(Aws::Http::URI("https://portal.sso.us-east-1.amazonaws.com"),
-//                         Aws::Http::HttpMethod::HTTP_POST,
-//                         Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-//     auto successResponse = Aws::MakeShared<Standard::StandardHttpResponse>(TEST_LOG_TAG, requestTmp);
-//     successResponse->SetResponseCode(HttpResponseCode::OK);
-//     successResponse->GetResponseBody() << R"({
-//         "roleCredentials": {
-//             "accessKeyId": "test-sso-access-key",
-//             "secretAccessKey": "test-sso-secret-key",
-//             "sessionToken": "test-sso-session-token",
-//             "expiration": 1767225600000
-//         }
-//     })";
-//     mockHttpClient->AddResponseToReturn(successResponse);
-//
-//     // Set environment to use our test config file
-//     Aws::Environment::EnvironmentRAII testEnvironment{{
-//         {"AWS_CONFIG_FILE", configFile.GetFileName().c_str()},
-//     }};
-//
-//     // Force reload config file after setting environment variable
-//     Aws::Config::ReloadCachedConfigFile();
-//
-//     // Create SSO credentials provider
-//     auto ssoProvider = Aws::MakeShared<SSOCredentialsProvider>(TEST_LOG_TAG);
-//     RunTestWithCredentialsProvider(std::move(ssoProvider), "s");
-//
-//     // Cleanup
-//     Aws::FileSystem::RemoveFileIfExists(tokenPath.c_str());
-// }
