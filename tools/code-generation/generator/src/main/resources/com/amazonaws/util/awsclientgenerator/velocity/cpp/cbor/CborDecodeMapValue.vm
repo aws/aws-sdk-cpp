@@ -204,12 +204,12 @@ if(peekType_${recursionDepth}){
     if(peekType_${recursionDepth}.value() == Aws::Crt::Cbor::CborType::UInt){
         auto ${containerVar} = decoder->PopNextUnsignedIntVal();
         if (${containerVar}.has_value()) {
-            ${value}[keyStr_${recursionDepth}] = static_cast<int>(${containerVar}.value());
+            ${value}[keyStr_${recursionDepth}] = static_cast<int64_t>(${containerVar}.value());
         }
     } else {
         auto ${containerVar} = decoder->PopNextNegativeIntVal();
         if (${containerVar}.has_value()) {
-            ${value}[keyStr_${recursionDepth}] = static_cast<int>(1 - ${containerVar}.value());
+            ${value}[keyStr_${recursionDepth}] = static_cast<int64_t>(1 - ${containerVar}.value());
         }
     }
 }

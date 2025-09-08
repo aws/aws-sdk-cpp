@@ -109,12 +109,12 @@ if (peekType.has_value()) {
     if(peekType.value() == Aws::Crt::Cbor::CborType::UInt){
         auto ${containerVar} = decoder->PopNextUnsignedIntVal();
         if (${containerVar}.has_value()) {
-            ${memberVarName} = static_cast<int>(${containerVar}.value());
+            ${memberVarName} = static_cast<int64_t>(${containerVar}.value());
         }
     } else {
         auto ${containerVar} = decoder->PopNextNegativeIntVal();
         if (${containerVar}.has_value()) {
-            ${memberVarName} = static_cast<int>(1 - ${containerVar}.value());
+            ${memberVarName} = static_cast<int64_t>(1 - ${containerVar}.value());
         }
     }
 }
