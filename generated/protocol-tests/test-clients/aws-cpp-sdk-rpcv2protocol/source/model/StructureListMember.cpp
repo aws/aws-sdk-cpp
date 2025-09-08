@@ -46,29 +46,32 @@ StructureListMember& StructureListMember::operator =(const std::shared_ptr<Aws::
 
     if (initialKeyStr == "a")
   {
-          if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        m_a = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType = decoder->PeekType();
-        if (!nextType.has_value() || nextType.value() == CborType::Break) {
-            if (nextType.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+          auto peekType = decoder->PeekType();
+if (peekType.has_value()) {
+    if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            m_a = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType = decoder->PeekType();
+            if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                if (nextType.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        m_a = ss.str();
+        ss.clear();
     }
-    m_a = ss.str();
-    ss.clear();
 }
         m_aHasBeenSet = true;
   }
@@ -77,29 +80,32 @@ StructureListMember& StructureListMember::operator =(const std::shared_ptr<Aws::
 
      else if (initialKeyStr == "b")
   {
-          if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        m_b = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType = decoder->PeekType();
-        if (!nextType.has_value() || nextType.value() == CborType::Break) {
-            if (nextType.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+          auto peekType = decoder->PeekType();
+if (peekType.has_value()) {
+    if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            m_b = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType = decoder->PeekType();
+            if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                if (nextType.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        m_b = ss.str();
+        ss.clear();
     }
-    m_b = ss.str();
-    ss.clear();
 }
         m_bHasBeenSet = true;
   }
@@ -109,6 +115,10 @@ else
   // Unknown key, skip the value
   decoder->ConsumeNextWholeDataItem();
 }
+                        if((decoder->LastError() != AWS_ERROR_UNKNOWN)){
+                            AWS_LOG_ERROR("StructureListMember", "Invalid data received for %s", initialKeyStr.c_str());
+                            break;
+                        }
                     }
                 }
             }
@@ -136,29 +146,32 @@ else
 
     if (initialKeyStr == "a")
   {
-          if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        m_a = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType = decoder->PeekType();
-        if (!nextType.has_value() || nextType.value() == CborType::Break) {
-            if (nextType.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+          auto peekType = decoder->PeekType();
+if (peekType.has_value()) {
+    if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            m_a = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType = decoder->PeekType();
+            if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                if (nextType.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        m_a = ss.str();
+        ss.clear();
     }
-    m_a = ss.str();
-    ss.clear();
 }
         m_aHasBeenSet = true;
   }
@@ -167,29 +180,32 @@ else
 
      else if (initialKeyStr == "b")
   {
-          if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        m_b = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType = decoder->PeekType();
-        if (!nextType.has_value() || nextType.value() == CborType::Break) {
-            if (nextType.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+          auto peekType = decoder->PeekType();
+if (peekType.has_value()) {
+    if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            m_b = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType = decoder->PeekType();
+            if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                if (nextType.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        m_b = ss.str();
+        ss.clear();
     }
-    m_b = ss.str();
-    ss.clear();
 }
         m_bHasBeenSet = true;
   }

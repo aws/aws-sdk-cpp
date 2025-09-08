@@ -74,7 +74,7 @@ AWS_PROTOCOL_TEST(RpcV2CborLists, RpcV2CborLists) {
   EXPECT_EQ(2U, resultStringSetItem.size());
   EXPECT_EQ(R"(foo)", resultStringSetItem.at(0));
   EXPECT_EQ(R"(bar)", resultStringSetItem.at(1));
-  const Aws::Vector<int>& resultIntegerListItem = result.GetIntegerList();
+  const Aws::Vector<int64_t>& resultIntegerListItem = result.GetIntegerList();
   EXPECT_EQ(2U, resultIntegerListItem.size());
   EXPECT_EQ(1, resultIntegerListItem.at(0));
   EXPECT_EQ(2, resultIntegerListItem.at(1));
@@ -90,7 +90,7 @@ AWS_PROTOCOL_TEST(RpcV2CborLists, RpcV2CborLists) {
   EXPECT_EQ(2U, resultEnumListItem.size());
   EXPECT_EQ(FooEnumMapper::GetFooEnumForName(R"e(Foo)e"), resultEnumListItem.at(0));
   EXPECT_EQ(FooEnumMapper::GetFooEnumForName(R"e(0)e"), resultEnumListItem.at(1));
-  const Aws::Vector<int>& resultIntEnumListItem = result.GetIntEnumList();
+  const Aws::Vector<int64_t>& resultIntEnumListItem = result.GetIntEnumList();
   EXPECT_EQ(2U, resultIntEnumListItem.size());
   EXPECT_EQ(1, resultIntEnumListItem.at(0));
   EXPECT_EQ(2, resultIntEnumListItem.at(1));

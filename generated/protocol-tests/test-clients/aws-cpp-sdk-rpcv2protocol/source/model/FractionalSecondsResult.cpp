@@ -63,18 +63,10 @@ if (tag.has_value() && tag.value() == 1) //1 represents Epoch-based date/time. S
                 m_datetime = Aws::Utils::DateTime(val.value());
             }
         }
-        else if (dateType.value() == Aws::Crt::Cbor::CborType::UInt)
+        else
         {
             auto val = decoder->PopNextUnsignedIntVal();
             if (val.has_value()) {
-                m_datetime = Aws::Utils::DateTime(val.value());
-            }
-        }
-        else
-        {
-            auto val = decoder->PopNextNegativeIntVal();
-            if (val.has_value())
-            {
                 m_datetime = Aws::Utils::DateTime(val.value());
             }
         }
@@ -87,29 +79,32 @@ if (tag.has_value() && tag.value() == 1) //1 represents Epoch-based date/time. S
 
      else if (initialKeyStr == "x-amzn-requestid")
   {
-          if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        m_requestId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType = decoder->PeekType();
-        if (!nextType.has_value() || nextType.value() == CborType::Break) {
-            if (nextType.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+          auto peekType = decoder->PeekType();
+if (peekType.has_value()) {
+    if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            m_requestId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType = decoder->PeekType();
+            if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                if (nextType.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        m_requestId = ss.str();
+        ss.clear();
     }
-    m_requestId = ss.str();
-    ss.clear();
 }
         m_requestIdHasBeenSet = true;
   }
@@ -119,6 +114,10 @@ else
   // Unknown key, skip the value
   decoder->ConsumeNextWholeDataItem();
 }
+                        if((decoder->LastError() != AWS_ERROR_UNKNOWN)){
+                            AWS_LOG_ERROR("FractionalSecondsResult", "Invalid data received for %s", initialKeyStr.c_str());
+                            break;
+                        }
                     }
                 }
             }
@@ -159,18 +158,10 @@ if (tag.has_value() && tag.value() == 1) //1 represents Epoch-based date/time. S
                 m_datetime = Aws::Utils::DateTime(val.value());
             }
         }
-        else if (dateType.value() == Aws::Crt::Cbor::CborType::UInt)
+        else
         {
             auto val = decoder->PopNextUnsignedIntVal();
             if (val.has_value()) {
-                m_datetime = Aws::Utils::DateTime(val.value());
-            }
-        }
-        else
-        {
-            auto val = decoder->PopNextNegativeIntVal();
-            if (val.has_value())
-            {
                 m_datetime = Aws::Utils::DateTime(val.value());
             }
         }
@@ -183,29 +174,32 @@ if (tag.has_value() && tag.value() == 1) //1 represents Epoch-based date/time. S
 
      else if (initialKeyStr == "x-amzn-requestid")
   {
-          if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        m_requestId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType = decoder->PeekType();
-        if (!nextType.has_value() || nextType.value() == CborType::Break) {
-            if (nextType.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+          auto peekType = decoder->PeekType();
+if (peekType.has_value()) {
+    if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            m_requestId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType = decoder->PeekType();
+            if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                if (nextType.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        m_requestId = ss.str();
+        ss.clear();
     }
-    m_requestId = ss.str();
-    ss.clear();
 }
         m_requestIdHasBeenSet = true;
   }

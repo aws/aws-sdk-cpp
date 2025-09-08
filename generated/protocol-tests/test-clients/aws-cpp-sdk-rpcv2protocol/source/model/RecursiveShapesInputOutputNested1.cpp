@@ -47,29 +47,32 @@ RecursiveShapesInputOutputNested1& RecursiveShapesInputOutputNested1::operator =
 
     if (initialKeyStr == "foo")
   {
-          if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        m_foo = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType = decoder->PeekType();
-        if (!nextType.has_value() || nextType.value() == CborType::Break) {
-            if (nextType.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+          auto peekType = decoder->PeekType();
+if (peekType.has_value()) {
+    if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            m_foo = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType = decoder->PeekType();
+            if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                if (nextType.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        m_foo = ss.str();
+        ss.clear();
     }
-    m_foo = ss.str();
-    ss.clear();
 }
         m_fooHasBeenSet = true;
   }
@@ -87,6 +90,10 @@ else
   // Unknown key, skip the value
   decoder->ConsumeNextWholeDataItem();
 }
+                        if((decoder->LastError() != AWS_ERROR_UNKNOWN)){
+                            AWS_LOG_ERROR("RecursiveShapesInputOutputNested1", "Invalid data received for %s", initialKeyStr.c_str());
+                            break;
+                        }
                     }
                 }
             }
@@ -114,29 +121,32 @@ else
 
     if (initialKeyStr == "foo")
   {
-          if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        m_foo = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType = decoder->PeekType();
-        if (!nextType.has_value() || nextType.value() == CborType::Break) {
-            if (nextType.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+          auto peekType = decoder->PeekType();
+if (peekType.has_value()) {
+    if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            m_foo = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType = decoder->PeekType();
+            if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                if (nextType.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        m_foo = ss.str();
+        ss.clear();
     }
-    m_foo = ss.str();
-    ss.clear();
 }
         m_fooHasBeenSet = true;
   }
