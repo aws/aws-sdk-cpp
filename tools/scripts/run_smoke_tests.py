@@ -6,14 +6,6 @@ import tempfile
 import json
 from collections import defaultdict
 
-def should_run_service(services):
-    service_ids = os.environ.get('AWS_SMOKE_TEST_SERVICE_IDS', '')
-    print("AWS_SMOKE_TEST_SERVICE_IDS:",service_ids)
-    if not service_ids:
-        return services
-    allowed_services = service_ids.split(',')
-    return [service for service in services if service in allowed_services]
-
 def main():
     parser = argparse.ArgumentParser(description='Run smoke tests')
     parser.add_argument('--testDir', default='./build', help='Path to build directory')
@@ -36,29 +28,58 @@ def main():
 
     total_tests = 0
     all_results = defaultdict(list)
-
-    services=should_run_service(services)
+    skipped_services = []
+    service_id = os.environ.get('AWS_SMOKE_TEST_SERVICE_IDS', '').strip().lower().replace(' ', '-') if os.environ.get('AWS_SMOKE_TEST_SERVICE_IDS', '').strip() else []
+    if service_id:
+        skipped_services = [s for s in services if s not in service_id]
+        services = [s for s in services if s in service_id]
 
     for service in services:
         executable = os.path.join(smoke_tests_dir, service, f"{service}-smoke-tests")
 
-        with tempfile.NamedTemporaryFile(mode='w+', suffix='.json') as temp_file:
-            json_output_path = temp_file.name
-            temp_file.close()  # Close it so other processes can write to it
+        fd, json_output_path = tempfile.mkstemp(suffix='.json')
+        os.close(fd)  # Close the file descriptor so subprocess can write
+        
+        try:
             test_command = [executable, f'--gtest_output=json:{json_output_path}']
             subprocess.run(test_command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
             with open(json_output_path, 'r') as f:
                 test_results = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError) as e:
+            test_results = {}
+        finally:
+            os.unlink(json_output_path)
 
             for test_suite in test_results.get('testsuites', []):
                 total_tests += test_suite['tests']
                 for test in test_suite.get('testsuite', []):
+                    failure_msg = None
+                    if 'failures' in test and test['failures']:
+                        failure_msg = test['failures'][0].get('failure', '')
                     all_results[service].append({
                         'service': service,
                         'name': test['name'],
                         'status': test['status'],
-                        'failure': test.get('failure'),
+                        'failure': failure_msg,
+                    })
+
+    # Count skipped tests
+    for service in skipped_services:
+        executable = os.path.join(smoke_tests_dir, service, f"{service}-smoke-tests")
+        if os.path.exists(executable):
+            result = subprocess.run([executable, '--gtest_list_tests'], 
+                                  capture_output=True, text=True)
+            if result.returncode == 0:
+                lines = result.stdout.strip().split('\n')
+                for line in lines[1:]:
+                    test_name = f"{line.strip()}"
+                    total_tests += 1
+                    all_results[service].append({
+                        'service': service,
+                        'name': test_name,
+                        'status': 'SKIPPED',
+                        'failure': None,
                     })
 
     print(f"1..{total_tests}")
@@ -72,12 +93,16 @@ def main():
             failure = result['failure']
             error_expected = "error expected from service" if "Failure" in test_name or "Error" in test_name else "no error expected from service"
 
-            if status == 'RUN':
+            if status == 'SKIPPED':
+                print(f"ok {service} {test_name} # SKIP")
+            elif status == 'RUN' and not failure:
                 print(f"ok {service} {test_name} - {error_expected}")
             else:
                 print(f"not ok {service} {test_name}")
                 if failure:
-                    print(f"# {failure}")
+                    for line in failure.split('\n'):
+                        if line.strip():
+                            print(f"# {line}")
 
     return 0
 
