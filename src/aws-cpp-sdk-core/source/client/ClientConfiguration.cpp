@@ -31,7 +31,6 @@ namespace Auth
 namespace Client
 {
 
-
 static const char* CLIENT_CONFIG_TAG = "ClientConfiguration";
 static const char* DISABLE_REQUEST_COMPRESSION_ENV_VAR = "DISABLE_REQUEST_COMPRESSION";
 static const char* DISABLE_REQUEST_COMPRESSION_CONFIG_VAR = "disable_request_compression";
