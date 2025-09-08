@@ -245,6 +245,9 @@ void GeneralHTTPCredentialsProvider::Reload()
     m_credentials.SetSessionToken(token);
     m_credentials.SetExpiration(Aws::Utils::DateTime(credentialsView.GetString("Expiration"), Aws::Utils::DateFormat::ISO_8601));
     m_credentials.SetAccountId(accountId);
+    if (!m_credentials.IsEmpty()) {
+        m_credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_HTTP);
+    }
     AWSCredentialsProvider::Reload();
 }
 
