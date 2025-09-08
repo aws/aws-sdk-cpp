@@ -83,7 +83,7 @@ AWS_PROTOCOL_TEST(RpcV2CborDenseMaps, RpcV2CborSerializesZeroValuesInMaps) {
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const RpcV2CborDenseMapsResult& result = outcome.GetResult();
   /* expectedResult = R"( {"denseNumberMap":{"x":0},"denseBooleanMap":{"x":false}} )" */
-  const Aws::Map<Aws::String, int>& resultDenseNumberMap = result.GetDenseNumberMap();
+  const Aws::Map<Aws::String, int64_t>& resultDenseNumberMap = result.GetDenseNumberMap();
   EXPECT_EQ(1U, resultDenseNumberMap.size());
   EXPECT_TRUE(resultDenseNumberMap.find("x") != resultDenseNumberMap.end());
   EXPECT_EQ(0, resultDenseNumberMap.at("x"));

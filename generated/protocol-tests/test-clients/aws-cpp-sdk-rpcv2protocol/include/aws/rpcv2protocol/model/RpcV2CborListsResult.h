@@ -61,12 +61,12 @@ template<typename RESULT_TYPE>
 
     ///@{
     
-    inline const Aws::Vector<int>& GetIntegerList() const { return m_integerList; }
-    template<typename IntegerListT = Aws::Vector<int>>
+    inline const Aws::Vector<int64_t>& GetIntegerList() const { return m_integerList; }
+    template<typename IntegerListT = Aws::Vector<int64_t>>
     void SetIntegerList(IntegerListT&& value) { m_integerListHasBeenSet = true; m_integerList = std::forward<IntegerListT>(value); }
-    template<typename IntegerListT = Aws::Vector<int>>
+    template<typename IntegerListT = Aws::Vector<int64_t>>
     RpcV2CborListsResult& WithIntegerList(IntegerListT&& value) { SetIntegerList(std::forward<IntegerListT>(value)); return *this;}
-    inline RpcV2CborListsResult& AddIntegerList(int value) { m_integerListHasBeenSet = true; m_integerList.push_back(value); return *this; }
+    inline RpcV2CborListsResult& AddIntegerList(int64_t value) { m_integerListHasBeenSet = true; m_integerList.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -102,12 +102,12 @@ template<typename RESULT_TYPE>
 
     ///@{
     
-    inline const Aws::Vector<int>& GetIntEnumList() const { return m_intEnumList; }
-    template<typename IntEnumListT = Aws::Vector<int>>
+    inline const Aws::Vector<int64_t>& GetIntEnumList() const { return m_intEnumList; }
+    template<typename IntEnumListT = Aws::Vector<int64_t>>
     void SetIntEnumList(IntEnumListT&& value) { m_intEnumListHasBeenSet = true; m_intEnumList = std::forward<IntEnumListT>(value); }
-    template<typename IntEnumListT = Aws::Vector<int>>
+    template<typename IntEnumListT = Aws::Vector<int64_t>>
     RpcV2CborListsResult& WithIntEnumList(IntEnumListT&& value) { SetIntEnumList(std::forward<IntEnumListT>(value)); return *this;}
-    inline RpcV2CborListsResult& AddIntEnumList(int value) { m_intEnumListHasBeenSet = true; m_intEnumList.push_back(value); return *this; }
+    inline RpcV2CborListsResult& AddIntEnumList(int64_t value) { m_intEnumListHasBeenSet = true; m_intEnumList.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -159,7 +159,7 @@ template<typename RESULT_TYPE>
     Aws::Vector<Aws::String> m_stringSet;
     bool m_stringSetHasBeenSet = false;
 
-    Aws::Vector<int> m_integerList;
+    Aws::Vector<int64_t> m_integerList;
     bool m_integerListHasBeenSet = false;
 
     Aws::Vector<bool> m_booleanList;
@@ -171,7 +171,7 @@ template<typename RESULT_TYPE>
     Aws::Vector<FooEnum> m_enumList;
     bool m_enumListHasBeenSet = false;
 
-    Aws::Vector<int> m_intEnumList;
+    Aws::Vector<int64_t> m_intEnumList;
     bool m_intEnumListHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<Aws::String>> m_nestedStringList;

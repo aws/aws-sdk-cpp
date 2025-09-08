@@ -49,9 +49,9 @@ template<typename RESULT_TYPE>
 
     ///@{
     
-    inline int GetByteValue() const { return m_byteValue; }
-    inline void SetByteValue(int value) { m_byteValueHasBeenSet = true; m_byteValue = value; }
-    inline SimpleScalarPropertiesResult& WithByteValue(int value) { SetByteValue(value); return *this;}
+    inline int64_t GetByteValue() const { return m_byteValue; }
+    inline void SetByteValue(int64_t value) { m_byteValueHasBeenSet = true; m_byteValue = value; }
+    inline SimpleScalarPropertiesResult& WithByteValue(int64_t value) { SetByteValue(value); return *this;}
     ///@}
 
     ///@{
@@ -70,9 +70,9 @@ template<typename RESULT_TYPE>
 
     ///@{
     
-    inline int GetIntegerValue() const { return m_integerValue; }
-    inline void SetIntegerValue(int value) { m_integerValueHasBeenSet = true; m_integerValue = value; }
-    inline SimpleScalarPropertiesResult& WithIntegerValue(int value) { SetIntegerValue(value); return *this;}
+    inline int64_t GetIntegerValue() const { return m_integerValue; }
+    inline void SetIntegerValue(int64_t value) { m_integerValueHasBeenSet = true; m_integerValue = value; }
+    inline SimpleScalarPropertiesResult& WithIntegerValue(int64_t value) { SetIntegerValue(value); return *this;}
     ///@}
 
     ///@{
@@ -84,9 +84,9 @@ template<typename RESULT_TYPE>
 
     ///@{
     
-    inline int GetShortValue() const { return m_shortValue; }
-    inline void SetShortValue(int value) { m_shortValueHasBeenSet = true; m_shortValue = value; }
-    inline SimpleScalarPropertiesResult& WithShortValue(int value) { SetShortValue(value); return *this;}
+    inline int64_t GetShortValue() const { return m_shortValue; }
+    inline void SetShortValue(int64_t value) { m_shortValueHasBeenSet = true; m_shortValue = value; }
+    inline SimpleScalarPropertiesResult& WithShortValue(int64_t value) { SetShortValue(value); return *this;}
     ///@}
 
     ///@{
@@ -123,7 +123,7 @@ template<typename RESULT_TYPE>
     bool m_falseBooleanValue{false};
     bool m_falseBooleanValueHasBeenSet = false;
 
-    int m_byteValue{0};
+    int64_t m_byteValue{0};
     bool m_byteValueHasBeenSet = false;
 
     double m_doubleValue{0.0};
@@ -132,13 +132,13 @@ template<typename RESULT_TYPE>
     double m_floatValue{0.0};
     bool m_floatValueHasBeenSet = false;
 
-    int m_integerValue{0};
+    int64_t m_integerValue{0};
     bool m_integerValueHasBeenSet = false;
 
     long long m_longValue{0};
     bool m_longValueHasBeenSet = false;
 
-    int m_shortValue{0};
+    int64_t m_shortValue{0};
     bool m_shortValueHasBeenSet = false;
 
     Aws::String m_stringValue;

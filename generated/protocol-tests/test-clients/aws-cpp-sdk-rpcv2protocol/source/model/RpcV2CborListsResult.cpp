@@ -60,29 +60,32 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
     auto listSize_0 = decoder->PopNextArrayStart();
     if(listSize_0.has_value()){
         for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
-                if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        m_stringList.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss_1;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType_1 = decoder->PeekType();
-        if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
-            if (nextType_1.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+                auto peekType_1 = decoder->PeekType();
+if(peekType_1.has_value()){
+    if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            m_stringList.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss_1;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType_1 = decoder->PeekType();
+            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                if (nextType_1.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        m_stringList.push_back(ss_1.str());
+        ss_1.clear();
     }
-    m_stringList.push_back(ss_1.str());
-    ss_1.clear();
 }
         }
     }
@@ -101,29 +104,32 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
         }
         break;
       }
-            if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        m_stringList.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss_1;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType_1 = decoder->PeekType();
-        if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
-            if (nextType_1.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+            auto peekType_1 = decoder->PeekType();
+if(peekType_1.has_value()){
+    if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            m_stringList.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss_1;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType_1 = decoder->PeekType();
+            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                if (nextType_1.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        m_stringList.push_back(ss_1.str());
+        ss_1.clear();
     }
-    m_stringList.push_back(ss_1.str());
-    ss_1.clear();
 }
     }
   }
@@ -144,29 +150,32 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
     auto listSize_0 = decoder->PopNextArrayStart();
     if(listSize_0.has_value()){
         for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
-                if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        m_stringSet.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss_1;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType_1 = decoder->PeekType();
-        if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
-            if (nextType_1.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+                auto peekType_1 = decoder->PeekType();
+if(peekType_1.has_value()){
+    if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            m_stringSet.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss_1;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType_1 = decoder->PeekType();
+            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                if (nextType_1.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        m_stringSet.push_back(ss_1.str());
+        ss_1.clear();
     }
-    m_stringSet.push_back(ss_1.str());
-    ss_1.clear();
 }
         }
     }
@@ -185,29 +194,32 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
         }
         break;
       }
-            if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        m_stringSet.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss_1;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType_1 = decoder->PeekType();
-        if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
-            if (nextType_1.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+            auto peekType_1 = decoder->PeekType();
+if(peekType_1.has_value()){
+    if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            m_stringSet.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss_1;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType_1 = decoder->PeekType();
+            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                if (nextType_1.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        m_stringSet.push_back(ss_1.str());
+        ss_1.clear();
     }
-    m_stringSet.push_back(ss_1.str());
-    ss_1.clear();
 }
     }
   }
@@ -228,17 +240,20 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
     auto listSize_0 = decoder->PopNextArrayStart();
     if(listSize_0.has_value()){
         for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
-                    if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+                auto peekType_1 = decoder->PeekType();
+if(peekType_1.has_value()){
+    if(peekType_1.value() == Aws::Crt::Cbor::CborType::UInt){
         auto val = decoder->PopNextUnsignedIntVal();
         if (val.has_value()) {
-            m_integerList.push_back(static_cast<int>(val.value()));
+            m_integerList.push_back(static_cast<int64_t>(val.value()));
         }
     } else {
         auto val = decoder->PopNextNegativeIntVal();
         if (val.has_value()) {
-            m_integerList.push_back(static_cast<int>(1 - val.value()));
+            m_integerList.push_back(static_cast<int64_t>(1 - val.value()));
         }
     }
+}
         }
     }
   }
@@ -256,17 +271,20 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
         }
         break;
       }
-                if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+            auto peekType_1 = decoder->PeekType();
+if(peekType_1.has_value()){
+    if(peekType_1.value() == Aws::Crt::Cbor::CborType::UInt){
         auto val = decoder->PopNextUnsignedIntVal();
         if (val.has_value()) {
-            m_integerList.push_back(static_cast<int>(val.value()));
+            m_integerList.push_back(static_cast<int64_t>(val.value()));
         }
     } else {
         auto val = decoder->PopNextNegativeIntVal();
         if (val.has_value()) {
-            m_integerList.push_back(static_cast<int>(1 - val.value()));
+            m_integerList.push_back(static_cast<int64_t>(1 - val.value()));
         }
     }
+}
     }
   }
 }
@@ -343,18 +361,10 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
                     m_timestampList.push_back(Aws::Utils::DateTime(val.value()));
                 }
             }
-            else if (dateType.value() == Aws::Crt::Cbor::CborType::UInt)
+            else
             {
                 auto val = decoder->PopNextUnsignedIntVal();
                 if (val.has_value()) {
-                    m_timestampList.push_back(Aws::Utils::DateTime(val.value()));
-                }
-            }
-            else
-            {
-                auto val = decoder->PopNextNegativeIntVal();
-                if (val.has_value())
-                {
                     m_timestampList.push_back(Aws::Utils::DateTime(val.value()));
                 }
             }
@@ -390,18 +400,10 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
                     m_timestampList.push_back(Aws::Utils::DateTime(val.value()));
                 }
             }
-            else if (dateType.value() == Aws::Crt::Cbor::CborType::UInt)
+            else
             {
                 auto val = decoder->PopNextUnsignedIntVal();
                 if (val.has_value()) {
-                    m_timestampList.push_back(Aws::Utils::DateTime(val.value()));
-                }
-            }
-            else
-            {
-                auto val = decoder->PopNextNegativeIntVal();
-                if (val.has_value())
-                {
                     m_timestampList.push_back(Aws::Utils::DateTime(val.value()));
                 }
             }
@@ -470,17 +472,20 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
     auto listSize_0 = decoder->PopNextArrayStart();
     if(listSize_0.has_value()){
         for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
-                    if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+                auto peekType_1 = decoder->PeekType();
+if(peekType_1.has_value()){
+    if(peekType_1.value() == Aws::Crt::Cbor::CborType::UInt){
         auto val = decoder->PopNextUnsignedIntVal();
         if (val.has_value()) {
-            m_intEnumList.push_back(static_cast<int>(val.value()));
+            m_intEnumList.push_back(static_cast<int64_t>(val.value()));
         }
     } else {
         auto val = decoder->PopNextNegativeIntVal();
         if (val.has_value()) {
-            m_intEnumList.push_back(static_cast<int>(1 - val.value()));
+            m_intEnumList.push_back(static_cast<int64_t>(1 - val.value()));
         }
     }
+}
         }
     }
   }
@@ -498,17 +503,20 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
         }
         break;
       }
-                if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+            auto peekType_1 = decoder->PeekType();
+if(peekType_1.has_value()){
+    if(peekType_1.value() == Aws::Crt::Cbor::CborType::UInt){
         auto val = decoder->PopNextUnsignedIntVal();
         if (val.has_value()) {
-            m_intEnumList.push_back(static_cast<int>(val.value()));
+            m_intEnumList.push_back(static_cast<int64_t>(val.value()));
         }
     } else {
         auto val = decoder->PopNextNegativeIntVal();
         if (val.has_value()) {
-            m_intEnumList.push_back(static_cast<int>(1 - val.value()));
+            m_intEnumList.push_back(static_cast<int64_t>(1 - val.value()));
         }
     }
+}
     }
   }
 }
@@ -537,29 +545,32 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
         auto listSize_1 = decoder->PopNextArrayStart();
         if(listSize_1.has_value()){
         for (size_t j_1 = 0; j_1 < listSize_1.value(); j_1++) {
-                if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        nestedList_1.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss_2;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType_2 = decoder->PeekType();
-        if (!nextType_2.has_value() || nextType_2.value() == CborType::Break) {
-            if (nextType_2.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+                auto peekType_2 = decoder->PeekType();
+if(peekType_2.has_value()){
+    if (peekType_2.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss_2 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            nestedList_1.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss_2;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType_2 = decoder->PeekType();
+            if (!nextType_2.has_value() || nextType_2.value() == CborType::Break) {
+                if (nextType_2.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss_2 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        nestedList_1.push_back(ss_2.str());
+        ss_2.clear();
     }
-    nestedList_1.push_back(ss_2.str());
-    ss_2.clear();
 }
         }
         }
@@ -578,29 +589,32 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
             }
             break;
           }
-                    if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        nestedList_1.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss_2;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType_2 = decoder->PeekType();
-        if (!nextType_2.has_value() || nextType_2.value() == CborType::Break) {
-            if (nextType_2.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+                    auto peekType_2 = decoder->PeekType();
+if(peekType_2.has_value()){
+    if (peekType_2.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss_2 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            nestedList_1.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss_2;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType_2 = decoder->PeekType();
+            if (!nextType_2.has_value() || nextType_2.value() == CborType::Break) {
+                if (nextType_2.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss_2 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        nestedList_1.push_back(ss_2.str());
+        ss_2.clear();
     }
-    nestedList_1.push_back(ss_2.str());
-    ss_2.clear();
 }
         }
       }
@@ -632,29 +646,32 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
         auto listSize_1 = decoder->PopNextArrayStart();
         if(listSize_1.has_value()){
         for (size_t j_1 = 0; j_1 < listSize_1.value(); j_1++) {
-                if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        nestedList_1.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss_2;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType_2 = decoder->PeekType();
-        if (!nextType_2.has_value() || nextType_2.value() == CborType::Break) {
-            if (nextType_2.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+                auto peekType_2 = decoder->PeekType();
+if(peekType_2.has_value()){
+    if (peekType_2.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss_2 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            nestedList_1.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss_2;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType_2 = decoder->PeekType();
+            if (!nextType_2.has_value() || nextType_2.value() == CborType::Break) {
+                if (nextType_2.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss_2 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        nestedList_1.push_back(ss_2.str());
+        ss_2.clear();
     }
-    nestedList_1.push_back(ss_2.str());
-    ss_2.clear();
 }
         }
         }
@@ -673,29 +690,32 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
             }
             break;
           }
-                    if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        nestedList_1.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss_2;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType_2 = decoder->PeekType();
-        if (!nextType_2.has_value() || nextType_2.value() == CborType::Break) {
-            if (nextType_2.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+                    auto peekType_2 = decoder->PeekType();
+if(peekType_2.has_value()){
+    if (peekType_2.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss_2 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            nestedList_1.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss_2;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType_2 = decoder->PeekType();
+            if (!nextType_2.has_value() || nextType_2.value() == CborType::Break) {
+                if (nextType_2.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss_2 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        nestedList_1.push_back(ss_2.str());
+        ss_2.clear();
     }
-    nestedList_1.push_back(ss_2.str());
-    ss_2.clear();
 }
         }
       }
@@ -758,12 +778,32 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
     auto listSize_0 = decoder->PopNextArrayStart();
     if(listSize_0.has_value()){
         for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
-                    if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::IndefBytesStart){
-        decoder->ConsumeNextSingleElement();
-    }
-    auto val = decoder->PopNextBytesVal();
-    if (val.has_value()) {
-    m_blobList.push_back(Aws::Utils::ByteBuffer(val.value().ptr, val.value().len));
+                    auto peekType_1 = decoder->PeekType();
+    if (peekType_1.has_value()){
+        if (peekType_1.value() == Aws::Crt::Cbor::CborType::Bytes) {
+            auto val = decoder->PopNextBytesVal();
+            if (val.has_value()) {
+                m_blobList.push_back(Aws::Utils::ByteBuffer(val.value().ptr, val.value().len));
+            }
+        } else {
+            decoder->ConsumeNextSingleElement();
+            Aws::StringStream ss_1;
+            while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                auto nextType_1 = decoder->PeekType();
+                if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                    if (nextType_1.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                    }
+                    break;
+                }
+                auto val = decoder->PopNextBytesVal();
+                if (val.has_value()) {
+                    ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                }
+            }
+            m_blobList.push_back(ss_1.str());
+            ss_1.clear();
+        }
     }
         }
     }
@@ -782,12 +822,32 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
         }
         break;
       }
-                if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::IndefBytesStart){
-        decoder->ConsumeNextSingleElement();
-    }
-    auto val = decoder->PopNextBytesVal();
-    if (val.has_value()) {
-    m_blobList.push_back(Aws::Utils::ByteBuffer(val.value().ptr, val.value().len));
+                auto peekType_1 = decoder->PeekType();
+    if (peekType_1.has_value()){
+        if (peekType_1.value() == Aws::Crt::Cbor::CborType::Bytes) {
+            auto val = decoder->PopNextBytesVal();
+            if (val.has_value()) {
+                m_blobList.push_back(Aws::Utils::ByteBuffer(val.value().ptr, val.value().len));
+            }
+        } else {
+            decoder->ConsumeNextSingleElement();
+            Aws::StringStream ss_1;
+            while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                auto nextType_1 = decoder->PeekType();
+                if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                    if (nextType_1.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                    }
+                    break;
+                }
+                auto val = decoder->PopNextBytesVal();
+                if (val.has_value()) {
+                    ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                }
+            }
+            m_blobList.push_back(ss_1.str());
+            ss_1.clear();
+        }
     }
     }
   }
@@ -799,29 +859,32 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
 
      else if (initialKeyStr == "x-amzn-requestid")
   {
-          if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        m_requestId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType = decoder->PeekType();
-        if (!nextType.has_value() || nextType.value() == CborType::Break) {
-            if (nextType.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+          auto peekType = decoder->PeekType();
+if (peekType.has_value()) {
+    if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            m_requestId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType = decoder->PeekType();
+            if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                if (nextType.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        m_requestId = ss.str();
+        ss.clear();
     }
-    m_requestId = ss.str();
-    ss.clear();
 }
         m_requestIdHasBeenSet = true;
   }
@@ -831,6 +894,10 @@ else
   // Unknown key, skip the value
   decoder->ConsumeNextWholeDataItem();
 }
+                        if((decoder->LastError() != AWS_ERROR_UNKNOWN)){
+                            AWS_LOG_ERROR("RpcV2CborListsResult", "Invalid data received for %s", initialKeyStr.c_str());
+                            break;
+                        }
                     }
                 }
             }
@@ -867,29 +934,32 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
     auto listSize_0 = decoder->PopNextArrayStart();
     if(listSize_0.has_value()){
         for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
-                if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        m_stringList.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss_1;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType_1 = decoder->PeekType();
-        if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
-            if (nextType_1.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+                auto peekType_1 = decoder->PeekType();
+if(peekType_1.has_value()){
+    if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            m_stringList.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss_1;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType_1 = decoder->PeekType();
+            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                if (nextType_1.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        m_stringList.push_back(ss_1.str());
+        ss_1.clear();
     }
-    m_stringList.push_back(ss_1.str());
-    ss_1.clear();
 }
         }
     }
@@ -908,29 +978,32 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
         }
         break;
       }
-            if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        m_stringList.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss_1;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType_1 = decoder->PeekType();
-        if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
-            if (nextType_1.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+            auto peekType_1 = decoder->PeekType();
+if(peekType_1.has_value()){
+    if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            m_stringList.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss_1;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType_1 = decoder->PeekType();
+            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                if (nextType_1.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        m_stringList.push_back(ss_1.str());
+        ss_1.clear();
     }
-    m_stringList.push_back(ss_1.str());
-    ss_1.clear();
 }
     }
   }
@@ -951,29 +1024,32 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
     auto listSize_0 = decoder->PopNextArrayStart();
     if(listSize_0.has_value()){
         for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
-                if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        m_stringSet.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss_1;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType_1 = decoder->PeekType();
-        if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
-            if (nextType_1.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+                auto peekType_1 = decoder->PeekType();
+if(peekType_1.has_value()){
+    if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            m_stringSet.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss_1;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType_1 = decoder->PeekType();
+            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                if (nextType_1.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        m_stringSet.push_back(ss_1.str());
+        ss_1.clear();
     }
-    m_stringSet.push_back(ss_1.str());
-    ss_1.clear();
 }
         }
     }
@@ -992,29 +1068,32 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
         }
         break;
       }
-            if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        m_stringSet.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss_1;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType_1 = decoder->PeekType();
-        if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
-            if (nextType_1.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+            auto peekType_1 = decoder->PeekType();
+if(peekType_1.has_value()){
+    if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            m_stringSet.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss_1;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType_1 = decoder->PeekType();
+            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                if (nextType_1.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        m_stringSet.push_back(ss_1.str());
+        ss_1.clear();
     }
-    m_stringSet.push_back(ss_1.str());
-    ss_1.clear();
 }
     }
   }
@@ -1035,17 +1114,20 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
     auto listSize_0 = decoder->PopNextArrayStart();
     if(listSize_0.has_value()){
         for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
-                    if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+                auto peekType_1 = decoder->PeekType();
+if(peekType_1.has_value()){
+    if(peekType_1.value() == Aws::Crt::Cbor::CborType::UInt){
         auto val = decoder->PopNextUnsignedIntVal();
         if (val.has_value()) {
-            m_integerList.push_back(static_cast<int>(val.value()));
+            m_integerList.push_back(static_cast<int64_t>(val.value()));
         }
     } else {
         auto val = decoder->PopNextNegativeIntVal();
         if (val.has_value()) {
-            m_integerList.push_back(static_cast<int>(1 - val.value()));
+            m_integerList.push_back(static_cast<int64_t>(1 - val.value()));
         }
     }
+}
         }
     }
   }
@@ -1063,17 +1145,20 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
         }
         break;
       }
-                if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+            auto peekType_1 = decoder->PeekType();
+if(peekType_1.has_value()){
+    if(peekType_1.value() == Aws::Crt::Cbor::CborType::UInt){
         auto val = decoder->PopNextUnsignedIntVal();
         if (val.has_value()) {
-            m_integerList.push_back(static_cast<int>(val.value()));
+            m_integerList.push_back(static_cast<int64_t>(val.value()));
         }
     } else {
         auto val = decoder->PopNextNegativeIntVal();
         if (val.has_value()) {
-            m_integerList.push_back(static_cast<int>(1 - val.value()));
+            m_integerList.push_back(static_cast<int64_t>(1 - val.value()));
         }
     }
+}
     }
   }
 }
@@ -1150,18 +1235,10 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
                     m_timestampList.push_back(Aws::Utils::DateTime(val.value()));
                 }
             }
-            else if (dateType.value() == Aws::Crt::Cbor::CborType::UInt)
+            else
             {
                 auto val = decoder->PopNextUnsignedIntVal();
                 if (val.has_value()) {
-                    m_timestampList.push_back(Aws::Utils::DateTime(val.value()));
-                }
-            }
-            else
-            {
-                auto val = decoder->PopNextNegativeIntVal();
-                if (val.has_value())
-                {
                     m_timestampList.push_back(Aws::Utils::DateTime(val.value()));
                 }
             }
@@ -1197,18 +1274,10 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
                     m_timestampList.push_back(Aws::Utils::DateTime(val.value()));
                 }
             }
-            else if (dateType.value() == Aws::Crt::Cbor::CborType::UInt)
+            else
             {
                 auto val = decoder->PopNextUnsignedIntVal();
                 if (val.has_value()) {
-                    m_timestampList.push_back(Aws::Utils::DateTime(val.value()));
-                }
-            }
-            else
-            {
-                auto val = decoder->PopNextNegativeIntVal();
-                if (val.has_value())
-                {
                     m_timestampList.push_back(Aws::Utils::DateTime(val.value()));
                 }
             }
@@ -1277,17 +1346,20 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
     auto listSize_0 = decoder->PopNextArrayStart();
     if(listSize_0.has_value()){
         for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
-                    if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+                auto peekType_1 = decoder->PeekType();
+if(peekType_1.has_value()){
+    if(peekType_1.value() == Aws::Crt::Cbor::CborType::UInt){
         auto val = decoder->PopNextUnsignedIntVal();
         if (val.has_value()) {
-            m_intEnumList.push_back(static_cast<int>(val.value()));
+            m_intEnumList.push_back(static_cast<int64_t>(val.value()));
         }
     } else {
         auto val = decoder->PopNextNegativeIntVal();
         if (val.has_value()) {
-            m_intEnumList.push_back(static_cast<int>(1 - val.value()));
+            m_intEnumList.push_back(static_cast<int64_t>(1 - val.value()));
         }
     }
+}
         }
     }
   }
@@ -1305,17 +1377,20 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
         }
         break;
       }
-                if(decoder->PeekType().value() == Aws::Crt::Cbor::CborType::UInt){
+            auto peekType_1 = decoder->PeekType();
+if(peekType_1.has_value()){
+    if(peekType_1.value() == Aws::Crt::Cbor::CborType::UInt){
         auto val = decoder->PopNextUnsignedIntVal();
         if (val.has_value()) {
-            m_intEnumList.push_back(static_cast<int>(val.value()));
+            m_intEnumList.push_back(static_cast<int64_t>(val.value()));
         }
     } else {
         auto val = decoder->PopNextNegativeIntVal();
         if (val.has_value()) {
-            m_intEnumList.push_back(static_cast<int>(1 - val.value()));
+            m_intEnumList.push_back(static_cast<int64_t>(1 - val.value()));
         }
     }
+}
     }
   }
 }
@@ -1344,29 +1419,32 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
         auto listSize_1 = decoder->PopNextArrayStart();
         if(listSize_1.has_value()){
         for (size_t j_1 = 0; j_1 < listSize_1.value(); j_1++) {
-                if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        nestedList_1.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss_2;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType_2 = decoder->PeekType();
-        if (!nextType_2.has_value() || nextType_2.value() == CborType::Break) {
-            if (nextType_2.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+                auto peekType_2 = decoder->PeekType();
+if(peekType_2.has_value()){
+    if (peekType_2.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss_2 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            nestedList_1.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss_2;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType_2 = decoder->PeekType();
+            if (!nextType_2.has_value() || nextType_2.value() == CborType::Break) {
+                if (nextType_2.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss_2 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        nestedList_1.push_back(ss_2.str());
+        ss_2.clear();
     }
-    nestedList_1.push_back(ss_2.str());
-    ss_2.clear();
 }
         }
         }
@@ -1385,29 +1463,32 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
             }
             break;
           }
-                    if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        nestedList_1.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss_2;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType_2 = decoder->PeekType();
-        if (!nextType_2.has_value() || nextType_2.value() == CborType::Break) {
-            if (nextType_2.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+                    auto peekType_2 = decoder->PeekType();
+if(peekType_2.has_value()){
+    if (peekType_2.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss_2 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            nestedList_1.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss_2;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType_2 = decoder->PeekType();
+            if (!nextType_2.has_value() || nextType_2.value() == CborType::Break) {
+                if (nextType_2.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss_2 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        nestedList_1.push_back(ss_2.str());
+        ss_2.clear();
     }
-    nestedList_1.push_back(ss_2.str());
-    ss_2.clear();
 }
         }
       }
@@ -1439,29 +1520,32 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
         auto listSize_1 = decoder->PopNextArrayStart();
         if(listSize_1.has_value()){
         for (size_t j_1 = 0; j_1 < listSize_1.value(); j_1++) {
-                if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        nestedList_1.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss_2;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType_2 = decoder->PeekType();
-        if (!nextType_2.has_value() || nextType_2.value() == CborType::Break) {
-            if (nextType_2.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+                auto peekType_2 = decoder->PeekType();
+if(peekType_2.has_value()){
+    if (peekType_2.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss_2 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            nestedList_1.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss_2;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType_2 = decoder->PeekType();
+            if (!nextType_2.has_value() || nextType_2.value() == CborType::Break) {
+                if (nextType_2.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss_2 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        nestedList_1.push_back(ss_2.str());
+        ss_2.clear();
     }
-    nestedList_1.push_back(ss_2.str());
-    ss_2.clear();
 }
         }
         }
@@ -1480,29 +1564,32 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
             }
             break;
           }
-                    if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        nestedList_1.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss_2;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType_2 = decoder->PeekType();
-        if (!nextType_2.has_value() || nextType_2.value() == CborType::Break) {
-            if (nextType_2.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+                    auto peekType_2 = decoder->PeekType();
+if(peekType_2.has_value()){
+    if (peekType_2.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss_2 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            nestedList_1.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss_2;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType_2 = decoder->PeekType();
+            if (!nextType_2.has_value() || nextType_2.value() == CborType::Break) {
+                if (nextType_2.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss_2 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        nestedList_1.push_back(ss_2.str());
+        ss_2.clear();
     }
-    nestedList_1.push_back(ss_2.str());
-    ss_2.clear();
 }
         }
       }
@@ -1565,12 +1652,32 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
     auto listSize_0 = decoder->PopNextArrayStart();
     if(listSize_0.has_value()){
         for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
-                    if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::IndefBytesStart){
-        decoder->ConsumeNextSingleElement();
-    }
-    auto val = decoder->PopNextBytesVal();
-    if (val.has_value()) {
-    m_blobList.push_back(Aws::Utils::ByteBuffer(val.value().ptr, val.value().len));
+                    auto peekType_1 = decoder->PeekType();
+    if (peekType_1.has_value()){
+        if (peekType_1.value() == Aws::Crt::Cbor::CborType::Bytes) {
+            auto val = decoder->PopNextBytesVal();
+            if (val.has_value()) {
+                m_blobList.push_back(Aws::Utils::ByteBuffer(val.value().ptr, val.value().len));
+            }
+        } else {
+            decoder->ConsumeNextSingleElement();
+            Aws::StringStream ss_1;
+            while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                auto nextType_1 = decoder->PeekType();
+                if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                    if (nextType_1.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                    }
+                    break;
+                }
+                auto val = decoder->PopNextBytesVal();
+                if (val.has_value()) {
+                    ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                }
+            }
+            m_blobList.push_back(ss_1.str());
+            ss_1.clear();
+        }
     }
         }
     }
@@ -1589,12 +1696,32 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
         }
         break;
       }
-                if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::IndefBytesStart){
-        decoder->ConsumeNextSingleElement();
-    }
-    auto val = decoder->PopNextBytesVal();
-    if (val.has_value()) {
-    m_blobList.push_back(Aws::Utils::ByteBuffer(val.value().ptr, val.value().len));
+                auto peekType_1 = decoder->PeekType();
+    if (peekType_1.has_value()){
+        if (peekType_1.value() == Aws::Crt::Cbor::CborType::Bytes) {
+            auto val = decoder->PopNextBytesVal();
+            if (val.has_value()) {
+                m_blobList.push_back(Aws::Utils::ByteBuffer(val.value().ptr, val.value().len));
+            }
+        } else {
+            decoder->ConsumeNextSingleElement();
+            Aws::StringStream ss_1;
+            while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                auto nextType_1 = decoder->PeekType();
+                if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                    if (nextType_1.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                    }
+                    break;
+                }
+                auto val = decoder->PopNextBytesVal();
+                if (val.has_value()) {
+                    ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                }
+            }
+            m_blobList.push_back(ss_1.str());
+            ss_1.clear();
+        }
     }
     }
   }
@@ -1606,29 +1733,32 @@ if (peekType_0.has_value() && (peekType_0.value() == CborType::ArrayStart || pee
 
      else if (initialKeyStr == "x-amzn-requestid")
   {
-          if (decoder->PeekType().value() == Aws::Crt::Cbor::CborType::Text) {
-    auto val = decoder->PopNextTextVal();
-    if (val.has_value()) {
-        m_requestId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-    }
-} else {
-    decoder->ConsumeNextSingleElement();
-    Aws::StringStream ss;
-    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-        auto nextType = decoder->PeekType();
-        if (!nextType.has_value() || nextType.value() == CborType::Break) {
-            if (nextType.has_value()) {
-                decoder->ConsumeNextSingleElement();  // consume the Break
-            }
-            break;
-        }
+          auto peekType = decoder->PeekType();
+if (peekType.has_value()) {
+    if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
         auto val = decoder->PopNextTextVal();
         if (val.has_value()) {
-            ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            m_requestId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
         }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType = decoder->PeekType();
+            if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                if (nextType.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto val = decoder->PopNextTextVal();
+            if (val.has_value()) {
+                ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            }
+        }
+        m_requestId = ss.str();
+        ss.clear();
     }
-    m_requestId = ss.str();
-    ss.clear();
 }
         m_requestIdHasBeenSet = true;
   }

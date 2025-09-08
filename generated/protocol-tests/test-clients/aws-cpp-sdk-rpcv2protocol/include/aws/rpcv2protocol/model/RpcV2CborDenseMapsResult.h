@@ -50,12 +50,12 @@ template<typename RESULT_TYPE>
 
     ///@{
     
-    inline const Aws::Map<Aws::String, int>& GetDenseNumberMap() const { return m_denseNumberMap; }
-    template<typename DenseNumberMapT = Aws::Map<Aws::String, int>>
+    inline const Aws::Map<Aws::String, int64_t>& GetDenseNumberMap() const { return m_denseNumberMap; }
+    template<typename DenseNumberMapT = Aws::Map<Aws::String, int64_t>>
     void SetDenseNumberMap(DenseNumberMapT&& value) { m_denseNumberMapHasBeenSet = true; m_denseNumberMap = std::forward<DenseNumberMapT>(value); }
-    template<typename DenseNumberMapT = Aws::Map<Aws::String, int>>
+    template<typename DenseNumberMapT = Aws::Map<Aws::String, int64_t>>
     RpcV2CborDenseMapsResult& WithDenseNumberMap(DenseNumberMapT&& value) { SetDenseNumberMap(std::forward<DenseNumberMapT>(value)); return *this;}
-    inline RpcV2CborDenseMapsResult& AddDenseNumberMap(Aws::String key, int value) {
+    inline RpcV2CborDenseMapsResult& AddDenseNumberMap(Aws::String key, int64_t value) {
       m_denseNumberMapHasBeenSet = true; m_denseNumberMap.emplace(key, value); return *this;
     }
     ///@}
@@ -111,7 +111,7 @@ template<typename RESULT_TYPE>
     Aws::Map<Aws::String, GreetingStruct> m_denseStructMap;
     bool m_denseStructMapHasBeenSet = false;
 
-    Aws::Map<Aws::String, int> m_denseNumberMap;
+    Aws::Map<Aws::String, int64_t> m_denseNumberMap;
     bool m_denseNumberMapHasBeenSet = false;
 
     Aws::Map<Aws::String, bool> m_denseBooleanMap;
