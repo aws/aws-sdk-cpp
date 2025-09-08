@@ -39,6 +39,7 @@ class SmokeTestsGen(object):
             'iot-managed-integrations',
             'elastictranscoder',
             'freetier',
+            'bcm-recommended-actions',
         }
         clients_to_build = clients_to_build - blocked_services
         
