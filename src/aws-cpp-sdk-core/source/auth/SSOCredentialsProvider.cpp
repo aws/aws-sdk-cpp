@@ -102,7 +102,11 @@ void SSOCredentialsProvider::Reload()
 
     m_credentials = result.creds;
     if (!m_credentials.IsEmpty()) {
-        m_credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_SSO);
+        if (!profile.IsSsoSessionSet()) {
+          m_credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_SSO_LEGACY);
+        } else {
+          m_credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_SSO);
+        }
     }
 }
 

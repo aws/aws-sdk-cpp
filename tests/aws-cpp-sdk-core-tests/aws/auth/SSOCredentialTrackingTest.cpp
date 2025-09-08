@@ -206,3 +206,45 @@ TEST_F(SSOCredentialsProviderTrackingTest, TestSSOCredentialsTracking){
   // Fire a signed request and assert the business metric appears once
   RunTrackingProbe(provider, "s");
 }
+
+TEST_F(SSOCredentialsProviderTrackingTest, TestSSOLegacyCredentialsTracking){
+  const Aws::String startUrl = "https://test.awsapps.com/start";
+
+  // Create legacy SSO config (without sso_session)
+  std::ofstream cfg(m_configPath.c_str());
+  cfg << "[default]\n"
+         "sso_account_id = 123456789012\n"
+         "sso_region = us-east-1\n"
+         "sso_role_name = TestRole\n"
+         "sso_start_url = " << startUrl << "\n";
+  cfg.close();
+  Aws::Config::ReloadCachedConfigFile();
+
+  CreateSSOTokenFile(startUrl);
+
+  // Prepare mock SSO GetRoleCredentials response
+  auto ssoReq = CreateHttpRequest(
+      URI("https://portal.sso.us-east-1.amazonaws.com/federation/credentials"),
+      HttpMethod::HTTP_GET,
+      Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+
+  auto ssoResp = Aws::MakeShared<StandardHttpResponse>(TEST_LOG_TAG, ssoReq);
+  ssoResp->SetResponseCode(HttpResponseCode::OK);
+  ssoResp->GetResponseBody()
+      << R"({"roleCredentials":{
+                "accessKeyId":"AKIAIOSFODNN7EXAMPLE",
+                "secretAccessKey":"wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY",
+                "sessionToken":"AQoDYXdzEJr...",
+                "expiration":)" << (DateTime::Now().Millis() + 3600000) << "}}";
+  mockHttpClient->AddResponseToReturn(ssoResp);
+
+  auto provider = Aws::MakeShared<SSOCredentialsProvider>(TEST_LOG_TAG);
+  auto creds = provider->GetAWSCredentials();
+
+  ASSERT_FALSE(creds.IsEmpty());
+  EXPECT_EQ("AKIAIOSFODNN7EXAMPLE", creds.GetAWSAccessKeyId());
+  EXPECT_EQ("wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY", creds.GetAWSSecretKey());
+
+  // Fire a signed request and assert the legacy SSO business metric appears
+  RunTrackingProbe(provider, "h");
+}
