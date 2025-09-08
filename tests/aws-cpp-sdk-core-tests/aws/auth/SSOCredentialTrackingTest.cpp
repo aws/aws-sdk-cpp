@@ -270,5 +270,5 @@ TEST_F(SSOCredentialsProviderTrackingTest, TestSSOLegacyCredentialsTracking){
   EXPECT_EQ("wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY", creds.GetAWSSecretKey());
 
   // Fire a signed request and assert the legacy SSO business metric appears
-  RunTrackingProbe(provider, "h");
+  RunTrackingProbe(provider, "u");
 }
