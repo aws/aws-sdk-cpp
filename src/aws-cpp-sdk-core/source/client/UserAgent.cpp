@@ -43,13 +43,21 @@ const std::pair<UserAgentFeature, const char*> BUSINESS_METRIC_MAPPING[] = {
     {UserAgentFeature::RESOLVED_ACCOUNT_ID, "T"},
     {UserAgentFeature::GZIP_REQUEST_COMPRESSION, "L"},
     {UserAgentFeature::CREDENTIALS_ENV_VARS, "g"},
+    {UserAgentFeature::CREDENTIALS_ENV_VARS_STS_WEB_ID_TOKEN, "h"},
     {UserAgentFeature::CREDENTIALS_PROFILE, "n"},
+    {UserAgentFeature::CREDENTIALS_PROFILE_SOURCE_PROFILE, "o"},
+    {UserAgentFeature::CREDENTIALS_PROFILE_NAMED_PROVIDER, "p"},
     {UserAgentFeature::CREDENTIALS_PROFILE_PROCESS, "v"},
     {UserAgentFeature::CREDENTIALS_IMDS, "0"},
     {UserAgentFeature::CREDENTIALS_STS_ASSUME_ROLE, "i"},
+    {UserAgentFeature::CREDENTIALS_STS_WEB_IDENTITY_TOKEN, "q"},
+    {UserAgentFeature::CREDENTIALS_STS_SESSION_TOKEN, "m"},
+    {UserAgentFeature::CREDENTIALS_STS_FEDERATION_TOKEN, "l"},
+    {UserAgentFeature::CREDENTIALS_STS_ASSUME_ROLE_WEB_ID, "k"},
+    {UserAgentFeature::CREDENTIALS_STS_ASSUME_ROLE_SAML, "j"},
     {UserAgentFeature::CREDENTIALS_HTTP, "z"},
     {UserAgentFeature::CREDENTIALS_SSO, "s"},
-    {UserAgentFeature::CREDENTIALS_SSO_LEGACY, "h"},
+    {UserAgentFeature::CREDENTIALS_SSO_LEGACY, "u"},
 };
 
 const std::pair<const char*, UserAgentFeature> RETRY_FEATURE_MAPPING[] = {
@@ -134,9 +142,29 @@ UserAgent::UserAgent(const ClientConfiguration& clientConfiguration,
   //TODO
   /*
   if (clientConfiguration.credentialProviderConfig.ssoWhatever) {
-    m_features.emplace(..)
+  m_features.emplace(..)
+  */
+  // Add STS credential source tracking based on client configuration (mutually exclusive)
+  const auto& stsConfig = clientConfiguration.credentialProviderConfig.stsCredentialsProviderConfig;
+  if (stsConfig.credentialSource == "env_web_identity") {
+    m_features.emplace(UserAgentFeature::CREDENTIALS_ENV_VARS_STS_WEB_ID_TOKEN);
+  } else if (stsConfig.credentialSource == "web_identity") {
+    m_features.emplace(UserAgentFeature::CREDENTIALS_STS_WEB_IDENTITY_TOKEN);
+  } else if (!stsConfig.webIdentityRoleSessionName.empty()) {
+    m_features.emplace(UserAgentFeature::CREDENTIALS_STS_ASSUME_ROLE_WEB_ID);
+  } else if (!stsConfig.samlAssertion.empty()) {
+    m_features.emplace(UserAgentFeature::CREDENTIALS_STS_ASSUME_ROLE_SAML);
+  } else if (!stsConfig.federationTokenName.empty()) {
+    m_features.emplace(UserAgentFeature::CREDENTIALS_STS_FEDERATION_TOKEN);
+  } else if (!stsConfig.mfaSerial.empty()) {
+    m_features.emplace(UserAgentFeature::CREDENTIALS_STS_SESSION_TOKEN);
+  }  else if (!stsConfig.sourceProfile.empty()) {
+    m_features.emplace(UserAgentFeature::CREDENTIALS_PROFILE_SOURCE_PROFILE);
+  } else if (!stsConfig.namedCredentialSource.empty()) {
+    m_features.emplace(UserAgentFeature::CREDENTIALS_PROFILE_NAMED_PROVIDER);
+  } else if (stsConfig.credentialSource == "assume_role") {
+    m_features.emplace(UserAgentFeature::CREDENTIALS_STS_ASSUME_ROLE);
   }
-   */
 }
 
 Aws::String UserAgent::SerializeWithFeatures(const Aws::Set<UserAgentFeature>& features) const {
