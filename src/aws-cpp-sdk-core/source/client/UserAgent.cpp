@@ -43,10 +43,12 @@ const std::pair<UserAgentFeature, const char*> BUSINESS_METRIC_MAPPING[] = {
     {UserAgentFeature::RESOLVED_ACCOUNT_ID, "T"},
     {UserAgentFeature::GZIP_REQUEST_COMPRESSION, "L"},
     {UserAgentFeature::CREDENTIALS_ENV_VARS, "g"},
+    {UserAgentFeature::CREDENTIALS_ENV_VARS_STS_WEB_ID_TOKEN, "h"},
     {UserAgentFeature::CREDENTIALS_PROFILE, "n"},
     {UserAgentFeature::CREDENTIALS_PROFILE_PROCESS, "v"},
     {UserAgentFeature::CREDENTIALS_IMDS, "0"},
     {UserAgentFeature::CREDENTIALS_STS_ASSUME_ROLE, "i"},
+    {UserAgentFeature::CREDENTIALS_STS_WEB_IDENTITY_TOKEN, "q"},
     {UserAgentFeature::CREDENTIALS_HTTP, "z"},
 };
 
@@ -128,6 +130,13 @@ UserAgent::UserAgent(const ClientConfiguration& clientConfiguration,
   const auto accountIdMode = BusinessMetricForAccountIdMode(clientConfiguration.accountIdEndpointMode);
   if (accountIdMode.has_value()) {
     m_features.emplace(accountIdMode.value());
+  }
+
+  const auto& sts = clientConfiguration.credentialProviderConfig.stsCredentialsProviderConfig;
+  if (sts.credentialSource == "env_web_identity") {
+    m_features.emplace(UserAgentFeature::CREDENTIALS_ENV_VARS_STS_WEB_ID_TOKEN);
+  } else if (sts.credentialSource == "web_identity") {
+    m_features.emplace(UserAgentFeature::CREDENTIALS_STS_WEB_IDENTITY_TOKEN);
   }
 }
 
