@@ -141,7 +141,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestampf of when the subscription grant was updated.</p>
+     * <p>The timestamp of when the subscription grant was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }

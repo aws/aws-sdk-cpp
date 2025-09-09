@@ -20,6 +20,7 @@
 #include <aws/organizations/model/AccessDeniedForDependencyExceptionReason.h>
 #include <aws/organizations/model/Account.h>
 #include <aws/organizations/model/AccountJoinedMethod.h>
+#include <aws/organizations/model/AccountState.h>
 #include <aws/organizations/model/AccountStatus.h>
 #include <aws/organizations/model/ActionType.h>
 #include <aws/organizations/model/AttachPolicyRequest.h>

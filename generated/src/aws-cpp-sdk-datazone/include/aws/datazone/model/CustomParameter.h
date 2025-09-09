@@ -96,6 +96,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies whether a parameter value can be updated after creation. </p>
+     */
+    inline bool GetIsUpdateSupported() const { return m_isUpdateSupported; }
+    inline bool IsUpdateSupportedHasBeenSet() const { return m_isUpdateSupportedHasBeenSet; }
+    inline void SetIsUpdateSupported(bool value) { m_isUpdateSupportedHasBeenSet = true; m_isUpdateSupported = value; }
+    inline CustomParameter& WithIsUpdateSupported(bool value) { SetIsUpdateSupported(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The key name of the parameter.</p>
      */
     inline const Aws::String& GetKeyName() const { return m_keyName; }
@@ -121,6 +131,9 @@ namespace Model
 
     bool m_isOptional{false};
     bool m_isOptionalHasBeenSet = false;
+
+    bool m_isUpdateSupported{false};
+    bool m_isUpdateSupportedHasBeenSet = false;
 
     Aws::String m_keyName;
     bool m_keyNameHasBeenSet = false;

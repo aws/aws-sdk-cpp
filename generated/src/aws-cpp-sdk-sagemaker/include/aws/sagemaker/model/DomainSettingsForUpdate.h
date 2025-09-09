@@ -12,6 +12,7 @@
 #include <aws/sagemaker/model/DockerSettings.h>
 #include <aws/sagemaker/model/AmazonQSettings.h>
 #include <aws/sagemaker/model/UnifiedStudioSettings.h>
+#include <aws/sagemaker/model/IPAddressType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -140,6 +141,19 @@ namespace Model
     template<typename UnifiedStudioSettingsT = UnifiedStudioSettings>
     DomainSettingsForUpdate& WithUnifiedStudioSettings(UnifiedStudioSettingsT&& value) { SetUnifiedStudioSettings(std::forward<UnifiedStudioSettingsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The IP address type for the domain. Specify <code>ipv4</code> for IPv4-only
+     * connectivity or <code>dualstack</code> for both IPv4 and IPv6 connectivity. When
+     * you specify <code>dualstack</code>, the subnet must support IPv6 CIDR
+     * blocks.</p>
+     */
+    inline IPAddressType GetIpAddressType() const { return m_ipAddressType; }
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+    inline void SetIpAddressType(IPAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline DomainSettingsForUpdate& WithIpAddressType(IPAddressType value) { SetIpAddressType(value); return *this;}
+    ///@}
   private:
 
     RStudioServerProDomainSettingsForUpdate m_rStudioServerProDomainSettingsForUpdate;
@@ -162,6 +176,9 @@ namespace Model
 
     UnifiedStudioSettings m_unifiedStudioSettings;
     bool m_unifiedStudioSettingsHasBeenSet = false;
+
+    IPAddressType m_ipAddressType{IPAddressType::NOT_SET};
+    bool m_ipAddressTypeHasBeenSet = false;
   };
 
 } // namespace Model

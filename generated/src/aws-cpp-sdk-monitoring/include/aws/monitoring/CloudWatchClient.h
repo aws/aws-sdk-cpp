@@ -251,6 +251,33 @@ namespace CloudWatch
         }
 
         /**
+         * <p>Returns the information of the current alarm contributors that are in
+         * <code>ALARM</code> state. This operation returns details about the individual
+         * time series that contribute to the alarm's state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmContributors">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAlarmContributorsOutcome DescribeAlarmContributors(const Model::DescribeAlarmContributorsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAlarmContributors that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeAlarmContributorsRequestT = Model::DescribeAlarmContributorsRequest>
+        Model::DescribeAlarmContributorsOutcomeCallable DescribeAlarmContributorsCallable(const DescribeAlarmContributorsRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchClient::DescribeAlarmContributors, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeAlarmContributors that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeAlarmContributorsRequestT = Model::DescribeAlarmContributorsRequest>
+        void DescribeAlarmContributorsAsync(const DescribeAlarmContributorsRequestT& request, const DescribeAlarmContributorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchClient::DescribeAlarmContributors, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the history for the specified alarm. You can filter the results by
          * date range or item type. If an alarm name is not specified, the histories for
          * either all metric alarms or all composite alarms are returned.</p> <p>CloudWatch

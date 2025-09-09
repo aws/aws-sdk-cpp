@@ -50,6 +50,11 @@ CustomParameter& CustomParameter::operator =(JsonView jsonValue)
     m_isOptional = jsonValue.GetBool("isOptional");
     m_isOptionalHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("isUpdateSupported"))
+  {
+    m_isUpdateSupported = jsonValue.GetBool("isUpdateSupported");
+    m_isUpdateSupportedHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("keyName"))
   {
     m_keyName = jsonValue.GetString("keyName");
@@ -89,6 +94,12 @@ JsonValue CustomParameter::Jsonize() const
   if(m_isOptionalHasBeenSet)
   {
    payload.WithBool("isOptional", m_isOptional);
+
+  }
+
+  if(m_isUpdateSupportedHasBeenSet)
+  {
+   payload.WithBool("isUpdateSupported", m_isUpdateSupported);
 
   }
 

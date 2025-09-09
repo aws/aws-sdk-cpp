@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int DATERANGE_HASH = HashingUtils::HashString("DATERANGE");
+        static const int SCTE35_ENHANCED_HASH = HashingUtils::HashString("SCTE35_ENHANCED");
 
 
         AdMarkerHls GetAdMarkerHlsForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == DATERANGE_HASH)
           {
             return AdMarkerHls::DATERANGE;
+          }
+          else if (hashCode == SCTE35_ENHANCED_HASH)
+          {
+            return AdMarkerHls::SCTE35_ENHANCED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case AdMarkerHls::DATERANGE:
             return "DATERANGE";
+          case AdMarkerHls::SCTE35_ENHANCED:
+            return "SCTE35_ENHANCED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

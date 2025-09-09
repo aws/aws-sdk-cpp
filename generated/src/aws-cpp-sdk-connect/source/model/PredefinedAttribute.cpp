@@ -35,6 +35,20 @@ PredefinedAttribute& PredefinedAttribute::operator =(JsonView jsonValue)
     m_values = jsonValue.GetObject("Values");
     m_valuesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Purposes"))
+  {
+    Aws::Utils::Array<JsonView> purposesJsonList = jsonValue.GetArray("Purposes");
+    for(unsigned purposesIndex = 0; purposesIndex < purposesJsonList.GetLength(); ++purposesIndex)
+    {
+      m_purposes.push_back(purposesJsonList[purposesIndex].AsString());
+    }
+    m_purposesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("AttributeConfiguration"))
+  {
+    m_attributeConfiguration = jsonValue.GetObject("AttributeConfiguration");
+    m_attributeConfigurationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
@@ -61,6 +75,23 @@ JsonValue PredefinedAttribute::Jsonize() const
   if(m_valuesHasBeenSet)
   {
    payload.WithObject("Values", m_values.Jsonize());
+
+  }
+
+  if(m_purposesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> purposesJsonList(m_purposes.size());
+   for(unsigned purposesIndex = 0; purposesIndex < purposesJsonList.GetLength(); ++purposesIndex)
+   {
+     purposesJsonList[purposesIndex].AsString(m_purposes[purposesIndex]);
+   }
+   payload.WithArray("Purposes", std::move(purposesJsonList));
+
+  }
+
+  if(m_attributeConfigurationHasBeenSet)
+  {
+   payload.WithObject("AttributeConfiguration", m_attributeConfiguration.Jsonize());
 
   }
 

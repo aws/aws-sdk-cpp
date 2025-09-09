@@ -101,6 +101,7 @@ namespace Aws
         static const int ml_trn1n_32xlarge_HASH = HashingUtils::HashString("ml.trn1n.32xlarge");
         static const int ml_p5_48xlarge_HASH = HashingUtils::HashString("ml.p5.48xlarge");
         static const int ml_p5en_48xlarge_HASH = HashingUtils::HashString("ml.p5en.48xlarge");
+        static const int ml_p6_b200_48xlarge_HASH = HashingUtils::HashString("ml.p6-b200.48xlarge");
         static const int ml_m6i_large_HASH = HashingUtils::HashString("ml.m6i.large");
         static const int ml_m6i_xlarge_HASH = HashingUtils::HashString("ml.m6i.xlarge");
         static const int ml_m6i_2xlarge_HASH = HashingUtils::HashString("ml.m6i.2xlarge");
@@ -595,6 +596,11 @@ namespace Aws
             enumValue = AppInstanceType::ml_p5en_48xlarge;
             return true;
           }
+          else if (hashCode == ml_p6_b200_48xlarge_HASH)
+          {
+            enumValue = AppInstanceType::ml_p6_b200_48xlarge;
+            return true;
+          }
           else if (hashCode == ml_m6i_large_HASH)
           {
             enumValue = AppInstanceType::ml_m6i_large;
@@ -795,16 +801,16 @@ namespace Aws
             enumValue = AppInstanceType::ml_r6i_4xlarge;
             return true;
           }
-          else if (hashCode == ml_r6i_8xlarge_HASH)
-          {
-            enumValue = AppInstanceType::ml_r6i_8xlarge;
-            return true;
-          }
           return false;
         }
         static bool GetEnumForNameHelper1(int hashCode, AppInstanceType& enumValue)
         {
-          if (hashCode == ml_r6i_12xlarge_HASH)
+          if (hashCode == ml_r6i_8xlarge_HASH)
+          {
+            enumValue = AppInstanceType::ml_r6i_8xlarge;
+            return true;
+          }
+          else if (hashCode == ml_r6i_12xlarge_HASH)
           {
             enumValue = AppInstanceType::ml_r6i_12xlarge;
             return true;
@@ -1254,6 +1260,9 @@ namespace Aws
           case AppInstanceType::ml_p5en_48xlarge:
             value = "ml.p5en.48xlarge";
             return true;
+          case AppInstanceType::ml_p6_b200_48xlarge:
+            value = "ml.p6-b200.48xlarge";
+            return true;
           case AppInstanceType::ml_m6i_large:
             value = "ml.m6i.large";
             return true;
@@ -1374,9 +1383,6 @@ namespace Aws
           case AppInstanceType::ml_r6i_4xlarge:
             value = "ml.r6i.4xlarge";
             return true;
-          case AppInstanceType::ml_r6i_8xlarge:
-            value = "ml.r6i.8xlarge";
-            return true;
           default:
             return false;
           }
@@ -1385,6 +1391,9 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppInstanceType::ml_r6i_8xlarge:
+            value = "ml.r6i.8xlarge";
+            return true;
           case AppInstanceType::ml_r6i_12xlarge:
             value = "ml.r6i.12xlarge";
             return true;

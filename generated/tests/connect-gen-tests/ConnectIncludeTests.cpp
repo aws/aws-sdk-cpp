@@ -458,6 +458,7 @@
 #include <aws/connect/model/InboundMessageSourceType.h>
 #include <aws/connect/model/InboundRawMessage.h>
 #include <aws/connect/model/InitiateAs.h>
+#include <aws/connect/model/InputPredefinedAttributeConfiguration.h>
 #include <aws/connect/model/Instance.h>
 #include <aws/connect/model/InstanceAttributeType.h>
 #include <aws/connect/model/InstanceReplicationStatus.h>
@@ -640,6 +641,7 @@
 #include <aws/connect/model/PhoneNumberWorkflowStatus.h>
 #include <aws/connect/model/PhoneType.h>
 #include <aws/connect/model/PredefinedAttribute.h>
+#include <aws/connect/model/PredefinedAttributeConfiguration.h>
 #include <aws/connect/model/PredefinedAttributeSearchCriteria.h>
 #include <aws/connect/model/PredefinedAttributeSummary.h>
 #include <aws/connect/model/PredefinedAttributeValues.h>

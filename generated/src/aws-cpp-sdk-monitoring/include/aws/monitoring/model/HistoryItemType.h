@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     ConfigurationUpdate,
     StateUpdate,
-    Action
+    Action,
+    AlarmContributorStateUpdate,
+    AlarmContributorAction
   };
 
 namespace HistoryItemTypeMapper

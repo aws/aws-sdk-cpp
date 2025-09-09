@@ -10,6 +10,7 @@
 #include <aws/monitoring/model/AlarmType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/monitoring/model/HistoryItemType.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -52,6 +53,19 @@ namespace Model
     void SetAlarmName(AlarmNameT&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::forward<AlarmNameT>(value); }
     template<typename AlarmNameT = Aws::String>
     AlarmHistoryItem& WithAlarmName(AlarmNameT&& value) { SetAlarmName(std::forward<AlarmNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The unique identifier of the alarm contributor associated with this history
+     * item, if applicable.</p>
+     */
+    inline const Aws::String& GetAlarmContributorId() const { return m_alarmContributorId; }
+    inline bool AlarmContributorIdHasBeenSet() const { return m_alarmContributorIdHasBeenSet; }
+    template<typename AlarmContributorIdT = Aws::String>
+    void SetAlarmContributorId(AlarmContributorIdT&& value) { m_alarmContributorIdHasBeenSet = true; m_alarmContributorId = std::forward<AlarmContributorIdT>(value); }
+    template<typename AlarmContributorIdT = Aws::String>
+    AlarmHistoryItem& WithAlarmContributorId(AlarmContributorIdT&& value) { SetAlarmContributorId(std::forward<AlarmContributorIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,10 +123,31 @@ namespace Model
     template<typename HistoryDataT = Aws::String>
     AlarmHistoryItem& WithHistoryData(HistoryDataT&& value) { SetHistoryData(std::forward<HistoryDataT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A map of attributes that describe the alarm contributor associated with this
+     * history item, providing context about the contributor's characteristics at the
+     * time of the event.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetAlarmContributorAttributes() const { return m_alarmContributorAttributes; }
+    inline bool AlarmContributorAttributesHasBeenSet() const { return m_alarmContributorAttributesHasBeenSet; }
+    template<typename AlarmContributorAttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetAlarmContributorAttributes(AlarmContributorAttributesT&& value) { m_alarmContributorAttributesHasBeenSet = true; m_alarmContributorAttributes = std::forward<AlarmContributorAttributesT>(value); }
+    template<typename AlarmContributorAttributesT = Aws::Map<Aws::String, Aws::String>>
+    AlarmHistoryItem& WithAlarmContributorAttributes(AlarmContributorAttributesT&& value) { SetAlarmContributorAttributes(std::forward<AlarmContributorAttributesT>(value)); return *this;}
+    template<typename AlarmContributorAttributesKeyT = Aws::String, typename AlarmContributorAttributesValueT = Aws::String>
+    AlarmHistoryItem& AddAlarmContributorAttributes(AlarmContributorAttributesKeyT&& key, AlarmContributorAttributesValueT&& value) {
+      m_alarmContributorAttributesHasBeenSet = true; m_alarmContributorAttributes.emplace(std::forward<AlarmContributorAttributesKeyT>(key), std::forward<AlarmContributorAttributesValueT>(value)); return *this;
+    }
+    ///@}
   private:
 
     Aws::String m_alarmName;
     bool m_alarmNameHasBeenSet = false;
+
+    Aws::String m_alarmContributorId;
+    bool m_alarmContributorIdHasBeenSet = false;
 
     AlarmType m_alarmType{AlarmType::NOT_SET};
     bool m_alarmTypeHasBeenSet = false;
@@ -128,6 +163,9 @@ namespace Model
 
     Aws::String m_historyData;
     bool m_historyDataHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_alarmContributorAttributes;
+    bool m_alarmContributorAttributesHasBeenSet = false;
   };
 
 } // namespace Model

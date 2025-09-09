@@ -33,6 +33,17 @@ Aws::String PutEnvironmentBlueprintConfigurationRequest::SerializePayload() cons
 
   }
 
+  if(m_globalParametersHasBeenSet)
+  {
+   JsonValue globalParametersJsonMap;
+   for(auto& globalParametersItem : m_globalParameters)
+   {
+     globalParametersJsonMap.WithString(globalParametersItem.first, globalParametersItem.second);
+   }
+   payload.WithObject("globalParameters", std::move(globalParametersJsonMap));
+
+  }
+
   if(m_manageAccessRoleArnHasBeenSet)
   {
    payload.WithString("manageAccessRoleArn", m_manageAccessRoleArn);

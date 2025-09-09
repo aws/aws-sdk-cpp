@@ -37,6 +37,12 @@ AlarmHistoryItem& AlarmHistoryItem::operator =(const XmlNode& xmlNode)
       m_alarmName = Aws::Utils::Xml::DecodeEscapedXmlText(alarmNameNode.GetText());
       m_alarmNameHasBeenSet = true;
     }
+    XmlNode alarmContributorIdNode = resultNode.FirstChild("AlarmContributorId");
+    if(!alarmContributorIdNode.IsNull())
+    {
+      m_alarmContributorId = Aws::Utils::Xml::DecodeEscapedXmlText(alarmContributorIdNode.GetText());
+      m_alarmContributorIdHasBeenSet = true;
+    }
     XmlNode alarmTypeNode = resultNode.FirstChild("AlarmType");
     if(!alarmTypeNode.IsNull())
     {
@@ -67,6 +73,23 @@ AlarmHistoryItem& AlarmHistoryItem::operator =(const XmlNode& xmlNode)
       m_historyData = Aws::Utils::Xml::DecodeEscapedXmlText(historyDataNode.GetText());
       m_historyDataHasBeenSet = true;
     }
+    XmlNode alarmContributorAttributesNode = resultNode.FirstChild("AlarmContributorAttributes");
+
+    if(!alarmContributorAttributesNode.IsNull())
+    {
+      XmlNode alarmContributorAttributesEntry = alarmContributorAttributesNode.FirstChild("entry");
+      m_alarmContributorAttributesHasBeenSet = !alarmContributorAttributesEntry.IsNull();
+      while(!alarmContributorAttributesEntry.IsNull())
+      {
+        XmlNode keyNode = alarmContributorAttributesEntry.FirstChild("key");
+        XmlNode valueNode = alarmContributorAttributesEntry.FirstChild("value");
+        m_alarmContributorAttributes[keyNode.GetText()] =
+            valueNode.GetText();
+        alarmContributorAttributesEntry = alarmContributorAttributesEntry.NextNode("entry");
+      }
+
+      m_alarmContributorAttributesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -77,6 +100,11 @@ void AlarmHistoryItem::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_alarmNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".AlarmName=" << StringUtils::URLEncode(m_alarmName.c_str()) << "&";
+  }
+
+  if(m_alarmContributorIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AlarmContributorId=" << StringUtils::URLEncode(m_alarmContributorId.c_str()) << "&";
   }
 
   if(m_alarmTypeHasBeenSet)
@@ -104,6 +132,19 @@ void AlarmHistoryItem::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".HistoryData=" << StringUtils::URLEncode(m_historyData.c_str()) << "&";
   }
 
+  if(m_alarmContributorAttributesHasBeenSet)
+  {
+      unsigned alarmContributorAttributesIdx = 1;
+      for(auto& item : m_alarmContributorAttributes)
+      {
+        oStream << location << index << locationValue << ".AlarmContributorAttributes.entry." << alarmContributorAttributesIdx << ".key="
+            << StringUtils::URLEncode(item.first.c_str()) << "&";
+        oStream << location << index << locationValue << ".AlarmContributorAttributes.entry." << alarmContributorAttributesIdx << ".value="
+            << StringUtils::URLEncode(item.second.c_str()) << "&";
+        alarmContributorAttributesIdx++;
+      }
+  }
+
 }
 
 void AlarmHistoryItem::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -111,6 +152,10 @@ void AlarmHistoryItem::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_alarmNameHasBeenSet)
   {
       oStream << location << ".AlarmName=" << StringUtils::URLEncode(m_alarmName.c_str()) << "&";
+  }
+  if(m_alarmContributorIdHasBeenSet)
+  {
+      oStream << location << ".AlarmContributorId=" << StringUtils::URLEncode(m_alarmContributorId.c_str()) << "&";
   }
   if(m_alarmTypeHasBeenSet)
   {
@@ -131,6 +176,18 @@ void AlarmHistoryItem::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_historyDataHasBeenSet)
   {
       oStream << location << ".HistoryData=" << StringUtils::URLEncode(m_historyData.c_str()) << "&";
+  }
+  if(m_alarmContributorAttributesHasBeenSet)
+  {
+      unsigned alarmContributorAttributesIdx = 1;
+      for(auto& item : m_alarmContributorAttributes)
+      {
+        oStream << location << ".AlarmContributorAttributes.entry." << alarmContributorAttributesIdx << ".key="
+            << StringUtils::URLEncode(item.first.c_str()) << "&";
+        oStream << location << ".AlarmContributorAttributes.entry." << alarmContributorAttributesIdx << ".value="
+            << StringUtils::URLEncode(item.second.c_str()) << "&";
+        alarmContributorAttributesIdx++;
+      }
   }
 }
 

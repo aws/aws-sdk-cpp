@@ -44,6 +44,20 @@ SegmentAttributeValue& SegmentAttributeValue::operator =(JsonView jsonValue)
     m_valueInteger = jsonValue.GetInteger("ValueInteger");
     m_valueIntegerHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ValueList"))
+  {
+    Aws::Utils::Array<JsonView> valueListJsonList = jsonValue.GetArray("ValueList");
+    for(unsigned valueListIndex = 0; valueListIndex < valueListJsonList.GetLength(); ++valueListIndex)
+    {
+      m_valueList.push_back(valueListJsonList[valueListIndex].AsObject());
+    }
+    m_valueListHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ValueArn"))
+  {
+    m_valueArn = jsonValue.GetString("ValueArn");
+    m_valueArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -71,6 +85,23 @@ JsonValue SegmentAttributeValue::Jsonize() const
   if(m_valueIntegerHasBeenSet)
   {
    payload.WithInteger("ValueInteger", m_valueInteger);
+
+  }
+
+  if(m_valueListHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> valueListJsonList(m_valueList.size());
+   for(unsigned valueListIndex = 0; valueListIndex < valueListJsonList.GetLength(); ++valueListIndex)
+   {
+     valueListJsonList[valueListIndex].AsObject(m_valueList[valueListIndex].Jsonize());
+   }
+   payload.WithArray("ValueList", std::move(valueListJsonList));
+
+  }
+
+  if(m_valueArnHasBeenSet)
+  {
+   payload.WithString("ValueArn", m_valueArn);
 
   }
 

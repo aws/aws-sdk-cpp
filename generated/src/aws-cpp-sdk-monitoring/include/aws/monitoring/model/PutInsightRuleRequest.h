@@ -103,7 +103,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specify <code>true</code> to have this rule evalute log events after they
+     * <p>Specify <code>true</code> to have this rule evaluate log events after they
      * have been transformed by <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html">Log
      * transformation</a>. If you specify <code>true</code>, then the log events in log

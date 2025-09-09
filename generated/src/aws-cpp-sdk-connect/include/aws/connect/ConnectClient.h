@@ -1106,12 +1106,23 @@ namespace Connect
 
         /**
          * <p>Creates a new predefined attribute for the specified Amazon Connect instance.
-         * <i>Predefined attributes</i> are attributes in an Amazon Connect instance that
-         * can be used to route contacts to an agent or pools of agents within a queue. For
-         * more information, see <a
+         * A <i>predefined attribute</i> is made up of a name and a value.</p> <p>For the
+         * predefined attributes per instance quota, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+         * Connect quotas</a>.</p> <p> <b>Use cases</b> </p> <p>Following are common uses
+         * cases for this API:</p> <ul> <li> <p>Create an attribute for routing proficiency
+         * (for example, agent certification) that has predefined values (for example, a
+         * list of possible certifications). For more information, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
-         * predefined attributes for routing contacts to agents</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * predefined attributes for routing contacts to agents</a>.</p> </li> <li>
+         * <p>Create an attribute for business unit name that has a list of predefined
+         * business unit names used in your organization. This is a use case where
+         * information for a contact varies between transfers or conferences. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+         * contact segment attributes</a>.</p> </li> </ul> <p> <b>Endpoints</b>: See <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+         * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePredefinedAttribute">AWS
          * API Reference</a></p>
          */
@@ -2750,13 +2761,22 @@ namespace Connect
         }
 
         /**
-         * <p>Describes a predefined attribute for the specified Amazon Connect instance.
-         * <i>Predefined attributes</i> are attributes in an Amazon Connect instance that
-         * can be used to route contacts to an agent or pools of agents within a queue. For
-         * more information, see <a
+         * <p>Describes a predefined attribute for the specified Amazon Connect instance. A
+         * <i>predefined attribute</i> is made up of a name and a value. You can use
+         * predefined attributes for:</p> <ul> <li> <p>Routing proficiency (for example,
+         * agent certification) that has predefined values (for example, a list of possible
+         * certifications). For more information, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
-         * predefined attributes for routing contacts to agents</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * predefined attributes for routing contacts to agents</a>.</p> </li> <li>
+         * <p>Contact information that varies between transfers or conferences, such as the
+         * name of the business unit handling the contact. For more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+         * contact segment attributes</a>.</p> </li> </ul> <p>For the predefined attributes
+         * per instance quota, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+         * Connect quotas</a>.</p> <p> <b>Endpoints</b>: See <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+         * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribePredefinedAttribute">AWS
          * API Reference</a></p>
          */
@@ -4658,13 +4678,22 @@ namespace Connect
         }
 
         /**
-         * <p>Lists predefined attributes for the specified Amazon Connect instance.
-         * <i>Predefined attributes</i> are attributes in an Amazon Connect instance that
-         * can be used to route contacts to an agent or pools of agents within a queue. For
-         * more information, see <a
+         * <p>Lists predefined attributes for the specified Amazon Connect instance. A
+         * <i>predefined attribute</i> is made up of a name and a value. You can use
+         * predefined attributes for:</p> <ul> <li> <p>Routing proficiency (for example,
+         * agent certification) that has predefined values (for example, a list of possible
+         * certifications). For more information, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
-         * predefined attributes for routing contacts to agents</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * predefined attributes for routing contacts to agents</a>.</p> </li> <li>
+         * <p>Contact information that varies between transfers or conferences, such as the
+         * name of the business unit handling the contact. For more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+         * contact segment attributes</a>.</p> </li> </ul> <p>For the predefined attributes
+         * per instance quota, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+         * Connect quotas</a>.</p> <p> <b>Endpoints</b>: See <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+         * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPredefinedAttributes">AWS
          * API Reference</a></p>
          */
@@ -5719,13 +5748,22 @@ namespace Connect
         }
 
         /**
-         * <p>Searches predefined attributes that meet certain criteria. <i>Predefined
-         * attributes</i> are attributes in an Amazon Connect instance that can be used to
-         * route contacts to an agent or pools of agents within a queue. For more
-         * information, see <a
+         * <p>Searches predefined attributes that meet certain criteria. A <i>predefined
+         * attribute</i> is made up of a name and a value. You can use predefined
+         * attributes for:</p> <ul> <li> <p>Routing proficiency (for example, agent
+         * certification) that has predefined values (for example, a list of possible
+         * certifications). For more information, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
-         * predefined attributes for routing contacts to agents</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * predefined attributes for routing contacts to agents</a>.</p> </li> <li>
+         * <p>Contact information that varies between transfers or conferences, such as the
+         * name of the business unit handling the contact. For more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+         * contact segment attributes</a>.</p> </li> </ul> <p>For the predefined attributes
+         * per instance quota, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+         * Connect quotas</a>.</p> <p> <b>Endpoints</b>: See <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+         * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchPredefinedAttributes">AWS
          * API Reference</a></p>
          */
@@ -7448,13 +7486,24 @@ namespace Connect
         }
 
         /**
-         * <p>Updates a predefined attribute for the specified Amazon Connect instance.
-         * <i>Predefined attributes</i> are attributes in an Amazon Connect instance that
-         * can be used to route contacts to an agent or pools of agents within a queue. For
-         * more information, see <a
+         * <p>Updates a predefined attribute for the specified Amazon Connect instance. A
+         * <i>predefined attribute</i> is made up of a name and a value.</p> <p>For the
+         * predefined attributes per instance quota, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+         * Connect quotas</a>.</p> <p> <b>Use cases</b> </p> <p>Following are common uses
+         * cases for this API:</p> <ul> <li> <p>Update routing proficiency (for example,
+         * agent certification) that has predefined values (for example, a list of possible
+         * certifications). For more information, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
-         * predefined attributes for routing contacts to agents</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * predefined attributes for routing contacts to agents</a>.</p> </li> <li>
+         * <p>Update an attribute for business unit name that has a list of predefined
+         * business unit names used in your organization. This is a use case where
+         * information for a contact varies between transfers or conferences. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+         * contact segment attributes</a>.</p> </li> </ul> <p> <b>Endpoints</b>: See <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+         * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePredefinedAttribute">AWS
          * API Reference</a></p>
          */

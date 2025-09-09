@@ -39,6 +39,7 @@
 #include <aws/datazone/model/CreateDomainUnitResult.h>
 #include <aws/datazone/model/CreateEnvironmentResult.h>
 #include <aws/datazone/model/CreateEnvironmentActionResult.h>
+#include <aws/datazone/model/CreateEnvironmentBlueprintResult.h>
 #include <aws/datazone/model/CreateEnvironmentProfileResult.h>
 #include <aws/datazone/model/CreateFormTypeResult.h>
 #include <aws/datazone/model/CreateGlossaryResult.h>
@@ -167,6 +168,7 @@
 #include <aws/datazone/model/UpdateDomainUnitResult.h>
 #include <aws/datazone/model/UpdateEnvironmentResult.h>
 #include <aws/datazone/model/UpdateEnvironmentActionResult.h>
+#include <aws/datazone/model/UpdateEnvironmentBlueprintResult.h>
 #include <aws/datazone/model/UpdateEnvironmentProfileResult.h>
 #include <aws/datazone/model/UpdateGlossaryResult.h>
 #include <aws/datazone/model/UpdateGlossaryTermResult.h>
@@ -241,6 +243,7 @@ namespace Aws
       class CreateDomainUnitRequest;
       class CreateEnvironmentRequest;
       class CreateEnvironmentActionRequest;
+      class CreateEnvironmentBlueprintRequest;
       class CreateEnvironmentProfileRequest;
       class CreateFormTypeRequest;
       class CreateGlossaryRequest;
@@ -266,6 +269,7 @@ namespace Aws
       class DeleteDomainUnitRequest;
       class DeleteEnvironmentRequest;
       class DeleteEnvironmentActionRequest;
+      class DeleteEnvironmentBlueprintRequest;
       class DeleteEnvironmentBlueprintConfigurationRequest;
       class DeleteEnvironmentProfileRequest;
       class DeleteFormTypeRequest;
@@ -375,6 +379,7 @@ namespace Aws
       class UpdateDomainUnitRequest;
       class UpdateEnvironmentRequest;
       class UpdateEnvironmentActionRequest;
+      class UpdateEnvironmentBlueprintRequest;
       class UpdateEnvironmentProfileRequest;
       class UpdateGlossaryRequest;
       class UpdateGlossaryTermRequest;
@@ -410,6 +415,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateDomainUnitResult, DataZoneError> CreateDomainUnitOutcome;
       typedef Aws::Utils::Outcome<CreateEnvironmentResult, DataZoneError> CreateEnvironmentOutcome;
       typedef Aws::Utils::Outcome<CreateEnvironmentActionResult, DataZoneError> CreateEnvironmentActionOutcome;
+      typedef Aws::Utils::Outcome<CreateEnvironmentBlueprintResult, DataZoneError> CreateEnvironmentBlueprintOutcome;
       typedef Aws::Utils::Outcome<CreateEnvironmentProfileResult, DataZoneError> CreateEnvironmentProfileOutcome;
       typedef Aws::Utils::Outcome<CreateFormTypeResult, DataZoneError> CreateFormTypeOutcome;
       typedef Aws::Utils::Outcome<CreateGlossaryResult, DataZoneError> CreateGlossaryOutcome;
@@ -435,6 +441,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteDomainUnitResult, DataZoneError> DeleteDomainUnitOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DataZoneError> DeleteEnvironmentOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DataZoneError> DeleteEnvironmentActionOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, DataZoneError> DeleteEnvironmentBlueprintOutcome;
       typedef Aws::Utils::Outcome<DeleteEnvironmentBlueprintConfigurationResult, DataZoneError> DeleteEnvironmentBlueprintConfigurationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DataZoneError> DeleteEnvironmentProfileOutcome;
       typedef Aws::Utils::Outcome<DeleteFormTypeResult, DataZoneError> DeleteFormTypeOutcome;
@@ -544,6 +551,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateDomainUnitResult, DataZoneError> UpdateDomainUnitOutcome;
       typedef Aws::Utils::Outcome<UpdateEnvironmentResult, DataZoneError> UpdateEnvironmentOutcome;
       typedef Aws::Utils::Outcome<UpdateEnvironmentActionResult, DataZoneError> UpdateEnvironmentActionOutcome;
+      typedef Aws::Utils::Outcome<UpdateEnvironmentBlueprintResult, DataZoneError> UpdateEnvironmentBlueprintOutcome;
       typedef Aws::Utils::Outcome<UpdateEnvironmentProfileResult, DataZoneError> UpdateEnvironmentProfileOutcome;
       typedef Aws::Utils::Outcome<UpdateGlossaryResult, DataZoneError> UpdateGlossaryOutcome;
       typedef Aws::Utils::Outcome<UpdateGlossaryTermResult, DataZoneError> UpdateGlossaryTermOutcome;
@@ -579,6 +587,7 @@ namespace Aws
       typedef std::future<CreateDomainUnitOutcome> CreateDomainUnitOutcomeCallable;
       typedef std::future<CreateEnvironmentOutcome> CreateEnvironmentOutcomeCallable;
       typedef std::future<CreateEnvironmentActionOutcome> CreateEnvironmentActionOutcomeCallable;
+      typedef std::future<CreateEnvironmentBlueprintOutcome> CreateEnvironmentBlueprintOutcomeCallable;
       typedef std::future<CreateEnvironmentProfileOutcome> CreateEnvironmentProfileOutcomeCallable;
       typedef std::future<CreateFormTypeOutcome> CreateFormTypeOutcomeCallable;
       typedef std::future<CreateGlossaryOutcome> CreateGlossaryOutcomeCallable;
@@ -604,6 +613,7 @@ namespace Aws
       typedef std::future<DeleteDomainUnitOutcome> DeleteDomainUnitOutcomeCallable;
       typedef std::future<DeleteEnvironmentOutcome> DeleteEnvironmentOutcomeCallable;
       typedef std::future<DeleteEnvironmentActionOutcome> DeleteEnvironmentActionOutcomeCallable;
+      typedef std::future<DeleteEnvironmentBlueprintOutcome> DeleteEnvironmentBlueprintOutcomeCallable;
       typedef std::future<DeleteEnvironmentBlueprintConfigurationOutcome> DeleteEnvironmentBlueprintConfigurationOutcomeCallable;
       typedef std::future<DeleteEnvironmentProfileOutcome> DeleteEnvironmentProfileOutcomeCallable;
       typedef std::future<DeleteFormTypeOutcome> DeleteFormTypeOutcomeCallable;
@@ -713,6 +723,7 @@ namespace Aws
       typedef std::future<UpdateDomainUnitOutcome> UpdateDomainUnitOutcomeCallable;
       typedef std::future<UpdateEnvironmentOutcome> UpdateEnvironmentOutcomeCallable;
       typedef std::future<UpdateEnvironmentActionOutcome> UpdateEnvironmentActionOutcomeCallable;
+      typedef std::future<UpdateEnvironmentBlueprintOutcome> UpdateEnvironmentBlueprintOutcomeCallable;
       typedef std::future<UpdateEnvironmentProfileOutcome> UpdateEnvironmentProfileOutcomeCallable;
       typedef std::future<UpdateGlossaryOutcome> UpdateGlossaryOutcomeCallable;
       typedef std::future<UpdateGlossaryTermOutcome> UpdateGlossaryTermOutcomeCallable;
@@ -751,6 +762,7 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::CreateDomainUnitRequest&, const Model::CreateDomainUnitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainUnitResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateEnvironmentRequest&, const Model::CreateEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEnvironmentResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateEnvironmentActionRequest&, const Model::CreateEnvironmentActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEnvironmentActionResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::CreateEnvironmentBlueprintRequest&, const Model::CreateEnvironmentBlueprintOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEnvironmentBlueprintResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateEnvironmentProfileRequest&, const Model::CreateEnvironmentProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEnvironmentProfileResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateFormTypeRequest&, const Model::CreateFormTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFormTypeResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::CreateGlossaryRequest&, const Model::CreateGlossaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGlossaryResponseReceivedHandler;
@@ -776,6 +788,7 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::DeleteDomainUnitRequest&, const Model::DeleteDomainUnitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainUnitResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteEnvironmentRequest&, const Model::DeleteEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEnvironmentResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteEnvironmentActionRequest&, const Model::DeleteEnvironmentActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEnvironmentActionResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::DeleteEnvironmentBlueprintRequest&, const Model::DeleteEnvironmentBlueprintOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEnvironmentBlueprintResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteEnvironmentBlueprintConfigurationRequest&, const Model::DeleteEnvironmentBlueprintConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEnvironmentBlueprintConfigurationResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteEnvironmentProfileRequest&, const Model::DeleteEnvironmentProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEnvironmentProfileResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteFormTypeRequest&, const Model::DeleteFormTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFormTypeResponseReceivedHandler;
@@ -885,6 +898,7 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::UpdateDomainUnitRequest&, const Model::UpdateDomainUnitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainUnitResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::UpdateEnvironmentRequest&, const Model::UpdateEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEnvironmentResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::UpdateEnvironmentActionRequest&, const Model::UpdateEnvironmentActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEnvironmentActionResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::UpdateEnvironmentBlueprintRequest&, const Model::UpdateEnvironmentBlueprintOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEnvironmentBlueprintResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::UpdateEnvironmentProfileRequest&, const Model::UpdateEnvironmentProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEnvironmentProfileResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::UpdateGlossaryRequest&, const Model::UpdateGlossaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGlossaryResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::UpdateGlossaryTermRequest&, const Model::UpdateGlossaryTermOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGlossaryTermResponseReceivedHandler;

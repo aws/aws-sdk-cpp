@@ -15,6 +15,7 @@
 #include <aws/monitoring/CloudWatchServiceClientModel.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/monitoring/model/ActionsSuppressedBy.h>
+#include <aws/monitoring/model/AlarmContributor.h>
 #include <aws/monitoring/model/AlarmHistoryItem.h>
 #include <aws/monitoring/model/AlarmType.h>
 #include <aws/monitoring/model/AnomalyDetector.h>
@@ -36,6 +37,8 @@
 #include <aws/monitoring/model/DeleteInsightRulesResult.h>
 #include <aws/monitoring/model/DeleteMetricStreamRequest.h>
 #include <aws/monitoring/model/DeleteMetricStreamResult.h>
+#include <aws/monitoring/model/DescribeAlarmContributorsRequest.h>
+#include <aws/monitoring/model/DescribeAlarmContributorsResult.h>
 #include <aws/monitoring/model/DescribeAlarmHistoryRequest.h>
 #include <aws/monitoring/model/DescribeAlarmHistoryResult.h>
 #include <aws/monitoring/model/DescribeAlarmsForMetricRequest.h>

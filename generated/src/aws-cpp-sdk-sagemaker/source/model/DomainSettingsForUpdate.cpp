@@ -64,6 +64,11 @@ DomainSettingsForUpdate& DomainSettingsForUpdate::operator =(JsonView jsonValue)
     m_unifiedStudioSettings = jsonValue.GetObject("UnifiedStudioSettings");
     m_unifiedStudioSettingsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("IpAddressType"))
+  {
+    m_ipAddressType = IPAddressTypeMapper::GetIPAddressTypeForName(jsonValue.GetString("IpAddressType"));
+    m_ipAddressTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -115,6 +120,11 @@ JsonValue DomainSettingsForUpdate::Jsonize() const
   {
    payload.WithObject("UnifiedStudioSettings", m_unifiedStudioSettings.Jsonize());
 
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+   payload.WithString("IpAddressType", IPAddressTypeMapper::GetNameForIPAddressType(m_ipAddressType));
   }
 
   return payload;

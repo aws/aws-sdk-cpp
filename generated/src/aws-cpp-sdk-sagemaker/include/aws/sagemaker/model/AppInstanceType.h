@@ -97,6 +97,7 @@ namespace Model
     ml_trn1n_32xlarge,
     ml_p5_48xlarge,
     ml_p5en_48xlarge,
+    ml_p6_b200_48xlarge,
     ml_m6i_large,
     ml_m6i_xlarge,
     ml_m6i_2xlarge,
