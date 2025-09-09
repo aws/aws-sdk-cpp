@@ -1166,7 +1166,7 @@ namespace Organizations
          * specified root, and then use this operation.</p> <p>This operation can be called
          * only from the organization's management account or by a member account that is a
          * delegated administrator.</p> <p> To view the status of available policy types in
-         * the organization, use <a>DescribeOrganization</a>.</p><p><h3>See Also:</h3>   <a
+         * the organization, use <a>ListRoots</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisablePolicyType">AWS
          * API Reference</a></p>
          */
@@ -1294,8 +1294,7 @@ namespace Organizations
          * organization's management account or by a member account that is a delegated
          * administrator.</p> <p>You can enable a policy type in a root only if that policy
          * type is available in the organization. To view the status of available policy
-         * types in the organization, use <a>DescribeOrganization</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * types in the organization, use <a>ListRoots</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnablePolicyType">AWS
          * API Reference</a></p>
          */

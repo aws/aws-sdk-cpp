@@ -112,6 +112,8 @@
 #include <aws/datazone/model/CreateDomainUnitResult.h>
 #include <aws/datazone/model/CreateEnvironmentActionRequest.h>
 #include <aws/datazone/model/CreateEnvironmentActionResult.h>
+#include <aws/datazone/model/CreateEnvironmentBlueprintRequest.h>
+#include <aws/datazone/model/CreateEnvironmentBlueprintResult.h>
 #include <aws/datazone/model/CreateEnvironmentProfilePolicyGrantDetail.h>
 #include <aws/datazone/model/CreateEnvironmentProfileRequest.h>
 #include <aws/datazone/model/CreateEnvironmentProfileResult.h>
@@ -191,6 +193,7 @@
 #include <aws/datazone/model/DeleteEnvironmentActionRequest.h>
 #include <aws/datazone/model/DeleteEnvironmentBlueprintConfigurationRequest.h>
 #include <aws/datazone/model/DeleteEnvironmentBlueprintConfigurationResult.h>
+#include <aws/datazone/model/DeleteEnvironmentBlueprintRequest.h>
 #include <aws/datazone/model/DeleteEnvironmentProfileRequest.h>
 #include <aws/datazone/model/DeleteEnvironmentRequest.h>
 #include <aws/datazone/model/DeleteFormTypeRequest.h>
@@ -668,6 +671,8 @@
 #include <aws/datazone/model/UpdateDomainUnitResult.h>
 #include <aws/datazone/model/UpdateEnvironmentActionRequest.h>
 #include <aws/datazone/model/UpdateEnvironmentActionResult.h>
+#include <aws/datazone/model/UpdateEnvironmentBlueprintRequest.h>
+#include <aws/datazone/model/UpdateEnvironmentBlueprintResult.h>
 #include <aws/datazone/model/UpdateEnvironmentProfileRequest.h>
 #include <aws/datazone/model/UpdateEnvironmentProfileResult.h>
 #include <aws/datazone/model/UpdateEnvironmentRequest.h>

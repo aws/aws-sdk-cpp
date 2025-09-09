@@ -87,6 +87,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>Region-agnostic environment blueprint parameters. </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetGlobalParameters() const { return m_globalParameters; }
+    inline bool GlobalParametersHasBeenSet() const { return m_globalParametersHasBeenSet; }
+    template<typename GlobalParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetGlobalParameters(GlobalParametersT&& value) { m_globalParametersHasBeenSet = true; m_globalParameters = std::forward<GlobalParametersT>(value); }
+    template<typename GlobalParametersT = Aws::Map<Aws::String, Aws::String>>
+    PutEnvironmentBlueprintConfigurationRequest& WithGlobalParameters(GlobalParametersT&& value) { SetGlobalParameters(std::forward<GlobalParametersT>(value)); return *this;}
+    template<typename GlobalParametersKeyT = Aws::String, typename GlobalParametersValueT = Aws::String>
+    PutEnvironmentBlueprintConfigurationRequest& AddGlobalParameters(GlobalParametersKeyT&& key, GlobalParametersValueT&& value) {
+      m_globalParametersHasBeenSet = true; m_globalParameters.emplace(std::forward<GlobalParametersKeyT>(key), std::forward<GlobalParametersValueT>(value)); return *this;
+    }
+    ///@}
+
+    ///@{
+    /**
      * <p>The ARN of the manage access role.</p>
      */
     inline const Aws::String& GetManageAccessRoleArn() const { return m_manageAccessRoleArn; }
@@ -151,6 +167,9 @@ namespace Model
 
     Aws::String m_environmentRolePermissionBoundary;
     bool m_environmentRolePermissionBoundaryHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_globalParameters;
+    bool m_globalParametersHasBeenSet = false;
 
     Aws::String m_manageAccessRoleArn;
     bool m_manageAccessRoleArnHasBeenSet = false;

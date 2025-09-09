@@ -7,6 +7,8 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connect/model/PredefinedAttributeValues.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/connect/model/PredefinedAttributeConfiguration.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -65,6 +67,35 @@ namespace Model
 
     ///@{
     /**
+     * <p>Values that enable you to categorize your predefined attributes. You can use
+     * them in custom UI elements across the Amazon Connect admin website.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetPurposes() const { return m_purposes; }
+    inline bool PurposesHasBeenSet() const { return m_purposesHasBeenSet; }
+    template<typename PurposesT = Aws::Vector<Aws::String>>
+    void SetPurposes(PurposesT&& value) { m_purposesHasBeenSet = true; m_purposes = std::forward<PurposesT>(value); }
+    template<typename PurposesT = Aws::Vector<Aws::String>>
+    PredefinedAttribute& WithPurposes(PurposesT&& value) { SetPurposes(std::forward<PurposesT>(value)); return *this;}
+    template<typename PurposesT = Aws::String>
+    PredefinedAttribute& AddPurposes(PurposesT&& value) { m_purposesHasBeenSet = true; m_purposes.emplace_back(std::forward<PurposesT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Custom metadata that is associated to predefined attributes to control
+     * behavior in upstream services, such as controlling how a predefined attribute
+     * should be displayed in the Amazon Connect admin website.</p>
+     */
+    inline const PredefinedAttributeConfiguration& GetAttributeConfiguration() const { return m_attributeConfiguration; }
+    inline bool AttributeConfigurationHasBeenSet() const { return m_attributeConfigurationHasBeenSet; }
+    template<typename AttributeConfigurationT = PredefinedAttributeConfiguration>
+    void SetAttributeConfiguration(AttributeConfigurationT&& value) { m_attributeConfigurationHasBeenSet = true; m_attributeConfiguration = std::forward<AttributeConfigurationT>(value); }
+    template<typename AttributeConfigurationT = PredefinedAttributeConfiguration>
+    PredefinedAttribute& WithAttributeConfiguration(AttributeConfigurationT&& value) { SetAttributeConfiguration(std::forward<AttributeConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Last modified time.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
@@ -93,6 +124,12 @@ namespace Model
 
     PredefinedAttributeValues m_values;
     bool m_valuesHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_purposes;
+    bool m_purposesHasBeenSet = false;
+
+    PredefinedAttributeConfiguration m_attributeConfiguration;
+    bool m_attributeConfigurationHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;

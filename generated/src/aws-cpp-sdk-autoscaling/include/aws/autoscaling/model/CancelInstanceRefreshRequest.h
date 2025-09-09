@@ -47,10 +47,26 @@ namespace Model
     template<typename AutoScalingGroupNameT = Aws::String>
     CancelInstanceRefreshRequest& WithAutoScalingGroupName(AutoScalingGroupNameT&& value) { SetAutoScalingGroupName(std::forward<AutoScalingGroupNameT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>When cancelling an instance refresh, this indicates whether to wait for
+     * in-flight launches and terminations to complete. The default is true.</p>
+     * <p>When set to false, Amazon EC2 Auto Scaling cancels the instance refresh
+     * without waiting for any pending launches or terminations to complete.</p>
+     */
+    inline bool GetWaitForTransitioningInstances() const { return m_waitForTransitioningInstances; }
+    inline bool WaitForTransitioningInstancesHasBeenSet() const { return m_waitForTransitioningInstancesHasBeenSet; }
+    inline void SetWaitForTransitioningInstances(bool value) { m_waitForTransitioningInstancesHasBeenSet = true; m_waitForTransitioningInstances = value; }
+    inline CancelInstanceRefreshRequest& WithWaitForTransitioningInstances(bool value) { SetWaitForTransitioningInstances(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet = false;
+
+    bool m_waitForTransitioningInstances{false};
+    bool m_waitForTransitioningInstancesHasBeenSet = false;
   };
 
 } // namespace Model

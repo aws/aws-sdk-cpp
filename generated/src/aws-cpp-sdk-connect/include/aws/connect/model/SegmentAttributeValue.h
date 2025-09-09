@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -77,6 +78,34 @@ namespace Model
     inline void SetValueInteger(int value) { m_valueIntegerHasBeenSet = true; m_valueInteger = value; }
     inline SegmentAttributeValue& WithValueInteger(int value) { SetValueInteger(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The value of a segment attribute. This is only supported for system-defined
+     * attributes, not for user-defined attributes.</p>
+     */
+    inline const Aws::Vector<SegmentAttributeValue>& GetValueList() const { return m_valueList; }
+    inline bool ValueListHasBeenSet() const { return m_valueListHasBeenSet; }
+    template<typename ValueListT = Aws::Vector<SegmentAttributeValue>>
+    void SetValueList(ValueListT&& value) { m_valueListHasBeenSet = true; m_valueList = std::forward<ValueListT>(value); }
+    template<typename ValueListT = Aws::Vector<SegmentAttributeValue>>
+    SegmentAttributeValue& WithValueList(ValueListT&& value) { SetValueList(std::forward<ValueListT>(value)); return *this;}
+    template<typename ValueListT = SegmentAttributeValue>
+    SegmentAttributeValue& AddValueList(ValueListT&& value) { m_valueListHasBeenSet = true; m_valueList.emplace_back(std::forward<ValueListT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The value of a segment attribute that has to be a valid ARN. This is only
+     * supported for system-defined attributes, not for user-defined attributes.</p>
+     */
+    inline const Aws::String& GetValueArn() const { return m_valueArn; }
+    inline bool ValueArnHasBeenSet() const { return m_valueArnHasBeenSet; }
+    template<typename ValueArnT = Aws::String>
+    void SetValueArn(ValueArnT&& value) { m_valueArnHasBeenSet = true; m_valueArn = std::forward<ValueArnT>(value); }
+    template<typename ValueArnT = Aws::String>
+    SegmentAttributeValue& WithValueArn(ValueArnT&& value) { SetValueArn(std::forward<ValueArnT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_valueString;
@@ -87,6 +116,12 @@ namespace Model
 
     int m_valueInteger{0};
     bool m_valueIntegerHasBeenSet = false;
+
+    Aws::Vector<SegmentAttributeValue> m_valueList;
+    bool m_valueListHasBeenSet = false;
+
+    Aws::String m_valueArn;
+    bool m_valueArnHasBeenSet = false;
   };
 
 } // namespace Model

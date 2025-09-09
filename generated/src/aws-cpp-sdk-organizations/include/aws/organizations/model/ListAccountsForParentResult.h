@@ -36,7 +36,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of the accounts in the specified root or OU.</p>
+     * <p>A list of the accounts in the specified root or OU.</p>  <p>The
+     * <code>Status</code> parameter in the API response will be retired on September
+     * 9, 2026. Although both the account <code>State</code> and account
+     * <code>Status</code> parameters are currently available in the Organizations APIs
+     * (<code>DescribeAccount</code>, <code>ListAccounts</code>,
+     * <code>ListAccountsForParent</code>), we recommend that you update your scripts
+     * or other code to use the <code>State</code> parameter instead of
+     * <code>Status</code> before September 9, 2026.</p> 
      */
     inline const Aws::Vector<Account>& GetAccounts() const { return m_accounts; }
     template<typename AccountsT = Aws::Vector<Account>>

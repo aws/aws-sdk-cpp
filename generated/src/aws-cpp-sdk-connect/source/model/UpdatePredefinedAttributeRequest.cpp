@@ -22,6 +22,23 @@ Aws::String UpdatePredefinedAttributeRequest::SerializePayload() const
 
   }
 
+  if(m_purposesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> purposesJsonList(m_purposes.size());
+   for(unsigned purposesIndex = 0; purposesIndex < purposesJsonList.GetLength(); ++purposesIndex)
+   {
+     purposesJsonList[purposesIndex].AsString(m_purposes[purposesIndex]);
+   }
+   payload.WithArray("Purposes", std::move(purposesJsonList));
+
+  }
+
+  if(m_attributeConfigurationHasBeenSet)
+  {
+   payload.WithObject("AttributeConfiguration", m_attributeConfiguration.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

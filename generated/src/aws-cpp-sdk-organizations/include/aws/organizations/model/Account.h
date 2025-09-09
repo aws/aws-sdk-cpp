@@ -7,6 +7,7 @@
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/organizations/model/AccountStatus.h>
+#include <aws/organizations/model/AccountState.h>
 #include <aws/organizations/model/AccountJoinedMethod.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
@@ -102,12 +103,35 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the account in the organization.</p>
+     * <p>The status of the account in the organization.</p>  <p>The
+     * <code>Status</code> parameter in the <code>Account</code> object will be retired
+     * on September 9, 2026. Although both the account <code>State</code> and account
+     * <code>Status</code> parameters are currently available in the Organizations APIs
+     * (<code>DescribeAccount</code>, <code>ListAccounts</code>,
+     * <code>ListAccountsForParent</code>), we recommend that you update your scripts
+     * or other code to use the <code>State</code> parameter instead of
+     * <code>Status</code> before September 9, 2026.</p> 
      */
     inline AccountStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
     inline void SetStatus(AccountStatus value) { m_statusHasBeenSet = true; m_status = value; }
     inline Account& WithStatus(AccountStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Each state represents a specific phase in the account lifecycle. Use this
+     * information to manage account access, automate workflows, or trigger actions
+     * based on account state changes.</p> <p>For more information about account states
+     * and their implications, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_account_state.html">Monitor
+     * the state of your Amazon Web Services accounts </a> in the <i>Organizations User
+     * Guide</i>.</p>
+     */
+    inline AccountState GetState() const { return m_state; }
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+    inline void SetState(AccountState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline Account& WithState(AccountState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -147,6 +171,9 @@ namespace Model
 
     AccountStatus m_status{AccountStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    AccountState m_state{AccountState::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
     AccountJoinedMethod m_joinedMethod{AccountJoinedMethod::NOT_SET};
     bool m_joinedMethodHasBeenSet = false;

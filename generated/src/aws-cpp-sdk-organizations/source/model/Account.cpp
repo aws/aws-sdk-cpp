@@ -50,6 +50,11 @@ Account& Account::operator =(JsonView jsonValue)
     m_status = AccountStatusMapper::GetAccountStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("State"))
+  {
+    m_state = AccountStateMapper::GetAccountStateForName(jsonValue.GetString("State"));
+    m_stateHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("JoinedMethod"))
   {
     m_joinedMethod = AccountJoinedMethodMapper::GetAccountJoinedMethodForName(jsonValue.GetString("JoinedMethod"));
@@ -94,6 +99,11 @@ JsonValue Account::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", AccountStatusMapper::GetNameForAccountStatus(m_status));
+  }
+
+  if(m_stateHasBeenSet)
+  {
+   payload.WithString("State", AccountStateMapper::GetNameForAccountState(m_state));
   }
 
   if(m_joinedMethodHasBeenSet)

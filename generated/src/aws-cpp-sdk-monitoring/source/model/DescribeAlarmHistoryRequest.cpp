@@ -19,6 +19,11 @@ Aws::String DescribeAlarmHistoryRequest::SerializePayload() const
     ss << "AlarmName=" << StringUtils::URLEncode(m_alarmName.c_str()) << "&";
   }
 
+  if(m_alarmContributorIdHasBeenSet)
+  {
+    ss << "AlarmContributorId=" << StringUtils::URLEncode(m_alarmContributorId.c_str()) << "&";
+  }
+
   if(m_alarmTypesHasBeenSet)
   {
     if (m_alarmTypes.empty())

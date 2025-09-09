@@ -133,7 +133,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies that this is a create glossary policy.</p>
+     * <p> Specifies that this is a create glossary policy.</p>
      */
     inline const CreateGlossaryPolicyGrantDetail& GetCreateGlossary() const { return m_createGlossary; }
     inline bool CreateGlossaryHasBeenSet() const { return m_createGlossaryHasBeenSet; }

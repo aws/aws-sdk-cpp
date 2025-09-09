@@ -55,6 +55,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier of a specific alarm contributor to filter the alarm
+     * history results.</p>
+     */
+    inline const Aws::String& GetAlarmContributorId() const { return m_alarmContributorId; }
+    inline bool AlarmContributorIdHasBeenSet() const { return m_alarmContributorIdHasBeenSet; }
+    template<typename AlarmContributorIdT = Aws::String>
+    void SetAlarmContributorId(AlarmContributorIdT&& value) { m_alarmContributorIdHasBeenSet = true; m_alarmContributorId = std::forward<AlarmContributorIdT>(value); }
+    template<typename AlarmContributorIdT = Aws::String>
+    DescribeAlarmHistoryRequest& WithAlarmContributorId(AlarmContributorIdT&& value) { SetAlarmContributorId(std::forward<AlarmContributorIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Use this parameter to specify whether you want the operation to return metric
      * alarms or composite alarms. If you omit this parameter, only metric alarms are
      * returned.</p>
@@ -141,6 +154,9 @@ namespace Model
 
     Aws::String m_alarmName;
     bool m_alarmNameHasBeenSet = false;
+
+    Aws::String m_alarmContributorId;
+    bool m_alarmContributorIdHasBeenSet = false;
 
     Aws::Vector<AlarmType> m_alarmTypes;
     bool m_alarmTypesHasBeenSet = false;

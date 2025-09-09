@@ -16,7 +16,8 @@ namespace Model
   enum class AdMarkerHls
   {
     NOT_SET,
-    DATERANGE
+    DATERANGE,
+    SCTE35_ENHANCED
   };
 
 namespace AdMarkerHlsMapper

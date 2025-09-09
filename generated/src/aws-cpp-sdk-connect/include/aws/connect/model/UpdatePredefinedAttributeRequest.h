@@ -8,6 +8,8 @@
 #include <aws/connect/ConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connect/model/PredefinedAttributeValues.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/connect/model/InputPredefinedAttributeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -69,6 +71,35 @@ namespace Model
     template<typename ValuesT = PredefinedAttributeValues>
     UpdatePredefinedAttributeRequest& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Values that enable you to categorize your predefined attributes. You can use
+     * them in custom UI elements across the Amazon Connect admin website.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetPurposes() const { return m_purposes; }
+    inline bool PurposesHasBeenSet() const { return m_purposesHasBeenSet; }
+    template<typename PurposesT = Aws::Vector<Aws::String>>
+    void SetPurposes(PurposesT&& value) { m_purposesHasBeenSet = true; m_purposes = std::forward<PurposesT>(value); }
+    template<typename PurposesT = Aws::Vector<Aws::String>>
+    UpdatePredefinedAttributeRequest& WithPurposes(PurposesT&& value) { SetPurposes(std::forward<PurposesT>(value)); return *this;}
+    template<typename PurposesT = Aws::String>
+    UpdatePredefinedAttributeRequest& AddPurposes(PurposesT&& value) { m_purposesHasBeenSet = true; m_purposes.emplace_back(std::forward<PurposesT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Custom metadata that is associated to predefined attributes to control
+     * behavior in upstream services, such as controlling how a predefined attribute
+     * should be displayed in the Amazon Connect admin website.</p>
+     */
+    inline const InputPredefinedAttributeConfiguration& GetAttributeConfiguration() const { return m_attributeConfiguration; }
+    inline bool AttributeConfigurationHasBeenSet() const { return m_attributeConfigurationHasBeenSet; }
+    template<typename AttributeConfigurationT = InputPredefinedAttributeConfiguration>
+    void SetAttributeConfiguration(AttributeConfigurationT&& value) { m_attributeConfigurationHasBeenSet = true; m_attributeConfiguration = std::forward<AttributeConfigurationT>(value); }
+    template<typename AttributeConfigurationT = InputPredefinedAttributeConfiguration>
+    UpdatePredefinedAttributeRequest& WithAttributeConfiguration(AttributeConfigurationT&& value) { SetAttributeConfiguration(std::forward<AttributeConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_instanceId;
@@ -79,6 +110,12 @@ namespace Model
 
     PredefinedAttributeValues m_values;
     bool m_valuesHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_purposes;
+    bool m_purposesHasBeenSet = false;
+
+    InputPredefinedAttributeConfiguration m_attributeConfiguration;
+    bool m_attributeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model
