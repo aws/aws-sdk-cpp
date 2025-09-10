@@ -187,4 +187,9 @@ public class CborCppClientGenerator extends CppClientGenerator {
             }
         }).collect(Collectors.toList());
     }
+
+    @Override
+    protected SdkFileEntry generateEventStreamHandlerSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry, final Map<String, CppShapeInformation> shapeInformationCache) {
+        throw new RuntimeException("Event stream handlers are not currently implemented for CBOR");
+    }
 }
