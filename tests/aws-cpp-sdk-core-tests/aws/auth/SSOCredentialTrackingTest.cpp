@@ -37,24 +37,26 @@ Aws::String computeHashedStartUrl(const Aws::String& startUrl) {
   return HashingUtils::HexEncode(sha1); // lower-case hex the same as provider
 }
 
-// Minimal AWSClient wrapper so we can make a signed call and inspect User-Agent
-class CredentialTestingClient : public AWSClient {
+class CredentialTestingClient : public AWSClient
+{
 public:
-  explicit CredentialTestingClient(const ClientConfiguration& config,
-                                   const std::shared_ptr<AWSCredentialsProvider>& provider)
-      : AWSClient(config,
-                  Aws::MakeShared<Aws::Client::AWSAuthV4Signer>(TEST_LOG_TAG, provider, "service", config.region),
-                  Aws::MakeShared<MockAWSErrorMarshaller>(TEST_LOG_TAG)) {}
+  CredentialTestingClient() : AWSClient(ClientConfiguration(), Aws::MakeShared<AWSAuthV4Signer>(TEST_LOG_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(TEST_LOG_TAG),
+      "rds", Aws::Region::US_EAST_1), Aws::MakeShared<XmlErrorMarshaller>(TEST_LOG_TAG)) {}
+  CredentialTestingClient(const Aws::Client::ClientConfiguration& configuration, const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer) :
+      AWSClient(configuration, signer, Aws::MakeShared<XmlErrorMarshaller>(TEST_LOG_TAG)) {}
 
-  HttpResponseOutcome MakeRequest(const Aws::AmazonWebServiceRequest& request) {
-    URI uri("https://test.com");
-    return AttemptExhaustively(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  Aws::Client::HttpResponseOutcome PublicAttemptExhaustively(
+        const Aws::Http::URI& uri,
+        const Aws::AmazonWebServiceRequest& request,
+        Http::HttpMethod method,
+        const char* signerName) {
+    return AttemptExhaustively(uri.GetURIString(), request, method, signerName);
   }
-  const char* GetServiceClientName() const override { return "CredentialTestingClient"; }
 
-protected:
-  AWSError<CoreErrors> BuildAWSError(const std::shared_ptr<HttpResponse>&) const override {
-    return {CoreErrors::UNKNOWN, false};
+  Aws::Client::AWSError<Aws::Client::CoreErrors> BuildAWSError(const std::shared_ptr<Aws::Http::HttpResponse>&) const override
+  {
+    Aws::Client::AWSError<Aws::Client::CoreErrors> error;
+    return error;
   }
 };
 
@@ -159,7 +161,7 @@ protected:
 
   void RunTestWithCredentialsProvider(const std::shared_ptr<AWSCredentialsProvider>& provider, const Aws::String& marker) {
     // 200 OK dummy response for the signed call
-    auto req = CreateHttpRequest(URI("dummy"), HttpMethod::HTTP_POST, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    auto req = CreateHttpRequest(URI("https://test-service.us-east-1.amazonaws.com/"), HttpMethod::HTTP_POST, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     auto ok  = Aws::MakeShared<StandardHttpResponse>(TEST_LOG_TAG, req);
     ok->SetResponseCode(HttpResponseCode::OK);
     ok->GetResponseBody() << "{}";
@@ -169,9 +171,13 @@ protected:
     ClientConfiguration cfg(initVals);
     cfg.region = Aws::Region::US_EAST_1;
 
-    CredentialTestingClient client(cfg, provider);
+    auto signer = Aws::MakeShared<Aws::Client::AWSAuthV4Signer>(TEST_LOG_TAG, provider, "test-service", cfg.region);
+    CredentialTestingClient client(cfg, signer);
     AmazonWebServiceRequestMock mockReq;
-    auto outcome = client.MakeRequest(mockReq);
+    
+    // Use public AWS client method to make a request
+    URI uri("https://test-service.us-east-1.amazonaws.com/");
+    auto outcome = client.PublicAttemptExhaustively(uri, mockReq, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
     ASSERT_TRUE(outcome.IsSuccess());
 
     auto last = mockHttpClient->GetMostRecentHttpRequest();
