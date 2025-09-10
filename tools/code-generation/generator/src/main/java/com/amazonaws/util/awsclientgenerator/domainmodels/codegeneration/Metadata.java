@@ -17,12 +17,12 @@ import java.util.Objects;
 @Data
 public class Metadata {
     private static List<String> supportedProtocols = ImmutableList.of(
-            "smithy-rpc-v2-cbor",
             "json",
             "rest-json",
             "rest-xml",
             "query",
-            "ec2"
+            "ec2",
+            "smithy-rpc-v2-cbor"
     );
 
     private String apiVersion;
