@@ -38,8 +38,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The targets to define the scope to be monitored. Currently, a target is an
-     * Amazon Web Services account.</p>
+     * <p>The targets to define the scope to be monitored. A target is an array of
+     * targetResources, which are currently Region-account pairs, defined by
+     * targetResource constructs.</p>
      */
     inline const Aws::Vector<TargetResource>& GetTargets() const { return m_targets; }
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }

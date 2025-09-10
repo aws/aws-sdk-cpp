@@ -25,9 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>A target identifier is a pair of identifying information for a resource that
-   * is included in a target. A target identifier includes the target ID and the
-   * target type.</p><p><h3>See Also:</h3>   <a
+   * <p>A target identifier is a pair of identifying information for a scope that is
+   * included in a target. A target identifier is made up of a target ID and a target
+   * type. Currently the target ID is always an account ID and the target type is
+   * always ACCOUNT.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/TargetIdentifier">AWS
    * API Reference</a></p>
    */
@@ -42,7 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier for a target.</p>
+     * <p>The identifier for a target, which is currently always an account ID .</p>
      */
     inline const TargetId& GetTargetId() const { return m_targetId; }
     inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
@@ -54,8 +55,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of a target. A target type is currently always <code>ACCOUNT</code>
-     * because a target is currently a single Amazon Web Services account.</p>
+     * <p>The type of a target. A target type is currently always
+     * <code>ACCOUNT</code>.</p>
      */
     inline TargetType GetTargetType() const { return m_targetType; }
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }

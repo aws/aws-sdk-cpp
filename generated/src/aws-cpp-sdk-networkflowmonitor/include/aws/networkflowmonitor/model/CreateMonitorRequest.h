@@ -51,11 +51,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The local resources to monitor. A local resource, in a bi-directional flow of
-     * a workload, is the host where the agent is installed. For example, if a workload
-     * consists of an interaction between a web service and a backend database (for
-     * example, Amazon Relational Database Service (RDS)), the EC2 instance hosting the
-     * web service, which also runs the agent, is the local resource.</p>
+     * <p>The local resources to monitor. A local resource in a workload is the
+     * location of the host, or hosts, where the Network Flow Monitor agent is
+     * installed. For example, if a workload consists of an interaction between a web
+     * service and a backend database (for example, Amazon Dynamo DB), the subnet with
+     * the EC2 instance that hosts the web service, which also runs the agent, is the
+     * local resource.</p> <p>Be aware that all local resources must belong to the
+     * current Region.</p>
      */
     inline const Aws::Vector<MonitorLocalResource>& GetLocalResources() const { return m_localResources; }
     inline bool LocalResourcesHasBeenSet() const { return m_localResourcesHasBeenSet; }
@@ -71,7 +73,17 @@ namespace Model
     /**
      * <p>The remote resources to monitor. A remote resource is the other endpoint in
      * the bi-directional flow of a workload, with a local resource. For example,
-     * Amazon Relational Database Service (RDS) can be a remote resource.</p>
+     * Amazon Dynamo DB can be a remote resource.</p> <p>When you specify remote
+     * resources, be aware that specific combinations of resources are allowed and
+     * others are not, including the following constraints:</p> <ul> <li> <p>All remote
+     * resources that you specify must all belong to a single Region.</p> </li> <li>
+     * <p>If you specify Amazon Web Services services as remote resources, any other
+     * remote resources that you specify must be in the current Region.</p> </li> <li>
+     * <p>When you specify a remote resource for another Region, you can only specify
+     * the <code>Region</code> resource type. You cannot specify a subnet, VPC, or
+     * Availability Zone in another Region.</p> </li> <li> <p>If you leave the
+     * <code>RemoteResources</code> parameter empty, the monitor will include all
+     * network flows that terminate in the current Region.</p> </li> </ul>
      */
     inline const Aws::Vector<MonitorRemoteResource>& GetRemoteResources() const { return m_remoteResources; }
     inline bool RemoteResourcesHasBeenSet() const { return m_remoteResourcesHasBeenSet; }

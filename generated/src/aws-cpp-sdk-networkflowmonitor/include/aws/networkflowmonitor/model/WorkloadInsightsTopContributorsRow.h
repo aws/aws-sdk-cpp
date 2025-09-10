@@ -100,7 +100,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of a remote resource.</p>
+     * <p>The identifier of a remote resource. For a VPC or subnet, this identifier is
+     * the VPC Amazon Resource Name (ARN) or subnet ARN. For an Availability Zone, this
+     * identifier is the AZ name, for example, us-west-2b. For an Amazon Web Services
+     * Region , this identifier is the Region name, for example, us-west-2.</p>
      */
     inline const Aws::String& GetRemoteIdentifier() const { return m_remoteIdentifier; }
     inline bool RemoteIdentifierHasBeenSet() const { return m_remoteIdentifierHasBeenSet; }

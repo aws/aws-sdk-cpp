@@ -44,6 +44,17 @@ Aws::String ImportKeyRequest::SerializePayload() const
 
   }
 
+  if(m_replicationRegionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> replicationRegionsJsonList(m_replicationRegions.size());
+   for(unsigned replicationRegionsIndex = 0; replicationRegionsIndex < replicationRegionsJsonList.GetLength(); ++replicationRegionsIndex)
+   {
+     replicationRegionsJsonList[replicationRegionsIndex].AsString(m_replicationRegions[replicationRegionsIndex]);
+   }
+   payload.WithArray("ReplicationRegions", std::move(replicationRegionsJsonList));
+
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -95,6 +95,30 @@ Key& Key::operator =(JsonView jsonValue)
     m_deriveKeyUsage = DeriveKeyUsageMapper::GetDeriveKeyUsageForName(jsonValue.GetString("DeriveKeyUsage"));
     m_deriveKeyUsageHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("MultiRegionKeyType"))
+  {
+    m_multiRegionKeyType = MultiRegionKeyTypeMapper::GetMultiRegionKeyTypeForName(jsonValue.GetString("MultiRegionKeyType"));
+    m_multiRegionKeyTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("PrimaryRegion"))
+  {
+    m_primaryRegion = jsonValue.GetString("PrimaryRegion");
+    m_primaryRegionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ReplicationStatus"))
+  {
+    Aws::Map<Aws::String, JsonView> replicationStatusJsonMap = jsonValue.GetObject("ReplicationStatus").GetAllObjects();
+    for(auto& replicationStatusItem : replicationStatusJsonMap)
+    {
+      m_replicationStatus[replicationStatusItem.first] = replicationStatusItem.second.AsObject();
+    }
+    m_replicationStatusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("UsingDefaultReplicationRegions"))
+  {
+    m_usingDefaultReplicationRegions = jsonValue.GetBool("UsingDefaultReplicationRegions");
+    m_usingDefaultReplicationRegionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -175,6 +199,34 @@ JsonValue Key::Jsonize() const
   if(m_deriveKeyUsageHasBeenSet)
   {
    payload.WithString("DeriveKeyUsage", DeriveKeyUsageMapper::GetNameForDeriveKeyUsage(m_deriveKeyUsage));
+  }
+
+  if(m_multiRegionKeyTypeHasBeenSet)
+  {
+   payload.WithString("MultiRegionKeyType", MultiRegionKeyTypeMapper::GetNameForMultiRegionKeyType(m_multiRegionKeyType));
+  }
+
+  if(m_primaryRegionHasBeenSet)
+  {
+   payload.WithString("PrimaryRegion", m_primaryRegion);
+
+  }
+
+  if(m_replicationStatusHasBeenSet)
+  {
+   JsonValue replicationStatusJsonMap;
+   for(auto& replicationStatusItem : m_replicationStatus)
+   {
+     replicationStatusJsonMap.WithObject(replicationStatusItem.first, replicationStatusItem.second.Jsonize());
+   }
+   payload.WithObject("ReplicationStatus", std::move(replicationStatusJsonMap));
+
+  }
+
+  if(m_usingDefaultReplicationRegionsHasBeenSet)
+  {
+   payload.WithBool("UsingDefaultReplicationRegions", m_usingDefaultReplicationRegions);
+
   }
 
   return payload;

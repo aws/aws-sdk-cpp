@@ -35,7 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The key material, including the immutable and mutable data for the key.</p>
+     * <p>Contains the key metadata, including both immutable and mutable attributes
+     * for the key, but does not include actual cryptographic key material.</p>
      */
     inline const Key& GetKey() const { return m_key; }
     template<typename KeyT = Key>

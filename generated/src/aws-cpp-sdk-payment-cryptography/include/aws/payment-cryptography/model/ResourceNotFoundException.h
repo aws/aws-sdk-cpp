@@ -24,8 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>The request was denied due to an invalid resource error.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The request was denied due to resource not found.</p> <p>The specified key,
+   * alias, or other resource does not exist in your account or region. Verify that
+   * the resource identifier is correct and that the resource exists in the expected
+   * region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ResourceNotFoundException">AWS
    * API Reference</a></p>
    */
@@ -40,7 +42,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The string for the exception.</p>
+     * <p>The identifier of the resource that was not found.</p> <p>This field contains
+     * the specific resource identifier (such as a key ARN or alias name) that could
+     * not be located.</p>
      */
     inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }

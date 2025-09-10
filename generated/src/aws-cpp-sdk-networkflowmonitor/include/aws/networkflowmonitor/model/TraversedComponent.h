@@ -64,7 +64,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of a tranversed component.</p>
+     * <p>The Amazon Resource Name (ARN) of a traversed component.</p>
      */
     inline const Aws::String& GetComponentArn() const { return m_componentArn; }
     inline bool ComponentArnHasBeenSet() const { return m_componentArnHasBeenSet; }

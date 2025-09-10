@@ -25,9 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>A target resource in a scope. The resource is identified by a Region and a
-   * target identifier, which includes a target ID and a target type.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A target resource in a scope. The resource is identified by a Region and an
+   * account, defined by a target identifier. A target identifier is made up of a
+   * target ID (currently always an account ID) and a target type (currently always
+   * <code>ACCOUNT</code>).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/TargetResource">AWS
    * API Reference</a></p>
    */
@@ -42,9 +43,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A target identifier is a pair of identifying information for a resource that
-     * is included in a target. A target identifier includes the target ID and the
-     * target type.</p>
+     * <p>A target identifier is a pair of identifying information for a scope. A
+     * target identifier is made up of a targetID (currently always an account ID) and
+     * a targetType (currently always an account).</p>
      */
     inline const TargetIdentifier& GetTargetIdentifier() const { return m_targetIdentifier; }
     inline bool TargetIdentifierHasBeenSet() const { return m_targetIdentifierHasBeenSet; }
@@ -56,7 +57,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Services Region where the target resource is located.</p>
+     * <p>The Amazon Web Services Region for the scope.</p>
      */
     inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
