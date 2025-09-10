@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-json-protocol/RestJsonProtocolClient.h>
 #include <aws/rest-json-protocol/model/DocumentTypeAsMapValueRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using DocumentTypeAsMapValue = AWS_PROTOCOL_TEST_SUITE;
 using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
@@ -33,7 +33,9 @@ AWS_PROTOCOL_TEST(DocumentTypeAsMapValue, DocumentTypeAsMapValueInput) {
   auto outcome = client.DocumentTypeAsMapValue(request);
   ExpectedRequest expectedRq;
   expectedRq.method = "PUT";
-  expectedRq.body = "ewogICAgImRvY1ZhbHVlZE1hcCI6IHsKICAgICAgICAiZm9vIjogeyAiZiI6IDEsICJvIjogMiB9LAogICAgICAgICJiYXIiOiBbICJiIiwgImEiLCAiciIgXSwKICAgICAgICAiYmF6IjogIkJBWiIKICAgIH0KfQ==";
+  expectedRq.body =
+      "ewogICAgImRvY1ZhbHVlZE1hcCI6IHsKICAgICAgICAiZm9vIjogeyAiZiI6IDEsICJvIjogMiB9LAogICAgICAgICJiYXIiOiBbICJiIiwgImEiLCAiciIgXSwKICAgICAg"
+      "ICAiYmF6IjogIkJBWiIKICAgIH0KfQ==";
   expectedRq.uri = "/DocumentTypeAsMapValue";
   expectedRq.headers = {{"Content-Type", R"(application/json)"}};
   ValidateRequestSent(expectedRq);

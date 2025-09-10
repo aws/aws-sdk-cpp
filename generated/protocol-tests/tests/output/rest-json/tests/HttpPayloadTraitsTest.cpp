@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-json-protocol/RestJsonProtocolClient.h>
 #include <aws/rest-json-protocol/model/HttpPayloadTraitsRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using HttpPayloadTraits = AWS_PROTOCOL_TEST_SUITE;
 using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
@@ -23,13 +23,18 @@ AWS_PROTOCOL_TEST(HttpPayloadTraits, RestJsonHttpPayloadTraitsWithBlob) {
   HttpPayloadTraitsRequest request;
 
   auto outcome = client.HttpPayloadTraits(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const HttpPayloadTraitsResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"foo":"Foo","blob":"blobby blob blob"} )" */
-  EXPECT_EQ(R"(Foo)", result.GetFoo());
-  const Aws::String resultBlob = [&result](){Aws::StringStream ss; ss << result.GetBlob().rdbuf(); return ss.str();}();
-  EXPECT_STREQ(R"(blobby blob blob)", resultBlob.c_str());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"foo":"Foo","blob":"blobby blob blob"} )" */
+    EXPECT_EQ(R"(Foo)", result.GetFoo());
+    const Aws::String resultBlob = [&result]() {
+      Aws::StringStream ss;
+      ss << result.GetBlob().rdbuf();
+      return ss.str();
+    }();
+    EXPECT_STREQ(R"(blobby blob blob)", resultBlob.c_str());
+  });
 }
 
 AWS_PROTOCOL_TEST(HttpPayloadTraits, RestJsonHttpPayloadTraitsWithNoBlobBody) {
@@ -43,9 +48,10 @@ AWS_PROTOCOL_TEST(HttpPayloadTraits, RestJsonHttpPayloadTraitsWithNoBlobBody) {
   HttpPayloadTraitsRequest request;
 
   auto outcome = client.HttpPayloadTraits(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const HttpPayloadTraitsResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"foo":"Foo"} )" */
-  EXPECT_EQ(R"(Foo)", result.GetFoo());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"foo":"Foo"} )" */
+    EXPECT_EQ(R"(Foo)", result.GetFoo());
+  });
 }

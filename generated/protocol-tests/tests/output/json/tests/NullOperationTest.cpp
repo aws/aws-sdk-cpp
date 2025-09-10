@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/json-protocol/JsonProtocolClient.h>
 #include <aws/json-protocol/model/NullOperationRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using NullOperation = AWS_PROTOCOL_TEST_SUITE;
 using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
@@ -23,7 +23,8 @@ AWS_PROTOCOL_TEST(NullOperation, AwsJson11StructuresDontDeserializeNullValues) {
   NullOperationRequest request;
 
   auto outcome = client.NullOperation(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-  /* expectedResult = R"( {} )" */
+  ValidateRequestSent([](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {} )" */
+  });
 }

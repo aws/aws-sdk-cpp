@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/json-protocol/JsonProtocolClient.h>
 #include <aws/json-protocol/model/KitchenSinkOperationRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using KitchenSinkOperation = AWS_PROTOCOL_TEST_SUITE;
 using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
@@ -36,12 +36,15 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_string_shapes_with_jsonvalue_
   SetMockResponse();
 
   KitchenSinkOperationRequest request;
-  request.SetJsonValue(R"({"string":"value","number":1234.5,"boolTrue":true,"boolFalse":false,"array":[1,2,3,4],"object":{"key":"value"},"null":null})");
+  request.SetJsonValue(
+      R"({"string":"value","number":1234.5,"boolTrue":true,"boolFalse":false,"array":[1,2,3,4],"object":{"key":"value"},"null":null})");
 
   auto outcome = client.KitchenSinkOperation(request);
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
-  expectedRq.body = "eyJKc29uVmFsdWUiOiJ7XCJzdHJpbmdcIjpcInZhbHVlXCIsXCJudW1iZXJcIjoxMjM0LjUsXCJib29sVHJ1ZVwiOnRydWUsXCJib29sRmFsc2VcIjpmYWxzZSxcImFycmF5XCI6WzEsMiwzLDRdLFwib2JqZWN0XCI6e1wia2V5XCI6XCJ2YWx1ZVwifSxcIm51bGxcIjpudWxsfSJ9";
+  expectedRq.body =
+      "eyJKc29uVmFsdWUiOiJ7XCJzdHJpbmdcIjpcInZhbHVlXCIsXCJudW1iZXJcIjoxMjM0LjUsXCJib29sVHJ1ZVwiOnRydWUsXCJib29sRmFsc2VcIjpmYWxzZSxcImFycmF5"
+      "XCI6WzEsMiwzLDRdLFwib2JqZWN0XCI6e1wia2V5XCI6XCJ2YWx1ZVwifSxcIm51bGxcIjpudWxsfSJ9";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
@@ -399,7 +402,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_map_shapes) {
   SetMockResponse();
 
   KitchenSinkOperationRequest request;
-  request.SetMapOfStrings({{"abc",  R"(xyz)"}, {"mno",  R"(hjk)"}});
+  request.SetMapOfStrings({{"abc", R"(xyz)"}, {"mno", R"(hjk)"}});
 
   auto outcome = client.KitchenSinkOperation(request);
   ExpectedRequest expectedRq;
@@ -437,7 +440,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_map_of_list_shapes) {
   SetMockResponse();
 
   KitchenSinkOperationRequest request;
-  request.SetMapOfListsOfStrings({{"abc",  {R"(abc)", R"(xyz)"}}, {"mno",  {R"(xyz)", R"(abc)"}}});
+  request.SetMapOfListsOfStrings({{"abc", {R"(abc)", R"(xyz)"}}, {"mno", {R"(xyz)", R"(abc)"}}});
 
   auto outcome = client.KitchenSinkOperation(request);
   ExpectedRequest expectedRq;
@@ -501,7 +504,8 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_map_of_recursive_structure_sh
   auto outcome = client.KitchenSinkOperation(request);
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
-  expectedRq.body = "eyJSZWN1cnNpdmVNYXAiOnsia2V5MSI6eyJSZWN1cnNpdmVNYXAiOnsia2V5MiI6eyJSZWN1cnNpdmVNYXAiOnsia2V5MyI6eyJCb29sZWFuIjpmYWxzZX19fX19fX0=";
+  expectedRq.body =
+      "eyJSZWN1cnNpdmVNYXAiOnsia2V5MSI6eyJSZWN1cnNpdmVNYXAiOnsia2V5MiI6eyJSZWN1cnNpdmVNYXAiOnsia2V5MyI6eyJCb29sZWFuIjpmYWxzZX19fX19fX0=";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};
@@ -620,7 +624,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_recursive_structure_shapes) {
       KitchenSink requestRecursiveStructRecursiveListItem;
       {
         KitchenSink requestRecursiveStructRecursiveListItemRecursiveStruct;
-        requestRecursiveStructRecursiveListItemRecursiveStruct.SetMapOfStrings({{"color",  R"(red)"}, {"size",  R"(large)"}});
+        requestRecursiveStructRecursiveListItemRecursiveStruct.SetMapOfStrings({{"color", R"(red)"}, {"size", R"(large)"}});
         requestRecursiveStructRecursiveListItem.SetRecursiveStruct(requestRecursiveStructRecursiveListItemRecursiveStruct);
       }
       requestRecursiveStruct.AddRecursiveList(requestRecursiveStructRecursiveListItem);
@@ -631,7 +635,10 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_recursive_structure_shapes) {
   auto outcome = client.KitchenSinkOperation(request);
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
-  expectedRq.body = "eyJTdHJpbmciOiJ0b3AtdmFsdWUiLCJCb29sZWFuIjpmYWxzZSwiUmVjdXJzaXZlU3RydWN0Ijp7IlN0cmluZyI6Im5lc3RlZC12YWx1ZSIsIkJvb2xlYW4iOnRydWUsIlJlY3Vyc2l2ZUxpc3QiOlt7IlN0cmluZyI6InN0cmluZy1vbmx5In0seyJSZWN1cnNpdmVTdHJ1Y3QiOnsiTWFwT2ZTdHJpbmdzIjp7ImNvbG9yIjoicmVkIiwic2l6ZSI6ImxhcmdlIn19fV19fQ==";
+  expectedRq.body =
+      "eyJTdHJpbmciOiJ0b3AtdmFsdWUiLCJCb29sZWFuIjpmYWxzZSwiUmVjdXJzaXZlU3RydWN0Ijp7IlN0cmluZyI6Im5lc3RlZC12YWx1ZSIsIkJvb2xlYW4iOnRydWUsIlJl"
+      "Y3Vyc2l2ZUxpc3QiOlt7IlN0cmluZyI6InN0cmluZy1vbmx5In0seyJSZWN1cnNpdmVTdHJ1Y3QiOnsiTWFwT2ZTdHJpbmdzIjp7ImNvbG9yIjoicmVkIiwic2l6ZSI6Imxh"
+      "cmdlIn19fV19fQ==";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.KitchenSinkOperation)"}};
   expectedRq.requireHeaders = {"Content-Length"};

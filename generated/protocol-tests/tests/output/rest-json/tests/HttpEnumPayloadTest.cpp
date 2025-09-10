@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-json-protocol/RestJsonProtocolClient.h>
 #include <aws/rest-json-protocol/model/HttpEnumPayloadRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using HttpEnumPayload = AWS_PROTOCOL_TEST_SUITE;
 using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
@@ -23,9 +23,10 @@ AWS_PROTOCOL_TEST(HttpEnumPayload, RestJsonEnumPayloadResponse) {
   HttpEnumPayloadRequest request;
 
   auto outcome = client.HttpEnumPayload(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const HttpEnumPayloadResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"payload":"enumvalue"} )" */
-  EXPECT_EQ(StringEnumMapper::GetStringEnumForName(R"e(enumvalue)e"), result.GetPayload());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"payload":"enumvalue"} )" */
+    EXPECT_EQ(StringEnumMapper::GetStringEnumForName(R"e(enumvalue)e"), result.GetPayload());
+  });
 }

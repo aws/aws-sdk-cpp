@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-xml-protocol/RestXmlProtocolClient.h>
 #include <aws/rest-xml-protocol/model/HttpStringPayloadRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using HttpStringPayload = AWS_PROTOCOL_TEST_SUITE;
 using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
@@ -17,7 +17,7 @@ AWS_PROTOCOL_TEST(HttpStringPayload, RestXmlStringPayloadRequest) {
   SetMockResponse();
 
   HttpStringPayloadRequest request;
-  request.SetBody([](){ return Aws::MakeShared<Aws::StringStream>("Test", R"(rawstring)", std::ios_base::in | std::ios_base::binary); }() );
+  request.SetBody([]() { return Aws::MakeShared<Aws::StringStream>("Test", R"(rawstring)", std::ios_base::in | std::ios_base::binary); }());
 
   auto outcome = client.HttpStringPayload(request);
   ExpectedRequest expectedRq;

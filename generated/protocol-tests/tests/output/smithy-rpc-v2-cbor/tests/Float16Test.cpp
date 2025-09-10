@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rpcv2protocol/RpcV2ProtocolClient.h>
 #include <aws/rpcv2protocol/model/Float16Request.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using Float16 = AWS_PROTOCOL_TEST_SUITE;
 using RpcV2ProtocolClient = Aws::RpcV2Protocol::RpcV2ProtocolClient;
@@ -23,11 +23,12 @@ AWS_PROTOCOL_TEST(Float16, RpcV2CborFloat16Inf) {
   Float16Request request;
 
   auto outcome = client.Float16(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const Float16Result& result = outcome.GetResult();
-  /* expectedResult = R"( {"value":"Infinity"} )" */
-  EXPECT_EQ(std::numeric_limits<double>::infinity(), result.GetValue());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"value":"Infinity"} )" */
+    EXPECT_EQ(std::numeric_limits<double>::infinity(), result.GetValue());
+  });
 }
 
 AWS_PROTOCOL_TEST(Float16, RpcV2CborFloat16NegInf) {
@@ -42,11 +43,12 @@ AWS_PROTOCOL_TEST(Float16, RpcV2CborFloat16NegInf) {
   Float16Request request;
 
   auto outcome = client.Float16(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const Float16Result& result = outcome.GetResult();
-  /* expectedResult = R"( {"value":"-Infinity"} )" */
-  EXPECT_EQ(-std::numeric_limits<double>::infinity(), result.GetValue());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"value":"-Infinity"} )" */
+    EXPECT_EQ(-std::numeric_limits<double>::infinity(), result.GetValue());
+  });
 }
 
 AWS_PROTOCOL_TEST(Float16, RpcV2CborFloat16LSBNaN) {
@@ -61,11 +63,12 @@ AWS_PROTOCOL_TEST(Float16, RpcV2CborFloat16LSBNaN) {
   Float16Request request;
 
   auto outcome = client.Float16(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const Float16Result& result = outcome.GetResult();
-  /* expectedResult = R"( {"value":"NaN"} )" */
-  EXPECT_TRUE(std::isnan(result.GetValue()));
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"value":"NaN"} )" */
+    EXPECT_TRUE(std::isnan(result.GetValue()));
+  });
 }
 
 AWS_PROTOCOL_TEST(Float16, RpcV2CborFloat16MSBNaN) {
@@ -80,11 +83,12 @@ AWS_PROTOCOL_TEST(Float16, RpcV2CborFloat16MSBNaN) {
   Float16Request request;
 
   auto outcome = client.Float16(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const Float16Result& result = outcome.GetResult();
-  /* expectedResult = R"( {"value":"NaN"} )" */
-  EXPECT_TRUE(std::isnan(result.GetValue()));
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"value":"NaN"} )" */
+    EXPECT_TRUE(std::isnan(result.GetValue()));
+  });
 }
 
 AWS_PROTOCOL_TEST(Float16, RpcV2CborFloat16Subnormal) {
@@ -99,9 +103,10 @@ AWS_PROTOCOL_TEST(Float16, RpcV2CborFloat16Subnormal) {
   Float16Request request;
 
   auto outcome = client.Float16(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const Float16Result& result = outcome.GetResult();
-  /* expectedResult = R"( {"value":4.76837158203125E-6} )" */
-  EXPECT_EQ(4.76837158203125E-6, result.GetValue());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"value":4.76837158203125E-6} )" */
+    EXPECT_EQ(4.76837158203125E-6, result.GetValue());
+  });
 }

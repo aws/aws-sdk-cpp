@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-json-protocol/RestJsonProtocolClient.h>
 #include <aws/rest-json-protocol/model/HttpPrefixHeadersRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using HttpPrefixHeaders = AWS_PROTOCOL_TEST_SUITE;
 using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
@@ -18,7 +18,7 @@ AWS_PROTOCOL_TEST(HttpPrefixHeaders, RestJsonHttpPrefixHeadersArePresent) {
 
   HttpPrefixHeadersRequest request;
   request.SetFoo(R"(Foo)");
-  request.SetFooMap({{"abc",  R"(Abc value)"}, {"def",  R"(Def value)"}});
+  request.SetFooMap({{"abc", R"(Abc value)"}, {"def", R"(Def value)"}});
 
   auto outcome = client.HttpPrefixHeaders(request);
   ExpectedRequest expectedRq;
@@ -53,7 +53,7 @@ AWS_PROTOCOL_TEST(HttpPrefixHeaders, RestJsonHttpPrefixEmptyHeaders) {
   SetMockResponse();
 
   HttpPrefixHeadersRequest request;
-  request.SetFooMap({{"abc",  R"()"}});
+  request.SetFooMap({{"abc", R"()"}});
 
   auto outcome = client.HttpPrefixHeaders(request);
   ExpectedRequest expectedRq;

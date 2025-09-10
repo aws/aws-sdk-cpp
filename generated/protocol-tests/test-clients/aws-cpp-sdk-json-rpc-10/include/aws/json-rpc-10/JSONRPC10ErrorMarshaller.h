@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/json-rpc-10/JSONRPC10_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/json-rpc-10/JSONRPC10_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_JSONRPC10_API JSONRPC10ErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_JSONRPC10_API JSONRPC10ErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

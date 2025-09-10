@@ -5,12 +5,8 @@
 
 #include <aws/json-protocol/JsonProtocolEndpointProvider.h>
 
-namespace Aws
-{
-namespace JsonProtocol
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace JsonProtocol
-} // namespace Aws
+namespace Aws {
+namespace JsonProtocol {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace JsonProtocol
+}  // namespace Aws

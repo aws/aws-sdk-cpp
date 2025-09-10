@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rpcv2protocol/RpcV2ProtocolClient.h>
 #include <aws/rpcv2protocol/model/GreetingWithErrorsRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using GreetingWithErrors0 = AWS_PROTOCOL_TEST_SUITE;
 using RpcV2ProtocolClient = Aws::RpcV2Protocol::RpcV2ProtocolClient;
@@ -23,7 +23,6 @@ AWS_PROTOCOL_TEST(GreetingWithErrors0, RpcV2CborComplexError) {
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ValidateRequestSent();
   ASSERT_FALSE(outcome.IsSuccess());
 }
 
@@ -39,6 +38,5 @@ AWS_PROTOCOL_TEST(GreetingWithErrors0, RpcV2CborEmptyComplexError) {
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ValidateRequestSent();
   ASSERT_FALSE(outcome.IsSuccess());
 }

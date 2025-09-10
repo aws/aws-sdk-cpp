@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/ec2-protocol/EC2ProtocolClient.h>
 #include <aws/ec2-protocol/model/QueryTimestampsRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using QueryTimestamps = AWS_PROTOCOL_TEST_SUITE;
 using EC2ProtocolClient = Aws::EC2Protocol::EC2ProtocolClient;
@@ -24,7 +24,9 @@ AWS_PROTOCOL_TEST(QueryTimestamps, Ec2TimestampsInput) {
   auto outcome = client.QueryTimestamps(request);
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
-  expectedRq.body = "QWN0aW9uPVF1ZXJ5VGltZXN0YW1wcyZWZXJzaW9uPTIwMjAtMDEtMDgmTm9ybWFsRm9ybWF0PTIwMTUtMDEtMjVUMDglM0EwMCUzQTAwWiZFcG9jaE1lbWJlcj0xNDIyMTcyODAwJkVwb2NoVGFyZ2V0PTE0MjIxNzI4MDA=";
+  expectedRq.body =
+      "QWN0aW9uPVF1ZXJ5VGltZXN0YW1wcyZWZXJzaW9uPTIwMjAtMDEtMDgmTm9ybWFsRm9ybWF0PTIwMTUtMDEtMjVUMDglM0EwMCUzQTAwWiZFcG9jaE1lbWJlcj0xNDIyMTcy"
+      "ODAwJkVwb2NoVGFyZ2V0PTE0MjIxNzI4MDA=";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-www-form-urlencoded)"}};
   expectedRq.requireHeaders = {"Content-Length"};

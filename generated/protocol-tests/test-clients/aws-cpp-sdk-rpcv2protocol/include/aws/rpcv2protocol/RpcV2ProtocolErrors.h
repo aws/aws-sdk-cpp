@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/rpcv2protocol/RpcV2Protocol_EXPORTS.h>
 
-namespace Aws
-{
-namespace RpcV2Protocol
-{
-enum class RpcV2ProtocolErrors
-{
-  //From Core//
+namespace Aws {
+namespace RpcV2Protocol {
+enum class RpcV2ProtocolErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class RpcV2ProtocolErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,13 +44,12 @@ enum class RpcV2ProtocolErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  COMPLEX= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  COMPLEX = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_GREETING
 };
 
-class AWS_RPCV2PROTOCOL_API RpcV2ProtocolError : public Aws::Client::AWSError<RpcV2ProtocolErrors>
-{
-public:
+class AWS_RPCV2PROTOCOL_API RpcV2ProtocolError : public Aws::Client::AWSError<RpcV2ProtocolErrors> {
+ public:
   RpcV2ProtocolError() {}
   RpcV2ProtocolError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<RpcV2ProtocolErrors>(rhs) {}
   RpcV2ProtocolError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<RpcV2ProtocolErrors>(rhs) {}
@@ -64,10 +60,9 @@ public:
   T GetModeledError();
 };
 
-namespace RpcV2ProtocolErrorMapper
-{
-  AWS_RPCV2PROTOCOL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace RpcV2ProtocolErrorMapper {
+AWS_RPCV2PROTOCOL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace RpcV2Protocol
-} // namespace Aws
+}  // namespace RpcV2Protocol
+}  // namespace Aws

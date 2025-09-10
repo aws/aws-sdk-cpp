@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rpcv2protocol/RpcV2ProtocolClient.h>
 #include <aws/rpcv2protocol/model/FractionalSecondsRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using FractionalSeconds = AWS_PROTOCOL_TEST_SUITE;
 using RpcV2ProtocolClient = Aws::RpcV2Protocol::RpcV2ProtocolClient;
@@ -23,9 +23,10 @@ AWS_PROTOCOL_TEST(FractionalSeconds, RpcV2CborDateTimeWithFractionalSeconds) {
   FractionalSecondsRequest request;
 
   auto outcome = client.FractionalSeconds(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const FractionalSecondsResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"datetime":9.46845296123E8} )" */
-  EXPECT_EQ(Aws::Utils::DateTime(9.46845296123E8), result.GetDatetime());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"datetime":9.46845296123E8} )" */
+    EXPECT_EQ(Aws::Utils::DateTime(9.46845296123E8), result.GetDatetime());
+  });
 }
