@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rest-xml-protocol/model/GreetingStruct.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/rest-xml-protocol/model/GreetingStruct.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RestXmlProtocol
-{
-namespace Model
-{
+namespace Aws {
+namespace RestXmlProtocol {
+namespace Model {
 
-GreetingStruct::GreetingStruct(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+GreetingStruct::GreetingStruct(const XmlNode& xmlNode) { *this = xmlNode; }
 
-GreetingStruct& GreetingStruct::operator =(const XmlNode& xmlNode)
-{
+GreetingStruct& GreetingStruct::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode hiNode = resultNode.FirstChild("hi");
-    if(!hiNode.IsNull())
-    {
+    if (!hiNode.IsNull()) {
       m_hi = Aws::Utils::Xml::DecodeEscapedXmlText(hiNode.GetText());
       m_hiHasBeenSet = true;
     }
@@ -42,17 +33,14 @@ GreetingStruct& GreetingStruct::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void GreetingStruct::AddToNode(XmlNode& parentNode) const
-{
+void GreetingStruct::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_hiHasBeenSet)
-  {
-   XmlNode hiNode = parentNode.CreateChildElement("hi");
-   hiNode.SetText(m_hi);
+  if (m_hiHasBeenSet) {
+    XmlNode hiNode = parentNode.CreateChildElement("hi");
+    hiNode.SetText(m_hi);
   }
-
 }
 
-} // namespace Model
-} // namespace RestXmlProtocol
-} // namespace Aws
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws

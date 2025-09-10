@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-xml-protocol/RestXmlProtocolClient.h>
 #include <aws/rest-xml-protocol/model/AllQueryStringTypesRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using AllQueryStringTypes = AWS_PROTOCOL_TEST_SUITE;
 using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
@@ -32,16 +32,23 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, AllQueryStringTypes) {
   request.SetQueryBoolean(true);
   request.SetQueryBooleanList({true, false, true});
   request.SetQueryTimestamp(Aws::Utils::DateTime(static_cast<int64_t>(1)));
-  request.SetQueryTimestampList({Aws::Utils::DateTime(static_cast<int64_t>(1)), Aws::Utils::DateTime(static_cast<int64_t>(2)), Aws::Utils::DateTime(static_cast<int64_t>(3))});
+  request.SetQueryTimestampList({Aws::Utils::DateTime(static_cast<int64_t>(1)), Aws::Utils::DateTime(static_cast<int64_t>(2)),
+                                 Aws::Utils::DateTime(static_cast<int64_t>(3))});
   request.SetQueryEnum(FooEnumMapper::GetFooEnumForName(R"e(Foo)e"));
-  request.SetQueryEnumList({FooEnumMapper::GetFooEnumForName(R"e(Foo)e"), FooEnumMapper::GetFooEnumForName(R"e(Baz)e"), FooEnumMapper::GetFooEnumForName(R"e(Bar)e")});
+  request.SetQueryEnumList({FooEnumMapper::GetFooEnumForName(R"e(Foo)e"), FooEnumMapper::GetFooEnumForName(R"e(Baz)e"),
+                            FooEnumMapper::GetFooEnumForName(R"e(Bar)e")});
   request.SetQueryIntegerEnum(1);
   request.SetQueryIntegerEnumList({1, 2});
 
   auto outcome = client.AllQueryStringTypes(request);
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
-  expectedRq.uri = "/AllQueryStringTypesInput?String=Hello%20there&StringList=a&StringList=b&StringList=c&StringSet=a&StringSet=b&StringSet=c&Byte=1&Short=2&Integer=3&IntegerList=1&IntegerList=2&IntegerList=3&IntegerSet=1&IntegerSet=2&IntegerSet=3&Long=4&Float=1.1&Double=1.1&DoubleList=1.1&DoubleList=2.1&DoubleList=3.1&Boolean=true&BooleanList=true&BooleanList=false&BooleanList=true&Timestamp=1970-01-01T00%3A00%3A01Z&TimestampList=1970-01-01T00%3A00%3A01Z&TimestampList=1970-01-01T00%3A00%3A02Z&TimestampList=1970-01-01T00%3A00%3A03Z&Enum=Foo&EnumList=Foo&EnumList=Baz&EnumList=Bar&IntegerEnum=1&IntegerEnumList=1&IntegerEnumList=2";
+  expectedRq.uri =
+      "/AllQueryStringTypesInput?String=Hello%20there&StringList=a&StringList=b&StringList=c&StringSet=a&StringSet=b&StringSet=c&Byte=1&"
+      "Short=2&Integer=3&IntegerList=1&IntegerList=2&IntegerList=3&IntegerSet=1&IntegerSet=2&IntegerSet=3&Long=4&Float=1.1&Double=1.1&"
+      "DoubleList=1.1&DoubleList=2.1&DoubleList=3.1&Boolean=true&BooleanList=true&BooleanList=false&BooleanList=true&Timestamp=1970-01-"
+      "01T00%3A00%3A01Z&TimestampList=1970-01-01T00%3A00%3A01Z&TimestampList=1970-01-01T00%3A00%3A02Z&TimestampList=1970-01-01T00%3A00%"
+      "3A03Z&Enum=Foo&EnumList=Foo&EnumList=Baz&EnumList=Bar&IntegerEnum=1&IntegerEnumList=1&IntegerEnumList=2";
   ValidateRequestSent(expectedRq);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
@@ -52,7 +59,7 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, RestXmlQueryStringMap) {
   SetMockResponse();
 
   AllQueryStringTypesRequest request;
-  request.SetQueryParamsMapOfStrings({{"QueryParamsStringKeyA",  R"(Foo)"}, {"QueryParamsStringKeyB",  R"(Bar)"}});
+  request.SetQueryParamsMapOfStrings({{"QueryParamsStringKeyA", R"(Foo)"}, {"QueryParamsStringKeyB", R"(Bar)"}});
 
   auto outcome = client.AllQueryStringTypes(request);
   ExpectedRequest expectedRq;

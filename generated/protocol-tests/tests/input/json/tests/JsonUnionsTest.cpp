@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/json-protocol/JsonProtocolClient.h>
 #include <aws/json-protocol/model/JsonUnionsRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using JsonUnions = AWS_PROTOCOL_TEST_SUITE;
 using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
@@ -173,14 +173,16 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeMapUnionValue) {
   JsonUnionsRequest request;
   {
     MyUnion requestContents;
-    requestContents.SetMapValue({{"foo",  R"(bar)"}, {"spam",  R"(eggs)"}});
+    requestContents.SetMapValue({{"foo", R"(bar)"}, {"spam", R"(eggs)"}});
     request.SetContents(requestContents);
   }
 
   auto outcome = client.JsonUnions(request);
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
-  expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJtYXBWYWx1ZSI6IHsKICAgICAgICAgICAgImZvbyI6ICJiYXIiLAogICAgICAgICAgICAic3BhbSI6ICJlZ2dzIgogICAgICAgIH0KICAgIH0KfQ==";
+  expectedRq.body =
+      "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJtYXBWYWx1ZSI6IHsKICAgICAgICAgICAgImZvbyI6ICJiYXIiLAogICAgICAgICAgICAic3BhbSI6ICJlZ2dzIgogICAg"
+      "ICAgIH0KICAgIH0KfQ==";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.JsonUnions)"}};
   ValidateRequestSent(expectedRq);
@@ -206,7 +208,8 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeStructureUnionValue) {
   auto outcome = client.JsonUnions(request);
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
-  expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJzdHJ1Y3R1cmVWYWx1ZSI6IHsKICAgICAgICAgICAgImhpIjogImhlbGxvIgogICAgICAgIH0KICAgIH0KfQ==";
+  expectedRq.body =
+      "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJzdHJ1Y3R1cmVWYWx1ZSI6IHsKICAgICAgICAgICAgImhpIjogImhlbGxvIgogICAgICAgIH0KICAgIH0KfQ==";
   expectedRq.uri = "/";
   expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.JsonUnions)"}};
   ValidateRequestSent(expectedRq);

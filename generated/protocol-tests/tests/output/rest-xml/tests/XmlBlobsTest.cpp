@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-xml-protocol/RestXmlProtocolClient.h>
 #include <aws/rest-xml-protocol/model/XmlBlobsRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using XmlBlobs = AWS_PROTOCOL_TEST_SUITE;
 using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
@@ -23,9 +23,10 @@ AWS_PROTOCOL_TEST(XmlBlobs, XmlBlobs) {
   XmlBlobsRequest request;
 
   auto outcome = client.XmlBlobs(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const XmlBlobsResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"data":"value"} )" */
-  EXPECT_EQ(Aws::Utils::ByteBuffer(R"(value)"), result.GetData());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"data":"value"} )" */
+    EXPECT_EQ(Aws::Utils::ByteBuffer(R"(value)"), result.GetData());
+  });
 }

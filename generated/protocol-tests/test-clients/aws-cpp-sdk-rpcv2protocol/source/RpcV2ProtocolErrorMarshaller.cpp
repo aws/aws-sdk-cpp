@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::RpcV2Protocol;
 
-AWSError<CoreErrors> RpcV2ProtocolErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> RpcV2ProtocolErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = RpcV2ProtocolErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

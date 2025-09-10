@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rpcv2protocol/RpcV2ProtocolClient.h>
 #include <aws/rpcv2protocol/model/OptionalInputOutputRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using OptionalInputOutput = AWS_PROTOCOL_TEST_SUITE;
 using RpcV2ProtocolClient = Aws::RpcV2Protocol::RpcV2ProtocolClient;
@@ -23,7 +23,8 @@ AWS_PROTOCOL_TEST(OptionalInputOutput, optional_output) {
   OptionalInputOutputRequest request;
 
   auto outcome = client.OptionalInputOutput(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-  /* expectedResult = R"( {} )" */
+  ValidateRequestSent([](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {} )" */
+  });
 }

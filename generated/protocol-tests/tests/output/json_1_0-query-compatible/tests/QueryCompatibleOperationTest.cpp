@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/query-compatible-json-rpc-10/QueryCompatibleJSONRPC10Client.h>
 #include <aws/query-compatible-json-rpc-10/model/QueryCompatibleOperationRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using QueryCompatibleOperation = AWS_PROTOCOL_TEST_SUITE;
 using QueryCompatibleJSONRPC10Client = Aws::QueryCompatibleJSONRPC10::QueryCompatibleJSONRPC10Client;
@@ -23,6 +23,5 @@ AWS_PROTOCOL_TEST(QueryCompatibleOperation, QueryCompatibleAwsJson10CborNoCustom
   QueryCompatibleOperationRequest request;
 
   auto outcome = client.QueryCompatibleOperation(request);
-  ValidateRequestSent();
   ASSERT_FALSE(outcome.IsSuccess());
 }

@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rpcv2protocol/RpcV2ProtocolClient.h>
 #include <aws/rpcv2protocol/model/EmptyInputOutputRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using EmptyInputOutput = AWS_PROTOCOL_TEST_SUITE;
 using RpcV2ProtocolClient = Aws::RpcV2Protocol::RpcV2ProtocolClient;
@@ -14,12 +14,11 @@ using namespace Aws::RpcV2Protocol::Model;
 AWS_PROTOCOL_TEST(EmptyInputOutput, empty_input) {
   RpcV2ProtocolClient client(mockCredentials, mockConfig);
 
-  //Cbor specific
+  // Cbor specific
   OutputResponse mockRs;
   mockRs.statusCode = 200;
   mockRs.body = "v/8=";
   SetMockResponse(mockRs);
-
 
   EmptyInputOutputRequest request;
 
@@ -31,7 +30,8 @@ AWS_PROTOCOL_TEST(EmptyInputOutput, empty_input) {
   expectedRq.headers = {{"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
   expectedRq.forbidHeaders = {"X-Amz-Target"};
   expectedRq.requireHeaders = {"Content-Length"};
-  ValidateRequestSent(expectedRq, true);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-  /* expectedResult = R"( {} )" */
+  ValidateRequestSent(expectedRq, [](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {} )" */
+  });
 }

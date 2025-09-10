@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/rest-xml-protocol/RestXmlProtocolRequest.h>
 
-namespace Aws
-{
-namespace RestXmlProtocol
-{
-} // namespace RestXmlProtocol
-} // namespace Aws
+namespace Aws {
+namespace RestXmlProtocol {}  // namespace RestXmlProtocol
+}  // namespace Aws

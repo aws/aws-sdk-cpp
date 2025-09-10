@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-xml-protocol/RestXmlProtocolClient.h>
 #include <aws/rest-xml-protocol/model/BodyWithXmlNameRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using BodyWithXmlName = AWS_PROTOCOL_TEST_SUITE;
 using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
@@ -23,12 +23,13 @@ AWS_PROTOCOL_TEST(BodyWithXmlName, BodyWithXmlName) {
   BodyWithXmlNameRequest request;
 
   auto outcome = client.BodyWithXmlName(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const BodyWithXmlNameResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"nested":{"name":"Phreddy"}} )" */
-  {
-    const PayloadWithXmlName& resultNested = result.GetNested();
-    EXPECT_EQ(R"(Phreddy)", resultNested.GetName());
-  }
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"nested":{"name":"Phreddy"}} )" */
+    {
+      const PayloadWithXmlName& resultNested = result.GetNested();
+      EXPECT_EQ(R"(Phreddy)", resultNested.GetName());
+    }
+  });
 }

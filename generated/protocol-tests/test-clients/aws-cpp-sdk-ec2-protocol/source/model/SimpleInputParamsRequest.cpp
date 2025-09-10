@@ -3,70 +3,58 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2-protocol/model/SimpleInputParamsRequest.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
-#include <aws/core/utils/HashingUtils.h>
+#include <aws/ec2-protocol/model/SimpleInputParamsRequest.h>
 
 using namespace Aws::EC2Protocol::Model;
 using namespace Aws::Utils;
 
-Aws::String SimpleInputParamsRequest::SerializePayload() const
-{
+Aws::String SimpleInputParamsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=SimpleInputParams&";
-  if(m_fooHasBeenSet)
-  {
+  if (m_fooHasBeenSet) {
     ss << "Foo=" << StringUtils::URLEncode(m_foo.c_str()) << "&";
   }
 
-  if(m_barHasBeenSet)
-  {
+  if (m_barHasBeenSet) {
     ss << "Bar=" << StringUtils::URLEncode(m_bar.c_str()) << "&";
   }
 
-  if(m_bazHasBeenSet)
-  {
+  if (m_bazHasBeenSet) {
     ss << "Baz=" << std::boolalpha << m_baz << "&";
   }
 
-  if(m_bamHasBeenSet)
-  {
+  if (m_bamHasBeenSet) {
     ss << "Bam=" << m_bam << "&";
   }
 
-  if(m_floatValueHasBeenSet)
-  {
+  if (m_floatValueHasBeenSet) {
     ss << "FloatValue=" << m_floatValue << "&";
   }
 
-  if(m_booHasBeenSet)
-  {
+  if (m_booHasBeenSet) {
     ss << "Boo=" << StringUtils::URLEncode(m_boo) << "&";
   }
 
-  if(m_quxHasBeenSet)
-  {
+  if (m_quxHasBeenSet) {
     ss << "Qux=" << StringUtils::URLEncode(HashingUtils::Base64Encode(m_qux).c_str()) << "&";
   }
 
-  if(m_fooEnumHasBeenSet)
-  {
+  if (m_fooEnumHasBeenSet) {
     ss << "FooEnum=" << StringUtils::URLEncode(FooEnumMapper::GetNameForFooEnum(m_fooEnum)) << "&";
   }
 
-  if(m_hasQueryNameHasBeenSet)
-  {
+  if (m_hasQueryNameHasBeenSet) {
     ss << "HasQueryName=" << StringUtils::URLEncode(m_hasQueryName.c_str()) << "&";
   }
 
-  if(m_hasQueryAndXmlNameHasBeenSet)
-  {
+  if (m_hasQueryAndXmlNameHasBeenSet) {
     ss << "HasQueryAndXmlName=" << StringUtils::URLEncode(m_hasQueryAndXmlName.c_str()) << "&";
   }
 
-  if(m_usesXmlNameHasBeenSet)
-  {
+  if (m_usesXmlNameHasBeenSet) {
     ss << "UsesXmlName=" << StringUtils::URLEncode(m_usesXmlName.c_str()) << "&";
   }
 
@@ -74,8 +62,4 @@ Aws::String SimpleInputParamsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  SimpleInputParamsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void SimpleInputParamsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

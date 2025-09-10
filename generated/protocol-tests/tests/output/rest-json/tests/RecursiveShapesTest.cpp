@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-json-protocol/RestJsonProtocolClient.h>
 #include <aws/rest-json-protocol/model/RecursiveShapesInputOutputNested1.h>
 #include <aws/rest-json-protocol/model/RecursiveShapesInputOutputNested2.h>
 #include <aws/rest-json-protocol/model/RecursiveShapesRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using RecursiveShapes = AWS_PROTOCOL_TEST_SUITE;
 using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
@@ -19,30 +19,35 @@ AWS_PROTOCOL_TEST(RecursiveShapes, RestJsonRecursiveShapes) {
   OutputResponse mockRs;
   mockRs.statusCode = 200;
   mockRs.headers = {{"Content-Type", R"(application/json)"}};
-  mockRs.body = "ewogICAgIm5lc3RlZCI6IHsKICAgICAgICAiZm9vIjogIkZvbzEiLAogICAgICAgICJuZXN0ZWQiOiB7CiAgICAgICAgICAgICJiYXIiOiAiQmFyMSIsCiAgICAgICAgICAgICJyZWN1cnNpdmVNZW1iZXIiOiB7CiAgICAgICAgICAgICAgICAiZm9vIjogIkZvbzIiLAogICAgICAgICAgICAgICAgIm5lc3RlZCI6IHsKICAgICAgICAgICAgICAgICAgICAiYmFyIjogIkJhcjIiCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9Cn0=";
+  mockRs.body =
+      "ewogICAgIm5lc3RlZCI6IHsKICAgICAgICAiZm9vIjogIkZvbzEiLAogICAgICAgICJuZXN0ZWQiOiB7CiAgICAgICAgICAgICJiYXIiOiAiQmFyMSIsCiAgICAgICAgICAg"
+      "ICJyZWN1cnNpdmVNZW1iZXIiOiB7CiAgICAgICAgICAgICAgICAiZm9vIjogIkZvbzIiLAogICAgICAgICAgICAgICAgIm5lc3RlZCI6IHsKICAgICAgICAgICAgICAgICAg"
+      "ICAiYmFyIjogIkJhcjIiCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9Cn0=";
   SetMockResponse(mockRs);
 
   RecursiveShapesRequest request;
 
   auto outcome = client.RecursiveShapes(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const RecursiveShapesResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"nested":{"foo":"Foo1","nested":{"bar":"Bar1","recursiveMember":{"foo":"Foo2","nested":{"bar":"Bar2"}}}}} )" */
-  {
-    const RecursiveShapesInputOutputNested1& resultNested = result.GetNested();
-    EXPECT_EQ(R"(Foo1)", resultNested.GetFoo());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"nested":{"foo":"Foo1","nested":{"bar":"Bar1","recursiveMember":{"foo":"Foo2","nested":{"bar":"Bar2"}}}}} )" */
     {
-      const RecursiveShapesInputOutputNested2& resultNestedNested = resultNested.GetNested();
-      EXPECT_EQ(R"(Bar1)", resultNestedNested.GetBar());
+      const RecursiveShapesInputOutputNested1& resultNested = result.GetNested();
+      EXPECT_EQ(R"(Foo1)", resultNested.GetFoo());
       {
-        const RecursiveShapesInputOutputNested1& resultNestedNestedRecursiveMember = resultNestedNested.GetRecursiveMember();
-        EXPECT_EQ(R"(Foo2)", resultNestedNestedRecursiveMember.GetFoo());
+        const RecursiveShapesInputOutputNested2& resultNestedNested = resultNested.GetNested();
+        EXPECT_EQ(R"(Bar1)", resultNestedNested.GetBar());
         {
-          const RecursiveShapesInputOutputNested2& resultNestedNestedRecursiveMemberNested = resultNestedNestedRecursiveMember.GetNested();
-          EXPECT_EQ(R"(Bar2)", resultNestedNestedRecursiveMemberNested.GetBar());
+          const RecursiveShapesInputOutputNested1& resultNestedNestedRecursiveMember = resultNestedNested.GetRecursiveMember();
+          EXPECT_EQ(R"(Foo2)", resultNestedNestedRecursiveMember.GetFoo());
+          {
+            const RecursiveShapesInputOutputNested2& resultNestedNestedRecursiveMemberNested =
+                resultNestedNestedRecursiveMember.GetNested();
+            EXPECT_EQ(R"(Bar2)", resultNestedNestedRecursiveMemberNested.GetBar());
+          }
         }
       }
     }
-  }
+  });
 }
