@@ -50,8 +50,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The local resources to add, as an array of resources with identifiers and
-     * types.</p>
+     * <p>Additional local resources to specify network flows for a monitor, as an
+     * array of resources with identifiers and types. A local resource in a workload is
+     * the location of hosts where the Network Flow Monitor agent is installed. </p>
      */
     inline const Aws::Vector<MonitorLocalResource>& GetLocalResourcesToAdd() const { return m_localResourcesToAdd; }
     inline bool LocalResourcesToAddHasBeenSet() const { return m_localResourcesToAddHasBeenSet; }
@@ -80,8 +81,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The remove resources to add, as an array of resources with identifiers and
-     * types.</p>
+     * <p>The remote resources to add, as an array of resources with identifiers and
+     * types.</p> <p>A remote resource is the other endpoint in the flow of a workload,
+     * with a local resource. For example, Amazon Dynamo DB can be a remote resource.
+     * </p>
      */
     inline const Aws::Vector<MonitorRemoteResource>& GetRemoteResourcesToAdd() const { return m_remoteResourcesToAdd; }
     inline bool RemoteResourcesToAddHasBeenSet() const { return m_remoteResourcesToAddHasBeenSet; }
@@ -95,8 +98,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The remove resources to remove, as an array of resources with identifiers and
-     * types.</p>
+     * <p>The remote resources to remove, as an array of resources with identifiers and
+     * types.</p> <p>A remote resource is the other endpoint specified for the network
+     * flow of a workload, with a local resource. For example, Amazon Dynamo DB can be
+     * a remote resource. </p>
      */
     inline const Aws::Vector<MonitorRemoteResource>& GetRemoteResourcesToRemove() const { return m_remoteResourcesToRemove; }
     inline bool RemoteResourcesToRemoveHasBeenSet() const { return m_remoteResourcesToRemoveHasBeenSet; }

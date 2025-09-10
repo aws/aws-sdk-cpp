@@ -26,7 +26,8 @@ namespace Model
 
   /**
    * <p>A local resource is the host where the agent is installed. Local resources
-   * can be a a subnet, a VPC, or an Availability Zone.</p><p><h3>See Also:</h3>   <a
+   * can be a a subnet, a VPC, an Availability Zone, or an Amazon Web Services
+   * service.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/MonitorLocalResource">AWS
    * API Reference</a></p>
    */
@@ -42,7 +43,8 @@ namespace Model
     ///@{
     /**
      * <p>The type of the local resource. Valid values are <code>AWS::EC2::VPC</code>
-     * <code>AWS::AvailabilityZone</code> or <code>AWS::EC2::Subnet</code>.</p>
+     * <code>AWS::AvailabilityZone</code>, <code>AWS::EC2::Subnet</code>, or
+     * <code>AWS::Region</code>.</p>
      */
     inline MonitorLocalResourceType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -52,7 +54,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the local resource, such as an ARN.</p>
+     * <p>The identifier of the local resource. For a VPC or subnet, this identifier is
+     * the VPC Amazon Resource Name (ARN) or subnet ARN. For an Availability Zone, this
+     * identifier is the AZ name, for example, us-west-2b.</p>
      */
     inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }

@@ -19,7 +19,8 @@ namespace Model
     AWS_EC2_VPC,
     AWS_AvailabilityZone,
     AWS_EC2_Subnet,
-    AWS_AWSService
+    AWS_AWSService,
+    AWS_Region
   };
 
 namespace MonitorRemoteResourceTypeMapper

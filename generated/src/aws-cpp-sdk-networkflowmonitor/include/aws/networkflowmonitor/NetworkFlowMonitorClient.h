@@ -95,10 +95,10 @@ namespace NetworkFlowMonitor
          * <p>Create a monitor for specific network flows between local and remote
          * resources, so that you can monitor network performance for one or several of
          * your workloads. For each monitor, Network Flow Monitor publishes detailed
-         * end-to-end performance metrics and a network health indicators (NHI) that
-         * informs you whether there were Amazon Web Services network issues for one or
-         * more of the network flows tracked by a monitor, during a time period that you
-         * choose. </p><p><h3>See Also:</h3>   <a
+         * end-to-end performance metrics and a network health indicator (NHI) that informs
+         * you whether there were Amazon Web Services network issues for one or more of the
+         * network flows tracked by a monitor, during a time period that you choose.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/CreateMonitor">AWS
          * API Reference</a></p>
          */
@@ -123,12 +123,22 @@ namespace NetworkFlowMonitor
         }
 
         /**
-         * <p>Create a scope of resources that you want to be available for Network Flow
-         * Monitor to generate metrics for, when you have active agents on those resources
-         * sending metrics reports to the Network Flow Monitor backend. This call returns a
-         * scope ID to identify the scope.</p> <p>When you create a scope, you enable
-         * permissions for Network Flow Monitor. The scope is set to the resources for the
-         * Amazon Web Services that enables the feature.</p><p><h3>See Also:</h3>   <a
+         * <p>In Network Flow Monitor, you specify a scope for the service to generate
+         * metrics for. By using the scope, Network Flow Monitor can generate a topology of
+         * all the resources to measure performance metrics for. When you create a scope,
+         * you enable permissions for Network Flow Monitor.</p> <p>A scope is a
+         * Region-account pair or multiple Region-account pairs. Network Flow Monitor uses
+         * your scope to determine all the resources (the topology) where Network Flow
+         * Monitor will gather network flow performance metrics for you. To provide
+         * performance metrics, Network Flow Monitor uses the data that is sent by the
+         * Network Flow Monitor agents you install on the resources.</p> <p>To define the
+         * Region-account pairs for your scope, the Network Flow Monitor API uses the
+         * following constucts, which allow for future flexibility in defining scopes:</p>
+         * <ul> <li> <p> <i>Targets</i>, which are arrays of targetResources.</p> </li>
+         * <li> <p> <i>Target resources</i>, which are Region-targetIdentifier pairs.</p>
+         * </li> <li> <p> <i>Target identifiers</i>, made up of a targetID (currently
+         * always an account ID) and a targetType (currently always an account). </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/CreateScope">AWS
          * API Reference</a></p>
          */

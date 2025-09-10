@@ -99,6 +99,48 @@ namespace PaymentCryptography
         virtual ~PaymentCryptographyClient();
 
         /**
+         * <p>Adds replication Amazon Web Services Regions to an existing Amazon Web
+         * Services Payment Cryptography key, enabling the key to be used for cryptographic
+         * operations in additional Amazon Web Services Regions.</p> <p>Multi-region keys
+         * allow you to use the same key material across multiple Amazon Web Services
+         * Regions, providing lower latency for applications distributed across regions.
+         * When you add Replication Regions, Amazon Web Services Payment Cryptography
+         * securely replicates the key material to the specified Amazon Web Services
+         * Regions.</p> <p>The key must be in an active state to add Replication Regions.
+         * You can add multiple regions in a single operation, and the key will be
+         * available for use in those regions once replication is complete.</p> <p>
+         * <b>Cross-account use:</b> This operation can't be used across different Amazon
+         * Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_RemoveKeyReplicationRegions.html">RemoveKeyReplicationRegions</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_EnableDefaultKeyReplicationRegions.html">EnableDefaultKeyReplicationRegions</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetDefaultKeyReplicationRegions.html">GetDefaultKeyReplicationRegions</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/AddKeyReplicationRegions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AddKeyReplicationRegionsOutcome AddKeyReplicationRegions(const Model::AddKeyReplicationRegionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for AddKeyReplicationRegions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AddKeyReplicationRegionsRequestT = Model::AddKeyReplicationRegionsRequest>
+        Model::AddKeyReplicationRegionsOutcomeCallable AddKeyReplicationRegionsCallable(const AddKeyReplicationRegionsRequestT& request) const
+        {
+            return SubmitCallable(&PaymentCryptographyClient::AddKeyReplicationRegions, request);
+        }
+
+        /**
+         * An Async wrapper for AddKeyReplicationRegions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AddKeyReplicationRegionsRequestT = Model::AddKeyReplicationRegionsRequest>
+        void AddKeyReplicationRegionsAsync(const AddKeyReplicationRegionsRequestT& request, const AddKeyReplicationRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PaymentCryptographyClient::AddKeyReplicationRegions, request, handler, context);
+        }
+
+        /**
          * <p>Creates an <i>alias</i>, or a friendly name, for an Amazon Web Services
          * Payment Cryptography key. You can use an alias to identify a key in the console
          * and when you call cryptographic operations such as <a
@@ -313,6 +355,82 @@ namespace PaymentCryptography
         }
 
         /**
+         * <p>Disables multi-region key replication settings for the specified Amazon Web
+         * Services Regions in your account, preventing new keys from being automatically
+         * replicated to those regions.</p> <p>After disabling default replication for
+         * specific regions, new keys created in your account will not be automatically
+         * replicated to those regions. You can still manually add replication to those
+         * regions for individual keys using the AddKeyReplicationRegions operation.</p>
+         * <p>This operation does not affect existing keys or their current replication
+         * configuration.</p> <p> <b>Cross-account use:</b> This operation can't be used
+         * across different Amazon Web Services accounts.</p> <p> <b>Related
+         * operations:</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_EnableDefaultKeyReplicationRegions.html">EnableDefaultKeyReplicationRegions</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetDefaultKeyReplicationRegions.html">GetDefaultKeyReplicationRegions</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/DisableDefaultKeyReplicationRegions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableDefaultKeyReplicationRegionsOutcome DisableDefaultKeyReplicationRegions(const Model::DisableDefaultKeyReplicationRegionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisableDefaultKeyReplicationRegions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisableDefaultKeyReplicationRegionsRequestT = Model::DisableDefaultKeyReplicationRegionsRequest>
+        Model::DisableDefaultKeyReplicationRegionsOutcomeCallable DisableDefaultKeyReplicationRegionsCallable(const DisableDefaultKeyReplicationRegionsRequestT& request) const
+        {
+            return SubmitCallable(&PaymentCryptographyClient::DisableDefaultKeyReplicationRegions, request);
+        }
+
+        /**
+         * An Async wrapper for DisableDefaultKeyReplicationRegions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisableDefaultKeyReplicationRegionsRequestT = Model::DisableDefaultKeyReplicationRegionsRequest>
+        void DisableDefaultKeyReplicationRegionsAsync(const DisableDefaultKeyReplicationRegionsRequestT& request, const DisableDefaultKeyReplicationRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PaymentCryptographyClient::DisableDefaultKeyReplicationRegions, request, handler, context);
+        }
+
+        /**
+         * <p>Enables multi-region key replication settings for your account, causing new
+         * keys to be automatically replicated to the specified Amazon Web Services Regions
+         * when created.</p> <p>When default Replication Regions are enabled, any new keys
+         * created in your account will automatically be replicated to these regions unless
+         * you explicitly override this behavior during key creation. This simplifies key
+         * management for applications that operate across multiple regions.</p>
+         * <p>Existing keys are not affected by this operation - only keys created after
+         * enabling default replication will be automatically replicated.</p> <p>
+         * <b>Cross-account use:</b> This operation can't be used across different Amazon
+         * Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DisableDefaultKeyReplicationRegions.html">DisableDefaultKeyReplicationRegions</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetDefaultKeyReplicationRegions.html">GetDefaultKeyReplicationRegions</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/EnableDefaultKeyReplicationRegions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableDefaultKeyReplicationRegionsOutcome EnableDefaultKeyReplicationRegions(const Model::EnableDefaultKeyReplicationRegionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for EnableDefaultKeyReplicationRegions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EnableDefaultKeyReplicationRegionsRequestT = Model::EnableDefaultKeyReplicationRegionsRequest>
+        Model::EnableDefaultKeyReplicationRegionsOutcomeCallable EnableDefaultKeyReplicationRegionsCallable(const EnableDefaultKeyReplicationRegionsRequestT& request) const
+        {
+            return SubmitCallable(&PaymentCryptographyClient::EnableDefaultKeyReplicationRegions, request);
+        }
+
+        /**
+         * An Async wrapper for EnableDefaultKeyReplicationRegions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EnableDefaultKeyReplicationRegionsRequestT = Model::EnableDefaultKeyReplicationRegionsRequest>
+        void EnableDefaultKeyReplicationRegionsAsync(const EnableDefaultKeyReplicationRegionsRequestT& request, const EnableDefaultKeyReplicationRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PaymentCryptographyClient::EnableDefaultKeyReplicationRegions, request, handler, context);
+        }
+
+        /**
          * <p>Exports a key from Amazon Web Services Payment Cryptography.</p> <p>Amazon
          * Web Services Payment Cryptography simplifies key exchange by replacing the
          * existing paper-based approach with a modern electronic approach. With
@@ -524,11 +642,47 @@ namespace PaymentCryptography
         }
 
         /**
-         * <p>Gets the key material for an Amazon Web Services Payment Cryptography key,
-         * including the immutable and mutable data specified when the key was created.</p>
-         * <p> <b>Cross-account use:</b> This operation can't be used across different
-         * Amazon Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li>
-         * <p> <a
+         * <p>Retrieves the list of regions where default key replication is currently
+         * enabled for your account.</p> <p>This operation returns the current
+         * configuration of default Replication Regions. New keys created in your account
+         * will be automatically replicated to these regions unless explicitly overridden
+         * during key creation.</p> <p> <b>Cross-account use:</b> This operation can't be
+         * used across different Amazon Web Services accounts.</p> <p> <b>Related
+         * operations:</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_EnableDefaultKeyReplicationRegions.html">EnableDefaultKeyReplicationRegions</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DisableDefaultKeyReplicationRegions.html">DisableDefaultKeyReplicationRegions</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetDefaultKeyReplicationRegions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDefaultKeyReplicationRegionsOutcome GetDefaultKeyReplicationRegions(const Model::GetDefaultKeyReplicationRegionsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetDefaultKeyReplicationRegions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDefaultKeyReplicationRegionsRequestT = Model::GetDefaultKeyReplicationRegionsRequest>
+        Model::GetDefaultKeyReplicationRegionsOutcomeCallable GetDefaultKeyReplicationRegionsCallable(const GetDefaultKeyReplicationRegionsRequestT& request = {}) const
+        {
+            return SubmitCallable(&PaymentCryptographyClient::GetDefaultKeyReplicationRegions, request);
+        }
+
+        /**
+         * An Async wrapper for GetDefaultKeyReplicationRegions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDefaultKeyReplicationRegionsRequestT = Model::GetDefaultKeyReplicationRegionsRequest>
+        void GetDefaultKeyReplicationRegionsAsync(const GetDefaultKeyReplicationRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetDefaultKeyReplicationRegionsRequestT& request = {}) const
+        {
+            return SubmitAsync(&PaymentCryptographyClient::GetDefaultKeyReplicationRegions, request, handler, context);
+        }
+
+        /**
+         * <p>Gets the key metadata for an Amazon Web Services Payment Cryptography key,
+         * including the immutable and mutable attributes specified when the key was
+         * created. Returns key metadata including attributes, state, and timestamps, but
+         * does not return the actual cryptographic key material.</p> <p> <b>Cross-account
+         * use:</b> This operation can't be used across different Amazon Web Services
+         * accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html">DeleteKey</a>
@@ -956,6 +1110,44 @@ namespace PaymentCryptography
         void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PaymentCryptographyClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p>Removes Replication Regions from an existing Amazon Web Services Payment
+         * Cryptography key, disabling the key's availability for cryptographic operations
+         * in the specified Amazon Web Services Regions.</p> <p>When you remove Replication
+         * Regions, the key material is securely deleted from those regions and can no
+         * longer be used for cryptographic operations there. This operation is
+         * irreversible for the specified Amazon Web Services Regions.</p> <p>Ensure that
+         * no active cryptographic operations or applications depend on the key in the
+         * regions you're removing before performing this operation.</p> <p>
+         * <b>Cross-account use:</b> This operation can't be used across different Amazon
+         * Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_AddKeyReplicationRegions.html">AddKeyReplicationRegions</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DisableDefaultKeyReplicationRegions.html">DisableDefaultKeyReplicationRegions</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/RemoveKeyReplicationRegions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RemoveKeyReplicationRegionsOutcome RemoveKeyReplicationRegions(const Model::RemoveKeyReplicationRegionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for RemoveKeyReplicationRegions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RemoveKeyReplicationRegionsRequestT = Model::RemoveKeyReplicationRegionsRequest>
+        Model::RemoveKeyReplicationRegionsOutcomeCallable RemoveKeyReplicationRegionsCallable(const RemoveKeyReplicationRegionsRequestT& request) const
+        {
+            return SubmitCallable(&PaymentCryptographyClient::RemoveKeyReplicationRegions, request);
+        }
+
+        /**
+         * An Async wrapper for RemoveKeyReplicationRegions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RemoveKeyReplicationRegionsRequestT = Model::RemoveKeyReplicationRegionsRequest>
+        void RemoveKeyReplicationRegionsAsync(const RemoveKeyReplicationRegionsRequestT& request, const RemoveKeyReplicationRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PaymentCryptographyClient::RemoveKeyReplicationRegions, request, handler, context);
         }
 
         /**

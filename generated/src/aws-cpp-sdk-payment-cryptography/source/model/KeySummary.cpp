@@ -55,6 +55,16 @@ KeySummary& KeySummary::operator =(JsonView jsonValue)
     m_enabled = jsonValue.GetBool("Enabled");
     m_enabledHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("MultiRegionKeyType"))
+  {
+    m_multiRegionKeyType = MultiRegionKeyTypeMapper::GetMultiRegionKeyTypeForName(jsonValue.GetString("MultiRegionKeyType"));
+    m_multiRegionKeyTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("PrimaryRegion"))
+  {
+    m_primaryRegion = jsonValue.GetString("PrimaryRegion");
+    m_primaryRegionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +104,17 @@ JsonValue KeySummary::Jsonize() const
   if(m_enabledHasBeenSet)
   {
    payload.WithBool("Enabled", m_enabled);
+
+  }
+
+  if(m_multiRegionKeyTypeHasBeenSet)
+  {
+   payload.WithString("MultiRegionKeyType", MultiRegionKeyTypeMapper::GetNameForMultiRegionKeyType(m_multiRegionKeyType));
+  }
+
+  if(m_primaryRegionHasBeenSet)
+  {
+   payload.WithString("PrimaryRegion", m_primaryRegion);
 
   }
 

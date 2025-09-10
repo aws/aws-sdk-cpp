@@ -77,7 +77,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The targets for a scope</p>
+     * <p>The targets to define the scope to be monitored. A target is an array of
+     * targetResources, which are currently Region-account pairs, defined by
+     * targetResource constructs.</p>
      */
     inline const Aws::Vector<TargetResource>& GetTargets() const { return m_targets; }
     template<typename TargetsT = Aws::Vector<TargetResource>>

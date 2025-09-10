@@ -49,8 +49,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp that is the date and time beginning of the period that you want
-     * to retrieve results for with your query.</p>
+     * <p>The timestamp that is the date and time that is the beginning of the period
+     * that you want to retrieve results for with your query.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
@@ -93,11 +93,13 @@ namespace Model
      * <code>INTRA_AZ</code>: Top contributor network flows within a single
      * Availability Zone</p> </li> <li> <p> <code>INTER_AZ</code>: Top contributor
      * network flows between Availability Zones</p> </li> <li> <p>
-     * <code>INTER_VPC</code>: Top contributor network flows between VPCs</p> </li>
-     * <li> <p> <code>AMAZON_S3</code>: Top contributor network flows to or from Amazon
-     * S3</p> </li> <li> <p> <code>AMAZON_DYNAMODB</code>: Top contributor network
-     * flows to or from Amazon Dynamo DB</p> </li> <li> <p> <code>UNCLASSIFIED</code>:
-     * Top contributor network flows that do not have a bucket classification</p> </li>
+     * <code>INTER_REGION</code>: Top contributor network flows between Regions (to the
+     * edge of another Region)</p> </li> <li> <p> <code>INTER_VPC</code>: Top
+     * contributor network flows between VPCs</p> </li> <li> <p>
+     * <code>AMAZON_S3</code>: Top contributor network flows to or from Amazon S3</p>
+     * </li> <li> <p> <code>AMAZON_DYNAMODB</code>: Top contributor network flows to or
+     * from Amazon Dynamo DB</p> </li> <li> <p> <code>UNCLASSIFIED</code>: Top
+     * contributor network flows that do not have a bucket classification</p> </li>
      * </ul>
      */
     inline DestinationCategory GetDestinationCategory() const { return m_destinationCategory; }
