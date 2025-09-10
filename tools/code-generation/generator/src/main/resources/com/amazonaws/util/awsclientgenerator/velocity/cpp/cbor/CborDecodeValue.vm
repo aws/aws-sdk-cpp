@@ -28,7 +28,6 @@ if (peekType.has_value()) {
             }
         }
         ${memberVarName} = ss.str();
-        ss.clear();
     }
 }
 #elseif($shapeMember.boolean)
