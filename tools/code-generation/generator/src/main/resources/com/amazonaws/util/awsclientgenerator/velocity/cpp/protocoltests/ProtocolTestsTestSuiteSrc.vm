@@ -83,13 +83,9 @@ AWS_PROTOCOL_TEST($testSuite.name, $case.id) {
 #end
 };
 #end
-#if($serviceModel.metadata.protocol == "smithy-rpc-v2-cbor")
-  ValidateRequestSent(expectedRq, true);
-#else
+#if($serviceModel.metadata.protocol != "smithy-rpc-v2-cbor")
   ValidateRequestSent(expectedRq);
 #end
-#else
-  ValidateRequestSent();
 #end
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/result/ValidateOutcome.vm")
 }
