@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the Amazon QuickSight namespace you created. </p>
+     * <p>The ARN of the QuickSight namespace you created. </p>
      */
     inline const Aws::String& GetArn() const { return m_arn; }
     template<typename ArnT = Aws::String>

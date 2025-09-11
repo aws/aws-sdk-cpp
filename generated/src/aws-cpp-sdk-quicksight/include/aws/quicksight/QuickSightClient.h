@@ -161,14 +161,14 @@ namespace QuickSight
          * Region. Currently, you can add a custom default theme by using the
          * <code>CreateAccountCustomization</code> or
          * <code>UpdateAccountCustomization</code> API operation. To further customize
-         * Amazon QuickSight by removing Amazon QuickSight sample assets and videos for all
-         * new users, see <a
+         * QuickSight by removing QuickSight sample assets and videos for all new users,
+         * see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
-         * Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> </p> <p>You
-         * can create customizations for your Amazon Web Services account or, if you
-         * specify a namespace, for a QuickSight namespace instead. Customizations that
-         * apply to a namespace always override customizations that apply to an Amazon Web
-         * Services account. To find out which customizations apply, use the
+         * QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> </p> <p>You can
+         * create customizations for your Amazon Web Services account or, if you specify a
+         * namespace, for a QuickSight namespace instead. Customizations that apply to a
+         * namespace always override customizations that apply to an Amazon Web Services
+         * account. To find out which customizations apply, use the
          * <code>DescribeAccountCustomization</code> API operation.</p> <p>Before you use
          * the <code>CreateAccountCustomization</code> API operation to add a theme as the
          * namespace default, make sure that you first share the theme with the namespace.
@@ -204,32 +204,32 @@ namespace QuickSight
         }
 
         /**
-         * <p>Creates an Amazon QuickSight account, or subscribes to Amazon QuickSight
-         * Q.</p> <p>The Amazon Web Services Region for the account is derived from what is
-         * configured in the CLI or SDK.</p> <p>Before you use this operation, make sure
-         * that you can connect to an existing Amazon Web Services account. If you don't
-         * have an Amazon Web Services account, see <a
+         * <p>Creates an QuickSight account, or subscribes to QuickSight Q.</p> <p>The
+         * Amazon Web Services Region for the account is derived from what is configured in
+         * the CLI or SDK.</p> <p>Before you use this operation, make sure that you can
+         * connect to an existing Amazon Web Services account. If you don't have an Amazon
+         * Web Services account, see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/setting-up-aws-sign-up.html">Sign
          * up for Amazon Web Services</a> in the <i>Amazon QuickSight User Guide</i>. The
-         * person who signs up for Amazon QuickSight needs to have the correct Identity and
-         * Access Management (IAM) permissions. For more information, see <a
+         * person who signs up for QuickSight needs to have the correct Identity and Access
+         * Management (IAM) permissions. For more information, see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/iam-policy-examples.html">IAM
-         * Policy Examples for Amazon QuickSight</a> in the <i>Amazon QuickSight User
-         * Guide</i>.</p> <p>If your IAM policy includes both the <code>Subscribe</code>
-         * and <code>CreateAccountSubscription</code> actions, make sure that both actions
-         * are set to <code>Allow</code>. If either action is set to <code>Deny</code>, the
+         * Policy Examples for QuickSight</a> in the <i>QuickSight User Guide</i>.</p>
+         * <p>If your IAM policy includes both the <code>Subscribe</code> and
+         * <code>CreateAccountSubscription</code> actions, make sure that both actions are
+         * set to <code>Allow</code>. If either action is set to <code>Deny</code>, the
          * <code>Deny</code> action prevails and your API call fails.</p> <p>You can't pass
          * an existing IAM role to access other Amazon Web Services services using this API
-         * operation. To pass your existing IAM role to Amazon QuickSight, see <a
+         * operation. To pass your existing IAM role to QuickSight, see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html#security-create-iam-role">Passing
-         * IAM roles to Amazon QuickSight</a> in the <i>Amazon QuickSight User
-         * Guide</i>.</p> <p>You can't set default resource access on the new account from
-         * the Amazon QuickSight API. Instead, add default resource access from the Amazon
-         * QuickSight console. For more information about setting default resource access
-         * to Amazon Web Services services, see <a
+         * IAM roles to QuickSight</a> in the <i>QuickSight User Guide</i>.</p> <p>You
+         * can't set default resource access on the new account from the QuickSight API.
+         * Instead, add default resource access from the QuickSight console. For more
+         * information about setting default resource access to Amazon Web Services
+         * services, see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/scoping-policies-defaults.html">Setting
-         * default resource access to Amazon Web Services services</a> in the <i>Amazon
-         * QuickSight User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * default resource access to Amazon Web Services services</a> in the <i>QuickSight
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAccountSubscription">AWS
          * API Reference</a></p>
          */
@@ -281,7 +281,7 @@ namespace QuickSight
         }
 
         /**
-         * <p>Creates an Amazon QuickSight brand.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an QuickSight brand.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateBrand">AWS
          * API Reference</a></p>
          */
@@ -334,12 +334,12 @@ namespace QuickSight
          * <p>Creates a dashboard from either a template or directly with a
          * <code>DashboardDefinition</code>. To first create a template, see the <code> <a
          * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
-         * </code> API operation.</p> <p>A dashboard is an entity in Amazon QuickSight that
-         * identifies Amazon QuickSight reports, created from analyses. You can share
-         * Amazon QuickSight dashboards. With the right permissions, you can create
-         * scheduled email reports from them. If you have the correct permissions, you can
-         * create a dashboard from a template that exists in a different Amazon Web
-         * Services account.</p><p><h3>See Also:</h3>   <a
+         * </code> API operation.</p> <p>A dashboard is an entity in QuickSight that
+         * identifies QuickSight reports, created from analyses. You can share QuickSight
+         * dashboards. With the right permissions, you can create scheduled email reports
+         * from them. If you have the correct permissions, you can create a dashboard from
+         * a template that exists in a different Amazon Web Services account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateDashboard">AWS
          * API Reference</a></p>
          */
@@ -466,10 +466,10 @@ namespace QuickSight
         }
 
         /**
-         * <p>Use the <code>CreateGroup</code> operation to create a group in Amazon
-         * QuickSight. You can create up to 10,000 groups in a namespace. If you want to
-         * create more than 10,000 groups in a namespace, contact Amazon Web Services
-         * Support.</p> <p>The permissions resource is
+         * <p>Use the <code>CreateGroup</code> operation to create a group in QuickSight.
+         * You can create up to 10,000 groups in a namespace. If you want to create more
+         * than 10,000 groups in a namespace, contact Amazon Web Services Support.</p>
+         * <p>The permissions resource is
          * <code>arn:aws:quicksight:&lt;your-region&gt;:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
          * </code>.</p> <p>The response is a group object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateGroup">AWS
@@ -587,15 +587,14 @@ namespace QuickSight
 
         /**
          * <p>(Enterprise edition only) Creates a new namespace for you to use with Amazon
-         * QuickSight.</p> <p>A namespace allows you to isolate the Amazon QuickSight users
-         * and groups that are registered for that namespace. Users that access the
-         * namespace can share assets only with other users or groups in the same
-         * namespace. They can't see users and groups in other namespaces. You can create a
-         * namespace after your Amazon Web Services account is subscribed to Amazon
-         * QuickSight. The namespace must be unique within the Amazon Web Services account.
-         * By default, there is a limit of 100 namespaces per Amazon Web Services account.
-         * To increase your limit, create a ticket with Amazon Web ServicesSupport.
-         * </p><p><h3>See Also:</h3>   <a
+         * QuickSight.</p> <p>A namespace allows you to isolate the QuickSight users and
+         * groups that are registered for that namespace. Users that access the namespace
+         * can share assets only with other users or groups in the same namespace. They
+         * can't see users and groups in other namespaces. You can create a namespace after
+         * your Amazon Web Services account is subscribed to QuickSight. The namespace must
+         * be unique within the Amazon Web Services account. By default, there is a limit
+         * of 100 namespaces per Amazon Web Services account. To increase your limit,
+         * create a ticket with Amazon Web Services Support. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateNamespace">AWS
          * API Reference</a></p>
          */
@@ -646,8 +645,8 @@ namespace QuickSight
         }
 
         /**
-         * <p>Use <code>CreateRoleMembership</code> to add an existing Amazon QuickSight
-         * group to an existing role.</p><p><h3>See Also:</h3>   <a
+         * <p>Use <code>CreateRoleMembership</code> to add an existing QuickSight group to
+         * an existing role.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateRoleMembership">AWS
          * API Reference</a></p>
          */
@@ -673,15 +672,14 @@ namespace QuickSight
 
         /**
          * <p>Creates a template either from a <code>TemplateDefinition</code> or from an
-         * existing Amazon QuickSight analysis or template. You can use the resulting
-         * template to create additional dashboards, templates, or analyses.</p> <p>A
-         * <i>template</i> is an entity in Amazon QuickSight that encapsulates the metadata
-         * required to create an analysis and that you can use to create s dashboard. A
-         * template adds a layer of abstraction by using placeholders to replace the
-         * dataset associated with the analysis. You can use templates to create dashboards
-         * by replacing dataset placeholders with datasets that follow the same schema that
-         * was used to create the source analysis and template.</p><p><h3>See Also:</h3>  
-         * <a
+         * existing QuickSight analysis or template. You can use the resulting template to
+         * create additional dashboards, templates, or analyses.</p> <p>A <i>template</i>
+         * is an entity in QuickSight that encapsulates the metadata required to create an
+         * analysis and that you can use to create s dashboard. A template adds a layer of
+         * abstraction by using placeholders to replace the dataset associated with the
+         * analysis. You can use templates to create dashboards by replacing dataset
+         * placeholders with datasets that follow the same schema that was used to create
+         * the source analysis and template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTemplate">AWS
          * API Reference</a></p>
          */
@@ -861,8 +859,34 @@ namespace QuickSight
         }
 
         /**
+         * <p>Unapplies a custom permissions profile from an account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountCustomPermission">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAccountCustomPermissionOutcome DeleteAccountCustomPermission(const Model::DeleteAccountCustomPermissionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAccountCustomPermission that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAccountCustomPermissionRequestT = Model::DeleteAccountCustomPermissionRequest>
+        Model::DeleteAccountCustomPermissionOutcomeCallable DeleteAccountCustomPermissionCallable(const DeleteAccountCustomPermissionRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DeleteAccountCustomPermission, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAccountCustomPermission that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAccountCustomPermissionRequestT = Model::DeleteAccountCustomPermissionRequest>
+        void DeleteAccountCustomPermissionAsync(const DeleteAccountCustomPermissionRequestT& request, const DeleteAccountCustomPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DeleteAccountCustomPermission, request, handler, context);
+        }
+
+        /**
          * <p>Deletes all Amazon QuickSight customizations in this Amazon Web Services
-         * Region for the specified Amazon Web Services account and Amazon QuickSight
+         * Region for the specified Amazon Web Services account and QuickSight
          * namespace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountCustomization">AWS
          * API Reference</a></p>
@@ -888,7 +912,7 @@ namespace QuickSight
         }
 
         /**
-         * <p>Use the <code>DeleteAccountSubscription</code> operation to delete an Amazon
+         * <p>Use the <code>DeleteAccountSubscription</code> operation to delete an
          * QuickSight account. This operation will result in an error message if you have
          * configured your account termination protection settings to <code>True</code>. To
          * change this setting and delete your account, call the
@@ -922,15 +946,15 @@ namespace QuickSight
         /**
          * <p>Deletes an analysis from Amazon QuickSight. You can optionally include a
          * recovery window during which you can restore the analysis. If you don't specify
-         * a recovery window value, the operation defaults to 30 days. Amazon QuickSight
-         * attaches a <code>DeletionTime</code> stamp to the response that specifies the
-         * end of the recovery window. At the end of the recovery window, Amazon QuickSight
-         * deletes the analysis permanently.</p> <p>At any time before recovery window
-         * ends, you can use the <code>RestoreAnalysis</code> API operation to remove the
+         * a recovery window value, the operation defaults to 30 days. QuickSight attaches
+         * a <code>DeletionTime</code> stamp to the response that specifies the end of the
+         * recovery window. At the end of the recovery window, QuickSight deletes the
+         * analysis permanently.</p> <p>At any time before recovery window ends, you can
+         * use the <code>RestoreAnalysis</code> API operation to remove the
          * <code>DeletionTime</code> stamp and cancel the deletion of the analysis. The
          * analysis remains visible in the API until it's deleted, so you can describe it
          * but you can't make a template from it.</p> <p>An analysis that's scheduled for
-         * deletion isn't accessible in the Amazon QuickSight console. To access it in the
+         * deletion isn't accessible in the QuickSight console. To access it in the
          * console, restore it. Deleting an analysis doesn't delete the dashboards that you
          * publish from it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAnalysis">AWS
@@ -957,7 +981,7 @@ namespace QuickSight
         }
 
         /**
-         * <p>Deletes an Amazon QuickSight brand.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an QuickSight brand.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteBrand">AWS
          * API Reference</a></p>
          */
@@ -1134,7 +1158,7 @@ namespace QuickSight
         }
 
         /**
-         * <p>Deletes a linked Amazon Q Business application from an Amazon QuickSight
+         * <p>Deletes a linked Amazon Q Business application from an QuickSight
          * account</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteDefaultQBusinessApplication">AWS
          * API Reference</a></p>
@@ -1288,8 +1312,8 @@ namespace QuickSight
 
         /**
          * <p>Deletes all access scopes and authorized targets that are associated with a
-         * service from the Amazon QuickSight IAM Identity Center application.</p> <p>This
-         * operation is only supported for Amazon QuickSight accounts that use IAM Identity
+         * service from the QuickSight IAM Identity Center application.</p> <p>This
+         * operation is only supported for QuickSight accounts that use IAM Identity
          * Center.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteIdentityPropagationConfig">AWS
          * API Reference</a></p>
@@ -1675,26 +1699,52 @@ namespace QuickSight
         }
 
         /**
+         * <p>Describes the custom permissions profile that is applied to an
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountCustomPermission">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAccountCustomPermissionOutcome DescribeAccountCustomPermission(const Model::DescribeAccountCustomPermissionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAccountCustomPermission that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeAccountCustomPermissionRequestT = Model::DescribeAccountCustomPermissionRequest>
+        Model::DescribeAccountCustomPermissionOutcomeCallable DescribeAccountCustomPermissionCallable(const DescribeAccountCustomPermissionRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DescribeAccountCustomPermission, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeAccountCustomPermission that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeAccountCustomPermissionRequestT = Model::DescribeAccountCustomPermissionRequest>
+        void DescribeAccountCustomPermissionAsync(const DescribeAccountCustomPermissionRequestT& request, const DescribeAccountCustomPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DescribeAccountCustomPermission, request, handler, context);
+        }
+
+        /**
          * <p>Describes the customizations associated with the provided Amazon Web Services
-         * account and Amazon Amazon QuickSight namespace in an Amazon Web Services Region.
-         * The Amazon QuickSight console evaluates which customizations to apply by running
-         * this API operation with the <code>Resolved</code> flag included. </p> <p>To
-         * determine what customizations display when you run this command, it can help to
-         * visualize the relationship of the entities involved. </p> <ul> <li> <p>
-         * <code>Amazon Web Services account</code> - The Amazon Web Services account
-         * exists at the top of the hierarchy. It has the potential to use all of the
-         * Amazon Web Services Regions and Amazon Web Services Services. When you subscribe
-         * to Amazon QuickSight, you choose one Amazon Web Services Region to use as your
-         * home Region. That's where your free SPICE capacity is located. You can use
-         * Amazon QuickSight in any supported Amazon Web Services Region. </p> </li> <li>
-         * <p> <code>Amazon Web Services Region</code> - In each Amazon Web Services Region
-         * where you sign in to Amazon QuickSight at least once, Amazon QuickSight acts as
-         * a separate instance of the same service. If you have a user directory, it
-         * resides in us-east-1, which is the US East (N. Virginia). Generally speaking,
-         * these users have access to Amazon QuickSight in any Amazon Web Services Region,
-         * unless they are constrained to a namespace. </p> <p>To run the command in a
-         * different Amazon Web Services Region, you change your Region settings. If you're
-         * using the CLI, you can use one of the following options:</p> <ul> <li> <p>Use <a
+         * account and Amazon QuickSight namespace in an Amazon Web Services Region. The
+         * QuickSight console evaluates which customizations to apply by running this API
+         * operation with the <code>Resolved</code> flag included. </p> <p>To determine
+         * what customizations display when you run this command, it can help to visualize
+         * the relationship of the entities involved. </p> <ul> <li> <p> <code>Amazon Web
+         * Services account</code> - The Amazon Web Services account exists at the top of
+         * the hierarchy. It has the potential to use all of the Amazon Web Services
+         * Regions and Amazon Web Services Services. When you subscribe to QuickSight, you
+         * choose one Amazon Web Services Region to use as your home Region. That's where
+         * your free SPICE capacity is located. You can use QuickSight in any supported
+         * Amazon Web Services Region. </p> </li> <li> <p> <code>Amazon Web Services
+         * Region</code> - In each Amazon Web Services Region where you sign in to
+         * QuickSight at least once, QuickSight acts as a separate instance of the same
+         * service. If you have a user directory, it resides in us-east-1, which is the US
+         * East (N. Virginia). Generally speaking, these users have access to QuickSight in
+         * any Amazon Web Services Region, unless they are constrained to a namespace. </p>
+         * <p>To run the command in a different Amazon Web Services Region, you change your
+         * Region settings. If you're using the CLI, you can use one of the following
+         * options:</p> <ul> <li> <p>Use <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-options.html">command
          * line options</a>. </p> </li> <li> <p>Use <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html">named
@@ -1709,7 +1759,7 @@ namespace QuickSight
          * People who share a namespace are completely isolated from users and assets in
          * other namespaces, even if they are in the same Amazon Web Services account and
          * Amazon Web Services Region.</p> </li> <li> <p> <code>Applied
-         * customizations</code> - Within an Amazon Web Services Region, a set of Amazon
+         * customizations</code> - Within an Amazon Web Services Region, a set of
          * QuickSight customizations can apply to an Amazon Web Services account or to a
          * namespace. Settings that you apply to a namespace override settings that you
          * apply to an Amazon Web Services account. All settings are isolated to a single
@@ -1741,9 +1791,8 @@ namespace QuickSight
         }
 
         /**
-         * <p>Describes the settings that were used when your Amazon QuickSight
-         * subscription was first created in this Amazon Web Services
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the settings that were used when your QuickSight subscription was
+         * first created in this Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountSettings">AWS
          * API Reference</a></p>
          */
@@ -1769,7 +1818,7 @@ namespace QuickSight
 
         /**
          * <p>Use the DescribeAccountSubscription operation to receive a description of an
-         * Amazon QuickSight account's subscription. A successful API call returns an
+         * QuickSight account's subscription. A successful API call returns an
          * <code>AccountInfo</code> object that includes an account's name, subscription
          * status, authentication type, edition, and notification email
          * address.</p><p><h3>See Also:</h3>   <a
@@ -2333,8 +2382,8 @@ namespace QuickSight
         }
 
         /**
-         * <p>Describes a Amazon Q Business application that is linked to an Amazon
-         * QuickSight account.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a Amazon Q Business application that is linked to an QuickSight
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDefaultQBusinessApplication">AWS
          * API Reference</a></p>
          */
@@ -2566,7 +2615,7 @@ namespace QuickSight
         }
 
         /**
-         * <p>Describes all customer managed key registrations in a Amazon QuickSight
+         * <p>Describes all customer managed key registrations in a QuickSight
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeKeyRegistration">AWS
          * API Reference</a></p>
@@ -2642,8 +2691,8 @@ namespace QuickSight
         }
 
         /**
-         * <p>Describes the state of a Amazon QuickSight Q Search
-         * configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the state of a QuickSight Q Search configuration.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeQuickSightQSearchConfiguration">AWS
          * API Reference</a></p>
          */
@@ -3140,10 +3189,10 @@ namespace QuickSight
         }
 
         /**
-         * <p>Generates an embed URL that you can use to embed an Amazon QuickSight
-         * experience in your website. This action can be used for any type of user that is
-         * registered in an Amazon QuickSight account that uses IAM Identity Center for
-         * authentication. This API requires <a
+         * <p>Generates an embed URL that you can use to embed an QuickSight experience in
+         * your website. This action can be used for any type of user that is registered in
+         * an QuickSight account that uses IAM Identity Center for authentication. This API
+         * requires <a
          * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-overview.html#types-identity-enhanced-iam-role-sessions">identity-enhanced
          * IAM Role sessions</a> for the authenticated user that the API call is being made
          * for.</p> <p>This API uses <a
@@ -3152,10 +3201,10 @@ namespace QuickSight
          * receives the embed URL that is specific to that user. The IAM Identity Center
          * application that the user has logged into needs to have <a
          * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-using-customermanagedapps-specify-trusted-apps.html">trusted
-         * Identity Propagation enabled for Amazon QuickSight</a> with the scope value set
-         * to <code>quicksight:read</code>. Before you use this action, make sure that you
-         * have configured the relevant Amazon QuickSight resource and
-         * permissions.</p><p><h3>See Also:</h3>   <a
+         * Identity Propagation enabled for QuickSight</a> with the scope value set to
+         * <code>quicksight:read</code>. Before you use this action, make sure that you
+         * have configured the relevant QuickSight resource and permissions.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GenerateEmbedUrlForRegisteredUserWithIdentity">AWS
          * API Reference</a></p>
          */
@@ -3181,7 +3230,7 @@ namespace QuickSight
 
         /**
          * <p>Generates a temporary session URL and authorization code(bearer token) that
-         * you can use to embed an Amazon QuickSight read-only dashboard in your website or
+         * you can use to embed an QuickSight read-only dashboard in your website or
          * application. Before you use this command, make sure that you have configured the
          * dashboards and permissions. </p> <p>Currently, you can use
          * <code>GetDashboardEmbedURL</code> only from the server, not from the user's
@@ -3189,8 +3238,8 @@ namespace QuickSight
          * must be used together.</p> </li> <li> <p>They can be used one time only.</p>
          * </li> <li> <p>They are valid for 5 minutes after you run this command.</p> </li>
          * <li> <p>You are charged only when the URL is used or there is interaction with
-         * Amazon QuickSight.</p> </li> <li> <p>The resulting user session is valid for 15
-         * minutes (default) up to 10 hours (maximum). You can use the optional
+         * QuickSight.</p> </li> <li> <p>The resulting user session is valid for 15 minutes
+         * (default) up to 10 hours (maximum). You can use the optional
          * <code>SessionLifetimeInMinutes</code> parameter to customize session
          * duration.</p> </li> </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-deprecated.html">Embedding
@@ -3225,12 +3274,12 @@ namespace QuickSight
 
         /**
          * <p>Generates a session URL and authorization code that you can use to embed the
-         * Amazon Amazon QuickSight console in your web server code. Use
+         * Amazon QuickSight console in your web server code. Use
          * <code>GetSessionEmbedUrl</code> where you want to provide an authoring portal
          * that allows users to create data sources, datasets, analyses, and dashboards.
-         * The users who access an embedded Amazon QuickSight console need belong to the
-         * author or admin security cohort. If you want to restrict permissions to some of
-         * these features, add a custom permissions profile to the user with the <code> <a
+         * The users who access an embedded QuickSight console need belong to the author or
+         * admin security cohort. If you want to restrict permissions to some of these
+         * features, add a custom permissions profile to the user with the <code> <a
          * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
          * </code> API operation. Use <code> <a
          * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
@@ -3350,8 +3399,7 @@ namespace QuickSight
         }
 
         /**
-         * <p>Lists all brands in an Amazon QuickSight account.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists all brands in an QuickSight account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListBrands">AWS
          * API Reference</a></p>
          */
@@ -3402,7 +3450,7 @@ namespace QuickSight
         }
 
         /**
-         * <p>Lists all the versions of the dashboards in the Amazon QuickSight
+         * <p>Lists all the versions of the dashboards in the QuickSight
          * subscription.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDashboardVersions">AWS
          * API Reference</a></p>
@@ -3688,10 +3736,9 @@ namespace QuickSight
         }
 
         /**
-         * <p>Lists all services and authorized targets that the Amazon QuickSight IAM
-         * Identity Center application can access.</p> <p>This operation is only supported
-         * for Amazon QuickSight accounts that use IAM Identity Center.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all services and authorized targets that the QuickSight IAM Identity
+         * Center application can access.</p> <p>This operation is only supported for
+         * QuickSight accounts that use IAM Identity Center.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIdentityPropagationConfigs">AWS
          * API Reference</a></p>
          */
@@ -4159,10 +4206,10 @@ namespace QuickSight
          * receives the embed URL that is specific to that user. The IAM Identity Center
          * application that the user has logged into needs to have <a
          * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-using-customermanagedapps-specify-trusted-apps.html">trusted
-         * Identity Propagation enabled for Amazon QuickSight</a> with the scope value set
-         * to <code>quicksight:read</code>. Before you use this action, make sure that you
-         * have configured the relevant Amazon QuickSight resource and permissions.</p>
-         * <p>We recommend enabling the <code>QSearchStatus</code> API to unlock the full
+         * Identity Propagation enabled for QuickSight</a> with the scope value set to
+         * <code>quicksight:read</code>. Before you use this action, make sure that you
+         * have configured the relevant QuickSight resource and permissions.</p> <p>We
+         * recommend enabling the <code>QSearchStatus</code> API to unlock the full
          * potential of <code>PredictQnA</code>. When <code>QSearchStatus</code> is
          * enabled, it first checks the specified dashboard for any existing visuals that
          * match the question. If no matching visuals are found, <code>PredictQnA</code>
@@ -4222,15 +4269,14 @@ namespace QuickSight
         /**
          * <p>Creates an Amazon QuickSight user whose identity is associated with the
          * Identity and Access Management (IAM) identity or role specified in the request.
-         * When you register a new user from the Amazon QuickSight API, Amazon QuickSight
-         * generates a registration URL. The user accesses this registration URL to create
-         * their account. Amazon QuickSight doesn't send a registration email to users who
-         * are registered from the Amazon QuickSight API. If you want new users to receive
-         * a registration email, then add those users in the Amazon QuickSight console. For
-         * more information on registering a new user in the Amazon QuickSight console, see
-         * <a
+         * When you register a new user from the QuickSight API, QuickSight generates a
+         * registration URL. The user accesses this registration URL to create their
+         * account. QuickSight doesn't send a registration email to users who are
+         * registered from the QuickSight API. If you want new users to receive a
+         * registration email, then add those users in the QuickSight console. For more
+         * information on registering a new user in the QuickSight console, see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/managing-users.html#inviting-users">
-         * Inviting users to access Amazon QuickSight</a>.</p><p><h3>See Also:</h3>   <a
+         * Inviting users to access QuickSight</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RegisterUser">AWS
          * API Reference</a></p>
          */
@@ -4413,8 +4459,7 @@ namespace QuickSight
 
         /**
          * <p>Use the <code>SearchGroups</code> operation to search groups in a specified
-         * Amazon QuickSight namespace using the supplied filters.</p><p><h3>See Also:</h3>
-         * <a
+         * QuickSight namespace using the supplied filters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchGroups">AWS
          * API Reference</a></p>
          */
@@ -4439,8 +4484,8 @@ namespace QuickSight
         }
 
         /**
-         * <p>Searches for any Q topic that exists in an Amazon QuickSight
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Searches for any Q topic that exists in an QuickSight account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchTopics">AWS
          * API Reference</a></p>
          */
@@ -4466,15 +4511,15 @@ namespace QuickSight
 
         /**
          * <p>Starts an Asset Bundle export job.</p> <p>An Asset Bundle export job exports
-         * specified Amazon QuickSight assets. You can also choose to export any asset
+         * specified QuickSight assets. You can also choose to export any asset
          * dependencies in the same job. Export jobs run asynchronously and can be polled
          * with a <code>DescribeAssetBundleExportJob</code> API call. When a job is
          * successfully completed, a download URL that contains the exported assets is
          * returned. The URL is valid for 5 minutes and can be refreshed with a
-         * <code>DescribeAssetBundleExportJob</code> API call. Each Amazon QuickSight
-         * account can run up to 5 export jobs concurrently.</p> <p>The API caller must
-         * have the necessary permissions in their IAM role to access each resource before
-         * the resources can be exported.</p><p><h3>See Also:</h3>   <a
+         * <code>DescribeAssetBundleExportJob</code> API call. Each QuickSight account can
+         * run up to 5 export jobs concurrently.</p> <p>The API caller must have the
+         * necessary permissions in their IAM role to access each resource before the
+         * resources can be exported.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartAssetBundleExportJob">AWS
          * API Reference</a></p>
          */
@@ -4500,14 +4545,14 @@ namespace QuickSight
 
         /**
          * <p>Starts an Asset Bundle import job.</p> <p>An Asset Bundle import job imports
-         * specified Amazon QuickSight assets into an Amazon QuickSight account. You can
-         * also choose to import a naming prefix and specified configuration overrides. The
-         * assets that are contained in the bundle file that you provide are used to create
-         * or update a new or existing asset in your Amazon QuickSight account. Each Amazon
-         * QuickSight account can run up to 5 import jobs concurrently.</p> <p>The API
-         * caller must have the necessary <code>"create"</code>, <code>"describe"</code>,
-         * and <code>"update"</code> permissions in their IAM role to access each resource
-         * type that is contained in the bundle file before the resources can be
+         * specified QuickSight assets into an QuickSight account. You can also choose to
+         * import a naming prefix and specified configuration overrides. The assets that
+         * are contained in the bundle file that you provide are used to create or update a
+         * new or existing asset in your QuickSight account. Each QuickSight account can
+         * run up to 5 import jobs concurrently.</p> <p>The API caller must have the
+         * necessary <code>"create"</code>, <code>"describe"</code>, and
+         * <code>"update"</code> permissions in their IAM role to access each resource type
+         * that is contained in the bundle file before the resources can be
          * imported.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartAssetBundleImportJob">AWS
          * API Reference</a></p>
@@ -4546,40 +4591,39 @@ namespace QuickSight
          * generated files. If the job fails, the
          * <code>DescribeDashboardSnapshotJobResult</code> API returns detailed information
          * about the error that occurred.</p> <p> <b>StartDashboardSnapshotJob API
-         * throttling</b> </p> <p>Amazon QuickSight utilizes API throttling to create a
-         * more consistent user experience within a time span for customers when they call
-         * the <code>StartDashboardSnapshotJob</code>. By default, 12 jobs can run
+         * throttling</b> </p> <p>QuickSight utilizes API throttling to create a more
+         * consistent user experience within a time span for customers when they call the
+         * <code>StartDashboardSnapshotJob</code>. By default, 12 jobs can run
          * simlutaneously in one Amazon Web Services account and users can submit up 10 API
          * requests per second before an account is throttled. If an overwhelming number of
-         * API requests are made by the same user in a short period of time, Amazon
-         * QuickSight throttles the API calls to maintin an optimal experience and
-         * reliability for all Amazon QuickSight users.</p> <p> <b>Common throttling
-         * scenarios</b> </p> <p>The following list provides information about the most
-         * commin throttling scenarios that can occur.</p> <ul> <li> <p> <b>A large number
-         * of <code>SnapshotExport</code> API jobs are running simultaneously on an Amazon
-         * Web Services account.</b> When a new <code>StartDashboardSnapshotJob</code> is
+         * API requests are made by the same user in a short period of time, QuickSight
+         * throttles the API calls to maintin an optimal experience and reliability for all
+         * QuickSight users.</p> <p> <b>Common throttling scenarios</b> </p> <p>The
+         * following list provides information about the most commin throttling scenarios
+         * that can occur.</p> <ul> <li> <p> <b>A large number of
+         * <code>SnapshotExport</code> API jobs are running simultaneously on an Amazon Web
+         * Services account.</b> When a new <code>StartDashboardSnapshotJob</code> is
          * created and there are already 12 jobs with the <code>RUNNING</code> status, the
          * new job request fails and returns a <code>LimitExceededException</code> error.
          * Wait for a current job to comlpete before you resubmit the new job.</p> </li>
          * <li> <p> <b>A large number of API requests are submitted on an Amazon Web
-         * Services account.</b> When a user makes more than 10 API calls to the Amazon
-         * QuickSight API in one second, a <code>ThrottlingException</code> is
-         * returned.</p> </li> </ul> <p>If your use case requires a higher throttling
-         * limit, contact your account admin or <a
-         * href="http://aws.amazon.com/contact-us/">Amazon Web ServicesSupport</a> to
-         * explore options to tailor a more optimal expereince for your account.</p> <p>
-         * <b>Best practices to handle throttling</b> </p> <p>If your use case projects
-         * high levels of API traffic, try to reduce the degree of frequency and
-         * parallelism of API calls as much as you can to avoid throttling. You can also
-         * perform a timing test to calculate an estimate for the total processing time of
-         * your projected load that stays within the throttling limits of the Amazon
-         * QuickSight APIs. For example, if your projected traffic is 100 snapshot jobs
-         * before 12:00 PM per day, start 12 jobs in parallel and measure the amount of
-         * time it takes to proccess all 12 jobs. Once you obtain the result, multiply the
-         * duration by 9, for example <code>(12 minutes * 9 = 108 minutes)</code>. Use the
-         * new result to determine the latest time at which the jobs need to be started to
-         * meet your target deadline.</p> <p>The time that it takes to process a job can be
-         * impacted by the following factors:</p> <ul> <li> <p>The dataset type (Direct
+         * Services account.</b> When a user makes more than 10 API calls to the QuickSight
+         * API in one second, a <code>ThrottlingException</code> is returned.</p> </li>
+         * </ul> <p>If your use case requires a higher throttling limit, contact your
+         * account admin or <a href="http://aws.amazon.com/contact-us/">Amazon Web
+         * ServicesSupport</a> to explore options to tailor a more optimal expereince for
+         * your account.</p> <p> <b>Best practices to handle throttling</b> </p> <p>If your
+         * use case projects high levels of API traffic, try to reduce the degree of
+         * frequency and parallelism of API calls as much as you can to avoid throttling.
+         * You can also perform a timing test to calculate an estimate for the total
+         * processing time of your projected load that stays within the throttling limits
+         * of the QuickSight APIs. For example, if your projected traffic is 100 snapshot
+         * jobs before 12:00 PM per day, start 12 jobs in parallel and measure the amount
+         * of time it takes to proccess all 12 jobs. Once you obtain the result, multiply
+         * the duration by 9, for example <code>(12 minutes * 9 = 108 minutes)</code>. Use
+         * the new result to determine the latest time at which the jobs need to be started
+         * to meet your target deadline.</p> <p>The time that it takes to process a job can
+         * be impacted by the following factors:</p> <ul> <li> <p>The dataset type (Direct
          * Query or SPICE).</p> </li> <li> <p>The size of the dataset.</p> </li> <li>
          * <p>The complexity of the calculated fields that are used in the dashboard.</p>
          * </li> <li> <p>The number of visuals that are on a sheet.</p> </li> <li> <p>The
@@ -4615,10 +4659,10 @@ namespace QuickSight
          * simultaneously in a given schedule. Repeated requests are skipped with a
          * <code>202</code> HTTP status code.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/sending-reports.html">Scheduling
-         * and sending Amazon QuickSight reports by email</a> and <a
+         * and sending QuickSight reports by email</a> and <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/email-reports-from-dashboard.html">Configuring
-         * email report settings for a Amazon QuickSight dashboard</a> in the <i>Amazon
-         * QuickSight User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * email report settings for a QuickSight dashboard</a> in the <i>Amazon QuickSight
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartDashboardSnapshotJobSchedule">AWS
          * API Reference</a></p>
          */
@@ -4643,7 +4687,7 @@ namespace QuickSight
         }
 
         /**
-         * <p>Assigns one or more tags (key-value pairs) to the specified Amazon QuickSight
+         * <p>Assigns one or more tags (key-value pairs) to the specified QuickSight
          * resource. </p> <p>Tags can help you organize and categorize your resources. You
          * can also use them to scope user permissions, by granting a user permission to
          * access or change only resources with certain tag values. You can use the
@@ -4652,15 +4696,14 @@ namespace QuickSight
          * associated with the resource. If you specify a tag key that is already
          * associated with the resource, the new tag value that you specify replaces the
          * previous value for that tag.</p> <p>You can associate as many as 50 tags with a
-         * resource. Amazon QuickSight supports tagging on data set, data source,
-         * dashboard, template, topic, and user. </p> <p>Tagging for Amazon QuickSight
-         * works in a similar way to tagging for other Amazon Web Services services, except
-         * for the following:</p> <ul> <li> <p>Tags are used to track costs for users in
-         * Amazon QuickSight. You can't tag other resources that Amazon QuickSight costs
-         * are based on, such as storage capacoty (SPICE), session usage, alert
-         * consumption, or reporting units.</p> </li> <li> <p>Amazon QuickSight doesn't
-         * currently support the tag editor for Resource Groups.</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * resource. QuickSight supports tagging on data set, data source, dashboard,
+         * template, topic, and user. </p> <p>Tagging for QuickSight works in a similar way
+         * to tagging for other Amazon Web Services services, except for the following:</p>
+         * <ul> <li> <p>Tags are used to track costs for users in QuickSight. You can't tag
+         * other resources that QuickSight costs are based on, such as storage capacoty
+         * (SPICE), session usage, alert consumption, or reporting units.</p> </li> <li>
+         * <p>QuickSight doesn't currently support the tag editor for Resource Groups.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TagResource">AWS
          * API Reference</a></p>
          */
@@ -4710,11 +4753,37 @@ namespace QuickSight
         }
 
         /**
+         * <p>Applies a custom permissions profile to an account.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountCustomPermission">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAccountCustomPermissionOutcome UpdateAccountCustomPermission(const Model::UpdateAccountCustomPermissionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAccountCustomPermission that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAccountCustomPermissionRequestT = Model::UpdateAccountCustomPermissionRequest>
+        Model::UpdateAccountCustomPermissionOutcomeCallable UpdateAccountCustomPermissionCallable(const UpdateAccountCustomPermissionRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::UpdateAccountCustomPermission, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAccountCustomPermission that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAccountCustomPermissionRequestT = Model::UpdateAccountCustomPermissionRequest>
+        void UpdateAccountCustomPermissionAsync(const UpdateAccountCustomPermissionRequestT& request, const UpdateAccountCustomPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::UpdateAccountCustomPermission, request, handler, context);
+        }
+
+        /**
          * <p>Updates Amazon QuickSight customizations for the current Amazon Web Services
          * Region. Currently, the only customization that you can use is a theme.</p>
          * <p>You can use customizations for your Amazon Web Services account or, if you
-         * specify a namespace, for a Amazon QuickSight namespace instead. Customizations
-         * that apply to a namespace override customizations that apply to an Amazon Web
+         * specify a namespace, for a QuickSight namespace instead. Customizations that
+         * apply to a namespace override customizations that apply to an Amazon Web
          * Services account. To find out which customizations apply, use the
          * <code>DescribeAccountCustomization</code> API operation. </p><p><h3>See
          * Also:</h3>   <a
@@ -4819,9 +4888,9 @@ namespace QuickSight
         }
 
         /**
-         * <p>Updates an Amazon QuickSight application with a token exchange grant. This
-         * operation only supports Amazon QuickSight applications that are registered with
-         * IAM Identity Center.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an QuickSight application with a token exchange grant. This operation
+         * only supports QuickSight applications that are registered with IAM Identity
+         * Center.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateApplicationWithTokenExchangeGrant">AWS
          * API Reference</a></p>
          */
@@ -5181,7 +5250,7 @@ namespace QuickSight
         }
 
         /**
-         * <p>Updates a Amazon Q Business application that is linked to a Amazon QuickSight
+         * <p>Updates a Amazon Q Business application that is linked to a QuickSight
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDefaultQBusinessApplication">AWS
          * API Reference</a></p>
@@ -5310,10 +5379,10 @@ namespace QuickSight
         }
 
         /**
-         * <p>Adds or updates services and authorized targets to configure what the Amazon
+         * <p>Adds or updates services and authorized targets to configure what the
          * QuickSight IAM Identity Center application can access.</p> <p>This operation is
-         * only supported for Amazon QuickSight accounts using IAM Identity
-         * Center</p><p><h3>See Also:</h3>   <a
+         * only supported for QuickSight accounts using IAM Identity Center</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateIdentityPropagationConfig">AWS
          * API Reference</a></p>
          */
@@ -5368,7 +5437,7 @@ namespace QuickSight
         }
 
         /**
-         * <p>Updates a customer managed key in a Amazon QuickSight account.</p><p><h3>See
+         * <p>Updates a customer managed key in a QuickSight account.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateKeyRegistration">AWS
          * API Reference</a></p>
@@ -5395,15 +5464,15 @@ namespace QuickSight
 
         /**
          * <p>Use the <code>UpdatePublicSharingSettings</code> operation to turn on or turn
-         * off the public sharing settings of an Amazon QuickSight dashboard.</p> <p>To use
-         * this operation, turn on session capacity pricing for your Amazon QuickSight
-         * account.</p> <p>Before you can turn on public sharing on your account, make sure
-         * to give public sharing permissions to an administrative user in the Identity and
-         * Access Management (IAM) console. For more information on using IAM with Amazon
-         * QuickSight, see <a
+         * off the public sharing settings of an QuickSight dashboard.</p> <p>To use this
+         * operation, turn on session capacity pricing for your QuickSight account.</p>
+         * <p>Before you can turn on public sharing on your account, make sure to give
+         * public sharing permissions to an administrative user in the Identity and Access
+         * Management (IAM) console. For more information on using IAM with QuickSight, see
+         * <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using
-         * Amazon QuickSight with IAM</a> in the <i>Amazon QuickSight User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * QuickSight with IAM</a> in the <i>QuickSight User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdatePublicSharingSettings">AWS
          * API Reference</a></p>
          */
@@ -5453,8 +5522,8 @@ namespace QuickSight
         }
 
         /**
-         * <p>Updates the state of a Amazon QuickSight Q Search
-         * configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the state of a QuickSight Q Search configuration.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateQuickSightQSearchConfiguration">AWS
          * API Reference</a></p>
          */
@@ -5530,7 +5599,7 @@ namespace QuickSight
         }
 
         /**
-         * <p>Updates the SPICE capacity configuration for a Amazon QuickSight
+         * <p>Updates the SPICE capacity configuration for a QuickSight
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateSPICECapacityConfiguration">AWS
          * API Reference</a></p>

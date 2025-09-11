@@ -8,6 +8,7 @@
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/EngineFamily.h>
+#include <aws/rds/model/DefaultAuthScheme.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/EndpointNetworkType.h>
 #include <aws/rds/model/TargetConnectionNetworkType.h>
@@ -71,6 +72,22 @@ namespace Model
     inline bool EngineFamilyHasBeenSet() const { return m_engineFamilyHasBeenSet; }
     inline void SetEngineFamily(EngineFamily value) { m_engineFamilyHasBeenSet = true; m_engineFamily = value; }
     inline CreateDBProxyRequest& WithEngineFamily(EngineFamily value) { SetEngineFamily(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The default authentication scheme that the proxy uses for client connections
+     * to the proxy and connections from the proxy to the underlying database. Valid
+     * values are <code>NONE</code> and <code>IAM_AUTH</code>. When set to
+     * <code>IAM_AUTH</code>, the proxy uses end-to-end IAM authentication to connect
+     * to the database. If you don't specify <code>DefaultAuthScheme</code> or specify
+     * this parameter as <code>NONE</code>, you must specify the <code>Auth</code>
+     * option.</p>
+     */
+    inline DefaultAuthScheme GetDefaultAuthScheme() const { return m_defaultAuthScheme; }
+    inline bool DefaultAuthSchemeHasBeenSet() const { return m_defaultAuthSchemeHasBeenSet; }
+    inline void SetDefaultAuthScheme(DefaultAuthScheme value) { m_defaultAuthSchemeHasBeenSet = true; m_defaultAuthScheme = value; }
+    inline CreateDBProxyRequest& WithDefaultAuthScheme(DefaultAuthScheme value) { SetDefaultAuthScheme(value); return *this;}
     ///@}
 
     ///@{
@@ -225,6 +242,9 @@ namespace Model
 
     EngineFamily m_engineFamily{EngineFamily::NOT_SET};
     bool m_engineFamilyHasBeenSet = false;
+
+    DefaultAuthScheme m_defaultAuthScheme{DefaultAuthScheme::NOT_SET};
+    bool m_defaultAuthSchemeHasBeenSet = false;
 
     Aws::Vector<UserAuthConfig> m_auth;
     bool m_authHasBeenSet = false;

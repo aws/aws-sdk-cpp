@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/evs/EVS_EXPORTS.h>
 #include <aws/evs/model/InitialVlanInfo.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -136,7 +137,13 @@ namespace Model
     /**
      * <p>The HCX VLAN subnet. This VLAN subnet allows the HCX Interconnnect (IX) and
      * HCX Network Extension (NE) to reach their peers and enable HCX Service Mesh
-     * creation.</p>
+     * creation.</p> <p>If you plan to use a public HCX VLAN subnet, the following
+     * requirements must be met:</p> <ul> <li> <p>Must have a /28 netmask and be
+     * allocated from the IPAM public pool. Required for HCX internet access
+     * configuration.</p> </li> <li> <p>The HCX public VLAN CIDR block must be added to
+     * the VPC as a secondary CIDR block.</p> </li> <li> <p>Must have at least three
+     * Elastic IP addresses to be allocated from the public IPAM pool for HCX
+     * components.</p> </li> </ul>
      */
     inline const InitialVlanInfo& GetHcx() const { return m_hcx; }
     inline bool HcxHasBeenSet() const { return m_hcxHasBeenSet; }
@@ -175,6 +182,30 @@ namespace Model
     template<typename ExpansionVlan2T = InitialVlanInfo>
     InitialVlans& WithExpansionVlan2(ExpansionVlan2T&& value) { SetExpansionVlan2(std::forward<ExpansionVlan2T>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Determines if the HCX VLAN that Amazon EVS provisions is public or
+     * private.</p>
+     */
+    inline bool GetIsHcxPublic() const { return m_isHcxPublic; }
+    inline bool IsHcxPublicHasBeenSet() const { return m_isHcxPublicHasBeenSet; }
+    inline void SetIsHcxPublic(bool value) { m_isHcxPublicHasBeenSet = true; m_isHcxPublic = value; }
+    inline InitialVlans& WithIsHcxPublic(bool value) { SetIsHcxPublic(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A unique ID for a network access control list that the HCX VLAN uses.
+     * Required when <code>isHcxPublic</code> is set to <code>true</code>.</p>
+     */
+    inline const Aws::String& GetHcxNetworkAclId() const { return m_hcxNetworkAclId; }
+    inline bool HcxNetworkAclIdHasBeenSet() const { return m_hcxNetworkAclIdHasBeenSet; }
+    template<typename HcxNetworkAclIdT = Aws::String>
+    void SetHcxNetworkAclId(HcxNetworkAclIdT&& value) { m_hcxNetworkAclIdHasBeenSet = true; m_hcxNetworkAclId = std::forward<HcxNetworkAclIdT>(value); }
+    template<typename HcxNetworkAclIdT = Aws::String>
+    InitialVlans& WithHcxNetworkAclId(HcxNetworkAclIdT&& value) { SetHcxNetworkAclId(std::forward<HcxNetworkAclIdT>(value)); return *this;}
+    ///@}
   private:
 
     InitialVlanInfo m_vmkManagement;
@@ -206,6 +237,12 @@ namespace Model
 
     InitialVlanInfo m_expansionVlan2;
     bool m_expansionVlan2HasBeenSet = false;
+
+    bool m_isHcxPublic{false};
+    bool m_isHcxPublicHasBeenSet = false;
+
+    Aws::String m_hcxNetworkAclId;
+    bool m_hcxNetworkAclIdHasBeenSet = false;
   };
 
 } // namespace Model

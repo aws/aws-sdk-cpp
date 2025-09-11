@@ -61,8 +61,8 @@ namespace Model
     ///@{
     /**
      * <p>The ID of the schedule that you want to start a snapshot job schedule for.
-     * The schedule ID can be found in the Amazon QuickSight console in the
-     * <b>Schedules</b> pane of the dashboard that the schedule is configured for.</p>
+     * The schedule ID can be found in the QuickSight console in the <b>Schedules</b>
+     * pane of the dashboard that the schedule is configured for.</p>
      */
     inline const Aws::String& GetScheduleId() const { return m_scheduleId; }
     inline bool ScheduleIdHasBeenSet() const { return m_scheduleIdHasBeenSet; }

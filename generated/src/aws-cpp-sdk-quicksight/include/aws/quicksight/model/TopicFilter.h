@@ -14,6 +14,7 @@
 #include <aws/quicksight/model/TopicNumericRangeFilter.h>
 #include <aws/quicksight/model/TopicDateRangeFilter.h>
 #include <aws/quicksight/model/TopicRelativeDateFilter.h>
+#include <aws/quicksight/model/TopicNullFilter.h>
 #include <utility>
 
 namespace Aws
@@ -180,6 +181,18 @@ namespace Model
     template<typename RelativeDateFilterT = TopicRelativeDateFilter>
     TopicFilter& WithRelativeDateFilter(RelativeDateFilterT&& value) { SetRelativeDateFilter(std::forward<RelativeDateFilterT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The null filter.</p>
+     */
+    inline const TopicNullFilter& GetNullFilter() const { return m_nullFilter; }
+    inline bool NullFilterHasBeenSet() const { return m_nullFilterHasBeenSet; }
+    template<typename NullFilterT = TopicNullFilter>
+    void SetNullFilter(NullFilterT&& value) { m_nullFilterHasBeenSet = true; m_nullFilter = std::forward<NullFilterT>(value); }
+    template<typename NullFilterT = TopicNullFilter>
+    TopicFilter& WithNullFilter(NullFilterT&& value) { SetNullFilter(std::forward<NullFilterT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_filterDescription;
@@ -214,6 +227,9 @@ namespace Model
 
     TopicRelativeDateFilter m_relativeDateFilter;
     bool m_relativeDateFilterHasBeenSet = false;
+
+    TopicNullFilter m_nullFilter;
+    bool m_nullFilterHasBeenSet = false;
   };
 
 } // namespace Model

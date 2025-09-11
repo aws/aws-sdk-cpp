@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/evs/model/VlanState.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/evs/model/EipAssociation.h>
 #include <utility>
 
 namespace Aws
@@ -146,6 +148,42 @@ namespace Model
     template<typename StateDetailsT = Aws::String>
     Vlan& WithStateDetails(StateDetailsT&& value) { SetStateDetails(std::forward<StateDetailsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An array of Elastic IP address associations.</p>
+     */
+    inline const Aws::Vector<EipAssociation>& GetEipAssociations() const { return m_eipAssociations; }
+    inline bool EipAssociationsHasBeenSet() const { return m_eipAssociationsHasBeenSet; }
+    template<typename EipAssociationsT = Aws::Vector<EipAssociation>>
+    void SetEipAssociations(EipAssociationsT&& value) { m_eipAssociationsHasBeenSet = true; m_eipAssociations = std::forward<EipAssociationsT>(value); }
+    template<typename EipAssociationsT = Aws::Vector<EipAssociation>>
+    Vlan& WithEipAssociations(EipAssociationsT&& value) { SetEipAssociations(std::forward<EipAssociationsT>(value)); return *this;}
+    template<typename EipAssociationsT = EipAssociation>
+    Vlan& AddEipAssociations(EipAssociationsT&& value) { m_eipAssociationsHasBeenSet = true; m_eipAssociations.emplace_back(std::forward<EipAssociationsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Determines if the VLAN that Amazon EVS provisions is public or private.</p>
+     */
+    inline bool GetIsPublic() const { return m_isPublic; }
+    inline bool IsPublicHasBeenSet() const { return m_isPublicHasBeenSet; }
+    inline void SetIsPublic(bool value) { m_isPublicHasBeenSet = true; m_isPublic = value; }
+    inline Vlan& WithIsPublic(bool value) { SetIsPublic(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A unique ID for a network access control list.</p>
+     */
+    inline const Aws::String& GetNetworkAclId() const { return m_networkAclId; }
+    inline bool NetworkAclIdHasBeenSet() const { return m_networkAclIdHasBeenSet; }
+    template<typename NetworkAclIdT = Aws::String>
+    void SetNetworkAclId(NetworkAclIdT&& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = std::forward<NetworkAclIdT>(value); }
+    template<typename NetworkAclIdT = Aws::String>
+    Vlan& WithNetworkAclId(NetworkAclIdT&& value) { SetNetworkAclId(std::forward<NetworkAclIdT>(value)); return *this;}
+    ///@}
   private:
 
     int m_vlanId{0};
@@ -174,6 +212,15 @@ namespace Model
 
     Aws::String m_stateDetails;
     bool m_stateDetailsHasBeenSet = false;
+
+    Aws::Vector<EipAssociation> m_eipAssociations;
+    bool m_eipAssociationsHasBeenSet = false;
+
+    bool m_isPublic{false};
+    bool m_isPublicHasBeenSet = false;
+
+    Aws::String m_networkAclId;
+    bool m_networkAclIdHasBeenSet = false;
   };
 
 } // namespace Model

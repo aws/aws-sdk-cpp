@@ -26,8 +26,8 @@ namespace Model
   /**
    * <p>An optional structure that contains the Amazon S3 bucket configuration that
    * the generated snapshots are stored in. If you don't provide this information,
-   * generated snapshots are stored in the default Amazon QuickSight
-   * bucket.</p><p><h3>See Also:</h3>   <a
+   * generated snapshots are stored in the default QuickSight bucket.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/S3BucketConfiguration">AWS
    * API Reference</a></p>
    */

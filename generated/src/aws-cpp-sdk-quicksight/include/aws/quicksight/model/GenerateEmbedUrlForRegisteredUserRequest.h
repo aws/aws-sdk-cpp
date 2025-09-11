@@ -73,9 +73,8 @@ namespace Model
     ///@{
     /**
      * <p>The experience that you want to embed. For registered users, you can embed
-     * Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q
-     * search bar, the Amazon QuickSight Generative Q&amp;A experience, or the entire
-     * Amazon QuickSight console.</p>
+     * QuickSight dashboards, QuickSight visuals, the QuickSight Q search bar, the
+     * QuickSight Generative Q&amp;A experience, or the entire QuickSight console.</p>
      */
     inline const RegisteredUserEmbeddingExperienceConfiguration& GetExperienceConfiguration() const { return m_experienceConfiguration; }
     inline bool ExperienceConfigurationHasBeenSet() const { return m_experienceConfigurationHasBeenSet; }
@@ -89,7 +88,7 @@ namespace Model
     /**
      * <p>The domains that you want to add to the allow list for access to the
      * generated URL that is then embedded. This optional parameter overrides the
-     * static domains that are configured in the Manage QuickSight menu in the Amazon
+     * static domains that are configured in the Manage QuickSight menu in the
      * QuickSight console. Instead, it allows only the domains that you include in this
      * parameter. You can list up to three domains or subdomains in each API call.</p>
      * <p>To include all subdomains under a specific domain to the allow list, use

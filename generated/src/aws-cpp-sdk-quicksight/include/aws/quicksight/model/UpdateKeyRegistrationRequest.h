@@ -50,7 +50,7 @@ namespace Model
     ///@{
     /**
      * <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to
-     * the Amazon QuickSight account.</p>
+     * the QuickSight account.</p>
      */
     inline const Aws::Vector<RegisteredCustomerManagedKey>& GetKeyRegistration() const { return m_keyRegistration; }
     inline bool KeyRegistrationHasBeenSet() const { return m_keyRegistrationHasBeenSet; }

@@ -79,7 +79,7 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits
-     * from. All themes initially inherit from a default Amazon QuickSight theme.</p>
+     * from. All themes initially inherit from a default QuickSight theme.</p>
      */
     inline const Aws::String& GetBaseThemeId() const { return m_baseThemeId; }
     inline bool BaseThemeIdHasBeenSet() const { return m_baseThemeIdHasBeenSet; }

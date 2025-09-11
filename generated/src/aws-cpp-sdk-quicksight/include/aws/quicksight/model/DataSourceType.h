@@ -44,7 +44,8 @@ namespace Model
     DATABRICKS,
     STARBURST,
     TRINO,
-    BIGQUERY
+    BIGQUERY,
+    GOOGLESHEETS
   };
 
 namespace DataSourceTypeMapper

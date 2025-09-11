@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID for the Amazon Web Services account that you want to delete Amazon
-     * QuickSight customizations from in this Amazon Web Services Region.</p>
+     * <p>The ID for the Amazon Web Services account that you want to delete QuickSight
+     * customizations from in this Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
@@ -53,8 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon QuickSight namespace that you're deleting the customizations
-     * from.</p>
+     * <p>The QuickSight namespace that you're deleting the customizations from.</p>
      */
     inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }

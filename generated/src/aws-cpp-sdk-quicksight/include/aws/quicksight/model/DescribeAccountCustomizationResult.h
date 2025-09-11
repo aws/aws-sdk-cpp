@@ -58,7 +58,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon QuickSight namespace that you're describing. </p>
+     * <p>The QuickSight namespace that you're describing. </p>
      */
     inline const Aws::String& GetNamespace() const { return m_namespace; }
     template<typename NamespaceT = Aws::String>
@@ -69,8 +69,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon QuickSight customizations that exist in the current Amazon Web
-     * Services Region. </p>
+     * <p>The QuickSight customizations that exist in the current Amazon Web Services
+     * Region. </p>
      */
     inline const AccountCustomization& GetAccountCustomization() const { return m_accountCustomization; }
     template<typename AccountCustomizationT = AccountCustomization>

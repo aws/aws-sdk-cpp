@@ -128,8 +128,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Groupings of columns that work together in certain Amazon QuickSight
-     * features. Currently, only geospatial hierarchy is supported.</p>
+     * <p>Groupings of columns that work together in certain QuickSight features.
+     * Currently, only geospatial hierarchy is supported.</p>
      */
     inline const Aws::Vector<ColumnGroup>& GetColumnGroups() const { return m_columnGroups; }
     inline bool ColumnGroupsHasBeenSet() const { return m_columnGroupsHasBeenSet; }

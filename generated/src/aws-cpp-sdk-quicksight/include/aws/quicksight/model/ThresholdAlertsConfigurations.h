@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p>The threshold alerts configuration for an embedded Amazon QuickSight
+   * <p>The threshold alerts configuration for an embedded QuickSight
    * dashboard.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ThresholdAlertsConfigurations">AWS
    * API Reference</a></p>
@@ -38,8 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The threshold alerts configuration for an embedded Amazon QuickSight
-     * dashboard.</p>
+     * <p>The threshold alerts configuration for an embedded QuickSight dashboard.</p>
      */
     inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }

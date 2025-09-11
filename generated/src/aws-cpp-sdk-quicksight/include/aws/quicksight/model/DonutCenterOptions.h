@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Determines the visibility of the label in a donut chart. In the Amazon
-     * QuickSight console, this option is called <code>'Show total'</code>.</p>
+     * <p>Determines the visibility of the label in a donut chart. In the QuickSight
+     * console, this option is called <code>'Show total'</code>.</p>
      */
     inline Visibility GetLabelVisibility() const { return m_labelVisibility; }
     inline bool LabelVisibilityHasBeenSet() const { return m_labelVisibilityHasBeenSet; }

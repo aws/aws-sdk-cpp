@@ -39,7 +39,7 @@ namespace Model
     ///@{
     /**
      * <p>A value that indicates that a row in a table is uniquely identified by the
-     * columns in a join key. This is used by Amazon QuickSight to optimize query
+     * columns in a join key. This is used by QuickSight to optimize query
      * performance.</p>
      */
     inline bool GetUniqueKey() const { return m_uniqueKey; }

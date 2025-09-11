@@ -49,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the Amazon QuickSight brand.</p>
+     * <p>The ID of the QuickSight brand.</p>
      */
     inline const Aws::String& GetBrandId() const { return m_brandId; }
     inline bool BrandIdHasBeenSet() const { return m_brandIdHasBeenSet; }

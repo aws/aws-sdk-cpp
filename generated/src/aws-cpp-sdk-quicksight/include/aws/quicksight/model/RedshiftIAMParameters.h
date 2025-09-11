@@ -25,9 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>A structure that grants Amazon QuickSight access to your cluster and make a
-   * call to the <code>redshift:GetClusterCredentials</code> API. For more
-   * information on the <code>redshift:GetClusterCredentials</code> API, see <a
+   * <p>A structure that grants QuickSight access to your cluster and make a call to
+   * the <code>redshift:GetClusterCredentials</code> API. For more information on the
+   * <code>redshift:GetClusterCredentials</code> API, see <a
    * href="https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetClusterCredentials.html">
    * <code>GetClusterCredentials</code> </a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RedshiftIAMParameters">AWS
@@ -44,11 +44,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Use the <code>RoleArn</code> structure to allow Amazon QuickSight to call
+     * <p>Use the <code>RoleArn</code> structure to allow QuickSight to call
      * <code>redshift:GetClusterCredentials</code> on your cluster. The calling
-     * principal must have <code>iam:PassRole</code> access to pass the role to Amazon
-     * QuickSight. The role's trust policy must allow the Amazon QuickSight service
-     * principal to assume the role.</p>
+     * principal must have <code>iam:PassRole</code> access to pass the role to
+     * QuickSight. The role's trust policy must allow the QuickSight service principal
+     * to assume the role.</p>
      */
     inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -60,11 +60,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user whose permissions and group memberships will be used by Amazon
-     * QuickSight to access the cluster. If this user already exists in your database,
-     * Amazon QuickSight is granted the same permissions that the user has. If the user
-     * doesn't exist, set the value of <code>AutoCreateDatabaseUser</code> to
-     * <code>True</code> to create a new user with PUBLIC permissions.</p>
+     * <p>The user whose permissions and group memberships will be used by QuickSight
+     * to access the cluster. If this user already exists in your database, QuickSight
+     * is granted the same permissions that the user has. If the user doesn't exist,
+     * set the value of <code>AutoCreateDatabaseUser</code> to <code>True</code> to
+     * create a new user with PUBLIC permissions.</p>
      */
     inline const Aws::String& GetDatabaseUser() const { return m_databaseUser; }
     inline bool DatabaseUserHasBeenSet() const { return m_databaseUserHasBeenSet; }
@@ -76,10 +76,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of groups whose permissions will be granted to Amazon QuickSight to
-     * access the cluster. These permissions are combined with the permissions granted
-     * to Amazon QuickSight by the <code>DatabaseUser</code>. If you choose to include
-     * this parameter, the <code>RoleArn</code> must grant access to
+     * <p>A list of groups whose permissions will be granted to QuickSight to access
+     * the cluster. These permissions are combined with the permissions granted to
+     * QuickSight by the <code>DatabaseUser</code>. If you choose to include this
+     * parameter, the <code>RoleArn</code> must grant access to
      * <code>redshift:JoinGroup</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDatabaseGroups() const { return m_databaseGroups; }

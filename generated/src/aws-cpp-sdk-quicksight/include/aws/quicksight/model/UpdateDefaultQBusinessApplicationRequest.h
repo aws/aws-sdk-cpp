@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the Amazon QuickSight account that is connected to the Amazon Q
-     * Business application that you want to update.</p>
+     * <p>The ID of the QuickSight account that is connected to the Amazon Q Business
+     * application that you want to update.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon QuickSight namespace that contains the linked Amazon Q Business
+     * <p>The QuickSight namespace that contains the linked Amazon Q Business
      * application. If this field is left blank, the default namespace is used.
      * Currently, the default namespace is the only valid value for this parameter.</p>
      */

@@ -87,6 +87,12 @@ DBProxy& DBProxy::operator =(const XmlNode& xmlNode)
 
       m_vpcSubnetIdsHasBeenSet = true;
     }
+    XmlNode defaultAuthSchemeNode = resultNode.FirstChild("DefaultAuthScheme");
+    if(!defaultAuthSchemeNode.IsNull())
+    {
+      m_defaultAuthScheme = Aws::Utils::Xml::DecodeEscapedXmlText(defaultAuthSchemeNode.GetText());
+      m_defaultAuthSchemeHasBeenSet = true;
+    }
     XmlNode authNode = resultNode.FirstChild("Auth");
     if(!authNode.IsNull())
     {
@@ -204,6 +210,11 @@ void DBProxy::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       }
   }
 
+  if(m_defaultAuthSchemeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DefaultAuthScheme=" << StringUtils::URLEncode(m_defaultAuthScheme.c_str()) << "&";
+  }
+
   if(m_authHasBeenSet)
   {
       unsigned authIdx = 1;
@@ -299,6 +310,10 @@ void DBProxy::OutputToStream(Aws::OStream& oStream, const char* location) const
       {
         oStream << location << ".VpcSubnetIds.member." << vpcSubnetIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_defaultAuthSchemeHasBeenSet)
+  {
+      oStream << location << ".DefaultAuthScheme=" << StringUtils::URLEncode(m_defaultAuthScheme.c_str()) << "&";
   }
   if(m_authHasBeenSet)
   {

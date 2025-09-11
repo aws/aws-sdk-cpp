@@ -75,8 +75,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The parameters that Amazon QuickSight uses to connect to your underlying
-     * source.</p>
+     * <p>The parameters that QuickSight uses to connect to your underlying source.</p>
      */
     inline const DataSourceParameters& GetDataSourceParameters() const { return m_dataSourceParameters; }
     inline bool DataSourceParametersHasBeenSet() const { return m_dataSourceParametersHasBeenSet; }
@@ -88,9 +87,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The credentials that Amazon QuickSight that uses to connect to your
-     * underlying source. Currently, only credentials based on user name and password
-     * are supported.</p>
+     * <p>The credentials that QuickSight that uses to connect to your underlying
+     * source. Currently, only credentials based on user name and password are
+     * supported.</p>
      */
     inline const DataSourceCredentials& GetCredentials() const { return m_credentials; }
     inline bool CredentialsHasBeenSet() const { return m_credentialsHasBeenSet; }
@@ -102,8 +101,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Use this parameter only when you want Amazon QuickSight to use a VPC
-     * connection when connecting to your underlying source.</p>
+     * <p>Use this parameter only when you want QuickSight to use a VPC connection when
+     * connecting to your underlying source.</p>
      */
     inline const VpcConnectionProperties& GetVpcConnectionProperties() const { return m_vpcConnectionProperties; }
     inline bool VpcConnectionPropertiesHasBeenSet() const { return m_vpcConnectionPropertiesHasBeenSet; }
@@ -115,8 +114,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight
-     * connects to your underlying source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
+     * your underlying source.</p>
      */
     inline const SslProperties& GetSslProperties() const { return m_sslProperties; }
     inline bool SslPropertiesHasBeenSet() const { return m_sslPropertiesHasBeenSet; }

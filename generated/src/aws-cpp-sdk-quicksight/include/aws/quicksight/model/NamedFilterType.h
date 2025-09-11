@@ -20,7 +20,8 @@ namespace Model
     NUMERIC_EQUALITY_FILTER,
     NUMERIC_RANGE_FILTER,
     DATE_RANGE_FILTER,
-    RELATIVE_DATE_FILTER
+    RELATIVE_DATE_FILTER,
+    NULL_FILTER
   };
 
 namespace NamedFilterTypeMapper

@@ -35,8 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the Amazon Web Services account that contains the Amazon QuickSight
-     * Q Search configuration that you want to update.</p>
+     * <p>The ID of the Amazon Web Services account that contains the QuickSight Q
+     * Search configuration that you want to update.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
@@ -48,8 +48,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the Amazon QuickSight Q Search configuration that the user
-     * wants to update.</p>
+     * <p>The status of the QuickSight Q Search configuration that the user wants to
+     * update.</p>
      */
     inline QSearchStatus GetQSearchStatus() const { return m_qSearchStatus; }
     inline bool QSearchStatusHasBeenSet() const { return m_qSearchStatusHasBeenSet; }

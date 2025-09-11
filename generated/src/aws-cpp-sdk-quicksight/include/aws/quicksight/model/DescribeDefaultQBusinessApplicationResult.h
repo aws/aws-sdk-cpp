@@ -52,8 +52,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the Amazon Q Business application that is linked to the Amazon
-     * QuickSight account.</p>
+     * <p>The ID of the Amazon Q Business application that is linked to the QuickSight
+     * account.</p>
      */
     inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     template<typename ApplicationIdT = Aws::String>

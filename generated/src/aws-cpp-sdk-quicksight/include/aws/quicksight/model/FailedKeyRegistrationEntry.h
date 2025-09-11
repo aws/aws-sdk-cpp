@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>An entry that appears when a <code>KeyRegistration</code> update to Amazon
+   * <p>An entry that appears when a <code>KeyRegistration</code> update to
    * QuickSight fails.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FailedKeyRegistrationEntry">AWS
    * API Reference</a></p>
@@ -80,7 +80,7 @@ namespace Model
      * the error was caused by user error. If the value of this property is
      * <code>False</code>, the error occurred on the backend. If your job continues
      * fail and with a <code>False</code> <code>SenderFault</code> value, contact
-     * Amazon Web ServicesSupport.</p>
+     * Amazon Web Services Support.</p>
      */
     inline bool GetSenderFault() const { return m_senderFault; }
     inline bool SenderFaultHasBeenSet() const { return m_senderFaultHasBeenSet; }

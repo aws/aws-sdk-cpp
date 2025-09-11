@@ -58,7 +58,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon
+     * <p>The name of a sheet. This name is displayed on the sheet's tab in the
      * QuickSight console.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }

@@ -43,8 +43,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of filter configurations. In the Amazon QuickSight console, this
-     * filter type is called a filter list.</p>
+     * <p>A list of filter configurations. In the QuickSight console, this filter type
+     * is called a filter list.</p>
      */
     inline const FilterListConfiguration& GetFilterListConfiguration() const { return m_filterListConfiguration; }
     inline bool FilterListConfigurationHasBeenSet() const { return m_filterListConfigurationHasBeenSet; }
@@ -56,8 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of custom filter values. In the Amazon QuickSight console, this filter
-     * type is called a custom filter list.</p>
+     * <p>A list of custom filter values. In the QuickSight console, this filter type
+     * is called a custom filter list.</p>
      */
     inline const CustomFilterListConfiguration& GetCustomFilterListConfiguration() const { return m_customFilterListConfiguration; }
     inline bool CustomFilterListConfigurationHasBeenSet() const { return m_customFilterListConfigurationHasBeenSet; }

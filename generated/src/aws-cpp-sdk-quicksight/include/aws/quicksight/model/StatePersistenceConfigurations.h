@@ -38,8 +38,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Determines if a Amazon QuickSight dashboard's state persistence settings are
-     * turned on or off.</p>
+     * <p>Determines if a QuickSight dashboard's state persistence settings are turned
+     * on or off.</p>
      */
     inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }

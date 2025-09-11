@@ -16,6 +16,8 @@
 #include <aws/quicksight/model/DataPointMenuLabelOption.h>
 #include <aws/quicksight/model/DataPointTooltipOption.h>
 #include <aws/quicksight/model/DataQAEnabledOption.h>
+#include <aws/quicksight/model/ExecutiveSummaryOption.h>
+#include <aws/quicksight/model/DataStoriesSharingOption.h>
 #include <utility>
 
 namespace Aws
@@ -169,11 +171,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Adds Q&amp;A capabilities to an Amazon QuickSight dashboard. If no topic is
-     * linked, Dashboard Q&amp;A uses the data values that are rendered on the
-     * dashboard. End users can use Dashboard Q&amp;A to ask for different slices of
-     * the data that they see on the dashboard. If a topic is linked, Topic Q&amp;A is
-     * used.</p>
+     * <p>Adds Q&amp;A capabilities to an QuickSight dashboard. If no topic is linked,
+     * Dashboard Q&amp;A uses the data values that are rendered on the dashboard. End
+     * users can use Dashboard Q&amp;A to ask for different slices of the data that
+     * they see on the dashboard. If a topic is linked, Topic Q&amp;A is used.</p>
      */
     inline const DataQAEnabledOption& GetDataQAEnabledOption() const { return m_dataQAEnabledOption; }
     inline bool DataQAEnabledOptionHasBeenSet() const { return m_dataQAEnabledOptionHasBeenSet; }
@@ -181,6 +182,30 @@ namespace Model
     void SetDataQAEnabledOption(DataQAEnabledOptionT&& value) { m_dataQAEnabledOptionHasBeenSet = true; m_dataQAEnabledOption = std::forward<DataQAEnabledOptionT>(value); }
     template<typename DataQAEnabledOptionT = DataQAEnabledOption>
     DashboardPublishOptions& WithDataQAEnabledOption(DataQAEnabledOptionT&& value) { SetDataQAEnabledOption(std::forward<DataQAEnabledOptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Executive summary option.</p>
+     */
+    inline const ExecutiveSummaryOption& GetExecutiveSummaryOption() const { return m_executiveSummaryOption; }
+    inline bool ExecutiveSummaryOptionHasBeenSet() const { return m_executiveSummaryOptionHasBeenSet; }
+    template<typename ExecutiveSummaryOptionT = ExecutiveSummaryOption>
+    void SetExecutiveSummaryOption(ExecutiveSummaryOptionT&& value) { m_executiveSummaryOptionHasBeenSet = true; m_executiveSummaryOption = std::forward<ExecutiveSummaryOptionT>(value); }
+    template<typename ExecutiveSummaryOptionT = ExecutiveSummaryOption>
+    DashboardPublishOptions& WithExecutiveSummaryOption(ExecutiveSummaryOptionT&& value) { SetExecutiveSummaryOption(std::forward<ExecutiveSummaryOptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Data stories sharing option.</p>
+     */
+    inline const DataStoriesSharingOption& GetDataStoriesSharingOption() const { return m_dataStoriesSharingOption; }
+    inline bool DataStoriesSharingOptionHasBeenSet() const { return m_dataStoriesSharingOptionHasBeenSet; }
+    template<typename DataStoriesSharingOptionT = DataStoriesSharingOption>
+    void SetDataStoriesSharingOption(DataStoriesSharingOptionT&& value) { m_dataStoriesSharingOptionHasBeenSet = true; m_dataStoriesSharingOption = std::forward<DataStoriesSharingOptionT>(value); }
+    template<typename DataStoriesSharingOptionT = DataStoriesSharingOption>
+    DashboardPublishOptions& WithDataStoriesSharingOption(DataStoriesSharingOptionT&& value) { SetDataStoriesSharingOption(std::forward<DataStoriesSharingOptionT>(value)); return *this;}
     ///@}
   private:
 
@@ -216,6 +241,12 @@ namespace Model
 
     DataQAEnabledOption m_dataQAEnabledOption;
     bool m_dataQAEnabledOptionHasBeenSet = false;
+
+    ExecutiveSummaryOption m_executiveSummaryOption;
+    bool m_executiveSummaryOptionHasBeenSet = false;
+
+    DataStoriesSharingOption m_dataStoriesSharingOption;
+    bool m_dataStoriesSharingOptionHasBeenSet = false;
   };
 
 } // namespace Model
