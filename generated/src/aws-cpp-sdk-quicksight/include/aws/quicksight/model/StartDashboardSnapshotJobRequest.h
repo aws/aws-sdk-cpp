@@ -78,7 +78,7 @@ namespace Model
     /**
      * <p> A structure that contains information about the anonymous users that the
      * generated snapshot is for. This API will not return information about registered
-     * Amazon QuickSight.</p>
+     * QuickSight.</p>
      */
     inline const SnapshotUserConfiguration& GetUserConfiguration() const { return m_userConfiguration; }
     inline bool UserConfigurationHasBeenSet() const { return m_userConfigurationHasBeenSet; }

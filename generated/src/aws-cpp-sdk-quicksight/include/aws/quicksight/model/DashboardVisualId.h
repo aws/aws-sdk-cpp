@@ -31,9 +31,9 @@ namespace Model
    * the visual that you want to embed.</p> </li> </ul> <p>The
    * <code>DashboardId</code>, <code>SheetId</code>, and <code>VisualId</code> can be
    * found in the <code>IDs for developers</code> section of the <code>Embed
-   * visual</code> pane of the visual's on-visual menu of the Amazon QuickSight
-   * console. You can also get the <code>DashboardId</code> with a
-   * <code>ListDashboards</code> API operation.</p><p><h3>See Also:</h3>   <a
+   * visual</code> pane of the visual's on-visual menu of the QuickSight console. You
+   * can also get the <code>DashboardId</code> with a <code>ListDashboards</code> API
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DashboardVisualId">AWS
    * API Reference</a></p>
    */
@@ -51,8 +51,8 @@ namespace Model
      * <p>The ID of the dashboard that has the visual that you want to embed. The
      * <code>DashboardId</code> can be found in the <code>IDs for developers</code>
      * section of the <code>Embed visual</code> pane of the visual's on-visual menu of
-     * the Amazon QuickSight console. You can also get the <code>DashboardId</code>
-     * with a <code>ListDashboards</code> API operation.</p>
+     * the QuickSight console. You can also get the <code>DashboardId</code> with a
+     * <code>ListDashboards</code> API operation.</p>
      */
     inline const Aws::String& GetDashboardId() const { return m_dashboardId; }
     inline bool DashboardIdHasBeenSet() const { return m_dashboardIdHasBeenSet; }
@@ -67,7 +67,7 @@ namespace Model
      * <p>The ID of the sheet that the has visual that you want to embed. The
      * <code>SheetId</code> can be found in the <code>IDs for developers</code> section
      * of the <code>Embed visual</code> pane of the visual's on-visual menu of the
-     * Amazon QuickSight console.</p>
+     * QuickSight console.</p>
      */
     inline const Aws::String& GetSheetId() const { return m_sheetId; }
     inline bool SheetIdHasBeenSet() const { return m_sheetIdHasBeenSet; }
@@ -81,8 +81,7 @@ namespace Model
     /**
      * <p>The ID of the visual that you want to embed. The <code>VisualID</code> can be
      * found in the <code>IDs for developers</code> section of the <code>Embed
-     * visual</code> pane of the visual's on-visual menu of the Amazon QuickSight
-     * console.</p>
+     * visual</code> pane of the visual's on-visual menu of the QuickSight console.</p>
      */
     inline const Aws::String& GetVisualId() const { return m_visualId; }
     inline bool VisualIdHasBeenSet() const { return m_visualIdHasBeenSet; }

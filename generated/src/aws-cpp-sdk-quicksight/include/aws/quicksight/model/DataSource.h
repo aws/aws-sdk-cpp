@@ -167,8 +167,8 @@ namespace Model
     ///@{
     /**
      * <p>The VPC connection information. You need to use this parameter only when you
-     * want Amazon QuickSight to use a VPC connection when connecting to your
-     * underlying source.</p>
+     * want QuickSight to use a VPC connection when connecting to your underlying
+     * source.</p>
      */
     inline const VpcConnectionProperties& GetVpcConnectionProperties() const { return m_vpcConnectionProperties; }
     inline bool VpcConnectionPropertiesHasBeenSet() const { return m_vpcConnectionPropertiesHasBeenSet; }
@@ -180,8 +180,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight
-     * connects to your underlying source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
+     * your underlying source.</p>
      */
     inline const SslProperties& GetSslProperties() const { return m_sslProperties; }
     inline bool SslPropertiesHasBeenSet() const { return m_sslPropertiesHasBeenSet; }

@@ -95,8 +95,7 @@ namespace Model
      * <code>ROLLBACK</code>, failed import jobs will attempt to undo any asset changes
      * caused by the failed job.</p> <p>If you choose <code>DO_NOTHING</code>, failed
      * import jobs will not attempt to roll back any asset changes caused by the failed
-     * job, possibly keeping the Amazon QuickSight account in an inconsistent
-     * state.</p>
+     * job, possibly keeping the QuickSight account in an inconsistent state.</p>
      */
     inline AssetBundleImportFailureAction GetFailureAction() const { return m_failureAction; }
     inline bool FailureActionHasBeenSet() const { return m_failureActionHasBeenSet; }

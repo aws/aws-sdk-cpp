@@ -160,6 +160,11 @@ DataSourceParameters& DataSourceParameters::operator =(JsonView jsonValue)
     m_impalaParameters = jsonValue.GetObject("ImpalaParameters");
     m_impalaParametersHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("CustomConnectionParameters"))
+  {
+    m_customConnectionParameters = jsonValue.GetObject("CustomConnectionParameters");
+    m_customConnectionParametersHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -326,6 +331,12 @@ JsonValue DataSourceParameters::Jsonize() const
   if(m_impalaParametersHasBeenSet)
   {
    payload.WithObject("ImpalaParameters", m_impalaParameters.Jsonize());
+
+  }
+
+  if(m_customConnectionParametersHasBeenSet)
+  {
+   payload.WithObject("CustomConnectionParameters", m_customConnectionParameters.Jsonize());
 
   }
 

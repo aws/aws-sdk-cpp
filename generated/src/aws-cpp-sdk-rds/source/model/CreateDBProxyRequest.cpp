@@ -24,6 +24,11 @@ Aws::String CreateDBProxyRequest::SerializePayload() const
     ss << "EngineFamily=" << StringUtils::URLEncode(EngineFamilyMapper::GetNameForEngineFamily(m_engineFamily)) << "&";
   }
 
+  if(m_defaultAuthSchemeHasBeenSet)
+  {
+    ss << "DefaultAuthScheme=" << StringUtils::URLEncode(DefaultAuthSchemeMapper::GetNameForDefaultAuthScheme(m_defaultAuthScheme)) << "&";
+  }
+
   if(m_authHasBeenSet)
   {
     if (m_auth.empty())

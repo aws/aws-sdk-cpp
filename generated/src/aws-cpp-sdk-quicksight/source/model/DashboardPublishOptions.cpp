@@ -80,6 +80,16 @@ DashboardPublishOptions& DashboardPublishOptions::operator =(JsonView jsonValue)
     m_dataQAEnabledOption = jsonValue.GetObject("DataQAEnabledOption");
     m_dataQAEnabledOptionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ExecutiveSummaryOption"))
+  {
+    m_executiveSummaryOption = jsonValue.GetObject("ExecutiveSummaryOption");
+    m_executiveSummaryOptionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("DataStoriesSharingOption"))
+  {
+    m_dataStoriesSharingOption = jsonValue.GetObject("DataStoriesSharingOption");
+    m_dataStoriesSharingOptionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -150,6 +160,18 @@ JsonValue DashboardPublishOptions::Jsonize() const
   if(m_dataQAEnabledOptionHasBeenSet)
   {
    payload.WithObject("DataQAEnabledOption", m_dataQAEnabledOption.Jsonize());
+
+  }
+
+  if(m_executiveSummaryOptionHasBeenSet)
+  {
+   payload.WithObject("ExecutiveSummaryOption", m_executiveSummaryOption.Jsonize());
+
+  }
+
+  if(m_dataStoriesSharingOptionHasBeenSet)
+  {
+   payload.WithObject("DataStoriesSharingOption", m_dataStoriesSharingOption.Jsonize());
 
   }
 

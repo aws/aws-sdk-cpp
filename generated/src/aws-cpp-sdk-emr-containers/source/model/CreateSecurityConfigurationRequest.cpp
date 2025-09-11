@@ -28,6 +28,12 @@ Aws::String CreateSecurityConfigurationRequest::SerializePayload() const
 
   }
 
+  if(m_containerProviderHasBeenSet)
+  {
+   payload.WithObject("containerProvider", m_containerProvider.Jsonize());
+
+  }
+
   if(m_securityConfigurationDataHasBeenSet)
   {
    payload.WithObject("securityConfigurationData", m_securityConfigurationData.Jsonize());

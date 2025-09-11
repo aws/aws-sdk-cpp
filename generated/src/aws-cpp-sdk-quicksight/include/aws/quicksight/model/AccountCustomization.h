@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The default theme for this Amazon QuickSight subscription.</p>
+     * <p>The default theme for this QuickSight subscription.</p>
      */
     inline const Aws::String& GetDefaultTheme() const { return m_defaultTheme; }
     inline bool DefaultThemeHasBeenSet() const { return m_defaultThemeHasBeenSet; }

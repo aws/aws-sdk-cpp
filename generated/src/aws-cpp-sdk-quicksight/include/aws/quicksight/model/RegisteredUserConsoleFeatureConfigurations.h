@@ -29,8 +29,8 @@ namespace Model
 {
 
   /**
-   * <p>The feature configurations of an embedded Amazon QuickSight
-   * console.</p><p><h3>See Also:</h3>   <a
+   * <p>The feature configurations of an embedded QuickSight console.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RegisteredUserConsoleFeatureConfigurations">AWS
    * API Reference</a></p>
    */
@@ -45,8 +45,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The state persistence configurations of an embedded Amazon QuickSight
-     * console.</p>
+     * <p>The state persistence configurations of an embedded QuickSight console.</p>
      */
     inline const StatePersistenceConfigurations& GetStatePersistence() const { return m_statePersistence; }
     inline bool StatePersistenceHasBeenSet() const { return m_statePersistenceHasBeenSet; }
@@ -70,7 +69,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Q configurations of an embedded Amazon QuickSight console.</p>
+     * <p>The Amazon Q configurations of an embedded QuickSight console.</p>
      */
     inline const AmazonQInQuickSightConsoleConfigurations& GetAmazonQInQuickSight() const { return m_amazonQInQuickSight; }
     inline bool AmazonQInQuickSightHasBeenSet() const { return m_amazonQInQuickSightHasBeenSet; }
@@ -82,7 +81,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The schedules configuration for an embedded Amazon QuickSight dashboard.</p>
+     * <p>The schedules configuration for an embedded QuickSight dashboard.</p>
      */
     inline const SchedulesConfigurations& GetSchedules() const { return m_schedules; }
     inline bool SchedulesHasBeenSet() const { return m_schedulesHasBeenSet; }
@@ -94,8 +93,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The recent snapshots configuration for an embedded Amazon QuickSight
-     * dashboard.</p>
+     * <p>The recent snapshots configuration for an embedded QuickSight dashboard.</p>
      */
     inline const RecentSnapshotsConfigurations& GetRecentSnapshots() const { return m_recentSnapshots; }
     inline bool RecentSnapshotsHasBeenSet() const { return m_recentSnapshotsHasBeenSet; }
@@ -107,8 +105,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The threshold alerts configuration for an embedded Amazon QuickSight
-     * dashboard.</p>
+     * <p>The threshold alerts configuration for an embedded QuickSight dashboard.</p>
      */
     inline const ThresholdAlertsConfigurations& GetThresholdAlerts() const { return m_thresholdAlerts; }
     inline bool ThresholdAlertsHasBeenSet() const { return m_thresholdAlertsHasBeenSet; }

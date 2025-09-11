@@ -47,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID for the Amazon Web Services account that you want to customize Amazon
+     * <p>The ID for the Amazon Web Services account that you want to customize
      * QuickSight for.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
@@ -70,7 +70,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon QuickSight customizations you're adding in the current Amazon Web
+     * <p>The QuickSight customizations you're adding in the current Amazon Web
      * Services Region. </p>
      */
     inline const AccountCustomization& GetAccountCustomization() const { return m_accountCustomization; }

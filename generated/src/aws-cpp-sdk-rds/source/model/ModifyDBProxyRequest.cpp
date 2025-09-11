@@ -24,6 +24,11 @@ Aws::String ModifyDBProxyRequest::SerializePayload() const
     ss << "NewDBProxyName=" << StringUtils::URLEncode(m_newDBProxyName.c_str()) << "&";
   }
 
+  if(m_defaultAuthSchemeHasBeenSet)
+  {
+    ss << "DefaultAuthScheme=" << StringUtils::URLEncode(DefaultAuthSchemeMapper::GetNameForDefaultAuthScheme(m_defaultAuthScheme)) << "&";
+  }
+
   if(m_authHasBeenSet)
   {
     if (m_auth.empty())

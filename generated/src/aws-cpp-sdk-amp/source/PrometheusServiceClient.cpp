@@ -33,6 +33,7 @@
 #include <aws/amp/model/DeleteResourcePolicyRequest.h>
 #include <aws/amp/model/DeleteRuleGroupsNamespaceRequest.h>
 #include <aws/amp/model/DeleteScraperRequest.h>
+#include <aws/amp/model/DeleteScraperLoggingConfigurationRequest.h>
 #include <aws/amp/model/DeleteWorkspaceRequest.h>
 #include <aws/amp/model/DescribeAlertManagerDefinitionRequest.h>
 #include <aws/amp/model/DescribeLoggingConfigurationRequest.h>
@@ -40,6 +41,7 @@
 #include <aws/amp/model/DescribeResourcePolicyRequest.h>
 #include <aws/amp/model/DescribeRuleGroupsNamespaceRequest.h>
 #include <aws/amp/model/DescribeScraperRequest.h>
+#include <aws/amp/model/DescribeScraperLoggingConfigurationRequest.h>
 #include <aws/amp/model/DescribeWorkspaceRequest.h>
 #include <aws/amp/model/DescribeWorkspaceConfigurationRequest.h>
 #include <aws/amp/model/GetDefaultScraperConfigurationRequest.h>
@@ -55,6 +57,7 @@
 #include <aws/amp/model/UpdateLoggingConfigurationRequest.h>
 #include <aws/amp/model/UpdateQueryLoggingConfigurationRequest.h>
 #include <aws/amp/model/UpdateScraperRequest.h>
+#include <aws/amp/model/UpdateScraperLoggingConfigurationRequest.h>
 #include <aws/amp/model/UpdateWorkspaceAliasRequest.h>
 #include <aws/amp/model/UpdateWorkspaceConfigurationRequest.h>
 
@@ -599,6 +602,40 @@ DeleteScraperOutcome PrometheusServiceClient::DeleteScraper(const DeleteScraperR
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeleteScraperLoggingConfigurationOutcome PrometheusServiceClient::DeleteScraperLoggingConfiguration(const DeleteScraperLoggingConfigurationRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteScraperLoggingConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteScraperLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ScraperIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteScraperLoggingConfiguration", "Required field: ScraperId, is not set");
+    return DeleteScraperLoggingConfigurationOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ScraperId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteScraperLoggingConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteScraperLoggingConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteScraperLoggingConfiguration",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteScraperLoggingConfigurationOutcome>(
+    [&]()-> DeleteScraperLoggingConfigurationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteScraperLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/scrapers/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetScraperId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/logging-configuration");
+      return DeleteScraperLoggingConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteWorkspaceOutcome PrometheusServiceClient::DeleteWorkspace(const DeleteWorkspaceRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteWorkspace);
@@ -835,6 +872,40 @@ DescribeScraperOutcome PrometheusServiceClient::DescribeScraper(const DescribeSc
       endpointResolutionOutcome.GetResult().AddPathSegments("/scrapers/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetScraperId());
       return DescribeScraperOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeScraperLoggingConfigurationOutcome PrometheusServiceClient::DescribeScraperLoggingConfiguration(const DescribeScraperLoggingConfigurationRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeScraperLoggingConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeScraperLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ScraperIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeScraperLoggingConfiguration", "Required field: ScraperId, is not set");
+    return DescribeScraperLoggingConfigurationOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ScraperId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeScraperLoggingConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeScraperLoggingConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeScraperLoggingConfiguration",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeScraperLoggingConfigurationOutcome>(
+    [&]()-> DescribeScraperLoggingConfigurationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeScraperLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/scrapers/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetScraperId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/logging-configuration");
+      return DescribeScraperLoggingConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1330,6 +1401,40 @@ UpdateScraperOutcome PrometheusServiceClient::UpdateScraper(const UpdateScraperR
       endpointResolutionOutcome.GetResult().AddPathSegments("/scrapers/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetScraperId());
       return UpdateScraperOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateScraperLoggingConfigurationOutcome PrometheusServiceClient::UpdateScraperLoggingConfiguration(const UpdateScraperLoggingConfigurationRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateScraperLoggingConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateScraperLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ScraperIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateScraperLoggingConfiguration", "Required field: ScraperId, is not set");
+    return UpdateScraperLoggingConfigurationOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ScraperId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateScraperLoggingConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateScraperLoggingConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateScraperLoggingConfiguration",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateScraperLoggingConfigurationOutcome>(
+    [&]()-> UpdateScraperLoggingConfigurationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateScraperLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/scrapers/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetScraperId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/logging-configuration");
+      return UpdateScraperLoggingConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

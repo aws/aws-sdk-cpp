@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>A list of Amazon QuickSight parameters and the list's override
-   * values.</p><p><h3>See Also:</h3>   <a
+   * <p>A list of QuickSight parameters and the list's override values.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Parameters">AWS
    * API Reference</a></p>
    */

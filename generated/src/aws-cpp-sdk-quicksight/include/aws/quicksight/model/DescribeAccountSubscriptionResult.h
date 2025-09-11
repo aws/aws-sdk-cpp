@@ -36,11 +36,11 @@ namespace Model
     ///@{
     /**
      * <p>A structure that contains the following elements:</p> <ul> <li> <p>Your
-     * Amazon QuickSight account name.</p> </li> <li> <p>The edition of Amazon
-     * QuickSight that your account is using.</p> </li> <li> <p>The notification email
-     * address that is associated with the Amazon QuickSight account. </p> </li> <li>
-     * <p>The authentication type of the Amazon QuickSight account.</p> </li> <li>
-     * <p>The status of the Amazon QuickSight account's subscription.</p> </li> </ul>
+     * QuickSight account name.</p> </li> <li> <p>The edition of QuickSight that your
+     * account is using.</p> </li> <li> <p>The notification email address that is
+     * associated with the QuickSight account. </p> </li> <li> <p>The authentication
+     * type of the QuickSight account.</p> </li> <li> <p>The status of the QuickSight
+     * account's subscription.</p> </li> </ul>
      */
     inline const AccountInfo& GetAccountInfo() const { return m_accountInfo; }
     template<typename AccountInfoT = AccountInfo>

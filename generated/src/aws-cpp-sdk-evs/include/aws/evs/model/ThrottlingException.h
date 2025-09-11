@@ -24,10 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>The <code>CreateEnvironmentHost</code> operation couldn't be performed
-   * because the service is throttling requests. This exception is thrown when the
-   * <code>CreateEnvironmentHost</code> request exceeds concurrency of 1 transaction
-   * per second (TPS).</p><p><h3>See Also:</h3>   <a
+   * <p>The operation couldn't be performed because the service is throttling
+   * requests. This exception is thrown when there are too many requests accepted
+   * concurrently from the service endpoint.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/ThrottlingException">AWS
    * API Reference</a></p>
    */

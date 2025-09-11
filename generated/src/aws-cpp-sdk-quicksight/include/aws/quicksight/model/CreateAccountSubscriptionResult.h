@@ -36,7 +36,7 @@ namespace Model
     ///@{
     /**
      * <p>A <code>SignupResponse</code> object that returns information about a newly
-     * created Amazon QuickSight account.</p>
+     * created QuickSight account.</p>
      */
     inline const SignupResponse& GetSignupResponse() const { return m_signupResponse; }
     template<typename SignupResponseT = SignupResponse>

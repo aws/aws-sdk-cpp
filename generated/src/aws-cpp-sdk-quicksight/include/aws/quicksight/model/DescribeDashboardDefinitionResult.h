@@ -133,8 +133,8 @@ namespace Model
      * <p>Options for publishing the dashboard:</p> <ul> <li> <p>
      * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
      * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-     * set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on
-     * the published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
+     * published dashboard, which can be used for ad hoc (one-time) filtering. This
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
@@ -143,7 +143,15 @@ namespace Model
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
      * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p>
-     * </li> </ul>
+     * </li> <li> <p> <code>AvailabilityStatus</code> for
+     * <code>ExecutiveSummaryOption</code> - This status can be either
+     * <code>ENABLED</code> or <code>DISABLED</code>. The option to build an executive
+     * summary is disabled when this is set to <code>DISABLED</code>. This option is
+     * <code>ENABLED</code> by default.</p> </li> <li> <p>
+     * <code>AvailabilityStatus</code> for <code>DataStoriesSharingOption</code> - This
+     * status can be either <code>ENABLED</code> or <code>DISABLED</code>. The option
+     * to share a data story is disabled when this is set to <code>DISABLED</code>.
+     * This option is <code>ENABLED</code> by default.</p> </li> </ul>
      */
     inline const DashboardPublishOptions& GetDashboardPublishOptions() const { return m_dashboardPublishOptions; }
     template<typename DashboardPublishOptionsT = DashboardPublishOptions>

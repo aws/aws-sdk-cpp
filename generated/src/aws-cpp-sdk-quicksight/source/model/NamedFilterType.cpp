@@ -25,6 +25,7 @@ namespace Aws
         static const int NUMERIC_RANGE_FILTER_HASH = HashingUtils::HashString("NUMERIC_RANGE_FILTER");
         static const int DATE_RANGE_FILTER_HASH = HashingUtils::HashString("DATE_RANGE_FILTER");
         static const int RELATIVE_DATE_FILTER_HASH = HashingUtils::HashString("RELATIVE_DATE_FILTER");
+        static const int NULL_FILTER_HASH = HashingUtils::HashString("NULL_FILTER");
 
 
         NamedFilterType GetNamedFilterTypeForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == RELATIVE_DATE_FILTER_HASH)
           {
             return NamedFilterType::RELATIVE_DATE_FILTER;
+          }
+          else if (hashCode == NULL_FILTER_HASH)
+          {
+            return NamedFilterType::NULL_FILTER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +81,8 @@ namespace Aws
             return "DATE_RANGE_FILTER";
           case NamedFilterType::RELATIVE_DATE_FILTER:
             return "RELATIVE_DATE_FILTER";
+          case NamedFilterType::NULL_FILTER:
+            return "NULL_FILTER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -66,8 +66,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the analysis. This name is displayed in the Amazon QuickSight
-     * console. </p>
+     * <p>The name of the analysis. This name is displayed in the QuickSight console.
+     * </p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

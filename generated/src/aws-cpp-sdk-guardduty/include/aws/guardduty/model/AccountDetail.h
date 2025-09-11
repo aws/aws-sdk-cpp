@@ -51,17 +51,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>The email address of the member account.</p> <p>The rules for a valid email
-     * address:</p> <ul> <li> <p>The email address must be a minimum of 6 and a maximum
-     * of 64 characters long.</p> </li> <li> <p>All characters must be 7-bit ASCII
-     * characters.</p> </li> <li> <p>There must be one and only one @ symbol, which
-     * separates the local name from the domain name.</p> </li> <li> <p>The local name
-     * can't contain any of the following characters:</p> <p>whitespace, " ' ( ) &lt;
-     * &gt; [ ] : ' , \ | % &amp;</p> </li> <li> <p>The local name can't begin with a
-     * dot (.).</p> </li> <li> <p>The domain name can consist of only the characters
-     * [a-z], [A-Z], [0-9], hyphen (-), or dot (.).</p> </li> <li> <p>The domain name
-     * can't begin or end with a dot (.) or hyphen (-).</p> </li> <li> <p>The domain
-     * name must contain at least one dot. </p> </li> </ul>
+     * <p>The email address of the member account. The following list includes the
+     * rules for a valid email address:</p> <ul> <li> <p>The email address must be a
+     * minimum of 6 and a maximum of 64 characters long.</p> </li> <li> <p>All
+     * characters must be 7-bit ASCII characters.</p> </li> <li> <p>There must be one
+     * and only one @ symbol, which separates the local name from the domain name.</p>
+     * </li> <li> <p>The local name can't contain any of the following characters:</p>
+     * <p>whitespace, " ' ( ) &lt; &gt; [ ] : ' , \ | % &amp;</p> </li> <li> <p>The
+     * local name can't begin with a dot (.).</p> </li> <li> <p>The domain name can
+     * consist of only the characters [a-z], [A-Z], [0-9], hyphen (-), or dot (.).</p>
+     * </li> <li> <p>The domain name can't begin or end with a dot (.) or hyphen
+     * (-).</p> </li> <li> <p>The domain name must contain at least one dot. </p> </li>
+     * </ul>
      */
     inline const Aws::String& GetEmail() const { return m_email; }
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }

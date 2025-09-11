@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Services account ID associated with your Amazon QuickSight
+     * <p>The Amazon Web Services account ID associated with your QuickSight
      * account.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }

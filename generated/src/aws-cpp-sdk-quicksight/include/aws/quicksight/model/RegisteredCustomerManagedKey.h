@@ -26,8 +26,8 @@ namespace Model
   /**
    * <p>A customer managed key structure that contains the information listed below:
    * </p> <ul> <li> <p> <code>KeyArn</code> - The ARN of a KMS key that is registered
-   * to a Amazon QuickSight account for encryption and decryption use.</p> </li> <li>
-   * <p> <code>DefaultKey</code> - Indicates whether the current key is set as the
+   * to a QuickSight account for encryption and decryption use.</p> </li> <li> <p>
+   * <code>DefaultKey</code> - Indicates whether the current key is set as the
    * default key for encryption and decryption use.</p> </li> </ul><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RegisteredCustomerManagedKey">AWS
@@ -44,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the KMS key that is registered to a Amazon QuickSight account for
+     * <p>The ARN of the KMS key that is registered to a QuickSight account for
      * encryption and decryption use.</p>
      */
     inline const Aws::String& GetKeyArn() const { return m_keyArn; }

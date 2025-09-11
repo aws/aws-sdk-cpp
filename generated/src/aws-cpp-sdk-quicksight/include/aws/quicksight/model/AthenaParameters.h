@@ -70,9 +70,8 @@ namespace Model
     ///@{
     /**
      * <p>An optional parameter that configures IAM Identity Center authentication to
-     * grant Amazon QuickSight access to your workgroup.</p> <p>This parameter can only
-     * be specified if your Amazon QuickSight account is configured with IAM Identity
-     * Center.</p>
+     * grant QuickSight access to your workgroup.</p> <p>This parameter can only be
+     * specified if your QuickSight account is configured with IAM Identity Center.</p>
      */
     inline const IdentityCenterConfiguration& GetIdentityCenterConfiguration() const { return m_identityCenterConfiguration; }
     inline bool IdentityCenterConfigurationHasBeenSet() const { return m_identityCenterConfigurationHasBeenSet; }

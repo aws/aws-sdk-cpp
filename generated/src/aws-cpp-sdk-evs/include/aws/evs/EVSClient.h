@@ -82,6 +82,32 @@ namespace EVS
         virtual ~EVSClient();
 
         /**
+         * <p>Associates an Elastic IP address with a public HCX VLAN. This operation is
+         * only allowed for public HCX VLANs at this time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/AssociateEipToVlan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateEipToVlanOutcome AssociateEipToVlan(const Model::AssociateEipToVlanRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateEipToVlan that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateEipToVlanRequestT = Model::AssociateEipToVlanRequest>
+        Model::AssociateEipToVlanOutcomeCallable AssociateEipToVlanCallable(const AssociateEipToVlanRequestT& request) const
+        {
+            return SubmitCallable(&EVSClient::AssociateEipToVlan, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateEipToVlan that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateEipToVlanRequestT = Model::AssociateEipToVlanRequest>
+        void AssociateEipToVlanAsync(const AssociateEipToVlanRequestT& request, const AssociateEipToVlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EVSClient::AssociateEipToVlan, request, handler, context);
+        }
+
+        /**
          * <p>Creates an Amazon EVS environment that runs VCF software, such as SDDC
          * Manager, NSX Manager, and vCenter Server.</p> <p>During environment creation,
          * Amazon EVS performs validations on DNS settings, provisions VLAN subnets and
@@ -206,6 +232,32 @@ namespace EVS
         void DeleteEnvironmentHostAsync(const DeleteEnvironmentHostRequestT& request, const DeleteEnvironmentHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EVSClient::DeleteEnvironmentHost, request, handler, context);
+        }
+
+        /**
+         * <p>Disassociates an Elastic IP address from a public HCX VLAN. This operation is
+         * only allowed for public HCX VLANs at this time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/DisassociateEipFromVlan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateEipFromVlanOutcome DisassociateEipFromVlan(const Model::DisassociateEipFromVlanRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateEipFromVlan that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateEipFromVlanRequestT = Model::DisassociateEipFromVlanRequest>
+        Model::DisassociateEipFromVlanOutcomeCallable DisassociateEipFromVlanCallable(const DisassociateEipFromVlanRequestT& request) const
+        {
+            return SubmitCallable(&EVSClient::DisassociateEipFromVlan, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateEipFromVlan that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateEipFromVlanRequestT = Model::DisassociateEipFromVlanRequest>
+        void DisassociateEipFromVlanAsync(const DisassociateEipFromVlanRequestT& request, const DisassociateEipFromVlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EVSClient::DisassociateEipFromVlan, request, handler, context);
         }
 
         /**

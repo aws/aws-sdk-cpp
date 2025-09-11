@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the Amazon QuickSight account that you want to disconnect from a
-     * Amazon Q Business application.</p>
+     * <p>The ID of the QuickSight account that you want to disconnect from a Amazon Q
+     * Business application.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
@@ -53,10 +53,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon QuickSight namespace that you want to delete a linked Amazon Q
-     * Business application from. If this field is left blank, the Amazon Q Business
-     * application is deleted from the default namespace. Currently, the default
-     * namespace is the only valid value for this parameter.</p>
+     * <p>The QuickSight namespace that you want to delete a linked Amazon Q Business
+     * application from. If this field is left blank, the Amazon Q Business application
+     * is deleted from the default namespace. Currently, the default namespace is the
+     * only valid value for this parameter.</p>
      */
     inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }

@@ -18,10 +18,12 @@
 /* End of generic header includes */
 
 /* Service model headers required in EVSClient header */
+#include <aws/evs/model/AssociateEipToVlanResult.h>
 #include <aws/evs/model/CreateEnvironmentResult.h>
 #include <aws/evs/model/CreateEnvironmentHostResult.h>
 #include <aws/evs/model/DeleteEnvironmentResult.h>
 #include <aws/evs/model/DeleteEnvironmentHostResult.h>
+#include <aws/evs/model/DisassociateEipFromVlanResult.h>
 #include <aws/evs/model/GetEnvironmentResult.h>
 #include <aws/evs/model/ListEnvironmentHostsResult.h>
 #include <aws/evs/model/ListEnvironmentVlansResult.h>
@@ -70,10 +72,12 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in EVSClient header */
+      class AssociateEipToVlanRequest;
       class CreateEnvironmentRequest;
       class CreateEnvironmentHostRequest;
       class DeleteEnvironmentRequest;
       class DeleteEnvironmentHostRequest;
+      class DisassociateEipFromVlanRequest;
       class GetEnvironmentRequest;
       class ListEnvironmentHostsRequest;
       class ListEnvironmentVlansRequest;
@@ -84,10 +88,12 @@ namespace Aws
       /* End of service model forward declarations required in EVSClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<AssociateEipToVlanResult, EVSError> AssociateEipToVlanOutcome;
       typedef Aws::Utils::Outcome<CreateEnvironmentResult, EVSError> CreateEnvironmentOutcome;
       typedef Aws::Utils::Outcome<CreateEnvironmentHostResult, EVSError> CreateEnvironmentHostOutcome;
       typedef Aws::Utils::Outcome<DeleteEnvironmentResult, EVSError> DeleteEnvironmentOutcome;
       typedef Aws::Utils::Outcome<DeleteEnvironmentHostResult, EVSError> DeleteEnvironmentHostOutcome;
+      typedef Aws::Utils::Outcome<DisassociateEipFromVlanResult, EVSError> DisassociateEipFromVlanOutcome;
       typedef Aws::Utils::Outcome<GetEnvironmentResult, EVSError> GetEnvironmentOutcome;
       typedef Aws::Utils::Outcome<ListEnvironmentHostsResult, EVSError> ListEnvironmentHostsOutcome;
       typedef Aws::Utils::Outcome<ListEnvironmentVlansResult, EVSError> ListEnvironmentVlansOutcome;
@@ -98,10 +104,12 @@ namespace Aws
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<AssociateEipToVlanOutcome> AssociateEipToVlanOutcomeCallable;
       typedef std::future<CreateEnvironmentOutcome> CreateEnvironmentOutcomeCallable;
       typedef std::future<CreateEnvironmentHostOutcome> CreateEnvironmentHostOutcomeCallable;
       typedef std::future<DeleteEnvironmentOutcome> DeleteEnvironmentOutcomeCallable;
       typedef std::future<DeleteEnvironmentHostOutcome> DeleteEnvironmentHostOutcomeCallable;
+      typedef std::future<DisassociateEipFromVlanOutcome> DisassociateEipFromVlanOutcomeCallable;
       typedef std::future<GetEnvironmentOutcome> GetEnvironmentOutcomeCallable;
       typedef std::future<ListEnvironmentHostsOutcome> ListEnvironmentHostsOutcomeCallable;
       typedef std::future<ListEnvironmentVlansOutcome> ListEnvironmentVlansOutcomeCallable;
@@ -115,10 +123,12 @@ namespace Aws
     class EVSClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const EVSClient*, const Model::AssociateEipToVlanRequest&, const Model::AssociateEipToVlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateEipToVlanResponseReceivedHandler;
     typedef std::function<void(const EVSClient*, const Model::CreateEnvironmentRequest&, const Model::CreateEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEnvironmentResponseReceivedHandler;
     typedef std::function<void(const EVSClient*, const Model::CreateEnvironmentHostRequest&, const Model::CreateEnvironmentHostOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEnvironmentHostResponseReceivedHandler;
     typedef std::function<void(const EVSClient*, const Model::DeleteEnvironmentRequest&, const Model::DeleteEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEnvironmentResponseReceivedHandler;
     typedef std::function<void(const EVSClient*, const Model::DeleteEnvironmentHostRequest&, const Model::DeleteEnvironmentHostOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEnvironmentHostResponseReceivedHandler;
+    typedef std::function<void(const EVSClient*, const Model::DisassociateEipFromVlanRequest&, const Model::DisassociateEipFromVlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateEipFromVlanResponseReceivedHandler;
     typedef std::function<void(const EVSClient*, const Model::GetEnvironmentRequest&, const Model::GetEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnvironmentResponseReceivedHandler;
     typedef std::function<void(const EVSClient*, const Model::ListEnvironmentHostsRequest&, const Model::ListEnvironmentHostsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnvironmentHostsResponseReceivedHandler;
     typedef std::function<void(const EVSClient*, const Model::ListEnvironmentVlansRequest&, const Model::ListEnvironmentVlansOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnvironmentVlansResponseReceivedHandler;

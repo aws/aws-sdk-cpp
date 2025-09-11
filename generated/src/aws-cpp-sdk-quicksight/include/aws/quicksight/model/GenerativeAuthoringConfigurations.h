@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p>The generative BI authoring settings of an embedded Amazon QuickSight
+   * <p>The generative BI authoring settings of an embedded QuickSight
    * console.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GenerativeAuthoringConfigurations">AWS
    * API Reference</a></p>
@@ -38,8 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The generative BI authoring settings of an embedded Amazon QuickSight
-     * console.</p>
+     * <p>The generative BI authoring settings of an embedded QuickSight console.</p>
      */
     inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }

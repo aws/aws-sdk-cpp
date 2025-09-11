@@ -84,6 +84,11 @@ TopicFilter& TopicFilter::operator =(JsonView jsonValue)
     m_relativeDateFilter = jsonValue.GetObject("RelativeDateFilter");
     m_relativeDateFilterHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("NullFilter"))
+  {
+    m_nullFilter = jsonValue.GetObject("NullFilter");
+    m_nullFilterHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -157,6 +162,12 @@ JsonValue TopicFilter::Jsonize() const
   if(m_relativeDateFilterHasBeenSet)
   {
    payload.WithObject("RelativeDateFilter", m_relativeDateFilter.Jsonize());
+
+  }
+
+  if(m_nullFilterHasBeenSet)
+  {
+   payload.WithObject("NullFilter", m_nullFilter.Jsonize());
 
   }
 

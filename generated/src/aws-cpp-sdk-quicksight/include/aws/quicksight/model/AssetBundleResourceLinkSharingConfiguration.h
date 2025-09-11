@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A structure that contains the configuration of a shared link to an Amazon
-   * QuickSight dashboard.</p><p><h3>See Also:</h3>   <a
+   * <p>A structure that contains the configuration of a shared link to an QuickSight
+   * dashboard.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AssetBundleResourceLinkSharingConfiguration">AWS
    * API Reference</a></p>
    */

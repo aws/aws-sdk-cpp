@@ -70,8 +70,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The bookmarks configuration for an embedded dashboard in Amazon
-     * QuickSight.</p>
+     * <p>The bookmarks configuration for an embedded dashboard in QuickSight.</p>
      */
     inline const BookmarksConfigurations& GetBookmarks() const { return m_bookmarks; }
     inline bool BookmarksHasBeenSet() const { return m_bookmarksHasBeenSet; }
@@ -83,7 +82,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Q configurations of an embedded Amazon QuickSight dashboard.</p>
+     * <p>The Amazon Q configurations of an embedded QuickSight dashboard.</p>
      */
     inline const AmazonQInQuickSightDashboardConfigurations& GetAmazonQInQuickSight() const { return m_amazonQInQuickSight; }
     inline bool AmazonQInQuickSightHasBeenSet() const { return m_amazonQInQuickSightHasBeenSet; }
@@ -95,7 +94,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The schedules configuration for an embedded Amazon QuickSight dashboard.</p>
+     * <p>The schedules configuration for an embedded QuickSight dashboard.</p>
      */
     inline const SchedulesConfigurations& GetSchedules() const { return m_schedules; }
     inline bool SchedulesHasBeenSet() const { return m_schedulesHasBeenSet; }
@@ -107,8 +106,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The recent snapshots configuration for an Amazon QuickSight embedded
-     * dashboard</p>
+     * <p>The recent snapshots configuration for an QuickSight embedded dashboard</p>
      */
     inline const RecentSnapshotsConfigurations& GetRecentSnapshots() const { return m_recentSnapshots; }
     inline bool RecentSnapshotsHasBeenSet() const { return m_recentSnapshotsHasBeenSet; }
@@ -120,8 +118,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The threshold alerts configuration for an Amazon QuickSight embedded
-     * dashboard.</p>
+     * <p>The threshold alerts configuration for an QuickSight embedded dashboard.</p>
      */
     inline const ThresholdAlertsConfigurations& GetThresholdAlerts() const { return m_thresholdAlerts; }
     inline bool ThresholdAlertsHasBeenSet() const { return m_thresholdAlertsHasBeenSet; }

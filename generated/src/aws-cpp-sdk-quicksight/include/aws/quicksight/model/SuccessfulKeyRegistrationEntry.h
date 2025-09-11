@@ -25,8 +25,7 @@ namespace Model
 
   /**
    * <p>A success entry that occurs when a <code>KeyRegistration</code> job is
-   * successfully applied to the Amazon QuickSight account.</p><p><h3>See Also:</h3> 
-   * <a
+   * successfully applied to the QuickSight account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SuccessfulKeyRegistrationEntry">AWS
    * API Reference</a></p>
    */

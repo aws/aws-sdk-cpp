@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The customer managed key that is registered to your Amazon QuickSight account
-   * is unavailable.</p><p><h3>See Also:</h3>   <a
+   * <p>The customer managed key that is registered to your QuickSight account is
+   * unavailable.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CustomerManagedKeyUnavailableException">AWS
    * API Reference</a></p>
    */

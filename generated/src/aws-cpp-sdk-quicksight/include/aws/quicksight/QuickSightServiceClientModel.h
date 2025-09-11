@@ -45,6 +45,7 @@
 #include <aws/quicksight/model/CreateTopicResult.h>
 #include <aws/quicksight/model/CreateTopicRefreshScheduleResult.h>
 #include <aws/quicksight/model/CreateVPCConnectionResult.h>
+#include <aws/quicksight/model/DeleteAccountCustomPermissionResult.h>
 #include <aws/quicksight/model/DeleteAccountCustomizationResult.h>
 #include <aws/quicksight/model/DeleteAccountSubscriptionResult.h>
 #include <aws/quicksight/model/DeleteAnalysisResult.h>
@@ -76,6 +77,7 @@
 #include <aws/quicksight/model/DeleteUserByPrincipalIdResult.h>
 #include <aws/quicksight/model/DeleteUserCustomPermissionResult.h>
 #include <aws/quicksight/model/DeleteVPCConnectionResult.h>
+#include <aws/quicksight/model/DescribeAccountCustomPermissionResult.h>
 #include <aws/quicksight/model/DescribeAccountCustomizationResult.h>
 #include <aws/quicksight/model/DescribeAccountSettingsResult.h>
 #include <aws/quicksight/model/DescribeAccountSubscriptionResult.h>
@@ -183,6 +185,7 @@
 #include <aws/quicksight/model/StartDashboardSnapshotJobScheduleResult.h>
 #include <aws/quicksight/model/TagResourceResult.h>
 #include <aws/quicksight/model/UntagResourceResult.h>
+#include <aws/quicksight/model/UpdateAccountCustomPermissionResult.h>
 #include <aws/quicksight/model/UpdateAccountCustomizationResult.h>
 #include <aws/quicksight/model/UpdateAccountSettingsResult.h>
 #include <aws/quicksight/model/UpdateAnalysisResult.h>
@@ -294,6 +297,7 @@ namespace Aws
       class CreateTopicRequest;
       class CreateTopicRefreshScheduleRequest;
       class CreateVPCConnectionRequest;
+      class DeleteAccountCustomPermissionRequest;
       class DeleteAccountCustomizationRequest;
       class DeleteAccountSubscriptionRequest;
       class DeleteAnalysisRequest;
@@ -325,6 +329,7 @@ namespace Aws
       class DeleteUserByPrincipalIdRequest;
       class DeleteUserCustomPermissionRequest;
       class DeleteVPCConnectionRequest;
+      class DescribeAccountCustomPermissionRequest;
       class DescribeAccountCustomizationRequest;
       class DescribeAccountSettingsRequest;
       class DescribeAccountSubscriptionRequest;
@@ -432,6 +437,7 @@ namespace Aws
       class StartDashboardSnapshotJobScheduleRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
+      class UpdateAccountCustomPermissionRequest;
       class UpdateAccountCustomizationRequest;
       class UpdateAccountSettingsRequest;
       class UpdateAnalysisRequest;
@@ -506,6 +512,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateTopicResult, QuickSightError> CreateTopicOutcome;
       typedef Aws::Utils::Outcome<CreateTopicRefreshScheduleResult, QuickSightError> CreateTopicRefreshScheduleOutcome;
       typedef Aws::Utils::Outcome<CreateVPCConnectionResult, QuickSightError> CreateVPCConnectionOutcome;
+      typedef Aws::Utils::Outcome<DeleteAccountCustomPermissionResult, QuickSightError> DeleteAccountCustomPermissionOutcome;
       typedef Aws::Utils::Outcome<DeleteAccountCustomizationResult, QuickSightError> DeleteAccountCustomizationOutcome;
       typedef Aws::Utils::Outcome<DeleteAccountSubscriptionResult, QuickSightError> DeleteAccountSubscriptionOutcome;
       typedef Aws::Utils::Outcome<DeleteAnalysisResult, QuickSightError> DeleteAnalysisOutcome;
@@ -537,6 +544,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteUserByPrincipalIdResult, QuickSightError> DeleteUserByPrincipalIdOutcome;
       typedef Aws::Utils::Outcome<DeleteUserCustomPermissionResult, QuickSightError> DeleteUserCustomPermissionOutcome;
       typedef Aws::Utils::Outcome<DeleteVPCConnectionResult, QuickSightError> DeleteVPCConnectionOutcome;
+      typedef Aws::Utils::Outcome<DescribeAccountCustomPermissionResult, QuickSightError> DescribeAccountCustomPermissionOutcome;
       typedef Aws::Utils::Outcome<DescribeAccountCustomizationResult, QuickSightError> DescribeAccountCustomizationOutcome;
       typedef Aws::Utils::Outcome<DescribeAccountSettingsResult, QuickSightError> DescribeAccountSettingsOutcome;
       typedef Aws::Utils::Outcome<DescribeAccountSubscriptionResult, QuickSightError> DescribeAccountSubscriptionOutcome;
@@ -644,6 +652,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<StartDashboardSnapshotJobScheduleResult, QuickSightError> StartDashboardSnapshotJobScheduleOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, QuickSightError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, QuickSightError> UntagResourceOutcome;
+      typedef Aws::Utils::Outcome<UpdateAccountCustomPermissionResult, QuickSightError> UpdateAccountCustomPermissionOutcome;
       typedef Aws::Utils::Outcome<UpdateAccountCustomizationResult, QuickSightError> UpdateAccountCustomizationOutcome;
       typedef Aws::Utils::Outcome<UpdateAccountSettingsResult, QuickSightError> UpdateAccountSettingsOutcome;
       typedef Aws::Utils::Outcome<UpdateAnalysisResult, QuickSightError> UpdateAnalysisOutcome;
@@ -718,6 +727,7 @@ namespace Aws
       typedef std::future<CreateTopicOutcome> CreateTopicOutcomeCallable;
       typedef std::future<CreateTopicRefreshScheduleOutcome> CreateTopicRefreshScheduleOutcomeCallable;
       typedef std::future<CreateVPCConnectionOutcome> CreateVPCConnectionOutcomeCallable;
+      typedef std::future<DeleteAccountCustomPermissionOutcome> DeleteAccountCustomPermissionOutcomeCallable;
       typedef std::future<DeleteAccountCustomizationOutcome> DeleteAccountCustomizationOutcomeCallable;
       typedef std::future<DeleteAccountSubscriptionOutcome> DeleteAccountSubscriptionOutcomeCallable;
       typedef std::future<DeleteAnalysisOutcome> DeleteAnalysisOutcomeCallable;
@@ -749,6 +759,7 @@ namespace Aws
       typedef std::future<DeleteUserByPrincipalIdOutcome> DeleteUserByPrincipalIdOutcomeCallable;
       typedef std::future<DeleteUserCustomPermissionOutcome> DeleteUserCustomPermissionOutcomeCallable;
       typedef std::future<DeleteVPCConnectionOutcome> DeleteVPCConnectionOutcomeCallable;
+      typedef std::future<DescribeAccountCustomPermissionOutcome> DescribeAccountCustomPermissionOutcomeCallable;
       typedef std::future<DescribeAccountCustomizationOutcome> DescribeAccountCustomizationOutcomeCallable;
       typedef std::future<DescribeAccountSettingsOutcome> DescribeAccountSettingsOutcomeCallable;
       typedef std::future<DescribeAccountSubscriptionOutcome> DescribeAccountSubscriptionOutcomeCallable;
@@ -856,6 +867,7 @@ namespace Aws
       typedef std::future<StartDashboardSnapshotJobScheduleOutcome> StartDashboardSnapshotJobScheduleOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+      typedef std::future<UpdateAccountCustomPermissionOutcome> UpdateAccountCustomPermissionOutcomeCallable;
       typedef std::future<UpdateAccountCustomizationOutcome> UpdateAccountCustomizationOutcomeCallable;
       typedef std::future<UpdateAccountSettingsOutcome> UpdateAccountSettingsOutcomeCallable;
       typedef std::future<UpdateAnalysisOutcome> UpdateAnalysisOutcomeCallable;
@@ -933,6 +945,7 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::CreateTopicRequest&, const Model::CreateTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTopicResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateTopicRefreshScheduleRequest&, const Model::CreateTopicRefreshScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTopicRefreshScheduleResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateVPCConnectionRequest&, const Model::CreateVPCConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVPCConnectionResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DeleteAccountCustomPermissionRequest&, const Model::DeleteAccountCustomPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccountCustomPermissionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteAccountCustomizationRequest&, const Model::DeleteAccountCustomizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccountCustomizationResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteAccountSubscriptionRequest&, const Model::DeleteAccountSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccountSubscriptionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteAnalysisRequest&, const Model::DeleteAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAnalysisResponseReceivedHandler;
@@ -964,6 +977,7 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::DeleteUserByPrincipalIdRequest&, const Model::DeleteUserByPrincipalIdOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserByPrincipalIdResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteUserCustomPermissionRequest&, const Model::DeleteUserCustomPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserCustomPermissionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteVPCConnectionRequest&, const Model::DeleteVPCConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVPCConnectionResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DescribeAccountCustomPermissionRequest&, const Model::DescribeAccountCustomPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountCustomPermissionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeAccountCustomizationRequest&, const Model::DescribeAccountCustomizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountCustomizationResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeAccountSettingsRequest&, const Model::DescribeAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountSettingsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeAccountSubscriptionRequest&, const Model::DescribeAccountSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountSubscriptionResponseReceivedHandler;
@@ -1071,6 +1085,7 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::StartDashboardSnapshotJobScheduleRequest&, const Model::StartDashboardSnapshotJobScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDashboardSnapshotJobScheduleResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::UpdateAccountCustomPermissionRequest&, const Model::UpdateAccountCustomPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccountCustomPermissionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateAccountCustomizationRequest&, const Model::UpdateAccountCustomizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccountCustomizationResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateAccountSettingsRequest&, const Model::UpdateAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccountSettingsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateAnalysisRequest&, const Model::UpdateAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAnalysisResponseReceivedHandler;

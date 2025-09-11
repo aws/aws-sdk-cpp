@@ -436,6 +436,32 @@ namespace PrometheusService
         }
 
         /**
+         * <p>Deletes the logging configuration for a Amazon Managed Service for Prometheus
+         * scraper.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteScraperLoggingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteScraperLoggingConfigurationOutcome DeleteScraperLoggingConfiguration(const Model::DeleteScraperLoggingConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteScraperLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteScraperLoggingConfigurationRequestT = Model::DeleteScraperLoggingConfigurationRequest>
+        Model::DeleteScraperLoggingConfigurationOutcomeCallable DeleteScraperLoggingConfigurationCallable(const DeleteScraperLoggingConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&PrometheusServiceClient::DeleteScraperLoggingConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteScraperLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteScraperLoggingConfigurationRequestT = Model::DeleteScraperLoggingConfigurationRequest>
+        void DeleteScraperLoggingConfigurationAsync(const DeleteScraperLoggingConfigurationRequestT& request, const DeleteScraperLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PrometheusServiceClient::DeleteScraperLoggingConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Deletes an existing workspace. </p>  <p>When you delete a workspace,
          * the data that has been ingested into it is not immediately deleted. It will be
          * permanently deleted within one month.</p> <p><h3>See Also:</h3>   <a
@@ -618,6 +644,32 @@ namespace PrometheusService
         void DescribeScraperAsync(const DescribeScraperRequestT& request, const DescribeScraperResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PrometheusServiceClient::DescribeScraper, request, handler, context);
+        }
+
+        /**
+         * <p>Describes the logging configuration for a Amazon Managed Service for
+         * Prometheus scraper.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeScraperLoggingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeScraperLoggingConfigurationOutcome DescribeScraperLoggingConfiguration(const Model::DescribeScraperLoggingConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeScraperLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeScraperLoggingConfigurationRequestT = Model::DescribeScraperLoggingConfigurationRequest>
+        Model::DescribeScraperLoggingConfigurationOutcomeCallable DescribeScraperLoggingConfigurationCallable(const DescribeScraperLoggingConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&PrometheusServiceClient::DescribeScraperLoggingConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeScraperLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeScraperLoggingConfigurationRequestT = Model::DescribeScraperLoggingConfigurationRequest>
+        void DescribeScraperLoggingConfigurationAsync(const DescribeScraperLoggingConfigurationRequestT& request, const DescribeScraperLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PrometheusServiceClient::DescribeScraperLoggingConfiguration, request, handler, context);
         }
 
         /**
@@ -1046,6 +1098,32 @@ namespace PrometheusService
         void UpdateScraperAsync(const UpdateScraperRequestT& request, const UpdateScraperResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PrometheusServiceClient::UpdateScraper, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the logging configuration for a Amazon Managed Service for Prometheus
+         * scraper.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateScraperLoggingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateScraperLoggingConfigurationOutcome UpdateScraperLoggingConfiguration(const Model::UpdateScraperLoggingConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateScraperLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateScraperLoggingConfigurationRequestT = Model::UpdateScraperLoggingConfigurationRequest>
+        Model::UpdateScraperLoggingConfigurationOutcomeCallable UpdateScraperLoggingConfigurationCallable(const UpdateScraperLoggingConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&PrometheusServiceClient::UpdateScraperLoggingConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateScraperLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateScraperLoggingConfigurationRequestT = Model::UpdateScraperLoggingConfigurationRequest>
+        void UpdateScraperLoggingConfigurationAsync(const UpdateScraperLoggingConfigurationRequestT& request, const UpdateScraperLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PrometheusServiceClient::UpdateScraperLoggingConfiguration, request, handler, context);
         }
 
         /**

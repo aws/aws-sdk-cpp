@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p>The executive summary settings of an embedded Amazon QuickSight console or
+   * <p>The executive summary settings of an embedded QuickSight console or
    * dashboard.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ExecutiveSummaryConfigurations">AWS
    * API Reference</a></p>
@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The executive summary settings of an embedded Amazon QuickSight console or
+     * <p>The executive summary settings of an embedded QuickSight console or
      * dashboard.</p>
      */
     inline bool GetEnabled() const { return m_enabled; }

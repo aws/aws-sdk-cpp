@@ -36,8 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of services and their authorized targets that the Amazon QuickSight
-     * IAM Identity Center application can access.</p>
+     * <p>A list of services and their authorized targets that the QuickSight IAM
+     * Identity Center application can access.</p>
      */
     inline const Aws::Vector<AuthorizedTargetsByService>& GetServices() const { return m_services; }
     template<typename ServicesT = Aws::Vector<AuthorizedTargetsByService>>

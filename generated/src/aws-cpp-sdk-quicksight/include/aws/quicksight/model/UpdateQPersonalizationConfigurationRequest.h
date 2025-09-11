@@ -48,9 +48,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>An option to allow Amazon QuickSight to customize data stories with user
-     * specific metadata, specifically location and job information, in your IAM
-     * Identity Center instance.</p>
+     * <p>An option to allow QuickSight to customize data stories with user specific
+     * metadata, specifically location and job information, in your IAM Identity Center
+     * instance.</p>
      */
     inline PersonalizationMode GetPersonalizationMode() const { return m_personalizationMode; }
     inline bool PersonalizationModeHasBeenSet() const { return m_personalizationModeHasBeenSet; }

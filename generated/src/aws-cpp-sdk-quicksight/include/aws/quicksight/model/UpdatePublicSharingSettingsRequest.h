@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Services account ID associated with your Amazon QuickSight
+     * <p>The Amazon Web Services account ID associated with your QuickSight
      * subscription.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
@@ -48,7 +48,7 @@ namespace Model
     ///@{
     /**
      * <p>A Boolean value that indicates whether public sharing is turned on for an
-     * Amazon QuickSight account.</p>
+     * QuickSight account.</p>
      */
     inline bool GetPublicSharingEnabled() const { return m_publicSharingEnabled; }
     inline bool PublicSharingEnabledHasBeenSet() const { return m_publicSharingEnabledHasBeenSet; }

@@ -34,8 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID for the Amazon Web Services account that contains the Amazon
-     * QuickSight namespace that you want to describe.</p>
+     * <p>The ID for the Amazon Web Services account that contains the QuickSight
+     * namespace that you want to describe.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
