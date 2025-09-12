@@ -216,7 +216,12 @@ namespace Aws
                     clientConfig.region = credentialConfig.region;
                     clientConfig.credentialProviderConfig = credentialConfig;
                     clientConfig.requestTimeoutMs = credentialConfig.imdsConfig.metadataServiceTimeout * 1000;
-                    clientConfig.retryStrategy = credentialConfig.imdsConfig.imdsRetryStrategy;
+                    if (credentialConfig.imdsConfig.imdsRetryStrategy) {
+                            clientConfig.retryStrategy = credentialConfig.imdsConfig.imdsRetryStrategy;
+                        } else {
+                            clientConfig.retryStrategy = Aws::MakeShared<Aws::Client::DefaultRetryStrategy>(
+                                    EC2_METADATA_CLIENT_LOG_TAG, credentialConfig.imdsConfig.metadataServiceNumAttempts - 1, /*scaleMs=*/500);
+                        }
                     return clientConfig;
                   }(),
                   EC2_METADATA_CLIENT_LOG_TAG),
