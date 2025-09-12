@@ -17,6 +17,7 @@
 #include <aws/payment-cryptography/model/AddKeyReplicationRegionsRequest.h>
 #include <aws/payment-cryptography/model/AddKeyReplicationRegionsResult.h>
 #include <aws/payment-cryptography/model/Alias.h>
+#include <aws/payment-cryptography/model/CertificateSubjectType.h>
 #include <aws/payment-cryptography/model/CreateAliasRequest.h>
 #include <aws/payment-cryptography/model/CreateAliasResult.h>
 #include <aws/payment-cryptography/model/CreateKeyRequest.h>
@@ -42,6 +43,8 @@
 #include <aws/payment-cryptography/model/ExportTr34KeyBlock.h>
 #include <aws/payment-cryptography/model/GetAliasRequest.h>
 #include <aws/payment-cryptography/model/GetAliasResult.h>
+#include <aws/payment-cryptography/model/GetCertificateSigningRequestRequest.h>
+#include <aws/payment-cryptography/model/GetCertificateSigningRequestResult.h>
 #include <aws/payment-cryptography/model/GetDefaultKeyReplicationRegionsRequest.h>
 #include <aws/payment-cryptography/model/GetDefaultKeyReplicationRegionsResult.h>
 #include <aws/payment-cryptography/model/GetKeyRequest.h>
@@ -89,6 +92,7 @@
 #include <aws/payment-cryptography/model/RestoreKeyRequest.h>
 #include <aws/payment-cryptography/model/RestoreKeyResult.h>
 #include <aws/payment-cryptography/model/RootCertificatePublicKey.h>
+#include <aws/payment-cryptography/model/SigningAlgorithmType.h>
 #include <aws/payment-cryptography/model/StartKeyUsageRequest.h>
 #include <aws/payment-cryptography/model/StartKeyUsageResult.h>
 #include <aws/payment-cryptography/model/StopKeyUsageRequest.h>

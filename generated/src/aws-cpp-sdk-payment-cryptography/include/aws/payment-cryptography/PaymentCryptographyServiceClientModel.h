@@ -27,6 +27,7 @@
 #include <aws/payment-cryptography/model/EnableDefaultKeyReplicationRegionsResult.h>
 #include <aws/payment-cryptography/model/ExportKeyResult.h>
 #include <aws/payment-cryptography/model/GetAliasResult.h>
+#include <aws/payment-cryptography/model/GetCertificateSigningRequestResult.h>
 #include <aws/payment-cryptography/model/GetDefaultKeyReplicationRegionsResult.h>
 #include <aws/payment-cryptography/model/GetKeyResult.h>
 #include <aws/payment-cryptography/model/GetParametersForExportResult.h>
@@ -95,6 +96,7 @@ namespace Aws
       class EnableDefaultKeyReplicationRegionsRequest;
       class ExportKeyRequest;
       class GetAliasRequest;
+      class GetCertificateSigningRequestRequest;
       class GetDefaultKeyReplicationRegionsRequest;
       class GetKeyRequest;
       class GetParametersForExportRequest;
@@ -123,6 +125,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<EnableDefaultKeyReplicationRegionsResult, PaymentCryptographyError> EnableDefaultKeyReplicationRegionsOutcome;
       typedef Aws::Utils::Outcome<ExportKeyResult, PaymentCryptographyError> ExportKeyOutcome;
       typedef Aws::Utils::Outcome<GetAliasResult, PaymentCryptographyError> GetAliasOutcome;
+      typedef Aws::Utils::Outcome<GetCertificateSigningRequestResult, PaymentCryptographyError> GetCertificateSigningRequestOutcome;
       typedef Aws::Utils::Outcome<GetDefaultKeyReplicationRegionsResult, PaymentCryptographyError> GetDefaultKeyReplicationRegionsOutcome;
       typedef Aws::Utils::Outcome<GetKeyResult, PaymentCryptographyError> GetKeyOutcome;
       typedef Aws::Utils::Outcome<GetParametersForExportResult, PaymentCryptographyError> GetParametersForExportOutcome;
@@ -151,6 +154,7 @@ namespace Aws
       typedef std::future<EnableDefaultKeyReplicationRegionsOutcome> EnableDefaultKeyReplicationRegionsOutcomeCallable;
       typedef std::future<ExportKeyOutcome> ExportKeyOutcomeCallable;
       typedef std::future<GetAliasOutcome> GetAliasOutcomeCallable;
+      typedef std::future<GetCertificateSigningRequestOutcome> GetCertificateSigningRequestOutcomeCallable;
       typedef std::future<GetDefaultKeyReplicationRegionsOutcome> GetDefaultKeyReplicationRegionsOutcomeCallable;
       typedef std::future<GetKeyOutcome> GetKeyOutcomeCallable;
       typedef std::future<GetParametersForExportOutcome> GetParametersForExportOutcomeCallable;
@@ -182,6 +186,7 @@ namespace Aws
     typedef std::function<void(const PaymentCryptographyClient*, const Model::EnableDefaultKeyReplicationRegionsRequest&, const Model::EnableDefaultKeyReplicationRegionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableDefaultKeyReplicationRegionsResponseReceivedHandler;
     typedef std::function<void(const PaymentCryptographyClient*, const Model::ExportKeyRequest&, const Model::ExportKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportKeyResponseReceivedHandler;
     typedef std::function<void(const PaymentCryptographyClient*, const Model::GetAliasRequest&, const Model::GetAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAliasResponseReceivedHandler;
+    typedef std::function<void(const PaymentCryptographyClient*, const Model::GetCertificateSigningRequestRequest&, const Model::GetCertificateSigningRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCertificateSigningRequestResponseReceivedHandler;
     typedef std::function<void(const PaymentCryptographyClient*, const Model::GetDefaultKeyReplicationRegionsRequest&, const Model::GetDefaultKeyReplicationRegionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDefaultKeyReplicationRegionsResponseReceivedHandler;
     typedef std::function<void(const PaymentCryptographyClient*, const Model::GetKeyRequest&, const Model::GetKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetKeyResponseReceivedHandler;
     typedef std::function<void(const PaymentCryptographyClient*, const Model::GetParametersForExportRequest&, const Model::GetParametersForExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetParametersForExportResponseReceivedHandler;

@@ -642,6 +642,31 @@ namespace PaymentCryptography
         }
 
         /**
+         * <p>Used to retrieve the public key for a keypair.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetCertificateSigningRequest">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCertificateSigningRequestOutcome GetCertificateSigningRequest(const Model::GetCertificateSigningRequestRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCertificateSigningRequest that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCertificateSigningRequestRequestT = Model::GetCertificateSigningRequestRequest>
+        Model::GetCertificateSigningRequestOutcomeCallable GetCertificateSigningRequestCallable(const GetCertificateSigningRequestRequestT& request) const
+        {
+            return SubmitCallable(&PaymentCryptographyClient::GetCertificateSigningRequest, request);
+        }
+
+        /**
+         * An Async wrapper for GetCertificateSigningRequest that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCertificateSigningRequestRequestT = Model::GetCertificateSigningRequestRequest>
+        void GetCertificateSigningRequestAsync(const GetCertificateSigningRequestRequestT& request, const GetCertificateSigningRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PaymentCryptographyClient::GetCertificateSigningRequest, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the list of regions where default key replication is currently
          * enabled for your account.</p> <p>This operation returns the current
          * configuration of default Replication Regions. New keys created in your account

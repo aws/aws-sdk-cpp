@@ -82,6 +82,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>Key Identifier used for unwrapping the import key</p>
+     */
+    inline const Aws::String& GetWrappingKeyIdentifier() const { return m_wrappingKeyIdentifier; }
+    inline bool WrappingKeyIdentifierHasBeenSet() const { return m_wrappingKeyIdentifierHasBeenSet; }
+    template<typename WrappingKeyIdentifierT = Aws::String>
+    void SetWrappingKeyIdentifier(WrappingKeyIdentifierT&& value) { m_wrappingKeyIdentifierHasBeenSet = true; m_wrappingKeyIdentifier = std::forward<WrappingKeyIdentifierT>(value); }
+    template<typename WrappingKeyIdentifierT = Aws::String>
+    ImportTr34KeyBlock& WithWrappingKeyIdentifier(WrappingKeyIdentifierT&& value) { SetWrappingKeyIdentifier(std::forward<WrappingKeyIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Key Identifier used for unwrapping the import key</p>
+     */
+    inline const Aws::String& GetWrappingKeyCertificate() const { return m_wrappingKeyCertificate; }
+    inline bool WrappingKeyCertificateHasBeenSet() const { return m_wrappingKeyCertificateHasBeenSet; }
+    template<typename WrappingKeyCertificateT = Aws::String>
+    void SetWrappingKeyCertificate(WrappingKeyCertificateT&& value) { m_wrappingKeyCertificateHasBeenSet = true; m_wrappingKeyCertificate = std::forward<WrappingKeyCertificateT>(value); }
+    template<typename WrappingKeyCertificateT = Aws::String>
+    ImportTr34KeyBlock& WithWrappingKeyCertificate(WrappingKeyCertificateT&& value) { SetWrappingKeyCertificate(std::forward<WrappingKeyCertificateT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The TR-34 wrapped key block to import.</p>
      */
     inline const Aws::String& GetWrappedKeyBlock() const { return m_wrappedKeyBlock; }
@@ -126,6 +150,12 @@ namespace Model
 
     Aws::String m_importToken;
     bool m_importTokenHasBeenSet = false;
+
+    Aws::String m_wrappingKeyIdentifier;
+    bool m_wrappingKeyIdentifierHasBeenSet = false;
+
+    Aws::String m_wrappingKeyCertificate;
+    bool m_wrappingKeyCertificateHasBeenSet = false;
 
     Aws::String m_wrappedKeyBlock;
     bool m_wrappedKeyBlockHasBeenSet = false;

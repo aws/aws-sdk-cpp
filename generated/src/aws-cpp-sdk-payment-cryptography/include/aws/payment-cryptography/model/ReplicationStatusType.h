@@ -42,7 +42,13 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>The current status of key replication in this region.</p> <p>This field
+     * indicates whether the key replication is in progress, completed successfully, or
+     * has encountered an error. Possible values include states such as SYNCRHONIZED,
+     * IN_PROGRESS, DELETE_IN_PROGRESS, or FAILED. This provides visibility into the
+     * replication process for monitoring and troubleshooting purposes.</p>
+     */
     inline KeyReplicationState GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
     inline void SetStatus(KeyReplicationState value) { m_statusHasBeenSet = true; m_status = value; }

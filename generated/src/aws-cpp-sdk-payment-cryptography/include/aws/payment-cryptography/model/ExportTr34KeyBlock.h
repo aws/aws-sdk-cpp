@@ -85,6 +85,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>Key Identifier used for signing the export key</p>
+     */
+    inline const Aws::String& GetSigningKeyIdentifier() const { return m_signingKeyIdentifier; }
+    inline bool SigningKeyIdentifierHasBeenSet() const { return m_signingKeyIdentifierHasBeenSet; }
+    template<typename SigningKeyIdentifierT = Aws::String>
+    void SetSigningKeyIdentifier(SigningKeyIdentifierT&& value) { m_signingKeyIdentifierHasBeenSet = true; m_signingKeyIdentifier = std::forward<SigningKeyIdentifierT>(value); }
+    template<typename SigningKeyIdentifierT = Aws::String>
+    ExportTr34KeyBlock& WithSigningKeyIdentifier(SigningKeyIdentifierT&& value) { SetSigningKeyIdentifier(std::forward<SigningKeyIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Certificate used for signing the export key</p>
+     */
+    inline const Aws::String& GetSigningKeyCertificate() const { return m_signingKeyCertificate; }
+    inline bool SigningKeyCertificateHasBeenSet() const { return m_signingKeyCertificateHasBeenSet; }
+    template<typename SigningKeyCertificateT = Aws::String>
+    void SetSigningKeyCertificate(SigningKeyCertificateT&& value) { m_signingKeyCertificateHasBeenSet = true; m_signingKeyCertificate = std::forward<SigningKeyCertificateT>(value); }
+    template<typename SigningKeyCertificateT = Aws::String>
+    ExportTr34KeyBlock& WithSigningKeyCertificate(SigningKeyCertificateT&& value) { SetSigningKeyCertificate(std::forward<SigningKeyCertificateT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The format of key block that Amazon Web Services Payment Cryptography will
      * use during key export.</p>
      */
@@ -130,6 +154,12 @@ namespace Model
 
     Aws::String m_exportToken;
     bool m_exportTokenHasBeenSet = false;
+
+    Aws::String m_signingKeyIdentifier;
+    bool m_signingKeyIdentifierHasBeenSet = false;
+
+    Aws::String m_signingKeyCertificate;
+    bool m_signingKeyCertificateHasBeenSet = false;
 
     Tr34KeyBlockFormat m_keyBlockFormat{Tr34KeyBlockFormat::NOT_SET};
     bool m_keyBlockFormatHasBeenSet = false;
