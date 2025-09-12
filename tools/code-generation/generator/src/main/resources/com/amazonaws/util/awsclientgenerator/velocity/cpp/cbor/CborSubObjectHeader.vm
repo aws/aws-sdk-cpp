@@ -1,0 +1,59 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#pragma once
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#set($exportMacro = $typeInfo.exportValue)
+\#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>
+\#include <aws/crt/cbor/Cbor.h>
+#foreach($header in $typeInfo.headerIncludes)
+\#include $header
+#end
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Cbor
+{
+class CborValue;
+} // namespace Cbor
+} // namespace Utils
+#if ($rootNamespace != "Aws")
+} // namespace Aws
+namespace ${rootNamespace}
+{
+#end
+namespace ${serviceNamespace}
+{
+namespace Model
+{
+#set($classNameRef = "${typeInfo.className}&")
+#foreach($forwardDeclaration in $typeInfo.forwardDeclarations)
+class $forwardDeclaration;
+#end
+
+#if($shape.documentation)
+/**
+* $shape.documentation
+*/
+#end
+class $typeInfo.className
+{
+public:
+${exportMacro} ${typeInfo.className}() = default;
+${exportMacro} ${typeInfo.className}(const ${typeInfo.cborDecoder}& decoder);
+${exportMacro} ${classNameRef} operator=(const ${typeInfo.cborDecoder}& decoder);
+#if ($typeInfo.shape.isEvent() && $typeInfo.className.endsWith("InitialResponse"))
+    ${exportMacro} ${typeInfo.className}(const Http::HeaderValueCollection& responseHeaders);
+#end
+${exportMacro} void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
+
+#set($useRequiredField = true)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersAndInlines.vm")
+};
+
+} // namespace Model
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

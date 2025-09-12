@@ -4,33 +4,28 @@
  */
 
 #pragma once
-#include <aws/rest-xml-protocol/RestXmlProtocol_EXPORTS.h>
 #include <aws/rest-xml-protocol/RestXmlProtocolRequest.h>
+#include <aws/rest-xml-protocol/RestXmlProtocol_EXPORTS.h>
 
-namespace Aws
-{
-namespace RestXmlProtocol
-{
-namespace Model
-{
+namespace Aws {
+namespace RestXmlProtocol {
+namespace Model {
 
-  /**
-   */
-  class EndpointOperationRequest : public RestXmlProtocolRequest
-  {
-  public:
-    AWS_RESTXMLPROTOCOL_API EndpointOperationRequest() = default;
+/**
+ */
+class EndpointOperationRequest : public RestXmlProtocolRequest {
+ public:
+  AWS_RESTXMLPROTOCOL_API EndpointOperationRequest() = default;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "EndpointOperation"; }
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "EndpointOperation"; }
 
-    AWS_RESTXMLPROTOCOL_API Aws::String SerializePayload() const override;
+  AWS_RESTXMLPROTOCOL_API Aws::String SerializePayload() const override;
+};
 
-  };
-
-} // namespace Model
-} // namespace RestXmlProtocol
-} // namespace Aws
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws

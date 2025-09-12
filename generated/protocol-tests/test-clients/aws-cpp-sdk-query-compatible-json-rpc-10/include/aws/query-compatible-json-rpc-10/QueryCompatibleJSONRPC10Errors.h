@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/query-compatible-json-rpc-10/QueryCompatibleJSONRPC10_EXPORTS.h>
 
-namespace Aws
-{
-namespace QueryCompatibleJSONRPC10
-{
-enum class QueryCompatibleJSONRPC10Errors
-{
-  //From Core//
+namespace Aws {
+namespace QueryCompatibleJSONRPC10 {
+enum class QueryCompatibleJSONRPC10Errors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class QueryCompatibleJSONRPC10Errors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,27 +44,29 @@ enum class QueryCompatibleJSONRPC10Errors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CUSTOM_CODE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CUSTOM_CODE = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   NO_CUSTOM_CODE
 };
 
-class AWS_QUERYCOMPATIBLEJSONRPC10_API QueryCompatibleJSONRPC10Error : public Aws::Client::AWSError<QueryCompatibleJSONRPC10Errors>
-{
-public:
+class AWS_QUERYCOMPATIBLEJSONRPC10_API QueryCompatibleJSONRPC10Error : public Aws::Client::AWSError<QueryCompatibleJSONRPC10Errors> {
+ public:
   QueryCompatibleJSONRPC10Error() {}
-  QueryCompatibleJSONRPC10Error(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<QueryCompatibleJSONRPC10Errors>(rhs) {}
-  QueryCompatibleJSONRPC10Error(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<QueryCompatibleJSONRPC10Errors>(rhs) {}
-  QueryCompatibleJSONRPC10Error(const Aws::Client::AWSError<QueryCompatibleJSONRPC10Errors>& rhs) : Aws::Client::AWSError<QueryCompatibleJSONRPC10Errors>(rhs) {}
-  QueryCompatibleJSONRPC10Error(Aws::Client::AWSError<QueryCompatibleJSONRPC10Errors>&& rhs) : Aws::Client::AWSError<QueryCompatibleJSONRPC10Errors>(rhs) {}
+  QueryCompatibleJSONRPC10Error(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<QueryCompatibleJSONRPC10Errors>(rhs) {}
+  QueryCompatibleJSONRPC10Error(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs)
+      : Aws::Client::AWSError<QueryCompatibleJSONRPC10Errors>(rhs) {}
+  QueryCompatibleJSONRPC10Error(const Aws::Client::AWSError<QueryCompatibleJSONRPC10Errors>& rhs)
+      : Aws::Client::AWSError<QueryCompatibleJSONRPC10Errors>(rhs) {}
+  QueryCompatibleJSONRPC10Error(Aws::Client::AWSError<QueryCompatibleJSONRPC10Errors>&& rhs)
+      : Aws::Client::AWSError<QueryCompatibleJSONRPC10Errors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace QueryCompatibleJSONRPC10ErrorMapper
-{
-  AWS_QUERYCOMPATIBLEJSONRPC10_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace QueryCompatibleJSONRPC10ErrorMapper {
+AWS_QUERYCOMPATIBLEJSONRPC10_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace QueryCompatibleJSONRPC10
-} // namespace Aws
+}  // namespace QueryCompatibleJSONRPC10
+}  // namespace Aws

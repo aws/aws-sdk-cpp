@@ -4,61 +4,66 @@
  */
 
 #pragma once
-#include <aws/rest-xml-protocol/RestXmlProtocol_EXPORTS.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rest-xml-protocol/RestXmlProtocol_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Xml
-{
-  class XmlDocument;
-} // namespace Xml
-} // namespace Utils
-namespace RestXmlProtocol
-{
-namespace Model
-{
-  class XmlEmptyBlobsResult
-  {
-  public:
-    AWS_RESTXMLPROTOCOL_API XmlEmptyBlobsResult() = default;
-    AWS_RESTXMLPROTOCOL_API XmlEmptyBlobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AWS_RESTXMLPROTOCOL_API XmlEmptyBlobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace RestXmlProtocol {
+namespace Model {
+class XmlEmptyBlobsResult {
+ public:
+  AWS_RESTXMLPROTOCOL_API XmlEmptyBlobsResult() = default;
+  AWS_RESTXMLPROTOCOL_API XmlEmptyBlobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_RESTXMLPROTOCOL_API XmlEmptyBlobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
+  ///@{
 
-    ///@{
-    
-    inline const Aws::Utils::ByteBuffer& GetData() const { return m_data; }
-    template<typename DataT = Aws::Utils::ByteBuffer>
-    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
-    template<typename DataT = Aws::Utils::ByteBuffer>
-    XmlEmptyBlobsResult& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
-    ///@}
+  inline const Aws::Utils::ByteBuffer& GetData() const { return m_data; }
+  template <typename DataT = Aws::Utils::ByteBuffer>
+  void SetData(DataT&& value) {
+    m_dataHasBeenSet = true;
+    m_data = std::forward<DataT>(value);
+  }
+  template <typename DataT = Aws::Utils::ByteBuffer>
+  XmlEmptyBlobsResult& WithData(DataT&& value) {
+    SetData(std::forward<DataT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    XmlEmptyBlobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  ///@{
 
-    Aws::Utils::ByteBuffer m_data{};
-    bool m_dataHasBeenSet = false;
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  XmlEmptyBlobsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Utils::ByteBuffer m_data{};
+  bool m_dataHasBeenSet = false;
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-} // namespace Model
-} // namespace RestXmlProtocol
-} // namespace Aws
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws

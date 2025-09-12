@@ -1,0 +1,120 @@
+#if($shapeMember.enum)
+auto ${containerVar} = decoder->PopNextTextVal();
+if (${containerVar}.has_value()) {
+    ${memberVarName} = ${shapeMember.name}Mapper::Get${shapeMember.name}ForName(Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len));
+}
+#elseif($shapeMember.string)
+auto peekType = decoder->PeekType();
+if (peekType.has_value()) {
+    if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+        auto ${containerVar} = decoder->PopNextTextVal();
+        if (${containerVar}.has_value()) {
+            ${memberVarName} = Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len);
+        }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType = decoder->PeekType();
+            if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                if (nextType.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto ${containerVar} = decoder->PopNextTextVal();
+            if (${containerVar}.has_value()) {
+                ss << Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len);
+            }
+        }
+        ${memberVarName} = ss.str();
+    }
+}
+#elseif($shapeMember.boolean)
+auto ${containerVar} = decoder->PopNextBooleanVal();
+if (${containerVar}.has_value()) {
+    ${memberVarName} = ${containerVar}.value();
+}
+#elseif($shapeMember.double)
+auto ${containerVar} = decoder->PopNextFloatVal();
+if (${containerVar}.has_value()) {
+    ${memberVarName} = ${containerVar}.value();
+}
+#elseif($shapeMember.float)
+auto ${containerVar} = decoder->PopNextFloatVal();
+if (${containerVar}.has_value()) {
+    ${memberVarName} = ${containerVar}.value();
+}
+#elseif($shapeMember.blob)
+auto peekType = decoder->PeekType();
+if (peekType.has_value()) {
+    if (peekType.value() == Aws::Crt::Cbor::CborType::Bytes) {
+        auto ${containerVar} = decoder->PopNextBytesVal();
+        if (${containerVar}.has_value()) {
+            ${memberVarName} = Aws::Utils::ByteBuffer(${containerVar}.value().ptr, ${containerVar}.value().len);
+        }
+    } else {
+        decoder->ConsumeNextSingleElement();
+        Aws::StringStream ss;
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType = decoder->PeekType();
+            if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                if (nextType.has_value()) {
+                    decoder->ConsumeNextSingleElement();  // consume the Break
+                }
+                break;
+            }
+            auto ${containerVar} = decoder->PopNextBytesVal();
+            if (${containerVar}.has_value()) {
+                ss << Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len);
+            }
+        }
+        ${memberVarName} = ss.str();
+        ss.clear();
+    }
+}
+#elseif($shapeMember.timeStamp)
+auto tag = decoder->PopNextTagVal();
+if (tag.has_value() && tag.value() == 1) //1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+{
+    auto dateType = decoder->PeekType();
+    if (dateType.has_value())
+    {
+        if (dateType.value() == Aws::Crt::Cbor::CborType::Float)
+        {
+            auto ${containerVar} = decoder->PopNextFloatVal();
+            if (${containerVar}.has_value()) {
+                ${memberVarName} = Aws::Utils::DateTime(${containerVar}.value());
+            }
+        }
+        else
+        {
+            auto ${containerVar} = decoder->PopNextUnsignedIntVal();
+            if (${containerVar}.has_value()) {
+                ${memberVarName} = Aws::Utils::DateTime(${containerVar}.value());
+            }
+        }
+    }
+}
+#elseif($shapeMember.structure)
+    #if($member.shape.isMutuallyReferencedWith($shape) || $member.shape.getName() == $shape.getName())
+        ${memberVarName} = Aws::MakeShared<${shapeMember.name}>("${typeInfo.className}", ${shapeMember.name}(decoder));
+    #else
+        ${memberVarName} = ${member.shape.name}(decoder);
+    #end
+#else
+auto peekType = decoder->PeekType();
+if (peekType.has_value()) {
+    if(peekType.value() == Aws::Crt::Cbor::CborType::UInt){
+        auto ${containerVar} = decoder->PopNextUnsignedIntVal();
+        if (${containerVar}.has_value()) {
+            ${memberVarName} = static_cast<int64_t>(${containerVar}.value());
+        }
+    } else {
+        auto ${containerVar} = decoder->PopNextNegativeIntVal();
+        if (${containerVar}.has_value()) {
+            ${memberVarName} = static_cast<int64_t>(1 - ${containerVar}.value());
+        }
+    }
+}
+#end

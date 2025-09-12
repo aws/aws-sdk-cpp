@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-xml-protocol/RestXmlProtocolClient.h>
 #include <aws/rest-xml-protocol/model/HttpPayloadWithStructureRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using HttpPayloadWithStructure = AWS_PROTOCOL_TEST_SUITE;
 using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
@@ -23,13 +23,14 @@ AWS_PROTOCOL_TEST(HttpPayloadWithStructure, HttpPayloadWithStructure) {
   HttpPayloadWithStructureRequest request;
 
   auto outcome = client.HttpPayloadWithStructure(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const HttpPayloadWithStructureResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"nested":{"greeting":"hello","name":"Phreddy"}} )" */
-  {
-    const NestedPayload& resultNested = result.GetNested();
-    EXPECT_EQ(R"(hello)", resultNested.GetGreeting());
-    EXPECT_EQ(R"(Phreddy)", resultNested.GetName());
-  }
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"nested":{"greeting":"hello","name":"Phreddy"}} )" */
+    {
+      const NestedPayload& resultNested = result.GetNested();
+      EXPECT_EQ(R"(hello)", resultNested.GetGreeting());
+      EXPECT_EQ(R"(Phreddy)", resultNested.GetName());
+    }
+  });
 }

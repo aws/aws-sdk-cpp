@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-json-protocol/RestJsonProtocolClient.h>
 #include <aws/rest-json-protocol/model/HttpResponseCodeRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using HttpResponseCode = AWS_PROTOCOL_TEST_SUITE;
 using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
@@ -23,11 +23,12 @@ AWS_PROTOCOL_TEST(HttpResponseCode, RestJsonHttpResponseCode) {
   HttpResponseCodeRequest request;
 
   auto outcome = client.HttpResponseCode(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const HttpResponseCodeResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"Status":201} )" */
-  EXPECT_EQ(201, result.GetStatus());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"Status":201} )" */
+    EXPECT_EQ(201, result.GetStatus());
+  });
 }
 
 AWS_PROTOCOL_TEST(HttpResponseCode, RestJsonHttpResponseCodeWithNoPayload) {
@@ -40,9 +41,10 @@ AWS_PROTOCOL_TEST(HttpResponseCode, RestJsonHttpResponseCodeWithNoPayload) {
   HttpResponseCodeRequest request;
 
   auto outcome = client.HttpResponseCode(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const HttpResponseCodeResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"Status":201} )" */
-  EXPECT_EQ(201, result.GetStatus());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"Status":201} )" */
+    EXPECT_EQ(201, result.GetStatus());
+  });
 }

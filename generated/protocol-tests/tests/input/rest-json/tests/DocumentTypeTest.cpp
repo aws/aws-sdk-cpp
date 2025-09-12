@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-json-protocol/RestJsonProtocolClient.h>
 #include <aws/rest-json-protocol/model/DocumentTypeRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using DocumentType = AWS_PROTOCOL_TEST_SUITE;
 using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
@@ -114,7 +114,10 @@ AWS_PROTOCOL_TEST(DocumentType, DocumentInputWithList) {
   auto outcome = client.DocumentType(request);
   ExpectedRequest expectedRq;
   expectedRq.method = "PUT";
-  expectedRq.body = "ewogICAgInN0cmluZ1ZhbHVlIjogInN0cmluZyIsCiAgICAiZG9jdW1lbnRWYWx1ZSI6IFsKICAgICAgICB0cnVlLAogICAgICAgICJoaSIsCiAgICAgICAgWwogICAgICAgICAgICAxLAogICAgICAgICAgICAyCiAgICAgICAgXSwKICAgICAgICB7CiAgICAgICAgICAgICJmb28iOiB7CiAgICAgICAgICAgICAgICAiYmF6IjogWwogICAgICAgICAgICAgICAgICAgIDMsCiAgICAgICAgICAgICAgICAgICAgNAogICAgICAgICAgICAgICAgXQogICAgICAgICAgICB9CiAgICAgICAgfQogICAgXQp9";
+  expectedRq.body =
+      "ewogICAgInN0cmluZ1ZhbHVlIjogInN0cmluZyIsCiAgICAiZG9jdW1lbnRWYWx1ZSI6IFsKICAgICAgICB0cnVlLAogICAgICAgICJoaSIsCiAgICAgICAgWwogICAgICAg"
+      "ICAgICAxLAogICAgICAgICAgICAyCiAgICAgICAgXSwKICAgICAgICB7CiAgICAgICAgICAgICJmb28iOiB7CiAgICAgICAgICAgICAgICAiYmF6IjogWwogICAgICAgICAg"
+      "ICAgICAgICAgIDMsCiAgICAgICAgICAgICAgICAgICAgNAogICAgICAgICAgICAgICAgXQogICAgICAgICAgICB9CiAgICAgICAgfQogICAgXQp9";
   expectedRq.uri = "/DocumentType";
   expectedRq.headers = {{"Content-Type", R"(application/json)"}};
   ValidateRequestSent(expectedRq);

@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/protocol-mock/ProtocolMock_EXPORTS.h>
 
-namespace Aws
-{
-namespace ProtocolMock
-{
-class ProtocolMockEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace ProtocolMock {
+class ProtocolMockEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace ProtocolMock
-} // namespace Aws
+}  // namespace ProtocolMock
+}  // namespace Aws

@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/json-protocol/JsonProtocolClient.h>
 #include <aws/json-protocol/model/PutAndGetInlineDocumentsRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using PutAndGetInlineDocuments = AWS_PROTOCOL_TEST_SUITE;
 using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
@@ -23,12 +23,13 @@ AWS_PROTOCOL_TEST(PutAndGetInlineDocuments, PutAndGetInlineDocumentsInput) {
   PutAndGetInlineDocumentsRequest request;
 
   auto outcome = client.PutAndGetInlineDocuments(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const PutAndGetInlineDocumentsResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"inlineDocument":{"foo":"bar"}} )" */
-  {
-    const Aws::Utils::DocumentView& resultInlineDocument = result.GetInlineDocument();
-    EXPECT_STREQ(R"j({"foo":"bar"})j", resultInlineDocument.WriteCompact().c_str());
-  }
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"inlineDocument":{"foo":"bar"}} )" */
+    {
+      const Aws::Utils::DocumentView& resultInlineDocument = result.GetInlineDocument();
+      EXPECT_STREQ(R"j({"foo":"bar"})j", resultInlineDocument.WriteCompact().c_str());
+    }
+  });
 }

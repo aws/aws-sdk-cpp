@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/json-rpc-10/JSONRPC10_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/json-rpc-10/JSONRPC10EndpointRules.h>
+#include <aws/json-rpc-10/JSONRPC10_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace JSONRPC10
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace JSONRPC10 {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using JSONRPC10ClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using JSONRPC10DefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_JSONRPC10_API JSONRPC10EndpointProvider : public JSONRPC10DefaultEpProviderBase
-{
-public:
-    using JSONRPC10ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_JSONRPC10_API JSONRPC10EndpointProvider : public JSONRPC10DefaultEpProviderBase {
+ public:
+  using JSONRPC10ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    JSONRPC10EndpointProvider()
-      : JSONRPC10DefaultEpProviderBase(Aws::JSONRPC10::JSONRPC10EndpointRules::GetRulesBlob(), Aws::JSONRPC10::JSONRPC10EndpointRules::RulesBlobSize)
-    {}
+  JSONRPC10EndpointProvider()
+      : JSONRPC10DefaultEpProviderBase(Aws::JSONRPC10::JSONRPC10EndpointRules::GetRulesBlob(),
+                                       Aws::JSONRPC10::JSONRPC10EndpointRules::RulesBlobSize) {}
 
-    ~JSONRPC10EndpointProvider()
-    {
-    }
+  ~JSONRPC10EndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace JSONRPC10
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace JSONRPC10
+}  // namespace Aws

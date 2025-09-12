@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/json-protocol/JsonProtocolClient.h>
 #include <aws/json-protocol/model/EndpointWithHostLabelOperationRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using EndpointWithHostLabelOperation = AWS_PROTOCOL_TEST_SUITE;
 using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
@@ -25,7 +25,8 @@ AWS_PROTOCOL_TEST(EndpointWithHostLabelOperation, AwsJson11EndpointTraitWithHost
   expectedRq.body = "eyJsYWJlbCI6ICJiYXIifQ==";
   expectedRq.uri = "/";
   expectedRq.host = "foo.bar.example.com";
-  expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.EndpointWithHostLabelOperation)"}};
+  expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"},
+                        {"X-Amz-Target", R"(JsonProtocol.EndpointWithHostLabelOperation)"}};
   ValidateRequestSent(expectedRq);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
