@@ -40,6 +40,16 @@ ImportTr34KeyBlock& ImportTr34KeyBlock::operator =(JsonView jsonValue)
     m_importToken = jsonValue.GetString("ImportToken");
     m_importTokenHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("WrappingKeyIdentifier"))
+  {
+    m_wrappingKeyIdentifier = jsonValue.GetString("WrappingKeyIdentifier");
+    m_wrappingKeyIdentifierHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("WrappingKeyCertificate"))
+  {
+    m_wrappingKeyCertificate = jsonValue.GetString("WrappingKeyCertificate");
+    m_wrappingKeyCertificateHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("WrappedKeyBlock"))
   {
     m_wrappedKeyBlock = jsonValue.GetString("WrappedKeyBlock");
@@ -77,6 +87,18 @@ JsonValue ImportTr34KeyBlock::Jsonize() const
   if(m_importTokenHasBeenSet)
   {
    payload.WithString("ImportToken", m_importToken);
+
+  }
+
+  if(m_wrappingKeyIdentifierHasBeenSet)
+  {
+   payload.WithString("WrappingKeyIdentifier", m_wrappingKeyIdentifier);
+
+  }
+
+  if(m_wrappingKeyCertificateHasBeenSet)
+  {
+   payload.WithString("WrappingKeyCertificate", m_wrappingKeyCertificate);
 
   }
 

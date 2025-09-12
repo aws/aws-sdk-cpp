@@ -40,6 +40,16 @@ ExportTr34KeyBlock& ExportTr34KeyBlock::operator =(JsonView jsonValue)
     m_exportToken = jsonValue.GetString("ExportToken");
     m_exportTokenHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("SigningKeyIdentifier"))
+  {
+    m_signingKeyIdentifier = jsonValue.GetString("SigningKeyIdentifier");
+    m_signingKeyIdentifierHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("SigningKeyCertificate"))
+  {
+    m_signingKeyCertificate = jsonValue.GetString("SigningKeyCertificate");
+    m_signingKeyCertificateHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("KeyBlockFormat"))
   {
     m_keyBlockFormat = Tr34KeyBlockFormatMapper::GetTr34KeyBlockFormatForName(jsonValue.GetString("KeyBlockFormat"));
@@ -77,6 +87,18 @@ JsonValue ExportTr34KeyBlock::Jsonize() const
   if(m_exportTokenHasBeenSet)
   {
    payload.WithString("ExportToken", m_exportToken);
+
+  }
+
+  if(m_signingKeyIdentifierHasBeenSet)
+  {
+   payload.WithString("SigningKeyIdentifier", m_signingKeyIdentifier);
+
+  }
+
+  if(m_signingKeyCertificateHasBeenSet)
+  {
+   payload.WithString("SigningKeyCertificate", m_signingKeyCertificate);
 
   }
 
