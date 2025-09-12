@@ -8,6 +8,7 @@
 #include <aws/sts/STSClient.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/Outcome.h>
+#include <aws/core/client/UserAgent.h>
 
 using namespace Aws::Utils;
 using namespace Aws::STS;
@@ -71,6 +72,7 @@ namespace Aws
                     {
                         const auto& stsCredentials = assumeRoleOutcome.GetResult().GetCredentials();
                         m_cachedCredentials = AWSCredentials(stsCredentials.GetAccessKeyId(), stsCredentials.GetSecretAccessKey(), stsCredentials.GetSessionToken());
+                        m_cachedCredentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_STS_ASSUME_ROLE);
                         m_expiry = stsCredentials.GetExpiration().Millis();
                         AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Credentials refreshed with new expiry " << 
                             DateTime(m_expiry.load()).ToGmtString(DateFormat::ISO_8601));

@@ -442,11 +442,36 @@ namespace Aws
             } checksumConfig;
 
             /**
+             * Configuration source types for tracking where values come from
+             */
+            enum class ConfigSourceType {
+                ENVIRONMENT,
+                PROFILE,
+                DEFAULT_VALUE
+            };
+            
+            /**
+             * Structure to hold both config value and its source
+             */
+            struct ConfigSource {
+                Aws::String value;
+                ConfigSourceType source;
+                ConfigSource(const Aws::String& val, ConfigSourceType src) : value(val), source(src) {}
+            };
+            
+            /**
              * A helper function to read config value from env variable or aws profile config
              */
             static Aws::String LoadConfigFromEnvOrProfile(const Aws::String& envKey, const Aws::String& profile,
                                                           const Aws::String& profileProperty, const Aws::Vector<Aws::String>& allowedValues,
                                                           const Aws::String& defaultValue);
+            
+            /**
+             * A helper function to read config value and track its source
+             */
+            static ConfigSource LoadConfigFromEnvOrProfileWithSource(const Aws::String& envKey, const Aws::String& profile,
+                                                                     const Aws::String& profileProperty, const Aws::Vector<Aws::String>& allowedValues,
+                                                                     const Aws::String& defaultValue);
 
             /**
              * A wrapper for interfacing with telemetry functionality. Defaults to Noop provider.
@@ -539,6 +564,11 @@ namespace Aws
                * The OAuth 2.0 access token or OpenID Connect ID token
                */
               Aws::String tokenFilePath;
+              
+              /**
+               * Credential source type for user agent tracking
+               */
+              Aws::String credentialSource;
 
               /**
                * Time out for the credentials future call.

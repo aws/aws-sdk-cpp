@@ -73,6 +73,18 @@ static T LoadEnumFromString(const std::array<std::pair<const char*, T>, N>& mapp
   return mapping->second;
 }
 
+// Helper to load raw values without lowercasing (for file paths, ARNs, etc.)
+static Aws::String LoadRawFromEnvOrProfile(const Aws::String& envKey,
+                                           const Aws::String& profile,
+                                           const Aws::String& profileProperty,
+                                           const Aws::String& defaultValue) {
+    Aws::String option = Aws::Environment::GetEnv(envKey.c_str());
+    if (option.empty()) {
+        option = Aws::Config::GetCachedConfigValue(profile, profileProperty);
+    }
+    return option.empty() ? defaultValue : Aws::Utils::StringUtils::Trim(option.c_str());
+}
+
 ClientConfiguration::ProviderFactories ClientConfiguration::ProviderFactories::defaultFactories = []()
 {
     ProviderFactories factories;
@@ -327,23 +339,25 @@ void setConfigFromEnvOrProfile(ClientConfiguration &config)
     // Uses default retry mode with the specified max attempts from metadata_service_num_attempts
     config.credentialProviderConfig.imdsConfig.imdsRetryStrategy = InitRetryStrategy(attempts, "");
 
-    config.credentialProviderConfig.stsCredentialsProviderConfig.roleArn = ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_IAM_ROLE_ARN_ENV_VAR,
-          config.profileName,
-          AWS_IAM_ROLE_ARN_CONFIG_FILE_OPTION,
-          {}, /* allowed values */
-          "" /* default value */);
+    auto roleArnSrc = ClientConfiguration::LoadConfigFromEnvOrProfileWithSource(
+        AWS_IAM_ROLE_ARN_ENV_VAR, config.profileName, AWS_IAM_ROLE_ARN_CONFIG_FILE_OPTION, {}, "");
+    config.credentialProviderConfig.stsCredentialsProviderConfig.roleArn = roleArnSrc.value;
 
-      config.credentialProviderConfig.stsCredentialsProviderConfig.sessionName = ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_IAM_ROLE_SESSION_NAME_ENV_VAR,
-          config.profileName,
-          AWS_IAM_ROLE_SESSION_NAME_CONFIG_FILE_OPTION,
-          {}, /* allowed values */
-          "" /* default value */);
+    config.credentialProviderConfig.stsCredentialsProviderConfig.sessionName = LoadRawFromEnvOrProfile(
+        AWS_IAM_ROLE_SESSION_NAME_ENV_VAR, config.profileName, AWS_IAM_ROLE_SESSION_NAME_CONFIG_FILE_OPTION, "");
 
-      config.credentialProviderConfig.stsCredentialsProviderConfig.tokenFilePath = ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_WEB_IDENTITY_TOKEN_FILE_ENV_VAR,
-          config.profileName,
-          AWS_WEB_IDENTITY_TOKEN_FILE_CONFIG_FILE_OPTION,
-          {}, /* allowed values */
-          "" /* default value */);
+    auto tokenFileSrc = ClientConfiguration::LoadConfigFromEnvOrProfileWithSource(
+        AWS_WEB_IDENTITY_TOKEN_FILE_ENV_VAR, config.profileName, AWS_WEB_IDENTITY_TOKEN_FILE_CONFIG_FILE_OPTION, {}, "");
+    config.credentialProviderConfig.stsCredentialsProviderConfig.tokenFilePath = tokenFileSrc.value;
+
+    if (!roleArnSrc.value.empty() && !tokenFileSrc.value.empty()) {
+        using Src = ClientConfiguration::ConfigSourceType;
+        const bool fromEnv = (roleArnSrc.source == Src::ENVIRONMENT) || (tokenFileSrc.source == Src::ENVIRONMENT);
+        config.credentialProviderConfig.stsCredentialsProviderConfig.credentialSource =
+            fromEnv ? "env_web_identity" : "web_identity";
+    } else {
+        config.credentialProviderConfig.stsCredentialsProviderConfig.credentialSource.clear();
+    }
 }
 
 ClientConfiguration::ClientConfiguration()
@@ -552,35 +566,79 @@ std::shared_ptr<RetryStrategy> InitRetryStrategy(Aws::String retryMode)
     return InitRetryStrategy(maxAttempts, retryMode);
 }
 
+ClientConfiguration::ConfigSource ClientConfiguration::LoadConfigFromEnvOrProfileWithSource(const Aws::String& envKey,
+                                                                                            const Aws::String& profile,
+                                                                                            const Aws::String& profileProperty,
+                                                                                            const Aws::Vector<Aws::String>& allowedValues,
+                                                                                            const Aws::String& defaultValue)
+{
+    Aws::String option;
+    ConfigSourceType sourceType = ConfigSourceType::DEFAULT_VALUE;
+
+    if (!envKey.empty()) {
+        option = Aws::Environment::GetEnv(envKey.c_str());
+        if (!option.empty()) {
+            sourceType = ConfigSourceType::ENVIRONMENT;
+        }
+    }
+
+    if (option.empty() && !profileProperty.empty()) {
+        option = Aws::Config::GetCachedConfigValue(profile, profileProperty);
+        if (!option.empty()) {
+            sourceType = ConfigSourceType::PROFILE;
+        }
+    }
+
+    option = Aws::Utils::StringUtils::Trim(option.c_str());
+
+    if (option.empty()) {
+        return ConfigSource(defaultValue, ConfigSourceType::DEFAULT_VALUE);
+    }
+
+    // Validate only if we have an allowed list (enum-like). Do NOT mutate case of the returned value.
+    if (!allowedValues.empty()) {
+        const Aws::String optionLower = Aws::Utils::StringUtils::ToLower(option.c_str());
+
+        // Build a lowercased view of the allowed set once
+        bool allowed = std::any_of(allowedValues.cbegin(), allowedValues.cend(),
+            [&](const Aws::String& v){ return optionLower == Aws::Utils::StringUtils::ToLower(v.c_str()); });
+
+        if (!allowed) {
+            Aws::OStringStream expectedStr;
+            expectedStr << "[";
+            for (size_t i = 0; i < allowedValues.size(); ++i) {
+                expectedStr << allowedValues[i];
+                if ( i + 1 < allowedValues.size() ) expectedStr << ";";
+            }
+            expectedStr << "]";
+
+            const char* src = (sourceType == ConfigSourceType::ENVIRONMENT) ? "environment" :
+                              (sourceType == ConfigSourceType::PROFILE)     ? "profile"      : "default";
+
+            AWS_LOGSTREAM_WARN(
+                CLIENT_CONFIG_TAG,
+                "Unrecognized value from " << src
+                << (sourceType == ConfigSourceType::ENVIRONMENT ? (Aws::String(" (") + envKey + ")") :
+                    sourceType == ConfigSourceType::PROFILE ? (Aws::String(" (") + profile + ":" + profileProperty + ")") : "")
+                << ": \"" << option << "\". Using default: \"" << defaultValue
+                << "\". Expected one of: " << expectedStr.str()
+            );
+
+            return ConfigSource(defaultValue, ConfigSourceType::DEFAULT_VALUE);
+        }
+    }
+
+    // Return original (un-lowercased) token and the actual source
+    return ConfigSource(option, sourceType);
+}
+
 Aws::String ClientConfiguration::LoadConfigFromEnvOrProfile(const Aws::String& envKey,
                                                             const Aws::String& profile,
                                                             const Aws::String& profileProperty,
                                                             const Aws::Vector<Aws::String>& allowedValues,
                                                             const Aws::String& defaultValue)
 {
-    Aws::String option = Aws::Environment::GetEnv(envKey.c_str());
-    if (option.empty()) {
-        option = Aws::Config::GetCachedConfigValue(profile, profileProperty);
-    }
-    option = Aws::Utils::StringUtils::ToLower(option.c_str());
-    if (option.empty()) {
-        return defaultValue;
-    }
-
-    if (!allowedValues.empty() && std::find(allowedValues.cbegin(), allowedValues.cend(), option) == allowedValues.cend()) {
-        Aws::OStringStream expectedStr;
-        expectedStr << "[";
-        for(const auto& allowed : allowedValues) {
-            expectedStr << allowed << ";";
-        }
-        expectedStr << "]";
-
-        AWS_LOGSTREAM_WARN(CLIENT_CONFIG_TAG, "Unrecognised value for " << envKey << ": " << option <<
-                                              ". Using default instead: " << defaultValue <<
-                                              ". Expected empty or one of: " << expectedStr.str());
-        option = defaultValue;
-    }
-    return option;
+    return LoadConfigFromEnvOrProfileWithSource(envKey, profile, profileProperty, allowedValues, defaultValue).value;
 }
 
 } // namespace Client
