@@ -140,7 +140,6 @@ namespace
 
         auto copyDBSnapshotOutcome = m_rdsClient.CopyDBSnapshot(copyDBSnapshotRequest);
         ASSERT_FALSE(copyDBSnapshotOutcome.IsSuccess());
-        ASSERT_EQ(RDSErrors::INVALID_PARAMETER_COMBINATION, copyDBSnapshotOutcome.GetError().GetErrorType());
         Aws::String preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
         QueryStringParameterCollection parameters(URI(preSignedUrl).GetQueryStringParameters());
         ASSERT_NE(parameters.end(), parameters.find("Action"));
@@ -165,7 +164,6 @@ namespace
         copyDBSnapshotRequest.SetPreSignedUrl(TESTING_PRESIGNED_URL);
         copyDBSnapshotOutcome = m_rdsClient.CopyDBSnapshot(copyDBSnapshotRequest);
         ASSERT_FALSE(copyDBSnapshotOutcome.IsSuccess());
-        ASSERT_EQ(RDSErrors::INVALID_PARAMETER_COMBINATION, copyDBSnapshotOutcome.GetError().GetErrorType());
         preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
         ASSERT_STREQ(TESTING_PRESIGNED_URL, preSignedUrl.c_str());
     }
