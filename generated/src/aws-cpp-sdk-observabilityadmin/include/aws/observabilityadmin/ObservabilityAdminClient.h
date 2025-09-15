@@ -90,6 +90,33 @@ namespace ObservabilityAdmin
         virtual ~ObservabilityAdminClient();
 
         /**
+         * <p>Creates a centralization rule that applies across an Amazon Web Services
+         * Organization. This operation can only be called by the organization's management
+         * account or a delegated administrator account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateCentralizationRuleForOrganization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCentralizationRuleForOrganizationOutcome CreateCentralizationRuleForOrganization(const Model::CreateCentralizationRuleForOrganizationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateCentralizationRuleForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateCentralizationRuleForOrganizationRequestT = Model::CreateCentralizationRuleForOrganizationRequest>
+        Model::CreateCentralizationRuleForOrganizationOutcomeCallable CreateCentralizationRuleForOrganizationCallable(const CreateCentralizationRuleForOrganizationRequestT& request) const
+        {
+            return SubmitCallable(&ObservabilityAdminClient::CreateCentralizationRuleForOrganization, request);
+        }
+
+        /**
+         * An Async wrapper for CreateCentralizationRuleForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateCentralizationRuleForOrganizationRequestT = Model::CreateCentralizationRuleForOrganizationRequest>
+        void CreateCentralizationRuleForOrganizationAsync(const CreateCentralizationRuleForOrganizationRequestT& request, const CreateCentralizationRuleForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ObservabilityAdminClient::CreateCentralizationRuleForOrganization, request, handler, context);
+        }
+
+        /**
          * <p> Creates a telemetry rule that defines how telemetry should be configured for
          * Amazon Web Services resources in your account. The rule specifies which
          * resources should have telemetry enabled and how that telemetry data should be
@@ -146,6 +173,33 @@ namespace ObservabilityAdmin
         }
 
         /**
+         * <p>Deletes an organization-wide centralization rule. This operation can only be
+         * called by the organization's management account or a delegated administrator
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteCentralizationRuleForOrganization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCentralizationRuleForOrganizationOutcome DeleteCentralizationRuleForOrganization(const Model::DeleteCentralizationRuleForOrganizationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCentralizationRuleForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteCentralizationRuleForOrganizationRequestT = Model::DeleteCentralizationRuleForOrganizationRequest>
+        Model::DeleteCentralizationRuleForOrganizationOutcomeCallable DeleteCentralizationRuleForOrganizationCallable(const DeleteCentralizationRuleForOrganizationRequestT& request) const
+        {
+            return SubmitCallable(&ObservabilityAdminClient::DeleteCentralizationRuleForOrganization, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteCentralizationRuleForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteCentralizationRuleForOrganizationRequestT = Model::DeleteCentralizationRuleForOrganizationRequest>
+        void DeleteCentralizationRuleForOrganizationAsync(const DeleteCentralizationRuleForOrganizationRequestT& request, const DeleteCentralizationRuleForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ObservabilityAdminClient::DeleteCentralizationRuleForOrganization, request, handler, context);
+        }
+
+        /**
          * <p> Deletes a telemetry rule from your account. Any telemetry configurations
          * previously created by the rule will remain but no new resources will be
          * configured by this rule. </p><p><h3>See Also:</h3>   <a
@@ -197,6 +251,33 @@ namespace ObservabilityAdmin
         void DeleteTelemetryRuleForOrganizationAsync(const DeleteTelemetryRuleForOrganizationRequestT& request, const DeleteTelemetryRuleForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ObservabilityAdminClient::DeleteTelemetryRuleForOrganization, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the details of a specific organization centralization rule. This
+         * operation can only be called by the organization's management account or a
+         * delegated administrator account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetCentralizationRuleForOrganization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCentralizationRuleForOrganizationOutcome GetCentralizationRuleForOrganization(const Model::GetCentralizationRuleForOrganizationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCentralizationRuleForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCentralizationRuleForOrganizationRequestT = Model::GetCentralizationRuleForOrganizationRequest>
+        Model::GetCentralizationRuleForOrganizationOutcomeCallable GetCentralizationRuleForOrganizationCallable(const GetCentralizationRuleForOrganizationRequestT& request) const
+        {
+            return SubmitCallable(&ObservabilityAdminClient::GetCentralizationRuleForOrganization, request);
+        }
+
+        /**
+         * An Async wrapper for GetCentralizationRuleForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCentralizationRuleForOrganizationRequestT = Model::GetCentralizationRuleForOrganizationRequest>
+        void GetCentralizationRuleForOrganizationAsync(const GetCentralizationRuleForOrganizationRequestT& request, const GetCentralizationRuleForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ObservabilityAdminClient::GetCentralizationRuleForOrganization, request, handler, context);
         }
 
         /**
@@ -305,6 +386,33 @@ namespace ObservabilityAdmin
         void GetTelemetryRuleForOrganizationAsync(const GetTelemetryRuleForOrganizationRequestT& request, const GetTelemetryRuleForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ObservabilityAdminClient::GetTelemetryRuleForOrganization, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all centralization rules in your organization. This operation can only
+         * be called by the organization's management account or a delegated administrator
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListCentralizationRulesForOrganization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCentralizationRulesForOrganizationOutcome ListCentralizationRulesForOrganization(const Model::ListCentralizationRulesForOrganizationRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListCentralizationRulesForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCentralizationRulesForOrganizationRequestT = Model::ListCentralizationRulesForOrganizationRequest>
+        Model::ListCentralizationRulesForOrganizationOutcomeCallable ListCentralizationRulesForOrganizationCallable(const ListCentralizationRulesForOrganizationRequestT& request = {}) const
+        {
+            return SubmitCallable(&ObservabilityAdminClient::ListCentralizationRulesForOrganization, request);
+        }
+
+        /**
+         * An Async wrapper for ListCentralizationRulesForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCentralizationRulesForOrganizationRequestT = Model::ListCentralizationRulesForOrganizationRequest>
+        void ListCentralizationRulesForOrganizationAsync(const ListCentralizationRulesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCentralizationRulesForOrganizationRequestT& request = {}) const
+        {
+            return SubmitAsync(&ObservabilityAdminClient::ListCentralizationRulesForOrganization, request, handler, context);
         }
 
         /**
@@ -594,6 +702,34 @@ namespace ObservabilityAdmin
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ObservabilityAdminClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Updates an existing centralization rule that applies across an Amazon Web
+         * Services Organization. This operation can only be called by the organization's
+         * management account or a delegated administrator account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateCentralizationRuleForOrganization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateCentralizationRuleForOrganizationOutcome UpdateCentralizationRuleForOrganization(const Model::UpdateCentralizationRuleForOrganizationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateCentralizationRuleForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateCentralizationRuleForOrganizationRequestT = Model::UpdateCentralizationRuleForOrganizationRequest>
+        Model::UpdateCentralizationRuleForOrganizationOutcomeCallable UpdateCentralizationRuleForOrganizationCallable(const UpdateCentralizationRuleForOrganizationRequestT& request) const
+        {
+            return SubmitCallable(&ObservabilityAdminClient::UpdateCentralizationRuleForOrganization, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateCentralizationRuleForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateCentralizationRuleForOrganizationRequestT = Model::UpdateCentralizationRuleForOrganizationRequest>
+        void UpdateCentralizationRuleForOrganizationAsync(const UpdateCentralizationRuleForOrganizationRequestT& request, const UpdateCentralizationRuleForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ObservabilityAdminClient::UpdateCentralizationRuleForOrganization, request, handler, context);
         }
 
         /**

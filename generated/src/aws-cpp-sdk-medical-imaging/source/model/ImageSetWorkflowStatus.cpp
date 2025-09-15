@@ -30,6 +30,9 @@ namespace Aws
         static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static const int IMPORTING_HASH = HashingUtils::HashString("IMPORTING");
+        static const int IMPORTED_HASH = HashingUtils::HashString("IMPORTED");
+        static const int IMPORT_FAILED_HASH = HashingUtils::HashString("IMPORT_FAILED");
 
 
         ImageSetWorkflowStatus GetImageSetWorkflowStatusForName(const Aws::String& name)
@@ -75,6 +78,18 @@ namespace Aws
           {
             return ImageSetWorkflowStatus::DELETED;
           }
+          else if (hashCode == IMPORTING_HASH)
+          {
+            return ImageSetWorkflowStatus::IMPORTING;
+          }
+          else if (hashCode == IMPORTED_HASH)
+          {
+            return ImageSetWorkflowStatus::IMPORTED;
+          }
+          else if (hashCode == IMPORT_FAILED_HASH)
+          {
+            return ImageSetWorkflowStatus::IMPORT_FAILED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -111,6 +126,12 @@ namespace Aws
             return "DELETING";
           case ImageSetWorkflowStatus::DELETED:
             return "DELETED";
+          case ImageSetWorkflowStatus::IMPORTING:
+            return "IMPORTING";
+          case ImageSetWorkflowStatus::IMPORTED:
+            return "IMPORTED";
+          case ImageSetWorkflowStatus::IMPORT_FAILED:
+            return "IMPORT_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
