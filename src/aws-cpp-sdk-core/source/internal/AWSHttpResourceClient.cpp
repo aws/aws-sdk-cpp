@@ -208,22 +208,39 @@ namespace Aws
 #endif
         }
 
-        EC2MetadataClient::EC2MetadataClient(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialConfig,
-                                             const char* endpoint)
-            : AWSHttpResourceClient(
-                  [&credentialConfig]() -> ClientConfiguration{
-                    Aws::Client::ClientConfiguration clientConfig{credentialConfig.profile.c_str()};
-                    clientConfig.region = credentialConfig.region;
-                    clientConfig.credentialProviderConfig = credentialConfig;
-                    clientConfig.requestTimeoutMs = credentialConfig.imdsConfig.metadataServiceTimeout * 1000;
-                    clientConfig.retryStrategy = credentialConfig.imdsConfig.imdsRetryStrategy;
-                    return clientConfig;
-                  }(),
-                  EC2_METADATA_CLIENT_LOG_TAG),
-              m_endpoint(endpoint),
-              m_disableIMDS(credentialConfig.imdsConfig.disableImds),
-              m_tokenRequired(true),
-              m_disableIMDSV1(credentialConfig.imdsConfig.disableImdsV1) {
+        EC2MetadataClient::EC2MetadataClient(
+            const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialConfig,
+            const char* endpoint)
+        : AWSHttpResourceClient(
+            [&credentialConfig]() -> Aws::Client::ClientConfiguration {
+              Aws::Client::ClientConfiguration clientConfig{credentialConfig.profile.c_str()};
+              clientConfig.region = credentialConfig.region;
+              clientConfig.credentialProviderConfig = credentialConfig;
+
+              // pick an IMDS strategy: use caller's if present; else synthesize from attempts
+              auto imdsRetry = credentialConfig.imdsConfig.imdsRetryStrategy;
+              if (!imdsRetry) {
+                const long totalAttempts =
+                    (credentialConfig.imdsConfig.metadataServiceNumAttempts > 0)
+                      ? credentialConfig.imdsConfig.metadataServiceNumAttempts
+                      : 1; // 1 total attempt => 0 retries
+                const long maxRetries = std::max<long>(0, totalAttempts - 1);
+                imdsRetry = Aws::MakeShared<Aws::Client::DefaultRetryStrategy>(
+                    EC2_METADATA_CLIENT_LOG_TAG, maxRetries, /*scaleMs=*/1000);
+              }
+
+              // critical: set BOTH the direct pointer and the factory fallback
+              clientConfig.retryStrategy = imdsRetry;
+              clientConfig.configFactories.retryStrategyCreateFn = [imdsRetry]() { return imdsRetry; };
+
+              return clientConfig;
+            }(),
+            EC2_METADATA_CLIENT_LOG_TAG),
+          m_endpoint(endpoint),
+          m_disableIMDS(credentialConfig.imdsConfig.disableImds),
+          m_tokenRequired(true),
+          m_disableIMDSV1(credentialConfig.imdsConfig.disableImdsV1)
+        {
 #if defined(DISABLE_IMDSV1)
           m_disableIMDSV1 = true;
           AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "IMDSv1 had been disabled at the SDK build time");
