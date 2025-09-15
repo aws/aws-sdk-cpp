@@ -25,7 +25,10 @@ namespace Model
     UPDATED,
     UPDATE_FAILED,
     DELETING,
-    DELETED
+    DELETED,
+    IMPORTING,
+    IMPORTED,
+    IMPORT_FAILED
   };
 
 namespace ImageSetWorkflowStatusMapper
