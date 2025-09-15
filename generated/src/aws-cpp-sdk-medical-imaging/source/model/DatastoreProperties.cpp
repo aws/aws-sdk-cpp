@@ -45,6 +45,11 @@ DatastoreProperties& DatastoreProperties::operator =(JsonView jsonValue)
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
     m_kmsKeyArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("lambdaAuthorizerArn"))
+  {
+    m_lambdaAuthorizerArn = jsonValue.GetString("lambdaAuthorizerArn");
+    m_lambdaAuthorizerArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("datastoreArn"))
   {
     m_datastoreArn = jsonValue.GetString("datastoreArn");
@@ -87,6 +92,12 @@ JsonValue DatastoreProperties::Jsonize() const
   if(m_kmsKeyArnHasBeenSet)
   {
    payload.WithString("kmsKeyArn", m_kmsKeyArn);
+
+  }
+
+  if(m_lambdaAuthorizerArnHasBeenSet)
+  {
+   payload.WithString("lambdaAuthorizerArn", m_lambdaAuthorizerArn);
 
   }
 

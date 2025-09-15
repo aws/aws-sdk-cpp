@@ -88,6 +88,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ARN of the authorizer's Lambda function.</p>
+     */
+    inline const Aws::String& GetLambdaAuthorizerArn() const { return m_lambdaAuthorizerArn; }
+    inline bool LambdaAuthorizerArnHasBeenSet() const { return m_lambdaAuthorizerArnHasBeenSet; }
+    template<typename LambdaAuthorizerArnT = Aws::String>
+    void SetLambdaAuthorizerArn(LambdaAuthorizerArnT&& value) { m_lambdaAuthorizerArnHasBeenSet = true; m_lambdaAuthorizerArn = std::forward<LambdaAuthorizerArnT>(value); }
+    template<typename LambdaAuthorizerArnT = Aws::String>
+    DatastoreProperties& WithLambdaAuthorizerArn(LambdaAuthorizerArnT&& value) { SetLambdaAuthorizerArn(std::forward<LambdaAuthorizerArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) for the data store.</p>
      */
     inline const Aws::String& GetDatastoreArn() const { return m_datastoreArn; }
@@ -134,6 +146,9 @@ namespace Model
 
     Aws::String m_kmsKeyArn;
     bool m_kmsKeyArnHasBeenSet = false;
+
+    Aws::String m_lambdaAuthorizerArn;
+    bool m_lambdaAuthorizerArnHasBeenSet = false;
 
     Aws::String m_datastoreArn;
     bool m_datastoreArnHasBeenSet = false;
