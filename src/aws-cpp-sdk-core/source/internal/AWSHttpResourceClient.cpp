@@ -441,6 +441,46 @@ namespace Aws
             static std::shared_ptr<EC2MetadataClient> s_ec2metadataClient(nullptr);
         #endif
 
+        void InitEC2MetadataClient(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialConfig) {
+          if (s_ec2metadataClient)
+          {
+            return;
+          }
+          Aws::String ec2MetadataServiceEndpoint = Aws::Environment::GetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");
+            if (ec2MetadataServiceEndpoint.empty())
+            {
+                Aws::String ec2MetadataServiceEndpointMode = Aws::Environment::GetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE").c_str();
+                if (ec2MetadataServiceEndpointMode.length() == 0 )
+                {
+                    ec2MetadataServiceEndpoint = "http://169.254.169.254"; //default to IPv4 default endpoint
+                }
+                else
+                {
+                    if (ec2MetadataServiceEndpointMode.length() == 4 )
+                    {
+                        if (Aws::Utils::StringUtils::CaselessCompare(ec2MetadataServiceEndpointMode.c_str(), "ipv4"))
+                        {
+                            ec2MetadataServiceEndpoint = "http://169.254.169.254"; //default to IPv4 default endpoint
+                        }
+                        else if (Aws::Utils::StringUtils::CaselessCompare(ec2MetadataServiceEndpointMode.c_str(), "ipv6"))
+                        {
+                            ec2MetadataServiceEndpoint = "http://[fd00:ec2::254]";
+                        }
+                        else
+                        {
+                            AWS_LOGSTREAM_ERROR(EC2_METADATA_CLIENT_LOG_TAG, "AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE can only be set to ipv4 or ipv6, received: " << ec2MetadataServiceEndpointMode );
+                        }
+                    }
+                    else
+                    {
+                        AWS_LOGSTREAM_ERROR(EC2_METADATA_CLIENT_LOG_TAG, "AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE can only be set to ipv4 or ipv6, received: " << ec2MetadataServiceEndpointMode );
+                    }
+                }
+            }
+            AWS_LOGSTREAM_INFO(EC2_METADATA_CLIENT_LOG_TAG, "Using IMDS endpoint: " << ec2MetadataServiceEndpoint);
+            s_ec2metadataClient = Aws::MakeShared<EC2MetadataClient>(EC2_METADATA_CLIENT_LOG_TAG, credentialConfig, ec2MetadataServiceEndpoint.c_str());
+        }
+
         void InitEC2MetadataClient()
         {
             if (s_ec2metadataClient)

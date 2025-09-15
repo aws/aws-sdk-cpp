@@ -160,6 +160,7 @@ namespace Aws
         };
 
         void AWS_CORE_API InitEC2MetadataClient();
+        void AWS_CORE_API InitEC2MetadataClient(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialConfig);
         void AWS_CORE_API CleanupEC2MetadataClient();
         std::shared_ptr<EC2MetadataClient> AWS_CORE_API GetEC2MetadataClient();
 
