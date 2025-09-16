@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-json-protocol/RestJsonProtocolClient.h>
 #include <aws/rest-json-protocol/model/JsonUnionsRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using JsonUnions = AWS_PROTOCOL_TEST_SUITE;
 using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
@@ -173,14 +173,16 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeMapUnionValue) {
   JsonUnionsRequest request;
   {
     MyUnion requestContents;
-    requestContents.SetMapValue({{"foo",  R"(bar)"}, {"spam",  R"(eggs)"}});
+    requestContents.SetMapValue({{"foo", R"(bar)"}, {"spam", R"(eggs)"}});
     request.SetContents(requestContents);
   }
 
   auto outcome = client.JsonUnions(request);
   ExpectedRequest expectedRq;
   expectedRq.method = "PUT";
-  expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJtYXBWYWx1ZSI6IHsKICAgICAgICAgICAgImZvbyI6ICJiYXIiLAogICAgICAgICAgICAic3BhbSI6ICJlZ2dzIgogICAgICAgIH0KICAgIH0KfQ==";
+  expectedRq.body =
+      "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJtYXBWYWx1ZSI6IHsKICAgICAgICAgICAgImZvbyI6ICJiYXIiLAogICAgICAgICAgICAic3BhbSI6ICJlZ2dzIgogICAg"
+      "ICAgIH0KICAgIH0KfQ==";
   expectedRq.uri = "/JsonUnions";
   expectedRq.headers = {{"Content-Type", R"(application/json)"}};
   ValidateRequestSent(expectedRq);
@@ -206,7 +208,8 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeStructureUnionValue) {
   auto outcome = client.JsonUnions(request);
   ExpectedRequest expectedRq;
   expectedRq.method = "PUT";
-  expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJzdHJ1Y3R1cmVWYWx1ZSI6IHsKICAgICAgICAgICAgImhpIjogImhlbGxvIgogICAgICAgIH0KICAgIH0KfQ==";
+  expectedRq.body =
+      "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJzdHJ1Y3R1cmVWYWx1ZSI6IHsKICAgICAgICAgICAgImhpIjogImhlbGxvIgogICAgICAgIH0KICAgIH0KfQ==";
   expectedRq.uri = "/JsonUnions";
   expectedRq.headers = {{"Content-Type", R"(application/json)"}};
   ValidateRequestSent(expectedRq);
@@ -232,7 +235,9 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeRenamedStructureUnionValue) {
   auto outcome = client.JsonUnions(request);
   ExpectedRequest expectedRq;
   expectedRq.method = "PUT";
-  expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJyZW5hbWVkU3RydWN0dXJlVmFsdWUiOiB7CiAgICAgICAgICAgICJzYWx1dGF0aW9uIjogImhlbGxvISIKICAgICAgICB9CiAgICB9Cn0=";
+  expectedRq.body =
+      "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJyZW5hbWVkU3RydWN0dXJlVmFsdWUiOiB7CiAgICAgICAgICAgICJzYWx1dGF0aW9uIjogImhlbGxvISIKICAgICAgICB9"
+      "CiAgICB9Cn0=";
   expectedRq.uri = "/JsonUnions";
   expectedRq.headers = {{"Content-Type", R"(application/json)"}};
   ValidateRequestSent(expectedRq);

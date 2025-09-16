@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::QueryProtocol;
 
-AWSError<CoreErrors> QueryProtocolErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> QueryProtocolErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = QueryProtocolErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rest-xml-protocol/model/IgnoreQueryParamsInResponseResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/rest-xml-protocol/model/IgnoreQueryParamsInResponseResult.h>
 
 #include <utility>
 
@@ -16,24 +16,20 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-IgnoreQueryParamsInResponseResult::IgnoreQueryParamsInResponseResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+IgnoreQueryParamsInResponseResult::IgnoreQueryParamsInResponseResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-IgnoreQueryParamsInResponseResult& IgnoreQueryParamsInResponseResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+IgnoreQueryParamsInResponseResult& IgnoreQueryParamsInResponseResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }

@@ -1,0 +1,71 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+\#include <aws/${metadata.projectName}/model/${typeInfo.className}.h>
+\#include <aws/crt/cbor/Cbor.h>
+\#include <aws/core/utils/cbor/CborValue.h>
+#foreach($header in $typeInfo.sourceIncludes)
+\#include $header
+#end
+
+\#include <utility>
+
+using namespace Aws::Crt::Cbor;
+using namespace Aws::Utils;
+
+namespace ${rootNamespace}
+{
+namespace ${serviceNamespace}
+{
+namespace Model
+{
+
+${typeInfo.className}::${typeInfo.className}(const ${typeInfo.cborDecoder}& decoder)
+#if($initializers)
+  : ${typeInfo.className}()
+#end
+{
+*this = decoder;
+}
+
+${typeInfo.className}& ${typeInfo.className}::operator =(const ${typeInfo.cborDecoder}& decoder)
+{
+#if(!$shape.hasPayloadMembers())
+  AWS_UNREFERENCED_PARAM(decoder);
+#end
+    #set($useRequiredField = false)
+    #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/ModelClassMembersDeserializeCborInit.vm")
+
+
+return *this;
+}
+
+void ${typeInfo.className}::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const
+{
+
+    // Calculate map size
+    size_t mapSize = 0;
+    #foreach($entry in $shape.members.entrySet())
+        #set($member = $entry.value)
+        #if($member.usedForPayload)
+            #set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($entry.key))
+            #if(!$member.required)
+                if($varNameHasBeenSet){
+                    mapSize++;
+                }
+            #else
+                mapSize++;
+            #end
+        #end
+    #end
+
+  encoder.WriteMapStart(mapSize);
+  #set($useRequiredField = true)
+  #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/ModelClassMembersCborize.vm")
+}
+
+} // namespace Model
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

@@ -20,6 +20,8 @@ public class CppShapeInformation {
    private final String jsonViewType = "Aws::Utils::Json::JsonView";
    private final String xmlDocType = "Aws::Utils::Xml::XmlDocument";
    private final String xmlNodeType = "Aws::Utils::Xml::XmlNode";
+   private final String cborType = "Aws::Utils::Cbor::CborValue";
+   private final String cborDecoder = "std::shared_ptr<Aws::Crt::Cbor::CborDecoder>";
    private final String exportValue;
    private final String cppType;
    private final Set<String> headerIncludes;

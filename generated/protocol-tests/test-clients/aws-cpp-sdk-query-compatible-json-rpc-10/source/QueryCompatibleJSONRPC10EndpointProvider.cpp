@@ -5,12 +5,8 @@
 
 #include <aws/query-compatible-json-rpc-10/QueryCompatibleJSONRPC10EndpointProvider.h>
 
-namespace Aws
-{
-namespace QueryCompatibleJSONRPC10
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace QueryCompatibleJSONRPC10
-} // namespace Aws
+namespace Aws {
+namespace QueryCompatibleJSONRPC10 {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace QueryCompatibleJSONRPC10
+}  // namespace Aws

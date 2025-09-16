@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-xml-protocol/RestXmlProtocolClient.h>
 #include <aws/rest-xml-protocol/model/XmlTimestampsRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using XmlTimestamps = AWS_PROTOCOL_TEST_SUITE;
 using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
@@ -22,7 +22,8 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestamps) {
   auto outcome = client.XmlTimestamps(request);
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
-  expectedRq.body = "PFhtbFRpbWVzdGFtcHNSZXF1ZXN0PgogICAgPG5vcm1hbD4yMDE0LTA0LTI5VDE4OjMwOjM4Wjwvbm9ybWFsPgo8L1htbFRpbWVzdGFtcHNSZXF1ZXN0Pgo=";
+  expectedRq.body =
+      "PFhtbFRpbWVzdGFtcHNSZXF1ZXN0PgogICAgPG5vcm1hbD4yMDE0LTA0LTI5VDE4OjMwOjM4Wjwvbm9ybWFsPgo8L1htbFRpbWVzdGFtcHNSZXF1ZXN0Pgo=";
   expectedRq.uri = "/XmlTimestamps";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
   ValidateRequestSent(expectedRq);
@@ -40,7 +41,8 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithDateTimeFormat) {
   auto outcome = client.XmlTimestamps(request);
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
-  expectedRq.body = "PFhtbFRpbWVzdGFtcHNSZXF1ZXN0PgogICAgPGRhdGVUaW1lPjIwMTQtMDQtMjlUMTg6MzA6MzhaPC9kYXRlVGltZT4KPC9YbWxUaW1lc3RhbXBzUmVxdWVzdD4K";
+  expectedRq.body =
+      "PFhtbFRpbWVzdGFtcHNSZXF1ZXN0PgogICAgPGRhdGVUaW1lPjIwMTQtMDQtMjlUMTg6MzA6MzhaPC9kYXRlVGltZT4KPC9YbWxUaW1lc3RhbXBzUmVxdWVzdD4K";
   expectedRq.uri = "/XmlTimestamps";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
   ValidateRequestSent(expectedRq);
@@ -58,7 +60,9 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithDateTimeOnTargetFormat) {
   auto outcome = client.XmlTimestamps(request);
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
-  expectedRq.body = "PFhtbFRpbWVzdGFtcHNSZXF1ZXN0PgogICAgPGRhdGVUaW1lT25UYXJnZXQ+MjAxNC0wNC0yOVQxODozMDozOFo8L2RhdGVUaW1lT25UYXJnZXQ+CjwvWG1sVGltZXN0YW1wc1JlcXVlc3Q+Cg==";
+  expectedRq.body =
+      "PFhtbFRpbWVzdGFtcHNSZXF1ZXN0PgogICAgPGRhdGVUaW1lT25UYXJnZXQ+MjAxNC0wNC0yOVQxODozMDozOFo8L2RhdGVUaW1lT25UYXJnZXQ+"
+      "CjwvWG1sVGltZXN0YW1wc1JlcXVlc3Q+Cg==";
   expectedRq.uri = "/XmlTimestamps";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
   ValidateRequestSent(expectedRq);
@@ -76,7 +80,8 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithEpochSecondsFormat) {
   auto outcome = client.XmlTimestamps(request);
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
-  expectedRq.body = "PFhtbFRpbWVzdGFtcHNSZXF1ZXN0PgogICAgPGVwb2NoU2Vjb25kcz4xMzk4Nzk2MjM4PC9lcG9jaFNlY29uZHM+CjwvWG1sVGltZXN0YW1wc1JlcXVlc3Q+Cg==";
+  expectedRq.body =
+      "PFhtbFRpbWVzdGFtcHNSZXF1ZXN0PgogICAgPGVwb2NoU2Vjb25kcz4xMzk4Nzk2MjM4PC9lcG9jaFNlY29uZHM+CjwvWG1sVGltZXN0YW1wc1JlcXVlc3Q+Cg==";
   expectedRq.uri = "/XmlTimestamps";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
   ValidateRequestSent(expectedRq);
@@ -94,7 +99,9 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithEpochSecondsOnTargetFormat) {
   auto outcome = client.XmlTimestamps(request);
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
-  expectedRq.body = "PFhtbFRpbWVzdGFtcHNSZXF1ZXN0PgogICAgPGVwb2NoU2Vjb25kc09uVGFyZ2V0PjEzOTg3OTYyMzg8L2Vwb2NoU2Vjb25kc09uVGFyZ2V0Pgo8L1htbFRpbWVzdGFtcHNSZXF1ZXN0Pgo=";
+  expectedRq.body =
+      "PFhtbFRpbWVzdGFtcHNSZXF1ZXN0PgogICAgPGVwb2NoU2Vjb25kc09uVGFyZ2V0PjEzOTg3OTYyMzg8L2Vwb2NoU2Vjb25kc09uVGFyZ2V0Pgo8L1htbFRpbWVzdGFtcHNS"
+      "ZXF1ZXN0Pgo=";
   expectedRq.uri = "/XmlTimestamps";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
   ValidateRequestSent(expectedRq);
@@ -112,7 +119,9 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithHttpDateFormat) {
   auto outcome = client.XmlTimestamps(request);
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
-  expectedRq.body = "PFhtbFRpbWVzdGFtcHNSZXF1ZXN0PgogICAgPGh0dHBEYXRlPlR1ZSwgMjkgQXByIDIwMTQgMTg6MzA6MzggR01UPC9odHRwRGF0ZT4KPC9YbWxUaW1lc3RhbXBzUmVxdWVzdD4K";
+  expectedRq.body =
+      "PFhtbFRpbWVzdGFtcHNSZXF1ZXN0PgogICAgPGh0dHBEYXRlPlR1ZSwgMjkgQXByIDIwMTQgMTg6MzA6MzggR01UPC9odHRwRGF0ZT4KPC9YbWxUaW1lc3RhbXBzUmVxdWVz"
+      "dD4K";
   expectedRq.uri = "/XmlTimestamps";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
   ValidateRequestSent(expectedRq);
@@ -130,7 +139,9 @@ AWS_PROTOCOL_TEST(XmlTimestamps, XmlTimestampsWithHttpDateOnTargetFormat) {
   auto outcome = client.XmlTimestamps(request);
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
-  expectedRq.body = "PFhtbFRpbWVzdGFtcHNSZXF1ZXN0PgogICAgPGh0dHBEYXRlT25UYXJnZXQ+VHVlLCAyOSBBcHIgMjAxNCAxODozMDozOCBHTVQ8L2h0dHBEYXRlT25UYXJnZXQ+CjwvWG1sVGltZXN0YW1wc1JlcXVlc3Q+Cg==";
+  expectedRq.body =
+      "PFhtbFRpbWVzdGFtcHNSZXF1ZXN0PgogICAgPGh0dHBEYXRlT25UYXJnZXQ+VHVlLCAyOSBBcHIgMjAxNCAxODozMDozOCBHTVQ8L2h0dHBEYXRlT25UYXJnZXQ+"
+      "CjwvWG1sVGltZXN0YW1wc1JlcXVlc3Q+Cg==";
   expectedRq.uri = "/XmlTimestamps";
   expectedRq.headers = {{"Content-Type", R"(application/xml)"}};
   ValidateRequestSent(expectedRq);

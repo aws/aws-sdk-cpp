@@ -77,6 +77,11 @@ namespace Aws
              */
             DateTime(double secondsSinceEpoch);
 
+           /**
+            * Initializes time point to epoch time in seconds
+            */
+            DateTime(uint64_t secondsSinceEpoch);
+
             /**
              * Initializes time point to value represented by timestamp and format.
              */

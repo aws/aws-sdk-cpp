@@ -1,0 +1,33 @@
+#set($first = true)
+#foreach($entry in $shape.members.entrySet())
+  #if($entry.value.locationName)
+    #set($memberName = $entry.value.locationName)
+  #else
+    #set($memberName = $entry.key)
+  #end
+
+
+  #set($member = $entry.value)
+  #set($memberVarName = $CppViewHelper.computeMemberVariableName($entry.key))
+  #set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($entry.key))
+  #set($shapeMember = $member.shape)
+  #set($containerVar = "val")
+  #if($first)if#else else if#end (initialKeyStr == "${memberName}")
+  {
+    #if($member.shape.map || $member.shape.list)
+      #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/ModelInternalMapOrListCborDeserializer.vm")
+    #else
+      #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborDecodeValue.vm")
+    #end
+    ${varNameHasBeenSet} = true;
+  }
+  #set($first = false)
+
+#end
+#if($first == false)
+else
+{
+  // Unknown key, skip the value
+  decoder->ConsumeNextWholeDataItem();
+}
+#end

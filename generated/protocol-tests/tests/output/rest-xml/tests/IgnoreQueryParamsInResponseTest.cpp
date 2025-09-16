@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-xml-protocol/RestXmlProtocolClient.h>
 #include <aws/rest-xml-protocol/model/IgnoreQueryParamsInResponseRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using IgnoreQueryParamsInResponse = AWS_PROTOCOL_TEST_SUITE;
 using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
@@ -23,9 +23,10 @@ AWS_PROTOCOL_TEST(IgnoreQueryParamsInResponse, IgnoreQueryParamsInResponse) {
   IgnoreQueryParamsInResponseRequest request;
 
   auto outcome = client.IgnoreQueryParamsInResponse(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const IgnoreQueryParamsInResponseResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"baz":"bam"} )" */
-  EXPECT_EQ(R"(bam)", result.GetBaz());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"baz":"bam"} )" */
+    EXPECT_EQ(R"(bam)", result.GetBaz());
+  });
 }

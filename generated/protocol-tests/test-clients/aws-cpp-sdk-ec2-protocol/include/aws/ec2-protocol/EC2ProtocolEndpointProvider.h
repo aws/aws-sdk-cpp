@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/ec2-protocol/EC2Protocol_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/ec2-protocol/EC2ProtocolEndpointRules.h>
+#include <aws/ec2-protocol/EC2Protocol_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace EC2Protocol
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace EC2Protocol {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using EC2ProtocolClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using EC2ProtocolDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_EC2PROTOCOL_API EC2ProtocolEndpointProvider : public EC2ProtocolDefaultEpProviderBase
-{
-public:
-    using EC2ProtocolResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_EC2PROTOCOL_API EC2ProtocolEndpointProvider : public EC2ProtocolDefaultEpProviderBase {
+ public:
+  using EC2ProtocolResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    EC2ProtocolEndpointProvider()
-      : EC2ProtocolDefaultEpProviderBase(Aws::EC2Protocol::EC2ProtocolEndpointRules::GetRulesBlob(), Aws::EC2Protocol::EC2ProtocolEndpointRules::RulesBlobSize)
-    {}
+  EC2ProtocolEndpointProvider()
+      : EC2ProtocolDefaultEpProviderBase(Aws::EC2Protocol::EC2ProtocolEndpointRules::GetRulesBlob(),
+                                         Aws::EC2Protocol::EC2ProtocolEndpointRules::RulesBlobSize) {}
 
-    ~EC2ProtocolEndpointProvider()
-    {
-    }
+  ~EC2ProtocolEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace EC2Protocol
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace EC2Protocol
+}  // namespace Aws

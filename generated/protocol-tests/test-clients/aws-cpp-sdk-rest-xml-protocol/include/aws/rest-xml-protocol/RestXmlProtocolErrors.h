@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/rest-xml-protocol/RestXmlProtocol_EXPORTS.h>
 
-namespace Aws
-{
-namespace RestXmlProtocol
-{
-enum class RestXmlProtocolErrors
-{
-  //From Core//
+namespace Aws {
+namespace RestXmlProtocol {
+enum class RestXmlProtocolErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class RestXmlProtocolErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,13 +44,12 @@ enum class RestXmlProtocolErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  COMPLEX= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  COMPLEX = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_GREETING
 };
 
-class AWS_RESTXMLPROTOCOL_API RestXmlProtocolError : public Aws::Client::AWSError<RestXmlProtocolErrors>
-{
-public:
+class AWS_RESTXMLPROTOCOL_API RestXmlProtocolError : public Aws::Client::AWSError<RestXmlProtocolErrors> {
+ public:
   RestXmlProtocolError() {}
   RestXmlProtocolError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<RestXmlProtocolErrors>(rhs) {}
   RestXmlProtocolError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<RestXmlProtocolErrors>(rhs) {}
@@ -64,10 +60,9 @@ public:
   T GetModeledError();
 };
 
-namespace RestXmlProtocolErrorMapper
-{
-  AWS_RESTXMLPROTOCOL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace RestXmlProtocolErrorMapper {
+AWS_RESTXMLPROTOCOL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace RestXmlProtocol
-} // namespace Aws
+}  // namespace RestXmlProtocol
+}  // namespace Aws

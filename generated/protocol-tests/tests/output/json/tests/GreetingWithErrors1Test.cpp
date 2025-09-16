@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/json-protocol/JsonProtocolClient.h>
 #include <aws/json-protocol/model/GreetingWithErrorsRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using GreetingWithErrors1 = AWS_PROTOCOL_TEST_SUITE;
 using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
@@ -22,7 +22,6 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson11FooErrorUsingXAmznErrorType) {
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ValidateRequestSent();
   ASSERT_FALSE(outcome.IsSuccess());
 }
 
@@ -37,7 +36,6 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson11FooErrorUsingXAmznErrorTypeWithU
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ValidateRequestSent();
   ASSERT_FALSE(outcome.IsSuccess());
 }
 
@@ -46,13 +44,13 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson11FooErrorUsingXAmznErrorTypeWithU
 
   OutputResponse mockRs;
   mockRs.statusCode = 500;
-  mockRs.headers = {{"X-Amzn-Errortype", R"(aws.protocoltests.restjson#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/)"}};
+  mockRs.headers = {
+      {"X-Amzn-Errortype", R"(aws.protocoltests.restjson#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/)"}};
   SetMockResponse(mockRs);
 
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ValidateRequestSent();
   ASSERT_FALSE(outcome.IsSuccess());
 }
 
@@ -68,7 +66,6 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson11FooErrorUsingCode) {
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ValidateRequestSent();
   ASSERT_FALSE(outcome.IsSuccess());
 }
 
@@ -84,7 +81,6 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson11FooErrorUsingCodeAndNamespace) {
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ValidateRequestSent();
   ASSERT_FALSE(outcome.IsSuccess());
 }
 
@@ -94,13 +90,14 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson11FooErrorUsingCodeUriAndNamespace
   OutputResponse mockRs;
   mockRs.statusCode = 500;
   mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}};
-  mockRs.body = "ewogICAgImNvZGUiOiAiYXdzLnByb3RvY29sdGVzdHMucmVzdGpzb24jRm9vRXJyb3I6aHR0cDovL2ludGVybmFsLmFtYXpvbi5jb20vY29yYWwvY29tLmFtYXpvbi5jb3JhbC52YWxpZGF0ZS8iCn0=";
+  mockRs.body =
+      "ewogICAgImNvZGUiOiAiYXdzLnByb3RvY29sdGVzdHMucmVzdGpzb24jRm9vRXJyb3I6aHR0cDovL2ludGVybmFsLmFtYXpvbi5jb20vY29yYWwvY29tLmFtYXpvbi5jb3Jh"
+      "bC52YWxpZGF0ZS8iCn0=";
   SetMockResponse(mockRs);
 
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ValidateRequestSent();
   ASSERT_FALSE(outcome.IsSuccess());
 }
 
@@ -116,7 +113,6 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson11FooErrorWithDunderType) {
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ValidateRequestSent();
   ASSERT_FALSE(outcome.IsSuccess());
 }
 
@@ -132,7 +128,6 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson11FooErrorWithDunderTypeAndNamespa
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ValidateRequestSent();
   ASSERT_FALSE(outcome.IsSuccess());
 }
 
@@ -142,12 +137,13 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson11FooErrorWithDunderTypeUriAndName
   OutputResponse mockRs;
   mockRs.statusCode = 500;
   mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}};
-  mockRs.body = "ewogICAgIl9fdHlwZSI6ICJhd3MucHJvdG9jb2x0ZXN0cy5yZXN0anNvbiNGb29FcnJvcjpodHRwOi8vaW50ZXJuYWwuYW1hem9uLmNvbS9jb3JhbC9jb20uYW1hem9uLmNvcmFsLnZhbGlkYXRlLyIKfQ==";
+  mockRs.body =
+      "ewogICAgIl9fdHlwZSI6ICJhd3MucHJvdG9jb2x0ZXN0cy5yZXN0anNvbiNGb29FcnJvcjpodHRwOi8vaW50ZXJuYWwuYW1hem9uLmNvbS9jb3JhbC9jb20uYW1hem9uLmNv"
+      "cmFsLnZhbGlkYXRlLyIKfQ==";
   SetMockResponse(mockRs);
 
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ValidateRequestSent();
   ASSERT_FALSE(outcome.IsSuccess());
 }

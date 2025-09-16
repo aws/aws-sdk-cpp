@@ -4,49 +4,48 @@
  */
 
 #pragma once
-#include <aws/json-protocol/JsonProtocol_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/json-protocol/JsonProtocol_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace JsonProtocol
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace JsonProtocol {
+namespace Model {
 
-  class GreetingStruct
-  {
-  public:
-    AWS_JSONPROTOCOL_API GreetingStruct() = default;
-    AWS_JSONPROTOCOL_API GreetingStruct(Aws::Utils::Json::JsonView jsonValue);
-    AWS_JSONPROTOCOL_API GreetingStruct& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_JSONPROTOCOL_API Aws::Utils::Json::JsonValue Jsonize() const;
+class GreetingStruct {
+ public:
+  AWS_JSONPROTOCOL_API GreetingStruct() = default;
+  AWS_JSONPROTOCOL_API GreetingStruct(Aws::Utils::Json::JsonView jsonValue);
+  AWS_JSONPROTOCOL_API GreetingStruct& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_JSONPROTOCOL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetHi() const { return m_hi; }
-    inline bool HiHasBeenSet() const { return m_hiHasBeenSet; }
-    template<typename HiT = Aws::String>
-    void SetHi(HiT&& value) { m_hiHasBeenSet = true; m_hi = std::forward<HiT>(value); }
-    template<typename HiT = Aws::String>
-    GreetingStruct& WithHi(HiT&& value) { SetHi(std::forward<HiT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetHi() const { return m_hi; }
+  inline bool HiHasBeenSet() const { return m_hiHasBeenSet; }
+  template <typename HiT = Aws::String>
+  void SetHi(HiT&& value) {
+    m_hiHasBeenSet = true;
+    m_hi = std::forward<HiT>(value);
+  }
+  template <typename HiT = Aws::String>
+  GreetingStruct& WithHi(HiT&& value) {
+    SetHi(std::forward<HiT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_hi;
+  bool m_hiHasBeenSet = false;
+};
 
-    Aws::String m_hi;
-    bool m_hiHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace JsonProtocol
-} // namespace Aws
+}  // namespace Model
+}  // namespace JsonProtocol
+}  // namespace Aws
