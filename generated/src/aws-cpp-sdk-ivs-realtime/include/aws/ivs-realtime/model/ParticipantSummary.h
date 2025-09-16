@@ -137,7 +137,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>ARN of the stage from which this participant is replicated.</p>
+     * <p>Source stage ARN from which this participant is replicated, if
+     * <code>replicationType</code> is <code>REPLICA</code>.</p>
      */
     inline const Aws::String& GetSourceStageArn() const { return m_sourceStageArn; }
     inline bool SourceStageArnHasBeenSet() const { return m_sourceStageArnHasBeenSet; }

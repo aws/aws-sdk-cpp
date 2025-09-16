@@ -65,6 +65,20 @@ SubscriptionFilter& SubscriptionFilter::operator =(JsonView jsonValue)
     m_creationTime = jsonValue.GetInt64("creationTime");
     m_creationTimeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("fieldSelectionCriteria"))
+  {
+    m_fieldSelectionCriteria = jsonValue.GetString("fieldSelectionCriteria");
+    m_fieldSelectionCriteriaHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("emitSystemFields"))
+  {
+    Aws::Utils::Array<JsonView> emitSystemFieldsJsonList = jsonValue.GetArray("emitSystemFields");
+    for(unsigned emitSystemFieldsIndex = 0; emitSystemFieldsIndex < emitSystemFieldsJsonList.GetLength(); ++emitSystemFieldsIndex)
+    {
+      m_emitSystemFields.push_back(emitSystemFieldsJsonList[emitSystemFieldsIndex].AsString());
+    }
+    m_emitSystemFieldsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -116,6 +130,23 @@ JsonValue SubscriptionFilter::Jsonize() const
   if(m_creationTimeHasBeenSet)
   {
    payload.WithInt64("creationTime", m_creationTime);
+
+  }
+
+  if(m_fieldSelectionCriteriaHasBeenSet)
+  {
+   payload.WithString("fieldSelectionCriteria", m_fieldSelectionCriteria);
+
+  }
+
+  if(m_emitSystemFieldsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> emitSystemFieldsJsonList(m_emitSystemFields.size());
+   for(unsigned emitSystemFieldsIndex = 0; emitSystemFieldsIndex < emitSystemFieldsJsonList.GetLength(); ++emitSystemFieldsIndex)
+   {
+     emitSystemFieldsJsonList[emitSystemFieldsIndex].AsString(m_emitSystemFields[emitSystemFieldsIndex]);
+   }
+   payload.WithArray("emitSystemFields", std::move(emitSystemFieldsJsonList));
 
   }
 

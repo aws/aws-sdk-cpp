@@ -144,16 +144,17 @@ namespace Model
      * date. The start date must come before the end date. The end date must come
      * before <code>06/15/87 00:00 UTC</code>. </p> <p>If you create your budget and
      * don't specify a start date, Amazon Web Services defaults to the start of your
-     * chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you
-     * created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't
-     * set a start date, Amazon Web Services set your start date to <code>01/24/18
-     * 00:00 UTC</code>. If you chose <code>MONTHLY</code>, Amazon Web Services set
-     * your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an end
-     * date, Amazon Web Services set your end date to <code>06/15/87 00:00 UTC</code>.
-     * The defaults are the same for the Billing and Cost Management console and the
-     * API. </p> <p>You can change either date with the <code>UpdateBudget</code>
-     * operation.</p> <p>After the end date, Amazon Web Services deletes the budget and
-     * all the associated notifications and subscribers.</p>
+     * chosen time period (DAILY, MONTHLY, QUARTERLY, ANNUALLY, or CUSTOM). For
+     * example, if you created your budget on January 24, 2018, chose
+     * <code>DAILY</code>, and didn't set a start date, Amazon Web Services set your
+     * start date to <code>01/24/18 00:00 UTC</code>. If you chose
+     * <code>MONTHLY</code>, Amazon Web Services set your start date to <code>01/01/18
+     * 00:00 UTC</code>. If you didn't specify an end date, Amazon Web Services set
+     * your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for
+     * the Billing and Cost Management console and the API. </p> <p>You can change
+     * either date with the <code>UpdateBudget</code> operation.</p> <p>After the end
+     * date, Amazon Web Services deletes the budget and all the associated
+     * notifications and subscribers.</p>
      */
     inline const TimePeriod& GetTimePeriod() const { return m_timePeriod; }
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }

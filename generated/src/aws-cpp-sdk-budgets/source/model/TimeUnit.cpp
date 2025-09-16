@@ -24,6 +24,7 @@ namespace Aws
         static const int MONTHLY_HASH = HashingUtils::HashString("MONTHLY");
         static const int QUARTERLY_HASH = HashingUtils::HashString("QUARTERLY");
         static const int ANNUALLY_HASH = HashingUtils::HashString("ANNUALLY");
+        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
 
 
         TimeUnit GetTimeUnitForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == ANNUALLY_HASH)
           {
             return TimeUnit::ANNUALLY;
+          }
+          else if (hashCode == CUSTOM_HASH)
+          {
+            return TimeUnit::CUSTOM;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "QUARTERLY";
           case TimeUnit::ANNUALLY:
             return "ANNUALLY";
+          case TimeUnit::CUSTOM:
+            return "CUSTOM";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

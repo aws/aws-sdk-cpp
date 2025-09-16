@@ -172,7 +172,7 @@ namespace Model
     /**
      * <p>If true, this indicates the <code>participantId</code> is a replicated
      * participant. If this is a subscribe event, then this flag refers to
-     * <code>remoteParticipantId</code>.</p>
+     * <code>remoteParticipantId</code>. Default: <code>false</code>.</p>
      */
     inline bool GetReplica() const { return m_replica; }
     inline bool ReplicaHasBeenSet() const { return m_replicaHasBeenSet; }

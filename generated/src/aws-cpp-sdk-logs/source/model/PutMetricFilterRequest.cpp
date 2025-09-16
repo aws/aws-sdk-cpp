@@ -51,6 +51,23 @@ Aws::String PutMetricFilterRequest::SerializePayload() const
 
   }
 
+  if(m_fieldSelectionCriteriaHasBeenSet)
+  {
+   payload.WithString("fieldSelectionCriteria", m_fieldSelectionCriteria);
+
+  }
+
+  if(m_emitSystemFieldDimensionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> emitSystemFieldDimensionsJsonList(m_emitSystemFieldDimensions.size());
+   for(unsigned emitSystemFieldDimensionsIndex = 0; emitSystemFieldDimensionsIndex < emitSystemFieldDimensionsJsonList.GetLength(); ++emitSystemFieldDimensionsIndex)
+   {
+     emitSystemFieldDimensionsJsonList[emitSystemFieldDimensionsIndex].AsString(m_emitSystemFieldDimensions[emitSystemFieldDimensionsIndex]);
+   }
+   payload.WithArray("emitSystemFieldDimensions", std::move(emitSystemFieldDimensionsJsonList));
+
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -1157,8 +1157,8 @@ namespace CloudWatchLogs
         }
 
         /**
-         * <p>Returns a list of field indexes listed in the field index policies of one or
-         * more log groups. For more information about field index policies, see <a
+         * <p>Returns a list of custom and default field indexes which are discovered in
+         * log data. For more information about field index policies, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeFieldIndexes">AWS
@@ -1185,7 +1185,7 @@ namespace CloudWatchLogs
         }
 
         /**
-         * <p>Returns the field index policies of one or more log groups. For more
+         * <p>Returns the field index policies of the specified log group. For more
          * information about field index policies, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.</p>
          * <p>If a specified log group has a log-group level index policy, that policy is
@@ -1477,7 +1477,7 @@ namespace CloudWatchLogs
          * <p>Lists log events from the specified log group. You can list all the log
          * events or filter the results using one or more of the following:</p> <ul> <li>
          * <p>A filter pattern</p> </li> <li> <p>A time range</p> </li> <li> <p>The log
-         * stream name, or a log stream name prefix that matches mutltiple log streams</p>
+         * stream name, or a log stream name prefix that matches multiple log streams</p>
          * </li> </ul> <p>You must have the <code>logs:FilterLogEvents</code> permission to
          * perform this operation.</p> <p>You can specify the log group to search by using
          * either <code>logGroupIdentifier</code> or <code>logGroupName</code>. You must
@@ -2243,7 +2243,14 @@ namespace CloudWatchLogs
          * overlapping log group name prefixes. For example, if you have one policy
          * filtered to log groups that start with <code>my-log</code>, you can't have
          * another field index policy filtered to <code>my-logpprod</code> or
-         * <code>my-logging</code>.</p> <p>You can also set up a transformer at the
+         * <code>my-logging</code>.</p> <p>CloudWatch Logs provides default field indexes
+         * for all log groups in the Standard log class. Default field indexes are
+         * automatically available for the following fields: </p> <ul> <li> <p>
+         * <code>@aws.region</code> </p> </li> <li> <p> <code>@aws.account</code> </p>
+         * </li> <li> <p> <code>@source.log</code> </p> </li> <li> <p> <code>traceId</code>
+         * </p> </li> </ul> <p>Default field indexes are in addition to any custom field
+         * indexes you define within your policy. Default field indexes are not counted
+         * towards your field index quota. </p> <p>You can also set up a transformer at the
          * log-group level. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.
          * If there is both a log-group level transformer created with
@@ -2654,7 +2661,14 @@ namespace CloudWatchLogs
          * <code>requestId</code>. Then, any CloudWatch Logs Insights query on that log
          * group that includes <code>requestId = <i>value</i> </code> or <code>requestId IN
          * [<i>value</i>, <i>value</i>, ...]</code> will process fewer log events to reduce
-         * costs, and have improved performance.</p> <p>Each index policy has the following
+         * costs, and have improved performance.</p> <p>CloudWatch Logs provides default
+         * field indexes for all log groups in the Standard log class. Default field
+         * indexes are automatically available for the following fields: </p> <ul> <li> <p>
+         * <code>@aws.region</code> </p> </li> <li> <p> <code>@aws.account</code> </p>
+         * </li> <li> <p> <code>@source.log</code> </p> </li> <li> <p> <code>traceId</code>
+         * </p> </li> </ul> <p>Default field indexes are in addition to any custom field
+         * indexes you define within your policy. Default field indexes are not counted
+         * towards your field index quota. </p> <p>Each index policy has the following
          * quotas and restrictions:</p> <ul> <li> <p>As many as 20 fields can be included
          * in the policy.</p> </li> <li> <p>Each field name can include as many as 100
          * characters.</p> </li> </ul> <p>Matches of log events to the names of indexed
