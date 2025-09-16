@@ -50,6 +50,11 @@ GridConfiguration& GridConfiguration::operator =(JsonView jsonValue)
     m_gridGap = jsonValue.GetInteger("gridGap");
     m_gridGapHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("participantOrderAttribute"))
+  {
+    m_participantOrderAttribute = jsonValue.GetString("participantOrderAttribute");
+    m_participantOrderAttributeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -82,6 +87,12 @@ JsonValue GridConfiguration::Jsonize() const
   if(m_gridGapHasBeenSet)
   {
    payload.WithInteger("gridGap", m_gridGap);
+
+  }
+
+  if(m_participantOrderAttributeHasBeenSet)
+  {
+   payload.WithString("participantOrderAttribute", m_participantOrderAttribute);
 
   }
 

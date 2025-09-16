@@ -114,6 +114,37 @@ namespace Model
     inline void SetApplyOnTransformedLogs(bool value) { m_applyOnTransformedLogsHasBeenSet = true; m_applyOnTransformedLogs = value; }
     inline MetricFilter& WithApplyOnTransformedLogs(bool value) { SetApplyOnTransformedLogs(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The filter expression that specifies which log events are processed by this
+     * metric filter based on system fields. Returns the
+     * <code>fieldSelectionCriteria</code> value if it was specified when the metric
+     * filter was created.</p>
+     */
+    inline const Aws::String& GetFieldSelectionCriteria() const { return m_fieldSelectionCriteria; }
+    inline bool FieldSelectionCriteriaHasBeenSet() const { return m_fieldSelectionCriteriaHasBeenSet; }
+    template<typename FieldSelectionCriteriaT = Aws::String>
+    void SetFieldSelectionCriteria(FieldSelectionCriteriaT&& value) { m_fieldSelectionCriteriaHasBeenSet = true; m_fieldSelectionCriteria = std::forward<FieldSelectionCriteriaT>(value); }
+    template<typename FieldSelectionCriteriaT = Aws::String>
+    MetricFilter& WithFieldSelectionCriteria(FieldSelectionCriteriaT&& value) { SetFieldSelectionCriteria(std::forward<FieldSelectionCriteriaT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The list of system fields that are emitted as additional dimensions in the
+     * generated metrics. Returns the <code>emitSystemFieldDimensions</code> value if
+     * it was specified when the metric filter was created.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetEmitSystemFieldDimensions() const { return m_emitSystemFieldDimensions; }
+    inline bool EmitSystemFieldDimensionsHasBeenSet() const { return m_emitSystemFieldDimensionsHasBeenSet; }
+    template<typename EmitSystemFieldDimensionsT = Aws::Vector<Aws::String>>
+    void SetEmitSystemFieldDimensions(EmitSystemFieldDimensionsT&& value) { m_emitSystemFieldDimensionsHasBeenSet = true; m_emitSystemFieldDimensions = std::forward<EmitSystemFieldDimensionsT>(value); }
+    template<typename EmitSystemFieldDimensionsT = Aws::Vector<Aws::String>>
+    MetricFilter& WithEmitSystemFieldDimensions(EmitSystemFieldDimensionsT&& value) { SetEmitSystemFieldDimensions(std::forward<EmitSystemFieldDimensionsT>(value)); return *this;}
+    template<typename EmitSystemFieldDimensionsT = Aws::String>
+    MetricFilter& AddEmitSystemFieldDimensions(EmitSystemFieldDimensionsT&& value) { m_emitSystemFieldDimensionsHasBeenSet = true; m_emitSystemFieldDimensions.emplace_back(std::forward<EmitSystemFieldDimensionsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_filterName;
@@ -133,6 +164,12 @@ namespace Model
 
     bool m_applyOnTransformedLogs{false};
     bool m_applyOnTransformedLogsHasBeenSet = false;
+
+    Aws::String m_fieldSelectionCriteria;
+    bool m_fieldSelectionCriteriaHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_emitSystemFieldDimensions;
+    bool m_emitSystemFieldDimensionsHasBeenSet = false;
   };
 
 } // namespace Model

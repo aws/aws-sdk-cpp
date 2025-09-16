@@ -59,7 +59,9 @@ namespace Model
      * <li> <p> <code>BILLING_VIEW_UNHEALTHY</code>: The billing view associated with
      * the budget is unhealthy.</p> </li> <li> <p> <code>FILTER_INVALID</code>: The
      * filter contains reference to an account you do not have access to.</p> </li>
-     * </ul>
+     * <li> <p> <code>MULTI_YEAR_HISTORICAL_DATA_DISABLED</code>: The budget is not
+     * being updated. Enable multi-year historical data in your Cost Management
+     * preferences.</p> </li> </ul>
      */
     inline HealthStatusReason GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }

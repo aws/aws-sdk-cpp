@@ -19,7 +19,8 @@ namespace Model
     DAILY,
     MONTHLY,
     QUARTERLY,
-    ANNUALLY
+    ANNUALLY,
+    CUSTOM
   };
 
 namespace TimeUnitMapper

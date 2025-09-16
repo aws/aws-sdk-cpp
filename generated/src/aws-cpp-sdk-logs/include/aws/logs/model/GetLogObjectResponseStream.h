@@ -50,7 +50,11 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>An internal error occurred during the streaming of log data. This exception
+     * is thrown when there's an issue with the internal streaming mechanism used by
+     * the GetLogObject operation.</p>
+     */
     inline const CloudWatchLogsError& GetInternalStreamingException() const { return m_internalStreamingException; }
     inline bool InternalStreamingExceptionHasBeenSet() const { return m_internalStreamingExceptionHasBeenSet; }
     template<typename InternalStreamingExceptionT = CloudWatchLogsError>

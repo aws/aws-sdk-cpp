@@ -23,6 +23,7 @@ namespace Aws
         static const int BILLING_VIEW_NO_ACCESS_HASH = HashingUtils::HashString("BILLING_VIEW_NO_ACCESS");
         static const int BILLING_VIEW_UNHEALTHY_HASH = HashingUtils::HashString("BILLING_VIEW_UNHEALTHY");
         static const int FILTER_INVALID_HASH = HashingUtils::HashString("FILTER_INVALID");
+        static const int MULTI_YEAR_HISTORICAL_DATA_DISABLED_HASH = HashingUtils::HashString("MULTI_YEAR_HISTORICAL_DATA_DISABLED");
 
 
         HealthStatusReason GetHealthStatusReasonForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == FILTER_INVALID_HASH)
           {
             return HealthStatusReason::FILTER_INVALID;
+          }
+          else if (hashCode == MULTI_YEAR_HISTORICAL_DATA_DISABLED_HASH)
+          {
+            return HealthStatusReason::MULTI_YEAR_HISTORICAL_DATA_DISABLED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "BILLING_VIEW_UNHEALTHY";
           case HealthStatusReason::FILTER_INVALID:
             return "FILTER_INVALID";
+          case HealthStatusReason::MULTI_YEAR_HISTORICAL_DATA_DISABLED:
+            return "MULTI_YEAR_HISTORICAL_DATA_DISABLED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
