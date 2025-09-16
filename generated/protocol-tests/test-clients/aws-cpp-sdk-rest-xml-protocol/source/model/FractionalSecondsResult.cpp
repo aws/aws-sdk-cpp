@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rest-xml-protocol/model/FractionalSecondsResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/rest-xml-protocol/model/FractionalSecondsResult.h>
 
 #include <utility>
 
@@ -16,30 +16,24 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-FractionalSecondsResult::FractionalSecondsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+FractionalSecondsResult::FractionalSecondsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-FractionalSecondsResult& FractionalSecondsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+FractionalSecondsResult& FractionalSecondsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode datetimeNode = resultNode.FirstChild("datetime");
-    if(!datetimeNode.IsNull())
-    {
-      m_datetime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(datetimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!datetimeNode.IsNull()) {
+      m_datetime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(datetimeNode.GetText()).c_str()).c_str(),
+                            Aws::Utils::DateFormat::ISO_8601);
       m_datetimeHasBeenSet = true;
     }
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }

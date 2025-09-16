@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::RestJsonProtocol;
 
-AWSError<CoreErrors> RestJsonProtocolErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> RestJsonProtocolErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = RestJsonProtocolErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

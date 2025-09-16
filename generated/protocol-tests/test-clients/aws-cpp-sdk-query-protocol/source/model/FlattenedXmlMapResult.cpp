@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/query-protocol/model/FlattenedXmlMapResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/query-protocol/model/FlattenedXmlMapResult.h>
 
 #include <utility>
 
@@ -17,35 +17,26 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-FlattenedXmlMapResult::FlattenedXmlMapResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+FlattenedXmlMapResult::FlattenedXmlMapResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-FlattenedXmlMapResult& FlattenedXmlMapResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+FlattenedXmlMapResult& FlattenedXmlMapResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "FlattenedXmlMapResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "FlattenedXmlMapResult")) {
     resultNode = rootNode.FirstChild("FlattenedXmlMapResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode myMapNode = resultNode.FirstChild("myMap");
 
-    if(!myMapNode.IsNull())
-    {
+    if (!myMapNode.IsNull()) {
       XmlNode myMapEntry = myMapNode.FirstChild("entry");
       m_myMapHasBeenSet = !myMapEntry.IsNull();
-      while(!myMapEntry.IsNull())
-      {
+      while (!myMapEntry.IsNull()) {
         XmlNode keyNode = myMapEntry.FirstChild("key");
         XmlNode valueNode = myMapEntry.FirstChild("value");
-        m_myMap[keyNode.GetText()] =
-            FooEnumMapper::GetFooEnumForName(StringUtils::Trim(valueNode.GetText().c_str()));
+        m_myMap[keyNode.GetText()] = FooEnumMapper::GetFooEnumForName(StringUtils::Trim(valueNode.GetText().c_str()));
         myMapEntry = myMapEntry.NextNode("entry");
       }
 
@@ -57,7 +48,7 @@ FlattenedXmlMapResult& FlattenedXmlMapResult::operator =(const Aws::AmazonWebSer
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::QueryProtocol::Model::FlattenedXmlMapResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::QueryProtocol::Model::FlattenedXmlMapResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2-protocol/model/QueryIdempotencyTokenAutoFillRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2-protocol/model/QueryIdempotencyTokenAutoFillRequest.h>
 
 using namespace Aws::EC2Protocol::Model;
 using namespace Aws::Utils;
 
-Aws::String QueryIdempotencyTokenAutoFillRequest::SerializePayload() const
-{
+Aws::String QueryIdempotencyTokenAutoFillRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=QueryIdempotencyTokenAutoFill&";
-  if(m_tokenHasBeenSet)
-  {
+  if (m_tokenHasBeenSet) {
     ss << "token=" << StringUtils::URLEncode(m_token.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String QueryIdempotencyTokenAutoFillRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  QueryIdempotencyTokenAutoFillRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void QueryIdempotencyTokenAutoFillRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rest-xml-protocol/model/XmlEmptyStringsResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/rest-xml-protocol/model/XmlEmptyStringsResult.h>
 
 #include <utility>
 
@@ -16,21 +16,15 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-XmlEmptyStringsResult::XmlEmptyStringsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+XmlEmptyStringsResult::XmlEmptyStringsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-XmlEmptyStringsResult& XmlEmptyStringsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+XmlEmptyStringsResult& XmlEmptyStringsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode emptyStringNode = resultNode.FirstChild("emptyString");
-    if(!emptyStringNode.IsNull())
-    {
+    if (!emptyStringNode.IsNull()) {
       m_emptyString = Aws::Utils::Xml::DecodeEscapedXmlText(emptyStringNode.GetText());
       m_emptyStringHasBeenSet = true;
     }
@@ -38,8 +32,7 @@ XmlEmptyStringsResult& XmlEmptyStringsResult::operator =(const Aws::AmazonWebSer
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }

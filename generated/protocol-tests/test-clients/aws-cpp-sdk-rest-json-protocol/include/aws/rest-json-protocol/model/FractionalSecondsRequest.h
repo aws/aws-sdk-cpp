@@ -4,33 +4,28 @@
  */
 
 #pragma once
-#include <aws/rest-json-protocol/RestJsonProtocol_EXPORTS.h>
 #include <aws/rest-json-protocol/RestJsonProtocolRequest.h>
+#include <aws/rest-json-protocol/RestJsonProtocol_EXPORTS.h>
 
-namespace Aws
-{
-namespace RestJsonProtocol
-{
-namespace Model
-{
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 
-  /**
-   */
-  class FractionalSecondsRequest : public RestJsonProtocolRequest
-  {
-  public:
-    AWS_RESTJSONPROTOCOL_API FractionalSecondsRequest() = default;
+/**
+ */
+class FractionalSecondsRequest : public RestJsonProtocolRequest {
+ public:
+  AWS_RESTJSONPROTOCOL_API FractionalSecondsRequest() = default;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "FractionalSeconds"; }
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "FractionalSeconds"; }
 
-    AWS_RESTJSONPROTOCOL_API Aws::String SerializePayload() const override;
+  AWS_RESTJSONPROTOCOL_API Aws::String SerializePayload() const override;
+};
 
-  };
-
-} // namespace Model
-} // namespace RestJsonProtocol
-} // namespace Aws
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws

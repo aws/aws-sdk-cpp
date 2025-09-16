@@ -78,6 +78,8 @@ public class Shape {
 
     public boolean isDouble() { return "double".equals(type.toLowerCase()); }
 
+    public boolean isFloat() { return "float".equals(type.toLowerCase()); }
+
     public boolean isString() {
         return "string".equals(type.toLowerCase()) && !isEnum();
     }
@@ -124,8 +126,13 @@ public class Shape {
         return members.keySet().parallelStream().anyMatch(key -> !key.equals("Message") && !key.equals("message"));
     }
 
+    public boolean isCborModeledException() {
+        if (!exception) return false;
+        return members.keySet().parallelStream().anyMatch(key -> !key.equals("Message") && !key.equals("message"));
+    }
+
     public boolean isModeledException() {
-        return isXmlModeledException() || isJsonModeledException();
+        return isXmlModeledException() || isJsonModeledException() || isCborModeledException();
     }
 
     public boolean isMemberRequired(String member) {
@@ -179,6 +186,10 @@ public class Shape {
 
     public boolean hasMember(String member) {
         return members != null && members.keySet().stream().anyMatch(key -> key.equals(member));
+    }
+
+    public boolean hasMembers() {
+        return members != null && !members.isEmpty();
     }
 
     public ShapeMember getMemberByLocationName(String locationName) {

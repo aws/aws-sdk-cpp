@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/rest-json-protocol/RestJsonProtocolRequest.h>
 
-namespace Aws
-{
-namespace RestJsonProtocol
-{
-} // namespace RestJsonProtocol
-} // namespace Aws
+namespace Aws {
+namespace RestJsonProtocol {}  // namespace RestJsonProtocol
+}  // namespace Aws

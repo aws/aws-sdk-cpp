@@ -3,23 +3,18 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/query-protocol/model/XmlEmptyMapsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/query-protocol/model/XmlEmptyMapsRequest.h>
 
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
-Aws::String XmlEmptyMapsRequest::SerializePayload() const
-{
+Aws::String XmlEmptyMapsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=XmlEmptyMaps&";
   ss << "Version=2020-01-08";
   return ss.str();
 }
 
-
-void  XmlEmptyMapsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void XmlEmptyMapsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

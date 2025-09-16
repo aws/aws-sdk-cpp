@@ -5,12 +5,8 @@
 
 #include <aws/ec2-protocol/EC2ProtocolEndpointProvider.h>
 
-namespace Aws
-{
-namespace EC2Protocol
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace EC2Protocol
-} // namespace Aws
+namespace Aws {
+namespace EC2Protocol {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace EC2Protocol
+}  // namespace Aws

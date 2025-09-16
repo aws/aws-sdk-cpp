@@ -36,7 +36,9 @@ namespace ${serviceNamespace}
 
       if(headers.size() == 0 || (headers.size() > 0 && headers.count(Aws::Http::CONTENT_TYPE_HEADER) == 0))
       {
-        headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, ${CppViewHelper.computeRequestContentType($metadata)} ));
+#if(${CppViewHelper.computeRequestContentType($metadata)}) ##Cbor needs this set per a request basis
+       headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, ${CppViewHelper.computeRequestContentType($metadata)} ));
+#end
 #if($metadata.acceptHeader)
         headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::ACCEPT_HEADER, "${metadata.acceptHeader}"));
 #end

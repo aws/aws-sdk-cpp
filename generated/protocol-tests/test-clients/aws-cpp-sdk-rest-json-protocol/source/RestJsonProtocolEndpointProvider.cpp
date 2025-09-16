@@ -5,12 +5,8 @@
 
 #include <aws/rest-json-protocol/RestJsonProtocolEndpointProvider.h>
 
-namespace Aws
-{
-namespace RestJsonProtocol
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace RestJsonProtocol
-} // namespace Aws
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace RestJsonProtocol
+}  // namespace Aws

@@ -123,9 +123,10 @@ namespace Aws
                     if (!response.WasParseSuccessful()) {
                         return OutcomeType(CreateParseError());
                     }
-                    return OutcomeType(AmazonWebServiceResult<ResponseType>(std::move(response),
+                    auto outcome = OutcomeType(AmazonWebServiceResult<ResponseType>(std::move(response),
                         httpOutcome.GetResult()->GetHeaders(),
                         httpOutcome.GetResult()->GetResponseCode()));
+                    return !response.WasParseSuccessful() ? OutcomeType(CreateParseError()) : outcome;
                 }
                 return OutcomeType(AmazonWebServiceResult<ResponseType>(ResponseType(), httpOutcome.GetResult()->GetHeaders()));
             }
@@ -202,9 +203,10 @@ namespace Aws
                             if (!response.WasParseSuccessful()) {
                                 return OutcomeType(CreateParseError());
                             }
-                            return OutcomeType(AmazonWebServiceResult<ResponseType>(std::move(response),
+                            auto outcome = OutcomeType(AmazonWebServiceResult<ResponseType>(std::move(response),
                                 httpOutcome.GetResult()->GetHeaders(),
                                 httpOutcome.GetResult()->GetResponseCode()));
+                            return !response.WasParseSuccessful() ? OutcomeType(CreateParseError()) : outcome;
                         },
                         smithy::components::tracing::TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
                         *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),

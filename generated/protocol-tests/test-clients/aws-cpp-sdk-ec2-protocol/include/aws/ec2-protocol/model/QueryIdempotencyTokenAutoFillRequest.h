@@ -4,54 +4,55 @@
  */
 
 #pragma once
-#include <aws/ec2-protocol/EC2Protocol_EXPORTS.h>
-#include <aws/ec2-protocol/EC2ProtocolRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <utility>
 #include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2-protocol/EC2ProtocolRequest.h>
+#include <aws/ec2-protocol/EC2Protocol_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2Protocol
-{
-namespace Model
-{
+#include <utility>
 
-  /**
-   */
-  class QueryIdempotencyTokenAutoFillRequest : public EC2ProtocolRequest
-  {
-  public:
-    AWS_EC2PROTOCOL_API QueryIdempotencyTokenAutoFillRequest() = default;
+namespace Aws {
+namespace EC2Protocol {
+namespace Model {
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "QueryIdempotencyTokenAutoFill"; }
+/**
+ */
+class QueryIdempotencyTokenAutoFillRequest : public EC2ProtocolRequest {
+ public:
+  AWS_EC2PROTOCOL_API QueryIdempotencyTokenAutoFillRequest() = default;
 
-    AWS_EC2PROTOCOL_API Aws::String SerializePayload() const override;
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "QueryIdempotencyTokenAutoFill"; }
 
-  protected:
-    AWS_EC2PROTOCOL_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+  AWS_EC2PROTOCOL_API Aws::String SerializePayload() const override;
 
-  public:
+ protected:
+  AWS_EC2PROTOCOL_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
 
-    ///@{
-    
-    inline const Aws::String& GetToken() const { return m_token; }
-    inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
-    template<typename TokenT = Aws::String>
-    void SetToken(TokenT&& value) { m_tokenHasBeenSet = true; m_token = std::forward<TokenT>(value); }
-    template<typename TokenT = Aws::String>
-    QueryIdempotencyTokenAutoFillRequest& WithToken(TokenT&& value) { SetToken(std::forward<TokenT>(value)); return *this;}
-    ///@}
-  private:
+ public:
+  ///@{
 
-    Aws::String m_token{Aws::Utils::UUID::PseudoRandomUUID()};
-    bool m_tokenHasBeenSet = true;
-  };
+  inline const Aws::String& GetToken() const { return m_token; }
+  inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
+  template <typename TokenT = Aws::String>
+  void SetToken(TokenT&& value) {
+    m_tokenHasBeenSet = true;
+    m_token = std::forward<TokenT>(value);
+  }
+  template <typename TokenT = Aws::String>
+  QueryIdempotencyTokenAutoFillRequest& WithToken(TokenT&& value) {
+    SetToken(std::forward<TokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_token{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_tokenHasBeenSet = true;
+};
 
-} // namespace Model
-} // namespace EC2Protocol
-} // namespace Aws
+}  // namespace Model
+}  // namespace EC2Protocol
+}  // namespace Aws

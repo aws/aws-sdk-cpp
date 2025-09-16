@@ -54,7 +54,7 @@ namespace Aws
 
               std::shared_ptr<Aws::Crt::Cbor::CborDecoder> GetDecoder() const { return m_decoder; };
 
-              inline bool WasParseSuccessful() const { return m_decoder != nullptr; };
+              inline bool WasParseSuccessful() const { return m_decoder != nullptr && m_decoder->LastError() == AWS_ERROR_UNKNOWN; };
 
             private:
               mutable std::shared_ptr<Crt::Cbor::CborDecoder> m_decoder;

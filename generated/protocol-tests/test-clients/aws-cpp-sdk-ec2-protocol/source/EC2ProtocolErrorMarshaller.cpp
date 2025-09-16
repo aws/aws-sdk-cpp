@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::EC2Protocol;
 
-AWSError<CoreErrors> EC2ProtocolErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> EC2ProtocolErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = EC2ProtocolErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

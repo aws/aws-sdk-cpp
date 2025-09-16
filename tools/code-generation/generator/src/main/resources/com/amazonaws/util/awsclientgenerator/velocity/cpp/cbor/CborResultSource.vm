@@ -1,0 +1,52 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+\#include <aws/${metadata.projectName}/model/${typeInfo.className}.h>
+\#include <aws/crt/cbor/Cbor.h>
+\#include <aws/core/AmazonWebServiceResult.h>
+\#include <aws/core/utils/StringUtils.h>
+\#include <aws/core/utils/UnreferencedParam.h>
+\#include <aws/core/utils/cbor/CborValue.h>
+#foreach($header in $typeInfo.sourceIncludes)
+\#include $header
+#end
+
+\#include <utility>
+
+using namespace ${rootNamespace}::${serviceNamespace}::Model;
+using namespace Aws::Crt;
+using namespace Aws::Crt::Cbor;
+using namespace Aws::Utils;
+using namespace Aws::Utils::Cbor;
+using namespace Aws;
+
+  ${typeInfo.className}::${typeInfo.className}(const Aws::AmazonWebServiceResult<${typeInfo.CborType}>& result)
+  #if($initializers)
+    : ${typeInfo.className}()
+  #end
+  {
+  *this = result;
+  }
+
+  ${typeInfo.className}& ${typeInfo.className}::operator =(const Aws::AmazonWebServiceResult<${typeInfo.CborType}>& result)
+    {
+    const auto& cborValue = result.GetPayload();
+    const auto decoder = cborValue.GetDecoder();
+
+    #set($useRequiredField = true)
+    #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/ModelClassMembersDeserializeCborInit.vm")
+
+
+    #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ResultClassHeadersDeserialize.vm")
+    #if($shape.hasStatusCodeMembers())
+      #foreach($memberEntry in $shape.members.entrySet())
+        #if($memberEntry.value.usedForHttpStatusCode)
+          ${CppViewHelper.computeMemberVariableName($memberEntry.key)} = static_cast<int>(result.GetResponseCode());
+          ${CppViewHelper.computeVariableHasBeenSetName($memberEntry.key)} = true;
+        #end
+      #end
+    #end
+    return *this;
+    }

@@ -3,23 +3,18 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/query-protocol/model/FlattenedXmlMapWithXmlNameRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/query-protocol/model/FlattenedXmlMapWithXmlNameRequest.h>
 
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
-Aws::String FlattenedXmlMapWithXmlNameRequest::SerializePayload() const
-{
+Aws::String FlattenedXmlMapWithXmlNameRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=FlattenedXmlMapWithXmlName&";
   ss << "Version=2020-01-08";
   return ss.str();
 }
 
-
-void  FlattenedXmlMapWithXmlNameRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void FlattenedXmlMapWithXmlNameRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

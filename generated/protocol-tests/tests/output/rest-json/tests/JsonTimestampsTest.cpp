@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-json-protocol/RestJsonProtocolClient.h>
 #include <aws/rest-json-protocol/model/JsonTimestampsRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using JsonTimestamps = AWS_PROTOCOL_TEST_SUITE;
 using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
@@ -23,11 +23,12 @@ AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestamps) {
   JsonTimestampsRequest request;
 
   auto outcome = client.JsonTimestamps(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const JsonTimestampsResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"normal":1398796238} )" */
-  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetNormal());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"normal":1398796238} )" */
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetNormal());
+  });
 }
 
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithDateTimeFormat) {
@@ -42,11 +43,12 @@ AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithDateTimeFormat) {
   JsonTimestampsRequest request;
 
   auto outcome = client.JsonTimestamps(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const JsonTimestampsResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"dateTime":1398796238} )" */
-  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetDateTime());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"dateTime":1398796238} )" */
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetDateTime());
+  });
 }
 
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithDateTimeOnTargetFormat) {
@@ -61,11 +63,12 @@ AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithDateTimeOnTargetForm
   JsonTimestampsRequest request;
 
   auto outcome = client.JsonTimestamps(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const JsonTimestampsResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"dateTimeOnTarget":1398796238} )" */
-  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetDateTimeOnTarget());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"dateTimeOnTarget":1398796238} )" */
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetDateTimeOnTarget());
+  });
 }
 
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithEpochSecondsFormat) {
@@ -80,11 +83,12 @@ AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithEpochSecondsFormat) 
   JsonTimestampsRequest request;
 
   auto outcome = client.JsonTimestamps(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const JsonTimestampsResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"epochSeconds":1398796238} )" */
-  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetEpochSeconds());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"epochSeconds":1398796238} )" */
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetEpochSeconds());
+  });
 }
 
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithEpochSecondsOnTargetFormat) {
@@ -99,11 +103,12 @@ AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithEpochSecondsOnTarget
   JsonTimestampsRequest request;
 
   auto outcome = client.JsonTimestamps(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const JsonTimestampsResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"epochSecondsOnTarget":1398796238} )" */
-  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetEpochSecondsOnTarget());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"epochSecondsOnTarget":1398796238} )" */
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetEpochSecondsOnTarget());
+  });
 }
 
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithHttpDateFormat) {
@@ -118,11 +123,12 @@ AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithHttpDateFormat) {
   JsonTimestampsRequest request;
 
   auto outcome = client.JsonTimestamps(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const JsonTimestampsResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"httpDate":1398796238} )" */
-  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetHttpDate());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"httpDate":1398796238} )" */
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetHttpDate());
+  });
 }
 
 AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithHttpDateOnTargetFormat) {
@@ -137,9 +143,10 @@ AWS_PROTOCOL_TEST(JsonTimestamps, RestJsonJsonTimestampsWithHttpDateOnTargetForm
   JsonTimestampsRequest request;
 
   auto outcome = client.JsonTimestamps(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const JsonTimestampsResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"httpDateOnTarget":1398796238} )" */
-  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetHttpDateOnTarget());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"httpDateOnTarget":1398796238} )" */
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1398796238)), result.GetHttpDateOnTarget());
+  });
 }

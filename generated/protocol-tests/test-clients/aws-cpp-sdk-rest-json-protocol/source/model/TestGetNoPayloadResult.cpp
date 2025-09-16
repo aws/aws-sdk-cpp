@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rest-json-protocol/model/TestGetNoPayloadResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rest-json-protocol/model/TestGetNoPayloadResult.h>
 
 #include <utility>
 
@@ -17,30 +17,23 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TestGetNoPayloadResult::TestGetNoPayloadResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+TestGetNoPayloadResult::TestGetNoPayloadResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-TestGetNoPayloadResult& TestGetNoPayloadResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+TestGetNoPayloadResult& TestGetNoPayloadResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& testIdIter = headers.find("x-amz-test-id");
-  if(testIdIter != headers.end())
-  {
+  if (testIdIter != headers.end()) {
     m_testId = testIdIter->second;
     m_testIdHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

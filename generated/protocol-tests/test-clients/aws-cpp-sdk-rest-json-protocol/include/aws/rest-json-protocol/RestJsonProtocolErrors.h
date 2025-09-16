@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/rest-json-protocol/RestJsonProtocol_EXPORTS.h>
 
-namespace Aws
-{
-namespace RestJsonProtocol
-{
-enum class RestJsonProtocolErrors
-{
-  //From Core//
+namespace Aws {
+namespace RestJsonProtocol {
+enum class RestJsonProtocolErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class RestJsonProtocolErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,14 +44,13 @@ enum class RestJsonProtocolErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  COMPLEX= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  COMPLEX = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   FOO,
   INVALID_GREETING
 };
 
-class AWS_RESTJSONPROTOCOL_API RestJsonProtocolError : public Aws::Client::AWSError<RestJsonProtocolErrors>
-{
-public:
+class AWS_RESTJSONPROTOCOL_API RestJsonProtocolError : public Aws::Client::AWSError<RestJsonProtocolErrors> {
+ public:
   RestJsonProtocolError() {}
   RestJsonProtocolError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<RestJsonProtocolErrors>(rhs) {}
   RestJsonProtocolError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<RestJsonProtocolErrors>(rhs) {}
@@ -65,10 +61,9 @@ public:
   T GetModeledError();
 };
 
-namespace RestJsonProtocolErrorMapper
-{
-  AWS_RESTJSONPROTOCOL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace RestJsonProtocolErrorMapper {
+AWS_RESTJSONPROTOCOL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace RestJsonProtocol
-} // namespace Aws
+}  // namespace RestJsonProtocol
+}  // namespace Aws

@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-json-protocol/RestJsonProtocolClient.h>
 #include <aws/rest-json-protocol/model/SimpleScalarPropertiesRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using SimpleScalarProperties = AWS_PROTOCOL_TEST_SUITE;
 using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
@@ -31,7 +31,10 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RestJsonSimpleScalarProperties) {
   auto outcome = client.SimpleScalarProperties(request);
   ExpectedRequest expectedRq;
   expectedRq.method = "PUT";
-  expectedRq.body = "ewogICAgInN0cmluZ1ZhbHVlIjogInN0cmluZyIsCiAgICAidHJ1ZUJvb2xlYW5WYWx1ZSI6IHRydWUsCiAgICAiZmFsc2VCb29sZWFuVmFsdWUiOiBmYWxzZSwKICAgICJieXRlVmFsdWUiOiAxLAogICAgInNob3J0VmFsdWUiOiAyLAogICAgImludGVnZXJWYWx1ZSI6IDMsCiAgICAibG9uZ1ZhbHVlIjogNCwKICAgICJmbG9hdFZhbHVlIjogNS41LAogICAgIkRvdWJsZURyaWJibGUiOiA2LjUKfQ==";
+  expectedRq.body =
+      "ewogICAgInN0cmluZ1ZhbHVlIjogInN0cmluZyIsCiAgICAidHJ1ZUJvb2xlYW5WYWx1ZSI6IHRydWUsCiAgICAiZmFsc2VCb29sZWFuVmFsdWUiOiBmYWxzZSwKICAgICJi"
+      "eXRlVmFsdWUiOiAxLAogICAgInNob3J0VmFsdWUiOiAyLAogICAgImludGVnZXJWYWx1ZSI6IDMsCiAgICAibG9uZ1ZhbHVlIjogNCwKICAgICJmbG9hdFZhbHVlIjogNS41"
+      "LAogICAgIkRvdWJsZURyaWJibGUiOiA2LjUKfQ==";
   expectedRq.uri = "/SimpleScalarProperties";
   expectedRq.headers = {{"Content-Type", R"(application/json)"}, {"X-Foo", R"(Foo)"}};
   ValidateRequestSent(expectedRq);
@@ -44,7 +47,6 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RestJsonDoesntSerializeNullStructureVa
   SetMockResponse();
 
   SimpleScalarPropertiesRequest request;
-  request.SetStringValue(R"(null)");
 
   auto outcome = client.SimpleScalarProperties(request);
   ExpectedRequest expectedRq;

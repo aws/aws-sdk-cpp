@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-xml-protocol/RestXmlProtocolClient.h>
 #include <aws/rest-xml-protocol/model/GreetingWithErrorsRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using GreetingWithErrors = AWS_PROTOCOL_TEST_SUITE;
 using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
@@ -22,9 +22,10 @@ AWS_PROTOCOL_TEST(GreetingWithErrors, GreetingWithErrors) {
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const GreetingWithErrorsResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"greeting":"Hello"} )" */
-  EXPECT_EQ(R"(Hello)", result.GetGreeting());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"greeting":"Hello"} )" */
+    EXPECT_EQ(R"(Hello)", result.GetGreeting());
+  });
 }

@@ -110,7 +110,21 @@ public:
     AWS_ASSERT_SUCCESS(setNextResponse);
   }
 
-  void ValidateRequestSent(const ExpectedRequest& expected = ExpectedRequest()) const {
+  static void ValidateBody(const ExpectedRequest& expected, const Aws::ProtocolMock::Model::Request& receivedRequest) {
+    const auto expectedBodyBuf = Aws::Utils::HashingUtils::Base64Decode(expected.body);
+    const auto receivedBodyBuf = Aws::Utils::HashingUtils::Base64Decode(receivedRequest.GetBody());
+    const auto expectedBodyStr = Aws::String(reinterpret_cast<char*>(expectedBodyBuf.GetUnderlyingData()), expectedBodyBuf.GetLength());
+    const auto receivedBodyStr = Aws::String(reinterpret_cast<char*>(receivedBodyBuf.GetUnderlyingData()), receivedBodyBuf.GetLength());
+    EXPECT_STREQ(expectedBodyStr.c_str(), receivedBodyStr.c_str());
+  }
+
+  void ValidateRequestSent(const std::function<void (const ExpectedRequest& expected, const Aws::ProtocolMock::Model::Request& receivedRequest)>& bodyCompare = ValidateBody) const {
+    ValidateRequestSent(ExpectedRequest(), bodyCompare);
+  }
+
+  void ValidateRequestSent(const ExpectedRequest& expected = ExpectedRequest(),
+                          const std::function<void (const ExpectedRequest& expected, const Aws::ProtocolMock::Model::Request& receivedRequest)>& bodyCompare = ValidateBody) const {
+
     auto requestsReceivedOutcome = mockClient.GetRequestsReceived();
     AWS_ASSERT_SUCCESS(requestsReceivedOutcome);
     ASSERT_EQ(1u, requestsReceivedOutcome.GetResult().GetRequests().size());
@@ -119,13 +133,7 @@ public:
     if (!expected.method.empty()) {
       EXPECT_STREQ(expected.method.c_str(), receivedRequest.GetMethod().c_str());
     }
-    if (!expected.body.empty()) {
-      const auto expectedBodyBuf = Aws::Utils::HashingUtils::Base64Decode(expected.body);
-      const auto receivedBodyBuf = Aws::Utils::HashingUtils::Base64Decode(receivedRequest.GetBody());
-      const auto expectedBodyStr = Aws::String(reinterpret_cast<char*>(expectedBodyBuf.GetUnderlyingData()), expectedBodyBuf.GetLength());
-      const auto receivedBodyStr = Aws::String(reinterpret_cast<char*>(receivedBodyBuf.GetUnderlyingData()), receivedBodyBuf.GetLength());
-      EXPECT_STREQ(expectedBodyStr.c_str(), receivedBodyStr.c_str());
-    }
+    bodyCompare(expected, receivedRequest);
     if (!expected.uri.empty()) {
       EXPECT_STREQ(expected.uri.c_str(), receivedRequest.GetUri().c_str());
     }

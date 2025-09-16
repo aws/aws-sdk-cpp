@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-xml-protocol/RestXmlProtocolClient.h>
 #include <aws/rest-xml-protocol/model/XmlEmptyBlobsRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using XmlEmptyBlobs = AWS_PROTOCOL_TEST_SUITE;
 using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
@@ -23,11 +23,12 @@ AWS_PROTOCOL_TEST(XmlEmptyBlobs, XmlEmptyBlobs) {
   XmlEmptyBlobsRequest request;
 
   auto outcome = client.XmlEmptyBlobs(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const XmlEmptyBlobsResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"data":""} )" */
-  EXPECT_EQ(Aws::Utils::ByteBuffer(R"()"), result.GetData());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"data":""} )" */
+    EXPECT_EQ(Aws::Utils::ByteBuffer(R"()"), result.GetData());
+  });
 }
 
 AWS_PROTOCOL_TEST(XmlEmptyBlobs, XmlEmptySelfClosedBlobs) {
@@ -42,9 +43,10 @@ AWS_PROTOCOL_TEST(XmlEmptyBlobs, XmlEmptySelfClosedBlobs) {
   XmlEmptyBlobsRequest request;
 
   auto outcome = client.XmlEmptyBlobs(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const XmlEmptyBlobsResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"data":""} )" */
-  EXPECT_EQ(Aws::Utils::ByteBuffer(R"()"), result.GetData());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"data":""} )" */
+    EXPECT_EQ(Aws::Utils::ByteBuffer(R"()"), result.GetData());
+  });
 }

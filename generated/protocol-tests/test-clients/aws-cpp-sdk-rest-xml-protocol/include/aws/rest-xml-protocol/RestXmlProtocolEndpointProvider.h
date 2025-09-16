@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/rest-xml-protocol/RestXmlProtocol_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/rest-xml-protocol/RestXmlProtocolEndpointRules.h>
+#include <aws/rest-xml-protocol/RestXmlProtocol_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace RestXmlProtocol
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace RestXmlProtocol {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using RestXmlProtocolClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using RestXmlProtocolDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_RESTXMLPROTOCOL_API RestXmlProtocolEndpointProvider : public RestXmlProtocolDefaultEpProviderBase
-{
-public:
-    using RestXmlProtocolResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_RESTXMLPROTOCOL_API RestXmlProtocolEndpointProvider : public RestXmlProtocolDefaultEpProviderBase {
+ public:
+  using RestXmlProtocolResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    RestXmlProtocolEndpointProvider()
-      : RestXmlProtocolDefaultEpProviderBase(Aws::RestXmlProtocol::RestXmlProtocolEndpointRules::GetRulesBlob(), Aws::RestXmlProtocol::RestXmlProtocolEndpointRules::RulesBlobSize)
-    {}
+  RestXmlProtocolEndpointProvider()
+      : RestXmlProtocolDefaultEpProviderBase(Aws::RestXmlProtocol::RestXmlProtocolEndpointRules::GetRulesBlob(),
+                                             Aws::RestXmlProtocol::RestXmlProtocolEndpointRules::RulesBlobSize) {}
 
-    ~RestXmlProtocolEndpointProvider()
-    {
-    }
+  ~RestXmlProtocolEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace RestXmlProtocol
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace RestXmlProtocol
+}  // namespace Aws

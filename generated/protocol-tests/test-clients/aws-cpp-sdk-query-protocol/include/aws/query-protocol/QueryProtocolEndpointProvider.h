@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/query-protocol/QueryProtocol_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/query-protocol/QueryProtocolEndpointRules.h>
+#include <aws/query-protocol/QueryProtocol_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace QueryProtocol
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace QueryProtocol {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using QueryProtocolClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using QueryProtocolDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_QUERYPROTOCOL_API QueryProtocolEndpointProvider : public QueryProtocolDefaultEpProviderBase
-{
-public:
-    using QueryProtocolResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_QUERYPROTOCOL_API QueryProtocolEndpointProvider : public QueryProtocolDefaultEpProviderBase {
+ public:
+  using QueryProtocolResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    QueryProtocolEndpointProvider()
-      : QueryProtocolDefaultEpProviderBase(Aws::QueryProtocol::QueryProtocolEndpointRules::GetRulesBlob(), Aws::QueryProtocol::QueryProtocolEndpointRules::RulesBlobSize)
-    {}
+  QueryProtocolEndpointProvider()
+      : QueryProtocolDefaultEpProviderBase(Aws::QueryProtocol::QueryProtocolEndpointRules::GetRulesBlob(),
+                                           Aws::QueryProtocol::QueryProtocolEndpointRules::RulesBlobSize) {}
 
-    ~QueryProtocolEndpointProvider()
-    {
-    }
+  ~QueryProtocolEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace QueryProtocol
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace QueryProtocol
+}  // namespace Aws

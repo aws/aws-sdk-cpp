@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-json-protocol/RestJsonProtocolClient.h>
 #include <aws/rest-json-protocol/model/PostUnionWithJsonNameRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using PostUnionWithJsonName = AWS_PROTOCOL_TEST_SUITE;
 using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
@@ -23,14 +23,15 @@ AWS_PROTOCOL_TEST(PostUnionWithJsonName, PostUnionWithJsonNameResponse1) {
   PostUnionWithJsonNameRequest request;
 
   auto outcome = client.PostUnionWithJsonName(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const PostUnionWithJsonNameResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"value":{"foo":"hi"}} )" */
-  {
-    const UnionWithJsonName& resultValue = result.GetValue();
-    EXPECT_EQ(R"(hi)", resultValue.GetFoo());
-  }
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"value":{"foo":"hi"}} )" */
+    {
+      const UnionWithJsonName& resultValue = result.GetValue();
+      EXPECT_EQ(R"(hi)", resultValue.GetFoo());
+    }
+  });
 }
 
 AWS_PROTOCOL_TEST(PostUnionWithJsonName, PostUnionWithJsonNameResponse2) {
@@ -45,14 +46,15 @@ AWS_PROTOCOL_TEST(PostUnionWithJsonName, PostUnionWithJsonNameResponse2) {
   PostUnionWithJsonNameRequest request;
 
   auto outcome = client.PostUnionWithJsonName(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const PostUnionWithJsonNameResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"value":{"baz":"hi"}} )" */
-  {
-    const UnionWithJsonName& resultValue = result.GetValue();
-    EXPECT_EQ(R"(hi)", resultValue.GetBaz());
-  }
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"value":{"baz":"hi"}} )" */
+    {
+      const UnionWithJsonName& resultValue = result.GetValue();
+      EXPECT_EQ(R"(hi)", resultValue.GetBaz());
+    }
+  });
 }
 
 AWS_PROTOCOL_TEST(PostUnionWithJsonName, PostUnionWithJsonNameResponse3) {
@@ -67,12 +69,13 @@ AWS_PROTOCOL_TEST(PostUnionWithJsonName, PostUnionWithJsonNameResponse3) {
   PostUnionWithJsonNameRequest request;
 
   auto outcome = client.PostUnionWithJsonName(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const PostUnionWithJsonNameResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"value":{"bar":"hi"}} )" */
-  {
-    const UnionWithJsonName& resultValue = result.GetValue();
-    EXPECT_EQ(R"(hi)", resultValue.GetBar());
-  }
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"value":{"bar":"hi"}} )" */
+    {
+      const UnionWithJsonName& resultValue = result.GetValue();
+      EXPECT_EQ(R"(hi)", resultValue.GetBar());
+    }
+  });
 }

@@ -1,0 +1,89 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+\#include <aws/${metadata.projectName}/model/${typeInfo.className}.h>
+\#include <aws/crt/cbor/Cbor.h>
+#if($shape.hasQueryStringMembers())
+\#include <aws/core/http/URI.h>
+#end
+#if($shape.supportsPresigning)
+\#include <aws/core/utils/StringUtils.h>
+#end
+#foreach($header in $typeInfo.sourceIncludes)
+\#include $header
+#end
+
+\#include <utility>
+    #if(${CppViewHelper.hasListMemberUsedForHeader($shape)})
+        \#include <numeric>
+    #end
+
+    using namespace ${rootNamespace}::${serviceNamespace}::Model;
+    using namespace Aws::Crt::Cbor;
+    using namespace Aws::Utils;
+    #if($shape.hasQueryStringMembers())
+        using namespace Aws::Http;
+    #end
+
+    Aws::String ${typeInfo.className}::SerializePayload() const
+    {
+    #if($shape.hasMembers())
+        Aws::Crt::Cbor::CborEncoder encoder;
+        
+        // Calculate map size
+        size_t mapSize = 0;
+        #foreach($entry in $shape.members.entrySet())
+            #set($member = $entry.value)
+            #if($member.usedForPayload)
+                #set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($entry.key))
+                #if(!$member.required)
+                    if($varNameHasBeenSet){
+                        mapSize++;
+                    }
+                #else
+                    mapSize++;
+                #end
+            #end
+        #end
+        
+        encoder.WriteMapStart(mapSize);
+
+        #set($useRequiredField = true)
+        #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/ModelClassMembersCborize.vm")
+        const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+        return str;
+    #else
+        return {};
+    #end
+    }
+
+    #if($shape.hasHeaderMembers() || $metadata.targetPrefix)
+    Aws::Http::HeaderValueCollection ${typeInfo.className}::GetRequestSpecificHeaders() const
+    {
+        Aws::Http::HeaderValueCollection headers;
+        #if($shape.hasMembers())
+        headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE ));
+        #end
+        #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassHeaderMembersSource.vm")
+        return headers;
+    }
+    #end
+
+    #if($shape.hasQueryStringMembers())
+        #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/AddQueryStringParametersToRequest.vm")
+    #end
+
+    #if($shape.supportsPresigning)
+    void  ${typeInfo.className}::DumpBodyToUrl(Aws::Http::URI& uri ) const
+    {
+        #parse($presignerTemplate)
+    }
+
+    #end
+    #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/model/ModelGetEndpointRulesContextParamDefinition.vm")
+    #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassChecksumMembers.vm")
+    #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassRequiredCompression.vm")
+
+

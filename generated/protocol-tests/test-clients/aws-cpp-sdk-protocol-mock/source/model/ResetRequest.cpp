@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/protocol-mock/model/ResetRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/protocol-mock/model/ResetRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::ProtocolMock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ResetRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String ResetRequest::SerializePayload() const { return {}; }

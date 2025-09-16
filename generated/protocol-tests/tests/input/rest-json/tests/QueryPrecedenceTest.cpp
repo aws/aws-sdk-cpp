@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-json-protocol/RestJsonProtocolClient.h>
 #include <aws/rest-json-protocol/model/QueryPrecedenceRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using QueryPrecedence = AWS_PROTOCOL_TEST_SUITE;
 using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
@@ -18,7 +18,7 @@ AWS_PROTOCOL_TEST(QueryPrecedence, RestJsonQueryPrecedence) {
 
   QueryPrecedenceRequest request;
   request.SetFoo(R"(named)");
-  request.SetBaz({{"bar",  R"(fromMap)"}, {"qux",  R"(alsoFromMap)"}});
+  request.SetBaz({{"bar", R"(fromMap)"}, {"qux", R"(alsoFromMap)"}});
 
   auto outcome = client.QueryPrecedence(request);
   ExpectedRequest expectedRq;

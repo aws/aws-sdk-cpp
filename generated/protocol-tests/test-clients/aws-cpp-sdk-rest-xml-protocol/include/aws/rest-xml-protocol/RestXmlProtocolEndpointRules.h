@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/rest-xml-protocol/RestXmlProtocol_EXPORTS.h>
 
-namespace Aws
-{
-namespace RestXmlProtocol
-{
-class RestXmlProtocolEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace RestXmlProtocol {
+class RestXmlProtocolEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace RestXmlProtocol
-} // namespace Aws
+}  // namespace RestXmlProtocol
+}  // namespace Aws

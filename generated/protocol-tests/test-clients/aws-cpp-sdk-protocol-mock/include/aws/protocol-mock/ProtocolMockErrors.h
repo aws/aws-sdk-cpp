@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/protocol-mock/ProtocolMock_EXPORTS.h>
 
-namespace Aws
-{
-namespace ProtocolMock
-{
-enum class ProtocolMockErrors
-{
-  //From Core//
+namespace Aws {
+namespace ProtocolMock {
+enum class ProtocolMockErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ProtocolMockErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,12 +44,10 @@ enum class ProtocolMockErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-
 };
 
-class AWS_PROTOCOLMOCK_API ProtocolMockError : public Aws::Client::AWSError<ProtocolMockErrors>
-{
-public:
+class AWS_PROTOCOLMOCK_API ProtocolMockError : public Aws::Client::AWSError<ProtocolMockErrors> {
+ public:
   ProtocolMockError() {}
   ProtocolMockError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ProtocolMockErrors>(rhs) {}
   ProtocolMockError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ProtocolMockErrors>(rhs) {}
@@ -63,10 +58,9 @@ public:
   T GetModeledError();
 };
 
-namespace ProtocolMockErrorMapper
-{
-  AWS_PROTOCOLMOCK_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ProtocolMockErrorMapper {
+AWS_PROTOCOLMOCK_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ProtocolMock
-} // namespace Aws
+}  // namespace ProtocolMock
+}  // namespace Aws

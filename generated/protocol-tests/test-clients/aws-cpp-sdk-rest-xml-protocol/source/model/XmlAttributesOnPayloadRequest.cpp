@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rest-xml-protocol/model/XmlAttributesOnPayloadRequest.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/rest-xml-protocol/model/XmlAttributesOnPayloadRequest.h>
 
 #include <utility>
 
@@ -14,20 +14,15 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-
-Aws::String XmlAttributesOnPayloadRequest::SerializePayload() const
-{
+Aws::String XmlAttributesOnPayloadRequest::SerializePayload() const {
   XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("payload");
 
   XmlNode parentNode = payloadDoc.GetRootElement();
 
   m_payload.AddToNode(parentNode);
-  if(parentNode.HasChildren())
-  {
+  if (parentNode.HasChildren()) {
     return payloadDoc.ConvertToString();
   }
 
   return {};
 }
-
-

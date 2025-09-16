@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/query-protocol/QueryProtocol_EXPORTS.h>
 
-namespace Aws
-{
-namespace QueryProtocol
-{
-enum class QueryProtocolErrors
-{
-  //From Core//
+namespace Aws {
+namespace QueryProtocol {
+enum class QueryProtocolErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class QueryProtocolErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,14 +44,13 @@ enum class QueryProtocolErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  COMPLEX= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  COMPLEX = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CUSTOM_CODE,
   INVALID_GREETING
 };
 
-class AWS_QUERYPROTOCOL_API QueryProtocolError : public Aws::Client::AWSError<QueryProtocolErrors>
-{
-public:
+class AWS_QUERYPROTOCOL_API QueryProtocolError : public Aws::Client::AWSError<QueryProtocolErrors> {
+ public:
   QueryProtocolError() {}
   QueryProtocolError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<QueryProtocolErrors>(rhs) {}
   QueryProtocolError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<QueryProtocolErrors>(rhs) {}
@@ -65,10 +61,9 @@ public:
   T GetModeledError();
 };
 
-namespace QueryProtocolErrorMapper
-{
-  AWS_QUERYPROTOCOL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace QueryProtocolErrorMapper {
+AWS_QUERYPROTOCOL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace QueryProtocol
-} // namespace Aws
+}  // namespace QueryProtocol
+}  // namespace Aws

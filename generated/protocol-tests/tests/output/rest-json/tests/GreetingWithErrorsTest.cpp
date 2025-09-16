@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-json-protocol/RestJsonProtocolClient.h>
 #include <aws/rest-json-protocol/model/GreetingWithErrorsRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using GreetingWithErrors = AWS_PROTOCOL_TEST_SUITE;
 using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
@@ -23,11 +23,12 @@ AWS_PROTOCOL_TEST(GreetingWithErrors, RestJsonGreetingWithErrors) {
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const GreetingWithErrorsResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"greeting":"Hello"} )" */
-  EXPECT_EQ(R"(Hello)", result.GetGreeting());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"greeting":"Hello"} )" */
+    EXPECT_EQ(R"(Hello)", result.GetGreeting());
+  });
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors, RestJsonGreetingWithErrorsNoPayload) {
@@ -41,9 +42,10 @@ AWS_PROTOCOL_TEST(GreetingWithErrors, RestJsonGreetingWithErrorsNoPayload) {
   GreetingWithErrorsRequest request;
 
   auto outcome = client.GreetingWithErrors(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const GreetingWithErrorsResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"greeting":"Hello"} )" */
-  EXPECT_EQ(R"(Hello)", result.GetGreeting());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"greeting":"Hello"} )" */
+    EXPECT_EQ(R"(Hello)", result.GetGreeting());
+  });
 }

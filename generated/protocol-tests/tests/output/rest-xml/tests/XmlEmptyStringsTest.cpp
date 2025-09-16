@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-xml-protocol/RestXmlProtocolClient.h>
 #include <aws/rest-xml-protocol/model/XmlEmptyStringsRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using XmlEmptyStrings = AWS_PROTOCOL_TEST_SUITE;
 using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
@@ -23,11 +23,12 @@ AWS_PROTOCOL_TEST(XmlEmptyStrings, XmlEmptyStrings) {
   XmlEmptyStringsRequest request;
 
   auto outcome = client.XmlEmptyStrings(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const XmlEmptyStringsResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"emptyString":""} )" */
-  EXPECT_EQ(R"()", result.GetEmptyString());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"emptyString":""} )" */
+    EXPECT_EQ(R"()", result.GetEmptyString());
+  });
 }
 
 AWS_PROTOCOL_TEST(XmlEmptyStrings, XmlEmptySelfClosedStrings) {
@@ -42,9 +43,10 @@ AWS_PROTOCOL_TEST(XmlEmptyStrings, XmlEmptySelfClosedStrings) {
   XmlEmptyStringsRequest request;
 
   auto outcome = client.XmlEmptyStrings(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const XmlEmptyStringsResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"emptyString":""} )" */
-  EXPECT_EQ(R"()", result.GetEmptyString());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"emptyString":""} )" */
+    EXPECT_EQ(R"()", result.GetEmptyString());
+  });
 }

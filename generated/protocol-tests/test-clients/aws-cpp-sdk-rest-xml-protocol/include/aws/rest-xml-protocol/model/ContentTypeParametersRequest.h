@@ -4,45 +4,45 @@
  */
 
 #pragma once
-#include <aws/rest-xml-protocol/RestXmlProtocol_EXPORTS.h>
 #include <aws/rest-xml-protocol/RestXmlProtocolRequest.h>
+#include <aws/rest-xml-protocol/RestXmlProtocol_EXPORTS.h>
 
-namespace Aws
-{
-namespace RestXmlProtocol
-{
-namespace Model
-{
+namespace Aws {
+namespace RestXmlProtocol {
+namespace Model {
 
-  /**
-   */
-  class ContentTypeParametersRequest : public RestXmlProtocolRequest
-  {
-  public:
-    AWS_RESTXMLPROTOCOL_API ContentTypeParametersRequest() = default;
+/**
+ */
+class ContentTypeParametersRequest : public RestXmlProtocolRequest {
+ public:
+  AWS_RESTXMLPROTOCOL_API ContentTypeParametersRequest() = default;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ContentTypeParameters"; }
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ContentTypeParameters"; }
 
-    AWS_RESTXMLPROTOCOL_API Aws::String SerializePayload() const override;
+  AWS_RESTXMLPROTOCOL_API Aws::String SerializePayload() const override;
 
+  ///@{
 
-    ///@{
-    
-    inline int GetValue() const { return m_value; }
-    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
-    inline ContentTypeParametersRequest& WithValue(int value) { SetValue(value); return *this;}
-    ///@}
-  private:
+  inline int GetValue() const { return m_value; }
+  inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+  inline void SetValue(int value) {
+    m_valueHasBeenSet = true;
+    m_value = value;
+  }
+  inline ContentTypeParametersRequest& WithValue(int value) {
+    SetValue(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_value{0};
+  bool m_valueHasBeenSet = false;
+};
 
-    int m_value{0};
-    bool m_valueHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace RestXmlProtocol
-} // namespace Aws
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws
