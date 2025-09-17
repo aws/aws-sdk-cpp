@@ -317,6 +317,11 @@ Aws::String CreateTempFilePath()
     // Definition from the MSVC stdio.h
     #define L_tmpnam_s (sizeof("\\") + 16)
 #endif
+
+#ifdef __MINGW64_VERSION_MAJOR < 12
+    #undef L_tmpnam_s
+    #define L_tmpnam_s 260
+#endif
     char s_tempName[L_tmpnam_s+1];
 
     /*
@@ -328,7 +333,7 @@ Aws::String CreateTempFilePath()
     for more details.
     */
 
-#if _MSC_VER >= 1900
+#if _MSC_VER >= 1900 || defined(_UCRT)
     tmpnam_s(s_tempName, L_tmpnam_s);
 #else
     s_tempName[0] = '.';
