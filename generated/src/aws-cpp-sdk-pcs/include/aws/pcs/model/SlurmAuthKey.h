@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the the shared Slurm key.</p>
+     * <p>The Amazon Resource Name (ARN) of the shared Slurm key.</p>
      */
     inline const Aws::String& GetSecretArn() const { return m_secretArn; }
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }

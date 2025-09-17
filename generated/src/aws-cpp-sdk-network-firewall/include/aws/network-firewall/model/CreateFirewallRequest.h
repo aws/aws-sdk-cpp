@@ -217,8 +217,8 @@ namespace Model
      * <p>Required. The Availability Zones where you want to create firewall endpoints
      * for a transit gateway-attached firewall. You must specify at least one
      * Availability Zone. Consider enabling the firewall in every Availability Zone
-     * where you have workloads to maintain Availability Zone independence.</p> <p>You
-     * can modify Availability Zones later using <a>AssociateAvailabilityZones</a> or
+     * where you have workloads to maintain Availability Zone isolation.</p> <p>You can
+     * modify Availability Zones later using <a>AssociateAvailabilityZones</a> or
      * <a>DisassociateAvailabilityZones</a>, but this may briefly disrupt traffic. The
      * <code>AvailabilityZoneChangeProtection</code> setting controls whether you can
      * make these modifications.</p>

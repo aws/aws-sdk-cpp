@@ -98,10 +98,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies how EC2 instances are purchased on your behalf. Amazon Web Services
-     * PCS supports On-Demand and Spot instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance
-     * purchasing options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. If
+     * <p>Specifies how EC2 instances are purchased on your behalf. PCS supports
+     * On-Demand Instances, Spot Instances, and Amazon EC2 Capacity Blocks for ML. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Amazon
+     * EC2 billing and purchasing options</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide</i>. For more information about PCS support for Capacity Blocks, see
+     * <a
+     * href="https://docs.aws.amazon.com/pcs/latest/userguide/capacity-blocks.html">Using
+     * Amazon EC2 Capacity Blocks for ML with PCS</a> in the <i>PCS User Guide</i>. If
      * you don't provide this option, it defaults to On-Demand.</p>
      */
     inline PurchaseOption GetPurchaseOption() const { return m_purchaseOption; }
@@ -152,8 +157,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of EC2 instance configurations that Amazon Web Services PCS can
-     * provision in the compute node group.</p>
+     * <p>A list of EC2 instance configurations that PCS can provision in the compute
+     * node group.</p>
      */
     inline const Aws::Vector<InstanceConfig>& GetInstanceConfigs() const { return m_instanceConfigs; }
     inline bool InstanceConfigsHasBeenSet() const { return m_instanceConfigsHasBeenSet; }
