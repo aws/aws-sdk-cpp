@@ -1031,7 +1031,9 @@ namespace Model
     i8ge_24xlarge,
     i8ge_48xlarge,
     i8ge_metal_24xl,
-    i8ge_metal_48xl
+    i8ge_metal_48xl,
+    mac_m4_metal,
+    mac_m4pro_metal
   };
 
 namespace InstanceTypeMapper

@@ -201,6 +201,18 @@ namespace Model
     template<typename PolicyVariablesT = PolicyVariables>
     FirewallPolicy& WithPolicyVariables(PolicyVariablesT&& value) { SetPolicyVariables(std::forward<PolicyVariablesT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>When true, prevents TCP and TLS packets from reaching destination servers
+     * until TLS Inspection has evaluated Server Name Indication (SNI) rules. Requires
+     * an associated TLS Inspection configuration.</p>
+     */
+    inline bool GetEnableTLSSessionHolding() const { return m_enableTLSSessionHolding; }
+    inline bool EnableTLSSessionHoldingHasBeenSet() const { return m_enableTLSSessionHoldingHasBeenSet; }
+    inline void SetEnableTLSSessionHolding(bool value) { m_enableTLSSessionHoldingHasBeenSet = true; m_enableTLSSessionHolding = value; }
+    inline FirewallPolicy& WithEnableTLSSessionHolding(bool value) { SetEnableTLSSessionHolding(value); return *this;}
+    ///@}
   private:
 
     Aws::Vector<StatelessRuleGroupReference> m_statelessRuleGroupReferences;
@@ -229,6 +241,9 @@ namespace Model
 
     PolicyVariables m_policyVariables;
     bool m_policyVariablesHasBeenSet = false;
+
+    bool m_enableTLSSessionHolding{false};
+    bool m_enableTLSSessionHoldingHasBeenSet = false;
   };
 
 } // namespace Model
