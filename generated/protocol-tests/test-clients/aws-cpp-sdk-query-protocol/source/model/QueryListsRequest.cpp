@@ -3,108 +3,77 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/query-protocol/model/QueryListsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/query-protocol/model/QueryListsRequest.h>
 
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
-Aws::String QueryListsRequest::SerializePayload() const
-{
+Aws::String QueryListsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=QueryLists&";
-  if(m_listArgHasBeenSet)
-  {
-    if (m_listArg.empty())
-    {
+  if (m_listArgHasBeenSet) {
+    if (m_listArg.empty()) {
       ss << "ListArg=&";
-    }
-    else
-    {
+    } else {
       unsigned listArgCount = 1;
-      for(auto& item : m_listArg)
-      {
-        ss << "ListArg.member." << listArgCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_listArg) {
+        ss << "ListArg.member." << listArgCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         listArgCount++;
       }
     }
   }
 
-  if(m_complexListArgHasBeenSet)
-  {
-    if (m_complexListArg.empty())
-    {
+  if (m_complexListArgHasBeenSet) {
+    if (m_complexListArg.empty()) {
       ss << "ComplexListArg=&";
-    }
-    else
-    {
+    } else {
       unsigned complexListArgCount = 1;
-      for(auto& item : m_complexListArg)
-      {
+      for (auto& item : m_complexListArg) {
         item.OutputToStream(ss, "ComplexListArg.member.", complexListArgCount, "");
         complexListArgCount++;
       }
     }
   }
 
-  if(m_flattenedListArgHasBeenSet)
-  {
-    if (m_flattenedListArg.empty())
-    {
+  if (m_flattenedListArgHasBeenSet) {
+    if (m_flattenedListArg.empty()) {
       ss << "FlattenedListArg=&";
-    }
-    else
-    {
+    } else {
       unsigned flattenedListArgCount = 1;
-      for(auto& item : m_flattenedListArg)
-      {
-        ss << "FlattenedListArg.member." << flattenedListArgCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_flattenedListArg) {
+        ss << "FlattenedListArg.member." << flattenedListArgCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         flattenedListArgCount++;
       }
     }
   }
 
-  if(m_listArgWithXmlNameMemberHasBeenSet)
-  {
-    if (m_listArgWithXmlNameMember.empty())
-    {
+  if (m_listArgWithXmlNameMemberHasBeenSet) {
+    if (m_listArgWithXmlNameMember.empty()) {
       ss << "ListArgWithXmlNameMember=&";
-    }
-    else
-    {
+    } else {
       unsigned listArgWithXmlNameMemberCount = 1;
-      for(auto& item : m_listArgWithXmlNameMember)
-      {
-        ss << "ListArgWithXmlNameMember.item." << listArgWithXmlNameMemberCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_listArgWithXmlNameMember) {
+        ss << "ListArgWithXmlNameMember.item." << listArgWithXmlNameMemberCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         listArgWithXmlNameMemberCount++;
       }
     }
   }
 
-  if(m_flattenedListArgWithXmlNameHasBeenSet)
-  {
-    if (m_flattenedListArgWithXmlName.empty())
-    {
+  if (m_flattenedListArgWithXmlNameHasBeenSet) {
+    if (m_flattenedListArgWithXmlName.empty()) {
       ss << "FlattenedListArgWithXmlName=&";
-    }
-    else
-    {
+    } else {
       unsigned flattenedListArgWithXmlNameCount = 1;
-      for(auto& item : m_flattenedListArgWithXmlName)
-      {
-        ss << "Hi." << flattenedListArgWithXmlNameCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_flattenedListArgWithXmlName) {
+        ss << "Hi." << flattenedListArgWithXmlNameCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         flattenedListArgWithXmlNameCount++;
       }
     }
   }
 
-  if(m_nestedWithListHasBeenSet)
-  {
+  if (m_nestedWithListHasBeenSet) {
     m_nestedWithList.OutputToStream(ss, "NestedWithList");
   }
 
@@ -112,8 +81,4 @@ Aws::String QueryListsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  QueryListsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void QueryListsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

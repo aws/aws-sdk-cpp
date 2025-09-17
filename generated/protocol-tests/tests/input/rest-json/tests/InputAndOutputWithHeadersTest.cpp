@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-json-protocol/RestJsonProtocolClient.h>
 #include <aws/rest-json-protocol/model/InputAndOutputWithHeadersRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using InputAndOutputWithHeaders = AWS_PROTOCOL_TEST_SUITE;
 using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
@@ -65,7 +65,9 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonInputAndOutputWithNumericHe
   ExpectedRequest expectedRq;
   expectedRq.method = "POST";
   expectedRq.uri = "/InputAndOutputWithHeaders";
-  expectedRq.headers = {{"X-Byte", R"(1)"}, {"X-Double", R"(1.1)"}, {"X-Float", R"(1.1)"}, {"X-Integer", R"(123)"}, {"X-IntegerList", R"(1, 2, 3)"}, {"X-Long", R"(123)"}, {"X-Short", R"(123)"}};
+  expectedRq.headers = {{"X-Byte", R"(1)"},      {"X-Double", R"(1.1)"},          {"X-Float", R"(1.1)"},
+                        {"X-Integer", R"(123)"}, {"X-IntegerList", R"(1, 2, 3)"}, {"X-Long", R"(123)"},
+                        {"X-Short", R"(123)"}};
   ValidateRequestSent(expectedRq);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
@@ -95,7 +97,8 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonInputAndOutputWithTimestamp
   SetMockResponse();
 
   InputAndOutputWithHeadersRequest request;
-  request.SetHeaderTimestampList({Aws::Utils::DateTime(static_cast<int64_t>(1576540098)), Aws::Utils::DateTime(static_cast<int64_t>(1576540098))});
+  request.SetHeaderTimestampList(
+      {Aws::Utils::DateTime(static_cast<int64_t>(1576540098)), Aws::Utils::DateTime(static_cast<int64_t>(1576540098))});
 
   auto outcome = client.InputAndOutputWithHeaders(request);
   ExpectedRequest expectedRq;
@@ -113,7 +116,8 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonInputAndOutputWithEnumHeade
 
   InputAndOutputWithHeadersRequest request;
   request.SetHeaderEnum(FooEnumMapper::GetFooEnumForName(R"e(Foo)e"));
-  request.SetHeaderEnumList({FooEnumMapper::GetFooEnumForName(R"e(Foo)e"), FooEnumMapper::GetFooEnumForName(R"e(Bar)e"), FooEnumMapper::GetFooEnumForName(R"e(Baz)e")});
+  request.SetHeaderEnumList({FooEnumMapper::GetFooEnumForName(R"e(Foo)e"), FooEnumMapper::GetFooEnumForName(R"e(Bar)e"),
+                             FooEnumMapper::GetFooEnumForName(R"e(Baz)e")});
 
   auto outcome = client.InputAndOutputWithHeaders(request);
   ExpectedRequest expectedRq;

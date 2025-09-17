@@ -5,12 +5,8 @@
 
 #include <aws/query-protocol/QueryProtocolEndpointProvider.h>
 
-namespace Aws
-{
-namespace QueryProtocol
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace QueryProtocol
-} // namespace Aws
+namespace Aws {
+namespace QueryProtocol {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace QueryProtocol
+}  // namespace Aws

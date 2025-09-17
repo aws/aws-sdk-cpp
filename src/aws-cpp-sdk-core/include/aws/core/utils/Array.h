@@ -178,7 +178,7 @@ namespace Aws
                     return false;
                 }
 
-                if (m_length == other.m_length && m_capacity == other.m_capacity && m_data && other.m_data)
+                if (m_length == other.m_length && m_data && other.m_data)
                 {
                     for (unsigned i = 0; i < m_length; ++i)
                     {

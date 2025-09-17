@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-json-protocol/RestJsonProtocolClient.h>
 #include <aws/rest-json-protocol/model/HttpStringPayloadRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using HttpStringPayload = AWS_PROTOCOL_TEST_SUITE;
 using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
@@ -23,10 +23,15 @@ AWS_PROTOCOL_TEST(HttpStringPayload, RestJsonStringPayloadResponse) {
   HttpStringPayloadRequest request;
 
   auto outcome = client.HttpStringPayload(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const HttpStringPayloadResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"payload":"rawstring"} )" */
-  const Aws::String resultPayload = [&result](){Aws::StringStream ss; ss << result.GetPayload().rdbuf(); return ss.str();}();
-  EXPECT_STREQ(R"(rawstring)", resultPayload.c_str());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"payload":"rawstring"} )" */
+    const Aws::String resultPayload = [&result]() {
+      Aws::StringStream ss;
+      ss << result.GetPayload().rdbuf();
+      return ss.str();
+    }();
+    EXPECT_STREQ(R"(rawstring)", resultPayload.c_str());
+  });
 }

@@ -8,6 +8,7 @@
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/logs/model/Distribution.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -140,6 +141,41 @@ namespace Model
     inline void SetApplyOnTransformedLogs(bool value) { m_applyOnTransformedLogsHasBeenSet = true; m_applyOnTransformedLogs = value; }
     inline PutSubscriptionFilterRequest& WithApplyOnTransformedLogs(bool value) { SetApplyOnTransformedLogs(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A filter expression that specifies which log events should be processed by
+     * this subscription filter based on system fields such as source account and
+     * source region. Uses selection criteria syntax with operators like
+     * <code>=</code>, <code>!=</code>, <code>AND</code>, <code>OR</code>,
+     * <code>IN</code>, <code>NOT IN</code>. Example: <code>@aws.region NOT IN
+     * ["cn-north-1"]</code> or <code>@aws.account = "123456789012" AND @aws.region =
+     * "us-east-1"</code>. Maximum length: 2000 characters.</p>
+     */
+    inline const Aws::String& GetFieldSelectionCriteria() const { return m_fieldSelectionCriteria; }
+    inline bool FieldSelectionCriteriaHasBeenSet() const { return m_fieldSelectionCriteriaHasBeenSet; }
+    template<typename FieldSelectionCriteriaT = Aws::String>
+    void SetFieldSelectionCriteria(FieldSelectionCriteriaT&& value) { m_fieldSelectionCriteriaHasBeenSet = true; m_fieldSelectionCriteria = std::forward<FieldSelectionCriteriaT>(value); }
+    template<typename FieldSelectionCriteriaT = Aws::String>
+    PutSubscriptionFilterRequest& WithFieldSelectionCriteria(FieldSelectionCriteriaT&& value) { SetFieldSelectionCriteria(std::forward<FieldSelectionCriteriaT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A list of system fields to include in the log events sent to the subscription
+     * destination. Valid values are <code>@aws.account</code> and
+     * <code>@aws.region</code>. These fields provide source information for
+     * centralized log data in the forwarded payload.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetEmitSystemFields() const { return m_emitSystemFields; }
+    inline bool EmitSystemFieldsHasBeenSet() const { return m_emitSystemFieldsHasBeenSet; }
+    template<typename EmitSystemFieldsT = Aws::Vector<Aws::String>>
+    void SetEmitSystemFields(EmitSystemFieldsT&& value) { m_emitSystemFieldsHasBeenSet = true; m_emitSystemFields = std::forward<EmitSystemFieldsT>(value); }
+    template<typename EmitSystemFieldsT = Aws::Vector<Aws::String>>
+    PutSubscriptionFilterRequest& WithEmitSystemFields(EmitSystemFieldsT&& value) { SetEmitSystemFields(std::forward<EmitSystemFieldsT>(value)); return *this;}
+    template<typename EmitSystemFieldsT = Aws::String>
+    PutSubscriptionFilterRequest& AddEmitSystemFields(EmitSystemFieldsT&& value) { m_emitSystemFieldsHasBeenSet = true; m_emitSystemFields.emplace_back(std::forward<EmitSystemFieldsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_logGroupName;
@@ -162,6 +198,12 @@ namespace Model
 
     bool m_applyOnTransformedLogs{false};
     bool m_applyOnTransformedLogsHasBeenSet = false;
+
+    Aws::String m_fieldSelectionCriteria;
+    bool m_fieldSelectionCriteriaHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_emitSystemFields;
+    bool m_emitSystemFieldsHasBeenSet = false;
   };
 
 } // namespace Model

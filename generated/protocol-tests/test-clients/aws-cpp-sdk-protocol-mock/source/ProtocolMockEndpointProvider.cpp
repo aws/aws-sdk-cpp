@@ -5,12 +5,8 @@
 
 #include <aws/protocol-mock/ProtocolMockEndpointProvider.h>
 
-namespace Aws
-{
-namespace ProtocolMock
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ProtocolMock
-} // namespace Aws
+namespace Aws {
+namespace ProtocolMock {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ProtocolMock
+}  // namespace Aws

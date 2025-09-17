@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-json-protocol/RestJsonProtocolClient.h>
 #include <aws/rest-json-protocol/model/HttpPayloadWithUnionRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using HttpPayloadWithUnion = AWS_PROTOCOL_TEST_SUITE;
 using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
@@ -23,14 +23,15 @@ AWS_PROTOCOL_TEST(HttpPayloadWithUnion, RestJsonHttpPayloadWithUnion) {
   HttpPayloadWithUnionRequest request;
 
   auto outcome = client.HttpPayloadWithUnion(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const HttpPayloadWithUnionResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"nested":{"greeting":"hello"}} )" */
-  {
-    const UnionPayload& resultNested = result.GetNested();
-    EXPECT_EQ(R"(hello)", resultNested.GetGreeting());
-  }
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"nested":{"greeting":"hello"}} )" */
+    {
+      const UnionPayload& resultNested = result.GetNested();
+      EXPECT_EQ(R"(hello)", resultNested.GetGreeting());
+    }
+  });
 }
 
 AWS_PROTOCOL_TEST(HttpPayloadWithUnion, RestJsonHttpPayloadWithUnsetUnion) {
@@ -44,7 +45,8 @@ AWS_PROTOCOL_TEST(HttpPayloadWithUnion, RestJsonHttpPayloadWithUnsetUnion) {
   HttpPayloadWithUnionRequest request;
 
   auto outcome = client.HttpPayloadWithUnion(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-  /* expectedResult = R"( {} )" */
+  ValidateRequestSent([](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {} )" */
+  });
 }

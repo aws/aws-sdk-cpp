@@ -59,6 +59,20 @@ MetricFilter& MetricFilter::operator =(JsonView jsonValue)
     m_applyOnTransformedLogs = jsonValue.GetBool("applyOnTransformedLogs");
     m_applyOnTransformedLogsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("fieldSelectionCriteria"))
+  {
+    m_fieldSelectionCriteria = jsonValue.GetString("fieldSelectionCriteria");
+    m_fieldSelectionCriteriaHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("emitSystemFieldDimensions"))
+  {
+    Aws::Utils::Array<JsonView> emitSystemFieldDimensionsJsonList = jsonValue.GetArray("emitSystemFieldDimensions");
+    for(unsigned emitSystemFieldDimensionsIndex = 0; emitSystemFieldDimensionsIndex < emitSystemFieldDimensionsJsonList.GetLength(); ++emitSystemFieldDimensionsIndex)
+    {
+      m_emitSystemFieldDimensions.push_back(emitSystemFieldDimensionsJsonList[emitSystemFieldDimensionsIndex].AsString());
+    }
+    m_emitSystemFieldDimensionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -104,6 +118,23 @@ JsonValue MetricFilter::Jsonize() const
   if(m_applyOnTransformedLogsHasBeenSet)
   {
    payload.WithBool("applyOnTransformedLogs", m_applyOnTransformedLogs);
+
+  }
+
+  if(m_fieldSelectionCriteriaHasBeenSet)
+  {
+   payload.WithString("fieldSelectionCriteria", m_fieldSelectionCriteria);
+
+  }
+
+  if(m_emitSystemFieldDimensionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> emitSystemFieldDimensionsJsonList(m_emitSystemFieldDimensions.size());
+   for(unsigned emitSystemFieldDimensionsIndex = 0; emitSystemFieldDimensionsIndex < emitSystemFieldDimensionsJsonList.GetLength(); ++emitSystemFieldDimensionsIndex)
+   {
+     emitSystemFieldDimensionsJsonList[emitSystemFieldDimensionsIndex].AsString(m_emitSystemFieldDimensions[emitSystemFieldDimensionsIndex]);
+   }
+   payload.WithArray("emitSystemFieldDimensions", std::move(emitSystemFieldDimensionsJsonList));
 
   }
 

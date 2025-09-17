@@ -19,13 +19,21 @@
 
 /* Service model headers required in OSISClient header */
 #include <aws/osis/model/CreatePipelineResult.h>
+#include <aws/osis/model/CreatePipelineEndpointResult.h>
 #include <aws/osis/model/DeletePipelineResult.h>
+#include <aws/osis/model/DeletePipelineEndpointResult.h>
+#include <aws/osis/model/DeleteResourcePolicyResult.h>
 #include <aws/osis/model/GetPipelineResult.h>
 #include <aws/osis/model/GetPipelineBlueprintResult.h>
 #include <aws/osis/model/GetPipelineChangeProgressResult.h>
+#include <aws/osis/model/GetResourcePolicyResult.h>
 #include <aws/osis/model/ListPipelineBlueprintsResult.h>
+#include <aws/osis/model/ListPipelineEndpointConnectionsResult.h>
+#include <aws/osis/model/ListPipelineEndpointsResult.h>
 #include <aws/osis/model/ListPipelinesResult.h>
 #include <aws/osis/model/ListTagsForResourceResult.h>
+#include <aws/osis/model/PutResourcePolicyResult.h>
+#include <aws/osis/model/RevokePipelineEndpointConnectionsResult.h>
 #include <aws/osis/model/StartPipelineResult.h>
 #include <aws/osis/model/StopPipelineResult.h>
 #include <aws/osis/model/TagResourceResult.h>
@@ -33,6 +41,8 @@
 #include <aws/osis/model/UpdatePipelineResult.h>
 #include <aws/osis/model/ValidatePipelineResult.h>
 #include <aws/osis/model/ListPipelinesRequest.h>
+#include <aws/osis/model/ListPipelineEndpointsRequest.h>
+#include <aws/osis/model/ListPipelineEndpointConnectionsRequest.h>
 #include <aws/osis/model/ListPipelineBlueprintsRequest.h>
 /* End of service model headers required in OSISClient header */
 
@@ -75,13 +85,21 @@ namespace Aws
     {
       /* Service model forward declarations required in OSISClient header */
       class CreatePipelineRequest;
+      class CreatePipelineEndpointRequest;
       class DeletePipelineRequest;
+      class DeletePipelineEndpointRequest;
+      class DeleteResourcePolicyRequest;
       class GetPipelineRequest;
       class GetPipelineBlueprintRequest;
       class GetPipelineChangeProgressRequest;
+      class GetResourcePolicyRequest;
       class ListPipelineBlueprintsRequest;
+      class ListPipelineEndpointConnectionsRequest;
+      class ListPipelineEndpointsRequest;
       class ListPipelinesRequest;
       class ListTagsForResourceRequest;
+      class PutResourcePolicyRequest;
+      class RevokePipelineEndpointConnectionsRequest;
       class StartPipelineRequest;
       class StopPipelineRequest;
       class TagResourceRequest;
@@ -92,13 +110,21 @@ namespace Aws
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<CreatePipelineResult, OSISError> CreatePipelineOutcome;
+      typedef Aws::Utils::Outcome<CreatePipelineEndpointResult, OSISError> CreatePipelineEndpointOutcome;
       typedef Aws::Utils::Outcome<DeletePipelineResult, OSISError> DeletePipelineOutcome;
+      typedef Aws::Utils::Outcome<DeletePipelineEndpointResult, OSISError> DeletePipelineEndpointOutcome;
+      typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, OSISError> DeleteResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<GetPipelineResult, OSISError> GetPipelineOutcome;
       typedef Aws::Utils::Outcome<GetPipelineBlueprintResult, OSISError> GetPipelineBlueprintOutcome;
       typedef Aws::Utils::Outcome<GetPipelineChangeProgressResult, OSISError> GetPipelineChangeProgressOutcome;
+      typedef Aws::Utils::Outcome<GetResourcePolicyResult, OSISError> GetResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<ListPipelineBlueprintsResult, OSISError> ListPipelineBlueprintsOutcome;
+      typedef Aws::Utils::Outcome<ListPipelineEndpointConnectionsResult, OSISError> ListPipelineEndpointConnectionsOutcome;
+      typedef Aws::Utils::Outcome<ListPipelineEndpointsResult, OSISError> ListPipelineEndpointsOutcome;
       typedef Aws::Utils::Outcome<ListPipelinesResult, OSISError> ListPipelinesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, OSISError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<PutResourcePolicyResult, OSISError> PutResourcePolicyOutcome;
+      typedef Aws::Utils::Outcome<RevokePipelineEndpointConnectionsResult, OSISError> RevokePipelineEndpointConnectionsOutcome;
       typedef Aws::Utils::Outcome<StartPipelineResult, OSISError> StartPipelineOutcome;
       typedef Aws::Utils::Outcome<StopPipelineResult, OSISError> StopPipelineOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, OSISError> TagResourceOutcome;
@@ -109,13 +135,21 @@ namespace Aws
 
       /* Service model Outcome callable definitions */
       typedef std::future<CreatePipelineOutcome> CreatePipelineOutcomeCallable;
+      typedef std::future<CreatePipelineEndpointOutcome> CreatePipelineEndpointOutcomeCallable;
       typedef std::future<DeletePipelineOutcome> DeletePipelineOutcomeCallable;
+      typedef std::future<DeletePipelineEndpointOutcome> DeletePipelineEndpointOutcomeCallable;
+      typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
       typedef std::future<GetPipelineOutcome> GetPipelineOutcomeCallable;
       typedef std::future<GetPipelineBlueprintOutcome> GetPipelineBlueprintOutcomeCallable;
       typedef std::future<GetPipelineChangeProgressOutcome> GetPipelineChangeProgressOutcomeCallable;
+      typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
       typedef std::future<ListPipelineBlueprintsOutcome> ListPipelineBlueprintsOutcomeCallable;
+      typedef std::future<ListPipelineEndpointConnectionsOutcome> ListPipelineEndpointConnectionsOutcomeCallable;
+      typedef std::future<ListPipelineEndpointsOutcome> ListPipelineEndpointsOutcomeCallable;
       typedef std::future<ListPipelinesOutcome> ListPipelinesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
+      typedef std::future<RevokePipelineEndpointConnectionsOutcome> RevokePipelineEndpointConnectionsOutcomeCallable;
       typedef std::future<StartPipelineOutcome> StartPipelineOutcomeCallable;
       typedef std::future<StopPipelineOutcome> StopPipelineOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -129,13 +163,21 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const OSISClient*, const Model::CreatePipelineRequest&, const Model::CreatePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePipelineResponseReceivedHandler;
+    typedef std::function<void(const OSISClient*, const Model::CreatePipelineEndpointRequest&, const Model::CreatePipelineEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePipelineEndpointResponseReceivedHandler;
     typedef std::function<void(const OSISClient*, const Model::DeletePipelineRequest&, const Model::DeletePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePipelineResponseReceivedHandler;
+    typedef std::function<void(const OSISClient*, const Model::DeletePipelineEndpointRequest&, const Model::DeletePipelineEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePipelineEndpointResponseReceivedHandler;
+    typedef std::function<void(const OSISClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const OSISClient*, const Model::GetPipelineRequest&, const Model::GetPipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPipelineResponseReceivedHandler;
     typedef std::function<void(const OSISClient*, const Model::GetPipelineBlueprintRequest&, const Model::GetPipelineBlueprintOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPipelineBlueprintResponseReceivedHandler;
     typedef std::function<void(const OSISClient*, const Model::GetPipelineChangeProgressRequest&, const Model::GetPipelineChangeProgressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPipelineChangeProgressResponseReceivedHandler;
+    typedef std::function<void(const OSISClient*, const Model::GetResourcePolicyRequest&, const Model::GetResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const OSISClient*, const Model::ListPipelineBlueprintsRequest&, const Model::ListPipelineBlueprintsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPipelineBlueprintsResponseReceivedHandler;
+    typedef std::function<void(const OSISClient*, const Model::ListPipelineEndpointConnectionsRequest&, const Model::ListPipelineEndpointConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPipelineEndpointConnectionsResponseReceivedHandler;
+    typedef std::function<void(const OSISClient*, const Model::ListPipelineEndpointsRequest&, const Model::ListPipelineEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPipelineEndpointsResponseReceivedHandler;
     typedef std::function<void(const OSISClient*, const Model::ListPipelinesRequest&, const Model::ListPipelinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPipelinesResponseReceivedHandler;
     typedef std::function<void(const OSISClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const OSISClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
+    typedef std::function<void(const OSISClient*, const Model::RevokePipelineEndpointConnectionsRequest&, const Model::RevokePipelineEndpointConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokePipelineEndpointConnectionsResponseReceivedHandler;
     typedef std::function<void(const OSISClient*, const Model::StartPipelineRequest&, const Model::StartPipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartPipelineResponseReceivedHandler;
     typedef std::function<void(const OSISClient*, const Model::StopPipelineRequest&, const Model::StopPipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopPipelineResponseReceivedHandler;
     typedef std::function<void(const OSISClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;

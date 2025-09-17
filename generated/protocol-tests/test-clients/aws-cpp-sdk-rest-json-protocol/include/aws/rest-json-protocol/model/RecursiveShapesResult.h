@@ -4,61 +4,66 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rest-json-protocol/RestJsonProtocol_EXPORTS.h>
 #include <aws/rest-json-protocol/model/RecursiveShapesInputOutputNested1.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace RestJsonProtocol
-{
-namespace Model
-{
-  class RecursiveShapesResult
-  {
-  public:
-    AWS_RESTJSONPROTOCOL_API RecursiveShapesResult() = default;
-    AWS_RESTJSONPROTOCOL_API RecursiveShapesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_RESTJSONPROTOCOL_API RecursiveShapesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace RestJsonProtocol {
+namespace Model {
+class RecursiveShapesResult {
+ public:
+  AWS_RESTJSONPROTOCOL_API RecursiveShapesResult() = default;
+  AWS_RESTJSONPROTOCOL_API RecursiveShapesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_RESTJSONPROTOCOL_API RecursiveShapesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
 
-    ///@{
-    
-    inline const RecursiveShapesInputOutputNested1& GetNested() const { return m_nested; }
-    template<typename NestedT = RecursiveShapesInputOutputNested1>
-    void SetNested(NestedT&& value) { m_nestedHasBeenSet = true; m_nested = std::forward<NestedT>(value); }
-    template<typename NestedT = RecursiveShapesInputOutputNested1>
-    RecursiveShapesResult& WithNested(NestedT&& value) { SetNested(std::forward<NestedT>(value)); return *this;}
-    ///@}
+  inline const RecursiveShapesInputOutputNested1& GetNested() const { return m_nested; }
+  template <typename NestedT = RecursiveShapesInputOutputNested1>
+  void SetNested(NestedT&& value) {
+    m_nestedHasBeenSet = true;
+    m_nested = std::forward<NestedT>(value);
+  }
+  template <typename NestedT = RecursiveShapesInputOutputNested1>
+  RecursiveShapesResult& WithNested(NestedT&& value) {
+    SetNested(std::forward<NestedT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    RecursiveShapesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  ///@{
 
-    RecursiveShapesInputOutputNested1 m_nested;
-    bool m_nestedHasBeenSet = false;
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  RecursiveShapesResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  RecursiveShapesInputOutputNested1 m_nested;
+  bool m_nestedHasBeenSet = false;
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-} // namespace Model
-} // namespace RestJsonProtocol
-} // namespace Aws
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws

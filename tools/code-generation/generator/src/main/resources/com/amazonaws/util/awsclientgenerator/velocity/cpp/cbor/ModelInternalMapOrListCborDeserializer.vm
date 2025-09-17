@@ -1,0 +1,78 @@
+#set($recursionDepth=0)
+#set($value = $memberVarName)
+
+#if($shapeMember.list)
+auto peekType_${recursionDepth} = decoder->PeekType();
+if (peekType_${recursionDepth}.has_value() && (peekType_${recursionDepth}.value() == CborType::ArrayStart || peekType_${recursionDepth}.value() == CborType::IndefArrayStart))
+{
+  if (peekType_${recursionDepth}.value() == CborType::ArrayStart)
+  {
+    auto listSize_${recursionDepth} = decoder->PopNextArrayStart();
+    if(listSize_${recursionDepth}.has_value()){
+        for (size_t j_${recursionDepth} = 0; j_${recursionDepth} < listSize_${recursionDepth}.value(); j_${recursionDepth}++) {
+        #set($shapeMember = $member.shape.listMember.shape)
+        #set($recursionDepth= $recursionDepth + 1)
+        #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborDecodeListValue.vm")
+        #set($recursionDepth= $recursionDepth - 1)
+        }
+    }
+  }
+  else // IndefArrayStart
+  {
+    decoder->ConsumeNextSingleElement(); // consume the IndefArrayStart
+    while (decoder->LastError() == AWS_ERROR_UNKNOWN)
+    {
+      auto nextType_${recursionDepth} = decoder->PeekType();
+      if (!nextType_${recursionDepth}.has_value() || nextType_${recursionDepth}.value() == CborType::Break)
+      {
+        if (nextType_${recursionDepth}.has_value())
+        {
+          decoder->ConsumeNextSingleElement(); // consume the Break
+        }
+        break;
+      }
+      #set($shapeMember = $member.shape.listMember.shape)
+      #set($recursionDepth= $recursionDepth + 1)
+      #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborDecodeListValue.vm")
+      #set($recursionDepth= $recursionDepth - 1)
+    }
+  }
+}
+#elseif($shapeMember.map)
+auto peekType_${recursionDepth} = decoder->PeekType();
+if (peekType_${recursionDepth}.has_value() && (peekType_${recursionDepth}.value() == CborType::MapStart || peekType_${recursionDepth}.value() == CborType::IndefMapStart))
+{
+  if (peekType_${recursionDepth}.value() == CborType::MapStart)
+  {
+    auto mapSize_${recursionDepth} = decoder->PopNextMapStart();
+    if(mapSize_${recursionDepth}.has_value()){
+        for (size_t j_${recursionDepth} = 0; j_${recursionDepth} < mapSize_${recursionDepth}.value(); j_${recursionDepth}++) {
+        #set($shapeMember = $member.shape.mapValue.shape)
+        #set($recursionDepth= $recursionDepth + 1)
+        #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborDecodeMapValue.vm")
+        #set($recursionDepth= $recursionDepth - 1)
+        }
+    }
+  }
+  else // IndefMapStart
+  {
+    decoder->ConsumeNextSingleElement(); // consume the IndefMapStart
+    while (decoder->LastError() == AWS_ERROR_UNKNOWN)
+    {
+      auto nextType_${recursionDepth} = decoder->PeekType();
+      if (!nextType_${recursionDepth}.has_value() || nextType_${recursionDepth}.value() == CborType::Break)
+      {
+        if (nextType_${recursionDepth}.has_value())
+        {
+          decoder->ConsumeNextSingleElement(); // consume the Break
+        }
+        break;
+      }
+      #set($shapeMember = $member.shape.mapValue.shape)
+      #set($recursionDepth= $recursionDepth + 1)
+      #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborDecodeMapValue.vm")
+      #set($recursionDepth= $recursionDepth - 1)
+    }
+  }
+}
+#end

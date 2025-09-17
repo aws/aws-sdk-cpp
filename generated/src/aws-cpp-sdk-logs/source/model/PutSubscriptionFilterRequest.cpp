@@ -57,6 +57,23 @@ Aws::String PutSubscriptionFilterRequest::SerializePayload() const
 
   }
 
+  if(m_fieldSelectionCriteriaHasBeenSet)
+  {
+   payload.WithString("fieldSelectionCriteria", m_fieldSelectionCriteria);
+
+  }
+
+  if(m_emitSystemFieldsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> emitSystemFieldsJsonList(m_emitSystemFields.size());
+   for(unsigned emitSystemFieldsIndex = 0; emitSystemFieldsIndex < emitSystemFieldsJsonList.GetLength(); ++emitSystemFieldsIndex)
+   {
+     emitSystemFieldsJsonList[emitSystemFieldsIndex].AsString(m_emitSystemFields[emitSystemFieldsIndex]);
+   }
+   payload.WithArray("emitSystemFields", std::move(emitSystemFieldsJsonList));
+
+  }
+
   return payload.View().WriteReadable();
 }
 

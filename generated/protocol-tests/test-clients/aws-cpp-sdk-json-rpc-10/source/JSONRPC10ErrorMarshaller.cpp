@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::JSONRPC10;
 
-AWSError<CoreErrors> JSONRPC10ErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> JSONRPC10ErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = JSONRPC10ErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

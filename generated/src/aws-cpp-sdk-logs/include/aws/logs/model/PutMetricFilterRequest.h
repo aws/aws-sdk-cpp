@@ -101,6 +101,41 @@ namespace Model
     inline void SetApplyOnTransformedLogs(bool value) { m_applyOnTransformedLogsHasBeenSet = true; m_applyOnTransformedLogs = value; }
     inline PutMetricFilterRequest& WithApplyOnTransformedLogs(bool value) { SetApplyOnTransformedLogs(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A filter expression that specifies which log events should be processed by
+     * this metric filter based on system fields such as source account and source
+     * region. Uses selection criteria syntax with operators like <code>=</code>,
+     * <code>!=</code>, <code>AND</code>, <code>OR</code>, <code>IN</code>, <code>NOT
+     * IN</code>. Example: <code>@aws.region = "us-east-1"</code> or <code>@aws.account
+     * IN ["123456789012", "987654321098"]</code>. Maximum length: 2000 characters.</p>
+     */
+    inline const Aws::String& GetFieldSelectionCriteria() const { return m_fieldSelectionCriteria; }
+    inline bool FieldSelectionCriteriaHasBeenSet() const { return m_fieldSelectionCriteriaHasBeenSet; }
+    template<typename FieldSelectionCriteriaT = Aws::String>
+    void SetFieldSelectionCriteria(FieldSelectionCriteriaT&& value) { m_fieldSelectionCriteriaHasBeenSet = true; m_fieldSelectionCriteria = std::forward<FieldSelectionCriteriaT>(value); }
+    template<typename FieldSelectionCriteriaT = Aws::String>
+    PutMetricFilterRequest& WithFieldSelectionCriteria(FieldSelectionCriteriaT&& value) { SetFieldSelectionCriteria(std::forward<FieldSelectionCriteriaT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A list of system fields to emit as additional dimensions in the generated
+     * metrics. Valid values are <code>@aws.account</code> and
+     * <code>@aws.region</code>. These dimensions help identify the source of
+     * centralized log data and count toward the total dimension limit for metric
+     * filters.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetEmitSystemFieldDimensions() const { return m_emitSystemFieldDimensions; }
+    inline bool EmitSystemFieldDimensionsHasBeenSet() const { return m_emitSystemFieldDimensionsHasBeenSet; }
+    template<typename EmitSystemFieldDimensionsT = Aws::Vector<Aws::String>>
+    void SetEmitSystemFieldDimensions(EmitSystemFieldDimensionsT&& value) { m_emitSystemFieldDimensionsHasBeenSet = true; m_emitSystemFieldDimensions = std::forward<EmitSystemFieldDimensionsT>(value); }
+    template<typename EmitSystemFieldDimensionsT = Aws::Vector<Aws::String>>
+    PutMetricFilterRequest& WithEmitSystemFieldDimensions(EmitSystemFieldDimensionsT&& value) { SetEmitSystemFieldDimensions(std::forward<EmitSystemFieldDimensionsT>(value)); return *this;}
+    template<typename EmitSystemFieldDimensionsT = Aws::String>
+    PutMetricFilterRequest& AddEmitSystemFieldDimensions(EmitSystemFieldDimensionsT&& value) { m_emitSystemFieldDimensionsHasBeenSet = true; m_emitSystemFieldDimensions.emplace_back(std::forward<EmitSystemFieldDimensionsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_logGroupName;
@@ -117,6 +152,12 @@ namespace Model
 
     bool m_applyOnTransformedLogs{false};
     bool m_applyOnTransformedLogsHasBeenSet = false;
+
+    Aws::String m_fieldSelectionCriteria;
+    bool m_fieldSelectionCriteriaHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_emitSystemFieldDimensions;
+    bool m_emitSystemFieldDimensionsHasBeenSet = false;
   };
 
 } // namespace Model

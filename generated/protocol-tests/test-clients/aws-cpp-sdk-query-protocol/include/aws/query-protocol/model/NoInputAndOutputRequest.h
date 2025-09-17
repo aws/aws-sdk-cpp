@@ -4,37 +4,33 @@
  */
 
 #pragma once
-#include <aws/query-protocol/QueryProtocol_EXPORTS.h>
 #include <aws/query-protocol/QueryProtocolRequest.h>
+#include <aws/query-protocol/QueryProtocol_EXPORTS.h>
 
-namespace Aws
-{
-namespace QueryProtocol
-{
-namespace Model
-{
+namespace Aws {
+namespace QueryProtocol {
+namespace Model {
 
-  /**
-   */
-  class NoInputAndOutputRequest : public QueryProtocolRequest
-  {
-  public:
-    AWS_QUERYPROTOCOL_API NoInputAndOutputRequest() = default;
+/**
+ */
+class NoInputAndOutputRequest : public QueryProtocolRequest {
+ public:
+  AWS_QUERYPROTOCOL_API NoInputAndOutputRequest() = default;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "NoInputAndOutput"; }
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "NoInputAndOutput"; }
 
-    AWS_QUERYPROTOCOL_API Aws::String SerializePayload() const override;
+  AWS_QUERYPROTOCOL_API Aws::String SerializePayload() const override;
 
-  protected:
-    AWS_QUERYPROTOCOL_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+ protected:
+  AWS_QUERYPROTOCOL_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
 
-  public:
-  };
+ public:
+};
 
-} // namespace Model
-} // namespace QueryProtocol
-} // namespace Aws
+}  // namespace Model
+}  // namespace QueryProtocol
+}  // namespace Aws

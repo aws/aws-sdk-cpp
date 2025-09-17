@@ -42,7 +42,7 @@ ${macro.spaces}}
 ${macro.spaces}${dstObject}.SetBody(#SerializeStreamingPayload($macro.memberToSet.shape, $testInputParam.value));
 #elseif(!$macro.memberToSet)
 ${macro.spaces}${dstObject}.${macro.fieldSetter}($testInputParam.value);
-#else
+#elseif($testInputParam.value != "null")
 ${macro.spaces}${dstObject}.${macro.fieldSetter}(#SerializeSingleParameterMacro($macro.memberToSet.shape, $testInputParam.value));
 #end
 #end##macro FillParamsMacro
