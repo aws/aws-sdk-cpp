@@ -218,7 +218,7 @@ bool CreateDirectoryIfNotExists(const char* path, bool createParentDirs)
     for (size_t i = createParentDirs ? 0 : directoryName.size() - 1; i < directoryName.size(); i++)
     {
         // Create the intermediate directory if we find a delimiter and the delimiter is not the first char, or if this is the target directory.
-        if (i != 0 && (directoryName[i] == FileSystem::PATH_DELIM || i == directoryName.size() - 1))
+        if (i > 2 && (directoryName[i] == FileSystem::PATH_DELIM || i == directoryName.size() - 1))
         {
             // the last delimeter can be removed safely.
             if (directoryName[i] == FileSystem::PATH_DELIM) 
