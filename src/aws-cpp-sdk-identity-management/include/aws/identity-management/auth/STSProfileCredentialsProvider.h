@@ -52,7 +52,46 @@ namespace Aws
              */
             STSProfileCredentialsProvider(const Aws::String& profileName, std::chrono::minutes duration = std::chrono::minutes(60));
 
+            /**
+             * Use the provided profile name from the shared configuration file and a custom STS client.
+             *
+             * @param profileName The name of the profile in the shared configuration file.
+             * @param duration The duration, in minutes, of the role session, after which the credentials are expired.
+             * The value can range from 15 minutes up to the maximum session duration setting for the role. By default,
+             * the duration is set to 1 hour.
+             * Note: This credential provider refreshes the credentials 5 minutes before their expiration time. That
+             * ensures the credentials do not expire between the time they're checked and the time they're returned to
+             * the user.
+             * If the duration for the credentials is 5 minutes or less, the provider will refresh the credentials only
+             * when they expire.
+             * @param stsClientFactory A factory function that creates an STSClient with specific credentials.
+             * Using the overload where the function returns a shared_ptr is preferred.
+             *
+             */
             STSProfileCredentialsProvider(const Aws::String& profileName, std::chrono::minutes duration, const std::function<Aws::STS::STSClient*(const AWSCredentials&)> &stsClientFactory);
+
+            /**
+             * Use the provided profile name from the shared configuration file and a custom STS client.
+             *
+             * @param profileName The name of the profile in the shared configuration file.
+             * @param duration The duration, in minutes, of the role session, after which the credentials are expired.
+             * The value can range from 15 minutes up to the maximum session duration setting for the role. By default,
+             * the duration is set to 1 hour.
+             * Note: This credential provider refreshes the credentials 5 minutes before their expiration time. That
+             * ensures the credentials do not expire between the time they're checked and the time they're returned to
+             * the user.
+             * If the duration for the credentials is 5 minutes or less, the provider will refresh the credentials only
+             * when they expire.
+             * @param stsClientFactory A factory function that creates an STSClient with specific credentials.
+             *
+             */
+            STSProfileCredentialsProvider(const Aws::String& profileName, std::chrono::minutes duration, const std::function<std::shared_ptr<Aws::STS::STSClient>(const AWSCredentials&)> &stsClientFactory);
+
+            /**
+             * Compatibility constructor to assist with overload resolution when passing nullptr for the client factory.
+             *
+             */
+            STSProfileCredentialsProvider(const Aws::String& profileName, std::chrono::minutes duration, std::nullptr_t);
 
             /**
              * Fetches the credentials set from STS following the rules defined in the shared configuration file.
@@ -67,14 +106,16 @@ namespace Aws
              * Returns the assumed role credentials or empty credentials on error.
              */
             AWSCredentials GetCredentialsFromSTS(const AWSCredentials& credentials, const Aws::String& roleARN);
+            AWSCredentials GetCredentialsFromWebIdentity(const Config::Profile& profile);
         private:
             AWSCredentials GetCredentialsFromSTSInternal(const Aws::String& roleArn, Aws::STS::STSClient* client);
+            AWSCredentials GetCredentialsFromWebIdentityInternal(const Config::Profile& profile, Aws::STS::STSClient* client);
 
             Aws::String m_profileName;
             AWSCredentials m_credentials;
             const std::chrono::minutes m_duration;
             const std::chrono::milliseconds m_reloadFrequency;
-            std::function<Aws::STS::STSClient*(const AWSCredentials&)> m_stsClientFactory;
+            std::function<std::shared_ptr<Aws::STS::STSClient>(const AWSCredentials&)> m_stsClientFactory;
         };
     }
 }
