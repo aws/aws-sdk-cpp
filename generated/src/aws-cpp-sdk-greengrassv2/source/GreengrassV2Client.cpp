@@ -123,7 +123,7 @@ GreengrassV2Client::GreengrassV2Client(const std::shared_ptr<AWSCredentialsProvi
   GreengrassV2Client::GreengrassV2Client(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<GreengrassV2ErrorMarshaller>(ALLOCATION_TAG)),

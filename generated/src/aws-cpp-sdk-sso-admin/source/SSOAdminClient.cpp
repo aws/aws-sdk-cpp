@@ -169,7 +169,7 @@ SSOAdminClient::SSOAdminClient(const std::shared_ptr<AWSCredentialsProvider>& cr
   SSOAdminClient::SSOAdminClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SSOAdminErrorMarshaller>(ALLOCATION_TAG)),
