@@ -92,9 +92,23 @@ namespace Aws
             */
             S3EncryptionGetObjectOutcome GetObject(const Aws::S3::Model::GetObjectRequest& request) const;
 
+            /*
+            * Function to get an object decrypted from S3. Fails if stored Materials Description does not exactly match supplied contextMap
+            *
+            * Range gets using this method are deprecated. Please see
+            * <https://docs.aws.amazon.com/general/latest/gr/aws_sdk_cryptography.html> for more information
+            */
+            S3EncryptionGetObjectOutcome GetObject(const Aws::S3::Model::GetObjectRequest& request, const Aws::Map<Aws::String, Aws::String>& contextMap) const;
+
             inline bool MultipartUploadSupported() const { return false; }
 
         protected:
+            /*
+	     * GetObject with optional contextMap.
+	     * Fail if contextMap is supplied and does not exactly match stored Materials Description
+	    */
+            S3EncryptionGetObjectOutcome GetObjectInner(const Aws::S3::Model::GetObjectRequest& request, const Aws::Map<Aws::String, Aws::String> * contextMap) const;
+
             /*
             * Function to get the instruction file object of a encrypted object from S3. This instruction file object will be used to assist decryption.
             */
