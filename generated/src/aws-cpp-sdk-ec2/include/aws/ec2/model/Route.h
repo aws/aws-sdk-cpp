@@ -192,7 +192,8 @@ namespace Model
      * route table was created.</p> </li> <li> <p> <code>CreateRoute</code> - The route
      * was manually added to the route table.</p> </li> <li> <p>
      * <code>EnableVgwRoutePropagation</code> - The route was propagated by route
-     * propagation.</p> </li> </ul>
+     * propagation.</p> </li> <li> <p> <code>Advertisement</code> - The route was
+     * created dynamically by Amazon VPC Route Server.</p> </li> </ul>
      */
     inline RouteOrigin GetOrigin() const { return m_origin; }
     inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }

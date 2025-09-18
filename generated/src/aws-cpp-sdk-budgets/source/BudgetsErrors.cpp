@@ -24,6 +24,7 @@ static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int RESOURCE_LOCKED_HASH = HashingUtils::HashString("ResourceLockedException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int DUPLICATE_RECORD_HASH = HashingUtils::HashString("DuplicateRecordException");
+static const int BILLING_VIEW_HEALTH_STATUS_HASH = HashingUtils::HashString("BillingViewHealthStatusException");
 static const int CREATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CreationLimitExceededException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
 static const int EXPIRED_NEXT_TOKEN_HASH = HashingUtils::HashString("ExpiredNextTokenException");
@@ -56,6 +57,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DUPLICATE_RECORD_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BudgetsErrors::DUPLICATE_RECORD), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == BILLING_VIEW_HEALTH_STATUS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BudgetsErrors::BILLING_VIEW_HEALTH_STATUS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CREATION_LIMIT_EXCEEDED_HASH)
   {

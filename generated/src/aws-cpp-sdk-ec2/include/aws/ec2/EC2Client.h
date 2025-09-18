@@ -1980,20 +1980,18 @@ namespace EC2
          * that Local Zone, to another Local Zone in the same zone group, or to the parent
          * Region of the Local Zone.</p> </li> <li> <p>If the source snapshot is on an
          * Outpost, you can't copy it.</p> </li> </ul> <p>When copying snapshots to a
-         * Region, copies of encrypted EBS snapshots remain encrypted. Copies of
-         * unencrypted snapshots remain unencrypted, unless you enable encryption for the
-         * snapshot copy operation. By default, encrypted snapshot copies use the default
-         * KMS key; however, you can specify a different KMS key. To copy an encrypted
-         * snapshot that has been shared from another account, you must have permissions
-         * for the KMS key used to encrypt the snapshot.</p> <p>Snapshots copied to an
-         * Outpost are encrypted by default using the default encryption key for the
-         * Region, or a different key that you specify in the request using
-         * <b>KmsKeyId</b>. Outposts do not support unencrypted snapshots. For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon
-         * EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
-         *  <p>Snapshots copies have an arbitrary source volume ID. Do not use this
-         * volume ID for any purpose.</p>  <p>For more information, see <a
+         * Region, the encryption outcome for the snapshot copy depends on the Amazon EBS
+         * encryption by default setting for the destination Region, the encryption status
+         * of the source snapshot, and the encryption parameters you specify in the
+         * request. For more information, see <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-copy-snapshot.html#creating-encrypted-snapshots">
+         * Encryption and snapshot copying</a>.</p> <p>Snapshots copied to an Outpost must
+         * be encrypted. Unencrypted snapshots are not supported on Outposts. For more
+         * information, <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#considerations">
+         * Amazon EBS local snapshots on Outposts</a>.</p>  <p>Snapshots copies have
+         * an arbitrary source volume ID. Do not use this volume ID for any purpose.</p>
+         *  <p>For more information, see <a
          * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-copy-snapshot.html">Copy
          * an Amazon EBS snapshot</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2545,12 +2543,12 @@ namespace EC2
 
         /**
          * <p>Creates an Amazon FPGA Image (AFI) from the specified design checkpoint
-         * (DCP).</p> <p>The create operation is asynchronous. To verify that the AFI is
-         * ready for use, check the output logs.</p> <p>An AFI contains the FPGA bitstream
-         * that is ready to download to an FPGA. You can securely deploy an AFI on multiple
-         * FPGA-accelerated instances. For more information, see the <a
-         * href="https://github.com/aws/aws-fpga/">Amazon Web Services FPGA Hardware
-         * Development Kit</a>.</p><p><h3>See Also:</h3>   <a
+         * (DCP).</p> <p>The create operation is asynchronous. To verify that the AFI was
+         * successfully created and is ready for use, check the output logs.</p> <p>An AFI
+         * contains the FPGA bitstream that is ready to download to an FPGA. You can
+         * securely deploy an AFI on multiple FPGA-accelerated instances. For more
+         * information, see the <a href="https://github.com/aws/aws-fpga/">Amazon Web
+         * Services FPGA Hardware Development Kit</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFpgaImage">AWS
          * API Reference</a></p>
          */
@@ -13114,13 +13112,8 @@ namespace EC2
          * <p>Disables <i>block public access for AMIs</i> at the account level in the
          * specified Amazon Web Services Region. This removes the <i>block public
          * access</i> restriction from your account. With the restriction removed, you can
-         * publicly share your AMIs in the specified Amazon Web Services Region.</p> <p>The
-         * API can take up to 10 minutes to configure this setting. During this time, if
-         * you run <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html">GetImageBlockPublicAccessState</a>,
-         * the response will be <code>block-new-sharing</code>. When the API has completed
-         * the configuration, the response will be <code>unblocked</code>.</p> <p>For more
-         * information, see <a
+         * publicly share your AMIs in the specified Amazon Web Services Region.</p> <p>For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-to-amis.html">Block
          * public access to your AMIs</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a

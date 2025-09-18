@@ -291,8 +291,9 @@ namespace Model
      * <code>platform-details</code> - The platform (<code>Linux/UNIX</code> |
      * <code>Red Hat BYOL Linux</code> | <code> Red Hat Enterprise Linux</code> |
      * <code>Red Hat Enterprise Linux with HA</code> | <code>Red Hat Enterprise Linux
-     * with SQL Server Standard and HA</code> | <code>Red Hat Enterprise Linux with SQL
-     * Server Enterprise and HA</code> | <code>Red Hat Enterprise Linux with SQL Server
+     * with High Availability</code> | <code>Red Hat Enterprise Linux with SQL Server
+     * Standard and HA</code> | <code>Red Hat Enterprise Linux with SQL Server
+     * Enterprise and HA</code> | <code>Red Hat Enterprise Linux with SQL Server
      * Standard</code> | <code>Red Hat Enterprise Linux with SQL Server Web</code> |
      * <code>Red Hat Enterprise Linux with SQL Server Enterprise</code> | <code>SQL
      * Server Enterprise</code> | <code>SQL Server Standard</code> | <code>SQL Server
