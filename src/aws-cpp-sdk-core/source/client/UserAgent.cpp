@@ -49,6 +49,8 @@ const std::pair<UserAgentFeature, const char*> BUSINESS_METRIC_MAPPING[] = {
     {UserAgentFeature::CREDENTIALS_STS_ASSUME_ROLE, "i"},
     {UserAgentFeature::CREDENTIALS_STS_WEB_IDENTITY_TOKEN, "q"},
     {UserAgentFeature::CREDENTIALS_HTTP, "z"},
+    {UserAgentFeature::CREDENTIALS_SSO, "s"},
+    {UserAgentFeature::CREDENTIALS_SSO_LEGACY, "u"},
     {UserAgentFeature::CREDENTIALS_PROFILE_SOURCE_PROFILE, "p"},
 };
 
