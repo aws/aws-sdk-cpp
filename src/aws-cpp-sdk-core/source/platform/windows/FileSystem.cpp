@@ -318,7 +318,7 @@ Aws::String CreateTempFilePath()
     #define L_tmpnam_s (sizeof("\\") + 16)
 #endif
 
-#ifdef __MINGW64_VERSION_MAJOR < 12
+#if __MINGW64_VERSION_MAJOR < 12 && defined(_UCRT)
     #undef L_tmpnam_s
     #define L_tmpnam_s 260
 #endif
