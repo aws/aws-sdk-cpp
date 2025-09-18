@@ -524,6 +524,8 @@
 #include <aws/ec2/model/CreateVpnConnectionRouteRequest.h>
 #include <aws/ec2/model/CreateVpnGatewayRequest.h>
 #include <aws/ec2/model/CreateVpnGatewayResponse.h>
+#include <aws/ec2/model/CreationDateCondition.h>
+#include <aws/ec2/model/CreationDateConditionRequest.h>
 #include <aws/ec2/model/CreditSpecification.h>
 #include <aws/ec2/model/CreditSpecificationRequest.h>
 #include <aws/ec2/model/CurrencyCodeValues.h>
@@ -692,6 +694,8 @@
 #include <aws/ec2/model/DeleteVpnConnectionRequest.h>
 #include <aws/ec2/model/DeleteVpnConnectionRouteRequest.h>
 #include <aws/ec2/model/DeleteVpnGatewayRequest.h>
+#include <aws/ec2/model/DeprecationTimeCondition.h>
+#include <aws/ec2/model/DeprecationTimeConditionRequest.h>
 #include <aws/ec2/model/DeprovisionByoipCidrRequest.h>
 #include <aws/ec2/model/DeprovisionByoipCidrResponse.h>
 #include <aws/ec2/model/DeprovisionIpamByoasnRequest.h>

@@ -27,8 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>A <code>Field</code> of the channel that you want to search.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A <code>Field</code> of the channel that you want to search.</p> 
+   * <p>This operation isn't supported for <code>AppInstanceUsers</code> with a large
+   * number of memberships.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/SearchField">AWS
    * API Reference</a></p>
    */
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The values that you want to search for, a list of strings. The values must be
      * <code>AppInstanceUserArns</code> specified as a list of strings.</p> 
-     * <p>This operation isn't supported for <code>AppInstanceUsers</code> with large
+     * <p>This operation isn't supported for <code>AppInstanceUsers</code> with a large
      * number of memberships.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
