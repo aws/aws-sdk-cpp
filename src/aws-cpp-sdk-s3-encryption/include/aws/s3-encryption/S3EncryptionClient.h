@@ -106,7 +106,7 @@ namespace Aws
             /*
 	     * GetObject with optional contextMap.
 	     * Fail if contextMap is supplied and does not exactly match stored Materials Description
-	    */
+	     */
             S3EncryptionGetObjectOutcome GetObjectInner(const Aws::S3::Model::GetObjectRequest& request, const Aws::Map<Aws::String, Aws::String> * contextMap) const;
 
             /*
