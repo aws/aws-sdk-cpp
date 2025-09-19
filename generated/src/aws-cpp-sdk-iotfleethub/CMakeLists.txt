@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_IOTFLEETHUB_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/iotfleethub)
 install (FILES ${AWS_IOTFLEETHUB_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/iotfleethub/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

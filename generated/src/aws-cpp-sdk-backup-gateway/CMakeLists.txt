@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_BACKUP-GATEWAY_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/backup-gateway)
 install (FILES ${AWS_BACKUP-GATEWAY_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/backup-gateway/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

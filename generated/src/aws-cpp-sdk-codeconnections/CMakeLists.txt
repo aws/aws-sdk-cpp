@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_CODECONNECTIONS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/codeconnections)
 install (FILES ${AWS_CODECONNECTIONS_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/codeconnections/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_KENDRA_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/kendra)
 install (FILES ${AWS_KENDRA_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/kendra/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

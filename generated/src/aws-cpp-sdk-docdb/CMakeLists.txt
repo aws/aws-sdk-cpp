@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_DOCDB_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/docdb)
 install (FILES ${AWS_DOCDB_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/docdb/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

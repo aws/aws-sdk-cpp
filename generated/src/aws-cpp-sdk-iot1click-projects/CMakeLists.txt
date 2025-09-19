@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_IOT1CLICK-PROJECTS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/iot1click-projects)
 install (FILES ${AWS_IOT1CLICK-PROJECTS_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/iot1click-projects/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

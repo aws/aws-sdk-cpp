@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_KINESISANALYTICSV2_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/kinesisanalyticsv2)
 install (FILES ${AWS_KINESISANALYTICSV2_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/kinesisanalyticsv2/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

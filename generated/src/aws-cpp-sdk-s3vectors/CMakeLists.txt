@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_S3VECTORS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/s3vectors)
 install (FILES ${AWS_S3VECTORS_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/s3vectors/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

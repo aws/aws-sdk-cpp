@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_EBS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/ebs)
 install (FILES ${AWS_EBS_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/ebs/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

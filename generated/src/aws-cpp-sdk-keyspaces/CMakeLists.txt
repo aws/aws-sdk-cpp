@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_KEYSPACES_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/keyspaces)
 install (FILES ${AWS_KEYSPACES_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/keyspaces/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

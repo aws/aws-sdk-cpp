@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_SSM-GUICONNECT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/ssm-guiconnect)
 install (FILES ${AWS_SSM-GUICONNECT_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/ssm-guiconnect/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

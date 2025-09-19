@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_LEXV2-MODELS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/lexv2-models)
 install (FILES ${AWS_LEXV2-MODELS_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/lexv2-models/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

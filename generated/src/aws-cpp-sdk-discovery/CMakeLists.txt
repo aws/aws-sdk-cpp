@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_DISCOVERY_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/discovery)
 install (FILES ${AWS_DISCOVERY_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/discovery/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_WORKSPACES-THIN-CLIENT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/workspaces-thin-client)
 install (FILES ${AWS_WORKSPACES-THIN-CLIENT_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/workspaces-thin-client/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

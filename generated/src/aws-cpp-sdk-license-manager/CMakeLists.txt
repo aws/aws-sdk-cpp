@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_LICENSE-MANAGER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/license-manager)
 install (FILES ${AWS_LICENSE-MANAGER_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/license-manager/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

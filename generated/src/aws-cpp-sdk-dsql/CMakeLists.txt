@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_DSQL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/dsql)
 install (FILES ${AWS_DSQL_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/dsql/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

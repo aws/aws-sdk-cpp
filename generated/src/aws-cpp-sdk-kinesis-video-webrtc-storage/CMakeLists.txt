@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_KINESIS-VIDEO-WEBRTC-STORAGE_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/kinesis-video-webrtc-storage)
 install (FILES ${AWS_KINESIS-VIDEO-WEBRTC-STORAGE_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/kinesis-video-webrtc-storage/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

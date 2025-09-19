@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_GEO-MAPS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/geo-maps)
 install (FILES ${AWS_GEO-MAPS_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/geo-maps/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_SMS-VOICE_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/sms-voice)
 install (FILES ${AWS_SMS-VOICE_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/sms-voice/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

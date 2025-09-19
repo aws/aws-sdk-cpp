@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_SAGEMAKER-GEOSPATIAL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/sagemaker-geospatial)
 install (FILES ${AWS_SAGEMAKER-GEOSPATIAL_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/sagemaker-geospatial/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

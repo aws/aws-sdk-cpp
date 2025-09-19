@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_SAGEMAKER-FEATURESTORE-RUNTIME_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/sagemaker-featurestore-runtime)
 install (FILES ${AWS_SAGEMAKER-FEATURESTORE-RUNTIME_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/sagemaker-featurestore-runtime/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

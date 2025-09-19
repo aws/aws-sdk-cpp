@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_BILLING_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/billing)
 install (FILES ${AWS_BILLING_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/billing/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

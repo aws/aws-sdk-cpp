@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_MQ_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/mq)
 install (FILES ${AWS_MQ_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/mq/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

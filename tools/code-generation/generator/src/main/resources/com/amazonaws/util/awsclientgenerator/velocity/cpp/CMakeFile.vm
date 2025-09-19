@@ -128,7 +128,9 @@ setup_install()
 
 install (FILES ${cmakeVarStart}AWS_${projectNameCaps}_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/${metadata.projectName})
 install (FILES ${cmakeVarStart}AWS_${projectNameCaps}_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/${metadata.projectName}/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 #if($metadata.standalone)
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file(

@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_IOT-MANAGED-INTEGRATIONS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/iot-managed-integrations)
 install (FILES ${AWS_IOT-MANAGED-INTEGRATIONS_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/iot-managed-integrations/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_DYNAMODBSTREAMS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/dynamodbstreams)
 install (FILES ${AWS_DYNAMODBSTREAMS_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/dynamodbstreams/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

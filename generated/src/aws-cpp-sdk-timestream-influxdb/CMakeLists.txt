@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_TIMESTREAM-INFLUXDB_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/timestream-influxdb)
 install (FILES ${AWS_TIMESTREAM-INFLUXDB_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/timestream-influxdb/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

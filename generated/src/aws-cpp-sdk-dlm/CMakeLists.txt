@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_DLM_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/dlm)
 install (FILES ${AWS_DLM_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/dlm/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

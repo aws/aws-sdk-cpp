@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_B2BI_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/b2bi)
 install (FILES ${AWS_B2BI_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/b2bi/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

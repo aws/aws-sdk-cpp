@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_CONNECTCAMPAIGNS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/connectcampaigns)
 install (FILES ${AWS_CONNECTCAMPAIGNS_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/connectcampaigns/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 
