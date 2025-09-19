@@ -41,7 +41,7 @@ namespace Model
     ///@{
     /**
      * <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file
-     * was uploaded into Amazon QuickSight.</p>
+     * was uploaded into QuickSight.</p>
      */
     inline const ManifestFileLocation& GetManifestFileLocation() const { return m_manifestFileLocation; }
     inline bool ManifestFileLocationHasBeenSet() const { return m_manifestFileLocationHasBeenSet; }

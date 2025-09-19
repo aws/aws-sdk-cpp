@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A set of actions that correspond to Amazon QuickSight
-   * permissions.</p><p><h3>See Also:</h3>   <a
+   * <p>A set of actions that correspond to QuickSight permissions.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Capabilities">AWS
    * API Reference</a></p>
    */
@@ -267,6 +267,26 @@ namespace Model
     inline void SetIncludeContentInScheduledReportsEmail(CapabilityState value) { m_includeContentInScheduledReportsEmailHasBeenSet = true; m_includeContentInScheduledReportsEmail = value; }
     inline Capabilities& WithIncludeContentInScheduledReportsEmail(CapabilityState value) { SetIncludeContentInScheduledReportsEmail(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ability to perform dashboard-related actions.</p>
+     */
+    inline CapabilityState GetDashboard() const { return m_dashboard; }
+    inline bool DashboardHasBeenSet() const { return m_dashboardHasBeenSet; }
+    inline void SetDashboard(CapabilityState value) { m_dashboardHasBeenSet = true; m_dashboard = value; }
+    inline Capabilities& WithDashboard(CapabilityState value) { SetDashboard(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ability to perform analysis-related actions.</p>
+     */
+    inline CapabilityState GetAnalysis() const { return m_analysis; }
+    inline bool AnalysisHasBeenSet() const { return m_analysisHasBeenSet; }
+    inline void SetAnalysis(CapabilityState value) { m_analysisHasBeenSet = true; m_analysis = value; }
+    inline Capabilities& WithAnalysis(CapabilityState value) { SetAnalysis(value); return *this;}
+    ///@}
   private:
 
     CapabilityState m_exportToCsv{CapabilityState::NOT_SET};
@@ -337,6 +357,12 @@ namespace Model
 
     CapabilityState m_includeContentInScheduledReportsEmail{CapabilityState::NOT_SET};
     bool m_includeContentInScheduledReportsEmailHasBeenSet = false;
+
+    CapabilityState m_dashboard{CapabilityState::NOT_SET};
+    bool m_dashboardHasBeenSet = false;
+
+    CapabilityState m_analysis{CapabilityState::NOT_SET};
+    bool m_analysisHasBeenSet = false;
   };
 
 } // namespace Model

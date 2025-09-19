@@ -44,6 +44,44 @@ ImageCriterion& ImageCriterion::operator =(const XmlNode& xmlNode)
 
       m_imageProvidersHasBeenSet = true;
     }
+    XmlNode marketplaceProductCodesNode = resultNode.FirstChild("marketplaceProductCodeSet");
+    if(!marketplaceProductCodesNode.IsNull())
+    {
+      XmlNode marketplaceProductCodesMember = marketplaceProductCodesNode.FirstChild("item");
+      m_marketplaceProductCodesHasBeenSet = !marketplaceProductCodesMember.IsNull();
+      while(!marketplaceProductCodesMember.IsNull())
+      {
+        m_marketplaceProductCodes.push_back(marketplaceProductCodesMember.GetText());
+        marketplaceProductCodesMember = marketplaceProductCodesMember.NextNode("item");
+      }
+
+      m_marketplaceProductCodesHasBeenSet = true;
+    }
+    XmlNode imageNamesNode = resultNode.FirstChild("imageNameSet");
+    if(!imageNamesNode.IsNull())
+    {
+      XmlNode imageNamesMember = imageNamesNode.FirstChild("item");
+      m_imageNamesHasBeenSet = !imageNamesMember.IsNull();
+      while(!imageNamesMember.IsNull())
+      {
+        m_imageNames.push_back(imageNamesMember.GetText());
+        imageNamesMember = imageNamesMember.NextNode("item");
+      }
+
+      m_imageNamesHasBeenSet = true;
+    }
+    XmlNode deprecationTimeConditionNode = resultNode.FirstChild("deprecationTimeCondition");
+    if(!deprecationTimeConditionNode.IsNull())
+    {
+      m_deprecationTimeCondition = deprecationTimeConditionNode;
+      m_deprecationTimeConditionHasBeenSet = true;
+    }
+    XmlNode creationDateConditionNode = resultNode.FirstChild("creationDateCondition");
+    if(!creationDateConditionNode.IsNull())
+    {
+      m_creationDateCondition = creationDateConditionNode;
+      m_creationDateConditionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -60,6 +98,38 @@ void ImageCriterion::OutputToStream(Aws::OStream& oStream, const char* location,
       }
   }
 
+  if(m_marketplaceProductCodesHasBeenSet)
+  {
+      unsigned marketplaceProductCodesIdx = 1;
+      for(auto& item : m_marketplaceProductCodes)
+      {
+        oStream << location << index << locationValue << ".MarketplaceProductCodeSet." << marketplaceProductCodesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
+  if(m_imageNamesHasBeenSet)
+  {
+      unsigned imageNamesIdx = 1;
+      for(auto& item : m_imageNames)
+      {
+        oStream << location << index << locationValue << ".ImageNameSet." << imageNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
+  if(m_deprecationTimeConditionHasBeenSet)
+  {
+      Aws::StringStream deprecationTimeConditionLocationAndMemberSs;
+      deprecationTimeConditionLocationAndMemberSs << location << index << locationValue << ".DeprecationTimeCondition";
+      m_deprecationTimeCondition.OutputToStream(oStream, deprecationTimeConditionLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_creationDateConditionHasBeenSet)
+  {
+      Aws::StringStream creationDateConditionLocationAndMemberSs;
+      creationDateConditionLocationAndMemberSs << location << index << locationValue << ".CreationDateCondition";
+      m_creationDateCondition.OutputToStream(oStream, creationDateConditionLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void ImageCriterion::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -71,6 +141,34 @@ void ImageCriterion::OutputToStream(Aws::OStream& oStream, const char* location)
       {
         oStream << location << ".ImageProviderSet." << imageProvidersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_marketplaceProductCodesHasBeenSet)
+  {
+      unsigned marketplaceProductCodesIdx = 1;
+      for(auto& item : m_marketplaceProductCodes)
+      {
+        oStream << location << ".MarketplaceProductCodeSet." << marketplaceProductCodesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_imageNamesHasBeenSet)
+  {
+      unsigned imageNamesIdx = 1;
+      for(auto& item : m_imageNames)
+      {
+        oStream << location << ".ImageNameSet." << imageNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_deprecationTimeConditionHasBeenSet)
+  {
+      Aws::String deprecationTimeConditionLocationAndMember(location);
+      deprecationTimeConditionLocationAndMember += ".DeprecationTimeCondition";
+      m_deprecationTimeCondition.OutputToStream(oStream, deprecationTimeConditionLocationAndMember.c_str());
+  }
+  if(m_creationDateConditionHasBeenSet)
+  {
+      Aws::String creationDateConditionLocationAndMember(location);
+      creationDateConditionLocationAndMember += ".CreationDateCondition";
+      m_creationDateCondition.OutputToStream(oStream, creationDateConditionLocationAndMember.c_str());
   }
 }
 

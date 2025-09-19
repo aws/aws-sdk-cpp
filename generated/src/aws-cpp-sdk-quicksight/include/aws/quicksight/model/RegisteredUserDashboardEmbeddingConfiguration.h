@@ -42,7 +42,7 @@ namespace Model
     ///@{
     /**
      * <p>The dashboard ID for the dashboard that you want the user to see first. This
-     * ID is included in the output URL. When the URL in response is accessed, Amazon
+     * ID is included in the output URL. When the URL in response is accessed,
      * QuickSight renders this dashboard if the user has permissions to view it.</p>
      * <p>If the user does not have permission to view this dashboard, they see a
      * permissions error message.</p>
@@ -57,7 +57,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The feature configurations of an embbedded Amazon QuickSight dashboard.</p>
+     * <p>The feature configurations of an embbedded QuickSight dashboard.</p>
      */
     inline const RegisteredUserDashboardFeatureConfigurations& GetFeatureConfigurations() const { return m_featureConfigurations; }
     inline bool FeatureConfigurationsHasBeenSet() const { return m_featureConfigurationsHasBeenSet; }

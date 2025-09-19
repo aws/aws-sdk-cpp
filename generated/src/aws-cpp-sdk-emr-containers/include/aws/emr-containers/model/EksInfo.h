@@ -48,10 +48,26 @@ namespace Model
     template<typename NamespaceT = Aws::String>
     EksInfo& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The nodeLabel of the nodes where the resources of this virtual cluster can
+     * get scheduled. It requires relevant scaling and policy engine addons.</p>
+     */
+    inline const Aws::String& GetNodeLabel() const { return m_nodeLabel; }
+    inline bool NodeLabelHasBeenSet() const { return m_nodeLabelHasBeenSet; }
+    template<typename NodeLabelT = Aws::String>
+    void SetNodeLabel(NodeLabelT&& value) { m_nodeLabelHasBeenSet = true; m_nodeLabel = std::forward<NodeLabelT>(value); }
+    template<typename NodeLabelT = Aws::String>
+    EksInfo& WithNodeLabel(NodeLabelT&& value) { SetNodeLabel(std::forward<NodeLabelT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_namespace;
     bool m_namespaceHasBeenSet = false;
+
+    Aws::String m_nodeLabel;
+    bool m_nodeLabelHasBeenSet = false;
   };
 
 } // namespace Model

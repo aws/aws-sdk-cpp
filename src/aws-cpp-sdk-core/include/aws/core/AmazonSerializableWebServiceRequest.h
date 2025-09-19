@@ -20,6 +20,7 @@ namespace Aws
     static const char FORM_CONTENT_TYPE[]                  = "application/x-www-form-urlencoded";
     static const char AMZN_XML_CONTENT_TYPE[]              = "application/xml";
     static const char AMZN_EVENTSTREAM_CONTENT_TYPE[]      = "application/vnd.amazon.eventstream";
+    static const char CBOR_CONTENT_TYPE[]                  = "application/cbor";
 
     /**
      * High-level abstraction over AWS requests. GetBody() calls SerializePayload() and uses a stringbuf under the hood.

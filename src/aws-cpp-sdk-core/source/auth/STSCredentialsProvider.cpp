@@ -5,6 +5,7 @@
 #include <aws/core/Globals.h>
 #include <aws/core/auth/STSCredentialsProvider.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/crt/auth/Credentials.h>
 
@@ -106,7 +107,7 @@ AWSCredentials STSAssumeRoleWebIdentityCredentialsProvider::GetAWSCredentials() 
   m_refreshSignal.wait_for(lock, m_providerFuturesTimeoutMs, [&refreshDone]() -> bool { return refreshDone; });
 
   if (!credentials.IsEmpty()) {
-    credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_STS_ASSUME_ROLE);
+    credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_STS_WEB_IDENTITY_TOKEN);
   }
 
   return credentials;

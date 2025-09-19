@@ -46,8 +46,8 @@ namespace Model
      * <p>The category or classification of the cost driver.</p> <p>Values include:
      * BUNDLED_DISCOUNT, CREDIT, OUT_OF_CYCLE_CHARGE, REFUND,
      * RECURRING_RESERVATION_FEE, RESERVATION_USAGE, RI_VOLUME_DISCOUNT,
-     * SAVINGS_PLAN_USAGE, SAVINGS_PLAN_NEGATION, SAVINGS_PLAN_RECURRING_FEE,
-     * SUPPORT_FEE, TAX, UPFRONT_RESERVATION_FEE, USAGE_CHANGE, COMMITMENT</p>
+     * SAVINGS_PLAN_USAGE, SAVINGS_PLAN_RECURRING_FEE, SUPPORT_FEE, TAX,
+     * UPFRONT_RESERVATION_FEE, USAGE_CHANGE, COMMITMENT</p>
      */
     inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

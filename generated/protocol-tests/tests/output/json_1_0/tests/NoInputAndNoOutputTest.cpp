@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/json-rpc-10/JSONRPC10Client.h>
 #include <aws/json-rpc-10/model/NoInputAndNoOutputRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using NoInputAndNoOutput = AWS_PROTOCOL_TEST_SUITE;
 using JSONRPC10Client = Aws::JSONRPC10::JSONRPC10Client;
@@ -23,9 +23,10 @@ AWS_PROTOCOL_TEST(NoInputAndNoOutput, AwsJson10HandlesEmptyOutputShape) {
   NoInputAndNoOutputRequest request;
 
   auto outcome = client.NoInputAndNoOutput(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-  /* expectedResult = R"( {} )" */
+  ValidateRequestSent([](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {} )" */
+  });
 }
 
 AWS_PROTOCOL_TEST(NoInputAndNoOutput, AwsJson10HandlesUnexpectedJsonOutput) {
@@ -40,9 +41,10 @@ AWS_PROTOCOL_TEST(NoInputAndNoOutput, AwsJson10HandlesUnexpectedJsonOutput) {
   NoInputAndNoOutputRequest request;
 
   auto outcome = client.NoInputAndNoOutput(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-  /* expectedResult = R"( {} )" */
+  ValidateRequestSent([](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {} )" */
+  });
 }
 
 AWS_PROTOCOL_TEST(NoInputAndNoOutput, AwsJson10ServiceRespondsWithNoPayload) {
@@ -56,7 +58,8 @@ AWS_PROTOCOL_TEST(NoInputAndNoOutput, AwsJson10ServiceRespondsWithNoPayload) {
   NoInputAndNoOutputRequest request;
 
   auto outcome = client.NoInputAndNoOutput(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-  /* expectedResult = R"( {} )" */
+  ValidateRequestSent([](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {} )" */
+  });
 }

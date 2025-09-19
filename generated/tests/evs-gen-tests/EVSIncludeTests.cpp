@@ -14,6 +14,8 @@
 #include <aws/evs/EVSRequest.h>
 #include <aws/evs/EVSServiceClientModel.h>
 #include <aws/evs/EVS_EXPORTS.h>
+#include <aws/evs/model/AssociateEipToVlanRequest.h>
+#include <aws/evs/model/AssociateEipToVlanResult.h>
 #include <aws/evs/model/Check.h>
 #include <aws/evs/model/CheckResult.h>
 #include <aws/evs/model/CheckType.h>
@@ -26,6 +28,9 @@
 #include <aws/evs/model/DeleteEnvironmentHostResult.h>
 #include <aws/evs/model/DeleteEnvironmentRequest.h>
 #include <aws/evs/model/DeleteEnvironmentResult.h>
+#include <aws/evs/model/DisassociateEipFromVlanRequest.h>
+#include <aws/evs/model/DisassociateEipFromVlanResult.h>
+#include <aws/evs/model/EipAssociation.h>
 #include <aws/evs/model/Environment.h>
 #include <aws/evs/model/EnvironmentState.h>
 #include <aws/evs/model/EnvironmentSummary.h>

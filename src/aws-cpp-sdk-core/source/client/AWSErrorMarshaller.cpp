@@ -14,6 +14,7 @@
 using namespace Aws::Utils::Logging;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Cbor;
 using namespace Aws::Http;
 using namespace Aws::Utils;
 using namespace Aws::Client;
@@ -297,4 +298,32 @@ void JsonErrorMarshallerQueryCompatible::MarshallError(AWSError<CoreErrors>& err
       }
     }
   }
+}
+
+AWSError<CoreErrors> RpcV2ErrorMarshaller::Marshall(const Aws::Http::HttpResponse& httpResponse) const {
+  return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "Not implemented yet", "RpcV2ErrorMarshaller::Marshall not implemeneted yet: " + httpResponse.GetClientErrorMessage(), false);
+}
+
+AWSError<CoreErrors> RpcV2ErrorMarshaller::BuildAWSError(const std::shared_ptr<Http::HttpResponse>& httpResponse) const {
+  AWSError<CoreErrors> error;
+  if (httpResponse->HasClientError()) {
+    bool retryable = httpResponse->GetClientErrorType() == CoreErrors::NETWORK_CONNECTION ? true : false;
+    error = AWSError<CoreErrors>(httpResponse->GetClientErrorType(), "", httpResponse->GetClientErrorMessage(), retryable);
+  } else if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().tellp() < 1) {
+    auto responseCode = httpResponse->GetResponseCode();
+    auto errorCode = GuessBodylessErrorType(responseCode);
+
+    Aws::StringStream ss;
+    ss << "No response body.";
+    error = AWSError<CoreErrors>(errorCode, "", ss.str(), IsRetryableHttpResponseCode(responseCode));
+  } else {
+    assert(httpResponse->GetResponseCode() != HttpResponseCode::OK);
+    error = Marshall(*httpResponse);
+  }
+
+  error.SetResponseHeaders(httpResponse->GetHeaders());
+  error.SetResponseCode(httpResponse->GetResponseCode());
+  error.SetRemoteHostIpAddress(httpResponse->GetOriginatingRequest().GetResolvedRemoteHost());
+  AWS_LOGSTREAM_ERROR(AWS_ERROR_MARSHALLER_LOG_TAG, error);
+  return error;
 }

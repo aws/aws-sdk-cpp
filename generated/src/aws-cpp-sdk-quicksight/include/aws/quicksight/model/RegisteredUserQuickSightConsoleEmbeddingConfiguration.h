@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about the Amazon QuickSight console that you want to
+   * <p>Information about the QuickSight console that you want to
    * embed.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RegisteredUserQuickSightConsoleEmbeddingConfiguration">AWS
    * API Reference</a></p>
@@ -41,16 +41,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The initial URL path for the Amazon QuickSight console.
-     * <code>InitialPath</code> is required.</p> <p>The entry point URL is constrained
-     * to the following paths:</p> <ul> <li> <p> <code>/start</code> </p> </li> <li>
-     * <p> <code>/start/analyses</code> </p> </li> <li> <p>
-     * <code>/start/dashboards</code> </p> </li> <li> <p> <code>/start/favorites</code>
-     * </p> </li> <li> <p> <code>/dashboards/DashboardId</code>. <i>DashboardId</i> is
-     * the actual ID key from the Amazon QuickSight console URL of the dashboard.</p>
-     * </li> <li> <p> <code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the
-     * actual ID key from the Amazon QuickSight console URL of the analysis.</p> </li>
-     * </ul>
+     * <p>The initial URL path for the QuickSight console. <code>InitialPath</code> is
+     * required.</p> <p>The entry point URL is constrained to the following paths:</p>
+     * <ul> <li> <p> <code>/start</code> </p> </li> <li> <p>
+     * <code>/start/analyses</code> </p> </li> <li> <p> <code>/start/dashboards</code>
+     * </p> </li> <li> <p> <code>/start/favorites</code> </p> </li> <li> <p>
+     * <code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key
+     * from the QuickSight console URL of the dashboard.</p> </li> <li> <p>
+     * <code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from
+     * the QuickSight console URL of the analysis.</p> </li> </ul>
      */
     inline const Aws::String& GetInitialPath() const { return m_initialPath; }
     inline bool InitialPathHasBeenSet() const { return m_initialPathHasBeenSet; }
@@ -62,7 +61,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The embedding configuration of an embedded Amazon QuickSight console.</p>
+     * <p>The embedding configuration of an embedded QuickSight console.</p>
      */
     inline const RegisteredUserConsoleFeatureConfigurations& GetFeatureConfigurations() const { return m_featureConfigurations; }
     inline bool FeatureConfigurationsHasBeenSet() const { return m_featureConfigurationsHasBeenSet; }

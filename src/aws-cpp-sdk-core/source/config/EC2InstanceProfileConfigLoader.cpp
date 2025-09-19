@@ -40,8 +40,10 @@ namespace Aws
         }
         
         EC2InstanceProfileConfigLoader::EC2InstanceProfileConfigLoader(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialConfig)
-            : m_ec2metadataClient(Aws::MakeShared<Aws::Internal::EC2MetadataClient>(EC2_INSTANCE_PROFILE_LOG_TAG, credentialConfig))
-        {}
+        {
+            Aws::Internal::InitEC2MetadataClient(credentialConfig);
+            m_ec2metadataClient = Aws::Internal::GetEC2MetadataClient();
+        }
 
         bool EC2InstanceProfileConfigLoader::LoadInternal()
         {

@@ -7,6 +7,7 @@
 #include <aws/emr-containers/EMRContainers_EXPORTS.h>
 #include <aws/emr-containers/EMRContainersRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/emr-containers/model/ContainerProvider.h>
 #include <aws/emr-containers/model/SecurityConfigurationData.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -62,6 +63,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The container provider associated with the security configuration.</p>
+     */
+    inline const ContainerProvider& GetContainerProvider() const { return m_containerProvider; }
+    inline bool ContainerProviderHasBeenSet() const { return m_containerProviderHasBeenSet; }
+    template<typename ContainerProviderT = ContainerProvider>
+    void SetContainerProvider(ContainerProviderT&& value) { m_containerProviderHasBeenSet = true; m_containerProvider = std::forward<ContainerProviderT>(value); }
+    template<typename ContainerProviderT = ContainerProvider>
+    CreateSecurityConfigurationRequest& WithContainerProvider(ContainerProviderT&& value) { SetContainerProvider(std::forward<ContainerProviderT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Security configuration input for the request.</p>
      */
     inline const SecurityConfigurationData& GetSecurityConfigurationData() const { return m_securityConfigurationData; }
@@ -94,6 +107,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    ContainerProvider m_containerProvider;
+    bool m_containerProviderHasBeenSet = false;
 
     SecurityConfigurationData m_securityConfigurationData;
     bool m_securityConfigurationDataHasBeenSet = false;

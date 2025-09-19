@@ -23,6 +23,7 @@ namespace Aws
         static const int AWS_EC2_VPC_HASH = HashingUtils::HashString("AWS::EC2::VPC");
         static const int AWS_AvailabilityZone_HASH = HashingUtils::HashString("AWS::AvailabilityZone");
         static const int AWS_EC2_Subnet_HASH = HashingUtils::HashString("AWS::EC2::Subnet");
+        static const int AWS_Region_HASH = HashingUtils::HashString("AWS::Region");
 
 
         MonitorLocalResourceType GetMonitorLocalResourceTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == AWS_EC2_Subnet_HASH)
           {
             return MonitorLocalResourceType::AWS_EC2_Subnet;
+          }
+          else if (hashCode == AWS_Region_HASH)
+          {
+            return MonitorLocalResourceType::AWS_Region;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "AWS::AvailabilityZone";
           case MonitorLocalResourceType::AWS_EC2_Subnet:
             return "AWS::EC2::Subnet";
+          case MonitorLocalResourceType::AWS_Region:
+            return "AWS::Region";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

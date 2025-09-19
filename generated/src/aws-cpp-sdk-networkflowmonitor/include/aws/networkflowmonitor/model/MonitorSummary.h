@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>A summary of information about a monitor, includ the ARN, the name, and the
-   * status.</p><p><h3>See Also:</h3>   <a
+   * <p>A summary of information about a monitor, including the ARN, the name, and
+   * the status.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/MonitorSummary">AWS
    * API Reference</a></p>
    */

@@ -10,6 +10,7 @@
 #include <aws/s3control/model/KeyNameConstraint.h>
 #include <aws/s3control/model/ReplicationStatus.h>
 #include <aws/s3control/model/S3StorageClass.h>
+#include <aws/s3control/model/ObjectEncryptionFilter.h>
 #include <utility>
 
 namespace Aws
@@ -143,6 +144,25 @@ namespace Model
     JobManifestGeneratorFilter& WithMatchAnyStorageClass(MatchAnyStorageClassT&& value) { SetMatchAnyStorageClass(std::forward<MatchAnyStorageClassT>(value)); return *this;}
     inline JobManifestGeneratorFilter& AddMatchAnyStorageClass(S3StorageClass value) { m_matchAnyStorageClassHasBeenSet = true; m_matchAnyStorageClass.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>If provided, the generated object list includes only source bucket objects
+     * with the indicated server-side encryption type (SSE-S3, SSE-KMS, DSSE-KMS,
+     * SSE-C, or NOT-SSE). If you select SSE-KMS or DSSE-KMS, you can optionally
+     * further filter your results by specifying a specific KMS Key ARN. If you select
+     * SSE-KMS, you can also optionally further filter your results by Bucket Key
+     * enabled status.</p>
+     */
+    inline const Aws::Vector<ObjectEncryptionFilter>& GetMatchAnyObjectEncryption() const { return m_matchAnyObjectEncryption; }
+    inline bool MatchAnyObjectEncryptionHasBeenSet() const { return m_matchAnyObjectEncryptionHasBeenSet; }
+    template<typename MatchAnyObjectEncryptionT = Aws::Vector<ObjectEncryptionFilter>>
+    void SetMatchAnyObjectEncryption(MatchAnyObjectEncryptionT&& value) { m_matchAnyObjectEncryptionHasBeenSet = true; m_matchAnyObjectEncryption = std::forward<MatchAnyObjectEncryptionT>(value); }
+    template<typename MatchAnyObjectEncryptionT = Aws::Vector<ObjectEncryptionFilter>>
+    JobManifestGeneratorFilter& WithMatchAnyObjectEncryption(MatchAnyObjectEncryptionT&& value) { SetMatchAnyObjectEncryption(std::forward<MatchAnyObjectEncryptionT>(value)); return *this;}
+    template<typename MatchAnyObjectEncryptionT = ObjectEncryptionFilter>
+    JobManifestGeneratorFilter& AddMatchAnyObjectEncryption(MatchAnyObjectEncryptionT&& value) { m_matchAnyObjectEncryptionHasBeenSet = true; m_matchAnyObjectEncryption.emplace_back(std::forward<MatchAnyObjectEncryptionT>(value)); return *this; }
+    ///@}
   private:
 
     bool m_eligibleForReplication{false};
@@ -168,6 +188,9 @@ namespace Model
 
     Aws::Vector<S3StorageClass> m_matchAnyStorageClass;
     bool m_matchAnyStorageClassHasBeenSet = false;
+
+    Aws::Vector<ObjectEncryptionFilter> m_matchAnyObjectEncryption;
+    bool m_matchAnyObjectEncryptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>An asset in a Amazon QuickSight folder, such as a dashboard, analysis, or
+   * <p>An asset in a QuickSight folder, such as a dashboard, analysis, or
    * dataset.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FolderMember">AWS
    * API Reference</a></p>

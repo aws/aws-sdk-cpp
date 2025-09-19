@@ -139,6 +139,7 @@
 #include <aws/rds/model/DBSnapshotTenantDatabase.h>
 #include <aws/rds/model/DBSubnetGroup.h>
 #include <aws/rds/model/DatabaseInsightsMode.h>
+#include <aws/rds/model/DefaultAuthScheme.h>
 #include <aws/rds/model/DeleteBlueGreenDeploymentRequest.h>
 #include <aws/rds/model/DeleteBlueGreenDeploymentResult.h>
 #include <aws/rds/model/DeleteCustomDBEngineVersionRequest.h>

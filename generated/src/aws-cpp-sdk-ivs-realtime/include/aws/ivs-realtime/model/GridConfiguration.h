@@ -104,6 +104,21 @@ namespace Model
     inline void SetGridGap(int value) { m_gridGapHasBeenSet = true; m_gridGap = value; }
     inline GridConfiguration& WithGridGap(int value) { SetGridGap(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Attribute name in <a>ParticipantTokenConfiguration</a> identifying the
+     * participant ordering key. Participants with
+     * <code>participantOrderAttribute</code> set to <code>""</code> or not specified
+     * are ordered based on their arrival time into the stage.</p>
+     */
+    inline const Aws::String& GetParticipantOrderAttribute() const { return m_participantOrderAttribute; }
+    inline bool ParticipantOrderAttributeHasBeenSet() const { return m_participantOrderAttributeHasBeenSet; }
+    template<typename ParticipantOrderAttributeT = Aws::String>
+    void SetParticipantOrderAttribute(ParticipantOrderAttributeT&& value) { m_participantOrderAttributeHasBeenSet = true; m_participantOrderAttribute = std::forward<ParticipantOrderAttributeT>(value); }
+    template<typename ParticipantOrderAttributeT = Aws::String>
+    GridConfiguration& WithParticipantOrderAttribute(ParticipantOrderAttributeT&& value) { SetParticipantOrderAttribute(std::forward<ParticipantOrderAttributeT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_featuredParticipantAttribute;
@@ -120,6 +135,9 @@ namespace Model
 
     int m_gridGap{0};
     bool m_gridGapHasBeenSet = false;
+
+    Aws::String m_participantOrderAttribute;
+    bool m_participantOrderAttributeHasBeenSet = false;
   };
 
 } // namespace Model

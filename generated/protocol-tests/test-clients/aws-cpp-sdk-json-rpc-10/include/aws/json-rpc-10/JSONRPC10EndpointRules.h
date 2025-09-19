@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/json-rpc-10/JSONRPC10_EXPORTS.h>
 
-namespace Aws
-{
-namespace JSONRPC10
-{
-class JSONRPC10EndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace JSONRPC10 {
+class JSONRPC10EndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace JSONRPC10
-} // namespace Aws
+}  // namespace JSONRPC10
+}  // namespace Aws

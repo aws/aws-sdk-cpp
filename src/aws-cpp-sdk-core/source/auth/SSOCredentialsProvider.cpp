@@ -101,6 +101,13 @@ void SSOCredentialsProvider::Reload()
     AWS_LOGSTREAM_TRACE(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Successfully retrieved credentials with AWS_ACCESS_KEY: " << result.creds.GetAWSAccessKeyId());
 
     m_credentials = result.creds;
+    if (!m_credentials.IsEmpty()) {
+        if (!profile.IsSsoSessionSet()) {
+          m_credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_SSO_LEGACY);
+        } else {
+          m_credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_SSO);
+        }
+    }
 }
 
 void SSOCredentialsProvider::RefreshIfExpired()

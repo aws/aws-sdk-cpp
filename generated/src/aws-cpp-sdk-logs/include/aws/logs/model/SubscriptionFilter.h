@@ -7,6 +7,7 @@
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/logs/model/Distribution.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -129,6 +130,37 @@ namespace Model
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
     inline SubscriptionFilter& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The filter expression that specifies which log events are processed by this
+     * subscription filter based on system fields. Returns the
+     * <code>fieldSelectionCriteria</code> value if it was specified when the
+     * subscription filter was created.</p>
+     */
+    inline const Aws::String& GetFieldSelectionCriteria() const { return m_fieldSelectionCriteria; }
+    inline bool FieldSelectionCriteriaHasBeenSet() const { return m_fieldSelectionCriteriaHasBeenSet; }
+    template<typename FieldSelectionCriteriaT = Aws::String>
+    void SetFieldSelectionCriteria(FieldSelectionCriteriaT&& value) { m_fieldSelectionCriteriaHasBeenSet = true; m_fieldSelectionCriteria = std::forward<FieldSelectionCriteriaT>(value); }
+    template<typename FieldSelectionCriteriaT = Aws::String>
+    SubscriptionFilter& WithFieldSelectionCriteria(FieldSelectionCriteriaT&& value) { SetFieldSelectionCriteria(std::forward<FieldSelectionCriteriaT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The list of system fields that are included in the log events sent to the
+     * subscription destination. Returns the <code>emitSystemFields</code> value if it
+     * was specified when the subscription filter was created.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetEmitSystemFields() const { return m_emitSystemFields; }
+    inline bool EmitSystemFieldsHasBeenSet() const { return m_emitSystemFieldsHasBeenSet; }
+    template<typename EmitSystemFieldsT = Aws::Vector<Aws::String>>
+    void SetEmitSystemFields(EmitSystemFieldsT&& value) { m_emitSystemFieldsHasBeenSet = true; m_emitSystemFields = std::forward<EmitSystemFieldsT>(value); }
+    template<typename EmitSystemFieldsT = Aws::Vector<Aws::String>>
+    SubscriptionFilter& WithEmitSystemFields(EmitSystemFieldsT&& value) { SetEmitSystemFields(std::forward<EmitSystemFieldsT>(value)); return *this;}
+    template<typename EmitSystemFieldsT = Aws::String>
+    SubscriptionFilter& AddEmitSystemFields(EmitSystemFieldsT&& value) { m_emitSystemFieldsHasBeenSet = true; m_emitSystemFields.emplace_back(std::forward<EmitSystemFieldsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_filterName;
@@ -154,6 +186,12 @@ namespace Model
 
     long long m_creationTime{0};
     bool m_creationTimeHasBeenSet = false;
+
+    Aws::String m_fieldSelectionCriteria;
+    bool m_fieldSelectionCriteriaHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_emitSystemFields;
+    bool m_emitSystemFieldsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -75,6 +75,16 @@ InitialVlans& InitialVlans::operator =(JsonView jsonValue)
     m_expansionVlan2 = jsonValue.GetObject("expansionVlan2");
     m_expansionVlan2HasBeenSet = true;
   }
+  if(jsonValue.ValueExists("isHcxPublic"))
+  {
+    m_isHcxPublic = jsonValue.GetBool("isHcxPublic");
+    m_isHcxPublicHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("hcxNetworkAclId"))
+  {
+    m_hcxNetworkAclId = jsonValue.GetString("hcxNetworkAclId");
+    m_hcxNetworkAclIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -139,6 +149,18 @@ JsonValue InitialVlans::Jsonize() const
   if(m_expansionVlan2HasBeenSet)
   {
    payload.WithObject("expansionVlan2", m_expansionVlan2.Jsonize());
+
+  }
+
+  if(m_isHcxPublicHasBeenSet)
+  {
+   payload.WithBool("isHcxPublic", m_isHcxPublic);
+
+  }
+
+  if(m_hcxNetworkAclIdHasBeenSet)
+  {
+   payload.WithString("hcxNetworkAclId", m_hcxNetworkAclId);
 
   }
 

@@ -12,6 +12,9 @@
 #include <aws/payment-cryptography/model/KeyOrigin.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/payment-cryptography/model/DeriveKeyUsage.h>
+#include <aws/payment-cryptography/model/MultiRegionKeyType.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/payment-cryptography/model/ReplicationStatusType.h>
 #include <utility>
 
 namespace Aws
@@ -220,6 +223,63 @@ namespace Model
     inline void SetDeriveKeyUsage(DeriveKeyUsage value) { m_deriveKeyUsageHasBeenSet = true; m_deriveKeyUsage = value; }
     inline Key& WithDeriveKeyUsage(DeriveKeyUsage value) { SetDeriveKeyUsage(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether this key is a multi-region key and its role in the
+     * multi-region key hierarchy.</p> <p>Multi-region keys allow the same key material
+     * to be used across multiple Amazon Web Services Regions. This field specifies
+     * whether the key is a primary key (which can be replicated to other regions) or a
+     * replica key (which is a copy of a primary key in another region).</p>
+     */
+    inline MultiRegionKeyType GetMultiRegionKeyType() const { return m_multiRegionKeyType; }
+    inline bool MultiRegionKeyTypeHasBeenSet() const { return m_multiRegionKeyTypeHasBeenSet; }
+    inline void SetMultiRegionKeyType(MultiRegionKeyType value) { m_multiRegionKeyTypeHasBeenSet = true; m_multiRegionKeyType = value; }
+    inline Key& WithMultiRegionKeyType(MultiRegionKeyType value) { SetMultiRegionKeyType(value); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const Aws::String& GetPrimaryRegion() const { return m_primaryRegion; }
+    inline bool PrimaryRegionHasBeenSet() const { return m_primaryRegionHasBeenSet; }
+    template<typename PrimaryRegionT = Aws::String>
+    void SetPrimaryRegion(PrimaryRegionT&& value) { m_primaryRegionHasBeenSet = true; m_primaryRegion = std::forward<PrimaryRegionT>(value); }
+    template<typename PrimaryRegionT = Aws::String>
+    Key& WithPrimaryRegion(PrimaryRegionT&& value) { SetPrimaryRegion(std::forward<PrimaryRegionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Information about the replication status of the key across different
+     * regions.</p> <p>This field provides details about the current state of key
+     * replication, including any status messages or operational information. It helps
+     * track the progress and health of key replication operations.</p>
+     */
+    inline const Aws::Map<Aws::String, ReplicationStatusType>& GetReplicationStatus() const { return m_replicationStatus; }
+    inline bool ReplicationStatusHasBeenSet() const { return m_replicationStatusHasBeenSet; }
+    template<typename ReplicationStatusT = Aws::Map<Aws::String, ReplicationStatusType>>
+    void SetReplicationStatus(ReplicationStatusT&& value) { m_replicationStatusHasBeenSet = true; m_replicationStatus = std::forward<ReplicationStatusT>(value); }
+    template<typename ReplicationStatusT = Aws::Map<Aws::String, ReplicationStatusType>>
+    Key& WithReplicationStatus(ReplicationStatusT&& value) { SetReplicationStatus(std::forward<ReplicationStatusT>(value)); return *this;}
+    template<typename ReplicationStatusKeyT = Aws::String, typename ReplicationStatusValueT = ReplicationStatusType>
+    Key& AddReplicationStatus(ReplicationStatusKeyT&& key, ReplicationStatusValueT&& value) {
+      m_replicationStatusHasBeenSet = true; m_replicationStatus.emplace(std::forward<ReplicationStatusKeyT>(key), std::forward<ReplicationStatusValueT>(value)); return *this;
+    }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether this key is using the account's default replication regions
+     * configuration.</p> <p>When set to <code>true</code>, the key automatically
+     * replicates to the regions specified in the account's default replication
+     * settings. When set to <code>false</code>, the key has a custom replication
+     * configuration that overrides the account defaults.</p>
+     */
+    inline bool GetUsingDefaultReplicationRegions() const { return m_usingDefaultReplicationRegions; }
+    inline bool UsingDefaultReplicationRegionsHasBeenSet() const { return m_usingDefaultReplicationRegionsHasBeenSet; }
+    inline void SetUsingDefaultReplicationRegions(bool value) { m_usingDefaultReplicationRegionsHasBeenSet = true; m_usingDefaultReplicationRegions = value; }
+    inline Key& WithUsingDefaultReplicationRegions(bool value) { SetUsingDefaultReplicationRegions(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_keyArn;
@@ -263,6 +323,18 @@ namespace Model
 
     DeriveKeyUsage m_deriveKeyUsage{DeriveKeyUsage::NOT_SET};
     bool m_deriveKeyUsageHasBeenSet = false;
+
+    MultiRegionKeyType m_multiRegionKeyType{MultiRegionKeyType::NOT_SET};
+    bool m_multiRegionKeyTypeHasBeenSet = false;
+
+    Aws::String m_primaryRegion;
+    bool m_primaryRegionHasBeenSet = false;
+
+    Aws::Map<Aws::String, ReplicationStatusType> m_replicationStatus;
+    bool m_replicationStatusHasBeenSet = false;
+
+    bool m_usingDefaultReplicationRegions{false};
+    bool m_usingDefaultReplicationRegionsHasBeenSet = false;
   };
 
 } // namespace Model

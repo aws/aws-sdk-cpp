@@ -61,8 +61,13 @@ namespace Model
 
     ///@{
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Enables or disables adaptive quantization (AQ), which is a technique MediaLive
+     * can apply to video on a frame-by-frame basis to produce more compression without
+     * losing quality. There are three types of adaptive quantization: spatial,
+     * temporal, and flicker. Flicker is the only type that you can customize. We
+     * recommend that you set the field to Auto. For more information about all the
+     * options, see the topic about video adaptive quantization in the MediaLive user
+     * guide.
      */
     inline H265AdaptiveQuantization GetAdaptiveQuantization() const { return m_adaptiveQuantization; }
     inline bool AdaptiveQuantizationHasBeenSet() const { return m_adaptiveQuantizationHasBeenSet; }
@@ -178,8 +183,10 @@ compression level to filter imperceptible signals. This filter works
 
     ///@{
     /**
-     * If set to enabled, adjust quantization within each frame to reduce flicker or
-     * 'pop' on I-frames.
+     * Flicker AQ makes adjustments within each frame to reduce flicker or 'pop' on
+     * I-frames. The value to enter in this field depends on the value in the Adaptive
+     * quantization field. For more information, see the topic about video adaptive
+     * quantization in the MediaLive user guide.
      */
     inline H265FlickerAq GetFlickerAq() const { return m_flickerAq; }
     inline bool FlickerAqHasBeenSet() const { return m_flickerAqHasBeenSet; }

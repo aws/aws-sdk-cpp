@@ -119,11 +119,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
      * </code> API operation. For <code>SourceTemplate</code>, specify the Amazon
      * Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN
-     * can contain any Amazon Web Services account and any Amazon QuickSight-supported
-     * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
-     * entity within <code>SourceTemplate</code> to list the replacement datasets for
-     * the placeholders listed in the original. The schema in each dataset must match
-     * its placeholder. </p> <p>Either a <code>SourceEntity</code> or a
+     * can contain any Amazon Web Services account and any QuickSight-supported Amazon
+     * Web Services Region. </p> <p>Use the <code>DataSetReferences</code> entity
+     * within <code>SourceTemplate</code> to list the replacement datasets for the
+     * placeholders listed in the original. The schema in each dataset must match its
+     * placeholder. </p> <p>Either a <code>SourceEntity</code> or a
      * <code>Definition</code> must be provided in order for the request to be
      * valid.</p>
      */
@@ -167,8 +167,8 @@ namespace Model
      * <p>Options for publishing the dashboard when you create it:</p> <ul> <li> <p>
      * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
      * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-     * set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on
-     * the published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
+     * published dashboard, which can be used for ad hoc (one-time) filtering. This
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
@@ -177,7 +177,15 @@ namespace Model
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
      * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p>
-     * </li> </ul>
+     * </li> <li> <p> <code>AvailabilityStatus</code> for
+     * <code>ExecutiveSummaryOption</code> - This status can be either
+     * <code>ENABLED</code> or <code>DISABLED</code>. The option to build an executive
+     * summary is disabled when this is set to <code>DISABLED</code>. This option is
+     * <code>ENABLED</code> by default.</p> </li> <li> <p>
+     * <code>AvailabilityStatus</code> for <code>DataStoriesSharingOption</code> - This
+     * status can be either <code>ENABLED</code> or <code>DISABLED</code>. The option
+     * to share a data story is disabled when this is set to <code>DISABLED</code>.
+     * This option is <code>ENABLED</code> by default.</p> </li> </ul>
      */
     inline const DashboardPublishOptions& GetDashboardPublishOptions() const { return m_dashboardPublishOptions; }
     inline bool DashboardPublishOptionsHasBeenSet() const { return m_dashboardPublishOptionsHasBeenSet; }
@@ -233,7 +241,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these
+     * <p>When you create the dashboard, QuickSight adds the dashboard to these
      * folders.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFolderArns() const { return m_folderArns; }

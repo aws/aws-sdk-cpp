@@ -90,8 +90,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Updates the permissions of a shared link to an Amazon QuickSight
-     * dashboard.</p>
+     * <p>Updates the permissions of a shared link to an QuickSight dashboard.</p>
      */
     inline const LinkSharingConfiguration& GetLinkSharingConfiguration() const { return m_linkSharingConfiguration; }
     template<typename LinkSharingConfigurationT = LinkSharingConfiguration>

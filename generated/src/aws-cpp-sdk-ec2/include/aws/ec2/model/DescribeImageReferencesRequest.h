@@ -57,7 +57,7 @@ namespace Model
      * <p>Specifies whether to check all supported Amazon Web Services resource types
      * for image references. When specified, default values are applied for
      * <code>ResourceTypeOptions</code>. For the default values, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-ami-references-works.html">How
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-references.html#how-ami-references-works">How
      * AMI reference checks work</a> in the <i>Amazon EC2 User Guide</i>. If you also
      * specify <code>ResourceTypes</code> with <code>ResourceTypeOptions</code>, your
      * specified values override the default values.</p> <p>Supported resource types:

@@ -498,7 +498,7 @@ namespace NetworkFirewall
         /**
          * <p>Deletes a transit gateway attachment from a Network Firewall. Either the
          * firewall owner or the transit gateway owner can delete the attachment.</p>
-         *  <p>After you delete a transit gateway attachment, raffic will no
+         *  <p>After you delete a transit gateway attachment, traffic will no
          * longer flow through the firewall endpoints.</p>  <p>After you
          * initiate the delete operation, use <a>DescribeFirewall</a> to monitor the
          * deletion status.</p><p><h3>See Also:</h3>   <a
@@ -1325,8 +1325,8 @@ namespace NetworkFirewall
          * <p>Rejects a transit gateway attachment request for Network Firewall. When you
          * reject the attachment request, Network Firewall cancels the creation of routing
          * components between the transit gateway and firewall endpoints.</p> <p>Only the
-         * firewall owner can reject the attachment. After rejection, no traffic will flow
-         * through the firewall endpoints for this attachment.</p> <p>Use
+         * transit gateway owner can reject the attachment. After rejection, no traffic
+         * will flow through the firewall endpoints for this attachment.</p> <p>Use
          * <a>DescribeFirewall</a> to monitor the rejection status. To accept the
          * attachment instead of rejecting it, use
          * <a>AcceptNetworkFirewallTransitGatewayAttachment</a>.</p>  <p>Once

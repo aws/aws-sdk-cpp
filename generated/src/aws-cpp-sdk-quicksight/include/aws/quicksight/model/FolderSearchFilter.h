@@ -26,8 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>A filter to use to search an Amazon QuickSight folder.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A filter to use to search an QuickSight folder.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FolderSearchFilter">AWS
    * API Reference</a></p>
    */

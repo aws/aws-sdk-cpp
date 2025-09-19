@@ -148,11 +148,13 @@ namespace Model
      * can be one of the following: </p> <ul> <li> <p> <code>INTRA_AZ</code>: Top
      * contributor network flows within a single Availability Zone</p> </li> <li> <p>
      * <code>INTER_AZ</code>: Top contributor network flows between Availability
-     * Zones</p> </li> <li> <p> <code>INTER_VPC</code>: Top contributor network flows
-     * between VPCs</p> </li> <li> <p> <code>AWS_SERVICES</code>: Top contributor
-     * network flows to or from Amazon Web Services services</p> </li> <li> <p>
-     * <code>UNCLASSIFIED</code>: Top contributor network flows that do not have a
-     * bucket classification</p> </li> </ul>
+     * Zones</p> </li> <li> <p> <code>INTER_REGION</code>: Top contributor network
+     * flows between Regions (to the edge of another Region)</p> </li> <li> <p>
+     * <code>INTER_VPC</code>: Top contributor network flows between VPCs</p> </li>
+     * <li> <p> <code>AWS_SERVICES</code>: Top contributor network flows to or from
+     * Amazon Web Services services</p> </li> <li> <p> <code>UNCLASSIFIED</code>: Top
+     * contributor network flows that do not have a bucket classification</p> </li>
+     * </ul>
      */
     inline DestinationCategory GetDestinationCategory() const { return m_destinationCategory; }
     inline bool DestinationCategoryHasBeenSet() const { return m_destinationCategoryHasBeenSet; }

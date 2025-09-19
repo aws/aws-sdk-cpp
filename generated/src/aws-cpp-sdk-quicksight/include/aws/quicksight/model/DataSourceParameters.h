@@ -32,6 +32,7 @@
 #include <aws/quicksight/model/TrinoParameters.h>
 #include <aws/quicksight/model/BigQueryParameters.h>
 #include <aws/quicksight/model/ImpalaParameters.h>
+#include <aws/quicksight/model/CustomConnectionParameters.h>
 #include <utility>
 
 namespace Aws
@@ -389,6 +390,18 @@ namespace Model
     template<typename ImpalaParametersT = ImpalaParameters>
     DataSourceParameters& WithImpalaParameters(ImpalaParametersT&& value) { SetImpalaParameters(std::forward<ImpalaParametersT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The parameters for custom connectors.</p>
+     */
+    inline const CustomConnectionParameters& GetCustomConnectionParameters() const { return m_customConnectionParameters; }
+    inline bool CustomConnectionParametersHasBeenSet() const { return m_customConnectionParametersHasBeenSet; }
+    template<typename CustomConnectionParametersT = CustomConnectionParameters>
+    void SetCustomConnectionParameters(CustomConnectionParametersT&& value) { m_customConnectionParametersHasBeenSet = true; m_customConnectionParameters = std::forward<CustomConnectionParametersT>(value); }
+    template<typename CustomConnectionParametersT = CustomConnectionParameters>
+    DataSourceParameters& WithCustomConnectionParameters(CustomConnectionParametersT&& value) { SetCustomConnectionParameters(std::forward<CustomConnectionParametersT>(value)); return *this;}
+    ///@}
   private:
 
     AmazonElasticsearchParameters m_amazonElasticsearchParameters;
@@ -471,6 +484,9 @@ namespace Model
 
     ImpalaParameters m_impalaParameters;
     bool m_impalaParametersHasBeenSet = false;
+
+    CustomConnectionParameters m_customConnectionParameters;
+    bool m_customConnectionParametersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     BILLING_VIEW_NO_ACCESS,
     BILLING_VIEW_UNHEALTHY,
-    FILTER_INVALID
+    FILTER_INVALID,
+    MULTI_YEAR_HISTORICAL_DATA_DISABLED
   };
 
 namespace HealthStatusReasonMapper

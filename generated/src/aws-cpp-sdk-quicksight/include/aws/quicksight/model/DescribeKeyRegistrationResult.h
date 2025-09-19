@@ -7,6 +7,7 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/quicksight/model/QDataKey.h>
 #include <aws/quicksight/model/RegisteredCustomerManagedKey.h>
 #include <utility>
 
@@ -48,8 +49,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of <code>RegisteredCustomerManagedKey</code> objects in a Amazon
-     * QuickSight account.</p>
+     * <p>A list of <code>RegisteredCustomerManagedKey</code> objects in a QuickSight
+     * account.</p>
      */
     inline const Aws::Vector<RegisteredCustomerManagedKey>& GetKeyRegistration() const { return m_keyRegistration; }
     template<typename KeyRegistrationT = Aws::Vector<RegisteredCustomerManagedKey>>
@@ -58,6 +59,17 @@ namespace Model
     DescribeKeyRegistrationResult& WithKeyRegistration(KeyRegistrationT&& value) { SetKeyRegistration(std::forward<KeyRegistrationT>(value)); return *this;}
     template<typename KeyRegistrationT = RegisteredCustomerManagedKey>
     DescribeKeyRegistrationResult& AddKeyRegistration(KeyRegistrationT&& value) { m_keyRegistrationHasBeenSet = true; m_keyRegistration.emplace_back(std::forward<KeyRegistrationT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>A list of <code>QDataKey</code> objects in a QuickSight account.</p>
+     */
+    inline const QDataKey& GetQDataKey() const { return m_qDataKey; }
+    template<typename QDataKeyT = QDataKey>
+    void SetQDataKey(QDataKeyT&& value) { m_qDataKeyHasBeenSet = true; m_qDataKey = std::forward<QDataKeyT>(value); }
+    template<typename QDataKeyT = QDataKey>
+    DescribeKeyRegistrationResult& WithQDataKey(QDataKeyT&& value) { SetQDataKey(std::forward<QDataKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,6 +96,9 @@ namespace Model
 
     Aws::Vector<RegisteredCustomerManagedKey> m_keyRegistration;
     bool m_keyRegistrationHasBeenSet = false;
+
+    QDataKey m_qDataKey;
+    bool m_qDataKeyHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

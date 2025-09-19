@@ -145,7 +145,7 @@ namespace Model
      * <p>The type of the inference profile. The following types are possible:</p> <ul>
      * <li> <p> <code>SYSTEM_DEFINED</code> – The inference profile is defined by
      * Amazon Bedrock. You can route inference requests across regions with these
-     * inference profiles.</p> </li> <li> <p> <code>APPLICATION</code> �� The inference
+     * inference profiles.</p> </li> <li> <p> <code>APPLICATION</code> – The inference
      * profile was created by a user. This type of inference profile can track metrics
      * and costs when invoking the model in it. The inference profile may route
      * requests to one or multiple regions.</p> </li> </ul>

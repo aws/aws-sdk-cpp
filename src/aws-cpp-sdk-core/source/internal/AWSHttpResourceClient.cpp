@@ -432,21 +432,8 @@ namespace Aws
             return Aws::String(m_endpoint);
         }
 
-        #ifdef _MSC_VER
-            // VS2015 compiler's bug, warning s_ec2metadataClient: symbol will be dynamically initialized (implementation limitation)
-            AWS_SUPPRESS_WARNING(4592,
-                static std::shared_ptr<EC2MetadataClient> s_ec2metadataClient(nullptr);
-            )
-        #else
-            static std::shared_ptr<EC2MetadataClient> s_ec2metadataClient(nullptr);
-        #endif
-
-        void InitEC2MetadataClient()
+        static Aws::String CalculateEC2MetadataServiceEndpoint()
         {
-            if (s_ec2metadataClient)
-            {
-                return;
-            }
             Aws::String ec2MetadataServiceEndpoint = Aws::Environment::GetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");
             if (ec2MetadataServiceEndpoint.empty())
             {
@@ -478,6 +465,36 @@ namespace Aws
                     }
                 }
             }
+            return ec2MetadataServiceEndpoint;
+        }
+
+        #ifdef _MSC_VER
+            // VS2015 compiler's bug, warning s_ec2metadataClient: symbol will be dynamically initialized (implementation limitation)
+            AWS_SUPPRESS_WARNING(4592,
+                static std::shared_ptr<EC2MetadataClient> s_ec2metadataClient(nullptr);
+            )
+        #else
+            static std::shared_ptr<EC2MetadataClient> s_ec2metadataClient(nullptr);
+        #endif
+
+        void InitEC2MetadataClient(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialConfig)
+        {
+            if (s_ec2metadataClient)
+            {
+                return;
+            }
+            Aws::String ec2MetadataServiceEndpoint = CalculateEC2MetadataServiceEndpoint();
+            AWS_LOGSTREAM_INFO(EC2_METADATA_CLIENT_LOG_TAG, "Using IMDS endpoint: " << ec2MetadataServiceEndpoint);
+            s_ec2metadataClient = Aws::MakeShared<EC2MetadataClient>(EC2_METADATA_CLIENT_LOG_TAG, credentialConfig, ec2MetadataServiceEndpoint.c_str());
+        }
+
+        void InitEC2MetadataClient()
+        {
+            if (s_ec2metadataClient)
+            {
+                return;
+            }
+            Aws::String ec2MetadataServiceEndpoint = CalculateEC2MetadataServiceEndpoint();
             AWS_LOGSTREAM_INFO(EC2_METADATA_CLIENT_LOG_TAG, "Using IMDS endpoint: " << ec2MetadataServiceEndpoint);
             s_ec2metadataClient = Aws::MakeShared<EC2MetadataClient>(EC2_METADATA_CLIENT_LOG_TAG, ec2MetadataServiceEndpoint.c_str());
         }

@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     CMAC,
     ANSI_X9_24,
-    HMAC
+    HMAC,
+    SHA_1
   };
 
 namespace KeyCheckValueAlgorithmMapper

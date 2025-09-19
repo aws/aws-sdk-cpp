@@ -94,6 +94,11 @@ FirewallPolicy& FirewallPolicy::operator =(JsonView jsonValue)
     m_policyVariables = jsonValue.GetObject("PolicyVariables");
     m_policyVariablesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("EnableTLSSessionHolding"))
+  {
+    m_enableTLSSessionHolding = jsonValue.GetBool("EnableTLSSessionHolding");
+    m_enableTLSSessionHoldingHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -182,6 +187,12 @@ JsonValue FirewallPolicy::Jsonize() const
   if(m_policyVariablesHasBeenSet)
   {
    payload.WithObject("PolicyVariables", m_policyVariables.Jsonize());
+
+  }
+
+  if(m_enableTLSSessionHoldingHasBeenSet)
+  {
+   payload.WithBool("EnableTLSSessionHolding", m_enableTLSSessionHolding);
 
   }
 

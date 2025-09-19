@@ -140,6 +140,16 @@ Capabilities& Capabilities::operator =(JsonView jsonValue)
     m_includeContentInScheduledReportsEmail = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("IncludeContentInScheduledReportsEmail"));
     m_includeContentInScheduledReportsEmailHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Dashboard"))
+  {
+    m_dashboard = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("Dashboard"));
+    m_dashboardHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Analysis"))
+  {
+    m_analysis = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("Analysis"));
+    m_analysisHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -260,6 +270,16 @@ JsonValue Capabilities::Jsonize() const
   if(m_includeContentInScheduledReportsEmailHasBeenSet)
   {
    payload.WithString("IncludeContentInScheduledReportsEmail", CapabilityStateMapper::GetNameForCapabilityState(m_includeContentInScheduledReportsEmail));
+  }
+
+  if(m_dashboardHasBeenSet)
+  {
+   payload.WithString("Dashboard", CapabilityStateMapper::GetNameForCapabilityState(m_dashboard));
+  }
+
+  if(m_analysisHasBeenSet)
+  {
+   payload.WithString("Analysis", CapabilityStateMapper::GetNameForCapabilityState(m_analysis));
   }
 
   return payload;

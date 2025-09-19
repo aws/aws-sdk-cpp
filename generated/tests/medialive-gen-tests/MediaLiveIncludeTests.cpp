@@ -400,11 +400,13 @@
 #include <aws/medialive/model/HlsAdMarkers.h>
 #include <aws/medialive/model/HlsAkamaiHttpTransferMode.h>
 #include <aws/medialive/model/HlsAkamaiSettings.h>
+#include <aws/medialive/model/HlsAutoSelect.h>
 #include <aws/medialive/model/HlsBasicPutSettings.h>
 #include <aws/medialive/model/HlsCaptionLanguageSetting.h>
 #include <aws/medialive/model/HlsCdnSettings.h>
 #include <aws/medialive/model/HlsClientCache.h>
 #include <aws/medialive/model/HlsCodecSpecification.h>
+#include <aws/medialive/model/HlsDefault.h>
 #include <aws/medialive/model/HlsDirectoryStructure.h>
 #include <aws/medialive/model/HlsDiscontinuityTags.h>
 #include <aws/medialive/model/HlsEncryptionType.h>
@@ -593,6 +595,8 @@
 #include <aws/medialive/model/MediaPackageGroupSettings.h>
 #include <aws/medialive/model/MediaPackageOutputDestinationSettings.h>
 #include <aws/medialive/model/MediaPackageOutputSettings.h>
+#include <aws/medialive/model/MediaPackageV2DestinationSettings.h>
+#include <aws/medialive/model/MediaPackageV2GroupSettings.h>
 #include <aws/medialive/model/MediaResource.h>
 #include <aws/medialive/model/MediaResourceNeighbor.h>
 #include <aws/medialive/model/MonitorDeployment.h>

@@ -41,9 +41,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon EC2 allocation strategy Amazon Web Services PCS uses to provision
-     * EC2 instances. Amazon Web Services PCS supports <b>lowest price</b>, <b>capacity
-     * optimized</b>, and <b>price capacity optimized</b>. For more information, see <a
+     * <p>The Amazon EC2 allocation strategy PCS uses to provision EC2 instances. PCS
+     * supports <b>lowest price</b>, <b>capacity optimized</b>, and <b>price capacity
+     * optimized</b>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Use
      * allocation strategies to determine how EC2 Fleet or Spot Fleet fulfills Spot and
      * On-Demand capacity</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. If

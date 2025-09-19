@@ -268,8 +268,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that provides the required
-     * permissions for a pipeline to read from the source and write to the sink.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that the pipeline uses to
+     * access AWS resources.</p>
      */
     inline const Aws::String& GetPipelineRoleArn() const { return m_pipelineRoleArn; }
     inline bool PipelineRoleArnHasBeenSet() const { return m_pipelineRoleArnHasBeenSet; }

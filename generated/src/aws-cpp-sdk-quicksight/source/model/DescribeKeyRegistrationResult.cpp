@@ -39,6 +39,11 @@ DescribeKeyRegistrationResult& DescribeKeyRegistrationResult::operator =(const A
     }
     m_keyRegistrationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("QDataKey"))
+  {
+    m_qDataKey = jsonValue.GetObject("QDataKey");
+    m_qDataKeyHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetInteger("Status");

@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-json-protocol/RestJsonProtocolClient.h>
 #include <aws/rest-json-protocol/model/MediaTypeHeaderRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using MediaTypeHeader = AWS_PROTOCOL_TEST_SUITE;
 using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
@@ -22,9 +22,10 @@ AWS_PROTOCOL_TEST(MediaTypeHeader, MediaTypeHeaderOutputBase64) {
   MediaTypeHeaderRequest request;
 
   auto outcome = client.MediaTypeHeader(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const MediaTypeHeaderResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"json":"true"} )" */
-  EXPECT_EQ(R"(true)", result.GetJson());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"json":"true"} )" */
+    EXPECT_EQ(R"(true)", result.GetJson());
+  });
 }

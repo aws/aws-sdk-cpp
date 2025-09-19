@@ -34,8 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID for the Amazon Web Services account that contains the Amazon
-     * QuickSight settings that you want to list.</p>
+     * <p>The ID for the Amazon Web Services account that contains the QuickSight
+     * settings that you want to list.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
@@ -49,8 +49,8 @@ namespace Model
     /**
      * <p>The default namespace for this Amazon Web Services account. Currently, the
      * default is <code>default</code>. IAM users that register for the first time with
-     * Amazon QuickSight provide an email address that becomes associated with the
-     * default namespace. </p>
+     * QuickSight provide an email address that becomes associated with the default
+     * namespace. </p>
      */
     inline const Aws::String& GetDefaultNamespace() const { return m_defaultNamespace; }
     inline bool DefaultNamespaceHasBeenSet() const { return m_defaultNamespaceHasBeenSet; }
@@ -62,9 +62,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The email address that you want Amazon QuickSight to send notifications to
-     * regarding your Amazon Web Services account or Amazon QuickSight
-     * subscription.</p>
+     * <p>The email address that you want QuickSight to send notifications to regarding
+     * your Amazon Web Services account or QuickSight subscription.</p>
      */
     inline const Aws::String& GetNotificationEmail() const { return m_notificationEmail; }
     inline bool NotificationEmailHasBeenSet() const { return m_notificationEmailHasBeenSet; }
@@ -76,9 +75,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A boolean value that determines whether or not an Amazon QuickSight account
-     * can be deleted. A <code>True</code> value doesn't allow the account to be
-     * deleted and results in an error message if a user tries to make a
+     * <p>A boolean value that determines whether or not an QuickSight account can be
+     * deleted. A <code>True</code> value doesn't allow the account to be deleted and
+     * results in an error message if a user tries to make a
      * <code>DeleteAccountSubscription</code> request. A <code>False</code> value will
      * allow the account to be deleted.</p>
      */

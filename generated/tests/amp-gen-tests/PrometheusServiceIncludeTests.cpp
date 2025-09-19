@@ -19,6 +19,7 @@
 #include <aws/amp/model/AlertManagerDefinitionStatusCode.h>
 #include <aws/amp/model/AmpConfiguration.h>
 #include <aws/amp/model/CloudWatchLogDestination.h>
+#include <aws/amp/model/ComponentConfig.h>
 #include <aws/amp/model/ConflictException.h>
 #include <aws/amp/model/CreateAlertManagerDefinitionRequest.h>
 #include <aws/amp/model/CreateAlertManagerDefinitionResult.h>
@@ -37,6 +38,7 @@
 #include <aws/amp/model/DeleteQueryLoggingConfigurationRequest.h>
 #include <aws/amp/model/DeleteResourcePolicyRequest.h>
 #include <aws/amp/model/DeleteRuleGroupsNamespaceRequest.h>
+#include <aws/amp/model/DeleteScraperLoggingConfigurationRequest.h>
 #include <aws/amp/model/DeleteScraperRequest.h>
 #include <aws/amp/model/DeleteScraperResult.h>
 #include <aws/amp/model/DeleteWorkspaceRequest.h>
@@ -50,6 +52,8 @@
 #include <aws/amp/model/DescribeResourcePolicyResult.h>
 #include <aws/amp/model/DescribeRuleGroupsNamespaceRequest.h>
 #include <aws/amp/model/DescribeRuleGroupsNamespaceResult.h>
+#include <aws/amp/model/DescribeScraperLoggingConfigurationRequest.h>
+#include <aws/amp/model/DescribeScraperLoggingConfigurationResult.h>
 #include <aws/amp/model/DescribeScraperRequest.h>
 #include <aws/amp/model/DescribeScraperResult.h>
 #include <aws/amp/model/DescribeWorkspaceConfigurationRequest.h>
@@ -92,7 +96,12 @@
 #include <aws/amp/model/RuleGroupsNamespaceStatusCode.h>
 #include <aws/amp/model/RuleGroupsNamespaceSummary.h>
 #include <aws/amp/model/ScrapeConfiguration.h>
+#include <aws/amp/model/ScraperComponent.h>
+#include <aws/amp/model/ScraperComponentType.h>
 #include <aws/amp/model/ScraperDescription.h>
+#include <aws/amp/model/ScraperLoggingConfigurationStatus.h>
+#include <aws/amp/model/ScraperLoggingConfigurationStatusCode.h>
+#include <aws/amp/model/ScraperLoggingDestination.h>
 #include <aws/amp/model/ScraperStatus.h>
 #include <aws/amp/model/ScraperStatusCode.h>
 #include <aws/amp/model/ScraperSummary.h>
@@ -107,6 +116,8 @@
 #include <aws/amp/model/UpdateLoggingConfigurationResult.h>
 #include <aws/amp/model/UpdateQueryLoggingConfigurationRequest.h>
 #include <aws/amp/model/UpdateQueryLoggingConfigurationResult.h>
+#include <aws/amp/model/UpdateScraperLoggingConfigurationRequest.h>
+#include <aws/amp/model/UpdateScraperLoggingConfigurationResult.h>
 #include <aws/amp/model/UpdateScraperRequest.h>
 #include <aws/amp/model/UpdateScraperResult.h>
 #include <aws/amp/model/UpdateWorkspaceAliasRequest.h>

@@ -649,7 +649,7 @@ protected:
     static void SetUpTestCase()
     {
         // Create a client
-        ClientConfiguration config("default");
+        ClientConfiguration config(ClientConfigurationInitValues{});
         config.scheme = Scheme::HTTP;
         config.connectTimeoutMs = 3000;
         config.requestTimeoutMs = 60000;

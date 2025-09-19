@@ -30,6 +30,11 @@ IamUserProfileDetails& IamUserProfileDetails::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("principalId"))
+  {
+    m_principalId = jsonValue.GetString("principalId");
+    m_principalIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +45,12 @@ JsonValue IamUserProfileDetails::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_principalIdHasBeenSet)
+  {
+   payload.WithString("principalId", m_principalId);
 
   }
 

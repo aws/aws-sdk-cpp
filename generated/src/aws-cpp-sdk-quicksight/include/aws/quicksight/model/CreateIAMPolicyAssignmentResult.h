@@ -74,8 +74,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN for the IAM policy that is applied to the Amazon QuickSight users and
-     * groups specified in this assignment.</p>
+     * <p>The ARN for the IAM policy that is applied to the QuickSight users and groups
+     * specified in this assignment.</p>
      */
     inline const Aws::String& GetPolicyArn() const { return m_policyArn; }
     template<typename PolicyArnT = Aws::String>
@@ -86,8 +86,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned
-     * to.</p>
+     * <p>The QuickSight users, groups, or both that the IAM policy is assigned to.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetIdentities() const { return m_identities; }
     template<typename IdentitiesT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>

@@ -28,7 +28,7 @@ namespace Model
 
   /**
    * <p>The type of experience you want to embed. For anonymous users, you can embed
-   * Amazon QuickSight dashboards.</p><p><h3>See Also:</h3>   <a
+   * QuickSight dashboards.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AnonymousUserEmbeddingExperienceConfiguration">AWS
    * API Reference</a></p>
    */
@@ -43,8 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of embedding experience. In this case, Amazon QuickSight
-     * dashboards.</p>
+     * <p>The type of embedding experience. In this case, QuickSight dashboards.</p>
      */
     inline const AnonymousUserDashboardEmbeddingConfiguration& GetDashboard() const { return m_dashboard; }
     inline bool DashboardHasBeenSet() const { return m_dashboardHasBeenSet; }
@@ -56,8 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of embedding experience. In this case, Amazon QuickSight
-     * visuals.</p>
+     * <p>The type of embedding experience. In this case, QuickSight visuals.</p>
      */
     inline const AnonymousUserDashboardVisualEmbeddingConfiguration& GetDashboardVisual() const { return m_dashboardVisual; }
     inline bool DashboardVisualHasBeenSet() const { return m_dashboardVisualHasBeenSet; }

@@ -27,8 +27,11 @@ namespace Model
   /**
    * <p>A remote resource is the other endpoint in a network flow. That is, one
    * endpoint is the local resource and the other is the remote resource. Remote
-   * resources can be a a subnet, a VPC, an Availability Zone, or an Amazon Web
-   * Services service. </p><p><h3>See Also:</h3>   <a
+   * resources can be a a subnet, a VPC, an Availability Zone, an Amazon Web Services
+   * service, or an Amazon Web Services Region.</p> <p>When a remote resource is an
+   * Amazon Web Services Region, Network Flow Monitor provides network performance
+   * measurements up to the edge of the Region that you specify.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/MonitorRemoteResource">AWS
    * API Reference</a></p>
    */
@@ -44,8 +47,8 @@ namespace Model
     ///@{
     /**
      * <p>The type of the remote resource. Valid values are <code>AWS::EC2::VPC</code>
-     * <code>AWS::AvailabilityZone</code>, <code>AWS::EC2::Subnet</code>, or
-     * <code>AWS::AWSService</code>.</p>
+     * <code>AWS::AvailabilityZone</code>, <code>AWS::EC2::Subnet</code>,
+     * <code>AWS::AWSService</code>, or <code>AWS::Region</code>.</p>
      */
     inline MonitorRemoteResourceType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -55,7 +58,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the remote resource, such as an ARN.</p>
+     * <p>The identifier of the remote resource. For a VPC or subnet, this identifier
+     * is the VPC Amazon Resource Name (ARN) or subnet ARN. For an Availability Zone,
+     * this identifier is the AZ name, for example, us-west-2b. For an Amazon Web
+     * Services Region , this identifier is the Region name, for example, us-west-2.
+     * </p>
      */
     inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }

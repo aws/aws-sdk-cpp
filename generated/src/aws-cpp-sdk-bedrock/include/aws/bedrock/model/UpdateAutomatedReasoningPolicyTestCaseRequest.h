@@ -120,19 +120,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The KMS key ARN for encrypting the test at rest. If not provided, the key
-     * will not be updated. Use <code>DISCARD</code> to remove the key.</p>
-     */
-    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
-    inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-    template<typename KmsKeyArnT = Aws::String>
-    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
-    template<typename KmsKeyArnT = Aws::String>
-    UpdateAutomatedReasoningPolicyTestCaseRequest& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A unique, case-sensitive identifier to ensure that the operation completes no
      * more than one time. If this token matches a previous request, Amazon Bedrock
      * ignores the request, but does not return an error.</p>
@@ -166,9 +153,6 @@ namespace Model
 
     double m_confidenceThreshold{0.0};
     bool m_confidenceThresholdHasBeenSet = false;
-
-    Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet = false;
 
     Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientRequestTokenHasBeenSet = true;

@@ -3,23 +3,18 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/query-protocol/model/XmlEmptyBlobsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/query-protocol/model/XmlEmptyBlobsRequest.h>
 
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
-Aws::String XmlEmptyBlobsRequest::SerializePayload() const
-{
+Aws::String XmlEmptyBlobsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=XmlEmptyBlobs&";
   ss << "Version=2020-01-08";
   return ss.str();
 }
 
-
-void  XmlEmptyBlobsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void XmlEmptyBlobsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

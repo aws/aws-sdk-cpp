@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     AWS_EC2_VPC,
     AWS_AvailabilityZone,
-    AWS_EC2_Subnet
+    AWS_EC2_Subnet,
+    AWS_Region
   };
 
 namespace MonitorLocalResourceTypeMapper

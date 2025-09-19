@@ -57,6 +57,7 @@
 #include <aws/s3control/model/CreateMultiRegionAccessPointResult.h>
 #include <aws/s3control/model/CreateStorageLensGroupRequest.h>
 #include <aws/s3control/model/Credentials.h>
+#include <aws/s3control/model/DSSEKMSFilter.h>
 #include <aws/s3control/model/DeleteAccessGrantRequest.h>
 #include <aws/s3control/model/DeleteAccessGrantsInstanceRequest.h>
 #include <aws/s3control/model/DeleteAccessGrantsInstanceResourcePolicyRequest.h>
@@ -231,6 +232,8 @@
 #include <aws/s3control/model/NetworkOrigin.h>
 #include <aws/s3control/model/NoncurrentVersionExpiration.h>
 #include <aws/s3control/model/NoncurrentVersionTransition.h>
+#include <aws/s3control/model/NotSSEFilter.h>
+#include <aws/s3control/model/ObjectEncryptionFilter.h>
 #include <aws/s3control/model/ObjectLambdaAccessPoint.h>
 #include <aws/s3control/model/ObjectLambdaAccessPointAlias.h>
 #include <aws/s3control/model/ObjectLambdaAccessPointAliasStatus.h>
@@ -319,10 +322,13 @@
 #include <aws/s3control/model/S3SetObjectTaggingOperation.h>
 #include <aws/s3control/model/S3StorageClass.h>
 #include <aws/s3control/model/S3Tag.h>
+#include <aws/s3control/model/SSECFilter.h>
 #include <aws/s3control/model/SSEKMS.h>
 #include <aws/s3control/model/SSEKMSEncryption.h>
+#include <aws/s3control/model/SSEKMSFilter.h>
 #include <aws/s3control/model/SSES3.h>
 #include <aws/s3control/model/SSES3Encryption.h>
+#include <aws/s3control/model/SSES3Filter.h>
 #include <aws/s3control/model/Scope.h>
 #include <aws/s3control/model/ScopePermission.h>
 #include <aws/s3control/model/SelectionCriteria.h>

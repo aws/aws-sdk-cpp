@@ -1036,6 +1036,8 @@ namespace Aws
         static const int i8ge_48xlarge_HASH = HashingUtils::HashString("i8ge.48xlarge");
         static const int i8ge_metal_24xl_HASH = HashingUtils::HashString("i8ge.metal-24xl");
         static const int i8ge_metal_48xl_HASH = HashingUtils::HashString("i8ge.metal-48xl");
+        static const int mac_m4_metal_HASH = HashingUtils::HashString("mac-m4.metal");
+        static const int mac_m4pro_metal_HASH = HashingUtils::HashString("mac-m4pro.metal");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -6156,6 +6158,16 @@ namespace Aws
             enumValue = InstanceType::i8ge_metal_48xl;
             return true;
           }
+          else if (hashCode == mac_m4_metal_HASH)
+          {
+            enumValue = InstanceType::mac_m4_metal;
+            return true;
+          }
+          else if (hashCode == mac_m4pro_metal_HASH)
+          {
+            enumValue = InstanceType::mac_m4pro_metal;
+            return true;
+          }
           return false;
         }
 
@@ -9274,6 +9286,12 @@ namespace Aws
             return true;
           case InstanceType::i8ge_metal_48xl:
             value = "i8ge.metal-48xl";
+            return true;
+          case InstanceType::mac_m4_metal:
+            value = "mac-m4.metal";
+            return true;
+          case InstanceType::mac_m4pro_metal:
+            value = "mac-m4pro.metal";
             return true;
           default:
             return false;

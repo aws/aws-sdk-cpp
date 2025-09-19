@@ -21,7 +21,8 @@ public class Metadata {
             "rest-json",
             "rest-xml",
             "query",
-            "ec2"
+            "ec2",
+            "smithy-rpc-v2-cbor"
     );
 
     private String apiVersion;

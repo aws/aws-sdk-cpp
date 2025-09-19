@@ -101,7 +101,7 @@ namespace Model
     ///@{
     /**
      * <p>An object that contains information needed to create a data source connection
-     * between an Amazon QuickSight account and Snowflake.</p>
+     * between an QuickSight account and Snowflake.</p>
      */
     inline const OAuthParameters& GetOAuthParameters() const { return m_oAuthParameters; }
     inline bool OAuthParametersHasBeenSet() const { return m_oAuthParametersHasBeenSet; }

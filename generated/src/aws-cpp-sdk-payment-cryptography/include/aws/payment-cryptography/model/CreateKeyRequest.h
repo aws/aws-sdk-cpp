@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/payment-cryptography/model/DeriveKeyUsage.h>
 #include <aws/payment-cryptography/model/Tag.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -126,6 +127,18 @@ namespace Model
     inline void SetDeriveKeyUsage(DeriveKeyUsage value) { m_deriveKeyUsageHasBeenSet = true; m_deriveKeyUsage = value; }
     inline CreateKeyRequest& WithDeriveKeyUsage(DeriveKeyUsage value) { SetDeriveKeyUsage(value); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const Aws::Vector<Aws::String>& GetReplicationRegions() const { return m_replicationRegions; }
+    inline bool ReplicationRegionsHasBeenSet() const { return m_replicationRegionsHasBeenSet; }
+    template<typename ReplicationRegionsT = Aws::Vector<Aws::String>>
+    void SetReplicationRegions(ReplicationRegionsT&& value) { m_replicationRegionsHasBeenSet = true; m_replicationRegions = std::forward<ReplicationRegionsT>(value); }
+    template<typename ReplicationRegionsT = Aws::Vector<Aws::String>>
+    CreateKeyRequest& WithReplicationRegions(ReplicationRegionsT&& value) { SetReplicationRegions(std::forward<ReplicationRegionsT>(value)); return *this;}
+    template<typename ReplicationRegionsT = Aws::String>
+    CreateKeyRequest& AddReplicationRegions(ReplicationRegionsT&& value) { m_replicationRegionsHasBeenSet = true; m_replicationRegions.emplace_back(std::forward<ReplicationRegionsT>(value)); return *this; }
+    ///@}
   private:
 
     KeyAttributes m_keyAttributes;
@@ -145,6 +158,9 @@ namespace Model
 
     DeriveKeyUsage m_deriveKeyUsage{DeriveKeyUsage::NOT_SET};
     bool m_deriveKeyUsageHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_replicationRegions;
+    bool m_replicationRegionsHasBeenSet = false;
   };
 
 } // namespace Model

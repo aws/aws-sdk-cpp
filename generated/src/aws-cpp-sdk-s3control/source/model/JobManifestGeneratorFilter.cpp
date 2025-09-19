@@ -93,6 +93,19 @@ JobManifestGeneratorFilter& JobManifestGeneratorFilter::operator =(const XmlNode
 
       m_matchAnyStorageClassHasBeenSet = true;
     }
+    XmlNode matchAnyObjectEncryptionNode = resultNode.FirstChild("MatchAnyObjectEncryption");
+    if(!matchAnyObjectEncryptionNode.IsNull())
+    {
+      XmlNode matchAnyObjectEncryptionMember = matchAnyObjectEncryptionNode.FirstChild("ObjectEncryption");
+      m_matchAnyObjectEncryptionHasBeenSet = !matchAnyObjectEncryptionMember.IsNull();
+      while(!matchAnyObjectEncryptionMember.IsNull())
+      {
+        m_matchAnyObjectEncryption.push_back(matchAnyObjectEncryptionMember);
+        matchAnyObjectEncryptionMember = matchAnyObjectEncryptionMember.NextNode("ObjectEncryption");
+      }
+
+      m_matchAnyObjectEncryptionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -160,6 +173,16 @@ void JobManifestGeneratorFilter::AddToNode(XmlNode& parentNode) const
    {
      XmlNode matchAnyStorageClassNode = matchAnyStorageClassParentNode.CreateChildElement("member");
      matchAnyStorageClassNode.SetText(S3StorageClassMapper::GetNameForS3StorageClass(item));
+   }
+  }
+
+  if(m_matchAnyObjectEncryptionHasBeenSet)
+  {
+   XmlNode matchAnyObjectEncryptionParentNode = parentNode.CreateChildElement("MatchAnyObjectEncryption");
+   for(const auto& item : m_matchAnyObjectEncryption)
+   {
+     XmlNode matchAnyObjectEncryptionNode = matchAnyObjectEncryptionParentNode.CreateChildElement("ObjectEncryption");
+     item.AddToNode(matchAnyObjectEncryptionNode);
    }
   }
 

@@ -320,6 +320,7 @@
 #include <aws/quicksight/model/CustomActionSetParametersOperation.h>
 #include <aws/quicksight/model/CustomActionURLOperation.h>
 #include <aws/quicksight/model/CustomColor.h>
+#include <aws/quicksight/model/CustomConnectionParameters.h>
 #include <aws/quicksight/model/CustomContentConfiguration.h>
 #include <aws/quicksight/model/CustomContentImageScalingConfiguration.h>
 #include <aws/quicksight/model/CustomContentType.h>
@@ -392,6 +393,7 @@
 #include <aws/quicksight/model/DataSourceSummary.h>
 #include <aws/quicksight/model/DataSourceType.h>
 #include <aws/quicksight/model/DataStoriesConfigurations.h>
+#include <aws/quicksight/model/DataStoriesSharingOption.h>
 #include <aws/quicksight/model/DatabricksParameters.h>
 #include <aws/quicksight/model/DatasetMetadata.h>
 #include <aws/quicksight/model/DatasetParameter.h>
@@ -435,6 +437,8 @@
 #include <aws/quicksight/model/DefaultSliderControlOptions.h>
 #include <aws/quicksight/model/DefaultTextAreaControlOptions.h>
 #include <aws/quicksight/model/DefaultTextFieldControlOptions.h>
+#include <aws/quicksight/model/DeleteAccountCustomPermissionRequest.h>
+#include <aws/quicksight/model/DeleteAccountCustomPermissionResult.h>
 #include <aws/quicksight/model/DeleteAccountCustomizationRequest.h>
 #include <aws/quicksight/model/DeleteAccountCustomizationResult.h>
 #include <aws/quicksight/model/DeleteAccountSubscriptionRequest.h>
@@ -497,6 +501,8 @@
 #include <aws/quicksight/model/DeleteUserResult.h>
 #include <aws/quicksight/model/DeleteVPCConnectionRequest.h>
 #include <aws/quicksight/model/DeleteVPCConnectionResult.h>
+#include <aws/quicksight/model/DescribeAccountCustomPermissionRequest.h>
+#include <aws/quicksight/model/DescribeAccountCustomPermissionResult.h>
 #include <aws/quicksight/model/DescribeAccountCustomizationRequest.h>
 #include <aws/quicksight/model/DescribeAccountCustomizationResult.h>
 #include <aws/quicksight/model/DescribeAccountSettingsRequest.h>
@@ -619,6 +625,7 @@
 #include <aws/quicksight/model/ExceptionResourceType.h>
 #include <aws/quicksight/model/ExcludePeriodConfiguration.h>
 #include <aws/quicksight/model/ExecutiveSummaryConfigurations.h>
+#include <aws/quicksight/model/ExecutiveSummaryOption.h>
 #include <aws/quicksight/model/ExplicitHierarchy.h>
 #include <aws/quicksight/model/ExportHiddenFieldsOption.h>
 #include <aws/quicksight/model/ExportToCSVOption.h>
@@ -999,6 +1006,7 @@
 #include <aws/quicksight/model/NetworkInterfaceStatus.h>
 #include <aws/quicksight/model/NewDefaultValues.h>
 #include <aws/quicksight/model/NullFilterOption.h>
+#include <aws/quicksight/model/NullFilterType.h>
 #include <aws/quicksight/model/NullValueFormatConfiguration.h>
 #include <aws/quicksight/model/NumberDisplayFormatConfiguration.h>
 #include <aws/quicksight/model/NumberFormatConfiguration.h>
@@ -1106,6 +1114,8 @@
 #include <aws/quicksight/model/QAResult.h>
 #include <aws/quicksight/model/QAResultType.h>
 #include <aws/quicksight/model/QBusinessInsightsStatus.h>
+#include <aws/quicksight/model/QDataKey.h>
+#include <aws/quicksight/model/QDataKeyType.h>
 #include <aws/quicksight/model/QSearchStatus.h>
 #include <aws/quicksight/model/QueryExecutionMode.h>
 #include <aws/quicksight/model/QueryExecutionOptions.h>
@@ -1434,6 +1444,7 @@
 #include <aws/quicksight/model/TopicIRGroupBy.h>
 #include <aws/quicksight/model/TopicIRMetric.h>
 #include <aws/quicksight/model/TopicNamedEntity.h>
+#include <aws/quicksight/model/TopicNullFilter.h>
 #include <aws/quicksight/model/TopicNumericEqualityFilter.h>
 #include <aws/quicksight/model/TopicNumericRangeFilter.h>
 #include <aws/quicksight/model/TopicNumericSeparatorSymbol.h>
@@ -1482,6 +1493,8 @@
 #include <aws/quicksight/model/UntagColumnOperation.h>
 #include <aws/quicksight/model/UntagResourceRequest.h>
 #include <aws/quicksight/model/UntagResourceResult.h>
+#include <aws/quicksight/model/UpdateAccountCustomPermissionRequest.h>
+#include <aws/quicksight/model/UpdateAccountCustomPermissionResult.h>
 #include <aws/quicksight/model/UpdateAccountCustomizationRequest.h>
 #include <aws/quicksight/model/UpdateAccountCustomizationResult.h>
 #include <aws/quicksight/model/UpdateAccountSettingsRequest.h>

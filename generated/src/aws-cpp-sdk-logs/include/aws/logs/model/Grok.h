@@ -27,8 +27,8 @@ namespace Model
    * <p>This processor uses pattern matching to parse and structure unstructured
    * data. This processor can also extract fields from log messages.</p> <p>For more
    * information about this processor including examples, see <a
-   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-Grok">
-   * grok</a> in the <i>CloudWatch Logs User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation-Processors.html#CloudWatch-Logs-Transformation-Grok">grok</a>
+   * in the <i>CloudWatch Logs User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/Grok">AWS API
    * Reference</a></p>
    */
@@ -58,7 +58,7 @@ namespace Model
     /**
      * <p>The grok pattern to match against the log event. For a list of supported grok
      * patterns, see <a
-     * href="https://docs.aws.amazon.com/mazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation-Processors.html#Grok-Patterns">Supported
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation-Processors.html#Grok-Patterns">Supported
      * grok patterns</a>.</p>
      */
     inline const Aws::String& GetMatch() const { return m_match; }

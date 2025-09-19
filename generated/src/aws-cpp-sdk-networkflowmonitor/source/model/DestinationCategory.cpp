@@ -26,6 +26,7 @@ namespace Aws
         static const int UNCLASSIFIED_HASH = HashingUtils::HashString("UNCLASSIFIED");
         static const int AMAZON_S3_HASH = HashingUtils::HashString("AMAZON_S3");
         static const int AMAZON_DYNAMODB_HASH = HashingUtils::HashString("AMAZON_DYNAMODB");
+        static const int INTER_REGION_HASH = HashingUtils::HashString("INTER_REGION");
 
 
         DestinationCategory GetDestinationCategoryForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return DestinationCategory::AMAZON_DYNAMODB;
           }
+          else if (hashCode == INTER_REGION_HASH)
+          {
+            return DestinationCategory::INTER_REGION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +88,8 @@ namespace Aws
             return "AMAZON_S3";
           case DestinationCategory::AMAZON_DYNAMODB:
             return "AMAZON_DYNAMODB";
+          case DestinationCategory::INTER_REGION:
+            return "INTER_REGION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

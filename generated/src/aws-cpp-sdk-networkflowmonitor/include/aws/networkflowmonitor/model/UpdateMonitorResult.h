@@ -77,8 +77,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The local resources updated for a monitor, as an array of resources with
-     * identifiers and types.</p>
+     * <p>The local resources to monitor. A local resource in a workload is the
+     * location of hosts where the Network Flow Monitor agent is installed. </p>
      */
     inline const Aws::Vector<MonitorLocalResource>& GetLocalResources() const { return m_localResources; }
     template<typename LocalResourcesT = Aws::Vector<MonitorLocalResource>>
@@ -92,7 +92,9 @@ namespace Model
     ///@{
     /**
      * <p>The remote resources updated for a monitor, as an array of resources with
-     * identifiers and types.</p>
+     * identifiers and types.</p> <p>A remote resource is the other endpoint specified
+     * for the network flow of a workload, with a local resource. For example, Amazon
+     * Dynamo DB can be a remote resource.</p>
      */
     inline const Aws::Vector<MonitorRemoteResource>& GetRemoteResources() const { return m_remoteResources; }
     template<typename RemoteResourcesT = Aws::Vector<MonitorRemoteResource>>

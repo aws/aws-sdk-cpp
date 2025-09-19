@@ -49,6 +49,7 @@ namespace Aws
         static const int STARBURST_HASH = HashingUtils::HashString("STARBURST");
         static const int TRINO_HASH = HashingUtils::HashString("TRINO");
         static const int BIGQUERY_HASH = HashingUtils::HashString("BIGQUERY");
+        static const int GOOGLESHEETS_HASH = HashingUtils::HashString("GOOGLESHEETS");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
@@ -170,6 +171,10 @@ namespace Aws
           {
             return DataSourceType::BIGQUERY;
           }
+          else if (hashCode == GOOGLESHEETS_HASH)
+          {
+            return DataSourceType::GOOGLESHEETS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -244,6 +249,8 @@ namespace Aws
             return "TRINO";
           case DataSourceType::BIGQUERY:
             return "BIGQUERY";
+          case DataSourceType::GOOGLESHEETS:
+            return "GOOGLESHEETS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

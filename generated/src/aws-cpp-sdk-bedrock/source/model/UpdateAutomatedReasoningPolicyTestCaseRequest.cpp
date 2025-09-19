@@ -44,12 +44,6 @@ Aws::String UpdateAutomatedReasoningPolicyTestCaseRequest::SerializePayload() co
 
   }
 
-  if(m_kmsKeyArnHasBeenSet)
-  {
-   payload.WithString("kmsKeyArn", m_kmsKeyArn);
-
-  }
-
   if(m_clientRequestTokenHasBeenSet)
   {
    payload.WithString("clientRequestToken", m_clientRequestToken);

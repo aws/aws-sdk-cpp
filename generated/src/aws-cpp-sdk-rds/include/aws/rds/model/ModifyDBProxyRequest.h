@@ -7,6 +7,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rds/model/DefaultAuthScheme.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/UserAuthConfig.h>
 #include <utility>
@@ -62,6 +63,20 @@ namespace Model
     void SetNewDBProxyName(NewDBProxyNameT&& value) { m_newDBProxyNameHasBeenSet = true; m_newDBProxyName = std::forward<NewDBProxyNameT>(value); }
     template<typename NewDBProxyNameT = Aws::String>
     ModifyDBProxyRequest& WithNewDBProxyName(NewDBProxyNameT&& value) { SetNewDBProxyName(std::forward<NewDBProxyNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The default authentication scheme that the proxy uses for client connections
+     * to the proxy and connections from the proxy to the underlying database. Valid
+     * values are <code>NONE</code> and <code>IAM_AUTH</code>. When set to
+     * <code>IAM_AUTH</code>, the proxy uses end-to-end IAM authentication to connect
+     * to the database.</p>
+     */
+    inline DefaultAuthScheme GetDefaultAuthScheme() const { return m_defaultAuthScheme; }
+    inline bool DefaultAuthSchemeHasBeenSet() const { return m_defaultAuthSchemeHasBeenSet; }
+    inline void SetDefaultAuthScheme(DefaultAuthScheme value) { m_defaultAuthSchemeHasBeenSet = true; m_defaultAuthScheme = value; }
+    inline ModifyDBProxyRequest& WithDefaultAuthScheme(DefaultAuthScheme value) { SetDefaultAuthScheme(value); return *this;}
     ///@}
 
     ///@{
@@ -149,6 +164,9 @@ namespace Model
 
     Aws::String m_newDBProxyName;
     bool m_newDBProxyNameHasBeenSet = false;
+
+    DefaultAuthScheme m_defaultAuthScheme{DefaultAuthScheme::NOT_SET};
+    bool m_defaultAuthSchemeHasBeenSet = false;
 
     Aws::Vector<UserAuthConfig> m_auth;
     bool m_authHasBeenSet = false;

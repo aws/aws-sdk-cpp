@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-json-protocol/RestJsonProtocolClient.h>
 #include <aws/rest-json-protocol/model/JsonBlobsRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using JsonBlobs = AWS_PROTOCOL_TEST_SUITE;
 using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
@@ -23,9 +23,10 @@ AWS_PROTOCOL_TEST(JsonBlobs, RestJsonJsonBlobs) {
   JsonBlobsRequest request;
 
   auto outcome = client.JsonBlobs(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const JsonBlobsResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"data":"value"} )" */
-  EXPECT_EQ(Aws::Utils::ByteBuffer(R"(value)"), result.GetData());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"data":"value"} )" */
+    EXPECT_EQ(Aws::Utils::ByteBuffer(R"(value)"), result.GetData());
+  });
 }

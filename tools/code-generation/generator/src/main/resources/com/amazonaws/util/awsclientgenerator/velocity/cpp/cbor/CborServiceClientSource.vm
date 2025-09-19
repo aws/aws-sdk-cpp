@@ -1,0 +1,58 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/MacroParseOverrideOrDefault.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#set($className = "${metadata.classNamePrefix}Client")
+\#include <aws/core/utils/Outcome.h>
+#if($serviceModel.hasBearerAuth())
+\#include <aws/core/auth/signer/AWSAuthBearerSigner.h>
+#end
+#if($serviceModel.hasSigV4Auth())
+\#include <aws/core/auth/AWSAuthSigner.h>
+#end
+\#include <aws/core/client/CoreErrors.h>
+\#include <aws/core/client/RetryStrategy.h>
+\#include <aws/core/http/HttpClient.h>
+\#include <aws/core/http/HttpResponse.h>
+\#include <aws/core/http/HttpClientFactory.h>
+\#include <aws/core/auth/AWSCredentialsProviderChain.h>
+\#include <aws/core/utils/json/JsonSerializer.h>
+\#include <aws/core/utils/memory/stl/AWSStringStream.h>
+\#include <aws/core/utils/threading/Executor.h>
+\#include <aws/core/utils/DNS.h>
+\#include <aws/core/utils/logging/LogMacros.h>
+#if($serviceModel.endpointRules)
+\#include <aws/core/utils/logging/ErrorMacros.h>
+#end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceHeaders.vm")
+
+using namespace Aws;
+using namespace Aws::Auth;
+using namespace Aws::Client;
+using namespace ${rootNamespace}::${serviceNamespace};
+using namespace ${rootNamespace}::${serviceNamespace}::Model;
+using namespace Aws::Http;
+using namespace Aws::Utils::Json;
+using namespace smithy::components::tracing;
+#if($serviceModel.endpointRules)
+using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+#end
+
+#if(!${onlyGeneratedOperations})
+namespace Aws
+{
+namespace ${metadata.namespace}
+{
+const char SERVICE_NAME[] = "${metadata.signingName}";
+const char ALLOCATION_TAG[] = "${className}";
+}
+}
+const char* ${className}::GetServiceName() {return SERVICE_NAME;}
+const char* ${className}::GetAllocationTag() {return ALLOCATION_TAG;}
+
+    #parseOverrideOrDefault( "ServiceClientSourceInit_template" "com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceInit.vm")
+#end
+
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/serviceoperations/JsonServiceOperationsSource.vm")

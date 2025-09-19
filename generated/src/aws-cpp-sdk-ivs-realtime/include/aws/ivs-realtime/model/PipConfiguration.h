@@ -163,6 +163,21 @@ namespace Model
     inline void SetPipHeight(int value) { m_pipHeightHasBeenSet = true; m_pipHeight = value; }
     inline PipConfiguration& WithPipHeight(int value) { SetPipHeight(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Attribute name in <a>ParticipantTokenConfiguration</a> identifying the
+     * participant ordering key. Participants with
+     * <code>participantOrderAttribute</code> set to <code>""</code> or not specified
+     * are ordered based on their arrival time into the stage.</p>
+     */
+    inline const Aws::String& GetParticipantOrderAttribute() const { return m_participantOrderAttribute; }
+    inline bool ParticipantOrderAttributeHasBeenSet() const { return m_participantOrderAttributeHasBeenSet; }
+    template<typename ParticipantOrderAttributeT = Aws::String>
+    void SetParticipantOrderAttribute(ParticipantOrderAttributeT&& value) { m_participantOrderAttributeHasBeenSet = true; m_participantOrderAttribute = std::forward<ParticipantOrderAttributeT>(value); }
+    template<typename ParticipantOrderAttributeT = Aws::String>
+    PipConfiguration& WithParticipantOrderAttribute(ParticipantOrderAttributeT&& value) { SetParticipantOrderAttribute(std::forward<ParticipantOrderAttributeT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_featuredParticipantAttribute;
@@ -194,6 +209,9 @@ namespace Model
 
     int m_pipHeight{0};
     bool m_pipHeightHasBeenSet = false;
+
+    Aws::String m_participantOrderAttribute;
+    bool m_participantOrderAttributeHasBeenSet = false;
   };
 
 } // namespace Model

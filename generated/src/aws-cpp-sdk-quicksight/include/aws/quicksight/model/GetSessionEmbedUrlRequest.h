@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID for the Amazon Web Services account associated with your Amazon
-     * QuickSight subscription.</p>
+     * <p>The ID for the Amazon Web Services account associated with your QuickSight
+     * subscription.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
@@ -58,10 +58,10 @@ namespace Model
      * </li> <li> <p> <code>/start/analyses</code> </p> </li> <li> <p>
      * <code>/start/dashboards</code> </p> </li> <li> <p> <code>/start/favorites</code>
      * </p> </li> <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where
-     * <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console
-     * URL of the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i>
-     * </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon
-     * QuickSight console URL of the analysis</p> </li> </ul>
+     * <code>DashboardId</code> is the actual ID key from the QuickSight console URL of
+     * the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i> </code> -
+     * where <code>AnalysisId</code> is the actual ID key from the QuickSight console
+     * URL of the analysis</p> </li> </ul>
      */
     inline const Aws::String& GetEntryPoint() const { return m_entryPoint; }
     inline bool EntryPointHasBeenSet() const { return m_entryPointHasBeenSet; }

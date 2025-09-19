@@ -7,6 +7,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/Document.h>
 #include <aws/ecs/model/DeploymentLifecycleHookStage.h>
 #include <utility>
 
@@ -110,6 +111,19 @@ namespace Model
     DeploymentLifecycleHook& WithLifecycleStages(LifecycleStagesT&& value) { SetLifecycleStages(std::forward<LifecycleStagesT>(value)); return *this;}
     inline DeploymentLifecycleHook& AddLifecycleStages(DeploymentLifecycleHookStage value) { m_lifecycleStagesHasBeenSet = true; m_lifecycleStages.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Use this field to specify custom parameters that Amazon ECS will pass to your
+     * hook target invocations (such as a Lambda function).</p>
+     */
+    inline Aws::Utils::DocumentView GetHookDetails() const { return m_hookDetails; }
+    inline bool HookDetailsHasBeenSet() const { return m_hookDetailsHasBeenSet; }
+    template<typename HookDetailsT = Aws::Utils::Document>
+    void SetHookDetails(HookDetailsT&& value) { m_hookDetailsHasBeenSet = true; m_hookDetails = std::forward<HookDetailsT>(value); }
+    template<typename HookDetailsT = Aws::Utils::Document>
+    DeploymentLifecycleHook& WithHookDetails(HookDetailsT&& value) { SetHookDetails(std::forward<HookDetailsT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_hookTargetArn;
@@ -120,6 +134,9 @@ namespace Model
 
     Aws::Vector<DeploymentLifecycleHookStage> m_lifecycleStages;
     bool m_lifecycleStagesHasBeenSet = false;
+
+    Aws::Utils::Document m_hookDetails;
+    bool m_hookDetailsHasBeenSet = false;
   };
 
 } // namespace Model

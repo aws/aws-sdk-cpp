@@ -117,6 +117,7 @@ public class CppViewHelper {
         CORAL_PROTOCOL_TO_PAYLOAD_TYPE_MAPPING.put("ec2", "xml");
         CORAL_PROTOCOL_TO_PAYLOAD_TYPE_MAPPING.put("application-json", "json");
         CORAL_PROTOCOL_TO_PAYLOAD_TYPE_MAPPING.put("api-gateway", "json");
+        CORAL_PROTOCOL_TO_PAYLOAD_TYPE_MAPPING.put("smithy-rpc-v2-cbor", "smithy-rpc-v2-cbor");
 
         C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.put("rfc822", "RFC822");
         C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.put("iso8601", "ISO_8601");
@@ -188,9 +189,9 @@ public class CppViewHelper {
         return computeJsonizeString(shape, false);
     }
 
-    public static String computeCppType(Shape shape) {
+    static String computeCppTypeInternal(Shape shape, Map<String, String> typeMapping) {
         String sensitivePrefix = shape.isSensitive() ? "sensitive_" : "";
-        String cppType =  CORAL_TYPE_TO_CPP_TYPE_MAPPING.get(sensitivePrefix + shape.getType());
+        String cppType = typeMapping.get(sensitivePrefix + shape.getType());
 
         //enum types show up as string
         if(cppType != null && !shape.isEnum()) {
@@ -208,19 +209,23 @@ public class CppViewHelper {
         }
 
         else if(shape.isList()) {
-            String type = computeCppType(shape.getListMember().getShape());
+            String type = computeCppTypeInternal(shape.getListMember().getShape(), typeMapping);
             return String.format("Aws::Vector<%s>", type);
         }
 
         else if(shape.isMap()) {
-            String key = computeCppType(shape.getMapKey().getShape());
-            String value = computeCppType(shape.getMapValue().getShape());
+            String key = computeCppTypeInternal(shape.getMapKey().getShape(), typeMapping);
+            String value = computeCppTypeInternal(shape.getMapValue().getShape(), typeMapping);
             return String.format("Aws::Map<%s, %s>", key, value);
         }
 
         else {
             return "Aws::String";
         }
+    }
+
+    public static String computeCppType(Shape shape) {
+        return computeCppTypeInternal(shape, CORAL_TYPE_TO_CPP_TYPE_MAPPING);
     }
 
     public static boolean isStreamingPayloadMember(Shape parent, String member) {

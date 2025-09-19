@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>The Border Gateway Protocol (BGP) Autonomous System Number (ASN) for the
      * appliance. Valid values are from 1 to 4294967295. We recommend using a private
-     * ASN in the 64512–65534 (16-bit ASN) or 4200000000–4294967294 (32-bit ASN)
+     * ASN in the 64512��65534 (16-bit ASN) or 4200000000–4294967294 (32-bit ASN)
      * range.</p>
      */
     inline long long GetPeerAsn() const { return m_peerAsn; }

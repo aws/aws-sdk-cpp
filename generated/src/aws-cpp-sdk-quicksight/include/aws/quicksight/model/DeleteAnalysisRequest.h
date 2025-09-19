@@ -65,8 +65,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A value that specifies the number of days that Amazon QuickSight waits before
-     * it deletes the analysis. You can't use this parameter with the
+     * <p>A value that specifies the number of days that QuickSight waits before it
+     * deletes the analysis. You can't use this parameter with the
      * <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default
      * value is 30.</p>
      */

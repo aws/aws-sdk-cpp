@@ -75,6 +75,11 @@ PipConfiguration& PipConfiguration::operator =(JsonView jsonValue)
     m_pipHeight = jsonValue.GetInteger("pipHeight");
     m_pipHeightHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("participantOrderAttribute"))
+  {
+    m_participantOrderAttribute = jsonValue.GetString("participantOrderAttribute");
+    m_participantOrderAttributeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -136,6 +141,12 @@ JsonValue PipConfiguration::Jsonize() const
   if(m_pipHeightHasBeenSet)
   {
    payload.WithInteger("pipHeight", m_pipHeight);
+
+  }
+
+  if(m_participantOrderAttributeHasBeenSet)
+  {
+   payload.WithString("participantOrderAttribute", m_participantOrderAttribute);
 
   }
 

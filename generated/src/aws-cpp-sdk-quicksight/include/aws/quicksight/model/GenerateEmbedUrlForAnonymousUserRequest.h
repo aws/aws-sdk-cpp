@@ -61,8 +61,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon QuickSight namespace that the anonymous user virtually belongs to.
-     * If you are not using an Amazon QuickSight custom namespace, set this to
+     * <p>The QuickSight namespace that the anonymous user virtually belongs to. If you
+     * are not using an Amazon QuickSight custom namespace, set this to
      * <code>default</code>.</p>
      */
     inline const Aws::String& GetNamespace() const { return m_namespace; }
@@ -97,13 +97,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the
-     * user is authorized to access during the lifetime of the session.</p> <p>If you
-     * choose <code>Dashboard</code> embedding experience, pass the list of dashboard
-     * ARNs in the account that you want the user to be able to view.</p> <p>If you
-     * want to make changes to the theme of your embedded content, pass a list of theme
-     * ARNs that the anonymous users need access to.</p> <p>Currently, you can pass up
-     * to 25 theme ARNs in each API call.</p>
+     * <p>The Amazon Resource Names (ARNs) for the QuickSight resources that the user
+     * is authorized to access during the lifetime of the session.</p> <p>If you choose
+     * <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in
+     * the account that you want the user to be able to view.</p> <p>If you want to
+     * make changes to the theme of your embedded content, pass a list of theme ARNs
+     * that the anonymous users need access to.</p> <p>Currently, you can pass up to 25
+     * theme ARNs in each API call.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAuthorizedResourceArns() const { return m_authorizedResourceArns; }
     inline bool AuthorizedResourceArnsHasBeenSet() const { return m_authorizedResourceArnsHasBeenSet; }
@@ -131,7 +131,7 @@ namespace Model
     /**
      * <p>The domains that you want to add to the allow list for access to the
      * generated URL that is then embedded. This optional parameter overrides the
-     * static domains that are configured in the Manage QuickSight menu in the Amazon
+     * static domains that are configured in the Manage QuickSight menu in the
      * QuickSight console. Instead, it allows only the domains that you include in this
      * parameter. You can list up to three domains or subdomains in each API call.</p>
      * <p>To include all subdomains under a specific domain to the allow list, use

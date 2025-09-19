@@ -10,6 +10,7 @@
 #include <aws/payment-cryptography/model/KeyCheckValueAlgorithm.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/payment-cryptography/model/Tag.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -102,6 +103,18 @@ namespace Model
     template<typename TagsT = Tag>
     ImportKeyRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    
+    inline const Aws::Vector<Aws::String>& GetReplicationRegions() const { return m_replicationRegions; }
+    inline bool ReplicationRegionsHasBeenSet() const { return m_replicationRegionsHasBeenSet; }
+    template<typename ReplicationRegionsT = Aws::Vector<Aws::String>>
+    void SetReplicationRegions(ReplicationRegionsT&& value) { m_replicationRegionsHasBeenSet = true; m_replicationRegions = std::forward<ReplicationRegionsT>(value); }
+    template<typename ReplicationRegionsT = Aws::Vector<Aws::String>>
+    ImportKeyRequest& WithReplicationRegions(ReplicationRegionsT&& value) { SetReplicationRegions(std::forward<ReplicationRegionsT>(value)); return *this;}
+    template<typename ReplicationRegionsT = Aws::String>
+    ImportKeyRequest& AddReplicationRegions(ReplicationRegionsT&& value) { m_replicationRegionsHasBeenSet = true; m_replicationRegions.emplace_back(std::forward<ReplicationRegionsT>(value)); return *this; }
+    ///@}
   private:
 
     ImportKeyMaterial m_keyMaterial;
@@ -115,6 +128,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_replicationRegions;
+    bool m_replicationRegionsHasBeenSet = false;
   };
 
 } // namespace Model

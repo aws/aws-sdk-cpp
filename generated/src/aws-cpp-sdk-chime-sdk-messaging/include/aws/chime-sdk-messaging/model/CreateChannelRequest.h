@@ -143,7 +143,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the channel in the request.</p>
+     * <p>An ID for the channel being created. If you do not specify an ID, a UUID will
+     * be created for the channel.</p>
      */
     inline const Aws::String& GetChannelId() const { return m_channelId; }
     inline bool ChannelIdHasBeenSet() const { return m_channelIdHasBeenSet; }

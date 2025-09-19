@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/rest-json-protocol/RestJsonProtocolClient.h>
 #include <aws/rest-json-protocol/model/DocumentTypeAsPayloadRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using DocumentTypeAsPayload = AWS_PROTOCOL_TEST_SUITE;
 using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
@@ -23,14 +23,15 @@ AWS_PROTOCOL_TEST(DocumentTypeAsPayload, DocumentTypeAsPayloadOutput) {
   DocumentTypeAsPayloadRequest request;
 
   auto outcome = client.DocumentTypeAsPayload(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const DocumentTypeAsPayloadResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"documentValue":{"foo":"bar"}} )" */
-  {
-    const Aws::Utils::DocumentView& resultDocumentValue = result.GetDocumentValue();
-    EXPECT_STREQ(R"j({"foo":"bar"})j", resultDocumentValue.WriteCompact().c_str());
-  }
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"documentValue":{"foo":"bar"}} )" */
+    {
+      const Aws::Utils::DocumentView& resultDocumentValue = result.GetDocumentValue();
+      EXPECT_STREQ(R"j({"foo":"bar"})j", resultDocumentValue.WriteCompact().c_str());
+    }
+  });
 }
 
 AWS_PROTOCOL_TEST(DocumentTypeAsPayload, DocumentTypeAsPayloadOutputString) {
@@ -45,12 +46,13 @@ AWS_PROTOCOL_TEST(DocumentTypeAsPayload, DocumentTypeAsPayloadOutputString) {
   DocumentTypeAsPayloadRequest request;
 
   auto outcome = client.DocumentTypeAsPayload(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const DocumentTypeAsPayloadResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"documentValue":"hello"} )" */
-  {
-    const Aws::Utils::DocumentView& resultDocumentValue = result.GetDocumentValue();
-    EXPECT_STREQ(R"j("hello")j", resultDocumentValue.WriteCompact().c_str());
-  }
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"documentValue":"hello"} )" */
+    {
+      const Aws::Utils::DocumentView& resultDocumentValue = result.GetDocumentValue();
+      EXPECT_STREQ(R"j("hello")j", resultDocumentValue.WriteCompact().c_str());
+    }
+  });
 }

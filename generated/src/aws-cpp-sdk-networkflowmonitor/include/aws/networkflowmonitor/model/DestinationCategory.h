@@ -21,7 +21,8 @@ namespace Model
     INTER_VPC,
     UNCLASSIFIED,
     AMAZON_S3,
-    AMAZON_DYNAMODB
+    AMAZON_DYNAMODB,
+    INTER_REGION
   };
 
 namespace DestinationCategoryMapper

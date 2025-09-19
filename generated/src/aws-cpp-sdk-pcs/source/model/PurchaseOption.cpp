@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ONDEMAND_HASH = HashingUtils::HashString("ONDEMAND");
         static const int SPOT_HASH = HashingUtils::HashString("SPOT");
+        static const int CAPACITY_BLOCK_HASH = HashingUtils::HashString("CAPACITY_BLOCK");
 
 
         PurchaseOption GetPurchaseOptionForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == SPOT_HASH)
           {
             return PurchaseOption::SPOT;
+          }
+          else if (hashCode == CAPACITY_BLOCK_HASH)
+          {
+            return PurchaseOption::CAPACITY_BLOCK;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "ONDEMAND";
           case PurchaseOption::SPOT:
             return "SPOT";
+          case PurchaseOption::CAPACITY_BLOCK:
+            return "CAPACITY_BLOCK";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

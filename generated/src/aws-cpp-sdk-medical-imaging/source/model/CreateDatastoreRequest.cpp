@@ -45,6 +45,12 @@ Aws::String CreateDatastoreRequest::SerializePayload() const
 
   }
 
+  if(m_lambdaAuthorizerArnHasBeenSet)
+  {
+   payload.WithString("lambdaAuthorizerArn", m_lambdaAuthorizerArn);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

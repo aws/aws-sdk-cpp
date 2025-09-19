@@ -86,6 +86,18 @@ namespace Model
     template<typename KmsKeyArnT = Aws::String>
     CreateDatastoreRequest& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ARN of the authorizer's Lambda function.</p>
+     */
+    inline const Aws::String& GetLambdaAuthorizerArn() const { return m_lambdaAuthorizerArn; }
+    inline bool LambdaAuthorizerArnHasBeenSet() const { return m_lambdaAuthorizerArnHasBeenSet; }
+    template<typename LambdaAuthorizerArnT = Aws::String>
+    void SetLambdaAuthorizerArn(LambdaAuthorizerArnT&& value) { m_lambdaAuthorizerArnHasBeenSet = true; m_lambdaAuthorizerArn = std::forward<LambdaAuthorizerArnT>(value); }
+    template<typename LambdaAuthorizerArnT = Aws::String>
+    CreateDatastoreRequest& WithLambdaAuthorizerArn(LambdaAuthorizerArnT&& value) { SetLambdaAuthorizerArn(std::forward<LambdaAuthorizerArnT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_datastoreName;
@@ -99,6 +111,9 @@ namespace Model
 
     Aws::String m_kmsKeyArn;
     bool m_kmsKeyArnHasBeenSet = false;
+
+    Aws::String m_lambdaAuthorizerArn;
+    bool m_lambdaAuthorizerArnHasBeenSet = false;
   };
 
 } // namespace Model

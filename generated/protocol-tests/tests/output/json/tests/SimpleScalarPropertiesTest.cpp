@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/json-protocol/JsonProtocolClient.h>
 #include <aws/json-protocol/model/SimpleScalarPropertiesRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using SimpleScalarProperties = AWS_PROTOCOL_TEST_SUITE;
 using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
@@ -23,12 +23,13 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson11SupportsNaNFloatInputs) {
   SimpleScalarPropertiesRequest request;
 
   auto outcome = client.SimpleScalarProperties(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const SimpleScalarPropertiesResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"floatValue":"NaN","doubleValue":"NaN"} )" */
-  EXPECT_EQ(std::numeric_limits<double>::quiet_NaN(), result.GetFloatValue());
-  EXPECT_EQ(std::numeric_limits<double>::quiet_NaN(), result.GetDoubleValue());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"floatValue":"NaN","doubleValue":"NaN"} )" */
+    EXPECT_TRUE(std::isnan(result.GetFloatValue()));
+    EXPECT_TRUE(std::isnan(result.GetDoubleValue()));
+  });
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson11SupportsInfinityFloatInputs) {
@@ -43,12 +44,13 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson11SupportsInfinityFloatInputs) 
   SimpleScalarPropertiesRequest request;
 
   auto outcome = client.SimpleScalarProperties(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const SimpleScalarPropertiesResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"floatValue":"Infinity","doubleValue":"Infinity"} )" */
-  EXPECT_EQ(std::numeric_limits<double>::infinity(), result.GetFloatValue());
-  EXPECT_EQ(std::numeric_limits<double>::infinity(), result.GetDoubleValue());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"floatValue":"Infinity","doubleValue":"Infinity"} )" */
+    EXPECT_EQ(std::numeric_limits<double>::infinity(), result.GetFloatValue());
+    EXPECT_EQ(std::numeric_limits<double>::infinity(), result.GetDoubleValue());
+  });
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson11SupportsNegativeInfinityFloatInputs) {
@@ -63,10 +65,11 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson11SupportsNegativeInfinityFloat
   SimpleScalarPropertiesRequest request;
 
   auto outcome = client.SimpleScalarProperties(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const SimpleScalarPropertiesResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"floatValue":"-Infinity","doubleValue":"-Infinity"} )" */
-  EXPECT_EQ(-std::numeric_limits<double>::infinity(), result.GetFloatValue());
-  EXPECT_EQ(-std::numeric_limits<double>::infinity(), result.GetDoubleValue());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"floatValue":"-Infinity","doubleValue":"-Infinity"} )" */
+    EXPECT_EQ(-std::numeric_limits<double>::infinity(), result.GetFloatValue());
+    EXPECT_EQ(-std::numeric_limits<double>::infinity(), result.GetDoubleValue());
+  });
 }

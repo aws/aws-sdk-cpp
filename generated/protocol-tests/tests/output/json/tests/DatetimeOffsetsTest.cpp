@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/testing/AwsProtocolTestHelpers.h>
 #include <aws/json-protocol/JsonProtocolClient.h>
 #include <aws/json-protocol/model/DatetimeOffsetsRequest.h>
+#include <aws/testing/AwsProtocolTestHelpers.h>
 
 using DatetimeOffsets = AWS_PROTOCOL_TEST_SUITE;
 using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
@@ -23,11 +23,12 @@ AWS_PROTOCOL_TEST(DatetimeOffsets, AwsJson11DateTimeWithNegativeOffset) {
   DatetimeOffsetsRequest request;
 
   auto outcome = client.DatetimeOffsets(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const DatetimeOffsetsResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"datetime":1576540098} )" */
-  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)), result.GetDatetime());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"datetime":1576540098} )" */
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)), result.GetDatetime());
+  });
 }
 
 AWS_PROTOCOL_TEST(DatetimeOffsets, AwsJson11DateTimeWithPositiveOffset) {
@@ -42,9 +43,10 @@ AWS_PROTOCOL_TEST(DatetimeOffsets, AwsJson11DateTimeWithPositiveOffset) {
   DatetimeOffsetsRequest request;
 
   auto outcome = client.DatetimeOffsets(request);
-  ValidateRequestSent();
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const DatetimeOffsetsResult& result = outcome.GetResult();
-  /* expectedResult = R"( {"datetime":1576540098} )" */
-  EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)), result.GetDatetime());
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"datetime":1576540098} )" */
+    EXPECT_EQ(Aws::Utils::DateTime(static_cast<int64_t>(1576540098)), result.GetDatetime());
+  });
 }

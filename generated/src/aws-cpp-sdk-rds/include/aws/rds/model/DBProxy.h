@@ -144,6 +144,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>The default authentication scheme that the proxy uses for client connections
+     * to the proxy and connections from the proxy to the underlying database. Valid
+     * values are <code>NONE</code> and <code>IAM_AUTH</code>. When set to
+     * <code>IAM_AUTH</code>, the proxy uses end-to-end IAM authentication to connect
+     * to the database. </p>
+     */
+    inline const Aws::String& GetDefaultAuthScheme() const { return m_defaultAuthScheme; }
+    inline bool DefaultAuthSchemeHasBeenSet() const { return m_defaultAuthSchemeHasBeenSet; }
+    template<typename DefaultAuthSchemeT = Aws::String>
+    void SetDefaultAuthScheme(DefaultAuthSchemeT&& value) { m_defaultAuthSchemeHasBeenSet = true; m_defaultAuthScheme = std::forward<DefaultAuthSchemeT>(value); }
+    template<typename DefaultAuthSchemeT = Aws::String>
+    DBProxy& WithDefaultAuthScheme(DefaultAuthSchemeT&& value) { SetDefaultAuthScheme(std::forward<DefaultAuthSchemeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>One or more data structures specifying the authorization mechanism to connect
      * to the associated RDS DB instance or Aurora DB cluster.</p>
      */
@@ -297,6 +313,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_vpcSubnetIds;
     bool m_vpcSubnetIdsHasBeenSet = false;
+
+    Aws::String m_defaultAuthScheme;
+    bool m_defaultAuthSchemeHasBeenSet = false;
 
     Aws::Vector<UserAuthConfigInfo> m_auth;
     bool m_authHasBeenSet = false;
