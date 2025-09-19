@@ -65,6 +65,11 @@ GetBrowserResult& GetBrowserResult::operator =(const Aws::AmazonWebServiceResult
     m_status = BrowserStatusMapper::GetBrowserStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("failureReason"))
+  {
+    m_failureReason = jsonValue.GetString("failureReason");
+    m_failureReasonHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");

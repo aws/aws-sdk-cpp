@@ -5,12 +5,12 @@
 
 #pragma once
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptions_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/license-manager-user-subscriptions/model/ServerType.h>
+#include <aws/license-manager-user-subscriptions/model/ServerEndpoint.h>
 #include <aws/license-manager-user-subscriptions/model/LicenseServerEndpointProvisioningStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/license-manager-user-subscriptions/model/ServerEndpoint.h>
-#include <aws/license-manager-user-subscriptions/model/ServerType.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/license-manager-user-subscriptions/model/LicenseServer.h>
 #include <utility>
 
@@ -46,18 +46,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp when License Manager created the license server endpoint.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
-    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    template<typename CreationTimeT = Aws::Utils::DateTime>
-    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
-    template<typename CreationTimeT = Aws::Utils::DateTime>
-    LicenseServerEndpoint& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The Amazon Resource Name (ARN) of the identity provider that's associated
      * with the RDS license server endpoint.</p>
      */
@@ -71,15 +59,37 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the <code>ServerEndpoint</code> resource for the RDS license
-     * server.</p>
+     * <p>The type of license server.</p>
      */
-    inline const Aws::String& GetLicenseServerEndpointArn() const { return m_licenseServerEndpointArn; }
-    inline bool LicenseServerEndpointArnHasBeenSet() const { return m_licenseServerEndpointArnHasBeenSet; }
-    template<typename LicenseServerEndpointArnT = Aws::String>
-    void SetLicenseServerEndpointArn(LicenseServerEndpointArnT&& value) { m_licenseServerEndpointArnHasBeenSet = true; m_licenseServerEndpointArn = std::forward<LicenseServerEndpointArnT>(value); }
-    template<typename LicenseServerEndpointArnT = Aws::String>
-    LicenseServerEndpoint& WithLicenseServerEndpointArn(LicenseServerEndpointArnT&& value) { SetLicenseServerEndpointArn(std::forward<LicenseServerEndpointArnT>(value)); return *this;}
+    inline ServerType GetServerType() const { return m_serverType; }
+    inline bool ServerTypeHasBeenSet() const { return m_serverTypeHasBeenSet; }
+    inline void SetServerType(ServerType value) { m_serverTypeHasBeenSet = true; m_serverType = value; }
+    inline LicenseServerEndpoint& WithServerType(ServerType value) { SetServerType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The <code>ServerEndpoint</code> resource contains the network address of the
+     * RDS license server endpoint.</p>
+     */
+    inline const ServerEndpoint& GetServerEndpoint() const { return m_serverEndpoint; }
+    inline bool ServerEndpointHasBeenSet() const { return m_serverEndpointHasBeenSet; }
+    template<typename ServerEndpointT = ServerEndpoint>
+    void SetServerEndpoint(ServerEndpointT&& value) { m_serverEndpointHasBeenSet = true; m_serverEndpoint = std::forward<ServerEndpointT>(value); }
+    template<typename ServerEndpointT = ServerEndpoint>
+    LicenseServerEndpoint& WithServerEndpoint(ServerEndpointT&& value) { SetServerEndpoint(std::forward<ServerEndpointT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The message associated with the provisioning status, if there is one.</p>
+     */
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    LicenseServerEndpoint& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,6 +102,19 @@ namespace Model
     void SetLicenseServerEndpointId(LicenseServerEndpointIdT&& value) { m_licenseServerEndpointIdHasBeenSet = true; m_licenseServerEndpointId = std::forward<LicenseServerEndpointIdT>(value); }
     template<typename LicenseServerEndpointIdT = Aws::String>
     LicenseServerEndpoint& WithLicenseServerEndpointId(LicenseServerEndpointIdT&& value) { SetLicenseServerEndpointId(std::forward<LicenseServerEndpointIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ARN of the <code>ServerEndpoint</code> resource for the RDS license
+     * server.</p>
+     */
+    inline const Aws::String& GetLicenseServerEndpointArn() const { return m_licenseServerEndpointArn; }
+    inline bool LicenseServerEndpointArnHasBeenSet() const { return m_licenseServerEndpointArnHasBeenSet; }
+    template<typename LicenseServerEndpointArnT = Aws::String>
+    void SetLicenseServerEndpointArn(LicenseServerEndpointArnT&& value) { m_licenseServerEndpointArnHasBeenSet = true; m_licenseServerEndpointArn = std::forward<LicenseServerEndpointArnT>(value); }
+    template<typename LicenseServerEndpointArnT = Aws::String>
+    LicenseServerEndpoint& WithLicenseServerEndpointArn(LicenseServerEndpointArnT&& value) { SetLicenseServerEndpointArn(std::forward<LicenseServerEndpointArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,51 +145,34 @@ namespace Model
 
     ///@{
     /**
-     * <p>The <code>ServerEndpoint</code> resource contains the network address of the
-     * RDS license server endpoint.</p>
+     * <p>The timestamp when License Manager created the license server endpoint.</p>
      */
-    inline const ServerEndpoint& GetServerEndpoint() const { return m_serverEndpoint; }
-    inline bool ServerEndpointHasBeenSet() const { return m_serverEndpointHasBeenSet; }
-    template<typename ServerEndpointT = ServerEndpoint>
-    void SetServerEndpoint(ServerEndpointT&& value) { m_serverEndpointHasBeenSet = true; m_serverEndpoint = std::forward<ServerEndpointT>(value); }
-    template<typename ServerEndpointT = ServerEndpoint>
-    LicenseServerEndpoint& WithServerEndpoint(ServerEndpointT&& value) { SetServerEndpoint(std::forward<ServerEndpointT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The type of license server.</p>
-     */
-    inline ServerType GetServerType() const { return m_serverType; }
-    inline bool ServerTypeHasBeenSet() const { return m_serverTypeHasBeenSet; }
-    inline void SetServerType(ServerType value) { m_serverTypeHasBeenSet = true; m_serverType = value; }
-    inline LicenseServerEndpoint& WithServerType(ServerType value) { SetServerType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The message associated with the provisioning status, if there is one.</p>
-     */
-    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
-    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    template<typename StatusMessageT = Aws::String>
-    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
-    template<typename StatusMessageT = Aws::String>
-    LicenseServerEndpoint& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    LicenseServerEndpoint& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
   private:
-
-    Aws::Utils::DateTime m_creationTime{};
-    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_identityProviderArn;
     bool m_identityProviderArnHasBeenSet = false;
 
-    Aws::String m_licenseServerEndpointArn;
-    bool m_licenseServerEndpointArnHasBeenSet = false;
+    ServerType m_serverType{ServerType::NOT_SET};
+    bool m_serverTypeHasBeenSet = false;
+
+    ServerEndpoint m_serverEndpoint;
+    bool m_serverEndpointHasBeenSet = false;
+
+    Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::String m_licenseServerEndpointId;
     bool m_licenseServerEndpointIdHasBeenSet = false;
+
+    Aws::String m_licenseServerEndpointArn;
+    bool m_licenseServerEndpointArnHasBeenSet = false;
 
     LicenseServerEndpointProvisioningStatus m_licenseServerEndpointProvisioningStatus{LicenseServerEndpointProvisioningStatus::NOT_SET};
     bool m_licenseServerEndpointProvisioningStatusHasBeenSet = false;
@@ -174,14 +180,8 @@ namespace Model
     Aws::Vector<LicenseServer> m_licenseServers;
     bool m_licenseServersHasBeenSet = false;
 
-    ServerEndpoint m_serverEndpoint;
-    bool m_serverEndpointHasBeenSet = false;
-
-    ServerType m_serverType{ServerType::NOT_SET};
-    bool m_serverTypeHasBeenSet = false;
-
-    Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet = false;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

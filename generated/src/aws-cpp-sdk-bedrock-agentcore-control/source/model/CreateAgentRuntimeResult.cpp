@@ -52,7 +52,7 @@ CreateAgentRuntimeResult& CreateAgentRuntimeResult::operator =(const Aws::Amazon
   }
   if(jsonValue.ValueExists("status"))
   {
-    m_status = AgentStatusMapper::GetAgentStatusForName(jsonValue.GetString("status"));
+    m_status = AgentRuntimeStatusMapper::GetAgentRuntimeStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
 

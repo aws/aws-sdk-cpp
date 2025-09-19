@@ -19,7 +19,8 @@ namespace Model
     QUEUED,
     IN_PROGRESS,
     SUCCEEDED,
-    FAILED
+    FAILED,
+    UNKNOWN
   };
 
 namespace RemediationExecutionStateMapper

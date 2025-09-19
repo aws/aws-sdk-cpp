@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the agent runtime to delete.</p>
+     * <p>The unique identifier of the AgentCore Runtime to delete.</p>
      */
     inline const Aws::String& GetAgentRuntimeId() const { return m_agentRuntimeId; }
     inline bool AgentRuntimeIdHasBeenSet() const { return m_agentRuntimeIdHasBeenSet; }

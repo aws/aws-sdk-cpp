@@ -626,6 +626,20 @@ apply an appropriate value.
     inline void SetMinQp(int value) { m_minQpHasBeenSet = true; m_minQp = value; }
     inline H264Settings& WithMinQp(int value) { SetMinQp(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * Used for QVBR rate control mode only.
+Optional.
+Enter a minimum bitrate if you
+     * want to keep the output bitrate about a threshold, in order to prevent the
+     * downstream system from de-allocating network bandwidth for this output.
+     */
+    inline int GetMinBitrate() const { return m_minBitrate; }
+    inline bool MinBitrateHasBeenSet() const { return m_minBitrateHasBeenSet; }
+    inline void SetMinBitrate(int value) { m_minBitrateHasBeenSet = true; m_minBitrate = value; }
+    inline H264Settings& WithMinBitrate(int value) { SetMinBitrate(value); return *this;}
+    ///@}
   private:
 
     H264AdaptiveQuantization m_adaptiveQuantization{H264AdaptiveQuantization::NOT_SET};
@@ -756,6 +770,9 @@ apply an appropriate value.
 
     int m_minQp{0};
     bool m_minQpHasBeenSet = false;
+
+    int m_minBitrate{0};
+    bool m_minBitrateHasBeenSet = false;
   };
 
 } // namespace Model

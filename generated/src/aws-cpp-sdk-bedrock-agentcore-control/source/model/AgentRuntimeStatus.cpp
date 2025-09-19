@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/bedrock-agentcore-control/model/AgentEndpointStatus.h>
+#include <aws/bedrock-agentcore-control/model/AgentRuntimeStatus.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -17,7 +17,7 @@ namespace Aws
   {
     namespace Model
     {
-      namespace AgentEndpointStatusMapper
+      namespace AgentRuntimeStatusMapper
       {
 
         static const int CREATING_HASH = HashingUtils::HashString("CREATING");
@@ -28,60 +28,60 @@ namespace Aws
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
 
 
-        AgentEndpointStatus GetAgentEndpointStatusForName(const Aws::String& name)
+        AgentRuntimeStatus GetAgentRuntimeStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == CREATING_HASH)
           {
-            return AgentEndpointStatus::CREATING;
+            return AgentRuntimeStatus::CREATING;
           }
           else if (hashCode == CREATE_FAILED_HASH)
           {
-            return AgentEndpointStatus::CREATE_FAILED;
+            return AgentRuntimeStatus::CREATE_FAILED;
           }
           else if (hashCode == UPDATING_HASH)
           {
-            return AgentEndpointStatus::UPDATING;
+            return AgentRuntimeStatus::UPDATING;
           }
           else if (hashCode == UPDATE_FAILED_HASH)
           {
-            return AgentEndpointStatus::UPDATE_FAILED;
+            return AgentRuntimeStatus::UPDATE_FAILED;
           }
           else if (hashCode == READY_HASH)
           {
-            return AgentEndpointStatus::READY;
+            return AgentRuntimeStatus::READY;
           }
           else if (hashCode == DELETING_HASH)
           {
-            return AgentEndpointStatus::DELETING;
+            return AgentRuntimeStatus::DELETING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<AgentEndpointStatus>(hashCode);
+            return static_cast<AgentRuntimeStatus>(hashCode);
           }
 
-          return AgentEndpointStatus::NOT_SET;
+          return AgentRuntimeStatus::NOT_SET;
         }
 
-        Aws::String GetNameForAgentEndpointStatus(AgentEndpointStatus enumValue)
+        Aws::String GetNameForAgentRuntimeStatus(AgentRuntimeStatus enumValue)
         {
           switch(enumValue)
           {
-          case AgentEndpointStatus::NOT_SET:
+          case AgentRuntimeStatus::NOT_SET:
             return {};
-          case AgentEndpointStatus::CREATING:
+          case AgentRuntimeStatus::CREATING:
             return "CREATING";
-          case AgentEndpointStatus::CREATE_FAILED:
+          case AgentRuntimeStatus::CREATE_FAILED:
             return "CREATE_FAILED";
-          case AgentEndpointStatus::UPDATING:
+          case AgentRuntimeStatus::UPDATING:
             return "UPDATING";
-          case AgentEndpointStatus::UPDATE_FAILED:
+          case AgentRuntimeStatus::UPDATE_FAILED:
             return "UPDATE_FAILED";
-          case AgentEndpointStatus::READY:
+          case AgentRuntimeStatus::READY:
             return "READY";
-          case AgentEndpointStatus::DELETING:
+          case AgentRuntimeStatus::DELETING:
             return "DELETING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
@@ -94,7 +94,7 @@ namespace Aws
           }
         }
 
-      } // namespace AgentEndpointStatusMapper
+      } // namespace AgentRuntimeStatusMapper
     } // namespace Model
   } // namespace BedrockAgentCoreControl
 } // namespace Aws

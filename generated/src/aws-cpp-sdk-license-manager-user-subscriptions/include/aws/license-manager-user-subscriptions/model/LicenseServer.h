@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptions_EXPORTS.h>
+#include <aws/license-manager-user-subscriptions/model/LicenseServerEndpointProvisioningStatus.h>
 #include <aws/license-manager-user-subscriptions/model/LicenseServerHealthStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/license-manager-user-subscriptions/model/LicenseServerEndpointProvisioningStatus.h>
 #include <utility>
 
 namespace Aws
@@ -42,6 +42,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The current state of the provisioning process for the RDS license server.</p>
+     */
+    inline LicenseServerEndpointProvisioningStatus GetProvisioningStatus() const { return m_provisioningStatus; }
+    inline bool ProvisioningStatusHasBeenSet() const { return m_provisioningStatusHasBeenSet; }
+    inline void SetProvisioningStatus(LicenseServerEndpointProvisioningStatus value) { m_provisioningStatusHasBeenSet = true; m_provisioningStatus = value; }
+    inline LicenseServer& WithProvisioningStatus(LicenseServerEndpointProvisioningStatus value) { SetProvisioningStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The health status of the RDS license server.</p>
      */
     inline LicenseServerHealthStatus GetHealthStatus() const { return m_healthStatus; }
@@ -61,26 +71,16 @@ namespace Model
     template<typename Ipv4AddressT = Aws::String>
     LicenseServer& WithIpv4Address(Ipv4AddressT&& value) { SetIpv4Address(std::forward<Ipv4AddressT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The current state of the provisioning process for the RDS license server.</p>
-     */
-    inline LicenseServerEndpointProvisioningStatus GetProvisioningStatus() const { return m_provisioningStatus; }
-    inline bool ProvisioningStatusHasBeenSet() const { return m_provisioningStatusHasBeenSet; }
-    inline void SetProvisioningStatus(LicenseServerEndpointProvisioningStatus value) { m_provisioningStatusHasBeenSet = true; m_provisioningStatus = value; }
-    inline LicenseServer& WithProvisioningStatus(LicenseServerEndpointProvisioningStatus value) { SetProvisioningStatus(value); return *this;}
-    ///@}
   private:
+
+    LicenseServerEndpointProvisioningStatus m_provisioningStatus{LicenseServerEndpointProvisioningStatus::NOT_SET};
+    bool m_provisioningStatusHasBeenSet = false;
 
     LicenseServerHealthStatus m_healthStatus{LicenseServerHealthStatus::NOT_SET};
     bool m_healthStatusHasBeenSet = false;
 
     Aws::String m_ipv4Address;
     bool m_ipv4AddressHasBeenSet = false;
-
-    LicenseServerEndpointProvisioningStatus m_provisioningStatus{LicenseServerEndpointProvisioningStatus::NOT_SET};
-    bool m_provisioningStatusHasBeenSet = false;
   };
 
 } // namespace Model

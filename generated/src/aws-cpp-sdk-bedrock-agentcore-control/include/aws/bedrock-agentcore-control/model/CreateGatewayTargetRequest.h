@@ -38,8 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the gateway to create a target for. This can be either the
-     * gateway ID or the gateway ARN.</p>
+     * <p>The identifier of the gateway to create a target for.</p>
      */
     inline const Aws::String& GetGatewayIdentifier() const { return m_gatewayIdentifier; }
     inline bool GatewayIdentifierHasBeenSet() const { return m_gatewayIdentifierHasBeenSet; }
@@ -76,9 +75,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique, case-sensitive identifier to ensure that the operation completes no
-     * more than one time. If this token matches a previous request, Amazon Bedrock
-     * ignores the request but does not return an error.</p>
+     * <p>A unique, case-sensitive identifier to ensure that the API request completes
+     * no more than one time. If this token matches a previous request, the service
+     * ignores the request, but does not return an error. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }

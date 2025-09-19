@@ -16,7 +16,8 @@ namespace Model
   enum class BrowserNetworkMode
   {
     NOT_SET,
-    PUBLIC_
+    PUBLIC_,
+    VPC
   };
 
 namespace BrowserNetworkModeMapper

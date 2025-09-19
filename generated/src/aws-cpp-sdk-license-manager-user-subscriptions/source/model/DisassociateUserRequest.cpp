@@ -16,15 +16,9 @@ Aws::String DisassociateUserRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_domainHasBeenSet)
+  if(m_usernameHasBeenSet)
   {
-   payload.WithString("Domain", m_domain);
-
-  }
-
-  if(m_identityProviderHasBeenSet)
-  {
-   payload.WithObject("IdentityProvider", m_identityProvider.Jsonize());
+   payload.WithString("Username", m_username);
 
   }
 
@@ -34,15 +28,21 @@ Aws::String DisassociateUserRequest::SerializePayload() const
 
   }
 
+  if(m_identityProviderHasBeenSet)
+  {
+   payload.WithObject("IdentityProvider", m_identityProvider.Jsonize());
+
+  }
+
   if(m_instanceUserArnHasBeenSet)
   {
    payload.WithString("InstanceUserArn", m_instanceUserArn);
 
   }
 
-  if(m_usernameHasBeenSet)
+  if(m_domainHasBeenSet)
   {
-   payload.WithString("Username", m_username);
+   payload.WithString("Domain", m_domain);
 
   }
 

@@ -64,9 +64,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique, case-sensitive identifier to ensure that the operation completes no
-     * more than one time. If this token matches a previous request, Amazon Bedrock
-     * ignores the request but does not return an error.</p>
+     * <p>A unique, case-sensitive identifier to ensure that the API request completes
+     * no more than one time. If this token matches a previous request, the service
+     * ignores the request, but does not return an error. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
@@ -91,8 +93,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The protocol type for the gateway. Currently supports MCP (Model Context
-     * Protocol).</p>
+     * <p>The protocol type for the gateway.</p>
      */
     inline GatewayProtocolType GetProtocolType() const { return m_protocolType; }
     inline bool ProtocolTypeHasBeenSet() const { return m_protocolTypeHasBeenSet; }
@@ -102,8 +103,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration settings for the protocol specified in the protocolType
-     * parameter.</p>
+     * <p>The configuration settings for the protocol specified in the
+     * <code>protocolType</code> parameter.</p>
      */
     inline const GatewayProtocolConfiguration& GetProtocolConfiguration() const { return m_protocolConfiguration; }
     inline bool ProtocolConfigurationHasBeenSet() const { return m_protocolConfigurationHasBeenSet; }
@@ -125,7 +126,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The authorizer configuration for the Gateway.</p>
+     * <p>The authorizer configuration for the gateway.</p>
      */
     inline const AuthorizerConfiguration& GetAuthorizerConfiguration() const { return m_authorizerConfiguration; }
     inline bool AuthorizerConfigurationHasBeenSet() const { return m_authorizerConfigurationHasBeenSet; }
@@ -150,9 +151,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The verbosity of exception messages. Use DEBUG mode to see granular exception
-     * messages from a Gateway. If this parameter is not set, exception messages are by
-     * default sanitized for presentation to end users.</p>
+     * <p>The level of detail in error messages returned when invoking the gateway.</p>
+     * <ul> <li> <p>If the value is <code>DEBUG</code>, granular exception messages are
+     * returned to help a user debug the gateway.</p> </li> <li> <p>If the value is
+     * omitted, a generic error message is returned to the end user.</p> </li> </ul>
      */
     inline ExceptionLevel GetExceptionLevel() const { return m_exceptionLevel; }
     inline bool ExceptionLevelHasBeenSet() const { return m_exceptionLevelHasBeenSet; }

@@ -129,7 +129,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date till which the hours of operation override would be effective.</p>
+     * <p>The date until the hours of operation override is effective.</p>
      */
     inline const Aws::String& GetEffectiveTill() const { return m_effectiveTill; }
     inline bool EffectiveTillHasBeenSet() const { return m_effectiveTillHasBeenSet; }

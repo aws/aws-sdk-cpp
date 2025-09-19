@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/bedrock-agentcore-control/model/AgentArtifact.h>
+#include <aws/bedrock-agentcore-control/model/AgentRuntimeArtifact.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -18,12 +18,12 @@ namespace BedrockAgentCoreControl
 namespace Model
 {
 
-AgentArtifact::AgentArtifact(JsonView jsonValue)
+AgentRuntimeArtifact::AgentRuntimeArtifact(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-AgentArtifact& AgentArtifact::operator =(JsonView jsonValue)
+AgentRuntimeArtifact& AgentRuntimeArtifact::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("containerConfiguration"))
   {
@@ -33,7 +33,7 @@ AgentArtifact& AgentArtifact::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue AgentArtifact::Jsonize() const
+JsonValue AgentRuntimeArtifact::Jsonize() const
 {
   JsonValue payload;
 

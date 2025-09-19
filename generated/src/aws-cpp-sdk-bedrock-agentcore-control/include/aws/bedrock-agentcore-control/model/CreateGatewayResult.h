@@ -183,7 +183,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The authorizer configuration for the created Gateway.</p>
+     * <p>The authorizer configuration for the created gateway.</p>
      */
     inline const AuthorizerConfiguration& GetAuthorizerConfiguration() const { return m_authorizerConfiguration; }
     template<typename AuthorizerConfigurationT = AuthorizerConfiguration>
@@ -206,7 +206,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The workload identity details for the created Gateway.</p>
+     * <p>The workload identity details for the created gateway.</p>
      */
     inline const WorkloadIdentityDetails& GetWorkloadIdentityDetails() const { return m_workloadIdentityDetails; }
     template<typename WorkloadIdentityDetailsT = WorkloadIdentityDetails>
@@ -217,9 +217,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The verbosity of exception messages. Use DEBUG mode to see granular exception
-     * messages from a Gateway. If this parameter is not set, exception messages are by
-     * default sanitized for presentation to end users.</p>
+     * <p>The level of detail in error messages returned when invoking the gateway.</p>
+     * <ul> <li> <p>If the value is <code>DEBUG</code>, granular exception messages are
+     * returned to help a user debug the gateway.</p> </li> <li> <p>If the value is
+     * omitted, a generic error message is returned to the end user.</p> </li> </ul>
      */
     inline ExceptionLevel GetExceptionLevel() const { return m_exceptionLevel; }
     inline void SetExceptionLevel(ExceptionLevel value) { m_exceptionLevelHasBeenSet = true; m_exceptionLevel = value; }

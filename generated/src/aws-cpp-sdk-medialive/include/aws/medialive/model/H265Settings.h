@@ -28,6 +28,8 @@
 #include <aws/medialive/model/H265TilePadding.h>
 #include <aws/medialive/model/H265TreeblockSize.h>
 #include <aws/medialive/model/H265Deblocking.h>
+#include <aws/medialive/model/H265GopBReference.h>
+#include <aws/medialive/model/H265SubGopLength.h>
 #include <utility>
 
 namespace Aws
@@ -551,6 +553,64 @@ especially at lower bitrates.
     inline void SetDeblocking(H265Deblocking value) { m_deblockingHasBeenSet = true; m_deblocking = value; }
     inline H265Settings& WithDeblocking(H265Deblocking value) { SetDeblocking(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * Allows the encoder to use a B-Frame as a reference frame as well.
+ENABLED:
+     * B-frames will also serve as reference frames.
+DISABLED: B-frames won't be
+     * reference frames.
+Must be DISABLED if resolution is greater than 1080p or when
+     * using tiled hevc encoding.
+     */
+    inline H265GopBReference GetGopBReference() const { return m_gopBReference; }
+    inline bool GopBReferenceHasBeenSet() const { return m_gopBReferenceHasBeenSet; }
+    inline void SetGopBReference(H265GopBReference value) { m_gopBReferenceHasBeenSet = true; m_gopBReference = value; }
+    inline H265Settings& WithGopBReference(H265GopBReference value) { SetGopBReference(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * Sets the number of B-frames between reference frames.
+Set to 2 if resolution is
+     * greater than 1080p or when using tiled hevc encoding.
+     */
+    inline int GetGopNumBFrames() const { return m_gopNumBFrames; }
+    inline bool GopNumBFramesHasBeenSet() const { return m_gopNumBFramesHasBeenSet; }
+    inline void SetGopNumBFrames(int value) { m_gopNumBFramesHasBeenSet = true; m_gopNumBFrames = value; }
+    inline H265Settings& WithGopNumBFrames(int value) { SetGopNumBFrames(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * Used for QVBR rate control mode only.
+Optional.
+Enter a minimum bitrate if you
+     * want to keep the output bitrate about a threshold, in order to prevent the
+     * downstream system from de-allocating network bandwidth for this output.
+     */
+    inline int GetMinBitrate() const { return m_minBitrate; }
+    inline bool MinBitrateHasBeenSet() const { return m_minBitrateHasBeenSet; }
+    inline void SetMinBitrate(int value) { m_minBitrateHasBeenSet = true; m_minBitrate = value; }
+    inline H265Settings& WithMinBitrate(int value) { SetMinBitrate(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * Sets the number of B-frames in each sub-GOP.
+FIXED: Use the value in Num
+     * B-frames.
+DYNAMIC: Optimizes the number of B-frames in each sub-GOP to improve
+     * visual quality.
+Must be FIXED if resolution is greater than 1080p or when using
+     * tiled hevc encoding.
+     */
+    inline H265SubGopLength GetSubgopLength() const { return m_subgopLength; }
+    inline bool SubgopLengthHasBeenSet() const { return m_subgopLengthHasBeenSet; }
+    inline void SetSubgopLength(H265SubGopLength value) { m_subgopLengthHasBeenSet = true; m_subgopLength = value; }
+    inline H265Settings& WithSubgopLength(H265SubGopLength value) { SetSubgopLength(value); return *this;}
+    ///@}
   private:
 
     H265AdaptiveQuantization m_adaptiveQuantization{H265AdaptiveQuantization::NOT_SET};
@@ -666,6 +726,18 @@ especially at lower bitrates.
 
     H265Deblocking m_deblocking{H265Deblocking::NOT_SET};
     bool m_deblockingHasBeenSet = false;
+
+    H265GopBReference m_gopBReference{H265GopBReference::NOT_SET};
+    bool m_gopBReferenceHasBeenSet = false;
+
+    int m_gopNumBFrames{0};
+    bool m_gopNumBFramesHasBeenSet = false;
+
+    int m_minBitrate{0};
+    bool m_minBitrateHasBeenSet = false;
+
+    H265SubGopLength m_subgopLength{H265SubGopLength::NOT_SET};
+    bool m_subgopLengthHasBeenSet = false;
   };
 
 } // namespace Model

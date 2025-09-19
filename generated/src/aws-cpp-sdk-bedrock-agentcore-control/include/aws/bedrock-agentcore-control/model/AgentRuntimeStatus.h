@@ -13,7 +13,7 @@ namespace BedrockAgentCoreControl
 {
 namespace Model
 {
-  enum class AgentEndpointStatus
+  enum class AgentRuntimeStatus
   {
     NOT_SET,
     CREATING,
@@ -24,12 +24,12 @@ namespace Model
     DELETING
   };
 
-namespace AgentEndpointStatusMapper
+namespace AgentRuntimeStatusMapper
 {
-AWS_BEDROCKAGENTCORECONTROL_API AgentEndpointStatus GetAgentEndpointStatusForName(const Aws::String& name);
+AWS_BEDROCKAGENTCORECONTROL_API AgentRuntimeStatus GetAgentRuntimeStatusForName(const Aws::String& name);
 
-AWS_BEDROCKAGENTCORECONTROL_API Aws::String GetNameForAgentEndpointStatus(AgentEndpointStatus value);
-} // namespace AgentEndpointStatusMapper
+AWS_BEDROCKAGENTCORECONTROL_API Aws::String GetNameForAgentRuntimeStatus(AgentRuntimeStatus value);
+} // namespace AgentRuntimeStatusMapper
 } // namespace Model
 } // namespace BedrockAgentCoreControl
 } // namespace Aws

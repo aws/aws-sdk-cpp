@@ -30,6 +30,11 @@ CodeInterpreterNetworkConfiguration& CodeInterpreterNetworkConfiguration::operat
     m_networkMode = CodeInterpreterNetworkModeMapper::GetCodeInterpreterNetworkModeForName(jsonValue.GetString("networkMode"));
     m_networkModeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("vpcConfig"))
+  {
+    m_vpcConfig = jsonValue.GetObject("vpcConfig");
+    m_vpcConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +45,12 @@ JsonValue CodeInterpreterNetworkConfiguration::Jsonize() const
   if(m_networkModeHasBeenSet)
   {
    payload.WithString("networkMode", CodeInterpreterNetworkModeMapper::GetNameForCodeInterpreterNetworkMode(m_networkMode));
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
+
   }
 
   return payload;

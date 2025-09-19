@@ -16,6 +16,12 @@ Aws::String ListIdentityProvidersRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("MaxResults", m_maxResults);
+
+  }
+
   if(m_filtersHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
@@ -24,12 +30,6 @@ Aws::String ListIdentityProvidersRequest::SerializePayload() const
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
    }
    payload.WithArray("Filters", std::move(filtersJsonList));
-
-  }
-
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
 
   }
 

@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The retrieved memory details.</p>
+     * <p>The retrieved AgentCore Memory resource details.</p>
      */
     inline const Memory& GetMemory() const { return m_memory; }
     template<typename MemoryT = Memory>

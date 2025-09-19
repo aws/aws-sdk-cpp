@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the deleted memory.</p>
+     * <p>The unique identifier of the deleted AgentCore Memory resource.</p>
      */
     inline const Aws::String& GetMemoryId() const { return m_memoryId; }
     template<typename MemoryIdT = Aws::String>
@@ -46,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current status of the memory deletion.</p>
+     * <p>The current status of the AgentCore Memory resource deletion.</p>
      */
     inline MemoryStatus GetStatus() const { return m_status; }
     inline void SetStatus(MemoryStatus value) { m_statusHasBeenSet = true; m_status = value; }

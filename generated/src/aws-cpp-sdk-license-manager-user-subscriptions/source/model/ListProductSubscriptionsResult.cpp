@@ -25,11 +25,6 @@ ListProductSubscriptionsResult::ListProductSubscriptionsResult(const Aws::Amazon
 ListProductSubscriptionsResult& ListProductSubscriptionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("ProductUserSummaries"))
   {
     Aws::Utils::Array<JsonView> productUserSummariesJsonList = jsonValue.GetArray("ProductUserSummaries");
@@ -38,6 +33,11 @@ ListProductSubscriptionsResult& ListProductSubscriptionsResult::operator =(const
       m_productUserSummaries.push_back(productUserSummariesJsonList[productUserSummariesIndex].AsObject());
     }
     m_productUserSummariesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

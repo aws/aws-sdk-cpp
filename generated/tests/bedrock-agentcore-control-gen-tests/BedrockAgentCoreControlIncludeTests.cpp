@@ -14,11 +14,11 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlRequest.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlServiceClientModel.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
-#include <aws/bedrock-agentcore-control/model/Agent.h>
-#include <aws/bedrock-agentcore-control/model/AgentArtifact.h>
-#include <aws/bedrock-agentcore-control/model/AgentEndpoint.h>
-#include <aws/bedrock-agentcore-control/model/AgentEndpointStatus.h>
-#include <aws/bedrock-agentcore-control/model/AgentStatus.h>
+#include <aws/bedrock-agentcore-control/model/AgentRuntime.h>
+#include <aws/bedrock-agentcore-control/model/AgentRuntimeArtifact.h>
+#include <aws/bedrock-agentcore-control/model/AgentRuntimeEndpoint.h>
+#include <aws/bedrock-agentcore-control/model/AgentRuntimeEndpointStatus.h>
+#include <aws/bedrock-agentcore-control/model/AgentRuntimeStatus.h>
 #include <aws/bedrock-agentcore-control/model/ApiKeyCredentialLocation.h>
 #include <aws/bedrock-agentcore-control/model/ApiKeyCredentialProvider.h>
 #include <aws/bedrock-agentcore-control/model/ApiKeyCredentialProviderItem.h>
@@ -143,6 +143,8 @@
 #include <aws/bedrock-agentcore-control/model/ListMemoriesResult.h>
 #include <aws/bedrock-agentcore-control/model/ListOauth2CredentialProvidersRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListOauth2CredentialProvidersResult.h>
+#include <aws/bedrock-agentcore-control/model/ListTagsForResourceRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListTagsForResourceResult.h>
 #include <aws/bedrock-agentcore-control/model/ListWorkloadIdentitiesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListWorkloadIdentitiesResult.h>
 #include <aws/bedrock-agentcore-control/model/MCPGatewayConfiguration.h>
@@ -173,6 +175,7 @@
 #include <aws/bedrock-agentcore-control/model/OverrideType.h>
 #include <aws/bedrock-agentcore-control/model/ProtocolConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RecordingConfig.h>
+#include <aws/bedrock-agentcore-control/model/RequestHeaderConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ResourceType.h>
 #include <aws/bedrock-agentcore-control/model/S3Configuration.h>
 #include <aws/bedrock-agentcore-control/model/S3Location.h>
@@ -198,11 +201,15 @@
 #include <aws/bedrock-agentcore-control/model/SummaryMemoryStrategyInput.h>
 #include <aws/bedrock-agentcore-control/model/SummaryOverrideConfigurationInput.h>
 #include <aws/bedrock-agentcore-control/model/SummaryOverrideConsolidationConfigurationInput.h>
+#include <aws/bedrock-agentcore-control/model/TagResourceRequest.h>
+#include <aws/bedrock-agentcore-control/model/TagResourceResult.h>
 #include <aws/bedrock-agentcore-control/model/TargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/TargetStatus.h>
 #include <aws/bedrock-agentcore-control/model/TargetSummary.h>
 #include <aws/bedrock-agentcore-control/model/ToolDefinition.h>
 #include <aws/bedrock-agentcore-control/model/ToolSchema.h>
+#include <aws/bedrock-agentcore-control/model/UntagResourceRequest.h>
+#include <aws/bedrock-agentcore-control/model/UntagResourceResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateAgentRuntimeEndpointRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateAgentRuntimeEndpointResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateAgentRuntimeRequest.h>
@@ -228,6 +235,7 @@
 #include <aws/bedrock-agentcore-control/model/ValidationException.h>
 #include <aws/bedrock-agentcore-control/model/ValidationExceptionField.h>
 #include <aws/bedrock-agentcore-control/model/ValidationExceptionReason.h>
+#include <aws/bedrock-agentcore-control/model/VpcConfig.h>
 #include <aws/bedrock-agentcore-control/model/WorkloadIdentityDetails.h>
 #include <aws/bedrock-agentcore-control/model/WorkloadIdentityType.h>
 
