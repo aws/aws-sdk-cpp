@@ -22,6 +22,7 @@ namespace Aws
 
         static const int PUBLIC__HASH = HashingUtils::HashString("PUBLIC");
         static const int SANDBOX_HASH = HashingUtils::HashString("SANDBOX");
+        static const int VPC_HASH = HashingUtils::HashString("VPC");
 
 
         CodeInterpreterNetworkMode GetCodeInterpreterNetworkModeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == SANDBOX_HASH)
           {
             return CodeInterpreterNetworkMode::SANDBOX;
+          }
+          else if (hashCode == VPC_HASH)
+          {
+            return CodeInterpreterNetworkMode::VPC;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "PUBLIC";
           case CodeInterpreterNetworkMode::SANDBOX:
             return "SANDBOX";
+          case CodeInterpreterNetworkMode::VPC:
+            return "VPC";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

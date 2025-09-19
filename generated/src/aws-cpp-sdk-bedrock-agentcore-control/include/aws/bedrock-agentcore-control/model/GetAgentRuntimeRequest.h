@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the agent runtime to retrieve.</p>
+     * <p>The unique identifier of the AgentCore Runtime to retrieve.</p>
      */
     inline const Aws::String& GetAgentRuntimeId() const { return m_agentRuntimeId; }
     inline bool AgentRuntimeIdHasBeenSet() const { return m_agentRuntimeIdHasBeenSet; }
@@ -52,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The version of the agent runtime to retrieve.</p>
+     * <p>The version of the AgentCore Runtime to retrieve.</p>
      */
     inline const Aws::String& GetAgentRuntimeVersion() const { return m_agentRuntimeVersion; }
     inline bool AgentRuntimeVersionHasBeenSet() const { return m_agentRuntimeVersionHasBeenSet; }

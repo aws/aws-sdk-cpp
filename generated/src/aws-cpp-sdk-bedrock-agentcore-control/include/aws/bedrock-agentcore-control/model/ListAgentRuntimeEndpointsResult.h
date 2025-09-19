@@ -7,7 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/bedrock-agentcore-control/model/AgentEndpoint.h>
+#include <aws/bedrock-agentcore-control/model/AgentRuntimeEndpoint.h>
 #include <utility>
 
 namespace Aws
@@ -36,14 +36,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of agent runtime endpoints.</p>
+     * <p>The list of AgentCore Runtime endpoints.</p>
      */
-    inline const Aws::Vector<AgentEndpoint>& GetRuntimeEndpoints() const { return m_runtimeEndpoints; }
-    template<typename RuntimeEndpointsT = Aws::Vector<AgentEndpoint>>
+    inline const Aws::Vector<AgentRuntimeEndpoint>& GetRuntimeEndpoints() const { return m_runtimeEndpoints; }
+    template<typename RuntimeEndpointsT = Aws::Vector<AgentRuntimeEndpoint>>
     void SetRuntimeEndpoints(RuntimeEndpointsT&& value) { m_runtimeEndpointsHasBeenSet = true; m_runtimeEndpoints = std::forward<RuntimeEndpointsT>(value); }
-    template<typename RuntimeEndpointsT = Aws::Vector<AgentEndpoint>>
+    template<typename RuntimeEndpointsT = Aws::Vector<AgentRuntimeEndpoint>>
     ListAgentRuntimeEndpointsResult& WithRuntimeEndpoints(RuntimeEndpointsT&& value) { SetRuntimeEndpoints(std::forward<RuntimeEndpointsT>(value)); return *this;}
-    template<typename RuntimeEndpointsT = AgentEndpoint>
+    template<typename RuntimeEndpointsT = AgentRuntimeEndpoint>
     ListAgentRuntimeEndpointsResult& AddRuntimeEndpoints(RuntimeEndpointsT&& value) { m_runtimeEndpointsHasBeenSet = true; m_runtimeEndpoints.emplace_back(std::forward<RuntimeEndpointsT>(value)); return *this; }
     ///@}
 
@@ -68,7 +68,7 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<AgentEndpoint> m_runtimeEndpoints;
+    Aws::Vector<AgentRuntimeEndpoint> m_runtimeEndpoints;
     bool m_runtimeEndpointsHasBeenSet = false;
 
     Aws::String m_nextToken;

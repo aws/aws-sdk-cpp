@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptions_EXPORTS.h>
-#include <aws/license-manager-user-subscriptions/model/CredentialsProvider.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/license-manager-user-subscriptions/model/CredentialsProvider.h>
 #include <aws/license-manager-user-subscriptions/model/DomainNetworkSettings.h>
 #include <utility>
 
@@ -43,15 +43,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>Points to the <code>CredentialsProvider</code> resource that contains
-     * information about the credential provider for user administration.</p>
+     * <p>The domain name for the Active Directory.</p>
      */
-    inline const CredentialsProvider& GetDomainCredentialsProvider() const { return m_domainCredentialsProvider; }
-    inline bool DomainCredentialsProviderHasBeenSet() const { return m_domainCredentialsProviderHasBeenSet; }
-    template<typename DomainCredentialsProviderT = CredentialsProvider>
-    void SetDomainCredentialsProvider(DomainCredentialsProviderT&& value) { m_domainCredentialsProviderHasBeenSet = true; m_domainCredentialsProvider = std::forward<DomainCredentialsProviderT>(value); }
-    template<typename DomainCredentialsProviderT = CredentialsProvider>
-    ActiveDirectorySettings& WithDomainCredentialsProvider(DomainCredentialsProviderT&& value) { SetDomainCredentialsProvider(std::forward<DomainCredentialsProviderT>(value)); return *this;}
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    ActiveDirectorySettings& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +69,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The domain name for the Active Directory.</p>
+     * <p>Points to the <code>CredentialsProvider</code> resource that contains
+     * information about the credential provider for user administration.</p>
      */
-    inline const Aws::String& GetDomainName() const { return m_domainName; }
-    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    template<typename DomainNameT = Aws::String>
-    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
-    template<typename DomainNameT = Aws::String>
-    ActiveDirectorySettings& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
+    inline const CredentialsProvider& GetDomainCredentialsProvider() const { return m_domainCredentialsProvider; }
+    inline bool DomainCredentialsProviderHasBeenSet() const { return m_domainCredentialsProviderHasBeenSet; }
+    template<typename DomainCredentialsProviderT = CredentialsProvider>
+    void SetDomainCredentialsProvider(DomainCredentialsProviderT&& value) { m_domainCredentialsProviderHasBeenSet = true; m_domainCredentialsProvider = std::forward<DomainCredentialsProviderT>(value); }
+    template<typename DomainCredentialsProviderT = CredentialsProvider>
+    ActiveDirectorySettings& WithDomainCredentialsProvider(DomainCredentialsProviderT&& value) { SetDomainCredentialsProvider(std::forward<DomainCredentialsProviderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,14 +94,14 @@ namespace Model
     ///@}
   private:
 
-    CredentialsProvider m_domainCredentialsProvider;
-    bool m_domainCredentialsProviderHasBeenSet = false;
+    Aws::String m_domainName;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_domainIpv4List;
     bool m_domainIpv4ListHasBeenSet = false;
 
-    Aws::String m_domainName;
-    bool m_domainNameHasBeenSet = false;
+    CredentialsProvider m_domainCredentialsProvider;
+    bool m_domainCredentialsProviderHasBeenSet = false;
 
     DomainNetworkSettings m_domainNetworkSettings;
     bool m_domainNetworkSettingsHasBeenSet = false;

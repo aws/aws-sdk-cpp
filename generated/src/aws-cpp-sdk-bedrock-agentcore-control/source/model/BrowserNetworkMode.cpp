@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int PUBLIC__HASH = HashingUtils::HashString("PUBLIC");
+        static const int VPC_HASH = HashingUtils::HashString("VPC");
 
 
         BrowserNetworkMode GetBrowserNetworkModeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == PUBLIC__HASH)
           {
             return BrowserNetworkMode::PUBLIC_;
+          }
+          else if (hashCode == VPC_HASH)
+          {
+            return BrowserNetworkMode::VPC;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case BrowserNetworkMode::PUBLIC_:
             return "PUBLIC";
+          case BrowserNetworkMode::VPC:
+            return "VPC";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

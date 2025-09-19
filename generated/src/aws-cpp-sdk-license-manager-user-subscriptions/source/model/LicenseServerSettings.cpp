@@ -25,15 +25,15 @@ LicenseServerSettings::LicenseServerSettings(JsonView jsonValue)
 
 LicenseServerSettings& LicenseServerSettings::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("ServerSettings"))
-  {
-    m_serverSettings = jsonValue.GetObject("ServerSettings");
-    m_serverSettingsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("ServerType"))
   {
     m_serverType = ServerTypeMapper::GetServerTypeForName(jsonValue.GetString("ServerType"));
     m_serverTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ServerSettings"))
+  {
+    m_serverSettings = jsonValue.GetObject("ServerSettings");
+    m_serverSettingsHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue LicenseServerSettings::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_serverTypeHasBeenSet)
+  {
+   payload.WithString("ServerType", ServerTypeMapper::GetNameForServerType(m_serverType));
+  }
+
   if(m_serverSettingsHasBeenSet)
   {
    payload.WithObject("ServerSettings", m_serverSettings.Jsonize());
 
-  }
-
-  if(m_serverTypeHasBeenSet)
-  {
-   payload.WithString("ServerType", ServerTypeMapper::GetNameForServerType(m_serverType));
   }
 
   return payload;

@@ -45,6 +45,11 @@ UserPhoneConfig& UserPhoneConfig::operator =(JsonView jsonValue)
     m_deskPhoneNumber = jsonValue.GetString("DeskPhoneNumber");
     m_deskPhoneNumberHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("PersistentConnection"))
+  {
+    m_persistentConnection = jsonValue.GetBool("PersistentConnection");
+    m_persistentConnectionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -72,6 +77,12 @@ JsonValue UserPhoneConfig::Jsonize() const
   if(m_deskPhoneNumberHasBeenSet)
   {
    payload.WithString("DeskPhoneNumber", m_deskPhoneNumber);
+
+  }
+
+  if(m_persistentConnectionHasBeenSet)
+  {
+   payload.WithBool("PersistentConnection", m_persistentConnection);
 
   }
 

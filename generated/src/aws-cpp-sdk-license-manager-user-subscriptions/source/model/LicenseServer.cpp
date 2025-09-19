@@ -25,6 +25,11 @@ LicenseServer::LicenseServer(JsonView jsonValue)
 
 LicenseServer& LicenseServer::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("ProvisioningStatus"))
+  {
+    m_provisioningStatus = LicenseServerEndpointProvisioningStatusMapper::GetLicenseServerEndpointProvisioningStatusForName(jsonValue.GetString("ProvisioningStatus"));
+    m_provisioningStatusHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("HealthStatus"))
   {
     m_healthStatus = LicenseServerHealthStatusMapper::GetLicenseServerHealthStatusForName(jsonValue.GetString("HealthStatus"));
@@ -35,17 +40,17 @@ LicenseServer& LicenseServer::operator =(JsonView jsonValue)
     m_ipv4Address = jsonValue.GetString("Ipv4Address");
     m_ipv4AddressHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProvisioningStatus"))
-  {
-    m_provisioningStatus = LicenseServerEndpointProvisioningStatusMapper::GetLicenseServerEndpointProvisioningStatusForName(jsonValue.GetString("ProvisioningStatus"));
-    m_provisioningStatusHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue LicenseServer::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_provisioningStatusHasBeenSet)
+  {
+   payload.WithString("ProvisioningStatus", LicenseServerEndpointProvisioningStatusMapper::GetNameForLicenseServerEndpointProvisioningStatus(m_provisioningStatus));
+  }
 
   if(m_healthStatusHasBeenSet)
   {
@@ -56,11 +61,6 @@ JsonValue LicenseServer::Jsonize() const
   {
    payload.WithString("Ipv4Address", m_ipv4Address);
 
-  }
-
-  if(m_provisioningStatusHasBeenSet)
-  {
-   payload.WithString("ProvisioningStatus", LicenseServerEndpointProvisioningStatusMapper::GetNameForLicenseServerEndpointProvisioningStatus(m_provisioningStatus));
   }
 
   return payload;

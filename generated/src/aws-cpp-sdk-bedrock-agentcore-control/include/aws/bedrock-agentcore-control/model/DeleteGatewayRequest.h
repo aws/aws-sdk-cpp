@@ -34,8 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the gateway to delete. This can be either the gateway ID or
-     * the gateway ARN.</p>
+     * <p>The identifier of the gateway to delete.</p>
      */
     inline const Aws::String& GetGatewayIdentifier() const { return m_gatewayIdentifier; }
     inline bool GatewayIdentifierHasBeenSet() const { return m_gatewayIdentifierHasBeenSet; }

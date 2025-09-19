@@ -36,6 +36,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The maximum number of results to return from a single request.</p>
+     */
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListLicenseServerEndpointsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>You can use the following filters to streamline results:</p> <ul> <li>
      * <p>IdentityProviderArn</p> </li> </ul>
      */
@@ -47,16 +57,6 @@ namespace Model
     ListLicenseServerEndpointsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     template<typename FiltersT = Filter>
     ListLicenseServerEndpointsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The maximum number of results to return from a single request.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListLicenseServerEndpointsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
 
     ///@{
@@ -73,11 +73,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet = false;
-
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
+
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;

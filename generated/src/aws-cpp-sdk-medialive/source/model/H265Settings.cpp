@@ -215,6 +215,26 @@ H265Settings& H265Settings::operator =(JsonView jsonValue)
     m_deblocking = H265DeblockingMapper::GetH265DeblockingForName(jsonValue.GetString("deblocking"));
     m_deblockingHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("gopBReference"))
+  {
+    m_gopBReference = H265GopBReferenceMapper::GetH265GopBReferenceForName(jsonValue.GetString("gopBReference"));
+    m_gopBReferenceHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("gopNumBFrames"))
+  {
+    m_gopNumBFrames = jsonValue.GetInteger("gopNumBFrames");
+    m_gopNumBFramesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("minBitrate"))
+  {
+    m_minBitrate = jsonValue.GetInteger("minBitrate");
+    m_minBitrateHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("subgopLength"))
+  {
+    m_subgopLength = H265SubGopLengthMapper::GetH265SubGopLengthForName(jsonValue.GetString("subgopLength"));
+    m_subgopLengthHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -428,6 +448,28 @@ JsonValue H265Settings::Jsonize() const
   if(m_deblockingHasBeenSet)
   {
    payload.WithString("deblocking", H265DeblockingMapper::GetNameForH265Deblocking(m_deblocking));
+  }
+
+  if(m_gopBReferenceHasBeenSet)
+  {
+   payload.WithString("gopBReference", H265GopBReferenceMapper::GetNameForH265GopBReference(m_gopBReference));
+  }
+
+  if(m_gopNumBFramesHasBeenSet)
+  {
+   payload.WithInteger("gopNumBFrames", m_gopNumBFrames);
+
+  }
+
+  if(m_minBitrateHasBeenSet)
+  {
+   payload.WithInteger("minBitrate", m_minBitrate);
+
+  }
+
+  if(m_subgopLengthHasBeenSet)
+  {
+   payload.WithString("subgopLength", H265SubGopLengthMapper::GetNameForH265SubGopLength(m_subgopLength));
   }
 
   return payload;

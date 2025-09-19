@@ -25,6 +25,11 @@ ActiveDirectoryIdentityProvider::ActiveDirectoryIdentityProvider(JsonView jsonVa
 
 ActiveDirectoryIdentityProvider& ActiveDirectoryIdentityProvider::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("DirectoryId"))
+  {
+    m_directoryId = jsonValue.GetString("DirectoryId");
+    m_directoryIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ActiveDirectorySettings"))
   {
     m_activeDirectorySettings = jsonValue.GetObject("ActiveDirectorySettings");
@@ -35,10 +40,10 @@ ActiveDirectoryIdentityProvider& ActiveDirectoryIdentityProvider::operator =(Jso
     m_activeDirectoryType = ActiveDirectoryTypeMapper::GetActiveDirectoryTypeForName(jsonValue.GetString("ActiveDirectoryType"));
     m_activeDirectoryTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DirectoryId"))
+  if(jsonValue.ValueExists("IsSharedActiveDirectory"))
   {
-    m_directoryId = jsonValue.GetString("DirectoryId");
-    m_directoryIdHasBeenSet = true;
+    m_isSharedActiveDirectory = jsonValue.GetBool("IsSharedActiveDirectory");
+    m_isSharedActiveDirectoryHasBeenSet = true;
   }
   return *this;
 }
@@ -46,6 +51,12 @@ ActiveDirectoryIdentityProvider& ActiveDirectoryIdentityProvider::operator =(Jso
 JsonValue ActiveDirectoryIdentityProvider::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_directoryIdHasBeenSet)
+  {
+   payload.WithString("DirectoryId", m_directoryId);
+
+  }
 
   if(m_activeDirectorySettingsHasBeenSet)
   {
@@ -58,9 +69,9 @@ JsonValue ActiveDirectoryIdentityProvider::Jsonize() const
    payload.WithString("ActiveDirectoryType", ActiveDirectoryTypeMapper::GetNameForActiveDirectoryType(m_activeDirectoryType));
   }
 
-  if(m_directoryIdHasBeenSet)
+  if(m_isSharedActiveDirectoryHasBeenSet)
   {
-   payload.WithString("DirectoryId", m_directoryId);
+   payload.WithBool("IsSharedActiveDirectory", m_isSharedActiveDirectory);
 
   }
 

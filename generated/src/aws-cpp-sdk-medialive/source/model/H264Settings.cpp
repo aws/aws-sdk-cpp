@@ -240,6 +240,11 @@ H264Settings& H264Settings::operator =(JsonView jsonValue)
     m_minQp = jsonValue.GetInteger("minQp");
     m_minQpHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("minBitrate"))
+  {
+    m_minBitrate = jsonValue.GetInteger("minBitrate");
+    m_minBitrateHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -479,6 +484,12 @@ JsonValue H264Settings::Jsonize() const
   if(m_minQpHasBeenSet)
   {
    payload.WithInteger("minQp", m_minQp);
+
+  }
+
+  if(m_minBitrateHasBeenSet)
+  {
+   payload.WithInteger("minBitrate", m_minBitrate);
 
   }
 

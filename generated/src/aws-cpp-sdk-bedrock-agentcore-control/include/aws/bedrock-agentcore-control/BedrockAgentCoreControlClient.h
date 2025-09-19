@@ -16,12 +16,10 @@ namespace Aws
 namespace BedrockAgentCoreControl
 {
   /**
-   * <p> <p>Amazon Bedrock AgentCore is in preview release and is subject to
-   * change.</p>  <p>Amazon Bedrock Agent Core Control is a service that
-   * enables you to manage memory resources for your Amazon Bedrock agents.</p>
-   * <p>Use this API to create, retrieve, update, and delete memory resources and
-   * their associated memory strategies. Memory resources enable your agents to store
-   * and retrieve information from conversations and interactions.</p></p>
+   * <p> <p> is in preview release and is subject to change.</p> 
+   * <p>Welcome to the Amazon Bedrock AgentCore Control plane API reference. Control
+   * plane actions configure, create, modify, and monitor Amazon Web Services
+   * resources.</p></p>
    */
   class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentCoreControlClient>
   {
@@ -82,7 +80,7 @@ namespace BedrockAgentCoreControl
         virtual ~BedrockAgentCoreControlClient();
 
         /**
-         * <p>Creates an Amazon Secure Agent.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Amazon Bedrock AgentCore Runtime.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateAgentRuntime">AWS
          * API Reference</a></p>
          */
@@ -107,7 +105,7 @@ namespace BedrockAgentCoreControl
         }
 
         /**
-         * <p>Creates an Amazon Secure AgentEndpoint.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an AgentCore Runtime endpoint.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateAgentRuntimeEndpoint">AWS
          * API Reference</a></p>
          */
@@ -237,8 +235,7 @@ namespace BedrockAgentCoreControl
 
         /**
          * <p>Creates a target for a gateway. A target defines an endpoint that the gateway
-         * can connect to.</p> <p>To create a target, you must specify the gateway
-         * identifier and target configuration.</p><p><h3>See Also:</h3>   <a
+         * can connect to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateGatewayTarget">AWS
          * API Reference</a></p>
          */
@@ -263,7 +260,8 @@ namespace BedrockAgentCoreControl
         }
 
         /**
-         * <p>Creates a new memory.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new Amazon Bedrock AgentCore Memory resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateMemory">AWS
          * API Reference</a></p>
          */
@@ -338,7 +336,7 @@ namespace BedrockAgentCoreControl
         }
 
         /**
-         * <p>Deletes an Amazon Secure Agent.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Amazon Bedrock AgentCore Runtime.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteAgentRuntime">AWS
          * API Reference</a></p>
          */
@@ -363,7 +361,7 @@ namespace BedrockAgentCoreControl
         }
 
         /**
-         * <p>Deletes an Amazon Secure AgentEndpoint.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an AAgentCore Runtime endpoint.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteAgentRuntimeEndpoint">AWS
          * API Reference</a></p>
          */
@@ -463,7 +461,7 @@ namespace BedrockAgentCoreControl
         }
 
         /**
-         * <p>Deletes a Gateway.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteGateway">AWS
          * API Reference</a></p>
          */
@@ -488,7 +486,7 @@ namespace BedrockAgentCoreControl
         }
 
         /**
-         * <p>Deletes a Gateway Target.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a gateway target.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteGatewayTarget">AWS
          * API Reference</a></p>
          */
@@ -513,7 +511,8 @@ namespace BedrockAgentCoreControl
         }
 
         /**
-         * <p>Deletes a memory.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Amazon Bedrock AgentCore Memory resource.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteMemory">AWS
          * API Reference</a></p>
          */
@@ -588,7 +587,7 @@ namespace BedrockAgentCoreControl
         }
 
         /**
-         * <p>Gets an Amazon Secure Agent.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets an Amazon Bedrock AgentCore Runtime.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetAgentRuntime">AWS
          * API Reference</a></p>
          */
@@ -741,7 +740,7 @@ namespace BedrockAgentCoreControl
         }
 
         /**
-         * <p>Retrieves information about a specific Gateway Target.</p><p><h3>See
+         * <p>Retrieves information about a specific gateway target.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetGatewayTarget">AWS
          * API Reference</a></p>
@@ -767,7 +766,8 @@ namespace BedrockAgentCoreControl
         }
 
         /**
-         * <p>Retrieve an existing memory.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieve an existing Amazon Bedrock AgentCore Memory resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetMemory">AWS
          * API Reference</a></p>
          */
@@ -1023,7 +1023,7 @@ namespace BedrockAgentCoreControl
         }
 
         /**
-         * <p>Lists all targets for a specific Gateway.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all targets for a specific gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListGatewayTargets">AWS
          * API Reference</a></p>
          */
@@ -1048,7 +1048,7 @@ namespace BedrockAgentCoreControl
         }
 
         /**
-         * <p>Lists all Gateways in the account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all gateways in the account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListGateways">AWS
          * API Reference</a></p>
          */
@@ -1073,7 +1073,8 @@ namespace BedrockAgentCoreControl
         }
 
         /**
-         * <p>Lists the memory present.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the available Amazon Bedrock AgentCore Memory resources in the current
+         * Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListMemories">AWS
          * API Reference</a></p>
          */
@@ -1121,6 +1122,32 @@ namespace BedrockAgentCoreControl
         void ListOauth2CredentialProvidersAsync(const ListOauth2CredentialProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListOauth2CredentialProvidersRequestT& request = {}) const
         {
             return SubmitAsync(&BedrockAgentCoreControlClient::ListOauth2CredentialProviders, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the tags associated with the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentCoreControlClient::ListTagsForResource, request);
+        }
+
+        /**
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentCoreControlClient::ListTagsForResource, request, handler, context);
         }
 
         /**
@@ -1175,6 +1202,60 @@ namespace BedrockAgentCoreControl
         }
 
         /**
+         * <p>Associates the specified tags to a resource with the specified resourceArn.
+         * If existing tags on a resource are not specified in the request parameters, they
+         * are not changed. When a resource is deleted, the tags associated with that
+         * resource are also deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentCoreControlClient::TagResource, request);
+        }
+
+        /**
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentCoreControlClient::TagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Removes the specified tags from the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentCoreControlClient::UntagResource, request);
+        }
+
+        /**
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentCoreControlClient::UntagResource, request, handler, context);
+        }
+
+        /**
          * <p>Updates an existing Amazon Secure Agent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateAgentRuntime">AWS
          * API Reference</a></p>
@@ -1200,8 +1281,8 @@ namespace BedrockAgentCoreControl
         }
 
         /**
-         * <p>Updates an existing Amazon Secure AgentEndpoint.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Updates an existing Amazon Bedrock AgentCore Runtime endpoint.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateAgentRuntimeEndpoint">AWS
          * API Reference</a></p>
          */
@@ -1252,7 +1333,7 @@ namespace BedrockAgentCoreControl
         }
 
         /**
-         * <p>Updates an existing Gateway.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateGateway">AWS
          * API Reference</a></p>
          */
@@ -1277,7 +1358,7 @@ namespace BedrockAgentCoreControl
         }
 
         /**
-         * <p>Updates an existing Gateway Target.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing gateway target.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateGatewayTarget">AWS
          * API Reference</a></p>
          */
@@ -1302,7 +1383,8 @@ namespace BedrockAgentCoreControl
         }
 
         /**
-         * <p>Update memory.</p><p><h3>See Also:</h3>   <a
+         * <p>Update an Amazon Bedrock AgentCore Memory resource memory.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateMemory">AWS
          * API Reference</a></p>
          */

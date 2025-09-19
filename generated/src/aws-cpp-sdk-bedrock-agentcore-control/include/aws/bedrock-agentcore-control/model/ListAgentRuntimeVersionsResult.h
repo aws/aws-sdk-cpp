@@ -7,7 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/bedrock-agentcore-control/model/Agent.h>
+#include <aws/bedrock-agentcore-control/model/AgentRuntime.h>
 #include <utility>
 
 namespace Aws
@@ -36,14 +36,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of agent runtime versions.</p>
+     * <p>The list of AgentCore Runtime versions.</p>
      */
-    inline const Aws::Vector<Agent>& GetAgentRuntimes() const { return m_agentRuntimes; }
-    template<typename AgentRuntimesT = Aws::Vector<Agent>>
+    inline const Aws::Vector<AgentRuntime>& GetAgentRuntimes() const { return m_agentRuntimes; }
+    template<typename AgentRuntimesT = Aws::Vector<AgentRuntime>>
     void SetAgentRuntimes(AgentRuntimesT&& value) { m_agentRuntimesHasBeenSet = true; m_agentRuntimes = std::forward<AgentRuntimesT>(value); }
-    template<typename AgentRuntimesT = Aws::Vector<Agent>>
+    template<typename AgentRuntimesT = Aws::Vector<AgentRuntime>>
     ListAgentRuntimeVersionsResult& WithAgentRuntimes(AgentRuntimesT&& value) { SetAgentRuntimes(std::forward<AgentRuntimesT>(value)); return *this;}
-    template<typename AgentRuntimesT = Agent>
+    template<typename AgentRuntimesT = AgentRuntime>
     ListAgentRuntimeVersionsResult& AddAgentRuntimes(AgentRuntimesT&& value) { m_agentRuntimesHasBeenSet = true; m_agentRuntimes.emplace_back(std::forward<AgentRuntimesT>(value)); return *this; }
     ///@}
 
@@ -68,7 +68,7 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<Agent> m_agentRuntimes;
+    Aws::Vector<AgentRuntime> m_agentRuntimes;
     bool m_agentRuntimesHasBeenSet = false;
 
     Aws::String m_nextToken;

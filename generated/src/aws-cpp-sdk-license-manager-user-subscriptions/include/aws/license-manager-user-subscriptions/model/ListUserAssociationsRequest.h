@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptions_EXPORTS.h>
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/license-manager-user-subscriptions/model/IdentityProvider.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/license-manager-user-subscriptions/model/IdentityProvider.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/license-manager-user-subscriptions/model/Filter.h>
 #include <utility>
 
@@ -37,17 +37,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>You can use the following filters to streamline results:</p> <ul> <li>
-     * <p>Status</p> </li> <li> <p>Username</p> </li> <li> <p>Domain</p> </li> </ul>
+     * <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
-    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    template<typename FiltersT = Aws::Vector<Filter>>
-    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
-    template<typename FiltersT = Aws::Vector<Filter>>
-    ListUserAssociationsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
-    template<typename FiltersT = Filter>
-    ListUserAssociationsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    ListUserAssociationsRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,24 +61,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
-     */
-    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
-    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    template<typename InstanceIdT = Aws::String>
-    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
-    template<typename InstanceIdT = Aws::String>
-    ListUserAssociationsRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The maximum number of results to return from a single request.</p>
      */
     inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListUserAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>You can use the following filters to streamline results:</p> <ul> <li>
+     * <p>Status</p> </li> <li> <p>Username</p> </li> <li> <p>Domain</p> </li> </ul>
+     */
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    ListUserAssociationsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    ListUserAssociationsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -98,17 +98,17 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet = false;
+    Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet = false;
 
     IdentityProvider m_identityProvider;
     bool m_identityProviderHasBeenSet = false;
 
-    Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet = false;
-
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
+
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;

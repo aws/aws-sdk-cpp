@@ -7,11 +7,12 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/bedrock-agentcore-control/model/AgentArtifact.h>
+#include <aws/bedrock-agentcore-control/model/AgentRuntimeArtifact.h>
 #include <aws/bedrock-agentcore-control/model/NetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ProtocolConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/RequestHeaderConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -40,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the agent runtime to update.</p>
+     * <p>The unique identifier of the AgentCore Runtime to update.</p>
      */
     inline const Aws::String& GetAgentRuntimeId() const { return m_agentRuntimeId; }
     inline bool AgentRuntimeIdHasBeenSet() const { return m_agentRuntimeIdHasBeenSet; }
@@ -52,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated description of the agent runtime.</p>
+     * <p>The updated description of the AgentCore Runtime.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -64,19 +65,20 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated artifact of the agent runtime.</p>
+     * <p>The updated artifact of the AgentCore Runtime.</p>
      */
-    inline const AgentArtifact& GetAgentRuntimeArtifact() const { return m_agentRuntimeArtifact; }
+    inline const AgentRuntimeArtifact& GetAgentRuntimeArtifact() const { return m_agentRuntimeArtifact; }
     inline bool AgentRuntimeArtifactHasBeenSet() const { return m_agentRuntimeArtifactHasBeenSet; }
-    template<typename AgentRuntimeArtifactT = AgentArtifact>
+    template<typename AgentRuntimeArtifactT = AgentRuntimeArtifact>
     void SetAgentRuntimeArtifact(AgentRuntimeArtifactT&& value) { m_agentRuntimeArtifactHasBeenSet = true; m_agentRuntimeArtifact = std::forward<AgentRuntimeArtifactT>(value); }
-    template<typename AgentRuntimeArtifactT = AgentArtifact>
+    template<typename AgentRuntimeArtifactT = AgentRuntimeArtifact>
     UpdateAgentRuntimeRequest& WithAgentRuntimeArtifact(AgentRuntimeArtifactT&& value) { SetAgentRuntimeArtifact(std::forward<AgentRuntimeArtifactT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The updated IAM role ARN that provides permissions for the agent runtime.</p>
+     * <p>The updated IAM role ARN that provides permissions for the AgentCore
+     * Runtime.</p>
      */
     inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -88,7 +90,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated network configuration for the agent runtime.</p>
+     * <p>The updated network configuration for the AgentCore Runtime.</p>
      */
     inline const NetworkConfiguration& GetNetworkConfiguration() const { return m_networkConfiguration; }
     inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
@@ -122,7 +124,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Updated environment variables to set in the agent runtime environment.</p>
+     * <p>Updated environment variables to set in the AgentCore Runtime
+     * environment.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const { return m_environmentVariables; }
     inline bool EnvironmentVariablesHasBeenSet() const { return m_environmentVariablesHasBeenSet; }
@@ -138,7 +141,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated authorizer configuration for the agent runtime.</p>
+     * <p>The updated authorizer configuration for the AgentCore Runtime.</p>
      */
     inline const AuthorizerConfiguration& GetAuthorizerConfiguration() const { return m_authorizerConfiguration; }
     inline bool AuthorizerConfigurationHasBeenSet() const { return m_authorizerConfigurationHasBeenSet; }
@@ -146,6 +149,19 @@ namespace Model
     void SetAuthorizerConfiguration(AuthorizerConfigurationT&& value) { m_authorizerConfigurationHasBeenSet = true; m_authorizerConfiguration = std::forward<AuthorizerConfigurationT>(value); }
     template<typename AuthorizerConfigurationT = AuthorizerConfiguration>
     UpdateAgentRuntimeRequest& WithAuthorizerConfiguration(AuthorizerConfigurationT&& value) { SetAuthorizerConfiguration(std::forward<AuthorizerConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The updated configuration for HTTP request headers that will be passed
+     * through to the runtime.</p>
+     */
+    inline const RequestHeaderConfiguration& GetRequestHeaderConfiguration() const { return m_requestHeaderConfiguration; }
+    inline bool RequestHeaderConfigurationHasBeenSet() const { return m_requestHeaderConfigurationHasBeenSet; }
+    template<typename RequestHeaderConfigurationT = RequestHeaderConfiguration>
+    void SetRequestHeaderConfiguration(RequestHeaderConfigurationT&& value) { m_requestHeaderConfigurationHasBeenSet = true; m_requestHeaderConfiguration = std::forward<RequestHeaderConfigurationT>(value); }
+    template<typename RequestHeaderConfigurationT = RequestHeaderConfiguration>
+    UpdateAgentRuntimeRequest& WithRequestHeaderConfiguration(RequestHeaderConfigurationT&& value) { SetRequestHeaderConfiguration(std::forward<RequestHeaderConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -155,7 +171,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    AgentArtifact m_agentRuntimeArtifact;
+    AgentRuntimeArtifact m_agentRuntimeArtifact;
     bool m_agentRuntimeArtifactHasBeenSet = false;
 
     Aws::String m_roleArn;
@@ -175,6 +191,9 @@ namespace Model
 
     AuthorizerConfiguration m_authorizerConfiguration;
     bool m_authorizerConfigurationHasBeenSet = false;
+
+    RequestHeaderConfiguration m_requestHeaderConfiguration;
+    bool m_requestHeaderConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -6,7 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/bedrock-agentcore-control/model/AgentEndpointStatus.h>
+#include <aws/bedrock-agentcore-control/model/AgentRuntimeEndpointStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The currently deployed version of the agent runtime on the endpoint.</p>
+     * <p>The currently deployed version of the AgentCore Runtime on the endpoint.</p>
      */
     inline const Aws::String& GetLiveVersion() const { return m_liveVersion; }
     template<typename LiveVersionT = Aws::String>
@@ -47,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The target version of the agent runtime for the endpoint.</p>
+     * <p>The target version of the AgentCore Runtime for the endpoint.</p>
      */
     inline const Aws::String& GetTargetVersion() const { return m_targetVersion; }
     template<typename TargetVersionT = Aws::String>
@@ -58,7 +58,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the agent runtime endpoint.</p>
+     * <p>The Amazon Resource Name (ARN) of the AgentCore Runtime endpoint.</p>
      */
     inline const Aws::String& GetAgentRuntimeEndpointArn() const { return m_agentRuntimeEndpointArn; }
     template<typename AgentRuntimeEndpointArnT = Aws::String>
@@ -69,7 +69,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the agent runtime.</p>
+     * <p>The Amazon Resource Name (ARN) of the AgentCore Runtime.</p>
      */
     inline const Aws::String& GetAgentRuntimeArn() const { return m_agentRuntimeArn; }
     template<typename AgentRuntimeArnT = Aws::String>
@@ -80,7 +80,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of the agent runtime endpoint.</p>
+     * <p>The description of the AgentCore Runtime endpoint.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     template<typename DescriptionT = Aws::String>
@@ -91,16 +91,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current status of the agent runtime endpoint.</p>
+     * <p>The current status of the AgentCore Runtime endpoint.</p>
      */
-    inline AgentEndpointStatus GetStatus() const { return m_status; }
-    inline void SetStatus(AgentEndpointStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline GetAgentRuntimeEndpointResult& WithStatus(AgentEndpointStatus value) { SetStatus(value); return *this;}
+    inline AgentRuntimeEndpointStatus GetStatus() const { return m_status; }
+    inline void SetStatus(AgentRuntimeEndpointStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetAgentRuntimeEndpointResult& WithStatus(AgentRuntimeEndpointStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The timestamp when the agent runtime endpoint was created.</p>
+     * <p>The timestamp when the AgentCore Runtime endpoint was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     template<typename CreatedAtT = Aws::Utils::DateTime>
@@ -111,7 +111,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp when the agent runtime endpoint was last updated.</p>
+     * <p>The timestamp when the AgentCore Runtime endpoint was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
     template<typename LastUpdatedAtT = Aws::Utils::DateTime>
@@ -122,7 +122,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The reason for failure if the agent runtime endpoint is in a failed
+     * <p>The reason for failure if the AgentCore Runtime endpoint is in a failed
      * state.</p>
      */
     inline const Aws::String& GetFailureReason() const { return m_failureReason; }
@@ -134,7 +134,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the agent runtime endpoint.</p>
+     * <p>The name of the AgentCore Runtime endpoint.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     template<typename NameT = Aws::String>
@@ -145,7 +145,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the agent runtime endpoint.</p>
+     * <p>The unique identifier of the AgentCore Runtime endpoint.</p>
      */
     inline const Aws::String& GetId() const { return m_id; }
     template<typename IdT = Aws::String>
@@ -179,7 +179,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    AgentEndpointStatus m_status{AgentEndpointStatus::NOT_SET};
+    AgentRuntimeEndpointStatus m_status{AgentRuntimeEndpointStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt{};

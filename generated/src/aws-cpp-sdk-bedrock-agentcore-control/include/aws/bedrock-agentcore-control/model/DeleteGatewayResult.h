@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the deleted Gateway.</p>
+     * <p>The unique identifier of the deleted gateway.</p>
      */
     inline const Aws::String& GetGatewayId() const { return m_gatewayId; }
     template<typename GatewayIdT = Aws::String>
@@ -47,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current status of the Gateway deletion.</p>
+     * <p>The current status of the gateway deletion.</p>
      */
     inline GatewayStatus GetStatus() const { return m_status; }
     inline void SetStatus(GatewayStatus value) { m_statusHasBeenSet = true; m_status = value; }
@@ -56,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The reasons for the current status of the Gateway deletion.</p>
+     * <p>The reasons for the current status of the gateway deletion.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStatusReasons() const { return m_statusReasons; }
     template<typename StatusReasonsT = Aws::Vector<Aws::String>>

@@ -16,9 +16,9 @@ Aws::String StartProductSubscriptionRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_domainHasBeenSet)
+  if(m_usernameHasBeenSet)
   {
-   payload.WithString("Domain", m_domain);
+   payload.WithString("Username", m_username);
 
   }
 
@@ -34,6 +34,12 @@ Aws::String StartProductSubscriptionRequest::SerializePayload() const
 
   }
 
+  if(m_domainHasBeenSet)
+  {
+   payload.WithString("Domain", m_domain);
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;
@@ -42,12 +48,6 @@ Aws::String StartProductSubscriptionRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
-
-  }
-
-  if(m_usernameHasBeenSet)
-  {
-   payload.WithString("Username", m_username);
 
   }
 

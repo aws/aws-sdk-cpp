@@ -27,7 +27,7 @@ DeleteAgentRuntimeEndpointResult& DeleteAgentRuntimeEndpointResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("status"))
   {
-    m_status = AgentEndpointStatusMapper::GetAgentEndpointStatusForName(jsonValue.GetString("status"));
+    m_status = AgentRuntimeEndpointStatusMapper::GetAgentRuntimeEndpointStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
 

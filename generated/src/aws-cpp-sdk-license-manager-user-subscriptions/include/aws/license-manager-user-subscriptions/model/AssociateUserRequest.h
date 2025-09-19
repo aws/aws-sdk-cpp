@@ -36,15 +36,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The domain name of the Active Directory that contains information for the
-     * user to associate.</p>
+     * <p>The user name from the identity provider.</p>
      */
-    inline const Aws::String& GetDomain() const { return m_domain; }
-    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    template<typename DomainT = Aws::String>
-    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
-    template<typename DomainT = Aws::String>
-    AssociateUserRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
+    inline const Aws::String& GetUsername() const { return m_username; }
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    AssociateUserRequest& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the EC2 instance that provides the user-based subscription.</p>
+     */
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    AssociateUserRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +72,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the EC2 instance that provides the user-based subscription.</p>
+     * <p>The domain name of the Active Directory that contains information for the
+     * user to associate.</p>
      */
-    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
-    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    template<typename InstanceIdT = Aws::String>
-    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
-    template<typename InstanceIdT = Aws::String>
-    AssociateUserRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
+    inline const Aws::String& GetDomain() const { return m_domain; }
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    AssociateUserRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,34 +98,22 @@ namespace Model
       m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
     }
     ///@}
-
-    ///@{
-    /**
-     * <p>The user name from the identity provider.</p>
-     */
-    inline const Aws::String& GetUsername() const { return m_username; }
-    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    template<typename UsernameT = Aws::String>
-    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
-    template<typename UsernameT = Aws::String>
-    AssociateUserRequest& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
-    ///@}
   private:
 
-    Aws::String m_domain;
-    bool m_domainHasBeenSet = false;
-
-    IdentityProvider m_identityProvider;
-    bool m_identityProviderHasBeenSet = false;
+    Aws::String m_username;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
 
+    IdentityProvider m_identityProvider;
+    bool m_identityProviderHasBeenSet = false;
+
+    Aws::String m_domain;
+    bool m_domainHasBeenSet = false;
+
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
-
-    Aws::String m_username;
-    bool m_usernameHasBeenSet = false;
   };
 
 } // namespace Model

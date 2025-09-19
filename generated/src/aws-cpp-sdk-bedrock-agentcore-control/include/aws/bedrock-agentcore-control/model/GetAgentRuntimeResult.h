@@ -8,12 +8,13 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agentcore-control/model/WorkloadIdentityDetails.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/bedrock-agentcore-control/model/AgentArtifact.h>
+#include <aws/bedrock-agentcore-control/model/AgentRuntimeArtifact.h>
 #include <aws/bedrock-agentcore-control/model/NetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ProtocolConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerConfiguration.h>
-#include <aws/bedrock-agentcore-control/model/AgentStatus.h>
+#include <aws/bedrock-agentcore-control/model/RequestHeaderConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/AgentRuntimeStatus.h>
 #include <utility>
 
 namespace Aws
@@ -42,7 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the agent runtime.</p>
+     * <p>The Amazon Resource Name (ARN) of the AgentCore Runtime.</p>
      */
     inline const Aws::String& GetAgentRuntimeArn() const { return m_agentRuntimeArn; }
     template<typename AgentRuntimeArnT = Aws::String>
@@ -53,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The workload identity details for the agent runtime.</p>
+     * <p>The workload identity details for the AgentCore Runtime.</p>
      */
     inline const WorkloadIdentityDetails& GetWorkloadIdentityDetails() const { return m_workloadIdentityDetails; }
     template<typename WorkloadIdentityDetailsT = WorkloadIdentityDetails>
@@ -64,7 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the agent runtime.</p>
+     * <p>The name of the AgentCore Runtime.</p>
      */
     inline const Aws::String& GetAgentRuntimeName() const { return m_agentRuntimeName; }
     template<typename AgentRuntimeNameT = Aws::String>
@@ -75,7 +76,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of the agent runtime.</p>
+     * <p>The description of the AgentCore Runtime.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     template<typename DescriptionT = Aws::String>
@@ -86,7 +87,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the agent runtime.</p>
+     * <p>The unique identifier of the AgentCore Runtime.</p>
      */
     inline const Aws::String& GetAgentRuntimeId() const { return m_agentRuntimeId; }
     template<typename AgentRuntimeIdT = Aws::String>
@@ -97,7 +98,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The version of the agent runtime.</p>
+     * <p>The version of the AgentCore Runtime.</p>
      */
     inline const Aws::String& GetAgentRuntimeVersion() const { return m_agentRuntimeVersion; }
     template<typename AgentRuntimeVersionT = Aws::String>
@@ -108,7 +109,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp when the agent runtime was created.</p>
+     * <p>The timestamp when the AgentCore Runtime was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     template<typename CreatedAtT = Aws::Utils::DateTime>
@@ -119,7 +120,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp when the agent runtime was last updated.</p>
+     * <p>The timestamp when the AgentCore Runtime was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
     template<typename LastUpdatedAtT = Aws::Utils::DateTime>
@@ -130,7 +131,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IAM role ARN that provides permissions for the agent runtime.</p>
+     * <p>The IAM role ARN that provides permissions for the AgentCore Runtime.</p>
      */
     inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     template<typename RoleArnT = Aws::String>
@@ -141,18 +142,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>The artifact of the agent runtime.</p>
+     * <p>The artifact of the AgentCore Runtime.</p>
      */
-    inline const AgentArtifact& GetAgentRuntimeArtifact() const { return m_agentRuntimeArtifact; }
-    template<typename AgentRuntimeArtifactT = AgentArtifact>
+    inline const AgentRuntimeArtifact& GetAgentRuntimeArtifact() const { return m_agentRuntimeArtifact; }
+    template<typename AgentRuntimeArtifactT = AgentRuntimeArtifact>
     void SetAgentRuntimeArtifact(AgentRuntimeArtifactT&& value) { m_agentRuntimeArtifactHasBeenSet = true; m_agentRuntimeArtifact = std::forward<AgentRuntimeArtifactT>(value); }
-    template<typename AgentRuntimeArtifactT = AgentArtifact>
+    template<typename AgentRuntimeArtifactT = AgentRuntimeArtifact>
     GetAgentRuntimeResult& WithAgentRuntimeArtifact(AgentRuntimeArtifactT&& value) { SetAgentRuntimeArtifact(std::forward<AgentRuntimeArtifactT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The network configuration for the agent runtime.</p>
+     * <p>The network configuration for the AgentCore Runtime.</p>
      */
     inline const NetworkConfiguration& GetNetworkConfiguration() const { return m_networkConfiguration; }
     template<typename NetworkConfigurationT = NetworkConfiguration>
@@ -172,7 +173,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Environment variables set in the agent runtime environment.</p>
+     * <p>Environment variables set in the AgentCore Runtime environment.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const { return m_environmentVariables; }
     template<typename EnvironmentVariablesT = Aws::Map<Aws::String, Aws::String>>
@@ -187,7 +188,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The authorizer configuration for the agent runtime.</p>
+     * <p>The authorizer configuration for the AgentCore Runtime.</p>
      */
     inline const AuthorizerConfiguration& GetAuthorizerConfiguration() const { return m_authorizerConfiguration; }
     template<typename AuthorizerConfigurationT = AuthorizerConfiguration>
@@ -198,11 +199,23 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current status of the agent runtime.</p>
+     * <p>Configuration for HTTP request headers that will be passed through to the
+     * runtime.</p>
      */
-    inline AgentStatus GetStatus() const { return m_status; }
-    inline void SetStatus(AgentStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline GetAgentRuntimeResult& WithStatus(AgentStatus value) { SetStatus(value); return *this;}
+    inline const RequestHeaderConfiguration& GetRequestHeaderConfiguration() const { return m_requestHeaderConfiguration; }
+    template<typename RequestHeaderConfigurationT = RequestHeaderConfiguration>
+    void SetRequestHeaderConfiguration(RequestHeaderConfigurationT&& value) { m_requestHeaderConfigurationHasBeenSet = true; m_requestHeaderConfiguration = std::forward<RequestHeaderConfigurationT>(value); }
+    template<typename RequestHeaderConfigurationT = RequestHeaderConfiguration>
+    GetAgentRuntimeResult& WithRequestHeaderConfiguration(RequestHeaderConfigurationT&& value) { SetRequestHeaderConfiguration(std::forward<RequestHeaderConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The current status of the AgentCore Runtime.</p>
+     */
+    inline AgentRuntimeStatus GetStatus() const { return m_status; }
+    inline void SetStatus(AgentRuntimeStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetAgentRuntimeResult& WithStatus(AgentRuntimeStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -242,7 +255,7 @@ namespace Model
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
-    AgentArtifact m_agentRuntimeArtifact;
+    AgentRuntimeArtifact m_agentRuntimeArtifact;
     bool m_agentRuntimeArtifactHasBeenSet = false;
 
     NetworkConfiguration m_networkConfiguration;
@@ -257,7 +270,10 @@ namespace Model
     AuthorizerConfiguration m_authorizerConfiguration;
     bool m_authorizerConfigurationHasBeenSet = false;
 
-    AgentStatus m_status{AgentStatus::NOT_SET};
+    RequestHeaderConfiguration m_requestHeaderConfiguration;
+    bool m_requestHeaderConfigurationHasBeenSet = false;
+
+    AgentRuntimeStatus m_status{AgentRuntimeStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;

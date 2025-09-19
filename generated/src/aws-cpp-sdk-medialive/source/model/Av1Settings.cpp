@@ -120,6 +120,11 @@ Av1Settings& Av1Settings::operator =(JsonView jsonValue)
     m_rateControlMode = Av1RateControlModeMapper::GetAv1RateControlModeForName(jsonValue.GetString("rateControlMode"));
     m_rateControlModeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("minBitrate"))
+  {
+    m_minBitrate = jsonValue.GetInteger("minBitrate");
+    m_minBitrateHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -232,6 +237,12 @@ JsonValue Av1Settings::Jsonize() const
   if(m_rateControlModeHasBeenSet)
   {
    payload.WithString("rateControlMode", Av1RateControlModeMapper::GetNameForAv1RateControlMode(m_rateControlMode));
+  }
+
+  if(m_minBitrateHasBeenSet)
+  {
+   payload.WithInteger("minBitrate", m_minBitrate);
+
   }
 
   return payload;

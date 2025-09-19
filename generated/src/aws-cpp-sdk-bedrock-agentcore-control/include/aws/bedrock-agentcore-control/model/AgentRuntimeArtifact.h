@@ -25,15 +25,15 @@ namespace Model
 
   /**
    * <p>The artifact of the agent.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/AgentArtifact">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/AgentRuntimeArtifact">AWS
    * API Reference</a></p>
    */
-  class AgentArtifact
+  class AgentRuntimeArtifact
   {
   public:
-    AWS_BEDROCKAGENTCORECONTROL_API AgentArtifact() = default;
-    AWS_BEDROCKAGENTCORECONTROL_API AgentArtifact(Aws::Utils::Json::JsonView jsonValue);
-    AWS_BEDROCKAGENTCORECONTROL_API AgentArtifact& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BEDROCKAGENTCORECONTROL_API AgentRuntimeArtifact() = default;
+    AWS_BEDROCKAGENTCORECONTROL_API AgentRuntimeArtifact(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BEDROCKAGENTCORECONTROL_API AgentRuntimeArtifact& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTCORECONTROL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -46,7 +46,7 @@ namespace Model
     template<typename ContainerConfigurationT = ContainerConfiguration>
     void SetContainerConfiguration(ContainerConfigurationT&& value) { m_containerConfigurationHasBeenSet = true; m_containerConfiguration = std::forward<ContainerConfigurationT>(value); }
     template<typename ContainerConfigurationT = ContainerConfiguration>
-    AgentArtifact& WithContainerConfiguration(ContainerConfigurationT&& value) { SetContainerConfiguration(std::forward<ContainerConfigurationT>(value)); return *this;}
+    AgentRuntimeArtifact& WithContainerConfiguration(ContainerConfigurationT&& value) { SetContainerConfiguration(std::forward<ContainerConfigurationT>(value)); return *this;}
     ///@}
   private:
 

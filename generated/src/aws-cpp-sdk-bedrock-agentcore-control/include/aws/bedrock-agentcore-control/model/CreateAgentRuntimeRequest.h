@@ -7,11 +7,12 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/bedrock-agentcore-control/model/AgentArtifact.h>
+#include <aws/bedrock-agentcore-control/model/AgentRuntimeArtifact.h>
 #include <aws/bedrock-agentcore-control/model/NetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ProtocolConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/RequestHeaderConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -40,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the secure agent.</p>
+     * <p>The name of the AgentCore Runtime.</p>
      */
     inline const Aws::String& GetAgentRuntimeName() const { return m_agentRuntimeName; }
     inline bool AgentRuntimeNameHasBeenSet() const { return m_agentRuntimeNameHasBeenSet; }
@@ -52,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of the agent runtime.</p>
+     * <p>The description of the AgentCore Runtime.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -64,19 +65,19 @@ namespace Model
 
     ///@{
     /**
-     * <p>The artifact of the agent.</p>
+     * <p>The artifact of the AgentCore Runtime.</p>
      */
-    inline const AgentArtifact& GetAgentRuntimeArtifact() const { return m_agentRuntimeArtifact; }
+    inline const AgentRuntimeArtifact& GetAgentRuntimeArtifact() const { return m_agentRuntimeArtifact; }
     inline bool AgentRuntimeArtifactHasBeenSet() const { return m_agentRuntimeArtifactHasBeenSet; }
-    template<typename AgentRuntimeArtifactT = AgentArtifact>
+    template<typename AgentRuntimeArtifactT = AgentRuntimeArtifact>
     void SetAgentRuntimeArtifact(AgentRuntimeArtifactT&& value) { m_agentRuntimeArtifactHasBeenSet = true; m_agentRuntimeArtifact = std::forward<AgentRuntimeArtifactT>(value); }
-    template<typename AgentRuntimeArtifactT = AgentArtifact>
+    template<typename AgentRuntimeArtifactT = AgentRuntimeArtifact>
     CreateAgentRuntimeRequest& WithAgentRuntimeArtifact(AgentRuntimeArtifactT&& value) { SetAgentRuntimeArtifact(std::forward<AgentRuntimeArtifactT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The IAM role ARN that provides permissions for the agent runtime.</p>
+     * <p>The IAM role ARN that provides permissions for the AgentCore Runtime.</p>
      */
     inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -88,7 +89,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The network configuration for the agent runtime.</p>
+     * <p>The network configuration for the AgentCore Runtime.</p>
      */
     inline const NetworkConfiguration& GetNetworkConfiguration() const { return m_networkConfiguration; }
     inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
@@ -122,7 +123,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Environment variables to set in the agent runtime environment.</p>
+     * <p>Environment variables to set in the AgentCore Runtime environment.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const { return m_environmentVariables; }
     inline bool EnvironmentVariablesHasBeenSet() const { return m_environmentVariablesHasBeenSet; }
@@ -138,7 +139,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The authorizer configuration for the agent runtime.</p>
+     * <p>The authorizer configuration for the AgentCore Runtime.</p>
      */
     inline const AuthorizerConfiguration& GetAuthorizerConfiguration() const { return m_authorizerConfiguration; }
     inline bool AuthorizerConfigurationHasBeenSet() const { return m_authorizerConfigurationHasBeenSet; }
@@ -146,6 +147,37 @@ namespace Model
     void SetAuthorizerConfiguration(AuthorizerConfigurationT&& value) { m_authorizerConfigurationHasBeenSet = true; m_authorizerConfiguration = std::forward<AuthorizerConfigurationT>(value); }
     template<typename AuthorizerConfigurationT = AuthorizerConfiguration>
     CreateAgentRuntimeRequest& WithAuthorizerConfiguration(AuthorizerConfigurationT&& value) { SetAuthorizerConfiguration(std::forward<AuthorizerConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Configuration for HTTP request headers that will be passed through to the
+     * runtime.</p>
+     */
+    inline const RequestHeaderConfiguration& GetRequestHeaderConfiguration() const { return m_requestHeaderConfiguration; }
+    inline bool RequestHeaderConfigurationHasBeenSet() const { return m_requestHeaderConfigurationHasBeenSet; }
+    template<typename RequestHeaderConfigurationT = RequestHeaderConfiguration>
+    void SetRequestHeaderConfiguration(RequestHeaderConfigurationT&& value) { m_requestHeaderConfigurationHasBeenSet = true; m_requestHeaderConfiguration = std::forward<RequestHeaderConfigurationT>(value); }
+    template<typename RequestHeaderConfigurationT = RequestHeaderConfiguration>
+    CreateAgentRuntimeRequest& WithRequestHeaderConfiguration(RequestHeaderConfigurationT&& value) { SetRequestHeaderConfiguration(std::forward<RequestHeaderConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A map of tag keys and values to assign to the agent runtime. Tags enable you
+     * to categorize your resources in different ways, for example, by purpose, owner,
+     * or environment.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateAgentRuntimeRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateAgentRuntimeRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -155,7 +187,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    AgentArtifact m_agentRuntimeArtifact;
+    AgentRuntimeArtifact m_agentRuntimeArtifact;
     bool m_agentRuntimeArtifactHasBeenSet = false;
 
     Aws::String m_roleArn;
@@ -175,6 +207,12 @@ namespace Model
 
     AuthorizerConfiguration m_authorizerConfiguration;
     bool m_authorizerConfigurationHasBeenSet = false;
+
+    RequestHeaderConfiguration m_requestHeaderConfiguration;
+    bool m_requestHeaderConfigurationHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

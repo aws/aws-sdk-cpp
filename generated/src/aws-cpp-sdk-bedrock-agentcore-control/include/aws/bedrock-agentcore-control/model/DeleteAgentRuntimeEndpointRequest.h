@@ -41,7 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the agent runtime associated with the endpoint.</p>
+     * <p>The unique identifier of the AgentCore Runtime associated with the
+     * endpoint.</p>
      */
     inline const Aws::String& GetAgentRuntimeId() const { return m_agentRuntimeId; }
     inline bool AgentRuntimeIdHasBeenSet() const { return m_agentRuntimeIdHasBeenSet; }
@@ -53,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the agent runtime endpoint to delete.</p>
+     * <p>The name of the AgentCore Runtime endpoint to delete.</p>
      */
     inline const Aws::String& GetEndpointName() const { return m_endpointName; }
     inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }

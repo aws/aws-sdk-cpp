@@ -48,19 +48,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the identity provider to
-     * deregister.</p>
-     */
-    inline const Aws::String& GetIdentityProviderArn() const { return m_identityProviderArn; }
-    inline bool IdentityProviderArnHasBeenSet() const { return m_identityProviderArnHasBeenSet; }
-    template<typename IdentityProviderArnT = Aws::String>
-    void SetIdentityProviderArn(IdentityProviderArnT&& value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn = std::forward<IdentityProviderArnT>(value); }
-    template<typename IdentityProviderArnT = Aws::String>
-    DeregisterIdentityProviderRequest& WithIdentityProviderArn(IdentityProviderArnT&& value) { SetIdentityProviderArn(std::forward<IdentityProviderArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the user-based subscription product.</p> <p>Valid values:
      * <code>VISUAL_STUDIO_ENTERPRISE</code> | <code>VISUAL_STUDIO_PROFESSIONAL</code>
      * | <code>OFFICE_PROFESSIONAL_PLUS</code> | <code>REMOTE_DESKTOP_SERVICES</code>
@@ -73,16 +60,29 @@ namespace Model
     template<typename ProductT = Aws::String>
     DeregisterIdentityProviderRequest& WithProduct(ProductT&& value) { SetProduct(std::forward<ProductT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the identity provider to
+     * deregister.</p>
+     */
+    inline const Aws::String& GetIdentityProviderArn() const { return m_identityProviderArn; }
+    inline bool IdentityProviderArnHasBeenSet() const { return m_identityProviderArnHasBeenSet; }
+    template<typename IdentityProviderArnT = Aws::String>
+    void SetIdentityProviderArn(IdentityProviderArnT&& value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn = std::forward<IdentityProviderArnT>(value); }
+    template<typename IdentityProviderArnT = Aws::String>
+    DeregisterIdentityProviderRequest& WithIdentityProviderArn(IdentityProviderArnT&& value) { SetIdentityProviderArn(std::forward<IdentityProviderArnT>(value)); return *this;}
+    ///@}
   private:
 
     IdentityProvider m_identityProvider;
     bool m_identityProviderHasBeenSet = false;
 
-    Aws::String m_identityProviderArn;
-    bool m_identityProviderArnHasBeenSet = false;
-
     Aws::String m_product;
     bool m_productHasBeenSet = false;
+
+    Aws::String m_identityProviderArn;
+    bool m_identityProviderArnHasBeenSet = false;
   };
 
 } // namespace Model

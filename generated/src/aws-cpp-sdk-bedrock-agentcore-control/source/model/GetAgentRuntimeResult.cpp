@@ -99,9 +99,14 @@ GetAgentRuntimeResult& GetAgentRuntimeResult::operator =(const Aws::AmazonWebSer
     m_authorizerConfiguration = jsonValue.GetObject("authorizerConfiguration");
     m_authorizerConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("requestHeaderConfiguration"))
+  {
+    m_requestHeaderConfiguration = jsonValue.GetObject("requestHeaderConfiguration");
+    m_requestHeaderConfigurationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("status"))
   {
-    m_status = AgentStatusMapper::GetAgentStatusForName(jsonValue.GetString("status"));
+    m_status = AgentRuntimeStatusMapper::GetAgentRuntimeStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
 

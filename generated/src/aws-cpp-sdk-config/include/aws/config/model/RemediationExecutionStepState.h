@@ -18,7 +18,10 @@ namespace Model
     NOT_SET,
     SUCCEEDED,
     PENDING,
-    FAILED
+    FAILED,
+    IN_PROGRESS,
+    EXITED,
+    UNKNOWN
   };
 
 namespace RemediationExecutionStepStateMapper

@@ -39,8 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the gateway to update. This can be either the gateway ID or
-     * the gateway ARN.</p>
+     * <p>The identifier of the gateway to update.</p>
      */
     inline const Aws::String& GetGatewayIdentifier() const { return m_gatewayIdentifier; }
     inline bool GatewayIdentifierHasBeenSet() const { return m_gatewayIdentifierHasBeenSet; }
@@ -52,7 +51,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated name for the Gateway.</p>
+     * <p>The name of the gateway. This name must be the same as the one when the
+     * gateway was created.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -64,7 +64,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated description for the Gateway.</p>
+     * <p>The updated description for the gateway.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -76,7 +76,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated IAM role ARN that provides permissions for the Gateway.</p>
+     * <p>The updated IAM role ARN that provides permissions for the gateway.</p>
      */
     inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -88,7 +88,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated protocol type for the Gateway.</p>
+     * <p>The updated protocol type for the gateway.</p>
      */
     inline GatewayProtocolType GetProtocolType() const { return m_protocolType; }
     inline bool ProtocolTypeHasBeenSet() const { return m_protocolTypeHasBeenSet; }
@@ -108,7 +108,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated authorizer type for the Gateway.</p>
+     * <p>The updated authorizer type for the gateway.</p>
      */
     inline AuthorizerType GetAuthorizerType() const { return m_authorizerType; }
     inline bool AuthorizerTypeHasBeenSet() const { return m_authorizerTypeHasBeenSet; }
@@ -118,7 +118,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated authorizer configuration for the Gateway.</p>
+     * <p>The updated authorizer configuration for the gateway.</p>
      */
     inline const AuthorizerConfiguration& GetAuthorizerConfiguration() const { return m_authorizerConfiguration; }
     inline bool AuthorizerConfigurationHasBeenSet() const { return m_authorizerConfigurationHasBeenSet; }
@@ -130,7 +130,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated ARN of the KMS key used to encrypt the Gateway.</p>
+     * <p>The updated ARN of the KMS key used to encrypt the gateway.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
@@ -142,9 +142,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The verbosity of exception messages. Use DEBUG mode to see granular exception
-     * messages from a Gateway. If this parameter is not set, exception messages are by
-     * default sanitized for presentation to end users.</p>
+     * <p>The level of detail in error messages returned when invoking the gateway.</p>
+     * <ul> <li> <p>If the value is <code>DEBUG</code>, granular exception messages are
+     * returned to help a user debug the gateway.</p> </li> <li> <p>If the value is
+     * omitted, a generic error message is returned to the end user.</p> </li> </ul>
      */
     inline ExceptionLevel GetExceptionLevel() const { return m_exceptionLevel; }
     inline bool ExceptionLevelHasBeenSet() const { return m_exceptionLevelHasBeenSet; }

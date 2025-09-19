@@ -46,18 +46,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the identity provider to update.</p>
-     */
-    inline const Aws::String& GetIdentityProviderArn() const { return m_identityProviderArn; }
-    inline bool IdentityProviderArnHasBeenSet() const { return m_identityProviderArnHasBeenSet; }
-    template<typename IdentityProviderArnT = Aws::String>
-    void SetIdentityProviderArn(IdentityProviderArnT&& value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn = std::forward<IdentityProviderArnT>(value); }
-    template<typename IdentityProviderArnT = Aws::String>
-    UpdateIdentityProviderSettingsRequest& WithIdentityProviderArn(IdentityProviderArnT&& value) { SetIdentityProviderArn(std::forward<IdentityProviderArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the user-based subscription product.</p> <p>Valid values:
      * <code>VISUAL_STUDIO_ENTERPRISE</code> | <code>VISUAL_STUDIO_PROFESSIONAL</code>
      * | <code>OFFICE_PROFESSIONAL_PLUS</code> | <code>REMOTE_DESKTOP_SERVICES</code>
@@ -69,6 +57,18 @@ namespace Model
     void SetProduct(ProductT&& value) { m_productHasBeenSet = true; m_product = std::forward<ProductT>(value); }
     template<typename ProductT = Aws::String>
     UpdateIdentityProviderSettingsRequest& WithProduct(ProductT&& value) { SetProduct(std::forward<ProductT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the identity provider to update.</p>
+     */
+    inline const Aws::String& GetIdentityProviderArn() const { return m_identityProviderArn; }
+    inline bool IdentityProviderArnHasBeenSet() const { return m_identityProviderArnHasBeenSet; }
+    template<typename IdentityProviderArnT = Aws::String>
+    void SetIdentityProviderArn(IdentityProviderArnT&& value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn = std::forward<IdentityProviderArnT>(value); }
+    template<typename IdentityProviderArnT = Aws::String>
+    UpdateIdentityProviderSettingsRequest& WithIdentityProviderArn(IdentityProviderArnT&& value) { SetIdentityProviderArn(std::forward<IdentityProviderArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,11 +92,11 @@ namespace Model
     IdentityProvider m_identityProvider;
     bool m_identityProviderHasBeenSet = false;
 
-    Aws::String m_identityProviderArn;
-    bool m_identityProviderArnHasBeenSet = false;
-
     Aws::String m_product;
     bool m_productHasBeenSet = false;
+
+    Aws::String m_identityProviderArn;
+    bool m_identityProviderArnHasBeenSet = false;
 
     UpdateSettings m_updateSettings;
     bool m_updateSettingsHasBeenSet = false;

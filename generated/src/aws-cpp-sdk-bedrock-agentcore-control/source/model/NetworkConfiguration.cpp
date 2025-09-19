@@ -30,6 +30,11 @@ NetworkConfiguration& NetworkConfiguration::operator =(JsonView jsonValue)
     m_networkMode = NetworkModeMapper::GetNetworkModeForName(jsonValue.GetString("networkMode"));
     m_networkModeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("networkModeConfig"))
+  {
+    m_networkModeConfig = jsonValue.GetObject("networkModeConfig");
+    m_networkModeConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +45,12 @@ JsonValue NetworkConfiguration::Jsonize() const
   if(m_networkModeHasBeenSet)
   {
    payload.WithString("networkMode", NetworkModeMapper::GetNameForNetworkMode(m_networkMode));
+  }
+
+  if(m_networkModeConfigHasBeenSet)
+  {
+   payload.WithObject("networkModeConfig", m_networkModeConfig.Jsonize());
+
   }
 
   return payload;

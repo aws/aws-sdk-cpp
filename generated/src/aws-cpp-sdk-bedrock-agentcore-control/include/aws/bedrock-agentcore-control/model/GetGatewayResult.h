@@ -43,7 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the Gateway.</p>
+     * <p>The Amazon Resource Name (ARN) of the gateway.</p>
      */
     inline const Aws::String& GetGatewayArn() const { return m_gatewayArn; }
     template<typename GatewayArnT = Aws::String>
@@ -54,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the Gateway.</p>
+     * <p>The unique identifier of the gateway.</p>
      */
     inline const Aws::String& GetGatewayId() const { return m_gatewayId; }
     template<typename GatewayIdT = Aws::String>
@@ -65,7 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An endpoint for invoking Gateway.</p>
+     * <p>An endpoint for invoking gateway.</p>
      */
     inline const Aws::String& GetGatewayUrl() const { return m_gatewayUrl; }
     template<typename GatewayUrlT = Aws::String>
@@ -76,7 +76,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp when the Gateway was created.</p>
+     * <p>The timestamp when the gateway was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     template<typename CreatedAtT = Aws::Utils::DateTime>
@@ -87,7 +87,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp when the Gateway was last updated.</p>
+     * <p>The timestamp when the gateway was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     template<typename UpdatedAtT = Aws::Utils::DateTime>
@@ -98,7 +98,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current status of the Gateway.</p>
+     * <p>The current status of the gateway.</p>
      */
     inline GatewayStatus GetStatus() const { return m_status; }
     inline void SetStatus(GatewayStatus value) { m_statusHasBeenSet = true; m_status = value; }
@@ -107,7 +107,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The reasons for the current status of the Gateway.</p>
+     * <p>The reasons for the current status of the gateway.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStatusReasons() const { return m_statusReasons; }
     template<typename StatusReasonsT = Aws::Vector<Aws::String>>
@@ -120,7 +120,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the Gateway.</p>
+     * <p>The name of the gateway.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     template<typename NameT = Aws::String>
@@ -131,7 +131,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of the Gateway.</p>
+     * <p>The description of the gateway.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     template<typename DescriptionT = Aws::String>
@@ -142,7 +142,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IAM role ARN that provides permissions for the Gateway.</p>
+     * <p>The IAM role ARN that provides permissions for the gateway.</p>
      */
     inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     template<typename RoleArnT = Aws::String>
@@ -153,7 +153,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Protocol applied to a Gateway.</p>
+     * <p>Protocol applied to a gateway.</p>
      */
     inline GatewayProtocolType GetProtocolType() const { return m_protocolType; }
     inline void SetProtocolType(GatewayProtocolType value) { m_protocolTypeHasBeenSet = true; m_protocolType = value; }
@@ -180,7 +180,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The authorizer configuration for the Gateway.</p>
+     * <p>The authorizer configuration for the gateway.</p>
      */
     inline const AuthorizerConfiguration& GetAuthorizerConfiguration() const { return m_authorizerConfiguration; }
     template<typename AuthorizerConfigurationT = AuthorizerConfiguration>
@@ -191,7 +191,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the KMS key used to encrypt the Gateway.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
+     * gateway.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
     template<typename KmsKeyArnT = Aws::String>
@@ -202,7 +203,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The workload identity details for the Gateway.</p>
+     * <p>The workload identity details for the gateway.</p>
      */
     inline const WorkloadIdentityDetails& GetWorkloadIdentityDetails() const { return m_workloadIdentityDetails; }
     template<typename WorkloadIdentityDetailsT = WorkloadIdentityDetails>
@@ -213,9 +214,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The verbosity of exception messages. Use DEBUG mode to see granular exception
-     * messages from a Gateway. If this parameter is not set, exception messages are by
-     * default sanitized for presentation to end users.</p>
+     * <p>The level of detail in error messages returned when invoking the gateway.</p>
+     * <ul> <li> <p>If the value is <code>DEBUG</code>, granular exception messages are
+     * returned to help a user debug the gateway.</p> </li> <li> <p>If the value is
+     * omitted, a generic error message is returned to the end user.</p> </li> </ul>
      */
     inline ExceptionLevel GetExceptionLevel() const { return m_exceptionLevel; }
     inline void SetExceptionLevel(ExceptionLevel value) { m_exceptionLevelHasBeenSet = true; m_exceptionLevel = value; }

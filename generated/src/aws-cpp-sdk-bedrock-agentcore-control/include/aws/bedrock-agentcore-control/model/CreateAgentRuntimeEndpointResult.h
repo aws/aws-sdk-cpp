@@ -6,7 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/bedrock-agentcore-control/model/AgentEndpointStatus.h>
+#include <aws/bedrock-agentcore-control/model/AgentRuntimeEndpointStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The target version of the agent runtime for the endpoint.</p>
+     * <p>The target version of the AgentCore Runtime for the endpoint.</p>
      */
     inline const Aws::String& GetTargetVersion() const { return m_targetVersion; }
     template<typename TargetVersionT = Aws::String>
@@ -47,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the agent runtime endpoint.</p>
+     * <p>The Amazon Resource Name (ARN) of the AgentCore Runtime endpoint.</p>
      */
     inline const Aws::String& GetAgentRuntimeEndpointArn() const { return m_agentRuntimeEndpointArn; }
     template<typename AgentRuntimeEndpointArnT = Aws::String>
@@ -58,7 +58,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the agent runtime.</p>
+     * <p>The Amazon Resource Name (ARN) of the AgentCore Runtime.</p>
      */
     inline const Aws::String& GetAgentRuntimeArn() const { return m_agentRuntimeArn; }
     template<typename AgentRuntimeArnT = Aws::String>
@@ -69,16 +69,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current status of the agent runtime endpoint.</p>
+     * <p>The current status of the AgentCore Runtime endpoint.</p>
      */
-    inline AgentEndpointStatus GetStatus() const { return m_status; }
-    inline void SetStatus(AgentEndpointStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline CreateAgentRuntimeEndpointResult& WithStatus(AgentEndpointStatus value) { SetStatus(value); return *this;}
+    inline AgentRuntimeEndpointStatus GetStatus() const { return m_status; }
+    inline void SetStatus(AgentRuntimeEndpointStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreateAgentRuntimeEndpointResult& WithStatus(AgentRuntimeEndpointStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The timestamp when the agent runtime endpoint was created.</p>
+     * <p>The timestamp when the AgentCore Runtime endpoint was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     template<typename CreatedAtT = Aws::Utils::DateTime>
@@ -106,7 +106,7 @@ namespace Model
     Aws::String m_agentRuntimeArn;
     bool m_agentRuntimeArnHasBeenSet = false;
 
-    AgentEndpointStatus m_status{AgentEndpointStatus::NOT_SET};
+    AgentRuntimeEndpointStatus m_status{AgentRuntimeEndpointStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt{};

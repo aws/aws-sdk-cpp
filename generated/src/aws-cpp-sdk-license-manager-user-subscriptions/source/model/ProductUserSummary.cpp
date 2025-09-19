@@ -25,50 +25,50 @@ ProductUserSummary::ProductUserSummary(JsonView jsonValue)
 
 ProductUserSummary& ProductUserSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Domain"))
+  if(jsonValue.ValueExists("Username"))
   {
-    m_domain = jsonValue.GetString("Domain");
-    m_domainHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("IdentityProvider"))
-  {
-    m_identityProvider = jsonValue.GetObject("IdentityProvider");
-    m_identityProviderHasBeenSet = true;
+    m_username = jsonValue.GetString("Username");
+    m_usernameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Product"))
   {
     m_product = jsonValue.GetString("Product");
     m_productHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProductUserArn"))
+  if(jsonValue.ValueExists("IdentityProvider"))
   {
-    m_productUserArn = jsonValue.GetString("ProductUserArn");
-    m_productUserArnHasBeenSet = true;
+    m_identityProvider = jsonValue.GetObject("IdentityProvider");
+    m_identityProviderHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
     m_statusHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ProductUserArn"))
+  {
+    m_productUserArn = jsonValue.GetString("ProductUserArn");
+    m_productUserArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
     m_statusMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubscriptionEndDate"))
+  if(jsonValue.ValueExists("Domain"))
   {
-    m_subscriptionEndDate = jsonValue.GetString("SubscriptionEndDate");
-    m_subscriptionEndDateHasBeenSet = true;
+    m_domain = jsonValue.GetString("Domain");
+    m_domainHasBeenSet = true;
   }
   if(jsonValue.ValueExists("SubscriptionStartDate"))
   {
     m_subscriptionStartDate = jsonValue.GetString("SubscriptionStartDate");
     m_subscriptionStartDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Username"))
+  if(jsonValue.ValueExists("SubscriptionEndDate"))
   {
-    m_username = jsonValue.GetString("Username");
-    m_usernameHasBeenSet = true;
+    m_subscriptionEndDate = jsonValue.GetString("SubscriptionEndDate");
+    m_subscriptionEndDateHasBeenSet = true;
   }
   return *this;
 }
@@ -77,15 +77,9 @@ JsonValue ProductUserSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_domainHasBeenSet)
+  if(m_usernameHasBeenSet)
   {
-   payload.WithString("Domain", m_domain);
-
-  }
-
-  if(m_identityProviderHasBeenSet)
-  {
-   payload.WithObject("IdentityProvider", m_identityProvider.Jsonize());
+   payload.WithString("Username", m_username);
 
   }
 
@@ -95,9 +89,9 @@ JsonValue ProductUserSummary::Jsonize() const
 
   }
 
-  if(m_productUserArnHasBeenSet)
+  if(m_identityProviderHasBeenSet)
   {
-   payload.WithString("ProductUserArn", m_productUserArn);
+   payload.WithObject("IdentityProvider", m_identityProvider.Jsonize());
 
   }
 
@@ -107,15 +101,21 @@ JsonValue ProductUserSummary::Jsonize() const
 
   }
 
+  if(m_productUserArnHasBeenSet)
+  {
+   payload.WithString("ProductUserArn", m_productUserArn);
+
+  }
+
   if(m_statusMessageHasBeenSet)
   {
    payload.WithString("StatusMessage", m_statusMessage);
 
   }
 
-  if(m_subscriptionEndDateHasBeenSet)
+  if(m_domainHasBeenSet)
   {
-   payload.WithString("SubscriptionEndDate", m_subscriptionEndDate);
+   payload.WithString("Domain", m_domain);
 
   }
 
@@ -125,9 +125,9 @@ JsonValue ProductUserSummary::Jsonize() const
 
   }
 
-  if(m_usernameHasBeenSet)
+  if(m_subscriptionEndDateHasBeenSet)
   {
-   payload.WithString("Username", m_username);
+   payload.WithString("SubscriptionEndDate", m_subscriptionEndDate);
 
   }
 

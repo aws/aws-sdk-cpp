@@ -30,10 +30,10 @@ InstanceSummary& InstanceSummary::operator =(JsonView jsonValue)
     m_instanceId = jsonValue.GetString("InstanceId");
     m_instanceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastStatusCheckDate"))
+  if(jsonValue.ValueExists("Status"))
   {
-    m_lastStatusCheckDate = jsonValue.GetString("LastStatusCheckDate");
-    m_lastStatusCheckDateHasBeenSet = true;
+    m_status = jsonValue.GetString("Status");
+    m_statusHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Products"))
   {
@@ -44,15 +44,25 @@ InstanceSummary& InstanceSummary::operator =(JsonView jsonValue)
     }
     m_productsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
+  if(jsonValue.ValueExists("LastStatusCheckDate"))
   {
-    m_status = jsonValue.GetString("Status");
-    m_statusHasBeenSet = true;
+    m_lastStatusCheckDate = jsonValue.GetString("LastStatusCheckDate");
+    m_lastStatusCheckDateHasBeenSet = true;
   }
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
     m_statusMessageHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("OwnerAccountId"))
+  {
+    m_ownerAccountId = jsonValue.GetString("OwnerAccountId");
+    m_ownerAccountIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("IdentityProvider"))
+  {
+    m_identityProvider = jsonValue.GetObject("IdentityProvider");
+    m_identityProviderHasBeenSet = true;
   }
   return *this;
 }
@@ -67,9 +77,9 @@ JsonValue InstanceSummary::Jsonize() const
 
   }
 
-  if(m_lastStatusCheckDateHasBeenSet)
+  if(m_statusHasBeenSet)
   {
-   payload.WithString("LastStatusCheckDate", m_lastStatusCheckDate);
+   payload.WithString("Status", m_status);
 
   }
 
@@ -84,15 +94,27 @@ JsonValue InstanceSummary::Jsonize() const
 
   }
 
-  if(m_statusHasBeenSet)
+  if(m_lastStatusCheckDateHasBeenSet)
   {
-   payload.WithString("Status", m_status);
+   payload.WithString("LastStatusCheckDate", m_lastStatusCheckDate);
 
   }
 
   if(m_statusMessageHasBeenSet)
   {
    payload.WithString("StatusMessage", m_statusMessage);
+
+  }
+
+  if(m_ownerAccountIdHasBeenSet)
+  {
+   payload.WithString("OwnerAccountId", m_ownerAccountId);
+
+  }
+
+  if(m_identityProviderHasBeenSet)
+  {
+   payload.WithObject("IdentityProvider", m_identityProvider.Jsonize());
 
   }
 

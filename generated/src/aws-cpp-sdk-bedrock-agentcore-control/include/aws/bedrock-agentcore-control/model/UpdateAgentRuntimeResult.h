@@ -8,7 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agentcore-control/model/WorkloadIdentityDetails.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/bedrock-agentcore-control/model/AgentStatus.h>
+#include <aws/bedrock-agentcore-control/model/AgentRuntimeStatus.h>
 #include <utility>
 
 namespace Aws
@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the updated agent runtime.</p>
+     * <p>The Amazon Resource Name (ARN) of the updated AgentCore Runtime.</p>
      */
     inline const Aws::String& GetAgentRuntimeArn() const { return m_agentRuntimeArn; }
     template<typename AgentRuntimeArnT = Aws::String>
@@ -48,7 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the updated agent runtime.</p>
+     * <p>The unique identifier of the updated AgentCore Runtime.</p>
      */
     inline const Aws::String& GetAgentRuntimeId() const { return m_agentRuntimeId; }
     template<typename AgentRuntimeIdT = Aws::String>
@@ -59,7 +59,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The workload identity details for the updated agent runtime.</p>
+     * <p>The workload identity details for the updated AgentCore Runtime.</p>
      */
     inline const WorkloadIdentityDetails& GetWorkloadIdentityDetails() const { return m_workloadIdentityDetails; }
     template<typename WorkloadIdentityDetailsT = WorkloadIdentityDetails>
@@ -70,7 +70,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The version of the updated agent runtime.</p>
+     * <p>The version of the updated AgentCore Runtime.</p>
      */
     inline const Aws::String& GetAgentRuntimeVersion() const { return m_agentRuntimeVersion; }
     template<typename AgentRuntimeVersionT = Aws::String>
@@ -81,7 +81,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp when the agent runtime was created.</p>
+     * <p>The timestamp when the AgentCore Runtime was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     template<typename CreatedAtT = Aws::Utils::DateTime>
@@ -92,7 +92,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp when the agent runtime was last updated.</p>
+     * <p>The timestamp when the AgentCore Runtime was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
     template<typename LastUpdatedAtT = Aws::Utils::DateTime>
@@ -103,11 +103,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current status of the updated agent runtime.</p>
+     * <p>The current status of the updated AgentCore Runtime.</p>
      */
-    inline AgentStatus GetStatus() const { return m_status; }
-    inline void SetStatus(AgentStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline UpdateAgentRuntimeResult& WithStatus(AgentStatus value) { SetStatus(value); return *this;}
+    inline AgentRuntimeStatus GetStatus() const { return m_status; }
+    inline void SetStatus(AgentRuntimeStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateAgentRuntimeResult& WithStatus(AgentRuntimeStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -138,7 +138,7 @@ namespace Model
     Aws::Utils::DateTime m_lastUpdatedAt{};
     bool m_lastUpdatedAtHasBeenSet = false;
 
-    AgentStatus m_status{AgentStatus::NOT_SET};
+    AgentRuntimeStatus m_status{AgentRuntimeStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;

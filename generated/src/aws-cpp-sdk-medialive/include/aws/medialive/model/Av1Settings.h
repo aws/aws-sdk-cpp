@@ -299,6 +299,20 @@ your assets to devices that
     inline void SetRateControlMode(Av1RateControlMode value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = value; }
     inline Av1Settings& WithRateControlMode(Av1RateControlMode value) { SetRateControlMode(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * Used for QVBR rate control mode only.
+Optional.
+Enter a minimum bitrate if you
+     * want to keep the output bitrate about a threshold, in order to prevent the
+     * downstream system from de-allocating network bandwidth for this output.
+     */
+    inline int GetMinBitrate() const { return m_minBitrate; }
+    inline bool MinBitrateHasBeenSet() const { return m_minBitrateHasBeenSet; }
+    inline void SetMinBitrate(int value) { m_minBitrateHasBeenSet = true; m_minBitrate = value; }
+    inline Av1Settings& WithMinBitrate(int value) { SetMinBitrate(value); return *this;}
+    ///@}
   private:
 
     AfdSignaling m_afdSignaling{AfdSignaling::NOT_SET};
@@ -357,6 +371,9 @@ your assets to devices that
 
     Av1RateControlMode m_rateControlMode{Av1RateControlMode::NOT_SET};
     bool m_rateControlModeHasBeenSet = false;
+
+    int m_minBitrate{0};
+    bool m_minBitrateHasBeenSet = false;
   };
 
 } // namespace Model

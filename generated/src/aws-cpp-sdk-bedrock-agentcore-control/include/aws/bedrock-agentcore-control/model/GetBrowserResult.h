@@ -120,6 +120,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The reason for failure if the browser is in a failed state.</p>
+     */
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    GetBrowserResult& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The timestamp when the browser was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -173,6 +184,9 @@ namespace Model
 
     BrowserStatus m_status{BrowserStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    Aws::String m_failureReason;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;

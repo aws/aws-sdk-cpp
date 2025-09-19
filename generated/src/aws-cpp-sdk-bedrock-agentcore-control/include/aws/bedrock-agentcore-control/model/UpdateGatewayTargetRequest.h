@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the Gateway associated with the target.</p>
+     * <p>The unique identifier of the gateway associated with the target.</p>
      */
     inline const Aws::String& GetGatewayIdentifier() const { return m_gatewayIdentifier; }
     inline bool GatewayIdentifierHasBeenSet() const { return m_gatewayIdentifierHasBeenSet; }
@@ -49,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the Gateway Target to update.</p>
+     * <p>The unique identifier of the gateway target to update.</p>
      */
     inline const Aws::String& GetTargetId() const { return m_targetId; }
     inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
@@ -61,7 +61,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated name for the Gateway Target.</p>
+     * <p>The updated name for the gateway target.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -73,7 +73,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated description for the Gateway Target.</p>
+     * <p>The updated description for the gateway target.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -95,7 +95,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated credential provider configurations for the Gateway Target.</p>
+     * <p>The updated credential provider configurations for the gateway target.</p>
      */
     inline const Aws::Vector<CredentialProviderConfiguration>& GetCredentialProviderConfigurations() const { return m_credentialProviderConfigurations; }
     inline bool CredentialProviderConfigurationsHasBeenSet() const { return m_credentialProviderConfigurationsHasBeenSet; }

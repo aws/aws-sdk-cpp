@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the Gateway associated with the target.</p>
+     * <p>The unique identifier of the gateway associated with the target.</p>
      */
     inline const Aws::String& GetGatewayIdentifier() const { return m_gatewayIdentifier; }
     inline bool GatewayIdentifierHasBeenSet() const { return m_gatewayIdentifierHasBeenSet; }
@@ -46,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the Gateway Target to delete.</p>
+     * <p>The unique identifier of the gateway target to delete.</p>
      */
     inline const Aws::String& GetTargetId() const { return m_targetId; }
     inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }

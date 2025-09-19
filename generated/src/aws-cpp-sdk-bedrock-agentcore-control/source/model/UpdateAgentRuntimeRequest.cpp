@@ -69,6 +69,12 @@ Aws::String UpdateAgentRuntimeRequest::SerializePayload() const
 
   }
 
+  if(m_requestHeaderConfigurationHasBeenSet)
+  {
+   payload.WithObject("requestHeaderConfiguration", m_requestHeaderConfiguration.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

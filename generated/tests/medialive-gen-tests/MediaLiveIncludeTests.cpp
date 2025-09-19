@@ -382,6 +382,7 @@
 #include <aws/medialive/model/H265Deblocking.h>
 #include <aws/medialive/model/H265FilterSettings.h>
 #include <aws/medialive/model/H265FlickerAq.h>
+#include <aws/medialive/model/H265GopBReference.h>
 #include <aws/medialive/model/H265GopSizeUnits.h>
 #include <aws/medialive/model/H265Level.h>
 #include <aws/medialive/model/H265LookAheadRateControl.h>
@@ -392,6 +393,7 @@
 #include <aws/medialive/model/H265ScanType.h>
 #include <aws/medialive/model/H265SceneChangeDetect.h>
 #include <aws/medialive/model/H265Settings.h>
+#include <aws/medialive/model/H265SubGopLength.h>
 #include <aws/medialive/model/H265Tier.h>
 #include <aws/medialive/model/H265TilePadding.h>
 #include <aws/medialive/model/H265TimecodeInsertionBehavior.h>

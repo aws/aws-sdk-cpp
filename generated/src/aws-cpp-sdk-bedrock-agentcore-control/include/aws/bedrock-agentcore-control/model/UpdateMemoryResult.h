@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated memory details.</p>
+     * <p>The updated AgentCore Memory resource details.</p>
      */
     inline const Memory& GetMemory() const { return m_memory; }
     template<typename MemoryT = Memory>

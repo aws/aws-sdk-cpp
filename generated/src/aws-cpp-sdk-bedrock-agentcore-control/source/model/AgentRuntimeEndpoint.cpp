@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/bedrock-agentcore-control/model/AgentEndpoint.h>
+#include <aws/bedrock-agentcore-control/model/AgentRuntimeEndpoint.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -18,12 +18,12 @@ namespace BedrockAgentCoreControl
 namespace Model
 {
 
-AgentEndpoint::AgentEndpoint(JsonView jsonValue)
+AgentRuntimeEndpoint::AgentRuntimeEndpoint(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-AgentEndpoint& AgentEndpoint::operator =(JsonView jsonValue)
+AgentRuntimeEndpoint& AgentRuntimeEndpoint::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {
@@ -52,7 +52,7 @@ AgentEndpoint& AgentEndpoint::operator =(JsonView jsonValue)
   }
   if(jsonValue.ValueExists("status"))
   {
-    m_status = AgentEndpointStatusMapper::GetAgentEndpointStatusForName(jsonValue.GetString("status"));
+    m_status = AgentRuntimeEndpointStatusMapper::GetAgentRuntimeEndpointStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   if(jsonValue.ValueExists("id"))
@@ -78,7 +78,7 @@ AgentEndpoint& AgentEndpoint::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue AgentEndpoint::Jsonize() const
+JsonValue AgentRuntimeEndpoint::Jsonize() const
 {
   JsonValue payload;
 
@@ -114,7 +114,7 @@ JsonValue AgentEndpoint::Jsonize() const
 
   if(m_statusHasBeenSet)
   {
-   payload.WithString("status", AgentEndpointStatusMapper::GetNameForAgentEndpointStatus(m_status));
+   payload.WithString("status", AgentRuntimeEndpointStatusMapper::GetNameForAgentRuntimeEndpointStatus(m_status));
   }
 
   if(m_idHasBeenSet)

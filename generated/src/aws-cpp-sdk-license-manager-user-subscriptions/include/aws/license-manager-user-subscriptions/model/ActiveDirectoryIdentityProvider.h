@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptions_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/license-manager-user-subscriptions/model/ActiveDirectorySettings.h>
 #include <aws/license-manager-user-subscriptions/model/ActiveDirectoryType.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -42,6 +42,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The directory ID for an Active Directory identity provider.</p>
+     */
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    ActiveDirectoryIdentityProvider& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The <code>ActiveDirectorySettings</code> resource contains details about the
      * Active Directory, including network access details such as domain name and IP
      * addresses, and the credential provider for user administration.</p>
@@ -67,16 +79,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>The directory ID for an Active Directory identity provider.</p>
+     * <p>Whether this directory is shared from an Amazon Web Services Managed Active
+     * Directory. The default value is false.</p>
      */
-    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
-    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    template<typename DirectoryIdT = Aws::String>
-    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
-    template<typename DirectoryIdT = Aws::String>
-    ActiveDirectoryIdentityProvider& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
+    inline bool GetIsSharedActiveDirectory() const { return m_isSharedActiveDirectory; }
+    inline bool IsSharedActiveDirectoryHasBeenSet() const { return m_isSharedActiveDirectoryHasBeenSet; }
+    inline void SetIsSharedActiveDirectory(bool value) { m_isSharedActiveDirectoryHasBeenSet = true; m_isSharedActiveDirectory = value; }
+    inline ActiveDirectoryIdentityProvider& WithIsSharedActiveDirectory(bool value) { SetIsSharedActiveDirectory(value); return *this;}
     ///@}
   private:
+
+    Aws::String m_directoryId;
+    bool m_directoryIdHasBeenSet = false;
 
     ActiveDirectorySettings m_activeDirectorySettings;
     bool m_activeDirectorySettingsHasBeenSet = false;
@@ -84,8 +98,8 @@ namespace Model
     ActiveDirectoryType m_activeDirectoryType{ActiveDirectoryType::NOT_SET};
     bool m_activeDirectoryTypeHasBeenSet = false;
 
-    Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet = false;
+    bool m_isSharedActiveDirectory{false};
+    bool m_isSharedActiveDirectoryHasBeenSet = false;
   };
 
 } // namespace Model
