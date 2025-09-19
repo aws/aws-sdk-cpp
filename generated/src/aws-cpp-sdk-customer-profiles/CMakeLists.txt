@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_CUSTOMER-PROFILES_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/customer-profiles)
 install (FILES ${AWS_CUSTOMER-PROFILES_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/customer-profiles/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

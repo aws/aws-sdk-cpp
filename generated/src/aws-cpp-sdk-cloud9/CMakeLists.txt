@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_CLOUD9_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/cloud9)
 install (FILES ${AWS_CLOUD9_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/cloud9/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

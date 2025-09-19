@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_CUR_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/cur)
 install (FILES ${AWS_CUR_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/cur/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_LAUNCH-WIZARD_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/launch-wizard)
 install (FILES ${AWS_LAUNCH-WIZARD_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/launch-wizard/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

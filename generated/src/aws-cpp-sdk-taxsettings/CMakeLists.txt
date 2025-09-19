@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_TAXSETTINGS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/taxsettings)
 install (FILES ${AWS_TAXSETTINGS_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/taxsettings/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

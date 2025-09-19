@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_PAYMENT-CRYPTOGRAPHY_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/payment-cryptography)
 install (FILES ${AWS_PAYMENT-CRYPTOGRAPHY_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/payment-cryptography/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

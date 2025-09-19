@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_RBIN_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/rbin)
 install (FILES ${AWS_RBIN_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/rbin/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

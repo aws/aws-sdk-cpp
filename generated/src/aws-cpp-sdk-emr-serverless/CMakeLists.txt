@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_EMR-SERVERLESS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/emr-serverless)
 install (FILES ${AWS_EMR-SERVERLESS_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/emr-serverless/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

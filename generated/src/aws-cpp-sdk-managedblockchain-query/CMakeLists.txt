@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_MANAGEDBLOCKCHAIN-QUERY_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/managedblockchain-query)
 install (FILES ${AWS_MANAGEDBLOCKCHAIN-QUERY_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/managedblockchain-query/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_CONTROLTOWER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/controltower)
 install (FILES ${AWS_CONTROLTOWER_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/controltower/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

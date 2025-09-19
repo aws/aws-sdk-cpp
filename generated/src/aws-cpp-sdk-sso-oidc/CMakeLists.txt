@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_SSO-OIDC_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/sso-oidc)
 install (FILES ${AWS_SSO-OIDC_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/sso-oidc/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

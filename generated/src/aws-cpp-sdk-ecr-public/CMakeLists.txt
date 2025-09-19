@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_ECR-PUBLIC_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/ecr-public)
 install (FILES ${AWS_ECR-PUBLIC_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/ecr-public/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_COST-OPTIMIZATION-HUB_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/cost-optimization-hub)
 install (FILES ${AWS_COST-OPTIMIZATION-HUB_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/cost-optimization-hub/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

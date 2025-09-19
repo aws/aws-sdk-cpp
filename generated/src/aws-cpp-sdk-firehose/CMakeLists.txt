@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_FIREHOSE_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/firehose)
 install (FILES ${AWS_FIREHOSE_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/firehose/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

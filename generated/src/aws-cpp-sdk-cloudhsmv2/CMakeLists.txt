@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_CLOUDHSMV2_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/cloudhsmv2)
 install (FILES ${AWS_CLOUDHSMV2_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/cloudhsmv2/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

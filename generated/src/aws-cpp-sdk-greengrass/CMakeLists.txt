@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_GREENGRASS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/greengrass)
 install (FILES ${AWS_GREENGRASS_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/greengrass/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

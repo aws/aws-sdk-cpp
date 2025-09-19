@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_INSPECTOR-SCAN_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/inspector-scan)
 install (FILES ${AWS_INSPECTOR-SCAN_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/inspector-scan/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

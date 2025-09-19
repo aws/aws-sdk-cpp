@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_IDENTITYSTORE_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/identitystore)
 install (FILES ${AWS_IDENTITYSTORE_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/identitystore/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

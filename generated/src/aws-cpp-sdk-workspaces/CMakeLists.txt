@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_WORKSPACES_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/workspaces)
 install (FILES ${AWS_WORKSPACES_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/workspaces/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

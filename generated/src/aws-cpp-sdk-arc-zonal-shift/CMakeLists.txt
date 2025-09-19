@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_ARC-ZONAL-SHIFT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/arc-zonal-shift)
 install (FILES ${AWS_ARC-ZONAL-SHIFT_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/arc-zonal-shift/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

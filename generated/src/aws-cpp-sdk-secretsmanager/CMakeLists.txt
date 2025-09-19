@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_SECRETSMANAGER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/secretsmanager)
 install (FILES ${AWS_SECRETSMANAGER_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/secretsmanager/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

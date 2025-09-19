@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_MEDIACONNECT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/mediaconnect)
 install (FILES ${AWS_MEDIACONNECT_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/mediaconnect/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_COGNITO-IDENTITY_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/cognito-identity)
 install (FILES ${AWS_COGNITO-IDENTITY_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/cognito-identity/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

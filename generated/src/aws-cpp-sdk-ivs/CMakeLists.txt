@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_IVS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/ivs)
 install (FILES ${AWS_IVS_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/ivs/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

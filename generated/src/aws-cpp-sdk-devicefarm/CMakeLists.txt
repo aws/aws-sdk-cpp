@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_DEVICEFARM_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/devicefarm)
 install (FILES ${AWS_DEVICEFARM_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/devicefarm/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

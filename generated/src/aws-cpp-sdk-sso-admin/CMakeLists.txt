@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_SSO-ADMIN_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/sso-admin)
 install (FILES ${AWS_SSO-ADMIN_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/sso-admin/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

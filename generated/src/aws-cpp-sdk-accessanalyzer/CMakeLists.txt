@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_ACCESSANALYZER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/accessanalyzer)
 install (FILES ${AWS_ACCESSANALYZER_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/accessanalyzer/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

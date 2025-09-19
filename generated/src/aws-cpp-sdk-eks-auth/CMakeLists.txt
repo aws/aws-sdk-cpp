@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_EKS-AUTH_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/eks-auth)
 install (FILES ${AWS_EKS-AUTH_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/eks-auth/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

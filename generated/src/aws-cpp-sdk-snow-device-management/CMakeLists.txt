@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_SNOW-DEVICE-MANAGEMENT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/snow-device-management)
 install (FILES ${AWS_SNOW-DEVICE-MANAGEMENT_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/snow-device-management/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

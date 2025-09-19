@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_FIS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/fis)
 install (FILES ${AWS_FIS_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/fis/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_EC2-INSTANCE-CONNECT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/ec2-instance-connect)
 install (FILES ${AWS_EC2-INSTANCE-CONNECT_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/ec2-instance-connect/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

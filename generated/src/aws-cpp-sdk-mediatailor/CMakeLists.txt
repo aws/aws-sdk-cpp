@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_MEDIATAILOR_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/mediatailor)
 install (FILES ${AWS_MEDIATAILOR_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/mediatailor/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

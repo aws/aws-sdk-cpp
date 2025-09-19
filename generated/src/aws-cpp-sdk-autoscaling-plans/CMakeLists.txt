@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_AUTOSCALING-PLANS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/autoscaling-plans)
 install (FILES ${AWS_AUTOSCALING-PLANS_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/autoscaling-plans/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

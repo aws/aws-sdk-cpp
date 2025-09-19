@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_WORKMAIL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/workmail)
 install (FILES ${AWS_WORKMAIL_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/workmail/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

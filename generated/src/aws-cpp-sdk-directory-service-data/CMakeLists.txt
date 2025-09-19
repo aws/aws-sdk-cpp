@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_DIRECTORY-SERVICE-DATA_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/directory-service-data)
 install (FILES ${AWS_DIRECTORY-SERVICE-DATA_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/directory-service-data/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

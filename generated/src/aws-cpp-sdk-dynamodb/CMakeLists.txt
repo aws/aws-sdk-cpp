@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_DYNAMODB_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/dynamodb)
 install (FILES ${AWS_DYNAMODB_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/dynamodb/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

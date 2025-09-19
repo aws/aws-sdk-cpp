@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_COGNITO-SYNC_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/cognito-sync)
 install (FILES ${AWS_COGNITO-SYNC_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/cognito-sync/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 

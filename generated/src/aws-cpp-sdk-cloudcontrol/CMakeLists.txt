@@ -70,7 +70,9 @@ setup_install()
 
 install (FILES ${AWS_CLOUDCONTROL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/cloudcontrol)
 install (FILES ${AWS_CLOUDCONTROL_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/cloudcontrol/model)
-
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION \${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 do_packaging()
 
 
