@@ -77,7 +77,8 @@ namespace Aws
         // everything in stored, if it does not begin with 'amz:' must be in passed.
         // if it is, then we already checked the value
         for (const auto& pair : stored) {
-          if (strcmp(pair.first.c_str(), "aws:x-amz-cek-alg") && strcmp(pair.first.c_str(), "kms_cmk_id")) {
+          if (strcmp(pair.first.c_str(),  Materials::kmsEncryptionContextKey)
+              && strcmp(pair.first.c_str(),Materials::cmkID_Identifier)) {
             auto it = passed.find(pair.first);
             if (it == passed_end) return false;
           }
