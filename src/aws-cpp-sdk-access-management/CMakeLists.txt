@@ -47,5 +47,8 @@ target_link_libraries(${PROJECT_NAME} PRIVATE ${PLATFORM_DEP_LIBS} ${PROJECT_LIB
 setup_install()
 
 install (FILES ${AWS_ACCESS_MANAGEMENT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/access-management)
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION ${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 
 do_packaging()

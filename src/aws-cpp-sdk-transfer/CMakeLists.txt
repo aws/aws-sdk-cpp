@@ -49,5 +49,8 @@ set_compiler_warnings(${PROJECT_NAME})
 setup_install()
 
 install (FILES ${ALL_TRANSFER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/transfer)
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION ${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 
 do_packaging()

@@ -121,6 +121,9 @@ target_link_libraries(${PROJECT_NAME} PRIVATE ${PROJECT_LIBS} ${PLATFORM_DEP_LIB
 setup_install()
 
 install (FILES ${ALL_TEXT_TO_SPEECH_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/text-to-speech)
+if (MSVC)
+    install (FILES $<TARGET_PDB_FILE:\${PROJECT_NAME}> DESTINATION ${CMAKE_INSTALL_BINDIR} OPTIONAL)
+endif()
 
 do_packaging()
 
