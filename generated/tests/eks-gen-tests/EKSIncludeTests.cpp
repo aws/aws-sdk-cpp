@@ -193,6 +193,7 @@
 #include <aws/eks/model/Logging.h>
 #include <aws/eks/model/MarketplaceInformation.h>
 #include <aws/eks/model/NodeRepairConfig.h>
+#include <aws/eks/model/NodeRepairConfigOverrides.h>
 #include <aws/eks/model/Nodegroup.h>
 #include <aws/eks/model/NodegroupHealth.h>
 #include <aws/eks/model/NodegroupIssueCode.h>
@@ -216,6 +217,7 @@
 #include <aws/eks/model/RemoteNetworkConfigResponse.h>
 #include <aws/eks/model/RemoteNodeNetwork.h>
 #include <aws/eks/model/RemotePodNetwork.h>
+#include <aws/eks/model/RepairAction.h>
 #include <aws/eks/model/ResolveConflicts.h>
 #include <aws/eks/model/ResourceInUseException.h>
 #include <aws/eks/model/ResourceLimitExceededException.h>

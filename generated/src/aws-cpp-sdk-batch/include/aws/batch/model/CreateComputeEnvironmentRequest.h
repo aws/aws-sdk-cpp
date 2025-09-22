@@ -190,7 +190,9 @@ namespace Model
     ///@{
     /**
      * <p>The details for the Amazon EKS cluster that supports the compute
-     * environment.</p>
+     * environment.</p>  <p>To create a compute environment that uses EKS
+     * resources, the caller must have permissions to call
+     * <code>eks:DescribeCluster</code>.</p> 
      */
     inline const EksConfiguration& GetEksConfiguration() const { return m_eksConfiguration; }
     inline bool EksConfigurationHasBeenSet() const { return m_eksConfigurationHasBeenSet; }

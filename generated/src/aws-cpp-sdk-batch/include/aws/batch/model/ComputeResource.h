@@ -55,7 +55,8 @@ namespace Model
      * <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the
      * <code>spotIamFleetRole</code> parameter. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon
-     * EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>
+     * EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>  <p>Multi-node
+     * parallel jobs aren't supported on Spot Instances.</p> 
      */
     inline CRType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
