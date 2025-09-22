@@ -218,7 +218,7 @@ bool CreateDirectoryIfNotExists(const char* path, bool createParentDirs)
     for (size_t i = createParentDirs ? 0 : directoryName.size() - 1; i < directoryName.size(); i++)
     {
         // Create the intermediate directory if we find a delimiter and the delimiter is not the first char, or if this is the target directory.
-        if (i != 0 && (directoryName[i] == FileSystem::PATH_DELIM || i == directoryName.size() - 1))
+        if (i > 2 && (directoryName[i] == FileSystem::PATH_DELIM || i == directoryName.size() - 1))
         {
             // the last delimeter can be removed safely.
             if (directoryName[i] == FileSystem::PATH_DELIM) 
@@ -317,6 +317,11 @@ Aws::String CreateTempFilePath()
     // Definition from the MSVC stdio.h
     #define L_tmpnam_s (sizeof("\\") + 16)
 #endif
+
+#if defined(__MINGW64_VERSION_MAJOR) && __MINGW64_VERSION_MAJOR < 12
+    #undef L_tmpnam_s
+    #define L_tmpnam_s 260
+#endif
     char s_tempName[L_tmpnam_s+1];
 
     /*
@@ -328,7 +333,7 @@ Aws::String CreateTempFilePath()
     for more details.
     */
 
-#if _MSC_VER >= 1900
+#if _MSC_VER >= 1900 || defined(_UCRT)
     tmpnam_s(s_tempName, L_tmpnam_s);
 #else
     s_tempName[0] = '.';
