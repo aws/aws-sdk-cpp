@@ -46,11 +46,11 @@ namespace Model
      * <p>The actual content of the source document that will be analyzed to extract
      * policy rules and concepts.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetDocument() const { return m_document; }
+    inline const Aws::Utils::CryptoBuffer& GetDocument() const { return m_document; }
     inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
-    template<typename DocumentT = Aws::Utils::ByteBuffer>
+    template<typename DocumentT = Aws::Utils::CryptoBuffer>
     void SetDocument(DocumentT&& value) { m_documentHasBeenSet = true; m_document = std::forward<DocumentT>(value); }
-    template<typename DocumentT = Aws::Utils::ByteBuffer>
+    template<typename DocumentT = Aws::Utils::CryptoBuffer>
     AutomatedReasoningPolicyBuildWorkflowDocument& WithDocument(DocumentT&& value) { SetDocument(std::forward<DocumentT>(value)); return *this;}
     ///@}
 
@@ -92,7 +92,7 @@ namespace Model
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_document{};
+    Aws::Utils::CryptoBuffer m_document{};
     bool m_documentHasBeenSet = false;
 
     AutomatedReasoningPolicyBuildDocumentContentType m_documentContentType{AutomatedReasoningPolicyBuildDocumentContentType::NOT_SET};

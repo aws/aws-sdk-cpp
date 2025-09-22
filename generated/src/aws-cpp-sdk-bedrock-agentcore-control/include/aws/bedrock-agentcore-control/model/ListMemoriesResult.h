@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of memory summaries.</p>
+     * <p>The list of AgentCore Memory resource summaries.</p>
      */
     inline const Aws::Vector<MemorySummary>& GetMemories() const { return m_memories; }
     template<typename MemoriesT = Aws::Vector<MemorySummary>>

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/CodeInterpreterNetworkMode.h>
+#include <aws/bedrock-agentcore-control/model/VpcConfig.h>
 #include <utility>
 
 namespace Aws
@@ -48,10 +49,23 @@ namespace Model
     inline void SetNetworkMode(CodeInterpreterNetworkMode value) { m_networkModeHasBeenSet = true; m_networkMode = value; }
     inline CodeInterpreterNetworkConfiguration& WithNetworkMode(CodeInterpreterNetworkMode value) { SetNetworkMode(value); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const VpcConfig& GetVpcConfig() const { return m_vpcConfig; }
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
+    template<typename VpcConfigT = VpcConfig>
+    void SetVpcConfig(VpcConfigT&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::forward<VpcConfigT>(value); }
+    template<typename VpcConfigT = VpcConfig>
+    CodeInterpreterNetworkConfiguration& WithVpcConfig(VpcConfigT&& value) { SetVpcConfig(std::forward<VpcConfigT>(value)); return *this;}
+    ///@}
   private:
 
     CodeInterpreterNetworkMode m_networkMode{CodeInterpreterNetworkMode::NOT_SET};
     bool m_networkModeHasBeenSet = false;
+
+    VpcConfig m_vpcConfig;
+    bool m_vpcConfigHasBeenSet = false;
   };
 
 } // namespace Model

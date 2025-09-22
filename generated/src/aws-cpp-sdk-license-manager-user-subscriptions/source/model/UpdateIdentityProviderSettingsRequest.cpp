@@ -22,15 +22,15 @@ Aws::String UpdateIdentityProviderSettingsRequest::SerializePayload() const
 
   }
 
-  if(m_identityProviderArnHasBeenSet)
-  {
-   payload.WithString("IdentityProviderArn", m_identityProviderArn);
-
-  }
-
   if(m_productHasBeenSet)
   {
    payload.WithString("Product", m_product);
+
+  }
+
+  if(m_identityProviderArnHasBeenSet)
+  {
+   payload.WithString("IdentityProviderArn", m_identityProviderArn);
 
   }
 

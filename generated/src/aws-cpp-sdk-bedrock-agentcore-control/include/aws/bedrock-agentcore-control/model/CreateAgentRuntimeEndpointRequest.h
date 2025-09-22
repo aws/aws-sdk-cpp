@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -35,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the agent runtime to create an endpoint for.</p>
+     * <p>The unique identifier of the AgentCore Runtime to create an endpoint for.</p>
      */
     inline const Aws::String& GetAgentRuntimeId() const { return m_agentRuntimeId; }
     inline bool AgentRuntimeIdHasBeenSet() const { return m_agentRuntimeIdHasBeenSet; }
@@ -47,7 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the agent runtime endpoint.</p>
+     * <p>The name of the AgentCore Runtime endpoint.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -59,7 +60,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The version of the agent runtime to use for the endpoint.</p>
+     * <p>The version of the AgentCore Runtime to use for the endpoint.</p>
      */
     inline const Aws::String& GetAgentRuntimeVersion() const { return m_agentRuntimeVersion; }
     inline bool AgentRuntimeVersionHasBeenSet() const { return m_agentRuntimeVersionHasBeenSet; }
@@ -71,7 +72,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of the agent runtime endpoint.</p>
+     * <p>The description of the AgentCore Runtime endpoint.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -92,6 +93,24 @@ namespace Model
     template<typename ClientTokenT = Aws::String>
     CreateAgentRuntimeEndpointRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A map of tag keys and values to assign to the agent runtime endpoint. Tags
+     * enable you to categorize your resources in different ways, for example, by
+     * purpose, owner, or environment.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateAgentRuntimeEndpointRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateAgentRuntimeEndpointRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
+    ///@}
   private:
 
     Aws::String m_agentRuntimeId;
@@ -108,6 +127,9 @@ namespace Model
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

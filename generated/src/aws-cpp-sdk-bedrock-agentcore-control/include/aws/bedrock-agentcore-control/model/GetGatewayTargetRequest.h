@@ -34,8 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the gateway that contains the target. This can be either
-     * the gateway ID or the gateway ARN.</p>
+     * <p>The identifier of the gateway that contains the target.</p>
      */
     inline const Aws::String& GetGatewayIdentifier() const { return m_gatewayIdentifier; }
     inline bool GatewayIdentifierHasBeenSet() const { return m_gatewayIdentifierHasBeenSet; }

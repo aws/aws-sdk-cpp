@@ -5,7 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
-#include <aws/bedrock-agentcore-control/model/AgentEndpointStatus.h>
+#include <aws/bedrock-agentcore-control/model/AgentRuntimeEndpointStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -35,11 +35,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current status of the agent runtime endpoint deletion.</p>
+     * <p>The current status of the AgentCore Runtime endpoint deletion.</p>
      */
-    inline AgentEndpointStatus GetStatus() const { return m_status; }
-    inline void SetStatus(AgentEndpointStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline DeleteAgentRuntimeEndpointResult& WithStatus(AgentEndpointStatus value) { SetStatus(value); return *this;}
+    inline AgentRuntimeEndpointStatus GetStatus() const { return m_status; }
+    inline void SetStatus(AgentRuntimeEndpointStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DeleteAgentRuntimeEndpointResult& WithStatus(AgentRuntimeEndpointStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -52,7 +52,7 @@ namespace Model
     ///@}
   private:
 
-    AgentEndpointStatus m_status{AgentEndpointStatus::NOT_SET};
+    AgentRuntimeEndpointStatus m_status{AgentRuntimeEndpointStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;

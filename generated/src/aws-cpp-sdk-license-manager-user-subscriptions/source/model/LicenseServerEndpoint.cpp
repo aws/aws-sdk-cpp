@@ -25,25 +25,35 @@ LicenseServerEndpoint::LicenseServerEndpoint(JsonView jsonValue)
 
 LicenseServerEndpoint& LicenseServerEndpoint::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("CreationTime"))
-  {
-    m_creationTime = jsonValue.GetDouble("CreationTime");
-    m_creationTimeHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("IdentityProviderArn"))
   {
     m_identityProviderArn = jsonValue.GetString("IdentityProviderArn");
     m_identityProviderArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LicenseServerEndpointArn"))
+  if(jsonValue.ValueExists("ServerType"))
   {
-    m_licenseServerEndpointArn = jsonValue.GetString("LicenseServerEndpointArn");
-    m_licenseServerEndpointArnHasBeenSet = true;
+    m_serverType = ServerTypeMapper::GetServerTypeForName(jsonValue.GetString("ServerType"));
+    m_serverTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ServerEndpoint"))
+  {
+    m_serverEndpoint = jsonValue.GetObject("ServerEndpoint");
+    m_serverEndpointHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("StatusMessage"))
+  {
+    m_statusMessage = jsonValue.GetString("StatusMessage");
+    m_statusMessageHasBeenSet = true;
   }
   if(jsonValue.ValueExists("LicenseServerEndpointId"))
   {
     m_licenseServerEndpointId = jsonValue.GetString("LicenseServerEndpointId");
     m_licenseServerEndpointIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("LicenseServerEndpointArn"))
+  {
+    m_licenseServerEndpointArn = jsonValue.GetString("LicenseServerEndpointArn");
+    m_licenseServerEndpointArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("LicenseServerEndpointProvisioningStatus"))
   {
@@ -59,20 +69,10 @@ LicenseServerEndpoint& LicenseServerEndpoint::operator =(JsonView jsonValue)
     }
     m_licenseServersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServerEndpoint"))
+  if(jsonValue.ValueExists("CreationTime"))
   {
-    m_serverEndpoint = jsonValue.GetObject("ServerEndpoint");
-    m_serverEndpointHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("ServerType"))
-  {
-    m_serverType = ServerTypeMapper::GetServerTypeForName(jsonValue.GetString("ServerType"));
-    m_serverTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("StatusMessage"))
-  {
-    m_statusMessage = jsonValue.GetString("StatusMessage");
-    m_statusMessageHasBeenSet = true;
+    m_creationTime = jsonValue.GetDouble("CreationTime");
+    m_creationTimeHasBeenSet = true;
   }
   return *this;
 }
@@ -81,26 +81,38 @@ JsonValue LicenseServerEndpoint::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
-  }
-
   if(m_identityProviderArnHasBeenSet)
   {
    payload.WithString("IdentityProviderArn", m_identityProviderArn);
 
   }
 
-  if(m_licenseServerEndpointArnHasBeenSet)
+  if(m_serverTypeHasBeenSet)
   {
-   payload.WithString("LicenseServerEndpointArn", m_licenseServerEndpointArn);
+   payload.WithString("ServerType", ServerTypeMapper::GetNameForServerType(m_serverType));
+  }
+
+  if(m_serverEndpointHasBeenSet)
+  {
+   payload.WithObject("ServerEndpoint", m_serverEndpoint.Jsonize());
+
+  }
+
+  if(m_statusMessageHasBeenSet)
+  {
+   payload.WithString("StatusMessage", m_statusMessage);
 
   }
 
   if(m_licenseServerEndpointIdHasBeenSet)
   {
    payload.WithString("LicenseServerEndpointId", m_licenseServerEndpointId);
+
+  }
+
+  if(m_licenseServerEndpointArnHasBeenSet)
+  {
+   payload.WithString("LicenseServerEndpointArn", m_licenseServerEndpointArn);
 
   }
 
@@ -120,21 +132,9 @@ JsonValue LicenseServerEndpoint::Jsonize() const
 
   }
 
-  if(m_serverEndpointHasBeenSet)
+  if(m_creationTimeHasBeenSet)
   {
-   payload.WithObject("ServerEndpoint", m_serverEndpoint.Jsonize());
-
-  }
-
-  if(m_serverTypeHasBeenSet)
-  {
-   payload.WithString("ServerType", ServerTypeMapper::GetNameForServerType(m_serverType));
-  }
-
-  if(m_statusMessageHasBeenSet)
-  {
-   payload.WithString("StatusMessage", m_statusMessage);
-
+   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
   return payload;

@@ -16,9 +16,15 @@ Aws::String AssociateUserRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_domainHasBeenSet)
+  if(m_usernameHasBeenSet)
   {
-   payload.WithString("Domain", m_domain);
+   payload.WithString("Username", m_username);
+
+  }
+
+  if(m_instanceIdHasBeenSet)
+  {
+   payload.WithString("InstanceId", m_instanceId);
 
   }
 
@@ -28,9 +34,9 @@ Aws::String AssociateUserRequest::SerializePayload() const
 
   }
 
-  if(m_instanceIdHasBeenSet)
+  if(m_domainHasBeenSet)
   {
-   payload.WithString("InstanceId", m_instanceId);
+   payload.WithString("Domain", m_domain);
 
   }
 
@@ -42,12 +48,6 @@ Aws::String AssociateUserRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
-
-  }
-
-  if(m_usernameHasBeenSet)
-  {
-   payload.WithString("Username", m_username);
 
   }
 

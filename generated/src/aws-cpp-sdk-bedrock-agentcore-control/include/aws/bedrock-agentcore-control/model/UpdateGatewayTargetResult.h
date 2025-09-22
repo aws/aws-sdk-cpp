@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the Gateway.</p>
+     * <p>The Amazon Resource Name (ARN) of the gateway.</p>
      */
     inline const Aws::String& GetGatewayArn() const { return m_gatewayArn; }
     template<typename GatewayArnT = Aws::String>
@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the updated Gateway Target.</p>
+     * <p>The unique identifier of the updated gateway target.</p>
      */
     inline const Aws::String& GetTargetId() const { return m_targetId; }
     template<typename TargetIdT = Aws::String>
@@ -61,7 +61,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp when the Gateway Target was created.</p>
+     * <p>The timestamp when the gateway target was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     template<typename CreatedAtT = Aws::Utils::DateTime>
@@ -72,7 +72,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp when the Gateway Target was last updated.</p>
+     * <p>The timestamp when the gateway target was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     template<typename UpdatedAtT = Aws::Utils::DateTime>
@@ -83,7 +83,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current status of the updated Gateway Target.</p>
+     * <p>The current status of the updated gateway target.</p>
      */
     inline TargetStatus GetStatus() const { return m_status; }
     inline void SetStatus(TargetStatus value) { m_statusHasBeenSet = true; m_status = value; }
@@ -92,7 +92,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The reasons for the current status of the updated Gateway Target.</p>
+     * <p>The reasons for the current status of the updated gateway target.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStatusReasons() const { return m_statusReasons; }
     template<typename StatusReasonsT = Aws::Vector<Aws::String>>
@@ -105,7 +105,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated name of the Gateway Target.</p>
+     * <p>The updated name of the gateway target.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     template<typename NameT = Aws::String>
@@ -116,7 +116,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated description of the Gateway Target.</p>
+     * <p>The updated description of the gateway target.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     template<typename DescriptionT = Aws::String>
@@ -136,7 +136,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated credential provider configurations for the Gateway Target.</p>
+     * <p>The updated credential provider configurations for the gateway target.</p>
      */
     inline const Aws::Vector<CredentialProviderConfiguration>& GetCredentialProviderConfigurations() const { return m_credentialProviderConfigurations; }
     template<typename CredentialProviderConfigurationsT = Aws::Vector<CredentialProviderConfiguration>>

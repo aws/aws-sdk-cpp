@@ -62,7 +62,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated description of the memory.</p>
+     * <p>The updated description of the AgentCore Memory resource.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -85,7 +85,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the IAM role that provides permissions for the memory.</p>
+     * <p>The ARN of the IAM role that provides permissions for the AgentCore Memory
+     * resource.</p>
      */
     inline const Aws::String& GetMemoryExecutionRoleArn() const { return m_memoryExecutionRoleArn; }
     inline bool MemoryExecutionRoleArnHasBeenSet() const { return m_memoryExecutionRoleArnHasBeenSet; }

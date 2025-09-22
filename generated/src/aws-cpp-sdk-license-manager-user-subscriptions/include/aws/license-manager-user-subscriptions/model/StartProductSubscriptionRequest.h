@@ -36,15 +36,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The domain name of the Active Directory that contains the user for whom to
-     * start the product subscription.</p>
+     * <p>The user name from the identity provider of the user.</p>
      */
-    inline const Aws::String& GetDomain() const { return m_domain; }
-    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    template<typename DomainT = Aws::String>
-    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
-    template<typename DomainT = Aws::String>
-    StartProductSubscriptionRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
+    inline const Aws::String& GetUsername() const { return m_username; }
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    StartProductSubscriptionRequest& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,6 +75,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The domain name of the Active Directory that contains the user for whom to
+     * start the product subscription.</p>
+     */
+    inline const Aws::String& GetDomain() const { return m_domain; }
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    StartProductSubscriptionRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The tags that apply to the product subscription.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -89,22 +101,10 @@ namespace Model
       m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
     }
     ///@}
-
-    ///@{
-    /**
-     * <p>The user name from the identity provider of the user.</p>
-     */
-    inline const Aws::String& GetUsername() const { return m_username; }
-    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    template<typename UsernameT = Aws::String>
-    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
-    template<typename UsernameT = Aws::String>
-    StartProductSubscriptionRequest& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
-    ///@}
   private:
 
-    Aws::String m_domain;
-    bool m_domainHasBeenSet = false;
+    Aws::String m_username;
+    bool m_usernameHasBeenSet = false;
 
     IdentityProvider m_identityProvider;
     bool m_identityProviderHasBeenSet = false;
@@ -112,11 +112,11 @@ namespace Model
     Aws::String m_product;
     bool m_productHasBeenSet = false;
 
+    Aws::String m_domain;
+    bool m_domainHasBeenSet = false;
+
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
-
-    Aws::String m_username;
-    bool m_usernameHasBeenSet = false;
   };
 
 } // namespace Model

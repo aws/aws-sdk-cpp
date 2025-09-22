@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the Gateway.</p>
+     * <p>The Amazon Resource Name (ARN) of the gateway.</p>
      */
     inline const Aws::String& GetGatewayArn() const { return m_gatewayArn; }
     template<typename GatewayArnT = Aws::String>
@@ -47,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the deleted Gateway Target.</p>
+     * <p>The unique identifier of the deleted gateway target.</p>
      */
     inline const Aws::String& GetTargetId() const { return m_targetId; }
     template<typename TargetIdT = Aws::String>
@@ -58,7 +58,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current status of the Gateway Target deletion.</p>
+     * <p>The current status of the gateway target deletion.</p>
      */
     inline TargetStatus GetStatus() const { return m_status; }
     inline void SetStatus(TargetStatus value) { m_statusHasBeenSet = true; m_status = value; }
@@ -67,7 +67,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The reasons for the current status of the Gateway Target deletion.</p>
+     * <p>The reasons for the current status of the gateway target deletion.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStatusReasons() const { return m_statusReasons; }
     template<typename StatusReasonsT = Aws::Vector<Aws::String>>

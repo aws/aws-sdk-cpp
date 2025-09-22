@@ -7,7 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/bedrock-agentcore-control/model/AgentStatus.h>
+#include <aws/bedrock-agentcore-control/model/AgentRuntimeStatus.h>
 #include <utility>
 
 namespace Aws
@@ -28,15 +28,15 @@ namespace Model
   /**
    * <p>Contains information about an agent runtime. An agent runtime is the
    * execution environment for a Amazon Bedrock Agent.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/Agent">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/AgentRuntime">AWS
    * API Reference</a></p>
    */
-  class Agent
+  class AgentRuntime
   {
   public:
-    AWS_BEDROCKAGENTCORECONTROL_API Agent() = default;
-    AWS_BEDROCKAGENTCORECONTROL_API Agent(Aws::Utils::Json::JsonView jsonValue);
-    AWS_BEDROCKAGENTCORECONTROL_API Agent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BEDROCKAGENTCORECONTROL_API AgentRuntime() = default;
+    AWS_BEDROCKAGENTCORECONTROL_API AgentRuntime(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BEDROCKAGENTCORECONTROL_API AgentRuntime& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTCORECONTROL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -49,7 +49,7 @@ namespace Model
     template<typename AgentRuntimeArnT = Aws::String>
     void SetAgentRuntimeArn(AgentRuntimeArnT&& value) { m_agentRuntimeArnHasBeenSet = true; m_agentRuntimeArn = std::forward<AgentRuntimeArnT>(value); }
     template<typename AgentRuntimeArnT = Aws::String>
-    Agent& WithAgentRuntimeArn(AgentRuntimeArnT&& value) { SetAgentRuntimeArn(std::forward<AgentRuntimeArnT>(value)); return *this;}
+    AgentRuntime& WithAgentRuntimeArn(AgentRuntimeArnT&& value) { SetAgentRuntimeArn(std::forward<AgentRuntimeArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +61,7 @@ namespace Model
     template<typename AgentRuntimeIdT = Aws::String>
     void SetAgentRuntimeId(AgentRuntimeIdT&& value) { m_agentRuntimeIdHasBeenSet = true; m_agentRuntimeId = std::forward<AgentRuntimeIdT>(value); }
     template<typename AgentRuntimeIdT = Aws::String>
-    Agent& WithAgentRuntimeId(AgentRuntimeIdT&& value) { SetAgentRuntimeId(std::forward<AgentRuntimeIdT>(value)); return *this;}
+    AgentRuntime& WithAgentRuntimeId(AgentRuntimeIdT&& value) { SetAgentRuntimeId(std::forward<AgentRuntimeIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,7 +73,7 @@ namespace Model
     template<typename AgentRuntimeVersionT = Aws::String>
     void SetAgentRuntimeVersion(AgentRuntimeVersionT&& value) { m_agentRuntimeVersionHasBeenSet = true; m_agentRuntimeVersion = std::forward<AgentRuntimeVersionT>(value); }
     template<typename AgentRuntimeVersionT = Aws::String>
-    Agent& WithAgentRuntimeVersion(AgentRuntimeVersionT&& value) { SetAgentRuntimeVersion(std::forward<AgentRuntimeVersionT>(value)); return *this;}
+    AgentRuntime& WithAgentRuntimeVersion(AgentRuntimeVersionT&& value) { SetAgentRuntimeVersion(std::forward<AgentRuntimeVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,7 +85,7 @@ namespace Model
     template<typename AgentRuntimeNameT = Aws::String>
     void SetAgentRuntimeName(AgentRuntimeNameT&& value) { m_agentRuntimeNameHasBeenSet = true; m_agentRuntimeName = std::forward<AgentRuntimeNameT>(value); }
     template<typename AgentRuntimeNameT = Aws::String>
-    Agent& WithAgentRuntimeName(AgentRuntimeNameT&& value) { SetAgentRuntimeName(std::forward<AgentRuntimeNameT>(value)); return *this;}
+    AgentRuntime& WithAgentRuntimeName(AgentRuntimeNameT&& value) { SetAgentRuntimeName(std::forward<AgentRuntimeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,7 +97,7 @@ namespace Model
     template<typename DescriptionT = Aws::String>
     void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
     template<typename DescriptionT = Aws::String>
-    Agent& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    AgentRuntime& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,17 +109,17 @@ namespace Model
     template<typename LastUpdatedAtT = Aws::Utils::DateTime>
     void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
     template<typename LastUpdatedAtT = Aws::Utils::DateTime>
-    Agent& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
+    AgentRuntime& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the agent runtime.</p>
      */
-    inline AgentStatus GetStatus() const { return m_status; }
+    inline AgentRuntimeStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(AgentStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline Agent& WithStatus(AgentStatus value) { SetStatus(value); return *this;}
+    inline void SetStatus(AgentRuntimeStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AgentRuntime& WithStatus(AgentRuntimeStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -141,7 +141,7 @@ namespace Model
     Aws::Utils::DateTime m_lastUpdatedAt{};
     bool m_lastUpdatedAtHasBeenSet = false;
 
-    AgentStatus m_status{AgentStatus::NOT_SET};
+    AgentRuntimeStatus m_status{AgentRuntimeStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

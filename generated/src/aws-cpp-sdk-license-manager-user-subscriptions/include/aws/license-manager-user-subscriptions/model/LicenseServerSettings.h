@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptions_EXPORTS.h>
-#include <aws/license-manager-user-subscriptions/model/ServerSettings.h>
 #include <aws/license-manager-user-subscriptions/model/ServerType.h>
+#include <aws/license-manager-user-subscriptions/model/ServerSettings.h>
 #include <utility>
 
 namespace Aws
@@ -40,6 +40,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of license server.</p>
+     */
+    inline ServerType GetServerType() const { return m_serverType; }
+    inline bool ServerTypeHasBeenSet() const { return m_serverTypeHasBeenSet; }
+    inline void SetServerType(ServerType value) { m_serverTypeHasBeenSet = true; m_serverType = value; }
+    inline LicenseServerSettings& WithServerType(ServerType value) { SetServerType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The <code>ServerSettings</code> resource contains the settings for your
      * server.</p>
      */
@@ -50,23 +60,13 @@ namespace Model
     template<typename ServerSettingsT = ServerSettings>
     LicenseServerSettings& WithServerSettings(ServerSettingsT&& value) { SetServerSettings(std::forward<ServerSettingsT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of license server.</p>
-     */
-    inline ServerType GetServerType() const { return m_serverType; }
-    inline bool ServerTypeHasBeenSet() const { return m_serverTypeHasBeenSet; }
-    inline void SetServerType(ServerType value) { m_serverTypeHasBeenSet = true; m_serverType = value; }
-    inline LicenseServerSettings& WithServerType(ServerType value) { SetServerType(value); return *this;}
-    ///@}
   private:
-
-    ServerSettings m_serverSettings;
-    bool m_serverSettingsHasBeenSet = false;
 
     ServerType m_serverType{ServerType::NOT_SET};
     bool m_serverTypeHasBeenSet = false;
+
+    ServerSettings m_serverSettings;
+    bool m_serverSettingsHasBeenSet = false;
   };
 
 } // namespace Model

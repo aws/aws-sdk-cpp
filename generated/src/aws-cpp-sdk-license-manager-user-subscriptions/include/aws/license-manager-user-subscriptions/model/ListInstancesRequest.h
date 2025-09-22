@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptions_EXPORTS.h>
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/license-manager-user-subscriptions/model/Filter.h>
 #include <utility>
 
@@ -36,21 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>You can use the following filters to streamline results:</p> <ul> <li>
-     * <p>Status</p> </li> <li> <p>InstanceId</p> </li> </ul>
-     */
-    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
-    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    template<typename FiltersT = Aws::Vector<Filter>>
-    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
-    template<typename FiltersT = Aws::Vector<Filter>>
-    ListInstancesRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
-    template<typename FiltersT = Filter>
-    ListInstancesRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The maximum number of results to return from a single request.</p>
      */
     inline int GetMaxResults() const { return m_maxResults; }
@@ -71,16 +56,31 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListInstancesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet = false;
+    ///@{
+    /**
+     * <p>You can use the following filters to streamline results:</p> <ul> <li>
+     * <p>Status</p> </li> <li> <p>InstanceId</p> </li> </ul>
+     */
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    ListInstancesRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    ListInstancesRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
+    ///@}
+  private:
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

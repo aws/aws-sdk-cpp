@@ -35,7 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the agent runtime associated with the endpoint.</p>
+     * <p>The unique identifier of the AgentCore Runtime associated with the
+     * endpoint.</p>
      */
     inline const Aws::String& GetAgentRuntimeId() const { return m_agentRuntimeId; }
     inline bool AgentRuntimeIdHasBeenSet() const { return m_agentRuntimeIdHasBeenSet; }
@@ -47,7 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the agent runtime endpoint to update.</p>
+     * <p>The name of the AgentCore Runtime endpoint to update.</p>
      */
     inline const Aws::String& GetEndpointName() const { return m_endpointName; }
     inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
@@ -59,7 +60,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated version of the agent runtime for the endpoint.</p>
+     * <p>The updated version of the AgentCore Runtime for the endpoint.</p>
      */
     inline const Aws::String& GetAgentRuntimeVersion() const { return m_agentRuntimeVersion; }
     inline bool AgentRuntimeVersionHasBeenSet() const { return m_agentRuntimeVersionHasBeenSet; }
@@ -71,7 +72,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The updated description of the agent runtime endpoint.</p>
+     * <p>The updated description of the AgentCore Runtime endpoint.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }

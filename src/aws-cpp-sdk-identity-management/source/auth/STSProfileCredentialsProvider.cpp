@@ -295,7 +295,12 @@ void STSProfileCredentialsProvider::Reload()
 
         // get the role arn from the profile at the top of the stack (which hasn't been popped out yet)
         const auto arn = sourceProfiles.back()->second.GetRoleArn();
-        const auto& assumedCreds = GetCredentialsFromSTS(stsCreds, arn);
+        auto assumedCreds = GetCredentialsFromSTS(stsCreds, arn);
+
+        if (!assumedCreds.IsEmpty()) {
+          assumedCreds.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_PROFILE_SOURCE_PROFILE);
+        }
+
         sourceProfiles.back()->second.SetCredentials(assumedCreds);
     }
 

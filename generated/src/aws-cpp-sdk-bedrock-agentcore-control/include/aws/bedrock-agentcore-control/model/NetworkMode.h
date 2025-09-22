@@ -16,7 +16,8 @@ namespace Model
   enum class NetworkMode
   {
     NOT_SET,
-    PUBLIC_
+    PUBLIC_,
+    VPC
   };
 
 namespace NetworkModeMapper

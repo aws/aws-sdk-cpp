@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptions_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -44,19 +44,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A security group ID that allows inbound TCP port 1688 communication between
-     * resources in your VPC and the VPC endpoint for activation servers.</p>
-     */
-    inline const Aws::String& GetSecurityGroupId() const { return m_securityGroupId; }
-    inline bool SecurityGroupIdHasBeenSet() const { return m_securityGroupIdHasBeenSet; }
-    template<typename SecurityGroupIdT = Aws::String>
-    void SetSecurityGroupId(SecurityGroupIdT&& value) { m_securityGroupIdHasBeenSet = true; m_securityGroupId = std::forward<SecurityGroupIdT>(value); }
-    template<typename SecurityGroupIdT = Aws::String>
-    Settings& WithSecurityGroupId(SecurityGroupIdT&& value) { SetSecurityGroupId(std::forward<SecurityGroupIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The subnets defined for the registered identity provider.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnets() const { return m_subnets; }
@@ -68,13 +55,26 @@ namespace Model
     template<typename SubnetsT = Aws::String>
     Settings& AddSubnets(SubnetsT&& value) { m_subnetsHasBeenSet = true; m_subnets.emplace_back(std::forward<SubnetsT>(value)); return *this; }
     ///@}
-  private:
 
-    Aws::String m_securityGroupId;
-    bool m_securityGroupIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>A security group ID that allows inbound TCP port 1688 communication between
+     * resources in your VPC and the VPC endpoint for activation servers.</p>
+     */
+    inline const Aws::String& GetSecurityGroupId() const { return m_securityGroupId; }
+    inline bool SecurityGroupIdHasBeenSet() const { return m_securityGroupIdHasBeenSet; }
+    template<typename SecurityGroupIdT = Aws::String>
+    void SetSecurityGroupId(SecurityGroupIdT&& value) { m_securityGroupIdHasBeenSet = true; m_securityGroupId = std::forward<SecurityGroupIdT>(value); }
+    template<typename SecurityGroupIdT = Aws::String>
+    Settings& WithSecurityGroupId(SecurityGroupIdT&& value) { SetSecurityGroupId(std::forward<SecurityGroupIdT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::Vector<Aws::String> m_subnets;
     bool m_subnetsHasBeenSet = false;
+
+    Aws::String m_securityGroupId;
+    bool m_securityGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     PUBLIC_,
-    SANDBOX
+    SANDBOX,
+    VPC
   };
 
 namespace CodeInterpreterNetworkModeMapper

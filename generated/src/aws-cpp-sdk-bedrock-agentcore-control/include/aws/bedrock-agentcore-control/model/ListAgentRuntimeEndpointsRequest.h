@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the agent runtime to list endpoints for.</p>
+     * <p>The unique identifier of the AgentCore Runtime to list endpoints for.</p>
      */
     inline const Aws::String& GetAgentRuntimeId() const { return m_agentRuntimeId; }
     inline bool AgentRuntimeIdHasBeenSet() const { return m_agentRuntimeIdHasBeenSet; }

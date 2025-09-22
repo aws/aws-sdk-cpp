@@ -86,6 +86,16 @@ namespace Model
     template<typename DeskPhoneNumberT = Aws::String>
     UserPhoneConfig& WithDeskPhoneNumber(DeskPhoneNumberT&& value) { SetDeskPhoneNumber(std::forward<DeskPhoneNumberT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The persistent connection setting for the user.</p>
+     */
+    inline bool GetPersistentConnection() const { return m_persistentConnection; }
+    inline bool PersistentConnectionHasBeenSet() const { return m_persistentConnectionHasBeenSet; }
+    inline void SetPersistentConnection(bool value) { m_persistentConnectionHasBeenSet = true; m_persistentConnection = value; }
+    inline UserPhoneConfig& WithPersistentConnection(bool value) { SetPersistentConnection(value); return *this;}
+    ///@}
   private:
 
     PhoneType m_phoneType{PhoneType::NOT_SET};
@@ -99,6 +109,9 @@ namespace Model
 
     Aws::String m_deskPhoneNumber;
     bool m_deskPhoneNumberHasBeenSet = false;
+
+    bool m_persistentConnection{false};
+    bool m_persistentConnectionHasBeenSet = false;
   };
 
 } // namespace Model

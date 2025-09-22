@@ -16,9 +16,9 @@ Aws::String StopProductSubscriptionRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_domainHasBeenSet)
+  if(m_usernameHasBeenSet)
   {
-   payload.WithString("Domain", m_domain);
+   payload.WithString("Username", m_username);
 
   }
 
@@ -40,9 +40,9 @@ Aws::String StopProductSubscriptionRequest::SerializePayload() const
 
   }
 
-  if(m_usernameHasBeenSet)
+  if(m_domainHasBeenSet)
   {
-   payload.WithString("Username", m_username);
+   payload.WithString("Domain", m_domain);
 
   }
 

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ONDEMAND,
-    SPOT
+    SPOT,
+    CAPACITY_BLOCK
   };
 
 namespace PurchaseOptionMapper

@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of Gateway summaries.</p>
+     * <p>The list of gateway summaries.</p>
      */
     inline const Aws::Vector<GatewaySummary>& GetItems() const { return m_items; }
     template<typename ItemsT = Aws::Vector<GatewaySummary>>
@@ -49,7 +49,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Opaque continuation token for the next paginated response.</p>
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, use this token when making another request in the
+     * <code>nextToken</code> field to return the next batch of results.</p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     template<typename NextTokenT = Aws::String>

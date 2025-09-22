@@ -25,10 +25,10 @@ ActiveDirectorySettings::ActiveDirectorySettings(JsonView jsonValue)
 
 ActiveDirectorySettings& ActiveDirectorySettings::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("DomainCredentialsProvider"))
+  if(jsonValue.ValueExists("DomainName"))
   {
-    m_domainCredentialsProvider = jsonValue.GetObject("DomainCredentialsProvider");
-    m_domainCredentialsProviderHasBeenSet = true;
+    m_domainName = jsonValue.GetString("DomainName");
+    m_domainNameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("DomainIpv4List"))
   {
@@ -39,10 +39,10 @@ ActiveDirectorySettings& ActiveDirectorySettings::operator =(JsonView jsonValue)
     }
     m_domainIpv4ListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DomainName"))
+  if(jsonValue.ValueExists("DomainCredentialsProvider"))
   {
-    m_domainName = jsonValue.GetString("DomainName");
-    m_domainNameHasBeenSet = true;
+    m_domainCredentialsProvider = jsonValue.GetObject("DomainCredentialsProvider");
+    m_domainCredentialsProviderHasBeenSet = true;
   }
   if(jsonValue.ValueExists("DomainNetworkSettings"))
   {
@@ -56,9 +56,9 @@ JsonValue ActiveDirectorySettings::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_domainCredentialsProviderHasBeenSet)
+  if(m_domainNameHasBeenSet)
   {
-   payload.WithObject("DomainCredentialsProvider", m_domainCredentialsProvider.Jsonize());
+   payload.WithString("DomainName", m_domainName);
 
   }
 
@@ -73,9 +73,9 @@ JsonValue ActiveDirectorySettings::Jsonize() const
 
   }
 
-  if(m_domainNameHasBeenSet)
+  if(m_domainCredentialsProviderHasBeenSet)
   {
-   payload.WithString("DomainName", m_domainName);
+   payload.WithObject("DomainCredentialsProvider", m_domainCredentialsProvider.Jsonize());
 
   }
 

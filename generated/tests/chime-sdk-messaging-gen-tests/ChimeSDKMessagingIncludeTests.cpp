@@ -125,6 +125,7 @@
 #include <aws/chime-sdk-messaging/model/MessageAttributeValue.h>
 #include <aws/chime-sdk-messaging/model/MessagingDataType.h>
 #include <aws/chime-sdk-messaging/model/MessagingSessionEndpoint.h>
+#include <aws/chime-sdk-messaging/model/NetworkType.h>
 #include <aws/chime-sdk-messaging/model/NotFoundException.h>
 #include <aws/chime-sdk-messaging/model/Processor.h>
 #include <aws/chime-sdk-messaging/model/ProcessorConfiguration.h>
