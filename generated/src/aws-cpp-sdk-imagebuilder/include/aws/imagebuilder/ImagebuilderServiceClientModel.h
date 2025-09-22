@@ -93,17 +93,20 @@
 #include <aws/imagebuilder/model/UpdateImagePipelineResult.h>
 #include <aws/imagebuilder/model/UpdateInfrastructureConfigurationResult.h>
 #include <aws/imagebuilder/model/UpdateLifecyclePolicyResult.h>
-#include <aws/imagebuilder/model/ListInfrastructureConfigurationsRequest.h>
 #include <aws/imagebuilder/model/ListWorkflowsRequest.h>
 #include <aws/imagebuilder/model/ListLifecyclePoliciesRequest.h>
+#include <aws/imagebuilder/model/ListImagePipelinesRequest.h>
+#include <aws/imagebuilder/model/ListImageRecipesRequest.h>
+#include <aws/imagebuilder/model/ListImagesRequest.h>
+#include <aws/imagebuilder/model/ListInfrastructureConfigurationsRequest.h>
 #include <aws/imagebuilder/model/ListDistributionConfigurationsRequest.h>
 #include <aws/imagebuilder/model/ListWaitingWorkflowStepsRequest.h>
+#include <aws/imagebuilder/model/ListComponentBuildVersionsRequest.h>
+#include <aws/imagebuilder/model/ListWorkflowBuildVersionsRequest.h>
 #include <aws/imagebuilder/model/ListContainerRecipesRequest.h>
-#include <aws/imagebuilder/model/ListImagePipelinesRequest.h>
+#include <aws/imagebuilder/model/ListImageBuildVersionsRequest.h>
 #include <aws/imagebuilder/model/ListImageScanFindingsRequest.h>
-#include <aws/imagebuilder/model/ListImageRecipesRequest.h>
 #include <aws/imagebuilder/model/ListComponentsRequest.h>
-#include <aws/imagebuilder/model/ListImagesRequest.h>
 #include <aws/imagebuilder/model/ListImageScanFindingAggregationsRequest.h>
 /* End of service model headers required in ImagebuilderClient header */
 

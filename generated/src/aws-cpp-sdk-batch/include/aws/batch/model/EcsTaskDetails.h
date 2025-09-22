@@ -125,7 +125,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IPC resource namespace to use for the containers in the task.</p>
+     * <p>The IPC resource namespace to use for the containers in the task. The valid
+     * values are <code>host</code>, <code>task</code>, or <code>none</code>. For more
+     * information see <code>ipcMode</code> in <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_EcsTaskProperties.html">EcsTaskProperties</a>.</p>
      */
     inline const Aws::String& GetIpcMode() const { return m_ipcMode; }
     inline bool IpcModeHasBeenSet() const { return m_ipcModeHasBeenSet; }
@@ -155,7 +158,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The process namespace to use for the containers in the task.</p>
+     * <p>The process namespace to use for the containers in the task. The valid values
+     * are <code>host</code>, or <code>task</code>. For more information see
+     * <code>pidMode</code> in <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_EcsTaskProperties.html">EcsTaskProperties</a>.</p>
      */
     inline const Aws::String& GetPidMode() const { return m_pidMode; }
     inline bool PidModeHasBeenSet() const { return m_pidModeHasBeenSet; }

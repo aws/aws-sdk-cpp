@@ -47,13 +47,13 @@ namespace Model
      * <p>The log driver to use for the container. The valid values that are listed for
      * this parameter are log drivers that the Amazon ECS container agent can
      * communicate with by default.</p> <p>The supported log drivers are
-     * <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>,
-     * <code>json-file</code>, <code>journald</code>, <code>logentries</code>,
-     * <code>syslog</code>, and <code>splunk</code>.</p>  <p>Jobs that are
-     * running on Fargate resources are restricted to the <code>awslogs</code> and
-     * <code>splunk</code> log drivers.</p>  <dl> <dt>awsfirelens</dt> <dd>
-     * <p>Specifies the firelens logging driver. For more information on configuring
-     * Firelens, see <a
+     * <code>awsfirelens</code>, <code>awslogs</code>, <code>fluentd</code>,
+     * <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
+     * <code>logentries</code>, <code>syslog</code>, and <code>splunk</code>.</p>
+     *  <p>Jobs that are running on Fargate resources are restricted to the
+     * <code>awslogs</code> and <code>splunk</code> log drivers.</p>  <dl>
+     * <dt>awsfirelens</dt> <dd> <p>Specifies the firelens logging driver. For more
+     * information on configuring Firelens, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Send
      * Amazon ECS logs to an Amazon Web Services service or Amazon Web Services
      * Partner</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>

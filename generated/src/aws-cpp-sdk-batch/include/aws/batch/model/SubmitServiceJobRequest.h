@@ -116,7 +116,7 @@ namespace Model
     ///@{
     /**
      * <p>The share identifier for the service job. Don't specify this parameter if the
-     * job queue doesn't have a fair- share scheduling policy. If the job queue has a
+     * job queue doesn't have a fair-share scheduling policy. If the job queue has a
      * fair-share scheduling policy, then this parameter must be specified.</p>
      */
     inline const Aws::String& GetShareIdentifier() const { return m_shareIdentifier; }

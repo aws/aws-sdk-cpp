@@ -57,6 +57,7 @@ namespace Aws
         static const int KubernetesNetworkConfig_HASH = HashingUtils::HashString("KubernetesNetworkConfig");
         static const int RemoteNetworkConfig_HASH = HashingUtils::HashString("RemoteNetworkConfig");
         static const int DeletionProtection_HASH = HashingUtils::HashString("DeletionProtection");
+        static const int NodeRepairConfig_HASH = HashingUtils::HashString("NodeRepairConfig");
 
 
         UpdateParamType GetUpdateParamTypeForName(const Aws::String& name)
@@ -210,6 +211,10 @@ namespace Aws
           {
             return UpdateParamType::DeletionProtection;
           }
+          else if (hashCode == NodeRepairConfig_HASH)
+          {
+            return UpdateParamType::NodeRepairConfig;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -300,6 +305,8 @@ namespace Aws
             return "RemoteNetworkConfig";
           case UpdateParamType::DeletionProtection:
             return "DeletionProtection";
+          case UpdateParamType::NodeRepairConfig:
+            return "NodeRepairConfig";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
