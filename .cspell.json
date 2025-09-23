@@ -131,6 +131,7 @@
     "DENABLED",
     "DENFORCE",
     "APPSTORE",
+    "UCRT",
     // Compiler and linker
     "Wpedantic",
     "Wextra",
