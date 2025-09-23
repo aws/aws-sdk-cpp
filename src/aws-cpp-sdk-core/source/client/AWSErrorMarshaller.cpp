@@ -301,7 +301,8 @@ void JsonErrorMarshallerQueryCompatible::MarshallError(AWSError<CoreErrors>& err
 }
 
 AWSError<CoreErrors> RpcV2ErrorMarshaller::Marshall(const Aws::Http::HttpResponse& httpResponse) const {
-  return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "Not implemented yet", "RpcV2ErrorMarshaller::Marshall not implemeneted yet: " + httpResponse.GetClientErrorMessage(), false);
+  return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "Not implemented yet",
+                              "RpcV2ErrorMarshaller::Marshall not implemented yet: " + httpResponse.GetClientErrorMessage(), false);
 }
 
 AWSError<CoreErrors> RpcV2ErrorMarshaller::BuildAWSError(const std::shared_ptr<Http::HttpResponse>& httpResponse) const {
