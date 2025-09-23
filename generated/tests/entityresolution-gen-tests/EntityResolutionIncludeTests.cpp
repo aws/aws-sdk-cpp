@@ -64,6 +64,8 @@
 #include <aws/entityresolution/model/GetProviderServiceResult.h>
 #include <aws/entityresolution/model/GetSchemaMappingRequest.h>
 #include <aws/entityresolution/model/GetSchemaMappingResult.h>
+#include <aws/entityresolution/model/IdMappingIncrementalRunConfig.h>
+#include <aws/entityresolution/model/IdMappingIncrementalRunType.h>
 #include <aws/entityresolution/model/IdMappingJobMetrics.h>
 #include <aws/entityresolution/model/IdMappingJobOutputSource.h>
 #include <aws/entityresolution/model/IdMappingRuleBasedProperties.h>
@@ -86,6 +88,7 @@
 #include <aws/entityresolution/model/JobOutputSource.h>
 #include <aws/entityresolution/model/JobStatus.h>
 #include <aws/entityresolution/model/JobSummary.h>
+#include <aws/entityresolution/model/JobType.h>
 #include <aws/entityresolution/model/ListIdMappingJobsRequest.h>
 #include <aws/entityresolution/model/ListIdMappingJobsResult.h>
 #include <aws/entityresolution/model/ListIdMappingWorkflowsRequest.h>

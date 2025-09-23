@@ -6,15 +6,44 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/sso-admin/SSOAdminErrors.h>
+#include <aws/sso-admin/model/ThrottlingException.h>
+#include <aws/sso-admin/model/ResourceNotFoundException.h>
+#include <aws/sso-admin/model/ValidationException.h>
+#include <aws/sso-admin/model/AccessDeniedException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::SSOAdmin;
+using namespace Aws::SSOAdmin::Model;
 
 namespace Aws
 {
 namespace SSOAdmin
 {
+template<> AWS_SSOADMIN_API ThrottlingException SSOAdminError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSOAdminErrors::THROTTLING);
+  return ThrottlingException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSOADMIN_API ResourceNotFoundException SSOAdminError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSOAdminErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSOADMIN_API ValidationException SSOAdminError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSOAdminErrors::VALIDATION);
+  return ValidationException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSOADMIN_API AccessDeniedException SSOAdminError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSOAdminErrors::ACCESS_DENIED);
+  return AccessDeniedException(this->GetJsonPayload().View());
+}
+
 namespace SSOAdminErrorMapper
 {
 

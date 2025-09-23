@@ -314,7 +314,9 @@ namespace Model
     /**
      * <p>A location is a combination of Amazon Web Services Regions and Amazon Web
      * Services accounts where you want to run the association. Use this action to
-     * create an association in multiple Regions and multiple accounts.</p>
+     * create an association in multiple Regions and multiple accounts.</p> 
+     * <p>The <code>IncludeChildOrganizationUnits</code> parameter is not supported by
+     * State Manager.</p> 
      */
     inline const Aws::Vector<TargetLocation>& GetTargetLocations() const { return m_targetLocations; }
     inline bool TargetLocationsHasBeenSet() const { return m_targetLocationsHasBeenSet; }

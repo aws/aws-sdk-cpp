@@ -30,6 +30,11 @@ AccessDeniedException& AccessDeniedException::operator =(JsonView jsonValue)
     m_error = jsonValue.GetString("error");
     m_errorHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("reason"))
+  {
+    m_reason = AccessDeniedExceptionReasonMapper::GetAccessDeniedExceptionReasonForName(jsonValue.GetString("reason"));
+    m_reasonHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("error_description"))
   {
     m_error_description = jsonValue.GetString("error_description");
@@ -46,6 +51,11 @@ JsonValue AccessDeniedException::Jsonize() const
   {
    payload.WithString("error", m_error);
 
+  }
+
+  if(m_reasonHasBeenSet)
+  {
+   payload.WithString("reason", AccessDeniedExceptionReasonMapper::GetNameForAccessDeniedExceptionReason(m_reason));
   }
 
   if(m_error_descriptionHasBeenSet)

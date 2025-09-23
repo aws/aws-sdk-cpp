@@ -24,9 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>This structure contains Amazon Web Services-specific parameter extensions for
-   * the token endpoint responses and includes the identity context.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>This structure contains Amazon Web Services-specific parameter extensions and
+   * the <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-overview.html">identity
+   * context</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/AwsAdditionalDetails">AWS
    * API Reference</a></p>
    */
@@ -41,10 +42,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>STS context assertion that carries a user identifier to the Amazon Web
-     * Services service that it calls and can be used to obtain an identity-enhanced
-     * IAM role session. This value corresponds to the
-     * <code>sts:identity_context</code> claim in the ID token.</p>
+     * <p>The trusted context assertion is signed and encrypted by STS. It provides
+     * access to <code>sts:identity_context</code> claim in the <code>idToken</code>
+     * without JWT parsing</p> <p>Identity context comprises information that Amazon
+     * Web Services services use to make authorization decisions when they receive
+     * requests.</p>
      */
     inline const Aws::String& GetIdentityContext() const { return m_identityContext; }
     inline bool IdentityContextHasBeenSet() const { return m_identityContextHasBeenSet; }

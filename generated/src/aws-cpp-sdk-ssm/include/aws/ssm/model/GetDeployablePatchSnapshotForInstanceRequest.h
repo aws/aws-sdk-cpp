@@ -72,6 +72,20 @@ namespace Model
     template<typename BaselineOverrideT = BaselineOverride>
     GetDeployablePatchSnapshotForInstanceRequest& WithBaselineOverride(BaselineOverrideT&& value) { SetBaselineOverride(std::forward<BaselineOverrideT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to use S3 dualstack endpoints for the patch snapshot
+     * download URL. Set to <code>true</code> to receive a presigned URL that supports
+     * both IPv4 and IPv6 connectivity. Set to <code>false</code> to use standard
+     * IPv4-only endpoints. Default is <code>false</code>. This parameter is required
+     * for managed nodes in IPv6-only environments. </p>
+     */
+    inline bool GetUseS3DualStackEndpoint() const { return m_useS3DualStackEndpoint; }
+    inline bool UseS3DualStackEndpointHasBeenSet() const { return m_useS3DualStackEndpointHasBeenSet; }
+    inline void SetUseS3DualStackEndpoint(bool value) { m_useS3DualStackEndpointHasBeenSet = true; m_useS3DualStackEndpoint = value; }
+    inline GetDeployablePatchSnapshotForInstanceRequest& WithUseS3DualStackEndpoint(bool value) { SetUseS3DualStackEndpoint(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_instanceId;
@@ -82,6 +96,9 @@ namespace Model
 
     BaselineOverride m_baselineOverride;
     bool m_baselineOverrideHasBeenSet = false;
+
+    bool m_useS3DualStackEndpoint{false};
+    bool m_useS3DualStackEndpointHasBeenSet = false;
   };
 
 } // namespace Model

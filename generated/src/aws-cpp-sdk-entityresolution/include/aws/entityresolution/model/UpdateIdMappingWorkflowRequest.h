@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/entityresolution/model/IdMappingTechniques.h>
+#include <aws/entityresolution/model/IdMappingIncrementalRunConfig.h>
 #include <aws/entityresolution/model/IdMappingWorkflowInputSource.h>
 #include <aws/entityresolution/model/IdMappingWorkflowOutputSource.h>
 #include <utility>
@@ -105,6 +106,18 @@ namespace Model
 
     ///@{
     /**
+     * <p> The incremental run configuration for the update ID mapping workflow.</p>
+     */
+    inline const IdMappingIncrementalRunConfig& GetIncrementalRunConfig() const { return m_incrementalRunConfig; }
+    inline bool IncrementalRunConfigHasBeenSet() const { return m_incrementalRunConfigHasBeenSet; }
+    template<typename IncrementalRunConfigT = IdMappingIncrementalRunConfig>
+    void SetIncrementalRunConfig(IncrementalRunConfigT&& value) { m_incrementalRunConfigHasBeenSet = true; m_incrementalRunConfig = std::forward<IncrementalRunConfigT>(value); }
+    template<typename IncrementalRunConfigT = IdMappingIncrementalRunConfig>
+    UpdateIdMappingWorkflowRequest& WithIncrementalRunConfig(IncrementalRunConfigT&& value) { SetIncrementalRunConfig(std::forward<IncrementalRunConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes
      * this role to access Amazon Web Services resources on your behalf.</p>
      */
@@ -131,6 +144,9 @@ namespace Model
 
     IdMappingTechniques m_idMappingTechniques;
     bool m_idMappingTechniquesHasBeenSet = false;
+
+    IdMappingIncrementalRunConfig m_incrementalRunConfig;
+    bool m_incrementalRunConfigHasBeenSet = false;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;

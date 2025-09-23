@@ -27,8 +27,9 @@ namespace Model
    * <p>Optional. An object that defines the incremental run type. This object
    * contains only the <code>incrementalRunType</code> field, which appears as
    * "Automatic" in the console. </p>  <p>For workflows where
-   * <code>resolutionType</code> is <code>ML_MATCHING</code>, incremental processing
-   * is not supported. </p> <p><h3>See Also:</h3>   <a
+   * <code>resolutionType</code> is <code>ML_MATCHING</code> or
+   * <code>PROVIDER</code>, incremental processing is not supported. </p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/IncrementalRunConfig">AWS
    * API Reference</a></p>
    */
@@ -45,8 +46,9 @@ namespace Model
     /**
      * <p>The type of incremental run. The only valid value is <code>IMMEDIATE</code>.
      * This appears as "Automatic" in the console.</p>  <p>For workflows
-     * where <code>resolutionType</code> is <code>ML_MATCHING</code>, incremental
-     * processing is not supported. </p> 
+     * where <code>resolutionType</code> is <code>ML_MATCHING</code> or
+     * <code>PROVIDER</code>, incremental processing is not supported. </p>
+     * 
      */
     inline IncrementalRunType GetIncrementalRunType() const { return m_incrementalRunType; }
     inline bool IncrementalRunTypeHasBeenSet() const { return m_incrementalRunTypeHasBeenSet; }

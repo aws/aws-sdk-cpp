@@ -230,6 +230,7 @@
 #include <aws/cleanrooms/model/IdNamespaceAssociationSummary.h>
 #include <aws/cleanrooms/model/IdNamespaceType.h>
 #include <aws/cleanrooms/model/JobComputePaymentConfig.h>
+#include <aws/cleanrooms/model/JobType.h>
 #include <aws/cleanrooms/model/JoinOperator.h>
 #include <aws/cleanrooms/model/JoinRequiredOption.h>
 #include <aws/cleanrooms/model/ListAnalysisTemplatesRequest.h>

@@ -30,6 +30,11 @@ InvalidRequestException& InvalidRequestException::operator =(JsonView jsonValue)
     m_error = jsonValue.GetString("error");
     m_errorHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("reason"))
+  {
+    m_reason = InvalidRequestExceptionReasonMapper::GetInvalidRequestExceptionReasonForName(jsonValue.GetString("reason"));
+    m_reasonHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("error_description"))
   {
     m_error_description = jsonValue.GetString("error_description");
@@ -46,6 +51,11 @@ JsonValue InvalidRequestException::Jsonize() const
   {
    payload.WithString("error", m_error);
 
+  }
+
+  if(m_reasonHasBeenSet)
+  {
+   payload.WithString("reason", InvalidRequestExceptionReasonMapper::GetNameForInvalidRequestExceptionReason(m_reason));
   }
 
   if(m_error_descriptionHasBeenSet)

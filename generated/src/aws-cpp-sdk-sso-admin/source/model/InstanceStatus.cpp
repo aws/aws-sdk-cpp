@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("CREATE_IN_PROGRESS");
+        static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
         static const int DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("DELETE_IN_PROGRESS");
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
 
@@ -31,6 +32,10 @@ namespace Aws
           if (hashCode == CREATE_IN_PROGRESS_HASH)
           {
             return InstanceStatus::CREATE_IN_PROGRESS;
+          }
+          else if (hashCode == CREATE_FAILED_HASH)
+          {
+            return InstanceStatus::CREATE_FAILED;
           }
           else if (hashCode == DELETE_IN_PROGRESS_HASH)
           {
@@ -58,6 +63,8 @@ namespace Aws
             return {};
           case InstanceStatus::CREATE_IN_PROGRESS:
             return "CREATE_IN_PROGRESS";
+          case InstanceStatus::CREATE_FAILED:
+            return "CREATE_FAILED";
           case InstanceStatus::DELETE_IN_PROGRESS:
             return "DELETE_IN_PROGRESS";
           case InstanceStatus::ACTIVE:

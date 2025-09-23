@@ -55,6 +55,16 @@ DescribeInstanceResult& DescribeInstanceResult::operator =(const Aws::AmazonWebS
     m_status = InstanceStatusMapper::GetInstanceStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("StatusReason"))
+  {
+    m_statusReason = jsonValue.GetString("StatusReason");
+    m_statusReasonHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("EncryptionConfigurationDetails"))
+  {
+    m_encryptionConfigurationDetails = jsonValue.GetObject("EncryptionConfigurationDetails");
+    m_encryptionConfigurationDetailsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

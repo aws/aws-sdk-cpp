@@ -16,6 +16,8 @@
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/sso-admin/model/AccessControlAttribute.h>
 #include <aws/sso-admin/model/AccessControlAttributeValue.h>
+#include <aws/sso-admin/model/AccessDeniedException.h>
+#include <aws/sso-admin/model/AccessDeniedExceptionReason.h>
 #include <aws/sso-admin/model/AccountAssignment.h>
 #include <aws/sso-admin/model/AccountAssignmentForPrincipal.h>
 #include <aws/sso-admin/model/AccountAssignmentOperationStatus.h>
@@ -97,6 +99,8 @@
 #include <aws/sso-admin/model/DetachManagedPolicyFromPermissionSetRequest.h>
 #include <aws/sso-admin/model/DetachManagedPolicyFromPermissionSetResult.h>
 #include <aws/sso-admin/model/DisplayData.h>
+#include <aws/sso-admin/model/EncryptionConfiguration.h>
+#include <aws/sso-admin/model/EncryptionConfigurationDetails.h>
 #include <aws/sso-admin/model/FederationProtocol.h>
 #include <aws/sso-admin/model/GetApplicationAccessScopeRequest.h>
 #include <aws/sso-admin/model/GetApplicationAccessScopeResult.h>
@@ -122,6 +126,8 @@
 #include <aws/sso-admin/model/InstanceStatus.h>
 #include <aws/sso-admin/model/JwksRetrievalOption.h>
 #include <aws/sso-admin/model/JwtBearerGrant.h>
+#include <aws/sso-admin/model/KmsKeyStatus.h>
+#include <aws/sso-admin/model/KmsKeyType.h>
 #include <aws/sso-admin/model/ListAccountAssignmentCreationStatusRequest.h>
 #include <aws/sso-admin/model/ListAccountAssignmentCreationStatusResult.h>
 #include <aws/sso-admin/model/ListAccountAssignmentDeletionStatusRequest.h>
@@ -190,6 +196,8 @@
 #include <aws/sso-admin/model/PutPermissionsBoundaryToPermissionSetRequest.h>
 #include <aws/sso-admin/model/PutPermissionsBoundaryToPermissionSetResult.h>
 #include <aws/sso-admin/model/RefreshTokenGrant.h>
+#include <aws/sso-admin/model/ResourceNotFoundException.h>
+#include <aws/sso-admin/model/ResourceNotFoundExceptionReason.h>
 #include <aws/sso-admin/model/ResourceServerConfig.h>
 #include <aws/sso-admin/model/ResourceServerScopeDetails.h>
 #include <aws/sso-admin/model/ScopeDetails.h>
@@ -200,6 +208,8 @@
 #include <aws/sso-admin/model/TagResourceRequest.h>
 #include <aws/sso-admin/model/TagResourceResult.h>
 #include <aws/sso-admin/model/TargetType.h>
+#include <aws/sso-admin/model/ThrottlingException.h>
+#include <aws/sso-admin/model/ThrottlingExceptionReason.h>
 #include <aws/sso-admin/model/TokenExchangeGrant.h>
 #include <aws/sso-admin/model/TrustedTokenIssuerConfiguration.h>
 #include <aws/sso-admin/model/TrustedTokenIssuerMetadata.h>
@@ -219,6 +229,8 @@
 #include <aws/sso-admin/model/UpdateTrustedTokenIssuerRequest.h>
 #include <aws/sso-admin/model/UpdateTrustedTokenIssuerResult.h>
 #include <aws/sso-admin/model/UserBackgroundSessionApplicationStatus.h>
+#include <aws/sso-admin/model/ValidationException.h>
+#include <aws/sso-admin/model/ValidationExceptionReason.h>
 
 using SSOAdminIncludeTest = ::testing::Test;
 

@@ -112,8 +112,9 @@ namespace Model
      * <p>Optional. An object that defines the incremental run type. This object
      * contains only the <code>incrementalRunType</code> field, which appears as
      * "Automatic" in the console. </p>  <p>For workflows where
-     * <code>resolutionType</code> is <code>ML_MATCHING</code>, incremental processing
-     * is not supported. </p> 
+     * <code>resolutionType</code> is <code>ML_MATCHING</code> or
+     * <code>PROVIDER</code>, incremental processing is not supported. </p>
+     * 
      */
     inline const IncrementalRunConfig& GetIncrementalRunConfig() const { return m_incrementalRunConfig; }
     inline bool IncrementalRunConfigHasBeenSet() const { return m_incrementalRunConfigHasBeenSet; }

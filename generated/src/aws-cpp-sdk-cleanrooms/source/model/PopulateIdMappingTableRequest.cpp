@@ -14,7 +14,14 @@ using namespace Aws::Utils;
 
 Aws::String PopulateIdMappingTableRequest::SerializePayload() const
 {
-  return {};
+  JsonValue payload;
+
+  if(m_jobTypeHasBeenSet)
+  {
+   payload.WithString("jobType", JobTypeMapper::GetNameForJobType(m_jobType));
+  }
+
+  return payload.View().WriteReadable();
 }
 
 

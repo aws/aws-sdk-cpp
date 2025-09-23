@@ -27,6 +27,11 @@ Aws::String StartIdMappingJobRequest::SerializePayload() const
 
   }
 
+  if(m_jobTypeHasBeenSet)
+  {
+   payload.WithString("jobType", JobTypeMapper::GetNameForJobType(m_jobType));
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sso-admin/model/InstanceStatus.h>
+#include <aws/sso-admin/model/EncryptionConfigurationDetails.h>
 #include <utility>
 
 namespace Aws
@@ -105,6 +106,34 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Provides additional context about the current status of the IAM Identity
+     * Center instance. This field is particularly useful when an instance is in a
+     * non-ACTIVE state, such as CREATE_FAILED. When an instance fails to create or
+     * update, this field contains information about the cause, which may include
+     * issues with KMS key configuration, permission problems with the specified KMS
+     * key, or service-related errors. </p>
+     */
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    DescribeInstanceResult& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains the encryption configuration for your IAM Identity Center instance,
+     * including the encryption status, KMS key type, and KMS key ARN.</p>
+     */
+    inline const EncryptionConfigurationDetails& GetEncryptionConfigurationDetails() const { return m_encryptionConfigurationDetails; }
+    template<typename EncryptionConfigurationDetailsT = EncryptionConfigurationDetails>
+    void SetEncryptionConfigurationDetails(EncryptionConfigurationDetailsT&& value) { m_encryptionConfigurationDetailsHasBeenSet = true; m_encryptionConfigurationDetails = std::forward<EncryptionConfigurationDetailsT>(value); }
+    template<typename EncryptionConfigurationDetailsT = EncryptionConfigurationDetails>
+    DescribeInstanceResult& WithEncryptionConfigurationDetails(EncryptionConfigurationDetailsT&& value) { SetEncryptionConfigurationDetails(std::forward<EncryptionConfigurationDetailsT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -131,6 +160,12 @@ namespace Model
 
     InstanceStatus m_status{InstanceStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    Aws::String m_statusReason;
+    bool m_statusReasonHasBeenSet = false;
+
+    EncryptionConfigurationDetails m_encryptionConfigurationDetails;
+    bool m_encryptionConfigurationDetailsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

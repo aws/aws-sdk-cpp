@@ -69,6 +69,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The number of records processed that were marked for deletion
+     * (<code>DELETE</code> = True) in the input file. This metric tracks records
+     * flagged for removal during the job execution.</p>
+     */
+    inline int GetDeleteRecordsProcessed() const { return m_deleteRecordsProcessed; }
+    inline bool DeleteRecordsProcessedHasBeenSet() const { return m_deleteRecordsProcessedHasBeenSet; }
+    inline void SetDeleteRecordsProcessed(int value) { m_deleteRecordsProcessedHasBeenSet = true; m_deleteRecordsProcessed = value; }
+    inline JobMetrics& WithDeleteRecordsProcessed(int value) { SetDeleteRecordsProcessed(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The total number of <code>matchID</code>s generated.</p>
      */
     inline int GetMatchIDs() const { return m_matchIDs; }
@@ -86,6 +98,9 @@ namespace Model
 
     int m_recordsNotProcessed{0};
     bool m_recordsNotProcessedHasBeenSet = false;
+
+    int m_deleteRecordsProcessed{0};
+    bool m_deleteRecordsProcessedHasBeenSet = false;
 
     int m_matchIDs{0};
     bool m_matchIDsHasBeenSet = false;

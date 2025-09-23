@@ -115,6 +115,22 @@ namespace Model
     inline void SetStatus(InstanceStatus value) { m_statusHasBeenSet = true; m_status = value; }
     inline InstanceMetadata& WithStatus(InstanceStatus value) { SetStatus(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Provides additional context about the current status of the IAM Identity
+     * Center instance. This field is particularly useful when an instance is in a
+     * non-ACTIVE state, such as CREATE_FAILED. When an instance creation fails, this
+     * field contains information about the cause, which may include issues with KMS
+     * key configuration or insufficient permissions. </p>
+     */
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
+    inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    InstanceMetadata& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_instanceArn;
@@ -134,6 +150,9 @@ namespace Model
 
     InstanceStatus m_status{InstanceStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    Aws::String m_statusReason;
+    bool m_statusReasonHasBeenSet = false;
   };
 
 } // namespace Model

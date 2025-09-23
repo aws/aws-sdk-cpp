@@ -73,6 +73,11 @@ GetIdMappingWorkflowResult& GetIdMappingWorkflowResult::operator =(const Aws::Am
     m_updatedAt = jsonValue.GetDouble("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("incrementalRunConfig"))
+  {
+    m_incrementalRunConfig = jsonValue.GetObject("incrementalRunConfig");
+    m_incrementalRunConfigHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");

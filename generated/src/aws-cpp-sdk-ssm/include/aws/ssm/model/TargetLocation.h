@@ -75,7 +75,8 @@ namespace Model
     ///@{
     /**
      * <p>The maximum number of Amazon Web Services Regions and Amazon Web Services
-     * accounts allowed to run the Automation concurrently.</p>
+     * accounts allowed to run the Automation concurrently.
+     * <code>TargetLocationMaxConcurrency</code> has a default value of 1.</p>
      */
     inline const Aws::String& GetTargetLocationMaxConcurrency() const { return m_targetLocationMaxConcurrency; }
     inline bool TargetLocationMaxConcurrencyHasBeenSet() const { return m_targetLocationMaxConcurrencyHasBeenSet; }
@@ -88,7 +89,8 @@ namespace Model
     ///@{
     /**
      * <p>The maximum number of errors allowed before the system stops queueing
-     * additional Automation executions for the currently running Automation.</p>
+     * additional Automation executions for the currently running Automation.
+     * <code>TargetLocationMaxErrors</code> has a default value of 0.</p>
      */
     inline const Aws::String& GetTargetLocationMaxErrors() const { return m_targetLocationMaxErrors; }
     inline bool TargetLocationMaxErrorsHasBeenSet() const { return m_targetLocationMaxErrorsHasBeenSet; }
@@ -125,7 +127,8 @@ namespace Model
     ///@{
     /**
      * <p>Indicates whether to include child organizational units (OUs) that are
-     * children of the targeted OUs. The default is <code>false</code>.</p>
+     * children of the targeted OUs. The default is <code>false</code>.</p> 
+     * <p>This parameter is not supported by State Manager.</p> 
      */
     inline bool GetIncludeChildOrganizationUnits() const { return m_includeChildOrganizationUnits; }
     inline bool IncludeChildOrganizationUnitsHasBeenSet() const { return m_includeChildOrganizationUnitsHasBeenSet; }

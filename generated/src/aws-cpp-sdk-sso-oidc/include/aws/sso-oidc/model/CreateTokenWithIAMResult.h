@@ -125,10 +125,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A structure containing information from the <code>idToken</code>. Only the
-     * <code>identityContext</code> is in it, which is a value extracted from the
-     * <code>idToken</code>. This provides direct access to identity information
-     * without requiring JWT parsing.</p>
+     * <p>A structure containing information from IAM Identity Center managed user and
+     * group information.</p>
      */
     inline const AwsAdditionalDetails& GetAwsAdditionalDetails() const { return m_awsAdditionalDetails; }
     template<typename AwsAdditionalDetailsT = AwsAdditionalDetails>
