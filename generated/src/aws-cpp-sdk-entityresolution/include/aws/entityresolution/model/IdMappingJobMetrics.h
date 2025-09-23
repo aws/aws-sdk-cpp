@@ -69,6 +69,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The number of records processed that were marked for deletion in the input
+     * file using the DELETE schema mapping field. These are the records to be removed
+     * from the ID mapping table.</p>
+     */
+    inline int GetDeleteRecordsProcessed() const { return m_deleteRecordsProcessed; }
+    inline bool DeleteRecordsProcessedHasBeenSet() const { return m_deleteRecordsProcessedHasBeenSet; }
+    inline void SetDeleteRecordsProcessed(int value) { m_deleteRecordsProcessedHasBeenSet = true; m_deleteRecordsProcessed = value; }
+    inline IdMappingJobMetrics& WithDeleteRecordsProcessed(int value) { SetDeleteRecordsProcessed(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p> The total number of records that were mapped.</p>
      */
     inline int GetTotalMappedRecords() const { return m_totalMappedRecords; }
@@ -99,17 +111,92 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of records remaining after loading and aggregating duplicate
-     * records. Duplicates are determined by the field marked as UNIQUE_ID in your
-     * schema mapping - records sharing the same value in this field are considered
-     * duplicates. For example, if you specified "customer_id" as a UNIQUE_ID field and
-     * had three records with the same customer_id value, they would count as one
-     * unique record in this metric. </p>
+     * <p>The number of de-duplicated processed records across all runs, excluding
+     * deletion-related records. Duplicates are determined by the field marked as
+     * UNIQUE_ID in your schema mapping. Records sharing the same value in this field
+     * are considered duplicates. For example, if you specified "customer_id" as a
+     * UNIQUE_ID field and had three records with the same customer_id value, they
+     * would count as one unique record in this metric. </p>
      */
     inline int GetUniqueRecordsLoaded() const { return m_uniqueRecordsLoaded; }
     inline bool UniqueRecordsLoadedHasBeenSet() const { return m_uniqueRecordsLoadedHasBeenSet; }
     inline void SetUniqueRecordsLoaded(int value) { m_uniqueRecordsLoadedHasBeenSet = true; m_uniqueRecordsLoaded = value; }
     inline IdMappingJobMetrics& WithUniqueRecordsLoaded(int value) { SetUniqueRecordsLoaded(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The number of new mapped records.</p>
+     */
+    inline int GetNewMappedRecords() const { return m_newMappedRecords; }
+    inline bool NewMappedRecordsHasBeenSet() const { return m_newMappedRecordsHasBeenSet; }
+    inline void SetNewMappedRecords(int value) { m_newMappedRecordsHasBeenSet = true; m_newMappedRecords = value; }
+    inline IdMappingJobMetrics& WithNewMappedRecords(int value) { SetNewMappedRecords(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The number of new source records mapped.</p>
+     */
+    inline int GetNewMappedSourceRecords() const { return m_newMappedSourceRecords; }
+    inline bool NewMappedSourceRecordsHasBeenSet() const { return m_newMappedSourceRecordsHasBeenSet; }
+    inline void SetNewMappedSourceRecords(int value) { m_newMappedSourceRecordsHasBeenSet = true; m_newMappedSourceRecords = value; }
+    inline IdMappingJobMetrics& WithNewMappedSourceRecords(int value) { SetNewMappedSourceRecords(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The number of new mapped target records.</p>
+     */
+    inline int GetNewMappedTargetRecords() const { return m_newMappedTargetRecords; }
+    inline bool NewMappedTargetRecordsHasBeenSet() const { return m_newMappedTargetRecordsHasBeenSet; }
+    inline void SetNewMappedTargetRecords(int value) { m_newMappedTargetRecordsHasBeenSet = true; m_newMappedTargetRecords = value; }
+    inline IdMappingJobMetrics& WithNewMappedTargetRecords(int value) { SetNewMappedTargetRecords(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of new unique records processed in the current job run, after
+     * removing duplicates. This metric excludes deletion-related records. Duplicates
+     * are determined by the field marked as UNIQUE_ID in your schema mapping. Records
+     * sharing the same value in this field are considered duplicates. For example, if
+     * your current run processes five new records with the same UNIQUE_ID value, they
+     * would count as one new unique record in this metric.</p>
+     */
+    inline int GetNewUniqueRecordsLoaded() const { return m_newUniqueRecordsLoaded; }
+    inline bool NewUniqueRecordsLoadedHasBeenSet() const { return m_newUniqueRecordsLoadedHasBeenSet; }
+    inline void SetNewUniqueRecordsLoaded(int value) { m_newUniqueRecordsLoadedHasBeenSet = true; m_newUniqueRecordsLoaded = value; }
+    inline IdMappingJobMetrics& WithNewUniqueRecordsLoaded(int value) { SetNewUniqueRecordsLoaded(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The number of mapped records removed.</p>
+     */
+    inline int GetMappedRecordsRemoved() const { return m_mappedRecordsRemoved; }
+    inline bool MappedRecordsRemovedHasBeenSet() const { return m_mappedRecordsRemovedHasBeenSet; }
+    inline void SetMappedRecordsRemoved(int value) { m_mappedRecordsRemovedHasBeenSet = true; m_mappedRecordsRemoved = value; }
+    inline IdMappingJobMetrics& WithMappedRecordsRemoved(int value) { SetMappedRecordsRemoved(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The number of source records removed due to ID mapping.</p>
+     */
+    inline int GetMappedSourceRecordsRemoved() const { return m_mappedSourceRecordsRemoved; }
+    inline bool MappedSourceRecordsRemovedHasBeenSet() const { return m_mappedSourceRecordsRemovedHasBeenSet; }
+    inline void SetMappedSourceRecordsRemoved(int value) { m_mappedSourceRecordsRemovedHasBeenSet = true; m_mappedSourceRecordsRemoved = value; }
+    inline IdMappingJobMetrics& WithMappedSourceRecordsRemoved(int value) { SetMappedSourceRecordsRemoved(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The number of mapped target records removed.</p>
+     */
+    inline int GetMappedTargetRecordsRemoved() const { return m_mappedTargetRecordsRemoved; }
+    inline bool MappedTargetRecordsRemovedHasBeenSet() const { return m_mappedTargetRecordsRemovedHasBeenSet; }
+    inline void SetMappedTargetRecordsRemoved(int value) { m_mappedTargetRecordsRemovedHasBeenSet = true; m_mappedTargetRecordsRemoved = value; }
+    inline IdMappingJobMetrics& WithMappedTargetRecordsRemoved(int value) { SetMappedTargetRecordsRemoved(value); return *this;}
     ///@}
   private:
 
@@ -122,6 +209,9 @@ namespace Model
     int m_recordsNotProcessed{0};
     bool m_recordsNotProcessedHasBeenSet = false;
 
+    int m_deleteRecordsProcessed{0};
+    bool m_deleteRecordsProcessedHasBeenSet = false;
+
     int m_totalMappedRecords{0};
     bool m_totalMappedRecordsHasBeenSet = false;
 
@@ -133,6 +223,27 @@ namespace Model
 
     int m_uniqueRecordsLoaded{0};
     bool m_uniqueRecordsLoadedHasBeenSet = false;
+
+    int m_newMappedRecords{0};
+    bool m_newMappedRecordsHasBeenSet = false;
+
+    int m_newMappedSourceRecords{0};
+    bool m_newMappedSourceRecordsHasBeenSet = false;
+
+    int m_newMappedTargetRecords{0};
+    bool m_newMappedTargetRecordsHasBeenSet = false;
+
+    int m_newUniqueRecordsLoaded{0};
+    bool m_newUniqueRecordsLoadedHasBeenSet = false;
+
+    int m_mappedRecordsRemoved{0};
+    bool m_mappedRecordsRemovedHasBeenSet = false;
+
+    int m_mappedSourceRecordsRemoved{0};
+    bool m_mappedSourceRecordsRemovedHasBeenSet = false;
+
+    int m_mappedTargetRecordsRemoved{0};
+    bool m_mappedTargetRecordsRemovedHasBeenSet = false;
   };
 
 } // namespace Model

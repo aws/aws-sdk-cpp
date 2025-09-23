@@ -144,8 +144,9 @@ namespace EntityResolution
          * <p>Creates an <code>IdMappingWorkflow</code> object which stores the
          * configuration of the data processing job to be run. Each
          * <code>IdMappingWorkflow</code> must have a unique workflow name. To modify an
-         * existing workflow, use the UpdateIdMappingWorkflow API.</p><p><h3>See Also:</h3>
-         * <a
+         * existing workflow, use the UpdateIdMappingWorkflow API.</p> 
+         * <p>Incremental processing is not supported for ID mapping workflows. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateIdMappingWorkflow">AWS
          * API Reference</a></p>
          */
@@ -201,8 +202,9 @@ namespace EntityResolution
          * <p>Creates a matching workflow that defines the configuration for a data
          * processing job. The workflow name must be unique. To modify an existing
          * workflow, use <code>UpdateMatchingWorkflow</code>. </p>  <p>For
-         * workflows where <code>resolutionType</code> is ML_MATCHING, incremental
-         * processing is not supported. </p> <p><h3>See Also:</h3>   <a
+         * workflows where <code>resolutionType</code> is <code>ML_MATCHING</code> or
+         * <code>PROVIDER</code>, incremental processing is not supported. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateMatchingWorkflow">AWS
          * API Reference</a></p>
          */
@@ -502,9 +504,9 @@ namespace EntityResolution
 
         /**
          * <p>Returns the corresponding Match ID of a customer record if the record has
-         * been processed in a rule-based matching workflow or ML matching workflow.</p>
-         * <p>You can call this API as a dry run of an incremental load on the rule-based
-         * matching workflow.</p><p><h3>See Also:</h3>   <a
+         * been processed in a rule-based matching workflow.</p> <p>You can call this API
+         * as a dry run of an incremental load on the rule-based matching
+         * workflow.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchId">AWS
          * API Reference</a></p>
          */
@@ -1008,7 +1010,9 @@ namespace EntityResolution
          * <p>Updates an existing <code>IdMappingWorkflow</code>. This method is identical
          * to CreateIdMappingWorkflow, except it uses an HTTP <code>PUT</code> request
          * instead of a <code>POST</code> request, and the <code>IdMappingWorkflow</code>
-         * must already exist for the method to succeed.</p><p><h3>See Also:</h3>   <a
+         * must already exist for the method to succeed.</p>  <p>Incremental
+         * processing is not supported for ID mapping workflows. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateIdMappingWorkflow">AWS
          * API Reference</a></p>
          */
@@ -1060,8 +1064,9 @@ namespace EntityResolution
         /**
          * <p>Updates an existing matching workflow. The workflow must already exist for
          * this operation to succeed.</p>  <p>For workflows where
-         * <code>resolutionType</code> is ML_MATCHING, incremental processing is not
-         * supported. </p> <p><h3>See Also:</h3>   <a
+         * <code>resolutionType</code> is <code>ML_MATCHING</code> or
+         * <code>PROVIDER</code>, incremental processing is not supported. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateMatchingWorkflow">AWS
          * API Reference</a></p>
          */

@@ -28,6 +28,12 @@ Aws::String UpdateInstanceRequest::SerializePayload() const
 
   }
 
+  if(m_encryptionConfigurationHasBeenSet)
+  {
+   payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

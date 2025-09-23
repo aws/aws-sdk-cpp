@@ -22,7 +22,7 @@ namespace SSOOIDC
    * upon successful authentication and authorization with IAM Identity Center.</p>
    * <p> <b>API namespaces</b> </p> <p>IAM Identity Center uses the <code>sso</code>
    * and <code>identitystore</code> API namespaces. IAM Identity Center OpenID
-   * Connect uses the <code>sso-oidc</code> namespace.</p> <p> <b>Considerations for
+   * Connect uses the <code>sso-oauth</code> namespace.</p> <p> <b>Considerations for
    * using this guide</b> </p> <p>Before you begin using this guide, we recommend
    * that you first review the following important information about how the IAM
    * Identity Center OIDC service works.</p> <ul> <li> <p>The IAM Identity Center
@@ -137,10 +137,18 @@ namespace SSOOIDC
         }
 
         /**
-         * <p>Creates and returns access and refresh tokens for clients and applications
-         * that are authenticated using IAM entities. The access token can be used to fetch
-         * short-lived credentials for the assigned Amazon Web Services accounts or to
-         * access application APIs using <code>bearer</code> authentication.</p><p><h3>See
+         * <p>Creates and returns access and refresh tokens for authorized client
+         * applications that are authenticated using any IAM entity, such as a service role
+         * or user. These tokens might contain defined scopes that specify permissions such
+         * as <code>read:profile</code> or <code>write:data</code>. Through downscoping,
+         * you can use the scopes parameter to request tokens with reduced permissions
+         * compared to the original client application's permissions or, if applicable, the
+         * refresh token's scopes. The access token can be used to fetch short-lived
+         * credentials for the assigned Amazon Web Services accounts or to access
+         * application APIs using <code>bearer</code> authentication.</p>  <p>This
+         * API is used with Signature Version 4. For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html">Amazon
+         * Web Services Signature Version 4 for API Requests</a>.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/CreateTokenWithIAM">AWS
          * API Reference</a></p>

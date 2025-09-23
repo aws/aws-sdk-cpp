@@ -171,10 +171,16 @@ namespace Model
      * installed on the node is skipped. This is the default action if no option is
      * specified.</p> </dd> <dt>BLOCK</dt> <dd> <p> <b>All OSs</b>: Packages in the
      * rejected patches list, and packages that include them as dependencies, aren't
-     * installed by Patch Manager under any circumstances. If a package was installed
+     * installed by Patch Manager under any circumstances. </p> <p>State value
+     * assignment for patch compliance:</p> <ul> <li> <p>If a package was installed
      * before it was added to the rejected patches list, or is installed outside of
      * Patch Manager afterward, it's considered noncompliant with the patch baseline
-     * and its status is reported as <code>INSTALLED_REJECTED</code>.</p> </dd> </dl>
+     * and its status is reported as <code>INSTALLED_REJECTED</code>.</p> </li> <li>
+     * <p>If an update attempts to install a dependency package that is now rejected by
+     * the baseline, when previous versions of the package were not rejected, the
+     * package being updated is reported as <code>MISSING</code> for <code>SCAN</code>
+     * operations and as <code>FAILED</code> for <code>INSTALL</code> operations.</p>
+     * </li> </ul> </dd> </dl>
      */
     inline PatchAction GetRejectedPatchesAction() const { return m_rejectedPatchesAction; }
     inline bool RejectedPatchesActionHasBeenSet() const { return m_rejectedPatchesActionHasBeenSet; }

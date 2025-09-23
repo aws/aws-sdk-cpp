@@ -43,9 +43,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of matching. There are three types of matching:
-     * <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and
-     * <code>PROVIDER</code>.</p>
+     * <p>The type of matching workflow to create. Specify one of the following types:
+     * </p> <ul> <li> <p> <code>RULE_MATCHING</code>: Match records using configurable
+     * rule-based criteria </p> </li> <li> <p> <code>ML_MATCHING</code>: Match records
+     * using machine learning models </p> </li> <li> <p> <code>PROVIDER</code>: Match
+     * records using a third-party matching provider</p> </li> </ul>
      */
     inline ResolutionType GetResolutionType() const { return m_resolutionType; }
     inline bool ResolutionTypeHasBeenSet() const { return m_resolutionTypeHasBeenSet; }

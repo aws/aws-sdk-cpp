@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sso-oidc/SSOOIDC_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sso-oidc/model/InvalidRequestExceptionReason.h>
 #include <utility>
 
 namespace Aws
@@ -54,6 +55,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>A string that uniquely identifies a reason for the error.</p>
+     */
+    inline InvalidRequestExceptionReason GetReason() const { return m_reason; }
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+    inline void SetReason(InvalidRequestExceptionReason value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline InvalidRequestException& WithReason(InvalidRequestExceptionReason value) { SetReason(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Human-readable text providing additional information, used to assist the
      * client developer in understanding the error that occurred.</p>
      */
@@ -68,6 +79,9 @@ namespace Model
 
     Aws::String m_error;
     bool m_errorHasBeenSet = false;
+
+    InvalidRequestExceptionReason m_reason{InvalidRequestExceptionReason::NOT_SET};
+    bool m_reasonHasBeenSet = false;
 
     Aws::String m_error_description;
     bool m_error_descriptionHasBeenSet = false;

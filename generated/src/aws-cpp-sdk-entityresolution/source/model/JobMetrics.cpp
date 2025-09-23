@@ -40,6 +40,11 @@ JobMetrics& JobMetrics::operator =(JsonView jsonValue)
     m_recordsNotProcessed = jsonValue.GetInteger("recordsNotProcessed");
     m_recordsNotProcessedHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("deleteRecordsProcessed"))
+  {
+    m_deleteRecordsProcessed = jsonValue.GetInteger("deleteRecordsProcessed");
+    m_deleteRecordsProcessedHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("matchIDs"))
   {
     m_matchIDs = jsonValue.GetInteger("matchIDs");
@@ -67,6 +72,12 @@ JsonValue JobMetrics::Jsonize() const
   if(m_recordsNotProcessedHasBeenSet)
   {
    payload.WithInteger("recordsNotProcessed", m_recordsNotProcessed);
+
+  }
+
+  if(m_deleteRecordsProcessedHasBeenSet)
+  {
+   payload.WithInteger("deleteRecordsProcessed", m_deleteRecordsProcessed);
 
   }
 

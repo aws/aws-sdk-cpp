@@ -40,6 +40,11 @@ IdMappingJobMetrics& IdMappingJobMetrics::operator =(JsonView jsonValue)
     m_recordsNotProcessed = jsonValue.GetInteger("recordsNotProcessed");
     m_recordsNotProcessedHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("deleteRecordsProcessed"))
+  {
+    m_deleteRecordsProcessed = jsonValue.GetInteger("deleteRecordsProcessed");
+    m_deleteRecordsProcessedHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("totalMappedRecords"))
   {
     m_totalMappedRecords = jsonValue.GetInteger("totalMappedRecords");
@@ -59,6 +64,41 @@ IdMappingJobMetrics& IdMappingJobMetrics::operator =(JsonView jsonValue)
   {
     m_uniqueRecordsLoaded = jsonValue.GetInteger("uniqueRecordsLoaded");
     m_uniqueRecordsLoadedHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("newMappedRecords"))
+  {
+    m_newMappedRecords = jsonValue.GetInteger("newMappedRecords");
+    m_newMappedRecordsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("newMappedSourceRecords"))
+  {
+    m_newMappedSourceRecords = jsonValue.GetInteger("newMappedSourceRecords");
+    m_newMappedSourceRecordsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("newMappedTargetRecords"))
+  {
+    m_newMappedTargetRecords = jsonValue.GetInteger("newMappedTargetRecords");
+    m_newMappedTargetRecordsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("newUniqueRecordsLoaded"))
+  {
+    m_newUniqueRecordsLoaded = jsonValue.GetInteger("newUniqueRecordsLoaded");
+    m_newUniqueRecordsLoadedHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("mappedRecordsRemoved"))
+  {
+    m_mappedRecordsRemoved = jsonValue.GetInteger("mappedRecordsRemoved");
+    m_mappedRecordsRemovedHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("mappedSourceRecordsRemoved"))
+  {
+    m_mappedSourceRecordsRemoved = jsonValue.GetInteger("mappedSourceRecordsRemoved");
+    m_mappedSourceRecordsRemovedHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("mappedTargetRecordsRemoved"))
+  {
+    m_mappedTargetRecordsRemoved = jsonValue.GetInteger("mappedTargetRecordsRemoved");
+    m_mappedTargetRecordsRemovedHasBeenSet = true;
   }
   return *this;
 }
@@ -85,6 +125,12 @@ JsonValue IdMappingJobMetrics::Jsonize() const
 
   }
 
+  if(m_deleteRecordsProcessedHasBeenSet)
+  {
+   payload.WithInteger("deleteRecordsProcessed", m_deleteRecordsProcessed);
+
+  }
+
   if(m_totalMappedRecordsHasBeenSet)
   {
    payload.WithInteger("totalMappedRecords", m_totalMappedRecords);
@@ -106,6 +152,48 @@ JsonValue IdMappingJobMetrics::Jsonize() const
   if(m_uniqueRecordsLoadedHasBeenSet)
   {
    payload.WithInteger("uniqueRecordsLoaded", m_uniqueRecordsLoaded);
+
+  }
+
+  if(m_newMappedRecordsHasBeenSet)
+  {
+   payload.WithInteger("newMappedRecords", m_newMappedRecords);
+
+  }
+
+  if(m_newMappedSourceRecordsHasBeenSet)
+  {
+   payload.WithInteger("newMappedSourceRecords", m_newMappedSourceRecords);
+
+  }
+
+  if(m_newMappedTargetRecordsHasBeenSet)
+  {
+   payload.WithInteger("newMappedTargetRecords", m_newMappedTargetRecords);
+
+  }
+
+  if(m_newUniqueRecordsLoadedHasBeenSet)
+  {
+   payload.WithInteger("newUniqueRecordsLoaded", m_newUniqueRecordsLoaded);
+
+  }
+
+  if(m_mappedRecordsRemovedHasBeenSet)
+  {
+   payload.WithInteger("mappedRecordsRemoved", m_mappedRecordsRemoved);
+
+  }
+
+  if(m_mappedSourceRecordsRemovedHasBeenSet)
+  {
+   payload.WithInteger("mappedSourceRecordsRemoved", m_mappedSourceRecordsRemoved);
+
+  }
+
+  if(m_mappedTargetRecordsRemovedHasBeenSet)
+  {
+   payload.WithInteger("mappedTargetRecordsRemoved", m_mappedTargetRecordsRemoved);
 
   }
 

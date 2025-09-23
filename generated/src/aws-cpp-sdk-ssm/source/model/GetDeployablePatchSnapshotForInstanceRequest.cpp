@@ -34,6 +34,12 @@ Aws::String GetDeployablePatchSnapshotForInstanceRequest::SerializePayload() con
 
   }
 
+  if(m_useS3DualStackEndpointHasBeenSet)
+  {
+   payload.WithBool("UseS3DualStackEndpoint", m_useS3DualStackEndpoint);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

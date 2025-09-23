@@ -39,6 +39,11 @@ StartIdMappingJobResult& StartIdMappingJobResult::operator =(const Aws::AmazonWe
     }
     m_outputSourceConfigHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("jobType"))
+  {
+    m_jobType = JobTypeMapper::GetJobTypeForName(jsonValue.GetString("jobType"));
+    m_jobTypeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -7,6 +7,7 @@
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/entityresolution/model/JobType.h>
 #include <aws/entityresolution/model/IdMappingJobOutputSource.h>
 #include <utility>
 
@@ -59,6 +60,23 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p> The job type for the started ID mapping job.</p> <p>A value of
+     * <code>INCREMENTAL</code> indicates that only new or changed data was processed
+     * since the last job run. This is the default job type if the workflow was created
+     * with an <code>incrementalRunConfig</code>.</p> <p>A value of <code>BATCH</code>
+     * indicates that all data was processed from the input source, regardless of
+     * previous job runs. This is the default job type if the workflow wasn't created
+     * with an <code>incrementalRunConfig</code>.</p> <p>A value of
+     * <code>DELETE_ONLY</code> indicates that only deletion requests from
+     * <code>BatchDeleteUniqueIds</code> were processed.</p>
+     */
+    inline JobType GetJobType() const { return m_jobType; }
+    inline void SetJobType(JobType value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
+    inline StartIdMappingJobResult& WithJobType(JobType value) { SetJobType(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -73,6 +91,9 @@ namespace Model
 
     Aws::Vector<IdMappingJobOutputSource> m_outputSourceConfig;
     bool m_outputSourceConfigHasBeenSet = false;
+
+    JobType m_jobType{JobType::NOT_SET};
+    bool m_jobTypeHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

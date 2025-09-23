@@ -17,6 +17,7 @@ namespace Model
   {
     NOT_SET,
     CREATE_IN_PROGRESS,
+    CREATE_FAILED,
     DELETE_IN_PROGRESS,
     ACTIVE
   };

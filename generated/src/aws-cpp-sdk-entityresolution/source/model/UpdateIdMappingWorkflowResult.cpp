@@ -63,6 +63,11 @@ UpdateIdMappingWorkflowResult& UpdateIdMappingWorkflowResult::operator =(const A
     m_idMappingTechniques = jsonValue.GetObject("idMappingTechniques");
     m_idMappingTechniquesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("incrementalRunConfig"))
+  {
+    m_incrementalRunConfig = jsonValue.GetObject("incrementalRunConfig");
+    m_incrementalRunConfigHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");

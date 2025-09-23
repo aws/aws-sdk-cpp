@@ -55,6 +55,11 @@ InstanceMetadata& InstanceMetadata::operator =(JsonView jsonValue)
     m_status = InstanceStatusMapper::GetInstanceStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("StatusReason"))
+  {
+    m_statusReason = jsonValue.GetString("StatusReason");
+    m_statusReasonHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +99,12 @@ JsonValue InstanceMetadata::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", InstanceStatusMapper::GetNameForInstanceStatus(m_status));
+  }
+
+  if(m_statusReasonHasBeenSet)
+  {
+   payload.WithString("StatusReason", m_statusReason);
+
   }
 
   return payload;

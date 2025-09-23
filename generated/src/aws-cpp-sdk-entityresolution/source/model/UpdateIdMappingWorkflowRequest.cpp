@@ -50,6 +50,12 @@ Aws::String UpdateIdMappingWorkflowRequest::SerializePayload() const
 
   }
 
+  if(m_incrementalRunConfigHasBeenSet)
+  {
+   payload.WithObject("incrementalRunConfig", m_incrementalRunConfig.Jsonize());
+
+  }
+
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);

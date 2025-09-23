@@ -1033,7 +1033,19 @@ namespace Model
     i8ge_metal_24xl,
     i8ge_metal_48xl,
     mac_m4_metal,
-    mac_m4pro_metal
+    mac_m4pro_metal,
+    r8gn_medium,
+    r8gn_large,
+    r8gn_xlarge,
+    r8gn_2xlarge,
+    r8gn_4xlarge,
+    r8gn_8xlarge,
+    r8gn_12xlarge,
+    r8gn_16xlarge,
+    r8gn_24xlarge,
+    r8gn_48xlarge,
+    r8gn_metal_24xl,
+    r8gn_metal_48xl
   };
 
 namespace InstanceTypeMapper

@@ -7,6 +7,7 @@
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/sso-admin/SSOAdminRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sso-admin/model/EncryptionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -61,6 +62,20 @@ namespace Model
     template<typename InstanceArnT = Aws::String>
     UpdateInstanceRequest& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the encryption configuration for your IAM Identity Center instance.
+     * You can use this to configure customer managed KMS keys (CMK) or Amazon Web
+     * Services owned KMS keys for encrypting your instance data.</p>
+     */
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
+    inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    void SetEncryptionConfiguration(EncryptionConfigurationT&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::forward<EncryptionConfigurationT>(value); }
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    UpdateInstanceRequest& WithEncryptionConfiguration(EncryptionConfigurationT&& value) { SetEncryptionConfiguration(std::forward<EncryptionConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -68,6 +83,9 @@ namespace Model
 
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet = false;
+
+    EncryptionConfiguration m_encryptionConfiguration;
+    bool m_encryptionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

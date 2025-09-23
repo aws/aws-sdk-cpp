@@ -8,6 +8,7 @@
 #include <aws/entityresolution/EntityResolutionRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/entityresolution/model/JobType.h>
 #include <aws/entityresolution/model/IdMappingJobOutputSource.h>
 #include <utility>
 
@@ -59,6 +60,26 @@ namespace Model
     template<typename OutputSourceConfigT = IdMappingJobOutputSource>
     StartIdMappingJobRequest& AddOutputSourceConfig(OutputSourceConfigT&& value) { m_outputSourceConfigHasBeenSet = true; m_outputSourceConfig.emplace_back(std::forward<OutputSourceConfigT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p> The job type for the ID mapping job.</p> <p>If the <code>jobType</code>
+     * value is set to <code>INCREMENTAL</code>, only new or changed data is processed
+     * since the last job run. This is the default value if the
+     * <code>CreateIdMappingWorkflow</code> API is configured with an
+     * <code>incrementalRunConfig</code>.</p> <p>If the <code>jobType</code> value is
+     * set to <code>BATCH</code>, all data is processed from the input source,
+     * regardless of previous job runs. This is the default value if the
+     * <code>CreateIdMappingWorkflow</code> API isn't configured with an
+     * <code>incrementalRunConfig</code>.</p> <p>If the <code>jobType</code> value is
+     * set to <code>DELETE_ONLY</code>, only deletion requests from
+     * <code>BatchDeleteUniqueIds</code> are processed.</p>
+     */
+    inline JobType GetJobType() const { return m_jobType; }
+    inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
+    inline void SetJobType(JobType value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
+    inline StartIdMappingJobRequest& WithJobType(JobType value) { SetJobType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_workflowName;
@@ -66,6 +87,9 @@ namespace Model
 
     Aws::Vector<IdMappingJobOutputSource> m_outputSourceConfig;
     bool m_outputSourceConfigHasBeenSet = false;
+
+    JobType m_jobType{JobType::NOT_SET};
+    bool m_jobTypeHasBeenSet = false;
   };
 
 } // namespace Model

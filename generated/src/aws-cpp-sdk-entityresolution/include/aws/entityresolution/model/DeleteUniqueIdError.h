@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The Delete Unique Id error.</p><p><h3>See Also:</h3>   <a
+   * <p>The error information provided when the delete unique ID operation doesn't
+   * complete.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteUniqueIdError">AWS
    * API Reference</a></p>
    */
@@ -40,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique ID that could not be deleted.</p>
+     * <p>The unique ID that couldn't be deleted.</p>
      */
     inline const Aws::String& GetUniqueId() const { return m_uniqueId; }
     inline bool UniqueIdHasBeenSet() const { return m_uniqueIdHasBeenSet; }
@@ -52,7 +53,11 @@ namespace Model
 
     ///@{
     /**
-     * <p> The error type for the batch delete unique ID operation.</p>
+     * <p> The error type for the delete unique ID operation.</p> <p>The
+     * <code>SERVICE_ERROR</code> value indicates that an internal service-side problem
+     * occurred during the deletion operation.</p> <p>The <code>VALIDATION_ERROR</code>
+     * value indicates that the deletion operation couldn't complete because of invalid
+     * input parameters or data.</p>
      */
     inline DeleteUniqueIdErrorType GetErrorType() const { return m_errorType; }
     inline bool ErrorTypeHasBeenSet() const { return m_errorTypeHasBeenSet; }
