@@ -10,6 +10,7 @@
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
+#include <aws/core/utils/cbor/CborValue.h>
 
 using namespace Aws::Utils::Logging;
 using namespace Aws::Utils::Json;
@@ -300,9 +301,100 @@ void JsonErrorMarshallerQueryCompatible::MarshallError(AWSError<CoreErrors>& err
   }
 }
 
+CborValue RpcV2ErrorMarshaller::GetCborPayloadHttpResponse(const Http::HttpResponse& httpResponse) {
+  return CborValue(httpResponse.GetResponseBody());
+}
+
 AWSError<CoreErrors> RpcV2ErrorMarshaller::Marshall(const Aws::Http::HttpResponse& httpResponse) const {
-  return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "Not implemented yet",
-                              "RpcV2ErrorMarshaller::Marshall not implemented yet: " + httpResponse.GetClientErrorMessage(), false);
+  auto exceptionPayload = GetCborPayloadHttpResponse(httpResponse);
+  AWSError<CoreErrors> error;
+
+  if (exceptionPayload.WasParseSuccessful()) {
+    AWS_LOGSTREAM_TRACE(AWS_ERROR_MARSHALLER_LOG_TAG, "CBOR error response received");
+
+    auto decoder = exceptionPayload.GetDecoder();
+    Aws::String message;
+    Aws::String errorType;
+
+    if (decoder != nullptr) {
+      auto initialMapType = decoder->PeekType();
+      if (initialMapType.has_value() && (initialMapType.value() == Aws::Crt::Cbor::CborType::MapStart || initialMapType.value() == Aws::Crt::Cbor::CborType::IndefMapStart)) {
+
+        if (initialMapType.value() == Aws::Crt::Cbor::CborType::MapStart) {
+          auto mapSize = decoder->PopNextMapStart();
+          if (mapSize.has_value()) {
+            for (size_t i = 0; i < mapSize.value(); ++i) {
+              auto key = decoder->PopNextTextVal();
+              if (key.has_value()) {
+                Aws::String keyStr(reinterpret_cast<const char*>(key.value().ptr), key.value().len);
+
+                if (keyStr == MESSAGE_LOWER_CASE || keyStr == MESSAGE_CAMEL_CASE) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    message = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else if (keyStr == TYPE) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    errorType = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextWholeDataItem();
+                }
+              }
+              if (decoder->LastError() != AWS_ERROR_UNKNOWN) {
+                break;
+              }
+            }
+          }
+        } else {
+          decoder->ConsumeNextSingleElement();
+          while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+            auto nextType = decoder->PeekType();
+            if (!nextType.has_value() || nextType.value() == Aws::Crt::Cbor::CborType::Break) {
+              if (nextType.has_value()) {
+                decoder->ConsumeNextSingleElement();
+              }
+              break;
+            }
+
+            auto key = decoder->PopNextTextVal();
+            if (key.has_value()) {
+              const Aws::String keyStr(reinterpret_cast<const char*>(key.value().ptr), key.value().len);
+
+              if (keyStr == MESSAGE_LOWER_CASE || keyStr == MESSAGE_CAMEL_CASE) {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  message = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                }
+              } else if (keyStr == TYPE) {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  errorType = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                }
+              } else {
+                decoder->ConsumeNextWholeDataItem();
+              }
+            }
+          }
+        }
+      }
+    }
+
+    if (!errorType.empty()) {
+      error = Marshall(errorType, message);
+    } else {
+      error = FindErrorByHttpResponseCode(httpResponse.GetResponseCode());
+      error.SetMessage(message);
+    }
+  } else {
+    bool isRetryable = IsRetryableHttpResponseCode(httpResponse.GetResponseCode());
+    AWS_LOGSTREAM_ERROR(AWS_ERROR_MARSHALLER_LOG_TAG, "Failed to parse CBOR error payload: " << httpResponse.GetResponseCode());
+    error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", "Failed to parse CBOR error payload", isRetryable);
+  }
+
+  error.SetRequestId(httpResponse.HasHeader(REQUEST_ID_HEADER) ? httpResponse.GetHeader(REQUEST_ID_HEADER) : "");
+  return error;
 }
 
 AWSError<CoreErrors> RpcV2ErrorMarshaller::BuildAWSError(const std::shared_ptr<Http::HttpResponse>& httpResponse) const {

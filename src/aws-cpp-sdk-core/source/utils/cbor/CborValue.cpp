@@ -21,6 +21,13 @@ CborValue::CborValue(Aws::IStream& istream) : m_decoder(nullptr)
     m_decoder = std::make_shared<CborDecoder>(cursor);
 }
 
+CborValue::CborValue(const Aws::String& value) : m_decoder(nullptr)
+{
+  m_body = value;
+  auto cursor = Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(m_body.c_str()), m_body.length());
+  m_decoder = std::make_shared<CborDecoder>(cursor);
+}
+
 CborValue::CborValue(const CborValue& other) :
     m_body(other.m_body)
 {

@@ -133,7 +133,6 @@ namespace Aws
           AWSError<CoreErrors> BuildAWSError(const std::shared_ptr<Http::HttpResponse>& httpResponse) const override;
 
         protected:
-          const Aws::Utils::Cbor::CborValue& GetCborPayloadFromError(const AWSError<CoreErrors>&) const;
           static Aws::Utils::Cbor::CborValue GetCborPayloadHttpResponse(const Http::HttpResponse& httpResponse);
         };
 
