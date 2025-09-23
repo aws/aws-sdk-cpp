@@ -44,7 +44,7 @@ std::shared_ptr<Aws::IOStream> ${typeInfo.className}::GetBody() const
 Aws::Http::HeaderValueCollection ${typeInfo.className}::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-#if($metadata.targetPrefix)
+#if($metadata.targetPrefix && $metadata.protocol != "smithy-rpc-v2-cbor")
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "${metadata.targetPrefix}.${CppViewHelper.computeOperationNameFromInputOutputShape($shape.name)}"));
 #end
 #if($metadata.additionalHeaders)
