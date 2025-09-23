@@ -198,6 +198,43 @@ TEST_F(LiveClientTest, TestEOMode)
     AWS_EXPECT_SUCCESS(deleteResult);
 }
 
+TEST_F(LiveClientTest, TestEncryptionContextEmpty)
+{
+    ClientConfiguration s3ClientConfig;
+    s3ClientConfig.region = AWS_TEST_REGION;
+
+    auto key = SymmetricCipher::GenerateKey();
+    auto simpleEncryptionMaterials = Aws::MakeShared<Materials::SimpleEncryptionMaterialsWithGCMAAD>(ALLOCATION_TAG, key);
+    CryptoConfigurationV2 configuration(simpleEncryptionMaterials);
+
+    static const char* objectKey = "TestEncryptionContextEmptyKey";
+
+    S3EncryptionClientV2 client(configuration, s3ClientConfig);
+
+    Model::PutObjectRequest putObjectRequest;
+    putObjectRequest.WithBucket(BucketName.c_str())
+        .WithKey(objectKey);
+
+    auto ss = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
+    *ss << TEST_STRING;
+    ss->flush();
+
+    putObjectRequest.SetBody(ss);
+
+    auto putObjectResult = client.PutObject(putObjectRequest, {});
+    AWS_ASSERT_SUCCESS(putObjectResult);
+
+    Model::GetObjectRequest getObjectRequest;
+    getObjectRequest.WithBucket(BucketName.c_str()).WithKey(objectKey);
+
+    auto getObjectResult = client.GetObject(getObjectRequest);
+    AWS_EXPECT_SUCCESS(getObjectResult);
+    getObjectResult = client.GetObject(getObjectRequest, {});
+    AWS_EXPECT_SUCCESS(getObjectResult);
+    getObjectResult = client.GetObject(getObjectRequest, {{"foo", "bar"}});
+    EXPECT_FALSE(getObjectResult.IsSuccess());
+}
+
 TEST_F(LiveClientTest, TestAEMode)
 {
     CryptoConfiguration configuration;
