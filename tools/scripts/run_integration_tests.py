@@ -49,7 +49,7 @@ def main():
         "aws-cpp-sdk-lambda-integration-tests",
         "aws-cpp-sdk-cognitoidentity-integration-tests",
         #"aws-cpp-sdk-transfer-tests",
-        #"aws-cpp-sdk-s3-encryption-integration-tests",
+        "aws-cpp-sdk-s3-encryption-integration-tests",
         "aws-cpp-sdk-kinesis-integration-tests",
         "aws-cpp-sdk-logs-integration-tests",
         "aws-cpp-sdk-monitoring-integration-tests",
