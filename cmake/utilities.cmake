@@ -147,6 +147,9 @@ macro(do_packaging)
             COMPONENT
             Devel)
     endif()
+    if (MSVC)
+        install (FILES $<TARGET_PDB_FILE:${PROJECT_NAME}> DESTINATION ${CMAKE_INSTALL_BINDIR} OPTIONAL)
+    endif()
 endmacro()
 
 
