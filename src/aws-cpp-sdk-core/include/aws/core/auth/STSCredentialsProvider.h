@@ -9,10 +9,14 @@
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
 
+#include <atomic>
+#include <memory>
+
 namespace Aws {
 namespace Crt {
 namespace Auth {
 class ICredentialsProvider;
+class Credentials;
 }
 }
 }
@@ -46,10 +50,19 @@ namespace Aws
               INITIALIZED,
               SHUT_DOWN,
             } m_state{STATE::SHUT_DOWN};
-            std::mutex m_refreshMutex;
-            std::condition_variable m_refreshSignal;
+            mutable std::mutex m_refreshMutex;
+            mutable std::condition_variable m_refreshSignal;
             std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_credentialsProvider;
             std::chrono::milliseconds m_providerFuturesTimeoutMs;
+
+            // Thread-safe credential fetch coordination
+            mutable std::atomic<bool> m_refreshInProgress{false};
+            mutable std::shared_ptr<AWSCredentials> m_pendingCredentials;
+
+            // Helper methods for credential retrieval
+            AWSCredentials waitForSharedCredentials() const;
+            AWSCredentials extractCredentialsFromCrt(const Aws::Crt::Auth::Credentials& crtCredentials) const;
+            AWSCredentials fetchCredentialsAsync();
         };
     } // namespace Auth
 } // namespace Aws
