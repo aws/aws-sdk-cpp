@@ -145,12 +145,12 @@ AWSCredentials STSAssumeRoleWebIdentityCredentialsProvider::extractCredentialsFr
 
 AWSCredentials STSAssumeRoleWebIdentityCredentialsProvider::fetchCredentialsAsync() {
   AWS_LOGSTREAM_DEBUG(STS_LOG_TAG, "Initiating credential fetch from STS/cache");
+  m_refreshDone.store(false);
 
   AWSCredentials credentials{};
-  std::atomic<bool> refreshDone{false};
 
   m_credentialsProvider->GetCredentials(
-      [this, &credentials, &refreshDone](std::shared_ptr<Aws::Crt::Auth::Credentials> crtCredentials, int errorCode) -> void {
+      [this, &credentials](std::shared_ptr<Aws::Crt::Auth::Credentials> crtCredentials, int errorCode) -> void {
         std::unique_lock<std::mutex> lock{m_refreshMutex};
         if (errorCode != AWS_ERROR_SUCCESS) {
           m_pendingCredentials.reset();
@@ -160,14 +160,14 @@ AWSCredentials STSAssumeRoleWebIdentityCredentialsProvider::fetchCredentialsAsyn
           // Store for other waiting threads
           m_pendingCredentials = Aws::MakeShared<AWSCredentials>(STS_LOG_TAG, credentials);
         }
-        refreshDone.store(true);
+        m_refreshDone.store(true);
         m_refreshInProgress.store(false);
         m_refreshSignal.notify_all();
       });
 
   // Wait for completion
   std::unique_lock<std::mutex> lock{m_refreshMutex};
-  auto completed = m_refreshSignal.wait_for(lock, m_providerFuturesTimeoutMs, [&refreshDone]() -> bool { return refreshDone.load(); });
+  auto completed = m_refreshSignal.wait_for(lock, m_providerFuturesTimeoutMs, [this]() -> bool { return m_refreshDone.load(); });
 
   if (!completed) {
     AWS_LOGSTREAM_ERROR(STS_LOG_TAG, "Credential fetch timed out after " << m_providerFuturesTimeoutMs.count() << "ms");
