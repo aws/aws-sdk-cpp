@@ -25,11 +25,11 @@ namespace Model
 
   /**
    * <p>A description of a tag. Every tag is a key-value pair. You can add up to 50
-   * tags to a single DAX cluster.</p> <p>AWS-assigned tag names and values are
-   * automatically assigned the <code>aws:</code> prefix, which the user cannot
-   * assign. AWS-assigned tag names do not count towards the tag limit of 50.
-   * User-assigned tag names have the prefix <code>user:</code>.</p> <p>You cannot
-   * backdate the application of a tag.</p><p><h3>See Also:</h3>   <a
+   * tags to a single DAX cluster.</p> <p>Amazon Web Services-assigned tag names and
+   * values are automatically assigned the <code>aws:</code> prefix, which the user
+   * cannot assign. Amazon Web Services-assigned tag names do not count towards the
+   * tag limit of 50. User-assigned tag names have the prefix <code>user:</code>.</p>
+   * <p>You cannot backdate the application of a tag.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/Tag">AWS API
    * Reference</a></p>
    */
@@ -58,7 +58,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The value of the tag. Tag values are case-sensitive and can be null. </p>
+     * <p>The value of the tag. Tag values are case-sensitive and can be null.</p>
      */
     inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dax/model/SSESpecification.h>
 #include <aws/dax/model/ClusterEndpointEncryptionType.h>
+#include <aws/dax/model/NetworkType.h>
 #include <aws/dax/model/Tag.h>
 #include <utility>
 
@@ -86,8 +87,8 @@ namespace Model
      * replicas. To do this, set <code>ReplicationFactor</code> to a number between 3
      * (one primary and two read replicas) and 10 (one primary and nine read replicas).
      * <code>If the AvailabilityZones</code> parameter is provided, its length must
-     * equal the <code>ReplicationFactor</code>.</p>  <p>AWS recommends that you
-     * have at least two read replicas per cluster.</p> 
+     * equal the <code>ReplicationFactor</code>.</p>  <p>Amazon Web Services
+     * recommends that you have at least two read replicas per cluster.</p> 
      */
     inline int GetReplicationFactor() const { return m_replicationFactor; }
     inline bool ReplicationFactorHasBeenSet() const { return m_replicationFactorHasBeenSet; }
@@ -244,6 +245,23 @@ namespace Model
     inline void SetClusterEndpointEncryptionType(ClusterEndpointEncryptionType value) { m_clusterEndpointEncryptionTypeHasBeenSet = true; m_clusterEndpointEncryptionType = value; }
     inline CreateClusterRequest& WithClusterEndpointEncryptionType(ClusterEndpointEncryptionType value) { SetClusterEndpointEncryptionType(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the IP protocol(s) the cluster uses for network communications.
+     * Values are:</p> <ul> <li> <p> <code>ipv4</code> - The cluster is accessible only
+     * through IPv4 addresses</p> </li> <li> <p> <code>ipv6</code> - The cluster is
+     * accessible only through IPv6 addresses</p> </li> <li> <p>
+     * <code>dual_stack</code> - The cluster is accessible through both IPv4 and IPv6
+     * addresses.</p> </li> </ul>  <p>If no explicit <code>NetworkType</code> is
+     * provided, the network type is derived based on the subnet group's
+     * configuration.</p> 
+     */
+    inline NetworkType GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    inline void SetNetworkType(NetworkType value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline CreateClusterRequest& WithNetworkType(NetworkType value) { SetNetworkType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_clusterName;
@@ -287,6 +305,9 @@ namespace Model
 
     ClusterEndpointEncryptionType m_clusterEndpointEncryptionType{ClusterEndpointEncryptionType::NOT_SET};
     bool m_clusterEndpointEncryptionTypeHasBeenSet = false;
+
+    NetworkType m_networkType{NetworkType::NOT_SET};
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

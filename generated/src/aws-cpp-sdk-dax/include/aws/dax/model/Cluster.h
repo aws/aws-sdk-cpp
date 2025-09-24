@@ -12,6 +12,7 @@
 #include <aws/dax/model/ParameterGroupStatus.h>
 #include <aws/dax/model/SSEDescription.h>
 #include <aws/dax/model/ClusterEndpointEncryptionType.h>
+#include <aws/dax/model/NetworkType.h>
 #include <aws/dax/model/Node.h>
 #include <aws/dax/model/SecurityGroupMembership.h>
 #include <utility>
@@ -276,6 +277,19 @@ namespace Model
     inline void SetClusterEndpointEncryptionType(ClusterEndpointEncryptionType value) { m_clusterEndpointEncryptionTypeHasBeenSet = true; m_clusterEndpointEncryptionType = value; }
     inline Cluster& WithClusterEndpointEncryptionType(ClusterEndpointEncryptionType value) { SetClusterEndpointEncryptionType(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The IP address type of the cluster. Values are:</p> <ul> <li> <p>
+     * <code>ipv4</code> - IPv4 addresses only</p> </li> <li> <p> <code>ipv6</code> -
+     * IPv6 addresses only</p> </li> <li> <p> <code>dual_stack</code> - Both IPv4 and
+     * IPv6 addresses</p> </li> </ul>
+     */
+    inline NetworkType GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    inline void SetNetworkType(NetworkType value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline Cluster& WithNetworkType(NetworkType value) { SetNetworkType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_clusterName;
@@ -331,6 +345,9 @@ namespace Model
 
     ClusterEndpointEncryptionType m_clusterEndpointEncryptionType{ClusterEndpointEncryptionType::NOT_SET};
     bool m_clusterEndpointEncryptionTypeHasBeenSet = false;
+
+    NetworkType m_networkType{NetworkType::NOT_SET};
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -38,6 +38,7 @@ static const int PARAMETER_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString
 static const int PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ParameterGroupAlreadyExistsFault");
 static const int SUBNET_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SubnetGroupNotFoundFault");
 static const int INVALID_PARAMETER_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidParameterGroupStateFault");
+static const int SUBNET_NOT_ALLOWED_FAULT_HASH = HashingUtils::HashString("SubnetNotAllowedFault");
 static const int INVALID_V_P_C_NETWORK_STATE_FAULT_HASH = HashingUtils::HashString("InvalidVPCNetworkStateFault");
 static const int SERVICE_LINKED_ROLE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ServiceLinkedRoleNotFoundFault");
 static const int TAG_QUOTA_PER_RESOURCE_EXCEEDED_HASH = HashingUtils::HashString("TagQuotaPerResourceExceeded");
@@ -128,6 +129,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_PARAMETER_GROUP_STATE_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::INVALID_PARAMETER_GROUP_STATE_FAULT), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == SUBNET_NOT_ALLOWED_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::SUBNET_NOT_ALLOWED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_V_P_C_NETWORK_STATE_FAULT_HASH)
   {
