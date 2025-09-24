@@ -27,12 +27,13 @@ namespace Model
   /**
    * <p>Contains information about the party that receives the response from the API
    * operation.</p> <p>This data type is designed to support Amazon Web Services
-   * Nitro Enclaves, which lets you create an isolated compute environment in Amazon
-   * EC2. For information about the interaction between KMS and Amazon Web Services
-   * Nitro Enclaves, see <a
-   * href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-   * Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service
-   * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * Nitro Enclaves and Amazon Web Services NitroTPM, which lets you create an
+   * attested environment in Amazon EC2. For information about the interaction
+   * between KMS and Amazon Web Services Nitro Enclaves or Amazon Web Services
+   * NitroTPM, see <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+   * attestation support in KMS</a> in the <i>Key Management Service Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RecipientInfo">AWS
    * API Reference</a></p>
    */
@@ -48,8 +49,8 @@ namespace Model
     ///@{
     /**
      * <p>The encryption algorithm that KMS should use with the public key for an
-     * Amazon Web Services Nitro Enclave to encrypt plaintext values for the response.
-     * The only valid value is <code>RSAES_OAEP_SHA_256</code>.</p>
+     * Amazon Web Services Nitro Enclave or NitroTPM to encrypt plaintext values for
+     * the response. The only valid value is <code>RSAES_OAEP_SHA_256</code>.</p>
      */
     inline KeyEncryptionMechanism GetKeyEncryptionAlgorithm() const { return m_keyEncryptionAlgorithm; }
     inline bool KeyEncryptionAlgorithmHasBeenSet() const { return m_keyEncryptionAlgorithmHasBeenSet; }
@@ -59,8 +60,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The attestation document for an Amazon Web Services Nitro Enclave. This
-     * document includes the enclave's public key.</p>
+     * <p>The attestation document for an Amazon Web Services Nitro Enclave or a
+     * NitroTPM. This document includes the enclave's public key.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetAttestationDocument() const { return m_attestationDocument; }
     inline bool AttestationDocumentHasBeenSet() const { return m_attestationDocumentHasBeenSet; }

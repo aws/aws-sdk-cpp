@@ -107,12 +107,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-cryptography.html#cryptographic-operations">cryptographic
      * operations</a> for which you can use the KMS key. The default value is
      * <code>ENCRYPT_DECRYPT</code>. This parameter is optional when you are creating a
-     * symmetric encryption KMS key; otherwise, it is required. You can't change the
-     * <code>KeyUsage</code> value after the KMS key is created.</p> <p>Select only one
-     * valid value.</p> <ul> <li> <p>For symmetric encryption KMS keys, omit the
-     * parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li> <p>For HMAC
-     * KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p> </li> <li>
-     * <p>For asymmetric KMS keys with RSA key pairs, specify
+     * symmetric encryption KMS key; otherwise, it is required. You can't change the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#key-usage">
+     * <code>KeyUsage</code> </a> value after the KMS key is created. Each KMS key can
+     * have only one key usage. This follows key usage best practices according to <a
+     * href="https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final">NIST SP 800-57
+     * Recommendations for Key Management</a>, section 5.2, Key usage.</p> <p>Select
+     * only one valid value.</p> <ul> <li> <p>For symmetric encryption KMS keys, omit
+     * the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li> <p>For
+     * HMAC KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p> </li>
+     * <li> <p>For asymmetric KMS keys with RSA key pairs, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric KMS keys with NIST-recommended elliptic curve key pairs, specify
      * <code>SIGN_VERIFY</code> or <code>KEY_AGREEMENT</code>.</p> </li> <li> <p>For

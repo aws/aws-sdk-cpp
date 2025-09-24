@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the topic. </p>
+     * <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
      */
     inline const Aws::String& GetTopicArn() const { return m_topicArn; }
     inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }

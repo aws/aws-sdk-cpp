@@ -41,9 +41,11 @@ namespace Model
     ///@{
     /**
      * <p>The identifier of the DB cluster snapshot to copy. This parameter is not
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid system
-     * snapshot in the "available" state.</p> </li> <li> <p>Specify a valid DB snapshot
-     * identifier.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
+     * case-sensitive. If the source DB cluster snapshot is in a different region or
+     * owned by another account, specify the snapshot ARN.</p> <p>Constraints:</p> <ul>
+     * <li> <p>Must specify a valid system snapshot in the "available" state.</p> </li>
+     * <li> <p>Specify a valid DB snapshot identifier.</p> </li> </ul> <p>Example:
+     * <code>my-cluster-snapshot1</code> </p>
      */
     inline const Aws::String& GetSourceDBClusterSnapshotIdentifier() const { return m_sourceDBClusterSnapshotIdentifier; }
     inline bool SourceDBClusterSnapshotIdentifierHasBeenSet() const { return m_sourceDBClusterSnapshotIdentifierHasBeenSet; }

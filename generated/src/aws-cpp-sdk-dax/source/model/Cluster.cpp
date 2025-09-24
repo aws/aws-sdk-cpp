@@ -127,6 +127,11 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_clusterEndpointEncryptionType = ClusterEndpointEncryptionTypeMapper::GetClusterEndpointEncryptionTypeForName(jsonValue.GetString("ClusterEndpointEncryptionType"));
     m_clusterEndpointEncryptionTypeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("NetworkType"))
+  {
+    m_networkType = NetworkTypeMapper::GetNetworkTypeForName(jsonValue.GetString("NetworkType"));
+    m_networkTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -254,6 +259,11 @@ JsonValue Cluster::Jsonize() const
   if(m_clusterEndpointEncryptionTypeHasBeenSet)
   {
    payload.WithString("ClusterEndpointEncryptionType", ClusterEndpointEncryptionTypeMapper::GetNameForClusterEndpointEncryptionType(m_clusterEndpointEncryptionType));
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+   payload.WithString("NetworkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
   }
 
   return payload;

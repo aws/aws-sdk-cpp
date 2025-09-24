@@ -19,9 +19,10 @@ namespace DAX
    * <p>DAX is a managed caching service engineered for Amazon DynamoDB. DAX
    * dramatically speeds up database reads by caching frequently-accessed data from
    * DynamoDB, so applications can access that data with sub-millisecond latency. You
-   * can create a DAX cluster easily, using the AWS Management Console. With a few
-   * simple modifications to your code, your application can begin taking advantage
-   * of the DAX cluster and realize significant improvements in read performance.</p>
+   * can create a DAX cluster easily, using the Amazon Web Services Management
+   * Console. With a few simple modifications to your code, your application can
+   * begin taking advantage of the DAX cluster and realize significant improvements
+   * in read performance.</p>
    */
   class AWS_DAX_API DAXClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DAXClient>
   {
@@ -493,7 +494,7 @@ namespace DAX
          * <p>Reboots a single node of a DAX cluster. The reboot action takes place as soon
          * as possible. During the reboot, the node status is set to REBOOTING.</p> 
          * <p> <code>RebootNode</code> restarts the DAX engine process and does not remove
-         * the contents of the cache. </p> <p><h3>See Also:</h3>   <a
+         * the contents of the cache.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/RebootNode">AWS API
          * Reference</a></p>
          */

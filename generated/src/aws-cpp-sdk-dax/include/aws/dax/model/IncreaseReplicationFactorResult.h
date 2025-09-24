@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A description of the DAX cluster. with its new replication factor.</p>
+     * <p>A description of the DAX cluster, with its new replication factor.</p>
      */
     inline const Cluster& GetCluster() const { return m_cluster; }
     template<typename ClusterT = Cluster>

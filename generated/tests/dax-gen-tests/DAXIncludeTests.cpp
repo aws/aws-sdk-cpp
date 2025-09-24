@@ -50,6 +50,7 @@
 #include <aws/dax/model/IsModifiable.h>
 #include <aws/dax/model/ListTagsRequest.h>
 #include <aws/dax/model/ListTagsResult.h>
+#include <aws/dax/model/NetworkType.h>
 #include <aws/dax/model/Node.h>
 #include <aws/dax/model/NodeTypeSpecificValue.h>
 #include <aws/dax/model/NotificationConfiguration.h>

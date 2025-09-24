@@ -142,26 +142,26 @@ namespace Model
     /**
      * <p>A signed <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave-how.html#term-attestdoc">attestation
-     * document</a> from an Amazon Web Services Nitro enclave and the encryption
-     * algorithm to use with the enclave's public key. The only valid encryption
-     * algorithm is <code>RSAES_OAEP_SHA_256</code>. </p> <p>This parameter only
-     * supports attestation documents for Amazon Web Services Nitro Enclaves. To
-     * include this parameter, use the <a
+     * document</a> from an Amazon Web Services Nitro enclave or NitroTPM, and the
+     * encryption algorithm to use with the public key in the attestation document. The
+     * only valid encryption algorithm is <code>RSAES_OAEP_SHA_256</code>. </p> <p>This
+     * parameter supports the <a
      * href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
-     * Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK.</p> <p>When
-     * you use this parameter, instead of returning the plaintext data key, KMS
-     * encrypts the plaintext data key under the public key in the attestation
-     * document, and returns the resulting ciphertext in the
+     * Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK for Amazon
+     * Web Services Nitro Enclaves. It supports any Amazon Web Services SDK for Amazon
+     * Web Services NitroTPM. </p> <p>When you use this parameter, instead of returning
+     * the plaintext data key, KMS encrypts the plaintext data key under the public key
+     * in the attestation document, and returns the resulting ciphertext in the
      * <code>CiphertextForRecipient</code> field in the response. This ciphertext can
      * be decrypted only with the private key in the enclave. The
      * <code>CiphertextBlob</code> field in the response contains a copy of the data
      * key encrypted under the KMS key specified by the <code>KeyId</code> parameter.
      * The <code>Plaintext</code> field in the response is null or empty.</p> <p>For
      * information about the interaction between KMS and Amazon Web Services Nitro
-     * Enclaves, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-     * Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service
-     * Developer Guide</i>.</p>
+     * Enclaves or Amazon Web Services NitroTPM, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+     * attestation support in KMS</a> in the <i>Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline const RecipientInfo& GetRecipient() const { return m_recipient; }
     inline bool RecipientHasBeenSet() const { return m_recipientHasBeenSet; }

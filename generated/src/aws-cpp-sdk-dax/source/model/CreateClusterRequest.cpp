@@ -114,6 +114,11 @@ Aws::String CreateClusterRequest::SerializePayload() const
    payload.WithString("ClusterEndpointEncryptionType", ClusterEndpointEncryptionTypeMapper::GetNameForClusterEndpointEncryptionType(m_clusterEndpointEncryptionType));
   }
 
+  if(m_networkTypeHasBeenSet)
+  {
+   payload.WithString("NetworkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
+  }
+
   return payload.View().WriteReadable();
 }
 

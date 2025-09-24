@@ -158,7 +158,10 @@ namespace Model
      * </li> <li> <p>stream.graphics.g6.16xlarge</p> </li> <li>
      * <p>stream.graphics.g6.12xlarge</p> </li> <li> <p>stream.graphics.g6.24xlarge</p>
      * </li> <li> <p>stream.graphics.gr6.4xlarge</p> </li> <li>
-     * <p>stream.graphics.gr6.8xlarge</p> </li> </ul>
+     * <p>stream.graphics.gr6.8xlarge</p> </li> <li> <p>stream.graphics.g6f.large</p>
+     * </li> <li> <p>stream.graphics.g6f.xlarge</p> </li> <li>
+     * <p>stream.graphics.g6f.2xlarge</p> </li> <li> <p>stream.graphics.g6f.4xlarge</p>
+     * </li> <li> <p>stream.graphics.gr6f.4xlarge</p> </li> </ul>
      */
     inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
