@@ -57,6 +57,7 @@ namespace Aws
 
             // Thread-safe credential fetch coordination
             mutable std::atomic<bool> m_refreshInProgress{false};
+            mutable std::atomic<bool> m_refreshDone{false};
             mutable std::shared_ptr<AWSCredentials> m_pendingCredentials;
 
             // Helper methods for credential retrieval
