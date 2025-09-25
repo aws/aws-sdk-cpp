@@ -10,12 +10,9 @@ concurrency:
 
 env:
   # constants
+  IAM_ROLE_ARN: 'arn:aws:iam::246442084943:role/AwsSdkCppGitHubRole'
   DOWNLOAD_FOLDER: '.build-scripts/'
   SCRIPT_LOCATION: 'workflows/start-pull-request-build/pull-request-build-v1.sh'
-
-  # custom variables
-  IAM_ROLE_ARN: 'AwsSdkCppGitHubRole'
-  ROLE_SESSION_DURATION_SECONDS: 7200
 
 jobs:
   aws-sdk-pr-build:
@@ -30,10 +27,11 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@main
         with:
-          role-to-assume: '$IAM_ROLE_ARN'
+          role-to-assume: ${{ env.IAM_ROLE_ARN }}
           role-session-name: PullRequestBuildGitHubAction
-          role-duration-seconds: '$ROLE_SESSION_DURATION_SECONDS'
+
           aws-region: us-west-2
+          role-duration-seconds: 7200
       - name: Download Build Script
         run: |
           aws s3 cp s3://aws-sdk-builds-github-assets-prod-us-west-2/$SCRIPT_LOCATION ./$DOWNLOAD_FOLDER/$SCRIPT_LOCATION --no-progress
@@ -41,14 +39,11 @@ jobs:
       - name: Build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO: ${{ github.repository }}
           HEAD_REF: ${{ github.event.pull_request.head.ref }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-          RUN_ID: ${{ github.run_id }}
         run: |
           ./$DOWNLOAD_FOLDER/$SCRIPT_LOCATION \
-            --repo "$REPO" \
+            --repo "${{ github.repository }}" \
             --branch "$HEAD_REF" \
-            --pr-number "$PR_NUMBER" \
-            --run-id "$RUN_ID"
+            --pr-number "${{ github.event.pull_request.number }}" \
+            --run-id "${{ github.run_id }}"
         timeout-minutes: 180
