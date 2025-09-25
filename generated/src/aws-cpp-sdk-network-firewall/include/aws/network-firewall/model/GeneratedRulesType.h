@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     ALLOWLIST,
-    DENYLIST
+    DENYLIST,
+    REJECTLIST,
+    ALERTLIST
   };
 
 namespace GeneratedRulesTypeMapper

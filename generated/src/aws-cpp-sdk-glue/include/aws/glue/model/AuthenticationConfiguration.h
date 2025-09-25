@@ -64,6 +64,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive
+     * authentication information. This key is used to protect credentials and other
+     * sensitive data stored within the authentication configuration.</p>
+     */
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+    inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    AuthenticationConfiguration& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The properties for OAuth2 authentication.</p>
      */
     inline const OAuth2Properties& GetOAuth2Properties() const { return m_oAuth2Properties; }
@@ -80,6 +94,9 @@ namespace Model
 
     Aws::String m_secretArn;
     bool m_secretArnHasBeenSet = false;
+
+    Aws::String m_kmsKeyArn;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     OAuth2Properties m_oAuth2Properties;
     bool m_oAuth2PropertiesHasBeenSet = false;

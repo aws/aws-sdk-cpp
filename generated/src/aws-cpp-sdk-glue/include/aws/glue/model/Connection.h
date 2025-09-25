@@ -117,9 +117,9 @@ namespace Model
      * future use.)</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
      * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for
      * connecting to a JDBC data source.</p> </li> <li> <p>
-     * <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying
-     * whether Secure Sockets Layer (SSL) with hostname matching is enforced for the
-     * JDBC connection on the client. The default is false.</p> </li> <li> <p>
+     * <code>JDBC_ENFORCE_SSL</code> - A case-insensitive Boolean string (true, false)
+     * specifying whether Secure Sockets Layer (SSL) with hostname matching is enforced
+     * for the JDBC connection on the client. The default is false.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's
      * root certificate. Glue uses this root certificate to validate the customer’s
      * certificate when connecting to the customer database. Glue only handles X.509
