@@ -55,7 +55,12 @@ namespace Model
 #set($eventHeaderMemberNameWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($eventHeader.getName()))
 #set($eventHeaderMemberHaseBeenSetName = $CppViewHelper.computeVariableHasBeenSetName($eventHeader.getName()))
 #set($eventHeaderMemberType = $CppViewHelper.computeCppType($eventHeader))
-    inline const $eventHeaderMemberType Get${eventHeaderMemberNameWithFirstLetterCapitalized}() const { return $eventHeaderMemberName; }
+#if($eventHeader.boolean)
+#set($constQualifer = "")
+#else
+#set($constQualifer = "const ")
+#end
+    inline $constQualifer$eventHeaderMemberType Get${eventHeaderMemberNameWithFirstLetterCapitalized}() const { return $eventHeaderMemberName; }
     inline bool ${eventHeaderMemberNameWithFirstLetterCapitalized}HasBeenSet() const { return $eventHeaderMemberHaseBeenSetName; }
     template<typename T = $eventHeaderMemberType>
     void Set${eventHeaderMemberNameWithFirstLetterCapitalized}(T&& value) { $eventHeaderMemberHaseBeenSetName = true; $eventHeaderMemberName = std::forward<T>(value); }
