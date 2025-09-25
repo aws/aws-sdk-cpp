@@ -22,6 +22,8 @@ namespace Aws
 
         static const int ALLOWLIST_HASH = HashingUtils::HashString("ALLOWLIST");
         static const int DENYLIST_HASH = HashingUtils::HashString("DENYLIST");
+        static const int REJECTLIST_HASH = HashingUtils::HashString("REJECTLIST");
+        static const int ALERTLIST_HASH = HashingUtils::HashString("ALERTLIST");
 
 
         GeneratedRulesType GetGeneratedRulesTypeForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == DENYLIST_HASH)
           {
             return GeneratedRulesType::DENYLIST;
+          }
+          else if (hashCode == REJECTLIST_HASH)
+          {
+            return GeneratedRulesType::REJECTLIST;
+          }
+          else if (hashCode == ALERTLIST_HASH)
+          {
+            return GeneratedRulesType::ALERTLIST;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +65,10 @@ namespace Aws
             return "ALLOWLIST";
           case GeneratedRulesType::DENYLIST:
             return "DENYLIST";
+          case GeneratedRulesType::REJECTLIST:
+            return "REJECTLIST";
+          case GeneratedRulesType::ALERTLIST:
+            return "ALERTLIST";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

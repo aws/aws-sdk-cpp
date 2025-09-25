@@ -35,6 +35,11 @@ AuthenticationConfiguration& AuthenticationConfiguration::operator =(JsonView js
     m_secretArn = jsonValue.GetString("SecretArn");
     m_secretArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("KmsKeyArn"))
+  {
+    m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
+    m_kmsKeyArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("OAuth2Properties"))
   {
     m_oAuth2Properties = jsonValue.GetObject("OAuth2Properties");
@@ -55,6 +60,12 @@ JsonValue AuthenticationConfiguration::Jsonize() const
   if(m_secretArnHasBeenSet)
   {
    payload.WithString("SecretArn", m_secretArn);
+
+  }
+
+  if(m_kmsKeyArnHasBeenSet)
+  {
+   payload.WithString("KmsKeyArn", m_kmsKeyArn);
 
   }
 

@@ -117,7 +117,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-using-service-linked-roles">Using
      * Service-Linked Roles for Amazon Lightsail</a> in the <i>Amazon Lightsail
      * Developer Guide</i>.</p> </li> <li> <p> <code>Unknown</code> - The reason that
-     * synchronization failed is unknown. Contact Amazon Web ServicesSupport for more
+     * synchronization failed is unknown. Contact Amazon Web Services Support for more
      * information.</p> </li> </ul>
      */
     inline BPAStatusMessage GetMessage() const { return m_message; }
