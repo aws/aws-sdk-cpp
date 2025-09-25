@@ -90,11 +90,6 @@ public class CborCppClientGenerator extends CppClientGenerator {
 
     @Override
     protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry, final Map<String, CppShapeInformation> shapeInformationCache) {
-        Map<String, String> cborSpecificHeaders = new HashMap<>();
-        cborSpecificHeaders.put("Accept", "application/cbor");
-        cborSpecificHeaders.put("smithy-protocol", "rpc-v2-cbor");
-        serviceModel.getMetadata().setAdditionalHeaders(cborSpecificHeaders);
-
         Shape shape = shapeEntry.getValue();
         if (shape.isResult() && shape.hasEventStreamMembers())
             return null;
@@ -126,11 +121,20 @@ public class CborCppClientGenerator extends CppClientGenerator {
                 if (shape.hasEventStreamMembers()) {
                     HashMap<String, String> headersMap = new HashMap<>(10);
                     headersMap.put("Aws::Http::CONTENT_TYPE_HEADER", "Aws::AMZN_EVENTSTREAM_CONTENT_TYPE");
+                    headersMap.put("Aws::Http::ACCEPT_HEADER", "Aws::AMZN_EVENTSTREAM_CONTENT_TYPE");
+                    headersMap.put("\"smithy-protocol\"", "\"rpc-v2-cbor\"");
                     context.put("requestSpecificHeaders", headersMap);
                 }
                 template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/StreamRequestSource.vm", StandardCharsets.UTF_8.name());
             }
             else if (shape.isRequest()) {
+                Map<String, String> cborSpecificHeaders = new HashMap<>();
+                cborSpecificHeaders.put("Aws::Http::ACCEPT_HEADER", "Aws::CBOR_CONTENT_TYPE");
+                cborSpecificHeaders.put("\"smithy-protocol\"", "\"rpc-v2-cbor\"");
+                if(shape.hasMembers()){
+                    cborSpecificHeaders.put("Aws::Http::CONTENT_TYPE_HEADER", "Aws::CBOR_CONTENT_TYPE");
+                }
+                context.put("requestSpecificHeaders", cborSpecificHeaders);
                 template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborRequestSource.vm", StandardCharsets.UTF_8.name());
             }
             else if (shape.isResult() && shape.hasStreamMembers()) {

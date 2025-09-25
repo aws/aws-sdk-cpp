@@ -63,8 +63,8 @@
     Aws::Http::HeaderValueCollection ${typeInfo.className}::GetRequestSpecificHeaders() const
     {
         Aws::Http::HeaderValueCollection headers;
-        #if($shape.hasMembers())
-        headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE ));
+        #foreach($headerEntry in $requestSpecificHeaders.entrySet())
+            headers.emplace(${headerEntry.key}, ${headerEntry.value});
         #end
         #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassHeaderMembersSource.vm")
         return headers;
