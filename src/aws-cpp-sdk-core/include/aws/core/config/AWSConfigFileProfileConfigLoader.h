@@ -16,6 +16,10 @@ namespace Aws
         /**
          * Reads configuration from a config file (e.g. $HOME/.aws/config or $HOME/.aws/credentials
          */
+        // Services sections: map<sectionName, map<serviceKey, map<propertyKey, propertyValue>>>
+        using ServicesKV = Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>;
+        using ServicesSections = Aws::Map<Aws::String, ServicesKV>;
+
         class AWS_CORE_API AWSConfigFileProfileConfigLoader : public AWSProfileConfigLoader
         {
         public:
@@ -39,6 +43,11 @@ namespace Aws
              */
             void SetFileName(const Aws::String& fileName) { m_fileName = fileName; }
 
+            /**
+             * Gets all services sections from the configuration file.
+             */
+            const ServicesSections& GetServicesSections() const { return m_servicesSections; }
+
         protected:
             virtual bool LoadInternal() override;
             virtual bool PersistInternal(const Aws::Map<Aws::String, Aws::Config::Profile>&) override;
@@ -46,6 +55,7 @@ namespace Aws
         private:
             Aws::String m_fileName;
             bool m_useProfilePrefix;
+            ServicesSections m_servicesSections;
         };
     }
 }

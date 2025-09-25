@@ -40,6 +40,7 @@ namespace Aws
         static const char PROFILE_SECTION[]                  = "profile";
         static const char DEFAULT[]                          = "default";
         static const char SSO_SESSION_SECTION[]              = "sso-session";
+        static const char SERVICES_SECTION[]                 = "services";
         static const char DEFAULTS_MODE_KEY[]                = "defaults_mode";
         static const char EQ                                 = '=';
         static const char LEFT_BRACKET                       = '[';
@@ -113,6 +114,7 @@ namespace Aws
             {}
 
             const Aws::Map<String, Profile>& GetProfiles() const { return m_foundProfiles; }
+            const ServicesSections& GetServicesSections() const { return m_foundServicesSections; }
 
             void ParseStream(Aws::IStream& stream)
             {
@@ -155,6 +157,26 @@ namespace Aws
                             auto value = StringUtils::Trim(line.substr(equalsPos + 1).c_str());
                             currentKeyValues[key] = value;
                             continue;
+                        }
+                    }
+
+                    if(SERVICES_SECTION_FOUND == currentState)
+                    {
+                        // Handle services section parsing
+                        auto equalsPos = line.find(EQ);
+                        if (equalsPos != std::string::npos)
+                        {
+                            auto key = StringUtils::Trim(line.substr(0, equalsPos).c_str());
+                            auto value = StringUtils::Trim(line.substr(equalsPos + 1).c_str());
+                            if (value.empty()) {
+                                // This is a service subsection start (e.g., "s3 =")
+                                m_currentServiceKey = key;
+                                continue;
+                            } else if (!m_currentServiceKey.empty()) {
+                                // This is a property within a service subsection
+                                m_foundServicesSections[currentSectionName][m_currentServiceKey][key] = value;
+                                continue;
+                            }
                         }
                     }
 
@@ -222,6 +244,7 @@ namespace Aws
                 START = 0,
                 PROFILE_FOUND,
                 SSO_SESSION_FOUND,
+                SERVICES_SECTION_FOUND,
                 UNKNOWN_SECTION_FOUND,
                 FAILURE
             };
@@ -331,13 +354,13 @@ namespace Aws
 
                     if(defaultProfileOrSsoSectionRequired)
                     {
-                        if (sectionIdentifier != DEFAULT && sectionIdentifier != SSO_SESSION_SECTION)
+                        if (sectionIdentifier != DEFAULT && sectionIdentifier != SSO_SESSION_SECTION && sectionIdentifier != SERVICES_SECTION)
                         {
                             AWS_LOGSTREAM_ERROR(PARSER_TAG, "In configuration files, the profile name must start with "
                                                             "profile keyword (except default profile): " << line);
                             break;
                         }
-                        if (sectionIdentifier != SSO_SESSION_SECTION)
+                        if (sectionIdentifier != SSO_SESSION_SECTION && sectionIdentifier != SERVICES_SECTION)
                         {
                             // profile found, still pending check for closing bracket
                             ioState = PROFILE_FOUND;
@@ -374,6 +397,28 @@ namespace Aws
                         ioSectionName = sectionIdentifier;
                     }
 
+                    if(m_useProfilePrefix && sectionIdentifier == SERVICES_SECTION)
+                    {
+                        // "[services..." found, continue parsing for services identifier
+                        pos = line.find_first_not_of(WHITESPACE_CHARACTERS, pos);
+                        if(pos == Aws::String::npos)
+                        {
+                            AWS_LOGSTREAM_ERROR(PARSER_TAG, "Expected a blank space after \"services\" keyword: " << line);
+                            break;
+                        }
+
+                        sectionIdentifier = ParseIdentifier(line, pos, errorMsg);
+                        if (!errorMsg.empty())
+                        {
+                            AWS_LOGSTREAM_ERROR(PARSER_TAG, "Failed to parse section identifier: " << errorMsg << " " << line);
+                            break;
+                        }
+                        pos += sectionIdentifier.length();
+                        // services section found, still pending check for closing bracket
+                        ioState = SERVICES_SECTION_FOUND;
+                        ioSectionName = sectionIdentifier;
+                    }
+
                     pos = line.find_first_not_of(WHITESPACE_CHARACTERS, pos);
                     if(pos == Aws::String::npos)
                     {
@@ -394,7 +439,7 @@ namespace Aws
                         break;
                     }
                     // the rest is a comment, and we don't care about it.
-                    if ((ioState != SSO_SESSION_FOUND && ioState != PROFILE_FOUND) || ioSectionName.empty())
+                    if ((ioState != SSO_SESSION_FOUND && ioState != PROFILE_FOUND && ioState != SERVICES_SECTION_FOUND) || ioSectionName.empty())
                     {
                         AWS_LOGSTREAM_FATAL(PARSER_TAG, "Unexpected parser state after attempting to parse section " << line);
                         break;
@@ -419,6 +464,13 @@ namespace Aws
                 if(START == currentState || currentSectionName.empty())
                 {
                     return; //nothing to flush
+                }
+
+                if(SERVICES_SECTION_FOUND == currentState)
+                {
+                    // Services sections are handled during parsing, reset current service key
+                    m_currentServiceKey.clear();
+                    return;
                 }
 
                 if(PROFILE_FOUND == currentState)
@@ -529,7 +581,7 @@ namespace Aws
                     ssoSession.SetName(currentSectionName);
                     ssoSession.SetAllKeyValPairs(std::move(currentKeyValues));
                 }
-                else
+                else if (currentState != SERVICES_SECTION_FOUND)
                 {
                     AWS_LOGSTREAM_FATAL(PARSER_TAG, "Unknown parser error: unexpected state " << currentState);
                 }
@@ -557,6 +609,8 @@ namespace Aws
 
             Aws::Map<String, Profile> m_foundProfiles;
             Aws::Map<String, Profile::SsoSession> m_foundSsoSessions;
+            ServicesSections m_foundServicesSections;
+            Aws::String m_currentServiceKey;
         };
 
         static const char* const CONFIG_FILE_LOADER = "Aws::Config::AWSConfigFileProfileConfigLoader";
@@ -578,6 +632,7 @@ namespace Aws
                 ConfigFileProfileFSM parser(m_useProfilePrefix);
                 parser.ParseStream(inputFile);
                 m_profiles = parser.GetProfiles();
+                m_servicesSections = parser.GetServicesSections();
                 return m_profiles.size() > 0;
             }
 

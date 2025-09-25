@@ -416,6 +416,12 @@ namespace Aws
             bool disableImdsV1 = false;
 
             /**
+             * Ignore configured endpoint URLs from environment variables and shared config.
+             * When true, only explicit endpointOverride will be used.
+             */
+            bool ignoreConfiguredEndpointUrls = false;
+
+            /**
              * AppId is an optional application specific identifier that can be set.
              * When set it will be appended to the User-Agent header of every request
              * in the form of App/{AppId}. This variable is sourced from environment
