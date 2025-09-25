@@ -10,6 +10,7 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMember;
 import com.amazonaws.util.awsclientgenerator.transform.CoreErrors;
 import com.google.common.base.CaseFormat;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 
 import java.lang.RuntimeException;
@@ -122,6 +123,11 @@ public class CppViewHelper {
         C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.put("rfc822", "RFC822");
         C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.put("iso8601", "ISO_8601");
     }
+
+    private static final ImmutableMap<String, String> EVENT_STREAM_HEADER_ACCESSORS = ImmutableMap.of(
+            "string", "GetEventHeaderValueAsString()",
+            "boolean", "GetEventHeaderValueAsBoolean()"
+    );
 
     public static String computeExportValue(String classNamePrefix) {
         return String.format("AWS_%s_API", classNamePrefix.toUpperCase());
@@ -586,5 +592,12 @@ public class CppViewHelper {
     public static boolean hasListMemberUsedForHeader(final Shape shape) {
         return shape.getMembers().values().stream()
                 .anyMatch(shapeMember -> shapeMember.getShape().isList() && shapeMember.isUsedForHeader());
+    }
+
+    public static String getEventStreamHeaderAccessorName(final Shape shape) {
+        if (!EVENT_STREAM_HEADER_ACCESSORS.containsKey(shape.getType())) {
+            throw new RuntimeException("No event stream header accessor found for shape type: " + shape.getType());
+        }
+        return EVENT_STREAM_HEADER_ACCESSORS.get(shape.getType());
     }
 }
