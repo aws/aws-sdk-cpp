@@ -142,7 +142,7 @@ namespace Model
 #set($headerVarName = $CppViewHelper.lowercasesFirstChar("${eventStreamHeader.getName()}Header"))
             const auto $headerVarName = headers.find("${eventStreamHeaderMapping.getKey()}");
             if ($headerVarName != headers.end()) {
-                event.Set$eventHeaderMemberNameWithFirstLetterCapitalized($headerVarName->second.GetEventHeaderValueAsString());
+                event.Set$eventHeaderMemberNameWithFirstLetterCapitalized($headerVarName->second.$CppViewHelper.getEventStreamHeaderAccessorName($eventStreamHeader));
             }
 #end
             m_on${eventShape.name}(event);
