@@ -37,7 +37,7 @@ ${indent}      return;
 ${indent}  }
 #end
 #if($metadata.findFirstSupportedProtocol() == "smithy-rpc-v2-cbor")
-${indent}  endpointResolutionOutcome.GetResult().AddPathSegment("/service/${serviceModel.metadata.targetPrefix}/operation/${operation.name}");
+${indent}  endpointResolutionOutcome.GetResult().AddPathSegments("/service/${serviceModel.metadata.targetPrefix}/operation/${operation.name}");
 #end
 #if($operation.http.requestUri.contains("?"))
 ${indent}  Aws::StringStream ss;
