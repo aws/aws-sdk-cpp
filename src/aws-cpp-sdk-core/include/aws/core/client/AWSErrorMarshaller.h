@@ -136,5 +136,10 @@ namespace Aws
           static Aws::Utils::Cbor::CborValue GetCborPayloadHttpResponse(const Http::HttpResponse& httpResponse);
         };
 
+        class AWS_CORE_API RpcV2ErrorMarshallerQueryCompatible : public RpcV2ErrorMarshaller {
+        protected:
+          void MarshallError(AWSError<CoreErrors>&, const Http::HttpResponse&) const override;
+        };
+
     } // namespace Client
 } // namespace Aws
