@@ -301,6 +301,110 @@ void JsonErrorMarshallerQueryCompatible::MarshallError(AWSError<CoreErrors>& err
   }
 }
 
+void RpcV2ErrorMarshallerQueryCompatible::MarshallError(AWSError<CoreErrors>& error, const Http::HttpResponse& httpResponse) const {
+  if (!error.GetExceptionName().empty()) {
+    /*
+        AWS Query-Compatible mode: This is a special setting that allows
+       certain AWS services to communicate using a specific "query"
+       format, which can send customized error codes. Users are divided
+       into different groups based on how they communicate with the
+       service: Group #1: Users using the AWS Query format, receiving
+       custom error codes. Group #2: Users using the regular AWS Cbor
+       format without the trait, receiving standard error codes. Group #3:
+       Users using the AWS Cbor format with the trait, receiving custom
+       error codes.
+
+        The header "x-amzn-query-error" shouldn't be present if it's not
+       awsQueryCompatible, so added checks for it.
+    */
+
+    if (httpResponse.HasHeader(QUERY_ERROR_HEADER)) {
+      auto errorCodeString = httpResponse.GetHeader(QUERY_ERROR_HEADER);
+      auto locationOfSemicolon = errorCodeString.find_first_of(';');
+      Aws::String errorCode;
+
+      if (locationOfSemicolon != Aws::String::npos) {
+        errorCode = errorCodeString.substr(0, locationOfSemicolon);
+      } else {
+        errorCode = errorCodeString;
+      }
+
+      error.SetExceptionName(errorCode);
+    }
+    // check for exception name from payload field 'type'
+    else {
+      // handle missing header and parse code from message
+      auto exceptionPayload = GetCborPayloadHttpResponse(httpResponse);
+      if (exceptionPayload.WasParseSuccessful()) {
+        auto decoder = exceptionPayload.GetDecoder();
+        Aws::String errorType;
+        if (decoder != nullptr) {
+          auto initialMapType = decoder->PeekType();
+          if (initialMapType.has_value() && (initialMapType.value() == Aws::Crt::Cbor::CborType::MapStart ||
+                                             initialMapType.value() == Aws::Crt::Cbor::CborType::IndefMapStart)) {
+            if (initialMapType.value() == Aws::Crt::Cbor::CborType::MapStart) {
+              auto mapSize = decoder->PopNextMapStart();
+              if (mapSize.has_value()) {
+                for (size_t i = 0; i < mapSize.value(); ++i) {
+                  auto key = decoder->PopNextTextVal();
+                  if (key.has_value()) {
+                    Aws::String keyStr(reinterpret_cast<const char*>(key.value().ptr), key.value().len);
+
+                    if (keyStr == TYPE) {
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        errorType = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    } else {
+                      decoder->ConsumeNextWholeDataItem();
+                    }
+                  }
+                  if (decoder->LastError() != AWS_ERROR_UNKNOWN) {
+                    break;
+                  }
+                }
+              }
+            } else {
+              decoder->ConsumeNextSingleElement();
+              while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                auto nextType = decoder->PeekType();
+                if (!nextType.has_value() || nextType.value() == Aws::Crt::Cbor::CborType::Break) {
+                  if (nextType.has_value()) {
+                    decoder->ConsumeNextSingleElement();
+                  }
+                  break;
+                }
+
+                auto key = decoder->PopNextTextVal();
+                if (key.has_value()) {
+                  const Aws::String keyStr(reinterpret_cast<const char*>(key.value().ptr), key.value().len);
+
+                  if (keyStr == TYPE) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      errorType = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextWholeDataItem();
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        if (errorType.empty()) {
+          return;
+        }
+        auto locationOfPound = errorType.find_first_of('#');
+        if (locationOfPound != Aws::String::npos) {
+          error.SetExceptionName(errorType.substr(locationOfPound + 1));
+        }
+      }
+    }
+  }
+}
+
 CborValue RpcV2ErrorMarshaller::GetCborPayloadHttpResponse(const Http::HttpResponse& httpResponse) {
   return CborValue(httpResponse.GetResponseBody());
 }
