@@ -7,6 +7,7 @@
 #include <aws/core/platform/Environment.h>
 #include <aws/core/config/AWSConfigFileProfileConfigLoader.h>
 #include <aws/core/config/ConfigAndCredentialsCacheManager.h>
+#include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/StringUtils.h>
 
