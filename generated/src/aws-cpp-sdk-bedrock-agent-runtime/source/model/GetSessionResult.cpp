@@ -25,30 +25,30 @@ GetSessionResult::GetSessionResult(const Aws::AmazonWebServiceResult<JsonValue>&
 GetSessionResult& GetSessionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("sessionId"))
   {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("encryptionKeyArn"))
-  {
-    m_encryptionKeyArn = jsonValue.GetString("encryptionKeyArn");
-    m_encryptionKeyArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
-    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-    m_lastUpdatedAtHasBeenSet = true;
+    m_sessionId = jsonValue.GetString("sessionId");
+    m_sessionIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("sessionArn"))
   {
     m_sessionArn = jsonValue.GetString("sessionArn");
     m_sessionArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sessionId"))
+  if(jsonValue.ValueExists("sessionStatus"))
   {
-    m_sessionId = jsonValue.GetString("sessionId");
-    m_sessionIdHasBeenSet = true;
+    m_sessionStatus = SessionStatusMapper::GetSessionStatusForName(jsonValue.GetString("sessionStatus"));
+    m_sessionStatusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lastUpdatedAt"))
+  {
+    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
+    m_lastUpdatedAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("sessionMetadata"))
   {
@@ -59,10 +59,10 @@ GetSessionResult& GetSessionResult::operator =(const Aws::AmazonWebServiceResult
     }
     m_sessionMetadataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sessionStatus"))
+  if(jsonValue.ValueExists("encryptionKeyArn"))
   {
-    m_sessionStatus = SessionStatusMapper::GetSessionStatusForName(jsonValue.GetString("sessionStatus"));
-    m_sessionStatusHasBeenSet = true;
+    m_encryptionKeyArn = jsonValue.GetString("encryptionKeyArn");
+    m_encryptionKeyArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

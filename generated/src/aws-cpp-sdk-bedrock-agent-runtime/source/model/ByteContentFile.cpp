@@ -26,15 +26,15 @@ ByteContentFile::ByteContentFile(JsonView jsonValue)
 
 ByteContentFile& ByteContentFile::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("data"))
-  {
-    m_data = HashingUtils::Base64Decode(jsonValue.GetString("data"));
-    m_dataHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("mediaType"))
   {
     m_mediaType = jsonValue.GetString("mediaType");
     m_mediaTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("data"))
+  {
+    m_data = HashingUtils::Base64Decode(jsonValue.GetString("data"));
+    m_dataHasBeenSet = true;
   }
   return *this;
 }
@@ -43,15 +43,15 @@ JsonValue ByteContentFile::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_dataHasBeenSet)
-  {
-   payload.WithString("data", HashingUtils::Base64Encode(m_data));
-  }
-
   if(m_mediaTypeHasBeenSet)
   {
    payload.WithString("mediaType", m_mediaType);
 
+  }
+
+  if(m_dataHasBeenSet)
+  {
+   payload.WithString("data", HashingUtils::Base64Encode(m_data));
   }
 
   return payload;

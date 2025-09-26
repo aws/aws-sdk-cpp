@@ -25,15 +25,29 @@ FlowTraceNodeOutputField::FlowTraceNodeOutputField(JsonView jsonValue)
 
 FlowTraceNodeOutputField& FlowTraceNodeOutputField::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("nodeOutputName"))
+  {
+    m_nodeOutputName = jsonValue.GetString("nodeOutputName");
+    m_nodeOutputNameHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("content"))
   {
     m_content = jsonValue.GetObject("content");
     m_contentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nodeOutputName"))
+  if(jsonValue.ValueExists("next"))
   {
-    m_nodeOutputName = jsonValue.GetString("nodeOutputName");
-    m_nodeOutputNameHasBeenSet = true;
+    Aws::Utils::Array<JsonView> nextJsonList = jsonValue.GetArray("next");
+    for(unsigned nextIndex = 0; nextIndex < nextJsonList.GetLength(); ++nextIndex)
+    {
+      m_next.push_back(nextJsonList[nextIndex].AsObject());
+    }
+    m_nextHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = FlowNodeIODataTypeMapper::GetFlowNodeIODataTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   return *this;
 }
@@ -42,16 +56,32 @@ JsonValue FlowTraceNodeOutputField::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_nodeOutputNameHasBeenSet)
+  {
+   payload.WithString("nodeOutputName", m_nodeOutputName);
+
+  }
+
   if(m_contentHasBeenSet)
   {
    payload.WithObject("content", m_content.Jsonize());
 
   }
 
-  if(m_nodeOutputNameHasBeenSet)
+  if(m_nextHasBeenSet)
   {
-   payload.WithString("nodeOutputName", m_nodeOutputName);
+   Aws::Utils::Array<JsonValue> nextJsonList(m_next.size());
+   for(unsigned nextIndex = 0; nextIndex < nextJsonList.GetLength(); ++nextIndex)
+   {
+     nextJsonList[nextIndex].AsObject(m_next[nextIndex].Jsonize());
+   }
+   payload.WithArray("next", std::move(nextJsonList));
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", FlowNodeIODataTypeMapper::GetNameForFlowNodeIODataType(m_type));
   }
 
   return payload;

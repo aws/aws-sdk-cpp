@@ -25,14 +25,10 @@ ExternalSourcesGenerationConfiguration::ExternalSourcesGenerationConfiguration(J
 
 ExternalSourcesGenerationConfiguration& ExternalSourcesGenerationConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("additionalModelRequestFields"))
+  if(jsonValue.ValueExists("promptTemplate"))
   {
-    Aws::Map<Aws::String, JsonView> additionalModelRequestFieldsJsonMap = jsonValue.GetObject("additionalModelRequestFields").GetAllObjects();
-    for(auto& additionalModelRequestFieldsItem : additionalModelRequestFieldsJsonMap)
-    {
-      m_additionalModelRequestFields[additionalModelRequestFieldsItem.first] = additionalModelRequestFieldsItem.second.AsObject();
-    }
-    m_additionalModelRequestFieldsHasBeenSet = true;
+    m_promptTemplate = jsonValue.GetObject("promptTemplate");
+    m_promptTemplateHasBeenSet = true;
   }
   if(jsonValue.ValueExists("guardrailConfiguration"))
   {
@@ -44,15 +40,19 @@ ExternalSourcesGenerationConfiguration& ExternalSourcesGenerationConfiguration::
     m_inferenceConfig = jsonValue.GetObject("inferenceConfig");
     m_inferenceConfigHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("additionalModelRequestFields"))
+  {
+    Aws::Map<Aws::String, JsonView> additionalModelRequestFieldsJsonMap = jsonValue.GetObject("additionalModelRequestFields").GetAllObjects();
+    for(auto& additionalModelRequestFieldsItem : additionalModelRequestFieldsJsonMap)
+    {
+      m_additionalModelRequestFields[additionalModelRequestFieldsItem.first] = additionalModelRequestFieldsItem.second.AsObject();
+    }
+    m_additionalModelRequestFieldsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("performanceConfig"))
   {
     m_performanceConfig = jsonValue.GetObject("performanceConfig");
     m_performanceConfigHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("promptTemplate"))
-  {
-    m_promptTemplate = jsonValue.GetObject("promptTemplate");
-    m_promptTemplateHasBeenSet = true;
   }
   return *this;
 }
@@ -61,14 +61,9 @@ JsonValue ExternalSourcesGenerationConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_additionalModelRequestFieldsHasBeenSet)
+  if(m_promptTemplateHasBeenSet)
   {
-   JsonValue additionalModelRequestFieldsJsonMap;
-   for(auto& additionalModelRequestFieldsItem : m_additionalModelRequestFields)
-   {
-     additionalModelRequestFieldsJsonMap.WithObject(additionalModelRequestFieldsItem.first, additionalModelRequestFieldsItem.second.View());
-   }
-   payload.WithObject("additionalModelRequestFields", std::move(additionalModelRequestFieldsJsonMap));
+   payload.WithObject("promptTemplate", m_promptTemplate.Jsonize());
 
   }
 
@@ -84,15 +79,20 @@ JsonValue ExternalSourcesGenerationConfiguration::Jsonize() const
 
   }
 
-  if(m_performanceConfigHasBeenSet)
+  if(m_additionalModelRequestFieldsHasBeenSet)
   {
-   payload.WithObject("performanceConfig", m_performanceConfig.Jsonize());
+   JsonValue additionalModelRequestFieldsJsonMap;
+   for(auto& additionalModelRequestFieldsItem : m_additionalModelRequestFields)
+   {
+     additionalModelRequestFieldsJsonMap.WithObject(additionalModelRequestFieldsItem.first, additionalModelRequestFieldsItem.second.View());
+   }
+   payload.WithObject("additionalModelRequestFields", std::move(additionalModelRequestFieldsJsonMap));
 
   }
 
-  if(m_promptTemplateHasBeenSet)
+  if(m_performanceConfigHasBeenSet)
   {
-   payload.WithObject("promptTemplate", m_promptTemplate.Jsonize());
+   payload.WithObject("performanceConfig", m_performanceConfig.Jsonize());
 
   }
 

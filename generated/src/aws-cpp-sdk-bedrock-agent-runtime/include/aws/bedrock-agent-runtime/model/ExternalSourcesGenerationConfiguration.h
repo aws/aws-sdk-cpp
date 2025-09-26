@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/bedrock-agent-runtime/model/PromptTemplate.h>
 #include <aws/bedrock-agent-runtime/model/GuardrailConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/InferenceConfig.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/bedrock-agent-runtime/model/PerformanceConfiguration.h>
-#include <aws/bedrock-agent-runtime/model/PromptTemplate.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Document.h>
 #include <utility>
@@ -46,20 +46,15 @@ namespace Model
 
     ///@{
     /**
-     * <p> Additional model parameters and their corresponding values not included in
-     * the textInferenceConfig structure for an external source. Takes in custom model
-     * parameters specific to the language model being used. </p>
+     * <p>Contain the textPromptTemplate string for the external source wrapper
+     * object.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Utils::Document>& GetAdditionalModelRequestFields() const { return m_additionalModelRequestFields; }
-    inline bool AdditionalModelRequestFieldsHasBeenSet() const { return m_additionalModelRequestFieldsHasBeenSet; }
-    template<typename AdditionalModelRequestFieldsT = Aws::Map<Aws::String, Aws::Utils::Document>>
-    void SetAdditionalModelRequestFields(AdditionalModelRequestFieldsT&& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields = std::forward<AdditionalModelRequestFieldsT>(value); }
-    template<typename AdditionalModelRequestFieldsT = Aws::Map<Aws::String, Aws::Utils::Document>>
-    ExternalSourcesGenerationConfiguration& WithAdditionalModelRequestFields(AdditionalModelRequestFieldsT&& value) { SetAdditionalModelRequestFields(std::forward<AdditionalModelRequestFieldsT>(value)); return *this;}
-    template<typename AdditionalModelRequestFieldsKeyT = Aws::String, typename AdditionalModelRequestFieldsValueT = Aws::Utils::Document>
-    ExternalSourcesGenerationConfiguration& AddAdditionalModelRequestFields(AdditionalModelRequestFieldsKeyT&& key, AdditionalModelRequestFieldsValueT&& value) {
-      m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields.emplace(std::forward<AdditionalModelRequestFieldsKeyT>(key), std::forward<AdditionalModelRequestFieldsValueT>(value)); return *this;
-    }
+    inline const PromptTemplate& GetPromptTemplate() const { return m_promptTemplate; }
+    inline bool PromptTemplateHasBeenSet() const { return m_promptTemplateHasBeenSet; }
+    template<typename PromptTemplateT = PromptTemplate>
+    void SetPromptTemplate(PromptTemplateT&& value) { m_promptTemplateHasBeenSet = true; m_promptTemplate = std::forward<PromptTemplateT>(value); }
+    template<typename PromptTemplateT = PromptTemplate>
+    ExternalSourcesGenerationConfiguration& WithPromptTemplate(PromptTemplateT&& value) { SetPromptTemplate(std::forward<PromptTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,6 +84,24 @@ namespace Model
 
     ///@{
     /**
+     * <p> Additional model parameters and their corresponding values not included in
+     * the textInferenceConfig structure for an external source. Takes in custom model
+     * parameters specific to the language model being used. </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::Utils::Document>& GetAdditionalModelRequestFields() const { return m_additionalModelRequestFields; }
+    inline bool AdditionalModelRequestFieldsHasBeenSet() const { return m_additionalModelRequestFieldsHasBeenSet; }
+    template<typename AdditionalModelRequestFieldsT = Aws::Map<Aws::String, Aws::Utils::Document>>
+    void SetAdditionalModelRequestFields(AdditionalModelRequestFieldsT&& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields = std::forward<AdditionalModelRequestFieldsT>(value); }
+    template<typename AdditionalModelRequestFieldsT = Aws::Map<Aws::String, Aws::Utils::Document>>
+    ExternalSourcesGenerationConfiguration& WithAdditionalModelRequestFields(AdditionalModelRequestFieldsT&& value) { SetAdditionalModelRequestFields(std::forward<AdditionalModelRequestFieldsT>(value)); return *this;}
+    template<typename AdditionalModelRequestFieldsKeyT = Aws::String, typename AdditionalModelRequestFieldsValueT = Aws::Utils::Document>
+    ExternalSourcesGenerationConfiguration& AddAdditionalModelRequestFields(AdditionalModelRequestFieldsKeyT&& key, AdditionalModelRequestFieldsValueT&& value) {
+      m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields.emplace(std::forward<AdditionalModelRequestFieldsKeyT>(key), std::forward<AdditionalModelRequestFieldsValueT>(value)); return *this;
+    }
+    ///@}
+
+    ///@{
+    /**
      * <p>The latency configuration for the model.</p>
      */
     inline const PerformanceConfiguration& GetPerformanceConfig() const { return m_performanceConfig; }
@@ -98,23 +111,10 @@ namespace Model
     template<typename PerformanceConfigT = PerformanceConfiguration>
     ExternalSourcesGenerationConfiguration& WithPerformanceConfig(PerformanceConfigT&& value) { SetPerformanceConfig(std::forward<PerformanceConfigT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Contain the textPromptTemplate string for the external source wrapper
-     * object.</p>
-     */
-    inline const PromptTemplate& GetPromptTemplate() const { return m_promptTemplate; }
-    inline bool PromptTemplateHasBeenSet() const { return m_promptTemplateHasBeenSet; }
-    template<typename PromptTemplateT = PromptTemplate>
-    void SetPromptTemplate(PromptTemplateT&& value) { m_promptTemplateHasBeenSet = true; m_promptTemplate = std::forward<PromptTemplateT>(value); }
-    template<typename PromptTemplateT = PromptTemplate>
-    ExternalSourcesGenerationConfiguration& WithPromptTemplate(PromptTemplateT&& value) { SetPromptTemplate(std::forward<PromptTemplateT>(value)); return *this;}
-    ///@}
   private:
 
-    Aws::Map<Aws::String, Aws::Utils::Document> m_additionalModelRequestFields;
-    bool m_additionalModelRequestFieldsHasBeenSet = false;
+    PromptTemplate m_promptTemplate;
+    bool m_promptTemplateHasBeenSet = false;
 
     GuardrailConfiguration m_guardrailConfiguration;
     bool m_guardrailConfigurationHasBeenSet = false;
@@ -122,11 +122,11 @@ namespace Model
     InferenceConfig m_inferenceConfig;
     bool m_inferenceConfigHasBeenSet = false;
 
+    Aws::Map<Aws::String, Aws::Utils::Document> m_additionalModelRequestFields;
+    bool m_additionalModelRequestFieldsHasBeenSet = false;
+
     PerformanceConfiguration m_performanceConfig;
     bool m_performanceConfigHasBeenSet = false;
-
-    PromptTemplate m_promptTemplate;
-    bool m_promptTemplateHasBeenSet = false;
   };
 
 } // namespace Model

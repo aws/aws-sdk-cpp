@@ -16,6 +16,7 @@
 #include <aws/bedrock-data-automation/BedrockDataAutomation_EXPORTS.h>
 #include <aws/bedrock-data-automation/model/AudioExtractionCategory.h>
 #include <aws/bedrock-data-automation/model/AudioExtractionCategoryType.h>
+#include <aws/bedrock-data-automation/model/AudioExtractionCategoryTypeConfiguration.h>
 #include <aws/bedrock-data-automation/model/AudioOverrideConfiguration.h>
 #include <aws/bedrock-data-automation/model/AudioStandardExtraction.h>
 #include <aws/bedrock-data-automation/model/AudioStandardGenerativeField.h>
@@ -27,6 +28,7 @@
 #include <aws/bedrock-data-automation/model/BlueprintStage.h>
 #include <aws/bedrock-data-automation/model/BlueprintStageFilter.h>
 #include <aws/bedrock-data-automation/model/BlueprintSummary.h>
+#include <aws/bedrock-data-automation/model/ChannelLabelingConfiguration.h>
 #include <aws/bedrock-data-automation/model/CreateBlueprintRequest.h>
 #include <aws/bedrock-data-automation/model/CreateBlueprintResult.h>
 #include <aws/bedrock-data-automation/model/CreateBlueprintVersionRequest.h>
@@ -79,12 +81,14 @@
 #include <aws/bedrock-data-automation/model/ModalityRoutingConfiguration.h>
 #include <aws/bedrock-data-automation/model/OverrideConfiguration.h>
 #include <aws/bedrock-data-automation/model/ResourceOwner.h>
+#include <aws/bedrock-data-automation/model/SpeakerLabelingConfiguration.h>
 #include <aws/bedrock-data-automation/model/SplitterConfiguration.h>
 #include <aws/bedrock-data-automation/model/StandardOutputConfiguration.h>
 #include <aws/bedrock-data-automation/model/State.h>
 #include <aws/bedrock-data-automation/model/Tag.h>
 #include <aws/bedrock-data-automation/model/TagResourceRequest.h>
 #include <aws/bedrock-data-automation/model/TagResourceResult.h>
+#include <aws/bedrock-data-automation/model/TranscriptConfiguration.h>
 #include <aws/bedrock-data-automation/model/Type.h>
 #include <aws/bedrock-data-automation/model/UntagResourceRequest.h>
 #include <aws/bedrock-data-automation/model/UntagResourceResult.h>

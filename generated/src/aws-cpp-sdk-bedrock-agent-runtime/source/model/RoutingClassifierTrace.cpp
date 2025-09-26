@@ -30,6 +30,11 @@ RoutingClassifierTrace& RoutingClassifierTrace::operator =(JsonView jsonValue)
     m_invocationInput = jsonValue.GetObject("invocationInput");
     m_invocationInputHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("observation"))
+  {
+    m_observation = jsonValue.GetObject("observation");
+    m_observationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("modelInvocationInput"))
   {
     m_modelInvocationInput = jsonValue.GetObject("modelInvocationInput");
@@ -39,11 +44,6 @@ RoutingClassifierTrace& RoutingClassifierTrace::operator =(JsonView jsonValue)
   {
     m_modelInvocationOutput = jsonValue.GetObject("modelInvocationOutput");
     m_modelInvocationOutputHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("observation"))
-  {
-    m_observation = jsonValue.GetObject("observation");
-    m_observationHasBeenSet = true;
   }
   return *this;
 }
@@ -58,6 +58,12 @@ JsonValue RoutingClassifierTrace::Jsonize() const
 
   }
 
+  if(m_observationHasBeenSet)
+  {
+   payload.WithObject("observation", m_observation.Jsonize());
+
+  }
+
   if(m_modelInvocationInputHasBeenSet)
   {
    payload.WithObject("modelInvocationInput", m_modelInvocationInput.Jsonize());
@@ -67,12 +73,6 @@ JsonValue RoutingClassifierTrace::Jsonize() const
   if(m_modelInvocationOutputHasBeenSet)
   {
    payload.WithObject("modelInvocationOutput", m_modelInvocationOutput.Jsonize());
-
-  }
-
-  if(m_observationHasBeenSet)
-  {
-   payload.WithObject("observation", m_observation.Jsonize());
 
   }
 

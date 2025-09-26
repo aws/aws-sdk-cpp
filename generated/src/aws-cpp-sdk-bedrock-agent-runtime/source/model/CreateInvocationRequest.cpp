@@ -16,15 +16,15 @@ Aws::String CreateInvocationRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
-
   if(m_invocationIdHasBeenSet)
   {
    payload.WithString("invocationId", m_invocationId);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
 
   }
 

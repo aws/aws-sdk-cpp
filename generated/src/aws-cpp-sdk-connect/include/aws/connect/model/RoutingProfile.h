@@ -160,6 +160,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The number of associated manual assignment queues in routing profile.</p>
+     */
+    inline long long GetNumberOfAssociatedManualAssignmentQueues() const { return m_numberOfAssociatedManualAssignmentQueues; }
+    inline bool NumberOfAssociatedManualAssignmentQueuesHasBeenSet() const { return m_numberOfAssociatedManualAssignmentQueuesHasBeenSet; }
+    inline void SetNumberOfAssociatedManualAssignmentQueues(long long value) { m_numberOfAssociatedManualAssignmentQueuesHasBeenSet = true; m_numberOfAssociatedManualAssignmentQueues = value; }
+    inline RoutingProfile& WithNumberOfAssociatedManualAssignmentQueues(long long value) { SetNumberOfAssociatedManualAssignmentQueues(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The number of associated users in routing profile.</p>
      */
     inline long long GetNumberOfAssociatedUsers() const { return m_numberOfAssociatedUsers; }
@@ -227,6 +237,20 @@ namespace Model
     template<typename AssociatedQueueIdsT = Aws::String>
     RoutingProfile& AddAssociatedQueueIds(AssociatedQueueIdsT&& value) { m_associatedQueueIdsHasBeenSet = true; m_associatedQueueIds.emplace_back(std::forward<AssociatedQueueIdsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The IDs of the associated manual assignment queues.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAssociatedManualAssignmentQueueIds() const { return m_associatedManualAssignmentQueueIds; }
+    inline bool AssociatedManualAssignmentQueueIdsHasBeenSet() const { return m_associatedManualAssignmentQueueIdsHasBeenSet; }
+    template<typename AssociatedManualAssignmentQueueIdsT = Aws::Vector<Aws::String>>
+    void SetAssociatedManualAssignmentQueueIds(AssociatedManualAssignmentQueueIdsT&& value) { m_associatedManualAssignmentQueueIdsHasBeenSet = true; m_associatedManualAssignmentQueueIds = std::forward<AssociatedManualAssignmentQueueIdsT>(value); }
+    template<typename AssociatedManualAssignmentQueueIdsT = Aws::Vector<Aws::String>>
+    RoutingProfile& WithAssociatedManualAssignmentQueueIds(AssociatedManualAssignmentQueueIdsT&& value) { SetAssociatedManualAssignmentQueueIds(std::forward<AssociatedManualAssignmentQueueIdsT>(value)); return *this;}
+    template<typename AssociatedManualAssignmentQueueIdsT = Aws::String>
+    RoutingProfile& AddAssociatedManualAssignmentQueueIds(AssociatedManualAssignmentQueueIdsT&& value) { m_associatedManualAssignmentQueueIdsHasBeenSet = true; m_associatedManualAssignmentQueueIds.emplace_back(std::forward<AssociatedManualAssignmentQueueIdsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_instanceId;
@@ -256,6 +280,9 @@ namespace Model
     long long m_numberOfAssociatedQueues{0};
     bool m_numberOfAssociatedQueuesHasBeenSet = false;
 
+    long long m_numberOfAssociatedManualAssignmentQueues{0};
+    bool m_numberOfAssociatedManualAssignmentQueuesHasBeenSet = false;
+
     long long m_numberOfAssociatedUsers{0};
     bool m_numberOfAssociatedUsersHasBeenSet = false;
 
@@ -273,6 +300,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_associatedQueueIds;
     bool m_associatedQueueIdsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_associatedManualAssignmentQueueIds;
+    bool m_associatedManualAssignmentQueueIdsHasBeenSet = false;
   };
 
 } // namespace Model

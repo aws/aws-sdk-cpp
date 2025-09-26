@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent-runtime/model/NodeOutputField.h>
 #include <utility>
 
@@ -44,20 +44,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of output fields produced by the node.</p>
-     */
-    inline const Aws::Vector<NodeOutputField>& GetFields() const { return m_fields; }
-    inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-    template<typename FieldsT = Aws::Vector<NodeOutputField>>
-    void SetFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields = std::forward<FieldsT>(value); }
-    template<typename FieldsT = Aws::Vector<NodeOutputField>>
-    NodeOutputEvent& WithFields(FieldsT&& value) { SetFields(std::forward<FieldsT>(value)); return *this;}
-    template<typename FieldsT = NodeOutputField>
-    NodeOutputEvent& AddFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields.emplace_back(std::forward<FieldsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the node that produced the outputs.</p>
      */
     inline const Aws::String& GetNodeName() const { return m_nodeName; }
@@ -79,16 +65,30 @@ namespace Model
     template<typename TimestampT = Aws::Utils::DateTime>
     NodeOutputEvent& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::Vector<NodeOutputField> m_fields;
-    bool m_fieldsHasBeenSet = false;
+    ///@{
+    /**
+     * <p>A list of output fields produced by the node.</p>
+     */
+    inline const Aws::Vector<NodeOutputField>& GetFields() const { return m_fields; }
+    inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
+    template<typename FieldsT = Aws::Vector<NodeOutputField>>
+    void SetFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields = std::forward<FieldsT>(value); }
+    template<typename FieldsT = Aws::Vector<NodeOutputField>>
+    NodeOutputEvent& WithFields(FieldsT&& value) { SetFields(std::forward<FieldsT>(value)); return *this;}
+    template<typename FieldsT = NodeOutputField>
+    NodeOutputEvent& AddFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields.emplace_back(std::forward<FieldsT>(value)); return *this; }
+    ///@}
+  private:
 
     Aws::String m_nodeName;
     bool m_nodeNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
+
+    Aws::Vector<NodeOutputField> m_fields;
+    bool m_fieldsHasBeenSet = false;
   };
 
 } // namespace Model

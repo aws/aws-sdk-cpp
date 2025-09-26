@@ -25,11 +25,6 @@ MetadataAttributeSchema::MetadataAttributeSchema(JsonView jsonValue)
 
 MetadataAttributeSchema& MetadataAttributeSchema::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
@@ -40,18 +35,17 @@ MetadataAttributeSchema& MetadataAttributeSchema::operator =(JsonView jsonValue)
     m_type = AttributeTypeMapper::GetAttributeTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue MetadataAttributeSchema::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
 
   if(m_keyHasBeenSet)
   {
@@ -62,6 +56,12 @@ JsonValue MetadataAttributeSchema::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", AttributeTypeMapper::GetNameForAttributeType(m_type));
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
   }
 
   return payload;

@@ -34,6 +34,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>A unique identifier for the invocation in UUID format.</p>
+     */
+    inline const Aws::String& GetInvocationId() const { return m_invocationId; }
+    inline bool InvocationIdHasBeenSet() const { return m_invocationIdHasBeenSet; }
+    template<typename InvocationIdT = Aws::String>
+    void SetInvocationId(InvocationIdT&& value) { m_invocationIdHasBeenSet = true; m_invocationId = std::forward<InvocationIdT>(value); }
+    template<typename InvocationIdT = Aws::String>
+    CreateInvocationRequest& WithInvocationId(InvocationIdT&& value) { SetInvocationId(std::forward<InvocationIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A description for the interactions in the invocation. For example, "User
      * asking about weather in Seattle".</p>
      */
@@ -43,18 +55,6 @@ namespace Model
     void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
     template<typename DescriptionT = Aws::String>
     CreateInvocationRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A unique identifier for the invocation in UUID format.</p>
-     */
-    inline const Aws::String& GetInvocationId() const { return m_invocationId; }
-    inline bool InvocationIdHasBeenSet() const { return m_invocationIdHasBeenSet; }
-    template<typename InvocationIdT = Aws::String>
-    void SetInvocationId(InvocationIdT&& value) { m_invocationIdHasBeenSet = true; m_invocationId = std::forward<InvocationIdT>(value); }
-    template<typename InvocationIdT = Aws::String>
-    CreateInvocationRequest& WithInvocationId(InvocationIdT&& value) { SetInvocationId(std::forward<InvocationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,11 +72,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
     Aws::String m_invocationId;
     bool m_invocationIdHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_sessionIdentifier;
     bool m_sessionIdentifierHasBeenSet = false;

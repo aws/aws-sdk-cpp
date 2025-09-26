@@ -25,6 +25,21 @@ InferenceConfiguration::InferenceConfiguration(JsonView jsonValue)
 
 InferenceConfiguration& InferenceConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("temperature"))
+  {
+    m_temperature = jsonValue.GetDouble("temperature");
+    m_temperatureHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("topP"))
+  {
+    m_topP = jsonValue.GetDouble("topP");
+    m_topPHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("topK"))
+  {
+    m_topK = jsonValue.GetInteger("topK");
+    m_topKHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("maximumLength"))
   {
     m_maximumLength = jsonValue.GetInteger("maximumLength");
@@ -39,27 +54,30 @@ InferenceConfiguration& InferenceConfiguration::operator =(JsonView jsonValue)
     }
     m_stopSequencesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("temperature"))
-  {
-    m_temperature = jsonValue.GetDouble("temperature");
-    m_temperatureHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("topK"))
-  {
-    m_topK = jsonValue.GetInteger("topK");
-    m_topKHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("topP"))
-  {
-    m_topP = jsonValue.GetDouble("topP");
-    m_topPHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue InferenceConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_temperatureHasBeenSet)
+  {
+   payload.WithDouble("temperature", m_temperature);
+
+  }
+
+  if(m_topPHasBeenSet)
+  {
+   payload.WithDouble("topP", m_topP);
+
+  }
+
+  if(m_topKHasBeenSet)
+  {
+   payload.WithInteger("topK", m_topK);
+
+  }
 
   if(m_maximumLengthHasBeenSet)
   {
@@ -75,24 +93,6 @@ JsonValue InferenceConfiguration::Jsonize() const
      stopSequencesJsonList[stopSequencesIndex].AsString(m_stopSequences[stopSequencesIndex]);
    }
    payload.WithArray("stopSequences", std::move(stopSequencesJsonList));
-
-  }
-
-  if(m_temperatureHasBeenSet)
-  {
-   payload.WithDouble("temperature", m_temperature);
-
-  }
-
-  if(m_topKHasBeenSet)
-  {
-   payload.WithInteger("topK", m_topK);
-
-  }
-
-  if(m_topPHasBeenSet)
-  {
-   payload.WithDouble("topP", m_topP);
 
   }
 

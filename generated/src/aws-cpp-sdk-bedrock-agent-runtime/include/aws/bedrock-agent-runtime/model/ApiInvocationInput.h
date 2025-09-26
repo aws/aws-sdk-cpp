@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/bedrock-agent-runtime/model/ActionInvocationType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent-runtime/model/ApiRequestBody.h>
+#include <aws/bedrock-agent-runtime/model/ActionInvocationType.h>
 #include <aws/bedrock-agent-runtime/model/ApiParameter.h>
 #include <utility>
 
@@ -59,24 +59,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains information about the API operation to invoke.</p>
+     * <p>The HTTP method of the API operation.</p>
      */
-    inline ActionInvocationType GetActionInvocationType() const { return m_actionInvocationType; }
-    inline bool ActionInvocationTypeHasBeenSet() const { return m_actionInvocationTypeHasBeenSet; }
-    inline void SetActionInvocationType(ActionInvocationType value) { m_actionInvocationTypeHasBeenSet = true; m_actionInvocationType = value; }
-    inline ApiInvocationInput& WithActionInvocationType(ActionInvocationType value) { SetActionInvocationType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The agent's ID.</p>
-     */
-    inline const Aws::String& GetAgentId() const { return m_agentId; }
-    inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-    template<typename AgentIdT = Aws::String>
-    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
-    template<typename AgentIdT = Aws::String>
-    ApiInvocationInput& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
+    inline const Aws::String& GetHttpMethod() const { return m_httpMethod; }
+    inline bool HttpMethodHasBeenSet() const { return m_httpMethodHasBeenSet; }
+    template<typename HttpMethodT = Aws::String>
+    void SetHttpMethod(HttpMethodT&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::forward<HttpMethodT>(value); }
+    template<typename HttpMethodT = Aws::String>
+    ApiInvocationInput& WithHttpMethod(HttpMethodT&& value) { SetHttpMethod(std::forward<HttpMethodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,30 +79,6 @@ namespace Model
     void SetApiPath(ApiPathT&& value) { m_apiPathHasBeenSet = true; m_apiPath = std::forward<ApiPathT>(value); }
     template<typename ApiPathT = Aws::String>
     ApiInvocationInput& WithApiPath(ApiPathT&& value) { SetApiPath(std::forward<ApiPathT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The agent collaborator's name.</p>
-     */
-    inline const Aws::String& GetCollaboratorName() const { return m_collaboratorName; }
-    inline bool CollaboratorNameHasBeenSet() const { return m_collaboratorNameHasBeenSet; }
-    template<typename CollaboratorNameT = Aws::String>
-    void SetCollaboratorName(CollaboratorNameT&& value) { m_collaboratorNameHasBeenSet = true; m_collaboratorName = std::forward<CollaboratorNameT>(value); }
-    template<typename CollaboratorNameT = Aws::String>
-    ApiInvocationInput& WithCollaboratorName(CollaboratorNameT&& value) { SetCollaboratorName(std::forward<CollaboratorNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The HTTP method of the API operation.</p>
-     */
-    inline const Aws::String& GetHttpMethod() const { return m_httpMethod; }
-    inline bool HttpMethodHasBeenSet() const { return m_httpMethodHasBeenSet; }
-    template<typename HttpMethodT = Aws::String>
-    void SetHttpMethod(HttpMethodT&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::forward<HttpMethodT>(value); }
-    template<typename HttpMethodT = Aws::String>
-    ApiInvocationInput& WithHttpMethod(HttpMethodT&& value) { SetHttpMethod(std::forward<HttpMethodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,10 +108,56 @@ namespace Model
     template<typename RequestBodyT = ApiRequestBody>
     ApiInvocationInput& WithRequestBody(RequestBodyT&& value) { SetRequestBody(std::forward<RequestBodyT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains information about the API operation to invoke.</p>
+     */
+    inline ActionInvocationType GetActionInvocationType() const { return m_actionInvocationType; }
+    inline bool ActionInvocationTypeHasBeenSet() const { return m_actionInvocationTypeHasBeenSet; }
+    inline void SetActionInvocationType(ActionInvocationType value) { m_actionInvocationTypeHasBeenSet = true; m_actionInvocationType = value; }
+    inline ApiInvocationInput& WithActionInvocationType(ActionInvocationType value) { SetActionInvocationType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The agent's ID.</p>
+     */
+    inline const Aws::String& GetAgentId() const { return m_agentId; }
+    inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
+    template<typename AgentIdT = Aws::String>
+    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
+    template<typename AgentIdT = Aws::String>
+    ApiInvocationInput& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The agent collaborator's name.</p>
+     */
+    inline const Aws::String& GetCollaboratorName() const { return m_collaboratorName; }
+    inline bool CollaboratorNameHasBeenSet() const { return m_collaboratorNameHasBeenSet; }
+    template<typename CollaboratorNameT = Aws::String>
+    void SetCollaboratorName(CollaboratorNameT&& value) { m_collaboratorNameHasBeenSet = true; m_collaboratorName = std::forward<CollaboratorNameT>(value); }
+    template<typename CollaboratorNameT = Aws::String>
+    ApiInvocationInput& WithCollaboratorName(CollaboratorNameT&& value) { SetCollaboratorName(std::forward<CollaboratorNameT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_actionGroup;
     bool m_actionGroupHasBeenSet = false;
+
+    Aws::String m_httpMethod;
+    bool m_httpMethodHasBeenSet = false;
+
+    Aws::String m_apiPath;
+    bool m_apiPathHasBeenSet = false;
+
+    Aws::Vector<ApiParameter> m_parameters;
+    bool m_parametersHasBeenSet = false;
+
+    ApiRequestBody m_requestBody;
+    bool m_requestBodyHasBeenSet = false;
 
     ActionInvocationType m_actionInvocationType{ActionInvocationType::NOT_SET};
     bool m_actionInvocationTypeHasBeenSet = false;
@@ -153,20 +165,8 @@ namespace Model
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet = false;
 
-    Aws::String m_apiPath;
-    bool m_apiPathHasBeenSet = false;
-
     Aws::String m_collaboratorName;
     bool m_collaboratorNameHasBeenSet = false;
-
-    Aws::String m_httpMethod;
-    bool m_httpMethodHasBeenSet = false;
-
-    Aws::Vector<ApiParameter> m_parameters;
-    bool m_parametersHasBeenSet = false;
-
-    ApiRequestBody m_requestBody;
-    bool m_requestBodyHasBeenSet = false;
   };
 
 } // namespace Model

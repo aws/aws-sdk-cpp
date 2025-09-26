@@ -25,6 +25,11 @@ GetAgentMemoryResult::GetAgentMemoryResult(const Aws::AmazonWebServiceResult<Jso
 GetAgentMemoryResult& GetAgentMemoryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("memoryContents"))
   {
     Aws::Utils::Array<JsonView> memoryContentsJsonList = jsonValue.GetArray("memoryContents");
@@ -33,11 +38,6 @@ GetAgentMemoryResult& GetAgentMemoryResult::operator =(const Aws::AmazonWebServi
       m_memoryContents.push_back(memoryContentsJsonList[memoryContentsIndex].AsObject());
     }
     m_memoryContentsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

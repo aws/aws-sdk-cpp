@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/core/utils/Document.h>
-#include <aws/bedrock-agent-runtime/model/RerankTextDocument.h>
 #include <aws/bedrock-agent-runtime/model/RerankDocumentType.h>
+#include <aws/bedrock-agent-runtime/model/RerankTextDocument.h>
+#include <aws/core/utils/Document.h>
 #include <utility>
 
 namespace Aws
@@ -43,14 +43,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains a JSON document to rerank.</p>
+     * <p>The type of document to rerank.</p>
      */
-    inline Aws::Utils::DocumentView GetJsonDocument() const { return m_jsonDocument; }
-    inline bool JsonDocumentHasBeenSet() const { return m_jsonDocumentHasBeenSet; }
-    template<typename JsonDocumentT = Aws::Utils::Document>
-    void SetJsonDocument(JsonDocumentT&& value) { m_jsonDocumentHasBeenSet = true; m_jsonDocument = std::forward<JsonDocumentT>(value); }
-    template<typename JsonDocumentT = Aws::Utils::Document>
-    RerankDocument& WithJsonDocument(JsonDocumentT&& value) { SetJsonDocument(std::forward<JsonDocumentT>(value)); return *this;}
+    inline RerankDocumentType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(RerankDocumentType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RerankDocument& WithType(RerankDocumentType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -67,23 +65,25 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of document to rerank.</p>
+     * <p>Contains a JSON document to rerank.</p>
      */
-    inline RerankDocumentType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(RerankDocumentType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline RerankDocument& WithType(RerankDocumentType value) { SetType(value); return *this;}
+    inline Aws::Utils::DocumentView GetJsonDocument() const { return m_jsonDocument; }
+    inline bool JsonDocumentHasBeenSet() const { return m_jsonDocumentHasBeenSet; }
+    template<typename JsonDocumentT = Aws::Utils::Document>
+    void SetJsonDocument(JsonDocumentT&& value) { m_jsonDocumentHasBeenSet = true; m_jsonDocument = std::forward<JsonDocumentT>(value); }
+    template<typename JsonDocumentT = Aws::Utils::Document>
+    RerankDocument& WithJsonDocument(JsonDocumentT&& value) { SetJsonDocument(std::forward<JsonDocumentT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::Document m_jsonDocument;
-    bool m_jsonDocumentHasBeenSet = false;
+    RerankDocumentType m_type{RerankDocumentType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     RerankTextDocument m_textDocument;
     bool m_textDocumentHasBeenSet = false;
 
-    RerankDocumentType m_type{RerankDocumentType::NOT_SET};
-    bool m_typeHasBeenSet = false;
+    Aws::Utils::Document m_jsonDocument;
+    bool m_jsonDocumentHasBeenSet = false;
   };
 
 } // namespace Model

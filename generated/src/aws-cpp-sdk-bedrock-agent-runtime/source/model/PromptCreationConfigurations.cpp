@@ -25,15 +25,15 @@ PromptCreationConfigurations::PromptCreationConfigurations(JsonView jsonValue)
 
 PromptCreationConfigurations& PromptCreationConfigurations::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("excludePreviousThinkingSteps"))
-  {
-    m_excludePreviousThinkingSteps = jsonValue.GetBool("excludePreviousThinkingSteps");
-    m_excludePreviousThinkingStepsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("previousConversationTurnsToInclude"))
   {
     m_previousConversationTurnsToInclude = jsonValue.GetInteger("previousConversationTurnsToInclude");
     m_previousConversationTurnsToIncludeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("excludePreviousThinkingSteps"))
+  {
+    m_excludePreviousThinkingSteps = jsonValue.GetBool("excludePreviousThinkingSteps");
+    m_excludePreviousThinkingStepsHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue PromptCreationConfigurations::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_excludePreviousThinkingStepsHasBeenSet)
-  {
-   payload.WithBool("excludePreviousThinkingSteps", m_excludePreviousThinkingSteps);
-
-  }
-
   if(m_previousConversationTurnsToIncludeHasBeenSet)
   {
    payload.WithInteger("previousConversationTurnsToInclude", m_previousConversationTurnsToInclude);
+
+  }
+
+  if(m_excludePreviousThinkingStepsHasBeenSet)
+  {
+   payload.WithBool("excludePreviousThinkingSteps", m_excludePreviousThinkingSteps);
 
   }
 

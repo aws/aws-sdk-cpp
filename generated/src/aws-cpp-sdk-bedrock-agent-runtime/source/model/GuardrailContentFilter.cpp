@@ -25,20 +25,20 @@ GuardrailContentFilter::GuardrailContentFilter(JsonView jsonValue)
 
 GuardrailContentFilter& GuardrailContentFilter::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("action"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_action = GuardrailContentPolicyActionMapper::GetGuardrailContentPolicyActionForName(jsonValue.GetString("action"));
-    m_actionHasBeenSet = true;
+    m_type = GuardrailContentFilterTypeMapper::GetGuardrailContentFilterTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("confidence"))
   {
     m_confidence = GuardrailContentFilterConfidenceMapper::GetGuardrailContentFilterConfidenceForName(jsonValue.GetString("confidence"));
     m_confidenceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("action"))
   {
-    m_type = GuardrailContentFilterTypeMapper::GetGuardrailContentFilterTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+    m_action = GuardrailContentPolicyActionMapper::GetGuardrailContentPolicyActionForName(jsonValue.GetString("action"));
+    m_actionHasBeenSet = true;
   }
   return *this;
 }
@@ -47,9 +47,9 @@ JsonValue GuardrailContentFilter::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_actionHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithString("action", GuardrailContentPolicyActionMapper::GetNameForGuardrailContentPolicyAction(m_action));
+   payload.WithString("type", GuardrailContentFilterTypeMapper::GetNameForGuardrailContentFilterType(m_type));
   }
 
   if(m_confidenceHasBeenSet)
@@ -57,9 +57,9 @@ JsonValue GuardrailContentFilter::Jsonize() const
    payload.WithString("confidence", GuardrailContentFilterConfidenceMapper::GetNameForGuardrailContentFilterConfidence(m_confidence));
   }
 
-  if(m_typeHasBeenSet)
+  if(m_actionHasBeenSet)
   {
-   payload.WithString("type", GuardrailContentFilterTypeMapper::GetNameForGuardrailContentFilterType(m_type));
+   payload.WithString("action", GuardrailContentPolicyActionMapper::GetNameForGuardrailContentPolicyAction(m_action));
   }
 
   return payload;

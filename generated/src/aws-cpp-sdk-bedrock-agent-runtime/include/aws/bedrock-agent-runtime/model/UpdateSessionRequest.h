@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -35,19 +35,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the session to modify. You can specify either the
-     * session's <code>sessionId</code> or its Amazon Resource Name (ARN).</p>
-     */
-    inline const Aws::String& GetSessionIdentifier() const { return m_sessionIdentifier; }
-    inline bool SessionIdentifierHasBeenSet() const { return m_sessionIdentifierHasBeenSet; }
-    template<typename SessionIdentifierT = Aws::String>
-    void SetSessionIdentifier(SessionIdentifierT&& value) { m_sessionIdentifierHasBeenSet = true; m_sessionIdentifier = std::forward<SessionIdentifierT>(value); }
-    template<typename SessionIdentifierT = Aws::String>
-    UpdateSessionRequest& WithSessionIdentifier(SessionIdentifierT&& value) { SetSessionIdentifier(std::forward<SessionIdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A map of key-value pairs containing attributes to be persisted across the
      * session. For example the user's ID, their language preference, and the type of
      * device they are using.</p>
@@ -63,13 +50,26 @@ namespace Model
       m_sessionMetadataHasBeenSet = true; m_sessionMetadata.emplace(std::forward<SessionMetadataKeyT>(key), std::forward<SessionMetadataValueT>(value)); return *this;
     }
     ///@}
-  private:
 
-    Aws::String m_sessionIdentifier;
-    bool m_sessionIdentifierHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The unique identifier of the session to modify. You can specify either the
+     * session's <code>sessionId</code> or its Amazon Resource Name (ARN).</p>
+     */
+    inline const Aws::String& GetSessionIdentifier() const { return m_sessionIdentifier; }
+    inline bool SessionIdentifierHasBeenSet() const { return m_sessionIdentifierHasBeenSet; }
+    template<typename SessionIdentifierT = Aws::String>
+    void SetSessionIdentifier(SessionIdentifierT&& value) { m_sessionIdentifierHasBeenSet = true; m_sessionIdentifier = std::forward<SessionIdentifierT>(value); }
+    template<typename SessionIdentifierT = Aws::String>
+    UpdateSessionRequest& WithSessionIdentifier(SessionIdentifierT&& value) { SetSessionIdentifier(std::forward<SessionIdentifierT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::Map<Aws::String, Aws::String> m_sessionMetadata;
     bool m_sessionMetadataHasBeenSet = false;
+
+    Aws::String m_sessionIdentifier;
+    bool m_sessionIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

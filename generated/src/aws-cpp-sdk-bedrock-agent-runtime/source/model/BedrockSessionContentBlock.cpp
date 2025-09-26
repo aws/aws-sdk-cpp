@@ -25,15 +25,15 @@ BedrockSessionContentBlock::BedrockSessionContentBlock(JsonView jsonValue)
 
 BedrockSessionContentBlock& BedrockSessionContentBlock::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("image"))
-  {
-    m_image = jsonValue.GetObject("image");
-    m_imageHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("image"))
+  {
+    m_image = jsonValue.GetObject("image");
+    m_imageHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue BedrockSessionContentBlock::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_imageHasBeenSet)
-  {
-   payload.WithObject("image", m_image.Jsonize());
-
-  }
-
   if(m_textHasBeenSet)
   {
    payload.WithString("text", m_text);
+
+  }
+
+  if(m_imageHasBeenSet)
+  {
+   payload.WithObject("image", m_image.Jsonize());
 
   }
 

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/FlowExecutionContent.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent-runtime/model/FlowExecutionContent.h>
 #include <utility>
 
 namespace Aws
@@ -42,6 +42,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the output field as defined in the flow's output schema.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    FlowOutputField& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The content of the output field, which can contain text or structured
      * data.</p>
      */
@@ -52,25 +64,13 @@ namespace Model
     template<typename ContentT = FlowExecutionContent>
     FlowOutputField& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The name of the output field as defined in the flow's output schema.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    FlowOutputField& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
   private:
-
-    FlowExecutionContent m_content;
-    bool m_contentHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    FlowExecutionContent m_content;
+    bool m_contentHasBeenSet = false;
   };
 
 } // namespace Model

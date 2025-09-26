@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/GuardrailWordPolicyAction.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent-runtime/model/GuardrailWordPolicyAction.h>
 #include <utility>
 
 namespace Aws
@@ -41,16 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The action details for the custom word filter in the Guardrail.</p>
-     */
-    inline GuardrailWordPolicyAction GetAction() const { return m_action; }
-    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(GuardrailWordPolicyAction value) { m_actionHasBeenSet = true; m_action = value; }
-    inline GuardrailCustomWord& WithAction(GuardrailWordPolicyAction value) { SetAction(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The match details for the custom word filter in the Guardrail.</p>
      */
     inline const Aws::String& GetMatch() const { return m_match; }
@@ -60,13 +50,23 @@ namespace Model
     template<typename MatchT = Aws::String>
     GuardrailCustomWord& WithMatch(MatchT&& value) { SetMatch(std::forward<MatchT>(value)); return *this;}
     ///@}
-  private:
 
-    GuardrailWordPolicyAction m_action{GuardrailWordPolicyAction::NOT_SET};
-    bool m_actionHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The action details for the custom word filter in the Guardrail.</p>
+     */
+    inline GuardrailWordPolicyAction GetAction() const { return m_action; }
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+    inline void SetAction(GuardrailWordPolicyAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline GuardrailCustomWord& WithAction(GuardrailWordPolicyAction value) { SetAction(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_match;
     bool m_matchHasBeenSet = false;
+
+    GuardrailWordPolicyAction m_action{GuardrailWordPolicyAction::NOT_SET};
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

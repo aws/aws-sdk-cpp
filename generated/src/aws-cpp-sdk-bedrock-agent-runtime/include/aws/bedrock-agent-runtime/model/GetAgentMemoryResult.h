@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent-runtime/model/Memory.h>
 #include <utility>
 
@@ -36,19 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains details of the sessions stored in the memory</p>
-     */
-    inline const Aws::Vector<Memory>& GetMemoryContents() const { return m_memoryContents; }
-    template<typename MemoryContentsT = Aws::Vector<Memory>>
-    void SetMemoryContents(MemoryContentsT&& value) { m_memoryContentsHasBeenSet = true; m_memoryContents = std::forward<MemoryContentsT>(value); }
-    template<typename MemoryContentsT = Aws::Vector<Memory>>
-    GetAgentMemoryResult& WithMemoryContents(MemoryContentsT&& value) { SetMemoryContents(std::forward<MemoryContentsT>(value)); return *this;}
-    template<typename MemoryContentsT = Memory>
-    GetAgentMemoryResult& AddMemoryContents(MemoryContentsT&& value) { m_memoryContentsHasBeenSet = true; m_memoryContents.emplace_back(std::forward<MemoryContentsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>If the total number of results is greater than the maxItems value provided in
      * the request, use this token when making another request in the
      * <code>nextToken</code> field to return the next batch of results.</p>
@@ -61,6 +48,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Contains details of the sessions stored in the memory</p>
+     */
+    inline const Aws::Vector<Memory>& GetMemoryContents() const { return m_memoryContents; }
+    template<typename MemoryContentsT = Aws::Vector<Memory>>
+    void SetMemoryContents(MemoryContentsT&& value) { m_memoryContentsHasBeenSet = true; m_memoryContents = std::forward<MemoryContentsT>(value); }
+    template<typename MemoryContentsT = Aws::Vector<Memory>>
+    GetAgentMemoryResult& WithMemoryContents(MemoryContentsT&& value) { SetMemoryContents(std::forward<MemoryContentsT>(value)); return *this;}
+    template<typename MemoryContentsT = Memory>
+    GetAgentMemoryResult& AddMemoryContents(MemoryContentsT&& value) { m_memoryContentsHasBeenSet = true; m_memoryContents.emplace_back(std::forward<MemoryContentsT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -70,11 +70,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<Memory> m_memoryContents;
-    bool m_memoryContentsHasBeenSet = false;
-
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::Vector<Memory> m_memoryContents;
+    bool m_memoryContentsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/Source.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent-runtime/model/Source.h>
 #include <utility>
 
 namespace Aws
@@ -41,16 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies what output is prompting the agent to reprompt the input.</p>
-     */
-    inline Source GetSource() const { return m_source; }
-    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(Source value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline RepromptResponse& WithSource(Source value) { SetSource(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The text reprompting the input.</p>
      */
     inline const Aws::String& GetText() const { return m_text; }
@@ -60,13 +50,23 @@ namespace Model
     template<typename TextT = Aws::String>
     RepromptResponse& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
-  private:
 
-    Source m_source{Source::NOT_SET};
-    bool m_sourceHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Specifies what output is prompting the agent to reprompt the input.</p>
+     */
+    inline Source GetSource() const { return m_source; }
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+    inline void SetSource(Source value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline RepromptResponse& WithSource(Source value) { SetSource(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_text;
     bool m_textHasBeenSet = false;
+
+    Source m_source{Source::NOT_SET};
+    bool m_sourceHasBeenSet = false;
   };
 
 } // namespace Model

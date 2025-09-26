@@ -16,6 +16,12 @@ Aws::String RetrieveAndGenerateRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_sessionIdHasBeenSet)
+  {
+   payload.WithString("sessionId", m_sessionId);
+
+  }
+
   if(m_inputHasBeenSet)
   {
    payload.WithObject("input", m_input.Jsonize());
@@ -31,12 +37,6 @@ Aws::String RetrieveAndGenerateRequest::SerializePayload() const
   if(m_sessionConfigurationHasBeenSet)
   {
    payload.WithObject("sessionConfiguration", m_sessionConfiguration.Jsonize());
-
-  }
-
-  if(m_sessionIdHasBeenSet)
-  {
-   payload.WithString("sessionId", m_sessionId);
 
   }
 

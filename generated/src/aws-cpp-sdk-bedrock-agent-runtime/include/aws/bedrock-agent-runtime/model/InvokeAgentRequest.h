@@ -8,11 +8,11 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeRequest.h>
 #include <aws/bedrock-agent-runtime/model/InvokeAgentHandler.h>
 #include <aws/core/utils/event/EventStreamDecoder.h>
+#include <aws/bedrock-agent-runtime/model/SessionState.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent-runtime/model/BedrockModelConfigurations.h>
-#include <aws/bedrock-agent-runtime/model/PromptCreationConfigurations.h>
-#include <aws/bedrock-agent-runtime/model/SessionState.h>
 #include <aws/bedrock-agent-runtime/model/StreamingConfigurations.h>
+#include <aws/bedrock-agent-runtime/model/PromptCreationConfigurations.h>
 #include <utility>
 
 namespace Aws
@@ -63,14 +63,19 @@ namespace Model
 
     ///@{
     /**
-     * <p>The alias of the agent to use.</p>
+     * <p>Contains parameters that specify various attributes of the session. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+     * session context</a>.</p>  <p>If you include
+     * <code>returnControlInvocationResults</code> in the <code>sessionState</code>
+     * field, the <code>inputText</code> field will be ignored.</p> 
      */
-    inline const Aws::String& GetAgentAliasId() const { return m_agentAliasId; }
-    inline bool AgentAliasIdHasBeenSet() const { return m_agentAliasIdHasBeenSet; }
-    template<typename AgentAliasIdT = Aws::String>
-    void SetAgentAliasId(AgentAliasIdT&& value) { m_agentAliasIdHasBeenSet = true; m_agentAliasId = std::forward<AgentAliasIdT>(value); }
-    template<typename AgentAliasIdT = Aws::String>
-    InvokeAgentRequest& WithAgentAliasId(AgentAliasIdT&& value) { SetAgentAliasId(std::forward<AgentAliasIdT>(value)); return *this;}
+    inline const SessionState& GetSessionState() const { return m_sessionState; }
+    inline bool SessionStateHasBeenSet() const { return m_sessionStateHasBeenSet; }
+    template<typename SessionStateT = SessionState>
+    void SetSessionState(SessionStateT&& value) { m_sessionStateHasBeenSet = true; m_sessionState = std::forward<SessionStateT>(value); }
+    template<typename SessionStateT = SessionState>
+    InvokeAgentRequest& WithSessionState(SessionStateT&& value) { SetSessionState(std::forward<SessionStateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +92,37 @@ namespace Model
 
     ///@{
     /**
-     * <p>Model performance settings for the request.</p>
+     * <p>The alias of the agent to use.</p>
      */
-    inline const BedrockModelConfigurations& GetBedrockModelConfigurations() const { return m_bedrockModelConfigurations; }
-    inline bool BedrockModelConfigurationsHasBeenSet() const { return m_bedrockModelConfigurationsHasBeenSet; }
-    template<typename BedrockModelConfigurationsT = BedrockModelConfigurations>
-    void SetBedrockModelConfigurations(BedrockModelConfigurationsT&& value) { m_bedrockModelConfigurationsHasBeenSet = true; m_bedrockModelConfigurations = std::forward<BedrockModelConfigurationsT>(value); }
-    template<typename BedrockModelConfigurationsT = BedrockModelConfigurations>
-    InvokeAgentRequest& WithBedrockModelConfigurations(BedrockModelConfigurationsT&& value) { SetBedrockModelConfigurations(std::forward<BedrockModelConfigurationsT>(value)); return *this;}
+    inline const Aws::String& GetAgentAliasId() const { return m_agentAliasId; }
+    inline bool AgentAliasIdHasBeenSet() const { return m_agentAliasIdHasBeenSet; }
+    template<typename AgentAliasIdT = Aws::String>
+    void SetAgentAliasId(AgentAliasIdT&& value) { m_agentAliasIdHasBeenSet = true; m_agentAliasId = std::forward<AgentAliasIdT>(value); }
+    template<typename AgentAliasIdT = Aws::String>
+    InvokeAgentRequest& WithAgentAliasId(AgentAliasIdT&& value) { SetAgentAliasId(std::forward<AgentAliasIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The unique identifier of the session. Use the same value across requests to
+     * continue the same conversation.</p>
+     */
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
+    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    InvokeAgentRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to end the session with the agent or not.</p>
+     */
+    inline bool GetEndSession() const { return m_endSession; }
+    inline bool EndSessionHasBeenSet() const { return m_endSessionHasBeenSet; }
+    inline void SetEndSession(bool value) { m_endSessionHasBeenSet = true; m_endSession = value; }
+    inline InvokeAgentRequest& WithEndSession(bool value) { SetEndSession(value); return *this;}
     ///@}
 
     ///@{
@@ -108,16 +136,6 @@ namespace Model
     inline bool EnableTraceHasBeenSet() const { return m_enableTraceHasBeenSet; }
     inline void SetEnableTrace(bool value) { m_enableTraceHasBeenSet = true; m_enableTrace = value; }
     inline InvokeAgentRequest& WithEnableTrace(bool value) { SetEnableTrace(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies whether to end the session with the agent or not.</p>
-     */
-    inline bool GetEndSession() const { return m_endSession; }
-    inline bool EndSessionHasBeenSet() const { return m_endSessionHasBeenSet; }
-    inline void SetEndSession(bool value) { m_endSessionHasBeenSet = true; m_endSession = value; }
-    inline InvokeAgentRequest& WithEndSession(bool value) { SetEndSession(value); return *this;}
     ///@}
 
     ///@{
@@ -148,6 +166,32 @@ namespace Model
 
     ///@{
     /**
+     * <p>Model performance settings for the request.</p>
+     */
+    inline const BedrockModelConfigurations& GetBedrockModelConfigurations() const { return m_bedrockModelConfigurations; }
+    inline bool BedrockModelConfigurationsHasBeenSet() const { return m_bedrockModelConfigurationsHasBeenSet; }
+    template<typename BedrockModelConfigurationsT = BedrockModelConfigurations>
+    void SetBedrockModelConfigurations(BedrockModelConfigurationsT&& value) { m_bedrockModelConfigurationsHasBeenSet = true; m_bedrockModelConfigurations = std::forward<BedrockModelConfigurationsT>(value); }
+    template<typename BedrockModelConfigurationsT = BedrockModelConfigurations>
+    InvokeAgentRequest& WithBedrockModelConfigurations(BedrockModelConfigurationsT&& value) { SetBedrockModelConfigurations(std::forward<BedrockModelConfigurationsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> Specifies the configurations for streaming. </p>  <p>To use agent
+     * streaming, you need permissions to perform the
+     * <code>bedrock:InvokeModelWithResponseStream</code> action.</p> 
+     */
+    inline const StreamingConfigurations& GetStreamingConfigurations() const { return m_streamingConfigurations; }
+    inline bool StreamingConfigurationsHasBeenSet() const { return m_streamingConfigurationsHasBeenSet; }
+    template<typename StreamingConfigurationsT = StreamingConfigurations>
+    void SetStreamingConfigurations(StreamingConfigurationsT&& value) { m_streamingConfigurationsHasBeenSet = true; m_streamingConfigurations = std::forward<StreamingConfigurationsT>(value); }
+    template<typename StreamingConfigurationsT = StreamingConfigurations>
+    InvokeAgentRequest& WithStreamingConfigurations(StreamingConfigurationsT&& value) { SetStreamingConfigurations(std::forward<StreamingConfigurationsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies parameters that control how the service populates the agent prompt
      * for an <code>InvokeAgent</code> request. You can control which aspects of
      * previous invocations in the same agent session the service uses to populate the
@@ -164,36 +208,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the session. Use the same value across requests to
-     * continue the same conversation.</p>
-     */
-    inline const Aws::String& GetSessionId() const { return m_sessionId; }
-    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    template<typename SessionIdT = Aws::String>
-    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
-    template<typename SessionIdT = Aws::String>
-    InvokeAgentRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Contains parameters that specify various attributes of the session. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
-     * session context</a>.</p>  <p>If you include
-     * <code>returnControlInvocationResults</code> in the <code>sessionState</code>
-     * field, the <code>inputText</code> field will be ignored.</p> 
-     */
-    inline const SessionState& GetSessionState() const { return m_sessionState; }
-    inline bool SessionStateHasBeenSet() const { return m_sessionStateHasBeenSet; }
-    template<typename SessionStateT = SessionState>
-    void SetSessionState(SessionStateT&& value) { m_sessionStateHasBeenSet = true; m_sessionState = std::forward<SessionStateT>(value); }
-    template<typename SessionStateT = SessionState>
-    InvokeAgentRequest& WithSessionState(SessionStateT&& value) { SetSessionState(std::forward<SessionStateT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ARN of the resource making the request.</p>
      */
     inline const Aws::String& GetSourceArn() const { return m_sourceArn; }
@@ -203,36 +217,25 @@ namespace Model
     template<typename SourceArnT = Aws::String>
     InvokeAgentRequest& WithSourceArn(SourceArnT&& value) { SetSourceArn(std::forward<SourceArnT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p> Specifies the configurations for streaming. </p>  <p>To use agent
-     * streaming, you need permissions to perform the
-     * <code>bedrock:InvokeModelWithResponseStream</code> action.</p> 
-     */
-    inline const StreamingConfigurations& GetStreamingConfigurations() const { return m_streamingConfigurations; }
-    inline bool StreamingConfigurationsHasBeenSet() const { return m_streamingConfigurationsHasBeenSet; }
-    template<typename StreamingConfigurationsT = StreamingConfigurations>
-    void SetStreamingConfigurations(StreamingConfigurationsT&& value) { m_streamingConfigurationsHasBeenSet = true; m_streamingConfigurations = std::forward<StreamingConfigurationsT>(value); }
-    template<typename StreamingConfigurationsT = StreamingConfigurations>
-    InvokeAgentRequest& WithStreamingConfigurations(StreamingConfigurationsT&& value) { SetStreamingConfigurations(std::forward<StreamingConfigurationsT>(value)); return *this;}
-    ///@}
   private:
 
-    Aws::String m_agentAliasId;
-    bool m_agentAliasIdHasBeenSet = false;
+    SessionState m_sessionState;
+    bool m_sessionStateHasBeenSet = false;
 
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet = false;
 
-    BedrockModelConfigurations m_bedrockModelConfigurations;
-    bool m_bedrockModelConfigurationsHasBeenSet = false;
+    Aws::String m_agentAliasId;
+    bool m_agentAliasIdHasBeenSet = false;
 
-    bool m_enableTrace{false};
-    bool m_enableTraceHasBeenSet = false;
+    Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
 
     bool m_endSession{false};
     bool m_endSessionHasBeenSet = false;
+
+    bool m_enableTrace{false};
+    bool m_enableTraceHasBeenSet = false;
 
     Aws::String m_inputText;
     bool m_inputTextHasBeenSet = false;
@@ -240,20 +243,17 @@ namespace Model
     Aws::String m_memoryId;
     bool m_memoryIdHasBeenSet = false;
 
-    PromptCreationConfigurations m_promptCreationConfigurations;
-    bool m_promptCreationConfigurationsHasBeenSet = false;
-
-    Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet = false;
-
-    SessionState m_sessionState;
-    bool m_sessionStateHasBeenSet = false;
-
-    Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet = false;
+    BedrockModelConfigurations m_bedrockModelConfigurations;
+    bool m_bedrockModelConfigurationsHasBeenSet = false;
 
     StreamingConfigurations m_streamingConfigurations;
     bool m_streamingConfigurationsHasBeenSet = false;
+
+    PromptCreationConfigurations m_promptCreationConfigurations;
+    bool m_promptCreationConfigurationsHasBeenSet = false;
+
+    Aws::String m_sourceArn;
+    bool m_sourceArnHasBeenSet = false;
     InvokeAgentHandler m_handler;
     Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 

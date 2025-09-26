@@ -46,10 +46,25 @@ namespace Model
     template<typename ArnT = Aws::String>
     DeleteBillingViewRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> If set to true, forces deletion of the billing view even if it has derived
+     * resources (e.g. other billing views or budgets). Use with caution as this may
+     * break dependent resources. </p>
+     */
+    inline bool GetForce() const { return m_force; }
+    inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
+    inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
+    inline DeleteBillingViewRequest& WithForce(bool value) { SetForce(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
+
+    bool m_force{false};
+    bool m_forceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The collaborator's alias ARN.</p>
-     */
-    inline const Aws::String& GetAgentCollaboratorAliasArn() const { return m_agentCollaboratorAliasArn; }
-    inline bool AgentCollaboratorAliasArnHasBeenSet() const { return m_agentCollaboratorAliasArnHasBeenSet; }
-    template<typename AgentCollaboratorAliasArnT = Aws::String>
-    void SetAgentCollaboratorAliasArn(AgentCollaboratorAliasArnT&& value) { m_agentCollaboratorAliasArnHasBeenSet = true; m_agentCollaboratorAliasArn = std::forward<AgentCollaboratorAliasArnT>(value); }
-    template<typename AgentCollaboratorAliasArnT = Aws::String>
-    AgentCollaboratorInvocationInput& WithAgentCollaboratorAliasArn(AgentCollaboratorAliasArnT&& value) { SetAgentCollaboratorAliasArn(std::forward<AgentCollaboratorAliasArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The collaborator's name.</p>
      */
     inline const Aws::String& GetAgentCollaboratorName() const { return m_agentCollaboratorName; }
@@ -60,6 +48,18 @@ namespace Model
     void SetAgentCollaboratorName(AgentCollaboratorNameT&& value) { m_agentCollaboratorNameHasBeenSet = true; m_agentCollaboratorName = std::forward<AgentCollaboratorNameT>(value); }
     template<typename AgentCollaboratorNameT = Aws::String>
     AgentCollaboratorInvocationInput& WithAgentCollaboratorName(AgentCollaboratorNameT&& value) { SetAgentCollaboratorName(std::forward<AgentCollaboratorNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The collaborator's alias ARN.</p>
+     */
+    inline const Aws::String& GetAgentCollaboratorAliasArn() const { return m_agentCollaboratorAliasArn; }
+    inline bool AgentCollaboratorAliasArnHasBeenSet() const { return m_agentCollaboratorAliasArnHasBeenSet; }
+    template<typename AgentCollaboratorAliasArnT = Aws::String>
+    void SetAgentCollaboratorAliasArn(AgentCollaboratorAliasArnT&& value) { m_agentCollaboratorAliasArnHasBeenSet = true; m_agentCollaboratorAliasArn = std::forward<AgentCollaboratorAliasArnT>(value); }
+    template<typename AgentCollaboratorAliasArnT = Aws::String>
+    AgentCollaboratorInvocationInput& WithAgentCollaboratorAliasArn(AgentCollaboratorAliasArnT&& value) { SetAgentCollaboratorAliasArn(std::forward<AgentCollaboratorAliasArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,11 +75,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_agentCollaboratorAliasArn;
-    bool m_agentCollaboratorAliasArnHasBeenSet = false;
-
     Aws::String m_agentCollaboratorName;
     bool m_agentCollaboratorNameHasBeenSet = false;
+
+    Aws::String m_agentCollaboratorAliasArn;
+    bool m_agentCollaboratorAliasArnHasBeenSet = false;
 
     AgentCollaboratorInputPayload m_input;
     bool m_inputHasBeenSet = false;

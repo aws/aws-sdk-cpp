@@ -7,6 +7,7 @@
 #include <aws/bedrock-data-automation/BedrockDataAutomation_EXPORTS.h>
 #include <aws/bedrock-data-automation/model/State.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock-data-automation/model/AudioExtractionCategoryTypeConfiguration.h>
 #include <aws/bedrock-data-automation/model/AudioExtractionCategoryType.h>
 #include <utility>
 
@@ -57,6 +58,16 @@ namespace Model
     AudioExtractionCategory& WithTypes(TypesT&& value) { SetTypes(std::forward<TypesT>(value)); return *this;}
     inline AudioExtractionCategory& AddTypes(AudioExtractionCategoryType value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    
+    inline const AudioExtractionCategoryTypeConfiguration& GetTypeConfiguration() const { return m_typeConfiguration; }
+    inline bool TypeConfigurationHasBeenSet() const { return m_typeConfigurationHasBeenSet; }
+    template<typename TypeConfigurationT = AudioExtractionCategoryTypeConfiguration>
+    void SetTypeConfiguration(TypeConfigurationT&& value) { m_typeConfigurationHasBeenSet = true; m_typeConfiguration = std::forward<TypeConfigurationT>(value); }
+    template<typename TypeConfigurationT = AudioExtractionCategoryTypeConfiguration>
+    AudioExtractionCategory& WithTypeConfiguration(TypeConfigurationT&& value) { SetTypeConfiguration(std::forward<TypeConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     State m_state{State::NOT_SET};
@@ -64,6 +75,9 @@ namespace Model
 
     Aws::Vector<AudioExtractionCategoryType> m_types;
     bool m_typesHasBeenSet = false;
+
+    AudioExtractionCategoryTypeConfiguration m_typeConfiguration;
+    bool m_typeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

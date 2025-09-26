@@ -25,15 +25,15 @@ KnowledgeBaseLookupInput::KnowledgeBaseLookupInput(JsonView jsonValue)
 
 KnowledgeBaseLookupInput& KnowledgeBaseLookupInput::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("knowledgeBaseId"))
-  {
-    m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
-    m_knowledgeBaseIdHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("knowledgeBaseId"))
+  {
+    m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
+    m_knowledgeBaseIdHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue KnowledgeBaseLookupInput::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_knowledgeBaseIdHasBeenSet)
-  {
-   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
-
-  }
-
   if(m_textHasBeenSet)
   {
    payload.WithString("text", m_text);
+
+  }
+
+  if(m_knowledgeBaseIdHasBeenSet)
+  {
+   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
 
   }
 

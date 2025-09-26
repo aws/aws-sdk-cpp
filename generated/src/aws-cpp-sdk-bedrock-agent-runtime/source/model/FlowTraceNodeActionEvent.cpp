@@ -30,10 +30,10 @@ FlowTraceNodeActionEvent& FlowTraceNodeActionEvent::operator =(JsonView jsonValu
     m_nodeName = jsonValue.GetString("nodeName");
     m_nodeNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("operationName"))
+  if(jsonValue.ValueExists("timestamp"))
   {
-    m_operationName = jsonValue.GetString("operationName");
-    m_operationNameHasBeenSet = true;
+    m_timestamp = jsonValue.GetString("timestamp");
+    m_timestampHasBeenSet = true;
   }
   if(jsonValue.ValueExists("requestId"))
   {
@@ -45,10 +45,20 @@ FlowTraceNodeActionEvent& FlowTraceNodeActionEvent::operator =(JsonView jsonValu
     m_serviceName = jsonValue.GetString("serviceName");
     m_serviceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("timestamp"))
+  if(jsonValue.ValueExists("operationName"))
   {
-    m_timestamp = jsonValue.GetString("timestamp");
-    m_timestampHasBeenSet = true;
+    m_operationName = jsonValue.GetString("operationName");
+    m_operationNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("operationRequest"))
+  {
+    m_operationRequest = jsonValue.GetObject("operationRequest");
+    m_operationRequestHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("operationResponse"))
+  {
+    m_operationResponse = jsonValue.GetObject("operationResponse");
+    m_operationResponseHasBeenSet = true;
   }
   return *this;
 }
@@ -63,10 +73,9 @@ JsonValue FlowTraceNodeActionEvent::Jsonize() const
 
   }
 
-  if(m_operationNameHasBeenSet)
+  if(m_timestampHasBeenSet)
   {
-   payload.WithString("operationName", m_operationName);
-
+   payload.WithString("timestamp", m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_requestIdHasBeenSet)
@@ -81,9 +90,26 @@ JsonValue FlowTraceNodeActionEvent::Jsonize() const
 
   }
 
-  if(m_timestampHasBeenSet)
+  if(m_operationNameHasBeenSet)
   {
-   payload.WithString("timestamp", m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   payload.WithString("operationName", m_operationName);
+
+  }
+
+  if(m_operationRequestHasBeenSet)
+  {
+    if(!m_operationRequest.View().IsNull())
+    {
+       payload.WithObject("operationRequest", JsonValue(m_operationRequest.View()));
+    }
+  }
+
+  if(m_operationResponseHasBeenSet)
+  {
+    if(!m_operationResponse.View().IsNull())
+    {
+       payload.WithObject("operationResponse", JsonValue(m_operationResponse.View()));
+    }
   }
 
   return payload;

@@ -25,15 +25,15 @@ Rationale::Rationale(JsonView jsonValue)
 
 Rationale& Rationale::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("text"))
-  {
-    m_text = jsonValue.GetString("text");
-    m_textHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("traceId"))
   {
     m_traceId = jsonValue.GetString("traceId");
     m_traceIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("text"))
+  {
+    m_text = jsonValue.GetString("text");
+    m_textHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue Rationale::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("text", m_text);
-
-  }
-
   if(m_traceIdHasBeenSet)
   {
    payload.WithString("traceId", m_traceId);
+
+  }
+
+  if(m_textHasBeenSet)
+  {
+   payload.WithString("text", m_text);
 
   }
 

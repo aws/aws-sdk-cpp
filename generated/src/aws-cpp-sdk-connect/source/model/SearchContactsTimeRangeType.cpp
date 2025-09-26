@@ -24,6 +24,7 @@ namespace Aws
         static const int SCHEDULED_TIMESTAMP_HASH = HashingUtils::HashString("SCHEDULED_TIMESTAMP");
         static const int CONNECTED_TO_AGENT_TIMESTAMP_HASH = HashingUtils::HashString("CONNECTED_TO_AGENT_TIMESTAMP");
         static const int DISCONNECT_TIMESTAMP_HASH = HashingUtils::HashString("DISCONNECT_TIMESTAMP");
+        static const int ENQUEUE_TIMESTAMP_HASH = HashingUtils::HashString("ENQUEUE_TIMESTAMP");
 
 
         SearchContactsTimeRangeType GetSearchContactsTimeRangeTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == DISCONNECT_TIMESTAMP_HASH)
           {
             return SearchContactsTimeRangeType::DISCONNECT_TIMESTAMP;
+          }
+          else if (hashCode == ENQUEUE_TIMESTAMP_HASH)
+          {
+            return SearchContactsTimeRangeType::ENQUEUE_TIMESTAMP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "CONNECTED_TO_AGENT_TIMESTAMP";
           case SearchContactsTimeRangeType::DISCONNECT_TIMESTAMP:
             return "DISCONNECT_TIMESTAMP";
+          case SearchContactsTimeRangeType::ENQUEUE_TIMESTAMP:
+            return "ENQUEUE_TIMESTAMP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

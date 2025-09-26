@@ -47,7 +47,8 @@ enum class BillingErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BILLING_VIEW_HEALTH_STATUS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT,
   INTERNAL_SERVER,
   SERVICE_QUOTA_EXCEEDED
 };

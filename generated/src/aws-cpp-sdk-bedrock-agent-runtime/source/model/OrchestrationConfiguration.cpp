@@ -25,6 +25,16 @@ OrchestrationConfiguration::OrchestrationConfiguration(JsonView jsonValue)
 
 OrchestrationConfiguration& OrchestrationConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("promptTemplate"))
+  {
+    m_promptTemplate = jsonValue.GetObject("promptTemplate");
+    m_promptTemplateHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("inferenceConfig"))
+  {
+    m_inferenceConfig = jsonValue.GetObject("inferenceConfig");
+    m_inferenceConfigHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("additionalModelRequestFields"))
   {
     Aws::Map<Aws::String, JsonView> additionalModelRequestFieldsJsonMap = jsonValue.GetObject("additionalModelRequestFields").GetAllObjects();
@@ -34,25 +44,15 @@ OrchestrationConfiguration& OrchestrationConfiguration::operator =(JsonView json
     }
     m_additionalModelRequestFieldsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("inferenceConfig"))
+  if(jsonValue.ValueExists("queryTransformationConfiguration"))
   {
-    m_inferenceConfig = jsonValue.GetObject("inferenceConfig");
-    m_inferenceConfigHasBeenSet = true;
+    m_queryTransformationConfiguration = jsonValue.GetObject("queryTransformationConfiguration");
+    m_queryTransformationConfigurationHasBeenSet = true;
   }
   if(jsonValue.ValueExists("performanceConfig"))
   {
     m_performanceConfig = jsonValue.GetObject("performanceConfig");
     m_performanceConfigHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("promptTemplate"))
-  {
-    m_promptTemplate = jsonValue.GetObject("promptTemplate");
-    m_promptTemplateHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("queryTransformationConfiguration"))
-  {
-    m_queryTransformationConfiguration = jsonValue.GetObject("queryTransformationConfiguration");
-    m_queryTransformationConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -60,6 +60,18 @@ OrchestrationConfiguration& OrchestrationConfiguration::operator =(JsonView json
 JsonValue OrchestrationConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_promptTemplateHasBeenSet)
+  {
+   payload.WithObject("promptTemplate", m_promptTemplate.Jsonize());
+
+  }
+
+  if(m_inferenceConfigHasBeenSet)
+  {
+   payload.WithObject("inferenceConfig", m_inferenceConfig.Jsonize());
+
+  }
 
   if(m_additionalModelRequestFieldsHasBeenSet)
   {
@@ -72,27 +84,15 @@ JsonValue OrchestrationConfiguration::Jsonize() const
 
   }
 
-  if(m_inferenceConfigHasBeenSet)
+  if(m_queryTransformationConfigurationHasBeenSet)
   {
-   payload.WithObject("inferenceConfig", m_inferenceConfig.Jsonize());
+   payload.WithObject("queryTransformationConfiguration", m_queryTransformationConfiguration.Jsonize());
 
   }
 
   if(m_performanceConfigHasBeenSet)
   {
    payload.WithObject("performanceConfig", m_performanceConfig.Jsonize());
-
-  }
-
-  if(m_promptTemplateHasBeenSet)
-  {
-   payload.WithObject("promptTemplate", m_promptTemplate.Jsonize());
-
-  }
-
-  if(m_queryTransformationConfigurationHasBeenSet)
-  {
-   payload.WithObject("queryTransformationConfiguration", m_queryTransformationConfiguration.Jsonize());
 
   }
 

@@ -25,11 +25,6 @@ VectorSearchBedrockRerankingConfiguration::VectorSearchBedrockRerankingConfigura
 
 VectorSearchBedrockRerankingConfiguration& VectorSearchBedrockRerankingConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("metadataConfiguration"))
-  {
-    m_metadataConfiguration = jsonValue.GetObject("metadataConfiguration");
-    m_metadataConfigurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("modelConfiguration"))
   {
     m_modelConfiguration = jsonValue.GetObject("modelConfiguration");
@@ -40,18 +35,17 @@ VectorSearchBedrockRerankingConfiguration& VectorSearchBedrockRerankingConfigura
     m_numberOfRerankedResults = jsonValue.GetInteger("numberOfRerankedResults");
     m_numberOfRerankedResultsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("metadataConfiguration"))
+  {
+    m_metadataConfiguration = jsonValue.GetObject("metadataConfiguration");
+    m_metadataConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue VectorSearchBedrockRerankingConfiguration::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_metadataConfigurationHasBeenSet)
-  {
-   payload.WithObject("metadataConfiguration", m_metadataConfiguration.Jsonize());
-
-  }
 
   if(m_modelConfigurationHasBeenSet)
   {
@@ -62,6 +56,12 @@ JsonValue VectorSearchBedrockRerankingConfiguration::Jsonize() const
   if(m_numberOfRerankedResultsHasBeenSet)
   {
    payload.WithInteger("numberOfRerankedResults", m_numberOfRerankedResults);
+
+  }
+
+  if(m_metadataConfigurationHasBeenSet)
+  {
+   payload.WithObject("metadataConfiguration", m_metadataConfiguration.Jsonize());
 
   }
 

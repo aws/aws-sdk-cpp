@@ -45,21 +45,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of objects, each of which specifies a metadata field to exclude from
-     * consideration when reranking.</p>
-     */
-    inline const Aws::Vector<FieldForReranking>& GetFieldsToExclude() const { return m_fieldsToExclude; }
-    inline bool FieldsToExcludeHasBeenSet() const { return m_fieldsToExcludeHasBeenSet; }
-    template<typename FieldsToExcludeT = Aws::Vector<FieldForReranking>>
-    void SetFieldsToExclude(FieldsToExcludeT&& value) { m_fieldsToExcludeHasBeenSet = true; m_fieldsToExclude = std::forward<FieldsToExcludeT>(value); }
-    template<typename FieldsToExcludeT = Aws::Vector<FieldForReranking>>
-    RerankingMetadataSelectiveModeConfiguration& WithFieldsToExclude(FieldsToExcludeT&& value) { SetFieldsToExclude(std::forward<FieldsToExcludeT>(value)); return *this;}
-    template<typename FieldsToExcludeT = FieldForReranking>
-    RerankingMetadataSelectiveModeConfiguration& AddFieldsToExclude(FieldsToExcludeT&& value) { m_fieldsToExcludeHasBeenSet = true; m_fieldsToExclude.emplace_back(std::forward<FieldsToExcludeT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>An array of objects, each of which specifies a metadata field to include in
      * consideration when reranking. The remaining metadata fields are ignored.</p>
      */
@@ -72,13 +57,28 @@ namespace Model
     template<typename FieldsToIncludeT = FieldForReranking>
     RerankingMetadataSelectiveModeConfiguration& AddFieldsToInclude(FieldsToIncludeT&& value) { m_fieldsToIncludeHasBeenSet = true; m_fieldsToInclude.emplace_back(std::forward<FieldsToIncludeT>(value)); return *this; }
     ///@}
-  private:
 
-    Aws::Vector<FieldForReranking> m_fieldsToExclude;
-    bool m_fieldsToExcludeHasBeenSet = false;
+    ///@{
+    /**
+     * <p>An array of objects, each of which specifies a metadata field to exclude from
+     * consideration when reranking.</p>
+     */
+    inline const Aws::Vector<FieldForReranking>& GetFieldsToExclude() const { return m_fieldsToExclude; }
+    inline bool FieldsToExcludeHasBeenSet() const { return m_fieldsToExcludeHasBeenSet; }
+    template<typename FieldsToExcludeT = Aws::Vector<FieldForReranking>>
+    void SetFieldsToExclude(FieldsToExcludeT&& value) { m_fieldsToExcludeHasBeenSet = true; m_fieldsToExclude = std::forward<FieldsToExcludeT>(value); }
+    template<typename FieldsToExcludeT = Aws::Vector<FieldForReranking>>
+    RerankingMetadataSelectiveModeConfiguration& WithFieldsToExclude(FieldsToExcludeT&& value) { SetFieldsToExclude(std::forward<FieldsToExcludeT>(value)); return *this;}
+    template<typename FieldsToExcludeT = FieldForReranking>
+    RerankingMetadataSelectiveModeConfiguration& AddFieldsToExclude(FieldsToExcludeT&& value) { m_fieldsToExcludeHasBeenSet = true; m_fieldsToExclude.emplace_back(std::forward<FieldsToExcludeT>(value)); return *this; }
+    ///@}
+  private:
 
     Aws::Vector<FieldForReranking> m_fieldsToInclude;
     bool m_fieldsToIncludeHasBeenSet = false;
+
+    Aws::Vector<FieldForReranking> m_fieldsToExclude;
+    bool m_fieldsToExcludeHasBeenSet = false;
   };
 
 } // namespace Model

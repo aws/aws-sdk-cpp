@@ -36,6 +36,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier for the session to add the invocation step to. You can
+     * specify either the session's <code>sessionId</code> or its Amazon Resource Name
+     * (ARN).</p>
+     */
+    inline const Aws::String& GetSessionIdentifier() const { return m_sessionIdentifier; }
+    inline bool SessionIdentifierHasBeenSet() const { return m_sessionIdentifierHasBeenSet; }
+    template<typename SessionIdentifierT = Aws::String>
+    void SetSessionIdentifier(SessionIdentifierT&& value) { m_sessionIdentifierHasBeenSet = true; m_sessionIdentifier = std::forward<SessionIdentifierT>(value); }
+    template<typename SessionIdentifierT = Aws::String>
+    PutInvocationStepRequest& WithSessionIdentifier(SessionIdentifierT&& value) { SetSessionIdentifier(std::forward<SessionIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The unique identifier (in UUID format) of the invocation to add the
      * invocation step to.</p>
      */
@@ -45,18 +59,6 @@ namespace Model
     void SetInvocationIdentifier(InvocationIdentifierT&& value) { m_invocationIdentifierHasBeenSet = true; m_invocationIdentifier = std::forward<InvocationIdentifierT>(value); }
     template<typename InvocationIdentifierT = Aws::String>
     PutInvocationStepRequest& WithInvocationIdentifier(InvocationIdentifierT&& value) { SetInvocationIdentifier(std::forward<InvocationIdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The unique identifier of the invocation step in UUID format.</p>
-     */
-    inline const Aws::String& GetInvocationStepId() const { return m_invocationStepId; }
-    inline bool InvocationStepIdHasBeenSet() const { return m_invocationStepIdHasBeenSet; }
-    template<typename InvocationStepIdT = Aws::String>
-    void SetInvocationStepId(InvocationStepIdT&& value) { m_invocationStepIdHasBeenSet = true; m_invocationStepId = std::forward<InvocationStepIdT>(value); }
-    template<typename InvocationStepIdT = Aws::String>
-    PutInvocationStepRequest& WithInvocationStepId(InvocationStepIdT&& value) { SetInvocationStepId(std::forward<InvocationStepIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,24 +88,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier for the session to add the invocation step to. You can
-     * specify either the session's <code>sessionId</code> or its Amazon Resource Name
-     * (ARN).</p>
+     * <p>The unique identifier of the invocation step in UUID format.</p>
      */
-    inline const Aws::String& GetSessionIdentifier() const { return m_sessionIdentifier; }
-    inline bool SessionIdentifierHasBeenSet() const { return m_sessionIdentifierHasBeenSet; }
-    template<typename SessionIdentifierT = Aws::String>
-    void SetSessionIdentifier(SessionIdentifierT&& value) { m_sessionIdentifierHasBeenSet = true; m_sessionIdentifier = std::forward<SessionIdentifierT>(value); }
-    template<typename SessionIdentifierT = Aws::String>
-    PutInvocationStepRequest& WithSessionIdentifier(SessionIdentifierT&& value) { SetSessionIdentifier(std::forward<SessionIdentifierT>(value)); return *this;}
+    inline const Aws::String& GetInvocationStepId() const { return m_invocationStepId; }
+    inline bool InvocationStepIdHasBeenSet() const { return m_invocationStepIdHasBeenSet; }
+    template<typename InvocationStepIdT = Aws::String>
+    void SetInvocationStepId(InvocationStepIdT&& value) { m_invocationStepIdHasBeenSet = true; m_invocationStepId = std::forward<InvocationStepIdT>(value); }
+    template<typename InvocationStepIdT = Aws::String>
+    PutInvocationStepRequest& WithInvocationStepId(InvocationStepIdT&& value) { SetInvocationStepId(std::forward<InvocationStepIdT>(value)); return *this;}
     ///@}
   private:
 
+    Aws::String m_sessionIdentifier;
+    bool m_sessionIdentifierHasBeenSet = false;
+
     Aws::String m_invocationIdentifier;
     bool m_invocationIdentifierHasBeenSet = false;
-
-    Aws::String m_invocationStepId;
-    bool m_invocationStepIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_invocationStepTime{};
     bool m_invocationStepTimeHasBeenSet = false;
@@ -111,8 +111,8 @@ namespace Model
     InvocationStepPayload m_payload;
     bool m_payloadHasBeenSet = false;
 
-    Aws::String m_sessionIdentifier;
-    bool m_sessionIdentifierHasBeenSet = false;
+    Aws::String m_invocationStepId;
+    bool m_invocationStepIdHasBeenSet = false;
   };
 
 } // namespace Model

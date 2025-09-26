@@ -26,6 +26,11 @@ ByteContentDoc::ByteContentDoc(JsonView jsonValue)
 
 ByteContentDoc& ByteContentDoc::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("identifier"))
+  {
+    m_identifier = jsonValue.GetString("identifier");
+    m_identifierHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("contentType"))
   {
     m_contentType = jsonValue.GetString("contentType");
@@ -36,17 +41,18 @@ ByteContentDoc& ByteContentDoc::operator =(JsonView jsonValue)
     m_data = HashingUtils::Base64Decode(jsonValue.GetString("data"));
     m_dataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("identifier"))
-  {
-    m_identifier = jsonValue.GetString("identifier");
-    m_identifierHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue ByteContentDoc::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_identifierHasBeenSet)
+  {
+   payload.WithString("identifier", m_identifier);
+
+  }
 
   if(m_contentTypeHasBeenSet)
   {
@@ -57,12 +63,6 @@ JsonValue ByteContentDoc::Jsonize() const
   if(m_dataHasBeenSet)
   {
    payload.WithString("data", HashingUtils::Base64Encode(m_data));
-  }
-
-  if(m_identifierHasBeenSet)
-  {
-   payload.WithString("identifier", m_identifier);
-
   }
 
   return payload;

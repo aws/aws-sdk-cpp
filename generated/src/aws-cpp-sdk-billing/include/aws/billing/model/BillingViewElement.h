@@ -9,6 +9,7 @@
 #include <aws/billing/model/BillingViewType.h>
 #include <aws/billing/model/Expression.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/billing/model/BillingViewHealthStatus.h>
 #include <utility>
 
 namespace Aws
@@ -101,6 +102,19 @@ namespace Model
 
     ///@{
     /**
+     * <p> The Amazon Web Services account ID that owns the source billing view, if
+     * this is a derived billing view. </p>
+     */
+    inline const Aws::String& GetSourceAccountId() const { return m_sourceAccountId; }
+    inline bool SourceAccountIdHasBeenSet() const { return m_sourceAccountIdHasBeenSet; }
+    template<typename SourceAccountIdT = Aws::String>
+    void SetSourceAccountId(SourceAccountIdT&& value) { m_sourceAccountIdHasBeenSet = true; m_sourceAccountId = std::forward<SourceAccountIdT>(value); }
+    template<typename SourceAccountIdT = Aws::String>
+    BillingViewElement& WithSourceAccountId(SourceAccountIdT&& value) { SetSourceAccountId(std::forward<SourceAccountIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p> See <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>.
      * Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.
@@ -137,6 +151,50 @@ namespace Model
     template<typename UpdatedAtT = Aws::Utils::DateTime>
     BillingViewElement& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The number of billing views that use this billing view as a source. </p>
+     */
+    inline int GetDerivedViewCount() const { return m_derivedViewCount; }
+    inline bool DerivedViewCountHasBeenSet() const { return m_derivedViewCountHasBeenSet; }
+    inline void SetDerivedViewCount(int value) { m_derivedViewCountHasBeenSet = true; m_derivedViewCount = value; }
+    inline BillingViewElement& WithDerivedViewCount(int value) { SetDerivedViewCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The number of source views associated with this billing view. </p>
+     */
+    inline int GetSourceViewCount() const { return m_sourceViewCount; }
+    inline bool SourceViewCountHasBeenSet() const { return m_sourceViewCountHasBeenSet; }
+    inline void SetSourceViewCount(int value) { m_sourceViewCountHasBeenSet = true; m_sourceViewCount = value; }
+    inline BillingViewElement& WithSourceViewCount(int value) { SetSourceViewCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The timestamp of when the billing view definition was last updated. </p>
+     */
+    inline const Aws::Utils::DateTime& GetViewDefinitionLastUpdatedAt() const { return m_viewDefinitionLastUpdatedAt; }
+    inline bool ViewDefinitionLastUpdatedAtHasBeenSet() const { return m_viewDefinitionLastUpdatedAtHasBeenSet; }
+    template<typename ViewDefinitionLastUpdatedAtT = Aws::Utils::DateTime>
+    void SetViewDefinitionLastUpdatedAt(ViewDefinitionLastUpdatedAtT&& value) { m_viewDefinitionLastUpdatedAtHasBeenSet = true; m_viewDefinitionLastUpdatedAt = std::forward<ViewDefinitionLastUpdatedAtT>(value); }
+    template<typename ViewDefinitionLastUpdatedAtT = Aws::Utils::DateTime>
+    BillingViewElement& WithViewDefinitionLastUpdatedAt(ViewDefinitionLastUpdatedAtT&& value) { SetViewDefinitionLastUpdatedAt(std::forward<ViewDefinitionLastUpdatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The current health status of the billing view. </p>
+     */
+    inline const BillingViewHealthStatus& GetHealthStatus() const { return m_healthStatus; }
+    inline bool HealthStatusHasBeenSet() const { return m_healthStatusHasBeenSet; }
+    template<typename HealthStatusT = BillingViewHealthStatus>
+    void SetHealthStatus(HealthStatusT&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = std::forward<HealthStatusT>(value); }
+    template<typename HealthStatusT = BillingViewHealthStatus>
+    BillingViewElement& WithHealthStatus(HealthStatusT&& value) { SetHealthStatus(std::forward<HealthStatusT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -154,6 +212,9 @@ namespace Model
     Aws::String m_ownerAccountId;
     bool m_ownerAccountIdHasBeenSet = false;
 
+    Aws::String m_sourceAccountId;
+    bool m_sourceAccountIdHasBeenSet = false;
+
     Expression m_dataFilterExpression;
     bool m_dataFilterExpressionHasBeenSet = false;
 
@@ -162,6 +223,18 @@ namespace Model
 
     Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
+
+    int m_derivedViewCount{0};
+    bool m_derivedViewCountHasBeenSet = false;
+
+    int m_sourceViewCount{0};
+    bool m_sourceViewCountHasBeenSet = false;
+
+    Aws::Utils::DateTime m_viewDefinitionLastUpdatedAt{};
+    bool m_viewDefinitionLastUpdatedAtHasBeenSet = false;
+
+    BillingViewHealthStatus m_healthStatus;
+    bool m_healthStatusHasBeenSet = false;
   };
 
 } // namespace Model

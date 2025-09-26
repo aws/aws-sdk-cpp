@@ -44,6 +44,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier for the session associated with the invocation
+     * step.</p>
+     */
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
+    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    InvocationStepSummary& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A unique identifier for the invocation in UUID format.</p>
      */
     inline const Aws::String& GetInvocationId() const { return m_invocationId; }
@@ -77,20 +90,10 @@ namespace Model
     template<typename InvocationStepTimeT = Aws::Utils::DateTime>
     InvocationStepSummary& WithInvocationStepTime(InvocationStepTimeT&& value) { SetInvocationStepTime(std::forward<InvocationStepTimeT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The unique identifier for the session associated with the invocation
-     * step.</p>
-     */
-    inline const Aws::String& GetSessionId() const { return m_sessionId; }
-    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    template<typename SessionIdT = Aws::String>
-    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
-    template<typename SessionIdT = Aws::String>
-    InvocationStepSummary& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_invocationId;
     bool m_invocationIdHasBeenSet = false;
@@ -100,9 +103,6 @@ namespace Model
 
     Aws::Utils::DateTime m_invocationStepTime{};
     bool m_invocationStepTimeHasBeenSet = false;
-
-    Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet = false;
   };
 
 } // namespace Model

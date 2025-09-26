@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent-runtime/model/GuadrailAction.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent-runtime/model/KnowledgeBaseRetrievalResult.h>
 #include <utility>
 
@@ -37,6 +37,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>A list of results from querying the knowledge base.</p>
+     */
+    inline const Aws::Vector<KnowledgeBaseRetrievalResult>& GetRetrievalResults() const { return m_retrievalResults; }
+    template<typename RetrievalResultsT = Aws::Vector<KnowledgeBaseRetrievalResult>>
+    void SetRetrievalResults(RetrievalResultsT&& value) { m_retrievalResultsHasBeenSet = true; m_retrievalResults = std::forward<RetrievalResultsT>(value); }
+    template<typename RetrievalResultsT = Aws::Vector<KnowledgeBaseRetrievalResult>>
+    RetrieveResult& WithRetrievalResults(RetrievalResultsT&& value) { SetRetrievalResults(std::forward<RetrievalResultsT>(value)); return *this;}
+    template<typename RetrievalResultsT = KnowledgeBaseRetrievalResult>
+    RetrieveResult& AddRetrievalResults(RetrievalResultsT&& value) { m_retrievalResultsHasBeenSet = true; m_retrievalResults.emplace_back(std::forward<RetrievalResultsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies if there is a guardrail intervention in the response.</p>
      */
     inline GuadrailAction GetGuardrailAction() const { return m_guardrailAction; }
@@ -58,19 +71,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>A list of results from querying the knowledge base.</p>
-     */
-    inline const Aws::Vector<KnowledgeBaseRetrievalResult>& GetRetrievalResults() const { return m_retrievalResults; }
-    template<typename RetrievalResultsT = Aws::Vector<KnowledgeBaseRetrievalResult>>
-    void SetRetrievalResults(RetrievalResultsT&& value) { m_retrievalResultsHasBeenSet = true; m_retrievalResults = std::forward<RetrievalResultsT>(value); }
-    template<typename RetrievalResultsT = Aws::Vector<KnowledgeBaseRetrievalResult>>
-    RetrieveResult& WithRetrievalResults(RetrievalResultsT&& value) { SetRetrievalResults(std::forward<RetrievalResultsT>(value)); return *this;}
-    template<typename RetrievalResultsT = KnowledgeBaseRetrievalResult>
-    RetrieveResult& AddRetrievalResults(RetrievalResultsT&& value) { m_retrievalResultsHasBeenSet = true; m_retrievalResults.emplace_back(std::forward<RetrievalResultsT>(value)); return *this; }
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -80,14 +80,14 @@ namespace Model
     ///@}
   private:
 
+    Aws::Vector<KnowledgeBaseRetrievalResult> m_retrievalResults;
+    bool m_retrievalResultsHasBeenSet = false;
+
     GuadrailAction m_guardrailAction{GuadrailAction::NOT_SET};
     bool m_guardrailActionHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
-
-    Aws::Vector<KnowledgeBaseRetrievalResult> m_retrievalResults;
-    bool m_retrievalResultsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

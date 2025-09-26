@@ -25,15 +25,15 @@ StreamingConfigurations::StreamingConfigurations(JsonView jsonValue)
 
 StreamingConfigurations& StreamingConfigurations::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("applyGuardrailInterval"))
-  {
-    m_applyGuardrailInterval = jsonValue.GetInteger("applyGuardrailInterval");
-    m_applyGuardrailIntervalHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("streamFinalResponse"))
   {
     m_streamFinalResponse = jsonValue.GetBool("streamFinalResponse");
     m_streamFinalResponseHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("applyGuardrailInterval"))
+  {
+    m_applyGuardrailInterval = jsonValue.GetInteger("applyGuardrailInterval");
+    m_applyGuardrailIntervalHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue StreamingConfigurations::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_applyGuardrailIntervalHasBeenSet)
-  {
-   payload.WithInteger("applyGuardrailInterval", m_applyGuardrailInterval);
-
-  }
-
   if(m_streamFinalResponseHasBeenSet)
   {
    payload.WithBool("streamFinalResponse", m_streamFinalResponse);
+
+  }
+
+  if(m_applyGuardrailIntervalHasBeenSet)
+  {
+   payload.WithInteger("applyGuardrailInterval", m_applyGuardrailInterval);
 
   }
 

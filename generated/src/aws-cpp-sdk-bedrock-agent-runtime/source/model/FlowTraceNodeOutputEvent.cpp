@@ -25,15 +25,6 @@ FlowTraceNodeOutputEvent::FlowTraceNodeOutputEvent(JsonView jsonValue)
 
 FlowTraceNodeOutputEvent& FlowTraceNodeOutputEvent::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("fields"))
-  {
-    Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
-    for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
-    {
-      m_fields.push_back(fieldsJsonList[fieldsIndex].AsObject());
-    }
-    m_fieldsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("nodeName"))
   {
     m_nodeName = jsonValue.GetString("nodeName");
@@ -44,23 +35,21 @@ FlowTraceNodeOutputEvent& FlowTraceNodeOutputEvent::operator =(JsonView jsonValu
     m_timestamp = jsonValue.GetString("timestamp");
     m_timestampHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("fields"))
+  {
+    Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
+    for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
+    {
+      m_fields.push_back(fieldsJsonList[fieldsIndex].AsObject());
+    }
+    m_fieldsHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue FlowTraceNodeOutputEvent::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_fieldsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> fieldsJsonList(m_fields.size());
-   for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
-   {
-     fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex].Jsonize());
-   }
-   payload.WithArray("fields", std::move(fieldsJsonList));
-
-  }
 
   if(m_nodeNameHasBeenSet)
   {
@@ -71,6 +60,17 @@ JsonValue FlowTraceNodeOutputEvent::Jsonize() const
   if(m_timestampHasBeenSet)
   {
    payload.WithString("timestamp", m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_fieldsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> fieldsJsonList(m_fields.size());
+   for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
+   {
+     fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex].Jsonize());
+   }
+   payload.WithArray("fields", std::move(fieldsJsonList));
+
   }
 
   return payload;

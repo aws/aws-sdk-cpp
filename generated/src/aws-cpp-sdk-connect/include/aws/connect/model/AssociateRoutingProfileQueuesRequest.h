@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/connect/model/RoutingProfileQueueConfig.h>
+#include <aws/connect/model/RoutingProfileManualAssignmentQueueConfig.h>
 #include <utility>
 
 namespace Aws
@@ -73,6 +74,20 @@ namespace Model
     template<typename QueueConfigsT = RoutingProfileQueueConfig>
     AssociateRoutingProfileQueuesRequest& AddQueueConfigs(QueueConfigsT&& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs.emplace_back(std::forward<QueueConfigsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The manual assignment queues to associate with this routing profile.</p>
+     */
+    inline const Aws::Vector<RoutingProfileManualAssignmentQueueConfig>& GetManualAssignmentQueueConfigs() const { return m_manualAssignmentQueueConfigs; }
+    inline bool ManualAssignmentQueueConfigsHasBeenSet() const { return m_manualAssignmentQueueConfigsHasBeenSet; }
+    template<typename ManualAssignmentQueueConfigsT = Aws::Vector<RoutingProfileManualAssignmentQueueConfig>>
+    void SetManualAssignmentQueueConfigs(ManualAssignmentQueueConfigsT&& value) { m_manualAssignmentQueueConfigsHasBeenSet = true; m_manualAssignmentQueueConfigs = std::forward<ManualAssignmentQueueConfigsT>(value); }
+    template<typename ManualAssignmentQueueConfigsT = Aws::Vector<RoutingProfileManualAssignmentQueueConfig>>
+    AssociateRoutingProfileQueuesRequest& WithManualAssignmentQueueConfigs(ManualAssignmentQueueConfigsT&& value) { SetManualAssignmentQueueConfigs(std::forward<ManualAssignmentQueueConfigsT>(value)); return *this;}
+    template<typename ManualAssignmentQueueConfigsT = RoutingProfileManualAssignmentQueueConfig>
+    AssociateRoutingProfileQueuesRequest& AddManualAssignmentQueueConfigs(ManualAssignmentQueueConfigsT&& value) { m_manualAssignmentQueueConfigsHasBeenSet = true; m_manualAssignmentQueueConfigs.emplace_back(std::forward<ManualAssignmentQueueConfigsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_instanceId;
@@ -83,6 +98,9 @@ namespace Model
 
     Aws::Vector<RoutingProfileQueueConfig> m_queueConfigs;
     bool m_queueConfigsHasBeenSet = false;
+
+    Aws::Vector<RoutingProfileManualAssignmentQueueConfig> m_manualAssignmentQueueConfigs;
+    bool m_manualAssignmentQueueConfigsHasBeenSet = false;
   };
 
 } // namespace Model

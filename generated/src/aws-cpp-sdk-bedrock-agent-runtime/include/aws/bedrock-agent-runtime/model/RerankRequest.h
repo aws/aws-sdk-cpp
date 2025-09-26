@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent-runtime/model/RerankingConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent-runtime/model/RerankQuery.h>
 #include <aws/bedrock-agent-runtime/model/RerankSource.h>
 #include <utility>
@@ -38,20 +38,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>If the total number of results was greater than could fit in a response, a
-     * token is returned in the <code>nextToken</code> field. You can enter that token
-     * in this field to return the next batch of results.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    RerankRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>An array of objects, each of which contains information about a query to
      * submit to the reranker model.</p>
      */
@@ -63,18 +49,6 @@ namespace Model
     RerankRequest& WithQueries(QueriesT&& value) { SetQueries(std::forward<QueriesT>(value)); return *this;}
     template<typename QueriesT = RerankQuery>
     RerankRequest& AddQueries(QueriesT&& value) { m_queriesHasBeenSet = true; m_queries.emplace_back(std::forward<QueriesT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>Contains configurations for reranking.</p>
-     */
-    inline const RerankingConfiguration& GetRerankingConfiguration() const { return m_rerankingConfiguration; }
-    inline bool RerankingConfigurationHasBeenSet() const { return m_rerankingConfigurationHasBeenSet; }
-    template<typename RerankingConfigurationT = RerankingConfiguration>
-    void SetRerankingConfiguration(RerankingConfigurationT&& value) { m_rerankingConfigurationHasBeenSet = true; m_rerankingConfiguration = std::forward<RerankingConfigurationT>(value); }
-    template<typename RerankingConfigurationT = RerankingConfiguration>
-    RerankRequest& WithRerankingConfiguration(RerankingConfigurationT&& value) { SetRerankingConfiguration(std::forward<RerankingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,19 +65,45 @@ namespace Model
     template<typename SourcesT = RerankSource>
     RerankRequest& AddSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources.emplace_back(std::forward<SourcesT>(value)); return *this; }
     ///@}
-  private:
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Contains configurations for reranking.</p>
+     */
+    inline const RerankingConfiguration& GetRerankingConfiguration() const { return m_rerankingConfiguration; }
+    inline bool RerankingConfigurationHasBeenSet() const { return m_rerankingConfigurationHasBeenSet; }
+    template<typename RerankingConfigurationT = RerankingConfiguration>
+    void SetRerankingConfiguration(RerankingConfigurationT&& value) { m_rerankingConfigurationHasBeenSet = true; m_rerankingConfiguration = std::forward<RerankingConfigurationT>(value); }
+    template<typename RerankingConfigurationT = RerankingConfiguration>
+    RerankRequest& WithRerankingConfiguration(RerankingConfigurationT&& value) { SetRerankingConfiguration(std::forward<RerankingConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>If the total number of results was greater than could fit in a response, a
+     * token is returned in the <code>nextToken</code> field. You can enter that token
+     * in this field to return the next batch of results.</p>
+     */
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    RerankRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::Vector<RerankQuery> m_queries;
     bool m_queriesHasBeenSet = false;
 
+    Aws::Vector<RerankSource> m_sources;
+    bool m_sourcesHasBeenSet = false;
+
     RerankingConfiguration m_rerankingConfiguration;
     bool m_rerankingConfigurationHasBeenSet = false;
 
-    Aws::Vector<RerankSource> m_sources;
-    bool m_sourcesHasBeenSet = false;
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

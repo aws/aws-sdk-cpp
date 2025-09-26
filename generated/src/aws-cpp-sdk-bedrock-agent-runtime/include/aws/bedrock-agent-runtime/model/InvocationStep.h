@@ -46,6 +46,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier of the session containing the invocation step.</p>
+     */
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
+    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    InvocationStep& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The unique identifier (in UUID format) for the invocation that includes the
      * invocation step.</p>
      */
@@ -92,19 +104,10 @@ namespace Model
     template<typename PayloadT = InvocationStepPayload>
     InvocationStep& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The unique identifier of the session containing the invocation step.</p>
-     */
-    inline const Aws::String& GetSessionId() const { return m_sessionId; }
-    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    template<typename SessionIdT = Aws::String>
-    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
-    template<typename SessionIdT = Aws::String>
-    InvocationStep& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_invocationId;
     bool m_invocationIdHasBeenSet = false;
@@ -117,9 +120,6 @@ namespace Model
 
     InvocationStepPayload m_payload;
     bool m_payloadHasBeenSet = false;
-
-    Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet = false;
   };
 
 } // namespace Model

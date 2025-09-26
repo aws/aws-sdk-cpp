@@ -60,18 +60,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The agent's ID.</p>
-     */
-    inline const Aws::String& GetAgentId() const { return m_agentId; }
-    inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-    template<typename AgentIdT = Aws::String>
-    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
-    template<typename AgentIdT = Aws::String>
-    FunctionResult& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Contains the user confirmation information about the function that was
      * called.</p>
      */
@@ -129,13 +117,22 @@ namespace Model
     inline void SetResponseState(ResponseState value) { m_responseStateHasBeenSet = true; m_responseState = value; }
     inline FunctionResult& WithResponseState(ResponseState value) { SetResponseState(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The agent's ID.</p>
+     */
+    inline const Aws::String& GetAgentId() const { return m_agentId; }
+    inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
+    template<typename AgentIdT = Aws::String>
+    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
+    template<typename AgentIdT = Aws::String>
+    FunctionResult& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_actionGroup;
     bool m_actionGroupHasBeenSet = false;
-
-    Aws::String m_agentId;
-    bool m_agentIdHasBeenSet = false;
 
     ConfirmationState m_confirmationState{ConfirmationState::NOT_SET};
     bool m_confirmationStateHasBeenSet = false;
@@ -148,6 +145,9 @@ namespace Model
 
     ResponseState m_responseState{ResponseState::NOT_SET};
     bool m_responseStateHasBeenSet = false;
+
+    Aws::String m_agentId;
+    bool m_agentIdHasBeenSet = false;
   };
 
 } // namespace Model

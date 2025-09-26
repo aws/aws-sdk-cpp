@@ -5,10 +5,11 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/FlowTraceConditionNodeResultEvent.h>
-#include <aws/bedrock-agent-runtime/model/FlowTraceNodeActionEvent.h>
 #include <aws/bedrock-agent-runtime/model/FlowTraceNodeInputEvent.h>
 #include <aws/bedrock-agent-runtime/model/FlowTraceNodeOutputEvent.h>
+#include <aws/bedrock-agent-runtime/model/FlowTraceConditionNodeResultEvent.h>
+#include <aws/bedrock-agent-runtime/model/FlowTraceNodeActionEvent.h>
+#include <aws/bedrock-agent-runtime/model/FlowTraceDependencyEvent.h>
 #include <utility>
 
 namespace Aws
@@ -46,33 +47,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains information about an output from a condition node.</p>
-     */
-    inline const FlowTraceConditionNodeResultEvent& GetConditionNodeResultTrace() const { return m_conditionNodeResultTrace; }
-    inline bool ConditionNodeResultTraceHasBeenSet() const { return m_conditionNodeResultTraceHasBeenSet; }
-    template<typename ConditionNodeResultTraceT = FlowTraceConditionNodeResultEvent>
-    void SetConditionNodeResultTrace(ConditionNodeResultTraceT&& value) { m_conditionNodeResultTraceHasBeenSet = true; m_conditionNodeResultTrace = std::forward<ConditionNodeResultTraceT>(value); }
-    template<typename ConditionNodeResultTraceT = FlowTraceConditionNodeResultEvent>
-    FlowTrace& WithConditionNodeResultTrace(ConditionNodeResultTraceT&& value) { SetConditionNodeResultTrace(std::forward<ConditionNodeResultTraceT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Contains information about an action (operation) called by a node. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html">Track
-     * each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.</p>
-     */
-    inline const FlowTraceNodeActionEvent& GetNodeActionTrace() const { return m_nodeActionTrace; }
-    inline bool NodeActionTraceHasBeenSet() const { return m_nodeActionTraceHasBeenSet; }
-    template<typename NodeActionTraceT = FlowTraceNodeActionEvent>
-    void SetNodeActionTrace(NodeActionTraceT&& value) { m_nodeActionTraceHasBeenSet = true; m_nodeActionTrace = std::forward<NodeActionTraceT>(value); }
-    template<typename NodeActionTraceT = FlowTraceNodeActionEvent>
-    FlowTrace& WithNodeActionTrace(NodeActionTraceT&& value) { SetNodeActionTrace(std::forward<NodeActionTraceT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Contains information about the input into a node.</p>
      */
     inline const FlowTraceNodeInputEvent& GetNodeInputTrace() const { return m_nodeInputTrace; }
@@ -94,7 +68,49 @@ namespace Model
     template<typename NodeOutputTraceT = FlowTraceNodeOutputEvent>
     FlowTrace& WithNodeOutputTrace(NodeOutputTraceT&& value) { SetNodeOutputTrace(std::forward<NodeOutputTraceT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains information about an output from a condition node.</p>
+     */
+    inline const FlowTraceConditionNodeResultEvent& GetConditionNodeResultTrace() const { return m_conditionNodeResultTrace; }
+    inline bool ConditionNodeResultTraceHasBeenSet() const { return m_conditionNodeResultTraceHasBeenSet; }
+    template<typename ConditionNodeResultTraceT = FlowTraceConditionNodeResultEvent>
+    void SetConditionNodeResultTrace(ConditionNodeResultTraceT&& value) { m_conditionNodeResultTraceHasBeenSet = true; m_conditionNodeResultTrace = std::forward<ConditionNodeResultTraceT>(value); }
+    template<typename ConditionNodeResultTraceT = FlowTraceConditionNodeResultEvent>
+    FlowTrace& WithConditionNodeResultTrace(ConditionNodeResultTraceT&& value) { SetConditionNodeResultTrace(std::forward<ConditionNodeResultTraceT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains information about an action (operation) called by a node.</p>
+     */
+    inline const FlowTraceNodeActionEvent& GetNodeActionTrace() const { return m_nodeActionTrace; }
+    inline bool NodeActionTraceHasBeenSet() const { return m_nodeActionTraceHasBeenSet; }
+    template<typename NodeActionTraceT = FlowTraceNodeActionEvent>
+    void SetNodeActionTrace(NodeActionTraceT&& value) { m_nodeActionTraceHasBeenSet = true; m_nodeActionTrace = std::forward<NodeActionTraceT>(value); }
+    template<typename NodeActionTraceT = FlowTraceNodeActionEvent>
+    FlowTrace& WithNodeActionTrace(NodeActionTraceT&& value) { SetNodeActionTrace(std::forward<NodeActionTraceT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains information about an internal trace of a node.</p>
+     */
+    inline const FlowTraceDependencyEvent& GetNodeDependencyTrace() const { return m_nodeDependencyTrace; }
+    inline bool NodeDependencyTraceHasBeenSet() const { return m_nodeDependencyTraceHasBeenSet; }
+    template<typename NodeDependencyTraceT = FlowTraceDependencyEvent>
+    void SetNodeDependencyTrace(NodeDependencyTraceT&& value) { m_nodeDependencyTraceHasBeenSet = true; m_nodeDependencyTrace = std::forward<NodeDependencyTraceT>(value); }
+    template<typename NodeDependencyTraceT = FlowTraceDependencyEvent>
+    FlowTrace& WithNodeDependencyTrace(NodeDependencyTraceT&& value) { SetNodeDependencyTrace(std::forward<NodeDependencyTraceT>(value)); return *this;}
+    ///@}
   private:
+
+    FlowTraceNodeInputEvent m_nodeInputTrace;
+    bool m_nodeInputTraceHasBeenSet = false;
+
+    FlowTraceNodeOutputEvent m_nodeOutputTrace;
+    bool m_nodeOutputTraceHasBeenSet = false;
 
     FlowTraceConditionNodeResultEvent m_conditionNodeResultTrace;
     bool m_conditionNodeResultTraceHasBeenSet = false;
@@ -102,11 +118,8 @@ namespace Model
     FlowTraceNodeActionEvent m_nodeActionTrace;
     bool m_nodeActionTraceHasBeenSet = false;
 
-    FlowTraceNodeInputEvent m_nodeInputTrace;
-    bool m_nodeInputTraceHasBeenSet = false;
-
-    FlowTraceNodeOutputEvent m_nodeOutputTrace;
-    bool m_nodeOutputTraceHasBeenSet = false;
+    FlowTraceDependencyEvent m_nodeDependencyTrace;
+    bool m_nodeDependencyTraceHasBeenSet = false;
   };
 
 } // namespace Model

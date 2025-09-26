@@ -78,6 +78,11 @@ RoutingProfile& RoutingProfile::operator =(JsonView jsonValue)
     m_numberOfAssociatedQueues = jsonValue.GetInt64("NumberOfAssociatedQueues");
     m_numberOfAssociatedQueuesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("NumberOfAssociatedManualAssignmentQueues"))
+  {
+    m_numberOfAssociatedManualAssignmentQueues = jsonValue.GetInt64("NumberOfAssociatedManualAssignmentQueues");
+    m_numberOfAssociatedManualAssignmentQueuesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("NumberOfAssociatedUsers"))
   {
     m_numberOfAssociatedUsers = jsonValue.GetInt64("NumberOfAssociatedUsers");
@@ -111,6 +116,15 @@ RoutingProfile& RoutingProfile::operator =(JsonView jsonValue)
       m_associatedQueueIds.push_back(associatedQueueIdsJsonList[associatedQueueIdsIndex].AsString());
     }
     m_associatedQueueIdsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("AssociatedManualAssignmentQueueIds"))
+  {
+    Aws::Utils::Array<JsonView> associatedManualAssignmentQueueIdsJsonList = jsonValue.GetArray("AssociatedManualAssignmentQueueIds");
+    for(unsigned associatedManualAssignmentQueueIdsIndex = 0; associatedManualAssignmentQueueIdsIndex < associatedManualAssignmentQueueIdsJsonList.GetLength(); ++associatedManualAssignmentQueueIdsIndex)
+    {
+      m_associatedManualAssignmentQueueIds.push_back(associatedManualAssignmentQueueIdsJsonList[associatedManualAssignmentQueueIdsIndex].AsString());
+    }
+    m_associatedManualAssignmentQueueIdsHasBeenSet = true;
   }
   return *this;
 }
@@ -183,6 +197,12 @@ JsonValue RoutingProfile::Jsonize() const
 
   }
 
+  if(m_numberOfAssociatedManualAssignmentQueuesHasBeenSet)
+  {
+   payload.WithInt64("NumberOfAssociatedManualAssignmentQueues", m_numberOfAssociatedManualAssignmentQueues);
+
+  }
+
   if(m_numberOfAssociatedUsersHasBeenSet)
   {
    payload.WithInt64("NumberOfAssociatedUsers", m_numberOfAssociatedUsers);
@@ -219,6 +239,17 @@ JsonValue RoutingProfile::Jsonize() const
      associatedQueueIdsJsonList[associatedQueueIdsIndex].AsString(m_associatedQueueIds[associatedQueueIdsIndex]);
    }
    payload.WithArray("AssociatedQueueIds", std::move(associatedQueueIdsJsonList));
+
+  }
+
+  if(m_associatedManualAssignmentQueueIdsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> associatedManualAssignmentQueueIdsJsonList(m_associatedManualAssignmentQueueIds.size());
+   for(unsigned associatedManualAssignmentQueueIdsIndex = 0; associatedManualAssignmentQueueIdsIndex < associatedManualAssignmentQueueIdsJsonList.GetLength(); ++associatedManualAssignmentQueueIdsIndex)
+   {
+     associatedManualAssignmentQueueIdsJsonList[associatedManualAssignmentQueueIdsIndex].AsString(m_associatedManualAssignmentQueueIds[associatedManualAssignmentQueueIdsIndex]);
+   }
+   payload.WithArray("AssociatedManualAssignmentQueueIds", std::move(associatedManualAssignmentQueueIdsJsonList));
 
   }
 

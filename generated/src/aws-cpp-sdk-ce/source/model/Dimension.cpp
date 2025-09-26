@@ -23,6 +23,7 @@ namespace Aws
         static const int AZ_HASH = HashingUtils::HashString("AZ");
         static const int INSTANCE_TYPE_HASH = HashingUtils::HashString("INSTANCE_TYPE");
         static const int LINKED_ACCOUNT_HASH = HashingUtils::HashString("LINKED_ACCOUNT");
+        static const int PAYER_ACCOUNT_HASH = HashingUtils::HashString("PAYER_ACCOUNT");
         static const int LINKED_ACCOUNT_NAME_HASH = HashingUtils::HashString("LINKED_ACCOUNT_NAME");
         static const int OPERATION_HASH = HashingUtils::HashString("OPERATION");
         static const int PURCHASE_TYPE_HASH = HashingUtils::HashString("PURCHASE_TYPE");
@@ -70,6 +71,10 @@ namespace Aws
           else if (hashCode == LINKED_ACCOUNT_HASH)
           {
             return Dimension::LINKED_ACCOUNT;
+          }
+          else if (hashCode == PAYER_ACCOUNT_HASH)
+          {
+            return Dimension::PAYER_ACCOUNT;
           }
           else if (hashCode == LINKED_ACCOUNT_NAME_HASH)
           {
@@ -217,6 +222,8 @@ namespace Aws
             return "INSTANCE_TYPE";
           case Dimension::LINKED_ACCOUNT:
             return "LINKED_ACCOUNT";
+          case Dimension::PAYER_ACCOUNT:
+            return "PAYER_ACCOUNT";
           case Dimension::LINKED_ACCOUNT_NAME:
             return "LINKED_ACCOUNT_NAME";
           case Dimension::OPERATION:

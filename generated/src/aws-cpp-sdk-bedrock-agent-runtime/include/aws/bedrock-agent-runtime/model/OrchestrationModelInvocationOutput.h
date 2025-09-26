@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/Metadata.h>
-#include <aws/bedrock-agent-runtime/model/RawResponse.h>
-#include <aws/bedrock-agent-runtime/model/ReasoningContentBlock.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent-runtime/model/RawResponse.h>
+#include <aws/bedrock-agent-runtime/model/Metadata.h>
+#include <aws/bedrock-agent-runtime/model/ReasoningContentBlock.h>
 #include <utility>
 
 namespace Aws
@@ -43,15 +43,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains information about the foundation model output from the orchestration
-     * step.</p>
+     * <p>The unique identifier of the trace.</p>
      */
-    inline const Metadata& GetMetadata() const { return m_metadata; }
-    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    template<typename MetadataT = Metadata>
-    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
-    template<typename MetadataT = Metadata>
-    OrchestrationModelInvocationOutput& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
+    inline const Aws::String& GetTraceId() const { return m_traceId; }
+    inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
+    template<typename TraceIdT = Aws::String>
+    void SetTraceId(TraceIdT&& value) { m_traceIdHasBeenSet = true; m_traceId = std::forward<TraceIdT>(value); }
+    template<typename TraceIdT = Aws::String>
+    OrchestrationModelInvocationOutput& WithTraceId(TraceIdT&& value) { SetTraceId(std::forward<TraceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,6 +67,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Contains information about the foundation model output from the orchestration
+     * step.</p>
+     */
+    inline const Metadata& GetMetadata() const { return m_metadata; }
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+    template<typename MetadataT = Metadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Metadata>
+    OrchestrationModelInvocationOutput& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains content about the reasoning that the model made during the
      * orchestration step. </p>
      */
@@ -78,31 +90,19 @@ namespace Model
     template<typename ReasoningContentT = ReasoningContentBlock>
     OrchestrationModelInvocationOutput& WithReasoningContent(ReasoningContentT&& value) { SetReasoningContent(std::forward<ReasoningContentT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The unique identifier of the trace.</p>
-     */
-    inline const Aws::String& GetTraceId() const { return m_traceId; }
-    inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
-    template<typename TraceIdT = Aws::String>
-    void SetTraceId(TraceIdT&& value) { m_traceIdHasBeenSet = true; m_traceId = std::forward<TraceIdT>(value); }
-    template<typename TraceIdT = Aws::String>
-    OrchestrationModelInvocationOutput& WithTraceId(TraceIdT&& value) { SetTraceId(std::forward<TraceIdT>(value)); return *this;}
-    ///@}
   private:
 
-    Metadata m_metadata;
-    bool m_metadataHasBeenSet = false;
+    Aws::String m_traceId;
+    bool m_traceIdHasBeenSet = false;
 
     RawResponse m_rawResponse;
     bool m_rawResponseHasBeenSet = false;
 
+    Metadata m_metadata;
+    bool m_metadataHasBeenSet = false;
+
     ReasoningContentBlock m_reasoningContent;
     bool m_reasoningContentHasBeenSet = false;
-
-    Aws::String m_traceId;
-    bool m_traceIdHasBeenSet = false;
   };
 
 } // namespace Model

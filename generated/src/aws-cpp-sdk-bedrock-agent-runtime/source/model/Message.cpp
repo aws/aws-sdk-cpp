@@ -25,6 +25,11 @@ Message::Message(JsonView jsonValue)
 
 Message& Message::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("role"))
+  {
+    m_role = ConversationRoleMapper::GetConversationRoleForName(jsonValue.GetString("role"));
+    m_roleHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("content"))
   {
     Aws::Utils::Array<JsonView> contentJsonList = jsonValue.GetArray("content");
@@ -34,17 +39,17 @@ Message& Message::operator =(JsonView jsonValue)
     }
     m_contentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("role"))
-  {
-    m_role = ConversationRoleMapper::GetConversationRoleForName(jsonValue.GetString("role"));
-    m_roleHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue Message::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_roleHasBeenSet)
+  {
+   payload.WithString("role", ConversationRoleMapper::GetNameForConversationRole(m_role));
+  }
 
   if(m_contentHasBeenSet)
   {
@@ -55,11 +60,6 @@ JsonValue Message::Jsonize() const
    }
    payload.WithArray("content", std::move(contentJsonList));
 
-  }
-
-  if(m_roleHasBeenSet)
-  {
-   payload.WithString("role", ConversationRoleMapper::GetNameForConversationRole(m_role));
   }
 
   return payload;

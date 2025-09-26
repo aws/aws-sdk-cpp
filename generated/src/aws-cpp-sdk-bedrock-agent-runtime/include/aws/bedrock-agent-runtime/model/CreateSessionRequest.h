@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -35,22 +35,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key to use to encrypt the session
-     * data. The user or role creating the session must have permission to use the key.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/session-encryption.html">Amazon
-     * Bedrock session encryption</a>. </p>
-     */
-    inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
-    inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
-    template<typename EncryptionKeyArnT = Aws::String>
-    void SetEncryptionKeyArn(EncryptionKeyArnT&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value); }
-    template<typename EncryptionKeyArnT = Aws::String>
-    CreateSessionRequest& WithEncryptionKeyArn(EncryptionKeyArnT&& value) { SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A map of key-value pairs containing attributes to be persisted across the
      * session. For example, the user's ID, their language preference, and the type of
      * device they are using.</p>
@@ -65,6 +49,22 @@ namespace Model
     CreateSessionRequest& AddSessionMetadata(SessionMetadataKeyT&& key, SessionMetadataValueT&& value) {
       m_sessionMetadataHasBeenSet = true; m_sessionMetadata.emplace(std::forward<SessionMetadataKeyT>(key), std::forward<SessionMetadataValueT>(value)); return *this;
     }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use to encrypt the session
+     * data. The user or role creating the session must have permission to use the key.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/session-encryption.html">Amazon
+     * Bedrock session encryption</a>. </p>
+     */
+    inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
+    inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
+    template<typename EncryptionKeyArnT = Aws::String>
+    void SetEncryptionKeyArn(EncryptionKeyArnT&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value); }
+    template<typename EncryptionKeyArnT = Aws::String>
+    CreateSessionRequest& WithEncryptionKeyArn(EncryptionKeyArnT&& value) { SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,11 +85,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_encryptionKeyArn;
-    bool m_encryptionKeyArnHasBeenSet = false;
-
     Aws::Map<Aws::String, Aws::String> m_sessionMetadata;
     bool m_sessionMetadataHasBeenSet = false;
+
+    Aws::String m_encryptionKeyArn;
+    bool m_encryptionKeyArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

@@ -22,6 +22,8 @@ namespace Aws
 
         static const int MATCH_ALL_HASH = HashingUtils::HashString("MATCH_ALL");
         static const int MATCH_ANY_HASH = HashingUtils::HashString("MATCH_ANY");
+        static const int MATCH_EXACT_HASH = HashingUtils::HashString("MATCH_EXACT");
+        static const int MATCH_NONE_HASH = HashingUtils::HashString("MATCH_NONE");
 
 
         SearchContactsMatchType GetSearchContactsMatchTypeForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == MATCH_ANY_HASH)
           {
             return SearchContactsMatchType::MATCH_ANY;
+          }
+          else if (hashCode == MATCH_EXACT_HASH)
+          {
+            return SearchContactsMatchType::MATCH_EXACT;
+          }
+          else if (hashCode == MATCH_NONE_HASH)
+          {
+            return SearchContactsMatchType::MATCH_NONE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +65,10 @@ namespace Aws
             return "MATCH_ALL";
           case SearchContactsMatchType::MATCH_ANY:
             return "MATCH_ANY";
+          case SearchContactsMatchType::MATCH_EXACT:
+            return "MATCH_EXACT";
+          case SearchContactsMatchType::MATCH_NONE:
+            return "MATCH_NONE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

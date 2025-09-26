@@ -7,6 +7,7 @@
 #include <aws/billing/Billing_EXPORTS.h>
 #include <aws/billing/model/DimensionValues.h>
 #include <aws/billing/model/TagValues.h>
+#include <aws/billing/model/TimeRange.h>
 #include <utility>
 
 namespace Aws
@@ -64,6 +65,18 @@ namespace Model
     template<typename TagsT = TagValues>
     Expression& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> Specifies a time range filter for the billing view data. </p>
+     */
+    inline const TimeRange& GetTimeRange() const { return m_timeRange; }
+    inline bool TimeRangeHasBeenSet() const { return m_timeRangeHasBeenSet; }
+    template<typename TimeRangeT = TimeRange>
+    void SetTimeRange(TimeRangeT&& value) { m_timeRangeHasBeenSet = true; m_timeRange = std::forward<TimeRangeT>(value); }
+    template<typename TimeRangeT = TimeRange>
+    Expression& WithTimeRange(TimeRangeT&& value) { SetTimeRange(std::forward<TimeRangeT>(value)); return *this;}
+    ///@}
   private:
 
     DimensionValues m_dimensions;
@@ -71,6 +84,9 @@ namespace Model
 
     TagValues m_tags;
     bool m_tagsHasBeenSet = false;
+
+    TimeRange m_timeRange;
+    bool m_timeRangeHasBeenSet = false;
   };
 
 } // namespace Model

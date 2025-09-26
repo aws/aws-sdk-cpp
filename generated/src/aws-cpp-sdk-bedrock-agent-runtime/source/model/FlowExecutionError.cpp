@@ -25,6 +25,11 @@ FlowExecutionError::FlowExecutionError(JsonView jsonValue)
 
 FlowExecutionError& FlowExecutionError::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("nodeName"))
+  {
+    m_nodeName = jsonValue.GetString("nodeName");
+    m_nodeNameHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("error"))
   {
     m_error = FlowExecutionErrorTypeMapper::GetFlowExecutionErrorTypeForName(jsonValue.GetString("error"));
@@ -35,17 +40,18 @@ FlowExecutionError& FlowExecutionError::operator =(JsonView jsonValue)
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nodeName"))
-  {
-    m_nodeName = jsonValue.GetString("nodeName");
-    m_nodeNameHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue FlowExecutionError::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_nodeNameHasBeenSet)
+  {
+   payload.WithString("nodeName", m_nodeName);
+
+  }
 
   if(m_errorHasBeenSet)
   {
@@ -55,12 +61,6 @@ JsonValue FlowExecutionError::Jsonize() const
   if(m_messageHasBeenSet)
   {
    payload.WithString("message", m_message);
-
-  }
-
-  if(m_nodeNameHasBeenSet)
-  {
-   payload.WithString("nodeName", m_nodeName);
 
   }
 

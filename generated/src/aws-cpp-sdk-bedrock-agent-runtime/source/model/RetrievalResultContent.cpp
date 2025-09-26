@@ -25,6 +25,16 @@ RetrievalResultContent::RetrievalResultContent(JsonView jsonValue)
 
 RetrievalResultContent& RetrievalResultContent::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = RetrievalResultContentTypeMapper::GetRetrievalResultContentTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("text"))
+  {
+    m_text = jsonValue.GetString("text");
+    m_textHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("byteContent"))
   {
     m_byteContent = jsonValue.GetString("byteContent");
@@ -39,22 +49,23 @@ RetrievalResultContent& RetrievalResultContent::operator =(JsonView jsonValue)
     }
     m_rowHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("text"))
-  {
-    m_text = jsonValue.GetString("text");
-    m_textHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = RetrievalResultContentTypeMapper::GetRetrievalResultContentTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue RetrievalResultContent::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", RetrievalResultContentTypeMapper::GetNameForRetrievalResultContentType(m_type));
+  }
+
+  if(m_textHasBeenSet)
+  {
+   payload.WithString("text", m_text);
+
+  }
 
   if(m_byteContentHasBeenSet)
   {
@@ -71,17 +82,6 @@ JsonValue RetrievalResultContent::Jsonize() const
    }
    payload.WithArray("row", std::move(rowJsonList));
 
-  }
-
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("text", m_text);
-
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", RetrievalResultContentTypeMapper::GetNameForRetrievalResultContentType(m_type));
   }
 
   return payload;

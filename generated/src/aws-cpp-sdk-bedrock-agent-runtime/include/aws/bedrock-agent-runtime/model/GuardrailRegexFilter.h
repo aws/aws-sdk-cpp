@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/GuardrailSensitiveInformationPolicyAction.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent-runtime/model/GuardrailSensitiveInformationPolicyAction.h>
 #include <utility>
 
 namespace Aws
@@ -41,28 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The action details for the regex filter used in the Guardrail.</p>
-     */
-    inline GuardrailSensitiveInformationPolicyAction GetAction() const { return m_action; }
-    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(GuardrailSensitiveInformationPolicyAction value) { m_actionHasBeenSet = true; m_action = value; }
-    inline GuardrailRegexFilter& WithAction(GuardrailSensitiveInformationPolicyAction value) { SetAction(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The match details for the regex filter used in the Guardrail.</p>
-     */
-    inline const Aws::String& GetMatch() const { return m_match; }
-    inline bool MatchHasBeenSet() const { return m_matchHasBeenSet; }
-    template<typename MatchT = Aws::String>
-    void SetMatch(MatchT&& value) { m_matchHasBeenSet = true; m_match = std::forward<MatchT>(value); }
-    template<typename MatchT = Aws::String>
-    GuardrailRegexFilter& WithMatch(MatchT&& value) { SetMatch(std::forward<MatchT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name details for the regex filter used in the Guardrail.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
@@ -84,19 +62,41 @@ namespace Model
     template<typename RegexT = Aws::String>
     GuardrailRegexFilter& WithRegex(RegexT&& value) { SetRegex(std::forward<RegexT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The match details for the regex filter used in the Guardrail.</p>
+     */
+    inline const Aws::String& GetMatch() const { return m_match; }
+    inline bool MatchHasBeenSet() const { return m_matchHasBeenSet; }
+    template<typename MatchT = Aws::String>
+    void SetMatch(MatchT&& value) { m_matchHasBeenSet = true; m_match = std::forward<MatchT>(value); }
+    template<typename MatchT = Aws::String>
+    GuardrailRegexFilter& WithMatch(MatchT&& value) { SetMatch(std::forward<MatchT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The action details for the regex filter used in the Guardrail.</p>
+     */
+    inline GuardrailSensitiveInformationPolicyAction GetAction() const { return m_action; }
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+    inline void SetAction(GuardrailSensitiveInformationPolicyAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline GuardrailRegexFilter& WithAction(GuardrailSensitiveInformationPolicyAction value) { SetAction(value); return *this;}
+    ///@}
   private:
-
-    GuardrailSensitiveInformationPolicyAction m_action{GuardrailSensitiveInformationPolicyAction::NOT_SET};
-    bool m_actionHasBeenSet = false;
-
-    Aws::String m_match;
-    bool m_matchHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
     Aws::String m_regex;
     bool m_regexHasBeenSet = false;
+
+    Aws::String m_match;
+    bool m_matchHasBeenSet = false;
+
+    GuardrailSensitiveInformationPolicyAction m_action{GuardrailSensitiveInformationPolicyAction::NOT_SET};
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -261,15 +261,15 @@ DeleteAgentMemoryOutcome BedrockAgentRuntimeClient::DeleteAgentMemory(const Dele
 {
   AWS_OPERATION_GUARD(DeleteAgentMemory);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAgentMemory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AgentAliasIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteAgentMemory", "Required field: AgentAliasId, is not set");
-    return DeleteAgentMemoryOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentAliasId]", false));
-  }
   if (!request.AgentIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteAgentMemory", "Required field: AgentId, is not set");
     return DeleteAgentMemoryOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentId]", false));
+  }
+  if (!request.AgentAliasIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAgentMemory", "Required field: AgentAliasId, is not set");
+    return DeleteAgentMemoryOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentAliasId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteAgentMemory, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -395,25 +395,25 @@ GetAgentMemoryOutcome BedrockAgentRuntimeClient::GetAgentMemory(const GetAgentMe
 {
   AWS_OPERATION_GUARD(GetAgentMemory);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAgentMemory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AgentAliasIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetAgentMemory", "Required field: AgentAliasId, is not set");
-    return GetAgentMemoryOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentAliasId]", false));
-  }
   if (!request.AgentIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetAgentMemory", "Required field: AgentId, is not set");
     return GetAgentMemoryOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentId]", false));
   }
-  if (!request.MemoryIdHasBeenSet())
+  if (!request.AgentAliasIdHasBeenSet())
   {
-    AWS_LOGSTREAM_ERROR("GetAgentMemory", "Required field: MemoryId, is not set");
-    return GetAgentMemoryOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemoryId]", false));
+    AWS_LOGSTREAM_ERROR("GetAgentMemory", "Required field: AgentAliasId, is not set");
+    return GetAgentMemoryOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentAliasId]", false));
   }
   if (!request.MemoryTypeHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetAgentMemory", "Required field: MemoryType, is not set");
     return GetAgentMemoryOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemoryType]", false));
+  }
+  if (!request.MemoryIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAgentMemory", "Required field: MemoryId, is not set");
+    return GetAgentMemoryOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemoryId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetAgentMemory, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -446,20 +446,20 @@ GetExecutionFlowSnapshotOutcome BedrockAgentRuntimeClient::GetExecutionFlowSnaps
 {
   AWS_OPERATION_GUARD(GetExecutionFlowSnapshot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetExecutionFlowSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ExecutionIdentifierHasBeenSet())
+  if (!request.FlowIdentifierHasBeenSet())
   {
-    AWS_LOGSTREAM_ERROR("GetExecutionFlowSnapshot", "Required field: ExecutionIdentifier, is not set");
-    return GetExecutionFlowSnapshotOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExecutionIdentifier]", false));
+    AWS_LOGSTREAM_ERROR("GetExecutionFlowSnapshot", "Required field: FlowIdentifier, is not set");
+    return GetExecutionFlowSnapshotOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowIdentifier]", false));
   }
   if (!request.FlowAliasIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetExecutionFlowSnapshot", "Required field: FlowAliasIdentifier, is not set");
     return GetExecutionFlowSnapshotOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowAliasIdentifier]", false));
   }
-  if (!request.FlowIdentifierHasBeenSet())
+  if (!request.ExecutionIdentifierHasBeenSet())
   {
-    AWS_LOGSTREAM_ERROR("GetExecutionFlowSnapshot", "Required field: FlowIdentifier, is not set");
-    return GetExecutionFlowSnapshotOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowIdentifier]", false));
+    AWS_LOGSTREAM_ERROR("GetExecutionFlowSnapshot", "Required field: ExecutionIdentifier, is not set");
+    return GetExecutionFlowSnapshotOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExecutionIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetExecutionFlowSnapshot, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -494,20 +494,20 @@ GetFlowExecutionOutcome BedrockAgentRuntimeClient::GetFlowExecution(const GetFlo
 {
   AWS_OPERATION_GUARD(GetFlowExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFlowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ExecutionIdentifierHasBeenSet())
+  if (!request.FlowIdentifierHasBeenSet())
   {
-    AWS_LOGSTREAM_ERROR("GetFlowExecution", "Required field: ExecutionIdentifier, is not set");
-    return GetFlowExecutionOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExecutionIdentifier]", false));
+    AWS_LOGSTREAM_ERROR("GetFlowExecution", "Required field: FlowIdentifier, is not set");
+    return GetFlowExecutionOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowIdentifier]", false));
   }
   if (!request.FlowAliasIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetFlowExecution", "Required field: FlowAliasIdentifier, is not set");
     return GetFlowExecutionOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowAliasIdentifier]", false));
   }
-  if (!request.FlowIdentifierHasBeenSet())
+  if (!request.ExecutionIdentifierHasBeenSet())
   {
-    AWS_LOGSTREAM_ERROR("GetFlowExecution", "Required field: FlowIdentifier, is not set");
-    return GetFlowExecutionOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowIdentifier]", false));
+    AWS_LOGSTREAM_ERROR("GetFlowExecution", "Required field: ExecutionIdentifier, is not set");
+    return GetFlowExecutionOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExecutionIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetFlowExecution, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -614,15 +614,15 @@ InvokeAgentOutcome BedrockAgentRuntimeClient::InvokeAgent(InvokeAgentRequest& re
 {
   AWS_OPERATION_GUARD(InvokeAgent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, InvokeAgent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AgentAliasIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("InvokeAgent", "Required field: AgentAliasId, is not set");
-    return InvokeAgentOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentAliasId]", false));
-  }
   if (!request.AgentIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("InvokeAgent", "Required field: AgentId, is not set");
     return InvokeAgentOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentId]", false));
+  }
+  if (!request.AgentAliasIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("InvokeAgent", "Required field: AgentAliasId, is not set");
+    return InvokeAgentOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentAliasId]", false));
   }
   if (!request.SessionIdHasBeenSet())
   {
@@ -673,15 +673,15 @@ InvokeFlowOutcome BedrockAgentRuntimeClient::InvokeFlow(InvokeFlowRequest& reque
 {
   AWS_OPERATION_GUARD(InvokeFlow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, InvokeFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.FlowAliasIdentifierHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("InvokeFlow", "Required field: FlowAliasIdentifier, is not set");
-    return InvokeFlowOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowAliasIdentifier]", false));
-  }
   if (!request.FlowIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("InvokeFlow", "Required field: FlowIdentifier, is not set");
     return InvokeFlowOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowIdentifier]", false));
+  }
+  if (!request.FlowAliasIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("InvokeFlow", "Required field: FlowAliasIdentifier, is not set");
+    return InvokeFlowOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowAliasIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, InvokeFlow, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -768,25 +768,25 @@ ListFlowExecutionEventsOutcome BedrockAgentRuntimeClient::ListFlowExecutionEvent
 {
   AWS_OPERATION_GUARD(ListFlowExecutionEvents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFlowExecutionEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.EventTypeHasBeenSet())
+  if (!request.FlowIdentifierHasBeenSet())
   {
-    AWS_LOGSTREAM_ERROR("ListFlowExecutionEvents", "Required field: EventType, is not set");
-    return ListFlowExecutionEventsOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EventType]", false));
-  }
-  if (!request.ExecutionIdentifierHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListFlowExecutionEvents", "Required field: ExecutionIdentifier, is not set");
-    return ListFlowExecutionEventsOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExecutionIdentifier]", false));
+    AWS_LOGSTREAM_ERROR("ListFlowExecutionEvents", "Required field: FlowIdentifier, is not set");
+    return ListFlowExecutionEventsOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowIdentifier]", false));
   }
   if (!request.FlowAliasIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListFlowExecutionEvents", "Required field: FlowAliasIdentifier, is not set");
     return ListFlowExecutionEventsOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowAliasIdentifier]", false));
   }
-  if (!request.FlowIdentifierHasBeenSet())
+  if (!request.ExecutionIdentifierHasBeenSet())
   {
-    AWS_LOGSTREAM_ERROR("ListFlowExecutionEvents", "Required field: FlowIdentifier, is not set");
-    return ListFlowExecutionEventsOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowIdentifier]", false));
+    AWS_LOGSTREAM_ERROR("ListFlowExecutionEvents", "Required field: ExecutionIdentifier, is not set");
+    return ListFlowExecutionEventsOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExecutionIdentifier]", false));
+  }
+  if (!request.EventTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListFlowExecutionEvents", "Required field: EventType, is not set");
+    return ListFlowExecutionEventsOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EventType]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListFlowExecutionEvents, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1181,15 +1181,15 @@ StartFlowExecutionOutcome BedrockAgentRuntimeClient::StartFlowExecution(const St
 {
   AWS_OPERATION_GUARD(StartFlowExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartFlowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.FlowAliasIdentifierHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("StartFlowExecution", "Required field: FlowAliasIdentifier, is not set");
-    return StartFlowExecutionOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowAliasIdentifier]", false));
-  }
   if (!request.FlowIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StartFlowExecution", "Required field: FlowIdentifier, is not set");
     return StartFlowExecutionOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowIdentifier]", false));
+  }
+  if (!request.FlowAliasIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartFlowExecution", "Required field: FlowAliasIdentifier, is not set");
+    return StartFlowExecutionOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowAliasIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartFlowExecution, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1222,20 +1222,20 @@ StopFlowExecutionOutcome BedrockAgentRuntimeClient::StopFlowExecution(const Stop
 {
   AWS_OPERATION_GUARD(StopFlowExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopFlowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ExecutionIdentifierHasBeenSet())
+  if (!request.FlowIdentifierHasBeenSet())
   {
-    AWS_LOGSTREAM_ERROR("StopFlowExecution", "Required field: ExecutionIdentifier, is not set");
-    return StopFlowExecutionOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExecutionIdentifier]", false));
+    AWS_LOGSTREAM_ERROR("StopFlowExecution", "Required field: FlowIdentifier, is not set");
+    return StopFlowExecutionOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowIdentifier]", false));
   }
   if (!request.FlowAliasIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StopFlowExecution", "Required field: FlowAliasIdentifier, is not set");
     return StopFlowExecutionOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowAliasIdentifier]", false));
   }
-  if (!request.FlowIdentifierHasBeenSet())
+  if (!request.ExecutionIdentifierHasBeenSet())
   {
-    AWS_LOGSTREAM_ERROR("StopFlowExecution", "Required field: FlowIdentifier, is not set");
-    return StopFlowExecutionOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowIdentifier]", false));
+    AWS_LOGSTREAM_ERROR("StopFlowExecution", "Required field: ExecutionIdentifier, is not set");
+    return StopFlowExecutionOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExecutionIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StopFlowExecution, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});

@@ -22,12 +22,6 @@ Aws::String PutInvocationStepRequest::SerializePayload() const
 
   }
 
-  if(m_invocationStepIdHasBeenSet)
-  {
-   payload.WithString("invocationStepId", m_invocationStepId);
-
-  }
-
   if(m_invocationStepTimeHasBeenSet)
   {
    payload.WithString("invocationStepTime", m_invocationStepTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
@@ -36,6 +30,12 @@ Aws::String PutInvocationStepRequest::SerializePayload() const
   if(m_payloadHasBeenSet)
   {
    payload.WithObject("payload", m_payload.Jsonize());
+
+  }
+
+  if(m_invocationStepIdHasBeenSet)
+  {
+   payload.WithString("invocationStepId", m_invocationStepId);
 
   }
 

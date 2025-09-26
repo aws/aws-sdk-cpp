@@ -5,13 +5,15 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/ConditionResultEvent.h>
-#include <aws/bedrock-agent-runtime/model/FlowFailureEvent.h>
 #include <aws/bedrock-agent-runtime/model/FlowExecutionInputEvent.h>
 #include <aws/bedrock-agent-runtime/model/FlowExecutionOutputEvent.h>
-#include <aws/bedrock-agent-runtime/model/NodeFailureEvent.h>
 #include <aws/bedrock-agent-runtime/model/NodeInputEvent.h>
 #include <aws/bedrock-agent-runtime/model/NodeOutputEvent.h>
+#include <aws/bedrock-agent-runtime/model/ConditionResultEvent.h>
+#include <aws/bedrock-agent-runtime/model/NodeFailureEvent.h>
+#include <aws/bedrock-agent-runtime/model/FlowFailureEvent.h>
+#include <aws/bedrock-agent-runtime/model/NodeActionEvent.h>
+#include <aws/bedrock-agent-runtime/model/NodeDependencyEvent.h>
 #include <utility>
 
 namespace Aws
@@ -49,33 +51,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains information about a condition evaluation result during the flow
-     * execution. This event is generated when a condition node in the flow evaluates
-     * its conditions.</p>
-     */
-    inline const ConditionResultEvent& GetConditionResultEvent() const { return m_conditionResultEvent; }
-    inline bool ConditionResultEventHasBeenSet() const { return m_conditionResultEventHasBeenSet; }
-    template<typename ConditionResultEventT = ConditionResultEvent>
-    void SetConditionResultEvent(ConditionResultEventT&& value) { m_conditionResultEventHasBeenSet = true; m_conditionResultEvent = std::forward<ConditionResultEventT>(value); }
-    template<typename ConditionResultEventT = ConditionResultEvent>
-    FlowExecutionEvent& WithConditionResultEvent(ConditionResultEventT&& value) { SetConditionResultEvent(std::forward<ConditionResultEventT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Contains information about a failure that occurred at the flow level during
-     * execution.</p>
-     */
-    inline const FlowFailureEvent& GetFlowFailureEvent() const { return m_flowFailureEvent; }
-    inline bool FlowFailureEventHasBeenSet() const { return m_flowFailureEventHasBeenSet; }
-    template<typename FlowFailureEventT = FlowFailureEvent>
-    void SetFlowFailureEvent(FlowFailureEventT&& value) { m_flowFailureEventHasBeenSet = true; m_flowFailureEvent = std::forward<FlowFailureEventT>(value); }
-    template<typename FlowFailureEventT = FlowFailureEvent>
-    FlowExecutionEvent& WithFlowFailureEvent(FlowFailureEventT&& value) { SetFlowFailureEvent(std::forward<FlowFailureEventT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Contains information about the inputs provided to the flow at the start of
      * execution.</p>
      */
@@ -98,19 +73,6 @@ namespace Model
     void SetFlowOutputEvent(FlowOutputEventT&& value) { m_flowOutputEventHasBeenSet = true; m_flowOutputEvent = std::forward<FlowOutputEventT>(value); }
     template<typename FlowOutputEventT = FlowExecutionOutputEvent>
     FlowExecutionEvent& WithFlowOutputEvent(FlowOutputEventT&& value) { SetFlowOutputEvent(std::forward<FlowOutputEventT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Contains information about a failure that occurred at a specific node during
-     * execution.</p>
-     */
-    inline const NodeFailureEvent& GetNodeFailureEvent() const { return m_nodeFailureEvent; }
-    inline bool NodeFailureEventHasBeenSet() const { return m_nodeFailureEventHasBeenSet; }
-    template<typename NodeFailureEventT = NodeFailureEvent>
-    void SetNodeFailureEvent(NodeFailureEventT&& value) { m_nodeFailureEventHasBeenSet = true; m_nodeFailureEvent = std::forward<NodeFailureEventT>(value); }
-    template<typename NodeFailureEventT = NodeFailureEvent>
-    FlowExecutionEvent& WithNodeFailureEvent(NodeFailureEventT&& value) { SetNodeFailureEvent(std::forward<NodeFailureEventT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,13 +100,73 @@ namespace Model
     template<typename NodeOutputEventT = NodeOutputEvent>
     FlowExecutionEvent& WithNodeOutputEvent(NodeOutputEventT&& value) { SetNodeOutputEvent(std::forward<NodeOutputEventT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains information about a condition evaluation result during the flow
+     * execution. This event is generated when a condition node in the flow evaluates
+     * its conditions.</p>
+     */
+    inline const ConditionResultEvent& GetConditionResultEvent() const { return m_conditionResultEvent; }
+    inline bool ConditionResultEventHasBeenSet() const { return m_conditionResultEventHasBeenSet; }
+    template<typename ConditionResultEventT = ConditionResultEvent>
+    void SetConditionResultEvent(ConditionResultEventT&& value) { m_conditionResultEventHasBeenSet = true; m_conditionResultEvent = std::forward<ConditionResultEventT>(value); }
+    template<typename ConditionResultEventT = ConditionResultEvent>
+    FlowExecutionEvent& WithConditionResultEvent(ConditionResultEventT&& value) { SetConditionResultEvent(std::forward<ConditionResultEventT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains information about a failure that occurred at a specific node during
+     * execution.</p>
+     */
+    inline const NodeFailureEvent& GetNodeFailureEvent() const { return m_nodeFailureEvent; }
+    inline bool NodeFailureEventHasBeenSet() const { return m_nodeFailureEventHasBeenSet; }
+    template<typename NodeFailureEventT = NodeFailureEvent>
+    void SetNodeFailureEvent(NodeFailureEventT&& value) { m_nodeFailureEventHasBeenSet = true; m_nodeFailureEvent = std::forward<NodeFailureEventT>(value); }
+    template<typename NodeFailureEventT = NodeFailureEvent>
+    FlowExecutionEvent& WithNodeFailureEvent(NodeFailureEventT&& value) { SetNodeFailureEvent(std::forward<NodeFailureEventT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains information about a failure that occurred at the flow level during
+     * execution.</p>
+     */
+    inline const FlowFailureEvent& GetFlowFailureEvent() const { return m_flowFailureEvent; }
+    inline bool FlowFailureEventHasBeenSet() const { return m_flowFailureEventHasBeenSet; }
+    template<typename FlowFailureEventT = FlowFailureEvent>
+    void SetFlowFailureEvent(FlowFailureEventT&& value) { m_flowFailureEventHasBeenSet = true; m_flowFailureEvent = std::forward<FlowFailureEventT>(value); }
+    template<typename FlowFailureEventT = FlowFailureEvent>
+    FlowExecutionEvent& WithFlowFailureEvent(FlowFailureEventT&& value) { SetFlowFailureEvent(std::forward<FlowFailureEventT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains information about an action (operation) called by a node during
+     * execution.</p>
+     */
+    inline const NodeActionEvent& GetNodeActionEvent() const { return m_nodeActionEvent; }
+    inline bool NodeActionEventHasBeenSet() const { return m_nodeActionEventHasBeenSet; }
+    template<typename NodeActionEventT = NodeActionEvent>
+    void SetNodeActionEvent(NodeActionEventT&& value) { m_nodeActionEventHasBeenSet = true; m_nodeActionEvent = std::forward<NodeActionEventT>(value); }
+    template<typename NodeActionEventT = NodeActionEvent>
+    FlowExecutionEvent& WithNodeActionEvent(NodeActionEventT&& value) { SetNodeActionEvent(std::forward<NodeActionEventT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains information about an internal trace of a specific node during
+     * execution.</p>
+     */
+    inline const NodeDependencyEvent& GetNodeDependencyEvent() const { return m_nodeDependencyEvent; }
+    inline bool NodeDependencyEventHasBeenSet() const { return m_nodeDependencyEventHasBeenSet; }
+    template<typename NodeDependencyEventT = NodeDependencyEvent>
+    void SetNodeDependencyEvent(NodeDependencyEventT&& value) { m_nodeDependencyEventHasBeenSet = true; m_nodeDependencyEvent = std::forward<NodeDependencyEventT>(value); }
+    template<typename NodeDependencyEventT = NodeDependencyEvent>
+    FlowExecutionEvent& WithNodeDependencyEvent(NodeDependencyEventT&& value) { SetNodeDependencyEvent(std::forward<NodeDependencyEventT>(value)); return *this;}
+    ///@}
   private:
-
-    ConditionResultEvent m_conditionResultEvent;
-    bool m_conditionResultEventHasBeenSet = false;
-
-    FlowFailureEvent m_flowFailureEvent;
-    bool m_flowFailureEventHasBeenSet = false;
 
     FlowExecutionInputEvent m_flowInputEvent;
     bool m_flowInputEventHasBeenSet = false;
@@ -152,14 +174,26 @@ namespace Model
     FlowExecutionOutputEvent m_flowOutputEvent;
     bool m_flowOutputEventHasBeenSet = false;
 
-    NodeFailureEvent m_nodeFailureEvent;
-    bool m_nodeFailureEventHasBeenSet = false;
-
     NodeInputEvent m_nodeInputEvent;
     bool m_nodeInputEventHasBeenSet = false;
 
     NodeOutputEvent m_nodeOutputEvent;
     bool m_nodeOutputEventHasBeenSet = false;
+
+    ConditionResultEvent m_conditionResultEvent;
+    bool m_conditionResultEventHasBeenSet = false;
+
+    NodeFailureEvent m_nodeFailureEvent;
+    bool m_nodeFailureEventHasBeenSet = false;
+
+    FlowFailureEvent m_flowFailureEvent;
+    bool m_flowFailureEventHasBeenSet = false;
+
+    NodeActionEvent m_nodeActionEvent;
+    bool m_nodeActionEventHasBeenSet = false;
+
+    NodeDependencyEvent m_nodeDependencyEvent;
+    bool m_nodeDependencyEventHasBeenSet = false;
   };
 
 } // namespace Model

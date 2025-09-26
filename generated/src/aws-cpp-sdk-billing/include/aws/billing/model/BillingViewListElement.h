@@ -7,6 +7,7 @@
 #include <aws/billing/Billing_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/billing/model/BillingViewType.h>
+#include <aws/billing/model/BillingViewHealthStatus.h>
 #include <utility>
 
 namespace Aws
@@ -89,12 +90,37 @@ namespace Model
 
     ///@{
     /**
+     * <p> The Amazon Web Services account ID that owns the source billing view, if
+     * this is a derived billing view. </p>
+     */
+    inline const Aws::String& GetSourceAccountId() const { return m_sourceAccountId; }
+    inline bool SourceAccountIdHasBeenSet() const { return m_sourceAccountIdHasBeenSet; }
+    template<typename SourceAccountIdT = Aws::String>
+    void SetSourceAccountId(SourceAccountIdT&& value) { m_sourceAccountIdHasBeenSet = true; m_sourceAccountId = std::forward<SourceAccountIdT>(value); }
+    template<typename SourceAccountIdT = Aws::String>
+    BillingViewListElement& WithSourceAccountId(SourceAccountIdT&& value) { SetSourceAccountId(std::forward<SourceAccountIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The type of billing view.</p>
      */
     inline BillingViewType GetBillingViewType() const { return m_billingViewType; }
     inline bool BillingViewTypeHasBeenSet() const { return m_billingViewTypeHasBeenSet; }
     inline void SetBillingViewType(BillingViewType value) { m_billingViewTypeHasBeenSet = true; m_billingViewType = value; }
     inline BillingViewListElement& WithBillingViewType(BillingViewType value) { SetBillingViewType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The current health status of the billing view. </p>
+     */
+    inline const BillingViewHealthStatus& GetHealthStatus() const { return m_healthStatus; }
+    inline bool HealthStatusHasBeenSet() const { return m_healthStatusHasBeenSet; }
+    template<typename HealthStatusT = BillingViewHealthStatus>
+    void SetHealthStatus(HealthStatusT&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = std::forward<HealthStatusT>(value); }
+    template<typename HealthStatusT = BillingViewHealthStatus>
+    BillingViewListElement& WithHealthStatus(HealthStatusT&& value) { SetHealthStatus(std::forward<HealthStatusT>(value)); return *this;}
     ///@}
   private:
 
@@ -110,8 +136,14 @@ namespace Model
     Aws::String m_ownerAccountId;
     bool m_ownerAccountIdHasBeenSet = false;
 
+    Aws::String m_sourceAccountId;
+    bool m_sourceAccountIdHasBeenSet = false;
+
     BillingViewType m_billingViewType{BillingViewType::NOT_SET};
     bool m_billingViewTypeHasBeenSet = false;
+
+    BillingViewHealthStatus m_healthStatus;
+    bool m_healthStatusHasBeenSet = false;
   };
 
 } // namespace Model

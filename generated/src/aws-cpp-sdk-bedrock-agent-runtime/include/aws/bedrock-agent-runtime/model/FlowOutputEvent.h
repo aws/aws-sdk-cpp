@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/FlowOutputContent.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent-runtime/model/NodeType.h>
+#include <aws/bedrock-agent-runtime/model/FlowOutputContent.h>
 #include <utility>
 
 namespace Aws
@@ -42,18 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The content in the output.</p>
-     */
-    inline const FlowOutputContent& GetContent() const { return m_content; }
-    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    template<typename ContentT = FlowOutputContent>
-    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
-    template<typename ContentT = FlowOutputContent>
-    FlowOutputEvent& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the flow output node that the output is from.</p>
      */
     inline const Aws::String& GetNodeName() const { return m_nodeName; }
@@ -73,16 +61,28 @@ namespace Model
     inline void SetNodeType(NodeType value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
     inline FlowOutputEvent& WithNodeType(NodeType value) { SetNodeType(value); return *this;}
     ///@}
-  private:
 
-    FlowOutputContent m_content;
-    bool m_contentHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The content in the output.</p>
+     */
+    inline const FlowOutputContent& GetContent() const { return m_content; }
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
+    template<typename ContentT = FlowOutputContent>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = FlowOutputContent>
+    FlowOutputEvent& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_nodeName;
     bool m_nodeNameHasBeenSet = false;
 
     NodeType m_nodeType{NodeType::NOT_SET};
     bool m_nodeTypeHasBeenSet = false;
+
+    FlowOutputContent m_content;
+    bool m_contentHasBeenSet = false;
   };
 
 } // namespace Model

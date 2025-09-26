@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/connect/model/AgentAvailabilityTimer.h>
 #include <aws/connect/model/RoutingProfileQueueConfig.h>
+#include <aws/connect/model/RoutingProfileManualAssignmentQueueConfig.h>
 #include <aws/connect/model/MediaConcurrency.h>
 #include <utility>
 
@@ -110,6 +111,26 @@ namespace Model
 
     ///@{
     /**
+     * <p>The manual assignment queues associated with the routing profile. If no queue
+     * is added, agents and supervisors can't pick or assign any contacts from this
+     * routing profile. The limit of 10 array members applies to the maximum number of
+     * RoutingProfileManualAssignmentQueueConfig objects that can be passed during a
+     * CreateRoutingProfile API request. It is different from the quota of 50 queues
+     * per routing profile per instance that is listed in Amazon Connect service
+     * quotas.</p>
+     */
+    inline const Aws::Vector<RoutingProfileManualAssignmentQueueConfig>& GetManualAssignmentQueueConfigs() const { return m_manualAssignmentQueueConfigs; }
+    inline bool ManualAssignmentQueueConfigsHasBeenSet() const { return m_manualAssignmentQueueConfigsHasBeenSet; }
+    template<typename ManualAssignmentQueueConfigsT = Aws::Vector<RoutingProfileManualAssignmentQueueConfig>>
+    void SetManualAssignmentQueueConfigs(ManualAssignmentQueueConfigsT&& value) { m_manualAssignmentQueueConfigsHasBeenSet = true; m_manualAssignmentQueueConfigs = std::forward<ManualAssignmentQueueConfigsT>(value); }
+    template<typename ManualAssignmentQueueConfigsT = Aws::Vector<RoutingProfileManualAssignmentQueueConfig>>
+    CreateRoutingProfileRequest& WithManualAssignmentQueueConfigs(ManualAssignmentQueueConfigsT&& value) { SetManualAssignmentQueueConfigs(std::forward<ManualAssignmentQueueConfigsT>(value)); return *this;}
+    template<typename ManualAssignmentQueueConfigsT = RoutingProfileManualAssignmentQueueConfig>
+    CreateRoutingProfileRequest& AddManualAssignmentQueueConfigs(ManualAssignmentQueueConfigsT&& value) { m_manualAssignmentQueueConfigsHasBeenSet = true; m_manualAssignmentQueueConfigs.emplace_back(std::forward<ManualAssignmentQueueConfigsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The channels that agents can handle in the Contact Control Panel (CCP) for
      * this routing profile.</p>
      */
@@ -167,6 +188,9 @@ namespace Model
 
     Aws::Vector<RoutingProfileQueueConfig> m_queueConfigs;
     bool m_queueConfigsHasBeenSet = false;
+
+    Aws::Vector<RoutingProfileManualAssignmentQueueConfig> m_manualAssignmentQueueConfigs;
+    bool m_manualAssignmentQueueConfigsHasBeenSet = false;
 
     Aws::Vector<MediaConcurrency> m_mediaConcurrencies;
     bool m_mediaConcurrenciesHasBeenSet = false;

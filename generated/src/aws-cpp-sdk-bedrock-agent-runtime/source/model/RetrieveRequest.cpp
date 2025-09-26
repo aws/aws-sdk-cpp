@@ -16,15 +16,9 @@ Aws::String RetrieveRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_guardrailConfigurationHasBeenSet)
+  if(m_retrievalQueryHasBeenSet)
   {
-   payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
-
-  }
-
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
+   payload.WithObject("retrievalQuery", m_retrievalQuery.Jsonize());
 
   }
 
@@ -34,9 +28,15 @@ Aws::String RetrieveRequest::SerializePayload() const
 
   }
 
-  if(m_retrievalQueryHasBeenSet)
+  if(m_guardrailConfigurationHasBeenSet)
   {
-   payload.WithObject("retrievalQuery", m_retrievalQuery.Jsonize());
+   payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
+
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+   payload.WithString("nextToken", m_nextToken);
 
   }
 

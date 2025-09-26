@@ -11,9 +11,9 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeErrors.h>
 
 #include <aws/bedrock-agent-runtime/model/RetrieveAndGenerateStreamInitialResponse.h>
+#include <aws/bedrock-agent-runtime/model/RetrieveAndGenerateOutputEvent.h>
 #include <aws/bedrock-agent-runtime/model/CitationEvent.h>
 #include <aws/bedrock-agent-runtime/model/GuardrailEvent.h>
-#include <aws/bedrock-agent-runtime/model/RetrieveAndGenerateOutputEvent.h>
 
 namespace Aws
 {
@@ -24,9 +24,9 @@ namespace Model
     enum class RetrieveAndGenerateStreamEventType
     {
         INITIAL_RESPONSE,
+        OUTPUT,
         CITATION,
         GUARDRAIL,
-        OUTPUT,
         UNKNOWN
     };
 
@@ -34,9 +34,9 @@ namespace Model
     {
         typedef std::function<void(const RetrieveAndGenerateStreamInitialResponse&)> RetrieveAndGenerateStreamInitialResponseCallback;
         typedef std::function<void(const RetrieveAndGenerateStreamInitialResponse&, const Utils::Event::InitialResponseType)> RetrieveAndGenerateStreamInitialResponseCallbackEx;
+        typedef std::function<void(const RetrieveAndGenerateOutputEvent&)> RetrieveAndGenerateOutputEventCallback;
         typedef std::function<void(const CitationEvent&)> CitationEventCallback;
         typedef std::function<void(const GuardrailEvent&)> GuardrailEventCallback;
-        typedef std::function<void(const RetrieveAndGenerateOutputEvent&)> RetrieveAndGenerateOutputEventCallback;
         typedef std::function<void(const Aws::Client::AWSError<BedrockAgentRuntimeErrors>& error)> ErrorCallback;
 
     public:
@@ -62,9 +62,9 @@ namespace Model
             m_onInitialResponse = [noArgCallback](const RetrieveAndGenerateStreamInitialResponse& rs, const Utils::Event::InitialResponseType) { return noArgCallback(rs); };
         }
         ///@}
+        inline void SetRetrieveAndGenerateOutputEventCallback(const RetrieveAndGenerateOutputEventCallback& callback) { m_onRetrieveAndGenerateOutputEvent = callback; }
         inline void SetCitationEventCallback(const CitationEventCallback& callback) { m_onCitationEvent = callback; }
         inline void SetGuardrailEventCallback(const GuardrailEventCallback& callback) { m_onGuardrailEvent = callback; }
-        inline void SetRetrieveAndGenerateOutputEventCallback(const RetrieveAndGenerateOutputEventCallback& callback) { m_onRetrieveAndGenerateOutputEvent = callback; }
         inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
         inline RetrieveAndGenerateStreamInitialResponseCallbackEx& GetInitialResponseCallbackEx() { return m_onInitialResponse; }
@@ -75,9 +75,9 @@ namespace Model
         AWS_BEDROCKAGENTRUNTIME_API void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
 
         RetrieveAndGenerateStreamInitialResponseCallbackEx m_onInitialResponse;
+        RetrieveAndGenerateOutputEventCallback m_onRetrieveAndGenerateOutputEvent;
         CitationEventCallback m_onCitationEvent;
         GuardrailEventCallback m_onGuardrailEvent;
-        RetrieveAndGenerateOutputEventCallback m_onRetrieveAndGenerateOutputEvent;
         ErrorCallback m_onError;
     };
 

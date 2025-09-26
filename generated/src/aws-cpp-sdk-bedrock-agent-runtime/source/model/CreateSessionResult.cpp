@@ -25,25 +25,25 @@ CreateSessionResult::CreateSessionResult(const Aws::AmazonWebServiceResult<JsonV
 CreateSessionResult& CreateSessionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("sessionId"))
   {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
+    m_sessionId = jsonValue.GetString("sessionId");
+    m_sessionIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("sessionArn"))
   {
     m_sessionArn = jsonValue.GetString("sessionArn");
     m_sessionArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sessionId"))
-  {
-    m_sessionId = jsonValue.GetString("sessionId");
-    m_sessionIdHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("sessionStatus"))
   {
     m_sessionStatus = SessionStatusMapper::GetSessionStatusForName(jsonValue.GetString("sessionStatus"));
     m_sessionStatusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -12,9 +12,9 @@
 
 #include <aws/bedrock-agent-runtime/model/InvokeInlineAgentInitialResponse.h>
 #include <aws/bedrock-agent-runtime/model/InlineAgentPayloadPart.h>
-#include <aws/bedrock-agent-runtime/model/InlineAgentFilePart.h>
-#include <aws/bedrock-agent-runtime/model/InlineAgentReturnControlPayload.h>
 #include <aws/bedrock-agent-runtime/model/InlineAgentTracePart.h>
+#include <aws/bedrock-agent-runtime/model/InlineAgentReturnControlPayload.h>
+#include <aws/bedrock-agent-runtime/model/InlineAgentFilePart.h>
 
 namespace Aws
 {
@@ -26,9 +26,9 @@ namespace Model
     {
         INITIAL_RESPONSE,
         CHUNK,
-        FILES,
-        RETURNCONTROL,
         TRACE,
+        RETURNCONTROL,
+        FILES,
         UNKNOWN
     };
 
@@ -37,9 +37,9 @@ namespace Model
         typedef std::function<void(const InvokeInlineAgentInitialResponse&)> InvokeInlineAgentInitialResponseCallback;
         typedef std::function<void(const InvokeInlineAgentInitialResponse&, const Utils::Event::InitialResponseType)> InvokeInlineAgentInitialResponseCallbackEx;
         typedef std::function<void(const InlineAgentPayloadPart&)> InlineAgentPayloadPartCallback;
-        typedef std::function<void(const InlineAgentFilePart&)> InlineAgentFilePartCallback;
-        typedef std::function<void(const InlineAgentReturnControlPayload&)> InlineAgentReturnControlPayloadCallback;
         typedef std::function<void(const InlineAgentTracePart&)> InlineAgentTracePartCallback;
+        typedef std::function<void(const InlineAgentReturnControlPayload&)> InlineAgentReturnControlPayloadCallback;
+        typedef std::function<void(const InlineAgentFilePart&)> InlineAgentFilePartCallback;
         typedef std::function<void(const Aws::Client::AWSError<BedrockAgentRuntimeErrors>& error)> ErrorCallback;
 
     public:
@@ -66,9 +66,9 @@ namespace Model
         }
         ///@}
         inline void SetInlineAgentPayloadPartCallback(const InlineAgentPayloadPartCallback& callback) { m_onInlineAgentPayloadPart = callback; }
-        inline void SetInlineAgentFilePartCallback(const InlineAgentFilePartCallback& callback) { m_onInlineAgentFilePart = callback; }
-        inline void SetInlineAgentReturnControlPayloadCallback(const InlineAgentReturnControlPayloadCallback& callback) { m_onInlineAgentReturnControlPayload = callback; }
         inline void SetInlineAgentTracePartCallback(const InlineAgentTracePartCallback& callback) { m_onInlineAgentTracePart = callback; }
+        inline void SetInlineAgentReturnControlPayloadCallback(const InlineAgentReturnControlPayloadCallback& callback) { m_onInlineAgentReturnControlPayload = callback; }
+        inline void SetInlineAgentFilePartCallback(const InlineAgentFilePartCallback& callback) { m_onInlineAgentFilePart = callback; }
         inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
         inline InvokeInlineAgentInitialResponseCallbackEx& GetInitialResponseCallbackEx() { return m_onInitialResponse; }
@@ -80,9 +80,9 @@ namespace Model
 
         InvokeInlineAgentInitialResponseCallbackEx m_onInitialResponse;
         InlineAgentPayloadPartCallback m_onInlineAgentPayloadPart;
-        InlineAgentFilePartCallback m_onInlineAgentFilePart;
-        InlineAgentReturnControlPayloadCallback m_onInlineAgentReturnControlPayload;
         InlineAgentTracePartCallback m_onInlineAgentTracePart;
+        InlineAgentReturnControlPayloadCallback m_onInlineAgentReturnControlPayload;
+        InlineAgentFilePartCallback m_onInlineAgentFilePart;
         ErrorCallback m_onError;
     };
 

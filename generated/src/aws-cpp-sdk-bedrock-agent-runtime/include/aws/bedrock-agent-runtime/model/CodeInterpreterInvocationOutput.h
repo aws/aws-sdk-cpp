@@ -42,18 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains the error returned from code execution.</p>
-     */
-    inline const Aws::String& GetExecutionError() const { return m_executionError; }
-    inline bool ExecutionErrorHasBeenSet() const { return m_executionErrorHasBeenSet; }
-    template<typename ExecutionErrorT = Aws::String>
-    void SetExecutionError(ExecutionErrorT&& value) { m_executionErrorHasBeenSet = true; m_executionError = std::forward<ExecutionErrorT>(value); }
-    template<typename ExecutionErrorT = Aws::String>
-    CodeInterpreterInvocationOutput& WithExecutionError(ExecutionErrorT&& value) { SetExecutionError(std::forward<ExecutionErrorT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Contains the successful output returned from code execution</p>
      */
     inline const Aws::String& GetExecutionOutput() const { return m_executionOutput; }
@@ -66,12 +54,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates if the execution of the code timed out.</p>
+     * <p>Contains the error returned from code execution.</p>
      */
-    inline bool GetExecutionTimeout() const { return m_executionTimeout; }
-    inline bool ExecutionTimeoutHasBeenSet() const { return m_executionTimeoutHasBeenSet; }
-    inline void SetExecutionTimeout(bool value) { m_executionTimeoutHasBeenSet = true; m_executionTimeout = value; }
-    inline CodeInterpreterInvocationOutput& WithExecutionTimeout(bool value) { SetExecutionTimeout(value); return *this;}
+    inline const Aws::String& GetExecutionError() const { return m_executionError; }
+    inline bool ExecutionErrorHasBeenSet() const { return m_executionErrorHasBeenSet; }
+    template<typename ExecutionErrorT = Aws::String>
+    void SetExecutionError(ExecutionErrorT&& value) { m_executionErrorHasBeenSet = true; m_executionError = std::forward<ExecutionErrorT>(value); }
+    template<typename ExecutionErrorT = Aws::String>
+    CodeInterpreterInvocationOutput& WithExecutionError(ExecutionErrorT&& value) { SetExecutionError(std::forward<ExecutionErrorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,6 +80,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates if the execution of the code timed out.</p>
+     */
+    inline bool GetExecutionTimeout() const { return m_executionTimeout; }
+    inline bool ExecutionTimeoutHasBeenSet() const { return m_executionTimeoutHasBeenSet; }
+    inline void SetExecutionTimeout(bool value) { m_executionTimeoutHasBeenSet = true; m_executionTimeout = value; }
+    inline CodeInterpreterInvocationOutput& WithExecutionTimeout(bool value) { SetExecutionTimeout(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains information about the output from the code interpreter.</p>
      */
     inline const Metadata& GetMetadata() const { return m_metadata; }
@@ -101,17 +101,17 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_executionError;
-    bool m_executionErrorHasBeenSet = false;
-
     Aws::String m_executionOutput;
     bool m_executionOutputHasBeenSet = false;
 
-    bool m_executionTimeout{false};
-    bool m_executionTimeoutHasBeenSet = false;
+    Aws::String m_executionError;
+    bool m_executionErrorHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_files;
     bool m_filesHasBeenSet = false;
+
+    bool m_executionTimeout{false};
+    bool m_executionTimeoutHasBeenSet = false;
 
     Metadata m_metadata;
     bool m_metadataHasBeenSet = false;

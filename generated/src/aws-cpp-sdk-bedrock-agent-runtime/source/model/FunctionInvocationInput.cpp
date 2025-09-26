@@ -30,6 +30,20 @@ FunctionInvocationInput& FunctionInvocationInput::operator =(JsonView jsonValue)
     m_actionGroup = jsonValue.GetString("actionGroup");
     m_actionGroupHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("parameters"))
+  {
+    Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("parameters");
+    for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
+    {
+      m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());
+    }
+    m_parametersHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("function"))
+  {
+    m_function = jsonValue.GetString("function");
+    m_functionHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("actionInvocationType"))
   {
     m_actionInvocationType = ActionInvocationTypeMapper::GetActionInvocationTypeForName(jsonValue.GetString("actionInvocationType"));
@@ -45,20 +59,6 @@ FunctionInvocationInput& FunctionInvocationInput::operator =(JsonView jsonValue)
     m_collaboratorName = jsonValue.GetString("collaboratorName");
     m_collaboratorNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("function"))
-  {
-    m_function = jsonValue.GetString("function");
-    m_functionHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("parameters"))
-  {
-    Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("parameters");
-    for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
-    {
-      m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());
-    }
-    m_parametersHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -69,6 +69,23 @@ JsonValue FunctionInvocationInput::Jsonize() const
   if(m_actionGroupHasBeenSet)
   {
    payload.WithString("actionGroup", m_actionGroup);
+
+  }
+
+  if(m_parametersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> parametersJsonList(m_parameters.size());
+   for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
+   {
+     parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
+   }
+   payload.WithArray("parameters", std::move(parametersJsonList));
+
+  }
+
+  if(m_functionHasBeenSet)
+  {
+   payload.WithString("function", m_function);
 
   }
 
@@ -86,23 +103,6 @@ JsonValue FunctionInvocationInput::Jsonize() const
   if(m_collaboratorNameHasBeenSet)
   {
    payload.WithString("collaboratorName", m_collaboratorName);
-
-  }
-
-  if(m_functionHasBeenSet)
-  {
-   payload.WithString("function", m_function);
-
-  }
-
-  if(m_parametersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> parametersJsonList(m_parameters.size());
-   for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
-   {
-     parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
-   }
-   payload.WithArray("parameters", std::move(parametersJsonList));
 
   }
 

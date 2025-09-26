@@ -25,20 +25,20 @@ InvocationSummary::InvocationSummary(JsonView jsonValue)
 
 InvocationSummary& InvocationSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("sessionId"))
   {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
+    m_sessionId = jsonValue.GetString("sessionId");
+    m_sessionIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("invocationId"))
   {
     m_invocationId = jsonValue.GetString("invocationId");
     m_invocationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sessionId"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_sessionId = jsonValue.GetString("sessionId");
-    m_sessionIdHasBeenSet = true;
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
   }
   return *this;
 }
@@ -47,9 +47,10 @@ JsonValue InvocationSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_createdAtHasBeenSet)
+  if(m_sessionIdHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   payload.WithString("sessionId", m_sessionId);
+
   }
 
   if(m_invocationIdHasBeenSet)
@@ -58,10 +59,9 @@ JsonValue InvocationSummary::Jsonize() const
 
   }
 
-  if(m_sessionIdHasBeenSet)
+  if(m_createdAtHasBeenSet)
   {
-   payload.WithString("sessionId", m_sessionId);
-
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

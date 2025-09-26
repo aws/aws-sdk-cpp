@@ -30,6 +30,11 @@ GuardrailTrace& GuardrailTrace::operator =(JsonView jsonValue)
     m_action = GuardrailActionMapper::GetGuardrailActionForName(jsonValue.GetString("action"));
     m_actionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("traceId"))
+  {
+    m_traceId = jsonValue.GetString("traceId");
+    m_traceIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("inputAssessments"))
   {
     Aws::Utils::Array<JsonView> inputAssessmentsJsonList = jsonValue.GetArray("inputAssessments");
@@ -38,11 +43,6 @@ GuardrailTrace& GuardrailTrace::operator =(JsonView jsonValue)
       m_inputAssessments.push_back(inputAssessmentsJsonList[inputAssessmentsIndex].AsObject());
     }
     m_inputAssessmentsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("metadata"))
-  {
-    m_metadata = jsonValue.GetObject("metadata");
-    m_metadataHasBeenSet = true;
   }
   if(jsonValue.ValueExists("outputAssessments"))
   {
@@ -53,10 +53,10 @@ GuardrailTrace& GuardrailTrace::operator =(JsonView jsonValue)
     }
     m_outputAssessmentsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("traceId"))
+  if(jsonValue.ValueExists("metadata"))
   {
-    m_traceId = jsonValue.GetString("traceId");
-    m_traceIdHasBeenSet = true;
+    m_metadata = jsonValue.GetObject("metadata");
+    m_metadataHasBeenSet = true;
   }
   return *this;
 }
@@ -70,6 +70,12 @@ JsonValue GuardrailTrace::Jsonize() const
    payload.WithString("action", GuardrailActionMapper::GetNameForGuardrailAction(m_action));
   }
 
+  if(m_traceIdHasBeenSet)
+  {
+   payload.WithString("traceId", m_traceId);
+
+  }
+
   if(m_inputAssessmentsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> inputAssessmentsJsonList(m_inputAssessments.size());
@@ -78,12 +84,6 @@ JsonValue GuardrailTrace::Jsonize() const
      inputAssessmentsJsonList[inputAssessmentsIndex].AsObject(m_inputAssessments[inputAssessmentsIndex].Jsonize());
    }
    payload.WithArray("inputAssessments", std::move(inputAssessmentsJsonList));
-
-  }
-
-  if(m_metadataHasBeenSet)
-  {
-   payload.WithObject("metadata", m_metadata.Jsonize());
 
   }
 
@@ -98,9 +98,9 @@ JsonValue GuardrailTrace::Jsonize() const
 
   }
 
-  if(m_traceIdHasBeenSet)
+  if(m_metadataHasBeenSet)
   {
-   payload.WithString("traceId", m_traceId);
+   payload.WithObject("metadata", m_metadata.Jsonize());
 
   }
 

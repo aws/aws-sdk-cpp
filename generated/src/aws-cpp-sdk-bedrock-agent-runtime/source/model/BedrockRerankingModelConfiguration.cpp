@@ -25,6 +25,11 @@ BedrockRerankingModelConfiguration::BedrockRerankingModelConfiguration(JsonView 
 
 BedrockRerankingModelConfiguration& BedrockRerankingModelConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("modelArn"))
+  {
+    m_modelArn = jsonValue.GetString("modelArn");
+    m_modelArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("additionalModelRequestFields"))
   {
     Aws::Map<Aws::String, JsonView> additionalModelRequestFieldsJsonMap = jsonValue.GetObject("additionalModelRequestFields").GetAllObjects();
@@ -34,17 +39,18 @@ BedrockRerankingModelConfiguration& BedrockRerankingModelConfiguration::operator
     }
     m_additionalModelRequestFieldsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("modelArn"))
-  {
-    m_modelArn = jsonValue.GetString("modelArn");
-    m_modelArnHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue BedrockRerankingModelConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_modelArnHasBeenSet)
+  {
+   payload.WithString("modelArn", m_modelArn);
+
+  }
 
   if(m_additionalModelRequestFieldsHasBeenSet)
   {
@@ -54,12 +60,6 @@ JsonValue BedrockRerankingModelConfiguration::Jsonize() const
      additionalModelRequestFieldsJsonMap.WithObject(additionalModelRequestFieldsItem.first, additionalModelRequestFieldsItem.second.View());
    }
    payload.WithObject("additionalModelRequestFields", std::move(additionalModelRequestFieldsJsonMap));
-
-  }
-
-  if(m_modelArnHasBeenSet)
-  {
-   payload.WithString("modelArn", m_modelArn);
 
   }
 

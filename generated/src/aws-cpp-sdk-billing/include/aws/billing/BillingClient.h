@@ -80,6 +80,33 @@ namespace Billing
         virtual ~BillingClient();
 
         /**
+         * <p> Associates one or more source billing views with an existing billing view.
+         * This allows creating aggregate billing views that combine data from multiple
+         * sources. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/AssociateSourceViews">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateSourceViewsOutcome AssociateSourceViews(const Model::AssociateSourceViewsRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateSourceViews that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateSourceViewsRequestT = Model::AssociateSourceViewsRequest>
+        Model::AssociateSourceViewsOutcomeCallable AssociateSourceViewsCallable(const AssociateSourceViewsRequestT& request) const
+        {
+            return SubmitCallable(&BillingClient::AssociateSourceViews, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateSourceViews that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateSourceViewsRequestT = Model::AssociateSourceViewsRequest>
+        void AssociateSourceViewsAsync(const AssociateSourceViewsRequestT& request, const AssociateSourceViewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BillingClient::AssociateSourceViews, request, handler, context);
+        }
+
+        /**
          * <p> Creates a billing view with the specified billing view attributes.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/CreateBillingView">AWS
@@ -128,6 +155,33 @@ namespace Billing
         void DeleteBillingViewAsync(const DeleteBillingViewRequestT& request, const DeleteBillingViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BillingClient::DeleteBillingView, request, handler, context);
+        }
+
+        /**
+         * <p> Removes the association between one or more source billing views and an
+         * existing billing view. This allows modifying the composition of aggregate
+         * billing views. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/DisassociateSourceViews">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateSourceViewsOutcome DisassociateSourceViews(const Model::DisassociateSourceViewsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateSourceViews that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateSourceViewsRequestT = Model::DisassociateSourceViewsRequest>
+        Model::DisassociateSourceViewsOutcomeCallable DisassociateSourceViewsCallable(const DisassociateSourceViewsRequestT& request) const
+        {
+            return SubmitCallable(&BillingClient::DisassociateSourceViews, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateSourceViews that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateSourceViewsRequestT = Model::DisassociateSourceViewsRequest>
+        void DisassociateSourceViewsAsync(const DisassociateSourceViewsRequestT& request, const DisassociateSourceViewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BillingClient::DisassociateSourceViews, request, handler, context);
         }
 
         /**

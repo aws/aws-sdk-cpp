@@ -5,8 +5,11 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/FlowTraceNodeOutputContent.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent-runtime/model/FlowTraceNodeOutputContent.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock-agent-runtime/model/FlowNodeIODataType.h>
+#include <aws/bedrock-agent-runtime/model/FlowTraceNodeOutputNext.h>
 #include <utility>
 
 namespace Aws
@@ -44,6 +47,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the node output.</p>
+     */
+    inline const Aws::String& GetNodeOutputName() const { return m_nodeOutputName; }
+    inline bool NodeOutputNameHasBeenSet() const { return m_nodeOutputNameHasBeenSet; }
+    template<typename NodeOutputNameT = Aws::String>
+    void SetNodeOutputName(NodeOutputNameT&& value) { m_nodeOutputNameHasBeenSet = true; m_nodeOutputName = std::forward<NodeOutputNameT>(value); }
+    template<typename NodeOutputNameT = Aws::String>
+    FlowTraceNodeOutputField& WithNodeOutputName(NodeOutputNameT&& value) { SetNodeOutputName(std::forward<NodeOutputNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The content of the node output.</p>
      */
     inline const FlowTraceNodeOutputContent& GetContent() const { return m_content; }
@@ -56,22 +71,40 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the node output.</p>
+     * <p>The next node that receives output data from this field.</p>
      */
-    inline const Aws::String& GetNodeOutputName() const { return m_nodeOutputName; }
-    inline bool NodeOutputNameHasBeenSet() const { return m_nodeOutputNameHasBeenSet; }
-    template<typename NodeOutputNameT = Aws::String>
-    void SetNodeOutputName(NodeOutputNameT&& value) { m_nodeOutputNameHasBeenSet = true; m_nodeOutputName = std::forward<NodeOutputNameT>(value); }
-    template<typename NodeOutputNameT = Aws::String>
-    FlowTraceNodeOutputField& WithNodeOutputName(NodeOutputNameT&& value) { SetNodeOutputName(std::forward<NodeOutputNameT>(value)); return *this;}
+    inline const Aws::Vector<FlowTraceNodeOutputNext>& GetNext() const { return m_next; }
+    inline bool NextHasBeenSet() const { return m_nextHasBeenSet; }
+    template<typename NextT = Aws::Vector<FlowTraceNodeOutputNext>>
+    void SetNext(NextT&& value) { m_nextHasBeenSet = true; m_next = std::forward<NextT>(value); }
+    template<typename NextT = Aws::Vector<FlowTraceNodeOutputNext>>
+    FlowTraceNodeOutputField& WithNext(NextT&& value) { SetNext(std::forward<NextT>(value)); return *this;}
+    template<typename NextT = FlowTraceNodeOutputNext>
+    FlowTraceNodeOutputField& AddNext(NextT&& value) { m_nextHasBeenSet = true; m_next.emplace_back(std::forward<NextT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The data type of the output field for compatibility validation.</p>
+     */
+    inline FlowNodeIODataType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(FlowNodeIODataType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline FlowTraceNodeOutputField& WithType(FlowNodeIODataType value) { SetType(value); return *this;}
     ///@}
   private:
+
+    Aws::String m_nodeOutputName;
+    bool m_nodeOutputNameHasBeenSet = false;
 
     FlowTraceNodeOutputContent m_content;
     bool m_contentHasBeenSet = false;
 
-    Aws::String m_nodeOutputName;
-    bool m_nodeOutputNameHasBeenSet = false;
+    Aws::Vector<FlowTraceNodeOutputNext> m_next;
+    bool m_nextHasBeenSet = false;
+
+    FlowNodeIODataType m_type{FlowNodeIODataType::NOT_SET};
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

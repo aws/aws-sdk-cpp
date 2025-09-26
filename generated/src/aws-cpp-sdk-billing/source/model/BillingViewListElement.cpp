@@ -45,10 +45,20 @@ BillingViewListElement& BillingViewListElement::operator =(JsonView jsonValue)
     m_ownerAccountId = jsonValue.GetString("ownerAccountId");
     m_ownerAccountIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("sourceAccountId"))
+  {
+    m_sourceAccountId = jsonValue.GetString("sourceAccountId");
+    m_sourceAccountIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("billingViewType"))
   {
     m_billingViewType = BillingViewTypeMapper::GetBillingViewTypeForName(jsonValue.GetString("billingViewType"));
     m_billingViewTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("healthStatus"))
+  {
+    m_healthStatus = jsonValue.GetObject("healthStatus");
+    m_healthStatusHasBeenSet = true;
   }
   return *this;
 }
@@ -81,9 +91,21 @@ JsonValue BillingViewListElement::Jsonize() const
 
   }
 
+  if(m_sourceAccountIdHasBeenSet)
+  {
+   payload.WithString("sourceAccountId", m_sourceAccountId);
+
+  }
+
   if(m_billingViewTypeHasBeenSet)
   {
    payload.WithString("billingViewType", BillingViewTypeMapper::GetNameForBillingViewType(m_billingViewType));
+  }
+
+  if(m_healthStatusHasBeenSet)
+  {
+   payload.WithObject("healthStatus", m_healthStatus.Jsonize());
+
   }
 
   return payload;

@@ -30,6 +30,11 @@ FlowTraceConditionNodeResultEvent& FlowTraceConditionNodeResultEvent::operator =
     m_nodeName = jsonValue.GetString("nodeName");
     m_nodeNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("timestamp"))
+  {
+    m_timestamp = jsonValue.GetString("timestamp");
+    m_timestampHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("satisfiedConditions"))
   {
     Aws::Utils::Array<JsonView> satisfiedConditionsJsonList = jsonValue.GetArray("satisfiedConditions");
@@ -38,11 +43,6 @@ FlowTraceConditionNodeResultEvent& FlowTraceConditionNodeResultEvent::operator =
       m_satisfiedConditions.push_back(satisfiedConditionsJsonList[satisfiedConditionsIndex].AsObject());
     }
     m_satisfiedConditionsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("timestamp"))
-  {
-    m_timestamp = jsonValue.GetString("timestamp");
-    m_timestampHasBeenSet = true;
   }
   return *this;
 }
@@ -57,6 +57,11 @@ JsonValue FlowTraceConditionNodeResultEvent::Jsonize() const
 
   }
 
+  if(m_timestampHasBeenSet)
+  {
+   payload.WithString("timestamp", m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
   if(m_satisfiedConditionsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> satisfiedConditionsJsonList(m_satisfiedConditions.size());
@@ -66,11 +71,6 @@ JsonValue FlowTraceConditionNodeResultEvent::Jsonize() const
    }
    payload.WithArray("satisfiedConditions", std::move(satisfiedConditionsJsonList));
 
-  }
-
-  if(m_timestampHasBeenSet)
-  {
-   payload.WithString("timestamp", m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

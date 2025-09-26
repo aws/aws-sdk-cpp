@@ -44,16 +44,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Where the text with a citation ends in the generated output.</p>
-     */
-    inline int GetEnd() const { return m_end; }
-    inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
-    inline void SetEnd(int value) { m_endHasBeenSet = true; m_end = value; }
-    inline Span& WithEnd(int value) { SetEnd(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Where the text with a citation starts in the generated output.</p>
      */
     inline int GetStart() const { return m_start; }
@@ -61,13 +51,23 @@ namespace Model
     inline void SetStart(int value) { m_startHasBeenSet = true; m_start = value; }
     inline Span& WithStart(int value) { SetStart(value); return *this;}
     ///@}
-  private:
 
-    int m_end{0};
-    bool m_endHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Where the text with a citation ends in the generated output.</p>
+     */
+    inline int GetEnd() const { return m_end; }
+    inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
+    inline void SetEnd(int value) { m_endHasBeenSet = true; m_end = value; }
+    inline Span& WithEnd(int value) { SetEnd(value); return *this;}
+    ///@}
+  private:
 
     int m_start{0};
     bool m_startHasBeenSet = false;
+
+    int m_end{0};
+    bool m_endHasBeenSet = false;
   };
 
 } // namespace Model

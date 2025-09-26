@@ -25,15 +25,15 @@ EndSessionResult::EndSessionResult(const Aws::AmazonWebServiceResult<JsonValue>&
 EndSessionResult& EndSessionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("sessionArn"))
-  {
-    m_sessionArn = jsonValue.GetString("sessionArn");
-    m_sessionArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("sessionId"))
   {
     m_sessionId = jsonValue.GetString("sessionId");
     m_sessionIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("sessionArn"))
+  {
+    m_sessionArn = jsonValue.GetString("sessionArn");
+    m_sessionArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("sessionStatus"))
   {

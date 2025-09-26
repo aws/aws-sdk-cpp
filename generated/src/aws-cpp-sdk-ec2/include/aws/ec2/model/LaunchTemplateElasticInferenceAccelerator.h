@@ -55,8 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The number of elastic inference accelerators to attach to the instance. </p>
-     * <p>Default: 1</p>
+     * <p>The number of elastic inference accelerators to attach to the instance. </p>
      */
     inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }

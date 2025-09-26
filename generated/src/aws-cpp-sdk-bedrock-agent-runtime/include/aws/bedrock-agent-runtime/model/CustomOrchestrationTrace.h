@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/CustomOrchestrationTraceEvent.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent-runtime/model/CustomOrchestrationTraceEvent.h>
 #include <utility>
 
 namespace Aws
@@ -41,18 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p> The event details used with the custom orchestration. </p>
-     */
-    inline const CustomOrchestrationTraceEvent& GetEvent() const { return m_event; }
-    inline bool EventHasBeenSet() const { return m_eventHasBeenSet; }
-    template<typename EventT = CustomOrchestrationTraceEvent>
-    void SetEvent(EventT&& value) { m_eventHasBeenSet = true; m_event = std::forward<EventT>(value); }
-    template<typename EventT = CustomOrchestrationTraceEvent>
-    CustomOrchestrationTrace& WithEvent(EventT&& value) { SetEvent(std::forward<EventT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p> The unique identifier of the trace. </p>
      */
     inline const Aws::String& GetTraceId() const { return m_traceId; }
@@ -62,13 +50,25 @@ namespace Model
     template<typename TraceIdT = Aws::String>
     CustomOrchestrationTrace& WithTraceId(TraceIdT&& value) { SetTraceId(std::forward<TraceIdT>(value)); return *this;}
     ///@}
-  private:
 
-    CustomOrchestrationTraceEvent m_event;
-    bool m_eventHasBeenSet = false;
+    ///@{
+    /**
+     * <p> The event details used with the custom orchestration. </p>
+     */
+    inline const CustomOrchestrationTraceEvent& GetEvent() const { return m_event; }
+    inline bool EventHasBeenSet() const { return m_eventHasBeenSet; }
+    template<typename EventT = CustomOrchestrationTraceEvent>
+    void SetEvent(EventT&& value) { m_eventHasBeenSet = true; m_event = std::forward<EventT>(value); }
+    template<typename EventT = CustomOrchestrationTraceEvent>
+    CustomOrchestrationTrace& WithEvent(EventT&& value) { SetEvent(std::forward<EventT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_traceId;
     bool m_traceIdHasBeenSet = false;
+
+    CustomOrchestrationTraceEvent m_event;
+    bool m_eventHasBeenSet = false;
   };
 
 } // namespace Model

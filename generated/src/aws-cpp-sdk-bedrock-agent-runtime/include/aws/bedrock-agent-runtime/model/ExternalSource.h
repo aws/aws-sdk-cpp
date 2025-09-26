@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/ByteContentDoc.h>
-#include <aws/bedrock-agent-runtime/model/S3ObjectDoc.h>
 #include <aws/bedrock-agent-runtime/model/ExternalSourceType.h>
+#include <aws/bedrock-agent-runtime/model/S3ObjectDoc.h>
+#include <aws/bedrock-agent-runtime/model/ByteContentDoc.h>
 #include <utility>
 
 namespace Aws
@@ -42,15 +42,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier, contentType, and data of the external source wrapper
-     * object.</p>
+     * <p>The source type of the external source wrapper object.</p>
      */
-    inline const ByteContentDoc& GetByteContent() const { return m_byteContent; }
-    inline bool ByteContentHasBeenSet() const { return m_byteContentHasBeenSet; }
-    template<typename ByteContentT = ByteContentDoc>
-    void SetByteContent(ByteContentT&& value) { m_byteContentHasBeenSet = true; m_byteContent = std::forward<ByteContentT>(value); }
-    template<typename ByteContentT = ByteContentDoc>
-    ExternalSource& WithByteContent(ByteContentT&& value) { SetByteContent(std::forward<ByteContentT>(value)); return *this;}
+    inline ExternalSourceType GetSourceType() const { return m_sourceType; }
+    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+    inline void SetSourceType(ExternalSourceType value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+    inline ExternalSource& WithSourceType(ExternalSourceType value) { SetSourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -67,23 +64,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The source type of the external source wrapper object.</p>
+     * <p>The identifier, contentType, and data of the external source wrapper
+     * object.</p>
      */
-    inline ExternalSourceType GetSourceType() const { return m_sourceType; }
-    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-    inline void SetSourceType(ExternalSourceType value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-    inline ExternalSource& WithSourceType(ExternalSourceType value) { SetSourceType(value); return *this;}
+    inline const ByteContentDoc& GetByteContent() const { return m_byteContent; }
+    inline bool ByteContentHasBeenSet() const { return m_byteContentHasBeenSet; }
+    template<typename ByteContentT = ByteContentDoc>
+    void SetByteContent(ByteContentT&& value) { m_byteContentHasBeenSet = true; m_byteContent = std::forward<ByteContentT>(value); }
+    template<typename ByteContentT = ByteContentDoc>
+    ExternalSource& WithByteContent(ByteContentT&& value) { SetByteContent(std::forward<ByteContentT>(value)); return *this;}
     ///@}
   private:
 
-    ByteContentDoc m_byteContent;
-    bool m_byteContentHasBeenSet = false;
+    ExternalSourceType m_sourceType{ExternalSourceType::NOT_SET};
+    bool m_sourceTypeHasBeenSet = false;
 
     S3ObjectDoc m_s3Location;
     bool m_s3LocationHasBeenSet = false;
 
-    ExternalSourceType m_sourceType{ExternalSourceType::NOT_SET};
-    bool m_sourceTypeHasBeenSet = false;
+    ByteContentDoc m_byteContent;
+    bool m_byteContentHasBeenSet = false;
   };
 
 } // namespace Model

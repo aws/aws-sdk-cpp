@@ -73,6 +73,20 @@ namespace Model
     template<typename QueueReferencesT = RoutingProfileQueueReference>
     DisassociateRoutingProfileQueuesRequest& AddQueueReferences(QueueReferencesT&& value) { m_queueReferencesHasBeenSet = true; m_queueReferences.emplace_back(std::forward<QueueReferencesT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The manual assignment queues to disassociate with this routing profile.</p>
+     */
+    inline const Aws::Vector<RoutingProfileQueueReference>& GetManualAssignmentQueueReferences() const { return m_manualAssignmentQueueReferences; }
+    inline bool ManualAssignmentQueueReferencesHasBeenSet() const { return m_manualAssignmentQueueReferencesHasBeenSet; }
+    template<typename ManualAssignmentQueueReferencesT = Aws::Vector<RoutingProfileQueueReference>>
+    void SetManualAssignmentQueueReferences(ManualAssignmentQueueReferencesT&& value) { m_manualAssignmentQueueReferencesHasBeenSet = true; m_manualAssignmentQueueReferences = std::forward<ManualAssignmentQueueReferencesT>(value); }
+    template<typename ManualAssignmentQueueReferencesT = Aws::Vector<RoutingProfileQueueReference>>
+    DisassociateRoutingProfileQueuesRequest& WithManualAssignmentQueueReferences(ManualAssignmentQueueReferencesT&& value) { SetManualAssignmentQueueReferences(std::forward<ManualAssignmentQueueReferencesT>(value)); return *this;}
+    template<typename ManualAssignmentQueueReferencesT = RoutingProfileQueueReference>
+    DisassociateRoutingProfileQueuesRequest& AddManualAssignmentQueueReferences(ManualAssignmentQueueReferencesT&& value) { m_manualAssignmentQueueReferencesHasBeenSet = true; m_manualAssignmentQueueReferences.emplace_back(std::forward<ManualAssignmentQueueReferencesT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_instanceId;
@@ -83,6 +97,9 @@ namespace Model
 
     Aws::Vector<RoutingProfileQueueReference> m_queueReferences;
     bool m_queueReferencesHasBeenSet = false;
+
+    Aws::Vector<RoutingProfileQueueReference> m_manualAssignmentQueueReferences;
+    bool m_manualAssignmentQueueReferencesHasBeenSet = false;
   };
 
 } // namespace Model

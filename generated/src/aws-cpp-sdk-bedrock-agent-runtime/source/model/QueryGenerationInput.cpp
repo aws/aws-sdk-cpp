@@ -25,15 +25,15 @@ QueryGenerationInput::QueryGenerationInput(JsonView jsonValue)
 
 QueryGenerationInput& QueryGenerationInput::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("text"))
-  {
-    m_text = jsonValue.GetString("text");
-    m_textHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("type"))
   {
     m_type = InputQueryTypeMapper::GetInputQueryTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("text"))
+  {
+    m_text = jsonValue.GetString("text");
+    m_textHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue QueryGenerationInput::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", InputQueryTypeMapper::GetNameForInputQueryType(m_type));
+  }
+
   if(m_textHasBeenSet)
   {
    payload.WithString("text", m_text);
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", InputQueryTypeMapper::GetNameForInputQueryType(m_type));
   }
 
   return payload;

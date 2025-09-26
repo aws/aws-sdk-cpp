@@ -25,11 +25,6 @@ ReturnControlPayload::ReturnControlPayload(JsonView jsonValue)
 
 ReturnControlPayload& ReturnControlPayload::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("invocationId"))
-  {
-    m_invocationId = jsonValue.GetString("invocationId");
-    m_invocationIdHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("invocationInputs"))
   {
     Aws::Utils::Array<JsonView> invocationInputsJsonList = jsonValue.GetArray("invocationInputs");
@@ -39,18 +34,17 @@ ReturnControlPayload& ReturnControlPayload::operator =(JsonView jsonValue)
     }
     m_invocationInputsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("invocationId"))
+  {
+    m_invocationId = jsonValue.GetString("invocationId");
+    m_invocationIdHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue ReturnControlPayload::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_invocationIdHasBeenSet)
-  {
-   payload.WithString("invocationId", m_invocationId);
-
-  }
 
   if(m_invocationInputsHasBeenSet)
   {
@@ -60,6 +54,12 @@ JsonValue ReturnControlPayload::Jsonize() const
      invocationInputsJsonList[invocationInputsIndex].AsObject(m_invocationInputs[invocationInputsIndex].Jsonize());
    }
    payload.WithArray("invocationInputs", std::move(invocationInputsJsonList));
+
+  }
+
+  if(m_invocationIdHasBeenSet)
+  {
+   payload.WithString("invocationId", m_invocationId);
 
   }
 

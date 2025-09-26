@@ -16,18 +16,6 @@ Aws::String InvokeFlowRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_enableTraceHasBeenSet)
-  {
-   payload.WithBool("enableTrace", m_enableTrace);
-
-  }
-
-  if(m_executionIdHasBeenSet)
-  {
-   payload.WithString("executionId", m_executionId);
-
-  }
-
   if(m_inputsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> inputsJsonList(m_inputs.size());
@@ -39,9 +27,21 @@ Aws::String InvokeFlowRequest::SerializePayload() const
 
   }
 
+  if(m_enableTraceHasBeenSet)
+  {
+   payload.WithBool("enableTrace", m_enableTrace);
+
+  }
+
   if(m_modelPerformanceConfigurationHasBeenSet)
   {
    payload.WithObject("modelPerformanceConfiguration", m_modelPerformanceConfiguration.Jsonize());
+
+  }
+
+  if(m_executionIdHasBeenSet)
+  {
+   payload.WithString("executionId", m_executionId);
 
   }
 

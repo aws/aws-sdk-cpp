@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/bedrock-agent-runtime/model/Metadata.h>
 #include <aws/bedrock-agent-runtime/model/AgentCollaboratorOutputPayload.h>
+#include <aws/bedrock-agent-runtime/model/Metadata.h>
 #include <utility>
 
 namespace Aws
@@ -41,18 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The output's agent collaborator alias ARN.</p>
-     */
-    inline const Aws::String& GetAgentCollaboratorAliasArn() const { return m_agentCollaboratorAliasArn; }
-    inline bool AgentCollaboratorAliasArnHasBeenSet() const { return m_agentCollaboratorAliasArnHasBeenSet; }
-    template<typename AgentCollaboratorAliasArnT = Aws::String>
-    void SetAgentCollaboratorAliasArn(AgentCollaboratorAliasArnT&& value) { m_agentCollaboratorAliasArnHasBeenSet = true; m_agentCollaboratorAliasArn = std::forward<AgentCollaboratorAliasArnT>(value); }
-    template<typename AgentCollaboratorAliasArnT = Aws::String>
-    AgentCollaboratorInvocationOutput& WithAgentCollaboratorAliasArn(AgentCollaboratorAliasArnT&& value) { SetAgentCollaboratorAliasArn(std::forward<AgentCollaboratorAliasArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The output's agent collaborator name.</p>
      */
     inline const Aws::String& GetAgentCollaboratorName() const { return m_agentCollaboratorName; }
@@ -65,14 +53,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains information about the output from the agent collaborator.</p>
+     * <p>The output's agent collaborator alias ARN.</p>
      */
-    inline const Metadata& GetMetadata() const { return m_metadata; }
-    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    template<typename MetadataT = Metadata>
-    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
-    template<typename MetadataT = Metadata>
-    AgentCollaboratorInvocationOutput& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
+    inline const Aws::String& GetAgentCollaboratorAliasArn() const { return m_agentCollaboratorAliasArn; }
+    inline bool AgentCollaboratorAliasArnHasBeenSet() const { return m_agentCollaboratorAliasArnHasBeenSet; }
+    template<typename AgentCollaboratorAliasArnT = Aws::String>
+    void SetAgentCollaboratorAliasArn(AgentCollaboratorAliasArnT&& value) { m_agentCollaboratorAliasArnHasBeenSet = true; m_agentCollaboratorAliasArn = std::forward<AgentCollaboratorAliasArnT>(value); }
+    template<typename AgentCollaboratorAliasArnT = Aws::String>
+    AgentCollaboratorInvocationOutput& WithAgentCollaboratorAliasArn(AgentCollaboratorAliasArnT&& value) { SetAgentCollaboratorAliasArn(std::forward<AgentCollaboratorAliasArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,19 +74,31 @@ namespace Model
     template<typename OutputT = AgentCollaboratorOutputPayload>
     AgentCollaboratorInvocationOutput& WithOutput(OutputT&& value) { SetOutput(std::forward<OutputT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_agentCollaboratorAliasArn;
-    bool m_agentCollaboratorAliasArnHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Contains information about the output from the agent collaborator.</p>
+     */
+    inline const Metadata& GetMetadata() const { return m_metadata; }
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+    template<typename MetadataT = Metadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Metadata>
+    AgentCollaboratorInvocationOutput& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_agentCollaboratorName;
     bool m_agentCollaboratorNameHasBeenSet = false;
 
-    Metadata m_metadata;
-    bool m_metadataHasBeenSet = false;
+    Aws::String m_agentCollaboratorAliasArn;
+    bool m_agentCollaboratorAliasArnHasBeenSet = false;
 
     AgentCollaboratorOutputPayload m_output;
     bool m_outputHasBeenSet = false;
+
+    Metadata m_metadata;
+    bool m_metadataHasBeenSet = false;
   };
 
 } // namespace Model

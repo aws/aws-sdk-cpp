@@ -25,30 +25,10 @@ PromptConfiguration::PromptConfiguration(JsonView jsonValue)
 
 PromptConfiguration& PromptConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("additionalModelRequestFields"))
+  if(jsonValue.ValueExists("promptType"))
   {
-    m_additionalModelRequestFields = jsonValue.GetObject("additionalModelRequestFields");
-    m_additionalModelRequestFieldsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("basePromptTemplate"))
-  {
-    m_basePromptTemplate = jsonValue.GetString("basePromptTemplate");
-    m_basePromptTemplateHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("foundationModel"))
-  {
-    m_foundationModel = jsonValue.GetString("foundationModel");
-    m_foundationModelHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("inferenceConfiguration"))
-  {
-    m_inferenceConfiguration = jsonValue.GetObject("inferenceConfiguration");
-    m_inferenceConfigurationHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("parserMode"))
-  {
-    m_parserMode = CreationModeMapper::GetCreationModeForName(jsonValue.GetString("parserMode"));
-    m_parserModeHasBeenSet = true;
+    m_promptType = PromptTypeMapper::GetPromptTypeForName(jsonValue.GetString("promptType"));
+    m_promptTypeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("promptCreationMode"))
   {
@@ -60,10 +40,30 @@ PromptConfiguration& PromptConfiguration::operator =(JsonView jsonValue)
     m_promptState = PromptStateMapper::GetPromptStateForName(jsonValue.GetString("promptState"));
     m_promptStateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("promptType"))
+  if(jsonValue.ValueExists("basePromptTemplate"))
   {
-    m_promptType = PromptTypeMapper::GetPromptTypeForName(jsonValue.GetString("promptType"));
-    m_promptTypeHasBeenSet = true;
+    m_basePromptTemplate = jsonValue.GetString("basePromptTemplate");
+    m_basePromptTemplateHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("inferenceConfiguration"))
+  {
+    m_inferenceConfiguration = jsonValue.GetObject("inferenceConfiguration");
+    m_inferenceConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("parserMode"))
+  {
+    m_parserMode = CreationModeMapper::GetCreationModeForName(jsonValue.GetString("parserMode"));
+    m_parserModeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("foundationModel"))
+  {
+    m_foundationModel = jsonValue.GetString("foundationModel");
+    m_foundationModelHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("additionalModelRequestFields"))
+  {
+    m_additionalModelRequestFields = jsonValue.GetObject("additionalModelRequestFields");
+    m_additionalModelRequestFieldsHasBeenSet = true;
   }
   return *this;
 }
@@ -72,23 +72,24 @@ JsonValue PromptConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_additionalModelRequestFieldsHasBeenSet)
+  if(m_promptTypeHasBeenSet)
   {
-    if(!m_additionalModelRequestFields.View().IsNull())
-    {
-       payload.WithObject("additionalModelRequestFields", JsonValue(m_additionalModelRequestFields.View()));
-    }
+   payload.WithString("promptType", PromptTypeMapper::GetNameForPromptType(m_promptType));
+  }
+
+  if(m_promptCreationModeHasBeenSet)
+  {
+   payload.WithString("promptCreationMode", CreationModeMapper::GetNameForCreationMode(m_promptCreationMode));
+  }
+
+  if(m_promptStateHasBeenSet)
+  {
+   payload.WithString("promptState", PromptStateMapper::GetNameForPromptState(m_promptState));
   }
 
   if(m_basePromptTemplateHasBeenSet)
   {
    payload.WithString("basePromptTemplate", m_basePromptTemplate);
-
-  }
-
-  if(m_foundationModelHasBeenSet)
-  {
-   payload.WithString("foundationModel", m_foundationModel);
 
   }
 
@@ -103,19 +104,18 @@ JsonValue PromptConfiguration::Jsonize() const
    payload.WithString("parserMode", CreationModeMapper::GetNameForCreationMode(m_parserMode));
   }
 
-  if(m_promptCreationModeHasBeenSet)
+  if(m_foundationModelHasBeenSet)
   {
-   payload.WithString("promptCreationMode", CreationModeMapper::GetNameForCreationMode(m_promptCreationMode));
+   payload.WithString("foundationModel", m_foundationModel);
+
   }
 
-  if(m_promptStateHasBeenSet)
+  if(m_additionalModelRequestFieldsHasBeenSet)
   {
-   payload.WithString("promptState", PromptStateMapper::GetNameForPromptState(m_promptState));
-  }
-
-  if(m_promptTypeHasBeenSet)
-  {
-   payload.WithString("promptType", PromptTypeMapper::GetNameForPromptType(m_promptType));
+    if(!m_additionalModelRequestFields.View().IsNull())
+    {
+       payload.WithObject("additionalModelRequestFields", JsonValue(m_additionalModelRequestFields.View()));
+    }
   }
 
   return payload;

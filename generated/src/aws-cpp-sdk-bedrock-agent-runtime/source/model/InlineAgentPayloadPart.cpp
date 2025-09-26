@@ -26,15 +26,15 @@ InlineAgentPayloadPart::InlineAgentPayloadPart(JsonView jsonValue)
 
 InlineAgentPayloadPart& InlineAgentPayloadPart::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("attribution"))
-  {
-    m_attribution = jsonValue.GetObject("attribution");
-    m_attributionHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("bytes"))
   {
     m_bytes = HashingUtils::Base64Decode(jsonValue.GetString("bytes"));
     m_bytesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("attribution"))
+  {
+    m_attribution = jsonValue.GetObject("attribution");
+    m_attributionHasBeenSet = true;
   }
   return *this;
 }
@@ -43,15 +43,15 @@ JsonValue InlineAgentPayloadPart::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_bytesHasBeenSet)
+  {
+   payload.WithString("bytes", HashingUtils::Base64Encode(m_bytes));
+  }
+
   if(m_attributionHasBeenSet)
   {
    payload.WithObject("attribution", m_attribution.Jsonize());
 
-  }
-
-  if(m_bytesHasBeenSet)
-  {
-   payload.WithString("bytes", HashingUtils::Base64Encode(m_bytes));
   }
 
   return payload;

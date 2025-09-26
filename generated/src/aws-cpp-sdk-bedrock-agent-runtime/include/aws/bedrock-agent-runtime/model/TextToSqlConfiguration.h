@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/TextToSqlKnowledgeBaseConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/TextToSqlConfigurationType.h>
+#include <aws/bedrock-agent-runtime/model/TextToSqlKnowledgeBaseConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of resource to use in transformation.</p>
+     */
+    inline TextToSqlConfigurationType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(TextToSqlConfigurationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline TextToSqlConfiguration& WithType(TextToSqlConfigurationType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies configurations for a knowledge base to use in transformation.</p>
      */
     inline const TextToSqlKnowledgeBaseConfiguration& GetKnowledgeBaseConfiguration() const { return m_knowledgeBaseConfiguration; }
@@ -50,23 +60,13 @@ namespace Model
     template<typename KnowledgeBaseConfigurationT = TextToSqlKnowledgeBaseConfiguration>
     TextToSqlConfiguration& WithKnowledgeBaseConfiguration(KnowledgeBaseConfigurationT&& value) { SetKnowledgeBaseConfiguration(std::forward<KnowledgeBaseConfigurationT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of resource to use in transformation.</p>
-     */
-    inline TextToSqlConfigurationType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(TextToSqlConfigurationType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline TextToSqlConfiguration& WithType(TextToSqlConfigurationType value) { SetType(value); return *this;}
-    ///@}
   private:
-
-    TextToSqlKnowledgeBaseConfiguration m_knowledgeBaseConfiguration;
-    bool m_knowledgeBaseConfigurationHasBeenSet = false;
 
     TextToSqlConfigurationType m_type{TextToSqlConfigurationType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    TextToSqlKnowledgeBaseConfiguration m_knowledgeBaseConfiguration;
+    bool m_knowledgeBaseConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

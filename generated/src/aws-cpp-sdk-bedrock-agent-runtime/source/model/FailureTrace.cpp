@@ -25,25 +25,25 @@ FailureTrace::FailureTrace(JsonView jsonValue)
 
 FailureTrace& FailureTrace::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("failureCode"))
+  if(jsonValue.ValueExists("traceId"))
   {
-    m_failureCode = jsonValue.GetInteger("failureCode");
-    m_failureCodeHasBeenSet = true;
+    m_traceId = jsonValue.GetString("traceId");
+    m_traceIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
     m_failureReasonHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("failureCode"))
+  {
+    m_failureCode = jsonValue.GetInteger("failureCode");
+    m_failureCodeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("metadata"))
   {
     m_metadata = jsonValue.GetObject("metadata");
     m_metadataHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("traceId"))
-  {
-    m_traceId = jsonValue.GetString("traceId");
-    m_traceIdHasBeenSet = true;
   }
   return *this;
 }
@@ -52,9 +52,9 @@ JsonValue FailureTrace::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_failureCodeHasBeenSet)
+  if(m_traceIdHasBeenSet)
   {
-   payload.WithInteger("failureCode", m_failureCode);
+   payload.WithString("traceId", m_traceId);
 
   }
 
@@ -64,15 +64,15 @@ JsonValue FailureTrace::Jsonize() const
 
   }
 
-  if(m_metadataHasBeenSet)
+  if(m_failureCodeHasBeenSet)
   {
-   payload.WithObject("metadata", m_metadata.Jsonize());
+   payload.WithInteger("failureCode", m_failureCode);
 
   }
 
-  if(m_traceIdHasBeenSet)
+  if(m_metadataHasBeenSet)
   {
-   payload.WithString("traceId", m_traceId);
+   payload.WithObject("metadata", m_metadata.Jsonize());
 
   }
 

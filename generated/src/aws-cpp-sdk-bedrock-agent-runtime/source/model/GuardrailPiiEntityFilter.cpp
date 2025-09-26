@@ -25,20 +25,20 @@ GuardrailPiiEntityFilter::GuardrailPiiEntityFilter(JsonView jsonValue)
 
 GuardrailPiiEntityFilter& GuardrailPiiEntityFilter::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("action"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_action = GuardrailSensitiveInformationPolicyActionMapper::GetGuardrailSensitiveInformationPolicyActionForName(jsonValue.GetString("action"));
-    m_actionHasBeenSet = true;
+    m_type = GuardrailPiiEntityTypeMapper::GetGuardrailPiiEntityTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("match"))
   {
     m_match = jsonValue.GetString("match");
     m_matchHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("action"))
   {
-    m_type = GuardrailPiiEntityTypeMapper::GetGuardrailPiiEntityTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+    m_action = GuardrailSensitiveInformationPolicyActionMapper::GetGuardrailSensitiveInformationPolicyActionForName(jsonValue.GetString("action"));
+    m_actionHasBeenSet = true;
   }
   return *this;
 }
@@ -47,9 +47,9 @@ JsonValue GuardrailPiiEntityFilter::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_actionHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithString("action", GuardrailSensitiveInformationPolicyActionMapper::GetNameForGuardrailSensitiveInformationPolicyAction(m_action));
+   payload.WithString("type", GuardrailPiiEntityTypeMapper::GetNameForGuardrailPiiEntityType(m_type));
   }
 
   if(m_matchHasBeenSet)
@@ -58,9 +58,9 @@ JsonValue GuardrailPiiEntityFilter::Jsonize() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_actionHasBeenSet)
   {
-   payload.WithString("type", GuardrailPiiEntityTypeMapper::GetNameForGuardrailPiiEntityType(m_type));
+   payload.WithString("action", GuardrailSensitiveInformationPolicyActionMapper::GetNameForGuardrailSensitiveInformationPolicyAction(m_action));
   }
 
   return payload;

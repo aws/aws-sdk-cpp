@@ -16,12 +16,6 @@ Aws::String CreateSessionRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_encryptionKeyArnHasBeenSet)
-  {
-   payload.WithString("encryptionKeyArn", m_encryptionKeyArn);
-
-  }
-
   if(m_sessionMetadataHasBeenSet)
   {
    JsonValue sessionMetadataJsonMap;
@@ -30,6 +24,12 @@ Aws::String CreateSessionRequest::SerializePayload() const
      sessionMetadataJsonMap.WithString(sessionMetadataItem.first, sessionMetadataItem.second);
    }
    payload.WithObject("sessionMetadata", std::move(sessionMetadataJsonMap));
+
+  }
+
+  if(m_encryptionKeyArnHasBeenSet)
+  {
+   payload.WithString("encryptionKeyArn", m_encryptionKeyArn);
 
   }
 

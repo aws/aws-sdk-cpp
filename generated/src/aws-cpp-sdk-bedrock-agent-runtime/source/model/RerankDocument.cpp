@@ -25,20 +25,20 @@ RerankDocument::RerankDocument(JsonView jsonValue)
 
 RerankDocument& RerankDocument::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("jsonDocument"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_jsonDocument = jsonValue.GetObject("jsonDocument");
-    m_jsonDocumentHasBeenSet = true;
+    m_type = RerankDocumentTypeMapper::GetRerankDocumentTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("textDocument"))
   {
     m_textDocument = jsonValue.GetObject("textDocument");
     m_textDocumentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("jsonDocument"))
   {
-    m_type = RerankDocumentTypeMapper::GetRerankDocumentTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+    m_jsonDocument = jsonValue.GetObject("jsonDocument");
+    m_jsonDocumentHasBeenSet = true;
   }
   return *this;
 }
@@ -47,12 +47,9 @@ JsonValue RerankDocument::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_jsonDocumentHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-    if(!m_jsonDocument.View().IsNull())
-    {
-       payload.WithObject("jsonDocument", JsonValue(m_jsonDocument.View()));
-    }
+   payload.WithString("type", RerankDocumentTypeMapper::GetNameForRerankDocumentType(m_type));
   }
 
   if(m_textDocumentHasBeenSet)
@@ -61,9 +58,12 @@ JsonValue RerankDocument::Jsonize() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_jsonDocumentHasBeenSet)
   {
-   payload.WithString("type", RerankDocumentTypeMapper::GetNameForRerankDocumentType(m_type));
+    if(!m_jsonDocument.View().IsNull())
+    {
+       payload.WithObject("jsonDocument", JsonValue(m_jsonDocument.View()));
+    }
   }
 
   return payload;

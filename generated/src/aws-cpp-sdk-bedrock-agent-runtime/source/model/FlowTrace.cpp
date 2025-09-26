@@ -25,16 +25,6 @@ FlowTrace::FlowTrace(JsonView jsonValue)
 
 FlowTrace& FlowTrace::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("conditionNodeResultTrace"))
-  {
-    m_conditionNodeResultTrace = jsonValue.GetObject("conditionNodeResultTrace");
-    m_conditionNodeResultTraceHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("nodeActionTrace"))
-  {
-    m_nodeActionTrace = jsonValue.GetObject("nodeActionTrace");
-    m_nodeActionTraceHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("nodeInputTrace"))
   {
     m_nodeInputTrace = jsonValue.GetObject("nodeInputTrace");
@@ -45,12 +35,39 @@ FlowTrace& FlowTrace::operator =(JsonView jsonValue)
     m_nodeOutputTrace = jsonValue.GetObject("nodeOutputTrace");
     m_nodeOutputTraceHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("conditionNodeResultTrace"))
+  {
+    m_conditionNodeResultTrace = jsonValue.GetObject("conditionNodeResultTrace");
+    m_conditionNodeResultTraceHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("nodeActionTrace"))
+  {
+    m_nodeActionTrace = jsonValue.GetObject("nodeActionTrace");
+    m_nodeActionTraceHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("nodeDependencyTrace"))
+  {
+    m_nodeDependencyTrace = jsonValue.GetObject("nodeDependencyTrace");
+    m_nodeDependencyTraceHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue FlowTrace::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_nodeInputTraceHasBeenSet)
+  {
+   payload.WithObject("nodeInputTrace", m_nodeInputTrace.Jsonize());
+
+  }
+
+  if(m_nodeOutputTraceHasBeenSet)
+  {
+   payload.WithObject("nodeOutputTrace", m_nodeOutputTrace.Jsonize());
+
+  }
 
   if(m_conditionNodeResultTraceHasBeenSet)
   {
@@ -64,15 +81,9 @@ JsonValue FlowTrace::Jsonize() const
 
   }
 
-  if(m_nodeInputTraceHasBeenSet)
+  if(m_nodeDependencyTraceHasBeenSet)
   {
-   payload.WithObject("nodeInputTrace", m_nodeInputTrace.Jsonize());
-
-  }
-
-  if(m_nodeOutputTraceHasBeenSet)
-  {
-   payload.WithObject("nodeOutputTrace", m_nodeOutputTrace.Jsonize());
+   payload.WithObject("nodeDependencyTrace", m_nodeDependencyTrace.Jsonize());
 
   }
 

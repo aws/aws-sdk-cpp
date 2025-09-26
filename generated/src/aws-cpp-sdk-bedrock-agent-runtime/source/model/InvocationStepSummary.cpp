@@ -25,6 +25,11 @@ InvocationStepSummary::InvocationStepSummary(JsonView jsonValue)
 
 InvocationStepSummary& InvocationStepSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("sessionId"))
+  {
+    m_sessionId = jsonValue.GetString("sessionId");
+    m_sessionIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("invocationId"))
   {
     m_invocationId = jsonValue.GetString("invocationId");
@@ -40,17 +45,18 @@ InvocationStepSummary& InvocationStepSummary::operator =(JsonView jsonValue)
     m_invocationStepTime = jsonValue.GetString("invocationStepTime");
     m_invocationStepTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sessionId"))
-  {
-    m_sessionId = jsonValue.GetString("sessionId");
-    m_sessionIdHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue InvocationStepSummary::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_sessionIdHasBeenSet)
+  {
+   payload.WithString("sessionId", m_sessionId);
+
+  }
 
   if(m_invocationIdHasBeenSet)
   {
@@ -67,12 +73,6 @@ JsonValue InvocationStepSummary::Jsonize() const
   if(m_invocationStepTimeHasBeenSet)
   {
    payload.WithString("invocationStepTime", m_invocationStepTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_sessionIdHasBeenSet)
-  {
-   payload.WithString("sessionId", m_sessionId);
-
   }
 
   return payload;

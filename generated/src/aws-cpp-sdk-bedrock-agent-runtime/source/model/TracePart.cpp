@@ -25,40 +25,6 @@ TracePart::TracePart(JsonView jsonValue)
 
 TracePart& TracePart::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("agentAliasId"))
-  {
-    m_agentAliasId = jsonValue.GetString("agentAliasId");
-    m_agentAliasIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("agentId"))
-  {
-    m_agentId = jsonValue.GetString("agentId");
-    m_agentIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("agentVersion"))
-  {
-    m_agentVersion = jsonValue.GetString("agentVersion");
-    m_agentVersionHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("callerChain"))
-  {
-    Aws::Utils::Array<JsonView> callerChainJsonList = jsonValue.GetArray("callerChain");
-    for(unsigned callerChainIndex = 0; callerChainIndex < callerChainJsonList.GetLength(); ++callerChainIndex)
-    {
-      m_callerChain.push_back(callerChainJsonList[callerChainIndex].AsObject());
-    }
-    m_callerChainHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("collaboratorName"))
-  {
-    m_collaboratorName = jsonValue.GetString("collaboratorName");
-    m_collaboratorNameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("eventTime"))
-  {
-    m_eventTime = jsonValue.GetString("eventTime");
-    m_eventTimeHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("sessionId"))
   {
     m_sessionId = jsonValue.GetString("sessionId");
@@ -69,6 +35,40 @@ TracePart& TracePart::operator =(JsonView jsonValue)
     m_trace = jsonValue.GetObject("trace");
     m_traceHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("callerChain"))
+  {
+    Aws::Utils::Array<JsonView> callerChainJsonList = jsonValue.GetArray("callerChain");
+    for(unsigned callerChainIndex = 0; callerChainIndex < callerChainJsonList.GetLength(); ++callerChainIndex)
+    {
+      m_callerChain.push_back(callerChainJsonList[callerChainIndex].AsObject());
+    }
+    m_callerChainHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("eventTime"))
+  {
+    m_eventTime = jsonValue.GetString("eventTime");
+    m_eventTimeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("collaboratorName"))
+  {
+    m_collaboratorName = jsonValue.GetString("collaboratorName");
+    m_collaboratorNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("agentId"))
+  {
+    m_agentId = jsonValue.GetString("agentId");
+    m_agentIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("agentAliasId"))
+  {
+    m_agentAliasId = jsonValue.GetString("agentAliasId");
+    m_agentAliasIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("agentVersion"))
+  {
+    m_agentVersion = jsonValue.GetString("agentVersion");
+    m_agentVersionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -76,21 +76,15 @@ JsonValue TracePart::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_agentAliasIdHasBeenSet)
+  if(m_sessionIdHasBeenSet)
   {
-   payload.WithString("agentAliasId", m_agentAliasId);
+   payload.WithString("sessionId", m_sessionId);
 
   }
 
-  if(m_agentIdHasBeenSet)
+  if(m_traceHasBeenSet)
   {
-   payload.WithString("agentId", m_agentId);
-
-  }
-
-  if(m_agentVersionHasBeenSet)
-  {
-   payload.WithString("agentVersion", m_agentVersion);
+   payload.WithObject("trace", m_trace.Jsonize());
 
   }
 
@@ -105,26 +99,32 @@ JsonValue TracePart::Jsonize() const
 
   }
 
+  if(m_eventTimeHasBeenSet)
+  {
+   payload.WithString("eventTime", m_eventTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
   if(m_collaboratorNameHasBeenSet)
   {
    payload.WithString("collaboratorName", m_collaboratorName);
 
   }
 
-  if(m_eventTimeHasBeenSet)
+  if(m_agentIdHasBeenSet)
   {
-   payload.WithString("eventTime", m_eventTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_sessionIdHasBeenSet)
-  {
-   payload.WithString("sessionId", m_sessionId);
+   payload.WithString("agentId", m_agentId);
 
   }
 
-  if(m_traceHasBeenSet)
+  if(m_agentAliasIdHasBeenSet)
   {
-   payload.WithObject("trace", m_trace.Jsonize());
+   payload.WithString("agentAliasId", m_agentAliasId);
+
+  }
+
+  if(m_agentVersionHasBeenSet)
+  {
+   payload.WithString("agentVersion", m_agentVersion);
 
   }
 

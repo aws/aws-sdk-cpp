@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/Array.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The MIME type of data contained in the file used for chat.</p>
+     */
+    inline const Aws::String& GetMediaType() const { return m_mediaType; }
+    inline bool MediaTypeHasBeenSet() const { return m_mediaTypeHasBeenSet; }
+    template<typename MediaTypeT = Aws::String>
+    void SetMediaType(MediaTypeT&& value) { m_mediaTypeHasBeenSet = true; m_mediaType = std::forward<MediaTypeT>(value); }
+    template<typename MediaTypeT = Aws::String>
+    ByteContentFile& WithMediaType(MediaTypeT&& value) { SetMediaType(std::forward<MediaTypeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The raw bytes of the file to attach. The maximum size of all files that is
      * attached is 10MB. You can attach a maximum of 5 files. </p>
      */
@@ -51,25 +63,13 @@ namespace Model
     template<typename DataT = Aws::Utils::CryptoBuffer>
     ByteContentFile& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The MIME type of data contained in the file used for chat.</p>
-     */
-    inline const Aws::String& GetMediaType() const { return m_mediaType; }
-    inline bool MediaTypeHasBeenSet() const { return m_mediaTypeHasBeenSet; }
-    template<typename MediaTypeT = Aws::String>
-    void SetMediaType(MediaTypeT&& value) { m_mediaTypeHasBeenSet = true; m_mediaType = std::forward<MediaTypeT>(value); }
-    template<typename MediaTypeT = Aws::String>
-    ByteContentFile& WithMediaType(MediaTypeT&& value) { SetMediaType(std::forward<MediaTypeT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::Utils::CryptoBuffer m_data{};
-    bool m_dataHasBeenSet = false;
 
     Aws::String m_mediaType;
     bool m_mediaTypeHasBeenSet = false;
+
+    Aws::Utils::CryptoBuffer m_data{};
+    bool m_dataHasBeenSet = false;
   };
 
 } // namespace Model

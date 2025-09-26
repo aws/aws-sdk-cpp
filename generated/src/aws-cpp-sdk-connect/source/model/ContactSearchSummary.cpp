@@ -89,6 +89,16 @@ ContactSearchSummary& ContactSearchSummary::operator =(JsonView jsonValue)
     }
     m_segmentAttributesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetString("Name");
+    m_nameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("RoutingCriteria"))
+  {
+    m_routingCriteria = jsonValue.GetObject("RoutingCriteria");
+    m_routingCriteriaHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -165,6 +175,18 @@ JsonValue ContactSearchSummary::Jsonize() const
      segmentAttributesJsonMap.WithObject(segmentAttributesItem.first, segmentAttributesItem.second.Jsonize());
    }
    payload.WithObject("SegmentAttributes", std::move(segmentAttributesJsonMap));
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
+
+  if(m_routingCriteriaHasBeenSet)
+  {
+   payload.WithObject("RoutingCriteria", m_routingCriteria.Jsonize());
 
   }
 

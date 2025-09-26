@@ -16,77 +16,9 @@ Aws::String InvokeInlineAgentRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_actionGroupsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> actionGroupsJsonList(m_actionGroups.size());
-   for(unsigned actionGroupsIndex = 0; actionGroupsIndex < actionGroupsJsonList.GetLength(); ++actionGroupsIndex)
-   {
-     actionGroupsJsonList[actionGroupsIndex].AsObject(m_actionGroups[actionGroupsIndex].Jsonize());
-   }
-   payload.WithArray("actionGroups", std::move(actionGroupsJsonList));
-
-  }
-
-  if(m_agentCollaborationHasBeenSet)
-  {
-   payload.WithString("agentCollaboration", AgentCollaborationMapper::GetNameForAgentCollaboration(m_agentCollaboration));
-  }
-
-  if(m_agentNameHasBeenSet)
-  {
-   payload.WithString("agentName", m_agentName);
-
-  }
-
-  if(m_bedrockModelConfigurationsHasBeenSet)
-  {
-   payload.WithObject("bedrockModelConfigurations", m_bedrockModelConfigurations.Jsonize());
-
-  }
-
-  if(m_collaboratorConfigurationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> collaboratorConfigurationsJsonList(m_collaboratorConfigurations.size());
-   for(unsigned collaboratorConfigurationsIndex = 0; collaboratorConfigurationsIndex < collaboratorConfigurationsJsonList.GetLength(); ++collaboratorConfigurationsIndex)
-   {
-     collaboratorConfigurationsJsonList[collaboratorConfigurationsIndex].AsObject(m_collaboratorConfigurations[collaboratorConfigurationsIndex].Jsonize());
-   }
-   payload.WithArray("collaboratorConfigurations", std::move(collaboratorConfigurationsJsonList));
-
-  }
-
-  if(m_collaboratorsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> collaboratorsJsonList(m_collaborators.size());
-   for(unsigned collaboratorsIndex = 0; collaboratorsIndex < collaboratorsJsonList.GetLength(); ++collaboratorsIndex)
-   {
-     collaboratorsJsonList[collaboratorsIndex].AsObject(m_collaborators[collaboratorsIndex].Jsonize());
-   }
-   payload.WithArray("collaborators", std::move(collaboratorsJsonList));
-
-  }
-
-  if(m_customOrchestrationHasBeenSet)
-  {
-   payload.WithObject("customOrchestration", m_customOrchestration.Jsonize());
-
-  }
-
   if(m_customerEncryptionKeyArnHasBeenSet)
   {
    payload.WithString("customerEncryptionKeyArn", m_customerEncryptionKeyArn);
-
-  }
-
-  if(m_enableTraceHasBeenSet)
-  {
-   payload.WithBool("enableTrace", m_enableTrace);
-
-  }
-
-  if(m_endSessionHasBeenSet)
-  {
-   payload.WithBool("endSession", m_endSession);
 
   }
 
@@ -96,9 +28,9 @@ Aws::String InvokeInlineAgentRequest::SerializePayload() const
 
   }
 
-  if(m_guardrailConfigurationHasBeenSet)
+  if(m_instructionHasBeenSet)
   {
-   payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
+   payload.WithString("instruction", m_instruction);
 
   }
 
@@ -108,21 +40,14 @@ Aws::String InvokeInlineAgentRequest::SerializePayload() const
 
   }
 
-  if(m_inlineSessionStateHasBeenSet)
+  if(m_actionGroupsHasBeenSet)
   {
-   payload.WithObject("inlineSessionState", m_inlineSessionState.Jsonize());
-
-  }
-
-  if(m_inputTextHasBeenSet)
-  {
-   payload.WithString("inputText", m_inputText);
-
-  }
-
-  if(m_instructionHasBeenSet)
-  {
-   payload.WithString("instruction", m_instruction);
+   Aws::Utils::Array<JsonValue> actionGroupsJsonList(m_actionGroups.size());
+   for(unsigned actionGroupsIndex = 0; actionGroupsIndex < actionGroupsJsonList.GetLength(); ++actionGroupsIndex)
+   {
+     actionGroupsJsonList[actionGroupsIndex].AsObject(m_actionGroups[actionGroupsIndex].Jsonize());
+   }
+   payload.WithArray("actionGroups", std::move(actionGroupsJsonList));
 
   }
 
@@ -137,14 +62,9 @@ Aws::String InvokeInlineAgentRequest::SerializePayload() const
 
   }
 
-  if(m_orchestrationTypeHasBeenSet)
+  if(m_guardrailConfigurationHasBeenSet)
   {
-   payload.WithString("orchestrationType", OrchestrationTypeMapper::GetNameForOrchestrationType(m_orchestrationType));
-  }
-
-  if(m_promptCreationConfigurationsHasBeenSet)
-  {
-   payload.WithObject("promptCreationConfigurations", m_promptCreationConfigurations.Jsonize());
+   payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
 
   }
 
@@ -154,9 +74,89 @@ Aws::String InvokeInlineAgentRequest::SerializePayload() const
 
   }
 
+  if(m_agentCollaborationHasBeenSet)
+  {
+   payload.WithString("agentCollaboration", AgentCollaborationMapper::GetNameForAgentCollaboration(m_agentCollaboration));
+  }
+
+  if(m_collaboratorConfigurationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> collaboratorConfigurationsJsonList(m_collaboratorConfigurations.size());
+   for(unsigned collaboratorConfigurationsIndex = 0; collaboratorConfigurationsIndex < collaboratorConfigurationsJsonList.GetLength(); ++collaboratorConfigurationsIndex)
+   {
+     collaboratorConfigurationsJsonList[collaboratorConfigurationsIndex].AsObject(m_collaboratorConfigurations[collaboratorConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("collaboratorConfigurations", std::move(collaboratorConfigurationsJsonList));
+
+  }
+
+  if(m_agentNameHasBeenSet)
+  {
+   payload.WithString("agentName", m_agentName);
+
+  }
+
+  if(m_endSessionHasBeenSet)
+  {
+   payload.WithBool("endSession", m_endSession);
+
+  }
+
+  if(m_enableTraceHasBeenSet)
+  {
+   payload.WithBool("enableTrace", m_enableTrace);
+
+  }
+
+  if(m_inputTextHasBeenSet)
+  {
+   payload.WithString("inputText", m_inputText);
+
+  }
+
   if(m_streamingConfigurationsHasBeenSet)
   {
    payload.WithObject("streamingConfigurations", m_streamingConfigurations.Jsonize());
+
+  }
+
+  if(m_promptCreationConfigurationsHasBeenSet)
+  {
+   payload.WithObject("promptCreationConfigurations", m_promptCreationConfigurations.Jsonize());
+
+  }
+
+  if(m_inlineSessionStateHasBeenSet)
+  {
+   payload.WithObject("inlineSessionState", m_inlineSessionState.Jsonize());
+
+  }
+
+  if(m_collaboratorsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> collaboratorsJsonList(m_collaborators.size());
+   for(unsigned collaboratorsIndex = 0; collaboratorsIndex < collaboratorsJsonList.GetLength(); ++collaboratorsIndex)
+   {
+     collaboratorsJsonList[collaboratorsIndex].AsObject(m_collaborators[collaboratorsIndex].Jsonize());
+   }
+   payload.WithArray("collaborators", std::move(collaboratorsJsonList));
+
+  }
+
+  if(m_bedrockModelConfigurationsHasBeenSet)
+  {
+   payload.WithObject("bedrockModelConfigurations", m_bedrockModelConfigurations.Jsonize());
+
+  }
+
+  if(m_orchestrationTypeHasBeenSet)
+  {
+   payload.WithString("orchestrationType", OrchestrationTypeMapper::GetNameForOrchestrationType(m_orchestrationType));
+  }
+
+  if(m_customOrchestrationHasBeenSet)
+  {
+   payload.WithObject("customOrchestration", m_customOrchestration.Jsonize());
 
   }
 
