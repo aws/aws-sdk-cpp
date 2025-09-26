@@ -36,24 +36,24 @@ namespace Model
                 << (eventType == Utils::Event::InitialResponseType::ON_EVENT ? "event" : "http headers"));
         };
 
-        m_onFlowCompletionEvent = [&](const FlowCompletionEvent&)
-        {
-            AWS_LOGSTREAM_TRACE(INVOKEFLOW_HANDLER_CLASS_TAG, "FlowCompletionEvent received.");
-        };
-
-        m_onFlowMultiTurnInputRequestEvent = [&](const FlowMultiTurnInputRequestEvent&)
-        {
-            AWS_LOGSTREAM_TRACE(INVOKEFLOW_HANDLER_CLASS_TAG, "FlowMultiTurnInputRequestEvent received.");
-        };
-
         m_onFlowOutputEvent = [&](const FlowOutputEvent&)
         {
             AWS_LOGSTREAM_TRACE(INVOKEFLOW_HANDLER_CLASS_TAG, "FlowOutputEvent received.");
         };
 
+        m_onFlowCompletionEvent = [&](const FlowCompletionEvent&)
+        {
+            AWS_LOGSTREAM_TRACE(INVOKEFLOW_HANDLER_CLASS_TAG, "FlowCompletionEvent received.");
+        };
+
         m_onFlowTraceEvent = [&](const FlowTraceEvent&)
         {
             AWS_LOGSTREAM_TRACE(INVOKEFLOW_HANDLER_CLASS_TAG, "FlowTraceEvent received.");
+        };
+
+        m_onFlowMultiTurnInputRequestEvent = [&](const FlowMultiTurnInputRequestEvent&)
+        {
+            AWS_LOGSTREAM_TRACE(INVOKEFLOW_HANDLER_CLASS_TAG, "FlowMultiTurnInputRequestEvent received.");
         };
 
         m_onError = [&](const AWSError<BedrockAgentRuntimeErrors>& error)
@@ -118,30 +118,6 @@ namespace Model
             break;
         }   
 
-        case InvokeFlowEventType::FLOWCOMPLETIONEVENT:
-        {
-            JsonValue json(GetEventPayloadAsString());
-            if (!json.WasParseSuccessful())
-            {
-                AWS_LOGSTREAM_WARN(INVOKEFLOW_HANDLER_CLASS_TAG, "Unable to generate a proper FlowCompletionEvent object from the response in JSON format.");
-                break;
-            }
-
-            m_onFlowCompletionEvent(FlowCompletionEvent{json.View()});
-            break;
-        }
-        case InvokeFlowEventType::FLOWMULTITURNINPUTREQUESTEVENT:
-        {
-            JsonValue json(GetEventPayloadAsString());
-            if (!json.WasParseSuccessful())
-            {
-                AWS_LOGSTREAM_WARN(INVOKEFLOW_HANDLER_CLASS_TAG, "Unable to generate a proper FlowMultiTurnInputRequestEvent object from the response in JSON format.");
-                break;
-            }
-
-            m_onFlowMultiTurnInputRequestEvent(FlowMultiTurnInputRequestEvent{json.View()});
-            break;
-        }
         case InvokeFlowEventType::FLOWOUTPUTEVENT:
         {
             JsonValue json(GetEventPayloadAsString());
@@ -154,6 +130,18 @@ namespace Model
             m_onFlowOutputEvent(FlowOutputEvent{json.View()});
             break;
         }
+        case InvokeFlowEventType::FLOWCOMPLETIONEVENT:
+        {
+            JsonValue json(GetEventPayloadAsString());
+            if (!json.WasParseSuccessful())
+            {
+                AWS_LOGSTREAM_WARN(INVOKEFLOW_HANDLER_CLASS_TAG, "Unable to generate a proper FlowCompletionEvent object from the response in JSON format.");
+                break;
+            }
+
+            m_onFlowCompletionEvent(FlowCompletionEvent{json.View()});
+            break;
+        }
         case InvokeFlowEventType::FLOWTRACEEVENT:
         {
             JsonValue json(GetEventPayloadAsString());
@@ -164,6 +152,18 @@ namespace Model
             }
 
             m_onFlowTraceEvent(FlowTraceEvent{json.View()});
+            break;
+        }
+        case InvokeFlowEventType::FLOWMULTITURNINPUTREQUESTEVENT:
+        {
+            JsonValue json(GetEventPayloadAsString());
+            if (!json.WasParseSuccessful())
+            {
+                AWS_LOGSTREAM_WARN(INVOKEFLOW_HANDLER_CLASS_TAG, "Unable to generate a proper FlowMultiTurnInputRequestEvent object from the response in JSON format.");
+                break;
+            }
+
+            m_onFlowMultiTurnInputRequestEvent(FlowMultiTurnInputRequestEvent{json.View()});
             break;
         }
         default:
@@ -205,7 +205,7 @@ namespace Model
             JsonValue exceptionPayload(GetEventPayloadAsString());
             if (!exceptionPayload.WasParseSuccessful())
             {
-                AWS_LOGSTREAM_ERROR(INVOKEFLOW_HANDLER_CLASS_TAG, "Unable to generate a proper ValidationException object from the response in JSON format.");
+                AWS_LOGSTREAM_ERROR(INVOKEFLOW_HANDLER_CLASS_TAG, "Unable to generate a proper FlowMultiTurnInputRequestEvent object from the response in JSON format.");
                 auto contentTypeIter = headers.find(Aws::Utils::Event::CONTENT_TYPE_HEADER);
                 if (contentTypeIter != headers.end())
                 {
@@ -259,10 +259,10 @@ namespace Model
 namespace InvokeFlowEventMapper
 {
     static const int INITIAL_RESPONSE_HASH = Aws::Utils::HashingUtils::HashString("initial-response");
-    static const int FLOWCOMPLETIONEVENT_HASH = Aws::Utils::HashingUtils::HashString("flowCompletionEvent");
-    static const int FLOWMULTITURNINPUTREQUESTEVENT_HASH = Aws::Utils::HashingUtils::HashString("flowMultiTurnInputRequestEvent");
     static const int FLOWOUTPUTEVENT_HASH = Aws::Utils::HashingUtils::HashString("flowOutputEvent");
+    static const int FLOWCOMPLETIONEVENT_HASH = Aws::Utils::HashingUtils::HashString("flowCompletionEvent");
     static const int FLOWTRACEEVENT_HASH = Aws::Utils::HashingUtils::HashString("flowTraceEvent");
+    static const int FLOWMULTITURNINPUTREQUESTEVENT_HASH = Aws::Utils::HashingUtils::HashString("flowMultiTurnInputRequestEvent");
 
     InvokeFlowEventType GetInvokeFlowEventTypeForName(const Aws::String& name)
     {
@@ -272,21 +272,21 @@ namespace InvokeFlowEventMapper
         {
             return InvokeFlowEventType::INITIAL_RESPONSE;
         }
-        else if (hashCode == FLOWCOMPLETIONEVENT_HASH)
-        {
-            return InvokeFlowEventType::FLOWCOMPLETIONEVENT;
-        }
-        else if (hashCode == FLOWMULTITURNINPUTREQUESTEVENT_HASH)
-        {
-            return InvokeFlowEventType::FLOWMULTITURNINPUTREQUESTEVENT;
-        }
         else if (hashCode == FLOWOUTPUTEVENT_HASH)
         {
             return InvokeFlowEventType::FLOWOUTPUTEVENT;
         }
+        else if (hashCode == FLOWCOMPLETIONEVENT_HASH)
+        {
+            return InvokeFlowEventType::FLOWCOMPLETIONEVENT;
+        }
         else if (hashCode == FLOWTRACEEVENT_HASH)
         {
             return InvokeFlowEventType::FLOWTRACEEVENT;
+        }
+        else if (hashCode == FLOWMULTITURNINPUTREQUESTEVENT_HASH)
+        {
+            return InvokeFlowEventType::FLOWMULTITURNINPUTREQUESTEVENT;
         }
         return InvokeFlowEventType::UNKNOWN;
     }
@@ -297,14 +297,14 @@ namespace InvokeFlowEventMapper
         {
         case InvokeFlowEventType::INITIAL_RESPONSE:
             return "initial-response";
-        case InvokeFlowEventType::FLOWCOMPLETIONEVENT:
-            return "flowCompletionEvent";
-        case InvokeFlowEventType::FLOWMULTITURNINPUTREQUESTEVENT:
-            return "flowMultiTurnInputRequestEvent";
         case InvokeFlowEventType::FLOWOUTPUTEVENT:
             return "flowOutputEvent";
+        case InvokeFlowEventType::FLOWCOMPLETIONEVENT:
+            return "flowCompletionEvent";
         case InvokeFlowEventType::FLOWTRACEEVENT:
             return "flowTraceEvent";
+        case InvokeFlowEventType::FLOWMULTITURNINPUTREQUESTEVENT:
+            return "flowMultiTurnInputRequestEvent";
         default:
             return "Unknown";
         }

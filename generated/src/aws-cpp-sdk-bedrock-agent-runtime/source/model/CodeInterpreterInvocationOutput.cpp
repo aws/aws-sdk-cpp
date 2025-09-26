@@ -25,20 +25,15 @@ CodeInterpreterInvocationOutput::CodeInterpreterInvocationOutput(JsonView jsonVa
 
 CodeInterpreterInvocationOutput& CodeInterpreterInvocationOutput::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("executionError"))
-  {
-    m_executionError = jsonValue.GetString("executionError");
-    m_executionErrorHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("executionOutput"))
   {
     m_executionOutput = jsonValue.GetString("executionOutput");
     m_executionOutputHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("executionTimeout"))
+  if(jsonValue.ValueExists("executionError"))
   {
-    m_executionTimeout = jsonValue.GetBool("executionTimeout");
-    m_executionTimeoutHasBeenSet = true;
+    m_executionError = jsonValue.GetString("executionError");
+    m_executionErrorHasBeenSet = true;
   }
   if(jsonValue.ValueExists("files"))
   {
@@ -48,6 +43,11 @@ CodeInterpreterInvocationOutput& CodeInterpreterInvocationOutput::operator =(Jso
       m_files.push_back(filesJsonList[filesIndex].AsString());
     }
     m_filesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("executionTimeout"))
+  {
+    m_executionTimeout = jsonValue.GetBool("executionTimeout");
+    m_executionTimeoutHasBeenSet = true;
   }
   if(jsonValue.ValueExists("metadata"))
   {
@@ -61,21 +61,15 @@ JsonValue CodeInterpreterInvocationOutput::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_executionErrorHasBeenSet)
-  {
-   payload.WithString("executionError", m_executionError);
-
-  }
-
   if(m_executionOutputHasBeenSet)
   {
    payload.WithString("executionOutput", m_executionOutput);
 
   }
 
-  if(m_executionTimeoutHasBeenSet)
+  if(m_executionErrorHasBeenSet)
   {
-   payload.WithBool("executionTimeout", m_executionTimeout);
+   payload.WithString("executionError", m_executionError);
 
   }
 
@@ -87,6 +81,12 @@ JsonValue CodeInterpreterInvocationOutput::Jsonize() const
      filesJsonList[filesIndex].AsString(m_files[filesIndex]);
    }
    payload.WithArray("files", std::move(filesJsonList));
+
+  }
+
+  if(m_executionTimeoutHasBeenSet)
+  {
+   payload.WithBool("executionTimeout", m_executionTimeout);
 
   }
 

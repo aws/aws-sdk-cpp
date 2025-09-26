@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/bedrock-agent-runtime/model/SessionStatus.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -37,38 +37,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp for when the session was created.</p>
+     * <p>The unique identifier for the session in UUID format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    GetSessionResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Key Management Service key used to
-     * encrypt the session data. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/session-encryption.html">Amazon
-     * Bedrock session encryption</a>.</p>
-     */
-    inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
-    template<typename EncryptionKeyArnT = Aws::String>
-    void SetEncryptionKeyArn(EncryptionKeyArnT&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value); }
-    template<typename EncryptionKeyArnT = Aws::String>
-    GetSessionResult& WithEncryptionKeyArn(EncryptionKeyArnT&& value) { SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The timestamp for when the session was last modified.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
-    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
-    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
-    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
-    GetSessionResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    GetSessionResult& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,13 +59,33 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier for the session in UUID format.</p>
+     * <p>The current status of the session.</p>
      */
-    inline const Aws::String& GetSessionId() const { return m_sessionId; }
-    template<typename SessionIdT = Aws::String>
-    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
-    template<typename SessionIdT = Aws::String>
-    GetSessionResult& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
+    inline SessionStatus GetSessionStatus() const { return m_sessionStatus; }
+    inline void SetSessionStatus(SessionStatus value) { m_sessionStatusHasBeenSet = true; m_sessionStatus = value; }
+    inline GetSessionResult& WithSessionStatus(SessionStatus value) { SetSessionStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The timestamp for when the session was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetSessionResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The timestamp for when the session was last modified.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    GetSessionResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,11 +106,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current status of the session.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service key used to
+     * encrypt the session data. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/session-encryption.html">Amazon
+     * Bedrock session encryption</a>.</p>
      */
-    inline SessionStatus GetSessionStatus() const { return m_sessionStatus; }
-    inline void SetSessionStatus(SessionStatus value) { m_sessionStatusHasBeenSet = true; m_sessionStatus = value; }
-    inline GetSessionResult& WithSessionStatus(SessionStatus value) { SetSessionStatus(value); return *this;}
+    inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
+    template<typename EncryptionKeyArnT = Aws::String>
+    void SetEncryptionKeyArn(EncryptionKeyArnT&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value); }
+    template<typename EncryptionKeyArnT = Aws::String>
+    GetSessionResult& WithEncryptionKeyArn(EncryptionKeyArnT&& value) { SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,26 +128,26 @@ namespace Model
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
-
-    Aws::String m_encryptionKeyArn;
-    bool m_encryptionKeyArnHasBeenSet = false;
-
-    Aws::Utils::DateTime m_lastUpdatedAt{};
-    bool m_lastUpdatedAtHasBeenSet = false;
+    Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_sessionArn;
     bool m_sessionArnHasBeenSet = false;
 
-    Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet = false;
+    SessionStatus m_sessionStatus{SessionStatus::NOT_SET};
+    bool m_sessionStatusHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_sessionMetadata;
     bool m_sessionMetadataHasBeenSet = false;
 
-    SessionStatus m_sessionStatus{SessionStatus::NOT_SET};
-    bool m_sessionStatusHasBeenSet = false;
+    Aws::String m_encryptionKeyArn;
+    bool m_encryptionKeyArnHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/ByteContentFile.h>
-#include <aws/bedrock-agent-runtime/model/S3ObjectFile.h>
 #include <aws/bedrock-agent-runtime/model/FileSourceType.h>
+#include <aws/bedrock-agent-runtime/model/S3ObjectFile.h>
+#include <aws/bedrock-agent-runtime/model/ByteContentFile.h>
 #include <utility>
 
 namespace Aws
@@ -42,14 +42,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The data and the text of the attached files.</p>
+     * <p>The source type of the files to attach.</p>
      */
-    inline const ByteContentFile& GetByteContent() const { return m_byteContent; }
-    inline bool ByteContentHasBeenSet() const { return m_byteContentHasBeenSet; }
-    template<typename ByteContentT = ByteContentFile>
-    void SetByteContent(ByteContentT&& value) { m_byteContentHasBeenSet = true; m_byteContent = std::forward<ByteContentT>(value); }
-    template<typename ByteContentT = ByteContentFile>
-    FileSource& WithByteContent(ByteContentT&& value) { SetByteContent(std::forward<ByteContentT>(value)); return *this;}
+    inline FileSourceType GetSourceType() const { return m_sourceType; }
+    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+    inline void SetSourceType(FileSourceType value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+    inline FileSource& WithSourceType(FileSourceType value) { SetSourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -66,23 +64,25 @@ namespace Model
 
     ///@{
     /**
-     * <p>The source type of the files to attach.</p>
+     * <p>The data and the text of the attached files.</p>
      */
-    inline FileSourceType GetSourceType() const { return m_sourceType; }
-    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-    inline void SetSourceType(FileSourceType value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-    inline FileSource& WithSourceType(FileSourceType value) { SetSourceType(value); return *this;}
+    inline const ByteContentFile& GetByteContent() const { return m_byteContent; }
+    inline bool ByteContentHasBeenSet() const { return m_byteContentHasBeenSet; }
+    template<typename ByteContentT = ByteContentFile>
+    void SetByteContent(ByteContentT&& value) { m_byteContentHasBeenSet = true; m_byteContent = std::forward<ByteContentT>(value); }
+    template<typename ByteContentT = ByteContentFile>
+    FileSource& WithByteContent(ByteContentT&& value) { SetByteContent(std::forward<ByteContentT>(value)); return *this;}
     ///@}
   private:
 
-    ByteContentFile m_byteContent;
-    bool m_byteContentHasBeenSet = false;
+    FileSourceType m_sourceType{FileSourceType::NOT_SET};
+    bool m_sourceTypeHasBeenSet = false;
 
     S3ObjectFile m_s3Location;
     bool m_s3LocationHasBeenSet = false;
 
-    FileSourceType m_sourceType{FileSourceType::NOT_SET};
-    bool m_sourceTypeHasBeenSet = false;
+    ByteContentFile m_byteContent;
+    bool m_byteContentHasBeenSet = false;
   };
 
 } // namespace Model

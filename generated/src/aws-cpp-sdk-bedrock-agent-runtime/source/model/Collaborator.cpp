@@ -25,34 +25,6 @@ Collaborator::Collaborator(JsonView jsonValue)
 
 Collaborator& Collaborator::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("actionGroups"))
-  {
-    Aws::Utils::Array<JsonView> actionGroupsJsonList = jsonValue.GetArray("actionGroups");
-    for(unsigned actionGroupsIndex = 0; actionGroupsIndex < actionGroupsJsonList.GetLength(); ++actionGroupsIndex)
-    {
-      m_actionGroups.push_back(actionGroupsJsonList[actionGroupsIndex].AsObject());
-    }
-    m_actionGroupsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("agentCollaboration"))
-  {
-    m_agentCollaboration = AgentCollaborationMapper::GetAgentCollaborationForName(jsonValue.GetString("agentCollaboration"));
-    m_agentCollaborationHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("agentName"))
-  {
-    m_agentName = jsonValue.GetString("agentName");
-    m_agentNameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("collaboratorConfigurations"))
-  {
-    Aws::Utils::Array<JsonView> collaboratorConfigurationsJsonList = jsonValue.GetArray("collaboratorConfigurations");
-    for(unsigned collaboratorConfigurationsIndex = 0; collaboratorConfigurationsIndex < collaboratorConfigurationsJsonList.GetLength(); ++collaboratorConfigurationsIndex)
-    {
-      m_collaboratorConfigurations.push_back(collaboratorConfigurationsJsonList[collaboratorConfigurationsIndex].AsObject());
-    }
-    m_collaboratorConfigurationsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("customerEncryptionKeyArn"))
   {
     m_customerEncryptionKeyArn = jsonValue.GetString("customerEncryptionKeyArn");
@@ -63,20 +35,24 @@ Collaborator& Collaborator::operator =(JsonView jsonValue)
     m_foundationModel = jsonValue.GetString("foundationModel");
     m_foundationModelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("guardrailConfiguration"))
+  if(jsonValue.ValueExists("instruction"))
   {
-    m_guardrailConfiguration = jsonValue.GetObject("guardrailConfiguration");
-    m_guardrailConfigurationHasBeenSet = true;
+    m_instruction = jsonValue.GetString("instruction");
+    m_instructionHasBeenSet = true;
   }
   if(jsonValue.ValueExists("idleSessionTTLInSeconds"))
   {
     m_idleSessionTTLInSeconds = jsonValue.GetInteger("idleSessionTTLInSeconds");
     m_idleSessionTTLInSecondsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("instruction"))
+  if(jsonValue.ValueExists("actionGroups"))
   {
-    m_instruction = jsonValue.GetString("instruction");
-    m_instructionHasBeenSet = true;
+    Aws::Utils::Array<JsonView> actionGroupsJsonList = jsonValue.GetArray("actionGroups");
+    for(unsigned actionGroupsIndex = 0; actionGroupsIndex < actionGroupsJsonList.GetLength(); ++actionGroupsIndex)
+    {
+      m_actionGroups.push_back(actionGroupsJsonList[actionGroupsIndex].AsObject());
+    }
+    m_actionGroupsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("knowledgeBases"))
   {
@@ -87,10 +63,34 @@ Collaborator& Collaborator::operator =(JsonView jsonValue)
     }
     m_knowledgeBasesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("guardrailConfiguration"))
+  {
+    m_guardrailConfiguration = jsonValue.GetObject("guardrailConfiguration");
+    m_guardrailConfigurationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("promptOverrideConfiguration"))
   {
     m_promptOverrideConfiguration = jsonValue.GetObject("promptOverrideConfiguration");
     m_promptOverrideConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("agentCollaboration"))
+  {
+    m_agentCollaboration = AgentCollaborationMapper::GetAgentCollaborationForName(jsonValue.GetString("agentCollaboration"));
+    m_agentCollaborationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("collaboratorConfigurations"))
+  {
+    Aws::Utils::Array<JsonView> collaboratorConfigurationsJsonList = jsonValue.GetArray("collaboratorConfigurations");
+    for(unsigned collaboratorConfigurationsIndex = 0; collaboratorConfigurationsIndex < collaboratorConfigurationsJsonList.GetLength(); ++collaboratorConfigurationsIndex)
+    {
+      m_collaboratorConfigurations.push_back(collaboratorConfigurationsJsonList[collaboratorConfigurationsIndex].AsObject());
+    }
+    m_collaboratorConfigurationsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("agentName"))
+  {
+    m_agentName = jsonValue.GetString("agentName");
+    m_agentNameHasBeenSet = true;
   }
   return *this;
 }
@@ -98,39 +98,6 @@ Collaborator& Collaborator::operator =(JsonView jsonValue)
 JsonValue Collaborator::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_actionGroupsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> actionGroupsJsonList(m_actionGroups.size());
-   for(unsigned actionGroupsIndex = 0; actionGroupsIndex < actionGroupsJsonList.GetLength(); ++actionGroupsIndex)
-   {
-     actionGroupsJsonList[actionGroupsIndex].AsObject(m_actionGroups[actionGroupsIndex].Jsonize());
-   }
-   payload.WithArray("actionGroups", std::move(actionGroupsJsonList));
-
-  }
-
-  if(m_agentCollaborationHasBeenSet)
-  {
-   payload.WithString("agentCollaboration", AgentCollaborationMapper::GetNameForAgentCollaboration(m_agentCollaboration));
-  }
-
-  if(m_agentNameHasBeenSet)
-  {
-   payload.WithString("agentName", m_agentName);
-
-  }
-
-  if(m_collaboratorConfigurationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> collaboratorConfigurationsJsonList(m_collaboratorConfigurations.size());
-   for(unsigned collaboratorConfigurationsIndex = 0; collaboratorConfigurationsIndex < collaboratorConfigurationsJsonList.GetLength(); ++collaboratorConfigurationsIndex)
-   {
-     collaboratorConfigurationsJsonList[collaboratorConfigurationsIndex].AsObject(m_collaboratorConfigurations[collaboratorConfigurationsIndex].Jsonize());
-   }
-   payload.WithArray("collaboratorConfigurations", std::move(collaboratorConfigurationsJsonList));
-
-  }
 
   if(m_customerEncryptionKeyArnHasBeenSet)
   {
@@ -144,9 +111,9 @@ JsonValue Collaborator::Jsonize() const
 
   }
 
-  if(m_guardrailConfigurationHasBeenSet)
+  if(m_instructionHasBeenSet)
   {
-   payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
+   payload.WithString("instruction", m_instruction);
 
   }
 
@@ -156,9 +123,14 @@ JsonValue Collaborator::Jsonize() const
 
   }
 
-  if(m_instructionHasBeenSet)
+  if(m_actionGroupsHasBeenSet)
   {
-   payload.WithString("instruction", m_instruction);
+   Aws::Utils::Array<JsonValue> actionGroupsJsonList(m_actionGroups.size());
+   for(unsigned actionGroupsIndex = 0; actionGroupsIndex < actionGroupsJsonList.GetLength(); ++actionGroupsIndex)
+   {
+     actionGroupsJsonList[actionGroupsIndex].AsObject(m_actionGroups[actionGroupsIndex].Jsonize());
+   }
+   payload.WithArray("actionGroups", std::move(actionGroupsJsonList));
 
   }
 
@@ -173,9 +145,37 @@ JsonValue Collaborator::Jsonize() const
 
   }
 
+  if(m_guardrailConfigurationHasBeenSet)
+  {
+   payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
+
+  }
+
   if(m_promptOverrideConfigurationHasBeenSet)
   {
    payload.WithObject("promptOverrideConfiguration", m_promptOverrideConfiguration.Jsonize());
+
+  }
+
+  if(m_agentCollaborationHasBeenSet)
+  {
+   payload.WithString("agentCollaboration", AgentCollaborationMapper::GetNameForAgentCollaboration(m_agentCollaboration));
+  }
+
+  if(m_collaboratorConfigurationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> collaboratorConfigurationsJsonList(m_collaboratorConfigurations.size());
+   for(unsigned collaboratorConfigurationsIndex = 0; collaboratorConfigurationsIndex < collaboratorConfigurationsJsonList.GetLength(); ++collaboratorConfigurationsIndex)
+   {
+     collaboratorConfigurationsJsonList[collaboratorConfigurationsIndex].AsObject(m_collaboratorConfigurations[collaboratorConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("collaboratorConfigurations", std::move(collaboratorConfigurationsJsonList));
+
+  }
+
+  if(m_agentNameHasBeenSet)
+  {
+   payload.WithString("agentName", m_agentName);
 
   }
 

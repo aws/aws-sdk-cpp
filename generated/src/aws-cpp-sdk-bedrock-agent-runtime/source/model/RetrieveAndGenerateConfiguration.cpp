@@ -25,20 +25,20 @@ RetrieveAndGenerateConfiguration::RetrieveAndGenerateConfiguration(JsonView json
 
 RetrieveAndGenerateConfiguration& RetrieveAndGenerateConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("externalSourcesConfiguration"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_externalSourcesConfiguration = jsonValue.GetObject("externalSourcesConfiguration");
-    m_externalSourcesConfigurationHasBeenSet = true;
+    m_type = RetrieveAndGenerateTypeMapper::GetRetrieveAndGenerateTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("knowledgeBaseConfiguration"))
   {
     m_knowledgeBaseConfiguration = jsonValue.GetObject("knowledgeBaseConfiguration");
     m_knowledgeBaseConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("externalSourcesConfiguration"))
   {
-    m_type = RetrieveAndGenerateTypeMapper::GetRetrieveAndGenerateTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+    m_externalSourcesConfiguration = jsonValue.GetObject("externalSourcesConfiguration");
+    m_externalSourcesConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -47,10 +47,9 @@ JsonValue RetrieveAndGenerateConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_externalSourcesConfigurationHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithObject("externalSourcesConfiguration", m_externalSourcesConfiguration.Jsonize());
-
+   payload.WithString("type", RetrieveAndGenerateTypeMapper::GetNameForRetrieveAndGenerateType(m_type));
   }
 
   if(m_knowledgeBaseConfigurationHasBeenSet)
@@ -59,9 +58,10 @@ JsonValue RetrieveAndGenerateConfiguration::Jsonize() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_externalSourcesConfigurationHasBeenSet)
   {
-   payload.WithString("type", RetrieveAndGenerateTypeMapper::GetNameForRetrieveAndGenerateType(m_type));
+   payload.WithObject("externalSourcesConfiguration", m_externalSourcesConfiguration.Jsonize());
+
   }
 
   return payload;

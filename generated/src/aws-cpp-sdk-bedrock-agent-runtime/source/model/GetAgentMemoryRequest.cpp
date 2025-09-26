@@ -23,17 +23,17 @@ Aws::String GetAgentMemoryRequest::SerializePayload() const
 void GetAgentMemoryRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_nextTokenHasBeenSet)
+    {
+      ss << m_nextToken;
+      uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
+    }
+
     if(m_maxItemsHasBeenSet)
     {
       ss << m_maxItems;
       uri.AddQueryStringParameter("maxItems", ss.str());
-      ss.str("");
-    }
-
-    if(m_memoryIdHasBeenSet)
-    {
-      ss << m_memoryId;
-      uri.AddQueryStringParameter("memoryId", ss.str());
       ss.str("");
     }
 
@@ -44,10 +44,10 @@ void GetAgentMemoryRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
-    if(m_nextTokenHasBeenSet)
+    if(m_memoryIdHasBeenSet)
     {
-      ss << m_nextToken;
-      uri.AddQueryStringParameter("nextToken", ss.str());
+      ss << m_memoryId;
+      uri.AddQueryStringParameter("memoryId", ss.str());
       ss.str("");
     }
 

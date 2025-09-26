@@ -30,11 +30,6 @@ FunctionResult& FunctionResult::operator =(JsonView jsonValue)
     m_actionGroup = jsonValue.GetString("actionGroup");
     m_actionGroupHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("agentId"))
-  {
-    m_agentId = jsonValue.GetString("agentId");
-    m_agentIdHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("confirmationState"))
   {
     m_confirmationState = ConfirmationStateMapper::GetConfirmationStateForName(jsonValue.GetString("confirmationState"));
@@ -59,6 +54,11 @@ FunctionResult& FunctionResult::operator =(JsonView jsonValue)
     m_responseState = ResponseStateMapper::GetResponseStateForName(jsonValue.GetString("responseState"));
     m_responseStateHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("agentId"))
+  {
+    m_agentId = jsonValue.GetString("agentId");
+    m_agentIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -69,12 +69,6 @@ JsonValue FunctionResult::Jsonize() const
   if(m_actionGroupHasBeenSet)
   {
    payload.WithString("actionGroup", m_actionGroup);
-
-  }
-
-  if(m_agentIdHasBeenSet)
-  {
-   payload.WithString("agentId", m_agentId);
 
   }
 
@@ -103,6 +97,12 @@ JsonValue FunctionResult::Jsonize() const
   if(m_responseStateHasBeenSet)
   {
    payload.WithString("responseState", ResponseStateMapper::GetNameForResponseState(m_responseState));
+  }
+
+  if(m_agentIdHasBeenSet)
+  {
+   payload.WithString("agentId", m_agentId);
+
   }
 
   return payload;

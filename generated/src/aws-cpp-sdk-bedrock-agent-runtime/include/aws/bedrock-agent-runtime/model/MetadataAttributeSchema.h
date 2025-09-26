@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The attribute's description.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    MetadataAttributeSchema& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The attribute's key.</p>
      */
     inline const Aws::String& GetKey() const { return m_key; }
@@ -71,16 +59,28 @@ namespace Model
     inline void SetType(AttributeType value) { m_typeHasBeenSet = true; m_type = value; }
     inline MetadataAttributeSchema& WithType(AttributeType value) { SetType(value); return *this;}
     ///@}
-  private:
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The attribute's description.</p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    MetadataAttributeSchema& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_key;
     bool m_keyHasBeenSet = false;
 
     AttributeType m_type{AttributeType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

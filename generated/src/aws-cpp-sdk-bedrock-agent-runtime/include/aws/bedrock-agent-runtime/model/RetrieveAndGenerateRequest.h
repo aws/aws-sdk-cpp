@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent-runtime/model/RetrieveAndGenerateInput.h>
 #include <aws/bedrock-agent-runtime/model/RetrieveAndGenerateConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/RetrieveAndGenerateSessionConfiguration.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -34,6 +34,23 @@ namespace Model
 
     AWS_BEDROCKAGENTRUNTIME_API Aws::String SerializePayload() const override;
 
+
+    ///@{
+    /**
+     * <p>The unique identifier of the session. When you first make a
+     * <code>RetrieveAndGenerate</code> request, Amazon Bedrock automatically generates
+     * this value. You must reuse this value for all subsequent requests in the same
+     * conversational session. This value allows Amazon Bedrock to maintain context and
+     * knowledge from previous interactions. You can't explicitly set the
+     * <code>sessionId</code> yourself.</p>
+     */
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
+    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    RetrieveAndGenerateRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -73,24 +90,10 @@ namespace Model
     template<typename SessionConfigurationT = RetrieveAndGenerateSessionConfiguration>
     RetrieveAndGenerateRequest& WithSessionConfiguration(SessionConfigurationT&& value) { SetSessionConfiguration(std::forward<SessionConfigurationT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The unique identifier of the session. When you first make a
-     * <code>RetrieveAndGenerate</code> request, Amazon Bedrock automatically generates
-     * this value. You must reuse this value for all subsequent requests in the same
-     * conversational session. This value allows Amazon Bedrock to maintain context and
-     * knowledge from previous interactions. You can't explicitly set the
-     * <code>sessionId</code> yourself.</p>
-     */
-    inline const Aws::String& GetSessionId() const { return m_sessionId; }
-    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    template<typename SessionIdT = Aws::String>
-    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
-    template<typename SessionIdT = Aws::String>
-    RetrieveAndGenerateRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
 
     RetrieveAndGenerateInput m_input;
     bool m_inputHasBeenSet = false;
@@ -100,9 +103,6 @@ namespace Model
 
     RetrieveAndGenerateSessionConfiguration m_sessionConfiguration;
     bool m_sessionConfigurationHasBeenSet = false;
-
-    Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet = false;
   };
 
 } // namespace Model

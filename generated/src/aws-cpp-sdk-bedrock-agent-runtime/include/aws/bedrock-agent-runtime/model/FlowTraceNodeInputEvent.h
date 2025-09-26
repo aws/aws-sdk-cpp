@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent-runtime/model/FlowTraceNodeInputField.h>
 #include <utility>
 
@@ -46,20 +46,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of objects containing information about each field in the input.</p>
-     */
-    inline const Aws::Vector<FlowTraceNodeInputField>& GetFields() const { return m_fields; }
-    inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-    template<typename FieldsT = Aws::Vector<FlowTraceNodeInputField>>
-    void SetFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields = std::forward<FieldsT>(value); }
-    template<typename FieldsT = Aws::Vector<FlowTraceNodeInputField>>
-    FlowTraceNodeInputEvent& WithFields(FieldsT&& value) { SetFields(std::forward<FieldsT>(value)); return *this;}
-    template<typename FieldsT = FlowTraceNodeInputField>
-    FlowTraceNodeInputEvent& AddFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields.emplace_back(std::forward<FieldsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the node that received the input.</p>
      */
     inline const Aws::String& GetNodeName() const { return m_nodeName; }
@@ -81,16 +67,30 @@ namespace Model
     template<typename TimestampT = Aws::Utils::DateTime>
     FlowTraceNodeInputEvent& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::Vector<FlowTraceNodeInputField> m_fields;
-    bool m_fieldsHasBeenSet = false;
+    ///@{
+    /**
+     * <p>An array of objects containing information about each field in the input.</p>
+     */
+    inline const Aws::Vector<FlowTraceNodeInputField>& GetFields() const { return m_fields; }
+    inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
+    template<typename FieldsT = Aws::Vector<FlowTraceNodeInputField>>
+    void SetFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields = std::forward<FieldsT>(value); }
+    template<typename FieldsT = Aws::Vector<FlowTraceNodeInputField>>
+    FlowTraceNodeInputEvent& WithFields(FieldsT&& value) { SetFields(std::forward<FieldsT>(value)); return *this;}
+    template<typename FieldsT = FlowTraceNodeInputField>
+    FlowTraceNodeInputEvent& AddFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields.emplace_back(std::forward<FieldsT>(value)); return *this; }
+    ///@}
+  private:
 
     Aws::String m_nodeName;
     bool m_nodeNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
+
+    Aws::Vector<FlowTraceNodeInputField> m_fields;
+    bool m_fieldsHasBeenSet = false;
   };
 
 } // namespace Model

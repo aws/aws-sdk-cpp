@@ -25,16 +25,6 @@ NodeFailureEvent::NodeFailureEvent(JsonView jsonValue)
 
 NodeFailureEvent& NodeFailureEvent::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("errorCode"))
-  {
-    m_errorCode = NodeErrorCodeMapper::GetNodeErrorCodeForName(jsonValue.GetString("errorCode"));
-    m_errorCodeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("errorMessage"))
-  {
-    m_errorMessage = jsonValue.GetString("errorMessage");
-    m_errorMessageHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("nodeName"))
   {
     m_nodeName = jsonValue.GetString("nodeName");
@@ -45,23 +35,22 @@ NodeFailureEvent& NodeFailureEvent::operator =(JsonView jsonValue)
     m_timestamp = jsonValue.GetString("timestamp");
     m_timestampHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("errorCode"))
+  {
+    m_errorCode = NodeErrorCodeMapper::GetNodeErrorCodeForName(jsonValue.GetString("errorCode"));
+    m_errorCodeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("errorMessage"))
+  {
+    m_errorMessage = jsonValue.GetString("errorMessage");
+    m_errorMessageHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue NodeFailureEvent::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("errorCode", NodeErrorCodeMapper::GetNameForNodeErrorCode(m_errorCode));
-  }
-
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("errorMessage", m_errorMessage);
-
-  }
 
   if(m_nodeNameHasBeenSet)
   {
@@ -72,6 +61,17 @@ JsonValue NodeFailureEvent::Jsonize() const
   if(m_timestampHasBeenSet)
   {
    payload.WithString("timestamp", m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_errorCodeHasBeenSet)
+  {
+   payload.WithString("errorCode", NodeErrorCodeMapper::GetNameForNodeErrorCode(m_errorCode));
+  }
+
+  if(m_errorMessageHasBeenSet)
+  {
+   payload.WithString("errorMessage", m_errorMessage);
+
   }
 
   return payload;

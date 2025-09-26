@@ -16,12 +16,6 @@ Aws::String RerankRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
-  }
-
   if(m_queriesHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> queriesJsonList(m_queries.size());
@@ -33,12 +27,6 @@ Aws::String RerankRequest::SerializePayload() const
 
   }
 
-  if(m_rerankingConfigurationHasBeenSet)
-  {
-   payload.WithObject("rerankingConfiguration", m_rerankingConfiguration.Jsonize());
-
-  }
-
   if(m_sourcesHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
@@ -47,6 +35,18 @@ Aws::String RerankRequest::SerializePayload() const
      sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
    }
    payload.WithArray("sources", std::move(sourcesJsonList));
+
+  }
+
+  if(m_rerankingConfigurationHasBeenSet)
+  {
+   payload.WithObject("rerankingConfiguration", m_rerankingConfiguration.Jsonize());
+
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+   payload.WithString("nextToken", m_nextToken);
 
   }
 

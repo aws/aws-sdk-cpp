@@ -38,6 +38,7 @@ static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededEx
 static const int ANALYSIS_NOT_FOUND_HASH = HashingUtils::HashString("AnalysisNotFoundException");
 static const int BILL_EXPIRATION_HASH = HashingUtils::HashString("BillExpirationException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
+static const int BILLING_VIEW_HEALTH_STATUS_HASH = HashingUtils::HashString("BillingViewHealthStatusException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int UNRESOLVABLE_USAGE_UNIT_HASH = HashingUtils::HashString("UnresolvableUsageUnitException");
 static const int UNKNOWN_SUBSCRIPTION_HASH = HashingUtils::HashString("UnknownSubscriptionException");
@@ -71,6 +72,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == BILLING_VIEW_HEALTH_STATUS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::BILLING_VIEW_HEALTH_STATUS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {

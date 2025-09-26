@@ -5,14 +5,14 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/ActionGroupInvocationOutput.h>
-#include <aws/bedrock-agent-runtime/model/AgentCollaboratorInvocationOutput.h>
-#include <aws/bedrock-agent-runtime/model/CodeInterpreterInvocationOutput.h>
-#include <aws/bedrock-agent-runtime/model/FinalResponse.h>
-#include <aws/bedrock-agent-runtime/model/KnowledgeBaseLookupOutput.h>
-#include <aws/bedrock-agent-runtime/model/RepromptResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent-runtime/model/Type.h>
+#include <aws/bedrock-agent-runtime/model/ActionGroupInvocationOutput.h>
+#include <aws/bedrock-agent-runtime/model/AgentCollaboratorInvocationOutput.h>
+#include <aws/bedrock-agent-runtime/model/KnowledgeBaseLookupOutput.h>
+#include <aws/bedrock-agent-runtime/model/FinalResponse.h>
+#include <aws/bedrock-agent-runtime/model/RepromptResponse.h>
+#include <aws/bedrock-agent-runtime/model/CodeInterpreterInvocationOutput.h>
 #include <utility>
 
 namespace Aws
@@ -47,80 +47,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains the JSON-formatted string returned by the API invoked by the action
-     * group.</p>
-     */
-    inline const ActionGroupInvocationOutput& GetActionGroupInvocationOutput() const { return m_actionGroupInvocationOutput; }
-    inline bool ActionGroupInvocationOutputHasBeenSet() const { return m_actionGroupInvocationOutputHasBeenSet; }
-    template<typename ActionGroupInvocationOutputT = ActionGroupInvocationOutput>
-    void SetActionGroupInvocationOutput(ActionGroupInvocationOutputT&& value) { m_actionGroupInvocationOutputHasBeenSet = true; m_actionGroupInvocationOutput = std::forward<ActionGroupInvocationOutputT>(value); }
-    template<typename ActionGroupInvocationOutputT = ActionGroupInvocationOutput>
-    Observation& WithActionGroupInvocationOutput(ActionGroupInvocationOutputT&& value) { SetActionGroupInvocationOutput(std::forward<ActionGroupInvocationOutputT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A collaborator's invocation output.</p>
-     */
-    inline const AgentCollaboratorInvocationOutput& GetAgentCollaboratorInvocationOutput() const { return m_agentCollaboratorInvocationOutput; }
-    inline bool AgentCollaboratorInvocationOutputHasBeenSet() const { return m_agentCollaboratorInvocationOutputHasBeenSet; }
-    template<typename AgentCollaboratorInvocationOutputT = AgentCollaboratorInvocationOutput>
-    void SetAgentCollaboratorInvocationOutput(AgentCollaboratorInvocationOutputT&& value) { m_agentCollaboratorInvocationOutputHasBeenSet = true; m_agentCollaboratorInvocationOutput = std::forward<AgentCollaboratorInvocationOutputT>(value); }
-    template<typename AgentCollaboratorInvocationOutputT = AgentCollaboratorInvocationOutput>
-    Observation& WithAgentCollaboratorInvocationOutput(AgentCollaboratorInvocationOutputT&& value) { SetAgentCollaboratorInvocationOutput(std::forward<AgentCollaboratorInvocationOutputT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Contains the JSON-formatted string returned by the API invoked by the code
-     * interpreter.</p>
-     */
-    inline const CodeInterpreterInvocationOutput& GetCodeInterpreterInvocationOutput() const { return m_codeInterpreterInvocationOutput; }
-    inline bool CodeInterpreterInvocationOutputHasBeenSet() const { return m_codeInterpreterInvocationOutputHasBeenSet; }
-    template<typename CodeInterpreterInvocationOutputT = CodeInterpreterInvocationOutput>
-    void SetCodeInterpreterInvocationOutput(CodeInterpreterInvocationOutputT&& value) { m_codeInterpreterInvocationOutputHasBeenSet = true; m_codeInterpreterInvocationOutput = std::forward<CodeInterpreterInvocationOutputT>(value); }
-    template<typename CodeInterpreterInvocationOutputT = CodeInterpreterInvocationOutput>
-    Observation& WithCodeInterpreterInvocationOutput(CodeInterpreterInvocationOutputT&& value) { SetCodeInterpreterInvocationOutput(std::forward<CodeInterpreterInvocationOutputT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Contains details about the response to the user.</p>
-     */
-    inline const FinalResponse& GetFinalResponse() const { return m_finalResponse; }
-    inline bool FinalResponseHasBeenSet() const { return m_finalResponseHasBeenSet; }
-    template<typename FinalResponseT = FinalResponse>
-    void SetFinalResponse(FinalResponseT&& value) { m_finalResponseHasBeenSet = true; m_finalResponse = std::forward<FinalResponseT>(value); }
-    template<typename FinalResponseT = FinalResponse>
-    Observation& WithFinalResponse(FinalResponseT&& value) { SetFinalResponse(std::forward<FinalResponseT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Contains details about the results from looking up the knowledge base.</p>
-     */
-    inline const KnowledgeBaseLookupOutput& GetKnowledgeBaseLookupOutput() const { return m_knowledgeBaseLookupOutput; }
-    inline bool KnowledgeBaseLookupOutputHasBeenSet() const { return m_knowledgeBaseLookupOutputHasBeenSet; }
-    template<typename KnowledgeBaseLookupOutputT = KnowledgeBaseLookupOutput>
-    void SetKnowledgeBaseLookupOutput(KnowledgeBaseLookupOutputT&& value) { m_knowledgeBaseLookupOutputHasBeenSet = true; m_knowledgeBaseLookupOutput = std::forward<KnowledgeBaseLookupOutputT>(value); }
-    template<typename KnowledgeBaseLookupOutputT = KnowledgeBaseLookupOutput>
-    Observation& WithKnowledgeBaseLookupOutput(KnowledgeBaseLookupOutputT&& value) { SetKnowledgeBaseLookupOutput(std::forward<KnowledgeBaseLookupOutputT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Contains details about the response to reprompt the input.</p>
-     */
-    inline const RepromptResponse& GetRepromptResponse() const { return m_repromptResponse; }
-    inline bool RepromptResponseHasBeenSet() const { return m_repromptResponseHasBeenSet; }
-    template<typename RepromptResponseT = RepromptResponse>
-    void SetRepromptResponse(RepromptResponseT&& value) { m_repromptResponseHasBeenSet = true; m_repromptResponse = std::forward<RepromptResponseT>(value); }
-    template<typename RepromptResponseT = RepromptResponse>
-    Observation& WithRepromptResponse(RepromptResponseT&& value) { SetRepromptResponse(std::forward<RepromptResponseT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique identifier of the trace.</p>
      */
     inline const Aws::String& GetTraceId() const { return m_traceId; }
@@ -147,7 +73,87 @@ namespace Model
     inline void SetType(Type value) { m_typeHasBeenSet = true; m_type = value; }
     inline Observation& WithType(Type value) { SetType(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains the JSON-formatted string returned by the API invoked by the action
+     * group.</p>
+     */
+    inline const ActionGroupInvocationOutput& GetActionGroupInvocationOutput() const { return m_actionGroupInvocationOutput; }
+    inline bool ActionGroupInvocationOutputHasBeenSet() const { return m_actionGroupInvocationOutputHasBeenSet; }
+    template<typename ActionGroupInvocationOutputT = ActionGroupInvocationOutput>
+    void SetActionGroupInvocationOutput(ActionGroupInvocationOutputT&& value) { m_actionGroupInvocationOutputHasBeenSet = true; m_actionGroupInvocationOutput = std::forward<ActionGroupInvocationOutputT>(value); }
+    template<typename ActionGroupInvocationOutputT = ActionGroupInvocationOutput>
+    Observation& WithActionGroupInvocationOutput(ActionGroupInvocationOutputT&& value) { SetActionGroupInvocationOutput(std::forward<ActionGroupInvocationOutputT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A collaborator's invocation output.</p>
+     */
+    inline const AgentCollaboratorInvocationOutput& GetAgentCollaboratorInvocationOutput() const { return m_agentCollaboratorInvocationOutput; }
+    inline bool AgentCollaboratorInvocationOutputHasBeenSet() const { return m_agentCollaboratorInvocationOutputHasBeenSet; }
+    template<typename AgentCollaboratorInvocationOutputT = AgentCollaboratorInvocationOutput>
+    void SetAgentCollaboratorInvocationOutput(AgentCollaboratorInvocationOutputT&& value) { m_agentCollaboratorInvocationOutputHasBeenSet = true; m_agentCollaboratorInvocationOutput = std::forward<AgentCollaboratorInvocationOutputT>(value); }
+    template<typename AgentCollaboratorInvocationOutputT = AgentCollaboratorInvocationOutput>
+    Observation& WithAgentCollaboratorInvocationOutput(AgentCollaboratorInvocationOutputT&& value) { SetAgentCollaboratorInvocationOutput(std::forward<AgentCollaboratorInvocationOutputT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains details about the results from looking up the knowledge base.</p>
+     */
+    inline const KnowledgeBaseLookupOutput& GetKnowledgeBaseLookupOutput() const { return m_knowledgeBaseLookupOutput; }
+    inline bool KnowledgeBaseLookupOutputHasBeenSet() const { return m_knowledgeBaseLookupOutputHasBeenSet; }
+    template<typename KnowledgeBaseLookupOutputT = KnowledgeBaseLookupOutput>
+    void SetKnowledgeBaseLookupOutput(KnowledgeBaseLookupOutputT&& value) { m_knowledgeBaseLookupOutputHasBeenSet = true; m_knowledgeBaseLookupOutput = std::forward<KnowledgeBaseLookupOutputT>(value); }
+    template<typename KnowledgeBaseLookupOutputT = KnowledgeBaseLookupOutput>
+    Observation& WithKnowledgeBaseLookupOutput(KnowledgeBaseLookupOutputT&& value) { SetKnowledgeBaseLookupOutput(std::forward<KnowledgeBaseLookupOutputT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains details about the response to the user.</p>
+     */
+    inline const FinalResponse& GetFinalResponse() const { return m_finalResponse; }
+    inline bool FinalResponseHasBeenSet() const { return m_finalResponseHasBeenSet; }
+    template<typename FinalResponseT = FinalResponse>
+    void SetFinalResponse(FinalResponseT&& value) { m_finalResponseHasBeenSet = true; m_finalResponse = std::forward<FinalResponseT>(value); }
+    template<typename FinalResponseT = FinalResponse>
+    Observation& WithFinalResponse(FinalResponseT&& value) { SetFinalResponse(std::forward<FinalResponseT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains details about the response to reprompt the input.</p>
+     */
+    inline const RepromptResponse& GetRepromptResponse() const { return m_repromptResponse; }
+    inline bool RepromptResponseHasBeenSet() const { return m_repromptResponseHasBeenSet; }
+    template<typename RepromptResponseT = RepromptResponse>
+    void SetRepromptResponse(RepromptResponseT&& value) { m_repromptResponseHasBeenSet = true; m_repromptResponse = std::forward<RepromptResponseT>(value); }
+    template<typename RepromptResponseT = RepromptResponse>
+    Observation& WithRepromptResponse(RepromptResponseT&& value) { SetRepromptResponse(std::forward<RepromptResponseT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains the JSON-formatted string returned by the API invoked by the code
+     * interpreter.</p>
+     */
+    inline const CodeInterpreterInvocationOutput& GetCodeInterpreterInvocationOutput() const { return m_codeInterpreterInvocationOutput; }
+    inline bool CodeInterpreterInvocationOutputHasBeenSet() const { return m_codeInterpreterInvocationOutputHasBeenSet; }
+    template<typename CodeInterpreterInvocationOutputT = CodeInterpreterInvocationOutput>
+    void SetCodeInterpreterInvocationOutput(CodeInterpreterInvocationOutputT&& value) { m_codeInterpreterInvocationOutputHasBeenSet = true; m_codeInterpreterInvocationOutput = std::forward<CodeInterpreterInvocationOutputT>(value); }
+    template<typename CodeInterpreterInvocationOutputT = CodeInterpreterInvocationOutput>
+    Observation& WithCodeInterpreterInvocationOutput(CodeInterpreterInvocationOutputT&& value) { SetCodeInterpreterInvocationOutput(std::forward<CodeInterpreterInvocationOutputT>(value)); return *this;}
+    ///@}
   private:
+
+    Aws::String m_traceId;
+    bool m_traceIdHasBeenSet = false;
+
+    Type m_type{Type::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     ActionGroupInvocationOutput m_actionGroupInvocationOutput;
     bool m_actionGroupInvocationOutputHasBeenSet = false;
@@ -155,23 +161,17 @@ namespace Model
     AgentCollaboratorInvocationOutput m_agentCollaboratorInvocationOutput;
     bool m_agentCollaboratorInvocationOutputHasBeenSet = false;
 
-    CodeInterpreterInvocationOutput m_codeInterpreterInvocationOutput;
-    bool m_codeInterpreterInvocationOutputHasBeenSet = false;
+    KnowledgeBaseLookupOutput m_knowledgeBaseLookupOutput;
+    bool m_knowledgeBaseLookupOutputHasBeenSet = false;
 
     FinalResponse m_finalResponse;
     bool m_finalResponseHasBeenSet = false;
 
-    KnowledgeBaseLookupOutput m_knowledgeBaseLookupOutput;
-    bool m_knowledgeBaseLookupOutputHasBeenSet = false;
-
     RepromptResponse m_repromptResponse;
     bool m_repromptResponseHasBeenSet = false;
 
-    Aws::String m_traceId;
-    bool m_traceIdHasBeenSet = false;
-
-    Type m_type{Type::NOT_SET};
-    bool m_typeHasBeenSet = false;
+    CodeInterpreterInvocationOutput m_codeInterpreterInvocationOutput;
+    bool m_codeInterpreterInvocationOutputHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent-runtime/model/FlowExecutionStatus.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent-runtime/model/FlowExecutionError.h>
 #include <utility>
 
@@ -38,6 +38,39 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies the flow
+     * execution.</p>
+     */
+    inline const Aws::String& GetExecutionArn() const { return m_executionArn; }
+    template<typename ExecutionArnT = Aws::String>
+    void SetExecutionArn(ExecutionArnT&& value) { m_executionArnHasBeenSet = true; m_executionArn = std::forward<ExecutionArnT>(value); }
+    template<typename ExecutionArnT = Aws::String>
+    GetFlowExecutionResult& WithExecutionArn(ExecutionArnT&& value) { SetExecutionArn(std::forward<ExecutionArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The current status of the flow execution.</p> <p>Flow executions time out
+     * after 24 hours.</p>
+     */
+    inline FlowExecutionStatus GetStatus() const { return m_status; }
+    inline void SetStatus(FlowExecutionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetFlowExecutionResult& WithStatus(FlowExecutionStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The timestamp when the flow execution started.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStartedAt() const { return m_startedAt; }
+    template<typename StartedAtT = Aws::Utils::DateTime>
+    void SetStartedAt(StartedAtT&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::forward<StartedAtT>(value); }
+    template<typename StartedAtT = Aws::Utils::DateTime>
+    GetFlowExecutionResult& WithStartedAt(StartedAtT&& value) { SetStartedAt(std::forward<StartedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The timestamp when the flow execution ended. This field is only populated
      * when the execution has completed, failed, timed out, or been aborted.</p>
      */
@@ -61,18 +94,6 @@ namespace Model
     GetFlowExecutionResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
     template<typename ErrorsT = FlowExecutionError>
     GetFlowExecutionResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) that uniquely identifies the flow
-     * execution.</p>
-     */
-    inline const Aws::String& GetExecutionArn() const { return m_executionArn; }
-    template<typename ExecutionArnT = Aws::String>
-    void SetExecutionArn(ExecutionArnT&& value) { m_executionArnHasBeenSet = true; m_executionArn = std::forward<ExecutionArnT>(value); }
-    template<typename ExecutionArnT = Aws::String>
-    GetFlowExecutionResult& WithExecutionArn(ExecutionArnT&& value) { SetExecutionArn(std::forward<ExecutionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,27 +130,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The timestamp when the flow execution started.</p>
-     */
-    inline const Aws::Utils::DateTime& GetStartedAt() const { return m_startedAt; }
-    template<typename StartedAtT = Aws::Utils::DateTime>
-    void SetStartedAt(StartedAtT&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::forward<StartedAtT>(value); }
-    template<typename StartedAtT = Aws::Utils::DateTime>
-    GetFlowExecutionResult& WithStartedAt(StartedAtT&& value) { SetStartedAt(std::forward<StartedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The current status of the flow execution.</p> <p>Flow executions time out
-     * after 24 hours.</p>
-     */
-    inline FlowExecutionStatus GetStatus() const { return m_status; }
-    inline void SetStatus(FlowExecutionStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline GetFlowExecutionResult& WithStatus(FlowExecutionStatus value) { SetStatus(value); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -139,14 +139,20 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_executionArn;
+    bool m_executionArnHasBeenSet = false;
+
+    FlowExecutionStatus m_status{FlowExecutionStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
+
+    Aws::Utils::DateTime m_startedAt{};
+    bool m_startedAtHasBeenSet = false;
+
     Aws::Utils::DateTime m_endedAt{};
     bool m_endedAtHasBeenSet = false;
 
     Aws::Vector<FlowExecutionError> m_errors;
     bool m_errorsHasBeenSet = false;
-
-    Aws::String m_executionArn;
-    bool m_executionArnHasBeenSet = false;
 
     Aws::String m_flowAliasIdentifier;
     bool m_flowAliasIdentifierHasBeenSet = false;
@@ -156,12 +162,6 @@ namespace Model
 
     Aws::String m_flowVersion;
     bool m_flowVersionHasBeenSet = false;
-
-    Aws::Utils::DateTime m_startedAt{};
-    bool m_startedAtHasBeenSet = false;
-
-    FlowExecutionStatus m_status{FlowExecutionStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

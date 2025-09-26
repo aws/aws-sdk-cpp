@@ -203,6 +203,56 @@ namespace Connect
         }
 
         /**
+         * <p>Associates a queued contact with an agent.</p> <p> <b>Use cases</b> </p>
+         * <p>Following are common uses cases for this API:</p> <ul> <li> <p>Custom contact
+         * routing. You can build custom contact routing mechanisms beyond the default
+         * system routing in Amazon Connect. You can create tailored contact distribution
+         * logic that offers queued contacts directly to specific agents.</p> </li> <li>
+         * <p>Manual contact assignment. You can programmatically assign queued contacts to
+         * available users. This provides flexibility to contact centers that require
+         * manual oversight or specialized routing workflows outside of standard queue
+         * management.</p> <p>For information about how manual contact assignment works in
+         * the agent workspace, see the <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/worklist-app.html">Access
+         * the Worklist app in the Amazon Connect agent workspace</a> in the <i>Amazon
+         * Connect Administrator Guide</i>. </p> </li> </ul> <p> <b>Important things to
+         * know</b> </p> <ul> <li> <p>Use this API chat/SMS, email, and task contacts. It
+         * does not support voice contacts.</p> </li> <li> <p>Use it to associate contacts
+         * with users regardless of their current state, including custom states. Ensure
+         * your application logic accounts for user availability before making
+         * associations.</p> </li> <li> <p>It honors the IAM context key
+         * <code>connect:PreferredUserArn</code> to prevent unauthorized contact
+         * associations.</p> </li> <li> <p>It respects the IAM context key
+         * <code>connect:PreferredUserArn</code> to enforce authorization controls and
+         * prevent unauthorized contact associations. Verify that your IAM policies are
+         * properly configured to support your intended use cases.</p> </li> </ul> <p>
+         * <b>Endpoints</b>: See <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+         * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateContactWithUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateContactWithUserOutcome AssociateContactWithUser(const Model::AssociateContactWithUserRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateContactWithUser that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateContactWithUserRequestT = Model::AssociateContactWithUserRequest>
+        Model::AssociateContactWithUserOutcomeCallable AssociateContactWithUserCallable(const AssociateContactWithUserRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::AssociateContactWithUser, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateContactWithUser that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateContactWithUserRequestT = Model::AssociateContactWithUserRequest>
+        void AssociateContactWithUserAsync(const AssociateContactWithUserRequestT& request, const AssociateContactWithUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::AssociateContactWithUser, request, handler, context);
+        }
+
+        /**
          * <p>Associates an existing vocabulary as the default. Contact Lens for Amazon
          * Connect uses the vocabulary in post-call and real-time analysis sessions for the
          * given language.</p><p><h3>See Also:</h3>   <a
@@ -4867,6 +4917,46 @@ namespace Connect
         void ListRealtimeContactAnalysisSegmentsV2Async(const ListRealtimeContactAnalysisSegmentsV2RequestT& request, const ListRealtimeContactAnalysisSegmentsV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::ListRealtimeContactAnalysisSegmentsV2, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the manual assignment queues associated with a routing profile.</p> <p>
+         * <b>Use cases</b> </p> <p>Following are common uses cases for this API:</p> <ul>
+         * <li> <p>This API returns list of queues where contacts can be manually assigned
+         * or picked. The user can additionally filter on queues, if they have access to
+         * those queues (otherwise a invalid request exception will be thrown).</p> <p>For
+         * information about how manual contact assignment works in the agent workspace,
+         * see the <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/worklist-app.html">Access
+         * the Worklist app in the Amazon Connect agent workspace</a> in the <i>Amazon
+         * Connect Administrator Guide</i>. </p> </li> </ul> <p> <b>Important things to
+         * know</b> </p> <ul> <li> <p>This API only returns the manual assignment queues
+         * associated with a routing profile. Use the ListRoutingProfileQueues API to list
+         * the auto assignment queues for the routing profile.</p> </li> </ul> <p>
+         * <b>Endpoints</b>: See <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+         * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRoutingProfileManualAssignmentQueues">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRoutingProfileManualAssignmentQueuesOutcome ListRoutingProfileManualAssignmentQueues(const Model::ListRoutingProfileManualAssignmentQueuesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListRoutingProfileManualAssignmentQueues that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListRoutingProfileManualAssignmentQueuesRequestT = Model::ListRoutingProfileManualAssignmentQueuesRequest>
+        Model::ListRoutingProfileManualAssignmentQueuesOutcomeCallable ListRoutingProfileManualAssignmentQueuesCallable(const ListRoutingProfileManualAssignmentQueuesRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::ListRoutingProfileManualAssignmentQueues, request);
+        }
+
+        /**
+         * An Async wrapper for ListRoutingProfileManualAssignmentQueues that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListRoutingProfileManualAssignmentQueuesRequestT = Model::ListRoutingProfileManualAssignmentQueuesRequest>
+        void ListRoutingProfileManualAssignmentQueuesAsync(const ListRoutingProfileManualAssignmentQueuesRequestT& request, const ListRoutingProfileManualAssignmentQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::ListRoutingProfileManualAssignmentQueues, request, handler, context);
         }
 
         /**

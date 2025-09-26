@@ -25,6 +25,16 @@ TextInferenceConfig::TextInferenceConfig(JsonView jsonValue)
 
 TextInferenceConfig& TextInferenceConfig::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("temperature"))
+  {
+    m_temperature = jsonValue.GetDouble("temperature");
+    m_temperatureHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("topP"))
+  {
+    m_topP = jsonValue.GetDouble("topP");
+    m_topPHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("maxTokens"))
   {
     m_maxTokens = jsonValue.GetInteger("maxTokens");
@@ -39,22 +49,24 @@ TextInferenceConfig& TextInferenceConfig::operator =(JsonView jsonValue)
     }
     m_stopSequencesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("temperature"))
-  {
-    m_temperature = jsonValue.GetDouble("temperature");
-    m_temperatureHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("topP"))
-  {
-    m_topP = jsonValue.GetDouble("topP");
-    m_topPHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue TextInferenceConfig::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_temperatureHasBeenSet)
+  {
+   payload.WithDouble("temperature", m_temperature);
+
+  }
+
+  if(m_topPHasBeenSet)
+  {
+   payload.WithDouble("topP", m_topP);
+
+  }
 
   if(m_maxTokensHasBeenSet)
   {
@@ -70,18 +82,6 @@ JsonValue TextInferenceConfig::Jsonize() const
      stopSequencesJsonList[stopSequencesIndex].AsString(m_stopSequences[stopSequencesIndex]);
    }
    payload.WithArray("stopSequences", std::move(stopSequencesJsonList));
-
-  }
-
-  if(m_temperatureHasBeenSet)
-  {
-   payload.WithDouble("temperature", m_temperature);
-
-  }
-
-  if(m_topPHasBeenSet)
-  {
-   payload.WithDouble("topP", m_topP);
 
   }
 

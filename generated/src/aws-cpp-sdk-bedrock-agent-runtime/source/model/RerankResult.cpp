@@ -25,11 +25,6 @@ RerankResult::RerankResult(JsonView jsonValue)
 
 RerankResult& RerankResult::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("document"))
-  {
-    m_document = jsonValue.GetObject("document");
-    m_documentHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("index"))
   {
     m_index = jsonValue.GetInteger("index");
@@ -40,18 +35,17 @@ RerankResult& RerankResult::operator =(JsonView jsonValue)
     m_relevanceScore = jsonValue.GetDouble("relevanceScore");
     m_relevanceScoreHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("document"))
+  {
+    m_document = jsonValue.GetObject("document");
+    m_documentHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue RerankResult::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_documentHasBeenSet)
-  {
-   payload.WithObject("document", m_document.Jsonize());
-
-  }
 
   if(m_indexHasBeenSet)
   {
@@ -62,6 +56,12 @@ JsonValue RerankResult::Jsonize() const
   if(m_relevanceScoreHasBeenSet)
   {
    payload.WithDouble("relevanceScore", m_relevanceScore);
+
+  }
+
+  if(m_documentHasBeenSet)
+  {
+   payload.WithObject("document", m_document.Jsonize());
 
   }
 

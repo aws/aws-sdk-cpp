@@ -81,7 +81,7 @@ namespace Model
     /**
      * <p>The desired HTTP PUT response hop limit for instance metadata requests. The
      * larger the number, the further instance metadata requests can travel.</p>
-     * <p>Default: 1</p> <p>Possible values: Integers from 1 to 64</p>
+     * <p>Possible values: Integers from 1 to 64</p>
      */
     inline int GetHttpPutResponseHopLimit() const { return m_httpPutResponseHopLimit; }
     inline bool HttpPutResponseHopLimitHasBeenSet() const { return m_httpPutResponseHopLimitHasBeenSet; }

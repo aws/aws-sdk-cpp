@@ -25,16 +25,6 @@ GuardrailRegexFilter::GuardrailRegexFilter(JsonView jsonValue)
 
 GuardrailRegexFilter& GuardrailRegexFilter::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("action"))
-  {
-    m_action = GuardrailSensitiveInformationPolicyActionMapper::GetGuardrailSensitiveInformationPolicyActionForName(jsonValue.GetString("action"));
-    m_actionHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("match"))
-  {
-    m_match = jsonValue.GetString("match");
-    m_matchHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -45,23 +35,22 @@ GuardrailRegexFilter& GuardrailRegexFilter::operator =(JsonView jsonValue)
     m_regex = jsonValue.GetString("regex");
     m_regexHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("match"))
+  {
+    m_match = jsonValue.GetString("match");
+    m_matchHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("action"))
+  {
+    m_action = GuardrailSensitiveInformationPolicyActionMapper::GetGuardrailSensitiveInformationPolicyActionForName(jsonValue.GetString("action"));
+    m_actionHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue GuardrailRegexFilter::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_actionHasBeenSet)
-  {
-   payload.WithString("action", GuardrailSensitiveInformationPolicyActionMapper::GetNameForGuardrailSensitiveInformationPolicyAction(m_action));
-  }
-
-  if(m_matchHasBeenSet)
-  {
-   payload.WithString("match", m_match);
-
-  }
 
   if(m_nameHasBeenSet)
   {
@@ -73,6 +62,17 @@ JsonValue GuardrailRegexFilter::Jsonize() const
   {
    payload.WithString("regex", m_regex);
 
+  }
+
+  if(m_matchHasBeenSet)
+  {
+   payload.WithString("match", m_match);
+
+  }
+
+  if(m_actionHasBeenSet)
+  {
+   payload.WithString("action", GuardrailSensitiveInformationPolicyActionMapper::GetNameForGuardrailSensitiveInformationPolicyAction(m_action));
   }
 
   return payload;

@@ -25,20 +25,20 @@ FileSource::FileSource(JsonView jsonValue)
 
 FileSource& FileSource::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("byteContent"))
+  if(jsonValue.ValueExists("sourceType"))
   {
-    m_byteContent = jsonValue.GetObject("byteContent");
-    m_byteContentHasBeenSet = true;
+    m_sourceType = FileSourceTypeMapper::GetFileSourceTypeForName(jsonValue.GetString("sourceType"));
+    m_sourceTypeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("s3Location"))
   {
     m_s3Location = jsonValue.GetObject("s3Location");
     m_s3LocationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sourceType"))
+  if(jsonValue.ValueExists("byteContent"))
   {
-    m_sourceType = FileSourceTypeMapper::GetFileSourceTypeForName(jsonValue.GetString("sourceType"));
-    m_sourceTypeHasBeenSet = true;
+    m_byteContent = jsonValue.GetObject("byteContent");
+    m_byteContentHasBeenSet = true;
   }
   return *this;
 }
@@ -47,10 +47,9 @@ JsonValue FileSource::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_byteContentHasBeenSet)
+  if(m_sourceTypeHasBeenSet)
   {
-   payload.WithObject("byteContent", m_byteContent.Jsonize());
-
+   payload.WithString("sourceType", FileSourceTypeMapper::GetNameForFileSourceType(m_sourceType));
   }
 
   if(m_s3LocationHasBeenSet)
@@ -59,9 +58,10 @@ JsonValue FileSource::Jsonize() const
 
   }
 
-  if(m_sourceTypeHasBeenSet)
+  if(m_byteContentHasBeenSet)
   {
-   payload.WithString("sourceType", FileSourceTypeMapper::GetNameForFileSourceType(m_sourceType));
+   payload.WithObject("byteContent", m_byteContent.Jsonize());
+
   }
 
   return payload;

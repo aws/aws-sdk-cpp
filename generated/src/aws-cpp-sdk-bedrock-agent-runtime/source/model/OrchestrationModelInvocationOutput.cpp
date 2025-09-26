@@ -25,25 +25,25 @@ OrchestrationModelInvocationOutput::OrchestrationModelInvocationOutput(JsonView 
 
 OrchestrationModelInvocationOutput& OrchestrationModelInvocationOutput::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("metadata"))
+  if(jsonValue.ValueExists("traceId"))
   {
-    m_metadata = jsonValue.GetObject("metadata");
-    m_metadataHasBeenSet = true;
+    m_traceId = jsonValue.GetString("traceId");
+    m_traceIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("rawResponse"))
   {
     m_rawResponse = jsonValue.GetObject("rawResponse");
     m_rawResponseHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("metadata"))
+  {
+    m_metadata = jsonValue.GetObject("metadata");
+    m_metadataHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("reasoningContent"))
   {
     m_reasoningContent = jsonValue.GetObject("reasoningContent");
     m_reasoningContentHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("traceId"))
-  {
-    m_traceId = jsonValue.GetString("traceId");
-    m_traceIdHasBeenSet = true;
   }
   return *this;
 }
@@ -52,9 +52,9 @@ JsonValue OrchestrationModelInvocationOutput::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_metadataHasBeenSet)
+  if(m_traceIdHasBeenSet)
   {
-   payload.WithObject("metadata", m_metadata.Jsonize());
+   payload.WithString("traceId", m_traceId);
 
   }
 
@@ -64,15 +64,15 @@ JsonValue OrchestrationModelInvocationOutput::Jsonize() const
 
   }
 
-  if(m_reasoningContentHasBeenSet)
+  if(m_metadataHasBeenSet)
   {
-   payload.WithObject("reasoningContent", m_reasoningContent.Jsonize());
+   payload.WithObject("metadata", m_metadata.Jsonize());
 
   }
 
-  if(m_traceIdHasBeenSet)
+  if(m_reasoningContentHasBeenSet)
   {
-   payload.WithString("traceId", m_traceId);
+   payload.WithObject("reasoningContent", m_reasoningContent.Jsonize());
 
   }
 

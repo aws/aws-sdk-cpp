@@ -25,15 +25,15 @@ ReasoningTextBlock::ReasoningTextBlock(JsonView jsonValue)
 
 ReasoningTextBlock& ReasoningTextBlock::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("signature"))
-  {
-    m_signature = jsonValue.GetString("signature");
-    m_signatureHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("signature"))
+  {
+    m_signature = jsonValue.GetString("signature");
+    m_signatureHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue ReasoningTextBlock::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_signatureHasBeenSet)
-  {
-   payload.WithString("signature", m_signature);
-
-  }
-
   if(m_textHasBeenSet)
   {
    payload.WithString("text", m_text);
+
+  }
+
+  if(m_signatureHasBeenSet)
+  {
+   payload.WithString("signature", m_signature);
 
   }
 

@@ -18,8 +18,10 @@
 /* End of generic header includes */
 
 /* Service model headers required in BillingClient header */
+#include <aws/billing/model/AssociateSourceViewsResult.h>
 #include <aws/billing/model/CreateBillingViewResult.h>
 #include <aws/billing/model/DeleteBillingViewResult.h>
+#include <aws/billing/model/DisassociateSourceViewsResult.h>
 #include <aws/billing/model/GetBillingViewResult.h>
 #include <aws/billing/model/GetResourcePolicyResult.h>
 #include <aws/billing/model/ListBillingViewsResult.h>
@@ -69,8 +71,10 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in BillingClient header */
+      class AssociateSourceViewsRequest;
       class CreateBillingViewRequest;
       class DeleteBillingViewRequest;
+      class DisassociateSourceViewsRequest;
       class GetBillingViewRequest;
       class GetResourcePolicyRequest;
       class ListBillingViewsRequest;
@@ -82,8 +86,10 @@ namespace Aws
       /* End of service model forward declarations required in BillingClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<AssociateSourceViewsResult, BillingError> AssociateSourceViewsOutcome;
       typedef Aws::Utils::Outcome<CreateBillingViewResult, BillingError> CreateBillingViewOutcome;
       typedef Aws::Utils::Outcome<DeleteBillingViewResult, BillingError> DeleteBillingViewOutcome;
+      typedef Aws::Utils::Outcome<DisassociateSourceViewsResult, BillingError> DisassociateSourceViewsOutcome;
       typedef Aws::Utils::Outcome<GetBillingViewResult, BillingError> GetBillingViewOutcome;
       typedef Aws::Utils::Outcome<GetResourcePolicyResult, BillingError> GetResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<ListBillingViewsResult, BillingError> ListBillingViewsOutcome;
@@ -95,8 +101,10 @@ namespace Aws
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<AssociateSourceViewsOutcome> AssociateSourceViewsOutcomeCallable;
       typedef std::future<CreateBillingViewOutcome> CreateBillingViewOutcomeCallable;
       typedef std::future<DeleteBillingViewOutcome> DeleteBillingViewOutcomeCallable;
+      typedef std::future<DisassociateSourceViewsOutcome> DisassociateSourceViewsOutcomeCallable;
       typedef std::future<GetBillingViewOutcome> GetBillingViewOutcomeCallable;
       typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
       typedef std::future<ListBillingViewsOutcome> ListBillingViewsOutcomeCallable;
@@ -111,8 +119,10 @@ namespace Aws
     class BillingClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const BillingClient*, const Model::AssociateSourceViewsRequest&, const Model::AssociateSourceViewsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSourceViewsResponseReceivedHandler;
     typedef std::function<void(const BillingClient*, const Model::CreateBillingViewRequest&, const Model::CreateBillingViewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBillingViewResponseReceivedHandler;
     typedef std::function<void(const BillingClient*, const Model::DeleteBillingViewRequest&, const Model::DeleteBillingViewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBillingViewResponseReceivedHandler;
+    typedef std::function<void(const BillingClient*, const Model::DisassociateSourceViewsRequest&, const Model::DisassociateSourceViewsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateSourceViewsResponseReceivedHandler;
     typedef std::function<void(const BillingClient*, const Model::GetBillingViewRequest&, const Model::GetBillingViewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBillingViewResponseReceivedHandler;
     typedef std::function<void(const BillingClient*, const Model::GetResourcePolicyRequest&, const Model::GetResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const BillingClient*, const Model::ListBillingViewsRequest&, const Model::ListBillingViewsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBillingViewsResponseReceivedHandler;

@@ -73,6 +73,41 @@ Aws::String CreateRedshiftIdcApplicationRequest::SerializePayload() const
     }
   }
 
+  if(m_tagsHasBeenSet)
+  {
+    if (m_tags.empty())
+    {
+      ss << "Tags=&";
+    }
+    else
+    {
+      unsigned tagsCount = 1;
+      for(auto& item : m_tags)
+      {
+        item.OutputToStream(ss, "Tags.Tag.", tagsCount, "");
+        tagsCount++;
+      }
+    }
+  }
+
+  if(m_ssoTagKeysHasBeenSet)
+  {
+    if (m_ssoTagKeys.empty())
+    {
+      ss << "SsoTagKeys=&";
+    }
+    else
+    {
+      unsigned ssoTagKeysCount = 1;
+      for(auto& item : m_ssoTagKeys)
+      {
+        ss << "SsoTagKeys.TagKey." << ssoTagKeysCount << "="
+            << StringUtils::URLEncode(item.c_str()) << "&";
+        ssoTagKeysCount++;
+      }
+    }
+  }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent-runtime/model/S3Identifier.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -45,19 +45,6 @@ namespace Model
 
     ///@{
     /**
-     * <p> The JSON or YAML-formatted payload defining the OpenAPI schema for the
-     * action group. </p>
-     */
-    inline const Aws::String& GetPayload() const { return m_payload; }
-    inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
-    template<typename PayloadT = Aws::String>
-    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
-    template<typename PayloadT = Aws::String>
-    APISchema& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p> Contains details about the S3 object containing the OpenAPI schema for the
      * action group. </p>
      */
@@ -68,13 +55,26 @@ namespace Model
     template<typename S3T = S3Identifier>
     APISchema& WithS3(S3T&& value) { SetS3(std::forward<S3T>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_payload;
-    bool m_payloadHasBeenSet = false;
+    ///@{
+    /**
+     * <p> The JSON or YAML-formatted payload defining the OpenAPI schema for the
+     * action group. </p>
+     */
+    inline const Aws::String& GetPayload() const { return m_payload; }
+    inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
+    template<typename PayloadT = Aws::String>
+    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
+    template<typename PayloadT = Aws::String>
+    APISchema& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
+    ///@}
+  private:
 
     S3Identifier m_s3;
     bool m_s3HasBeenSet = false;
+
+    Aws::String m_payload;
+    bool m_payloadHasBeenSet = false;
   };
 
 } // namespace Model

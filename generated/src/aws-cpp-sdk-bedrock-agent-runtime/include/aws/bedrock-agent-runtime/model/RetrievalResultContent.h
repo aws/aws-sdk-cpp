@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
+#include <aws/bedrock-agent-runtime/model/RetrievalResultContentType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/bedrock-agent-runtime/model/RetrievalResultContentType.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalResultContentColumn.h>
 #include <utility>
 
@@ -52,6 +52,28 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of content in the retrieval result.</p>
+     */
+    inline RetrievalResultContentType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(RetrievalResultContentType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RetrievalResultContent& WithType(RetrievalResultContentType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The cited text from the data source.</p>
+     */
+    inline const Aws::String& GetText() const { return m_text; }
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    RetrievalResultContent& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A data URI with base64-encoded content from the data source. The URI is in
      * the following format: returned in the following format:
      * <code>data:image/jpeg;base64,${base64-encoded string}</code>.</p>
@@ -78,41 +100,19 @@ namespace Model
     template<typename RowT = RetrievalResultContentColumn>
     RetrievalResultContent& AddRow(RowT&& value) { m_rowHasBeenSet = true; m_row.emplace_back(std::forward<RowT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The cited text from the data source.</p>
-     */
-    inline const Aws::String& GetText() const { return m_text; }
-    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    template<typename TextT = Aws::String>
-    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
-    template<typename TextT = Aws::String>
-    RetrievalResultContent& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The type of content in the retrieval result.</p>
-     */
-    inline RetrievalResultContentType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(RetrievalResultContentType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline RetrievalResultContent& WithType(RetrievalResultContentType value) { SetType(value); return *this;}
-    ///@}
   private:
+
+    RetrievalResultContentType m_type{RetrievalResultContentType::NOT_SET};
+    bool m_typeHasBeenSet = false;
+
+    Aws::String m_text;
+    bool m_textHasBeenSet = false;
 
     Aws::String m_byteContent;
     bool m_byteContentHasBeenSet = false;
 
     Aws::Vector<RetrievalResultContentColumn> m_row;
     bool m_rowHasBeenSet = false;
-
-    Aws::String m_text;
-    bool m_textHasBeenSet = false;
-
-    RetrievalResultContentType m_type{RetrievalResultContentType::NOT_SET};
-    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

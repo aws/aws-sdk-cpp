@@ -49,18 +49,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the agent memory.</p>
-     */
-    inline const Aws::String& GetMemoryId() const { return m_memoryId; }
-    inline bool MemoryIdHasBeenSet() const { return m_memoryIdHasBeenSet; }
-    template<typename MemoryIdT = Aws::String>
-    void SetMemoryId(MemoryIdT&& value) { m_memoryIdHasBeenSet = true; m_memoryId = std::forward<MemoryIdT>(value); }
-    template<typename MemoryIdT = Aws::String>
-    InvokeAgentInitialResponse& WithMemoryId(MemoryIdT&& value) { SetMemoryId(std::forward<MemoryIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique identifier of the session with the agent.</p>
      */
     inline const Aws::String& GetSessionId() const { return m_sessionId; }
@@ -70,16 +58,28 @@ namespace Model
     template<typename SessionIdT = Aws::String>
     InvokeAgentInitialResponse& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The unique identifier of the agent memory.</p>
+     */
+    inline const Aws::String& GetMemoryId() const { return m_memoryId; }
+    inline bool MemoryIdHasBeenSet() const { return m_memoryIdHasBeenSet; }
+    template<typename MemoryIdT = Aws::String>
+    void SetMemoryId(MemoryIdT&& value) { m_memoryIdHasBeenSet = true; m_memoryId = std::forward<MemoryIdT>(value); }
+    template<typename MemoryIdT = Aws::String>
+    InvokeAgentInitialResponse& WithMemoryId(MemoryIdT&& value) { SetMemoryId(std::forward<MemoryIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_contentType;
     bool m_contentTypeHasBeenSet = false;
 
-    Aws::String m_memoryId;
-    bool m_memoryIdHasBeenSet = false;
-
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
+
+    Aws::String m_memoryId;
+    bool m_memoryIdHasBeenSet = false;
   };
 
 } // namespace Model

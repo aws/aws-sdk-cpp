@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/VectorSearchBedrockRerankingConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/VectorSearchRerankingConfigurationType.h>
+#include <aws/bedrock-agent-runtime/model/VectorSearchBedrockRerankingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of reranker model.</p>
+     */
+    inline VectorSearchRerankingConfigurationType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(VectorSearchRerankingConfigurationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline VectorSearchRerankingConfiguration& WithType(VectorSearchRerankingConfigurationType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains configurations for an Amazon Bedrock reranker model.</p>
      */
     inline const VectorSearchBedrockRerankingConfiguration& GetBedrockRerankingConfiguration() const { return m_bedrockRerankingConfiguration; }
@@ -50,23 +60,13 @@ namespace Model
     template<typename BedrockRerankingConfigurationT = VectorSearchBedrockRerankingConfiguration>
     VectorSearchRerankingConfiguration& WithBedrockRerankingConfiguration(BedrockRerankingConfigurationT&& value) { SetBedrockRerankingConfiguration(std::forward<BedrockRerankingConfigurationT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of reranker model.</p>
-     */
-    inline VectorSearchRerankingConfigurationType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(VectorSearchRerankingConfigurationType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline VectorSearchRerankingConfiguration& WithType(VectorSearchRerankingConfigurationType value) { SetType(value); return *this;}
-    ///@}
   private:
-
-    VectorSearchBedrockRerankingConfiguration m_bedrockRerankingConfiguration;
-    bool m_bedrockRerankingConfigurationHasBeenSet = false;
 
     VectorSearchRerankingConfigurationType m_type{VectorSearchRerankingConfigurationType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    VectorSearchBedrockRerankingConfiguration m_bedrockRerankingConfiguration;
+    bool m_bedrockRerankingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,6 +12,7 @@
 #include <aws/connect/model/ContactSearchSummaryAgentInfo.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/connect/model/RoutingCriteria.h>
 #include <aws/connect/model/ContactSearchSummarySegmentAttributeValue.h>
 #include <utility>
 
@@ -199,6 +200,28 @@ namespace Model
       m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(std::forward<SegmentAttributesKeyT>(key), std::forward<SegmentAttributesValueT>(value)); return *this;
     }
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates name of the contact.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ContactSearchSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const RoutingCriteria& GetRoutingCriteria() const { return m_routingCriteria; }
+    inline bool RoutingCriteriaHasBeenSet() const { return m_routingCriteriaHasBeenSet; }
+    template<typename RoutingCriteriaT = RoutingCriteria>
+    void SetRoutingCriteria(RoutingCriteriaT&& value) { m_routingCriteriaHasBeenSet = true; m_routingCriteria = std::forward<RoutingCriteriaT>(value); }
+    template<typename RoutingCriteriaT = RoutingCriteria>
+    ContactSearchSummary& WithRoutingCriteria(RoutingCriteriaT&& value) { SetRoutingCriteria(std::forward<RoutingCriteriaT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -236,6 +259,12 @@ namespace Model
 
     Aws::Map<Aws::String, ContactSearchSummarySegmentAttributeValue> m_segmentAttributes;
     bool m_segmentAttributesHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
+    RoutingCriteria m_routingCriteria;
+    bool m_routingCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

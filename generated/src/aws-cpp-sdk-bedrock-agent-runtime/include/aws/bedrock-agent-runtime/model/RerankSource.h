@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/RerankDocument.h>
 #include <aws/bedrock-agent-runtime/model/RerankSourceType.h>
+#include <aws/bedrock-agent-runtime/model/RerankDocument.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of the source.</p>
+     */
+    inline RerankSourceType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(RerankSourceType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RerankSource& WithType(RerankSourceType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains an inline definition of a source for reranking.</p>
      */
     inline const RerankDocument& GetInlineDocumentSource() const { return m_inlineDocumentSource; }
@@ -50,23 +60,13 @@ namespace Model
     template<typename InlineDocumentSourceT = RerankDocument>
     RerankSource& WithInlineDocumentSource(InlineDocumentSourceT&& value) { SetInlineDocumentSource(std::forward<InlineDocumentSourceT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of the source.</p>
-     */
-    inline RerankSourceType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(RerankSourceType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline RerankSource& WithType(RerankSourceType value) { SetType(value); return *this;}
-    ///@}
   private:
-
-    RerankDocument m_inlineDocumentSource;
-    bool m_inlineDocumentSourceHasBeenSet = false;
 
     RerankSourceType m_type{RerankSourceType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    RerankDocument m_inlineDocumentSource;
+    bool m_inlineDocumentSourceHasBeenSet = false;
   };
 
 } // namespace Model

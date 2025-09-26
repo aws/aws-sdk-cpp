@@ -26,11 +26,6 @@ OutputFile::OutputFile(JsonView jsonValue)
 
 OutputFile& OutputFile::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("bytes"))
-  {
-    m_bytes = HashingUtils::Base64Decode(jsonValue.GetString("bytes"));
-    m_bytesHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -41,17 +36,17 @@ OutputFile& OutputFile::operator =(JsonView jsonValue)
     m_type = jsonValue.GetString("type");
     m_typeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("bytes"))
+  {
+    m_bytes = HashingUtils::Base64Decode(jsonValue.GetString("bytes"));
+    m_bytesHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue OutputFile::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_bytesHasBeenSet)
-  {
-   payload.WithString("bytes", HashingUtils::Base64Encode(m_bytes));
-  }
 
   if(m_nameHasBeenSet)
   {
@@ -63,6 +58,11 @@ JsonValue OutputFile::Jsonize() const
   {
    payload.WithString("type", m_type);
 
+  }
+
+  if(m_bytesHasBeenSet)
+  {
+   payload.WithString("bytes", HashingUtils::Base64Encode(m_bytes));
   }
 
   return payload;

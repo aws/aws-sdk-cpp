@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/connect/model/SegmentAttributeValue.h>
 #include <utility>
 
 namespace Aws
@@ -51,10 +53,29 @@ namespace Model
     template<typename ValueStringT = Aws::String>
     ContactSearchSummarySegmentAttributeValue& WithValueString(ValueStringT&& value) { SetValueString(std::forward<ValueStringT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The key and value of a segment attribute.</p>
+     */
+    inline const Aws::Map<Aws::String, SegmentAttributeValue>& GetValueMap() const { return m_valueMap; }
+    inline bool ValueMapHasBeenSet() const { return m_valueMapHasBeenSet; }
+    template<typename ValueMapT = Aws::Map<Aws::String, SegmentAttributeValue>>
+    void SetValueMap(ValueMapT&& value) { m_valueMapHasBeenSet = true; m_valueMap = std::forward<ValueMapT>(value); }
+    template<typename ValueMapT = Aws::Map<Aws::String, SegmentAttributeValue>>
+    ContactSearchSummarySegmentAttributeValue& WithValueMap(ValueMapT&& value) { SetValueMap(std::forward<ValueMapT>(value)); return *this;}
+    template<typename ValueMapKeyT = Aws::String, typename ValueMapValueT = SegmentAttributeValue>
+    ContactSearchSummarySegmentAttributeValue& AddValueMap(ValueMapKeyT&& key, ValueMapValueT&& value) {
+      m_valueMapHasBeenSet = true; m_valueMap.emplace(std::forward<ValueMapKeyT>(key), std::forward<ValueMapValueT>(value)); return *this;
+    }
+    ///@}
   private:
 
     Aws::String m_valueString;
     bool m_valueStringHasBeenSet = false;
+
+    Aws::Map<Aws::String, SegmentAttributeValue> m_valueMap;
+    bool m_valueMapHasBeenSet = false;
   };
 
 } // namespace Model

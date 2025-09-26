@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/GuardrailContentPolicyAssessment.h>
-#include <aws/bedrock-agent-runtime/model/GuardrailSensitiveInformationPolicyAssessment.h>
 #include <aws/bedrock-agent-runtime/model/GuardrailTopicPolicyAssessment.h>
+#include <aws/bedrock-agent-runtime/model/GuardrailContentPolicyAssessment.h>
 #include <aws/bedrock-agent-runtime/model/GuardrailWordPolicyAssessment.h>
+#include <aws/bedrock-agent-runtime/model/GuardrailSensitiveInformationPolicyAssessment.h>
 #include <utility>
 
 namespace Aws
@@ -43,30 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Content policy details of the Guardrail.</p>
-     */
-    inline const GuardrailContentPolicyAssessment& GetContentPolicy() const { return m_contentPolicy; }
-    inline bool ContentPolicyHasBeenSet() const { return m_contentPolicyHasBeenSet; }
-    template<typename ContentPolicyT = GuardrailContentPolicyAssessment>
-    void SetContentPolicy(ContentPolicyT&& value) { m_contentPolicyHasBeenSet = true; m_contentPolicy = std::forward<ContentPolicyT>(value); }
-    template<typename ContentPolicyT = GuardrailContentPolicyAssessment>
-    GuardrailAssessment& WithContentPolicy(ContentPolicyT&& value) { SetContentPolicy(std::forward<ContentPolicyT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Sensitive Information policy details of Guardrail.</p>
-     */
-    inline const GuardrailSensitiveInformationPolicyAssessment& GetSensitiveInformationPolicy() const { return m_sensitiveInformationPolicy; }
-    inline bool SensitiveInformationPolicyHasBeenSet() const { return m_sensitiveInformationPolicyHasBeenSet; }
-    template<typename SensitiveInformationPolicyT = GuardrailSensitiveInformationPolicyAssessment>
-    void SetSensitiveInformationPolicy(SensitiveInformationPolicyT&& value) { m_sensitiveInformationPolicyHasBeenSet = true; m_sensitiveInformationPolicy = std::forward<SensitiveInformationPolicyT>(value); }
-    template<typename SensitiveInformationPolicyT = GuardrailSensitiveInformationPolicyAssessment>
-    GuardrailAssessment& WithSensitiveInformationPolicy(SensitiveInformationPolicyT&& value) { SetSensitiveInformationPolicy(std::forward<SensitiveInformationPolicyT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Topic policy details of the Guardrail.</p>
      */
     inline const GuardrailTopicPolicyAssessment& GetTopicPolicy() const { return m_topicPolicy; }
@@ -75,6 +51,18 @@ namespace Model
     void SetTopicPolicy(TopicPolicyT&& value) { m_topicPolicyHasBeenSet = true; m_topicPolicy = std::forward<TopicPolicyT>(value); }
     template<typename TopicPolicyT = GuardrailTopicPolicyAssessment>
     GuardrailAssessment& WithTopicPolicy(TopicPolicyT&& value) { SetTopicPolicy(std::forward<TopicPolicyT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Content policy details of the Guardrail.</p>
+     */
+    inline const GuardrailContentPolicyAssessment& GetContentPolicy() const { return m_contentPolicy; }
+    inline bool ContentPolicyHasBeenSet() const { return m_contentPolicyHasBeenSet; }
+    template<typename ContentPolicyT = GuardrailContentPolicyAssessment>
+    void SetContentPolicy(ContentPolicyT&& value) { m_contentPolicyHasBeenSet = true; m_contentPolicy = std::forward<ContentPolicyT>(value); }
+    template<typename ContentPolicyT = GuardrailContentPolicyAssessment>
+    GuardrailAssessment& WithContentPolicy(ContentPolicyT&& value) { SetContentPolicy(std::forward<ContentPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,19 +76,31 @@ namespace Model
     template<typename WordPolicyT = GuardrailWordPolicyAssessment>
     GuardrailAssessment& WithWordPolicy(WordPolicyT&& value) { SetWordPolicy(std::forward<WordPolicyT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Sensitive Information policy details of Guardrail.</p>
+     */
+    inline const GuardrailSensitiveInformationPolicyAssessment& GetSensitiveInformationPolicy() const { return m_sensitiveInformationPolicy; }
+    inline bool SensitiveInformationPolicyHasBeenSet() const { return m_sensitiveInformationPolicyHasBeenSet; }
+    template<typename SensitiveInformationPolicyT = GuardrailSensitiveInformationPolicyAssessment>
+    void SetSensitiveInformationPolicy(SensitiveInformationPolicyT&& value) { m_sensitiveInformationPolicyHasBeenSet = true; m_sensitiveInformationPolicy = std::forward<SensitiveInformationPolicyT>(value); }
+    template<typename SensitiveInformationPolicyT = GuardrailSensitiveInformationPolicyAssessment>
+    GuardrailAssessment& WithSensitiveInformationPolicy(SensitiveInformationPolicyT&& value) { SetSensitiveInformationPolicy(std::forward<SensitiveInformationPolicyT>(value)); return *this;}
+    ///@}
   private:
-
-    GuardrailContentPolicyAssessment m_contentPolicy;
-    bool m_contentPolicyHasBeenSet = false;
-
-    GuardrailSensitiveInformationPolicyAssessment m_sensitiveInformationPolicy;
-    bool m_sensitiveInformationPolicyHasBeenSet = false;
 
     GuardrailTopicPolicyAssessment m_topicPolicy;
     bool m_topicPolicyHasBeenSet = false;
 
+    GuardrailContentPolicyAssessment m_contentPolicy;
+    bool m_contentPolicyHasBeenSet = false;
+
     GuardrailWordPolicyAssessment m_wordPolicy;
     bool m_wordPolicyHasBeenSet = false;
+
+    GuardrailSensitiveInformationPolicyAssessment m_sensitiveInformationPolicy;
+    bool m_sensitiveInformationPolicyHasBeenSet = false;
   };
 
 } // namespace Model

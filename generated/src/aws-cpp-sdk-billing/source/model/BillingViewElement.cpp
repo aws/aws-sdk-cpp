@@ -50,6 +50,11 @@ BillingViewElement& BillingViewElement::operator =(JsonView jsonValue)
     m_ownerAccountId = jsonValue.GetString("ownerAccountId");
     m_ownerAccountIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("sourceAccountId"))
+  {
+    m_sourceAccountId = jsonValue.GetString("sourceAccountId");
+    m_sourceAccountIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("dataFilterExpression"))
   {
     m_dataFilterExpression = jsonValue.GetObject("dataFilterExpression");
@@ -64,6 +69,26 @@ BillingViewElement& BillingViewElement::operator =(JsonView jsonValue)
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
     m_updatedAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("derivedViewCount"))
+  {
+    m_derivedViewCount = jsonValue.GetInteger("derivedViewCount");
+    m_derivedViewCountHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("sourceViewCount"))
+  {
+    m_sourceViewCount = jsonValue.GetInteger("sourceViewCount");
+    m_sourceViewCountHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("viewDefinitionLastUpdatedAt"))
+  {
+    m_viewDefinitionLastUpdatedAt = jsonValue.GetDouble("viewDefinitionLastUpdatedAt");
+    m_viewDefinitionLastUpdatedAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("healthStatus"))
+  {
+    m_healthStatus = jsonValue.GetObject("healthStatus");
+    m_healthStatusHasBeenSet = true;
   }
   return *this;
 }
@@ -101,6 +126,12 @@ JsonValue BillingViewElement::Jsonize() const
 
   }
 
+  if(m_sourceAccountIdHasBeenSet)
+  {
+   payload.WithString("sourceAccountId", m_sourceAccountId);
+
+  }
+
   if(m_dataFilterExpressionHasBeenSet)
   {
    payload.WithObject("dataFilterExpression", m_dataFilterExpression.Jsonize());
@@ -115,6 +146,29 @@ JsonValue BillingViewElement::Jsonize() const
   if(m_updatedAtHasBeenSet)
   {
    payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_derivedViewCountHasBeenSet)
+  {
+   payload.WithInteger("derivedViewCount", m_derivedViewCount);
+
+  }
+
+  if(m_sourceViewCountHasBeenSet)
+  {
+   payload.WithInteger("sourceViewCount", m_sourceViewCount);
+
+  }
+
+  if(m_viewDefinitionLastUpdatedAtHasBeenSet)
+  {
+   payload.WithDouble("viewDefinitionLastUpdatedAt", m_viewDefinitionLastUpdatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_healthStatusHasBeenSet)
+  {
+   payload.WithObject("healthStatus", m_healthStatus.Jsonize());
+
   }
 
   return payload;

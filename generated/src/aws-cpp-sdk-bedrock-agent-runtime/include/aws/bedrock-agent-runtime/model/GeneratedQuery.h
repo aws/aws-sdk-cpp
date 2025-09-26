@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent-runtime/model/GeneratedQueryType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of transformed query.</p>
+     */
+    inline GeneratedQueryType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(GeneratedQueryType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GeneratedQuery& WithType(GeneratedQueryType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An SQL query that corresponds to the natural language query.</p>
      */
     inline const Aws::String& GetSql() const { return m_sql; }
@@ -50,23 +60,13 @@ namespace Model
     template<typename SqlT = Aws::String>
     GeneratedQuery& WithSql(SqlT&& value) { SetSql(std::forward<SqlT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of transformed query.</p>
-     */
-    inline GeneratedQueryType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(GeneratedQueryType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline GeneratedQuery& WithType(GeneratedQueryType value) { SetType(value); return *this;}
-    ///@}
   private:
-
-    Aws::String m_sql;
-    bool m_sqlHasBeenSet = false;
 
     GeneratedQueryType m_type{GeneratedQueryType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    Aws::String m_sql;
+    bool m_sqlHasBeenSet = false;
   };
 
 } // namespace Model

@@ -42,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The type of elastic inference accelerator. The possible values are
+     * <p>The type of elastic inference accelerator. The possible values are
      * eia1.medium, eia1.large, and eia1.xlarge. </p>
      */
     inline const Aws::String& GetType() const { return m_type; }
@@ -55,8 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The number of elastic inference accelerators to attach to the instance. </p>
-     * <p>Default: 1</p>
+     * <p>The number of elastic inference accelerators to attach to the instance. </p>
      */
     inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }

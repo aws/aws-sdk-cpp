@@ -30,6 +30,15 @@ ContactSearchSummarySegmentAttributeValue& ContactSearchSummarySegmentAttributeV
     m_valueString = jsonValue.GetString("ValueString");
     m_valueStringHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ValueMap"))
+  {
+    Aws::Map<Aws::String, JsonView> valueMapJsonMap = jsonValue.GetObject("ValueMap").GetAllObjects();
+    for(auto& valueMapItem : valueMapJsonMap)
+    {
+      m_valueMap[valueMapItem.first] = valueMapItem.second.AsObject();
+    }
+    m_valueMapHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +49,17 @@ JsonValue ContactSearchSummarySegmentAttributeValue::Jsonize() const
   if(m_valueStringHasBeenSet)
   {
    payload.WithString("ValueString", m_valueString);
+
+  }
+
+  if(m_valueMapHasBeenSet)
+  {
+   JsonValue valueMapJsonMap;
+   for(auto& valueMapItem : m_valueMap)
+   {
+     valueMapJsonMap.WithObject(valueMapItem.first, valueMapItem.second.Jsonize());
+   }
+   payload.WithObject("ValueMap", std::move(valueMapJsonMap));
 
   }
 

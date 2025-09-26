@@ -25,19 +25,15 @@ RetrievalFilter::RetrievalFilter(JsonView jsonValue)
 
 RetrievalFilter& RetrievalFilter::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("andAll"))
-  {
-    Aws::Utils::Array<JsonView> andAllJsonList = jsonValue.GetArray("andAll");
-    for(unsigned andAllIndex = 0; andAllIndex < andAllJsonList.GetLength(); ++andAllIndex)
-    {
-      m_andAll.push_back(andAllJsonList[andAllIndex].AsObject());
-    }
-    m_andAllHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("equals"))
   {
     m_equals = jsonValue.GetObject("equals");
     m_equalsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("notEquals"))
+  {
+    m_notEquals = jsonValue.GetObject("notEquals");
+    m_notEqualsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("greaterThan"))
   {
@@ -49,11 +45,6 @@ RetrievalFilter& RetrievalFilter::operator =(JsonView jsonValue)
     m_greaterThanOrEquals = jsonValue.GetObject("greaterThanOrEquals");
     m_greaterThanOrEqualsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("in"))
-  {
-    m_in = jsonValue.GetObject("in");
-    m_inHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("lessThan"))
   {
     m_lessThan = jsonValue.GetObject("lessThan");
@@ -64,20 +55,39 @@ RetrievalFilter& RetrievalFilter::operator =(JsonView jsonValue)
     m_lessThanOrEquals = jsonValue.GetObject("lessThanOrEquals");
     m_lessThanOrEqualsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("listContains"))
+  if(jsonValue.ValueExists("in"))
   {
-    m_listContains = jsonValue.GetObject("listContains");
-    m_listContainsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("notEquals"))
-  {
-    m_notEquals = jsonValue.GetObject("notEquals");
-    m_notEqualsHasBeenSet = true;
+    m_in = jsonValue.GetObject("in");
+    m_inHasBeenSet = true;
   }
   if(jsonValue.ValueExists("notIn"))
   {
     m_notIn = jsonValue.GetObject("notIn");
     m_notInHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("startsWith"))
+  {
+    m_startsWith = jsonValue.GetObject("startsWith");
+    m_startsWithHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("listContains"))
+  {
+    m_listContains = jsonValue.GetObject("listContains");
+    m_listContainsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("stringContains"))
+  {
+    m_stringContains = jsonValue.GetObject("stringContains");
+    m_stringContainsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("andAll"))
+  {
+    Aws::Utils::Array<JsonView> andAllJsonList = jsonValue.GetArray("andAll");
+    for(unsigned andAllIndex = 0; andAllIndex < andAllJsonList.GetLength(); ++andAllIndex)
+    {
+      m_andAll.push_back(andAllJsonList[andAllIndex].AsObject());
+    }
+    m_andAllHasBeenSet = true;
   }
   if(jsonValue.ValueExists("orAll"))
   {
@@ -88,16 +98,6 @@ RetrievalFilter& RetrievalFilter::operator =(JsonView jsonValue)
     }
     m_orAllHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startsWith"))
-  {
-    m_startsWith = jsonValue.GetObject("startsWith");
-    m_startsWithHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("stringContains"))
-  {
-    m_stringContains = jsonValue.GetObject("stringContains");
-    m_stringContainsHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -105,20 +105,15 @@ JsonValue RetrievalFilter::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_andAllHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> andAllJsonList(m_andAll.size());
-   for(unsigned andAllIndex = 0; andAllIndex < andAllJsonList.GetLength(); ++andAllIndex)
-   {
-     andAllJsonList[andAllIndex].AsObject(m_andAll[andAllIndex].Jsonize());
-   }
-   payload.WithArray("andAll", std::move(andAllJsonList));
-
-  }
-
   if(m_equalsHasBeenSet)
   {
    payload.WithObject("equals", m_equals.Jsonize());
+
+  }
+
+  if(m_notEqualsHasBeenSet)
+  {
+   payload.WithObject("notEquals", m_notEquals.Jsonize());
 
   }
 
@@ -134,12 +129,6 @@ JsonValue RetrievalFilter::Jsonize() const
 
   }
 
-  if(m_inHasBeenSet)
-  {
-   payload.WithObject("in", m_in.Jsonize());
-
-  }
-
   if(m_lessThanHasBeenSet)
   {
    payload.WithObject("lessThan", m_lessThan.Jsonize());
@@ -152,21 +141,44 @@ JsonValue RetrievalFilter::Jsonize() const
 
   }
 
-  if(m_listContainsHasBeenSet)
+  if(m_inHasBeenSet)
   {
-   payload.WithObject("listContains", m_listContains.Jsonize());
-
-  }
-
-  if(m_notEqualsHasBeenSet)
-  {
-   payload.WithObject("notEquals", m_notEquals.Jsonize());
+   payload.WithObject("in", m_in.Jsonize());
 
   }
 
   if(m_notInHasBeenSet)
   {
    payload.WithObject("notIn", m_notIn.Jsonize());
+
+  }
+
+  if(m_startsWithHasBeenSet)
+  {
+   payload.WithObject("startsWith", m_startsWith.Jsonize());
+
+  }
+
+  if(m_listContainsHasBeenSet)
+  {
+   payload.WithObject("listContains", m_listContains.Jsonize());
+
+  }
+
+  if(m_stringContainsHasBeenSet)
+  {
+   payload.WithObject("stringContains", m_stringContains.Jsonize());
+
+  }
+
+  if(m_andAllHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> andAllJsonList(m_andAll.size());
+   for(unsigned andAllIndex = 0; andAllIndex < andAllJsonList.GetLength(); ++andAllIndex)
+   {
+     andAllJsonList[andAllIndex].AsObject(m_andAll[andAllIndex].Jsonize());
+   }
+   payload.WithArray("andAll", std::move(andAllJsonList));
 
   }
 
@@ -178,18 +190,6 @@ JsonValue RetrievalFilter::Jsonize() const
      orAllJsonList[orAllIndex].AsObject(m_orAll[orAllIndex].Jsonize());
    }
    payload.WithArray("orAll", std::move(orAllJsonList));
-
-  }
-
-  if(m_startsWithHasBeenSet)
-  {
-   payload.WithObject("startsWith", m_startsWith.Jsonize());
-
-  }
-
-  if(m_stringContainsHasBeenSet)
-  {
-   payload.WithObject("stringContains", m_stringContains.Jsonize());
 
   }
 

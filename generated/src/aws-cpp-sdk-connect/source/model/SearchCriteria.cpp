@@ -25,6 +25,11 @@ SearchCriteria::SearchCriteria(JsonView jsonValue)
 
 SearchCriteria& SearchCriteria::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetObject("Name");
+    m_nameHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("AgentIds"))
   {
     Aws::Utils::Array<JsonView> agentIdsJsonList = jsonValue.GetArray("AgentIds");
@@ -71,6 +76,16 @@ SearchCriteria& SearchCriteria::operator =(JsonView jsonValue)
     }
     m_queueIdsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("RoutingCriteria"))
+  {
+    m_routingCriteria = jsonValue.GetObject("RoutingCriteria");
+    m_routingCriteriaHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("AdditionalTimeRange"))
+  {
+    m_additionalTimeRange = jsonValue.GetObject("AdditionalTimeRange");
+    m_additionalTimeRangeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("SearchableContactAttributes"))
   {
     m_searchableContactAttributes = jsonValue.GetObject("SearchableContactAttributes");
@@ -87,6 +102,12 @@ SearchCriteria& SearchCriteria::operator =(JsonView jsonValue)
 JsonValue SearchCriteria::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithObject("Name", m_name.Jsonize());
+
+  }
 
   if(m_agentIdsHasBeenSet)
   {
@@ -141,6 +162,18 @@ JsonValue SearchCriteria::Jsonize() const
      queueIdsJsonList[queueIdsIndex].AsString(m_queueIds[queueIdsIndex]);
    }
    payload.WithArray("QueueIds", std::move(queueIdsJsonList));
+
+  }
+
+  if(m_routingCriteriaHasBeenSet)
+  {
+   payload.WithObject("RoutingCriteria", m_routingCriteria.Jsonize());
+
+  }
+
+  if(m_additionalTimeRangeHasBeenSet)
+  {
+   payload.WithObject("AdditionalTimeRange", m_additionalTimeRange.Jsonize());
 
   }
 

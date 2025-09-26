@@ -25,15 +25,15 @@ TextResponsePart::TextResponsePart(JsonView jsonValue)
 
 TextResponsePart& TextResponsePart::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("span"))
-  {
-    m_span = jsonValue.GetObject("span");
-    m_spanHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("span"))
+  {
+    m_span = jsonValue.GetObject("span");
+    m_spanHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue TextResponsePart::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_spanHasBeenSet)
-  {
-   payload.WithObject("span", m_span.Jsonize());
-
-  }
-
   if(m_textHasBeenSet)
   {
    payload.WithString("text", m_text);
+
+  }
+
+  if(m_spanHasBeenSet)
+  {
+   payload.WithObject("span", m_span.Jsonize());
 
   }
 

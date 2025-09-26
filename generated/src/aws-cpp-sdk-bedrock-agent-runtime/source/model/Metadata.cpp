@@ -25,30 +25,30 @@ Metadata::Metadata(JsonView jsonValue)
 
 Metadata& Metadata::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("clientRequestId"))
+  if(jsonValue.ValueExists("startTime"))
   {
-    m_clientRequestId = jsonValue.GetString("clientRequestId");
-    m_clientRequestIdHasBeenSet = true;
+    m_startTime = jsonValue.GetString("startTime");
+    m_startTimeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
     m_endTimeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("totalTimeMs"))
+  {
+    m_totalTimeMs = jsonValue.GetInt64("totalTimeMs");
+    m_totalTimeMsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("operationTotalTimeMs"))
   {
     m_operationTotalTimeMs = jsonValue.GetInt64("operationTotalTimeMs");
     m_operationTotalTimeMsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startTime"))
+  if(jsonValue.ValueExists("clientRequestId"))
   {
-    m_startTime = jsonValue.GetString("startTime");
-    m_startTimeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("totalTimeMs"))
-  {
-    m_totalTimeMs = jsonValue.GetInt64("totalTimeMs");
-    m_totalTimeMsHasBeenSet = true;
+    m_clientRequestId = jsonValue.GetString("clientRequestId");
+    m_clientRequestIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("usage"))
   {
@@ -62,15 +62,20 @@ JsonValue Metadata::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_clientRequestIdHasBeenSet)
+  if(m_startTimeHasBeenSet)
   {
-   payload.WithString("clientRequestId", m_clientRequestId);
-
+   payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_endTimeHasBeenSet)
   {
    payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_totalTimeMsHasBeenSet)
+  {
+   payload.WithInt64("totalTimeMs", m_totalTimeMs);
+
   }
 
   if(m_operationTotalTimeMsHasBeenSet)
@@ -79,14 +84,9 @@ JsonValue Metadata::Jsonize() const
 
   }
 
-  if(m_startTimeHasBeenSet)
+  if(m_clientRequestIdHasBeenSet)
   {
-   payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_totalTimeMsHasBeenSet)
-  {
-   payload.WithInt64("totalTimeMs", m_totalTimeMs);
+   payload.WithString("clientRequestId", m_clientRequestId);
 
   }
 

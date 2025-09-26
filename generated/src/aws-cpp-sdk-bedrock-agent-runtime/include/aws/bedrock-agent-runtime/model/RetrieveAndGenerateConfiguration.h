@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/ExternalSourcesRetrieveAndGenerateConfiguration.h>
-#include <aws/bedrock-agent-runtime/model/KnowledgeBaseRetrieveAndGenerateConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/RetrieveAndGenerateType.h>
+#include <aws/bedrock-agent-runtime/model/KnowledgeBaseRetrieveAndGenerateConfiguration.h>
+#include <aws/bedrock-agent-runtime/model/ExternalSourcesRetrieveAndGenerateConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -45,15 +45,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration for the external source wrapper object in the
-     * <code>retrieveAndGenerate</code> function.</p>
+     * <p>The type of resource that contains your data for retrieving information and
+     * generating responses.</p>  <p>If you choose to use
+     * <code>EXTERNAL_SOURCES</code>, then currently only Anthropic Claude 3 Sonnet
+     * models for knowledge bases are supported.</p> 
      */
-    inline const ExternalSourcesRetrieveAndGenerateConfiguration& GetExternalSourcesConfiguration() const { return m_externalSourcesConfiguration; }
-    inline bool ExternalSourcesConfigurationHasBeenSet() const { return m_externalSourcesConfigurationHasBeenSet; }
-    template<typename ExternalSourcesConfigurationT = ExternalSourcesRetrieveAndGenerateConfiguration>
-    void SetExternalSourcesConfiguration(ExternalSourcesConfigurationT&& value) { m_externalSourcesConfigurationHasBeenSet = true; m_externalSourcesConfiguration = std::forward<ExternalSourcesConfigurationT>(value); }
-    template<typename ExternalSourcesConfigurationT = ExternalSourcesRetrieveAndGenerateConfiguration>
-    RetrieveAndGenerateConfiguration& WithExternalSourcesConfiguration(ExternalSourcesConfigurationT&& value) { SetExternalSourcesConfiguration(std::forward<ExternalSourcesConfigurationT>(value)); return *this;}
+    inline RetrieveAndGenerateType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(RetrieveAndGenerateType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RetrieveAndGenerateConfiguration& WithType(RetrieveAndGenerateType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -71,26 +71,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of resource that contains your data for retrieving information and
-     * generating responses.</p>  <p>If you choose to use
-     * <code>EXTERNAL_SOURCES</code>, then currently only Anthropic Claude 3 Sonnet
-     * models for knowledge bases are supported.</p> 
+     * <p>The configuration for the external source wrapper object in the
+     * <code>retrieveAndGenerate</code> function.</p>
      */
-    inline RetrieveAndGenerateType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(RetrieveAndGenerateType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline RetrieveAndGenerateConfiguration& WithType(RetrieveAndGenerateType value) { SetType(value); return *this;}
+    inline const ExternalSourcesRetrieveAndGenerateConfiguration& GetExternalSourcesConfiguration() const { return m_externalSourcesConfiguration; }
+    inline bool ExternalSourcesConfigurationHasBeenSet() const { return m_externalSourcesConfigurationHasBeenSet; }
+    template<typename ExternalSourcesConfigurationT = ExternalSourcesRetrieveAndGenerateConfiguration>
+    void SetExternalSourcesConfiguration(ExternalSourcesConfigurationT&& value) { m_externalSourcesConfigurationHasBeenSet = true; m_externalSourcesConfiguration = std::forward<ExternalSourcesConfigurationT>(value); }
+    template<typename ExternalSourcesConfigurationT = ExternalSourcesRetrieveAndGenerateConfiguration>
+    RetrieveAndGenerateConfiguration& WithExternalSourcesConfiguration(ExternalSourcesConfigurationT&& value) { SetExternalSourcesConfiguration(std::forward<ExternalSourcesConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    ExternalSourcesRetrieveAndGenerateConfiguration m_externalSourcesConfiguration;
-    bool m_externalSourcesConfigurationHasBeenSet = false;
+    RetrieveAndGenerateType m_type{RetrieveAndGenerateType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     KnowledgeBaseRetrieveAndGenerateConfiguration m_knowledgeBaseConfiguration;
     bool m_knowledgeBaseConfigurationHasBeenSet = false;
 
-    RetrieveAndGenerateType m_type{RetrieveAndGenerateType::NOT_SET};
-    bool m_typeHasBeenSet = false;
+    ExternalSourcesRetrieveAndGenerateConfiguration m_externalSourcesConfiguration;
+    bool m_externalSourcesConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

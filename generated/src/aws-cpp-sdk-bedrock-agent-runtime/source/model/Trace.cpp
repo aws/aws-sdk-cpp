@@ -25,20 +25,15 @@ Trace::Trace(JsonView jsonValue)
 
 Trace& Trace::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("customOrchestrationTrace"))
-  {
-    m_customOrchestrationTrace = jsonValue.GetObject("customOrchestrationTrace");
-    m_customOrchestrationTraceHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("failureTrace"))
-  {
-    m_failureTrace = jsonValue.GetObject("failureTrace");
-    m_failureTraceHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("guardrailTrace"))
   {
     m_guardrailTrace = jsonValue.GetObject("guardrailTrace");
     m_guardrailTraceHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("preProcessingTrace"))
+  {
+    m_preProcessingTrace = jsonValue.GetObject("preProcessingTrace");
+    m_preProcessingTraceHasBeenSet = true;
   }
   if(jsonValue.ValueExists("orchestrationTrace"))
   {
@@ -50,15 +45,20 @@ Trace& Trace::operator =(JsonView jsonValue)
     m_postProcessingTrace = jsonValue.GetObject("postProcessingTrace");
     m_postProcessingTraceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("preProcessingTrace"))
-  {
-    m_preProcessingTrace = jsonValue.GetObject("preProcessingTrace");
-    m_preProcessingTraceHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("routingClassifierTrace"))
   {
     m_routingClassifierTrace = jsonValue.GetObject("routingClassifierTrace");
     m_routingClassifierTraceHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("failureTrace"))
+  {
+    m_failureTrace = jsonValue.GetObject("failureTrace");
+    m_failureTraceHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("customOrchestrationTrace"))
+  {
+    m_customOrchestrationTrace = jsonValue.GetObject("customOrchestrationTrace");
+    m_customOrchestrationTraceHasBeenSet = true;
   }
   return *this;
 }
@@ -67,21 +67,15 @@ JsonValue Trace::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_customOrchestrationTraceHasBeenSet)
-  {
-   payload.WithObject("customOrchestrationTrace", m_customOrchestrationTrace.Jsonize());
-
-  }
-
-  if(m_failureTraceHasBeenSet)
-  {
-   payload.WithObject("failureTrace", m_failureTrace.Jsonize());
-
-  }
-
   if(m_guardrailTraceHasBeenSet)
   {
    payload.WithObject("guardrailTrace", m_guardrailTrace.Jsonize());
+
+  }
+
+  if(m_preProcessingTraceHasBeenSet)
+  {
+   payload.WithObject("preProcessingTrace", m_preProcessingTrace.Jsonize());
 
   }
 
@@ -97,15 +91,21 @@ JsonValue Trace::Jsonize() const
 
   }
 
-  if(m_preProcessingTraceHasBeenSet)
-  {
-   payload.WithObject("preProcessingTrace", m_preProcessingTrace.Jsonize());
-
-  }
-
   if(m_routingClassifierTraceHasBeenSet)
   {
    payload.WithObject("routingClassifierTrace", m_routingClassifierTrace.Jsonize());
+
+  }
+
+  if(m_failureTraceHasBeenSet)
+  {
+   payload.WithObject("failureTrace", m_failureTrace.Jsonize());
+
+  }
+
+  if(m_customOrchestrationTraceHasBeenSet)
+  {
+   payload.WithObject("customOrchestrationTrace", m_customOrchestrationTrace.Jsonize());
 
   }
 

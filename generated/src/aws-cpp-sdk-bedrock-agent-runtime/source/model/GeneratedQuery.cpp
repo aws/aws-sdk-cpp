@@ -25,15 +25,15 @@ GeneratedQuery::GeneratedQuery(JsonView jsonValue)
 
 GeneratedQuery& GeneratedQuery::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("sql"))
-  {
-    m_sql = jsonValue.GetString("sql");
-    m_sqlHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("type"))
   {
     m_type = GeneratedQueryTypeMapper::GetGeneratedQueryTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("sql"))
+  {
+    m_sql = jsonValue.GetString("sql");
+    m_sqlHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue GeneratedQuery::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", GeneratedQueryTypeMapper::GetNameForGeneratedQueryType(m_type));
+  }
+
   if(m_sqlHasBeenSet)
   {
    payload.WithString("sql", m_sql);
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", GeneratedQueryTypeMapper::GetNameForGeneratedQueryType(m_type));
   }
 
   return payload;

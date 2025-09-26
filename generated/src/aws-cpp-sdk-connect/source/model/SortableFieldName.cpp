@@ -26,6 +26,7 @@ namespace Aws
         static const int DISCONNECT_TIMESTAMP_HASH = HashingUtils::HashString("DISCONNECT_TIMESTAMP");
         static const int INITIATION_METHOD_HASH = HashingUtils::HashString("INITIATION_METHOD");
         static const int CHANNEL_HASH = HashingUtils::HashString("CHANNEL");
+        static const int EXPIRY_TIMESTAMP_HASH = HashingUtils::HashString("EXPIRY_TIMESTAMP");
 
 
         SortableFieldName GetSortableFieldNameForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return SortableFieldName::CHANNEL;
           }
+          else if (hashCode == EXPIRY_TIMESTAMP_HASH)
+          {
+            return SortableFieldName::EXPIRY_TIMESTAMP;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +88,8 @@ namespace Aws
             return "INITIATION_METHOD";
           case SortableFieldName::CHANNEL:
             return "CHANNEL";
+          case SortableFieldName::EXPIRY_TIMESTAMP:
+            return "EXPIRY_TIMESTAMP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

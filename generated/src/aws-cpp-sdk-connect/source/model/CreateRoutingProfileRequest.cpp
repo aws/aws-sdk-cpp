@@ -45,6 +45,17 @@ Aws::String CreateRoutingProfileRequest::SerializePayload() const
 
   }
 
+  if(m_manualAssignmentQueueConfigsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> manualAssignmentQueueConfigsJsonList(m_manualAssignmentQueueConfigs.size());
+   for(unsigned manualAssignmentQueueConfigsIndex = 0; manualAssignmentQueueConfigsIndex < manualAssignmentQueueConfigsJsonList.GetLength(); ++manualAssignmentQueueConfigsIndex)
+   {
+     manualAssignmentQueueConfigsJsonList[manualAssignmentQueueConfigsIndex].AsObject(m_manualAssignmentQueueConfigs[manualAssignmentQueueConfigsIndex].Jsonize());
+   }
+   payload.WithArray("ManualAssignmentQueueConfigs", std::move(manualAssignmentQueueConfigsJsonList));
+
+  }
+
   if(m_mediaConcurrenciesHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> mediaConcurrenciesJsonList(m_mediaConcurrencies.size());

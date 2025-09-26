@@ -27,6 +27,17 @@ Aws::String DisassociateRoutingProfileQueuesRequest::SerializePayload() const
 
   }
 
+  if(m_manualAssignmentQueueReferencesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> manualAssignmentQueueReferencesJsonList(m_manualAssignmentQueueReferences.size());
+   for(unsigned manualAssignmentQueueReferencesIndex = 0; manualAssignmentQueueReferencesIndex < manualAssignmentQueueReferencesJsonList.GetLength(); ++manualAssignmentQueueReferencesIndex)
+   {
+     manualAssignmentQueueReferencesJsonList[manualAssignmentQueueReferencesIndex].AsObject(m_manualAssignmentQueueReferences[manualAssignmentQueueReferencesIndex].Jsonize());
+   }
+   payload.WithArray("ManualAssignmentQueueReferences", std::move(manualAssignmentQueueReferencesJsonList));
+
+  }
+
   return payload.View().WriteReadable();
 }
 

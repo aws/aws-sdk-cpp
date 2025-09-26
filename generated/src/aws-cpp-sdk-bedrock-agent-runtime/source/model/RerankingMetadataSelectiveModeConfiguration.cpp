@@ -25,15 +25,6 @@ RerankingMetadataSelectiveModeConfiguration::RerankingMetadataSelectiveModeConfi
 
 RerankingMetadataSelectiveModeConfiguration& RerankingMetadataSelectiveModeConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("fieldsToExclude"))
-  {
-    Aws::Utils::Array<JsonView> fieldsToExcludeJsonList = jsonValue.GetArray("fieldsToExclude");
-    for(unsigned fieldsToExcludeIndex = 0; fieldsToExcludeIndex < fieldsToExcludeJsonList.GetLength(); ++fieldsToExcludeIndex)
-    {
-      m_fieldsToExclude.push_back(fieldsToExcludeJsonList[fieldsToExcludeIndex].AsObject());
-    }
-    m_fieldsToExcludeHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("fieldsToInclude"))
   {
     Aws::Utils::Array<JsonView> fieldsToIncludeJsonList = jsonValue.GetArray("fieldsToInclude");
@@ -43,23 +34,21 @@ RerankingMetadataSelectiveModeConfiguration& RerankingMetadataSelectiveModeConfi
     }
     m_fieldsToIncludeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("fieldsToExclude"))
+  {
+    Aws::Utils::Array<JsonView> fieldsToExcludeJsonList = jsonValue.GetArray("fieldsToExclude");
+    for(unsigned fieldsToExcludeIndex = 0; fieldsToExcludeIndex < fieldsToExcludeJsonList.GetLength(); ++fieldsToExcludeIndex)
+    {
+      m_fieldsToExclude.push_back(fieldsToExcludeJsonList[fieldsToExcludeIndex].AsObject());
+    }
+    m_fieldsToExcludeHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue RerankingMetadataSelectiveModeConfiguration::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_fieldsToExcludeHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> fieldsToExcludeJsonList(m_fieldsToExclude.size());
-   for(unsigned fieldsToExcludeIndex = 0; fieldsToExcludeIndex < fieldsToExcludeJsonList.GetLength(); ++fieldsToExcludeIndex)
-   {
-     fieldsToExcludeJsonList[fieldsToExcludeIndex].AsObject(m_fieldsToExclude[fieldsToExcludeIndex].Jsonize());
-   }
-   payload.WithArray("fieldsToExclude", std::move(fieldsToExcludeJsonList));
-
-  }
 
   if(m_fieldsToIncludeHasBeenSet)
   {
@@ -69,6 +58,17 @@ JsonValue RerankingMetadataSelectiveModeConfiguration::Jsonize() const
      fieldsToIncludeJsonList[fieldsToIncludeIndex].AsObject(m_fieldsToInclude[fieldsToIncludeIndex].Jsonize());
    }
    payload.WithArray("fieldsToInclude", std::move(fieldsToIncludeJsonList));
+
+  }
+
+  if(m_fieldsToExcludeHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> fieldsToExcludeJsonList(m_fieldsToExclude.size());
+   for(unsigned fieldsToExcludeIndex = 0; fieldsToExcludeIndex < fieldsToExcludeJsonList.GetLength(); ++fieldsToExcludeIndex)
+   {
+     fieldsToExcludeJsonList[fieldsToExcludeIndex].AsObject(m_fieldsToExclude[fieldsToExcludeIndex].Jsonize());
+   }
+   payload.WithArray("fieldsToExclude", std::move(fieldsToExcludeJsonList));
 
   }
 

@@ -25,6 +25,15 @@ RetrieveResult::RetrieveResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 RetrieveResult& RetrieveResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("retrievalResults"))
+  {
+    Aws::Utils::Array<JsonView> retrievalResultsJsonList = jsonValue.GetArray("retrievalResults");
+    for(unsigned retrievalResultsIndex = 0; retrievalResultsIndex < retrievalResultsJsonList.GetLength(); ++retrievalResultsIndex)
+    {
+      m_retrievalResults.push_back(retrievalResultsJsonList[retrievalResultsIndex].AsObject());
+    }
+    m_retrievalResultsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("guardrailAction"))
   {
     m_guardrailAction = GuadrailActionMapper::GetGuadrailActionForName(jsonValue.GetString("guardrailAction"));
@@ -34,15 +43,6 @@ RetrieveResult& RetrieveResult::operator =(const Aws::AmazonWebServiceResult<Jso
   {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("retrievalResults"))
-  {
-    Aws::Utils::Array<JsonView> retrievalResultsJsonList = jsonValue.GetArray("retrievalResults");
-    for(unsigned retrievalResultsIndex = 0; retrievalResultsIndex < retrievalResultsJsonList.GetLength(); ++retrievalResultsIndex)
-    {
-      m_retrievalResults.push_back(retrievalResultsJsonList[retrievalResultsIndex].AsObject());
-    }
-    m_retrievalResultsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

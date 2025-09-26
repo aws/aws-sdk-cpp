@@ -30,10 +30,10 @@ ApiResult& ApiResult::operator =(JsonView jsonValue)
     m_actionGroup = jsonValue.GetString("actionGroup");
     m_actionGroupHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("agentId"))
+  if(jsonValue.ValueExists("httpMethod"))
   {
-    m_agentId = jsonValue.GetString("agentId");
-    m_agentIdHasBeenSet = true;
+    m_httpMethod = jsonValue.GetString("httpMethod");
+    m_httpMethodHasBeenSet = true;
   }
   if(jsonValue.ValueExists("apiPath"))
   {
@@ -45,10 +45,10 @@ ApiResult& ApiResult::operator =(JsonView jsonValue)
     m_confirmationState = ConfirmationStateMapper::GetConfirmationStateForName(jsonValue.GetString("confirmationState"));
     m_confirmationStateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("httpMethod"))
+  if(jsonValue.ValueExists("responseState"))
   {
-    m_httpMethod = jsonValue.GetString("httpMethod");
-    m_httpMethodHasBeenSet = true;
+    m_responseState = ResponseStateMapper::GetResponseStateForName(jsonValue.GetString("responseState"));
+    m_responseStateHasBeenSet = true;
   }
   if(jsonValue.ValueExists("httpStatusCode"))
   {
@@ -64,10 +64,10 @@ ApiResult& ApiResult::operator =(JsonView jsonValue)
     }
     m_responseBodyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("responseState"))
+  if(jsonValue.ValueExists("agentId"))
   {
-    m_responseState = ResponseStateMapper::GetResponseStateForName(jsonValue.GetString("responseState"));
-    m_responseStateHasBeenSet = true;
+    m_agentId = jsonValue.GetString("agentId");
+    m_agentIdHasBeenSet = true;
   }
   return *this;
 }
@@ -82,9 +82,9 @@ JsonValue ApiResult::Jsonize() const
 
   }
 
-  if(m_agentIdHasBeenSet)
+  if(m_httpMethodHasBeenSet)
   {
-   payload.WithString("agentId", m_agentId);
+   payload.WithString("httpMethod", m_httpMethod);
 
   }
 
@@ -99,10 +99,9 @@ JsonValue ApiResult::Jsonize() const
    payload.WithString("confirmationState", ConfirmationStateMapper::GetNameForConfirmationState(m_confirmationState));
   }
 
-  if(m_httpMethodHasBeenSet)
+  if(m_responseStateHasBeenSet)
   {
-   payload.WithString("httpMethod", m_httpMethod);
-
+   payload.WithString("responseState", ResponseStateMapper::GetNameForResponseState(m_responseState));
   }
 
   if(m_httpStatusCodeHasBeenSet)
@@ -122,9 +121,10 @@ JsonValue ApiResult::Jsonize() const
 
   }
 
-  if(m_responseStateHasBeenSet)
+  if(m_agentIdHasBeenSet)
   {
-   payload.WithString("responseState", ResponseStateMapper::GetNameForResponseState(m_responseState));
+   payload.WithString("agentId", m_agentId);
+
   }
 
   return payload;

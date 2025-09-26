@@ -15,8 +15,13 @@
 #include <aws/billing/BillingServiceClientModel.h>
 #include <aws/billing/Billing_EXPORTS.h>
 #include <aws/billing/model/ActiveTimeRange.h>
+#include <aws/billing/model/AssociateSourceViewsRequest.h>
+#include <aws/billing/model/AssociateSourceViewsResult.h>
 #include <aws/billing/model/BillingViewElement.h>
+#include <aws/billing/model/BillingViewHealthStatus.h>
 #include <aws/billing/model/BillingViewListElement.h>
+#include <aws/billing/model/BillingViewStatus.h>
+#include <aws/billing/model/BillingViewStatusReason.h>
 #include <aws/billing/model/BillingViewType.h>
 #include <aws/billing/model/ConflictException.h>
 #include <aws/billing/model/CreateBillingViewRequest.h>
@@ -25,6 +30,8 @@
 #include <aws/billing/model/DeleteBillingViewResult.h>
 #include <aws/billing/model/Dimension.h>
 #include <aws/billing/model/DimensionValues.h>
+#include <aws/billing/model/DisassociateSourceViewsRequest.h>
+#include <aws/billing/model/DisassociateSourceViewsResult.h>
 #include <aws/billing/model/Expression.h>
 #include <aws/billing/model/GetBillingViewRequest.h>
 #include <aws/billing/model/GetBillingViewResult.h>
@@ -42,6 +49,7 @@
 #include <aws/billing/model/TagResourceRequest.h>
 #include <aws/billing/model/TagResourceResult.h>
 #include <aws/billing/model/TagValues.h>
+#include <aws/billing/model/TimeRange.h>
 #include <aws/billing/model/UntagResourceRequest.h>
 #include <aws/billing/model/UntagResourceResult.h>
 #include <aws/billing/model/UpdateBillingViewRequest.h>

@@ -66,12 +66,12 @@ namespace Model
     /**
      * <p>The target size of the volume, in GiB. The target volume size must be greater
      * than or equal to the existing size of the volume.</p> <p>The following are the
-     * supported volumes sizes for each volume type:</p> <ul> <li> <p> <code>gp2</code>
-     * and <code>gp3</code>: 1 - 16,384 GiB</p> </li> <li> <p> <code>io1</code>: 4 -
-     * 16,384 GiB</p> </li> <li> <p> <code>io2</code>: 4 - 65,536 GiB</p> </li> <li>
-     * <p> <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p> </li> <li> <p>
-     * <code>standard</code>: 1 - 1024 GiB</p> </li> </ul> <p>Default: The existing
-     * size is retained.</p>
+     * supported volumes sizes for each volume type:</p> <ul> <li> <p>
+     * <code>gp2</code>: 1 - 16,384 GiB</p> </li> <li> <p> <code>gp3</code>: 1 - 65,536
+     * GiB</p> </li> <li> <p> <code>io1</code>: 4 - 16,384 GiB</p> </li> <li> <p>
+     * <code>io2</code>: 4 - 65,536 GiB</p> </li> <li> <p> <code>st1</code> and
+     * <code>sc1</code>: 125 - 16,384 GiB</p> </li> <li> <p> <code>standard</code>: 1 -
+     * 1024 GiB</p> </li> </ul> <p>Default: The existing size is retained.</p>
      */
     inline int GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
@@ -97,7 +97,7 @@ namespace Model
      * <p>The target IOPS rate of the volume. This parameter is valid only for
      * <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes.</p> <p>The
      * following are the supported values for each volume type:</p> <ul> <li> <p>
-     * <code>gp3</code>: 3,000 - 16,000 IOPS</p> </li> <li> <p> <code>io1</code>: 100 -
+     * <code>gp3</code>: 3,000 - 80,000 IOPS</p> </li> <li> <p> <code>io1</code>: 100 -
      * 64,000 IOPS</p> </li> <li> <p> <code>io2</code>: 100 - 256,000 IOPS</p> </li>
      * </ul> <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
      * href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances
@@ -115,10 +115,10 @@ namespace Model
     ///@{
     /**
      * <p>The target throughput of the volume, in MiB/s. This parameter is valid only
-     * for <code>gp3</code> volumes. The maximum value is 1,000.</p> <p>Default: The
+     * for <code>gp3</code> volumes. The maximum value is 2,000.</p> <p>Default: The
      * existing value is retained if the source and target volume type is
      * <code>gp3</code>. Otherwise, the default value is 125.</p> <p>Valid Range:
-     * Minimum value of 125. Maximum value of 1000.</p>
+     * Minimum value of 125. Maximum value of 2,000.</p>
      */
     inline int GetThroughput() const { return m_throughput; }
     inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }

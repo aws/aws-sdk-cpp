@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/model/GuardrailAction.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent-runtime/model/Metadata.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent-runtime/model/GuardrailAssessment.h>
 #include <utility>
 
@@ -53,6 +53,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The details of the trace Id used in the Guardrail Trace.</p>
+     */
+    inline const Aws::String& GetTraceId() const { return m_traceId; }
+    inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
+    template<typename TraceIdT = Aws::String>
+    void SetTraceId(TraceIdT&& value) { m_traceIdHasBeenSet = true; m_traceId = std::forward<TraceIdT>(value); }
+    template<typename TraceIdT = Aws::String>
+    GuardrailTrace& WithTraceId(TraceIdT&& value) { SetTraceId(std::forward<TraceIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The details of the input assessments used in the Guardrail Trace.</p>
      */
     inline const Aws::Vector<GuardrailAssessment>& GetInputAssessments() const { return m_inputAssessments; }
@@ -63,18 +75,6 @@ namespace Model
     GuardrailTrace& WithInputAssessments(InputAssessmentsT&& value) { SetInputAssessments(std::forward<InputAssessmentsT>(value)); return *this;}
     template<typename InputAssessmentsT = GuardrailAssessment>
     GuardrailTrace& AddInputAssessments(InputAssessmentsT&& value) { m_inputAssessmentsHasBeenSet = true; m_inputAssessments.emplace_back(std::forward<InputAssessmentsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>Contains information about the Guardrail output.</p>
-     */
-    inline const Metadata& GetMetadata() const { return m_metadata; }
-    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    template<typename MetadataT = Metadata>
-    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
-    template<typename MetadataT = Metadata>
-    GuardrailTrace& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,31 +93,31 @@ namespace Model
 
     ///@{
     /**
-     * <p>The details of the trace Id used in the Guardrail Trace.</p>
+     * <p>Contains information about the Guardrail output.</p>
      */
-    inline const Aws::String& GetTraceId() const { return m_traceId; }
-    inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
-    template<typename TraceIdT = Aws::String>
-    void SetTraceId(TraceIdT&& value) { m_traceIdHasBeenSet = true; m_traceId = std::forward<TraceIdT>(value); }
-    template<typename TraceIdT = Aws::String>
-    GuardrailTrace& WithTraceId(TraceIdT&& value) { SetTraceId(std::forward<TraceIdT>(value)); return *this;}
+    inline const Metadata& GetMetadata() const { return m_metadata; }
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+    template<typename MetadataT = Metadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Metadata>
+    GuardrailTrace& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
   private:
 
     GuardrailAction m_action{GuardrailAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
+    Aws::String m_traceId;
+    bool m_traceIdHasBeenSet = false;
+
     Aws::Vector<GuardrailAssessment> m_inputAssessments;
     bool m_inputAssessmentsHasBeenSet = false;
-
-    Metadata m_metadata;
-    bool m_metadataHasBeenSet = false;
 
     Aws::Vector<GuardrailAssessment> m_outputAssessments;
     bool m_outputAssessmentsHasBeenSet = false;
 
-    Aws::String m_traceId;
-    bool m_traceIdHasBeenSet = false;
+    Metadata m_metadata;
+    bool m_metadataHasBeenSet = false;
   };
 
 } // namespace Model

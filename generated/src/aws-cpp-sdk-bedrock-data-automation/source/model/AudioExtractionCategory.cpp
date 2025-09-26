@@ -39,6 +39,11 @@ AudioExtractionCategory& AudioExtractionCategory::operator =(JsonView jsonValue)
     }
     m_typesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("typeConfiguration"))
+  {
+    m_typeConfiguration = jsonValue.GetObject("typeConfiguration");
+    m_typeConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -59,6 +64,12 @@ JsonValue AudioExtractionCategory::Jsonize() const
      typesJsonList[typesIndex].AsString(AudioExtractionCategoryTypeMapper::GetNameForAudioExtractionCategoryType(m_types[typesIndex]));
    }
    payload.WithArray("types", std::move(typesJsonList));
+
+  }
+
+  if(m_typeConfigurationHasBeenSet)
+  {
+   payload.WithObject("typeConfiguration", m_typeConfiguration.Jsonize());
 
   }
 

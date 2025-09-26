@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/ExternalSourcesGenerationConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock-agent-runtime/model/ExternalSourcesGenerationConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/ExternalSource.h>
 #include <utility>
 
@@ -43,19 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The prompt used with the external source wrapper object with the
-     * <code>retrieveAndGenerate</code> function.</p>
-     */
-    inline const ExternalSourcesGenerationConfiguration& GetGenerationConfiguration() const { return m_generationConfiguration; }
-    inline bool GenerationConfigurationHasBeenSet() const { return m_generationConfigurationHasBeenSet; }
-    template<typename GenerationConfigurationT = ExternalSourcesGenerationConfiguration>
-    void SetGenerationConfiguration(GenerationConfigurationT&& value) { m_generationConfigurationHasBeenSet = true; m_generationConfiguration = std::forward<GenerationConfigurationT>(value); }
-    template<typename GenerationConfigurationT = ExternalSourcesGenerationConfiguration>
-    ExternalSourcesRetrieveAndGenerateConfiguration& WithGenerationConfiguration(GenerationConfigurationT&& value) { SetGenerationConfiguration(std::forward<GenerationConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The model Amazon Resource Name (ARN) for the external source wrapper object
      * in the <code>retrieveAndGenerate</code> function.</p>
      */
@@ -81,16 +68,29 @@ namespace Model
     template<typename SourcesT = ExternalSource>
     ExternalSourcesRetrieveAndGenerateConfiguration& AddSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources.emplace_back(std::forward<SourcesT>(value)); return *this; }
     ///@}
-  private:
 
-    ExternalSourcesGenerationConfiguration m_generationConfiguration;
-    bool m_generationConfigurationHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The prompt used with the external source wrapper object with the
+     * <code>retrieveAndGenerate</code> function.</p>
+     */
+    inline const ExternalSourcesGenerationConfiguration& GetGenerationConfiguration() const { return m_generationConfiguration; }
+    inline bool GenerationConfigurationHasBeenSet() const { return m_generationConfigurationHasBeenSet; }
+    template<typename GenerationConfigurationT = ExternalSourcesGenerationConfiguration>
+    void SetGenerationConfiguration(GenerationConfigurationT&& value) { m_generationConfigurationHasBeenSet = true; m_generationConfiguration = std::forward<GenerationConfigurationT>(value); }
+    template<typename GenerationConfigurationT = ExternalSourcesGenerationConfiguration>
+    ExternalSourcesRetrieveAndGenerateConfiguration& WithGenerationConfiguration(GenerationConfigurationT&& value) { SetGenerationConfiguration(std::forward<GenerationConfigurationT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_modelArn;
     bool m_modelArnHasBeenSet = false;
 
     Aws::Vector<ExternalSource> m_sources;
     bool m_sourcesHasBeenSet = false;
+
+    ExternalSourcesGenerationConfiguration m_generationConfiguration;
+    bool m_generationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

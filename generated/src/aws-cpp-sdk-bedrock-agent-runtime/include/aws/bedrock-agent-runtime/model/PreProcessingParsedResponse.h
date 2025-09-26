@@ -40,17 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Whether the user input is valid or not. If <code>false</code>, the agent
-     * doesn't proceed to orchestration.</p>
-     */
-    inline bool GetIsValid() const { return m_isValid; }
-    inline bool IsValidHasBeenSet() const { return m_isValidHasBeenSet; }
-    inline void SetIsValid(bool value) { m_isValidHasBeenSet = true; m_isValid = value; }
-    inline PreProcessingParsedResponse& WithIsValid(bool value) { SetIsValid(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The text returned by the parsing of the pre-processing step, explaining the
      * steps that the agent plans to take in orchestration, if the user input is
      * valid.</p>
@@ -62,13 +51,24 @@ namespace Model
     template<typename RationaleT = Aws::String>
     PreProcessingParsedResponse& WithRationale(RationaleT&& value) { SetRationale(std::forward<RationaleT>(value)); return *this;}
     ///@}
-  private:
 
-    bool m_isValid{false};
-    bool m_isValidHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Whether the user input is valid or not. If <code>false</code>, the agent
+     * doesn't proceed to orchestration.</p>
+     */
+    inline bool GetIsValid() const { return m_isValid; }
+    inline bool IsValidHasBeenSet() const { return m_isValidHasBeenSet; }
+    inline void SetIsValid(bool value) { m_isValidHasBeenSet = true; m_isValid = value; }
+    inline PreProcessingParsedResponse& WithIsValid(bool value) { SetIsValid(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_rationale;
     bool m_rationaleHasBeenSet = false;
+
+    bool m_isValid{false};
+    bool m_isValidHasBeenSet = false;
   };
 
 } // namespace Model

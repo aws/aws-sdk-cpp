@@ -17,21 +17,21 @@ Aws::String InvokeAgentRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_bedrockModelConfigurationsHasBeenSet)
+  if(m_sessionStateHasBeenSet)
   {
-   payload.WithObject("bedrockModelConfigurations", m_bedrockModelConfigurations.Jsonize());
-
-  }
-
-  if(m_enableTraceHasBeenSet)
-  {
-   payload.WithBool("enableTrace", m_enableTrace);
+   payload.WithObject("sessionState", m_sessionState.Jsonize());
 
   }
 
   if(m_endSessionHasBeenSet)
   {
    payload.WithBool("endSession", m_endSession);
+
+  }
+
+  if(m_enableTraceHasBeenSet)
+  {
+   payload.WithBool("enableTrace", m_enableTrace);
 
   }
 
@@ -47,21 +47,21 @@ Aws::String InvokeAgentRequest::SerializePayload() const
 
   }
 
-  if(m_promptCreationConfigurationsHasBeenSet)
+  if(m_bedrockModelConfigurationsHasBeenSet)
   {
-   payload.WithObject("promptCreationConfigurations", m_promptCreationConfigurations.Jsonize());
-
-  }
-
-  if(m_sessionStateHasBeenSet)
-  {
-   payload.WithObject("sessionState", m_sessionState.Jsonize());
+   payload.WithObject("bedrockModelConfigurations", m_bedrockModelConfigurations.Jsonize());
 
   }
 
   if(m_streamingConfigurationsHasBeenSet)
   {
    payload.WithObject("streamingConfigurations", m_streamingConfigurations.Jsonize());
+
+  }
+
+  if(m_promptCreationConfigurationsHasBeenSet)
+  {
+   payload.WithObject("promptCreationConfigurations", m_promptCreationConfigurations.Jsonize());
 
   }
 

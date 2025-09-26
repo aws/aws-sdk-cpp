@@ -5,9 +5,12 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/NameCriteria.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/connect/model/AgentHierarchyGroups.h>
 #include <aws/connect/model/ContactAnalysis.h>
+#include <aws/connect/model/SearchableRoutingCriteria.h>
+#include <aws/connect/model/SearchContactsAdditionalTimeRange.h>
 #include <aws/connect/model/SearchableContactAttributes.h>
 #include <aws/connect/model/SearchableSegmentAttributes.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -44,6 +47,18 @@ namespace Model
     AWS_CONNECT_API SearchCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>Name of the contact.</p>
+     */
+    inline const NameCriteria& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = NameCriteria>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = NameCriteria>
+    SearchCriteria& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -127,6 +142,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>Routing criteria for the contact.</p>
+     */
+    inline const SearchableRoutingCriteria& GetRoutingCriteria() const { return m_routingCriteria; }
+    inline bool RoutingCriteriaHasBeenSet() const { return m_routingCriteriaHasBeenSet; }
+    template<typename RoutingCriteriaT = SearchableRoutingCriteria>
+    void SetRoutingCriteria(RoutingCriteriaT&& value) { m_routingCriteriaHasBeenSet = true; m_routingCriteria = std::forward<RoutingCriteriaT>(value); }
+    template<typename RoutingCriteriaT = SearchableRoutingCriteria>
+    SearchCriteria& WithRoutingCriteria(RoutingCriteriaT&& value) { SetRoutingCriteria(std::forward<RoutingCriteriaT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Additional TimeRange used to filter contacts.</p>
+     */
+    inline const SearchContactsAdditionalTimeRange& GetAdditionalTimeRange() const { return m_additionalTimeRange; }
+    inline bool AdditionalTimeRangeHasBeenSet() const { return m_additionalTimeRangeHasBeenSet; }
+    template<typename AdditionalTimeRangeT = SearchContactsAdditionalTimeRange>
+    void SetAdditionalTimeRange(AdditionalTimeRangeT&& value) { m_additionalTimeRangeHasBeenSet = true; m_additionalTimeRange = std::forward<AdditionalTimeRangeT>(value); }
+    template<typename AdditionalTimeRangeT = SearchContactsAdditionalTimeRange>
+    SearchCriteria& WithAdditionalTimeRange(AdditionalTimeRangeT&& value) { SetAdditionalTimeRange(std::forward<AdditionalTimeRangeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The search criteria based on user-defined contact attributes that have been
      * configured for contact search. For more information, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/search-custom-attributes.html">Search
@@ -158,6 +197,9 @@ namespace Model
     ///@}
   private:
 
+    NameCriteria m_name;
+    bool m_nameHasBeenSet = false;
+
     Aws::Vector<Aws::String> m_agentIds;
     bool m_agentIdsHasBeenSet = false;
 
@@ -175,6 +217,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_queueIds;
     bool m_queueIdsHasBeenSet = false;
+
+    SearchableRoutingCriteria m_routingCriteria;
+    bool m_routingCriteriaHasBeenSet = false;
+
+    SearchContactsAdditionalTimeRange m_additionalTimeRange;
+    bool m_additionalTimeRangeHasBeenSet = false;
 
     SearchableContactAttributes m_searchableContactAttributes;
     bool m_searchableContactAttributesHasBeenSet = false;

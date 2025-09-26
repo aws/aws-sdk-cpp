@@ -25,15 +25,15 @@ BedrockRerankingConfiguration::BedrockRerankingConfiguration(JsonView jsonValue)
 
 BedrockRerankingConfiguration& BedrockRerankingConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("modelConfiguration"))
-  {
-    m_modelConfiguration = jsonValue.GetObject("modelConfiguration");
-    m_modelConfigurationHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("numberOfResults"))
   {
     m_numberOfResults = jsonValue.GetInteger("numberOfResults");
     m_numberOfResultsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("modelConfiguration"))
+  {
+    m_modelConfiguration = jsonValue.GetObject("modelConfiguration");
+    m_modelConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue BedrockRerankingConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_modelConfigurationHasBeenSet)
-  {
-   payload.WithObject("modelConfiguration", m_modelConfiguration.Jsonize());
-
-  }
-
   if(m_numberOfResultsHasBeenSet)
   {
    payload.WithInteger("numberOfResults", m_numberOfResults);
+
+  }
+
+  if(m_modelConfigurationHasBeenSet)
+  {
+   payload.WithObject("modelConfiguration", m_modelConfiguration.Jsonize());
 
   }
 

@@ -71,7 +71,7 @@ namespace Model
      * represents the baseline performance of the volume and the rate at which the
      * volume accumulates I/O credits for bursting.</p> <p>The following are the
      * supported values for each volume type:</p> <ul> <li> <p> <code>gp3</code>: 3,000
-     * - 16,000 IOPS</p> </li> <li> <p> <code>io1</code>: 100 - 64,000 IOPS</p> </li>
+     * - 80,000 IOPS</p> </li> <li> <p> <code>io1</code>: 100 - 64,000 IOPS</p> </li>
      * <li> <p> <code>io2</code>: 100 - 256,000 IOPS</p> </li> </ul> <p>For
      * <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
      * href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances
@@ -114,11 +114,11 @@ namespace Model
     /**
      * <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a
      * volume size. The following are the supported volumes sizes for each volume
-     * type:</p> <ul> <li> <p> <code>gp2</code> and <code>gp3</code>: 1 - 16,384
-     * GiB</p> </li> <li> <p> <code>io1</code>: 4 - 16,384 GiB</p> </li> <li> <p>
-     * <code>io2</code>: 4 - 65,536 GiB</p> </li> <li> <p> <code>st1</code> and
-     * <code>sc1</code>: 125 - 16,384 GiB</p> </li> <li> <p> <code>standard</code>: 1 -
-     * 1024 GiB</p> </li> </ul>
+     * type:</p> <ul> <li> <p> <code>gp2</code>: 1 - 16,384 GiB</p> </li> <li> <p>
+     * <code>gp3</code>: 1 - 65,536 GiB</p> </li> <li> <p> <code>io1</code>: 4 - 16,384
+     * GiB</p> </li> <li> <p> <code>io2</code>: 4 - 65,536 GiB</p> </li> <li> <p>
+     * <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p> </li> <li> <p>
+     * <code>standard</code>: 1 - 1024 GiB</p> </li> </ul>
      */
     inline int GetVolumeSize() const { return m_volumeSize; }
     inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
@@ -141,8 +141,8 @@ namespace Model
     ///@{
     /**
      * <p>The throughput to provision for a <code>gp3</code> volume, with a maximum of
-     * 1,000 MiB/s.</p> <p>Valid Range: Minimum value of 125. Maximum value of
-     * 1000.</p>
+     * 2,000 MiB/s.</p> <p>Valid Range: Minimum value of 125. Maximum value of
+     * 2,000.</p>
      */
     inline int GetThroughput() const { return m_throughput; }
     inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }

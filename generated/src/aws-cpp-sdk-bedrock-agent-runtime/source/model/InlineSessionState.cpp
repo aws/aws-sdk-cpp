@@ -25,24 +25,14 @@ InlineSessionState::InlineSessionState(JsonView jsonValue)
 
 InlineSessionState& InlineSessionState::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("conversationHistory"))
+  if(jsonValue.ValueExists("sessionAttributes"))
   {
-    m_conversationHistory = jsonValue.GetObject("conversationHistory");
-    m_conversationHistoryHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("files"))
-  {
-    Aws::Utils::Array<JsonView> filesJsonList = jsonValue.GetArray("files");
-    for(unsigned filesIndex = 0; filesIndex < filesJsonList.GetLength(); ++filesIndex)
+    Aws::Map<Aws::String, JsonView> sessionAttributesJsonMap = jsonValue.GetObject("sessionAttributes").GetAllObjects();
+    for(auto& sessionAttributesItem : sessionAttributesJsonMap)
     {
-      m_files.push_back(filesJsonList[filesIndex].AsObject());
+      m_sessionAttributes[sessionAttributesItem.first] = sessionAttributesItem.second.AsString();
     }
-    m_filesHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("invocationId"))
-  {
-    m_invocationId = jsonValue.GetString("invocationId");
-    m_invocationIdHasBeenSet = true;
+    m_sessionAttributesHasBeenSet = true;
   }
   if(jsonValue.ValueExists("promptSessionAttributes"))
   {
@@ -62,14 +52,24 @@ InlineSessionState& InlineSessionState::operator =(JsonView jsonValue)
     }
     m_returnControlInvocationResultsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sessionAttributes"))
+  if(jsonValue.ValueExists("invocationId"))
   {
-    Aws::Map<Aws::String, JsonView> sessionAttributesJsonMap = jsonValue.GetObject("sessionAttributes").GetAllObjects();
-    for(auto& sessionAttributesItem : sessionAttributesJsonMap)
+    m_invocationId = jsonValue.GetString("invocationId");
+    m_invocationIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("files"))
+  {
+    Aws::Utils::Array<JsonView> filesJsonList = jsonValue.GetArray("files");
+    for(unsigned filesIndex = 0; filesIndex < filesJsonList.GetLength(); ++filesIndex)
     {
-      m_sessionAttributes[sessionAttributesItem.first] = sessionAttributesItem.second.AsString();
+      m_files.push_back(filesJsonList[filesIndex].AsObject());
     }
-    m_sessionAttributesHasBeenSet = true;
+    m_filesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("conversationHistory"))
+  {
+    m_conversationHistory = jsonValue.GetObject("conversationHistory");
+    m_conversationHistoryHasBeenSet = true;
   }
   return *this;
 }
@@ -78,26 +78,14 @@ JsonValue InlineSessionState::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_conversationHistoryHasBeenSet)
+  if(m_sessionAttributesHasBeenSet)
   {
-   payload.WithObject("conversationHistory", m_conversationHistory.Jsonize());
-
-  }
-
-  if(m_filesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> filesJsonList(m_files.size());
-   for(unsigned filesIndex = 0; filesIndex < filesJsonList.GetLength(); ++filesIndex)
+   JsonValue sessionAttributesJsonMap;
+   for(auto& sessionAttributesItem : m_sessionAttributes)
    {
-     filesJsonList[filesIndex].AsObject(m_files[filesIndex].Jsonize());
+     sessionAttributesJsonMap.WithString(sessionAttributesItem.first, sessionAttributesItem.second);
    }
-   payload.WithArray("files", std::move(filesJsonList));
-
-  }
-
-  if(m_invocationIdHasBeenSet)
-  {
-   payload.WithString("invocationId", m_invocationId);
+   payload.WithObject("sessionAttributes", std::move(sessionAttributesJsonMap));
 
   }
 
@@ -123,14 +111,26 @@ JsonValue InlineSessionState::Jsonize() const
 
   }
 
-  if(m_sessionAttributesHasBeenSet)
+  if(m_invocationIdHasBeenSet)
   {
-   JsonValue sessionAttributesJsonMap;
-   for(auto& sessionAttributesItem : m_sessionAttributes)
+   payload.WithString("invocationId", m_invocationId);
+
+  }
+
+  if(m_filesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> filesJsonList(m_files.size());
+   for(unsigned filesIndex = 0; filesIndex < filesJsonList.GetLength(); ++filesIndex)
    {
-     sessionAttributesJsonMap.WithString(sessionAttributesItem.first, sessionAttributesItem.second);
+     filesJsonList[filesIndex].AsObject(m_files[filesIndex].Jsonize());
    }
-   payload.WithObject("sessionAttributes", std::move(sessionAttributesJsonMap));
+   payload.WithArray("files", std::move(filesJsonList));
+
+  }
+
+  if(m_conversationHistoryHasBeenSet)
+  {
+   payload.WithObject("conversationHistory", m_conversationHistory.Jsonize());
 
   }
 

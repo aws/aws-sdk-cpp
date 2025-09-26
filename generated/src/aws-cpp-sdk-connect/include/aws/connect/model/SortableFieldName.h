@@ -21,7 +21,8 @@ namespace Model
     CONNECTED_TO_AGENT_TIMESTAMP,
     DISCONNECT_TIMESTAMP,
     INITIATION_METHOD,
-    CHANNEL
+    CHANNEL,
+    EXPIRY_TIMESTAMP
   };
 
 namespace SortableFieldNameMapper

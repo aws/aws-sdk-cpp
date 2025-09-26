@@ -25,15 +25,15 @@ ActionGroupInvocationOutput::ActionGroupInvocationOutput(JsonView jsonValue)
 
 ActionGroupInvocationOutput& ActionGroupInvocationOutput::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("metadata"))
-  {
-    m_metadata = jsonValue.GetObject("metadata");
-    m_metadataHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("metadata"))
+  {
+    m_metadata = jsonValue.GetObject("metadata");
+    m_metadataHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue ActionGroupInvocationOutput::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_metadataHasBeenSet)
-  {
-   payload.WithObject("metadata", m_metadata.Jsonize());
-
-  }
-
   if(m_textHasBeenSet)
   {
    payload.WithString("text", m_text);
+
+  }
+
+  if(m_metadataHasBeenSet)
+  {
+   payload.WithObject("metadata", m_metadata.Jsonize());
 
   }
 

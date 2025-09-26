@@ -35,6 +35,11 @@ Expression& Expression::operator =(JsonView jsonValue)
     m_tags = jsonValue.GetObject("tags");
     m_tagsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("timeRange"))
+  {
+    m_timeRange = jsonValue.GetObject("timeRange");
+    m_timeRangeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -51,6 +56,12 @@ JsonValue Expression::Jsonize() const
   if(m_tagsHasBeenSet)
   {
    payload.WithObject("tags", m_tags.Jsonize());
+
+  }
+
+  if(m_timeRangeHasBeenSet)
+  {
+   payload.WithObject("timeRange", m_timeRange.Jsonize());
 
   }
 

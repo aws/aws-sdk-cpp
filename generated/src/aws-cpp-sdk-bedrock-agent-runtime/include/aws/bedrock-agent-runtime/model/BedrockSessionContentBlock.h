@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/ImageBlock.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent-runtime/model/ImageBlock.h>
 #include <utility>
 
 namespace Aws
@@ -49,18 +49,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The image in the invocation step.</p>
-     */
-    inline const ImageBlock& GetImage() const { return m_image; }
-    inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    template<typename ImageT = ImageBlock>
-    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
-    template<typename ImageT = ImageBlock>
-    BedrockSessionContentBlock& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The text in the invocation step.</p>
      */
     inline const Aws::String& GetText() const { return m_text; }
@@ -70,13 +58,25 @@ namespace Model
     template<typename TextT = Aws::String>
     BedrockSessionContentBlock& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
-  private:
 
-    ImageBlock m_image;
-    bool m_imageHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The image in the invocation step.</p>
+     */
+    inline const ImageBlock& GetImage() const { return m_image; }
+    inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
+    template<typename ImageT = ImageBlock>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = ImageBlock>
+    BedrockSessionContentBlock& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_text;
     bool m_textHasBeenSet = false;
+
+    ImageBlock m_image;
+    bool m_imageHasBeenSet = false;
   };
 
 } // namespace Model

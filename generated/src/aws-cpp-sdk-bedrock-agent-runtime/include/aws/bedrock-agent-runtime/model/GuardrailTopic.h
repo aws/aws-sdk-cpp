@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/GuardrailTopicPolicyAction.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent-runtime/model/GuardrailTopicType.h>
+#include <aws/bedrock-agent-runtime/model/GuardrailTopicPolicyAction.h>
 #include <utility>
 
 namespace Aws
@@ -42,16 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The action details on a specific topic in the Guardrail.</p>
-     */
-    inline GuardrailTopicPolicyAction GetAction() const { return m_action; }
-    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(GuardrailTopicPolicyAction value) { m_actionHasBeenSet = true; m_action = value; }
-    inline GuardrailTopic& WithAction(GuardrailTopicPolicyAction value) { SetAction(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name details on a specific topic in the Guardrail.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
@@ -71,16 +61,26 @@ namespace Model
     inline void SetType(GuardrailTopicType value) { m_typeHasBeenSet = true; m_type = value; }
     inline GuardrailTopic& WithType(GuardrailTopicType value) { SetType(value); return *this;}
     ///@}
-  private:
 
-    GuardrailTopicPolicyAction m_action{GuardrailTopicPolicyAction::NOT_SET};
-    bool m_actionHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The action details on a specific topic in the Guardrail.</p>
+     */
+    inline GuardrailTopicPolicyAction GetAction() const { return m_action; }
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+    inline void SetAction(GuardrailTopicPolicyAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline GuardrailTopic& WithAction(GuardrailTopicPolicyAction value) { SetAction(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
     GuardrailTopicType m_type{GuardrailTopicType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    GuardrailTopicPolicyAction m_action{GuardrailTopicPolicyAction::NOT_SET};
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

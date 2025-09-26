@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/Attribution.h>
 #include <aws/core/utils/Array.h>
+#include <aws/bedrock-agent-runtime/model/Attribution.h>
 #include <utility>
 
 namespace Aws
@@ -41,18 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains citations for a part of an agent response.</p>
-     */
-    inline const Attribution& GetAttribution() const { return m_attribution; }
-    inline bool AttributionHasBeenSet() const { return m_attributionHasBeenSet; }
-    template<typename AttributionT = Attribution>
-    void SetAttribution(AttributionT&& value) { m_attributionHasBeenSet = true; m_attribution = std::forward<AttributionT>(value); }
-    template<typename AttributionT = Attribution>
-    InlineAgentPayloadPart& WithAttribution(AttributionT&& value) { SetAttribution(std::forward<AttributionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A part of the agent response in bytes.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetBytes() const { return m_bytes; }
@@ -62,13 +50,25 @@ namespace Model
     template<typename BytesT = Aws::Utils::CryptoBuffer>
     InlineAgentPayloadPart& WithBytes(BytesT&& value) { SetBytes(std::forward<BytesT>(value)); return *this;}
     ///@}
-  private:
 
-    Attribution m_attribution;
-    bool m_attributionHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Contains citations for a part of an agent response.</p>
+     */
+    inline const Attribution& GetAttribution() const { return m_attribution; }
+    inline bool AttributionHasBeenSet() const { return m_attributionHasBeenSet; }
+    template<typename AttributionT = Attribution>
+    void SetAttribution(AttributionT&& value) { m_attributionHasBeenSet = true; m_attribution = std::forward<AttributionT>(value); }
+    template<typename AttributionT = Attribution>
+    InlineAgentPayloadPart& WithAttribution(AttributionT&& value) { SetAttribution(std::forward<AttributionT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::Utils::CryptoBuffer m_bytes{};
     bool m_bytesHasBeenSet = false;
+
+    Attribution m_attribution;
+    bool m_attributionHasBeenSet = false;
   };
 
 } // namespace Model

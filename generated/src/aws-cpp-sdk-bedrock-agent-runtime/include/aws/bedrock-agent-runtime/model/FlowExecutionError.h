@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/FlowExecutionErrorType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent-runtime/model/FlowExecutionErrorType.h>
 #include <utility>
 
 namespace Aws
@@ -42,6 +42,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the node in the flow where the error occurred (if
+     * applicable).</p>
+     */
+    inline const Aws::String& GetNodeName() const { return m_nodeName; }
+    inline bool NodeNameHasBeenSet() const { return m_nodeNameHasBeenSet; }
+    template<typename NodeNameT = Aws::String>
+    void SetNodeName(NodeNameT&& value) { m_nodeNameHasBeenSet = true; m_nodeName = std::forward<NodeNameT>(value); }
+    template<typename NodeNameT = Aws::String>
+    FlowExecutionError& WithNodeName(NodeNameT&& value) { SetNodeName(std::forward<NodeNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The error code for the type of error that occurred.</p>
      */
     inline FlowExecutionErrorType GetError() const { return m_error; }
@@ -61,29 +74,16 @@ namespace Model
     template<typename MessageT = Aws::String>
     FlowExecutionError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The name of the node in the flow where the error occurred (if
-     * applicable).</p>
-     */
-    inline const Aws::String& GetNodeName() const { return m_nodeName; }
-    inline bool NodeNameHasBeenSet() const { return m_nodeNameHasBeenSet; }
-    template<typename NodeNameT = Aws::String>
-    void SetNodeName(NodeNameT&& value) { m_nodeNameHasBeenSet = true; m_nodeName = std::forward<NodeNameT>(value); }
-    template<typename NodeNameT = Aws::String>
-    FlowExecutionError& WithNodeName(NodeNameT&& value) { SetNodeName(std::forward<NodeNameT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_nodeName;
+    bool m_nodeNameHasBeenSet = false;
 
     FlowExecutionErrorType m_error{FlowExecutionErrorType::NOT_SET};
     bool m_errorHasBeenSet = false;
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
-
-    Aws::String m_nodeName;
-    bool m_nodeNameHasBeenSet = false;
   };
 
 } // namespace Model

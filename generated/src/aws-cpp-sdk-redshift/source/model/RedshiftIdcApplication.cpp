@@ -105,6 +105,32 @@ RedshiftIdcApplication& RedshiftIdcApplication::operator =(const XmlNode& xmlNod
 
       m_serviceIntegrationsHasBeenSet = true;
     }
+    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("Tag");
+      }
+
+      m_tagsHasBeenSet = true;
+    }
+    XmlNode ssoTagKeysNode = resultNode.FirstChild("SsoTagKeys");
+    if(!ssoTagKeysNode.IsNull())
+    {
+      XmlNode ssoTagKeysMember = ssoTagKeysNode.FirstChild("TagKey");
+      m_ssoTagKeysHasBeenSet = !ssoTagKeysMember.IsNull();
+      while(!ssoTagKeysMember.IsNull())
+      {
+        m_ssoTagKeys.push_back(ssoTagKeysMember.GetText());
+        ssoTagKeysMember = ssoTagKeysMember.NextNode("TagKey");
+      }
+
+      m_ssoTagKeysHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -174,6 +200,26 @@ void RedshiftIdcApplication::OutputToStream(Aws::OStream& oStream, const char* l
       }
   }
 
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << index << locationValue << ".Tags.Tag." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+
+  if(m_ssoTagKeysHasBeenSet)
+  {
+      unsigned ssoTagKeysIdx = 1;
+      for(auto& item : m_ssoTagKeys)
+      {
+        oStream << location << index << locationValue << ".SsoTagKeys.TagKey." << ssoTagKeysIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void RedshiftIdcApplication::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -228,6 +274,24 @@ void RedshiftIdcApplication::OutputToStream(Aws::OStream& oStream, const char* l
         Aws::StringStream serviceIntegrationsSs;
         serviceIntegrationsSs << location << ".ServiceIntegrations.member." << serviceIntegrationsIdx++;
         item.OutputToStream(oStream, serviceIntegrationsSs.str().c_str());
+      }
+  }
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << ".Tags.Tag." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+  if(m_ssoTagKeysHasBeenSet)
+  {
+      unsigned ssoTagKeysIdx = 1;
+      for(auto& item : m_ssoTagKeys)
+      {
+        oStream << location << ".SsoTagKeys.TagKey." << ssoTagKeysIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The file name of the document contained in the wrapper object.</p>
+     */
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
+    inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    ByteContentDoc& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The MIME type of the document contained in the wrapper object.</p>
      */
     inline const Aws::String& GetContentType() const { return m_contentType; }
@@ -62,28 +74,16 @@ namespace Model
     template<typename DataT = Aws::Utils::CryptoBuffer>
     ByteContentDoc& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The file name of the document contained in the wrapper object.</p>
-     */
-    inline const Aws::String& GetIdentifier() const { return m_identifier; }
-    inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    template<typename IdentifierT = Aws::String>
-    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
-    template<typename IdentifierT = Aws::String>
-    ByteContentDoc& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_identifier;
+    bool m_identifierHasBeenSet = false;
 
     Aws::String m_contentType;
     bool m_contentTypeHasBeenSet = false;
 
     Aws::Utils::CryptoBuffer m_data{};
     bool m_dataHasBeenSet = false;
-
-    Aws::String m_identifier;
-    bool m_identifierHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,20 +25,20 @@ CollaboratorConfiguration::CollaboratorConfiguration(JsonView jsonValue)
 
 CollaboratorConfiguration& CollaboratorConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("agentAliasArn"))
+  if(jsonValue.ValueExists("collaboratorName"))
   {
-    m_agentAliasArn = jsonValue.GetString("agentAliasArn");
-    m_agentAliasArnHasBeenSet = true;
+    m_collaboratorName = jsonValue.GetString("collaboratorName");
+    m_collaboratorNameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("collaboratorInstruction"))
   {
     m_collaboratorInstruction = jsonValue.GetString("collaboratorInstruction");
     m_collaboratorInstructionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("collaboratorName"))
+  if(jsonValue.ValueExists("agentAliasArn"))
   {
-    m_collaboratorName = jsonValue.GetString("collaboratorName");
-    m_collaboratorNameHasBeenSet = true;
+    m_agentAliasArn = jsonValue.GetString("agentAliasArn");
+    m_agentAliasArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("relayConversationHistory"))
   {
@@ -52,9 +52,9 @@ JsonValue CollaboratorConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_agentAliasArnHasBeenSet)
+  if(m_collaboratorNameHasBeenSet)
   {
-   payload.WithString("agentAliasArn", m_agentAliasArn);
+   payload.WithString("collaboratorName", m_collaboratorName);
 
   }
 
@@ -64,9 +64,9 @@ JsonValue CollaboratorConfiguration::Jsonize() const
 
   }
 
-  if(m_collaboratorNameHasBeenSet)
+  if(m_agentAliasArnHasBeenSet)
   {
-   payload.WithString("collaboratorName", m_collaboratorName);
+   payload.WithString("agentAliasArn", m_agentAliasArn);
 
   }
 

@@ -23,13 +23,6 @@ Aws::String ListFlowExecutionEventsRequest::SerializePayload() const
 void ListFlowExecutionEventsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
-    if(m_eventTypeHasBeenSet)
-    {
-      ss << FlowExecutionEventTypeMapper::GetNameForFlowExecutionEventType(m_eventType);
-      uri.AddQueryStringParameter("eventType", ss.str());
-      ss.str("");
-    }
-
     if(m_maxResultsHasBeenSet)
     {
       ss << m_maxResults;
@@ -41,6 +34,13 @@ void ListFlowExecutionEventsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_eventTypeHasBeenSet)
+    {
+      ss << FlowExecutionEventTypeMapper::GetNameForFlowExecutionEventType(m_eventType);
+      uri.AddQueryStringParameter("eventType", ss.str());
       ss.str("");
     }
 

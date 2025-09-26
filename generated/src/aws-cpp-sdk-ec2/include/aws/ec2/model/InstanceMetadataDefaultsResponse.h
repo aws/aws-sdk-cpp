@@ -49,7 +49,7 @@ namespace Model
     /**
      * <p>Indicates whether IMDSv2 is required.</p> <ul> <li> <p> <code>optional</code>
      * – IMDSv2 is optional, which means that you can use either IMDSv2 or IMDSv1.</p>
-     * </li> <li> <p> <code>required</code> ��� IMDSv2 is required, which means that
+     * </li> <li> <p> <code>required</code> – IMDSv2 is required, which means that
      * IMDSv1 is disabled, and you must use IMDSv2.</p> </li> </ul>
      */
     inline HttpTokensState GetHttpTokens() const { return m_httpTokens; }

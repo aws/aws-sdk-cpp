@@ -11,8 +11,8 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeErrors.h>
 
 #include <aws/bedrock-agent-runtime/model/OptimizePromptInitialResponse.h>
-#include <aws/bedrock-agent-runtime/model/AnalyzePromptEvent.h>
 #include <aws/bedrock-agent-runtime/model/OptimizedPromptEvent.h>
+#include <aws/bedrock-agent-runtime/model/AnalyzePromptEvent.h>
 
 namespace Aws
 {
@@ -23,8 +23,8 @@ namespace Model
     enum class OptimizePromptEventType
     {
         INITIAL_RESPONSE,
-        ANALYZEPROMPTEVENT,
         OPTIMIZEDPROMPTEVENT,
+        ANALYZEPROMPTEVENT,
         UNKNOWN
     };
 
@@ -32,8 +32,8 @@ namespace Model
     {
         typedef std::function<void(const OptimizePromptInitialResponse&)> OptimizePromptInitialResponseCallback;
         typedef std::function<void(const OptimizePromptInitialResponse&, const Utils::Event::InitialResponseType)> OptimizePromptInitialResponseCallbackEx;
-        typedef std::function<void(const AnalyzePromptEvent&)> AnalyzePromptEventCallback;
         typedef std::function<void(const OptimizedPromptEvent&)> OptimizedPromptEventCallback;
+        typedef std::function<void(const AnalyzePromptEvent&)> AnalyzePromptEventCallback;
         typedef std::function<void(const Aws::Client::AWSError<BedrockAgentRuntimeErrors>& error)> ErrorCallback;
 
     public:
@@ -59,8 +59,8 @@ namespace Model
             m_onInitialResponse = [noArgCallback](const OptimizePromptInitialResponse& rs, const Utils::Event::InitialResponseType) { return noArgCallback(rs); };
         }
         ///@}
-        inline void SetAnalyzePromptEventCallback(const AnalyzePromptEventCallback& callback) { m_onAnalyzePromptEvent = callback; }
         inline void SetOptimizedPromptEventCallback(const OptimizedPromptEventCallback& callback) { m_onOptimizedPromptEvent = callback; }
+        inline void SetAnalyzePromptEventCallback(const AnalyzePromptEventCallback& callback) { m_onAnalyzePromptEvent = callback; }
         inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
         inline OptimizePromptInitialResponseCallbackEx& GetInitialResponseCallbackEx() { return m_onInitialResponse; }
@@ -71,8 +71,8 @@ namespace Model
         AWS_BEDROCKAGENTRUNTIME_API void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
 
         OptimizePromptInitialResponseCallbackEx m_onInitialResponse;
-        AnalyzePromptEventCallback m_onAnalyzePromptEvent;
         OptimizedPromptEventCallback m_onOptimizedPromptEvent;
+        AnalyzePromptEventCallback m_onAnalyzePromptEvent;
         ErrorCallback m_onError;
     };
 

@@ -48,6 +48,8 @@
 #include <aws/connect/model/AssociateAnalyticsDataSetResult.h>
 #include <aws/connect/model/AssociateApprovedOriginRequest.h>
 #include <aws/connect/model/AssociateBotRequest.h>
+#include <aws/connect/model/AssociateContactWithUserRequest.h>
+#include <aws/connect/model/AssociateContactWithUserResult.h>
 #include <aws/connect/model/AssociateDefaultVocabularyRequest.h>
 #include <aws/connect/model/AssociateDefaultVocabularyResult.h>
 #include <aws/connect/model/AssociateFlowRequest.h>
@@ -551,6 +553,8 @@
 #include <aws/connect/model/ListQuickConnectsResult.h>
 #include <aws/connect/model/ListRealtimeContactAnalysisSegmentsV2Request.h>
 #include <aws/connect/model/ListRealtimeContactAnalysisSegmentsV2Result.h>
+#include <aws/connect/model/ListRoutingProfileManualAssignmentQueuesRequest.h>
+#include <aws/connect/model/ListRoutingProfileManualAssignmentQueuesResult.h>
 #include <aws/connect/model/ListRoutingProfileQueuesRequest.h>
 #include <aws/connect/model/ListRoutingProfileQueuesResult.h>
 #include <aws/connect/model/ListRoutingProfilesRequest.h>
@@ -600,6 +604,7 @@
 #include <aws/connect/model/MonitorCapability.h>
 #include <aws/connect/model/MonitorContactRequest.h>
 #include <aws/connect/model/MonitorContactResult.h>
+#include <aws/connect/model/NameCriteria.h>
 #include <aws/connect/model/NewSessionDetails.h>
 #include <aws/connect/model/NotificationContentType.h>
 #include <aws/connect/model/NotificationDeliveryType.h>
@@ -723,6 +728,8 @@
 #include <aws/connect/model/RoutingCriteriaInputStepExpiry.h>
 #include <aws/connect/model/RoutingCriteriaStepStatus.h>
 #include <aws/connect/model/RoutingProfile.h>
+#include <aws/connect/model/RoutingProfileManualAssignmentQueueConfig.h>
+#include <aws/connect/model/RoutingProfileManualAssignmentQueueConfigSummary.h>
 #include <aws/connect/model/RoutingProfileQueueConfig.h>
 #include <aws/connect/model/RoutingProfileQueueConfigSummary.h>
 #include <aws/connect/model/RoutingProfileQueueReference.h>
@@ -745,11 +752,15 @@
 #include <aws/connect/model/SearchContactFlowModulesResult.h>
 #include <aws/connect/model/SearchContactFlowsRequest.h>
 #include <aws/connect/model/SearchContactFlowsResult.h>
+#include <aws/connect/model/SearchContactsAdditionalTimeRange.h>
+#include <aws/connect/model/SearchContactsAdditionalTimeRangeCriteria.h>
 #include <aws/connect/model/SearchContactsMatchType.h>
 #include <aws/connect/model/SearchContactsRequest.h>
 #include <aws/connect/model/SearchContactsResult.h>
 #include <aws/connect/model/SearchContactsTimeRange.h>
+#include <aws/connect/model/SearchContactsTimeRangeConditionType.h>
 #include <aws/connect/model/SearchContactsTimeRangeType.h>
+#include <aws/connect/model/SearchContactsTimestampCondition.h>
 #include <aws/connect/model/SearchCriteria.h>
 #include <aws/connect/model/SearchEmailAddressesRequest.h>
 #include <aws/connect/model/SearchEmailAddressesResult.h>
@@ -777,9 +788,12 @@
 #include <aws/connect/model/SearchUsersResult.h>
 #include <aws/connect/model/SearchVocabulariesRequest.h>
 #include <aws/connect/model/SearchVocabulariesResult.h>
+#include <aws/connect/model/SearchableAgentCriteriaStep.h>
 #include <aws/connect/model/SearchableContactAttributes.h>
 #include <aws/connect/model/SearchableContactAttributesCriteria.h>
 #include <aws/connect/model/SearchableQueueType.h>
+#include <aws/connect/model/SearchableRoutingCriteria.h>
+#include <aws/connect/model/SearchableRoutingCriteriaStep.h>
 #include <aws/connect/model/SearchableSegmentAttributes.h>
 #include <aws/connect/model/SearchableSegmentAttributesCriteria.h>
 #include <aws/connect/model/SecurityKey.h>

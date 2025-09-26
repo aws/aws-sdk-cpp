@@ -54,6 +54,16 @@ namespace Model
 
     ///@{
     /**
+     * <p> The data type of the parameter. </p>
+     */
+    inline ParameterType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(ParameterType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ParameterDetail& WithType(ParameterType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p> Whether the parameter is required for the agent to complete the function for
      * action group invocation. </p>
      */
@@ -62,26 +72,16 @@ namespace Model
     inline void SetRequired(bool value) { m_requiredHasBeenSet = true; m_required = value; }
     inline ParameterDetail& WithRequired(bool value) { SetRequired(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p> The data type of the parameter. </p>
-     */
-    inline ParameterType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(ParameterType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline ParameterDetail& WithType(ParameterType value) { SetType(value); return *this;}
-    ///@}
   private:
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    bool m_required{false};
-    bool m_requiredHasBeenSet = false;
-
     ParameterType m_type{ParameterType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    bool m_required{false};
+    bool m_requiredHasBeenSet = false;
   };
 
 } // namespace Model

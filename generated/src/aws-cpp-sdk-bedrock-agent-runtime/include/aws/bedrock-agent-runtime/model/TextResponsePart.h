@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/bedrock-agent-runtime/model/Span.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent-runtime/model/Span.h>
 #include <utility>
 
 namespace Aws
@@ -47,6 +47,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The part of the generated text that contains a citation.</p>
+     */
+    inline const Aws::String& GetText() const { return m_text; }
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    TextResponsePart& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains information about where the text with a citation begins and ends in
      * the generated output.</p>
      */
@@ -57,25 +69,13 @@ namespace Model
     template<typename SpanT = Span>
     TextResponsePart& WithSpan(SpanT&& value) { SetSpan(std::forward<SpanT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The part of the generated text that contains a citation.</p>
-     */
-    inline const Aws::String& GetText() const { return m_text; }
-    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    template<typename TextT = Aws::String>
-    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
-    template<typename TextT = Aws::String>
-    TextResponsePart& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
-    ///@}
   private:
-
-    Span m_span;
-    bool m_spanHasBeenSet = false;
 
     Aws::String m_text;
     bool m_textHasBeenSet = false;
+
+    Span m_span;
+    bool m_spanHasBeenSet = false;
   };
 
 } // namespace Model

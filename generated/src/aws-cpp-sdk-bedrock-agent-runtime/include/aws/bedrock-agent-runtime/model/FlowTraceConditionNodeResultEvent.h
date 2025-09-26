@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent-runtime/model/FlowTraceCondition.h>
 #include <utility>
 
@@ -58,6 +58,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The date and time that the trace was returned.</p>
+     */
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    FlowTraceConditionNodeResultEvent& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An array of objects containing information about the conditions that were
      * satisfied.</p>
      */
@@ -70,28 +82,16 @@ namespace Model
     template<typename SatisfiedConditionsT = FlowTraceCondition>
     FlowTraceConditionNodeResultEvent& AddSatisfiedConditions(SatisfiedConditionsT&& value) { m_satisfiedConditionsHasBeenSet = true; m_satisfiedConditions.emplace_back(std::forward<SatisfiedConditionsT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The date and time that the trace was returned.</p>
-     */
-    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
-    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    template<typename TimestampT = Aws::Utils::DateTime>
-    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
-    template<typename TimestampT = Aws::Utils::DateTime>
-    FlowTraceConditionNodeResultEvent& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_nodeName;
     bool m_nodeNameHasBeenSet = false;
 
-    Aws::Vector<FlowTraceCondition> m_satisfiedConditions;
-    bool m_satisfiedConditionsHasBeenSet = false;
-
     Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
+
+    Aws::Vector<FlowTraceCondition> m_satisfiedConditions;
+    bool m_satisfiedConditionsHasBeenSet = false;
   };
 
 } // namespace Model

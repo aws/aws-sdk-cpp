@@ -25,20 +25,20 @@ AgentCollaboratorOutputPayload::AgentCollaboratorOutputPayload(JsonView jsonValu
 
 AgentCollaboratorOutputPayload& AgentCollaboratorOutputPayload::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("returnControlPayload"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_returnControlPayload = jsonValue.GetObject("returnControlPayload");
-    m_returnControlPayloadHasBeenSet = true;
+    m_type = PayloadTypeMapper::GetPayloadTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("returnControlPayload"))
   {
-    m_type = PayloadTypeMapper::GetPayloadTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+    m_returnControlPayload = jsonValue.GetObject("returnControlPayload");
+    m_returnControlPayloadHasBeenSet = true;
   }
   return *this;
 }
@@ -47,10 +47,9 @@ JsonValue AgentCollaboratorOutputPayload::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_returnControlPayloadHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithObject("returnControlPayload", m_returnControlPayload.Jsonize());
-
+   payload.WithString("type", PayloadTypeMapper::GetNameForPayloadType(m_type));
   }
 
   if(m_textHasBeenSet)
@@ -59,9 +58,10 @@ JsonValue AgentCollaboratorOutputPayload::Jsonize() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_returnControlPayloadHasBeenSet)
   {
-   payload.WithString("type", PayloadTypeMapper::GetNameForPayloadType(m_type));
+   payload.WithObject("returnControlPayload", m_returnControlPayload.Jsonize());
+
   }
 
   return payload;

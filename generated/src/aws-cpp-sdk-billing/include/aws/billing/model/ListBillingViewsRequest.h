@@ -94,6 +94,19 @@ namespace Model
 
     ///@{
     /**
+     * <p> Filters the results to include only billing views that use the specified
+     * account as a source. </p>
+     */
+    inline const Aws::String& GetSourceAccountId() const { return m_sourceAccountId; }
+    inline bool SourceAccountIdHasBeenSet() const { return m_sourceAccountIdHasBeenSet; }
+    template<typename SourceAccountIdT = Aws::String>
+    void SetSourceAccountId(SourceAccountIdT&& value) { m_sourceAccountIdHasBeenSet = true; m_sourceAccountId = std::forward<SourceAccountIdT>(value); }
+    template<typename SourceAccountIdT = Aws::String>
+    ListBillingViewsRequest& WithSourceAccountId(SourceAccountIdT&& value) { SetSourceAccountId(std::forward<SourceAccountIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The maximum number of billing views to retrieve. Default is 100. </p>
      */
     inline int GetMaxResults() const { return m_maxResults; }
@@ -127,6 +140,9 @@ namespace Model
 
     Aws::String m_ownerAccountId;
     bool m_ownerAccountIdHasBeenSet = false;
+
+    Aws::String m_sourceAccountId;
+    bool m_sourceAccountIdHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;

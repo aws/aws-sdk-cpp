@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     MATCH_ALL,
-    MATCH_ANY
+    MATCH_ANY,
+    MATCH_EXACT,
+    MATCH_NONE
   };
 
 namespace SearchContactsMatchTypeMapper

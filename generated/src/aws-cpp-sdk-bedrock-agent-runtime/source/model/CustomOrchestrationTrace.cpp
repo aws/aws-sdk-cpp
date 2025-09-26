@@ -25,15 +25,15 @@ CustomOrchestrationTrace::CustomOrchestrationTrace(JsonView jsonValue)
 
 CustomOrchestrationTrace& CustomOrchestrationTrace::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("event"))
-  {
-    m_event = jsonValue.GetObject("event");
-    m_eventHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("traceId"))
   {
     m_traceId = jsonValue.GetString("traceId");
     m_traceIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("event"))
+  {
+    m_event = jsonValue.GetObject("event");
+    m_eventHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue CustomOrchestrationTrace::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_eventHasBeenSet)
-  {
-   payload.WithObject("event", m_event.Jsonize());
-
-  }
-
   if(m_traceIdHasBeenSet)
   {
    payload.WithString("traceId", m_traceId);
+
+  }
+
+  if(m_eventHasBeenSet)
+  {
+   payload.WithObject("event", m_event.Jsonize());
 
   }
 

@@ -42,6 +42,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The number of previous conversations from the ongoing agent session to
+     * include in the conversation history of the agent prompt, during the current
+     * invocation. This gives you more granular control over the context that the model
+     * is made aware of, and helps the model remove older context which is no longer
+     * useful during the ongoing agent session.</p>
+     */
+    inline int GetPreviousConversationTurnsToInclude() const { return m_previousConversationTurnsToInclude; }
+    inline bool PreviousConversationTurnsToIncludeHasBeenSet() const { return m_previousConversationTurnsToIncludeHasBeenSet; }
+    inline void SetPreviousConversationTurnsToInclude(int value) { m_previousConversationTurnsToIncludeHasBeenSet = true; m_previousConversationTurnsToInclude = value; }
+    inline PromptCreationConfigurations& WithPreviousConversationTurnsToInclude(int value) { SetPreviousConversationTurnsToInclude(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>If <code>true</code>, the service removes any content between
      * <code>&lt;thinking&gt;</code> tags from previous conversations in an agent
      * session. The service will only remove content from already processed turns. This
@@ -54,27 +68,13 @@ namespace Model
     inline void SetExcludePreviousThinkingSteps(bool value) { m_excludePreviousThinkingStepsHasBeenSet = true; m_excludePreviousThinkingSteps = value; }
     inline PromptCreationConfigurations& WithExcludePreviousThinkingSteps(bool value) { SetExcludePreviousThinkingSteps(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The number of previous conversations from the ongoing agent session to
-     * include in the conversation history of the agent prompt, during the current
-     * invocation. This gives you more granular control over the context that the model
-     * is made aware of, and helps the model remove older context which is no longer
-     * useful during the ongoing agent session.</p>
-     */
-    inline int GetPreviousConversationTurnsToInclude() const { return m_previousConversationTurnsToInclude; }
-    inline bool PreviousConversationTurnsToIncludeHasBeenSet() const { return m_previousConversationTurnsToIncludeHasBeenSet; }
-    inline void SetPreviousConversationTurnsToInclude(int value) { m_previousConversationTurnsToIncludeHasBeenSet = true; m_previousConversationTurnsToInclude = value; }
-    inline PromptCreationConfigurations& WithPreviousConversationTurnsToInclude(int value) { SetPreviousConversationTurnsToInclude(value); return *this;}
-    ///@}
   private:
-
-    bool m_excludePreviousThinkingSteps{false};
-    bool m_excludePreviousThinkingStepsHasBeenSet = false;
 
     int m_previousConversationTurnsToInclude{0};
     bool m_previousConversationTurnsToIncludeHasBeenSet = false;
+
+    bool m_excludePreviousThinkingSteps{false};
+    bool m_excludePreviousThinkingStepsHasBeenSet = false;
   };
 
 } // namespace Model

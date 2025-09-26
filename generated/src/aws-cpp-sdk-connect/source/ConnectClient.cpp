@@ -25,6 +25,7 @@
 #include <aws/connect/model/AssociateAnalyticsDataSetRequest.h>
 #include <aws/connect/model/AssociateApprovedOriginRequest.h>
 #include <aws/connect/model/AssociateBotRequest.h>
+#include <aws/connect/model/AssociateContactWithUserRequest.h>
 #include <aws/connect/model/AssociateDefaultVocabularyRequest.h>
 #include <aws/connect/model/AssociateFlowRequest.h>
 #include <aws/connect/model/AssociateInstanceStorageConfigRequest.h>
@@ -120,7 +121,6 @@
 #include <aws/connect/model/DescribeQuickConnectRequest.h>
 #include <aws/connect/model/DescribeRoutingProfileRequest.h>
 #include <aws/connect/model/DescribeRuleRequest.h>
-#include <aws/connect/model/DescribeSecurityProfileRequest.h>
 
 #include <smithy/tracing/TracingUtils.h>
 
@@ -400,6 +400,46 @@ AssociateBotOutcome ConnectClient::AssociateBot(const AssociateBotRequest& reque
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/bot");
       return AssociateBotOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+AssociateContactWithUserOutcome ConnectClient::AssociateContactWithUser(const AssociateContactWithUserRequest& request) const
+{
+  AWS_OPERATION_GUARD(AssociateContactWithUser);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateContactWithUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateContactWithUser", "Required field: InstanceId, is not set");
+    return AssociateContactWithUserOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.ContactIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateContactWithUser", "Required field: ContactId, is not set");
+    return AssociateContactWithUserOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssociateContactWithUser, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, AssociateContactWithUser, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AssociateContactWithUser",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<AssociateContactWithUserOutcome>(
+    [&]()-> AssociateContactWithUserOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateContactWithUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/contacts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/associate-user");
+      return AssociateContactWithUserOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -3915,45 +3955,6 @@ DescribeRuleOutcome ConnectClient::DescribeRule(const DescribeRuleRequest& reque
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleId());
       return DescribeRuleOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-    },
-    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
-    *meter,
-    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-DescribeSecurityProfileOutcome ConnectClient::DescribeSecurityProfile(const DescribeSecurityProfileRequest& request) const
-{
-  AWS_OPERATION_GUARD(DescribeSecurityProfile);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeSecurityProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.SecurityProfileIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DescribeSecurityProfile", "Required field: SecurityProfileId, is not set");
-    return DescribeSecurityProfileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SecurityProfileId]", false));
-  }
-  if (!request.InstanceIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DescribeSecurityProfile", "Required field: InstanceId, is not set");
-    return DescribeSecurityProfileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeSecurityProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DescribeSecurityProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeSecurityProfile",
-    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
-    smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DescribeSecurityProfileOutcome>(
-    [&]()-> DescribeSecurityProfileOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeSecurityProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/security-profiles/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSecurityProfileId());
-      return DescribeSecurityProfileOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

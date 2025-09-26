@@ -41,18 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The reasoning or thought process of the agent, based on the input.</p>
-     */
-    inline const Aws::String& GetText() const { return m_text; }
-    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    template<typename TextT = Aws::String>
-    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
-    template<typename TextT = Aws::String>
-    Rationale& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique identifier of the trace step.</p>
      */
     inline const Aws::String& GetTraceId() const { return m_traceId; }
@@ -62,13 +50,25 @@ namespace Model
     template<typename TraceIdT = Aws::String>
     Rationale& WithTraceId(TraceIdT&& value) { SetTraceId(std::forward<TraceIdT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_text;
-    bool m_textHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The reasoning or thought process of the agent, based on the input.</p>
+     */
+    inline const Aws::String& GetText() const { return m_text; }
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    Rationale& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_traceId;
     bool m_traceIdHasBeenSet = false;
+
+    Aws::String m_text;
+    bool m_textHasBeenSet = false;
   };
 
 } // namespace Model

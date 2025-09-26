@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent-runtime/model/InputQueryType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of the query.</p>
+     */
+    inline InputQueryType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(InputQueryType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline QueryGenerationInput& WithType(InputQueryType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The text of the query.</p>
      */
     inline const Aws::String& GetText() const { return m_text; }
@@ -50,23 +60,13 @@ namespace Model
     template<typename TextT = Aws::String>
     QueryGenerationInput& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of the query.</p>
-     */
-    inline InputQueryType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(InputQueryType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline QueryGenerationInput& WithType(InputQueryType value) { SetType(value); return *this;}
-    ///@}
   private:
-
-    Aws::String m_text;
-    bool m_textHasBeenSet = false;
 
     InputQueryType m_type{InputQueryType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    Aws::String m_text;
+    bool m_textHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,6 +25,21 @@ SessionSummary::SessionSummary(JsonView jsonValue)
 
 SessionSummary& SessionSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("sessionId"))
+  {
+    m_sessionId = jsonValue.GetString("sessionId");
+    m_sessionIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("sessionArn"))
+  {
+    m_sessionArn = jsonValue.GetString("sessionArn");
+    m_sessionArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("sessionStatus"))
+  {
+    m_sessionStatus = SessionStatusMapper::GetSessionStatusForName(jsonValue.GetString("sessionStatus"));
+    m_sessionStatusHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
@@ -35,27 +50,29 @@ SessionSummary& SessionSummary::operator =(JsonView jsonValue)
     m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sessionArn"))
-  {
-    m_sessionArn = jsonValue.GetString("sessionArn");
-    m_sessionArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("sessionId"))
-  {
-    m_sessionId = jsonValue.GetString("sessionId");
-    m_sessionIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("sessionStatus"))
-  {
-    m_sessionStatus = SessionStatusMapper::GetSessionStatusForName(jsonValue.GetString("sessionStatus"));
-    m_sessionStatusHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue SessionSummary::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_sessionIdHasBeenSet)
+  {
+   payload.WithString("sessionId", m_sessionId);
+
+  }
+
+  if(m_sessionArnHasBeenSet)
+  {
+   payload.WithString("sessionArn", m_sessionArn);
+
+  }
+
+  if(m_sessionStatusHasBeenSet)
+  {
+   payload.WithString("sessionStatus", SessionStatusMapper::GetNameForSessionStatus(m_sessionStatus));
+  }
 
   if(m_createdAtHasBeenSet)
   {
@@ -65,23 +82,6 @@ JsonValue SessionSummary::Jsonize() const
   if(m_lastUpdatedAtHasBeenSet)
   {
    payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_sessionArnHasBeenSet)
-  {
-   payload.WithString("sessionArn", m_sessionArn);
-
-  }
-
-  if(m_sessionIdHasBeenSet)
-  {
-   payload.WithString("sessionId", m_sessionId);
-
-  }
-
-  if(m_sessionStatusHasBeenSet)
-  {
-   payload.WithString("sessionStatus", SessionStatusMapper::GetNameForSessionStatus(m_sessionStatus));
   }
 
   return payload;

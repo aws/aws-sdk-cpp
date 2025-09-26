@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/Array.h>
 #include <utility>
 
 namespace Aws
@@ -41,18 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The byte count of files that contains response from code interpreter.</p>
-     */
-    inline const Aws::Utils::CryptoBuffer& GetBytes() const { return m_bytes; }
-    inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }
-    template<typename BytesT = Aws::Utils::CryptoBuffer>
-    void SetBytes(BytesT&& value) { m_bytesHasBeenSet = true; m_bytes = std::forward<BytesT>(value); }
-    template<typename BytesT = Aws::Utils::CryptoBuffer>
-    OutputFile& WithBytes(BytesT&& value) { SetBytes(std::forward<BytesT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the file containing response from code interpreter.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
@@ -74,16 +62,28 @@ namespace Model
     template<typename TypeT = Aws::String>
     OutputFile& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::Utils::CryptoBuffer m_bytes{};
-    bool m_bytesHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The byte count of files that contains response from code interpreter.</p>
+     */
+    inline const Aws::Utils::CryptoBuffer& GetBytes() const { return m_bytes; }
+    inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }
+    template<typename BytesT = Aws::Utils::CryptoBuffer>
+    void SetBytes(BytesT&& value) { m_bytesHasBeenSet = true; m_bytes = std::forward<BytesT>(value); }
+    template<typename BytesT = Aws::Utils::CryptoBuffer>
+    OutputFile& WithBytes(BytesT&& value) { SetBytes(std::forward<BytesT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
     Aws::String m_type;
     bool m_typeHasBeenSet = false;
+
+    Aws::Utils::CryptoBuffer m_bytes{};
+    bool m_bytesHasBeenSet = false;
   };
 
 } // namespace Model

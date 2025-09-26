@@ -7,8 +7,8 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent-runtime/model/ConfirmationState.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/bedrock-agent-runtime/model/ResponseState.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/bedrock-agent-runtime/model/ContentBody.h>
 #include <utility>
 
@@ -60,14 +60,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The agent's ID.</p>
+     * <p>The HTTP method for the API operation.</p>
      */
-    inline const Aws::String& GetAgentId() const { return m_agentId; }
-    inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-    template<typename AgentIdT = Aws::String>
-    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
-    template<typename AgentIdT = Aws::String>
-    ApiResult& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
+    inline const Aws::String& GetHttpMethod() const { return m_httpMethod; }
+    inline bool HttpMethodHasBeenSet() const { return m_httpMethodHasBeenSet; }
+    template<typename HttpMethodT = Aws::String>
+    void SetHttpMethod(HttpMethodT&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::forward<HttpMethodT>(value); }
+    template<typename HttpMethodT = Aws::String>
+    ApiResult& WithHttpMethod(HttpMethodT&& value) { SetHttpMethod(std::forward<HttpMethodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +95,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The HTTP method for the API operation.</p>
+     * <p>Controls the final response state returned to end user when API/Function
+     * execution failed. When this state is FAILURE, the request would fail with
+     * dependency failure exception. When this state is REPROMPT, the API/function
+     * response will be sent to model for re-prompt</p>
      */
-    inline const Aws::String& GetHttpMethod() const { return m_httpMethod; }
-    inline bool HttpMethodHasBeenSet() const { return m_httpMethodHasBeenSet; }
-    template<typename HttpMethodT = Aws::String>
-    void SetHttpMethod(HttpMethodT&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::forward<HttpMethodT>(value); }
-    template<typename HttpMethodT = Aws::String>
-    ApiResult& WithHttpMethod(HttpMethodT&& value) { SetHttpMethod(std::forward<HttpMethodT>(value)); return *this;}
+    inline ResponseState GetResponseState() const { return m_responseState; }
+    inline bool ResponseStateHasBeenSet() const { return m_responseStateHasBeenSet; }
+    inline void SetResponseState(ResponseState value) { m_responseStateHasBeenSet = true; m_responseState = value; }
+    inline ApiResult& WithResponseState(ResponseState value) { SetResponseState(value); return *this;}
     ///@}
 
     ///@{
@@ -136,23 +137,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>Controls the final response state returned to end user when API/Function
-     * execution failed. When this state is FAILURE, the request would fail with
-     * dependency failure exception. When this state is REPROMPT, the API/function
-     * response will be sent to model for re-prompt</p>
+     * <p>The agent's ID.</p>
      */
-    inline ResponseState GetResponseState() const { return m_responseState; }
-    inline bool ResponseStateHasBeenSet() const { return m_responseStateHasBeenSet; }
-    inline void SetResponseState(ResponseState value) { m_responseStateHasBeenSet = true; m_responseState = value; }
-    inline ApiResult& WithResponseState(ResponseState value) { SetResponseState(value); return *this;}
+    inline const Aws::String& GetAgentId() const { return m_agentId; }
+    inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
+    template<typename AgentIdT = Aws::String>
+    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
+    template<typename AgentIdT = Aws::String>
+    ApiResult& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_actionGroup;
     bool m_actionGroupHasBeenSet = false;
 
-    Aws::String m_agentId;
-    bool m_agentIdHasBeenSet = false;
+    Aws::String m_httpMethod;
+    bool m_httpMethodHasBeenSet = false;
 
     Aws::String m_apiPath;
     bool m_apiPathHasBeenSet = false;
@@ -160,8 +160,8 @@ namespace Model
     ConfirmationState m_confirmationState{ConfirmationState::NOT_SET};
     bool m_confirmationStateHasBeenSet = false;
 
-    Aws::String m_httpMethod;
-    bool m_httpMethodHasBeenSet = false;
+    ResponseState m_responseState{ResponseState::NOT_SET};
+    bool m_responseStateHasBeenSet = false;
 
     int m_httpStatusCode{0};
     bool m_httpStatusCodeHasBeenSet = false;
@@ -169,8 +169,8 @@ namespace Model
     Aws::Map<Aws::String, ContentBody> m_responseBody;
     bool m_responseBodyHasBeenSet = false;
 
-    ResponseState m_responseState{ResponseState::NOT_SET};
-    bool m_responseStateHasBeenSet = false;
+    Aws::String m_agentId;
+    bool m_agentIdHasBeenSet = false;
   };
 
 } // namespace Model

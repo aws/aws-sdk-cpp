@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/AuthorizedTokenIssuer.h>
 #include <aws/redshift/model/ServiceIntegrationsUnion.h>
+#include <aws/redshift/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -175,6 +176,36 @@ namespace Model
     template<typename ServiceIntegrationsT = ServiceIntegrationsUnion>
     RedshiftIdcApplication& AddServiceIntegrations(ServiceIntegrationsT&& value) { m_serviceIntegrationsHasBeenSet = true; m_serviceIntegrations.emplace_back(std::forward<ServiceIntegrationsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>A list of tags.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    RedshiftIdcApplication& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    RedshiftIdcApplication& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>A list of tags keys that Redshift Identity Center applications copy to IAM
+     * Identity Center. For each input key, the tag corresponding to the key-value pair
+     * is propagated.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSsoTagKeys() const { return m_ssoTagKeys; }
+    inline bool SsoTagKeysHasBeenSet() const { return m_ssoTagKeysHasBeenSet; }
+    template<typename SsoTagKeysT = Aws::Vector<Aws::String>>
+    void SetSsoTagKeys(SsoTagKeysT&& value) { m_ssoTagKeysHasBeenSet = true; m_ssoTagKeys = std::forward<SsoTagKeysT>(value); }
+    template<typename SsoTagKeysT = Aws::Vector<Aws::String>>
+    RedshiftIdcApplication& WithSsoTagKeys(SsoTagKeysT&& value) { SetSsoTagKeys(std::forward<SsoTagKeysT>(value)); return *this;}
+    template<typename SsoTagKeysT = Aws::String>
+    RedshiftIdcApplication& AddSsoTagKeys(SsoTagKeysT&& value) { m_ssoTagKeysHasBeenSet = true; m_ssoTagKeys.emplace_back(std::forward<SsoTagKeysT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_idcInstanceArn;
@@ -206,6 +237,12 @@ namespace Model
 
     Aws::Vector<ServiceIntegrationsUnion> m_serviceIntegrations;
     bool m_serviceIntegrationsHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_ssoTagKeys;
+    bool m_ssoTagKeysHasBeenSet = false;
   };
 
 } // namespace Model

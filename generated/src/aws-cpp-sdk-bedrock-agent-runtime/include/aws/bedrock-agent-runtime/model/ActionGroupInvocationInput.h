@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/bedrock-agent-runtime/model/ExecutionType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent-runtime/model/RequestBody.h>
+#include <aws/bedrock-agent-runtime/model/ExecutionType.h>
 #include <aws/bedrock-agent-runtime/model/Parameter.h>
 #include <utility>
 
@@ -60,6 +60,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The API method being used, based off the action group.</p>
+     */
+    inline const Aws::String& GetVerb() const { return m_verb; }
+    inline bool VerbHasBeenSet() const { return m_verbHasBeenSet; }
+    template<typename VerbT = Aws::String>
+    void SetVerb(VerbT&& value) { m_verbHasBeenSet = true; m_verb = std::forward<VerbT>(value); }
+    template<typename VerbT = Aws::String>
+    ActionGroupInvocationInput& WithVerb(VerbT&& value) { SetVerb(std::forward<VerbT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The path to the API to call, based off the action group.</p>
      */
     inline const Aws::String& GetApiPath() const { return m_apiPath; }
@@ -68,43 +80,6 @@ namespace Model
     void SetApiPath(ApiPathT&& value) { m_apiPathHasBeenSet = true; m_apiPath = std::forward<ApiPathT>(value); }
     template<typename ApiPathT = Aws::String>
     ActionGroupInvocationInput& WithApiPath(ApiPathT&& value) { SetApiPath(std::forward<ApiPathT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>How fulfillment of the action is handled. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/action-handle.html">Handling
-     * fulfillment of the action</a>.</p>
-     */
-    inline ExecutionType GetExecutionType() const { return m_executionType; }
-    inline bool ExecutionTypeHasBeenSet() const { return m_executionTypeHasBeenSet; }
-    inline void SetExecutionType(ExecutionType value) { m_executionTypeHasBeenSet = true; m_executionType = value; }
-    inline ActionGroupInvocationInput& WithExecutionType(ExecutionType value) { SetExecutionType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The function in the action group to call.</p>
-     */
-    inline const Aws::String& GetFunction() const { return m_function; }
-    inline bool FunctionHasBeenSet() const { return m_functionHasBeenSet; }
-    template<typename FunctionT = Aws::String>
-    void SetFunction(FunctionT&& value) { m_functionHasBeenSet = true; m_function = std::forward<FunctionT>(value); }
-    template<typename FunctionT = Aws::String>
-    ActionGroupInvocationInput& WithFunction(FunctionT&& value) { SetFunction(std::forward<FunctionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The unique identifier of the invocation. Only returned if the
-     * <code>executionType</code> is <code>RETURN_CONTROL</code>.</p>
-     */
-    inline const Aws::String& GetInvocationId() const { return m_invocationId; }
-    inline bool InvocationIdHasBeenSet() const { return m_invocationIdHasBeenSet; }
-    template<typename InvocationIdT = Aws::String>
-    void SetInvocationId(InvocationIdT&& value) { m_invocationIdHasBeenSet = true; m_invocationId = std::forward<InvocationIdT>(value); }
-    template<typename InvocationIdT = Aws::String>
-    ActionGroupInvocationInput& WithInvocationId(InvocationIdT&& value) { SetInvocationId(std::forward<InvocationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,31 +110,50 @@ namespace Model
 
     ///@{
     /**
-     * <p>The API method being used, based off the action group.</p>
+     * <p>The function in the action group to call.</p>
      */
-    inline const Aws::String& GetVerb() const { return m_verb; }
-    inline bool VerbHasBeenSet() const { return m_verbHasBeenSet; }
-    template<typename VerbT = Aws::String>
-    void SetVerb(VerbT&& value) { m_verbHasBeenSet = true; m_verb = std::forward<VerbT>(value); }
-    template<typename VerbT = Aws::String>
-    ActionGroupInvocationInput& WithVerb(VerbT&& value) { SetVerb(std::forward<VerbT>(value)); return *this;}
+    inline const Aws::String& GetFunction() const { return m_function; }
+    inline bool FunctionHasBeenSet() const { return m_functionHasBeenSet; }
+    template<typename FunctionT = Aws::String>
+    void SetFunction(FunctionT&& value) { m_functionHasBeenSet = true; m_function = std::forward<FunctionT>(value); }
+    template<typename FunctionT = Aws::String>
+    ActionGroupInvocationInput& WithFunction(FunctionT&& value) { SetFunction(std::forward<FunctionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>How fulfillment of the action is handled. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/action-handle.html">Handling
+     * fulfillment of the action</a>.</p>
+     */
+    inline ExecutionType GetExecutionType() const { return m_executionType; }
+    inline bool ExecutionTypeHasBeenSet() const { return m_executionTypeHasBeenSet; }
+    inline void SetExecutionType(ExecutionType value) { m_executionTypeHasBeenSet = true; m_executionType = value; }
+    inline ActionGroupInvocationInput& WithExecutionType(ExecutionType value) { SetExecutionType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The unique identifier of the invocation. Only returned if the
+     * <code>executionType</code> is <code>RETURN_CONTROL</code>.</p>
+     */
+    inline const Aws::String& GetInvocationId() const { return m_invocationId; }
+    inline bool InvocationIdHasBeenSet() const { return m_invocationIdHasBeenSet; }
+    template<typename InvocationIdT = Aws::String>
+    void SetInvocationId(InvocationIdT&& value) { m_invocationIdHasBeenSet = true; m_invocationId = std::forward<InvocationIdT>(value); }
+    template<typename InvocationIdT = Aws::String>
+    ActionGroupInvocationInput& WithInvocationId(InvocationIdT&& value) { SetInvocationId(std::forward<InvocationIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_actionGroupName;
     bool m_actionGroupNameHasBeenSet = false;
 
+    Aws::String m_verb;
+    bool m_verbHasBeenSet = false;
+
     Aws::String m_apiPath;
     bool m_apiPathHasBeenSet = false;
-
-    ExecutionType m_executionType{ExecutionType::NOT_SET};
-    bool m_executionTypeHasBeenSet = false;
-
-    Aws::String m_function;
-    bool m_functionHasBeenSet = false;
-
-    Aws::String m_invocationId;
-    bool m_invocationIdHasBeenSet = false;
 
     Aws::Vector<Parameter> m_parameters;
     bool m_parametersHasBeenSet = false;
@@ -167,8 +161,14 @@ namespace Model
     RequestBody m_requestBody;
     bool m_requestBodyHasBeenSet = false;
 
-    Aws::String m_verb;
-    bool m_verbHasBeenSet = false;
+    Aws::String m_function;
+    bool m_functionHasBeenSet = false;
+
+    ExecutionType m_executionType{ExecutionType::NOT_SET};
+    bool m_executionTypeHasBeenSet = false;
+
+    Aws::String m_invocationId;
+    bool m_invocationIdHasBeenSet = false;
   };
 
 } // namespace Model
