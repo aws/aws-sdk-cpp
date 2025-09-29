@@ -120,7 +120,7 @@
           }
       }
 #if($operation.requireEndpointDiscovery)
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "${operation.name}" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"

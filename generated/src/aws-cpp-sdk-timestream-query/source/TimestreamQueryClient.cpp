@@ -226,7 +226,7 @@ CancelQueryOutcome TimestreamQueryClient::CancelQuery(const CancelQueryRequest& 
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "CancelQuery" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -295,7 +295,7 @@ CreateScheduledQueryOutcome TimestreamQueryClient::CreateScheduledQuery(const Cr
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "CreateScheduledQuery" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -364,7 +364,7 @@ DeleteScheduledQueryOutcome TimestreamQueryClient::DeleteScheduledQuery(const De
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "DeleteScheduledQuery" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -433,7 +433,7 @@ DescribeAccountSettingsOutcome TimestreamQueryClient::DescribeAccountSettings(co
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "DescribeAccountSettings" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -528,7 +528,7 @@ DescribeScheduledQueryOutcome TimestreamQueryClient::DescribeScheduledQuery(cons
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "DescribeScheduledQuery" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -597,7 +597,7 @@ ExecuteScheduledQueryOutcome TimestreamQueryClient::ExecuteScheduledQuery(const 
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "ExecuteScheduledQuery" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -666,7 +666,7 @@ ListScheduledQueriesOutcome TimestreamQueryClient::ListScheduledQueries(const Li
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "ListScheduledQueries" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -735,7 +735,7 @@ ListTagsForResourceOutcome TimestreamQueryClient::ListTagsForResource(const List
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "ListTagsForResource" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -804,7 +804,7 @@ PrepareQueryOutcome TimestreamQueryClient::PrepareQuery(const PrepareQueryReques
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "PrepareQuery" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -873,7 +873,7 @@ QueryOutcome TimestreamQueryClient::Query(const QueryRequest& request) const
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "Query" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -942,7 +942,7 @@ TagResourceOutcome TimestreamQueryClient::TagResource(const TagResourceRequest& 
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "TagResource" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -1011,7 +1011,7 @@ UntagResourceOutcome TimestreamQueryClient::UntagResource(const UntagResourceReq
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "UntagResource" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -1080,7 +1080,7 @@ UpdateAccountSettingsOutcome TimestreamQueryClient::UpdateAccountSettings(const 
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "UpdateAccountSettings" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -1149,7 +1149,7 @@ UpdateScheduledQueryOutcome TimestreamQueryClient::UpdateScheduledQuery(const Up
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "UpdateScheduledQuery" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
