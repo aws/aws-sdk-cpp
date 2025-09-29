@@ -230,7 +230,7 @@ CreateBatchLoadTaskOutcome TimestreamWriteClient::CreateBatchLoadTask(const Crea
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "CreateBatchLoadTask" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -299,7 +299,7 @@ CreateDatabaseOutcome TimestreamWriteClient::CreateDatabase(const CreateDatabase
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "CreateDatabase" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -368,7 +368,7 @@ CreateTableOutcome TimestreamWriteClient::CreateTable(const CreateTableRequest& 
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "CreateTable" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -437,7 +437,7 @@ DeleteDatabaseOutcome TimestreamWriteClient::DeleteDatabase(const DeleteDatabase
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "DeleteDatabase" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -506,7 +506,7 @@ DeleteTableOutcome TimestreamWriteClient::DeleteTable(const DeleteTableRequest& 
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "DeleteTable" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -575,7 +575,7 @@ DescribeBatchLoadTaskOutcome TimestreamWriteClient::DescribeBatchLoadTask(const 
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "DescribeBatchLoadTask" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -644,7 +644,7 @@ DescribeDatabaseOutcome TimestreamWriteClient::DescribeDatabase(const DescribeDa
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "DescribeDatabase" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -739,7 +739,7 @@ DescribeTableOutcome TimestreamWriteClient::DescribeTable(const DescribeTableReq
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "DescribeTable" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -808,7 +808,7 @@ ListBatchLoadTasksOutcome TimestreamWriteClient::ListBatchLoadTasks(const ListBa
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "ListBatchLoadTasks" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -877,7 +877,7 @@ ListDatabasesOutcome TimestreamWriteClient::ListDatabases(const ListDatabasesReq
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "ListDatabases" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -946,7 +946,7 @@ ListTablesOutcome TimestreamWriteClient::ListTables(const ListTablesRequest& req
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "ListTables" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -1015,7 +1015,7 @@ ListTagsForResourceOutcome TimestreamWriteClient::ListTagsForResource(const List
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "ListTagsForResource" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -1084,7 +1084,7 @@ ResumeBatchLoadTaskOutcome TimestreamWriteClient::ResumeBatchLoadTask(const Resu
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "ResumeBatchLoadTask" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -1153,7 +1153,7 @@ TagResourceOutcome TimestreamWriteClient::TagResource(const TagResourceRequest& 
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "TagResource" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -1222,7 +1222,7 @@ UntagResourceOutcome TimestreamWriteClient::UntagResource(const UntagResourceReq
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "UntagResource" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -1291,7 +1291,7 @@ UpdateDatabaseOutcome TimestreamWriteClient::UpdateDatabase(const UpdateDatabase
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "UpdateDatabase" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -1360,7 +1360,7 @@ UpdateTableOutcome TimestreamWriteClient::UpdateTable(const UpdateTableRequest& 
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "UpdateTable" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
@@ -1429,7 +1429,7 @@ WriteRecordsOutcome TimestreamWriteClient::WriteRecords(const WriteRecordsReques
               }
           }
       }
-      else
+      else if (m_clientConfiguration.endpointOverride.empty())
       {
           Aws::String errorMessage = R"(Unable to perform "WriteRecords" without endpoint discovery. )"
               R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
