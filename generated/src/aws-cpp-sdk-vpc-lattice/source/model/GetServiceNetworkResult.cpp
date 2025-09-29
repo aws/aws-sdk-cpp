@@ -25,6 +25,26 @@ GetServiceNetworkResult::GetServiceNetworkResult(const Aws::AmazonWebServiceResu
 GetServiceNetworkResult& GetServiceNetworkResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lastUpdatedAt"))
+  {
+    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
+    m_lastUpdatedAtHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
@@ -35,40 +55,20 @@ GetServiceNetworkResult& GetServiceNetworkResult::operator =(const Aws::AmazonWe
     m_authType = AuthTypeMapper::GetAuthTypeForName(jsonValue.GetString("authType"));
     m_authTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("sharingConfig"))
   {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("id"))
-  {
-    m_id = jsonValue.GetString("id");
-    m_idHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
-    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-    m_lastUpdatedAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("numberOfAssociatedServices"))
-  {
-    m_numberOfAssociatedServices = jsonValue.GetInt64("numberOfAssociatedServices");
-    m_numberOfAssociatedServicesHasBeenSet = true;
+    m_sharingConfig = jsonValue.GetObject("sharingConfig");
+    m_sharingConfigHasBeenSet = true;
   }
   if(jsonValue.ValueExists("numberOfAssociatedVPCs"))
   {
     m_numberOfAssociatedVPCs = jsonValue.GetInt64("numberOfAssociatedVPCs");
     m_numberOfAssociatedVPCsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sharingConfig"))
+  if(jsonValue.ValueExists("numberOfAssociatedServices"))
   {
-    m_sharingConfig = jsonValue.GetObject("sharingConfig");
-    m_sharingConfigHasBeenSet = true;
+    m_numberOfAssociatedServices = jsonValue.GetInt64("numberOfAssociatedServices");
+    m_numberOfAssociatedServicesHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

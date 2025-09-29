@@ -40,6 +40,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the resource gateway for the resource configuration.</p>
+     */
+    inline const Aws::String& GetResourceGatewayIdentifier() const { return m_resourceGatewayIdentifier; }
+    inline bool ResourceGatewayIdentifierHasBeenSet() const { return m_resourceGatewayIdentifierHasBeenSet; }
+    template<typename ResourceGatewayIdentifierT = Aws::String>
+    void SetResourceGatewayIdentifier(ResourceGatewayIdentifierT&& value) { m_resourceGatewayIdentifierHasBeenSet = true; m_resourceGatewayIdentifier = std::forward<ResourceGatewayIdentifierT>(value); }
+    template<typename ResourceGatewayIdentifierT = Aws::String>
+    ListResourceConfigurationsRequest& WithResourceGatewayIdentifier(ResourceGatewayIdentifierT&& value) { SetResourceGatewayIdentifier(std::forward<ResourceGatewayIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the resource configuration of type <code>Group</code>.</p>
+     */
+    inline const Aws::String& GetResourceConfigurationGroupIdentifier() const { return m_resourceConfigurationGroupIdentifier; }
+    inline bool ResourceConfigurationGroupIdentifierHasBeenSet() const { return m_resourceConfigurationGroupIdentifierHasBeenSet; }
+    template<typename ResourceConfigurationGroupIdentifierT = Aws::String>
+    void SetResourceConfigurationGroupIdentifier(ResourceConfigurationGroupIdentifierT&& value) { m_resourceConfigurationGroupIdentifierHasBeenSet = true; m_resourceConfigurationGroupIdentifier = std::forward<ResourceConfigurationGroupIdentifierT>(value); }
+    template<typename ResourceConfigurationGroupIdentifierT = Aws::String>
+    ListResourceConfigurationsRequest& WithResourceConfigurationGroupIdentifier(ResourceConfigurationGroupIdentifierT&& value) { SetResourceConfigurationGroupIdentifier(std::forward<ResourceConfigurationGroupIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The maximum page size.</p>
      */
     inline int GetMaxResults() const { return m_maxResults; }
@@ -59,43 +83,19 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListResourceConfigurationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the group resource configuration.</p>
-     */
-    inline const Aws::String& GetResourceConfigurationGroupIdentifier() const { return m_resourceConfigurationGroupIdentifier; }
-    inline bool ResourceConfigurationGroupIdentifierHasBeenSet() const { return m_resourceConfigurationGroupIdentifierHasBeenSet; }
-    template<typename ResourceConfigurationGroupIdentifierT = Aws::String>
-    void SetResourceConfigurationGroupIdentifier(ResourceConfigurationGroupIdentifierT&& value) { m_resourceConfigurationGroupIdentifierHasBeenSet = true; m_resourceConfigurationGroupIdentifier = std::forward<ResourceConfigurationGroupIdentifierT>(value); }
-    template<typename ResourceConfigurationGroupIdentifierT = Aws::String>
-    ListResourceConfigurationsRequest& WithResourceConfigurationGroupIdentifier(ResourceConfigurationGroupIdentifierT&& value) { SetResourceConfigurationGroupIdentifier(std::forward<ResourceConfigurationGroupIdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the resource gateway for the resource configuration.</p>
-     */
-    inline const Aws::String& GetResourceGatewayIdentifier() const { return m_resourceGatewayIdentifier; }
-    inline bool ResourceGatewayIdentifierHasBeenSet() const { return m_resourceGatewayIdentifierHasBeenSet; }
-    template<typename ResourceGatewayIdentifierT = Aws::String>
-    void SetResourceGatewayIdentifier(ResourceGatewayIdentifierT&& value) { m_resourceGatewayIdentifierHasBeenSet = true; m_resourceGatewayIdentifier = std::forward<ResourceGatewayIdentifierT>(value); }
-    template<typename ResourceGatewayIdentifierT = Aws::String>
-    ListResourceConfigurationsRequest& WithResourceGatewayIdentifier(ResourceGatewayIdentifierT&& value) { SetResourceGatewayIdentifier(std::forward<ResourceGatewayIdentifierT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_resourceGatewayIdentifier;
+    bool m_resourceGatewayIdentifierHasBeenSet = false;
+
+    Aws::String m_resourceConfigurationGroupIdentifier;
+    bool m_resourceConfigurationGroupIdentifierHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
-
-    Aws::String m_resourceConfigurationGroupIdentifier;
-    bool m_resourceConfigurationGroupIdentifierHasBeenSet = false;
-
-    Aws::String m_resourceGatewayIdentifier;
-    bool m_resourceGatewayIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

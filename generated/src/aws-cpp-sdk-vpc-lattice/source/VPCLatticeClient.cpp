@@ -237,15 +237,15 @@ BatchUpdateRuleOutcome VPCLatticeClient::BatchUpdateRule(const BatchUpdateRuleRe
 {
   AWS_OPERATION_GUARD(BatchUpdateRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchUpdateRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ListenerIdentifierHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("BatchUpdateRule", "Required field: ListenerIdentifier, is not set");
-    return BatchUpdateRuleOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ListenerIdentifier]", false));
-  }
   if (!request.ServiceIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("BatchUpdateRule", "Required field: ServiceIdentifier, is not set");
     return BatchUpdateRuleOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ServiceIdentifier]", false));
+  }
+  if (!request.ListenerIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchUpdateRule", "Required field: ListenerIdentifier, is not set");
+    return BatchUpdateRuleOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ListenerIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchUpdateRule, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -393,15 +393,15 @@ CreateRuleOutcome VPCLatticeClient::CreateRule(const CreateRuleRequest& request)
 {
   AWS_OPERATION_GUARD(CreateRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ListenerIdentifierHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("CreateRule", "Required field: ListenerIdentifier, is not set");
-    return CreateRuleOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ListenerIdentifier]", false));
-  }
   if (!request.ServiceIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateRule", "Required field: ServiceIdentifier, is not set");
     return CreateRuleOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ServiceIdentifier]", false));
+  }
+  if (!request.ListenerIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateRule", "Required field: ListenerIdentifier, is not set");
+    return CreateRuleOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ListenerIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateRule, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -662,15 +662,15 @@ DeleteListenerOutcome VPCLatticeClient::DeleteListener(const DeleteListenerReque
 {
   AWS_OPERATION_GUARD(DeleteListener);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteListener, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ListenerIdentifierHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteListener", "Required field: ListenerIdentifier, is not set");
-    return DeleteListenerOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ListenerIdentifier]", false));
-  }
   if (!request.ServiceIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteListener", "Required field: ServiceIdentifier, is not set");
     return DeleteListenerOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ServiceIdentifier]", false));
+  }
+  if (!request.ListenerIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteListener", "Required field: ListenerIdentifier, is not set");
+    return DeleteListenerOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ListenerIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteListener, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -834,6 +834,11 @@ DeleteRuleOutcome VPCLatticeClient::DeleteRule(const DeleteRuleRequest& request)
 {
   AWS_OPERATION_GUARD(DeleteRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ServiceIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRule", "Required field: ServiceIdentifier, is not set");
+    return DeleteRuleOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ServiceIdentifier]", false));
+  }
   if (!request.ListenerIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteRule", "Required field: ListenerIdentifier, is not set");
@@ -843,11 +848,6 @@ DeleteRuleOutcome VPCLatticeClient::DeleteRule(const DeleteRuleRequest& request)
   {
     AWS_LOGSTREAM_ERROR("DeleteRule", "Required field: RuleIdentifier, is not set");
     return DeleteRuleOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RuleIdentifier]", false));
-  }
-  if (!request.ServiceIdentifierHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteRule", "Required field: ServiceIdentifier, is not set");
-    return DeleteRuleOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ServiceIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteRule, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1179,15 +1179,15 @@ GetListenerOutcome VPCLatticeClient::GetListener(const GetListenerRequest& reque
 {
   AWS_OPERATION_GUARD(GetListener);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetListener, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ListenerIdentifierHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetListener", "Required field: ListenerIdentifier, is not set");
-    return GetListenerOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ListenerIdentifier]", false));
-  }
   if (!request.ServiceIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetListener", "Required field: ServiceIdentifier, is not set");
     return GetListenerOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ServiceIdentifier]", false));
+  }
+  if (!request.ListenerIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetListener", "Required field: ListenerIdentifier, is not set");
+    return GetListenerOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ListenerIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetListener, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1318,6 +1318,11 @@ GetRuleOutcome VPCLatticeClient::GetRule(const GetRuleRequest& request) const
 {
   AWS_OPERATION_GUARD(GetRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ServiceIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetRule", "Required field: ServiceIdentifier, is not set");
+    return GetRuleOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ServiceIdentifier]", false));
+  }
   if (!request.ListenerIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetRule", "Required field: ListenerIdentifier, is not set");
@@ -1327,11 +1332,6 @@ GetRuleOutcome VPCLatticeClient::GetRule(const GetRuleRequest& request) const
   {
     AWS_LOGSTREAM_ERROR("GetRule", "Required field: RuleIdentifier, is not set");
     return GetRuleOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RuleIdentifier]", false));
-  }
-  if (!request.ServiceIdentifierHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetRule", "Required field: ServiceIdentifier, is not set");
-    return GetRuleOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ServiceIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetRule, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1715,15 +1715,15 @@ ListRulesOutcome VPCLatticeClient::ListRules(const ListRulesRequest& request) co
 {
   AWS_OPERATION_GUARD(ListRules);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ListenerIdentifierHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListRules", "Required field: ListenerIdentifier, is not set");
-    return ListRulesOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ListenerIdentifier]", false));
-  }
   if (!request.ServiceIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListRules", "Required field: ServiceIdentifier, is not set");
     return ListRulesOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ServiceIdentifier]", false));
+  }
+  if (!request.ListenerIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListRules", "Required field: ListenerIdentifier, is not set");
+    return ListRulesOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ListenerIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListRules, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -2221,15 +2221,15 @@ UpdateListenerOutcome VPCLatticeClient::UpdateListener(const UpdateListenerReque
 {
   AWS_OPERATION_GUARD(UpdateListener);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateListener, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ListenerIdentifierHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdateListener", "Required field: ListenerIdentifier, is not set");
-    return UpdateListenerOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ListenerIdentifier]", false));
-  }
   if (!request.ServiceIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateListener", "Required field: ServiceIdentifier, is not set");
     return UpdateListenerOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ServiceIdentifier]", false));
+  }
+  if (!request.ListenerIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateListener", "Required field: ListenerIdentifier, is not set");
+    return UpdateListenerOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ListenerIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateListener, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -2327,6 +2327,11 @@ UpdateRuleOutcome VPCLatticeClient::UpdateRule(const UpdateRuleRequest& request)
 {
   AWS_OPERATION_GUARD(UpdateRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ServiceIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateRule", "Required field: ServiceIdentifier, is not set");
+    return UpdateRuleOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ServiceIdentifier]", false));
+  }
   if (!request.ListenerIdentifierHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateRule", "Required field: ListenerIdentifier, is not set");
@@ -2336,11 +2341,6 @@ UpdateRuleOutcome VPCLatticeClient::UpdateRule(const UpdateRuleRequest& request)
   {
     AWS_LOGSTREAM_ERROR("UpdateRule", "Required field: RuleIdentifier, is not set");
     return UpdateRuleOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RuleIdentifier]", false));
-  }
-  if (!request.ServiceIdentifierHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdateRule", "Required field: ServiceIdentifier, is not set");
-    return UpdateRuleOutcome(Aws::Client::AWSError<VPCLatticeErrors>(VPCLatticeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ServiceIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateRule, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});

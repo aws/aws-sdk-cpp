@@ -25,6 +25,16 @@ ServiceNetworkSummary::ServiceNetworkSummary(JsonView jsonValue)
 
 ServiceNetworkSummary& ServiceNetworkSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
@@ -35,35 +45,25 @@ ServiceNetworkSummary& ServiceNetworkSummary::operator =(JsonView jsonValue)
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
-    m_id = jsonValue.GetString("id");
-    m_idHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("numberOfAssociatedVPCs"))
   {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("numberOfAssociatedResourceConfigurations"))
-  {
-    m_numberOfAssociatedResourceConfigurations = jsonValue.GetInt64("numberOfAssociatedResourceConfigurations");
-    m_numberOfAssociatedResourceConfigurationsHasBeenSet = true;
+    m_numberOfAssociatedVPCs = jsonValue.GetInt64("numberOfAssociatedVPCs");
+    m_numberOfAssociatedVPCsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("numberOfAssociatedServices"))
   {
     m_numberOfAssociatedServices = jsonValue.GetInt64("numberOfAssociatedServices");
     m_numberOfAssociatedServicesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("numberOfAssociatedVPCs"))
+  if(jsonValue.ValueExists("numberOfAssociatedResourceConfigurations"))
   {
-    m_numberOfAssociatedVPCs = jsonValue.GetInt64("numberOfAssociatedVPCs");
-    m_numberOfAssociatedVPCsHasBeenSet = true;
+    m_numberOfAssociatedResourceConfigurations = jsonValue.GetInt64("numberOfAssociatedResourceConfigurations");
+    m_numberOfAssociatedResourceConfigurationsHasBeenSet = true;
   }
   return *this;
 }
@@ -71,6 +71,18 @@ ServiceNetworkSummary& ServiceNetworkSummary::operator =(JsonView jsonValue)
 JsonValue ServiceNetworkSummary::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("id", m_id);
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
 
   if(m_arnHasBeenSet)
   {
@@ -83,26 +95,14 @@ JsonValue ServiceNetworkSummary::Jsonize() const
    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
-  }
-
   if(m_lastUpdatedAtHasBeenSet)
   {
    payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_nameHasBeenSet)
+  if(m_numberOfAssociatedVPCsHasBeenSet)
   {
-   payload.WithString("name", m_name);
-
-  }
-
-  if(m_numberOfAssociatedResourceConfigurationsHasBeenSet)
-  {
-   payload.WithInt64("numberOfAssociatedResourceConfigurations", m_numberOfAssociatedResourceConfigurations);
+   payload.WithInt64("numberOfAssociatedVPCs", m_numberOfAssociatedVPCs);
 
   }
 
@@ -112,9 +112,9 @@ JsonValue ServiceNetworkSummary::Jsonize() const
 
   }
 
-  if(m_numberOfAssociatedVPCsHasBeenSet)
+  if(m_numberOfAssociatedResourceConfigurationsHasBeenSet)
   {
-   payload.WithInt64("numberOfAssociatedVPCs", m_numberOfAssociatedVPCs);
+   payload.WithInt64("numberOfAssociatedResourceConfigurations", m_numberOfAssociatedResourceConfigurations);
 
   }
 

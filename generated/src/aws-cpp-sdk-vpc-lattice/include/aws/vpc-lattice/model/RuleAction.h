@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
-#include <aws/vpc-lattice/model/FixedResponseAction.h>
 #include <aws/vpc-lattice/model/ForwardAction.h>
+#include <aws/vpc-lattice/model/FixedResponseAction.h>
 #include <utility>
 
 namespace Aws
@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The fixed response action. The rule returns a custom HTTP response.</p>
-     */
-    inline const FixedResponseAction& GetFixedResponse() const { return m_fixedResponse; }
-    inline bool FixedResponseHasBeenSet() const { return m_fixedResponseHasBeenSet; }
-    template<typename FixedResponseT = FixedResponseAction>
-    void SetFixedResponse(FixedResponseT&& value) { m_fixedResponseHasBeenSet = true; m_fixedResponse = std::forward<FixedResponseT>(value); }
-    template<typename FixedResponseT = FixedResponseAction>
-    RuleAction& WithFixedResponse(FixedResponseT&& value) { SetFixedResponse(std::forward<FixedResponseT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The forward action. Traffic that matches the rule is forwarded to the
      * specified target groups.</p>
      */
@@ -62,13 +50,25 @@ namespace Model
     template<typename ForwardT = ForwardAction>
     RuleAction& WithForward(ForwardT&& value) { SetForward(std::forward<ForwardT>(value)); return *this;}
     ///@}
-  private:
 
-    FixedResponseAction m_fixedResponse;
-    bool m_fixedResponseHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The fixed response action. The rule returns a custom HTTP response.</p>
+     */
+    inline const FixedResponseAction& GetFixedResponse() const { return m_fixedResponse; }
+    inline bool FixedResponseHasBeenSet() const { return m_fixedResponseHasBeenSet; }
+    template<typename FixedResponseT = FixedResponseAction>
+    void SetFixedResponse(FixedResponseT&& value) { m_fixedResponseHasBeenSet = true; m_fixedResponse = std::forward<FixedResponseT>(value); }
+    template<typename FixedResponseT = FixedResponseAction>
+    RuleAction& WithFixedResponse(FixedResponseT&& value) { SetFixedResponse(std::forward<FixedResponseT>(value)); return *this;}
+    ///@}
+  private:
 
     ForwardAction m_forward;
     bool m_forwardHasBeenSet = false;
+
+    FixedResponseAction m_fixedResponse;
+    bool m_fixedResponseHasBeenSet = false;
   };
 
 } // namespace Model

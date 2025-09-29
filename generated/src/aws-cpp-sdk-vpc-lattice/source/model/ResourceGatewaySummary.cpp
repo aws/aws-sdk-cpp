@@ -25,49 +25,30 @@ ResourceGatewaySummary::ResourceGatewaySummary(JsonView jsonValue)
 
 ResourceGatewaySummary& ResourceGatewaySummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("arn"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ipAddressType"))
+  if(jsonValue.ValueExists("arn"))
   {
-    m_ipAddressType = ResourceGatewayIpAddressTypeMapper::GetResourceGatewayIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
-    m_ipAddressTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
-    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-    m_lastUpdatedAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("securityGroupIds"))
-  {
-    Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
-    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
-    {
-      m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
-    }
-    m_securityGroupIdsHasBeenSet = true;
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("status"))
   {
     m_status = ResourceGatewayStatusMapper::GetResourceGatewayStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("vpcIdentifier"))
+  {
+    m_vpcIdentifier = jsonValue.GetString("vpcIdentifier");
+    m_vpcIdentifierHasBeenSet = true;
   }
   if(jsonValue.ValueExists("subnetIds"))
   {
@@ -78,10 +59,34 @@ ResourceGatewaySummary& ResourceGatewaySummary::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vpcIdentifier"))
+  if(jsonValue.ValueExists("securityGroupIds"))
   {
-    m_vpcIdentifier = jsonValue.GetString("vpcIdentifier");
-    m_vpcIdentifierHasBeenSet = true;
+    Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
+    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
+    {
+      m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
+    }
+    m_securityGroupIdsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ipAddressType"))
+  {
+    m_ipAddressType = ResourceGatewayIpAddressTypeMapper::GetResourceGatewayIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
+    m_ipAddressTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ipv4AddressesPerEni"))
+  {
+    m_ipv4AddressesPerEni = jsonValue.GetInteger("ipv4AddressesPerEni");
+    m_ipv4AddressesPerEniHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lastUpdatedAt"))
+  {
+    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
+    m_lastUpdatedAtHasBeenSet = true;
   }
   return *this;
 }
@@ -90,15 +95,10 @@ JsonValue ResourceGatewaySummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("arn", m_arn);
+   payload.WithString("name", m_name);
 
-  }
-
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_idHasBeenSet)
@@ -107,19 +107,31 @@ JsonValue ResourceGatewaySummary::Jsonize() const
 
   }
 
-  if(m_ipAddressTypeHasBeenSet)
+  if(m_arnHasBeenSet)
   {
-   payload.WithString("ipAddressType", ResourceGatewayIpAddressTypeMapper::GetNameForResourceGatewayIpAddressType(m_ipAddressType));
+   payload.WithString("arn", m_arn);
+
   }
 
-  if(m_lastUpdatedAtHasBeenSet)
+  if(m_statusHasBeenSet)
   {
-   payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   payload.WithString("status", ResourceGatewayStatusMapper::GetNameForResourceGatewayStatus(m_status));
   }
 
-  if(m_nameHasBeenSet)
+  if(m_vpcIdentifierHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithString("vpcIdentifier", m_vpcIdentifier);
+
+  }
+
+  if(m_subnetIdsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
+   for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
+   {
+     subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
+   }
+   payload.WithArray("subnetIds", std::move(subnetIdsJsonList));
 
   }
 
@@ -134,26 +146,25 @@ JsonValue ResourceGatewaySummary::Jsonize() const
 
   }
 
-  if(m_statusHasBeenSet)
+  if(m_ipAddressTypeHasBeenSet)
   {
-   payload.WithString("status", ResourceGatewayStatusMapper::GetNameForResourceGatewayStatus(m_status));
+   payload.WithString("ipAddressType", ResourceGatewayIpAddressTypeMapper::GetNameForResourceGatewayIpAddressType(m_ipAddressType));
   }
 
-  if(m_subnetIdsHasBeenSet)
+  if(m_ipv4AddressesPerEniHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
-   for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
-   {
-     subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
-   }
-   payload.WithArray("subnetIds", std::move(subnetIdsJsonList));
+   payload.WithInteger("ipv4AddressesPerEni", m_ipv4AddressesPerEni);
 
   }
 
-  if(m_vpcIdentifierHasBeenSet)
+  if(m_createdAtHasBeenSet)
   {
-   payload.WithString("vpcIdentifier", m_vpcIdentifier);
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
 
+  if(m_lastUpdatedAtHasBeenSet)
+  {
+   payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

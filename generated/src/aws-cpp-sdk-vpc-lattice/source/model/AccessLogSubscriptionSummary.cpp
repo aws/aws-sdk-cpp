@@ -25,45 +25,45 @@ AccessLogSubscriptionSummary::AccessLogSubscriptionSummary(JsonView jsonValue)
 
 AccessLogSubscriptionSummary& AccessLogSubscriptionSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("arn"))
-  {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("destinationArn"))
-  {
-    m_destinationArn = jsonValue.GetString("destinationArn");
-    m_destinationArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
+  if(jsonValue.ValueExists("arn"))
   {
-    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-    m_lastUpdatedAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("resourceArn"))
-  {
-    m_resourceArn = jsonValue.GetString("resourceArn");
-    m_resourceArnHasBeenSet = true;
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
     m_resourceIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("resourceArn"))
+  {
+    m_resourceArn = jsonValue.GetString("resourceArn");
+    m_resourceArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("destinationArn"))
+  {
+    m_destinationArn = jsonValue.GetString("destinationArn");
+    m_destinationArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("serviceNetworkLogType"))
   {
     m_serviceNetworkLogType = ServiceNetworkLogTypeMapper::GetServiceNetworkLogTypeForName(jsonValue.GetString("serviceNetworkLogType"));
     m_serviceNetworkLogTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lastUpdatedAt"))
+  {
+    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
+    m_lastUpdatedAtHasBeenSet = true;
   }
   return *this;
 }
@@ -72,37 +72,15 @@ JsonValue AccessLogSubscriptionSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
-  }
-
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_destinationArnHasBeenSet)
-  {
-   payload.WithString("destinationArn", m_destinationArn);
-
-  }
-
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
 
   }
 
-  if(m_lastUpdatedAtHasBeenSet)
+  if(m_arnHasBeenSet)
   {
-   payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_resourceArnHasBeenSet)
-  {
-   payload.WithString("resourceArn", m_resourceArn);
+   payload.WithString("arn", m_arn);
 
   }
 
@@ -112,9 +90,31 @@ JsonValue AccessLogSubscriptionSummary::Jsonize() const
 
   }
 
+  if(m_resourceArnHasBeenSet)
+  {
+   payload.WithString("resourceArn", m_resourceArn);
+
+  }
+
+  if(m_destinationArnHasBeenSet)
+  {
+   payload.WithString("destinationArn", m_destinationArn);
+
+  }
+
   if(m_serviceNetworkLogTypeHasBeenSet)
   {
    payload.WithString("serviceNetworkLogType", ServiceNetworkLogTypeMapper::GetNameForServiceNetworkLogType(m_serviceNetworkLogType));
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_lastUpdatedAtHasBeenSet)
+  {
+   payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

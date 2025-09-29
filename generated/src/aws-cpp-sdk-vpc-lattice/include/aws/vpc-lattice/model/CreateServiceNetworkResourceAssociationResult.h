@@ -35,6 +35,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the association.</p>
+     */
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CreateServiceNetworkResourceAssociationResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the association.</p>
      */
     inline const Aws::String& GetArn() const { return m_arn; }
@@ -42,6 +53,15 @@ namespace Model
     void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
     template<typename ArnT = Aws::String>
     CreateServiceNetworkResourceAssociationResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status of the association.</p>
+     */
+    inline ServiceNetworkResourceAssociationStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ServiceNetworkResourceAssociationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreateServiceNetworkResourceAssociationResult& WithStatus(ServiceNetworkResourceAssociationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -56,26 +76,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The ID of the association.</p>
-     */
-    inline const Aws::String& GetId() const { return m_id; }
-    template<typename IdT = Aws::String>
-    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
-    template<typename IdT = Aws::String>
-    CreateServiceNetworkResourceAssociationResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The status of the association.</p>
-     */
-    inline ServiceNetworkResourceAssociationStatus GetStatus() const { return m_status; }
-    inline void SetStatus(ServiceNetworkResourceAssociationStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline CreateServiceNetworkResourceAssociationResult& WithStatus(ServiceNetworkResourceAssociationStatus value) { SetStatus(value); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -85,17 +85,17 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_arn;
-    bool m_arnHasBeenSet = false;
-
-    Aws::String m_createdBy;
-    bool m_createdByHasBeenSet = false;
-
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
+
     ServiceNetworkResourceAssociationStatus m_status{ServiceNetworkResourceAssociationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    Aws::String m_createdBy;
+    bool m_createdByHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

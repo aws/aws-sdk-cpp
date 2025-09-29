@@ -16,22 +16,15 @@ Aws::String CreateResourceConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_allowAssociationToShareableServiceNetworkHasBeenSet)
-  {
-   payload.WithBool("allowAssociationToShareableServiceNetwork", m_allowAssociationToShareableServiceNetwork);
-
-  }
-
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", ResourceConfigurationTypeMapper::GetNameForResourceConfigurationType(m_type));
   }
 
   if(m_portRangesHasBeenSet)
@@ -50,9 +43,9 @@ Aws::String CreateResourceConfigurationRequest::SerializePayload() const
    payload.WithString("protocol", ProtocolTypeMapper::GetNameForProtocolType(m_protocol));
   }
 
-  if(m_resourceConfigurationDefinitionHasBeenSet)
+  if(m_resourceGatewayIdentifierHasBeenSet)
   {
-   payload.WithObject("resourceConfigurationDefinition", m_resourceConfigurationDefinition.Jsonize());
+   payload.WithString("resourceGatewayIdentifier", m_resourceGatewayIdentifier);
 
   }
 
@@ -62,9 +55,21 @@ Aws::String CreateResourceConfigurationRequest::SerializePayload() const
 
   }
 
-  if(m_resourceGatewayIdentifierHasBeenSet)
+  if(m_resourceConfigurationDefinitionHasBeenSet)
   {
-   payload.WithString("resourceGatewayIdentifier", m_resourceGatewayIdentifier);
+   payload.WithObject("resourceConfigurationDefinition", m_resourceConfigurationDefinition.Jsonize());
+
+  }
+
+  if(m_allowAssociationToShareableServiceNetworkHasBeenSet)
+  {
+   payload.WithBool("allowAssociationToShareableServiceNetwork", m_allowAssociationToShareableServiceNetwork);
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 
@@ -77,11 +82,6 @@ Aws::String CreateResourceConfigurationRequest::SerializePayload() const
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", ResourceConfigurationTypeMapper::GetNameForResourceConfigurationType(m_type));
   }
 
   return payload.View().WriteReadable();

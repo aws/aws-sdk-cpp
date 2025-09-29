@@ -30,11 +30,6 @@ CreateListenerResult& CreateListenerResult::operator =(const Aws::AmazonWebServi
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("defaultAction"))
-  {
-    m_defaultAction = jsonValue.GetObject("defaultAction");
-    m_defaultActionHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -45,15 +40,15 @@ CreateListenerResult& CreateListenerResult::operator =(const Aws::AmazonWebServi
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("port"))
-  {
-    m_port = jsonValue.GetInteger("port");
-    m_portHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("protocol"))
   {
     m_protocol = ListenerProtocolMapper::GetListenerProtocolForName(jsonValue.GetString("protocol"));
     m_protocolHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("port"))
+  {
+    m_port = jsonValue.GetInteger("port");
+    m_portHasBeenSet = true;
   }
   if(jsonValue.ValueExists("serviceArn"))
   {
@@ -64,6 +59,11 @@ CreateListenerResult& CreateListenerResult::operator =(const Aws::AmazonWebServi
   {
     m_serviceId = jsonValue.GetString("serviceId");
     m_serviceIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("defaultAction"))
+  {
+    m_defaultAction = jsonValue.GetObject("defaultAction");
+    m_defaultActionHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

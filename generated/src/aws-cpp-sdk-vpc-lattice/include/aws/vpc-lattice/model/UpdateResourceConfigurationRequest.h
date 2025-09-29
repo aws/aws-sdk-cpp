@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/vpc-lattice/VPCLatticeRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/vpc-lattice/model/ResourceConfigurationDefinition.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/vpc-lattice/model/ResourceConfigurationDefinition.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -36,6 +36,35 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the resource configuration.</p>
+     */
+    inline const Aws::String& GetResourceConfigurationIdentifier() const { return m_resourceConfigurationIdentifier; }
+    inline bool ResourceConfigurationIdentifierHasBeenSet() const { return m_resourceConfigurationIdentifierHasBeenSet; }
+    template<typename ResourceConfigurationIdentifierT = Aws::String>
+    void SetResourceConfigurationIdentifier(ResourceConfigurationIdentifierT&& value) { m_resourceConfigurationIdentifierHasBeenSet = true; m_resourceConfigurationIdentifier = std::forward<ResourceConfigurationIdentifierT>(value); }
+    template<typename ResourceConfigurationIdentifierT = Aws::String>
+    UpdateResourceConfigurationRequest& WithResourceConfigurationIdentifier(ResourceConfigurationIdentifierT&& value) { SetResourceConfigurationIdentifier(std::forward<ResourceConfigurationIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Identifies the resource configuration in one of the following ways:</p> <ul>
+     * <li> <p> <b>Amazon Resource Name (ARN)</b> - Supported resource-types that are
+     * provisioned by Amazon Web Services services, such as RDS databases, can be
+     * identified by their ARN.</p> </li> <li> <p> <b>Domain name</b> - Any domain name
+     * that is publicly resolvable.</p> </li> <li> <p> <b>IP address</b> - For IPv4 and
+     * IPv6, only IP addresses in the VPC are supported.</p> </li> </ul>
+     */
+    inline const ResourceConfigurationDefinition& GetResourceConfigurationDefinition() const { return m_resourceConfigurationDefinition; }
+    inline bool ResourceConfigurationDefinitionHasBeenSet() const { return m_resourceConfigurationDefinitionHasBeenSet; }
+    template<typename ResourceConfigurationDefinitionT = ResourceConfigurationDefinition>
+    void SetResourceConfigurationDefinition(ResourceConfigurationDefinitionT&& value) { m_resourceConfigurationDefinitionHasBeenSet = true; m_resourceConfigurationDefinition = std::forward<ResourceConfigurationDefinitionT>(value); }
+    template<typename ResourceConfigurationDefinitionT = ResourceConfigurationDefinition>
+    UpdateResourceConfigurationRequest& WithResourceConfigurationDefinition(ResourceConfigurationDefinitionT&& value) { SetResourceConfigurationDefinition(std::forward<ResourceConfigurationDefinitionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Indicates whether to add the resource configuration to service networks that
      * are shared with other accounts.</p>
      */
@@ -60,43 +89,19 @@ namespace Model
     template<typename PortRangesT = Aws::String>
     UpdateResourceConfigurationRequest& AddPortRanges(PortRangesT&& value) { m_portRangesHasBeenSet = true; m_portRanges.emplace_back(std::forward<PortRangesT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The resource configuration.</p>
-     */
-    inline const ResourceConfigurationDefinition& GetResourceConfigurationDefinition() const { return m_resourceConfigurationDefinition; }
-    inline bool ResourceConfigurationDefinitionHasBeenSet() const { return m_resourceConfigurationDefinitionHasBeenSet; }
-    template<typename ResourceConfigurationDefinitionT = ResourceConfigurationDefinition>
-    void SetResourceConfigurationDefinition(ResourceConfigurationDefinitionT&& value) { m_resourceConfigurationDefinitionHasBeenSet = true; m_resourceConfigurationDefinition = std::forward<ResourceConfigurationDefinitionT>(value); }
-    template<typename ResourceConfigurationDefinitionT = ResourceConfigurationDefinition>
-    UpdateResourceConfigurationRequest& WithResourceConfigurationDefinition(ResourceConfigurationDefinitionT&& value) { SetResourceConfigurationDefinition(std::forward<ResourceConfigurationDefinitionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the resource configuration.</p>
-     */
-    inline const Aws::String& GetResourceConfigurationIdentifier() const { return m_resourceConfigurationIdentifier; }
-    inline bool ResourceConfigurationIdentifierHasBeenSet() const { return m_resourceConfigurationIdentifierHasBeenSet; }
-    template<typename ResourceConfigurationIdentifierT = Aws::String>
-    void SetResourceConfigurationIdentifier(ResourceConfigurationIdentifierT&& value) { m_resourceConfigurationIdentifierHasBeenSet = true; m_resourceConfigurationIdentifier = std::forward<ResourceConfigurationIdentifierT>(value); }
-    template<typename ResourceConfigurationIdentifierT = Aws::String>
-    UpdateResourceConfigurationRequest& WithResourceConfigurationIdentifier(ResourceConfigurationIdentifierT&& value) { SetResourceConfigurationIdentifier(std::forward<ResourceConfigurationIdentifierT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_resourceConfigurationIdentifier;
+    bool m_resourceConfigurationIdentifierHasBeenSet = false;
+
+    ResourceConfigurationDefinition m_resourceConfigurationDefinition;
+    bool m_resourceConfigurationDefinitionHasBeenSet = false;
 
     bool m_allowAssociationToShareableServiceNetwork{false};
     bool m_allowAssociationToShareableServiceNetworkHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_portRanges;
     bool m_portRangesHasBeenSet = false;
-
-    ResourceConfigurationDefinition m_resourceConfigurationDefinition;
-    bool m_resourceConfigurationDefinitionHasBeenSet = false;
-
-    Aws::String m_resourceConfigurationIdentifier;
-    bool m_resourceConfigurationIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

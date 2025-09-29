@@ -23,20 +23,6 @@ Aws::String ListServiceNetworkVpcAssociationsRequest::SerializePayload() const
 void ListServiceNetworkVpcAssociationsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
-    if(m_maxResultsHasBeenSet)
-    {
-      ss << m_maxResults;
-      uri.AddQueryStringParameter("maxResults", ss.str());
-      ss.str("");
-    }
-
-    if(m_nextTokenHasBeenSet)
-    {
-      ss << m_nextToken;
-      uri.AddQueryStringParameter("nextToken", ss.str());
-      ss.str("");
-    }
-
     if(m_serviceNetworkIdentifierHasBeenSet)
     {
       ss << m_serviceNetworkIdentifier;
@@ -48,6 +34,20 @@ void ListServiceNetworkVpcAssociationsRequest::AddQueryStringParameters(URI& uri
     {
       ss << m_vpcIdentifier;
       uri.AddQueryStringParameter("vpcIdentifier", ss.str());
+      ss.str("");
+    }
+
+    if(m_maxResultsHasBeenSet)
+    {
+      ss << m_maxResults;
+      uri.AddQueryStringParameter("maxResults", ss.str());
+      ss.str("");
+    }
+
+    if(m_nextTokenHasBeenSet)
+    {
+      ss << m_nextToken;
+      uri.AddQueryStringParameter("nextToken", ss.str());
       ss.str("");
     }
 

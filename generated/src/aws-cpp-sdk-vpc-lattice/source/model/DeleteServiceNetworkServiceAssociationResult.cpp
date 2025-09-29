@@ -25,11 +25,6 @@ DeleteServiceNetworkServiceAssociationResult::DeleteServiceNetworkServiceAssocia
 DeleteServiceNetworkServiceAssociationResult& DeleteServiceNetworkServiceAssociationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("arn"))
-  {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -39,6 +34,11 @@ DeleteServiceNetworkServiceAssociationResult& DeleteServiceNetworkServiceAssocia
   {
     m_status = ServiceNetworkServiceAssociationStatusMapper::GetServiceNetworkServiceAssociationStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

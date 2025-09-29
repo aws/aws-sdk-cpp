@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/vpc-lattice/model/DnsEntry.h>
 #include <aws/vpc-lattice/model/ServiceNetworkServiceAssociationStatus.h>
+#include <aws/vpc-lattice/model/DnsEntry.h>
 #include <utility>
 
 namespace Aws
@@ -33,6 +33,26 @@ namespace Model
     AWS_VPCLATTICE_API CreateServiceNetworkServiceAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VPCLATTICE_API CreateServiceNetworkServiceAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+
+    ///@{
+    /**
+     * <p>The ID of the association.</p>
+     */
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CreateServiceNetworkServiceAssociationResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The association status.</p>
+     */
+    inline ServiceNetworkServiceAssociationStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ServiceNetworkServiceAssociationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreateServiceNetworkServiceAssociationResult& WithStatus(ServiceNetworkServiceAssociationStatus value) { SetStatus(value); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -79,26 +99,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The ID of the association.</p>
-     */
-    inline const Aws::String& GetId() const { return m_id; }
-    template<typename IdT = Aws::String>
-    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
-    template<typename IdT = Aws::String>
-    CreateServiceNetworkServiceAssociationResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The association status.</p>
-     */
-    inline ServiceNetworkServiceAssociationStatus GetStatus() const { return m_status; }
-    inline void SetStatus(ServiceNetworkServiceAssociationStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline CreateServiceNetworkServiceAssociationResult& WithStatus(ServiceNetworkServiceAssociationStatus value) { SetStatus(value); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -107,6 +107,12 @@ namespace Model
     CreateServiceNetworkServiceAssociationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
+
+    Aws::String m_id;
+    bool m_idHasBeenSet = false;
+
+    ServiceNetworkServiceAssociationStatus m_status{ServiceNetworkServiceAssociationStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
@@ -119,12 +125,6 @@ namespace Model
 
     DnsEntry m_dnsEntry;
     bool m_dnsEntryHasBeenSet = false;
-
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
-
-    ServiceNetworkServiceAssociationStatus m_status{ServiceNetworkServiceAssociationStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -40,28 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results to return.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListServiceNetworkVpcAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A pagination token for the next page of results.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListServiceNetworkVpcAssociationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID or ARN of the service network.</p>
      */
     inline const Aws::String& GetServiceNetworkIdentifier() const { return m_serviceNetworkIdentifier; }
@@ -83,19 +61,41 @@ namespace Model
     template<typename VpcIdentifierT = Aws::String>
     ListServiceNetworkVpcAssociationsRequest& WithVpcIdentifier(VpcIdentifierT&& value) { SetVpcIdentifier(std::forward<VpcIdentifierT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of results to return.</p>
+     */
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListServiceNetworkVpcAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A pagination token for the next page of results.</p>
+     */
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListServiceNetworkVpcAssociationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
+    ///@}
   private:
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_serviceNetworkIdentifier;
     bool m_serviceNetworkIdentifierHasBeenSet = false;
 
     Aws::String m_vpcIdentifier;
     bool m_vpcIdentifierHasBeenSet = false;
+
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -37,17 +37,17 @@ void ListTargetGroupsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
-    if(m_targetGroupTypeHasBeenSet)
-    {
-      ss << TargetGroupTypeMapper::GetNameForTargetGroupType(m_targetGroupType);
-      uri.AddQueryStringParameter("targetGroupType", ss.str());
-      ss.str("");
-    }
-
     if(m_vpcIdentifierHasBeenSet)
     {
       ss << m_vpcIdentifier;
       uri.AddQueryStringParameter("vpcIdentifier", ss.str());
+      ss.str("");
+    }
+
+    if(m_targetGroupTypeHasBeenSet)
+    {
+      ss << TargetGroupTypeMapper::GetNameForTargetGroupType(m_targetGroupType);
+      uri.AddQueryStringParameter("targetGroupType", ss.str());
       ss.str("");
     }
 

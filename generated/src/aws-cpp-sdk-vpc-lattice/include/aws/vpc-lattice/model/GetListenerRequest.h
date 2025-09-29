@@ -34,18 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID or ARN of the listener.</p>
-     */
-    inline const Aws::String& GetListenerIdentifier() const { return m_listenerIdentifier; }
-    inline bool ListenerIdentifierHasBeenSet() const { return m_listenerIdentifierHasBeenSet; }
-    template<typename ListenerIdentifierT = Aws::String>
-    void SetListenerIdentifier(ListenerIdentifierT&& value) { m_listenerIdentifierHasBeenSet = true; m_listenerIdentifier = std::forward<ListenerIdentifierT>(value); }
-    template<typename ListenerIdentifierT = Aws::String>
-    GetListenerRequest& WithListenerIdentifier(ListenerIdentifierT&& value) { SetListenerIdentifier(std::forward<ListenerIdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID or ARN of the service.</p>
      */
     inline const Aws::String& GetServiceIdentifier() const { return m_serviceIdentifier; }
@@ -55,13 +43,25 @@ namespace Model
     template<typename ServiceIdentifierT = Aws::String>
     GetListenerRequest& WithServiceIdentifier(ServiceIdentifierT&& value) { SetServiceIdentifier(std::forward<ServiceIdentifierT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_listenerIdentifier;
-    bool m_listenerIdentifierHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The ID or ARN of the listener.</p>
+     */
+    inline const Aws::String& GetListenerIdentifier() const { return m_listenerIdentifier; }
+    inline bool ListenerIdentifierHasBeenSet() const { return m_listenerIdentifierHasBeenSet; }
+    template<typename ListenerIdentifierT = Aws::String>
+    void SetListenerIdentifier(ListenerIdentifierT&& value) { m_listenerIdentifierHasBeenSet = true; m_listenerIdentifier = std::forward<ListenerIdentifierT>(value); }
+    template<typename ListenerIdentifierT = Aws::String>
+    GetListenerRequest& WithListenerIdentifier(ListenerIdentifierT&& value) { SetListenerIdentifier(std::forward<ListenerIdentifierT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_serviceIdentifier;
     bool m_serviceIdentifierHasBeenSet = false;
+
+    Aws::String m_listenerIdentifier;
+    bool m_listenerIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

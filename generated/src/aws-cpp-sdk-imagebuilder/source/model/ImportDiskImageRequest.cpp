@@ -64,6 +64,12 @@ Aws::String ImportDiskImageRequest::SerializePayload() const
 
   }
 
+  if(m_loggingConfigurationHasBeenSet)
+  {
+   payload.WithObject("loggingConfiguration", m_loggingConfiguration.Jsonize());
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;

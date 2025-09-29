@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum items to return in a request.</p>
+     * <p>Specify the maximum number of items to return in a request.</p>
      */
     inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

@@ -25,16 +25,6 @@ GetAuthPolicyResult::GetAuthPolicyResult(const Aws::AmazonWebServiceResult<JsonV
 GetAuthPolicyResult& GetAuthPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
-    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-    m_lastUpdatedAtHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("policy"))
   {
     m_policy = jsonValue.GetString("policy");
@@ -44,6 +34,16 @@ GetAuthPolicyResult& GetAuthPolicyResult::operator =(const Aws::AmazonWebService
   {
     m_state = AuthPolicyStateMapper::GetAuthPolicyStateForName(jsonValue.GetString("state"));
     m_stateHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lastUpdatedAt"))
+  {
+    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
+    m_lastUpdatedAtHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

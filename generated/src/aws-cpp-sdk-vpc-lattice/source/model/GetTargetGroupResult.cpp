@@ -25,10 +25,25 @@ GetTargetGroupResult::GetTargetGroupResult(const Aws::AmazonWebServiceResult<Jso
 GetTargetGroupResult& GetTargetGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = TargetGroupTypeMapper::GetTargetGroupTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("config"))
   {
@@ -40,30 +55,15 @@ GetTargetGroupResult& GetTargetGroupResult::operator =(const Aws::AmazonWebServi
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("failureCode"))
-  {
-    m_failureCode = jsonValue.GetString("failureCode");
-    m_failureCodeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("failureMessage"))
-  {
-    m_failureMessage = jsonValue.GetString("failureMessage");
-    m_failureMessageHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("id"))
-  {
-    m_id = jsonValue.GetString("id");
-    m_idHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("status"))
   {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
+    m_status = TargetGroupStatusMapper::GetTargetGroupStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
   }
   if(jsonValue.ValueExists("serviceArns"))
   {
@@ -74,15 +74,15 @@ GetTargetGroupResult& GetTargetGroupResult::operator =(const Aws::AmazonWebServi
     }
     m_serviceArnsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("failureMessage"))
   {
-    m_status = TargetGroupStatusMapper::GetTargetGroupStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
+    m_failureMessage = jsonValue.GetString("failureMessage");
+    m_failureMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("failureCode"))
   {
-    m_type = TargetGroupTypeMapper::GetTargetGroupTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+    m_failureCode = jsonValue.GetString("failureCode");
+    m_failureCodeHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

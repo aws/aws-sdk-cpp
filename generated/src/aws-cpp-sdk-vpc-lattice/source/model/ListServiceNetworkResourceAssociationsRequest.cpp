@@ -23,6 +23,20 @@ Aws::String ListServiceNetworkResourceAssociationsRequest::SerializePayload() co
 void ListServiceNetworkResourceAssociationsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_serviceNetworkIdentifierHasBeenSet)
+    {
+      ss << m_serviceNetworkIdentifier;
+      uri.AddQueryStringParameter("serviceNetworkIdentifier", ss.str());
+      ss.str("");
+    }
+
+    if(m_resourceConfigurationIdentifierHasBeenSet)
+    {
+      ss << m_resourceConfigurationIdentifier;
+      uri.AddQueryStringParameter("resourceConfigurationIdentifier", ss.str());
+      ss.str("");
+    }
+
     if(m_maxResultsHasBeenSet)
     {
       ss << m_maxResults;
@@ -37,17 +51,10 @@ void ListServiceNetworkResourceAssociationsRequest::AddQueryStringParameters(URI
       ss.str("");
     }
 
-    if(m_resourceConfigurationIdentifierHasBeenSet)
+    if(m_includeChildrenHasBeenSet)
     {
-      ss << m_resourceConfigurationIdentifier;
-      uri.AddQueryStringParameter("resourceConfigurationIdentifier", ss.str());
-      ss.str("");
-    }
-
-    if(m_serviceNetworkIdentifierHasBeenSet)
-    {
-      ss << m_serviceNetworkIdentifier;
-      uri.AddQueryStringParameter("serviceNetworkIdentifier", ss.str());
+      ss << m_includeChildren;
+      uri.AddQueryStringParameter("includeChildren", ss.str());
       ss.str("");
     }
 

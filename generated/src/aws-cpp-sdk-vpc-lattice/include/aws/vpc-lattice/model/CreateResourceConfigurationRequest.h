@@ -7,11 +7,11 @@
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/vpc-lattice/VPCLatticeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/vpc-lattice/model/ResourceConfigurationType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/vpc-lattice/model/ProtocolType.h>
 #include <aws/vpc-lattice/model/ResourceConfigurationDefinition.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/vpc-lattice/model/ResourceConfigurationType.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -40,32 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>(SINGLE, GROUP, ARN) Specifies whether the resource configuration can be
-     * associated with a sharable service network. The default is false.</p>
-     */
-    inline bool GetAllowAssociationToShareableServiceNetwork() const { return m_allowAssociationToShareableServiceNetwork; }
-    inline bool AllowAssociationToShareableServiceNetworkHasBeenSet() const { return m_allowAssociationToShareableServiceNetworkHasBeenSet; }
-    inline void SetAllowAssociationToShareableServiceNetwork(bool value) { m_allowAssociationToShareableServiceNetworkHasBeenSet = true; m_allowAssociationToShareableServiceNetwork = value; }
-    inline CreateResourceConfigurationRequest& WithAllowAssociationToShareableServiceNetwork(bool value) { SetAllowAssociationToShareableServiceNetwork(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If you retry a request that completed successfully
-     * using the same client token and parameters, the retry succeeds without
-     * performing any actions. If the parameters aren't identical, the retry fails.</p>
-     */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    CreateResourceConfigurationRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the resource configuration. The name must be unique within the
      * account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a
      * hyphen as the first or last character, or immediately after another hyphen.</p>
@@ -76,6 +50,22 @@ namespace Model
     void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
     template<typename NameT = Aws::String>
     CreateResourceConfigurationRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of resource configuration. A resource configuration can be one of
+     * the following types:</p> <ul> <li> <p> <b>SINGLE</b> - A single resource.</p>
+     * </li> <li> <p> <b>GROUP</b> - A group of resources. You must create a group
+     * resource configuration before you create a child resource configuration.</p>
+     * </li> <li> <p> <b>CHILD</b> - A single resource that is part of a group resource
+     * configuration.</p> </li> <li> <p> <b>ARN</b> - An Amazon Web Services
+     * resource.</p> </li> </ul>
+     */
+    inline ResourceConfigurationType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(ResourceConfigurationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CreateResourceConfigurationRequest& WithType(ResourceConfigurationType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -106,20 +96,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>(SINGLE, CHILD, ARN) The resource configuration.</p>
+     * <p>(SINGLE, GROUP, ARN) The ID or ARN of the resource gateway used to connect to
+     * the resource configuration. For a child resource configuration, this value is
+     * inherited from the parent resource configuration.</p>
      */
-    inline const ResourceConfigurationDefinition& GetResourceConfigurationDefinition() const { return m_resourceConfigurationDefinition; }
-    inline bool ResourceConfigurationDefinitionHasBeenSet() const { return m_resourceConfigurationDefinitionHasBeenSet; }
-    template<typename ResourceConfigurationDefinitionT = ResourceConfigurationDefinition>
-    void SetResourceConfigurationDefinition(ResourceConfigurationDefinitionT&& value) { m_resourceConfigurationDefinitionHasBeenSet = true; m_resourceConfigurationDefinition = std::forward<ResourceConfigurationDefinitionT>(value); }
-    template<typename ResourceConfigurationDefinitionT = ResourceConfigurationDefinition>
-    CreateResourceConfigurationRequest& WithResourceConfigurationDefinition(ResourceConfigurationDefinitionT&& value) { SetResourceConfigurationDefinition(std::forward<ResourceConfigurationDefinitionT>(value)); return *this;}
+    inline const Aws::String& GetResourceGatewayIdentifier() const { return m_resourceGatewayIdentifier; }
+    inline bool ResourceGatewayIdentifierHasBeenSet() const { return m_resourceGatewayIdentifierHasBeenSet; }
+    template<typename ResourceGatewayIdentifierT = Aws::String>
+    void SetResourceGatewayIdentifier(ResourceGatewayIdentifierT&& value) { m_resourceGatewayIdentifierHasBeenSet = true; m_resourceGatewayIdentifier = std::forward<ResourceGatewayIdentifierT>(value); }
+    template<typename ResourceGatewayIdentifierT = Aws::String>
+    CreateResourceConfigurationRequest& WithResourceGatewayIdentifier(ResourceGatewayIdentifierT&& value) { SetResourceGatewayIdentifier(std::forward<ResourceGatewayIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>(CHILD) The ID or ARN of the parent resource configuration (type is
-     * <code>GROUP</code>). This is used to associate a child resource configuration
+     * <p>(CHILD) The ID or ARN of the parent resource configuration of type
+     * <code>GROUP</code>. This is used to associate a child resource configuration
      * with a group resource configuration.</p>
      */
     inline const Aws::String& GetResourceConfigurationGroupIdentifier() const { return m_resourceConfigurationGroupIdentifier; }
@@ -132,16 +124,45 @@ namespace Model
 
     ///@{
     /**
-     * <p>(SINGLE, GROUP, ARN) The ID or ARN of the resource gateway used to connect to
-     * the resource configuration. For a child resource configuration, this value is
-     * inherited from the parent resource configuration.</p>
+     * <p>Identifies the resource configuration in one of the following ways:</p> <ul>
+     * <li> <p> <b>Amazon Resource Name (ARN)</b> - Supported resource-types that are
+     * provisioned by Amazon Web Services services, such as RDS databases, can be
+     * identified by their ARN.</p> </li> <li> <p> <b>Domain name</b> - Any domain name
+     * that is publicly resolvable.</p> </li> <li> <p> <b>IP address</b> - For IPv4 and
+     * IPv6, only IP addresses in the VPC are supported.</p> </li> </ul>
      */
-    inline const Aws::String& GetResourceGatewayIdentifier() const { return m_resourceGatewayIdentifier; }
-    inline bool ResourceGatewayIdentifierHasBeenSet() const { return m_resourceGatewayIdentifierHasBeenSet; }
-    template<typename ResourceGatewayIdentifierT = Aws::String>
-    void SetResourceGatewayIdentifier(ResourceGatewayIdentifierT&& value) { m_resourceGatewayIdentifierHasBeenSet = true; m_resourceGatewayIdentifier = std::forward<ResourceGatewayIdentifierT>(value); }
-    template<typename ResourceGatewayIdentifierT = Aws::String>
-    CreateResourceConfigurationRequest& WithResourceGatewayIdentifier(ResourceGatewayIdentifierT&& value) { SetResourceGatewayIdentifier(std::forward<ResourceGatewayIdentifierT>(value)); return *this;}
+    inline const ResourceConfigurationDefinition& GetResourceConfigurationDefinition() const { return m_resourceConfigurationDefinition; }
+    inline bool ResourceConfigurationDefinitionHasBeenSet() const { return m_resourceConfigurationDefinitionHasBeenSet; }
+    template<typename ResourceConfigurationDefinitionT = ResourceConfigurationDefinition>
+    void SetResourceConfigurationDefinition(ResourceConfigurationDefinitionT&& value) { m_resourceConfigurationDefinitionHasBeenSet = true; m_resourceConfigurationDefinition = std::forward<ResourceConfigurationDefinitionT>(value); }
+    template<typename ResourceConfigurationDefinitionT = ResourceConfigurationDefinition>
+    CreateResourceConfigurationRequest& WithResourceConfigurationDefinition(ResourceConfigurationDefinitionT&& value) { SetResourceConfigurationDefinition(std::forward<ResourceConfigurationDefinitionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>(SINGLE, GROUP, ARN) Specifies whether the resource configuration can be
+     * associated with a sharable service network. The default is false.</p>
+     */
+    inline bool GetAllowAssociationToShareableServiceNetwork() const { return m_allowAssociationToShareableServiceNetwork; }
+    inline bool AllowAssociationToShareableServiceNetworkHasBeenSet() const { return m_allowAssociationToShareableServiceNetworkHasBeenSet; }
+    inline void SetAllowAssociationToShareableServiceNetwork(bool value) { m_allowAssociationToShareableServiceNetworkHasBeenSet = true; m_allowAssociationToShareableServiceNetwork = value; }
+    inline CreateResourceConfigurationRequest& WithAllowAssociationToShareableServiceNetwork(bool value) { SetAllowAssociationToShareableServiceNetwork(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If you retry a request that completed successfully
+     * using the same client token and parameters, the retry succeeds without
+     * performing any actions. If the parameters aren't identical, the retry fails.</p>
+     */
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateResourceConfigurationRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -159,31 +180,13 @@ namespace Model
       m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
     }
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of resource configuration.</p> <ul> <li> <p> <code>SINGLE</code> - A
-     * single resource.</p> </li> <li> <p> <code>GROUP</code> - A group of resources.
-     * You must create a group resource configuration before you create a child
-     * resource configuration.</p> </li> <li> <p> <code>CHILD</code> - A single
-     * resource that is part of a group resource configuration.</p> </li> <li> <p>
-     * <code>ARN</code> - An Amazon Web Services resource.</p> </li> </ul>
-     */
-    inline ResourceConfigurationType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(ResourceConfigurationType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline CreateResourceConfigurationRequest& WithType(ResourceConfigurationType value) { SetType(value); return *this;}
-    ///@}
   private:
-
-    bool m_allowAssociationToShareableServiceNetwork{false};
-    bool m_allowAssociationToShareableServiceNetworkHasBeenSet = false;
-
-    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-    bool m_clientTokenHasBeenSet = true;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    ResourceConfigurationType m_type{ResourceConfigurationType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_portRanges;
     bool m_portRangesHasBeenSet = false;
@@ -191,20 +194,23 @@ namespace Model
     ProtocolType m_protocol{ProtocolType::NOT_SET};
     bool m_protocolHasBeenSet = false;
 
-    ResourceConfigurationDefinition m_resourceConfigurationDefinition;
-    bool m_resourceConfigurationDefinitionHasBeenSet = false;
+    Aws::String m_resourceGatewayIdentifier;
+    bool m_resourceGatewayIdentifierHasBeenSet = false;
 
     Aws::String m_resourceConfigurationGroupIdentifier;
     bool m_resourceConfigurationGroupIdentifierHasBeenSet = false;
 
-    Aws::String m_resourceGatewayIdentifier;
-    bool m_resourceGatewayIdentifierHasBeenSet = false;
+    ResourceConfigurationDefinition m_resourceConfigurationDefinition;
+    bool m_resourceConfigurationDefinitionHasBeenSet = false;
+
+    bool m_allowAssociationToShareableServiceNetwork{false};
+    bool m_allowAssociationToShareableServiceNetworkHasBeenSet = false;
+
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
-
-    ResourceConfigurationType m_type{ResourceConfigurationType::NOT_SET};
-    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/vpc-lattice/model/AuthType.h>
 #include <aws/vpc-lattice/model/SharingConfig.h>
+#include <aws/vpc-lattice/model/AuthType.h>
 #include <utility>
 
 namespace Aws
@@ -36,26 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the service network.</p>
-     */
-    inline const Aws::String& GetArn() const { return m_arn; }
-    template<typename ArnT = Aws::String>
-    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
-    template<typename ArnT = Aws::String>
-    CreateServiceNetworkResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The type of IAM policy.</p>
-     */
-    inline AuthType GetAuthType() const { return m_authType; }
-    inline void SetAuthType(AuthType value) { m_authTypeHasBeenSet = true; m_authType = value; }
-    inline CreateServiceNetworkResult& WithAuthType(AuthType value) { SetAuthType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID of the service network.</p>
      */
     inline const Aws::String& GetId() const { return m_id; }
@@ -78,6 +58,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) of the service network.</p>
+     */
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CreateServiceNetworkResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies if the service network is enabled for sharing.</p>
      */
     inline const SharingConfig& GetSharingConfig() const { return m_sharingConfig; }
@@ -85,6 +76,15 @@ namespace Model
     void SetSharingConfig(SharingConfigT&& value) { m_sharingConfigHasBeenSet = true; m_sharingConfig = std::forward<SharingConfigT>(value); }
     template<typename SharingConfigT = SharingConfig>
     CreateServiceNetworkResult& WithSharingConfig(SharingConfigT&& value) { SetSharingConfig(std::forward<SharingConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of IAM policy.</p>
+     */
+    inline AuthType GetAuthType() const { return m_authType; }
+    inline void SetAuthType(AuthType value) { m_authTypeHasBeenSet = true; m_authType = value; }
+    inline CreateServiceNetworkResult& WithAuthType(AuthType value) { SetAuthType(value); return *this;}
     ///@}
 
     ///@{
@@ -97,20 +97,20 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_arn;
-    bool m_arnHasBeenSet = false;
-
-    AuthType m_authType{AuthType::NOT_SET};
-    bool m_authTypeHasBeenSet = false;
-
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
+
     SharingConfig m_sharingConfig;
     bool m_sharingConfigHasBeenSet = false;
+
+    AuthType m_authType{AuthType::NOT_SET};
+    bool m_authTypeHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

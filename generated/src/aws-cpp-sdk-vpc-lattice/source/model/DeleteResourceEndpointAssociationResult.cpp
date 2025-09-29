@@ -25,25 +25,25 @@ DeleteResourceEndpointAssociationResult::DeleteResourceEndpointAssociationResult
 DeleteResourceEndpointAssociationResult& DeleteResourceEndpointAssociationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("arn"))
-  {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceConfigurationArn"))
+  if(jsonValue.ValueExists("arn"))
   {
-    m_resourceConfigurationArn = jsonValue.GetString("resourceConfigurationArn");
-    m_resourceConfigurationArnHasBeenSet = true;
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("resourceConfigurationId"))
   {
     m_resourceConfigurationId = jsonValue.GetString("resourceConfigurationId");
     m_resourceConfigurationIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("resourceConfigurationArn"))
+  {
+    m_resourceConfigurationArn = jsonValue.GetString("resourceConfigurationArn");
+    m_resourceConfigurationArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("vpcEndpointId"))
   {

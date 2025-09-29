@@ -107,6 +107,15 @@ ImageRecipe& ImageRecipe::operator =(JsonView jsonValue)
     m_additionalInstanceConfiguration = jsonValue.GetObject("additionalInstanceConfiguration");
     m_additionalInstanceConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("amiTags"))
+  {
+    Aws::Map<Aws::String, JsonView> amiTagsJsonMap = jsonValue.GetObject("amiTags").GetAllObjects();
+    for(auto& amiTagsItem : amiTagsJsonMap)
+    {
+      m_amiTags[amiTagsItem.first] = amiTagsItem.second.AsString();
+    }
+    m_amiTagsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -208,6 +217,17 @@ JsonValue ImageRecipe::Jsonize() const
   if(m_additionalInstanceConfigurationHasBeenSet)
   {
    payload.WithObject("additionalInstanceConfiguration", m_additionalInstanceConfiguration.Jsonize());
+
+  }
+
+  if(m_amiTagsHasBeenSet)
+  {
+   JsonValue amiTagsJsonMap;
+   for(auto& amiTagsItem : m_amiTags)
+   {
+     amiTagsJsonMap.WithString(amiTagsItem.first, amiTagsItem.second);
+   }
+   payload.WithObject("amiTags", std::move(amiTagsJsonMap));
 
   }
 

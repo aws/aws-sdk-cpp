@@ -77,7 +77,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The tags for the association.</p>
+     * <p>A key-value pair to associate with a resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

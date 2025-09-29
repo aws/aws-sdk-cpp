@@ -16,15 +16,15 @@ Aws::String UpdateServiceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_authTypeHasBeenSet)
-  {
-   payload.WithString("authType", AuthTypeMapper::GetNameForAuthType(m_authType));
-  }
-
   if(m_certificateArnHasBeenSet)
   {
    payload.WithString("certificateArn", m_certificateArn);
 
+  }
+
+  if(m_authTypeHasBeenSet)
+  {
+   payload.WithString("authType", AuthTypeMapper::GetNameForAuthType(m_authType));
   }
 
   return payload.View().WriteReadable();

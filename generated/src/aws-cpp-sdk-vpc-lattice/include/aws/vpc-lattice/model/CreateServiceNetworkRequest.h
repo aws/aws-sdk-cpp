@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/vpc-lattice/VPCLatticeRequest.h>
-#include <aws/vpc-lattice/model/AuthType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/vpc-lattice/model/SharingConfig.h>
+#include <aws/vpc-lattice/model/AuthType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/vpc-lattice/model/SharingConfig.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -35,19 +35,6 @@ namespace Model
 
     AWS_VPCLATTICE_API Aws::String SerializePayload() const override;
 
-
-    ///@{
-    /**
-     * <p>The type of IAM policy.</p> <ul> <li> <p> <code>NONE</code>: The resource
-     * does not use an IAM policy. This is the default.</p> </li> <li> <p>
-     * <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used,
-     * auth is enabled and an auth policy is required.</p> </li> </ul>
-     */
-    inline AuthType GetAuthType() const { return m_authType; }
-    inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
-    inline void SetAuthType(AuthType value) { m_authTypeHasBeenSet = true; m_authType = value; }
-    inline CreateServiceNetworkRequest& WithAuthType(AuthType value) { SetAuthType(value); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -80,14 +67,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specify if the service network should be enabled for sharing.</p>
+     * <p>The type of IAM policy.</p> <ul> <li> <p> <code>NONE</code>: The resource
+     * does not use an IAM policy. This is the default.</p> </li> <li> <p>
+     * <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used,
+     * auth is enabled and an auth policy is required.</p> </li> </ul>
      */
-    inline const SharingConfig& GetSharingConfig() const { return m_sharingConfig; }
-    inline bool SharingConfigHasBeenSet() const { return m_sharingConfigHasBeenSet; }
-    template<typename SharingConfigT = SharingConfig>
-    void SetSharingConfig(SharingConfigT&& value) { m_sharingConfigHasBeenSet = true; m_sharingConfig = std::forward<SharingConfigT>(value); }
-    template<typename SharingConfigT = SharingConfig>
-    CreateServiceNetworkRequest& WithSharingConfig(SharingConfigT&& value) { SetSharingConfig(std::forward<SharingConfigT>(value)); return *this;}
+    inline AuthType GetAuthType() const { return m_authType; }
+    inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
+    inline void SetAuthType(AuthType value) { m_authTypeHasBeenSet = true; m_authType = value; }
+    inline CreateServiceNetworkRequest& WithAuthType(AuthType value) { SetAuthType(value); return *this;}
     ///@}
 
     ///@{
@@ -105,10 +93,19 @@ namespace Model
       m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
     }
     ///@}
-  private:
 
-    AuthType m_authType{AuthType::NOT_SET};
-    bool m_authTypeHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Specify if the service network should be enabled for sharing.</p>
+     */
+    inline const SharingConfig& GetSharingConfig() const { return m_sharingConfig; }
+    inline bool SharingConfigHasBeenSet() const { return m_sharingConfigHasBeenSet; }
+    template<typename SharingConfigT = SharingConfig>
+    void SetSharingConfig(SharingConfigT&& value) { m_sharingConfigHasBeenSet = true; m_sharingConfig = std::forward<SharingConfigT>(value); }
+    template<typename SharingConfigT = SharingConfig>
+    CreateServiceNetworkRequest& WithSharingConfig(SharingConfigT&& value) { SetSharingConfig(std::forward<SharingConfigT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
@@ -116,11 +113,14 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    SharingConfig m_sharingConfig;
-    bool m_sharingConfigHasBeenSet = false;
+    AuthType m_authType{AuthType::NOT_SET};
+    bool m_authTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    SharingConfig m_sharingConfig;
+    bool m_sharingConfigHasBeenSet = false;
   };
 
 } // namespace Model

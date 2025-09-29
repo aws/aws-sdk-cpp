@@ -173,6 +173,23 @@ namespace Model
 
     ///@{
     /**
+     * <p>Tags that are applied to the AMI that Image Builder creates during the Build
+     * phase prior to image distribution.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetAmiTags() const { return m_amiTags; }
+    inline bool AmiTagsHasBeenSet() const { return m_amiTagsHasBeenSet; }
+    template<typename AmiTagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetAmiTags(AmiTagsT&& value) { m_amiTagsHasBeenSet = true; m_amiTags = std::forward<AmiTagsT>(value); }
+    template<typename AmiTagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateImageRecipeRequest& WithAmiTags(AmiTagsT&& value) { SetAmiTags(std::forward<AmiTagsT>(value)); return *this;}
+    template<typename AmiTagsKeyT = Aws::String, typename AmiTagsValueT = Aws::String>
+    CreateImageRecipeRequest& AddAmiTags(AmiTagsKeyT&& key, AmiTagsValueT&& value) {
+      m_amiTagsHasBeenSet = true; m_amiTags.emplace(std::forward<AmiTagsKeyT>(key), std::forward<AmiTagsValueT>(value)); return *this;
+    }
+    ///@}
+
+    ///@{
+    /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
@@ -213,6 +230,9 @@ namespace Model
 
     AdditionalInstanceConfiguration m_additionalInstanceConfiguration;
     bool m_additionalInstanceConfigurationHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_amiTags;
+    bool m_amiTagsHasBeenSet = false;
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;

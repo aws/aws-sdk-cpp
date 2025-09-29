@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
-#include <aws/vpc-lattice/model/HeaderMatchType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/vpc-lattice/model/HeaderMatchType.h>
 #include <utility>
 
 namespace Aws
@@ -42,12 +42,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether the match is case sensitive.</p>
+     * <p>The name of the header.</p>
      */
-    inline bool GetCaseSensitive() const { return m_caseSensitive; }
-    inline bool CaseSensitiveHasBeenSet() const { return m_caseSensitiveHasBeenSet; }
-    inline void SetCaseSensitive(bool value) { m_caseSensitiveHasBeenSet = true; m_caseSensitive = value; }
-    inline HeaderMatch& WithCaseSensitive(bool value) { SetCaseSensitive(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    HeaderMatch& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,25 +66,23 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the header.</p>
+     * <p>Indicates whether the match is case sensitive.</p>
      */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    HeaderMatch& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    inline bool GetCaseSensitive() const { return m_caseSensitive; }
+    inline bool CaseSensitiveHasBeenSet() const { return m_caseSensitiveHasBeenSet; }
+    inline void SetCaseSensitive(bool value) { m_caseSensitiveHasBeenSet = true; m_caseSensitive = value; }
+    inline HeaderMatch& WithCaseSensitive(bool value) { SetCaseSensitive(value); return *this;}
     ///@}
   private:
 
-    bool m_caseSensitive{false};
-    bool m_caseSensitiveHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     HeaderMatchType m_match;
     bool m_matchHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+    bool m_caseSensitive{false};
+    bool m_caseSensitiveHasBeenSet = false;
   };
 
 } // namespace Model

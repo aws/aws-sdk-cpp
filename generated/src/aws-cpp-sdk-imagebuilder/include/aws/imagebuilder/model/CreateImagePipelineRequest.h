@@ -13,6 +13,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/imagebuilder/model/ImageScanningConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/imagebuilder/model/PipelineLoggingConfiguration.h>
 #include <aws/imagebuilder/model/WorkflowConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -232,6 +233,18 @@ namespace Model
     template<typename ExecutionRoleT = Aws::String>
     CreateImagePipelineRequest& WithExecutionRole(ExecutionRoleT&& value) { SetExecutionRole(std::forward<ExecutionRoleT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Define logging configuration for the image build process.</p>
+     */
+    inline const PipelineLoggingConfiguration& GetLoggingConfiguration() const { return m_loggingConfiguration; }
+    inline bool LoggingConfigurationHasBeenSet() const { return m_loggingConfigurationHasBeenSet; }
+    template<typename LoggingConfigurationT = PipelineLoggingConfiguration>
+    void SetLoggingConfiguration(LoggingConfigurationT&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::forward<LoggingConfigurationT>(value); }
+    template<typename LoggingConfigurationT = PipelineLoggingConfiguration>
+    CreateImagePipelineRequest& WithLoggingConfiguration(LoggingConfigurationT&& value) { SetLoggingConfiguration(std::forward<LoggingConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -278,6 +291,9 @@ namespace Model
 
     Aws::String m_executionRole;
     bool m_executionRoleHasBeenSet = false;
+
+    PipelineLoggingConfiguration m_loggingConfiguration;
+    bool m_loggingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

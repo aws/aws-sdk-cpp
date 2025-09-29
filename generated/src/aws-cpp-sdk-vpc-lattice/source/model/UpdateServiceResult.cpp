@@ -25,35 +25,35 @@ UpdateServiceResult::UpdateServiceResult(const Aws::AmazonWebServiceResult<JsonV
 UpdateServiceResult& UpdateServiceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("authType"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_authType = AuthTypeMapper::GetAuthTypeForName(jsonValue.GetString("authType"));
-    m_authTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("certificateArn"))
-  {
-    m_certificateArn = jsonValue.GetString("certificateArn");
-    m_certificateArnHasBeenSet = true;
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("customDomainName"))
   {
     m_customDomainName = jsonValue.GetString("customDomainName");
     m_customDomainNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
+  if(jsonValue.ValueExists("certificateArn"))
   {
-    m_id = jsonValue.GetString("id");
-    m_idHasBeenSet = true;
+    m_certificateArn = jsonValue.GetString("certificateArn");
+    m_certificateArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("authType"))
   {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
+    m_authType = AuthTypeMapper::GetAuthTypeForName(jsonValue.GetString("authType"));
+    m_authTypeHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

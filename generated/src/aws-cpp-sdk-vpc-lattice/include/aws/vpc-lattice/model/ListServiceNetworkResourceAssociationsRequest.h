@@ -40,6 +40,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the service network.</p>
+     */
+    inline const Aws::String& GetServiceNetworkIdentifier() const { return m_serviceNetworkIdentifier; }
+    inline bool ServiceNetworkIdentifierHasBeenSet() const { return m_serviceNetworkIdentifierHasBeenSet; }
+    template<typename ServiceNetworkIdentifierT = Aws::String>
+    void SetServiceNetworkIdentifier(ServiceNetworkIdentifierT&& value) { m_serviceNetworkIdentifierHasBeenSet = true; m_serviceNetworkIdentifier = std::forward<ServiceNetworkIdentifierT>(value); }
+    template<typename ServiceNetworkIdentifierT = Aws::String>
+    ListServiceNetworkResourceAssociationsRequest& WithServiceNetworkIdentifier(ServiceNetworkIdentifierT&& value) { SetServiceNetworkIdentifier(std::forward<ServiceNetworkIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the resource configuration.</p>
+     */
+    inline const Aws::String& GetResourceConfigurationIdentifier() const { return m_resourceConfigurationIdentifier; }
+    inline bool ResourceConfigurationIdentifierHasBeenSet() const { return m_resourceConfigurationIdentifierHasBeenSet; }
+    template<typename ResourceConfigurationIdentifierT = Aws::String>
+    void SetResourceConfigurationIdentifier(ResourceConfigurationIdentifierT&& value) { m_resourceConfigurationIdentifierHasBeenSet = true; m_resourceConfigurationIdentifier = std::forward<ResourceConfigurationIdentifierT>(value); }
+    template<typename ResourceConfigurationIdentifierT = Aws::String>
+    ListServiceNetworkResourceAssociationsRequest& WithResourceConfigurationIdentifier(ResourceConfigurationIdentifierT&& value) { SetResourceConfigurationIdentifier(std::forward<ResourceConfigurationIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The maximum page size.</p>
      */
     inline int GetMaxResults() const { return m_maxResults; }
@@ -63,28 +87,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the resource configurationk.</p>
+     * <p>Include service network resource associations of the child resource
+     * configuration with the grouped resource configuration.</p> <p>The type is
+     * boolean and the default value is false.</p>
      */
-    inline const Aws::String& GetResourceConfigurationIdentifier() const { return m_resourceConfigurationIdentifier; }
-    inline bool ResourceConfigurationIdentifierHasBeenSet() const { return m_resourceConfigurationIdentifierHasBeenSet; }
-    template<typename ResourceConfigurationIdentifierT = Aws::String>
-    void SetResourceConfigurationIdentifier(ResourceConfigurationIdentifierT&& value) { m_resourceConfigurationIdentifierHasBeenSet = true; m_resourceConfigurationIdentifier = std::forward<ResourceConfigurationIdentifierT>(value); }
-    template<typename ResourceConfigurationIdentifierT = Aws::String>
-    ListServiceNetworkResourceAssociationsRequest& WithResourceConfigurationIdentifier(ResourceConfigurationIdentifierT&& value) { SetResourceConfigurationIdentifier(std::forward<ResourceConfigurationIdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the service network.</p>
-     */
-    inline const Aws::String& GetServiceNetworkIdentifier() const { return m_serviceNetworkIdentifier; }
-    inline bool ServiceNetworkIdentifierHasBeenSet() const { return m_serviceNetworkIdentifierHasBeenSet; }
-    template<typename ServiceNetworkIdentifierT = Aws::String>
-    void SetServiceNetworkIdentifier(ServiceNetworkIdentifierT&& value) { m_serviceNetworkIdentifierHasBeenSet = true; m_serviceNetworkIdentifier = std::forward<ServiceNetworkIdentifierT>(value); }
-    template<typename ServiceNetworkIdentifierT = Aws::String>
-    ListServiceNetworkResourceAssociationsRequest& WithServiceNetworkIdentifier(ServiceNetworkIdentifierT&& value) { SetServiceNetworkIdentifier(std::forward<ServiceNetworkIdentifierT>(value)); return *this;}
+    inline bool GetIncludeChildren() const { return m_includeChildren; }
+    inline bool IncludeChildrenHasBeenSet() const { return m_includeChildrenHasBeenSet; }
+    inline void SetIncludeChildren(bool value) { m_includeChildrenHasBeenSet = true; m_includeChildren = value; }
+    inline ListServiceNetworkResourceAssociationsRequest& WithIncludeChildren(bool value) { SetIncludeChildren(value); return *this;}
     ///@}
   private:
+
+    Aws::String m_serviceNetworkIdentifier;
+    bool m_serviceNetworkIdentifierHasBeenSet = false;
+
+    Aws::String m_resourceConfigurationIdentifier;
+    bool m_resourceConfigurationIdentifierHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
@@ -92,11 +110,8 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_resourceConfigurationIdentifier;
-    bool m_resourceConfigurationIdentifierHasBeenSet = false;
-
-    Aws::String m_serviceNetworkIdentifier;
-    bool m_serviceNetworkIdentifierHasBeenSet = false;
+    bool m_includeChildren{false};
+    bool m_includeChildrenHasBeenSet = false;
   };
 
 } // namespace Model

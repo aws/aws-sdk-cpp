@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/vpc-lattice/model/TargetGroupType.h>
 #include <aws/vpc-lattice/model/TargetGroupConfig.h>
 #include <aws/vpc-lattice/model/TargetGroupStatus.h>
-#include <aws/vpc-lattice/model/TargetGroupType.h>
 #include <utility>
 
 namespace Aws
@@ -37,28 +37,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the target group.</p>
-     */
-    inline const Aws::String& GetArn() const { return m_arn; }
-    template<typename ArnT = Aws::String>
-    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
-    template<typename ArnT = Aws::String>
-    UpdateTargetGroupResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The target group configuration.</p>
-     */
-    inline const TargetGroupConfig& GetConfig() const { return m_config; }
-    template<typename ConfigT = TargetGroupConfig>
-    void SetConfig(ConfigT&& value) { m_configHasBeenSet = true; m_config = std::forward<ConfigT>(value); }
-    template<typename ConfigT = TargetGroupConfig>
-    UpdateTargetGroupResult& WithConfig(ConfigT&& value) { SetConfig(std::forward<ConfigT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID of the target group.</p>
      */
     inline const Aws::String& GetId() const { return m_id; }
@@ -66,6 +44,17 @@ namespace Model
     void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
     template<typename IdT = Aws::String>
     UpdateTargetGroupResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the target group.</p>
+     */
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateTargetGroupResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,20 +70,31 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status.</p>
-     */
-    inline TargetGroupStatus GetStatus() const { return m_status; }
-    inline void SetStatus(TargetGroupStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline UpdateTargetGroupResult& WithStatus(TargetGroupStatus value) { SetStatus(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The target group type.</p>
      */
     inline TargetGroupType GetType() const { return m_type; }
     inline void SetType(TargetGroupType value) { m_typeHasBeenSet = true; m_type = value; }
     inline UpdateTargetGroupResult& WithType(TargetGroupType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The target group configuration.</p>
+     */
+    inline const TargetGroupConfig& GetConfig() const { return m_config; }
+    template<typename ConfigT = TargetGroupConfig>
+    void SetConfig(ConfigT&& value) { m_configHasBeenSet = true; m_config = std::forward<ConfigT>(value); }
+    template<typename ConfigT = TargetGroupConfig>
+    UpdateTargetGroupResult& WithConfig(ConfigT&& value) { SetConfig(std::forward<ConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status.</p>
+     */
+    inline TargetGroupStatus GetStatus() const { return m_status; }
+    inline void SetStatus(TargetGroupStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateTargetGroupResult& WithStatus(TargetGroupStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -107,23 +107,23 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_arn;
-    bool m_arnHasBeenSet = false;
-
-    TargetGroupConfig m_config;
-    bool m_configHasBeenSet = false;
-
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    TargetGroupStatus m_status{TargetGroupStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
-
     TargetGroupType m_type{TargetGroupType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    TargetGroupConfig m_config;
+    bool m_configHasBeenSet = false;
+
+    TargetGroupStatus m_status{TargetGroupStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

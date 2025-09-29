@@ -25,6 +25,16 @@ CreateServiceNetworkServiceAssociationResult::CreateServiceNetworkServiceAssocia
 CreateServiceNetworkServiceAssociationResult& CreateServiceNetworkServiceAssociationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = ServiceNetworkServiceAssociationStatusMapper::GetServiceNetworkServiceAssociationStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
@@ -44,16 +54,6 @@ CreateServiceNetworkServiceAssociationResult& CreateServiceNetworkServiceAssocia
   {
     m_dnsEntry = jsonValue.GetObject("dnsEntry");
     m_dnsEntryHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("id"))
-  {
-    m_id = jsonValue.GetString("id");
-    m_idHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = ServiceNetworkServiceAssociationStatusMapper::GetServiceNetworkServiceAssociationStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

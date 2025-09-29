@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
-#include <aws/vpc-lattice/model/RuleAction.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/vpc-lattice/model/RuleMatch.h>
+#include <aws/vpc-lattice/model/RuleAction.h>
 #include <utility>
 
 namespace Aws
@@ -36,17 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the action for the specified listener rule.</p>
-     */
-    inline const RuleAction& GetAction() const { return m_action; }
-    template<typename ActionT = RuleAction>
-    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
-    template<typename ActionT = RuleAction>
-    UpdateRuleResult& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
     inline const Aws::String& GetArn() const { return m_arn; }
@@ -65,6 +54,17 @@ namespace Model
     void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
     template<typename IdT = Aws::String>
     UpdateRuleResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the listener.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateRuleResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,22 +89,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the listener.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    UpdateRuleResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The rule priority.</p>
      */
     inline int GetPriority() const { return m_priority; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline UpdateRuleResult& WithPriority(int value) { SetPriority(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Information about the action for the specified listener rule.</p>
+     */
+    inline const RuleAction& GetAction() const { return m_action; }
+    template<typename ActionT = RuleAction>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = RuleAction>
+    UpdateRuleResult& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,14 +117,14 @@ namespace Model
     ///@}
   private:
 
-    RuleAction m_action;
-    bool m_actionHasBeenSet = false;
-
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     bool m_isDefault{false};
     bool m_isDefaultHasBeenSet = false;
@@ -132,11 +132,11 @@ namespace Model
     RuleMatch m_match;
     bool m_matchHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
     int m_priority{0};
     bool m_priorityHasBeenSet = false;
+
+    RuleAction m_action;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

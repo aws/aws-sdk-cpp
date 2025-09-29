@@ -16,11 +16,6 @@ Aws::String CreateServiceNetworkRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_authTypeHasBeenSet)
-  {
-   payload.WithString("authType", AuthTypeMapper::GetNameForAuthType(m_authType));
-  }
-
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
@@ -33,10 +28,9 @@ Aws::String CreateServiceNetworkRequest::SerializePayload() const
 
   }
 
-  if(m_sharingConfigHasBeenSet)
+  if(m_authTypeHasBeenSet)
   {
-   payload.WithObject("sharingConfig", m_sharingConfig.Jsonize());
-
+   payload.WithString("authType", AuthTypeMapper::GetNameForAuthType(m_authType));
   }
 
   if(m_tagsHasBeenSet)
@@ -47,6 +41,12 @@ Aws::String CreateServiceNetworkRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_sharingConfigHasBeenSet)
+  {
+   payload.WithObject("sharingConfig", m_sharingConfig.Jsonize());
 
   }
 

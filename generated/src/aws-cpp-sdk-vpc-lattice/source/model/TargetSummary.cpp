@@ -35,15 +35,15 @@ TargetSummary& TargetSummary::operator =(JsonView jsonValue)
     m_port = jsonValue.GetInteger("port");
     m_portHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("reasonCode"))
-  {
-    m_reasonCode = jsonValue.GetString("reasonCode");
-    m_reasonCodeHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("status"))
   {
     m_status = TargetStatusMapper::GetTargetStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("reasonCode"))
+  {
+    m_reasonCode = jsonValue.GetString("reasonCode");
+    m_reasonCodeHasBeenSet = true;
   }
   return *this;
 }
@@ -64,15 +64,15 @@ JsonValue TargetSummary::Jsonize() const
 
   }
 
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", TargetStatusMapper::GetNameForTargetStatus(m_status));
+  }
+
   if(m_reasonCodeHasBeenSet)
   {
    payload.WithString("reasonCode", m_reasonCode);
 
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", TargetStatusMapper::GetNameForTargetStatus(m_status));
   }
 
   return payload;

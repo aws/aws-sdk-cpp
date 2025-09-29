@@ -23,6 +23,13 @@ Aws::String ListAccessLogSubscriptionsRequest::SerializePayload() const
 void ListAccessLogSubscriptionsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_resourceIdentifierHasBeenSet)
+    {
+      ss << m_resourceIdentifier;
+      uri.AddQueryStringParameter("resourceIdentifier", ss.str());
+      ss.str("");
+    }
+
     if(m_maxResultsHasBeenSet)
     {
       ss << m_maxResults;
@@ -34,13 +41,6 @@ void ListAccessLogSubscriptionsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
-      ss.str("");
-    }
-
-    if(m_resourceIdentifierHasBeenSet)
-    {
-      ss << m_resourceIdentifier;
-      uri.AddQueryStringParameter("resourceIdentifier", ss.str());
       ss.str("");
     }
 

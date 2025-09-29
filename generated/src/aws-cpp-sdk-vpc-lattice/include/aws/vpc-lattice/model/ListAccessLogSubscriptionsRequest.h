@@ -40,6 +40,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID or ARN of the service network or service.</p>
+     */
+    inline const Aws::String& GetResourceIdentifier() const { return m_resourceIdentifier; }
+    inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
+    template<typename ResourceIdentifierT = Aws::String>
+    void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
+    template<typename ResourceIdentifierT = Aws::String>
+    ListAccessLogSubscriptionsRequest& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The maximum number of results to return.</p>
      */
     inline int GetMaxResults() const { return m_maxResults; }
@@ -59,28 +71,16 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListAccessLogSubscriptionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The ID or ARN of the service network or service.</p>
-     */
-    inline const Aws::String& GetResourceIdentifier() const { return m_resourceIdentifier; }
-    inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
-    template<typename ResourceIdentifierT = Aws::String>
-    void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
-    template<typename ResourceIdentifierT = Aws::String>
-    ListAccessLogSubscriptionsRequest& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_resourceIdentifier;
+    bool m_resourceIdentifierHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
-
-    Aws::String m_resourceIdentifier;
-    bool m_resourceIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

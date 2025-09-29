@@ -25,11 +25,6 @@ RuleUpdateSuccess::RuleUpdateSuccess(JsonView jsonValue)
 
 RuleUpdateSuccess& RuleUpdateSuccess::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("action"))
-  {
-    m_action = jsonValue.GetObject("action");
-    m_actionHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
@@ -39,6 +34,11 @@ RuleUpdateSuccess& RuleUpdateSuccess::operator =(JsonView jsonValue)
   {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("isDefault"))
   {
@@ -50,15 +50,15 @@ RuleUpdateSuccess& RuleUpdateSuccess::operator =(JsonView jsonValue)
     m_match = jsonValue.GetObject("match");
     m_matchHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("priority"))
   {
     m_priority = jsonValue.GetInteger("priority");
     m_priorityHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("action"))
+  {
+    m_action = jsonValue.GetObject("action");
+    m_actionHasBeenSet = true;
   }
   return *this;
 }
@@ -66,12 +66,6 @@ RuleUpdateSuccess& RuleUpdateSuccess::operator =(JsonView jsonValue)
 JsonValue RuleUpdateSuccess::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_actionHasBeenSet)
-  {
-   payload.WithObject("action", m_action.Jsonize());
-
-  }
 
   if(m_arnHasBeenSet)
   {
@@ -82,6 +76,12 @@ JsonValue RuleUpdateSuccess::Jsonize() const
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
 
   }
 
@@ -97,15 +97,15 @@ JsonValue RuleUpdateSuccess::Jsonize() const
 
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
-  }
-
   if(m_priorityHasBeenSet)
   {
    payload.WithInteger("priority", m_priority);
+
+  }
+
+  if(m_actionHasBeenSet)
+  {
+   payload.WithObject("action", m_action.Jsonize());
 
   }
 

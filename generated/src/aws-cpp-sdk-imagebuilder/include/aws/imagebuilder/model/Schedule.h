@@ -7,6 +7,7 @@
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/imagebuilder/model/PipelineExecutionStartCondition.h>
+#include <aws/imagebuilder/model/AutoDisablePolicy.h>
 #include <utility>
 
 namespace Aws
@@ -90,6 +91,19 @@ namespace Model
     inline void SetPipelineExecutionStartCondition(PipelineExecutionStartCondition value) { m_pipelineExecutionStartConditionHasBeenSet = true; m_pipelineExecutionStartCondition = value; }
     inline Schedule& WithPipelineExecutionStartCondition(PipelineExecutionStartCondition value) { SetPipelineExecutionStartCondition(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The policy that configures when Image Builder should automatically disable a
+     * pipeline that is failing.</p>
+     */
+    inline const AutoDisablePolicy& GetAutoDisablePolicy() const { return m_autoDisablePolicy; }
+    inline bool AutoDisablePolicyHasBeenSet() const { return m_autoDisablePolicyHasBeenSet; }
+    template<typename AutoDisablePolicyT = AutoDisablePolicy>
+    void SetAutoDisablePolicy(AutoDisablePolicyT&& value) { m_autoDisablePolicyHasBeenSet = true; m_autoDisablePolicy = std::forward<AutoDisablePolicyT>(value); }
+    template<typename AutoDisablePolicyT = AutoDisablePolicy>
+    Schedule& WithAutoDisablePolicy(AutoDisablePolicyT&& value) { SetAutoDisablePolicy(std::forward<AutoDisablePolicyT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_scheduleExpression;
@@ -100,6 +114,9 @@ namespace Model
 
     PipelineExecutionStartCondition m_pipelineExecutionStartCondition{PipelineExecutionStartCondition::NOT_SET};
     bool m_pipelineExecutionStartConditionHasBeenSet = false;
+
+    AutoDisablePolicy m_autoDisablePolicy;
+    bool m_autoDisablePolicyHasBeenSet = false;
   };
 
 } // namespace Model

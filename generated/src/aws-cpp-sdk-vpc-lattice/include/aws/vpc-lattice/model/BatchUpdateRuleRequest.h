@@ -36,6 +36,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID or ARN of the service.</p>
+     */
+    inline const Aws::String& GetServiceIdentifier() const { return m_serviceIdentifier; }
+    inline bool ServiceIdentifierHasBeenSet() const { return m_serviceIdentifierHasBeenSet; }
+    template<typename ServiceIdentifierT = Aws::String>
+    void SetServiceIdentifier(ServiceIdentifierT&& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = std::forward<ServiceIdentifierT>(value); }
+    template<typename ServiceIdentifierT = Aws::String>
+    BatchUpdateRuleRequest& WithServiceIdentifier(ServiceIdentifierT&& value) { SetServiceIdentifier(std::forward<ServiceIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID or ARN of the listener.</p>
      */
     inline const Aws::String& GetListenerIdentifier() const { return m_listenerIdentifier; }
@@ -59,28 +71,16 @@ namespace Model
     template<typename RulesT = RuleUpdate>
     BatchUpdateRuleRequest& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The ID or ARN of the service.</p>
-     */
-    inline const Aws::String& GetServiceIdentifier() const { return m_serviceIdentifier; }
-    inline bool ServiceIdentifierHasBeenSet() const { return m_serviceIdentifierHasBeenSet; }
-    template<typename ServiceIdentifierT = Aws::String>
-    void SetServiceIdentifier(ServiceIdentifierT&& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = std::forward<ServiceIdentifierT>(value); }
-    template<typename ServiceIdentifierT = Aws::String>
-    BatchUpdateRuleRequest& WithServiceIdentifier(ServiceIdentifierT&& value) { SetServiceIdentifier(std::forward<ServiceIdentifierT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_serviceIdentifier;
+    bool m_serviceIdentifierHasBeenSet = false;
 
     Aws::String m_listenerIdentifier;
     bool m_listenerIdentifierHasBeenSet = false;
 
     Aws::Vector<RuleUpdate> m_rules;
     bool m_rulesHasBeenSet = false;
-
-    Aws::String m_serviceIdentifier;
-    bool m_serviceIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

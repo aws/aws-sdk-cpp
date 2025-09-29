@@ -25,35 +25,25 @@ ResourceEndpointAssociationSummary::ResourceEndpointAssociationSummary(JsonView 
 
 ResourceEndpointAssociationSummary& ResourceEndpointAssociationSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("arn"))
-  {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("createdBy"))
-  {
-    m_createdBy = jsonValue.GetString("createdBy");
-    m_createdByHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceConfigurationArn"))
+  if(jsonValue.ValueExists("arn"))
   {
-    m_resourceConfigurationArn = jsonValue.GetString("resourceConfigurationArn");
-    m_resourceConfigurationArnHasBeenSet = true;
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("resourceConfigurationId"))
   {
     m_resourceConfigurationId = jsonValue.GetString("resourceConfigurationId");
     m_resourceConfigurationIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("resourceConfigurationArn"))
+  {
+    m_resourceConfigurationArn = jsonValue.GetString("resourceConfigurationArn");
+    m_resourceConfigurationArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("resourceConfigurationName"))
   {
@@ -70,6 +60,16 @@ ResourceEndpointAssociationSummary& ResourceEndpointAssociationSummary::operator
     m_vpcEndpointOwner = jsonValue.GetString("vpcEndpointOwner");
     m_vpcEndpointOwnerHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("createdBy"))
+  {
+    m_createdBy = jsonValue.GetString("createdBy");
+    m_createdByHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -77,38 +77,27 @@ JsonValue ResourceEndpointAssociationSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
-  }
-
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_createdByHasBeenSet)
-  {
-   payload.WithString("createdBy", m_createdBy);
-
-  }
-
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
 
   }
 
-  if(m_resourceConfigurationArnHasBeenSet)
+  if(m_arnHasBeenSet)
   {
-   payload.WithString("resourceConfigurationArn", m_resourceConfigurationArn);
+   payload.WithString("arn", m_arn);
 
   }
 
   if(m_resourceConfigurationIdHasBeenSet)
   {
    payload.WithString("resourceConfigurationId", m_resourceConfigurationId);
+
+  }
+
+  if(m_resourceConfigurationArnHasBeenSet)
+  {
+   payload.WithString("resourceConfigurationArn", m_resourceConfigurationArn);
 
   }
 
@@ -128,6 +117,17 @@ JsonValue ResourceEndpointAssociationSummary::Jsonize() const
   {
    payload.WithString("vpcEndpointOwner", m_vpcEndpointOwner);
 
+  }
+
+  if(m_createdByHasBeenSet)
+  {
+   payload.WithString("createdBy", m_createdBy);
+
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

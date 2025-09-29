@@ -52,6 +52,31 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID or ARN of the service network. You must use an ARN if the resources
+     * are in different accounts.</p>
+     */
+    inline const Aws::String& GetServiceNetworkIdentifier() const { return m_serviceNetworkIdentifier; }
+    inline bool ServiceNetworkIdentifierHasBeenSet() const { return m_serviceNetworkIdentifierHasBeenSet; }
+    template<typename ServiceNetworkIdentifierT = Aws::String>
+    void SetServiceNetworkIdentifier(ServiceNetworkIdentifierT&& value) { m_serviceNetworkIdentifierHasBeenSet = true; m_serviceNetworkIdentifier = std::forward<ServiceNetworkIdentifierT>(value); }
+    template<typename ServiceNetworkIdentifierT = Aws::String>
+    CreateServiceNetworkVpcAssociationRequest& WithServiceNetworkIdentifier(ServiceNetworkIdentifierT&& value) { SetServiceNetworkIdentifier(std::forward<ServiceNetworkIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline const Aws::String& GetVpcIdentifier() const { return m_vpcIdentifier; }
+    inline bool VpcIdentifierHasBeenSet() const { return m_vpcIdentifierHasBeenSet; }
+    template<typename VpcIdentifierT = Aws::String>
+    void SetVpcIdentifier(VpcIdentifierT&& value) { m_vpcIdentifierHasBeenSet = true; m_vpcIdentifier = std::forward<VpcIdentifierT>(value); }
+    template<typename VpcIdentifierT = Aws::String>
+    CreateServiceNetworkVpcAssociationRequest& WithVpcIdentifier(VpcIdentifierT&& value) { SetVpcIdentifier(std::forward<VpcIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The IDs of the security groups. Security groups aren't added by default. You
      * can add a security group to apply network level controls to control which
      * resources in a VPC are allowed to access the service network and its services.
@@ -72,19 +97,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID or ARN of the service network. You must use an ARN if the resources
-     * are in different accounts.</p>
-     */
-    inline const Aws::String& GetServiceNetworkIdentifier() const { return m_serviceNetworkIdentifier; }
-    inline bool ServiceNetworkIdentifierHasBeenSet() const { return m_serviceNetworkIdentifierHasBeenSet; }
-    template<typename ServiceNetworkIdentifierT = Aws::String>
-    void SetServiceNetworkIdentifier(ServiceNetworkIdentifierT&& value) { m_serviceNetworkIdentifierHasBeenSet = true; m_serviceNetworkIdentifier = std::forward<ServiceNetworkIdentifierT>(value); }
-    template<typename ServiceNetworkIdentifierT = Aws::String>
-    CreateServiceNetworkVpcAssociationRequest& WithServiceNetworkIdentifier(ServiceNetworkIdentifierT&& value) { SetServiceNetworkIdentifier(std::forward<ServiceNetworkIdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The tags for the association.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -98,34 +110,22 @@ namespace Model
       m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
     }
     ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline const Aws::String& GetVpcIdentifier() const { return m_vpcIdentifier; }
-    inline bool VpcIdentifierHasBeenSet() const { return m_vpcIdentifierHasBeenSet; }
-    template<typename VpcIdentifierT = Aws::String>
-    void SetVpcIdentifier(VpcIdentifierT&& value) { m_vpcIdentifierHasBeenSet = true; m_vpcIdentifier = std::forward<VpcIdentifierT>(value); }
-    template<typename VpcIdentifierT = Aws::String>
-    CreateServiceNetworkVpcAssociationRequest& WithVpcIdentifier(VpcIdentifierT&& value) { SetVpcIdentifier(std::forward<VpcIdentifierT>(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
 
-    Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet = false;
-
     Aws::String m_serviceNetworkIdentifier;
     bool m_serviceNetworkIdentifierHasBeenSet = false;
 
-    Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet = false;
-
     Aws::String m_vpcIdentifier;
     bool m_vpcIdentifierHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_securityGroupIds;
+    bool m_securityGroupIdsHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

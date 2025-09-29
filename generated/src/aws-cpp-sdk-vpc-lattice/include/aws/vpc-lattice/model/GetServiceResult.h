@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/vpc-lattice/model/AuthType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/vpc-lattice/model/DnsEntry.h>
 #include <aws/vpc-lattice/model/ServiceStatus.h>
+#include <aws/vpc-lattice/model/AuthType.h>
 #include <utility>
 
 namespace Aws
@@ -38,6 +38,28 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the service.</p>
+     */
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetServiceResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the service.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetServiceResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the service.</p>
      */
     inline const Aws::String& GetArn() const { return m_arn; }
@@ -45,26 +67,6 @@ namespace Model
     void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
     template<typename ArnT = Aws::String>
     GetServiceResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The type of IAM policy.</p>
-     */
-    inline AuthType GetAuthType() const { return m_authType; }
-    inline void SetAuthType(AuthType value) { m_authTypeHasBeenSet = true; m_authType = value; }
-    inline GetServiceResult& WithAuthType(AuthType value) { SetAuthType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the certificate.</p>
-     */
-    inline const Aws::String& GetCertificateArn() const { return m_certificateArn; }
-    template<typename CertificateArnT = Aws::String>
-    void SetCertificateArn(CertificateArnT&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::forward<CertificateArnT>(value); }
-    template<typename CertificateArnT = Aws::String>
-    GetServiceResult& WithCertificateArn(CertificateArnT&& value) { SetCertificateArn(std::forward<CertificateArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,13 +82,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The custom domain name of the service.</p>
+     * <p>The date and time that the service was last updated, in ISO-8601 format.</p>
      */
-    inline const Aws::String& GetCustomDomainName() const { return m_customDomainName; }
-    template<typename CustomDomainNameT = Aws::String>
-    void SetCustomDomainName(CustomDomainNameT&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::forward<CustomDomainNameT>(value); }
-    template<typename CustomDomainNameT = Aws::String>
-    GetServiceResult& WithCustomDomainName(CustomDomainNameT&& value) { SetCustomDomainName(std::forward<CustomDomainNameT>(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    GetServiceResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,6 +100,46 @@ namespace Model
     void SetDnsEntry(DnsEntryT&& value) { m_dnsEntryHasBeenSet = true; m_dnsEntry = std::forward<DnsEntryT>(value); }
     template<typename DnsEntryT = DnsEntry>
     GetServiceResult& WithDnsEntry(DnsEntryT&& value) { SetDnsEntry(std::forward<DnsEntryT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The custom domain name of the service.</p>
+     */
+    inline const Aws::String& GetCustomDomainName() const { return m_customDomainName; }
+    template<typename CustomDomainNameT = Aws::String>
+    void SetCustomDomainName(CustomDomainNameT&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::forward<CustomDomainNameT>(value); }
+    template<typename CustomDomainNameT = Aws::String>
+    GetServiceResult& WithCustomDomainName(CustomDomainNameT&& value) { SetCustomDomainName(std::forward<CustomDomainNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the certificate.</p>
+     */
+    inline const Aws::String& GetCertificateArn() const { return m_certificateArn; }
+    template<typename CertificateArnT = Aws::String>
+    void SetCertificateArn(CertificateArnT&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::forward<CertificateArnT>(value); }
+    template<typename CertificateArnT = Aws::String>
+    GetServiceResult& WithCertificateArn(CertificateArnT&& value) { SetCertificateArn(std::forward<CertificateArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status of the service.</p>
+     */
+    inline ServiceStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ServiceStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetServiceResult& WithStatus(ServiceStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of IAM policy.</p>
+     */
+    inline AuthType GetAuthType() const { return m_authType; }
+    inline void SetAuthType(AuthType value) { m_authTypeHasBeenSet = true; m_authType = value; }
+    inline GetServiceResult& WithAuthType(AuthType value) { SetAuthType(value); return *this;}
     ///@}
 
     ///@{
@@ -123,48 +165,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The ID of the service.</p>
-     */
-    inline const Aws::String& GetId() const { return m_id; }
-    template<typename IdT = Aws::String>
-    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
-    template<typename IdT = Aws::String>
-    GetServiceResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The date and time that the service was last updated, in ISO-8601 format.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
-    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
-    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
-    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
-    GetServiceResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the service.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    GetServiceResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The status of the service.</p>
-     */
-    inline ServiceStatus GetStatus() const { return m_status; }
-    inline void SetStatus(ServiceStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline GetServiceResult& WithStatus(ServiceStatus value) { SetStatus(value); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -174,41 +174,41 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_id;
+    bool m_idHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
-
-    AuthType m_authType{AuthType::NOT_SET};
-    bool m_authTypeHasBeenSet = false;
-
-    Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::String m_customDomainName;
-    bool m_customDomainNameHasBeenSet = false;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     DnsEntry m_dnsEntry;
     bool m_dnsEntryHasBeenSet = false;
+
+    Aws::String m_customDomainName;
+    bool m_customDomainNameHasBeenSet = false;
+
+    Aws::String m_certificateArn;
+    bool m_certificateArnHasBeenSet = false;
+
+    ServiceStatus m_status{ServiceStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
+
+    AuthType m_authType{AuthType::NOT_SET};
+    bool m_authTypeHasBeenSet = false;
 
     Aws::String m_failureCode;
     bool m_failureCodeHasBeenSet = false;
 
     Aws::String m_failureMessage;
     bool m_failureMessageHasBeenSet = false;
-
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
-
-    Aws::Utils::DateTime m_lastUpdatedAt{};
-    bool m_lastUpdatedAtHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
-    ServiceStatus m_status{ServiceStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -25,20 +25,20 @@ HeaderMatch::HeaderMatch(JsonView jsonValue)
 
 HeaderMatch& HeaderMatch::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("caseSensitive"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_caseSensitive = jsonValue.GetBool("caseSensitive");
-    m_caseSensitiveHasBeenSet = true;
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("match"))
   {
     m_match = jsonValue.GetObject("match");
     m_matchHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("caseSensitive"))
   {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
+    m_caseSensitive = jsonValue.GetBool("caseSensitive");
+    m_caseSensitiveHasBeenSet = true;
   }
   return *this;
 }
@@ -47,9 +47,9 @@ JsonValue HeaderMatch::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_caseSensitiveHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithBool("caseSensitive", m_caseSensitive);
+   payload.WithString("name", m_name);
 
   }
 
@@ -59,9 +59,9 @@ JsonValue HeaderMatch::Jsonize() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_caseSensitiveHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithBool("caseSensitive", m_caseSensitive);
 
   }
 

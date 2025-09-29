@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/vpc-lattice/model/PathMatch.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/vpc-lattice/model/HeaderMatch.h>
 #include <utility>
 
@@ -43,21 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The header matches. Matches incoming requests with rule based on request
-     * header value before applying rule action.</p>
-     */
-    inline const Aws::Vector<HeaderMatch>& GetHeaderMatches() const { return m_headerMatches; }
-    inline bool HeaderMatchesHasBeenSet() const { return m_headerMatchesHasBeenSet; }
-    template<typename HeaderMatchesT = Aws::Vector<HeaderMatch>>
-    void SetHeaderMatches(HeaderMatchesT&& value) { m_headerMatchesHasBeenSet = true; m_headerMatches = std::forward<HeaderMatchesT>(value); }
-    template<typename HeaderMatchesT = Aws::Vector<HeaderMatch>>
-    HttpMatch& WithHeaderMatches(HeaderMatchesT&& value) { SetHeaderMatches(std::forward<HeaderMatchesT>(value)); return *this;}
-    template<typename HeaderMatchesT = HeaderMatch>
-    HttpMatch& AddHeaderMatches(HeaderMatchesT&& value) { m_headerMatchesHasBeenSet = true; m_headerMatches.emplace_back(std::forward<HeaderMatchesT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The HTTP method type.</p>
      */
     inline const Aws::String& GetMethod() const { return m_method; }
@@ -79,16 +64,31 @@ namespace Model
     template<typename PathMatchT = PathMatch>
     HttpMatch& WithPathMatch(PathMatchT&& value) { SetPathMatch(std::forward<PathMatchT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::Vector<HeaderMatch> m_headerMatches;
-    bool m_headerMatchesHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The header matches. Matches incoming requests with rule based on request
+     * header value before applying rule action.</p>
+     */
+    inline const Aws::Vector<HeaderMatch>& GetHeaderMatches() const { return m_headerMatches; }
+    inline bool HeaderMatchesHasBeenSet() const { return m_headerMatchesHasBeenSet; }
+    template<typename HeaderMatchesT = Aws::Vector<HeaderMatch>>
+    void SetHeaderMatches(HeaderMatchesT&& value) { m_headerMatchesHasBeenSet = true; m_headerMatches = std::forward<HeaderMatchesT>(value); }
+    template<typename HeaderMatchesT = Aws::Vector<HeaderMatch>>
+    HttpMatch& WithHeaderMatches(HeaderMatchesT&& value) { SetHeaderMatches(std::forward<HeaderMatchesT>(value)); return *this;}
+    template<typename HeaderMatchesT = HeaderMatch>
+    HttpMatch& AddHeaderMatches(HeaderMatchesT&& value) { m_headerMatchesHasBeenSet = true; m_headerMatches.emplace_back(std::forward<HeaderMatchesT>(value)); return *this; }
+    ///@}
+  private:
 
     Aws::String m_method;
     bool m_methodHasBeenSet = false;
 
     PathMatch m_pathMatch;
     bool m_pathMatchHasBeenSet = false;
+
+    Aws::Vector<HeaderMatch> m_headerMatches;
+    bool m_headerMatchesHasBeenSet = false;
   };
 
 } // namespace Model

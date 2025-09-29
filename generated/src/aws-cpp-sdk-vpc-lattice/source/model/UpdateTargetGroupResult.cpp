@@ -25,35 +25,35 @@ UpdateTargetGroupResult::UpdateTargetGroupResult(const Aws::AmazonWebServiceResu
 UpdateTargetGroupResult& UpdateTargetGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("arn"))
-  {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("config"))
-  {
-    m_config = jsonValue.GetObject("config");
-    m_configHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = TargetGroupStatusMapper::GetTargetGroupStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("type"))
   {
     m_type = TargetGroupTypeMapper::GetTargetGroupTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("config"))
+  {
+    m_config = jsonValue.GetObject("config");
+    m_configHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = TargetGroupStatusMapper::GetTargetGroupStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

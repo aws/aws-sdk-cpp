@@ -25,40 +25,30 @@ TargetGroupSummary::TargetGroupSummary(JsonView jsonValue)
 
 TargetGroupSummary& TargetGroupSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("arn"))
-  {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ipAddressType"))
+  if(jsonValue.ValueExists("arn"))
   {
-    m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
-    m_ipAddressTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("lambdaEventStructureVersion"))
-  {
-    m_lambdaEventStructureVersion = LambdaEventStructureVersionMapper::GetLambdaEventStructureVersionForName(jsonValue.GetString("lambdaEventStructureVersion"));
-    m_lambdaEventStructureVersionHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
-    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-    m_lastUpdatedAtHasBeenSet = true;
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = TargetGroupTypeMapper::GetTargetGroupTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("port"))
   {
@@ -70,6 +60,26 @@ TargetGroupSummary& TargetGroupSummary::operator =(JsonView jsonValue)
     m_protocol = TargetGroupProtocolMapper::GetTargetGroupProtocolForName(jsonValue.GetString("protocol"));
     m_protocolHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ipAddressType"))
+  {
+    m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
+    m_ipAddressTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("vpcIdentifier"))
+  {
+    m_vpcIdentifier = jsonValue.GetString("vpcIdentifier");
+    m_vpcIdentifierHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lastUpdatedAt"))
+  {
+    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
+    m_lastUpdatedAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = TargetGroupStatusMapper::GetTargetGroupStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("serviceArns"))
   {
     Aws::Utils::Array<JsonView> serviceArnsJsonList = jsonValue.GetArray("serviceArns");
@@ -79,20 +89,10 @@ TargetGroupSummary& TargetGroupSummary::operator =(JsonView jsonValue)
     }
     m_serviceArnsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("lambdaEventStructureVersion"))
   {
-    m_status = TargetGroupStatusMapper::GetTargetGroupStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = TargetGroupTypeMapper::GetTargetGroupTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("vpcIdentifier"))
-  {
-    m_vpcIdentifier = jsonValue.GetString("vpcIdentifier");
-    m_vpcIdentifierHasBeenSet = true;
+    m_lambdaEventStructureVersion = LambdaEventStructureVersionMapper::GetLambdaEventStructureVersionForName(jsonValue.GetString("lambdaEventStructureVersion"));
+    m_lambdaEventStructureVersionHasBeenSet = true;
   }
   return *this;
 }
@@ -101,42 +101,32 @@ JsonValue TargetGroupSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
-  }
-
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
 
   }
 
-  if(m_ipAddressTypeHasBeenSet)
+  if(m_arnHasBeenSet)
   {
-   payload.WithString("ipAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
-  }
+   payload.WithString("arn", m_arn);
 
-  if(m_lambdaEventStructureVersionHasBeenSet)
-  {
-   payload.WithString("lambdaEventStructureVersion", LambdaEventStructureVersionMapper::GetNameForLambdaEventStructureVersion(m_lambdaEventStructureVersion));
-  }
-
-  if(m_lastUpdatedAtHasBeenSet)
-  {
-   payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", TargetGroupTypeMapper::GetNameForTargetGroupType(m_type));
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_portHasBeenSet)
@@ -150,6 +140,27 @@ JsonValue TargetGroupSummary::Jsonize() const
    payload.WithString("protocol", TargetGroupProtocolMapper::GetNameForTargetGroupProtocol(m_protocol));
   }
 
+  if(m_ipAddressTypeHasBeenSet)
+  {
+   payload.WithString("ipAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
+  }
+
+  if(m_vpcIdentifierHasBeenSet)
+  {
+   payload.WithString("vpcIdentifier", m_vpcIdentifier);
+
+  }
+
+  if(m_lastUpdatedAtHasBeenSet)
+  {
+   payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", TargetGroupStatusMapper::GetNameForTargetGroupStatus(m_status));
+  }
+
   if(m_serviceArnsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> serviceArnsJsonList(m_serviceArns.size());
@@ -161,20 +172,9 @@ JsonValue TargetGroupSummary::Jsonize() const
 
   }
 
-  if(m_statusHasBeenSet)
+  if(m_lambdaEventStructureVersionHasBeenSet)
   {
-   payload.WithString("status", TargetGroupStatusMapper::GetNameForTargetGroupStatus(m_status));
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", TargetGroupTypeMapper::GetNameForTargetGroupType(m_type));
-  }
-
-  if(m_vpcIdentifierHasBeenSet)
-  {
-   payload.WithString("vpcIdentifier", m_vpcIdentifier);
-
+   payload.WithString("lambdaEventStructureVersion", LambdaEventStructureVersionMapper::GetNameForLambdaEventStructureVersion(m_lambdaEventStructureVersion));
   }
 
   return payload;

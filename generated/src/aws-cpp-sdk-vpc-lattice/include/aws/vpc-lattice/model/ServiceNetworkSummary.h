@@ -40,6 +40,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the service network.</p>
+     */
+    inline const Aws::String& GetId() const { return m_id; }
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ServiceNetworkSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the service network.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ServiceNetworkSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the service network.</p>
      */
     inline const Aws::String& GetArn() const { return m_arn; }
@@ -65,18 +89,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the service network.</p>
-     */
-    inline const Aws::String& GetId() const { return m_id; }
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    template<typename IdT = Aws::String>
-    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
-    template<typename IdT = Aws::String>
-    ServiceNetworkSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The date and time that the service network was last updated, in ISO-8601
      * format.</p>
      */
@@ -90,24 +102,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the service network.</p>
+     * <p>The number of VPCs associated with the service network.</p>
      */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    ServiceNetworkSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The number of resource configurations associated with a service network.</p>
-     */
-    inline long long GetNumberOfAssociatedResourceConfigurations() const { return m_numberOfAssociatedResourceConfigurations; }
-    inline bool NumberOfAssociatedResourceConfigurationsHasBeenSet() const { return m_numberOfAssociatedResourceConfigurationsHasBeenSet; }
-    inline void SetNumberOfAssociatedResourceConfigurations(long long value) { m_numberOfAssociatedResourceConfigurationsHasBeenSet = true; m_numberOfAssociatedResourceConfigurations = value; }
-    inline ServiceNetworkSummary& WithNumberOfAssociatedResourceConfigurations(long long value) { SetNumberOfAssociatedResourceConfigurations(value); return *this;}
+    inline long long GetNumberOfAssociatedVPCs() const { return m_numberOfAssociatedVPCs; }
+    inline bool NumberOfAssociatedVPCsHasBeenSet() const { return m_numberOfAssociatedVPCsHasBeenSet; }
+    inline void SetNumberOfAssociatedVPCs(long long value) { m_numberOfAssociatedVPCsHasBeenSet = true; m_numberOfAssociatedVPCs = value; }
+    inline ServiceNetworkSummary& WithNumberOfAssociatedVPCs(long long value) { SetNumberOfAssociatedVPCs(value); return *this;}
     ///@}
 
     ///@{
@@ -122,14 +122,20 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of VPCs associated with the service network.</p>
+     * <p>The number of resource configurations associated with a service network.</p>
      */
-    inline long long GetNumberOfAssociatedVPCs() const { return m_numberOfAssociatedVPCs; }
-    inline bool NumberOfAssociatedVPCsHasBeenSet() const { return m_numberOfAssociatedVPCsHasBeenSet; }
-    inline void SetNumberOfAssociatedVPCs(long long value) { m_numberOfAssociatedVPCsHasBeenSet = true; m_numberOfAssociatedVPCs = value; }
-    inline ServiceNetworkSummary& WithNumberOfAssociatedVPCs(long long value) { SetNumberOfAssociatedVPCs(value); return *this;}
+    inline long long GetNumberOfAssociatedResourceConfigurations() const { return m_numberOfAssociatedResourceConfigurations; }
+    inline bool NumberOfAssociatedResourceConfigurationsHasBeenSet() const { return m_numberOfAssociatedResourceConfigurationsHasBeenSet; }
+    inline void SetNumberOfAssociatedResourceConfigurations(long long value) { m_numberOfAssociatedResourceConfigurationsHasBeenSet = true; m_numberOfAssociatedResourceConfigurations = value; }
+    inline ServiceNetworkSummary& WithNumberOfAssociatedResourceConfigurations(long long value) { SetNumberOfAssociatedResourceConfigurations(value); return *this;}
     ///@}
   private:
+
+    Aws::String m_id;
+    bool m_idHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
@@ -137,23 +143,17 @@ namespace Model
     Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
-
     Aws::Utils::DateTime m_lastUpdatedAt{};
     bool m_lastUpdatedAtHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
-    long long m_numberOfAssociatedResourceConfigurations{0};
-    bool m_numberOfAssociatedResourceConfigurationsHasBeenSet = false;
+    long long m_numberOfAssociatedVPCs{0};
+    bool m_numberOfAssociatedVPCsHasBeenSet = false;
 
     long long m_numberOfAssociatedServices{0};
     bool m_numberOfAssociatedServicesHasBeenSet = false;
 
-    long long m_numberOfAssociatedVPCs{0};
-    bool m_numberOfAssociatedVPCsHasBeenSet = false;
+    long long m_numberOfAssociatedResourceConfigurations{0};
+    bool m_numberOfAssociatedResourceConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

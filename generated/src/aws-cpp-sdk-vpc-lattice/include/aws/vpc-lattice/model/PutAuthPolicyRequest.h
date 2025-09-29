@@ -34,19 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The auth policy. The policy string in JSON must not contain newlines or blank
-     * lines.</p>
-     */
-    inline const Aws::String& GetPolicy() const { return m_policy; }
-    inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-    template<typename PolicyT = Aws::String>
-    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
-    template<typename PolicyT = Aws::String>
-    PutAuthPolicyRequest& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID or ARN of the service network or service for which the policy is
      * created.</p>
      */
@@ -57,13 +44,26 @@ namespace Model
     template<typename ResourceIdentifierT = Aws::String>
     PutAuthPolicyRequest& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_policy;
-    bool m_policyHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The auth policy. The policy string in JSON must not contain newlines or blank
+     * lines.</p>
+     */
+    inline const Aws::String& GetPolicy() const { return m_policy; }
+    inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
+    template<typename PolicyT = Aws::String>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::String>
+    PutAuthPolicyRequest& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_resourceIdentifier;
     bool m_resourceIdentifierHasBeenSet = false;
+
+    Aws::String m_policy;
+    bool m_policyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/vpc-lattice/VPCLatticeRequest.h>
-#include <aws/vpc-lattice/model/AuthType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/vpc-lattice/model/AuthType.h>
 #include <utility>
 
 namespace Aws
@@ -35,15 +35,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of IAM policy.</p> <ul> <li> <p> <code>NONE</code>: The resource
-     * does not use an IAM policy. This is the default.</p> </li> <li> <p>
-     * <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used,
-     * auth is enabled and an auth policy is required.</p> </li> </ul>
+     * <p>The ID or ARN of the service.</p>
      */
-    inline AuthType GetAuthType() const { return m_authType; }
-    inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
-    inline void SetAuthType(AuthType value) { m_authTypeHasBeenSet = true; m_authType = value; }
-    inline UpdateServiceRequest& WithAuthType(AuthType value) { SetAuthType(value); return *this;}
+    inline const Aws::String& GetServiceIdentifier() const { return m_serviceIdentifier; }
+    inline bool ServiceIdentifierHasBeenSet() const { return m_serviceIdentifierHasBeenSet; }
+    template<typename ServiceIdentifierT = Aws::String>
+    void SetServiceIdentifier(ServiceIdentifierT&& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = std::forward<ServiceIdentifierT>(value); }
+    template<typename ServiceIdentifierT = Aws::String>
+    UpdateServiceRequest& WithServiceIdentifier(ServiceIdentifierT&& value) { SetServiceIdentifier(std::forward<ServiceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,25 +59,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID or ARN of the service.</p>
+     * <p>The type of IAM policy.</p> <ul> <li> <p> <code>NONE</code>: The resource
+     * does not use an IAM policy. This is the default.</p> </li> <li> <p>
+     * <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used,
+     * auth is enabled and an auth policy is required.</p> </li> </ul>
      */
-    inline const Aws::String& GetServiceIdentifier() const { return m_serviceIdentifier; }
-    inline bool ServiceIdentifierHasBeenSet() const { return m_serviceIdentifierHasBeenSet; }
-    template<typename ServiceIdentifierT = Aws::String>
-    void SetServiceIdentifier(ServiceIdentifierT&& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = std::forward<ServiceIdentifierT>(value); }
-    template<typename ServiceIdentifierT = Aws::String>
-    UpdateServiceRequest& WithServiceIdentifier(ServiceIdentifierT&& value) { SetServiceIdentifier(std::forward<ServiceIdentifierT>(value)); return *this;}
+    inline AuthType GetAuthType() const { return m_authType; }
+    inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
+    inline void SetAuthType(AuthType value) { m_authTypeHasBeenSet = true; m_authType = value; }
+    inline UpdateServiceRequest& WithAuthType(AuthType value) { SetAuthType(value); return *this;}
     ///@}
   private:
 
-    AuthType m_authType{AuthType::NOT_SET};
-    bool m_authTypeHasBeenSet = false;
+    Aws::String m_serviceIdentifier;
+    bool m_serviceIdentifierHasBeenSet = false;
 
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet = false;
 
-    Aws::String m_serviceIdentifier;
-    bool m_serviceIdentifierHasBeenSet = false;
+    AuthType m_authType{AuthType::NOT_SET};
+    bool m_authTypeHasBeenSet = false;
   };
 
 } // namespace Model

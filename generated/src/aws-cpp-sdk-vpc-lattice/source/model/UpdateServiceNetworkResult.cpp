@@ -25,16 +25,6 @@ UpdateServiceNetworkResult::UpdateServiceNetworkResult(const Aws::AmazonWebServi
 UpdateServiceNetworkResult& UpdateServiceNetworkResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("arn"))
-  {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("authType"))
-  {
-    m_authType = AuthTypeMapper::GetAuthTypeForName(jsonValue.GetString("authType"));
-    m_authTypeHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -44,6 +34,16 @@ UpdateServiceNetworkResult& UpdateServiceNetworkResult::operator =(const Aws::Am
   {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("authType"))
+  {
+    m_authType = AuthTypeMapper::GetAuthTypeForName(jsonValue.GetString("authType"));
+    m_authTypeHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

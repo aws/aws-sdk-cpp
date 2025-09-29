@@ -25,11 +25,6 @@ HeaderMatchType::HeaderMatchType(JsonView jsonValue)
 
 HeaderMatchType& HeaderMatchType::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("contains"))
-  {
-    m_contains = jsonValue.GetString("contains");
-    m_containsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("exact"))
   {
     m_exact = jsonValue.GetString("exact");
@@ -40,18 +35,17 @@ HeaderMatchType& HeaderMatchType::operator =(JsonView jsonValue)
     m_prefix = jsonValue.GetString("prefix");
     m_prefixHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("contains"))
+  {
+    m_contains = jsonValue.GetString("contains");
+    m_containsHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue HeaderMatchType::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_containsHasBeenSet)
-  {
-   payload.WithString("contains", m_contains);
-
-  }
 
   if(m_exactHasBeenSet)
   {
@@ -62,6 +56,12 @@ JsonValue HeaderMatchType::Jsonize() const
   if(m_prefixHasBeenSet)
   {
    payload.WithString("prefix", m_prefix);
+
+  }
+
+  if(m_containsHasBeenSet)
+  {
+   payload.WithString("contains", m_contains);
 
   }
 

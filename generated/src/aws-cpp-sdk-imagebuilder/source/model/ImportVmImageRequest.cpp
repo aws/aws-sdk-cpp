@@ -51,6 +51,12 @@ Aws::String ImportVmImageRequest::SerializePayload() const
 
   }
 
+  if(m_loggingConfigurationHasBeenSet)
+  {
+   payload.WithObject("loggingConfiguration", m_loggingConfiguration.Jsonize());
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;

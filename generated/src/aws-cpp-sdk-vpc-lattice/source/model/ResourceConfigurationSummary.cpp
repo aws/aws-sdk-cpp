@@ -25,55 +25,55 @@ ResourceConfigurationSummary::ResourceConfigurationSummary(JsonView jsonValue)
 
 ResourceConfigurationSummary& ResourceConfigurationSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("amazonManaged"))
-  {
-    m_amazonManaged = jsonValue.GetBool("amazonManaged");
-    m_amazonManagedHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("arn"))
-  {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
-    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-    m_lastUpdatedAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceConfigurationGroupId"))
+  if(jsonValue.ValueExists("arn"))
   {
-    m_resourceConfigurationGroupId = jsonValue.GetString("resourceConfigurationGroupId");
-    m_resourceConfigurationGroupIdHasBeenSet = true;
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("resourceGatewayId"))
   {
     m_resourceGatewayId = jsonValue.GetString("resourceGatewayId");
     m_resourceGatewayIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("resourceConfigurationGroupId"))
   {
-    m_status = ResourceConfigurationStatusMapper::GetResourceConfigurationStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
+    m_resourceConfigurationGroupId = jsonValue.GetString("resourceConfigurationGroupId");
+    m_resourceConfigurationGroupIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("type"))
   {
     m_type = ResourceConfigurationTypeMapper::GetResourceConfigurationTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = ResourceConfigurationStatusMapper::GetResourceConfigurationStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("amazonManaged"))
+  {
+    m_amazonManaged = jsonValue.GetBool("amazonManaged");
+    m_amazonManagedHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lastUpdatedAt"))
+  {
+    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
+    m_lastUpdatedAtHasBeenSet = true;
   }
   return *this;
 }
@@ -82,9 +82,15 @@ JsonValue ResourceConfigurationSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_amazonManagedHasBeenSet)
+  if(m_idHasBeenSet)
   {
-   payload.WithBool("amazonManaged", m_amazonManaged);
+   payload.WithString("id", m_id);
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
 
   }
 
@@ -94,25 +100,9 @@ JsonValue ResourceConfigurationSummary::Jsonize() const
 
   }
 
-  if(m_createdAtHasBeenSet)
+  if(m_resourceGatewayIdHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
-  }
-
-  if(m_lastUpdatedAtHasBeenSet)
-  {
-   payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
+   payload.WithString("resourceGatewayId", m_resourceGatewayId);
 
   }
 
@@ -122,10 +112,9 @@ JsonValue ResourceConfigurationSummary::Jsonize() const
 
   }
 
-  if(m_resourceGatewayIdHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithString("resourceGatewayId", m_resourceGatewayId);
-
+   payload.WithString("type", ResourceConfigurationTypeMapper::GetNameForResourceConfigurationType(m_type));
   }
 
   if(m_statusHasBeenSet)
@@ -133,9 +122,20 @@ JsonValue ResourceConfigurationSummary::Jsonize() const
    payload.WithString("status", ResourceConfigurationStatusMapper::GetNameForResourceConfigurationStatus(m_status));
   }
 
-  if(m_typeHasBeenSet)
+  if(m_amazonManagedHasBeenSet)
   {
-   payload.WithString("type", ResourceConfigurationTypeMapper::GetNameForResourceConfigurationType(m_type));
+   payload.WithBool("amazonManaged", m_amazonManaged);
+
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_lastUpdatedAtHasBeenSet)
+  {
+   payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

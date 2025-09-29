@@ -25,30 +25,30 @@ UpdateAccessLogSubscriptionResult::UpdateAccessLogSubscriptionResult(const Aws::
 UpdateAccessLogSubscriptionResult& UpdateAccessLogSubscriptionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("destinationArn"))
+  if(jsonValue.ValueExists("resourceId"))
   {
-    m_destinationArn = jsonValue.GetString("destinationArn");
-    m_destinationArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("id"))
-  {
-    m_id = jsonValue.GetString("id");
-    m_idHasBeenSet = true;
+    m_resourceId = jsonValue.GetString("resourceId");
+    m_resourceIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
     m_resourceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceId"))
+  if(jsonValue.ValueExists("destinationArn"))
   {
-    m_resourceId = jsonValue.GetString("resourceId");
-    m_resourceIdHasBeenSet = true;
+    m_destinationArn = jsonValue.GetString("destinationArn");
+    m_destinationArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

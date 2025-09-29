@@ -21,7 +21,8 @@ namespace Model
     max_tokens,
     stop_sequence,
     guardrail_intervened,
-    content_filtered
+    content_filtered,
+    model_context_window_exceeded
   };
 
 namespace StopReasonMapper

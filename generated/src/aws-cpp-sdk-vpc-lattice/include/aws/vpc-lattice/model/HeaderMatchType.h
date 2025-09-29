@@ -39,18 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A contains type match.</p>
-     */
-    inline const Aws::String& GetContains() const { return m_contains; }
-    inline bool ContainsHasBeenSet() const { return m_containsHasBeenSet; }
-    template<typename ContainsT = Aws::String>
-    void SetContains(ContainsT&& value) { m_containsHasBeenSet = true; m_contains = std::forward<ContainsT>(value); }
-    template<typename ContainsT = Aws::String>
-    HeaderMatchType& WithContains(ContainsT&& value) { SetContains(std::forward<ContainsT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>An exact type match.</p>
      */
     inline const Aws::String& GetExact() const { return m_exact; }
@@ -72,16 +60,28 @@ namespace Model
     template<typename PrefixT = Aws::String>
     HeaderMatchType& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_contains;
-    bool m_containsHasBeenSet = false;
+    ///@{
+    /**
+     * <p>A contains type match.</p>
+     */
+    inline const Aws::String& GetContains() const { return m_contains; }
+    inline bool ContainsHasBeenSet() const { return m_containsHasBeenSet; }
+    template<typename ContainsT = Aws::String>
+    void SetContains(ContainsT&& value) { m_containsHasBeenSet = true; m_contains = std::forward<ContainsT>(value); }
+    template<typename ContainsT = Aws::String>
+    HeaderMatchType& WithContains(ContainsT&& value) { SetContains(std::forward<ContainsT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_exact;
     bool m_exactHasBeenSet = false;
 
     Aws::String m_prefix;
     bool m_prefixHasBeenSet = false;
+
+    Aws::String m_contains;
+    bool m_containsHasBeenSet = false;
   };
 
 } // namespace Model

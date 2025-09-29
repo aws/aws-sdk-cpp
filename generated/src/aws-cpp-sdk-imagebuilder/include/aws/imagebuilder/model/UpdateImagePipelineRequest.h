@@ -12,6 +12,7 @@
 #include <aws/imagebuilder/model/PipelineStatus.h>
 #include <aws/imagebuilder/model/ImageScanningConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/imagebuilder/model/PipelineLoggingConfiguration.h>
 #include <aws/imagebuilder/model/WorkflowConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -206,6 +207,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Update logging configuration for the output image that's created when the
+     * pipeline runs.</p>
+     */
+    inline const PipelineLoggingConfiguration& GetLoggingConfiguration() const { return m_loggingConfiguration; }
+    inline bool LoggingConfigurationHasBeenSet() const { return m_loggingConfigurationHasBeenSet; }
+    template<typename LoggingConfigurationT = PipelineLoggingConfiguration>
+    void SetLoggingConfiguration(LoggingConfigurationT&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::forward<LoggingConfigurationT>(value); }
+    template<typename LoggingConfigurationT = PipelineLoggingConfiguration>
+    UpdateImagePipelineRequest& WithLoggingConfiguration(LoggingConfigurationT&& value) { SetLoggingConfiguration(std::forward<LoggingConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name or Amazon Resource Name (ARN) for the IAM role you create that
      * grants Image Builder access to perform workflow actions.</p>
      */
@@ -256,6 +270,9 @@ namespace Model
 
     Aws::Vector<WorkflowConfiguration> m_workflows;
     bool m_workflowsHasBeenSet = false;
+
+    PipelineLoggingConfiguration m_loggingConfiguration;
+    bool m_loggingConfigurationHasBeenSet = false;
 
     Aws::String m_executionRole;
     bool m_executionRoleHasBeenSet = false;

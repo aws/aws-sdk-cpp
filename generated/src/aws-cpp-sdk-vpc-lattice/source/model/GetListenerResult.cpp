@@ -30,40 +30,25 @@ GetListenerResult& GetListenerResult::operator =(const Aws::AmazonWebServiceResu
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("defaultAction"))
-  {
-    m_defaultAction = jsonValue.GetObject("defaultAction");
-    m_defaultActionHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
-    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-    m_lastUpdatedAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("port"))
-  {
-    m_port = jsonValue.GetInteger("port");
-    m_portHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("protocol"))
   {
     m_protocol = ListenerProtocolMapper::GetListenerProtocolForName(jsonValue.GetString("protocol"));
     m_protocolHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("port"))
+  {
+    m_port = jsonValue.GetInteger("port");
+    m_portHasBeenSet = true;
   }
   if(jsonValue.ValueExists("serviceArn"))
   {
@@ -74,6 +59,21 @@ GetListenerResult& GetListenerResult::operator =(const Aws::AmazonWebServiceResu
   {
     m_serviceId = jsonValue.GetString("serviceId");
     m_serviceIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("defaultAction"))
+  {
+    m_defaultAction = jsonValue.GetObject("defaultAction");
+    m_defaultActionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lastUpdatedAt"))
+  {
+    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
+    m_lastUpdatedAtHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

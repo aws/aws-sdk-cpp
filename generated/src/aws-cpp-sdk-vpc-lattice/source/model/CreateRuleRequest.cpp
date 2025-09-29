@@ -16,15 +16,9 @@ Aws::String CreateRuleRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_actionHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithObject("action", m_action.Jsonize());
-
-  }
-
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithString("name", m_name);
 
   }
 
@@ -34,15 +28,21 @@ Aws::String CreateRuleRequest::SerializePayload() const
 
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
-  }
-
   if(m_priorityHasBeenSet)
   {
    payload.WithInteger("priority", m_priority);
+
+  }
+
+  if(m_actionHasBeenSet)
+  {
+   payload.WithObject("action", m_action.Jsonize());
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

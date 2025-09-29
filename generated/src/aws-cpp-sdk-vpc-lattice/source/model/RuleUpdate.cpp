@@ -25,10 +25,10 @@ RuleUpdate::RuleUpdate(JsonView jsonValue)
 
 RuleUpdate& RuleUpdate::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("action"))
+  if(jsonValue.ValueExists("ruleIdentifier"))
   {
-    m_action = jsonValue.GetObject("action");
-    m_actionHasBeenSet = true;
+    m_ruleIdentifier = jsonValue.GetString("ruleIdentifier");
+    m_ruleIdentifierHasBeenSet = true;
   }
   if(jsonValue.ValueExists("match"))
   {
@@ -40,10 +40,10 @@ RuleUpdate& RuleUpdate::operator =(JsonView jsonValue)
     m_priority = jsonValue.GetInteger("priority");
     m_priorityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ruleIdentifier"))
+  if(jsonValue.ValueExists("action"))
   {
-    m_ruleIdentifier = jsonValue.GetString("ruleIdentifier");
-    m_ruleIdentifierHasBeenSet = true;
+    m_action = jsonValue.GetObject("action");
+    m_actionHasBeenSet = true;
   }
   return *this;
 }
@@ -52,9 +52,9 @@ JsonValue RuleUpdate::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_actionHasBeenSet)
+  if(m_ruleIdentifierHasBeenSet)
   {
-   payload.WithObject("action", m_action.Jsonize());
+   payload.WithString("ruleIdentifier", m_ruleIdentifier);
 
   }
 
@@ -70,9 +70,9 @@ JsonValue RuleUpdate::Jsonize() const
 
   }
 
-  if(m_ruleIdentifierHasBeenSet)
+  if(m_actionHasBeenSet)
   {
-   payload.WithString("ruleIdentifier", m_ruleIdentifier);
+   payload.WithObject("action", m_action.Jsonize());
 
   }
 

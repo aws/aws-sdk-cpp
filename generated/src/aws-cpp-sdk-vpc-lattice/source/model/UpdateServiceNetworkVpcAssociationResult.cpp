@@ -25,20 +25,25 @@ UpdateServiceNetworkVpcAssociationResult::UpdateServiceNetworkVpcAssociationResu
 UpdateServiceNetworkVpcAssociationResult& UpdateServiceNetworkVpcAssociationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = ServiceNetworkVpcAssociationStatusMapper::GetServiceNetworkVpcAssociationStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
     m_createdByHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("id"))
-  {
-    m_id = jsonValue.GetString("id");
-    m_idHasBeenSet = true;
   }
   if(jsonValue.ValueExists("securityGroupIds"))
   {
@@ -48,11 +53,6 @@ UpdateServiceNetworkVpcAssociationResult& UpdateServiceNetworkVpcAssociationResu
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
     }
     m_securityGroupIdsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = ServiceNetworkVpcAssociationStatusMapper::GetServiceNetworkVpcAssociationStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

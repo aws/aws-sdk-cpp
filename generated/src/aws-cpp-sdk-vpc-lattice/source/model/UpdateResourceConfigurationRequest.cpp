@@ -16,6 +16,12 @@ Aws::String UpdateResourceConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_resourceConfigurationDefinitionHasBeenSet)
+  {
+   payload.WithObject("resourceConfigurationDefinition", m_resourceConfigurationDefinition.Jsonize());
+
+  }
+
   if(m_allowAssociationToShareableServiceNetworkHasBeenSet)
   {
    payload.WithBool("allowAssociationToShareableServiceNetwork", m_allowAssociationToShareableServiceNetwork);
@@ -30,12 +36,6 @@ Aws::String UpdateResourceConfigurationRequest::SerializePayload() const
      portRangesJsonList[portRangesIndex].AsString(m_portRanges[portRangesIndex]);
    }
    payload.WithArray("portRanges", std::move(portRangesJsonList));
-
-  }
-
-  if(m_resourceConfigurationDefinitionHasBeenSet)
-  {
-   payload.WithObject("resourceConfigurationDefinition", m_resourceConfigurationDefinition.Jsonize());
 
   }
 

@@ -16,12 +16,6 @@ Aws::String UpdateRuleRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithObject("action", m_action.Jsonize());
-
-  }
-
   if(m_matchHasBeenSet)
   {
    payload.WithObject("match", m_match.Jsonize());
@@ -31,6 +25,12 @@ Aws::String UpdateRuleRequest::SerializePayload() const
   if(m_priorityHasBeenSet)
   {
    payload.WithInteger("priority", m_priority);
+
+  }
+
+  if(m_actionHasBeenSet)
+  {
+   payload.WithObject("action", m_action.Jsonize());
 
   }
 

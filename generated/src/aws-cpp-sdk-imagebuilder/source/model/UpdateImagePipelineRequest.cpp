@@ -98,6 +98,12 @@ Aws::String UpdateImagePipelineRequest::SerializePayload() const
 
   }
 
+  if(m_loggingConfigurationHasBeenSet)
+  {
+   payload.WithObject("loggingConfiguration", m_loggingConfiguration.Jsonize());
+
+  }
+
   if(m_executionRoleHasBeenSet)
   {
    payload.WithString("executionRole", m_executionRole);

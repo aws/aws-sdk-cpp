@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
-#include <aws/vpc-lattice/model/ArnResource.h>
 #include <aws/vpc-lattice/model/DnsResource.h>
 #include <aws/vpc-lattice/model/IpResource.h>
+#include <aws/vpc-lattice/model/ArnResource.h>
 #include <utility>
 
 namespace Aws
@@ -41,18 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource.</p>
-     */
-    inline const ArnResource& GetArnResource() const { return m_arnResource; }
-    inline bool ArnResourceHasBeenSet() const { return m_arnResourceHasBeenSet; }
-    template<typename ArnResourceT = ArnResource>
-    void SetArnResource(ArnResourceT&& value) { m_arnResourceHasBeenSet = true; m_arnResource = std::forward<ArnResourceT>(value); }
-    template<typename ArnResourceT = ArnResource>
-    ResourceConfigurationDefinition& WithArnResource(ArnResourceT&& value) { SetArnResource(std::forward<ArnResourceT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The DNS name of the resource.</p>
      */
     inline const DnsResource& GetDnsResource() const { return m_dnsResource; }
@@ -74,16 +62,28 @@ namespace Model
     template<typename IpResourceT = IpResource>
     ResourceConfigurationDefinition& WithIpResource(IpResourceT&& value) { SetIpResource(std::forward<IpResourceT>(value)); return *this;}
     ///@}
-  private:
 
-    ArnResource m_arnResource;
-    bool m_arnResourceHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
+     */
+    inline const ArnResource& GetArnResource() const { return m_arnResource; }
+    inline bool ArnResourceHasBeenSet() const { return m_arnResourceHasBeenSet; }
+    template<typename ArnResourceT = ArnResource>
+    void SetArnResource(ArnResourceT&& value) { m_arnResourceHasBeenSet = true; m_arnResource = std::forward<ArnResourceT>(value); }
+    template<typename ArnResourceT = ArnResource>
+    ResourceConfigurationDefinition& WithArnResource(ArnResourceT&& value) { SetArnResource(std::forward<ArnResourceT>(value)); return *this;}
+    ///@}
+  private:
 
     DnsResource m_dnsResource;
     bool m_dnsResourceHasBeenSet = false;
 
     IpResource m_ipResource;
     bool m_ipResourceHasBeenSet = false;
+
+    ArnResource m_arnResource;
+    bool m_arnResourceHasBeenSet = false;
   };
 
 } // namespace Model

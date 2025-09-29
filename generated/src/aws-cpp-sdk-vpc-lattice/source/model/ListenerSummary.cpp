@@ -30,35 +30,35 @@ ListenerSummary& ListenerSummary::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
-    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-    m_lastUpdatedAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("protocol"))
+  {
+    m_protocol = ListenerProtocolMapper::GetListenerProtocolForName(jsonValue.GetString("protocol"));
+    m_protocolHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
     m_portHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("protocol"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_protocol = ListenerProtocolMapper::GetListenerProtocolForName(jsonValue.GetString("protocol"));
-    m_protocolHasBeenSet = true;
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lastUpdatedAt"))
+  {
+    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
+    m_lastUpdatedAtHasBeenSet = true;
   }
   return *this;
 }
@@ -73,20 +73,10 @@ JsonValue ListenerSummary::Jsonize() const
 
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
 
-  }
-
-  if(m_lastUpdatedAtHasBeenSet)
-  {
-   payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_nameHasBeenSet)
@@ -95,15 +85,25 @@ JsonValue ListenerSummary::Jsonize() const
 
   }
 
+  if(m_protocolHasBeenSet)
+  {
+   payload.WithString("protocol", ListenerProtocolMapper::GetNameForListenerProtocol(m_protocol));
+  }
+
   if(m_portHasBeenSet)
   {
    payload.WithInteger("port", m_port);
 
   }
 
-  if(m_protocolHasBeenSet)
+  if(m_createdAtHasBeenSet)
   {
-   payload.WithString("protocol", ListenerProtocolMapper::GetNameForListenerProtocol(m_protocol));
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_lastUpdatedAtHasBeenSet)
+  {
+   payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
