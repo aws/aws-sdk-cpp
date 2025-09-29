@@ -108,7 +108,9 @@ Aws::String SimpleScalarPropertiesRequest::SerializePayload() const {
 
 Aws::Http::HeaderValueCollection SimpleScalarPropertiesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE));
+  headers.emplace("smithy-protocol", "rpc-v2-cbor");
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   Aws::StringStream ss;
   if (m_requestIdHasBeenSet) {
     ss << m_requestId;

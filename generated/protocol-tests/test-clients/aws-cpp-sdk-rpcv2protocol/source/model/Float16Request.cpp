@@ -16,5 +16,7 @@ Aws::String Float16Request::SerializePayload() const { return {}; }
 
 Aws::Http::HeaderValueCollection Float16Request::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
+  headers.emplace("smithy-protocol", "rpc-v2-cbor");
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }
