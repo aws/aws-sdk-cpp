@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/vpc-lattice/model/ServiceNetworkServiceAssociationStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/vpc-lattice/model/DnsEntry.h>
-#include <aws/vpc-lattice/model/ServiceNetworkServiceAssociationStatus.h>
 #include <utility>
 
 namespace Aws
@@ -43,6 +43,29 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the association.</p>
+     */
+    inline const Aws::String& GetId() const { return m_id; }
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ServiceNetworkServiceAssociationSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status of the service network’s association with the service. If the
+     * deletion fails, try to delete again.</p>
+     */
+    inline ServiceNetworkServiceAssociationStatus GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(ServiceNetworkServiceAssociationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ServiceNetworkServiceAssociationSummary& WithStatus(ServiceNetworkServiceAssociationStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the association.</p>
      */
     inline const Aws::String& GetArn() const { return m_arn; }
@@ -51,18 +74,6 @@ namespace Model
     void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
     template<typename ArnT = Aws::String>
     ServiceNetworkServiceAssociationSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The date and time that the association was created, in ISO-8601 format.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    ServiceNetworkServiceAssociationSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,50 +90,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The custom domain name of the service.</p>
+     * <p>The date and time that the association was created, in ISO-8601 format.</p>
      */
-    inline const Aws::String& GetCustomDomainName() const { return m_customDomainName; }
-    inline bool CustomDomainNameHasBeenSet() const { return m_customDomainNameHasBeenSet; }
-    template<typename CustomDomainNameT = Aws::String>
-    void SetCustomDomainName(CustomDomainNameT&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::forward<CustomDomainNameT>(value); }
-    template<typename CustomDomainNameT = Aws::String>
-    ServiceNetworkServiceAssociationSummary& WithCustomDomainName(CustomDomainNameT&& value) { SetCustomDomainName(std::forward<CustomDomainNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The DNS information.</p>
-     */
-    inline const DnsEntry& GetDnsEntry() const { return m_dnsEntry; }
-    inline bool DnsEntryHasBeenSet() const { return m_dnsEntryHasBeenSet; }
-    template<typename DnsEntryT = DnsEntry>
-    void SetDnsEntry(DnsEntryT&& value) { m_dnsEntryHasBeenSet = true; m_dnsEntry = std::forward<DnsEntryT>(value); }
-    template<typename DnsEntryT = DnsEntry>
-    ServiceNetworkServiceAssociationSummary& WithDnsEntry(DnsEntryT&& value) { SetDnsEntry(std::forward<DnsEntryT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the association.</p>
-     */
-    inline const Aws::String& GetId() const { return m_id; }
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    template<typename IdT = Aws::String>
-    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
-    template<typename IdT = Aws::String>
-    ServiceNetworkServiceAssociationSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the service.</p>
-     */
-    inline const Aws::String& GetServiceArn() const { return m_serviceArn; }
-    inline bool ServiceArnHasBeenSet() const { return m_serviceArnHasBeenSet; }
-    template<typename ServiceArnT = Aws::String>
-    void SetServiceArn(ServiceArnT&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::forward<ServiceArnT>(value); }
-    template<typename ServiceArnT = Aws::String>
-    ServiceNetworkServiceAssociationSummary& WithServiceArn(ServiceArnT&& value) { SetServiceArn(std::forward<ServiceArnT>(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    ServiceNetworkServiceAssociationSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -151,14 +126,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the service network.</p>
+     * <p>The Amazon Resource Name (ARN) of the service.</p>
      */
-    inline const Aws::String& GetServiceNetworkArn() const { return m_serviceNetworkArn; }
-    inline bool ServiceNetworkArnHasBeenSet() const { return m_serviceNetworkArnHasBeenSet; }
-    template<typename ServiceNetworkArnT = Aws::String>
-    void SetServiceNetworkArn(ServiceNetworkArnT&& value) { m_serviceNetworkArnHasBeenSet = true; m_serviceNetworkArn = std::forward<ServiceNetworkArnT>(value); }
-    template<typename ServiceNetworkArnT = Aws::String>
-    ServiceNetworkServiceAssociationSummary& WithServiceNetworkArn(ServiceNetworkArnT&& value) { SetServiceNetworkArn(std::forward<ServiceNetworkArnT>(value)); return *this;}
+    inline const Aws::String& GetServiceArn() const { return m_serviceArn; }
+    inline bool ServiceArnHasBeenSet() const { return m_serviceArnHasBeenSet; }
+    template<typename ServiceArnT = Aws::String>
+    void SetServiceArn(ServiceArnT&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::forward<ServiceArnT>(value); }
+    template<typename ServiceArnT = Aws::String>
+    ServiceNetworkServiceAssociationSummary& WithServiceArn(ServiceArnT&& value) { SetServiceArn(std::forward<ServiceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -187,35 +162,55 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status. If the deletion fails, try to delete again.</p>
+     * <p>The Amazon Resource Name (ARN) of the service network.</p>
      */
-    inline ServiceNetworkServiceAssociationStatus GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(ServiceNetworkServiceAssociationStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline ServiceNetworkServiceAssociationSummary& WithStatus(ServiceNetworkServiceAssociationStatus value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetServiceNetworkArn() const { return m_serviceNetworkArn; }
+    inline bool ServiceNetworkArnHasBeenSet() const { return m_serviceNetworkArnHasBeenSet; }
+    template<typename ServiceNetworkArnT = Aws::String>
+    void SetServiceNetworkArn(ServiceNetworkArnT&& value) { m_serviceNetworkArnHasBeenSet = true; m_serviceNetworkArn = std::forward<ServiceNetworkArnT>(value); }
+    template<typename ServiceNetworkArnT = Aws::String>
+    ServiceNetworkServiceAssociationSummary& WithServiceNetworkArn(ServiceNetworkArnT&& value) { SetServiceNetworkArn(std::forward<ServiceNetworkArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The DNS information.</p>
+     */
+    inline const DnsEntry& GetDnsEntry() const { return m_dnsEntry; }
+    inline bool DnsEntryHasBeenSet() const { return m_dnsEntryHasBeenSet; }
+    template<typename DnsEntryT = DnsEntry>
+    void SetDnsEntry(DnsEntryT&& value) { m_dnsEntryHasBeenSet = true; m_dnsEntry = std::forward<DnsEntryT>(value); }
+    template<typename DnsEntryT = DnsEntry>
+    ServiceNetworkServiceAssociationSummary& WithDnsEntry(DnsEntryT&& value) { SetDnsEntry(std::forward<DnsEntryT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The custom domain name of the service.</p>
+     */
+    inline const Aws::String& GetCustomDomainName() const { return m_customDomainName; }
+    inline bool CustomDomainNameHasBeenSet() const { return m_customDomainNameHasBeenSet; }
+    template<typename CustomDomainNameT = Aws::String>
+    void SetCustomDomainName(CustomDomainNameT&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::forward<CustomDomainNameT>(value); }
+    template<typename CustomDomainNameT = Aws::String>
+    ServiceNetworkServiceAssociationSummary& WithCustomDomainName(CustomDomainNameT&& value) { SetCustomDomainName(std::forward<CustomDomainNameT>(value)); return *this;}
     ///@}
   private:
-
-    Aws::String m_arn;
-    bool m_arnHasBeenSet = false;
-
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
-
-    Aws::String m_createdBy;
-    bool m_createdByHasBeenSet = false;
-
-    Aws::String m_customDomainName;
-    bool m_customDomainNameHasBeenSet = false;
-
-    DnsEntry m_dnsEntry;
-    bool m_dnsEntryHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    Aws::String m_serviceArn;
-    bool m_serviceArnHasBeenSet = false;
+    ServiceNetworkServiceAssociationStatus m_status{ServiceNetworkServiceAssociationStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
+
+    Aws::String m_createdBy;
+    bool m_createdByHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_serviceId;
     bool m_serviceIdHasBeenSet = false;
@@ -223,8 +218,8 @@ namespace Model
     Aws::String m_serviceName;
     bool m_serviceNameHasBeenSet = false;
 
-    Aws::String m_serviceNetworkArn;
-    bool m_serviceNetworkArnHasBeenSet = false;
+    Aws::String m_serviceArn;
+    bool m_serviceArnHasBeenSet = false;
 
     Aws::String m_serviceNetworkId;
     bool m_serviceNetworkIdHasBeenSet = false;
@@ -232,8 +227,14 @@ namespace Model
     Aws::String m_serviceNetworkName;
     bool m_serviceNetworkNameHasBeenSet = false;
 
-    ServiceNetworkServiceAssociationStatus m_status{ServiceNetworkServiceAssociationStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
+    Aws::String m_serviceNetworkArn;
+    bool m_serviceNetworkArnHasBeenSet = false;
+
+    DnsEntry m_dnsEntry;
+    bool m_dnsEntryHasBeenSet = false;
+
+    Aws::String m_customDomainName;
+    bool m_customDomainNameHasBeenSet = false;
   };
 
 } // namespace Model

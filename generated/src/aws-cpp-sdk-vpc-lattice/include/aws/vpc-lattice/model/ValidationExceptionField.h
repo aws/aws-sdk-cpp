@@ -39,18 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Additional information about why the validation failed.</p>
-     */
-    inline const Aws::String& GetMessage() const { return m_message; }
-    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    template<typename MessageT = Aws::String>
-    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
-    template<typename MessageT = Aws::String>
-    ValidationExceptionField& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the validation exception.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
@@ -60,13 +48,25 @@ namespace Model
     template<typename NameT = Aws::String>
     ValidationExceptionField& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_message;
-    bool m_messageHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Additional information about why the validation failed.</p>
+     */
+    inline const Aws::String& GetMessage() const { return m_message; }
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ValidationExceptionField& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_message;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -163,6 +163,11 @@ Image& Image::operator =(JsonView jsonValue)
     }
     m_workflowsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("loggingConfiguration"))
+  {
+    m_loggingConfiguration = jsonValue.GetObject("loggingConfiguration");
+    m_loggingConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -328,6 +333,12 @@ JsonValue Image::Jsonize() const
      workflowsJsonList[workflowsIndex].AsObject(m_workflows[workflowsIndex].Jsonize());
    }
    payload.WithArray("workflows", std::move(workflowsJsonList));
+
+  }
+
+  if(m_loggingConfigurationHasBeenSet)
+  {
+   payload.WithObject("loggingConfiguration", m_loggingConfiguration.Jsonize());
 
   }
 

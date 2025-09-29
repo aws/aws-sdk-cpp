@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
-#include <aws/vpc-lattice/model/RuleAction.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/vpc-lattice/model/RuleMatch.h>
+#include <aws/vpc-lattice/model/RuleAction.h>
 #include <utility>
 
 namespace Aws
@@ -36,17 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The rule action.</p>
-     */
-    inline const RuleAction& GetAction() const { return m_action; }
-    template<typename ActionT = RuleAction>
-    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
-    template<typename ActionT = RuleAction>
-    CreateRuleResult& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
     inline const Aws::String& GetArn() const { return m_arn; }
@@ -69,6 +58,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the rule.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateRuleResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The rule match. The <code>RuleMatch</code> must be an <code>HttpMatch</code>.
      * This means that the rule should be an exact match on HTTP constraints which are
      * made up of the HTTP method, path, and header.</p>
@@ -82,23 +82,23 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the rule.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    CreateRuleResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The priority assigned to the rule. The lower the priority number the higher
      * the priority.</p>
      */
     inline int GetPriority() const { return m_priority; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline CreateRuleResult& WithPriority(int value) { SetPriority(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The rule action.</p>
+     */
+    inline const RuleAction& GetAction() const { return m_action; }
+    template<typename ActionT = RuleAction>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = RuleAction>
+    CreateRuleResult& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,23 +111,23 @@ namespace Model
     ///@}
   private:
 
-    RuleAction m_action;
-    bool m_actionHasBeenSet = false;
-
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    RuleMatch m_match;
-    bool m_matchHasBeenSet = false;
-
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
+    RuleMatch m_match;
+    bool m_matchHasBeenSet = false;
+
     int m_priority{0};
     bool m_priorityHasBeenSet = false;
+
+    RuleAction m_action;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

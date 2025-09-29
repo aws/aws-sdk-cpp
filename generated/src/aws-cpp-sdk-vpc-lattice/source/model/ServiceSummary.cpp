@@ -25,6 +25,16 @@ ServiceSummary::ServiceSummary(JsonView jsonValue)
 
 ServiceSummary& ServiceSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
@@ -35,30 +45,20 @@ ServiceSummary& ServiceSummary::operator =(JsonView jsonValue)
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("customDomainName"))
+  if(jsonValue.ValueExists("lastUpdatedAt"))
   {
-    m_customDomainName = jsonValue.GetString("customDomainName");
-    m_customDomainNameHasBeenSet = true;
+    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
+    m_lastUpdatedAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("dnsEntry"))
   {
     m_dnsEntry = jsonValue.GetObject("dnsEntry");
     m_dnsEntryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
+  if(jsonValue.ValueExists("customDomainName"))
   {
-    m_id = jsonValue.GetString("id");
-    m_idHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
-    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-    m_lastUpdatedAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
+    m_customDomainName = jsonValue.GetString("customDomainName");
+    m_customDomainNameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("status"))
   {
@@ -72,6 +72,18 @@ JsonValue ServiceSummary::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("id", m_id);
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
+
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
@@ -83,10 +95,9 @@ JsonValue ServiceSummary::Jsonize() const
    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_customDomainNameHasBeenSet)
+  if(m_lastUpdatedAtHasBeenSet)
   {
-   payload.WithString("customDomainName", m_customDomainName);
-
+   payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_dnsEntryHasBeenSet)
@@ -95,20 +106,9 @@ JsonValue ServiceSummary::Jsonize() const
 
   }
 
-  if(m_idHasBeenSet)
+  if(m_customDomainNameHasBeenSet)
   {
-   payload.WithString("id", m_id);
-
-  }
-
-  if(m_lastUpdatedAtHasBeenSet)
-  {
-   payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
+   payload.WithString("customDomainName", m_customDomainName);
 
   }
 

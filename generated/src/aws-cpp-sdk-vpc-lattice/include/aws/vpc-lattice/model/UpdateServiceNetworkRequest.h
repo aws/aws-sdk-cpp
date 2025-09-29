@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/vpc-lattice/VPCLatticeRequest.h>
-#include <aws/vpc-lattice/model/AuthType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/vpc-lattice/model/AuthType.h>
 #include <utility>
 
 namespace Aws
@@ -35,6 +35,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID or ARN of the service network.</p>
+     */
+    inline const Aws::String& GetServiceNetworkIdentifier() const { return m_serviceNetworkIdentifier; }
+    inline bool ServiceNetworkIdentifierHasBeenSet() const { return m_serviceNetworkIdentifierHasBeenSet; }
+    template<typename ServiceNetworkIdentifierT = Aws::String>
+    void SetServiceNetworkIdentifier(ServiceNetworkIdentifierT&& value) { m_serviceNetworkIdentifierHasBeenSet = true; m_serviceNetworkIdentifier = std::forward<ServiceNetworkIdentifierT>(value); }
+    template<typename ServiceNetworkIdentifierT = Aws::String>
+    UpdateServiceNetworkRequest& WithServiceNetworkIdentifier(ServiceNetworkIdentifierT&& value) { SetServiceNetworkIdentifier(std::forward<ServiceNetworkIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The type of IAM policy.</p> <ul> <li> <p> <code>NONE</code>: The resource
      * does not use an IAM policy. This is the default.</p> </li> <li> <p>
      * <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used,
@@ -45,25 +57,13 @@ namespace Model
     inline void SetAuthType(AuthType value) { m_authTypeHasBeenSet = true; m_authType = value; }
     inline UpdateServiceNetworkRequest& WithAuthType(AuthType value) { SetAuthType(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The ID or ARN of the service network.</p>
-     */
-    inline const Aws::String& GetServiceNetworkIdentifier() const { return m_serviceNetworkIdentifier; }
-    inline bool ServiceNetworkIdentifierHasBeenSet() const { return m_serviceNetworkIdentifierHasBeenSet; }
-    template<typename ServiceNetworkIdentifierT = Aws::String>
-    void SetServiceNetworkIdentifier(ServiceNetworkIdentifierT&& value) { m_serviceNetworkIdentifierHasBeenSet = true; m_serviceNetworkIdentifier = std::forward<ServiceNetworkIdentifierT>(value); }
-    template<typename ServiceNetworkIdentifierT = Aws::String>
-    UpdateServiceNetworkRequest& WithServiceNetworkIdentifier(ServiceNetworkIdentifierT&& value) { SetServiceNetworkIdentifier(std::forward<ServiceNetworkIdentifierT>(value)); return *this;}
-    ///@}
   private:
-
-    AuthType m_authType{AuthType::NOT_SET};
-    bool m_authTypeHasBeenSet = false;
 
     Aws::String m_serviceNetworkIdentifier;
     bool m_serviceNetworkIdentifierHasBeenSet = false;
+
+    AuthType m_authType{AuthType::NOT_SET};
+    bool m_authTypeHasBeenSet = false;
   };
 
 } // namespace Model

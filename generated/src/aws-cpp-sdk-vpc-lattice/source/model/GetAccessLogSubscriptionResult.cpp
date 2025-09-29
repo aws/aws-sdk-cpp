@@ -25,45 +25,45 @@ GetAccessLogSubscriptionResult::GetAccessLogSubscriptionResult(const Aws::Amazon
 GetAccessLogSubscriptionResult& GetAccessLogSubscriptionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("arn"))
-  {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("destinationArn"))
-  {
-    m_destinationArn = jsonValue.GetString("destinationArn");
-    m_destinationArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
+  if(jsonValue.ValueExists("arn"))
   {
-    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-    m_lastUpdatedAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("resourceArn"))
-  {
-    m_resourceArn = jsonValue.GetString("resourceArn");
-    m_resourceArnHasBeenSet = true;
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
     m_resourceIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("resourceArn"))
+  {
+    m_resourceArn = jsonValue.GetString("resourceArn");
+    m_resourceArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("destinationArn"))
+  {
+    m_destinationArn = jsonValue.GetString("destinationArn");
+    m_destinationArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("serviceNetworkLogType"))
   {
     m_serviceNetworkLogType = ServiceNetworkLogTypeMapper::GetServiceNetworkLogTypeForName(jsonValue.GetString("serviceNetworkLogType"));
     m_serviceNetworkLogTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lastUpdatedAt"))
+  {
+    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
+    m_lastUpdatedAtHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

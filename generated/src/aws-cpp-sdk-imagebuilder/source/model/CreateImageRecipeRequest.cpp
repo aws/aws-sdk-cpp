@@ -85,6 +85,17 @@ Aws::String CreateImageRecipeRequest::SerializePayload() const
 
   }
 
+  if(m_amiTagsHasBeenSet)
+  {
+   JsonValue amiTagsJsonMap;
+   for(auto& amiTagsItem : m_amiTags)
+   {
+     amiTagsJsonMap.WithString(amiTagsItem.first, amiTagsItem.second);
+   }
+   payload.WithObject("amiTags", std::move(amiTagsJsonMap));
+
+  }
+
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);

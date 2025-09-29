@@ -39,6 +39,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID or ARN of the rule.</p>
+     */
+    inline const Aws::String& GetRuleIdentifier() const { return m_ruleIdentifier; }
+    inline bool RuleIdentifierHasBeenSet() const { return m_ruleIdentifierHasBeenSet; }
+    template<typename RuleIdentifierT = Aws::String>
+    void SetRuleIdentifier(RuleIdentifierT&& value) { m_ruleIdentifierHasBeenSet = true; m_ruleIdentifier = std::forward<RuleIdentifierT>(value); }
+    template<typename RuleIdentifierT = Aws::String>
+    RuleUpdateFailure& WithRuleIdentifier(RuleIdentifierT&& value) { SetRuleIdentifier(std::forward<RuleIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The failure code.</p>
      */
     inline const Aws::String& GetFailureCode() const { return m_failureCode; }
@@ -60,28 +72,16 @@ namespace Model
     template<typename FailureMessageT = Aws::String>
     RuleUpdateFailure& WithFailureMessage(FailureMessageT&& value) { SetFailureMessage(std::forward<FailureMessageT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The ID or ARN of the rule.</p>
-     */
-    inline const Aws::String& GetRuleIdentifier() const { return m_ruleIdentifier; }
-    inline bool RuleIdentifierHasBeenSet() const { return m_ruleIdentifierHasBeenSet; }
-    template<typename RuleIdentifierT = Aws::String>
-    void SetRuleIdentifier(RuleIdentifierT&& value) { m_ruleIdentifierHasBeenSet = true; m_ruleIdentifier = std::forward<RuleIdentifierT>(value); }
-    template<typename RuleIdentifierT = Aws::String>
-    RuleUpdateFailure& WithRuleIdentifier(RuleIdentifierT&& value) { SetRuleIdentifier(std::forward<RuleIdentifierT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_ruleIdentifier;
+    bool m_ruleIdentifierHasBeenSet = false;
 
     Aws::String m_failureCode;
     bool m_failureCodeHasBeenSet = false;
 
     Aws::String m_failureMessage;
     bool m_failureMessageHasBeenSet = false;
-
-    Aws::String m_ruleIdentifier;
-    bool m_ruleIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

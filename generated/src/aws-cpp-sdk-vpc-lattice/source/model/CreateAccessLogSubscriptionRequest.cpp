@@ -22,15 +22,15 @@ Aws::String CreateAccessLogSubscriptionRequest::SerializePayload() const
 
   }
 
-  if(m_destinationArnHasBeenSet)
-  {
-   payload.WithString("destinationArn", m_destinationArn);
-
-  }
-
   if(m_resourceIdentifierHasBeenSet)
   {
    payload.WithString("resourceIdentifier", m_resourceIdentifier);
+
+  }
+
+  if(m_destinationArnHasBeenSet)
+  {
+   payload.WithString("destinationArn", m_destinationArn);
 
   }
 

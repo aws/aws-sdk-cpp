@@ -50,6 +50,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The service code.</p>
+     */
+    inline const Aws::String& GetServiceCode() const { return m_serviceCode; }
+    inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
+    template<typename ServiceCodeT = Aws::String>
+    void SetServiceCode(ServiceCodeT&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::forward<ServiceCodeT>(value); }
+    template<typename ServiceCodeT = Aws::String>
+    ThrottlingException& WithServiceCode(ServiceCodeT&& value) { SetServiceCode(std::forward<ServiceCodeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the service quota that was exceeded.</p>
      */
     inline const Aws::String& GetQuotaCode() const { return m_quotaCode; }
@@ -69,31 +81,19 @@ namespace Model
     inline void SetRetryAfterSeconds(int value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds = value; }
     inline ThrottlingException& WithRetryAfterSeconds(int value) { SetRetryAfterSeconds(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The service code.</p>
-     */
-    inline const Aws::String& GetServiceCode() const { return m_serviceCode; }
-    inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
-    template<typename ServiceCodeT = Aws::String>
-    void SetServiceCode(ServiceCodeT&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::forward<ServiceCodeT>(value); }
-    template<typename ServiceCodeT = Aws::String>
-    ThrottlingException& WithServiceCode(ServiceCodeT&& value) { SetServiceCode(std::forward<ServiceCodeT>(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
+
+    Aws::String m_serviceCode;
+    bool m_serviceCodeHasBeenSet = false;
 
     Aws::String m_quotaCode;
     bool m_quotaCodeHasBeenSet = false;
 
     int m_retryAfterSeconds{0};
     bool m_retryAfterSecondsHasBeenSet = false;
-
-    Aws::String m_serviceCode;
-    bool m_serviceCodeHasBeenSet = false;
   };
 
 } // namespace Model

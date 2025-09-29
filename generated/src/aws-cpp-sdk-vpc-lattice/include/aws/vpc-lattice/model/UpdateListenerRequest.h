@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/vpc-lattice/VPCLatticeRequest.h>
-#include <aws/vpc-lattice/model/RuleAction.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/vpc-lattice/model/RuleAction.h>
 #include <utility>
 
 namespace Aws
@@ -35,14 +35,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The action for the default rule.</p>
+     * <p>The ID or ARN of the service.</p>
      */
-    inline const RuleAction& GetDefaultAction() const { return m_defaultAction; }
-    inline bool DefaultActionHasBeenSet() const { return m_defaultActionHasBeenSet; }
-    template<typename DefaultActionT = RuleAction>
-    void SetDefaultAction(DefaultActionT&& value) { m_defaultActionHasBeenSet = true; m_defaultAction = std::forward<DefaultActionT>(value); }
-    template<typename DefaultActionT = RuleAction>
-    UpdateListenerRequest& WithDefaultAction(DefaultActionT&& value) { SetDefaultAction(std::forward<DefaultActionT>(value)); return *this;}
+    inline const Aws::String& GetServiceIdentifier() const { return m_serviceIdentifier; }
+    inline bool ServiceIdentifierHasBeenSet() const { return m_serviceIdentifierHasBeenSet; }
+    template<typename ServiceIdentifierT = Aws::String>
+    void SetServiceIdentifier(ServiceIdentifierT&& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = std::forward<ServiceIdentifierT>(value); }
+    template<typename ServiceIdentifierT = Aws::String>
+    UpdateListenerRequest& WithServiceIdentifier(ServiceIdentifierT&& value) { SetServiceIdentifier(std::forward<ServiceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,25 +59,25 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID or ARN of the service.</p>
+     * <p>The action for the default rule.</p>
      */
-    inline const Aws::String& GetServiceIdentifier() const { return m_serviceIdentifier; }
-    inline bool ServiceIdentifierHasBeenSet() const { return m_serviceIdentifierHasBeenSet; }
-    template<typename ServiceIdentifierT = Aws::String>
-    void SetServiceIdentifier(ServiceIdentifierT&& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = std::forward<ServiceIdentifierT>(value); }
-    template<typename ServiceIdentifierT = Aws::String>
-    UpdateListenerRequest& WithServiceIdentifier(ServiceIdentifierT&& value) { SetServiceIdentifier(std::forward<ServiceIdentifierT>(value)); return *this;}
+    inline const RuleAction& GetDefaultAction() const { return m_defaultAction; }
+    inline bool DefaultActionHasBeenSet() const { return m_defaultActionHasBeenSet; }
+    template<typename DefaultActionT = RuleAction>
+    void SetDefaultAction(DefaultActionT&& value) { m_defaultActionHasBeenSet = true; m_defaultAction = std::forward<DefaultActionT>(value); }
+    template<typename DefaultActionT = RuleAction>
+    UpdateListenerRequest& WithDefaultAction(DefaultActionT&& value) { SetDefaultAction(std::forward<DefaultActionT>(value)); return *this;}
     ///@}
   private:
 
-    RuleAction m_defaultAction;
-    bool m_defaultActionHasBeenSet = false;
+    Aws::String m_serviceIdentifier;
+    bool m_serviceIdentifierHasBeenSet = false;
 
     Aws::String m_listenerIdentifier;
     bool m_listenerIdentifierHasBeenSet = false;
 
-    Aws::String m_serviceIdentifier;
-    bool m_serviceIdentifierHasBeenSet = false;
+    RuleAction m_defaultAction;
+    bool m_defaultActionHasBeenSet = false;
   };
 
 } // namespace Model

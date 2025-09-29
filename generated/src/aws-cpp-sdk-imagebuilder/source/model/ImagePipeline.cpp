@@ -100,6 +100,11 @@ ImagePipeline& ImagePipeline::operator =(JsonView jsonValue)
     m_dateLastRun = jsonValue.GetString("dateLastRun");
     m_dateLastRunHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("lastRunStatus"))
+  {
+    m_lastRunStatus = ImageStatusMapper::GetImageStatusForName(jsonValue.GetString("lastRunStatus"));
+    m_lastRunStatusHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("dateNextRun"))
   {
     m_dateNextRun = jsonValue.GetString("dateNextRun");
@@ -132,6 +137,16 @@ ImagePipeline& ImagePipeline::operator =(JsonView jsonValue)
       m_workflows.push_back(workflowsJsonList[workflowsIndex].AsObject());
     }
     m_workflowsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("loggingConfiguration"))
+  {
+    m_loggingConfiguration = jsonValue.GetObject("loggingConfiguration");
+    m_loggingConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("consecutiveFailures"))
+  {
+    m_consecutiveFailures = jsonValue.GetInteger("consecutiveFailures");
+    m_consecutiveFailuresHasBeenSet = true;
   }
   return *this;
 }
@@ -228,6 +243,11 @@ JsonValue ImagePipeline::Jsonize() const
 
   }
 
+  if(m_lastRunStatusHasBeenSet)
+  {
+   payload.WithString("lastRunStatus", ImageStatusMapper::GetNameForImageStatus(m_lastRunStatus));
+  }
+
   if(m_dateNextRunHasBeenSet)
   {
    payload.WithString("dateNextRun", m_dateNextRun);
@@ -265,6 +285,18 @@ JsonValue ImagePipeline::Jsonize() const
      workflowsJsonList[workflowsIndex].AsObject(m_workflows[workflowsIndex].Jsonize());
    }
    payload.WithArray("workflows", std::move(workflowsJsonList));
+
+  }
+
+  if(m_loggingConfigurationHasBeenSet)
+  {
+   payload.WithObject("loggingConfiguration", m_loggingConfiguration.Jsonize());
+
+  }
+
+  if(m_consecutiveFailuresHasBeenSet)
+  {
+   payload.WithInteger("consecutiveFailures", m_consecutiveFailures);
 
   }
 

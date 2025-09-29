@@ -122,6 +122,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>The base image for a container build and test instance. This can contain an
+     * AMI ID or it can specify an Amazon Web Services Systems Manager (SSM) Parameter
+     * Store Parameter, prefixed by <code>ssm:</code>, followed by the parameter name
+     * or ARN.</p> <p>If not specified, Image Builder uses the appropriate
+     * ECS-optimized AMI as a base image.</p>
+     */
+    inline const Aws::String& GetInstanceImage() const { return m_instanceImage; }
+    inline bool InstanceImageHasBeenSet() const { return m_instanceImageHasBeenSet; }
+    template<typename InstanceImageT = Aws::String>
+    void SetInstanceImage(InstanceImageT&& value) { m_instanceImageHasBeenSet = true; m_instanceImage = std::forward<InstanceImageT>(value); }
+    template<typename InstanceImageT = Aws::String>
+    ContainerRecipeSummary& WithInstanceImage(InstanceImageT&& value) { SetInstanceImage(std::forward<InstanceImageT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Tags that are attached to the container recipe.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -157,6 +173,9 @@ namespace Model
 
     Aws::String m_dateCreated;
     bool m_dateCreatedHasBeenSet = false;
+
+    Aws::String m_instanceImage;
+    bool m_instanceImageHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

@@ -40,16 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether the match is case sensitive.</p>
-     */
-    inline bool GetCaseSensitive() const { return m_caseSensitive; }
-    inline bool CaseSensitiveHasBeenSet() const { return m_caseSensitiveHasBeenSet; }
-    inline void SetCaseSensitive(bool value) { m_caseSensitiveHasBeenSet = true; m_caseSensitive = value; }
-    inline PathMatch& WithCaseSensitive(bool value) { SetCaseSensitive(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The type of path match.</p>
      */
     inline const PathMatchType& GetMatch() const { return m_match; }
@@ -59,13 +49,23 @@ namespace Model
     template<typename MatchT = PathMatchType>
     PathMatch& WithMatch(MatchT&& value) { SetMatch(std::forward<MatchT>(value)); return *this;}
     ///@}
-  private:
 
-    bool m_caseSensitive{false};
-    bool m_caseSensitiveHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Indicates whether the match is case sensitive.</p>
+     */
+    inline bool GetCaseSensitive() const { return m_caseSensitive; }
+    inline bool CaseSensitiveHasBeenSet() const { return m_caseSensitiveHasBeenSet; }
+    inline void SetCaseSensitive(bool value) { m_caseSensitiveHasBeenSet = true; m_caseSensitive = value; }
+    inline PathMatch& WithCaseSensitive(bool value) { SetCaseSensitive(value); return *this;}
+    ///@}
+  private:
 
     PathMatchType m_match;
     bool m_matchHasBeenSet = false;
+
+    bool m_caseSensitive{false};
+    bool m_caseSensitiveHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,6 +22,7 @@
 #include <aws/imagebuilder/model/ImageScanningConfiguration.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/imagebuilder/model/ImageLoggingConfiguration.h>
 #include <aws/imagebuilder/model/WorkflowConfiguration.h>
 #include <utility>
 
@@ -41,10 +42,12 @@ namespace Model
 {
 
   /**
-   * <p>An Image Builder image. You must specify exactly one recipe for the image –
-   * either a container recipe (<code>containerRecipe</code>), which creates a
-   * container image, or an image recipe (<code>imageRecipe</code>), which creates an
-   * AMI.</p><p><h3>See Also:</h3>   <a
+   * <p>An Image Builder image resource that keeps track of all of the settings used
+   * to create, configure, and distribute output for that image. You must specify
+   * exactly one recipe for the image – either a container recipe
+   * (<code>containerRecipe</code>), which creates a container image, or an image
+   * recipe (<code>imageRecipe</code>), which creates an AMI.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/Image">AWS
    * API Reference</a></p>
    */
@@ -400,6 +403,19 @@ namespace Model
     template<typename WorkflowsT = WorkflowConfiguration>
     Image& AddWorkflows(WorkflowsT&& value) { m_workflowsHasBeenSet = true; m_workflows.emplace_back(std::forward<WorkflowsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The logging configuration that's defined for the image. Image Builder uses
+     * the defined settings to direct execution log output during image creation.</p>
+     */
+    inline const ImageLoggingConfiguration& GetLoggingConfiguration() const { return m_loggingConfiguration; }
+    inline bool LoggingConfigurationHasBeenSet() const { return m_loggingConfigurationHasBeenSet; }
+    template<typename LoggingConfigurationT = ImageLoggingConfiguration>
+    void SetLoggingConfiguration(LoggingConfigurationT&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::forward<LoggingConfigurationT>(value); }
+    template<typename LoggingConfigurationT = ImageLoggingConfiguration>
+    Image& WithLoggingConfiguration(LoggingConfigurationT&& value) { SetLoggingConfiguration(std::forward<LoggingConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -479,6 +495,9 @@ namespace Model
 
     Aws::Vector<WorkflowConfiguration> m_workflows;
     bool m_workflowsHasBeenSet = false;
+
+    ImageLoggingConfiguration m_loggingConfiguration;
+    bool m_loggingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

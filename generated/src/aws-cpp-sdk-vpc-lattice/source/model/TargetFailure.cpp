@@ -25,16 +25,6 @@ TargetFailure::TargetFailure(JsonView jsonValue)
 
 TargetFailure& TargetFailure::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("failureCode"))
-  {
-    m_failureCode = jsonValue.GetString("failureCode");
-    m_failureCodeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("failureMessage"))
-  {
-    m_failureMessage = jsonValue.GetString("failureMessage");
-    m_failureMessageHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -45,24 +35,22 @@ TargetFailure& TargetFailure::operator =(JsonView jsonValue)
     m_port = jsonValue.GetInteger("port");
     m_portHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("failureCode"))
+  {
+    m_failureCode = jsonValue.GetString("failureCode");
+    m_failureCodeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("failureMessage"))
+  {
+    m_failureMessage = jsonValue.GetString("failureMessage");
+    m_failureMessageHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue TargetFailure::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_failureCodeHasBeenSet)
-  {
-   payload.WithString("failureCode", m_failureCode);
-
-  }
-
-  if(m_failureMessageHasBeenSet)
-  {
-   payload.WithString("failureMessage", m_failureMessage);
-
-  }
 
   if(m_idHasBeenSet)
   {
@@ -73,6 +61,18 @@ JsonValue TargetFailure::Jsonize() const
   if(m_portHasBeenSet)
   {
    payload.WithInteger("port", m_port);
+
+  }
+
+  if(m_failureCodeHasBeenSet)
+  {
+   payload.WithString("failureCode", m_failureCode);
+
+  }
+
+  if(m_failureMessageHasBeenSet)
+  {
+   payload.WithString("failureMessage", m_failureMessage);
 
   }
 

@@ -40,6 +40,11 @@ Schedule& Schedule::operator =(JsonView jsonValue)
     m_pipelineExecutionStartCondition = PipelineExecutionStartConditionMapper::GetPipelineExecutionStartConditionForName(jsonValue.GetString("pipelineExecutionStartCondition"));
     m_pipelineExecutionStartConditionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("autoDisablePolicy"))
+  {
+    m_autoDisablePolicy = jsonValue.GetObject("autoDisablePolicy");
+    m_autoDisablePolicyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +67,12 @@ JsonValue Schedule::Jsonize() const
   if(m_pipelineExecutionStartConditionHasBeenSet)
   {
    payload.WithString("pipelineExecutionStartCondition", PipelineExecutionStartConditionMapper::GetNameForPipelineExecutionStartCondition(m_pipelineExecutionStartCondition));
+  }
+
+  if(m_autoDisablePolicyHasBeenSet)
+  {
+   payload.WithObject("autoDisablePolicy", m_autoDisablePolicy.Jsonize());
+
   }
 
   return payload;

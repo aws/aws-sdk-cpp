@@ -37,10 +37,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The owner defines which image recipes you want to list. By default, this
-     * request will only show image recipes owned by your account. You can use this
-     * field to specify if you want to view image recipes owned by yourself, by Amazon,
-     * or those image recipes that have been shared with you by other customers.</p>
+     * <p>You can specify the recipe owner to filter results by that owner. By default,
+     * this request will only show image recipes owned by your account. To filter by a
+     * different owner, specify one of the <code>Valid Values</code> that are listed
+     * for this parameter.</p>
      */
     inline Ownership GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
@@ -66,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum items to return in a request.</p>
+     * <p>Specify the maximum number of items to return in a request.</p>
      */
     inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

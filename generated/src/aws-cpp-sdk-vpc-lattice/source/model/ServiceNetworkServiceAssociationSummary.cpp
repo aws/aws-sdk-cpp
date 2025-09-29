@@ -25,40 +25,30 @@ ServiceNetworkServiceAssociationSummary::ServiceNetworkServiceAssociationSummary
 
 ServiceNetworkServiceAssociationSummary& ServiceNetworkServiceAssociationSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = ServiceNetworkServiceAssociationStatusMapper::GetServiceNetworkServiceAssociationStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
     m_createdByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("customDomainName"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_customDomainName = jsonValue.GetString("customDomainName");
-    m_customDomainNameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("dnsEntry"))
-  {
-    m_dnsEntry = jsonValue.GetObject("dnsEntry");
-    m_dnsEntryHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("id"))
-  {
-    m_id = jsonValue.GetString("id");
-    m_idHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("serviceArn"))
-  {
-    m_serviceArn = jsonValue.GetString("serviceArn");
-    m_serviceArnHasBeenSet = true;
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("serviceId"))
   {
@@ -70,10 +60,10 @@ ServiceNetworkServiceAssociationSummary& ServiceNetworkServiceAssociationSummary
     m_serviceName = jsonValue.GetString("serviceName");
     m_serviceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("serviceNetworkArn"))
+  if(jsonValue.ValueExists("serviceArn"))
   {
-    m_serviceNetworkArn = jsonValue.GetString("serviceNetworkArn");
-    m_serviceNetworkArnHasBeenSet = true;
+    m_serviceArn = jsonValue.GetString("serviceArn");
+    m_serviceArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("serviceNetworkId"))
   {
@@ -85,10 +75,20 @@ ServiceNetworkServiceAssociationSummary& ServiceNetworkServiceAssociationSummary
     m_serviceNetworkName = jsonValue.GetString("serviceNetworkName");
     m_serviceNetworkNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("serviceNetworkArn"))
   {
-    m_status = ServiceNetworkServiceAssociationStatusMapper::GetServiceNetworkServiceAssociationStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
+    m_serviceNetworkArn = jsonValue.GetString("serviceNetworkArn");
+    m_serviceNetworkArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("dnsEntry"))
+  {
+    m_dnsEntry = jsonValue.GetObject("dnsEntry");
+    m_dnsEntryHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("customDomainName"))
+  {
+    m_customDomainName = jsonValue.GetString("customDomainName");
+    m_customDomainNameHasBeenSet = true;
   }
   return *this;
 }
@@ -97,15 +97,21 @@ JsonValue ServiceNetworkServiceAssociationSummary::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("id", m_id);
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", ServiceNetworkServiceAssociationStatusMapper::GetNameForServiceNetworkServiceAssociationStatus(m_status));
+  }
+
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
 
-  }
-
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_createdByHasBeenSet)
@@ -114,28 +120,9 @@ JsonValue ServiceNetworkServiceAssociationSummary::Jsonize() const
 
   }
 
-  if(m_customDomainNameHasBeenSet)
+  if(m_createdAtHasBeenSet)
   {
-   payload.WithString("customDomainName", m_customDomainName);
-
-  }
-
-  if(m_dnsEntryHasBeenSet)
-  {
-   payload.WithObject("dnsEntry", m_dnsEntry.Jsonize());
-
-  }
-
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
-  }
-
-  if(m_serviceArnHasBeenSet)
-  {
-   payload.WithString("serviceArn", m_serviceArn);
-
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_serviceIdHasBeenSet)
@@ -150,9 +137,9 @@ JsonValue ServiceNetworkServiceAssociationSummary::Jsonize() const
 
   }
 
-  if(m_serviceNetworkArnHasBeenSet)
+  if(m_serviceArnHasBeenSet)
   {
-   payload.WithString("serviceNetworkArn", m_serviceNetworkArn);
+   payload.WithString("serviceArn", m_serviceArn);
 
   }
 
@@ -168,9 +155,22 @@ JsonValue ServiceNetworkServiceAssociationSummary::Jsonize() const
 
   }
 
-  if(m_statusHasBeenSet)
+  if(m_serviceNetworkArnHasBeenSet)
   {
-   payload.WithString("status", ServiceNetworkServiceAssociationStatusMapper::GetNameForServiceNetworkServiceAssociationStatus(m_status));
+   payload.WithString("serviceNetworkArn", m_serviceNetworkArn);
+
+  }
+
+  if(m_dnsEntryHasBeenSet)
+  {
+   payload.WithObject("dnsEntry", m_dnsEntry.Jsonize());
+
+  }
+
+  if(m_customDomainNameHasBeenSet)
+  {
+   payload.WithString("customDomainName", m_customDomainName);
+
   }
 
   return payload;

@@ -42,6 +42,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the service.</p>
+     */
+    inline const Aws::String& GetId() const { return m_id; }
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ServiceSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the service.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ServiceSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the service.</p>
      */
     inline const Aws::String& GetArn() const { return m_arn; }
@@ -66,14 +90,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The custom domain name of the service.</p>
+     * <p>The date and time that the service was last updated, in ISO-8601 format.</p>
      */
-    inline const Aws::String& GetCustomDomainName() const { return m_customDomainName; }
-    inline bool CustomDomainNameHasBeenSet() const { return m_customDomainNameHasBeenSet; }
-    template<typename CustomDomainNameT = Aws::String>
-    void SetCustomDomainName(CustomDomainNameT&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::forward<CustomDomainNameT>(value); }
-    template<typename CustomDomainNameT = Aws::String>
-    ServiceSummary& WithCustomDomainName(CustomDomainNameT&& value) { SetCustomDomainName(std::forward<CustomDomainNameT>(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    ServiceSummary& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,38 +114,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the service.</p>
+     * <p>The custom domain name of the service.</p>
      */
-    inline const Aws::String& GetId() const { return m_id; }
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    template<typename IdT = Aws::String>
-    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
-    template<typename IdT = Aws::String>
-    ServiceSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The date and time that the service was last updated, in ISO-8601 format.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
-    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
-    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
-    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
-    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
-    ServiceSummary& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the service.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    ServiceSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    inline const Aws::String& GetCustomDomainName() const { return m_customDomainName; }
+    inline bool CustomDomainNameHasBeenSet() const { return m_customDomainNameHasBeenSet; }
+    template<typename CustomDomainNameT = Aws::String>
+    void SetCustomDomainName(CustomDomainNameT&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::forward<CustomDomainNameT>(value); }
+    template<typename CustomDomainNameT = Aws::String>
+    ServiceSummary& WithCustomDomainName(CustomDomainNameT&& value) { SetCustomDomainName(std::forward<CustomDomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,26 +135,26 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_id;
+    bool m_idHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::String m_customDomainName;
-    bool m_customDomainNameHasBeenSet = false;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     DnsEntry m_dnsEntry;
     bool m_dnsEntryHasBeenSet = false;
 
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
-
-    Aws::Utils::DateTime m_lastUpdatedAt{};
-    bool m_lastUpdatedAtHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+    Aws::String m_customDomainName;
+    bool m_customDomainNameHasBeenSet = false;
 
     ServiceStatus m_status{ServiceStatus::NOT_SET};
     bool m_statusHasBeenSet = false;

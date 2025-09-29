@@ -104,6 +104,11 @@ ImageSummary& ImageSummary::operator =(JsonView jsonValue)
     m_lifecycleExecutionId = jsonValue.GetString("lifecycleExecutionId");
     m_lifecycleExecutionIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("loggingConfiguration"))
+  {
+    m_loggingConfiguration = jsonValue.GetObject("loggingConfiguration");
+    m_loggingConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -198,6 +203,12 @@ JsonValue ImageSummary::Jsonize() const
   if(m_lifecycleExecutionIdHasBeenSet)
   {
    payload.WithString("lifecycleExecutionId", m_lifecycleExecutionId);
+
+  }
+
+  if(m_loggingConfigurationHasBeenSet)
+  {
+   payload.WithObject("loggingConfiguration", m_loggingConfiguration.Jsonize());
 
   }
 

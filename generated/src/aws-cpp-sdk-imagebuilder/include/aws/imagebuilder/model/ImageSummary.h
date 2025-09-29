@@ -14,6 +14,7 @@
 #include <aws/imagebuilder/model/BuildType.h>
 #include <aws/imagebuilder/model/ImageSource.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/imagebuilder/model/ImageLoggingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -230,6 +231,18 @@ namespace Model
     template<typename LifecycleExecutionIdT = Aws::String>
     ImageSummary& WithLifecycleExecutionId(LifecycleExecutionIdT&& value) { SetLifecycleExecutionId(std::forward<LifecycleExecutionIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The logging configuration that's defined for the image.</p>
+     */
+    inline const ImageLoggingConfiguration& GetLoggingConfiguration() const { return m_loggingConfiguration; }
+    inline bool LoggingConfigurationHasBeenSet() const { return m_loggingConfigurationHasBeenSet; }
+    template<typename LoggingConfigurationT = ImageLoggingConfiguration>
+    void SetLoggingConfiguration(LoggingConfigurationT&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::forward<LoggingConfigurationT>(value); }
+    template<typename LoggingConfigurationT = ImageLoggingConfiguration>
+    ImageSummary& WithLoggingConfiguration(LoggingConfigurationT&& value) { SetLoggingConfiguration(std::forward<LoggingConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -276,6 +289,9 @@ namespace Model
 
     Aws::String m_lifecycleExecutionId;
     bool m_lifecycleExecutionIdHasBeenSet = false;
+
+    ImageLoggingConfiguration m_loggingConfiguration;
+    bool m_loggingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

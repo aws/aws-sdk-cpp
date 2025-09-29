@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/vpc-lattice/model/RuleAction.h>
 #include <aws/vpc-lattice/model/ListenerProtocol.h>
+#include <aws/vpc-lattice/model/RuleAction.h>
 #include <utility>
 
 namespace Aws
@@ -47,17 +47,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The action for the default rule.</p>
-     */
-    inline const RuleAction& GetDefaultAction() const { return m_defaultAction; }
-    template<typename DefaultActionT = RuleAction>
-    void SetDefaultAction(DefaultActionT&& value) { m_defaultActionHasBeenSet = true; m_defaultAction = std::forward<DefaultActionT>(value); }
-    template<typename DefaultActionT = RuleAction>
-    CreateListenerResult& WithDefaultAction(DefaultActionT&& value) { SetDefaultAction(std::forward<DefaultActionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID of the listener.</p>
      */
     inline const Aws::String& GetId() const { return m_id; }
@@ -80,20 +69,20 @@ namespace Model
 
     ///@{
     /**
-     * <p>The port number of the listener.</p>
-     */
-    inline int GetPort() const { return m_port; }
-    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
-    inline CreateListenerResult& WithPort(int value) { SetPort(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The protocol of the listener.</p>
      */
     inline ListenerProtocol GetProtocol() const { return m_protocol; }
     inline void SetProtocol(ListenerProtocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
     inline CreateListenerResult& WithProtocol(ListenerProtocol value) { SetProtocol(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The port number of the listener.</p>
+     */
+    inline int GetPort() const { return m_port; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
+    inline CreateListenerResult& WithPort(int value) { SetPort(value); return *this;}
     ///@}
 
     ///@{
@@ -119,6 +108,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The action for the default rule.</p>
+     */
+    inline const RuleAction& GetDefaultAction() const { return m_defaultAction; }
+    template<typename DefaultActionT = RuleAction>
+    void SetDefaultAction(DefaultActionT&& value) { m_defaultActionHasBeenSet = true; m_defaultAction = std::forward<DefaultActionT>(value); }
+    template<typename DefaultActionT = RuleAction>
+    CreateListenerResult& WithDefaultAction(DefaultActionT&& value) { SetDefaultAction(std::forward<DefaultActionT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -131,26 +131,26 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    RuleAction m_defaultAction;
-    bool m_defaultActionHasBeenSet = false;
-
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_port{0};
-    bool m_portHasBeenSet = false;
-
     ListenerProtocol m_protocol{ListenerProtocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
+
+    int m_port{0};
+    bool m_portHasBeenSet = false;
 
     Aws::String m_serviceArn;
     bool m_serviceArnHasBeenSet = false;
 
     Aws::String m_serviceId;
     bool m_serviceIdHasBeenSet = false;
+
+    RuleAction m_defaultAction;
+    bool m_defaultActionHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

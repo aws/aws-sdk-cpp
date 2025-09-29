@@ -6,11 +6,11 @@
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/vpc-lattice/model/ResourceConfigurationType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/vpc-lattice/model/ProtocolType.h>
-#include <aws/vpc-lattice/model/ResourceConfigurationDefinition.h>
 #include <aws/vpc-lattice/model/ResourceConfigurationStatus.h>
-#include <aws/vpc-lattice/model/ResourceConfigurationType.h>
+#include <aws/vpc-lattice/model/ResourceConfigurationDefinition.h>
 #include <utility>
 
 namespace Aws
@@ -39,27 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether to add the resource configuration to service networks that
-     * are shared with other accounts.</p>
-     */
-    inline bool GetAllowAssociationToShareableServiceNetwork() const { return m_allowAssociationToShareableServiceNetwork; }
-    inline void SetAllowAssociationToShareableServiceNetwork(bool value) { m_allowAssociationToShareableServiceNetworkHasBeenSet = true; m_allowAssociationToShareableServiceNetwork = value; }
-    inline UpdateResourceConfigurationResult& WithAllowAssociationToShareableServiceNetwork(bool value) { SetAllowAssociationToShareableServiceNetwork(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource configuration.</p>
-     */
-    inline const Aws::String& GetArn() const { return m_arn; }
-    template<typename ArnT = Aws::String>
-    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
-    template<typename ArnT = Aws::String>
-    UpdateResourceConfigurationResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID of the resource configuration.</p>
      */
     inline const Aws::String& GetId() const { return m_id; }
@@ -82,48 +61,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The TCP port ranges that a consumer can use to access a resource
-     * configuration. You can separate port ranges with a comma. Example: 1-65535 or
-     * 1,2,22-30</p>
+     * <p>The Amazon Resource Name (ARN) of the resource configuration.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPortRanges() const { return m_portRanges; }
-    template<typename PortRangesT = Aws::Vector<Aws::String>>
-    void SetPortRanges(PortRangesT&& value) { m_portRangesHasBeenSet = true; m_portRanges = std::forward<PortRangesT>(value); }
-    template<typename PortRangesT = Aws::Vector<Aws::String>>
-    UpdateResourceConfigurationResult& WithPortRanges(PortRangesT&& value) { SetPortRanges(std::forward<PortRangesT>(value)); return *this;}
-    template<typename PortRangesT = Aws::String>
-    UpdateResourceConfigurationResult& AddPortRanges(PortRangesT&& value) { m_portRangesHasBeenSet = true; m_portRanges.emplace_back(std::forward<PortRangesT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The TCP protocol accepted by the specified resource configuration.</p>
-     */
-    inline ProtocolType GetProtocol() const { return m_protocol; }
-    inline void SetProtocol(ProtocolType value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline UpdateResourceConfigurationResult& WithProtocol(ProtocolType value) { SetProtocol(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The resource configuration.</p>
-     */
-    inline const ResourceConfigurationDefinition& GetResourceConfigurationDefinition() const { return m_resourceConfigurationDefinition; }
-    template<typename ResourceConfigurationDefinitionT = ResourceConfigurationDefinition>
-    void SetResourceConfigurationDefinition(ResourceConfigurationDefinitionT&& value) { m_resourceConfigurationDefinitionHasBeenSet = true; m_resourceConfigurationDefinition = std::forward<ResourceConfigurationDefinitionT>(value); }
-    template<typename ResourceConfigurationDefinitionT = ResourceConfigurationDefinition>
-    UpdateResourceConfigurationResult& WithResourceConfigurationDefinition(ResourceConfigurationDefinitionT&& value) { SetResourceConfigurationDefinition(std::forward<ResourceConfigurationDefinitionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the group resource configuration.</p>
-     */
-    inline const Aws::String& GetResourceConfigurationGroupId() const { return m_resourceConfigurationGroupId; }
-    template<typename ResourceConfigurationGroupIdT = Aws::String>
-    void SetResourceConfigurationGroupId(ResourceConfigurationGroupIdT&& value) { m_resourceConfigurationGroupIdHasBeenSet = true; m_resourceConfigurationGroupId = std::forward<ResourceConfigurationGroupIdT>(value); }
-    template<typename ResourceConfigurationGroupIdT = Aws::String>
-    UpdateResourceConfigurationResult& WithResourceConfigurationGroupId(ResourceConfigurationGroupIdT&& value) { SetResourceConfigurationGroupId(std::forward<ResourceConfigurationGroupIdT>(value)); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateResourceConfigurationResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,11 +84,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the resource configuration.</p>
+     * <p>The ID of the group resource configuration.</p>
      */
-    inline ResourceConfigurationStatus GetStatus() const { return m_status; }
-    inline void SetStatus(ResourceConfigurationStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline UpdateResourceConfigurationResult& WithStatus(ResourceConfigurationStatus value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetResourceConfigurationGroupId() const { return m_resourceConfigurationGroupId; }
+    template<typename ResourceConfigurationGroupIdT = Aws::String>
+    void SetResourceConfigurationGroupId(ResourceConfigurationGroupIdT&& value) { m_resourceConfigurationGroupIdHasBeenSet = true; m_resourceConfigurationGroupId = std::forward<ResourceConfigurationGroupIdT>(value); }
+    template<typename ResourceConfigurationGroupIdT = Aws::String>
+    UpdateResourceConfigurationResult& WithResourceConfigurationGroupId(ResourceConfigurationGroupIdT&& value) { SetResourceConfigurationGroupId(std::forward<ResourceConfigurationGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -161,6 +107,60 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The TCP port ranges that a consumer can use to access a resource
+     * configuration. You can separate port ranges with a comma. Example: 1-65535 or
+     * 1,2,22-30</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetPortRanges() const { return m_portRanges; }
+    template<typename PortRangesT = Aws::Vector<Aws::String>>
+    void SetPortRanges(PortRangesT&& value) { m_portRangesHasBeenSet = true; m_portRanges = std::forward<PortRangesT>(value); }
+    template<typename PortRangesT = Aws::Vector<Aws::String>>
+    UpdateResourceConfigurationResult& WithPortRanges(PortRangesT&& value) { SetPortRanges(std::forward<PortRangesT>(value)); return *this;}
+    template<typename PortRangesT = Aws::String>
+    UpdateResourceConfigurationResult& AddPortRanges(PortRangesT&& value) { m_portRangesHasBeenSet = true; m_portRanges.emplace_back(std::forward<PortRangesT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether to add the resource configuration to service networks that
+     * are shared with other accounts.</p>
+     */
+    inline bool GetAllowAssociationToShareableServiceNetwork() const { return m_allowAssociationToShareableServiceNetwork; }
+    inline void SetAllowAssociationToShareableServiceNetwork(bool value) { m_allowAssociationToShareableServiceNetworkHasBeenSet = true; m_allowAssociationToShareableServiceNetwork = value; }
+    inline UpdateResourceConfigurationResult& WithAllowAssociationToShareableServiceNetwork(bool value) { SetAllowAssociationToShareableServiceNetwork(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The TCP protocol accepted by the specified resource configuration.</p>
+     */
+    inline ProtocolType GetProtocol() const { return m_protocol; }
+    inline void SetProtocol(ProtocolType value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline UpdateResourceConfigurationResult& WithProtocol(ProtocolType value) { SetProtocol(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status of the resource configuration.</p>
+     */
+    inline ResourceConfigurationStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ResourceConfigurationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateResourceConfigurationResult& WithStatus(ResourceConfigurationStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The resource configuration.</p>
+     */
+    inline const ResourceConfigurationDefinition& GetResourceConfigurationDefinition() const { return m_resourceConfigurationDefinition; }
+    template<typename ResourceConfigurationDefinitionT = ResourceConfigurationDefinition>
+    void SetResourceConfigurationDefinition(ResourceConfigurationDefinitionT&& value) { m_resourceConfigurationDefinitionHasBeenSet = true; m_resourceConfigurationDefinition = std::forward<ResourceConfigurationDefinitionT>(value); }
+    template<typename ResourceConfigurationDefinitionT = ResourceConfigurationDefinition>
+    UpdateResourceConfigurationResult& WithResourceConfigurationDefinition(ResourceConfigurationDefinitionT&& value) { SetResourceConfigurationDefinition(std::forward<ResourceConfigurationDefinitionT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -170,38 +170,38 @@ namespace Model
     ///@}
   private:
 
-    bool m_allowAssociationToShareableServiceNetwork{false};
-    bool m_allowAssociationToShareableServiceNetworkHasBeenSet = false;
-
-    Aws::String m_arn;
-    bool m_arnHasBeenSet = false;
-
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_portRanges;
-    bool m_portRangesHasBeenSet = false;
-
-    ProtocolType m_protocol{ProtocolType::NOT_SET};
-    bool m_protocolHasBeenSet = false;
-
-    ResourceConfigurationDefinition m_resourceConfigurationDefinition;
-    bool m_resourceConfigurationDefinitionHasBeenSet = false;
-
-    Aws::String m_resourceConfigurationGroupId;
-    bool m_resourceConfigurationGroupIdHasBeenSet = false;
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_resourceGatewayId;
     bool m_resourceGatewayIdHasBeenSet = false;
 
-    ResourceConfigurationStatus m_status{ResourceConfigurationStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
+    Aws::String m_resourceConfigurationGroupId;
+    bool m_resourceConfigurationGroupIdHasBeenSet = false;
 
     ResourceConfigurationType m_type{ResourceConfigurationType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_portRanges;
+    bool m_portRangesHasBeenSet = false;
+
+    bool m_allowAssociationToShareableServiceNetwork{false};
+    bool m_allowAssociationToShareableServiceNetworkHasBeenSet = false;
+
+    ProtocolType m_protocol{ProtocolType::NOT_SET};
+    bool m_protocolHasBeenSet = false;
+
+    ResourceConfigurationStatus m_status{ResourceConfigurationStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
+
+    ResourceConfigurationDefinition m_resourceConfigurationDefinition;
+    bool m_resourceConfigurationDefinitionHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
-#include <aws/vpc-lattice/model/RuleAction.h>
-#include <aws/vpc-lattice/model/RuleMatch.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/vpc-lattice/model/RuleMatch.h>
+#include <aws/vpc-lattice/model/RuleAction.h>
 #include <utility>
 
 namespace Aws
@@ -41,14 +41,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The rule action.</p>
+     * <p>The ID or ARN of the rule.</p>
      */
-    inline const RuleAction& GetAction() const { return m_action; }
-    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    template<typename ActionT = RuleAction>
-    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
-    template<typename ActionT = RuleAction>
-    RuleUpdate& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
+    inline const Aws::String& GetRuleIdentifier() const { return m_ruleIdentifier; }
+    inline bool RuleIdentifierHasBeenSet() const { return m_ruleIdentifierHasBeenSet; }
+    template<typename RuleIdentifierT = Aws::String>
+    void SetRuleIdentifier(RuleIdentifierT&& value) { m_ruleIdentifierHasBeenSet = true; m_ruleIdentifier = std::forward<RuleIdentifierT>(value); }
+    template<typename RuleIdentifierT = Aws::String>
+    RuleUpdate& WithRuleIdentifier(RuleIdentifierT&& value) { SetRuleIdentifier(std::forward<RuleIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,19 +76,19 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID or ARN of the rule.</p>
+     * <p>The rule action.</p>
      */
-    inline const Aws::String& GetRuleIdentifier() const { return m_ruleIdentifier; }
-    inline bool RuleIdentifierHasBeenSet() const { return m_ruleIdentifierHasBeenSet; }
-    template<typename RuleIdentifierT = Aws::String>
-    void SetRuleIdentifier(RuleIdentifierT&& value) { m_ruleIdentifierHasBeenSet = true; m_ruleIdentifier = std::forward<RuleIdentifierT>(value); }
-    template<typename RuleIdentifierT = Aws::String>
-    RuleUpdate& WithRuleIdentifier(RuleIdentifierT&& value) { SetRuleIdentifier(std::forward<RuleIdentifierT>(value)); return *this;}
+    inline const RuleAction& GetAction() const { return m_action; }
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+    template<typename ActionT = RuleAction>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = RuleAction>
+    RuleUpdate& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
   private:
 
-    RuleAction m_action;
-    bool m_actionHasBeenSet = false;
+    Aws::String m_ruleIdentifier;
+    bool m_ruleIdentifierHasBeenSet = false;
 
     RuleMatch m_match;
     bool m_matchHasBeenSet = false;
@@ -96,8 +96,8 @@ namespace Model
     int m_priority{0};
     bool m_priorityHasBeenSet = false;
 
-    Aws::String m_ruleIdentifier;
-    bool m_ruleIdentifierHasBeenSet = false;
+    RuleAction m_action;
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,25 +22,15 @@ Aws::String CreateResourceGatewayRequest::SerializePayload() const
 
   }
 
-  if(m_ipAddressTypeHasBeenSet)
-  {
-   payload.WithString("ipAddressType", ResourceGatewayIpAddressTypeMapper::GetNameForResourceGatewayIpAddressType(m_ipAddressType));
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
 
   }
 
-  if(m_securityGroupIdsHasBeenSet)
+  if(m_vpcIdentifierHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
-   for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
-   {
-     securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
-   }
-   payload.WithArray("securityGroupIds", std::move(securityGroupIdsJsonList));
+   payload.WithString("vpcIdentifier", m_vpcIdentifier);
 
   }
 
@@ -55,6 +45,28 @@ Aws::String CreateResourceGatewayRequest::SerializePayload() const
 
   }
 
+  if(m_securityGroupIdsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+   for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
+   {
+     securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
+   }
+   payload.WithArray("securityGroupIds", std::move(securityGroupIdsJsonList));
+
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+   payload.WithString("ipAddressType", ResourceGatewayIpAddressTypeMapper::GetNameForResourceGatewayIpAddressType(m_ipAddressType));
+  }
+
+  if(m_ipv4AddressesPerEniHasBeenSet)
+  {
+   payload.WithInteger("ipv4AddressesPerEni", m_ipv4AddressesPerEni);
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;
@@ -63,12 +75,6 @@ Aws::String CreateResourceGatewayRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
-
-  }
-
-  if(m_vpcIdentifierHasBeenSet)
-  {
-   payload.WithString("vpcIdentifier", m_vpcIdentifier);
 
   }
 

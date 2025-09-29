@@ -25,39 +25,30 @@ CreateResourceGatewayResult::CreateResourceGatewayResult(const Aws::AmazonWebSer
 CreateResourceGatewayResult& CreateResourceGatewayResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("arn"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ipAddressType"))
+  if(jsonValue.ValueExists("arn"))
   {
-    m_ipAddressType = ResourceGatewayIpAddressTypeMapper::GetResourceGatewayIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
-    m_ipAddressTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("securityGroupIds"))
-  {
-    Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
-    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
-    {
-      m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
-    }
-    m_securityGroupIdsHasBeenSet = true;
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("status"))
   {
     m_status = ResourceGatewayStatusMapper::GetResourceGatewayStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("vpcIdentifier"))
+  {
+    m_vpcIdentifier = jsonValue.GetString("vpcIdentifier");
+    m_vpcIdentifierHasBeenSet = true;
   }
   if(jsonValue.ValueExists("subnetIds"))
   {
@@ -68,10 +59,24 @@ CreateResourceGatewayResult& CreateResourceGatewayResult::operator =(const Aws::
     }
     m_subnetIdsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vpcIdentifier"))
+  if(jsonValue.ValueExists("securityGroupIds"))
   {
-    m_vpcIdentifier = jsonValue.GetString("vpcIdentifier");
-    m_vpcIdentifierHasBeenSet = true;
+    Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
+    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
+    {
+      m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
+    }
+    m_securityGroupIdsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ipAddressType"))
+  {
+    m_ipAddressType = ResourceGatewayIpAddressTypeMapper::GetResourceGatewayIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
+    m_ipAddressTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ipv4AddressesPerEni"))
+  {
+    m_ipv4AddressesPerEni = jsonValue.GetInteger("ipv4AddressesPerEni");
+    m_ipv4AddressesPerEniHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

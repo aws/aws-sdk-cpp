@@ -35,6 +35,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the service.</p>
+     */
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateServiceResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the service.</p>
      */
     inline const Aws::String& GetArn() const { return m_arn; }
@@ -46,22 +57,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of IAM policy.</p>
+     * <p>The name of the service.</p>
      */
-    inline AuthType GetAuthType() const { return m_authType; }
-    inline void SetAuthType(AuthType value) { m_authTypeHasBeenSet = true; m_authType = value; }
-    inline UpdateServiceResult& WithAuthType(AuthType value) { SetAuthType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the certificate.</p>
-     */
-    inline const Aws::String& GetCertificateArn() const { return m_certificateArn; }
-    template<typename CertificateArnT = Aws::String>
-    void SetCertificateArn(CertificateArnT&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::forward<CertificateArnT>(value); }
-    template<typename CertificateArnT = Aws::String>
-    UpdateServiceResult& WithCertificateArn(CertificateArnT&& value) { SetCertificateArn(std::forward<CertificateArnT>(value)); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateServiceResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,24 +79,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the service.</p>
+     * <p>The Amazon Resource Name (ARN) of the certificate.</p>
      */
-    inline const Aws::String& GetId() const { return m_id; }
-    template<typename IdT = Aws::String>
-    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
-    template<typename IdT = Aws::String>
-    UpdateServiceResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
+    inline const Aws::String& GetCertificateArn() const { return m_certificateArn; }
+    template<typename CertificateArnT = Aws::String>
+    void SetCertificateArn(CertificateArnT&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::forward<CertificateArnT>(value); }
+    template<typename CertificateArnT = Aws::String>
+    UpdateServiceResult& WithCertificateArn(CertificateArnT&& value) { SetCertificateArn(std::forward<CertificateArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The name of the service.</p>
+     * <p>The type of IAM policy.</p>
      */
-    inline const Aws::String& GetName() const { return m_name; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    UpdateServiceResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    inline AuthType GetAuthType() const { return m_authType; }
+    inline void SetAuthType(AuthType value) { m_authTypeHasBeenSet = true; m_authType = value; }
+    inline UpdateServiceResult& WithAuthType(AuthType value) { SetAuthType(value); return *this;}
     ///@}
 
     ///@{
@@ -107,23 +107,23 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_id;
+    bool m_idHasBeenSet = false;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    AuthType m_authType{AuthType::NOT_SET};
-    bool m_authTypeHasBeenSet = false;
-
-    Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_customDomainName;
     bool m_customDomainNameHasBeenSet = false;
 
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
+    Aws::String m_certificateArn;
+    bool m_certificateArnHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+    AuthType m_authType{AuthType::NOT_SET};
+    bool m_authTypeHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

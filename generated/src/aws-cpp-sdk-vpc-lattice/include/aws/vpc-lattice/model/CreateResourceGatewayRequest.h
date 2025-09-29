@@ -7,8 +7,8 @@
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/vpc-lattice/VPCLatticeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/vpc-lattice/model/ResourceGatewayIpAddressType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/vpc-lattice/model/ResourceGatewayIpAddressType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -53,16 +53,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of IP address used by the resource gateway.</p>
-     */
-    inline ResourceGatewayIpAddressType GetIpAddressType() const { return m_ipAddressType; }
-    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
-    inline void SetIpAddressType(ResourceGatewayIpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
-    inline CreateResourceGatewayRequest& WithIpAddressType(ResourceGatewayIpAddressType value) { SetIpAddressType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the resource gateway.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
@@ -71,6 +61,32 @@ namespace Model
     void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
     template<typename NameT = Aws::String>
     CreateResourceGatewayRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the VPC for the resource gateway.</p>
+     */
+    inline const Aws::String& GetVpcIdentifier() const { return m_vpcIdentifier; }
+    inline bool VpcIdentifierHasBeenSet() const { return m_vpcIdentifierHasBeenSet; }
+    template<typename VpcIdentifierT = Aws::String>
+    void SetVpcIdentifier(VpcIdentifierT&& value) { m_vpcIdentifierHasBeenSet = true; m_vpcIdentifier = std::forward<VpcIdentifierT>(value); }
+    template<typename VpcIdentifierT = Aws::String>
+    CreateResourceGatewayRequest& WithVpcIdentifier(VpcIdentifierT&& value) { SetVpcIdentifier(std::forward<VpcIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The IDs of the VPC subnets in which to create the resource gateway.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    CreateResourceGatewayRequest& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
+    template<typename SubnetIdsT = Aws::String>
+    CreateResourceGatewayRequest& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -90,16 +106,36 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IDs of the VPC subnets in which to create the resource gateway.</p>
+     * <p>A resource gateway can have IPv4, IPv6 or dualstack addresses. The IP address
+     * type of a resource gateway must be compatible with the subnets of the resource
+     * gateway and the IP address type of the resource, as described here: </p> <ul>
+     * <li> <p> <b>IPv4</b>Assign IPv4 addresses to your resource gateway network
+     * interfaces. This option is supported only if all selected subnets have IPv4
+     * address ranges, and the resource also has an IPv4 address.</p> </li> <li> <p>
+     * <b>IPv6</b>Assign IPv6 addresses to your resource gateway network interfaces.
+     * This option is supported only if all selected subnets are IPv6 only subnets, and
+     * the resource also has an IPv6 address.</p> </li> <li> <p> <b>Dualstack</b>Assign
+     * both IPv4 and IPv6 addresses to your resource gateway network interfaces. This
+     * option is supported only if all selected subnets have both IPv4 and IPv6 address
+     * ranges, and the resource either has an IPv4 or IPv6 address.</p> </li> </ul>
+     * <p>The IP address type of the resource gateway is independent of the IP address
+     * type of the client or the VPC endpoint through which the resource is
+     * accessed.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
-    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
-    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
-    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
-    CreateResourceGatewayRequest& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
-    template<typename SubnetIdsT = Aws::String>
-    CreateResourceGatewayRequest& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
+    inline ResourceGatewayIpAddressType GetIpAddressType() const { return m_ipAddressType; }
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+    inline void SetIpAddressType(ResourceGatewayIpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline CreateResourceGatewayRequest& WithIpAddressType(ResourceGatewayIpAddressType value) { SetIpAddressType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of IPv4 addresses in each ENI for the resource gateway.</p>
+     */
+    inline int GetIpv4AddressesPerEni() const { return m_ipv4AddressesPerEni; }
+    inline bool Ipv4AddressesPerEniHasBeenSet() const { return m_ipv4AddressesPerEniHasBeenSet; }
+    inline void SetIpv4AddressesPerEni(int value) { m_ipv4AddressesPerEniHasBeenSet = true; m_ipv4AddressesPerEni = value; }
+    inline CreateResourceGatewayRequest& WithIpv4AddressesPerEni(int value) { SetIpv4AddressesPerEni(value); return *this;}
     ///@}
 
     ///@{
@@ -117,40 +153,31 @@ namespace Model
       m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
     }
     ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the VPC for the resource gateway.</p>
-     */
-    inline const Aws::String& GetVpcIdentifier() const { return m_vpcIdentifier; }
-    inline bool VpcIdentifierHasBeenSet() const { return m_vpcIdentifierHasBeenSet; }
-    template<typename VpcIdentifierT = Aws::String>
-    void SetVpcIdentifier(VpcIdentifierT&& value) { m_vpcIdentifierHasBeenSet = true; m_vpcIdentifier = std::forward<VpcIdentifierT>(value); }
-    template<typename VpcIdentifierT = Aws::String>
-    CreateResourceGatewayRequest& WithVpcIdentifier(VpcIdentifierT&& value) { SetVpcIdentifier(std::forward<VpcIdentifierT>(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
 
-    ResourceGatewayIpAddressType m_ipAddressType{ResourceGatewayIpAddressType::NOT_SET};
-    bool m_ipAddressTypeHasBeenSet = false;
-
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet = false;
+    Aws::String m_vpcIdentifier;
+    bool m_vpcIdentifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet = false;
 
+    Aws::Vector<Aws::String> m_securityGroupIds;
+    bool m_securityGroupIdsHasBeenSet = false;
+
+    ResourceGatewayIpAddressType m_ipAddressType{ResourceGatewayIpAddressType::NOT_SET};
+    bool m_ipAddressTypeHasBeenSet = false;
+
+    int m_ipv4AddressesPerEni{0};
+    bool m_ipv4AddressesPerEniHasBeenSet = false;
+
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
-
-    Aws::String m_vpcIdentifier;
-    bool m_vpcIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

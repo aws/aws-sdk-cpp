@@ -16,26 +16,9 @@ Aws::String CreateServiceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_authTypeHasBeenSet)
-  {
-   payload.WithString("authType", AuthTypeMapper::GetNameForAuthType(m_authType));
-  }
-
-  if(m_certificateArnHasBeenSet)
-  {
-   payload.WithString("certificateArn", m_certificateArn);
-
-  }
-
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
-
-  }
-
-  if(m_customDomainNameHasBeenSet)
-  {
-   payload.WithString("customDomainName", m_customDomainName);
 
   }
 
@@ -54,6 +37,23 @@ Aws::String CreateServiceRequest::SerializePayload() const
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
 
+  }
+
+  if(m_customDomainNameHasBeenSet)
+  {
+   payload.WithString("customDomainName", m_customDomainName);
+
+  }
+
+  if(m_certificateArnHasBeenSet)
+  {
+   payload.WithString("certificateArn", m_certificateArn);
+
+  }
+
+  if(m_authTypeHasBeenSet)
+  {
+   payload.WithString("authType", AuthTypeMapper::GetNameForAuthType(m_authType));
   }
 
   return payload.View().WriteReadable();

@@ -25,26 +25,6 @@ CreateResourceConfigurationResult::CreateResourceConfigurationResult(const Aws::
 CreateResourceConfigurationResult& CreateResourceConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("allowAssociationToShareableServiceNetwork"))
-  {
-    m_allowAssociationToShareableServiceNetwork = jsonValue.GetBool("allowAssociationToShareableServiceNetwork");
-    m_allowAssociationToShareableServiceNetworkHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("arn"))
-  {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("failureReason"))
-  {
-    m_failureReason = jsonValue.GetString("failureReason");
-    m_failureReasonHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -54,6 +34,26 @@ CreateResourceConfigurationResult& CreateResourceConfigurationResult::operator =
   {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("resourceGatewayId"))
+  {
+    m_resourceGatewayId = jsonValue.GetString("resourceGatewayId");
+    m_resourceGatewayIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("resourceConfigurationGroupId"))
+  {
+    m_resourceConfigurationGroupId = jsonValue.GetString("resourceConfigurationGroupId");
+    m_resourceConfigurationGroupIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = ResourceConfigurationTypeMapper::GetResourceConfigurationTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("portRanges"))
   {
@@ -69,30 +69,30 @@ CreateResourceConfigurationResult& CreateResourceConfigurationResult::operator =
     m_protocol = ProtocolTypeMapper::GetProtocolTypeForName(jsonValue.GetString("protocol"));
     m_protocolHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceConfigurationDefinition"))
-  {
-    m_resourceConfigurationDefinition = jsonValue.GetObject("resourceConfigurationDefinition");
-    m_resourceConfigurationDefinitionHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("resourceConfigurationGroupId"))
-  {
-    m_resourceConfigurationGroupId = jsonValue.GetString("resourceConfigurationGroupId");
-    m_resourceConfigurationGroupIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("resourceGatewayId"))
-  {
-    m_resourceGatewayId = jsonValue.GetString("resourceGatewayId");
-    m_resourceGatewayIdHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("status"))
   {
     m_status = ResourceConfigurationStatusMapper::GetResourceConfigurationStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("resourceConfigurationDefinition"))
   {
-    m_type = ResourceConfigurationTypeMapper::GetResourceConfigurationTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+    m_resourceConfigurationDefinition = jsonValue.GetObject("resourceConfigurationDefinition");
+    m_resourceConfigurationDefinitionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("allowAssociationToShareableServiceNetwork"))
+  {
+    m_allowAssociationToShareableServiceNetwork = jsonValue.GetBool("allowAssociationToShareableServiceNetwork");
+    m_allowAssociationToShareableServiceNetworkHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("failureReason"))
+  {
+    m_failureReason = jsonValue.GetString("failureReason");
+    m_failureReasonHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

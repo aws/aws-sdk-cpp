@@ -25,11 +25,6 @@ DeleteServiceNetworkVpcAssociationResult::DeleteServiceNetworkVpcAssociationResu
 DeleteServiceNetworkVpcAssociationResult& DeleteServiceNetworkVpcAssociationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("arn"))
-  {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -39,6 +34,11 @@ DeleteServiceNetworkVpcAssociationResult& DeleteServiceNetworkVpcAssociationResu
   {
     m_status = ServiceNetworkVpcAssociationStatusMapper::GetServiceNetworkVpcAssociationStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

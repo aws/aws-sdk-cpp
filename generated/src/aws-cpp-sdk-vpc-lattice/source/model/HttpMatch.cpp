@@ -25,15 +25,6 @@ HttpMatch::HttpMatch(JsonView jsonValue)
 
 HttpMatch& HttpMatch::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("headerMatches"))
-  {
-    Aws::Utils::Array<JsonView> headerMatchesJsonList = jsonValue.GetArray("headerMatches");
-    for(unsigned headerMatchesIndex = 0; headerMatchesIndex < headerMatchesJsonList.GetLength(); ++headerMatchesIndex)
-    {
-      m_headerMatches.push_back(headerMatchesJsonList[headerMatchesIndex].AsObject());
-    }
-    m_headerMatchesHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("method"))
   {
     m_method = jsonValue.GetString("method");
@@ -44,23 +35,21 @@ HttpMatch& HttpMatch::operator =(JsonView jsonValue)
     m_pathMatch = jsonValue.GetObject("pathMatch");
     m_pathMatchHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("headerMatches"))
+  {
+    Aws::Utils::Array<JsonView> headerMatchesJsonList = jsonValue.GetArray("headerMatches");
+    for(unsigned headerMatchesIndex = 0; headerMatchesIndex < headerMatchesJsonList.GetLength(); ++headerMatchesIndex)
+    {
+      m_headerMatches.push_back(headerMatchesJsonList[headerMatchesIndex].AsObject());
+    }
+    m_headerMatchesHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue HttpMatch::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_headerMatchesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> headerMatchesJsonList(m_headerMatches.size());
-   for(unsigned headerMatchesIndex = 0; headerMatchesIndex < headerMatchesJsonList.GetLength(); ++headerMatchesIndex)
-   {
-     headerMatchesJsonList[headerMatchesIndex].AsObject(m_headerMatches[headerMatchesIndex].Jsonize());
-   }
-   payload.WithArray("headerMatches", std::move(headerMatchesJsonList));
-
-  }
 
   if(m_methodHasBeenSet)
   {
@@ -71,6 +60,17 @@ JsonValue HttpMatch::Jsonize() const
   if(m_pathMatchHasBeenSet)
   {
    payload.WithObject("pathMatch", m_pathMatch.Jsonize());
+
+  }
+
+  if(m_headerMatchesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> headerMatchesJsonList(m_headerMatches.size());
+   for(unsigned headerMatchesIndex = 0; headerMatchesIndex < headerMatchesJsonList.GetLength(); ++headerMatchesIndex)
+   {
+     headerMatchesJsonList[headerMatchesIndex].AsObject(m_headerMatches[headerMatchesIndex].Jsonize());
+   }
+   payload.WithArray("headerMatches", std::move(headerMatchesJsonList));
 
   }
 

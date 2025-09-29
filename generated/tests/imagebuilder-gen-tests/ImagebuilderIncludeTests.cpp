@@ -18,6 +18,7 @@
 #include <aws/imagebuilder/model/AdditionalInstanceConfiguration.h>
 #include <aws/imagebuilder/model/Ami.h>
 #include <aws/imagebuilder/model/AmiDistributionConfiguration.h>
+#include <aws/imagebuilder/model/AutoDisablePolicy.h>
 #include <aws/imagebuilder/model/BuildType.h>
 #include <aws/imagebuilder/model/CancelImageCreationRequest.h>
 #include <aws/imagebuilder/model/CancelImageCreationResult.h>
@@ -125,6 +126,7 @@
 #include <aws/imagebuilder/model/GetWorkflowStepExecutionResult.h>
 #include <aws/imagebuilder/model/Image.h>
 #include <aws/imagebuilder/model/ImageAggregation.h>
+#include <aws/imagebuilder/model/ImageLoggingConfiguration.h>
 #include <aws/imagebuilder/model/ImagePackage.h>
 #include <aws/imagebuilder/model/ImagePipeline.h>
 #include <aws/imagebuilder/model/ImagePipelineAggregation.h>
@@ -234,6 +236,7 @@
 #include <aws/imagebuilder/model/Ownership.h>
 #include <aws/imagebuilder/model/PackageVulnerabilityDetails.h>
 #include <aws/imagebuilder/model/PipelineExecutionStartCondition.h>
+#include <aws/imagebuilder/model/PipelineLoggingConfiguration.h>
 #include <aws/imagebuilder/model/PipelineStatus.h>
 #include <aws/imagebuilder/model/Placement.h>
 #include <aws/imagebuilder/model/Platform.h>

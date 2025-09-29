@@ -52,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of IP address.</p>
+     * <p>The type of IP address. Dualstack is currently not supported.</p>
      */
     inline ResourceConfigurationIpAddressType GetIpAddressType() const { return m_ipAddressType; }
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }

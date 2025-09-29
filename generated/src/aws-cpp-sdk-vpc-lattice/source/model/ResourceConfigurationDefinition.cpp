@@ -25,11 +25,6 @@ ResourceConfigurationDefinition::ResourceConfigurationDefinition(JsonView jsonVa
 
 ResourceConfigurationDefinition& ResourceConfigurationDefinition::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("arnResource"))
-  {
-    m_arnResource = jsonValue.GetObject("arnResource");
-    m_arnResourceHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("dnsResource"))
   {
     m_dnsResource = jsonValue.GetObject("dnsResource");
@@ -40,18 +35,17 @@ ResourceConfigurationDefinition& ResourceConfigurationDefinition::operator =(Jso
     m_ipResource = jsonValue.GetObject("ipResource");
     m_ipResourceHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("arnResource"))
+  {
+    m_arnResource = jsonValue.GetObject("arnResource");
+    m_arnResourceHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue ResourceConfigurationDefinition::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_arnResourceHasBeenSet)
-  {
-   payload.WithObject("arnResource", m_arnResource.Jsonize());
-
-  }
 
   if(m_dnsResourceHasBeenSet)
   {
@@ -62,6 +56,12 @@ JsonValue ResourceConfigurationDefinition::Jsonize() const
   if(m_ipResourceHasBeenSet)
   {
    payload.WithObject("ipResource", m_ipResource.Jsonize());
+
+  }
+
+  if(m_arnResourceHasBeenSet)
+  {
+   payload.WithObject("arnResource", m_arnResource.Jsonize());
 
   }
 

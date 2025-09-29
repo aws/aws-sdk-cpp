@@ -7,8 +7,8 @@
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/vpc-lattice/VPCLatticeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/vpc-lattice/model/RuleAction.h>
 #include <aws/vpc-lattice/model/ListenerProtocol.h>
+#include <aws/vpc-lattice/model/RuleAction.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -38,30 +38,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If you retry a request that completed successfully
-     * using the same client token and parameters, the retry succeeds without
-     * performing any actions. If the parameters aren't identical, the retry fails.</p>
+     * <p>The ID or ARN of the service.</p>
      */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    CreateListenerRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The action for the default rule. Each listener has a default rule. The
-     * default rule is used if no other rules match.</p>
-     */
-    inline const RuleAction& GetDefaultAction() const { return m_defaultAction; }
-    inline bool DefaultActionHasBeenSet() const { return m_defaultActionHasBeenSet; }
-    template<typename DefaultActionT = RuleAction>
-    void SetDefaultAction(DefaultActionT&& value) { m_defaultActionHasBeenSet = true; m_defaultAction = std::forward<DefaultActionT>(value); }
-    template<typename DefaultActionT = RuleAction>
-    CreateListenerRequest& WithDefaultAction(DefaultActionT&& value) { SetDefaultAction(std::forward<DefaultActionT>(value)); return *this;}
+    inline const Aws::String& GetServiceIdentifier() const { return m_serviceIdentifier; }
+    inline bool ServiceIdentifierHasBeenSet() const { return m_serviceIdentifierHasBeenSet; }
+    template<typename ServiceIdentifierT = Aws::String>
+    void SetServiceIdentifier(ServiceIdentifierT&& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = std::forward<ServiceIdentifierT>(value); }
+    template<typename ServiceIdentifierT = Aws::String>
+    CreateListenerRequest& WithServiceIdentifier(ServiceIdentifierT&& value) { SetServiceIdentifier(std::forward<ServiceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,6 +64,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The listener protocol.</p>
+     */
+    inline ListenerProtocol GetProtocol() const { return m_protocol; }
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
+    inline void SetProtocol(ListenerProtocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline CreateListenerRequest& WithProtocol(ListenerProtocol value) { SetProtocol(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The listener port. You can specify a value from 1 to 65535. For HTTP, the
      * default is 80. For HTTPS, the default is 443.</p>
      */
@@ -91,24 +85,30 @@ namespace Model
 
     ///@{
     /**
-     * <p>The listener protocol.</p>
+     * <p>The action for the default rule. Each listener has a default rule. The
+     * default rule is used if no other rules match.</p>
      */
-    inline ListenerProtocol GetProtocol() const { return m_protocol; }
-    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(ListenerProtocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline CreateListenerRequest& WithProtocol(ListenerProtocol value) { SetProtocol(value); return *this;}
+    inline const RuleAction& GetDefaultAction() const { return m_defaultAction; }
+    inline bool DefaultActionHasBeenSet() const { return m_defaultActionHasBeenSet; }
+    template<typename DefaultActionT = RuleAction>
+    void SetDefaultAction(DefaultActionT&& value) { m_defaultActionHasBeenSet = true; m_defaultAction = std::forward<DefaultActionT>(value); }
+    template<typename DefaultActionT = RuleAction>
+    CreateListenerRequest& WithDefaultAction(DefaultActionT&& value) { SetDefaultAction(std::forward<DefaultActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The ID or ARN of the service.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If you retry a request that completed successfully
+     * using the same client token and parameters, the retry succeeds without
+     * performing any actions. If the parameters aren't identical, the retry fails.</p>
      */
-    inline const Aws::String& GetServiceIdentifier() const { return m_serviceIdentifier; }
-    inline bool ServiceIdentifierHasBeenSet() const { return m_serviceIdentifierHasBeenSet; }
-    template<typename ServiceIdentifierT = Aws::String>
-    void SetServiceIdentifier(ServiceIdentifierT&& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = std::forward<ServiceIdentifierT>(value); }
-    template<typename ServiceIdentifierT = Aws::String>
-    CreateListenerRequest& WithServiceIdentifier(ServiceIdentifierT&& value) { SetServiceIdentifier(std::forward<ServiceIdentifierT>(value)); return *this;}
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateListenerRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,23 +128,23 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-    bool m_clientTokenHasBeenSet = true;
-
-    RuleAction m_defaultAction;
-    bool m_defaultActionHasBeenSet = false;
+    Aws::String m_serviceIdentifier;
+    bool m_serviceIdentifierHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_port{0};
-    bool m_portHasBeenSet = false;
-
     ListenerProtocol m_protocol{ListenerProtocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
 
-    Aws::String m_serviceIdentifier;
-    bool m_serviceIdentifierHasBeenSet = false;
+    int m_port{0};
+    bool m_portHasBeenSet = false;
+
+    RuleAction m_defaultAction;
+    bool m_defaultActionHasBeenSet = false;
+
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

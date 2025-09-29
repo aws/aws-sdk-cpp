@@ -47,7 +47,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of image pipelines.</p>
+     * <p>A list of <code>ImageRecipeSummary</code> objects that contain identifying
+     * characteristics for the image recipe, such as the name, the Amazon Resource Name
+     * (ARN), and the date created, along with other key details.</p>
      */
     inline const Aws::Vector<ImageRecipeSummary>& GetImageRecipeSummaryList() const { return m_imageRecipeSummaryList; }
     template<typename ImageRecipeSummaryListT = Aws::Vector<ImageRecipeSummary>>

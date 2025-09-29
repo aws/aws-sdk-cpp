@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/vpc-lattice/VPCLatticeRequest.h>
-#include <aws/vpc-lattice/model/AuthType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/vpc-lattice/model/AuthType.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -37,31 +37,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of IAM policy.</p> <ul> <li> <p> <code>NONE</code>: The resource
-     * does not use an IAM policy. This is the default.</p> </li> <li> <p>
-     * <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used,
-     * auth is enabled and an auth policy is required.</p> </li> </ul>
-     */
-    inline AuthType GetAuthType() const { return m_authType; }
-    inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
-    inline void SetAuthType(AuthType value) { m_authTypeHasBeenSet = true; m_authType = value; }
-    inline CreateServiceRequest& WithAuthType(AuthType value) { SetAuthType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the certificate.</p>
-     */
-    inline const Aws::String& GetCertificateArn() const { return m_certificateArn; }
-    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
-    template<typename CertificateArnT = Aws::String>
-    void SetCertificateArn(CertificateArnT&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::forward<CertificateArnT>(value); }
-    template<typename CertificateArnT = Aws::String>
-    CreateServiceRequest& WithCertificateArn(CertificateArnT&& value) { SetCertificateArn(std::forward<CertificateArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. If you retry a request that completed successfully
      * using the same client token and parameters, the retry succeeds without
@@ -73,18 +48,6 @@ namespace Model
     void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
     template<typename ClientTokenT = Aws::String>
     CreateServiceRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The custom domain name of the service.</p>
-     */
-    inline const Aws::String& GetCustomDomainName() const { return m_customDomainName; }
-    inline bool CustomDomainNameHasBeenSet() const { return m_customDomainNameHasBeenSet; }
-    template<typename CustomDomainNameT = Aws::String>
-    void SetCustomDomainName(CustomDomainNameT&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::forward<CustomDomainNameT>(value); }
-    template<typename CustomDomainNameT = Aws::String>
-    CreateServiceRequest& WithCustomDomainName(CustomDomainNameT&& value) { SetCustomDomainName(std::forward<CustomDomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,25 +79,62 @@ namespace Model
       m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
     }
     ///@}
+
+    ///@{
+    /**
+     * <p>The custom domain name of the service.</p>
+     */
+    inline const Aws::String& GetCustomDomainName() const { return m_customDomainName; }
+    inline bool CustomDomainNameHasBeenSet() const { return m_customDomainNameHasBeenSet; }
+    template<typename CustomDomainNameT = Aws::String>
+    void SetCustomDomainName(CustomDomainNameT&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::forward<CustomDomainNameT>(value); }
+    template<typename CustomDomainNameT = Aws::String>
+    CreateServiceRequest& WithCustomDomainName(CustomDomainNameT&& value) { SetCustomDomainName(std::forward<CustomDomainNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the certificate.</p>
+     */
+    inline const Aws::String& GetCertificateArn() const { return m_certificateArn; }
+    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
+    template<typename CertificateArnT = Aws::String>
+    void SetCertificateArn(CertificateArnT&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::forward<CertificateArnT>(value); }
+    template<typename CertificateArnT = Aws::String>
+    CreateServiceRequest& WithCertificateArn(CertificateArnT&& value) { SetCertificateArn(std::forward<CertificateArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of IAM policy.</p> <ul> <li> <p> <code>NONE</code>: The resource
+     * does not use an IAM policy. This is the default.</p> </li> <li> <p>
+     * <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used,
+     * auth is enabled and an auth policy is required.</p> </li> </ul>
+     */
+    inline AuthType GetAuthType() const { return m_authType; }
+    inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
+    inline void SetAuthType(AuthType value) { m_authTypeHasBeenSet = true; m_authType = value; }
+    inline CreateServiceRequest& WithAuthType(AuthType value) { SetAuthType(value); return *this;}
+    ///@}
   private:
-
-    AuthType m_authType{AuthType::NOT_SET};
-    bool m_authTypeHasBeenSet = false;
-
-    Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet = false;
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
-
-    Aws::String m_customDomainName;
-    bool m_customDomainNameHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_customDomainName;
+    bool m_customDomainNameHasBeenSet = false;
+
+    Aws::String m_certificateArn;
+    bool m_certificateArnHasBeenSet = false;
+
+    AuthType m_authType{AuthType::NOT_SET};
+    bool m_authTypeHasBeenSet = false;
   };
 
 } // namespace Model

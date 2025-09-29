@@ -38,7 +38,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The HTTP response code.</p>
+     * <p>The HTTP response code. Only <code>404</code> and <code>500</code> status
+     * codes are supported.</p>
      */
     inline int GetStatusCode() const { return m_statusCode; }
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }

@@ -25,6 +25,11 @@ RuleUpdateFailure::RuleUpdateFailure(JsonView jsonValue)
 
 RuleUpdateFailure& RuleUpdateFailure::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("ruleIdentifier"))
+  {
+    m_ruleIdentifier = jsonValue.GetString("ruleIdentifier");
+    m_ruleIdentifierHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("failureCode"))
   {
     m_failureCode = jsonValue.GetString("failureCode");
@@ -35,17 +40,18 @@ RuleUpdateFailure& RuleUpdateFailure::operator =(JsonView jsonValue)
     m_failureMessage = jsonValue.GetString("failureMessage");
     m_failureMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ruleIdentifier"))
-  {
-    m_ruleIdentifier = jsonValue.GetString("ruleIdentifier");
-    m_ruleIdentifierHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue RuleUpdateFailure::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_ruleIdentifierHasBeenSet)
+  {
+   payload.WithString("ruleIdentifier", m_ruleIdentifier);
+
+  }
 
   if(m_failureCodeHasBeenSet)
   {
@@ -56,12 +62,6 @@ JsonValue RuleUpdateFailure::Jsonize() const
   if(m_failureMessageHasBeenSet)
   {
    payload.WithString("failureMessage", m_failureMessage);
-
-  }
-
-  if(m_ruleIdentifierHasBeenSet)
-  {
-   payload.WithString("ruleIdentifier", m_ruleIdentifier);
 
   }
 

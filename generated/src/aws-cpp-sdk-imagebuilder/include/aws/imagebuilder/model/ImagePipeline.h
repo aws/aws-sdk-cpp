@@ -10,9 +10,11 @@
 #include <aws/imagebuilder/model/ImageTestsConfiguration.h>
 #include <aws/imagebuilder/model/Schedule.h>
 #include <aws/imagebuilder/model/PipelineStatus.h>
+#include <aws/imagebuilder/model/ImageStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/imagebuilder/model/ImageScanningConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/imagebuilder/model/PipelineLoggingConfiguration.h>
 #include <aws/imagebuilder/model/WorkflowConfiguration.h>
 #include <utility>
 
@@ -228,6 +230,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The status of the last image that this pipeline built, such as
+     * <code>BUILDING</code>, <code>TESTING</code>, <code>FAILED</code>, or
+     * <code>AVAILABLE</code>.</p>
+     */
+    inline ImageStatus GetLastRunStatus() const { return m_lastRunStatus; }
+    inline bool LastRunStatusHasBeenSet() const { return m_lastRunStatusHasBeenSet; }
+    inline void SetLastRunStatus(ImageStatus value) { m_lastRunStatusHasBeenSet = true; m_lastRunStatus = value; }
+    inline ImagePipeline& WithLastRunStatus(ImageStatus value) { SetLastRunStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The next date when the pipeline is scheduled to run.</p>
      */
     inline const Aws::String& GetDateNextRun() const { return m_dateNextRun; }
@@ -292,6 +306,39 @@ namespace Model
     template<typename WorkflowsT = WorkflowConfiguration>
     ImagePipeline& AddWorkflows(WorkflowsT&& value) { m_workflowsHasBeenSet = true; m_workflows.emplace_back(std::forward<WorkflowsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Defines logging configuration for the output image.</p>
+     */
+    inline const PipelineLoggingConfiguration& GetLoggingConfiguration() const { return m_loggingConfiguration; }
+    inline bool LoggingConfigurationHasBeenSet() const { return m_loggingConfigurationHasBeenSet; }
+    template<typename LoggingConfigurationT = PipelineLoggingConfiguration>
+    void SetLoggingConfiguration(LoggingConfigurationT&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::forward<LoggingConfigurationT>(value); }
+    template<typename LoggingConfigurationT = PipelineLoggingConfiguration>
+    ImagePipeline& WithLoggingConfiguration(LoggingConfigurationT&& value) { SetLoggingConfiguration(std::forward<LoggingConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Image Builder tracks the number of consecutive failures for scheduled
+     * pipeline executions and takes one of the following actions each time it runs on
+     * a schedule:</p> <ul> <li> <p>If the pipeline execution is successful, the number
+     * of consecutive failures resets to zero.</p> </li> <li> <p>If the pipeline
+     * execution fails, Image Builder increments the number of consecutive failures. If
+     * the failure count exceeds the limit defined in the
+     * <code>AutoDisablePolicy</code>, Image Builder disables the pipeline.</p> </li>
+     * </ul> <p>The consecutive failure count is also reset to zero under the following
+     * conditions:</p> <ul> <li> <p>The pipeline runs manually and succeeds.</p> </li>
+     * <li> <p>The pipeline configuration is updated.</p> </li> </ul> <p>If the
+     * pipeline runs manually and fails, the count remains the same. The next scheduled
+     * run continues to increment where it left off before.</p>
+     */
+    inline int GetConsecutiveFailures() const { return m_consecutiveFailures; }
+    inline bool ConsecutiveFailuresHasBeenSet() const { return m_consecutiveFailuresHasBeenSet; }
+    inline void SetConsecutiveFailures(int value) { m_consecutiveFailuresHasBeenSet = true; m_consecutiveFailures = value; }
+    inline ImagePipeline& WithConsecutiveFailures(int value) { SetConsecutiveFailures(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -339,6 +386,9 @@ namespace Model
     Aws::String m_dateLastRun;
     bool m_dateLastRunHasBeenSet = false;
 
+    ImageStatus m_lastRunStatus{ImageStatus::NOT_SET};
+    bool m_lastRunStatusHasBeenSet = false;
+
     Aws::String m_dateNextRun;
     bool m_dateNextRunHasBeenSet = false;
 
@@ -353,6 +403,12 @@ namespace Model
 
     Aws::Vector<WorkflowConfiguration> m_workflows;
     bool m_workflowsHasBeenSet = false;
+
+    PipelineLoggingConfiguration m_loggingConfiguration;
+    bool m_loggingConfigurationHasBeenSet = false;
+
+    int m_consecutiveFailures{0};
+    bool m_consecutiveFailuresHasBeenSet = false;
   };
 
 } // namespace Model

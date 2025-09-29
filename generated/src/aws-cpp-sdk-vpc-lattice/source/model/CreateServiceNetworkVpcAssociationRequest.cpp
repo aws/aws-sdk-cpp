@@ -22,6 +22,18 @@ Aws::String CreateServiceNetworkVpcAssociationRequest::SerializePayload() const
 
   }
 
+  if(m_serviceNetworkIdentifierHasBeenSet)
+  {
+   payload.WithString("serviceNetworkIdentifier", m_serviceNetworkIdentifier);
+
+  }
+
+  if(m_vpcIdentifierHasBeenSet)
+  {
+   payload.WithString("vpcIdentifier", m_vpcIdentifier);
+
+  }
+
   if(m_securityGroupIdsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
@@ -33,12 +45,6 @@ Aws::String CreateServiceNetworkVpcAssociationRequest::SerializePayload() const
 
   }
 
-  if(m_serviceNetworkIdentifierHasBeenSet)
-  {
-   payload.WithString("serviceNetworkIdentifier", m_serviceNetworkIdentifier);
-
-  }
-
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;
@@ -47,12 +53,6 @@ Aws::String CreateServiceNetworkVpcAssociationRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
-
-  }
-
-  if(m_vpcIdentifierHasBeenSet)
-  {
-   payload.WithString("vpcIdentifier", m_vpcIdentifier);
 
   }
 

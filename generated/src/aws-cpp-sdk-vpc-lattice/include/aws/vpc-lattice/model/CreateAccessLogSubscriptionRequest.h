@@ -52,6 +52,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID or ARN of the service network or service.</p>
+     */
+    inline const Aws::String& GetResourceIdentifier() const { return m_resourceIdentifier; }
+    inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
+    template<typename ResourceIdentifierT = Aws::String>
+    void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
+    template<typename ResourceIdentifierT = Aws::String>
+    CreateAccessLogSubscriptionRequest& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the destination. The supported destination
      * types are CloudWatch Log groups, Kinesis Data Firehose delivery streams, and
      * Amazon S3 buckets.</p>
@@ -62,18 +74,6 @@ namespace Model
     void SetDestinationArn(DestinationArnT&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::forward<DestinationArnT>(value); }
     template<typename DestinationArnT = Aws::String>
     CreateAccessLogSubscriptionRequest& WithDestinationArn(DestinationArnT&& value) { SetDestinationArn(std::forward<DestinationArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID or ARN of the service network or service.</p>
-     */
-    inline const Aws::String& GetResourceIdentifier() const { return m_resourceIdentifier; }
-    inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
-    template<typename ResourceIdentifierT = Aws::String>
-    void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
-    template<typename ResourceIdentifierT = Aws::String>
-    CreateAccessLogSubscriptionRequest& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,11 +106,11 @@ namespace Model
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
 
-    Aws::String m_destinationArn;
-    bool m_destinationArnHasBeenSet = false;
-
     Aws::String m_resourceIdentifier;
     bool m_resourceIdentifierHasBeenSet = false;
+
+    Aws::String m_destinationArn;
+    bool m_destinationArnHasBeenSet = false;
 
     ServiceNetworkLogType m_serviceNetworkLogType{ServiceNetworkLogType::NOT_SET};
     bool m_serviceNetworkLogTypeHasBeenSet = false;

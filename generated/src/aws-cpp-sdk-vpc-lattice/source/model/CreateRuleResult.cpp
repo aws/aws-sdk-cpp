@@ -25,11 +25,6 @@ CreateRuleResult::CreateRuleResult(const Aws::AmazonWebServiceResult<JsonValue>&
 CreateRuleResult& CreateRuleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("action"))
-  {
-    m_action = jsonValue.GetObject("action");
-    m_actionHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
@@ -40,20 +35,25 @@ CreateRuleResult& CreateRuleResult::operator =(const Aws::AmazonWebServiceResult
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("match"))
-  {
-    m_match = jsonValue.GetObject("match");
-    m_matchHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("match"))
+  {
+    m_match = jsonValue.GetObject("match");
+    m_matchHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("priority"))
   {
     m_priority = jsonValue.GetInteger("priority");
     m_priorityHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("action"))
+  {
+    m_action = jsonValue.GetObject("action");
+    m_actionHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

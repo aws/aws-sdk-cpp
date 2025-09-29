@@ -23,6 +23,20 @@ Aws::String ListResourceConfigurationsRequest::SerializePayload() const
 void ListResourceConfigurationsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_resourceGatewayIdentifierHasBeenSet)
+    {
+      ss << m_resourceGatewayIdentifier;
+      uri.AddQueryStringParameter("resourceGatewayIdentifier", ss.str());
+      ss.str("");
+    }
+
+    if(m_resourceConfigurationGroupIdentifierHasBeenSet)
+    {
+      ss << m_resourceConfigurationGroupIdentifier;
+      uri.AddQueryStringParameter("resourceConfigurationGroupIdentifier", ss.str());
+      ss.str("");
+    }
+
     if(m_maxResultsHasBeenSet)
     {
       ss << m_maxResults;
@@ -34,20 +48,6 @@ void ListResourceConfigurationsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
-      ss.str("");
-    }
-
-    if(m_resourceConfigurationGroupIdentifierHasBeenSet)
-    {
-      ss << m_resourceConfigurationGroupIdentifier;
-      uri.AddQueryStringParameter("resourceConfigurationGroupIdentifier", ss.str());
-      ss.str("");
-    }
-
-    if(m_resourceGatewayIdentifierHasBeenSet)
-    {
-      ss << m_resourceGatewayIdentifier;
-      uri.AddQueryStringParameter("resourceGatewayIdentifier", ss.str());
       ss.str("");
     }
 

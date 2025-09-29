@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/vpc-lattice/model/ResourceGatewayIpAddressType.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/vpc-lattice/model/ResourceGatewayStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/vpc-lattice/model/ResourceGatewayIpAddressType.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -38,25 +38,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource gateway.</p>
+     * <p>The name of the resource gateway.</p>
      */
-    inline const Aws::String& GetArn() const { return m_arn; }
-    template<typename ArnT = Aws::String>
-    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
-    template<typename ArnT = Aws::String>
-    GetResourceGatewayResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The date and time that the resource gateway was created, in ISO-8601
-     * format.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    GetResourceGatewayResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetResourceGatewayResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,47 +60,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of IP address for the resource gateway.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource gateway.</p>
      */
-    inline ResourceGatewayIpAddressType GetIpAddressType() const { return m_ipAddressType; }
-    inline void SetIpAddressType(ResourceGatewayIpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
-    inline GetResourceGatewayResult& WithIpAddressType(ResourceGatewayIpAddressType value) { SetIpAddressType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The date and time that the resource gateway was last updated, in ISO-8601
-     * format.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
-    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
-    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
-    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
-    GetResourceGatewayResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the resource gateway.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    GetResourceGatewayResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The security group IDs associated with the resource gateway.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
-    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
-    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
-    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
-    GetResourceGatewayResult& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
-    template<typename SecurityGroupIdsT = Aws::String>
-    GetResourceGatewayResult& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetResourceGatewayResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,6 +76,17 @@ namespace Model
     inline ResourceGatewayStatus GetStatus() const { return m_status; }
     inline void SetStatus(ResourceGatewayStatus value) { m_statusHasBeenSet = true; m_status = value; }
     inline GetResourceGatewayResult& WithStatus(ResourceGatewayStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the VPC for the resource gateway.</p>
+     */
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    GetResourceGatewayResult& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,13 +104,57 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the VPC for the resource gateway.</p>
+     * <p>The security group IDs associated with the resource gateway.</p>
      */
-    inline const Aws::String& GetVpcId() const { return m_vpcId; }
-    template<typename VpcIdT = Aws::String>
-    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
-    template<typename VpcIdT = Aws::String>
-    GetResourceGatewayResult& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    GetResourceGatewayResult& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    GetResourceGatewayResult& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of IP address for the resource gateway.</p>
+     */
+    inline ResourceGatewayIpAddressType GetIpAddressType() const { return m_ipAddressType; }
+    inline void SetIpAddressType(ResourceGatewayIpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline GetResourceGatewayResult& WithIpAddressType(ResourceGatewayIpAddressType value) { SetIpAddressType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of IPv4 addresses in each ENI for the resource gateway.</p>
+     */
+    inline int GetIpv4AddressesPerEni() const { return m_ipv4AddressesPerEni; }
+    inline void SetIpv4AddressesPerEni(int value) { m_ipv4AddressesPerEniHasBeenSet = true; m_ipv4AddressesPerEni = value; }
+    inline GetResourceGatewayResult& WithIpv4AddressesPerEni(int value) { SetIpv4AddressesPerEni(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time that the resource gateway was created, in ISO-8601
+     * format.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetResourceGatewayResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time that the resource gateway was last updated, in ISO-8601
+     * format.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    GetResourceGatewayResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,35 +167,38 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_arn;
-    bool m_arnHasBeenSet = false;
-
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    ResourceGatewayIpAddressType m_ipAddressType{ResourceGatewayIpAddressType::NOT_SET};
-    bool m_ipAddressTypeHasBeenSet = false;
-
-    Aws::Utils::DateTime m_lastUpdatedAt{};
-    bool m_lastUpdatedAtHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet = false;
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     ResourceGatewayStatus m_status{ResourceGatewayStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
+    Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet = false;
+
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet = false;
 
-    Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet = false;
+    Aws::Vector<Aws::String> m_securityGroupIds;
+    bool m_securityGroupIdsHasBeenSet = false;
+
+    ResourceGatewayIpAddressType m_ipAddressType{ResourceGatewayIpAddressType::NOT_SET};
+    bool m_ipAddressTypeHasBeenSet = false;
+
+    int m_ipv4AddressesPerEni{0};
+    bool m_ipv4AddressesPerEniHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

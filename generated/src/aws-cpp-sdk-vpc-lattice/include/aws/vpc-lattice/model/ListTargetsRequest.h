@@ -42,6 +42,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID or ARN of the target group.</p>
+     */
+    inline const Aws::String& GetTargetGroupIdentifier() const { return m_targetGroupIdentifier; }
+    inline bool TargetGroupIdentifierHasBeenSet() const { return m_targetGroupIdentifierHasBeenSet; }
+    template<typename TargetGroupIdentifierT = Aws::String>
+    void SetTargetGroupIdentifier(TargetGroupIdentifierT&& value) { m_targetGroupIdentifierHasBeenSet = true; m_targetGroupIdentifier = std::forward<TargetGroupIdentifierT>(value); }
+    template<typename TargetGroupIdentifierT = Aws::String>
+    ListTargetsRequest& WithTargetGroupIdentifier(TargetGroupIdentifierT&& value) { SetTargetGroupIdentifier(std::forward<TargetGroupIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The maximum number of results to return.</p>
      */
     inline int GetMaxResults() const { return m_maxResults; }
@@ -64,18 +76,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID or ARN of the target group.</p>
-     */
-    inline const Aws::String& GetTargetGroupIdentifier() const { return m_targetGroupIdentifier; }
-    inline bool TargetGroupIdentifierHasBeenSet() const { return m_targetGroupIdentifierHasBeenSet; }
-    template<typename TargetGroupIdentifierT = Aws::String>
-    void SetTargetGroupIdentifier(TargetGroupIdentifierT&& value) { m_targetGroupIdentifierHasBeenSet = true; m_targetGroupIdentifier = std::forward<TargetGroupIdentifierT>(value); }
-    template<typename TargetGroupIdentifierT = Aws::String>
-    ListTargetsRequest& WithTargetGroupIdentifier(TargetGroupIdentifierT&& value) { SetTargetGroupIdentifier(std::forward<TargetGroupIdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The targets.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const { return m_targets; }
@@ -89,14 +89,14 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_targetGroupIdentifier;
+    bool m_targetGroupIdentifierHasBeenSet = false;
+
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
-
-    Aws::String m_targetGroupIdentifier;
-    bool m_targetGroupIdentifierHasBeenSet = false;
 
     Aws::Vector<Target> m_targets;
     bool m_targetsHasBeenSet = false;

@@ -52,18 +52,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the listener rule was created, in ISO-8601 format.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    RuleSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID of the rule.</p>
      */
     inline const Aws::String& GetId() const { return m_id; }
@@ -72,29 +60,6 @@ namespace Model
     void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
     template<typename IdT = Aws::String>
     RuleSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Indicates whether this is the default listener rule.</p>
-     */
-    inline bool GetIsDefault() const { return m_isDefault; }
-    inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
-    inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
-    inline RuleSummary& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The date and time that the listener rule was last updated, in ISO-8601
-     * format.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
-    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
-    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
-    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
-    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
-    RuleSummary& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,6 +76,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates whether this is the default listener rule.</p>
+     */
+    inline bool GetIsDefault() const { return m_isDefault; }
+    inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
+    inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
+    inline RuleSummary& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The priority of the rule.</p>
      */
     inline int GetPriority() const { return m_priority; }
@@ -118,28 +93,53 @@ namespace Model
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline RuleSummary& WithPriority(int value) { SetPriority(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The date and time that the listener rule was created, in ISO-8601 format.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    RuleSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time that the listener rule was last updated, in ISO-8601
+     * format.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    RuleSummary& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
-
     Aws::String m_id;
     bool m_idHasBeenSet = false;
-
-    bool m_isDefault{false};
-    bool m_isDefaultHasBeenSet = false;
-
-    Aws::Utils::DateTime m_lastUpdatedAt{};
-    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
+    bool m_isDefault{false};
+    bool m_isDefaultHasBeenSet = false;
+
     int m_priority{0};
     bool m_priorityHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,6 +26,7 @@ namespace Aws
         static const int stop_sequence_HASH = HashingUtils::HashString("stop_sequence");
         static const int guardrail_intervened_HASH = HashingUtils::HashString("guardrail_intervened");
         static const int content_filtered_HASH = HashingUtils::HashString("content_filtered");
+        static const int model_context_window_exceeded_HASH = HashingUtils::HashString("model_context_window_exceeded");
 
 
         StopReason GetStopReasonForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return StopReason::content_filtered;
           }
+          else if (hashCode == model_context_window_exceeded_HASH)
+          {
+            return StopReason::model_context_window_exceeded;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +88,8 @@ namespace Aws
             return "guardrail_intervened";
           case StopReason::content_filtered:
             return "content_filtered";
+          case StopReason::model_context_window_exceeded:
+            return "model_context_window_exceeded";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

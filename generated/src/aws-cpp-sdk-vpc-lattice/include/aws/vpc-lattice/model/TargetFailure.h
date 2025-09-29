@@ -39,30 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The failure code.</p>
-     */
-    inline const Aws::String& GetFailureCode() const { return m_failureCode; }
-    inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
-    template<typename FailureCodeT = Aws::String>
-    void SetFailureCode(FailureCodeT&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::forward<FailureCodeT>(value); }
-    template<typename FailureCodeT = Aws::String>
-    TargetFailure& WithFailureCode(FailureCodeT&& value) { SetFailureCode(std::forward<FailureCodeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The failure message.</p>
-     */
-    inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
-    inline bool FailureMessageHasBeenSet() const { return m_failureMessageHasBeenSet; }
-    template<typename FailureMessageT = Aws::String>
-    void SetFailureMessage(FailureMessageT&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::forward<FailureMessageT>(value); }
-    template<typename FailureMessageT = Aws::String>
-    TargetFailure& WithFailureMessage(FailureMessageT&& value) { SetFailureMessage(std::forward<FailureMessageT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID of the target. If the target group type is <code>INSTANCE</code>, this
      * is an instance ID. If the target group type is <code>IP</code>, this is an IP
      * address. If the target group type is <code>LAMBDA</code>, this is the ARN of a
@@ -87,19 +63,43 @@ namespace Model
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline TargetFailure& WithPort(int value) { SetPort(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The failure code.</p>
+     */
+    inline const Aws::String& GetFailureCode() const { return m_failureCode; }
+    inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
+    template<typename FailureCodeT = Aws::String>
+    void SetFailureCode(FailureCodeT&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::forward<FailureCodeT>(value); }
+    template<typename FailureCodeT = Aws::String>
+    TargetFailure& WithFailureCode(FailureCodeT&& value) { SetFailureCode(std::forward<FailureCodeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The failure message.</p>
+     */
+    inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
+    inline bool FailureMessageHasBeenSet() const { return m_failureMessageHasBeenSet; }
+    template<typename FailureMessageT = Aws::String>
+    void SetFailureMessage(FailureMessageT&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::forward<FailureMessageT>(value); }
+    template<typename FailureMessageT = Aws::String>
+    TargetFailure& WithFailureMessage(FailureMessageT&& value) { SetFailureMessage(std::forward<FailureMessageT>(value)); return *this;}
+    ///@}
   private:
-
-    Aws::String m_failureCode;
-    bool m_failureCodeHasBeenSet = false;
-
-    Aws::String m_failureMessage;
-    bool m_failureMessageHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
     int m_port{0};
     bool m_portHasBeenSet = false;
+
+    Aws::String m_failureCode;
+    bool m_failureCodeHasBeenSet = false;
+
+    Aws::String m_failureMessage;
+    bool m_failureMessageHasBeenSet = false;
   };
 
 } // namespace Model

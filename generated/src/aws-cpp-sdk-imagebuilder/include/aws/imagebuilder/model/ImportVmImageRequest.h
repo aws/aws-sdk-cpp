@@ -8,6 +8,7 @@
 #include <aws/imagebuilder/ImagebuilderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/imagebuilder/model/Platform.h>
+#include <aws/imagebuilder/model/ImageLoggingConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -121,6 +122,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Define logging configuration for the image build process.</p>
+     */
+    inline const ImageLoggingConfiguration& GetLoggingConfiguration() const { return m_loggingConfiguration; }
+    inline bool LoggingConfigurationHasBeenSet() const { return m_loggingConfigurationHasBeenSet; }
+    template<typename LoggingConfigurationT = ImageLoggingConfiguration>
+    void SetLoggingConfiguration(LoggingConfigurationT&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::forward<LoggingConfigurationT>(value); }
+    template<typename LoggingConfigurationT = ImageLoggingConfiguration>
+    ImportVmImageRequest& WithLoggingConfiguration(LoggingConfigurationT&& value) { SetLoggingConfiguration(std::forward<LoggingConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Tags that are attached to the import resources.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -168,6 +181,9 @@ namespace Model
 
     Aws::String m_vmImportTaskId;
     bool m_vmImportTaskIdHasBeenSet = false;
+
+    ImageLoggingConfiguration m_loggingConfiguration;
+    bool m_loggingConfigurationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

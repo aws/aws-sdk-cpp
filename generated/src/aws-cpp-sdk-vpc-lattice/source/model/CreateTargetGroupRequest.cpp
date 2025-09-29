@@ -16,10 +16,15 @@ Aws::String CreateTargetGroupRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithString("name", m_name);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", TargetGroupTypeMapper::GetNameForTargetGroupType(m_type));
   }
 
   if(m_configHasBeenSet)
@@ -28,9 +33,9 @@ Aws::String CreateTargetGroupRequest::SerializePayload() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithString("clientToken", m_clientToken);
 
   }
 
@@ -43,11 +48,6 @@ Aws::String CreateTargetGroupRequest::SerializePayload() const
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", TargetGroupTypeMapper::GetNameForTargetGroupType(m_type));
   }
 
   return payload.View().WriteReadable();

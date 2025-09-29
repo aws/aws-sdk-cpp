@@ -60,6 +60,11 @@ ContainerRecipeSummary& ContainerRecipeSummary::operator =(JsonView jsonValue)
     m_dateCreated = jsonValue.GetString("dateCreated");
     m_dateCreatedHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("instanceImage"))
+  {
+    m_instanceImage = jsonValue.GetString("instanceImage");
+    m_instanceImageHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -113,6 +118,12 @@ JsonValue ContainerRecipeSummary::Jsonize() const
   if(m_dateCreatedHasBeenSet)
   {
    payload.WithString("dateCreated", m_dateCreated);
+
+  }
+
+  if(m_instanceImageHasBeenSet)
+  {
+   payload.WithString("instanceImage", m_instanceImage);
 
   }
 

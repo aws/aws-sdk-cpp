@@ -66,18 +66,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The code for why the target status is what it is.</p>
-     */
-    inline const Aws::String& GetReasonCode() const { return m_reasonCode; }
-    inline bool ReasonCodeHasBeenSet() const { return m_reasonCodeHasBeenSet; }
-    template<typename ReasonCodeT = Aws::String>
-    void SetReasonCode(ReasonCodeT&& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = std::forward<ReasonCodeT>(value); }
-    template<typename ReasonCodeT = Aws::String>
-    TargetSummary& WithReasonCode(ReasonCodeT&& value) { SetReasonCode(std::forward<ReasonCodeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The status of the target.</p> <ul> <li> <p> <code>DRAINING</code>: The target
      * is being deregistered. No new connections are sent to this target while current
      * connections are being drained. The default draining time is 5 minutes.</p> </li>
@@ -93,6 +81,18 @@ namespace Model
     inline void SetStatus(TargetStatus value) { m_statusHasBeenSet = true; m_status = value; }
     inline TargetSummary& WithStatus(TargetStatus value) { SetStatus(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The code for why the target status is what it is.</p>
+     */
+    inline const Aws::String& GetReasonCode() const { return m_reasonCode; }
+    inline bool ReasonCodeHasBeenSet() const { return m_reasonCodeHasBeenSet; }
+    template<typename ReasonCodeT = Aws::String>
+    void SetReasonCode(ReasonCodeT&& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = std::forward<ReasonCodeT>(value); }
+    template<typename ReasonCodeT = Aws::String>
+    TargetSummary& WithReasonCode(ReasonCodeT&& value) { SetReasonCode(std::forward<ReasonCodeT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -101,11 +101,11 @@ namespace Model
     int m_port{0};
     bool m_portHasBeenSet = false;
 
-    Aws::String m_reasonCode;
-    bool m_reasonCodeHasBeenSet = false;
-
     TargetStatus m_status{TargetStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    Aws::String m_reasonCode;
+    bool m_reasonCodeHasBeenSet = false;
   };
 
 } // namespace Model

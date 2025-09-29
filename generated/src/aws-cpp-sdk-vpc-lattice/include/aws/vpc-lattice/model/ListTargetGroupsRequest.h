@@ -63,16 +63,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The target group type.</p>
-     */
-    inline TargetGroupType GetTargetGroupType() const { return m_targetGroupType; }
-    inline bool TargetGroupTypeHasBeenSet() const { return m_targetGroupTypeHasBeenSet; }
-    inline void SetTargetGroupType(TargetGroupType value) { m_targetGroupTypeHasBeenSet = true; m_targetGroupType = value; }
-    inline ListTargetGroupsRequest& WithTargetGroupType(TargetGroupType value) { SetTargetGroupType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID or ARN of the VPC.</p>
      */
     inline const Aws::String& GetVpcIdentifier() const { return m_vpcIdentifier; }
@@ -82,6 +72,16 @@ namespace Model
     template<typename VpcIdentifierT = Aws::String>
     ListTargetGroupsRequest& WithVpcIdentifier(VpcIdentifierT&& value) { SetVpcIdentifier(std::forward<VpcIdentifierT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The target group type.</p>
+     */
+    inline TargetGroupType GetTargetGroupType() const { return m_targetGroupType; }
+    inline bool TargetGroupTypeHasBeenSet() const { return m_targetGroupTypeHasBeenSet; }
+    inline void SetTargetGroupType(TargetGroupType value) { m_targetGroupTypeHasBeenSet = true; m_targetGroupType = value; }
+    inline ListTargetGroupsRequest& WithTargetGroupType(TargetGroupType value) { SetTargetGroupType(value); return *this;}
+    ///@}
   private:
 
     int m_maxResults{0};
@@ -90,11 +90,11 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    TargetGroupType m_targetGroupType{TargetGroupType::NOT_SET};
-    bool m_targetGroupTypeHasBeenSet = false;
-
     Aws::String m_vpcIdentifier;
     bool m_vpcIdentifierHasBeenSet = false;
+
+    TargetGroupType m_targetGroupType{TargetGroupType::NOT_SET};
+    bool m_targetGroupTypeHasBeenSet = false;
   };
 
 } // namespace Model

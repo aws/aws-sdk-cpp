@@ -25,35 +25,30 @@ ServiceNetworkVpcAssociationSummary::ServiceNetworkVpcAssociationSummary(JsonVie
 
 ServiceNetworkVpcAssociationSummary& ServiceNetworkVpcAssociationSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("status"))
   {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
+    m_status = ServiceNetworkVpcAssociationStatusMapper::GetServiceNetworkVpcAssociationStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
   }
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
     m_createdByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_id = jsonValue.GetString("id");
-    m_idHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
-    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-    m_lastUpdatedAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("serviceNetworkArn"))
-  {
-    m_serviceNetworkArn = jsonValue.GetString("serviceNetworkArn");
-    m_serviceNetworkArnHasBeenSet = true;
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("serviceNetworkId"))
   {
@@ -65,15 +60,20 @@ ServiceNetworkVpcAssociationSummary& ServiceNetworkVpcAssociationSummary::operat
     m_serviceNetworkName = jsonValue.GetString("serviceNetworkName");
     m_serviceNetworkNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("serviceNetworkArn"))
   {
-    m_status = ServiceNetworkVpcAssociationStatusMapper::GetServiceNetworkVpcAssociationStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
+    m_serviceNetworkArn = jsonValue.GetString("serviceNetworkArn");
+    m_serviceNetworkArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("vpcId"))
   {
     m_vpcId = jsonValue.GetString("vpcId");
     m_vpcIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lastUpdatedAt"))
+  {
+    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
+    m_lastUpdatedAtHasBeenSet = true;
   }
   return *this;
 }
@@ -82,15 +82,21 @@ JsonValue ServiceNetworkVpcAssociationSummary::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("id", m_id);
+
+  }
+
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
 
   }
 
-  if(m_createdAtHasBeenSet)
+  if(m_statusHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   payload.WithString("status", ServiceNetworkVpcAssociationStatusMapper::GetNameForServiceNetworkVpcAssociationStatus(m_status));
   }
 
   if(m_createdByHasBeenSet)
@@ -99,21 +105,9 @@ JsonValue ServiceNetworkVpcAssociationSummary::Jsonize() const
 
   }
 
-  if(m_idHasBeenSet)
+  if(m_createdAtHasBeenSet)
   {
-   payload.WithString("id", m_id);
-
-  }
-
-  if(m_lastUpdatedAtHasBeenSet)
-  {
-   payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_serviceNetworkArnHasBeenSet)
-  {
-   payload.WithString("serviceNetworkArn", m_serviceNetworkArn);
-
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_serviceNetworkIdHasBeenSet)
@@ -128,15 +122,21 @@ JsonValue ServiceNetworkVpcAssociationSummary::Jsonize() const
 
   }
 
-  if(m_statusHasBeenSet)
+  if(m_serviceNetworkArnHasBeenSet)
   {
-   payload.WithString("status", ServiceNetworkVpcAssociationStatusMapper::GetNameForServiceNetworkVpcAssociationStatus(m_status));
+   payload.WithString("serviceNetworkArn", m_serviceNetworkArn);
+
   }
 
   if(m_vpcIdHasBeenSet)
   {
    payload.WithString("vpcId", m_vpcId);
 
+  }
+
+  if(m_lastUpdatedAtHasBeenSet)
+  {
+   payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

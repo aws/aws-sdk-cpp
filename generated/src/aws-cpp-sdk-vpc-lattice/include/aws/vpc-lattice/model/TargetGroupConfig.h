@@ -5,12 +5,12 @@
 
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
-#include <aws/vpc-lattice/model/HealthCheckConfig.h>
-#include <aws/vpc-lattice/model/IpAddressType.h>
-#include <aws/vpc-lattice/model/LambdaEventStructureVersion.h>
 #include <aws/vpc-lattice/model/TargetGroupProtocol.h>
 #include <aws/vpc-lattice/model/TargetGroupProtocolVersion.h>
+#include <aws/vpc-lattice/model/IpAddressType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/vpc-lattice/model/HealthCheckConfig.h>
+#include <aws/vpc-lattice/model/LambdaEventStructureVersion.h>
 #include <utility>
 
 namespace Aws
@@ -45,42 +45,6 @@ namespace Model
     AWS_VPCLATTICE_API TargetGroupConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
-
-    ///@{
-    /**
-     * <p>The health check configuration. Not supported if the target group type is
-     * <code>LAMBDA</code> or <code>ALB</code>.</p>
-     */
-    inline const HealthCheckConfig& GetHealthCheck() const { return m_healthCheck; }
-    inline bool HealthCheckHasBeenSet() const { return m_healthCheckHasBeenSet; }
-    template<typename HealthCheckT = HealthCheckConfig>
-    void SetHealthCheck(HealthCheckT&& value) { m_healthCheckHasBeenSet = true; m_healthCheck = std::forward<HealthCheckT>(value); }
-    template<typename HealthCheckT = HealthCheckConfig>
-    TargetGroupConfig& WithHealthCheck(HealthCheckT&& value) { SetHealthCheck(std::forward<HealthCheckT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The type of IP address used for the target group. Supported only if the
-     * target group type is <code>IP</code>. The default is <code>IPV4</code>.</p>
-     */
-    inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
-    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
-    inline void SetIpAddressType(IpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
-    inline TargetGroupConfig& WithIpAddressType(IpAddressType value) { SetIpAddressType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The version of the event structure that your Lambda function receives.
-     * Supported only if the target group type is <code>LAMBDA</code>. The default is
-     * <code>V1</code>.</p>
-     */
-    inline LambdaEventStructureVersion GetLambdaEventStructureVersion() const { return m_lambdaEventStructureVersion; }
-    inline bool LambdaEventStructureVersionHasBeenSet() const { return m_lambdaEventStructureVersionHasBeenSet; }
-    inline void SetLambdaEventStructureVersion(LambdaEventStructureVersion value) { m_lambdaEventStructureVersionHasBeenSet = true; m_lambdaEventStructureVersion = value; }
-    inline TargetGroupConfig& WithLambdaEventStructureVersion(LambdaEventStructureVersion value) { SetLambdaEventStructureVersion(value); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -119,6 +83,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of IP address used for the target group. Supported only if the
+     * target group type is <code>IP</code>. The default is <code>IPV4</code>.</p>
+     */
+    inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+    inline void SetIpAddressType(IpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline TargetGroupConfig& WithIpAddressType(IpAddressType value) { SetIpAddressType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the VPC. Not supported if the target group type is
      * <code>LAMBDA</code>.</p>
      */
@@ -129,16 +104,32 @@ namespace Model
     template<typename VpcIdentifierT = Aws::String>
     TargetGroupConfig& WithVpcIdentifier(VpcIdentifierT&& value) { SetVpcIdentifier(std::forward<VpcIdentifierT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The health check configuration. Not supported if the target group type is
+     * <code>LAMBDA</code> or <code>ALB</code>.</p>
+     */
+    inline const HealthCheckConfig& GetHealthCheck() const { return m_healthCheck; }
+    inline bool HealthCheckHasBeenSet() const { return m_healthCheckHasBeenSet; }
+    template<typename HealthCheckT = HealthCheckConfig>
+    void SetHealthCheck(HealthCheckT&& value) { m_healthCheckHasBeenSet = true; m_healthCheck = std::forward<HealthCheckT>(value); }
+    template<typename HealthCheckT = HealthCheckConfig>
+    TargetGroupConfig& WithHealthCheck(HealthCheckT&& value) { SetHealthCheck(std::forward<HealthCheckT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The version of the event structure that your Lambda function receives.
+     * Supported only if the target group type is <code>LAMBDA</code>. The default is
+     * <code>V1</code>.</p>
+     */
+    inline LambdaEventStructureVersion GetLambdaEventStructureVersion() const { return m_lambdaEventStructureVersion; }
+    inline bool LambdaEventStructureVersionHasBeenSet() const { return m_lambdaEventStructureVersionHasBeenSet; }
+    inline void SetLambdaEventStructureVersion(LambdaEventStructureVersion value) { m_lambdaEventStructureVersionHasBeenSet = true; m_lambdaEventStructureVersion = value; }
+    inline TargetGroupConfig& WithLambdaEventStructureVersion(LambdaEventStructureVersion value) { SetLambdaEventStructureVersion(value); return *this;}
+    ///@}
   private:
-
-    HealthCheckConfig m_healthCheck;
-    bool m_healthCheckHasBeenSet = false;
-
-    IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-    bool m_ipAddressTypeHasBeenSet = false;
-
-    LambdaEventStructureVersion m_lambdaEventStructureVersion{LambdaEventStructureVersion::NOT_SET};
-    bool m_lambdaEventStructureVersionHasBeenSet = false;
 
     int m_port{0};
     bool m_portHasBeenSet = false;
@@ -149,8 +140,17 @@ namespace Model
     TargetGroupProtocolVersion m_protocolVersion{TargetGroupProtocolVersion::NOT_SET};
     bool m_protocolVersionHasBeenSet = false;
 
+    IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
+    bool m_ipAddressTypeHasBeenSet = false;
+
     Aws::String m_vpcIdentifier;
     bool m_vpcIdentifierHasBeenSet = false;
+
+    HealthCheckConfig m_healthCheck;
+    bool m_healthCheckHasBeenSet = false;
+
+    LambdaEventStructureVersion m_lambdaEventStructureVersion{LambdaEventStructureVersion::NOT_SET};
+    bool m_lambdaEventStructureVersionHasBeenSet = false;
   };
 
 } // namespace Model

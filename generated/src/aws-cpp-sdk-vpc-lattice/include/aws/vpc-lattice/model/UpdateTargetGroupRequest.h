@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/vpc-lattice/VPCLatticeRequest.h>
-#include <aws/vpc-lattice/model/HealthCheckConfig.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/vpc-lattice/model/HealthCheckConfig.h>
 #include <utility>
 
 namespace Aws
@@ -35,18 +35,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The health check configuration.</p>
-     */
-    inline const HealthCheckConfig& GetHealthCheck() const { return m_healthCheck; }
-    inline bool HealthCheckHasBeenSet() const { return m_healthCheckHasBeenSet; }
-    template<typename HealthCheckT = HealthCheckConfig>
-    void SetHealthCheck(HealthCheckT&& value) { m_healthCheckHasBeenSet = true; m_healthCheck = std::forward<HealthCheckT>(value); }
-    template<typename HealthCheckT = HealthCheckConfig>
-    UpdateTargetGroupRequest& WithHealthCheck(HealthCheckT&& value) { SetHealthCheck(std::forward<HealthCheckT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID or ARN of the target group.</p>
      */
     inline const Aws::String& GetTargetGroupIdentifier() const { return m_targetGroupIdentifier; }
@@ -56,13 +44,25 @@ namespace Model
     template<typename TargetGroupIdentifierT = Aws::String>
     UpdateTargetGroupRequest& WithTargetGroupIdentifier(TargetGroupIdentifierT&& value) { SetTargetGroupIdentifier(std::forward<TargetGroupIdentifierT>(value)); return *this;}
     ///@}
-  private:
 
-    HealthCheckConfig m_healthCheck;
-    bool m_healthCheckHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The health check configuration.</p>
+     */
+    inline const HealthCheckConfig& GetHealthCheck() const { return m_healthCheck; }
+    inline bool HealthCheckHasBeenSet() const { return m_healthCheckHasBeenSet; }
+    template<typename HealthCheckT = HealthCheckConfig>
+    void SetHealthCheck(HealthCheckT&& value) { m_healthCheckHasBeenSet = true; m_healthCheck = std::forward<HealthCheckT>(value); }
+    template<typename HealthCheckT = HealthCheckConfig>
+    UpdateTargetGroupRequest& WithHealthCheck(HealthCheckT&& value) { SetHealthCheck(std::forward<HealthCheckT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_targetGroupIdentifier;
     bool m_targetGroupIdentifierHasBeenSet = false;
+
+    HealthCheckConfig m_healthCheck;
+    bool m_healthCheckHasBeenSet = false;
   };
 
 } // namespace Model

@@ -40,6 +40,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the service network associated with the VPC endpoint.</p>
+     */
+    inline const Aws::String& GetServiceNetworkIdentifier() const { return m_serviceNetworkIdentifier; }
+    inline bool ServiceNetworkIdentifierHasBeenSet() const { return m_serviceNetworkIdentifierHasBeenSet; }
+    template<typename ServiceNetworkIdentifierT = Aws::String>
+    void SetServiceNetworkIdentifier(ServiceNetworkIdentifierT&& value) { m_serviceNetworkIdentifierHasBeenSet = true; m_serviceNetworkIdentifier = std::forward<ServiceNetworkIdentifierT>(value); }
+    template<typename ServiceNetworkIdentifierT = Aws::String>
+    ListServiceNetworkVpcEndpointAssociationsRequest& WithServiceNetworkIdentifier(ServiceNetworkIdentifierT&& value) { SetServiceNetworkIdentifier(std::forward<ServiceNetworkIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The maximum page size.</p>
      */
     inline int GetMaxResults() const { return m_maxResults; }
@@ -60,28 +72,16 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListServiceNetworkVpcEndpointAssociationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the service network associated with the VPC endpoint.</p>
-     */
-    inline const Aws::String& GetServiceNetworkIdentifier() const { return m_serviceNetworkIdentifier; }
-    inline bool ServiceNetworkIdentifierHasBeenSet() const { return m_serviceNetworkIdentifierHasBeenSet; }
-    template<typename ServiceNetworkIdentifierT = Aws::String>
-    void SetServiceNetworkIdentifier(ServiceNetworkIdentifierT&& value) { m_serviceNetworkIdentifierHasBeenSet = true; m_serviceNetworkIdentifier = std::forward<ServiceNetworkIdentifierT>(value); }
-    template<typename ServiceNetworkIdentifierT = Aws::String>
-    ListServiceNetworkVpcEndpointAssociationsRequest& WithServiceNetworkIdentifier(ServiceNetworkIdentifierT&& value) { SetServiceNetworkIdentifier(std::forward<ServiceNetworkIdentifierT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_serviceNetworkIdentifier;
+    bool m_serviceNetworkIdentifierHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
-
-    Aws::String m_serviceNetworkIdentifier;
-    bool m_serviceNetworkIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

@@ -157,7 +157,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the KMS key that should be used to encrypt this component.</p>
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies the KMS key used to
+     * encrypt this component. This can be either the Key ARN or the Alias ARN. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key
+     * identifiers (KeyId)</a> in the <i>Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }

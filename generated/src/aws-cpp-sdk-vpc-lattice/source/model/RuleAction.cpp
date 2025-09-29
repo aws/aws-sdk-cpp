@@ -25,15 +25,15 @@ RuleAction::RuleAction(JsonView jsonValue)
 
 RuleAction& RuleAction::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("fixedResponse"))
-  {
-    m_fixedResponse = jsonValue.GetObject("fixedResponse");
-    m_fixedResponseHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("forward"))
   {
     m_forward = jsonValue.GetObject("forward");
     m_forwardHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("fixedResponse"))
+  {
+    m_fixedResponse = jsonValue.GetObject("fixedResponse");
+    m_fixedResponseHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue RuleAction::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_fixedResponseHasBeenSet)
-  {
-   payload.WithObject("fixedResponse", m_fixedResponse.Jsonize());
-
-  }
-
   if(m_forwardHasBeenSet)
   {
    payload.WithObject("forward", m_forward.Jsonize());
+
+  }
+
+  if(m_fixedResponseHasBeenSet)
+  {
+   payload.WithObject("fixedResponse", m_fixedResponse.Jsonize());
 
   }
 

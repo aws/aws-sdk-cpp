@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/vpc-lattice/model/ServiceNetworkVpcAssociationStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -36,6 +36,26 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the association.</p>
+     */
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CreateServiceNetworkVpcAssociationResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The association status.</p>
+     */
+    inline ServiceNetworkVpcAssociationStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ServiceNetworkVpcAssociationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreateServiceNetworkVpcAssociationResult& WithStatus(ServiceNetworkVpcAssociationStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the association.</p>
      */
     inline const Aws::String& GetArn() const { return m_arn; }
@@ -58,17 +78,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the association.</p>
-     */
-    inline const Aws::String& GetId() const { return m_id; }
-    template<typename IdT = Aws::String>
-    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
-    template<typename IdT = Aws::String>
-    CreateServiceNetworkVpcAssociationResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The IDs of the security groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
@@ -81,15 +90,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The association status.</p>
-     */
-    inline ServiceNetworkVpcAssociationStatus GetStatus() const { return m_status; }
-    inline void SetStatus(ServiceNetworkVpcAssociationStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline CreateServiceNetworkVpcAssociationResult& WithStatus(ServiceNetworkVpcAssociationStatus value) { SetStatus(value); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -99,20 +99,20 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_id;
+    bool m_idHasBeenSet = false;
+
+    ServiceNetworkVpcAssociationStatus m_status{ServiceNetworkVpcAssociationStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
     Aws::String m_createdBy;
     bool m_createdByHasBeenSet = false;
 
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
-
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet = false;
-
-    ServiceNetworkVpcAssociationStatus m_status{ServiceNetworkVpcAssociationStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;
