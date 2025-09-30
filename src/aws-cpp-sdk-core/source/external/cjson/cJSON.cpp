@@ -124,7 +124,7 @@ CJSON_AS4CPP_PUBLIC(double) cJSON_AS4CPP_GetNumberValue(const cJSON * const item
 }
 
 /* This is a safeguard to prevent copy-pasters from using incompatible C and header files */
-#if (CJSON_AS4CPP_VERSION_MAJOR != 1) || (CJSON_AS4CPP_VERSION_MINOR != 7) || (CJSON_AS4CPP_VERSION_PATCH != 18)
+#if (CJSON_AS4CPP_VERSION_MAJOR != 1) || (CJSON_AS4CPP_VERSION_MINOR != 7) || (CJSON_AS4CPP_VERSION_PATCH != 19)
     #error cJSON.h and cJSON.c have different versions. Make sure that both have the same.
 #endif
 
@@ -315,10 +315,12 @@ static cJSON_AS4CPP_bool parse_number(cJSON * const item, parse_buffer * const i
 {
     double number = 0;
     unsigned char *after_end = NULL;
-    unsigned char number_c_string[64];
+    unsigned char *number_c_string;
     unsigned char decimal_point = get_decimal_point();
-    bool isInteger = true;
+
     size_t i = 0;
+    size_t number_string_length = 0;
+    cJSON_AS4CPP_bool has_decimal_point = false;
 
     if ((input_buffer == NULL) || (input_buffer->content == NULL))
     {
@@ -328,7 +330,7 @@ static cJSON_AS4CPP_bool parse_number(cJSON * const item, parse_buffer * const i
     /* copy the number into a temporary buffer and replace '.' with the decimal point
      * of the current locale (for strtod)
      * This also takes care of '\0' not necessarily being available for marking the end of the input */
-    for (i = 0; (i < (sizeof(number_c_string) - 1)) && can_access_at_index(input_buffer, i); i++)
+    for (i = 0; can_access_at_index(input_buffer, i); i++)
     {
         switch (buffer_at_offset(input_buffer)[i])
         {
@@ -344,17 +346,16 @@ static cJSON_AS4CPP_bool parse_number(cJSON * const item, parse_buffer * const i
             case '9':
             case '+':
             case '-':
-                number_c_string[i] = buffer_at_offset(input_buffer)[i];
+                number_string_length++;
                 break;
             case 'e':
             case 'E':
-                number_c_string[i] = buffer_at_offset(input_buffer)[i];
-                isInteger = false;
+                number_string_length++;
                 break;
 
             case '.':
-                number_c_string[i] = decimal_point;
-                isInteger = false;
+                number_string_length++;
+                has_decimal_point = true;
                 break;
 
             default:
@@ -362,18 +363,40 @@ static cJSON_AS4CPP_bool parse_number(cJSON * const item, parse_buffer * const i
         }
     }
 loop_end:
-    number_c_string[i] = '\0';
+    /* malloc for temporary buffer, add 1 for '\0' */
+    number_c_string = (unsigned char *) input_buffer->hooks.allocate(number_string_length + 1);
+    if (number_c_string == NULL)
+    {
+        return false; /* allocation failure */
+    }
+
+    memcpy(number_c_string, buffer_at_offset(input_buffer), number_string_length);
+    number_c_string[number_string_length] = '\0';
+
+    if (has_decimal_point)
+    {
+        for (i = 0; i < number_string_length; i++)
+        {
+            if (number_c_string[i] == '.')
+            {
+                /* replace '.' with the decimal point of the current locale (for strtod) */
+                number_c_string[i] = decimal_point;
+            }
+        }
+    }
 
     number = strtod((const char*)number_c_string, (char**)&after_end);
     if (number_c_string == after_end)
     {
+        /* free the temporary buffer */
+        input_buffer->hooks.deallocate(number_c_string);
         return false; /* parse_error */
     }
 
     item->valuedouble = number;
     // For integer which is out of the range of [INT_MIN, INT_MAX], it may lose precision if we cast it to double.
     // Instead, we keep the integer literal as a string.
-    if (isInteger && (number > INT_MAX || number < INT_MIN))
+    if (!has_decimal_point && (number > INT_MAX || number < INT_MIN))
     {
         item->valuestring = (char*)cJSON_AS4CPP_strdup(number_c_string, &global_hooks);
     }
@@ -395,6 +418,8 @@ loop_end:
     item->type = cJSON_AS4CPP_Number;
 
     input_buffer->offset += (size_t)(after_end - number_c_string);
+    /* free the temporary buffer */
+    input_buffer->hooks.deallocate(number_c_string);
     return true;
 }
 
