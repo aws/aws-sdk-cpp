@@ -92,7 +92,7 @@ then using the CJSON_AS4CPP_API_VISIBILITY flag to "export" the same symbols the
 /* project version */
 #define CJSON_AS4CPP_VERSION_MAJOR 1
 #define CJSON_AS4CPP_VERSION_MINOR 7
-#define CJSON_AS4CPP_VERSION_PATCH 18
+#define CJSON_AS4CPP_VERSION_PATCH 19
 
 #include <stddef.h>
 
