@@ -1125,8 +1125,9 @@ namespace BedrockAgentCoreControl
         }
 
         /**
-         * <p>Lists the tags associated with the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the tags associated with the specified resource.</p>  <p>This
+         * feature is currently available only for AgentCore Runtime, Browser, Code
+         * Interpreter tool, and Gateway.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -1205,7 +1206,9 @@ namespace BedrockAgentCoreControl
          * <p>Associates the specified tags to a resource with the specified resourceArn.
          * If existing tags on a resource are not specified in the request parameters, they
          * are not changed. When a resource is deleted, the tags associated with that
-         * resource are also deleted.</p><p><h3>See Also:</h3>   <a
+         * resource are also deleted.</p>  <p>This feature is currently available
+         * only for AgentCore Runtime, Browser, Code Interpreter tool, and Gateway.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/TagResource">AWS
          * API Reference</a></p>
          */
@@ -1230,8 +1233,9 @@ namespace BedrockAgentCoreControl
         }
 
         /**
-         * <p>Removes the specified tags from the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes the specified tags from the specified resource.</p>  <p>This
+         * feature is currently available only for AgentCore Runtime, Browser, Code
+         * Interpreter tool, and Gateway.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UntagResource">AWS
          * API Reference</a></p>
          */

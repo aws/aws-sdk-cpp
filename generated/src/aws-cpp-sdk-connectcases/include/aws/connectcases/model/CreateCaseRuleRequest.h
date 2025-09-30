@@ -35,18 +35,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of a case rule.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    CreateCaseRuleRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Unique identifier of a Cases domain.</p>
      */
     inline const Aws::String& GetDomainId() const { return m_domainId; }
@@ -71,6 +59,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The description of a case rule.</p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateCaseRuleRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Represents what rule type should take place, under what conditions.</p>
      */
     inline const CaseRuleDetails& GetRule() const { return m_rule; }
@@ -82,14 +82,14 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
     Aws::String m_domainId;
     bool m_domainIdHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     CaseRuleDetails m_rule;
     bool m_ruleHasBeenSet = false;

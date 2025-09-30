@@ -83,6 +83,11 @@ UpdateFileSystemOntapConfiguration& UpdateFileSystemOntapConfiguration::operator
     m_hAPairs = jsonValue.GetInteger("HAPairs");
     m_hAPairsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("EndpointIpv6AddressRange"))
+  {
+    m_endpointIpv6AddressRange = jsonValue.GetString("EndpointIpv6AddressRange");
+    m_endpointIpv6AddressRangeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -157,6 +162,12 @@ JsonValue UpdateFileSystemOntapConfiguration::Jsonize() const
   if(m_hAPairsHasBeenSet)
   {
    payload.WithInteger("HAPairs", m_hAPairs);
+
+  }
+
+  if(m_endpointIpv6AddressRangeHasBeenSet)
+  {
+   payload.WithString("EndpointIpv6AddressRange", m_endpointIpv6AddressRange);
 
   }
 

@@ -55,6 +55,17 @@ Aws::String CreateTrustRequest::SerializePayload() const
 
   }
 
+  if(m_conditionalForwarderIpv6AddrsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> conditionalForwarderIpv6AddrsJsonList(m_conditionalForwarderIpv6Addrs.size());
+   for(unsigned conditionalForwarderIpv6AddrsIndex = 0; conditionalForwarderIpv6AddrsIndex < conditionalForwarderIpv6AddrsJsonList.GetLength(); ++conditionalForwarderIpv6AddrsIndex)
+   {
+     conditionalForwarderIpv6AddrsJsonList[conditionalForwarderIpv6AddrsIndex].AsString(m_conditionalForwarderIpv6Addrs[conditionalForwarderIpv6AddrsIndex]);
+   }
+   payload.WithArray("ConditionalForwarderIpv6Addrs", std::move(conditionalForwarderIpv6AddrsJsonList));
+
+  }
+
   if(m_selectiveAuthHasBeenSet)
   {
    payload.WithString("SelectiveAuth", SelectiveAuthMapper::GetNameForSelectiveAuth(m_selectiveAuth));

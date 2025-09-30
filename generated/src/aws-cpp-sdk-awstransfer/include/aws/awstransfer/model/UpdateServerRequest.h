@@ -15,6 +15,7 @@
 #include <aws/awstransfer/model/WorkflowDetails.h>
 #include <aws/awstransfer/model/S3StorageOptions.h>
 #include <aws/awstransfer/model/IpAddressType.h>
+#include <aws/awstransfer/model/IdentityProviderType.h>
 #include <aws/awstransfer/model/Protocol.h>
 #include <utility>
 
@@ -346,11 +347,13 @@ namespace Model
     ///@{
     /**
      * <p>Specifies whether or not performance for your Amazon S3 directories is
-     * optimized. This is disabled by default.</p> <p>By default, home directory
-     * mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
-     * option, you would then need to explicitly set the
-     * <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you
-     * want a mapping to have a file target.</p>
+     * optimized.</p> <ul> <li> <p>If using the console, this is enabled by
+     * default.</p> </li> <li> <p>If using the API or CLI, this is disabled by
+     * default.</p> </li> </ul> <p>By default, home directory mappings have a
+     * <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you
+     * would then need to explicitly set the <code>HomeDirectoryMapEntry</code>
+     * <code>Type</code> to <code>FILE</code> if you want a mapping to have a file
+     * target.</p>
      */
     inline const S3StorageOptions& GetS3StorageOptions() const { return m_s3StorageOptions; }
     inline bool S3StorageOptionsHasBeenSet() const { return m_s3StorageOptionsHasBeenSet; }
@@ -378,6 +381,31 @@ namespace Model
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
     inline void SetIpAddressType(IpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
     inline UpdateServerRequest& WithIpAddressType(IpAddressType value) { SetIpAddressType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The mode of authentication for a server. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access user
+     * credentials within the Transfer Family service.</p> <p>Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in Directory Service for Microsoft Active Directory or Microsoft Active
+     * Directory in your on-premises environment or in Amazon Web Services using AD
+     * Connector. This option also requires you to provide a Directory ID by using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon
+     * API Gateway endpoint URL to call for authentication by using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
+     * identity provider. If you choose this value, you must specify the ARN for the
+     * Lambda function in the <code>Function</code> parameter for the
+     * <code>IdentityProviderDetails</code> data type.</p>
+     */
+    inline IdentityProviderType GetIdentityProviderType() const { return m_identityProviderType; }
+    inline bool IdentityProviderTypeHasBeenSet() const { return m_identityProviderTypeHasBeenSet; }
+    inline void SetIdentityProviderType(IdentityProviderType value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = value; }
+    inline UpdateServerRequest& WithIdentityProviderType(IdentityProviderType value) { SetIdentityProviderType(value); return *this;}
     ///@}
   private:
 
@@ -428,6 +456,9 @@ namespace Model
 
     IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
     bool m_ipAddressTypeHasBeenSet = false;
+
+    IdentityProviderType m_identityProviderType{IdentityProviderType::NOT_SET};
+    bool m_identityProviderTypeHasBeenSet = false;
   };
 
 } // namespace Model

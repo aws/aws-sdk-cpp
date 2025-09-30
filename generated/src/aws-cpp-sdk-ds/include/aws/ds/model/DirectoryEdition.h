@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     Enterprise,
-    Standard
+    Standard,
+    Hybrid
   };
 
 namespace DirectoryEditionMapper

@@ -374,7 +374,8 @@ namespace Model
     ///@{
     /**
      * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
-     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in <a
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in in
+     * <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>.
      * The <code>name</code> of the volume must match the <code>name</code> from the
      * task definition.</p>

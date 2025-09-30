@@ -16,7 +16,9 @@ namespace Model
   enum class UpdateType
   {
     NOT_SET,
-    OS
+    OS,
+    NETWORK,
+    SIZE
   };
 
 namespace UpdateTypeMapper

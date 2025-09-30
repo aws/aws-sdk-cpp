@@ -54,18 +54,6 @@ namespace Model
     /**
      * <p>Union of potential field value types.</p>
      */
-    inline const AuditEventFieldValueUnion& GetNewValue() const { return m_newValue; }
-    inline bool NewValueHasBeenSet() const { return m_newValueHasBeenSet; }
-    template<typename NewValueT = AuditEventFieldValueUnion>
-    void SetNewValue(NewValueT&& value) { m_newValueHasBeenSet = true; m_newValue = std::forward<NewValueT>(value); }
-    template<typename NewValueT = AuditEventFieldValueUnion>
-    AuditEventField& WithNewValue(NewValueT&& value) { SetNewValue(std::forward<NewValueT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Union of potential field value types.</p>
-     */
     inline const AuditEventFieldValueUnion& GetOldValue() const { return m_oldValue; }
     inline bool OldValueHasBeenSet() const { return m_oldValueHasBeenSet; }
     template<typename OldValueT = AuditEventFieldValueUnion>
@@ -73,16 +61,28 @@ namespace Model
     template<typename OldValueT = AuditEventFieldValueUnion>
     AuditEventField& WithOldValue(OldValueT&& value) { SetOldValue(std::forward<OldValueT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Union of potential field value types.</p>
+     */
+    inline const AuditEventFieldValueUnion& GetNewValue() const { return m_newValue; }
+    inline bool NewValueHasBeenSet() const { return m_newValueHasBeenSet; }
+    template<typename NewValueT = AuditEventFieldValueUnion>
+    void SetNewValue(NewValueT&& value) { m_newValueHasBeenSet = true; m_newValue = std::forward<NewValueT>(value); }
+    template<typename NewValueT = AuditEventFieldValueUnion>
+    AuditEventField& WithNewValue(NewValueT&& value) { SetNewValue(std::forward<NewValueT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_eventFieldId;
     bool m_eventFieldIdHasBeenSet = false;
 
-    AuditEventFieldValueUnion m_newValue;
-    bool m_newValueHasBeenSet = false;
-
     AuditEventFieldValueUnion m_oldValue;
     bool m_oldValueHasBeenSet = false;
+
+    AuditEventFieldValueUnion m_newValue;
+    bool m_newValueHasBeenSet = false;
   };
 
 } // namespace Model

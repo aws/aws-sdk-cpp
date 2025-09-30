@@ -87,6 +87,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The managed endpoint ARN of the EMR on EKS cluster.</p>
+     */
+    inline const Aws::String& GetManagedEndpointArn() const { return m_managedEndpointArn; }
+    inline bool ManagedEndpointArnHasBeenSet() const { return m_managedEndpointArnHasBeenSet; }
+    template<typename ManagedEndpointArnT = Aws::String>
+    void SetManagedEndpointArn(ManagedEndpointArnT&& value) { m_managedEndpointArnHasBeenSet = true; m_managedEndpointArn = std::forward<ManagedEndpointArnT>(value); }
+    template<typename ManagedEndpointArnT = Aws::String>
+    SparkEmrPropertiesPatch& WithManagedEndpointArn(ManagedEndpointArnT&& value) { SetManagedEndpointArn(std::forward<ManagedEndpointArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Python virtual env in the Spark EMR properties patch.</p>
      */
     inline const Aws::String& GetPythonVirtualEnv() const { return m_pythonVirtualEnv; }
@@ -133,6 +145,9 @@ namespace Model
 
     Aws::String m_logUri;
     bool m_logUriHasBeenSet = false;
+
+    Aws::String m_managedEndpointArn;
+    bool m_managedEndpointArnHasBeenSet = false;
 
     Aws::String m_pythonVirtualEnv;
     bool m_pythonVirtualEnvHasBeenSet = false;

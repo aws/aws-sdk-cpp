@@ -25,15 +25,15 @@ CreateDomainResult::CreateDomainResult(const Aws::AmazonWebServiceResult<JsonVal
 CreateDomainResult& CreateDomainResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("domainArn"))
-  {
-    m_domainArn = jsonValue.GetString("domainArn");
-    m_domainArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("domainArn"))
+  {
+    m_domainArn = jsonValue.GetString("domainArn");
+    m_domainArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("domainStatus"))
   {

@@ -10,8 +10,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/CloudwatchLogsExportConfiguration.h>
 #include <aws/rds/model/ScalingConfiguration.h>
-#include <aws/rds/model/DatabaseInsightsMode.h>
 #include <aws/rds/model/ServerlessV2ScalingConfiguration.h>
+#include <aws/rds/model/DatabaseInsightsMode.h>
 #include <aws/rds/model/MasterUserAuthenticationType.h>
 #include <utility>
 
@@ -552,6 +552,35 @@ namespace Model
 
     ///@{
     /**
+     * <p>The network type of the DB cluster.</p> <p>The network type is determined by
+     * the <code>DBSubnetGroup</code> specified for the DB cluster. A
+     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
+     * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for Cluster Type: Aurora DB clusters only</p> <p>Valid Values:
+     * <code>IPV4 | DUAL</code> </p>
+     */
+    inline const Aws::String& GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    template<typename NetworkTypeT = Aws::String>
+    void SetNetworkType(NetworkTypeT&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::forward<NetworkTypeT>(value); }
+    template<typename NetworkTypeT = Aws::String>
+    ModifyDBClusterRequest& WithNetworkType(NetworkTypeT&& value) { SetNetworkType(std::forward<NetworkTypeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const ServerlessV2ScalingConfiguration& GetServerlessV2ScalingConfiguration() const { return m_serverlessV2ScalingConfiguration; }
+    inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
+    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
+    void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::forward<ServerlessV2ScalingConfigurationT>(value); }
+    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
+    ModifyDBClusterRequest& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { SetServerlessV2ScalingConfiguration(std::forward<ServerlessV2ScalingConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
      * collected for the DB cluster. To turn off collecting Enhanced Monitoring
      * metrics, specify <code>0</code>.</p> <p>If <code>MonitoringRoleArn</code> is
@@ -655,35 +684,6 @@ namespace Model
     ///@}
 
     ///@{
-    
-    inline const ServerlessV2ScalingConfiguration& GetServerlessV2ScalingConfiguration() const { return m_serverlessV2ScalingConfiguration; }
-    inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
-    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
-    void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::forward<ServerlessV2ScalingConfigurationT>(value); }
-    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
-    ModifyDBClusterRequest& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { SetServerlessV2ScalingConfiguration(std::forward<ServerlessV2ScalingConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The network type of the DB cluster.</p> <p>The network type is determined by
-     * the <code>DBSubnetGroup</code> specified for the DB cluster. A
-     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
-     * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
-     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
-     * </p> <p>Valid for Cluster Type: Aurora DB clusters only</p> <p>Valid Values:
-     * <code>IPV4 | DUAL</code> </p>
-     */
-    inline const Aws::String& GetNetworkType() const { return m_networkType; }
-    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
-    template<typename NetworkTypeT = Aws::String>
-    void SetNetworkType(NetworkTypeT&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::forward<NetworkTypeT>(value); }
-    template<typename NetworkTypeT = Aws::String>
-    ModifyDBClusterRequest& WithNetworkType(NetworkTypeT&& value) { SetNetworkType(std::forward<NetworkTypeT>(value)); return *this;}
-    ///@}
-
-    ///@{
     /**
      * <p>Specifies whether to manage the master user password with Amazon Web Services
      * Secrets Manager.</p> <p>If the DB cluster doesn't manage the master user
@@ -729,6 +729,18 @@ namespace Model
     inline bool RotateMasterUserPasswordHasBeenSet() const { return m_rotateMasterUserPasswordHasBeenSet; }
     inline void SetRotateMasterUserPassword(bool value) { m_rotateMasterUserPasswordHasBeenSet = true; m_rotateMasterUserPassword = value; }
     inline ModifyDBClusterRequest& WithRotateMasterUserPassword(bool value) { SetRotateMasterUserPassword(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether read replicas can forward write operations to the writer DB
+     * instance in the DB cluster. By default, write operations aren't allowed on
+     * reader DB instances.</p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline bool GetEnableLocalWriteForwarding() const { return m_enableLocalWriteForwarding; }
+    inline bool EnableLocalWriteForwardingHasBeenSet() const { return m_enableLocalWriteForwardingHasBeenSet; }
+    inline void SetEnableLocalWriteForwarding(bool value) { m_enableLocalWriteForwardingHasBeenSet = true; m_enableLocalWriteForwarding = value; }
+    inline ModifyDBClusterRequest& WithEnableLocalWriteForwarding(bool value) { SetEnableLocalWriteForwarding(value); return *this;}
     ///@}
 
     ///@{
@@ -792,18 +804,6 @@ namespace Model
     inline bool AllowEngineModeChangeHasBeenSet() const { return m_allowEngineModeChangeHasBeenSet; }
     inline void SetAllowEngineModeChange(bool value) { m_allowEngineModeChangeHasBeenSet = true; m_allowEngineModeChange = value; }
     inline ModifyDBClusterRequest& WithAllowEngineModeChange(bool value) { SetAllowEngineModeChange(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies whether read replicas can forward write operations to the writer DB
-     * instance in the DB cluster. By default, write operations aren't allowed on
-     * reader DB instances.</p> <p>Valid for: Aurora DB clusters only</p>
-     */
-    inline bool GetEnableLocalWriteForwarding() const { return m_enableLocalWriteForwarding; }
-    inline bool EnableLocalWriteForwardingHasBeenSet() const { return m_enableLocalWriteForwardingHasBeenSet; }
-    inline void SetEnableLocalWriteForwarding(bool value) { m_enableLocalWriteForwardingHasBeenSet = true; m_enableLocalWriteForwarding = value; }
-    inline ModifyDBClusterRequest& WithEnableLocalWriteForwarding(bool value) { SetEnableLocalWriteForwarding(value); return *this;}
     ///@}
 
     ///@{
@@ -954,6 +954,12 @@ namespace Model
     bool m_autoMinorVersionUpgrade{false};
     bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
+    Aws::String m_networkType;
+    bool m_networkTypeHasBeenSet = false;
+
+    ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
+    bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
+
     int m_monitoringInterval{0};
     bool m_monitoringIntervalHasBeenSet = false;
 
@@ -972,17 +978,14 @@ namespace Model
     int m_performanceInsightsRetentionPeriod{0};
     bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
 
-    ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
-    bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
-
-    Aws::String m_networkType;
-    bool m_networkTypeHasBeenSet = false;
-
     bool m_manageMasterUserPassword{false};
     bool m_manageMasterUserPasswordHasBeenSet = false;
 
     bool m_rotateMasterUserPassword{false};
     bool m_rotateMasterUserPasswordHasBeenSet = false;
+
+    bool m_enableLocalWriteForwarding{false};
+    bool m_enableLocalWriteForwardingHasBeenSet = false;
 
     Aws::String m_masterUserSecretKmsKeyId;
     bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
@@ -992,9 +995,6 @@ namespace Model
 
     bool m_allowEngineModeChange{false};
     bool m_allowEngineModeChangeHasBeenSet = false;
-
-    bool m_enableLocalWriteForwarding{false};
-    bool m_enableLocalWriteForwardingHasBeenSet = false;
 
     Aws::String m_awsBackupRecoveryPointArn;
     bool m_awsBackupRecoveryPointArnHasBeenSet = false;

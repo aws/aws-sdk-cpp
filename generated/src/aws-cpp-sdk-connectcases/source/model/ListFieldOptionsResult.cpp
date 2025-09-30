@@ -25,11 +25,6 @@ ListFieldOptionsResult::ListFieldOptionsResult(const Aws::AmazonWebServiceResult
 ListFieldOptionsResult& ListFieldOptionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("options"))
   {
     Aws::Utils::Array<JsonView> optionsJsonList = jsonValue.GetArray("options");
@@ -38,6 +33,11 @@ ListFieldOptionsResult& ListFieldOptionsResult::operator =(const Aws::AmazonWebS
       m_options.push_back(optionsJsonList[optionsIndex].AsObject());
     }
     m_optionsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -54,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The SVM endpoint's IP addresses.</p>
+     * <p>The SVM endpoint's IPv4 addresses.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIpAddresses() const { return m_ipAddresses; }
     inline bool IpAddressesHasBeenSet() const { return m_ipAddressesHasBeenSet; }
@@ -65,6 +65,20 @@ namespace Model
     template<typename IpAddressesT = Aws::String>
     SvmEndpoint& AddIpAddresses(IpAddressesT&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.emplace_back(std::forward<IpAddressesT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The SVM endpoint's IPv6 addresses.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetIpv6Addresses() const { return m_ipv6Addresses; }
+    inline bool Ipv6AddressesHasBeenSet() const { return m_ipv6AddressesHasBeenSet; }
+    template<typename Ipv6AddressesT = Aws::Vector<Aws::String>>
+    void SetIpv6Addresses(Ipv6AddressesT&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::forward<Ipv6AddressesT>(value); }
+    template<typename Ipv6AddressesT = Aws::Vector<Aws::String>>
+    SvmEndpoint& WithIpv6Addresses(Ipv6AddressesT&& value) { SetIpv6Addresses(std::forward<Ipv6AddressesT>(value)); return *this;}
+    template<typename Ipv6AddressesT = Aws::String>
+    SvmEndpoint& AddIpv6Addresses(Ipv6AddressesT&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.emplace_back(std::forward<Ipv6AddressesT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_dNSName;
@@ -72,6 +86,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_ipAddresses;
     bool m_ipAddressesHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_ipv6Addresses;
+    bool m_ipv6AddressesHasBeenSet = false;
   };
 
 } // namespace Model

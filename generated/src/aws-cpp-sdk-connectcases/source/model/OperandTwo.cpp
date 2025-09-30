@@ -25,6 +25,11 @@ OperandTwo::OperandTwo(JsonView jsonValue)
 
 OperandTwo& OperandTwo::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("stringValue"))
+  {
+    m_stringValue = jsonValue.GetString("stringValue");
+    m_stringValueHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("booleanValue"))
   {
     m_booleanValue = jsonValue.GetBool("booleanValue");
@@ -40,17 +45,18 @@ OperandTwo& OperandTwo::operator =(JsonView jsonValue)
     m_emptyValue = jsonValue.GetObject("emptyValue");
     m_emptyValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("stringValue"))
-  {
-    m_stringValue = jsonValue.GetString("stringValue");
-    m_stringValueHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue OperandTwo::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_stringValueHasBeenSet)
+  {
+   payload.WithString("stringValue", m_stringValue);
+
+  }
 
   if(m_booleanValueHasBeenSet)
   {
@@ -67,12 +73,6 @@ JsonValue OperandTwo::Jsonize() const
   if(m_emptyValueHasBeenSet)
   {
    payload.WithObject("emptyValue", m_emptyValue.Jsonize());
-
-  }
-
-  if(m_stringValueHasBeenSet)
-  {
-   payload.WithString("stringValue", m_stringValue);
 
   }
 

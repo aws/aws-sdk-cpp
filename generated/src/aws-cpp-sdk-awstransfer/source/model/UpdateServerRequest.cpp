@@ -120,6 +120,11 @@ Aws::String UpdateServerRequest::SerializePayload() const
    payload.WithString("IpAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
   }
 
+  if(m_identityProviderTypeHasBeenSet)
+  {
+   payload.WithString("IdentityProviderType", IdentityProviderTypeMapper::GetNameForIdentityProviderType(m_identityProviderType));
+  }
+
   return payload.View().WriteReadable();
 }
 

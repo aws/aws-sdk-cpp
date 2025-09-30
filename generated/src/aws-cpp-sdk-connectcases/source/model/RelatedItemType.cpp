@@ -24,6 +24,8 @@ namespace Aws
         static const int Comment_HASH = HashingUtils::HashString("Comment");
         static const int File_HASH = HashingUtils::HashString("File");
         static const int Sla_HASH = HashingUtils::HashString("Sla");
+        static const int ConnectCase_HASH = HashingUtils::HashString("ConnectCase");
+        static const int Custom_HASH = HashingUtils::HashString("Custom");
 
 
         RelatedItemType GetRelatedItemTypeForName(const Aws::String& name)
@@ -44,6 +46,14 @@ namespace Aws
           else if (hashCode == Sla_HASH)
           {
             return RelatedItemType::Sla;
+          }
+          else if (hashCode == ConnectCase_HASH)
+          {
+            return RelatedItemType::ConnectCase;
+          }
+          else if (hashCode == Custom_HASH)
+          {
+            return RelatedItemType::Custom;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +79,10 @@ namespace Aws
             return "File";
           case RelatedItemType::Sla:
             return "Sla";
+          case RelatedItemType::ConnectCase:
+            return "ConnectCase";
+          case RelatedItemType::Custom:
+            return "Custom";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

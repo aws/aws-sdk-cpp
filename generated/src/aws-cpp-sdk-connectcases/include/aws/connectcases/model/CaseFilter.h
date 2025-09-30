@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/connectcases/model/FieldFilter.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -41,20 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Provides "and all" filtering.</p>
-     */
-    inline const Aws::Vector<CaseFilter>& GetAndAll() const { return m_andAll; }
-    inline bool AndAllHasBeenSet() const { return m_andAllHasBeenSet; }
-    template<typename AndAllT = Aws::Vector<CaseFilter>>
-    void SetAndAll(AndAllT&& value) { m_andAllHasBeenSet = true; m_andAll = std::forward<AndAllT>(value); }
-    template<typename AndAllT = Aws::Vector<CaseFilter>>
-    CaseFilter& WithAndAll(AndAllT&& value) { SetAndAll(std::forward<AndAllT>(value)); return *this;}
-    template<typename AndAllT = CaseFilter>
-    CaseFilter& AddAndAll(AndAllT&& value) { m_andAllHasBeenSet = true; m_andAll.emplace_back(std::forward<AndAllT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>A list of fields to filter on.</p>
      */
     inline const FieldFilter& GetField() const { return m_field; }
@@ -82,6 +68,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>Provides "and all" filtering.</p>
+     */
+    inline const Aws::Vector<CaseFilter>& GetAndAll() const { return m_andAll; }
+    inline bool AndAllHasBeenSet() const { return m_andAllHasBeenSet; }
+    template<typename AndAllT = Aws::Vector<CaseFilter>>
+    void SetAndAll(AndAllT&& value) { m_andAllHasBeenSet = true; m_andAll = std::forward<AndAllT>(value); }
+    template<typename AndAllT = Aws::Vector<CaseFilter>>
+    CaseFilter& WithAndAll(AndAllT&& value) { SetAndAll(std::forward<AndAllT>(value)); return *this;}
+    template<typename AndAllT = CaseFilter>
+    CaseFilter& AddAndAll(AndAllT&& value) { m_andAllHasBeenSet = true; m_andAll.emplace_back(std::forward<AndAllT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Provides "or all" filtering.</p>
      */
     inline const Aws::Vector<CaseFilter>& GetOrAll() const { return m_orAll; }
@@ -95,14 +95,14 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<CaseFilter> m_andAll;
-    bool m_andAllHasBeenSet = false;
-
     FieldFilter m_field;
     bool m_fieldHasBeenSet = false;
 
     std::shared_ptr<CaseFilter> m_not;
     bool m_notHasBeenSet = false;
+
+    Aws::Vector<CaseFilter> m_andAll;
+    bool m_andAllHasBeenSet = false;
 
     Aws::Vector<CaseFilter> m_orAll;
     bool m_orAllHasBeenSet = false;

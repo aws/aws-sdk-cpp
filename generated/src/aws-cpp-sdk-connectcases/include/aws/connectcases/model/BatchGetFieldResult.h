@@ -7,8 +7,8 @@
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/connectcases/model/FieldError.h>
 #include <aws/connectcases/model/GetFieldResponse.h>
+#include <aws/connectcases/model/FieldError.h>
 #include <utility>
 
 namespace Aws
@@ -37,19 +37,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of field errors. </p>
-     */
-    inline const Aws::Vector<FieldError>& GetErrors() const { return m_errors; }
-    template<typename ErrorsT = Aws::Vector<FieldError>>
-    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
-    template<typename ErrorsT = Aws::Vector<FieldError>>
-    BatchGetFieldResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
-    template<typename ErrorsT = FieldError>
-    BatchGetFieldResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>A list of detailed field information. </p>
      */
     inline const Aws::Vector<GetFieldResponse>& GetFields() const { return m_fields; }
@@ -62,6 +49,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>A list of field errors. </p>
+     */
+    inline const Aws::Vector<FieldError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<FieldError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<FieldError>>
+    BatchGetFieldResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = FieldError>
+    BatchGetFieldResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -71,11 +71,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<FieldError> m_errors;
-    bool m_errorsHasBeenSet = false;
-
     Aws::Vector<GetFieldResponse> m_fields;
     bool m_fieldsHasBeenSet = false;
+
+    Aws::Vector<FieldError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

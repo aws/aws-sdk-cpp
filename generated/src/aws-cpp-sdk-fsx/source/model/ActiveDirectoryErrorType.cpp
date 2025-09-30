@@ -23,6 +23,7 @@ namespace Aws
         static const int DOMAIN_NOT_FOUND_HASH = HashingUtils::HashString("DOMAIN_NOT_FOUND");
         static const int INCOMPATIBLE_DOMAIN_MODE_HASH = HashingUtils::HashString("INCOMPATIBLE_DOMAIN_MODE");
         static const int WRONG_VPC_HASH = HashingUtils::HashString("WRONG_VPC");
+        static const int INVALID_NETWORK_TYPE_HASH = HashingUtils::HashString("INVALID_NETWORK_TYPE");
         static const int INVALID_DOMAIN_STAGE_HASH = HashingUtils::HashString("INVALID_DOMAIN_STAGE");
 
 
@@ -40,6 +41,10 @@ namespace Aws
           else if (hashCode == WRONG_VPC_HASH)
           {
             return ActiveDirectoryErrorType::WRONG_VPC;
+          }
+          else if (hashCode == INVALID_NETWORK_TYPE_HASH)
+          {
+            return ActiveDirectoryErrorType::INVALID_NETWORK_TYPE;
           }
           else if (hashCode == INVALID_DOMAIN_STAGE_HASH)
           {
@@ -67,6 +72,8 @@ namespace Aws
             return "INCOMPATIBLE_DOMAIN_MODE";
           case ActiveDirectoryErrorType::WRONG_VPC:
             return "WRONG_VPC";
+          case ActiveDirectoryErrorType::INVALID_NETWORK_TYPE:
+            return "INVALID_NETWORK_TYPE";
           case ActiveDirectoryErrorType::INVALID_DOMAIN_STAGE:
             return "INVALID_DOMAIN_STAGE";
           default:

@@ -49,6 +49,11 @@ Aws::String CreateVoiceConnectorRequest::SerializePayload() const
    payload.WithString("IntegrationType", VoiceConnectorIntegrationTypeMapper::GetNameForVoiceConnectorIntegrationType(m_integrationType));
   }
 
+  if(m_networkTypeHasBeenSet)
+  {
+   payload.WithString("NetworkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -74,8 +74,8 @@ static const int INVALID_D_B_CLUSTER_STATE_FAULT_HASH = HashingUtils::HashString
 static const int SUBSCRIPTION_ALREADY_EXIST_FAULT_HASH = HashingUtils::HashString("SubscriptionAlreadyExist");
 static const int BLUE_GREEN_DEPLOYMENT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("BlueGreenDeploymentAlreadyExistsFault");
 static const int CERTIFICATE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("CertificateNotFound");
-static const int D_B_PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBParameterGroupAlreadyExists");
 static const int INVALID_D_B_CLUSTER_ENDPOINT_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBClusterEndpointStateFault");
+static const int D_B_PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBParameterGroupAlreadyExists");
 static const int SOURCE_CLUSTER_NOT_SUPPORTED_FAULT_HASH = HashingUtils::HashString("SourceClusterNotSupportedFault");
 static const int INVALID_D_B_CLUSTER_AUTOMATED_BACKUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBClusterAutomatedBackupStateFault");
 static const int STORAGE_TYPE_NOT_SUPPORTED_FAULT_HASH = HashingUtils::HashString("StorageTypeNotSupported");
@@ -134,12 +134,12 @@ static const int RESOURCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("Resou
 static const int INVALID_D_B_INSTANCE_AUTOMATED_BACKUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBInstanceAutomatedBackupState");
 static const int INSUFFICIENT_D_B_INSTANCE_CAPACITY_FAULT_HASH = HashingUtils::HashString("InsufficientDBInstanceCapacity");
 static const int RESERVED_D_B_INSTANCE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ReservedDBInstanceQuotaExceeded");
-static const int INTEGRATION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("IntegrationNotFoundFault");
 static const int D_B_SNAPSHOT_TENANT_DATABASE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBSnapshotTenantDatabaseNotFoundFault");
+static const int INTEGRATION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("IntegrationNotFoundFault");
 static const int RESERVED_D_B_INSTANCE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ReservedDBInstanceAlreadyExists");
 static const int EXPORT_TASK_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ExportTaskAlreadyExists");
-static const int D_B_PROXY_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBProxyAlreadyExistsFault");
 static const int D_B_PROXY_ENDPOINT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBProxyEndpointNotFoundFault");
+static const int D_B_PROXY_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBProxyAlreadyExistsFault");
 static const int INSTANCE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("InstanceQuotaExceeded");
 static const int GLOBAL_CLUSTER_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("GlobalClusterAlreadyExistsFault");
 static const int D_B_SNAPSHOT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBSnapshotNotFound");
@@ -453,14 +453,14 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::CERTIFICATE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
   }
-  else if (hashCode == D_B_PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_PARAMETER_GROUP_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
-    return true;
-  }
   else if (hashCode == INVALID_D_B_CLUSTER_ENDPOINT_STATE_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INVALID_D_B_CLUSTER_ENDPOINT_STATE_FAULT), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
+  else if (hashCode == D_B_PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_PARAMETER_GROUP_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == SOURCE_CLUSTER_NOT_SUPPORTED_FAULT_HASH)
@@ -753,14 +753,14 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::RESERVED_D_B_INSTANCE_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
   }
-  else if (hashCode == INTEGRATION_NOT_FOUND_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INTEGRATION_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
-    return true;
-  }
   else if (hashCode == D_B_SNAPSHOT_TENANT_DATABASE_NOT_FOUND_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_SNAPSHOT_TENANT_DATABASE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
+  else if (hashCode == INTEGRATION_NOT_FOUND_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INTEGRATION_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == RESERVED_D_B_INSTANCE_ALREADY_EXISTS_FAULT_HASH)
@@ -773,14 +773,14 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::EXPORT_TASK_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
   }
-  else if (hashCode == D_B_PROXY_ALREADY_EXISTS_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_PROXY_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
-    return true;
-  }
   else if (hashCode == D_B_PROXY_ENDPOINT_NOT_FOUND_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_PROXY_ENDPOINT_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
+  else if (hashCode == D_B_PROXY_ALREADY_EXISTS_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_PROXY_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   return false;

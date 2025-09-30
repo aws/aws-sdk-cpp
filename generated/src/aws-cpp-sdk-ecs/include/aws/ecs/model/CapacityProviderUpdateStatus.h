@@ -16,6 +16,9 @@ namespace Model
   enum class CapacityProviderUpdateStatus
   {
     NOT_SET,
+    CREATE_IN_PROGRESS,
+    CREATE_COMPLETE,
+    CREATE_FAILED,
     DELETE_IN_PROGRESS,
     DELETE_COMPLETE,
     DELETE_FAILED,

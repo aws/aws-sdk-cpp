@@ -40,6 +40,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier for the template.</p>
+     */
+    inline const Aws::String& GetTemplateId() const { return m_templateId; }
+    inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
+    template<typename TemplateIdT = Aws::String>
+    void SetTemplateId(TemplateIdT&& value) { m_templateIdHasBeenSet = true; m_templateId = std::forward<TemplateIdT>(value); }
+    template<typename TemplateIdT = Aws::String>
+    TemplateSummary& WithTemplateId(TemplateIdT&& value) { SetTemplateId(std::forward<TemplateIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the template.</p>
+     */
+    inline const Aws::String& GetTemplateArn() const { return m_templateArn; }
+    inline bool TemplateArnHasBeenSet() const { return m_templateArnHasBeenSet; }
+    template<typename TemplateArnT = Aws::String>
+    void SetTemplateArn(TemplateArnT&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::forward<TemplateArnT>(value); }
+    template<typename TemplateArnT = Aws::String>
+    TemplateSummary& WithTemplateArn(TemplateArnT&& value) { SetTemplateArn(std::forward<TemplateArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The template name.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
@@ -59,43 +83,19 @@ namespace Model
     inline void SetStatus(TemplateStatus value) { m_statusHasBeenSet = true; m_status = value; }
     inline TemplateSummary& WithStatus(TemplateStatus value) { SetStatus(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the template.</p>
-     */
-    inline const Aws::String& GetTemplateArn() const { return m_templateArn; }
-    inline bool TemplateArnHasBeenSet() const { return m_templateArnHasBeenSet; }
-    template<typename TemplateArnT = Aws::String>
-    void SetTemplateArn(TemplateArnT&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::forward<TemplateArnT>(value); }
-    template<typename TemplateArnT = Aws::String>
-    TemplateSummary& WithTemplateArn(TemplateArnT&& value) { SetTemplateArn(std::forward<TemplateArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The unique identifier for the template.</p>
-     */
-    inline const Aws::String& GetTemplateId() const { return m_templateId; }
-    inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
-    template<typename TemplateIdT = Aws::String>
-    void SetTemplateId(TemplateIdT&& value) { m_templateIdHasBeenSet = true; m_templateId = std::forward<TemplateIdT>(value); }
-    template<typename TemplateIdT = Aws::String>
-    TemplateSummary& WithTemplateId(TemplateIdT&& value) { SetTemplateId(std::forward<TemplateIdT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_templateId;
+    bool m_templateIdHasBeenSet = false;
+
+    Aws::String m_templateArn;
+    bool m_templateArnHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
     TemplateStatus m_status{TemplateStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
-
-    Aws::String m_templateArn;
-    bool m_templateArnHasBeenSet = false;
-
-    Aws::String m_templateId;
-    bool m_templateIdHasBeenSet = false;
   };
 
 } // namespace Model

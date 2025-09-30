@@ -39,18 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The error code from getting a field.</p>
-     */
-    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
-    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    template<typename ErrorCodeT = Aws::String>
-    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
-    template<typename ErrorCodeT = Aws::String>
-    FieldError& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The field identifier that caused the error.</p>
      */
     inline const Aws::String& GetId() const { return m_id; }
@@ -59,6 +47,18 @@ namespace Model
     void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
     template<typename IdT = Aws::String>
     FieldError& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The error code from getting a field.</p>
+     */
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    FieldError& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,11 +74,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet = false;
-
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    Aws::String m_errorCode;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;

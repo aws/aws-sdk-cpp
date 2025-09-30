@@ -220,14 +220,19 @@ Aws::String RestoreDBClusterFromS3Request::SerializePayload() const
     ss << "DomainIAMRoleName=" << StringUtils::URLEncode(m_domainIAMRoleName.c_str()) << "&";
   }
 
-  if(m_serverlessV2ScalingConfigurationHasBeenSet)
+  if(m_storageTypeHasBeenSet)
   {
-    m_serverlessV2ScalingConfiguration.OutputToStream(ss, "ServerlessV2ScalingConfiguration");
+    ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
   }
 
   if(m_networkTypeHasBeenSet)
   {
     ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
+  }
+
+  if(m_serverlessV2ScalingConfigurationHasBeenSet)
+  {
+    m_serverlessV2ScalingConfiguration.OutputToStream(ss, "ServerlessV2ScalingConfiguration");
   }
 
   if(m_manageMasterUserPasswordHasBeenSet)
@@ -238,11 +243,6 @@ Aws::String RestoreDBClusterFromS3Request::SerializePayload() const
   if(m_masterUserSecretKmsKeyIdHasBeenSet)
   {
     ss << "MasterUserSecretKmsKeyId=" << StringUtils::URLEncode(m_masterUserSecretKmsKeyId.c_str()) << "&";
-  }
-
-  if(m_storageTypeHasBeenSet)
-  {
-    ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
   }
 
   if(m_engineLifecycleSupportHasBeenSet)

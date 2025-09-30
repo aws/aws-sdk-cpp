@@ -474,6 +474,7 @@
 #include <aws/datazone/model/ListingStatus.h>
 #include <aws/datazone/model/ListingSummary.h>
 #include <aws/datazone/model/ListingSummaryItem.h>
+#include <aws/datazone/model/ManagedEndpointCredentials.h>
 #include <aws/datazone/model/ManagedPolicyType.h>
 #include <aws/datazone/model/MatchOffset.h>
 #include <aws/datazone/model/MatchRationaleItem.h>

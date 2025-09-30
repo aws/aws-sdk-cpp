@@ -97,7 +97,7 @@ namespace Model
     /**
      * <p>If you are using this operation in a monitoring account, specify
      * <code>true</code> to include services from source accounts in the returned data.
-     * <pre><code> &lt;/p&gt; </code></pre>
+     * </p>
      */
     inline bool GetIncludeLinkedAccounts() const { return m_includeLinkedAccounts; }
     inline bool IncludeLinkedAccountsHasBeenSet() const { return m_includeLinkedAccountsHasBeenSet; }

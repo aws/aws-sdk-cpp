@@ -1,0 +1,102 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/connectcases/model/CustomFieldsFilter.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ConnectCases
+{
+namespace Model
+{
+
+CustomFieldsFilter::CustomFieldsFilter(JsonView jsonValue)
+{
+  *this = jsonValue;
+}
+
+CustomFieldsFilter& CustomFieldsFilter::operator =(JsonView jsonValue)
+{
+  if(jsonValue.ValueExists("field"))
+  {
+    m_field = jsonValue.GetObject("field");
+    m_fieldHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("not"))
+  {
+    m_not = Aws::MakeShared<CustomFieldsFilter>("CustomFieldsFilter", jsonValue.GetObject("not"));
+    m_notHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("andAll"))
+  {
+    Aws::Utils::Array<JsonView> andAllJsonList = jsonValue.GetArray("andAll");
+    for(unsigned andAllIndex = 0; andAllIndex < andAllJsonList.GetLength(); ++andAllIndex)
+    {
+      m_andAll.push_back(andAllJsonList[andAllIndex].AsObject());
+    }
+    m_andAllHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("orAll"))
+  {
+    Aws::Utils::Array<JsonView> orAllJsonList = jsonValue.GetArray("orAll");
+    for(unsigned orAllIndex = 0; orAllIndex < orAllJsonList.GetLength(); ++orAllIndex)
+    {
+      m_orAll.push_back(orAllJsonList[orAllIndex].AsObject());
+    }
+    m_orAllHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue CustomFieldsFilter::Jsonize() const
+{
+  JsonValue payload;
+
+  if(m_fieldHasBeenSet)
+  {
+   payload.WithObject("field", m_field.Jsonize());
+
+  }
+
+  if(m_notHasBeenSet)
+  {
+   payload.WithObject("not", m_not->Jsonize());
+
+  }
+
+  if(m_andAllHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> andAllJsonList(m_andAll.size());
+   for(unsigned andAllIndex = 0; andAllIndex < andAllJsonList.GetLength(); ++andAllIndex)
+   {
+     andAllJsonList[andAllIndex].AsObject(m_andAll[andAllIndex].Jsonize());
+   }
+   payload.WithArray("andAll", std::move(andAllJsonList));
+
+  }
+
+  if(m_orAllHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> orAllJsonList(m_orAll.size());
+   for(unsigned orAllIndex = 0; orAllIndex < orAllJsonList.GetLength(); ++orAllIndex)
+   {
+     orAllJsonList[orAllIndex].AsObject(m_orAll[orAllIndex].Jsonize());
+   }
+   payload.WithArray("orAll", std::move(orAllJsonList));
+
+  }
+
+  return payload;
+}
+
+} // namespace Model
+} // namespace ConnectCases
+} // namespace Aws

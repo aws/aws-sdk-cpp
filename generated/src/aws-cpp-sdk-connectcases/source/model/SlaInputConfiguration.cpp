@@ -25,15 +25,20 @@ SlaInputConfiguration::SlaInputConfiguration(JsonView jsonValue)
 
 SlaInputConfiguration& SlaInputConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("fieldId"))
-  {
-    m_fieldId = jsonValue.GetString("fieldId");
-    m_fieldIdHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = SlaTypeMapper::GetSlaTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("fieldId"))
+  {
+    m_fieldId = jsonValue.GetString("fieldId");
+    m_fieldIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("targetFieldValues"))
   {
@@ -49,11 +54,6 @@ SlaInputConfiguration& SlaInputConfiguration::operator =(JsonView jsonValue)
     m_targetSlaMinutes = jsonValue.GetInt64("targetSlaMinutes");
     m_targetSlaMinutesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = SlaTypeMapper::GetSlaTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -61,15 +61,20 @@ JsonValue SlaInputConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_fieldIdHasBeenSet)
-  {
-   payload.WithString("fieldId", m_fieldId);
-
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", SlaTypeMapper::GetNameForSlaType(m_type));
+  }
+
+  if(m_fieldIdHasBeenSet)
+  {
+   payload.WithString("fieldId", m_fieldId);
 
   }
 
@@ -88,11 +93,6 @@ JsonValue SlaInputConfiguration::Jsonize() const
   {
    payload.WithInt64("targetSlaMinutes", m_targetSlaMinutes);
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", SlaTypeMapper::GetNameForSlaType(m_type));
   }
 
   return payload;

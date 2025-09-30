@@ -41,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>A unique identifier of a contact in Amazon Connect.</p>
+     */
+    inline const Aws::String& GetContactArn() const { return m_contactArn; }
+    inline bool ContactArnHasBeenSet() const { return m_contactArnHasBeenSet; }
+    template<typename ContactArnT = Aws::String>
+    void SetContactArn(ContactArnT&& value) { m_contactArnHasBeenSet = true; m_contactArn = std::forward<ContactArnT>(value); }
+    template<typename ContactArnT = Aws::String>
+    ContactContent& WithContactArn(ContactArnT&& value) { SetContactArn(std::forward<ContactArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A list of channels to filter on for related items of type
      * <code>Contact</code>.</p>
      */
@@ -64,28 +76,16 @@ namespace Model
     template<typename ConnectedToSystemTimeT = Aws::Utils::DateTime>
     ContactContent& WithConnectedToSystemTime(ConnectedToSystemTimeT&& value) { SetConnectedToSystemTime(std::forward<ConnectedToSystemTimeT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>A unique identifier of a contact in Amazon Connect.</p>
-     */
-    inline const Aws::String& GetContactArn() const { return m_contactArn; }
-    inline bool ContactArnHasBeenSet() const { return m_contactArnHasBeenSet; }
-    template<typename ContactArnT = Aws::String>
-    void SetContactArn(ContactArnT&& value) { m_contactArnHasBeenSet = true; m_contactArn = std::forward<ContactArnT>(value); }
-    template<typename ContactArnT = Aws::String>
-    ContactContent& WithContactArn(ContactArnT&& value) { SetContactArn(std::forward<ContactArnT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_contactArn;
+    bool m_contactArnHasBeenSet = false;
 
     Aws::String m_channel;
     bool m_channelHasBeenSet = false;
 
     Aws::Utils::DateTime m_connectedToSystemTime{};
     bool m_connectedToSystemTimeHasBeenSet = false;
-
-    Aws::String m_contactArn;
-    bool m_contactArnHasBeenSet = false;
   };
 
 } // namespace Model

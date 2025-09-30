@@ -245,6 +245,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The storage throughput for the automated backup.</p>
+     */
+    inline int GetStorageThroughput() const { return m_storageThroughput; }
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+    inline DBInstanceAutomatedBackup& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The option group the automated backup is associated with. If omitted, the
      * default option group for the engine specified is used.</p>
      */
@@ -383,12 +393,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The storage throughput for the automated backup.</p>
+     * <p>Specifies whether the automatic backup is for a DB instance in the
+     * multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).
+     * </p>
      */
-    inline int GetStorageThroughput() const { return m_storageThroughput; }
-    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
-    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
-    inline DBInstanceAutomatedBackup& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+    inline bool GetMultiTenant() const { return m_multiTenant; }
+    inline bool MultiTenantHasBeenSet() const { return m_multiTenantHasBeenSet; }
+    inline void SetMultiTenant(bool value) { m_multiTenantHasBeenSet = true; m_multiTenant = value; }
+    inline DBInstanceAutomatedBackup& WithMultiTenant(bool value) { SetMultiTenant(value); return *this;}
     ///@}
 
     ///@{
@@ -413,18 +425,6 @@ namespace Model
     inline bool DedicatedLogVolumeHasBeenSet() const { return m_dedicatedLogVolumeHasBeenSet; }
     inline void SetDedicatedLogVolume(bool value) { m_dedicatedLogVolumeHasBeenSet = true; m_dedicatedLogVolume = value; }
     inline DBInstanceAutomatedBackup& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies whether the automatic backup is for a DB instance in the
-     * multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).
-     * </p>
-     */
-    inline bool GetMultiTenant() const { return m_multiTenant; }
-    inline bool MultiTenantHasBeenSet() const { return m_multiTenantHasBeenSet; }
-    inline void SetMultiTenant(bool value) { m_multiTenantHasBeenSet = true; m_multiTenant = value; }
-    inline DBInstanceAutomatedBackup& WithMultiTenant(bool value) { SetMultiTenant(value); return *this;}
     ///@}
   private:
 
@@ -476,6 +476,9 @@ namespace Model
     int m_iops{0};
     bool m_iopsHasBeenSet = false;
 
+    int m_storageThroughput{0};
+    bool m_storageThroughputHasBeenSet = false;
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet = false;
 
@@ -509,17 +512,14 @@ namespace Model
     Aws::String m_backupTarget;
     bool m_backupTargetHasBeenSet = false;
 
-    int m_storageThroughput{0};
-    bool m_storageThroughputHasBeenSet = false;
+    bool m_multiTenant{false};
+    bool m_multiTenantHasBeenSet = false;
 
     Aws::String m_awsBackupRecoveryPointArn;
     bool m_awsBackupRecoveryPointArnHasBeenSet = false;
 
     bool m_dedicatedLogVolume{false};
     bool m_dedicatedLogVolumeHasBeenSet = false;
-
-    bool m_multiTenant{false};
-    bool m_multiTenantHasBeenSet = false;
   };
 
 } // namespace Model

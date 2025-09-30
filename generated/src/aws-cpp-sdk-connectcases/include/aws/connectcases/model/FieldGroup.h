@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/connectcases/model/FieldItem.h>
 #include <utility>
 
@@ -42,6 +42,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Name of the field group.</p>
+     */
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    FieldGroup& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Represents an ordered list containing field related information.</p>
      */
     inline const Aws::Vector<FieldItem>& GetFields() const { return m_fields; }
@@ -53,25 +65,13 @@ namespace Model
     template<typename FieldsT = FieldItem>
     FieldGroup& AddFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields.emplace_back(std::forward<FieldsT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>Name of the field group.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    FieldGroup& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::Vector<FieldItem> m_fields;
-    bool m_fieldsHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::Vector<FieldItem> m_fields;
+    bool m_fieldsHasBeenSet = false;
   };
 
 } // namespace Model

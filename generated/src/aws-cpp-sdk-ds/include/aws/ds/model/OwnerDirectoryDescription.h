@@ -10,6 +10,7 @@
 #include <aws/ds/model/DirectoryVpcSettingsDescription.h>
 #include <aws/ds/model/RadiusSettings.h>
 #include <aws/ds/model/RadiusStatus.h>
+#include <aws/ds/model/NetworkType.h>
 #include <utility>
 
 namespace Aws
@@ -28,8 +29,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the directory owner account details that have been shared to the
-   * directory consumer account.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the directory owner account details shared with the directory
+   * consumer account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/OwnerDirectoryDescription">AWS
    * API Reference</a></p>
    */
@@ -83,6 +84,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>IPv6 addresses of the directory’s domain controllers.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDnsIpv6Addrs() const { return m_dnsIpv6Addrs; }
+    inline bool DnsIpv6AddrsHasBeenSet() const { return m_dnsIpv6AddrsHasBeenSet; }
+    template<typename DnsIpv6AddrsT = Aws::Vector<Aws::String>>
+    void SetDnsIpv6Addrs(DnsIpv6AddrsT&& value) { m_dnsIpv6AddrsHasBeenSet = true; m_dnsIpv6Addrs = std::forward<DnsIpv6AddrsT>(value); }
+    template<typename DnsIpv6AddrsT = Aws::Vector<Aws::String>>
+    OwnerDirectoryDescription& WithDnsIpv6Addrs(DnsIpv6AddrsT&& value) { SetDnsIpv6Addrs(std::forward<DnsIpv6AddrsT>(value)); return *this;}
+    template<typename DnsIpv6AddrsT = Aws::String>
+    OwnerDirectoryDescription& AddDnsIpv6Addrs(DnsIpv6AddrsT&& value) { m_dnsIpv6AddrsHasBeenSet = true; m_dnsIpv6Addrs.emplace_back(std::forward<DnsIpv6AddrsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Information about the VPC settings for the directory.</p>
      */
     inline const DirectoryVpcSettingsDescription& GetVpcSettings() const { return m_vpcSettings; }
@@ -95,8 +110,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
-     * server.</p>
+     * <p>Information about the <a>RadiusSettings</a> object server configuration.</p>
      */
     inline const RadiusSettings& GetRadiusSettings() const { return m_radiusSettings; }
     inline bool RadiusSettingsHasBeenSet() const { return m_radiusSettingsHasBeenSet; }
@@ -108,12 +122,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the status of the RADIUS server.</p>
+     * <p>The status of the RADIUS server.</p>
      */
     inline RadiusStatus GetRadiusStatus() const { return m_radiusStatus; }
     inline bool RadiusStatusHasBeenSet() const { return m_radiusStatusHasBeenSet; }
     inline void SetRadiusStatus(RadiusStatus value) { m_radiusStatusHasBeenSet = true; m_radiusStatus = value; }
     inline OwnerDirectoryDescription& WithRadiusStatus(RadiusStatus value) { SetRadiusStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Network type of the directory in the directory owner account.</p>
+     */
+    inline NetworkType GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    inline void SetNetworkType(NetworkType value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline OwnerDirectoryDescription& WithNetworkType(NetworkType value) { SetNetworkType(value); return *this;}
     ///@}
   private:
 
@@ -126,6 +150,9 @@ namespace Model
     Aws::Vector<Aws::String> m_dnsIpAddrs;
     bool m_dnsIpAddrsHasBeenSet = false;
 
+    Aws::Vector<Aws::String> m_dnsIpv6Addrs;
+    bool m_dnsIpv6AddrsHasBeenSet = false;
+
     DirectoryVpcSettingsDescription m_vpcSettings;
     bool m_vpcSettingsHasBeenSet = false;
 
@@ -134,6 +161,9 @@ namespace Model
 
     RadiusStatus m_radiusStatus{RadiusStatus::NOT_SET};
     bool m_radiusStatusHasBeenSet = false;
+
+    NetworkType m_networkType{NetworkType::NOT_SET};
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

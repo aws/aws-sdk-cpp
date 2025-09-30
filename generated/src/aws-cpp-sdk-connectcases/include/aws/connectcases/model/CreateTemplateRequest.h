@@ -39,18 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A brief description of the template.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    CreateTemplateRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique identifier of the Cases domain. </p>
      */
     inline const Aws::String& GetDomainId() const { return m_domainId; }
@@ -63,18 +51,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Configuration of layouts associated to the template.</p>
-     */
-    inline const LayoutConfiguration& GetLayoutConfiguration() const { return m_layoutConfiguration; }
-    inline bool LayoutConfigurationHasBeenSet() const { return m_layoutConfigurationHasBeenSet; }
-    template<typename LayoutConfigurationT = LayoutConfiguration>
-    void SetLayoutConfiguration(LayoutConfigurationT&& value) { m_layoutConfigurationHasBeenSet = true; m_layoutConfiguration = std::forward<LayoutConfigurationT>(value); }
-    template<typename LayoutConfigurationT = LayoutConfiguration>
-    CreateTemplateRequest& WithLayoutConfiguration(LayoutConfigurationT&& value) { SetLayoutConfiguration(std::forward<LayoutConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A name for the template. It must be unique per domain.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
@@ -83,6 +59,30 @@ namespace Model
     void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
     template<typename NameT = Aws::String>
     CreateTemplateRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A brief description of the template.</p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateTemplateRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Configuration of layouts associated to the template.</p>
+     */
+    inline const LayoutConfiguration& GetLayoutConfiguration() const { return m_layoutConfiguration; }
+    inline bool LayoutConfigurationHasBeenSet() const { return m_layoutConfigurationHasBeenSet; }
+    template<typename LayoutConfigurationT = LayoutConfiguration>
+    void SetLayoutConfiguration(LayoutConfigurationT&& value) { m_layoutConfigurationHasBeenSet = true; m_layoutConfiguration = std::forward<LayoutConfigurationT>(value); }
+    template<typename LayoutConfigurationT = LayoutConfiguration>
+    CreateTemplateRequest& WithLayoutConfiguration(LayoutConfigurationT&& value) { SetLayoutConfiguration(std::forward<LayoutConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,6 +102,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The status of the template.</p>
+     */
+    inline TemplateStatus GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(TemplateStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreateTemplateRequest& WithStatus(TemplateStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A list of case rules (also known as <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">case
      * field conditions</a>) on a template. </p>
@@ -115,38 +125,28 @@ namespace Model
     template<typename RulesT = TemplateRule>
     CreateTemplateRequest& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The status of the template.</p>
-     */
-    inline TemplateStatus GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(TemplateStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline CreateTemplateRequest& WithStatus(TemplateStatus value) { SetStatus(value); return *this;}
-    ///@}
   private:
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_domainId;
     bool m_domainIdHasBeenSet = false;
 
-    LayoutConfiguration m_layoutConfiguration;
-    bool m_layoutConfigurationHasBeenSet = false;
-
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
+    LayoutConfiguration m_layoutConfiguration;
+    bool m_layoutConfigurationHasBeenSet = false;
 
     Aws::Vector<RequiredField> m_requiredFields;
     bool m_requiredFieldsHasBeenSet = false;
 
-    Aws::Vector<TemplateRule> m_rules;
-    bool m_rulesHasBeenSet = false;
-
     TemplateStatus m_status{TemplateStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    Aws::Vector<TemplateRule> m_rules;
+    bool m_rulesHasBeenSet = false;
   };
 
 } // namespace Model

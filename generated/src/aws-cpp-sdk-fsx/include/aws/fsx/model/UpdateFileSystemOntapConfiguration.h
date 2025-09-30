@@ -199,6 +199,23 @@ namespace Model
     inline void SetHAPairs(int value) { m_hAPairsHasBeenSet = true; m_hAPairs = value; }
     inline UpdateFileSystemOntapConfiguration& WithHAPairs(int value) { SetHAPairs(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>(Multi-AZ only) Specifies the IPv6 address range in which the endpoints to
+     * access your file system will be created. By default in the Amazon FSx API and
+     * Amazon FSx console, Amazon FSx selects an available /118 IP address range for
+     * you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP
+     * addresses for file systems deployed in the same VPC/route tables, as long as
+     * they don't overlap with any subnet.</p>
+     */
+    inline const Aws::String& GetEndpointIpv6AddressRange() const { return m_endpointIpv6AddressRange; }
+    inline bool EndpointIpv6AddressRangeHasBeenSet() const { return m_endpointIpv6AddressRangeHasBeenSet; }
+    template<typename EndpointIpv6AddressRangeT = Aws::String>
+    void SetEndpointIpv6AddressRange(EndpointIpv6AddressRangeT&& value) { m_endpointIpv6AddressRangeHasBeenSet = true; m_endpointIpv6AddressRange = std::forward<EndpointIpv6AddressRangeT>(value); }
+    template<typename EndpointIpv6AddressRangeT = Aws::String>
+    UpdateFileSystemOntapConfiguration& WithEndpointIpv6AddressRange(EndpointIpv6AddressRangeT&& value) { SetEndpointIpv6AddressRange(std::forward<EndpointIpv6AddressRangeT>(value)); return *this;}
+    ///@}
   private:
 
     int m_automaticBackupRetentionDays{0};
@@ -230,6 +247,9 @@ namespace Model
 
     int m_hAPairs{0};
     bool m_hAPairsHasBeenSet = false;
+
+    Aws::String m_endpointIpv6AddressRange;
+    bool m_endpointIpv6AddressRangeHasBeenSet = false;
   };
 
 } // namespace Model

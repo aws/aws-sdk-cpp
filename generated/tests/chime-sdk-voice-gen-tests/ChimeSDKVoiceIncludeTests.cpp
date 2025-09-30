@@ -147,6 +147,7 @@
 #include <aws/chime-sdk-voice/model/ListVoiceProfilesResult.h>
 #include <aws/chime-sdk-voice/model/LoggingConfiguration.h>
 #include <aws/chime-sdk-voice/model/MediaInsightsConfiguration.h>
+#include <aws/chime-sdk-voice/model/NetworkType.h>
 #include <aws/chime-sdk-voice/model/NotificationTarget.h>
 #include <aws/chime-sdk-voice/model/NumberSelectionBehavior.h>
 #include <aws/chime-sdk-voice/model/OrderedPhoneNumber.h>

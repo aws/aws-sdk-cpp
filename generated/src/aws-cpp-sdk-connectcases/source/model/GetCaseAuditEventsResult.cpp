@@ -25,6 +25,11 @@ GetCaseAuditEventsResult::GetCaseAuditEventsResult(const Aws::AmazonWebServiceRe
 GetCaseAuditEventsResult& GetCaseAuditEventsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("auditEvents"))
   {
     Aws::Utils::Array<JsonView> auditEventsJsonList = jsonValue.GetArray("auditEvents");
@@ -33,11 +38,6 @@ GetCaseAuditEventsResult& GetCaseAuditEventsResult::operator =(const Aws::Amazon
       m_auditEvents.push_back(auditEventsJsonList[auditEventsIndex].AsObject());
     }
     m_auditEventsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

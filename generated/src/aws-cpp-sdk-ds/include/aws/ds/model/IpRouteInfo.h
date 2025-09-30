@@ -65,6 +65,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>IPv6 address block in the <a>IpRoute</a>.</p>
+     */
+    inline const Aws::String& GetCidrIpv6() const { return m_cidrIpv6; }
+    inline bool CidrIpv6HasBeenSet() const { return m_cidrIpv6HasBeenSet; }
+    template<typename CidrIpv6T = Aws::String>
+    void SetCidrIpv6(CidrIpv6T&& value) { m_cidrIpv6HasBeenSet = true; m_cidrIpv6 = std::forward<CidrIpv6T>(value); }
+    template<typename CidrIpv6T = Aws::String>
+    IpRouteInfo& WithCidrIpv6(CidrIpv6T&& value) { SetCidrIpv6(std::forward<CidrIpv6T>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The status of the IP address block.</p>
      */
     inline IpRouteStatusMsg GetIpRouteStatusMsg() const { return m_ipRouteStatusMsg; }
@@ -115,6 +127,9 @@ namespace Model
 
     Aws::String m_cidrIp;
     bool m_cidrIpHasBeenSet = false;
+
+    Aws::String m_cidrIpv6;
+    bool m_cidrIpv6HasBeenSet = false;
 
     IpRouteStatusMsg m_ipRouteStatusMsg{IpRouteStatusMsg::NOT_SET};
     bool m_ipRouteStatusMsgHasBeenSet = false;

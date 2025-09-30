@@ -50,7 +50,7 @@ namespace Model
     ///@{
     /**
      * <p>Include this value, if it was returned by the previous operation, to get the
-     * next set of service level objectives. <pre><code> &lt;/p&gt; </code></pre>
+     * next set of service level objectives. </p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     template<typename NextTokenT = Aws::String>

@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int RETRIEVAL_WINDOW_HASH = HashingUtils::HashString("RETRIEVAL_WINDOW");
+        static const int TPS_HASH = HashingUtils::HashString("TPS");
 
 
         TrafficShapingType GetTrafficShapingTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == RETRIEVAL_WINDOW_HASH)
           {
             return TrafficShapingType::RETRIEVAL_WINDOW;
+          }
+          else if (hashCode == TPS_HASH)
+          {
+            return TrafficShapingType::TPS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case TrafficShapingType::RETRIEVAL_WINDOW:
             return "RETRIEVAL_WINDOW";
+          case TrafficShapingType::TPS:
+            return "TPS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

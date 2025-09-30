@@ -181,14 +181,13 @@ namespace Model
      * create the file system using the AssociateFileSystemAliases operation. You can
      * remove DNS aliases from the file system after it is created using the
      * DisassociateFileSystemAliases operation. You only need to specify the alias name
-     * in the request payload.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
-     * with DNS Aliases</a> and <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough
-     * 5: Using DNS aliases to access your file system</a>, including additional steps
-     * you must take to be able to access your file system using a DNS alias.</p> <p>An
-     * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
-     * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
+     * in the request payload. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Managing
+     * DNS aliases</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/dns-aliases.html">Accessing
+     * data using DNS aliases</a>.</p> <p>An alias name has to meet the following
+     * requirements:</p> <ul> <li> <p>Formatted as a fully-qualified domain name
+     * (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
      * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
      * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>

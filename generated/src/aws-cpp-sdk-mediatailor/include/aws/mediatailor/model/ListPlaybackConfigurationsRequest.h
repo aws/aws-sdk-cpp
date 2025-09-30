@@ -44,6 +44,12 @@ namespace Model
      * return in response to the current request. If there are more than
      * <code>MaxResults</code> playback configurations, use the value of
      * <code>NextToken</code> in the response to get the next page of results.</p>
+     * <p>The default value is 100. MediaTailor uses DynamoDB-based pagination, which
+     * means that a response might contain fewer than <code>MaxResults</code> items,
+     * including 0 items, even when more results are available. To retrieve all
+     * results, you must continue making requests using the <code>NextToken</code>
+     * value from each response until the response no longer includes a
+     * <code>NextToken</code> value.</p>
      */
     inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -54,7 +60,12 @@ namespace Model
     ///@{
     /**
      * <p>Pagination token returned by the list request when results exceed the maximum
-     * allowed. Use the token to fetch the next page of results.</p>
+     * allowed. Use the token to fetch the next page of results.</p> <p>For the first
+     * <code>ListPlaybackConfigurations</code> request, omit this value. For subsequent
+     * requests, get the value of <code>NextToken</code> from the previous response and
+     * specify that value for <code>NextToken</code> in the request. Continue making
+     * requests until the response no longer includes a <code>NextToken</code> value,
+     * which indicates that all results have been retrieved.</p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

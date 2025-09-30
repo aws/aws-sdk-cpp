@@ -327,19 +327,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
-     * Backup.</p>
-     */
-    inline const Aws::String& GetAwsBackupRecoveryPointArn() const { return m_awsBackupRecoveryPointArn; }
-    inline bool AwsBackupRecoveryPointArnHasBeenSet() const { return m_awsBackupRecoveryPointArnHasBeenSet; }
-    template<typename AwsBackupRecoveryPointArnT = Aws::String>
-    void SetAwsBackupRecoveryPointArn(AwsBackupRecoveryPointArnT&& value) { m_awsBackupRecoveryPointArnHasBeenSet = true; m_awsBackupRecoveryPointArn = std::forward<AwsBackupRecoveryPointArnT>(value); }
-    template<typename AwsBackupRecoveryPointArnT = Aws::String>
-    DBClusterAutomatedBackup& WithAwsBackupRecoveryPointArn(AwsBackupRecoveryPointArnT&& value) { SetAwsBackupRecoveryPointArn(std::forward<AwsBackupRecoveryPointArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The storage throughput for the automated backup. The throughput is
      * automatically set based on the IOPS that you provision, and is not
      * configurable.</p> <p>This setting is only for non-Aurora Multi-AZ DB
@@ -349,6 +336,19 @@ namespace Model
     inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
     inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
     inline DBClusterAutomatedBackup& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline const Aws::String& GetAwsBackupRecoveryPointArn() const { return m_awsBackupRecoveryPointArn; }
+    inline bool AwsBackupRecoveryPointArnHasBeenSet() const { return m_awsBackupRecoveryPointArnHasBeenSet; }
+    template<typename AwsBackupRecoveryPointArnT = Aws::String>
+    void SetAwsBackupRecoveryPointArn(AwsBackupRecoveryPointArnT&& value) { m_awsBackupRecoveryPointArnHasBeenSet = true; m_awsBackupRecoveryPointArn = std::forward<AwsBackupRecoveryPointArnT>(value); }
+    template<typename AwsBackupRecoveryPointArnT = Aws::String>
+    DBClusterAutomatedBackup& WithAwsBackupRecoveryPointArn(AwsBackupRecoveryPointArnT&& value) { SetAwsBackupRecoveryPointArn(std::forward<AwsBackupRecoveryPointArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -421,11 +421,11 @@ namespace Model
     int m_iops{0};
     bool m_iopsHasBeenSet = false;
 
-    Aws::String m_awsBackupRecoveryPointArn;
-    bool m_awsBackupRecoveryPointArnHasBeenSet = false;
-
     int m_storageThroughput{0};
     bool m_storageThroughputHasBeenSet = false;
+
+    Aws::String m_awsBackupRecoveryPointArn;
+    bool m_awsBackupRecoveryPointArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -72,6 +72,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>The IPv6 addresses of the remote DNS server associated with RemoteDomainName.
+     * This is the IPv6 address of the DNS server that your conditional forwarder
+     * points to.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDnsIpv6Addrs() const { return m_dnsIpv6Addrs; }
+    inline bool DnsIpv6AddrsHasBeenSet() const { return m_dnsIpv6AddrsHasBeenSet; }
+    template<typename DnsIpv6AddrsT = Aws::Vector<Aws::String>>
+    void SetDnsIpv6Addrs(DnsIpv6AddrsT&& value) { m_dnsIpv6AddrsHasBeenSet = true; m_dnsIpv6Addrs = std::forward<DnsIpv6AddrsT>(value); }
+    template<typename DnsIpv6AddrsT = Aws::Vector<Aws::String>>
+    ConditionalForwarder& WithDnsIpv6Addrs(DnsIpv6AddrsT&& value) { SetDnsIpv6Addrs(std::forward<DnsIpv6AddrsT>(value)); return *this;}
+    template<typename DnsIpv6AddrsT = Aws::String>
+    ConditionalForwarder& AddDnsIpv6Addrs(DnsIpv6AddrsT&& value) { m_dnsIpv6AddrsHasBeenSet = true; m_dnsIpv6Addrs.emplace_back(std::forward<DnsIpv6AddrsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The replication scope of the conditional forwarder. The only allowed value is
      * <code>Domain</code>, which will replicate the conditional forwarder to all of
      * the domain controllers for your Amazon Web Services directory.</p>
@@ -88,6 +104,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_dnsIpAddrs;
     bool m_dnsIpAddrsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_dnsIpv6Addrs;
+    bool m_dnsIpv6AddrsHasBeenSet = false;
 
     ReplicationScope m_replicationScope{ReplicationScope::NOT_SET};
     bool m_replicationScopeHasBeenSet = false;

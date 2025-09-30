@@ -176,17 +176,17 @@ DBClusterAutomatedBackup& DBClusterAutomatedBackup::operator =(const XmlNode& xm
       m_iops = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iopsNode.GetText()).c_str()).c_str());
       m_iopsHasBeenSet = true;
     }
-    XmlNode awsBackupRecoveryPointArnNode = resultNode.FirstChild("AwsBackupRecoveryPointArn");
-    if(!awsBackupRecoveryPointArnNode.IsNull())
-    {
-      m_awsBackupRecoveryPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(awsBackupRecoveryPointArnNode.GetText());
-      m_awsBackupRecoveryPointArnHasBeenSet = true;
-    }
     XmlNode storageThroughputNode = resultNode.FirstChild("StorageThroughput");
     if(!storageThroughputNode.IsNull())
     {
       m_storageThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageThroughputNode.GetText()).c_str()).c_str());
       m_storageThroughputHasBeenSet = true;
+    }
+    XmlNode awsBackupRecoveryPointArnNode = resultNode.FirstChild("AwsBackupRecoveryPointArn");
+    if(!awsBackupRecoveryPointArnNode.IsNull())
+    {
+      m_awsBackupRecoveryPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(awsBackupRecoveryPointArnNode.GetText());
+      m_awsBackupRecoveryPointArnHasBeenSet = true;
     }
   }
 
@@ -316,14 +316,14 @@ void DBClusterAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char*
       oStream << location << index << locationValue << ".Iops=" << m_iops << "&";
   }
 
-  if(m_awsBackupRecoveryPointArnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
-  }
-
   if(m_storageThroughputHasBeenSet)
   {
       oStream << location << index << locationValue << ".StorageThroughput=" << m_storageThroughput << "&";
+  }
+
+  if(m_awsBackupRecoveryPointArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
   }
 
 }
@@ -428,13 +428,13 @@ void DBClusterAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char*
   {
       oStream << location << ".Iops=" << m_iops << "&";
   }
-  if(m_awsBackupRecoveryPointArnHasBeenSet)
-  {
-      oStream << location << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
-  }
   if(m_storageThroughputHasBeenSet)
   {
       oStream << location << ".StorageThroughput=" << m_storageThroughput << "&";
+  }
+  if(m_awsBackupRecoveryPointArnHasBeenSet)
+  {
+      oStream << location << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
   }
 }
 

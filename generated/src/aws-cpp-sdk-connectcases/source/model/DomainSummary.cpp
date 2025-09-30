@@ -25,15 +25,15 @@ DomainSummary::DomainSummary(JsonView jsonValue)
 
 DomainSummary& DomainSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("domainArn"))
-  {
-    m_domainArn = jsonValue.GetString("domainArn");
-    m_domainArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("domainArn"))
+  {
+    m_domainArn = jsonValue.GetString("domainArn");
+    m_domainArnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("name"))
   {
@@ -47,15 +47,15 @@ JsonValue DomainSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_domainArnHasBeenSet)
-  {
-   payload.WithString("domainArn", m_domainArn);
-
-  }
-
   if(m_domainIdHasBeenSet)
   {
    payload.WithString("domainId", m_domainId);
+
+  }
+
+  if(m_domainArnHasBeenSet)
+  {
+   payload.WithString("domainArn", m_domainArn);
 
   }
 

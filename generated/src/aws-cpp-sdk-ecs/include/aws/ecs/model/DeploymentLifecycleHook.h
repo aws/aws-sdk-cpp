@@ -114,8 +114,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Use this field to specify custom parameters that Amazon ECS will pass to your
-     * hook target invocations (such as a Lambda function).</p>
+     * <p>The details of the deployment lifecycle hook. This provides additional
+     * configuration for how the hook should be executed during deployment operations
+     * on Amazon ECS Managed Instances.</p>
      */
     inline Aws::Utils::DocumentView GetHookDetails() const { return m_hookDetails; }
     inline bool HookDetailsHasBeenSet() const { return m_hookDetailsHasBeenSet; }

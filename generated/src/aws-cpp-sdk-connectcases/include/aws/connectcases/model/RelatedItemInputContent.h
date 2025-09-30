@@ -5,10 +5,12 @@
 
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
-#include <aws/connectcases/model/CommentContent.h>
 #include <aws/connectcases/model/Contact.h>
+#include <aws/connectcases/model/CommentContent.h>
 #include <aws/connectcases/model/FileContent.h>
 #include <aws/connectcases/model/SlaInputContent.h>
+#include <aws/connectcases/model/ConnectCaseInputContent.h>
+#include <aws/connectcases/model/CustomInputContent.h>
 #include <utility>
 
 namespace Aws
@@ -43,18 +45,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Represents the content of a comment to be returned to agents.</p>
-     */
-    inline const CommentContent& GetComment() const { return m_comment; }
-    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
-    template<typename CommentT = CommentContent>
-    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
-    template<typename CommentT = CommentContent>
-    RelatedItemInputContent& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Object representing a contact in Amazon Connect as an API request field.</p>
      */
     inline const Contact& GetContact() const { return m_contact; }
@@ -63,6 +53,18 @@ namespace Model
     void SetContact(ContactT&& value) { m_contactHasBeenSet = true; m_contact = std::forward<ContactT>(value); }
     template<typename ContactT = Contact>
     RelatedItemInputContent& WithContact(ContactT&& value) { SetContact(std::forward<ContactT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Represents the content of a comment to be returned to agents.</p>
+     */
+    inline const CommentContent& GetComment() const { return m_comment; }
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
+    template<typename CommentT = CommentContent>
+    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
+    template<typename CommentT = CommentContent>
+    RelatedItemInputContent& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,19 +90,49 @@ namespace Model
     template<typename SlaT = SlaInputContent>
     RelatedItemInputContent& WithSla(SlaT&& value) { SetSla(std::forward<SlaT>(value)); return *this;}
     ///@}
-  private:
 
-    CommentContent m_comment;
-    bool m_commentHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Input content for a related Connect case</p>
+     */
+    inline const ConnectCaseInputContent& GetConnectCase() const { return m_connectCase; }
+    inline bool ConnectCaseHasBeenSet() const { return m_connectCaseHasBeenSet; }
+    template<typename ConnectCaseT = ConnectCaseInputContent>
+    void SetConnectCase(ConnectCaseT&& value) { m_connectCaseHasBeenSet = true; m_connectCase = std::forward<ConnectCaseT>(value); }
+    template<typename ConnectCaseT = ConnectCaseInputContent>
+    RelatedItemInputContent& WithConnectCase(ConnectCaseT&& value) { SetConnectCase(std::forward<ConnectCaseT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Input content for a custom related item</p>
+     */
+    inline const CustomInputContent& GetCustom() const { return m_custom; }
+    inline bool CustomHasBeenSet() const { return m_customHasBeenSet; }
+    template<typename CustomT = CustomInputContent>
+    void SetCustom(CustomT&& value) { m_customHasBeenSet = true; m_custom = std::forward<CustomT>(value); }
+    template<typename CustomT = CustomInputContent>
+    RelatedItemInputContent& WithCustom(CustomT&& value) { SetCustom(std::forward<CustomT>(value)); return *this;}
+    ///@}
+  private:
 
     Contact m_contact;
     bool m_contactHasBeenSet = false;
+
+    CommentContent m_comment;
+    bool m_commentHasBeenSet = false;
 
     FileContent m_file;
     bool m_fileHasBeenSet = false;
 
     SlaInputContent m_sla;
     bool m_slaHasBeenSet = false;
+
+    ConnectCaseInputContent m_connectCase;
+    bool m_connectCaseHasBeenSet = false;
+
+    CustomInputContent m_custom;
+    bool m_customHasBeenSet = false;
   };
 
 } // namespace Model

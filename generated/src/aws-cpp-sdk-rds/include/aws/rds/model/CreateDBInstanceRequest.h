@@ -578,6 +578,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The storage throughput value, in mebibyte per second (MiBps), for the DB
+     * instance.</p> <p>This setting applies only to the <code>gp3</code> storage
+     * type.</p> <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB
+     * instances.</p>
+     */
+    inline int GetStorageThroughput() const { return m_storageThroughput; }
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+    inline CreateDBInstanceRequest& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The option group to associate the DB instance with.</p> <p>Permanent options,
      * such as the TDE option for Oracle Advanced Security TDE, can't be removed from
      * an option group. Also, that option group can't be removed from a DB instance
@@ -1127,22 +1140,20 @@ namespace Model
 
     ///@{
     /**
-     * <p>The instance profile associated with the underlying Amazon EC2 instance of an
-     * RDS Custom DB instance.</p> <p>This setting is required for RDS Custom.</p>
-     * <p>Constraints:</p> <ul> <li> <p>The profile must exist in your account.</p>
-     * </li> <li> <p>The profile must have an IAM role that Amazon EC2 has permissions
-     * to assume.</p> </li> <li> <p>The instance profile name and the associated IAM
-     * role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
-     * <p>For the list of permissions required for the IAM role, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>The network type of the DB instance.</p> <p>The network type is determined by
+     * the <code>DBSubnetGroup</code> specified for the DB instance. A
+     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
+     * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p> <p>Valid Values: <code>IPV4 | DUAL</code> </p>
      */
-    inline const Aws::String& GetCustomIamInstanceProfile() const { return m_customIamInstanceProfile; }
-    inline bool CustomIamInstanceProfileHasBeenSet() const { return m_customIamInstanceProfileHasBeenSet; }
-    template<typename CustomIamInstanceProfileT = Aws::String>
-    void SetCustomIamInstanceProfile(CustomIamInstanceProfileT&& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = std::forward<CustomIamInstanceProfileT>(value); }
-    template<typename CustomIamInstanceProfileT = Aws::String>
-    CreateDBInstanceRequest& WithCustomIamInstanceProfile(CustomIamInstanceProfileT&& value) { SetCustomIamInstanceProfile(std::forward<CustomIamInstanceProfileT>(value)); return *this;}
+    inline const Aws::String& GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    template<typename NetworkTypeT = Aws::String>
+    void SetNetworkType(NetworkTypeT&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::forward<NetworkTypeT>(value); }
+    template<typename NetworkTypeT = Aws::String>
+    CreateDBInstanceRequest& WithNetworkType(NetworkTypeT&& value) { SetNetworkType(std::forward<NetworkTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -1166,33 +1177,58 @@ namespace Model
 
     ///@{
     /**
-     * <p>The network type of the DB instance.</p> <p>The network type is determined by
-     * the <code>DBSubnetGroup</code> specified for the DB instance. A
-     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
-     * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
-     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
-     * </p> <p>Valid Values: <code>IPV4 | DUAL</code> </p>
+     * <p>The instance profile associated with the underlying Amazon EC2 instance of an
+     * RDS Custom DB instance.</p> <p>This setting is required for RDS Custom.</p>
+     * <p>Constraints:</p> <ul> <li> <p>The profile must exist in your account.</p>
+     * </li> <li> <p>The profile must have an IAM role that Amazon EC2 has permissions
+     * to assume.</p> </li> <li> <p>The instance profile name and the associated IAM
+     * role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
+     * <p>For the list of permissions required for the IAM role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
-    inline const Aws::String& GetNetworkType() const { return m_networkType; }
-    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
-    template<typename NetworkTypeT = Aws::String>
-    void SetNetworkType(NetworkTypeT&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::forward<NetworkTypeT>(value); }
-    template<typename NetworkTypeT = Aws::String>
-    CreateDBInstanceRequest& WithNetworkType(NetworkTypeT&& value) { SetNetworkType(std::forward<NetworkTypeT>(value)); return *this;}
+    inline const Aws::String& GetCustomIamInstanceProfile() const { return m_customIamInstanceProfile; }
+    inline bool CustomIamInstanceProfileHasBeenSet() const { return m_customIamInstanceProfileHasBeenSet; }
+    template<typename CustomIamInstanceProfileT = Aws::String>
+    void SetCustomIamInstanceProfile(CustomIamInstanceProfileT&& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = std::forward<CustomIamInstanceProfileT>(value); }
+    template<typename CustomIamInstanceProfileT = Aws::String>
+    CreateDBInstanceRequest& WithCustomIamInstanceProfile(CustomIamInstanceProfileT&& value) { SetCustomIamInstanceProfile(std::forward<CustomIamInstanceProfileT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The storage throughput value, in mebibyte per second (MiBps), for the DB
-     * instance.</p> <p>This setting applies only to the <code>gp3</code> storage
-     * type.</p> <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB
-     * instances.</p>
+     * <p>The Oracle system identifier (SID), which is the name of the Oracle database
+     * instance that manages your database files. In this context, the term "Oracle
+     * database instance" refers exclusively to the system global area (SGA) and Oracle
+     * background processes. If you don't specify a SID, the value defaults to
+     * <code>RDSCDB</code>. The Oracle SID is also the name of your CDB.</p>
      */
-    inline int GetStorageThroughput() const { return m_storageThroughput; }
-    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
-    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
-    inline CreateDBInstanceRequest& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+    inline const Aws::String& GetDBSystemId() const { return m_dBSystemId; }
+    inline bool DBSystemIdHasBeenSet() const { return m_dBSystemIdHasBeenSet; }
+    template<typename DBSystemIdT = Aws::String>
+    void SetDBSystemId(DBSystemIdT&& value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId = std::forward<DBSystemIdT>(value); }
+    template<typename DBSystemIdT = Aws::String>
+    CreateDBInstanceRequest& WithDBSystemId(DBSystemIdT&& value) { SetDBSystemId(std::forward<DBSystemIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The CA certificate identifier to use for the DB instance's server
+     * certificate.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+     * Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon
+     * Aurora User Guide</i>.</p>
+     */
+    inline const Aws::String& GetCACertificateIdentifier() const { return m_cACertificateIdentifier; }
+    inline bool CACertificateIdentifierHasBeenSet() const { return m_cACertificateIdentifierHasBeenSet; }
+    template<typename CACertificateIdentifierT = Aws::String>
+    void SetCACertificateIdentifier(CACertificateIdentifierT&& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = std::forward<CACertificateIdentifierT>(value); }
+    template<typename CACertificateIdentifierT = Aws::String>
+    CreateDBInstanceRequest& WithCACertificateIdentifier(CACertificateIdentifierT&& value) { SetCACertificateIdentifier(std::forward<CACertificateIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -1238,53 +1274,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The CA certificate identifier to use for the DB instance's server
-     * certificate.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
-     * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
-     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
-     * Guide</i> and <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
-     * Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon
-     * Aurora User Guide</i>.</p>
-     */
-    inline const Aws::String& GetCACertificateIdentifier() const { return m_cACertificateIdentifier; }
-    inline bool CACertificateIdentifierHasBeenSet() const { return m_cACertificateIdentifierHasBeenSet; }
-    template<typename CACertificateIdentifierT = Aws::String>
-    void SetCACertificateIdentifier(CACertificateIdentifierT&& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = std::forward<CACertificateIdentifierT>(value); }
-    template<typename CACertificateIdentifierT = Aws::String>
-    CreateDBInstanceRequest& WithCACertificateIdentifier(CACertificateIdentifierT&& value) { SetCACertificateIdentifier(std::forward<CACertificateIdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Oracle system identifier (SID), which is the name of the Oracle database
-     * instance that manages your database files. In this context, the term "Oracle
-     * database instance" refers exclusively to the system global area (SGA) and Oracle
-     * background processes. If you don't specify a SID, the value defaults to
-     * <code>RDSCDB</code>. The Oracle SID is also the name of your CDB.</p>
-     */
-    inline const Aws::String& GetDBSystemId() const { return m_dBSystemId; }
-    inline bool DBSystemIdHasBeenSet() const { return m_dBSystemIdHasBeenSet; }
-    template<typename DBSystemIdT = Aws::String>
-    void SetDBSystemId(DBSystemIdT&& value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId = std::forward<DBSystemIdT>(value); }
-    template<typename DBSystemIdT = Aws::String>
-    CreateDBInstanceRequest& WithDBSystemId(DBSystemIdT&& value) { SetDBSystemId(std::forward<DBSystemIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
-     * enabled.</p>
-     */
-    inline bool GetDedicatedLogVolume() const { return m_dedicatedLogVolume; }
-    inline bool DedicatedLogVolumeHasBeenSet() const { return m_dedicatedLogVolumeHasBeenSet; }
-    inline void SetDedicatedLogVolume(bool value) { m_dedicatedLogVolumeHasBeenSet = true; m_dedicatedLogVolume = value; }
-    inline CreateDBInstanceRequest& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Specifies whether to use the multi-tenant configuration or the single-tenant
      * configuration (default). This parameter only applies to RDS for Oracle container
      * database (CDB) engines.</p> <p>Note the following restrictions: </p> <ul> <li>
@@ -1299,6 +1288,17 @@ namespace Model
     inline bool MultiTenantHasBeenSet() const { return m_multiTenantHasBeenSet; }
     inline void SetMultiTenant(bool value) { m_multiTenantHasBeenSet = true; m_multiTenant = value; }
     inline CreateDBInstanceRequest& WithMultiTenant(bool value) { SetMultiTenant(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.</p>
+     */
+    inline bool GetDedicatedLogVolume() const { return m_dedicatedLogVolume; }
+    inline bool DedicatedLogVolumeHasBeenSet() const { return m_dedicatedLogVolumeHasBeenSet; }
+    inline void SetDedicatedLogVolume(bool value) { m_dedicatedLogVolumeHasBeenSet = true; m_dedicatedLogVolume = value; }
+    inline CreateDBInstanceRequest& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
     ///@}
 
     ///@{
@@ -1410,6 +1410,9 @@ namespace Model
     int m_iops{0};
     bool m_iopsHasBeenSet = false;
 
+    int m_storageThroughput{0};
+    bool m_storageThroughputHasBeenSet = false;
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet = false;
 
@@ -1506,17 +1509,20 @@ namespace Model
     bool m_enableCustomerOwnedIp{false};
     bool m_enableCustomerOwnedIpHasBeenSet = false;
 
-    Aws::String m_customIamInstanceProfile;
-    bool m_customIamInstanceProfileHasBeenSet = false;
+    Aws::String m_networkType;
+    bool m_networkTypeHasBeenSet = false;
 
     Aws::String m_backupTarget;
     bool m_backupTargetHasBeenSet = false;
 
-    Aws::String m_networkType;
-    bool m_networkTypeHasBeenSet = false;
+    Aws::String m_customIamInstanceProfile;
+    bool m_customIamInstanceProfileHasBeenSet = false;
 
-    int m_storageThroughput{0};
-    bool m_storageThroughputHasBeenSet = false;
+    Aws::String m_dBSystemId;
+    bool m_dBSystemIdHasBeenSet = false;
+
+    Aws::String m_cACertificateIdentifier;
+    bool m_cACertificateIdentifierHasBeenSet = false;
 
     bool m_manageMasterUserPassword{false};
     bool m_manageMasterUserPasswordHasBeenSet = false;
@@ -1524,17 +1530,11 @@ namespace Model
     Aws::String m_masterUserSecretKmsKeyId;
     bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
 
-    Aws::String m_cACertificateIdentifier;
-    bool m_cACertificateIdentifierHasBeenSet = false;
-
-    Aws::String m_dBSystemId;
-    bool m_dBSystemIdHasBeenSet = false;
+    bool m_multiTenant{false};
+    bool m_multiTenantHasBeenSet = false;
 
     bool m_dedicatedLogVolume{false};
     bool m_dedicatedLogVolumeHasBeenSet = false;
-
-    bool m_multiTenant{false};
-    bool m_multiTenantHasBeenSet = false;
 
     Aws::String m_engineLifecycleSupport;
     bool m_engineLifecycleSupportHasBeenSet = false;

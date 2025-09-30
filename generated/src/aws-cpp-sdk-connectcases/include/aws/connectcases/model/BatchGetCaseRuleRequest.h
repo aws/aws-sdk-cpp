@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/connectcases/ConnectCasesRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/connectcases/model/CaseRuleIdentifier.h>
 #include <utility>
 
@@ -36,6 +36,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Unique identifier of a Cases domain.</p>
+     */
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
+    inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    BatchGetCaseRuleRequest& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>List of case rule identifiers.</p>
      */
     inline const Aws::Vector<CaseRuleIdentifier>& GetCaseRules() const { return m_caseRules; }
@@ -47,25 +59,13 @@ namespace Model
     template<typename CaseRulesT = CaseRuleIdentifier>
     BatchGetCaseRuleRequest& AddCaseRules(CaseRulesT&& value) { m_caseRulesHasBeenSet = true; m_caseRules.emplace_back(std::forward<CaseRulesT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>Unique identifier of a Cases domain.</p>
-     */
-    inline const Aws::String& GetDomainId() const { return m_domainId; }
-    inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-    template<typename DomainIdT = Aws::String>
-    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
-    template<typename DomainIdT = Aws::String>
-    BatchGetCaseRuleRequest& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::Vector<CaseRuleIdentifier> m_caseRules;
-    bool m_caseRulesHasBeenSet = false;
 
     Aws::String m_domainId;
     bool m_domainIdHasBeenSet = false;
+
+    Aws::Vector<CaseRuleIdentifier> m_caseRules;
+    bool m_caseRulesHasBeenSet = false;
   };
 
 } // namespace Model

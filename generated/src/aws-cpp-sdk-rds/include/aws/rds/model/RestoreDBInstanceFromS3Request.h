@@ -363,6 +363,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     */
+    inline int GetStorageThroughput() const { return m_storageThroughput; }
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+    inline RestoreDBInstanceFromS3Request& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the option group to associate with this DB instance. If this
      * argument is omitted, the default option group for the specified engine is
      * used.</p>
@@ -741,17 +752,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
-     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
-     */
-    inline int GetStorageThroughput() const { return m_storageThroughput; }
-    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
-    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
-    inline RestoreDBInstanceFromS3Request& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Specifies whether to manage the master user password with Amazon Web Services
      * Secrets Manager.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
@@ -915,6 +915,9 @@ namespace Model
     int m_iops{0};
     bool m_iopsHasBeenSet = false;
 
+    int m_storageThroughput{0};
+    bool m_storageThroughputHasBeenSet = false;
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet = false;
 
@@ -989,9 +992,6 @@ namespace Model
 
     Aws::String m_networkType;
     bool m_networkTypeHasBeenSet = false;
-
-    int m_storageThroughput{0};
-    bool m_storageThroughputHasBeenSet = false;
 
     bool m_manageMasterUserPassword{false};
     bool m_manageMasterUserPasswordHasBeenSet = false;

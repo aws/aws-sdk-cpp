@@ -34,18 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique identifier of a contact in Amazon Connect.</p>
-     */
-    inline const Aws::String& GetContactArn() const { return m_contactArn; }
-    inline bool ContactArnHasBeenSet() const { return m_contactArnHasBeenSet; }
-    template<typename ContactArnT = Aws::String>
-    void SetContactArn(ContactArnT&& value) { m_contactArnHasBeenSet = true; m_contactArn = std::forward<ContactArnT>(value); }
-    template<typename ContactArnT = Aws::String>
-    ListCasesForContactRequest& WithContactArn(ContactArnT&& value) { SetContactArn(std::forward<ContactArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique identifier of the Cases domain. </p>
      */
     inline const Aws::String& GetDomainId() const { return m_domainId; }
@@ -54,6 +42,18 @@ namespace Model
     void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
     template<typename DomainIdT = Aws::String>
     ListCasesForContactRequest& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A unique identifier of a contact in Amazon Connect.</p>
+     */
+    inline const Aws::String& GetContactArn() const { return m_contactArn; }
+    inline bool ContactArnHasBeenSet() const { return m_contactArnHasBeenSet; }
+    template<typename ContactArnT = Aws::String>
+    void SetContactArn(ContactArnT&& value) { m_contactArnHasBeenSet = true; m_contactArn = std::forward<ContactArnT>(value); }
+    template<typename ContactArnT = Aws::String>
+    ListCasesForContactRequest& WithContactArn(ContactArnT&& value) { SetContactArn(std::forward<ContactArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,11 +80,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_contactArn;
-    bool m_contactArnHasBeenSet = false;
-
     Aws::String m_domainId;
     bool m_domainIdHasBeenSet = false;
+
+    Aws::String m_contactArn;
+    bool m_contactArnHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;

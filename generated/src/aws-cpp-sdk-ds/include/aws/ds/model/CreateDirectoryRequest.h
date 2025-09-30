@@ -10,6 +10,7 @@
 #include <aws/ds/model/DirectorySize.h>
 #include <aws/ds/model/DirectoryVpcSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ds/model/NetworkType.h>
 #include <aws/ds/model/Tag.h>
 #include <utility>
 
@@ -143,6 +144,17 @@ namespace Model
     template<typename TagsT = Tag>
     CreateDirectoryRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The network type for your directory. Simple AD supports IPv4 and Dual-stack
+     * only.</p>
+     */
+    inline NetworkType GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    inline void SetNetworkType(NetworkType value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline CreateDirectoryRequest& WithNetworkType(NetworkType value) { SetNetworkType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -165,6 +177,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    NetworkType m_networkType{NetworkType::NOT_SET};
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

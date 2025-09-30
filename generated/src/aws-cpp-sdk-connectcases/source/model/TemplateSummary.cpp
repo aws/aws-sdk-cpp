@@ -25,6 +25,16 @@ TemplateSummary::TemplateSummary(JsonView jsonValue)
 
 TemplateSummary& TemplateSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("templateId"))
+  {
+    m_templateId = jsonValue.GetString("templateId");
+    m_templateIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("templateArn"))
+  {
+    m_templateArn = jsonValue.GetString("templateArn");
+    m_templateArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -35,22 +45,24 @@ TemplateSummary& TemplateSummary::operator =(JsonView jsonValue)
     m_status = TemplateStatusMapper::GetTemplateStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("templateArn"))
-  {
-    m_templateArn = jsonValue.GetString("templateArn");
-    m_templateArnHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("templateId"))
-  {
-    m_templateId = jsonValue.GetString("templateId");
-    m_templateIdHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue TemplateSummary::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_templateIdHasBeenSet)
+  {
+   payload.WithString("templateId", m_templateId);
+
+  }
+
+  if(m_templateArnHasBeenSet)
+  {
+   payload.WithString("templateArn", m_templateArn);
+
+  }
 
   if(m_nameHasBeenSet)
   {
@@ -61,18 +73,6 @@ JsonValue TemplateSummary::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", TemplateStatusMapper::GetNameForTemplateStatus(m_status));
-  }
-
-  if(m_templateArnHasBeenSet)
-  {
-   payload.WithString("templateArn", m_templateArn);
-
-  }
-
-  if(m_templateIdHasBeenSet)
-  {
-   payload.WithString("templateId", m_templateId);
-
   }
 
   return payload;

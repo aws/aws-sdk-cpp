@@ -39,18 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Error code from creating or updating field option.</p>
-     */
-    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
-    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    template<typename ErrorCodeT = Aws::String>
-    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
-    template<typename ErrorCodeT = Aws::String>
-    FieldOptionError& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Error message from creating or updating field option.</p>
      */
     inline const Aws::String& GetMessage() const { return m_message; }
@@ -59,6 +47,18 @@ namespace Model
     void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
     template<typename MessageT = Aws::String>
     FieldOptionError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Error code from creating or updating field option.</p>
+     */
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    FieldOptionError& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,11 +74,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet = false;
-
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
+
+    Aws::String m_errorCode;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_value;
     bool m_valueHasBeenSet = false;

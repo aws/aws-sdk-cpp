@@ -58,6 +58,15 @@ ServiceSummary& ServiceSummary::operator =(JsonView jsonValue)
     }
     m_metricReferencesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ServiceGroups"))
+  {
+    Aws::Utils::Array<JsonView> serviceGroupsJsonList = jsonValue.GetArray("ServiceGroups");
+    for(unsigned serviceGroupsIndex = 0; serviceGroupsIndex < serviceGroupsJsonList.GetLength(); ++serviceGroupsIndex)
+    {
+      m_serviceGroups.push_back(serviceGroupsJsonList[serviceGroupsIndex].AsObject());
+    }
+    m_serviceGroupsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -100,6 +109,17 @@ JsonValue ServiceSummary::Jsonize() const
      metricReferencesJsonList[metricReferencesIndex].AsObject(m_metricReferences[metricReferencesIndex].Jsonize());
    }
    payload.WithArray("MetricReferences", std::move(metricReferencesJsonList));
+
+  }
+
+  if(m_serviceGroupsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> serviceGroupsJsonList(m_serviceGroups.size());
+   for(unsigned serviceGroupsIndex = 0; serviceGroupsIndex < serviceGroupsJsonList.GetLength(); ++serviceGroupsIndex)
+   {
+     serviceGroupsJsonList[serviceGroupsIndex].AsObject(m_serviceGroups[serviceGroupsIndex].Jsonize());
+   }
+   payload.WithArray("ServiceGroups", std::move(serviceGroupsJsonList));
 
   }
 

@@ -227,6 +227,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the storage throughput for the DB snapshot.</p>
+     */
+    inline int GetStorageThroughput() const { return m_storageThroughput; }
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+    inline DBSnapshot& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Provides the option group name for the DB snapshot.</p>
      */
     inline const Aws::String& GetOptionGroupName() const { return m_optionGroupName; }
@@ -403,6 +413,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies where manual snapshots are stored: Dedicated Local Zones, Amazon
+     * Web Services Outposts or the Amazon Web Services Region.</p>
+     */
+    inline const Aws::String& GetSnapshotTarget() const { return m_snapshotTarget; }
+    inline bool SnapshotTargetHasBeenSet() const { return m_snapshotTargetHasBeenSet; }
+    template<typename SnapshotTargetT = Aws::String>
+    void SetSnapshotTarget(SnapshotTargetT&& value) { m_snapshotTargetHasBeenSet = true; m_snapshotTarget = std::forward<SnapshotTargetT>(value); }
+    template<typename SnapshotTargetT = Aws::String>
+    DBSnapshot& WithSnapshotTarget(SnapshotTargetT&& value) { SetSnapshotTarget(std::forward<SnapshotTargetT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies the time of the CreateDBSnapshot operation in Coordinated Universal
      * Time (UTC). Doesn't change when the snapshot is copied.</p>
      */
@@ -435,29 +458,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies where manual snapshots are stored: Dedicated Local Zones, Amazon
-     * Web Services Outposts or the Amazon Web Services Region.</p>
-     */
-    inline const Aws::String& GetSnapshotTarget() const { return m_snapshotTarget; }
-    inline bool SnapshotTargetHasBeenSet() const { return m_snapshotTargetHasBeenSet; }
-    template<typename SnapshotTargetT = Aws::String>
-    void SetSnapshotTarget(SnapshotTargetT&& value) { m_snapshotTargetHasBeenSet = true; m_snapshotTarget = std::forward<SnapshotTargetT>(value); }
-    template<typename SnapshotTargetT = Aws::String>
-    DBSnapshot& WithSnapshotTarget(SnapshotTargetT&& value) { SetSnapshotTarget(std::forward<SnapshotTargetT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies the storage throughput for the DB snapshot.</p>
-     */
-    inline int GetStorageThroughput() const { return m_storageThroughput; }
-    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
-    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
-    inline DBSnapshot& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The Oracle system identifier (SID), which is the name of the Oracle database
      * instance that manages your database files. The Oracle SID is also the name of
      * your CDB.</p>
@@ -472,17 +472,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
-     * enabled.</p>
-     */
-    inline bool GetDedicatedLogVolume() const { return m_dedicatedLogVolume; }
-    inline bool DedicatedLogVolumeHasBeenSet() const { return m_dedicatedLogVolumeHasBeenSet; }
-    inline void SetDedicatedLogVolume(bool value) { m_dedicatedLogVolumeHasBeenSet = true; m_dedicatedLogVolume = value; }
-    inline DBSnapshot& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Indicates whether the snapshot is of a DB instance using the multi-tenant
      * configuration (TRUE) or the single-tenant configuration (FALSE).</p>
      */
@@ -490,6 +479,17 @@ namespace Model
     inline bool MultiTenantHasBeenSet() const { return m_multiTenantHasBeenSet; }
     inline void SetMultiTenant(bool value) { m_multiTenantHasBeenSet = true; m_multiTenant = value; }
     inline DBSnapshot& WithMultiTenant(bool value) { SetMultiTenant(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.</p>
+     */
+    inline bool GetDedicatedLogVolume() const { return m_dedicatedLogVolume; }
+    inline bool DedicatedLogVolumeHasBeenSet() const { return m_dedicatedLogVolumeHasBeenSet; }
+    inline void SetDedicatedLogVolume(bool value) { m_dedicatedLogVolumeHasBeenSet = true; m_dedicatedLogVolume = value; }
+    inline DBSnapshot& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
     ///@}
 
     ///@{
@@ -552,6 +552,9 @@ namespace Model
     int m_iops{0};
     bool m_iopsHasBeenSet = false;
 
+    int m_storageThroughput{0};
+    bool m_storageThroughputHasBeenSet = false;
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet = false;
 
@@ -594,26 +597,23 @@ namespace Model
     Aws::Vector<Tag> m_tagList;
     bool m_tagListHasBeenSet = false;
 
+    Aws::String m_snapshotTarget;
+    bool m_snapshotTargetHasBeenSet = false;
+
     Aws::Utils::DateTime m_originalSnapshotCreateTime{};
     bool m_originalSnapshotCreateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_snapshotDatabaseTime{};
     bool m_snapshotDatabaseTimeHasBeenSet = false;
 
-    Aws::String m_snapshotTarget;
-    bool m_snapshotTargetHasBeenSet = false;
-
-    int m_storageThroughput{0};
-    bool m_storageThroughputHasBeenSet = false;
-
     Aws::String m_dBSystemId;
     bool m_dBSystemIdHasBeenSet = false;
 
-    bool m_dedicatedLogVolume{false};
-    bool m_dedicatedLogVolumeHasBeenSet = false;
-
     bool m_multiTenant{false};
     bool m_multiTenantHasBeenSet = false;
+
+    bool m_dedicatedLogVolume{false};
+    bool m_dedicatedLogVolumeHasBeenSet = false;
 
     Aws::String m_snapshotAvailabilityZone;
     bool m_snapshotAvailabilityZoneHasBeenSet = false;

@@ -162,6 +162,7 @@
 #include <aws/mediatailor/model/TimeShiftConfiguration.h>
 #include <aws/mediatailor/model/TimeSignalMessage.h>
 #include <aws/mediatailor/model/TrafficShapingRetrievalWindow.h>
+#include <aws/mediatailor/model/TrafficShapingTpsConfiguration.h>
 #include <aws/mediatailor/model/TrafficShapingType.h>
 #include <aws/mediatailor/model/Transition.h>
 #include <aws/mediatailor/model/Type.h>

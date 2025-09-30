@@ -401,7 +401,7 @@ namespace ConnectCases
          * resources from the cases data store. After a successful deletion, you
          * cannot:</p> <ul> <li> <p>Retrieve related items</p> </li> <li> <p>Access audit
          * history</p> </li> <li> <p>Perform any operations that require the CaseID</p>
-         * </li> </ul>  <p>This action is irreversible. Once you delete a case,
+         * </li> </ul>  <p>This action is irreversible. After you delete a case,
          * you cannot recover its data.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteCase">AWS
          * API Reference</a></p>

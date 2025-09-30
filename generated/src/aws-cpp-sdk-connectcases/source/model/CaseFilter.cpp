@@ -25,15 +25,6 @@ CaseFilter::CaseFilter(JsonView jsonValue)
 
 CaseFilter& CaseFilter::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("andAll"))
-  {
-    Aws::Utils::Array<JsonView> andAllJsonList = jsonValue.GetArray("andAll");
-    for(unsigned andAllIndex = 0; andAllIndex < andAllJsonList.GetLength(); ++andAllIndex)
-    {
-      m_andAll.push_back(andAllJsonList[andAllIndex].AsObject());
-    }
-    m_andAllHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("field"))
   {
     m_field = jsonValue.GetObject("field");
@@ -43,6 +34,15 @@ CaseFilter& CaseFilter::operator =(JsonView jsonValue)
   {
     m_not = Aws::MakeShared<CaseFilter>("CaseFilter", jsonValue.GetObject("not"));
     m_notHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("andAll"))
+  {
+    Aws::Utils::Array<JsonView> andAllJsonList = jsonValue.GetArray("andAll");
+    for(unsigned andAllIndex = 0; andAllIndex < andAllJsonList.GetLength(); ++andAllIndex)
+    {
+      m_andAll.push_back(andAllJsonList[andAllIndex].AsObject());
+    }
+    m_andAllHasBeenSet = true;
   }
   if(jsonValue.ValueExists("orAll"))
   {
@@ -60,17 +60,6 @@ JsonValue CaseFilter::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_andAllHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> andAllJsonList(m_andAll.size());
-   for(unsigned andAllIndex = 0; andAllIndex < andAllJsonList.GetLength(); ++andAllIndex)
-   {
-     andAllJsonList[andAllIndex].AsObject(m_andAll[andAllIndex].Jsonize());
-   }
-   payload.WithArray("andAll", std::move(andAllJsonList));
-
-  }
-
   if(m_fieldHasBeenSet)
   {
    payload.WithObject("field", m_field.Jsonize());
@@ -80,6 +69,17 @@ JsonValue CaseFilter::Jsonize() const
   if(m_notHasBeenSet)
   {
    payload.WithObject("not", m_not->Jsonize());
+
+  }
+
+  if(m_andAllHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> andAllJsonList(m_andAll.size());
+   for(unsigned andAllIndex = 0; andAllIndex < andAllJsonList.GetLength(); ++andAllIndex)
+   {
+     andAllJsonList[andAllIndex].AsObject(m_andAll[andAllIndex].Jsonize());
+   }
+   payload.WithArray("andAll", std::move(andAllJsonList));
 
   }
 

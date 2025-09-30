@@ -390,11 +390,13 @@ namespace Model
     ///@{
     /**
      * <p>Specifies whether or not performance for your Amazon S3 directories is
-     * optimized. This is disabled by default.</p> <p>By default, home directory
-     * mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
-     * option, you would then need to explicitly set the
-     * <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you
-     * want a mapping to have a file target.</p>
+     * optimized.</p> <ul> <li> <p>If using the console, this is enabled by
+     * default.</p> </li> <li> <p>If using the API or CLI, this is disabled by
+     * default.</p> </li> </ul> <p>By default, home directory mappings have a
+     * <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you
+     * would then need to explicitly set the <code>HomeDirectoryMapEntry</code>
+     * <code>Type</code> to <code>FILE</code> if you want a mapping to have a file
+     * target.</p>
      */
     inline const S3StorageOptions& GetS3StorageOptions() const { return m_s3StorageOptions; }
     inline bool S3StorageOptionsHasBeenSet() const { return m_s3StorageOptionsHasBeenSet; }

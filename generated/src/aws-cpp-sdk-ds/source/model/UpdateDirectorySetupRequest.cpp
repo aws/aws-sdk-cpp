@@ -33,6 +33,18 @@ Aws::String UpdateDirectorySetupRequest::SerializePayload() const
 
   }
 
+  if(m_directorySizeUpdateSettingsHasBeenSet)
+  {
+   payload.WithObject("DirectorySizeUpdateSettings", m_directorySizeUpdateSettings.Jsonize());
+
+  }
+
+  if(m_networkUpdateSettingsHasBeenSet)
+  {
+   payload.WithObject("NetworkUpdateSettings", m_networkUpdateSettings.Jsonize());
+
+  }
+
   if(m_createSnapshotBeforeUpdateHasBeenSet)
   {
    payload.WithBool("CreateSnapshotBeforeUpdate", m_createSnapshotBeforeUpdate);

@@ -16,6 +16,12 @@ Aws::String CreateTemplateRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
+
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
@@ -25,12 +31,6 @@ Aws::String CreateTemplateRequest::SerializePayload() const
   if(m_layoutConfigurationHasBeenSet)
   {
    payload.WithObject("layoutConfiguration", m_layoutConfiguration.Jsonize());
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
 
   }
 
@@ -45,6 +45,11 @@ Aws::String CreateTemplateRequest::SerializePayload() const
 
   }
 
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", TemplateStatusMapper::GetNameForTemplateStatus(m_status));
+  }
+
   if(m_rulesHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
@@ -54,11 +59,6 @@ Aws::String CreateTemplateRequest::SerializePayload() const
    }
    payload.WithArray("rules", std::move(rulesJsonList));
 
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", TemplateStatusMapper::GetNameForTemplateStatus(m_status));
   }
 
   return payload.View().WriteReadable();

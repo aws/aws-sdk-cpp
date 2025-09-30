@@ -49,6 +49,11 @@ RecurringRetrieval& RecurringRetrieval::operator =(JsonView jsonValue)
     m_trafficShapingRetrievalWindow = jsonValue.GetObject("TrafficShapingRetrievalWindow");
     m_trafficShapingRetrievalWindowHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("TrafficShapingTpsConfiguration"))
+  {
+    m_trafficShapingTpsConfiguration = jsonValue.GetObject("TrafficShapingTpsConfiguration");
+    m_trafficShapingTpsConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -81,6 +86,12 @@ JsonValue RecurringRetrieval::Jsonize() const
   if(m_trafficShapingRetrievalWindowHasBeenSet)
   {
    payload.WithObject("TrafficShapingRetrievalWindow", m_trafficShapingRetrievalWindow.Jsonize());
+
+  }
+
+  if(m_trafficShapingTpsConfigurationHasBeenSet)
+  {
+   payload.WithObject("TrafficShapingTpsConfiguration", m_trafficShapingTpsConfiguration.Jsonize());
 
   }
 

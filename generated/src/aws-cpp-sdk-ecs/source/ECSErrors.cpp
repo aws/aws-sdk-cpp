@@ -46,6 +46,7 @@ static const int MISSING_VERSION_HASH = HashingUtils::HashString("MissingVersion
 static const int SERVER_HASH = HashingUtils::HashString("ServerException");
 static const int NAMESPACE_NOT_FOUND_HASH = HashingUtils::HashString("NamespaceNotFoundException");
 static const int BLOCKED_HASH = HashingUtils::HashString("BlockedException");
+static const int CLUSTER_CONTAINS_CAPACITY_PROVIDER_HASH = HashingUtils::HashString("ClusterContainsCapacityProviderException");
 static const int PLATFORM_UNKNOWN_HASH = HashingUtils::HashString("PlatformUnknownException");
 static const int CLUSTER_CONTAINS_TASKS_HASH = HashingUtils::HashString("ClusterContainsTasksException");
 static const int TASK_SET_NOT_FOUND_HASH = HashingUtils::HashString("TaskSetNotFoundException");
@@ -136,6 +137,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == BLOCKED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::BLOCKED), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == CLUSTER_CONTAINS_CAPACITY_PROVIDER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::CLUSTER_CONTAINS_CAPACITY_PROVIDER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PLATFORM_UNKNOWN_HASH)
   {

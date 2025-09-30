@@ -36,18 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique identifier of the case.</p>
-     */
-    inline const Aws::String& GetCaseId() const { return m_caseId; }
-    inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
-    template<typename CaseIdT = Aws::String>
-    void SetCaseId(CaseIdT&& value) { m_caseIdHasBeenSet = true; m_caseId = std::forward<CaseIdT>(value); }
-    template<typename CaseIdT = Aws::String>
-    SearchRelatedItemsRequest& WithCaseId(CaseIdT&& value) { SetCaseId(std::forward<CaseIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique identifier of the Cases domain. </p>
      */
     inline const Aws::String& GetDomainId() const { return m_domainId; }
@@ -60,17 +48,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of types of related items and their parameters to use for
-     * filtering.</p>
+     * <p>A unique identifier of the case.</p>
      */
-    inline const Aws::Vector<RelatedItemTypeFilter>& GetFilters() const { return m_filters; }
-    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    template<typename FiltersT = Aws::Vector<RelatedItemTypeFilter>>
-    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
-    template<typename FiltersT = Aws::Vector<RelatedItemTypeFilter>>
-    SearchRelatedItemsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
-    template<typename FiltersT = RelatedItemTypeFilter>
-    SearchRelatedItemsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
+    inline const Aws::String& GetCaseId() const { return m_caseId; }
+    inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
+    template<typename CaseIdT = Aws::String>
+    void SetCaseId(CaseIdT&& value) { m_caseIdHasBeenSet = true; m_caseId = std::forward<CaseIdT>(value); }
+    template<typename CaseIdT = Aws::String>
+    SearchRelatedItemsRequest& WithCaseId(CaseIdT&& value) { SetCaseId(std::forward<CaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,22 +80,37 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     SearchRelatedItemsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_caseId;
-    bool m_caseIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The list of types of related items and their parameters to use for
+     * filtering.</p>
+     */
+    inline const Aws::Vector<RelatedItemTypeFilter>& GetFilters() const { return m_filters; }
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+    template<typename FiltersT = Aws::Vector<RelatedItemTypeFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<RelatedItemTypeFilter>>
+    SearchRelatedItemsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = RelatedItemTypeFilter>
+    SearchRelatedItemsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
+    ///@}
+  private:
 
     Aws::String m_domainId;
     bool m_domainIdHasBeenSet = false;
 
-    Aws::Vector<RelatedItemTypeFilter> m_filters;
-    bool m_filtersHasBeenSet = false;
+    Aws::String m_caseId;
+    bool m_caseIdHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::Vector<RelatedItemTypeFilter> m_filters;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

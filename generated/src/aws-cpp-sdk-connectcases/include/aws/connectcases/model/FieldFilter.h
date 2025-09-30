@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>Object containing field identifier and value information.</p>
      */
-    inline const FieldValue& GetContains() const { return m_contains; }
-    inline bool ContainsHasBeenSet() const { return m_containsHasBeenSet; }
-    template<typename ContainsT = FieldValue>
-    void SetContains(ContainsT&& value) { m_containsHasBeenSet = true; m_contains = std::forward<ContainsT>(value); }
-    template<typename ContainsT = FieldValue>
-    FieldFilter& WithContains(ContainsT&& value) { SetContains(std::forward<ContainsT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Object containing field identifier and value information.</p>
-     */
     inline const FieldValue& GetEqualTo() const { return m_equalTo; }
     inline bool EqualToHasBeenSet() const { return m_equalToHasBeenSet; }
     template<typename EqualToT = FieldValue>
     void SetEqualTo(EqualToT&& value) { m_equalToHasBeenSet = true; m_equalTo = std::forward<EqualToT>(value); }
     template<typename EqualToT = FieldValue>
     FieldFilter& WithEqualTo(EqualToT&& value) { SetEqualTo(std::forward<EqualToT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Object containing field identifier and value information.</p>
+     */
+    inline const FieldValue& GetContains() const { return m_contains; }
+    inline bool ContainsHasBeenSet() const { return m_containsHasBeenSet; }
+    template<typename ContainsT = FieldValue>
+    void SetContains(ContainsT&& value) { m_containsHasBeenSet = true; m_contains = std::forward<ContainsT>(value); }
+    template<typename ContainsT = FieldValue>
+    FieldFilter& WithContains(ContainsT&& value) { SetContains(std::forward<ContainsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,11 +111,11 @@ namespace Model
     ///@}
   private:
 
-    FieldValue m_contains;
-    bool m_containsHasBeenSet = false;
-
     FieldValue m_equalTo;
     bool m_equalToHasBeenSet = false;
+
+    FieldValue m_contains;
+    bool m_containsHasBeenSet = false;
 
     FieldValue m_greaterThan;
     bool m_greaterThanHasBeenSet = false;

@@ -34,18 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Unique identifier of a case rule.</p>
-     */
-    inline const Aws::String& GetCaseRuleId() const { return m_caseRuleId; }
-    inline bool CaseRuleIdHasBeenSet() const { return m_caseRuleIdHasBeenSet; }
-    template<typename CaseRuleIdT = Aws::String>
-    void SetCaseRuleId(CaseRuleIdT&& value) { m_caseRuleIdHasBeenSet = true; m_caseRuleId = std::forward<CaseRuleIdT>(value); }
-    template<typename CaseRuleIdT = Aws::String>
-    DeleteCaseRuleRequest& WithCaseRuleId(CaseRuleIdT&& value) { SetCaseRuleId(std::forward<CaseRuleIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Unique identifier of a Cases domain.</p>
      */
     inline const Aws::String& GetDomainId() const { return m_domainId; }
@@ -55,13 +43,25 @@ namespace Model
     template<typename DomainIdT = Aws::String>
     DeleteCaseRuleRequest& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_caseRuleId;
-    bool m_caseRuleIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Unique identifier of a case rule.</p>
+     */
+    inline const Aws::String& GetCaseRuleId() const { return m_caseRuleId; }
+    inline bool CaseRuleIdHasBeenSet() const { return m_caseRuleIdHasBeenSet; }
+    template<typename CaseRuleIdT = Aws::String>
+    void SetCaseRuleId(CaseRuleIdT&& value) { m_caseRuleIdHasBeenSet = true; m_caseRuleId = std::forward<CaseRuleIdT>(value); }
+    template<typename CaseRuleIdT = Aws::String>
+    DeleteCaseRuleRequest& WithCaseRuleId(CaseRuleIdT&& value) { SetCaseRuleId(std::forward<CaseRuleIdT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_domainId;
     bool m_domainIdHasBeenSet = false;
+
+    Aws::String m_caseRuleId;
+    bool m_caseRuleIdHasBeenSet = false;
   };
 
 } // namespace Model

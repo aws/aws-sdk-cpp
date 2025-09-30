@@ -91,13 +91,11 @@ namespace ECS
         virtual ~ECSClient();
 
         /**
-         * <p>Creates a new capacity provider. Capacity providers are associated with an
-         * Amazon ECS cluster and are used in capacity provider strategies to facilitate
-         * cluster auto scaling.</p> <p>Only capacity providers that use an Auto Scaling
-         * group can be created. Amazon ECS tasks on Fargate use the <code>FARGATE</code>
-         * and <code>FARGATE_SPOT</code> capacity providers. These providers are available
-         * to all accounts in the Amazon Web Services Regions that Fargate
-         * supports.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a capacity provider. Capacity providers are associated with a cluster
+         * and are used in capacity provider strategies to facilitate cluster auto scaling.
+         * You can create capacity providers for Amazon ECS Managed Instances and EC2
+         * instances. Fargate has the predefined <code>FARGATE</code> and
+         * <code>FARGATE_SPOT</code> capacity providers.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCapacityProvider">AWS
          * API Reference</a></p>
          */
@@ -1425,8 +1423,10 @@ namespace ECS
          * capacity provider or launch type is specified, then the cluster's default
          * capacity provider strategy is used. We recommend that you define a default
          * capacity provider strategy for your cluster. However, you must specify an empty
-         * array (<code>[]</code>) to bypass defining a default strategy.</p><p><h3>See
-         * Also:</h3>   <a
+         * array (<code>[]</code>) to bypass defining a default strategy.</p> <p>Amazon ECS
+         * Managed Instances doesn't support this, because when you create a capacity
+         * provider with Amazon ECS Managed Instances, it becomes available only within the
+         * specified cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutClusterCapacityProviders">AWS
          * API Reference</a></p>
          */
@@ -1840,8 +1840,9 @@ namespace ECS
         }
 
         /**
-         * <p>Modifies the parameters for a capacity provider.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Modifies the parameters for a capacity provider.</p> <p>These changes only
+         * apply to new Amazon ECS Managed Instances, or EC2 instances, not existing
+         * ones.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCapacityProvider">AWS
          * API Reference</a></p>
          */

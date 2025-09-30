@@ -25,25 +25,25 @@ FieldValueUnion::FieldValueUnion(JsonView jsonValue)
 
 FieldValueUnion& FieldValueUnion::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("booleanValue"))
+  if(jsonValue.ValueExists("stringValue"))
   {
-    m_booleanValue = jsonValue.GetBool("booleanValue");
-    m_booleanValueHasBeenSet = true;
+    m_stringValue = jsonValue.GetString("stringValue");
+    m_stringValueHasBeenSet = true;
   }
   if(jsonValue.ValueExists("doubleValue"))
   {
     m_doubleValue = jsonValue.GetDouble("doubleValue");
     m_doubleValueHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("booleanValue"))
+  {
+    m_booleanValue = jsonValue.GetBool("booleanValue");
+    m_booleanValueHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("emptyValue"))
   {
     m_emptyValue = jsonValue.GetObject("emptyValue");
     m_emptyValueHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("stringValue"))
-  {
-    m_stringValue = jsonValue.GetString("stringValue");
-    m_stringValueHasBeenSet = true;
   }
   if(jsonValue.ValueExists("userArnValue"))
   {
@@ -57,9 +57,9 @@ JsonValue FieldValueUnion::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_booleanValueHasBeenSet)
+  if(m_stringValueHasBeenSet)
   {
-   payload.WithBool("booleanValue", m_booleanValue);
+   payload.WithString("stringValue", m_stringValue);
 
   }
 
@@ -69,15 +69,15 @@ JsonValue FieldValueUnion::Jsonize() const
 
   }
 
-  if(m_emptyValueHasBeenSet)
+  if(m_booleanValueHasBeenSet)
   {
-   payload.WithObject("emptyValue", m_emptyValue.Jsonize());
+   payload.WithBool("booleanValue", m_booleanValue);
 
   }
 
-  if(m_stringValueHasBeenSet)
+  if(m_emptyValueHasBeenSet)
   {
-   payload.WithString("stringValue", m_stringValue);
+   payload.WithObject("emptyValue", m_emptyValue.Jsonize());
 
   }
 

@@ -127,16 +127,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>For <code>MULTI_AZ_1</code> deployment types, the IP address of the primary,
-     * or preferred, file server.</p> <p>Use this IP address when mounting the file
-     * system on Linux SMB clients or Windows SMB clients that are not joined to a
+     * <p>For <code>MULTI_AZ_1</code> deployment types, the IPv4 address of the
+     * primary, or preferred, file server.</p> <p>Use this IP address when mounting the
+     * file system on Linux SMB clients or Windows SMB clients that are not joined to a
      * Microsoft Active Directory. Applicable for all Windows file system deployment
-     * types. This IP address is temporarily unavailable when the file system is
+     * types. This IPv4 address is temporarily unavailable when the file system is
      * undergoing maintenance. For Linux and Windows SMB clients that are joined to an
      * Active Directory, use the file system's DNSName instead. For more information on
      * mapping and mounting file shares, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">Accessing
-     * File Shares</a>.</p>
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-file-shares.html">Accessing
+     * data using file shares</a>.</p>
      */
     inline const Aws::String& GetPreferredFileServerIp() const { return m_preferredFileServerIp; }
     inline bool PreferredFileServerIpHasBeenSet() const { return m_preferredFileServerIpHasBeenSet; }
@@ -265,6 +265,24 @@ namespace Model
     template<typename DiskIopsConfigurationT = DiskIopsConfiguration>
     WindowsFileSystemConfiguration& WithDiskIopsConfiguration(DiskIopsConfigurationT&& value) { SetDiskIopsConfiguration(std::forward<DiskIopsConfigurationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>For MULTI_AZ_1 deployment types, the IPv6 address of the primary, or
+     * preferred, file server. Use this IP address when mounting the file system on
+     * Linux SMB clients or Windows SMB clients that are not joined to a Microsoft
+     * Active Directory. Applicable for all Windows file system deployment types. This
+     * IPv6 address is temporarily unavailable when the file system is undergoing
+     * maintenance. For Linux and Windows SMB clients that are joined to an Active
+     * Directory, use the file system's DNSName instead.</p>
+     */
+    inline const Aws::String& GetPreferredFileServerIpv6() const { return m_preferredFileServerIpv6; }
+    inline bool PreferredFileServerIpv6HasBeenSet() const { return m_preferredFileServerIpv6HasBeenSet; }
+    template<typename PreferredFileServerIpv6T = Aws::String>
+    void SetPreferredFileServerIpv6(PreferredFileServerIpv6T&& value) { m_preferredFileServerIpv6HasBeenSet = true; m_preferredFileServerIpv6 = std::forward<PreferredFileServerIpv6T>(value); }
+    template<typename PreferredFileServerIpv6T = Aws::String>
+    WindowsFileSystemConfiguration& WithPreferredFileServerIpv6(PreferredFileServerIpv6T&& value) { SetPreferredFileServerIpv6(std::forward<PreferredFileServerIpv6T>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_activeDirectoryId;
@@ -311,6 +329,9 @@ namespace Model
 
     DiskIopsConfiguration m_diskIopsConfiguration;
     bool m_diskIopsConfigurationHasBeenSet = false;
+
+    Aws::String m_preferredFileServerIpv6;
+    bool m_preferredFileServerIpv6HasBeenSet = false;
   };
 
 } // namespace Model

@@ -105,17 +105,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether or not Amazon RDS can automatically scale storage for DB
-     * instances that use the new instance class.</p>
-     */
-    inline bool GetSupportsStorageAutoscaling() const { return m_supportsStorageAutoscaling; }
-    inline bool SupportsStorageAutoscalingHasBeenSet() const { return m_supportsStorageAutoscalingHasBeenSet; }
-    inline void SetSupportsStorageAutoscaling(bool value) { m_supportsStorageAutoscalingHasBeenSet = true; m_supportsStorageAutoscaling = value; }
-    inline ValidStorageOptions& WithSupportsStorageAutoscaling(bool value) { SetSupportsStorageAutoscaling(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The valid range of provisioned storage throughput. For example, 500-4,000
      * mebibytes per second (MiBps).</p>
      */
@@ -143,6 +132,17 @@ namespace Model
     template<typename StorageThroughputToIopsRatioT = DoubleRange>
     ValidStorageOptions& AddStorageThroughputToIopsRatio(StorageThroughputToIopsRatioT&& value) { m_storageThroughputToIopsRatioHasBeenSet = true; m_storageThroughputToIopsRatio.emplace_back(std::forward<StorageThroughputToIopsRatioT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether or not Amazon RDS can automatically scale storage for DB
+     * instances that use the new instance class.</p>
+     */
+    inline bool GetSupportsStorageAutoscaling() const { return m_supportsStorageAutoscaling; }
+    inline bool SupportsStorageAutoscalingHasBeenSet() const { return m_supportsStorageAutoscalingHasBeenSet; }
+    inline void SetSupportsStorageAutoscaling(bool value) { m_supportsStorageAutoscalingHasBeenSet = true; m_supportsStorageAutoscaling = value; }
+    inline ValidStorageOptions& WithSupportsStorageAutoscaling(bool value) { SetSupportsStorageAutoscaling(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_storageType;
@@ -157,14 +157,14 @@ namespace Model
     Aws::Vector<DoubleRange> m_iopsToStorageRatio;
     bool m_iopsToStorageRatioHasBeenSet = false;
 
-    bool m_supportsStorageAutoscaling{false};
-    bool m_supportsStorageAutoscalingHasBeenSet = false;
-
     Aws::Vector<Range> m_provisionedStorageThroughput;
     bool m_provisionedStorageThroughputHasBeenSet = false;
 
     Aws::Vector<DoubleRange> m_storageThroughputToIopsRatio;
     bool m_storageThroughputToIopsRatioHasBeenSet = false;
+
+    bool m_supportsStorageAutoscaling{false};
+    bool m_supportsStorageAutoscalingHasBeenSet = false;
   };
 
 } // namespace Model

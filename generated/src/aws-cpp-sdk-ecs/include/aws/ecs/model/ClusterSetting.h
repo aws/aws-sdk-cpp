@@ -54,8 +54,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the cluster setting. The value is
-     * <code>containerInsights</code>.</p>
+     * <p>The name of the cluster setting. The value is <code>containerInsights</code>
+     * .</p>
      */
     inline ClusterSettingName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

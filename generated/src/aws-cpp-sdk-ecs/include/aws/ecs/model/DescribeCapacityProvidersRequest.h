@@ -54,6 +54,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the cluster to describe capacity providers for. When specified,
+     * only capacity providers associated with this cluster are returned, including
+     * Amazon ECS Managed Instances capacity providers.</p>
+     */
+    inline const Aws::String& GetCluster() const { return m_cluster; }
+    inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
+    template<typename ClusterT = Aws::String>
+    void SetCluster(ClusterT&& value) { m_clusterHasBeenSet = true; m_cluster = std::forward<ClusterT>(value); }
+    template<typename ClusterT = Aws::String>
+    DescribeCapacityProvidersRequest& WithCluster(ClusterT&& value) { SetCluster(std::forward<ClusterT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies whether or not you want to see the resource tags for the capacity
      * provider. If <code>TAGS</code> is specified, the tags are included in the
      * response. If this field is omitted, tags aren't included in the response.</p>
@@ -107,6 +121,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_capacityProviders;
     bool m_capacityProvidersHasBeenSet = false;
+
+    Aws::String m_cluster;
+    bool m_clusterHasBeenSet = false;
 
     Aws::Vector<CapacityProviderField> m_include;
     bool m_includeHasBeenSet = false;

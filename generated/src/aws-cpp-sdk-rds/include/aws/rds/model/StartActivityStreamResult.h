@@ -79,22 +79,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether or not the database activity stream will start as soon as
-     * possible, regardless of the maintenance window for the database.</p>
-     */
-    inline bool GetApplyImmediately() const { return m_applyImmediately; }
-    inline void SetApplyImmediately(bool value) { m_applyImmediatelyHasBeenSet = true; m_applyImmediately = value; }
-    inline StartActivityStreamResult& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Indicates whether engine-native audit fields are included in the database
      * activity stream.</p>
      */
     inline bool GetEngineNativeAuditFieldsIncluded() const { return m_engineNativeAuditFieldsIncluded; }
     inline void SetEngineNativeAuditFieldsIncluded(bool value) { m_engineNativeAuditFieldsIncludedHasBeenSet = true; m_engineNativeAuditFieldsIncluded = value; }
     inline StartActivityStreamResult& WithEngineNativeAuditFieldsIncluded(bool value) { SetEngineNativeAuditFieldsIncluded(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether or not the database activity stream will start as soon as
+     * possible, regardless of the maintenance window for the database.</p>
+     */
+    inline bool GetApplyImmediately() const { return m_applyImmediately; }
+    inline void SetApplyImmediately(bool value) { m_applyImmediatelyHasBeenSet = true; m_applyImmediately = value; }
+    inline StartActivityStreamResult& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
     ///@}
 
     ///@{
@@ -119,11 +119,11 @@ namespace Model
     ActivityStreamMode m_mode{ActivityStreamMode::NOT_SET};
     bool m_modeHasBeenSet = false;
 
-    bool m_applyImmediately{false};
-    bool m_applyImmediatelyHasBeenSet = false;
-
     bool m_engineNativeAuditFieldsIncluded{false};
     bool m_engineNativeAuditFieldsIncludedHasBeenSet = false;
+
+    bool m_applyImmediately{false};
+    bool m_applyImmediatelyHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
     bool m_responseMetadataHasBeenSet = false;

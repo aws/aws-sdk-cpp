@@ -22,6 +22,12 @@ Aws::String DeleteCapacityProviderRequest::SerializePayload() const
 
   }
 
+  if(m_clusterHasBeenSet)
+  {
+   payload.WithString("cluster", m_cluster);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -25,6 +25,11 @@ RequiredCaseRule::RequiredCaseRule(JsonView jsonValue)
 
 RequiredCaseRule& RequiredCaseRule::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("defaultValue"))
+  {
+    m_defaultValue = jsonValue.GetBool("defaultValue");
+    m_defaultValueHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("conditions"))
   {
     Aws::Utils::Array<JsonView> conditionsJsonList = jsonValue.GetArray("conditions");
@@ -34,17 +39,18 @@ RequiredCaseRule& RequiredCaseRule::operator =(JsonView jsonValue)
     }
     m_conditionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("defaultValue"))
-  {
-    m_defaultValue = jsonValue.GetBool("defaultValue");
-    m_defaultValueHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue RequiredCaseRule::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_defaultValueHasBeenSet)
+  {
+   payload.WithBool("defaultValue", m_defaultValue);
+
+  }
 
   if(m_conditionsHasBeenSet)
   {
@@ -54,12 +60,6 @@ JsonValue RequiredCaseRule::Jsonize() const
      conditionsJsonList[conditionsIndex].AsObject(m_conditions[conditionsIndex].Jsonize());
    }
    payload.WithArray("conditions", std::move(conditionsJsonList));
-
-  }
-
-  if(m_defaultValueHasBeenSet)
-  {
-   payload.WithBool("defaultValue", m_defaultValue);
 
   }
 

@@ -54,6 +54,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>A unique identifier of a template.</p>
+     */
+    inline const Aws::String& GetTemplateId() const { return m_templateId; }
+    inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
+    template<typename TemplateIdT = Aws::String>
+    void SetTemplateId(TemplateIdT&& value) { m_templateIdHasBeenSet = true; m_templateId = std::forward<TemplateIdT>(value); }
+    template<typename TemplateIdT = Aws::String>
+    SearchCasesResponseItem& WithTemplateId(TemplateIdT&& value) { SetTemplateId(std::forward<TemplateIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>List of case field values.</p>
      */
     inline const Aws::Vector<FieldValue>& GetFields() const { return m_fields; }
@@ -82,31 +94,19 @@ namespace Model
       m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
     }
     ///@}
-
-    ///@{
-    /**
-     * <p>A unique identifier of a template.</p>
-     */
-    inline const Aws::String& GetTemplateId() const { return m_templateId; }
-    inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
-    template<typename TemplateIdT = Aws::String>
-    void SetTemplateId(TemplateIdT&& value) { m_templateIdHasBeenSet = true; m_templateId = std::forward<TemplateIdT>(value); }
-    template<typename TemplateIdT = Aws::String>
-    SearchCasesResponseItem& WithTemplateId(TemplateIdT&& value) { SetTemplateId(std::forward<TemplateIdT>(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_caseId;
     bool m_caseIdHasBeenSet = false;
+
+    Aws::String m_templateId;
+    bool m_templateIdHasBeenSet = false;
 
     Aws::Vector<FieldValue> m_fields;
     bool m_fieldsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
-
-    Aws::String m_templateId;
-    bool m_templateIdHasBeenSet = false;
   };
 
 } // namespace Model

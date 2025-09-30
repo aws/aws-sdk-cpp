@@ -34,6 +34,11 @@ GetCaseResult& GetCaseResult::operator =(const Aws::AmazonWebServiceResult<JsonV
     }
     m_fieldsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("templateId"))
+  {
+    m_templateId = jsonValue.GetString("templateId");
+    m_templateIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
@@ -47,11 +52,6 @@ GetCaseResult& GetCaseResult::operator =(const Aws::AmazonWebServiceResult<JsonV
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("templateId"))
-  {
-    m_templateId = jsonValue.GetString("templateId");
-    m_templateIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information for the <a>ConnectDirectory</a> operation when an AD
-   * Connector directory is being created.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains connection settings for creating an AD Connector with the
+   * <a>ConnectDirectory</a> action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DirectoryConnectSettings">AWS
    * API Reference</a></p>
    */
@@ -68,8 +68,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of one or more IP addresses of DNS servers or domain controllers in
-     * your self-managed directory.</p>
+     * <p>The IP addresses of DNS servers or domain controllers in your self-managed
+     * directory.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCustomerDnsIps() const { return m_customerDnsIps; }
     inline bool CustomerDnsIpsHasBeenSet() const { return m_customerDnsIpsHasBeenSet; }
@@ -79,6 +79,21 @@ namespace Model
     DirectoryConnectSettings& WithCustomerDnsIps(CustomerDnsIpsT&& value) { SetCustomerDnsIps(std::forward<CustomerDnsIpsT>(value)); return *this;}
     template<typename CustomerDnsIpsT = Aws::String>
     DirectoryConnectSettings& AddCustomerDnsIps(CustomerDnsIpsT&& value) { m_customerDnsIpsHasBeenSet = true; m_customerDnsIps.emplace_back(std::forward<CustomerDnsIpsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The IPv6 addresses of DNS servers or domain controllers in your self-managed
+     * directory.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetCustomerDnsIpsV6() const { return m_customerDnsIpsV6; }
+    inline bool CustomerDnsIpsV6HasBeenSet() const { return m_customerDnsIpsV6HasBeenSet; }
+    template<typename CustomerDnsIpsV6T = Aws::Vector<Aws::String>>
+    void SetCustomerDnsIpsV6(CustomerDnsIpsV6T&& value) { m_customerDnsIpsV6HasBeenSet = true; m_customerDnsIpsV6 = std::forward<CustomerDnsIpsV6T>(value); }
+    template<typename CustomerDnsIpsV6T = Aws::Vector<Aws::String>>
+    DirectoryConnectSettings& WithCustomerDnsIpsV6(CustomerDnsIpsV6T&& value) { SetCustomerDnsIpsV6(std::forward<CustomerDnsIpsV6T>(value)); return *this;}
+    template<typename CustomerDnsIpsV6T = Aws::String>
+    DirectoryConnectSettings& AddCustomerDnsIpsV6(CustomerDnsIpsV6T&& value) { m_customerDnsIpsV6HasBeenSet = true; m_customerDnsIpsV6.emplace_back(std::forward<CustomerDnsIpsV6T>(value)); return *this; }
     ///@}
 
     ///@{
@@ -105,6 +120,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_customerDnsIps;
     bool m_customerDnsIpsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_customerDnsIpsV6;
+    bool m_customerDnsIpsV6HasBeenSet = false;
 
     Aws::String m_customerUserName;
     bool m_customerUserNameHasBeenSet = false;

@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     PUBLIC_,
     PRIVATE_LINK,
-    FIPS
+    FIPS,
+    FIPS_PRIVATE_LINK
   };
 
 namespace EndpointTypeMapper

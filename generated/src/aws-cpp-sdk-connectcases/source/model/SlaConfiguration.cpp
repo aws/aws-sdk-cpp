@@ -25,25 +25,25 @@ SlaConfiguration::SlaConfiguration(JsonView jsonValue)
 
 SlaConfiguration& SlaConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("completionTime"))
-  {
-    m_completionTime = jsonValue.GetString("completionTime");
-    m_completionTimeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("fieldId"))
-  {
-    m_fieldId = jsonValue.GetString("fieldId");
-    m_fieldIdHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = SlaTypeMapper::GetSlaTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("status"))
   {
     m_status = SlaStatusMapper::GetSlaStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("fieldId"))
+  {
+    m_fieldId = jsonValue.GetString("fieldId");
+    m_fieldIdHasBeenSet = true;
   }
   if(jsonValue.ValueExists("targetFieldValues"))
   {
@@ -59,10 +59,10 @@ SlaConfiguration& SlaConfiguration::operator =(JsonView jsonValue)
     m_targetTime = jsonValue.GetString("targetTime");
     m_targetTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("completionTime"))
   {
-    m_type = SlaTypeMapper::GetSlaTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+    m_completionTime = jsonValue.GetString("completionTime");
+    m_completionTimeHasBeenSet = true;
   }
   return *this;
 }
@@ -71,26 +71,26 @@ JsonValue SlaConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_completionTimeHasBeenSet)
-  {
-   payload.WithString("completionTime", m_completionTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_fieldIdHasBeenSet)
-  {
-   payload.WithString("fieldId", m_fieldId);
-
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
 
   }
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", SlaTypeMapper::GetNameForSlaType(m_type));
+  }
+
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", SlaStatusMapper::GetNameForSlaStatus(m_status));
+  }
+
+  if(m_fieldIdHasBeenSet)
+  {
+   payload.WithString("fieldId", m_fieldId);
+
   }
 
   if(m_targetFieldValuesHasBeenSet)
@@ -109,9 +109,9 @@ JsonValue SlaConfiguration::Jsonize() const
    payload.WithString("targetTime", m_targetTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_typeHasBeenSet)
+  if(m_completionTimeHasBeenSet)
   {
-   payload.WithString("type", SlaTypeMapper::GetNameForSlaType(m_type));
+   payload.WithString("completionTime", m_completionTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

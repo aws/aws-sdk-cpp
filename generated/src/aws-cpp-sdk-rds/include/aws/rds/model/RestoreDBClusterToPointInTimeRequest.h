@@ -9,8 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/rds/model/ScalingConfiguration.h>
 #include <aws/rds/model/ServerlessV2ScalingConfiguration.h>
+#include <aws/rds/model/ScalingConfiguration.h>
 #include <aws/rds/model/RdsCustomClusterConfiguration.h>
 #include <aws/rds/model/Tag.h>
 #include <utility>
@@ -366,38 +366,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling
-     * properties of the DB cluster.</p> <p>Valid for: Aurora DB clusters only</p>
-     */
-    inline const ScalingConfiguration& GetScalingConfiguration() const { return m_scalingConfiguration; }
-    inline bool ScalingConfigurationHasBeenSet() const { return m_scalingConfigurationHasBeenSet; }
-    template<typename ScalingConfigurationT = ScalingConfiguration>
-    void SetScalingConfiguration(ScalingConfigurationT&& value) { m_scalingConfigurationHasBeenSet = true; m_scalingConfiguration = std::forward<ScalingConfigurationT>(value); }
-    template<typename ScalingConfigurationT = ScalingConfiguration>
-    RestoreDBClusterToPointInTimeRequest& WithScalingConfiguration(ScalingConfigurationT&& value) { SetScalingConfiguration(std::forward<ScalingConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The engine mode of the new cluster. Specify <code>provisioned</code> or
-     * <code>serverless</code>, depending on the type of the cluster you are creating.
-     * You can create an Aurora Serverless v1 clone from a provisioned cluster, or a
-     * provisioned clone from an Aurora Serverless v1 cluster. To create a clone that
-     * is an Aurora Serverless v1 cluster, the original cluster must be an Aurora
-     * Serverless v1 cluster or an encrypted provisioned cluster. To create a full copy
-     * that is an Aurora Serverless v1 cluster, specify the engine mode
-     * <code>serverless</code>.</p> <p>Valid for: Aurora DB clusters only</p>
-     */
-    inline const Aws::String& GetEngineMode() const { return m_engineMode; }
-    inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }
-    template<typename EngineModeT = Aws::String>
-    void SetEngineMode(EngineModeT&& value) { m_engineModeHasBeenSet = true; m_engineMode = std::forward<EngineModeT>(value); }
-    template<typename EngineModeT = Aws::String>
-    RestoreDBClusterToPointInTimeRequest& WithEngineMode(EngineModeT&& value) { SetEngineMode(std::forward<EngineModeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB
      * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
      * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
@@ -478,16 +446,6 @@ namespace Model
     ///@}
 
     ///@{
-    
-    inline const ServerlessV2ScalingConfiguration& GetServerlessV2ScalingConfiguration() const { return m_serverlessV2ScalingConfiguration; }
-    inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
-    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
-    void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::forward<ServerlessV2ScalingConfigurationT>(value); }
-    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
-    RestoreDBClusterToPointInTimeRequest& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { SetServerlessV2ScalingConfiguration(std::forward<ServerlessV2ScalingConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
     /**
      * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
@@ -517,6 +475,48 @@ namespace Model
     void SetSourceDbClusterResourceId(SourceDbClusterResourceIdT&& value) { m_sourceDbClusterResourceIdHasBeenSet = true; m_sourceDbClusterResourceId = std::forward<SourceDbClusterResourceIdT>(value); }
     template<typename SourceDbClusterResourceIdT = Aws::String>
     RestoreDBClusterToPointInTimeRequest& WithSourceDbClusterResourceId(SourceDbClusterResourceIdT&& value) { SetSourceDbClusterResourceId(std::forward<SourceDbClusterResourceIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const ServerlessV2ScalingConfiguration& GetServerlessV2ScalingConfiguration() const { return m_serverlessV2ScalingConfiguration; }
+    inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
+    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
+    void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::forward<ServerlessV2ScalingConfigurationT>(value); }
+    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
+    RestoreDBClusterToPointInTimeRequest& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { SetServerlessV2ScalingConfiguration(std::forward<ServerlessV2ScalingConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling
+     * properties of the DB cluster.</p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline const ScalingConfiguration& GetScalingConfiguration() const { return m_scalingConfiguration; }
+    inline bool ScalingConfigurationHasBeenSet() const { return m_scalingConfigurationHasBeenSet; }
+    template<typename ScalingConfigurationT = ScalingConfiguration>
+    void SetScalingConfiguration(ScalingConfigurationT&& value) { m_scalingConfigurationHasBeenSet = true; m_scalingConfiguration = std::forward<ScalingConfigurationT>(value); }
+    template<typename ScalingConfigurationT = ScalingConfiguration>
+    RestoreDBClusterToPointInTimeRequest& WithScalingConfiguration(ScalingConfigurationT&& value) { SetScalingConfiguration(std::forward<ScalingConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The engine mode of the new cluster. Specify <code>provisioned</code> or
+     * <code>serverless</code>, depending on the type of the cluster you are creating.
+     * You can create an Aurora Serverless v1 clone from a provisioned cluster, or a
+     * provisioned clone from an Aurora Serverless v1 cluster. To create a clone that
+     * is an Aurora Serverless v1 cluster, the original cluster must be an Aurora
+     * Serverless v1 cluster or an encrypted provisioned cluster. To create a full copy
+     * that is an Aurora Serverless v1 cluster, specify the engine mode
+     * <code>serverless</code>.</p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline const Aws::String& GetEngineMode() const { return m_engineMode; }
+    inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }
+    template<typename EngineModeT = Aws::String>
+    void SetEngineMode(EngineModeT&& value) { m_engineModeHasBeenSet = true; m_engineMode = std::forward<EngineModeT>(value); }
+    template<typename EngineModeT = Aws::String>
+    RestoreDBClusterToPointInTimeRequest& WithEngineMode(EngineModeT&& value) { SetEngineMode(std::forward<EngineModeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -696,12 +696,6 @@ namespace Model
     Aws::String m_domainIAMRoleName;
     bool m_domainIAMRoleNameHasBeenSet = false;
 
-    ScalingConfiguration m_scalingConfiguration;
-    bool m_scalingConfigurationHasBeenSet = false;
-
-    Aws::String m_engineMode;
-    bool m_engineModeHasBeenSet = false;
-
     Aws::String m_dBClusterInstanceClass;
     bool m_dBClusterInstanceClassHasBeenSet = false;
 
@@ -714,14 +708,20 @@ namespace Model
     int m_iops{0};
     bool m_iopsHasBeenSet = false;
 
-    ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
-    bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
-
     Aws::String m_networkType;
     bool m_networkTypeHasBeenSet = false;
 
     Aws::String m_sourceDbClusterResourceId;
     bool m_sourceDbClusterResourceIdHasBeenSet = false;
+
+    ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
+    bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
+
+    ScalingConfiguration m_scalingConfiguration;
+    bool m_scalingConfigurationHasBeenSet = false;
+
+    Aws::String m_engineMode;
+    bool m_engineModeHasBeenSet = false;
 
     RdsCustomClusterConfiguration m_rdsCustomClusterConfiguration;
     bool m_rdsCustomClusterConfigurationHasBeenSet = false;

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int standard_HASH = HashingUtils::HashString("standard");
         static const int limitless_HASH = HashingUtils::HashString("limitless");
+        static const int scaleout_HASH = HashingUtils::HashString("scaleout");
 
 
         ClusterScalabilityType GetClusterScalabilityTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == limitless_HASH)
           {
             return ClusterScalabilityType::limitless;
+          }
+          else if (hashCode == scaleout_HASH)
+          {
+            return ClusterScalabilityType::scaleout;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "standard";
           case ClusterScalabilityType::limitless:
             return "limitless";
+          case ClusterScalabilityType::scaleout:
+            return "scaleout";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

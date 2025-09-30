@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/connectcases/ConnectCasesRequest.h>
-#include <aws/connectcases/model/LayoutContent.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/connectcases/model/LayoutContent.h>
 #include <utility>
 
 namespace Aws
@@ -32,19 +32,6 @@ namespace Model
 
     AWS_CONNECTCASES_API Aws::String SerializePayload() const override;
 
-
-    ///@{
-    /**
-     * <p>Information about which fields will be present in the layout, the order of
-     * the fields.</p>
-     */
-    inline const LayoutContent& GetContent() const { return m_content; }
-    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    template<typename ContentT = LayoutContent>
-    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
-    template<typename ContentT = LayoutContent>
-    UpdateLayoutRequest& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -81,10 +68,20 @@ namespace Model
     template<typename NameT = Aws::String>
     UpdateLayoutRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
-  private:
 
-    LayoutContent m_content;
-    bool m_contentHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Information about which fields will be present in the layout, the order of
+     * the fields.</p>
+     */
+    inline const LayoutContent& GetContent() const { return m_content; }
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
+    template<typename ContentT = LayoutContent>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = LayoutContent>
+    UpdateLayoutRequest& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_domainId;
     bool m_domainIdHasBeenSet = false;
@@ -94,6 +91,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    LayoutContent m_content;
+    bool m_contentHasBeenSet = false;
   };
 
 } // namespace Model

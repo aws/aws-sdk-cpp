@@ -179,6 +179,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the storage throughput value for the read replica.</p> <p>This
+     * setting doesn't apply to RDS Custom or Amazon Aurora DB instances.</p>
+     */
+    inline int GetStorageThroughput() const { return m_storageThroughput; }
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+    inline CreateDBInstanceReadReplicaRequest& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The option group to associate the DB instance with. If not specified, RDS
      * uses the option group associated with the source DB instance or cluster.</p>
      *  <p>For SQL Server, you must use the option group associated with the
@@ -717,38 +728,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically
-     * scale the storage of the DB instance.</p> <p>For more information about this
-     * setting, including limitations that apply to it, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
-     * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
-     * <i>Amazon RDS User Guide</i>.</p>
+     * <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on
+     * Outposts read replica.</p> <p>A <i>CoIP</i> provides local or external
+     * connectivity to resources in your Outpost subnets through your on-premises
+     * network. For some use cases, a CoIP can provide lower latency for connections to
+     * the read replica from outside of its virtual private cloud (VPC) on your local
+     * network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
-    inline int GetMaxAllocatedStorage() const { return m_maxAllocatedStorage; }
-    inline bool MaxAllocatedStorageHasBeenSet() const { return m_maxAllocatedStorageHasBeenSet; }
-    inline void SetMaxAllocatedStorage(int value) { m_maxAllocatedStorageHasBeenSet = true; m_maxAllocatedStorage = value; }
-    inline CreateDBInstanceReadReplicaRequest& WithMaxAllocatedStorage(int value) { SetMaxAllocatedStorage(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The instance profile associated with the underlying Amazon EC2 instance of an
-     * RDS Custom DB instance. The instance profile must meet the following
-     * requirements:</p> <ul> <li> <p>The profile must exist in your account.</p> </li>
-     * <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to
-     * assume.</p> </li> <li> <p>The instance profile name and the associated IAM role
-     * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
-     * <p>For the list of permissions required for the IAM role, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting is required for RDS Custom DB instances.</p>
-     */
-    inline const Aws::String& GetCustomIamInstanceProfile() const { return m_customIamInstanceProfile; }
-    inline bool CustomIamInstanceProfileHasBeenSet() const { return m_customIamInstanceProfileHasBeenSet; }
-    template<typename CustomIamInstanceProfileT = Aws::String>
-    void SetCustomIamInstanceProfile(CustomIamInstanceProfileT&& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = std::forward<CustomIamInstanceProfileT>(value); }
-    template<typename CustomIamInstanceProfileT = Aws::String>
-    CreateDBInstanceReadReplicaRequest& WithCustomIamInstanceProfile(CustomIamInstanceProfileT&& value) { SetCustomIamInstanceProfile(std::forward<CustomIamInstanceProfileT>(value)); return *this;}
+    inline bool GetEnableCustomerOwnedIp() const { return m_enableCustomerOwnedIp; }
+    inline bool EnableCustomerOwnedIpHasBeenSet() const { return m_enableCustomerOwnedIpHasBeenSet; }
+    inline void SetEnableCustomerOwnedIp(bool value) { m_enableCustomerOwnedIpHasBeenSet = true; m_enableCustomerOwnedIp = value; }
+    inline CreateDBInstanceReadReplicaRequest& WithEnableCustomerOwnedIp(bool value) { SetEnableCustomerOwnedIp(value); return *this;}
     ///@}
 
     ///@{
@@ -773,33 +768,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the storage throughput value for the read replica.</p> <p>This
-     * setting doesn't apply to RDS Custom or Amazon Aurora DB instances.</p>
+     * <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically
+     * scale the storage of the DB instance.</p> <p>For more information about this
+     * setting, including limitations that apply to it, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
+     * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
+     * <i>Amazon RDS User Guide</i>.</p>
      */
-    inline int GetStorageThroughput() const { return m_storageThroughput; }
-    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
-    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
-    inline CreateDBInstanceReadReplicaRequest& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on
-     * Outposts read replica.</p> <p>A <i>CoIP</i> provides local or external
-     * connectivity to resources in your Outpost subnets through your on-premises
-     * network. For some use cases, a CoIP can provide lower latency for connections to
-     * the read replica from outside of its virtual private cloud (VPC) on your local
-     * network.</p> <p>For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
-     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> <p>For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
-     * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
-     */
-    inline bool GetEnableCustomerOwnedIp() const { return m_enableCustomerOwnedIp; }
-    inline bool EnableCustomerOwnedIpHasBeenSet() const { return m_enableCustomerOwnedIpHasBeenSet; }
-    inline void SetEnableCustomerOwnedIp(bool value) { m_enableCustomerOwnedIpHasBeenSet = true; m_enableCustomerOwnedIp = value; }
-    inline CreateDBInstanceReadReplicaRequest& WithEnableCustomerOwnedIp(bool value) { SetEnableCustomerOwnedIp(value); return *this;}
+    inline int GetMaxAllocatedStorage() const { return m_maxAllocatedStorage; }
+    inline bool MaxAllocatedStorageHasBeenSet() const { return m_maxAllocatedStorageHasBeenSet; }
+    inline void SetMaxAllocatedStorage(int value) { m_maxAllocatedStorageHasBeenSet = true; m_maxAllocatedStorage = value; }
+    inline CreateDBInstanceReadReplicaRequest& WithMaxAllocatedStorage(int value) { SetMaxAllocatedStorage(value); return *this;}
     ///@}
 
     ///@{
@@ -815,6 +794,27 @@ namespace Model
     void SetBackupTarget(BackupTargetT&& value) { m_backupTargetHasBeenSet = true; m_backupTarget = std::forward<BackupTargetT>(value); }
     template<typename BackupTargetT = Aws::String>
     CreateDBInstanceReadReplicaRequest& WithBackupTarget(BackupTargetT&& value) { SetBackupTarget(std::forward<BackupTargetT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The instance profile associated with the underlying Amazon EC2 instance of an
+     * RDS Custom DB instance. The instance profile must meet the following
+     * requirements:</p> <ul> <li> <p>The profile must exist in your account.</p> </li>
+     * <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to
+     * assume.</p> </li> <li> <p>The instance profile name and the associated IAM role
+     * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
+     * <p>For the list of permissions required for the IAM role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom DB instances.</p>
+     */
+    inline const Aws::String& GetCustomIamInstanceProfile() const { return m_customIamInstanceProfile; }
+    inline bool CustomIamInstanceProfileHasBeenSet() const { return m_customIamInstanceProfileHasBeenSet; }
+    template<typename CustomIamInstanceProfileT = Aws::String>
+    void SetCustomIamInstanceProfile(CustomIamInstanceProfileT&& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = std::forward<CustomIamInstanceProfileT>(value); }
+    template<typename CustomIamInstanceProfileT = Aws::String>
+    CreateDBInstanceReadReplicaRequest& WithCustomIamInstanceProfile(CustomIamInstanceProfileT&& value) { SetCustomIamInstanceProfile(std::forward<CustomIamInstanceProfileT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -932,6 +932,9 @@ namespace Model
     int m_iops{0};
     bool m_iopsHasBeenSet = false;
 
+    int m_storageThroughput{0};
+    bool m_storageThroughputHasBeenSet = false;
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet = false;
 
@@ -1016,23 +1019,20 @@ namespace Model
     ReplicaMode m_replicaMode{ReplicaMode::NOT_SET};
     bool m_replicaModeHasBeenSet = false;
 
-    int m_maxAllocatedStorage{0};
-    bool m_maxAllocatedStorageHasBeenSet = false;
-
-    Aws::String m_customIamInstanceProfile;
-    bool m_customIamInstanceProfileHasBeenSet = false;
+    bool m_enableCustomerOwnedIp{false};
+    bool m_enableCustomerOwnedIpHasBeenSet = false;
 
     Aws::String m_networkType;
     bool m_networkTypeHasBeenSet = false;
 
-    int m_storageThroughput{0};
-    bool m_storageThroughputHasBeenSet = false;
-
-    bool m_enableCustomerOwnedIp{false};
-    bool m_enableCustomerOwnedIpHasBeenSet = false;
+    int m_maxAllocatedStorage{0};
+    bool m_maxAllocatedStorageHasBeenSet = false;
 
     Aws::String m_backupTarget;
     bool m_backupTargetHasBeenSet = false;
+
+    Aws::String m_customIamInstanceProfile;
+    bool m_customIamInstanceProfileHasBeenSet = false;
 
     int m_allocatedStorage{0};
     bool m_allocatedStorageHasBeenSet = false;

@@ -30,15 +30,15 @@ AuditEventField& AuditEventField::operator =(JsonView jsonValue)
     m_eventFieldId = jsonValue.GetString("eventFieldId");
     m_eventFieldIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("newValue"))
-  {
-    m_newValue = jsonValue.GetObject("newValue");
-    m_newValueHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("oldValue"))
   {
     m_oldValue = jsonValue.GetObject("oldValue");
     m_oldValueHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("newValue"))
+  {
+    m_newValue = jsonValue.GetObject("newValue");
+    m_newValueHasBeenSet = true;
   }
   return *this;
 }
@@ -53,15 +53,15 @@ JsonValue AuditEventField::Jsonize() const
 
   }
 
-  if(m_newValueHasBeenSet)
-  {
-   payload.WithObject("newValue", m_newValue.Jsonize());
-
-  }
-
   if(m_oldValueHasBeenSet)
   {
    payload.WithObject("oldValue", m_oldValue.Jsonize());
+
+  }
+
+  if(m_newValueHasBeenSet)
+  {
+   payload.WithObject("newValue", m_newValue.Jsonize());
 
   }
 

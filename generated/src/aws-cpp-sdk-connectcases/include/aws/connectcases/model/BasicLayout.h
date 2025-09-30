@@ -41,18 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>This represents sections in a tab of the page layout.</p>
-     */
-    inline const LayoutSections& GetMoreInfo() const { return m_moreInfo; }
-    inline bool MoreInfoHasBeenSet() const { return m_moreInfoHasBeenSet; }
-    template<typename MoreInfoT = LayoutSections>
-    void SetMoreInfo(MoreInfoT&& value) { m_moreInfoHasBeenSet = true; m_moreInfo = std::forward<MoreInfoT>(value); }
-    template<typename MoreInfoT = LayoutSections>
-    BasicLayout& WithMoreInfo(MoreInfoT&& value) { SetMoreInfo(std::forward<MoreInfoT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>This represents sections in a panel of the page layout.</p>
      */
     inline const LayoutSections& GetTopPanel() const { return m_topPanel; }
@@ -62,13 +50,25 @@ namespace Model
     template<typename TopPanelT = LayoutSections>
     BasicLayout& WithTopPanel(TopPanelT&& value) { SetTopPanel(std::forward<TopPanelT>(value)); return *this;}
     ///@}
-  private:
 
-    LayoutSections m_moreInfo;
-    bool m_moreInfoHasBeenSet = false;
+    ///@{
+    /**
+     * <p>This represents sections in a tab of the page layout.</p>
+     */
+    inline const LayoutSections& GetMoreInfo() const { return m_moreInfo; }
+    inline bool MoreInfoHasBeenSet() const { return m_moreInfoHasBeenSet; }
+    template<typename MoreInfoT = LayoutSections>
+    void SetMoreInfo(MoreInfoT&& value) { m_moreInfoHasBeenSet = true; m_moreInfo = std::forward<MoreInfoT>(value); }
+    template<typename MoreInfoT = LayoutSections>
+    BasicLayout& WithMoreInfo(MoreInfoT&& value) { SetMoreInfo(std::forward<MoreInfoT>(value)); return *this;}
+    ///@}
+  private:
 
     LayoutSections m_topPanel;
     bool m_topPanelHasBeenSet = false;
+
+    LayoutSections m_moreInfo;
+    bool m_moreInfoHasBeenSet = false;
   };
 
 } // namespace Model

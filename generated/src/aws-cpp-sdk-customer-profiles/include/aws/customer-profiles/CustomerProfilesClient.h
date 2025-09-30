@@ -1128,6 +1128,32 @@ namespace CustomerProfiles
         }
 
         /**
+         * <p>Returns a history record for a specific profile, for a specific
+         * domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileHistoryRecord">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetProfileHistoryRecordOutcome GetProfileHistoryRecord(const Model::GetProfileHistoryRecordRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetProfileHistoryRecord that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetProfileHistoryRecordRequestT = Model::GetProfileHistoryRecordRequest>
+        Model::GetProfileHistoryRecordOutcomeCallable GetProfileHistoryRecordCallable(const GetProfileHistoryRecordRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::GetProfileHistoryRecord, request);
+        }
+
+        /**
+         * An Async wrapper for GetProfileHistoryRecord that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetProfileHistoryRecordRequestT = Model::GetProfileHistoryRecordRequest>
+        void GetProfileHistoryRecordAsync(const GetProfileHistoryRecordRequestT& request, const GetProfileHistoryRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::GetProfileHistoryRecord, request, handler, context);
+        }
+
+        /**
          * <p>Returns the object types for a specific domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileObjectType">AWS
          * API Reference</a></p>
@@ -1698,6 +1724,32 @@ namespace CustomerProfiles
         void ListProfileAttributeValuesAsync(const ListProfileAttributeValuesRequestT& request, const ListProfileAttributeValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CustomerProfilesClient::ListProfileAttributeValues, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of history records for a specific profile, for a specific
+         * domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileHistoryRecords">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListProfileHistoryRecordsOutcome ListProfileHistoryRecords(const Model::ListProfileHistoryRecordsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListProfileHistoryRecords that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListProfileHistoryRecordsRequestT = Model::ListProfileHistoryRecordsRequest>
+        Model::ListProfileHistoryRecordsOutcomeCallable ListProfileHistoryRecordsCallable(const ListProfileHistoryRecordsRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::ListProfileHistoryRecords, request);
+        }
+
+        /**
+         * An Async wrapper for ListProfileHistoryRecords that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListProfileHistoryRecordsRequestT = Model::ListProfileHistoryRecordsRequest>
+        void ListProfileHistoryRecordsAsync(const ListProfileHistoryRecordsRequestT& request, const ListProfileHistoryRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::ListProfileHistoryRecords, request, handler, context);
         }
 
         /**

@@ -1646,6 +1646,7 @@ namespace FSx
          * <code>AutomaticBackupRetentionDays</code> </p> </li> <li> <p>
          * <code>DailyAutomaticBackupStartTime</code> </p> </li> <li> <p>
          * <code>DiskIopsConfiguration</code> </p> </li> <li> <p>
+         * <code>EndpointIpv6AddressRange</code> </p> </li> <li> <p>
          * <code>FsxAdminPassword</code> </p> </li> <li> <p> <code>HAPairs</code> </p>
          * </li> <li> <p> <code>RemoveRouteTableIds</code> </p> </li> <li> <p>
          * <code>StorageCapacity</code> </p> </li> <li> <p> <code>ThroughputCapacity</code>

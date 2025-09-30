@@ -25,15 +25,15 @@ CreateLayoutResult::CreateLayoutResult(const Aws::AmazonWebServiceResult<JsonVal
 CreateLayoutResult& CreateLayoutResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("layoutArn"))
-  {
-    m_layoutArn = jsonValue.GetString("layoutArn");
-    m_layoutArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("layoutId"))
   {
     m_layoutId = jsonValue.GetString("layoutId");
     m_layoutIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("layoutArn"))
+  {
+    m_layoutArn = jsonValue.GetString("layoutArn");
+    m_layoutArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

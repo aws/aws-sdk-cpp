@@ -501,13 +501,17 @@ namespace Model
     ///@}
 
     ///@{
-    
-    inline const ServerlessV2ScalingConfiguration& GetServerlessV2ScalingConfiguration() const { return m_serverlessV2ScalingConfiguration; }
-    inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
-    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
-    void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::forward<ServerlessV2ScalingConfigurationT>(value); }
-    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
-    RestoreDBClusterFromS3Request& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { SetServerlessV2ScalingConfiguration(std::forward<ServerlessV2ScalingConfigurationT>(value)); return *this;}
+    /**
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
+     * Values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
+     * <code>aurora</code> </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline const Aws::String& GetStorageType() const { return m_storageType; }
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+    template<typename StorageTypeT = Aws::String>
+    void SetStorageType(StorageTypeT&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::forward<StorageTypeT>(value); }
+    template<typename StorageTypeT = Aws::String>
+    RestoreDBClusterFromS3Request& WithStorageType(StorageTypeT&& value) { SetStorageType(std::forward<StorageTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -528,6 +532,16 @@ namespace Model
     void SetNetworkType(NetworkTypeT&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::forward<NetworkTypeT>(value); }
     template<typename NetworkTypeT = Aws::String>
     RestoreDBClusterFromS3Request& WithNetworkType(NetworkTypeT&& value) { SetNetworkType(std::forward<NetworkTypeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const ServerlessV2ScalingConfiguration& GetServerlessV2ScalingConfiguration() const { return m_serverlessV2ScalingConfiguration; }
+    inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
+    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
+    void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::forward<ServerlessV2ScalingConfigurationT>(value); }
+    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
+    RestoreDBClusterFromS3Request& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { SetServerlessV2ScalingConfiguration(std::forward<ServerlessV2ScalingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -572,20 +586,6 @@ namespace Model
     void SetMasterUserSecretKmsKeyId(MasterUserSecretKmsKeyIdT&& value) { m_masterUserSecretKmsKeyIdHasBeenSet = true; m_masterUserSecretKmsKeyId = std::forward<MasterUserSecretKmsKeyIdT>(value); }
     template<typename MasterUserSecretKmsKeyIdT = Aws::String>
     RestoreDBClusterFromS3Request& WithMasterUserSecretKmsKeyId(MasterUserSecretKmsKeyIdT&& value) { SetMasterUserSecretKmsKeyId(std::forward<MasterUserSecretKmsKeyIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
-     * Values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
-     * <code>aurora</code> </p> <p>Valid for: Aurora DB clusters only</p>
-     */
-    inline const Aws::String& GetStorageType() const { return m_storageType; }
-    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
-    template<typename StorageTypeT = Aws::String>
-    void SetStorageType(StorageTypeT&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::forward<StorageTypeT>(value); }
-    template<typename StorageTypeT = Aws::String>
-    RestoreDBClusterFromS3Request& WithStorageType(StorageTypeT&& value) { SetStorageType(std::forward<StorageTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -714,20 +714,20 @@ namespace Model
     Aws::String m_domainIAMRoleName;
     bool m_domainIAMRoleNameHasBeenSet = false;
 
-    ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
-    bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
+    Aws::String m_storageType;
+    bool m_storageTypeHasBeenSet = false;
 
     Aws::String m_networkType;
     bool m_networkTypeHasBeenSet = false;
+
+    ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
+    bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
 
     bool m_manageMasterUserPassword{false};
     bool m_manageMasterUserPasswordHasBeenSet = false;
 
     Aws::String m_masterUserSecretKmsKeyId;
     bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
-
-    Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet = false;
 
     Aws::String m_engineLifecycleSupport;
     bool m_engineLifecycleSupportHasBeenSet = false;

@@ -145,6 +145,11 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
     ss << "Iops=" << m_iops << "&";
   }
 
+  if(m_storageThroughputHasBeenSet)
+  {
+    ss << "StorageThroughput=" << m_storageThroughput << "&";
+  }
+
   if(m_optionGroupNameHasBeenSet)
   {
     ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
@@ -355,9 +360,9 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
     ss << "EnableCustomerOwnedIp=" << std::boolalpha << m_enableCustomerOwnedIp << "&";
   }
 
-  if(m_customIamInstanceProfileHasBeenSet)
+  if(m_networkTypeHasBeenSet)
   {
-    ss << "CustomIamInstanceProfile=" << StringUtils::URLEncode(m_customIamInstanceProfile.c_str()) << "&";
+    ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
   }
 
   if(m_backupTargetHasBeenSet)
@@ -365,14 +370,19 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
     ss << "BackupTarget=" << StringUtils::URLEncode(m_backupTarget.c_str()) << "&";
   }
 
-  if(m_networkTypeHasBeenSet)
+  if(m_customIamInstanceProfileHasBeenSet)
   {
-    ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
+    ss << "CustomIamInstanceProfile=" << StringUtils::URLEncode(m_customIamInstanceProfile.c_str()) << "&";
   }
 
-  if(m_storageThroughputHasBeenSet)
+  if(m_dBSystemIdHasBeenSet)
   {
-    ss << "StorageThroughput=" << m_storageThroughput << "&";
+    ss << "DBSystemId=" << StringUtils::URLEncode(m_dBSystemId.c_str()) << "&";
+  }
+
+  if(m_cACertificateIdentifierHasBeenSet)
+  {
+    ss << "CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
   }
 
   if(m_manageMasterUserPasswordHasBeenSet)
@@ -385,24 +395,14 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
     ss << "MasterUserSecretKmsKeyId=" << StringUtils::URLEncode(m_masterUserSecretKmsKeyId.c_str()) << "&";
   }
 
-  if(m_cACertificateIdentifierHasBeenSet)
+  if(m_multiTenantHasBeenSet)
   {
-    ss << "CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
-  }
-
-  if(m_dBSystemIdHasBeenSet)
-  {
-    ss << "DBSystemId=" << StringUtils::URLEncode(m_dBSystemId.c_str()) << "&";
+    ss << "MultiTenant=" << std::boolalpha << m_multiTenant << "&";
   }
 
   if(m_dedicatedLogVolumeHasBeenSet)
   {
     ss << "DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
-  }
-
-  if(m_multiTenantHasBeenSet)
-  {
-    ss << "MultiTenant=" << std::boolalpha << m_multiTenant << "&";
   }
 
   if(m_engineLifecycleSupportHasBeenSet)

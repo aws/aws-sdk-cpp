@@ -269,6 +269,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     */
+    inline int GetStorageThroughput() const { return m_storageThroughput; }
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the option group to be used for the restored DB instance.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
      * can't be removed from an option group, and that option group can't be removed
@@ -584,23 +595,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>The instance profile associated with the underlying Amazon EC2 instance of an
-     * RDS Custom DB instance. The instance profile must meet the following
-     * requirements:</p> <ul> <li> <p>The profile must exist in your account.</p> </li>
-     * <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to
-     * assume.</p> </li> <li> <p>The instance profile name and the associated IAM role
-     * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
-     * <p>For the list of permissions required for the IAM role, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting is required for RDS Custom.</p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      */
-    inline const Aws::String& GetCustomIamInstanceProfile() const { return m_customIamInstanceProfile; }
-    inline bool CustomIamInstanceProfileHasBeenSet() const { return m_customIamInstanceProfileHasBeenSet; }
-    template<typename CustomIamInstanceProfileT = Aws::String>
-    void SetCustomIamInstanceProfile(CustomIamInstanceProfileT&& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = std::forward<CustomIamInstanceProfileT>(value); }
-    template<typename CustomIamInstanceProfileT = Aws::String>
-    RestoreDBInstanceFromDBSnapshotRequest& WithCustomIamInstanceProfile(CustomIamInstanceProfileT&& value) { SetCustomIamInstanceProfile(std::forward<CustomIamInstanceProfileT>(value)); return *this;}
+    inline const Aws::String& GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    template<typename NetworkTypeT = Aws::String>
+    void SetNetworkType(NetworkTypeT&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::forward<NetworkTypeT>(value); }
+    template<typename NetworkTypeT = Aws::String>
+    RestoreDBInstanceFromDBSnapshotRequest& WithNetworkType(NetworkTypeT&& value) { SetNetworkType(std::forward<NetworkTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -624,33 +634,37 @@ namespace Model
 
     ///@{
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
-     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
-     * network type is determined by the <code>DBSubnetGroup</code> specified for the
-     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
-     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
-     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
-     * </p>
+     * <p>The instance profile associated with the underlying Amazon EC2 instance of an
+     * RDS Custom DB instance. The instance profile must meet the following
+     * requirements:</p> <ul> <li> <p>The profile must exist in your account.</p> </li>
+     * <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to
+     * assume.</p> </li> <li> <p>The instance profile name and the associated IAM role
+     * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
+     * <p>For the list of permissions required for the IAM role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
-    inline const Aws::String& GetNetworkType() const { return m_networkType; }
-    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
-    template<typename NetworkTypeT = Aws::String>
-    void SetNetworkType(NetworkTypeT&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::forward<NetworkTypeT>(value); }
-    template<typename NetworkTypeT = Aws::String>
-    RestoreDBInstanceFromDBSnapshotRequest& WithNetworkType(NetworkTypeT&& value) { SetNetworkType(std::forward<NetworkTypeT>(value)); return *this;}
+    inline const Aws::String& GetCustomIamInstanceProfile() const { return m_customIamInstanceProfile; }
+    inline bool CustomIamInstanceProfileHasBeenSet() const { return m_customIamInstanceProfileHasBeenSet; }
+    template<typename CustomIamInstanceProfileT = Aws::String>
+    void SetCustomIamInstanceProfile(CustomIamInstanceProfileT&& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = std::forward<CustomIamInstanceProfileT>(value); }
+    template<typename CustomIamInstanceProfileT = Aws::String>
+    RestoreDBInstanceFromDBSnapshotRequest& WithCustomIamInstanceProfile(CustomIamInstanceProfileT&& value) { SetCustomIamInstanceProfile(std::forward<CustomIamInstanceProfileT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
-     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     * <p>The amount of storage (in gibibytes) to allocate initially for the DB
+     * instance. Follow the allocation rules specified in CreateDBInstance.</p> <p>This
+     * setting isn't valid for RDS for SQL Server.</p>  <p>Be sure to allocate
+     * enough storage for your new DB instance so that the restore operation can
+     * succeed. You can also allocate additional storage for future growth.</p> 
      */
-    inline int GetStorageThroughput() const { return m_storageThroughput; }
-    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
-    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
-    inline RestoreDBInstanceFromDBSnapshotRequest& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+    inline int GetAllocatedStorage() const { return m_allocatedStorage; }
+    inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
+    inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
     ///@}
 
     ///@{
@@ -674,20 +688,6 @@ namespace Model
     void SetDBClusterSnapshotIdentifier(DBClusterSnapshotIdentifierT&& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = std::forward<DBClusterSnapshotIdentifierT>(value); }
     template<typename DBClusterSnapshotIdentifierT = Aws::String>
     RestoreDBInstanceFromDBSnapshotRequest& WithDBClusterSnapshotIdentifier(DBClusterSnapshotIdentifierT&& value) { SetDBClusterSnapshotIdentifier(std::forward<DBClusterSnapshotIdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The amount of storage (in gibibytes) to allocate initially for the DB
-     * instance. Follow the allocation rules specified in CreateDBInstance.</p> <p>This
-     * setting isn't valid for RDS for SQL Server.</p>  <p>Be sure to allocate
-     * enough storage for your new DB instance so that the restore operation can
-     * succeed. You can also allocate additional storage for future growth.</p> 
-     */
-    inline int GetAllocatedStorage() const { return m_allocatedStorage; }
-    inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
-    inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
-    inline RestoreDBInstanceFromDBSnapshotRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
     ///@}
 
     ///@{
@@ -830,6 +830,9 @@ namespace Model
     int m_iops{0};
     bool m_iopsHasBeenSet = false;
 
+    int m_storageThroughput{0};
+    bool m_storageThroughputHasBeenSet = false;
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet = false;
 
@@ -890,23 +893,20 @@ namespace Model
     bool m_enableCustomerOwnedIp{false};
     bool m_enableCustomerOwnedIpHasBeenSet = false;
 
-    Aws::String m_customIamInstanceProfile;
-    bool m_customIamInstanceProfileHasBeenSet = false;
+    Aws::String m_networkType;
+    bool m_networkTypeHasBeenSet = false;
 
     Aws::String m_backupTarget;
     bool m_backupTargetHasBeenSet = false;
 
-    Aws::String m_networkType;
-    bool m_networkTypeHasBeenSet = false;
-
-    int m_storageThroughput{0};
-    bool m_storageThroughputHasBeenSet = false;
-
-    Aws::String m_dBClusterSnapshotIdentifier;
-    bool m_dBClusterSnapshotIdentifierHasBeenSet = false;
+    Aws::String m_customIamInstanceProfile;
+    bool m_customIamInstanceProfileHasBeenSet = false;
 
     int m_allocatedStorage{0};
     bool m_allocatedStorageHasBeenSet = false;
+
+    Aws::String m_dBClusterSnapshotIdentifier;
+    bool m_dBClusterSnapshotIdentifierHasBeenSet = false;
 
     bool m_dedicatedLogVolume{false};
     bool m_dedicatedLogVolumeHasBeenSet = false;

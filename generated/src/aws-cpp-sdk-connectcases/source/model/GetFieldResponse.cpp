@@ -25,40 +25,30 @@ GetFieldResponse::GetFieldResponse(JsonView jsonValue)
 
 GetFieldResponse& GetFieldResponse::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("createdTime"))
+  if(jsonValue.ValueExists("fieldId"))
   {
-    m_createdTime = jsonValue.GetString("createdTime");
-    m_createdTimeHasBeenSet = true;
+    m_fieldId = jsonValue.GetString("fieldId");
+    m_fieldIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("deleted"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_deleted = jsonValue.GetBool("deleted");
-    m_deletedHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("fieldArn"))
   {
     m_fieldArn = jsonValue.GetString("fieldArn");
     m_fieldArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("fieldId"))
+  if(jsonValue.ValueExists("description"))
   {
-    m_fieldId = jsonValue.GetString("fieldId");
-    m_fieldIdHasBeenSet = true;
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastModifiedTime"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_lastModifiedTime = jsonValue.GetString("lastModifiedTime");
-    m_lastModifiedTimeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
+    m_type = FieldTypeMapper::GetFieldTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("namespace"))
   {
@@ -74,10 +64,20 @@ GetFieldResponse& GetFieldResponse::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("deleted"))
   {
-    m_type = FieldTypeMapper::GetFieldTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+    m_deleted = jsonValue.GetBool("deleted");
+    m_deletedHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdTime"))
+  {
+    m_createdTime = jsonValue.GetString("createdTime");
+    m_createdTimeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetString("lastModifiedTime");
+    m_lastModifiedTimeHasBeenSet = true;
   }
   return *this;
 }
@@ -86,20 +86,15 @@ JsonValue GetFieldResponse::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_createdTimeHasBeenSet)
+  if(m_fieldIdHasBeenSet)
   {
-   payload.WithString("createdTime", m_createdTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_deletedHasBeenSet)
-  {
-   payload.WithBool("deleted", m_deleted);
+   payload.WithString("fieldId", m_fieldId);
 
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("description", m_description);
+   payload.WithString("name", m_name);
 
   }
 
@@ -109,21 +104,15 @@ JsonValue GetFieldResponse::Jsonize() const
 
   }
 
-  if(m_fieldIdHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithString("fieldId", m_fieldId);
+   payload.WithString("description", m_description);
 
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithString("lastModifiedTime", m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+   payload.WithString("type", FieldTypeMapper::GetNameForFieldType(m_type));
   }
 
   if(m_namespaceHasBeenSet)
@@ -142,9 +131,20 @@ JsonValue GetFieldResponse::Jsonize() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_deletedHasBeenSet)
   {
-   payload.WithString("type", FieldTypeMapper::GetNameForFieldType(m_type));
+   payload.WithBool("deleted", m_deleted);
+
+  }
+
+  if(m_createdTimeHasBeenSet)
+  {
+   payload.WithString("createdTime", m_createdTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_lastModifiedTimeHasBeenSet)
+  {
+   payload.WithString("lastModifiedTime", m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

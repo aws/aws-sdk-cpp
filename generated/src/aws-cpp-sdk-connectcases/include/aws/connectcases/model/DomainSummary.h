@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the domain.</p>
-     */
-    inline const Aws::String& GetDomainArn() const { return m_domainArn; }
-    inline bool DomainArnHasBeenSet() const { return m_domainArnHasBeenSet; }
-    template<typename DomainArnT = Aws::String>
-    void SetDomainArn(DomainArnT&& value) { m_domainArnHasBeenSet = true; m_domainArn = std::forward<DomainArnT>(value); }
-    template<typename DomainArnT = Aws::String>
-    DomainSummary& WithDomainArn(DomainArnT&& value) { SetDomainArn(std::forward<DomainArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique identifier of the domain.</p>
      */
     inline const Aws::String& GetDomainId() const { return m_domainId; }
@@ -60,6 +48,18 @@ namespace Model
     void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
     template<typename DomainIdT = Aws::String>
     DomainSummary& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the domain.</p>
+     */
+    inline const Aws::String& GetDomainArn() const { return m_domainArn; }
+    inline bool DomainArnHasBeenSet() const { return m_domainArnHasBeenSet; }
+    template<typename DomainArnT = Aws::String>
+    void SetDomainArn(DomainArnT&& value) { m_domainArnHasBeenSet = true; m_domainArn = std::forward<DomainArnT>(value); }
+    template<typename DomainArnT = Aws::String>
+    DomainSummary& WithDomainArn(DomainArnT&& value) { SetDomainArn(std::forward<DomainArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,11 +75,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_domainArn;
-    bool m_domainArnHasBeenSet = false;
-
     Aws::String m_domainId;
     bool m_domainIdHasBeenSet = false;
+
+    Aws::String m_domainArn;
+    bool m_domainArnHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;

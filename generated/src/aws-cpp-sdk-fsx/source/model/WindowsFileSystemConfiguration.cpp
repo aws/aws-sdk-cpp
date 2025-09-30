@@ -108,6 +108,11 @@ WindowsFileSystemConfiguration& WindowsFileSystemConfiguration::operator =(JsonV
     m_diskIopsConfiguration = jsonValue.GetObject("DiskIopsConfiguration");
     m_diskIopsConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("PreferredFileServerIpv6"))
+  {
+    m_preferredFileServerIpv6 = jsonValue.GetString("PreferredFileServerIpv6");
+    m_preferredFileServerIpv6HasBeenSet = true;
+  }
   return *this;
 }
 
@@ -211,6 +216,12 @@ JsonValue WindowsFileSystemConfiguration::Jsonize() const
   if(m_diskIopsConfigurationHasBeenSet)
   {
    payload.WithObject("DiskIopsConfiguration", m_diskIopsConfiguration.Jsonize());
+
+  }
+
+  if(m_preferredFileServerIpv6HasBeenSet)
+  {
+   payload.WithString("PreferredFileServerIpv6", m_preferredFileServerIpv6);
 
   }
 

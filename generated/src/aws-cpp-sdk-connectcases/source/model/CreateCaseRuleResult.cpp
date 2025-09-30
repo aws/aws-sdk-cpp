@@ -25,15 +25,15 @@ CreateCaseRuleResult::CreateCaseRuleResult(const Aws::AmazonWebServiceResult<Jso
 CreateCaseRuleResult& CreateCaseRuleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("caseRuleArn"))
-  {
-    m_caseRuleArn = jsonValue.GetString("caseRuleArn");
-    m_caseRuleArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("caseRuleId"))
   {
     m_caseRuleId = jsonValue.GetString("caseRuleId");
     m_caseRuleIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("caseRuleArn"))
+  {
+    m_caseRuleArn = jsonValue.GetString("caseRuleArn");
+    m_caseRuleArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

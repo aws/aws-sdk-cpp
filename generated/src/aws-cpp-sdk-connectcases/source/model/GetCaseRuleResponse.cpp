@@ -25,45 +25,45 @@ GetCaseRuleResponse::GetCaseRuleResponse(JsonView jsonValue)
 
 GetCaseRuleResponse& GetCaseRuleResponse::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("caseRuleArn"))
-  {
-    m_caseRuleArn = jsonValue.GetString("caseRuleArn");
-    m_caseRuleArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("caseRuleId"))
   {
     m_caseRuleId = jsonValue.GetString("caseRuleId");
     m_caseRuleIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("createdTime"))
-  {
-    m_createdTime = jsonValue.GetString("createdTime");
-    m_createdTimeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("deleted"))
-  {
-    m_deleted = jsonValue.GetBool("deleted");
-    m_deletedHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("lastModifiedTime"))
-  {
-    m_lastModifiedTime = jsonValue.GetString("lastModifiedTime");
-    m_lastModifiedTimeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("caseRuleArn"))
+  {
+    m_caseRuleArn = jsonValue.GetString("caseRuleArn");
+    m_caseRuleArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("rule"))
   {
     m_rule = jsonValue.GetObject("rule");
     m_ruleHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("deleted"))
+  {
+    m_deleted = jsonValue.GetBool("deleted");
+    m_deletedHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("createdTime"))
+  {
+    m_createdTime = jsonValue.GetString("createdTime");
+    m_createdTimeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetString("lastModifiedTime");
+    m_lastModifiedTimeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("tags"))
   {
@@ -81,26 +81,27 @@ JsonValue GetCaseRuleResponse::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_caseRuleArnHasBeenSet)
-  {
-   payload.WithString("caseRuleArn", m_caseRuleArn);
-
-  }
-
   if(m_caseRuleIdHasBeenSet)
   {
    payload.WithString("caseRuleId", m_caseRuleId);
 
   }
 
-  if(m_createdTimeHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("createdTime", m_createdTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   payload.WithString("name", m_name);
+
   }
 
-  if(m_deletedHasBeenSet)
+  if(m_caseRuleArnHasBeenSet)
   {
-   payload.WithBool("deleted", m_deleted);
+   payload.WithString("caseRuleArn", m_caseRuleArn);
+
+  }
+
+  if(m_ruleHasBeenSet)
+  {
+   payload.WithObject("rule", m_rule.Jsonize());
 
   }
 
@@ -110,21 +111,20 @@ JsonValue GetCaseRuleResponse::Jsonize() const
 
   }
 
+  if(m_deletedHasBeenSet)
+  {
+   payload.WithBool("deleted", m_deleted);
+
+  }
+
+  if(m_createdTimeHasBeenSet)
+  {
+   payload.WithString("createdTime", m_createdTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
   if(m_lastModifiedTimeHasBeenSet)
   {
    payload.WithString("lastModifiedTime", m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
-  }
-
-  if(m_ruleHasBeenSet)
-  {
-   payload.WithObject("rule", m_rule.Jsonize());
-
   }
 
   if(m_tagsHasBeenSet)

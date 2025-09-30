@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     REGISTERING,
     AVAILABLE,
-    UNAVAILABLE
+    UNAVAILABLE,
+    UNUSED
   };
 
 namespace TargetStateMapper

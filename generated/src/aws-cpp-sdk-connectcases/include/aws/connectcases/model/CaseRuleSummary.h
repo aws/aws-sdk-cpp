@@ -44,18 +44,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the case rule. </p>
-     */
-    inline const Aws::String& GetCaseRuleArn() const { return m_caseRuleArn; }
-    inline bool CaseRuleArnHasBeenSet() const { return m_caseRuleArnHasBeenSet; }
-    template<typename CaseRuleArnT = Aws::String>
-    void SetCaseRuleArn(CaseRuleArnT&& value) { m_caseRuleArnHasBeenSet = true; m_caseRuleArn = std::forward<CaseRuleArnT>(value); }
-    template<typename CaseRuleArnT = Aws::String>
-    CaseRuleSummary& WithCaseRuleArn(CaseRuleArnT&& value) { SetCaseRuleArn(std::forward<CaseRuleArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Unique identifier of a case rule.</p>
      */
     inline const Aws::String& GetCaseRuleId() const { return m_caseRuleId; }
@@ -64,18 +52,6 @@ namespace Model
     void SetCaseRuleId(CaseRuleIdT&& value) { m_caseRuleIdHasBeenSet = true; m_caseRuleId = std::forward<CaseRuleIdT>(value); }
     template<typename CaseRuleIdT = Aws::String>
     CaseRuleSummary& WithCaseRuleId(CaseRuleIdT&& value) { SetCaseRuleId(std::forward<CaseRuleIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Description of a case rule.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    CaseRuleSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,6 +68,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) of the case rule. </p>
+     */
+    inline const Aws::String& GetCaseRuleArn() const { return m_caseRuleArn; }
+    inline bool CaseRuleArnHasBeenSet() const { return m_caseRuleArnHasBeenSet; }
+    template<typename CaseRuleArnT = Aws::String>
+    void SetCaseRuleArn(CaseRuleArnT&& value) { m_caseRuleArnHasBeenSet = true; m_caseRuleArn = std::forward<CaseRuleArnT>(value); }
+    template<typename CaseRuleArnT = Aws::String>
+    CaseRuleSummary& WithCaseRuleArn(CaseRuleArnT&& value) { SetCaseRuleArn(std::forward<CaseRuleArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Possible types for a rule.</p>
      */
     inline RuleType GetRuleType() const { return m_ruleType; }
@@ -99,22 +87,34 @@ namespace Model
     inline void SetRuleType(RuleType value) { m_ruleTypeHasBeenSet = true; m_ruleType = value; }
     inline CaseRuleSummary& WithRuleType(RuleType value) { SetRuleType(value); return *this;}
     ///@}
-  private:
 
-    Aws::String m_caseRuleArn;
-    bool m_caseRuleArnHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Description of a case rule.</p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CaseRuleSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_caseRuleId;
     bool m_caseRuleIdHasBeenSet = false;
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
+    Aws::String m_caseRuleArn;
+    bool m_caseRuleArnHasBeenSet = false;
+
     RuleType m_ruleType{RuleType::NOT_SET};
     bool m_ruleTypeHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

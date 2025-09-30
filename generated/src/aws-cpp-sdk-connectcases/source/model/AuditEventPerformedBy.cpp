@@ -25,15 +25,15 @@ AuditEventPerformedBy::AuditEventPerformedBy(JsonView jsonValue)
 
 AuditEventPerformedBy& AuditEventPerformedBy::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("iamPrincipalArn"))
-  {
-    m_iamPrincipalArn = jsonValue.GetString("iamPrincipalArn");
-    m_iamPrincipalArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("user"))
   {
     m_user = jsonValue.GetObject("user");
     m_userHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("iamPrincipalArn"))
+  {
+    m_iamPrincipalArn = jsonValue.GetString("iamPrincipalArn");
+    m_iamPrincipalArnHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue AuditEventPerformedBy::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_iamPrincipalArnHasBeenSet)
-  {
-   payload.WithString("iamPrincipalArn", m_iamPrincipalArn);
-
-  }
-
   if(m_userHasBeenSet)
   {
    payload.WithObject("user", m_user.Jsonize());
+
+  }
+
+  if(m_iamPrincipalArnHasBeenSet)
+  {
+   payload.WithString("iamPrincipalArn", m_iamPrincipalArn);
 
   }
 

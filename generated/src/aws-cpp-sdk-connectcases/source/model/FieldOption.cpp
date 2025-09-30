@@ -25,11 +25,6 @@ FieldOption::FieldOption(JsonView jsonValue)
 
 FieldOption& FieldOption::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("active"))
-  {
-    m_active = jsonValue.GetBool("active");
-    m_activeHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -40,18 +35,17 @@ FieldOption& FieldOption::operator =(JsonView jsonValue)
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("active"))
+  {
+    m_active = jsonValue.GetBool("active");
+    m_activeHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue FieldOption::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_activeHasBeenSet)
-  {
-   payload.WithBool("active", m_active);
-
-  }
 
   if(m_nameHasBeenSet)
   {
@@ -62,6 +56,12 @@ JsonValue FieldOption::Jsonize() const
   if(m_valueHasBeenSet)
   {
    payload.WithString("value", m_value);
+
+  }
+
+  if(m_activeHasBeenSet)
+  {
+   payload.WithBool("active", m_active);
 
   }
 

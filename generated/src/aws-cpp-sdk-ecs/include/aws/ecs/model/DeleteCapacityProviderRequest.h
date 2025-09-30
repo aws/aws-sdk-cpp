@@ -46,10 +46,27 @@ namespace Model
     template<typename CapacityProviderT = Aws::String>
     DeleteCapacityProviderRequest& WithCapacityProvider(CapacityProviderT&& value) { SetCapacityProvider(std::forward<CapacityProviderT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The name of the cluster that contains the capacity provider to delete.
+     * Managed instances capacity providers are cluster-scoped and can only be deleted
+     * from their associated cluster.</p>
+     */
+    inline const Aws::String& GetCluster() const { return m_cluster; }
+    inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
+    template<typename ClusterT = Aws::String>
+    void SetCluster(ClusterT&& value) { m_clusterHasBeenSet = true; m_cluster = std::forward<ClusterT>(value); }
+    template<typename ClusterT = Aws::String>
+    DeleteCapacityProviderRequest& WithCluster(ClusterT&& value) { SetCluster(std::forward<ClusterT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_capacityProvider;
     bool m_capacityProviderHasBeenSet = false;
+
+    Aws::String m_cluster;
+    bool m_clusterHasBeenSet = false;
   };
 
 } // namespace Model

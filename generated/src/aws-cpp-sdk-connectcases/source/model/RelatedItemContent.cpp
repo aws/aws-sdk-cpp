@@ -25,15 +25,15 @@ RelatedItemContent::RelatedItemContent(JsonView jsonValue)
 
 RelatedItemContent& RelatedItemContent::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("comment"))
-  {
-    m_comment = jsonValue.GetObject("comment");
-    m_commentHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("contact"))
   {
     m_contact = jsonValue.GetObject("contact");
     m_contactHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("comment"))
+  {
+    m_comment = jsonValue.GetObject("comment");
+    m_commentHasBeenSet = true;
   }
   if(jsonValue.ValueExists("file"))
   {
@@ -45,6 +45,16 @@ RelatedItemContent& RelatedItemContent::operator =(JsonView jsonValue)
     m_sla = jsonValue.GetObject("sla");
     m_slaHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("connectCase"))
+  {
+    m_connectCase = jsonValue.GetObject("connectCase");
+    m_connectCaseHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("custom"))
+  {
+    m_custom = jsonValue.GetObject("custom");
+    m_customHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -52,15 +62,15 @@ JsonValue RelatedItemContent::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_commentHasBeenSet)
-  {
-   payload.WithObject("comment", m_comment.Jsonize());
-
-  }
-
   if(m_contactHasBeenSet)
   {
    payload.WithObject("contact", m_contact.Jsonize());
+
+  }
+
+  if(m_commentHasBeenSet)
+  {
+   payload.WithObject("comment", m_comment.Jsonize());
 
   }
 
@@ -73,6 +83,18 @@ JsonValue RelatedItemContent::Jsonize() const
   if(m_slaHasBeenSet)
   {
    payload.WithObject("sla", m_sla.Jsonize());
+
+  }
+
+  if(m_connectCaseHasBeenSet)
+  {
+   payload.WithObject("connectCase", m_connectCase.Jsonize());
+
+  }
+
+  if(m_customHasBeenSet)
+  {
+   payload.WithObject("custom", m_custom.Jsonize());
 
   }
 

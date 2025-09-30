@@ -22,6 +22,7 @@
 #include <aws/ds/model/RegionsInfo.h>
 #include <aws/ds/model/OSVersion.h>
 #include <aws/ds/model/HybridSettingsDescription.h>
+#include <aws/ds/model/NetworkType.h>
 #include <utility>
 
 namespace Aws
@@ -112,8 +113,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The alias for the directory. If no alias has been created for the directory,
-     * the alias is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+     * <p>The alias for the directory. If no alias exists, the alias is the directory
+     * identifier, such as <code>d-XXXXXXXXXX</code>.</p>
      */
     inline const Aws::String& GetAlias() const { return m_alias; }
     inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
@@ -126,8 +127,8 @@ namespace Model
     ///@{
     /**
      * <p>The access URL for the directory, such as
-     * <code>http://&lt;alias&gt;.awsapps.com</code>. If no alias has been created for
-     * the directory, <code>&lt;alias&gt;</code> is the directory identifier, such as
+     * <code>http://&lt;alias&gt;.awsapps.com</code>. If no alias exists,
+     * <code>&lt;alias&gt;</code> is the directory identifier, such as
      * <code>d-XXXXXXXXXX</code>.</p>
      */
     inline const Aws::String& GetAccessUrl() const { return m_accessUrl; }
@@ -155,8 +156,7 @@ namespace Model
      * <p>The IP addresses of the DNS servers for the directory. For a Simple AD or
      * Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft
      * AD directory servers. For an AD Connector directory, these are the IP addresses
-     * of the DNS servers or domain controllers in your self-managed directory to which
-     * the AD Connector is connected.</p>
+     * of self-managed directory to which the AD Connector is connected.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDnsIpAddrs() const { return m_dnsIpAddrs; }
     inline bool DnsIpAddrsHasBeenSet() const { return m_dnsIpAddrsHasBeenSet; }
@@ -166,6 +166,24 @@ namespace Model
     DirectoryDescription& WithDnsIpAddrs(DnsIpAddrsT&& value) { SetDnsIpAddrs(std::forward<DnsIpAddrsT>(value)); return *this;}
     template<typename DnsIpAddrsT = Aws::String>
     DirectoryDescription& AddDnsIpAddrs(DnsIpAddrsT&& value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs.emplace_back(std::forward<DnsIpAddrsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The IPv6 addresses of the DNS servers for the directory. For a Simple AD or
+     * Microsoft AD directory, these are the IPv6 addresses of the Simple AD or
+     * Microsoft AD directory servers. For an AD Connector directory, these are the
+     * IPv6 addresses of the DNS servers or domain controllers in your self-managed
+     * directory to which the AD Connector is connected.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDnsIpv6Addrs() const { return m_dnsIpv6Addrs; }
+    inline bool DnsIpv6AddrsHasBeenSet() const { return m_dnsIpv6AddrsHasBeenSet; }
+    template<typename DnsIpv6AddrsT = Aws::Vector<Aws::String>>
+    void SetDnsIpv6Addrs(DnsIpv6AddrsT&& value) { m_dnsIpv6AddrsHasBeenSet = true; m_dnsIpv6Addrs = std::forward<DnsIpv6AddrsT>(value); }
+    template<typename DnsIpv6AddrsT = Aws::Vector<Aws::String>>
+    DirectoryDescription& WithDnsIpv6Addrs(DnsIpv6AddrsT&& value) { SetDnsIpv6Addrs(std::forward<DnsIpv6AddrsT>(value)); return *this;}
+    template<typename DnsIpv6AddrsT = Aws::String>
+    DirectoryDescription& AddDnsIpv6Addrs(DnsIpv6AddrsT&& value) { m_dnsIpv6AddrsHasBeenSet = true; m_dnsIpv6Addrs.emplace_back(std::forward<DnsIpv6AddrsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -218,7 +236,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies when the directory was created.</p>
+     * <p>The date and time when the directory was created.</p>
      */
     inline const Aws::Utils::DateTime& GetLaunchTime() const { return m_launchTime; }
     inline bool LaunchTimeHasBeenSet() const { return m_launchTimeHasBeenSet; }
@@ -230,7 +248,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the stage was last updated.</p>
+     * <p>The date and time when the stage was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetStageLastUpdatedDateTime() const { return m_stageLastUpdatedDateTime; }
     inline bool StageLastUpdatedDateTimeHasBeenSet() const { return m_stageLastUpdatedDateTimeHasBeenSet; }
@@ -253,8 +271,8 @@ namespace Model
     ///@{
     /**
      * <p>A <a>DirectoryVpcSettingsDescription</a> object that contains additional
-     * information about a directory. This member is only present if the directory is a
-     * Simple AD or Managed Microsoft AD directory.</p>
+     * information about a directory. Present only for Simple AD and Managed Microsoft
+     * AD directories.</p>
      */
     inline const DirectoryVpcSettingsDescription& GetVpcSettings() const { return m_vpcSettings; }
     inline bool VpcSettingsHasBeenSet() const { return m_vpcSettingsHasBeenSet; }
@@ -266,9 +284,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A <a>DirectoryConnectSettingsDescription</a> object that contains additional
-     * information about an AD Connector directory. This member is only present if the
-     * directory is an AD Connector directory.</p>
+     * <p> <a>DirectoryConnectSettingsDescription</a> object that contains additional
+     * information about an AD Connector directory. Present only for AD Connector
+     * directories.</p>
      */
     inline const DirectoryConnectSettingsDescription& GetConnectSettings() const { return m_connectSettings; }
     inline bool ConnectSettingsHasBeenSet() const { return m_connectSettingsHasBeenSet; }
@@ -280,8 +298,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
-     * server configured for this directory.</p>
+     * <p>Information about the <a>RadiusSettings</a> object configured for this
+     * directory.</p>
      */
     inline const RadiusSettings& GetRadiusSettings() const { return m_radiusSettings; }
     inline bool RadiusSettingsHasBeenSet() const { return m_radiusSettingsHasBeenSet; }
@@ -315,7 +333,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates if single sign-on is enabled for the directory. For more
+     * <p>Indicates whether single sign-on is enabled for the directory. For more
      * information, see <a>EnableSso</a> and <a>DisableSso</a>.</p>
      */
     inline bool GetSsoEnabled() const { return m_ssoEnabled; }
@@ -383,6 +401,16 @@ namespace Model
     template<typename HybridSettingsT = HybridSettingsDescription>
     DirectoryDescription& WithHybridSettings(HybridSettingsT&& value) { SetHybridSettings(std::forward<HybridSettingsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The network type of the directory.</p>
+     */
+    inline NetworkType GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    inline void SetNetworkType(NetworkType value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline DirectoryDescription& WithNetworkType(NetworkType value) { SetNetworkType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_directoryId;
@@ -411,6 +439,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_dnsIpAddrs;
     bool m_dnsIpAddrsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_dnsIpv6Addrs;
+    bool m_dnsIpv6AddrsHasBeenSet = false;
 
     DirectoryStage m_stage{DirectoryStage::NOT_SET};
     bool m_stageHasBeenSet = false;
@@ -465,6 +496,9 @@ namespace Model
 
     HybridSettingsDescription m_hybridSettings;
     bool m_hybridSettingsHasBeenSet = false;
+
+    NetworkType m_networkType{NetworkType::NOT_SET};
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

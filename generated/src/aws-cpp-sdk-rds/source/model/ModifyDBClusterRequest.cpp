@@ -172,6 +172,16 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const
     ss << "AutoMinorVersionUpgrade=" << std::boolalpha << m_autoMinorVersionUpgrade << "&";
   }
 
+  if(m_networkTypeHasBeenSet)
+  {
+    ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
+  }
+
+  if(m_serverlessV2ScalingConfigurationHasBeenSet)
+  {
+    m_serverlessV2ScalingConfiguration.OutputToStream(ss, "ServerlessV2ScalingConfiguration");
+  }
+
   if(m_monitoringIntervalHasBeenSet)
   {
     ss << "MonitoringInterval=" << m_monitoringInterval << "&";
@@ -202,16 +212,6 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const
     ss << "PerformanceInsightsRetentionPeriod=" << m_performanceInsightsRetentionPeriod << "&";
   }
 
-  if(m_serverlessV2ScalingConfigurationHasBeenSet)
-  {
-    m_serverlessV2ScalingConfiguration.OutputToStream(ss, "ServerlessV2ScalingConfiguration");
-  }
-
-  if(m_networkTypeHasBeenSet)
-  {
-    ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
-  }
-
   if(m_manageMasterUserPasswordHasBeenSet)
   {
     ss << "ManageMasterUserPassword=" << std::boolalpha << m_manageMasterUserPassword << "&";
@@ -220,6 +220,11 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const
   if(m_rotateMasterUserPasswordHasBeenSet)
   {
     ss << "RotateMasterUserPassword=" << std::boolalpha << m_rotateMasterUserPassword << "&";
+  }
+
+  if(m_enableLocalWriteForwardingHasBeenSet)
+  {
+    ss << "EnableLocalWriteForwarding=" << std::boolalpha << m_enableLocalWriteForwarding << "&";
   }
 
   if(m_masterUserSecretKmsKeyIdHasBeenSet)
@@ -235,11 +240,6 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const
   if(m_allowEngineModeChangeHasBeenSet)
   {
     ss << "AllowEngineModeChange=" << std::boolalpha << m_allowEngineModeChange << "&";
-  }
-
-  if(m_enableLocalWriteForwardingHasBeenSet)
-  {
-    ss << "EnableLocalWriteForwarding=" << std::boolalpha << m_enableLocalWriteForwarding << "&";
   }
 
   if(m_awsBackupRecoveryPointArnHasBeenSet)

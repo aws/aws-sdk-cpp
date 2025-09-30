@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/connectcases/model/DomainStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -37,13 +37,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The timestamp when the Cases domain was created.</p>
+     * <p>The unique identifier of the Cases domain. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
-    template<typename CreatedTimeT = Aws::Utils::DateTime>
-    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
-    template<typename CreatedTimeT = Aws::Utils::DateTime>
-    GetDomainResult& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    GetDomainResult& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,13 +59,24 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the Cases domain. </p>
+     * <p>The name of the Cases domain.</p>
      */
-    inline const Aws::String& GetDomainId() const { return m_domainId; }
-    template<typename DomainIdT = Aws::String>
-    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
-    template<typename DomainIdT = Aws::String>
-    GetDomainResult& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetDomainResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The timestamp when the Cases domain was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    GetDomainResult& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,17 +86,6 @@ namespace Model
     inline DomainStatus GetDomainStatus() const { return m_domainStatus; }
     inline void SetDomainStatus(DomainStatus value) { m_domainStatusHasBeenSet = true; m_domainStatus = value; }
     inline GetDomainResult& WithDomainStatus(DomainStatus value) { SetDomainStatus(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the Cases domain.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    GetDomainResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,20 +114,20 @@ namespace Model
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdTime{};
-    bool m_createdTimeHasBeenSet = false;
+    Aws::String m_domainId;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_domainArn;
     bool m_domainArnHasBeenSet = false;
 
-    Aws::String m_domainId;
-    bool m_domainIdHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdTime{};
+    bool m_createdTimeHasBeenSet = false;
 
     DomainStatus m_domainStatus{DomainStatus::NOT_SET};
     bool m_domainStatusHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

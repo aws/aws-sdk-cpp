@@ -9,14 +9,14 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/rds/model/ClusterPendingModifiedValues.h>
 #include <aws/rds/model/ScalingConfigurationInfo.h>
 #include <aws/rds/model/RdsCustomClusterConfiguration.h>
 #include <aws/rds/model/ActivityStreamMode.h>
 #include <aws/rds/model/ActivityStreamStatus.h>
 #include <aws/rds/model/WriteForwardingStatus.h>
-#include <aws/rds/model/ClusterPendingModifiedValues.h>
-#include <aws/rds/model/DatabaseInsightsMode.h>
 #include <aws/rds/model/ServerlessV2ScalingConfigurationInfo.h>
+#include <aws/rds/model/DatabaseInsightsMode.h>
 #include <aws/rds/model/MasterUserSecret.h>
 #include <aws/rds/model/LocalWriteForwardingStatus.h>
 #include <aws/rds/model/LimitlessDatabase.h>
@@ -193,18 +193,6 @@ namespace Model
     void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
     template<typename StatusT = Aws::String>
     DBCluster& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The time when a stopped DB cluster is restarted automatically.</p>
-     */
-    inline const Aws::Utils::DateTime& GetAutomaticRestartTime() const { return m_automaticRestartTime; }
-    inline bool AutomaticRestartTimeHasBeenSet() const { return m_automaticRestartTimeHasBeenSet; }
-    template<typename AutomaticRestartTimeT = Aws::Utils::DateTime>
-    void SetAutomaticRestartTime(AutomaticRestartTimeT&& value) { m_automaticRestartTimeHasBeenSet = true; m_automaticRestartTime = std::forward<AutomaticRestartTimeT>(value); }
-    template<typename AutomaticRestartTimeT = Aws::Utils::DateTime>
-    DBCluster& WithAutomaticRestartTime(AutomaticRestartTimeT&& value) { SetAutomaticRestartTime(std::forward<AutomaticRestartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -649,6 +637,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>Information about pending changes to the DB cluster. This information is
+     * returned only when there are pending changes. Specific changes are identified by
+     * subelements.</p>
+     */
+    inline const ClusterPendingModifiedValues& GetPendingModifiedValues() const { return m_pendingModifiedValues; }
+    inline bool PendingModifiedValuesHasBeenSet() const { return m_pendingModifiedValuesHasBeenSet; }
+    template<typename PendingModifiedValuesT = ClusterPendingModifiedValues>
+    void SetPendingModifiedValues(PendingModifiedValuesT&& value) { m_pendingModifiedValuesHasBeenSet = true; m_pendingModifiedValues = std::forward<PendingModifiedValuesT>(value); }
+    template<typename PendingModifiedValuesT = ClusterPendingModifiedValues>
+    DBCluster& WithPendingModifiedValues(PendingModifiedValuesT&& value) { SetPendingModifiedValues(std::forward<PendingModifiedValuesT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
      * <code>serverless</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
@@ -682,6 +684,102 @@ namespace Model
     void SetRdsCustomClusterConfiguration(RdsCustomClusterConfigurationT&& value) { m_rdsCustomClusterConfigurationHasBeenSet = true; m_rdsCustomClusterConfiguration = std::forward<RdsCustomClusterConfigurationT>(value); }
     template<typename RdsCustomClusterConfigurationT = RdsCustomClusterConfiguration>
     DBCluster& WithRdsCustomClusterConfiguration(RdsCustomClusterConfigurationT&& value) { SetRdsCustomClusterConfiguration(std::forward<RdsCustomClusterConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the compute and memory capacity class of the DB instance.</p>
+     * <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline const Aws::String& GetDBClusterInstanceClass() const { return m_dBClusterInstanceClass; }
+    inline bool DBClusterInstanceClassHasBeenSet() const { return m_dBClusterInstanceClassHasBeenSet; }
+    template<typename DBClusterInstanceClassT = Aws::String>
+    void SetDBClusterInstanceClass(DBClusterInstanceClassT&& value) { m_dBClusterInstanceClassHasBeenSet = true; m_dBClusterInstanceClass = std::forward<DBClusterInstanceClassT>(value); }
+    template<typename DBClusterInstanceClassT = Aws::String>
+    DBCluster& WithDBClusterInstanceClass(DBClusterInstanceClassT&& value) { SetDBClusterInstanceClass(std::forward<DBClusterInstanceClassT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The storage type associated with the DB cluster.</p>
+     */
+    inline const Aws::String& GetStorageType() const { return m_storageType; }
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+    template<typename StorageTypeT = Aws::String>
+    void SetStorageType(StorageTypeT&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::forward<StorageTypeT>(value); }
+    template<typename StorageTypeT = Aws::String>
+    DBCluster& WithStorageType(StorageTypeT&& value) { SetStorageType(std::forward<StorageTypeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Provisioned IOPS (I/O operations per second) value.</p> <p>This setting
+     * is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline int GetIops() const { return m_iops; }
+    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
+    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
+    inline DBCluster& WithIops(int value) { SetIops(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The storage throughput for the DB cluster. The throughput is automatically
+     * set based on the IOPS that you provision, and is not configurable.</p> <p>This
+     * setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline int GetStorageThroughput() const { return m_storageThroughput; }
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+    inline DBCluster& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The next time you can modify the DB cluster to use the
+     * <code>aurora-iopt1</code> storage type.</p> <p>This setting is only for Aurora
+     * DB clusters.</p>
+     */
+    inline const Aws::Utils::DateTime& GetIOOptimizedNextAllowedModificationTime() const { return m_iOOptimizedNextAllowedModificationTime; }
+    inline bool IOOptimizedNextAllowedModificationTimeHasBeenSet() const { return m_iOOptimizedNextAllowedModificationTimeHasBeenSet; }
+    template<typename IOOptimizedNextAllowedModificationTimeT = Aws::Utils::DateTime>
+    void SetIOOptimizedNextAllowedModificationTime(IOOptimizedNextAllowedModificationTimeT&& value) { m_iOOptimizedNextAllowedModificationTimeHasBeenSet = true; m_iOOptimizedNextAllowedModificationTime = std::forward<IOOptimizedNextAllowedModificationTimeT>(value); }
+    template<typename IOOptimizedNextAllowedModificationTimeT = Aws::Utils::DateTime>
+    DBCluster& WithIOOptimizedNextAllowedModificationTime(IOOptimizedNextAllowedModificationTimeT&& value) { SetIOOptimizedNextAllowedModificationTime(std::forward<IOOptimizedNextAllowedModificationTimeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether the DB cluster is publicly accessible.</p> <p>When the DB
+     * cluster is publicly accessible and you connect from outside of the DB cluster's
+     * virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to
+     * the public IP address. When you connect from within the same VPC as the DB
+     * cluster, the endpoint resolves to the private IP address. Access to the DB
+     * cluster is ultimately controlled by the security group it uses. That public
+     * access isn't permitted if the security group assigned to the DB cluster doesn't
+     * permit it.</p> <p>When the DB cluster isn't publicly accessible, it is an
+     * internal DB cluster with a DNS name that resolves to a private IP address.</p>
+     * <p>For more information, see <a>CreateDBCluster</a>.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline bool GetPubliclyAccessible() const { return m_publiclyAccessible; }
+    inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
+    inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
+    inline DBCluster& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether minor version patches are applied automatically.</p>
+     * <p>This setting is for Aurora DB clusters and Multi-AZ DB clusters.</p> <p>For
+     * more information about automatic minor version upgrades, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically
+     * upgrading the minor engine version</a>.</p>
+     */
+    inline bool GetAutoMinorVersionUpgrade() const { return m_autoMinorVersionUpgrade; }
+    inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
+    inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
+    inline DBCluster& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
     ///@}
 
     ///@{
@@ -848,86 +946,58 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about pending changes to the DB cluster. This information is
-     * returned only when there are pending changes. Specific changes are identified by
-     * subelements.</p>
+     * <p>The network type of the DB instance.</p> <p>The network type is determined by
+     * the <code>DBSubnetGroup</code> specified for the DB cluster. A
+     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
+     * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>This setting is only for Aurora DB clusters.</p> <p>Valid Values:
+     * <code>IPV4 | DUAL</code> </p>
      */
-    inline const ClusterPendingModifiedValues& GetPendingModifiedValues() const { return m_pendingModifiedValues; }
-    inline bool PendingModifiedValuesHasBeenSet() const { return m_pendingModifiedValuesHasBeenSet; }
-    template<typename PendingModifiedValuesT = ClusterPendingModifiedValues>
-    void SetPendingModifiedValues(PendingModifiedValuesT&& value) { m_pendingModifiedValuesHasBeenSet = true; m_pendingModifiedValues = std::forward<PendingModifiedValuesT>(value); }
-    template<typename PendingModifiedValuesT = ClusterPendingModifiedValues>
-    DBCluster& WithPendingModifiedValues(PendingModifiedValuesT&& value) { SetPendingModifiedValues(std::forward<PendingModifiedValuesT>(value)); return *this;}
+    inline const Aws::String& GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    template<typename NetworkTypeT = Aws::String>
+    void SetNetworkType(NetworkTypeT&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::forward<NetworkTypeT>(value); }
+    template<typename NetworkTypeT = Aws::String>
+    DBCluster& WithNetworkType(NetworkTypeT&& value) { SetNetworkType(std::forward<NetworkTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The name of the compute and memory capacity class of the DB instance.</p>
-     * <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     * <p>The time when a stopped DB cluster is restarted automatically.</p>
      */
-    inline const Aws::String& GetDBClusterInstanceClass() const { return m_dBClusterInstanceClass; }
-    inline bool DBClusterInstanceClassHasBeenSet() const { return m_dBClusterInstanceClassHasBeenSet; }
-    template<typename DBClusterInstanceClassT = Aws::String>
-    void SetDBClusterInstanceClass(DBClusterInstanceClassT&& value) { m_dBClusterInstanceClassHasBeenSet = true; m_dBClusterInstanceClass = std::forward<DBClusterInstanceClassT>(value); }
-    template<typename DBClusterInstanceClassT = Aws::String>
-    DBCluster& WithDBClusterInstanceClass(DBClusterInstanceClassT&& value) { SetDBClusterInstanceClass(std::forward<DBClusterInstanceClassT>(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetAutomaticRestartTime() const { return m_automaticRestartTime; }
+    inline bool AutomaticRestartTimeHasBeenSet() const { return m_automaticRestartTimeHasBeenSet; }
+    template<typename AutomaticRestartTimeT = Aws::Utils::DateTime>
+    void SetAutomaticRestartTime(AutomaticRestartTimeT&& value) { m_automaticRestartTimeHasBeenSet = true; m_automaticRestartTime = std::forward<AutomaticRestartTimeT>(value); }
+    template<typename AutomaticRestartTimeT = Aws::Utils::DateTime>
+    DBCluster& WithAutomaticRestartTime(AutomaticRestartTimeT&& value) { SetAutomaticRestartTime(std::forward<AutomaticRestartTimeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const ServerlessV2ScalingConfigurationInfo& GetServerlessV2ScalingConfiguration() const { return m_serverlessV2ScalingConfiguration; }
+    inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
+    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfigurationInfo>
+    void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::forward<ServerlessV2ScalingConfigurationT>(value); }
+    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfigurationInfo>
+    DBCluster& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { SetServerlessV2ScalingConfiguration(std::forward<ServerlessV2ScalingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The storage type associated with the DB cluster.</p>
+     * <p>The version of the Aurora Serverless V2 platform used by the DB cluster. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using
+     * Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
-    inline const Aws::String& GetStorageType() const { return m_storageType; }
-    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
-    template<typename StorageTypeT = Aws::String>
-    void SetStorageType(StorageTypeT&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::forward<StorageTypeT>(value); }
-    template<typename StorageTypeT = Aws::String>
-    DBCluster& WithStorageType(StorageTypeT&& value) { SetStorageType(std::forward<StorageTypeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Provisioned IOPS (I/O operations per second) value.</p> <p>This setting
-     * is only for non-Aurora Multi-AZ DB clusters.</p>
-     */
-    inline int GetIops() const { return m_iops; }
-    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
-    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
-    inline DBCluster& WithIops(int value) { SetIops(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Indicates whether the DB cluster is publicly accessible.</p> <p>When the DB
-     * cluster is publicly accessible and you connect from outside of the DB cluster's
-     * virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to
-     * the public IP address. When you connect from within the same VPC as the DB
-     * cluster, the endpoint resolves to the private IP address. Access to the DB
-     * cluster is ultimately controlled by the security group it uses. That public
-     * access isn't permitted if the security group assigned to the DB cluster doesn't
-     * permit it.</p> <p>When the DB cluster isn't publicly accessible, it is an
-     * internal DB cluster with a DNS name that resolves to a private IP address.</p>
-     * <p>For more information, see <a>CreateDBCluster</a>.</p> <p>This setting is only
-     * for non-Aurora Multi-AZ DB clusters.</p>
-     */
-    inline bool GetPubliclyAccessible() const { return m_publiclyAccessible; }
-    inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
-    inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
-    inline DBCluster& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Indicates whether minor version patches are applied automatically.</p>
-     * <p>This setting is for Aurora DB clusters and Multi-AZ DB clusters.</p> <p>For
-     * more information about automatic minor version upgrades, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically
-     * upgrading the minor engine version</a>.</p>
-     */
-    inline bool GetAutoMinorVersionUpgrade() const { return m_autoMinorVersionUpgrade; }
-    inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
-    inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
-    inline DBCluster& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
+    inline const Aws::String& GetServerlessV2PlatformVersion() const { return m_serverlessV2PlatformVersion; }
+    inline bool ServerlessV2PlatformVersionHasBeenSet() const { return m_serverlessV2PlatformVersionHasBeenSet; }
+    template<typename ServerlessV2PlatformVersionT = Aws::String>
+    void SetServerlessV2PlatformVersion(ServerlessV2PlatformVersionT&& value) { m_serverlessV2PlatformVersionHasBeenSet = true; m_serverlessV2PlatformVersion = std::forward<ServerlessV2PlatformVersionT>(value); }
+    template<typename ServerlessV2PlatformVersionT = Aws::String>
+    DBCluster& WithServerlessV2PlatformVersion(ServerlessV2PlatformVersionT&& value) { SetServerlessV2PlatformVersion(std::forward<ServerlessV2PlatformVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -1009,50 +1079,6 @@ namespace Model
     ///@}
 
     ///@{
-    
-    inline const ServerlessV2ScalingConfigurationInfo& GetServerlessV2ScalingConfiguration() const { return m_serverlessV2ScalingConfiguration; }
-    inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
-    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfigurationInfo>
-    void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::forward<ServerlessV2ScalingConfigurationT>(value); }
-    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfigurationInfo>
-    DBCluster& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { SetServerlessV2ScalingConfiguration(std::forward<ServerlessV2ScalingConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The version of the Aurora Serverless V2 platform used by the DB cluster. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using
-     * Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-     */
-    inline const Aws::String& GetServerlessV2PlatformVersion() const { return m_serverlessV2PlatformVersion; }
-    inline bool ServerlessV2PlatformVersionHasBeenSet() const { return m_serverlessV2PlatformVersionHasBeenSet; }
-    template<typename ServerlessV2PlatformVersionT = Aws::String>
-    void SetServerlessV2PlatformVersion(ServerlessV2PlatformVersionT&& value) { m_serverlessV2PlatformVersionHasBeenSet = true; m_serverlessV2PlatformVersion = std::forward<ServerlessV2PlatformVersionT>(value); }
-    template<typename ServerlessV2PlatformVersionT = Aws::String>
-    DBCluster& WithServerlessV2PlatformVersion(ServerlessV2PlatformVersionT&& value) { SetServerlessV2PlatformVersion(std::forward<ServerlessV2PlatformVersionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The network type of the DB instance.</p> <p>The network type is determined by
-     * the <code>DBSubnetGroup</code> specified for the DB cluster. A
-     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
-     * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
-     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
-     * </p> <p>This setting is only for Aurora DB clusters.</p> <p>Valid Values:
-     * <code>IPV4 | DUAL</code> </p>
-     */
-    inline const Aws::String& GetNetworkType() const { return m_networkType; }
-    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
-    template<typename NetworkTypeT = Aws::String>
-    void SetNetworkType(NetworkTypeT&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::forward<NetworkTypeT>(value); }
-    template<typename NetworkTypeT = Aws::String>
-    DBCluster& WithNetworkType(NetworkTypeT&& value) { SetNetworkType(std::forward<NetworkTypeT>(value)); return *this;}
-    ///@}
-
-    ///@{
     /**
      * <p>Reserved for future use.</p>
      */
@@ -1081,20 +1107,6 @@ namespace Model
     void SetMasterUserSecret(MasterUserSecretT&& value) { m_masterUserSecretHasBeenSet = true; m_masterUserSecret = std::forward<MasterUserSecretT>(value); }
     template<typename MasterUserSecretT = MasterUserSecret>
     DBCluster& WithMasterUserSecret(MasterUserSecretT&& value) { SetMasterUserSecret(std::forward<MasterUserSecretT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The next time you can modify the DB cluster to use the
-     * <code>aurora-iopt1</code> storage type.</p> <p>This setting is only for Aurora
-     * DB clusters.</p>
-     */
-    inline const Aws::Utils::DateTime& GetIOOptimizedNextAllowedModificationTime() const { return m_iOOptimizedNextAllowedModificationTime; }
-    inline bool IOOptimizedNextAllowedModificationTimeHasBeenSet() const { return m_iOOptimizedNextAllowedModificationTimeHasBeenSet; }
-    template<typename IOOptimizedNextAllowedModificationTimeT = Aws::Utils::DateTime>
-    void SetIOOptimizedNextAllowedModificationTime(IOOptimizedNextAllowedModificationTimeT&& value) { m_iOOptimizedNextAllowedModificationTimeHasBeenSet = true; m_iOOptimizedNextAllowedModificationTime = std::forward<IOOptimizedNextAllowedModificationTimeT>(value); }
-    template<typename IOOptimizedNextAllowedModificationTimeT = Aws::Utils::DateTime>
-    DBCluster& WithIOOptimizedNextAllowedModificationTime(IOOptimizedNextAllowedModificationTimeT&& value) { SetIOOptimizedNextAllowedModificationTime(std::forward<IOOptimizedNextAllowedModificationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -1131,18 +1143,6 @@ namespace Model
     void SetLimitlessDatabase(LimitlessDatabaseT&& value) { m_limitlessDatabaseHasBeenSet = true; m_limitlessDatabase = std::forward<LimitlessDatabaseT>(value); }
     template<typename LimitlessDatabaseT = LimitlessDatabase>
     DBCluster& WithLimitlessDatabase(LimitlessDatabaseT&& value) { SetLimitlessDatabase(std::forward<LimitlessDatabaseT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The storage throughput for the DB cluster. The throughput is automatically
-     * set based on the IOPS that you provision, and is not configurable.</p> <p>This
-     * setting is only for non-Aurora Multi-AZ DB clusters.</p>
-     */
-    inline int GetStorageThroughput() const { return m_storageThroughput; }
-    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
-    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
-    inline DBCluster& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
     ///@}
 
     ///@{
@@ -1208,9 +1208,6 @@ namespace Model
 
     Aws::String m_status;
     bool m_statusHasBeenSet = false;
-
-    Aws::Utils::DateTime m_automaticRestartTime{};
-    bool m_automaticRestartTimeHasBeenSet = false;
 
     Aws::String m_percentProgress;
     bool m_percentProgressHasBeenSet = false;
@@ -1311,6 +1308,9 @@ namespace Model
     int m_capacity{0};
     bool m_capacityHasBeenSet = false;
 
+    ClusterPendingModifiedValues m_pendingModifiedValues;
+    bool m_pendingModifiedValuesHasBeenSet = false;
+
     Aws::String m_engineMode;
     bool m_engineModeHasBeenSet = false;
 
@@ -1319,6 +1319,27 @@ namespace Model
 
     RdsCustomClusterConfiguration m_rdsCustomClusterConfiguration;
     bool m_rdsCustomClusterConfigurationHasBeenSet = false;
+
+    Aws::String m_dBClusterInstanceClass;
+    bool m_dBClusterInstanceClassHasBeenSet = false;
+
+    Aws::String m_storageType;
+    bool m_storageTypeHasBeenSet = false;
+
+    int m_iops{0};
+    bool m_iopsHasBeenSet = false;
+
+    int m_storageThroughput{0};
+    bool m_storageThroughputHasBeenSet = false;
+
+    Aws::Utils::DateTime m_iOOptimizedNextAllowedModificationTime{};
+    bool m_iOOptimizedNextAllowedModificationTimeHasBeenSet = false;
+
+    bool m_publiclyAccessible{false};
+    bool m_publiclyAccessibleHasBeenSet = false;
+
+    bool m_autoMinorVersionUpgrade{false};
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     bool m_deletionProtection{false};
     bool m_deletionProtectionHasBeenSet = false;
@@ -1359,23 +1380,17 @@ namespace Model
     bool m_globalWriteForwardingRequested{false};
     bool m_globalWriteForwardingRequestedHasBeenSet = false;
 
-    ClusterPendingModifiedValues m_pendingModifiedValues;
-    bool m_pendingModifiedValuesHasBeenSet = false;
+    Aws::String m_networkType;
+    bool m_networkTypeHasBeenSet = false;
 
-    Aws::String m_dBClusterInstanceClass;
-    bool m_dBClusterInstanceClassHasBeenSet = false;
+    Aws::Utils::DateTime m_automaticRestartTime{};
+    bool m_automaticRestartTimeHasBeenSet = false;
 
-    Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet = false;
+    ServerlessV2ScalingConfigurationInfo m_serverlessV2ScalingConfiguration;
+    bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
 
-    int m_iops{0};
-    bool m_iopsHasBeenSet = false;
-
-    bool m_publiclyAccessible{false};
-    bool m_publiclyAccessibleHasBeenSet = false;
-
-    bool m_autoMinorVersionUpgrade{false};
-    bool m_autoMinorVersionUpgradeHasBeenSet = false;
+    Aws::String m_serverlessV2PlatformVersion;
+    bool m_serverlessV2PlatformVersionHasBeenSet = false;
 
     int m_monitoringInterval{0};
     bool m_monitoringIntervalHasBeenSet = false;
@@ -1395,23 +1410,11 @@ namespace Model
     int m_performanceInsightsRetentionPeriod{0};
     bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
 
-    ServerlessV2ScalingConfigurationInfo m_serverlessV2ScalingConfiguration;
-    bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
-
-    Aws::String m_serverlessV2PlatformVersion;
-    bool m_serverlessV2PlatformVersionHasBeenSet = false;
-
-    Aws::String m_networkType;
-    bool m_networkTypeHasBeenSet = false;
-
     Aws::String m_dBSystemId;
     bool m_dBSystemIdHasBeenSet = false;
 
     MasterUserSecret m_masterUserSecret;
     bool m_masterUserSecretHasBeenSet = false;
-
-    Aws::Utils::DateTime m_iOOptimizedNextAllowedModificationTime{};
-    bool m_iOOptimizedNextAllowedModificationTimeHasBeenSet = false;
 
     LocalWriteForwardingStatus m_localWriteForwardingStatus{LocalWriteForwardingStatus::NOT_SET};
     bool m_localWriteForwardingStatusHasBeenSet = false;
@@ -1421,9 +1424,6 @@ namespace Model
 
     LimitlessDatabase m_limitlessDatabase;
     bool m_limitlessDatabaseHasBeenSet = false;
-
-    int m_storageThroughput{0};
-    bool m_storageThroughputHasBeenSet = false;
 
     ClusterScalabilityType m_clusterScalabilityType{ClusterScalabilityType::NOT_SET};
     bool m_clusterScalabilityTypeHasBeenSet = false;

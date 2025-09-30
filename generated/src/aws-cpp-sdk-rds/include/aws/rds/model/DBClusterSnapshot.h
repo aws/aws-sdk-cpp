@@ -315,18 +315,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Reserved for future use.</p>
-     */
-    inline const Aws::String& GetDBSystemId() const { return m_dBSystemId; }
-    inline bool DBSystemIdHasBeenSet() const { return m_dBSystemIdHasBeenSet; }
-    template<typename DBSystemIdT = Aws::String>
-    void SetDBSystemId(DBSystemIdT&& value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId = std::forward<DBSystemIdT>(value); }
-    template<typename DBSystemIdT = Aws::String>
-    DBClusterSnapshot& WithDBSystemId(DBSystemIdT&& value) { SetDBSystemId(std::forward<DBSystemIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The storage type associated with the DB cluster snapshot.</p> <p>This setting
      * is only for Aurora DB clusters.</p>
      */
@@ -336,6 +324,19 @@ namespace Model
     void SetStorageType(StorageTypeT&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::forward<StorageTypeT>(value); }
     template<typename StorageTypeT = Aws::String>
     DBClusterSnapshot& WithStorageType(StorageTypeT&& value) { SetStorageType(std::forward<StorageTypeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The storage throughput for the DB cluster snapshot. The throughput is
+     * automatically set based on the IOPS that you provision, and is not
+     * configurable.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline int GetStorageThroughput() const { return m_storageThroughput; }
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+    inline DBClusterSnapshot& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
     ///@}
 
     ///@{
@@ -353,15 +354,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The storage throughput for the DB cluster snapshot. The throughput is
-     * automatically set based on the IOPS that you provision, and is not
-     * configurable.</p> <p>This setting is only for non-Aurora Multi-AZ DB
-     * clusters.</p>
+     * <p>Reserved for future use.</p>
      */
-    inline int GetStorageThroughput() const { return m_storageThroughput; }
-    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
-    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
-    inline DBClusterSnapshot& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+    inline const Aws::String& GetDBSystemId() const { return m_dBSystemId; }
+    inline bool DBSystemIdHasBeenSet() const { return m_dBSystemIdHasBeenSet; }
+    template<typename DBSystemIdT = Aws::String>
+    void SetDBSystemId(DBSystemIdT&& value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId = std::forward<DBSystemIdT>(value); }
+    template<typename DBSystemIdT = Aws::String>
+    DBClusterSnapshot& WithDBSystemId(DBSystemIdT&& value) { SetDBSystemId(std::forward<DBSystemIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -431,17 +431,17 @@ namespace Model
     Aws::Vector<Tag> m_tagList;
     bool m_tagListHasBeenSet = false;
 
-    Aws::String m_dBSystemId;
-    bool m_dBSystemIdHasBeenSet = false;
-
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet = false;
+
+    int m_storageThroughput{0};
+    bool m_storageThroughputHasBeenSet = false;
 
     Aws::String m_dbClusterResourceId;
     bool m_dbClusterResourceIdHasBeenSet = false;
 
-    int m_storageThroughput{0};
-    bool m_storageThroughputHasBeenSet = false;
+    Aws::String m_dBSystemId;
+    bool m_dBSystemIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,6 +34,15 @@ RadiusSettings& RadiusSettings::operator =(JsonView jsonValue)
     }
     m_radiusServersHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("RadiusServersIpv6"))
+  {
+    Aws::Utils::Array<JsonView> radiusServersIpv6JsonList = jsonValue.GetArray("RadiusServersIpv6");
+    for(unsigned radiusServersIpv6Index = 0; radiusServersIpv6Index < radiusServersIpv6JsonList.GetLength(); ++radiusServersIpv6Index)
+    {
+      m_radiusServersIpv6.push_back(radiusServersIpv6JsonList[radiusServersIpv6Index].AsString());
+    }
+    m_radiusServersIpv6HasBeenSet = true;
+  }
   if(jsonValue.ValueExists("RadiusPort"))
   {
     m_radiusPort = jsonValue.GetInteger("RadiusPort");
@@ -84,6 +93,17 @@ JsonValue RadiusSettings::Jsonize() const
      radiusServersJsonList[radiusServersIndex].AsString(m_radiusServers[radiusServersIndex]);
    }
    payload.WithArray("RadiusServers", std::move(radiusServersJsonList));
+
+  }
+
+  if(m_radiusServersIpv6HasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> radiusServersIpv6JsonList(m_radiusServersIpv6.size());
+   for(unsigned radiusServersIpv6Index = 0; radiusServersIpv6Index < radiusServersIpv6JsonList.GetLength(); ++radiusServersIpv6Index)
+   {
+     radiusServersIpv6JsonList[radiusServersIpv6Index].AsString(m_radiusServersIpv6[radiusServersIpv6Index]);
+   }
+   payload.WithArray("RadiusServersIpv6", std::move(radiusServersIpv6JsonList));
 
   }
 

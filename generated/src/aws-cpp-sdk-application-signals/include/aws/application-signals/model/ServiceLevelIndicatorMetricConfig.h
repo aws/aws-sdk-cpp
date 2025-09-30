@@ -102,6 +102,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the CloudWatch metric to use for the SLO, when using a custom
+     * metric rather than Application Signals standard metrics.</p>
+     */
+    inline const Aws::String& GetMetricName() const { return m_metricName; }
+    inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
+    template<typename MetricNameT = Aws::String>
+    void SetMetricName(MetricNameT&& value) { m_metricNameHasBeenSet = true; m_metricName = std::forward<MetricNameT>(value); }
+    template<typename MetricNameT = Aws::String>
+    ServiceLevelIndicatorMetricConfig& WithMetricName(MetricNameT&& value) { SetMetricName(std::forward<MetricNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The statistic to use for comparison to the threshold. It can be any
      * CloudWatch statistic or extended statistic. For more information about
      * statistics, see <a
@@ -166,6 +179,9 @@ namespace Model
 
     ServiceLevelIndicatorMetricType m_metricType{ServiceLevelIndicatorMetricType::NOT_SET};
     bool m_metricTypeHasBeenSet = false;
+
+    Aws::String m_metricName;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_statistic;
     bool m_statisticHasBeenSet = false;

@@ -91,7 +91,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of the Availability Zones that the directory is in.</p>
+     * <p>The Availability Zones that the directory is in.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const { return m_availabilityZones; }
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
@@ -116,6 +116,20 @@ namespace Model
     template<typename ConnectIpsT = Aws::String>
     DirectoryConnectSettingsDescription& AddConnectIps(ConnectIpsT&& value) { m_connectIpsHasBeenSet = true; m_connectIps.emplace_back(std::forward<ConnectIpsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The IPv6 addresses of the AD Connector servers.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetConnectIpsV6() const { return m_connectIpsV6; }
+    inline bool ConnectIpsV6HasBeenSet() const { return m_connectIpsV6HasBeenSet; }
+    template<typename ConnectIpsV6T = Aws::Vector<Aws::String>>
+    void SetConnectIpsV6(ConnectIpsV6T&& value) { m_connectIpsV6HasBeenSet = true; m_connectIpsV6 = std::forward<ConnectIpsV6T>(value); }
+    template<typename ConnectIpsV6T = Aws::Vector<Aws::String>>
+    DirectoryConnectSettingsDescription& WithConnectIpsV6(ConnectIpsV6T&& value) { SetConnectIpsV6(std::forward<ConnectIpsV6T>(value)); return *this;}
+    template<typename ConnectIpsV6T = Aws::String>
+    DirectoryConnectSettingsDescription& AddConnectIpsV6(ConnectIpsV6T&& value) { m_connectIpsV6HasBeenSet = true; m_connectIpsV6.emplace_back(std::forward<ConnectIpsV6T>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_vpcId;
@@ -135,6 +149,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_connectIps;
     bool m_connectIpsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_connectIpsV6;
+    bool m_connectIpsV6HasBeenSet = false;
   };
 
 } // namespace Model

@@ -54,6 +54,11 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
     ss << "Iops=" << m_iops << "&";
   }
 
+  if(m_storageThroughputHasBeenSet)
+  {
+    ss << "StorageThroughput=" << m_storageThroughput << "&";
+  }
+
   if(m_optionGroupNameHasBeenSet)
   {
     ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
@@ -257,14 +262,9 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
     ss << "ReplicaMode=" << StringUtils::URLEncode(ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode)) << "&";
   }
 
-  if(m_maxAllocatedStorageHasBeenSet)
+  if(m_enableCustomerOwnedIpHasBeenSet)
   {
-    ss << "MaxAllocatedStorage=" << m_maxAllocatedStorage << "&";
-  }
-
-  if(m_customIamInstanceProfileHasBeenSet)
-  {
-    ss << "CustomIamInstanceProfile=" << StringUtils::URLEncode(m_customIamInstanceProfile.c_str()) << "&";
+    ss << "EnableCustomerOwnedIp=" << std::boolalpha << m_enableCustomerOwnedIp << "&";
   }
 
   if(m_networkTypeHasBeenSet)
@@ -272,19 +272,19 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
     ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
   }
 
-  if(m_storageThroughputHasBeenSet)
+  if(m_maxAllocatedStorageHasBeenSet)
   {
-    ss << "StorageThroughput=" << m_storageThroughput << "&";
-  }
-
-  if(m_enableCustomerOwnedIpHasBeenSet)
-  {
-    ss << "EnableCustomerOwnedIp=" << std::boolalpha << m_enableCustomerOwnedIp << "&";
+    ss << "MaxAllocatedStorage=" << m_maxAllocatedStorage << "&";
   }
 
   if(m_backupTargetHasBeenSet)
   {
     ss << "BackupTarget=" << StringUtils::URLEncode(m_backupTarget.c_str()) << "&";
+  }
+
+  if(m_customIamInstanceProfileHasBeenSet)
+  {
+    ss << "CustomIamInstanceProfile=" << StringUtils::URLEncode(m_customIamInstanceProfile.c_str()) << "&";
   }
 
   if(m_allocatedStorageHasBeenSet)

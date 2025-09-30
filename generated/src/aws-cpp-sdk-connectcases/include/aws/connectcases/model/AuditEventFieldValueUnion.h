@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
-#include <aws/connectcases/model/EmptyFieldValue.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/connectcases/model/EmptyFieldValue.h>
 #include <utility>
 
 namespace Aws
@@ -40,13 +40,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>Can be either null, or have a Boolean value type. Only one value can be
+     * <p>Can be either null, or have a String value type. Only one value can be
      * provided.</p>
      */
-    inline bool GetBooleanValue() const { return m_booleanValue; }
-    inline bool BooleanValueHasBeenSet() const { return m_booleanValueHasBeenSet; }
-    inline void SetBooleanValue(bool value) { m_booleanValueHasBeenSet = true; m_booleanValue = value; }
-    inline AuditEventFieldValueUnion& WithBooleanValue(bool value) { SetBooleanValue(value); return *this;}
+    inline const Aws::String& GetStringValue() const { return m_stringValue; }
+    inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
+    template<typename StringValueT = Aws::String>
+    void SetStringValue(StringValueT&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::forward<StringValueT>(value); }
+    template<typename StringValueT = Aws::String>
+    AuditEventFieldValueUnion& WithStringValue(StringValueT&& value) { SetStringValue(std::forward<StringValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,6 +63,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Can be either null, or have a Boolean value type. Only one value can be
+     * provided.</p>
+     */
+    inline bool GetBooleanValue() const { return m_booleanValue; }
+    inline bool BooleanValueHasBeenSet() const { return m_booleanValueHasBeenSet; }
+    inline void SetBooleanValue(bool value) { m_booleanValueHasBeenSet = true; m_booleanValue = value; }
+    inline AuditEventFieldValueUnion& WithBooleanValue(bool value) { SetBooleanValue(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const EmptyFieldValue& GetEmptyValue() const { return m_emptyValue; }
     inline bool EmptyValueHasBeenSet() const { return m_emptyValueHasBeenSet; }
@@ -68,19 +81,6 @@ namespace Model
     void SetEmptyValue(EmptyValueT&& value) { m_emptyValueHasBeenSet = true; m_emptyValue = std::forward<EmptyValueT>(value); }
     template<typename EmptyValueT = EmptyFieldValue>
     AuditEventFieldValueUnion& WithEmptyValue(EmptyValueT&& value) { SetEmptyValue(std::forward<EmptyValueT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Can be either null, or have a String value type. Only one value can be
-     * provided.</p>
-     */
-    inline const Aws::String& GetStringValue() const { return m_stringValue; }
-    inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
-    template<typename StringValueT = Aws::String>
-    void SetStringValue(StringValueT&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::forward<StringValueT>(value); }
-    template<typename StringValueT = Aws::String>
-    AuditEventFieldValueUnion& WithStringValue(StringValueT&& value) { SetStringValue(std::forward<StringValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,17 +97,17 @@ namespace Model
     ///@}
   private:
 
-    bool m_booleanValue{false};
-    bool m_booleanValueHasBeenSet = false;
+    Aws::String m_stringValue;
+    bool m_stringValueHasBeenSet = false;
 
     double m_doubleValue{0.0};
     bool m_doubleValueHasBeenSet = false;
 
+    bool m_booleanValue{false};
+    bool m_booleanValueHasBeenSet = false;
+
     EmptyFieldValue m_emptyValue;
     bool m_emptyValueHasBeenSet = false;
-
-    Aws::String m_stringValue;
-    bool m_stringValueHasBeenSet = false;
 
     Aws::String m_userArnValue;
     bool m_userArnValueHasBeenSet = false;

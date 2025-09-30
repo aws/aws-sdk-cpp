@@ -53,7 +53,7 @@ namespace Model
     ///@{
     /**
      * <p>The maximum number of results to return in one operation. If you omit this
-     * parameter, the default of 50 is used. <pre><code> &lt;/p&gt; </code></pre>
+     * parameter, the default of 50 is used. </p>
      */
     inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -64,7 +64,7 @@ namespace Model
     ///@{
     /**
      * <p>Include this value, if it was returned by the previous operation, to get the
-     * next set of service level objectives. <pre><code> &lt;/p&gt; </code></pre>
+     * next set of service level objectives. </p>
      */
     inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

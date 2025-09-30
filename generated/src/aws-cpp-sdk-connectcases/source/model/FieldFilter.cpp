@@ -25,15 +25,15 @@ FieldFilter::FieldFilter(JsonView jsonValue)
 
 FieldFilter& FieldFilter::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("contains"))
-  {
-    m_contains = jsonValue.GetObject("contains");
-    m_containsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("equalTo"))
   {
     m_equalTo = jsonValue.GetObject("equalTo");
     m_equalToHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("contains"))
+  {
+    m_contains = jsonValue.GetObject("contains");
+    m_containsHasBeenSet = true;
   }
   if(jsonValue.ValueExists("greaterThan"))
   {
@@ -62,15 +62,15 @@ JsonValue FieldFilter::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_containsHasBeenSet)
-  {
-   payload.WithObject("contains", m_contains.Jsonize());
-
-  }
-
   if(m_equalToHasBeenSet)
   {
    payload.WithObject("equalTo", m_equalTo.Jsonize());
+
+  }
+
+  if(m_containsHasBeenSet)
+  {
+   payload.WithObject("contains", m_contains.Jsonize());
 
   }
 

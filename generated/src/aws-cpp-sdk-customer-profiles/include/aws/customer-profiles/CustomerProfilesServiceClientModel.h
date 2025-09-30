@@ -55,6 +55,7 @@
 #include <aws/customer-profiles/model/GetIdentityResolutionJobResult.h>
 #include <aws/customer-profiles/model/GetIntegrationResult.h>
 #include <aws/customer-profiles/model/GetMatchesResult.h>
+#include <aws/customer-profiles/model/GetProfileHistoryRecordResult.h>
 #include <aws/customer-profiles/model/GetProfileObjectTypeResult.h>
 #include <aws/customer-profiles/model/GetProfileObjectTypeTemplateResult.h>
 #include <aws/customer-profiles/model/GetSegmentDefinitionResult.h>
@@ -77,6 +78,7 @@
 #include <aws/customer-profiles/model/ListIntegrationsResult.h>
 #include <aws/customer-profiles/model/ListObjectTypeAttributesResult.h>
 #include <aws/customer-profiles/model/ListProfileAttributeValuesResult.h>
+#include <aws/customer-profiles/model/ListProfileHistoryRecordsResult.h>
 #include <aws/customer-profiles/model/ListProfileObjectTypeTemplatesResult.h>
 #include <aws/customer-profiles/model/ListProfileObjectTypesResult.h>
 #include <aws/customer-profiles/model/ListProfileObjectsResult.h>
@@ -178,6 +180,7 @@ namespace Aws
       class GetIdentityResolutionJobRequest;
       class GetIntegrationRequest;
       class GetMatchesRequest;
+      class GetProfileHistoryRecordRequest;
       class GetProfileObjectTypeRequest;
       class GetProfileObjectTypeTemplateRequest;
       class GetSegmentDefinitionRequest;
@@ -200,6 +203,7 @@ namespace Aws
       class ListIntegrationsRequest;
       class ListObjectTypeAttributesRequest;
       class ListProfileAttributeValuesRequest;
+      class ListProfileHistoryRecordsRequest;
       class ListProfileObjectTypeTemplatesRequest;
       class ListProfileObjectTypesRequest;
       class ListProfileObjectsRequest;
@@ -262,6 +266,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetIdentityResolutionJobResult, CustomerProfilesError> GetIdentityResolutionJobOutcome;
       typedef Aws::Utils::Outcome<GetIntegrationResult, CustomerProfilesError> GetIntegrationOutcome;
       typedef Aws::Utils::Outcome<GetMatchesResult, CustomerProfilesError> GetMatchesOutcome;
+      typedef Aws::Utils::Outcome<GetProfileHistoryRecordResult, CustomerProfilesError> GetProfileHistoryRecordOutcome;
       typedef Aws::Utils::Outcome<GetProfileObjectTypeResult, CustomerProfilesError> GetProfileObjectTypeOutcome;
       typedef Aws::Utils::Outcome<GetProfileObjectTypeTemplateResult, CustomerProfilesError> GetProfileObjectTypeTemplateOutcome;
       typedef Aws::Utils::Outcome<GetSegmentDefinitionResult, CustomerProfilesError> GetSegmentDefinitionOutcome;
@@ -284,6 +289,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListIntegrationsResult, CustomerProfilesError> ListIntegrationsOutcome;
       typedef Aws::Utils::Outcome<ListObjectTypeAttributesResult, CustomerProfilesError> ListObjectTypeAttributesOutcome;
       typedef Aws::Utils::Outcome<ListProfileAttributeValuesResult, CustomerProfilesError> ListProfileAttributeValuesOutcome;
+      typedef Aws::Utils::Outcome<ListProfileHistoryRecordsResult, CustomerProfilesError> ListProfileHistoryRecordsOutcome;
       typedef Aws::Utils::Outcome<ListProfileObjectTypeTemplatesResult, CustomerProfilesError> ListProfileObjectTypeTemplatesOutcome;
       typedef Aws::Utils::Outcome<ListProfileObjectTypesResult, CustomerProfilesError> ListProfileObjectTypesOutcome;
       typedef Aws::Utils::Outcome<ListProfileObjectsResult, CustomerProfilesError> ListProfileObjectsOutcome;
@@ -346,6 +352,7 @@ namespace Aws
       typedef std::future<GetIdentityResolutionJobOutcome> GetIdentityResolutionJobOutcomeCallable;
       typedef std::future<GetIntegrationOutcome> GetIntegrationOutcomeCallable;
       typedef std::future<GetMatchesOutcome> GetMatchesOutcomeCallable;
+      typedef std::future<GetProfileHistoryRecordOutcome> GetProfileHistoryRecordOutcomeCallable;
       typedef std::future<GetProfileObjectTypeOutcome> GetProfileObjectTypeOutcomeCallable;
       typedef std::future<GetProfileObjectTypeTemplateOutcome> GetProfileObjectTypeTemplateOutcomeCallable;
       typedef std::future<GetSegmentDefinitionOutcome> GetSegmentDefinitionOutcomeCallable;
@@ -368,6 +375,7 @@ namespace Aws
       typedef std::future<ListIntegrationsOutcome> ListIntegrationsOutcomeCallable;
       typedef std::future<ListObjectTypeAttributesOutcome> ListObjectTypeAttributesOutcomeCallable;
       typedef std::future<ListProfileAttributeValuesOutcome> ListProfileAttributeValuesOutcomeCallable;
+      typedef std::future<ListProfileHistoryRecordsOutcome> ListProfileHistoryRecordsOutcomeCallable;
       typedef std::future<ListProfileObjectTypeTemplatesOutcome> ListProfileObjectTypeTemplatesOutcomeCallable;
       typedef std::future<ListProfileObjectTypesOutcome> ListProfileObjectTypesOutcomeCallable;
       typedef std::future<ListProfileObjectsOutcome> ListProfileObjectsOutcomeCallable;
@@ -433,6 +441,7 @@ namespace Aws
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetIdentityResolutionJobRequest&, const Model::GetIdentityResolutionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityResolutionJobResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetIntegrationRequest&, const Model::GetIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIntegrationResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetMatchesRequest&, const Model::GetMatchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMatchesResponseReceivedHandler;
+    typedef std::function<void(const CustomerProfilesClient*, const Model::GetProfileHistoryRecordRequest&, const Model::GetProfileHistoryRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProfileHistoryRecordResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetProfileObjectTypeRequest&, const Model::GetProfileObjectTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProfileObjectTypeResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetProfileObjectTypeTemplateRequest&, const Model::GetProfileObjectTypeTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProfileObjectTypeTemplateResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetSegmentDefinitionRequest&, const Model::GetSegmentDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSegmentDefinitionResponseReceivedHandler;
@@ -455,6 +464,7 @@ namespace Aws
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListIntegrationsRequest&, const Model::ListIntegrationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIntegrationsResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListObjectTypeAttributesRequest&, const Model::ListObjectTypeAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObjectTypeAttributesResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListProfileAttributeValuesRequest&, const Model::ListProfileAttributeValuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfileAttributeValuesResponseReceivedHandler;
+    typedef std::function<void(const CustomerProfilesClient*, const Model::ListProfileHistoryRecordsRequest&, const Model::ListProfileHistoryRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfileHistoryRecordsResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListProfileObjectTypeTemplatesRequest&, const Model::ListProfileObjectTypeTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfileObjectTypeTemplatesResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListProfileObjectTypesRequest&, const Model::ListProfileObjectTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfileObjectTypesResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListProfileObjectsRequest&, const Model::ListProfileObjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfileObjectsResponseReceivedHandler;

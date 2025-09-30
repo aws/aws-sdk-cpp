@@ -33,6 +33,17 @@ Aws::String RemoveIpRoutesRequest::SerializePayload() const
 
   }
 
+  if(m_cidrIpv6sHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> cidrIpv6sJsonList(m_cidrIpv6s.size());
+   for(unsigned cidrIpv6sIndex = 0; cidrIpv6sIndex < cidrIpv6sJsonList.GetLength(); ++cidrIpv6sIndex)
+   {
+     cidrIpv6sJsonList[cidrIpv6sIndex].AsString(m_cidrIpv6s[cidrIpv6sIndex]);
+   }
+   payload.WithArray("CidrIpv6s", std::move(cidrIpv6sJsonList));
+
+  }
+
   return payload.View().WriteReadable();
 }
 
