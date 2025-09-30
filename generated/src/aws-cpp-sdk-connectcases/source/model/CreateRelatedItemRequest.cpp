@@ -16,6 +16,11 @@ Aws::String CreateRelatedItemRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", RelatedItemTypeMapper::GetNameForRelatedItemType(m_type));
+  }
+
   if(m_contentHasBeenSet)
   {
    payload.WithObject("content", m_content.Jsonize());
@@ -26,11 +31,6 @@ Aws::String CreateRelatedItemRequest::SerializePayload() const
   {
    payload.WithObject("performedBy", m_performedBy.Jsonize());
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", RelatedItemTypeMapper::GetNameForRelatedItemType(m_type));
   }
 
   return payload.View().WriteReadable();

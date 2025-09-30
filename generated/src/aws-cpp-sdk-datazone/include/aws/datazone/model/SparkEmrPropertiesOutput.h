@@ -9,6 +9,7 @@
 #include <aws/datazone/model/UsernamePassword.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/datazone/model/GovernanceType.h>
+#include <aws/datazone/model/ManagedEndpointCredentials.h>
 #include <utility>
 
 namespace Aws
@@ -39,6 +40,18 @@ namespace Model
     AWS_DATAZONE_API SparkEmrPropertiesOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>The certificate data of the EMR on EKS cluster.</p>
+     */
+    inline const Aws::String& GetCertificateData() const { return m_certificateData; }
+    inline bool CertificateDataHasBeenSet() const { return m_certificateDataHasBeenSet; }
+    template<typename CertificateDataT = Aws::String>
+    void SetCertificateData(CertificateDataT&& value) { m_certificateDataHasBeenSet = true; m_certificateData = std::forward<CertificateDataT>(value); }
+    template<typename CertificateDataT = Aws::String>
+    SparkEmrPropertiesOutput& WithCertificateData(CertificateDataT&& value) { SetCertificateData(std::forward<CertificateDataT>(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -136,6 +149,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>The managed endpoint ARN of the EMR on EKS cluster.</p>
+     */
+    inline const Aws::String& GetManagedEndpointArn() const { return m_managedEndpointArn; }
+    inline bool ManagedEndpointArnHasBeenSet() const { return m_managedEndpointArnHasBeenSet; }
+    template<typename ManagedEndpointArnT = Aws::String>
+    void SetManagedEndpointArn(ManagedEndpointArnT&& value) { m_managedEndpointArnHasBeenSet = true; m_managedEndpointArn = std::forward<ManagedEndpointArnT>(value); }
+    template<typename ManagedEndpointArnT = Aws::String>
+    SparkEmrPropertiesOutput& WithManagedEndpointArn(ManagedEndpointArnT&& value) { SetManagedEndpointArn(std::forward<ManagedEndpointArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The managed endpoint credentials of the EMR on EKS cluster.</p>
+     */
+    inline const ManagedEndpointCredentials& GetManagedEndpointCredentials() const { return m_managedEndpointCredentials; }
+    inline bool ManagedEndpointCredentialsHasBeenSet() const { return m_managedEndpointCredentialsHasBeenSet; }
+    template<typename ManagedEndpointCredentialsT = ManagedEndpointCredentials>
+    void SetManagedEndpointCredentials(ManagedEndpointCredentialsT&& value) { m_managedEndpointCredentialsHasBeenSet = true; m_managedEndpointCredentials = std::forward<ManagedEndpointCredentialsT>(value); }
+    template<typename ManagedEndpointCredentialsT = ManagedEndpointCredentials>
+    SparkEmrPropertiesOutput& WithManagedEndpointCredentials(ManagedEndpointCredentialsT&& value) { SetManagedEndpointCredentials(std::forward<ManagedEndpointCredentialsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Python virtual env of the Spark EMR.</p>
      */
     inline const Aws::String& GetPythonVirtualEnv() const { return m_pythonVirtualEnv; }
@@ -171,6 +208,9 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_certificateData;
+    bool m_certificateDataHasBeenSet = false;
+
     Aws::String m_computeArn;
     bool m_computeArnHasBeenSet = false;
 
@@ -194,6 +234,12 @@ namespace Model
 
     Aws::String m_logUri;
     bool m_logUriHasBeenSet = false;
+
+    Aws::String m_managedEndpointArn;
+    bool m_managedEndpointArnHasBeenSet = false;
+
+    ManagedEndpointCredentials m_managedEndpointCredentials;
+    bool m_managedEndpointCredentialsHasBeenSet = false;
 
     Aws::String m_pythonVirtualEnv;
     bool m_pythonVirtualEnvHasBeenSet = false;

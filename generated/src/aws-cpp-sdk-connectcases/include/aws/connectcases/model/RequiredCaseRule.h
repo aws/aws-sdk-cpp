@@ -44,6 +44,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The value of the rule (that is, whether the field is required) should none of
+     * the conditions evaluate to true.</p>
+     */
+    inline bool GetDefaultValue() const { return m_defaultValue; }
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
+    inline void SetDefaultValue(bool value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
+    inline RequiredCaseRule& WithDefaultValue(bool value) { SetDefaultValue(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>List of conditions for the required rule; the first condition to evaluate to
      * true dictates the value of the rule.</p>
      */
@@ -56,24 +67,13 @@ namespace Model
     template<typename ConditionsT = BooleanCondition>
     RequiredCaseRule& AddConditions(ConditionsT&& value) { m_conditionsHasBeenSet = true; m_conditions.emplace_back(std::forward<ConditionsT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The value of the rule (that is, whether the field is required) should none of
-     * the conditions evaluate to true.</p>
-     */
-    inline bool GetDefaultValue() const { return m_defaultValue; }
-    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-    inline void SetDefaultValue(bool value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-    inline RequiredCaseRule& WithDefaultValue(bool value) { SetDefaultValue(value); return *this;}
-    ///@}
   private:
-
-    Aws::Vector<BooleanCondition> m_conditions;
-    bool m_conditionsHasBeenSet = false;
 
     bool m_defaultValue{false};
     bool m_defaultValueHasBeenSet = false;
+
+    Aws::Vector<BooleanCondition> m_conditions;
+    bool m_conditionsHasBeenSet = false;
   };
 
 } // namespace Model

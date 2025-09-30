@@ -20,6 +20,9 @@ namespace Aws
       namespace CapacityProviderUpdateStatusMapper
       {
 
+        static const int CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("CREATE_IN_PROGRESS");
+        static const int CREATE_COMPLETE_HASH = HashingUtils::HashString("CREATE_COMPLETE");
+        static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
         static const int DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("DELETE_IN_PROGRESS");
         static const int DELETE_COMPLETE_HASH = HashingUtils::HashString("DELETE_COMPLETE");
         static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
@@ -31,7 +34,19 @@ namespace Aws
         CapacityProviderUpdateStatus GetCapacityProviderUpdateStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == DELETE_IN_PROGRESS_HASH)
+          if (hashCode == CREATE_IN_PROGRESS_HASH)
+          {
+            return CapacityProviderUpdateStatus::CREATE_IN_PROGRESS;
+          }
+          else if (hashCode == CREATE_COMPLETE_HASH)
+          {
+            return CapacityProviderUpdateStatus::CREATE_COMPLETE;
+          }
+          else if (hashCode == CREATE_FAILED_HASH)
+          {
+            return CapacityProviderUpdateStatus::CREATE_FAILED;
+          }
+          else if (hashCode == DELETE_IN_PROGRESS_HASH)
           {
             return CapacityProviderUpdateStatus::DELETE_IN_PROGRESS;
           }
@@ -71,6 +86,12 @@ namespace Aws
           {
           case CapacityProviderUpdateStatus::NOT_SET:
             return {};
+          case CapacityProviderUpdateStatus::CREATE_IN_PROGRESS:
+            return "CREATE_IN_PROGRESS";
+          case CapacityProviderUpdateStatus::CREATE_COMPLETE:
+            return "CREATE_COMPLETE";
+          case CapacityProviderUpdateStatus::CREATE_FAILED:
+            return "CREATE_FAILED";
           case CapacityProviderUpdateStatus::DELETE_IN_PROGRESS:
             return "DELETE_IN_PROGRESS";
           case CapacityProviderUpdateStatus::DELETE_COMPLETE:

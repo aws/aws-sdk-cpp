@@ -150,6 +150,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The storage throughput of the DB instance.</p>
+     */
+    inline int GetStorageThroughput() const { return m_storageThroughput; }
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+    inline PendingModifiedValues& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The database identifier for the DB instance.</p>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const { return m_dBInstanceIdentifier; }
@@ -230,17 +240,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
-     * Management (IAM) accounts to database accounts is enabled.</p>
-     */
-    inline bool GetIAMDatabaseAuthenticationEnabled() const { return m_iAMDatabaseAuthenticationEnabled; }
-    inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
-    inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
-    inline PendingModifiedValues& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The automation mode of the RDS Custom DB instance: <code>full</code> or
      * <code>all-paused</code>. If <code>full</code>, the DB instance automates
      * monitoring and instance recovery. If <code>all-paused</code>, the instance
@@ -269,24 +268,24 @@ namespace Model
 
     ///@{
     /**
-     * <p>The storage throughput of the DB instance.</p>
+     * <p>Indicates whether the DB instance will change to the multi-tenant
+     * configuration (TRUE) or the single-tenant configuration (FALSE). </p>
      */
-    inline int GetStorageThroughput() const { return m_storageThroughput; }
-    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
-    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
-    inline PendingModifiedValues& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+    inline bool GetMultiTenant() const { return m_multiTenant; }
+    inline bool MultiTenantHasBeenSet() const { return m_multiTenantHasBeenSet; }
+    inline void SetMultiTenant(bool value) { m_multiTenantHasBeenSet = true; m_multiTenant = value; }
+    inline PendingModifiedValues& WithMultiTenant(bool value) { SetMultiTenant(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The database engine of the DB instance.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
-    inline const Aws::String& GetEngine() const { return m_engine; }
-    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
-    template<typename EngineT = Aws::String>
-    void SetEngine(EngineT&& value) { m_engineHasBeenSet = true; m_engine = std::forward<EngineT>(value); }
-    template<typename EngineT = Aws::String>
-    PendingModifiedValues& WithEngine(EngineT&& value) { SetEngine(std::forward<EngineT>(value)); return *this;}
+    inline bool GetIAMDatabaseAuthenticationEnabled() const { return m_iAMDatabaseAuthenticationEnabled; }
+    inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
+    inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
+    inline PendingModifiedValues& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
     ///@}
 
     ///@{
@@ -302,13 +301,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether the DB instance will change to the multi-tenant
-     * configuration (TRUE) or the single-tenant configuration (FALSE). </p>
+     * <p>The database engine of the DB instance.</p>
      */
-    inline bool GetMultiTenant() const { return m_multiTenant; }
-    inline bool MultiTenantHasBeenSet() const { return m_multiTenantHasBeenSet; }
-    inline void SetMultiTenant(bool value) { m_multiTenantHasBeenSet = true; m_multiTenant = value; }
-    inline PendingModifiedValues& WithMultiTenant(bool value) { SetMultiTenant(value); return *this;}
+    inline const Aws::String& GetEngine() const { return m_engine; }
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+    template<typename EngineT = Aws::String>
+    void SetEngine(EngineT&& value) { m_engineHasBeenSet = true; m_engine = std::forward<EngineT>(value); }
+    template<typename EngineT = Aws::String>
+    PendingModifiedValues& WithEngine(EngineT&& value) { SetEngine(std::forward<EngineT>(value)); return *this;}
     ///@}
   private:
 
@@ -339,6 +339,9 @@ namespace Model
     int m_iops{0};
     bool m_iopsHasBeenSet = false;
 
+    int m_storageThroughput{0};
+    bool m_storageThroughputHasBeenSet = false;
+
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet = false;
 
@@ -357,26 +360,23 @@ namespace Model
     Aws::Vector<ProcessorFeature> m_processorFeatures;
     bool m_processorFeaturesHasBeenSet = false;
 
-    bool m_iAMDatabaseAuthenticationEnabled{false};
-    bool m_iAMDatabaseAuthenticationEnabledHasBeenSet = false;
-
     AutomationMode m_automationMode{AutomationMode::NOT_SET};
     bool m_automationModeHasBeenSet = false;
 
     Aws::Utils::DateTime m_resumeFullAutomationModeTime{};
     bool m_resumeFullAutomationModeTimeHasBeenSet = false;
 
-    int m_storageThroughput{0};
-    bool m_storageThroughputHasBeenSet = false;
+    bool m_multiTenant{false};
+    bool m_multiTenantHasBeenSet = false;
 
-    Aws::String m_engine;
-    bool m_engineHasBeenSet = false;
+    bool m_iAMDatabaseAuthenticationEnabled{false};
+    bool m_iAMDatabaseAuthenticationEnabledHasBeenSet = false;
 
     bool m_dedicatedLogVolume{false};
     bool m_dedicatedLogVolumeHasBeenSet = false;
 
-    bool m_multiTenant{false};
-    bool m_multiTenantHasBeenSet = false;
+    Aws::String m_engine;
+    bool m_engineHasBeenSet = false;
   };
 
 } // namespace Model

@@ -8,6 +8,7 @@
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/model/AutoScalingGroupProvider.h>
+#include <aws/ecs/model/CreateManagedInstancesProviderConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/Tag.h>
 #include <utility>
@@ -54,6 +55,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the cluster to associate with the capacity provider. When you
+     * create a capacity provider with Amazon ECS Managed Instances, it becomes
+     * available only within the specified cluster.</p>
+     */
+    inline const Aws::String& GetCluster() const { return m_cluster; }
+    inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
+    template<typename ClusterT = Aws::String>
+    void SetCluster(ClusterT&& value) { m_clusterHasBeenSet = true; m_cluster = std::forward<ClusterT>(value); }
+    template<typename ClusterT = Aws::String>
+    CreateCapacityProviderRequest& WithCluster(ClusterT&& value) { SetCluster(std::forward<ClusterT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The details of the Auto Scaling group for the capacity provider.</p>
      */
     inline const AutoScalingGroupProvider& GetAutoScalingGroupProvider() const { return m_autoScalingGroupProvider; }
@@ -62,6 +77,21 @@ namespace Model
     void SetAutoScalingGroupProvider(AutoScalingGroupProviderT&& value) { m_autoScalingGroupProviderHasBeenSet = true; m_autoScalingGroupProvider = std::forward<AutoScalingGroupProviderT>(value); }
     template<typename AutoScalingGroupProviderT = AutoScalingGroupProvider>
     CreateCapacityProviderRequest& WithAutoScalingGroupProvider(AutoScalingGroupProviderT&& value) { SetAutoScalingGroupProvider(std::forward<AutoScalingGroupProviderT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The configuration for the Amazon ECS Managed Instances provider. This
+     * configuration specifies how Amazon ECS manages Amazon EC2 instances on your
+     * behalf, including the infrastructure role, instance launch template, and tag
+     * propagation settings.</p>
+     */
+    inline const CreateManagedInstancesProviderConfiguration& GetManagedInstancesProvider() const { return m_managedInstancesProvider; }
+    inline bool ManagedInstancesProviderHasBeenSet() const { return m_managedInstancesProviderHasBeenSet; }
+    template<typename ManagedInstancesProviderT = CreateManagedInstancesProviderConfiguration>
+    void SetManagedInstancesProvider(ManagedInstancesProviderT&& value) { m_managedInstancesProviderHasBeenSet = true; m_managedInstancesProvider = std::forward<ManagedInstancesProviderT>(value); }
+    template<typename ManagedInstancesProviderT = CreateManagedInstancesProviderConfiguration>
+    CreateCapacityProviderRequest& WithManagedInstancesProvider(ManagedInstancesProviderT&& value) { SetManagedInstancesProvider(std::forward<ManagedInstancesProviderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,8 +128,14 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
+    Aws::String m_cluster;
+    bool m_clusterHasBeenSet = false;
+
     AutoScalingGroupProvider m_autoScalingGroupProvider;
     bool m_autoScalingGroupProviderHasBeenSet = false;
+
+    CreateManagedInstancesProviderConfiguration m_managedInstancesProvider;
+    bool m_managedInstancesProviderHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

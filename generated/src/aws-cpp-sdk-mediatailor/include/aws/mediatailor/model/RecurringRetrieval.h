@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mediatailor/model/TrafficShapingType.h>
 #include <aws/mediatailor/model/TrafficShapingRetrievalWindow.h>
+#include <aws/mediatailor/model/TrafficShapingTpsConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -73,8 +74,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates if this configuration uses a retrieval window for traffic shaping
-     * and limiting the number of requests to the ADS at one time.</p>
+     * <p>Indicates the type of traffic shaping used for traffic shaping and limiting
+     * the number of requests to the ADS at one time.</p>
      */
     inline TrafficShapingType GetTrafficShapingType() const { return m_trafficShapingType; }
     inline bool TrafficShapingTypeHasBeenSet() const { return m_trafficShapingTypeHasBeenSet; }
@@ -94,6 +95,20 @@ namespace Model
     template<typename TrafficShapingRetrievalWindowT = TrafficShapingRetrievalWindow>
     RecurringRetrieval& WithTrafficShapingRetrievalWindow(TrafficShapingRetrievalWindowT&& value) { SetTrafficShapingRetrievalWindow(std::forward<TrafficShapingRetrievalWindowT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The configuration for TPS-based traffic shaping that limits the number of
+     * requests to the ad decision server (ADS) based on transactions per second
+     * instead of time windows.</p>
+     */
+    inline const TrafficShapingTpsConfiguration& GetTrafficShapingTpsConfiguration() const { return m_trafficShapingTpsConfiguration; }
+    inline bool TrafficShapingTpsConfigurationHasBeenSet() const { return m_trafficShapingTpsConfigurationHasBeenSet; }
+    template<typename TrafficShapingTpsConfigurationT = TrafficShapingTpsConfiguration>
+    void SetTrafficShapingTpsConfiguration(TrafficShapingTpsConfigurationT&& value) { m_trafficShapingTpsConfigurationHasBeenSet = true; m_trafficShapingTpsConfiguration = std::forward<TrafficShapingTpsConfigurationT>(value); }
+    template<typename TrafficShapingTpsConfigurationT = TrafficShapingTpsConfiguration>
+    RecurringRetrieval& WithTrafficShapingTpsConfiguration(TrafficShapingTpsConfigurationT&& value) { SetTrafficShapingTpsConfiguration(std::forward<TrafficShapingTpsConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_dynamicVariables;
@@ -107,6 +122,9 @@ namespace Model
 
     TrafficShapingRetrievalWindow m_trafficShapingRetrievalWindow;
     bool m_trafficShapingRetrievalWindowHasBeenSet = false;
+
+    TrafficShapingTpsConfiguration m_trafficShapingTpsConfiguration;
+    bool m_trafficShapingTpsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

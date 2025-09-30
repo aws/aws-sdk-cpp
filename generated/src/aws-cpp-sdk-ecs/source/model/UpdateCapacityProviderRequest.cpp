@@ -22,9 +22,21 @@ Aws::String UpdateCapacityProviderRequest::SerializePayload() const
 
   }
 
+  if(m_clusterHasBeenSet)
+  {
+   payload.WithString("cluster", m_cluster);
+
+  }
+
   if(m_autoScalingGroupProviderHasBeenSet)
   {
    payload.WithObject("autoScalingGroupProvider", m_autoScalingGroupProvider.Jsonize());
+
+  }
+
+  if(m_managedInstancesProviderHasBeenSet)
+  {
+   payload.WithObject("managedInstancesProvider", m_managedInstancesProvider.Jsonize());
 
   }
 

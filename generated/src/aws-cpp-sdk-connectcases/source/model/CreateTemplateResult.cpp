@@ -25,15 +25,15 @@ CreateTemplateResult::CreateTemplateResult(const Aws::AmazonWebServiceResult<Jso
 CreateTemplateResult& CreateTemplateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("templateArn"))
-  {
-    m_templateArn = jsonValue.GetString("templateArn");
-    m_templateArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("templateId"))
   {
     m_templateId = jsonValue.GetString("templateId");
     m_templateIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("templateArn"))
+  {
+    m_templateArn = jsonValue.GetString("templateArn");
+    m_templateArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

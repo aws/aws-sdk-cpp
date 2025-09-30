@@ -39,6 +39,15 @@ ConditionalForwarder& ConditionalForwarder::operator =(JsonView jsonValue)
     }
     m_dnsIpAddrsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("DnsIpv6Addrs"))
+  {
+    Aws::Utils::Array<JsonView> dnsIpv6AddrsJsonList = jsonValue.GetArray("DnsIpv6Addrs");
+    for(unsigned dnsIpv6AddrsIndex = 0; dnsIpv6AddrsIndex < dnsIpv6AddrsJsonList.GetLength(); ++dnsIpv6AddrsIndex)
+    {
+      m_dnsIpv6Addrs.push_back(dnsIpv6AddrsJsonList[dnsIpv6AddrsIndex].AsString());
+    }
+    m_dnsIpv6AddrsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ReplicationScope"))
   {
     m_replicationScope = ReplicationScopeMapper::GetReplicationScopeForName(jsonValue.GetString("ReplicationScope"));
@@ -65,6 +74,17 @@ JsonValue ConditionalForwarder::Jsonize() const
      dnsIpAddrsJsonList[dnsIpAddrsIndex].AsString(m_dnsIpAddrs[dnsIpAddrsIndex]);
    }
    payload.WithArray("DnsIpAddrs", std::move(dnsIpAddrsJsonList));
+
+  }
+
+  if(m_dnsIpv6AddrsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> dnsIpv6AddrsJsonList(m_dnsIpv6Addrs.size());
+   for(unsigned dnsIpv6AddrsIndex = 0; dnsIpv6AddrsIndex < dnsIpv6AddrsJsonList.GetLength(); ++dnsIpv6AddrsIndex)
+   {
+     dnsIpv6AddrsJsonList[dnsIpv6AddrsIndex].AsString(m_dnsIpv6Addrs[dnsIpv6AddrsIndex]);
+   }
+   payload.WithArray("DnsIpv6Addrs", std::move(dnsIpv6AddrsJsonList));
 
   }
 

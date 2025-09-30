@@ -9,8 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/CharacterSet.h>
 #include <aws/rds/model/CustomDBEngineVersionAMI.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/ServerlessV2FeaturesSupport.h>
 #include <aws/rds/model/ResponseMetadata.h>
 #include <aws/rds/model/UpgradeTarget.h>
@@ -63,6 +63,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The major engine version of the CEV.</p>
+     */
+    inline const Aws::String& GetMajorEngineVersion() const { return m_majorEngineVersion; }
+    inline bool MajorEngineVersionHasBeenSet() const { return m_majorEngineVersionHasBeenSet; }
+    template<typename MajorEngineVersionT = Aws::String>
+    void SetMajorEngineVersion(MajorEngineVersionT&& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = std::forward<MajorEngineVersionT>(value); }
+    template<typename MajorEngineVersionT = Aws::String>
+    DBEngineVersion& WithMajorEngineVersion(MajorEngineVersionT&& value) { SetMajorEngineVersion(std::forward<MajorEngineVersionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The version number of the database engine.</p>
      */
     inline const Aws::String& GetEngineVersion() const { return m_engineVersion; }
@@ -71,6 +83,50 @@ namespace Model
     void SetEngineVersion(EngineVersionT&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::forward<EngineVersionT>(value); }
     template<typename EngineVersionT = Aws::String>
     DBEngineVersion& WithEngineVersion(EngineVersionT&& value) { SetEngineVersion(std::forward<EngineVersionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the Amazon S3 bucket that contains your database installation
+     * files.</p>
+     */
+    inline const Aws::String& GetDatabaseInstallationFilesS3BucketName() const { return m_databaseInstallationFilesS3BucketName; }
+    inline bool DatabaseInstallationFilesS3BucketNameHasBeenSet() const { return m_databaseInstallationFilesS3BucketNameHasBeenSet; }
+    template<typename DatabaseInstallationFilesS3BucketNameT = Aws::String>
+    void SetDatabaseInstallationFilesS3BucketName(DatabaseInstallationFilesS3BucketNameT&& value) { m_databaseInstallationFilesS3BucketNameHasBeenSet = true; m_databaseInstallationFilesS3BucketName = std::forward<DatabaseInstallationFilesS3BucketNameT>(value); }
+    template<typename DatabaseInstallationFilesS3BucketNameT = Aws::String>
+    DBEngineVersion& WithDatabaseInstallationFilesS3BucketName(DatabaseInstallationFilesS3BucketNameT&& value) { SetDatabaseInstallationFilesS3BucketName(std::forward<DatabaseInstallationFilesS3BucketNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon S3 directory that contains the database installation files. If not
+     * specified, then no prefix is assumed.</p>
+     */
+    inline const Aws::String& GetDatabaseInstallationFilesS3Prefix() const { return m_databaseInstallationFilesS3Prefix; }
+    inline bool DatabaseInstallationFilesS3PrefixHasBeenSet() const { return m_databaseInstallationFilesS3PrefixHasBeenSet; }
+    template<typename DatabaseInstallationFilesS3PrefixT = Aws::String>
+    void SetDatabaseInstallationFilesS3Prefix(DatabaseInstallationFilesS3PrefixT&& value) { m_databaseInstallationFilesS3PrefixHasBeenSet = true; m_databaseInstallationFilesS3Prefix = std::forward<DatabaseInstallationFilesS3PrefixT>(value); }
+    template<typename DatabaseInstallationFilesS3PrefixT = Aws::String>
+    DBEngineVersion& WithDatabaseInstallationFilesS3Prefix(DatabaseInstallationFilesS3PrefixT&& value) { SetDatabaseInstallationFilesS3Prefix(std::forward<DatabaseInstallationFilesS3PrefixT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>JSON string that lists the installation files and parameters that RDS Custom
+     * uses to create a custom engine version (CEV). RDS Custom applies the patches in
+     * the order in which they're listed in the manifest. You can set the Oracle home,
+     * Oracle base, and UNIX/Linux user and group using the installation parameters.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON
+     * fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+     */
+    inline const Aws::String& GetCustomDBEngineVersionManifest() const { return m_customDBEngineVersionManifest; }
+    inline bool CustomDBEngineVersionManifestHasBeenSet() const { return m_customDBEngineVersionManifestHasBeenSet; }
+    template<typename CustomDBEngineVersionManifestT = Aws::String>
+    void SetCustomDBEngineVersionManifest(CustomDBEngineVersionManifestT&& value) { m_customDBEngineVersionManifestHasBeenSet = true; m_customDBEngineVersionManifest = std::forward<CustomDBEngineVersionManifestT>(value); }
+    template<typename CustomDBEngineVersionManifestT = Aws::String>
+    DBEngineVersion& WithCustomDBEngineVersionManifest(CustomDBEngineVersionManifestT&& value) { SetCustomDBEngineVersionManifest(std::forward<CustomDBEngineVersionManifestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,6 +151,18 @@ namespace Model
     void SetDBEngineDescription(DBEngineDescriptionT&& value) { m_dBEngineDescriptionHasBeenSet = true; m_dBEngineDescription = std::forward<DBEngineDescriptionT>(value); }
     template<typename DBEngineDescriptionT = Aws::String>
     DBEngineVersion& WithDBEngineDescription(DBEngineDescriptionT&& value) { SetDBEngineDescription(std::forward<DBEngineDescriptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ARN of the custom engine version.</p>
+     */
+    inline const Aws::String& GetDBEngineVersionArn() const { return m_dBEngineVersionArn; }
+    inline bool DBEngineVersionArnHasBeenSet() const { return m_dBEngineVersionArnHasBeenSet; }
+    template<typename DBEngineVersionArnT = Aws::String>
+    void SetDBEngineVersionArn(DBEngineVersionArnT&& value) { m_dBEngineVersionArnHasBeenSet = true; m_dBEngineVersionArn = std::forward<DBEngineVersionArnT>(value); }
+    template<typename DBEngineVersionArnT = Aws::String>
+    DBEngineVersion& WithDBEngineVersionArn(DBEngineVersionArnT&& value) { SetDBEngineVersionArn(std::forward<DBEngineVersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,6 +214,31 @@ namespace Model
     void SetDBEngineMediaType(DBEngineMediaTypeT&& value) { m_dBEngineMediaTypeHasBeenSet = true; m_dBEngineMediaType = std::forward<DBEngineMediaTypeT>(value); }
     template<typename DBEngineMediaTypeT = Aws::String>
     DBEngineVersion& WithDBEngineMediaType(DBEngineMediaTypeT&& value) { SetDBEngineMediaType(std::forward<DBEngineMediaTypeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This
+     * parameter is required for RDS Custom, but optional for Amazon RDS.</p>
+     */
+    inline const Aws::String& GetKMSKeyId() const { return m_kMSKeyId; }
+    inline bool KMSKeyIdHasBeenSet() const { return m_kMSKeyIdHasBeenSet; }
+    template<typename KMSKeyIdT = Aws::String>
+    void SetKMSKeyId(KMSKeyIdT&& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = std::forward<KMSKeyIdT>(value); }
+    template<typename KMSKeyIdT = Aws::String>
+    DBEngineVersion& WithKMSKeyId(KMSKeyIdT&& value) { SetKMSKeyId(std::forward<KMSKeyIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The creation time of the DB engine version.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    DBEngineVersion& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -319,81 +412,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The major engine version of the CEV.</p>
-     */
-    inline const Aws::String& GetMajorEngineVersion() const { return m_majorEngineVersion; }
-    inline bool MajorEngineVersionHasBeenSet() const { return m_majorEngineVersionHasBeenSet; }
-    template<typename MajorEngineVersionT = Aws::String>
-    void SetMajorEngineVersion(MajorEngineVersionT&& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = std::forward<MajorEngineVersionT>(value); }
-    template<typename MajorEngineVersionT = Aws::String>
-    DBEngineVersion& WithMajorEngineVersion(MajorEngineVersionT&& value) { SetMajorEngineVersion(std::forward<MajorEngineVersionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the Amazon S3 bucket that contains your database installation
-     * files.</p>
-     */
-    inline const Aws::String& GetDatabaseInstallationFilesS3BucketName() const { return m_databaseInstallationFilesS3BucketName; }
-    inline bool DatabaseInstallationFilesS3BucketNameHasBeenSet() const { return m_databaseInstallationFilesS3BucketNameHasBeenSet; }
-    template<typename DatabaseInstallationFilesS3BucketNameT = Aws::String>
-    void SetDatabaseInstallationFilesS3BucketName(DatabaseInstallationFilesS3BucketNameT&& value) { m_databaseInstallationFilesS3BucketNameHasBeenSet = true; m_databaseInstallationFilesS3BucketName = std::forward<DatabaseInstallationFilesS3BucketNameT>(value); }
-    template<typename DatabaseInstallationFilesS3BucketNameT = Aws::String>
-    DBEngineVersion& WithDatabaseInstallationFilesS3BucketName(DatabaseInstallationFilesS3BucketNameT&& value) { SetDatabaseInstallationFilesS3BucketName(std::forward<DatabaseInstallationFilesS3BucketNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon S3 directory that contains the database installation files. If not
-     * specified, then no prefix is assumed.</p>
-     */
-    inline const Aws::String& GetDatabaseInstallationFilesS3Prefix() const { return m_databaseInstallationFilesS3Prefix; }
-    inline bool DatabaseInstallationFilesS3PrefixHasBeenSet() const { return m_databaseInstallationFilesS3PrefixHasBeenSet; }
-    template<typename DatabaseInstallationFilesS3PrefixT = Aws::String>
-    void SetDatabaseInstallationFilesS3Prefix(DatabaseInstallationFilesS3PrefixT&& value) { m_databaseInstallationFilesS3PrefixHasBeenSet = true; m_databaseInstallationFilesS3Prefix = std::forward<DatabaseInstallationFilesS3PrefixT>(value); }
-    template<typename DatabaseInstallationFilesS3PrefixT = Aws::String>
-    DBEngineVersion& WithDatabaseInstallationFilesS3Prefix(DatabaseInstallationFilesS3PrefixT&& value) { SetDatabaseInstallationFilesS3Prefix(std::forward<DatabaseInstallationFilesS3PrefixT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ARN of the custom engine version.</p>
-     */
-    inline const Aws::String& GetDBEngineVersionArn() const { return m_dBEngineVersionArn; }
-    inline bool DBEngineVersionArnHasBeenSet() const { return m_dBEngineVersionArnHasBeenSet; }
-    template<typename DBEngineVersionArnT = Aws::String>
-    void SetDBEngineVersionArn(DBEngineVersionArnT&& value) { m_dBEngineVersionArnHasBeenSet = true; m_dBEngineVersionArn = std::forward<DBEngineVersionArnT>(value); }
-    template<typename DBEngineVersionArnT = Aws::String>
-    DBEngineVersion& WithDBEngineVersionArn(DBEngineVersionArnT&& value) { SetDBEngineVersionArn(std::forward<DBEngineVersionArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This
-     * parameter is required for RDS Custom, but optional for Amazon RDS.</p>
-     */
-    inline const Aws::String& GetKMSKeyId() const { return m_kMSKeyId; }
-    inline bool KMSKeyIdHasBeenSet() const { return m_kMSKeyIdHasBeenSet; }
-    template<typename KMSKeyIdT = Aws::String>
-    void SetKMSKeyId(KMSKeyIdT&& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = std::forward<KMSKeyIdT>(value); }
-    template<typename KMSKeyIdT = Aws::String>
-    DBEngineVersion& WithKMSKeyId(KMSKeyIdT&& value) { SetKMSKeyId(std::forward<KMSKeyIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The creation time of the DB engine version.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
-    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
-    template<typename CreateTimeT = Aws::Utils::DateTime>
-    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
-    template<typename CreateTimeT = Aws::Utils::DateTime>
-    DBEngineVersion& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::Vector<Tag>& GetTagList() const { return m_tagList; }
     inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
@@ -414,24 +432,6 @@ namespace Model
     inline bool SupportsBabelfishHasBeenSet() const { return m_supportsBabelfishHasBeenSet; }
     inline void SetSupportsBabelfish(bool value) { m_supportsBabelfishHasBeenSet = true; m_supportsBabelfish = value; }
     inline DBEngineVersion& WithSupportsBabelfish(bool value) { SetSupportsBabelfish(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>JSON string that lists the installation files and parameters that RDS Custom
-     * uses to create a custom engine version (CEV). RDS Custom applies the patches in
-     * the order in which they're listed in the manifest. You can set the Oracle home,
-     * Oracle base, and UNIX/Linux user and group using the installation parameters.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON
-     * fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
-     */
-    inline const Aws::String& GetCustomDBEngineVersionManifest() const { return m_customDBEngineVersionManifest; }
-    inline bool CustomDBEngineVersionManifestHasBeenSet() const { return m_customDBEngineVersionManifestHasBeenSet; }
-    template<typename CustomDBEngineVersionManifestT = Aws::String>
-    void SetCustomDBEngineVersionManifest(CustomDBEngineVersionManifestT&& value) { m_customDBEngineVersionManifestHasBeenSet = true; m_customDBEngineVersionManifest = std::forward<CustomDBEngineVersionManifestT>(value); }
-    template<typename CustomDBEngineVersionManifestT = Aws::String>
-    DBEngineVersion& WithCustomDBEngineVersionManifest(CustomDBEngineVersionManifestT&& value) { SetCustomDBEngineVersionManifest(std::forward<CustomDBEngineVersionManifestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -531,14 +531,29 @@ namespace Model
     Aws::String m_engine;
     bool m_engineHasBeenSet = false;
 
+    Aws::String m_majorEngineVersion;
+    bool m_majorEngineVersionHasBeenSet = false;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet = false;
+
+    Aws::String m_databaseInstallationFilesS3BucketName;
+    bool m_databaseInstallationFilesS3BucketNameHasBeenSet = false;
+
+    Aws::String m_databaseInstallationFilesS3Prefix;
+    bool m_databaseInstallationFilesS3PrefixHasBeenSet = false;
+
+    Aws::String m_customDBEngineVersionManifest;
+    bool m_customDBEngineVersionManifestHasBeenSet = false;
 
     Aws::String m_dBParameterGroupFamily;
     bool m_dBParameterGroupFamilyHasBeenSet = false;
 
     Aws::String m_dBEngineDescription;
     bool m_dBEngineDescriptionHasBeenSet = false;
+
+    Aws::String m_dBEngineVersionArn;
+    bool m_dBEngineVersionArnHasBeenSet = false;
 
     Aws::String m_dBEngineVersionDescription;
     bool m_dBEngineVersionDescriptionHasBeenSet = false;
@@ -551,6 +566,12 @@ namespace Model
 
     Aws::String m_dBEngineMediaType;
     bool m_dBEngineMediaTypeHasBeenSet = false;
+
+    Aws::String m_kMSKeyId;
+    bool m_kMSKeyIdHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createTime{};
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Vector<CharacterSet> m_supportedCharacterSets;
     bool m_supportedCharacterSetsHasBeenSet = false;
@@ -588,32 +609,11 @@ namespace Model
     bool m_supportsGlobalDatabases{false};
     bool m_supportsGlobalDatabasesHasBeenSet = false;
 
-    Aws::String m_majorEngineVersion;
-    bool m_majorEngineVersionHasBeenSet = false;
-
-    Aws::String m_databaseInstallationFilesS3BucketName;
-    bool m_databaseInstallationFilesS3BucketNameHasBeenSet = false;
-
-    Aws::String m_databaseInstallationFilesS3Prefix;
-    bool m_databaseInstallationFilesS3PrefixHasBeenSet = false;
-
-    Aws::String m_dBEngineVersionArn;
-    bool m_dBEngineVersionArnHasBeenSet = false;
-
-    Aws::String m_kMSKeyId;
-    bool m_kMSKeyIdHasBeenSet = false;
-
-    Aws::Utils::DateTime m_createTime{};
-    bool m_createTimeHasBeenSet = false;
-
     Aws::Vector<Tag> m_tagList;
     bool m_tagListHasBeenSet = false;
 
     bool m_supportsBabelfish{false};
     bool m_supportsBabelfishHasBeenSet = false;
-
-    Aws::String m_customDBEngineVersionManifest;
-    bool m_customDBEngineVersionManifestHasBeenSet = false;
 
     bool m_supportsLimitlessDatabase{false};
     bool m_supportsLimitlessDatabaseHasBeenSet = false;

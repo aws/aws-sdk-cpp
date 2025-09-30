@@ -19,7 +19,9 @@ namespace Model
     Contact,
     Comment,
     File,
-    Sla
+    Sla,
+    ConnectCase,
+    Custom
   };
 
 namespace RelatedItemTypeMapper

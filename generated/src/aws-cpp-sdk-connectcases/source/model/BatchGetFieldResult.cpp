@@ -25,15 +25,6 @@ BatchGetFieldResult::BatchGetFieldResult(const Aws::AmazonWebServiceResult<JsonV
 BatchGetFieldResult& BatchGetFieldResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("errors"))
-  {
-    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
-    for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
-    {
-      m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
-    }
-    m_errorsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("fields"))
   {
     Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
@@ -42,6 +33,15 @@ BatchGetFieldResult& BatchGetFieldResult::operator =(const Aws::AmazonWebService
       m_fields.push_back(fieldsJsonList[fieldsIndex].AsObject());
     }
     m_fieldsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("errors"))
+  {
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
+    for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
+    {
+      m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
+    }
+    m_errorsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

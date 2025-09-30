@@ -7,9 +7,9 @@
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/connectcases/ConnectCasesRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/connectcases/model/RelatedItemType.h>
 #include <aws/connectcases/model/RelatedItemInputContent.h>
 #include <aws/connectcases/model/UserUnion.h>
-#include <aws/connectcases/model/RelatedItemType.h>
 #include <utility>
 
 namespace Aws
@@ -37,6 +37,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique identifier of the Cases domain. </p>
+     */
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
+    inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    CreateRelatedItemRequest& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A unique identifier of the case.</p>
      */
     inline const Aws::String& GetCaseId() const { return m_caseId; }
@@ -45,6 +57,16 @@ namespace Model
     void SetCaseId(CaseIdT&& value) { m_caseIdHasBeenSet = true; m_caseId = std::forward<CaseIdT>(value); }
     template<typename CaseIdT = Aws::String>
     CreateRelatedItemRequest& WithCaseId(CaseIdT&& value) { SetCaseId(std::forward<CaseIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of a related item.</p>
+     */
+    inline RelatedItemType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(RelatedItemType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CreateRelatedItemRequest& WithType(RelatedItemType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -61,18 +83,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the Cases domain. </p>
-     */
-    inline const Aws::String& GetDomainId() const { return m_domainId; }
-    inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-    template<typename DomainIdT = Aws::String>
-    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
-    template<typename DomainIdT = Aws::String>
-    CreateRelatedItemRequest& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Represents the creator of the related item.</p>
      */
     inline const UserUnion& GetPerformedBy() const { return m_performedBy; }
@@ -82,32 +92,22 @@ namespace Model
     template<typename PerformedByT = UserUnion>
     CreateRelatedItemRequest& WithPerformedBy(PerformedByT&& value) { SetPerformedBy(std::forward<PerformedByT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The type of a related item.</p>
-     */
-    inline RelatedItemType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(RelatedItemType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline CreateRelatedItemRequest& WithType(RelatedItemType value) { SetType(value); return *this;}
-    ///@}
   private:
-
-    Aws::String m_caseId;
-    bool m_caseIdHasBeenSet = false;
-
-    RelatedItemInputContent m_content;
-    bool m_contentHasBeenSet = false;
 
     Aws::String m_domainId;
     bool m_domainIdHasBeenSet = false;
 
-    UserUnion m_performedBy;
-    bool m_performedByHasBeenSet = false;
+    Aws::String m_caseId;
+    bool m_caseIdHasBeenSet = false;
 
     RelatedItemType m_type{RelatedItemType::NOT_SET};
     bool m_typeHasBeenSet = false;
+
+    RelatedItemInputContent m_content;
+    bool m_contentHasBeenSet = false;
+
+    UserUnion m_performedBy;
+    bool m_performedByHasBeenSet = false;
   };
 
 } // namespace Model

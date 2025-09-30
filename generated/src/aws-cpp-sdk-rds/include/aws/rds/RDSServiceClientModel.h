@@ -171,7 +171,6 @@
 #include <aws/rds/model/SwitchoverGlobalClusterResult.h>
 #include <aws/rds/model/SwitchoverReadReplicaResult.h>
 #include <aws/rds/model/DescribeIntegrationsRequest.h>
-#include <aws/rds/model/ModifyGlobalClusterRequest.h>
 #include <aws/rds/model/DescribeDBProxyEndpointsRequest.h>
 #include <aws/rds/model/DescribeDBInstancesRequest.h>
 #include <aws/rds/model/DescribeDBMajorEngineVersionsRequest.h>
@@ -197,7 +196,6 @@
 #include <aws/rds/model/DescribeDBShardGroupsRequest.h>
 #include <aws/rds/model/DescribeDBClusterParameterGroupsRequest.h>
 #include <aws/rds/model/DescribeDBSnapshotTenantDatabasesRequest.h>
-#include <aws/rds/model/CreateGlobalClusterRequest.h>
 #include <aws/rds/model/DescribeEventsRequest.h>
 #include <aws/rds/model/DescribeDBClusterEndpointsRequest.h>
 #include <aws/rds/model/DescribeDBSnapshotsRequest.h>
@@ -205,7 +203,6 @@
 #include <aws/rds/model/DescribeDBParameterGroupsRequest.h>
 #include <aws/rds/model/DescribeDBSubnetGroupsRequest.h>
 #include <aws/rds/model/ModifyActivityStreamRequest.h>
-#include <aws/rds/model/RemoveFromGlobalClusterRequest.h>
 #include <aws/rds/model/DescribeDBClusterSnapshotsRequest.h>
 #include <aws/rds/model/DescribeReservedDBInstancesOfferingsRequest.h>
 #include <aws/rds/model/DescribeDBInstanceAutomatedBackupsRequest.h>

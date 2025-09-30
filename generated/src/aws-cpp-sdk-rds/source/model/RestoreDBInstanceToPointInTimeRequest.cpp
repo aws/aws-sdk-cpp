@@ -89,6 +89,11 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
     ss << "Iops=" << m_iops << "&";
   }
 
+  if(m_storageThroughputHasBeenSet)
+  {
+    ss << "StorageThroughput=" << m_storageThroughput << "&";
+  }
+
   if(m_optionGroupNameHasBeenSet)
   {
     ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
@@ -257,24 +262,9 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
     ss << "MaxAllocatedStorage=" << m_maxAllocatedStorage << "&";
   }
 
-  if(m_sourceDBInstanceAutomatedBackupsArnHasBeenSet)
-  {
-    ss << "SourceDBInstanceAutomatedBackupsArn=" << StringUtils::URLEncode(m_sourceDBInstanceAutomatedBackupsArn.c_str()) << "&";
-  }
-
   if(m_enableCustomerOwnedIpHasBeenSet)
   {
     ss << "EnableCustomerOwnedIp=" << std::boolalpha << m_enableCustomerOwnedIp << "&";
-  }
-
-  if(m_customIamInstanceProfileHasBeenSet)
-  {
-    ss << "CustomIamInstanceProfile=" << StringUtils::URLEncode(m_customIamInstanceProfile.c_str()) << "&";
-  }
-
-  if(m_backupTargetHasBeenSet)
-  {
-    ss << "BackupTarget=" << StringUtils::URLEncode(m_backupTarget.c_str()) << "&";
   }
 
   if(m_networkTypeHasBeenSet)
@@ -282,9 +272,19 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
     ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
   }
 
-  if(m_storageThroughputHasBeenSet)
+  if(m_sourceDBInstanceAutomatedBackupsArnHasBeenSet)
   {
-    ss << "StorageThroughput=" << m_storageThroughput << "&";
+    ss << "SourceDBInstanceAutomatedBackupsArn=" << StringUtils::URLEncode(m_sourceDBInstanceAutomatedBackupsArn.c_str()) << "&";
+  }
+
+  if(m_backupTargetHasBeenSet)
+  {
+    ss << "BackupTarget=" << StringUtils::URLEncode(m_backupTarget.c_str()) << "&";
+  }
+
+  if(m_customIamInstanceProfileHasBeenSet)
+  {
+    ss << "CustomIamInstanceProfile=" << StringUtils::URLEncode(m_customIamInstanceProfile.c_str()) << "&";
   }
 
   if(m_allocatedStorageHasBeenSet)

@@ -16,23 +16,6 @@ Aws::String SearchCasesRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_fieldsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> fieldsJsonList(m_fields.size());
-   for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
-   {
-     fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex].Jsonize());
-   }
-   payload.WithArray("fields", std::move(fieldsJsonList));
-
-  }
-
-  if(m_filterHasBeenSet)
-  {
-   payload.WithObject("filter", m_filter.Jsonize());
-
-  }
-
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("maxResults", m_maxResults);
@@ -51,6 +34,12 @@ Aws::String SearchCasesRequest::SerializePayload() const
 
   }
 
+  if(m_filterHasBeenSet)
+  {
+   payload.WithObject("filter", m_filter.Jsonize());
+
+  }
+
   if(m_sortsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> sortsJsonList(m_sorts.size());
@@ -59,6 +48,17 @@ Aws::String SearchCasesRequest::SerializePayload() const
      sortsJsonList[sortsIndex].AsObject(m_sorts[sortsIndex].Jsonize());
    }
    payload.WithArray("sorts", std::move(sortsJsonList));
+
+  }
+
+  if(m_fieldsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> fieldsJsonList(m_fields.size());
+   for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
+   {
+     fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex].Jsonize());
+   }
+   payload.WithArray("fields", std::move(fieldsJsonList));
 
   }
 

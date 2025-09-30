@@ -25,15 +25,15 @@ FieldError::FieldError(JsonView jsonValue)
 
 FieldError& FieldError::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("errorCode"))
-  {
-    m_errorCode = jsonValue.GetString("errorCode");
-    m_errorCodeHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("errorCode"))
+  {
+    m_errorCode = jsonValue.GetString("errorCode");
+    m_errorCodeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("message"))
   {
@@ -47,15 +47,15 @@ JsonValue FieldError::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("errorCode", m_errorCode);
-
-  }
-
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
+
+  }
+
+  if(m_errorCodeHasBeenSet)
+  {
+   payload.WithString("errorCode", m_errorCode);
 
   }
 

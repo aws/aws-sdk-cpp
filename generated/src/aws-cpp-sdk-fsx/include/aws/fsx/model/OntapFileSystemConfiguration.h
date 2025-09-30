@@ -86,7 +86,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
+     * <p>(Multi-AZ only) Specifies the IPv4 address range in which the endpoints to
      * access your file system will be created. By default in the Amazon FSx API,
      * Amazon FSx selects an unused IP address range for you from the 198.19.* range.
      * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP
@@ -231,6 +231,23 @@ namespace Model
     inline void SetThroughputCapacityPerHAPair(int value) { m_throughputCapacityPerHAPairHasBeenSet = true; m_throughputCapacityPerHAPair = value; }
     inline OntapFileSystemConfiguration& WithThroughputCapacityPerHAPair(int value) { SetThroughputCapacityPerHAPair(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>(Multi-AZ only) Specifies the IPv6 address range in which the endpoints to
+     * access your file system will be created. By default in the Amazon FSx API and
+     * Amazon FSx console, Amazon FSx selects an available /118 IP address range for
+     * you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP
+     * addresses for file systems deployed in the same VPC/route tables, as long as
+     * they don't overlap with any subnet.</p>
+     */
+    inline const Aws::String& GetEndpointIpv6AddressRange() const { return m_endpointIpv6AddressRange; }
+    inline bool EndpointIpv6AddressRangeHasBeenSet() const { return m_endpointIpv6AddressRangeHasBeenSet; }
+    template<typename EndpointIpv6AddressRangeT = Aws::String>
+    void SetEndpointIpv6AddressRange(EndpointIpv6AddressRangeT&& value) { m_endpointIpv6AddressRangeHasBeenSet = true; m_endpointIpv6AddressRange = std::forward<EndpointIpv6AddressRangeT>(value); }
+    template<typename EndpointIpv6AddressRangeT = Aws::String>
+    OntapFileSystemConfiguration& WithEndpointIpv6AddressRange(EndpointIpv6AddressRangeT&& value) { SetEndpointIpv6AddressRange(std::forward<EndpointIpv6AddressRangeT>(value)); return *this;}
+    ///@}
   private:
 
     int m_automaticBackupRetentionDays{0};
@@ -271,6 +288,9 @@ namespace Model
 
     int m_throughputCapacityPerHAPair{0};
     bool m_throughputCapacityPerHAPairHasBeenSet = false;
+
+    Aws::String m_endpointIpv6AddressRange;
+    bool m_endpointIpv6AddressRangeHasBeenSet = false;
   };
 
 } // namespace Model

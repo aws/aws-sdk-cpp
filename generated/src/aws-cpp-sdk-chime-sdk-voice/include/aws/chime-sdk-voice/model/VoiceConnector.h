@@ -9,6 +9,7 @@
 #include <aws/chime-sdk-voice/model/VoiceConnectorAwsRegion.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/chime-sdk-voice/model/VoiceConnectorIntegrationType.h>
+#include <aws/chime-sdk-voice/model/NetworkType.h>
 #include <utility>
 
 namespace Aws
@@ -143,6 +144,17 @@ namespace Model
     inline void SetIntegrationType(VoiceConnectorIntegrationType value) { m_integrationTypeHasBeenSet = true; m_integrationType = value; }
     inline VoiceConnector& WithIntegrationType(VoiceConnectorIntegrationType value) { SetIntegrationType(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The type of network of the Voice Connector. Either IPv4 only or dual-stack
+     * (IPv4 and IPv6).</p>
+     */
+    inline NetworkType GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    inline void SetNetworkType(NetworkType value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline VoiceConnector& WithNetworkType(NetworkType value) { SetNetworkType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_voiceConnectorId;
@@ -171,6 +183,9 @@ namespace Model
 
     VoiceConnectorIntegrationType m_integrationType{VoiceConnectorIntegrationType::NOT_SET};
     bool m_integrationTypeHasBeenSet = false;
+
+    NetworkType m_networkType{NetworkType::NOT_SET};
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

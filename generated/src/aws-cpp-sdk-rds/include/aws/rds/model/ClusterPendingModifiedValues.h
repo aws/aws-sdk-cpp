@@ -113,6 +113,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The storage type for the DB cluster.</p>
+     */
+    inline const Aws::String& GetStorageType() const { return m_storageType; }
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+    template<typename StorageTypeT = Aws::String>
+    void SetStorageType(StorageTypeT&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::forward<StorageTypeT>(value); }
+    template<typename StorageTypeT = Aws::String>
+    ClusterPendingModifiedValues& WithStorageType(StorageTypeT&& value) { SetStorageType(std::forward<StorageTypeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The allocated storage size in gibibytes (GiB) for all database engines except
      * Amazon Aurora. For Aurora, <code>AllocatedStorage</code> always returns 1,
      * because Aurora DB cluster storage size isn't fixed, but instead automatically
@@ -148,18 +160,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The storage type for the DB cluster.</p>
-     */
-    inline const Aws::String& GetStorageType() const { return m_storageType; }
-    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
-    template<typename StorageTypeT = Aws::String>
-    void SetStorageType(StorageTypeT&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::forward<StorageTypeT>(value); }
-    template<typename StorageTypeT = Aws::String>
-    ClusterPendingModifiedValues& WithStorageType(StorageTypeT&& value) { SetStorageType(std::forward<StorageTypeT>(value)); return *this;}
-    ///@}
-
-    ///@{
     
     inline const CertificateDetails& GetCertificateDetails() const { return m_certificateDetails; }
     inline bool CertificateDetailsHasBeenSet() const { return m_certificateDetailsHasBeenSet; }
@@ -188,6 +188,9 @@ namespace Model
     int m_backupRetentionPeriod{0};
     bool m_backupRetentionPeriodHasBeenSet = false;
 
+    Aws::String m_storageType;
+    bool m_storageTypeHasBeenSet = false;
+
     int m_allocatedStorage{0};
     bool m_allocatedStorageHasBeenSet = false;
 
@@ -196,9 +199,6 @@ namespace Model
 
     int m_iops{0};
     bool m_iopsHasBeenSet = false;
-
-    Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet = false;
 
     CertificateDetails m_certificateDetails;
     bool m_certificateDetailsHasBeenSet = false;

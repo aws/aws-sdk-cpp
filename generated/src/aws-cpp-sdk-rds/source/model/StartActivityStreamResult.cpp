@@ -58,17 +58,17 @@ StartActivityStreamResult& StartActivityStreamResult::operator =(const Aws::Amaz
       m_mode = ActivityStreamModeMapper::GetActivityStreamModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modeNode.GetText()).c_str()));
       m_modeHasBeenSet = true;
     }
-    XmlNode applyImmediatelyNode = resultNode.FirstChild("ApplyImmediately");
-    if(!applyImmediatelyNode.IsNull())
-    {
-      m_applyImmediately = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(applyImmediatelyNode.GetText()).c_str()).c_str());
-      m_applyImmediatelyHasBeenSet = true;
-    }
     XmlNode engineNativeAuditFieldsIncludedNode = resultNode.FirstChild("EngineNativeAuditFieldsIncluded");
     if(!engineNativeAuditFieldsIncludedNode.IsNull())
     {
       m_engineNativeAuditFieldsIncluded = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(engineNativeAuditFieldsIncludedNode.GetText()).c_str()).c_str());
       m_engineNativeAuditFieldsIncludedHasBeenSet = true;
+    }
+    XmlNode applyImmediatelyNode = resultNode.FirstChild("ApplyImmediately");
+    if(!applyImmediatelyNode.IsNull())
+    {
+      m_applyImmediately = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(applyImmediatelyNode.GetText()).c_str()).c_str());
+      m_applyImmediatelyHasBeenSet = true;
     }
   }
 

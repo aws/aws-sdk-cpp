@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p> OS version that the directory needs to be updated to. </p><p><h3>See
+   * <p>OS version that the directory needs to be updated to.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/OSUpdateSettings">AWS
    * API Reference</a></p>
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> OS version that the directory needs to be updated to. </p>
+     * <p>OS version that the directory needs to be updated to.</p>
      */
     inline OSVersion GetOSVersion() const { return m_oSVersion; }
     inline bool OSVersionHasBeenSet() const { return m_oSVersionHasBeenSet; }

@@ -16,7 +16,9 @@ namespace Model
   enum class CapacityProviderStatus
   {
     NOT_SET,
+    PROVISIONING,
     ACTIVE,
+    DEPROVISIONING,
     INACTIVE
   };
 

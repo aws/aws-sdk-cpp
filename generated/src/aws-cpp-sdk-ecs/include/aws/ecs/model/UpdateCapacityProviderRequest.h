@@ -8,6 +8,7 @@
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/model/AutoScalingGroupProviderUpdate.h>
+#include <aws/ecs/model/UpdateManagedInstancesProviderConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -49,6 +50,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the cluster that contains the capacity provider to update.
+     * Managed instances capacity providers are cluster-scoped and can only be updated
+     * within their associated cluster.</p>
+     */
+    inline const Aws::String& GetCluster() const { return m_cluster; }
+    inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
+    template<typename ClusterT = Aws::String>
+    void SetCluster(ClusterT&& value) { m_clusterHasBeenSet = true; m_cluster = std::forward<ClusterT>(value); }
+    template<typename ClusterT = Aws::String>
+    UpdateCapacityProviderRequest& WithCluster(ClusterT&& value) { SetCluster(std::forward<ClusterT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An object that represent the parameters to update for the Auto Scaling group
      * capacity provider.</p>
      */
@@ -59,13 +74,34 @@ namespace Model
     template<typename AutoScalingGroupProviderT = AutoScalingGroupProviderUpdate>
     UpdateCapacityProviderRequest& WithAutoScalingGroupProvider(AutoScalingGroupProviderT&& value) { SetAutoScalingGroupProvider(std::forward<AutoScalingGroupProviderT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The updated configuration for the Amazon ECS Managed Instances provider. You
+     * can modify the infrastructure role, instance launch template, and tag
+     * propagation settings. Changes take effect for new instances launched after the
+     * update.</p>
+     */
+    inline const UpdateManagedInstancesProviderConfiguration& GetManagedInstancesProvider() const { return m_managedInstancesProvider; }
+    inline bool ManagedInstancesProviderHasBeenSet() const { return m_managedInstancesProviderHasBeenSet; }
+    template<typename ManagedInstancesProviderT = UpdateManagedInstancesProviderConfiguration>
+    void SetManagedInstancesProvider(ManagedInstancesProviderT&& value) { m_managedInstancesProviderHasBeenSet = true; m_managedInstancesProvider = std::forward<ManagedInstancesProviderT>(value); }
+    template<typename ManagedInstancesProviderT = UpdateManagedInstancesProviderConfiguration>
+    UpdateCapacityProviderRequest& WithManagedInstancesProvider(ManagedInstancesProviderT&& value) { SetManagedInstancesProvider(std::forward<ManagedInstancesProviderT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
+    Aws::String m_cluster;
+    bool m_clusterHasBeenSet = false;
+
     AutoScalingGroupProviderUpdate m_autoScalingGroupProvider;
     bool m_autoScalingGroupProviderHasBeenSet = false;
+
+    UpdateManagedInstancesProviderConfiguration m_managedInstancesProvider;
+    bool m_managedInstancesProviderHasBeenSet = false;
   };
 
 } // namespace Model

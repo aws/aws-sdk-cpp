@@ -233,6 +233,33 @@ namespace ApplicationSignals
         }
 
         /**
+         * <p>Deletes the grouping configuration for this account. This removes all custom
+         * grouping attribute definitions that were previously configured.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/DeleteGroupingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteGroupingConfigurationOutcome DeleteGroupingConfiguration(const Model::DeleteGroupingConfigurationRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DeleteGroupingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteGroupingConfigurationRequestT = Model::DeleteGroupingConfigurationRequest>
+        Model::DeleteGroupingConfigurationOutcomeCallable DeleteGroupingConfigurationCallable(const DeleteGroupingConfigurationRequestT& request = {}) const
+        {
+            return SubmitCallable(&ApplicationSignalsClient::DeleteGroupingConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteGroupingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteGroupingConfigurationRequestT = Model::DeleteGroupingConfigurationRequest>
+        void DeleteGroupingConfigurationAsync(const DeleteGroupingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteGroupingConfigurationRequestT& request = {}) const
+        {
+            return SubmitAsync(&ApplicationSignalsClient::DeleteGroupingConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the specified service level objective.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/DeleteServiceLevelObjective">AWS
          * API Reference</a></p>
@@ -307,6 +334,65 @@ namespace ApplicationSignals
         void GetServiceLevelObjectiveAsync(const GetServiceLevelObjectiveRequestT& request, const GetServiceLevelObjectiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ApplicationSignalsClient::GetServiceLevelObjective, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of audit findings that provide automated analysis of service
+         * behavior and root cause analysis. These findings help identify the most
+         * significant observations about your services, including performance issues,
+         * anomalies, and potential problems. The findings are generated using heuristic
+         * algorithms based on established troubleshooting patterns.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListAuditFindings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAuditFindingsOutcome ListAuditFindings(const Model::ListAuditFindingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAuditFindings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAuditFindingsRequestT = Model::ListAuditFindingsRequest>
+        Model::ListAuditFindingsOutcomeCallable ListAuditFindingsCallable(const ListAuditFindingsRequestT& request) const
+        {
+            return SubmitCallable(&ApplicationSignalsClient::ListAuditFindings, request);
+        }
+
+        /**
+         * An Async wrapper for ListAuditFindings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAuditFindingsRequestT = Model::ListAuditFindingsRequest>
+        void ListAuditFindingsAsync(const ListAuditFindingsRequestT& request, const ListAuditFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ApplicationSignalsClient::ListAuditFindings, request, handler, context);
+        }
+
+        /**
+         * <p>Returns the current grouping configuration for this account, including all
+         * custom grouping attribute definitions that have been configured. These
+         * definitions determine how services are logically grouped based on telemetry
+         * attributes, Amazon Web Services tags, or predefined mappings.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListGroupingAttributeDefinitions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListGroupingAttributeDefinitionsOutcome ListGroupingAttributeDefinitions(const Model::ListGroupingAttributeDefinitionsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListGroupingAttributeDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListGroupingAttributeDefinitionsRequestT = Model::ListGroupingAttributeDefinitionsRequest>
+        Model::ListGroupingAttributeDefinitionsOutcomeCallable ListGroupingAttributeDefinitionsCallable(const ListGroupingAttributeDefinitionsRequestT& request = {}) const
+        {
+            return SubmitCallable(&ApplicationSignalsClient::ListGroupingAttributeDefinitions, request);
+        }
+
+        /**
+         * An Async wrapper for ListGroupingAttributeDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListGroupingAttributeDefinitionsRequestT = Model::ListGroupingAttributeDefinitionsRequest>
+        void ListGroupingAttributeDefinitionsAsync(const ListGroupingAttributeDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListGroupingAttributeDefinitionsRequestT& request = {}) const
+        {
+            return SubmitAsync(&ApplicationSignalsClient::ListGroupingAttributeDefinitions, request, handler, context);
         }
 
         /**
@@ -444,6 +530,34 @@ namespace ApplicationSignals
         }
 
         /**
+         * <p>Returns information about the last deployment and other change states of
+         * services. This API provides visibility into recent changes that may have
+         * affected service performance, helping with troubleshooting and change
+         * correlation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListServiceStates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListServiceStatesOutcome ListServiceStates(const Model::ListServiceStatesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListServiceStates that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListServiceStatesRequestT = Model::ListServiceStatesRequest>
+        Model::ListServiceStatesOutcomeCallable ListServiceStatesCallable(const ListServiceStatesRequestT& request) const
+        {
+            return SubmitCallable(&ApplicationSignalsClient::ListServiceStates, request);
+        }
+
+        /**
+         * An Async wrapper for ListServiceStates that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListServiceStatesRequestT = Model::ListServiceStatesRequest>
+        void ListServiceStatesAsync(const ListServiceStatesRequestT& request, const ListServiceStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ApplicationSignalsClient::ListServiceStates, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of services that have been discovered by Application Signals.
          * A service represents a minimum logical and transactional unit that completes a
          * business function. Services are discovered through Application Signals
@@ -495,6 +609,36 @@ namespace ApplicationSignals
         void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ApplicationSignalsClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p>Creates or updates the grouping configuration for this account. This
+         * operation allows you to define custom grouping attributes that determine how
+         * services are logically grouped based on telemetry attributes, Amazon Web
+         * Services tags, or predefined mappings. These grouping attributes can then be
+         * used to organize and filter services in the Application Signals console and
+         * APIs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/PutGroupingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutGroupingConfigurationOutcome PutGroupingConfiguration(const Model::PutGroupingConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutGroupingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutGroupingConfigurationRequestT = Model::PutGroupingConfigurationRequest>
+        Model::PutGroupingConfigurationOutcomeCallable PutGroupingConfigurationCallable(const PutGroupingConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&ApplicationSignalsClient::PutGroupingConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for PutGroupingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutGroupingConfigurationRequestT = Model::PutGroupingConfigurationRequest>
+        void PutGroupingConfigurationAsync(const PutGroupingConfigurationRequestT& request, const PutGroupingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ApplicationSignalsClient::PutGroupingConfiguration, request, handler, context);
         }
 
         /**

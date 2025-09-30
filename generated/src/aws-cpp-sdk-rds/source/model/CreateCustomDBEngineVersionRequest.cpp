@@ -44,6 +44,16 @@ Aws::String CreateCustomDBEngineVersionRequest::SerializePayload() const
     ss << "KMSKeyId=" << StringUtils::URLEncode(m_kMSKeyId.c_str()) << "&";
   }
 
+  if(m_sourceCustomDbEngineVersionIdentifierHasBeenSet)
+  {
+    ss << "SourceCustomDbEngineVersionIdentifier=" << StringUtils::URLEncode(m_sourceCustomDbEngineVersionIdentifier.c_str()) << "&";
+  }
+
+  if(m_useAwsProvidedLatestImageHasBeenSet)
+  {
+    ss << "UseAwsProvidedLatestImage=" << std::boolalpha << m_useAwsProvidedLatestImage << "&";
+  }
+
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
@@ -69,16 +79,6 @@ Aws::String CreateCustomDBEngineVersionRequest::SerializePayload() const
         tagsCount++;
       }
     }
-  }
-
-  if(m_sourceCustomDbEngineVersionIdentifierHasBeenSet)
-  {
-    ss << "SourceCustomDbEngineVersionIdentifier=" << StringUtils::URLEncode(m_sourceCustomDbEngineVersionIdentifier.c_str()) << "&";
-  }
-
-  if(m_useAwsProvidedLatestImageHasBeenSet)
-  {
-    ss << "UseAwsProvidedLatestImage=" << std::boolalpha << m_useAwsProvidedLatestImage << "&";
   }
 
   ss << "Version=2014-10-31";

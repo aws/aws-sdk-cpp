@@ -73,6 +73,17 @@ Aws::String CreateGatewayRequest::SerializePayload() const
    payload.WithString("exceptionLevel", ExceptionLevelMapper::GetNameForExceptionLevel(m_exceptionLevel));
   }
 
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
   return payload.View().WriteReadable();
 }
 

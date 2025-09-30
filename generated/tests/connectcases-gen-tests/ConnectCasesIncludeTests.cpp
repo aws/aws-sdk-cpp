@@ -38,6 +38,9 @@
 #include <aws/connectcases/model/CommentBodyTextType.h>
 #include <aws/connectcases/model/CommentContent.h>
 #include <aws/connectcases/model/CommentFilter.h>
+#include <aws/connectcases/model/ConnectCaseContent.h>
+#include <aws/connectcases/model/ConnectCaseFilter.h>
+#include <aws/connectcases/model/ConnectCaseInputContent.h>
 #include <aws/connectcases/model/Contact.h>
 #include <aws/connectcases/model/ContactContent.h>
 #include <aws/connectcases/model/ContactFilter.h>
@@ -55,6 +58,10 @@
 #include <aws/connectcases/model/CreateRelatedItemResult.h>
 #include <aws/connectcases/model/CreateTemplateRequest.h>
 #include <aws/connectcases/model/CreateTemplateResult.h>
+#include <aws/connectcases/model/CustomContent.h>
+#include <aws/connectcases/model/CustomFieldsFilter.h>
+#include <aws/connectcases/model/CustomFilter.h>
+#include <aws/connectcases/model/CustomInputContent.h>
 #include <aws/connectcases/model/DeleteCaseRequest.h>
 #include <aws/connectcases/model/DeleteCaseResult.h>
 #include <aws/connectcases/model/DeleteCaseRuleRequest.h>

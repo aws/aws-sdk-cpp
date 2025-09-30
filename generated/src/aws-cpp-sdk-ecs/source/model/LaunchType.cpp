@@ -23,6 +23,7 @@ namespace Aws
         static const int EC2_HASH = HashingUtils::HashString("EC2");
         static const int FARGATE_HASH = HashingUtils::HashString("FARGATE");
         static const int EXTERNAL_HASH = HashingUtils::HashString("EXTERNAL");
+        static const int MANAGED_INSTANCES_HASH = HashingUtils::HashString("MANAGED_INSTANCES");
 
 
         LaunchType GetLaunchTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == EXTERNAL_HASH)
           {
             return LaunchType::EXTERNAL;
+          }
+          else if (hashCode == MANAGED_INSTANCES_HASH)
+          {
+            return LaunchType::MANAGED_INSTANCES;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "FARGATE";
           case LaunchType::EXTERNAL:
             return "EXTERNAL";
+          case LaunchType::MANAGED_INSTANCES:
+            return "MANAGED_INSTANCES";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -80,6 +80,21 @@ namespace Model
     template<typename DnsIpAddrsT = Aws::String>
     CreateConditionalForwarderRequest& AddDnsIpAddrs(DnsIpAddrsT&& value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs.emplace_back(std::forward<DnsIpAddrsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The IPv6 addresses of the remote DNS server associated with
+     * RemoteDomainName.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDnsIpv6Addrs() const { return m_dnsIpv6Addrs; }
+    inline bool DnsIpv6AddrsHasBeenSet() const { return m_dnsIpv6AddrsHasBeenSet; }
+    template<typename DnsIpv6AddrsT = Aws::Vector<Aws::String>>
+    void SetDnsIpv6Addrs(DnsIpv6AddrsT&& value) { m_dnsIpv6AddrsHasBeenSet = true; m_dnsIpv6Addrs = std::forward<DnsIpv6AddrsT>(value); }
+    template<typename DnsIpv6AddrsT = Aws::Vector<Aws::String>>
+    CreateConditionalForwarderRequest& WithDnsIpv6Addrs(DnsIpv6AddrsT&& value) { SetDnsIpv6Addrs(std::forward<DnsIpv6AddrsT>(value)); return *this;}
+    template<typename DnsIpv6AddrsT = Aws::String>
+    CreateConditionalForwarderRequest& AddDnsIpv6Addrs(DnsIpv6AddrsT&& value) { m_dnsIpv6AddrsHasBeenSet = true; m_dnsIpv6Addrs.emplace_back(std::forward<DnsIpv6AddrsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_directoryId;
@@ -90,6 +105,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_dnsIpAddrs;
     bool m_dnsIpAddrsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_dnsIpv6Addrs;
+    bool m_dnsIpv6AddrsHasBeenSet = false;
   };
 
 } // namespace Model

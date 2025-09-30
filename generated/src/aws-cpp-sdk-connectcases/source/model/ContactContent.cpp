@@ -25,6 +25,11 @@ ContactContent::ContactContent(JsonView jsonValue)
 
 ContactContent& ContactContent::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("contactArn"))
+  {
+    m_contactArn = jsonValue.GetString("contactArn");
+    m_contactArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("channel"))
   {
     m_channel = jsonValue.GetString("channel");
@@ -35,17 +40,18 @@ ContactContent& ContactContent::operator =(JsonView jsonValue)
     m_connectedToSystemTime = jsonValue.GetString("connectedToSystemTime");
     m_connectedToSystemTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("contactArn"))
-  {
-    m_contactArn = jsonValue.GetString("contactArn");
-    m_contactArnHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue ContactContent::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_contactArnHasBeenSet)
+  {
+   payload.WithString("contactArn", m_contactArn);
+
+  }
 
   if(m_channelHasBeenSet)
   {
@@ -56,12 +62,6 @@ JsonValue ContactContent::Jsonize() const
   if(m_connectedToSystemTimeHasBeenSet)
   {
    payload.WithString("connectedToSystemTime", m_connectedToSystemTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_contactArnHasBeenSet)
-  {
-   payload.WithString("contactArn", m_contactArn);
-
   }
 
   return payload;

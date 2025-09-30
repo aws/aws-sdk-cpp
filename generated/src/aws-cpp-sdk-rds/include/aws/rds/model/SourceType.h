@@ -24,7 +24,9 @@ namespace Model
     db_cluster_snapshot,
     custom_engine_version,
     db_proxy,
-    blue_green_deployment
+    blue_green_deployment,
+    db_shard_group,
+    zero_etl
   };
 
 namespace SourceTypeMapper

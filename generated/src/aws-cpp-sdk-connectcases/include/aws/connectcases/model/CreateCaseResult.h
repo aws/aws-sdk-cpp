@@ -34,17 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the case.</p>
-     */
-    inline const Aws::String& GetCaseArn() const { return m_caseArn; }
-    template<typename CaseArnT = Aws::String>
-    void SetCaseArn(CaseArnT&& value) { m_caseArnHasBeenSet = true; m_caseArn = std::forward<CaseArnT>(value); }
-    template<typename CaseArnT = Aws::String>
-    CreateCaseResult& WithCaseArn(CaseArnT&& value) { SetCaseArn(std::forward<CaseArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A unique identifier of the case.</p>
      */
     inline const Aws::String& GetCaseId() const { return m_caseId; }
@@ -52,6 +41,17 @@ namespace Model
     void SetCaseId(CaseIdT&& value) { m_caseIdHasBeenSet = true; m_caseId = std::forward<CaseIdT>(value); }
     template<typename CaseIdT = Aws::String>
     CreateCaseResult& WithCaseId(CaseIdT&& value) { SetCaseId(std::forward<CaseIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the case.</p>
+     */
+    inline const Aws::String& GetCaseArn() const { return m_caseArn; }
+    template<typename CaseArnT = Aws::String>
+    void SetCaseArn(CaseArnT&& value) { m_caseArnHasBeenSet = true; m_caseArn = std::forward<CaseArnT>(value); }
+    template<typename CaseArnT = Aws::String>
+    CreateCaseResult& WithCaseArn(CaseArnT&& value) { SetCaseArn(std::forward<CaseArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,11 +64,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_caseArn;
-    bool m_caseArnHasBeenSet = false;
-
     Aws::String m_caseId;
     bool m_caseIdHasBeenSet = false;
+
+    Aws::String m_caseArn;
+    bool m_caseArnHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

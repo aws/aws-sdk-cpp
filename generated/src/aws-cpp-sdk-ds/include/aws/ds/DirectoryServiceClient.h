@@ -2143,7 +2143,7 @@ namespace DirectoryService
         }
 
         /**
-         * <p> Updates the directory for a particular update type. </p><p><h3>See
+         * <p>Updates directory configuration for the specified update type.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateDirectorySetup">AWS
          * API Reference</a></p>

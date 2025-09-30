@@ -29,6 +29,8 @@ namespace Aws
         static const int custom_engine_version_HASH = HashingUtils::HashString("custom-engine-version");
         static const int db_proxy_HASH = HashingUtils::HashString("db-proxy");
         static const int blue_green_deployment_HASH = HashingUtils::HashString("blue-green-deployment");
+        static const int db_shard_group_HASH = HashingUtils::HashString("db-shard-group");
+        static const int zero_etl_HASH = HashingUtils::HashString("zero-etl");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)
@@ -70,6 +72,14 @@ namespace Aws
           {
             return SourceType::blue_green_deployment;
           }
+          else if (hashCode == db_shard_group_HASH)
+          {
+            return SourceType::db_shard_group;
+          }
+          else if (hashCode == zero_etl_HASH)
+          {
+            return SourceType::zero_etl;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -104,6 +114,10 @@ namespace Aws
             return "db-proxy";
           case SourceType::blue_green_deployment:
             return "blue-green-deployment";
+          case SourceType::db_shard_group:
+            return "db-shard-group";
+          case SourceType::zero_etl:
+            return "zero-etl";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

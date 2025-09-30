@@ -39,6 +39,17 @@ Aws::String CreateConditionalForwarderRequest::SerializePayload() const
 
   }
 
+  if(m_dnsIpv6AddrsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> dnsIpv6AddrsJsonList(m_dnsIpv6Addrs.size());
+   for(unsigned dnsIpv6AddrsIndex = 0; dnsIpv6AddrsIndex < dnsIpv6AddrsJsonList.GetLength(); ++dnsIpv6AddrsIndex)
+   {
+     dnsIpv6AddrsJsonList[dnsIpv6AddrsIndex].AsString(m_dnsIpv6Addrs[dnsIpv6AddrsIndex]);
+   }
+   payload.WithArray("DnsIpv6Addrs", std::move(dnsIpv6AddrsJsonList));
+
+  }
+
   return payload.View().WriteReadable();
 }
 

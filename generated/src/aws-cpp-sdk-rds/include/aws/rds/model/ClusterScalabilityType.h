@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     standard,
-    limitless
+    limitless,
+    scaleout
   };
 
 namespace ClusterScalabilityTypeMapper

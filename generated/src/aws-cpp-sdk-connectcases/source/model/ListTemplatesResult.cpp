@@ -25,11 +25,6 @@ ListTemplatesResult::ListTemplatesResult(const Aws::AmazonWebServiceResult<JsonV
 ListTemplatesResult& ListTemplatesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("templates"))
   {
     Aws::Utils::Array<JsonView> templatesJsonList = jsonValue.GetArray("templates");
@@ -38,6 +33,11 @@ ListTemplatesResult& ListTemplatesResult::operator =(const Aws::AmazonWebService
       m_templates.push_back(templatesJsonList[templatesIndex].AsObject());
     }
     m_templatesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

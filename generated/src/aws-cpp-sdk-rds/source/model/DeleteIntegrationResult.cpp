@@ -100,6 +100,18 @@ DeleteIntegrationResult& DeleteIntegrationResult::operator =(const Aws::AmazonWe
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode dataFilterNode = resultNode.FirstChild("DataFilter");
+    if(!dataFilterNode.IsNull())
+    {
+      m_dataFilter = Aws::Utils::Xml::DecodeEscapedXmlText(dataFilterNode.GetText());
+      m_dataFilterHasBeenSet = true;
+    }
+    XmlNode descriptionNode = resultNode.FirstChild("Description");
+    if(!descriptionNode.IsNull())
+    {
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
+      m_descriptionHasBeenSet = true;
+    }
     XmlNode createTimeNode = resultNode.FirstChild("CreateTime");
     if(!createTimeNode.IsNull())
     {
@@ -118,18 +130,6 @@ DeleteIntegrationResult& DeleteIntegrationResult::operator =(const Aws::AmazonWe
       }
 
       m_errorsHasBeenSet = true;
-    }
-    XmlNode dataFilterNode = resultNode.FirstChild("DataFilter");
-    if(!dataFilterNode.IsNull())
-    {
-      m_dataFilter = Aws::Utils::Xml::DecodeEscapedXmlText(dataFilterNode.GetText());
-      m_dataFilterHasBeenSet = true;
-    }
-    XmlNode descriptionNode = resultNode.FirstChild("Description");
-    if(!descriptionNode.IsNull())
-    {
-      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
-      m_descriptionHasBeenSet = true;
     }
   }
 

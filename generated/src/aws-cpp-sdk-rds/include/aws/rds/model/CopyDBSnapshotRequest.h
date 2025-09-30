@@ -46,16 +46,16 @@ namespace Model
      * <p>The identifier for the source DB snapshot.</p> <p>If the source snapshot is
      * in the same Amazon Web Services Region as the copy, specify a valid DB snapshot
      * identifier. For example, you might specify
-     * <code>rds:mysql-instance1-snapshot-20130805</code>.</p> <p>If the source
-     * snapshot is in a different Amazon Web Services Region than the copy, specify a
-     * valid DB snapshot ARN. For example, you might specify
+     * <code>rds:mysql-instance1-snapshot-20130805</code>.</p> <p>If you are copying
+     * from a shared manual DB snapshot, this parameter must be the Amazon Resource
+     * Name (ARN) of the shared DB snapshot.</p> <p>If the source snapshot is in a
+     * different Amazon Web Services Region than the copy, specify a valid DB snapshot
+     * ARN. You can also specify an ARN of a snapshot that is in a different account
+     * and a different Amazon Web Services Region. For example, you might specify
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>.</p>
-     * <p>If you are copying from a shared manual DB snapshot, this parameter must be
-     * the Amazon Resource Name (ARN) of the shared DB snapshot.</p> <p>If you are
-     * copying an encrypted snapshot this parameter must be in the ARN format for the
-     * source Amazon Web Services Region.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * specify a valid system snapshot in the "available" state.</p> </li> </ul>
-     * <p>Example: <code>rds:mydb-2012-04-02-00-01</code> </p> <p>Example:
+     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid source snapshot in the
+     * "available" state.</p> </li> </ul> <p>Example:
+     * <code>rds:mydb-2012-04-02-00-01</code> </p> <p>Example:
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>
      * </p>
      */
@@ -224,6 +224,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>Configures the location where RDS will store copied snapshots.</p> <p>Valid
+     * Values:</p> <ul> <li> <p> <code>local</code> (Dedicated Local Zone)</p> </li>
+     * <li> <p> <code>outposts</code> (Amazon Web Services Outposts)</p> </li> <li> <p>
+     * <code>region</code> (Amazon Web Services Region)</p> </li> </ul>
+     */
+    inline const Aws::String& GetSnapshotTarget() const { return m_snapshotTarget; }
+    inline bool SnapshotTargetHasBeenSet() const { return m_snapshotTargetHasBeenSet; }
+    template<typename SnapshotTargetT = Aws::String>
+    void SetSnapshotTarget(SnapshotTargetT&& value) { m_snapshotTargetHasBeenSet = true; m_snapshotTarget = std::forward<SnapshotTargetT>(value); }
+    template<typename SnapshotTargetT = Aws::String>
+    CopyDBSnapshotRequest& WithSnapshotTarget(SnapshotTargetT&& value) { SetSnapshotTarget(std::forward<SnapshotTargetT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies whether to copy the DB option group associated with the source DB
      * snapshot to the target Amazon Web Services account and associate with the target
      * DB snapshot. The associated option group can be copied only with cross-account
@@ -247,21 +262,6 @@ namespace Model
     void SetSnapshotAvailabilityZone(SnapshotAvailabilityZoneT&& value) { m_snapshotAvailabilityZoneHasBeenSet = true; m_snapshotAvailabilityZone = std::forward<SnapshotAvailabilityZoneT>(value); }
     template<typename SnapshotAvailabilityZoneT = Aws::String>
     CopyDBSnapshotRequest& WithSnapshotAvailabilityZone(SnapshotAvailabilityZoneT&& value) { SetSnapshotAvailabilityZone(std::forward<SnapshotAvailabilityZoneT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Configures the location where RDS will store copied snapshots.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>local</code> (Dedicated Local Zone)</p> </li>
-     * <li> <p> <code>outposts</code> (Amazon Web Services Outposts)</p> </li> <li> <p>
-     * <code>region</code> (Amazon Web Services Region)</p> </li> </ul>
-     */
-    inline const Aws::String& GetSnapshotTarget() const { return m_snapshotTarget; }
-    inline bool SnapshotTargetHasBeenSet() const { return m_snapshotTargetHasBeenSet; }
-    template<typename SnapshotTargetT = Aws::String>
-    void SetSnapshotTarget(SnapshotTargetT&& value) { m_snapshotTargetHasBeenSet = true; m_snapshotTarget = std::forward<SnapshotTargetT>(value); }
-    template<typename SnapshotTargetT = Aws::String>
-    CopyDBSnapshotRequest& WithSnapshotTarget(SnapshotTargetT&& value) { SetSnapshotTarget(std::forward<SnapshotTargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -301,14 +301,14 @@ namespace Model
     Aws::String m_targetCustomAvailabilityZone;
     bool m_targetCustomAvailabilityZoneHasBeenSet = false;
 
+    Aws::String m_snapshotTarget;
+    bool m_snapshotTargetHasBeenSet = false;
+
     bool m_copyOptionGroup{false};
     bool m_copyOptionGroupHasBeenSet = false;
 
     Aws::String m_snapshotAvailabilityZone;
     bool m_snapshotAvailabilityZoneHasBeenSet = false;
-
-    Aws::String m_snapshotTarget;
-    bool m_snapshotTargetHasBeenSet = false;
 
     Aws::String m_sourceRegion;
     bool m_sourceRegionHasBeenSet = false;

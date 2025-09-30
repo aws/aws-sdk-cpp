@@ -10,6 +10,7 @@
 #include <aws/ds/model/DirectoryVpcSettings.h>
 #include <aws/ds/model/DirectoryEdition.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ds/model/NetworkType.h>
 #include <aws/ds/model/Tag.h>
 #include <utility>
 
@@ -135,6 +136,17 @@ namespace Model
     template<typename TagsT = Tag>
     CreateMicrosoftADRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p> The network type for your domain. The default value is <code>IPv4</code> or
+     * <code>IPv6</code> based on the provided subnet capabilities.</p>
+     */
+    inline NetworkType GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    inline void SetNetworkType(NetworkType value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline CreateMicrosoftADRequest& WithNetworkType(NetworkType value) { SetNetworkType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -157,6 +169,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    NetworkType m_networkType{NetworkType::NOT_SET};
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

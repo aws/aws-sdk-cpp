@@ -40,6 +40,11 @@ DomainController& DomainController::operator =(JsonView jsonValue)
     m_dnsIpAddr = jsonValue.GetString("DnsIpAddr");
     m_dnsIpAddrHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("DnsIpv6Addr"))
+  {
+    m_dnsIpv6Addr = jsonValue.GetString("DnsIpv6Addr");
+    m_dnsIpv6AddrHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
@@ -97,6 +102,12 @@ JsonValue DomainController::Jsonize() const
   if(m_dnsIpAddrHasBeenSet)
   {
    payload.WithString("DnsIpAddr", m_dnsIpAddr);
+
+  }
+
+  if(m_dnsIpv6AddrHasBeenSet)
+  {
+   payload.WithString("DnsIpv6Addr", m_dnsIpv6Addr);
 
   }
 

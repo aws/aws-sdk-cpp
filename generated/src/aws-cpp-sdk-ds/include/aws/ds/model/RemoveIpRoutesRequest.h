@@ -61,6 +61,20 @@ namespace Model
     template<typename CidrIpsT = Aws::String>
     RemoveIpRoutesRequest& AddCidrIps(CidrIpsT&& value) { m_cidrIpsHasBeenSet = true; m_cidrIps.emplace_back(std::forward<CidrIpsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>IPv6 address blocks that you want to remove.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetCidrIpv6s() const { return m_cidrIpv6s; }
+    inline bool CidrIpv6sHasBeenSet() const { return m_cidrIpv6sHasBeenSet; }
+    template<typename CidrIpv6sT = Aws::Vector<Aws::String>>
+    void SetCidrIpv6s(CidrIpv6sT&& value) { m_cidrIpv6sHasBeenSet = true; m_cidrIpv6s = std::forward<CidrIpv6sT>(value); }
+    template<typename CidrIpv6sT = Aws::Vector<Aws::String>>
+    RemoveIpRoutesRequest& WithCidrIpv6s(CidrIpv6sT&& value) { SetCidrIpv6s(std::forward<CidrIpv6sT>(value)); return *this;}
+    template<typename CidrIpv6sT = Aws::String>
+    RemoveIpRoutesRequest& AddCidrIpv6s(CidrIpv6sT&& value) { m_cidrIpv6sHasBeenSet = true; m_cidrIpv6s.emplace_back(std::forward<CidrIpv6sT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_directoryId;
@@ -68,6 +82,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_cidrIps;
     bool m_cidrIpsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_cidrIpv6s;
+    bool m_cidrIpv6sHasBeenSet = false;
   };
 
 } // namespace Model

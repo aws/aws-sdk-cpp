@@ -89,6 +89,11 @@ CreateFileSystemOntapConfiguration& CreateFileSystemOntapConfiguration::operator
     m_throughputCapacityPerHAPair = jsonValue.GetInteger("ThroughputCapacityPerHAPair");
     m_throughputCapacityPerHAPairHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("EndpointIpv6AddressRange"))
+  {
+    m_endpointIpv6AddressRange = jsonValue.GetString("EndpointIpv6AddressRange");
+    m_endpointIpv6AddressRangeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -169,6 +174,12 @@ JsonValue CreateFileSystemOntapConfiguration::Jsonize() const
   if(m_throughputCapacityPerHAPairHasBeenSet)
   {
    payload.WithInteger("ThroughputCapacityPerHAPair", m_throughputCapacityPerHAPair);
+
+  }
+
+  if(m_endpointIpv6AddressRangeHasBeenSet)
+  {
+   payload.WithString("EndpointIpv6AddressRange", m_endpointIpv6AddressRange);
 
   }
 

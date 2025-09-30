@@ -1108,13 +1108,13 @@ namespace Aws
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateGlobalCluster">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateGlobalClusterOutcome CreateGlobalCluster(const Model::CreateGlobalClusterRequest& request = {}) const;
+        virtual Model::CreateGlobalClusterOutcome CreateGlobalCluster(const Model::CreateGlobalClusterRequest& request) const;
 
         /**
          * A Callable wrapper for CreateGlobalCluster that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateGlobalClusterRequestT = Model::CreateGlobalClusterRequest>
-        Model::CreateGlobalClusterOutcomeCallable CreateGlobalClusterCallable(const CreateGlobalClusterRequestT& request = {}) const
+        Model::CreateGlobalClusterOutcomeCallable CreateGlobalClusterCallable(const CreateGlobalClusterRequestT& request) const
         {
             return SubmitCallable(&RDSClient::CreateGlobalCluster, request);
         }
@@ -1123,7 +1123,7 @@ namespace Aws
          * An Async wrapper for CreateGlobalCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateGlobalClusterRequestT = Model::CreateGlobalClusterRequest>
-        void CreateGlobalClusterAsync(const CreateGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateGlobalClusterRequestT& request = {}) const
+        void CreateGlobalClusterAsync(const CreateGlobalClusterRequestT& request, const CreateGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RDSClient::CreateGlobalCluster, request, handler, context);
         }
@@ -4076,13 +4076,13 @@ namespace Aws
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyGlobalCluster">AWS
          * API Reference</a></p>
          */
-        virtual Model::ModifyGlobalClusterOutcome ModifyGlobalCluster(const Model::ModifyGlobalClusterRequest& request = {}) const;
+        virtual Model::ModifyGlobalClusterOutcome ModifyGlobalCluster(const Model::ModifyGlobalClusterRequest& request) const;
 
         /**
          * A Callable wrapper for ModifyGlobalCluster that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ModifyGlobalClusterRequestT = Model::ModifyGlobalClusterRequest>
-        Model::ModifyGlobalClusterOutcomeCallable ModifyGlobalClusterCallable(const ModifyGlobalClusterRequestT& request = {}) const
+        Model::ModifyGlobalClusterOutcomeCallable ModifyGlobalClusterCallable(const ModifyGlobalClusterRequestT& request) const
         {
             return SubmitCallable(&RDSClient::ModifyGlobalCluster, request);
         }
@@ -4091,7 +4091,7 @@ namespace Aws
          * An Async wrapper for ModifyGlobalCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ModifyGlobalClusterRequestT = Model::ModifyGlobalClusterRequest>
-        void ModifyGlobalClusterAsync(const ModifyGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ModifyGlobalClusterRequestT& request = {}) const
+        void ModifyGlobalClusterAsync(const ModifyGlobalClusterRequestT& request, const ModifyGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RDSClient::ModifyGlobalCluster, request, handler, context);
         }
@@ -4394,13 +4394,13 @@ namespace Aws
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveFromGlobalCluster">AWS
          * API Reference</a></p>
          */
-        virtual Model::RemoveFromGlobalClusterOutcome RemoveFromGlobalCluster(const Model::RemoveFromGlobalClusterRequest& request = {}) const;
+        virtual Model::RemoveFromGlobalClusterOutcome RemoveFromGlobalCluster(const Model::RemoveFromGlobalClusterRequest& request) const;
 
         /**
          * A Callable wrapper for RemoveFromGlobalCluster that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename RemoveFromGlobalClusterRequestT = Model::RemoveFromGlobalClusterRequest>
-        Model::RemoveFromGlobalClusterOutcomeCallable RemoveFromGlobalClusterCallable(const RemoveFromGlobalClusterRequestT& request = {}) const
+        Model::RemoveFromGlobalClusterOutcomeCallable RemoveFromGlobalClusterCallable(const RemoveFromGlobalClusterRequestT& request) const
         {
             return SubmitCallable(&RDSClient::RemoveFromGlobalCluster, request);
         }
@@ -4409,7 +4409,7 @@ namespace Aws
          * An Async wrapper for RemoveFromGlobalCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename RemoveFromGlobalClusterRequestT = Model::RemoveFromGlobalClusterRequest>
-        void RemoveFromGlobalClusterAsync(const RemoveFromGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const RemoveFromGlobalClusterRequestT& request = {}) const
+        void RemoveFromGlobalClusterAsync(const RemoveFromGlobalClusterRequestT& request, const RemoveFromGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RDSClient::RemoveFromGlobalCluster, request, handler, context);
         }

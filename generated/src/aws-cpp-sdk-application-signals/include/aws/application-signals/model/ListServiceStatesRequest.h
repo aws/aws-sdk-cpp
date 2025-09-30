@@ -1,0 +1,155 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/application-signals/ApplicationSignals_EXPORTS.h>
+#include <aws/application-signals/ApplicationSignalsRequest.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/application-signals/model/AttributeFilter.h>
+#include <utility>
+
+namespace Aws
+{
+namespace ApplicationSignals
+{
+namespace Model
+{
+
+  /**
+   */
+  class ListServiceStatesRequest : public ApplicationSignalsRequest
+  {
+  public:
+    AWS_APPLICATIONSIGNALS_API ListServiceStatesRequest() = default;
+
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "ListServiceStates"; }
+
+    AWS_APPLICATIONSIGNALS_API Aws::String SerializePayload() const override;
+
+
+    ///@{
+    /**
+     * <p>The start of the time period to retrieve service state information for. When
+     * used in a raw HTTP Query API, it is formatted as epoch time in seconds. For
+     * example, <code>1698778057</code>.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    ListServiceStatesRequest& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The end of the time period to retrieve service state information for. When
+     * used in a raw HTTP Query API, it is formatted as epoch time in seconds. For
+     * example, <code>1698778057</code>.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    ListServiceStatesRequest& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of service states to return in one operation. If you omit
+     * this parameter, the default of 20 is used.</p>
+     */
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListServiceStatesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Include this value, if it was returned by the previous operation, to get the
+     * next set of service states.</p>
+     */
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListServiceStatesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>If you are using this operation in a monitoring account, specify
+     * <code>true</code> to include service states from source accounts in the returned
+     * data.</p>
+     */
+    inline bool GetIncludeLinkedAccounts() const { return m_includeLinkedAccounts; }
+    inline bool IncludeLinkedAccountsHasBeenSet() const { return m_includeLinkedAccountsHasBeenSet; }
+    inline void SetIncludeLinkedAccounts(bool value) { m_includeLinkedAccountsHasBeenSet = true; m_includeLinkedAccounts = value; }
+    inline ListServiceStatesRequest& WithIncludeLinkedAccounts(bool value) { SetIncludeLinkedAccounts(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Web Services account ID to filter service states by. Use this to
+     * limit results to services from a specific account.</p>
+     */
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
+    inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    ListServiceStatesRequest& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A list of attribute filters to narrow down the services. You can filter by
+     * platform, environment, or other service attributes.</p>
+     */
+    inline const Aws::Vector<AttributeFilter>& GetAttributeFilters() const { return m_attributeFilters; }
+    inline bool AttributeFiltersHasBeenSet() const { return m_attributeFiltersHasBeenSet; }
+    template<typename AttributeFiltersT = Aws::Vector<AttributeFilter>>
+    void SetAttributeFilters(AttributeFiltersT&& value) { m_attributeFiltersHasBeenSet = true; m_attributeFilters = std::forward<AttributeFiltersT>(value); }
+    template<typename AttributeFiltersT = Aws::Vector<AttributeFilter>>
+    ListServiceStatesRequest& WithAttributeFilters(AttributeFiltersT&& value) { SetAttributeFilters(std::forward<AttributeFiltersT>(value)); return *this;}
+    template<typename AttributeFiltersT = AttributeFilter>
+    ListServiceStatesRequest& AddAttributeFilters(AttributeFiltersT&& value) { m_attributeFiltersHasBeenSet = true; m_attributeFilters.emplace_back(std::forward<AttributeFiltersT>(value)); return *this; }
+    ///@}
+  private:
+
+    Aws::Utils::DateTime m_startTime{};
+    bool m_startTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_endTime{};
+    bool m_endTimeHasBeenSet = false;
+
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
+
+    bool m_includeLinkedAccounts{false};
+    bool m_includeLinkedAccountsHasBeenSet = false;
+
+    Aws::String m_awsAccountId;
+    bool m_awsAccountIdHasBeenSet = false;
+
+    Aws::Vector<AttributeFilter> m_attributeFilters;
+    bool m_attributeFiltersHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace ApplicationSignals
+} // namespace Aws

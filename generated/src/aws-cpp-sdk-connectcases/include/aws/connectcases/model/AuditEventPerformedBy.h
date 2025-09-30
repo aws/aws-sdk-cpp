@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connectcases/model/UserUnion.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -40,6 +40,16 @@ namespace Model
 
 
     ///@{
+    
+    inline const UserUnion& GetUser() const { return m_user; }
+    inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
+    template<typename UserT = UserUnion>
+    void SetUser(UserT&& value) { m_userHasBeenSet = true; m_user = std::forward<UserT>(value); }
+    template<typename UserT = UserUnion>
+    AuditEventPerformedBy& WithUser(UserT&& value) { SetUser(std::forward<UserT>(value)); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>Unique identifier of an IAM role.</p>
      */
@@ -50,23 +60,13 @@ namespace Model
     template<typename IamPrincipalArnT = Aws::String>
     AuditEventPerformedBy& WithIamPrincipalArn(IamPrincipalArnT&& value) { SetIamPrincipalArn(std::forward<IamPrincipalArnT>(value)); return *this;}
     ///@}
-
-    ///@{
-    
-    inline const UserUnion& GetUser() const { return m_user; }
-    inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
-    template<typename UserT = UserUnion>
-    void SetUser(UserT&& value) { m_userHasBeenSet = true; m_user = std::forward<UserT>(value); }
-    template<typename UserT = UserUnion>
-    AuditEventPerformedBy& WithUser(UserT&& value) { SetUser(std::forward<UserT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::String m_iamPrincipalArn;
-    bool m_iamPrincipalArnHasBeenSet = false;
 
     UserUnion m_user;
     bool m_userHasBeenSet = false;
+
+    Aws::String m_iamPrincipalArn;
+    bool m_iamPrincipalArnHasBeenSet = false;
   };
 
 } // namespace Model

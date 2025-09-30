@@ -195,14 +195,14 @@ Aws::String RestoreDBClusterFromSnapshotRequest::SerializePayload() const
     ss << "PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
   }
 
-  if(m_serverlessV2ScalingConfigurationHasBeenSet)
-  {
-    m_serverlessV2ScalingConfiguration.OutputToStream(ss, "ServerlessV2ScalingConfiguration");
-  }
-
   if(m_networkTypeHasBeenSet)
   {
     ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
+  }
+
+  if(m_serverlessV2ScalingConfigurationHasBeenSet)
+  {
+    m_serverlessV2ScalingConfiguration.OutputToStream(ss, "ServerlessV2ScalingConfiguration");
   }
 
   if(m_rdsCustomClusterConfigurationHasBeenSet)

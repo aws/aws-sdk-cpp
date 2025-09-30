@@ -35,6 +35,11 @@ CapacityProvider& CapacityProvider::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("cluster"))
+  {
+    m_cluster = jsonValue.GetString("cluster");
+    m_clusterHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("status"))
   {
     m_status = CapacityProviderStatusMapper::GetCapacityProviderStatusForName(jsonValue.GetString("status"));
@@ -44,6 +49,11 @@ CapacityProvider& CapacityProvider::operator =(JsonView jsonValue)
   {
     m_autoScalingGroupProvider = jsonValue.GetObject("autoScalingGroupProvider");
     m_autoScalingGroupProviderHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("managedInstancesProvider"))
+  {
+    m_managedInstancesProvider = jsonValue.GetObject("managedInstancesProvider");
+    m_managedInstancesProviderHasBeenSet = true;
   }
   if(jsonValue.ValueExists("updateStatus"))
   {
@@ -64,6 +74,11 @@ CapacityProvider& CapacityProvider::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = CapacityProviderTypeMapper::GetCapacityProviderTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -83,6 +98,12 @@ JsonValue CapacityProvider::Jsonize() const
 
   }
 
+  if(m_clusterHasBeenSet)
+  {
+   payload.WithString("cluster", m_cluster);
+
+  }
+
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", CapacityProviderStatusMapper::GetNameForCapacityProviderStatus(m_status));
@@ -91,6 +112,12 @@ JsonValue CapacityProvider::Jsonize() const
   if(m_autoScalingGroupProviderHasBeenSet)
   {
    payload.WithObject("autoScalingGroupProvider", m_autoScalingGroupProvider.Jsonize());
+
+  }
+
+  if(m_managedInstancesProviderHasBeenSet)
+  {
+   payload.WithObject("managedInstancesProvider", m_managedInstancesProvider.Jsonize());
 
   }
 
@@ -114,6 +141,11 @@ JsonValue CapacityProvider::Jsonize() const
    }
    payload.WithArray("tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", CapacityProviderTypeMapper::GetNameForCapacityProviderType(m_type));
   }
 
   return payload;

@@ -123,29 +123,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>Use this optional field to only include SLOs with the specified metric source
-     * types in the output. Supported types are:</p> <ul> <li> <p>Service operation</p>
-     * </li> <li> <p>Service dependency</p> </li> <li> <p>CloudWatch metric</p> </li>
-     * </ul>
-     */
-    inline const Aws::Vector<MetricSourceType>& GetMetricSourceTypes() const { return m_metricSourceTypes; }
-    inline bool MetricSourceTypesHasBeenSet() const { return m_metricSourceTypesHasBeenSet; }
-    template<typename MetricSourceTypesT = Aws::Vector<MetricSourceType>>
-    void SetMetricSourceTypes(MetricSourceTypesT&& value) { m_metricSourceTypesHasBeenSet = true; m_metricSourceTypes = std::forward<MetricSourceTypesT>(value); }
-    template<typename MetricSourceTypesT = Aws::Vector<MetricSourceType>>
-    ListServiceLevelObjectivesRequest& WithMetricSourceTypes(MetricSourceTypesT&& value) { SetMetricSourceTypes(std::forward<MetricSourceTypesT>(value)); return *this;}
-    inline ListServiceLevelObjectivesRequest& AddMetricSourceTypes(MetricSourceType value) { m_metricSourceTypesHasBeenSet = true; m_metricSourceTypes.push_back(value); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>If you are using this operation in a monitoring account, specify
-     * <code>true</code> to include SLO from source accounts in the returned data.
-     * <pre><code> &lt;/p&gt; &lt;p&gt;When you are monitoring an account, you can use
-     * Amazon Web Services account ID in &lt;code&gt;KeyAttribute&lt;/code&gt; filter
-     * for service source account and &lt;code&gt;SloOwnerawsaccountID&lt;/code&gt; for
-     * SLO source account with &lt;code&gt;IncludeLinkedAccounts&lt;/code&gt; to filter
-     * the returned data to only a single source account. &lt;/p&gt; </code></pre>
+     * <code>true</code> to include SLO from source accounts in the returned data. </p>
+     * <p>When you are monitoring an account, you can use Amazon Web Services account
+     * ID in <code>KeyAttribute</code> filter for service source account and
+     * <code>SloOwnerawsaccountID</code> for SLO source account with
+     * <code>IncludeLinkedAccounts</code> to filter the returned data to only a single
+     * source account. </p>
      */
     inline bool GetIncludeLinkedAccounts() const { return m_includeLinkedAccounts; }
     inline bool IncludeLinkedAccountsHasBeenSet() const { return m_includeLinkedAccountsHasBeenSet; }
@@ -164,6 +148,22 @@ namespace Model
     template<typename SloOwnerAwsAccountIdT = Aws::String>
     ListServiceLevelObjectivesRequest& WithSloOwnerAwsAccountId(SloOwnerAwsAccountIdT&& value) { SetSloOwnerAwsAccountId(std::forward<SloOwnerAwsAccountIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Use this optional field to only include SLOs with the specified metric source
+     * types in the output. Supported types are:</p> <ul> <li> <p>Service operation</p>
+     * </li> <li> <p>Service dependency</p> </li> <li> <p>CloudWatch metric</p> </li>
+     * </ul>
+     */
+    inline const Aws::Vector<MetricSourceType>& GetMetricSourceTypes() const { return m_metricSourceTypes; }
+    inline bool MetricSourceTypesHasBeenSet() const { return m_metricSourceTypesHasBeenSet; }
+    template<typename MetricSourceTypesT = Aws::Vector<MetricSourceType>>
+    void SetMetricSourceTypes(MetricSourceTypesT&& value) { m_metricSourceTypesHasBeenSet = true; m_metricSourceTypes = std::forward<MetricSourceTypesT>(value); }
+    template<typename MetricSourceTypesT = Aws::Vector<MetricSourceType>>
+    ListServiceLevelObjectivesRequest& WithMetricSourceTypes(MetricSourceTypesT&& value) { SetMetricSourceTypes(std::forward<MetricSourceTypesT>(value)); return *this;}
+    inline ListServiceLevelObjectivesRequest& AddMetricSourceTypes(MetricSourceType value) { m_metricSourceTypesHasBeenSet = true; m_metricSourceTypes.push_back(value); return *this; }
+    ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_keyAttributes;
@@ -181,14 +181,14 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Aws::Vector<MetricSourceType> m_metricSourceTypes;
-    bool m_metricSourceTypesHasBeenSet = false;
-
     bool m_includeLinkedAccounts{false};
     bool m_includeLinkedAccountsHasBeenSet = false;
 
     Aws::String m_sloOwnerAwsAccountId;
     bool m_sloOwnerAwsAccountIdHasBeenSet = false;
+
+    Aws::Vector<MetricSourceType> m_metricSourceTypes;
+    bool m_metricSourceTypesHasBeenSet = false;
   };
 
 } // namespace Model

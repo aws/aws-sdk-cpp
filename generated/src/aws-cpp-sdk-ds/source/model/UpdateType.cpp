@@ -21,6 +21,8 @@ namespace Aws
       {
 
         static const int OS_HASH = HashingUtils::HashString("OS");
+        static const int NETWORK_HASH = HashingUtils::HashString("NETWORK");
+        static const int SIZE_HASH = HashingUtils::HashString("SIZE");
 
 
         UpdateType GetUpdateTypeForName(const Aws::String& name)
@@ -29,6 +31,14 @@ namespace Aws
           if (hashCode == OS_HASH)
           {
             return UpdateType::OS;
+          }
+          else if (hashCode == NETWORK_HASH)
+          {
+            return UpdateType::NETWORK;
+          }
+          else if (hashCode == SIZE_HASH)
+          {
+            return UpdateType::SIZE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +58,10 @@ namespace Aws
             return {};
           case UpdateType::OS:
             return "OS";
+          case UpdateType::NETWORK:
+            return "NETWORK";
+          case UpdateType::SIZE:
+            return "SIZE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

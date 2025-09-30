@@ -20,16 +20,26 @@ namespace Aws
       namespace CapacityProviderStatusMapper
       {
 
+        static const int PROVISIONING_HASH = HashingUtils::HashString("PROVISIONING");
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+        static const int DEPROVISIONING_HASH = HashingUtils::HashString("DEPROVISIONING");
         static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
 
 
         CapacityProviderStatus GetCapacityProviderStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ACTIVE_HASH)
+          if (hashCode == PROVISIONING_HASH)
+          {
+            return CapacityProviderStatus::PROVISIONING;
+          }
+          else if (hashCode == ACTIVE_HASH)
           {
             return CapacityProviderStatus::ACTIVE;
+          }
+          else if (hashCode == DEPROVISIONING_HASH)
+          {
+            return CapacityProviderStatus::DEPROVISIONING;
           }
           else if (hashCode == INACTIVE_HASH)
           {
@@ -51,8 +61,12 @@ namespace Aws
           {
           case CapacityProviderStatus::NOT_SET:
             return {};
+          case CapacityProviderStatus::PROVISIONING:
+            return "PROVISIONING";
           case CapacityProviderStatus::ACTIVE:
             return "ACTIVE";
+          case CapacityProviderStatus::DEPROVISIONING:
+            return "DEPROVISIONING";
           case CapacityProviderStatus::INACTIVE:
             return "INACTIVE";
           default:

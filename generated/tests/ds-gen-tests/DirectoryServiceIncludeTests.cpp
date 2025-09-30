@@ -133,6 +133,7 @@
 #include <aws/ds/model/DirectoryLimits.h>
 #include <aws/ds/model/DirectoryNotSharedException.h>
 #include <aws/ds/model/DirectorySize.h>
+#include <aws/ds/model/DirectorySizeUpdateSettings.h>
 #include <aws/ds/model/DirectoryStage.h>
 #include <aws/ds/model/DirectoryType.h>
 #include <aws/ds/model/DirectoryUnavailableException.h>
@@ -210,6 +211,8 @@
 #include <aws/ds/model/ListTagsForResourceRequest.h>
 #include <aws/ds/model/ListTagsForResourceResult.h>
 #include <aws/ds/model/LogSubscription.h>
+#include <aws/ds/model/NetworkType.h>
+#include <aws/ds/model/NetworkUpdateSettings.h>
 #include <aws/ds/model/NoAvailableCertificateException.h>
 #include <aws/ds/model/OSUpdateSettings.h>
 #include <aws/ds/model/OSVersion.h>

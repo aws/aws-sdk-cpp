@@ -16,9 +16,9 @@ Aws::String CreateCaseRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
+  if(m_templateIdHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithString("templateId", m_templateId);
 
   }
 
@@ -33,15 +33,15 @@ Aws::String CreateCaseRequest::SerializePayload() const
 
   }
 
-  if(m_performedByHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-   payload.WithObject("performedBy", m_performedBy.Jsonize());
+   payload.WithString("clientToken", m_clientToken);
 
   }
 
-  if(m_templateIdHasBeenSet)
+  if(m_performedByHasBeenSet)
   {
-   payload.WithString("templateId", m_templateId);
+   payload.WithObject("performedBy", m_performedBy.Jsonize());
 
   }
 

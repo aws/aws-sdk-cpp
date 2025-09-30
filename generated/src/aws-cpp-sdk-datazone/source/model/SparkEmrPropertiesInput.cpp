@@ -45,6 +45,11 @@ SparkEmrPropertiesInput& SparkEmrPropertiesInput::operator =(JsonView jsonValue)
     m_logUri = jsonValue.GetString("logUri");
     m_logUriHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("managedEndpointArn"))
+  {
+    m_managedEndpointArn = jsonValue.GetString("managedEndpointArn");
+    m_managedEndpointArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("pythonVirtualEnv"))
   {
     m_pythonVirtualEnv = jsonValue.GetString("pythonVirtualEnv");
@@ -88,6 +93,12 @@ JsonValue SparkEmrPropertiesInput::Jsonize() const
   if(m_logUriHasBeenSet)
   {
    payload.WithString("logUri", m_logUri);
+
+  }
+
+  if(m_managedEndpointArnHasBeenSet)
+  {
+   payload.WithString("managedEndpointArn", m_managedEndpointArn);
 
   }
 

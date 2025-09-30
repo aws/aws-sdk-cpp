@@ -67,6 +67,15 @@ DirectoryConnectSettingsDescription& DirectoryConnectSettingsDescription::operat
     }
     m_connectIpsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ConnectIpsV6"))
+  {
+    Aws::Utils::Array<JsonView> connectIpsV6JsonList = jsonValue.GetArray("ConnectIpsV6");
+    for(unsigned connectIpsV6Index = 0; connectIpsV6Index < connectIpsV6JsonList.GetLength(); ++connectIpsV6Index)
+    {
+      m_connectIpsV6.push_back(connectIpsV6JsonList[connectIpsV6Index].AsString());
+    }
+    m_connectIpsV6HasBeenSet = true;
+  }
   return *this;
 }
 
@@ -122,6 +131,17 @@ JsonValue DirectoryConnectSettingsDescription::Jsonize() const
      connectIpsJsonList[connectIpsIndex].AsString(m_connectIps[connectIpsIndex]);
    }
    payload.WithArray("ConnectIps", std::move(connectIpsJsonList));
+
+  }
+
+  if(m_connectIpsV6HasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> connectIpsV6JsonList(m_connectIpsV6.size());
+   for(unsigned connectIpsV6Index = 0; connectIpsV6Index < connectIpsV6JsonList.GetLength(); ++connectIpsV6Index)
+   {
+     connectIpsV6JsonList[connectIpsV6Index].AsString(m_connectIpsV6[connectIpsV6Index]);
+   }
+   payload.WithArray("ConnectIpsV6", std::move(connectIpsV6JsonList));
 
   }
 

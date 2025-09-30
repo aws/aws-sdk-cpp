@@ -30,6 +30,11 @@ SearchCasesResponseItem& SearchCasesResponseItem::operator =(JsonView jsonValue)
     m_caseId = jsonValue.GetString("caseId");
     m_caseIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("templateId"))
+  {
+    m_templateId = jsonValue.GetString("templateId");
+    m_templateIdHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("fields"))
   {
     Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
@@ -48,11 +53,6 @@ SearchCasesResponseItem& SearchCasesResponseItem::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("templateId"))
-  {
-    m_templateId = jsonValue.GetString("templateId");
-    m_templateIdHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -63,6 +63,12 @@ JsonValue SearchCasesResponseItem::Jsonize() const
   if(m_caseIdHasBeenSet)
   {
    payload.WithString("caseId", m_caseId);
+
+  }
+
+  if(m_templateIdHasBeenSet)
+  {
+   payload.WithString("templateId", m_templateId);
 
   }
 
@@ -85,12 +91,6 @@ JsonValue SearchCasesResponseItem::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
-
-  }
-
-  if(m_templateIdHasBeenSet)
-  {
-   payload.WithString("templateId", m_templateId);
 
   }
 

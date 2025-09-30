@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/application-signals/model/ServiceGroup.h>
 #include <aws/application-signals/model/MetricReference.h>
 #include <utility>
 
@@ -113,6 +114,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>An array of service groups that this service belongs to, based on the
+     * configured grouping attributes.</p>
+     */
+    inline const Aws::Vector<ServiceGroup>& GetServiceGroups() const { return m_serviceGroups; }
+    inline bool ServiceGroupsHasBeenSet() const { return m_serviceGroupsHasBeenSet; }
+    template<typename ServiceGroupsT = Aws::Vector<ServiceGroup>>
+    void SetServiceGroups(ServiceGroupsT&& value) { m_serviceGroupsHasBeenSet = true; m_serviceGroups = std::forward<ServiceGroupsT>(value); }
+    template<typename ServiceGroupsT = Aws::Vector<ServiceGroup>>
+    Service& WithServiceGroups(ServiceGroupsT&& value) { SetServiceGroups(std::forward<ServiceGroupsT>(value)); return *this;}
+    template<typename ServiceGroupsT = ServiceGroup>
+    Service& AddServiceGroups(ServiceGroupsT&& value) { m_serviceGroupsHasBeenSet = true; m_serviceGroups.emplace_back(std::forward<ServiceGroupsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>An array of structures that each contain information about one metric
      * associated with this service.</p>
      */
@@ -150,6 +166,9 @@ namespace Model
 
     Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_attributeMaps;
     bool m_attributeMapsHasBeenSet = false;
+
+    Aws::Vector<ServiceGroup> m_serviceGroups;
+    bool m_serviceGroupsHasBeenSet = false;
 
     Aws::Vector<MetricReference> m_metricReferences;
     bool m_metricReferencesHasBeenSet = false;

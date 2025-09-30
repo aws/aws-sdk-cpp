@@ -30,6 +30,21 @@ AuditEvent& AuditEvent::operator =(JsonView jsonValue)
     m_eventId = jsonValue.GetString("eventId");
     m_eventIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = AuditEventTypeMapper::GetAuditEventTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("relatedItemType"))
+  {
+    m_relatedItemType = RelatedItemTypeMapper::GetRelatedItemTypeForName(jsonValue.GetString("relatedItemType"));
+    m_relatedItemTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("performedTime"))
+  {
+    m_performedTime = jsonValue.GetString("performedTime");
+    m_performedTimeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("fields"))
   {
     Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
@@ -44,21 +59,6 @@ AuditEvent& AuditEvent::operator =(JsonView jsonValue)
     m_performedBy = jsonValue.GetObject("performedBy");
     m_performedByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("performedTime"))
-  {
-    m_performedTime = jsonValue.GetString("performedTime");
-    m_performedTimeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("relatedItemType"))
-  {
-    m_relatedItemType = RelatedItemTypeMapper::GetRelatedItemTypeForName(jsonValue.GetString("relatedItemType"));
-    m_relatedItemTypeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = AuditEventTypeMapper::GetAuditEventTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -70,6 +70,21 @@ JsonValue AuditEvent::Jsonize() const
   {
    payload.WithString("eventId", m_eventId);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", AuditEventTypeMapper::GetNameForAuditEventType(m_type));
+  }
+
+  if(m_relatedItemTypeHasBeenSet)
+  {
+   payload.WithString("relatedItemType", RelatedItemTypeMapper::GetNameForRelatedItemType(m_relatedItemType));
+  }
+
+  if(m_performedTimeHasBeenSet)
+  {
+   payload.WithString("performedTime", m_performedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_fieldsHasBeenSet)
@@ -87,21 +102,6 @@ JsonValue AuditEvent::Jsonize() const
   {
    payload.WithObject("performedBy", m_performedBy.Jsonize());
 
-  }
-
-  if(m_performedTimeHasBeenSet)
-  {
-   payload.WithString("performedTime", m_performedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_relatedItemTypeHasBeenSet)
-  {
-   payload.WithString("relatedItemType", RelatedItemTypeMapper::GetNameForRelatedItemType(m_relatedItemType));
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", AuditEventTypeMapper::GetNameForAuditEventType(m_type));
   }
 
   return payload;

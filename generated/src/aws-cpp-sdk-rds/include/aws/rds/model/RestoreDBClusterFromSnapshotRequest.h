@@ -506,16 +506,6 @@ namespace Model
     ///@}
 
     ///@{
-    
-    inline const ServerlessV2ScalingConfiguration& GetServerlessV2ScalingConfiguration() const { return m_serverlessV2ScalingConfiguration; }
-    inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
-    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
-    void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::forward<ServerlessV2ScalingConfigurationT>(value); }
-    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
-    RestoreDBClusterFromSnapshotRequest& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { SetServerlessV2ScalingConfiguration(std::forward<ServerlessV2ScalingConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
     /**
      * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
@@ -533,6 +523,16 @@ namespace Model
     void SetNetworkType(NetworkTypeT&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::forward<NetworkTypeT>(value); }
     template<typename NetworkTypeT = Aws::String>
     RestoreDBClusterFromSnapshotRequest& WithNetworkType(NetworkTypeT&& value) { SetNetworkType(std::forward<NetworkTypeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const ServerlessV2ScalingConfiguration& GetServerlessV2ScalingConfiguration() const { return m_serverlessV2ScalingConfiguration; }
+    inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
+    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
+    void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::forward<ServerlessV2ScalingConfigurationT>(value); }
+    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
+    RestoreDBClusterFromSnapshotRequest& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { SetServerlessV2ScalingConfiguration(std::forward<ServerlessV2ScalingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -733,11 +733,11 @@ namespace Model
     bool m_publiclyAccessible{false};
     bool m_publiclyAccessibleHasBeenSet = false;
 
-    ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
-    bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
-
     Aws::String m_networkType;
     bool m_networkTypeHasBeenSet = false;
+
+    ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
+    bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
 
     RdsCustomClusterConfiguration m_rdsCustomClusterConfiguration;
     bool m_rdsCustomClusterConfigurationHasBeenSet = false;

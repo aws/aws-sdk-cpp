@@ -30,6 +30,11 @@ IpRoute& IpRoute::operator =(JsonView jsonValue)
     m_cidrIp = jsonValue.GetString("CidrIp");
     m_cidrIpHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("CidrIpv6"))
+  {
+    m_cidrIpv6 = jsonValue.GetString("CidrIpv6");
+    m_cidrIpv6HasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
@@ -45,6 +50,12 @@ JsonValue IpRoute::Jsonize() const
   if(m_cidrIpHasBeenSet)
   {
    payload.WithString("CidrIp", m_cidrIp);
+
+  }
+
+  if(m_cidrIpv6HasBeenSet)
+  {
+   payload.WithString("CidrIpv6", m_cidrIpv6);
 
   }
 

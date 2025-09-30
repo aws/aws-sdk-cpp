@@ -78,6 +78,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The IPv6 address of the domain controller.</p>
+     */
+    inline const Aws::String& GetDnsIpv6Addr() const { return m_dnsIpv6Addr; }
+    inline bool DnsIpv6AddrHasBeenSet() const { return m_dnsIpv6AddrHasBeenSet; }
+    template<typename DnsIpv6AddrT = Aws::String>
+    void SetDnsIpv6Addr(DnsIpv6AddrT&& value) { m_dnsIpv6AddrHasBeenSet = true; m_dnsIpv6Addr = std::forward<DnsIpv6AddrT>(value); }
+    template<typename DnsIpv6AddrT = Aws::String>
+    DomainController& WithDnsIpv6Addr(DnsIpv6AddrT&& value) { SetDnsIpv6Addr(std::forward<DnsIpv6AddrT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The identifier of the VPC that contains the domain controller.</p>
      */
     inline const Aws::String& GetVpcId() const { return m_vpcId; }
@@ -167,6 +179,9 @@ namespace Model
 
     Aws::String m_dnsIpAddr;
     bool m_dnsIpAddrHasBeenSet = false;
+
+    Aws::String m_dnsIpv6Addr;
+    bool m_dnsIpv6AddrHasBeenSet = false;
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet = false;

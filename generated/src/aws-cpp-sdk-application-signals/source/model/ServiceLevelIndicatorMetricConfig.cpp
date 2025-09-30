@@ -44,6 +44,11 @@ ServiceLevelIndicatorMetricConfig& ServiceLevelIndicatorMetricConfig::operator =
     m_metricType = ServiceLevelIndicatorMetricTypeMapper::GetServiceLevelIndicatorMetricTypeForName(jsonValue.GetString("MetricType"));
     m_metricTypeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("MetricName"))
+  {
+    m_metricName = jsonValue.GetString("MetricName");
+    m_metricNameHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Statistic"))
   {
     m_statistic = jsonValue.GetString("Statistic");
@@ -95,6 +100,12 @@ JsonValue ServiceLevelIndicatorMetricConfig::Jsonize() const
   if(m_metricTypeHasBeenSet)
   {
    payload.WithString("MetricType", ServiceLevelIndicatorMetricTypeMapper::GetNameForServiceLevelIndicatorMetricType(m_metricType));
+  }
+
+  if(m_metricNameHasBeenSet)
+  {
+   payload.WithString("MetricName", m_metricName);
+
   }
 
   if(m_statisticHasBeenSet)

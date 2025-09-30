@@ -121,6 +121,12 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
       m_iops = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iopsNode.GetText()).c_str()).c_str());
       m_iopsHasBeenSet = true;
     }
+    XmlNode storageThroughputNode = resultNode.FirstChild("StorageThroughput");
+    if(!storageThroughputNode.IsNull())
+    {
+      m_storageThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageThroughputNode.GetText()).c_str()).c_str());
+      m_storageThroughputHasBeenSet = true;
+    }
     XmlNode optionGroupNameNode = resultNode.FirstChild("OptionGroupName");
     if(!optionGroupNameNode.IsNull())
     {
@@ -219,6 +225,12 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
 
       m_tagListHasBeenSet = true;
     }
+    XmlNode snapshotTargetNode = resultNode.FirstChild("SnapshotTarget");
+    if(!snapshotTargetNode.IsNull())
+    {
+      m_snapshotTarget = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotTargetNode.GetText());
+      m_snapshotTargetHasBeenSet = true;
+    }
     XmlNode originalSnapshotCreateTimeNode = resultNode.FirstChild("OriginalSnapshotCreateTime");
     if(!originalSnapshotCreateTimeNode.IsNull())
     {
@@ -231,35 +243,23 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
       m_snapshotDatabaseTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(snapshotDatabaseTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_snapshotDatabaseTimeHasBeenSet = true;
     }
-    XmlNode snapshotTargetNode = resultNode.FirstChild("SnapshotTarget");
-    if(!snapshotTargetNode.IsNull())
-    {
-      m_snapshotTarget = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotTargetNode.GetText());
-      m_snapshotTargetHasBeenSet = true;
-    }
-    XmlNode storageThroughputNode = resultNode.FirstChild("StorageThroughput");
-    if(!storageThroughputNode.IsNull())
-    {
-      m_storageThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageThroughputNode.GetText()).c_str()).c_str());
-      m_storageThroughputHasBeenSet = true;
-    }
     XmlNode dBSystemIdNode = resultNode.FirstChild("DBSystemId");
     if(!dBSystemIdNode.IsNull())
     {
       m_dBSystemId = Aws::Utils::Xml::DecodeEscapedXmlText(dBSystemIdNode.GetText());
       m_dBSystemIdHasBeenSet = true;
     }
-    XmlNode dedicatedLogVolumeNode = resultNode.FirstChild("DedicatedLogVolume");
-    if(!dedicatedLogVolumeNode.IsNull())
-    {
-      m_dedicatedLogVolume = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dedicatedLogVolumeNode.GetText()).c_str()).c_str());
-      m_dedicatedLogVolumeHasBeenSet = true;
-    }
     XmlNode multiTenantNode = resultNode.FirstChild("MultiTenant");
     if(!multiTenantNode.IsNull())
     {
       m_multiTenant = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiTenantNode.GetText()).c_str()).c_str());
       m_multiTenantHasBeenSet = true;
+    }
+    XmlNode dedicatedLogVolumeNode = resultNode.FirstChild("DedicatedLogVolume");
+    if(!dedicatedLogVolumeNode.IsNull())
+    {
+      m_dedicatedLogVolume = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dedicatedLogVolumeNode.GetText()).c_str()).c_str());
+      m_dedicatedLogVolumeHasBeenSet = true;
     }
     XmlNode snapshotAvailabilityZoneNode = resultNode.FirstChild("SnapshotAvailabilityZone");
     if(!snapshotAvailabilityZoneNode.IsNull())
@@ -349,6 +349,11 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".Iops=" << m_iops << "&";
   }
 
+  if(m_storageThroughputHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StorageThroughput=" << m_storageThroughput << "&";
+  }
+
   if(m_optionGroupNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
@@ -431,6 +436,11 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
       }
   }
 
+  if(m_snapshotTargetHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SnapshotTarget=" << StringUtils::URLEncode(m_snapshotTarget.c_str()) << "&";
+  }
+
   if(m_originalSnapshotCreateTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".OriginalSnapshotCreateTime=" << StringUtils::URLEncode(m_originalSnapshotCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
@@ -441,29 +451,19 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".SnapshotDatabaseTime=" << StringUtils::URLEncode(m_snapshotDatabaseTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_snapshotTargetHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SnapshotTarget=" << StringUtils::URLEncode(m_snapshotTarget.c_str()) << "&";
-  }
-
-  if(m_storageThroughputHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StorageThroughput=" << m_storageThroughput << "&";
-  }
-
   if(m_dBSystemIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".DBSystemId=" << StringUtils::URLEncode(m_dBSystemId.c_str()) << "&";
   }
 
-  if(m_dedicatedLogVolumeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
-  }
-
   if(m_multiTenantHasBeenSet)
   {
       oStream << location << index << locationValue << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
+  }
+
+  if(m_dedicatedLogVolumeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
   }
 
   if(m_snapshotAvailabilityZoneHasBeenSet)
@@ -535,6 +535,10 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
   {
       oStream << location << ".Iops=" << m_iops << "&";
   }
+  if(m_storageThroughputHasBeenSet)
+  {
+      oStream << location << ".StorageThroughput=" << m_storageThroughput << "&";
+  }
   if(m_optionGroupNameHasBeenSet)
   {
       oStream << location << ".OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
@@ -603,6 +607,10 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
         item.OutputToStream(oStream, tagListSs.str().c_str());
       }
   }
+  if(m_snapshotTargetHasBeenSet)
+  {
+      oStream << location << ".SnapshotTarget=" << StringUtils::URLEncode(m_snapshotTarget.c_str()) << "&";
+  }
   if(m_originalSnapshotCreateTimeHasBeenSet)
   {
       oStream << location << ".OriginalSnapshotCreateTime=" << StringUtils::URLEncode(m_originalSnapshotCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
@@ -611,25 +619,17 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
   {
       oStream << location << ".SnapshotDatabaseTime=" << StringUtils::URLEncode(m_snapshotDatabaseTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
-  if(m_snapshotTargetHasBeenSet)
-  {
-      oStream << location << ".SnapshotTarget=" << StringUtils::URLEncode(m_snapshotTarget.c_str()) << "&";
-  }
-  if(m_storageThroughputHasBeenSet)
-  {
-      oStream << location << ".StorageThroughput=" << m_storageThroughput << "&";
-  }
   if(m_dBSystemIdHasBeenSet)
   {
       oStream << location << ".DBSystemId=" << StringUtils::URLEncode(m_dBSystemId.c_str()) << "&";
   }
-  if(m_dedicatedLogVolumeHasBeenSet)
-  {
-      oStream << location << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
-  }
   if(m_multiTenantHasBeenSet)
   {
       oStream << location << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
+  }
+  if(m_dedicatedLogVolumeHasBeenSet)
+  {
+      oStream << location << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
   }
   if(m_snapshotAvailabilityZoneHasBeenSet)
   {

@@ -27,6 +27,12 @@ Aws::String DescribeCapacityProvidersRequest::SerializePayload() const
 
   }
 
+  if(m_clusterHasBeenSet)
+  {
+   payload.WithString("cluster", m_cluster);
+
+  }
+
   if(m_includeHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> includeJsonList(m_include.size());

@@ -34,17 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the field.</p>
-     */
-    inline const Aws::String& GetFieldArn() const { return m_fieldArn; }
-    template<typename FieldArnT = Aws::String>
-    void SetFieldArn(FieldArnT&& value) { m_fieldArnHasBeenSet = true; m_fieldArn = std::forward<FieldArnT>(value); }
-    template<typename FieldArnT = Aws::String>
-    CreateFieldResult& WithFieldArn(FieldArnT&& value) { SetFieldArn(std::forward<FieldArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique identifier of a field.</p>
      */
     inline const Aws::String& GetFieldId() const { return m_fieldId; }
@@ -52,6 +41,17 @@ namespace Model
     void SetFieldId(FieldIdT&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::forward<FieldIdT>(value); }
     template<typename FieldIdT = Aws::String>
     CreateFieldResult& WithFieldId(FieldIdT&& value) { SetFieldId(std::forward<FieldIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the field.</p>
+     */
+    inline const Aws::String& GetFieldArn() const { return m_fieldArn; }
+    template<typename FieldArnT = Aws::String>
+    void SetFieldArn(FieldArnT&& value) { m_fieldArnHasBeenSet = true; m_fieldArn = std::forward<FieldArnT>(value); }
+    template<typename FieldArnT = Aws::String>
+    CreateFieldResult& WithFieldArn(FieldArnT&& value) { SetFieldArn(std::forward<FieldArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,11 +64,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_fieldArn;
-    bool m_fieldArnHasBeenSet = false;
-
     Aws::String m_fieldId;
     bool m_fieldIdHasBeenSet = false;
+
+    Aws::String m_fieldArn;
+    bool m_fieldArnHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -139,6 +139,34 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ARN of a CEV to use as a source for creating a new CEV. You can specify a
+     * different Amazon Machine Imagine (AMI) by using either <code>Source</code> or
+     * <code>UseAwsProvidedLatestImage</code>. You can't specify a different JSON
+     * manifest when you specify
+     * <code>SourceCustomDbEngineVersionIdentifier</code>.</p>
+     */
+    inline const Aws::String& GetSourceCustomDbEngineVersionIdentifier() const { return m_sourceCustomDbEngineVersionIdentifier; }
+    inline bool SourceCustomDbEngineVersionIdentifierHasBeenSet() const { return m_sourceCustomDbEngineVersionIdentifierHasBeenSet; }
+    template<typename SourceCustomDbEngineVersionIdentifierT = Aws::String>
+    void SetSourceCustomDbEngineVersionIdentifier(SourceCustomDbEngineVersionIdentifierT&& value) { m_sourceCustomDbEngineVersionIdentifierHasBeenSet = true; m_sourceCustomDbEngineVersionIdentifier = std::forward<SourceCustomDbEngineVersionIdentifierT>(value); }
+    template<typename SourceCustomDbEngineVersionIdentifierT = Aws::String>
+    CreateCustomDBEngineVersionRequest& WithSourceCustomDbEngineVersionIdentifier(SourceCustomDbEngineVersionIdentifierT&& value) { SetSourceCustomDbEngineVersionIdentifier(std::forward<SourceCustomDbEngineVersionIdentifierT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to use the latest service-provided Amazon Machine Image
+     * (AMI) for the CEV. If you specify <code>UseAwsProvidedLatestImage</code>, you
+     * can't also specify <code>ImageId</code>.</p>
+     */
+    inline bool GetUseAwsProvidedLatestImage() const { return m_useAwsProvidedLatestImage; }
+    inline bool UseAwsProvidedLatestImageHasBeenSet() const { return m_useAwsProvidedLatestImageHasBeenSet; }
+    inline void SetUseAwsProvidedLatestImage(bool value) { m_useAwsProvidedLatestImageHasBeenSet = true; m_useAwsProvidedLatestImage = value; }
+    inline CreateCustomDBEngineVersionRequest& WithUseAwsProvidedLatestImage(bool value) { SetUseAwsProvidedLatestImage(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An optional description of your CEV.</p>
      */
     inline const Aws::String& GetDescription() const { return m_description; }
@@ -186,34 +214,6 @@ namespace Model
     template<typename TagsT = Tag>
     CreateCustomDBEngineVersionRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The ARN of a CEV to use as a source for creating a new CEV. You can specify a
-     * different Amazon Machine Imagine (AMI) by using either <code>Source</code> or
-     * <code>UseAwsProvidedLatestImage</code>. You can't specify a different JSON
-     * manifest when you specify
-     * <code>SourceCustomDbEngineVersionIdentifier</code>.</p>
-     */
-    inline const Aws::String& GetSourceCustomDbEngineVersionIdentifier() const { return m_sourceCustomDbEngineVersionIdentifier; }
-    inline bool SourceCustomDbEngineVersionIdentifierHasBeenSet() const { return m_sourceCustomDbEngineVersionIdentifierHasBeenSet; }
-    template<typename SourceCustomDbEngineVersionIdentifierT = Aws::String>
-    void SetSourceCustomDbEngineVersionIdentifier(SourceCustomDbEngineVersionIdentifierT&& value) { m_sourceCustomDbEngineVersionIdentifierHasBeenSet = true; m_sourceCustomDbEngineVersionIdentifier = std::forward<SourceCustomDbEngineVersionIdentifierT>(value); }
-    template<typename SourceCustomDbEngineVersionIdentifierT = Aws::String>
-    CreateCustomDBEngineVersionRequest& WithSourceCustomDbEngineVersionIdentifier(SourceCustomDbEngineVersionIdentifierT&& value) { SetSourceCustomDbEngineVersionIdentifier(std::forward<SourceCustomDbEngineVersionIdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies whether to use the latest service-provided Amazon Machine Image
-     * (AMI) for the CEV. If you specify <code>UseAwsProvidedLatestImage</code>, you
-     * can't also specify <code>ImageId</code>.</p>
-     */
-    inline bool GetUseAwsProvidedLatestImage() const { return m_useAwsProvidedLatestImage; }
-    inline bool UseAwsProvidedLatestImageHasBeenSet() const { return m_useAwsProvidedLatestImageHasBeenSet; }
-    inline void SetUseAwsProvidedLatestImage(bool value) { m_useAwsProvidedLatestImageHasBeenSet = true; m_useAwsProvidedLatestImage = value; }
-    inline CreateCustomDBEngineVersionRequest& WithUseAwsProvidedLatestImage(bool value) { SetUseAwsProvidedLatestImage(value); return *this;}
-    ///@}
   private:
 
     Aws::String m_engine;
@@ -234,6 +234,12 @@ namespace Model
     Aws::String m_kMSKeyId;
     bool m_kMSKeyIdHasBeenSet = false;
 
+    Aws::String m_sourceCustomDbEngineVersionIdentifier;
+    bool m_sourceCustomDbEngineVersionIdentifierHasBeenSet = false;
+
+    bool m_useAwsProvidedLatestImage{false};
+    bool m_useAwsProvidedLatestImageHasBeenSet = false;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
@@ -242,12 +248,6 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
-
-    Aws::String m_sourceCustomDbEngineVersionIdentifier;
-    bool m_sourceCustomDbEngineVersionIdentifierHasBeenSet = false;
-
-    bool m_useAwsProvidedLatestImage{false};
-    bool m_useAwsProvidedLatestImageHasBeenSet = false;
   };
 
 } // namespace Model

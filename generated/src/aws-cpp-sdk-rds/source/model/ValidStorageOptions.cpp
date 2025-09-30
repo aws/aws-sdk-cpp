@@ -76,12 +76,6 @@ ValidStorageOptions& ValidStorageOptions::operator =(const XmlNode& xmlNode)
 
       m_iopsToStorageRatioHasBeenSet = true;
     }
-    XmlNode supportsStorageAutoscalingNode = resultNode.FirstChild("SupportsStorageAutoscaling");
-    if(!supportsStorageAutoscalingNode.IsNull())
-    {
-      m_supportsStorageAutoscaling = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsStorageAutoscalingNode.GetText()).c_str()).c_str());
-      m_supportsStorageAutoscalingHasBeenSet = true;
-    }
     XmlNode provisionedStorageThroughputNode = resultNode.FirstChild("ProvisionedStorageThroughput");
     if(!provisionedStorageThroughputNode.IsNull())
     {
@@ -107,6 +101,12 @@ ValidStorageOptions& ValidStorageOptions::operator =(const XmlNode& xmlNode)
       }
 
       m_storageThroughputToIopsRatioHasBeenSet = true;
+    }
+    XmlNode supportsStorageAutoscalingNode = resultNode.FirstChild("SupportsStorageAutoscaling");
+    if(!supportsStorageAutoscalingNode.IsNull())
+    {
+      m_supportsStorageAutoscaling = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsStorageAutoscalingNode.GetText()).c_str()).c_str());
+      m_supportsStorageAutoscalingHasBeenSet = true;
     }
   }
 
@@ -153,11 +153,6 @@ void ValidStorageOptions::OutputToStream(Aws::OStream& oStream, const char* loca
       }
   }
 
-  if(m_supportsStorageAutoscalingHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SupportsStorageAutoscaling=" << std::boolalpha << m_supportsStorageAutoscaling << "&";
-  }
-
   if(m_provisionedStorageThroughputHasBeenSet)
   {
       unsigned provisionedStorageThroughputIdx = 1;
@@ -178,6 +173,11 @@ void ValidStorageOptions::OutputToStream(Aws::OStream& oStream, const char* loca
         storageThroughputToIopsRatioSs << location << index << locationValue << ".StorageThroughputToIopsRatio.DoubleRange." << storageThroughputToIopsRatioIdx++;
         item.OutputToStream(oStream, storageThroughputToIopsRatioSs.str().c_str());
       }
+  }
+
+  if(m_supportsStorageAutoscalingHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsStorageAutoscaling=" << std::boolalpha << m_supportsStorageAutoscaling << "&";
   }
 
 }
@@ -218,10 +218,6 @@ void ValidStorageOptions::OutputToStream(Aws::OStream& oStream, const char* loca
         item.OutputToStream(oStream, iopsToStorageRatioSs.str().c_str());
       }
   }
-  if(m_supportsStorageAutoscalingHasBeenSet)
-  {
-      oStream << location << ".SupportsStorageAutoscaling=" << std::boolalpha << m_supportsStorageAutoscaling << "&";
-  }
   if(m_provisionedStorageThroughputHasBeenSet)
   {
       unsigned provisionedStorageThroughputIdx = 1;
@@ -241,6 +237,10 @@ void ValidStorageOptions::OutputToStream(Aws::OStream& oStream, const char* loca
         storageThroughputToIopsRatioSs << location << ".StorageThroughputToIopsRatio.DoubleRange." << storageThroughputToIopsRatioIdx++;
         item.OutputToStream(oStream, storageThroughputToIopsRatioSs.str().c_str());
       }
+  }
+  if(m_supportsStorageAutoscalingHasBeenSet)
+  {
+      oStream << location << ".SupportsStorageAutoscaling=" << std::boolalpha << m_supportsStorageAutoscaling << "&";
   }
 }
 

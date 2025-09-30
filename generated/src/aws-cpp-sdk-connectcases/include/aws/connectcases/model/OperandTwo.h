@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
-#include <aws/connectcases/model/EmptyOperandValue.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/connectcases/model/EmptyOperandValue.h>
 #include <utility>
 
 namespace Aws
@@ -44,6 +44,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>String value type.</p>
+     */
+    inline const Aws::String& GetStringValue() const { return m_stringValue; }
+    inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
+    template<typename StringValueT = Aws::String>
+    void SetStringValue(StringValueT&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::forward<StringValueT>(value); }
+    template<typename StringValueT = Aws::String>
+    OperandTwo& WithStringValue(StringValueT&& value) { SetStringValue(std::forward<StringValueT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Boolean value type.</p>
      */
     inline bool GetBooleanValue() const { return m_booleanValue; }
@@ -73,19 +85,10 @@ namespace Model
     template<typename EmptyValueT = EmptyOperandValue>
     OperandTwo& WithEmptyValue(EmptyValueT&& value) { SetEmptyValue(std::forward<EmptyValueT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>String value type.</p>
-     */
-    inline const Aws::String& GetStringValue() const { return m_stringValue; }
-    inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
-    template<typename StringValueT = Aws::String>
-    void SetStringValue(StringValueT&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::forward<StringValueT>(value); }
-    template<typename StringValueT = Aws::String>
-    OperandTwo& WithStringValue(StringValueT&& value) { SetStringValue(std::forward<StringValueT>(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_stringValue;
+    bool m_stringValueHasBeenSet = false;
 
     bool m_booleanValue{false};
     bool m_booleanValueHasBeenSet = false;
@@ -95,9 +98,6 @@ namespace Model
 
     EmptyOperandValue m_emptyValue;
     bool m_emptyValueHasBeenSet = false;
-
-    Aws::String m_stringValue;
-    bool m_stringValueHasBeenSet = false;
   };
 
 } // namespace Model

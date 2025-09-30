@@ -5,12 +5,12 @@
 
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/connectcases/model/RelatedItemType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/connectcases/model/RelatedItemContent.h>
-#include <aws/connectcases/model/UserUnion.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/connectcases/model/RelatedItemType.h>
+#include <aws/connectcases/model/UserUnion.h>
 #include <utility>
 
 namespace Aws
@@ -44,6 +44,28 @@ namespace Model
 
     ///@{
     /**
+     * <p>Unique identifier of a related item.</p>
+     */
+    inline const Aws::String& GetRelatedItemId() const { return m_relatedItemId; }
+    inline bool RelatedItemIdHasBeenSet() const { return m_relatedItemIdHasBeenSet; }
+    template<typename RelatedItemIdT = Aws::String>
+    void SetRelatedItemId(RelatedItemIdT&& value) { m_relatedItemIdHasBeenSet = true; m_relatedItemId = std::forward<RelatedItemIdT>(value); }
+    template<typename RelatedItemIdT = Aws::String>
+    SearchRelatedItemsResponseItem& WithRelatedItemId(RelatedItemIdT&& value) { SetRelatedItemId(std::forward<RelatedItemIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Type of a related item.</p>
+     */
+    inline RelatedItemType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(RelatedItemType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline SearchRelatedItemsResponseItem& WithType(RelatedItemType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Time at which a related item was associated with a case.</p>
      */
     inline const Aws::Utils::DateTime& GetAssociationTime() const { return m_associationTime; }
@@ -68,30 +90,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Represents the creator of the related item.</p>
-     */
-    inline const UserUnion& GetPerformedBy() const { return m_performedBy; }
-    inline bool PerformedByHasBeenSet() const { return m_performedByHasBeenSet; }
-    template<typename PerformedByT = UserUnion>
-    void SetPerformedBy(PerformedByT&& value) { m_performedByHasBeenSet = true; m_performedBy = std::forward<PerformedByT>(value); }
-    template<typename PerformedByT = UserUnion>
-    SearchRelatedItemsResponseItem& WithPerformedBy(PerformedByT&& value) { SetPerformedBy(std::forward<PerformedByT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Unique identifier of a related item.</p>
-     */
-    inline const Aws::String& GetRelatedItemId() const { return m_relatedItemId; }
-    inline bool RelatedItemIdHasBeenSet() const { return m_relatedItemIdHasBeenSet; }
-    template<typename RelatedItemIdT = Aws::String>
-    void SetRelatedItemId(RelatedItemIdT&& value) { m_relatedItemIdHasBeenSet = true; m_relatedItemId = std::forward<RelatedItemIdT>(value); }
-    template<typename RelatedItemIdT = Aws::String>
-    SearchRelatedItemsResponseItem& WithRelatedItemId(RelatedItemIdT&& value) { SetRelatedItemId(std::forward<RelatedItemIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A map of of key-value pairs that represent tags on a resource. Tags are used
      * to organize, track, or control access for this resource.</p>
      */
@@ -109,14 +107,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>Type of a related item.</p>
+     * <p>Represents the creator of the related item.</p>
      */
-    inline RelatedItemType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(RelatedItemType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline SearchRelatedItemsResponseItem& WithType(RelatedItemType value) { SetType(value); return *this;}
+    inline const UserUnion& GetPerformedBy() const { return m_performedBy; }
+    inline bool PerformedByHasBeenSet() const { return m_performedByHasBeenSet; }
+    template<typename PerformedByT = UserUnion>
+    void SetPerformedBy(PerformedByT&& value) { m_performedByHasBeenSet = true; m_performedBy = std::forward<PerformedByT>(value); }
+    template<typename PerformedByT = UserUnion>
+    SearchRelatedItemsResponseItem& WithPerformedBy(PerformedByT&& value) { SetPerformedBy(std::forward<PerformedByT>(value)); return *this;}
     ///@}
   private:
+
+    Aws::String m_relatedItemId;
+    bool m_relatedItemIdHasBeenSet = false;
+
+    RelatedItemType m_type{RelatedItemType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_associationTime{};
     bool m_associationTimeHasBeenSet = false;
@@ -124,17 +130,11 @@ namespace Model
     RelatedItemContent m_content;
     bool m_contentHasBeenSet = false;
 
-    UserUnion m_performedBy;
-    bool m_performedByHasBeenSet = false;
-
-    Aws::String m_relatedItemId;
-    bool m_relatedItemIdHasBeenSet = false;
-
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    RelatedItemType m_type{RelatedItemType::NOT_SET};
-    bool m_typeHasBeenSet = false;
+    UserUnion m_performedBy;
+    bool m_performedByHasBeenSet = false;
   };
 
 } // namespace Model

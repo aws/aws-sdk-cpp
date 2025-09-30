@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     EC2,
     FARGATE,
-    EXTERNAL
+    EXTERNAL,
+    MANAGED_INSTANCES
   };
 
 namespace LaunchTypeMapper

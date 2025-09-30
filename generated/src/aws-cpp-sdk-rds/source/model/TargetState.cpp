@@ -23,6 +23,7 @@ namespace Aws
         static const int REGISTERING_HASH = HashingUtils::HashString("REGISTERING");
         static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
         static const int UNAVAILABLE_HASH = HashingUtils::HashString("UNAVAILABLE");
+        static const int UNUSED_HASH = HashingUtils::HashString("UNUSED");
 
 
         TargetState GetTargetStateForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == UNAVAILABLE_HASH)
           {
             return TargetState::UNAVAILABLE;
+          }
+          else if (hashCode == UNUSED_HASH)
+          {
+            return TargetState::UNUSED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "AVAILABLE";
           case TargetState::UNAVAILABLE:
             return "UNAVAILABLE";
+          case TargetState::UNUSED:
+            return "UNUSED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

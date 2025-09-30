@@ -21,22 +21,29 @@
 #include <aws/application-signals/model/BatchGetServiceLevelObjectiveBudgetReportResult.h>
 #include <aws/application-signals/model/BatchUpdateExclusionWindowsResult.h>
 #include <aws/application-signals/model/CreateServiceLevelObjectiveResult.h>
+#include <aws/application-signals/model/DeleteGroupingConfigurationResult.h>
 #include <aws/application-signals/model/DeleteServiceLevelObjectiveResult.h>
 #include <aws/application-signals/model/GetServiceResult.h>
 #include <aws/application-signals/model/GetServiceLevelObjectiveResult.h>
+#include <aws/application-signals/model/ListAuditFindingsResult.h>
+#include <aws/application-signals/model/ListGroupingAttributeDefinitionsResult.h>
 #include <aws/application-signals/model/ListServiceDependenciesResult.h>
 #include <aws/application-signals/model/ListServiceDependentsResult.h>
 #include <aws/application-signals/model/ListServiceLevelObjectiveExclusionWindowsResult.h>
 #include <aws/application-signals/model/ListServiceLevelObjectivesResult.h>
 #include <aws/application-signals/model/ListServiceOperationsResult.h>
+#include <aws/application-signals/model/ListServiceStatesResult.h>
 #include <aws/application-signals/model/ListServicesResult.h>
 #include <aws/application-signals/model/ListTagsForResourceResult.h>
+#include <aws/application-signals/model/PutGroupingConfigurationResult.h>
 #include <aws/application-signals/model/StartDiscoveryResult.h>
 #include <aws/application-signals/model/TagResourceResult.h>
 #include <aws/application-signals/model/UntagResourceResult.h>
 #include <aws/application-signals/model/UpdateServiceLevelObjectiveResult.h>
 #include <aws/application-signals/model/StartDiscoveryRequest.h>
+#include <aws/application-signals/model/ListGroupingAttributeDefinitionsRequest.h>
 #include <aws/application-signals/model/ListServiceLevelObjectivesRequest.h>
+#include <aws/application-signals/model/DeleteGroupingConfigurationRequest.h>
 /* End of service model headers required in ApplicationSignalsClient header */
 
 namespace Aws
@@ -80,16 +87,21 @@ namespace Aws
       class BatchGetServiceLevelObjectiveBudgetReportRequest;
       class BatchUpdateExclusionWindowsRequest;
       class CreateServiceLevelObjectiveRequest;
+      class DeleteGroupingConfigurationRequest;
       class DeleteServiceLevelObjectiveRequest;
       class GetServiceRequest;
       class GetServiceLevelObjectiveRequest;
+      class ListAuditFindingsRequest;
+      class ListGroupingAttributeDefinitionsRequest;
       class ListServiceDependenciesRequest;
       class ListServiceDependentsRequest;
       class ListServiceLevelObjectiveExclusionWindowsRequest;
       class ListServiceLevelObjectivesRequest;
       class ListServiceOperationsRequest;
+      class ListServiceStatesRequest;
       class ListServicesRequest;
       class ListTagsForResourceRequest;
+      class PutGroupingConfigurationRequest;
       class StartDiscoveryRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
@@ -100,16 +112,21 @@ namespace Aws
       typedef Aws::Utils::Outcome<BatchGetServiceLevelObjectiveBudgetReportResult, ApplicationSignalsError> BatchGetServiceLevelObjectiveBudgetReportOutcome;
       typedef Aws::Utils::Outcome<BatchUpdateExclusionWindowsResult, ApplicationSignalsError> BatchUpdateExclusionWindowsOutcome;
       typedef Aws::Utils::Outcome<CreateServiceLevelObjectiveResult, ApplicationSignalsError> CreateServiceLevelObjectiveOutcome;
+      typedef Aws::Utils::Outcome<DeleteGroupingConfigurationResult, ApplicationSignalsError> DeleteGroupingConfigurationOutcome;
       typedef Aws::Utils::Outcome<DeleteServiceLevelObjectiveResult, ApplicationSignalsError> DeleteServiceLevelObjectiveOutcome;
       typedef Aws::Utils::Outcome<GetServiceResult, ApplicationSignalsError> GetServiceOutcome;
       typedef Aws::Utils::Outcome<GetServiceLevelObjectiveResult, ApplicationSignalsError> GetServiceLevelObjectiveOutcome;
+      typedef Aws::Utils::Outcome<ListAuditFindingsResult, ApplicationSignalsError> ListAuditFindingsOutcome;
+      typedef Aws::Utils::Outcome<ListGroupingAttributeDefinitionsResult, ApplicationSignalsError> ListGroupingAttributeDefinitionsOutcome;
       typedef Aws::Utils::Outcome<ListServiceDependenciesResult, ApplicationSignalsError> ListServiceDependenciesOutcome;
       typedef Aws::Utils::Outcome<ListServiceDependentsResult, ApplicationSignalsError> ListServiceDependentsOutcome;
       typedef Aws::Utils::Outcome<ListServiceLevelObjectiveExclusionWindowsResult, ApplicationSignalsError> ListServiceLevelObjectiveExclusionWindowsOutcome;
       typedef Aws::Utils::Outcome<ListServiceLevelObjectivesResult, ApplicationSignalsError> ListServiceLevelObjectivesOutcome;
       typedef Aws::Utils::Outcome<ListServiceOperationsResult, ApplicationSignalsError> ListServiceOperationsOutcome;
+      typedef Aws::Utils::Outcome<ListServiceStatesResult, ApplicationSignalsError> ListServiceStatesOutcome;
       typedef Aws::Utils::Outcome<ListServicesResult, ApplicationSignalsError> ListServicesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, ApplicationSignalsError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<PutGroupingConfigurationResult, ApplicationSignalsError> PutGroupingConfigurationOutcome;
       typedef Aws::Utils::Outcome<StartDiscoveryResult, ApplicationSignalsError> StartDiscoveryOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, ApplicationSignalsError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, ApplicationSignalsError> UntagResourceOutcome;
@@ -120,16 +137,21 @@ namespace Aws
       typedef std::future<BatchGetServiceLevelObjectiveBudgetReportOutcome> BatchGetServiceLevelObjectiveBudgetReportOutcomeCallable;
       typedef std::future<BatchUpdateExclusionWindowsOutcome> BatchUpdateExclusionWindowsOutcomeCallable;
       typedef std::future<CreateServiceLevelObjectiveOutcome> CreateServiceLevelObjectiveOutcomeCallable;
+      typedef std::future<DeleteGroupingConfigurationOutcome> DeleteGroupingConfigurationOutcomeCallable;
       typedef std::future<DeleteServiceLevelObjectiveOutcome> DeleteServiceLevelObjectiveOutcomeCallable;
       typedef std::future<GetServiceOutcome> GetServiceOutcomeCallable;
       typedef std::future<GetServiceLevelObjectiveOutcome> GetServiceLevelObjectiveOutcomeCallable;
+      typedef std::future<ListAuditFindingsOutcome> ListAuditFindingsOutcomeCallable;
+      typedef std::future<ListGroupingAttributeDefinitionsOutcome> ListGroupingAttributeDefinitionsOutcomeCallable;
       typedef std::future<ListServiceDependenciesOutcome> ListServiceDependenciesOutcomeCallable;
       typedef std::future<ListServiceDependentsOutcome> ListServiceDependentsOutcomeCallable;
       typedef std::future<ListServiceLevelObjectiveExclusionWindowsOutcome> ListServiceLevelObjectiveExclusionWindowsOutcomeCallable;
       typedef std::future<ListServiceLevelObjectivesOutcome> ListServiceLevelObjectivesOutcomeCallable;
       typedef std::future<ListServiceOperationsOutcome> ListServiceOperationsOutcomeCallable;
+      typedef std::future<ListServiceStatesOutcome> ListServiceStatesOutcomeCallable;
       typedef std::future<ListServicesOutcome> ListServicesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<PutGroupingConfigurationOutcome> PutGroupingConfigurationOutcomeCallable;
       typedef std::future<StartDiscoveryOutcome> StartDiscoveryOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -143,16 +165,21 @@ namespace Aws
     typedef std::function<void(const ApplicationSignalsClient*, const Model::BatchGetServiceLevelObjectiveBudgetReportRequest&, const Model::BatchGetServiceLevelObjectiveBudgetReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetServiceLevelObjectiveBudgetReportResponseReceivedHandler;
     typedef std::function<void(const ApplicationSignalsClient*, const Model::BatchUpdateExclusionWindowsRequest&, const Model::BatchUpdateExclusionWindowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateExclusionWindowsResponseReceivedHandler;
     typedef std::function<void(const ApplicationSignalsClient*, const Model::CreateServiceLevelObjectiveRequest&, const Model::CreateServiceLevelObjectiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateServiceLevelObjectiveResponseReceivedHandler;
+    typedef std::function<void(const ApplicationSignalsClient*, const Model::DeleteGroupingConfigurationRequest&, const Model::DeleteGroupingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGroupingConfigurationResponseReceivedHandler;
     typedef std::function<void(const ApplicationSignalsClient*, const Model::DeleteServiceLevelObjectiveRequest&, const Model::DeleteServiceLevelObjectiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceLevelObjectiveResponseReceivedHandler;
     typedef std::function<void(const ApplicationSignalsClient*, const Model::GetServiceRequest&, const Model::GetServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceResponseReceivedHandler;
     typedef std::function<void(const ApplicationSignalsClient*, const Model::GetServiceLevelObjectiveRequest&, const Model::GetServiceLevelObjectiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceLevelObjectiveResponseReceivedHandler;
+    typedef std::function<void(const ApplicationSignalsClient*, const Model::ListAuditFindingsRequest&, const Model::ListAuditFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAuditFindingsResponseReceivedHandler;
+    typedef std::function<void(const ApplicationSignalsClient*, const Model::ListGroupingAttributeDefinitionsRequest&, const Model::ListGroupingAttributeDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGroupingAttributeDefinitionsResponseReceivedHandler;
     typedef std::function<void(const ApplicationSignalsClient*, const Model::ListServiceDependenciesRequest&, const Model::ListServiceDependenciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServiceDependenciesResponseReceivedHandler;
     typedef std::function<void(const ApplicationSignalsClient*, const Model::ListServiceDependentsRequest&, const Model::ListServiceDependentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServiceDependentsResponseReceivedHandler;
     typedef std::function<void(const ApplicationSignalsClient*, const Model::ListServiceLevelObjectiveExclusionWindowsRequest&, const Model::ListServiceLevelObjectiveExclusionWindowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServiceLevelObjectiveExclusionWindowsResponseReceivedHandler;
     typedef std::function<void(const ApplicationSignalsClient*, const Model::ListServiceLevelObjectivesRequest&, const Model::ListServiceLevelObjectivesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServiceLevelObjectivesResponseReceivedHandler;
     typedef std::function<void(const ApplicationSignalsClient*, const Model::ListServiceOperationsRequest&, const Model::ListServiceOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServiceOperationsResponseReceivedHandler;
+    typedef std::function<void(const ApplicationSignalsClient*, const Model::ListServiceStatesRequest&, const Model::ListServiceStatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServiceStatesResponseReceivedHandler;
     typedef std::function<void(const ApplicationSignalsClient*, const Model::ListServicesRequest&, const Model::ListServicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServicesResponseReceivedHandler;
     typedef std::function<void(const ApplicationSignalsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const ApplicationSignalsClient*, const Model::PutGroupingConfigurationRequest&, const Model::PutGroupingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutGroupingConfigurationResponseReceivedHandler;
     typedef std::function<void(const ApplicationSignalsClient*, const Model::StartDiscoveryRequest&, const Model::StartDiscoveryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDiscoveryResponseReceivedHandler;
     typedef std::function<void(const ApplicationSignalsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ApplicationSignalsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;

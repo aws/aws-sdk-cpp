@@ -37,11 +37,35 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
       m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
       m_engineHasBeenSet = true;
     }
+    XmlNode majorEngineVersionNode = resultNode.FirstChild("MajorEngineVersion");
+    if(!majorEngineVersionNode.IsNull())
+    {
+      m_majorEngineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(majorEngineVersionNode.GetText());
+      m_majorEngineVersionHasBeenSet = true;
+    }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
       m_engineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(engineVersionNode.GetText());
       m_engineVersionHasBeenSet = true;
+    }
+    XmlNode databaseInstallationFilesS3BucketNameNode = resultNode.FirstChild("DatabaseInstallationFilesS3BucketName");
+    if(!databaseInstallationFilesS3BucketNameNode.IsNull())
+    {
+      m_databaseInstallationFilesS3BucketName = Aws::Utils::Xml::DecodeEscapedXmlText(databaseInstallationFilesS3BucketNameNode.GetText());
+      m_databaseInstallationFilesS3BucketNameHasBeenSet = true;
+    }
+    XmlNode databaseInstallationFilesS3PrefixNode = resultNode.FirstChild("DatabaseInstallationFilesS3Prefix");
+    if(!databaseInstallationFilesS3PrefixNode.IsNull())
+    {
+      m_databaseInstallationFilesS3Prefix = Aws::Utils::Xml::DecodeEscapedXmlText(databaseInstallationFilesS3PrefixNode.GetText());
+      m_databaseInstallationFilesS3PrefixHasBeenSet = true;
+    }
+    XmlNode customDBEngineVersionManifestNode = resultNode.FirstChild("CustomDBEngineVersionManifest");
+    if(!customDBEngineVersionManifestNode.IsNull())
+    {
+      m_customDBEngineVersionManifest = Aws::Utils::Xml::DecodeEscapedXmlText(customDBEngineVersionManifestNode.GetText());
+      m_customDBEngineVersionManifestHasBeenSet = true;
     }
     XmlNode dBParameterGroupFamilyNode = resultNode.FirstChild("DBParameterGroupFamily");
     if(!dBParameterGroupFamilyNode.IsNull())
@@ -54,6 +78,12 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
     {
       m_dBEngineDescription = Aws::Utils::Xml::DecodeEscapedXmlText(dBEngineDescriptionNode.GetText());
       m_dBEngineDescriptionHasBeenSet = true;
+    }
+    XmlNode dBEngineVersionArnNode = resultNode.FirstChild("DBEngineVersionArn");
+    if(!dBEngineVersionArnNode.IsNull())
+    {
+      m_dBEngineVersionArn = Aws::Utils::Xml::DecodeEscapedXmlText(dBEngineVersionArnNode.GetText());
+      m_dBEngineVersionArnHasBeenSet = true;
     }
     XmlNode dBEngineVersionDescriptionNode = resultNode.FirstChild("DBEngineVersionDescription");
     if(!dBEngineVersionDescriptionNode.IsNull())
@@ -78,6 +108,18 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
     {
       m_dBEngineMediaType = Aws::Utils::Xml::DecodeEscapedXmlText(dBEngineMediaTypeNode.GetText());
       m_dBEngineMediaTypeHasBeenSet = true;
+    }
+    XmlNode kMSKeyIdNode = resultNode.FirstChild("KMSKeyId");
+    if(!kMSKeyIdNode.IsNull())
+    {
+      m_kMSKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kMSKeyIdNode.GetText());
+      m_kMSKeyIdHasBeenSet = true;
+    }
+    XmlNode createTimeNode = resultNode.FirstChild("CreateTime");
+    if(!createTimeNode.IsNull())
+    {
+      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_createTimeHasBeenSet = true;
     }
     XmlNode supportedCharacterSetsNode = resultNode.FirstChild("SupportedCharacterSets");
     if(!supportedCharacterSetsNode.IsNull())
@@ -200,42 +242,6 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
       m_supportsGlobalDatabases = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsGlobalDatabasesNode.GetText()).c_str()).c_str());
       m_supportsGlobalDatabasesHasBeenSet = true;
     }
-    XmlNode majorEngineVersionNode = resultNode.FirstChild("MajorEngineVersion");
-    if(!majorEngineVersionNode.IsNull())
-    {
-      m_majorEngineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(majorEngineVersionNode.GetText());
-      m_majorEngineVersionHasBeenSet = true;
-    }
-    XmlNode databaseInstallationFilesS3BucketNameNode = resultNode.FirstChild("DatabaseInstallationFilesS3BucketName");
-    if(!databaseInstallationFilesS3BucketNameNode.IsNull())
-    {
-      m_databaseInstallationFilesS3BucketName = Aws::Utils::Xml::DecodeEscapedXmlText(databaseInstallationFilesS3BucketNameNode.GetText());
-      m_databaseInstallationFilesS3BucketNameHasBeenSet = true;
-    }
-    XmlNode databaseInstallationFilesS3PrefixNode = resultNode.FirstChild("DatabaseInstallationFilesS3Prefix");
-    if(!databaseInstallationFilesS3PrefixNode.IsNull())
-    {
-      m_databaseInstallationFilesS3Prefix = Aws::Utils::Xml::DecodeEscapedXmlText(databaseInstallationFilesS3PrefixNode.GetText());
-      m_databaseInstallationFilesS3PrefixHasBeenSet = true;
-    }
-    XmlNode dBEngineVersionArnNode = resultNode.FirstChild("DBEngineVersionArn");
-    if(!dBEngineVersionArnNode.IsNull())
-    {
-      m_dBEngineVersionArn = Aws::Utils::Xml::DecodeEscapedXmlText(dBEngineVersionArnNode.GetText());
-      m_dBEngineVersionArnHasBeenSet = true;
-    }
-    XmlNode kMSKeyIdNode = resultNode.FirstChild("KMSKeyId");
-    if(!kMSKeyIdNode.IsNull())
-    {
-      m_kMSKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kMSKeyIdNode.GetText());
-      m_kMSKeyIdHasBeenSet = true;
-    }
-    XmlNode createTimeNode = resultNode.FirstChild("CreateTime");
-    if(!createTimeNode.IsNull())
-    {
-      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
-      m_createTimeHasBeenSet = true;
-    }
     XmlNode tagListNode = resultNode.FirstChild("TagList");
     if(!tagListNode.IsNull())
     {
@@ -254,12 +260,6 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
     {
       m_supportsBabelfish = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsBabelfishNode.GetText()).c_str()).c_str());
       m_supportsBabelfishHasBeenSet = true;
-    }
-    XmlNode customDBEngineVersionManifestNode = resultNode.FirstChild("CustomDBEngineVersionManifest");
-    if(!customDBEngineVersionManifestNode.IsNull())
-    {
-      m_customDBEngineVersionManifest = Aws::Utils::Xml::DecodeEscapedXmlText(customDBEngineVersionManifestNode.GetText());
-      m_customDBEngineVersionManifestHasBeenSet = true;
     }
     XmlNode supportsLimitlessDatabaseNode = resultNode.FirstChild("SupportsLimitlessDatabase");
     if(!supportsLimitlessDatabaseNode.IsNull())
@@ -316,9 +316,29 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
 
+  if(m_majorEngineVersionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MajorEngineVersion=" << StringUtils::URLEncode(m_majorEngineVersion.c_str()) << "&";
+  }
+
   if(m_engineVersionHasBeenSet)
   {
       oStream << location << index << locationValue << ".EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
+  }
+
+  if(m_databaseInstallationFilesS3BucketNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DatabaseInstallationFilesS3BucketName=" << StringUtils::URLEncode(m_databaseInstallationFilesS3BucketName.c_str()) << "&";
+  }
+
+  if(m_databaseInstallationFilesS3PrefixHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DatabaseInstallationFilesS3Prefix=" << StringUtils::URLEncode(m_databaseInstallationFilesS3Prefix.c_str()) << "&";
+  }
+
+  if(m_customDBEngineVersionManifestHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CustomDBEngineVersionManifest=" << StringUtils::URLEncode(m_customDBEngineVersionManifest.c_str()) << "&";
   }
 
   if(m_dBParameterGroupFamilyHasBeenSet)
@@ -329,6 +349,11 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_dBEngineDescriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".DBEngineDescription=" << StringUtils::URLEncode(m_dBEngineDescription.c_str()) << "&";
+  }
+
+  if(m_dBEngineVersionArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DBEngineVersionArn=" << StringUtils::URLEncode(m_dBEngineVersionArn.c_str()) << "&";
   }
 
   if(m_dBEngineVersionDescriptionHasBeenSet)
@@ -353,6 +378,16 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_dBEngineMediaTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".DBEngineMediaType=" << StringUtils::URLEncode(m_dBEngineMediaType.c_str()) << "&";
+  }
+
+  if(m_kMSKeyIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".KMSKeyId=" << StringUtils::URLEncode(m_kMSKeyId.c_str()) << "&";
+  }
+
+  if(m_createTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_supportedCharacterSetsHasBeenSet)
@@ -451,36 +486,6 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".SupportsGlobalDatabases=" << std::boolalpha << m_supportsGlobalDatabases << "&";
   }
 
-  if(m_majorEngineVersionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".MajorEngineVersion=" << StringUtils::URLEncode(m_majorEngineVersion.c_str()) << "&";
-  }
-
-  if(m_databaseInstallationFilesS3BucketNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DatabaseInstallationFilesS3BucketName=" << StringUtils::URLEncode(m_databaseInstallationFilesS3BucketName.c_str()) << "&";
-  }
-
-  if(m_databaseInstallationFilesS3PrefixHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DatabaseInstallationFilesS3Prefix=" << StringUtils::URLEncode(m_databaseInstallationFilesS3Prefix.c_str()) << "&";
-  }
-
-  if(m_dBEngineVersionArnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DBEngineVersionArn=" << StringUtils::URLEncode(m_dBEngineVersionArn.c_str()) << "&";
-  }
-
-  if(m_kMSKeyIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".KMSKeyId=" << StringUtils::URLEncode(m_kMSKeyId.c_str()) << "&";
-  }
-
-  if(m_createTimeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-
   if(m_tagListHasBeenSet)
   {
       unsigned tagListIdx = 1;
@@ -495,11 +500,6 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_supportsBabelfishHasBeenSet)
   {
       oStream << location << index << locationValue << ".SupportsBabelfish=" << std::boolalpha << m_supportsBabelfish << "&";
-  }
-
-  if(m_customDBEngineVersionManifestHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CustomDBEngineVersionManifest=" << StringUtils::URLEncode(m_customDBEngineVersionManifest.c_str()) << "&";
   }
 
   if(m_supportsLimitlessDatabaseHasBeenSet)
@@ -549,9 +549,25 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
+  if(m_majorEngineVersionHasBeenSet)
+  {
+      oStream << location << ".MajorEngineVersion=" << StringUtils::URLEncode(m_majorEngineVersion.c_str()) << "&";
+  }
   if(m_engineVersionHasBeenSet)
   {
       oStream << location << ".EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
+  }
+  if(m_databaseInstallationFilesS3BucketNameHasBeenSet)
+  {
+      oStream << location << ".DatabaseInstallationFilesS3BucketName=" << StringUtils::URLEncode(m_databaseInstallationFilesS3BucketName.c_str()) << "&";
+  }
+  if(m_databaseInstallationFilesS3PrefixHasBeenSet)
+  {
+      oStream << location << ".DatabaseInstallationFilesS3Prefix=" << StringUtils::URLEncode(m_databaseInstallationFilesS3Prefix.c_str()) << "&";
+  }
+  if(m_customDBEngineVersionManifestHasBeenSet)
+  {
+      oStream << location << ".CustomDBEngineVersionManifest=" << StringUtils::URLEncode(m_customDBEngineVersionManifest.c_str()) << "&";
   }
   if(m_dBParameterGroupFamilyHasBeenSet)
   {
@@ -560,6 +576,10 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_dBEngineDescriptionHasBeenSet)
   {
       oStream << location << ".DBEngineDescription=" << StringUtils::URLEncode(m_dBEngineDescription.c_str()) << "&";
+  }
+  if(m_dBEngineVersionArnHasBeenSet)
+  {
+      oStream << location << ".DBEngineVersionArn=" << StringUtils::URLEncode(m_dBEngineVersionArn.c_str()) << "&";
   }
   if(m_dBEngineVersionDescriptionHasBeenSet)
   {
@@ -580,6 +600,14 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_dBEngineMediaTypeHasBeenSet)
   {
       oStream << location << ".DBEngineMediaType=" << StringUtils::URLEncode(m_dBEngineMediaType.c_str()) << "&";
+  }
+  if(m_kMSKeyIdHasBeenSet)
+  {
+      oStream << location << ".KMSKeyId=" << StringUtils::URLEncode(m_kMSKeyId.c_str()) << "&";
+  }
+  if(m_createTimeHasBeenSet)
+  {
+      oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_supportedCharacterSetsHasBeenSet)
   {
@@ -665,30 +693,6 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << ".SupportsGlobalDatabases=" << std::boolalpha << m_supportsGlobalDatabases << "&";
   }
-  if(m_majorEngineVersionHasBeenSet)
-  {
-      oStream << location << ".MajorEngineVersion=" << StringUtils::URLEncode(m_majorEngineVersion.c_str()) << "&";
-  }
-  if(m_databaseInstallationFilesS3BucketNameHasBeenSet)
-  {
-      oStream << location << ".DatabaseInstallationFilesS3BucketName=" << StringUtils::URLEncode(m_databaseInstallationFilesS3BucketName.c_str()) << "&";
-  }
-  if(m_databaseInstallationFilesS3PrefixHasBeenSet)
-  {
-      oStream << location << ".DatabaseInstallationFilesS3Prefix=" << StringUtils::URLEncode(m_databaseInstallationFilesS3Prefix.c_str()) << "&";
-  }
-  if(m_dBEngineVersionArnHasBeenSet)
-  {
-      oStream << location << ".DBEngineVersionArn=" << StringUtils::URLEncode(m_dBEngineVersionArn.c_str()) << "&";
-  }
-  if(m_kMSKeyIdHasBeenSet)
-  {
-      oStream << location << ".KMSKeyId=" << StringUtils::URLEncode(m_kMSKeyId.c_str()) << "&";
-  }
-  if(m_createTimeHasBeenSet)
-  {
-      oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
   if(m_tagListHasBeenSet)
   {
       unsigned tagListIdx = 1;
@@ -702,10 +706,6 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_supportsBabelfishHasBeenSet)
   {
       oStream << location << ".SupportsBabelfish=" << std::boolalpha << m_supportsBabelfish << "&";
-  }
-  if(m_customDBEngineVersionManifestHasBeenSet)
-  {
-      oStream << location << ".CustomDBEngineVersionManifest=" << StringUtils::URLEncode(m_customDBEngineVersionManifest.c_str()) << "&";
   }
   if(m_supportsLimitlessDatabaseHasBeenSet)
   {

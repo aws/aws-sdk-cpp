@@ -145,6 +145,11 @@ Aws::String RestoreDBInstanceFromS3Request::SerializePayload() const
     ss << "Iops=" << m_iops << "&";
   }
 
+  if(m_storageThroughputHasBeenSet)
+  {
+    ss << "StorageThroughput=" << m_storageThroughput << "&";
+  }
+
   if(m_optionGroupNameHasBeenSet)
   {
     ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
@@ -305,11 +310,6 @@ Aws::String RestoreDBInstanceFromS3Request::SerializePayload() const
   if(m_networkTypeHasBeenSet)
   {
     ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
-  }
-
-  if(m_storageThroughputHasBeenSet)
-  {
-    ss << "StorageThroughput=" << m_storageThroughput << "&";
   }
 
   if(m_manageMasterUserPasswordHasBeenSet)

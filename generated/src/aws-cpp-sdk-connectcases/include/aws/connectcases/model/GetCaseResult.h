@@ -50,6 +50,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>A unique identifier of a template.</p>
+     */
+    inline const Aws::String& GetTemplateId() const { return m_templateId; }
+    template<typename TemplateIdT = Aws::String>
+    void SetTemplateId(TemplateIdT&& value) { m_templateIdHasBeenSet = true; m_templateId = std::forward<TemplateIdT>(value); }
+    template<typename TemplateIdT = Aws::String>
+    GetCaseResult& WithTemplateId(TemplateIdT&& value) { SetTemplateId(std::forward<TemplateIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The token for the next set of results. This is null if there are no more
      * results to return.</p>
      */
@@ -77,17 +88,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>A unique identifier of a template.</p>
-     */
-    inline const Aws::String& GetTemplateId() const { return m_templateId; }
-    template<typename TemplateIdT = Aws::String>
-    void SetTemplateId(TemplateIdT&& value) { m_templateIdHasBeenSet = true; m_templateId = std::forward<TemplateIdT>(value); }
-    template<typename TemplateIdT = Aws::String>
-    GetCaseResult& WithTemplateId(TemplateIdT&& value) { SetTemplateId(std::forward<TemplateIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -100,14 +100,14 @@ namespace Model
     Aws::Vector<FieldValue> m_fields;
     bool m_fieldsHasBeenSet = false;
 
+    Aws::String m_templateId;
+    bool m_templateIdHasBeenSet = false;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
-
-    Aws::String m_templateId;
-    bool m_templateIdHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

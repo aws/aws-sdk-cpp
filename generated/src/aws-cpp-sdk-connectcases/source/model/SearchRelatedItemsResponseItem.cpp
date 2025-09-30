@@ -25,6 +25,16 @@ SearchRelatedItemsResponseItem::SearchRelatedItemsResponseItem(JsonView jsonValu
 
 SearchRelatedItemsResponseItem& SearchRelatedItemsResponseItem::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("relatedItemId"))
+  {
+    m_relatedItemId = jsonValue.GetString("relatedItemId");
+    m_relatedItemIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = RelatedItemTypeMapper::GetRelatedItemTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("associationTime"))
   {
     m_associationTime = jsonValue.GetString("associationTime");
@@ -35,16 +45,6 @@ SearchRelatedItemsResponseItem& SearchRelatedItemsResponseItem::operator =(JsonV
     m_content = jsonValue.GetObject("content");
     m_contentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("performedBy"))
-  {
-    m_performedBy = jsonValue.GetObject("performedBy");
-    m_performedByHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("relatedItemId"))
-  {
-    m_relatedItemId = jsonValue.GetString("relatedItemId");
-    m_relatedItemIdHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -54,10 +54,10 @@ SearchRelatedItemsResponseItem& SearchRelatedItemsResponseItem::operator =(JsonV
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("performedBy"))
   {
-    m_type = RelatedItemTypeMapper::GetRelatedItemTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+    m_performedBy = jsonValue.GetObject("performedBy");
+    m_performedByHasBeenSet = true;
   }
   return *this;
 }
@@ -65,6 +65,17 @@ SearchRelatedItemsResponseItem& SearchRelatedItemsResponseItem::operator =(JsonV
 JsonValue SearchRelatedItemsResponseItem::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_relatedItemIdHasBeenSet)
+  {
+   payload.WithString("relatedItemId", m_relatedItemId);
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", RelatedItemTypeMapper::GetNameForRelatedItemType(m_type));
+  }
 
   if(m_associationTimeHasBeenSet)
   {
@@ -74,18 +85,6 @@ JsonValue SearchRelatedItemsResponseItem::Jsonize() const
   if(m_contentHasBeenSet)
   {
    payload.WithObject("content", m_content.Jsonize());
-
-  }
-
-  if(m_performedByHasBeenSet)
-  {
-   payload.WithObject("performedBy", m_performedBy.Jsonize());
-
-  }
-
-  if(m_relatedItemIdHasBeenSet)
-  {
-   payload.WithString("relatedItemId", m_relatedItemId);
 
   }
 
@@ -100,9 +99,10 @@ JsonValue SearchRelatedItemsResponseItem::Jsonize() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_performedByHasBeenSet)
   {
-   payload.WithString("type", RelatedItemTypeMapper::GetNameForRelatedItemType(m_type));
+   payload.WithObject("performedBy", m_performedBy.Jsonize());
+
   }
 
   return payload;

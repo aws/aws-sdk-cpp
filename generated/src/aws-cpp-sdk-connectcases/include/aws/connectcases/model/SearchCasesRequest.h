@@ -7,10 +7,10 @@
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/connectcases/ConnectCasesRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/connectcases/model/CaseFilter.h>
-#include <aws/connectcases/model/FieldIdentifier.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/connectcases/model/Sort.h>
+#include <aws/connectcases/model/FieldIdentifier.h>
 #include <utility>
 
 namespace Aws
@@ -50,34 +50,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of field identifiers to be returned as part of the response.</p>
-     */
-    inline const Aws::Vector<FieldIdentifier>& GetFields() const { return m_fields; }
-    inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-    template<typename FieldsT = Aws::Vector<FieldIdentifier>>
-    void SetFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields = std::forward<FieldsT>(value); }
-    template<typename FieldsT = Aws::Vector<FieldIdentifier>>
-    SearchCasesRequest& WithFields(FieldsT&& value) { SetFields(std::forward<FieldsT>(value)); return *this;}
-    template<typename FieldsT = FieldIdentifier>
-    SearchCasesRequest& AddFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields.emplace_back(std::forward<FieldsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>A list of filter objects.</p>
-     */
-    inline const CaseFilter& GetFilter() const { return m_filter; }
-    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    template<typename FilterT = CaseFilter>
-    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
-    template<typename FilterT = CaseFilter>
-    SearchCasesRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The maximum number of cases to return. The current maximum supported value is
-     * 25. This is also the default value when no other value is provided.</p>
+     * <p>The maximum number of cases to return. When no value is provided, 25 is the
+     * default.</p>
      */
     inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -112,6 +86,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>A list of filter objects.</p>
+     */
+    inline const CaseFilter& GetFilter() const { return m_filter; }
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+    template<typename FilterT = CaseFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = CaseFilter>
+    SearchCasesRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A list of sorts where each sort specifies a field and their sort order to be
      * applied to the results. </p>
      */
@@ -124,16 +110,24 @@ namespace Model
     template<typename SortsT = Sort>
     SearchCasesRequest& AddSorts(SortsT&& value) { m_sortsHasBeenSet = true; m_sorts.emplace_back(std::forward<SortsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The list of field identifiers to be returned as part of the response.</p>
+     */
+    inline const Aws::Vector<FieldIdentifier>& GetFields() const { return m_fields; }
+    inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
+    template<typename FieldsT = Aws::Vector<FieldIdentifier>>
+    void SetFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields = std::forward<FieldsT>(value); }
+    template<typename FieldsT = Aws::Vector<FieldIdentifier>>
+    SearchCasesRequest& WithFields(FieldsT&& value) { SetFields(std::forward<FieldsT>(value)); return *this;}
+    template<typename FieldsT = FieldIdentifier>
+    SearchCasesRequest& AddFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields.emplace_back(std::forward<FieldsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_domainId;
     bool m_domainIdHasBeenSet = false;
-
-    Aws::Vector<FieldIdentifier> m_fields;
-    bool m_fieldsHasBeenSet = false;
-
-    CaseFilter m_filter;
-    bool m_filterHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
@@ -144,8 +138,14 @@ namespace Model
     Aws::String m_searchTerm;
     bool m_searchTermHasBeenSet = false;
 
+    CaseFilter m_filter;
+    bool m_filterHasBeenSet = false;
+
     Aws::Vector<Sort> m_sorts;
     bool m_sortsHasBeenSet = false;
+
+    Aws::Vector<FieldIdentifier> m_fields;
+    bool m_fieldsHasBeenSet = false;
   };
 
 } // namespace Model

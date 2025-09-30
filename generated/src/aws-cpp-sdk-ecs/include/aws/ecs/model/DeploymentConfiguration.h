@@ -121,7 +121,7 @@ namespace Model
      * launch replacement tasks. For more information about how the scheduler replaces
      * unhealthy tasks, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Amazon
-     * ECS services</a>. </p> <p>For services that <i>do not</i> use a load balancer,
+     * ECS services</a> . </p> <p>For services that <i>do not</i> use a load balancer,
      * the following should be noted:</p> <ul> <li> <p>A service is considered healthy
      * if all essential containers within the tasks in the service pass their health
      * checks.</p> </li> <li> <p>If a task has no essential containers with a health

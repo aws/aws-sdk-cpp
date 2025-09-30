@@ -142,6 +142,29 @@ namespace Model
 
     ///@{
     /**
+     * <p>Data filters for the integration. These filters determine which tables from
+     * the source database are sent to the target Amazon Redshift data warehouse. </p>
+     */
+    inline const Aws::String& GetDataFilter() const { return m_dataFilter; }
+    template<typename DataFilterT = Aws::String>
+    void SetDataFilter(DataFilterT&& value) { m_dataFilterHasBeenSet = true; m_dataFilter = std::forward<DataFilterT>(value); }
+    template<typename DataFilterT = Aws::String>
+    ModifyIntegrationResult& WithDataFilter(DataFilterT&& value) { SetDataFilter(std::forward<DataFilterT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A description of the integration.</p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ModifyIntegrationResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The time when the integration was created, in Universal Coordinated Time
      * (UTC).</p>
      */
@@ -163,29 +186,6 @@ namespace Model
     ModifyIntegrationResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
     template<typename ErrorsT = IntegrationError>
     ModifyIntegrationResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>Data filters for the integration. These filters determine which tables from
-     * the source database are sent to the target Amazon Redshift data warehouse. </p>
-     */
-    inline const Aws::String& GetDataFilter() const { return m_dataFilter; }
-    template<typename DataFilterT = Aws::String>
-    void SetDataFilter(DataFilterT&& value) { m_dataFilterHasBeenSet = true; m_dataFilter = std::forward<DataFilterT>(value); }
-    template<typename DataFilterT = Aws::String>
-    ModifyIntegrationResult& WithDataFilter(DataFilterT&& value) { SetDataFilter(std::forward<DataFilterT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A description of the integration.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    ModifyIntegrationResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -222,17 +222,17 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime{};
-    bool m_createTimeHasBeenSet = false;
-
-    Aws::Vector<IntegrationError> m_errors;
-    bool m_errorsHasBeenSet = false;
-
     Aws::String m_dataFilter;
     bool m_dataFilterHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createTime{};
+    bool m_createTimeHasBeenSet = false;
+
+    Aws::Vector<IntegrationError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
     bool m_responseMetadataHasBeenSet = false;

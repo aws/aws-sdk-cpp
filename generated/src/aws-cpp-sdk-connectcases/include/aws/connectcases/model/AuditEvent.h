@@ -6,11 +6,11 @@
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/connectcases/model/AuditEventType.h>
+#include <aws/connectcases/model/RelatedItemType.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/connectcases/model/AuditEventPerformedBy.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/connectcases/model/RelatedItemType.h>
-#include <aws/connectcases/model/AuditEventType.h>
 #include <aws/connectcases/model/AuditEventField.h>
 #include <utility>
 
@@ -58,6 +58,38 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Type of an audit history event.</p>
+     */
+    inline AuditEventType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(AuditEventType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline AuditEvent& WithType(AuditEventType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Type of the related item.</p>
+     */
+    inline RelatedItemType GetRelatedItemType() const { return m_relatedItemType; }
+    inline bool RelatedItemTypeHasBeenSet() const { return m_relatedItemTypeHasBeenSet; }
+    inline void SetRelatedItemType(RelatedItemType value) { m_relatedItemTypeHasBeenSet = true; m_relatedItemType = value; }
+    inline AuditEvent& WithRelatedItemType(RelatedItemType value) { SetRelatedItemType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Time at which an Audit History event took place.</p>
+     */
+    inline const Aws::Utils::DateTime& GetPerformedTime() const { return m_performedTime; }
+    inline bool PerformedTimeHasBeenSet() const { return m_performedTimeHasBeenSet; }
+    template<typename PerformedTimeT = Aws::Utils::DateTime>
+    void SetPerformedTime(PerformedTimeT&& value) { m_performedTimeHasBeenSet = true; m_performedTime = std::forward<PerformedTimeT>(value); }
+    template<typename PerformedTimeT = Aws::Utils::DateTime>
+    AuditEvent& WithPerformedTime(PerformedTimeT&& value) { SetPerformedTime(std::forward<PerformedTimeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A list of Case Audit History event fields.</p>
      */
     inline const Aws::Vector<AuditEventField>& GetFields() const { return m_fields; }
@@ -81,57 +113,25 @@ namespace Model
     template<typename PerformedByT = AuditEventPerformedBy>
     AuditEvent& WithPerformedBy(PerformedByT&& value) { SetPerformedBy(std::forward<PerformedByT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Time at which an Audit History event took place.</p>
-     */
-    inline const Aws::Utils::DateTime& GetPerformedTime() const { return m_performedTime; }
-    inline bool PerformedTimeHasBeenSet() const { return m_performedTimeHasBeenSet; }
-    template<typename PerformedTimeT = Aws::Utils::DateTime>
-    void SetPerformedTime(PerformedTimeT&& value) { m_performedTimeHasBeenSet = true; m_performedTime = std::forward<PerformedTimeT>(value); }
-    template<typename PerformedTimeT = Aws::Utils::DateTime>
-    AuditEvent& WithPerformedTime(PerformedTimeT&& value) { SetPerformedTime(std::forward<PerformedTimeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Type of the related item.</p>
-     */
-    inline RelatedItemType GetRelatedItemType() const { return m_relatedItemType; }
-    inline bool RelatedItemTypeHasBeenSet() const { return m_relatedItemTypeHasBeenSet; }
-    inline void SetRelatedItemType(RelatedItemType value) { m_relatedItemTypeHasBeenSet = true; m_relatedItemType = value; }
-    inline AuditEvent& WithRelatedItemType(RelatedItemType value) { SetRelatedItemType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Type of an audit history event.</p>
-     */
-    inline AuditEventType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(AuditEventType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline AuditEvent& WithType(AuditEventType value) { SetType(value); return *this;}
-    ///@}
   private:
 
     Aws::String m_eventId;
     bool m_eventIdHasBeenSet = false;
+
+    AuditEventType m_type{AuditEventType::NOT_SET};
+    bool m_typeHasBeenSet = false;
+
+    RelatedItemType m_relatedItemType{RelatedItemType::NOT_SET};
+    bool m_relatedItemTypeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_performedTime{};
+    bool m_performedTimeHasBeenSet = false;
 
     Aws::Vector<AuditEventField> m_fields;
     bool m_fieldsHasBeenSet = false;
 
     AuditEventPerformedBy m_performedBy;
     bool m_performedByHasBeenSet = false;
-
-    Aws::Utils::DateTime m_performedTime{};
-    bool m_performedTimeHasBeenSet = false;
-
-    RelatedItemType m_relatedItemType{RelatedItemType::NOT_SET};
-    bool m_relatedItemTypeHasBeenSet = false;
-
-    AuditEventType m_type{AuditEventType::NOT_SET};
-    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

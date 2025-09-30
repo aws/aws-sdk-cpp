@@ -34,17 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the newly created template.</p>
-     */
-    inline const Aws::String& GetTemplateArn() const { return m_templateArn; }
-    template<typename TemplateArnT = Aws::String>
-    void SetTemplateArn(TemplateArnT&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::forward<TemplateArnT>(value); }
-    template<typename TemplateArnT = Aws::String>
-    CreateTemplateResult& WithTemplateArn(TemplateArnT&& value) { SetTemplateArn(std::forward<TemplateArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A unique identifier of a template.</p>
      */
     inline const Aws::String& GetTemplateId() const { return m_templateId; }
@@ -52,6 +41,17 @@ namespace Model
     void SetTemplateId(TemplateIdT&& value) { m_templateIdHasBeenSet = true; m_templateId = std::forward<TemplateIdT>(value); }
     template<typename TemplateIdT = Aws::String>
     CreateTemplateResult& WithTemplateId(TemplateIdT&& value) { SetTemplateId(std::forward<TemplateIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the newly created template.</p>
+     */
+    inline const Aws::String& GetTemplateArn() const { return m_templateArn; }
+    template<typename TemplateArnT = Aws::String>
+    void SetTemplateArn(TemplateArnT&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::forward<TemplateArnT>(value); }
+    template<typename TemplateArnT = Aws::String>
+    CreateTemplateResult& WithTemplateArn(TemplateArnT&& value) { SetTemplateArn(std::forward<TemplateArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,11 +64,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_templateArn;
-    bool m_templateArnHasBeenSet = false;
-
     Aws::String m_templateId;
     bool m_templateIdHasBeenSet = false;
+
+    Aws::String m_templateArn;
+    bool m_templateArnHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

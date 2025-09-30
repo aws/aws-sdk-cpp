@@ -147,16 +147,6 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const
     ss << "DomainIAMRoleName=" << StringUtils::URLEncode(m_domainIAMRoleName.c_str()) << "&";
   }
 
-  if(m_scalingConfigurationHasBeenSet)
-  {
-    m_scalingConfiguration.OutputToStream(ss, "ScalingConfiguration");
-  }
-
-  if(m_engineModeHasBeenSet)
-  {
-    ss << "EngineMode=" << StringUtils::URLEncode(m_engineMode.c_str()) << "&";
-  }
-
   if(m_dBClusterInstanceClassHasBeenSet)
   {
     ss << "DBClusterInstanceClass=" << StringUtils::URLEncode(m_dBClusterInstanceClass.c_str()) << "&";
@@ -177,11 +167,6 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const
     ss << "Iops=" << m_iops << "&";
   }
 
-  if(m_serverlessV2ScalingConfigurationHasBeenSet)
-  {
-    m_serverlessV2ScalingConfiguration.OutputToStream(ss, "ServerlessV2ScalingConfiguration");
-  }
-
   if(m_networkTypeHasBeenSet)
   {
     ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
@@ -190,6 +175,21 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const
   if(m_sourceDbClusterResourceIdHasBeenSet)
   {
     ss << "SourceDbClusterResourceId=" << StringUtils::URLEncode(m_sourceDbClusterResourceId.c_str()) << "&";
+  }
+
+  if(m_serverlessV2ScalingConfigurationHasBeenSet)
+  {
+    m_serverlessV2ScalingConfiguration.OutputToStream(ss, "ServerlessV2ScalingConfiguration");
+  }
+
+  if(m_scalingConfigurationHasBeenSet)
+  {
+    m_scalingConfiguration.OutputToStream(ss, "ScalingConfiguration");
+  }
+
+  if(m_engineModeHasBeenSet)
+  {
+    ss << "EngineMode=" << StringUtils::URLEncode(m_engineMode.c_str()) << "&";
   }
 
   if(m_rdsCustomClusterConfigurationHasBeenSet)

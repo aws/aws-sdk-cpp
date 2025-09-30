@@ -39,6 +39,15 @@ FileSystemEndpoint& FileSystemEndpoint::operator =(JsonView jsonValue)
     }
     m_ipAddressesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Ipv6Addresses"))
+  {
+    Aws::Utils::Array<JsonView> ipv6AddressesJsonList = jsonValue.GetArray("Ipv6Addresses");
+    for(unsigned ipv6AddressesIndex = 0; ipv6AddressesIndex < ipv6AddressesJsonList.GetLength(); ++ipv6AddressesIndex)
+    {
+      m_ipv6Addresses.push_back(ipv6AddressesJsonList[ipv6AddressesIndex].AsString());
+    }
+    m_ipv6AddressesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -60,6 +69,17 @@ JsonValue FileSystemEndpoint::Jsonize() const
      ipAddressesJsonList[ipAddressesIndex].AsString(m_ipAddresses[ipAddressesIndex]);
    }
    payload.WithArray("IpAddresses", std::move(ipAddressesJsonList));
+
+  }
+
+  if(m_ipv6AddressesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> ipv6AddressesJsonList(m_ipv6Addresses.size());
+   for(unsigned ipv6AddressesIndex = 0; ipv6AddressesIndex < ipv6AddressesJsonList.GetLength(); ++ipv6AddressesIndex)
+   {
+     ipv6AddressesJsonList[ipv6AddressesIndex].AsString(m_ipv6Addresses[ipv6AddressesIndex]);
+   }
+   payload.WithArray("Ipv6Addresses", std::move(ipv6AddressesJsonList));
 
   }
 

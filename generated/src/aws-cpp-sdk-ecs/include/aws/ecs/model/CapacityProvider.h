@@ -8,8 +8,10 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/model/CapacityProviderStatus.h>
 #include <aws/ecs/model/AutoScalingGroupProvider.h>
+#include <aws/ecs/model/ManagedInstancesProvider.h>
 #include <aws/ecs/model/CapacityProviderUpdateStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ecs/model/CapacityProviderType.h>
 #include <aws/ecs/model/Tag.h>
 #include <utility>
 
@@ -68,6 +70,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The cluster that this capacity provider is associated with. Managed instances
+     * capacity providers are cluster-scoped, meaning they can only be used within
+     * their associated cluster.</p>
+     */
+    inline const Aws::String& GetCluster() const { return m_cluster; }
+    inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
+    template<typename ClusterT = Aws::String>
+    void SetCluster(ClusterT&& value) { m_clusterHasBeenSet = true; m_cluster = std::forward<ClusterT>(value); }
+    template<typename ClusterT = Aws::String>
+    CapacityProvider& WithCluster(ClusterT&& value) { SetCluster(std::forward<ClusterT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The current status of the capacity provider. Only capacity providers in an
      * <code>ACTIVE</code> state can be used in a cluster. When a capacity provider is
      * successfully deleted, it has an <code>INACTIVE</code> status.</p>
@@ -88,6 +104,20 @@ namespace Model
     void SetAutoScalingGroupProvider(AutoScalingGroupProviderT&& value) { m_autoScalingGroupProviderHasBeenSet = true; m_autoScalingGroupProvider = std::forward<AutoScalingGroupProviderT>(value); }
     template<typename AutoScalingGroupProviderT = AutoScalingGroupProvider>
     CapacityProvider& WithAutoScalingGroupProvider(AutoScalingGroupProviderT&& value) { SetAutoScalingGroupProvider(std::forward<AutoScalingGroupProviderT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The configuration for the Amazon ECS Managed Instances provider. This
+     * includes the infrastructure role, the launch template configuration, and tag
+     * propagation settings.</p>
+     */
+    inline const ManagedInstancesProvider& GetManagedInstancesProvider() const { return m_managedInstancesProvider; }
+    inline bool ManagedInstancesProviderHasBeenSet() const { return m_managedInstancesProviderHasBeenSet; }
+    template<typename ManagedInstancesProviderT = ManagedInstancesProvider>
+    void SetManagedInstancesProvider(ManagedInstancesProviderT&& value) { m_managedInstancesProviderHasBeenSet = true; m_managedInstancesProvider = std::forward<ManagedInstancesProviderT>(value); }
+    template<typename ManagedInstancesProviderT = ManagedInstancesProvider>
+    CapacityProvider& WithManagedInstancesProvider(ManagedInstancesProviderT&& value) { SetManagedInstancesProvider(std::forward<ManagedInstancesProviderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -147,6 +177,18 @@ namespace Model
     template<typename TagsT = Tag>
     CapacityProvider& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The type of capacity provider. For Amazon ECS Managed Instances, this value
+     * is <code>MANAGED_INSTANCES</code>, indicating that Amazon ECS manages the
+     * underlying Amazon EC2 instances on your behalf.</p>
+     */
+    inline CapacityProviderType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(CapacityProviderType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CapacityProvider& WithType(CapacityProviderType value) { SetType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_capacityProviderArn;
@@ -155,11 +197,17 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
+    Aws::String m_cluster;
+    bool m_clusterHasBeenSet = false;
+
     CapacityProviderStatus m_status{CapacityProviderStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     AutoScalingGroupProvider m_autoScalingGroupProvider;
     bool m_autoScalingGroupProviderHasBeenSet = false;
+
+    ManagedInstancesProvider m_managedInstancesProvider;
+    bool m_managedInstancesProviderHasBeenSet = false;
 
     CapacityProviderUpdateStatus m_updateStatus{CapacityProviderUpdateStatus::NOT_SET};
     bool m_updateStatusHasBeenSet = false;
@@ -169,6 +217,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    CapacityProviderType m_type{CapacityProviderType::NOT_SET};
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

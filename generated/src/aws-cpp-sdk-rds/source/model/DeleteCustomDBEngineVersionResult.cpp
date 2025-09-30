@@ -40,11 +40,35 @@ DeleteCustomDBEngineVersionResult& DeleteCustomDBEngineVersionResult::operator =
       m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
       m_engineHasBeenSet = true;
     }
+    XmlNode majorEngineVersionNode = resultNode.FirstChild("MajorEngineVersion");
+    if(!majorEngineVersionNode.IsNull())
+    {
+      m_majorEngineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(majorEngineVersionNode.GetText());
+      m_majorEngineVersionHasBeenSet = true;
+    }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
       m_engineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(engineVersionNode.GetText());
       m_engineVersionHasBeenSet = true;
+    }
+    XmlNode databaseInstallationFilesS3BucketNameNode = resultNode.FirstChild("DatabaseInstallationFilesS3BucketName");
+    if(!databaseInstallationFilesS3BucketNameNode.IsNull())
+    {
+      m_databaseInstallationFilesS3BucketName = Aws::Utils::Xml::DecodeEscapedXmlText(databaseInstallationFilesS3BucketNameNode.GetText());
+      m_databaseInstallationFilesS3BucketNameHasBeenSet = true;
+    }
+    XmlNode databaseInstallationFilesS3PrefixNode = resultNode.FirstChild("DatabaseInstallationFilesS3Prefix");
+    if(!databaseInstallationFilesS3PrefixNode.IsNull())
+    {
+      m_databaseInstallationFilesS3Prefix = Aws::Utils::Xml::DecodeEscapedXmlText(databaseInstallationFilesS3PrefixNode.GetText());
+      m_databaseInstallationFilesS3PrefixHasBeenSet = true;
+    }
+    XmlNode customDBEngineVersionManifestNode = resultNode.FirstChild("CustomDBEngineVersionManifest");
+    if(!customDBEngineVersionManifestNode.IsNull())
+    {
+      m_customDBEngineVersionManifest = Aws::Utils::Xml::DecodeEscapedXmlText(customDBEngineVersionManifestNode.GetText());
+      m_customDBEngineVersionManifestHasBeenSet = true;
     }
     XmlNode dBParameterGroupFamilyNode = resultNode.FirstChild("DBParameterGroupFamily");
     if(!dBParameterGroupFamilyNode.IsNull())
@@ -57,6 +81,12 @@ DeleteCustomDBEngineVersionResult& DeleteCustomDBEngineVersionResult::operator =
     {
       m_dBEngineDescription = Aws::Utils::Xml::DecodeEscapedXmlText(dBEngineDescriptionNode.GetText());
       m_dBEngineDescriptionHasBeenSet = true;
+    }
+    XmlNode dBEngineVersionArnNode = resultNode.FirstChild("DBEngineVersionArn");
+    if(!dBEngineVersionArnNode.IsNull())
+    {
+      m_dBEngineVersionArn = Aws::Utils::Xml::DecodeEscapedXmlText(dBEngineVersionArnNode.GetText());
+      m_dBEngineVersionArnHasBeenSet = true;
     }
     XmlNode dBEngineVersionDescriptionNode = resultNode.FirstChild("DBEngineVersionDescription");
     if(!dBEngineVersionDescriptionNode.IsNull())
@@ -81,6 +111,18 @@ DeleteCustomDBEngineVersionResult& DeleteCustomDBEngineVersionResult::operator =
     {
       m_dBEngineMediaType = Aws::Utils::Xml::DecodeEscapedXmlText(dBEngineMediaTypeNode.GetText());
       m_dBEngineMediaTypeHasBeenSet = true;
+    }
+    XmlNode kMSKeyIdNode = resultNode.FirstChild("KMSKeyId");
+    if(!kMSKeyIdNode.IsNull())
+    {
+      m_kMSKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kMSKeyIdNode.GetText());
+      m_kMSKeyIdHasBeenSet = true;
+    }
+    XmlNode createTimeNode = resultNode.FirstChild("CreateTime");
+    if(!createTimeNode.IsNull())
+    {
+      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_createTimeHasBeenSet = true;
     }
     XmlNode supportedCharacterSetsNode = resultNode.FirstChild("SupportedCharacterSets");
     if(!supportedCharacterSetsNode.IsNull())
@@ -203,42 +245,6 @@ DeleteCustomDBEngineVersionResult& DeleteCustomDBEngineVersionResult::operator =
       m_supportsGlobalDatabases = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsGlobalDatabasesNode.GetText()).c_str()).c_str());
       m_supportsGlobalDatabasesHasBeenSet = true;
     }
-    XmlNode majorEngineVersionNode = resultNode.FirstChild("MajorEngineVersion");
-    if(!majorEngineVersionNode.IsNull())
-    {
-      m_majorEngineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(majorEngineVersionNode.GetText());
-      m_majorEngineVersionHasBeenSet = true;
-    }
-    XmlNode databaseInstallationFilesS3BucketNameNode = resultNode.FirstChild("DatabaseInstallationFilesS3BucketName");
-    if(!databaseInstallationFilesS3BucketNameNode.IsNull())
-    {
-      m_databaseInstallationFilesS3BucketName = Aws::Utils::Xml::DecodeEscapedXmlText(databaseInstallationFilesS3BucketNameNode.GetText());
-      m_databaseInstallationFilesS3BucketNameHasBeenSet = true;
-    }
-    XmlNode databaseInstallationFilesS3PrefixNode = resultNode.FirstChild("DatabaseInstallationFilesS3Prefix");
-    if(!databaseInstallationFilesS3PrefixNode.IsNull())
-    {
-      m_databaseInstallationFilesS3Prefix = Aws::Utils::Xml::DecodeEscapedXmlText(databaseInstallationFilesS3PrefixNode.GetText());
-      m_databaseInstallationFilesS3PrefixHasBeenSet = true;
-    }
-    XmlNode dBEngineVersionArnNode = resultNode.FirstChild("DBEngineVersionArn");
-    if(!dBEngineVersionArnNode.IsNull())
-    {
-      m_dBEngineVersionArn = Aws::Utils::Xml::DecodeEscapedXmlText(dBEngineVersionArnNode.GetText());
-      m_dBEngineVersionArnHasBeenSet = true;
-    }
-    XmlNode kMSKeyIdNode = resultNode.FirstChild("KMSKeyId");
-    if(!kMSKeyIdNode.IsNull())
-    {
-      m_kMSKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kMSKeyIdNode.GetText());
-      m_kMSKeyIdHasBeenSet = true;
-    }
-    XmlNode createTimeNode = resultNode.FirstChild("CreateTime");
-    if(!createTimeNode.IsNull())
-    {
-      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
-      m_createTimeHasBeenSet = true;
-    }
     XmlNode tagListNode = resultNode.FirstChild("TagList");
     if(!tagListNode.IsNull())
     {
@@ -257,12 +263,6 @@ DeleteCustomDBEngineVersionResult& DeleteCustomDBEngineVersionResult::operator =
     {
       m_supportsBabelfish = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsBabelfishNode.GetText()).c_str()).c_str());
       m_supportsBabelfishHasBeenSet = true;
-    }
-    XmlNode customDBEngineVersionManifestNode = resultNode.FirstChild("CustomDBEngineVersionManifest");
-    if(!customDBEngineVersionManifestNode.IsNull())
-    {
-      m_customDBEngineVersionManifest = Aws::Utils::Xml::DecodeEscapedXmlText(customDBEngineVersionManifestNode.GetText());
-      m_customDBEngineVersionManifestHasBeenSet = true;
     }
     XmlNode supportsLimitlessDatabaseNode = resultNode.FirstChild("SupportsLimitlessDatabase");
     if(!supportsLimitlessDatabaseNode.IsNull())

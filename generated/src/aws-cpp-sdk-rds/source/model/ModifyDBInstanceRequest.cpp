@@ -130,6 +130,11 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
     ss << "Iops=" << m_iops << "&";
   }
 
+  if(m_storageThroughputHasBeenSet)
+  {
+    ss << "StorageThroughput=" << m_storageThroughput << "&";
+  }
+
   if(m_optionGroupNameHasBeenSet)
   {
     ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
@@ -198,6 +203,11 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
     }
   }
 
+  if(m_disableDomainHasBeenSet)
+  {
+    ss << "DisableDomain=" << std::boolalpha << m_disableDomain << "&";
+  }
+
   if(m_copyTagsToSnapshotHasBeenSet)
   {
     ss << "CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
@@ -226,11 +236,6 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_domainIAMRoleNameHasBeenSet)
   {
     ss << "DomainIAMRoleName=" << StringUtils::URLEncode(m_domainIAMRoleName.c_str()) << "&";
-  }
-
-  if(m_disableDomainHasBeenSet)
-  {
-    ss << "DisableDomain=" << std::boolalpha << m_disableDomain << "&";
   }
 
   if(m_promotionTierHasBeenSet)
@@ -310,16 +315,6 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
     ss << "ReplicaMode=" << StringUtils::URLEncode(ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode)) << "&";
   }
 
-  if(m_enableCustomerOwnedIpHasBeenSet)
-  {
-    ss << "EnableCustomerOwnedIp=" << std::boolalpha << m_enableCustomerOwnedIp << "&";
-  }
-
-  if(m_awsBackupRecoveryPointArnHasBeenSet)
-  {
-    ss << "AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
-  }
-
   if(m_automationModeHasBeenSet)
   {
     ss << "AutomationMode=" << StringUtils::URLEncode(AutomationModeMapper::GetNameForAutomationMode(m_automationMode)) << "&";
@@ -330,14 +325,19 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
     ss << "ResumeFullAutomationModeMinutes=" << m_resumeFullAutomationModeMinutes << "&";
   }
 
+  if(m_enableCustomerOwnedIpHasBeenSet)
+  {
+    ss << "EnableCustomerOwnedIp=" << std::boolalpha << m_enableCustomerOwnedIp << "&";
+  }
+
   if(m_networkTypeHasBeenSet)
   {
     ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
   }
 
-  if(m_storageThroughputHasBeenSet)
+  if(m_awsBackupRecoveryPointArnHasBeenSet)
   {
-    ss << "StorageThroughput=" << m_storageThroughput << "&";
+    ss << "AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
   }
 
   if(m_manageMasterUserPasswordHasBeenSet)
@@ -355,9 +355,9 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
     ss << "MasterUserSecretKmsKeyId=" << StringUtils::URLEncode(m_masterUserSecretKmsKeyId.c_str()) << "&";
   }
 
-  if(m_engineHasBeenSet)
+  if(m_multiTenantHasBeenSet)
   {
-    ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
+    ss << "MultiTenant=" << std::boolalpha << m_multiTenant << "&";
   }
 
   if(m_dedicatedLogVolumeHasBeenSet)
@@ -365,9 +365,9 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
     ss << "DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
   }
 
-  if(m_multiTenantHasBeenSet)
+  if(m_engineHasBeenSet)
   {
-    ss << "MultiTenant=" << std::boolalpha << m_multiTenant << "&";
+    ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
 
   if(m_masterUserAuthenticationTypeHasBeenSet)

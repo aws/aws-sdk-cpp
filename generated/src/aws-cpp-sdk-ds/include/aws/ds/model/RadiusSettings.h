@@ -42,9 +42,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of strings that contains the fully qualified domain name (FQDN) or
-     * IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your
-     * RADIUS server load balancer.</p>
+     * <p>The fully qualified domain name (FQDN) or IP addresses of the RADIUS server
+     * endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRadiusServers() const { return m_radiusServers; }
     inline bool RadiusServersHasBeenSet() const { return m_radiusServersHasBeenSet; }
@@ -54,6 +53,21 @@ namespace Model
     RadiusSettings& WithRadiusServers(RadiusServersT&& value) { SetRadiusServers(std::forward<RadiusServersT>(value)); return *this;}
     template<typename RadiusServersT = Aws::String>
     RadiusSettings& AddRadiusServers(RadiusServersT&& value) { m_radiusServersHasBeenSet = true; m_radiusServers.emplace_back(std::forward<RadiusServersT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The IPv6 addresses of the RADIUS server endpoints or RADIUS server load
+     * balancer.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRadiusServersIpv6() const { return m_radiusServersIpv6; }
+    inline bool RadiusServersIpv6HasBeenSet() const { return m_radiusServersIpv6HasBeenSet; }
+    template<typename RadiusServersIpv6T = Aws::Vector<Aws::String>>
+    void SetRadiusServersIpv6(RadiusServersIpv6T&& value) { m_radiusServersIpv6HasBeenSet = true; m_radiusServersIpv6 = std::forward<RadiusServersIpv6T>(value); }
+    template<typename RadiusServersIpv6T = Aws::Vector<Aws::String>>
+    RadiusSettings& WithRadiusServersIpv6(RadiusServersIpv6T&& value) { SetRadiusServersIpv6(std::forward<RadiusServersIpv6T>(value)); return *this;}
+    template<typename RadiusServersIpv6T = Aws::String>
+    RadiusSettings& AddRadiusServersIpv6(RadiusServersIpv6T&& value) { m_radiusServersIpv6HasBeenSet = true; m_radiusServersIpv6.emplace_back(std::forward<RadiusServersIpv6T>(value)); return *this; }
     ///@}
 
     ///@{
@@ -136,6 +150,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_radiusServers;
     bool m_radiusServersHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_radiusServersIpv6;
+    bool m_radiusServersIpv6HasBeenSet = false;
 
     int m_radiusPort{0};
     bool m_radiusPortHasBeenSet = false;

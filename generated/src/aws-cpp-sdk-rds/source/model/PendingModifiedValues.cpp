@@ -85,6 +85,12 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
       m_iops = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iopsNode.GetText()).c_str()).c_str());
       m_iopsHasBeenSet = true;
     }
+    XmlNode storageThroughputNode = resultNode.FirstChild("StorageThroughput");
+    if(!storageThroughputNode.IsNull())
+    {
+      m_storageThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageThroughputNode.GetText()).c_str()).c_str());
+      m_storageThroughputHasBeenSet = true;
+    }
     XmlNode dBInstanceIdentifierNode = resultNode.FirstChild("DBInstanceIdentifier");
     if(!dBInstanceIdentifierNode.IsNull())
     {
@@ -128,12 +134,6 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
 
       m_processorFeaturesHasBeenSet = true;
     }
-    XmlNode iAMDatabaseAuthenticationEnabledNode = resultNode.FirstChild("IAMDatabaseAuthenticationEnabled");
-    if(!iAMDatabaseAuthenticationEnabledNode.IsNull())
-    {
-      m_iAMDatabaseAuthenticationEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iAMDatabaseAuthenticationEnabledNode.GetText()).c_str()).c_str());
-      m_iAMDatabaseAuthenticationEnabledHasBeenSet = true;
-    }
     XmlNode automationModeNode = resultNode.FirstChild("AutomationMode");
     if(!automationModeNode.IsNull())
     {
@@ -146,17 +146,17 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
       m_resumeFullAutomationModeTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resumeFullAutomationModeTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_resumeFullAutomationModeTimeHasBeenSet = true;
     }
-    XmlNode storageThroughputNode = resultNode.FirstChild("StorageThroughput");
-    if(!storageThroughputNode.IsNull())
+    XmlNode multiTenantNode = resultNode.FirstChild("MultiTenant");
+    if(!multiTenantNode.IsNull())
     {
-      m_storageThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageThroughputNode.GetText()).c_str()).c_str());
-      m_storageThroughputHasBeenSet = true;
+      m_multiTenant = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiTenantNode.GetText()).c_str()).c_str());
+      m_multiTenantHasBeenSet = true;
     }
-    XmlNode engineNode = resultNode.FirstChild("Engine");
-    if(!engineNode.IsNull())
+    XmlNode iAMDatabaseAuthenticationEnabledNode = resultNode.FirstChild("IAMDatabaseAuthenticationEnabled");
+    if(!iAMDatabaseAuthenticationEnabledNode.IsNull())
     {
-      m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
-      m_engineHasBeenSet = true;
+      m_iAMDatabaseAuthenticationEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iAMDatabaseAuthenticationEnabledNode.GetText()).c_str()).c_str());
+      m_iAMDatabaseAuthenticationEnabledHasBeenSet = true;
     }
     XmlNode dedicatedLogVolumeNode = resultNode.FirstChild("DedicatedLogVolume");
     if(!dedicatedLogVolumeNode.IsNull())
@@ -164,11 +164,11 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
       m_dedicatedLogVolume = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dedicatedLogVolumeNode.GetText()).c_str()).c_str());
       m_dedicatedLogVolumeHasBeenSet = true;
     }
-    XmlNode multiTenantNode = resultNode.FirstChild("MultiTenant");
-    if(!multiTenantNode.IsNull())
+    XmlNode engineNode = resultNode.FirstChild("Engine");
+    if(!engineNode.IsNull())
     {
-      m_multiTenant = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiTenantNode.GetText()).c_str()).c_str());
-      m_multiTenantHasBeenSet = true;
+      m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
+      m_engineHasBeenSet = true;
     }
   }
 
@@ -222,6 +222,11 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".Iops=" << m_iops << "&";
   }
 
+  if(m_storageThroughputHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StorageThroughput=" << m_storageThroughput << "&";
+  }
+
   if(m_dBInstanceIdentifierHasBeenSet)
   {
       oStream << location << index << locationValue << ".DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
@@ -260,11 +265,6 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
       }
   }
 
-  if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
-  }
-
   if(m_automationModeHasBeenSet)
   {
       oStream << location << index << locationValue << ".AutomationMode=" << StringUtils::URLEncode(AutomationModeMapper::GetNameForAutomationMode(m_automationMode)) << "&";
@@ -275,14 +275,14 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".ResumeFullAutomationModeTime=" << StringUtils::URLEncode(m_resumeFullAutomationModeTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_storageThroughputHasBeenSet)
+  if(m_multiTenantHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StorageThroughput=" << m_storageThroughput << "&";
+      oStream << location << index << locationValue << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
   }
 
-  if(m_engineHasBeenSet)
+  if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
+      oStream << location << index << locationValue << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
   }
 
   if(m_dedicatedLogVolumeHasBeenSet)
@@ -290,9 +290,9 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
   }
 
-  if(m_multiTenantHasBeenSet)
+  if(m_engineHasBeenSet)
   {
-      oStream << location << index << locationValue << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
+      oStream << location << index << locationValue << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
 
 }
@@ -335,6 +335,10 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   {
       oStream << location << ".Iops=" << m_iops << "&";
   }
+  if(m_storageThroughputHasBeenSet)
+  {
+      oStream << location << ".StorageThroughput=" << m_storageThroughput << "&";
+  }
   if(m_dBInstanceIdentifierHasBeenSet)
   {
       oStream << location << ".DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
@@ -367,10 +371,6 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
         item.OutputToStream(oStream, processorFeaturesSs.str().c_str());
       }
   }
-  if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
-  {
-      oStream << location << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
-  }
   if(m_automationModeHasBeenSet)
   {
       oStream << location << ".AutomationMode=" << StringUtils::URLEncode(AutomationModeMapper::GetNameForAutomationMode(m_automationMode)) << "&";
@@ -379,21 +379,21 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   {
       oStream << location << ".ResumeFullAutomationModeTime=" << StringUtils::URLEncode(m_resumeFullAutomationModeTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
-  if(m_storageThroughputHasBeenSet)
+  if(m_multiTenantHasBeenSet)
   {
-      oStream << location << ".StorageThroughput=" << m_storageThroughput << "&";
+      oStream << location << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
   }
-  if(m_engineHasBeenSet)
+  if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
   {
-      oStream << location << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
+      oStream << location << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
   }
   if(m_dedicatedLogVolumeHasBeenSet)
   {
       oStream << location << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
   }
-  if(m_multiTenantHasBeenSet)
+  if(m_engineHasBeenSet)
   {
-      oStream << location << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
+      oStream << location << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
 }
 

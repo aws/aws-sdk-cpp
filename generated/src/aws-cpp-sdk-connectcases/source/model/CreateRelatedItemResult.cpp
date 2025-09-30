@@ -25,15 +25,15 @@ CreateRelatedItemResult::CreateRelatedItemResult(const Aws::AmazonWebServiceResu
 CreateRelatedItemResult& CreateRelatedItemResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("relatedItemArn"))
-  {
-    m_relatedItemArn = jsonValue.GetString("relatedItemArn");
-    m_relatedItemArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("relatedItemId"))
   {
     m_relatedItemId = jsonValue.GetString("relatedItemId");
     m_relatedItemIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("relatedItemArn"))
+  {
+    m_relatedItemArn = jsonValue.GetString("relatedItemArn");
+    m_relatedItemArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

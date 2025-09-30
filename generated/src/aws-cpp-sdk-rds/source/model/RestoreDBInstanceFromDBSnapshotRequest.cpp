@@ -79,6 +79,11 @@ Aws::String RestoreDBInstanceFromDBSnapshotRequest::SerializePayload() const
     ss << "Iops=" << m_iops << "&";
   }
 
+  if(m_storageThroughputHasBeenSet)
+  {
+    ss << "StorageThroughput=" << m_storageThroughput << "&";
+  }
+
   if(m_optionGroupNameHasBeenSet)
   {
     ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
@@ -242,9 +247,9 @@ Aws::String RestoreDBInstanceFromDBSnapshotRequest::SerializePayload() const
     ss << "EnableCustomerOwnedIp=" << std::boolalpha << m_enableCustomerOwnedIp << "&";
   }
 
-  if(m_customIamInstanceProfileHasBeenSet)
+  if(m_networkTypeHasBeenSet)
   {
-    ss << "CustomIamInstanceProfile=" << StringUtils::URLEncode(m_customIamInstanceProfile.c_str()) << "&";
+    ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
   }
 
   if(m_backupTargetHasBeenSet)
@@ -252,24 +257,19 @@ Aws::String RestoreDBInstanceFromDBSnapshotRequest::SerializePayload() const
     ss << "BackupTarget=" << StringUtils::URLEncode(m_backupTarget.c_str()) << "&";
   }
 
-  if(m_networkTypeHasBeenSet)
+  if(m_customIamInstanceProfileHasBeenSet)
   {
-    ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
-  }
-
-  if(m_storageThroughputHasBeenSet)
-  {
-    ss << "StorageThroughput=" << m_storageThroughput << "&";
-  }
-
-  if(m_dBClusterSnapshotIdentifierHasBeenSet)
-  {
-    ss << "DBClusterSnapshotIdentifier=" << StringUtils::URLEncode(m_dBClusterSnapshotIdentifier.c_str()) << "&";
+    ss << "CustomIamInstanceProfile=" << StringUtils::URLEncode(m_customIamInstanceProfile.c_str()) << "&";
   }
 
   if(m_allocatedStorageHasBeenSet)
   {
     ss << "AllocatedStorage=" << m_allocatedStorage << "&";
+  }
+
+  if(m_dBClusterSnapshotIdentifierHasBeenSet)
+  {
+    ss << "DBClusterSnapshotIdentifier=" << StringUtils::URLEncode(m_dBClusterSnapshotIdentifier.c_str()) << "&";
   }
 
   if(m_dedicatedLogVolumeHasBeenSet)

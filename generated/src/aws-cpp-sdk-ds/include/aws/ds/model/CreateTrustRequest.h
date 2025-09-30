@@ -124,6 +124,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The IPv6 addresses of the remote DNS server associated with
+     * RemoteDomainName.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetConditionalForwarderIpv6Addrs() const { return m_conditionalForwarderIpv6Addrs; }
+    inline bool ConditionalForwarderIpv6AddrsHasBeenSet() const { return m_conditionalForwarderIpv6AddrsHasBeenSet; }
+    template<typename ConditionalForwarderIpv6AddrsT = Aws::Vector<Aws::String>>
+    void SetConditionalForwarderIpv6Addrs(ConditionalForwarderIpv6AddrsT&& value) { m_conditionalForwarderIpv6AddrsHasBeenSet = true; m_conditionalForwarderIpv6Addrs = std::forward<ConditionalForwarderIpv6AddrsT>(value); }
+    template<typename ConditionalForwarderIpv6AddrsT = Aws::Vector<Aws::String>>
+    CreateTrustRequest& WithConditionalForwarderIpv6Addrs(ConditionalForwarderIpv6AddrsT&& value) { SetConditionalForwarderIpv6Addrs(std::forward<ConditionalForwarderIpv6AddrsT>(value)); return *this;}
+    template<typename ConditionalForwarderIpv6AddrsT = Aws::String>
+    CreateTrustRequest& AddConditionalForwarderIpv6Addrs(ConditionalForwarderIpv6AddrsT&& value) { m_conditionalForwarderIpv6AddrsHasBeenSet = true; m_conditionalForwarderIpv6Addrs.emplace_back(std::forward<ConditionalForwarderIpv6AddrsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Optional parameter to enable selective authentication for the trust.</p>
      */
     inline SelectiveAuth GetSelectiveAuth() const { return m_selectiveAuth; }
@@ -150,6 +165,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_conditionalForwarderIpAddrs;
     bool m_conditionalForwarderIpAddrsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_conditionalForwarderIpv6Addrs;
+    bool m_conditionalForwarderIpv6AddrsHasBeenSet = false;
 
     SelectiveAuth m_selectiveAuth{SelectiveAuth::NOT_SET};
     bool m_selectiveAuthHasBeenSet = false;

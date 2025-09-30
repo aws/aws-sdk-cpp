@@ -469,6 +469,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The storage throughput value for the DB instance.</p> <p>This setting applies
+     * only to the <code>gp3</code> storage type.</p> <p>This setting doesn't apply to
+     * Amazon Aurora or RDS Custom DB instances.</p>
+     */
+    inline int GetStorageThroughput() const { return m_storageThroughput; }
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+    inline ModifyDBInstanceRequest& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The option group to associate the DB instance with.</p> <p>Changing this
      * parameter doesn't result in an outage, with one exception. If the parameter
      * change results in an option group that enables OEM, it can cause a brief period,
@@ -667,6 +679,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies whether to remove the DB instance from the Active Directory
+     * domain.</p>
+     */
+    inline bool GetDisableDomain() const { return m_disableDomain; }
+    inline bool DisableDomainHasBeenSet() const { return m_disableDomainHasBeenSet; }
+    inline void SetDisableDomain(bool value) { m_disableDomainHasBeenSet = true; m_disableDomain = value; }
+    inline ModifyDBInstanceRequest& WithDisableDomain(bool value) { SetDisableDomain(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies whether to copy all tags from the DB instance to snapshots of the
      * DB instance. By default, tags aren't copied.</p> <p>This setting doesn't apply
      * to Amazon Aurora DB instances. Copying tags to snapshots is managed by the DB
@@ -774,17 +797,6 @@ namespace Model
     void SetDomainIAMRoleName(DomainIAMRoleNameT&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = std::forward<DomainIAMRoleNameT>(value); }
     template<typename DomainIAMRoleNameT = Aws::String>
     ModifyDBInstanceRequest& WithDomainIAMRoleName(DomainIAMRoleNameT&& value) { SetDomainIAMRoleName(std::forward<DomainIAMRoleNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies whether to remove the DB instance from the Active Directory
-     * domain.</p>
-     */
-    inline bool GetDisableDomain() const { return m_disableDomain; }
-    inline bool DisableDomainHasBeenSet() const { return m_disableDomainHasBeenSet; }
-    inline void SetDisableDomain(bool value) { m_disableDomainHasBeenSet = true; m_disableDomain = value; }
-    inline ModifyDBInstanceRequest& WithDisableDomain(bool value) { SetDisableDomain(value); return *this;}
     ///@}
 
     ///@{
@@ -1034,39 +1046,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on
-     * Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or external
-     * connectivity to resources in your Outpost subnets through your on-premises
-     * network. For some use cases, a CoIP can provide lower latency for connections to
-     * the DB instance from outside of its virtual private cloud (VPC) on your local
-     * network.</p> <p>For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
-     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> <p>For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
-     * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
-     */
-    inline bool GetEnableCustomerOwnedIp() const { return m_enableCustomerOwnedIp; }
-    inline bool EnableCustomerOwnedIpHasBeenSet() const { return m_enableCustomerOwnedIpHasBeenSet; }
-    inline void SetEnableCustomerOwnedIp(bool value) { m_enableCustomerOwnedIpHasBeenSet = true; m_enableCustomerOwnedIp = value; }
-    inline ModifyDBInstanceRequest& WithEnableCustomerOwnedIp(bool value) { SetEnableCustomerOwnedIp(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
-     * Backup.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
-     */
-    inline const Aws::String& GetAwsBackupRecoveryPointArn() const { return m_awsBackupRecoveryPointArn; }
-    inline bool AwsBackupRecoveryPointArnHasBeenSet() const { return m_awsBackupRecoveryPointArnHasBeenSet; }
-    template<typename AwsBackupRecoveryPointArnT = Aws::String>
-    void SetAwsBackupRecoveryPointArn(AwsBackupRecoveryPointArnT&& value) { m_awsBackupRecoveryPointArnHasBeenSet = true; m_awsBackupRecoveryPointArn = std::forward<AwsBackupRecoveryPointArnT>(value); }
-    template<typename AwsBackupRecoveryPointArnT = Aws::String>
-    ModifyDBInstanceRequest& WithAwsBackupRecoveryPointArn(AwsBackupRecoveryPointArnT&& value) { SetAwsBackupRecoveryPointArn(std::forward<AwsBackupRecoveryPointArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The automation mode of the RDS Custom DB instance. If <code>full</code>, the
      * DB instance automates monitoring and instance recovery. If <code>all
      * paused</code>, the instance pauses automation for the duration set by
@@ -1093,6 +1072,26 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on
+     * Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or external
+     * connectivity to resources in your Outpost subnets through your on-premises
+     * network. For some use cases, a CoIP can provide lower latency for connections to
+     * the DB instance from outside of its virtual private cloud (VPC) on your local
+     * network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+     */
+    inline bool GetEnableCustomerOwnedIp() const { return m_enableCustomerOwnedIp; }
+    inline bool EnableCustomerOwnedIpHasBeenSet() const { return m_enableCustomerOwnedIpHasBeenSet; }
+    inline void SetEnableCustomerOwnedIp(bool value) { m_enableCustomerOwnedIpHasBeenSet = true; m_enableCustomerOwnedIp = value; }
+    inline ModifyDBInstanceRequest& WithEnableCustomerOwnedIp(bool value) { SetEnableCustomerOwnedIp(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The network type of the DB instance.</p> <p>The network type is determined by
      * the <code>DBSubnetGroup</code> specified for the DB instance. A
      * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
@@ -1111,14 +1110,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The storage throughput value for the DB instance.</p> <p>This setting applies
-     * only to the <code>gp3</code> storage type.</p> <p>This setting doesn't apply to
-     * Amazon Aurora or RDS Custom DB instances.</p>
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
-    inline int GetStorageThroughput() const { return m_storageThroughput; }
-    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
-    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
-    inline ModifyDBInstanceRequest& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+    inline const Aws::String& GetAwsBackupRecoveryPointArn() const { return m_awsBackupRecoveryPointArn; }
+    inline bool AwsBackupRecoveryPointArnHasBeenSet() const { return m_awsBackupRecoveryPointArnHasBeenSet; }
+    template<typename AwsBackupRecoveryPointArnT = Aws::String>
+    void SetAwsBackupRecoveryPointArn(AwsBackupRecoveryPointArnT&& value) { m_awsBackupRecoveryPointArnHasBeenSet = true; m_awsBackupRecoveryPointArn = std::forward<AwsBackupRecoveryPointArnT>(value); }
+    template<typename AwsBackupRecoveryPointArnT = Aws::String>
+    ModifyDBInstanceRequest& WithAwsBackupRecoveryPointArn(AwsBackupRecoveryPointArnT&& value) { SetAwsBackupRecoveryPointArn(std::forward<AwsBackupRecoveryPointArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -1199,6 +1199,37 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies whether the to convert your DB instance from the single-tenant
+     * conﬁguration to the multi-tenant conﬁguration. This parameter is supported only
+     * for RDS for Oracle CDB instances.</p> <p>During the conversion, RDS creates an
+     * initial tenant database and associates the DB name, master user name, character
+     * set, and national character set metadata with this database. The tags associated
+     * with the instance also propagate to the initial tenant database. You can add
+     * more tenant databases to your DB instance by using the
+     * <code>CreateTenantDatabase</code> operation.</p>  <p>The conversion
+     * to the multi-tenant configuration is permanent and irreversible, so you can't
+     * later convert back to the single-tenant configuration. When you specify this
+     * parameter, you must also specify <code>ApplyImmediately</code>.</p> 
+     */
+    inline bool GetMultiTenant() const { return m_multiTenant; }
+    inline bool MultiTenantHasBeenSet() const { return m_multiTenantHasBeenSet; }
+    inline void SetMultiTenant(bool value) { m_multiTenantHasBeenSet = true; m_multiTenant = value; }
+    inline ModifyDBInstanceRequest& WithMultiTenant(bool value) { SetMultiTenant(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.</p>
+     */
+    inline bool GetDedicatedLogVolume() const { return m_dedicatedLogVolume; }
+    inline bool DedicatedLogVolumeHasBeenSet() const { return m_dedicatedLogVolumeHasBeenSet; }
+    inline void SetDedicatedLogVolume(bool value) { m_dedicatedLogVolumeHasBeenSet = true; m_dedicatedLogVolume = value; }
+    inline ModifyDBInstanceRequest& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The target Oracle DB engine when you convert a non-CDB to a CDB. This
      * intermediate step is necessary to upgrade an Oracle Database 19c non-CDB to an
      * Oracle Database 21c CDB.</p> <p>Note the following requirements:</p> <ul> <li>
@@ -1221,37 +1252,6 @@ namespace Model
     void SetEngine(EngineT&& value) { m_engineHasBeenSet = true; m_engine = std::forward<EngineT>(value); }
     template<typename EngineT = Aws::String>
     ModifyDBInstanceRequest& WithEngine(EngineT&& value) { SetEngine(std::forward<EngineT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
-     * enabled.</p>
-     */
-    inline bool GetDedicatedLogVolume() const { return m_dedicatedLogVolume; }
-    inline bool DedicatedLogVolumeHasBeenSet() const { return m_dedicatedLogVolumeHasBeenSet; }
-    inline void SetDedicatedLogVolume(bool value) { m_dedicatedLogVolumeHasBeenSet = true; m_dedicatedLogVolume = value; }
-    inline ModifyDBInstanceRequest& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies whether the to convert your DB instance from the single-tenant
-     * conﬁguration to the multi-tenant conﬁguration. This parameter is supported only
-     * for RDS for Oracle CDB instances.</p> <p>During the conversion, RDS creates an
-     * initial tenant database and associates the DB name, master user name, character
-     * set, and national character set metadata with this database. The tags associated
-     * with the instance also propagate to the initial tenant database. You can add
-     * more tenant databases to your DB instance by using the
-     * <code>CreateTenantDatabase</code> operation.</p>  <p>The conversion
-     * to the multi-tenant configuration is permanent and irreversible, so you can't
-     * later convert back to the single-tenant configuration. When you specify this
-     * parameter, you must also specify <code>ApplyImmediately</code>.</p> 
-     */
-    inline bool GetMultiTenant() const { return m_multiTenant; }
-    inline bool MultiTenantHasBeenSet() const { return m_multiTenantHasBeenSet; }
-    inline void SetMultiTenant(bool value) { m_multiTenantHasBeenSet = true; m_multiTenant = value; }
-    inline ModifyDBInstanceRequest& WithMultiTenant(bool value) { SetMultiTenant(value); return *this;}
     ///@}
 
     ///@{
@@ -1325,6 +1325,9 @@ namespace Model
     int m_iops{0};
     bool m_iopsHasBeenSet = false;
 
+    int m_storageThroughput{0};
+    bool m_storageThroughputHasBeenSet = false;
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet = false;
 
@@ -1358,6 +1361,9 @@ namespace Model
     Aws::Vector<Aws::String> m_domainDnsIps;
     bool m_domainDnsIpsHasBeenSet = false;
 
+    bool m_disableDomain{false};
+    bool m_disableDomainHasBeenSet = false;
+
     bool m_copyTagsToSnapshot{false};
     bool m_copyTagsToSnapshotHasBeenSet = false;
 
@@ -1375,9 +1381,6 @@ namespace Model
 
     Aws::String m_domainIAMRoleName;
     bool m_domainIAMRoleNameHasBeenSet = false;
-
-    bool m_disableDomain{false};
-    bool m_disableDomainHasBeenSet = false;
 
     int m_promotionTier{0};
     bool m_promotionTierHasBeenSet = false;
@@ -1418,23 +1421,20 @@ namespace Model
     ReplicaMode m_replicaMode{ReplicaMode::NOT_SET};
     bool m_replicaModeHasBeenSet = false;
 
-    bool m_enableCustomerOwnedIp{false};
-    bool m_enableCustomerOwnedIpHasBeenSet = false;
-
-    Aws::String m_awsBackupRecoveryPointArn;
-    bool m_awsBackupRecoveryPointArnHasBeenSet = false;
-
     AutomationMode m_automationMode{AutomationMode::NOT_SET};
     bool m_automationModeHasBeenSet = false;
 
     int m_resumeFullAutomationModeMinutes{0};
     bool m_resumeFullAutomationModeMinutesHasBeenSet = false;
 
+    bool m_enableCustomerOwnedIp{false};
+    bool m_enableCustomerOwnedIpHasBeenSet = false;
+
     Aws::String m_networkType;
     bool m_networkTypeHasBeenSet = false;
 
-    int m_storageThroughput{0};
-    bool m_storageThroughputHasBeenSet = false;
+    Aws::String m_awsBackupRecoveryPointArn;
+    bool m_awsBackupRecoveryPointArnHasBeenSet = false;
 
     bool m_manageMasterUserPassword{false};
     bool m_manageMasterUserPasswordHasBeenSet = false;
@@ -1445,14 +1445,14 @@ namespace Model
     Aws::String m_masterUserSecretKmsKeyId;
     bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
 
-    Aws::String m_engine;
-    bool m_engineHasBeenSet = false;
+    bool m_multiTenant{false};
+    bool m_multiTenantHasBeenSet = false;
 
     bool m_dedicatedLogVolume{false};
     bool m_dedicatedLogVolumeHasBeenSet = false;
 
-    bool m_multiTenant{false};
-    bool m_multiTenantHasBeenSet = false;
+    Aws::String m_engine;
+    bool m_engineHasBeenSet = false;
 
     MasterUserAuthenticationType m_masterUserAuthenticationType{MasterUserAuthenticationType::NOT_SET};
     bool m_masterUserAuthenticationTypeHasBeenSet = false;

@@ -25,6 +25,11 @@ SearchCasesResult::SearchCasesResult(const Aws::AmazonWebServiceResult<JsonValue
 SearchCasesResult& SearchCasesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("cases"))
   {
     Aws::Utils::Array<JsonView> casesJsonList = jsonValue.GetArray("cases");
@@ -33,11 +38,6 @@ SearchCasesResult& SearchCasesResult::operator =(const Aws::AmazonWebServiceResu
       m_cases.push_back(casesJsonList[casesIndex].AsObject());
     }
     m_casesHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

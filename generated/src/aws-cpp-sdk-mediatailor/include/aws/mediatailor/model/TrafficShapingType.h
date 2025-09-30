@@ -16,7 +16,8 @@ namespace Model
   enum class TrafficShapingType
   {
     NOT_SET,
-    RETRIEVAL_WINDOW
+    RETRIEVAL_WINDOW,
+    TPS
   };
 
 namespace TrafficShapingTypeMapper

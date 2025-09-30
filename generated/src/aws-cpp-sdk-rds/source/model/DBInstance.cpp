@@ -55,12 +55,6 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_dBInstanceStatus = Aws::Utils::Xml::DecodeEscapedXmlText(dBInstanceStatusNode.GetText());
       m_dBInstanceStatusHasBeenSet = true;
     }
-    XmlNode automaticRestartTimeNode = resultNode.FirstChild("AutomaticRestartTime");
-    if(!automaticRestartTimeNode.IsNull())
-    {
-      m_automaticRestartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(automaticRestartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
-      m_automaticRestartTimeHasBeenSet = true;
-    }
     XmlNode masterUsernameNode = resultNode.FirstChild("MasterUsername");
     if(!masterUsernameNode.IsNull())
     {
@@ -239,6 +233,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
     {
       m_iops = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iopsNode.GetText()).c_str()).c_str());
       m_iopsHasBeenSet = true;
+    }
+    XmlNode storageThroughputNode = resultNode.FirstChild("StorageThroughput");
+    if(!storageThroughputNode.IsNull())
+    {
+      m_storageThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageThroughputNode.GetText()).c_str()).c_str());
+      m_storageThroughputHasBeenSet = true;
     }
     XmlNode optionGroupMembershipsNode = resultNode.FirstChild("OptionGroupMemberships");
     if(!optionGroupMembershipsNode.IsNull())
@@ -493,18 +493,17 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
 
       m_tagListHasBeenSet = true;
     }
-    XmlNode dBInstanceAutomatedBackupsReplicationsNode = resultNode.FirstChild("DBInstanceAutomatedBackupsReplications");
-    if(!dBInstanceAutomatedBackupsReplicationsNode.IsNull())
+    XmlNode automationModeNode = resultNode.FirstChild("AutomationMode");
+    if(!automationModeNode.IsNull())
     {
-      XmlNode dBInstanceAutomatedBackupsReplicationsMember = dBInstanceAutomatedBackupsReplicationsNode.FirstChild("DBInstanceAutomatedBackupsReplication");
-      m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = !dBInstanceAutomatedBackupsReplicationsMember.IsNull();
-      while(!dBInstanceAutomatedBackupsReplicationsMember.IsNull())
-      {
-        m_dBInstanceAutomatedBackupsReplications.push_back(dBInstanceAutomatedBackupsReplicationsMember);
-        dBInstanceAutomatedBackupsReplicationsMember = dBInstanceAutomatedBackupsReplicationsMember.NextNode("DBInstanceAutomatedBackupsReplication");
-      }
-
-      m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = true;
+      m_automationMode = AutomationModeMapper::GetAutomationModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(automationModeNode.GetText()).c_str()));
+      m_automationModeHasBeenSet = true;
+    }
+    XmlNode resumeFullAutomationModeTimeNode = resultNode.FirstChild("ResumeFullAutomationModeTime");
+    if(!resumeFullAutomationModeTimeNode.IsNull())
+    {
+      m_resumeFullAutomationModeTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resumeFullAutomationModeTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_resumeFullAutomationModeTimeHasBeenSet = true;
     }
     XmlNode customerOwnedIpEnabledNode = resultNode.FirstChild("CustomerOwnedIpEnabled");
     if(!customerOwnedIpEnabledNode.IsNull())
@@ -512,11 +511,11 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_customerOwnedIpEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(customerOwnedIpEnabledNode.GetText()).c_str()).c_str());
       m_customerOwnedIpEnabledHasBeenSet = true;
     }
-    XmlNode awsBackupRecoveryPointArnNode = resultNode.FirstChild("AwsBackupRecoveryPointArn");
-    if(!awsBackupRecoveryPointArnNode.IsNull())
+    XmlNode networkTypeNode = resultNode.FirstChild("NetworkType");
+    if(!networkTypeNode.IsNull())
     {
-      m_awsBackupRecoveryPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(awsBackupRecoveryPointArnNode.GetText());
-      m_awsBackupRecoveryPointArnHasBeenSet = true;
+      m_networkType = Aws::Utils::Xml::DecodeEscapedXmlText(networkTypeNode.GetText());
+      m_networkTypeHasBeenSet = true;
     }
     XmlNode activityStreamStatusNode = resultNode.FirstChild("ActivityStreamStatus");
     if(!activityStreamStatusNode.IsNull())
@@ -548,23 +547,24 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_activityStreamEngineNativeAuditFieldsIncluded = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(activityStreamEngineNativeAuditFieldsIncludedNode.GetText()).c_str()).c_str());
       m_activityStreamEngineNativeAuditFieldsIncludedHasBeenSet = true;
     }
-    XmlNode automationModeNode = resultNode.FirstChild("AutomationMode");
-    if(!automationModeNode.IsNull())
+    XmlNode awsBackupRecoveryPointArnNode = resultNode.FirstChild("AwsBackupRecoveryPointArn");
+    if(!awsBackupRecoveryPointArnNode.IsNull())
     {
-      m_automationMode = AutomationModeMapper::GetAutomationModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(automationModeNode.GetText()).c_str()));
-      m_automationModeHasBeenSet = true;
+      m_awsBackupRecoveryPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(awsBackupRecoveryPointArnNode.GetText());
+      m_awsBackupRecoveryPointArnHasBeenSet = true;
     }
-    XmlNode resumeFullAutomationModeTimeNode = resultNode.FirstChild("ResumeFullAutomationModeTime");
-    if(!resumeFullAutomationModeTimeNode.IsNull())
+    XmlNode dBInstanceAutomatedBackupsReplicationsNode = resultNode.FirstChild("DBInstanceAutomatedBackupsReplications");
+    if(!dBInstanceAutomatedBackupsReplicationsNode.IsNull())
     {
-      m_resumeFullAutomationModeTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resumeFullAutomationModeTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
-      m_resumeFullAutomationModeTimeHasBeenSet = true;
-    }
-    XmlNode customIamInstanceProfileNode = resultNode.FirstChild("CustomIamInstanceProfile");
-    if(!customIamInstanceProfileNode.IsNull())
-    {
-      m_customIamInstanceProfile = Aws::Utils::Xml::DecodeEscapedXmlText(customIamInstanceProfileNode.GetText());
-      m_customIamInstanceProfileHasBeenSet = true;
+      XmlNode dBInstanceAutomatedBackupsReplicationsMember = dBInstanceAutomatedBackupsReplicationsNode.FirstChild("DBInstanceAutomatedBackupsReplication");
+      m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = !dBInstanceAutomatedBackupsReplicationsMember.IsNull();
+      while(!dBInstanceAutomatedBackupsReplicationsMember.IsNull())
+      {
+        m_dBInstanceAutomatedBackupsReplications.push_back(dBInstanceAutomatedBackupsReplicationsMember);
+        dBInstanceAutomatedBackupsReplicationsMember = dBInstanceAutomatedBackupsReplicationsMember.NextNode("DBInstanceAutomatedBackupsReplication");
+      }
+
+      m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = true;
     }
     XmlNode backupTargetNode = resultNode.FirstChild("BackupTarget");
     if(!backupTargetNode.IsNull())
@@ -572,11 +572,17 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_backupTarget = Aws::Utils::Xml::DecodeEscapedXmlText(backupTargetNode.GetText());
       m_backupTargetHasBeenSet = true;
     }
-    XmlNode networkTypeNode = resultNode.FirstChild("NetworkType");
-    if(!networkTypeNode.IsNull())
+    XmlNode automaticRestartTimeNode = resultNode.FirstChild("AutomaticRestartTime");
+    if(!automaticRestartTimeNode.IsNull())
     {
-      m_networkType = Aws::Utils::Xml::DecodeEscapedXmlText(networkTypeNode.GetText());
-      m_networkTypeHasBeenSet = true;
+      m_automaticRestartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(automaticRestartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_automaticRestartTimeHasBeenSet = true;
+    }
+    XmlNode customIamInstanceProfileNode = resultNode.FirstChild("CustomIamInstanceProfile");
+    if(!customIamInstanceProfileNode.IsNull())
+    {
+      m_customIamInstanceProfile = Aws::Utils::Xml::DecodeEscapedXmlText(customIamInstanceProfileNode.GetText());
+      m_customIamInstanceProfileHasBeenSet = true;
     }
     XmlNode activityStreamPolicyStatusNode = resultNode.FirstChild("ActivityStreamPolicyStatus");
     if(!activityStreamPolicyStatusNode.IsNull())
@@ -584,11 +590,11 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_activityStreamPolicyStatus = ActivityStreamPolicyStatusMapper::GetActivityStreamPolicyStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(activityStreamPolicyStatusNode.GetText()).c_str()));
       m_activityStreamPolicyStatusHasBeenSet = true;
     }
-    XmlNode storageThroughputNode = resultNode.FirstChild("StorageThroughput");
-    if(!storageThroughputNode.IsNull())
+    XmlNode certificateDetailsNode = resultNode.FirstChild("CertificateDetails");
+    if(!certificateDetailsNode.IsNull())
     {
-      m_storageThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageThroughputNode.GetText()).c_str()).c_str());
-      m_storageThroughputHasBeenSet = true;
+      m_certificateDetails = certificateDetailsNode;
+      m_certificateDetailsHasBeenSet = true;
     }
     XmlNode dBSystemIdNode = resultNode.FirstChild("DBSystemId");
     if(!dBSystemIdNode.IsNull())
@@ -602,12 +608,6 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_masterUserSecret = masterUserSecretNode;
       m_masterUserSecretHasBeenSet = true;
     }
-    XmlNode certificateDetailsNode = resultNode.FirstChild("CertificateDetails");
-    if(!certificateDetailsNode.IsNull())
-    {
-      m_certificateDetails = certificateDetailsNode;
-      m_certificateDetailsHasBeenSet = true;
-    }
     XmlNode readReplicaSourceDBClusterIdentifierNode = resultNode.FirstChild("ReadReplicaSourceDBClusterIdentifier");
     if(!readReplicaSourceDBClusterIdentifierNode.IsNull())
     {
@@ -620,6 +620,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_percentProgress = Aws::Utils::Xml::DecodeEscapedXmlText(percentProgressNode.GetText());
       m_percentProgressHasBeenSet = true;
     }
+    XmlNode multiTenantNode = resultNode.FirstChild("MultiTenant");
+    if(!multiTenantNode.IsNull())
+    {
+      m_multiTenant = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiTenantNode.GetText()).c_str()).c_str());
+      m_multiTenantHasBeenSet = true;
+    }
     XmlNode dedicatedLogVolumeNode = resultNode.FirstChild("DedicatedLogVolume");
     if(!dedicatedLogVolumeNode.IsNull())
     {
@@ -631,12 +637,6 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
     {
       m_isStorageConfigUpgradeAvailable = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isStorageConfigUpgradeAvailableNode.GetText()).c_str()).c_str());
       m_isStorageConfigUpgradeAvailableHasBeenSet = true;
-    }
-    XmlNode multiTenantNode = resultNode.FirstChild("MultiTenant");
-    if(!multiTenantNode.IsNull())
-    {
-      m_multiTenant = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiTenantNode.GetText()).c_str()).c_str());
-      m_multiTenantHasBeenSet = true;
     }
     XmlNode engineLifecycleSupportNode = resultNode.FirstChild("EngineLifecycleSupport");
     if(!engineLifecycleSupportNode.IsNull())
@@ -669,11 +669,6 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
   if(m_dBInstanceStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".DBInstanceStatus=" << StringUtils::URLEncode(m_dBInstanceStatus.c_str()) << "&";
-  }
-
-  if(m_automaticRestartTimeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AutomaticRestartTime=" << StringUtils::URLEncode(m_automaticRestartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_masterUsernameHasBeenSet)
@@ -826,6 +821,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
   if(m_iopsHasBeenSet)
   {
       oStream << location << index << locationValue << ".Iops=" << m_iops << "&";
+  }
+
+  if(m_storageThroughputHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StorageThroughput=" << m_storageThroughput << "&";
   }
 
   if(m_optionGroupMembershipsHasBeenSet)
@@ -1040,15 +1040,14 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       }
   }
 
-  if(m_dBInstanceAutomatedBackupsReplicationsHasBeenSet)
+  if(m_automationModeHasBeenSet)
   {
-      unsigned dBInstanceAutomatedBackupsReplicationsIdx = 1;
-      for(auto& item : m_dBInstanceAutomatedBackupsReplications)
-      {
-        Aws::StringStream dBInstanceAutomatedBackupsReplicationsSs;
-        dBInstanceAutomatedBackupsReplicationsSs << location << index << locationValue << ".DBInstanceAutomatedBackupsReplications.DBInstanceAutomatedBackupsReplication." << dBInstanceAutomatedBackupsReplicationsIdx++;
-        item.OutputToStream(oStream, dBInstanceAutomatedBackupsReplicationsSs.str().c_str());
-      }
+      oStream << location << index << locationValue << ".AutomationMode=" << StringUtils::URLEncode(AutomationModeMapper::GetNameForAutomationMode(m_automationMode)) << "&";
+  }
+
+  if(m_resumeFullAutomationModeTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ResumeFullAutomationModeTime=" << StringUtils::URLEncode(m_resumeFullAutomationModeTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_customerOwnedIpEnabledHasBeenSet)
@@ -1056,9 +1055,9 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".CustomerOwnedIpEnabled=" << std::boolalpha << m_customerOwnedIpEnabled << "&";
   }
 
-  if(m_awsBackupRecoveryPointArnHasBeenSet)
+  if(m_networkTypeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
+      oStream << location << index << locationValue << ".NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
   }
 
   if(m_activityStreamStatusHasBeenSet)
@@ -1086,19 +1085,20 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".ActivityStreamEngineNativeAuditFieldsIncluded=" << std::boolalpha << m_activityStreamEngineNativeAuditFieldsIncluded << "&";
   }
 
-  if(m_automationModeHasBeenSet)
+  if(m_awsBackupRecoveryPointArnHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AutomationMode=" << StringUtils::URLEncode(AutomationModeMapper::GetNameForAutomationMode(m_automationMode)) << "&";
+      oStream << location << index << locationValue << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
   }
 
-  if(m_resumeFullAutomationModeTimeHasBeenSet)
+  if(m_dBInstanceAutomatedBackupsReplicationsHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ResumeFullAutomationModeTime=" << StringUtils::URLEncode(m_resumeFullAutomationModeTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-
-  if(m_customIamInstanceProfileHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CustomIamInstanceProfile=" << StringUtils::URLEncode(m_customIamInstanceProfile.c_str()) << "&";
+      unsigned dBInstanceAutomatedBackupsReplicationsIdx = 1;
+      for(auto& item : m_dBInstanceAutomatedBackupsReplications)
+      {
+        Aws::StringStream dBInstanceAutomatedBackupsReplicationsSs;
+        dBInstanceAutomatedBackupsReplicationsSs << location << index << locationValue << ".DBInstanceAutomatedBackupsReplications.DBInstanceAutomatedBackupsReplication." << dBInstanceAutomatedBackupsReplicationsIdx++;
+        item.OutputToStream(oStream, dBInstanceAutomatedBackupsReplicationsSs.str().c_str());
+      }
   }
 
   if(m_backupTargetHasBeenSet)
@@ -1106,9 +1106,14 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".BackupTarget=" << StringUtils::URLEncode(m_backupTarget.c_str()) << "&";
   }
 
-  if(m_networkTypeHasBeenSet)
+  if(m_automaticRestartTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
+      oStream << location << index << locationValue << ".AutomaticRestartTime=" << StringUtils::URLEncode(m_automaticRestartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_customIamInstanceProfileHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CustomIamInstanceProfile=" << StringUtils::URLEncode(m_customIamInstanceProfile.c_str()) << "&";
   }
 
   if(m_activityStreamPolicyStatusHasBeenSet)
@@ -1116,9 +1121,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".ActivityStreamPolicyStatus=" << StringUtils::URLEncode(ActivityStreamPolicyStatusMapper::GetNameForActivityStreamPolicyStatus(m_activityStreamPolicyStatus)) << "&";
   }
 
-  if(m_storageThroughputHasBeenSet)
+  if(m_certificateDetailsHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StorageThroughput=" << m_storageThroughput << "&";
+      Aws::StringStream certificateDetailsLocationAndMemberSs;
+      certificateDetailsLocationAndMemberSs << location << index << locationValue << ".CertificateDetails";
+      m_certificateDetails.OutputToStream(oStream, certificateDetailsLocationAndMemberSs.str().c_str());
   }
 
   if(m_dBSystemIdHasBeenSet)
@@ -1133,13 +1140,6 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       m_masterUserSecret.OutputToStream(oStream, masterUserSecretLocationAndMemberSs.str().c_str());
   }
 
-  if(m_certificateDetailsHasBeenSet)
-  {
-      Aws::StringStream certificateDetailsLocationAndMemberSs;
-      certificateDetailsLocationAndMemberSs << location << index << locationValue << ".CertificateDetails";
-      m_certificateDetails.OutputToStream(oStream, certificateDetailsLocationAndMemberSs.str().c_str());
-  }
-
   if(m_readReplicaSourceDBClusterIdentifierHasBeenSet)
   {
       oStream << location << index << locationValue << ".ReadReplicaSourceDBClusterIdentifier=" << StringUtils::URLEncode(m_readReplicaSourceDBClusterIdentifier.c_str()) << "&";
@@ -1150,6 +1150,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".PercentProgress=" << StringUtils::URLEncode(m_percentProgress.c_str()) << "&";
   }
 
+  if(m_multiTenantHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
+  }
+
   if(m_dedicatedLogVolumeHasBeenSet)
   {
       oStream << location << index << locationValue << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
@@ -1158,11 +1163,6 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
   if(m_isStorageConfigUpgradeAvailableHasBeenSet)
   {
       oStream << location << index << locationValue << ".IsStorageConfigUpgradeAvailable=" << std::boolalpha << m_isStorageConfigUpgradeAvailable << "&";
-  }
-
-  if(m_multiTenantHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
   }
 
   if(m_engineLifecycleSupportHasBeenSet)
@@ -1189,10 +1189,6 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_dBInstanceStatusHasBeenSet)
   {
       oStream << location << ".DBInstanceStatus=" << StringUtils::URLEncode(m_dBInstanceStatus.c_str()) << "&";
-  }
-  if(m_automaticRestartTimeHasBeenSet)
-  {
-      oStream << location << ".AutomaticRestartTime=" << StringUtils::URLEncode(m_automaticRestartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_masterUsernameHasBeenSet)
   {
@@ -1321,6 +1317,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_iopsHasBeenSet)
   {
       oStream << location << ".Iops=" << m_iops << "&";
+  }
+  if(m_storageThroughputHasBeenSet)
+  {
+      oStream << location << ".StorageThroughput=" << m_storageThroughput << "&";
   }
   if(m_optionGroupMembershipsHasBeenSet)
   {
@@ -1500,23 +1500,21 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
         item.OutputToStream(oStream, tagListSs.str().c_str());
       }
   }
-  if(m_dBInstanceAutomatedBackupsReplicationsHasBeenSet)
+  if(m_automationModeHasBeenSet)
   {
-      unsigned dBInstanceAutomatedBackupsReplicationsIdx = 1;
-      for(auto& item : m_dBInstanceAutomatedBackupsReplications)
-      {
-        Aws::StringStream dBInstanceAutomatedBackupsReplicationsSs;
-        dBInstanceAutomatedBackupsReplicationsSs << location << ".DBInstanceAutomatedBackupsReplications.DBInstanceAutomatedBackupsReplication." << dBInstanceAutomatedBackupsReplicationsIdx++;
-        item.OutputToStream(oStream, dBInstanceAutomatedBackupsReplicationsSs.str().c_str());
-      }
+      oStream << location << ".AutomationMode=" << StringUtils::URLEncode(AutomationModeMapper::GetNameForAutomationMode(m_automationMode)) << "&";
+  }
+  if(m_resumeFullAutomationModeTimeHasBeenSet)
+  {
+      oStream << location << ".ResumeFullAutomationModeTime=" << StringUtils::URLEncode(m_resumeFullAutomationModeTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_customerOwnedIpEnabledHasBeenSet)
   {
       oStream << location << ".CustomerOwnedIpEnabled=" << std::boolalpha << m_customerOwnedIpEnabled << "&";
   }
-  if(m_awsBackupRecoveryPointArnHasBeenSet)
+  if(m_networkTypeHasBeenSet)
   {
-      oStream << location << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
+      oStream << location << ".NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
   }
   if(m_activityStreamStatusHasBeenSet)
   {
@@ -1538,33 +1536,41 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   {
       oStream << location << ".ActivityStreamEngineNativeAuditFieldsIncluded=" << std::boolalpha << m_activityStreamEngineNativeAuditFieldsIncluded << "&";
   }
-  if(m_automationModeHasBeenSet)
+  if(m_awsBackupRecoveryPointArnHasBeenSet)
   {
-      oStream << location << ".AutomationMode=" << StringUtils::URLEncode(AutomationModeMapper::GetNameForAutomationMode(m_automationMode)) << "&";
+      oStream << location << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
   }
-  if(m_resumeFullAutomationModeTimeHasBeenSet)
+  if(m_dBInstanceAutomatedBackupsReplicationsHasBeenSet)
   {
-      oStream << location << ".ResumeFullAutomationModeTime=" << StringUtils::URLEncode(m_resumeFullAutomationModeTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_customIamInstanceProfileHasBeenSet)
-  {
-      oStream << location << ".CustomIamInstanceProfile=" << StringUtils::URLEncode(m_customIamInstanceProfile.c_str()) << "&";
+      unsigned dBInstanceAutomatedBackupsReplicationsIdx = 1;
+      for(auto& item : m_dBInstanceAutomatedBackupsReplications)
+      {
+        Aws::StringStream dBInstanceAutomatedBackupsReplicationsSs;
+        dBInstanceAutomatedBackupsReplicationsSs << location << ".DBInstanceAutomatedBackupsReplications.DBInstanceAutomatedBackupsReplication." << dBInstanceAutomatedBackupsReplicationsIdx++;
+        item.OutputToStream(oStream, dBInstanceAutomatedBackupsReplicationsSs.str().c_str());
+      }
   }
   if(m_backupTargetHasBeenSet)
   {
       oStream << location << ".BackupTarget=" << StringUtils::URLEncode(m_backupTarget.c_str()) << "&";
   }
-  if(m_networkTypeHasBeenSet)
+  if(m_automaticRestartTimeHasBeenSet)
   {
-      oStream << location << ".NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
+      oStream << location << ".AutomaticRestartTime=" << StringUtils::URLEncode(m_automaticRestartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_customIamInstanceProfileHasBeenSet)
+  {
+      oStream << location << ".CustomIamInstanceProfile=" << StringUtils::URLEncode(m_customIamInstanceProfile.c_str()) << "&";
   }
   if(m_activityStreamPolicyStatusHasBeenSet)
   {
       oStream << location << ".ActivityStreamPolicyStatus=" << StringUtils::URLEncode(ActivityStreamPolicyStatusMapper::GetNameForActivityStreamPolicyStatus(m_activityStreamPolicyStatus)) << "&";
   }
-  if(m_storageThroughputHasBeenSet)
+  if(m_certificateDetailsHasBeenSet)
   {
-      oStream << location << ".StorageThroughput=" << m_storageThroughput << "&";
+      Aws::String certificateDetailsLocationAndMember(location);
+      certificateDetailsLocationAndMember += ".CertificateDetails";
+      m_certificateDetails.OutputToStream(oStream, certificateDetailsLocationAndMember.c_str());
   }
   if(m_dBSystemIdHasBeenSet)
   {
@@ -1576,12 +1582,6 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       masterUserSecretLocationAndMember += ".MasterUserSecret";
       m_masterUserSecret.OutputToStream(oStream, masterUserSecretLocationAndMember.c_str());
   }
-  if(m_certificateDetailsHasBeenSet)
-  {
-      Aws::String certificateDetailsLocationAndMember(location);
-      certificateDetailsLocationAndMember += ".CertificateDetails";
-      m_certificateDetails.OutputToStream(oStream, certificateDetailsLocationAndMember.c_str());
-  }
   if(m_readReplicaSourceDBClusterIdentifierHasBeenSet)
   {
       oStream << location << ".ReadReplicaSourceDBClusterIdentifier=" << StringUtils::URLEncode(m_readReplicaSourceDBClusterIdentifier.c_str()) << "&";
@@ -1590,6 +1590,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   {
       oStream << location << ".PercentProgress=" << StringUtils::URLEncode(m_percentProgress.c_str()) << "&";
   }
+  if(m_multiTenantHasBeenSet)
+  {
+      oStream << location << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
+  }
   if(m_dedicatedLogVolumeHasBeenSet)
   {
       oStream << location << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
@@ -1597,10 +1601,6 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_isStorageConfigUpgradeAvailableHasBeenSet)
   {
       oStream << location << ".IsStorageConfigUpgradeAvailable=" << std::boolalpha << m_isStorageConfigUpgradeAvailable << "&";
-  }
-  if(m_multiTenantHasBeenSet)
-  {
-      oStream << location << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
   }
   if(m_engineLifecycleSupportHasBeenSet)
   {

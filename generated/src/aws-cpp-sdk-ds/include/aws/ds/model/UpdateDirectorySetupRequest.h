@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ds/model/UpdateType.h>
 #include <aws/ds/model/OSUpdateSettings.h>
+#include <aws/ds/model/DirectorySizeUpdateSettings.h>
+#include <aws/ds/model/NetworkUpdateSettings.h>
 #include <utility>
 
 namespace Aws
@@ -38,8 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The identifier of the directory on which you want to perform the update.
-     * </p>
+     * <p>The identifier of the directory to update.</p>
      */
     inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
@@ -51,8 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The type of update that needs to be performed on the directory. For example,
-     * OS. </p>
+     * <p>The type of update to perform on the directory.</p>
      */
     inline UpdateType GetUpdateType() const { return m_updateType; }
     inline bool UpdateTypeHasBeenSet() const { return m_updateTypeHasBeenSet; }
@@ -62,8 +62,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The settings for the OS update that needs to be performed on the directory.
-     * </p>
+     * <p>Operating system configuration to apply during the directory update
+     * operation.</p>
      */
     inline const OSUpdateSettings& GetOSUpdateSettings() const { return m_oSUpdateSettings; }
     inline bool OSUpdateSettingsHasBeenSet() const { return m_oSUpdateSettingsHasBeenSet; }
@@ -75,8 +75,32 @@ namespace Model
 
     ///@{
     /**
-     * <p> The boolean that specifies if a snapshot for the directory needs to be taken
-     * before updating the directory. </p>
+     * <p>Directory size configuration to apply during the update operation.</p>
+     */
+    inline const DirectorySizeUpdateSettings& GetDirectorySizeUpdateSettings() const { return m_directorySizeUpdateSettings; }
+    inline bool DirectorySizeUpdateSettingsHasBeenSet() const { return m_directorySizeUpdateSettingsHasBeenSet; }
+    template<typename DirectorySizeUpdateSettingsT = DirectorySizeUpdateSettings>
+    void SetDirectorySizeUpdateSettings(DirectorySizeUpdateSettingsT&& value) { m_directorySizeUpdateSettingsHasBeenSet = true; m_directorySizeUpdateSettings = std::forward<DirectorySizeUpdateSettingsT>(value); }
+    template<typename DirectorySizeUpdateSettingsT = DirectorySizeUpdateSettings>
+    UpdateDirectorySetupRequest& WithDirectorySizeUpdateSettings(DirectorySizeUpdateSettingsT&& value) { SetDirectorySizeUpdateSettings(std::forward<DirectorySizeUpdateSettingsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Network configuration to apply during the directory update operation.</p>
+     */
+    inline const NetworkUpdateSettings& GetNetworkUpdateSettings() const { return m_networkUpdateSettings; }
+    inline bool NetworkUpdateSettingsHasBeenSet() const { return m_networkUpdateSettingsHasBeenSet; }
+    template<typename NetworkUpdateSettingsT = NetworkUpdateSettings>
+    void SetNetworkUpdateSettings(NetworkUpdateSettingsT&& value) { m_networkUpdateSettingsHasBeenSet = true; m_networkUpdateSettings = std::forward<NetworkUpdateSettingsT>(value); }
+    template<typename NetworkUpdateSettingsT = NetworkUpdateSettings>
+    UpdateDirectorySetupRequest& WithNetworkUpdateSettings(NetworkUpdateSettingsT&& value) { SetNetworkUpdateSettings(std::forward<NetworkUpdateSettingsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to create a directory snapshot before performing the
+     * update.</p>
      */
     inline bool GetCreateSnapshotBeforeUpdate() const { return m_createSnapshotBeforeUpdate; }
     inline bool CreateSnapshotBeforeUpdateHasBeenSet() const { return m_createSnapshotBeforeUpdateHasBeenSet; }
@@ -93,6 +117,12 @@ namespace Model
 
     OSUpdateSettings m_oSUpdateSettings;
     bool m_oSUpdateSettingsHasBeenSet = false;
+
+    DirectorySizeUpdateSettings m_directorySizeUpdateSettings;
+    bool m_directorySizeUpdateSettingsHasBeenSet = false;
+
+    NetworkUpdateSettings m_networkUpdateSettings;
+    bool m_networkUpdateSettingsHasBeenSet = false;
 
     bool m_createSnapshotBeforeUpdate{false};
     bool m_createSnapshotBeforeUpdateHasBeenSet = false;

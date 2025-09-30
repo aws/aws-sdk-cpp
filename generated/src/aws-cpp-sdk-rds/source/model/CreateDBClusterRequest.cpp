@@ -200,6 +200,36 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
     m_rdsCustomClusterConfiguration.OutputToStream(ss, "RdsCustomClusterConfiguration");
   }
 
+  if(m_dBClusterInstanceClassHasBeenSet)
+  {
+    ss << "DBClusterInstanceClass=" << StringUtils::URLEncode(m_dBClusterInstanceClass.c_str()) << "&";
+  }
+
+  if(m_allocatedStorageHasBeenSet)
+  {
+    ss << "AllocatedStorage=" << m_allocatedStorage << "&";
+  }
+
+  if(m_storageTypeHasBeenSet)
+  {
+    ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+
+  if(m_iopsHasBeenSet)
+  {
+    ss << "Iops=" << m_iops << "&";
+  }
+
+  if(m_publiclyAccessibleHasBeenSet)
+  {
+    ss << "PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
+  }
+
+  if(m_autoMinorVersionUpgradeHasBeenSet)
+  {
+    ss << "AutoMinorVersionUpgrade=" << std::boolalpha << m_autoMinorVersionUpgrade << "&";
+  }
+
   if(m_deletionProtectionHasBeenSet)
   {
     ss << "DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
@@ -235,34 +265,14 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
     ss << "EnableGlobalWriteForwarding=" << std::boolalpha << m_enableGlobalWriteForwarding << "&";
   }
 
-  if(m_dBClusterInstanceClassHasBeenSet)
+  if(m_networkTypeHasBeenSet)
   {
-    ss << "DBClusterInstanceClass=" << StringUtils::URLEncode(m_dBClusterInstanceClass.c_str()) << "&";
+    ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
   }
 
-  if(m_allocatedStorageHasBeenSet)
+  if(m_serverlessV2ScalingConfigurationHasBeenSet)
   {
-    ss << "AllocatedStorage=" << m_allocatedStorage << "&";
-  }
-
-  if(m_storageTypeHasBeenSet)
-  {
-    ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
-  }
-
-  if(m_iopsHasBeenSet)
-  {
-    ss << "Iops=" << m_iops << "&";
-  }
-
-  if(m_publiclyAccessibleHasBeenSet)
-  {
-    ss << "PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
-  }
-
-  if(m_autoMinorVersionUpgradeHasBeenSet)
-  {
-    ss << "AutoMinorVersionUpgrade=" << std::boolalpha << m_autoMinorVersionUpgrade << "&";
+    m_serverlessV2ScalingConfiguration.OutputToStream(ss, "ServerlessV2ScalingConfiguration");
   }
 
   if(m_monitoringIntervalHasBeenSet)
@@ -300,16 +310,6 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
     ss << "EnableLimitlessDatabase=" << std::boolalpha << m_enableLimitlessDatabase << "&";
   }
 
-  if(m_serverlessV2ScalingConfigurationHasBeenSet)
-  {
-    m_serverlessV2ScalingConfiguration.OutputToStream(ss, "ServerlessV2ScalingConfiguration");
-  }
-
-  if(m_networkTypeHasBeenSet)
-  {
-    ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
-  }
-
   if(m_clusterScalabilityTypeHasBeenSet)
   {
     ss << "ClusterScalabilityType=" << StringUtils::URLEncode(ClusterScalabilityTypeMapper::GetNameForClusterScalabilityType(m_clusterScalabilityType)) << "&";
@@ -325,14 +325,14 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
     ss << "ManageMasterUserPassword=" << std::boolalpha << m_manageMasterUserPassword << "&";
   }
 
-  if(m_masterUserSecretKmsKeyIdHasBeenSet)
-  {
-    ss << "MasterUserSecretKmsKeyId=" << StringUtils::URLEncode(m_masterUserSecretKmsKeyId.c_str()) << "&";
-  }
-
   if(m_enableLocalWriteForwardingHasBeenSet)
   {
     ss << "EnableLocalWriteForwarding=" << std::boolalpha << m_enableLocalWriteForwarding << "&";
+  }
+
+  if(m_masterUserSecretKmsKeyIdHasBeenSet)
+  {
+    ss << "MasterUserSecretKmsKeyId=" << StringUtils::URLEncode(m_masterUserSecretKmsKeyId.c_str()) << "&";
   }
 
   if(m_cACertificateIdentifierHasBeenSet)

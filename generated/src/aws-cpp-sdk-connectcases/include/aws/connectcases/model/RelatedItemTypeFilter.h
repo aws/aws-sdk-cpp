@@ -5,10 +5,12 @@
 
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
-#include <aws/connectcases/model/CommentFilter.h>
 #include <aws/connectcases/model/ContactFilter.h>
+#include <aws/connectcases/model/CommentFilter.h>
 #include <aws/connectcases/model/FileFilter.h>
 #include <aws/connectcases/model/SlaFilter.h>
+#include <aws/connectcases/model/ConnectCaseFilter.h>
+#include <aws/connectcases/model/CustomFilter.h>
 #include <utility>
 
 namespace Aws
@@ -43,18 +45,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A filter for related items of type <code>Comment</code>.</p>
-     */
-    inline const CommentFilter& GetComment() const { return m_comment; }
-    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
-    template<typename CommentT = CommentFilter>
-    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
-    template<typename CommentT = CommentFilter>
-    RelatedItemTypeFilter& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A filter for related items of type <code>Contact</code>.</p>
      */
     inline const ContactFilter& GetContact() const { return m_contact; }
@@ -63,6 +53,18 @@ namespace Model
     void SetContact(ContactT&& value) { m_contactHasBeenSet = true; m_contact = std::forward<ContactT>(value); }
     template<typename ContactT = ContactFilter>
     RelatedItemTypeFilter& WithContact(ContactT&& value) { SetContact(std::forward<ContactT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A filter for related items of type <code>Comment</code>.</p>
+     */
+    inline const CommentFilter& GetComment() const { return m_comment; }
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
+    template<typename CommentT = CommentFilter>
+    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
+    template<typename CommentT = CommentFilter>
+    RelatedItemTypeFilter& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,19 +90,49 @@ namespace Model
     template<typename SlaT = SlaFilter>
     RelatedItemTypeFilter& WithSla(SlaT&& value) { SetSla(std::forward<SlaT>(value)); return *this;}
     ///@}
-  private:
 
-    CommentFilter m_comment;
-    bool m_commentHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Filter for related items of type Connect case</p>
+     */
+    inline const ConnectCaseFilter& GetConnectCase() const { return m_connectCase; }
+    inline bool ConnectCaseHasBeenSet() const { return m_connectCaseHasBeenSet; }
+    template<typename ConnectCaseT = ConnectCaseFilter>
+    void SetConnectCase(ConnectCaseT&& value) { m_connectCaseHasBeenSet = true; m_connectCase = std::forward<ConnectCaseT>(value); }
+    template<typename ConnectCaseT = ConnectCaseFilter>
+    RelatedItemTypeFilter& WithConnectCase(ConnectCaseT&& value) { SetConnectCase(std::forward<ConnectCaseT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Filter for related items of type Custom</p>
+     */
+    inline const CustomFilter& GetCustom() const { return m_custom; }
+    inline bool CustomHasBeenSet() const { return m_customHasBeenSet; }
+    template<typename CustomT = CustomFilter>
+    void SetCustom(CustomT&& value) { m_customHasBeenSet = true; m_custom = std::forward<CustomT>(value); }
+    template<typename CustomT = CustomFilter>
+    RelatedItemTypeFilter& WithCustom(CustomT&& value) { SetCustom(std::forward<CustomT>(value)); return *this;}
+    ///@}
+  private:
 
     ContactFilter m_contact;
     bool m_contactHasBeenSet = false;
+
+    CommentFilter m_comment;
+    bool m_commentHasBeenSet = false;
 
     FileFilter m_file;
     bool m_fileHasBeenSet = false;
 
     SlaFilter m_sla;
     bool m_slaHasBeenSet = false;
+
+    ConnectCaseFilter m_connectCase;
+    bool m_connectCaseHasBeenSet = false;
+
+    CustomFilter m_custom;
+    bool m_customHasBeenSet = false;
   };
 
 } // namespace Model

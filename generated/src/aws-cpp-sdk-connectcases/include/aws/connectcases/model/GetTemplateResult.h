@@ -5,12 +5,12 @@
 
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connectcases/model/LayoutConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/connectcases/model/TemplateStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/connectcases/model/TemplateStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/connectcases/model/RequiredField.h>
 #include <aws/connectcases/model/TemplateRule.h>
 #include <utility>
@@ -41,55 +41,24 @@ namespace Model
 
     ///@{
     /**
-     * <p>Timestamp at which the resource was created.</p>
+     * <p>A unique identifier of a template.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
-    template<typename CreatedTimeT = Aws::Utils::DateTime>
-    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
-    template<typename CreatedTimeT = Aws::Utils::DateTime>
-    GetTemplateResult& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
+    inline const Aws::String& GetTemplateId() const { return m_templateId; }
+    template<typename TemplateIdT = Aws::String>
+    void SetTemplateId(TemplateIdT&& value) { m_templateIdHasBeenSet = true; m_templateId = std::forward<TemplateIdT>(value); }
+    template<typename TemplateIdT = Aws::String>
+    GetTemplateResult& WithTemplateId(TemplateIdT&& value) { SetTemplateId(std::forward<TemplateIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>Denotes whether or not the resource has been deleted.</p>
+     * <p>The Amazon Resource Name (ARN) of the template.</p>
      */
-    inline bool GetDeleted() const { return m_deleted; }
-    inline void SetDeleted(bool value) { m_deletedHasBeenSet = true; m_deleted = value; }
-    inline GetTemplateResult& WithDeleted(bool value) { SetDeleted(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A brief description of the template.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    GetTemplateResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Timestamp at which the resource was created or last modified.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
-    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
-    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
-    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
-    GetTemplateResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Configuration of layouts associated to the template.</p>
-     */
-    inline const LayoutConfiguration& GetLayoutConfiguration() const { return m_layoutConfiguration; }
-    template<typename LayoutConfigurationT = LayoutConfiguration>
-    void SetLayoutConfiguration(LayoutConfigurationT&& value) { m_layoutConfigurationHasBeenSet = true; m_layoutConfiguration = std::forward<LayoutConfigurationT>(value); }
-    template<typename LayoutConfigurationT = LayoutConfiguration>
-    GetTemplateResult& WithLayoutConfiguration(LayoutConfigurationT&& value) { SetLayoutConfiguration(std::forward<LayoutConfigurationT>(value)); return *this;}
+    inline const Aws::String& GetTemplateArn() const { return m_templateArn; }
+    template<typename TemplateArnT = Aws::String>
+    void SetTemplateArn(TemplateArnT&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::forward<TemplateArnT>(value); }
+    template<typename TemplateArnT = Aws::String>
+    GetTemplateResult& WithTemplateArn(TemplateArnT&& value) { SetTemplateArn(std::forward<TemplateArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,6 +74,28 @@ namespace Model
 
     ///@{
     /**
+     * <p>A brief description of the template.</p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetTemplateResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Configuration of layouts associated to the template.</p>
+     */
+    inline const LayoutConfiguration& GetLayoutConfiguration() const { return m_layoutConfiguration; }
+    template<typename LayoutConfigurationT = LayoutConfiguration>
+    void SetLayoutConfiguration(LayoutConfigurationT&& value) { m_layoutConfigurationHasBeenSet = true; m_layoutConfiguration = std::forward<LayoutConfigurationT>(value); }
+    template<typename LayoutConfigurationT = LayoutConfiguration>
+    GetTemplateResult& WithLayoutConfiguration(LayoutConfigurationT&& value) { SetLayoutConfiguration(std::forward<LayoutConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A list of fields that must contain a value for a case to be successfully
      * created with this template.</p>
      */
@@ -115,30 +106,6 @@ namespace Model
     GetTemplateResult& WithRequiredFields(RequiredFieldsT&& value) { SetRequiredFields(std::forward<RequiredFieldsT>(value)); return *this;}
     template<typename RequiredFieldsT = RequiredField>
     GetTemplateResult& AddRequiredFields(RequiredFieldsT&& value) { m_requiredFieldsHasBeenSet = true; m_requiredFields.emplace_back(std::forward<RequiredFieldsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>A list of case rules (also known as <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">case
-     * field conditions</a>) on a template. </p>
-     */
-    inline const Aws::Vector<TemplateRule>& GetRules() const { return m_rules; }
-    template<typename RulesT = Aws::Vector<TemplateRule>>
-    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
-    template<typename RulesT = Aws::Vector<TemplateRule>>
-    GetTemplateResult& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
-    template<typename RulesT = TemplateRule>
-    GetTemplateResult& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The status of the template.</p>
-     */
-    inline TemplateStatus GetStatus() const { return m_status; }
-    inline void SetStatus(TemplateStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline GetTemplateResult& WithStatus(TemplateStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -159,24 +126,57 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the template.</p>
+     * <p>The status of the template.</p>
      */
-    inline const Aws::String& GetTemplateArn() const { return m_templateArn; }
-    template<typename TemplateArnT = Aws::String>
-    void SetTemplateArn(TemplateArnT&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::forward<TemplateArnT>(value); }
-    template<typename TemplateArnT = Aws::String>
-    GetTemplateResult& WithTemplateArn(TemplateArnT&& value) { SetTemplateArn(std::forward<TemplateArnT>(value)); return *this;}
+    inline TemplateStatus GetStatus() const { return m_status; }
+    inline void SetStatus(TemplateStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetTemplateResult& WithStatus(TemplateStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>A unique identifier of a template.</p>
+     * <p>Denotes whether or not the resource has been deleted.</p>
      */
-    inline const Aws::String& GetTemplateId() const { return m_templateId; }
-    template<typename TemplateIdT = Aws::String>
-    void SetTemplateId(TemplateIdT&& value) { m_templateIdHasBeenSet = true; m_templateId = std::forward<TemplateIdT>(value); }
-    template<typename TemplateIdT = Aws::String>
-    GetTemplateResult& WithTemplateId(TemplateIdT&& value) { SetTemplateId(std::forward<TemplateIdT>(value)); return *this;}
+    inline bool GetDeleted() const { return m_deleted; }
+    inline void SetDeleted(bool value) { m_deletedHasBeenSet = true; m_deleted = value; }
+    inline GetTemplateResult& WithDeleted(bool value) { SetDeleted(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Timestamp at which the resource was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    GetTemplateResult& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Timestamp at which the resource was created or last modified.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    GetTemplateResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A list of case rules (also known as <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">case
+     * field conditions</a>) on a template. </p>
+     */
+    inline const Aws::Vector<TemplateRule>& GetRules() const { return m_rules; }
+    template<typename RulesT = Aws::Vector<TemplateRule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<TemplateRule>>
+    GetTemplateResult& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = TemplateRule>
+    GetTemplateResult& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -189,41 +189,41 @@ namespace Model
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdTime{};
-    bool m_createdTimeHasBeenSet = false;
-
-    bool m_deleted{false};
-    bool m_deletedHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    Aws::Utils::DateTime m_lastModifiedTime{};
-    bool m_lastModifiedTimeHasBeenSet = false;
-
-    LayoutConfiguration m_layoutConfiguration;
-    bool m_layoutConfigurationHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
-    Aws::Vector<RequiredField> m_requiredFields;
-    bool m_requiredFieldsHasBeenSet = false;
-
-    Aws::Vector<TemplateRule> m_rules;
-    bool m_rulesHasBeenSet = false;
-
-    TemplateStatus m_status{TemplateStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
-
-    Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet = false;
+    Aws::String m_templateId;
+    bool m_templateIdHasBeenSet = false;
 
     Aws::String m_templateArn;
     bool m_templateArnHasBeenSet = false;
 
-    Aws::String m_templateId;
-    bool m_templateIdHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
+    LayoutConfiguration m_layoutConfiguration;
+    bool m_layoutConfigurationHasBeenSet = false;
+
+    Aws::Vector<RequiredField> m_requiredFields;
+    bool m_requiredFieldsHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
+
+    TemplateStatus m_status{TemplateStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
+
+    bool m_deleted{false};
+    bool m_deletedHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdTime{};
+    bool m_createdTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
+
+    Aws::Vector<TemplateRule> m_rules;
+    bool m_rulesHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

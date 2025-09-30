@@ -20,7 +20,8 @@ namespace Model
     CONNECTION_FAILED,
     AUTH_FAILURE,
     PENDING_PROXY_CAPACITY,
-    INVALID_REPLICATION_STATE
+    INVALID_REPLICATION_STATE,
+    PROMOTED
   };
 
 namespace TargetHealthReasonMapper

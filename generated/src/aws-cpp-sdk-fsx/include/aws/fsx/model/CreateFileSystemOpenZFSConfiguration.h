@@ -191,7 +191,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
+     * <p>(Multi-AZ only) Specifies the IPv4 address range in which the endpoints to
      * access your file system will be created. By default in the Amazon FSx API and
      * Amazon FSx console, Amazon FSx selects an available /28 IP address range for you
      * from one of the VPC's CIDR ranges. You can have overlapping endpoint IP
@@ -208,7 +208,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
+     * <p>(Multi-AZ only) Specifies the IPv6 address range in which the endpoints to
      * access your file system will be created. By default in the Amazon FSx API and
      * Amazon FSx console, Amazon FSx selects an available /118 IP address range for
      * you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP

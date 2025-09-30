@@ -10,8 +10,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/ScalingConfiguration.h>
 #include <aws/rds/model/RdsCustomClusterConfiguration.h>
-#include <aws/rds/model/DatabaseInsightsMode.h>
 #include <aws/rds/model/ServerlessV2ScalingConfiguration.h>
+#include <aws/rds/model/DatabaseInsightsMode.h>
 #include <aws/rds/model/ClusterScalabilityType.h>
 #include <aws/rds/model/MasterUserAuthenticationType.h>
 #include <aws/rds/model/Tag.h>
@@ -576,6 +576,131 @@ namespace Model
 
     ///@{
     /**
+     * <p>The compute and memory capacity of each DB instance in the Multi-AZ DB
+     * cluster, for example <code>db.m6gd.xlarge</code>. Not all DB instance classes
+     * are available in all Amazon Web Services Regions, or for all database
+     * engines.</p> <p>For the full list of DB instance classes and availability for
+     * your engine, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This setting is
+     * required to create a Multi-AZ DB cluster.</p> <p>Valid for Cluster Type:
+     * Multi-AZ DB clusters only</p>
+     */
+    inline const Aws::String& GetDBClusterInstanceClass() const { return m_dBClusterInstanceClass; }
+    inline bool DBClusterInstanceClassHasBeenSet() const { return m_dBClusterInstanceClassHasBeenSet; }
+    template<typename DBClusterInstanceClassT = Aws::String>
+    void SetDBClusterInstanceClass(DBClusterInstanceClassT&& value) { m_dBClusterInstanceClassHasBeenSet = true; m_dBClusterInstanceClass = std::forward<DBClusterInstanceClassT>(value); }
+    template<typename DBClusterInstanceClassT = Aws::String>
+    CreateDBClusterRequest& WithDBClusterInstanceClass(DBClusterInstanceClassT&& value) { SetDBClusterInstanceClass(std::forward<DBClusterInstanceClassT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The amount of storage in gibibytes (GiB) to allocate to each DB instance in
+     * the Multi-AZ DB cluster.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters
+     * only</p> <p>This setting is required to create a Multi-AZ DB cluster.</p>
+     */
+    inline int GetAllocatedStorage() const { return m_allocatedStorage; }
+    inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
+    inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
+    inline CreateDBClusterRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Aurora DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html#aurora-storage-type">Storage
+     * configurations for Amazon Aurora DB clusters</a>. For information on storage
+     * types for Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/create-multi-az-db-cluster.html#create-multi-az-db-cluster-settings">Settings
+     * for creating Multi-AZ DB clusters</a>.</p> <p>This setting is required to create
+     * a Multi-AZ DB cluster.</p> <p>When specified for a Multi-AZ DB cluster, a value
+     * for the <code>Iops</code> parameter is required.</p> <p>Valid for Cluster Type:
+     * Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul> <li>
+     * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
+     * <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p> </li> </ul>
+     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
+     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>  <p>When
+     * you create an Aurora DB cluster with the storage type set to
+     * <code>aurora-iopt1</code>, the storage type is returned in the response. The
+     * storage type isn't returned when you set it to <code>aurora</code>.</p> 
+     */
+    inline const Aws::String& GetStorageType() const { return m_storageType; }
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+    template<typename StorageTypeT = Aws::String>
+    void SetStorageType(StorageTypeT&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::forward<StorageTypeT>(value); }
+    template<typename StorageTypeT = Aws::String>
+    CreateDBClusterRequest& WithStorageType(StorageTypeT&& value) { SetStorageType(std::forward<StorageTypeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The amount of Provisioned IOPS (input/output operations per second) to be
+     * initially allocated for each DB instance in the Multi-AZ DB cluster.</p> <p>For
+     * information about valid IOPS values, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Provisioned
+     * IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This setting is
+     * required to create a Multi-AZ DB cluster.</p> <p>Valid for Cluster Type:
+     * Multi-AZ DB clusters only</p> <p>Constraints:</p> <ul> <li> <p>Must be a
+     * multiple between .5 and 50 of the storage amount for the DB cluster.</p> </li>
+     * </ul>
+     */
+    inline int GetIops() const { return m_iops; }
+    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
+    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
+    inline CreateDBClusterRequest& WithIops(int value) { SetIops(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether the DB cluster is publicly accessible.</p> <p>When the DB
+     * cluster is publicly accessible and you connect from outside of the DB cluster's
+     * virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to
+     * the public IP address. When you connect from within the same VPC as the DB
+     * cluster, the endpoint resolves to the private IP address. Access to the DB
+     * cluster is ultimately controlled by the security group it uses. That public
+     * access isn't permitted if the security group assigned to the DB cluster doesn't
+     * permit it.</p> <p>When the DB cluster isn't publicly accessible, it is an
+     * internal DB cluster with a DNS name that resolves to a private IP address.</p>
+     * <p>Valid for Cluster Type: Multi-AZ DB clusters only</p> <p>Default: The default
+     * behavior varies depending on whether <code>DBSubnetGroupName</code> is
+     * specified.</p> <p>If <code>DBSubnetGroupName</code> isn't specified, and
+     * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
+     * <li> <p>If the default VPC in the target Region doesn���t have an internet
+     * gateway attached to it, the DB cluster is private.</p> </li> <li> <p>If the
+     * default VPC in the target Region has an internet gateway attached to it, the DB
+     * cluster is public.</p> </li> </ul> <p>If <code>DBSubnetGroupName</code> is
+     * specified, and <code>PubliclyAccessible</code> isn't specified, the following
+     * applies:</p> <ul> <li> <p>If the subnets are part of a VPC that doesn’t have an
+     * internet gateway attached to it, the DB cluster is private.</p> </li> <li> <p>If
+     * the subnets are part of a VPC that has an internet gateway attached to it, the
+     * DB cluster is public.</p> </li> </ul>
+     */
+    inline bool GetPubliclyAccessible() const { return m_publiclyAccessible; }
+    inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
+    inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
+    inline CreateDBClusterRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether minor engine upgrades are applied automatically to the DB
+     * cluster during the maintenance window. By default, minor engine upgrades are
+     * applied automatically.</p> <p>Valid for Cluster Type: Aurora DB clusters and
+     * Multi-AZ DB cluster.</p> <p>For more information about automatic minor version
+     * upgrades, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically
+     * upgrading the minor engine version</a>.</p>
+     */
+    inline bool GetAutoMinorVersionUpgrade() const { return m_autoMinorVersionUpgrade; }
+    inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
+    inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
+    inline CreateDBClusterRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies whether the DB cluster has deletion protection enabled. The
      * database can't be deleted when deletion protection is enabled. By default,
      * deletion protection isn't enabled.</p> <p>Valid for Cluster Type: Aurora DB
@@ -682,127 +807,31 @@ namespace Model
 
     ///@{
     /**
-     * <p>The compute and memory capacity of each DB instance in the Multi-AZ DB
-     * cluster, for example <code>db.m6gd.xlarge</code>. Not all DB instance classes
-     * are available in all Amazon Web Services Regions, or for all database
-     * engines.</p> <p>For the full list of DB instance classes and availability for
-     * your engine, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This setting is
-     * required to create a Multi-AZ DB cluster.</p> <p>Valid for Cluster Type:
-     * Multi-AZ DB clusters only</p>
+     * <p>The network type of the DB cluster.</p> <p>The network type is determined by
+     * the <code>DBSubnetGroup</code> specified for the DB cluster. A
+     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
+     * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for Cluster Type: Aurora DB clusters only</p> <p>Valid Values:
+     * <code>IPV4 | DUAL</code> </p>
      */
-    inline const Aws::String& GetDBClusterInstanceClass() const { return m_dBClusterInstanceClass; }
-    inline bool DBClusterInstanceClassHasBeenSet() const { return m_dBClusterInstanceClassHasBeenSet; }
-    template<typename DBClusterInstanceClassT = Aws::String>
-    void SetDBClusterInstanceClass(DBClusterInstanceClassT&& value) { m_dBClusterInstanceClassHasBeenSet = true; m_dBClusterInstanceClass = std::forward<DBClusterInstanceClassT>(value); }
-    template<typename DBClusterInstanceClassT = Aws::String>
-    CreateDBClusterRequest& WithDBClusterInstanceClass(DBClusterInstanceClassT&& value) { SetDBClusterInstanceClass(std::forward<DBClusterInstanceClassT>(value)); return *this;}
+    inline const Aws::String& GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    template<typename NetworkTypeT = Aws::String>
+    void SetNetworkType(NetworkTypeT&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::forward<NetworkTypeT>(value); }
+    template<typename NetworkTypeT = Aws::String>
+    CreateDBClusterRequest& WithNetworkType(NetworkTypeT&& value) { SetNetworkType(std::forward<NetworkTypeT>(value)); return *this;}
     ///@}
 
     ///@{
-    /**
-     * <p>The amount of storage in gibibytes (GiB) to allocate to each DB instance in
-     * the Multi-AZ DB cluster.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters
-     * only</p> <p>This setting is required to create a Multi-AZ DB cluster.</p>
-     */
-    inline int GetAllocatedStorage() const { return m_allocatedStorage; }
-    inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
-    inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
-    inline CreateDBClusterRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
-     * storage types for Aurora DB clusters, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html#aurora-storage-type">Storage
-     * configurations for Amazon Aurora DB clusters</a>. For information on storage
-     * types for Multi-AZ DB clusters, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/create-multi-az-db-cluster.html#create-multi-az-db-cluster-settings">Settings
-     * for creating Multi-AZ DB clusters</a>.</p> <p>This setting is required to create
-     * a Multi-AZ DB cluster.</p> <p>When specified for a Multi-AZ DB cluster, a value
-     * for the <code>Iops</code> parameter is required.</p> <p>Valid for Cluster Type:
-     * Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul> <li>
-     * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
-     * <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p> </li> </ul>
-     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
-     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>  <p>When
-     * you create an Aurora DB cluster with the storage type set to
-     * <code>aurora-iopt1</code>, the storage type is returned in the response. The
-     * storage type isn't returned when you set it to <code>aurora</code>.</p> 
-     */
-    inline const Aws::String& GetStorageType() const { return m_storageType; }
-    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
-    template<typename StorageTypeT = Aws::String>
-    void SetStorageType(StorageTypeT&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::forward<StorageTypeT>(value); }
-    template<typename StorageTypeT = Aws::String>
-    CreateDBClusterRequest& WithStorageType(StorageTypeT&& value) { SetStorageType(std::forward<StorageTypeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for each DB instance in the Multi-AZ DB cluster.</p> <p>For
-     * information about valid IOPS values, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Provisioned
-     * IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This setting is
-     * required to create a Multi-AZ DB cluster.</p> <p>Valid for Cluster Type:
-     * Multi-AZ DB clusters only</p> <p>Constraints:</p> <ul> <li> <p>Must be a
-     * multiple between .5 and 50 of the storage amount for the DB cluster.</p> </li>
-     * </ul>
-     */
-    inline int GetIops() const { return m_iops; }
-    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
-    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
-    inline CreateDBClusterRequest& WithIops(int value) { SetIops(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies whether the DB cluster is publicly accessible.</p> <p>When the DB
-     * cluster is publicly accessible and you connect from outside of the DB cluster's
-     * virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to
-     * the public IP address. When you connect from within the same VPC as the DB
-     * cluster, the endpoint resolves to the private IP address. Access to the DB
-     * cluster is ultimately controlled by the security group it uses. That public
-     * access isn't permitted if the security group assigned to the DB cluster doesn't
-     * permit it.</p> <p>When the DB cluster isn't publicly accessible, it is an
-     * internal DB cluster with a DNS name that resolves to a private IP address.</p>
-     * <p>Valid for Cluster Type: Multi-AZ DB clusters only</p> <p>Default: The default
-     * behavior varies depending on whether <code>DBSubnetGroupName</code> is
-     * specified.</p> <p>If <code>DBSubnetGroupName</code> isn't specified, and
-     * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
-     * <li> <p>If the default VPC in the target Region doesn’t have an internet gateway
-     * attached to it, the DB cluster is private.</p> </li> <li> <p>If the default VPC
-     * in the target Region has an internet gateway attached to it, the DB cluster is
-     * public.</p> </li> </ul> <p>If <code>DBSubnetGroupName</code> is specified, and
-     * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
-     * <li> <p>If the subnets are part of a VPC that doesn’t have an internet gateway
-     * attached to it, the DB cluster is private.</p> </li> <li> <p>If the subnets are
-     * part of a VPC that has an internet gateway attached to it, the DB cluster is
-     * public.</p> </li> </ul>
-     */
-    inline bool GetPubliclyAccessible() const { return m_publiclyAccessible; }
-    inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
-    inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
-    inline CreateDBClusterRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies whether minor engine upgrades are applied automatically to the DB
-     * cluster during the maintenance window. By default, minor engine upgrades are
-     * applied automatically.</p> <p>Valid for Cluster Type: Aurora DB clusters and
-     * Multi-AZ DB cluster.</p> <p>For more information about automatic minor version
-     * upgrades, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically
-     * upgrading the minor engine version</a>.</p>
-     */
-    inline bool GetAutoMinorVersionUpgrade() const { return m_autoMinorVersionUpgrade; }
-    inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
-    inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
-    inline CreateDBClusterRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
+    
+    inline const ServerlessV2ScalingConfiguration& GetServerlessV2ScalingConfiguration() const { return m_serverlessV2ScalingConfiguration; }
+    inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
+    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
+    void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::forward<ServerlessV2ScalingConfigurationT>(value); }
+    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
+    CreateDBClusterRequest& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { SetServerlessV2ScalingConfiguration(std::forward<ServerlessV2ScalingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -919,35 +948,6 @@ namespace Model
     ///@}
 
     ///@{
-    
-    inline const ServerlessV2ScalingConfiguration& GetServerlessV2ScalingConfiguration() const { return m_serverlessV2ScalingConfiguration; }
-    inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
-    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
-    void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::forward<ServerlessV2ScalingConfigurationT>(value); }
-    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
-    CreateDBClusterRequest& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { SetServerlessV2ScalingConfiguration(std::forward<ServerlessV2ScalingConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The network type of the DB cluster.</p> <p>The network type is determined by
-     * the <code>DBSubnetGroup</code> specified for the DB cluster. A
-     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
-     * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
-     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
-     * </p> <p>Valid for Cluster Type: Aurora DB clusters only</p> <p>Valid Values:
-     * <code>IPV4 | DUAL</code> </p>
-     */
-    inline const Aws::String& GetNetworkType() const { return m_networkType; }
-    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
-    template<typename NetworkTypeT = Aws::String>
-    void SetNetworkType(NetworkTypeT&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::forward<NetworkTypeT>(value); }
-    template<typename NetworkTypeT = Aws::String>
-    CreateDBClusterRequest& WithNetworkType(NetworkTypeT&& value) { SetNetworkType(std::forward<NetworkTypeT>(value)); return *this;}
-    ///@}
-
-    ///@{
     /**
      * <p>Specifies the scalability mode of the Aurora DB cluster. When set to
      * <code>limitless</code>, the cluster operates as an Aurora Limitless Database.
@@ -995,6 +995,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies whether read replicas can forward write operations to the writer DB
+     * instance in the DB cluster. By default, write operations aren't allowed on
+     * reader DB instances.</p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline bool GetEnableLocalWriteForwarding() const { return m_enableLocalWriteForwarding; }
+    inline bool EnableLocalWriteForwardingHasBeenSet() const { return m_enableLocalWriteForwardingHasBeenSet; }
+    inline void SetEnableLocalWriteForwarding(bool value) { m_enableLocalWriteForwardingHasBeenSet = true; m_enableLocalWriteForwarding = value; }
+    inline CreateDBClusterRequest& WithEnableLocalWriteForwarding(bool value) { SetEnableLocalWriteForwarding(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Web Services KMS key identifier to encrypt a secret that is
      * automatically generated and managed in Amazon Web Services Secrets Manager.</p>
      * <p>This setting is valid only if the master user password is managed by RDS in
@@ -1017,18 +1029,6 @@ namespace Model
     void SetMasterUserSecretKmsKeyId(MasterUserSecretKmsKeyIdT&& value) { m_masterUserSecretKmsKeyIdHasBeenSet = true; m_masterUserSecretKmsKeyId = std::forward<MasterUserSecretKmsKeyIdT>(value); }
     template<typename MasterUserSecretKmsKeyIdT = Aws::String>
     CreateDBClusterRequest& WithMasterUserSecretKmsKeyId(MasterUserSecretKmsKeyIdT&& value) { SetMasterUserSecretKmsKeyId(std::forward<MasterUserSecretKmsKeyIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies whether read replicas can forward write operations to the writer DB
-     * instance in the DB cluster. By default, write operations aren't allowed on
-     * reader DB instances.</p> <p>Valid for: Aurora DB clusters only</p>
-     */
-    inline bool GetEnableLocalWriteForwarding() const { return m_enableLocalWriteForwarding; }
-    inline bool EnableLocalWriteForwardingHasBeenSet() const { return m_enableLocalWriteForwardingHasBeenSet; }
-    inline void SetEnableLocalWriteForwarding(bool value) { m_enableLocalWriteForwardingHasBeenSet = true; m_enableLocalWriteForwarding = value; }
-    inline CreateDBClusterRequest& WithEnableLocalWriteForwarding(bool value) { SetEnableLocalWriteForwarding(value); return *this;}
     ///@}
 
     ///@{
@@ -1190,6 +1190,24 @@ namespace Model
     RdsCustomClusterConfiguration m_rdsCustomClusterConfiguration;
     bool m_rdsCustomClusterConfigurationHasBeenSet = false;
 
+    Aws::String m_dBClusterInstanceClass;
+    bool m_dBClusterInstanceClassHasBeenSet = false;
+
+    int m_allocatedStorage{0};
+    bool m_allocatedStorageHasBeenSet = false;
+
+    Aws::String m_storageType;
+    bool m_storageTypeHasBeenSet = false;
+
+    int m_iops{0};
+    bool m_iopsHasBeenSet = false;
+
+    bool m_publiclyAccessible{false};
+    bool m_publiclyAccessibleHasBeenSet = false;
+
+    bool m_autoMinorVersionUpgrade{false};
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
+
     bool m_deletionProtection{false};
     bool m_deletionProtectionHasBeenSet = false;
 
@@ -1211,23 +1229,11 @@ namespace Model
     bool m_enableGlobalWriteForwarding{false};
     bool m_enableGlobalWriteForwardingHasBeenSet = false;
 
-    Aws::String m_dBClusterInstanceClass;
-    bool m_dBClusterInstanceClassHasBeenSet = false;
+    Aws::String m_networkType;
+    bool m_networkTypeHasBeenSet = false;
 
-    int m_allocatedStorage{0};
-    bool m_allocatedStorageHasBeenSet = false;
-
-    Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet = false;
-
-    int m_iops{0};
-    bool m_iopsHasBeenSet = false;
-
-    bool m_publiclyAccessible{false};
-    bool m_publiclyAccessibleHasBeenSet = false;
-
-    bool m_autoMinorVersionUpgrade{false};
-    bool m_autoMinorVersionUpgradeHasBeenSet = false;
+    ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
+    bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
 
     int m_monitoringInterval{0};
     bool m_monitoringIntervalHasBeenSet = false;
@@ -1250,12 +1256,6 @@ namespace Model
     bool m_enableLimitlessDatabase{false};
     bool m_enableLimitlessDatabaseHasBeenSet = false;
 
-    ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
-    bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
-
-    Aws::String m_networkType;
-    bool m_networkTypeHasBeenSet = false;
-
     ClusterScalabilityType m_clusterScalabilityType{ClusterScalabilityType::NOT_SET};
     bool m_clusterScalabilityTypeHasBeenSet = false;
 
@@ -1265,11 +1265,11 @@ namespace Model
     bool m_manageMasterUserPassword{false};
     bool m_manageMasterUserPasswordHasBeenSet = false;
 
-    Aws::String m_masterUserSecretKmsKeyId;
-    bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
-
     bool m_enableLocalWriteForwarding{false};
     bool m_enableLocalWriteForwardingHasBeenSet = false;
+
+    Aws::String m_masterUserSecretKmsKeyId;
+    bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
 
     Aws::String m_cACertificateIdentifier;
     bool m_cACertificateIdentifierHasBeenSet = false;

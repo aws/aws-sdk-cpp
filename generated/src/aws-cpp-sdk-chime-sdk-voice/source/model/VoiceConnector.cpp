@@ -70,6 +70,11 @@ VoiceConnector& VoiceConnector::operator =(JsonView jsonValue)
     m_integrationType = VoiceConnectorIntegrationTypeMapper::GetVoiceConnectorIntegrationTypeForName(jsonValue.GetString("IntegrationType"));
     m_integrationTypeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("NetworkType"))
+  {
+    m_networkType = NetworkTypeMapper::GetNetworkTypeForName(jsonValue.GetString("NetworkType"));
+    m_networkTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -125,6 +130,11 @@ JsonValue VoiceConnector::Jsonize() const
   if(m_integrationTypeHasBeenSet)
   {
    payload.WithString("IntegrationType", VoiceConnectorIntegrationTypeMapper::GetNameForVoiceConnectorIntegrationType(m_integrationType));
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+   payload.WithString("NetworkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
   }
 
   return payload;

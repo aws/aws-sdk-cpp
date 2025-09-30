@@ -38,22 +38,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If not provided, the Amazon Web Services SDK
-     * populates this field. For more information about idempotency, see <a
-     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
-     */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    CreateCaseRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The unique identifier of the Cases domain. </p>
      */
     inline const Aws::String& GetDomainId() const { return m_domainId; }
@@ -62,6 +46,18 @@ namespace Model
     void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
     template<typename DomainIdT = Aws::String>
     CreateCaseRequest& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A unique identifier of a template.</p>
+     */
+    inline const Aws::String& GetTemplateId() const { return m_templateId; }
+    inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
+    template<typename TemplateIdT = Aws::String>
+    void SetTemplateId(TemplateIdT&& value) { m_templateIdHasBeenSet = true; m_templateId = std::forward<TemplateIdT>(value); }
+    template<typename TemplateIdT = Aws::String>
+    CreateCaseRequest& WithTemplateId(TemplateIdT&& value) { SetTemplateId(std::forward<TemplateIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,6 +76,22 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
+     */
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateCaseRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const UserUnion& GetPerformedBy() const { return m_performedBy; }
     inline bool PerformedByHasBeenSet() const { return m_performedByHasBeenSet; }
@@ -88,34 +100,22 @@ namespace Model
     template<typename PerformedByT = UserUnion>
     CreateCaseRequest& WithPerformedBy(PerformedByT&& value) { SetPerformedBy(std::forward<PerformedByT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>A unique identifier of a template.</p>
-     */
-    inline const Aws::String& GetTemplateId() const { return m_templateId; }
-    inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
-    template<typename TemplateIdT = Aws::String>
-    void SetTemplateId(TemplateIdT&& value) { m_templateIdHasBeenSet = true; m_templateId = std::forward<TemplateIdT>(value); }
-    template<typename TemplateIdT = Aws::String>
-    CreateCaseRequest& WithTemplateId(TemplateIdT&& value) { SetTemplateId(std::forward<TemplateIdT>(value)); return *this;}
-    ///@}
   private:
-
-    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-    bool m_clientTokenHasBeenSet = true;
 
     Aws::String m_domainId;
     bool m_domainIdHasBeenSet = false;
 
+    Aws::String m_templateId;
+    bool m_templateIdHasBeenSet = false;
+
     Aws::Vector<FieldValue> m_fields;
     bool m_fieldsHasBeenSet = false;
 
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
+
     UserUnion m_performedBy;
     bool m_performedByHasBeenSet = false;
-
-    Aws::String m_templateId;
-    bool m_templateIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -14,6 +14,7 @@
 #include <aws/customer-profiles/CustomerProfilesRequest.h>
 #include <aws/customer-profiles/CustomerProfilesServiceClientModel.h>
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
+#include <aws/customer-profiles/model/ActionType.h>
 #include <aws/customer-profiles/model/AddProfileKeyRequest.h>
 #include <aws/customer-profiles/model/AddProfileKeyResult.h>
 #include <aws/customer-profiles/model/AdditionalSearchKey.h>
@@ -149,6 +150,8 @@
 #include <aws/customer-profiles/model/GetIntegrationResult.h>
 #include <aws/customer-profiles/model/GetMatchesRequest.h>
 #include <aws/customer-profiles/model/GetMatchesResult.h>
+#include <aws/customer-profiles/model/GetProfileHistoryRecordRequest.h>
+#include <aws/customer-profiles/model/GetProfileHistoryRecordResult.h>
 #include <aws/customer-profiles/model/GetProfileObjectTypeRequest.h>
 #include <aws/customer-profiles/model/GetProfileObjectTypeResult.h>
 #include <aws/customer-profiles/model/GetProfileObjectTypeTemplateRequest.h>
@@ -210,6 +213,8 @@
 #include <aws/customer-profiles/model/ListObjectTypeAttributesResult.h>
 #include <aws/customer-profiles/model/ListProfileAttributeValuesRequest.h>
 #include <aws/customer-profiles/model/ListProfileAttributeValuesResult.h>
+#include <aws/customer-profiles/model/ListProfileHistoryRecordsRequest.h>
+#include <aws/customer-profiles/model/ListProfileHistoryRecordsResult.h>
 #include <aws/customer-profiles/model/ListProfileObjectTypeItem.h>
 #include <aws/customer-profiles/model/ListProfileObjectTypeTemplateItem.h>
 #include <aws/customer-profiles/model/ListProfileObjectTypeTemplatesRequest.h>
@@ -252,6 +257,7 @@
 #include <aws/customer-profiles/model/Profile.h>
 #include <aws/customer-profiles/model/ProfileAttributes.h>
 #include <aws/customer-profiles/model/ProfileDimension.h>
+#include <aws/customer-profiles/model/ProfileHistoryRecord.h>
 #include <aws/customer-profiles/model/ProfileQueryFailures.h>
 #include <aws/customer-profiles/model/ProfileQueryResult.h>
 #include <aws/customer-profiles/model/ProfileType.h>

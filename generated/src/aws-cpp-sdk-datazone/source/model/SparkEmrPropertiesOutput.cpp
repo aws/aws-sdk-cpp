@@ -25,6 +25,11 @@ SparkEmrPropertiesOutput::SparkEmrPropertiesOutput(JsonView jsonValue)
 
 SparkEmrPropertiesOutput& SparkEmrPropertiesOutput::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("certificateData"))
+  {
+    m_certificateData = jsonValue.GetString("certificateData");
+    m_certificateDataHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("computeArn"))
   {
     m_computeArn = jsonValue.GetString("computeArn");
@@ -65,6 +70,16 @@ SparkEmrPropertiesOutput& SparkEmrPropertiesOutput::operator =(JsonView jsonValu
     m_logUri = jsonValue.GetString("logUri");
     m_logUriHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("managedEndpointArn"))
+  {
+    m_managedEndpointArn = jsonValue.GetString("managedEndpointArn");
+    m_managedEndpointArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("managedEndpointCredentials"))
+  {
+    m_managedEndpointCredentials = jsonValue.GetObject("managedEndpointCredentials");
+    m_managedEndpointCredentialsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("pythonVirtualEnv"))
   {
     m_pythonVirtualEnv = jsonValue.GetString("pythonVirtualEnv");
@@ -86,6 +101,12 @@ SparkEmrPropertiesOutput& SparkEmrPropertiesOutput::operator =(JsonView jsonValu
 JsonValue SparkEmrPropertiesOutput::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_certificateDataHasBeenSet)
+  {
+   payload.WithString("certificateData", m_certificateData);
+
+  }
 
   if(m_computeArnHasBeenSet)
   {
@@ -130,6 +151,18 @@ JsonValue SparkEmrPropertiesOutput::Jsonize() const
   if(m_logUriHasBeenSet)
   {
    payload.WithString("logUri", m_logUri);
+
+  }
+
+  if(m_managedEndpointArnHasBeenSet)
+  {
+   payload.WithString("managedEndpointArn", m_managedEndpointArn);
+
+  }
+
+  if(m_managedEndpointCredentialsHasBeenSet)
+  {
+   payload.WithObject("managedEndpointCredentials", m_managedEndpointCredentials.Jsonize());
 
   }
 

@@ -7,19 +7,19 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/rds/model/Endpoint.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/DBSubnetGroup.h>
 #include <aws/rds/model/PendingModifiedValues.h>
 #include <aws/rds/model/ReplicaMode.h>
 #include <aws/rds/model/DatabaseInsightsMode.h>
+#include <aws/rds/model/AutomationMode.h>
 #include <aws/rds/model/ActivityStreamStatus.h>
 #include <aws/rds/model/ActivityStreamMode.h>
-#include <aws/rds/model/AutomationMode.h>
 #include <aws/rds/model/ActivityStreamPolicyStatus.h>
-#include <aws/rds/model/MasterUserSecret.h>
 #include <aws/rds/model/CertificateDetails.h>
+#include <aws/rds/model/MasterUserSecret.h>
 #include <aws/rds/model/DBSecurityGroupMembership.h>
 #include <aws/rds/model/VpcSecurityGroupMembership.h>
 #include <aws/rds/model/DBParameterGroupStatus.h>
@@ -120,18 +120,6 @@ namespace Model
     void SetDBInstanceStatus(DBInstanceStatusT&& value) { m_dBInstanceStatusHasBeenSet = true; m_dBInstanceStatus = std::forward<DBInstanceStatusT>(value); }
     template<typename DBInstanceStatusT = Aws::String>
     DBInstance& WithDBInstanceStatus(DBInstanceStatusT&& value) { SetDBInstanceStatus(std::forward<DBInstanceStatusT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The time when a stopped DB instance is restarted automatically.</p>
-     */
-    inline const Aws::Utils::DateTime& GetAutomaticRestartTime() const { return m_automaticRestartTime; }
-    inline bool AutomaticRestartTimeHasBeenSet() const { return m_automaticRestartTimeHasBeenSet; }
-    template<typename AutomaticRestartTimeT = Aws::Utils::DateTime>
-    void SetAutomaticRestartTime(AutomaticRestartTimeT&& value) { m_automaticRestartTimeHasBeenSet = true; m_automaticRestartTime = std::forward<AutomaticRestartTimeT>(value); }
-    template<typename AutomaticRestartTimeT = Aws::Utils::DateTime>
-    DBInstance& WithAutomaticRestartTime(AutomaticRestartTimeT&& value) { SetAutomaticRestartTime(std::forward<AutomaticRestartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -451,6 +439,17 @@ namespace Model
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
     inline DBInstance& WithIops(int value) { SetIops(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The storage throughput for the DB instance.</p> <p>This setting applies only
+     * to the <code>gp3</code> storage type.</p>
+     */
+    inline int GetStorageThroughput() const { return m_storageThroughput; }
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+    inline DBInstance& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
     ///@}
 
     ///@{
@@ -921,16 +920,30 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of replicated automated backups associated with the DB instance.</p>
+     * <p>The automation mode of the RDS Custom DB instance: <code>full</code> or
+     * <code>all paused</code>. If <code>full</code>, the DB instance automates
+     * monitoring and instance recovery. If <code>all paused</code>, the instance
+     * pauses automation for the duration set by
+     * <code>--resume-full-automation-mode-minutes</code>.</p>
      */
-    inline const Aws::Vector<DBInstanceAutomatedBackupsReplication>& GetDBInstanceAutomatedBackupsReplications() const { return m_dBInstanceAutomatedBackupsReplications; }
-    inline bool DBInstanceAutomatedBackupsReplicationsHasBeenSet() const { return m_dBInstanceAutomatedBackupsReplicationsHasBeenSet; }
-    template<typename DBInstanceAutomatedBackupsReplicationsT = Aws::Vector<DBInstanceAutomatedBackupsReplication>>
-    void SetDBInstanceAutomatedBackupsReplications(DBInstanceAutomatedBackupsReplicationsT&& value) { m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = true; m_dBInstanceAutomatedBackupsReplications = std::forward<DBInstanceAutomatedBackupsReplicationsT>(value); }
-    template<typename DBInstanceAutomatedBackupsReplicationsT = Aws::Vector<DBInstanceAutomatedBackupsReplication>>
-    DBInstance& WithDBInstanceAutomatedBackupsReplications(DBInstanceAutomatedBackupsReplicationsT&& value) { SetDBInstanceAutomatedBackupsReplications(std::forward<DBInstanceAutomatedBackupsReplicationsT>(value)); return *this;}
-    template<typename DBInstanceAutomatedBackupsReplicationsT = DBInstanceAutomatedBackupsReplication>
-    DBInstance& AddDBInstanceAutomatedBackupsReplications(DBInstanceAutomatedBackupsReplicationsT&& value) { m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = true; m_dBInstanceAutomatedBackupsReplications.emplace_back(std::forward<DBInstanceAutomatedBackupsReplicationsT>(value)); return *this; }
+    inline AutomationMode GetAutomationMode() const { return m_automationMode; }
+    inline bool AutomationModeHasBeenSet() const { return m_automationModeHasBeenSet; }
+    inline void SetAutomationMode(AutomationMode value) { m_automationModeHasBeenSet = true; m_automationMode = value; }
+    inline DBInstance& WithAutomationMode(AutomationMode value) { SetAutomationMode(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of minutes to pause the automation. When the time period ends, RDS
+     * Custom resumes full automation. The minimum value is 60 (default). The maximum
+     * value is 1,440.</p>
+     */
+    inline const Aws::Utils::DateTime& GetResumeFullAutomationModeTime() const { return m_resumeFullAutomationModeTime; }
+    inline bool ResumeFullAutomationModeTimeHasBeenSet() const { return m_resumeFullAutomationModeTimeHasBeenSet; }
+    template<typename ResumeFullAutomationModeTimeT = Aws::Utils::DateTime>
+    void SetResumeFullAutomationModeTime(ResumeFullAutomationModeTimeT&& value) { m_resumeFullAutomationModeTimeHasBeenSet = true; m_resumeFullAutomationModeTime = std::forward<ResumeFullAutomationModeTimeT>(value); }
+    template<typename ResumeFullAutomationModeTimeT = Aws::Utils::DateTime>
+    DBInstance& WithResumeFullAutomationModeTime(ResumeFullAutomationModeTimeT&& value) { SetResumeFullAutomationModeTime(std::forward<ResumeFullAutomationModeTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -955,15 +968,23 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
-     * Backup.</p>
+     * <p>The network type of the DB instance.</p> <p>The network type is determined by
+     * the <code>DBSubnetGroup</code> specified for the DB instance. A
+     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
+     * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid Values: <code>IPV4 | DUAL</code> </p>
      */
-    inline const Aws::String& GetAwsBackupRecoveryPointArn() const { return m_awsBackupRecoveryPointArn; }
-    inline bool AwsBackupRecoveryPointArnHasBeenSet() const { return m_awsBackupRecoveryPointArnHasBeenSet; }
-    template<typename AwsBackupRecoveryPointArnT = Aws::String>
-    void SetAwsBackupRecoveryPointArn(AwsBackupRecoveryPointArnT&& value) { m_awsBackupRecoveryPointArnHasBeenSet = true; m_awsBackupRecoveryPointArn = std::forward<AwsBackupRecoveryPointArnT>(value); }
-    template<typename AwsBackupRecoveryPointArnT = Aws::String>
-    DBInstance& WithAwsBackupRecoveryPointArn(AwsBackupRecoveryPointArnT&& value) { SetAwsBackupRecoveryPointArn(std::forward<AwsBackupRecoveryPointArnT>(value)); return *this;}
+    inline const Aws::String& GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    template<typename NetworkTypeT = Aws::String>
+    void SetNetworkType(NetworkTypeT&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::forward<NetworkTypeT>(value); }
+    template<typename NetworkTypeT = Aws::String>
+    DBInstance& WithNetworkType(NetworkTypeT&& value) { SetNetworkType(std::forward<NetworkTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -1028,30 +1049,55 @@ namespace Model
 
     ///@{
     /**
-     * <p>The automation mode of the RDS Custom DB instance: <code>full</code> or
-     * <code>all paused</code>. If <code>full</code>, the DB instance automates
-     * monitoring and instance recovery. If <code>all paused</code>, the instance
-     * pauses automation for the duration set by
-     * <code>--resume-full-automation-mode-minutes</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
      */
-    inline AutomationMode GetAutomationMode() const { return m_automationMode; }
-    inline bool AutomationModeHasBeenSet() const { return m_automationModeHasBeenSet; }
-    inline void SetAutomationMode(AutomationMode value) { m_automationModeHasBeenSet = true; m_automationMode = value; }
-    inline DBInstance& WithAutomationMode(AutomationMode value) { SetAutomationMode(value); return *this;}
+    inline const Aws::String& GetAwsBackupRecoveryPointArn() const { return m_awsBackupRecoveryPointArn; }
+    inline bool AwsBackupRecoveryPointArnHasBeenSet() const { return m_awsBackupRecoveryPointArnHasBeenSet; }
+    template<typename AwsBackupRecoveryPointArnT = Aws::String>
+    void SetAwsBackupRecoveryPointArn(AwsBackupRecoveryPointArnT&& value) { m_awsBackupRecoveryPointArnHasBeenSet = true; m_awsBackupRecoveryPointArn = std::forward<AwsBackupRecoveryPointArnT>(value); }
+    template<typename AwsBackupRecoveryPointArnT = Aws::String>
+    DBInstance& WithAwsBackupRecoveryPointArn(AwsBackupRecoveryPointArnT&& value) { SetAwsBackupRecoveryPointArn(std::forward<AwsBackupRecoveryPointArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The number of minutes to pause the automation. When the time period ends, RDS
-     * Custom resumes full automation. The minimum value is 60 (default). The maximum
-     * value is 1,440.</p>
+     * <p>The list of replicated automated backups associated with the DB instance.</p>
      */
-    inline const Aws::Utils::DateTime& GetResumeFullAutomationModeTime() const { return m_resumeFullAutomationModeTime; }
-    inline bool ResumeFullAutomationModeTimeHasBeenSet() const { return m_resumeFullAutomationModeTimeHasBeenSet; }
-    template<typename ResumeFullAutomationModeTimeT = Aws::Utils::DateTime>
-    void SetResumeFullAutomationModeTime(ResumeFullAutomationModeTimeT&& value) { m_resumeFullAutomationModeTimeHasBeenSet = true; m_resumeFullAutomationModeTime = std::forward<ResumeFullAutomationModeTimeT>(value); }
-    template<typename ResumeFullAutomationModeTimeT = Aws::Utils::DateTime>
-    DBInstance& WithResumeFullAutomationModeTime(ResumeFullAutomationModeTimeT&& value) { SetResumeFullAutomationModeTime(std::forward<ResumeFullAutomationModeTimeT>(value)); return *this;}
+    inline const Aws::Vector<DBInstanceAutomatedBackupsReplication>& GetDBInstanceAutomatedBackupsReplications() const { return m_dBInstanceAutomatedBackupsReplications; }
+    inline bool DBInstanceAutomatedBackupsReplicationsHasBeenSet() const { return m_dBInstanceAutomatedBackupsReplicationsHasBeenSet; }
+    template<typename DBInstanceAutomatedBackupsReplicationsT = Aws::Vector<DBInstanceAutomatedBackupsReplication>>
+    void SetDBInstanceAutomatedBackupsReplications(DBInstanceAutomatedBackupsReplicationsT&& value) { m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = true; m_dBInstanceAutomatedBackupsReplications = std::forward<DBInstanceAutomatedBackupsReplicationsT>(value); }
+    template<typename DBInstanceAutomatedBackupsReplicationsT = Aws::Vector<DBInstanceAutomatedBackupsReplication>>
+    DBInstance& WithDBInstanceAutomatedBackupsReplications(DBInstanceAutomatedBackupsReplicationsT&& value) { SetDBInstanceAutomatedBackupsReplications(std::forward<DBInstanceAutomatedBackupsReplicationsT>(value)); return *this;}
+    template<typename DBInstanceAutomatedBackupsReplicationsT = DBInstanceAutomatedBackupsReplication>
+    DBInstance& AddDBInstanceAutomatedBackupsReplications(DBInstanceAutomatedBackupsReplicationsT&& value) { m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = true; m_dBInstanceAutomatedBackupsReplications.emplace_back(std::forward<DBInstanceAutomatedBackupsReplicationsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The location where automated backups and manual snapshots are stored:
+     * Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services
+     * Region.</p>
+     */
+    inline const Aws::String& GetBackupTarget() const { return m_backupTarget; }
+    inline bool BackupTargetHasBeenSet() const { return m_backupTargetHasBeenSet; }
+    template<typename BackupTargetT = Aws::String>
+    void SetBackupTarget(BackupTargetT&& value) { m_backupTargetHasBeenSet = true; m_backupTarget = std::forward<BackupTargetT>(value); }
+    template<typename BackupTargetT = Aws::String>
+    DBInstance& WithBackupTarget(BackupTargetT&& value) { SetBackupTarget(std::forward<BackupTargetT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The time when a stopped DB instance is restarted automatically.</p>
+     */
+    inline const Aws::Utils::DateTime& GetAutomaticRestartTime() const { return m_automaticRestartTime; }
+    inline bool AutomaticRestartTimeHasBeenSet() const { return m_automaticRestartTimeHasBeenSet; }
+    template<typename AutomaticRestartTimeT = Aws::Utils::DateTime>
+    void SetAutomaticRestartTime(AutomaticRestartTimeT&& value) { m_automaticRestartTimeHasBeenSet = true; m_automaticRestartTime = std::forward<AutomaticRestartTimeT>(value); }
+    template<typename AutomaticRestartTimeT = Aws::Utils::DateTime>
+    DBInstance& WithAutomaticRestartTime(AutomaticRestartTimeT&& value) { SetAutomaticRestartTime(std::forward<AutomaticRestartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -1076,41 +1122,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The location where automated backups and manual snapshots are stored:
-     * Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services
-     * Region.</p>
-     */
-    inline const Aws::String& GetBackupTarget() const { return m_backupTarget; }
-    inline bool BackupTargetHasBeenSet() const { return m_backupTargetHasBeenSet; }
-    template<typename BackupTargetT = Aws::String>
-    void SetBackupTarget(BackupTargetT&& value) { m_backupTargetHasBeenSet = true; m_backupTarget = std::forward<BackupTargetT>(value); }
-    template<typename BackupTargetT = Aws::String>
-    DBInstance& WithBackupTarget(BackupTargetT&& value) { SetBackupTarget(std::forward<BackupTargetT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The network type of the DB instance.</p> <p>The network type is determined by
-     * the <code>DBSubnetGroup</code> specified for the DB instance. A
-     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
-     * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
-     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and
-     * <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
-     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
-     * </p> <p>Valid Values: <code>IPV4 | DUAL</code> </p>
-     */
-    inline const Aws::String& GetNetworkType() const { return m_networkType; }
-    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
-    template<typename NetworkTypeT = Aws::String>
-    void SetNetworkType(NetworkTypeT&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::forward<NetworkTypeT>(value); }
-    template<typename NetworkTypeT = Aws::String>
-    DBInstance& WithNetworkType(NetworkTypeT&& value) { SetNetworkType(std::forward<NetworkTypeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The status of the policy state of the activity stream.</p>
      */
     inline ActivityStreamPolicyStatus GetActivityStreamPolicyStatus() const { return m_activityStreamPolicyStatus; }
@@ -1121,13 +1132,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The storage throughput for the DB instance.</p> <p>This setting applies only
-     * to the <code>gp3</code> storage type.</p>
+     * <p>The details of the DB instance's server certificate.</p>
      */
-    inline int GetStorageThroughput() const { return m_storageThroughput; }
-    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
-    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
-    inline DBInstance& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+    inline const CertificateDetails& GetCertificateDetails() const { return m_certificateDetails; }
+    inline bool CertificateDetailsHasBeenSet() const { return m_certificateDetailsHasBeenSet; }
+    template<typename CertificateDetailsT = CertificateDetails>
+    void SetCertificateDetails(CertificateDetailsT&& value) { m_certificateDetailsHasBeenSet = true; m_certificateDetails = std::forward<CertificateDetailsT>(value); }
+    template<typename CertificateDetailsT = CertificateDetails>
+    DBInstance& WithCertificateDetails(CertificateDetailsT&& value) { SetCertificateDetails(std::forward<CertificateDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -1162,18 +1174,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The details of the DB instance's server certificate.</p>
-     */
-    inline const CertificateDetails& GetCertificateDetails() const { return m_certificateDetails; }
-    inline bool CertificateDetailsHasBeenSet() const { return m_certificateDetailsHasBeenSet; }
-    template<typename CertificateDetailsT = CertificateDetails>
-    void SetCertificateDetails(CertificateDetailsT&& value) { m_certificateDetailsHasBeenSet = true; m_certificateDetails = std::forward<CertificateDetailsT>(value); }
-    template<typename CertificateDetailsT = CertificateDetails>
-    DBInstance& WithCertificateDetails(CertificateDetailsT&& value) { SetCertificateDetails(std::forward<CertificateDetailsT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The identifier of the source DB cluster if this DB instance is a read
      * replica.</p>
      */
@@ -1195,6 +1195,17 @@ namespace Model
     void SetPercentProgress(PercentProgressT&& value) { m_percentProgressHasBeenSet = true; m_percentProgress = std::forward<PercentProgressT>(value); }
     template<typename PercentProgressT = Aws::String>
     DBInstance& WithPercentProgress(PercentProgressT&& value) { SetPercentProgress(std::forward<PercentProgressT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE)
+     * or the single-tenant configuration (FALSE).</p>
+     */
+    inline bool GetMultiTenant() const { return m_multiTenant; }
+    inline bool MultiTenantHasBeenSet() const { return m_multiTenantHasBeenSet; }
+    inline void SetMultiTenant(bool value) { m_multiTenantHasBeenSet = true; m_multiTenant = value; }
+    inline DBInstance& WithMultiTenant(bool value) { SetMultiTenant(value); return *this;}
     ///@}
 
     ///@{
@@ -1225,17 +1236,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE)
-     * or the single-tenant configuration (FALSE).</p>
-     */
-    inline bool GetMultiTenant() const { return m_multiTenant; }
-    inline bool MultiTenantHasBeenSet() const { return m_multiTenantHasBeenSet; }
-    inline void SetMultiTenant(bool value) { m_multiTenantHasBeenSet = true; m_multiTenant = value; }
-    inline DBInstance& WithMultiTenant(bool value) { SetMultiTenant(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The lifecycle type for the DB instance.</p> <p>For more information, see
      * CreateDBInstance.</p>
      */
@@ -1259,9 +1259,6 @@ namespace Model
 
     Aws::String m_dBInstanceStatus;
     bool m_dBInstanceStatusHasBeenSet = false;
-
-    Aws::Utils::DateTime m_automaticRestartTime{};
-    bool m_automaticRestartTimeHasBeenSet = false;
 
     Aws::String m_masterUsername;
     bool m_masterUsernameHasBeenSet = false;
@@ -1334,6 +1331,9 @@ namespace Model
 
     int m_iops{0};
     bool m_iopsHasBeenSet = false;
+
+    int m_storageThroughput{0};
+    bool m_storageThroughputHasBeenSet = false;
 
     Aws::Vector<OptionGroupMembership> m_optionGroupMemberships;
     bool m_optionGroupMembershipsHasBeenSet = false;
@@ -1437,14 +1437,17 @@ namespace Model
     Aws::Vector<Tag> m_tagList;
     bool m_tagListHasBeenSet = false;
 
-    Aws::Vector<DBInstanceAutomatedBackupsReplication> m_dBInstanceAutomatedBackupsReplications;
-    bool m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = false;
+    AutomationMode m_automationMode{AutomationMode::NOT_SET};
+    bool m_automationModeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_resumeFullAutomationModeTime{};
+    bool m_resumeFullAutomationModeTimeHasBeenSet = false;
 
     bool m_customerOwnedIpEnabled{false};
     bool m_customerOwnedIpEnabledHasBeenSet = false;
 
-    Aws::String m_awsBackupRecoveryPointArn;
-    bool m_awsBackupRecoveryPointArnHasBeenSet = false;
+    Aws::String m_networkType;
+    bool m_networkTypeHasBeenSet = false;
 
     ActivityStreamStatus m_activityStreamStatus{ActivityStreamStatus::NOT_SET};
     bool m_activityStreamStatusHasBeenSet = false;
@@ -1461,26 +1464,26 @@ namespace Model
     bool m_activityStreamEngineNativeAuditFieldsIncluded{false};
     bool m_activityStreamEngineNativeAuditFieldsIncludedHasBeenSet = false;
 
-    AutomationMode m_automationMode{AutomationMode::NOT_SET};
-    bool m_automationModeHasBeenSet = false;
+    Aws::String m_awsBackupRecoveryPointArn;
+    bool m_awsBackupRecoveryPointArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_resumeFullAutomationModeTime{};
-    bool m_resumeFullAutomationModeTimeHasBeenSet = false;
-
-    Aws::String m_customIamInstanceProfile;
-    bool m_customIamInstanceProfileHasBeenSet = false;
+    Aws::Vector<DBInstanceAutomatedBackupsReplication> m_dBInstanceAutomatedBackupsReplications;
+    bool m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = false;
 
     Aws::String m_backupTarget;
     bool m_backupTargetHasBeenSet = false;
 
-    Aws::String m_networkType;
-    bool m_networkTypeHasBeenSet = false;
+    Aws::Utils::DateTime m_automaticRestartTime{};
+    bool m_automaticRestartTimeHasBeenSet = false;
+
+    Aws::String m_customIamInstanceProfile;
+    bool m_customIamInstanceProfileHasBeenSet = false;
 
     ActivityStreamPolicyStatus m_activityStreamPolicyStatus{ActivityStreamPolicyStatus::NOT_SET};
     bool m_activityStreamPolicyStatusHasBeenSet = false;
 
-    int m_storageThroughput{0};
-    bool m_storageThroughputHasBeenSet = false;
+    CertificateDetails m_certificateDetails;
+    bool m_certificateDetailsHasBeenSet = false;
 
     Aws::String m_dBSystemId;
     bool m_dBSystemIdHasBeenSet = false;
@@ -1488,23 +1491,20 @@ namespace Model
     MasterUserSecret m_masterUserSecret;
     bool m_masterUserSecretHasBeenSet = false;
 
-    CertificateDetails m_certificateDetails;
-    bool m_certificateDetailsHasBeenSet = false;
-
     Aws::String m_readReplicaSourceDBClusterIdentifier;
     bool m_readReplicaSourceDBClusterIdentifierHasBeenSet = false;
 
     Aws::String m_percentProgress;
     bool m_percentProgressHasBeenSet = false;
 
+    bool m_multiTenant{false};
+    bool m_multiTenantHasBeenSet = false;
+
     bool m_dedicatedLogVolume{false};
     bool m_dedicatedLogVolumeHasBeenSet = false;
 
     bool m_isStorageConfigUpgradeAvailable{false};
     bool m_isStorageConfigUpgradeAvailableHasBeenSet = false;
-
-    bool m_multiTenant{false};
-    bool m_multiTenantHasBeenSet = false;
 
     Aws::String m_engineLifecycleSupport;
     bool m_engineLifecycleSupportHasBeenSet = false;

@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Any provided entity.</p>
-     */
-    inline const Aws::String& GetCustomEntity() const { return m_customEntity; }
-    inline bool CustomEntityHasBeenSet() const { return m_customEntityHasBeenSet; }
-    template<typename CustomEntityT = Aws::String>
-    void SetCustomEntity(CustomEntityT&& value) { m_customEntityHasBeenSet = true; m_customEntity = std::forward<CustomEntityT>(value); }
-    template<typename CustomEntityT = Aws::String>
-    UserUnion& WithCustomEntity(CustomEntityT&& value) { SetCustomEntity(std::forward<CustomEntityT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Represents the Amazon Connect ARN of the user.</p>
      */
     inline const Aws::String& GetUserArn() const { return m_userArn; }
@@ -61,13 +49,25 @@ namespace Model
     template<typename UserArnT = Aws::String>
     UserUnion& WithUserArn(UserArnT&& value) { SetUserArn(std::forward<UserArnT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_customEntity;
-    bool m_customEntityHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Any provided entity.</p>
+     */
+    inline const Aws::String& GetCustomEntity() const { return m_customEntity; }
+    inline bool CustomEntityHasBeenSet() const { return m_customEntityHasBeenSet; }
+    template<typename CustomEntityT = Aws::String>
+    void SetCustomEntity(CustomEntityT&& value) { m_customEntityHasBeenSet = true; m_customEntity = std::forward<CustomEntityT>(value); }
+    template<typename CustomEntityT = Aws::String>
+    UserUnion& WithCustomEntity(CustomEntityT&& value) { SetCustomEntity(std::forward<CustomEntityT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_userArn;
     bool m_userArnHasBeenSet = false;
+
+    Aws::String m_customEntity;
+    bool m_customEntityHasBeenSet = false;
   };
 
 } // namespace Model

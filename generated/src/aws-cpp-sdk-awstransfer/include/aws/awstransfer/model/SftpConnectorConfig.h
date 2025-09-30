@@ -97,11 +97,13 @@ namespace Model
     ///@{
     /**
      * <p>Specify the number of concurrent connections that your connector creates to
-     * the remote server. The default value is <code>5</code> (this is also the maximum
-     * value allowed).</p> <p>This parameter specifies the number of active connections
-     * that your connector can establish with the remote server at the same time.
-     * Increasing this value can enhance connector performance when transferring large
-     * file batches by enabling parallel operations.</p>
+     * the remote server. The default value is <code>1</code>. The maximum values is
+     * <code>5</code>.</p>  <p>If you are using the Amazon Web Services
+     * Management Console, the default value is <code>5</code>.</p>  <p>This
+     * parameter specifies the number of active connections that your connector can
+     * establish with the remote server at the same time. Increasing this value can
+     * enhance connector performance when transferring large file batches by enabling
+     * parallel operations.</p>
      */
     inline int GetMaxConcurrentConnections() const { return m_maxConcurrentConnections; }
     inline bool MaxConcurrentConnectionsHasBeenSet() const { return m_maxConcurrentConnectionsHasBeenSet; }

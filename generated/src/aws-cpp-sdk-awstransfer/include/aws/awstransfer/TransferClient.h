@@ -696,7 +696,12 @@ namespace Transfer
 
         /**
          * <p>Describes the certificate that's identified by the
-         * <code>CertificateId</code>.</p><p><h3>See Also:</h3>   <a
+         * <code>CertificateId</code>.</p>  <p>Transfer Family automatically
+         * publishes a Amazon CloudWatch metric called <code>DaysUntilExpiry</code> for
+         * imported certificates. This metric tracks the number of days until the
+         * certificate expires based on the <code>InactiveDate</code>. The metric is
+         * available in the <code>AWS/Transfer</code> namespace and includes the
+         * <code>CertificateId</code> as a dimension.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeCertificate">AWS
          * API Reference</a></p>
          */
@@ -996,10 +1001,22 @@ namespace Transfer
         /**
          * <p>Imports the signing and encryption certificates that you need to create local
          * (AS2) profiles and partner profiles.</p> <p>You can import both the certificate
-         * and its chain in the <code>Certificate</code> parameter.</p>  <p>If you
-         * use the <code>Certificate</code> parameter to upload both the certificate and
-         * its chain, don't use the <code>CertificateChain</code> parameter.</p>
-         * <p><h3>See Also:</h3>   <a
+         * and its chain in the <code>Certificate</code> parameter.</p> <p>After importing
+         * a certificate, Transfer Family automatically creates a Amazon CloudWatch metric
+         * called <code>DaysUntilExpiry</code> that tracks the number of days until the
+         * certificate expires. The metric is based on the <code>InactiveDate</code>
+         * parameter and is published daily in the <code>AWS/Transfer</code> namespace.</p>
+         *  <p>It can take up to a full day after importing a certificate for
+         * Transfer Family to emit the <code>DaysUntilExpiry</code> metric to your
+         * account.</p>   <p>If you use the <code>Certificate</code>
+         * parameter to upload both the certificate and its chain, don't use the
+         * <code>CertificateChain</code> parameter.</p>  <p> <b>CloudWatch
+         * monitoring</b> </p> <p>The <code>DaysUntilExpiry</code> metric includes the
+         * following specifications:</p> <ul> <li> <p> <b>Units:</b> Count (days)</p> </li>
+         * <li> <p> <b>Dimensions:</b> <code>CertificateId</code> (always present),
+         * <code>Description</code> (if provided during certificate import)</p> </li> <li>
+         * <p> <b>Statistics:</b> Minimum, Maximum, Average</p> </li> <li> <p>
+         * <b>Frequency:</b> Published daily</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportCertificate">AWS
          * API Reference</a></p>
          */

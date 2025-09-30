@@ -326,8 +326,8 @@ namespace DataZone
          * information, see <a
          * href="https://docs.aws.amazon.com/cli/latest/reference/datazone/create-asset-type.html">create-asset-type</a>.</p>
          * </li> <li> <p> <code>--type-revision</code> (if used) must match a valid
-         * revision of the asset type.</p> </li> <li> <p>Form type must exist and be
-         * associated with the asset type. Use <code>create-form-type</code> to define. For
+         * revision of the asset type.</p> </li> <li> <p> <code>formsInput</code> is
+         * required when it is associated as required in the <code>asset-type</code>. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/cli/latest/reference/datazone/create-form-type.html">create-form-type</a>.</p>
          * </li> <li> <p>Form content must include all required fields as per the form
@@ -406,12 +406,13 @@ namespace DataZone
          * crucial for governance and compliance, allowing organizations to track changes,
          * understand their impact, and roll back if necessary.</p> <p>Prerequisites:</p>
          * <ul> <li> <p>Asset must already exist in the domain with identifier. </p> </li>
-         * <li> <p>The form type with correct revision must be registered in the same
-         * domain.</p> </li> <li> <p>The form content must include all required fields
-         * (e.g., <code>bucketArn</code> for <code>S3ObjectCollectionForm</code>).</p>
-         * </li> <li> <p>The owning project of the original asset must still exist and be
-         * active.</p> </li> <li> <p>User must have write access to the project and
-         * domain.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <li> <p> <code>formsInput</code> is required when asset has the form type.
+         * <code>typeRevision</code> should be the latest version of form type. </p> </li>
+         * <li> <p>The form content must include all required fields (e.g.,
+         * <code>bucketArn</code> for <code>S3ObjectCollectionForm</code>).</p> </li> <li>
+         * <p>The owning project of the original asset must still exist and be active.</p>
+         * </li> <li> <p>User must have write access to the project and domain.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateAssetRevision">AWS
          * API Reference</a></p>
          */
@@ -436,14 +437,15 @@ namespace DataZone
         }
 
         /**
-         * <p>Creates a custom asset type.</p> <p>Prerequisites:</p> <ul> <li> <p>The form
-         * type with <code>typeIdentifier</code> and <code>typeRevision</code> must exist
-         * and be published. </p> </li> <li> <p>You must have <code>CreateAssetType</code>
-         * permissions.</p> </li> <li> <p>The domain-identifier and
-         * owning-project-identifier must be valid and active.</p> </li> <li> <p>The name
-         * of the asset type must be unique within the domain — duplicate names will cause
-         * failure.</p> </li> <li> <p>JSON input must be valid — incorrect formatting
-         * causes Invalid JSON errors.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Creates a custom asset type.</p> <p>Prerequisites:</p> <ul> <li> <p>The
+         * <code>formsInput</code> field is required, however, can be passed as empty (e.g.
+         * <code>-forms-input {})</code>. </p> </li> <li> <p>You must have
+         * <code>CreateAssetType</code> permissions.</p> </li> <li> <p>The
+         * domain-identifier and owning-project-identifier must be valid and active.</p>
+         * </li> <li> <p>The name of the asset type must be unique within the domain —
+         * duplicate names will cause failure.</p> </li> <li> <p>JSON input must be valid —
+         * incorrect formatting causes Invalid JSON errors.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateAssetType">AWS
          * API Reference</a></p>
          */
@@ -505,9 +507,8 @@ namespace DataZone
          * and be accessible. </p> </li> <li> <p>The owning project must be valid and
          * active.</p> </li> <li> <p>The name must be unique within the domain (no existing
          * data product with the same name).</p> </li> <li> <p>User must have create
-         * permissions for data products in the project.</p> </li> <li> <p>The domain must
-         * have Amazon DataZone publishing enabled.</p> </li> </ul><p><h3>See Also:</h3>  
-         * <a
+         * permissions for data products in the project.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateDataProduct">AWS
          * API Reference</a></p>
          */
@@ -741,7 +742,24 @@ namespace DataZone
          * <p>Creates a metadata form type.</p> <p>Prerequisites:</p> <ul> <li> <p>The
          * domain must exist and be in an <code>ENABLED</code> state. </p> </li> <li>
          * <p>The owning project must exist and be accessible.</p> </li> <li> <p>The name
-         * must be unique within the domain.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * must be unique within the domain.</p> </li> </ul> <p>For custom form types, to
+         * indicate that a field should be searchable, annotate it with
+         * <code>@amazon.datazone#searchable</code>. By default, searchable fields are
+         * indexed for semantic search, where related query terms will match the attribute
+         * value even if they are not stemmed or keyword matches. To indicate that a field
+         * should be indexed for lexical search (which disables semantic search but
+         * supports stemmed and partial matches), annotate it with
+         * <code>@amazon.datazone#searchable(modes:["LEXICAL"])</code>. To indicate that a
+         * field should be indexed for technical identifier search (for more information on
+         * technical identifier search, see: <a
+         * href="https://aws.amazon.com/blogs/big-data/streamline-data-discovery-with-precise-technical-identifier-search-in-amazon-sagemaker-unified-studio/">https://aws.amazon.com/blogs/big-data/streamline-data-discovery-with-precise-technical-identifier-search-in-amazon-sagemaker-unified-studio/</a>),
+         * annotate it with
+         * <code>@amazon.datazone#searchable(modes:["TECHNICAL"])</code>.</p> <p>To denote
+         * that a field will store glossary term ids (which are filterable via the
+         * Search/SearchListings APIs), annotate it with
+         * <code>@amazon.datazone#glossaryterm("${GLOSSARY_ID}")</code>, where
+         * <code>${GLOSSARY_ID}</code> is the id of the glossary that the glossary terms
+         * stored in the field belong to. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateFormType">AWS
          * API Reference</a></p>
          */
@@ -812,10 +830,10 @@ namespace DataZone
          * interpretation across different systems and teams. Terms can also have
          * relationships with other terms, creating a semantic network that reflects the
          * complexity of business concepts.</p> <p>Prerequisites:</p> <ul> <li> <p>Domain
-         * must exist. </p> </li> <li> <p>Glossary must exist and be in an ENABLED
-         * state.</p> </li> <li> <p>The term name must be unique within the glossary.</p>
-         * </li> <li> <p>Ensure term does not conflict with existing terms in
-         * hierarchy.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * must exist. </p> </li> <li> <p>Glossary must exist.</p> </li> <li> <p>The term
+         * name must be unique within the glossary.</p> </li> <li> <p>Ensure term does not
+         * conflict with existing terms in hierarchy.</p> </li> </ul><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateGlossaryTerm">AWS
          * API Reference</a></p>
          */
@@ -1246,9 +1264,8 @@ namespace DataZone
          * <p>Deletes a data product in Amazon DataZone.</p> <p>Prerequisites:</p> <ul>
          * <li> <p>The data product must exist and not be deleted or archived. </p> </li>
          * <li> <p>The user must have delete permissions for the data product.</p> </li>
-         * <li> <p>Ensure there are no active dependencies (e.g., published links, assets
-         * using the product).</p> </li> <li> <p>Domain and project must be active.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * <li> <p>Domain and project must be active.</p> </li> </ul><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteDataProduct">AWS
          * API Reference</a></p>
          */
@@ -1512,8 +1529,8 @@ namespace DataZone
          * glossary must not have any glossary terms associated with it.</p> </li> <li>
          * <p>The glossary must exist in the specified domain.</p> </li> <li> <p>The caller
          * must have the <code>datazone:DeleteGlossary</code> permission in the domain and
-         * glossary.</p> </li> <li> <p>There should be no active assets or metadata linked
-         * to the glossary.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * glossary.</p> </li> <li> <p>Glossary should not be linked to any active metadata
+         * forms.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteGlossary">AWS
          * API Reference</a></p>
          */
@@ -2300,7 +2317,19 @@ namespace DataZone
          * identifier must exist in the given domain. </p> </li> <li> <p>The domain must be
          * valid and active.</p> </li> <li> <p>User must have permission on the form
          * type.</p> </li> <li> <p>The form type should not be deleted or in an invalid
-         * state.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * state.</p> </li> </ul> <p>One use case for this API is to determine whether a
+         * form field is indexed for search. </p> <p>A searchable field will be annotated
+         * with <code>@amazon.datazone#searchable</code>. By default, searchable fields are
+         * indexed for semantic search, where related query terms will match the attribute
+         * value even if they are not stemmed or keyword matches. If a field is indexed
+         * technical identifier search, it will be annotated with
+         * <code>@amazon.datazone#searchable(modes:["TECHNICAL"])</code>. If a field is
+         * indexed for lexical search (supports stemmed and prefix matches but not semantic
+         * matches), it will be annotated with
+         * <code>@amazon.datazone#searchable(modes:["LEXICAL"])</code>.</p> <p>A field
+         * storing glossary term IDs (which is filterable) will be annotated with
+         * <code>@amazon.datazone#glossaryterm("${glossaryId}")</code>. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetFormType">AWS
          * API Reference</a></p>
          */
@@ -3929,8 +3958,34 @@ namespace DataZone
         }
 
         /**
-         * <p>Searches listings (records of an asset at a given time) in Amazon
-         * DataZone.</p><p><h3>See Also:</h3>   <a
+         * <p>Searches listings in Amazon DataZone.</p> <p>SearchListings is a powerful
+         * capability that enables users to discover and explore published assets and data
+         * products across their organization. It provides both basic and advanced search
+         * functionality, allowing users to find resources based on names, descriptions,
+         * metadata, and other attributes. SearchListings also supports filtering using
+         * various criteria such as creation date, owner, or status. This API is essential
+         * for making the wealth of data resources in an organization discoverable and
+         * usable, helping users find the right data for their needs quickly and
+         * efficiently.</p> <p>SearchListings returns results in a paginated format. When
+         * the result set is large, the response will include a nextToken, which can be
+         * used to retrieve the next page of results.</p> <p>The SearchListings API gives
+         * users flexibility in specifying what kind of search is run.</p> <p>To run a
+         * free-text search, the <code>searchText</code> parameter must be supplied. By
+         * default, all searchable fields are indexed for semantic search and will return
+         * semantic matches for SearchListings queries. To prevent semantic search indexing
+         * for a custom form attribute, see the <a
+         * href="https://docs.aws.amazon.com/datazone/latest/APIReference/API_CreateFormType.html">CreateFormType
+         * API documentation</a>. To run a lexical search query, enclose the query with
+         * double quotes (""). This will disable semantic search even for fields that have
+         * semantic search enabled and will only return results that contain the keywords
+         * wrapped by double quotes (order of tokens in the query is not enforced).
+         * Free-text search is supported for all attributes annotated with
+         * @amazon.datazone#searchable.</p> <p>To run a filtered search, provide filter
+         * clause using the filters parameter. To filter on glossary terms, use the special
+         * attribute <code>__DataZoneGlossaryTerms</code>.</p> <p> To find out whether an
+         * attribute has been annotated and indexed for a given search type, use the
+         * GetFormType API to retrieve the form containing the attribute.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/SearchListings">AWS
          * API Reference</a></p>
          */

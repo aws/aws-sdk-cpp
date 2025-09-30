@@ -39,17 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Describes whether the <code>FieldOption</code> is active (displayed) or
-     * inactive.</p>
-     */
-    inline bool GetActive() const { return m_active; }
-    inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
-    inline void SetActive(bool value) { m_activeHasBeenSet = true; m_active = value; }
-    inline FieldOption& WithActive(bool value) { SetActive(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p> <code>FieldOptionName</code> has max length 100 and disallows trailing
      * spaces.</p>
      */
@@ -73,16 +62,27 @@ namespace Model
     template<typename ValueT = Aws::String>
     FieldOption& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
-  private:
 
-    bool m_active{false};
-    bool m_activeHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Describes whether the <code>FieldOption</code> is active (displayed) or
+     * inactive.</p>
+     */
+    inline bool GetActive() const { return m_active; }
+    inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
+    inline void SetActive(bool value) { m_activeHasBeenSet = true; m_active = value; }
+    inline FieldOption& WithActive(bool value) { SetActive(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
+
+    bool m_active{false};
+    bool m_activeHasBeenSet = false;
   };
 
 } // namespace Model

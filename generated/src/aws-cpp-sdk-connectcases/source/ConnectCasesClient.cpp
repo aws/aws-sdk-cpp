@@ -481,15 +481,15 @@ CreateRelatedItemOutcome ConnectCasesClient::CreateRelatedItem(const CreateRelat
 {
   AWS_OPERATION_GUARD(CreateRelatedItem);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRelatedItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.CaseIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("CreateRelatedItem", "Required field: CaseId, is not set");
-    return CreateRelatedItemOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CaseId]", false));
-  }
   if (!request.DomainIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateRelatedItem", "Required field: DomainId, is not set");
     return CreateRelatedItemOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainId]", false));
+  }
+  if (!request.CaseIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateRelatedItem", "Required field: CaseId, is not set");
+    return CreateRelatedItemOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CaseId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateRelatedItem, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -556,15 +556,15 @@ DeleteCaseOutcome ConnectCasesClient::DeleteCase(const DeleteCaseRequest& reques
 {
   AWS_OPERATION_GUARD(DeleteCase);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.CaseIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteCase", "Required field: CaseId, is not set");
-    return DeleteCaseOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CaseId]", false));
-  }
   if (!request.DomainIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteCase", "Required field: DomainId, is not set");
     return DeleteCaseOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainId]", false));
+  }
+  if (!request.CaseIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteCase", "Required field: CaseId, is not set");
+    return DeleteCaseOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CaseId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteCase, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -596,15 +596,15 @@ DeleteCaseRuleOutcome ConnectCasesClient::DeleteCaseRule(const DeleteCaseRuleReq
 {
   AWS_OPERATION_GUARD(DeleteCaseRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCaseRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.CaseRuleIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteCaseRule", "Required field: CaseRuleId, is not set");
-    return DeleteCaseRuleOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CaseRuleId]", false));
-  }
   if (!request.DomainIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteCaseRule", "Required field: DomainId, is not set");
     return DeleteCaseRuleOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainId]", false));
+  }
+  if (!request.CaseRuleIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteCaseRule", "Required field: CaseRuleId, is not set");
+    return DeleteCaseRuleOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CaseRuleId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteCaseRule, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -749,15 +749,15 @@ DeleteRelatedItemOutcome ConnectCasesClient::DeleteRelatedItem(const DeleteRelat
 {
   AWS_OPERATION_GUARD(DeleteRelatedItem);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRelatedItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.CaseIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteRelatedItem", "Required field: CaseId, is not set");
-    return DeleteRelatedItemOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CaseId]", false));
-  }
   if (!request.DomainIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteRelatedItem", "Required field: DomainId, is not set");
     return DeleteRelatedItemOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainId]", false));
+  }
+  if (!request.CaseIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRelatedItem", "Required field: CaseId, is not set");
+    return DeleteRelatedItemOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CaseId]", false));
   }
   if (!request.RelatedItemIdHasBeenSet())
   {
@@ -1403,15 +1403,15 @@ SearchRelatedItemsOutcome ConnectCasesClient::SearchRelatedItems(const SearchRel
 {
   AWS_OPERATION_GUARD(SearchRelatedItems);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchRelatedItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.CaseIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("SearchRelatedItems", "Required field: CaseId, is not set");
-    return SearchRelatedItemsOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CaseId]", false));
-  }
   if (!request.DomainIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("SearchRelatedItems", "Required field: DomainId, is not set");
     return SearchRelatedItemsOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainId]", false));
+  }
+  if (!request.CaseIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SearchRelatedItems", "Required field: CaseId, is not set");
+    return SearchRelatedItemsOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CaseId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, SearchRelatedItems, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1515,15 +1515,15 @@ UpdateCaseOutcome ConnectCasesClient::UpdateCase(const UpdateCaseRequest& reques
 {
   AWS_OPERATION_GUARD(UpdateCase);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.CaseIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdateCase", "Required field: CaseId, is not set");
-    return UpdateCaseOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CaseId]", false));
-  }
   if (!request.DomainIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateCase", "Required field: DomainId, is not set");
     return UpdateCaseOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainId]", false));
+  }
+  if (!request.CaseIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateCase", "Required field: CaseId, is not set");
+    return UpdateCaseOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CaseId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateCase, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1555,15 +1555,15 @@ UpdateCaseRuleOutcome ConnectCasesClient::UpdateCaseRule(const UpdateCaseRuleReq
 {
   AWS_OPERATION_GUARD(UpdateCaseRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCaseRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.CaseRuleIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdateCaseRule", "Required field: CaseRuleId, is not set");
-    return UpdateCaseRuleOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CaseRuleId]", false));
-  }
   if (!request.DomainIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateCaseRule", "Required field: DomainId, is not set");
     return UpdateCaseRuleOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainId]", false));
+  }
+  if (!request.CaseRuleIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateCaseRule", "Required field: CaseRuleId, is not set");
+    return UpdateCaseRuleOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CaseRuleId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateCaseRule, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});

@@ -289,6 +289,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The storage throughput value for the DB instance.</p> <p>This setting doesn't
+     * apply to RDS Custom or Amazon Aurora.</p>
+     */
+    inline int GetStorageThroughput() const { return m_storageThroughput; }
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+    inline RestoreDBInstanceToPointInTimeRequest& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the option group to use for the restored DB instance.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
      * can't be removed from an option group, and that option group can't be removed
@@ -605,21 +616,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the replicated automated backups from which
-     * to restore, for example,
-     * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
-     * <p>This setting doesn't apply to RDS Custom.</p>
-     */
-    inline const Aws::String& GetSourceDBInstanceAutomatedBackupsArn() const { return m_sourceDBInstanceAutomatedBackupsArn; }
-    inline bool SourceDBInstanceAutomatedBackupsArnHasBeenSet() const { return m_sourceDBInstanceAutomatedBackupsArnHasBeenSet; }
-    template<typename SourceDBInstanceAutomatedBackupsArnT = Aws::String>
-    void SetSourceDBInstanceAutomatedBackupsArn(SourceDBInstanceAutomatedBackupsArnT&& value) { m_sourceDBInstanceAutomatedBackupsArnHasBeenSet = true; m_sourceDBInstanceAutomatedBackupsArn = std::forward<SourceDBInstanceAutomatedBackupsArnT>(value); }
-    template<typename SourceDBInstanceAutomatedBackupsArnT = Aws::String>
-    RestoreDBInstanceToPointInTimeRequest& WithSourceDBInstanceAutomatedBackupsArn(SourceDBInstanceAutomatedBackupsArnT&& value) { SetSourceDBInstanceAutomatedBackupsArn(std::forward<SourceDBInstanceAutomatedBackupsArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on
      * Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or external
      * connectivity to resources in your Outpost subnets through your on-premises
@@ -641,23 +637,36 @@ namespace Model
 
     ///@{
     /**
-     * <p>The instance profile associated with the underlying Amazon EC2 instance of an
-     * RDS Custom DB instance. The instance profile must meet the following
-     * requirements:</p> <ul> <li> <p>The profile must exist in your account.</p> </li>
-     * <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to
-     * assume.</p> </li> <li> <p>The instance profile name and the associated IAM role
-     * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
-     * <p>For the list of permissions required for the IAM role, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting is required for RDS Custom.</p>
+     * <p>The network type of the DB instance.</p> <p>The network type is determined by
+     * the <code>DBSubnetGroup</code> specified for the DB instance. A
+     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
+     * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p> <p>Valid Values:</p> <ul> <li> <p> <code>IPV4</code> </p> </li> <li> <p>
+     * <code>DUAL</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetCustomIamInstanceProfile() const { return m_customIamInstanceProfile; }
-    inline bool CustomIamInstanceProfileHasBeenSet() const { return m_customIamInstanceProfileHasBeenSet; }
-    template<typename CustomIamInstanceProfileT = Aws::String>
-    void SetCustomIamInstanceProfile(CustomIamInstanceProfileT&& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = std::forward<CustomIamInstanceProfileT>(value); }
-    template<typename CustomIamInstanceProfileT = Aws::String>
-    RestoreDBInstanceToPointInTimeRequest& WithCustomIamInstanceProfile(CustomIamInstanceProfileT&& value) { SetCustomIamInstanceProfile(std::forward<CustomIamInstanceProfileT>(value)); return *this;}
+    inline const Aws::String& GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    template<typename NetworkTypeT = Aws::String>
+    void SetNetworkType(NetworkTypeT&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::forward<NetworkTypeT>(value); }
+    template<typename NetworkTypeT = Aws::String>
+    RestoreDBInstanceToPointInTimeRequest& WithNetworkType(NetworkTypeT&& value) { SetNetworkType(std::forward<NetworkTypeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replicated automated backups from which
+     * to restore, for example,
+     * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
+     */
+    inline const Aws::String& GetSourceDBInstanceAutomatedBackupsArn() const { return m_sourceDBInstanceAutomatedBackupsArn; }
+    inline bool SourceDBInstanceAutomatedBackupsArnHasBeenSet() const { return m_sourceDBInstanceAutomatedBackupsArnHasBeenSet; }
+    template<typename SourceDBInstanceAutomatedBackupsArnT = Aws::String>
+    void SetSourceDBInstanceAutomatedBackupsArn(SourceDBInstanceAutomatedBackupsArnT&& value) { m_sourceDBInstanceAutomatedBackupsArnHasBeenSet = true; m_sourceDBInstanceAutomatedBackupsArn = std::forward<SourceDBInstanceAutomatedBackupsArnT>(value); }
+    template<typename SourceDBInstanceAutomatedBackupsArnT = Aws::String>
+    RestoreDBInstanceToPointInTimeRequest& WithSourceDBInstanceAutomatedBackupsArn(SourceDBInstanceAutomatedBackupsArnT&& value) { SetSourceDBInstanceAutomatedBackupsArn(std::forward<SourceDBInstanceAutomatedBackupsArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -682,32 +691,23 @@ namespace Model
 
     ///@{
     /**
-     * <p>The network type of the DB instance.</p> <p>The network type is determined by
-     * the <code>DBSubnetGroup</code> specified for the DB instance. A
-     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
-     * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
-     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
-     * </p> <p>Valid Values:</p> <ul> <li> <p> <code>IPV4</code> </p> </li> <li> <p>
-     * <code>DUAL</code> </p> </li> </ul>
+     * <p>The instance profile associated with the underlying Amazon EC2 instance of an
+     * RDS Custom DB instance. The instance profile must meet the following
+     * requirements:</p> <ul> <li> <p>The profile must exist in your account.</p> </li>
+     * <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to
+     * assume.</p> </li> <li> <p>The instance profile name and the associated IAM role
+     * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
+     * <p>For the list of permissions required for the IAM role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
-    inline const Aws::String& GetNetworkType() const { return m_networkType; }
-    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
-    template<typename NetworkTypeT = Aws::String>
-    void SetNetworkType(NetworkTypeT&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::forward<NetworkTypeT>(value); }
-    template<typename NetworkTypeT = Aws::String>
-    RestoreDBInstanceToPointInTimeRequest& WithNetworkType(NetworkTypeT&& value) { SetNetworkType(std::forward<NetworkTypeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The storage throughput value for the DB instance.</p> <p>This setting doesn't
-     * apply to RDS Custom or Amazon Aurora.</p>
-     */
-    inline int GetStorageThroughput() const { return m_storageThroughput; }
-    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
-    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
-    inline RestoreDBInstanceToPointInTimeRequest& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+    inline const Aws::String& GetCustomIamInstanceProfile() const { return m_customIamInstanceProfile; }
+    inline bool CustomIamInstanceProfileHasBeenSet() const { return m_customIamInstanceProfileHasBeenSet; }
+    template<typename CustomIamInstanceProfileT = Aws::String>
+    void SetCustomIamInstanceProfile(CustomIamInstanceProfileT&& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = std::forward<CustomIamInstanceProfileT>(value); }
+    template<typename CustomIamInstanceProfileT = Aws::String>
+    RestoreDBInstanceToPointInTimeRequest& WithCustomIamInstanceProfile(CustomIamInstanceProfileT&& value) { SetCustomIamInstanceProfile(std::forward<CustomIamInstanceProfileT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -871,6 +871,9 @@ namespace Model
     int m_iops{0};
     bool m_iopsHasBeenSet = false;
 
+    int m_storageThroughput{0};
+    bool m_storageThroughputHasBeenSet = false;
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet = false;
 
@@ -934,23 +937,20 @@ namespace Model
     int m_maxAllocatedStorage{0};
     bool m_maxAllocatedStorageHasBeenSet = false;
 
-    Aws::String m_sourceDBInstanceAutomatedBackupsArn;
-    bool m_sourceDBInstanceAutomatedBackupsArnHasBeenSet = false;
-
     bool m_enableCustomerOwnedIp{false};
     bool m_enableCustomerOwnedIpHasBeenSet = false;
-
-    Aws::String m_customIamInstanceProfile;
-    bool m_customIamInstanceProfileHasBeenSet = false;
-
-    Aws::String m_backupTarget;
-    bool m_backupTargetHasBeenSet = false;
 
     Aws::String m_networkType;
     bool m_networkTypeHasBeenSet = false;
 
-    int m_storageThroughput{0};
-    bool m_storageThroughputHasBeenSet = false;
+    Aws::String m_sourceDBInstanceAutomatedBackupsArn;
+    bool m_sourceDBInstanceAutomatedBackupsArnHasBeenSet = false;
+
+    Aws::String m_backupTarget;
+    bool m_backupTargetHasBeenSet = false;
+
+    Aws::String m_customIamInstanceProfile;
+    bool m_customIamInstanceProfileHasBeenSet = false;
 
     int m_allocatedStorage{0};
     bool m_allocatedStorageHasBeenSet = false;

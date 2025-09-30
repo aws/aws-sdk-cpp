@@ -25,15 +25,15 @@ CreateFieldResult::CreateFieldResult(const Aws::AmazonWebServiceResult<JsonValue
 CreateFieldResult& CreateFieldResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("fieldArn"))
-  {
-    m_fieldArn = jsonValue.GetString("fieldArn");
-    m_fieldArnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("fieldId"))
   {
     m_fieldId = jsonValue.GetString("fieldId");
     m_fieldIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("fieldArn"))
+  {
+    m_fieldArn = jsonValue.GetString("fieldArn");
+    m_fieldArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
