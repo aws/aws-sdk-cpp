@@ -1,8 +1,7 @@
 name: Build SDK
 on:
-  pull_request_review:
-    types: [ submitted ]
-    branches: [ main ]
+  pull_request:
+    types: [ opened, synchronize, ready_for_review ]
 
 concurrency:
   group: start-pull-request-build-${{ github.ref }}
@@ -16,7 +15,7 @@ env:
 
 jobs:
   aws-sdk-pr-build:
-    if: github.event.review.state == 'approved'
+    if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -39,11 +38,14 @@ jobs:
       - name: Build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
           HEAD_REF: ${{ github.event.pull_request.head.ref }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          RUN_ID: ${{ github.run_id }}
         run: |
           ./$DOWNLOAD_FOLDER/$SCRIPT_LOCATION \
-            --repo "${{ github.repository }}" \
+            --repo "$REPO" \
             --branch "$HEAD_REF" \
-            --pr-number "${{ github.event.pull_request.number }}" \
-            --run-id "${{ github.run_id }}"
+            --pr-number "$PR_NUMBER" \
+            --run-id "$RUN_ID"
         timeout-minutes: 180
