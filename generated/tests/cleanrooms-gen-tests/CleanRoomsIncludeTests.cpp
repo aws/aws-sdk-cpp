@@ -14,6 +14,12 @@
 #include <aws/cleanrooms/CleanRoomsRequest.h>
 #include <aws/cleanrooms/CleanRoomsServiceClientModel.h>
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
+#include <aws/cleanrooms/model/AccessBudget.h>
+#include <aws/cleanrooms/model/AccessBudgetDetails.h>
+#include <aws/cleanrooms/model/AccessBudgetType.h>
+#include <aws/cleanrooms/model/AccessBudgetsPrivacyTemplateParametersInput.h>
+#include <aws/cleanrooms/model/AccessBudgetsPrivacyTemplateParametersOutput.h>
+#include <aws/cleanrooms/model/AccessBudgetsPrivacyTemplateUpdateParameters.h>
 #include <aws/cleanrooms/model/AccessDeniedException.h>
 #include <aws/cleanrooms/model/AccessDeniedExceptionReason.h>
 #include <aws/cleanrooms/model/AdditionalAnalyses.h>
@@ -48,6 +54,7 @@
 #include <aws/cleanrooms/model/AnalyticsEngine.h>
 #include <aws/cleanrooms/model/AthenaTableReference.h>
 #include <aws/cleanrooms/model/AutoApprovedChangeType.h>
+#include <aws/cleanrooms/model/AutoRefreshMode.h>
 #include <aws/cleanrooms/model/BatchGetCollaborationAnalysisTemplateError.h>
 #include <aws/cleanrooms/model/BatchGetCollaborationAnalysisTemplateRequest.h>
 #include <aws/cleanrooms/model/BatchGetCollaborationAnalysisTemplateResult.h>
@@ -59,6 +66,7 @@
 #include <aws/cleanrooms/model/BatchGetSchemaResult.h>
 #include <aws/cleanrooms/model/BilledJobResourceUtilization.h>
 #include <aws/cleanrooms/model/BilledResourceUtilization.h>
+#include <aws/cleanrooms/model/BudgetParameter.h>
 #include <aws/cleanrooms/model/Change.h>
 #include <aws/cleanrooms/model/ChangeInput.h>
 #include <aws/cleanrooms/model/ChangeRequestStatus.h>

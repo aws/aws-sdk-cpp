@@ -229,6 +229,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) of the schema resource.</p>
+     */
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    Schema& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The schema type properties.</p>
      */
     inline const SchemaTypeProperties& GetSchemaTypeProperties() const { return m_schemaTypeProperties; }
@@ -281,6 +293,9 @@ namespace Model
 
     Aws::Vector<SchemaStatusDetail> m_schemaStatusDetails;
     bool m_schemaStatusDetailsHasBeenSet = false;
+
+    Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet = false;
 
     SchemaTypeProperties m_schemaTypeProperties;
     bool m_schemaTypePropertiesHasBeenSet = false;

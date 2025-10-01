@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/pcs/model/QueueStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/pcs/model/QueueSlurmConfiguration.h>
 #include <aws/pcs/model/ComputeNodeGroupConfiguration.h>
 #include <aws/pcs/model/ErrorInfo.h>
 #include <utility>
@@ -151,6 +152,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Additional options related to the Slurm scheduler.</p>
+     */
+    inline const QueueSlurmConfiguration& GetSlurmConfiguration() const { return m_slurmConfiguration; }
+    inline bool SlurmConfigurationHasBeenSet() const { return m_slurmConfigurationHasBeenSet; }
+    template<typename SlurmConfigurationT = QueueSlurmConfiguration>
+    void SetSlurmConfiguration(SlurmConfigurationT&& value) { m_slurmConfigurationHasBeenSet = true; m_slurmConfiguration = std::forward<SlurmConfigurationT>(value); }
+    template<typename SlurmConfigurationT = QueueSlurmConfiguration>
+    Queue& WithSlurmConfiguration(SlurmConfigurationT&& value) { SetSlurmConfiguration(std::forward<SlurmConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The list of errors that occurred during queue provisioning.</p>
      */
     inline const Aws::Vector<ErrorInfo>& GetErrorInfo() const { return m_errorInfo; }
@@ -187,6 +200,9 @@ namespace Model
 
     Aws::Vector<ComputeNodeGroupConfiguration> m_computeNodeGroupConfigurations;
     bool m_computeNodeGroupConfigurationsHasBeenSet = false;
+
+    QueueSlurmConfiguration m_slurmConfiguration;
+    bool m_slurmConfigurationHasBeenSet = false;
 
     Aws::Vector<ErrorInfo> m_errorInfo;
     bool m_errorInfoHasBeenSet = false;

@@ -39,6 +39,12 @@ Aws::String CreateQueueRequest::SerializePayload() const
 
   }
 
+  if(m_slurmConfigurationHasBeenSet)
+  {
+   payload.WithObject("slurmConfiguration", m_slurmConfiguration.Jsonize());
+
+  }
+
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);

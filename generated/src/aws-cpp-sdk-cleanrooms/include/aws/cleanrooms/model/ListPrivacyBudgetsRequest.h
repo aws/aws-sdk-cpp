@@ -86,6 +86,19 @@ namespace Model
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListPrivacyBudgetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the access budget resource to filter
+     * privacy budgets by.</p>
+     */
+    inline const Aws::String& GetAccessBudgetResourceArn() const { return m_accessBudgetResourceArn; }
+    inline bool AccessBudgetResourceArnHasBeenSet() const { return m_accessBudgetResourceArnHasBeenSet; }
+    template<typename AccessBudgetResourceArnT = Aws::String>
+    void SetAccessBudgetResourceArn(AccessBudgetResourceArnT&& value) { m_accessBudgetResourceArnHasBeenSet = true; m_accessBudgetResourceArn = std::forward<AccessBudgetResourceArnT>(value); }
+    template<typename AccessBudgetResourceArnT = Aws::String>
+    ListPrivacyBudgetsRequest& WithAccessBudgetResourceArn(AccessBudgetResourceArnT&& value) { SetAccessBudgetResourceArn(std::forward<AccessBudgetResourceArnT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_membershipIdentifier;
@@ -99,6 +112,9 @@ namespace Model
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
+
+    Aws::String m_accessBudgetResourceArn;
+    bool m_accessBudgetResourceArnHasBeenSet = false;
   };
 
 } // namespace Model

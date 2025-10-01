@@ -14,6 +14,9 @@
 #include <aws/cleanroomsml/CleanRoomsMLRequest.h>
 #include <aws/cleanroomsml/CleanRoomsMLServiceClientModel.h>
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
+#include <aws/cleanroomsml/model/AccessBudget.h>
+#include <aws/cleanroomsml/model/AccessBudgetDetails.h>
+#include <aws/cleanroomsml/model/AccessBudgetType.h>
 #include <aws/cleanroomsml/model/AudienceDestination.h>
 #include <aws/cleanroomsml/model/AudienceExportJobStatus.h>
 #include <aws/cleanroomsml/model/AudienceExportJobSummary.h>
@@ -26,6 +29,7 @@
 #include <aws/cleanroomsml/model/AudienceSize.h>
 #include <aws/cleanroomsml/model/AudienceSizeConfig.h>
 #include <aws/cleanroomsml/model/AudienceSizeType.h>
+#include <aws/cleanroomsml/model/AutoRefreshMode.h>
 #include <aws/cleanroomsml/model/CancelTrainedModelInferenceJobRequest.h>
 #include <aws/cleanroomsml/model/CancelTrainedModelRequest.h>
 #include <aws/cleanroomsml/model/CollaborationConfiguredModelAlgorithmAssociationSummary.h>
@@ -161,6 +165,7 @@
 #include <aws/cleanroomsml/model/ModelTrainingDataChannel.h>
 #include <aws/cleanroomsml/model/NoiseLevelType.h>
 #include <aws/cleanroomsml/model/PolicyExistenceCondition.h>
+#include <aws/cleanroomsml/model/PrivacyBudgets.h>
 #include <aws/cleanroomsml/model/PrivacyConfiguration.h>
 #include <aws/cleanroomsml/model/PrivacyConfigurationPolicies.h>
 #include <aws/cleanroomsml/model/ProtectedQueryInputParameters.h>

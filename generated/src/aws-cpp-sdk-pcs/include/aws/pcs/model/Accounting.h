@@ -41,17 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The default value for <code>mode</code> is <code>STANDARD</code>. A value of
-     * <code>STANDARD</code> means Slurm accounting is enabled.</p>
-     */
-    inline AccountingMode GetMode() const { return m_mode; }
-    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(AccountingMode value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline Accounting& WithMode(AccountingMode value) { SetMode(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The default value for all purge settings for <code>slurmdbd.conf</code>. For
      * more information, see the <a
      * href="https://slurm.schedmd.com/slurmdbd.conf.html">slurmdbd.conf documentation
@@ -65,13 +54,24 @@ namespace Model
     inline void SetDefaultPurgeTimeInDays(int value) { m_defaultPurgeTimeInDaysHasBeenSet = true; m_defaultPurgeTimeInDays = value; }
     inline Accounting& WithDefaultPurgeTimeInDays(int value) { SetDefaultPurgeTimeInDays(value); return *this;}
     ///@}
-  private:
 
-    AccountingMode m_mode{AccountingMode::NOT_SET};
-    bool m_modeHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The default value for <code>mode</code> is <code>STANDARD</code>. A value of
+     * <code>STANDARD</code> means Slurm accounting is enabled.</p>
+     */
+    inline AccountingMode GetMode() const { return m_mode; }
+    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
+    inline void SetMode(AccountingMode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline Accounting& WithMode(AccountingMode value) { SetMode(value); return *this;}
+    ///@}
+  private:
 
     int m_defaultPurgeTimeInDays{0};
     bool m_defaultPurgeTimeInDaysHasBeenSet = false;
+
+    AccountingMode m_mode{AccountingMode::NOT_SET};
+    bool m_modeHasBeenSet = false;
   };
 
 } // namespace Model

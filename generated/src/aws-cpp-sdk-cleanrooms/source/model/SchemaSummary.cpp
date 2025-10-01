@@ -74,6 +74,11 @@ SchemaSummary& SchemaSummary::operator =(JsonView jsonValue)
     m_analysisMethod = AnalysisMethodMapper::GetAnalysisMethodForName(jsonValue.GetString("analysisMethod"));
     m_analysisMethodHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("resourceArn"))
+  {
+    m_resourceArn = jsonValue.GetString("resourceArn");
+    m_resourceArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("selectedAnalysisMethods"))
   {
     Aws::Utils::Array<JsonView> selectedAnalysisMethodsJsonList = jsonValue.GetArray("selectedAnalysisMethods");
@@ -143,6 +148,12 @@ JsonValue SchemaSummary::Jsonize() const
   if(m_analysisMethodHasBeenSet)
   {
    payload.WithString("analysisMethod", AnalysisMethodMapper::GetNameForAnalysisMethod(m_analysisMethod));
+  }
+
+  if(m_resourceArnHasBeenSet)
+  {
+   payload.WithString("resourceArn", m_resourceArn);
+
   }
 
   if(m_selectedAnalysisMethodsHasBeenSet)

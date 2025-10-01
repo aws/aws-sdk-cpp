@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int DIFFERENTIAL_PRIVACY_HASH = HashingUtils::HashString("DIFFERENTIAL_PRIVACY");
+        static const int ACCESS_BUDGET_HASH = HashingUtils::HashString("ACCESS_BUDGET");
 
 
         PrivacyBudgetType GetPrivacyBudgetTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == DIFFERENTIAL_PRIVACY_HASH)
           {
             return PrivacyBudgetType::DIFFERENTIAL_PRIVACY;
+          }
+          else if (hashCode == ACCESS_BUDGET_HASH)
+          {
+            return PrivacyBudgetType::ACCESS_BUDGET;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case PrivacyBudgetType::DIFFERENTIAL_PRIVACY:
             return "DIFFERENTIAL_PRIVACY";
+          case PrivacyBudgetType::ACCESS_BUDGET:
+            return "ACCESS_BUDGET";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

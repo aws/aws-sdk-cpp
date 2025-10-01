@@ -20,7 +20,7 @@ namespace ChimeSDKMeetings
    * to create Amazon Chime SDK meetings, set the Amazon Web Services Regions for
    * meetings, create and manage users, and send and receive meeting notifications.
    * For more information about the meeting APIs, see <a
-   * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Meetings.html">Amazon
+   * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_Operations_Amazon_Chime_SDK_Meetings.html">Amazon
    * Chime SDK meetings</a>.</p>
    */
   class AWS_CHIMESDKMEETINGS_API ChimeSDKMeetingsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMeetingsClient>
@@ -84,9 +84,9 @@ namespace ChimeSDKMeetings
         /**
          * <p>Creates up to 100 attendees for an active Amazon Chime SDK meeting. For more
          * information about the Amazon Chime SDK, see <a
-         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+         * the Amazon Chime SDK</a> in the <i>Amazon Chime Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/BatchCreateAttendee">AWS
          * API Reference</a></p>
          */
@@ -132,16 +132,22 @@ namespace ChimeSDKMeetings
          * <code>video</code> capability to receive, the response will contain an HTTP 400
          * Bad Request status code. However, you can set your <code>video</code> capability
          * to receive and you set your <code>content</code> capability to not receive.</p>
-         * </li> <li> <p>When you change an <code>audio</code> capability from
-         * <code>None</code> or <code>Receive</code> to <code>Send</code> or
-         * <code>SendReceive</code> , and if the attendee left their microphone unmuted,
-         * audio will flow from the attendee to the other meeting participants.</p> </li>
-         * <li> <p>When you change a <code>video</code> or <code>content</code> capability
-         * from <code>None</code> or <code>Receive</code> to <code>Send</code> or
-         * <code>SendReceive</code> , and if the attendee turned on their video or content
-         * streams, remote attendees can receive those streams, but only after media
-         * renegotiation between the client and the Amazon Chime back-end server.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * </li> <li> <p>If meeting features is defined as
+         * <code>Video:MaxResolution:None</code> but <code>Content:MaxResolution</code> is
+         * defined as something other than <code>None</code> and attendee capabilities are
+         * not defined in the API request, then the default attendee video capability is
+         * set to <code>Receive</code> and attendee content capability is set to
+         * <code>SendReceive</code>. This is because content <code>SendReceive</code>
+         * requires video to be at least <code>Receive</code>.</p> </li> <li> <p>When you
+         * change an <code>audio</code> capability from <code>None</code> or
+         * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
+         * the attendee left their microphone unmuted, audio will flow from the attendee to
+         * the other meeting participants.</p> </li> <li> <p>When you change a
+         * <code>video</code> or <code>content</code> capability from <code>None</code> or
+         * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
+         * the attendee turned on their video or content streams, remote attendees can
+         * receive those streams, but only after media renegotiation between the client and
+         * the Amazon Chime back-end server.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/BatchUpdateAttendeeCapabilitiesExcept">AWS
          * API Reference</a></p>
          */
@@ -168,9 +174,9 @@ namespace ChimeSDKMeetings
         /**
          * <p> Creates a new attendee for an active Amazon Chime SDK meeting. For more
          * information about the Amazon Chime SDK, see <a
-         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+         * the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/CreateAttendee">AWS
          * API Reference</a></p>
          */
@@ -197,12 +203,18 @@ namespace ChimeSDKMeetings
         /**
          * <p>Creates a new Amazon Chime SDK meeting in the specified media Region with no
          * initial attendees. For more information about specifying media Regions, see <a
-         * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
-         * Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more
-         * information about the Amazon Chime SDK, see <a
-         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/sdk-available-regions">Available
+         * Regions</a> and <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/chime-sdk-meetings-regions.html">Using
+         * meeting Regions</a>, both in the <i>Amazon Chime SDK Developer Guide</i>. For
+         * more information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+         * the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>. </p>
+         *  <p>If you use this API in conjuction with the and APIs, and you don't
+         * specify the <code>MeetingFeatures.Content.MaxResolution</code> or
+         * <code>MeetingFeatures.Video.MaxResolution</code> parameters, the following
+         * defaults are used:</p> <ul> <li> <p>Content.MaxResolution: FHD</p> </li> <li>
+         * <p>Video.MaxResolution: HD</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/CreateMeeting">AWS
          * API Reference</a></p>
          */
@@ -229,12 +241,18 @@ namespace ChimeSDKMeetings
         /**
          * <p> Creates a new Amazon Chime SDK meeting in the specified media Region, with
          * attendees. For more information about specifying media Regions, see <a
-         * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
-         * Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more
-         * information about the Amazon Chime SDK, see <a
-         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/sdk-available-regions">Available
+         * Regions</a> and <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/chime-sdk-meetings-regions.html">Using
+         * meeting Regions</a>, both in the <i>Amazon Chime SDK Developer Guide</i>. For
+         * more information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+         * the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>. </p>
+         *  <p>If you use this API in conjuction with the and APIs, and you don't
+         * specify the <code>MeetingFeatures.Content.MaxResolution</code> or
+         * <code>MeetingFeatures.Video.MaxResolution</code> parameters, the following
+         * defaults are used:</p> <ul> <li> <p>Content.MaxResolution: FHD</p> </li> <li>
+         * <p>Video.MaxResolution: HD</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/CreateMeetingWithAttendees">AWS
          * API Reference</a></p>
          */
@@ -263,9 +281,9 @@ namespace ChimeSDKMeetings
          * their <code>JoinToken</code>. Attendees are automatically deleted when a Amazon
          * Chime SDK meeting is deleted. For more information about the Amazon Chime SDK,
          * see <a
-         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+         * the Amazon Chime SDK</a> in the <i>Amazon Chime Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/DeleteAttendee">AWS
          * API Reference</a></p>
          */
@@ -293,9 +311,9 @@ namespace ChimeSDKMeetings
          * <p>Deletes the specified Amazon Chime SDK meeting. The operation deletes all
          * attendees, disconnects all clients, and prevents new clients from joining the
          * meeting. For more information about the Amazon Chime SDK, see <a
-         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+         * the Amazon Chime SDK</a> in the <i>Amazon Chime Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/DeleteMeeting">AWS
          * API Reference</a></p>
          */
@@ -322,9 +340,9 @@ namespace ChimeSDKMeetings
         /**
          * <p> Gets the Amazon Chime SDK attendee details for a specified meeting ID and
          * attendee ID. For more information about the Amazon Chime SDK, see <a
-         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+         * the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/GetAttendee">AWS
          * API Reference</a></p>
          */
@@ -351,9 +369,9 @@ namespace ChimeSDKMeetings
         /**
          * <p>Gets the Amazon Chime SDK meeting details for the specified meeting ID. For
          * more information about the Amazon Chime SDK, see <a
-         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+         * the Amazon Chime SDK</a> in the <i>Amazon Chime Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/GetMeeting">AWS
          * API Reference</a></p>
          */
@@ -380,9 +398,9 @@ namespace ChimeSDKMeetings
         /**
          * <p> Lists the attendees for the specified Amazon Chime SDK meeting. For more
          * information about the Amazon Chime SDK, see <a
-         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+         * the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ListAttendees">AWS
          * API Reference</a></p>
          */
@@ -607,16 +625,22 @@ namespace ChimeSDKMeetings
          * <code>video</code> capability to receive, the response will contain an HTTP 400
          * Bad Request status code. However, you can set your <code>video</code> capability
          * to receive and you set your <code>content</code> capability to not receive.</p>
-         * </li> <li> <p>When you change an <code>audio</code> capability from
-         * <code>None</code> or <code>Receive</code> to <code>Send</code> or
-         * <code>SendReceive</code> , and if the attendee left their microphone unmuted,
-         * audio will flow from the attendee to the other meeting participants.</p> </li>
-         * <li> <p>When you change a <code>video</code> or <code>content</code> capability
-         * from <code>None</code> or <code>Receive</code> to <code>Send</code> or
-         * <code>SendReceive</code> , and if the attendee turned on their video or content
-         * streams, remote attendees can receive those streams, but only after media
-         * renegotiation between the client and the Amazon Chime back-end server.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * </li> <li> <p>If meeting features is defined as
+         * <code>Video:MaxResolution:None</code> but <code>Content:MaxResolution</code> is
+         * defined as something other than <code>None</code> and attendee capabilities are
+         * not defined in the API request, then the default attendee video capability is
+         * set to <code>Receive</code> and attendee content capability is set to
+         * <code>SendReceive</code>. This is because content <code>SendReceive</code>
+         * requires video to be at least <code>Receive</code>.</p> </li> <li> <p>When you
+         * change an <code>audio</code> capability from <code>None</code> or
+         * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
+         * the attendee left their microphone unmuted, audio will flow from the attendee to
+         * the other meeting participants.</p> </li> <li> <p>When you change a
+         * <code>video</code> or <code>content</code> capability from <code>None</code> or
+         * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
+         * the attendee turned on their video or content streams, remote attendees can
+         * receive those streams, but only after media renegotiation between the client and
+         * the Amazon Chime back-end server.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UpdateAttendeeCapabilities">AWS
          * API Reference</a></p>
          */

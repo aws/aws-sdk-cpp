@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/cleanrooms/model/DifferentialPrivacyPrivacyBudget.h>
+#include <aws/cleanrooms/model/AccessBudget.h>
 #include <utility>
 
 namespace Aws
@@ -50,10 +51,25 @@ namespace Model
     template<typename DifferentialPrivacyT = DifferentialPrivacyPrivacyBudget>
     PrivacyBudget& WithDifferentialPrivacy(DifferentialPrivacyT&& value) { SetDifferentialPrivacy(std::forward<DifferentialPrivacyT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Access budget information associated with this privacy budget.</p>
+     */
+    inline const AccessBudget& GetAccessBudget() const { return m_accessBudget; }
+    inline bool AccessBudgetHasBeenSet() const { return m_accessBudgetHasBeenSet; }
+    template<typename AccessBudgetT = AccessBudget>
+    void SetAccessBudget(AccessBudgetT&& value) { m_accessBudgetHasBeenSet = true; m_accessBudget = std::forward<AccessBudgetT>(value); }
+    template<typename AccessBudgetT = AccessBudget>
+    PrivacyBudget& WithAccessBudget(AccessBudgetT&& value) { SetAccessBudget(std::forward<AccessBudgetT>(value)); return *this;}
+    ///@}
   private:
 
     DifferentialPrivacyPrivacyBudget m_differentialPrivacy;
     bool m_differentialPrivacyHasBeenSet = false;
+
+    AccessBudget m_accessBudget;
+    bool m_accessBudgetHasBeenSet = false;
   };
 
 } // namespace Model

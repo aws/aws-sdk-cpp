@@ -154,8 +154,16 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing
      * an Amazon ECS service across Availability Zones</a> in the <i> <i>Amazon Elastic
-     * Container Service Developer Guide</i> </i>.</p> <p>This parameter doesn't
-     * trigger a new service deployment.</p>
+     * Container Service Developer Guide</i> </i>.</p> <p>The default behavior of
+     * <code>AvailabilityZoneRebalancing</code> differs between create and update
+     * requests:</p> <ul> <li> <p>For create service requests, when no value is
+     * specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults the
+     * value to <code>ENABLED</code>.</p> </li> <li> <p>For update service requests,
+     * when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon
+     * ECS defaults to the existing service’s <code>AvailabilityZoneRebalancing</code>
+     * value. If the service never had an <code>AvailabilityZoneRebalancing</code>
+     * value set, Amazon ECS treats this as <code>DISABLED</code>.</p> </li> </ul>
+     * <p>This parameter doesn't trigger a new service deployment.</p>
      */
     inline AvailabilityZoneRebalancing GetAvailabilityZoneRebalancing() const { return m_availabilityZoneRebalancing; }
     inline bool AvailabilityZoneRebalancingHasBeenSet() const { return m_availabilityZoneRebalancingHasBeenSet; }
@@ -262,7 +270,9 @@ namespace Model
      * (about 69 years). During that time, the Amazon ECS service scheduler ignores
      * health check status. This grace period can prevent the service scheduler from
      * marking tasks as unhealthy and stopping them before they have time to come
-     * up.</p> <p>This parameter doesn't trigger a new service deployment.</p>
+     * up.</p> <p>If your service has more running tasks than desired, unhealthy tasks
+     * in the grace period might be stopped to reach the desired count.</p> <p>This
+     * parameter doesn't trigger a new service deployment.</p>
      */
     inline int GetHealthCheckGracePeriodSeconds() const { return m_healthCheckGracePeriodSeconds; }
     inline bool HealthCheckGracePeriodSecondsHasBeenSet() const { return m_healthCheckGracePeriodSecondsHasBeenSet; }

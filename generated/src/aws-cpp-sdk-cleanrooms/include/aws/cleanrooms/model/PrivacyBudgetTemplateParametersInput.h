@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/cleanrooms/model/DifferentialPrivacyTemplateParametersInput.h>
+#include <aws/cleanrooms/model/AccessBudgetsPrivacyTemplateParametersInput.h>
 #include <utility>
 
 namespace Aws
@@ -49,10 +50,26 @@ namespace Model
     template<typename DifferentialPrivacyT = DifferentialPrivacyTemplateParametersInput>
     PrivacyBudgetTemplateParametersInput& WithDifferentialPrivacy(DifferentialPrivacyT&& value) { SetDifferentialPrivacy(std::forward<DifferentialPrivacyT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Access budget configuration for the privacy budget template input, enabling
+     * integration with access budget functionality.</p>
+     */
+    inline const AccessBudgetsPrivacyTemplateParametersInput& GetAccessBudget() const { return m_accessBudget; }
+    inline bool AccessBudgetHasBeenSet() const { return m_accessBudgetHasBeenSet; }
+    template<typename AccessBudgetT = AccessBudgetsPrivacyTemplateParametersInput>
+    void SetAccessBudget(AccessBudgetT&& value) { m_accessBudgetHasBeenSet = true; m_accessBudget = std::forward<AccessBudgetT>(value); }
+    template<typename AccessBudgetT = AccessBudgetsPrivacyTemplateParametersInput>
+    PrivacyBudgetTemplateParametersInput& WithAccessBudget(AccessBudgetT&& value) { SetAccessBudget(std::forward<AccessBudgetT>(value)); return *this;}
+    ///@}
   private:
 
     DifferentialPrivacyTemplateParametersInput m_differentialPrivacy;
     bool m_differentialPrivacyHasBeenSet = false;
+
+    AccessBudgetsPrivacyTemplateParametersInput m_accessBudget;
+    bool m_accessBudgetHasBeenSet = false;
   };
 
 } // namespace Model

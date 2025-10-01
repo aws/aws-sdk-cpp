@@ -115,6 +115,11 @@ Schema& Schema::operator =(JsonView jsonValue)
     }
     m_schemaStatusDetailsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("resourceArn"))
+  {
+    m_resourceArn = jsonValue.GetString("resourceArn");
+    m_resourceArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("schemaTypeProperties"))
   {
     m_schemaTypeProperties = jsonValue.GetObject("schemaTypeProperties");
@@ -229,6 +234,12 @@ JsonValue Schema::Jsonize() const
      schemaStatusDetailsJsonList[schemaStatusDetailsIndex].AsObject(m_schemaStatusDetails[schemaStatusDetailsIndex].Jsonize());
    }
    payload.WithArray("schemaStatusDetails", std::move(schemaStatusDetailsJsonList));
+
+  }
+
+  if(m_resourceArnHasBeenSet)
+  {
+   payload.WithString("resourceArn", m_resourceArn);
 
   }
 

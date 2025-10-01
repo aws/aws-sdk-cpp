@@ -44,16 +44,22 @@ namespace Model
    * <code>video</code> capability to receive, the response will contain an HTTP 400
    * Bad Request status code. However, you can set your <code>video</code> capability
    * to receive and you set your <code>content</code> capability to not receive.</p>
-   * </li> <li> <p>When you change an <code>audio</code> capability from
-   * <code>None</code> or <code>Receive</code> to <code>Send</code> or
-   * <code>SendReceive</code> , and an attendee unmutes their microphone, audio flows
-   * from the attendee to the other meeting participants.</p> </li> <li> <p>When you
-   * change a <code>video</code> or <code>content</code> capability from
-   * <code>None</code> or <code>Receive</code> to <code>Send</code> or
-   * <code>SendReceive</code> , and the attendee turns on their video or content
-   * streams, remote attendees can receive those streams, but only after media
-   * renegotiation between the client and the Amazon Chime back-end server.</p> </li>
-   * </ul><p><h3>See Also:</h3>   <a
+   * </li> <li> <p>If meeting features is defined as
+   * <code>Video:MaxResolution:None</code> but <code>Content:MaxResolution</code> is
+   * defined as something other than <code>None</code> and attendee capabilities are
+   * not defined in the API request, then the default attendee video capability is
+   * set to <code>Receive</code> and attendee content capability is set to
+   * <code>SendReceive</code>. This is because content <code>SendReceive</code>
+   * requires video to be at least <code>Receive</code>.</p> </li> <li> <p>When you
+   * change an <code>audio</code> capability from <code>None</code> or
+   * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and an
+   * attendee unmutes their microphone, audio flows from the attendee to the other
+   * meeting participants.</p> </li> <li> <p>When you change a <code>video</code> or
+   * <code>content</code> capability from <code>None</code> or <code>Receive</code>
+   * to <code>Send</code> or <code>SendReceive</code> , and the attendee turns on
+   * their video or content streams, remote attendees can receive those streams, but
+   * only after media renegotiation between the client and the Amazon Chime back-end
+   * server.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/AttendeeCapabilities">AWS
    * API Reference</a></p>
    */

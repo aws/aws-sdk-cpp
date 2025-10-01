@@ -16,7 +16,8 @@ namespace Model
   enum class PrivacyBudgetType
   {
     NOT_SET,
-    DIFFERENTIAL_PRIVACY
+    DIFFERENTIAL_PRIVACY,
+    ACCESS_BUDGET
   };
 
 namespace PrivacyBudgetTypeMapper

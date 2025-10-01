@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cleanroomsml/model/MLInputChannelStatus.h>
 #include <aws/cleanroomsml/model/StatusDetails.h>
+#include <aws/cleanroomsml/model/PrivacyBudgets.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/cleanroomsml/model/InputChannel.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -131,6 +132,19 @@ namespace Model
     inline long long GetNumberOfRecords() const { return m_numberOfRecords; }
     inline void SetNumberOfRecords(long long value) { m_numberOfRecordsHasBeenSet = true; m_numberOfRecords = value; }
     inline GetMLInputChannelResult& WithNumberOfRecords(long long value) { SetNumberOfRecords(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Returns the privacy budgets that control access to this Clean Rooms ML input
+     * channel. Use these budgets to monitor and limit resource consumption over
+     * specified time periods.</p>
+     */
+    inline const PrivacyBudgets& GetPrivacyBudgets() const { return m_privacyBudgets; }
+    template<typename PrivacyBudgetsT = PrivacyBudgets>
+    void SetPrivacyBudgets(PrivacyBudgetsT&& value) { m_privacyBudgetsHasBeenSet = true; m_privacyBudgets = std::forward<PrivacyBudgetsT>(value); }
+    template<typename PrivacyBudgetsT = PrivacyBudgets>
+    GetMLInputChannelResult& WithPrivacyBudgets(PrivacyBudgetsT&& value) { SetPrivacyBudgets(std::forward<PrivacyBudgetsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -287,6 +301,9 @@ namespace Model
 
     long long m_numberOfRecords{0};
     bool m_numberOfRecordsHasBeenSet = false;
+
+    PrivacyBudgets m_privacyBudgets;
+    bool m_privacyBudgetsHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;

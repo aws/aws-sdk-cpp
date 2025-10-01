@@ -44,6 +44,13 @@ void ListPrivacyBudgetsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
+    if(m_accessBudgetResourceArnHasBeenSet)
+    {
+      ss << m_accessBudgetResourceArn;
+      uri.AddQueryStringParameter("accessBudgetResourceArn", ss.str());
+      ss.str("");
+    }
+
 }
 
 

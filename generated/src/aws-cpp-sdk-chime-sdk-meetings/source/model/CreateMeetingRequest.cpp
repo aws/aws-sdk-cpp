@@ -80,6 +80,11 @@ Aws::String CreateMeetingRequest::SerializePayload() const
 
   }
 
+  if(m_mediaPlacementNetworkTypeHasBeenSet)
+  {
+   payload.WithString("MediaPlacementNetworkType", MediaPlacementNetworkTypeMapper::GetNameForMediaPlacementNetworkType(m_mediaPlacementNetworkType));
+  }
+
   return payload.View().WriteReadable();
 }
 

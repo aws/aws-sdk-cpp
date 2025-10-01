@@ -8,6 +8,7 @@
 #include <aws/pcs/PCSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/pcs/model/QueueSlurmConfigurationRequest.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/pcs/model/ComputeNodeGroupConfiguration.h>
 #include <utility>
@@ -79,6 +80,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Additional options related to the Slurm scheduler.</p>
+     */
+    inline const QueueSlurmConfigurationRequest& GetSlurmConfiguration() const { return m_slurmConfiguration; }
+    inline bool SlurmConfigurationHasBeenSet() const { return m_slurmConfigurationHasBeenSet; }
+    template<typename SlurmConfigurationT = QueueSlurmConfigurationRequest>
+    void SetSlurmConfiguration(SlurmConfigurationT&& value) { m_slurmConfigurationHasBeenSet = true; m_slurmConfiguration = std::forward<SlurmConfigurationT>(value); }
+    template<typename SlurmConfigurationT = QueueSlurmConfigurationRequest>
+    CreateQueueRequest& WithSlurmConfiguration(SlurmConfigurationT&& value) { SetSlurmConfiguration(std::forward<SlurmConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. Idempotency ensures that an API request completes
      * only once. With an idempotent request, if the original request completes
@@ -121,6 +134,9 @@ namespace Model
 
     Aws::Vector<ComputeNodeGroupConfiguration> m_computeNodeGroupConfigurations;
     bool m_computeNodeGroupConfigurationsHasBeenSet = false;
+
+    QueueSlurmConfigurationRequest m_slurmConfiguration;
+    bool m_slurmConfigurationHasBeenSet = false;
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;

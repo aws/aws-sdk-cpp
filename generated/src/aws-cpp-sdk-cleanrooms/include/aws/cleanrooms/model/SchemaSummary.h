@@ -156,6 +156,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) of the schema summary resource.</p>
+     */
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    SchemaSummary& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p> The selected analysis methods for the schema.</p>
      */
     inline const Aws::Vector<SelectedAnalysisMethod>& GetSelectedAnalysisMethods() const { return m_selectedAnalysisMethods; }
@@ -194,6 +206,9 @@ namespace Model
 
     AnalysisMethod m_analysisMethod{AnalysisMethod::NOT_SET};
     bool m_analysisMethodHasBeenSet = false;
+
+    Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::Vector<SelectedAnalysisMethod> m_selectedAnalysisMethods;
     bool m_selectedAnalysisMethodsHasBeenSet = false;

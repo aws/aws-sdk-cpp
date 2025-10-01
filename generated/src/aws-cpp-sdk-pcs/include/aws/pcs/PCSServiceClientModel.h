@@ -32,6 +32,7 @@
 #include <aws/pcs/model/ListQueuesResult.h>
 #include <aws/pcs/model/ListTagsForResourceResult.h>
 #include <aws/pcs/model/RegisterComputeNodeGroupInstanceResult.h>
+#include <aws/pcs/model/UpdateClusterResult.h>
 #include <aws/pcs/model/UpdateComputeNodeGroupResult.h>
 #include <aws/pcs/model/UpdateQueueResult.h>
 #include <aws/pcs/model/ListClustersRequest.h>
@@ -92,6 +93,7 @@ namespace Aws
       class RegisterComputeNodeGroupInstanceRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
+      class UpdateClusterRequest;
       class UpdateComputeNodeGroupRequest;
       class UpdateQueueRequest;
       /* End of service model forward declarations required in PCSClient header */
@@ -113,6 +115,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<RegisterComputeNodeGroupInstanceResult, PCSError> RegisterComputeNodeGroupInstanceOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, PCSError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, PCSError> UntagResourceOutcome;
+      typedef Aws::Utils::Outcome<UpdateClusterResult, PCSError> UpdateClusterOutcome;
       typedef Aws::Utils::Outcome<UpdateComputeNodeGroupResult, PCSError> UpdateComputeNodeGroupOutcome;
       typedef Aws::Utils::Outcome<UpdateQueueResult, PCSError> UpdateQueueOutcome;
       /* End of service model Outcome class definitions */
@@ -134,6 +137,7 @@ namespace Aws
       typedef std::future<RegisterComputeNodeGroupInstanceOutcome> RegisterComputeNodeGroupInstanceOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+      typedef std::future<UpdateClusterOutcome> UpdateClusterOutcomeCallable;
       typedef std::future<UpdateComputeNodeGroupOutcome> UpdateComputeNodeGroupOutcomeCallable;
       typedef std::future<UpdateQueueOutcome> UpdateQueueOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -158,6 +162,7 @@ namespace Aws
     typedef std::function<void(const PCSClient*, const Model::RegisterComputeNodeGroupInstanceRequest&, const Model::RegisterComputeNodeGroupInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterComputeNodeGroupInstanceResponseReceivedHandler;
     typedef std::function<void(const PCSClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const PCSClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const PCSClient*, const Model::UpdateClusterRequest&, const Model::UpdateClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterResponseReceivedHandler;
     typedef std::function<void(const PCSClient*, const Model::UpdateComputeNodeGroupRequest&, const Model::UpdateComputeNodeGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateComputeNodeGroupResponseReceivedHandler;
     typedef std::function<void(const PCSClient*, const Model::UpdateQueueRequest&, const Model::UpdateQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQueueResponseReceivedHandler;
     /* End of service model async handlers definitions */
