@@ -497,6 +497,8 @@ AWSError<CoreErrors> RpcV2ErrorMarshaller::Marshall(const Aws::Http::HttpRespons
     error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", "Failed to parse CBOR error payload", isRetryable);
   }
 
+  MarshallError(error, httpResponse);
+
   error.SetRequestId(httpResponse.HasHeader(REQUEST_ID_HEADER) ? httpResponse.GetHeader(REQUEST_ID_HEADER) : "");
   return error;
 }
