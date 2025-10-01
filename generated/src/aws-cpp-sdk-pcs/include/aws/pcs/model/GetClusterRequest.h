@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name or ID of the cluster of the queue.</p>
+     * <p>The name or ID of the cluster.</p>
      */
     inline const Aws::String& GetClusterIdentifier() const { return m_clusterIdentifier; }
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }

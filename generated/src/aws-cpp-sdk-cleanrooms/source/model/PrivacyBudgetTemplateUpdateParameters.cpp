@@ -30,6 +30,11 @@ PrivacyBudgetTemplateUpdateParameters& PrivacyBudgetTemplateUpdateParameters::op
     m_differentialPrivacy = jsonValue.GetObject("differentialPrivacy");
     m_differentialPrivacyHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("accessBudget"))
+  {
+    m_accessBudget = jsonValue.GetObject("accessBudget");
+    m_accessBudgetHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +45,12 @@ JsonValue PrivacyBudgetTemplateUpdateParameters::Jsonize() const
   if(m_differentialPrivacyHasBeenSet)
   {
    payload.WithObject("differentialPrivacy", m_differentialPrivacy.Jsonize());
+
+  }
+
+  if(m_accessBudgetHasBeenSet)
+  {
+   payload.WithObject("accessBudget", m_accessBudget.Jsonize());
 
   }
 

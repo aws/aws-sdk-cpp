@@ -24,8 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>Additional settings that directly map to Slurm settings.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Additional settings that directly map to Slurm settings.</p> 
+   * <p>PCS supports a subset of Slurm settings. For more information, see <a
+   * href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-custom-settings.html">Configuring
+   * custom Slurm settings in PCS</a> in the <i>PCS User Guide</i>.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/SlurmCustomSetting">AWS
    * API Reference</a></p>
    */
@@ -40,25 +43,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>PCS supports configuration of the following Slurm parameters:</p> <ul> <li>
-     * <p>For <b>clusters</b> </p> <ul> <li> <p> <a
-     * href="https://slurm.schedmd.com/slurm.conf.html#OPT_Prolog_1">
-     * <code>Prolog</code> </a> </p> </li> <li> <p> <a
-     * href="https://slurm.schedmd.com/slurm.conf.html#OPT_Epilog_1">
-     * <code>Epilog</code> </a> </p> </li> <li> <p> <a
-     * href="https://slurm.schedmd.com/slurm.conf.html#OPT_SelectTypeParameters">
-     * <code>SelectTypeParameters</code> </a> </p> </li> <li> <p> <a
-     * href="https://slurm.schedmd.com/slurm.conf.html#OPT_AccountingStorageEnforce">
-     * <code>AccountingStorageEnforce</code> </a> </p>  <p>PCS supports a
-     * subset of the options for <code>AccountingStorageEnforce</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-accounting.html">Slurm
-     * accounting in PCS</a> in the <i>PCS User Guide</i>.</p>  </li> </ul>
-     * </li> <li> <p>For <b>compute node groups</b> </p> <ul> <li> <p> <a
-     * href="https://slurm.schedmd.com/slurm.conf.html#OPT_Weight"> <code>Weight</code>
-     * </a> </p> </li> <li> <p> <a
-     * href="https://slurm.schedmd.com/slurm.conf.html#OPT_Weight">
-     * <code>RealMemory</code> </a> </p> </li> </ul> </li> </ul>
+     * <p>PCS supports custom Slurm settings for clusters, compute node groups, and
+     * queues. For more information, see <a
+     * href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-custom-settings.html">Configuring
+     * custom Slurm settings in PCS</a> in the <i>PCS User Guide</i>.</p>
      */
     inline const Aws::String& GetParameterName() const { return m_parameterName; }
     inline bool ParameterNameHasBeenSet() const { return m_parameterNameHasBeenSet; }

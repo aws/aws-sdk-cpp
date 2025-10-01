@@ -540,6 +540,36 @@ namespace PCS
         }
 
         /**
+         * <p>Updates a cluster configuration. You can modify Slurm scheduler settings,
+         * accounting configuration, and security groups for an existing cluster. </p>
+         *  <p>You can only update clusters that are in <code>ACTIVE</code>,
+         * <code>UPDATE_FAILED</code>, or <code>SUSPENDED</code> state. All associated
+         * resources (queues and compute node groups) must be in <code>ACTIVE</code> state
+         * before you can update the cluster.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/UpdateCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateClusterOutcome UpdateCluster(const Model::UpdateClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateClusterRequestT = Model::UpdateClusterRequest>
+        Model::UpdateClusterOutcomeCallable UpdateClusterCallable(const UpdateClusterRequestT& request) const
+        {
+            return SubmitCallable(&PCSClient::UpdateCluster, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateClusterRequestT = Model::UpdateClusterRequest>
+        void UpdateClusterAsync(const UpdateClusterRequestT& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PCSClient::UpdateCluster, request, handler, context);
+        }
+
+        /**
          * <p>Updates a compute node group. You can update many of the fields related to
          * your compute node group including the configurations for networking, compute
          * nodes, and settings specific to your scheduler (such as Slurm).</p><p><h3>See

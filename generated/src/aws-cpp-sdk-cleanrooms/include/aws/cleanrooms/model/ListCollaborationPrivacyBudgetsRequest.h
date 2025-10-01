@@ -84,6 +84,19 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListCollaborationPrivacyBudgetsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Configured Table Association
+     * (ConfiguredTableAssociation) used to filter privacy budgets.</p>
+     */
+    inline const Aws::String& GetAccessBudgetResourceArn() const { return m_accessBudgetResourceArn; }
+    inline bool AccessBudgetResourceArnHasBeenSet() const { return m_accessBudgetResourceArnHasBeenSet; }
+    template<typename AccessBudgetResourceArnT = Aws::String>
+    void SetAccessBudgetResourceArn(AccessBudgetResourceArnT&& value) { m_accessBudgetResourceArnHasBeenSet = true; m_accessBudgetResourceArn = std::forward<AccessBudgetResourceArnT>(value); }
+    template<typename AccessBudgetResourceArnT = Aws::String>
+    ListCollaborationPrivacyBudgetsRequest& WithAccessBudgetResourceArn(AccessBudgetResourceArnT&& value) { SetAccessBudgetResourceArn(std::forward<AccessBudgetResourceArnT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_collaborationIdentifier;
@@ -97,6 +110,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::String m_accessBudgetResourceArn;
+    bool m_accessBudgetResourceArnHasBeenSet = false;
   };
 
 } // namespace Model

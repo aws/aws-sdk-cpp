@@ -65,6 +65,8 @@
 #include <aws/pcs/model/NetworkingRequest.h>
 #include <aws/pcs/model/PurchaseOption.h>
 #include <aws/pcs/model/Queue.h>
+#include <aws/pcs/model/QueueSlurmConfiguration.h>
+#include <aws/pcs/model/QueueSlurmConfigurationRequest.h>
 #include <aws/pcs/model/QueueStatus.h>
 #include <aws/pcs/model/QueueSummary.h>
 #include <aws/pcs/model/RegisterComputeNodeGroupInstanceRequest.h>
@@ -84,11 +86,16 @@
 #include <aws/pcs/model/TagResourceRequest.h>
 #include <aws/pcs/model/ThrottlingException.h>
 #include <aws/pcs/model/UntagResourceRequest.h>
+#include <aws/pcs/model/UpdateAccountingRequest.h>
+#include <aws/pcs/model/UpdateClusterRequest.h>
+#include <aws/pcs/model/UpdateClusterResult.h>
+#include <aws/pcs/model/UpdateClusterSlurmConfigurationRequest.h>
 #include <aws/pcs/model/UpdateComputeNodeGroupRequest.h>
 #include <aws/pcs/model/UpdateComputeNodeGroupResult.h>
 #include <aws/pcs/model/UpdateComputeNodeGroupSlurmConfigurationRequest.h>
 #include <aws/pcs/model/UpdateQueueRequest.h>
 #include <aws/pcs/model/UpdateQueueResult.h>
+#include <aws/pcs/model/UpdateQueueSlurmConfigurationRequest.h>
 #include <aws/pcs/model/ValidationException.h>
 #include <aws/pcs/model/ValidationExceptionField.h>
 #include <aws/pcs/model/ValidationExceptionReason.h>

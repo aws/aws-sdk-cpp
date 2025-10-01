@@ -25,15 +25,15 @@ Accounting::Accounting(JsonView jsonValue)
 
 Accounting& Accounting::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("mode"))
-  {
-    m_mode = AccountingModeMapper::GetAccountingModeForName(jsonValue.GetString("mode"));
-    m_modeHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("defaultPurgeTimeInDays"))
   {
     m_defaultPurgeTimeInDays = jsonValue.GetInteger("defaultPurgeTimeInDays");
     m_defaultPurgeTimeInDaysHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("mode"))
+  {
+    m_mode = AccountingModeMapper::GetAccountingModeForName(jsonValue.GetString("mode"));
+    m_modeHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue Accounting::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_modeHasBeenSet)
-  {
-   payload.WithString("mode", AccountingModeMapper::GetNameForAccountingMode(m_mode));
-  }
-
   if(m_defaultPurgeTimeInDaysHasBeenSet)
   {
    payload.WithInteger("defaultPurgeTimeInDays", m_defaultPurgeTimeInDays);
 
+  }
+
+  if(m_modeHasBeenSet)
+  {
+   payload.WithString("mode", AccountingModeMapper::GetNameForAccountingMode(m_mode));
   }
 
   return payload;

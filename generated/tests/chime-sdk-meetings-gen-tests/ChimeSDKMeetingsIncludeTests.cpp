@@ -50,6 +50,7 @@
 #include <aws/chime-sdk-meetings/model/ListTagsForResourceResult.h>
 #include <aws/chime-sdk-meetings/model/MediaCapabilities.h>
 #include <aws/chime-sdk-meetings/model/MediaPlacement.h>
+#include <aws/chime-sdk-meetings/model/MediaPlacementNetworkType.h>
 #include <aws/chime-sdk-meetings/model/Meeting.h>
 #include <aws/chime-sdk-meetings/model/MeetingFeatureStatus.h>
 #include <aws/chime-sdk-meetings/model/MeetingFeaturesConfiguration.h>

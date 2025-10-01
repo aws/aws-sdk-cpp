@@ -44,6 +44,13 @@ void ListCollaborationPrivacyBudgetsRequest::AddQueryStringParameters(URI& uri) 
       ss.str("");
     }
 
+    if(m_accessBudgetResourceArnHasBeenSet)
+    {
+      ss << m_accessBudgetResourceArn;
+      uri.AddQueryStringParameter("accessBudgetResourceArn", ss.str());
+      ss.str("");
+    }
+
 }
 
 

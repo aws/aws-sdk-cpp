@@ -10,6 +10,7 @@
 #include <aws/chime-sdk-meetings/model/NotificationsConfiguration.h>
 #include <aws/chime-sdk-meetings/model/MeetingFeaturesConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/chime-sdk-meetings/model/MediaPlacementNetworkType.h>
 #include <aws/chime-sdk-meetings/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -194,6 +195,17 @@ namespace Model
     template<typename TagsT = Tag>
     CreateMeetingRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The type of network for the media placement. Either IPv4 only or dual-stack
+     * (IPv4 and IPv6).</p>
+     */
+    inline MediaPlacementNetworkType GetMediaPlacementNetworkType() const { return m_mediaPlacementNetworkType; }
+    inline bool MediaPlacementNetworkTypeHasBeenSet() const { return m_mediaPlacementNetworkTypeHasBeenSet; }
+    inline void SetMediaPlacementNetworkType(MediaPlacementNetworkType value) { m_mediaPlacementNetworkTypeHasBeenSet = true; m_mediaPlacementNetworkType = value; }
+    inline CreateMeetingRequest& WithMediaPlacementNetworkType(MediaPlacementNetworkType value) { SetMediaPlacementNetworkType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
@@ -222,6 +234,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    MediaPlacementNetworkType m_mediaPlacementNetworkType{MediaPlacementNetworkType::NOT_SET};
+    bool m_mediaPlacementNetworkTypeHasBeenSet = false;
   };
 
 } // namespace Model

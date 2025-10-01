@@ -270,7 +270,7 @@ namespace Model
      * <p>Port mappings on Windows use the <code>NetNAT</code> gateway address rather
      * than <code>localhost</code>. There's no loopback for port mappings on Windows,
      * so you can't access a container's mapped port from the host itself. </p> <p>This
-     * parameter maps to <code>PortBindings</code> in the the docker container create
+     * parameter maps to <code>PortBindings</code> in the docker container create
      * command and the <code>--publish</code> option to docker run. If the network mode
      * of a task definition is set to <code>none</code>, then you can't specify port
      * mappings. If the network mode of a task definition is set to <code>host</code>,

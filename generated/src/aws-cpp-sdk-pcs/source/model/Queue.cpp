@@ -69,6 +69,11 @@ Queue& Queue::operator =(JsonView jsonValue)
     }
     m_computeNodeGroupConfigurationsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("slurmConfiguration"))
+  {
+    m_slurmConfiguration = jsonValue.GetObject("slurmConfiguration");
+    m_slurmConfigurationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("errorInfo"))
   {
     Aws::Utils::Array<JsonView> errorInfoJsonList = jsonValue.GetArray("errorInfo");
@@ -132,6 +137,12 @@ JsonValue Queue::Jsonize() const
      computeNodeGroupConfigurationsJsonList[computeNodeGroupConfigurationsIndex].AsObject(m_computeNodeGroupConfigurations[computeNodeGroupConfigurationsIndex].Jsonize());
    }
    payload.WithArray("computeNodeGroupConfigurations", std::move(computeNodeGroupConfigurationsJsonList));
+
+  }
+
+  if(m_slurmConfigurationHasBeenSet)
+  {
+   payload.WithObject("slurmConfiguration", m_slurmConfiguration.Jsonize());
 
   }
 

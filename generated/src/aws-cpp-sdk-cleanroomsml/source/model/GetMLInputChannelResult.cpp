@@ -74,6 +74,11 @@ GetMLInputChannelResult& GetMLInputChannelResult::operator =(const Aws::AmazonWe
     m_numberOfRecords = jsonValue.GetInt64("numberOfRecords");
     m_numberOfRecordsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("privacyBudgets"))
+  {
+    m_privacyBudgets = jsonValue.GetObject("privacyBudgets");
+    m_privacyBudgetsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
