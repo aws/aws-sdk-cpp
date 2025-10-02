@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>A filter for fields in related items of type Custom</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>A filter for fields in <code>Custom</code> type related items. Only one value
+   * can be provided.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CustomFieldsFilter">AWS
    * API Reference</a></p>
    */
@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Excludes items matching the filter</p>
+     * <p>Excludes items matching the filter.</p>
      */
     inline const CustomFieldsFilter& GetNot() const{
       return *m_not;
@@ -68,7 +68,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Matches items that satisfy all of the specified filter conditions</p>
+     * <p>Provides "and all" filtering.</p>
      */
     inline const Aws::Vector<CustomFieldsFilter>& GetAndAll() const { return m_andAll; }
     inline bool AndAllHasBeenSet() const { return m_andAllHasBeenSet; }
@@ -82,7 +82,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Matches items that satisfy any of the specified filter conditions</p>
+     * <p>Provides "or all" filtering.</p>
      */
     inline const Aws::Vector<CustomFieldsFilter>& GetOrAll() const { return m_orAll; }
     inline bool OrAllHasBeenSet() const { return m_orAllHasBeenSet; }

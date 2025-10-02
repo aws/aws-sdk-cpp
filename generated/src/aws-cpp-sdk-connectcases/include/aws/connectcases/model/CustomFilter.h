@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A filter for related items of type Custom</p><p><h3>See Also:</h3>   <a
+   * <p>A filter for related items of type <code>Custom</code>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CustomFilter">AWS
    * API Reference</a></p>
    */
@@ -39,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Filter conditions for custom fields</p>
+     * <p>Filter conditions for custom fields.</p>
      */
     inline const CustomFieldsFilter& GetFields() const { return m_fields; }
     inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }

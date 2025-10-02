@@ -158,11 +158,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The schema that defines the extension.</p> <p>For more information about
-     * extension schemas, see <a
+     * <p>The schema that defines the extension.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
      * type schema</a> in the <i>CloudFormation Command Line Interface (CLI) User
-     * Guide</i>.</p>
+     * Guide</i> and the <a
+     * href="https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/what-is-cloudformation-hooks.html">CloudFormation
+     * Hooks User Guide</a>.</p>
      */
     inline const Aws::String& GetSchema() const { return m_schema; }
     template<typename SchemaT = Aws::String>
@@ -329,11 +330,7 @@ namespace Model
      * <p>A JSON string that represent the current configuration data for the extension
      * in this account and Region.</p> <p>To set the configuration data for an
      * extension, use <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit
-     * configuration data for extensions in your account</a> in the <i>CloudFormation
-     * User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.</p>
      */
     inline const Aws::String& GetConfigurationSchema() const { return m_configurationSchema; }
     template<typename ConfigurationSchemaT = Aws::String>

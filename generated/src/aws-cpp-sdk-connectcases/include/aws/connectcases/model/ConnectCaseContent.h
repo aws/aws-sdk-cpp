@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the content of a Case related item</p><p><h3>See Also:</h3>   <a
+   * <p>Represents the content of a <code>ConnectCase</code> type related
+   * item.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/ConnectCaseContent">AWS
    * API Reference</a></p>
    */
@@ -39,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the related case</p>
+     * <p>A unique identifier of the case.</p>
      */
     inline const Aws::String& GetCaseId() const { return m_caseId; }
     inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }

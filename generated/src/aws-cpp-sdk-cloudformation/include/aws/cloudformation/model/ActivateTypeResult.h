@@ -35,8 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the activated extension, in this account
-     * and Region.</p>
+     * <p>The Amazon Resource Name (ARN) of the activated extension in this account and
+     * Region.</p>
      */
     inline const Aws::String& GetArn() const { return m_arn; }
     template<typename ArnT = Aws::String>

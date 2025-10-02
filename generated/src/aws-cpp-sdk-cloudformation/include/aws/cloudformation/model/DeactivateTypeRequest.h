@@ -39,8 +39,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type name of the extension, in this account and Region. If you specified
-     * a type name alias when enabling the extension, use the type name alias.</p>
+     * <p>The type name of the extension in this account and Region. If you specified a
+     * type name alias when enabling the extension, use the type name alias.</p>
      * <p>Conditional: You must specify either <code>Arn</code>, or
      * <code>TypeName</code> and <code>Type</code>.</p>
      */
@@ -65,7 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) for the extension, in this account and
+     * <p>The Amazon Resource Name (ARN) for the extension in this account and
      * Region.</p> <p>Conditional: You must specify either <code>Arn</code>, or
      * <code>TypeName</code> and <code>Type</code>.</p>
      */

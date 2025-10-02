@@ -491,7 +491,7 @@ namespace CloudFormation
          * <p>Deactivates a public third-party extension, such as a resource or module, or
          * a CloudFormation Hook when you no longer use it.</p> <p>Deactivating an
          * extension deletes the configuration details that are associated with it. To
-         * temporary disable a CloudFormation Hook instead, you can use <a
+         * temporarily disable a CloudFormation Hook instead, you can use <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.</p>
          * <p>Once deactivated, an extension can't be used in any CloudFormation operation.
          * This includes stack update operations where the stack template includes the
@@ -1235,7 +1235,10 @@ namespace CloudFormation
          * registry in your current account and Region.</p> <p>If you specify a
          * <code>VersionId</code>, <code>DescribeType</code> returns information about that
          * specific extension version. Otherwise, it returns information about the default
-         * extension version.</p><p><h3>See Also:</h3>   <a
+         * extension version.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit
+         * configuration data for extensions in your account</a> in the <i>CloudFormation
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeType">AWS
          * API Reference</a></p>
          */
@@ -1748,8 +1751,8 @@ namespace CloudFormation
         /**
          * <p>Returns summaries of invoked Hooks. For more information, see <a
          * href="https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/hooks-view-invocations.html">View
-         * CloudFormation Hooks invocations</a> in the <i>CloudFormation Hooks User
-         * Guide</i>.</p> <p>This operation supports the following parameter
+         * invocation summaries for CloudFormation Hooks</a> in the <i>CloudFormation Hooks
+         * User Guide</i>.</p> <p>This operation supports the following parameter
          * combinations:</p> <ul> <li> <p>No parameters: Returns all Hook invocation
          * summaries.</p> </li> <li> <p> <code>TypeArn</code> only: Returns summaries for a
          * specific Hook.</p> </li> <li> <p> <code>TypeArn</code> and <code>Status</code>:
@@ -2462,19 +2465,27 @@ namespace CloudFormation
         }
 
         /**
-         * <p>Specifies the configuration data for a registered CloudFormation extension,
-         * in the given account and Region.</p> <p>To view the current configuration data
-         * for an extension, refer to the <code>ConfigurationSchema</code> element of <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
-         * For more information, see <a
+         * <p>Specifies the configuration data for a CloudFormation extension, such as a
+         * resource or Hook, in the given account and Region.</p> <p>For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit
          * configuration data for extensions in your account</a> in the <i>CloudFormation
-         * User Guide</i>.</p>  <p>It's strongly recommended that you use
-         * dynamic references to restrict sensitive configuration definitions, such as
-         * third-party credentials. For more details on dynamic references, see <a
+         * User Guide</i>.</p> <p>To view the current configuration data for an extension,
+         * refer to the <code>ConfigurationSchema</code> element of <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.</p>
+         *  <p>It's strongly recommended that you use dynamic references to
+         * restrict sensitive configuration definitions, such as third-party credentials.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/dynamic-references.html">Specify
          * values stored in other services using dynamic references</a> in the
-         * <i>CloudFormation User Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * <i>CloudFormation User Guide</i>.</p>  <p>For more information about
+         * setting the configuration data for resource types, see <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining
+         * the account-level configuration of an extension</a> in the <i>CloudFormation
+         * Command Line Interface (CLI) User Guide</i>. For more information about setting
+         * the configuration data for Hooks, see the <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/what-is-cloudformation-hooks.html">CloudFormation
+         * Hooks User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeConfiguration">AWS
          * API Reference</a></p>
          */

@@ -24,6 +24,7 @@ namespace Aws
         static const int UNSUPPORTED_PROPERTIES_HASH = HashingUtils::HashString("UNSUPPORTED_PROPERTIES");
         static const int MUTUALLY_EXCLUSIVE_TYPES_HASH = HashingUtils::HashString("MUTUALLY_EXCLUSIVE_TYPES");
         static const int EXCLUDED_PROPERTIES_HASH = HashingUtils::HashString("EXCLUDED_PROPERTIES");
+        static const int EXCLUDED_RESOURCES_HASH = HashingUtils::HashString("EXCLUDED_RESOURCES");
 
 
         WarningType GetWarningTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == EXCLUDED_PROPERTIES_HASH)
           {
             return WarningType::EXCLUDED_PROPERTIES;
+          }
+          else if (hashCode == EXCLUDED_RESOURCES_HASH)
+          {
+            return WarningType::EXCLUDED_RESOURCES;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "MUTUALLY_EXCLUSIVE_TYPES";
           case WarningType::EXCLUDED_PROPERTIES:
             return "EXCLUDED_PROPERTIES";
+          case WarningType::EXCLUDED_RESOURCES:
+            return "EXCLUDED_RESOURCES";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

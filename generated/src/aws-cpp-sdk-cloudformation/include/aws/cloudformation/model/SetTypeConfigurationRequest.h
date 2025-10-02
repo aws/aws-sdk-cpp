@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) for the extension, in this account and
+     * <p>The Amazon Resource Name (ARN) for the extension in this account and
      * Region.</p> <p>For public extensions, this will be the ARN assigned when you
      * call the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
@@ -60,14 +60,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration data for the extension, in this account and Region.</p>
-     * <p>The configuration data must be formatted as JSON, and validate against the
-     * schema returned in the <code>ConfigurationSchema</code> response element of <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining
-     * the account-level configuration of an extension</a> in the <i>CloudFormation
-     * Command Line Interface (CLI) User Guide</i>.</p>
+     * <p>The configuration data for the extension in this account and Region.</p>
+     * <p>The configuration data must be formatted as JSON and validate against the
+     * extension's schema returned in the <code>Schema</code> response element of <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.</p>
      */
     inline const Aws::String& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }

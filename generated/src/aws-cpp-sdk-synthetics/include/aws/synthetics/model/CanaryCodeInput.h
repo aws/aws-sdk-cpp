@@ -121,7 +121,9 @@ namespace Model
      * <code>syn-nodejs.puppeteer-3.4</code>, and later runtimes, the handler can be
      * specified as <code> <i>fileName</i>.<i>functionName</i> </code>, or you can
      * specify a folder where canary scripts reside as <code>
-     * <i>folder</i>/<i>fileName</i>.<i>functionName</i> </code>.</p>
+     * <i>folder</i>/<i>fileName</i>.<i>functionName</i> </code>.</p> <p>This field is
+     * required when you don't specify <code>BlueprintTypes</code> and is not allowed
+     * when you specify <code>BlueprintTypes</code>.</p>
      */
     inline const Aws::String& GetHandler() const { return m_handler; }
     inline bool HandlerHasBeenSet() const { return m_handlerHasBeenSet; }
@@ -129,6 +131,29 @@ namespace Model
     void SetHandler(HandlerT&& value) { m_handlerHasBeenSet = true; m_handler = std::forward<HandlerT>(value); }
     template<typename HandlerT = Aws::String>
     CanaryCodeInput& WithHandler(HandlerT&& value) { SetHandler(std::forward<HandlerT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> <code>BlueprintTypes</code> is a list of templates that enable simplified
+     * canary creation. You can create canaries for common monitoring scenarios by
+     * providing only a JSON configuration file instead of writing custom scripts. The
+     * only supported value is <code>multi-checks</code>.</p> <p>Multi-checks monitors
+     * HTTP/DNS/SSL/TCP endpoints with built-in authentication schemes (Basic, API Key,
+     * OAuth, SigV4) and assertion capabilities. When you specify
+     * <code>BlueprintTypes</code>, the Handler field cannot be specified since the
+     * blueprint provides a pre-defined entry point.</p> <p>
+     * <code>BlueprintTypes</code> is supported only on canaries for syn-nodejs-3.0
+     * runtime or later.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetBlueprintTypes() const { return m_blueprintTypes; }
+    inline bool BlueprintTypesHasBeenSet() const { return m_blueprintTypesHasBeenSet; }
+    template<typename BlueprintTypesT = Aws::Vector<Aws::String>>
+    void SetBlueprintTypes(BlueprintTypesT&& value) { m_blueprintTypesHasBeenSet = true; m_blueprintTypes = std::forward<BlueprintTypesT>(value); }
+    template<typename BlueprintTypesT = Aws::Vector<Aws::String>>
+    CanaryCodeInput& WithBlueprintTypes(BlueprintTypesT&& value) { SetBlueprintTypes(std::forward<BlueprintTypesT>(value)); return *this;}
+    template<typename BlueprintTypesT = Aws::String>
+    CanaryCodeInput& AddBlueprintTypes(BlueprintTypesT&& value) { m_blueprintTypesHasBeenSet = true; m_blueprintTypes.emplace_back(std::forward<BlueprintTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -162,6 +187,9 @@ namespace Model
 
     Aws::String m_handler;
     bool m_handlerHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_blueprintTypes;
+    bool m_blueprintTypesHasBeenSet = false;
 
     Aws::Vector<Dependency> m_dependencies;
     bool m_dependenciesHasBeenSet = false;
