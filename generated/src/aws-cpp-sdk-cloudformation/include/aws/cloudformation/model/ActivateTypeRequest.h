@@ -95,8 +95,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An alias to assign to the public extension, in this account and Region. If
-     * you specify an alias for the extension, CloudFormation treats the alias as the
+     * <p>An alias to assign to the public extension in this account and Region. If you
+     * specify an alias for the extension, CloudFormation treats the alias as the
      * extension type name within this account and Region. You must use the alias to
      * refer to the extension in your templates, API calls, and CloudFormation
      * console.</p> <p>An extension alias must be unique within a given account and

@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> If the number of available results exceeds this maximum, the response
+     * <p>If the number of available results exceeds this maximum, the response
      * includes a <code>NextToken</code> value that you can use for the
      * <code>NextToken</code> parameter to get the next set of results. By default the
      * <code>ListGeneratedTemplates</code> API action will return at most 50 results in

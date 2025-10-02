@@ -53,6 +53,7 @@
 #include <aws/connectcases/model/ListTagsForResourceRequest.h>
 #include <aws/connectcases/model/ListTemplatesRequest.h>
 #include <aws/connectcases/model/PutCaseEventConfigurationRequest.h>
+#include <aws/connectcases/model/SearchAllRelatedItemsRequest.h>
 #include <aws/connectcases/model/SearchCasesRequest.h>
 #include <aws/connectcases/model/SearchRelatedItemsRequest.h>
 #include <aws/connectcases/model/TagResourceRequest.h>
@@ -1359,6 +1360,40 @@ PutCaseEventConfigurationOutcome ConnectCasesClient::PutCaseEventConfiguration(c
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/case-event-configuration");
       return PutCaseEventConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+SearchAllRelatedItemsOutcome ConnectCasesClient::SearchAllRelatedItems(const SearchAllRelatedItemsRequest& request) const
+{
+  AWS_OPERATION_GUARD(SearchAllRelatedItems);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchAllRelatedItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SearchAllRelatedItems", "Required field: DomainId, is not set");
+    return SearchAllRelatedItemsOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, SearchAllRelatedItems, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, SearchAllRelatedItems, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".SearchAllRelatedItems",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<SearchAllRelatedItemsOutcome>(
+    [&]()-> SearchAllRelatedItemsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchAllRelatedItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/related-items-search");
+      return SearchAllRelatedItemsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

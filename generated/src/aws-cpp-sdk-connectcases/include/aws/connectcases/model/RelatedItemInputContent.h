@@ -93,7 +93,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Input content for a related Connect case</p>
+     * <p>Represents the Amazon Connect case to be created as a related item.</p>
      */
     inline const ConnectCaseInputContent& GetConnectCase() const { return m_connectCase; }
     inline bool ConnectCaseHasBeenSet() const { return m_connectCaseHasBeenSet; }
@@ -105,7 +105,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Input content for a custom related item</p>
+     * <p>Represents the content of a <code>Custom</code> type related item.</p>
      */
     inline const CustomInputContent& GetCustom() const { return m_custom; }
     inline bool CustomHasBeenSet() const { return m_customHasBeenSet; }

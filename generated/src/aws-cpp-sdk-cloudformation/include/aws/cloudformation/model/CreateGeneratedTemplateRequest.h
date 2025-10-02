@@ -42,7 +42,7 @@ namespace Model
     ///@{
     /**
      * <p>An optional list of resources to be included in the generated template.</p>
-     * <p> If no resources are specified,the template will be created without any
+     * <p>If no resources are specified,the template will be created without any
      * resources. Resources can be added to the template using the
      * <code>UpdateGeneratedTemplate</code> API action.</p>
      */

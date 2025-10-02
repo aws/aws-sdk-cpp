@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input content of a Custom related item</p><p><h3>See
+   * <p>Represents the content of a <code>Custom</code> related item.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CustomInputContent">AWS
    * API Reference</a></p>
@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>List of field values for the custom related item</p>
+     * <p>List of field values for the <code>Custom</code> related item.</p>
      */
     inline const Aws::Vector<FieldValue>& GetFields() const { return m_fields; }
     inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }

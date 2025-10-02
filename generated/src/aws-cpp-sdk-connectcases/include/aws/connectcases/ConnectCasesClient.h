@@ -1034,6 +1034,53 @@ namespace ConnectCases
         }
 
         /**
+         * <p>Searches for related items across all cases within a domain. This is a global
+         * search operation that returns related items from multiple cases, unlike the
+         * case-specific <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_SearchRelatedItems.html">SearchRelatedItems</a>
+         * API.</p> <p> <b>Use cases</b> </p> <p>Following are common uses cases for this
+         * API:</p> <ul> <li> <p>Find cases with similar issues across the domain. For
+         * example, search for all cases containing comments about "product defect" to
+         * identify patterns and existing solutions.</p> </li> <li> <p>Locate all cases
+         * associated with specific contacts or orders. For example, find all cases linked
+         * to a contactArn to understand the complete customer journey. </p> </li> <li>
+         * <p>Monitor SLA compliance across cases. For example, search for all cases with
+         * "Active" SLA status to prioritize remediation efforts.</p> </li> </ul> <p>
+         * <b>Important things to know</b> </p> <ul> <li> <p>This API returns case IDs, not
+         * complete case objects. To retrieve full case details, you must make additional
+         * calls to the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetCase.html">GetCase</a>
+         * API for each returned case ID. </p> </li> <li> <p>This API searches across
+         * related items content, not case fields. Use the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_SearchCases.html">SearchCases</a>
+         * API to search within case field values.</p> </li> </ul> <p> <b>Endpoints</b>:
+         * See <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+         * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/SearchAllRelatedItems">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchAllRelatedItemsOutcome SearchAllRelatedItems(const Model::SearchAllRelatedItemsRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchAllRelatedItems that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SearchAllRelatedItemsRequestT = Model::SearchAllRelatedItemsRequest>
+        Model::SearchAllRelatedItemsOutcomeCallable SearchAllRelatedItemsCallable(const SearchAllRelatedItemsRequestT& request) const
+        {
+            return SubmitCallable(&ConnectCasesClient::SearchAllRelatedItems, request);
+        }
+
+        /**
+         * An Async wrapper for SearchAllRelatedItems that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SearchAllRelatedItemsRequestT = Model::SearchAllRelatedItemsRequest>
+        void SearchAllRelatedItemsAsync(const SearchAllRelatedItemsRequestT& request, const SearchAllRelatedItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectCasesClient::SearchAllRelatedItems, request, handler, context);
+        }
+
+        /**
          * <p>Searches for cases within their associated Cases domain. Search results are
          * returned as a paginated list of abridged case documents.</p>  <p>For
          * <code>customer_id</code> you must provide the full customer profile ARN in this

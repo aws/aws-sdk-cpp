@@ -35,9 +35,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) for the configuration data, in this account
-     * and Region.</p> <p>Conditional: You must specify <code>ConfigurationArn</code>,
-     * or <code>Type</code> and <code>TypeName</code>.</p>
+     * <p>The Amazon Resource Name (ARN) for the configuration data in this account and
+     * Region.</p> <p>Conditional: You must specify <code>ConfigurationArn</code>, or
+     * <code>Type</code> and <code>TypeName</code>.</p>
      */
     inline const Aws::String& GetConfigurationArn() const { return m_configurationArn; }
     template<typename ConfigurationArnT = Aws::String>

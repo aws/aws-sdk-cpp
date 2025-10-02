@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A filter for related items of type Case</p><p><h3>See Also:</h3>   <a
+   * <p>A filter for related items of type <code>ConnectCase</code>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/ConnectCaseFilter">AWS
    * API Reference</a></p>
    */
@@ -39,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the case to filter by</p>
+     * <p>A unique identifier of the case.</p>
      */
     inline const Aws::String& GetCaseId() const { return m_caseId; }
     inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }

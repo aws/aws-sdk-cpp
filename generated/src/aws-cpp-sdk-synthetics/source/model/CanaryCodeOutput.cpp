@@ -35,6 +35,15 @@ CanaryCodeOutput& CanaryCodeOutput::operator =(JsonView jsonValue)
     m_handler = jsonValue.GetString("Handler");
     m_handlerHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("BlueprintTypes"))
+  {
+    Aws::Utils::Array<JsonView> blueprintTypesJsonList = jsonValue.GetArray("BlueprintTypes");
+    for(unsigned blueprintTypesIndex = 0; blueprintTypesIndex < blueprintTypesJsonList.GetLength(); ++blueprintTypesIndex)
+    {
+      m_blueprintTypes.push_back(blueprintTypesJsonList[blueprintTypesIndex].AsString());
+    }
+    m_blueprintTypesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Dependencies"))
   {
     Aws::Utils::Array<JsonView> dependenciesJsonList = jsonValue.GetArray("Dependencies");
@@ -60,6 +69,17 @@ JsonValue CanaryCodeOutput::Jsonize() const
   if(m_handlerHasBeenSet)
   {
    payload.WithString("Handler", m_handler);
+
+  }
+
+  if(m_blueprintTypesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> blueprintTypesJsonList(m_blueprintTypes.size());
+   for(unsigned blueprintTypesIndex = 0; blueprintTypesIndex < blueprintTypesJsonList.GetLength(); ++blueprintTypesIndex)
+   {
+     blueprintTypesJsonList[blueprintTypesIndex].AsString(m_blueprintTypes[blueprintTypesIndex]);
+   }
+   payload.WithArray("BlueprintTypes", std::move(blueprintTypesJsonList));
 
   }
 

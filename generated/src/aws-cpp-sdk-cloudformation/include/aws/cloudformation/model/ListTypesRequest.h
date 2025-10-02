@@ -50,8 +50,8 @@ namespace Model
      * account and Region.</p> </li> <li> <p>Public extensions that you have activated
      * in this account and Region.</p> </li> </ul> </li> <li> <p> <code>PUBLIC</code>:
      * Extensions that are publicly visible and available to be activated within any
-     * Amazon Web Services account. This includes extensions from Amazon Web Services,
-     * in addition to third-party publishers.</p> </li> </ul> <p>The default is
+     * Amazon Web Services account. This includes extensions from Amazon Web Services
+     * and third-party publishers.</p> </li> </ul> <p>The default is
      * <code>PRIVATE</code>.</p>
      */
     inline Visibility GetVisibility() const { return m_visibility; }

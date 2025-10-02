@@ -50,6 +50,7 @@
 #include <aws/connectcases/model/ListTagsForResourceResult.h>
 #include <aws/connectcases/model/ListTemplatesResult.h>
 #include <aws/connectcases/model/PutCaseEventConfigurationResult.h>
+#include <aws/connectcases/model/SearchAllRelatedItemsResult.h>
 #include <aws/connectcases/model/SearchCasesResult.h>
 #include <aws/connectcases/model/SearchRelatedItemsResult.h>
 #include <aws/connectcases/model/UpdateCaseResult.h>
@@ -131,6 +132,7 @@ namespace Aws
       class ListTagsForResourceRequest;
       class ListTemplatesRequest;
       class PutCaseEventConfigurationRequest;
+      class SearchAllRelatedItemsRequest;
       class SearchCasesRequest;
       class SearchRelatedItemsRequest;
       class TagResourceRequest;
@@ -175,6 +177,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, ConnectCasesError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListTemplatesResult, ConnectCasesError> ListTemplatesOutcome;
       typedef Aws::Utils::Outcome<PutCaseEventConfigurationResult, ConnectCasesError> PutCaseEventConfigurationOutcome;
+      typedef Aws::Utils::Outcome<SearchAllRelatedItemsResult, ConnectCasesError> SearchAllRelatedItemsOutcome;
       typedef Aws::Utils::Outcome<SearchCasesResult, ConnectCasesError> SearchCasesOutcome;
       typedef Aws::Utils::Outcome<SearchRelatedItemsResult, ConnectCasesError> SearchRelatedItemsOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCasesError> TagResourceOutcome;
@@ -219,6 +222,7 @@ namespace Aws
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListTemplatesOutcome> ListTemplatesOutcomeCallable;
       typedef std::future<PutCaseEventConfigurationOutcome> PutCaseEventConfigurationOutcomeCallable;
+      typedef std::future<SearchAllRelatedItemsOutcome> SearchAllRelatedItemsOutcomeCallable;
       typedef std::future<SearchCasesOutcome> SearchCasesOutcomeCallable;
       typedef std::future<SearchRelatedItemsOutcome> SearchRelatedItemsOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -266,6 +270,7 @@ namespace Aws
     typedef std::function<void(const ConnectCasesClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::ListTemplatesRequest&, const Model::ListTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTemplatesResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::PutCaseEventConfigurationRequest&, const Model::PutCaseEventConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutCaseEventConfigurationResponseReceivedHandler;
+    typedef std::function<void(const ConnectCasesClient*, const Model::SearchAllRelatedItemsRequest&, const Model::SearchAllRelatedItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchAllRelatedItemsResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::SearchCasesRequest&, const Model::SearchCasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchCasesResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::SearchRelatedItemsRequest&, const Model::SearchRelatedItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchRelatedItemsResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;

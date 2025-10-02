@@ -145,6 +145,11 @@
 #include <aws/connectcases/model/RequiredField.h>
 #include <aws/connectcases/model/ResourceNotFoundException.h>
 #include <aws/connectcases/model/RuleType.h>
+#include <aws/connectcases/model/SearchAllRelatedItemsRequest.h>
+#include <aws/connectcases/model/SearchAllRelatedItemsResponseItem.h>
+#include <aws/connectcases/model/SearchAllRelatedItemsResult.h>
+#include <aws/connectcases/model/SearchAllRelatedItemsSort.h>
+#include <aws/connectcases/model/SearchAllRelatedItemsSortProperty.h>
 #include <aws/connectcases/model/SearchCasesRequest.h>
 #include <aws/connectcases/model/SearchCasesResponseItem.h>
 #include <aws/connectcases/model/SearchCasesResult.h>
