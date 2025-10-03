@@ -25,6 +25,10 @@ namespace Aws
         static const int QUERY_REFORMULATION_HASH = HashingUtils::HashString("QUERY_REFORMULATION");
         static const int SELF_SERVICE_PRE_PROCESSING_HASH = HashingUtils::HashString("SELF_SERVICE_PRE_PROCESSING");
         static const int SELF_SERVICE_ANSWER_GENERATION_HASH = HashingUtils::HashString("SELF_SERVICE_ANSWER_GENERATION");
+        static const int EMAIL_RESPONSE_HASH = HashingUtils::HashString("EMAIL_RESPONSE");
+        static const int EMAIL_OVERVIEW_HASH = HashingUtils::HashString("EMAIL_OVERVIEW");
+        static const int EMAIL_GENERATIVE_ANSWER_HASH = HashingUtils::HashString("EMAIL_GENERATIVE_ANSWER");
+        static const int EMAIL_QUERY_REFORMULATION_HASH = HashingUtils::HashString("EMAIL_QUERY_REFORMULATION");
 
 
         AIPromptType GetAIPromptTypeForName(const Aws::String& name)
@@ -49,6 +53,22 @@ namespace Aws
           else if (hashCode == SELF_SERVICE_ANSWER_GENERATION_HASH)
           {
             return AIPromptType::SELF_SERVICE_ANSWER_GENERATION;
+          }
+          else if (hashCode == EMAIL_RESPONSE_HASH)
+          {
+            return AIPromptType::EMAIL_RESPONSE;
+          }
+          else if (hashCode == EMAIL_OVERVIEW_HASH)
+          {
+            return AIPromptType::EMAIL_OVERVIEW;
+          }
+          else if (hashCode == EMAIL_GENERATIVE_ANSWER_HASH)
+          {
+            return AIPromptType::EMAIL_GENERATIVE_ANSWER;
+          }
+          else if (hashCode == EMAIL_QUERY_REFORMULATION_HASH)
+          {
+            return AIPromptType::EMAIL_QUERY_REFORMULATION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +96,14 @@ namespace Aws
             return "SELF_SERVICE_PRE_PROCESSING";
           case AIPromptType::SELF_SERVICE_ANSWER_GENERATION:
             return "SELF_SERVICE_ANSWER_GENERATION";
+          case AIPromptType::EMAIL_RESPONSE:
+            return "EMAIL_RESPONSE";
+          case AIPromptType::EMAIL_OVERVIEW:
+            return "EMAIL_OVERVIEW";
+          case AIPromptType::EMAIL_GENERATIVE_ANSWER:
+            return "EMAIL_GENERATIVE_ANSWER";
+          case AIPromptType::EMAIL_QUERY_REFORMULATION:
+            return "EMAIL_QUERY_REFORMULATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * Settings specific to the container type of the file.
+     * Container for this output. Can be auto-detected from extension field.
      */
     inline const ArchiveContainerSettings& GetContainerSettings() const { return m_containerSettings; }
     inline bool ContainerSettingsHasBeenSet() const { return m_containerSettingsHasBeenSet; }

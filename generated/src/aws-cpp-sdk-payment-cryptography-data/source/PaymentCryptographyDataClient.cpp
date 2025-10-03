@@ -28,6 +28,7 @@
 #include <aws/payment-cryptography-data/model/GenerateMacEmvPinChangeRequest.h>
 #include <aws/payment-cryptography-data/model/GeneratePinDataRequest.h>
 #include <aws/payment-cryptography-data/model/ReEncryptDataRequest.h>
+#include <aws/payment-cryptography-data/model/TranslateKeyMaterialRequest.h>
 #include <aws/payment-cryptography-data/model/TranslatePinDataRequest.h>
 #include <aws/payment-cryptography-data/model/VerifyAuthRequestCryptogramRequest.h>
 #include <aws/payment-cryptography-data/model/VerifyCardValidationDataRequest.h>
@@ -380,6 +381,33 @@ ReEncryptDataOutcome PaymentCryptographyDataClient::ReEncryptData(const ReEncryp
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIncomingKeyIdentifier());
       endpointResolutionOutcome.GetResult().AddPathSegments("/reencrypt");
       return ReEncryptDataOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+TranslateKeyMaterialOutcome PaymentCryptographyDataClient::TranslateKeyMaterial(const TranslateKeyMaterialRequest& request) const
+{
+  AWS_OPERATION_GUARD(TranslateKeyMaterial);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TranslateKeyMaterial, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, TranslateKeyMaterial, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, TranslateKeyMaterial, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".TranslateKeyMaterial",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<TranslateKeyMaterialOutcome>(
+    [&]()-> TranslateKeyMaterialOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TranslateKeyMaterial, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/keymaterial/translate");
+      return TranslateKeyMaterialOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

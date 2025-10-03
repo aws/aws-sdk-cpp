@@ -109,6 +109,15 @@ Collaboration& Collaboration::operator =(JsonView jsonValue)
     }
     m_autoApprovedChangeTypesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("allowedResultRegions"))
+  {
+    Aws::Utils::Array<JsonView> allowedResultRegionsJsonList = jsonValue.GetArray("allowedResultRegions");
+    for(unsigned allowedResultRegionsIndex = 0; allowedResultRegionsIndex < allowedResultRegionsJsonList.GetLength(); ++allowedResultRegionsIndex)
+    {
+      m_allowedResultRegions.push_back(SupportedS3RegionMapper::GetSupportedS3RegionForName(allowedResultRegionsJsonList[allowedResultRegionsIndex].AsString()));
+    }
+    m_allowedResultRegionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -208,6 +217,17 @@ JsonValue Collaboration::Jsonize() const
      autoApprovedChangeTypesJsonList[autoApprovedChangeTypesIndex].AsString(AutoApprovedChangeTypeMapper::GetNameForAutoApprovedChangeType(m_autoApprovedChangeTypes[autoApprovedChangeTypesIndex]));
    }
    payload.WithArray("autoApprovedChangeTypes", std::move(autoApprovedChangeTypesJsonList));
+
+  }
+
+  if(m_allowedResultRegionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> allowedResultRegionsJsonList(m_allowedResultRegions.size());
+   for(unsigned allowedResultRegionsIndex = 0; allowedResultRegionsIndex < allowedResultRegionsJsonList.GetLength(); ++allowedResultRegionsIndex)
+   {
+     allowedResultRegionsJsonList[allowedResultRegionsIndex].AsString(SupportedS3RegionMapper::GetNameForSupportedS3Region(m_allowedResultRegions[allowedResultRegionsIndex]));
+   }
+   payload.WithArray("allowedResultRegions", std::move(allowedResultRegionsJsonList));
 
   }
 

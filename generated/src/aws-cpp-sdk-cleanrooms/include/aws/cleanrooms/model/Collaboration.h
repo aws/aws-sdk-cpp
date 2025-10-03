@@ -14,6 +14,7 @@
 #include <aws/cleanrooms/model/AnalyticsEngine.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cleanrooms/model/AutoApprovedChangeType.h>
+#include <aws/cleanrooms/model/SupportedS3Region.h>
 #include <utility>
 
 namespace Aws
@@ -241,6 +242,22 @@ namespace Model
     Collaboration& WithAutoApprovedChangeTypes(AutoApprovedChangeTypesT&& value) { SetAutoApprovedChangeTypes(std::forward<AutoApprovedChangeTypesT>(value)); return *this;}
     inline Collaboration& AddAutoApprovedChangeTypes(AutoApprovedChangeType value) { m_autoApprovedChangeTypesHasBeenSet = true; m_autoApprovedChangeTypes.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Web Services Regions where collaboration query results can be
+     * stored. Returns the list of Region identifiers that were specified when the
+     * collaboration was created. This list is used to enforce regional storage
+     * policies and compliance requirements.</p>
+     */
+    inline const Aws::Vector<SupportedS3Region>& GetAllowedResultRegions() const { return m_allowedResultRegions; }
+    inline bool AllowedResultRegionsHasBeenSet() const { return m_allowedResultRegionsHasBeenSet; }
+    template<typename AllowedResultRegionsT = Aws::Vector<SupportedS3Region>>
+    void SetAllowedResultRegions(AllowedResultRegionsT&& value) { m_allowedResultRegionsHasBeenSet = true; m_allowedResultRegions = std::forward<AllowedResultRegionsT>(value); }
+    template<typename AllowedResultRegionsT = Aws::Vector<SupportedS3Region>>
+    Collaboration& WithAllowedResultRegions(AllowedResultRegionsT&& value) { SetAllowedResultRegions(std::forward<AllowedResultRegionsT>(value)); return *this;}
+    inline Collaboration& AddAllowedResultRegions(SupportedS3Region value) { m_allowedResultRegionsHasBeenSet = true; m_allowedResultRegions.push_back(value); return *this; }
+    ///@}
   private:
 
     Aws::String m_id;
@@ -290,6 +307,9 @@ namespace Model
 
     Aws::Vector<AutoApprovedChangeType> m_autoApprovedChangeTypes;
     bool m_autoApprovedChangeTypesHasBeenSet = false;
+
+    Aws::Vector<SupportedS3Region> m_allowedResultRegions;
+    bool m_allowedResultRegionsHasBeenSet = false;
   };
 
 } // namespace Model

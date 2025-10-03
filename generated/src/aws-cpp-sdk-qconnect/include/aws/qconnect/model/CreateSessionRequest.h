@@ -133,6 +133,20 @@ namespace Model
       m_aiAgentConfigurationHasBeenSet = true; m_aiAgentConfiguration.emplace(key, value); return *this;
     }
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the email contact in Amazon Connect. Used
+     * to retrieve email content and establish session context for AI-powered email
+     * assistance.</p>
+     */
+    inline const Aws::String& GetContactArn() const { return m_contactArn; }
+    inline bool ContactArnHasBeenSet() const { return m_contactArnHasBeenSet; }
+    template<typename ContactArnT = Aws::String>
+    void SetContactArn(ContactArnT&& value) { m_contactArnHasBeenSet = true; m_contactArn = std::forward<ContactArnT>(value); }
+    template<typename ContactArnT = Aws::String>
+    CreateSessionRequest& WithContactArn(ContactArnT&& value) { SetContactArn(std::forward<ContactArnT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
@@ -155,6 +169,9 @@ namespace Model
 
     Aws::Map<AIAgentType, AIAgentConfigurationData> m_aiAgentConfiguration;
     bool m_aiAgentConfigurationHasBeenSet = false;
+
+    Aws::String m_contactArn;
+    bool m_contactArnHasBeenSet = false;
   };
 
 } // namespace Model

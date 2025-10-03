@@ -7,6 +7,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/qconnect/model/GenerativeDataDetails.h>
 #include <aws/qconnect/model/GenerativeChunkDataDetails.h>
+#include <aws/qconnect/model/EmailGenerativeAnswerChunkDataDetails.h>
 
 #include <utility>
 
@@ -52,6 +53,21 @@ DataDetails& DataDetails::operator =(JsonView jsonValue)
     m_generativeChunkData = Aws::MakeShared<GenerativeChunkDataDetails>("DataDetails", jsonValue.GetObject("generativeChunkData"));
     m_generativeChunkDataHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("emailResponseChunkData"))
+  {
+    m_emailResponseChunkData = jsonValue.GetObject("emailResponseChunkData");
+    m_emailResponseChunkDataHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("emailOverviewChunkData"))
+  {
+    m_emailOverviewChunkData = jsonValue.GetObject("emailOverviewChunkData");
+    m_emailOverviewChunkDataHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("emailGenerativeAnswerChunkData"))
+  {
+    m_emailGenerativeAnswerChunkData = Aws::MakeShared<EmailGenerativeAnswerChunkDataDetails>("DataDetails", jsonValue.GetObject("emailGenerativeAnswerChunkData"));
+    m_emailGenerativeAnswerChunkDataHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +102,24 @@ JsonValue DataDetails::Jsonize() const
   if(m_generativeChunkDataHasBeenSet)
   {
    payload.WithObject("generativeChunkData", m_generativeChunkData->Jsonize());
+
+  }
+
+  if(m_emailResponseChunkDataHasBeenSet)
+  {
+   payload.WithObject("emailResponseChunkData", m_emailResponseChunkData.Jsonize());
+
+  }
+
+  if(m_emailOverviewChunkDataHasBeenSet)
+  {
+   payload.WithObject("emailOverviewChunkData", m_emailOverviewChunkData.Jsonize());
+
+  }
+
+  if(m_emailGenerativeAnswerChunkDataHasBeenSet)
+  {
+   payload.WithObject("emailGenerativeAnswerChunkData", m_emailGenerativeAnswerChunkData->Jsonize());
 
   }
 

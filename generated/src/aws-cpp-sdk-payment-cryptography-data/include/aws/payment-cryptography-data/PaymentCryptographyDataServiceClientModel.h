@@ -25,6 +25,7 @@
 #include <aws/payment-cryptography-data/model/GenerateMacEmvPinChangeResult.h>
 #include <aws/payment-cryptography-data/model/GeneratePinDataResult.h>
 #include <aws/payment-cryptography-data/model/ReEncryptDataResult.h>
+#include <aws/payment-cryptography-data/model/TranslateKeyMaterialResult.h>
 #include <aws/payment-cryptography-data/model/TranslatePinDataResult.h>
 #include <aws/payment-cryptography-data/model/VerifyAuthRequestCryptogramResult.h>
 #include <aws/payment-cryptography-data/model/VerifyCardValidationDataResult.h>
@@ -77,6 +78,7 @@ namespace Aws
       class GenerateMacEmvPinChangeRequest;
       class GeneratePinDataRequest;
       class ReEncryptDataRequest;
+      class TranslateKeyMaterialRequest;
       class TranslatePinDataRequest;
       class VerifyAuthRequestCryptogramRequest;
       class VerifyCardValidationDataRequest;
@@ -92,6 +94,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GenerateMacEmvPinChangeResult, PaymentCryptographyDataError> GenerateMacEmvPinChangeOutcome;
       typedef Aws::Utils::Outcome<GeneratePinDataResult, PaymentCryptographyDataError> GeneratePinDataOutcome;
       typedef Aws::Utils::Outcome<ReEncryptDataResult, PaymentCryptographyDataError> ReEncryptDataOutcome;
+      typedef Aws::Utils::Outcome<TranslateKeyMaterialResult, PaymentCryptographyDataError> TranslateKeyMaterialOutcome;
       typedef Aws::Utils::Outcome<TranslatePinDataResult, PaymentCryptographyDataError> TranslatePinDataOutcome;
       typedef Aws::Utils::Outcome<VerifyAuthRequestCryptogramResult, PaymentCryptographyDataError> VerifyAuthRequestCryptogramOutcome;
       typedef Aws::Utils::Outcome<VerifyCardValidationDataResult, PaymentCryptographyDataError> VerifyCardValidationDataOutcome;
@@ -107,6 +110,7 @@ namespace Aws
       typedef std::future<GenerateMacEmvPinChangeOutcome> GenerateMacEmvPinChangeOutcomeCallable;
       typedef std::future<GeneratePinDataOutcome> GeneratePinDataOutcomeCallable;
       typedef std::future<ReEncryptDataOutcome> ReEncryptDataOutcomeCallable;
+      typedef std::future<TranslateKeyMaterialOutcome> TranslateKeyMaterialOutcomeCallable;
       typedef std::future<TranslatePinDataOutcome> TranslatePinDataOutcomeCallable;
       typedef std::future<VerifyAuthRequestCryptogramOutcome> VerifyAuthRequestCryptogramOutcomeCallable;
       typedef std::future<VerifyCardValidationDataOutcome> VerifyCardValidationDataOutcomeCallable;
@@ -125,6 +129,7 @@ namespace Aws
     typedef std::function<void(const PaymentCryptographyDataClient*, const Model::GenerateMacEmvPinChangeRequest&, const Model::GenerateMacEmvPinChangeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateMacEmvPinChangeResponseReceivedHandler;
     typedef std::function<void(const PaymentCryptographyDataClient*, const Model::GeneratePinDataRequest&, const Model::GeneratePinDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GeneratePinDataResponseReceivedHandler;
     typedef std::function<void(const PaymentCryptographyDataClient*, const Model::ReEncryptDataRequest&, const Model::ReEncryptDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReEncryptDataResponseReceivedHandler;
+    typedef std::function<void(const PaymentCryptographyDataClient*, const Model::TranslateKeyMaterialRequest&, const Model::TranslateKeyMaterialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TranslateKeyMaterialResponseReceivedHandler;
     typedef std::function<void(const PaymentCryptographyDataClient*, const Model::TranslatePinDataRequest&, const Model::TranslatePinDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TranslatePinDataResponseReceivedHandler;
     typedef std::function<void(const PaymentCryptographyDataClient*, const Model::VerifyAuthRequestCryptogramRequest&, const Model::VerifyAuthRequestCryptogramOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifyAuthRequestCryptogramResponseReceivedHandler;
     typedef std::function<void(const PaymentCryptographyDataClient*, const Model::VerifyCardValidationDataRequest&, const Model::VerifyCardValidationDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifyCardValidationDataResponseReceivedHandler;

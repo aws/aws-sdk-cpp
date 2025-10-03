@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
+#include <aws/cleanrooms/model/CommercialRegion.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -40,6 +41,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Web Services Region where the Glue table is located. This
+     * parameter is required to uniquely identify and access tables across different
+     * Regions.</p>
+     */
+    inline CommercialRegion GetRegion() const { return m_region; }
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+    inline void SetRegion(CommercialRegion value) { m_regionHasBeenSet = true; m_region = value; }
+    inline GlueTableReference& WithRegion(CommercialRegion value) { SetRegion(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the Glue table.</p>
      */
     inline const Aws::String& GetTableName() const { return m_tableName; }
@@ -62,6 +75,9 @@ namespace Model
     GlueTableReference& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
   private:
+
+    CommercialRegion m_region{CommercialRegion::NOT_SET};
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet = false;

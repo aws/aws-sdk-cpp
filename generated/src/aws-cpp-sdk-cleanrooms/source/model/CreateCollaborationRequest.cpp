@@ -111,6 +111,17 @@ Aws::String CreateCollaborationRequest::SerializePayload() const
 
   }
 
+  if(m_allowedResultRegionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> allowedResultRegionsJsonList(m_allowedResultRegions.size());
+   for(unsigned allowedResultRegionsIndex = 0; allowedResultRegionsIndex < allowedResultRegionsJsonList.GetLength(); ++allowedResultRegionsIndex)
+   {
+     allowedResultRegionsJsonList[allowedResultRegionsIndex].AsString(SupportedS3RegionMapper::GetNameForSupportedS3Region(m_allowedResultRegions[allowedResultRegionsIndex]));
+   }
+   payload.WithArray("allowedResultRegions", std::move(allowedResultRegionsJsonList));
+
+  }
+
   return payload.View().WriteReadable();
 }
 

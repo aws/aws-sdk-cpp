@@ -27,6 +27,9 @@ namespace Aws
         static const int BLOCKED_GENERATIVE_ANSWER_CHUNK_HASH = HashingUtils::HashString("BLOCKED_GENERATIVE_ANSWER_CHUNK");
         static const int INTENT_ANSWER_CHUNK_HASH = HashingUtils::HashString("INTENT_ANSWER_CHUNK");
         static const int BLOCKED_INTENT_ANSWER_CHUNK_HASH = HashingUtils::HashString("BLOCKED_INTENT_ANSWER_CHUNK");
+        static const int EMAIL_RESPONSE_CHUNK_HASH = HashingUtils::HashString("EMAIL_RESPONSE_CHUNK");
+        static const int EMAIL_OVERVIEW_CHUNK_HASH = HashingUtils::HashString("EMAIL_OVERVIEW_CHUNK");
+        static const int EMAIL_GENERATIVE_ANSWER_CHUNK_HASH = HashingUtils::HashString("EMAIL_GENERATIVE_ANSWER_CHUNK");
 
 
         QueryResultType GetQueryResultTypeForName(const Aws::String& name)
@@ -60,6 +63,18 @@ namespace Aws
           {
             return QueryResultType::BLOCKED_INTENT_ANSWER_CHUNK;
           }
+          else if (hashCode == EMAIL_RESPONSE_CHUNK_HASH)
+          {
+            return QueryResultType::EMAIL_RESPONSE_CHUNK;
+          }
+          else if (hashCode == EMAIL_OVERVIEW_CHUNK_HASH)
+          {
+            return QueryResultType::EMAIL_OVERVIEW_CHUNK;
+          }
+          else if (hashCode == EMAIL_GENERATIVE_ANSWER_CHUNK_HASH)
+          {
+            return QueryResultType::EMAIL_GENERATIVE_ANSWER_CHUNK;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +105,12 @@ namespace Aws
             return "INTENT_ANSWER_CHUNK";
           case QueryResultType::BLOCKED_INTENT_ANSWER_CHUNK:
             return "BLOCKED_INTENT_ANSWER_CHUNK";
+          case QueryResultType::EMAIL_RESPONSE_CHUNK:
+            return "EMAIL_RESPONSE_CHUNK";
+          case QueryResultType::EMAIL_OVERVIEW_CHUNK:
+            return "EMAIL_OVERVIEW_CHUNK";
+          case QueryResultType::EMAIL_GENERATIVE_ANSWER_CHUNK:
+            return "EMAIL_GENERATIVE_ANSWER_CHUNK";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

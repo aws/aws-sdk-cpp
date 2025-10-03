@@ -40,6 +40,21 @@ AIAgentConfiguration& AIAgentConfiguration::operator =(JsonView jsonValue)
     m_selfServiceAIAgentConfiguration = jsonValue.GetObject("selfServiceAIAgentConfiguration");
     m_selfServiceAIAgentConfigurationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("emailResponseAIAgentConfiguration"))
+  {
+    m_emailResponseAIAgentConfiguration = jsonValue.GetObject("emailResponseAIAgentConfiguration");
+    m_emailResponseAIAgentConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("emailOverviewAIAgentConfiguration"))
+  {
+    m_emailOverviewAIAgentConfiguration = jsonValue.GetObject("emailOverviewAIAgentConfiguration");
+    m_emailOverviewAIAgentConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("emailGenerativeAnswerAIAgentConfiguration"))
+  {
+    m_emailGenerativeAnswerAIAgentConfiguration = jsonValue.GetObject("emailGenerativeAnswerAIAgentConfiguration");
+    m_emailGenerativeAnswerAIAgentConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +77,24 @@ JsonValue AIAgentConfiguration::Jsonize() const
   if(m_selfServiceAIAgentConfigurationHasBeenSet)
   {
    payload.WithObject("selfServiceAIAgentConfiguration", m_selfServiceAIAgentConfiguration.Jsonize());
+
+  }
+
+  if(m_emailResponseAIAgentConfigurationHasBeenSet)
+  {
+   payload.WithObject("emailResponseAIAgentConfiguration", m_emailResponseAIAgentConfiguration.Jsonize());
+
+  }
+
+  if(m_emailOverviewAIAgentConfigurationHasBeenSet)
+  {
+   payload.WithObject("emailOverviewAIAgentConfiguration", m_emailOverviewAIAgentConfiguration.Jsonize());
+
+  }
+
+  if(m_emailGenerativeAnswerAIAgentConfigurationHasBeenSet)
+  {
+   payload.WithObject("emailGenerativeAnswerAIAgentConfiguration", m_emailGenerativeAnswerAIAgentConfiguration.Jsonize());
 
   }
 

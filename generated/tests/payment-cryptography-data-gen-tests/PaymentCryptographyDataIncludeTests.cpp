@@ -30,6 +30,7 @@
 #include <aws/payment-cryptography-data/model/DecryptDataRequest.h>
 #include <aws/payment-cryptography-data/model/DecryptDataResult.h>
 #include <aws/payment-cryptography-data/model/DerivationMethodAttributes.h>
+#include <aws/payment-cryptography-data/model/DiffieHellmanDerivationData.h>
 #include <aws/payment-cryptography-data/model/DiscoverDynamicCardVerificationCode.h>
 #include <aws/payment-cryptography-data/model/DukptAttributes.h>
 #include <aws/payment-cryptography-data/model/DukptDerivationAttributes.h>
@@ -62,6 +63,8 @@
 #include <aws/payment-cryptography-data/model/Ibm3624PinOffset.h>
 #include <aws/payment-cryptography-data/model/Ibm3624PinVerification.h>
 #include <aws/payment-cryptography-data/model/Ibm3624RandomPin.h>
+#include <aws/payment-cryptography-data/model/IncomingDiffieHellmanTr31KeyBlock.h>
+#include <aws/payment-cryptography-data/model/IncomingKeyMaterial.h>
 #include <aws/payment-cryptography-data/model/KeyCheckValueAlgorithm.h>
 #include <aws/payment-cryptography-data/model/KeyDerivationFunction.h>
 #include <aws/payment-cryptography-data/model/KeyDerivationHashAlgorithm.h>
@@ -71,6 +74,8 @@
 #include <aws/payment-cryptography-data/model/MacAttributes.h>
 #include <aws/payment-cryptography-data/model/MajorKeyDerivationMode.h>
 #include <aws/payment-cryptography-data/model/MasterCardAttributes.h>
+#include <aws/payment-cryptography-data/model/OutgoingKeyMaterial.h>
+#include <aws/payment-cryptography-data/model/OutgoingTr31KeyBlock.h>
 #include <aws/payment-cryptography-data/model/PaddingType.h>
 #include <aws/payment-cryptography-data/model/PinBlockFormatForEmvPinChange.h>
 #include <aws/payment-cryptography-data/model/PinBlockFormatForPinData.h>
@@ -93,6 +98,8 @@
 #include <aws/payment-cryptography-data/model/SessionKeyVisa.h>
 #include <aws/payment-cryptography-data/model/SymmetricEncryptionAttributes.h>
 #include <aws/payment-cryptography-data/model/SymmetricKeyAlgorithm.h>
+#include <aws/payment-cryptography-data/model/TranslateKeyMaterialRequest.h>
+#include <aws/payment-cryptography-data/model/TranslateKeyMaterialResult.h>
 #include <aws/payment-cryptography-data/model/TranslatePinDataRequest.h>
 #include <aws/payment-cryptography-data/model/TranslatePinDataResult.h>
 #include <aws/payment-cryptography-data/model/TranslationIsoFormats.h>
@@ -117,6 +124,8 @@
 #include <aws/payment-cryptography-data/model/VisaPinVerificationValue.h>
 #include <aws/payment-cryptography-data/model/WrappedKey.h>
 #include <aws/payment-cryptography-data/model/WrappedKeyMaterial.h>
+#include <aws/payment-cryptography-data/model/WrappedKeyMaterialFormat.h>
+#include <aws/payment-cryptography-data/model/WrappedWorkingKey.h>
 
 using PaymentCryptographyDataIncludeTest = ::testing::Test;
 

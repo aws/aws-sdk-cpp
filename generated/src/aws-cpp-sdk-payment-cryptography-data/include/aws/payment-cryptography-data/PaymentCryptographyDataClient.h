@@ -295,7 +295,7 @@ namespace PaymentCryptographyData
          * or EMV MAC by setting generation attributes and algorithm to the associated
          * values. The MAC generation encryption key must have valid values for
          * <code>KeyUsage</code> such as <code>TR31_M7_HMAC_KEY</code> for HMAC generation,
-         * and they key must have <code>KeyModesOfUse</code> set to <code>Generate</code>
+         * and the key must have <code>KeyModesOfUse</code> set to <code>Generate</code>
          * and <code>Verify</code>.</p> <p>For information about valid keys for this
          * operation, see <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding
@@ -492,6 +492,62 @@ namespace PaymentCryptographyData
         }
 
         /**
+         * <p>Translates an encryption key between different wrapping keys without
+         * importing the key into Amazon Web Services Payment Cryptography.</p> <p>This
+         * operation can be used when key material is frequently rotated, such as during
+         * every card transaction, and there is a need to avoid importing short-lived keys
+         * into Amazon Web Services Payment Cryptography. It translates short-lived
+         * transaction keys such as Pin Encryption Key (PEK) generated for each transaction
+         * and wrapped with an ECDH (Elliptic Curve Diffie-Hellman) derived wrapping key to
+         * another KEK (Key Encryption Key) wrapping key. </p> <p>Before using this
+         * operation, you must first request the public key certificate of the ECC key pair
+         * generated within Amazon Web Services Payment Cryptography to establish an ECDH
+         * key agreement. In <code>TranslateKeyData</code>, the service uses its own ECC
+         * key pair, public certificate of receiving ECC key pair, and the key derivation
+         * parameters to generate a derived key. The service uses this derived key to
+         * unwrap the incoming transaction key received as a TR31WrappedKeyBlock and
+         * re-wrap using a user provided KEK to generate an outgoing Tr31WrappedKeyBlock.
+         * For more information on establishing ECDH derived keys, see the <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/create-keys.html">Creating
+         * keys</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
+         * <p>For information about valid keys for this operation, see <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding
+         * key attributes</a> and <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
+         * types for specific data operations</a> in the <i>Amazon Web Services Payment
+         * Cryptography User Guide</i>. </p> <p> <b>Cross-account use</b>: This operation
+         * can't be used across different Amazon Web Services accounts.</p> <p> <b>Related
+         * operations:</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetPublicKeyCertificate.html">GetPublicCertificate</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/TranslateKeyMaterial">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TranslateKeyMaterialOutcome TranslateKeyMaterial(const Model::TranslateKeyMaterialRequest& request) const;
+
+        /**
+         * A Callable wrapper for TranslateKeyMaterial that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TranslateKeyMaterialRequestT = Model::TranslateKeyMaterialRequest>
+        Model::TranslateKeyMaterialOutcomeCallable TranslateKeyMaterialCallable(const TranslateKeyMaterialRequestT& request) const
+        {
+            return SubmitCallable(&PaymentCryptographyDataClient::TranslateKeyMaterial, request);
+        }
+
+        /**
+         * An Async wrapper for TranslateKeyMaterial that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TranslateKeyMaterialRequestT = Model::TranslateKeyMaterialRequest>
+        void TranslateKeyMaterialAsync(const TranslateKeyMaterialRequestT& request, const TranslateKeyMaterialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PaymentCryptographyDataClient::TranslateKeyMaterial, request, handler, context);
+        }
+
+        /**
          * <p>Translates encrypted PIN block from and to ISO 9564 formats 0,1,3,4. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/translate-pin-data.html">Translate
@@ -519,7 +575,7 @@ namespace PaymentCryptographyData
          * block for use within the service. You can also use ECDH for reveal PIN, wherein
          * the service translates the PIN block from PEK to a ECDH derived encryption key.
          * For more information on establishing ECDH derived keys, see the <a
-         * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/create-keys.html">Generating
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/create-keys.html">Creating
          * keys</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
          * <p>The allowed combinations of PIN block format translations are guided by PCI.
          * It is important to note that not all encrypted PIN block formats (example,

@@ -23,6 +23,9 @@ namespace Aws
         static const int MANUAL_SEARCH_HASH = HashingUtils::HashString("MANUAL_SEARCH");
         static const int ANSWER_RECOMMENDATION_HASH = HashingUtils::HashString("ANSWER_RECOMMENDATION");
         static const int SELF_SERVICE_HASH = HashingUtils::HashString("SELF_SERVICE");
+        static const int EMAIL_RESPONSE_HASH = HashingUtils::HashString("EMAIL_RESPONSE");
+        static const int EMAIL_OVERVIEW_HASH = HashingUtils::HashString("EMAIL_OVERVIEW");
+        static const int EMAIL_GENERATIVE_ANSWER_HASH = HashingUtils::HashString("EMAIL_GENERATIVE_ANSWER");
 
 
         AIAgentType GetAIAgentTypeForName(const Aws::String& name)
@@ -39,6 +42,18 @@ namespace Aws
           else if (hashCode == SELF_SERVICE_HASH)
           {
             return AIAgentType::SELF_SERVICE;
+          }
+          else if (hashCode == EMAIL_RESPONSE_HASH)
+          {
+            return AIAgentType::EMAIL_RESPONSE;
+          }
+          else if (hashCode == EMAIL_OVERVIEW_HASH)
+          {
+            return AIAgentType::EMAIL_OVERVIEW;
+          }
+          else if (hashCode == EMAIL_GENERATIVE_ANSWER_HASH)
+          {
+            return AIAgentType::EMAIL_GENERATIVE_ANSWER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +77,12 @@ namespace Aws
             return "ANSWER_RECOMMENDATION";
           case AIAgentType::SELF_SERVICE:
             return "SELF_SERVICE";
+          case AIAgentType::EMAIL_RESPONSE:
+            return "EMAIL_RESPONSE";
+          case AIAgentType::EMAIL_OVERVIEW:
+            return "EMAIL_OVERVIEW";
+          case AIAgentType::EMAIL_GENERATIVE_ANSWER:
+            return "EMAIL_GENERATIVE_ANSWER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

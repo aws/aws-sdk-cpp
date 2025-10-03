@@ -231,10 +231,7 @@ namespace QConnect
         }
 
         /**
-         * <p>Creates an Amazon Q in Connect AI Prompt.</p>  <p>For more information
-         * on supported models, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported
-         * models for system and custom prompts</a>.</p> <p><h3>See Also:</h3>   <a
+         * <p>Creates an Amazon Q in Connect AI Prompt.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateAIPrompt">AWS
          * API Reference</a></p>
          */

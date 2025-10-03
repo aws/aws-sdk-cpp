@@ -62,6 +62,12 @@ Aws::String CreateSessionRequest::SerializePayload() const
 
   }
 
+  if(m_contactArnHasBeenSet)
+  {
+   payload.WithString("contactArn", m_contactArn);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

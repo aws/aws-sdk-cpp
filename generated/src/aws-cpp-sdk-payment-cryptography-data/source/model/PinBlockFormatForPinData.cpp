@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int ISO_FORMAT_0_HASH = HashingUtils::HashString("ISO_FORMAT_0");
+        static const int ISO_FORMAT_1_HASH = HashingUtils::HashString("ISO_FORMAT_1");
         static const int ISO_FORMAT_3_HASH = HashingUtils::HashString("ISO_FORMAT_3");
         static const int ISO_FORMAT_4_HASH = HashingUtils::HashString("ISO_FORMAT_4");
 
@@ -31,6 +32,10 @@ namespace Aws
           if (hashCode == ISO_FORMAT_0_HASH)
           {
             return PinBlockFormatForPinData::ISO_FORMAT_0;
+          }
+          else if (hashCode == ISO_FORMAT_1_HASH)
+          {
+            return PinBlockFormatForPinData::ISO_FORMAT_1;
           }
           else if (hashCode == ISO_FORMAT_3_HASH)
           {
@@ -58,6 +63,8 @@ namespace Aws
             return {};
           case PinBlockFormatForPinData::ISO_FORMAT_0:
             return "ISO_FORMAT_0";
+          case PinBlockFormatForPinData::ISO_FORMAT_1:
+            return "ISO_FORMAT_1";
           case PinBlockFormatForPinData::ISO_FORMAT_3:
             return "ISO_FORMAT_3";
           case PinBlockFormatForPinData::ISO_FORMAT_4:

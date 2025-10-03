@@ -25,6 +25,11 @@ AthenaTableReference::AthenaTableReference(JsonView jsonValue)
 
 AthenaTableReference& AthenaTableReference::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("region"))
+  {
+    m_region = CommercialRegionMapper::GetCommercialRegionForName(jsonValue.GetString("region"));
+    m_regionHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("workGroup"))
   {
     m_workGroup = jsonValue.GetString("workGroup");
@@ -51,6 +56,11 @@ AthenaTableReference& AthenaTableReference::operator =(JsonView jsonValue)
 JsonValue AthenaTableReference::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_regionHasBeenSet)
+  {
+   payload.WithString("region", CommercialRegionMapper::GetNameForCommercialRegion(m_region));
+  }
 
   if(m_workGroupHasBeenSet)
   {
