@@ -8,6 +8,8 @@
 #include <aws/qconnect/model/ContentDataDetails.h>
 #include <aws/qconnect/model/IntentDetectedDataDetails.h>
 #include <aws/qconnect/model/SourceContentDataDetails.h>
+#include <aws/qconnect/model/EmailResponseChunkDataDetails.h>
+#include <aws/qconnect/model/EmailOverviewChunkDataDetails.h>
 #include <aws/core/utils/memory/stl/AWSAllocator.h>
 #include <utility>
 
@@ -27,6 +29,7 @@ namespace Model
 {
   class GenerativeDataDetails;
   class GenerativeChunkDataDetails;
+  class EmailGenerativeAnswerChunkDataDetails;
 
   /**
    * <p>Details about the data.</p><p><h3>See Also:</h3>   <a
@@ -111,6 +114,50 @@ namespace Model
     template<typename GenerativeChunkDataT = GenerativeChunkDataDetails>
     DataDetails& WithGenerativeChunkData(GenerativeChunkDataT&& value) { SetGenerativeChunkData(std::forward<GenerativeChunkDataT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Streaming chunk data for email response generation containing partial
+     * response content.</p>
+     */
+    inline const EmailResponseChunkDataDetails& GetEmailResponseChunkData() const { return m_emailResponseChunkData; }
+    inline bool EmailResponseChunkDataHasBeenSet() const { return m_emailResponseChunkDataHasBeenSet; }
+    template<typename EmailResponseChunkDataT = EmailResponseChunkDataDetails>
+    void SetEmailResponseChunkData(EmailResponseChunkDataT&& value) { m_emailResponseChunkDataHasBeenSet = true; m_emailResponseChunkData = std::forward<EmailResponseChunkDataT>(value); }
+    template<typename EmailResponseChunkDataT = EmailResponseChunkDataDetails>
+    DataDetails& WithEmailResponseChunkData(EmailResponseChunkDataT&& value) { SetEmailResponseChunkData(std::forward<EmailResponseChunkDataT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Streaming chunk data for email overview containing partial overview
+     * content.</p>
+     */
+    inline const EmailOverviewChunkDataDetails& GetEmailOverviewChunkData() const { return m_emailOverviewChunkData; }
+    inline bool EmailOverviewChunkDataHasBeenSet() const { return m_emailOverviewChunkDataHasBeenSet; }
+    template<typename EmailOverviewChunkDataT = EmailOverviewChunkDataDetails>
+    void SetEmailOverviewChunkData(EmailOverviewChunkDataT&& value) { m_emailOverviewChunkDataHasBeenSet = true; m_emailOverviewChunkData = std::forward<EmailOverviewChunkDataT>(value); }
+    template<typename EmailOverviewChunkDataT = EmailOverviewChunkDataDetails>
+    DataDetails& WithEmailOverviewChunkData(EmailOverviewChunkDataT&& value) { SetEmailOverviewChunkData(std::forward<EmailOverviewChunkDataT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Streaming chunk data for email generative answers containing partial
+     * knowledge-based response content.</p>
+     */
+    inline const EmailGenerativeAnswerChunkDataDetails& GetEmailGenerativeAnswerChunkData() const{
+      return *m_emailGenerativeAnswerChunkData;
+    }
+    inline bool EmailGenerativeAnswerChunkDataHasBeenSet() const { return m_emailGenerativeAnswerChunkDataHasBeenSet; }
+    template<typename EmailGenerativeAnswerChunkDataT = EmailGenerativeAnswerChunkDataDetails>
+    void SetEmailGenerativeAnswerChunkData(EmailGenerativeAnswerChunkDataT&& value) {
+      m_emailGenerativeAnswerChunkDataHasBeenSet = true; 
+      m_emailGenerativeAnswerChunkData = Aws::MakeShared<EmailGenerativeAnswerChunkDataDetails>("DataDetails", std::forward<EmailGenerativeAnswerChunkDataT>(value));
+    }
+    template<typename EmailGenerativeAnswerChunkDataT = EmailGenerativeAnswerChunkDataDetails>
+    DataDetails& WithEmailGenerativeAnswerChunkData(EmailGenerativeAnswerChunkDataT&& value) { SetEmailGenerativeAnswerChunkData(std::forward<EmailGenerativeAnswerChunkDataT>(value)); return *this;}
+    ///@}
   private:
 
     ContentDataDetails m_contentData;
@@ -127,6 +174,15 @@ namespace Model
 
     std::shared_ptr<GenerativeChunkDataDetails> m_generativeChunkData;
     bool m_generativeChunkDataHasBeenSet = false;
+
+    EmailResponseChunkDataDetails m_emailResponseChunkData;
+    bool m_emailResponseChunkDataHasBeenSet = false;
+
+    EmailOverviewChunkDataDetails m_emailOverviewChunkData;
+    bool m_emailOverviewChunkDataHasBeenSet = false;
+
+    std::shared_ptr<EmailGenerativeAnswerChunkDataDetails> m_emailGenerativeAnswerChunkData;
+    bool m_emailGenerativeAnswerChunkDataHasBeenSet = false;
   };
 
 } // namespace Model

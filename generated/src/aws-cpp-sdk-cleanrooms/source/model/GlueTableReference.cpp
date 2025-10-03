@@ -25,6 +25,11 @@ GlueTableReference::GlueTableReference(JsonView jsonValue)
 
 GlueTableReference& GlueTableReference::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("region"))
+  {
+    m_region = CommercialRegionMapper::GetCommercialRegionForName(jsonValue.GetString("region"));
+    m_regionHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("tableName"))
   {
     m_tableName = jsonValue.GetString("tableName");
@@ -41,6 +46,11 @@ GlueTableReference& GlueTableReference::operator =(JsonView jsonValue)
 JsonValue GlueTableReference::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_regionHasBeenSet)
+  {
+   payload.WithString("region", CommercialRegionMapper::GetNameForCommercialRegion(m_region));
+  }
 
   if(m_tableNameHasBeenSet)
   {

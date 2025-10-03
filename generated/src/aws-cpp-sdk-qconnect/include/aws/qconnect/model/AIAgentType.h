@@ -18,7 +18,10 @@ namespace Model
     NOT_SET,
     MANUAL_SEARCH,
     ANSWER_RECOMMENDATION,
-    SELF_SERVICE
+    SELF_SERVICE,
+    EMAIL_RESPONSE,
+    EMAIL_OVERVIEW,
+    EMAIL_GENERATIVE_ANSWER
   };
 
 namespace AIAgentTypeMapper

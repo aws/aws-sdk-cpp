@@ -124,7 +124,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the model used for this AI Prompt.</p>
+     * <p>The identifier of the model used for this AI Prompt.</p>  <p>For
+     * information about which models are supported in each Amazon Web Services Region,
+     * see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported
+     * models for system/custom prompts</a>.</p> 
      */
     inline const Aws::String& GetModelId() const { return m_modelId; }
     inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }

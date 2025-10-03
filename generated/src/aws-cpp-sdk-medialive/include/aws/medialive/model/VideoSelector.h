@@ -43,9 +43,10 @@ namespace Model
 
     ///@{
     /**
-     * Specifies the color space of an input. This setting works in tandem with
-     * colorSpaceUsage and a video description's colorSpaceSettingsChoice to determine
-     * if any conversion will be performed.
+     * Controls how MediaLive will use the color space metadata from the source.
+     * Typically, choose FOLLOW, which means to use the color space metadata without
+     * changing it. Or choose another value (a standard). In this case, the handling is
+     * controlled by the colorspaceUsage property.
      */
     inline VideoSelectorColorSpace GetColorSpace() const { return m_colorSpace; }
     inline bool ColorSpaceHasBeenSet() const { return m_colorSpaceHasBeenSet; }
@@ -55,7 +56,11 @@ namespace Model
 
     ///@{
     /**
-     * Color space settings
+     * Choose HDR10 only if the following situation applies. Firstly, you specified
+     * HDR10 in ColorSpace. Secondly, the attached input is for AWS Elemental Link.
+     * Thirdly, you plan to convert the content to another color space. You need to
+     * specify the color space metadata that is missing from the source sent from AWS
+     * Elemental Link.
      */
     inline const VideoSelectorColorSpaceSettings& GetColorSpaceSettings() const { return m_colorSpaceSettings; }
     inline bool ColorSpaceSettingsHasBeenSet() const { return m_colorSpaceSettingsHasBeenSet; }

@@ -48,6 +48,7 @@ enum class QConnectErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DEPENDENCY_FAILED,
   PRECONDITION_FAILED,
   SERVICE_QUOTA_EXCEEDED,
   TOO_MANY_TAGS,

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
+#include <aws/cleanrooms/model/CommercialRegion.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -36,6 +37,18 @@ namespace Model
     AWS_CLEANROOMS_API AthenaTableReference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>The Amazon Web Services Region where the Athena table is located. This
+     * parameter is required to uniquely identify and access tables across different
+     * Regions.</p>
+     */
+    inline CommercialRegion GetRegion() const { return m_region; }
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+    inline void SetRegion(CommercialRegion value) { m_regionHasBeenSet = true; m_region = value; }
+    inline AthenaTableReference& WithRegion(CommercialRegion value) { SetRegion(value); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -85,6 +98,9 @@ namespace Model
     AthenaTableReference& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
   private:
+
+    CommercialRegion m_region{CommercialRegion::NOT_SET};
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_workGroup;
     bool m_workGroupHasBeenSet = false;

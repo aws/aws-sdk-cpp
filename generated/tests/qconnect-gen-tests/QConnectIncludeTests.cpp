@@ -148,9 +148,15 @@
 #include <aws/qconnect/model/DeleteQuickResponseResult.h>
 #include <aws/qconnect/model/Document.h>
 #include <aws/qconnect/model/DocumentText.h>
+#include <aws/qconnect/model/EmailGenerativeAnswerAIAgentConfiguration.h>
+#include <aws/qconnect/model/EmailGenerativeAnswerChunkDataDetails.h>
 #include <aws/qconnect/model/EmailHeader.h>
 #include <aws/qconnect/model/EmailMessageTemplateContent.h>
 #include <aws/qconnect/model/EmailMessageTemplateContentBody.h>
+#include <aws/qconnect/model/EmailOverviewAIAgentConfiguration.h>
+#include <aws/qconnect/model/EmailOverviewChunkDataDetails.h>
+#include <aws/qconnect/model/EmailResponseAIAgentConfiguration.h>
+#include <aws/qconnect/model/EmailResponseChunkDataDetails.h>
 #include <aws/qconnect/model/ExtendedMessageTemplateData.h>
 #include <aws/qconnect/model/ExternalSource.h>
 #include <aws/qconnect/model/ExternalSourceConfiguration.h>

@@ -134,7 +134,8 @@ namespace Model
 
     ///@{
     /**
-     * Color Space settings
+     * Specify the type of color space to apply or choose to pass through. The default
+     * is to pass through the color space that is in the source.
      */
     inline const H264ColorSpaceSettings& GetColorSpaceSettings() const { return m_colorSpaceSettings; }
     inline bool ColorSpaceSettingsHasBeenSet() const { return m_colorSpaceSettingsHasBeenSet; }

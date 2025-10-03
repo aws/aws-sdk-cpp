@@ -89,6 +89,7 @@
 #include <aws/cleanrooms/model/CollaborationQueryLogStatus.h>
 #include <aws/cleanrooms/model/CollaborationSummary.h>
 #include <aws/cleanrooms/model/Column.h>
+#include <aws/cleanrooms/model/CommercialRegion.h>
 #include <aws/cleanrooms/model/ComputeConfiguration.h>
 #include <aws/cleanrooms/model/ConfigurationDetails.h>
 #include <aws/cleanrooms/model/ConfiguredAudienceModelAssociation.h>
@@ -396,6 +397,7 @@
 #include <aws/cleanrooms/model/StartProtectedJobResult.h>
 #include <aws/cleanrooms/model/StartProtectedQueryRequest.h>
 #include <aws/cleanrooms/model/StartProtectedQueryResult.h>
+#include <aws/cleanrooms/model/SupportedS3Region.h>
 #include <aws/cleanrooms/model/TableReference.h>
 #include <aws/cleanrooms/model/TagResourceRequest.h>
 #include <aws/cleanrooms/model/TagResourceResult.h>
