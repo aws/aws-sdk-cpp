@@ -196,6 +196,7 @@ void ConnectCampaignsV2Client::init(const ConnectCampaignsV2::ConnectCampaignsV2
 void ConnectCampaignsV2Client::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 

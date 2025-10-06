@@ -90,3 +90,26 @@ TEST_F(TimestreamQueryUnitTest, EndpointOverrideShouldDisableEndpointDiscovery) 
   AWS_EXPECT_SUCCESS(queryResponse);
   EXPECT_EQ(mockHttpClient_->GetMostRecentHttpRequest().GetUri().GetURIString(), "http://spacers-choice.com:8080");
 }
+
+TEST_F(TimestreamQueryUnitTest, EndpointOverrideShouldDisableEndpointDiscoveryThroughClient) {
+  ClientConfigurationInitValues initValues{};
+  initValues.shouldDisableIMDS = true;
+  TimestreamQueryClientConfiguration config{initValues};
+  config.region = "us-east-1";
+  const AWSCredentials credentials{};
+  TimestreamQueryClient client(credentials, nullptr, config);
+  client.OverrideEndpoint("http://spacers-choice.com:8080");
+
+  const auto responseStream = Aws::MakeShared<StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_GET);
+  responseStream->SetResponseStreamFactory(Utils::Stream::DefaultResponseStreamFactoryMethod);
+  auto response = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, responseStream);
+  response->SetResponseCode(HttpResponseCode::OK);
+  response->AddHeader("Content-Type", "application/x-amz-json-1.0");
+  response->AddHeader("x-amzn-RequestId", "a918fbf2-457a-4fe1-99ba-5685ce220fc1");
+
+  mockHttpClient_->AddResponseToReturn(response, [](IOStream& bodyStream) -> void { bodyStream << R"({})"; });
+
+  auto queryResponse = client.Query(QueryRequest{}.WithQueryString("SELECT 1"));
+  AWS_EXPECT_SUCCESS(queryResponse);
+  EXPECT_EQ(mockHttpClient_->GetMostRecentHttpRequest().GetUri().GetURIString(), "http://spacers-choice.com:8080");
+}

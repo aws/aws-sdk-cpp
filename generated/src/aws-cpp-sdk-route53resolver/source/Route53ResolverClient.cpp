@@ -229,6 +229,7 @@ void Route53ResolverClient::init(const Route53Resolver::Route53ResolverClientCon
 void Route53ResolverClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 

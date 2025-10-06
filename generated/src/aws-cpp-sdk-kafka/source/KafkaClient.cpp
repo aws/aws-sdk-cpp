@@ -213,6 +213,7 @@ void KafkaClient::init(const Kafka::KafkaClientConfiguration& config)
 void KafkaClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 

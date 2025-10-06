@@ -272,6 +272,7 @@ void S3ControlClient::init(const S3Control::S3ControlClientConfiguration& config
 void S3ControlClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 

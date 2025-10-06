@@ -191,6 +191,7 @@ void S3TablesClient::init(const S3Tables::S3TablesClientConfiguration& config)
 void S3TablesClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 

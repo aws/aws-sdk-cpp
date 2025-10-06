@@ -185,6 +185,7 @@ void ResourceExplorer2Client::init(const ResourceExplorer2::ResourceExplorer2Cli
 void ResourceExplorer2Client::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
