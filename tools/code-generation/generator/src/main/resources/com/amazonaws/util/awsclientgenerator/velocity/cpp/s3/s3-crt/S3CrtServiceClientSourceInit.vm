@@ -597,6 +597,7 @@ void ${className}::OverrideEndpoint(const Aws::String& endpoint)
 {
 #if($serviceModel.endpointRules)
     AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+    m_clientConfiguration.endpointOverride = endpoint;
     m_endpointProvider->OverrideEndpoint(endpoint);
 #else##-#if($serviceModel.endpointRules)
 #if($virtualAddressingSupported || $arnEndpointSupported || $metadata.hasEndpointTrait)

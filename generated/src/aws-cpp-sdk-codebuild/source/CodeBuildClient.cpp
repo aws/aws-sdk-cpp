@@ -220,6 +220,7 @@ void CodeBuildClient::init(const CodeBuild::CodeBuildClientConfiguration& config
 void CodeBuildClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 

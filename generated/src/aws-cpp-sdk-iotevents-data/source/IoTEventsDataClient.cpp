@@ -173,6 +173,7 @@ void IoTEventsDataClient::init(const IoTEventsData::IoTEventsDataClientConfigura
 void IoTEventsDataClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 

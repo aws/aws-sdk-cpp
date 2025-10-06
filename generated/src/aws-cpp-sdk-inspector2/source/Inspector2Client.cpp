@@ -236,6 +236,7 @@ void Inspector2Client::init(const Inspector2::Inspector2ClientConfiguration& con
 void Inspector2Client::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 

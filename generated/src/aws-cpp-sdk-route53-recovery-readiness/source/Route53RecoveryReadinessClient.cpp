@@ -193,6 +193,7 @@ void Route53RecoveryReadinessClient::init(const Route53RecoveryReadiness::Route5
 void Route53RecoveryReadinessClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 

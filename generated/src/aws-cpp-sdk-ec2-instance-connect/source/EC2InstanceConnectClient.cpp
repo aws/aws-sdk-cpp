@@ -163,6 +163,7 @@ void EC2InstanceConnectClient::init(const EC2InstanceConnect::EC2InstanceConnect
 void EC2InstanceConnectClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 

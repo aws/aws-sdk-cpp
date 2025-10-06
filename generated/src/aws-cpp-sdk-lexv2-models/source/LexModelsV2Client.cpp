@@ -263,6 +263,7 @@ void LexModelsV2Client::init(const LexModelsV2::LexModelsV2ClientConfiguration& 
 void LexModelsV2Client::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 

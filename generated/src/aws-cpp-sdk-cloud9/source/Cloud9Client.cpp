@@ -174,6 +174,7 @@ void Cloud9Client::init(const Cloud9::Cloud9ClientConfiguration& config)
 void Cloud9Client::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 

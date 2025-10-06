@@ -301,6 +301,7 @@ void RedshiftClient::init(const Redshift::RedshiftClientConfiguration& config)
 void RedshiftClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
