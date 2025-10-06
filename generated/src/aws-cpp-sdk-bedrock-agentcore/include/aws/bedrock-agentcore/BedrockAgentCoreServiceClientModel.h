@@ -18,9 +18,13 @@
 /* End of generic header includes */
 
 /* Service model headers required in BedrockAgentCoreClient header */
+#include <aws/bedrock-agentcore/model/BatchCreateMemoryRecordsResult.h>
+#include <aws/bedrock-agentcore/model/BatchDeleteMemoryRecordsResult.h>
+#include <aws/bedrock-agentcore/model/BatchUpdateMemoryRecordsResult.h>
 #include <aws/bedrock-agentcore/model/CreateEventResult.h>
 #include <aws/bedrock-agentcore/model/DeleteEventResult.h>
 #include <aws/bedrock-agentcore/model/DeleteMemoryRecordResult.h>
+#include <aws/bedrock-agentcore/model/GetAgentCardResult.h>
 #include <aws/bedrock-agentcore/model/GetBrowserSessionResult.h>
 #include <aws/bedrock-agentcore/model/GetCodeInterpreterSessionResult.h>
 #include <aws/bedrock-agentcore/model/GetEventResult.h>
@@ -42,6 +46,7 @@
 #include <aws/bedrock-agentcore/model/StartCodeInterpreterSessionResult.h>
 #include <aws/bedrock-agentcore/model/StopBrowserSessionResult.h>
 #include <aws/bedrock-agentcore/model/StopCodeInterpreterSessionResult.h>
+#include <aws/bedrock-agentcore/model/StopRuntimeSessionResult.h>
 #include <aws/bedrock-agentcore/model/UpdateBrowserStreamResult.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in BedrockAgentCoreClient header */
@@ -84,9 +89,13 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in BedrockAgentCoreClient header */
+      class BatchCreateMemoryRecordsRequest;
+      class BatchDeleteMemoryRecordsRequest;
+      class BatchUpdateMemoryRecordsRequest;
       class CreateEventRequest;
       class DeleteEventRequest;
       class DeleteMemoryRecordRequest;
+      class GetAgentCardRequest;
       class GetBrowserSessionRequest;
       class GetCodeInterpreterSessionRequest;
       class GetEventRequest;
@@ -109,13 +118,18 @@ namespace Aws
       class StartCodeInterpreterSessionRequest;
       class StopBrowserSessionRequest;
       class StopCodeInterpreterSessionRequest;
+      class StopRuntimeSessionRequest;
       class UpdateBrowserStreamRequest;
       /* End of service model forward declarations required in BedrockAgentCoreClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<BatchCreateMemoryRecordsResult, BedrockAgentCoreError> BatchCreateMemoryRecordsOutcome;
+      typedef Aws::Utils::Outcome<BatchDeleteMemoryRecordsResult, BedrockAgentCoreError> BatchDeleteMemoryRecordsOutcome;
+      typedef Aws::Utils::Outcome<BatchUpdateMemoryRecordsResult, BedrockAgentCoreError> BatchUpdateMemoryRecordsOutcome;
       typedef Aws::Utils::Outcome<CreateEventResult, BedrockAgentCoreError> CreateEventOutcome;
       typedef Aws::Utils::Outcome<DeleteEventResult, BedrockAgentCoreError> DeleteEventOutcome;
       typedef Aws::Utils::Outcome<DeleteMemoryRecordResult, BedrockAgentCoreError> DeleteMemoryRecordOutcome;
+      typedef Aws::Utils::Outcome<GetAgentCardResult, BedrockAgentCoreError> GetAgentCardOutcome;
       typedef Aws::Utils::Outcome<GetBrowserSessionResult, BedrockAgentCoreError> GetBrowserSessionOutcome;
       typedef Aws::Utils::Outcome<GetCodeInterpreterSessionResult, BedrockAgentCoreError> GetCodeInterpreterSessionOutcome;
       typedef Aws::Utils::Outcome<GetEventResult, BedrockAgentCoreError> GetEventOutcome;
@@ -138,13 +152,18 @@ namespace Aws
       typedef Aws::Utils::Outcome<StartCodeInterpreterSessionResult, BedrockAgentCoreError> StartCodeInterpreterSessionOutcome;
       typedef Aws::Utils::Outcome<StopBrowserSessionResult, BedrockAgentCoreError> StopBrowserSessionOutcome;
       typedef Aws::Utils::Outcome<StopCodeInterpreterSessionResult, BedrockAgentCoreError> StopCodeInterpreterSessionOutcome;
+      typedef Aws::Utils::Outcome<StopRuntimeSessionResult, BedrockAgentCoreError> StopRuntimeSessionOutcome;
       typedef Aws::Utils::Outcome<UpdateBrowserStreamResult, BedrockAgentCoreError> UpdateBrowserStreamOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<BatchCreateMemoryRecordsOutcome> BatchCreateMemoryRecordsOutcomeCallable;
+      typedef std::future<BatchDeleteMemoryRecordsOutcome> BatchDeleteMemoryRecordsOutcomeCallable;
+      typedef std::future<BatchUpdateMemoryRecordsOutcome> BatchUpdateMemoryRecordsOutcomeCallable;
       typedef std::future<CreateEventOutcome> CreateEventOutcomeCallable;
       typedef std::future<DeleteEventOutcome> DeleteEventOutcomeCallable;
       typedef std::future<DeleteMemoryRecordOutcome> DeleteMemoryRecordOutcomeCallable;
+      typedef std::future<GetAgentCardOutcome> GetAgentCardOutcomeCallable;
       typedef std::future<GetBrowserSessionOutcome> GetBrowserSessionOutcomeCallable;
       typedef std::future<GetCodeInterpreterSessionOutcome> GetCodeInterpreterSessionOutcomeCallable;
       typedef std::future<GetEventOutcome> GetEventOutcomeCallable;
@@ -167,6 +186,7 @@ namespace Aws
       typedef std::future<StartCodeInterpreterSessionOutcome> StartCodeInterpreterSessionOutcomeCallable;
       typedef std::future<StopBrowserSessionOutcome> StopBrowserSessionOutcomeCallable;
       typedef std::future<StopCodeInterpreterSessionOutcome> StopCodeInterpreterSessionOutcomeCallable;
+      typedef std::future<StopRuntimeSessionOutcome> StopRuntimeSessionOutcomeCallable;
       typedef std::future<UpdateBrowserStreamOutcome> UpdateBrowserStreamOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
@@ -174,9 +194,13 @@ namespace Aws
     class BedrockAgentCoreClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const BedrockAgentCoreClient*, const Model::BatchCreateMemoryRecordsRequest&, const Model::BatchCreateMemoryRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchCreateMemoryRecordsResponseReceivedHandler;
+    typedef std::function<void(const BedrockAgentCoreClient*, const Model::BatchDeleteMemoryRecordsRequest&, const Model::BatchDeleteMemoryRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteMemoryRecordsResponseReceivedHandler;
+    typedef std::function<void(const BedrockAgentCoreClient*, const Model::BatchUpdateMemoryRecordsRequest&, const Model::BatchUpdateMemoryRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateMemoryRecordsResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentCoreClient*, const Model::CreateEventRequest&, const Model::CreateEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentCoreClient*, const Model::DeleteEventRequest&, const Model::DeleteEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentCoreClient*, const Model::DeleteMemoryRecordRequest&, const Model::DeleteMemoryRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMemoryRecordResponseReceivedHandler;
+    typedef std::function<void(const BedrockAgentCoreClient*, const Model::GetAgentCardRequest&, const Model::GetAgentCardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAgentCardResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentCoreClient*, const Model::GetBrowserSessionRequest&, const Model::GetBrowserSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBrowserSessionResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentCoreClient*, const Model::GetCodeInterpreterSessionRequest&, const Model::GetCodeInterpreterSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCodeInterpreterSessionResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentCoreClient*, const Model::GetEventRequest&, const Model::GetEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventResponseReceivedHandler;
@@ -199,6 +223,7 @@ namespace Aws
     typedef std::function<void(const BedrockAgentCoreClient*, const Model::StartCodeInterpreterSessionRequest&, const Model::StartCodeInterpreterSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCodeInterpreterSessionResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentCoreClient*, const Model::StopBrowserSessionRequest&, const Model::StopBrowserSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopBrowserSessionResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentCoreClient*, const Model::StopCodeInterpreterSessionRequest&, const Model::StopCodeInterpreterSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopCodeInterpreterSessionResponseReceivedHandler;
+    typedef std::function<void(const BedrockAgentCoreClient*, const Model::StopRuntimeSessionRequest&, const Model::StopRuntimeSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopRuntimeSessionResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentCoreClient*, const Model::UpdateBrowserStreamRequest&, const Model::UpdateBrowserStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBrowserStreamResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace BedrockAgentCore

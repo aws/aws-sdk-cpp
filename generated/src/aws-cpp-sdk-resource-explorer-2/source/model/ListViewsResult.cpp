@@ -25,11 +25,6 @@ ListViewsResult::ListViewsResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 ListViewsResult& ListViewsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Views"))
   {
     Aws::Utils::Array<JsonView> viewsJsonList = jsonValue.GetArray("Views");
@@ -38,6 +33,11 @@ ListViewsResult& ListViewsResult::operator =(const Aws::AmazonWebServiceResult<J
       m_views.push_back(viewsJsonList[viewsIndex].AsString());
     }
     m_viewsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

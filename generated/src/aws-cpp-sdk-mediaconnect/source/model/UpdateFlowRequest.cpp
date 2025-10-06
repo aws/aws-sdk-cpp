@@ -40,6 +40,11 @@ Aws::String UpdateFlowRequest::SerializePayload() const
 
   }
 
+  if(m_flowSizeHasBeenSet)
+  {
+   payload.WithString("flowSize", FlowSizeMapper::GetNameForFlowSize(m_flowSize));
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -37,8 +37,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identity token of the workload you want to retrive the Oauth2 Token
-     * of.</p>
+     * <p>The identity token of the workload from which you want to retrieve the OAuth2
+     * token.</p>
      */
     inline const Aws::String& GetWorkloadIdentityToken() const { return m_workloadIdentityToken; }
     inline bool WorkloadIdentityTokenHasBeenSet() const { return m_workloadIdentityTokenHasBeenSet; }
@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Reference to the credential provider</p>
+     * <p>The name of the resource's credential provider.</p>
      */
     inline const Aws::String& GetResourceCredentialProviderName() const { return m_resourceCredentialProviderName; }
     inline bool ResourceCredentialProviderNameHasBeenSet() const { return m_resourceCredentialProviderNameHasBeenSet; }
@@ -62,7 +62,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The OAuth scopes requested</p>
+     * <p>The OAuth scopes being requested.</p>
      */
     inline const Aws::Vector<Aws::String>& GetScopes() const { return m_scopes; }
     inline bool ScopesHasBeenSet() const { return m_scopesHasBeenSet; }
@@ -76,7 +76,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of flow to be performed</p>
+     * <p>The type of flow to be performed.</p>
      */
     inline Oauth2FlowType GetOauth2Flow() const { return m_oauth2Flow; }
     inline bool Oauth2FlowHasBeenSet() const { return m_oauth2FlowHasBeenSet; }
@@ -86,8 +86,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Callback url to redirect after token retrieval completes. Should be one of
-     * the provideded urls during WorkloadIdentity creation</p>
+     * <p>The callback URL to redirect to after the OAuth 2.0 token retrieval is
+     * complete. This URL must be one of the provided URLs configured for the workload
+     * identity.</p>
      */
     inline const Aws::String& GetResourceOauth2ReturnUrl() const { return m_resourceOauth2ReturnUrl; }
     inline bool ResourceOauth2ReturnUrlHasBeenSet() const { return m_resourceOauth2ReturnUrlHasBeenSet; }
@@ -99,7 +100,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>If true, always initiate a new 3LO flow</p>
+     * <p>Indicates whether to always initiate a new three-legged OAuth (3LO) flow,
+     * regardless of any existing session.</p>
      */
     inline bool GetForceAuthentication() const { return m_forceAuthentication; }
     inline bool ForceAuthenticationHasBeenSet() const { return m_forceAuthenticationHasBeenSet; }
@@ -109,9 +111,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Gives the ability to send extra/custom parameters to the resource credentials
-     * provider during the authorization process. Standard OAuth2 flow parameters will
-     * not be overriden.</p>
+     * <p>A map of custom parameters to include in the authorization request to the
+     * resource credential provider. These parameters are in addition to the standard
+     * OAuth 2.0 flow parameters, and will not override them.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomParameters() const { return m_customParameters; }
     inline bool CustomParametersHasBeenSet() const { return m_customParametersHasBeenSet; }

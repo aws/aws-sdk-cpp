@@ -56,6 +56,17 @@ Aws::String CreateEventRequest::SerializePayload() const
 
   }
 
+  if(m_metadataHasBeenSet)
+  {
+   JsonValue metadataJsonMap;
+   for(auto& metadataItem : m_metadata)
+   {
+     metadataJsonMap.WithObject(metadataItem.first, metadataItem.second.Jsonize());
+   }
+   payload.WithObject("metadata", std::move(metadataJsonMap));
+
+  }
+
   return payload.View().WriteReadable();
 }
 

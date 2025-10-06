@@ -30,15 +30,15 @@ CreateIndexResult& CreateIndexResult::operator =(const Aws::AmazonWebServiceResu
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedAt"))
-  {
-    m_createdAt = jsonValue.GetString("CreatedAt");
-    m_createdAtHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("State"))
   {
     m_state = IndexStateMapper::GetIndexStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("CreatedAt"))
+  {
+    m_createdAt = jsonValue.GetString("CreatedAt");
+    m_createdAtHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

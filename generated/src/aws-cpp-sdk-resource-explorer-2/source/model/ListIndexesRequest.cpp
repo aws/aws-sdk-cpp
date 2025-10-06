@@ -16,16 +16,9 @@ Aws::String ListIndexesRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_maxResultsHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithInteger("MaxResults", m_maxResults);
-
-  }
-
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+   payload.WithString("Type", IndexTypeMapper::GetNameForIndexType(m_type));
   }
 
   if(m_regionsHasBeenSet)
@@ -39,9 +32,16 @@ Aws::String ListIndexesRequest::SerializePayload() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_maxResultsHasBeenSet)
   {
-   payload.WithString("Type", IndexTypeMapper::GetNameForIndexType(m_type));
+   payload.WithInteger("MaxResults", m_maxResults);
+
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+   payload.WithString("NextToken", m_nextToken);
+
   }
 
   return payload.View().WriteReadable();

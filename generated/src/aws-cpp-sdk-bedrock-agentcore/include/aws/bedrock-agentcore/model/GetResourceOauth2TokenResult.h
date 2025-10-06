@@ -34,8 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The URL for the authorization process, provided if the Access token requires
-     * user Authorization.</p>
+     * <p>The URL to initiate the authorization process, provided when the access token
+     * requires user authorization.</p>
      */
     inline const Aws::String& GetAuthorizationUrl() const { return m_authorizationUrl; }
     template<typename AuthorizationUrlT = Aws::String>
@@ -46,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>OAuth2 token ready for use</p>
+     * <p>The OAuth 2.0 access token to use.</p>
      */
     inline const Aws::String& GetAccessToken() const { return m_accessToken; }
     template<typename AccessTokenT = Aws::String>

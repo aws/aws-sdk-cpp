@@ -25,11 +25,6 @@ ListSupportedResourceTypesResult::ListSupportedResourceTypesResult(const Aws::Am
 ListSupportedResourceTypesResult& ListSupportedResourceTypesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("ResourceTypes"))
   {
     Aws::Utils::Array<JsonView> resourceTypesJsonList = jsonValue.GetArray("ResourceTypes");
@@ -38,6 +33,11 @@ ListSupportedResourceTypesResult& ListSupportedResourceTypesResult::operator =(c
       m_resourceTypes.push_back(resourceTypesJsonList[resourceTypesIndex].AsObject());
     }
     m_resourceTypesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

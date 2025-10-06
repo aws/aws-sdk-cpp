@@ -35,9 +35,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example:
+     * <p>Inputs can include:</p> <p>A value for
+     * <code>isCrossAccountBackupEnabled</code> and a Region. Example:
      * <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false
-     * --region us-west-2</code>.</p>
+     * --region us-west-2</code>.</p> <p>A value for Multi-party approval, styled as
+     * "Mpa": <code>isMpaEnabled</code>. Values can be true or false. Example:
+     * <code>update-global-settings --global-settings isMpaEnabled=false --region
+     * us-west-2</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetGlobalSettings() const { return m_globalSettings; }
     inline bool GlobalSettingsHasBeenSet() const { return m_globalSettingsHasBeenSet; }

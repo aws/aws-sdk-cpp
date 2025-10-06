@@ -128,6 +128,22 @@ namespace Model
       m_ruleMetricsHasBeenSet = true; m_ruleMetrics.emplace(key, value); return *this;
     }
     ///@}
+
+    ///@{
+    /**
+     * <p>A map containing labels assigned to the data quality rule. </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetLabels() const { return m_labels; }
+    inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
+    template<typename LabelsT = Aws::Map<Aws::String, Aws::String>>
+    void SetLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels = std::forward<LabelsT>(value); }
+    template<typename LabelsT = Aws::Map<Aws::String, Aws::String>>
+    DataQualityRuleResult& WithLabels(LabelsT&& value) { SetLabels(std::forward<LabelsT>(value)); return *this;}
+    template<typename LabelsKeyT = Aws::String, typename LabelsValueT = Aws::String>
+    DataQualityRuleResult& AddLabels(LabelsKeyT&& key, LabelsValueT&& value) {
+      m_labelsHasBeenSet = true; m_labels.emplace(std::forward<LabelsKeyT>(key), std::forward<LabelsValueT>(value)); return *this;
+    }
+    ///@}
   private:
 
     Aws::String m_name;
@@ -150,6 +166,9 @@ namespace Model
 
     Aws::Map<Aws::String, double> m_ruleMetrics;
     bool m_ruleMetricsHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_labels;
+    bool m_labelsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -9,6 +9,7 @@
 #include <aws/mediaconnect/model/Encryption.h>
 #include <aws/mediaconnect/model/EntitlementStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -118,6 +119,23 @@ namespace Model
     template<typename SubscribersT = Aws::String>
     GrantEntitlementRequest& AddSubscribers(SubscribersT&& value) { m_subscribersHasBeenSet = true; m_subscribers.emplace_back(std::forward<SubscribersT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p> The key-value pairs that can be used to tag and organize the entitlement.
+     * </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetEntitlementTags() const { return m_entitlementTags; }
+    inline bool EntitlementTagsHasBeenSet() const { return m_entitlementTagsHasBeenSet; }
+    template<typename EntitlementTagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetEntitlementTags(EntitlementTagsT&& value) { m_entitlementTagsHasBeenSet = true; m_entitlementTags = std::forward<EntitlementTagsT>(value); }
+    template<typename EntitlementTagsT = Aws::Map<Aws::String, Aws::String>>
+    GrantEntitlementRequest& WithEntitlementTags(EntitlementTagsT&& value) { SetEntitlementTags(std::forward<EntitlementTagsT>(value)); return *this;}
+    template<typename EntitlementTagsKeyT = Aws::String, typename EntitlementTagsValueT = Aws::String>
+    GrantEntitlementRequest& AddEntitlementTags(EntitlementTagsKeyT&& key, EntitlementTagsValueT&& value) {
+      m_entitlementTagsHasBeenSet = true; m_entitlementTags.emplace(std::forward<EntitlementTagsKeyT>(key), std::forward<EntitlementTagsValueT>(value)); return *this;
+    }
+    ///@}
   private:
 
     int m_dataTransferSubscriberFeePercent{0};
@@ -137,6 +155,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_subscribers;
     bool m_subscribersHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_entitlementTags;
+    bool m_entitlementTagsHasBeenSet = false;
   };
 
 } // namespace Model

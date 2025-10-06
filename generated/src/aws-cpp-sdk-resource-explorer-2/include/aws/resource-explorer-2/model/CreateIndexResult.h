@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/resource-explorer-2/model/IndexState.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -50,17 +50,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and timestamp when the index was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    CreateIndexResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Indicates the current state of the index. You can check for changes to the
      * state for asynchronous operations by calling the <a>GetIndex</a> operation.</p>
      *  <p>The state can remain in the <code>CREATING</code> or
@@ -70,6 +59,17 @@ namespace Model
     inline IndexState GetState() const { return m_state; }
     inline void SetState(IndexState value) { m_stateHasBeenSet = true; m_state = value; }
     inline CreateIndexResult& WithState(IndexState value) { SetState(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and timestamp when the index was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    CreateIndexResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,11 +85,11 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
-
     IndexState m_state{IndexState::NOT_SET};
     bool m_stateHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

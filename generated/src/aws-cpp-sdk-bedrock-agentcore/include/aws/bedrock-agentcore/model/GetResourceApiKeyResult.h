@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The API Key associated with the resource requested.</p>
+     * <p>The API key associated with the resource requested.</p>
      */
     inline const Aws::String& GetApiKey() const { return m_apiKey; }
     template<typename ApiKeyT = Aws::String>

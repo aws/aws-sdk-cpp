@@ -25,11 +25,6 @@ ListResourcesResult::ListResourcesResult(const Aws::AmazonWebServiceResult<JsonV
 ListResourcesResult& ListResourcesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Resources"))
   {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
@@ -38,6 +33,11 @@ ListResourcesResult& ListResourcesResult::operator =(const Aws::AmazonWebService
       m_resources.push_back(resourcesJsonList[resourcesIndex].AsObject());
     }
     m_resourcesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ViewArn"))
   {

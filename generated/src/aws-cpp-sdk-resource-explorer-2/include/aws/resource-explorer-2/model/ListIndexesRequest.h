@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
 #include <aws/resource-explorer-2/ResourceExplorer2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/resource-explorer-2/model/IndexType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -33,6 +33,33 @@ namespace Model
 
     AWS_RESOURCEEXPLORER2_API Aws::String SerializePayload() const override;
 
+
+    ///@{
+    /**
+     * <p>If specified, limits the output to only indexes of the specified Type, either
+     * <code>LOCAL</code> or <code>AGGREGATOR</code>.</p> <p>Use this option to
+     * discover the aggregator index for your account.</p>
+     */
+    inline IndexType GetType() const { return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(IndexType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ListIndexesRequest& WithType(IndexType value) { SetType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>If specified, limits the response to only information about the index in the
+     * specified list of Amazon Web Services Regions.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRegions() const { return m_regions; }
+    inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
+    template<typename RegionsT = Aws::Vector<Aws::String>>
+    void SetRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions = std::forward<RegionsT>(value); }
+    template<typename RegionsT = Aws::Vector<Aws::String>>
+    ListIndexesRequest& WithRegions(RegionsT&& value) { SetRegions(std::forward<RegionsT>(value)); return *this;}
+    template<typename RegionsT = Aws::String>
+    ListIndexesRequest& AddRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions.emplace_back(std::forward<RegionsT>(value)); return *this; }
+    ///@}
 
     ///@{
     /**
@@ -69,46 +96,19 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListIndexesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>If specified, limits the response to only information about the index in the
-     * specified list of Amazon Web Services Regions.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetRegions() const { return m_regions; }
-    inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
-    template<typename RegionsT = Aws::Vector<Aws::String>>
-    void SetRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions = std::forward<RegionsT>(value); }
-    template<typename RegionsT = Aws::Vector<Aws::String>>
-    ListIndexesRequest& WithRegions(RegionsT&& value) { SetRegions(std::forward<RegionsT>(value)); return *this;}
-    template<typename RegionsT = Aws::String>
-    ListIndexesRequest& AddRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions.emplace_back(std::forward<RegionsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>If specified, limits the output to only indexes of the specified Type, either
-     * <code>LOCAL</code> or <code>AGGREGATOR</code>.</p> <p>Use this option to
-     * discover the aggregator index for your account.</p>
-     */
-    inline IndexType GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(IndexType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline ListIndexesRequest& WithType(IndexType value) { SetType(value); return *this;}
-    ///@}
   private:
+
+    IndexType m_type{IndexType::NOT_SET};
+    bool m_typeHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_regions;
+    bool m_regionsHasBeenSet = false;
 
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_regions;
-    bool m_regionsHasBeenSet = false;
-
-    IndexType m_type{IndexType::NOT_SET};
-    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of the error for the specified view.</p>
-     */
-    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
-    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    template<typename ErrorMessageT = Aws::String>
-    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
-    template<typename ErrorMessageT = Aws::String>
-    BatchGetViewError& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * resource name (ARN)</a> of the view for which Resource Explorer failed to
@@ -64,13 +52,25 @@ namespace Model
     template<typename ViewArnT = Aws::String>
     BatchGetViewError& WithViewArn(ViewArnT&& value) { SetViewArn(std::forward<ViewArnT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The description of the error for the specified view.</p>
+     */
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    BatchGetViewError& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_viewArn;
     bool m_viewArnHasBeenSet = false;
+
+    Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,9 +22,9 @@ Aws::String CreateViewRequest::SerializePayload() const
 
   }
 
-  if(m_filtersHasBeenSet)
+  if(m_viewNameHasBeenSet)
   {
-   payload.WithObject("Filters", m_filters.Jsonize());
+   payload.WithString("ViewName", m_viewName);
 
   }
 
@@ -45,6 +45,12 @@ Aws::String CreateViewRequest::SerializePayload() const
 
   }
 
+  if(m_filtersHasBeenSet)
+  {
+   payload.WithObject("Filters", m_filters.Jsonize());
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;
@@ -53,12 +59,6 @@ Aws::String CreateViewRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
-
-  }
-
-  if(m_viewNameHasBeenSet)
-  {
-   payload.WithString("ViewName", m_viewName);
 
   }
 

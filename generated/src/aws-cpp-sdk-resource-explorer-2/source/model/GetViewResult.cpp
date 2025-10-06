@@ -25,6 +25,11 @@ GetViewResult::GetViewResult(const Aws::AmazonWebServiceResult<JsonValue>& resul
 GetViewResult& GetViewResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("View"))
+  {
+    m_view = jsonValue.GetObject("View");
+    m_viewHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -33,11 +38,6 @@ GetViewResult& GetViewResult::operator =(const Aws::AmazonWebServiceResult<JsonV
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("View"))
-  {
-    m_view = jsonValue.GetObject("View");
-    m_viewHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

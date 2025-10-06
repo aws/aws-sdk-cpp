@@ -34,7 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identity token of the workload you want to get the API Key of.</p>
+     * <p>The identity token of the workload from which you want to retrieve the API
+     * key.</p>
      */
     inline const Aws::String& GetWorkloadIdentityToken() const { return m_workloadIdentityToken; }
     inline bool WorkloadIdentityTokenHasBeenSet() const { return m_workloadIdentityTokenHasBeenSet; }
@@ -46,8 +47,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The credential provider name of the resource you are retrieving the API Key
-     * of.</p>
+     * <p>The credential provider name for the resource from which you are retrieving
+     * the API key.</p>
      */
     inline const Aws::String& GetResourceCredentialProviderName() const { return m_resourceCredentialProviderName; }
     inline bool ResourceCredentialProviderNameHasBeenSet() const { return m_resourceCredentialProviderNameHasBeenSet; }

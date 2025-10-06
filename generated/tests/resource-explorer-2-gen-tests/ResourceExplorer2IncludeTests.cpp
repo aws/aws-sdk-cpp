@@ -22,13 +22,18 @@
 #include <aws/resource-explorer-2/model/BatchGetViewResult.h>
 #include <aws/resource-explorer-2/model/CreateIndexRequest.h>
 #include <aws/resource-explorer-2/model/CreateIndexResult.h>
+#include <aws/resource-explorer-2/model/CreateResourceExplorerSetupRequest.h>
+#include <aws/resource-explorer-2/model/CreateResourceExplorerSetupResult.h>
 #include <aws/resource-explorer-2/model/CreateViewRequest.h>
 #include <aws/resource-explorer-2/model/CreateViewResult.h>
 #include <aws/resource-explorer-2/model/DeleteIndexRequest.h>
 #include <aws/resource-explorer-2/model/DeleteIndexResult.h>
+#include <aws/resource-explorer-2/model/DeleteResourceExplorerSetupRequest.h>
+#include <aws/resource-explorer-2/model/DeleteResourceExplorerSetupResult.h>
 #include <aws/resource-explorer-2/model/DeleteViewRequest.h>
 #include <aws/resource-explorer-2/model/DeleteViewResult.h>
 #include <aws/resource-explorer-2/model/DisassociateDefaultViewRequest.h>
+#include <aws/resource-explorer-2/model/ErrorDetails.h>
 #include <aws/resource-explorer-2/model/GetAccountLevelServiceConfigurationRequest.h>
 #include <aws/resource-explorer-2/model/GetAccountLevelServiceConfigurationResult.h>
 #include <aws/resource-explorer-2/model/GetDefaultViewRequest.h>
@@ -37,11 +42,18 @@
 #include <aws/resource-explorer-2/model/GetIndexResult.h>
 #include <aws/resource-explorer-2/model/GetManagedViewRequest.h>
 #include <aws/resource-explorer-2/model/GetManagedViewResult.h>
+#include <aws/resource-explorer-2/model/GetResourceExplorerSetupRequest.h>
+#include <aws/resource-explorer-2/model/GetResourceExplorerSetupResult.h>
+#include <aws/resource-explorer-2/model/GetServiceIndexRequest.h>
+#include <aws/resource-explorer-2/model/GetServiceIndexResult.h>
+#include <aws/resource-explorer-2/model/GetServiceViewRequest.h>
+#include <aws/resource-explorer-2/model/GetServiceViewResult.h>
 #include <aws/resource-explorer-2/model/GetViewRequest.h>
 #include <aws/resource-explorer-2/model/GetViewResult.h>
 #include <aws/resource-explorer-2/model/IncludedProperty.h>
 #include <aws/resource-explorer-2/model/Index.h>
 #include <aws/resource-explorer-2/model/IndexState.h>
+#include <aws/resource-explorer-2/model/IndexStatus.h>
 #include <aws/resource-explorer-2/model/IndexType.h>
 #include <aws/resource-explorer-2/model/ListIndexesForMembersRequest.h>
 #include <aws/resource-explorer-2/model/ListIndexesForMembersResult.h>
@@ -51,6 +63,12 @@
 #include <aws/resource-explorer-2/model/ListManagedViewsResult.h>
 #include <aws/resource-explorer-2/model/ListResourcesRequest.h>
 #include <aws/resource-explorer-2/model/ListResourcesResult.h>
+#include <aws/resource-explorer-2/model/ListServiceIndexesRequest.h>
+#include <aws/resource-explorer-2/model/ListServiceIndexesResult.h>
+#include <aws/resource-explorer-2/model/ListServiceViewsRequest.h>
+#include <aws/resource-explorer-2/model/ListServiceViewsResult.h>
+#include <aws/resource-explorer-2/model/ListStreamingAccessForServicesRequest.h>
+#include <aws/resource-explorer-2/model/ListStreamingAccessForServicesResult.h>
 #include <aws/resource-explorer-2/model/ListSupportedResourceTypesRequest.h>
 #include <aws/resource-explorer-2/model/ListSupportedResourceTypesResult.h>
 #include <aws/resource-explorer-2/model/ListTagsForResourceRequest.h>
@@ -59,7 +77,9 @@
 #include <aws/resource-explorer-2/model/ListViewsResult.h>
 #include <aws/resource-explorer-2/model/ManagedView.h>
 #include <aws/resource-explorer-2/model/MemberIndex.h>
+#include <aws/resource-explorer-2/model/OperationStatus.h>
 #include <aws/resource-explorer-2/model/OrgConfiguration.h>
+#include <aws/resource-explorer-2/model/RegionStatus.h>
 #include <aws/resource-explorer-2/model/Resource.h>
 #include <aws/resource-explorer-2/model/ResourceCount.h>
 #include <aws/resource-explorer-2/model/ResourceProperty.h>
@@ -67,6 +87,8 @@
 #include <aws/resource-explorer-2/model/SearchRequest.h>
 #include <aws/resource-explorer-2/model/SearchResult.h>
 #include <aws/resource-explorer-2/model/ServiceQuotaExceededException.h>
+#include <aws/resource-explorer-2/model/ServiceView.h>
+#include <aws/resource-explorer-2/model/StreamingAccessDetails.h>
 #include <aws/resource-explorer-2/model/SupportedResourceType.h>
 #include <aws/resource-explorer-2/model/TagResourceRequest.h>
 #include <aws/resource-explorer-2/model/TagResourceResult.h>
@@ -79,6 +101,7 @@
 #include <aws/resource-explorer-2/model/ValidationException.h>
 #include <aws/resource-explorer-2/model/ValidationExceptionField.h>
 #include <aws/resource-explorer-2/model/View.h>
+#include <aws/resource-explorer-2/model/ViewStatus.h>
 
 using ResourceExplorer2IncludeTest = ::testing::Test;
 

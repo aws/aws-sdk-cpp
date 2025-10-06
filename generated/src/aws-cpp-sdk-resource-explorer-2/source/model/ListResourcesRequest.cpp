@@ -28,15 +28,15 @@ Aws::String ListResourcesRequest::SerializePayload() const
 
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
-  }
-
   if(m_viewArnHasBeenSet)
   {
    payload.WithString("ViewArn", m_viewArn);
+
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+   payload.WithString("NextToken", m_nextToken);
 
   }
 

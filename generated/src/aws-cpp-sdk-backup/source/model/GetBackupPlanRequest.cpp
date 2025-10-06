@@ -30,6 +30,13 @@ void GetBackupPlanRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
+    if(m_maxScheduledRunsPreviewHasBeenSet)
+    {
+      ss << m_maxScheduledRunsPreview;
+      uri.AddQueryStringParameter("MaxScheduledRunsPreview", ss.str());
+      ss.str("");
+    }
+
 }
 
 

@@ -66,8 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The QuickSight customizations you're updating in the current Amazon Web
-     * Services Region. </p>
+     * <p>The QuickSight customizations you're updating. </p>
      */
     inline const AccountCustomization& GetAccountCustomization() const { return m_accountCustomization; }
     inline bool AccountCustomizationHasBeenSet() const { return m_accountCustomizationHasBeenSet; }

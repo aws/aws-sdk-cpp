@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
-#include <aws/core/utils/Document.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/Document.h>
 #include <utility>
 
 namespace Aws
@@ -42,15 +42,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>Details about this property. The content of this field is a JSON object that
-     * varies based on the resource type.</p>
+     * <p>The name of this property of the resource.</p>
      */
-    inline Aws::Utils::DocumentView GetData() const { return m_data; }
-    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    template<typename DataT = Aws::Utils::Document>
-    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
-    template<typename DataT = Aws::Utils::Document>
-    ResourceProperty& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ResourceProperty& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,25 +67,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of this property of the resource.</p>
+     * <p>Details about this property. The content of this field is a JSON object that
+     * varies based on the resource type.</p>
      */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    ResourceProperty& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
+    inline Aws::Utils::DocumentView GetData() const { return m_data; }
+    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
+    template<typename DataT = Aws::Utils::Document>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = Aws::Utils::Document>
+    ResourceProperty& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::Document m_data;
-    bool m_dataHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastReportedAt{};
     bool m_lastReportedAtHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+    Aws::Utils::Document m_data;
+    bool m_dataHasBeenSet = false;
   };
 
 } // namespace Model

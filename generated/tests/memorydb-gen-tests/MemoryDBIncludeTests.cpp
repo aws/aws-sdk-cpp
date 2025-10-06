@@ -68,6 +68,10 @@
 #include <aws/memorydb/model/DescribeEventsResult.h>
 #include <aws/memorydb/model/DescribeMultiRegionClustersRequest.h>
 #include <aws/memorydb/model/DescribeMultiRegionClustersResult.h>
+#include <aws/memorydb/model/DescribeMultiRegionParameterGroupsRequest.h>
+#include <aws/memorydb/model/DescribeMultiRegionParameterGroupsResult.h>
+#include <aws/memorydb/model/DescribeMultiRegionParametersRequest.h>
+#include <aws/memorydb/model/DescribeMultiRegionParametersResult.h>
 #include <aws/memorydb/model/DescribeParameterGroupsRequest.h>
 #include <aws/memorydb/model/DescribeParameterGroupsResult.h>
 #include <aws/memorydb/model/DescribeParametersRequest.h>
@@ -99,6 +103,8 @@
 #include <aws/memorydb/model/ListTagsRequest.h>
 #include <aws/memorydb/model/ListTagsResult.h>
 #include <aws/memorydb/model/MultiRegionCluster.h>
+#include <aws/memorydb/model/MultiRegionParameter.h>
+#include <aws/memorydb/model/MultiRegionParameterGroup.h>
 #include <aws/memorydb/model/NetworkType.h>
 #include <aws/memorydb/model/Node.h>
 #include <aws/memorydb/model/Parameter.h>

@@ -118,6 +118,17 @@ Aws::String CreateFlowRequest::SerializePayload() const
 
   }
 
+  if(m_flowTagsHasBeenSet)
+  {
+   JsonValue flowTagsJsonMap;
+   for(auto& flowTagsItem : m_flowTags)
+   {
+     flowTagsJsonMap.WithString(flowTagsItem.first, flowTagsItem.second);
+   }
+   payload.WithObject("flowTags", std::move(flowTagsJsonMap));
+
+  }
+
   return payload.View().WriteReadable();
 }
 

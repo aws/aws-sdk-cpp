@@ -10,7 +10,9 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agentcore/model/Branch.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/bedrock-agentcore/model/PayloadType.h>
+#include <aws/bedrock-agentcore/model/MetadataValue.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -130,6 +132,22 @@ namespace Model
     template<typename ClientTokenT = Aws::String>
     CreateEventRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The key-value metadata to attach to the event.</p>
+     */
+    inline const Aws::Map<Aws::String, MetadataValue>& GetMetadata() const { return m_metadata; }
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+    template<typename MetadataT = Aws::Map<Aws::String, MetadataValue>>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Aws::Map<Aws::String, MetadataValue>>
+    CreateEventRequest& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
+    template<typename MetadataKeyT = Aws::String, typename MetadataValueT = MetadataValue>
+    CreateEventRequest& AddMetadata(MetadataKeyT&& key, MetadataValueT&& value) {
+      m_metadataHasBeenSet = true; m_metadata.emplace(std::forward<MetadataKeyT>(key), std::forward<MetadataValueT>(value)); return *this;
+    }
+    ///@}
   private:
 
     Aws::String m_memoryId;
@@ -152,6 +170,9 @@ namespace Model
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
+
+    Aws::Map<Aws::String, MetadataValue> m_metadata;
+    bool m_metadataHasBeenSet = false;
   };
 
 } // namespace Model

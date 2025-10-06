@@ -8,6 +8,7 @@
 #include <aws/mediaconnect/model/MediaStreamAttributesRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/model/MediaStreamType.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -120,6 +121,23 @@ namespace Model
     template<typename VideoFormatT = Aws::String>
     AddMediaStreamRequest& WithVideoFormat(VideoFormatT&& value) { SetVideoFormat(std::forward<VideoFormatT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The key-value pairs that can be used to tag and organize the media stream.
+     * </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetMediaStreamTags() const { return m_mediaStreamTags; }
+    inline bool MediaStreamTagsHasBeenSet() const { return m_mediaStreamTagsHasBeenSet; }
+    template<typename MediaStreamTagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetMediaStreamTags(MediaStreamTagsT&& value) { m_mediaStreamTagsHasBeenSet = true; m_mediaStreamTags = std::forward<MediaStreamTagsT>(value); }
+    template<typename MediaStreamTagsT = Aws::Map<Aws::String, Aws::String>>
+    AddMediaStreamRequest& WithMediaStreamTags(MediaStreamTagsT&& value) { SetMediaStreamTags(std::forward<MediaStreamTagsT>(value)); return *this;}
+    template<typename MediaStreamTagsKeyT = Aws::String, typename MediaStreamTagsValueT = Aws::String>
+    AddMediaStreamRequest& AddMediaStreamTags(MediaStreamTagsKeyT&& key, MediaStreamTagsValueT&& value) {
+      m_mediaStreamTagsHasBeenSet = true; m_mediaStreamTags.emplace(std::forward<MediaStreamTagsKeyT>(key), std::forward<MediaStreamTagsValueT>(value)); return *this;
+    }
+    ///@}
   private:
 
     MediaStreamAttributesRequest m_attributes;
@@ -142,6 +160,9 @@ namespace Model
 
     Aws::String m_videoFormat;
     bool m_videoFormatHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_mediaStreamTags;
+    bool m_mediaStreamTagsHasBeenSet = false;
   };
 
 } // namespace Model

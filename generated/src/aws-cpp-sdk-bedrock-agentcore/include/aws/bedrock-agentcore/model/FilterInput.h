@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/bedrock-agentcore/model/BranchFilter.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock-agentcore/model/EventMetadataFilterExpression.h>
 #include <utility>
 
 namespace Aws
@@ -48,10 +50,27 @@ namespace Model
     template<typename BranchT = BranchFilter>
     FilterInput& WithBranch(BranchT&& value) { SetBranch(std::forward<BranchT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Event metadata filter criteria to apply when retrieving events.</p>
+     */
+    inline const Aws::Vector<EventMetadataFilterExpression>& GetEventMetadata() const { return m_eventMetadata; }
+    inline bool EventMetadataHasBeenSet() const { return m_eventMetadataHasBeenSet; }
+    template<typename EventMetadataT = Aws::Vector<EventMetadataFilterExpression>>
+    void SetEventMetadata(EventMetadataT&& value) { m_eventMetadataHasBeenSet = true; m_eventMetadata = std::forward<EventMetadataT>(value); }
+    template<typename EventMetadataT = Aws::Vector<EventMetadataFilterExpression>>
+    FilterInput& WithEventMetadata(EventMetadataT&& value) { SetEventMetadata(std::forward<EventMetadataT>(value)); return *this;}
+    template<typename EventMetadataT = EventMetadataFilterExpression>
+    FilterInput& AddEventMetadata(EventMetadataT&& value) { m_eventMetadataHasBeenSet = true; m_eventMetadata.emplace_back(std::forward<EventMetadataT>(value)); return *this; }
+    ///@}
   private:
 
     BranchFilter m_branch;
     bool m_branchHasBeenSet = false;
+
+    Aws::Vector<EventMetadataFilterExpression> m_eventMetadata;
+    bool m_eventMetadataHasBeenSet = false;
   };
 
 } // namespace Model

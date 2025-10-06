@@ -9,10 +9,11 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeArtifact.h>
 #include <aws/bedrock-agentcore-control/model/NetworkConfiguration.h>
-#include <aws/bedrock-agentcore-control/model/ProtocolConfiguration.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RequestHeaderConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/ProtocolConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/LifecycleConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -53,18 +54,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of the AgentCore Runtime.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    CreateAgentRuntimeRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The artifact of the AgentCore Runtime.</p>
      */
     inline const AgentRuntimeArtifact& GetAgentRuntimeArtifact() const { return m_agentRuntimeArtifact; }
@@ -100,16 +89,6 @@ namespace Model
     ///@}
 
     ///@{
-    
-    inline const ProtocolConfiguration& GetProtocolConfiguration() const { return m_protocolConfiguration; }
-    inline bool ProtocolConfigurationHasBeenSet() const { return m_protocolConfigurationHasBeenSet; }
-    template<typename ProtocolConfigurationT = ProtocolConfiguration>
-    void SetProtocolConfiguration(ProtocolConfigurationT&& value) { m_protocolConfigurationHasBeenSet = true; m_protocolConfiguration = std::forward<ProtocolConfigurationT>(value); }
-    template<typename ProtocolConfigurationT = ProtocolConfiguration>
-    CreateAgentRuntimeRequest& WithProtocolConfiguration(ProtocolConfigurationT&& value) { SetProtocolConfiguration(std::forward<ProtocolConfigurationT>(value)); return *this;}
-    ///@}
-
-    ///@{
     /**
      * <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
      */
@@ -123,18 +102,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>Environment variables to set in the AgentCore Runtime environment.</p>
+     * <p>The description of the AgentCore Runtime.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const { return m_environmentVariables; }
-    inline bool EnvironmentVariablesHasBeenSet() const { return m_environmentVariablesHasBeenSet; }
-    template<typename EnvironmentVariablesT = Aws::Map<Aws::String, Aws::String>>
-    void SetEnvironmentVariables(EnvironmentVariablesT&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = std::forward<EnvironmentVariablesT>(value); }
-    template<typename EnvironmentVariablesT = Aws::Map<Aws::String, Aws::String>>
-    CreateAgentRuntimeRequest& WithEnvironmentVariables(EnvironmentVariablesT&& value) { SetEnvironmentVariables(std::forward<EnvironmentVariablesT>(value)); return *this;}
-    template<typename EnvironmentVariablesKeyT = Aws::String, typename EnvironmentVariablesValueT = Aws::String>
-    CreateAgentRuntimeRequest& AddEnvironmentVariables(EnvironmentVariablesKeyT&& key, EnvironmentVariablesValueT&& value) {
-      m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::forward<EnvironmentVariablesKeyT>(key), std::forward<EnvironmentVariablesValueT>(value)); return *this;
-    }
+    inline const Aws::String& GetDescription() const { return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateAgentRuntimeRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,6 +138,44 @@ namespace Model
     ///@}
 
     ///@{
+    
+    inline const ProtocolConfiguration& GetProtocolConfiguration() const { return m_protocolConfiguration; }
+    inline bool ProtocolConfigurationHasBeenSet() const { return m_protocolConfigurationHasBeenSet; }
+    template<typename ProtocolConfigurationT = ProtocolConfiguration>
+    void SetProtocolConfiguration(ProtocolConfigurationT&& value) { m_protocolConfigurationHasBeenSet = true; m_protocolConfiguration = std::forward<ProtocolConfigurationT>(value); }
+    template<typename ProtocolConfigurationT = ProtocolConfiguration>
+    CreateAgentRuntimeRequest& WithProtocolConfiguration(ProtocolConfigurationT&& value) { SetProtocolConfiguration(std::forward<ProtocolConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The life cycle configuration for the AgentCore Runtime.</p>
+     */
+    inline const LifecycleConfiguration& GetLifecycleConfiguration() const { return m_lifecycleConfiguration; }
+    inline bool LifecycleConfigurationHasBeenSet() const { return m_lifecycleConfigurationHasBeenSet; }
+    template<typename LifecycleConfigurationT = LifecycleConfiguration>
+    void SetLifecycleConfiguration(LifecycleConfigurationT&& value) { m_lifecycleConfigurationHasBeenSet = true; m_lifecycleConfiguration = std::forward<LifecycleConfigurationT>(value); }
+    template<typename LifecycleConfigurationT = LifecycleConfiguration>
+    CreateAgentRuntimeRequest& WithLifecycleConfiguration(LifecycleConfigurationT&& value) { SetLifecycleConfiguration(std::forward<LifecycleConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Environment variables to set in the AgentCore Runtime environment.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const { return m_environmentVariables; }
+    inline bool EnvironmentVariablesHasBeenSet() const { return m_environmentVariablesHasBeenSet; }
+    template<typename EnvironmentVariablesT = Aws::Map<Aws::String, Aws::String>>
+    void SetEnvironmentVariables(EnvironmentVariablesT&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = std::forward<EnvironmentVariablesT>(value); }
+    template<typename EnvironmentVariablesT = Aws::Map<Aws::String, Aws::String>>
+    CreateAgentRuntimeRequest& WithEnvironmentVariables(EnvironmentVariablesT&& value) { SetEnvironmentVariables(std::forward<EnvironmentVariablesT>(value)); return *this;}
+    template<typename EnvironmentVariablesKeyT = Aws::String, typename EnvironmentVariablesValueT = Aws::String>
+    CreateAgentRuntimeRequest& AddEnvironmentVariables(EnvironmentVariablesKeyT&& key, EnvironmentVariablesValueT&& value) {
+      m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::forward<EnvironmentVariablesKeyT>(key), std::forward<EnvironmentVariablesValueT>(value)); return *this;
+    }
+    ///@}
+
+    ///@{
     /**
      * <p>A map of tag keys and values to assign to the agent runtime. Tags enable you
      * to categorize your resources in different ways, for example, by purpose, owner,
@@ -184,9 +197,6 @@ namespace Model
     Aws::String m_agentRuntimeName;
     bool m_agentRuntimeNameHasBeenSet = false;
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
     AgentRuntimeArtifact m_agentRuntimeArtifact;
     bool m_agentRuntimeArtifactHasBeenSet = false;
 
@@ -196,20 +206,26 @@ namespace Model
     NetworkConfiguration m_networkConfiguration;
     bool m_networkConfigurationHasBeenSet = false;
 
-    ProtocolConfiguration m_protocolConfiguration;
-    bool m_protocolConfigurationHasBeenSet = false;
-
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;
 
-    Aws::Map<Aws::String, Aws::String> m_environmentVariables;
-    bool m_environmentVariablesHasBeenSet = false;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     AuthorizerConfiguration m_authorizerConfiguration;
     bool m_authorizerConfigurationHasBeenSet = false;
 
     RequestHeaderConfiguration m_requestHeaderConfiguration;
     bool m_requestHeaderConfigurationHasBeenSet = false;
+
+    ProtocolConfiguration m_protocolConfiguration;
+    bool m_protocolConfigurationHasBeenSet = false;
+
+    LifecycleConfiguration m_lifecycleConfiguration;
+    bool m_lifecycleConfigurationHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_environmentVariables;
+    bool m_environmentVariablesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

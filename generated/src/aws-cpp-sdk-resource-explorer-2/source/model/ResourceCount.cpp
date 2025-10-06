@@ -25,15 +25,15 @@ ResourceCount::ResourceCount(JsonView jsonValue)
 
 ResourceCount& ResourceCount::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Complete"))
-  {
-    m_complete = jsonValue.GetBool("Complete");
-    m_completeHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("TotalResources"))
   {
     m_totalResources = jsonValue.GetInt64("TotalResources");
     m_totalResourcesHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Complete"))
+  {
+    m_complete = jsonValue.GetBool("Complete");
+    m_completeHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue ResourceCount::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_completeHasBeenSet)
-  {
-   payload.WithBool("Complete", m_complete);
-
-  }
-
   if(m_totalResourcesHasBeenSet)
   {
    payload.WithInt64("TotalResources", m_totalResources);
+
+  }
+
+  if(m_completeHasBeenSet)
+  {
+   payload.WithBool("Complete", m_complete);
 
   }
 

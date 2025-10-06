@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -35,20 +35,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of managed views available in the Amazon Web Services Region in
-     * which you called this operation. </p>
-     */
-    inline const Aws::Vector<Aws::String>& GetManagedViews() const { return m_managedViews; }
-    template<typename ManagedViewsT = Aws::Vector<Aws::String>>
-    void SetManagedViews(ManagedViewsT&& value) { m_managedViewsHasBeenSet = true; m_managedViews = std::forward<ManagedViewsT>(value); }
-    template<typename ManagedViewsT = Aws::Vector<Aws::String>>
-    ListManagedViewsResult& WithManagedViews(ManagedViewsT&& value) { SetManagedViews(std::forward<ManagedViewsT>(value)); return *this;}
-    template<typename ManagedViewsT = Aws::String>
-    ListManagedViewsResult& AddManagedViews(ManagedViewsT&& value) { m_managedViewsHasBeenSet = true; m_managedViews.emplace_back(std::forward<ManagedViewsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>If present, indicates that more output is available than is included in the
      * current response. Use this value in the <code>NextToken</code> request parameter
      * in a subsequent call to the operation to get the next part of the output. You
@@ -63,6 +49,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The list of managed views available in the Amazon Web Services Region in
+     * which you called this operation. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetManagedViews() const { return m_managedViews; }
+    template<typename ManagedViewsT = Aws::Vector<Aws::String>>
+    void SetManagedViews(ManagedViewsT&& value) { m_managedViewsHasBeenSet = true; m_managedViews = std::forward<ManagedViewsT>(value); }
+    template<typename ManagedViewsT = Aws::Vector<Aws::String>>
+    ListManagedViewsResult& WithManagedViews(ManagedViewsT&& value) { SetManagedViews(std::forward<ManagedViewsT>(value)); return *this;}
+    template<typename ManagedViewsT = Aws::String>
+    ListManagedViewsResult& AddManagedViews(ManagedViewsT&& value) { m_managedViewsHasBeenSet = true; m_managedViews.emplace_back(std::forward<ManagedViewsT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -72,11 +72,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<Aws::String> m_managedViews;
-    bool m_managedViewsHasBeenSet = false;
-
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_managedViews;
+    bool m_managedViewsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

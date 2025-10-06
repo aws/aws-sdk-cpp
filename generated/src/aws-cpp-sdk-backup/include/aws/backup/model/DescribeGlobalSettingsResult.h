@@ -36,7 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the flag <code>isCrossAccountBackupEnabled</code>.</p>
+     * <p>The status of the flags <code>isCrossAccountBackupEnabled</code> and
+     * <code>isMpaEnabled</code> ('Mpa' refers to multi-party approval).</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetGlobalSettings() const { return m_globalSettings; }
     template<typename GlobalSettingsT = Aws::Map<Aws::String, Aws::String>>

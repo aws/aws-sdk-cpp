@@ -30,6 +30,15 @@ FilterInput& FilterInput::operator =(JsonView jsonValue)
     m_branch = jsonValue.GetObject("branch");
     m_branchHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("eventMetadata"))
+  {
+    Aws::Utils::Array<JsonView> eventMetadataJsonList = jsonValue.GetArray("eventMetadata");
+    for(unsigned eventMetadataIndex = 0; eventMetadataIndex < eventMetadataJsonList.GetLength(); ++eventMetadataIndex)
+    {
+      m_eventMetadata.push_back(eventMetadataJsonList[eventMetadataIndex].AsObject());
+    }
+    m_eventMetadataHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +49,17 @@ JsonValue FilterInput::Jsonize() const
   if(m_branchHasBeenSet)
   {
    payload.WithObject("branch", m_branch.Jsonize());
+
+  }
+
+  if(m_eventMetadataHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> eventMetadataJsonList(m_eventMetadata.size());
+   for(unsigned eventMetadataIndex = 0; eventMetadataIndex < eventMetadataJsonList.GetLength(); ++eventMetadataIndex)
+   {
+     eventMetadataJsonList[eventMetadataIndex].AsObject(m_eventMetadata[eventMetadataIndex].Jsonize());
+   }
+   payload.WithArray("eventMetadata", std::move(eventMetadataJsonList));
 
   }
 

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/model/NetworkInterfaceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -108,6 +109,23 @@ namespace Model
     template<typename SubnetIdT = Aws::String>
     VpcInterfaceRequest& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The key-value pairs that can be used to tag and organize the VPC network
+     * interface. </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetVpcInterfaceTags() const { return m_vpcInterfaceTags; }
+    inline bool VpcInterfaceTagsHasBeenSet() const { return m_vpcInterfaceTagsHasBeenSet; }
+    template<typename VpcInterfaceTagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetVpcInterfaceTags(VpcInterfaceTagsT&& value) { m_vpcInterfaceTagsHasBeenSet = true; m_vpcInterfaceTags = std::forward<VpcInterfaceTagsT>(value); }
+    template<typename VpcInterfaceTagsT = Aws::Map<Aws::String, Aws::String>>
+    VpcInterfaceRequest& WithVpcInterfaceTags(VpcInterfaceTagsT&& value) { SetVpcInterfaceTags(std::forward<VpcInterfaceTagsT>(value)); return *this;}
+    template<typename VpcInterfaceTagsKeyT = Aws::String, typename VpcInterfaceTagsValueT = Aws::String>
+    VpcInterfaceRequest& AddVpcInterfaceTags(VpcInterfaceTagsKeyT&& key, VpcInterfaceTagsValueT&& value) {
+      m_vpcInterfaceTagsHasBeenSet = true; m_vpcInterfaceTags.emplace(std::forward<VpcInterfaceTagsKeyT>(key), std::forward<VpcInterfaceTagsValueT>(value)); return *this;
+    }
+    ///@}
   private:
 
     Aws::String m_name;
@@ -124,6 +142,9 @@ namespace Model
 
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_vpcInterfaceTags;
+    bool m_vpcInterfaceTagsHasBeenSet = false;
   };
 
 } // namespace Model

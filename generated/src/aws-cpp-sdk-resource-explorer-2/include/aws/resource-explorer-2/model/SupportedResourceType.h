@@ -40,18 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the resource type.</p>
-     */
-    inline const Aws::String& GetResourceType() const { return m_resourceType; }
-    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    template<typename ResourceTypeT = Aws::String>
-    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
-    template<typename ResourceTypeT = Aws::String>
-    SupportedResourceType& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The Amazon Web Services service that is associated with the resource type.
      * This is the primary service that lets you create and interact with resources of
      * this type.</p>
@@ -63,13 +51,25 @@ namespace Model
     template<typename ServiceT = Aws::String>
     SupportedResourceType& WithService(ServiceT&& value) { SetService(std::forward<ServiceT>(value)); return *this;}
     ///@}
-  private:
 
-    Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The unique identifier of the resource type.</p>
+     */
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    SupportedResourceType& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_service;
     bool m_serviceHasBeenSet = false;
+
+    Aws::String m_resourceType;
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

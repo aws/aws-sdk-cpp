@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/resource-explorer-2/model/View.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -36,6 +36,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>A structure that contains the details for the requested view.</p>
+     */
+    inline const View& GetView() const { return m_view; }
+    template<typename ViewT = View>
+    void SetView(ViewT&& value) { m_viewHasBeenSet = true; m_view = std::forward<ViewT>(value); }
+    template<typename ViewT = View>
+    GetViewResult& WithView(ViewT&& value) { SetView(std::forward<ViewT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Tag key and value pairs that are attached to the view.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -50,17 +61,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>A structure that contains the details for the requested view.</p>
-     */
-    inline const View& GetView() const { return m_view; }
-    template<typename ViewT = View>
-    void SetView(ViewT&& value) { m_viewHasBeenSet = true; m_view = std::forward<ViewT>(value); }
-    template<typename ViewT = View>
-    GetViewResult& WithView(ViewT&& value) { SetView(std::forward<ViewT>(value)); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -70,11 +70,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet = false;
-
     View m_view;
     bool m_viewHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

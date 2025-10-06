@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
-#include <aws/resource-explorer-2/model/ResourceCount.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resource-explorer-2/model/ResourceCount.h>
 #include <aws/resource-explorer-2/model/Resource.h>
 #include <utility>
 
@@ -37,13 +37,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of resources that match the query.</p>
+     * <p>The list of structures that describe the resources that match the query.</p>
      */
-    inline const ResourceCount& GetCount() const { return m_count; }
-    template<typename CountT = ResourceCount>
-    void SetCount(CountT&& value) { m_countHasBeenSet = true; m_count = std::forward<CountT>(value); }
-    template<typename CountT = ResourceCount>
-    SearchResult& WithCount(CountT&& value) { SetCount(std::forward<CountT>(value)); return *this;}
+    inline const Aws::Vector<Resource>& GetResources() const { return m_resources; }
+    template<typename ResourcesT = Aws::Vector<Resource>>
+    void SetResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources = std::forward<ResourcesT>(value); }
+    template<typename ResourcesT = Aws::Vector<Resource>>
+    SearchResult& WithResources(ResourcesT&& value) { SetResources(std::forward<ResourcesT>(value)); return *this;}
+    template<typename ResourcesT = Resource>
+    SearchResult& AddResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources.emplace_back(std::forward<ResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,19 +65,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of structures that describe the resources that match the query.</p>
-     */
-    inline const Aws::Vector<Resource>& GetResources() const { return m_resources; }
-    template<typename ResourcesT = Aws::Vector<Resource>>
-    void SetResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources = std::forward<ResourcesT>(value); }
-    template<typename ResourcesT = Aws::Vector<Resource>>
-    SearchResult& WithResources(ResourcesT&& value) { SetResources(std::forward<ResourcesT>(value)); return *this;}
-    template<typename ResourcesT = Resource>
-    SearchResult& AddResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources.emplace_back(std::forward<ResourcesT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * resource name (ARN)</a> of the view that this operation used to perform the
@@ -89,6 +78,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The number of resources that match the query.</p>
+     */
+    inline const ResourceCount& GetCount() const { return m_count; }
+    template<typename CountT = ResourceCount>
+    void SetCount(CountT&& value) { m_countHasBeenSet = true; m_count = std::forward<CountT>(value); }
+    template<typename CountT = ResourceCount>
+    SearchResult& WithCount(CountT&& value) { SetCount(std::forward<CountT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -98,17 +98,17 @@ namespace Model
     ///@}
   private:
 
-    ResourceCount m_count;
-    bool m_countHasBeenSet = false;
+    Aws::Vector<Resource> m_resources;
+    bool m_resourcesHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Aws::Vector<Resource> m_resources;
-    bool m_resourcesHasBeenSet = false;
-
     Aws::String m_viewArn;
     bool m_viewArnHasBeenSet = false;
+
+    ResourceCount m_count;
+    bool m_countHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -60,6 +60,15 @@ AddMediaStreamRequest& AddMediaStreamRequest::operator =(JsonView jsonValue)
     m_videoFormat = jsonValue.GetString("videoFormat");
     m_videoFormatHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("mediaStreamTags"))
+  {
+    Aws::Map<Aws::String, JsonView> mediaStreamTagsJsonMap = jsonValue.GetObject("mediaStreamTags").GetAllObjects();
+    for(auto& mediaStreamTagsItem : mediaStreamTagsJsonMap)
+    {
+      m_mediaStreamTags[mediaStreamTagsItem.first] = mediaStreamTagsItem.second.AsString();
+    }
+    m_mediaStreamTagsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -105,6 +114,17 @@ JsonValue AddMediaStreamRequest::Jsonize() const
   if(m_videoFormatHasBeenSet)
   {
    payload.WithString("videoFormat", m_videoFormat);
+
+  }
+
+  if(m_mediaStreamTagsHasBeenSet)
+  {
+   JsonValue mediaStreamTagsJsonMap;
+   for(auto& mediaStreamTagsItem : m_mediaStreamTags)
+   {
+     mediaStreamTagsJsonMap.WithString(mediaStreamTagsItem.first, mediaStreamTagsItem.second);
+   }
+   payload.WithObject("mediaStreamTags", std::move(mediaStreamTagsJsonMap));
 
   }
 

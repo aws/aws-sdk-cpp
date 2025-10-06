@@ -74,6 +74,15 @@ GetBackupPlanResult& GetBackupPlanResult::operator =(const Aws::AmazonWebService
     }
     m_advancedBackupSettingsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ScheduledRunsPreview"))
+  {
+    Aws::Utils::Array<JsonView> scheduledRunsPreviewJsonList = jsonValue.GetArray("ScheduledRunsPreview");
+    for(unsigned scheduledRunsPreviewIndex = 0; scheduledRunsPreviewIndex < scheduledRunsPreviewJsonList.GetLength(); ++scheduledRunsPreviewIndex)
+    {
+      m_scheduledRunsPreview.push_back(scheduledRunsPreviewJsonList[scheduledRunsPreviewIndex].AsObject());
+    }
+    m_scheduledRunsPreviewHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

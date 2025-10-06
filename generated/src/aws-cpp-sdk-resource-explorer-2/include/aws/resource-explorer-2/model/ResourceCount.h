@@ -41,6 +41,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The number of resources that match the search query. This value can't exceed
+     * 1,000. If there are more than 1,000 resources that match the query, then only
+     * 1,000 are counted and the <code>Complete</code> field is set to false. We
+     * recommend that you refine your query to return a smaller number of results.</p>
+     */
+    inline long long GetTotalResources() const { return m_totalResources; }
+    inline bool TotalResourcesHasBeenSet() const { return m_totalResourcesHasBeenSet; }
+    inline void SetTotalResources(long long value) { m_totalResourcesHasBeenSet = true; m_totalResources = value; }
+    inline ResourceCount& WithTotalResources(long long value) { SetTotalResources(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Indicates whether the <code>TotalResources</code> value represents an
      * exhaustive count of search results.</p> <ul> <li> <p>If <code>True</code>, it
      * indicates that the search was exhaustive. Every resource that matches the query
@@ -52,26 +65,13 @@ namespace Model
     inline void SetComplete(bool value) { m_completeHasBeenSet = true; m_complete = value; }
     inline ResourceCount& WithComplete(bool value) { SetComplete(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The number of resources that match the search query. This value can't exceed
-     * 1,000. If there are more than 1,000 resources that match the query, then only
-     * 1,000 are counted and the <code>Complete</code> field is set to false. We
-     * recommend that you refine your query to return a smaller number of results.</p>
-     */
-    inline long long GetTotalResources() const { return m_totalResources; }
-    inline bool TotalResourcesHasBeenSet() const { return m_totalResourcesHasBeenSet; }
-    inline void SetTotalResources(long long value) { m_totalResourcesHasBeenSet = true; m_totalResources = value; }
-    inline ResourceCount& WithTotalResources(long long value) { SetTotalResources(value); return *this;}
-    ///@}
   private:
-
-    bool m_complete{false};
-    bool m_completeHasBeenSet = false;
 
     long long m_totalResources{0};
     bool m_totalResourcesHasBeenSet = false;
+
+    bool m_complete{false};
+    bool m_completeHasBeenSet = false;
   };
 
 } // namespace Model

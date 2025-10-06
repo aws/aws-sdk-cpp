@@ -22,6 +22,7 @@ namespace Aws
 
         static const int MCP_HASH = HashingUtils::HashString("MCP");
         static const int HTTP_HASH = HashingUtils::HashString("HTTP");
+        static const int A2A_HASH = HashingUtils::HashString("A2A");
 
 
         ServerProtocol GetServerProtocolForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == HTTP_HASH)
           {
             return ServerProtocol::HTTP;
+          }
+          else if (hashCode == A2A_HASH)
+          {
+            return ServerProtocol::A2A;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "MCP";
           case ServerProtocol::HTTP:
             return "HTTP";
+          case ServerProtocol::A2A:
+            return "A2A";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -11,6 +11,7 @@
 #include <aws/mediaconnect/model/UpdateMaintenance.h>
 #include <aws/mediaconnect/model/MonitoringConfig.h>
 #include <aws/mediaconnect/model/NdiConfig.h>
+#include <aws/mediaconnect/model/FlowSize.h>
 #include <utility>
 
 namespace Aws
@@ -96,6 +97,16 @@ namespace Model
     template<typename NdiConfigT = NdiConfig>
     UpdateFlowRequest& WithNdiConfig(NdiConfigT&& value) { SetNdiConfig(std::forward<NdiConfigT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> Determines the processing capacity and feature set of the flow. </p>
+     */
+    inline FlowSize GetFlowSize() const { return m_flowSize; }
+    inline bool FlowSizeHasBeenSet() const { return m_flowSizeHasBeenSet; }
+    inline void SetFlowSize(FlowSize value) { m_flowSizeHasBeenSet = true; m_flowSize = value; }
+    inline UpdateFlowRequest& WithFlowSize(FlowSize value) { SetFlowSize(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_flowArn;
@@ -112,6 +123,9 @@ namespace Model
 
     NdiConfig m_ndiConfig;
     bool m_ndiConfigHasBeenSet = false;
+
+    FlowSize m_flowSize{FlowSize::NOT_SET};
+    bool m_flowSizeHasBeenSet = false;
   };
 
 } // namespace Model

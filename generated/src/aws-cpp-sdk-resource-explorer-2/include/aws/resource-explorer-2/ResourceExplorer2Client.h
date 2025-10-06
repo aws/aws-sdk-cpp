@@ -227,6 +227,34 @@ namespace ResourceExplorer2
         }
 
         /**
+         * <p>Creates a Resource Explorer setup configuration across multiple Amazon Web
+         * Services Regions. This operation sets up indexes and views in the specified
+         * Regions. This operation can also be used to set an aggregator Region for
+         * cross-Region resource search.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/CreateResourceExplorerSetup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateResourceExplorerSetupOutcome CreateResourceExplorerSetup(const Model::CreateResourceExplorerSetupRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateResourceExplorerSetup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateResourceExplorerSetupRequestT = Model::CreateResourceExplorerSetupRequest>
+        Model::CreateResourceExplorerSetupOutcomeCallable CreateResourceExplorerSetupCallable(const CreateResourceExplorerSetupRequestT& request) const
+        {
+            return SubmitCallable(&ResourceExplorer2Client::CreateResourceExplorerSetup, request);
+        }
+
+        /**
+         * An Async wrapper for CreateResourceExplorerSetup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateResourceExplorerSetupRequestT = Model::CreateResourceExplorerSetupRequest>
+        void CreateResourceExplorerSetupAsync(const CreateResourceExplorerSetupRequestT& request, const CreateResourceExplorerSetupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResourceExplorer2Client::CreateResourceExplorerSetup, request, handler, context);
+        }
+
+        /**
          * <p>Creates a view that users can query by using the <a>Search</a> operation.
          * Results from queries that you make using this view include only resources that
          * match the view's <code>Filters</code>. For more information about Amazon Web
@@ -295,6 +323,33 @@ namespace ResourceExplorer2
         void DeleteIndexAsync(const DeleteIndexRequestT& request, const DeleteIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ResourceExplorer2Client::DeleteIndex, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a Resource Explorer setup configuration. This operation removes
+         * indexes and views from the specified Regions or all Regions where Resource
+         * Explorer is configured.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/DeleteResourceExplorerSetup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourceExplorerSetupOutcome DeleteResourceExplorerSetup(const Model::DeleteResourceExplorerSetupRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DeleteResourceExplorerSetup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteResourceExplorerSetupRequestT = Model::DeleteResourceExplorerSetupRequest>
+        Model::DeleteResourceExplorerSetupOutcomeCallable DeleteResourceExplorerSetupCallable(const DeleteResourceExplorerSetupRequestT& request = {}) const
+        {
+            return SubmitCallable(&ResourceExplorer2Client::DeleteResourceExplorerSetup, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteResourceExplorerSetup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteResourceExplorerSetupRequestT = Model::DeleteResourceExplorerSetupRequest>
+        void DeleteResourceExplorerSetupAsync(const DeleteResourceExplorerSetupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteResourceExplorerSetupRequestT& request = {}) const
+        {
+            return SubmitAsync(&ResourceExplorer2Client::DeleteResourceExplorerSetup, request, handler, context);
         }
 
         /**
@@ -468,6 +523,87 @@ namespace ResourceExplorer2
         }
 
         /**
+         * <p>Retrieves the status and details of a Resource Explorer setup operation. This
+         * operation returns information about the progress of creating or deleting
+         * Resource Explorer configurations across Regions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetResourceExplorerSetup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourceExplorerSetupOutcome GetResourceExplorerSetup(const Model::GetResourceExplorerSetupRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetResourceExplorerSetup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetResourceExplorerSetupRequestT = Model::GetResourceExplorerSetupRequest>
+        Model::GetResourceExplorerSetupOutcomeCallable GetResourceExplorerSetupCallable(const GetResourceExplorerSetupRequestT& request) const
+        {
+            return SubmitCallable(&ResourceExplorer2Client::GetResourceExplorerSetup, request);
+        }
+
+        /**
+         * An Async wrapper for GetResourceExplorerSetup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetResourceExplorerSetupRequestT = Model::GetResourceExplorerSetupRequest>
+        void GetResourceExplorerSetupAsync(const GetResourceExplorerSetupRequestT& request, const GetResourceExplorerSetupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResourceExplorer2Client::GetResourceExplorerSetup, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves information about the Resource Explorer index in the current Amazon
+         * Web Services Region. This operation returns the ARN and type of the index if one
+         * exists.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetServiceIndex">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetServiceIndexOutcome GetServiceIndex(const Model::GetServiceIndexRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetServiceIndex that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetServiceIndexRequestT = Model::GetServiceIndexRequest>
+        Model::GetServiceIndexOutcomeCallable GetServiceIndexCallable(const GetServiceIndexRequestT& request = {}) const
+        {
+            return SubmitCallable(&ResourceExplorer2Client::GetServiceIndex, request);
+        }
+
+        /**
+         * An Async wrapper for GetServiceIndex that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetServiceIndexRequestT = Model::GetServiceIndexRequest>
+        void GetServiceIndexAsync(const GetServiceIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetServiceIndexRequestT& request = {}) const
+        {
+            return SubmitAsync(&ResourceExplorer2Client::GetServiceIndex, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves details about a specific Resource Explorer service view. This
+         * operation returns the configuration and properties of the specified
+         * view.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetServiceView">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetServiceViewOutcome GetServiceView(const Model::GetServiceViewRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetServiceView that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetServiceViewRequestT = Model::GetServiceViewRequest>
+        Model::GetServiceViewOutcomeCallable GetServiceViewCallable(const GetServiceViewRequestT& request) const
+        {
+            return SubmitCallable(&ResourceExplorer2Client::GetServiceView, request);
+        }
+
+        /**
+         * An Async wrapper for GetServiceView that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetServiceViewRequestT = Model::GetServiceViewRequest>
+        void GetServiceViewAsync(const GetServiceViewRequestT& request, const GetServiceViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResourceExplorer2Client::GetServiceView, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves details of the specified view.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetView">AWS
          * API Reference</a></p>
@@ -601,6 +737,88 @@ namespace ResourceExplorer2
         void ListResourcesAsync(const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListResourcesRequestT& request = {}) const
         {
             return SubmitAsync(&ResourceExplorer2Client::ListResources, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all Resource Explorer indexes across the specified Amazon Web Services
+         * Regions. This operation returns information about indexes including their ARNs,
+         * types, and Regions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListServiceIndexes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListServiceIndexesOutcome ListServiceIndexes(const Model::ListServiceIndexesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListServiceIndexes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListServiceIndexesRequestT = Model::ListServiceIndexesRequest>
+        Model::ListServiceIndexesOutcomeCallable ListServiceIndexesCallable(const ListServiceIndexesRequestT& request = {}) const
+        {
+            return SubmitCallable(&ResourceExplorer2Client::ListServiceIndexes, request);
+        }
+
+        /**
+         * An Async wrapper for ListServiceIndexes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListServiceIndexesRequestT = Model::ListServiceIndexesRequest>
+        void ListServiceIndexesAsync(const ListServiceIndexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListServiceIndexesRequestT& request = {}) const
+        {
+            return SubmitAsync(&ResourceExplorer2Client::ListServiceIndexes, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all Resource Explorer service views available in the current Amazon Web
+         * Services account. This operation returns the ARNs of available service
+         * views.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListServiceViews">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListServiceViewsOutcome ListServiceViews(const Model::ListServiceViewsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListServiceViews that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListServiceViewsRequestT = Model::ListServiceViewsRequest>
+        Model::ListServiceViewsOutcomeCallable ListServiceViewsCallable(const ListServiceViewsRequestT& request = {}) const
+        {
+            return SubmitCallable(&ResourceExplorer2Client::ListServiceViews, request);
+        }
+
+        /**
+         * An Async wrapper for ListServiceViews that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListServiceViewsRequestT = Model::ListServiceViewsRequest>
+        void ListServiceViewsAsync(const ListServiceViewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListServiceViewsRequestT& request = {}) const
+        {
+            return SubmitAsync(&ResourceExplorer2Client::ListServiceViews, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of Amazon Web Services services that have been granted
+         * streaming access to your Resource Explorer data. Streaming access allows Amazon
+         * Web Services services to receive real-time updates about your resources as they
+         * are indexed by Resource Explorer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListStreamingAccessForServices">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListStreamingAccessForServicesOutcome ListStreamingAccessForServices(const Model::ListStreamingAccessForServicesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListStreamingAccessForServices that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListStreamingAccessForServicesRequestT = Model::ListStreamingAccessForServicesRequest>
+        Model::ListStreamingAccessForServicesOutcomeCallable ListStreamingAccessForServicesCallable(const ListStreamingAccessForServicesRequestT& request = {}) const
+        {
+            return SubmitCallable(&ResourceExplorer2Client::ListStreamingAccessForServices, request);
+        }
+
+        /**
+         * An Async wrapper for ListStreamingAccessForServices that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListStreamingAccessForServicesRequestT = Model::ListStreamingAccessForServicesRequest>
+        void ListStreamingAccessForServicesAsync(const ListStreamingAccessForServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListStreamingAccessForServicesRequestT& request = {}) const
+        {
+            return SubmitAsync(&ResourceExplorer2Client::ListStreamingAccessForServices, request, handler, context);
         }
 
         /**

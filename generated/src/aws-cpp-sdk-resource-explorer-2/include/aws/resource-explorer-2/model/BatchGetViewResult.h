@@ -7,8 +7,8 @@
 #include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/resource-explorer-2/model/BatchGetViewError.h>
 #include <aws/resource-explorer-2/model/View.h>
+#include <aws/resource-explorer-2/model/BatchGetViewError.h>
 #include <utility>
 
 namespace Aws
@@ -37,20 +37,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>If any of the specified ARNs result in an error, then this structure
-     * describes the error.</p>
-     */
-    inline const Aws::Vector<BatchGetViewError>& GetErrors() const { return m_errors; }
-    template<typename ErrorsT = Aws::Vector<BatchGetViewError>>
-    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
-    template<typename ErrorsT = Aws::Vector<BatchGetViewError>>
-    BatchGetViewResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
-    template<typename ErrorsT = BatchGetViewError>
-    BatchGetViewResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>A structure with a list of objects with details for each of the specified
      * views.</p>
      */
@@ -64,6 +50,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>If any of the specified ARNs result in an error, then this structure
+     * describes the error.</p>
+     */
+    inline const Aws::Vector<BatchGetViewError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchGetViewError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchGetViewError>>
+    BatchGetViewResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchGetViewError>
+    BatchGetViewResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -73,11 +73,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<BatchGetViewError> m_errors;
-    bool m_errorsHasBeenSet = false;
-
     Aws::Vector<View> m_views;
     bool m_viewsHasBeenSet = false;
+
+    Aws::Vector<BatchGetViewError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

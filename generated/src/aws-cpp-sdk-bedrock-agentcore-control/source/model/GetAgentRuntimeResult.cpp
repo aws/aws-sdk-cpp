@@ -30,20 +30,10 @@ GetAgentRuntimeResult& GetAgentRuntimeResult::operator =(const Aws::AmazonWebSer
     m_agentRuntimeArn = jsonValue.GetString("agentRuntimeArn");
     m_agentRuntimeArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("workloadIdentityDetails"))
-  {
-    m_workloadIdentityDetails = jsonValue.GetObject("workloadIdentityDetails");
-    m_workloadIdentityDetailsHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("agentRuntimeName"))
   {
     m_agentRuntimeName = jsonValue.GetString("agentRuntimeName");
     m_agentRuntimeNameHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
   }
   if(jsonValue.ValueExists("agentRuntimeId"))
   {
@@ -70,15 +60,35 @@ GetAgentRuntimeResult& GetAgentRuntimeResult::operator =(const Aws::AmazonWebSer
     m_roleArn = jsonValue.GetString("roleArn");
     m_roleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("agentRuntimeArtifact"))
-  {
-    m_agentRuntimeArtifact = jsonValue.GetObject("agentRuntimeArtifact");
-    m_agentRuntimeArtifactHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("networkConfiguration"))
   {
     m_networkConfiguration = jsonValue.GetObject("networkConfiguration");
     m_networkConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = AgentRuntimeStatusMapper::GetAgentRuntimeStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("lifecycleConfiguration"))
+  {
+    m_lifecycleConfiguration = jsonValue.GetObject("lifecycleConfiguration");
+    m_lifecycleConfigurationHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("workloadIdentityDetails"))
+  {
+    m_workloadIdentityDetails = jsonValue.GetObject("workloadIdentityDetails");
+    m_workloadIdentityDetailsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("agentRuntimeArtifact"))
+  {
+    m_agentRuntimeArtifact = jsonValue.GetObject("agentRuntimeArtifact");
+    m_agentRuntimeArtifactHasBeenSet = true;
   }
   if(jsonValue.ValueExists("protocolConfiguration"))
   {
@@ -103,11 +113,6 @@ GetAgentRuntimeResult& GetAgentRuntimeResult::operator =(const Aws::AmazonWebSer
   {
     m_requestHeaderConfiguration = jsonValue.GetObject("requestHeaderConfiguration");
     m_requestHeaderConfigurationHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = AgentRuntimeStatusMapper::GetAgentRuntimeStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

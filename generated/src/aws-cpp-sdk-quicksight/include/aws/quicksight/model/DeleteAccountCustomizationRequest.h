@@ -41,7 +41,7 @@ namespace Model
     ///@{
     /**
      * <p>The ID for the Amazon Web Services account that you want to delete QuickSight
-     * customizations from in this Amazon Web Services Region.</p>
+     * customizations from.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }

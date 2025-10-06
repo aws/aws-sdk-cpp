@@ -82,6 +82,23 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the Amazon resource name (ARN) of the view to use for the query. If
+     * you don't specify a value for this parameter, then the operation automatically
+     * uses the default view for the Amazon Web Services Region in which you called
+     * this operation. If the Region either doesn't have a default view or if you don't
+     * have permission to use the default view, then the operation fails with a 401
+     * Unauthorized exception.</p>
+     */
+    inline const Aws::String& GetViewArn() const { return m_viewArn; }
+    inline bool ViewArnHasBeenSet() const { return m_viewArnHasBeenSet; }
+    template<typename ViewArnT = Aws::String>
+    void SetViewArn(ViewArnT&& value) { m_viewArnHasBeenSet = true; m_viewArn = std::forward<ViewArnT>(value); }
+    template<typename ViewArnT = Aws::String>
+    ListResourcesRequest& WithViewArn(ViewArnT&& value) { SetViewArn(std::forward<ViewArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The parameter for receiving additional results if you receive a
      * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
      * response indicates that more output is available. Set this parameter to the
@@ -98,23 +115,6 @@ namespace Model
     template<typename NextTokenT = Aws::String>
     ListResourcesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Specifies the Amazon resource name (ARN) of the view to use for the query. If
-     * you don't specify a value for this parameter, then the operation automatically
-     * uses the default view for the Amazon Web Services Region in which you called
-     * this operation. If the Region either doesn't have a default view or if you don't
-     * have permission to use the default view, then the operation fails with a 401
-     * Unauthorized exception.</p>
-     */
-    inline const Aws::String& GetViewArn() const { return m_viewArn; }
-    inline bool ViewArnHasBeenSet() const { return m_viewArnHasBeenSet; }
-    template<typename ViewArnT = Aws::String>
-    void SetViewArn(ViewArnT&& value) { m_viewArnHasBeenSet = true; m_viewArn = std::forward<ViewArnT>(value); }
-    template<typename ViewArnT = Aws::String>
-    ListResourcesRequest& WithViewArn(ViewArnT&& value) { SetViewArn(std::forward<ViewArnT>(value)); return *this;}
-    ///@}
   private:
 
     SearchFilter m_filters;
@@ -123,11 +123,11 @@ namespace Model
     int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
     Aws::String m_viewArn;
     bool m_viewArnHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model
