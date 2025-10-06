@@ -34,6 +34,23 @@ namespace Model
 
     ///@{
     /**
+     * <p>The parameter for receiving additional results if you receive a
+     * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
+     * response indicates that more output is available. Set this parameter to the
+     * value of the previous call's <code>NextToken</code> response to indicate where
+     * the output should continue from. The pagination tokens expire after 24
+     * hours.</p>
+     */
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSupportedResourceTypesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The maximum number of results that you want included on each page of the
      * response. If you do not include this parameter, it defaults to a value
      * appropriate to the operation. If additional items exist beyond those included in
@@ -50,30 +67,13 @@ namespace Model
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListSupportedResourceTypesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The parameter for receiving additional results if you receive a
-     * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
-     * response indicates that more output is available. Set this parameter to the
-     * value of the previous call's <code>NextToken</code> response to indicate where
-     * the output should continue from. The pagination tokens expire after 24
-     * hours.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListSupportedResourceTypesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
   private:
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

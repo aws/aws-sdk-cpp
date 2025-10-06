@@ -648,6 +648,58 @@ namespace MemoryDB
         }
 
         /**
+         * <p>Returns a list of multi-region parameter groups.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeMultiRegionParameterGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMultiRegionParameterGroupsOutcome DescribeMultiRegionParameterGroups(const Model::DescribeMultiRegionParameterGroupsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeMultiRegionParameterGroups that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeMultiRegionParameterGroupsRequestT = Model::DescribeMultiRegionParameterGroupsRequest>
+        Model::DescribeMultiRegionParameterGroupsOutcomeCallable DescribeMultiRegionParameterGroupsCallable(const DescribeMultiRegionParameterGroupsRequestT& request = {}) const
+        {
+            return SubmitCallable(&MemoryDBClient::DescribeMultiRegionParameterGroups, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeMultiRegionParameterGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeMultiRegionParameterGroupsRequestT = Model::DescribeMultiRegionParameterGroupsRequest>
+        void DescribeMultiRegionParameterGroupsAsync(const DescribeMultiRegionParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeMultiRegionParameterGroupsRequestT& request = {}) const
+        {
+            return SubmitAsync(&MemoryDBClient::DescribeMultiRegionParameterGroups, request, handler, context);
+        }
+
+        /**
+         * <p>Returns the detailed parameter list for a particular multi-region parameter
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeMultiRegionParameters">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMultiRegionParametersOutcome DescribeMultiRegionParameters(const Model::DescribeMultiRegionParametersRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeMultiRegionParameters that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeMultiRegionParametersRequestT = Model::DescribeMultiRegionParametersRequest>
+        Model::DescribeMultiRegionParametersOutcomeCallable DescribeMultiRegionParametersCallable(const DescribeMultiRegionParametersRequestT& request) const
+        {
+            return SubmitCallable(&MemoryDBClient::DescribeMultiRegionParameters, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeMultiRegionParameters that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeMultiRegionParametersRequestT = Model::DescribeMultiRegionParametersRequest>
+        void DescribeMultiRegionParametersAsync(const DescribeMultiRegionParametersRequestT& request, const DescribeMultiRegionParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MemoryDBClient::DescribeMultiRegionParameters, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of parameter group descriptions. If a parameter group name is
          * specified, the list contains only the descriptions for that group.</p><p><h3>See
          * Also:</h3>   <a

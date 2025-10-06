@@ -39,6 +39,8 @@
 #include <aws/memorydb/model/DescribeEngineVersionsResult.h>
 #include <aws/memorydb/model/DescribeEventsResult.h>
 #include <aws/memorydb/model/DescribeMultiRegionClustersResult.h>
+#include <aws/memorydb/model/DescribeMultiRegionParameterGroupsResult.h>
+#include <aws/memorydb/model/DescribeMultiRegionParametersResult.h>
 #include <aws/memorydb/model/DescribeParameterGroupsResult.h>
 #include <aws/memorydb/model/DescribeParametersResult.h>
 #include <aws/memorydb/model/DescribeReservedNodesResult.h>
@@ -62,17 +64,18 @@
 #include <aws/memorydb/model/UpdateSubnetGroupResult.h>
 #include <aws/memorydb/model/UpdateUserResult.h>
 #include <aws/memorydb/model/DescribeClustersRequest.h>
-#include <aws/memorydb/model/DescribeEventsRequest.h>
 #include <aws/memorydb/model/DescribeMultiRegionClustersRequest.h>
-#include <aws/memorydb/model/DescribeParameterGroupsRequest.h>
-#include <aws/memorydb/model/DescribeReservedNodesRequest.h>
-#include <aws/memorydb/model/DescribeSubnetGroupsRequest.h>
 #include <aws/memorydb/model/DescribeUsersRequest.h>
 #include <aws/memorydb/model/DescribeACLsRequest.h>
 #include <aws/memorydb/model/DescribeReservedNodesOfferingsRequest.h>
-#include <aws/memorydb/model/DescribeEngineVersionsRequest.h>
 #include <aws/memorydb/model/DescribeSnapshotsRequest.h>
 #include <aws/memorydb/model/DescribeServiceUpdatesRequest.h>
+#include <aws/memorydb/model/DescribeEventsRequest.h>
+#include <aws/memorydb/model/DescribeParameterGroupsRequest.h>
+#include <aws/memorydb/model/DescribeReservedNodesRequest.h>
+#include <aws/memorydb/model/DescribeSubnetGroupsRequest.h>
+#include <aws/memorydb/model/DescribeEngineVersionsRequest.h>
+#include <aws/memorydb/model/DescribeMultiRegionParameterGroupsRequest.h>
 /* End of service model headers required in MemoryDBClient header */
 
 namespace Aws
@@ -134,6 +137,8 @@ namespace Aws
       class DescribeEngineVersionsRequest;
       class DescribeEventsRequest;
       class DescribeMultiRegionClustersRequest;
+      class DescribeMultiRegionParameterGroupsRequest;
+      class DescribeMultiRegionParametersRequest;
       class DescribeParameterGroupsRequest;
       class DescribeParametersRequest;
       class DescribeReservedNodesRequest;
@@ -180,6 +185,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeEngineVersionsResult, MemoryDBError> DescribeEngineVersionsOutcome;
       typedef Aws::Utils::Outcome<DescribeEventsResult, MemoryDBError> DescribeEventsOutcome;
       typedef Aws::Utils::Outcome<DescribeMultiRegionClustersResult, MemoryDBError> DescribeMultiRegionClustersOutcome;
+      typedef Aws::Utils::Outcome<DescribeMultiRegionParameterGroupsResult, MemoryDBError> DescribeMultiRegionParameterGroupsOutcome;
+      typedef Aws::Utils::Outcome<DescribeMultiRegionParametersResult, MemoryDBError> DescribeMultiRegionParametersOutcome;
       typedef Aws::Utils::Outcome<DescribeParameterGroupsResult, MemoryDBError> DescribeParameterGroupsOutcome;
       typedef Aws::Utils::Outcome<DescribeParametersResult, MemoryDBError> DescribeParametersOutcome;
       typedef Aws::Utils::Outcome<DescribeReservedNodesResult, MemoryDBError> DescribeReservedNodesOutcome;
@@ -226,6 +233,8 @@ namespace Aws
       typedef std::future<DescribeEngineVersionsOutcome> DescribeEngineVersionsOutcomeCallable;
       typedef std::future<DescribeEventsOutcome> DescribeEventsOutcomeCallable;
       typedef std::future<DescribeMultiRegionClustersOutcome> DescribeMultiRegionClustersOutcomeCallable;
+      typedef std::future<DescribeMultiRegionParameterGroupsOutcome> DescribeMultiRegionParameterGroupsOutcomeCallable;
+      typedef std::future<DescribeMultiRegionParametersOutcome> DescribeMultiRegionParametersOutcomeCallable;
       typedef std::future<DescribeParameterGroupsOutcome> DescribeParameterGroupsOutcomeCallable;
       typedef std::future<DescribeParametersOutcome> DescribeParametersOutcomeCallable;
       typedef std::future<DescribeReservedNodesOutcome> DescribeReservedNodesOutcomeCallable;
@@ -275,6 +284,8 @@ namespace Aws
     typedef std::function<void(const MemoryDBClient*, const Model::DescribeEngineVersionsRequest&, const Model::DescribeEngineVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEngineVersionsResponseReceivedHandler;
     typedef std::function<void(const MemoryDBClient*, const Model::DescribeEventsRequest&, const Model::DescribeEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventsResponseReceivedHandler;
     typedef std::function<void(const MemoryDBClient*, const Model::DescribeMultiRegionClustersRequest&, const Model::DescribeMultiRegionClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMultiRegionClustersResponseReceivedHandler;
+    typedef std::function<void(const MemoryDBClient*, const Model::DescribeMultiRegionParameterGroupsRequest&, const Model::DescribeMultiRegionParameterGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMultiRegionParameterGroupsResponseReceivedHandler;
+    typedef std::function<void(const MemoryDBClient*, const Model::DescribeMultiRegionParametersRequest&, const Model::DescribeMultiRegionParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMultiRegionParametersResponseReceivedHandler;
     typedef std::function<void(const MemoryDBClient*, const Model::DescribeParameterGroupsRequest&, const Model::DescribeParameterGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeParameterGroupsResponseReceivedHandler;
     typedef std::function<void(const MemoryDBClient*, const Model::DescribeParametersRequest&, const Model::DescribeParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeParametersResponseReceivedHandler;
     typedef std::function<void(const MemoryDBClient*, const Model::DescribeReservedNodesRequest&, const Model::DescribeReservedNodesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservedNodesResponseReceivedHandler;

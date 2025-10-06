@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconnect/model/Protocol.h>
 #include <aws/mediaconnect/model/SetGatewayBridgeSourceRequest.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mediaconnect/model/MediaStreamSourceConfigurationRequest.h>
 #include <utility>
 
@@ -274,6 +275,22 @@ namespace Model
     template<typename GatewayBridgeSourceT = SetGatewayBridgeSourceRequest>
     SetSourceRequest& WithGatewayBridgeSource(GatewayBridgeSourceT&& value) { SetGatewayBridgeSource(std::forward<GatewayBridgeSourceT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The key-value pairs that can be used to tag and organize the source. </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetSourceTags() const { return m_sourceTags; }
+    inline bool SourceTagsHasBeenSet() const { return m_sourceTagsHasBeenSet; }
+    template<typename SourceTagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetSourceTags(SourceTagsT&& value) { m_sourceTagsHasBeenSet = true; m_sourceTags = std::forward<SourceTagsT>(value); }
+    template<typename SourceTagsT = Aws::Map<Aws::String, Aws::String>>
+    SetSourceRequest& WithSourceTags(SourceTagsT&& value) { SetSourceTags(std::forward<SourceTagsT>(value)); return *this;}
+    template<typename SourceTagsKeyT = Aws::String, typename SourceTagsValueT = Aws::String>
+    SetSourceRequest& AddSourceTags(SourceTagsKeyT&& key, SourceTagsValueT&& value) {
+      m_sourceTagsHasBeenSet = true; m_sourceTags.emplace(std::forward<SourceTagsKeyT>(key), std::forward<SourceTagsValueT>(value)); return *this;
+    }
+    ///@}
   private:
 
     Encryption m_decryption;
@@ -332,6 +349,9 @@ namespace Model
 
     SetGatewayBridgeSourceRequest m_gatewayBridgeSource;
     bool m_gatewayBridgeSourceHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_sourceTags;
+    bool m_sourceTagsHasBeenSet = false;
   };
 
 } // namespace Model

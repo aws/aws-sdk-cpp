@@ -30,20 +30,20 @@ UpdateIndexTypeResult& UpdateIndexTypeResult::operator =(const Aws::AmazonWebSer
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastUpdatedAt"))
+  if(jsonValue.ValueExists("Type"))
   {
-    m_lastUpdatedAt = jsonValue.GetString("LastUpdatedAt");
-    m_lastUpdatedAtHasBeenSet = true;
+    m_type = IndexTypeMapper::GetIndexTypeForName(jsonValue.GetString("Type"));
+    m_typeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("State"))
   {
     m_state = IndexStateMapper::GetIndexStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
+  if(jsonValue.ValueExists("LastUpdatedAt"))
   {
-    m_type = IndexTypeMapper::GetIndexTypeForName(jsonValue.GetString("Type"));
-    m_typeHasBeenSet = true;
+    m_lastUpdatedAt = jsonValue.GetString("LastUpdatedAt");
+    m_lastUpdatedAtHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

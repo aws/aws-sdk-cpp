@@ -64,6 +64,15 @@ Event& Event::operator =(JsonView jsonValue)
     m_branch = jsonValue.GetObject("branch");
     m_branchHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("metadata"))
+  {
+    Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
+    for(auto& metadataItem : metadataJsonMap)
+    {
+      m_metadata[metadataItem.first] = metadataItem.second.AsObject();
+    }
+    m_metadataHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -114,6 +123,17 @@ JsonValue Event::Jsonize() const
   if(m_branchHasBeenSet)
   {
    payload.WithObject("branch", m_branch.Jsonize());
+
+  }
+
+  if(m_metadataHasBeenSet)
+  {
+   JsonValue metadataJsonMap;
+   for(auto& metadataItem : m_metadata)
+   {
+     metadataJsonMap.WithObject(metadataItem.first, metadataItem.second.Jsonize());
+   }
+   payload.WithObject("metadata", std::move(metadataJsonMap));
 
   }
 

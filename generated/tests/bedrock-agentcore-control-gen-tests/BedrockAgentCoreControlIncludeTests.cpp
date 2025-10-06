@@ -123,6 +123,7 @@
 #include <aws/bedrock-agentcore-control/model/GoogleOauth2ProviderConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/KeyType.h>
 #include <aws/bedrock-agentcore-control/model/KmsConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/LifecycleConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeEndpointsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeEndpointsResult.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeVersionsRequest.h>

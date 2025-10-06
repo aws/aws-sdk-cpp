@@ -245,6 +245,8 @@
 #include <aws/backup/model/RestoreTestingSelectionForUpdate.h>
 #include <aws/backup/model/RestoreValidationStatus.h>
 #include <aws/backup/model/RevokeRestoreAccessBackupVaultRequest.h>
+#include <aws/backup/model/RuleExecutionType.h>
+#include <aws/backup/model/ScheduledPlanExecutionMember.h>
 #include <aws/backup/model/ServiceUnavailableException.h>
 #include <aws/backup/model/StartBackupJobRequest.h>
 #include <aws/backup/model/StartBackupJobResult.h>

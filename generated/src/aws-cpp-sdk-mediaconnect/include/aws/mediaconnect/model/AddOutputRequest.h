@@ -11,6 +11,7 @@
 #include <aws/mediaconnect/model/Protocol.h>
 #include <aws/mediaconnect/model/VpcInterfaceAttachment.h>
 #include <aws/mediaconnect/model/OutputStatus.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mediaconnect/model/MediaStreamOutputConfigurationRequest.h>
 #include <utility>
 
@@ -266,6 +267,22 @@ namespace Model
     template<typename NdiProgramNameT = Aws::String>
     AddOutputRequest& WithNdiProgramName(NdiProgramNameT&& value) { SetNdiProgramName(std::forward<NdiProgramNameT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The key-value pairs that can be used to tag and organize the output. </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetOutputTags() const { return m_outputTags; }
+    inline bool OutputTagsHasBeenSet() const { return m_outputTagsHasBeenSet; }
+    template<typename OutputTagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetOutputTags(OutputTagsT&& value) { m_outputTagsHasBeenSet = true; m_outputTags = std::forward<OutputTagsT>(value); }
+    template<typename OutputTagsT = Aws::Map<Aws::String, Aws::String>>
+    AddOutputRequest& WithOutputTags(OutputTagsT&& value) { SetOutputTags(std::forward<OutputTagsT>(value)); return *this;}
+    template<typename OutputTagsKeyT = Aws::String, typename OutputTagsValueT = Aws::String>
+    AddOutputRequest& AddOutputTags(OutputTagsKeyT&& key, OutputTagsValueT&& value) {
+      m_outputTagsHasBeenSet = true; m_outputTags.emplace(std::forward<OutputTagsKeyT>(key), std::forward<OutputTagsValueT>(value)); return *this;
+    }
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_cidrAllowList;
@@ -321,6 +338,9 @@ namespace Model
 
     Aws::String m_ndiProgramName;
     bool m_ndiProgramNameHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_outputTags;
+    bool m_outputTagsHasBeenSet = false;
   };
 
 } // namespace Model

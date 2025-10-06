@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Unique identifier for the registered agent</p>
+     * <p>The unique identifier for the registered workload.</p>
      */
     inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
     inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
@@ -46,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>OAuth2 token issued by the user's identity provider</p>
+     * <p>The OAuth 2.0 token issued by the user's identity provider.</p>
      */
     inline const Aws::String& GetUserToken() const { return m_userToken; }
     inline bool UserTokenHasBeenSet() const { return m_userTokenHasBeenSet; }

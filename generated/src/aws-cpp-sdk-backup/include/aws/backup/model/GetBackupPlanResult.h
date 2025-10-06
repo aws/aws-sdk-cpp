@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/backup/model/AdvancedBackupSetting.h>
+#include <aws/backup/model/ScheduledPlanExecutionMember.h>
 #include <utility>
 
 namespace Aws
@@ -153,6 +154,22 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>List of upcoming scheduled backup runs. Only included when
+     * <code>MaxScheduledRunsPreview</code> parameter is greater than 0. Contains up to
+     * 10 future backup executions with their scheduled times, execution types, and
+     * associated rule IDs.</p>
+     */
+    inline const Aws::Vector<ScheduledPlanExecutionMember>& GetScheduledRunsPreview() const { return m_scheduledRunsPreview; }
+    template<typename ScheduledRunsPreviewT = Aws::Vector<ScheduledPlanExecutionMember>>
+    void SetScheduledRunsPreview(ScheduledRunsPreviewT&& value) { m_scheduledRunsPreviewHasBeenSet = true; m_scheduledRunsPreview = std::forward<ScheduledRunsPreviewT>(value); }
+    template<typename ScheduledRunsPreviewT = Aws::Vector<ScheduledPlanExecutionMember>>
+    GetBackupPlanResult& WithScheduledRunsPreview(ScheduledRunsPreviewT&& value) { SetScheduledRunsPreview(std::forward<ScheduledRunsPreviewT>(value)); return *this;}
+    template<typename ScheduledRunsPreviewT = ScheduledPlanExecutionMember>
+    GetBackupPlanResult& AddScheduledRunsPreview(ScheduledRunsPreviewT&& value) { m_scheduledRunsPreviewHasBeenSet = true; m_scheduledRunsPreview.emplace_back(std::forward<ScheduledRunsPreviewT>(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -188,6 +205,9 @@ namespace Model
 
     Aws::Vector<AdvancedBackupSetting> m_advancedBackupSettings;
     bool m_advancedBackupSettingsHasBeenSet = false;
+
+    Aws::Vector<ScheduledPlanExecutionMember> m_scheduledRunsPreview;
+    bool m_scheduledRunsPreviewHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

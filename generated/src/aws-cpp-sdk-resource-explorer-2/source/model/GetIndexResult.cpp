@@ -30,15 +30,15 @@ GetIndexResult& GetIndexResult::operator =(const Aws::AmazonWebServiceResult<Jso
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedAt"))
+  if(jsonValue.ValueExists("Type"))
   {
-    m_createdAt = jsonValue.GetString("CreatedAt");
-    m_createdAtHasBeenSet = true;
+    m_type = IndexTypeMapper::GetIndexTypeForName(jsonValue.GetString("Type"));
+    m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastUpdatedAt"))
+  if(jsonValue.ValueExists("State"))
   {
-    m_lastUpdatedAt = jsonValue.GetString("LastUpdatedAt");
-    m_lastUpdatedAtHasBeenSet = true;
+    m_state = IndexStateMapper::GetIndexStateForName(jsonValue.GetString("State"));
+    m_stateHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ReplicatingFrom"))
   {
@@ -58,10 +58,15 @@ GetIndexResult& GetIndexResult::operator =(const Aws::AmazonWebServiceResult<Jso
     }
     m_replicatingToHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("State"))
+  if(jsonValue.ValueExists("CreatedAt"))
   {
-    m_state = IndexStateMapper::GetIndexStateForName(jsonValue.GetString("State"));
-    m_stateHasBeenSet = true;
+    m_createdAt = jsonValue.GetString("CreatedAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("LastUpdatedAt"))
+  {
+    m_lastUpdatedAt = jsonValue.GetString("LastUpdatedAt");
+    m_lastUpdatedAtHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Tags"))
   {
@@ -71,11 +76,6 @@ GetIndexResult& GetIndexResult::operator =(const Aws::AmazonWebServiceResult<Jso
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Type"))
-  {
-    m_type = IndexTypeMapper::GetIndexTypeForName(jsonValue.GetString("Type"));
-    m_typeHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -25,16 +25,6 @@ SearchResult::SearchResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 SearchResult& SearchResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Count"))
-  {
-    m_count = jsonValue.GetObject("Count");
-    m_countHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Resources"))
   {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
@@ -44,10 +34,20 @@ SearchResult& SearchResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
     }
     m_resourcesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ViewArn"))
   {
     m_viewArn = jsonValue.GetString("ViewArn");
     m_viewArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Count"))
+  {
+    m_count = jsonValue.GetObject("Count");
+    m_countHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

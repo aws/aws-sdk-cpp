@@ -22,9 +22,13 @@
 #include <aws/bedrock-agentcore/BedrockAgentCoreClient.h>
 #include <aws/bedrock-agentcore/BedrockAgentCoreErrorMarshaller.h>
 #include <aws/bedrock-agentcore/BedrockAgentCoreEndpointProvider.h>
+#include <aws/bedrock-agentcore/model/BatchCreateMemoryRecordsRequest.h>
+#include <aws/bedrock-agentcore/model/BatchDeleteMemoryRecordsRequest.h>
+#include <aws/bedrock-agentcore/model/BatchUpdateMemoryRecordsRequest.h>
 #include <aws/bedrock-agentcore/model/CreateEventRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteEventRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteMemoryRecordRequest.h>
+#include <aws/bedrock-agentcore/model/GetAgentCardRequest.h>
 #include <aws/bedrock-agentcore/model/GetBrowserSessionRequest.h>
 #include <aws/bedrock-agentcore/model/GetCodeInterpreterSessionRequest.h>
 #include <aws/bedrock-agentcore/model/GetEventRequest.h>
@@ -47,6 +51,7 @@
 #include <aws/bedrock-agentcore/model/StartCodeInterpreterSessionRequest.h>
 #include <aws/bedrock-agentcore/model/StopBrowserSessionRequest.h>
 #include <aws/bedrock-agentcore/model/StopCodeInterpreterSessionRequest.h>
+#include <aws/bedrock-agentcore/model/StopRuntimeSessionRequest.h>
 #include <aws/bedrock-agentcore/model/UpdateBrowserStreamRequest.h>
 
 #include <smithy/tracing/TracingUtils.h>
@@ -192,6 +197,108 @@ void BedrockAgentCoreClient::OverrideEndpoint(const Aws::String& endpoint)
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
+BatchCreateMemoryRecordsOutcome BedrockAgentCoreClient::BatchCreateMemoryRecords(const BatchCreateMemoryRecordsRequest& request) const
+{
+  AWS_OPERATION_GUARD(BatchCreateMemoryRecords);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchCreateMemoryRecords, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MemoryIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchCreateMemoryRecords", "Required field: MemoryId, is not set");
+    return BatchCreateMemoryRecordsOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemoryId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchCreateMemoryRecords, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, BatchCreateMemoryRecords, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".BatchCreateMemoryRecords",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<BatchCreateMemoryRecordsOutcome>(
+    [&]()-> BatchCreateMemoryRecordsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchCreateMemoryRecords, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memories/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemoryId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memoryRecords/batchCreate");
+      return BatchCreateMemoryRecordsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+BatchDeleteMemoryRecordsOutcome BedrockAgentCoreClient::BatchDeleteMemoryRecords(const BatchDeleteMemoryRecordsRequest& request) const
+{
+  AWS_OPERATION_GUARD(BatchDeleteMemoryRecords);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDeleteMemoryRecords, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MemoryIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchDeleteMemoryRecords", "Required field: MemoryId, is not set");
+    return BatchDeleteMemoryRecordsOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemoryId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchDeleteMemoryRecords, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, BatchDeleteMemoryRecords, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".BatchDeleteMemoryRecords",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<BatchDeleteMemoryRecordsOutcome>(
+    [&]()-> BatchDeleteMemoryRecordsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchDeleteMemoryRecords, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memories/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemoryId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memoryRecords/batchDelete");
+      return BatchDeleteMemoryRecordsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+BatchUpdateMemoryRecordsOutcome BedrockAgentCoreClient::BatchUpdateMemoryRecords(const BatchUpdateMemoryRecordsRequest& request) const
+{
+  AWS_OPERATION_GUARD(BatchUpdateMemoryRecords);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchUpdateMemoryRecords, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MemoryIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchUpdateMemoryRecords", "Required field: MemoryId, is not set");
+    return BatchUpdateMemoryRecordsOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemoryId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchUpdateMemoryRecords, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, BatchUpdateMemoryRecords, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".BatchUpdateMemoryRecords",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<BatchUpdateMemoryRecordsOutcome>(
+    [&]()-> BatchUpdateMemoryRecordsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchUpdateMemoryRecords, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memories/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemoryId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memoryRecords/batchUpdate");
+      return BatchUpdateMemoryRecordsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 CreateEventOutcome BedrockAgentCoreClient::CreateEvent(const CreateEventRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateEvent);
@@ -314,6 +421,40 @@ DeleteMemoryRecordOutcome BedrockAgentCoreClient::DeleteMemoryRecord(const Delet
       endpointResolutionOutcome.GetResult().AddPathSegments("/memoryRecords/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemoryRecordId());
       return DeleteMemoryRecordOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetAgentCardOutcome BedrockAgentCoreClient::GetAgentCard(const GetAgentCardRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetAgentCard);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAgentCard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AgentRuntimeArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAgentCard", "Required field: AgentRuntimeArn, is not set");
+    return GetAgentCardOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentRuntimeArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetAgentCard, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetAgentCard, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetAgentCard",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetAgentCardOutcome>(
+    [&]()-> GetAgentCardOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAgentCard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/runtimes/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentRuntimeArn());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/invocations/.well-known/agent-card.json");
+      return GetAgentCardOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1104,6 +1245,45 @@ StopCodeInterpreterSessionOutcome BedrockAgentCoreClient::StopCodeInterpreterSes
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCodeInterpreterIdentifier());
       endpointResolutionOutcome.GetResult().AddPathSegments("/sessions/stop");
       return StopCodeInterpreterSessionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StopRuntimeSessionOutcome BedrockAgentCoreClient::StopRuntimeSession(const StopRuntimeSessionRequest& request) const
+{
+  AWS_OPERATION_GUARD(StopRuntimeSession);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopRuntimeSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.RuntimeSessionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopRuntimeSession", "Required field: RuntimeSessionId, is not set");
+    return StopRuntimeSessionOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RuntimeSessionId]", false));
+  }
+  if (!request.AgentRuntimeArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopRuntimeSession", "Required field: AgentRuntimeArn, is not set");
+    return StopRuntimeSessionOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentRuntimeArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StopRuntimeSession, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StopRuntimeSession, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StopRuntimeSession",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StopRuntimeSessionOutcome>(
+    [&]()-> StopRuntimeSessionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopRuntimeSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/runtimes/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentRuntimeArn());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/stopruntimesession");
+      return StopRuntimeSessionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

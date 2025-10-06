@@ -25,6 +25,11 @@ ValidationException::ValidationException(JsonView jsonValue)
 
 ValidationException& ValidationException::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Message"))
+  {
+    m_message = jsonValue.GetString("Message");
+    m_messageHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("FieldList"))
   {
     Aws::Utils::Array<JsonView> fieldListJsonList = jsonValue.GetArray("FieldList");
@@ -34,17 +39,18 @@ ValidationException& ValidationException::operator =(JsonView jsonValue)
     }
     m_fieldListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
-    m_message = jsonValue.GetString("Message");
-    m_messageHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue ValidationException::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_messageHasBeenSet)
+  {
+   payload.WithString("Message", m_message);
+
+  }
 
   if(m_fieldListHasBeenSet)
   {
@@ -54,12 +60,6 @@ JsonValue ValidationException::Jsonize() const
      fieldListJsonList[fieldListIndex].AsObject(m_fieldList[fieldListIndex].Jsonize());
    }
    payload.WithArray("FieldList", std::move(fieldListJsonList));
-
-  }
-
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
 
   }
 

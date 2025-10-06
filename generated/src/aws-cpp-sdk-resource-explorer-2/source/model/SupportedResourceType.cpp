@@ -25,15 +25,15 @@ SupportedResourceType::SupportedResourceType(JsonView jsonValue)
 
 SupportedResourceType& SupportedResourceType::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("ResourceType"))
-  {
-    m_resourceType = jsonValue.GetString("ResourceType");
-    m_resourceTypeHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Service"))
   {
     m_service = jsonValue.GetString("Service");
     m_serviceHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ResourceType"))
+  {
+    m_resourceType = jsonValue.GetString("ResourceType");
+    m_resourceTypeHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue SupportedResourceType::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("ResourceType", m_resourceType);
-
-  }
-
   if(m_serviceHasBeenSet)
   {
    payload.WithString("Service", m_service);
+
+  }
+
+  if(m_resourceTypeHasBeenSet)
+  {
+   payload.WithString("ResourceType", m_resourceType);
 
   }
 

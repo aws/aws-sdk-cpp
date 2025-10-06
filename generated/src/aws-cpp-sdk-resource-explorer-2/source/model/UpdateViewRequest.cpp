@@ -16,9 +16,9 @@ Aws::String UpdateViewRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_filtersHasBeenSet)
+  if(m_viewArnHasBeenSet)
   {
-   payload.WithObject("Filters", m_filters.Jsonize());
+   payload.WithString("ViewArn", m_viewArn);
 
   }
 
@@ -33,9 +33,9 @@ Aws::String UpdateViewRequest::SerializePayload() const
 
   }
 
-  if(m_viewArnHasBeenSet)
+  if(m_filtersHasBeenSet)
   {
-   payload.WithString("ViewArn", m_viewArn);
+   payload.WithObject("Filters", m_filters.Jsonize());
 
   }
 

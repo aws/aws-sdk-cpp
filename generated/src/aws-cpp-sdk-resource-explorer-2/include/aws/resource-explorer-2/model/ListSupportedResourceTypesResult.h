@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/resource-explorer-2/model/SupportedResourceType.h>
 #include <utility>
 
@@ -36,6 +36,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The list of resource types supported by Resource Explorer.</p>
+     */
+    inline const Aws::Vector<SupportedResourceType>& GetResourceTypes() const { return m_resourceTypes; }
+    template<typename ResourceTypesT = Aws::Vector<SupportedResourceType>>
+    void SetResourceTypes(ResourceTypesT&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::forward<ResourceTypesT>(value); }
+    template<typename ResourceTypesT = Aws::Vector<SupportedResourceType>>
+    ListSupportedResourceTypesResult& WithResourceTypes(ResourceTypesT&& value) { SetResourceTypes(std::forward<ResourceTypesT>(value)); return *this;}
+    template<typename ResourceTypesT = SupportedResourceType>
+    ListSupportedResourceTypesResult& AddResourceTypes(ResourceTypesT&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.emplace_back(std::forward<ResourceTypesT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>If present, indicates that more output is available than is included in the
      * current response. Use this value in the <code>NextToken</code> request parameter
      * in a subsequent call to the operation to get the next part of the output. You
@@ -50,19 +63,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The list of resource types supported by Resource Explorer.</p>
-     */
-    inline const Aws::Vector<SupportedResourceType>& GetResourceTypes() const { return m_resourceTypes; }
-    template<typename ResourceTypesT = Aws::Vector<SupportedResourceType>>
-    void SetResourceTypes(ResourceTypesT&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::forward<ResourceTypesT>(value); }
-    template<typename ResourceTypesT = Aws::Vector<SupportedResourceType>>
-    ListSupportedResourceTypesResult& WithResourceTypes(ResourceTypesT&& value) { SetResourceTypes(std::forward<ResourceTypesT>(value)); return *this;}
-    template<typename ResourceTypesT = SupportedResourceType>
-    ListSupportedResourceTypesResult& AddResourceTypes(ResourceTypesT&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.emplace_back(std::forward<ResourceTypesT>(value)); return *this; }
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -72,11 +72,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
     Aws::Vector<SupportedResourceType> m_resourceTypes;
     bool m_resourceTypesHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

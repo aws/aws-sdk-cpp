@@ -25,15 +25,15 @@ BatchGetViewError::BatchGetViewError(JsonView jsonValue)
 
 BatchGetViewError& BatchGetViewError::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("ErrorMessage"))
-  {
-    m_errorMessage = jsonValue.GetString("ErrorMessage");
-    m_errorMessageHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("ViewArn"))
   {
     m_viewArn = jsonValue.GetString("ViewArn");
     m_viewArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ErrorMessage"))
+  {
+    m_errorMessage = jsonValue.GetString("ErrorMessage");
+    m_errorMessageHasBeenSet = true;
   }
   return *this;
 }
@@ -42,15 +42,15 @@ JsonValue BatchGetViewError::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("ErrorMessage", m_errorMessage);
-
-  }
-
   if(m_viewArnHasBeenSet)
   {
    payload.WithString("ViewArn", m_viewArn);
+
+  }
+
+  if(m_errorMessageHasBeenSet)
+  {
+   payload.WithString("ErrorMessage", m_errorMessage);
 
   }
 

@@ -22,12 +22,6 @@ Aws::String CreateAgentRuntimeRequest::SerializePayload() const
 
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
-
   if(m_agentRuntimeArtifactHasBeenSet)
   {
    payload.WithObject("agentRuntimeArtifact", m_agentRuntimeArtifact.Jsonize());
@@ -46,26 +40,15 @@ Aws::String CreateAgentRuntimeRequest::SerializePayload() const
 
   }
 
-  if(m_protocolConfigurationHasBeenSet)
-  {
-   payload.WithObject("protocolConfiguration", m_protocolConfiguration.Jsonize());
-
-  }
-
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
 
   }
 
-  if(m_environmentVariablesHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   JsonValue environmentVariablesJsonMap;
-   for(auto& environmentVariablesItem : m_environmentVariables)
-   {
-     environmentVariablesJsonMap.WithString(environmentVariablesItem.first, environmentVariablesItem.second);
-   }
-   payload.WithObject("environmentVariables", std::move(environmentVariablesJsonMap));
+   payload.WithString("description", m_description);
 
   }
 
@@ -78,6 +61,29 @@ Aws::String CreateAgentRuntimeRequest::SerializePayload() const
   if(m_requestHeaderConfigurationHasBeenSet)
   {
    payload.WithObject("requestHeaderConfiguration", m_requestHeaderConfiguration.Jsonize());
+
+  }
+
+  if(m_protocolConfigurationHasBeenSet)
+  {
+   payload.WithObject("protocolConfiguration", m_protocolConfiguration.Jsonize());
+
+  }
+
+  if(m_lifecycleConfigurationHasBeenSet)
+  {
+   payload.WithObject("lifecycleConfiguration", m_lifecycleConfiguration.Jsonize());
+
+  }
+
+  if(m_environmentVariablesHasBeenSet)
+  {
+   JsonValue environmentVariablesJsonMap;
+   for(auto& environmentVariablesItem : m_environmentVariables)
+   {
+     environmentVariablesJsonMap.WithString(environmentVariablesItem.first, environmentVariablesItem.second);
+   }
+   payload.WithObject("environmentVariables", std::move(environmentVariablesJsonMap));
 
   }
 

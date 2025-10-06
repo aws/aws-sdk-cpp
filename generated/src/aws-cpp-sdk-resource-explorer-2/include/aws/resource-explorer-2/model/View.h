@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
-#include <aws/resource-explorer-2/model/SearchFilter.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/resource-explorer-2/model/SearchFilter.h>
 #include <aws/resource-explorer-2/model/IncludedProperty.h>
 #include <utility>
 
@@ -49,41 +49,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of <a>SearchFilter</a> objects that specify which resources can be
-     * included in the results of queries made using this view.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * resource name (ARN)</a> of the view.</p>
      */
-    inline const SearchFilter& GetFilters() const { return m_filters; }
-    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    template<typename FiltersT = SearchFilter>
-    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
-    template<typename FiltersT = SearchFilter>
-    View& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A structure that contains additional information about the view.</p>
-     */
-    inline const Aws::Vector<IncludedProperty>& GetIncludedProperties() const { return m_includedProperties; }
-    inline bool IncludedPropertiesHasBeenSet() const { return m_includedPropertiesHasBeenSet; }
-    template<typename IncludedPropertiesT = Aws::Vector<IncludedProperty>>
-    void SetIncludedProperties(IncludedPropertiesT&& value) { m_includedPropertiesHasBeenSet = true; m_includedProperties = std::forward<IncludedPropertiesT>(value); }
-    template<typename IncludedPropertiesT = Aws::Vector<IncludedProperty>>
-    View& WithIncludedProperties(IncludedPropertiesT&& value) { SetIncludedProperties(std::forward<IncludedPropertiesT>(value)); return *this;}
-    template<typename IncludedPropertiesT = IncludedProperty>
-    View& AddIncludedProperties(IncludedPropertiesT&& value) { m_includedPropertiesHasBeenSet = true; m_includedProperties.emplace_back(std::forward<IncludedPropertiesT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The date and time when this view was last modified.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
-    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
-    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
-    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
-    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
-    View& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
+    inline const Aws::String& GetViewArn() const { return m_viewArn; }
+    inline bool ViewArnHasBeenSet() const { return m_viewArnHasBeenSet; }
+    template<typename ViewArnT = Aws::String>
+    void SetViewArn(ViewArnT&& value) { m_viewArnHasBeenSet = true; m_viewArn = std::forward<ViewArnT>(value); }
+    template<typename ViewArnT = Aws::String>
+    View& WithViewArn(ViewArnT&& value) { SetViewArn(std::forward<ViewArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,6 +71,18 @@ namespace Model
     void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
     template<typename OwnerT = Aws::String>
     View& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time when this view was last modified.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    View& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,36 +106,49 @@ namespace Model
 
     ///@{
     /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * resource name (ARN)</a> of the view.</p>
+     * <p>A structure that contains additional information about the view.</p>
      */
-    inline const Aws::String& GetViewArn() const { return m_viewArn; }
-    inline bool ViewArnHasBeenSet() const { return m_viewArnHasBeenSet; }
-    template<typename ViewArnT = Aws::String>
-    void SetViewArn(ViewArnT&& value) { m_viewArnHasBeenSet = true; m_viewArn = std::forward<ViewArnT>(value); }
-    template<typename ViewArnT = Aws::String>
-    View& WithViewArn(ViewArnT&& value) { SetViewArn(std::forward<ViewArnT>(value)); return *this;}
+    inline const Aws::Vector<IncludedProperty>& GetIncludedProperties() const { return m_includedProperties; }
+    inline bool IncludedPropertiesHasBeenSet() const { return m_includedPropertiesHasBeenSet; }
+    template<typename IncludedPropertiesT = Aws::Vector<IncludedProperty>>
+    void SetIncludedProperties(IncludedPropertiesT&& value) { m_includedPropertiesHasBeenSet = true; m_includedProperties = std::forward<IncludedPropertiesT>(value); }
+    template<typename IncludedPropertiesT = Aws::Vector<IncludedProperty>>
+    View& WithIncludedProperties(IncludedPropertiesT&& value) { SetIncludedProperties(std::forward<IncludedPropertiesT>(value)); return *this;}
+    template<typename IncludedPropertiesT = IncludedProperty>
+    View& AddIncludedProperties(IncludedPropertiesT&& value) { m_includedPropertiesHasBeenSet = true; m_includedProperties.emplace_back(std::forward<IncludedPropertiesT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>An array of <a>SearchFilter</a> objects that specify which resources can be
+     * included in the results of queries made using this view.</p>
+     */
+    inline const SearchFilter& GetFilters() const { return m_filters; }
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+    template<typename FiltersT = SearchFilter>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = SearchFilter>
+    View& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
   private:
 
-    SearchFilter m_filters;
-    bool m_filtersHasBeenSet = false;
-
-    Aws::Vector<IncludedProperty> m_includedProperties;
-    bool m_includedPropertiesHasBeenSet = false;
-
-    Aws::Utils::DateTime m_lastUpdatedAt{};
-    bool m_lastUpdatedAtHasBeenSet = false;
+    Aws::String m_viewArn;
+    bool m_viewArnHasBeenSet = false;
 
     Aws::String m_owner;
     bool m_ownerHasBeenSet = false;
 
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
+
     Aws::String m_scope;
     bool m_scopeHasBeenSet = false;
 
-    Aws::String m_viewArn;
-    bool m_viewArnHasBeenSet = false;
+    Aws::Vector<IncludedProperty> m_includedProperties;
+    bool m_includedPropertiesHasBeenSet = false;
+
+    SearchFilter m_filters;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

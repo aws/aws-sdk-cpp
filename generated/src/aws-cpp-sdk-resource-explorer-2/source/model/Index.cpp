@@ -25,15 +25,15 @@ Index::Index(JsonView jsonValue)
 
 Index& Index::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Arn"))
-  {
-    m_arn = jsonValue.GetString("Arn");
-    m_arnHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
     m_regionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+    m_arnHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Type"))
   {
@@ -47,15 +47,15 @@ JsonValue Index::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
-  }
-
   if(m_regionHasBeenSet)
   {
    payload.WithString("Region", m_region);
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("Arn", m_arn);
 
   }
 

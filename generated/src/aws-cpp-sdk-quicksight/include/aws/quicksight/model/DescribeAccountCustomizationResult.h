@@ -69,8 +69,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The QuickSight customizations that exist in the current Amazon Web Services
-     * Region. </p>
+     * <p>The QuickSight customizations that exist. </p>
      */
     inline const AccountCustomization& GetAccountCustomization() const { return m_accountCustomization; }
     template<typename AccountCustomizationT = AccountCustomization>

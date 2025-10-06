@@ -34,7 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Opaque token representing both agent and user identity</p>
+     * <p>An opaque token representing the identity of both the workload and the
+     * user.</p>
      */
     inline const Aws::String& GetWorkloadAccessToken() const { return m_workloadAccessToken; }
     template<typename WorkloadAccessTokenT = Aws::String>

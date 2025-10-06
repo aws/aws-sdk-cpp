@@ -14,6 +14,7 @@
 #include <aws/mediaconnect/model/MonitoringConfig.h>
 #include <aws/mediaconnect/model/FlowSize.h>
 #include <aws/mediaconnect/model/NdiConfig.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mediaconnect/model/GrantEntitlementRequest.h>
 #include <aws/mediaconnect/model/AddMediaStreamRequest.h>
 #include <aws/mediaconnect/model/AddOutputRequest.h>
@@ -212,6 +213,22 @@ namespace Model
     template<typename NdiConfigT = NdiConfig>
     CreateFlowRequest& WithNdiConfig(NdiConfigT&& value) { SetNdiConfig(std::forward<NdiConfigT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The key-value pairs that can be used to tag and organize the flow. </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetFlowTags() const { return m_flowTags; }
+    inline bool FlowTagsHasBeenSet() const { return m_flowTagsHasBeenSet; }
+    template<typename FlowTagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetFlowTags(FlowTagsT&& value) { m_flowTagsHasBeenSet = true; m_flowTags = std::forward<FlowTagsT>(value); }
+    template<typename FlowTagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateFlowRequest& WithFlowTags(FlowTagsT&& value) { SetFlowTags(std::forward<FlowTagsT>(value)); return *this;}
+    template<typename FlowTagsKeyT = Aws::String, typename FlowTagsValueT = Aws::String>
+    CreateFlowRequest& AddFlowTags(FlowTagsKeyT&& key, FlowTagsValueT&& value) {
+      m_flowTagsHasBeenSet = true; m_flowTags.emplace(std::forward<FlowTagsKeyT>(key), std::forward<FlowTagsValueT>(value)); return *this;
+    }
+    ///@}
   private:
 
     Aws::String m_availabilityZone;
@@ -252,6 +269,9 @@ namespace Model
 
     NdiConfig m_ndiConfig;
     bool m_ndiConfigHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_flowTags;
+    bool m_flowTagsHasBeenSet = false;
   };
 
 } // namespace Model

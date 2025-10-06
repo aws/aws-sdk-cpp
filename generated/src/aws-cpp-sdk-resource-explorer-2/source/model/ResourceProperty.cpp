@@ -25,20 +25,20 @@ ResourceProperty::ResourceProperty(JsonView jsonValue)
 
 ResourceProperty& ResourceProperty::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Data"))
+  if(jsonValue.ValueExists("Name"))
   {
-    m_data = jsonValue.GetObject("Data");
-    m_dataHasBeenSet = true;
+    m_name = jsonValue.GetString("Name");
+    m_nameHasBeenSet = true;
   }
   if(jsonValue.ValueExists("LastReportedAt"))
   {
     m_lastReportedAt = jsonValue.GetString("LastReportedAt");
     m_lastReportedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
+  if(jsonValue.ValueExists("Data"))
   {
-    m_name = jsonValue.GetString("Name");
-    m_nameHasBeenSet = true;
+    m_data = jsonValue.GetObject("Data");
+    m_dataHasBeenSet = true;
   }
   return *this;
 }
@@ -47,12 +47,10 @@ JsonValue ResourceProperty::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_dataHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-    if(!m_data.View().IsNull())
-    {
-       payload.WithObject("Data", JsonValue(m_data.View()));
-    }
+   payload.WithString("Name", m_name);
+
   }
 
   if(m_lastReportedAtHasBeenSet)
@@ -60,10 +58,12 @@ JsonValue ResourceProperty::Jsonize() const
    payload.WithString("LastReportedAt", m_lastReportedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_nameHasBeenSet)
+  if(m_dataHasBeenSet)
   {
-   payload.WithString("Name", m_name);
-
+    if(!m_data.View().IsNull())
+    {
+       payload.WithObject("Data", JsonValue(m_data.View()));
+    }
   }
 
   return payload;

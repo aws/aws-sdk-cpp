@@ -6,15 +6,16 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/bedrock-agentcore-control/model/WorkloadIdentityDetails.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/bedrock-agentcore-control/model/AgentRuntimeArtifact.h>
 #include <aws/bedrock-agentcore-control/model/NetworkConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/AgentRuntimeStatus.h>
+#include <aws/bedrock-agentcore-control/model/LifecycleConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/WorkloadIdentityDetails.h>
+#include <aws/bedrock-agentcore-control/model/AgentRuntimeArtifact.h>
 #include <aws/bedrock-agentcore-control/model/ProtocolConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RequestHeaderConfiguration.h>
-#include <aws/bedrock-agentcore-control/model/AgentRuntimeStatus.h>
 #include <utility>
 
 namespace Aws
@@ -54,17 +55,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The workload identity details for the AgentCore Runtime.</p>
-     */
-    inline const WorkloadIdentityDetails& GetWorkloadIdentityDetails() const { return m_workloadIdentityDetails; }
-    template<typename WorkloadIdentityDetailsT = WorkloadIdentityDetails>
-    void SetWorkloadIdentityDetails(WorkloadIdentityDetailsT&& value) { m_workloadIdentityDetailsHasBeenSet = true; m_workloadIdentityDetails = std::forward<WorkloadIdentityDetailsT>(value); }
-    template<typename WorkloadIdentityDetailsT = WorkloadIdentityDetails>
-    GetAgentRuntimeResult& WithWorkloadIdentityDetails(WorkloadIdentityDetailsT&& value) { SetWorkloadIdentityDetails(std::forward<WorkloadIdentityDetailsT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the AgentCore Runtime.</p>
      */
     inline const Aws::String& GetAgentRuntimeName() const { return m_agentRuntimeName; }
@@ -72,17 +62,6 @@ namespace Model
     void SetAgentRuntimeName(AgentRuntimeNameT&& value) { m_agentRuntimeNameHasBeenSet = true; m_agentRuntimeName = std::forward<AgentRuntimeNameT>(value); }
     template<typename AgentRuntimeNameT = Aws::String>
     GetAgentRuntimeResult& WithAgentRuntimeName(AgentRuntimeNameT&& value) { SetAgentRuntimeName(std::forward<AgentRuntimeNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The description of the AgentCore Runtime.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    GetAgentRuntimeResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,17 +121,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The artifact of the AgentCore Runtime.</p>
-     */
-    inline const AgentRuntimeArtifact& GetAgentRuntimeArtifact() const { return m_agentRuntimeArtifact; }
-    template<typename AgentRuntimeArtifactT = AgentRuntimeArtifact>
-    void SetAgentRuntimeArtifact(AgentRuntimeArtifactT&& value) { m_agentRuntimeArtifactHasBeenSet = true; m_agentRuntimeArtifact = std::forward<AgentRuntimeArtifactT>(value); }
-    template<typename AgentRuntimeArtifactT = AgentRuntimeArtifact>
-    GetAgentRuntimeResult& WithAgentRuntimeArtifact(AgentRuntimeArtifactT&& value) { SetAgentRuntimeArtifact(std::forward<AgentRuntimeArtifactT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The network configuration for the AgentCore Runtime.</p>
      */
     inline const NetworkConfiguration& GetNetworkConfiguration() const { return m_networkConfiguration; }
@@ -160,6 +128,59 @@ namespace Model
     void SetNetworkConfiguration(NetworkConfigurationT&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::forward<NetworkConfigurationT>(value); }
     template<typename NetworkConfigurationT = NetworkConfiguration>
     GetAgentRuntimeResult& WithNetworkConfiguration(NetworkConfigurationT&& value) { SetNetworkConfiguration(std::forward<NetworkConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The current status of the AgentCore Runtime.</p>
+     */
+    inline AgentRuntimeStatus GetStatus() const { return m_status; }
+    inline void SetStatus(AgentRuntimeStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetAgentRuntimeResult& WithStatus(AgentRuntimeStatus value) { SetStatus(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The life cycle configuration for the AgentCore Runtime.</p>
+     */
+    inline const LifecycleConfiguration& GetLifecycleConfiguration() const { return m_lifecycleConfiguration; }
+    template<typename LifecycleConfigurationT = LifecycleConfiguration>
+    void SetLifecycleConfiguration(LifecycleConfigurationT&& value) { m_lifecycleConfigurationHasBeenSet = true; m_lifecycleConfiguration = std::forward<LifecycleConfigurationT>(value); }
+    template<typename LifecycleConfigurationT = LifecycleConfiguration>
+    GetAgentRuntimeResult& WithLifecycleConfiguration(LifecycleConfigurationT&& value) { SetLifecycleConfiguration(std::forward<LifecycleConfigurationT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The description of the AgentCore Runtime.</p>
+     */
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetAgentRuntimeResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The workload identity details for the AgentCore Runtime.</p>
+     */
+    inline const WorkloadIdentityDetails& GetWorkloadIdentityDetails() const { return m_workloadIdentityDetails; }
+    template<typename WorkloadIdentityDetailsT = WorkloadIdentityDetails>
+    void SetWorkloadIdentityDetails(WorkloadIdentityDetailsT&& value) { m_workloadIdentityDetailsHasBeenSet = true; m_workloadIdentityDetails = std::forward<WorkloadIdentityDetailsT>(value); }
+    template<typename WorkloadIdentityDetailsT = WorkloadIdentityDetails>
+    GetAgentRuntimeResult& WithWorkloadIdentityDetails(WorkloadIdentityDetailsT&& value) { SetWorkloadIdentityDetails(std::forward<WorkloadIdentityDetailsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The artifact of the AgentCore Runtime.</p>
+     */
+    inline const AgentRuntimeArtifact& GetAgentRuntimeArtifact() const { return m_agentRuntimeArtifact; }
+    template<typename AgentRuntimeArtifactT = AgentRuntimeArtifact>
+    void SetAgentRuntimeArtifact(AgentRuntimeArtifactT&& value) { m_agentRuntimeArtifactHasBeenSet = true; m_agentRuntimeArtifact = std::forward<AgentRuntimeArtifactT>(value); }
+    template<typename AgentRuntimeArtifactT = AgentRuntimeArtifact>
+    GetAgentRuntimeResult& WithAgentRuntimeArtifact(AgentRuntimeArtifactT&& value) { SetAgentRuntimeArtifact(std::forward<AgentRuntimeArtifactT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -210,15 +231,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The current status of the AgentCore Runtime.</p>
-     */
-    inline AgentRuntimeStatus GetStatus() const { return m_status; }
-    inline void SetStatus(AgentRuntimeStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline GetAgentRuntimeResult& WithStatus(AgentRuntimeStatus value) { SetStatus(value); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -231,14 +243,8 @@ namespace Model
     Aws::String m_agentRuntimeArn;
     bool m_agentRuntimeArnHasBeenSet = false;
 
-    WorkloadIdentityDetails m_workloadIdentityDetails;
-    bool m_workloadIdentityDetailsHasBeenSet = false;
-
     Aws::String m_agentRuntimeName;
     bool m_agentRuntimeNameHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_agentRuntimeId;
     bool m_agentRuntimeIdHasBeenSet = false;
@@ -255,11 +261,23 @@ namespace Model
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
-    AgentRuntimeArtifact m_agentRuntimeArtifact;
-    bool m_agentRuntimeArtifactHasBeenSet = false;
-
     NetworkConfiguration m_networkConfiguration;
     bool m_networkConfigurationHasBeenSet = false;
+
+    AgentRuntimeStatus m_status{AgentRuntimeStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
+
+    LifecycleConfiguration m_lifecycleConfiguration;
+    bool m_lifecycleConfigurationHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
+    WorkloadIdentityDetails m_workloadIdentityDetails;
+    bool m_workloadIdentityDetailsHasBeenSet = false;
+
+    AgentRuntimeArtifact m_agentRuntimeArtifact;
+    bool m_agentRuntimeArtifactHasBeenSet = false;
 
     ProtocolConfiguration m_protocolConfiguration;
     bool m_protocolConfigurationHasBeenSet = false;
@@ -272,9 +290,6 @@ namespace Model
 
     RequestHeaderConfiguration m_requestHeaderConfiguration;
     bool m_requestHeaderConfigurationHasBeenSet = false;
-
-    AgentRuntimeStatus m_status{AgentRuntimeStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

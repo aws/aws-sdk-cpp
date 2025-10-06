@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Unique identifier for the registered agent</p>
+     * <p>The unique identifier for the registered workload.</p>
      */
     inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
     inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }

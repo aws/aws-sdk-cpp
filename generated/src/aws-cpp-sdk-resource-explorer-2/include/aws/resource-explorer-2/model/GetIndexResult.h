@@ -6,11 +6,11 @@
 #pragma once
 #include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/resource-explorer-2/model/IndexState.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/resource-explorer-2/model/IndexType.h>
+#include <aws/resource-explorer-2/model/IndexState.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -52,24 +52,23 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time when the index was originally created.</p>
+     * <p>The type of the index in this Region. For information about the aggregator
+     * index and how it differs from a local index, see <a
+     * href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning
+     * on cross-Region search by creating an aggregator index</a>.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::Utils::DateTime>
-    GetIndexResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    inline IndexType GetType() const { return m_type; }
+    inline void SetType(IndexType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GetIndexResult& WithType(IndexType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The date and time when the index was last updated.</p>
+     * <p>The current state of the index in this Amazon Web Services Region.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
-    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
-    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
-    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
-    GetIndexResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
+    inline IndexState GetState() const { return m_state; }
+    inline void SetState(IndexState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline GetIndexResult& WithState(IndexState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -106,11 +105,24 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current state of the index in this Amazon Web Services Region.</p>
+     * <p>The date and time when the index was originally created.</p>
      */
-    inline IndexState GetState() const { return m_state; }
-    inline void SetState(IndexState value) { m_stateHasBeenSet = true; m_state = value; }
-    inline GetIndexResult& WithState(IndexState value) { SetState(value); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetIndexResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time when the index was last updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    GetIndexResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,18 +141,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The type of the index in this Region. For information about the aggregator
-     * index and how it differs from a local index, see <a
-     * href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning
-     * on cross-Region search by creating an aggregator index</a>.</p>
-     */
-    inline IndexType GetType() const { return m_type; }
-    inline void SetType(IndexType value) { m_typeHasBeenSet = true; m_type = value; }
-    inline GetIndexResult& WithType(IndexType value) { SetType(value); return *this;}
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -153,11 +153,11 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt{};
-    bool m_createdAtHasBeenSet = false;
+    IndexType m_type{IndexType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt{};
-    bool m_lastUpdatedAtHasBeenSet = false;
+    IndexState m_state{IndexState::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_replicatingFrom;
     bool m_replicatingFromHasBeenSet = false;
@@ -165,14 +165,14 @@ namespace Model
     Aws::Vector<Aws::String> m_replicatingTo;
     bool m_replicatingToHasBeenSet = false;
 
-    IndexState m_state{IndexState::NOT_SET};
-    bool m_stateHasBeenSet = false;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
-
-    IndexType m_type{IndexType::NOT_SET};
-    bool m_typeHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

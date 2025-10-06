@@ -25,6 +25,11 @@ ListManagedViewsResult::ListManagedViewsResult(const Aws::AmazonWebServiceResult
 ListManagedViewsResult& ListManagedViewsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ManagedViews"))
   {
     Aws::Utils::Array<JsonView> managedViewsJsonList = jsonValue.GetArray("ManagedViews");
@@ -33,11 +38,6 @@ ListManagedViewsResult& ListManagedViewsResult::operator =(const Aws::AmazonWebS
       m_managedViews.push_back(managedViewsJsonList[managedViewsIndex].AsString());
     }
     m_managedViewsHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

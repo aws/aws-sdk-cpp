@@ -124,6 +124,15 @@ SetSourceRequest& SetSourceRequest::operator =(JsonView jsonValue)
     m_gatewayBridgeSource = jsonValue.GetObject("gatewayBridgeSource");
     m_gatewayBridgeSourceHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("sourceTags"))
+  {
+    Aws::Map<Aws::String, JsonView> sourceTagsJsonMap = jsonValue.GetObject("sourceTags").GetAllObjects();
+    for(auto& sourceTagsItem : sourceTagsJsonMap)
+    {
+      m_sourceTags[sourceTagsItem.first] = sourceTagsItem.second.AsString();
+    }
+    m_sourceTagsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -246,6 +255,17 @@ JsonValue SetSourceRequest::Jsonize() const
   if(m_gatewayBridgeSourceHasBeenSet)
   {
    payload.WithObject("gatewayBridgeSource", m_gatewayBridgeSource.Jsonize());
+
+  }
+
+  if(m_sourceTagsHasBeenSet)
+  {
+   JsonValue sourceTagsJsonMap;
+   for(auto& sourceTagsItem : m_sourceTags)
+   {
+     sourceTagsJsonMap.WithString(sourceTagsItem.first, sourceTagsItem.second);
+   }
+   payload.WithObject("sourceTags", std::move(sourceTagsJsonMap));
 
   }
 

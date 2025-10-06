@@ -30,24 +30,10 @@ Resource& Resource::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastReportedAt"))
-  {
-    m_lastReportedAt = jsonValue.GetString("LastReportedAt");
-    m_lastReportedAtHasBeenSet = true;
-  }
   if(jsonValue.ValueExists("OwningAccountId"))
   {
     m_owningAccountId = jsonValue.GetString("OwningAccountId");
     m_owningAccountIdHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Properties"))
-  {
-    Aws::Utils::Array<JsonView> propertiesJsonList = jsonValue.GetArray("Properties");
-    for(unsigned propertiesIndex = 0; propertiesIndex < propertiesJsonList.GetLength(); ++propertiesIndex)
-    {
-      m_properties.push_back(propertiesJsonList[propertiesIndex].AsObject());
-    }
-    m_propertiesHasBeenSet = true;
   }
   if(jsonValue.ValueExists("Region"))
   {
@@ -64,6 +50,20 @@ Resource& Resource::operator =(JsonView jsonValue)
     m_service = jsonValue.GetString("Service");
     m_serviceHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("LastReportedAt"))
+  {
+    m_lastReportedAt = jsonValue.GetString("LastReportedAt");
+    m_lastReportedAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Properties"))
+  {
+    Aws::Utils::Array<JsonView> propertiesJsonList = jsonValue.GetArray("Properties");
+    for(unsigned propertiesIndex = 0; propertiesIndex < propertiesJsonList.GetLength(); ++propertiesIndex)
+    {
+      m_properties.push_back(propertiesJsonList[propertiesIndex].AsObject());
+    }
+    m_propertiesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -77,25 +77,9 @@ JsonValue Resource::Jsonize() const
 
   }
 
-  if(m_lastReportedAtHasBeenSet)
-  {
-   payload.WithString("LastReportedAt", m_lastReportedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
   if(m_owningAccountIdHasBeenSet)
   {
    payload.WithString("OwningAccountId", m_owningAccountId);
-
-  }
-
-  if(m_propertiesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> propertiesJsonList(m_properties.size());
-   for(unsigned propertiesIndex = 0; propertiesIndex < propertiesJsonList.GetLength(); ++propertiesIndex)
-   {
-     propertiesJsonList[propertiesIndex].AsObject(m_properties[propertiesIndex].Jsonize());
-   }
-   payload.WithArray("Properties", std::move(propertiesJsonList));
 
   }
 
@@ -114,6 +98,22 @@ JsonValue Resource::Jsonize() const
   if(m_serviceHasBeenSet)
   {
    payload.WithString("Service", m_service);
+
+  }
+
+  if(m_lastReportedAtHasBeenSet)
+  {
+   payload.WithString("LastReportedAt", m_lastReportedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_propertiesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> propertiesJsonList(m_properties.size());
+   for(unsigned propertiesIndex = 0; propertiesIndex < propertiesJsonList.GetLength(); ++propertiesIndex)
+   {
+     propertiesJsonList[propertiesIndex].AsObject(m_properties[propertiesIndex].Jsonize());
+   }
+   payload.WithArray("Properties", std::move(propertiesJsonList));
 
   }
 

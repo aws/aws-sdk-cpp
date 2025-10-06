@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     MCP,
-    HTTP
+    HTTP,
+    A2A
   };
 
 namespace ServerProtocolMapper

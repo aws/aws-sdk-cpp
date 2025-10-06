@@ -9,7 +9,9 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agentcore/model/Branch.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/bedrock-agentcore/model/PayloadType.h>
+#include <aws/bedrock-agentcore/model/MetadataValue.h>
 #include <utility>
 
 namespace Aws
@@ -127,6 +129,22 @@ namespace Model
     template<typename BranchT = Branch>
     Event& WithBranch(BranchT&& value) { SetBranch(std::forward<BranchT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Metadata associated with an event.</p>
+     */
+    inline const Aws::Map<Aws::String, MetadataValue>& GetMetadata() const { return m_metadata; }
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+    template<typename MetadataT = Aws::Map<Aws::String, MetadataValue>>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Aws::Map<Aws::String, MetadataValue>>
+    Event& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
+    template<typename MetadataKeyT = Aws::String, typename MetadataValueT = MetadataValue>
+    Event& AddMetadata(MetadataKeyT&& key, MetadataValueT&& value) {
+      m_metadataHasBeenSet = true; m_metadata.emplace(std::forward<MetadataKeyT>(key), std::forward<MetadataValueT>(value)); return *this;
+    }
+    ///@}
   private:
 
     Aws::String m_memoryId;
@@ -149,6 +167,9 @@ namespace Model
 
     Branch m_branch;
     bool m_branchHasBeenSet = false;
+
+    Aws::Map<Aws::String, MetadataValue> m_metadata;
+    bool m_metadataHasBeenSet = false;
   };
 
 } // namespace Model

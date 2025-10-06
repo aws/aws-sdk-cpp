@@ -59,6 +59,15 @@ GrantEntitlementRequest& GrantEntitlementRequest::operator =(JsonView jsonValue)
     }
     m_subscribersHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("entitlementTags"))
+  {
+    Aws::Map<Aws::String, JsonView> entitlementTagsJsonMap = jsonValue.GetObject("entitlementTags").GetAllObjects();
+    for(auto& entitlementTagsItem : entitlementTagsJsonMap)
+    {
+      m_entitlementTags[entitlementTagsItem.first] = entitlementTagsItem.second.AsString();
+    }
+    m_entitlementTagsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -103,6 +112,17 @@ JsonValue GrantEntitlementRequest::Jsonize() const
      subscribersJsonList[subscribersIndex].AsString(m_subscribers[subscribersIndex]);
    }
    payload.WithArray("subscribers", std::move(subscribersJsonList));
+
+  }
+
+  if(m_entitlementTagsHasBeenSet)
+  {
+   JsonValue entitlementTagsJsonMap;
+   for(auto& entitlementTagsItem : m_entitlementTags)
+   {
+     entitlementTagsJsonMap.WithString(entitlementTagsItem.first, entitlementTagsItem.second);
+   }
+   payload.WithObject("entitlementTags", std::move(entitlementTagsJsonMap));
 
   }
 

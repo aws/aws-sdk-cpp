@@ -25,10 +25,25 @@ View::View(JsonView jsonValue)
 
 View& View::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Filters"))
+  if(jsonValue.ValueExists("ViewArn"))
   {
-    m_filters = jsonValue.GetObject("Filters");
-    m_filtersHasBeenSet = true;
+    m_viewArn = jsonValue.GetString("ViewArn");
+    m_viewArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Owner"))
+  {
+    m_owner = jsonValue.GetString("Owner");
+    m_ownerHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("LastUpdatedAt"))
+  {
+    m_lastUpdatedAt = jsonValue.GetString("LastUpdatedAt");
+    m_lastUpdatedAtHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Scope"))
+  {
+    m_scope = jsonValue.GetString("Scope");
+    m_scopeHasBeenSet = true;
   }
   if(jsonValue.ValueExists("IncludedProperties"))
   {
@@ -39,25 +54,10 @@ View& View::operator =(JsonView jsonValue)
     }
     m_includedPropertiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastUpdatedAt"))
+  if(jsonValue.ValueExists("Filters"))
   {
-    m_lastUpdatedAt = jsonValue.GetString("LastUpdatedAt");
-    m_lastUpdatedAtHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Owner"))
-  {
-    m_owner = jsonValue.GetString("Owner");
-    m_ownerHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("Scope"))
-  {
-    m_scope = jsonValue.GetString("Scope");
-    m_scopeHasBeenSet = true;
-  }
-  if(jsonValue.ValueExists("ViewArn"))
-  {
-    m_viewArn = jsonValue.GetString("ViewArn");
-    m_viewArnHasBeenSet = true;
+    m_filters = jsonValue.GetObject("Filters");
+    m_filtersHasBeenSet = true;
   }
   return *this;
 }
@@ -66,9 +66,26 @@ JsonValue View::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_filtersHasBeenSet)
+  if(m_viewArnHasBeenSet)
   {
-   payload.WithObject("Filters", m_filters.Jsonize());
+   payload.WithString("ViewArn", m_viewArn);
+
+  }
+
+  if(m_ownerHasBeenSet)
+  {
+   payload.WithString("Owner", m_owner);
+
+  }
+
+  if(m_lastUpdatedAtHasBeenSet)
+  {
+   payload.WithString("LastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_scopeHasBeenSet)
+  {
+   payload.WithString("Scope", m_scope);
 
   }
 
@@ -83,26 +100,9 @@ JsonValue View::Jsonize() const
 
   }
 
-  if(m_lastUpdatedAtHasBeenSet)
+  if(m_filtersHasBeenSet)
   {
-   payload.WithString("LastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_ownerHasBeenSet)
-  {
-   payload.WithString("Owner", m_owner);
-
-  }
-
-  if(m_scopeHasBeenSet)
-  {
-   payload.WithString("Scope", m_scope);
-
-  }
-
-  if(m_viewArnHasBeenSet)
-  {
-   payload.WithString("ViewArn", m_viewArn);
+   payload.WithObject("Filters", m_filters.Jsonize());
 
   }
 

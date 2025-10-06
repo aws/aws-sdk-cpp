@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
 #include <aws/resource-explorer-2/ResourceExplorer2Request.h>
-#include <aws/resource-explorer-2/model/SearchFilter.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/resource-explorer-2/model/SearchFilter.h>
 #include <aws/resource-explorer-2/model/IncludedProperty.h>
 #include <utility>
 
@@ -37,6 +37,36 @@ namespace Model
 
     ///@{
     /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * resource name (ARN)</a> of the view that you want to modify.</p>
+     */
+    inline const Aws::String& GetViewArn() const { return m_viewArn; }
+    inline bool ViewArnHasBeenSet() const { return m_viewArnHasBeenSet; }
+    template<typename ViewArnT = Aws::String>
+    void SetViewArn(ViewArnT&& value) { m_viewArnHasBeenSet = true; m_viewArn = std::forward<ViewArnT>(value); }
+    template<typename ViewArnT = Aws::String>
+    UpdateViewRequest& WithViewArn(ViewArnT&& value) { SetViewArn(std::forward<ViewArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies optional fields that you want included in search results from this
+     * view. It is a list of objects that each describe a field to include.</p> <p>The
+     * default is an empty list, with no optional fields included in the results.</p>
+     */
+    inline const Aws::Vector<IncludedProperty>& GetIncludedProperties() const { return m_includedProperties; }
+    inline bool IncludedPropertiesHasBeenSet() const { return m_includedPropertiesHasBeenSet; }
+    template<typename IncludedPropertiesT = Aws::Vector<IncludedProperty>>
+    void SetIncludedProperties(IncludedPropertiesT&& value) { m_includedPropertiesHasBeenSet = true; m_includedProperties = std::forward<IncludedPropertiesT>(value); }
+    template<typename IncludedPropertiesT = Aws::Vector<IncludedProperty>>
+    UpdateViewRequest& WithIncludedProperties(IncludedPropertiesT&& value) { SetIncludedProperties(std::forward<IncludedPropertiesT>(value)); return *this;}
+    template<typename IncludedPropertiesT = IncludedProperty>
+    UpdateViewRequest& AddIncludedProperties(IncludedPropertiesT&& value) { m_includedPropertiesHasBeenSet = true; m_includedProperties.emplace_back(std::forward<IncludedPropertiesT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>An array of strings that specify which resources are included in the results
      * of queries made using this view. When you use this view in a <a>Search</a>
      * operation, the filter string is combined with the search's
@@ -62,46 +92,16 @@ namespace Model
     template<typename FiltersT = SearchFilter>
     UpdateViewRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Specifies optional fields that you want included in search results from this
-     * view. It is a list of objects that each describe a field to include.</p> <p>The
-     * default is an empty list, with no optional fields included in the results.</p>
-     */
-    inline const Aws::Vector<IncludedProperty>& GetIncludedProperties() const { return m_includedProperties; }
-    inline bool IncludedPropertiesHasBeenSet() const { return m_includedPropertiesHasBeenSet; }
-    template<typename IncludedPropertiesT = Aws::Vector<IncludedProperty>>
-    void SetIncludedProperties(IncludedPropertiesT&& value) { m_includedPropertiesHasBeenSet = true; m_includedProperties = std::forward<IncludedPropertiesT>(value); }
-    template<typename IncludedPropertiesT = Aws::Vector<IncludedProperty>>
-    UpdateViewRequest& WithIncludedProperties(IncludedPropertiesT&& value) { SetIncludedProperties(std::forward<IncludedPropertiesT>(value)); return *this;}
-    template<typename IncludedPropertiesT = IncludedProperty>
-    UpdateViewRequest& AddIncludedProperties(IncludedPropertiesT&& value) { m_includedPropertiesHasBeenSet = true; m_includedProperties.emplace_back(std::forward<IncludedPropertiesT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * resource name (ARN)</a> of the view that you want to modify.</p>
-     */
-    inline const Aws::String& GetViewArn() const { return m_viewArn; }
-    inline bool ViewArnHasBeenSet() const { return m_viewArnHasBeenSet; }
-    template<typename ViewArnT = Aws::String>
-    void SetViewArn(ViewArnT&& value) { m_viewArnHasBeenSet = true; m_viewArn = std::forward<ViewArnT>(value); }
-    template<typename ViewArnT = Aws::String>
-    UpdateViewRequest& WithViewArn(ViewArnT&& value) { SetViewArn(std::forward<ViewArnT>(value)); return *this;}
-    ///@}
   private:
 
-    SearchFilter m_filters;
-    bool m_filtersHasBeenSet = false;
+    Aws::String m_viewArn;
+    bool m_viewArnHasBeenSet = false;
 
     Aws::Vector<IncludedProperty> m_includedProperties;
     bool m_includedPropertiesHasBeenSet = false;
 
-    Aws::String m_viewArn;
-    bool m_viewArnHasBeenSet = false;
+    SearchFilter m_filters;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

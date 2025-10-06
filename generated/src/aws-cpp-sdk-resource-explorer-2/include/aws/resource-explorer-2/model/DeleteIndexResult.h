@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/resource-explorer-2/model/IndexState.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -51,6 +51,15 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates the current state of the index. </p>
+     */
+    inline IndexState GetState() const { return m_state; }
+    inline void SetState(IndexState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline DeleteIndexResult& WithState(IndexState value) { SetState(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The date and time when you last updated this index.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
@@ -58,15 +67,6 @@ namespace Model
     void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
     template<typename LastUpdatedAtT = Aws::Utils::DateTime>
     DeleteIndexResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Indicates the current state of the index. </p>
-     */
-    inline IndexState GetState() const { return m_state; }
-    inline void SetState(IndexState value) { m_stateHasBeenSet = true; m_state = value; }
-    inline DeleteIndexResult& WithState(IndexState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -82,11 +82,11 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt{};
-    bool m_lastUpdatedAtHasBeenSet = false;
-
     IndexState m_state{IndexState::NOT_SET};
     bool m_stateHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

@@ -54,6 +54,15 @@ VpcInterfaceRequest& VpcInterfaceRequest::operator =(JsonView jsonValue)
     m_subnetId = jsonValue.GetString("subnetId");
     m_subnetIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("vpcInterfaceTags"))
+  {
+    Aws::Map<Aws::String, JsonView> vpcInterfaceTagsJsonMap = jsonValue.GetObject("vpcInterfaceTags").GetAllObjects();
+    for(auto& vpcInterfaceTagsItem : vpcInterfaceTagsJsonMap)
+    {
+      m_vpcInterfaceTags[vpcInterfaceTagsItem.first] = vpcInterfaceTagsItem.second.AsString();
+    }
+    m_vpcInterfaceTagsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -92,6 +101,17 @@ JsonValue VpcInterfaceRequest::Jsonize() const
   if(m_subnetIdHasBeenSet)
   {
    payload.WithString("subnetId", m_subnetId);
+
+  }
+
+  if(m_vpcInterfaceTagsHasBeenSet)
+  {
+   JsonValue vpcInterfaceTagsJsonMap;
+   for(auto& vpcInterfaceTagsItem : m_vpcInterfaceTags)
+   {
+     vpcInterfaceTagsJsonMap.WithString(vpcInterfaceTagsItem.first, vpcInterfaceTagsItem.second);
+   }
+   payload.WithObject("vpcInterfaceTags", std::move(vpcInterfaceTagsJsonMap));
 
   }
 

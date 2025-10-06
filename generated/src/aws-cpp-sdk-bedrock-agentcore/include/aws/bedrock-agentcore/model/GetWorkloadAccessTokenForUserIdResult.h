@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The workload access token of the named workload.</p>
+     * <p>The access token for the specified workload.</p>
      */
     inline const Aws::String& GetWorkloadAccessToken() const { return m_workloadAccessToken; }
     template<typename WorkloadAccessTokenT = Aws::String>

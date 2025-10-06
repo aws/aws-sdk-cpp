@@ -62,6 +62,17 @@ namespace Model
     template<typename VersionIdT = Aws::String>
     GetBackupPlanRequest& WithVersionId(VersionIdT&& value) { SetVersionId(std::forward<VersionIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Number of future scheduled backup runs to preview. When set to 0 (default),
+     * no scheduled runs preview is included in the response. Valid range is 0-10.</p>
+     */
+    inline int GetMaxScheduledRunsPreview() const { return m_maxScheduledRunsPreview; }
+    inline bool MaxScheduledRunsPreviewHasBeenSet() const { return m_maxScheduledRunsPreviewHasBeenSet; }
+    inline void SetMaxScheduledRunsPreview(int value) { m_maxScheduledRunsPreviewHasBeenSet = true; m_maxScheduledRunsPreview = value; }
+    inline GetBackupPlanRequest& WithMaxScheduledRunsPreview(int value) { SetMaxScheduledRunsPreview(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_backupPlanId;
@@ -69,6 +80,9 @@ namespace Model
 
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet = false;
+
+    int m_maxScheduledRunsPreview{0};
+    bool m_maxScheduledRunsPreviewHasBeenSet = false;
   };
 
 } // namespace Model

@@ -123,6 +123,15 @@ AddOutputRequest& AddOutputRequest::operator =(JsonView jsonValue)
     m_ndiProgramName = jsonValue.GetString("ndiProgramName");
     m_ndiProgramNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("outputTags"))
+  {
+    Aws::Map<Aws::String, JsonView> outputTagsJsonMap = jsonValue.GetObject("outputTags").GetAllObjects();
+    for(auto& outputTagsItem : outputTagsJsonMap)
+    {
+      m_outputTags[outputTagsItem.first] = outputTagsItem.second.AsString();
+    }
+    m_outputTagsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -243,6 +252,17 @@ JsonValue AddOutputRequest::Jsonize() const
   if(m_ndiProgramNameHasBeenSet)
   {
    payload.WithString("ndiProgramName", m_ndiProgramName);
+
+  }
+
+  if(m_outputTagsHasBeenSet)
+  {
+   JsonValue outputTagsJsonMap;
+   for(auto& outputTagsItem : m_outputTags)
+   {
+     outputTagsJsonMap.WithString(outputTagsItem.first, outputTagsItem.second);
+   }
+   payload.WithObject("outputTags", std::move(outputTagsJsonMap));
 
   }
 

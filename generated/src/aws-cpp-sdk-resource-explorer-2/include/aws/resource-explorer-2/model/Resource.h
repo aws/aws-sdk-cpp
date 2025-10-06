@@ -59,19 +59,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that Resource Explorer last queried this resource and
-     * updated the index with the latest information about the resource.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastReportedAt() const { return m_lastReportedAt; }
-    inline bool LastReportedAtHasBeenSet() const { return m_lastReportedAtHasBeenSet; }
-    template<typename LastReportedAtT = Aws::Utils::DateTime>
-    void SetLastReportedAt(LastReportedAtT&& value) { m_lastReportedAtHasBeenSet = true; m_lastReportedAt = std::forward<LastReportedAtT>(value); }
-    template<typename LastReportedAtT = Aws::Utils::DateTime>
-    Resource& WithLastReportedAt(LastReportedAtT&& value) { SetLastReportedAt(std::forward<LastReportedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The Amazon Web Services account that owns the resource.</p>
      */
     inline const Aws::String& GetOwningAccountId() const { return m_owningAccountId; }
@@ -80,22 +67,6 @@ namespace Model
     void SetOwningAccountId(OwningAccountIdT&& value) { m_owningAccountIdHasBeenSet = true; m_owningAccountId = std::forward<OwningAccountIdT>(value); }
     template<typename OwningAccountIdT = Aws::String>
     Resource& WithOwningAccountId(OwningAccountIdT&& value) { SetOwningAccountId(std::forward<OwningAccountIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A structure with additional type-specific details about the resource. These
-     * properties can be added by turning on integration between Resource Explorer and
-     * other Amazon Web Services services.</p>
-     */
-    inline const Aws::Vector<ResourceProperty>& GetProperties() const { return m_properties; }
-    inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
-    template<typename PropertiesT = Aws::Vector<ResourceProperty>>
-    void SetProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties = std::forward<PropertiesT>(value); }
-    template<typename PropertiesT = Aws::Vector<ResourceProperty>>
-    Resource& WithProperties(PropertiesT&& value) { SetProperties(std::forward<PropertiesT>(value)); return *this;}
-    template<typename PropertiesT = ResourceProperty>
-    Resource& AddProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties.emplace_back(std::forward<PropertiesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -135,19 +106,42 @@ namespace Model
     template<typename ServiceT = Aws::String>
     Resource& WithService(ServiceT&& value) { SetService(std::forward<ServiceT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The date and time that Resource Explorer last queried this resource and
+     * updated the index with the latest information about the resource.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastReportedAt() const { return m_lastReportedAt; }
+    inline bool LastReportedAtHasBeenSet() const { return m_lastReportedAtHasBeenSet; }
+    template<typename LastReportedAtT = Aws::Utils::DateTime>
+    void SetLastReportedAt(LastReportedAtT&& value) { m_lastReportedAtHasBeenSet = true; m_lastReportedAt = std::forward<LastReportedAtT>(value); }
+    template<typename LastReportedAtT = Aws::Utils::DateTime>
+    Resource& WithLastReportedAt(LastReportedAtT&& value) { SetLastReportedAt(std::forward<LastReportedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A structure with additional type-specific details about the resource. These
+     * properties can be added by turning on integration between Resource Explorer and
+     * other Amazon Web Services services.</p>
+     */
+    inline const Aws::Vector<ResourceProperty>& GetProperties() const { return m_properties; }
+    inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
+    template<typename PropertiesT = Aws::Vector<ResourceProperty>>
+    void SetProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties = std::forward<PropertiesT>(value); }
+    template<typename PropertiesT = Aws::Vector<ResourceProperty>>
+    Resource& WithProperties(PropertiesT&& value) { SetProperties(std::forward<PropertiesT>(value)); return *this;}
+    template<typename PropertiesT = ResourceProperty>
+    Resource& AddProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties.emplace_back(std::forward<PropertiesT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastReportedAt{};
-    bool m_lastReportedAtHasBeenSet = false;
-
     Aws::String m_owningAccountId;
     bool m_owningAccountIdHasBeenSet = false;
-
-    Aws::Vector<ResourceProperty> m_properties;
-    bool m_propertiesHasBeenSet = false;
 
     Aws::String m_region;
     bool m_regionHasBeenSet = false;
@@ -157,6 +151,12 @@ namespace Model
 
     Aws::String m_service;
     bool m_serviceHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastReportedAt{};
+    bool m_lastReportedAtHasBeenSet = false;
+
+    Aws::Vector<ResourceProperty> m_properties;
+    bool m_propertiesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -50,6 +50,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Web Services Region in which the index exists.</p>
+     */
+    inline const Aws::String& GetRegion() const { return m_region; }
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    Index& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * resource name (ARN)</a> of the index.</p>
@@ -60,18 +72,6 @@ namespace Model
     void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
     template<typename ArnT = Aws::String>
     Index& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Web Services Region in which the index exists.</p>
-     */
-    inline const Aws::String& GetRegion() const { return m_region; }
-    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    template<typename RegionT = Aws::String>
-    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
-    template<typename RegionT = Aws::String>
-    Index& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,11 +91,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_arn;
-    bool m_arnHasBeenSet = false;
-
     Aws::String m_region;
     bool m_regionHasBeenSet = false;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     IndexType m_type{IndexType::NOT_SET};
     bool m_typeHasBeenSet = false;

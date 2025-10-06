@@ -34,7 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the worklaod you want to get the access token of.</p>
+     * <p>The name of the workload from which you want to retrieve the access
+     * token.</p>
      */
     inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
     inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
@@ -46,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user id of the user you are retrieving the access token for.</p>
+     * <p>The ID of the user for whom you are retrieving the access token.</p>
      */
     inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
