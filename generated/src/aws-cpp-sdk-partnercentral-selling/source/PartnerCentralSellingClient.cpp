@@ -199,6 +199,7 @@ void PartnerCentralSellingClient::init(const PartnerCentralSelling::PartnerCentr
 void PartnerCentralSellingClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 

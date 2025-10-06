@@ -188,6 +188,7 @@ void SsmSapClient::init(const SsmSap::SsmSapClientConfiguration& config)
 void SsmSapClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
