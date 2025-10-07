@@ -1,0 +1,363 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+\#include <aws/${metadata.projectName}/model/${operation.name}Handler.h>
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ErrorMarshaller.h>
+\#include <aws/core/client/CoreErrors.h>
+\#include <aws/core/utils/event/EventStreamErrors.h>
+\#include <aws/core/utils/logging/LogMacros.h>
+\#include <aws/core/utils/cbor/CborValue.h>
+
+using namespace ${rootNamespace}::${serviceNamespace}::Model;
+using namespace Aws::Utils::Event;
+using namespace Aws::Utils::Cbor;
+
+AWS_CORE_API extern const char MESSAGE_LOWER_CASE[];
+AWS_CORE_API extern const char MESSAGE_CAMEL_CASE[];
+
+namespace ${rootNamespace}
+{
+namespace ${serviceNamespace}
+{
+namespace Model
+{
+    using namespace Aws::Client;
+
+    static const char ${operation.name.toUpperCase()}_HANDLER_CLASS_TAG[] = "${operation.name}Handler";
+
+    ${operation.name}Handler::${operation.name}Handler() : EventStreamHandler()
+    {
+        m_onInitialResponse = [&](const ${operation.name}InitialResponse&, const Utils::Event::InitialResponseType eventType)
+        {
+            AWS_LOGSTREAM_TRACE(${operation.name.toUpperCase()}_HANDLER_CLASS_TAG,
+                "${operation.name} initial response received from "
+                << (eventType == Utils::Event::InitialResponseType::ON_EVENT ? "event" : "http headers"));
+        };
+
+#foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
+#set($eventShape = $eventMemberEntry.value.shape)
+#if($eventShape.isException())
+## skip exceptions
+#else
+#if(!${eventShape.members.isEmpty()})
+        m_on${eventShape.name} = [&](const ${eventShape.name}&)
+        {
+            AWS_LOGSTREAM_TRACE(${operation.name.toUpperCase()}_HANDLER_CLASS_TAG, "${eventShape.name} received.");
+        };
+#else
+        m_on${eventShape.name} = [&]()
+        {
+            AWS_LOGSTREAM_TRACE(${operation.name.toUpperCase()}_HANDLER_CLASS_TAG, "${eventShape.name} received.");
+        };
+#end
+
+#end
+#end
+        m_onError = [&](const AWSError<${metadata.classNamePrefix}Errors>& error)
+        {
+            AWS_LOGSTREAM_TRACE(${operation.name.toUpperCase()}_HANDLER_CLASS_TAG, "${metadata.classNamePrefix} Errors received, " << error);
+        };
+    }
+
+    void ${operation.name}Handler::OnEvent()
+    {
+        // Handler internal error during event stream decoding.
+        if (!*this)
+        {
+            AWSError<CoreErrors> error = EventStreamErrorsMapper::GetAwsErrorForEventStreamError(GetInternalError());
+            error.SetMessage(GetEventPayloadAsString());
+            m_onError(AWSError<${metadata.classNamePrefix}Errors>(error));
+            return;
+        }
+
+        const auto& headers = GetEventHeaders();
+        auto messageTypeHeaderIter = headers.find(MESSAGE_TYPE_HEADER);
+        if (messageTypeHeaderIter == headers.end())
+        {
+            AWS_LOGSTREAM_WARN(${operation.name.toUpperCase()}_HANDLER_CLASS_TAG, "Header: " << MESSAGE_TYPE_HEADER << " not found in the message.");
+            return;
+        }
+
+        switch (Aws::Utils::Event::Message::GetMessageTypeForName(messageTypeHeaderIter->second.GetEventHeaderValueAsString()))
+        {
+        case Aws::Utils::Event::Message::MessageType::EVENT:
+            HandleEventInMessage();
+            break;
+        case Aws::Utils::Event::Message::MessageType::REQUEST_LEVEL_ERROR:
+        case Aws::Utils::Event::Message::MessageType::REQUEST_LEVEL_EXCEPTION:
+        {
+            HandleErrorInMessage();
+            break;
+        }
+        default:
+            AWS_LOGSTREAM_WARN(${operation.name.toUpperCase()}_HANDLER_CLASS_TAG,
+                "Unexpected message type: " << messageTypeHeaderIter->second.GetEventHeaderValueAsString());
+            break;
+        }
+    }
+
+    void ${operation.name}Handler::HandleEventInMessage()
+    {
+        const auto& headers = GetEventHeaders();
+        auto eventTypeHeaderIter = headers.find(EVENT_TYPE_HEADER);
+        if (eventTypeHeaderIter == headers.end())
+        {
+            AWS_LOGSTREAM_WARN(${operation.name.toUpperCase()}_HANDLER_CLASS_TAG, "Header: " << EVENT_TYPE_HEADER << " not found in the message.");
+            return;
+        }
+        switch (${operation.name}EventMapper::Get${operation.name}EventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString()))
+        {
+
+        case ${operation.name}EventType::INITIAL_RESPONSE:
+        {
+            ${operation.name}InitialResponse event(GetEventHeadersAsHttpHeaders());
+            m_onInitialResponse(event, Utils::Event::InitialResponseType::ON_EVENT);
+            break;
+        }   
+
+#foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
+#set($eventShape = $eventMemberEntry.value.shape)
+#if($eventShape.isException())
+## skip exceptions
+#else
+        case ${operation.name}EventType::${eventMemberEntry.key.toUpperCase()}:
+        {
+#if($eventShape.members.size() == 1)
+#foreach($eventShapeMemberEntry in $eventShape.members.entrySet())
+#set($onlyEventMember = $eventShapeMemberEntry.value.shape)
+#end
+#end
+##the only member is blob member
+#if($eventShape.members.size() == 1 && $onlyEventMember.isBlob() && $eventShape.eventPayloadType.equals("blob"))
+            ${eventShape.name} event(GetEventPayloadWithOwnership());
+            m_on${eventShape.name}(event);
+            break;
+#elseif($eventShape.getEventStreamHeaders().size() > 0)
+            ${eventShape.name} event(GetEventPayloadWithOwnership());
+#foreach($eventStreamHeaderMapping in $eventShape.getEventStreamHeaders().entrySet())
+#set($eventStreamHeader = $eventStreamHeaderMapping.getValue())
+#set($eventHeaderMemberNameWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($eventStreamHeader.getName()))
+#set($headerVarName = $CppViewHelper.lowercasesFirstChar("${eventStreamHeader.getName()}Header"))
+            const auto $headerVarName = headers.find("${eventStreamHeaderMapping.getKey()}");
+            if ($headerVarName != headers.end()) {
+                event.Set$eventHeaderMemberNameWithFirstLetterCapitalized($headerVarName->second.GetEventHeaderValueAsString());
+            }
+#end
+            m_on${eventShape.name}(event);
+            break;
+##multiple members or the only one member is structure
+#elseif(!$eventShape.members.isEmpty())
+            CborValue cbor(GetEventPayloadAsString());
+            m_on${eventShape.name}(${eventShape.name}{cbor.GetDecoder()});
+            if (!cbor.WasParseSuccessful())
+            {
+                AWS_LOGSTREAM_WARN(${operation.name.toUpperCase()}_HANDLER_CLASS_TAG, "Unable to generate a proper ${eventShape.name} object from the response in CBOR format.");
+            }
+            break;
+#else
+            m_on${eventShape.name}();
+            break;
+#end
+        }
+#end
+#end
+        default:
+            AWS_LOGSTREAM_WARN(${operation.name.toUpperCase()}_HANDLER_CLASS_TAG,
+                "Unexpected event type: " << eventTypeHeaderIter->second.GetEventHeaderValueAsString());
+            break;
+        }
+    }
+
+    void ${operation.name}Handler::HandleErrorInMessage()
+    {
+        const auto& headers = GetEventHeaders();
+        Aws::String errorCode;
+        Aws::String errorMessage;
+        auto errorHeaderIter = headers.find(ERROR_CODE_HEADER);
+        if (errorHeaderIter == headers.end())
+        {
+            errorHeaderIter = headers.find(EXCEPTION_TYPE_HEADER);
+            if (errorHeaderIter == headers.end())
+            {
+                AWS_LOGSTREAM_WARN(${operation.name.toUpperCase()}_HANDLER_CLASS_TAG,
+                        "Error type was not found in the event message.");
+                return;
+            }
+        }
+
+        errorCode = errorHeaderIter->second.GetEventHeaderValueAsString();
+        errorHeaderIter = headers.find(ERROR_MESSAGE_HEADER);
+        if (errorHeaderIter == headers.end())
+        {
+            errorHeaderIter = headers.find(EXCEPTION_TYPE_HEADER);
+            if (errorHeaderIter == headers.end())
+            {
+                AWS_LOGSTREAM_ERROR(${operation.name.toUpperCase()}_HANDLER_CLASS_TAG,
+                        "Error description was not found in the event message.");
+                return;
+            }
+
+            CborValue exceptionPayload(GetEventPayloadAsString());
+            if (!exceptionPayload.WasParseSuccessful())
+            {
+                AWS_LOGSTREAM_ERROR(${operation.name.toUpperCase()}_HANDLER_CLASS_TAG, "Unable to parse CBOR error payload");
+                return;
+            }
+
+            auto decoder = exceptionPayload.GetDecoder();
+            if (decoder != nullptr)
+            {
+                auto initialMapType = decoder->PeekType();
+                if (initialMapType.has_value() && (initialMapType.value() == Aws::Crt::Cbor::CborType::MapStart || initialMapType.value() == Aws::Crt::Cbor::CborType::IndefMapStart))
+                {
+                    if (initialMapType.value() == Aws::Crt::Cbor::CborType::MapStart)
+                    {
+                        auto mapSize = decoder->PopNextMapStart();
+                        if (mapSize.has_value())
+                        {
+                            for (size_t i = 0; i < mapSize.value(); ++i)
+                            {
+                                auto key = decoder->PopNextTextVal();
+                                if (key.has_value())
+                                {
+                                    Aws::String keyStr(reinterpret_cast<const char*>(key.value().ptr), key.value().len);
+                                    if (keyStr == MESSAGE_LOWER_CASE || keyStr == MESSAGE_CAMEL_CASE)
+                                    {
+                                        auto val = decoder->PopNextTextVal();
+                                        if (val.has_value())
+                                        {
+                                            errorMessage = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        decoder->ConsumeNextWholeDataItem();
+                                    }
+                                }
+                                if (decoder->LastError() != AWS_ERROR_UNKNOWN) break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        decoder->ConsumeNextSingleElement();
+                        while (decoder->LastError() == AWS_ERROR_UNKNOWN)
+                        {
+                            auto nextType = decoder->PeekType();
+                            if (!nextType.has_value() || nextType.value() == Aws::Crt::Cbor::CborType::Break)
+                            {
+                                if (nextType.has_value()) decoder->ConsumeNextSingleElement();
+                                break;
+                            }
+                            auto key = decoder->PopNextTextVal();
+                            if (key.has_value())
+                            {
+                                const Aws::String keyStr(reinterpret_cast<const char*>(key.value().ptr), key.value().len);
+                                if (keyStr == MESSAGE_LOWER_CASE || keyStr == MESSAGE_CAMEL_CASE)
+                                {
+                                    auto val = decoder->PopNextTextVal();
+                                    if (val.has_value())
+                                    {
+                                        errorMessage = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                                    }
+                                }
+                                else
+                                {
+                                    decoder->ConsumeNextWholeDataItem();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        }
+        else
+        {
+            errorMessage = errorHeaderIter->second.GetEventHeaderValueAsString();
+        }
+        MarshallError(errorCode, errorMessage);
+    }
+
+    void ${operation.name}Handler::MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage)
+    {
+        ${metadata.classNamePrefix}ErrorMarshaller errorMarshaller;
+        AWSError<CoreErrors> error;
+
+        if (errorCode.empty())
+        {
+            error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", errorMessage, false);
+        }
+        else
+        {
+            error = errorMarshaller.FindErrorByName(errorCode.c_str());
+            if (error.GetErrorType() != CoreErrors::UNKNOWN)
+            {
+                AWS_LOGSTREAM_WARN(${operation.name.toUpperCase()}_HANDLER_CLASS_TAG, "Encountered AWSError '" << errorCode.c_str() << "': " << errorMessage.c_str());
+                error.SetExceptionName(errorCode);
+                error.SetMessage(errorMessage);
+            }
+            else
+            {
+                AWS_LOGSTREAM_WARN(${operation.name.toUpperCase()}_HANDLER_CLASS_TAG, "Encountered Unknown AWSError '" << errorCode.c_str() << "': " << errorMessage.c_str());
+                error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, errorCode, "Unable to parse ExceptionName: " + errorCode + " Message: " + errorMessage, false);
+            }
+        }
+
+        m_onError(AWSError<${metadata.classNamePrefix}Errors>(error));
+    }
+
+namespace ${operation.name}EventMapper
+{
+    static const int INITIAL_RESPONSE_HASH = Aws::Utils::HashingUtils::HashString("initial-response");
+#foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
+#if(!$eventMemberEntry.value.shape.isException())
+#set($memberKey = $eventMemberEntry.key)
+    static const int ${memberKey.toUpperCase()}_HASH = Aws::Utils::HashingUtils::HashString("${memberKey}");
+#end
+#end
+
+    ${operation.name}EventType Get${operation.name}EventTypeForName(const Aws::String& name)
+    {
+        int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
+
+        if (hashCode == INITIAL_RESPONSE_HASH) 
+        {
+            return ${operation.name}EventType::INITIAL_RESPONSE;
+        }
+#foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
+#if(!$eventMemberEntry.value.shape.isException())
+#set($memberKeyUpperCase = $eventMemberEntry.key.toUpperCase())
+        else if (hashCode == ${memberKeyUpperCase}_HASH)
+        {
+            return ${operation.name}EventType::${memberKeyUpperCase};
+        }
+#end
+#end
+        return ${operation.name}EventType::UNKNOWN;
+    }
+
+    Aws::String GetNameFor${operation.name}EventType(${operation.name}EventType value)
+    {
+        switch (value)
+        {
+        case ${operation.name}EventType::INITIAL_RESPONSE:
+            return "initial-response";
+#foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
+#if(!$eventMemberEntry.value.shape.isException())
+#set($memberKey = $eventMemberEntry.key)
+        case ${operation.name}EventType::${memberKey.toUpperCase()}:
+            return "${memberKey}";
+#end
+#end
+        default:
+            return "Unknown";
+        }
+    }
+} // namespace ${operation.name}EventMapper
+} // namespace Model
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

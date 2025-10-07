@@ -42,6 +42,14 @@ ${typeInfo.className}& ${typeInfo.className}::operator =(const ${typeInfo.cborDe
 return *this;
 }
 
+#if ($typeInfo.shape.isEvent() && $typeInfo.className.endsWith("InitialResponse"))
+${typeInfo.className}::${typeInfo.className}(const Http::HeaderValueCollection& headers) : ${typeInfo.className}()
+{
+#set($ResultClassHeadersDeserializeDoNotGetHeaders = true)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ResultClassHeadersDeserialize.vm")
+}
+#end
+
 void ${typeInfo.className}::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const
 {
 

@@ -10,6 +10,7 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/http/standard/StandardHttpRequest.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <memory>
 
 using namespace Aws::Client;
@@ -118,6 +119,50 @@ static Aws::UniquePtr<Aws::Http::HttpResponse> BuildHttpXmlResponse(const Aws::S
         *ss << "<RequestId>" << requestId << "</RequestId>";
         *ss << "</OtherRoot>";
     }
+    return response;
+}
+
+static Aws::UniquePtr<Aws::Http::HttpResponse> BuildHttpCborResponse(const Aws::String& exception, const Aws::String& message, const Aws::String& requestId, int style = LowerCaseMessage, const Aws::String& queryErrorCode = "", const Aws::String &headerException = "")
+{
+    using namespace Aws::Http;
+    using namespace Aws::Http::Standard;
+    auto fakeRequest = Aws::MakeShared<StandardHttpRequest>(ERROR_MARSHALLER_TEST_ALLOC_TAG,
+            "/some/uri", Aws::Http::HttpMethod::HTTP_GET);
+    auto ss = Aws::New<Aws::StringStream>(ERROR_MARSHALLER_TEST_ALLOC_TAG);
+    fakeRequest->SetResponseStreamFactory([=] { return ss; });
+
+    Aws::Crt::Cbor::CborEncoder encoder;
+
+    Aws::UniquePtr<Aws::Http::HttpResponse> response = Aws::MakeUnique<StandardHttpResponse>(ERROR_MARSHALLER_TEST_ALLOC_TAG, fakeRequest);
+    response->AddHeader(REQUEST_ID_HEADER, requestId);
+
+    encoder.WriteMapStart(2);
+    if (style & LowerCaseMessage)
+    {
+        encoder.WriteText(Aws::Crt::ByteCursorFromCString(MESSAGE_LOWER_CASE));
+    }
+    else
+    {
+        encoder.WriteText(Aws::Crt::ByteCursorFromCString(MESSAGE_CAMEL_CASE));
+    }
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(message.c_str()));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(TYPE));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(exception.c_str()));
+
+    auto encodedData = encoder.GetEncodedData();
+    ss->write(reinterpret_cast<const char*>(encodedData.ptr), encodedData.len);
+
+    if (!(style & Header))
+    {
+        response->AddHeader(ERROR_TYPE_HEADER, headerException); //The x-amzn-errortype header MUST NOT be used to distinguish which error is contained in a response.
+    }
+
+    
+    if (!queryErrorCode.empty())
+    {
+        response->AddHeader(QUERY_ERROR_HEADER, queryErrorCode);
+    }
+    
     return response;
 }
 
@@ -746,6 +791,585 @@ TEST_F(AWSErrorMarshallerTest, TestErrorsWithoutPrefixParse)
     JsonErrorMarshallerQueryCompatible awsErrorMarshaller2;
     error = awsErrorMarshaller2.Marshall(
         *BuildHttpResponse(exceptionPrefix + "AccessDeniedException", message, requestId, LowerCaseMessage, "AwsQueryErrorCode"));
+    ASSERT_EQ(CoreErrors::ACCESS_DENIED, error.GetErrorType());
+    ASSERT_EQ("AwsQueryErrorCode", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+}
+
+TEST_F(AWSErrorMarshallerTest, TestCamelCaseCborErrorPayload)
+{
+    AWSError<CoreErrors> error2(CoreErrors::INCOMPLETE_SIGNATURE, false);
+    RpcV2ErrorMarshaller awsErrorMarshaller;
+    Aws::String message = "Test Message";
+    Aws::String exceptionPrefix = "blahblahblah#";
+    Aws::String requestId = "Request Id";
+
+    AWSError<CoreErrors> error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "IncompleteSignatureException", message, requestId, UpperCaseMessage));
+    ASSERT_EQ(CoreErrors::INCOMPLETE_SIGNATURE, error.GetErrorType());
+    ASSERT_EQ("IncompleteSignatureException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+}
+
+TEST_F(AWSErrorMarshallerTest, TestIgnoreHeaderCborErrorPayload)
+{
+  AWSError<CoreErrors> error2(CoreErrors::INCOMPLETE_SIGNATURE, false);
+  RpcV2ErrorMarshaller awsErrorMarshaller;
+  Aws::String message = "Test Message";
+  Aws::String exceptionPrefix = "blahblahblah#";
+  Aws::String requestId = "Request Id";
+
+  AWSError<CoreErrors> error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "IncompleteSignatureException", message, requestId, Header|UpperCaseMessage, "", "IgnoreHeaderException"));
+  ASSERT_EQ(CoreErrors::INCOMPLETE_SIGNATURE, error.GetErrorType());
+  ASSERT_EQ("IncompleteSignatureException", error.GetExceptionName());
+  ASSERT_EQ(message, error.GetMessage());
+  ASSERT_EQ(requestId, error.GetRequestId());
+  ASSERT_FALSE(error.ShouldRetry());
+
+  error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "IncompleteSignatureException", message, requestId, Header|LowerCaseMessage, "", "IgnoreHeaderException"));
+  ASSERT_EQ(CoreErrors::INCOMPLETE_SIGNATURE, error.GetErrorType());
+  ASSERT_EQ("IncompleteSignatureException", error.GetExceptionName());
+  ASSERT_EQ(message, error.GetMessage());
+  ASSERT_EQ(requestId, error.GetRequestId());
+  ASSERT_FALSE(error.ShouldRetry());
+}
+
+TEST_F(AWSErrorMarshallerTest, TestRpcV2ErrorMarshallerWithoutPrefix)
+{
+    RpcV2ErrorMarshaller awsErrorMarshaller;
+    Aws::String message = "Test Message";
+    Aws::String requestId = "Request Id";
+    Aws::String exceptionPrefix = "";
+
+    AWSError<CoreErrors> error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "IncompleteSignatureException", message, requestId));
+    ASSERT_EQ(CoreErrors::INCOMPLETE_SIGNATURE, error.GetErrorType());
+    ASSERT_EQ("IncompleteSignatureException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "IncompleteSignature", message, requestId));
+    ASSERT_EQ(CoreErrors::INCOMPLETE_SIGNATURE, error.GetErrorType());
+    ASSERT_EQ("IncompleteSignature", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "InternalFailure", message, requestId));
+    ASSERT_EQ(CoreErrors::INTERNAL_FAILURE, error.GetErrorType());
+    ASSERT_EQ("InternalFailure", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_TRUE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "InternalServerError", message, requestId));
+    ASSERT_EQ(CoreErrors::INTERNAL_FAILURE, error.GetErrorType());
+    ASSERT_EQ("InternalServerError", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_TRUE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "InternalError", message, requestId));
+    ASSERT_EQ(CoreErrors::INTERNAL_FAILURE, error.GetErrorType());
+    ASSERT_EQ("InternalError", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_TRUE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "InvalidAction", message, requestId));
+    ASSERT_EQ(CoreErrors::INVALID_ACTION, error.GetErrorType());
+    ASSERT_EQ("InvalidAction", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "InvalidClientTokenId", message, requestId));
+    ASSERT_EQ(CoreErrors::INVALID_CLIENT_TOKEN_ID, error.GetErrorType());
+    ASSERT_EQ("InvalidClientTokenId", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "InvalidClientTokenIdException", message, requestId));
+    ASSERT_EQ(CoreErrors::INVALID_CLIENT_TOKEN_ID, error.GetErrorType());
+    ASSERT_EQ("InvalidClientTokenIdException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "InvalidParameterCombination", message, requestId));
+    ASSERT_EQ(CoreErrors::INVALID_PARAMETER_COMBINATION, error.GetErrorType());
+    ASSERT_EQ("InvalidParameterCombination", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "InvalidParameterValue", message, requestId));
+    ASSERT_EQ(CoreErrors::INVALID_PARAMETER_VALUE, error.GetErrorType());
+    ASSERT_EQ("InvalidParameterValue", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "InvalidQueryParameter", message, requestId));
+    ASSERT_EQ(CoreErrors::INVALID_QUERY_PARAMETER, error.GetErrorType());
+    ASSERT_EQ("InvalidQueryParameter", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "InvalidQueryParameterException", message, requestId));
+    ASSERT_EQ(CoreErrors::INVALID_QUERY_PARAMETER, error.GetErrorType());
+    ASSERT_EQ("InvalidQueryParameterException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "MalformedQueryString", message, requestId));
+    ASSERT_EQ(CoreErrors::MALFORMED_QUERY_STRING, error.GetErrorType());
+    ASSERT_EQ("MalformedQueryString", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "MalformedQueryStringException", message, requestId));
+    ASSERT_EQ(CoreErrors::MALFORMED_QUERY_STRING, error.GetErrorType());
+    ASSERT_EQ("MalformedQueryStringException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "MissingAuthenticationToken", message, requestId));
+    ASSERT_EQ(CoreErrors::MISSING_AUTHENTICATION_TOKEN, error.GetErrorType());
+    ASSERT_EQ("MissingAuthenticationToken", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "MissingAuthenticationTokenException", message, requestId));
+    ASSERT_EQ(CoreErrors::MISSING_AUTHENTICATION_TOKEN, error.GetErrorType());
+    ASSERT_EQ("MissingAuthenticationTokenException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "MissingParameterException", message, requestId));
+    ASSERT_EQ(CoreErrors::MISSING_PARAMETER, error.GetErrorType());
+    ASSERT_EQ("MissingParameterException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "OptInRequired", message, requestId));
+    ASSERT_EQ(CoreErrors::OPT_IN_REQUIRED, error.GetErrorType());
+    ASSERT_EQ("OptInRequired", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "RequestExpired", message, requestId));
+    ASSERT_EQ(CoreErrors::REQUEST_EXPIRED, error.GetErrorType());
+    ASSERT_EQ("RequestExpired", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_TRUE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "RequestExpiredException", message, requestId));
+    ASSERT_EQ(CoreErrors::REQUEST_EXPIRED, error.GetErrorType());
+    ASSERT_EQ("RequestExpiredException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_TRUE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "ServiceUnavailable", message, requestId));
+    ASSERT_EQ(CoreErrors::SERVICE_UNAVAILABLE, error.GetErrorType());
+    ASSERT_EQ("ServiceUnavailable", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_TRUE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "ServiceUnavailableException", message, requestId));
+    ASSERT_EQ(CoreErrors::SERVICE_UNAVAILABLE, error.GetErrorType());
+    ASSERT_EQ("ServiceUnavailableException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_TRUE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "Throttling", message, requestId));
+    ASSERT_EQ(CoreErrors::THROTTLING, error.GetErrorType());
+    ASSERT_EQ("Throttling", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_TRUE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "ThrottlingException", message, requestId));
+    ASSERT_EQ(CoreErrors::THROTTLING, error.GetErrorType());
+    ASSERT_EQ("ThrottlingException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_TRUE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "ValidationError", message, requestId));
+    ASSERT_EQ(CoreErrors::VALIDATION, error.GetErrorType());
+    ASSERT_EQ("ValidationError", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "ValidationErrorException", message, requestId));
+    ASSERT_EQ(CoreErrors::VALIDATION, error.GetErrorType());
+    ASSERT_EQ("ValidationErrorException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "AccessDenied", message, requestId));
+    ASSERT_EQ(CoreErrors::ACCESS_DENIED, error.GetErrorType());
+    ASSERT_EQ("AccessDenied", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "AccessDeniedException", message, requestId));
+    ASSERT_EQ(CoreErrors::ACCESS_DENIED, error.GetErrorType());
+    ASSERT_EQ("AccessDeniedException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "ResourceNotFound", message, requestId));
+    ASSERT_EQ(CoreErrors::RESOURCE_NOT_FOUND, error.GetErrorType());
+    ASSERT_EQ("ResourceNotFound", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "ResourceNotFoundException", message, requestId));
+    ASSERT_EQ(CoreErrors::RESOURCE_NOT_FOUND, error.GetErrorType());
+    ASSERT_EQ("ResourceNotFoundException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "UnrecognizedClient", message, requestId));
+    ASSERT_EQ(CoreErrors::UNRECOGNIZED_CLIENT, error.GetErrorType());
+    ASSERT_EQ("UnrecognizedClient", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "UnrecognizedClientException", message, requestId));
+    ASSERT_EQ(CoreErrors::UNRECOGNIZED_CLIENT, error.GetErrorType());
+    ASSERT_EQ("UnrecognizedClientException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "RequestTimeout", message, requestId));
+    ASSERT_EQ(CoreErrors::REQUEST_TIMEOUT, error.GetErrorType());
+    ASSERT_EQ("RequestTimeout", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_TRUE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "RequestThrottledException", message, requestId));
+    ASSERT_EQ(CoreErrors::THROTTLING, error.GetErrorType());
+    ASSERT_EQ("RequestThrottledException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_TRUE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "RequestThrottled", message, requestId));
+    ASSERT_EQ(CoreErrors::THROTTLING, error.GetErrorType());
+    ASSERT_EQ("RequestThrottled", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_TRUE(error.ShouldRetry());
+
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "IDon'tExist", "JunkMessage", requestId));
+    ASSERT_EQ(CoreErrors::UNKNOWN, error.GetErrorType());
+    ASSERT_EQ(exceptionPrefix + "IDon'tExist", error.GetExceptionName());
+    ASSERT_EQ("Unable to parse ExceptionName: " + exceptionPrefix + "IDon'tExist Message: JunkMessage", error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    RpcV2ErrorMarshallerQueryCompatible awsErrorMarshaller2;
+    error = awsErrorMarshaller2.Marshall(
+        *BuildHttpCborResponse(exceptionPrefix + "AccessDeniedException", message, requestId, LowerCaseMessage, "AwsQueryErrorCode"));
+    ASSERT_EQ(CoreErrors::ACCESS_DENIED, error.GetErrorType());
+    ASSERT_EQ("AwsQueryErrorCode", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+}
+
+TEST_F(AWSErrorMarshallerTest, TestRpcV2ErrorMarshallerWithPrefix)
+{
+    RpcV2ErrorMarshaller awsErrorMarshaller;
+    Aws::String message = "Test Message";
+    Aws::String requestId = "Request Id";
+    Aws::String exceptionPrefix = "blahblahblah#";
+
+    AWSError<CoreErrors> error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "IncompleteSignatureException", message, requestId));
+    ASSERT_EQ(CoreErrors::INCOMPLETE_SIGNATURE, error.GetErrorType());
+    ASSERT_EQ("IncompleteSignatureException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "IncompleteSignature", message, requestId));
+    ASSERT_EQ(CoreErrors::INCOMPLETE_SIGNATURE, error.GetErrorType());
+    ASSERT_EQ("IncompleteSignature", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "InternalFailure", message, requestId));
+    ASSERT_EQ(CoreErrors::INTERNAL_FAILURE, error.GetErrorType());
+    ASSERT_EQ("InternalFailure", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_TRUE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "InternalServerError", message, requestId));
+    ASSERT_EQ(CoreErrors::INTERNAL_FAILURE, error.GetErrorType());
+    ASSERT_EQ("InternalServerError", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_TRUE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "InternalError", message, requestId));
+    ASSERT_EQ(CoreErrors::INTERNAL_FAILURE, error.GetErrorType());
+    ASSERT_EQ("InternalError", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_TRUE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "InvalidAction", message, requestId));
+    ASSERT_EQ(CoreErrors::INVALID_ACTION, error.GetErrorType());
+    ASSERT_EQ("InvalidAction", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "InvalidClientTokenId", message, requestId));
+    ASSERT_EQ(CoreErrors::INVALID_CLIENT_TOKEN_ID, error.GetErrorType());
+    ASSERT_EQ("InvalidClientTokenId", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "InvalidClientTokenIdException", message, requestId));
+    ASSERT_EQ(CoreErrors::INVALID_CLIENT_TOKEN_ID, error.GetErrorType());
+    ASSERT_EQ("InvalidClientTokenIdException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "InvalidParameterCombination", message, requestId));
+    ASSERT_EQ(CoreErrors::INVALID_PARAMETER_COMBINATION, error.GetErrorType());
+    ASSERT_EQ("InvalidParameterCombination", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "InvalidParameterValue", message, requestId));
+    ASSERT_EQ(CoreErrors::INVALID_PARAMETER_VALUE, error.GetErrorType());
+    ASSERT_EQ("InvalidParameterValue", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "InvalidQueryParameter", message, requestId));
+    ASSERT_EQ(CoreErrors::INVALID_QUERY_PARAMETER, error.GetErrorType());
+    ASSERT_EQ("InvalidQueryParameter", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "InvalidQueryParameterException", message, requestId));
+    ASSERT_EQ(CoreErrors::INVALID_QUERY_PARAMETER, error.GetErrorType());
+    ASSERT_EQ("InvalidQueryParameterException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "MalformedQueryString", message, requestId));
+    ASSERT_EQ(CoreErrors::MALFORMED_QUERY_STRING, error.GetErrorType());
+    ASSERT_EQ("MalformedQueryString", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "MalformedQueryStringException", message, requestId));
+    ASSERT_EQ(CoreErrors::MALFORMED_QUERY_STRING, error.GetErrorType());
+    ASSERT_EQ("MalformedQueryStringException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "MissingAuthenticationToken", message, requestId));
+    ASSERT_EQ(CoreErrors::MISSING_AUTHENTICATION_TOKEN, error.GetErrorType());
+    ASSERT_EQ("MissingAuthenticationToken", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "MissingAuthenticationTokenException", message, requestId));
+    ASSERT_EQ(CoreErrors::MISSING_AUTHENTICATION_TOKEN, error.GetErrorType());
+    ASSERT_EQ("MissingAuthenticationTokenException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "MissingParameterException", message, requestId));
+    ASSERT_EQ(CoreErrors::MISSING_PARAMETER, error.GetErrorType());
+    ASSERT_EQ("MissingParameterException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "OptInRequired", message, requestId));
+    ASSERT_EQ(CoreErrors::OPT_IN_REQUIRED, error.GetErrorType());
+    ASSERT_EQ("OptInRequired", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "RequestExpired", message, requestId));
+    ASSERT_EQ(CoreErrors::REQUEST_EXPIRED, error.GetErrorType());
+    ASSERT_EQ("RequestExpired", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_TRUE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "RequestExpiredException", message, requestId));
+    ASSERT_EQ(CoreErrors::REQUEST_EXPIRED, error.GetErrorType());
+    ASSERT_EQ("RequestExpiredException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_TRUE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "ServiceUnavailable", message, requestId));
+    ASSERT_EQ(CoreErrors::SERVICE_UNAVAILABLE, error.GetErrorType());
+    ASSERT_EQ("ServiceUnavailable", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_TRUE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "ServiceUnavailableException", message, requestId));
+    ASSERT_EQ(CoreErrors::SERVICE_UNAVAILABLE, error.GetErrorType());
+    ASSERT_EQ("ServiceUnavailableException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_TRUE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "Throttling", message, requestId));
+    ASSERT_EQ(CoreErrors::THROTTLING, error.GetErrorType());
+    ASSERT_EQ("Throttling", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_TRUE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "ThrottlingException", message, requestId));
+    ASSERT_EQ(CoreErrors::THROTTLING, error.GetErrorType());
+    ASSERT_EQ("ThrottlingException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_TRUE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "ValidationError", message, requestId));
+    ASSERT_EQ(CoreErrors::VALIDATION, error.GetErrorType());
+    ASSERT_EQ("ValidationError", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "ValidationErrorException", message, requestId));
+    ASSERT_EQ(CoreErrors::VALIDATION, error.GetErrorType());
+    ASSERT_EQ("ValidationErrorException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "AccessDenied", message, requestId));
+    ASSERT_EQ(CoreErrors::ACCESS_DENIED, error.GetErrorType());
+    ASSERT_EQ("AccessDenied", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "AccessDeniedException", message, requestId));
+    ASSERT_EQ(CoreErrors::ACCESS_DENIED, error.GetErrorType());
+    ASSERT_EQ("AccessDeniedException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "ResourceNotFound", message, requestId));
+    ASSERT_EQ(CoreErrors::RESOURCE_NOT_FOUND, error.GetErrorType());
+    ASSERT_EQ("ResourceNotFound", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "ResourceNotFoundException", message, requestId));
+    ASSERT_EQ(CoreErrors::RESOURCE_NOT_FOUND, error.GetErrorType());
+    ASSERT_EQ("ResourceNotFoundException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "UnrecognizedClient", message, requestId));
+    ASSERT_EQ(CoreErrors::UNRECOGNIZED_CLIENT, error.GetErrorType());
+    ASSERT_EQ("UnrecognizedClient", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "UnrecognizedClientException", message, requestId));
+    ASSERT_EQ(CoreErrors::UNRECOGNIZED_CLIENT, error.GetErrorType());
+    ASSERT_EQ("UnrecognizedClientException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "RequestTimeout", message, requestId));
+    ASSERT_EQ(CoreErrors::REQUEST_TIMEOUT, error.GetErrorType());
+    ASSERT_EQ("RequestTimeout", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_TRUE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "RequestThrottledException", message, requestId));
+    ASSERT_EQ(CoreErrors::THROTTLING, error.GetErrorType());
+    ASSERT_EQ("RequestThrottledException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_TRUE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "RequestThrottled", message, requestId));
+    ASSERT_EQ(CoreErrors::THROTTLING, error.GetErrorType());
+    ASSERT_EQ("RequestThrottled", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_TRUE(error.ShouldRetry());
+
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpCborResponse(exceptionPrefix + "IDon'tExist", "JunkMessage", requestId));
+    ASSERT_EQ(CoreErrors::UNKNOWN, error.GetErrorType());
+    ASSERT_EQ(exceptionPrefix + "IDon'tExist", error.GetExceptionName());
+    ASSERT_EQ("Unable to parse ExceptionName: " + exceptionPrefix + "IDon'tExist Message: JunkMessage", error.GetMessage());
+    ASSERT_EQ(requestId, error.GetRequestId());
+    ASSERT_FALSE(error.ShouldRetry());
+
+    RpcV2ErrorMarshallerQueryCompatible awsErrorMarshaller2;
+    error = awsErrorMarshaller2.Marshall(
+        *BuildHttpCborResponse(exceptionPrefix + "AccessDeniedException", message, requestId, LowerCaseMessage, "AwsQueryErrorCode"));
     ASSERT_EQ(CoreErrors::ACCESS_DENIED, error.GetErrorType());
     ASSERT_EQ("AwsQueryErrorCode", error.GetExceptionName());
     ASSERT_EQ(message, error.GetMessage());
