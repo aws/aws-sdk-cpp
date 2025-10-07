@@ -16,5 +16,7 @@ Aws::String NoInputOutputRequest::SerializePayload() const { return {}; }
 
 Aws::Http::HeaderValueCollection NoInputOutputRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
+  headers.emplace("smithy-protocol", "rpc-v2-cbor");
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

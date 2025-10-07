@@ -148,8 +148,9 @@ RestXmlProtocolClient::RestXmlProtocolClient(const std::shared_ptr<AWSCredential
 RestXmlProtocolClient::RestXmlProtocolClient(const Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-                    ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), SERVICE_NAME,
-                    Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                    ALLOCATION_TAG,
+                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
+                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<RestXmlProtocolErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(Aws::MakeShared<RestXmlProtocolEndpointProvider>(ALLOCATION_TAG)) {

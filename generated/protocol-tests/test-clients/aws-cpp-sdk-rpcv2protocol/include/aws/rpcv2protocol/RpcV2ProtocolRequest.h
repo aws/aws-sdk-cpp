@@ -27,9 +27,6 @@ class AWS_RPCV2PROTOCOL_API RpcV2ProtocolRequest : public Aws::AmazonSerializabl
     if (headers.size() == 0 || (headers.size() > 0 && headers.count(Aws::Http::CONTENT_TYPE_HEADER) == 0)) {
     }
     headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::API_VERSION_HEADER, "2020-07-14"));
-    headers.emplace(Aws::Http::HeaderValuePair("smithy-protocol", "rpc-v2-cbor"));
-    headers.emplace(Aws::Http::HeaderValuePair("Accept", "application/cbor"));
-
     return headers;
   }
 

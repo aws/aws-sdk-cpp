@@ -9,7 +9,6 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/crt/cbor/Cbor.h>
-#include <aws/core/client/AWSClient.h>
 
 namespace Aws
 {
@@ -28,6 +27,11 @@ namespace Aws
                * Constructs a CborValue by parsing the httpResponseOutCome's body.
                */
               CborValue(Aws::IStream& istream);
+
+              /**
+              * Constructs a CborValue by parsing the httpResponseOutCome's body.
+              */
+              CborValue(const Aws::String &value);
 
               /**
                * Copy constructor.
