@@ -8,8 +8,11 @@
 
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/Array.h>
-#include <streambuf>
+#include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+
 #include <functional>
+#include <streambuf>
 
 namespace Aws
 {
@@ -26,8 +29,15 @@ namespace Aws
                 StreamBufProtectedWriter() = delete;
 
                 using WriterFunc = std::function<bool(char* dst, uint64_t dstSz, uint64_t& read)>;
+                using WriteCompleteCallback = std::function<void(uint64_t read)>;
 
-                static uint64_t WriteToBuffer(Aws::IOStream& ioStream, const WriterFunc& writerFunc)
+                static uint64_t WriteToBuffer(Aws::IOStream& ioStream, const WriterFunc& writerFunc) {
+                  return WriteToBuffer(ioStream, writerFunc, [](uint64_t) -> void {});
+                }
+
+                static uint64_t WriteToBuffer(Aws::IOStream& ioStream,
+                  const WriterFunc& writerFunc,
+                  const WriteCompleteCallback& writeCompleteCallback)
                 {
                     uint64_t totalRead = 0;
 
@@ -53,6 +63,7 @@ namespace Aws
                         {
                             break;
                         }
+                        writeCompleteCallback(read);
 
                         if (pBufferCasted && pBufferCasted->pptr() && (pBufferCasted->pptr() >= pBufferCasted->epptr()))
                         {
