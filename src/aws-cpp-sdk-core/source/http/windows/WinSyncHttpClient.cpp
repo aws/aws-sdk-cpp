@@ -306,11 +306,6 @@ bool WinSyncHttpClient::BuildSuccessResponse(const std::shared_ptr<HttpRequest>&
                             {
                                 readLimiter->ApplyAndPayForCost(read);
                             }
-                            auto& receivedHandler = request->GetDataReceivedEventHandler();
-                            if (receivedHandler)
-                            {
-                                receivedHandler(request.get(), response.get(), (long long)read);
-                            }
                         }
                         if (!ContinueRequest(*request) || !IsRequestProcessingEnabled())
                         {
@@ -319,7 +314,15 @@ bool WinSyncHttpClient::BuildSuccessResponse(const std::shared_ptr<HttpRequest>&
                     }
                     return connectionOpen && success && ContinueRequest(*request) && IsRequestProcessingEnabled();
                 };
-        uint64_t numBytesResponseReceived = Aws::Utils::Stream::StreamBufProtectedWriter::WriteToBuffer(response->GetResponseBody(), writerFunc);
+        uint64_t numBytesResponseReceived = Aws::Utils::Stream::StreamBufProtectedWriter::WriteToBuffer(response->GetResponseBody(),
+          writerFunc,
+          [&request, &response](uint64_t read) -> void {
+            auto& receivedHandler = request->GetDataReceivedEventHandler();
+            if (receivedHandler)
+            {
+                receivedHandler(request.get(), response.get(), (long long)read);
+            }
+          });
 
         if(!ContinueRequest(*request) || !IsRequestProcessingEnabled())
         {
