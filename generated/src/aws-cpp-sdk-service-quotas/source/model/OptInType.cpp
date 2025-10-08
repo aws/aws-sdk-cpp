@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/bedrock-agentcore-control/model/AuthorizerType.h>
+#include <aws/service-quotas/model/OptInType.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -13,48 +13,48 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace BedrockAgentCoreControl
+  namespace ServiceQuotas
   {
     namespace Model
     {
-      namespace AuthorizerTypeMapper
+      namespace OptInTypeMapper
       {
 
-        static const int CUSTOM_JWT_HASH = HashingUtils::HashString("CUSTOM_JWT");
-        static const int AWS_IAM_HASH = HashingUtils::HashString("AWS_IAM");
+        static const int NotifyOnly_HASH = HashingUtils::HashString("NotifyOnly");
+        static const int NotifyAndAdjust_HASH = HashingUtils::HashString("NotifyAndAdjust");
 
 
-        AuthorizerType GetAuthorizerTypeForName(const Aws::String& name)
+        OptInType GetOptInTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CUSTOM_JWT_HASH)
+          if (hashCode == NotifyOnly_HASH)
           {
-            return AuthorizerType::CUSTOM_JWT;
+            return OptInType::NotifyOnly;
           }
-          else if (hashCode == AWS_IAM_HASH)
+          else if (hashCode == NotifyAndAdjust_HASH)
           {
-            return AuthorizerType::AWS_IAM;
+            return OptInType::NotifyAndAdjust;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<AuthorizerType>(hashCode);
+            return static_cast<OptInType>(hashCode);
           }
 
-          return AuthorizerType::NOT_SET;
+          return OptInType::NOT_SET;
         }
 
-        Aws::String GetNameForAuthorizerType(AuthorizerType enumValue)
+        Aws::String GetNameForOptInType(OptInType enumValue)
         {
           switch(enumValue)
           {
-          case AuthorizerType::NOT_SET:
+          case OptInType::NOT_SET:
             return {};
-          case AuthorizerType::CUSTOM_JWT:
-            return "CUSTOM_JWT";
-          case AuthorizerType::AWS_IAM:
-            return "AWS_IAM";
+          case OptInType::NotifyOnly:
+            return "NotifyOnly";
+          case OptInType::NotifyAndAdjust:
+            return "NotifyAndAdjust";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -66,7 +66,7 @@ namespace Aws
           }
         }
 
-      } // namespace AuthorizerTypeMapper
+      } // namespace OptInTypeMapper
     } // namespace Model
-  } // namespace BedrockAgentCoreControl
+  } // namespace ServiceQuotas
 } // namespace Aws

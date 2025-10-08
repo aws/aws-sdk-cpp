@@ -69,6 +69,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>A list of domain IPv6 addresses that are used for the Active Directory.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDomainIpv6List() const { return m_domainIpv6List; }
+    inline bool DomainIpv6ListHasBeenSet() const { return m_domainIpv6ListHasBeenSet; }
+    template<typename DomainIpv6ListT = Aws::Vector<Aws::String>>
+    void SetDomainIpv6List(DomainIpv6ListT&& value) { m_domainIpv6ListHasBeenSet = true; m_domainIpv6List = std::forward<DomainIpv6ListT>(value); }
+    template<typename DomainIpv6ListT = Aws::Vector<Aws::String>>
+    ActiveDirectorySettings& WithDomainIpv6List(DomainIpv6ListT&& value) { SetDomainIpv6List(std::forward<DomainIpv6ListT>(value)); return *this;}
+    template<typename DomainIpv6ListT = Aws::String>
+    ActiveDirectorySettings& AddDomainIpv6List(DomainIpv6ListT&& value) { m_domainIpv6ListHasBeenSet = true; m_domainIpv6List.emplace_back(std::forward<DomainIpv6ListT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Points to the <code>CredentialsProvider</code> resource that contains
      * information about the credential provider for user administration.</p>
      */
@@ -99,6 +113,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_domainIpv4List;
     bool m_domainIpv4ListHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_domainIpv6List;
+    bool m_domainIpv6ListHasBeenSet = false;
 
     CredentialsProvider m_domainCredentialsProvider;
     bool m_domainCredentialsProviderHasBeenSet = false;

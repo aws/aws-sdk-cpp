@@ -836,6 +836,32 @@ namespace Outposts
         }
 
         /**
+         * <p>Starts the decommission process to return the Outposts racks or
+         * servers.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/StartOutpostDecommission">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartOutpostDecommissionOutcome StartOutpostDecommission(const Model::StartOutpostDecommissionRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartOutpostDecommission that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartOutpostDecommissionRequestT = Model::StartOutpostDecommissionRequest>
+        Model::StartOutpostDecommissionOutcomeCallable StartOutpostDecommissionCallable(const StartOutpostDecommissionRequestT& request) const
+        {
+            return SubmitCallable(&OutpostsClient::StartOutpostDecommission, request);
+        }
+
+        /**
+         * An Async wrapper for StartOutpostDecommission that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartOutpostDecommissionRequestT = Model::StartOutpostDecommissionRequest>
+        void StartOutpostDecommissionAsync(const StartOutpostDecommissionRequestT& request, const StartOutpostDecommissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OutpostsClient::StartOutpostDecommission, request, handler, context);
+        }
+
+        /**
          * <p>Adds tags to the specified resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/TagResource">AWS
          * API Reference</a></p>

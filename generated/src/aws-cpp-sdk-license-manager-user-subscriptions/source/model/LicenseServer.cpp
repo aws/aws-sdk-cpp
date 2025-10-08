@@ -40,6 +40,11 @@ LicenseServer& LicenseServer::operator =(JsonView jsonValue)
     m_ipv4Address = jsonValue.GetString("Ipv4Address");
     m_ipv4AddressHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Ipv6Address"))
+  {
+    m_ipv6Address = jsonValue.GetString("Ipv6Address");
+    m_ipv6AddressHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -60,6 +65,12 @@ JsonValue LicenseServer::Jsonize() const
   if(m_ipv4AddressHasBeenSet)
   {
    payload.WithString("Ipv4Address", m_ipv4Address);
+
+  }
+
+  if(m_ipv6AddressHasBeenSet)
+  {
+   payload.WithString("Ipv6Address", m_ipv6Address);
 
   }
 

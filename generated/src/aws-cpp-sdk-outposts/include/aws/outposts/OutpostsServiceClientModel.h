@@ -46,6 +46,7 @@
 #include <aws/outposts/model/ListTagsForResourceResult.h>
 #include <aws/outposts/model/StartCapacityTaskResult.h>
 #include <aws/outposts/model/StartConnectionResult.h>
+#include <aws/outposts/model/StartOutpostDecommissionResult.h>
 #include <aws/outposts/model/TagResourceResult.h>
 #include <aws/outposts/model/UntagResourceResult.h>
 #include <aws/outposts/model/UpdateOutpostResult.h>
@@ -125,6 +126,7 @@ namespace Aws
       class ListTagsForResourceRequest;
       class StartCapacityTaskRequest;
       class StartConnectionRequest;
+      class StartOutpostDecommissionRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateOutpostRequest;
@@ -162,6 +164,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, OutpostsError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<StartCapacityTaskResult, OutpostsError> StartCapacityTaskOutcome;
       typedef Aws::Utils::Outcome<StartConnectionResult, OutpostsError> StartConnectionOutcome;
+      typedef Aws::Utils::Outcome<StartOutpostDecommissionResult, OutpostsError> StartOutpostDecommissionOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, OutpostsError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, OutpostsError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateOutpostResult, OutpostsError> UpdateOutpostOutcome;
@@ -199,6 +202,7 @@ namespace Aws
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<StartCapacityTaskOutcome> StartCapacityTaskOutcomeCallable;
       typedef std::future<StartConnectionOutcome> StartConnectionOutcomeCallable;
+      typedef std::future<StartOutpostDecommissionOutcome> StartOutpostDecommissionOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateOutpostOutcome> UpdateOutpostOutcomeCallable;
@@ -239,6 +243,7 @@ namespace Aws
     typedef std::function<void(const OutpostsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::StartCapacityTaskRequest&, const Model::StartCapacityTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCapacityTaskResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::StartConnectionRequest&, const Model::StartConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartConnectionResponseReceivedHandler;
+    typedef std::function<void(const OutpostsClient*, const Model::StartOutpostDecommissionRequest&, const Model::StartOutpostDecommissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartOutpostDecommissionResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::UpdateOutpostRequest&, const Model::UpdateOutpostOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOutpostResponseReceivedHandler;

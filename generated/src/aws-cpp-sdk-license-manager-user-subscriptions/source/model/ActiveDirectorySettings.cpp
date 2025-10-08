@@ -39,6 +39,15 @@ ActiveDirectorySettings& ActiveDirectorySettings::operator =(JsonView jsonValue)
     }
     m_domainIpv4ListHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("DomainIpv6List"))
+  {
+    Aws::Utils::Array<JsonView> domainIpv6ListJsonList = jsonValue.GetArray("DomainIpv6List");
+    for(unsigned domainIpv6ListIndex = 0; domainIpv6ListIndex < domainIpv6ListJsonList.GetLength(); ++domainIpv6ListIndex)
+    {
+      m_domainIpv6List.push_back(domainIpv6ListJsonList[domainIpv6ListIndex].AsString());
+    }
+    m_domainIpv6ListHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("DomainCredentialsProvider"))
   {
     m_domainCredentialsProvider = jsonValue.GetObject("DomainCredentialsProvider");
@@ -70,6 +79,17 @@ JsonValue ActiveDirectorySettings::Jsonize() const
      domainIpv4ListJsonList[domainIpv4ListIndex].AsString(m_domainIpv4List[domainIpv4ListIndex]);
    }
    payload.WithArray("DomainIpv4List", std::move(domainIpv4ListJsonList));
+
+  }
+
+  if(m_domainIpv6ListHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> domainIpv6ListJsonList(m_domainIpv6List.size());
+   for(unsigned domainIpv6ListIndex = 0; domainIpv6ListIndex < domainIpv6ListJsonList.GetLength(); ++domainIpv6ListIndex)
+   {
+     domainIpv6ListJsonList[domainIpv6ListIndex].AsString(m_domainIpv6List[domainIpv6ListIndex]);
+   }
+   payload.WithArray("DomainIpv6List", std::move(domainIpv6ListJsonList));
 
   }
 

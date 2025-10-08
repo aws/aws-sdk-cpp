@@ -246,6 +246,35 @@ namespace ServiceQuotas
         }
 
         /**
+         * <p>Retrieves information about your <a
+         * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/automatic-management.html">Service
+         * Quotas Automatic Management</a> configuration. Automatic Management monitors
+         * your Service Quotas utilization and notifies you before you run out of your
+         * allocated quotas.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetAutoManagementConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAutoManagementConfigurationOutcome GetAutoManagementConfiguration(const Model::GetAutoManagementConfigurationRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetAutoManagementConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAutoManagementConfigurationRequestT = Model::GetAutoManagementConfigurationRequest>
+        Model::GetAutoManagementConfigurationOutcomeCallable GetAutoManagementConfigurationCallable(const GetAutoManagementConfigurationRequestT& request = {}) const
+        {
+            return SubmitCallable(&ServiceQuotasClient::GetAutoManagementConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for GetAutoManagementConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAutoManagementConfigurationRequestT = Model::GetAutoManagementConfigurationRequest>
+        void GetAutoManagementConfigurationAsync(const GetAutoManagementConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAutoManagementConfigurationRequestT& request = {}) const
+        {
+            return SubmitAsync(&ServiceQuotasClient::GetAutoManagementConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves information about the specified quota increase
          * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetRequestedServiceQuotaChange">AWS
@@ -567,6 +596,66 @@ namespace ServiceQuotas
         }
 
         /**
+         * <p>Starts <a
+         * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/automatic-management.html">Service
+         * Quotas Automatic Management</a> for an Amazon Web Services account, including
+         * notification preferences and excluded quotas configurations. Automatic
+         * Management monitors your Service Quotas utilization and notifies you before you
+         * run out of your allocated quotas.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/StartAutoManagement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartAutoManagementOutcome StartAutoManagement(const Model::StartAutoManagementRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartAutoManagement that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartAutoManagementRequestT = Model::StartAutoManagementRequest>
+        Model::StartAutoManagementOutcomeCallable StartAutoManagementCallable(const StartAutoManagementRequestT& request) const
+        {
+            return SubmitCallable(&ServiceQuotasClient::StartAutoManagement, request);
+        }
+
+        /**
+         * An Async wrapper for StartAutoManagement that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartAutoManagementRequestT = Model::StartAutoManagementRequest>
+        void StartAutoManagementAsync(const StartAutoManagementRequestT& request, const StartAutoManagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ServiceQuotasClient::StartAutoManagement, request, handler, context);
+        }
+
+        /**
+         * <p>Stops <a
+         * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/automatic-management.html">Service
+         * Quotas Automatic Management</a> for an Amazon Web Services account and removes
+         * all associated configurations. Automatic Management monitors your Service Quotas
+         * utilization and notifies you before you run out of your allocated
+         * quotas.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/StopAutoManagement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopAutoManagementOutcome StopAutoManagement(const Model::StopAutoManagementRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for StopAutoManagement that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopAutoManagementRequestT = Model::StopAutoManagementRequest>
+        Model::StopAutoManagementOutcomeCallable StopAutoManagementCallable(const StopAutoManagementRequestT& request = {}) const
+        {
+            return SubmitCallable(&ServiceQuotasClient::StopAutoManagement, request);
+        }
+
+        /**
+         * An Async wrapper for StopAutoManagement that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopAutoManagementRequestT = Model::StopAutoManagementRequest>
+        void StopAutoManagementAsync(const StopAutoManagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const StopAutoManagementRequestT& request = {}) const
+        {
+            return SubmitAsync(&ServiceQuotasClient::StopAutoManagement, request, handler, context);
+        }
+
+        /**
          * <p>Adds tags to the specified applied quota. You can include one or more tags to
          * add to the quota.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/TagResource">AWS
@@ -616,6 +705,36 @@ namespace ServiceQuotas
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ServiceQuotasClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Updates your <a
+         * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/automatic-management.html">Service
+         * Quotas Automatic Management</a> configuration, including notification
+         * preferences and excluded quotas. Automatic Management monitors your Service
+         * Quotas utilization and notifies you before you run out of your allocated
+         * quotas.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/UpdateAutoManagement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAutoManagementOutcome UpdateAutoManagement(const Model::UpdateAutoManagementRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for UpdateAutoManagement that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAutoManagementRequestT = Model::UpdateAutoManagementRequest>
+        Model::UpdateAutoManagementOutcomeCallable UpdateAutoManagementCallable(const UpdateAutoManagementRequestT& request = {}) const
+        {
+            return SubmitCallable(&ServiceQuotasClient::UpdateAutoManagement, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAutoManagement that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAutoManagementRequestT = Model::UpdateAutoManagementRequest>
+        void UpdateAutoManagementAsync(const UpdateAutoManagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateAutoManagementRequestT& request = {}) const
+        {
+            return SubmitAsync(&ServiceQuotasClient::UpdateAutoManagement, request, handler, context);
         }
 
 

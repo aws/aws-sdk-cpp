@@ -24,6 +24,7 @@
 #include <aws/service-quotas/model/DisassociateServiceQuotaTemplateResult.h>
 #include <aws/service-quotas/model/GetAWSDefaultServiceQuotaResult.h>
 #include <aws/service-quotas/model/GetAssociationForServiceQuotaTemplateResult.h>
+#include <aws/service-quotas/model/GetAutoManagementConfigurationResult.h>
 #include <aws/service-quotas/model/GetRequestedServiceQuotaChangeResult.h>
 #include <aws/service-quotas/model/GetServiceQuotaResult.h>
 #include <aws/service-quotas/model/GetServiceQuotaIncreaseRequestFromTemplateResult.h>
@@ -36,11 +37,17 @@
 #include <aws/service-quotas/model/ListTagsForResourceResult.h>
 #include <aws/service-quotas/model/PutServiceQuotaIncreaseRequestIntoTemplateResult.h>
 #include <aws/service-quotas/model/RequestServiceQuotaIncreaseResult.h>
+#include <aws/service-quotas/model/StartAutoManagementResult.h>
+#include <aws/service-quotas/model/StopAutoManagementResult.h>
 #include <aws/service-quotas/model/TagResourceResult.h>
 #include <aws/service-quotas/model/UntagResourceResult.h>
+#include <aws/service-quotas/model/UpdateAutoManagementResult.h>
+#include <aws/service-quotas/model/GetAutoManagementConfigurationRequest.h>
+#include <aws/service-quotas/model/StopAutoManagementRequest.h>
 #include <aws/service-quotas/model/GetAssociationForServiceQuotaTemplateRequest.h>
 #include <aws/service-quotas/model/AssociateServiceQuotaTemplateRequest.h>
 #include <aws/service-quotas/model/ListServicesRequest.h>
+#include <aws/service-quotas/model/UpdateAutoManagementRequest.h>
 #include <aws/service-quotas/model/ListServiceQuotaIncreaseRequestsInTemplateRequest.h>
 #include <aws/service-quotas/model/DisassociateServiceQuotaTemplateRequest.h>
 #include <aws/service-quotas/model/ListRequestedServiceQuotaChangeHistoryRequest.h>
@@ -90,6 +97,7 @@ namespace Aws
       class DisassociateServiceQuotaTemplateRequest;
       class GetAWSDefaultServiceQuotaRequest;
       class GetAssociationForServiceQuotaTemplateRequest;
+      class GetAutoManagementConfigurationRequest;
       class GetRequestedServiceQuotaChangeRequest;
       class GetServiceQuotaRequest;
       class GetServiceQuotaIncreaseRequestFromTemplateRequest;
@@ -102,8 +110,11 @@ namespace Aws
       class ListTagsForResourceRequest;
       class PutServiceQuotaIncreaseRequestIntoTemplateRequest;
       class RequestServiceQuotaIncreaseRequest;
+      class StartAutoManagementRequest;
+      class StopAutoManagementRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
+      class UpdateAutoManagementRequest;
       /* End of service model forward declarations required in ServiceQuotasClient header */
 
       /* Service model Outcome class definitions */
@@ -113,6 +124,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DisassociateServiceQuotaTemplateResult, ServiceQuotasError> DisassociateServiceQuotaTemplateOutcome;
       typedef Aws::Utils::Outcome<GetAWSDefaultServiceQuotaResult, ServiceQuotasError> GetAWSDefaultServiceQuotaOutcome;
       typedef Aws::Utils::Outcome<GetAssociationForServiceQuotaTemplateResult, ServiceQuotasError> GetAssociationForServiceQuotaTemplateOutcome;
+      typedef Aws::Utils::Outcome<GetAutoManagementConfigurationResult, ServiceQuotasError> GetAutoManagementConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetRequestedServiceQuotaChangeResult, ServiceQuotasError> GetRequestedServiceQuotaChangeOutcome;
       typedef Aws::Utils::Outcome<GetServiceQuotaResult, ServiceQuotasError> GetServiceQuotaOutcome;
       typedef Aws::Utils::Outcome<GetServiceQuotaIncreaseRequestFromTemplateResult, ServiceQuotasError> GetServiceQuotaIncreaseRequestFromTemplateOutcome;
@@ -125,8 +137,11 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, ServiceQuotasError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<PutServiceQuotaIncreaseRequestIntoTemplateResult, ServiceQuotasError> PutServiceQuotaIncreaseRequestIntoTemplateOutcome;
       typedef Aws::Utils::Outcome<RequestServiceQuotaIncreaseResult, ServiceQuotasError> RequestServiceQuotaIncreaseOutcome;
+      typedef Aws::Utils::Outcome<StartAutoManagementResult, ServiceQuotasError> StartAutoManagementOutcome;
+      typedef Aws::Utils::Outcome<StopAutoManagementResult, ServiceQuotasError> StopAutoManagementOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, ServiceQuotasError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, ServiceQuotasError> UntagResourceOutcome;
+      typedef Aws::Utils::Outcome<UpdateAutoManagementResult, ServiceQuotasError> UpdateAutoManagementOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -136,6 +151,7 @@ namespace Aws
       typedef std::future<DisassociateServiceQuotaTemplateOutcome> DisassociateServiceQuotaTemplateOutcomeCallable;
       typedef std::future<GetAWSDefaultServiceQuotaOutcome> GetAWSDefaultServiceQuotaOutcomeCallable;
       typedef std::future<GetAssociationForServiceQuotaTemplateOutcome> GetAssociationForServiceQuotaTemplateOutcomeCallable;
+      typedef std::future<GetAutoManagementConfigurationOutcome> GetAutoManagementConfigurationOutcomeCallable;
       typedef std::future<GetRequestedServiceQuotaChangeOutcome> GetRequestedServiceQuotaChangeOutcomeCallable;
       typedef std::future<GetServiceQuotaOutcome> GetServiceQuotaOutcomeCallable;
       typedef std::future<GetServiceQuotaIncreaseRequestFromTemplateOutcome> GetServiceQuotaIncreaseRequestFromTemplateOutcomeCallable;
@@ -148,8 +164,11 @@ namespace Aws
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PutServiceQuotaIncreaseRequestIntoTemplateOutcome> PutServiceQuotaIncreaseRequestIntoTemplateOutcomeCallable;
       typedef std::future<RequestServiceQuotaIncreaseOutcome> RequestServiceQuotaIncreaseOutcomeCallable;
+      typedef std::future<StartAutoManagementOutcome> StartAutoManagementOutcomeCallable;
+      typedef std::future<StopAutoManagementOutcome> StopAutoManagementOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+      typedef std::future<UpdateAutoManagementOutcome> UpdateAutoManagementOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -162,6 +181,7 @@ namespace Aws
     typedef std::function<void(const ServiceQuotasClient*, const Model::DisassociateServiceQuotaTemplateRequest&, const Model::DisassociateServiceQuotaTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateServiceQuotaTemplateResponseReceivedHandler;
     typedef std::function<void(const ServiceQuotasClient*, const Model::GetAWSDefaultServiceQuotaRequest&, const Model::GetAWSDefaultServiceQuotaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAWSDefaultServiceQuotaResponseReceivedHandler;
     typedef std::function<void(const ServiceQuotasClient*, const Model::GetAssociationForServiceQuotaTemplateRequest&, const Model::GetAssociationForServiceQuotaTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssociationForServiceQuotaTemplateResponseReceivedHandler;
+    typedef std::function<void(const ServiceQuotasClient*, const Model::GetAutoManagementConfigurationRequest&, const Model::GetAutoManagementConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAutoManagementConfigurationResponseReceivedHandler;
     typedef std::function<void(const ServiceQuotasClient*, const Model::GetRequestedServiceQuotaChangeRequest&, const Model::GetRequestedServiceQuotaChangeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRequestedServiceQuotaChangeResponseReceivedHandler;
     typedef std::function<void(const ServiceQuotasClient*, const Model::GetServiceQuotaRequest&, const Model::GetServiceQuotaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceQuotaResponseReceivedHandler;
     typedef std::function<void(const ServiceQuotasClient*, const Model::GetServiceQuotaIncreaseRequestFromTemplateRequest&, const Model::GetServiceQuotaIncreaseRequestFromTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceQuotaIncreaseRequestFromTemplateResponseReceivedHandler;
@@ -174,8 +194,11 @@ namespace Aws
     typedef std::function<void(const ServiceQuotasClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ServiceQuotasClient*, const Model::PutServiceQuotaIncreaseRequestIntoTemplateRequest&, const Model::PutServiceQuotaIncreaseRequestIntoTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutServiceQuotaIncreaseRequestIntoTemplateResponseReceivedHandler;
     typedef std::function<void(const ServiceQuotasClient*, const Model::RequestServiceQuotaIncreaseRequest&, const Model::RequestServiceQuotaIncreaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RequestServiceQuotaIncreaseResponseReceivedHandler;
+    typedef std::function<void(const ServiceQuotasClient*, const Model::StartAutoManagementRequest&, const Model::StartAutoManagementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAutoManagementResponseReceivedHandler;
+    typedef std::function<void(const ServiceQuotasClient*, const Model::StopAutoManagementRequest&, const Model::StopAutoManagementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopAutoManagementResponseReceivedHandler;
     typedef std::function<void(const ServiceQuotasClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ServiceQuotasClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const ServiceQuotasClient*, const Model::UpdateAutoManagementRequest&, const Model::UpdateAutoManagementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAutoManagementResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace ServiceQuotas
 } // namespace Aws

@@ -16,7 +16,8 @@ namespace Model
   enum class AuthorizerType
   {
     NOT_SET,
-    CUSTOM_JWT
+    CUSTOM_JWT,
+    AWS_IAM
   };
 
 namespace AuthorizerTypeMapper

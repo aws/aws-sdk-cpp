@@ -24,6 +24,7 @@
 #include <aws/outposts/model/AssetState.h>
 #include <aws/outposts/model/AssetType.h>
 #include <aws/outposts/model/BlockingInstance.h>
+#include <aws/outposts/model/BlockingResourceType.h>
 #include <aws/outposts/model/CancelCapacityTaskRequest.h>
 #include <aws/outposts/model/CancelCapacityTaskResult.h>
 #include <aws/outposts/model/CancelOrderRequest.h>
@@ -45,6 +46,7 @@
 #include <aws/outposts/model/CreateOutpostResult.h>
 #include <aws/outposts/model/CreateSiteRequest.h>
 #include <aws/outposts/model/CreateSiteResult.h>
+#include <aws/outposts/model/DecommissionRequestStatus.h>
 #include <aws/outposts/model/DeleteOutpostRequest.h>
 #include <aws/outposts/model/DeleteOutpostResult.h>
 #include <aws/outposts/model/DeleteSiteRequest.h>
@@ -118,6 +120,8 @@
 #include <aws/outposts/model/StartCapacityTaskResult.h>
 #include <aws/outposts/model/StartConnectionRequest.h>
 #include <aws/outposts/model/StartConnectionResult.h>
+#include <aws/outposts/model/StartOutpostDecommissionRequest.h>
+#include <aws/outposts/model/StartOutpostDecommissionResult.h>
 #include <aws/outposts/model/Subscription.h>
 #include <aws/outposts/model/SubscriptionStatus.h>
 #include <aws/outposts/model/SubscriptionType.h>
