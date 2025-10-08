@@ -58,6 +58,22 @@ Debian based Linux distributions example:
 RPM based Linux distributions example:
    `sudo [yum|dnf|zypper] install libcurl-devel`
 
+### **Zlib (Optional — for Request Compression Support)**
+
+Zlib is **optional** and only required if you enable **request compression** for specific AWS services that support gzip/deflate encoding.
+* `-DENABLE_ZLIB_REQUEST_COMPRESSION=ON` — enables gzip/deflate request compression (disabled by default).
+
+If you do not enable this option, **zlib is not required** at build time.
+If you do enable it, install zlib as follows:
+
+* **Debian/Ubuntu:** `sudo apt-get install zlib1g-dev`
+* **RPM-based systems:** `sudo yum install zlib-devel` or `sudo dnf install zlib-devel`
+
+**Reference:**
+
+* [CMakeLists.txt (lines 179–192)](https://github.com/aws/aws-sdk-cpp/blob/main/CMakeLists.txt#L179-L192)
+* [CMake Parameters Documentation](https://github.com/aws/aws-sdk-cpp/blob/main/docs/CMake_Parameters.md#enable_zlib_request_compression)
+
 ### Building for MacOS
 
 Building for macOS is largely the same as building on a *nix system except for how the system consumes the curl dependency and compilers.
