@@ -594,10 +594,19 @@ public class CppViewHelper {
                 .anyMatch(shapeMember -> shapeMember.getShape().isList() && shapeMember.isUsedForHeader());
     }
 
-    public static String getEventStreamHeaderAccessorName(final Shape shape) {
+    public static String getEventStreamHeaderValue(final String variableName, final Shape shape) {
         if (!EVENT_STREAM_HEADER_ACCESSORS.containsKey(shape.getType())) {
             throw new RuntimeException("No event stream header accessor found for shape type: " + shape.getType());
         }
-        return EVENT_STREAM_HEADER_ACCESSORS.get(shape.getType());
+        final String value = String.format("%s->second.%s",
+                variableName,
+                EVENT_STREAM_HEADER_ACCESSORS.get(shape.getType()));
+        if (shape.isEnum()) {
+            return String.format("%sMapper::Get%sForName(%s)",
+                    shape.getName(),
+                    shape.getName(),
+                    value);
+        }
+        return value;
     }
 }

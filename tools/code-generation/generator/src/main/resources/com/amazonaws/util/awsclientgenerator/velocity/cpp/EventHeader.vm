@@ -55,7 +55,7 @@ namespace Model
 #set($eventHeaderMemberNameWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($eventHeader.getName()))
 #set($eventHeaderMemberHaseBeenSetName = $CppViewHelper.computeVariableHasBeenSetName($eventHeader.getName()))
 #set($eventHeaderMemberType = $CppViewHelper.computeCppType($eventHeader))
-#if($eventHeader.boolean)
+#if($eventHeader.boolean || $eventHeader.enum)
 #set($constQualifer = "")
 #else
 #set($constQualifer = "const ")
