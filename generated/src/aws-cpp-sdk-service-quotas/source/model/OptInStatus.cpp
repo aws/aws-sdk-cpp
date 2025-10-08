@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/bedrock-agentcore-control/model/AuthorizerType.h>
+#include <aws/service-quotas/model/OptInStatus.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -13,48 +13,48 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace BedrockAgentCoreControl
+  namespace ServiceQuotas
   {
     namespace Model
     {
-      namespace AuthorizerTypeMapper
+      namespace OptInStatusMapper
       {
 
-        static const int CUSTOM_JWT_HASH = HashingUtils::HashString("CUSTOM_JWT");
-        static const int AWS_IAM_HASH = HashingUtils::HashString("AWS_IAM");
+        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
+        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 
 
-        AuthorizerType GetAuthorizerTypeForName(const Aws::String& name)
+        OptInStatus GetOptInStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CUSTOM_JWT_HASH)
+          if (hashCode == ENABLED_HASH)
           {
-            return AuthorizerType::CUSTOM_JWT;
+            return OptInStatus::ENABLED;
           }
-          else if (hashCode == AWS_IAM_HASH)
+          else if (hashCode == DISABLED_HASH)
           {
-            return AuthorizerType::AWS_IAM;
+            return OptInStatus::DISABLED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<AuthorizerType>(hashCode);
+            return static_cast<OptInStatus>(hashCode);
           }
 
-          return AuthorizerType::NOT_SET;
+          return OptInStatus::NOT_SET;
         }
 
-        Aws::String GetNameForAuthorizerType(AuthorizerType enumValue)
+        Aws::String GetNameForOptInStatus(OptInStatus enumValue)
         {
           switch(enumValue)
           {
-          case AuthorizerType::NOT_SET:
+          case OptInStatus::NOT_SET:
             return {};
-          case AuthorizerType::CUSTOM_JWT:
-            return "CUSTOM_JWT";
-          case AuthorizerType::AWS_IAM:
-            return "AWS_IAM";
+          case OptInStatus::ENABLED:
+            return "ENABLED";
+          case OptInStatus::DISABLED:
+            return "DISABLED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -66,7 +66,7 @@ namespace Aws
           }
         }
 
-      } // namespace AuthorizerTypeMapper
+      } // namespace OptInStatusMapper
     } // namespace Model
-  } // namespace BedrockAgentCoreControl
+  } // namespace ServiceQuotas
 } // namespace Aws

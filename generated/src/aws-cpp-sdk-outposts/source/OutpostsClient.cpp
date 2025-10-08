@@ -49,6 +49,7 @@
 #include <aws/outposts/model/ListTagsForResourceRequest.h>
 #include <aws/outposts/model/StartCapacityTaskRequest.h>
 #include <aws/outposts/model/StartConnectionRequest.h>
+#include <aws/outposts/model/StartOutpostDecommissionRequest.h>
 #include <aws/outposts/model/TagResourceRequest.h>
 #include <aws/outposts/model/UntagResourceRequest.h>
 #include <aws/outposts/model/UpdateOutpostRequest.h>
@@ -1098,6 +1099,40 @@ StartConnectionOutcome OutpostsClient::StartConnection(const StartConnectionRequ
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/connections");
       return StartConnectionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StartOutpostDecommissionOutcome OutpostsClient::StartOutpostDecommission(const StartOutpostDecommissionRequest& request) const
+{
+  AWS_OPERATION_GUARD(StartOutpostDecommission);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartOutpostDecommission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.OutpostIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartOutpostDecommission", "Required field: OutpostIdentifier, is not set");
+    return StartOutpostDecommissionOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OutpostIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartOutpostDecommission, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StartOutpostDecommission, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartOutpostDecommission",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StartOutpostDecommissionOutcome>(
+    [&]()-> StartOutpostDecommissionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartOutpostDecommission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/outposts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOutpostIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/decommission");
+      return StartOutpostDecommissionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

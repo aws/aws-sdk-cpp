@@ -71,6 +71,18 @@ namespace Model
     template<typename Ipv4AddressT = Aws::String>
     LicenseServer& WithIpv4Address(Ipv4AddressT&& value) { SetIpv4Address(std::forward<Ipv4AddressT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A list of domain IPv6 addresses that are used for the RDS license server.</p>
+     */
+    inline const Aws::String& GetIpv6Address() const { return m_ipv6Address; }
+    inline bool Ipv6AddressHasBeenSet() const { return m_ipv6AddressHasBeenSet; }
+    template<typename Ipv6AddressT = Aws::String>
+    void SetIpv6Address(Ipv6AddressT&& value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address = std::forward<Ipv6AddressT>(value); }
+    template<typename Ipv6AddressT = Aws::String>
+    LicenseServer& WithIpv6Address(Ipv6AddressT&& value) { SetIpv6Address(std::forward<Ipv6AddressT>(value)); return *this;}
+    ///@}
   private:
 
     LicenseServerEndpointProvisioningStatus m_provisioningStatus{LicenseServerEndpointProvisioningStatus::NOT_SET};
@@ -81,6 +93,9 @@ namespace Model
 
     Aws::String m_ipv4Address;
     bool m_ipv4AddressHasBeenSet = false;
+
+    Aws::String m_ipv6Address;
+    bool m_ipv6AddressHasBeenSet = false;
   };
 
 } // namespace Model

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/bedrock-agentcore-control/model/AuthorizerType.h>
+#include <aws/service-quotas/model/OptInLevel.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -13,48 +13,41 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace BedrockAgentCoreControl
+  namespace ServiceQuotas
   {
     namespace Model
     {
-      namespace AuthorizerTypeMapper
+      namespace OptInLevelMapper
       {
 
-        static const int CUSTOM_JWT_HASH = HashingUtils::HashString("CUSTOM_JWT");
-        static const int AWS_IAM_HASH = HashingUtils::HashString("AWS_IAM");
+        static const int ACCOUNT_HASH = HashingUtils::HashString("ACCOUNT");
 
 
-        AuthorizerType GetAuthorizerTypeForName(const Aws::String& name)
+        OptInLevel GetOptInLevelForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CUSTOM_JWT_HASH)
+          if (hashCode == ACCOUNT_HASH)
           {
-            return AuthorizerType::CUSTOM_JWT;
-          }
-          else if (hashCode == AWS_IAM_HASH)
-          {
-            return AuthorizerType::AWS_IAM;
+            return OptInLevel::ACCOUNT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<AuthorizerType>(hashCode);
+            return static_cast<OptInLevel>(hashCode);
           }
 
-          return AuthorizerType::NOT_SET;
+          return OptInLevel::NOT_SET;
         }
 
-        Aws::String GetNameForAuthorizerType(AuthorizerType enumValue)
+        Aws::String GetNameForOptInLevel(OptInLevel enumValue)
         {
           switch(enumValue)
           {
-          case AuthorizerType::NOT_SET:
+          case OptInLevel::NOT_SET:
             return {};
-          case AuthorizerType::CUSTOM_JWT:
-            return "CUSTOM_JWT";
-          case AuthorizerType::AWS_IAM:
-            return "AWS_IAM";
+          case OptInLevel::ACCOUNT:
+            return "ACCOUNT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -66,7 +59,7 @@ namespace Aws
           }
         }
 
-      } // namespace AuthorizerTypeMapper
+      } // namespace OptInLevelMapper
     } // namespace Model
-  } // namespace BedrockAgentCoreControl
+  } // namespace ServiceQuotas
 } // namespace Aws
