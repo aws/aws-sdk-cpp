@@ -7,6 +7,7 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/CredentialPair.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/model/WebProxyCredentials.h>
 #include <utility>
 
 namespace Aws
@@ -81,6 +82,18 @@ namespace Model
     template<typename SecretArnT = Aws::String>
     DataSourceCredentials& WithSecretArn(SecretArnT&& value) { SetSecretArn(std::forward<SecretArnT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The credentials for connecting through a web proxy server.</p>
+     */
+    inline const WebProxyCredentials& GetWebProxyCredentials() const { return m_webProxyCredentials; }
+    inline bool WebProxyCredentialsHasBeenSet() const { return m_webProxyCredentialsHasBeenSet; }
+    template<typename WebProxyCredentialsT = WebProxyCredentials>
+    void SetWebProxyCredentials(WebProxyCredentialsT&& value) { m_webProxyCredentialsHasBeenSet = true; m_webProxyCredentials = std::forward<WebProxyCredentialsT>(value); }
+    template<typename WebProxyCredentialsT = WebProxyCredentials>
+    DataSourceCredentials& WithWebProxyCredentials(WebProxyCredentialsT&& value) { SetWebProxyCredentials(std::forward<WebProxyCredentialsT>(value)); return *this;}
+    ///@}
   private:
 
     CredentialPair m_credentialPair;
@@ -91,6 +104,9 @@ namespace Model
 
     Aws::String m_secretArn;
     bool m_secretArnHasBeenSet = false;
+
+    WebProxyCredentials m_webProxyCredentials;
+    bool m_webProxyCredentialsHasBeenSet = false;
   };
 
 } // namespace Model

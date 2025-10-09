@@ -95,6 +95,11 @@ DataSourceParameters& DataSourceParameters::operator =(JsonView jsonValue)
     m_s3Parameters = jsonValue.GetObject("S3Parameters");
     m_s3ParametersHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("S3KnowledgeBaseParameters"))
+  {
+    m_s3KnowledgeBaseParameters = jsonValue.GetObject("S3KnowledgeBaseParameters");
+    m_s3KnowledgeBaseParametersHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ServiceNowParameters"))
   {
     m_serviceNowParameters = jsonValue.GetObject("ServiceNowParameters");
@@ -164,6 +169,21 @@ DataSourceParameters& DataSourceParameters::operator =(JsonView jsonValue)
   {
     m_customConnectionParameters = jsonValue.GetObject("CustomConnectionParameters");
     m_customConnectionParametersHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("WebCrawlerParameters"))
+  {
+    m_webCrawlerParameters = jsonValue.GetObject("WebCrawlerParameters");
+    m_webCrawlerParametersHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ConfluenceParameters"))
+  {
+    m_confluenceParameters = jsonValue.GetObject("ConfluenceParameters");
+    m_confluenceParametersHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("QBusinessParameters"))
+  {
+    m_qBusinessParameters = jsonValue.GetObject("QBusinessParameters");
+    m_qBusinessParametersHasBeenSet = true;
   }
   return *this;
 }
@@ -256,6 +276,12 @@ JsonValue DataSourceParameters::Jsonize() const
 
   }
 
+  if(m_s3KnowledgeBaseParametersHasBeenSet)
+  {
+   payload.WithObject("S3KnowledgeBaseParameters", m_s3KnowledgeBaseParameters.Jsonize());
+
+  }
+
   if(m_serviceNowParametersHasBeenSet)
   {
    payload.WithObject("ServiceNowParameters", m_serviceNowParameters.Jsonize());
@@ -337,6 +363,24 @@ JsonValue DataSourceParameters::Jsonize() const
   if(m_customConnectionParametersHasBeenSet)
   {
    payload.WithObject("CustomConnectionParameters", m_customConnectionParameters.Jsonize());
+
+  }
+
+  if(m_webCrawlerParametersHasBeenSet)
+  {
+   payload.WithObject("WebCrawlerParameters", m_webCrawlerParameters.Jsonize());
+
+  }
+
+  if(m_confluenceParametersHasBeenSet)
+  {
+   payload.WithObject("ConfluenceParameters", m_confluenceParameters.Jsonize());
+
+  }
+
+  if(m_qBusinessParametersHasBeenSet)
+  {
+   payload.WithObject("QBusinessParameters", m_qBusinessParameters.Jsonize());
 
   }
 

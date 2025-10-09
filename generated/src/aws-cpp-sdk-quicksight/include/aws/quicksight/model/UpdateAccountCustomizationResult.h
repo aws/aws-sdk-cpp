@@ -47,8 +47,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID for the Amazon Web Services account that you want to update QuickSight
-     * customizations for.</p>
+     * <p>The ID for the Amazon Web Services account that you want to update Quick
+     * Sight customizations for.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     template<typename AwsAccountIdT = Aws::String>
@@ -70,7 +70,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The QuickSight customizations you're updating. </p>
+     * <p>The Quick Sight customizations you're updating. </p>
      */
     inline const AccountCustomization& GetAccountCustomization() const { return m_accountCustomization; }
     template<typename AccountCustomizationT = AccountCustomization>

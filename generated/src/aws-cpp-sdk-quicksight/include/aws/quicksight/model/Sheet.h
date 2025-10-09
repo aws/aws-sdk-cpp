@@ -27,7 +27,7 @@ namespace Model
 
   /**
    * <p>A <i>sheet</i>, which is an object that contains a set of visuals that are
-   * viewed together on one page in Amazon QuickSight. Every analysis and dashboard
+   * viewed together on one page in Quick Sight. Every analysis and dashboard
    * contains at least one sheet. Each sheet contains at least one visualization
    * widget, for example a chart, pivot table, or narrative insight. Sheets can be
    * associated with other components, such as controls, filters, and so
@@ -58,8 +58,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of a sheet. This name is displayed on the sheet's tab in the
-     * QuickSight console.</p>
+     * <p>The name of a sheet. This name is displayed on the sheet's tab in the Quick
+     * Sight console.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

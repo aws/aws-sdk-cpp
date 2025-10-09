@@ -58,7 +58,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The QuickSight namespace that you're describing. </p>
+     * <p>The Quick Sight namespace that you're describing. </p>
      */
     inline const Aws::String& GetNamespace() const { return m_namespace; }
     template<typename NamespaceT = Aws::String>
@@ -69,7 +69,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The QuickSight customizations that exist. </p>
+     * <p>The Quick Sight customizations that exist. </p>
      */
     inline const AccountCustomization& GetAccountCustomization() const { return m_accountCustomization; }
     template<typename AccountCustomizationT = AccountCustomization>

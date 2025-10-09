@@ -41,7 +41,7 @@ namespace Model
     ///@{
     /**
      * <p>The ID for the Amazon Web Services account that the group is in. You use the
-     * ID for the Amazon Web Services account that contains your Amazon QuickSight
+     * ID for the Amazon Web Services account that contains your Amazon Quick Sight
      * account.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
@@ -100,7 +100,7 @@ namespace Model
      * Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the
      * source template. For <code>SourceAnalysis</code>, specify the ARN of the source
      * analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web
-     * Services account and any QuickSight-supported Amazon Web Services Region. </p>
+     * Services account and any Quick Sight-supported Amazon Web Services Region. </p>
      * <p>Use the <code>DataSetReferences</code> entity within
      * <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the
      * replacement datasets for the placeholders listed in the original. The schema in

@@ -32,7 +32,7 @@ namespace Model
   /**
    * <p>A word cloud.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/word-cloud.html">Using
-   * word clouds</a> in the <i>Amazon QuickSight User Guide</i>.</p><p><h3>See
+   * word clouds</a> in the <i>Amazon Quick Suite User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/WordCloudVisual">AWS
    * API Reference</a></p>

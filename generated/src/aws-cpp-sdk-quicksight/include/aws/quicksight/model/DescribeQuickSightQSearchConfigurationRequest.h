@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the Amazon Web Services account that contains the QuickSight Q
+     * <p>The ID of the Amazon Web Services account that contains the Quick Sight Q
      * Search configuration that the user wants described.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }

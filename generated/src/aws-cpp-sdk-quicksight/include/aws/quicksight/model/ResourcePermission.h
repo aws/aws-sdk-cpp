@@ -41,13 +41,15 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the principal. This can be one of the
-     * following:</p> <ul> <li> <p>The ARN of an Amazon QuickSight user or group
-     * associated with a data source or dataset. (This is common.)</p> </li> <li>
-     * <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an
-     * analysis, dashboard, template, or theme. (This is common.)</p> </li> <li> <p>The
-     * ARN of an Amazon Web Services account root: This is an IAM ARN rather than a
-     * QuickSight ARN. Use this option only to share resources (templates) across
-     * Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
+     * following:</p> <ul> <li> <p>The ARN of an Quick Sight user or group associated
+     * with a data source or dataset. (This is common.)</p> </li> <li> <p>The ARN of an
+     * Quick Sight user, group, or namespace associated with an analysis, dashboard,
+     * template, or theme. Namespace sharing is not supported for action connectors.
+     * (This is common.)</p> </li> <li> <p>The ARN of an Amazon Web Services account
+     * root: This is an IAM ARN rather than a Quick Sight ARN. Use this option only to
+     * share resources (templates) across Amazon Web Services accounts. Account root
+     * sharing is not supported for action connectors. (This is less common.) </p>
+     * </li> </ul>
      */
     inline const Aws::String& GetPrincipal() const { return m_principal; }
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }

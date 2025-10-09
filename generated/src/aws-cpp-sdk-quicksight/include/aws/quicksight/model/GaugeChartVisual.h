@@ -32,7 +32,7 @@ namespace Model
   /**
    * <p>A gauge chart.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/gauge-chart.html">Using
-   * gauge charts</a> in the <i>Amazon QuickSight User Guide</i>.</p><p><h3>See
+   * gauge charts</a> in the <i>Amazon Quick Suite User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GaugeChartVisual">AWS
    * API Reference</a></p>

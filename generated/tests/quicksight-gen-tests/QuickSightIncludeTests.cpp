@@ -14,10 +14,18 @@
 #include <aws/quicksight/QuickSightRequest.h>
 #include <aws/quicksight/QuickSightServiceClientModel.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
+#include <aws/quicksight/model/APIKeyConnectionMetadata.h>
 #include <aws/quicksight/model/AccessDeniedException.h>
 #include <aws/quicksight/model/AccountCustomization.h>
 #include <aws/quicksight/model/AccountInfo.h>
 #include <aws/quicksight/model/AccountSettings.h>
+#include <aws/quicksight/model/ActionConnector.h>
+#include <aws/quicksight/model/ActionConnectorError.h>
+#include <aws/quicksight/model/ActionConnectorErrorType.h>
+#include <aws/quicksight/model/ActionConnectorSearchFilter.h>
+#include <aws/quicksight/model/ActionConnectorSearchFilterNameEnum.h>
+#include <aws/quicksight/model/ActionConnectorSummary.h>
+#include <aws/quicksight/model/ActionConnectorType.h>
 #include <aws/quicksight/model/ActiveIAMPolicyAssignment.h>
 #include <aws/quicksight/model/AdHocFilteringOption.h>
 #include <aws/quicksight/model/AggFunction.h>
@@ -127,9 +135,15 @@
 #include <aws/quicksight/model/AttributeAggregationFunction.h>
 #include <aws/quicksight/model/AuroraParameters.h>
 #include <aws/quicksight/model/AuroraPostgreSqlParameters.h>
+#include <aws/quicksight/model/AuthConfig.h>
+#include <aws/quicksight/model/AuthenticationMetadata.h>
 #include <aws/quicksight/model/AuthenticationMethodOption.h>
 #include <aws/quicksight/model/AuthenticationType.h>
 #include <aws/quicksight/model/AuthorSpecifiedAggregation.h>
+#include <aws/quicksight/model/AuthorizationCodeGrantCredentialsDetails.h>
+#include <aws/quicksight/model/AuthorizationCodeGrantCredentialsSource.h>
+#include <aws/quicksight/model/AuthorizationCodeGrantDetails.h>
+#include <aws/quicksight/model/AuthorizationCodeGrantMetadata.h>
 #include <aws/quicksight/model/AuthorizedTargetsByService.h>
 #include <aws/quicksight/model/AwsIotAnalyticsParameters.h>
 #include <aws/quicksight/model/AxisBinding.h>
@@ -152,6 +166,7 @@
 #include <aws/quicksight/model/BarChartVisual.h>
 #include <aws/quicksight/model/BarsArrangement.h>
 #include <aws/quicksight/model/BaseMapStyleType.h>
+#include <aws/quicksight/model/BasicAuthConnectionMetadata.h>
 #include <aws/quicksight/model/BatchCreateTopicReviewedAnswerRequest.h>
 #include <aws/quicksight/model/BatchCreateTopicReviewedAnswerResult.h>
 #include <aws/quicksight/model/BatchDeleteTopicReviewedAnswerRequest.h>
@@ -206,6 +221,10 @@
 #include <aws/quicksight/model/CategoryInnerFilter.h>
 #include <aws/quicksight/model/CellValueSynonym.h>
 #include <aws/quicksight/model/ChartAxisLabelOptions.h>
+#include <aws/quicksight/model/ClientCredentialsDetails.h>
+#include <aws/quicksight/model/ClientCredentialsGrantDetails.h>
+#include <aws/quicksight/model/ClientCredentialsGrantMetadata.h>
+#include <aws/quicksight/model/ClientCredentialsSource.h>
 #include <aws/quicksight/model/ClusterMarker.h>
 #include <aws/quicksight/model/ClusterMarkerConfiguration.h>
 #include <aws/quicksight/model/CollectiveConstant.h>
@@ -255,8 +274,11 @@
 #include <aws/quicksight/model/ConditionalFormattingIconSetType.h>
 #include <aws/quicksight/model/ConditionalFormattingSolidColor.h>
 #include <aws/quicksight/model/ConflictException.h>
+#include <aws/quicksight/model/ConfluenceParameters.h>
+#include <aws/quicksight/model/ConnectionAuthType.h>
 #include <aws/quicksight/model/ConstantType.h>
 #include <aws/quicksight/model/ContextMenuOption.h>
+#include <aws/quicksight/model/ContextualAccentPalette.h>
 #include <aws/quicksight/model/ContributionAnalysisDefault.h>
 #include <aws/quicksight/model/ContributionAnalysisDirection.h>
 #include <aws/quicksight/model/ContributionAnalysisFactor.h>
@@ -266,6 +288,8 @@
 #include <aws/quicksight/model/CreateAccountCustomizationResult.h>
 #include <aws/quicksight/model/CreateAccountSubscriptionRequest.h>
 #include <aws/quicksight/model/CreateAccountSubscriptionResult.h>
+#include <aws/quicksight/model/CreateActionConnectorRequest.h>
+#include <aws/quicksight/model/CreateActionConnectorResult.h>
 #include <aws/quicksight/model/CreateAnalysisRequest.h>
 #include <aws/quicksight/model/CreateAnalysisResult.h>
 #include <aws/quicksight/model/CreateBrandRequest.h>
@@ -443,6 +467,8 @@
 #include <aws/quicksight/model/DeleteAccountCustomizationResult.h>
 #include <aws/quicksight/model/DeleteAccountSubscriptionRequest.h>
 #include <aws/quicksight/model/DeleteAccountSubscriptionResult.h>
+#include <aws/quicksight/model/DeleteActionConnectorRequest.h>
+#include <aws/quicksight/model/DeleteActionConnectorResult.h>
 #include <aws/quicksight/model/DeleteAnalysisRequest.h>
 #include <aws/quicksight/model/DeleteAnalysisResult.h>
 #include <aws/quicksight/model/DeleteBrandAssignmentRequest.h>
@@ -509,6 +535,10 @@
 #include <aws/quicksight/model/DescribeAccountSettingsResult.h>
 #include <aws/quicksight/model/DescribeAccountSubscriptionRequest.h>
 #include <aws/quicksight/model/DescribeAccountSubscriptionResult.h>
+#include <aws/quicksight/model/DescribeActionConnectorPermissionsRequest.h>
+#include <aws/quicksight/model/DescribeActionConnectorPermissionsResult.h>
+#include <aws/quicksight/model/DescribeActionConnectorRequest.h>
+#include <aws/quicksight/model/DescribeActionConnectorResult.h>
 #include <aws/quicksight/model/DescribeAnalysisDefinitionRequest.h>
 #include <aws/quicksight/model/DescribeAnalysisDefinitionResult.h>
 #include <aws/quicksight/model/DescribeAnalysisPermissionsRequest.h>
@@ -634,6 +664,7 @@
 #include <aws/quicksight/model/FieldBasedTooltip.h>
 #include <aws/quicksight/model/FieldFolder.h>
 #include <aws/quicksight/model/FieldLabelType.h>
+#include <aws/quicksight/model/FieldName.h>
 #include <aws/quicksight/model/FieldSeriesItem.h>
 #include <aws/quicksight/model/FieldSort.h>
 #include <aws/quicksight/model/FieldSortOptions.h>
@@ -669,6 +700,8 @@
 #include <aws/quicksight/model/FilterTextAreaControl.h>
 #include <aws/quicksight/model/FilterTextFieldControl.h>
 #include <aws/quicksight/model/FilterVisualScope.h>
+#include <aws/quicksight/model/FlowPublishState.h>
+#include <aws/quicksight/model/FlowSummary.h>
 #include <aws/quicksight/model/Folder.h>
 #include <aws/quicksight/model/FolderFilterAttribute.h>
 #include <aws/quicksight/model/FolderMember.h>
@@ -767,6 +800,10 @@
 #include <aws/quicksight/model/GeospatialWindowOptions.h>
 #include <aws/quicksight/model/GetDashboardEmbedUrlRequest.h>
 #include <aws/quicksight/model/GetDashboardEmbedUrlResult.h>
+#include <aws/quicksight/model/GetFlowMetadataRequest.h>
+#include <aws/quicksight/model/GetFlowMetadataResult.h>
+#include <aws/quicksight/model/GetFlowPermissionsRequest.h>
+#include <aws/quicksight/model/GetFlowPermissionsResult.h>
 #include <aws/quicksight/model/GetSessionEmbedUrlRequest.h>
 #include <aws/quicksight/model/GetSessionEmbedUrlResult.h>
 #include <aws/quicksight/model/GlobalTableBorderOptions.h>
@@ -796,6 +833,7 @@
 #include <aws/quicksight/model/HistogramFieldWells.h>
 #include <aws/quicksight/model/HistogramVisual.h>
 #include <aws/quicksight/model/HorizontalTextAlignment.h>
+#include <aws/quicksight/model/IAMConnectionMetadata.h>
 #include <aws/quicksight/model/IAMPolicyAssignment.h>
 #include <aws/quicksight/model/IAMPolicyAssignmentSummary.h>
 #include <aws/quicksight/model/Icon.h>
@@ -889,6 +927,8 @@
 #include <aws/quicksight/model/LineInterpolation.h>
 #include <aws/quicksight/model/LineSeriesAxisDisplayOptions.h>
 #include <aws/quicksight/model/LinkSharingConfiguration.h>
+#include <aws/quicksight/model/ListActionConnectorsRequest.h>
+#include <aws/quicksight/model/ListActionConnectorsResult.h>
 #include <aws/quicksight/model/ListAnalysesRequest.h>
 #include <aws/quicksight/model/ListAnalysesResult.h>
 #include <aws/quicksight/model/ListAssetBundleExportJobsRequest.h>
@@ -910,6 +950,8 @@
 #include <aws/quicksight/model/ListDataSetsResult.h>
 #include <aws/quicksight/model/ListDataSourcesRequest.h>
 #include <aws/quicksight/model/ListDataSourcesResult.h>
+#include <aws/quicksight/model/ListFlowsRequest.h>
+#include <aws/quicksight/model/ListFlowsResult.h>
 #include <aws/quicksight/model/ListFolderMembersRequest.h>
 #include <aws/quicksight/model/ListFolderMembersResult.h>
 #include <aws/quicksight/model/ListFoldersForResourceRequest.h>
@@ -1005,6 +1047,7 @@
 #include <aws/quicksight/model/NetworkInterface.h>
 #include <aws/quicksight/model/NetworkInterfaceStatus.h>
 #include <aws/quicksight/model/NewDefaultValues.h>
+#include <aws/quicksight/model/NoneConnectionMetadata.h>
 #include <aws/quicksight/model/NullFilterOption.h>
 #include <aws/quicksight/model/NullFilterType.h>
 #include <aws/quicksight/model/NullValueFormatConfiguration.h>
@@ -1053,6 +1096,7 @@
 #include <aws/quicksight/model/PerformanceConfiguration.h>
 #include <aws/quicksight/model/PeriodOverPeriodComputation.h>
 #include <aws/quicksight/model/PeriodToDateComputation.h>
+#include <aws/quicksight/model/Permission.h>
 #include <aws/quicksight/model/PersonalizationMode.h>
 #include <aws/quicksight/model/PhysicalTable.h>
 #include <aws/quicksight/model/PieChartAggregatedFieldWells.h>
@@ -1114,6 +1158,7 @@
 #include <aws/quicksight/model/QAResult.h>
 #include <aws/quicksight/model/QAResultType.h>
 #include <aws/quicksight/model/QBusinessInsightsStatus.h>
+#include <aws/quicksight/model/QBusinessParameters.h>
 #include <aws/quicksight/model/QDataKey.h>
 #include <aws/quicksight/model/QDataKeyType.h>
 #include <aws/quicksight/model/QSearchStatus.h>
@@ -1121,6 +1166,7 @@
 #include <aws/quicksight/model/QueryExecutionOptions.h>
 #include <aws/quicksight/model/QueueInfo.h>
 #include <aws/quicksight/model/QuickSightUserNotFoundException.h>
+#include <aws/quicksight/model/QuickSuiteActionsOption.h>
 #include <aws/quicksight/model/RadarChartAggregatedFieldWells.h>
 #include <aws/quicksight/model/RadarChartAreaStyleSettings.h>
 #include <aws/quicksight/model/RadarChartAxesRangeScale.h>
@@ -1133,6 +1179,18 @@
 #include <aws/quicksight/model/RangeConstant.h>
 #include <aws/quicksight/model/RangeEndsLabelType.h>
 #include <aws/quicksight/model/RdsParameters.h>
+#include <aws/quicksight/model/ReadAPIKeyConnectionMetadata.h>
+#include <aws/quicksight/model/ReadAuthConfig.h>
+#include <aws/quicksight/model/ReadAuthenticationMetadata.h>
+#include <aws/quicksight/model/ReadAuthorizationCodeGrantCredentialsDetails.h>
+#include <aws/quicksight/model/ReadAuthorizationCodeGrantDetails.h>
+#include <aws/quicksight/model/ReadAuthorizationCodeGrantMetadata.h>
+#include <aws/quicksight/model/ReadBasicAuthConnectionMetadata.h>
+#include <aws/quicksight/model/ReadClientCredentialsDetails.h>
+#include <aws/quicksight/model/ReadClientCredentialsGrantDetails.h>
+#include <aws/quicksight/model/ReadClientCredentialsGrantMetadata.h>
+#include <aws/quicksight/model/ReadIamConnectionMetadata.h>
+#include <aws/quicksight/model/ReadNoneConnectionMetadata.h>
 #include <aws/quicksight/model/RecentSnapshotsConfigurations.h>
 #include <aws/quicksight/model/RedshiftIAMParameters.h>
 #include <aws/quicksight/model/RedshiftParameters.h>
@@ -1192,6 +1250,7 @@
 #include <aws/quicksight/model/RowLevelPermissionTagConfiguration.h>
 #include <aws/quicksight/model/RowLevelPermissionTagRule.h>
 #include <aws/quicksight/model/S3BucketConfiguration.h>
+#include <aws/quicksight/model/S3KnowledgeBaseParameters.h>
 #include <aws/quicksight/model/S3Parameters.h>
 #include <aws/quicksight/model/S3Source.h>
 #include <aws/quicksight/model/SameSheetTargetVisualConfiguration.h>
@@ -1209,6 +1268,8 @@
 #include <aws/quicksight/model/ScheduleRefreshOnEntity.h>
 #include <aws/quicksight/model/SchedulesConfigurations.h>
 #include <aws/quicksight/model/ScrollBarOptions.h>
+#include <aws/quicksight/model/SearchActionConnectorsRequest.h>
+#include <aws/quicksight/model/SearchActionConnectorsResult.h>
 #include <aws/quicksight/model/SearchAnalysesRequest.h>
 #include <aws/quicksight/model/SearchAnalysesResult.h>
 #include <aws/quicksight/model/SearchDashboardsRequest.h>
@@ -1217,6 +1278,10 @@
 #include <aws/quicksight/model/SearchDataSetsResult.h>
 #include <aws/quicksight/model/SearchDataSourcesRequest.h>
 #include <aws/quicksight/model/SearchDataSourcesResult.h>
+#include <aws/quicksight/model/SearchFilterOperator.h>
+#include <aws/quicksight/model/SearchFlowsFilter.h>
+#include <aws/quicksight/model/SearchFlowsRequest.h>
+#include <aws/quicksight/model/SearchFlowsResult.h>
 #include <aws/quicksight/model/SearchFoldersRequest.h>
 #include <aws/quicksight/model/SearchFoldersResult.h>
 #include <aws/quicksight/model/SearchGroupsRequest.h>
@@ -1499,6 +1564,10 @@
 #include <aws/quicksight/model/UpdateAccountCustomizationResult.h>
 #include <aws/quicksight/model/UpdateAccountSettingsRequest.h>
 #include <aws/quicksight/model/UpdateAccountSettingsResult.h>
+#include <aws/quicksight/model/UpdateActionConnectorPermissionsRequest.h>
+#include <aws/quicksight/model/UpdateActionConnectorPermissionsResult.h>
+#include <aws/quicksight/model/UpdateActionConnectorRequest.h>
+#include <aws/quicksight/model/UpdateActionConnectorResult.h>
 #include <aws/quicksight/model/UpdateAnalysisPermissionsRequest.h>
 #include <aws/quicksight/model/UpdateAnalysisPermissionsResult.h>
 #include <aws/quicksight/model/UpdateAnalysisRequest.h>
@@ -1533,6 +1602,8 @@
 #include <aws/quicksight/model/UpdateDataSourceResult.h>
 #include <aws/quicksight/model/UpdateDefaultQBusinessApplicationRequest.h>
 #include <aws/quicksight/model/UpdateDefaultQBusinessApplicationResult.h>
+#include <aws/quicksight/model/UpdateFlowPermissionsRequest.h>
+#include <aws/quicksight/model/UpdateFlowPermissionsResult.h>
 #include <aws/quicksight/model/UpdateFolderPermissionsRequest.h>
 #include <aws/quicksight/model/UpdateFolderPermissionsResult.h>
 #include <aws/quicksight/model/UpdateFolderRequest.h>
@@ -1620,6 +1691,9 @@
 #include <aws/quicksight/model/WaterfallChartOptions.h>
 #include <aws/quicksight/model/WaterfallChartSortConfiguration.h>
 #include <aws/quicksight/model/WaterfallVisual.h>
+#include <aws/quicksight/model/WebCrawlerAuthType.h>
+#include <aws/quicksight/model/WebCrawlerParameters.h>
+#include <aws/quicksight/model/WebProxyCredentials.h>
 #include <aws/quicksight/model/WhatIfPointScenario.h>
 #include <aws/quicksight/model/WhatIfRangeScenario.h>
 #include <aws/quicksight/model/WidgetStatus.h>

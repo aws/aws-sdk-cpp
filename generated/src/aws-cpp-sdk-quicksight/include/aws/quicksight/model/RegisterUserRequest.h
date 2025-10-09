@@ -38,8 +38,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identity type that your QuickSight account uses to manage the identity of
-     * users.</p>
+     * <p>The identity type that your Quick Sight account uses to manage the identity
+     * of users.</p>
      */
     inline IdentityType GetIdentityType() const { return m_identityType; }
     inline bool IdentityTypeHasBeenSet() const { return m_identityTypeHasBeenSet; }
@@ -61,20 +61,20 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon QuickSight role for the user. The user role can be one of the
+     * <p>The Amazon Quick Sight role for the user. The user role can be one of the
      * following:</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
      * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
-     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
-     * QuickSight settings.</p> </li> <li> <p> <code>READER_PRO</code>: Reader Pro adds
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Quick
+     * Sight settings.</p> </li> <li> <p> <code>READER_PRO</code>: Reader Pro adds
      * Generative BI capabilities to the Reader role. Reader Pros have access to Amazon
-     * Q in QuickSight, can build stories with Amazon Q, and can generate executive
+     * Q in Quick Sight, can build stories with Amazon Q, and can generate executive
      * summaries from dashboards.</p> </li> <li> <p> <code>AUTHOR_PRO</code>: Author
      * Pro adds Generative BI capabilities to the Author role. Author Pros can author
      * dashboards with natural language with Amazon Q, build stories with Amazon Q,
      * create Topics for Q&amp;A, and generate executive summaries from dashboards.</p>
      * </li> <li> <p> <code>ADMIN_PRO</code>: Admin Pros are Author Pros who can also
-     * manage Amazon QuickSight administrative settings. Admin Pro users are billed at
+     * manage Amazon Quick Sight administrative settings. Admin Pro users are billed at
      * Author Pro pricing.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This role
      * isn't currently available for use.</p> </li> <li> <p>
      * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
@@ -88,8 +88,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the IAM user or role that you are registering with Amazon
-     * QuickSight. </p>
+     * <p>The ARN of the IAM user or role that you are registering with Amazon Quick
+     * Sight. </p>
      */
     inline const Aws::String& GetIamArn() const { return m_iamArn; }
     inline bool IamArnHasBeenSet() const { return m_iamArnHasBeenSet; }
@@ -103,10 +103,9 @@ namespace Model
     /**
      * <p>You need to use this parameter only when you register one or more users using
      * an assumed IAM role. You don't need to provide the session name for other
-     * scenarios, for example when you are registering an IAM user or an Amazon
-     * QuickSight user. You can register multiple users using the same IAM role if each
-     * user has a different session name. For more information on assuming IAM roles,
-     * see <a
+     * scenarios, for example when you are registering an IAM user or an Amazon Quick
+     * Sight user. You can register multiple users using the same IAM role if each user
+     * has a different session name. For more information on assuming IAM roles, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>CLI Reference.</i> </p>
      */
@@ -122,7 +121,7 @@ namespace Model
     /**
      * <p>The ID for the Amazon Web Services account that the user is in. Currently,
      * you use the ID for the Amazon Web Services account that contains your Amazon
-     * QuickSight account.</p>
+     * Quick Sight account.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
@@ -146,7 +145,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon QuickSight user name that you want to create for the user you are
+     * <p>The Amazon Quick Sight user name that you want to create for the user you are
      * registering.</p>
      */
     inline const Aws::String& GetUserName() const { return m_userName; }
@@ -169,13 +168,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
      * </code> instead.</p> <p>A set of custom permissions includes any combination of
      * these restrictions. Currently, you need to create the profile names for custom
-     * permission sets by using the QuickSight console. Then, you use the
+     * permission sets by using the Quick Sight console. Then, you use the
      * <code>RegisterUser</code> API operation to assign the named set of permissions
-     * to a QuickSight user. </p> <p>QuickSight custom permissions are applied through
-     * IAM policies. Therefore, they override the permissions typically granted by
-     * assigning QuickSight users to one of the default security cohorts in QuickSight
-     * (admin, author, reader, admin pro, author pro, reader pro).</p> <p>This feature
-     * is available only to QuickSight Enterprise edition subscriptions.</p>
+     * to a Quick Sight user. </p> <p>Quick Sight custom permissions are applied
+     * through IAM policies. Therefore, they override the permissions typically granted
+     * by assigning Quick Sight users to one of the default security cohorts in Quick
+     * Sight (admin, author, reader, admin pro, author pro, reader pro).</p> <p>This
+     * feature is available only to Quick Sight Enterprise edition subscriptions.</p>
      */
     inline const Aws::String& GetCustomPermissionsName() const { return m_customPermissionsName; }
     inline bool CustomPermissionsNameHasBeenSet() const { return m_customPermissionsNameHasBeenSet; }
@@ -188,7 +187,7 @@ namespace Model
     ///@{
     /**
      * <p>The type of supported external login provider that provides identity to let a
-     * user federate into Amazon QuickSight with an associated Identity and Access
+     * user federate into Amazon Quick Sight with an associated Identity and Access
      * Management(IAM) role. The type of supported external login provider can be one
      * of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon Cognito. The
      * provider URL is cognito-identity.amazonaws.com. When choosing the
@@ -210,7 +209,7 @@ namespace Model
     ///@{
     /**
      * <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity
-     * to let a user federate into QuickSight with an associated Identity and Access
+     * to let a user federate into Quick Sight with an associated Identity and Access
      * Management(IAM) role. This parameter should only be used when
      * <code>ExternalLoginFederationProviderType</code> parameter is set to
      * <code>CUSTOM_OIDC</code>.</p>

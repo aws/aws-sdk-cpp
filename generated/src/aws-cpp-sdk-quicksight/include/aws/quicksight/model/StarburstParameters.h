@@ -111,7 +111,7 @@ namespace Model
     ///@{
     /**
      * <p>An object that contains information needed to create a data source connection
-     * between an QuickSight account and Starburst.</p>
+     * between an Quick Sight account and Starburst.</p>
      */
     inline const OAuthParameters& GetOAuthParameters() const { return m_oAuthParameters; }
     inline bool OAuthParametersHasBeenSet() const { return m_oAuthParametersHasBeenSet; }

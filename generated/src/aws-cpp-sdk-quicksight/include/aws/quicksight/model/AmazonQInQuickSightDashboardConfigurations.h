@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>A collection of Amazon Q feature configurations in an embedded QuickSight
+   * <p>A collection of Amazon Q feature configurations in an embedded Quick Sight
    * dashboard.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AmazonQInQuickSightDashboardConfigurations">AWS
    * API Reference</a></p>
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A generated executive summary of an embedded QuickSight dashboard.</p>
+     * <p>A generated executive summary of an embedded Quick Sight dashboard.</p>
      */
     inline const ExecutiveSummaryConfigurations& GetExecutiveSummary() const { return m_executiveSummary; }
     inline bool ExecutiveSummaryHasBeenSet() const { return m_executiveSummaryHasBeenSet; }

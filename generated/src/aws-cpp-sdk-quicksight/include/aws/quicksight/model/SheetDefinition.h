@@ -103,8 +103,8 @@ namespace Model
      * <p>The list of parameter controls that are on a sheet.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-controls.html">Using
-     * a Control with a Parameter in Amazon QuickSight</a> in the <i>Amazon QuickSight
-     * User Guide</i>.</p>
+     * a Control with a Parameter in Amazon Quick Sight</a> in the <i>Amazon Quick
+     * Suite User Guide</i>.</p>
      */
     inline const Aws::Vector<ParameterControl>& GetParameterControls() const { return m_parameterControls; }
     inline bool ParameterControlsHasBeenSet() const { return m_parameterControlsHasBeenSet; }
@@ -121,7 +121,7 @@ namespace Model
      * <p>The list of filter controls that are on a sheet.</p> <p>For more information,
      * see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/filter-controls.html">Adding
-     * filter controls to analysis sheets</a> in the <i>Amazon QuickSight User
+     * filter controls to analysis sheets</a> in the <i>Amazon Quick Suite User
      * Guide</i>.</p>
      */
     inline const Aws::Vector<FilterControl>& GetFilterControls() const { return m_filterControls; }
@@ -182,7 +182,7 @@ namespace Model
      * <p>Layouts define how the components of a sheet are arranged.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types
-     * of layout</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * of layout</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const Aws::Vector<Layout>& GetLayouts() const { return m_layouts; }
     inline bool LayoutsHasBeenSet() const { return m_layoutsHasBeenSet; }

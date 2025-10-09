@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the QuickSight Q Search configuration.</p>
+     * <p>The status of the Quick Sight Q Search configuration.</p>
      */
     inline QSearchStatus GetQSearchStatus() const { return m_qSearchStatus; }
     inline void SetQSearchStatus(QSearchStatus value) { m_qSearchStatusHasBeenSet = true; m_qSearchStatus = value; }

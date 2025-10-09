@@ -44,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of Amazon Resource Names (ARNs) for QuickSight users or groups.</p>
+     * <p>An array of Amazon Resource Names (ARNs) for Quick Sight users or groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPrincipals() const { return m_principals; }
     inline bool PrincipalsHasBeenSet() const { return m_principalsHasBeenSet; }

@@ -30,6 +30,11 @@ ApplicationTheme& ApplicationTheme::operator =(JsonView jsonValue)
     m_brandColorPalette = jsonValue.GetObject("BrandColorPalette");
     m_brandColorPaletteHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ContextualAccentPalette"))
+  {
+    m_contextualAccentPalette = jsonValue.GetObject("ContextualAccentPalette");
+    m_contextualAccentPaletteHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("BrandElementStyle"))
   {
     m_brandElementStyle = jsonValue.GetObject("BrandElementStyle");
@@ -45,6 +50,12 @@ JsonValue ApplicationTheme::Jsonize() const
   if(m_brandColorPaletteHasBeenSet)
   {
    payload.WithObject("BrandColorPalette", m_brandColorPalette.Jsonize());
+
+  }
+
+  if(m_contextualAccentPaletteHasBeenSet)
+  {
+   payload.WithObject("ContextualAccentPalette", m_contextualAccentPalette.Jsonize());
 
   }
 

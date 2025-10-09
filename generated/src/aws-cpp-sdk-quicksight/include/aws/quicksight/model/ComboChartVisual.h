@@ -33,7 +33,7 @@ namespace Model
    * <p>A combo chart.</p> <p>The <code>ComboChartVisual</code> includes stacked bar
    * combo charts and clustered bar combo charts</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/combo-charts.html">Using
-   * combo charts</a> in the <i>Amazon QuickSight User Guide</i>.</p><p><h3>See
+   * combo charts</a> in the <i>Amazon Quick Suite User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ComboChartVisual">AWS
    * API Reference</a></p>

@@ -37,12 +37,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The edition of QuickSight that you want your account to have. Currently, you
-     * can choose from <code>ENTERPRISE</code> or <code>ENTERPRISE_AND_Q</code>.</p>
-     * <p>If you choose <code>ENTERPRISE_AND_Q</code>, the following parameters are
-     * required:</p> <ul> <li> <p> <code>FirstName</code> </p> </li> <li> <p>
-     * <code>LastName</code> </p> </li> <li> <p> <code>EmailAddress</code> </p> </li>
-     * <li> <p> <code>ContactNumber</code> </p> </li> </ul>
+     * <p>The edition of Amazon Quick Sight that you want your account to have.
+     * Currently, you can choose from <code>ENTERPRISE</code> or
+     * <code>ENTERPRISE_AND_Q</code>.</p> <p>If you choose
+     * <code>ENTERPRISE_AND_Q</code>, the following parameters are required:</p> <ul>
+     * <li> <p> <code>FirstName</code> </p> </li> <li> <p> <code>LastName</code> </p>
+     * </li> <li> <p> <code>EmailAddress</code> </p> </li> <li> <p>
+     * <code>ContactNumber</code> </p> </li> </ul>
      */
     inline Edition GetEdition() const { return m_edition; }
     inline bool EditionHasBeenSet() const { return m_editionHasBeenSet; }
@@ -52,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The method that you want to use to authenticate your QuickSight account.</p>
+     * <p>The method that you want to use to authenticate your Quick Sight account.</p>
      * <p>If you choose <code>ACTIVE_DIRECTORY</code>, provide an
      * <code>ActiveDirectoryName</code> and an <code>AdminGroup</code> associated with
      * your Active Directory.</p> <p>If you choose <code>IAM_IDENTITY_CENTER</code>,
@@ -68,7 +69,7 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Web Services account ID of the account that you're using to create
-     * your QuickSight account.</p>
+     * your Quick Sight account.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
@@ -80,9 +81,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of your QuickSight account. This name is unique over all of Amazon
-     * Web Services, and it appears only when users sign in. You can't change
-     * <code>AccountName</code> value after the QuickSight account is created.</p>
+     * <p>The name of your Amazon Quick Sight account. This name is unique over all of
+     * Amazon Web Services, and it appears only when users sign in. You can't change
+     * <code>AccountName</code> value after the Amazon Quick Sight account is
+     * created.</p>
      */
     inline const Aws::String& GetAccountName() const { return m_accountName; }
     inline bool AccountNameHasBeenSet() const { return m_accountNameHasBeenSet; }
@@ -94,8 +96,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The email address that you want QuickSight to send notifications to regarding
-     * your QuickSight account or QuickSight subscription.</p>
+     * <p>The email address that you want Quick Sight to send notifications to
+     * regarding your Quick Sight account or Quick Sight subscription.</p>
      */
     inline const Aws::String& GetNotificationEmail() const { return m_notificationEmail; }
     inline bool NotificationEmailHasBeenSet() const { return m_notificationEmailHasBeenSet; }
@@ -109,7 +111,7 @@ namespace Model
     /**
      * <p>The name of your Active Directory. This field is required if
      * <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new
-     * QuickSight account.</p>
+     * Quick Sight account.</p>
      */
     inline const Aws::String& GetActiveDirectoryName() const { return m_activeDirectoryName; }
     inline bool ActiveDirectoryNameHasBeenSet() const { return m_activeDirectoryNameHasBeenSet; }
@@ -121,9 +123,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The realm of the Active Directory that is associated with your QuickSight
+     * <p>The realm of the Active Directory that is associated with your Quick Sight
      * account. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected
-     * authentication method of the new QuickSight account.</p>
+     * authentication method of the new Quick Sight account.</p>
      */
     inline const Aws::String& GetRealm() const { return m_realm; }
     inline bool RealmHasBeenSet() const { return m_realmHasBeenSet; }
@@ -135,7 +137,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the Active Directory that is associated with your QuickSight
+     * <p>The ID of the Active Directory that is associated with your Quick Sight
      * account.</p>
      */
     inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
@@ -151,15 +153,15 @@ namespace Model
      * <p>The admin group associated with your Active Directory or IAM Identity Center
      * account. Either this field or the <code>AdminProGroup</code> field is required
      * if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the
-     * selected authentication method of the new QuickSight account.</p> <p>For more
-     * information about using IAM Identity Center in QuickSight, see <a
+     * selected authentication method of the new Quick Sight account.</p> <p>For more
+     * information about using IAM Identity Center in Amazon Quick Sight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
-     * IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight
-     * User Guide. For more information about using Active Directory in QuickSight, see
-     * <a
+     * IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon
+     * Quick Sight User Guide. For more information about using Active Directory in
+     * Amazon Quick Sight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
-     * Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User
-     * Guide.</p>
+     * Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon
+     * Quick Sight User Guide.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAdminGroup() const { return m_adminGroup; }
     inline bool AdminGroupHasBeenSet() const { return m_adminGroupHasBeenSet; }
@@ -174,15 +176,15 @@ namespace Model
     ///@{
     /**
      * <p>The author group associated with your Active Directory or IAM Identity Center
-     * account.</p> <p>For more information about using IAM Identity Center in
-     * QuickSight, see <a
+     * account.</p> <p>For more information about using IAM Identity Center in Amazon
+     * Quick Sight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
-     * IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight
-     * User Guide. For more information about using Active Directory in QuickSight, see
-     * <a
+     * IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon
+     * Quick Sight User Guide. For more information about using Active Directory in
+     * Amazon Quick Sight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
-     * Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User
-     * Guide.</p>
+     * Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon
+     * Quick Sight User Guide.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAuthorGroup() const { return m_authorGroup; }
     inline bool AuthorGroupHasBeenSet() const { return m_authorGroupHasBeenSet; }
@@ -197,15 +199,15 @@ namespace Model
     ///@{
     /**
      * <p>The reader group associated with your Active Directory or IAM Identity Center
-     * account.</p> <p>For more information about using IAM Identity Center in
-     * QuickSight, see <a
+     * account.</p> <p>For more information about using IAM Identity Center in Amazon
+     * Quick Sight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
-     * IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight
-     * User Guide. For more information about using Active Directory in QuickSight, see
-     * <a
+     * IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon
+     * Quick Sight User Guide. For more information about using Active Directory in
+     * Amazon Quick Sight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
-     * Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User
-     * Guide.</p>
+     * Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon
+     * Quick Sight User Guide.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReaderGroup() const { return m_readerGroup; }
     inline bool ReaderGroupHasBeenSet() const { return m_readerGroupHasBeenSet; }
@@ -222,15 +224,15 @@ namespace Model
      * <p>The admin pro group associated with your Active Directory or IAM Identity
      * Center account. Either this field or the <code>AdminGroup</code> field is
      * required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is
-     * the selected authentication method of the new QuickSight account.</p> <p>For
-     * more information about using IAM Identity Center in QuickSight, see <a
+     * the selected authentication method of the new Quick Sight account.</p> <p>For
+     * more information about using IAM Identity Center in Amazon Quick Sight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
-     * IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight
-     * User Guide. For more information about using Active Directory in QuickSight, see
-     * <a
+     * IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon
+     * Quick Sight User Guide. For more information about using Active Directory in
+     * Amazon Quick Sight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
-     * Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User
-     * Guide.</p>
+     * Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon
+     * Quick Sight User Guide.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAdminProGroup() const { return m_adminProGroup; }
     inline bool AdminProGroupHasBeenSet() const { return m_adminProGroupHasBeenSet; }
@@ -246,14 +248,14 @@ namespace Model
     /**
      * <p>The author pro group associated with your Active Directory or IAM Identity
      * Center account.</p> <p>For more information about using IAM Identity Center in
-     * QuickSight, see <a
+     * Amazon Quick Sight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
-     * IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight
-     * User Guide. For more information about using Active Directory in QuickSight, see
-     * <a
+     * IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon
+     * Quick Sight User Guide. For more information about using Active Directory in
+     * Amazon Quick Sight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
-     * Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User
-     * Guide.</p>
+     * Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon
+     * Quick Sight User Guide.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAuthorProGroup() const { return m_authorProGroup; }
     inline bool AuthorProGroupHasBeenSet() const { return m_authorProGroupHasBeenSet; }
@@ -269,14 +271,14 @@ namespace Model
     /**
      * <p>The reader pro group associated with your Active Directory or IAM Identity
      * Center account.</p> <p>For more information about using IAM Identity Center in
-     * QuickSight, see <a
+     * Amazon Quick Sight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
-     * IAM Identity Center with QuickSight Enterprise Edition</a> in the QuickSight
-     * User Guide. For more information about using Active Directory in QuickSight, see
-     * <a
+     * IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon
+     * Quick Sight User Guide. For more information about using Active Directory in
+     * Amazon Quick Sight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
-     * Active Directory with QuickSight Enterprise Edition</a> in the QuickSight User
-     * Guide.</p>
+     * Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon
+     * Quick Sight User Guide.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReaderProGroup() const { return m_readerProGroup; }
     inline bool ReaderProGroupHasBeenSet() const { return m_readerProGroupHasBeenSet; }
@@ -290,9 +292,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The first name of the author of the QuickSight account to use for future
-     * communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the
-     * selected edition of the new QuickSight account.</p>
+     * <p>The first name of the author of the Amazon Quick Sight account to use for
+     * future communications. This field is required if <code>ENTERPPRISE_AND_Q</code>
+     * is the selected edition of the new Amazon Quick Sight account.</p>
      */
     inline const Aws::String& GetFirstName() const { return m_firstName; }
     inline bool FirstNameHasBeenSet() const { return m_firstNameHasBeenSet; }
@@ -304,9 +306,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The last name of the author of the QuickSight account to use for future
-     * communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the
-     * selected edition of the new QuickSight account.</p>
+     * <p>The last name of the author of the Amazon Quick Sight account to use for
+     * future communications. This field is required if <code>ENTERPPRISE_AND_Q</code>
+     * is the selected edition of the new Amazon Quick Sight account.</p>
      */
     inline const Aws::String& GetLastName() const { return m_lastName; }
     inline bool LastNameHasBeenSet() const { return m_lastNameHasBeenSet; }
@@ -318,9 +320,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The email address of the author of the QuickSight account to use for future
-     * communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the
-     * selected edition of the new QuickSight account.</p>
+     * <p>The email address of the author of the Amazon Quick Sight account to use for
+     * future communications. This field is required if <code>ENTERPPRISE_AND_Q</code>
+     * is the selected edition of the new Amazon Quick Sight account.</p>
      */
     inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
     inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
@@ -332,9 +334,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>A 10-digit phone number for the author of the QuickSight account to use for
-     * future communications. This field is required if <code>ENTERPPRISE_AND_Q</code>
-     * is the selected edition of the new QuickSight account.</p>
+     * <p>A 10-digit phone number for the author of the Amazon Quick Sight account to
+     * use for future communications. This field is required if
+     * <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon Quick
+     * Sight account.</p>
      */
     inline const Aws::String& GetContactNumber() const { return m_contactNumber; }
     inline bool ContactNumberHasBeenSet() const { return m_contactNumberHasBeenSet; }

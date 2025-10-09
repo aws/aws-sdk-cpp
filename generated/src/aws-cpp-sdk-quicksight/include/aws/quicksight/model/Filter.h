@@ -51,7 +51,7 @@ namespace Model
      * <p>A <code>CategoryFilter</code> filters text values.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/add-a-text-filter-data-prep.html">Adding
-     * text filters</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * text filters</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const CategoryFilter& GetCategoryFilter() const { return m_categoryFilter; }
     inline bool CategoryFilterHasBeenSet() const { return m_categoryFilterHasBeenSet; }

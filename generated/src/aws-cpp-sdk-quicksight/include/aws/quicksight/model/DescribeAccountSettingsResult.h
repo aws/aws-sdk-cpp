@@ -35,14 +35,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The QuickSight settings for this Amazon Web Services account. This
-     * information includes the edition of Amazon QuickSight that you subscribed to
-     * (Standard or Enterprise) and the notification email for the QuickSight
-     * subscription. </p> <p>In the QuickSight console, the QuickSight subscription is
-     * sometimes referred to as a QuickSight "account" even though it's technically not
-     * an account by itself. Instead, it's a subscription to the QuickSight service for
-     * your Amazon Web Services account. The edition that you subscribe to applies to
-     * QuickSight in every Amazon Web Services Region where you use it.</p>
+     * <p>The Amazon Quick Sight settings for this Amazon Web Services account. This
+     * information includes the edition of Amazon Quick Sight that you subscribed to
+     * (Standard or Enterprise) and the notification email for the Amazon Quick Sight
+     * subscription. </p> <p>In the Quick Sight console, the Amazon Quick Sight
+     * subscription is sometimes referred to as a Quick Sight "account" even though
+     * it's technically not an account by itself. Instead, it's a subscription to the
+     * Amazon Quick Sight service for your Amazon Web Services account. The edition
+     * that you subscribe to applies to QuickSight in every Amazon Web Services Region
+     * where you use it.</p>
      */
     inline const AccountSettings& GetAccountSettings() const { return m_accountSettings; }
     template<typename AccountSettingsT = AccountSettings>

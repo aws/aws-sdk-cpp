@@ -36,10 +36,10 @@ namespace Model
    * charts</p> </li> <li> <p>Donut charts</p> </li> </ul> <p>For more information,
    * see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/pie-chart.html">Using
-   * pie charts</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>For more
+   * pie charts</a> in the <i>Amazon Quick Suite User Guide</i>.</p> <p>For more
    * information, see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/donut-chart.html">Using
-   * donut charts</a> in the <i>Amazon QuickSight User Guide</i>.</p><p><h3>See
+   * donut charts</a> in the <i>Amazon Quick Suite User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PieChartVisual">AWS
    * API Reference</a></p>

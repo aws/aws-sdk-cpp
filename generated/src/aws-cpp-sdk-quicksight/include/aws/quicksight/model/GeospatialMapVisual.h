@@ -33,7 +33,7 @@ namespace Model
    * <p>A geospatial map or a points on map visual.</p> <p>For more information, see
    * <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/point-maps.html">Creating
-   * point maps</a> in the <i>Amazon QuickSight User Guide</i>.</p><p><h3>See
+   * point maps</a> in the <i>Amazon Quick Suite User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GeospatialMapVisual">AWS
    * API Reference</a></p>

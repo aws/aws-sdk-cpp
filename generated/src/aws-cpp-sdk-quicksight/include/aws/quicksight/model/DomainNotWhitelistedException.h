@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>The domain specified isn't on the allow list. All domains for embedded
-   * dashboards must be added to the approved list by an Amazon QuickSight
+   * dashboards must be added to the approved list by an Amazon Quick Suite
    * admin.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DomainNotWhitelistedException">AWS
    * API Reference</a></p>

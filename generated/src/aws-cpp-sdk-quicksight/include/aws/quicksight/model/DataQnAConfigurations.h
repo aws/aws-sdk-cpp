@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p>The generative Q&amp;A settings of an embedded QuickSight
+   * <p>The generative Q&amp;A settings of an embedded Quick Sight
    * console.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataQnAConfigurations">AWS
    * API Reference</a></p>
@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The generative Q&amp;A settings of an embedded QuickSight console.</p>
+     * <p>The generative Q&amp;A settings of an embedded Quick Sight console.</p>
      */
     inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }

@@ -41,8 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID for the Amazon Web Services account that you want to update QuickSight
-     * customizations for.</p>
+     * <p>The ID for the Amazon Web Services account that you want to update Quick
+     * Sight customizations for.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
@@ -54,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The namespace that you want to update QuickSight customizations for.</p>
+     * <p>The namespace that you want to update Quick Sight customizations for.</p>
      */
     inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
@@ -66,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The QuickSight customizations you're updating. </p>
+     * <p>The Quick Sight customizations you're updating. </p>
      */
     inline const AccountCustomization& GetAccountCustomization() const { return m_accountCustomization; }
     inline bool AccountCustomizationHasBeenSet() const { return m_accountCustomizationHasBeenSet; }

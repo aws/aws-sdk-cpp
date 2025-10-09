@@ -84,11 +84,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
      * </code> API operation. For <code>SourceTemplate</code>, specify the Amazon
      * Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN
-     * can contain any Amazon Web Services account and any QuickSight-supported Amazon
-     * Web Services Region. </p> <p>Use the <code>DataSetReferences</code> entity
-     * within <code>SourceTemplate</code> to list the replacement datasets for the
-     * placeholders listed in the original. The schema in each dataset must match its
-     * placeholder. </p>
+     * can contain any Amazon Web Services account and any Amazon Quick Sight-supported
+     * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
+     * entity within <code>SourceTemplate</code> to list the replacement datasets for
+     * the placeholders listed in the original. The schema in each dataset must match
+     * its placeholder. </p>
      */
     inline const DashboardSourceEntity& GetSourceEntity() const { return m_sourceEntity; }
     inline bool SourceEntityHasBeenSet() const { return m_sourceEntityHasBeenSet; }
@@ -129,9 +129,9 @@ namespace Model
      * <p>Options for publishing the dashboard when you create it:</p> <ul> <li> <p>
      * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
      * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-     * set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
-     * published dashboard, which can be used for ad hoc (one-time) filtering. This
-     * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
+     * set to <code>DISABLED</code>, Amazon Quick Sight disables the left filter pane
+     * on the published dashboard, which can be used for ad hoc (one-time) filtering.
+     * This option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
      * to export data to .CSV format isn't enabled when this is set to
@@ -139,6 +139,11 @@ namespace Model
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
      * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p>
+     * </li> <li> <p> <code>AvailabilityStatus</code> for
+     * <code>QuickSuiteActionsOption</code> - This status can be either
+     * <code>ENABLED</code> or <code>DISABLED</code>. Features related to Actions in
+     * Amazon Quick Suite on dashboards are disabled when this is set to
+     * <code>DISABLED</code>. This option is <code>DISABLED</code> by default.</p>
      * </li> <li> <p> <code>AvailabilityStatus</code> for
      * <code>ExecutiveSummaryOption</code> - This status can be either
      * <code>ENABLED</code> or <code>DISABLED</code>. The option to build an executive

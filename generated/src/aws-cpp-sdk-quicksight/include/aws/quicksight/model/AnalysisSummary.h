@@ -66,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the analysis. This name is displayed in the QuickSight console.
+     * <p>The name of the analysis. This name is displayed in the Quick Sight console.
      * </p>
      */
     inline const Aws::String& GetName() const { return m_name; }

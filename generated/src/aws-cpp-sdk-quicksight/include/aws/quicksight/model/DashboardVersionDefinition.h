@@ -96,7 +96,7 @@ namespace Model
      * that can transfer a value for use by an action or an object.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters
-     * in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * in Amazon Quick Sight</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const Aws::Vector<ParameterDeclaration>& GetParameterDeclarations() const { return m_parameterDeclarations; }
     inline bool ParameterDeclarationsHasBeenSet() const { return m_parameterDeclarationsHasBeenSet; }
@@ -112,7 +112,7 @@ namespace Model
     /**
      * <p>The filter definitions for a dashboard.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/adding-a-filter.html">Filtering
-     * Data in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * Data in Amazon Quick Sight</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const Aws::Vector<FilterGroup>& GetFilterGroups() const { return m_filterGroups; }
     inline bool FilterGroupsHasBeenSet() const { return m_filterGroupsHasBeenSet; }

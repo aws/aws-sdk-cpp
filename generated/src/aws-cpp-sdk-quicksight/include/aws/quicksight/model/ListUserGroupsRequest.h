@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon QuickSight user name that you want to list group memberships
+     * <p>The Amazon Quick Sight user name that you want to list group memberships
      * for.</p>
      */
     inline const Aws::String& GetUserName() const { return m_userName; }
@@ -54,7 +54,7 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Web Services account ID that the user is in. Currently, you use
-     * the ID for the Amazon Web Services account that contains your Amazon QuickSight
+     * the ID for the Amazon Web Services account that contains your Amazon Quick Sight
      * account.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }

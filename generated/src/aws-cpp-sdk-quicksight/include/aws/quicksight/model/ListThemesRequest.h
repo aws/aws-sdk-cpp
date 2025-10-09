@@ -80,8 +80,8 @@ namespace Model
      * <p>The type of themes that you want to list. Valid options include the
      * following:</p> <ul> <li> <p> <code>ALL (default)</code>- Display all existing
      * themes.</p> </li> <li> <p> <code>CUSTOM</code> - Display only the themes created
-     * by people using Amazon QuickSight.</p> </li> <li> <p> <code>QUICKSIGHT</code> -
-     * Display only the starting themes defined by QuickSight.</p> </li> </ul>
+     * by people using Amazon Quick Sight.</p> </li> <li> <p> <code>QUICKSIGHT</code> -
+     * Display only the starting themes defined by Quick Sight.</p> </li> </ul>
      */
     inline ThemeType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

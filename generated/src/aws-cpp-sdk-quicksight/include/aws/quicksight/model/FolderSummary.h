@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>A summary of information about an existing QuickSight folder. </p><p><h3>See
+   * <p>A summary of information about an existing Quick Sight folder. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FolderSummary">AWS
    * API Reference</a></p>

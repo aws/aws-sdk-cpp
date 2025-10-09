@@ -40,6 +40,11 @@ DataSourceCredentials& DataSourceCredentials::operator =(JsonView jsonValue)
     m_secretArn = jsonValue.GetString("SecretArn");
     m_secretArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("WebProxyCredentials"))
+  {
+    m_webProxyCredentials = jsonValue.GetObject("WebProxyCredentials");
+    m_webProxyCredentialsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +67,12 @@ JsonValue DataSourceCredentials::Jsonize() const
   if(m_secretArnHasBeenSet)
   {
    payload.WithString("SecretArn", m_secretArn);
+
+  }
+
+  if(m_webProxyCredentialsHasBeenSet)
+  {
+   payload.WithObject("WebProxyCredentials", m_webProxyCredentials.Jsonize());
 
   }
 

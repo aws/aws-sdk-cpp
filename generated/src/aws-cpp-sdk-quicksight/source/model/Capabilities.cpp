@@ -150,6 +150,66 @@ Capabilities& Capabilities::operator =(JsonView jsonValue)
     m_analysis = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("Analysis"));
     m_analysisHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("Automate"))
+  {
+    m_automate = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("Automate"));
+    m_automateHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Flow"))
+  {
+    m_flow = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("Flow"));
+    m_flowHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("PublishWithoutApproval"))
+  {
+    m_publishWithoutApproval = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("PublishWithoutApproval"));
+    m_publishWithoutApprovalHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("UseBedrockModels"))
+  {
+    m_useBedrockModels = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseBedrockModels"));
+    m_useBedrockModelsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("PerformFlowUiTask"))
+  {
+    m_performFlowUiTask = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("PerformFlowUiTask"));
+    m_performFlowUiTaskHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("UseAgentWebSearch"))
+  {
+    m_useAgentWebSearch = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseAgentWebSearch"));
+    m_useAgentWebSearchHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("KnowledgeBase"))
+  {
+    m_knowledgeBase = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("KnowledgeBase"));
+    m_knowledgeBaseHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Action"))
+  {
+    m_action = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("Action"));
+    m_actionHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Space"))
+  {
+    m_space = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("Space"));
+    m_spaceHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ChatAgent"))
+  {
+    m_chatAgent = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ChatAgent"));
+    m_chatAgentHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("CreateChatAgents"))
+  {
+    m_createChatAgents = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateChatAgents"));
+    m_createChatAgentsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Research"))
+  {
+    m_research = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("Research"));
+    m_researchHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -280,6 +340,66 @@ JsonValue Capabilities::Jsonize() const
   if(m_analysisHasBeenSet)
   {
    payload.WithString("Analysis", CapabilityStateMapper::GetNameForCapabilityState(m_analysis));
+  }
+
+  if(m_automateHasBeenSet)
+  {
+   payload.WithString("Automate", CapabilityStateMapper::GetNameForCapabilityState(m_automate));
+  }
+
+  if(m_flowHasBeenSet)
+  {
+   payload.WithString("Flow", CapabilityStateMapper::GetNameForCapabilityState(m_flow));
+  }
+
+  if(m_publishWithoutApprovalHasBeenSet)
+  {
+   payload.WithString("PublishWithoutApproval", CapabilityStateMapper::GetNameForCapabilityState(m_publishWithoutApproval));
+  }
+
+  if(m_useBedrockModelsHasBeenSet)
+  {
+   payload.WithString("UseBedrockModels", CapabilityStateMapper::GetNameForCapabilityState(m_useBedrockModels));
+  }
+
+  if(m_performFlowUiTaskHasBeenSet)
+  {
+   payload.WithString("PerformFlowUiTask", CapabilityStateMapper::GetNameForCapabilityState(m_performFlowUiTask));
+  }
+
+  if(m_useAgentWebSearchHasBeenSet)
+  {
+   payload.WithString("UseAgentWebSearch", CapabilityStateMapper::GetNameForCapabilityState(m_useAgentWebSearch));
+  }
+
+  if(m_knowledgeBaseHasBeenSet)
+  {
+   payload.WithString("KnowledgeBase", CapabilityStateMapper::GetNameForCapabilityState(m_knowledgeBase));
+  }
+
+  if(m_actionHasBeenSet)
+  {
+   payload.WithString("Action", CapabilityStateMapper::GetNameForCapabilityState(m_action));
+  }
+
+  if(m_spaceHasBeenSet)
+  {
+   payload.WithString("Space", CapabilityStateMapper::GetNameForCapabilityState(m_space));
+  }
+
+  if(m_chatAgentHasBeenSet)
+  {
+   payload.WithString("ChatAgent", CapabilityStateMapper::GetNameForCapabilityState(m_chatAgent));
+  }
+
+  if(m_createChatAgentsHasBeenSet)
+  {
+   payload.WithString("CreateChatAgents", CapabilityStateMapper::GetNameForCapabilityState(m_createChatAgents));
+  }
+
+  if(m_researchHasBeenSet)
+  {
+   payload.WithString("Research", CapabilityStateMapper::GetNameForCapabilityState(m_research));
   }
 
   return payload;

@@ -30,9 +30,9 @@ namespace Model
    * <p>The declaration definition of a parameter.</p> <p>For more information, see
    * <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters
-   * in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>This
-   * is a union type structure. For this structure to be valid, only one of the
-   * attributes can be defined.</p><p><h3>See Also:</h3>   <a
+   * in Amazon Quick Sight</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
+   * <p>This is a union type structure. For this structure to be valid, only one of
+   * the attributes can be defined.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ParameterDeclaration">AWS
    * API Reference</a></p>
    */

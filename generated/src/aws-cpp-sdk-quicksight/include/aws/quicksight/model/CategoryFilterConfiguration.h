@@ -43,7 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of filter configurations. In the QuickSight console, this filter type
+     * <p>A list of filter configurations. In the Quick Sight console, this filter type
      * is called a filter list.</p>
      */
     inline const FilterListConfiguration& GetFilterListConfiguration() const { return m_filterListConfiguration; }
@@ -56,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of custom filter values. In the QuickSight console, this filter type
+     * <p>A list of custom filter values. In the Quick Sight console, this filter type
      * is called a custom filter list.</p>
      */
     inline const CustomFilterListConfiguration& GetCustomFilterListConfiguration() const { return m_customFilterListConfiguration; }

@@ -29,8 +29,8 @@ namespace Model
 {
 
   /**
-   * <p>Metadata structure for an analysis in Amazon QuickSight</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Metadata structure for an analysis in Quick Sight</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Analysis">AWS
    * API Reference</a></p>
    */

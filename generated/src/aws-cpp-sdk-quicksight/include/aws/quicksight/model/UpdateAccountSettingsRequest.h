@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID for the Amazon Web Services account that contains the QuickSight
+     * <p>The ID for the Amazon Web Services account that contains the Quick Sight
      * settings that you want to list.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
@@ -49,8 +49,8 @@ namespace Model
     /**
      * <p>The default namespace for this Amazon Web Services account. Currently, the
      * default is <code>default</code>. IAM users that register for the first time with
-     * QuickSight provide an email address that becomes associated with the default
-     * namespace. </p>
+     * Amazon Quick Sight provide an email address that becomes associated with the
+     * default namespace. </p>
      */
     inline const Aws::String& GetDefaultNamespace() const { return m_defaultNamespace; }
     inline bool DefaultNamespaceHasBeenSet() const { return m_defaultNamespaceHasBeenSet; }
@@ -62,8 +62,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The email address that you want QuickSight to send notifications to regarding
-     * your Amazon Web Services account or QuickSight subscription.</p>
+     * <p>The email address that you want Quick Sight to send notifications to
+     * regarding your Amazon Web Services account or Quick Sight subscription.</p>
      */
     inline const Aws::String& GetNotificationEmail() const { return m_notificationEmail; }
     inline bool NotificationEmailHasBeenSet() const { return m_notificationEmailHasBeenSet; }
@@ -75,7 +75,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A boolean value that determines whether or not an QuickSight account can be
+     * <p>A boolean value that determines whether or not an Quick Sight account can be
      * deleted. A <code>True</code> value doesn't allow the account to be deleted and
      * results in an error message if a user tries to make a
      * <code>DeleteAccountSubscription</code> request. A <code>False</code> value will

@@ -80,6 +80,11 @@ DashboardPublishOptions& DashboardPublishOptions::operator =(JsonView jsonValue)
     m_dataQAEnabledOption = jsonValue.GetObject("DataQAEnabledOption");
     m_dataQAEnabledOptionHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("QuickSuiteActionsOption"))
+  {
+    m_quickSuiteActionsOption = jsonValue.GetObject("QuickSuiteActionsOption");
+    m_quickSuiteActionsOptionHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ExecutiveSummaryOption"))
   {
     m_executiveSummaryOption = jsonValue.GetObject("ExecutiveSummaryOption");
@@ -160,6 +165,12 @@ JsonValue DashboardPublishOptions::Jsonize() const
   if(m_dataQAEnabledOptionHasBeenSet)
   {
    payload.WithObject("DataQAEnabledOption", m_dataQAEnabledOption.Jsonize());
+
+  }
+
+  if(m_quickSuiteActionsOptionHasBeenSet)
+  {
+   payload.WithObject("QuickSuiteActionsOption", m_quickSuiteActionsOption.Jsonize());
 
   }
 

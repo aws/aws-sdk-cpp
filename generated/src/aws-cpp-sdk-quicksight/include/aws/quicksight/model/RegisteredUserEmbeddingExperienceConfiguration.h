@@ -29,10 +29,10 @@ namespace Model
 
   /**
    * <p>The type of experience you want to embed. For registered users, you can embed
-   * QuickSight dashboards or the QuickSight console.</p>  <p>Exactly one of
-   * the experience configurations is required. You can choose <code>Dashboard</code>
-   * or <code>QuickSightConsole</code>. You cannot choose more than one experience
-   * configuration.</p> <p><h3>See Also:</h3>   <a
+   * QuickSight dashboards or the Amazon Quick Sight console.</p>  <p>Exactly
+   * one of the experience configurations is required. You can choose
+   * <code>Dashboard</code> or <code>QuickSightConsole</code>. You cannot choose more
+   * than one experience configuration.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RegisteredUserEmbeddingExperienceConfiguration">AWS
    * API Reference</a></p>
    */
@@ -59,18 +59,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration details for providing each QuickSight console embedding
-     * experience. This can be used along with custom permissions to restrict access to
-     * certain features. For more information, see <a
+     * <p>The configuration details for providing each Amazon Quick Sight console
+     * embedding experience. This can be used along with custom permissions to restrict
+     * access to certain features. For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing
-     * Access to the QuickSight Console</a> in the <i>Amazon QuickSight User
+     * Access to the Amazon Quick Sight Console</a> in the <i>Amazon QuickSight User
      * Guide</i>.</p> <p>Use <code> <a
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a>
      * </code> where you want to provide an authoring portal that allows users to
      * create data sources, datasets, analyses, and dashboards. The users who accesses
-     * an embedded QuickSight console needs to belong to the author or admin security
-     * cohort. If you want to restrict permissions to some of these features, add a
-     * custom permissions profile to the user with the <code> <a
+     * an embedded Amazon Quick Sight console needs to belong to the author or admin
+     * security cohort. If you want to restrict permissions to some of these features,
+     * add a custom permissions profile to the user with the <code> <a
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
      * </code> API operation. Use the <code> <a
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
@@ -78,8 +78,8 @@ namespace Model
      * attached. For more information, see the following sections in the <i>Amazon
      * QuickSight User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-full-console-for-authenticated-users.html">Embedding
-     * the Full Functionality of the QuickSight Console for Authenticated Users</a>
-     * </p> </li> <li> <p> <a
+     * the Full Functionality of the Amazon Quick Sight Console for Authenticated
+     * Users</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing
      * Access to the Amazon QuickSight Console</a> </p> </li> </ul> <p>For more
      * information about the high-level steps for embedding and for an interactive demo
@@ -100,7 +100,7 @@ namespace Model
      * <p>The configuration details for embedding the Q search bar.</p> <p>For more
      * information about embedding the Q search bar, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
-     * Overview</a> in the <i>QuickSight User Guide</i>.</p>
+     * Overview</a> in the <i>Amazon Quick Sight User Guide</i>.</p>
      */
     inline const RegisteredUserQSearchBarEmbeddingConfiguration& GetQSearchBar() const { return m_qSearchBar; }
     inline bool QSearchBarHasBeenSet() const { return m_qSearchBarHasBeenSet; }
@@ -112,7 +112,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of embedding experience. In this case, QuickSight visuals.</p>
+     * <p>The type of embedding experience. In this case, Amazon Quick Sight
+     * visuals.</p>
      */
     inline const RegisteredUserDashboardVisualEmbeddingConfiguration& GetDashboardVisual() const { return m_dashboardVisual; }
     inline bool DashboardVisualHasBeenSet() const { return m_dashboardVisualHasBeenSet; }
@@ -128,7 +129,7 @@ namespace Model
      * experience.</p> <p>For more information about embedding the Generative Q&amp;A
      * experience, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
-     * Overview</a> in the <i>QuickSight User Guide</i>.</p>
+     * Overview</a> in the <i>Amazon Quick Sight User Guide</i>.</p>
      */
     inline const RegisteredUserGenerativeQnAEmbeddingConfiguration& GetGenerativeQnA() const { return m_generativeQnA; }
     inline bool GenerativeQnAHasBeenSet() const { return m_generativeQnAHasBeenSet; }

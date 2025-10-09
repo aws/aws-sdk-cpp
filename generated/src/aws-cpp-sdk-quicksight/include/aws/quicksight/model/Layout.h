@@ -27,9 +27,9 @@ namespace Model
    * <p>A <code>Layout</code> defines the placement of elements within a sheet.</p>
    * <p>For more information, see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types
-   * of layout</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>This is a union
-   * type structure. For this structure to be valid, only one of the attributes can
-   * be defined.</p><p><h3>See Also:</h3>   <a
+   * of layout</a> in the <i>Amazon Quick Suite User Guide</i>.</p> <p>This is a
+   * union type structure. For this structure to be valid, only one of the attributes
+   * can be defined.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Layout">AWS
    * API Reference</a></p>
    */

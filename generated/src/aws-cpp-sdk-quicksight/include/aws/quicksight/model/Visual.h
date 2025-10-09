@@ -67,7 +67,7 @@ namespace Model
     /**
      * <p>A table visual.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/tabular.html">Using
-     * tables as visuals</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * tables as visuals</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const TableVisual& GetTableVisual() const { return m_tableVisual; }
     inline bool TableVisualHasBeenSet() const { return m_tableVisualHasBeenSet; }
@@ -81,7 +81,7 @@ namespace Model
     /**
      * <p>A pivot table.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/pivot-table.html">Using
-     * pivot tables</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * pivot tables</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const PivotTableVisual& GetPivotTableVisual() const { return m_pivotTableVisual; }
     inline bool PivotTableVisualHasBeenSet() const { return m_pivotTableVisualHasBeenSet; }
@@ -95,7 +95,7 @@ namespace Model
     /**
      * <p>A bar chart.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/bar-charts.html">Using
-     * bar charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * bar charts</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const BarChartVisual& GetBarChartVisual() const { return m_barChartVisual; }
     inline bool BarChartVisualHasBeenSet() const { return m_barChartVisualHasBeenSet; }
@@ -109,7 +109,7 @@ namespace Model
     /**
      * <p>A key performance indicator (KPI).</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/kpi.html">Using
-     * KPIs</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * KPIs</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const KPIVisual& GetKPIVisual() const { return m_kPIVisual; }
     inline bool KPIVisualHasBeenSet() const { return m_kPIVisualHasBeenSet; }
@@ -123,7 +123,7 @@ namespace Model
     /**
      * <p>A pie or donut chart.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/pie-chart.html">Using
-     * pie charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * pie charts</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const PieChartVisual& GetPieChartVisual() const { return m_pieChartVisual; }
     inline bool PieChartVisualHasBeenSet() const { return m_pieChartVisualHasBeenSet; }
@@ -137,7 +137,7 @@ namespace Model
     /**
      * <p>A gauge chart.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/gauge-chart.html">Using
-     * gauge charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * gauge charts</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const GaugeChartVisual& GetGaugeChartVisual() const { return m_gaugeChartVisual; }
     inline bool GaugeChartVisualHasBeenSet() const { return m_gaugeChartVisualHasBeenSet; }
@@ -151,7 +151,7 @@ namespace Model
     /**
      * <p>A line chart.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/line-charts.html">Using
-     * line charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * line charts</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const LineChartVisual& GetLineChartVisual() const { return m_lineChartVisual; }
     inline bool LineChartVisualHasBeenSet() const { return m_lineChartVisualHasBeenSet; }
@@ -165,7 +165,7 @@ namespace Model
     /**
      * <p>A heat map.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/heat-map.html">Using
-     * heat maps</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * heat maps</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const HeatMapVisual& GetHeatMapVisual() const { return m_heatMapVisual; }
     inline bool HeatMapVisualHasBeenSet() const { return m_heatMapVisualHasBeenSet; }
@@ -179,7 +179,7 @@ namespace Model
     /**
      * <p>A tree map.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/tree-map.html">Using
-     * tree maps</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * tree maps</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const TreeMapVisual& GetTreeMapVisual() const { return m_treeMapVisual; }
     inline bool TreeMapVisualHasBeenSet() const { return m_treeMapVisualHasBeenSet; }
@@ -194,7 +194,7 @@ namespace Model
      * <p>A geospatial map or a points on map visual.</p> <p>For more information, see
      * <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/point-maps.html">Creating
-     * point maps</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * point maps</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const GeospatialMapVisual& GetGeospatialMapVisual() const { return m_geospatialMapVisual; }
     inline bool GeospatialMapVisualHasBeenSet() const { return m_geospatialMapVisualHasBeenSet; }
@@ -208,7 +208,7 @@ namespace Model
     /**
      * <p>A filled map.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/filled-maps.html">Creating
-     * filled maps</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * filled maps</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const FilledMapVisual& GetFilledMapVisual() const { return m_filledMapVisual; }
     inline bool FilledMapVisualHasBeenSet() const { return m_filledMapVisualHasBeenSet; }
@@ -234,7 +234,7 @@ namespace Model
     /**
      * <p>A funnel chart.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/funnel-visual-content.html">Using
-     * funnel charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * funnel charts</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const FunnelChartVisual& GetFunnelChartVisual() const { return m_funnelChartVisual; }
     inline bool FunnelChartVisualHasBeenSet() const { return m_funnelChartVisualHasBeenSet; }
@@ -248,7 +248,7 @@ namespace Model
     /**
      * <p>A scatter plot.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/scatter-plot.html">Using
-     * scatter plots</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * scatter plots</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const ScatterPlotVisual& GetScatterPlotVisual() const { return m_scatterPlotVisual; }
     inline bool ScatterPlotVisualHasBeenSet() const { return m_scatterPlotVisualHasBeenSet; }
@@ -262,7 +262,7 @@ namespace Model
     /**
      * <p>A combo chart.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/combo-charts.html">Using
-     * combo charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * combo charts</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const ComboChartVisual& GetComboChartVisual() const { return m_comboChartVisual; }
     inline bool ComboChartVisualHasBeenSet() const { return m_comboChartVisualHasBeenSet; }
@@ -276,7 +276,7 @@ namespace Model
     /**
      * <p>A box plot.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/box-plots.html">Using
-     * box plots</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * box plots</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const BoxPlotVisual& GetBoxPlotVisual() const { return m_boxPlotVisual; }
     inline bool BoxPlotVisualHasBeenSet() const { return m_boxPlotVisualHasBeenSet; }
@@ -290,7 +290,7 @@ namespace Model
     /**
      * <p>A waterfall chart.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/waterfall-chart.html">Using
-     * waterfall charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * waterfall charts</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const WaterfallVisual& GetWaterfallVisual() const { return m_waterfallVisual; }
     inline bool WaterfallVisualHasBeenSet() const { return m_waterfallVisualHasBeenSet; }
@@ -304,7 +304,7 @@ namespace Model
     /**
      * <p>A histogram.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/histogram-charts.html">Using
-     * histograms</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * histograms</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const HistogramVisual& GetHistogramVisual() const { return m_histogramVisual; }
     inline bool HistogramVisualHasBeenSet() const { return m_histogramVisualHasBeenSet; }
@@ -318,7 +318,7 @@ namespace Model
     /**
      * <p>A word cloud.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/word-cloud.html">Using
-     * word clouds</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * word clouds</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const WordCloudVisual& GetWordCloudVisual() const { return m_wordCloudVisual; }
     inline bool WordCloudVisualHasBeenSet() const { return m_wordCloudVisualHasBeenSet; }
@@ -332,7 +332,7 @@ namespace Model
     /**
      * <p>An insight visual.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/computational-insights.html">Working
-     * with insights</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * with insights</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const InsightVisual& GetInsightVisual() const { return m_insightVisual; }
     inline bool InsightVisualHasBeenSet() const { return m_insightVisualHasBeenSet; }
@@ -346,7 +346,7 @@ namespace Model
     /**
      * <p>A sankey diagram.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/sankey-diagram.html">Using
-     * Sankey diagrams</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * Sankey diagrams</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const SankeyDiagramVisual& GetSankeyDiagramVisual() const { return m_sankeyDiagramVisual; }
     inline bool SankeyDiagramVisualHasBeenSet() const { return m_sankeyDiagramVisualHasBeenSet; }
@@ -360,7 +360,7 @@ namespace Model
     /**
      * <p>A visual that contains custom content.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/custom-visual-content.html">Using
-     * custom visual content</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * custom visual content</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const CustomContentVisual& GetCustomContentVisual() const { return m_customContentVisual; }
     inline bool CustomContentVisualHasBeenSet() const { return m_customContentVisualHasBeenSet; }
@@ -386,7 +386,7 @@ namespace Model
     /**
      * <p>A radar chart visual.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/radar-chart.html">Using
-     * radar charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * radar charts</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline const RadarChartVisual& GetRadarChartVisual() const { return m_radarChartVisual; }
     inline bool RadarChartVisualHasBeenSet() const { return m_radarChartVisualHasBeenSet; }

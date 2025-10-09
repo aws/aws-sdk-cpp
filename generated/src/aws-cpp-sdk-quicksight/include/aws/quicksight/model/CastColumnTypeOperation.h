@@ -76,7 +76,7 @@ namespace Model
     ///@{
     /**
      * <p>When casting a column from string to datetime type, you can supply a string
-     * in a format supported by Amazon QuickSight to denote the source data format.</p>
+     * in a format supported by Quick Sight to denote the source data format.</p>
      */
     inline const Aws::String& GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }

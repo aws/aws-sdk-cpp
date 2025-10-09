@@ -29,8 +29,8 @@ namespace Model
    * alphanumerical characters, prefixed with <code>#</code>, for example #37BFF5.
    * For more information, see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using
-   * Themes in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide.</i>
-   * </p><p><h3>See Also:</h3>   <a
+   * Themes in Quick Sight</a> in the <i>Quick Sight User Guide.</i> </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UIColorPalette">AWS
    * API Reference</a></p>
    */

@@ -43,8 +43,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID for the Amazon Web Services account that you want to customize
-     * QuickSight for.</p>
+     * <p>The ID for the Amazon Web Services account that you want to customize Quick
+     * Sight for.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
@@ -56,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The QuickSight namespace that you want to add customizations to.</p>
+     * <p>The Quick Sight namespace that you want to add customizations to.</p>
      */
     inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
@@ -68,7 +68,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The QuickSight customizations you're adding. You can add these to an Amazon
+     * <p>The Quick Sight customizations you're adding. You can add these to an Amazon
      * Web Services account and a QuickSight namespace. </p> <p>For example, you can
      * add a default theme by setting <code>AccountCustomization</code> to the midnight
      * theme: <code>"AccountCustomization": { "DefaultTheme":

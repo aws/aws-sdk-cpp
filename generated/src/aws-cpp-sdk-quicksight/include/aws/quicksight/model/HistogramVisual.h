@@ -31,7 +31,7 @@ namespace Model
   /**
    * <p>A histogram.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/histogram-charts.html">Using
-   * histograms</a> in the <i>Amazon QuickSight User Guide</i>.</p><p><h3>See
+   * histograms</a> in the <i>Amazon Quick Suite User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/HistogramVisual">AWS
    * API Reference</a></p>

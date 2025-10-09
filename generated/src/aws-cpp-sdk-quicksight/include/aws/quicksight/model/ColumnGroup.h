@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Groupings of columns that work together in certain Amazon QuickSight
-   * features. This is a variant type structure. For this structure to be valid, only
-   * one of the attributes can be non-null.</p><p><h3>See Also:</h3>   <a
+   * <p>Groupings of columns that work together in certain Quick Sight features. This
+   * is a variant type structure. For this structure to be valid, only one of the
+   * attributes can be non-null.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ColumnGroup">AWS
    * API Reference</a></p>
    */

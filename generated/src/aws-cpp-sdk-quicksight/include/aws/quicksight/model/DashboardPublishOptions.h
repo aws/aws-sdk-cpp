@@ -16,6 +16,7 @@
 #include <aws/quicksight/model/DataPointMenuLabelOption.h>
 #include <aws/quicksight/model/DataPointTooltipOption.h>
 #include <aws/quicksight/model/DataQAEnabledOption.h>
+#include <aws/quicksight/model/QuickSuiteActionsOption.h>
 #include <aws/quicksight/model/ExecutiveSummaryOption.h>
 #include <aws/quicksight/model/DataStoriesSharingOption.h>
 #include <utility>
@@ -171,7 +172,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Adds Q&amp;A capabilities to an QuickSight dashboard. If no topic is linked,
+     * <p>Adds Q&amp;A capabilities to an Quick Sight dashboard. If no topic is linked,
      * Dashboard Q&amp;A uses the data values that are rendered on the dashboard. End
      * users can use Dashboard Q&amp;A to ask for different slices of the data that
      * they see on the dashboard. If a topic is linked, Topic Q&amp;A is used.</p>
@@ -182,6 +183,18 @@ namespace Model
     void SetDataQAEnabledOption(DataQAEnabledOptionT&& value) { m_dataQAEnabledOptionHasBeenSet = true; m_dataQAEnabledOption = std::forward<DataQAEnabledOptionT>(value); }
     template<typename DataQAEnabledOptionT = DataQAEnabledOption>
     DashboardPublishOptions& WithDataQAEnabledOption(DataQAEnabledOptionT&& value) { SetDataQAEnabledOption(std::forward<DataQAEnabledOptionT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Determines if Actions in Amazon Quick Suite are enabled in a dashboard.</p>
+     */
+    inline const QuickSuiteActionsOption& GetQuickSuiteActionsOption() const { return m_quickSuiteActionsOption; }
+    inline bool QuickSuiteActionsOptionHasBeenSet() const { return m_quickSuiteActionsOptionHasBeenSet; }
+    template<typename QuickSuiteActionsOptionT = QuickSuiteActionsOption>
+    void SetQuickSuiteActionsOption(QuickSuiteActionsOptionT&& value) { m_quickSuiteActionsOptionHasBeenSet = true; m_quickSuiteActionsOption = std::forward<QuickSuiteActionsOptionT>(value); }
+    template<typename QuickSuiteActionsOptionT = QuickSuiteActionsOption>
+    DashboardPublishOptions& WithQuickSuiteActionsOption(QuickSuiteActionsOptionT&& value) { SetQuickSuiteActionsOption(std::forward<QuickSuiteActionsOptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -241,6 +254,9 @@ namespace Model
 
     DataQAEnabledOption m_dataQAEnabledOption;
     bool m_dataQAEnabledOptionHasBeenSet = false;
+
+    QuickSuiteActionsOption m_quickSuiteActionsOption;
+    bool m_quickSuiteActionsOptionHasBeenSet = false;
 
     ExecutiveSummaryOption m_executiveSummaryOption;
     bool m_executiveSummaryOptionHasBeenSet = false;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/BrandColorPalette.h>
+#include <aws/quicksight/model/ContextualAccentPalette.h>
 #include <aws/quicksight/model/BrandElementStyle.h>
 #include <utility>
 
@@ -52,6 +53,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The contextual accent palette.</p>
+     */
+    inline const ContextualAccentPalette& GetContextualAccentPalette() const { return m_contextualAccentPalette; }
+    inline bool ContextualAccentPaletteHasBeenSet() const { return m_contextualAccentPaletteHasBeenSet; }
+    template<typename ContextualAccentPaletteT = ContextualAccentPalette>
+    void SetContextualAccentPalette(ContextualAccentPaletteT&& value) { m_contextualAccentPaletteHasBeenSet = true; m_contextualAccentPalette = std::forward<ContextualAccentPaletteT>(value); }
+    template<typename ContextualAccentPaletteT = ContextualAccentPalette>
+    ApplicationTheme& WithContextualAccentPalette(ContextualAccentPaletteT&& value) { SetContextualAccentPalette(std::forward<ContextualAccentPaletteT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The element style.</p>
      */
     inline const BrandElementStyle& GetBrandElementStyle() const { return m_brandElementStyle; }
@@ -65,6 +78,9 @@ namespace Model
 
     BrandColorPalette m_brandColorPalette;
     bool m_brandColorPaletteHasBeenSet = false;
+
+    ContextualAccentPalette m_contextualAccentPalette;
+    bool m_contextualAccentPaletteHasBeenSet = false;
 
     BrandElementStyle m_brandElementStyle;
     bool m_brandElementStyleHasBeenSet = false;

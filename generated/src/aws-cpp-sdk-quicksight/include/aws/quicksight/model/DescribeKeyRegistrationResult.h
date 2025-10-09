@@ -49,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of <code>RegisteredCustomerManagedKey</code> objects in a QuickSight
+     * <p>A list of <code>RegisteredCustomerManagedKey</code> objects in a Quick Sight
      * account.</p>
      */
     inline const Aws::Vector<RegisteredCustomerManagedKey>& GetKeyRegistration() const { return m_keyRegistration; }
@@ -63,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of <code>QDataKey</code> objects in a QuickSight account.</p>
+     * <p>A list of <code>QDataKey</code> objects in a Quick Sight account.</p>
      */
     inline const QDataKey& GetQDataKey() const { return m_qDataKey; }
     template<typename QDataKeyT = QDataKey>

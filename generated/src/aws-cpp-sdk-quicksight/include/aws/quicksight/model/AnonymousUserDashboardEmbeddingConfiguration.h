@@ -45,10 +45,10 @@ namespace Model
     ///@{
     /**
      * <p>The dashboard ID for the dashboard that you want the user to see first. This
-     * ID is included in the output URL. When the URL in response is accessed,
-     * QuickSight renders this dashboard.</p> <p>The Amazon Resource Name (ARN) of this
-     * dashboard must be included in the <code>AuthorizedResourceArns</code> parameter.
-     * Otherwise, the request will fail with
+     * ID is included in the output URL. When the URL in response is accessed, Amazon
+     * Quick Sight renders this dashboard.</p> <p>The Amazon Resource Name (ARN) of
+     * this dashboard must be included in the <code>AuthorizedResourceArns</code>
+     * parameter. Otherwise, the request will fail with
      * <code>InvalidParameterValueException</code>.</p>
      */
     inline const Aws::String& GetInitialDashboardId() const { return m_initialDashboardId; }

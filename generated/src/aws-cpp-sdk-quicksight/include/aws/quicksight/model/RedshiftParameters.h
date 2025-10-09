@@ -91,8 +91,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An optional parameter that uses IAM authentication to grant QuickSight access
-     * to your cluster. This parameter can be used instead of <a
+     * <p>An optional parameter that uses IAM authentication to grant Quick Sight
+     * access to your cluster. This parameter can be used instead of <a
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
      */
     inline const RedshiftIAMParameters& GetIAMParameters() const { return m_iAMParameters; }
@@ -106,8 +106,9 @@ namespace Model
     ///@{
     /**
      * <p>An optional parameter that configures IAM Identity Center authentication to
-     * grant QuickSight access to your cluster.</p> <p>This parameter can only be
-     * specified if your QuickSight account is configured with IAM Identity Center.</p>
+     * grant Quick Sight access to your cluster.</p> <p>This parameter can only be
+     * specified if your Quick Sight account is configured with IAM Identity
+     * Center.</p>
      */
     inline const IdentityCenterConfiguration& GetIdentityCenterConfiguration() const { return m_identityCenterConfiguration; }
     inline bool IdentityCenterConfigurationHasBeenSet() const { return m_identityCenterConfigurationHasBeenSet; }

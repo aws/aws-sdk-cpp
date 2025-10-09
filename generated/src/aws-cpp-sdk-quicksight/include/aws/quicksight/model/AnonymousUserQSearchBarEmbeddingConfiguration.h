@@ -40,12 +40,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The QuickSight Q topic ID of the legacy topic that you want the anonymous
+     * <p>The Quick Sight Q topic ID of the legacy topic that you want the anonymous
      * user to see first. This ID is included in the output URL. When the URL in
-     * response is accessed, QuickSight renders the Q search bar with this legacy topic
-     * pre-selected.</p> <p>The Amazon Resource Name (ARN) of this Q legacy topic must
-     * be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the
-     * request fails with an <code>InvalidParameterValueException</code> error.</p>
+     * response is accessed, Quick Sight renders the Q search bar with this legacy
+     * topic pre-selected.</p> <p>The Amazon Resource Name (ARN) of this Q legacy topic
+     * must be included in the <code>AuthorizedResourceArns</code> parameter.
+     * Otherwise, the request fails with an <code>InvalidParameterValueException</code>
+     * error.</p>
      */
     inline const Aws::String& GetInitialTopicId() const { return m_initialTopicId; }
     inline bool InitialTopicIdHasBeenSet() const { return m_initialTopicIdHasBeenSet; }

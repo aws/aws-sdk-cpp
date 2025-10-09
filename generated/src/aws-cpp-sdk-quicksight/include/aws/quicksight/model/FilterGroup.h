@@ -33,7 +33,7 @@ namespace Model
    * of visuals.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/add-a-compound-filter.html">Adding
    * filter conditions (group filters) with AND and OR operators</a> in the <i>Amazon
-   * QuickSight User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * Quick Suite User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FilterGroup">AWS
    * API Reference</a></p>
    */
