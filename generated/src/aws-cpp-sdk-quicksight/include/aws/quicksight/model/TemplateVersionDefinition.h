@@ -96,7 +96,7 @@ namespace Model
      * are named variables that can transfer a value for use by an action or an
      * object.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters
-     * in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>. </p>
+     * in Amazon Quick Sight</a> in the <i>Amazon Quick Suite User Guide</i>. </p>
      */
     inline const Aws::Vector<ParameterDeclaration>& GetParameterDeclarations() const { return m_parameterDeclarations; }
     inline bool ParameterDeclarationsHasBeenSet() const { return m_parameterDeclarationsHasBeenSet; }
@@ -112,7 +112,7 @@ namespace Model
     /**
      * <p>Filter definitions for a template.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/filtering-visual-data.html">Filtering
-     * Data</a> in the <i>Amazon QuickSight User Guide</i>. </p>
+     * Data</a> in the <i>Amazon Quick Suite User Guide</i>. </p>
      */
     inline const Aws::Vector<FilterGroup>& GetFilterGroups() const { return m_filterGroups; }
     inline bool FilterGroupsHasBeenSet() const { return m_filterGroupsHasBeenSet; }

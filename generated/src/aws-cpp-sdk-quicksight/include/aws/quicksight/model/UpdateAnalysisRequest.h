@@ -65,7 +65,7 @@ namespace Model
     ///@{
     /**
      * <p>A descriptive name for the analysis that you're updating. This name displays
-     * for the analysis in the QuickSight console.</p>
+     * for the analysis in the Amazon Quick Sight console.</p>
      */
     inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -105,8 +105,8 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that
-     * you're creating. To see the theme in the QuickSight console, make sure that you
-     * have access to it.</p>
+     * you're creating. To see the theme in the Amazon Quick Sight console, make sure
+     * that you have access to it.</p>
      */
     inline const Aws::String& GetThemeArn() const { return m_themeArn; }
     inline bool ThemeArnHasBeenSet() const { return m_themeArnHasBeenSet; }

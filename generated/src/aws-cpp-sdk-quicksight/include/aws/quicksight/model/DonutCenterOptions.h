@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Determines the visibility of the label in a donut chart. In the QuickSight
+     * <p>Determines the visibility of the label in a donut chart. In the Quick Sight
      * console, this option is called <code>'Show total'</code>.</p>
      */
     inline Visibility GetLabelVisibility() const { return m_labelVisibility; }

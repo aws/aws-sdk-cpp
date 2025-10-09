@@ -33,7 +33,7 @@ namespace Model
   /**
    * <p>A filled map.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/filled-maps.html">Creating
-   * filled maps</a> in the <i>Amazon QuickSight User Guide</i>.</p><p><h3>See
+   * filled maps</a> in the <i>Amazon Quick Suite User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FilledMapVisual">AWS
    * API Reference</a></p>

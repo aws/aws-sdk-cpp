@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>A collection of Amazon Q feature configurations in an embedded QuickSight
+   * <p>A collection of Amazon Q feature configurations in an embedded Quick Sight
    * console.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AmazonQInQuickSightConsoleConfigurations">AWS
    * API Reference</a></p>
@@ -43,7 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Adds generative Q&amp;A capabilitiees to an embedded QuickSight console.</p>
+     * <p>Adds generative Q&amp;A capabilitiees to an embedded Quick Sight console.</p>
      */
     inline const DataQnAConfigurations& GetDataQnA() const { return m_dataQnA; }
     inline bool DataQnAHasBeenSet() const { return m_dataQnAHasBeenSet; }
@@ -55,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Adds the generative BI authoring experience to an embedded QuickSight
+     * <p>Adds the generative BI authoring experience to an embedded Quick Sight
      * console.</p>
      */
     inline const GenerativeAuthoringConfigurations& GetGenerativeAuthoring() const { return m_generativeAuthoring; }
@@ -68,7 +68,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Adds the executive summaries feature to an embedded QuickSight console.</p>
+     * <p>Adds the executive summaries feature to an embedded Quick Sight console.</p>
      */
     inline const ExecutiveSummaryConfigurations& GetExecutiveSummary() const { return m_executiveSummary; }
     inline bool ExecutiveSummaryHasBeenSet() const { return m_executiveSummaryHasBeenSet; }
@@ -80,7 +80,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Adds the data stories feature to an embedded QuickSight console.</p>
+     * <p>Adds the data stories feature to an embedded Quick Sight console.</p>
      */
     inline const DataStoriesConfigurations& GetDataStories() const { return m_dataStories; }
     inline bool DataStoriesHasBeenSet() const { return m_dataStoriesHasBeenSet; }

@@ -129,9 +129,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The parameters that Amazon QuickSight uses to connect to your underlying
-     * source. This is a variant type structure. For this structure to be valid, only
-     * one of the attributes can be non-null.</p>
+     * <p>The parameters that Quick Sight uses to connect to your underlying source.
+     * This is a variant type structure. For this structure to be valid, only one of
+     * the attributes can be non-null.</p>
      */
     inline const DataSourceParameters& GetDataSourceParameters() const { return m_dataSourceParameters; }
     inline bool DataSourceParametersHasBeenSet() const { return m_dataSourceParametersHasBeenSet; }
@@ -167,7 +167,7 @@ namespace Model
     ///@{
     /**
      * <p>The VPC connection information. You need to use this parameter only when you
-     * want QuickSight to use a VPC connection when connecting to your underlying
+     * want Quick Sight to use a VPC connection when connecting to your underlying
      * source.</p>
      */
     inline const VpcConnectionProperties& GetVpcConnectionProperties() const { return m_vpcConnectionProperties; }
@@ -180,7 +180,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
+     * <p>Secure Socket Layer (SSL) properties that apply when Quick Sight connects to
      * your underlying source.</p>
      */
     inline const SslProperties& GetSslProperties() const { return m_sslProperties; }

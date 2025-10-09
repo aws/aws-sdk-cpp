@@ -38,7 +38,7 @@ namespace Model
    * 100% bar chart</p> </li> <li> <p>Vertical stacked 100% bar chart</p> </li> </ul>
    * <p>For more information, see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/bar-charts.html">Using
-   * bar charts</a> in the <i>Amazon QuickSight User Guide</i>.</p><p><h3>See
+   * bar charts</a> in the <i>Amazon Quick Suite User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BarChartVisual">AWS
    * API Reference</a></p>

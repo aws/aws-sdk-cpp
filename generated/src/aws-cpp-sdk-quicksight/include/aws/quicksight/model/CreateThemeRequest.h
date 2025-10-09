@@ -77,7 +77,7 @@ namespace Model
     ///@{
     /**
      * <p>The ID of the theme that a custom theme will inherit from. All themes inherit
-     * from one of the starting themes defined by Amazon QuickSight. For a list of the
+     * from one of the starting themes defined by Amazon Quick Sight. For a list of the
      * starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within
      * an analysis. </p>
      */

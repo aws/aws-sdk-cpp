@@ -52,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the Amazon Q Business application that is linked to the QuickSight
+     * <p>The ID of the Amazon Q Business application that is linked to the Quick Sight
      * account.</p>
      */
     inline const Aws::String& GetApplicationId() const { return m_applicationId; }

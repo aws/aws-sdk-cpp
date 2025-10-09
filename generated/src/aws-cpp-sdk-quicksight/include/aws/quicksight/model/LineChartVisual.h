@@ -32,7 +32,7 @@ namespace Model
   /**
    * <p>A line chart.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/line-charts.html">Using
-   * line charts</a> in the <i>Amazon QuickSight User Guide</i>.</p><p><h3>See
+   * line charts</a> in the <i>Amazon Quick Suite User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/LineChartVisual">AWS
    * API Reference</a></p>

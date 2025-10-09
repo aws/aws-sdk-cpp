@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The ID of the legacy Q topic that you want to use as the starting topic in
      * the Q search bar. To locate the topic ID of the topic that you want to use, open
-     * the <a href="https://quicksight.aws.amazon.com/">QuickSight console</a>,
+     * the <a href="https://quicksight.aws.amazon.com/">Quick Sight console</a>,
      * navigate to the <b>Topics</b> pane, and choose thre topic that you want to use.
      * The <code>TopicID</code> is located in the URL of the topic that opens. When you
      * select an initial topic, you can specify whether or not readers are allowed to

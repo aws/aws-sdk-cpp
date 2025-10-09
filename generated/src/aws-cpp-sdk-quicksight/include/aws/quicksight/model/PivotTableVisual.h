@@ -32,7 +32,7 @@ namespace Model
   /**
    * <p>A pivot table.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/pivot-table.html">Using
-   * pivot tables</a> in the <i>Amazon QuickSight User Guide</i>.</p><p><h3>See
+   * pivot tables</a> in the <i>Amazon Quick Suite User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PivotTableVisual">AWS
    * API Reference</a></p>

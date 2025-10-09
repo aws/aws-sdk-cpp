@@ -43,7 +43,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of embedding experience. In this case, QuickSight dashboards.</p>
+     * <p>The type of embedding experience. In this case, Amazon Quick Sight
+     * dashboards.</p>
      */
     inline const AnonymousUserDashboardEmbeddingConfiguration& GetDashboard() const { return m_dashboard; }
     inline bool DashboardHasBeenSet() const { return m_dashboardHasBeenSet; }
@@ -55,7 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of embedding experience. In this case, QuickSight visuals.</p>
+     * <p>The type of embedding experience. In this case, Amazon Quick Sight
+     * visuals.</p>
      */
     inline const AnonymousUserDashboardVisualEmbeddingConfiguration& GetDashboardVisual() const { return m_dashboardVisual; }
     inline bool DashboardVisualHasBeenSet() const { return m_dashboardVisualHasBeenSet; }

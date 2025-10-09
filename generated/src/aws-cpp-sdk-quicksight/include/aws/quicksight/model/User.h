@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>A registered user of Amazon QuickSight. </p><p><h3>See Also:</h3>   <a
+   * <p>A registered user of Quick Sight. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/User">AWS API
    * Reference</a></p>
    */
@@ -54,7 +54,7 @@ namespace Model
     ///@{
     /**
      * <p>The user's user name. This value is required if you are registering a user
-     * that will be managed in QuickSight. In the output, the value for
+     * that will be managed in Quick Sight. In the output, the value for
      * <code>UserName</code> is <code>N/A</code> when the value for
      * <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is
      * deleted.</p>
@@ -81,24 +81,23 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon QuickSight role for the user. The user role can be one of the
+     * <p>The Quick Sight role for the user. The user role can be one of the
      * following:.</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
      * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
-     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
-     * QuickSight settings.</p> </li> <li> <p> <code>READER_PRO</code>: Reader Pro adds
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Quick
+     * Sight settings.</p> </li> <li> <p> <code>READER_PRO</code>: Reader Pro adds
      * Generative BI capabilities to the Reader role. Reader Pros have access to Amazon
-     * Q in QuickSight, can build stories with Amazon Q, and can generate executive
+     * Q in Quick Sight, can build stories with Amazon Q, and can generate executive
      * summaries from dashboards.</p> </li> <li> <p> <code>AUTHOR_PRO</code>: Author
      * Pro adds Generative BI capabilities to the Author role. Author Pros can author
      * dashboards with natural language with Amazon Q, build stories with Amazon Q,
      * create Topics for Q&amp;A, and generate executive summaries from dashboards.</p>
      * </li> <li> <p> <code>ADMIN_PRO</code>: Admin Pros are Author Pros who can also
-     * manage Amazon QuickSight administrative settings. Admin Pro users are billed at
-     * Author Pro pricing.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This role
-     * isn't currently available for use.</p> </li> <li> <p>
-     * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
-     * </li> </ul>
+     * manage Quick Sight administrative settings. Admin Pro users are billed at Author
+     * Pro pricing.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This role isn't
+     * currently available for use.</p> </li> <li> <p> <code>RESTRICTED_AUTHOR</code>:
+     * This role isn't currently available for use.</p> </li> </ul>
      */
     inline UserRole GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
@@ -118,9 +117,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The active status of user. When you create an Amazon QuickSight user that's
-     * not an IAM user or an Active Directory user, that user is inactive until they
-     * sign in and provide a password.</p>
+     * <p>The active status of user. When you create an Quick Sight user that's not an
+     * IAM user or an Active Directory user, that user is inactive until they sign in
+     * and provide a password.</p>
      */
     inline bool GetActive() const { return m_active; }
     inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
@@ -155,9 +154,9 @@ namespace Model
     ///@{
     /**
      * <p>The type of supported external login provider that provides identity to let
-     * the user federate into Amazon QuickSight with an associated IAM role. The type
-     * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
-     * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
+     * the user federate into Quick Sight with an associated IAM role. The type can be
+     * one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon Cognito.
+     * The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
      * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>
      */
     inline const Aws::String& GetExternalLoginFederationProviderType() const { return m_externalLoginFederationProviderType; }

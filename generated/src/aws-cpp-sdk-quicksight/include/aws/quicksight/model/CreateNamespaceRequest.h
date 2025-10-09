@@ -37,8 +37,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID for the Amazon Web Services account that you want to create the
-     * QuickSight namespace in.</p>
+     * <p>The ID for the Amazon Web Services account that you want to create the Quick
+     * Sight namespace in.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }

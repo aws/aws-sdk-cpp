@@ -61,7 +61,7 @@ namespace Model
     /**
      * <p>The name that you want to give to the theme alias that you are creating. The
      * alias name can't begin with a <code>$</code>. Alias names that start with
-     * <code>$</code> are reserved by Amazon QuickSight. </p>
+     * <code>$</code> are reserved by Amazon Quick Sight. </p>
      */
     inline const Aws::String& GetAliasName() const { return m_aliasName; }
     inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }

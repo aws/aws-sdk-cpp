@@ -27,7 +27,7 @@ namespace Model
 
   /**
    * <p>An empty visual.</p> <p>Empty visuals are used in layouts but have not been
-   * configured to show any data. A new visual created in the QuickSight console is
+   * configured to show any data. A new visual created in the Quick Sight console is
    * considered an <code>EmptyVisual</code> until a visual type is
    * selected.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/EmptyVisual">AWS

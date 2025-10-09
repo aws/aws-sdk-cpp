@@ -26,11 +26,12 @@ namespace Model
 
   /**
    * <p>A structure that contains the following account information elements:</p>
-   * <ul> <li> <p>Your QuickSight account name.</p> </li> <li> <p>The edition of
-   * QuickSight that your account is using.</p> </li> <li> <p>The notification email
-   * address that is associated with the QuickSight account. </p> </li> <li> <p>The
-   * authentication type of the QuickSight account.</p> </li> <li> <p>The status of
-   * the QuickSight account's subscription.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <ul> <li> <p>Your Quick Sight account name.</p> </li> <li> <p>The edition of
+   * Quick Sight that your account is using.</p> </li> <li> <p>The notification email
+   * address that is associated with the Quick Sight account. </p> </li> <li> <p>The
+   * authentication type of the Quick Sight account.</p> </li> <li> <p>The status of
+   * the Quick Sight account's subscription.</p> </li> </ul><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AccountInfo">AWS
    * API Reference</a></p>
    */
@@ -45,8 +46,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The account name that you provided for the QuickSight subscription in your
-     * Amazon Web Services account. You create this name when you sign up for
+     * <p>The account name that you provided for the Amazon Quick Sight subscription in
+     * your Amazon Web Services account. You create this name when you sign up for
      * QuickSight. It's unique over all of Amazon Web Services, and it appears only
      * when users sign in.</p>
      */
@@ -60,7 +61,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The edition of your QuickSight account.</p>
+     * <p>The edition of your Quick Sight account.</p>
      */
     inline Edition GetEdition() const { return m_edition; }
     inline bool EditionHasBeenSet() const { return m_editionHasBeenSet; }
@@ -70,8 +71,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The email address that will be used for QuickSight to send notifications
-     * regarding your Amazon Web Services account or QuickSight subscription.</p>
+     * <p>The email address that will be used for Quick Sight to send notifications
+     * regarding your Amazon Web Services account or Quick Sight subscription.</p>
      */
     inline const Aws::String& GetNotificationEmail() const { return m_notificationEmail; }
     inline bool NotificationEmailHasBeenSet() const { return m_notificationEmailHasBeenSet; }
@@ -83,7 +84,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The way that your QuickSight account is authenticated.</p>
+     * <p>The way that your Amazon Quick Sight account is authenticated.</p>
      */
     inline const Aws::String& GetAuthenticationType() const { return m_authenticationType; }
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }

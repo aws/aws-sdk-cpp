@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The QuickSight settings associated with your Amazon Web Services
+   * <p>The Quick Sight settings associated with your Amazon Web Services
    * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AccountSettings">AWS
    * API Reference</a></p>
@@ -41,10 +41,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The "account name" you provided for the QuickSight subscription in your
-     * Amazon Web Services account. You create this name when you sign up for
-     * QuickSight. It is unique in all of Amazon Web Services and it appears only when
-     * users sign in.</p>
+     * <p>The "account name" you provided for the Quick Sight subscription in your
+     * Amazon Web Services account. You create this name when you sign up for Quick
+     * Sight. It is unique in all of Amazon Web Services and it appears only when users
+     * sign in.</p>
      */
     inline const Aws::String& GetAccountName() const { return m_accountName; }
     inline bool AccountNameHasBeenSet() const { return m_accountNameHasBeenSet; }
@@ -56,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The edition of QuickSight that you're currently subscribed to: Enterprise
+     * <p>The edition of Quick Sight that you're currently subscribed to: Enterprise
      * edition or Standard edition.</p>
      */
     inline Edition GetEdition() const { return m_edition; }
@@ -67,7 +67,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The default QuickSight namespace for your Amazon Web Services account. </p>
+     * <p>The default Quick Sight namespace for your Amazon Web Services account. </p>
      */
     inline const Aws::String& GetDefaultNamespace() const { return m_defaultNamespace; }
     inline bool DefaultNamespaceHasBeenSet() const { return m_defaultNamespaceHasBeenSet; }
@@ -79,7 +79,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The main notification email for your QuickSight subscription.</p>
+     * <p>The main notification email for your Quick Sight subscription.</p>
      */
     inline const Aws::String& GetNotificationEmail() const { return m_notificationEmail; }
     inline bool NotificationEmailHasBeenSet() const { return m_notificationEmailHasBeenSet; }
@@ -103,7 +103,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A boolean value that determines whether or not an QuickSight account can be
+     * <p>A boolean value that determines whether or not an Quick Sight account can be
      * deleted. A <code>True</code> value doesn't allow the account to be deleted and
      * results in an error message if a user tries to make a
      * <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will

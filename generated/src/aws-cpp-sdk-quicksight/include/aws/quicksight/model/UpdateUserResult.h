@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon QuickSight user.</p>
+     * <p>The Amazon Quick Sight user.</p>
      */
     inline const User& GetUser() const { return m_user; }
     template<typename UserT = User>

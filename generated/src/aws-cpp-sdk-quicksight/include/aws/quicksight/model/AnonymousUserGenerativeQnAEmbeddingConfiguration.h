@@ -40,9 +40,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The QuickSight Q topic ID of the new reader experience topic that you want
+     * <p>The Quick Sight Q topic ID of the new reader experience topic that you want
      * the anonymous user to see first. This ID is included in the output URL. When the
-     * URL in response is accessed, QuickSight renders the Generative Q&amp;A
+     * URL in response is accessed, Quick Sight renders the Generative Q&amp;A
      * experience with this new reader experience topic pre selected.</p> <p>The Amazon
      * Resource Name (ARN) of this Q new reader experience topic must be included in
      * the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request fails

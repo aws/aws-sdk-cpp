@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID for the Amazon Web Services account that contains the QuickSight
+     * <p>The ID for the Amazon Web Services account that contains the Quick Sight
      * namespaces that you want to list.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }

@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of services and their authorized targets that the QuickSight IAM
+     * <p>A list of services and their authorized targets that the Quick Sight IAM
      * Identity Center application can access.</p>
      */
     inline const Aws::Vector<AuthorizedTargetsByService>& GetServices() const { return m_services; }

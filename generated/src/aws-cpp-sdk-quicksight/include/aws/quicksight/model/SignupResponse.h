@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A Boolean that is <code>TRUE</code> if the QuickSight uses IAM as an
+     * <p>A Boolean that is <code>TRUE</code> if the Amazon Quick Sight uses IAM as an
      * authentication method.</p>
      */
     inline bool GetIAMUser() const { return m_iAMUser; }
@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user login name for your QuickSight account.</p>
+     * <p>The user login name for your Amazon Quick Sight account.</p>
      */
     inline const Aws::String& GetUserLoginName() const { return m_userLoginName; }
     inline bool UserLoginNameHasBeenSet() const { return m_userLoginNameHasBeenSet; }
@@ -63,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of your QuickSight account.</p>
+     * <p>The name of your Quick Sight account.</p>
      */
     inline const Aws::String& GetAccountName() const { return m_accountName; }
     inline bool AccountNameHasBeenSet() const { return m_accountNameHasBeenSet; }
@@ -75,8 +75,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of Active Directory that is being used to authenticate the
-     * QuickSight account. Valid values are <code>SIMPLE_AD</code>,
+     * <p>The type of Active Directory that is being used to authenticate the Amazon
+     * Quick Sight account. Valid values are <code>SIMPLE_AD</code>,
      * <code>AD_CONNECTOR</code>, and <code>MICROSOFT_AD</code>.</p>
      */
     inline const Aws::String& GetDirectoryType() const { return m_directoryType; }

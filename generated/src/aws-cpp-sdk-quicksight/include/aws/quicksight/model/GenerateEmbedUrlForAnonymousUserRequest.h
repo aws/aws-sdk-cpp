@@ -61,8 +61,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The QuickSight namespace that the anonymous user virtually belongs to. If you
-     * are not using an Amazon QuickSight custom namespace, set this to
+     * <p>The Amazon Quick Sight namespace that the anonymous user virtually belongs
+     * to. If you are not using an Amazon QuickSight custom namespace, set this to
      * <code>default</code>.</p>
      */
     inline const Aws::String& GetNamespace() const { return m_namespace; }
@@ -82,7 +82,7 @@ namespace Model
      * tags used for the Amazon Web Services resource tagging feature. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using
-     * Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User
+     * Row-Level Security (RLS) with Tags</a>in the <i>Amazon Quick Sight User
      * Guide</i>.</p>
      */
     inline const Aws::Vector<SessionTag>& GetSessionTags() const { return m_sessionTags; }
@@ -97,7 +97,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Names (ARNs) for the QuickSight resources that the user
+     * <p>The Amazon Resource Names (ARNs) for the Quick Sight resources that the user
      * is authorized to access during the lifetime of the session.</p> <p>If you choose
      * <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in
      * the account that you want the user to be able to view.</p> <p>If you want to
@@ -131,12 +131,12 @@ namespace Model
     /**
      * <p>The domains that you want to add to the allow list for access to the
      * generated URL that is then embedded. This optional parameter overrides the
-     * static domains that are configured in the Manage QuickSight menu in the
-     * QuickSight console. Instead, it allows only the domains that you include in this
-     * parameter. You can list up to three domains or subdomains in each API call.</p>
-     * <p>To include all subdomains under a specific domain to the allow list, use
-     * <code>*</code>. For example, <code>https:// *.sapp.amazon.com</code> includes all
-     * subdomains under <code>https://sapp.amazon.com</code>.</p>
+     * static domains that are configured in the Manage Quick Sight menu in the Amazon
+     * Quick Sight console. Instead, it allows only the domains that you include in
+     * this parameter. You can list up to three domains or subdomains in each API
+     * call.</p> <p>To include all subdomains under a specific domain to the allow
+     * list, use <code>*</code>. For example, <code>https:// *.sapp.amazon.com</code>
+     * includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAllowedDomains() const { return m_allowedDomains; }
     inline bool AllowedDomainsHasBeenSet() const { return m_allowedDomainsHasBeenSet; }

@@ -49,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An option that controls whether a child dataset that's stored in QuickSight
+     * <p>An option that controls whether a child dataset that's stored in Quick Sight
      * can use this dataset as a source.</p>
      */
     inline bool GetDisableUseAsImportedSource() const { return m_disableUseAsImportedSource; }

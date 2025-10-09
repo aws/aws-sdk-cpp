@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>A folder in QuickSight.</p><p><h3>See Also:</h3>   <a
+   * <p>A folder in Quick Sight.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Folder">AWS
    * API Reference</a></p>
    */

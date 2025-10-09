@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p>A unique ID to identify a calculated column. During a dataset update, if the
      * column ID of a calculated column matches that of an existing calculated column,
-     * Amazon QuickSight preserves the existing calculated column.</p>
+     * Quick Sight preserves the existing calculated column.</p>
      */
     inline const Aws::String& GetColumnId() const { return m_columnId; }
     inline bool ColumnIdHasBeenSet() const { return m_columnIdHasBeenSet; }

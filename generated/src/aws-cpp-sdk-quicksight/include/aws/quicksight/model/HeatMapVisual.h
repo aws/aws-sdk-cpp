@@ -32,7 +32,7 @@ namespace Model
   /**
    * <p>A heat map.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/heat-map.html">Using
-   * heat maps</a> in the <i>Amazon QuickSight User Guide</i>.</p><p><h3>See
+   * heat maps</a> in the <i>Amazon Quick Suite User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/HeatMapVisual">AWS
    * API Reference</a></p>

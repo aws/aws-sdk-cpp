@@ -69,7 +69,7 @@ namespace Model
      * Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the
      * source template. For <code>SourceAnalysis</code>, specify the ARN of the source
      * analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web
-     * Services account and any QuickSight-supported Amazon Web Services Region;. </p>
+     * Services account and any Quick Sight-supported Amazon Web Services Region;. </p>
      * <p>Use the <code>DataSetReferences</code> entity within
      * <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the
      * replacement datasets for the placeholders listed in the original. The schema in

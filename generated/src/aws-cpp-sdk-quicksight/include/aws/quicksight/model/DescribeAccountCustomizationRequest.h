@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID for the Amazon Web Services account that you want to describe
-     * QuickSight customizations for.</p>
+     * <p>The ID for the Amazon Web Services account that you want to describe Quick
+     * Sight customizations for.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
@@ -53,8 +53,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The QuickSight namespace that you want to describe QuickSight customizations
-     * for.</p>
+     * <p>The Quick Sight namespace that you want to describe Quick Sight
+     * customizations for.</p>
      */
     inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
@@ -67,8 +67,8 @@ namespace Model
     ///@{
     /**
      * <p>The <code>Resolved</code> flag works with the other parameters to determine
-     * which view of QuickSight customizations is returned. You can add this flag to
-     * your command to use the same view that QuickSight uses to identify which
+     * which view of Quick Sight customizations is returned. You can add this flag to
+     * your command to use the same view that Quick Sight uses to identify which
      * customizations to apply to the console. Omit this flag, or set it to
      * <code>no-resolved</code>, to reveal customizations that are configured at
      * different levels. </p>

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The Amazon QuickSight customizations associated with your Amazon Web Services
-   * account or a QuickSight namespace in a specific Amazon Web Services
+   * <p>The Quick Sight customizations associated with your Amazon Web Services
+   * account or a Quick Sight namespace in a specific Amazon Web Services
    * Region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AccountCustomization">AWS
    * API Reference</a></p>
@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The default theme for this QuickSight subscription.</p>
+     * <p>The default theme for this Quick Sight subscription.</p>
      */
     inline const Aws::String& GetDefaultTheme() const { return m_defaultTheme; }
     inline bool DefaultThemeHasBeenSet() const { return m_defaultThemeHasBeenSet; }

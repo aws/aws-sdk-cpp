@@ -30,7 +30,7 @@ namespace Model
 
   /**
    * <p>A flexible visualization type that allows engineers to create new custom
-   * charts in QuickSight.</p><p><h3>See Also:</h3>   <a
+   * charts in Quick Sight.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PluginVisual">AWS
    * API Reference</a></p>
    */

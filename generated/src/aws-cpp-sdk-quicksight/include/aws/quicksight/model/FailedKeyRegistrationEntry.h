@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>An entry that appears when a <code>KeyRegistration</code> update to
-   * QuickSight fails.</p><p><h3>See Also:</h3>   <a
+   * <p>An entry that appears when a <code>KeyRegistration</code> update to Quick
+   * Sight fails.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FailedKeyRegistrationEntry">AWS
    * API Reference</a></p>
    */

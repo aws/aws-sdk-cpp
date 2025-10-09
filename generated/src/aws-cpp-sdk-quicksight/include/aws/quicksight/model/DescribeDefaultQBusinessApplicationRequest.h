@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the QuickSight account that is linked to the Amazon Q Business
+     * <p>The ID of the Quick Sight account that is linked to the Amazon Q Business
      * application that you want described.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The QuickSight namespace that contains the linked Amazon Q Business
+     * <p>The Quick Sight namespace that contains the linked Amazon Q Business
      * application. If this field is left blank, the default namespace is used.
      * Currently, the default namespace is the only valid value for this parameter.</p>
      */

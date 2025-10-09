@@ -50,6 +50,13 @@ namespace Aws
         static const int TRINO_HASH = HashingUtils::HashString("TRINO");
         static const int BIGQUERY_HASH = HashingUtils::HashString("BIGQUERY");
         static const int GOOGLESHEETS_HASH = HashingUtils::HashString("GOOGLESHEETS");
+        static const int GOOGLE_DRIVE_HASH = HashingUtils::HashString("GOOGLE_DRIVE");
+        static const int CONFLUENCE_HASH = HashingUtils::HashString("CONFLUENCE");
+        static const int SHAREPOINT_HASH = HashingUtils::HashString("SHAREPOINT");
+        static const int ONE_DRIVE_HASH = HashingUtils::HashString("ONE_DRIVE");
+        static const int WEB_CRAWLER_HASH = HashingUtils::HashString("WEB_CRAWLER");
+        static const int S3_KNOWLEDGE_BASE_HASH = HashingUtils::HashString("S3_KNOWLEDGE_BASE");
+        static const int QBUSINESS_HASH = HashingUtils::HashString("QBUSINESS");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
@@ -175,6 +182,34 @@ namespace Aws
           {
             return DataSourceType::GOOGLESHEETS;
           }
+          else if (hashCode == GOOGLE_DRIVE_HASH)
+          {
+            return DataSourceType::GOOGLE_DRIVE;
+          }
+          else if (hashCode == CONFLUENCE_HASH)
+          {
+            return DataSourceType::CONFLUENCE;
+          }
+          else if (hashCode == SHAREPOINT_HASH)
+          {
+            return DataSourceType::SHAREPOINT;
+          }
+          else if (hashCode == ONE_DRIVE_HASH)
+          {
+            return DataSourceType::ONE_DRIVE;
+          }
+          else if (hashCode == WEB_CRAWLER_HASH)
+          {
+            return DataSourceType::WEB_CRAWLER;
+          }
+          else if (hashCode == S3_KNOWLEDGE_BASE_HASH)
+          {
+            return DataSourceType::S3_KNOWLEDGE_BASE;
+          }
+          else if (hashCode == QBUSINESS_HASH)
+          {
+            return DataSourceType::QBUSINESS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -251,6 +286,20 @@ namespace Aws
             return "BIGQUERY";
           case DataSourceType::GOOGLESHEETS:
             return "GOOGLESHEETS";
+          case DataSourceType::GOOGLE_DRIVE:
+            return "GOOGLE_DRIVE";
+          case DataSourceType::CONFLUENCE:
+            return "CONFLUENCE";
+          case DataSourceType::SHAREPOINT:
+            return "SHAREPOINT";
+          case DataSourceType::ONE_DRIVE:
+            return "ONE_DRIVE";
+          case DataSourceType::WEB_CRAWLER:
+            return "WEB_CRAWLER";
+          case DataSourceType::S3_KNOWLEDGE_BASE:
+            return "S3_KNOWLEDGE_BASE";
+          case DataSourceType::QBUSINESS:
+            return "QBUSINESS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

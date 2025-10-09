@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A set of actions that correspond to QuickSight permissions.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A set of actions that correspond to Amazon Quick Sight
+   * permissions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Capabilities">AWS
    * API Reference</a></p>
    */
@@ -287,6 +287,130 @@ namespace Model
     inline void SetAnalysis(CapabilityState value) { m_analysisHasBeenSet = true; m_analysis = value; }
     inline Capabilities& WithAnalysis(CapabilityState value) { SetAnalysis(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ability to perform automate-related actions.</p>
+     */
+    inline CapabilityState GetAutomate() const { return m_automate; }
+    inline bool AutomateHasBeenSet() const { return m_automateHasBeenSet; }
+    inline void SetAutomate(CapabilityState value) { m_automateHasBeenSet = true; m_automate = value; }
+    inline Capabilities& WithAutomate(CapabilityState value) { SetAutomate(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ability to perform flow-related actions.</p>
+     */
+    inline CapabilityState GetFlow() const { return m_flow; }
+    inline bool FlowHasBeenSet() const { return m_flowHasBeenSet; }
+    inline void SetFlow(CapabilityState value) { m_flowHasBeenSet = true; m_flow = value; }
+    inline Capabilities& WithFlow(CapabilityState value) { SetFlow(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ability to enable approvals for flow share.</p>
+     */
+    inline CapabilityState GetPublishWithoutApproval() const { return m_publishWithoutApproval; }
+    inline bool PublishWithoutApprovalHasBeenSet() const { return m_publishWithoutApprovalHasBeenSet; }
+    inline void SetPublishWithoutApproval(CapabilityState value) { m_publishWithoutApprovalHasBeenSet = true; m_publishWithoutApproval = value; }
+    inline Capabilities& WithPublishWithoutApproval(CapabilityState value) { SetPublishWithoutApproval(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ability to use Bedrock models for general knowledge step in flows.</p>
+     */
+    inline CapabilityState GetUseBedrockModels() const { return m_useBedrockModels; }
+    inline bool UseBedrockModelsHasBeenSet() const { return m_useBedrockModelsHasBeenSet; }
+    inline void SetUseBedrockModels(CapabilityState value) { m_useBedrockModelsHasBeenSet = true; m_useBedrockModels = value; }
+    inline Capabilities& WithUseBedrockModels(CapabilityState value) { SetUseBedrockModels(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ability to use UI Agent step to perform tasks on public websites.</p>
+     */
+    inline CapabilityState GetPerformFlowUiTask() const { return m_performFlowUiTask; }
+    inline bool PerformFlowUiTaskHasBeenSet() const { return m_performFlowUiTaskHasBeenSet; }
+    inline void SetPerformFlowUiTask(CapabilityState value) { m_performFlowUiTaskHasBeenSet = true; m_performFlowUiTask = value; }
+    inline Capabilities& WithPerformFlowUiTask(CapabilityState value) { SetPerformFlowUiTask(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ability to use internet to enhance results in Chat Agents, Flows, and
+     * Quick Research. Web search queries will be processed securely in an Amazon Web
+     * Services region <code>us-east-1</code>.</p>
+     */
+    inline CapabilityState GetUseAgentWebSearch() const { return m_useAgentWebSearch; }
+    inline bool UseAgentWebSearchHasBeenSet() const { return m_useAgentWebSearchHasBeenSet; }
+    inline void SetUseAgentWebSearch(CapabilityState value) { m_useAgentWebSearchHasBeenSet = true; m_useAgentWebSearch = value; }
+    inline Capabilities& WithUseAgentWebSearch(CapabilityState value) { SetUseAgentWebSearch(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ability to use knowledge bases to specify content from external
+     * applications.</p>
+     */
+    inline CapabilityState GetKnowledgeBase() const { return m_knowledgeBase; }
+    inline bool KnowledgeBaseHasBeenSet() const { return m_knowledgeBaseHasBeenSet; }
+    inline void SetKnowledgeBase(CapabilityState value) { m_knowledgeBaseHasBeenSet = true; m_knowledgeBase = value; }
+    inline Capabilities& WithKnowledgeBase(CapabilityState value) { SetKnowledgeBase(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ability to perform actions in external services through Action
+     * connectors. Actions allow users to interact with third-party systems.</p>
+     */
+    inline CapabilityState GetAction() const { return m_action; }
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+    inline void SetAction(CapabilityState value) { m_actionHasBeenSet = true; m_action = value; }
+    inline Capabilities& WithAction(CapabilityState value) { SetAction(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ability to perform space-related actions.</p>
+     */
+    inline CapabilityState GetSpace() const { return m_space; }
+    inline bool SpaceHasBeenSet() const { return m_spaceHasBeenSet; }
+    inline void SetSpace(CapabilityState value) { m_spaceHasBeenSet = true; m_space = value; }
+    inline Capabilities& WithSpace(CapabilityState value) { SetSpace(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ability to perform chat-related actions.</p>
+     */
+    inline CapabilityState GetChatAgent() const { return m_chatAgent; }
+    inline bool ChatAgentHasBeenSet() const { return m_chatAgentHasBeenSet; }
+    inline void SetChatAgent(CapabilityState value) { m_chatAgentHasBeenSet = true; m_chatAgent = value; }
+    inline Capabilities& WithChatAgent(CapabilityState value) { SetChatAgent(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ability to create chat agents.</p>
+     */
+    inline CapabilityState GetCreateChatAgents() const { return m_createChatAgents; }
+    inline bool CreateChatAgentsHasBeenSet() const { return m_createChatAgentsHasBeenSet; }
+    inline void SetCreateChatAgents(CapabilityState value) { m_createChatAgentsHasBeenSet = true; m_createChatAgents = value; }
+    inline Capabilities& WithCreateChatAgents(CapabilityState value) { SetCreateChatAgents(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ability to perform research-related actions.</p>
+     */
+    inline CapabilityState GetResearch() const { return m_research; }
+    inline bool ResearchHasBeenSet() const { return m_researchHasBeenSet; }
+    inline void SetResearch(CapabilityState value) { m_researchHasBeenSet = true; m_research = value; }
+    inline Capabilities& WithResearch(CapabilityState value) { SetResearch(value); return *this;}
+    ///@}
   private:
 
     CapabilityState m_exportToCsv{CapabilityState::NOT_SET};
@@ -363,6 +487,42 @@ namespace Model
 
     CapabilityState m_analysis{CapabilityState::NOT_SET};
     bool m_analysisHasBeenSet = false;
+
+    CapabilityState m_automate{CapabilityState::NOT_SET};
+    bool m_automateHasBeenSet = false;
+
+    CapabilityState m_flow{CapabilityState::NOT_SET};
+    bool m_flowHasBeenSet = false;
+
+    CapabilityState m_publishWithoutApproval{CapabilityState::NOT_SET};
+    bool m_publishWithoutApprovalHasBeenSet = false;
+
+    CapabilityState m_useBedrockModels{CapabilityState::NOT_SET};
+    bool m_useBedrockModelsHasBeenSet = false;
+
+    CapabilityState m_performFlowUiTask{CapabilityState::NOT_SET};
+    bool m_performFlowUiTaskHasBeenSet = false;
+
+    CapabilityState m_useAgentWebSearch{CapabilityState::NOT_SET};
+    bool m_useAgentWebSearchHasBeenSet = false;
+
+    CapabilityState m_knowledgeBase{CapabilityState::NOT_SET};
+    bool m_knowledgeBaseHasBeenSet = false;
+
+    CapabilityState m_action{CapabilityState::NOT_SET};
+    bool m_actionHasBeenSet = false;
+
+    CapabilityState m_space{CapabilityState::NOT_SET};
+    bool m_spaceHasBeenSet = false;
+
+    CapabilityState m_chatAgent{CapabilityState::NOT_SET};
+    bool m_chatAgentHasBeenSet = false;
+
+    CapabilityState m_createChatAgents{CapabilityState::NOT_SET};
+    bool m_createChatAgentsHasBeenSet = false;
+
+    CapabilityState m_research{CapabilityState::NOT_SET};
+    bool m_researchHasBeenSet = false;
   };
 
 } // namespace Model

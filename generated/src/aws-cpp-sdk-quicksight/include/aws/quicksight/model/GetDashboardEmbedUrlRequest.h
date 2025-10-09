@@ -113,11 +113,11 @@ namespace Model
     /**
      * <p>Adds persistence of state for the user session in an embedded dashboard.
      * Persistence applies to the sheet and the parameter settings. These are control
-     * settings that the dashboard subscriber (QuickSight reader) chooses while viewing
-     * the dashboard. If this is set to <code>TRUE</code>, the settings are the same
-     * when the subscriber reopens the same dashboard URL. The state is stored in
-     * QuickSight, not in a browser cookie. If this is set to FALSE, the state of the
-     * user session is not persisted. The default is <code>FALSE</code>.</p>
+     * settings that the dashboard subscriber (Amazon Quick Sight reader) chooses while
+     * viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the
+     * same when the subscriber reopens the same dashboard URL. The state is stored in
+     * Amazon Quick Sight, not in a browser cookie. If this is set to FALSE, the state
+     * of the user session is not persisted. The default is <code>FALSE</code>.</p>
      */
     inline bool GetStatePersistenceEnabled() const { return m_statePersistenceEnabled; }
     inline bool StatePersistenceEnabledHasBeenSet() const { return m_statePersistenceEnabledHasBeenSet; }
@@ -146,8 +146,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The QuickSight namespace that contains the dashboard IDs in this request. If
-     * you're not using a custom namespace, set <code>Namespace = default</code>.</p>
+     * <p>The Amazon Quick Sight namespace that contains the dashboard IDs in this
+     * request. If you're not using a custom namespace, set <code>Namespace =
+     * default</code>.</p>
      */
     inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }

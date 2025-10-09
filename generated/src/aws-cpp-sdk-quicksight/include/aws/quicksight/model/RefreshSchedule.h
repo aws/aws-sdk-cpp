@@ -85,7 +85,7 @@ namespace Model
      * of a dataset, based on the time window specified.</p> </li> </ul> <p>For more
      * information on full and incremental refreshes, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/refreshing-imported-data.html">Refreshing
-     * SPICE data</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     * SPICE data</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
      */
     inline IngestionType GetRefreshType() const { return m_refreshType; }
     inline bool RefreshTypeHasBeenSet() const { return m_refreshTypeHasBeenSet; }

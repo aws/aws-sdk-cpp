@@ -61,7 +61,7 @@ namespace Model
     /**
      * <p>The name that you want to give to the template alias that you're creating.
      * Don't start the alias name with the <code>$</code> character. Alias names that
-     * start with <code>$</code> are reserved by QuickSight. </p>
+     * start with <code>$</code> are reserved by Quick Sight. </p>
      */
     inline const Aws::String& GetAliasName() const { return m_aliasName; }
     inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }

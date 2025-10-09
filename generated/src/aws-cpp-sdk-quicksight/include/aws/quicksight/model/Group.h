@@ -24,9 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A <i>group</i> in Amazon QuickSight consists of a set of users. You can use
-   * groups to make it easier to manage access and security. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A <i>group</i> in Quick Sight consists of a set of users. You can use groups
+   * to make it easier to manage access and security. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Group">AWS
    * API Reference</a></p>
    */

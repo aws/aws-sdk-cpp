@@ -23,6 +23,7 @@
 #include <aws/quicksight/model/CancelIngestionResult.h>
 #include <aws/quicksight/model/CreateAccountCustomizationResult.h>
 #include <aws/quicksight/model/CreateAccountSubscriptionResult.h>
+#include <aws/quicksight/model/CreateActionConnectorResult.h>
 #include <aws/quicksight/model/CreateAnalysisResult.h>
 #include <aws/quicksight/model/CreateBrandResult.h>
 #include <aws/quicksight/model/CreateCustomPermissionsResult.h>
@@ -48,6 +49,7 @@
 #include <aws/quicksight/model/DeleteAccountCustomPermissionResult.h>
 #include <aws/quicksight/model/DeleteAccountCustomizationResult.h>
 #include <aws/quicksight/model/DeleteAccountSubscriptionResult.h>
+#include <aws/quicksight/model/DeleteActionConnectorResult.h>
 #include <aws/quicksight/model/DeleteAnalysisResult.h>
 #include <aws/quicksight/model/DeleteBrandResult.h>
 #include <aws/quicksight/model/DeleteBrandAssignmentResult.h>
@@ -81,6 +83,8 @@
 #include <aws/quicksight/model/DescribeAccountCustomizationResult.h>
 #include <aws/quicksight/model/DescribeAccountSettingsResult.h>
 #include <aws/quicksight/model/DescribeAccountSubscriptionResult.h>
+#include <aws/quicksight/model/DescribeActionConnectorResult.h>
+#include <aws/quicksight/model/DescribeActionConnectorPermissionsResult.h>
 #include <aws/quicksight/model/DescribeAnalysisResult.h>
 #include <aws/quicksight/model/DescribeAnalysisDefinitionResult.h>
 #include <aws/quicksight/model/DescribeAnalysisPermissionsResult.h>
@@ -133,7 +137,10 @@
 #include <aws/quicksight/model/GenerateEmbedUrlForRegisteredUserResult.h>
 #include <aws/quicksight/model/GenerateEmbedUrlForRegisteredUserWithIdentityResult.h>
 #include <aws/quicksight/model/GetDashboardEmbedUrlResult.h>
+#include <aws/quicksight/model/GetFlowMetadataResult.h>
+#include <aws/quicksight/model/GetFlowPermissionsResult.h>
 #include <aws/quicksight/model/GetSessionEmbedUrlResult.h>
+#include <aws/quicksight/model/ListActionConnectorsResult.h>
 #include <aws/quicksight/model/ListAnalysesResult.h>
 #include <aws/quicksight/model/ListAssetBundleExportJobsResult.h>
 #include <aws/quicksight/model/ListAssetBundleImportJobsResult.h>
@@ -143,6 +150,7 @@
 #include <aws/quicksight/model/ListDashboardsResult.h>
 #include <aws/quicksight/model/ListDataSetsResult.h>
 #include <aws/quicksight/model/ListDataSourcesResult.h>
+#include <aws/quicksight/model/ListFlowsResult.h>
 #include <aws/quicksight/model/ListFolderMembersResult.h>
 #include <aws/quicksight/model/ListFoldersResult.h>
 #include <aws/quicksight/model/ListFoldersForResourceResult.h>
@@ -172,10 +180,12 @@
 #include <aws/quicksight/model/PutDataSetRefreshPropertiesResult.h>
 #include <aws/quicksight/model/RegisterUserResult.h>
 #include <aws/quicksight/model/RestoreAnalysisResult.h>
+#include <aws/quicksight/model/SearchActionConnectorsResult.h>
 #include <aws/quicksight/model/SearchAnalysesResult.h>
 #include <aws/quicksight/model/SearchDashboardsResult.h>
 #include <aws/quicksight/model/SearchDataSetsResult.h>
 #include <aws/quicksight/model/SearchDataSourcesResult.h>
+#include <aws/quicksight/model/SearchFlowsResult.h>
 #include <aws/quicksight/model/SearchFoldersResult.h>
 #include <aws/quicksight/model/SearchGroupsResult.h>
 #include <aws/quicksight/model/SearchTopicsResult.h>
@@ -188,6 +198,8 @@
 #include <aws/quicksight/model/UpdateAccountCustomPermissionResult.h>
 #include <aws/quicksight/model/UpdateAccountCustomizationResult.h>
 #include <aws/quicksight/model/UpdateAccountSettingsResult.h>
+#include <aws/quicksight/model/UpdateActionConnectorResult.h>
+#include <aws/quicksight/model/UpdateActionConnectorPermissionsResult.h>
 #include <aws/quicksight/model/UpdateAnalysisResult.h>
 #include <aws/quicksight/model/UpdateAnalysisPermissionsResult.h>
 #include <aws/quicksight/model/UpdateApplicationWithTokenExchangeGrantResult.h>
@@ -205,6 +217,7 @@
 #include <aws/quicksight/model/UpdateDataSourceResult.h>
 #include <aws/quicksight/model/UpdateDataSourcePermissionsResult.h>
 #include <aws/quicksight/model/UpdateDefaultQBusinessApplicationResult.h>
+#include <aws/quicksight/model/UpdateFlowPermissionsResult.h>
 #include <aws/quicksight/model/UpdateFolderResult.h>
 #include <aws/quicksight/model/UpdateFolderPermissionsResult.h>
 #include <aws/quicksight/model/UpdateGroupResult.h>
@@ -275,6 +288,7 @@ namespace Aws
       class CancelIngestionRequest;
       class CreateAccountCustomizationRequest;
       class CreateAccountSubscriptionRequest;
+      class CreateActionConnectorRequest;
       class CreateAnalysisRequest;
       class CreateBrandRequest;
       class CreateCustomPermissionsRequest;
@@ -300,6 +314,7 @@ namespace Aws
       class DeleteAccountCustomPermissionRequest;
       class DeleteAccountCustomizationRequest;
       class DeleteAccountSubscriptionRequest;
+      class DeleteActionConnectorRequest;
       class DeleteAnalysisRequest;
       class DeleteBrandRequest;
       class DeleteBrandAssignmentRequest;
@@ -333,6 +348,8 @@ namespace Aws
       class DescribeAccountCustomizationRequest;
       class DescribeAccountSettingsRequest;
       class DescribeAccountSubscriptionRequest;
+      class DescribeActionConnectorRequest;
+      class DescribeActionConnectorPermissionsRequest;
       class DescribeAnalysisRequest;
       class DescribeAnalysisDefinitionRequest;
       class DescribeAnalysisPermissionsRequest;
@@ -385,7 +402,10 @@ namespace Aws
       class GenerateEmbedUrlForRegisteredUserRequest;
       class GenerateEmbedUrlForRegisteredUserWithIdentityRequest;
       class GetDashboardEmbedUrlRequest;
+      class GetFlowMetadataRequest;
+      class GetFlowPermissionsRequest;
       class GetSessionEmbedUrlRequest;
+      class ListActionConnectorsRequest;
       class ListAnalysesRequest;
       class ListAssetBundleExportJobsRequest;
       class ListAssetBundleImportJobsRequest;
@@ -395,6 +415,7 @@ namespace Aws
       class ListDashboardsRequest;
       class ListDataSetsRequest;
       class ListDataSourcesRequest;
+      class ListFlowsRequest;
       class ListFolderMembersRequest;
       class ListFoldersRequest;
       class ListFoldersForResourceRequest;
@@ -424,10 +445,12 @@ namespace Aws
       class PutDataSetRefreshPropertiesRequest;
       class RegisterUserRequest;
       class RestoreAnalysisRequest;
+      class SearchActionConnectorsRequest;
       class SearchAnalysesRequest;
       class SearchDashboardsRequest;
       class SearchDataSetsRequest;
       class SearchDataSourcesRequest;
+      class SearchFlowsRequest;
       class SearchFoldersRequest;
       class SearchGroupsRequest;
       class SearchTopicsRequest;
@@ -440,6 +463,8 @@ namespace Aws
       class UpdateAccountCustomPermissionRequest;
       class UpdateAccountCustomizationRequest;
       class UpdateAccountSettingsRequest;
+      class UpdateActionConnectorRequest;
+      class UpdateActionConnectorPermissionsRequest;
       class UpdateAnalysisRequest;
       class UpdateAnalysisPermissionsRequest;
       class UpdateApplicationWithTokenExchangeGrantRequest;
@@ -457,6 +482,7 @@ namespace Aws
       class UpdateDataSourceRequest;
       class UpdateDataSourcePermissionsRequest;
       class UpdateDefaultQBusinessApplicationRequest;
+      class UpdateFlowPermissionsRequest;
       class UpdateFolderRequest;
       class UpdateFolderPermissionsRequest;
       class UpdateGroupRequest;
@@ -490,6 +516,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CancelIngestionResult, QuickSightError> CancelIngestionOutcome;
       typedef Aws::Utils::Outcome<CreateAccountCustomizationResult, QuickSightError> CreateAccountCustomizationOutcome;
       typedef Aws::Utils::Outcome<CreateAccountSubscriptionResult, QuickSightError> CreateAccountSubscriptionOutcome;
+      typedef Aws::Utils::Outcome<CreateActionConnectorResult, QuickSightError> CreateActionConnectorOutcome;
       typedef Aws::Utils::Outcome<CreateAnalysisResult, QuickSightError> CreateAnalysisOutcome;
       typedef Aws::Utils::Outcome<CreateBrandResult, QuickSightError> CreateBrandOutcome;
       typedef Aws::Utils::Outcome<CreateCustomPermissionsResult, QuickSightError> CreateCustomPermissionsOutcome;
@@ -515,6 +542,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteAccountCustomPermissionResult, QuickSightError> DeleteAccountCustomPermissionOutcome;
       typedef Aws::Utils::Outcome<DeleteAccountCustomizationResult, QuickSightError> DeleteAccountCustomizationOutcome;
       typedef Aws::Utils::Outcome<DeleteAccountSubscriptionResult, QuickSightError> DeleteAccountSubscriptionOutcome;
+      typedef Aws::Utils::Outcome<DeleteActionConnectorResult, QuickSightError> DeleteActionConnectorOutcome;
       typedef Aws::Utils::Outcome<DeleteAnalysisResult, QuickSightError> DeleteAnalysisOutcome;
       typedef Aws::Utils::Outcome<DeleteBrandResult, QuickSightError> DeleteBrandOutcome;
       typedef Aws::Utils::Outcome<DeleteBrandAssignmentResult, QuickSightError> DeleteBrandAssignmentOutcome;
@@ -548,6 +576,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeAccountCustomizationResult, QuickSightError> DescribeAccountCustomizationOutcome;
       typedef Aws::Utils::Outcome<DescribeAccountSettingsResult, QuickSightError> DescribeAccountSettingsOutcome;
       typedef Aws::Utils::Outcome<DescribeAccountSubscriptionResult, QuickSightError> DescribeAccountSubscriptionOutcome;
+      typedef Aws::Utils::Outcome<DescribeActionConnectorResult, QuickSightError> DescribeActionConnectorOutcome;
+      typedef Aws::Utils::Outcome<DescribeActionConnectorPermissionsResult, QuickSightError> DescribeActionConnectorPermissionsOutcome;
       typedef Aws::Utils::Outcome<DescribeAnalysisResult, QuickSightError> DescribeAnalysisOutcome;
       typedef Aws::Utils::Outcome<DescribeAnalysisDefinitionResult, QuickSightError> DescribeAnalysisDefinitionOutcome;
       typedef Aws::Utils::Outcome<DescribeAnalysisPermissionsResult, QuickSightError> DescribeAnalysisPermissionsOutcome;
@@ -600,7 +630,10 @@ namespace Aws
       typedef Aws::Utils::Outcome<GenerateEmbedUrlForRegisteredUserResult, QuickSightError> GenerateEmbedUrlForRegisteredUserOutcome;
       typedef Aws::Utils::Outcome<GenerateEmbedUrlForRegisteredUserWithIdentityResult, QuickSightError> GenerateEmbedUrlForRegisteredUserWithIdentityOutcome;
       typedef Aws::Utils::Outcome<GetDashboardEmbedUrlResult, QuickSightError> GetDashboardEmbedUrlOutcome;
+      typedef Aws::Utils::Outcome<GetFlowMetadataResult, QuickSightError> GetFlowMetadataOutcome;
+      typedef Aws::Utils::Outcome<GetFlowPermissionsResult, QuickSightError> GetFlowPermissionsOutcome;
       typedef Aws::Utils::Outcome<GetSessionEmbedUrlResult, QuickSightError> GetSessionEmbedUrlOutcome;
+      typedef Aws::Utils::Outcome<ListActionConnectorsResult, QuickSightError> ListActionConnectorsOutcome;
       typedef Aws::Utils::Outcome<ListAnalysesResult, QuickSightError> ListAnalysesOutcome;
       typedef Aws::Utils::Outcome<ListAssetBundleExportJobsResult, QuickSightError> ListAssetBundleExportJobsOutcome;
       typedef Aws::Utils::Outcome<ListAssetBundleImportJobsResult, QuickSightError> ListAssetBundleImportJobsOutcome;
@@ -610,6 +643,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListDashboardsResult, QuickSightError> ListDashboardsOutcome;
       typedef Aws::Utils::Outcome<ListDataSetsResult, QuickSightError> ListDataSetsOutcome;
       typedef Aws::Utils::Outcome<ListDataSourcesResult, QuickSightError> ListDataSourcesOutcome;
+      typedef Aws::Utils::Outcome<ListFlowsResult, QuickSightError> ListFlowsOutcome;
       typedef Aws::Utils::Outcome<ListFolderMembersResult, QuickSightError> ListFolderMembersOutcome;
       typedef Aws::Utils::Outcome<ListFoldersResult, QuickSightError> ListFoldersOutcome;
       typedef Aws::Utils::Outcome<ListFoldersForResourceResult, QuickSightError> ListFoldersForResourceOutcome;
@@ -639,10 +673,12 @@ namespace Aws
       typedef Aws::Utils::Outcome<PutDataSetRefreshPropertiesResult, QuickSightError> PutDataSetRefreshPropertiesOutcome;
       typedef Aws::Utils::Outcome<RegisterUserResult, QuickSightError> RegisterUserOutcome;
       typedef Aws::Utils::Outcome<RestoreAnalysisResult, QuickSightError> RestoreAnalysisOutcome;
+      typedef Aws::Utils::Outcome<SearchActionConnectorsResult, QuickSightError> SearchActionConnectorsOutcome;
       typedef Aws::Utils::Outcome<SearchAnalysesResult, QuickSightError> SearchAnalysesOutcome;
       typedef Aws::Utils::Outcome<SearchDashboardsResult, QuickSightError> SearchDashboardsOutcome;
       typedef Aws::Utils::Outcome<SearchDataSetsResult, QuickSightError> SearchDataSetsOutcome;
       typedef Aws::Utils::Outcome<SearchDataSourcesResult, QuickSightError> SearchDataSourcesOutcome;
+      typedef Aws::Utils::Outcome<SearchFlowsResult, QuickSightError> SearchFlowsOutcome;
       typedef Aws::Utils::Outcome<SearchFoldersResult, QuickSightError> SearchFoldersOutcome;
       typedef Aws::Utils::Outcome<SearchGroupsResult, QuickSightError> SearchGroupsOutcome;
       typedef Aws::Utils::Outcome<SearchTopicsResult, QuickSightError> SearchTopicsOutcome;
@@ -655,6 +691,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateAccountCustomPermissionResult, QuickSightError> UpdateAccountCustomPermissionOutcome;
       typedef Aws::Utils::Outcome<UpdateAccountCustomizationResult, QuickSightError> UpdateAccountCustomizationOutcome;
       typedef Aws::Utils::Outcome<UpdateAccountSettingsResult, QuickSightError> UpdateAccountSettingsOutcome;
+      typedef Aws::Utils::Outcome<UpdateActionConnectorResult, QuickSightError> UpdateActionConnectorOutcome;
+      typedef Aws::Utils::Outcome<UpdateActionConnectorPermissionsResult, QuickSightError> UpdateActionConnectorPermissionsOutcome;
       typedef Aws::Utils::Outcome<UpdateAnalysisResult, QuickSightError> UpdateAnalysisOutcome;
       typedef Aws::Utils::Outcome<UpdateAnalysisPermissionsResult, QuickSightError> UpdateAnalysisPermissionsOutcome;
       typedef Aws::Utils::Outcome<UpdateApplicationWithTokenExchangeGrantResult, QuickSightError> UpdateApplicationWithTokenExchangeGrantOutcome;
@@ -672,6 +710,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateDataSourceResult, QuickSightError> UpdateDataSourceOutcome;
       typedef Aws::Utils::Outcome<UpdateDataSourcePermissionsResult, QuickSightError> UpdateDataSourcePermissionsOutcome;
       typedef Aws::Utils::Outcome<UpdateDefaultQBusinessApplicationResult, QuickSightError> UpdateDefaultQBusinessApplicationOutcome;
+      typedef Aws::Utils::Outcome<UpdateFlowPermissionsResult, QuickSightError> UpdateFlowPermissionsOutcome;
       typedef Aws::Utils::Outcome<UpdateFolderResult, QuickSightError> UpdateFolderOutcome;
       typedef Aws::Utils::Outcome<UpdateFolderPermissionsResult, QuickSightError> UpdateFolderPermissionsOutcome;
       typedef Aws::Utils::Outcome<UpdateGroupResult, QuickSightError> UpdateGroupOutcome;
@@ -705,6 +744,7 @@ namespace Aws
       typedef std::future<CancelIngestionOutcome> CancelIngestionOutcomeCallable;
       typedef std::future<CreateAccountCustomizationOutcome> CreateAccountCustomizationOutcomeCallable;
       typedef std::future<CreateAccountSubscriptionOutcome> CreateAccountSubscriptionOutcomeCallable;
+      typedef std::future<CreateActionConnectorOutcome> CreateActionConnectorOutcomeCallable;
       typedef std::future<CreateAnalysisOutcome> CreateAnalysisOutcomeCallable;
       typedef std::future<CreateBrandOutcome> CreateBrandOutcomeCallable;
       typedef std::future<CreateCustomPermissionsOutcome> CreateCustomPermissionsOutcomeCallable;
@@ -730,6 +770,7 @@ namespace Aws
       typedef std::future<DeleteAccountCustomPermissionOutcome> DeleteAccountCustomPermissionOutcomeCallable;
       typedef std::future<DeleteAccountCustomizationOutcome> DeleteAccountCustomizationOutcomeCallable;
       typedef std::future<DeleteAccountSubscriptionOutcome> DeleteAccountSubscriptionOutcomeCallable;
+      typedef std::future<DeleteActionConnectorOutcome> DeleteActionConnectorOutcomeCallable;
       typedef std::future<DeleteAnalysisOutcome> DeleteAnalysisOutcomeCallable;
       typedef std::future<DeleteBrandOutcome> DeleteBrandOutcomeCallable;
       typedef std::future<DeleteBrandAssignmentOutcome> DeleteBrandAssignmentOutcomeCallable;
@@ -763,6 +804,8 @@ namespace Aws
       typedef std::future<DescribeAccountCustomizationOutcome> DescribeAccountCustomizationOutcomeCallable;
       typedef std::future<DescribeAccountSettingsOutcome> DescribeAccountSettingsOutcomeCallable;
       typedef std::future<DescribeAccountSubscriptionOutcome> DescribeAccountSubscriptionOutcomeCallable;
+      typedef std::future<DescribeActionConnectorOutcome> DescribeActionConnectorOutcomeCallable;
+      typedef std::future<DescribeActionConnectorPermissionsOutcome> DescribeActionConnectorPermissionsOutcomeCallable;
       typedef std::future<DescribeAnalysisOutcome> DescribeAnalysisOutcomeCallable;
       typedef std::future<DescribeAnalysisDefinitionOutcome> DescribeAnalysisDefinitionOutcomeCallable;
       typedef std::future<DescribeAnalysisPermissionsOutcome> DescribeAnalysisPermissionsOutcomeCallable;
@@ -815,7 +858,10 @@ namespace Aws
       typedef std::future<GenerateEmbedUrlForRegisteredUserOutcome> GenerateEmbedUrlForRegisteredUserOutcomeCallable;
       typedef std::future<GenerateEmbedUrlForRegisteredUserWithIdentityOutcome> GenerateEmbedUrlForRegisteredUserWithIdentityOutcomeCallable;
       typedef std::future<GetDashboardEmbedUrlOutcome> GetDashboardEmbedUrlOutcomeCallable;
+      typedef std::future<GetFlowMetadataOutcome> GetFlowMetadataOutcomeCallable;
+      typedef std::future<GetFlowPermissionsOutcome> GetFlowPermissionsOutcomeCallable;
       typedef std::future<GetSessionEmbedUrlOutcome> GetSessionEmbedUrlOutcomeCallable;
+      typedef std::future<ListActionConnectorsOutcome> ListActionConnectorsOutcomeCallable;
       typedef std::future<ListAnalysesOutcome> ListAnalysesOutcomeCallable;
       typedef std::future<ListAssetBundleExportJobsOutcome> ListAssetBundleExportJobsOutcomeCallable;
       typedef std::future<ListAssetBundleImportJobsOutcome> ListAssetBundleImportJobsOutcomeCallable;
@@ -825,6 +871,7 @@ namespace Aws
       typedef std::future<ListDashboardsOutcome> ListDashboardsOutcomeCallable;
       typedef std::future<ListDataSetsOutcome> ListDataSetsOutcomeCallable;
       typedef std::future<ListDataSourcesOutcome> ListDataSourcesOutcomeCallable;
+      typedef std::future<ListFlowsOutcome> ListFlowsOutcomeCallable;
       typedef std::future<ListFolderMembersOutcome> ListFolderMembersOutcomeCallable;
       typedef std::future<ListFoldersOutcome> ListFoldersOutcomeCallable;
       typedef std::future<ListFoldersForResourceOutcome> ListFoldersForResourceOutcomeCallable;
@@ -854,10 +901,12 @@ namespace Aws
       typedef std::future<PutDataSetRefreshPropertiesOutcome> PutDataSetRefreshPropertiesOutcomeCallable;
       typedef std::future<RegisterUserOutcome> RegisterUserOutcomeCallable;
       typedef std::future<RestoreAnalysisOutcome> RestoreAnalysisOutcomeCallable;
+      typedef std::future<SearchActionConnectorsOutcome> SearchActionConnectorsOutcomeCallable;
       typedef std::future<SearchAnalysesOutcome> SearchAnalysesOutcomeCallable;
       typedef std::future<SearchDashboardsOutcome> SearchDashboardsOutcomeCallable;
       typedef std::future<SearchDataSetsOutcome> SearchDataSetsOutcomeCallable;
       typedef std::future<SearchDataSourcesOutcome> SearchDataSourcesOutcomeCallable;
+      typedef std::future<SearchFlowsOutcome> SearchFlowsOutcomeCallable;
       typedef std::future<SearchFoldersOutcome> SearchFoldersOutcomeCallable;
       typedef std::future<SearchGroupsOutcome> SearchGroupsOutcomeCallable;
       typedef std::future<SearchTopicsOutcome> SearchTopicsOutcomeCallable;
@@ -870,6 +919,8 @@ namespace Aws
       typedef std::future<UpdateAccountCustomPermissionOutcome> UpdateAccountCustomPermissionOutcomeCallable;
       typedef std::future<UpdateAccountCustomizationOutcome> UpdateAccountCustomizationOutcomeCallable;
       typedef std::future<UpdateAccountSettingsOutcome> UpdateAccountSettingsOutcomeCallable;
+      typedef std::future<UpdateActionConnectorOutcome> UpdateActionConnectorOutcomeCallable;
+      typedef std::future<UpdateActionConnectorPermissionsOutcome> UpdateActionConnectorPermissionsOutcomeCallable;
       typedef std::future<UpdateAnalysisOutcome> UpdateAnalysisOutcomeCallable;
       typedef std::future<UpdateAnalysisPermissionsOutcome> UpdateAnalysisPermissionsOutcomeCallable;
       typedef std::future<UpdateApplicationWithTokenExchangeGrantOutcome> UpdateApplicationWithTokenExchangeGrantOutcomeCallable;
@@ -887,6 +938,7 @@ namespace Aws
       typedef std::future<UpdateDataSourceOutcome> UpdateDataSourceOutcomeCallable;
       typedef std::future<UpdateDataSourcePermissionsOutcome> UpdateDataSourcePermissionsOutcomeCallable;
       typedef std::future<UpdateDefaultQBusinessApplicationOutcome> UpdateDefaultQBusinessApplicationOutcomeCallable;
+      typedef std::future<UpdateFlowPermissionsOutcome> UpdateFlowPermissionsOutcomeCallable;
       typedef std::future<UpdateFolderOutcome> UpdateFolderOutcomeCallable;
       typedef std::future<UpdateFolderPermissionsOutcome> UpdateFolderPermissionsOutcomeCallable;
       typedef std::future<UpdateGroupOutcome> UpdateGroupOutcomeCallable;
@@ -923,6 +975,7 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::CancelIngestionRequest&, const Model::CancelIngestionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelIngestionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateAccountCustomizationRequest&, const Model::CreateAccountCustomizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccountCustomizationResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateAccountSubscriptionRequest&, const Model::CreateAccountSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccountSubscriptionResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::CreateActionConnectorRequest&, const Model::CreateActionConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateActionConnectorResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateAnalysisRequest&, const Model::CreateAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAnalysisResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateBrandRequest&, const Model::CreateBrandOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBrandResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateCustomPermissionsRequest&, const Model::CreateCustomPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomPermissionsResponseReceivedHandler;
@@ -948,6 +1001,7 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::DeleteAccountCustomPermissionRequest&, const Model::DeleteAccountCustomPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccountCustomPermissionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteAccountCustomizationRequest&, const Model::DeleteAccountCustomizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccountCustomizationResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteAccountSubscriptionRequest&, const Model::DeleteAccountSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccountSubscriptionResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DeleteActionConnectorRequest&, const Model::DeleteActionConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteActionConnectorResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteAnalysisRequest&, const Model::DeleteAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAnalysisResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteBrandRequest&, const Model::DeleteBrandOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBrandResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteBrandAssignmentRequest&, const Model::DeleteBrandAssignmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBrandAssignmentResponseReceivedHandler;
@@ -981,6 +1035,8 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::DescribeAccountCustomizationRequest&, const Model::DescribeAccountCustomizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountCustomizationResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeAccountSettingsRequest&, const Model::DescribeAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountSettingsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeAccountSubscriptionRequest&, const Model::DescribeAccountSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountSubscriptionResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DescribeActionConnectorRequest&, const Model::DescribeActionConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeActionConnectorResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DescribeActionConnectorPermissionsRequest&, const Model::DescribeActionConnectorPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeActionConnectorPermissionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeAnalysisRequest&, const Model::DescribeAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAnalysisResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeAnalysisDefinitionRequest&, const Model::DescribeAnalysisDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAnalysisDefinitionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeAnalysisPermissionsRequest&, const Model::DescribeAnalysisPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAnalysisPermissionsResponseReceivedHandler;
@@ -1033,7 +1089,10 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::GenerateEmbedUrlForRegisteredUserRequest&, const Model::GenerateEmbedUrlForRegisteredUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateEmbedUrlForRegisteredUserResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::GenerateEmbedUrlForRegisteredUserWithIdentityRequest&, const Model::GenerateEmbedUrlForRegisteredUserWithIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateEmbedUrlForRegisteredUserWithIdentityResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::GetDashboardEmbedUrlRequest&, const Model::GetDashboardEmbedUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDashboardEmbedUrlResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::GetFlowMetadataRequest&, const Model::GetFlowMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFlowMetadataResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::GetFlowPermissionsRequest&, const Model::GetFlowPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFlowPermissionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::GetSessionEmbedUrlRequest&, const Model::GetSessionEmbedUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSessionEmbedUrlResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::ListActionConnectorsRequest&, const Model::ListActionConnectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListActionConnectorsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListAnalysesRequest&, const Model::ListAnalysesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnalysesResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListAssetBundleExportJobsRequest&, const Model::ListAssetBundleExportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssetBundleExportJobsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListAssetBundleImportJobsRequest&, const Model::ListAssetBundleImportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssetBundleImportJobsResponseReceivedHandler;
@@ -1043,6 +1102,7 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::ListDashboardsRequest&, const Model::ListDashboardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDashboardsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListDataSetsRequest&, const Model::ListDataSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSetsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListDataSourcesRequest&, const Model::ListDataSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSourcesResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::ListFlowsRequest&, const Model::ListFlowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFlowsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListFolderMembersRequest&, const Model::ListFolderMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFolderMembersResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListFoldersRequest&, const Model::ListFoldersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFoldersResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListFoldersForResourceRequest&, const Model::ListFoldersForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFoldersForResourceResponseReceivedHandler;
@@ -1072,10 +1132,12 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::PutDataSetRefreshPropertiesRequest&, const Model::PutDataSetRefreshPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDataSetRefreshPropertiesResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::RegisterUserRequest&, const Model::RegisterUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterUserResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::RestoreAnalysisRequest&, const Model::RestoreAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreAnalysisResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::SearchActionConnectorsRequest&, const Model::SearchActionConnectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchActionConnectorsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::SearchAnalysesRequest&, const Model::SearchAnalysesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchAnalysesResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::SearchDashboardsRequest&, const Model::SearchDashboardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchDashboardsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::SearchDataSetsRequest&, const Model::SearchDataSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchDataSetsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::SearchDataSourcesRequest&, const Model::SearchDataSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchDataSourcesResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::SearchFlowsRequest&, const Model::SearchFlowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchFlowsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::SearchFoldersRequest&, const Model::SearchFoldersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchFoldersResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::SearchGroupsRequest&, const Model::SearchGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchGroupsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::SearchTopicsRequest&, const Model::SearchTopicsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchTopicsResponseReceivedHandler;
@@ -1088,6 +1150,8 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::UpdateAccountCustomPermissionRequest&, const Model::UpdateAccountCustomPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccountCustomPermissionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateAccountCustomizationRequest&, const Model::UpdateAccountCustomizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccountCustomizationResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateAccountSettingsRequest&, const Model::UpdateAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccountSettingsResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::UpdateActionConnectorRequest&, const Model::UpdateActionConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateActionConnectorResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::UpdateActionConnectorPermissionsRequest&, const Model::UpdateActionConnectorPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateActionConnectorPermissionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateAnalysisRequest&, const Model::UpdateAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAnalysisResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateAnalysisPermissionsRequest&, const Model::UpdateAnalysisPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAnalysisPermissionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateApplicationWithTokenExchangeGrantRequest&, const Model::UpdateApplicationWithTokenExchangeGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationWithTokenExchangeGrantResponseReceivedHandler;
@@ -1105,6 +1169,7 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::UpdateDataSourceRequest&, const Model::UpdateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataSourceResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateDataSourcePermissionsRequest&, const Model::UpdateDataSourcePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataSourcePermissionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateDefaultQBusinessApplicationRequest&, const Model::UpdateDefaultQBusinessApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDefaultQBusinessApplicationResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::UpdateFlowPermissionsRequest&, const Model::UpdateFlowPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFlowPermissionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateFolderRequest&, const Model::UpdateFolderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFolderResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateFolderPermissionsRequest&, const Model::UpdateFolderPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFolderPermissionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateGroupRequest&, const Model::UpdateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGroupResponseReceivedHandler;

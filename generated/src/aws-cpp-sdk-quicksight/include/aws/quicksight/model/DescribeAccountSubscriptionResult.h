@@ -35,12 +35,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>A structure that contains the following elements:</p> <ul> <li> <p>Your
-     * QuickSight account name.</p> </li> <li> <p>The edition of QuickSight that your
+     * <p>A structure that contains the following elements:</p> <ul> <li> <p>Your Quick
+     * Sight account name.</p> </li> <li> <p>The edition of Quick Sight that your
      * account is using.</p> </li> <li> <p>The notification email address that is
-     * associated with the QuickSight account. </p> </li> <li> <p>The authentication
-     * type of the QuickSight account.</p> </li> <li> <p>The status of the QuickSight
-     * account's subscription.</p> </li> </ul>
+     * associated with the Amazon Quick Sight account. </p> </li> <li> <p>The
+     * authentication type of the Quick Sight account.</p> </li> <li> <p>The status of
+     * the Quick Sight account's subscription.</p> </li> </ul>
      */
     inline const AccountInfo& GetAccountInfo() const { return m_accountInfo; }
     template<typename AccountInfoT = AccountInfo>

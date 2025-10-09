@@ -19,6 +19,7 @@
 #include <aws/quicksight/model/RdsParameters.h>
 #include <aws/quicksight/model/RedshiftParameters.h>
 #include <aws/quicksight/model/S3Parameters.h>
+#include <aws/quicksight/model/S3KnowledgeBaseParameters.h>
 #include <aws/quicksight/model/ServiceNowParameters.h>
 #include <aws/quicksight/model/SnowflakeParameters.h>
 #include <aws/quicksight/model/SparkParameters.h>
@@ -33,6 +34,9 @@
 #include <aws/quicksight/model/BigQueryParameters.h>
 #include <aws/quicksight/model/ImpalaParameters.h>
 #include <aws/quicksight/model/CustomConnectionParameters.h>
+#include <aws/quicksight/model/WebCrawlerParameters.h>
+#include <aws/quicksight/model/ConfluenceParameters.h>
+#include <aws/quicksight/model/QBusinessParameters.h>
 #include <utility>
 
 namespace Aws
@@ -51,7 +55,7 @@ namespace Model
 {
 
   /**
-   * <p>The parameters that Amazon QuickSight uses to connect to your underlying data
+   * <p>The parameters that Quick Sight uses to connect to your underlying data
    * source. This is a variant type structure. For this structure to be valid, only
    * one of the attributes can be non-null.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataSourceParameters">AWS
@@ -236,6 +240,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The parameters for S3 Knowledge Base.</p>
+     */
+    inline const S3KnowledgeBaseParameters& GetS3KnowledgeBaseParameters() const { return m_s3KnowledgeBaseParameters; }
+    inline bool S3KnowledgeBaseParametersHasBeenSet() const { return m_s3KnowledgeBaseParametersHasBeenSet; }
+    template<typename S3KnowledgeBaseParametersT = S3KnowledgeBaseParameters>
+    void SetS3KnowledgeBaseParameters(S3KnowledgeBaseParametersT&& value) { m_s3KnowledgeBaseParametersHasBeenSet = true; m_s3KnowledgeBaseParameters = std::forward<S3KnowledgeBaseParametersT>(value); }
+    template<typename S3KnowledgeBaseParametersT = S3KnowledgeBaseParameters>
+    DataSourceParameters& WithS3KnowledgeBaseParameters(S3KnowledgeBaseParametersT&& value) { SetS3KnowledgeBaseParameters(std::forward<S3KnowledgeBaseParametersT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The parameters for ServiceNow.</p>
      */
     inline const ServiceNowParameters& GetServiceNowParameters() const { return m_serviceNowParameters; }
@@ -402,6 +418,42 @@ namespace Model
     template<typename CustomConnectionParametersT = CustomConnectionParameters>
     DataSourceParameters& WithCustomConnectionParameters(CustomConnectionParametersT&& value) { SetCustomConnectionParameters(std::forward<CustomConnectionParametersT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The parameters for Web Crawler.</p>
+     */
+    inline const WebCrawlerParameters& GetWebCrawlerParameters() const { return m_webCrawlerParameters; }
+    inline bool WebCrawlerParametersHasBeenSet() const { return m_webCrawlerParametersHasBeenSet; }
+    template<typename WebCrawlerParametersT = WebCrawlerParameters>
+    void SetWebCrawlerParameters(WebCrawlerParametersT&& value) { m_webCrawlerParametersHasBeenSet = true; m_webCrawlerParameters = std::forward<WebCrawlerParametersT>(value); }
+    template<typename WebCrawlerParametersT = WebCrawlerParameters>
+    DataSourceParameters& WithWebCrawlerParameters(WebCrawlerParametersT&& value) { SetWebCrawlerParameters(std::forward<WebCrawlerParametersT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The parameters for Confluence.</p>
+     */
+    inline const ConfluenceParameters& GetConfluenceParameters() const { return m_confluenceParameters; }
+    inline bool ConfluenceParametersHasBeenSet() const { return m_confluenceParametersHasBeenSet; }
+    template<typename ConfluenceParametersT = ConfluenceParameters>
+    void SetConfluenceParameters(ConfluenceParametersT&& value) { m_confluenceParametersHasBeenSet = true; m_confluenceParameters = std::forward<ConfluenceParametersT>(value); }
+    template<typename ConfluenceParametersT = ConfluenceParameters>
+    DataSourceParameters& WithConfluenceParameters(ConfluenceParametersT&& value) { SetConfluenceParameters(std::forward<ConfluenceParametersT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The parameters for Amazon Q Business.</p>
+     */
+    inline const QBusinessParameters& GetQBusinessParameters() const { return m_qBusinessParameters; }
+    inline bool QBusinessParametersHasBeenSet() const { return m_qBusinessParametersHasBeenSet; }
+    template<typename QBusinessParametersT = QBusinessParameters>
+    void SetQBusinessParameters(QBusinessParametersT&& value) { m_qBusinessParametersHasBeenSet = true; m_qBusinessParameters = std::forward<QBusinessParametersT>(value); }
+    template<typename QBusinessParametersT = QBusinessParameters>
+    DataSourceParameters& WithQBusinessParameters(QBusinessParametersT&& value) { SetQBusinessParameters(std::forward<QBusinessParametersT>(value)); return *this;}
+    ///@}
   private:
 
     AmazonElasticsearchParameters m_amazonElasticsearchParameters;
@@ -446,6 +498,9 @@ namespace Model
     S3Parameters m_s3Parameters;
     bool m_s3ParametersHasBeenSet = false;
 
+    S3KnowledgeBaseParameters m_s3KnowledgeBaseParameters;
+    bool m_s3KnowledgeBaseParametersHasBeenSet = false;
+
     ServiceNowParameters m_serviceNowParameters;
     bool m_serviceNowParametersHasBeenSet = false;
 
@@ -487,6 +542,15 @@ namespace Model
 
     CustomConnectionParameters m_customConnectionParameters;
     bool m_customConnectionParametersHasBeenSet = false;
+
+    WebCrawlerParameters m_webCrawlerParameters;
+    bool m_webCrawlerParametersHasBeenSet = false;
+
+    ConfluenceParameters m_confluenceParameters;
+    bool m_confluenceParametersHasBeenSet = false;
+
+    QBusinessParameters m_qBusinessParameters;
+    bool m_qBusinessParametersHasBeenSet = false;
   };
 
 } // namespace Model

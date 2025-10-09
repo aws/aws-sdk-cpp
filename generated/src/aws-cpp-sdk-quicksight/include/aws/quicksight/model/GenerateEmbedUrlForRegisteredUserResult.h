@@ -34,8 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The embed URL for the QuickSight dashboard, visual, Q search bar, Generative
-     * Q&amp;A experience, or console.</p>
+     * <p>The embed URL for the Amazon Quick Sight dashboard, visual, Q search bar,
+     * Generative Q&amp;A experience, or console.</p>
      */
     inline const Aws::String& GetEmbedUrl() const { return m_embedUrl; }
     template<typename EmbedUrlT = Aws::String>

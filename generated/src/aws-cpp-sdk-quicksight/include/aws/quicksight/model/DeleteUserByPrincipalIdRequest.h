@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>The ID for the Amazon Web Services account that the user is in. Currently,
      * you use the ID for the Amazon Web Services account that contains your Amazon
-     * QuickSight account.</p>
+     * Quick Sight account.</p>
      */
     inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }

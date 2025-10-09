@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the KMS key that is registered to a QuickSight account for
+     * <p>The ARN of the KMS key that is registered to a Quick Sight account for
      * encryption and decryption use as a <code>QDataKey</code>.</p>
      */
     inline const Aws::String& GetQDataKeyArn() const { return m_qDataKeyArn; }
