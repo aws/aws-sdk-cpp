@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/config/AWSConfigFileProfileConfigLoader.h>
 #include <memory>
@@ -33,7 +34,7 @@ enum class ConfiguredEndpointsPolicy
     IgnoreConfigured
 };
 
-class ConfiguredEndpointResolver
+class AWS_CORE_API ConfiguredEndpointResolver
 {
 public:
     struct Options
