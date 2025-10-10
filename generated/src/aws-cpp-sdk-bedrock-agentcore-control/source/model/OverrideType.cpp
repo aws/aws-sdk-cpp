@@ -23,6 +23,7 @@ namespace Aws
         static const int SEMANTIC_OVERRIDE_HASH = HashingUtils::HashString("SEMANTIC_OVERRIDE");
         static const int SUMMARY_OVERRIDE_HASH = HashingUtils::HashString("SUMMARY_OVERRIDE");
         static const int USER_PREFERENCE_OVERRIDE_HASH = HashingUtils::HashString("USER_PREFERENCE_OVERRIDE");
+        static const int SELF_MANAGED_HASH = HashingUtils::HashString("SELF_MANAGED");
 
 
         OverrideType GetOverrideTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == USER_PREFERENCE_OVERRIDE_HASH)
           {
             return OverrideType::USER_PREFERENCE_OVERRIDE;
+          }
+          else if (hashCode == SELF_MANAGED_HASH)
+          {
+            return OverrideType::SELF_MANAGED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "SUMMARY_OVERRIDE";
           case OverrideType::USER_PREFERENCE_OVERRIDE:
             return "USER_PREFERENCE_OVERRIDE";
+          case OverrideType::SELF_MANAGED:
+            return "SELF_MANAGED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

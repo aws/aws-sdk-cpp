@@ -7,6 +7,7 @@
 #include <aws/odb/Odb_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/odb/model/ResourceStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -139,6 +140,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>The CIDR blocks associated with the peering connection. These CIDR blocks
+     * define the IP address ranges that can communicate through the peering
+     * connection.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetPeerNetworkCidrs() const { return m_peerNetworkCidrs; }
+    inline bool PeerNetworkCidrsHasBeenSet() const { return m_peerNetworkCidrsHasBeenSet; }
+    template<typename PeerNetworkCidrsT = Aws::Vector<Aws::String>>
+    void SetPeerNetworkCidrs(PeerNetworkCidrsT&& value) { m_peerNetworkCidrsHasBeenSet = true; m_peerNetworkCidrs = std::forward<PeerNetworkCidrsT>(value); }
+    template<typename PeerNetworkCidrsT = Aws::Vector<Aws::String>>
+    OdbPeeringConnectionSummary& WithPeerNetworkCidrs(PeerNetworkCidrsT&& value) { SetPeerNetworkCidrs(std::forward<PeerNetworkCidrsT>(value)); return *this;}
+    template<typename PeerNetworkCidrsT = Aws::String>
+    OdbPeeringConnectionSummary& AddPeerNetworkCidrs(PeerNetworkCidrsT&& value) { m_peerNetworkCidrsHasBeenSet = true; m_peerNetworkCidrs.emplace_back(std::forward<PeerNetworkCidrsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The timestamp when the ODB peering connection was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -184,6 +201,9 @@ namespace Model
 
     Aws::String m_odbPeeringConnectionType;
     bool m_odbPeeringConnectionTypeHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_peerNetworkCidrs;
+    bool m_peerNetworkCidrsHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;

@@ -28,6 +28,28 @@ Aws::String StopBrowserSessionRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
+Aws::Http::HeaderValueCollection StopBrowserSessionRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_traceIdHasBeenSet)
+  {
+    ss << m_traceId;
+    headers.emplace("x-amzn-trace-id",  ss.str());
+    ss.str("");
+  }
+
+  if(m_traceParentHasBeenSet)
+  {
+    ss << m_traceParent;
+    headers.emplace("traceparent",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+
+}
+
 void StopBrowserSessionRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;

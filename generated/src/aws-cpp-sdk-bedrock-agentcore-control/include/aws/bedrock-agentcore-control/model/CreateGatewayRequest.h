@@ -66,8 +66,9 @@ namespace Model
     ///@{
     /**
      * <p>A unique, case-sensitive identifier to ensure that the API request completes
-     * no more than one time. If this token matches a previous request, the service
-     * ignores the request, but does not return an error. For more information, see <a
+     * no more than one time. If you don't specify this field, a value is randomly
+     * generated for you. If this token matches a previous request, the service ignores
+     * the request, but doesn't return an error. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * idempotency</a>.</p>
      */
@@ -117,7 +118,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of authorizer to use for the gateway.</p>
+     * <p>The type of authorizer to use for the gateway.</p> <ul> <li> <p>
+     * <code>CUSTOM_JWT</code> - Authorize with a bearer token.</p> </li> <li> <p>
+     * <code>AWS_IAM</code> - Authorize with your Amazon Web Services IAM
+     * credentials.</p> </li> </ul>
      */
     inline AuthorizerType GetAuthorizerType() const { return m_authorizerType; }
     inline bool AuthorizerTypeHasBeenSet() const { return m_authorizerTypeHasBeenSet; }
@@ -127,7 +131,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The authorizer configuration for the gateway.</p>
+     * <p>The authorizer configuration for the gateway. Required if
+     * <code>authorizerType</code> is <code>CUSTOM_JWT</code>.</p>
      */
     inline const AuthorizerConfiguration& GetAuthorizerConfiguration() const { return m_authorizerConfiguration; }
     inline bool AuthorizerConfigurationHasBeenSet() const { return m_authorizerConfigurationHasBeenSet; }

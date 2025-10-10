@@ -62,6 +62,7 @@
 #include <aws/bedrock-agentcore-control/model/ListTagsForResourceResult.h>
 #include <aws/bedrock-agentcore-control/model/ListWorkloadIdentitiesResult.h>
 #include <aws/bedrock-agentcore-control/model/SetTokenVaultCMKResult.h>
+#include <aws/bedrock-agentcore-control/model/SynchronizeGatewayTargetsResult.h>
 #include <aws/bedrock-agentcore-control/model/TagResourceResult.h>
 #include <aws/bedrock-agentcore-control/model/UntagResourceResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateAgentRuntimeResult.h>
@@ -165,6 +166,7 @@ namespace Aws
       class ListTagsForResourceRequest;
       class ListWorkloadIdentitiesRequest;
       class SetTokenVaultCMKRequest;
+      class SynchronizeGatewayTargetsRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateAgentRuntimeRequest;
@@ -222,6 +224,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, BedrockAgentCoreControlError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListWorkloadIdentitiesResult, BedrockAgentCoreControlError> ListWorkloadIdentitiesOutcome;
       typedef Aws::Utils::Outcome<SetTokenVaultCMKResult, BedrockAgentCoreControlError> SetTokenVaultCMKOutcome;
+      typedef Aws::Utils::Outcome<SynchronizeGatewayTargetsResult, BedrockAgentCoreControlError> SynchronizeGatewayTargetsOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, BedrockAgentCoreControlError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, BedrockAgentCoreControlError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateAgentRuntimeResult, BedrockAgentCoreControlError> UpdateAgentRuntimeOutcome;
@@ -279,6 +282,7 @@ namespace Aws
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListWorkloadIdentitiesOutcome> ListWorkloadIdentitiesOutcomeCallable;
       typedef std::future<SetTokenVaultCMKOutcome> SetTokenVaultCMKOutcomeCallable;
+      typedef std::future<SynchronizeGatewayTargetsOutcome> SynchronizeGatewayTargetsOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateAgentRuntimeOutcome> UpdateAgentRuntimeOutcomeCallable;
@@ -339,6 +343,7 @@ namespace Aws
     typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListWorkloadIdentitiesRequest&, const Model::ListWorkloadIdentitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkloadIdentitiesResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::SetTokenVaultCMKRequest&, const Model::SetTokenVaultCMKOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetTokenVaultCMKResponseReceivedHandler;
+    typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::SynchronizeGatewayTargetsRequest&, const Model::SynchronizeGatewayTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SynchronizeGatewayTargetsResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::UpdateAgentRuntimeRequest&, const Model::UpdateAgentRuntimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAgentRuntimeResponseReceivedHandler;

@@ -147,7 +147,11 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>Input parameters for updating open table format tables in GlueData Catalog,
+     * serving as a wrapper for format-specific update operations such as Apache
+     * Iceberg.</p>
+     */
     inline const UpdateOpenTableFormatInput& GetUpdateOpenTableFormatInput() const { return m_updateOpenTableFormatInput; }
     inline bool UpdateOpenTableFormatInputHasBeenSet() const { return m_updateOpenTableFormatInputHasBeenSet; }
     template<typename UpdateOpenTableFormatInputT = UpdateOpenTableFormatInput>

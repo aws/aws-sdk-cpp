@@ -21,7 +21,9 @@ namespace Model
     UPDATE_UNSUCCESSFUL,
     DELETING,
     READY,
-    FAILED
+    FAILED,
+    SYNCHRONIZING,
+    SYNCHRONIZE_UNSUCCESSFUL
   };
 
 namespace TargetStatusMapper

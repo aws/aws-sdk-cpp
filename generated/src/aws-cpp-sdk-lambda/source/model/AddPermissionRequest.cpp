@@ -72,6 +72,12 @@ Aws::String AddPermissionRequest::SerializePayload() const
    payload.WithString("FunctionUrlAuthType", FunctionUrlAuthTypeMapper::GetNameForFunctionUrlAuthType(m_functionUrlAuthType));
   }
 
+  if(m_invokedViaFunctionUrlHasBeenSet)
+  {
+   payload.WithBool("InvokedViaFunctionUrl", m_invokedViaFunctionUrl);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

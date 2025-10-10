@@ -26,6 +26,8 @@ namespace Aws
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int READY_HASH = HashingUtils::HashString("READY");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int SYNCHRONIZING_HASH = HashingUtils::HashString("SYNCHRONIZING");
+        static const int SYNCHRONIZE_UNSUCCESSFUL_HASH = HashingUtils::HashString("SYNCHRONIZE_UNSUCCESSFUL");
 
 
         TargetStatus GetTargetStatusForName(const Aws::String& name)
@@ -55,6 +57,14 @@ namespace Aws
           {
             return TargetStatus::FAILED;
           }
+          else if (hashCode == SYNCHRONIZING_HASH)
+          {
+            return TargetStatus::SYNCHRONIZING;
+          }
+          else if (hashCode == SYNCHRONIZE_UNSUCCESSFUL_HASH)
+          {
+            return TargetStatus::SYNCHRONIZE_UNSUCCESSFUL;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +93,10 @@ namespace Aws
             return "READY";
           case TargetStatus::FAILED:
             return "FAILED";
+          case TargetStatus::SYNCHRONIZING:
+            return "SYNCHRONIZING";
+          case TargetStatus::SYNCHRONIZE_UNSUCCESSFUL:
+            return "SYNCHRONIZE_UNSUCCESSFUL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -65,6 +65,15 @@ OdbPeeringConnectionSummary& OdbPeeringConnectionSummary::operator =(JsonView js
     m_odbPeeringConnectionType = jsonValue.GetString("odbPeeringConnectionType");
     m_odbPeeringConnectionTypeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("peerNetworkCidrs"))
+  {
+    Aws::Utils::Array<JsonView> peerNetworkCidrsJsonList = jsonValue.GetArray("peerNetworkCidrs");
+    for(unsigned peerNetworkCidrsIndex = 0; peerNetworkCidrsIndex < peerNetworkCidrsJsonList.GetLength(); ++peerNetworkCidrsIndex)
+    {
+      m_peerNetworkCidrs.push_back(peerNetworkCidrsJsonList[peerNetworkCidrsIndex].AsString());
+    }
+    m_peerNetworkCidrsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
@@ -126,6 +135,17 @@ JsonValue OdbPeeringConnectionSummary::Jsonize() const
   if(m_odbPeeringConnectionTypeHasBeenSet)
   {
    payload.WithString("odbPeeringConnectionType", m_odbPeeringConnectionType);
+
+  }
+
+  if(m_peerNetworkCidrsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> peerNetworkCidrsJsonList(m_peerNetworkCidrs.size());
+   for(unsigned peerNetworkCidrsIndex = 0; peerNetworkCidrsIndex < peerNetworkCidrsJsonList.GetLength(); ++peerNetworkCidrsIndex)
+   {
+     peerNetworkCidrsJsonList[peerNetworkCidrsIndex].AsString(m_peerNetworkCidrs[peerNetworkCidrsIndex]);
+   }
+   payload.WithArray("peerNetworkCidrs", std::move(peerNetworkCidrsJsonList));
 
   }
 

@@ -149,6 +149,8 @@
 #include <aws/odb/model/UpdateCloudExadataInfrastructureResult.h>
 #include <aws/odb/model/UpdateOdbNetworkRequest.h>
 #include <aws/odb/model/UpdateOdbNetworkResult.h>
+#include <aws/odb/model/UpdateOdbPeeringConnectionRequest.h>
+#include <aws/odb/model/UpdateOdbPeeringConnectionResult.h>
 #include <aws/odb/model/ValidationException.h>
 #include <aws/odb/model/ValidationExceptionField.h>
 #include <aws/odb/model/ValidationExceptionReason.h>

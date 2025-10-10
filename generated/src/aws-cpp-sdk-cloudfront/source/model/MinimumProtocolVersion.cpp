@@ -28,6 +28,7 @@ namespace Aws
         static const int TLSv1_2_2019_HASH = HashingUtils::HashString("TLSv1.2_2019");
         static const int TLSv1_2_2021_HASH = HashingUtils::HashString("TLSv1.2_2021");
         static const int TLSv1_3_2025_HASH = HashingUtils::HashString("TLSv1.3_2025");
+        static const int TLSv1_2_2025_HASH = HashingUtils::HashString("TLSv1.2_2025");
 
 
         MinimumProtocolVersion GetMinimumProtocolVersionForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return MinimumProtocolVersion::TLSv1_3_2025;
           }
+          else if (hashCode == TLSv1_2_2025_HASH)
+          {
+            return MinimumProtocolVersion::TLSv1_2_2025;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -97,6 +102,8 @@ namespace Aws
             return "TLSv1.2_2021";
           case MinimumProtocolVersion::TLSv1_3_2025:
             return "TLSv1.3_2025";
+          case MinimumProtocolVersion::TLSv1_2_2025:
+            return "TLSv1.2_2025";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

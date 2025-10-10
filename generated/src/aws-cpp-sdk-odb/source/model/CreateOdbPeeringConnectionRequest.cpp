@@ -34,6 +34,17 @@ Aws::String CreateOdbPeeringConnectionRequest::SerializePayload() const
 
   }
 
+  if(m_peerNetworkCidrsToBeAddedHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> peerNetworkCidrsToBeAddedJsonList(m_peerNetworkCidrsToBeAdded.size());
+   for(unsigned peerNetworkCidrsToBeAddedIndex = 0; peerNetworkCidrsToBeAddedIndex < peerNetworkCidrsToBeAddedJsonList.GetLength(); ++peerNetworkCidrsToBeAddedIndex)
+   {
+     peerNetworkCidrsToBeAddedJsonList[peerNetworkCidrsToBeAddedIndex].AsString(m_peerNetworkCidrsToBeAdded[peerNetworkCidrsToBeAddedIndex]);
+   }
+   payload.WithArray("peerNetworkCidrsToBeAdded", std::move(peerNetworkCidrsToBeAddedJsonList));
+
+  }
+
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);

@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     SEMANTIC_OVERRIDE,
     SUMMARY_OVERRIDE,
-    USER_PREFERENCE_OVERRIDE
+    USER_PREFERENCE_OVERRIDE,
+    SELF_MANAGED
   };
 
 namespace OverrideTypeMapper

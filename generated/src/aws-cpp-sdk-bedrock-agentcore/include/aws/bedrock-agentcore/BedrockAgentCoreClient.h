@@ -545,7 +545,12 @@ namespace BedrockAgentCore
          * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-oauth.html">Authenticate
          * and authorize with Inbound Auth and Outbound Auth</a>.</p> <p>To use this
          * operation, you must have the <code>bedrock-agentcore:InvokeAgentRuntime</code>
-         * permission.</p><p><h3>See Also:</h3>   <a
+         * permission. If you are making a call to <code>InvokeAgentRuntime</code> on
+         * behalf of a user ID with the
+         * <code>X-Amzn-Bedrock-AgentCore-Runtime-User-Id</code> header, You require
+         * permissions to both actions (<code>bedrock-agentcore:InvokeAgentRuntime</code>
+         * and <code>bedrock-agentcore:InvokeAgentRuntimeForUser</code>). </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/InvokeAgentRuntime">AWS
          * API Reference</a></p>
          */

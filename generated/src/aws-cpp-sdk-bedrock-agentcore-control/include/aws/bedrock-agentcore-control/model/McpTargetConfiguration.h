@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/ApiSchemaConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/McpLambdaTargetConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/McpServerTargetConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -79,6 +80,18 @@ namespace Model
     template<typename LambdaT = McpLambdaTargetConfiguration>
     McpTargetConfiguration& WithLambda(LambdaT&& value) { SetLambda(std::forward<LambdaT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The MCP server specified as the gateway target.</p>
+     */
+    inline const McpServerTargetConfiguration& GetMcpServer() const { return m_mcpServer; }
+    inline bool McpServerHasBeenSet() const { return m_mcpServerHasBeenSet; }
+    template<typename McpServerT = McpServerTargetConfiguration>
+    void SetMcpServer(McpServerT&& value) { m_mcpServerHasBeenSet = true; m_mcpServer = std::forward<McpServerT>(value); }
+    template<typename McpServerT = McpServerTargetConfiguration>
+    McpTargetConfiguration& WithMcpServer(McpServerT&& value) { SetMcpServer(std::forward<McpServerT>(value)); return *this;}
+    ///@}
   private:
 
     ApiSchemaConfiguration m_openApiSchema;
@@ -89,6 +102,9 @@ namespace Model
 
     McpLambdaTargetConfiguration m_lambda;
     bool m_lambdaHasBeenSet = false;
+
+    McpServerTargetConfiguration m_mcpServer;
+    bool m_mcpServerHasBeenSet = false;
   };
 
 } // namespace Model
