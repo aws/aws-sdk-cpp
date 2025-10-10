@@ -692,7 +692,7 @@ RpcV2CborListsResult& RpcV2CborListsResult::operator=(const Aws::AmazonWebServic
                                 ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
                               }
                             }
-                            m_blobList.push_back(ss_1.str());
+                            m_blobList.push_back(Aws::Utils::ByteBuffer(ss_1.str()));
                             ss_1.clear();
                           }
                         }
@@ -732,7 +732,7 @@ RpcV2CborListsResult& RpcV2CborListsResult::operator=(const Aws::AmazonWebServic
                               ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
                             }
                           }
-                          m_blobList.push_back(ss_1.str());
+                          m_blobList.push_back(Aws::Utils::ByteBuffer(ss_1.str()));
                           ss_1.clear();
                         }
                       }
@@ -1453,7 +1453,7 @@ RpcV2CborListsResult& RpcV2CborListsResult::operator=(const Aws::AmazonWebServic
                               ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
                             }
                           }
-                          m_blobList.push_back(ss_1.str());
+                          m_blobList.push_back(Aws::Utils::ByteBuffer(ss_1.str()));
                           ss_1.clear();
                         }
                       }
@@ -1493,7 +1493,7 @@ RpcV2CborListsResult& RpcV2CborListsResult::operator=(const Aws::AmazonWebServic
                             ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
                           }
                         }
-                        m_blobList.push_back(ss_1.str());
+                        m_blobList.push_back(Aws::Utils::ByteBuffer(ss_1.str()));
                         ss_1.clear();
                       }
                     }
