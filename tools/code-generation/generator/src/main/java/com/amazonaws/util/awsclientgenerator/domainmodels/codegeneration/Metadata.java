@@ -17,12 +17,12 @@ import java.util.Objects;
 @Data
 public class Metadata {
     private static List<String> supportedProtocols = ImmutableList.of(
+            "smithy-rpc-v2-cbor",
             "json",
             "rest-json",
             "rest-xml",
             "query",
-            "ec2",
-            "smithy-rpc-v2-cbor"
+            "ec2"
     );
 
     private String apiVersion;
@@ -70,6 +70,11 @@ public class Metadata {
 
         if (Objects.isNull(protocols) || protocols.isEmpty()) {
             return protocol;
+        }
+
+        //We're releasing CBOR so current services (only arc-region-switch) need to opt into the new protocol priority
+        if (serviceFullName != null && serviceFullName.equalsIgnoreCase("ARC - Region switch")){
+            return "json";
         }
 
         return protocols.stream().filter(supportedProtocols::contains)
