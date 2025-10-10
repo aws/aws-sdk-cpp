@@ -37,7 +37,7 @@ encoder.WriteFloat(${value});
     #end
 #elseif($shapeMember.timeStamp)
 encoder.WriteTag(1); //1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
-encoder.WriteUInt(${value}.Millis());
+encoder.WriteUInt(${value}.Seconds());
 #else
 (${value} >= 0) ? encoder.WriteUInt(${value}) : encoder.WriteNegInt(${value});
 #end
