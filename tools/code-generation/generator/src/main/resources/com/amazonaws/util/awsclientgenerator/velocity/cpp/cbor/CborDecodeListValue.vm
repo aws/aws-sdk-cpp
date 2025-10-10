@@ -70,7 +70,7 @@ if(peekType_${recursionDepth}.has_value()){
                     ss_${recursionDepth} << Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len);
                 }
             }
-            ${value}.push_back(ss_${recursionDepth}.str());
+            ${value}.push_back(Aws::Utils::ByteBuffer(ss_${recursionDepth}.str()));
             ss_${recursionDepth}.clear();
         }
     }
