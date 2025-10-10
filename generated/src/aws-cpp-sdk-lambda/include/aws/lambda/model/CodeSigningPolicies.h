@@ -45,8 +45,9 @@ namespace Model
      * <p>Code signing configuration policy for deployment validation failure. If you
      * set the policy to <code>Enforce</code>, Lambda blocks the deployment request if
      * signature validation checks fail. If you set the policy to <code>Warn</code>,
-     * Lambda allows the deployment and creates a CloudWatch log. </p> <p>Default
-     * value: <code>Warn</code> </p>
+     * Lambda allows the deployment and issues a new Amazon CloudWatch metric
+     * (<code>SignatureValidationErrors</code>) and also stores the warning in the
+     * CloudTrail log.</p> <p>Default value: <code>Warn</code> </p>
      */
     inline CodeSigningPolicy GetUntrustedArtifactOnDeployment() const { return m_untrustedArtifactOnDeployment; }
     inline bool UntrustedArtifactOnDeploymentHasBeenSet() const { return m_untrustedArtifactOnDeploymentHasBeenSet; }

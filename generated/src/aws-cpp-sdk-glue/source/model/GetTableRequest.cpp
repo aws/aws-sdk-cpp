@@ -45,6 +45,12 @@ Aws::String GetTableRequest::SerializePayload() const
    payload.WithDouble("QueryAsOfTime", m_queryAsOfTime.SecondsWithMSPrecision());
   }
 
+  if(m_auditContextHasBeenSet)
+  {
+   payload.WithObject("AuditContext", m_auditContext.Jsonize());
+
+  }
+
   if(m_includeStatusDetailsHasBeenSet)
   {
    payload.WithBool("IncludeStatusDetails", m_includeStatusDetails);

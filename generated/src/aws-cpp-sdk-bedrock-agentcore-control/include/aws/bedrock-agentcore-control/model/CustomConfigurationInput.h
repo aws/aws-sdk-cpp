@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/model/SemanticOverrideConfigurationInput.h>
 #include <aws/bedrock-agentcore-control/model/SummaryOverrideConfigurationInput.h>
 #include <aws/bedrock-agentcore-control/model/UserPreferenceOverrideConfigurationInput.h>
+#include <aws/bedrock-agentcore-control/model/SelfManagedConfigurationInput.h>
 #include <utility>
 
 namespace Aws
@@ -75,6 +76,18 @@ namespace Model
     template<typename UserPreferenceOverrideT = UserPreferenceOverrideConfigurationInput>
     CustomConfigurationInput& WithUserPreferenceOverride(UserPreferenceOverrideT&& value) { SetUserPreferenceOverride(std::forward<UserPreferenceOverrideT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The self managed configuration for a custom memory strategy.</p>
+     */
+    inline const SelfManagedConfigurationInput& GetSelfManagedConfiguration() const { return m_selfManagedConfiguration; }
+    inline bool SelfManagedConfigurationHasBeenSet() const { return m_selfManagedConfigurationHasBeenSet; }
+    template<typename SelfManagedConfigurationT = SelfManagedConfigurationInput>
+    void SetSelfManagedConfiguration(SelfManagedConfigurationT&& value) { m_selfManagedConfigurationHasBeenSet = true; m_selfManagedConfiguration = std::forward<SelfManagedConfigurationT>(value); }
+    template<typename SelfManagedConfigurationT = SelfManagedConfigurationInput>
+    CustomConfigurationInput& WithSelfManagedConfiguration(SelfManagedConfigurationT&& value) { SetSelfManagedConfiguration(std::forward<SelfManagedConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     SemanticOverrideConfigurationInput m_semanticOverride;
@@ -85,6 +98,9 @@ namespace Model
 
     UserPreferenceOverrideConfigurationInput m_userPreferenceOverride;
     bool m_userPreferenceOverrideHasBeenSet = false;
+
+    SelfManagedConfigurationInput m_selfManagedConfiguration;
+    bool m_selfManagedConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

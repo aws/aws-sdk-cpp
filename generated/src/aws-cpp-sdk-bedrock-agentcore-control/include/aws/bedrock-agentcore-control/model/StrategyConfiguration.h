@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/model/OverrideType.h>
 #include <aws/bedrock-agentcore-control/model/ExtractionConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ConsolidationConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/SelfManagedConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -73,6 +74,18 @@ namespace Model
     template<typename ConsolidationT = ConsolidationConfiguration>
     StrategyConfiguration& WithConsolidation(ConsolidationT&& value) { SetConsolidation(std::forward<ConsolidationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Self-managed configuration settings.</p>
+     */
+    inline const SelfManagedConfiguration& GetSelfManagedConfiguration() const { return m_selfManagedConfiguration; }
+    inline bool SelfManagedConfigurationHasBeenSet() const { return m_selfManagedConfigurationHasBeenSet; }
+    template<typename SelfManagedConfigurationT = SelfManagedConfiguration>
+    void SetSelfManagedConfiguration(SelfManagedConfigurationT&& value) { m_selfManagedConfigurationHasBeenSet = true; m_selfManagedConfiguration = std::forward<SelfManagedConfigurationT>(value); }
+    template<typename SelfManagedConfigurationT = SelfManagedConfiguration>
+    StrategyConfiguration& WithSelfManagedConfiguration(SelfManagedConfigurationT&& value) { SetSelfManagedConfiguration(std::forward<SelfManagedConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     OverrideType m_type{OverrideType::NOT_SET};
@@ -83,6 +96,9 @@ namespace Model
 
     ConsolidationConfiguration m_consolidation;
     bool m_consolidationHasBeenSet = false;
+
+    SelfManagedConfiguration m_selfManagedConfiguration;
+    bool m_selfManagedConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

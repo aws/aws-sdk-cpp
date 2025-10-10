@@ -38,6 +38,32 @@ namespace Model
 
     AWS_BEDROCKAGENTCORE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+    AWS_BEDROCKAGENTCORE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    ///@{
+    /**
+     * <p>The trace identifier for request tracking.</p>
+     */
+    inline const Aws::String& GetTraceId() const { return m_traceId; }
+    inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
+    template<typename TraceIdT = Aws::String>
+    void SetTraceId(TraceIdT&& value) { m_traceIdHasBeenSet = true; m_traceId = std::forward<TraceIdT>(value); }
+    template<typename TraceIdT = Aws::String>
+    StopCodeInterpreterSessionRequest& WithTraceId(TraceIdT&& value) { SetTraceId(std::forward<TraceIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The parent trace information for distributed tracing.</p>
+     */
+    inline const Aws::String& GetTraceParent() const { return m_traceParent; }
+    inline bool TraceParentHasBeenSet() const { return m_traceParentHasBeenSet; }
+    template<typename TraceParentT = Aws::String>
+    void SetTraceParent(TraceParentT&& value) { m_traceParentHasBeenSet = true; m_traceParent = std::forward<TraceParentT>(value); }
+    template<typename TraceParentT = Aws::String>
+    StopCodeInterpreterSessionRequest& WithTraceParent(TraceParentT&& value) { SetTraceParent(std::forward<TraceParentT>(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -78,6 +104,12 @@ namespace Model
     StopCodeInterpreterSessionRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
+
+    Aws::String m_traceId;
+    bool m_traceIdHasBeenSet = false;
+
+    Aws::String m_traceParent;
+    bool m_traceParentHasBeenSet = false;
 
     Aws::String m_codeInterpreterIdentifier;
     bool m_codeInterpreterIdentifierHasBeenSet = false;

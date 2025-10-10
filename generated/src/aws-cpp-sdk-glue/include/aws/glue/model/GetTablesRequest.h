@@ -8,6 +8,7 @@
 #include <aws/glue/GlueRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/glue/model/AuditContext.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/TableAttributes.h>
 #include <utility>
@@ -126,6 +127,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>A structure containing the Lake Formation <a
+     * href="https://docs.aws.amazon.com/glue/latest/webapi/API_AuditContext.html">audit
+     * context</a>.</p>
+     */
+    inline const AuditContext& GetAuditContext() const { return m_auditContext; }
+    inline bool AuditContextHasBeenSet() const { return m_auditContextHasBeenSet; }
+    template<typename AuditContextT = AuditContext>
+    void SetAuditContext(AuditContextT&& value) { m_auditContextHasBeenSet = true; m_auditContext = std::forward<AuditContextT>(value); }
+    template<typename AuditContextT = AuditContext>
+    GetTablesRequest& WithAuditContext(AuditContextT&& value) { SetAuditContext(std::forward<AuditContextT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies whether to include status details related to a request to create or
      * update an Glue Data Catalog view.</p>
      */
@@ -174,6 +189,9 @@ namespace Model
 
     Aws::Utils::DateTime m_queryAsOfTime{};
     bool m_queryAsOfTimeHasBeenSet = false;
+
+    AuditContext m_auditContext;
+    bool m_auditContextHasBeenSet = false;
 
     bool m_includeStatusDetails{false};
     bool m_includeStatusDetailsHasBeenSet = false;

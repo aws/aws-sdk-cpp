@@ -27,7 +27,9 @@ namespace Model
    * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed
    * URLs and signed cookies</a>, or with <a
    * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
-   * encryption</a>.</p><p><h3>See Also:</h3>   <a
+   * encryption</a>.</p> <p>CloudFront supports signed URLs and signed cookies with
+   * RSA 2048 or ECDSA 256 key signatures. Field-level encryption is only compatible
+   * with RSA 2048 key signatures.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublicKeyConfig">AWS
    * API Reference</a></p>
    */

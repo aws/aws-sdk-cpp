@@ -40,6 +40,11 @@ McpTargetConfiguration& McpTargetConfiguration::operator =(JsonView jsonValue)
     m_lambda = jsonValue.GetObject("lambda");
     m_lambdaHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("mcpServer"))
+  {
+    m_mcpServer = jsonValue.GetObject("mcpServer");
+    m_mcpServerHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +67,12 @@ JsonValue McpTargetConfiguration::Jsonize() const
   if(m_lambdaHasBeenSet)
   {
    payload.WithObject("lambda", m_lambda.Jsonize());
+
+  }
+
+  if(m_mcpServerHasBeenSet)
+  {
+   payload.WithObject("mcpServer", m_mcpServer.Jsonize());
 
   }
 

@@ -7,6 +7,7 @@
 #include <aws/odb/Odb_EXPORTS.h>
 #include <aws/odb/OdbRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -76,6 +77,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>A list of CIDR blocks to add to the peering connection. These CIDR blocks
+     * define the IP address ranges that can communicate through the peering
+     * connection.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetPeerNetworkCidrsToBeAdded() const { return m_peerNetworkCidrsToBeAdded; }
+    inline bool PeerNetworkCidrsToBeAddedHasBeenSet() const { return m_peerNetworkCidrsToBeAddedHasBeenSet; }
+    template<typename PeerNetworkCidrsToBeAddedT = Aws::Vector<Aws::String>>
+    void SetPeerNetworkCidrsToBeAdded(PeerNetworkCidrsToBeAddedT&& value) { m_peerNetworkCidrsToBeAddedHasBeenSet = true; m_peerNetworkCidrsToBeAdded = std::forward<PeerNetworkCidrsToBeAddedT>(value); }
+    template<typename PeerNetworkCidrsToBeAddedT = Aws::Vector<Aws::String>>
+    CreateOdbPeeringConnectionRequest& WithPeerNetworkCidrsToBeAdded(PeerNetworkCidrsToBeAddedT&& value) { SetPeerNetworkCidrsToBeAdded(std::forward<PeerNetworkCidrsToBeAddedT>(value)); return *this;}
+    template<typename PeerNetworkCidrsToBeAddedT = Aws::String>
+    CreateOdbPeeringConnectionRequest& AddPeerNetworkCidrsToBeAdded(PeerNetworkCidrsToBeAddedT&& value) { m_peerNetworkCidrsToBeAddedHasBeenSet = true; m_peerNetworkCidrsToBeAdded.emplace_back(std::forward<PeerNetworkCidrsToBeAddedT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The client token for the ODB peering connection request.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be unique for each request.</p> </li>
      * </ul>
@@ -113,6 +130,9 @@ namespace Model
 
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_peerNetworkCidrsToBeAdded;
+    bool m_peerNetworkCidrsToBeAddedHasBeenSet = false;
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
     bool m_clientTokenHasBeenSet = true;

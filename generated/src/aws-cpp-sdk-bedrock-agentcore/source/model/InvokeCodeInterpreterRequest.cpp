@@ -42,6 +42,20 @@ Aws::Http::HeaderValueCollection InvokeCodeInterpreterRequest::GetRequestSpecifi
     ss.str("");
   }
 
+  if(m_traceIdHasBeenSet)
+  {
+    ss << m_traceId;
+    headers.emplace("x-amzn-trace-id",  ss.str());
+    ss.str("");
+  }
+
+  if(m_traceParentHasBeenSet)
+  {
+    ss << m_traceParent;
+    headers.emplace("traceparent",  ss.str());
+    ss.str("");
+  }
+
   return headers;
 
 }

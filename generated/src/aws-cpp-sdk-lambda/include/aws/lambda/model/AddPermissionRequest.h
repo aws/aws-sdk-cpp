@@ -197,6 +197,21 @@ namespace Model
     inline void SetFunctionUrlAuthType(FunctionUrlAuthType value) { m_functionUrlAuthTypeHasBeenSet = true; m_functionUrlAuthType = value; }
     inline AddPermissionRequest& WithFunctionUrlAuthType(FunctionUrlAuthType value) { SetFunctionUrlAuthType(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Restricts the <code>lambda:InvokeFunction</code> action to calls coming from
+     * a function URL. When set to <code>true</code>, this prevents the principal from
+     * invoking the function by any means other than the function URL. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and
+     * auth model for Lambda function URLs</a>.</p>
+     */
+    inline bool GetInvokedViaFunctionUrl() const { return m_invokedViaFunctionUrl; }
+    inline bool InvokedViaFunctionUrlHasBeenSet() const { return m_invokedViaFunctionUrlHasBeenSet; }
+    inline void SetInvokedViaFunctionUrl(bool value) { m_invokedViaFunctionUrlHasBeenSet = true; m_invokedViaFunctionUrl = value; }
+    inline AddPermissionRequest& WithInvokedViaFunctionUrl(bool value) { SetInvokedViaFunctionUrl(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_functionName;
@@ -231,6 +246,9 @@ namespace Model
 
     FunctionUrlAuthType m_functionUrlAuthType{FunctionUrlAuthType::NOT_SET};
     bool m_functionUrlAuthTypeHasBeenSet = false;
+
+    bool m_invokedViaFunctionUrl{false};
+    bool m_invokedViaFunctionUrlHasBeenSet = false;
   };
 
 } // namespace Model

@@ -83,6 +83,11 @@ CreateGatewayTargetResult& CreateGatewayTargetResult::operator =(const Aws::Amaz
     }
     m_credentialProviderConfigurationsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("lastSynchronizedAt"))
+  {
+    m_lastSynchronizedAt = jsonValue.GetString("lastSynchronizedAt");
+    m_lastSynchronizedAtHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

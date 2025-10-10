@@ -206,10 +206,9 @@ namespace BedrockAgentCoreControl
 
         /**
          * <p>Creates a gateway for Amazon Bedrock Agent. A gateway serves as an
-         * integration point between your agent and external services.</p> <p>To create a
-         * gateway, you must specify a name, protocol type, and IAM role. The role grants
-         * the gateway permission to access Amazon Web Services services and
-         * resources.</p><p><h3>See Also:</h3>   <a
+         * integration point between your agent and external services.</p> <p>If you
+         * specify <code>CUSTOM_JWT</code> as the <code>authorizerType</code>, you must
+         * provide an <code>authorizerConfiguration</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateGateway">AWS
          * API Reference</a></p>
          */
@@ -1200,6 +1199,31 @@ namespace BedrockAgentCoreControl
         void SetTokenVaultCMKAsync(const SetTokenVaultCMKRequestT& request, const SetTokenVaultCMKResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockAgentCoreControlClient::SetTokenVaultCMK, request, handler, context);
+        }
+
+        /**
+         * <p>The gateway targets.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/SynchronizeGatewayTargets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SynchronizeGatewayTargetsOutcome SynchronizeGatewayTargets(const Model::SynchronizeGatewayTargetsRequest& request) const;
+
+        /**
+         * A Callable wrapper for SynchronizeGatewayTargets that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SynchronizeGatewayTargetsRequestT = Model::SynchronizeGatewayTargetsRequest>
+        Model::SynchronizeGatewayTargetsOutcomeCallable SynchronizeGatewayTargetsCallable(const SynchronizeGatewayTargetsRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentCoreControlClient::SynchronizeGatewayTargets, request);
+        }
+
+        /**
+         * An Async wrapper for SynchronizeGatewayTargets that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SynchronizeGatewayTargetsRequestT = Model::SynchronizeGatewayTargetsRequest>
+        void SynchronizeGatewayTargetsAsync(const SynchronizeGatewayTargetsRequestT& request, const SynchronizeGatewayTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentCoreControlClient::SynchronizeGatewayTargets, request, handler, context);
         }
 
         /**

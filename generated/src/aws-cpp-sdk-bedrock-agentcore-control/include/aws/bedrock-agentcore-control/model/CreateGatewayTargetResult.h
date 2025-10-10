@@ -150,6 +150,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The last synchronization of the target.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastSynchronizedAt() const { return m_lastSynchronizedAt; }
+    template<typename LastSynchronizedAtT = Aws::Utils::DateTime>
+    void SetLastSynchronizedAt(LastSynchronizedAtT&& value) { m_lastSynchronizedAtHasBeenSet = true; m_lastSynchronizedAt = std::forward<LastSynchronizedAtT>(value); }
+    template<typename LastSynchronizedAtT = Aws::Utils::DateTime>
+    CreateGatewayTargetResult& WithLastSynchronizedAt(LastSynchronizedAtT&& value) { SetLastSynchronizedAt(std::forward<LastSynchronizedAtT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -188,6 +199,9 @@ namespace Model
 
     Aws::Vector<CredentialProviderConfiguration> m_credentialProviderConfigurations;
     bool m_credentialProviderConfigurationsHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastSynchronizedAt{};
+    bool m_lastSynchronizedAtHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

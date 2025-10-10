@@ -21,7 +21,7 @@ namespace odb
    * inside Amazon Web Services data centers. You can migrate your Oracle Exadata
    * workloads, establish low-latency connectivity with applications running on
    * Amazon Web Services, and integrate with Amazon Web Services services. For
-   * example, you can run application servers in a virtual private cloud (VPC) and
+   * example, you can run application servers in a Virtual Private Cloud (VPC) and
    * access an Oracle Exadata system running in Oracle Database@Amazon Web Services.
    * You can get started with Oracle Database@Amazon Web Services by using the
    * familiar Amazon Web Services Management Console, APIs, or CLI.</p> <p>This
@@ -30,13 +30,17 @@ namespace odb
    * manage Oracle Database@Amazon Web Services. Oracle Database@Amazon Web Services
    * is asynchronous, which means that some interfaces might require techniques such
    * as polling or callback functions to determine when a command has been applied.
-   * The reference structure is as follows.</p>  <p>In this preview release
-   * documentation, the links in the "See Also" sections do not work.</p>  <p>
-   * <b>Oracle Database@Amazon Web Services API Reference</b> </p> <ul> <li> <p>For
-   * the alphabetical list of API actions, see .</p> </li> <li> <p>For the
-   * alphabetical list of data types, see .</p> </li> <li> <p>For a list of common
-   * parameters, see <a>CommonParameters</a>.</p> </li> <li> <p>For descriptions of
-   * the error codes, see <a>CommonErrors</a>.</p> </li> </ul>
+   * The reference structure is as follows.</p> <p> <b>Oracle Database@Amazon Web
+   * Services API Reference</b> </p> <ul> <li> <p>For the alphabetical list of API
+   * actions, see <a
+   * href="https://docs.aws.amazon.com/odb/latest/APIReference/API_Operations.html">API
+   * Actions</a>.</p> </li> <li> <p>For the alphabetical list of data types, see <a
+   * href="https://docs.aws.amazon.com/odb/latest/APIReference/API_Types.html">Data
+   * Types</a>.</p> </li> <li> <p>For a list of common query parameters, see <a
+   * href="https://docs.aws.amazon.com/odb/latest/APIReference/CommonParameters.html">Common
+   * Parameters</a>.</p> </li> <li> <p>For descriptions of the error codes, see <a
+   * href="https://docs.aws.amazon.com/odb/latest/APIReference/CommonErrors.html">Common
+   * Errors</a>.</p> </li> </ul>
    */
   class AWS_ODB_API OdbClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OdbClient>
   {
@@ -226,10 +230,9 @@ namespace odb
         }
 
         /**
-         * <p>Creates a peering connection between an ODB network and either another ODB
-         * network or a customer-owned VPC.</p> <p>A peering connection enables private
-         * connectivity between the networks for application-tier
-         * communication.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a peering connection between an ODB network and a VPC.</p> <p>A
+         * peering connection enables private connectivity between the networks for
+         * application-tier communication.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateOdbPeeringConnection">AWS
          * API Reference</a></p>
          */
@@ -1130,6 +1133,33 @@ namespace odb
         void UpdateOdbNetworkAsync(const UpdateOdbNetworkRequestT& request, const UpdateOdbNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OdbClient::UpdateOdbNetwork, request, handler, context);
+        }
+
+        /**
+         * <p>Modifies the settings of an Oracle Database@Amazon Web Services peering
+         * connection. You can update the display name and add or remove CIDR blocks from
+         * the peering connection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateOdbPeeringConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateOdbPeeringConnectionOutcome UpdateOdbPeeringConnection(const Model::UpdateOdbPeeringConnectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateOdbPeeringConnection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateOdbPeeringConnectionRequestT = Model::UpdateOdbPeeringConnectionRequest>
+        Model::UpdateOdbPeeringConnectionOutcomeCallable UpdateOdbPeeringConnectionCallable(const UpdateOdbPeeringConnectionRequestT& request) const
+        {
+            return SubmitCallable(&OdbClient::UpdateOdbPeeringConnection, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateOdbPeeringConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateOdbPeeringConnectionRequestT = Model::UpdateOdbPeeringConnectionRequest>
+        void UpdateOdbPeeringConnectionAsync(const UpdateOdbPeeringConnectionRequestT& request, const UpdateOdbPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OdbClient::UpdateOdbPeeringConnection, request, handler, context);
         }
 
 

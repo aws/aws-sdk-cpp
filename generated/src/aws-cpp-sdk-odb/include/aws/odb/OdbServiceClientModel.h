@@ -58,6 +58,7 @@
 #include <aws/odb/model/UntagResourceResult.h>
 #include <aws/odb/model/UpdateCloudExadataInfrastructureResult.h>
 #include <aws/odb/model/UpdateOdbNetworkResult.h>
+#include <aws/odb/model/UpdateOdbPeeringConnectionResult.h>
 #include <aws/odb/model/ListCloudVmClustersRequest.h>
 #include <aws/odb/model/ListOdbNetworksRequest.h>
 #include <aws/odb/model/ListDbSystemShapesRequest.h>
@@ -147,6 +148,7 @@ namespace Aws
       class UntagResourceRequest;
       class UpdateCloudExadataInfrastructureRequest;
       class UpdateOdbNetworkRequest;
+      class UpdateOdbPeeringConnectionRequest;
       /* End of service model forward declarations required in OdbClient header */
 
       /* Service model Outcome class definitions */
@@ -190,6 +192,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UntagResourceResult, OdbError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateCloudExadataInfrastructureResult, OdbError> UpdateCloudExadataInfrastructureOutcome;
       typedef Aws::Utils::Outcome<UpdateOdbNetworkResult, OdbError> UpdateOdbNetworkOutcome;
+      typedef Aws::Utils::Outcome<UpdateOdbPeeringConnectionResult, OdbError> UpdateOdbPeeringConnectionOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -233,6 +236,7 @@ namespace Aws
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateCloudExadataInfrastructureOutcome> UpdateCloudExadataInfrastructureOutcomeCallable;
       typedef std::future<UpdateOdbNetworkOutcome> UpdateOdbNetworkOutcomeCallable;
+      typedef std::future<UpdateOdbPeeringConnectionOutcome> UpdateOdbPeeringConnectionOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -279,6 +283,7 @@ namespace Aws
     typedef std::function<void(const OdbClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const OdbClient*, const Model::UpdateCloudExadataInfrastructureRequest&, const Model::UpdateCloudExadataInfrastructureOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCloudExadataInfrastructureResponseReceivedHandler;
     typedef std::function<void(const OdbClient*, const Model::UpdateOdbNetworkRequest&, const Model::UpdateOdbNetworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOdbNetworkResponseReceivedHandler;
+    typedef std::function<void(const OdbClient*, const Model::UpdateOdbPeeringConnectionRequest&, const Model::UpdateOdbPeeringConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOdbPeeringConnectionResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace odb
 } // namespace Aws

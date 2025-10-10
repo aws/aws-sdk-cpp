@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/ModifyExtractionConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ModifyConsolidationConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/ModifySelfManagedConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -62,6 +63,18 @@ namespace Model
     template<typename ConsolidationT = ModifyConsolidationConfiguration>
     ModifyStrategyConfiguration& WithConsolidation(ConsolidationT&& value) { SetConsolidation(std::forward<ConsolidationT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The updated self-managed configuration.</p>
+     */
+    inline const ModifySelfManagedConfiguration& GetSelfManagedConfiguration() const { return m_selfManagedConfiguration; }
+    inline bool SelfManagedConfigurationHasBeenSet() const { return m_selfManagedConfigurationHasBeenSet; }
+    template<typename SelfManagedConfigurationT = ModifySelfManagedConfiguration>
+    void SetSelfManagedConfiguration(SelfManagedConfigurationT&& value) { m_selfManagedConfigurationHasBeenSet = true; m_selfManagedConfiguration = std::forward<SelfManagedConfigurationT>(value); }
+    template<typename SelfManagedConfigurationT = ModifySelfManagedConfiguration>
+    ModifyStrategyConfiguration& WithSelfManagedConfiguration(SelfManagedConfigurationT&& value) { SetSelfManagedConfiguration(std::forward<SelfManagedConfigurationT>(value)); return *this;}
+    ///@}
   private:
 
     ModifyExtractionConfiguration m_extraction;
@@ -69,6 +82,9 @@ namespace Model
 
     ModifyConsolidationConfiguration m_consolidation;
     bool m_consolidationHasBeenSet = false;
+
+    ModifySelfManagedConfiguration m_selfManagedConfiguration;
+    bool m_selfManagedConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

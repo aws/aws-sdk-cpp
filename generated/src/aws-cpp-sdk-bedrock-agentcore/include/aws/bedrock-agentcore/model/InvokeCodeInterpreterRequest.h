@@ -89,6 +89,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>The trace identifier for request tracking.</p>
+     */
+    inline const Aws::String& GetTraceId() const { return m_traceId; }
+    inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
+    template<typename TraceIdT = Aws::String>
+    void SetTraceId(TraceIdT&& value) { m_traceIdHasBeenSet = true; m_traceId = std::forward<TraceIdT>(value); }
+    template<typename TraceIdT = Aws::String>
+    InvokeCodeInterpreterRequest& WithTraceId(TraceIdT&& value) { SetTraceId(std::forward<TraceIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The parent trace information for distributed tracing.</p>
+     */
+    inline const Aws::String& GetTraceParent() const { return m_traceParent; }
+    inline bool TraceParentHasBeenSet() const { return m_traceParentHasBeenSet; }
+    template<typename TraceParentT = Aws::String>
+    void SetTraceParent(TraceParentT&& value) { m_traceParentHasBeenSet = true; m_traceParent = std::forward<TraceParentT>(value); }
+    template<typename TraceParentT = Aws::String>
+    InvokeCodeInterpreterRequest& WithTraceParent(TraceParentT&& value) { SetTraceParent(std::forward<TraceParentT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the code interpreter to invoke.</p>
      */
     inline ToolName GetName() const { return m_name; }
@@ -118,6 +142,12 @@ namespace Model
 
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
+
+    Aws::String m_traceId;
+    bool m_traceIdHasBeenSet = false;
+
+    Aws::String m_traceParent;
+    bool m_traceParentHasBeenSet = false;
 
     ToolName m_name{ToolName::NOT_SET};
     bool m_nameHasBeenSet = false;
