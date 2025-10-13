@@ -927,6 +927,11 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, co
         }
     }
 
+    if (httpRequest->HasHeader(Aws::Http::SMITHY_PROTOCOL_HEADER))
+    {
+        request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PROTOCOL_RPC_V2_CBOR);
+    }
+
     // Pass along handlers for processing data sent/received in bytes
     httpRequest->SetHeadersReceivedEventHandler(request.GetHeadersReceivedEventHandler());
     httpRequest->SetDataReceivedEventHandler(request.GetDataReceivedEventHandler());

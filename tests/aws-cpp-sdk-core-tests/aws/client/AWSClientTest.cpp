@@ -24,6 +24,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/AmazonSerializableWebServiceRequest.h>
 
 
 using namespace Aws;
@@ -518,6 +519,30 @@ TEST_F(AWSClientTestSuite, TestRecursionDetection)
         }
         mockHttpClient->Reset();
     }
+}
+
+TEST_F(AWSClientTestSuite, TestCborUserAgent)
+{
+    HeaderValueCollection responseHeaders;
+    AmazonWebServiceRequestMock request;
+    request.SetAdditionalCustomHeaderValue(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+    QueueMockResponse(HttpResponseCode::OK, responseHeaders);
+    auto outcome = client->MakeRequest(request);
+
+    auto lastRequest = mockHttpClient->GetMostRecentHttpRequest();
+    EXPECT_TRUE(lastRequest.HasUserAgent());
+    const auto& userAgent = lastRequest.GetUserAgent();
+    EXPECT_TRUE(!userAgent.empty());
+
+    const auto userAgentParsed = Aws::Utils::StringUtils::Split(userAgent, ' ');
+
+    EXPECT_TRUE(!Aws::Client::UserAgent::BusinessMetricForFeature(UserAgentFeature::PROTOCOL_RPC_V2_CBOR).empty());
+    // Check for CBOR protocol business metric (M) in user agent
+    auto businessMetrics = std::find_if(userAgentParsed.begin(), userAgentParsed.end(),
+        [](const Aws::String& value) { return value.find("m/") != Aws::String::npos && value.find(Aws::Client::UserAgent::BusinessMetricForFeature(UserAgentFeature::PROTOCOL_RPC_V2_CBOR)) != Aws::String::npos; });
+
+    EXPECT_TRUE(businessMetrics != userAgentParsed.end());
+
 }
 using namespace Aws::Utils::Xml;
 TEST_F(XMLClientTestSuite, TestErrorInBodyOfResponse)
