@@ -281,6 +281,33 @@ namespace ObservabilityAdmin
         }
 
         /**
+         * <p> Returns the current status of the resource tags for telemetry feature, which
+         * enhances telemetry data with additional resource metadata from Amazon Web
+         * Services Resource Explorer. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryEnrichmentStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTelemetryEnrichmentStatusOutcome GetTelemetryEnrichmentStatus(const Model::GetTelemetryEnrichmentStatusRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetTelemetryEnrichmentStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetTelemetryEnrichmentStatusRequestT = Model::GetTelemetryEnrichmentStatusRequest>
+        Model::GetTelemetryEnrichmentStatusOutcomeCallable GetTelemetryEnrichmentStatusCallable(const GetTelemetryEnrichmentStatusRequestT& request = {}) const
+        {
+            return SubmitCallable(&ObservabilityAdminClient::GetTelemetryEnrichmentStatus, request);
+        }
+
+        /**
+         * An Async wrapper for GetTelemetryEnrichmentStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetTelemetryEnrichmentStatusRequestT = Model::GetTelemetryEnrichmentStatusRequest>
+        void GetTelemetryEnrichmentStatusAsync(const GetTelemetryEnrichmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetTelemetryEnrichmentStatusRequestT& request = {}) const
+        {
+            return SubmitAsync(&ObservabilityAdminClient::GetTelemetryEnrichmentStatus, request, handler, context);
+        }
+
+        /**
          * <p> Returns the current onboarding status of the telemetry config feature,
          * including the status of the feature and reason the feature failed to start or
          * stop. </p><p><h3>See Also:</h3>   <a
@@ -550,6 +577,34 @@ namespace ObservabilityAdmin
         }
 
         /**
+         * <p> Enables the resource tags for telemetry feature for your account, which
+         * enhances telemetry data with additional resource metadata from Amazon Web
+         * Services Resource Explorer to provide richer context for monitoring and
+         * observability. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StartTelemetryEnrichment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartTelemetryEnrichmentOutcome StartTelemetryEnrichment(const Model::StartTelemetryEnrichmentRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for StartTelemetryEnrichment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartTelemetryEnrichmentRequestT = Model::StartTelemetryEnrichmentRequest>
+        Model::StartTelemetryEnrichmentOutcomeCallable StartTelemetryEnrichmentCallable(const StartTelemetryEnrichmentRequestT& request = {}) const
+        {
+            return SubmitCallable(&ObservabilityAdminClient::StartTelemetryEnrichment, request);
+        }
+
+        /**
+         * An Async wrapper for StartTelemetryEnrichment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartTelemetryEnrichmentRequestT = Model::StartTelemetryEnrichmentRequest>
+        void StartTelemetryEnrichmentAsync(const StartTelemetryEnrichmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const StartTelemetryEnrichmentRequestT& request = {}) const
+        {
+            return SubmitAsync(&ObservabilityAdminClient::StartTelemetryEnrichment, request, handler, context);
+        }
+
+        /**
          * <p> This action begins onboarding the caller Amazon Web Services account to the
          * telemetry config feature. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StartTelemetryEvaluation">AWS
@@ -599,6 +654,33 @@ namespace ObservabilityAdmin
         void StartTelemetryEvaluationForOrganizationAsync(const StartTelemetryEvaluationForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const StartTelemetryEvaluationForOrganizationRequestT& request = {}) const
         {
             return SubmitAsync(&ObservabilityAdminClient::StartTelemetryEvaluationForOrganization, request, handler, context);
+        }
+
+        /**
+         * <p> Disables the resource tags for telemetry feature for your account, stopping
+         * the enhancement of telemetry data with additional resource metadata.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StopTelemetryEnrichment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopTelemetryEnrichmentOutcome StopTelemetryEnrichment(const Model::StopTelemetryEnrichmentRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for StopTelemetryEnrichment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopTelemetryEnrichmentRequestT = Model::StopTelemetryEnrichmentRequest>
+        Model::StopTelemetryEnrichmentOutcomeCallable StopTelemetryEnrichmentCallable(const StopTelemetryEnrichmentRequestT& request = {}) const
+        {
+            return SubmitCallable(&ObservabilityAdminClient::StopTelemetryEnrichment, request);
+        }
+
+        /**
+         * An Async wrapper for StopTelemetryEnrichment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopTelemetryEnrichmentRequestT = Model::StopTelemetryEnrichmentRequest>
+        void StopTelemetryEnrichmentAsync(const StopTelemetryEnrichmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const StopTelemetryEnrichmentRequestT& request = {}) const
+        {
+            return SubmitAsync(&ObservabilityAdminClient::StopTelemetryEnrichment, request, handler, context);
         }
 
         /**

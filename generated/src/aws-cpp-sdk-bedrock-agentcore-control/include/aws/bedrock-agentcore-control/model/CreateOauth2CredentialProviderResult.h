@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/Secret.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agentcore-control/model/Oauth2ProviderConfigOutput.h>
 #include <utility>
 
 namespace Aws
@@ -68,6 +69,28 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Callback URL to register on the OAuth2 credential provider as an allowed
+     * callback URL. This URL is where the OAuth2 authorization server redirects users
+     * after they complete the authorization flow.</p>
+     */
+    inline const Aws::String& GetCallbackUrl() const { return m_callbackUrl; }
+    template<typename CallbackUrlT = Aws::String>
+    void SetCallbackUrl(CallbackUrlT&& value) { m_callbackUrlHasBeenSet = true; m_callbackUrl = std::forward<CallbackUrlT>(value); }
+    template<typename CallbackUrlT = Aws::String>
+    CreateOauth2CredentialProviderResult& WithCallbackUrl(CallbackUrlT&& value) { SetCallbackUrl(std::forward<CallbackUrlT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const Oauth2ProviderConfigOutput& GetOauth2ProviderConfigOutput() const { return m_oauth2ProviderConfigOutput; }
+    template<typename Oauth2ProviderConfigOutputT = Oauth2ProviderConfigOutput>
+    void SetOauth2ProviderConfigOutput(Oauth2ProviderConfigOutputT&& value) { m_oauth2ProviderConfigOutputHasBeenSet = true; m_oauth2ProviderConfigOutput = std::forward<Oauth2ProviderConfigOutputT>(value); }
+    template<typename Oauth2ProviderConfigOutputT = Oauth2ProviderConfigOutput>
+    CreateOauth2CredentialProviderResult& WithOauth2ProviderConfigOutput(Oauth2ProviderConfigOutputT&& value) { SetOauth2ProviderConfigOutput(std::forward<Oauth2ProviderConfigOutputT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -85,6 +108,12 @@ namespace Model
 
     Aws::String m_credentialProviderArn;
     bool m_credentialProviderArnHasBeenSet = false;
+
+    Aws::String m_callbackUrl;
+    bool m_callbackUrlHasBeenSet = false;
+
+    Oauth2ProviderConfigOutput m_oauth2ProviderConfigOutput;
+    bool m_oauth2ProviderConfigOutputHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

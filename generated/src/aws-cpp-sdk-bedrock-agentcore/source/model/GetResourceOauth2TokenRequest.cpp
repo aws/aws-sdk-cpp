@@ -44,6 +44,12 @@ Aws::String GetResourceOauth2TokenRequest::SerializePayload() const
    payload.WithString("oauth2Flow", Oauth2FlowTypeMapper::GetNameForOauth2FlowType(m_oauth2Flow));
   }
 
+  if(m_sessionUriHasBeenSet)
+  {
+   payload.WithString("sessionUri", m_sessionUri);
+
+  }
+
   if(m_resourceOauth2ReturnUrlHasBeenSet)
   {
    payload.WithString("resourceOauth2ReturnUrl", m_resourceOauth2ReturnUrl);
@@ -64,6 +70,12 @@ Aws::String GetResourceOauth2TokenRequest::SerializePayload() const
      customParametersJsonMap.WithString(customParametersItem.first, customParametersItem.second);
    }
    payload.WithObject("customParameters", std::move(customParametersJsonMap));
+
+  }
+
+  if(m_customStateHasBeenSet)
+  {
+   payload.WithString("customState", m_customState);
 
   }
 

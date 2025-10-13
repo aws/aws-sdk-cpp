@@ -28,6 +28,13 @@ void InvokeAgentRuntimeRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
+    if(m_accountIdHasBeenSet)
+    {
+      ss << m_accountId;
+      uri.AddQueryStringParameter("accountId", ss.str());
+      ss.str("");
+    }
+
 }
 
 Aws::Http::HeaderValueCollection InvokeAgentRuntimeRequest::GetRequestSpecificHeaders() const

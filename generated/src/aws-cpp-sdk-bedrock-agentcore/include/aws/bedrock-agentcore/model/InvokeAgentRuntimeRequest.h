@@ -176,6 +176,19 @@ namespace Model
     template<typename QualifierT = Aws::String>
     InvokeAgentRuntimeRequest& WithQualifier(QualifierT&& value) { SetQualifier(std::forward<QualifierT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The identifier of the Amazon Web Services account for the agent runtime
+     * resource.</p>
+     */
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    InvokeAgentRuntimeRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_accept;
@@ -210,6 +223,9 @@ namespace Model
 
     Aws::String m_qualifier;
     bool m_qualifierHasBeenSet = false;
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
 
   };
 

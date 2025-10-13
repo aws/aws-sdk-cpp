@@ -30,6 +30,11 @@ DeleteAgentRuntimeResult& DeleteAgentRuntimeResult::operator =(const Aws::Amazon
     m_status = AgentRuntimeStatusMapper::GetAgentRuntimeStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("agentRuntimeId"))
+  {
+    m_agentRuntimeId = jsonValue.GetString("agentRuntimeId");
+    m_agentRuntimeIdHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

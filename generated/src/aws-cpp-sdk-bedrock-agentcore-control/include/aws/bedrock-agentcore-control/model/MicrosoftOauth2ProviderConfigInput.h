@@ -61,6 +61,20 @@ namespace Model
     template<typename ClientSecretT = Aws::String>
     MicrosoftOauth2ProviderConfigInput& WithClientSecret(ClientSecretT&& value) { SetClientSecret(std::forward<ClientSecretT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Microsoft Entra ID (formerly Azure AD) tenant ID for your organization.
+     * This identifies the specific tenant within Microsoft's identity platform where
+     * your application is registered.</p>
+     */
+    inline const Aws::String& GetTenantId() const { return m_tenantId; }
+    inline bool TenantIdHasBeenSet() const { return m_tenantIdHasBeenSet; }
+    template<typename TenantIdT = Aws::String>
+    void SetTenantId(TenantIdT&& value) { m_tenantIdHasBeenSet = true; m_tenantId = std::forward<TenantIdT>(value); }
+    template<typename TenantIdT = Aws::String>
+    MicrosoftOauth2ProviderConfigInput& WithTenantId(TenantIdT&& value) { SetTenantId(std::forward<TenantIdT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_clientId;
@@ -68,6 +82,9 @@ namespace Model
 
     Aws::String m_clientSecret;
     bool m_clientSecretHasBeenSet = false;
+
+    Aws::String m_tenantId;
+    bool m_tenantIdHasBeenSet = false;
   };
 
 } // namespace Model

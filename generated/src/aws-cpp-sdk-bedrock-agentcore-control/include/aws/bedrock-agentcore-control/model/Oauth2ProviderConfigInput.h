@@ -11,6 +11,9 @@
 #include <aws/bedrock-agentcore-control/model/SlackOauth2ProviderConfigInput.h>
 #include <aws/bedrock-agentcore-control/model/SalesforceOauth2ProviderConfigInput.h>
 #include <aws/bedrock-agentcore-control/model/MicrosoftOauth2ProviderConfigInput.h>
+#include <aws/bedrock-agentcore-control/model/AtlassianOauth2ProviderConfigInput.h>
+#include <aws/bedrock-agentcore-control/model/LinkedinOauth2ProviderConfigInput.h>
+#include <aws/bedrock-agentcore-control/model/IncludedOauth2ProviderConfigInput.h>
 #include <utility>
 
 namespace Aws
@@ -114,6 +117,43 @@ namespace Model
     template<typename MicrosoftOauth2ProviderConfigT = MicrosoftOauth2ProviderConfigInput>
     Oauth2ProviderConfigInput& WithMicrosoftOauth2ProviderConfig(MicrosoftOauth2ProviderConfigT&& value) { SetMicrosoftOauth2ProviderConfig(std::forward<MicrosoftOauth2ProviderConfigT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Configuration settings for Atlassian OAuth2 provider integration.</p>
+     */
+    inline const AtlassianOauth2ProviderConfigInput& GetAtlassianOauth2ProviderConfig() const { return m_atlassianOauth2ProviderConfig; }
+    inline bool AtlassianOauth2ProviderConfigHasBeenSet() const { return m_atlassianOauth2ProviderConfigHasBeenSet; }
+    template<typename AtlassianOauth2ProviderConfigT = AtlassianOauth2ProviderConfigInput>
+    void SetAtlassianOauth2ProviderConfig(AtlassianOauth2ProviderConfigT&& value) { m_atlassianOauth2ProviderConfigHasBeenSet = true; m_atlassianOauth2ProviderConfig = std::forward<AtlassianOauth2ProviderConfigT>(value); }
+    template<typename AtlassianOauth2ProviderConfigT = AtlassianOauth2ProviderConfigInput>
+    Oauth2ProviderConfigInput& WithAtlassianOauth2ProviderConfig(AtlassianOauth2ProviderConfigT&& value) { SetAtlassianOauth2ProviderConfig(std::forward<AtlassianOauth2ProviderConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Configuration settings for LinkedIn OAuth2 provider integration.</p>
+     */
+    inline const LinkedinOauth2ProviderConfigInput& GetLinkedinOauth2ProviderConfig() const { return m_linkedinOauth2ProviderConfig; }
+    inline bool LinkedinOauth2ProviderConfigHasBeenSet() const { return m_linkedinOauth2ProviderConfigHasBeenSet; }
+    template<typename LinkedinOauth2ProviderConfigT = LinkedinOauth2ProviderConfigInput>
+    void SetLinkedinOauth2ProviderConfig(LinkedinOauth2ProviderConfigT&& value) { m_linkedinOauth2ProviderConfigHasBeenSet = true; m_linkedinOauth2ProviderConfig = std::forward<LinkedinOauth2ProviderConfigT>(value); }
+    template<typename LinkedinOauth2ProviderConfigT = LinkedinOauth2ProviderConfigInput>
+    Oauth2ProviderConfigInput& WithLinkedinOauth2ProviderConfig(LinkedinOauth2ProviderConfigT&& value) { SetLinkedinOauth2ProviderConfig(std::forward<LinkedinOauth2ProviderConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The configuration for a non-custom OAuth2 provider. This includes settings
+     * for supported OAuth2 providers that have built-in integration support.</p>
+     */
+    inline const IncludedOauth2ProviderConfigInput& GetIncludedOauth2ProviderConfig() const { return m_includedOauth2ProviderConfig; }
+    inline bool IncludedOauth2ProviderConfigHasBeenSet() const { return m_includedOauth2ProviderConfigHasBeenSet; }
+    template<typename IncludedOauth2ProviderConfigT = IncludedOauth2ProviderConfigInput>
+    void SetIncludedOauth2ProviderConfig(IncludedOauth2ProviderConfigT&& value) { m_includedOauth2ProviderConfigHasBeenSet = true; m_includedOauth2ProviderConfig = std::forward<IncludedOauth2ProviderConfigT>(value); }
+    template<typename IncludedOauth2ProviderConfigT = IncludedOauth2ProviderConfigInput>
+    Oauth2ProviderConfigInput& WithIncludedOauth2ProviderConfig(IncludedOauth2ProviderConfigT&& value) { SetIncludedOauth2ProviderConfig(std::forward<IncludedOauth2ProviderConfigT>(value)); return *this;}
+    ///@}
   private:
 
     CustomOauth2ProviderConfigInput m_customOauth2ProviderConfig;
@@ -133,6 +173,15 @@ namespace Model
 
     MicrosoftOauth2ProviderConfigInput m_microsoftOauth2ProviderConfig;
     bool m_microsoftOauth2ProviderConfigHasBeenSet = false;
+
+    AtlassianOauth2ProviderConfigInput m_atlassianOauth2ProviderConfig;
+    bool m_atlassianOauth2ProviderConfigHasBeenSet = false;
+
+    LinkedinOauth2ProviderConfigInput m_linkedinOauth2ProviderConfig;
+    bool m_linkedinOauth2ProviderConfigHasBeenSet = false;
+
+    IncludedOauth2ProviderConfigInput m_includedOauth2ProviderConfig;
+    bool m_includedOauth2ProviderConfigHasBeenSet = false;
   };
 
 } // namespace Model

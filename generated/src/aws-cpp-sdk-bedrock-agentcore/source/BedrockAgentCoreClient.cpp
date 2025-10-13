@@ -25,6 +25,7 @@
 #include <aws/bedrock-agentcore/model/BatchCreateMemoryRecordsRequest.h>
 #include <aws/bedrock-agentcore/model/BatchDeleteMemoryRecordsRequest.h>
 #include <aws/bedrock-agentcore/model/BatchUpdateMemoryRecordsRequest.h>
+#include <aws/bedrock-agentcore/model/CompleteResourceTokenAuthRequest.h>
 #include <aws/bedrock-agentcore/model/CreateEventRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteEventRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteMemoryRecordRequest.h>
@@ -293,6 +294,33 @@ BatchUpdateMemoryRecordsOutcome BedrockAgentCoreClient::BatchUpdateMemoryRecords
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemoryId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/memoryRecords/batchUpdate");
       return BatchUpdateMemoryRecordsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CompleteResourceTokenAuthOutcome BedrockAgentCoreClient::CompleteResourceTokenAuth(const CompleteResourceTokenAuthRequest& request) const
+{
+  AWS_OPERATION_GUARD(CompleteResourceTokenAuth);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CompleteResourceTokenAuth, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CompleteResourceTokenAuth, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CompleteResourceTokenAuth, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CompleteResourceTokenAuth",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CompleteResourceTokenAuthOutcome>(
+    [&]()-> CompleteResourceTokenAuthOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CompleteResourceTokenAuth, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/identities/CompleteResourceTokenAuth");
+      return CompleteResourceTokenAuthOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

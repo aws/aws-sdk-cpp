@@ -158,6 +158,32 @@ namespace BedrockAgentCore
         }
 
         /**
+         * <p>Confirms the user authentication session for obtaining OAuth2.0 tokens for a
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/CompleteResourceTokenAuth">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CompleteResourceTokenAuthOutcome CompleteResourceTokenAuth(const Model::CompleteResourceTokenAuthRequest& request) const;
+
+        /**
+         * A Callable wrapper for CompleteResourceTokenAuth that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CompleteResourceTokenAuthRequestT = Model::CompleteResourceTokenAuthRequest>
+        Model::CompleteResourceTokenAuthOutcomeCallable CompleteResourceTokenAuthCallable(const CompleteResourceTokenAuthRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentCoreClient::CompleteResourceTokenAuth, request);
+        }
+
+        /**
+         * An Async wrapper for CompleteResourceTokenAuth that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CompleteResourceTokenAuthRequestT = Model::CompleteResourceTokenAuthRequest>
+        void CompleteResourceTokenAuthAsync(const CompleteResourceTokenAuthRequestT& request, const CompleteResourceTokenAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentCoreClient::CompleteResourceTokenAuth, request, handler, context);
+        }
+
+        /**
          * <p>Creates an event in an AgentCore Memory resource. Events represent
          * interactions or activities that occur within a session and are associated with
          * specific actors.</p> <p>To use this operation, you must have the
