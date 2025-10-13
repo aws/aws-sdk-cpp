@@ -35,6 +35,16 @@ GetResourceOauth2TokenResult& GetResourceOauth2TokenResult::operator =(const Aws
     m_accessToken = jsonValue.GetString("accessToken");
     m_accessTokenHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("sessionUri"))
+  {
+    m_sessionUri = jsonValue.GetString("sessionUri");
+    m_sessionUriHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("sessionStatus"))
+  {
+    m_sessionStatus = SessionStatusMapper::GetSessionStatusForName(jsonValue.GetString("sessionStatus"));
+    m_sessionStatusHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

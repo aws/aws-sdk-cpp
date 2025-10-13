@@ -23,6 +23,8 @@
 #include <aws/bedrock-agentcore-control/model/ApiKeyCredentialProvider.h>
 #include <aws/bedrock-agentcore-control/model/ApiKeyCredentialProviderItem.h>
 #include <aws/bedrock-agentcore-control/model/ApiSchemaConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/AtlassianOauth2ProviderConfigInput.h>
+#include <aws/bedrock-agentcore-control/model/AtlassianOauth2ProviderConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerType.h>
 #include <aws/bedrock-agentcore-control/model/BrowserNetworkConfiguration.h>
@@ -122,11 +124,15 @@
 #include <aws/bedrock-agentcore-control/model/GithubOauth2ProviderConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/GoogleOauth2ProviderConfigInput.h>
 #include <aws/bedrock-agentcore-control/model/GoogleOauth2ProviderConfigOutput.h>
+#include <aws/bedrock-agentcore-control/model/IncludedOauth2ProviderConfigInput.h>
+#include <aws/bedrock-agentcore-control/model/IncludedOauth2ProviderConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/InvocationConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/InvocationConfigurationInput.h>
 #include <aws/bedrock-agentcore-control/model/KeyType.h>
 #include <aws/bedrock-agentcore-control/model/KmsConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/LifecycleConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/LinkedinOauth2ProviderConfigInput.h>
+#include <aws/bedrock-agentcore-control/model/LinkedinOauth2ProviderConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeEndpointsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeEndpointsResult.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeVersionsRequest.h>

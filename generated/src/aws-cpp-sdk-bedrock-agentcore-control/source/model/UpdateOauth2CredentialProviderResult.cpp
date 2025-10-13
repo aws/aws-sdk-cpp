@@ -45,6 +45,11 @@ UpdateOauth2CredentialProviderResult& UpdateOauth2CredentialProviderResult::oper
     m_credentialProviderArn = jsonValue.GetString("credentialProviderArn");
     m_credentialProviderArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("callbackUrl"))
+  {
+    m_callbackUrl = jsonValue.GetString("callbackUrl");
+    m_callbackUrlHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("oauth2ProviderConfigOutput"))
   {
     m_oauth2ProviderConfigOutput = jsonValue.GetObject("oauth2ProviderConfigOutput");

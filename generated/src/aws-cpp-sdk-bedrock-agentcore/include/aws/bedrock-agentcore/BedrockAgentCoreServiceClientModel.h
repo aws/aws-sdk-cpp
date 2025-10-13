@@ -21,6 +21,7 @@
 #include <aws/bedrock-agentcore/model/BatchCreateMemoryRecordsResult.h>
 #include <aws/bedrock-agentcore/model/BatchDeleteMemoryRecordsResult.h>
 #include <aws/bedrock-agentcore/model/BatchUpdateMemoryRecordsResult.h>
+#include <aws/bedrock-agentcore/model/CompleteResourceTokenAuthResult.h>
 #include <aws/bedrock-agentcore/model/CreateEventResult.h>
 #include <aws/bedrock-agentcore/model/DeleteEventResult.h>
 #include <aws/bedrock-agentcore/model/DeleteMemoryRecordResult.h>
@@ -92,6 +93,7 @@ namespace Aws
       class BatchCreateMemoryRecordsRequest;
       class BatchDeleteMemoryRecordsRequest;
       class BatchUpdateMemoryRecordsRequest;
+      class CompleteResourceTokenAuthRequest;
       class CreateEventRequest;
       class DeleteEventRequest;
       class DeleteMemoryRecordRequest;
@@ -126,6 +128,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<BatchCreateMemoryRecordsResult, BedrockAgentCoreError> BatchCreateMemoryRecordsOutcome;
       typedef Aws::Utils::Outcome<BatchDeleteMemoryRecordsResult, BedrockAgentCoreError> BatchDeleteMemoryRecordsOutcome;
       typedef Aws::Utils::Outcome<BatchUpdateMemoryRecordsResult, BedrockAgentCoreError> BatchUpdateMemoryRecordsOutcome;
+      typedef Aws::Utils::Outcome<CompleteResourceTokenAuthResult, BedrockAgentCoreError> CompleteResourceTokenAuthOutcome;
       typedef Aws::Utils::Outcome<CreateEventResult, BedrockAgentCoreError> CreateEventOutcome;
       typedef Aws::Utils::Outcome<DeleteEventResult, BedrockAgentCoreError> DeleteEventOutcome;
       typedef Aws::Utils::Outcome<DeleteMemoryRecordResult, BedrockAgentCoreError> DeleteMemoryRecordOutcome;
@@ -160,6 +163,7 @@ namespace Aws
       typedef std::future<BatchCreateMemoryRecordsOutcome> BatchCreateMemoryRecordsOutcomeCallable;
       typedef std::future<BatchDeleteMemoryRecordsOutcome> BatchDeleteMemoryRecordsOutcomeCallable;
       typedef std::future<BatchUpdateMemoryRecordsOutcome> BatchUpdateMemoryRecordsOutcomeCallable;
+      typedef std::future<CompleteResourceTokenAuthOutcome> CompleteResourceTokenAuthOutcomeCallable;
       typedef std::future<CreateEventOutcome> CreateEventOutcomeCallable;
       typedef std::future<DeleteEventOutcome> DeleteEventOutcomeCallable;
       typedef std::future<DeleteMemoryRecordOutcome> DeleteMemoryRecordOutcomeCallable;
@@ -197,6 +201,7 @@ namespace Aws
     typedef std::function<void(const BedrockAgentCoreClient*, const Model::BatchCreateMemoryRecordsRequest&, const Model::BatchCreateMemoryRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchCreateMemoryRecordsResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentCoreClient*, const Model::BatchDeleteMemoryRecordsRequest&, const Model::BatchDeleteMemoryRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteMemoryRecordsResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentCoreClient*, const Model::BatchUpdateMemoryRecordsRequest&, const Model::BatchUpdateMemoryRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateMemoryRecordsResponseReceivedHandler;
+    typedef std::function<void(const BedrockAgentCoreClient*, const Model::CompleteResourceTokenAuthRequest&, const Model::CompleteResourceTokenAuthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompleteResourceTokenAuthResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentCoreClient*, const Model::CreateEventRequest&, const Model::CreateEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentCoreClient*, const Model::DeleteEventRequest&, const Model::DeleteEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentCoreClient*, const Model::DeleteMemoryRecordRequest&, const Model::DeleteMemoryRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMemoryRecordResponseReceivedHandler;

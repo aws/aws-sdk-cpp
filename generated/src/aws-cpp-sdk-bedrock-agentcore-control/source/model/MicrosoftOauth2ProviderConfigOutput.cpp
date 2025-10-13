@@ -30,6 +30,11 @@ MicrosoftOauth2ProviderConfigOutput& MicrosoftOauth2ProviderConfigOutput::operat
     m_oauthDiscovery = jsonValue.GetObject("oauthDiscovery");
     m_oauthDiscoveryHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("clientId"))
+  {
+    m_clientId = jsonValue.GetString("clientId");
+    m_clientIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +45,12 @@ JsonValue MicrosoftOauth2ProviderConfigOutput::Jsonize() const
   if(m_oauthDiscoveryHasBeenSet)
   {
    payload.WithObject("oauthDiscovery", m_oauthDiscovery.Jsonize());
+
+  }
+
+  if(m_clientIdHasBeenSet)
+  {
+   payload.WithString("clientId", m_clientId);
 
   }
 

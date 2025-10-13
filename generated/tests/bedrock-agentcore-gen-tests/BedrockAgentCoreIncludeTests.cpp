@@ -33,6 +33,8 @@
 #include <aws/bedrock-agentcore/model/CodeInterpreterSessionStatus.h>
 #include <aws/bedrock-agentcore/model/CodeInterpreterSessionSummary.h>
 #include <aws/bedrock-agentcore/model/CodeInterpreterStreamOutput.h>
+#include <aws/bedrock-agentcore/model/CompleteResourceTokenAuthRequest.h>
+#include <aws/bedrock-agentcore/model/CompleteResourceTokenAuthResult.h>
 #include <aws/bedrock-agentcore/model/Content.h>
 #include <aws/bedrock-agentcore/model/ContentBlock.h>
 #include <aws/bedrock-agentcore/model/ContentBlockType.h>
@@ -106,6 +108,7 @@
 #include <aws/bedrock-agentcore/model/RightExpression.h>
 #include <aws/bedrock-agentcore/model/Role.h>
 #include <aws/bedrock-agentcore/model/SearchCriteria.h>
+#include <aws/bedrock-agentcore/model/SessionStatus.h>
 #include <aws/bedrock-agentcore/model/SessionSummary.h>
 #include <aws/bedrock-agentcore/model/StartBrowserSessionRequest.h>
 #include <aws/bedrock-agentcore/model/StartBrowserSessionResult.h>
@@ -124,6 +127,7 @@
 #include <aws/bedrock-agentcore/model/ToolResultStructuredContent.h>
 #include <aws/bedrock-agentcore/model/UpdateBrowserStreamRequest.h>
 #include <aws/bedrock-agentcore/model/UpdateBrowserStreamResult.h>
+#include <aws/bedrock-agentcore/model/UserIdentifier.h>
 #include <aws/bedrock-agentcore/model/ValidationException.h>
 #include <aws/bedrock-agentcore/model/ValidationExceptionField.h>
 #include <aws/bedrock-agentcore/model/ValidationExceptionReason.h>

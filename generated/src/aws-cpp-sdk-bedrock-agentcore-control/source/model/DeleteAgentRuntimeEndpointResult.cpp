@@ -30,6 +30,16 @@ DeleteAgentRuntimeEndpointResult& DeleteAgentRuntimeEndpointResult::operator =(c
     m_status = AgentRuntimeEndpointStatusMapper::GetAgentRuntimeEndpointStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("agentRuntimeId"))
+  {
+    m_agentRuntimeId = jsonValue.GetString("agentRuntimeId");
+    m_agentRuntimeIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("endpointName"))
+  {
+    m_endpointName = jsonValue.GetString("endpointName");
+    m_endpointNameHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

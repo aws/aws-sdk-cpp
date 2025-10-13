@@ -43,6 +43,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The unique identifier of the AgentCore Runtime.</p>
+     */
+    inline const Aws::String& GetAgentRuntimeId() const { return m_agentRuntimeId; }
+    template<typename AgentRuntimeIdT = Aws::String>
+    void SetAgentRuntimeId(AgentRuntimeIdT&& value) { m_agentRuntimeIdHasBeenSet = true; m_agentRuntimeId = std::forward<AgentRuntimeIdT>(value); }
+    template<typename AgentRuntimeIdT = Aws::String>
+    DeleteAgentRuntimeResult& WithAgentRuntimeId(AgentRuntimeIdT&& value) { SetAgentRuntimeId(std::forward<AgentRuntimeIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -54,6 +65,9 @@ namespace Model
 
     AgentRuntimeStatus m_status{AgentRuntimeStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
+
+    Aws::String m_agentRuntimeId;
+    bool m_agentRuntimeIdHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

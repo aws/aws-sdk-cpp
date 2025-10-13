@@ -35,6 +35,11 @@ MicrosoftOauth2ProviderConfigInput& MicrosoftOauth2ProviderConfigInput::operator
     m_clientSecret = jsonValue.GetString("clientSecret");
     m_clientSecretHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("tenantId"))
+  {
+    m_tenantId = jsonValue.GetString("tenantId");
+    m_tenantIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -51,6 +56,12 @@ JsonValue MicrosoftOauth2ProviderConfigInput::Jsonize() const
   if(m_clientSecretHasBeenSet)
   {
    payload.WithString("clientSecret", m_clientSecret);
+
+  }
+
+  if(m_tenantIdHasBeenSet)
+  {
+   payload.WithString("tenantId", m_tenantId);
 
   }
 

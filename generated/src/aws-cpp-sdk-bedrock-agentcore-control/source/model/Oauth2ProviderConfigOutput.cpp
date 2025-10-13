@@ -55,6 +55,21 @@ Oauth2ProviderConfigOutput& Oauth2ProviderConfigOutput::operator =(JsonView json
     m_microsoftOauth2ProviderConfig = jsonValue.GetObject("microsoftOauth2ProviderConfig");
     m_microsoftOauth2ProviderConfigHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("atlassianOauth2ProviderConfig"))
+  {
+    m_atlassianOauth2ProviderConfig = jsonValue.GetObject("atlassianOauth2ProviderConfig");
+    m_atlassianOauth2ProviderConfigHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("linkedinOauth2ProviderConfig"))
+  {
+    m_linkedinOauth2ProviderConfig = jsonValue.GetObject("linkedinOauth2ProviderConfig");
+    m_linkedinOauth2ProviderConfigHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("includedOauth2ProviderConfig"))
+  {
+    m_includedOauth2ProviderConfig = jsonValue.GetObject("includedOauth2ProviderConfig");
+    m_includedOauth2ProviderConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -95,6 +110,24 @@ JsonValue Oauth2ProviderConfigOutput::Jsonize() const
   if(m_microsoftOauth2ProviderConfigHasBeenSet)
   {
    payload.WithObject("microsoftOauth2ProviderConfig", m_microsoftOauth2ProviderConfig.Jsonize());
+
+  }
+
+  if(m_atlassianOauth2ProviderConfigHasBeenSet)
+  {
+   payload.WithObject("atlassianOauth2ProviderConfig", m_atlassianOauth2ProviderConfig.Jsonize());
+
+  }
+
+  if(m_linkedinOauth2ProviderConfigHasBeenSet)
+  {
+   payload.WithObject("linkedinOauth2ProviderConfig", m_linkedinOauth2ProviderConfig.Jsonize());
+
+  }
+
+  if(m_includedOauth2ProviderConfigHasBeenSet)
+  {
+   payload.WithObject("includedOauth2ProviderConfig", m_includedOauth2ProviderConfig.Jsonize());
 
   }
 

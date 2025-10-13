@@ -40,6 +40,16 @@ CreateAgentRuntimeEndpointResult& CreateAgentRuntimeEndpointResult::operator =(c
     m_agentRuntimeArn = jsonValue.GetString("agentRuntimeArn");
     m_agentRuntimeArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("agentRuntimeId"))
+  {
+    m_agentRuntimeId = jsonValue.GetString("agentRuntimeId");
+    m_agentRuntimeIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("endpointName"))
+  {
+    m_endpointName = jsonValue.GetString("endpointName");
+    m_endpointNameHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("status"))
   {
     m_status = AgentRuntimeEndpointStatusMapper::GetAgentRuntimeEndpointStatusForName(jsonValue.GetString("status"));

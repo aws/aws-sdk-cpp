@@ -45,6 +45,11 @@ GetOauth2CredentialProviderResult& GetOauth2CredentialProviderResult::operator =
     m_credentialProviderVendor = CredentialProviderVendorTypeMapper::GetCredentialProviderVendorTypeForName(jsonValue.GetString("credentialProviderVendor"));
     m_credentialProviderVendorHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("callbackUrl"))
+  {
+    m_callbackUrl = jsonValue.GetString("callbackUrl");
+    m_callbackUrlHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("oauth2ProviderConfigOutput"))
   {
     m_oauth2ProviderConfigOutput = jsonValue.GetObject("oauth2ProviderConfigOutput");

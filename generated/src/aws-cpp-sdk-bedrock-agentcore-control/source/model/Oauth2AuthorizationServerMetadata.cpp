@@ -49,6 +49,15 @@ Oauth2AuthorizationServerMetadata& Oauth2AuthorizationServerMetadata::operator =
     }
     m_responseTypesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("tokenEndpointAuthMethods"))
+  {
+    Aws::Utils::Array<JsonView> tokenEndpointAuthMethodsJsonList = jsonValue.GetArray("tokenEndpointAuthMethods");
+    for(unsigned tokenEndpointAuthMethodsIndex = 0; tokenEndpointAuthMethodsIndex < tokenEndpointAuthMethodsJsonList.GetLength(); ++tokenEndpointAuthMethodsIndex)
+    {
+      m_tokenEndpointAuthMethods.push_back(tokenEndpointAuthMethodsJsonList[tokenEndpointAuthMethodsIndex].AsString());
+    }
+    m_tokenEndpointAuthMethodsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -82,6 +91,17 @@ JsonValue Oauth2AuthorizationServerMetadata::Jsonize() const
      responseTypesJsonList[responseTypesIndex].AsString(m_responseTypes[responseTypesIndex]);
    }
    payload.WithArray("responseTypes", std::move(responseTypesJsonList));
+
+  }
+
+  if(m_tokenEndpointAuthMethodsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tokenEndpointAuthMethodsJsonList(m_tokenEndpointAuthMethods.size());
+   for(unsigned tokenEndpointAuthMethodsIndex = 0; tokenEndpointAuthMethodsIndex < tokenEndpointAuthMethodsJsonList.GetLength(); ++tokenEndpointAuthMethodsIndex)
+   {
+     tokenEndpointAuthMethodsJsonList[tokenEndpointAuthMethodsIndex].AsString(m_tokenEndpointAuthMethods[tokenEndpointAuthMethodsIndex]);
+   }
+   payload.WithArray("tokenEndpointAuthMethods", std::move(tokenEndpointAuthMethodsJsonList));
 
   }
 

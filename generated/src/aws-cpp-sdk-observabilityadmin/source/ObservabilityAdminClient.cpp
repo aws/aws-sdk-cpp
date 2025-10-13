@@ -28,6 +28,7 @@
 #include <aws/observabilityadmin/model/DeleteTelemetryRuleRequest.h>
 #include <aws/observabilityadmin/model/DeleteTelemetryRuleForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/GetCentralizationRuleForOrganizationRequest.h>
+#include <aws/observabilityadmin/model/GetTelemetryEnrichmentStatusRequest.h>
 #include <aws/observabilityadmin/model/GetTelemetryEvaluationStatusRequest.h>
 #include <aws/observabilityadmin/model/GetTelemetryEvaluationStatusForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/GetTelemetryRuleRequest.h>
@@ -38,8 +39,10 @@
 #include <aws/observabilityadmin/model/ListTagsForResourceRequest.h>
 #include <aws/observabilityadmin/model/ListTelemetryRulesRequest.h>
 #include <aws/observabilityadmin/model/ListTelemetryRulesForOrganizationRequest.h>
+#include <aws/observabilityadmin/model/StartTelemetryEnrichmentRequest.h>
 #include <aws/observabilityadmin/model/StartTelemetryEvaluationRequest.h>
 #include <aws/observabilityadmin/model/StartTelemetryEvaluationForOrganizationRequest.h>
+#include <aws/observabilityadmin/model/StopTelemetryEnrichmentRequest.h>
 #include <aws/observabilityadmin/model/StopTelemetryEvaluationRequest.h>
 #include <aws/observabilityadmin/model/StopTelemetryEvaluationForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/TagResourceRequest.h>
@@ -380,6 +383,33 @@ GetCentralizationRuleForOrganizationOutcome ObservabilityAdminClient::GetCentral
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetTelemetryEnrichmentStatusOutcome ObservabilityAdminClient::GetTelemetryEnrichmentStatus(const GetTelemetryEnrichmentStatusRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetTelemetryEnrichmentStatus);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTelemetryEnrichmentStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetTelemetryEnrichmentStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetTelemetryEnrichmentStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetTelemetryEnrichmentStatus",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetTelemetryEnrichmentStatusOutcome>(
+    [&]()-> GetTelemetryEnrichmentStatusOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTelemetryEnrichmentStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/GetTelemetryEnrichmentStatus");
+      return GetTelemetryEnrichmentStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetTelemetryEvaluationStatusOutcome ObservabilityAdminClient::GetTelemetryEvaluationStatus(const GetTelemetryEvaluationStatusRequest& request) const
 {
   AWS_OPERATION_GUARD(GetTelemetryEvaluationStatus);
@@ -650,6 +680,33 @@ ListTelemetryRulesForOrganizationOutcome ObservabilityAdminClient::ListTelemetry
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+StartTelemetryEnrichmentOutcome ObservabilityAdminClient::StartTelemetryEnrichment(const StartTelemetryEnrichmentRequest& request) const
+{
+  AWS_OPERATION_GUARD(StartTelemetryEnrichment);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartTelemetryEnrichment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartTelemetryEnrichment, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StartTelemetryEnrichment, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartTelemetryEnrichment",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StartTelemetryEnrichmentOutcome>(
+    [&]()-> StartTelemetryEnrichmentOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartTelemetryEnrichment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/StartTelemetryEnrichment");
+      return StartTelemetryEnrichmentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 StartTelemetryEvaluationOutcome ObservabilityAdminClient::StartTelemetryEvaluation(const StartTelemetryEvaluationRequest& request) const
 {
   AWS_OPERATION_GUARD(StartTelemetryEvaluation);
@@ -698,6 +755,33 @@ StartTelemetryEvaluationForOrganizationOutcome ObservabilityAdminClient::StartTe
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartTelemetryEvaluationForOrganization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/StartTelemetryEvaluationForOrganization");
       return StartTelemetryEvaluationForOrganizationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StopTelemetryEnrichmentOutcome ObservabilityAdminClient::StopTelemetryEnrichment(const StopTelemetryEnrichmentRequest& request) const
+{
+  AWS_OPERATION_GUARD(StopTelemetryEnrichment);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopTelemetryEnrichment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StopTelemetryEnrichment, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StopTelemetryEnrichment, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StopTelemetryEnrichment",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StopTelemetryEnrichmentOutcome>(
+    [&]()-> StopTelemetryEnrichmentOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopTelemetryEnrichment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/StopTelemetryEnrichment");
+      return StopTelemetryEnrichmentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

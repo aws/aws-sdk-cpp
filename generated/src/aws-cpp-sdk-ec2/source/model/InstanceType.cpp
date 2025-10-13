@@ -1050,6 +1050,48 @@ namespace Aws
         static const int r8gn_48xlarge_HASH = HashingUtils::HashString("r8gn.48xlarge");
         static const int r8gn_metal_24xl_HASH = HashingUtils::HashString("r8gn.metal-24xl");
         static const int r8gn_metal_48xl_HASH = HashingUtils::HashString("r8gn.metal-48xl");
+        static const int c8i_large_HASH = HashingUtils::HashString("c8i.large");
+        static const int c8i_xlarge_HASH = HashingUtils::HashString("c8i.xlarge");
+        static const int c8i_2xlarge_HASH = HashingUtils::HashString("c8i.2xlarge");
+        static const int c8i_4xlarge_HASH = HashingUtils::HashString("c8i.4xlarge");
+        static const int c8i_8xlarge_HASH = HashingUtils::HashString("c8i.8xlarge");
+        static const int c8i_12xlarge_HASH = HashingUtils::HashString("c8i.12xlarge");
+        static const int c8i_16xlarge_HASH = HashingUtils::HashString("c8i.16xlarge");
+        static const int c8i_24xlarge_HASH = HashingUtils::HashString("c8i.24xlarge");
+        static const int c8i_32xlarge_HASH = HashingUtils::HashString("c8i.32xlarge");
+        static const int c8i_48xlarge_HASH = HashingUtils::HashString("c8i.48xlarge");
+        static const int c8i_96xlarge_HASH = HashingUtils::HashString("c8i.96xlarge");
+        static const int c8i_metal_48xl_HASH = HashingUtils::HashString("c8i.metal-48xl");
+        static const int c8i_metal_96xl_HASH = HashingUtils::HashString("c8i.metal-96xl");
+        static const int c8i_flex_large_HASH = HashingUtils::HashString("c8i-flex.large");
+        static const int c8i_flex_xlarge_HASH = HashingUtils::HashString("c8i-flex.xlarge");
+        static const int c8i_flex_2xlarge_HASH = HashingUtils::HashString("c8i-flex.2xlarge");
+        static const int c8i_flex_4xlarge_HASH = HashingUtils::HashString("c8i-flex.4xlarge");
+        static const int c8i_flex_8xlarge_HASH = HashingUtils::HashString("c8i-flex.8xlarge");
+        static const int c8i_flex_12xlarge_HASH = HashingUtils::HashString("c8i-flex.12xlarge");
+        static const int c8i_flex_16xlarge_HASH = HashingUtils::HashString("c8i-flex.16xlarge");
+        static const int r8gb_medium_HASH = HashingUtils::HashString("r8gb.medium");
+        static const int r8gb_large_HASH = HashingUtils::HashString("r8gb.large");
+        static const int r8gb_xlarge_HASH = HashingUtils::HashString("r8gb.xlarge");
+        static const int r8gb_2xlarge_HASH = HashingUtils::HashString("r8gb.2xlarge");
+        static const int r8gb_4xlarge_HASH = HashingUtils::HashString("r8gb.4xlarge");
+        static const int r8gb_8xlarge_HASH = HashingUtils::HashString("r8gb.8xlarge");
+        static const int r8gb_12xlarge_HASH = HashingUtils::HashString("r8gb.12xlarge");
+        static const int r8gb_16xlarge_HASH = HashingUtils::HashString("r8gb.16xlarge");
+        static const int r8gb_24xlarge_HASH = HashingUtils::HashString("r8gb.24xlarge");
+        static const int r8gb_metal_24xl_HASH = HashingUtils::HashString("r8gb.metal-24xl");
+        static const int m8a_medium_HASH = HashingUtils::HashString("m8a.medium");
+        static const int m8a_large_HASH = HashingUtils::HashString("m8a.large");
+        static const int m8a_xlarge_HASH = HashingUtils::HashString("m8a.xlarge");
+        static const int m8a_2xlarge_HASH = HashingUtils::HashString("m8a.2xlarge");
+        static const int m8a_4xlarge_HASH = HashingUtils::HashString("m8a.4xlarge");
+        static const int m8a_8xlarge_HASH = HashingUtils::HashString("m8a.8xlarge");
+        static const int m8a_12xlarge_HASH = HashingUtils::HashString("m8a.12xlarge");
+        static const int m8a_16xlarge_HASH = HashingUtils::HashString("m8a.16xlarge");
+        static const int m8a_24xlarge_HASH = HashingUtils::HashString("m8a.24xlarge");
+        static const int m8a_48xlarge_HASH = HashingUtils::HashString("m8a.48xlarge");
+        static const int m8a_metal_24xl_HASH = HashingUtils::HashString("m8a.metal-24xl");
+        static const int m8a_metal_48xl_HASH = HashingUtils::HashString("m8a.metal-48xl");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -6240,6 +6282,216 @@ namespace Aws
             enumValue = InstanceType::r8gn_metal_48xl;
             return true;
           }
+          else if (hashCode == c8i_large_HASH)
+          {
+            enumValue = InstanceType::c8i_large;
+            return true;
+          }
+          else if (hashCode == c8i_xlarge_HASH)
+          {
+            enumValue = InstanceType::c8i_xlarge;
+            return true;
+          }
+          else if (hashCode == c8i_2xlarge_HASH)
+          {
+            enumValue = InstanceType::c8i_2xlarge;
+            return true;
+          }
+          else if (hashCode == c8i_4xlarge_HASH)
+          {
+            enumValue = InstanceType::c8i_4xlarge;
+            return true;
+          }
+          else if (hashCode == c8i_8xlarge_HASH)
+          {
+            enumValue = InstanceType::c8i_8xlarge;
+            return true;
+          }
+          else if (hashCode == c8i_12xlarge_HASH)
+          {
+            enumValue = InstanceType::c8i_12xlarge;
+            return true;
+          }
+          else if (hashCode == c8i_16xlarge_HASH)
+          {
+            enumValue = InstanceType::c8i_16xlarge;
+            return true;
+          }
+          else if (hashCode == c8i_24xlarge_HASH)
+          {
+            enumValue = InstanceType::c8i_24xlarge;
+            return true;
+          }
+          else if (hashCode == c8i_32xlarge_HASH)
+          {
+            enumValue = InstanceType::c8i_32xlarge;
+            return true;
+          }
+          else if (hashCode == c8i_48xlarge_HASH)
+          {
+            enumValue = InstanceType::c8i_48xlarge;
+            return true;
+          }
+          else if (hashCode == c8i_96xlarge_HASH)
+          {
+            enumValue = InstanceType::c8i_96xlarge;
+            return true;
+          }
+          else if (hashCode == c8i_metal_48xl_HASH)
+          {
+            enumValue = InstanceType::c8i_metal_48xl;
+            return true;
+          }
+          else if (hashCode == c8i_metal_96xl_HASH)
+          {
+            enumValue = InstanceType::c8i_metal_96xl;
+            return true;
+          }
+          else if (hashCode == c8i_flex_large_HASH)
+          {
+            enumValue = InstanceType::c8i_flex_large;
+            return true;
+          }
+          else if (hashCode == c8i_flex_xlarge_HASH)
+          {
+            enumValue = InstanceType::c8i_flex_xlarge;
+            return true;
+          }
+          else if (hashCode == c8i_flex_2xlarge_HASH)
+          {
+            enumValue = InstanceType::c8i_flex_2xlarge;
+            return true;
+          }
+          else if (hashCode == c8i_flex_4xlarge_HASH)
+          {
+            enumValue = InstanceType::c8i_flex_4xlarge;
+            return true;
+          }
+          else if (hashCode == c8i_flex_8xlarge_HASH)
+          {
+            enumValue = InstanceType::c8i_flex_8xlarge;
+            return true;
+          }
+          else if (hashCode == c8i_flex_12xlarge_HASH)
+          {
+            enumValue = InstanceType::c8i_flex_12xlarge;
+            return true;
+          }
+          else if (hashCode == c8i_flex_16xlarge_HASH)
+          {
+            enumValue = InstanceType::c8i_flex_16xlarge;
+            return true;
+          }
+          else if (hashCode == r8gb_medium_HASH)
+          {
+            enumValue = InstanceType::r8gb_medium;
+            return true;
+          }
+          else if (hashCode == r8gb_large_HASH)
+          {
+            enumValue = InstanceType::r8gb_large;
+            return true;
+          }
+          else if (hashCode == r8gb_xlarge_HASH)
+          {
+            enumValue = InstanceType::r8gb_xlarge;
+            return true;
+          }
+          else if (hashCode == r8gb_2xlarge_HASH)
+          {
+            enumValue = InstanceType::r8gb_2xlarge;
+            return true;
+          }
+          else if (hashCode == r8gb_4xlarge_HASH)
+          {
+            enumValue = InstanceType::r8gb_4xlarge;
+            return true;
+          }
+          else if (hashCode == r8gb_8xlarge_HASH)
+          {
+            enumValue = InstanceType::r8gb_8xlarge;
+            return true;
+          }
+          else if (hashCode == r8gb_12xlarge_HASH)
+          {
+            enumValue = InstanceType::r8gb_12xlarge;
+            return true;
+          }
+          else if (hashCode == r8gb_16xlarge_HASH)
+          {
+            enumValue = InstanceType::r8gb_16xlarge;
+            return true;
+          }
+          else if (hashCode == r8gb_24xlarge_HASH)
+          {
+            enumValue = InstanceType::r8gb_24xlarge;
+            return true;
+          }
+          else if (hashCode == r8gb_metal_24xl_HASH)
+          {
+            enumValue = InstanceType::r8gb_metal_24xl;
+            return true;
+          }
+          else if (hashCode == m8a_medium_HASH)
+          {
+            enumValue = InstanceType::m8a_medium;
+            return true;
+          }
+          else if (hashCode == m8a_large_HASH)
+          {
+            enumValue = InstanceType::m8a_large;
+            return true;
+          }
+          else if (hashCode == m8a_xlarge_HASH)
+          {
+            enumValue = InstanceType::m8a_xlarge;
+            return true;
+          }
+          else if (hashCode == m8a_2xlarge_HASH)
+          {
+            enumValue = InstanceType::m8a_2xlarge;
+            return true;
+          }
+          else if (hashCode == m8a_4xlarge_HASH)
+          {
+            enumValue = InstanceType::m8a_4xlarge;
+            return true;
+          }
+          else if (hashCode == m8a_8xlarge_HASH)
+          {
+            enumValue = InstanceType::m8a_8xlarge;
+            return true;
+          }
+          else if (hashCode == m8a_12xlarge_HASH)
+          {
+            enumValue = InstanceType::m8a_12xlarge;
+            return true;
+          }
+          else if (hashCode == m8a_16xlarge_HASH)
+          {
+            enumValue = InstanceType::m8a_16xlarge;
+            return true;
+          }
+          else if (hashCode == m8a_24xlarge_HASH)
+          {
+            enumValue = InstanceType::m8a_24xlarge;
+            return true;
+          }
+          else if (hashCode == m8a_48xlarge_HASH)
+          {
+            enumValue = InstanceType::m8a_48xlarge;
+            return true;
+          }
+          else if (hashCode == m8a_metal_24xl_HASH)
+          {
+            enumValue = InstanceType::m8a_metal_24xl;
+            return true;
+          }
+          else if (hashCode == m8a_metal_48xl_HASH)
+          {
+            enumValue = InstanceType::m8a_metal_48xl;
+            return true;
+          }
           return false;
         }
 
@@ -9400,6 +9652,132 @@ namespace Aws
             return true;
           case InstanceType::r8gn_metal_48xl:
             value = "r8gn.metal-48xl";
+            return true;
+          case InstanceType::c8i_large:
+            value = "c8i.large";
+            return true;
+          case InstanceType::c8i_xlarge:
+            value = "c8i.xlarge";
+            return true;
+          case InstanceType::c8i_2xlarge:
+            value = "c8i.2xlarge";
+            return true;
+          case InstanceType::c8i_4xlarge:
+            value = "c8i.4xlarge";
+            return true;
+          case InstanceType::c8i_8xlarge:
+            value = "c8i.8xlarge";
+            return true;
+          case InstanceType::c8i_12xlarge:
+            value = "c8i.12xlarge";
+            return true;
+          case InstanceType::c8i_16xlarge:
+            value = "c8i.16xlarge";
+            return true;
+          case InstanceType::c8i_24xlarge:
+            value = "c8i.24xlarge";
+            return true;
+          case InstanceType::c8i_32xlarge:
+            value = "c8i.32xlarge";
+            return true;
+          case InstanceType::c8i_48xlarge:
+            value = "c8i.48xlarge";
+            return true;
+          case InstanceType::c8i_96xlarge:
+            value = "c8i.96xlarge";
+            return true;
+          case InstanceType::c8i_metal_48xl:
+            value = "c8i.metal-48xl";
+            return true;
+          case InstanceType::c8i_metal_96xl:
+            value = "c8i.metal-96xl";
+            return true;
+          case InstanceType::c8i_flex_large:
+            value = "c8i-flex.large";
+            return true;
+          case InstanceType::c8i_flex_xlarge:
+            value = "c8i-flex.xlarge";
+            return true;
+          case InstanceType::c8i_flex_2xlarge:
+            value = "c8i-flex.2xlarge";
+            return true;
+          case InstanceType::c8i_flex_4xlarge:
+            value = "c8i-flex.4xlarge";
+            return true;
+          case InstanceType::c8i_flex_8xlarge:
+            value = "c8i-flex.8xlarge";
+            return true;
+          case InstanceType::c8i_flex_12xlarge:
+            value = "c8i-flex.12xlarge";
+            return true;
+          case InstanceType::c8i_flex_16xlarge:
+            value = "c8i-flex.16xlarge";
+            return true;
+          case InstanceType::r8gb_medium:
+            value = "r8gb.medium";
+            return true;
+          case InstanceType::r8gb_large:
+            value = "r8gb.large";
+            return true;
+          case InstanceType::r8gb_xlarge:
+            value = "r8gb.xlarge";
+            return true;
+          case InstanceType::r8gb_2xlarge:
+            value = "r8gb.2xlarge";
+            return true;
+          case InstanceType::r8gb_4xlarge:
+            value = "r8gb.4xlarge";
+            return true;
+          case InstanceType::r8gb_8xlarge:
+            value = "r8gb.8xlarge";
+            return true;
+          case InstanceType::r8gb_12xlarge:
+            value = "r8gb.12xlarge";
+            return true;
+          case InstanceType::r8gb_16xlarge:
+            value = "r8gb.16xlarge";
+            return true;
+          case InstanceType::r8gb_24xlarge:
+            value = "r8gb.24xlarge";
+            return true;
+          case InstanceType::r8gb_metal_24xl:
+            value = "r8gb.metal-24xl";
+            return true;
+          case InstanceType::m8a_medium:
+            value = "m8a.medium";
+            return true;
+          case InstanceType::m8a_large:
+            value = "m8a.large";
+            return true;
+          case InstanceType::m8a_xlarge:
+            value = "m8a.xlarge";
+            return true;
+          case InstanceType::m8a_2xlarge:
+            value = "m8a.2xlarge";
+            return true;
+          case InstanceType::m8a_4xlarge:
+            value = "m8a.4xlarge";
+            return true;
+          case InstanceType::m8a_8xlarge:
+            value = "m8a.8xlarge";
+            return true;
+          case InstanceType::m8a_12xlarge:
+            value = "m8a.12xlarge";
+            return true;
+          case InstanceType::m8a_16xlarge:
+            value = "m8a.16xlarge";
+            return true;
+          case InstanceType::m8a_24xlarge:
+            value = "m8a.24xlarge";
+            return true;
+          case InstanceType::m8a_48xlarge:
+            value = "m8a.48xlarge";
+            return true;
+          case InstanceType::m8a_metal_24xl:
+            value = "m8a.metal-24xl";
+            return true;
+          case InstanceType::m8a_metal_48xl:
+            value = "m8a.metal-48xl";
             return true;
           default:
             return false;

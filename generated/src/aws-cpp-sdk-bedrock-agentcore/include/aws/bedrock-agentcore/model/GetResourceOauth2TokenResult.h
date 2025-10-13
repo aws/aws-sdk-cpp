@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agentcore/model/SessionStatus.h>
 #include <utility>
 
 namespace Aws
@@ -56,6 +57,30 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Unique identifier for the user's authorization session for retrieving OAuth2
+     * tokens. This matches the sessionId from the request and can be used to track the
+     * session state.</p>
+     */
+    inline const Aws::String& GetSessionUri() const { return m_sessionUri; }
+    template<typename SessionUriT = Aws::String>
+    void SetSessionUri(SessionUriT&& value) { m_sessionUriHasBeenSet = true; m_sessionUri = std::forward<SessionUriT>(value); }
+    template<typename SessionUriT = Aws::String>
+    GetResourceOauth2TokenResult& WithSessionUri(SessionUriT&& value) { SetSessionUri(std::forward<SessionUriT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Status indicating whether the user's authorization session is in progress or
+     * has failed. This helps determine the next steps in the OAuth2 authentication
+     * flow.</p>
+     */
+    inline SessionStatus GetSessionStatus() const { return m_sessionStatus; }
+    inline void SetSessionStatus(SessionStatus value) { m_sessionStatusHasBeenSet = true; m_sessionStatus = value; }
+    inline GetResourceOauth2TokenResult& WithSessionStatus(SessionStatus value) { SetSessionStatus(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -70,6 +95,12 @@ namespace Model
 
     Aws::String m_accessToken;
     bool m_accessTokenHasBeenSet = false;
+
+    Aws::String m_sessionUri;
+    bool m_sessionUriHasBeenSet = false;
+
+    SessionStatus m_sessionStatus{SessionStatus::NOT_SET};
+    bool m_sessionStatusHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

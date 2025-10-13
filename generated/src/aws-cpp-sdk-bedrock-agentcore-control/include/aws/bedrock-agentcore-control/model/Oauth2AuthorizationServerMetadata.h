@@ -88,6 +88,22 @@ namespace Model
     template<typename ResponseTypesT = Aws::String>
     Oauth2AuthorizationServerMetadata& AddResponseTypes(ResponseTypesT&& value) { m_responseTypesHasBeenSet = true; m_responseTypes.emplace_back(std::forward<ResponseTypesT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The authentication methods supported by the token endpoint. This specifies
+     * how clients can authenticate when requesting tokens from the authorization
+     * server.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetTokenEndpointAuthMethods() const { return m_tokenEndpointAuthMethods; }
+    inline bool TokenEndpointAuthMethodsHasBeenSet() const { return m_tokenEndpointAuthMethodsHasBeenSet; }
+    template<typename TokenEndpointAuthMethodsT = Aws::Vector<Aws::String>>
+    void SetTokenEndpointAuthMethods(TokenEndpointAuthMethodsT&& value) { m_tokenEndpointAuthMethodsHasBeenSet = true; m_tokenEndpointAuthMethods = std::forward<TokenEndpointAuthMethodsT>(value); }
+    template<typename TokenEndpointAuthMethodsT = Aws::Vector<Aws::String>>
+    Oauth2AuthorizationServerMetadata& WithTokenEndpointAuthMethods(TokenEndpointAuthMethodsT&& value) { SetTokenEndpointAuthMethods(std::forward<TokenEndpointAuthMethodsT>(value)); return *this;}
+    template<typename TokenEndpointAuthMethodsT = Aws::String>
+    Oauth2AuthorizationServerMetadata& AddTokenEndpointAuthMethods(TokenEndpointAuthMethodsT&& value) { m_tokenEndpointAuthMethodsHasBeenSet = true; m_tokenEndpointAuthMethods.emplace_back(std::forward<TokenEndpointAuthMethodsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_issuer;
@@ -101,6 +117,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_responseTypes;
     bool m_responseTypesHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_tokenEndpointAuthMethods;
+    bool m_tokenEndpointAuthMethodsHasBeenSet = false;
   };
 
 } // namespace Model

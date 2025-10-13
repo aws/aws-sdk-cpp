@@ -81,6 +81,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Callback URL to register on the OAuth2 credential provider as an allowed
+     * callback URL. This URL is where the OAuth2 authorization server redirects users
+     * after they complete the authorization flow.</p>
+     */
+    inline const Aws::String& GetCallbackUrl() const { return m_callbackUrl; }
+    template<typename CallbackUrlT = Aws::String>
+    void SetCallbackUrl(CallbackUrlT&& value) { m_callbackUrlHasBeenSet = true; m_callbackUrl = std::forward<CallbackUrlT>(value); }
+    template<typename CallbackUrlT = Aws::String>
+    UpdateOauth2CredentialProviderResult& WithCallbackUrl(CallbackUrlT&& value) { SetCallbackUrl(std::forward<CallbackUrlT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The configuration output for the OAuth2 provider.</p>
      */
     inline const Oauth2ProviderConfigOutput& GetOauth2ProviderConfigOutput() const { return m_oauth2ProviderConfigOutput; }
@@ -133,6 +146,9 @@ namespace Model
 
     Aws::String m_credentialProviderArn;
     bool m_credentialProviderArnHasBeenSet = false;
+
+    Aws::String m_callbackUrl;
+    bool m_callbackUrlHasBeenSet = false;
 
     Oauth2ProviderConfigOutput m_oauth2ProviderConfigOutput;
     bool m_oauth2ProviderConfigOutputHasBeenSet = false;

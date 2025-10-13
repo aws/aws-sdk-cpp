@@ -86,6 +86,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>Unique identifier for the user's authentication session for retrieving OAuth2
+     * tokens. This ID tracks the authorization flow state across multiple requests and
+     * responses during the OAuth2 authentication process.</p>
+     */
+    inline const Aws::String& GetSessionUri() const { return m_sessionUri; }
+    inline bool SessionUriHasBeenSet() const { return m_sessionUriHasBeenSet; }
+    template<typename SessionUriT = Aws::String>
+    void SetSessionUri(SessionUriT&& value) { m_sessionUriHasBeenSet = true; m_sessionUri = std::forward<SessionUriT>(value); }
+    template<typename SessionUriT = Aws::String>
+    GetResourceOauth2TokenRequest& WithSessionUri(SessionUriT&& value) { SetSessionUri(std::forward<SessionUriT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The callback URL to redirect to after the OAuth 2.0 token retrieval is
      * complete. This URL must be one of the provided URLs configured for the workload
      * identity.</p>
@@ -126,6 +140,21 @@ namespace Model
       m_customParametersHasBeenSet = true; m_customParameters.emplace(std::forward<CustomParametersKeyT>(key), std::forward<CustomParametersValueT>(value)); return *this;
     }
     ///@}
+
+    ///@{
+    /**
+     * <p>An opaque string that will be sent back to the callback URL provided in
+     * resourceOauth2ReturnUrl. This state should be used to protect the callback URL
+     * of your application against CSRF attacks by ensuring the response corresponds to
+     * the original request.</p>
+     */
+    inline const Aws::String& GetCustomState() const { return m_customState; }
+    inline bool CustomStateHasBeenSet() const { return m_customStateHasBeenSet; }
+    template<typename CustomStateT = Aws::String>
+    void SetCustomState(CustomStateT&& value) { m_customStateHasBeenSet = true; m_customState = std::forward<CustomStateT>(value); }
+    template<typename CustomStateT = Aws::String>
+    GetResourceOauth2TokenRequest& WithCustomState(CustomStateT&& value) { SetCustomState(std::forward<CustomStateT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_workloadIdentityToken;
@@ -140,6 +169,9 @@ namespace Model
     Oauth2FlowType m_oauth2Flow{Oauth2FlowType::NOT_SET};
     bool m_oauth2FlowHasBeenSet = false;
 
+    Aws::String m_sessionUri;
+    bool m_sessionUriHasBeenSet = false;
+
     Aws::String m_resourceOauth2ReturnUrl;
     bool m_resourceOauth2ReturnUrlHasBeenSet = false;
 
@@ -148,6 +180,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_customParameters;
     bool m_customParametersHasBeenSet = false;
+
+    Aws::String m_customState;
+    bool m_customStateHasBeenSet = false;
   };
 
 } // namespace Model

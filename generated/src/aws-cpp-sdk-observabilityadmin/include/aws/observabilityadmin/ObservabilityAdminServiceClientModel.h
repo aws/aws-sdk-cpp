@@ -22,6 +22,7 @@
 #include <aws/observabilityadmin/model/CreateTelemetryRuleResult.h>
 #include <aws/observabilityadmin/model/CreateTelemetryRuleForOrganizationResult.h>
 #include <aws/observabilityadmin/model/GetCentralizationRuleForOrganizationResult.h>
+#include <aws/observabilityadmin/model/GetTelemetryEnrichmentStatusResult.h>
 #include <aws/observabilityadmin/model/GetTelemetryEvaluationStatusResult.h>
 #include <aws/observabilityadmin/model/GetTelemetryEvaluationStatusForOrganizationResult.h>
 #include <aws/observabilityadmin/model/GetTelemetryRuleResult.h>
@@ -32,20 +33,25 @@
 #include <aws/observabilityadmin/model/ListTagsForResourceResult.h>
 #include <aws/observabilityadmin/model/ListTelemetryRulesResult.h>
 #include <aws/observabilityadmin/model/ListTelemetryRulesForOrganizationResult.h>
+#include <aws/observabilityadmin/model/StartTelemetryEnrichmentResult.h>
+#include <aws/observabilityadmin/model/StopTelemetryEnrichmentResult.h>
 #include <aws/observabilityadmin/model/UpdateCentralizationRuleForOrganizationResult.h>
 #include <aws/observabilityadmin/model/UpdateTelemetryRuleResult.h>
 #include <aws/observabilityadmin/model/UpdateTelemetryRuleForOrganizationResult.h>
-#include <aws/observabilityadmin/model/StartTelemetryEvaluationRequest.h>
-#include <aws/observabilityadmin/model/ListResourceTelemetryRequest.h>
 #include <aws/observabilityadmin/model/ListTelemetryRulesForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/StopTelemetryEvaluationRequest.h>
-#include <aws/observabilityadmin/model/GetTelemetryEvaluationStatusForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/ListResourceTelemetryForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/ListTelemetryRulesRequest.h>
 #include <aws/observabilityadmin/model/ListCentralizationRulesForOrganizationRequest.h>
-#include <aws/observabilityadmin/model/StopTelemetryEvaluationForOrganizationRequest.h>
+#include <aws/observabilityadmin/model/StopTelemetryEnrichmentRequest.h>
 #include <aws/observabilityadmin/model/StartTelemetryEvaluationForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/GetTelemetryEvaluationStatusRequest.h>
+#include <aws/observabilityadmin/model/StartTelemetryEvaluationRequest.h>
+#include <aws/observabilityadmin/model/ListResourceTelemetryRequest.h>
+#include <aws/observabilityadmin/model/StartTelemetryEnrichmentRequest.h>
+#include <aws/observabilityadmin/model/GetTelemetryEvaluationStatusForOrganizationRequest.h>
+#include <aws/observabilityadmin/model/StopTelemetryEvaluationForOrganizationRequest.h>
+#include <aws/observabilityadmin/model/GetTelemetryEnrichmentStatusRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ObservabilityAdminClient header */
 
@@ -94,6 +100,7 @@ namespace Aws
       class DeleteTelemetryRuleRequest;
       class DeleteTelemetryRuleForOrganizationRequest;
       class GetCentralizationRuleForOrganizationRequest;
+      class GetTelemetryEnrichmentStatusRequest;
       class GetTelemetryEvaluationStatusRequest;
       class GetTelemetryEvaluationStatusForOrganizationRequest;
       class GetTelemetryRuleRequest;
@@ -104,8 +111,10 @@ namespace Aws
       class ListTagsForResourceRequest;
       class ListTelemetryRulesRequest;
       class ListTelemetryRulesForOrganizationRequest;
+      class StartTelemetryEnrichmentRequest;
       class StartTelemetryEvaluationRequest;
       class StartTelemetryEvaluationForOrganizationRequest;
+      class StopTelemetryEnrichmentRequest;
       class StopTelemetryEvaluationRequest;
       class StopTelemetryEvaluationForOrganizationRequest;
       class TagResourceRequest;
@@ -123,6 +132,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, ObservabilityAdminError> DeleteTelemetryRuleOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ObservabilityAdminError> DeleteTelemetryRuleForOrganizationOutcome;
       typedef Aws::Utils::Outcome<GetCentralizationRuleForOrganizationResult, ObservabilityAdminError> GetCentralizationRuleForOrganizationOutcome;
+      typedef Aws::Utils::Outcome<GetTelemetryEnrichmentStatusResult, ObservabilityAdminError> GetTelemetryEnrichmentStatusOutcome;
       typedef Aws::Utils::Outcome<GetTelemetryEvaluationStatusResult, ObservabilityAdminError> GetTelemetryEvaluationStatusOutcome;
       typedef Aws::Utils::Outcome<GetTelemetryEvaluationStatusForOrganizationResult, ObservabilityAdminError> GetTelemetryEvaluationStatusForOrganizationOutcome;
       typedef Aws::Utils::Outcome<GetTelemetryRuleResult, ObservabilityAdminError> GetTelemetryRuleOutcome;
@@ -133,8 +143,10 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, ObservabilityAdminError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListTelemetryRulesResult, ObservabilityAdminError> ListTelemetryRulesOutcome;
       typedef Aws::Utils::Outcome<ListTelemetryRulesForOrganizationResult, ObservabilityAdminError> ListTelemetryRulesForOrganizationOutcome;
+      typedef Aws::Utils::Outcome<StartTelemetryEnrichmentResult, ObservabilityAdminError> StartTelemetryEnrichmentOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ObservabilityAdminError> StartTelemetryEvaluationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ObservabilityAdminError> StartTelemetryEvaluationForOrganizationOutcome;
+      typedef Aws::Utils::Outcome<StopTelemetryEnrichmentResult, ObservabilityAdminError> StopTelemetryEnrichmentOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ObservabilityAdminError> StopTelemetryEvaluationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ObservabilityAdminError> StopTelemetryEvaluationForOrganizationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ObservabilityAdminError> TagResourceOutcome;
@@ -152,6 +164,7 @@ namespace Aws
       typedef std::future<DeleteTelemetryRuleOutcome> DeleteTelemetryRuleOutcomeCallable;
       typedef std::future<DeleteTelemetryRuleForOrganizationOutcome> DeleteTelemetryRuleForOrganizationOutcomeCallable;
       typedef std::future<GetCentralizationRuleForOrganizationOutcome> GetCentralizationRuleForOrganizationOutcomeCallable;
+      typedef std::future<GetTelemetryEnrichmentStatusOutcome> GetTelemetryEnrichmentStatusOutcomeCallable;
       typedef std::future<GetTelemetryEvaluationStatusOutcome> GetTelemetryEvaluationStatusOutcomeCallable;
       typedef std::future<GetTelemetryEvaluationStatusForOrganizationOutcome> GetTelemetryEvaluationStatusForOrganizationOutcomeCallable;
       typedef std::future<GetTelemetryRuleOutcome> GetTelemetryRuleOutcomeCallable;
@@ -162,8 +175,10 @@ namespace Aws
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListTelemetryRulesOutcome> ListTelemetryRulesOutcomeCallable;
       typedef std::future<ListTelemetryRulesForOrganizationOutcome> ListTelemetryRulesForOrganizationOutcomeCallable;
+      typedef std::future<StartTelemetryEnrichmentOutcome> StartTelemetryEnrichmentOutcomeCallable;
       typedef std::future<StartTelemetryEvaluationOutcome> StartTelemetryEvaluationOutcomeCallable;
       typedef std::future<StartTelemetryEvaluationForOrganizationOutcome> StartTelemetryEvaluationForOrganizationOutcomeCallable;
+      typedef std::future<StopTelemetryEnrichmentOutcome> StopTelemetryEnrichmentOutcomeCallable;
       typedef std::future<StopTelemetryEvaluationOutcome> StopTelemetryEvaluationOutcomeCallable;
       typedef std::future<StopTelemetryEvaluationForOrganizationOutcome> StopTelemetryEvaluationForOrganizationOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -184,6 +199,7 @@ namespace Aws
     typedef std::function<void(const ObservabilityAdminClient*, const Model::DeleteTelemetryRuleRequest&, const Model::DeleteTelemetryRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTelemetryRuleResponseReceivedHandler;
     typedef std::function<void(const ObservabilityAdminClient*, const Model::DeleteTelemetryRuleForOrganizationRequest&, const Model::DeleteTelemetryRuleForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTelemetryRuleForOrganizationResponseReceivedHandler;
     typedef std::function<void(const ObservabilityAdminClient*, const Model::GetCentralizationRuleForOrganizationRequest&, const Model::GetCentralizationRuleForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCentralizationRuleForOrganizationResponseReceivedHandler;
+    typedef std::function<void(const ObservabilityAdminClient*, const Model::GetTelemetryEnrichmentStatusRequest&, const Model::GetTelemetryEnrichmentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTelemetryEnrichmentStatusResponseReceivedHandler;
     typedef std::function<void(const ObservabilityAdminClient*, const Model::GetTelemetryEvaluationStatusRequest&, const Model::GetTelemetryEvaluationStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTelemetryEvaluationStatusResponseReceivedHandler;
     typedef std::function<void(const ObservabilityAdminClient*, const Model::GetTelemetryEvaluationStatusForOrganizationRequest&, const Model::GetTelemetryEvaluationStatusForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTelemetryEvaluationStatusForOrganizationResponseReceivedHandler;
     typedef std::function<void(const ObservabilityAdminClient*, const Model::GetTelemetryRuleRequest&, const Model::GetTelemetryRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTelemetryRuleResponseReceivedHandler;
@@ -194,8 +210,10 @@ namespace Aws
     typedef std::function<void(const ObservabilityAdminClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ObservabilityAdminClient*, const Model::ListTelemetryRulesRequest&, const Model::ListTelemetryRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTelemetryRulesResponseReceivedHandler;
     typedef std::function<void(const ObservabilityAdminClient*, const Model::ListTelemetryRulesForOrganizationRequest&, const Model::ListTelemetryRulesForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTelemetryRulesForOrganizationResponseReceivedHandler;
+    typedef std::function<void(const ObservabilityAdminClient*, const Model::StartTelemetryEnrichmentRequest&, const Model::StartTelemetryEnrichmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTelemetryEnrichmentResponseReceivedHandler;
     typedef std::function<void(const ObservabilityAdminClient*, const Model::StartTelemetryEvaluationRequest&, const Model::StartTelemetryEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTelemetryEvaluationResponseReceivedHandler;
     typedef std::function<void(const ObservabilityAdminClient*, const Model::StartTelemetryEvaluationForOrganizationRequest&, const Model::StartTelemetryEvaluationForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTelemetryEvaluationForOrganizationResponseReceivedHandler;
+    typedef std::function<void(const ObservabilityAdminClient*, const Model::StopTelemetryEnrichmentRequest&, const Model::StopTelemetryEnrichmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopTelemetryEnrichmentResponseReceivedHandler;
     typedef std::function<void(const ObservabilityAdminClient*, const Model::StopTelemetryEvaluationRequest&, const Model::StopTelemetryEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopTelemetryEvaluationResponseReceivedHandler;
     typedef std::function<void(const ObservabilityAdminClient*, const Model::StopTelemetryEvaluationForOrganizationRequest&, const Model::StopTelemetryEvaluationForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopTelemetryEvaluationForOrganizationResponseReceivedHandler;
     typedef std::function<void(const ObservabilityAdminClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
