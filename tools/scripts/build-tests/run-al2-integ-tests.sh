@@ -11,13 +11,14 @@
 
 set -e
 
-if [ "$#" -ne 3 ]; then
-  echo "Usage: ${0} PREFIX_DIR AWS_ACCOUNT ROLE_SESSION_NAME"
+if [ "$#" -ne 4 ]; then
+  echo "Usage: ${0} PREFIX_DIR AWS_ACCOUNT ROLE_SESSION_NAME SERVICE_ID"
   exit 1
 fi
 PREFIX_DIR="$1"
 AWS_ACCOUNT="$2"
 AWS_ROLE_SESSION_NAME="$3"
+SERVICE_ID="$4"
 
 echo "Setting the run environment"
 echo "SERVICE_ID: ${SERVICE_ID}"
