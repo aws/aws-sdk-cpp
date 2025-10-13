@@ -27,8 +27,8 @@ Aws::String EmptyInputOutputRequest::SerializePayload() const {
 
 Aws::Http::HeaderValueCollection EmptyInputOutputRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.emplace("smithy-protocol", "rpc-v2-cbor");
   headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
   headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   Aws::StringStream ss;
   if (m_requestIdHasBeenSet) {

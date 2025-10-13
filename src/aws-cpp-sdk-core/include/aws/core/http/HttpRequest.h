@@ -59,6 +59,7 @@ namespace Aws
         extern AWS_CORE_API const char AWS_TRAILER_HEADER[];
         extern AWS_CORE_API const char SDK_INVOCATION_ID_HEADER[];
         extern AWS_CORE_API const char SDK_REQUEST_HEADER[];
+        extern AWS_CORE_API const char SMITHY_PROTOCOL_HEADER[];
         extern AWS_CORE_API const char X_AMZN_TRACE_ID_HEADER[];
         extern AWS_CORE_API const char CHUNKED_VALUE[];
         extern AWS_CORE_API const char AWS_CHUNKED_VALUE[];

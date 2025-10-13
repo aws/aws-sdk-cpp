@@ -199,7 +199,7 @@ SimpleScalarPropertiesResult& SimpleScalarPropertiesResult::operator=(
                         ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
                       }
                     }
-                    m_blobValue = ss.str();
+                    m_blobValue = Aws::Utils::ByteBuffer(ss.str());
                     ss.clear();
                   }
                 }
@@ -421,7 +421,7 @@ SimpleScalarPropertiesResult& SimpleScalarPropertiesResult::operator=(
                       ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
                     }
                   }
-                  m_blobValue = ss.str();
+                  m_blobValue = Aws::Utils::ByteBuffer(ss.str());
                   ss.clear();
                 }
               }

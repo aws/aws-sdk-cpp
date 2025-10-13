@@ -73,7 +73,7 @@ if(peekType_${recursionDepth}){
                     ss_${recursionDepth} << Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len);
                 }
             }
-            ${value}[keyStr_${recursionDepth}] = ss_${recursionDepth}.str();
+            ${value}[keyStr_${recursionDepth}] = Aws::Utils::ByteBuffer(ss_${recursionDepth}.str());
             ss_${recursionDepth}.clear();
         }
     }

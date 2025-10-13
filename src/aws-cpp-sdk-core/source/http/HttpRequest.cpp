@@ -37,6 +37,7 @@ namespace Aws
         const char AWS_TRAILER_HEADER[] = "x-amz-trailer";
         const char SDK_INVOCATION_ID_HEADER[] = "amz-sdk-invocation-id";
         const char SDK_REQUEST_HEADER[] = "amz-sdk-request";
+        const char SMITHY_PROTOCOL_HEADER[] = "smithy-protocol";
         const char CHUNKED_VALUE[] = "chunked";
         const char AWS_CHUNKED_VALUE[] = "aws-chunked";
         const char X_AMZN_TRACE_ID_HEADER[] = "X-Amzn-Trace-Id";

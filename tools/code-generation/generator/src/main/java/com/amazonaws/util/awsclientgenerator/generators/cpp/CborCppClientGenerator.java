@@ -122,7 +122,7 @@ public class CborCppClientGenerator extends CppClientGenerator {
                     HashMap<String, String> headersMap = new HashMap<>(10);
                     headersMap.put("Aws::Http::CONTENT_TYPE_HEADER", "Aws::AMZN_EVENTSTREAM_CONTENT_TYPE");
                     headersMap.put("Aws::Http::ACCEPT_HEADER", "Aws::AMZN_EVENTSTREAM_CONTENT_TYPE");
-                    headersMap.put("\"smithy-protocol\"", "\"rpc-v2-cbor\"");
+                    headersMap.put("Aws::Http::SMITHY_PROTOCOL_HEADER", "Aws::RPC_V2_CBOR");
                     context.put("requestSpecificHeaders", headersMap);
                 }
                 template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/StreamRequestSource.vm", StandardCharsets.UTF_8.name());
@@ -130,7 +130,7 @@ public class CborCppClientGenerator extends CppClientGenerator {
             else if (shape.isRequest()) {
                 Map<String, String> cborSpecificHeaders = new HashMap<>();
                 cborSpecificHeaders.put("Aws::Http::ACCEPT_HEADER", "Aws::CBOR_CONTENT_TYPE");
-                cborSpecificHeaders.put("\"smithy-protocol\"", "\"rpc-v2-cbor\"");
+                cborSpecificHeaders.put("Aws::Http::SMITHY_PROTOCOL_HEADER", "Aws::RPC_V2_CBOR");
                 if(shape.hasMembers()){
                     cborSpecificHeaders.put("Aws::Http::CONTENT_TYPE_HEADER", "Aws::CBOR_CONTENT_TYPE");
                 }

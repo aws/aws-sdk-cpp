@@ -52,6 +52,7 @@ const std::pair<UserAgentFeature, const char*> BUSINESS_METRIC_MAPPING[] = {
     {UserAgentFeature::CREDENTIALS_SSO, "s"},
     {UserAgentFeature::CREDENTIALS_SSO_LEGACY, "u"},
     {UserAgentFeature::CREDENTIALS_PROFILE_SOURCE_PROFILE, "p"},
+    {UserAgentFeature::PROTOCOL_RPC_V2_CBOR, "M"},
 };
 
 const std::pair<const char*, UserAgentFeature> RETRY_FEATURE_MAPPING[] = {

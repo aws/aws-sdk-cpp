@@ -143,6 +143,7 @@ void JSONRPC10Client::init(const JSONRPC10::JSONRPC10ClientConfiguration& config
 
 void JSONRPC10Client::OverrideEndpoint(const Aws::String& endpoint) {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
