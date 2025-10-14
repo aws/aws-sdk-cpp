@@ -74,6 +74,7 @@
 #include <aws/ec2/model/CopyFpgaImageResponse.h>
 #include <aws/ec2/model/CopyImageResponse.h>
 #include <aws/ec2/model/CopySnapshotResponse.h>
+#include <aws/ec2/model/CopyVolumesResponse.h>
 #include <aws/ec2/model/CreateCapacityReservationResponse.h>
 #include <aws/ec2/model/CreateCapacityReservationBySplittingResponse.h>
 #include <aws/ec2/model/CreateCapacityReservationFleetResponse.h>
@@ -970,6 +971,7 @@ namespace Aws
       class CopyFpgaImageRequest;
       class CopyImageRequest;
       class CopySnapshotRequest;
+      class CopyVolumesRequest;
       class CreateCapacityReservationRequest;
       class CreateCapacityReservationBySplittingRequest;
       class CreateCapacityReservationFleetRequest;
@@ -1667,6 +1669,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CopyFpgaImageResponse, EC2Error> CopyFpgaImageOutcome;
       typedef Aws::Utils::Outcome<CopyImageResponse, EC2Error> CopyImageOutcome;
       typedef Aws::Utils::Outcome<CopySnapshotResponse, EC2Error> CopySnapshotOutcome;
+      typedef Aws::Utils::Outcome<CopyVolumesResponse, EC2Error> CopyVolumesOutcome;
       typedef Aws::Utils::Outcome<CreateCapacityReservationResponse, EC2Error> CreateCapacityReservationOutcome;
       typedef Aws::Utils::Outcome<CreateCapacityReservationBySplittingResponse, EC2Error> CreateCapacityReservationBySplittingOutcome;
       typedef Aws::Utils::Outcome<CreateCapacityReservationFleetResponse, EC2Error> CreateCapacityReservationFleetOutcome;
@@ -2364,6 +2367,7 @@ namespace Aws
       typedef std::future<CopyFpgaImageOutcome> CopyFpgaImageOutcomeCallable;
       typedef std::future<CopyImageOutcome> CopyImageOutcomeCallable;
       typedef std::future<CopySnapshotOutcome> CopySnapshotOutcomeCallable;
+      typedef std::future<CopyVolumesOutcome> CopyVolumesOutcomeCallable;
       typedef std::future<CreateCapacityReservationOutcome> CreateCapacityReservationOutcomeCallable;
       typedef std::future<CreateCapacityReservationBySplittingOutcome> CreateCapacityReservationBySplittingOutcomeCallable;
       typedef std::future<CreateCapacityReservationFleetOutcome> CreateCapacityReservationFleetOutcomeCallable;
@@ -3064,6 +3068,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::CopyFpgaImageRequest&, const Model::CopyFpgaImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyFpgaImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CopyImageRequest&, const Model::CopyImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CopySnapshotRequest&, const Model::CopySnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopySnapshotResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CopyVolumesRequest&, const Model::CopyVolumesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyVolumesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateCapacityReservationRequest&, const Model::CreateCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCapacityReservationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateCapacityReservationBySplittingRequest&, const Model::CreateCapacityReservationBySplittingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCapacityReservationBySplittingResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateCapacityReservationFleetRequest&, const Model::CreateCapacityReservationFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCapacityReservationFleetResponseReceivedHandler;

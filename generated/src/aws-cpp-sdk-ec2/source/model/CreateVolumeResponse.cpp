@@ -46,6 +46,12 @@ CreateVolumeResponse& CreateVolumeResponse::operator =(const Aws::AmazonWebServi
       m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
       m_outpostArnHasBeenSet = true;
     }
+    XmlNode sourceVolumeIdNode = resultNode.FirstChild("sourceVolumeId");
+    if(!sourceVolumeIdNode.IsNull())
+    {
+      m_sourceVolumeId = Aws::Utils::Xml::DecodeEscapedXmlText(sourceVolumeIdNode.GetText());
+      m_sourceVolumeIdHasBeenSet = true;
+    }
     XmlNode iopsNode = resultNode.FirstChild("iops");
     if(!iopsNode.IsNull())
     {

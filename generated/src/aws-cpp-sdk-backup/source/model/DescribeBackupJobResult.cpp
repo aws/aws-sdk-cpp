@@ -40,15 +40,40 @@ DescribeBackupJobResult& DescribeBackupJobResult::operator =(const Aws::AmazonWe
     m_backupVaultName = jsonValue.GetString("BackupVaultName");
     m_backupVaultNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("RecoveryPointLifecycle"))
+  {
+    m_recoveryPointLifecycle = jsonValue.GetObject("RecoveryPointLifecycle");
+    m_recoveryPointLifecycleHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("BackupVaultArn"))
   {
     m_backupVaultArn = jsonValue.GetString("BackupVaultArn");
     m_backupVaultArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("VaultType"))
+  {
+    m_vaultType = jsonValue.GetString("VaultType");
+    m_vaultTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("VaultLockState"))
+  {
+    m_vaultLockState = jsonValue.GetString("VaultLockState");
+    m_vaultLockStateHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("RecoveryPointArn"))
   {
     m_recoveryPointArn = jsonValue.GetString("RecoveryPointArn");
     m_recoveryPointArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("EncryptionKeyArn"))
+  {
+    m_encryptionKeyArn = jsonValue.GetString("EncryptionKeyArn");
+    m_encryptionKeyArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("IsEncrypted"))
+  {
+    m_isEncrypted = jsonValue.GetBool("IsEncrypted");
+    m_isEncryptedHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ResourceArn"))
   {

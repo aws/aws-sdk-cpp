@@ -78,6 +78,8 @@ namespace Model
     ///@{
     /**
      * <p>The channels this queue supports. Valid Values: CHAT | TASK | EMAIL </p>
+     *  <p>VOICE is not supported. The information shown below is incorrect.
+     * We're working to correct it. </p> 
      */
     inline Channel GetChannel() const { return m_channel; }
     inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }

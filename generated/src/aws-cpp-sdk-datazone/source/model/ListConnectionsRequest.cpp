@@ -58,6 +58,13 @@ void ListConnectionsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
+    if(m_scopeHasBeenSet)
+    {
+      ss << ConnectionScopeMapper::GetNameForConnectionScope(m_scope);
+      uri.AddQueryStringParameter("scope", ss.str());
+      ss.str("");
+    }
+
     if(m_sortByHasBeenSet)
     {
       ss << SortFieldConnectionMapper::GetNameForSortFieldConnection(m_sortBy);

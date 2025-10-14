@@ -43,6 +43,12 @@ Volume& Volume::operator =(const XmlNode& xmlNode)
       m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
       m_outpostArnHasBeenSet = true;
     }
+    XmlNode sourceVolumeIdNode = resultNode.FirstChild("sourceVolumeId");
+    if(!sourceVolumeIdNode.IsNull())
+    {
+      m_sourceVolumeId = Aws::Utils::Xml::DecodeEscapedXmlText(sourceVolumeIdNode.GetText());
+      m_sourceVolumeIdHasBeenSet = true;
+    }
     XmlNode iopsNode = resultNode.FirstChild("iops");
     if(!iopsNode.IsNull())
     {
@@ -182,6 +188,11 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       oStream << location << index << locationValue << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
   }
 
+  if(m_sourceVolumeIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SourceVolumeId=" << StringUtils::URLEncode(m_sourceVolumeId.c_str()) << "&";
+  }
+
   if(m_iopsHasBeenSet)
   {
       oStream << location << index << locationValue << ".Iops=" << m_iops << "&";
@@ -300,6 +311,10 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_outpostArnHasBeenSet)
   {
       oStream << location << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
+  }
+  if(m_sourceVolumeIdHasBeenSet)
+  {
+      oStream << location << ".SourceVolumeId=" << StringUtils::URLEncode(m_sourceVolumeId.c_str()) << "&";
   }
   if(m_iopsHasBeenSet)
   {

@@ -204,29 +204,25 @@ namespace Connect
 
         /**
          * <p>Associates a queued contact with an agent.</p> <p> <b>Use cases</b> </p>
-         * <p>Following are common uses cases for this API:</p> <ul> <li> <p>Custom contact
-         * routing. You can build custom contact routing mechanisms beyond the default
-         * system routing in Amazon Connect. You can create tailored contact distribution
-         * logic that offers queued contacts directly to specific agents.</p> </li> <li>
-         * <p>Manual contact assignment. You can programmatically assign queued contacts to
-         * available users. This provides flexibility to contact centers that require
-         * manual oversight or specialized routing workflows outside of standard queue
-         * management.</p> <p>For information about how manual contact assignment works in
-         * the agent workspace, see the <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/worklist-app.html">Access
-         * the Worklist app in the Amazon Connect agent workspace</a> in the <i>Amazon
-         * Connect Administrator Guide</i>. </p> </li> </ul> <p> <b>Important things to
-         * know</b> </p> <ul> <li> <p>Use this API chat/SMS, email, and task contacts. It
-         * does not support voice contacts.</p> </li> <li> <p>Use it to associate contacts
-         * with users regardless of their current state, including custom states. Ensure
-         * your application logic accounts for user availability before making
-         * associations.</p> </li> <li> <p>It honors the IAM context key
+         * <p>Following are common uses cases for this API:</p> <ul> <li>
+         * <p>Programmatically assign queued contacts to available users.</p> </li> <li>
+         * <p>Leverage the IAM context key <code>connect:PreferredUserArn</code> to
+         * restrict contact association to specific preferred user.</p> </li> </ul> <p>
+         * <b>Important things to know</b> </p> <ul> <li> <p>Use this API with chat, email,
+         * and task contacts. It does not support voice contacts.</p> </li> <li> <p>Use it
+         * to associate contacts with users regardless of their current state, including
+         * custom states. Ensure your application logic accounts for user availability
+         * before making associations.</p> </li> <li> <p>It honors the IAM context key
          * <code>connect:PreferredUserArn</code> to prevent unauthorized contact
          * associations.</p> </li> <li> <p>It respects the IAM context key
          * <code>connect:PreferredUserArn</code> to enforce authorization controls and
          * prevent unauthorized contact associations. Verify that your IAM policies are
-         * properly configured to support your intended use cases.</p> </li> </ul> <p>
-         * <b>Endpoints</b>: See <a
+         * properly configured to support your intended use cases.</p> </li> <li> <p>The
+         * service quota <i>Queues per routing profile per instance</i> applies to manually
+         * assigned queues, too. For more information about this quota, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+         * Connect quotas</a> in the <i>Amazon Connect Administrator Guide</i>.</p> </li>
+         * </ul> <p> <b>Endpoints</b>: See <a
          * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
          * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateContactWithUser">AWS
@@ -2464,13 +2460,26 @@ namespace Connect
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Describes the specified contact. </p>  <ul> <li> <p>
-         * <code>SystemEndpoint</code> is not populated for contacts with initiation method
-         * of MONITOR, QUEUE_TRANSFER, or CALLBACK</p> </li> <li> <p>Contact information
-         * remains available in Amazon Connect for 24 months from the
-         * <code>InitiationTimestamp</code>, and then it is deleted. Only contact
+         * change.</p> <p>Describes the specified contact. </p> <p> <b>Use cases</b> </p>
+         * <p>Following are common uses cases for this API:</p> <ul> <li> <p>Retrieve
+         * contact information such as the caller's phone number and the specific number
+         * the caller dialed to integrate into custom monitoring or custom agent experience
+         * solutions.</p> </li> <li> <p>Detect when a customer chat session disconnects due
+         * to a network issue on the agent's end. Use the DisconnectReason field in the <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
+         * to detect this event and then re-queue the chat for followup.</p> </li> <li>
+         * <p>Identify after contact work (ACW) duration and call recordings information
+         * when a COMPLETED event is received by using the <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-events.html">contact
+         * event stream</a>. </p> </li> </ul> <p> <b>Important things to know</b> </p> <ul>
+         * <li> <p> <code>SystemEndpoint</code> is not populated for contacts with
+         * initiation method of MONITOR, QUEUE_TRANSFER, or CALLBACK</p> </li> <li>
+         * <p>Contact information remains available in Amazon Connect for 24 months from
+         * the <code>InitiationTimestamp</code>, and then it is deleted. Only contact
          * information that is available in Amazon Connect is returned by this API.</p>
-         * </li> </ul> <p><h3>See Also:</h3>   <a
+         * </li> </ul> <p> <b>Endpoints</b>: See <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+         * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContact">AWS
          * API Reference</a></p>
          */
@@ -4923,10 +4932,10 @@ namespace Connect
          * <p>Lists the manual assignment queues associated with a routing profile.</p> <p>
          * <b>Use cases</b> </p> <p>Following are common uses cases for this API:</p> <ul>
          * <li> <p>This API returns list of queues where contacts can be manually assigned
-         * or picked. The user can additionally filter on queues, if they have access to
-         * those queues (otherwise a invalid request exception will be thrown).</p> <p>For
-         * information about how manual contact assignment works in the agent workspace,
-         * see the <a
+         * or picked by an agent who has access to the Worklist app. The user can
+         * additionally filter on queues, if they have access to those queues (otherwise a
+         * invalid request exception will be thrown).</p> <p>For information about how
+         * manual contact assignment works in the agent workspace, see the <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/worklist-app.html">Access
          * the Worklist app in the Amazon Connect agent workspace</a> in the <i>Amazon
          * Connect Administrator Guide</i>. </p> </li> </ul> <p> <b>Important things to

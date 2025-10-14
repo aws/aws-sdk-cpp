@@ -9,6 +9,7 @@
 #include <aws/datazone/model/AwsLocation.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datazone/model/ConnectionPropertiesInput.h>
+#include <aws/datazone/model/ConnectionScope.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -86,6 +87,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies whether the trusted identity propagation is enabled.</p>
+     */
+    inline bool GetEnableTrustedIdentityPropagation() const { return m_enableTrustedIdentityPropagation; }
+    inline bool EnableTrustedIdentityPropagationHasBeenSet() const { return m_enableTrustedIdentityPropagationHasBeenSet; }
+    inline void SetEnableTrustedIdentityPropagation(bool value) { m_enableTrustedIdentityPropagationHasBeenSet = true; m_enableTrustedIdentityPropagation = value; }
+    inline CreateConnectionRequest& WithEnableTrustedIdentityPropagation(bool value) { SetEnableTrustedIdentityPropagation(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the environment where the connection is created.</p>
      */
     inline const Aws::String& GetEnvironmentIdentifier() const { return m_environmentIdentifier; }
@@ -119,6 +130,16 @@ namespace Model
     template<typename PropsT = ConnectionPropertiesInput>
     CreateConnectionRequest& WithProps(PropsT&& value) { SetProps(std::forward<PropsT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The scope of the connection.</p>
+     */
+    inline ConnectionScope GetScope() const { return m_scope; }
+    inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
+    inline void SetScope(ConnectionScope value) { m_scopeHasBeenSet = true; m_scope = value; }
+    inline CreateConnectionRequest& WithScope(ConnectionScope value) { SetScope(value); return *this;}
+    ///@}
   private:
 
     AwsLocation m_awsLocation;
@@ -133,6 +154,9 @@ namespace Model
     Aws::String m_domainIdentifier;
     bool m_domainIdentifierHasBeenSet = false;
 
+    bool m_enableTrustedIdentityPropagation{false};
+    bool m_enableTrustedIdentityPropagationHasBeenSet = false;
+
     Aws::String m_environmentIdentifier;
     bool m_environmentIdentifierHasBeenSet = false;
 
@@ -141,6 +165,9 @@ namespace Model
 
     ConnectionPropertiesInput m_props;
     bool m_propsHasBeenSet = false;
+
+    ConnectionScope m_scope{ConnectionScope::NOT_SET};
+    bool m_scopeHasBeenSet = false;
   };
 
 } // namespace Model

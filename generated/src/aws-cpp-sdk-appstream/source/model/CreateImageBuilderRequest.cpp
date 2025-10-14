@@ -104,6 +104,28 @@ Aws::String CreateImageBuilderRequest::SerializePayload() const
 
   }
 
+  if(m_softwaresToInstallHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> softwaresToInstallJsonList(m_softwaresToInstall.size());
+   for(unsigned softwaresToInstallIndex = 0; softwaresToInstallIndex < softwaresToInstallJsonList.GetLength(); ++softwaresToInstallIndex)
+   {
+     softwaresToInstallJsonList[softwaresToInstallIndex].AsString(m_softwaresToInstall[softwaresToInstallIndex]);
+   }
+   payload.WithArray("SoftwaresToInstall", std::move(softwaresToInstallJsonList));
+
+  }
+
+  if(m_softwaresToUninstallHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> softwaresToUninstallJsonList(m_softwaresToUninstall.size());
+   for(unsigned softwaresToUninstallIndex = 0; softwaresToUninstallIndex < softwaresToUninstallJsonList.GetLength(); ++softwaresToUninstallIndex)
+   {
+     softwaresToUninstallJsonList[softwaresToUninstallIndex].AsString(m_softwaresToUninstall[softwaresToUninstallIndex]);
+   }
+   payload.WithArray("SoftwaresToUninstall", std::move(softwaresToUninstallJsonList));
+
+  }
+
   return payload.View().WriteReadable();
 }
 

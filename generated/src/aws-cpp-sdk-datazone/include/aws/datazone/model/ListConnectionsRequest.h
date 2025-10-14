@@ -7,6 +7,7 @@
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/DataZoneRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/model/ConnectionScope.h>
 #include <aws/datazone/model/SortFieldConnection.h>
 #include <aws/datazone/model/SortOrder.h>
 #include <aws/datazone/model/ConnectionType.h>
@@ -120,6 +121,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The scope of the connection.</p>
+     */
+    inline ConnectionScope GetScope() const { return m_scope; }
+    inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
+    inline void SetScope(ConnectionScope value) { m_scopeHasBeenSet = true; m_scope = value; }
+    inline ListConnectionsRequest& WithScope(ConnectionScope value) { SetScope(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies how you want to sort the listed connections.</p>
      */
     inline SortFieldConnection GetSortBy() const { return m_sortBy; }
@@ -166,6 +177,9 @@ namespace Model
 
     Aws::String m_projectIdentifier;
     bool m_projectIdentifierHasBeenSet = false;
+
+    ConnectionScope m_scope{ConnectionScope::NOT_SET};
+    bool m_scopeHasBeenSet = false;
 
     SortFieldConnection m_sortBy{SortFieldConnection::NOT_SET};
     bool m_sortByHasBeenSet = false;

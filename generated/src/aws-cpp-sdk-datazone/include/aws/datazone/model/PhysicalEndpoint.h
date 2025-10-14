@@ -54,6 +54,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specified whether trusted identity propagation for the connection is
+     * enabled.</p>
+     */
+    inline bool GetEnableTrustedIdentityPropagation() const { return m_enableTrustedIdentityPropagation; }
+    inline bool EnableTrustedIdentityPropagationHasBeenSet() const { return m_enableTrustedIdentityPropagationHasBeenSet; }
+    inline void SetEnableTrustedIdentityPropagation(bool value) { m_enableTrustedIdentityPropagationHasBeenSet = true; m_enableTrustedIdentityPropagation = value; }
+    inline PhysicalEndpoint& WithEnableTrustedIdentityPropagation(bool value) { SetEnableTrustedIdentityPropagation(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Web Services Glue connection.</p>
      */
     inline const GlueConnection& GetGlueConnection() const { return m_glueConnection; }
@@ -123,6 +134,9 @@ namespace Model
 
     AwsLocation m_awsLocation;
     bool m_awsLocationHasBeenSet = false;
+
+    bool m_enableTrustedIdentityPropagation{false};
+    bool m_enableTrustedIdentityPropagationHasBeenSet = false;
 
     GlueConnection m_glueConnection;
     bool m_glueConnectionHasBeenSet = false;

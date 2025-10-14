@@ -40,6 +40,16 @@ DescribeRestoreJobResult& DescribeRestoreJobResult::operator =(const Aws::Amazon
     m_recoveryPointArn = jsonValue.GetString("RecoveryPointArn");
     m_recoveryPointArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("SourceResourceArn"))
+  {
+    m_sourceResourceArn = jsonValue.GetString("SourceResourceArn");
+    m_sourceResourceArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("BackupVaultArn"))
+  {
+    m_backupVaultArn = jsonValue.GetString("BackupVaultArn");
+    m_backupVaultArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");

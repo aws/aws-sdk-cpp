@@ -90,21 +90,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of I/O operations per second (IOPS). For <code>gp3</code>,
-     * <code>io1</code>, and <code>io2</code> volumes, this represents the number of
-     * IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this
-     * represents the baseline performance of the volume and the rate at which the
-     * volume accumulates I/O credits for bursting.</p> <p>The following are the
-     * supported values for each volume type:</p> <ul> <li> <p> <code>gp3</code>: 3,000
-     * - 80,000 IOPS</p> </li> <li> <p> <code>io1</code>: 100 - 64,000 IOPS</p> </li>
-     * <li> <p> <code>io2</code>: 100 - 256,000 IOPS</p> </li> </ul> <p>For
-     * <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
-     * href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances
-     * built on the Nitro System</a>. On other instances, you can achieve performance
-     * up to 32,000 IOPS.</p> <p>This parameter is required for <code>io1</code> and
-     * <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000
-     * IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>,
-     * <code>sc1</code>, or <code>standard</code> volumes.</p>
+     * <p>The number of I/O operations per second (IOPS) to provision for the volume.
+     * Required for <code>io1</code> and <code>io2</code> volumes. Optional for
+     * <code>gp3</code> volumes. Omit for all other volume types. </p> <p>Valid
+     * ranges:</p> <ul> <li> <p>gp3: <code>3,000 </code>(<i>default</i>)<code> -
+     * 80,000</code> IOPS</p> </li> <li> <p>io1: <code>100 - 64,000</code> IOPS</p>
+     * </li> <li> <p>io2: <code>100 - 256,000</code> IOPS</p> </li> </ul>  <p> <a
+     * href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">
+     * Instances built on the Nitro System</a> can support up to 256,000 IOPS. Other
+     * instances can support up to 32,000 IOPS.</p> 
      */
     inline int GetIops() const { return m_iops; }
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
@@ -155,14 +149,13 @@ namespace Model
     ///@{
     /**
      * <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a
-     * volume size. If you specify a snapshot, the default is the snapshot size. You
-     * can specify a volume size that is equal to or larger than the snapshot size.</p>
-     * <p>The following are the supported volumes sizes for each volume type:</p> <ul>
-     * <li> <p> <code>gp2</code>: 1 - 16,384 GiB</p> </li> <li> <p> <code>gp3</code>: 1
-     * - 65,536 GiB</p> </li> <li> <p> <code>io1</code>: 4 - 16,384 GiB</p> </li> <li>
-     * <p> <code>io2</code>: 4 - 65,536 GiB</p> </li> <li> <p> <code>st1</code> and
-     * <code>sc1</code>: 125 - 16,384 GiB</p> </li> <li> <p> <code>standard</code>: 1 -
-     * 1024 GiB</p> </li> </ul>
+     * volume size. If you specify a snapshot, the default is the snapshot size, and
+     * you can specify a volume size that is equal to or larger than the snapshot
+     * size.</p> <p>Valid sizes:</p> <ul> <li> <p>gp2: <code>1 - 16,384</code> GiB</p>
+     * </li> <li> <p>gp3: <code>1 - 65,536</code> GiB</p> </li> <li> <p>io1: <code>4 -
+     * 16,384</code> GiB</p> </li> <li> <p>io2: <code>4 - 65,536</code> GiB</p> </li>
+     * <li> <p>st1 and sc1: <code>125 - 16,384</code> GiB</p> </li> <li> <p>standard:
+     * <code>1 - 1024</code> GiB</p> </li> </ul>
      */
     inline int GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
@@ -236,9 +229,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The throughput to provision for a volume, with a maximum of 2,000 MiB/s.</p>
-     * <p>This parameter is valid only for <code>gp3</code> volumes.</p> <p>Valid
-     * Range: Minimum value of 125. Maximum value of 2,000.</p>
+     * <p>The throughput to provision for the volume, in MiB/s. Supported for
+     * <code>gp3</code> volumes only. Omit for all other volume types.</p> <p>Valid
+     * Range: <code>125 - 2000</code> MiB/s</p>
      */
     inline int GetThroughput() const { return m_throughput; }
     inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }

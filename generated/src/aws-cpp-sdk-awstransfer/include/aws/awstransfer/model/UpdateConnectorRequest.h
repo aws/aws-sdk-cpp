@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/awstransfer/model/As2ConnectorConfig.h>
 #include <aws/awstransfer/model/SftpConnectorConfig.h>
+#include <aws/awstransfer/model/UpdateConnectorEgressConfig.h>
 #include <utility>
 
 namespace Aws
@@ -50,7 +51,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+     * <p>The URL of the partner's AS2 or SFTP endpoint.</p> <p>When creating AS2
+     * connectors or service-managed SFTP connectors (connectors without egress
+     * configuration), you must provide a URL to specify the remote server endpoint.
+     * For VPC Lattice type connectors, the URL must be null.</p>
      */
     inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
@@ -144,6 +148,20 @@ namespace Model
     template<typename SecurityPolicyNameT = Aws::String>
     UpdateConnectorRequest& WithSecurityPolicyName(SecurityPolicyNameT&& value) { SetSecurityPolicyName(std::forward<SecurityPolicyNameT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Updates the egress configuration for the connector, allowing you to modify
+     * how traffic is routed from the connector to the SFTP server. Changes to VPC
+     * configuration may require connector restart.</p>
+     */
+    inline const UpdateConnectorEgressConfig& GetEgressConfig() const { return m_egressConfig; }
+    inline bool EgressConfigHasBeenSet() const { return m_egressConfigHasBeenSet; }
+    template<typename EgressConfigT = UpdateConnectorEgressConfig>
+    void SetEgressConfig(EgressConfigT&& value) { m_egressConfigHasBeenSet = true; m_egressConfig = std::forward<EgressConfigT>(value); }
+    template<typename EgressConfigT = UpdateConnectorEgressConfig>
+    UpdateConnectorRequest& WithEgressConfig(EgressConfigT&& value) { SetEgressConfig(std::forward<EgressConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_connectorId;
@@ -166,6 +184,9 @@ namespace Model
 
     Aws::String m_securityPolicyName;
     bool m_securityPolicyNameHasBeenSet = false;
+
+    UpdateConnectorEgressConfig m_egressConfig;
+    bool m_egressConfigHasBeenSet = false;
   };
 
 } // namespace Model

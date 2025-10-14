@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/backup/model/Lifecycle.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/backup/model/BackupJobState.h>
 #include <aws/backup/model/RecoveryPointCreator.h>
@@ -72,6 +73,15 @@ namespace Model
     ///@}
 
     ///@{
+    
+    inline const Lifecycle& GetRecoveryPointLifecycle() const { return m_recoveryPointLifecycle; }
+    template<typename RecoveryPointLifecycleT = Lifecycle>
+    void SetRecoveryPointLifecycle(RecoveryPointLifecycleT&& value) { m_recoveryPointLifecycleHasBeenSet = true; m_recoveryPointLifecycle = std::forward<RecoveryPointLifecycleT>(value); }
+    template<typename RecoveryPointLifecycleT = Lifecycle>
+    DescribeBackupJobResult& WithRecoveryPointLifecycle(RecoveryPointLifecycleT&& value) { SetRecoveryPointLifecycle(std::forward<RecoveryPointLifecycleT>(value)); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for
      * example,
@@ -86,6 +96,33 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of backup vault where the recovery point is stored. Valid values are
+     * <code>BACKUP_VAULT</code> for standard backup vaults and
+     * <code>LOGICALLY_AIR_GAPPED_BACKUP_VAULT</code> for logically air-gapped
+     * vaults.</p>
+     */
+    inline const Aws::String& GetVaultType() const { return m_vaultType; }
+    template<typename VaultTypeT = Aws::String>
+    void SetVaultType(VaultTypeT&& value) { m_vaultTypeHasBeenSet = true; m_vaultType = std::forward<VaultTypeT>(value); }
+    template<typename VaultTypeT = Aws::String>
+    DescribeBackupJobResult& WithVaultType(VaultTypeT&& value) { SetVaultType(std::forward<VaultTypeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The lock state of the backup vault. For logically air-gapped vaults, this
+     * indicates whether the vault is locked in compliance mode. Valid values include
+     * <code>LOCKED</code> and <code>UNLOCKED</code>.</p>
+     */
+    inline const Aws::String& GetVaultLockState() const { return m_vaultLockState; }
+    template<typename VaultLockStateT = Aws::String>
+    void SetVaultLockState(VaultLockStateT&& value) { m_vaultLockStateHasBeenSet = true; m_vaultLockState = std::forward<VaultLockStateT>(value); }
+    template<typename VaultLockStateT = Aws::String>
+    DescribeBackupJobResult& WithVaultLockState(VaultLockStateT&& value) { SetVaultLockState(std::forward<VaultLockStateT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An ARN that uniquely identifies a recovery point; for example,
      * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
      */
@@ -94,6 +131,30 @@ namespace Model
     void SetRecoveryPointArn(RecoveryPointArnT&& value) { m_recoveryPointArnHasBeenSet = true; m_recoveryPointArn = std::forward<RecoveryPointArnT>(value); }
     template<typename RecoveryPointArnT = Aws::String>
     DescribeBackupJobResult& WithRecoveryPointArn(RecoveryPointArnT&& value) { SetRecoveryPointArn(std::forward<RecoveryPointArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the backup.
+     * This can be a customer-managed key or an Amazon Web Services managed key,
+     * depending on the vault configuration.</p>
+     */
+    inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
+    template<typename EncryptionKeyArnT = Aws::String>
+    void SetEncryptionKeyArn(EncryptionKeyArnT&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value); }
+    template<typename EncryptionKeyArnT = Aws::String>
+    DescribeBackupJobResult& WithEncryptionKeyArn(EncryptionKeyArnT&& value) { SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A boolean value indicating whether the backup is encrypted. All backups in
+     * Backup are encrypted, but this field indicates the encryption status for
+     * transparency.</p>
+     */
+    inline bool GetIsEncrypted() const { return m_isEncrypted; }
+    inline void SetIsEncrypted(bool value) { m_isEncryptedHasBeenSet = true; m_isEncrypted = value; }
+    inline DescribeBackupJobResult& WithIsEncrypted(bool value) { SetIsEncrypted(value); return *this;}
     ///@}
 
     ///@{
@@ -407,11 +468,26 @@ namespace Model
     Aws::String m_backupVaultName;
     bool m_backupVaultNameHasBeenSet = false;
 
+    Lifecycle m_recoveryPointLifecycle;
+    bool m_recoveryPointLifecycleHasBeenSet = false;
+
     Aws::String m_backupVaultArn;
     bool m_backupVaultArnHasBeenSet = false;
 
+    Aws::String m_vaultType;
+    bool m_vaultTypeHasBeenSet = false;
+
+    Aws::String m_vaultLockState;
+    bool m_vaultLockStateHasBeenSet = false;
+
     Aws::String m_recoveryPointArn;
     bool m_recoveryPointArnHasBeenSet = false;
+
+    Aws::String m_encryptionKeyArn;
+    bool m_encryptionKeyArnHasBeenSet = false;
+
+    bool m_isEncrypted{false};
+    bool m_isEncryptedHasBeenSet = false;
 
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet = false;

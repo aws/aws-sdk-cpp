@@ -22,6 +22,7 @@
 #include <aws/appstream/model/AssociateApplicationFleetResult.h>
 #include <aws/appstream/model/AssociateApplicationToEntitlementResult.h>
 #include <aws/appstream/model/AssociateFleetResult.h>
+#include <aws/appstream/model/AssociateSoftwareToImageBuilderResult.h>
 #include <aws/appstream/model/BatchAssociateUserStackResult.h>
 #include <aws/appstream/model/BatchDisassociateUserStackResult.h>
 #include <aws/appstream/model/CopyImageResult.h>
@@ -56,6 +57,7 @@
 #include <aws/appstream/model/DescribeAppBlockBuilderAppBlockAssociationsResult.h>
 #include <aws/appstream/model/DescribeAppBlockBuildersResult.h>
 #include <aws/appstream/model/DescribeAppBlocksResult.h>
+#include <aws/appstream/model/DescribeAppLicenseUsageResult.h>
 #include <aws/appstream/model/DescribeApplicationFleetAssociationsResult.h>
 #include <aws/appstream/model/DescribeApplicationsResult.h>
 #include <aws/appstream/model/DescribeDirectoryConfigsResult.h>
@@ -65,6 +67,7 @@
 #include <aws/appstream/model/DescribeImagePermissionsResult.h>
 #include <aws/appstream/model/DescribeImagesResult.h>
 #include <aws/appstream/model/DescribeSessionsResult.h>
+#include <aws/appstream/model/DescribeSoftwareAssociationsResult.h>
 #include <aws/appstream/model/DescribeStacksResult.h>
 #include <aws/appstream/model/DescribeThemeForStackResult.h>
 #include <aws/appstream/model/DescribeUsageReportSubscriptionsResult.h>
@@ -75,6 +78,7 @@
 #include <aws/appstream/model/DisassociateApplicationFleetResult.h>
 #include <aws/appstream/model/DisassociateApplicationFromEntitlementResult.h>
 #include <aws/appstream/model/DisassociateFleetResult.h>
+#include <aws/appstream/model/DisassociateSoftwareFromImageBuilderResult.h>
 #include <aws/appstream/model/EnableUserResult.h>
 #include <aws/appstream/model/ExpireSessionResult.h>
 #include <aws/appstream/model/ListAssociatedFleetsResult.h>
@@ -84,6 +88,7 @@
 #include <aws/appstream/model/StartAppBlockBuilderResult.h>
 #include <aws/appstream/model/StartFleetResult.h>
 #include <aws/appstream/model/StartImageBuilderResult.h>
+#include <aws/appstream/model/StartSoftwareDeploymentToImageBuilderResult.h>
 #include <aws/appstream/model/StopAppBlockBuilderResult.h>
 #include <aws/appstream/model/StopFleetResult.h>
 #include <aws/appstream/model/StopImageBuilderResult.h>
@@ -156,6 +161,7 @@ namespace Aws
       class AssociateApplicationFleetRequest;
       class AssociateApplicationToEntitlementRequest;
       class AssociateFleetRequest;
+      class AssociateSoftwareToImageBuilderRequest;
       class BatchAssociateUserStackRequest;
       class BatchDisassociateUserStackRequest;
       class CopyImageRequest;
@@ -190,6 +196,7 @@ namespace Aws
       class DescribeAppBlockBuilderAppBlockAssociationsRequest;
       class DescribeAppBlockBuildersRequest;
       class DescribeAppBlocksRequest;
+      class DescribeAppLicenseUsageRequest;
       class DescribeApplicationFleetAssociationsRequest;
       class DescribeApplicationsRequest;
       class DescribeDirectoryConfigsRequest;
@@ -199,6 +206,7 @@ namespace Aws
       class DescribeImagePermissionsRequest;
       class DescribeImagesRequest;
       class DescribeSessionsRequest;
+      class DescribeSoftwareAssociationsRequest;
       class DescribeStacksRequest;
       class DescribeThemeForStackRequest;
       class DescribeUsageReportSubscriptionsRequest;
@@ -209,6 +217,7 @@ namespace Aws
       class DisassociateApplicationFleetRequest;
       class DisassociateApplicationFromEntitlementRequest;
       class DisassociateFleetRequest;
+      class DisassociateSoftwareFromImageBuilderRequest;
       class EnableUserRequest;
       class ExpireSessionRequest;
       class ListAssociatedFleetsRequest;
@@ -218,6 +227,7 @@ namespace Aws
       class StartAppBlockBuilderRequest;
       class StartFleetRequest;
       class StartImageBuilderRequest;
+      class StartSoftwareDeploymentToImageBuilderRequest;
       class StopAppBlockBuilderRequest;
       class StopFleetRequest;
       class StopImageBuilderRequest;
@@ -238,6 +248,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<AssociateApplicationFleetResult, AppStreamError> AssociateApplicationFleetOutcome;
       typedef Aws::Utils::Outcome<AssociateApplicationToEntitlementResult, AppStreamError> AssociateApplicationToEntitlementOutcome;
       typedef Aws::Utils::Outcome<AssociateFleetResult, AppStreamError> AssociateFleetOutcome;
+      typedef Aws::Utils::Outcome<AssociateSoftwareToImageBuilderResult, AppStreamError> AssociateSoftwareToImageBuilderOutcome;
       typedef Aws::Utils::Outcome<BatchAssociateUserStackResult, AppStreamError> BatchAssociateUserStackOutcome;
       typedef Aws::Utils::Outcome<BatchDisassociateUserStackResult, AppStreamError> BatchDisassociateUserStackOutcome;
       typedef Aws::Utils::Outcome<CopyImageResult, AppStreamError> CopyImageOutcome;
@@ -272,6 +283,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeAppBlockBuilderAppBlockAssociationsResult, AppStreamError> DescribeAppBlockBuilderAppBlockAssociationsOutcome;
       typedef Aws::Utils::Outcome<DescribeAppBlockBuildersResult, AppStreamError> DescribeAppBlockBuildersOutcome;
       typedef Aws::Utils::Outcome<DescribeAppBlocksResult, AppStreamError> DescribeAppBlocksOutcome;
+      typedef Aws::Utils::Outcome<DescribeAppLicenseUsageResult, AppStreamError> DescribeAppLicenseUsageOutcome;
       typedef Aws::Utils::Outcome<DescribeApplicationFleetAssociationsResult, AppStreamError> DescribeApplicationFleetAssociationsOutcome;
       typedef Aws::Utils::Outcome<DescribeApplicationsResult, AppStreamError> DescribeApplicationsOutcome;
       typedef Aws::Utils::Outcome<DescribeDirectoryConfigsResult, AppStreamError> DescribeDirectoryConfigsOutcome;
@@ -281,6 +293,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeImagePermissionsResult, AppStreamError> DescribeImagePermissionsOutcome;
       typedef Aws::Utils::Outcome<DescribeImagesResult, AppStreamError> DescribeImagesOutcome;
       typedef Aws::Utils::Outcome<DescribeSessionsResult, AppStreamError> DescribeSessionsOutcome;
+      typedef Aws::Utils::Outcome<DescribeSoftwareAssociationsResult, AppStreamError> DescribeSoftwareAssociationsOutcome;
       typedef Aws::Utils::Outcome<DescribeStacksResult, AppStreamError> DescribeStacksOutcome;
       typedef Aws::Utils::Outcome<DescribeThemeForStackResult, AppStreamError> DescribeThemeForStackOutcome;
       typedef Aws::Utils::Outcome<DescribeUsageReportSubscriptionsResult, AppStreamError> DescribeUsageReportSubscriptionsOutcome;
@@ -291,6 +304,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DisassociateApplicationFleetResult, AppStreamError> DisassociateApplicationFleetOutcome;
       typedef Aws::Utils::Outcome<DisassociateApplicationFromEntitlementResult, AppStreamError> DisassociateApplicationFromEntitlementOutcome;
       typedef Aws::Utils::Outcome<DisassociateFleetResult, AppStreamError> DisassociateFleetOutcome;
+      typedef Aws::Utils::Outcome<DisassociateSoftwareFromImageBuilderResult, AppStreamError> DisassociateSoftwareFromImageBuilderOutcome;
       typedef Aws::Utils::Outcome<EnableUserResult, AppStreamError> EnableUserOutcome;
       typedef Aws::Utils::Outcome<ExpireSessionResult, AppStreamError> ExpireSessionOutcome;
       typedef Aws::Utils::Outcome<ListAssociatedFleetsResult, AppStreamError> ListAssociatedFleetsOutcome;
@@ -300,6 +314,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<StartAppBlockBuilderResult, AppStreamError> StartAppBlockBuilderOutcome;
       typedef Aws::Utils::Outcome<StartFleetResult, AppStreamError> StartFleetOutcome;
       typedef Aws::Utils::Outcome<StartImageBuilderResult, AppStreamError> StartImageBuilderOutcome;
+      typedef Aws::Utils::Outcome<StartSoftwareDeploymentToImageBuilderResult, AppStreamError> StartSoftwareDeploymentToImageBuilderOutcome;
       typedef Aws::Utils::Outcome<StopAppBlockBuilderResult, AppStreamError> StopAppBlockBuilderOutcome;
       typedef Aws::Utils::Outcome<StopFleetResult, AppStreamError> StopFleetOutcome;
       typedef Aws::Utils::Outcome<StopImageBuilderResult, AppStreamError> StopImageBuilderOutcome;
@@ -320,6 +335,7 @@ namespace Aws
       typedef std::future<AssociateApplicationFleetOutcome> AssociateApplicationFleetOutcomeCallable;
       typedef std::future<AssociateApplicationToEntitlementOutcome> AssociateApplicationToEntitlementOutcomeCallable;
       typedef std::future<AssociateFleetOutcome> AssociateFleetOutcomeCallable;
+      typedef std::future<AssociateSoftwareToImageBuilderOutcome> AssociateSoftwareToImageBuilderOutcomeCallable;
       typedef std::future<BatchAssociateUserStackOutcome> BatchAssociateUserStackOutcomeCallable;
       typedef std::future<BatchDisassociateUserStackOutcome> BatchDisassociateUserStackOutcomeCallable;
       typedef std::future<CopyImageOutcome> CopyImageOutcomeCallable;
@@ -354,6 +370,7 @@ namespace Aws
       typedef std::future<DescribeAppBlockBuilderAppBlockAssociationsOutcome> DescribeAppBlockBuilderAppBlockAssociationsOutcomeCallable;
       typedef std::future<DescribeAppBlockBuildersOutcome> DescribeAppBlockBuildersOutcomeCallable;
       typedef std::future<DescribeAppBlocksOutcome> DescribeAppBlocksOutcomeCallable;
+      typedef std::future<DescribeAppLicenseUsageOutcome> DescribeAppLicenseUsageOutcomeCallable;
       typedef std::future<DescribeApplicationFleetAssociationsOutcome> DescribeApplicationFleetAssociationsOutcomeCallable;
       typedef std::future<DescribeApplicationsOutcome> DescribeApplicationsOutcomeCallable;
       typedef std::future<DescribeDirectoryConfigsOutcome> DescribeDirectoryConfigsOutcomeCallable;
@@ -363,6 +380,7 @@ namespace Aws
       typedef std::future<DescribeImagePermissionsOutcome> DescribeImagePermissionsOutcomeCallable;
       typedef std::future<DescribeImagesOutcome> DescribeImagesOutcomeCallable;
       typedef std::future<DescribeSessionsOutcome> DescribeSessionsOutcomeCallable;
+      typedef std::future<DescribeSoftwareAssociationsOutcome> DescribeSoftwareAssociationsOutcomeCallable;
       typedef std::future<DescribeStacksOutcome> DescribeStacksOutcomeCallable;
       typedef std::future<DescribeThemeForStackOutcome> DescribeThemeForStackOutcomeCallable;
       typedef std::future<DescribeUsageReportSubscriptionsOutcome> DescribeUsageReportSubscriptionsOutcomeCallable;
@@ -373,6 +391,7 @@ namespace Aws
       typedef std::future<DisassociateApplicationFleetOutcome> DisassociateApplicationFleetOutcomeCallable;
       typedef std::future<DisassociateApplicationFromEntitlementOutcome> DisassociateApplicationFromEntitlementOutcomeCallable;
       typedef std::future<DisassociateFleetOutcome> DisassociateFleetOutcomeCallable;
+      typedef std::future<DisassociateSoftwareFromImageBuilderOutcome> DisassociateSoftwareFromImageBuilderOutcomeCallable;
       typedef std::future<EnableUserOutcome> EnableUserOutcomeCallable;
       typedef std::future<ExpireSessionOutcome> ExpireSessionOutcomeCallable;
       typedef std::future<ListAssociatedFleetsOutcome> ListAssociatedFleetsOutcomeCallable;
@@ -382,6 +401,7 @@ namespace Aws
       typedef std::future<StartAppBlockBuilderOutcome> StartAppBlockBuilderOutcomeCallable;
       typedef std::future<StartFleetOutcome> StartFleetOutcomeCallable;
       typedef std::future<StartImageBuilderOutcome> StartImageBuilderOutcomeCallable;
+      typedef std::future<StartSoftwareDeploymentToImageBuilderOutcome> StartSoftwareDeploymentToImageBuilderOutcomeCallable;
       typedef std::future<StopAppBlockBuilderOutcome> StopAppBlockBuilderOutcomeCallable;
       typedef std::future<StopFleetOutcome> StopFleetOutcomeCallable;
       typedef std::future<StopImageBuilderOutcome> StopImageBuilderOutcomeCallable;
@@ -405,6 +425,7 @@ namespace Aws
     typedef std::function<void(const AppStreamClient*, const Model::AssociateApplicationFleetRequest&, const Model::AssociateApplicationFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateApplicationFleetResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::AssociateApplicationToEntitlementRequest&, const Model::AssociateApplicationToEntitlementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateApplicationToEntitlementResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::AssociateFleetRequest&, const Model::AssociateFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateFleetResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::AssociateSoftwareToImageBuilderRequest&, const Model::AssociateSoftwareToImageBuilderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSoftwareToImageBuilderResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::BatchAssociateUserStackRequest&, const Model::BatchAssociateUserStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchAssociateUserStackResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::BatchDisassociateUserStackRequest&, const Model::BatchDisassociateUserStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDisassociateUserStackResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CopyImageRequest&, const Model::CopyImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyImageResponseReceivedHandler;
@@ -439,6 +460,7 @@ namespace Aws
     typedef std::function<void(const AppStreamClient*, const Model::DescribeAppBlockBuilderAppBlockAssociationsRequest&, const Model::DescribeAppBlockBuilderAppBlockAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppBlockBuilderAppBlockAssociationsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeAppBlockBuildersRequest&, const Model::DescribeAppBlockBuildersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppBlockBuildersResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeAppBlocksRequest&, const Model::DescribeAppBlocksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppBlocksResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::DescribeAppLicenseUsageRequest&, const Model::DescribeAppLicenseUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppLicenseUsageResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeApplicationFleetAssociationsRequest&, const Model::DescribeApplicationFleetAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeApplicationFleetAssociationsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeApplicationsRequest&, const Model::DescribeApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeApplicationsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeDirectoryConfigsRequest&, const Model::DescribeDirectoryConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDirectoryConfigsResponseReceivedHandler;
@@ -448,6 +470,7 @@ namespace Aws
     typedef std::function<void(const AppStreamClient*, const Model::DescribeImagePermissionsRequest&, const Model::DescribeImagePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImagePermissionsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeImagesRequest&, const Model::DescribeImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImagesResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeSessionsRequest&, const Model::DescribeSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSessionsResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::DescribeSoftwareAssociationsRequest&, const Model::DescribeSoftwareAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSoftwareAssociationsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeStacksRequest&, const Model::DescribeStacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStacksResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeThemeForStackRequest&, const Model::DescribeThemeForStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeThemeForStackResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeUsageReportSubscriptionsRequest&, const Model::DescribeUsageReportSubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUsageReportSubscriptionsResponseReceivedHandler;
@@ -458,6 +481,7 @@ namespace Aws
     typedef std::function<void(const AppStreamClient*, const Model::DisassociateApplicationFleetRequest&, const Model::DisassociateApplicationFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateApplicationFleetResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DisassociateApplicationFromEntitlementRequest&, const Model::DisassociateApplicationFromEntitlementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateApplicationFromEntitlementResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DisassociateFleetRequest&, const Model::DisassociateFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateFleetResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::DisassociateSoftwareFromImageBuilderRequest&, const Model::DisassociateSoftwareFromImageBuilderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateSoftwareFromImageBuilderResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::EnableUserRequest&, const Model::EnableUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableUserResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::ExpireSessionRequest&, const Model::ExpireSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExpireSessionResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::ListAssociatedFleetsRequest&, const Model::ListAssociatedFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociatedFleetsResponseReceivedHandler;
@@ -467,6 +491,7 @@ namespace Aws
     typedef std::function<void(const AppStreamClient*, const Model::StartAppBlockBuilderRequest&, const Model::StartAppBlockBuilderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAppBlockBuilderResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::StartFleetRequest&, const Model::StartFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartFleetResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::StartImageBuilderRequest&, const Model::StartImageBuilderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImageBuilderResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::StartSoftwareDeploymentToImageBuilderRequest&, const Model::StartSoftwareDeploymentToImageBuilderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSoftwareDeploymentToImageBuilderResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::StopAppBlockBuilderRequest&, const Model::StopAppBlockBuilderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopAppBlockBuilderResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::StopFleetRequest&, const Model::StopFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopFleetResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::StopImageBuilderRequest&, const Model::StopImageBuilderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopImageBuilderResponseReceivedHandler;

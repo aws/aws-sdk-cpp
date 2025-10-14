@@ -306,6 +306,16 @@ namespace Model
     inline void SetImageSharedWithOthers(ImageSharedWithOthers value) { m_imageSharedWithOthersHasBeenSet = true; m_imageSharedWithOthers = value; }
     inline Image& WithImageSharedWithOthers(ImageSharedWithOthers value) { SetImageSharedWithOthers(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether the image includes license-included applications.</p>
+     */
+    inline bool GetManagedSoftwareIncluded() const { return m_managedSoftwareIncluded; }
+    inline bool ManagedSoftwareIncludedHasBeenSet() const { return m_managedSoftwareIncludedHasBeenSet; }
+    inline void SetManagedSoftwareIncluded(bool value) { m_managedSoftwareIncludedHasBeenSet = true; m_managedSoftwareIncluded = value; }
+    inline Image& WithManagedSoftwareIncluded(bool value) { SetManagedSoftwareIncluded(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -370,6 +380,9 @@ namespace Model
 
     ImageSharedWithOthers m_imageSharedWithOthers{ImageSharedWithOthers::NOT_SET};
     bool m_imageSharedWithOthersHasBeenSet = false;
+
+    bool m_managedSoftwareIncluded{false};
+    bool m_managedSoftwareIncludedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,7 +35,8 @@ namespace Model
     SQLSERVER,
     TERADATA,
     VERTICA,
-    WORKFLOWS_MWAA
+    WORKFLOWS_MWAA,
+    AMAZON_Q
   };
 
 namespace ConnectionTypeMapper

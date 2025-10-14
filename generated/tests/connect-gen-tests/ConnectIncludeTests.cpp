@@ -879,6 +879,7 @@
 #include <aws/connect/model/TaskTemplateField.h>
 #include <aws/connect/model/TaskTemplateFieldIdentifier.h>
 #include <aws/connect/model/TaskTemplateFieldType.h>
+#include <aws/connect/model/TaskTemplateInfoV2.h>
 #include <aws/connect/model/TaskTemplateMetadata.h>
 #include <aws/connect/model/TaskTemplateStatus.h>
 #include <aws/connect/model/TelephonyConfig.h>

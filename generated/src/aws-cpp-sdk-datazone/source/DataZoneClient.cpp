@@ -4427,11 +4427,6 @@ ListConnectionsOutcome DataZoneClient::ListConnections(const ListConnectionsRequ
     AWS_LOGSTREAM_ERROR("ListConnections", "Required field: DomainIdentifier, is not set");
     return ListConnectionsOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainIdentifier]", false));
   }
-  if (!request.ProjectIdentifierHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListConnections", "Required field: ProjectIdentifier, is not set");
-    return ListConnectionsOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectIdentifier]", false));
-  }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListConnections, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
   auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});

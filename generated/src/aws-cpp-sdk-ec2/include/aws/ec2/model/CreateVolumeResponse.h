@@ -70,6 +70,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the source volume from which the volume copy was created. Only for
+     * volume copies.</p>
+     */
+    inline const Aws::String& GetSourceVolumeId() const { return m_sourceVolumeId; }
+    template<typename SourceVolumeIdT = Aws::String>
+    void SetSourceVolumeId(SourceVolumeIdT&& value) { m_sourceVolumeIdHasBeenSet = true; m_sourceVolumeId = std::forward<SourceVolumeIdT>(value); }
+    template<typename SourceVolumeIdT = Aws::String>
+    CreateVolumeResponse& WithSourceVolumeId(SourceVolumeIdT&& value) { SetSourceVolumeId(std::forward<SourceVolumeIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The number of I/O operations per second (IOPS). For <code>gp3</code>,
      * <code>io1</code>, and <code>io2</code> volumes, this represents the number of
      * IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this
@@ -275,6 +287,9 @@ namespace Model
 
     Aws::String m_outpostArn;
     bool m_outpostArnHasBeenSet = false;
+
+    Aws::String m_sourceVolumeId;
+    bool m_sourceVolumeIdHasBeenSet = false;
 
     int m_iops{0};
     bool m_iopsHasBeenSet = false;

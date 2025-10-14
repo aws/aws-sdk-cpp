@@ -45,10 +45,35 @@ BackupJob& BackupJob::operator =(JsonView jsonValue)
     m_backupVaultArn = jsonValue.GetString("BackupVaultArn");
     m_backupVaultArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("VaultType"))
+  {
+    m_vaultType = jsonValue.GetString("VaultType");
+    m_vaultTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("VaultLockState"))
+  {
+    m_vaultLockState = jsonValue.GetString("VaultLockState");
+    m_vaultLockStateHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("RecoveryPointArn"))
   {
     m_recoveryPointArn = jsonValue.GetString("RecoveryPointArn");
     m_recoveryPointArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("RecoveryPointLifecycle"))
+  {
+    m_recoveryPointLifecycle = jsonValue.GetObject("RecoveryPointLifecycle");
+    m_recoveryPointLifecycleHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("EncryptionKeyArn"))
+  {
+    m_encryptionKeyArn = jsonValue.GetString("EncryptionKeyArn");
+    m_encryptionKeyArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("IsEncrypted"))
+  {
+    m_isEncrypted = jsonValue.GetBool("IsEncrypted");
+    m_isEncryptedHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ResourceArn"))
   {
@@ -185,9 +210,39 @@ JsonValue BackupJob::Jsonize() const
 
   }
 
+  if(m_vaultTypeHasBeenSet)
+  {
+   payload.WithString("VaultType", m_vaultType);
+
+  }
+
+  if(m_vaultLockStateHasBeenSet)
+  {
+   payload.WithString("VaultLockState", m_vaultLockState);
+
+  }
+
   if(m_recoveryPointArnHasBeenSet)
   {
    payload.WithString("RecoveryPointArn", m_recoveryPointArn);
+
+  }
+
+  if(m_recoveryPointLifecycleHasBeenSet)
+  {
+   payload.WithObject("RecoveryPointLifecycle", m_recoveryPointLifecycle.Jsonize());
+
+  }
+
+  if(m_encryptionKeyArnHasBeenSet)
+  {
+   payload.WithString("EncryptionKeyArn", m_encryptionKeyArn);
+
+  }
+
+  if(m_isEncryptedHasBeenSet)
+  {
+   payload.WithBool("IsEncrypted", m_isEncrypted);
 
   }
 

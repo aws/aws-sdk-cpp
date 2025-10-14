@@ -64,7 +64,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+     * <p>The URL of the partner's AS2 or SFTP endpoint.</p> <p>When creating AS2
+     * connectors or service-managed SFTP connectors (connectors without egress
+     * configuration), you must provide a URL to specify the remote server endpoint.
+     * For VPC Lattice type connectors, the URL must be null.</p>
      */
     inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }

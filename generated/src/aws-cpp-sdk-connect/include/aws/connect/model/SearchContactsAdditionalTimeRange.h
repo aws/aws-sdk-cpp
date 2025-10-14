@@ -26,8 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Time range that you additionally want to filter on.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>Time range that you <b>additionally</b> want to filter on.</p>  <p>This
+   * is different from the <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchContactsTimeRange.html">SearchContactsTimeRange</a>
+   * data type.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactsAdditionalTimeRange">AWS
    * API Reference</a></p>
    */

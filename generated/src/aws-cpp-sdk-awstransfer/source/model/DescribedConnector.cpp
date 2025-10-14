@@ -83,6 +83,26 @@ DescribedConnector& DescribedConnector::operator =(JsonView jsonValue)
     m_securityPolicyName = jsonValue.GetString("SecurityPolicyName");
     m_securityPolicyNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("EgressConfig"))
+  {
+    m_egressConfig = jsonValue.GetObject("EgressConfig");
+    m_egressConfigHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("EgressType"))
+  {
+    m_egressType = ConnectorEgressTypeMapper::GetConnectorEgressTypeForName(jsonValue.GetString("EgressType"));
+    m_egressTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("ErrorMessage"))
+  {
+    m_errorMessage = jsonValue.GetString("ErrorMessage");
+    m_errorMessageHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = ConnectorStatusMapper::GetConnectorStatusForName(jsonValue.GetString("Status"));
+    m_statusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -158,6 +178,28 @@ JsonValue DescribedConnector::Jsonize() const
   {
    payload.WithString("SecurityPolicyName", m_securityPolicyName);
 
+  }
+
+  if(m_egressConfigHasBeenSet)
+  {
+   payload.WithObject("EgressConfig", m_egressConfig.Jsonize());
+
+  }
+
+  if(m_egressTypeHasBeenSet)
+  {
+   payload.WithString("EgressType", ConnectorEgressTypeMapper::GetNameForConnectorEgressType(m_egressType));
+  }
+
+  if(m_errorMessageHasBeenSet)
+  {
+   payload.WithString("ErrorMessage", m_errorMessage);
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("Status", ConnectorStatusMapper::GetNameForConnectorStatus(m_status));
   }
 
   return payload;

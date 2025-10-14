@@ -21,7 +21,11 @@
 #include <aws/awstransfer/model/CertificateType.h>
 #include <aws/awstransfer/model/CertificateUsageType.h>
 #include <aws/awstransfer/model/CompressionEnum.h>
+#include <aws/awstransfer/model/ConnectorEgressConfig.h>
+#include <aws/awstransfer/model/ConnectorEgressType.h>
 #include <aws/awstransfer/model/ConnectorFileTransferResult.h>
+#include <aws/awstransfer/model/ConnectorStatus.h>
+#include <aws/awstransfer/model/ConnectorVpcLatticeEgressConfig.h>
 #include <aws/awstransfer/model/CopyStepDetails.h>
 #include <aws/awstransfer/model/CreateAccessRequest.h>
 #include <aws/awstransfer/model/CreateAccessResult.h>
@@ -86,6 +90,8 @@
 #include <aws/awstransfer/model/DescribedAgreement.h>
 #include <aws/awstransfer/model/DescribedCertificate.h>
 #include <aws/awstransfer/model/DescribedConnector.h>
+#include <aws/awstransfer/model/DescribedConnectorEgressConfig.h>
+#include <aws/awstransfer/model/DescribedConnectorVpcLatticeEgressConfig.h>
 #include <aws/awstransfer/model/DescribedExecution.h>
 #include <aws/awstransfer/model/DescribedHostKey.h>
 #include <aws/awstransfer/model/DescribedIdentityCenterConfig.h>
@@ -219,8 +225,10 @@
 #include <aws/awstransfer/model/UpdateAgreementResult.h>
 #include <aws/awstransfer/model/UpdateCertificateRequest.h>
 #include <aws/awstransfer/model/UpdateCertificateResult.h>
+#include <aws/awstransfer/model/UpdateConnectorEgressConfig.h>
 #include <aws/awstransfer/model/UpdateConnectorRequest.h>
 #include <aws/awstransfer/model/UpdateConnectorResult.h>
+#include <aws/awstransfer/model/UpdateConnectorVpcLatticeEgressConfig.h>
 #include <aws/awstransfer/model/UpdateHostKeyRequest.h>
 #include <aws/awstransfer/model/UpdateHostKeyResult.h>
 #include <aws/awstransfer/model/UpdateProfileRequest.h>

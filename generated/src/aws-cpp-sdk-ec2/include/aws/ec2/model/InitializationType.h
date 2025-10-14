@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     default_,
-    provisioned_rate
+    provisioned_rate,
+    volume_copy
   };
 
 namespace InitializationTypeMapper
