@@ -77,7 +77,8 @@ namespace Aws
                  {EXTERNAL_ID_KEY, &Profile::SetExternalId, &Profile::GetExternalId},
                  {CREDENTIAL_PROCESS_COMMAND, &Profile::SetCredentialProcess, &Profile::GetCredentialProcess},
                  {SOURCE_PROFILE_KEY, &Profile::SetSourceProfile, &Profile::GetSourceProfile},
-                 {DEFAULTS_MODE_KEY, &Profile::SetDefaultsMode, &Profile::GetDefaultsMode}};
+                 {DEFAULTS_MODE_KEY, &Profile::SetDefaultsMode, &Profile::GetDefaultsMode},
+                 {ENDPOINT_URL_KEY, &Profile::SetGlobalEndpointUrl, &Profile::GetGlobalEndpointUrl}};
 
         template<typename EntryT, size_t N>
         const EntryT* FindInStaticArray(const EntryT (&array)[N], const Aws::String& searchKey)
@@ -216,7 +217,7 @@ namespace Aws
                         auto servicesBlk = m_services.find(servicesRef);
                         Aws::Map<Aws::String, Aws::String> endpoints;
                         if (servicesBlk != m_services.end()) {
-                            endpoints = std::move(servicesBlk->second);
+                            endpoints = servicesBlk->second;
                         }
                         profile.SetServices(Profile::Services(std::move(endpoints), servicesRef));
                     }

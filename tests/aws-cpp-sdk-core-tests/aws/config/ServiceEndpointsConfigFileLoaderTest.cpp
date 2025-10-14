@@ -43,8 +43,8 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestServiceSpecificEndpoints)
     ASSERT_NE(profiles.end(), profileIt);
     const auto& profile = profileIt->second;
     auto globalEndpoint = profile.GetGlobalEndpointUrl();
-    ASSERT_TRUE(globalEndpoint.has_value());
-    ASSERT_STREQ("https://global.example.com", globalEndpoint->c_str());
+    ASSERT_FALSE(globalEndpoint.empty());
+    ASSERT_STREQ("https://global.example.com", globalEndpoint.c_str());
     
     // Test services endpoints are parsed correctly
     const auto& services = profile.GetServices();
@@ -76,7 +76,7 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestServiceSpecificEndpointsOnly)
     
     // Test that global endpoint is null when not set
     auto globalEndpoint = profile.GetGlobalEndpointUrl();
-    ASSERT_FALSE(globalEndpoint.has_value());
+    ASSERT_TRUE(globalEndpoint.empty());
     
     // Test services endpoints are parsed correctly
     const auto& services = profile.GetServices();
@@ -104,8 +104,8 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestGlobalEndpointOnly)
     
     // Test global endpoint
     auto globalEndpoint = profile.GetGlobalEndpointUrl();
-    ASSERT_TRUE(globalEndpoint.has_value());
-    ASSERT_STREQ("https://play.min.io:9000", globalEndpoint->c_str());
+    ASSERT_FALSE(globalEndpoint.empty());
+    ASSERT_STREQ("https://play.min.io:9000", globalEndpoint.c_str());
     
     // Test that services endpoints are not set
     const auto& services = profile.GetServices();
@@ -141,8 +141,8 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestServiceSpecificAndGlobalEndpoin
     
     // Test global endpoint
     auto globalEndpoint = profile.GetGlobalEndpointUrl();
-    ASSERT_TRUE(globalEndpoint.has_value());
-    ASSERT_STREQ("http://localhost:1234", globalEndpoint->c_str());
+    ASSERT_FALSE(globalEndpoint.empty());
+    ASSERT_STREQ("http://localhost:1234", globalEndpoint.c_str());
 }
 
 TEST_F(ServiceEndpointsConfigFileLoaderTest, TestMultipleServicesInDefinition)
@@ -195,7 +195,7 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestIgnoreGlobalEndpointInServicesS
     
     // Test that global endpoint in services section is ignored
     auto globalEndpoint = profile.GetGlobalEndpointUrl();
-    ASSERT_FALSE(globalEndpoint.has_value());
+    ASSERT_TRUE(globalEndpoint.empty());
     
     // Test that services endpoints are empty (global endpoint_url ignored)
     const auto& services = profile.GetServices();
@@ -240,12 +240,12 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestSourceProfileEndpointIsolation)
     
     // Test that profile B has no global endpoint (doesn't inherit from profile A)
     auto globalEndpointB = profileB.GetGlobalEndpointUrl();
-    ASSERT_FALSE(globalEndpointB.has_value());
+    ASSERT_TRUE(globalEndpointB.empty());
     
     // Test that profile A still has its own global endpoint
     auto globalEndpointA = profileA.GetGlobalEndpointUrl();
-    ASSERT_TRUE(globalEndpointA.has_value());
-    ASSERT_STREQ("https://profile-a-endpoint.aws/", globalEndpointA->c_str());
+    ASSERT_FALSE(globalEndpointA.empty());
+    ASSERT_STREQ("https://profile-a-endpoint.aws/", globalEndpointA.c_str());
     
     // Test that profile A has no services name
     const auto& servicesA = profileA.GetServices();
@@ -325,8 +325,8 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestDuplicateGlobalEndpointUrl)
     
     // Test that last value wins for duplicate global endpoint_url
     auto globalEndpoint = profile.GetGlobalEndpointUrl();
-    ASSERT_TRUE(globalEndpoint.has_value());
-    ASSERT_STREQ("https://play2.min.io:9000", globalEndpoint->c_str());
+    ASSERT_FALSE(globalEndpoint.empty());
+    ASSERT_STREQ("https://play2.min.io:9000", globalEndpoint.c_str());
 }
 
 TEST_F(ServiceEndpointsConfigFileLoaderTest, TestDuplicateServiceEndpointUrl)
@@ -385,8 +385,8 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestMixedDuplicateEndpoints)
     
     // Test that last global endpoint_url wins
     auto globalEndpoint = profile.GetGlobalEndpointUrl();
-    ASSERT_TRUE(globalEndpoint.has_value());
-    ASSERT_STREQ("https://global2.example.com", globalEndpoint->c_str());
+    ASSERT_FALSE(globalEndpoint.empty());
+    ASSERT_STREQ("https://global2.example.com", globalEndpoint.c_str());
     
     // Test that last service endpoint_url wins, but other services remain
     const auto& services = profile.GetServices();
