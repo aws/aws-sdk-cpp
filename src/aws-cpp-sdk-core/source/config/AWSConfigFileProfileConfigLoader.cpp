@@ -40,6 +40,9 @@ namespace Aws
         static const char PROFILE_SECTION[]                  = "profile";
         static const char DEFAULT[]                          = "default";
         static const char SSO_SESSION_SECTION[]              = "sso-session";
+        static const char SERVICES_SECTION[]                 = "services";
+        static const char ENDPOINT_URL_KEY[]                 = "endpoint_url";
+        static const char IGNORE_CONFIGURED_ENDPOINT_URLS_KEY[] = "ignore_configured_endpoint_urls";
         static const char DEFAULTS_MODE_KEY[]                = "defaults_mode";
         static const char EQ                                 = '=';
         static const char LEFT_BRACKET                       = '[';
@@ -74,7 +77,8 @@ namespace Aws
                  {EXTERNAL_ID_KEY, &Profile::SetExternalId, &Profile::GetExternalId},
                  {CREDENTIAL_PROCESS_COMMAND, &Profile::SetCredentialProcess, &Profile::GetCredentialProcess},
                  {SOURCE_PROFILE_KEY, &Profile::SetSourceProfile, &Profile::GetSourceProfile},
-                 {DEFAULTS_MODE_KEY, &Profile::SetDefaultsMode, &Profile::GetDefaultsMode}};
+                 {DEFAULTS_MODE_KEY, &Profile::SetDefaultsMode, &Profile::GetDefaultsMode},
+                 {ENDPOINT_URL_KEY, &Profile::SetGlobalEndpointUrl, &Profile::GetGlobalEndpointUrl}};
 
         template<typename EntryT, size_t N>
         const EntryT* FindInStaticArray(const EntryT (&array)[N], const Aws::String& searchKey)
@@ -119,6 +123,7 @@ namespace Aws
                 static const size_t ASSUME_EMPTY_LEN = 3;
                 State currentState = START;
                 Aws::String currentSectionName;
+                Aws::String activeServiceId;
                 Aws::Map<Aws::String, Aws::String> currentKeyValues;
 
                 Aws::String rawLine;
@@ -142,6 +147,7 @@ namespace Aws
                     {
                         FlushSection(currentState, currentSectionName, currentKeyValues);
                         currentKeyValues.clear();
+                        activeServiceId.clear();
                         ParseSectionDeclaration(line, currentSectionName, currentState);
                         continue;
                     }
@@ -158,6 +164,36 @@ namespace Aws
                         }
                     }
 
+                    if(SERVICES_FOUND == currentState)
+                    {
+                        auto equalsPos = line.find(EQ);
+                        if (equalsPos == std::string::npos) {
+                            continue; // ignore garbage/blank in services section
+                        }
+
+                        auto left = StringUtils::Trim(line.substr(0, equalsPos).c_str());
+                        auto right = StringUtils::Trim(line.substr(equalsPos + 1).c_str());
+
+                        // New service block: "s3 =" (right hand side empty)
+                        if (!left.empty() && right.empty()) {
+                            activeServiceId = StringUtils::ToUpper(left.c_str());
+                            StringUtils::Replace(activeServiceId, " ", "_");
+                            continue;
+                        }
+
+                        // Ignore global endpoint_url in [services name] section
+                        if (activeServiceId.empty() && StringUtils::CaselessCompare(left.c_str(), ENDPOINT_URL_KEY) == 0) {
+                            AWS_LOGSTREAM_DEBUG(PARSER_TAG, "Ignoring global endpoint_url in [services " << currentSectionName << "]");
+                            continue;
+                        }
+
+                        // Property inside an active block: "endpoint_url = http://..."
+                        if (!activeServiceId.empty() && left == ENDPOINT_URL_KEY) {
+                            m_services[currentSectionName][activeServiceId] = right;
+                            continue;
+                        }
+                    }
+
                     if(UNKNOWN_SECTION_FOUND == currentState)
                     {
                         // skip any unknown sections
@@ -170,6 +206,22 @@ namespace Aws
                 }
 
                 FlushSection(currentState, currentSectionName, currentKeyValues);
+
+                // Resolve service endpoints
+                for (auto& profilePair : m_foundProfiles)
+                {
+                    Profile& profile = profilePair.second;
+                    const Aws::String& servicesRef = profile.GetValue("services");
+                    if (!servicesRef.empty())
+                    {
+                        auto servicesBlk = m_services.find(servicesRef);
+                        Aws::Map<Aws::String, Aws::String> endpoints;
+                        if (servicesBlk != m_services.end()) {
+                            endpoints = servicesBlk->second;
+                        }
+                        profile.SetServices(Profile::Services(std::move(endpoints), servicesRef));
+                    }
+                }
 
                 // Put sso-sessions into profiles
                 for(auto& profile : m_foundProfiles)
@@ -222,6 +274,7 @@ namespace Aws
                 START = 0,
                 PROFILE_FOUND,
                 SSO_SESSION_FOUND,
+                SERVICES_FOUND,
                 UNKNOWN_SECTION_FOUND,
                 FAILURE
             };
@@ -271,8 +324,9 @@ namespace Aws
 
             /**
              * A helper function to parse config section declaration line
-             * @param line, an input line, e.g. "[profile default]"
+             * @param line, an input line, e.g. "[profile default]" or "[services s3]"
              * @param ioSectionName, a return argument representing parsed section Identifier, e.g. "default"
+             * @param ioServiceId, a return argument representing parsed service ID for services sections
              * @param ioState, a return argument representing parser state, e.g. PROFILE_FOUND
              */
             void ParseSectionDeclaration(const Aws::String& line,
@@ -331,13 +385,13 @@ namespace Aws
 
                     if(defaultProfileOrSsoSectionRequired)
                     {
-                        if (sectionIdentifier != DEFAULT && sectionIdentifier != SSO_SESSION_SECTION)
+                        if (sectionIdentifier != DEFAULT && sectionIdentifier != SSO_SESSION_SECTION && sectionIdentifier != SERVICES_SECTION)
                         {
                             AWS_LOGSTREAM_ERROR(PARSER_TAG, "In configuration files, the profile name must start with "
                                                             "profile keyword (except default profile): " << line);
                             break;
                         }
-                        if (sectionIdentifier != SSO_SESSION_SECTION)
+                        if (sectionIdentifier != SSO_SESSION_SECTION && sectionIdentifier != SERVICES_SECTION)
                         {
                             // profile found, still pending check for closing bracket
                             ioState = PROFILE_FOUND;
@@ -345,7 +399,7 @@ namespace Aws
                         }
                     }
 
-                    if(!m_useProfilePrefix || sectionIdentifier != SSO_SESSION_SECTION)
+                    if(!m_useProfilePrefix || (sectionIdentifier != SSO_SESSION_SECTION && sectionIdentifier != SERVICES_SECTION))
                     {
                         // profile found, still pending check for closing bracket
                         ioState = PROFILE_FOUND;
@@ -374,6 +428,32 @@ namespace Aws
                         ioSectionName = sectionIdentifier;
                     }
 
+                    if(sectionIdentifier == SERVICES_SECTION)
+                    {
+                        // Check if this is [services] or [services name]
+                        pos = line.find_first_not_of(WHITESPACE_CHARACTERS, pos);
+                        if(pos == Aws::String::npos || line[pos] == RIGHT_BRACKET)
+                        {
+                            // This is just [services] section
+                            AWS_LOGSTREAM_ERROR(PARSER_TAG, "[services] section without name is not supported: " << line);
+                            break;
+                        }
+                        else
+                        {
+                            // This is [services name] section
+                            sectionIdentifier = ParseIdentifier(line, pos, errorMsg);
+                            if (!errorMsg.empty())
+                            {
+                                AWS_LOGSTREAM_ERROR(PARSER_TAG, "Failed to parse services definition name: " << errorMsg << " " << line);
+                                break;
+                            }
+                            pos += sectionIdentifier.length();
+                            // services definition found, still pending check for closing bracket
+                            ioState = SERVICES_FOUND;
+                            ioSectionName = sectionIdentifier;
+                        }
+                    }
+
                     pos = line.find_first_not_of(WHITESPACE_CHARACTERS, pos);
                     if(pos == Aws::String::npos)
                     {
@@ -394,7 +474,7 @@ namespace Aws
                         break;
                     }
                     // the rest is a comment, and we don't care about it.
-                    if ((ioState != SSO_SESSION_FOUND && ioState != PROFILE_FOUND) || ioSectionName.empty())
+                    if ((ioState != SSO_SESSION_FOUND && ioState != PROFILE_FOUND && ioState != SERVICES_FOUND) || ioSectionName.empty())
                     {
                         AWS_LOGSTREAM_FATAL(PARSER_TAG, "Unexpected parser state after attempting to parse section " << line);
                         break;
@@ -412,6 +492,7 @@ namespace Aws
              *   (i.e. [profile default] and its key1=val1 under).
              * @param currentState, a current parser State, e.g. PROFILE_FOUND
              * @param currentSectionName, a current section identifier, e.g. "default"
+             * @param currentServiceId, a current service identifier for services sections
              * @param currentKeyValues, a map of parsed key-value properties of a section definition being recorded
              */
             void FlushSection(const State currentState, const Aws::String& currentSectionName, Aws::Map<Aws::String, Aws::String>& currentKeyValues)
@@ -529,6 +610,10 @@ namespace Aws
                     ssoSession.SetName(currentSectionName);
                     ssoSession.SetAllKeyValPairs(std::move(currentKeyValues));
                 }
+                else if (SERVICES_FOUND == currentState) {
+                    // Handle [services name] section - service endpoints are parsed inline during stream processing
+                    AWS_LOGSTREAM_DEBUG(PARSER_TAG, "Processed [services " << currentSectionName << "] section");
+                }
                 else
                 {
                     AWS_LOGSTREAM_FATAL(PARSER_TAG, "Unknown parser error: unexpected state " << currentState);
@@ -557,6 +642,7 @@ namespace Aws
 
             Aws::Map<String, Profile> m_foundProfiles;
             Aws::Map<String, Profile::SsoSession> m_foundSsoSessions;
+            Aws::Map<String, Aws::Map<String, String>> m_services;
         };
 
         static const char* const CONFIG_FILE_LOADER = "Aws::Config::AWSConfigFileProfileConfigLoader";
