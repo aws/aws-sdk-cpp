@@ -6,6 +6,7 @@
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
+#include <aws/core/AmazonWebServiceResult.h>
 
 namespace Aws
 {

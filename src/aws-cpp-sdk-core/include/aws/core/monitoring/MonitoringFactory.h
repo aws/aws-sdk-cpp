@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/Core_EXPORTS.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 
 namespace Aws
 {
