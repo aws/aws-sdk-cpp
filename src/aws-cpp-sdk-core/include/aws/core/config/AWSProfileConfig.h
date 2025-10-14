@@ -103,6 +103,10 @@ namespace Aws
             inline void SetSourceProfile(const Aws::String& value ) { m_sourceProfile = value; }
             inline const Aws::String& GetCredentialProcess() const { return m_credentialProcess; }
             inline void SetCredentialProcess(const Aws::String& value ) { m_credentialProcess = value; }
+            inline Aws::String GetGlobalEndpointUrl() const { return m_endpointUrl; }
+            inline void SetGlobalEndpointUrl(const Aws::String& value) { m_endpointUrl = value; }
+            inline Services GetServices() const { return m_services; }
+            inline void SetServices(Services&& services) { m_services = std::move(services); }
             inline void SetAllKeyValPairs(const Aws::Map<Aws::String, Aws::String>& map) { m_allKeyValPairs = map; }
             inline void SetAllKeyValPairs(Aws::Map<Aws::String, Aws::String>&& map) { m_allKeyValPairs = std::move(map); }
             inline const Aws::String GetValue(const Aws::String& key) const
@@ -138,6 +142,7 @@ namespace Aws
             Aws::String m_ssoAccountId;
             Aws::String m_ssoRoleName;
             Aws::String m_defaultsMode;
+            Aws::String m_endpointUrl;
             Aws::Map<Aws::String, Aws::String> m_allKeyValPairs;
             Services m_services;
 
