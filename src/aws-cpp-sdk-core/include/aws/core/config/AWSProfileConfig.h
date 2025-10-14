@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/auth/AWSCredentials.h>
+#include <aws/crt/Optional.h>
 
 namespace Aws
 {
@@ -19,6 +20,24 @@ namespace Aws
         class Profile
         {
         public:
+            /*
+             * Data container for service endpoints.
+             */
+            class Services
+            {
+            public:
+                Services() = default;
+                Services(Aws::Map<Aws::String, Aws::String>&& endpoints, Aws::String name)
+                    : m_endpoints(std::move(endpoints)), m_name(std::move(name)) {}
+                
+                inline Aws::Map<Aws::String, Aws::String> GetEndpoints() const { return m_endpoints; }
+                inline Aws::String GetServiceBlockName() const { return m_name; }
+                inline bool IsSet() const { return !m_name.empty(); }
+            private:
+                Aws::Map<Aws::String, Aws::String> m_endpoints;
+                Aws::String m_name;
+            };
+
             /*
              * Data container for a sso-session config entry.
              * This is independent of the general profile configuration and used by a bearer auth token provider.
@@ -84,6 +103,10 @@ namespace Aws
             inline void SetSourceProfile(const Aws::String& value ) { m_sourceProfile = value; }
             inline const Aws::String& GetCredentialProcess() const { return m_credentialProcess; }
             inline void SetCredentialProcess(const Aws::String& value ) { m_credentialProcess = value; }
+            inline const Aws::String& GetGlobalEndpointUrl() const { return m_endpointUrl; }
+            inline void SetGlobalEndpointUrl(const Aws::String& value) { m_endpointUrl = value; }
+            inline Services GetServices() const { return m_services; }
+            inline void SetServices(Services&& services) { m_services = std::move(services); }
             inline void SetAllKeyValPairs(const Aws::Map<Aws::String, Aws::String>& map) { m_allKeyValPairs = map; }
             inline void SetAllKeyValPairs(Aws::Map<Aws::String, Aws::String>&& map) { m_allKeyValPairs = std::move(map); }
             inline const Aws::String GetValue(const Aws::String& key) const
@@ -111,7 +134,9 @@ namespace Aws
             Aws::String m_ssoAccountId;
             Aws::String m_ssoRoleName;
             Aws::String m_defaultsMode;
+            Aws::String m_endpointUrl;
             Aws::Map<Aws::String, Aws::String> m_allKeyValPairs;
+            Services m_services;
 
             bool m_ssoSessionSet = false;
             SsoSession m_ssoSession;
