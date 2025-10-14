@@ -268,6 +268,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     AWSError<CoreErrors> lastError;
     Aws::Monitoring::CoreMetricsCollection coreMetrics;
     auto contexts = Aws::Monitoring::OnRequestStarted(this->GetServiceClientName(), request.GetServiceRequestName(), httpRequest);
+    m_contexts = contexts;
     const char* signerRegion = signerRegionOverride;
     Aws::String regionFromResponse;
 
@@ -292,7 +293,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
         httpRequest->SetEventStreamRequest(request.IsEventStreamRequest());
         httpRequest->SetHasEventStreamResponse(request.HasEventStreamResponse());
 
-        outcome = AttemptOneRequest(httpRequest, request, signerName, signerRegion, signerServiceNameOverride);
+        outcome = AttemptOneRequest(httpRequest, request, signerName, signerRegion, signerServiceNameOverride, contexts);
         outcome.SetRetryCount(retries);
         if (retries == 0)
         {
@@ -419,6 +420,14 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     return outcome;
 }
 
+void AWSClient::OnDeserStart(Aws::String reqName) const {
+  Aws::Monitoring::OnDeserializeStarted(this->GetServiceClientName(), reqName, nullptr, m_contexts);
+}
+
+void AWSClient::OnDeserEnd(Aws::String reqName) const {
+  Aws::Monitoring::OnDeserialized(this->GetServiceClientName(), reqName, nullptr, m_contexts);
+}
+
 HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     Aws::Http::HttpMethod method,
     const char* signerName,
@@ -436,6 +445,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     AWSError<CoreErrors> lastError;
     Aws::Monitoring::CoreMetricsCollection coreMetrics;
     auto contexts = Aws::Monitoring::OnRequestStarted(this->GetServiceClientName(), requestName, httpRequest);
+    m_contexts = contexts;
     const char* signerRegion = signerRegionOverride;
     Aws::String regionFromResponse;
 
@@ -555,8 +565,9 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
 }
 
 HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest, const Aws::AmazonWebServiceRequest& request,
-    const char* signerName, const char* signerRegionOverride, const char* signerServiceNameOverride) const
+    const char* signerName, const char* signerRegionOverride, const char* signerServiceNameOverride, const Vector<void*>& contexts) const
 {
+    Aws::Monitoring::OnSerializeStarted(this->GetServiceClientName(), request.GetServiceRequestName(), httpRequest, contexts);
     TracingUtils::MakeCallWithTiming(
         [&]() -> void {
             BuildHttpRequest(request, httpRequest);
@@ -565,6 +576,7 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
         *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
         {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 
+    Aws::Monitoring::OnSerialized(this->GetServiceClientName(), request.GetServiceRequestName(), httpRequest, contexts);
     InterceptorContext context{request};
     context.SetTransmitRequest(httpRequest);
     for (const auto& interceptor : m_interceptors)

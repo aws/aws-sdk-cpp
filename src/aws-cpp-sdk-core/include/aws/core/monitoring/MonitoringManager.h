@@ -46,6 +46,18 @@ namespace Aws
         void OnFinish(const Aws::String& serviceName, const Aws::String& requestName,
             const std::shared_ptr<const Aws::Http::HttpRequest>& request, const Aws::Vector<void*>& contexts);
 
+        void OnSerializeStarted(const Aws::String& serviceName, const Aws::String& requestName,
+            const std::shared_ptr<const Aws::Http::HttpRequest>& request, const Aws::Vector<void*>& contexts);
+
+        void OnDeserializeStarted(const Aws::String& serviceName, const Aws::String& requestName,
+            const std::shared_ptr<const Aws::Http::HttpRequest>& request, const Aws::Vector<void*>& contexts);
+
+        void OnSerialized(const Aws::String& serviceName, const Aws::String& requestName,
+            const std::shared_ptr<const Aws::Http::HttpRequest>& request, const Aws::Vector<void*>& contexts);
+
+        void OnDeserialized(const Aws::String& serviceName, const Aws::String& requestName,
+            const std::shared_ptr<const Aws::Http::HttpRequest>& request, const Aws::Vector<void*>& contexts);
+
         typedef std::function<Aws::UniquePtr<MonitoringFactory>()> MonitoringFactoryCreateFunction;
 
         /**

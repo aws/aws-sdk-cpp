@@ -3,8 +3,9 @@
   "metadata":{
     "apiVersion":"2010-08-01",
     "endpointPrefix":"monitoring",
-    "protocol":"query",
-    "protocols":["query"],
+    "protocol":"smithy-rpc-v2-cbor",
+    "protocols":["smithy-rpc-v2-cbor"],
+    "targetPrefix" : "GraniteServiceVersion20100801",
     "serviceAbbreviation":"CloudWatch",
     "serviceFullName":"Amazon CloudWatch",
     "serviceId":"CloudWatch",

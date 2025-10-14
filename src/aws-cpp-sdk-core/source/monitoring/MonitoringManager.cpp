@@ -97,6 +97,62 @@ namespace Aws
             }
         }
 
+        void OnSerialized(const Aws::String& serviceName, const Aws::String& requestName,
+                const std::shared_ptr<const Aws::Http::HttpRequest>& request, const Aws::Vector<void*>& contexts)
+        {
+            if (s_monitors)
+            {
+                assert(contexts.size() == s_monitors->size());
+                size_t index = 0;
+                for (const auto& interface: *s_monitors)
+                {
+                    interface->OnSerialized(serviceName, requestName, request, contexts[index++]);
+                }
+            }
+        }
+
+        void OnDeserialized(const Aws::String& serviceName, const Aws::String& requestName,
+            const std::shared_ptr<const Aws::Http::HttpRequest>& request, const Aws::Vector<void*>& contexts)
+        {
+          if (s_monitors)
+          {
+            assert(contexts.size() == s_monitors->size());
+            size_t index = 0;
+            for (const auto& interface: *s_monitors)
+            {
+              interface->OnDeserialized(serviceName, requestName, request, contexts[index++]);
+            }
+          }
+        }
+
+        void OnSerializeStarted(const Aws::String& serviceName, const Aws::String& requestName,
+                const std::shared_ptr<const Aws::Http::HttpRequest>& request, const Aws::Vector<void*>& contexts)
+        {
+          if (s_monitors)
+          {
+            assert(contexts.size() == s_monitors->size());
+            size_t index = 0;
+            for (const auto& interface: *s_monitors)
+            {
+              interface->OnSerializeStarted(serviceName, requestName, request, contexts[index++]);
+            }
+          }
+        }
+
+       void OnDeserializeStarted(const Aws::String& serviceName, const Aws::String& requestName,
+              const std::shared_ptr<const Aws::Http::HttpRequest>& request, const Aws::Vector<void*>& contexts)
+        {
+          if (s_monitors)
+          {
+            assert(contexts.size() == s_monitors->size());
+            size_t index = 0;
+            for (const auto& interface: *s_monitors)
+            {
+              interface->OnDeserializeStarted(serviceName, requestName, request, contexts[index++]);
+            }
+          }
+        }
+
         void AddMonitoring(const std::vector<MonitoringFactoryCreateFunction>& monitoringFactoryCreateFunctions)
         {
             //allocate monitors only if there are valid factory functions

@@ -119,8 +119,9 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
     {
         return smithy::components::tracing::TracingUtils::MakeCallWithTiming<XmlOutcome>(
             [&]() -> XmlOutcome {
+                OnDeserStart(request.GetServiceRequestName());
                 XmlDocument xmlDoc = XmlDocument::CreateFromXmlStream(httpOutcome.GetResult()->GetResponseBody());
-
+                OnDeserEnd(request.GetServiceRequestName());
                 if (!xmlDoc.WasParseSuccessful())
                 {
                     AWS_LOGSTREAM_ERROR(AWS_XML_CLIENT_LOG_TAG, "Xml parsing for error failed with message " << xmlDoc.GetErrorMessage().c_str());
@@ -134,7 +135,6 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
             *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
             {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
     }
-
     return XmlOutcome(AmazonWebServiceResult<XmlDocument>(XmlDocument(), httpOutcome.GetResult()->GetHeaders()));
 }
 

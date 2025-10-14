@@ -7,8 +7,9 @@
 
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
-#include <smithy/tracing/TracingUtils.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <smithy/tracing/TracingUtils.h>
+#include <aws/core/monitoring/MonitoringManager.h>
 
 namespace Aws
 {
@@ -199,7 +200,9 @@ namespace Aws
                 if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0) {
                     return smithy::components::tracing::TracingUtils::MakeCallWithTiming<OutcomeType>(
                         [&]() -> OutcomeType {
+                            OnDeserStart(requestName);
                             auto response = ResponseType(httpOutcome.GetResult()->GetResponseBody());
+                            OnDeserEnd(requestName);
                             if (!response.WasParseSuccessful()) {
                                 return OutcomeType(CreateParseError());
                             }
@@ -216,7 +219,10 @@ namespace Aws
 
                 return smithy::components::tracing::TracingUtils::MakeCallWithTiming<OutcomeType>(
                     [&]() -> OutcomeType {
-                        return OutcomeType(AmazonWebServiceResult<ResponseType>(ResponseType(), httpOutcome.GetResult()->GetHeaders()));
+                        OnDeserStart(requestName);
+                        auto ret = OutcomeType(AmazonWebServiceResult<ResponseType>(ResponseType(), httpOutcome.GetResult()->GetHeaders()));
+                        OnDeserEnd(requestName);
+                        return ret;
                     },
                     smithy::components::tracing::TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
                     *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),

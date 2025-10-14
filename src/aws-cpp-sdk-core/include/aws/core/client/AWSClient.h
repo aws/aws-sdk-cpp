@@ -198,12 +198,12 @@ namespace Aws
              * Calls AttemptOneRequest until it either, succeeds, runs out of retries from the retry strategy,
              * or encounters and error that is not retryable.
              */
-            HttpResponseOutcome AttemptExhaustively(const Aws::Http::URI& uri,
-                                                    const Aws::AmazonWebServiceRequest& request,
-                                                    Http::HttpMethod httpMethod,
-                                                    const char* signerName,
-                                                    const char* signerRegionOverride = nullptr,
-                                                    const char* signerServiceNameOverride = nullptr) const;
+            HttpResponseOutcome AttemptExhaustively(const Aws::Http::URI& uri, const Aws::AmazonWebServiceRequest& request,
+                                                 Http::HttpMethod httpMethod, const char* signerName,
+                                                 const char* signerRegionOverride = nullptr,
+                                                 const char* signerServiceNameOverride = nullptr) const;
+            void OnDeserStart(Aws::String reqName) const;
+            void OnDeserEnd(Aws::String reqName) const;
 
             /**
              * Calls AttemptOneRequest until it either, succeeds, runs out of retries from the retry strategy,
@@ -227,7 +227,7 @@ namespace Aws
                                                   const Aws::AmazonWebServiceRequest& request,
                                                   const char* signerName,
                                                   const char* signerRegionOverride = nullptr,
-                                                  const char* signerServiceNameOverride = nullptr) const;
+                                                  const char* signerServiceNameOverride = nullptr, const Vector<void*>& contexts = {}) const;
 
             /**
              * Signs an Http Request, sends it across the wire
@@ -327,6 +327,8 @@ namespace Aws
              * Performs the HTTP request via the HTTP client while enforcing rate limiters
              */
             std::shared_ptr<Aws::Http::HttpResponse> MakeHttpRequest(std::shared_ptr<Aws::Http::HttpRequest>& request) const;
+
+            Vector<void*> GetContext() const { return m_contexts; };
             Aws::String m_region;
 
             /**
@@ -363,6 +365,7 @@ namespace Aws
             Aws::Client::RequestCompressionConfig m_requestCompressionConfig;
             std::shared_ptr<smithy::client::UserAgentInterceptor> m_userAgentInterceptor;
             Aws::Vector<std::shared_ptr<smithy::interceptor::Interceptor>> m_interceptors;
+            mutable Vector<void*> m_contexts;
         };
 
         AWS_CORE_API Aws::String GetAuthorizationHeader(const Aws::Http::HttpRequest& httpRequest);

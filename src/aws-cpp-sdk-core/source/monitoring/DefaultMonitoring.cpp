@@ -251,6 +251,38 @@ namespace Aws
             Aws::Delete(defaultContext);
         }
 
+        void DefaultMonitoring::OnSerializeStarted(const Aws::String& serviceName, const Aws::String& requestName,
+            const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const
+        {
+          AWS_UNREFERENCED_PARAM(request);
+          AWS_UNREFERENCED_PARAM(context);
+          AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "OnRequestFinish Service: " << serviceName << "Request: " << requestName);
+        }
+
+        void DefaultMonitoring::OnDeserializeStarted(const Aws::String& serviceName, const Aws::String& requestName,
+            const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const
+        {
+          AWS_UNREFERENCED_PARAM(request);
+          AWS_UNREFERENCED_PARAM(context);
+          AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "OnRequestFinish Service: " << serviceName << "Request: " << requestName);
+        }
+
+        void DefaultMonitoring::OnSerialized(const Aws::String& serviceName, const Aws::String& requestName,
+            const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const
+        {
+          AWS_UNREFERENCED_PARAM(request);
+          AWS_UNREFERENCED_PARAM(context);
+          AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "OnRequestFinish Service: " << serviceName << "Request: " << requestName);
+        }
+
+        void DefaultMonitoring::OnDeserialized(const Aws::String& serviceName, const Aws::String& requestName,
+          const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const
+        {
+          AWS_UNREFERENCED_PARAM(request);
+          AWS_UNREFERENCED_PARAM(context);
+          AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "OnRequestFinish Service: " << serviceName << "Request: " << requestName);
+        }
+
         void DefaultMonitoring::CollectAndSendAttemptData(const Aws::String& serviceName, const Aws::String& requestName,
             const std::shared_ptr<const Aws::Http::HttpRequest>& request, const Aws::Client::HttpResponseOutcome& outcome,
             const CoreMetricsCollection& metricsFromCore, void* context) const

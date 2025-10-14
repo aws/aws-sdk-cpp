@@ -84,6 +84,18 @@ namespace Aws
              */
             virtual void OnFinish(const Aws::String& serviceName, const Aws::String& requestName,
                 const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const = 0;
+
+            virtual void OnSerializeStarted(const Aws::String& serviceName, const Aws::String& requestName,
+              const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const = 0;
+
+            virtual void OnDeserializeStarted(const Aws::String& serviceName, const Aws::String& requestName,
+              const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const = 0;
+
+            virtual void OnSerialized(const Aws::String& serviceName, const Aws::String& requestName,
+              const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const = 0;
+
+            virtual void OnDeserialized(const Aws::String& serviceName, const Aws::String& requestName,
+              const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const = 0;
         };
     } // namespace Monitoring
 } // namespace Aws

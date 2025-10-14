@@ -52,7 +52,16 @@ namespace Aws
 
 
             void OnFinish(const Aws::String& serviceName, const Aws::String& requestName,
-                const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const override;
+                          const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const override;
+            void OnSerializeStarted(const Aws::String& serviceName, const Aws::String& requestName,
+                             const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const override;
+            void OnDeserializeStarted(const Aws::String& serviceName, const Aws::String& requestName,
+                                const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const override;
+
+            void OnSerialized(const Aws::String& serviceName, const Aws::String& requestName,
+                             const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const override;
+            void OnDeserialized(const Aws::String& serviceName, const Aws::String& requestName,
+                              const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const override;
 
             static inline int GetVersion() { return DEFAULT_MONITORING_VERSION; }
         private:
