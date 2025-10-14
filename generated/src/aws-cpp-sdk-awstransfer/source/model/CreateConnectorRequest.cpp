@@ -63,6 +63,12 @@ Aws::String CreateConnectorRequest::SerializePayload() const
 
   }
 
+  if(m_egressConfigHasBeenSet)
+  {
+   payload.WithObject("EgressConfig", m_egressConfig.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

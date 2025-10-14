@@ -53,9 +53,20 @@ namespace Model
      * Family server for the change to take effect. For details on using passive mode
      * (PASV) in a NAT environment, see <a
      * href="http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/">Configuring
-     * your FTPS server behind a firewall or NAT with Transfer Family</a>. </p> 
-     * <p> <i>Special values</i> </p> <p>The <code>AUTO</code> and <code>0.0.0.0</code>
-     * are special values for the <code>PassiveIp</code> parameter. The value
+     * your FTPS server behind a firewall or NAT with Transfer Family</a>. </p>
+     * <p>Additionally, avoid placing Network Load Balancers (NLBs) or NAT gateways in
+     * front of Transfer Family servers. This configuration increases costs and can
+     * cause performance issues. When NLBs or NATs are in the communication path,
+     * Transfer Family cannot accurately recognize client IP addresses, which impacts
+     * connection sharding and limits FTPS servers to only 300 simultaneous connections
+     * instead of 10,000. If you must use an NLB, use port 21 for health checks and
+     * enable TLS session resumption by setting <code>TlsSessionResumptionMode =
+     * ENFORCED</code>. For optimal performance, migrate to VPC endpoints with Elastic
+     * IP addresses instead of using NLBs. For more details, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/infrastructure-security.html#nlb-considerations">
+     * Avoid placing NLBs and NATs in front of Transfer Family</a>. </p>  <p>
+     * <i>Special values</i> </p> <p>The <code>AUTO</code> and <code>0.0.0.0</code> are
+     * special values for the <code>PassiveIp</code> parameter. The value
      * <code>PassiveIp=AUTO</code> is assigned by default to FTP and FTPS type servers.
      * In this case, the server automatically responds with one of the endpoint IPs
      * within the PASV response. <code>PassiveIp=0.0.0.0</code> has a more unique

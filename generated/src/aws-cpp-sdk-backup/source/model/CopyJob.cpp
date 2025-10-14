@@ -50,10 +50,30 @@ CopyJob& CopyJob::operator =(JsonView jsonValue)
     m_destinationBackupVaultArn = jsonValue.GetString("DestinationBackupVaultArn");
     m_destinationBackupVaultArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("DestinationVaultType"))
+  {
+    m_destinationVaultType = jsonValue.GetString("DestinationVaultType");
+    m_destinationVaultTypeHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("DestinationVaultLockState"))
+  {
+    m_destinationVaultLockState = jsonValue.GetString("DestinationVaultLockState");
+    m_destinationVaultLockStateHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("DestinationRecoveryPointArn"))
   {
     m_destinationRecoveryPointArn = jsonValue.GetString("DestinationRecoveryPointArn");
     m_destinationRecoveryPointArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("DestinationEncryptionKeyArn"))
+  {
+    m_destinationEncryptionKeyArn = jsonValue.GetString("DestinationEncryptionKeyArn");
+    m_destinationEncryptionKeyArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("DestinationRecoveryPointLifecycle"))
+  {
+    m_destinationRecoveryPointLifecycle = jsonValue.GetObject("DestinationRecoveryPointLifecycle");
+    m_destinationRecoveryPointLifecycleHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ResourceArn"))
   {
@@ -176,9 +196,33 @@ JsonValue CopyJob::Jsonize() const
 
   }
 
+  if(m_destinationVaultTypeHasBeenSet)
+  {
+   payload.WithString("DestinationVaultType", m_destinationVaultType);
+
+  }
+
+  if(m_destinationVaultLockStateHasBeenSet)
+  {
+   payload.WithString("DestinationVaultLockState", m_destinationVaultLockState);
+
+  }
+
   if(m_destinationRecoveryPointArnHasBeenSet)
   {
    payload.WithString("DestinationRecoveryPointArn", m_destinationRecoveryPointArn);
+
+  }
+
+  if(m_destinationEncryptionKeyArnHasBeenSet)
+  {
+   payload.WithString("DestinationEncryptionKeyArn", m_destinationEncryptionKeyArn);
+
+  }
+
+  if(m_destinationRecoveryPointLifecycleHasBeenSet)
+  {
+   payload.WithObject("DestinationRecoveryPointLifecycle", m_destinationRecoveryPointLifecycle.Jsonize());
 
   }
 

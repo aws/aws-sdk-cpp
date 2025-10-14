@@ -25,6 +25,11 @@ ConnectionPropertiesPatch::ConnectionPropertiesPatch(JsonView jsonValue)
 
 ConnectionPropertiesPatch& ConnectionPropertiesPatch::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("amazonQProperties"))
+  {
+    m_amazonQProperties = jsonValue.GetObject("amazonQProperties");
+    m_amazonQPropertiesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("athenaProperties"))
   {
     m_athenaProperties = jsonValue.GetObject("athenaProperties");
@@ -61,6 +66,12 @@ ConnectionPropertiesPatch& ConnectionPropertiesPatch::operator =(JsonView jsonVa
 JsonValue ConnectionPropertiesPatch::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_amazonQPropertiesHasBeenSet)
+  {
+   payload.WithObject("amazonQProperties", m_amazonQProperties.Jsonize());
+
+  }
 
   if(m_athenaPropertiesHasBeenSet)
   {

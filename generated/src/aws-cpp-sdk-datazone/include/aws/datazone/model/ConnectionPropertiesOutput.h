@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/AmazonQPropertiesOutput.h>
 #include <aws/datazone/model/AthenaPropertiesOutput.h>
 #include <aws/datazone/model/GluePropertiesOutput.h>
 #include <aws/datazone/model/HyperPodPropertiesOutput.h>
@@ -43,6 +44,18 @@ namespace Model
     AWS_DATAZONE_API ConnectionPropertiesOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>The Amazon Q properties of the connection.</p>
+     */
+    inline const AmazonQPropertiesOutput& GetAmazonQProperties() const { return m_amazonQProperties; }
+    inline bool AmazonQPropertiesHasBeenSet() const { return m_amazonQPropertiesHasBeenSet; }
+    template<typename AmazonQPropertiesT = AmazonQPropertiesOutput>
+    void SetAmazonQProperties(AmazonQPropertiesT&& value) { m_amazonQPropertiesHasBeenSet = true; m_amazonQProperties = std::forward<AmazonQPropertiesT>(value); }
+    template<typename AmazonQPropertiesT = AmazonQPropertiesOutput>
+    ConnectionPropertiesOutput& WithAmazonQProperties(AmazonQPropertiesT&& value) { SetAmazonQProperties(std::forward<AmazonQPropertiesT>(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -140,6 +153,9 @@ namespace Model
     ConnectionPropertiesOutput& WithSparkGlueProperties(SparkGluePropertiesT&& value) { SetSparkGlueProperties(std::forward<SparkGluePropertiesT>(value)); return *this;}
     ///@}
   private:
+
+    AmazonQPropertiesOutput m_amazonQProperties;
+    bool m_amazonQPropertiesHasBeenSet = false;
 
     AthenaPropertiesOutput m_athenaProperties;
     bool m_athenaPropertiesHasBeenSet = false;

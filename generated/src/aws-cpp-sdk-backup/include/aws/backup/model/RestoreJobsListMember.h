@@ -81,6 +81,33 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) of the original resource that was backed up.
+     * This provides context about what resource is being restored.</p>
+     */
+    inline const Aws::String& GetSourceResourceArn() const { return m_sourceResourceArn; }
+    inline bool SourceResourceArnHasBeenSet() const { return m_sourceResourceArnHasBeenSet; }
+    template<typename SourceResourceArnT = Aws::String>
+    void SetSourceResourceArn(SourceResourceArnT&& value) { m_sourceResourceArnHasBeenSet = true; m_sourceResourceArn = std::forward<SourceResourceArnT>(value); }
+    template<typename SourceResourceArnT = Aws::String>
+    RestoreJobsListMember& WithSourceResourceArn(SourceResourceArnT&& value) { SetSourceResourceArn(std::forward<SourceResourceArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the backup vault containing the recovery
+     * point being restored. This helps identify vault access policies and
+     * permissions.</p>
+     */
+    inline const Aws::String& GetBackupVaultArn() const { return m_backupVaultArn; }
+    inline bool BackupVaultArnHasBeenSet() const { return m_backupVaultArnHasBeenSet; }
+    template<typename BackupVaultArnT = Aws::String>
+    void SetBackupVaultArn(BackupVaultArnT&& value) { m_backupVaultArnHasBeenSet = true; m_backupVaultArn = std::forward<BackupVaultArnT>(value); }
+    template<typename BackupVaultArnT = Aws::String>
+    RestoreJobsListMember& WithBackupVaultArn(BackupVaultArnT&& value) { SetBackupVaultArn(std::forward<BackupVaultArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The date and time a restore job is created, in Unix format and Coordinated
      * Universal Time (UTC). The value of <code>CreationDate</code> is accurate to
      * milliseconds. For example, the value 1516925490.087 represents Friday, January
@@ -287,6 +314,12 @@ namespace Model
 
     Aws::String m_recoveryPointArn;
     bool m_recoveryPointArnHasBeenSet = false;
+
+    Aws::String m_sourceResourceArn;
+    bool m_sourceResourceArnHasBeenSet = false;
+
+    Aws::String m_backupVaultArn;
+    bool m_backupVaultArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;

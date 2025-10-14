@@ -17,6 +17,7 @@
 #include <aws/appstream/model/AccessEndpoint.h>
 #include <aws/appstream/model/AccessEndpointType.h>
 #include <aws/appstream/model/Action.h>
+#include <aws/appstream/model/AdminAppLicenseUsageRecord.h>
 #include <aws/appstream/model/AppBlock.h>
 #include <aws/appstream/model/AppBlockBuilder.h>
 #include <aws/appstream/model/AppBlockBuilderAppBlockAssociation.h>
@@ -40,6 +41,8 @@
 #include <aws/appstream/model/AssociateApplicationToEntitlementResult.h>
 #include <aws/appstream/model/AssociateFleetRequest.h>
 #include <aws/appstream/model/AssociateFleetResult.h>
+#include <aws/appstream/model/AssociateSoftwareToImageBuilderRequest.h>
+#include <aws/appstream/model/AssociateSoftwareToImageBuilderResult.h>
 #include <aws/appstream/model/AuthenticationType.h>
 #include <aws/appstream/model/BatchAssociateUserStackRequest.h>
 #include <aws/appstream/model/BatchAssociateUserStackResult.h>
@@ -113,6 +116,8 @@
 #include <aws/appstream/model/DescribeAppBlockBuildersResult.h>
 #include <aws/appstream/model/DescribeAppBlocksRequest.h>
 #include <aws/appstream/model/DescribeAppBlocksResult.h>
+#include <aws/appstream/model/DescribeAppLicenseUsageRequest.h>
+#include <aws/appstream/model/DescribeAppLicenseUsageResult.h>
 #include <aws/appstream/model/DescribeApplicationFleetAssociationsRequest.h>
 #include <aws/appstream/model/DescribeApplicationFleetAssociationsResult.h>
 #include <aws/appstream/model/DescribeApplicationsRequest.h>
@@ -131,6 +136,8 @@
 #include <aws/appstream/model/DescribeImagesResult.h>
 #include <aws/appstream/model/DescribeSessionsRequest.h>
 #include <aws/appstream/model/DescribeSessionsResult.h>
+#include <aws/appstream/model/DescribeSoftwareAssociationsRequest.h>
+#include <aws/appstream/model/DescribeSoftwareAssociationsResult.h>
 #include <aws/appstream/model/DescribeStacksRequest.h>
 #include <aws/appstream/model/DescribeStacksResult.h>
 #include <aws/appstream/model/DescribeThemeForStackRequest.h>
@@ -152,6 +159,8 @@
 #include <aws/appstream/model/DisassociateApplicationFromEntitlementResult.h>
 #include <aws/appstream/model/DisassociateFleetRequest.h>
 #include <aws/appstream/model/DisassociateFleetResult.h>
+#include <aws/appstream/model/DisassociateSoftwareFromImageBuilderRequest.h>
+#include <aws/appstream/model/DisassociateSoftwareFromImageBuilderResult.h>
 #include <aws/appstream/model/DomainJoinInfo.h>
 #include <aws/appstream/model/DynamicAppProvidersEnabled.h>
 #include <aws/appstream/model/EnableUserRequest.h>
@@ -202,6 +211,8 @@
 #include <aws/appstream/model/SessionConnectionState.h>
 #include <aws/appstream/model/SessionState.h>
 #include <aws/appstream/model/SharedImagePermissions.h>
+#include <aws/appstream/model/SoftwareAssociations.h>
+#include <aws/appstream/model/SoftwareDeploymentStatus.h>
 #include <aws/appstream/model/Stack.h>
 #include <aws/appstream/model/StackAttribute.h>
 #include <aws/appstream/model/StackError.h>
@@ -212,6 +223,8 @@
 #include <aws/appstream/model/StartFleetResult.h>
 #include <aws/appstream/model/StartImageBuilderRequest.h>
 #include <aws/appstream/model/StartImageBuilderResult.h>
+#include <aws/appstream/model/StartSoftwareDeploymentToImageBuilderRequest.h>
+#include <aws/appstream/model/StartSoftwareDeploymentToImageBuilderResult.h>
 #include <aws/appstream/model/StopAppBlockBuilderRequest.h>
 #include <aws/appstream/model/StopAppBlockBuilderResult.h>
 #include <aws/appstream/model/StopFleetRequest.h>

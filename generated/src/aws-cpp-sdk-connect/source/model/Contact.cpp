@@ -246,6 +246,11 @@ Contact& Contact::operator =(JsonView jsonValue)
     }
     m_contactEvaluationsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("TaskTemplateInfo"))
+  {
+    m_taskTemplateInfo = jsonValue.GetObject("TaskTemplateInfo");
+    m_taskTemplateInfoHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ContactDetails"))
   {
     m_contactDetails = jsonValue.GetObject("ContactDetails");
@@ -520,6 +525,12 @@ JsonValue Contact::Jsonize() const
      contactEvaluationsJsonMap.WithObject(contactEvaluationsItem.first, contactEvaluationsItem.second.Jsonize());
    }
    payload.WithObject("ContactEvaluations", std::move(contactEvaluationsJsonMap));
+
+  }
+
+  if(m_taskTemplateInfoHasBeenSet)
+  {
+   payload.WithObject("TaskTemplateInfo", m_taskTemplateInfo.Jsonize());
 
   }
 

@@ -47,7 +47,9 @@ namespace Model
      * <li> <p> <code>default</code> - Volume initialized using the default volume
      * initialization rate or fast snapshot restore.</p> </li> <li> <p>
      * <code>provisioned-rate</code> - Volume initialized using an Amazon EBS
-     * Provisioned Rate for Volume Initialization.</p> </li> </ul>
+     * Provisioned Rate for Volume Initialization.</p> </li> <li> <p>
+     * <code>volume-copy</code> - Volume copy initialized at the rate for volume
+     * copies.</p> </li> </ul>
      */
     inline InitializationType GetInitializationType() const { return m_initializationType; }
     inline bool InitializationTypeHasBeenSet() const { return m_initializationTypeHasBeenSet; }

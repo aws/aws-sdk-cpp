@@ -31,6 +31,8 @@ namespace Aws
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
         static const int PENDING_QUALIFICATION_HASH = HashingUtils::HashString("PENDING_QUALIFICATION");
+        static const int PENDING_SYNCING_APPS_HASH = HashingUtils::HashString("PENDING_SYNCING_APPS");
+        static const int SYNCING_APPS_HASH = HashingUtils::HashString("SYNCING_APPS");
 
 
         ImageBuilderState GetImageBuilderStateForName(const Aws::String& name)
@@ -80,6 +82,14 @@ namespace Aws
           {
             return ImageBuilderState::PENDING_QUALIFICATION;
           }
+          else if (hashCode == PENDING_SYNCING_APPS_HASH)
+          {
+            return ImageBuilderState::PENDING_SYNCING_APPS;
+          }
+          else if (hashCode == SYNCING_APPS_HASH)
+          {
+            return ImageBuilderState::SYNCING_APPS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -118,6 +128,10 @@ namespace Aws
             return "UPDATING";
           case ImageBuilderState::PENDING_QUALIFICATION:
             return "PENDING_QUALIFICATION";
+          case ImageBuilderState::PENDING_SYNCING_APPS:
+            return "PENDING_SYNCING_APPS";
+          case ImageBuilderState::SYNCING_APPS:
+            return "SYNCING_APPS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

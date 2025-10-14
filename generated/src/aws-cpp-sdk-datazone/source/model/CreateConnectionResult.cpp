@@ -74,6 +74,11 @@ CreateConnectionResult& CreateConnectionResult::operator =(const Aws::AmazonWebS
     m_props = jsonValue.GetObject("props");
     m_propsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("scope"))
+  {
+    m_scope = ConnectionScopeMapper::GetConnectionScopeForName(jsonValue.GetString("scope"));
+    m_scopeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("type"))
   {
     m_type = ConnectionTypeMapper::GetConnectionTypeForName(jsonValue.GetString("type"));

@@ -25,6 +25,11 @@ ConnectionPropertiesInput::ConnectionPropertiesInput(JsonView jsonValue)
 
 ConnectionPropertiesInput& ConnectionPropertiesInput::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("amazonQProperties"))
+  {
+    m_amazonQProperties = jsonValue.GetObject("amazonQProperties");
+    m_amazonQPropertiesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("athenaProperties"))
   {
     m_athenaProperties = jsonValue.GetObject("athenaProperties");
@@ -71,6 +76,12 @@ ConnectionPropertiesInput& ConnectionPropertiesInput::operator =(JsonView jsonVa
 JsonValue ConnectionPropertiesInput::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_amazonQPropertiesHasBeenSet)
+  {
+   payload.WithObject("amazonQProperties", m_amazonQProperties.Jsonize());
+
+  }
 
   if(m_athenaPropertiesHasBeenSet)
   {

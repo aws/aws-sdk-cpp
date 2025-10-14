@@ -40,6 +40,16 @@ RestoreJobsListMember& RestoreJobsListMember::operator =(JsonView jsonValue)
     m_recoveryPointArn = jsonValue.GetString("RecoveryPointArn");
     m_recoveryPointArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("SourceResourceArn"))
+  {
+    m_sourceResourceArn = jsonValue.GetString("SourceResourceArn");
+    m_sourceResourceArnHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("BackupVaultArn"))
+  {
+    m_backupVaultArn = jsonValue.GetString("BackupVaultArn");
+    m_backupVaultArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
@@ -142,6 +152,18 @@ JsonValue RestoreJobsListMember::Jsonize() const
   if(m_recoveryPointArnHasBeenSet)
   {
    payload.WithString("RecoveryPointArn", m_recoveryPointArn);
+
+  }
+
+  if(m_sourceResourceArnHasBeenSet)
+  {
+   payload.WithString("SourceResourceArn", m_sourceResourceArn);
+
+  }
+
+  if(m_backupVaultArnHasBeenSet)
+  {
+   payload.WithString("BackupVaultArn", m_backupVaultArn);
 
   }
 

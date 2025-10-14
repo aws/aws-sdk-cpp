@@ -2019,6 +2019,36 @@ namespace EC2
         }
 
         /**
+         * <p>Creates a crash-consistent, point-in-time copy of an existing Amazon EBS
+         * volume within the same Availability Zone. The volume copy can be attached to an
+         * Amazon EC2 instance once it reaches the <code>available</code> state. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-copying-volume.html">Copy
+         * an Amazon EBS volume</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyVolumes">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::CopyVolumesOutcome CopyVolumes(const Model::CopyVolumesRequest& request) const;
+
+        /**
+         * A Callable wrapper for CopyVolumes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CopyVolumesRequestT = Model::CopyVolumesRequest>
+        Model::CopyVolumesOutcomeCallable CopyVolumesCallable(const CopyVolumesRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::CopyVolumes, request);
+        }
+
+        /**
+         * An Async wrapper for CopyVolumes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CopyVolumesRequestT = Model::CopyVolumesRequest>
+        void CopyVolumesAsync(const CopyVolumesRequestT& request, const CopyVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::CopyVolumes, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new Capacity Reservation with the specified attributes. Capacity
          * Reservations enable you to reserve capacity for your Amazon EC2 instances in a
          * specific Availability Zone for any duration.</p> <p>You can create a Capacity

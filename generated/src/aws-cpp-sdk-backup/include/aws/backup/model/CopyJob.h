@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/backup/model/Lifecycle.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/backup/model/CopyJobState.h>
 #include <aws/backup/model/RecoveryPointCreator.h>
@@ -109,6 +110,35 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of destination backup vault where the copied recovery point is
+     * stored. Valid values are <code>BACKUP_VAULT</code> for standard backup vaults
+     * and <code>LOGICALLY_AIR_GAPPED_BACKUP_VAULT</code> for logically air-gapped
+     * vaults.</p>
+     */
+    inline const Aws::String& GetDestinationVaultType() const { return m_destinationVaultType; }
+    inline bool DestinationVaultTypeHasBeenSet() const { return m_destinationVaultTypeHasBeenSet; }
+    template<typename DestinationVaultTypeT = Aws::String>
+    void SetDestinationVaultType(DestinationVaultTypeT&& value) { m_destinationVaultTypeHasBeenSet = true; m_destinationVaultType = std::forward<DestinationVaultTypeT>(value); }
+    template<typename DestinationVaultTypeT = Aws::String>
+    CopyJob& WithDestinationVaultType(DestinationVaultTypeT&& value) { SetDestinationVaultType(std::forward<DestinationVaultTypeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The lock state of the destination backup vault. For logically air-gapped
+     * vaults, this indicates whether the vault is locked in compliance mode. Valid
+     * values include <code>LOCKED</code> and <code>UNLOCKED</code>.</p>
+     */
+    inline const Aws::String& GetDestinationVaultLockState() const { return m_destinationVaultLockState; }
+    inline bool DestinationVaultLockStateHasBeenSet() const { return m_destinationVaultLockStateHasBeenSet; }
+    template<typename DestinationVaultLockStateT = Aws::String>
+    void SetDestinationVaultLockState(DestinationVaultLockStateT&& value) { m_destinationVaultLockStateHasBeenSet = true; m_destinationVaultLockState = std::forward<DestinationVaultLockStateT>(value); }
+    template<typename DestinationVaultLockStateT = Aws::String>
+    CopyJob& WithDestinationVaultLockState(DestinationVaultLockStateT&& value) { SetDestinationVaultLockState(std::forward<DestinationVaultLockStateT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An ARN that uniquely identifies a destination recovery point; for example,
      * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
      */
@@ -118,6 +148,30 @@ namespace Model
     void SetDestinationRecoveryPointArn(DestinationRecoveryPointArnT&& value) { m_destinationRecoveryPointArnHasBeenSet = true; m_destinationRecoveryPointArn = std::forward<DestinationRecoveryPointArnT>(value); }
     template<typename DestinationRecoveryPointArnT = Aws::String>
     CopyJob& WithDestinationRecoveryPointArn(DestinationRecoveryPointArnT&& value) { SetDestinationRecoveryPointArn(std::forward<DestinationRecoveryPointArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the copied
+     * backup in the destination vault. This can be a customer-managed key or an Amazon
+     * Web Services managed key.</p>
+     */
+    inline const Aws::String& GetDestinationEncryptionKeyArn() const { return m_destinationEncryptionKeyArn; }
+    inline bool DestinationEncryptionKeyArnHasBeenSet() const { return m_destinationEncryptionKeyArnHasBeenSet; }
+    template<typename DestinationEncryptionKeyArnT = Aws::String>
+    void SetDestinationEncryptionKeyArn(DestinationEncryptionKeyArnT&& value) { m_destinationEncryptionKeyArnHasBeenSet = true; m_destinationEncryptionKeyArn = std::forward<DestinationEncryptionKeyArnT>(value); }
+    template<typename DestinationEncryptionKeyArnT = Aws::String>
+    CopyJob& WithDestinationEncryptionKeyArn(DestinationEncryptionKeyArnT&& value) { SetDestinationEncryptionKeyArn(std::forward<DestinationEncryptionKeyArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const Lifecycle& GetDestinationRecoveryPointLifecycle() const { return m_destinationRecoveryPointLifecycle; }
+    inline bool DestinationRecoveryPointLifecycleHasBeenSet() const { return m_destinationRecoveryPointLifecycleHasBeenSet; }
+    template<typename DestinationRecoveryPointLifecycleT = Lifecycle>
+    void SetDestinationRecoveryPointLifecycle(DestinationRecoveryPointLifecycleT&& value) { m_destinationRecoveryPointLifecycleHasBeenSet = true; m_destinationRecoveryPointLifecycle = std::forward<DestinationRecoveryPointLifecycleT>(value); }
+    template<typename DestinationRecoveryPointLifecycleT = Lifecycle>
+    CopyJob& WithDestinationRecoveryPointLifecycle(DestinationRecoveryPointLifecycleT&& value) { SetDestinationRecoveryPointLifecycle(std::forward<DestinationRecoveryPointLifecycleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -343,8 +397,20 @@ namespace Model
     Aws::String m_destinationBackupVaultArn;
     bool m_destinationBackupVaultArnHasBeenSet = false;
 
+    Aws::String m_destinationVaultType;
+    bool m_destinationVaultTypeHasBeenSet = false;
+
+    Aws::String m_destinationVaultLockState;
+    bool m_destinationVaultLockStateHasBeenSet = false;
+
     Aws::String m_destinationRecoveryPointArn;
     bool m_destinationRecoveryPointArnHasBeenSet = false;
+
+    Aws::String m_destinationEncryptionKeyArn;
+    bool m_destinationEncryptionKeyArnHasBeenSet = false;
+
+    Lifecycle m_destinationRecoveryPointLifecycle;
+    bool m_destinationRecoveryPointLifecycleHasBeenSet = false;
 
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet = false;

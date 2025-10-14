@@ -99,12 +99,13 @@ namespace Model
      * following are the supported values for each volume type:</p> <ul> <li> <p>
      * <code>gp3</code>: 3,000 - 80,000 IOPS</p> </li> <li> <p> <code>io1</code>: 100 -
      * 64,000 IOPS</p> </li> <li> <p> <code>io2</code>: 100 - 256,000 IOPS</p> </li>
-     * </ul> <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
-     * href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances
-     * built on the Nitro System</a>. On other instances, you can achieve performance
-     * up to 32,000 IOPS.</p> <p>Default: The existing value is retained if you keep
-     * the same volume type. If you change the volume type to <code>io1</code>,
-     * <code>io2</code>, or <code>gp3</code>, the default is 3,000.</p>
+     * </ul>  <p> <a
+     * href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">
+     * Instances built on the Nitro System</a> can support up to 256,000 IOPS. Other
+     * instances can support up to 32,000 IOPS.</p>  <p>Default: The existing
+     * value is retained if you keep the same volume type. If you change the volume
+     * type to <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default is
+     * 3,000.</p>
      */
     inline int GetIops() const { return m_iops; }
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }

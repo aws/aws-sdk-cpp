@@ -22,6 +22,7 @@ namespace Aws
 
         static const int default__HASH = HashingUtils::HashString("default");
         static const int provisioned_rate_HASH = HashingUtils::HashString("provisioned-rate");
+        static const int volume_copy_HASH = HashingUtils::HashString("volume-copy");
 
 
         InitializationType GetInitializationTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == provisioned_rate_HASH)
           {
             return InitializationType::provisioned_rate;
+          }
+          else if (hashCode == volume_copy_HASH)
+          {
+            return InitializationType::volume_copy;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "default";
           case InitializationType::provisioned_rate:
             return "provisioned-rate";
+          case InitializationType::volume_copy:
+            return "volume-copy";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -36,6 +36,9 @@
 #include <aws/datazone/model/AggregationOutputItem.h>
 #include <aws/datazone/model/AllDomainUnitsGrantFilter.h>
 #include <aws/datazone/model/AllUsersGrantFilter.h>
+#include <aws/datazone/model/AmazonQPropertiesInput.h>
+#include <aws/datazone/model/AmazonQPropertiesOutput.h>
+#include <aws/datazone/model/AmazonQPropertiesPatch.h>
 #include <aws/datazone/model/AssetFilterConfiguration.h>
 #include <aws/datazone/model/AssetFilterSummary.h>
 #include <aws/datazone/model/AssetInDataProductListingItem.h>
@@ -83,6 +86,7 @@
 #include <aws/datazone/model/ConnectionPropertiesInput.h>
 #include <aws/datazone/model/ConnectionPropertiesOutput.h>
 #include <aws/datazone/model/ConnectionPropertiesPatch.h>
+#include <aws/datazone/model/ConnectionScope.h>
 #include <aws/datazone/model/ConnectionStatus.h>
 #include <aws/datazone/model/ConnectionSummary.h>
 #include <aws/datazone/model/ConnectionType.h>

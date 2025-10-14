@@ -65,24 +65,31 @@ namespace Model
      * <code>CreateConnector</code>. If not provided, you can use
      * <code>TestConnection</code> to retrieve the server host key during the initial
      * connection attempt, and subsequently update the connector with the observed host
-     * key.</p>  <p>The three standard SSH public key format elements are
-     * <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional
-     * <code>&lt;comment&gt;</code>, with spaces between each element. Specify only the
-     * <code>&lt;key type&gt;</code> and <code>&lt;body base64&gt;</code>: do not enter
-     * the <code>&lt;comment&gt;</code> portion of the key.</p> <p>For the trusted host
-     * key, Transfer Family accepts RSA and ECDSA keys.</p> <ul> <li> <p>For RSA keys,
-     * the <code>&lt;key type&gt;</code> string is <code>ssh-rsa</code>.</p> </li> <li>
-     * <p>For ECDSA keys, the <code>&lt;key type&gt;</code> string is either
-     * <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or
-     * <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you
-     * generated.</p> </li> </ul> <p>Run this command to retrieve the SFTP server host
-     * key, where your SFTP server name is <code>ftp.host.com</code>.</p> <p>
-     * <code>ssh-keyscan ftp.host.com</code> </p> <p>This prints the public host key to
-     * standard output.</p> <p> <code>ftp.host.com ssh-rsa
-     * AAAAB3Nza...&lt;long-string-for-public-key</code> </p> <p>Copy and paste this
-     * string into the <code>TrustedHostKeys</code> field for the
-     * <code>create-connector</code> command or into the <b>Trusted host keys</b> field
-     * in the console.</p>
+     * key.</p>  <p>When creating connectors with egress config (VPC_LATTICE
+     * type connectors), since host name is not something we can verify, the only
+     * accepted trusted host key format is <code>key-type key-body</code> without the
+     * host name. For example: <code>ssh-rsa
+     * AAAAB3Nza...&lt;long-string-for-public-key&gt;</code> </p> <p>The three standard
+     * SSH public key format elements are <code>&lt;key type&gt;</code>, <code>&lt;body
+     * base64&gt;</code>, and an optional <code>&lt;comment&gt;</code>, with spaces
+     * between each element. Specify only the <code>&lt;key type&gt;</code> and
+     * <code>&lt;body base64&gt;</code>: do not enter the <code>&lt;comment&gt;</code>
+     * portion of the key.</p> <p>For the trusted host key, Transfer Family accepts RSA
+     * and ECDSA keys.</p> <ul> <li> <p>For RSA keys, the <code>&lt;key type&gt;</code>
+     * string is <code>ssh-rsa</code>.</p> </li> <li> <p>For ECDSA keys, the
+     * <code>&lt;key type&gt;</code> string is either <code>ecdsa-sha2-nistp256</code>,
+     * <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending
+     * on the size of the key you generated.</p> </li> </ul> <p>Run this command to
+     * retrieve the SFTP server host key, where your SFTP server name is
+     * <code>ftp.host.com</code>.</p> <p> <code>ssh-keyscan ftp.host.com</code> </p>
+     * <p>This prints the public host key to standard output.</p> <p>
+     * <code>ftp.host.com ssh-rsa AAAAB3Nza...&lt;long-string-for-public-key&gt;</code>
+     * </p> <p>Copy and paste this string into the <code>TrustedHostKeys</code> field
+     * for the <code>create-connector</code> command or into the <b>Trusted host
+     * keys</b> field in the console.</p> <p>For VPC Lattice type connectors
+     * (VPC_LATTICE), remove the hostname from the key and use only the <code>key-type
+     * key-body</code> format. In this example, it should be: <code>ssh-rsa
+     * AAAAB3Nza...&lt;long-string-for-public-key&gt;</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetTrustedHostKeys() const { return m_trustedHostKeys; }
     inline bool TrustedHostKeysHasBeenSet() const { return m_trustedHostKeysHasBeenSet; }

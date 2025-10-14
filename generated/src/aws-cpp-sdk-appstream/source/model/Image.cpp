@@ -142,6 +142,11 @@ Image& Image::operator =(JsonView jsonValue)
     m_imageSharedWithOthers = ImageSharedWithOthersMapper::GetImageSharedWithOthersForName(jsonValue.GetString("ImageSharedWithOthers"));
     m_imageSharedWithOthersHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ManagedSoftwareIncluded"))
+  {
+    m_managedSoftwareIncluded = jsonValue.GetBool("ManagedSoftwareIncluded");
+    m_managedSoftwareIncludedHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -280,6 +285,12 @@ JsonValue Image::Jsonize() const
   if(m_imageSharedWithOthersHasBeenSet)
   {
    payload.WithString("ImageSharedWithOthers", ImageSharedWithOthersMapper::GetNameForImageSharedWithOthers(m_imageSharedWithOthers));
+  }
+
+  if(m_managedSoftwareIncludedHasBeenSet)
+  {
+   payload.WithBool("ManagedSoftwareIncluded", m_managedSoftwareIncluded);
+
   }
 
   return payload;

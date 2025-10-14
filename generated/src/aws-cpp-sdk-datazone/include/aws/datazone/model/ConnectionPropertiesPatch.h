@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/AmazonQPropertiesPatch.h>
 #include <aws/datazone/model/AthenaPropertiesPatch.h>
 #include <aws/datazone/model/GluePropertiesPatch.h>
 #include <aws/datazone/model/IamPropertiesPatch.h>
@@ -41,6 +42,18 @@ namespace Model
     AWS_DATAZONE_API ConnectionPropertiesPatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>The Amazon Q properties of the connection.</p>
+     */
+    inline const AmazonQPropertiesPatch& GetAmazonQProperties() const { return m_amazonQProperties; }
+    inline bool AmazonQPropertiesHasBeenSet() const { return m_amazonQPropertiesHasBeenSet; }
+    template<typename AmazonQPropertiesT = AmazonQPropertiesPatch>
+    void SetAmazonQProperties(AmazonQPropertiesT&& value) { m_amazonQPropertiesHasBeenSet = true; m_amazonQProperties = std::forward<AmazonQPropertiesT>(value); }
+    template<typename AmazonQPropertiesT = AmazonQPropertiesPatch>
+    ConnectionPropertiesPatch& WithAmazonQProperties(AmazonQPropertiesT&& value) { SetAmazonQProperties(std::forward<AmazonQPropertiesT>(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -114,6 +127,9 @@ namespace Model
     ConnectionPropertiesPatch& WithSparkEmrProperties(SparkEmrPropertiesT&& value) { SetSparkEmrProperties(std::forward<SparkEmrPropertiesT>(value)); return *this;}
     ///@}
   private:
+
+    AmazonQPropertiesPatch m_amazonQProperties;
+    bool m_amazonQPropertiesHasBeenSet = false;
 
     AthenaPropertiesPatch m_athenaProperties;
     bool m_athenaPropertiesHasBeenSet = false;

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/model/ConnectionPropertiesOutput.h>
+#include <aws/datazone/model/ConnectionScope.h>
 #include <aws/datazone/model/ConnectionType.h>
 #include <aws/datazone/model/PhysicalEndpoint.h>
 #include <utility>
@@ -139,6 +140,15 @@ namespace Model
 
     ///@{
     /**
+     * <p>The scope of the connection.</p>
+     */
+    inline ConnectionScope GetScope() const { return m_scope; }
+    inline void SetScope(ConnectionScope value) { m_scopeHasBeenSet = true; m_scope = value; }
+    inline CreateConnectionResult& WithScope(ConnectionScope value) { SetScope(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The connection type.</p>
      */
     inline ConnectionType GetType() const { return m_type; }
@@ -182,6 +192,9 @@ namespace Model
 
     ConnectionPropertiesOutput m_props;
     bool m_propsHasBeenSet = false;
+
+    ConnectionScope m_scope{ConnectionScope::NOT_SET};
+    bool m_scopeHasBeenSet = false;
 
     ConnectionType m_type{ConnectionType::NOT_SET};
     bool m_typeHasBeenSet = false;

@@ -25,8 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>The timestamp condition indicating which timestamp should be used and how it
-   * should be filtered.</p><p><h3>See Also:</h3>   <a
+   * <p>The timestamp condition indicating which contact timestamp should be used and
+   * how it should be filtered. It is not an actual timestamp value. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactsTimestampCondition">AWS
    * API Reference</a></p>
    */

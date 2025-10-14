@@ -196,6 +196,32 @@ namespace AppStream
         }
 
         /**
+         * <p>Associates license included application(s) with an existing image builder
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateSoftwareToImageBuilder">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateSoftwareToImageBuilderOutcome AssociateSoftwareToImageBuilder(const Model::AssociateSoftwareToImageBuilderRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateSoftwareToImageBuilder that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateSoftwareToImageBuilderRequestT = Model::AssociateSoftwareToImageBuilderRequest>
+        Model::AssociateSoftwareToImageBuilderOutcomeCallable AssociateSoftwareToImageBuilderCallable(const AssociateSoftwareToImageBuilderRequestT& request) const
+        {
+            return SubmitCallable(&AppStreamClient::AssociateSoftwareToImageBuilder, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateSoftwareToImageBuilder that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateSoftwareToImageBuilderRequestT = Model::AssociateSoftwareToImageBuilderRequest>
+        void AssociateSoftwareToImageBuilderAsync(const AssociateSoftwareToImageBuilderRequestT& request, const AssociateSoftwareToImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppStreamClient::AssociateSoftwareToImageBuilder, request, handler, context);
+        }
+
+        /**
          * <p>Associates the specified users with the specified stacks. Users in a user
          * pool cannot be assigned to stacks with fleets that are joined to an Active
          * Directory domain.</p><p><h3>See Also:</h3>   <a
@@ -1103,6 +1129,32 @@ namespace AppStream
         }
 
         /**
+         * <p>Retrieves license included application usage information.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppLicenseUsage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAppLicenseUsageOutcome DescribeAppLicenseUsage(const Model::DescribeAppLicenseUsageRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAppLicenseUsage that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeAppLicenseUsageRequestT = Model::DescribeAppLicenseUsageRequest>
+        Model::DescribeAppLicenseUsageOutcomeCallable DescribeAppLicenseUsageCallable(const DescribeAppLicenseUsageRequestT& request) const
+        {
+            return SubmitCallable(&AppStreamClient::DescribeAppLicenseUsage, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeAppLicenseUsage that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeAppLicenseUsageRequestT = Model::DescribeAppLicenseUsageRequest>
+        void DescribeAppLicenseUsageAsync(const DescribeAppLicenseUsageRequestT& request, const DescribeAppLicenseUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppStreamClient::DescribeAppLicenseUsage, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves a list that describes one or more application fleet associations.
          * Either ApplicationArn or FleetName must be specified.</p><p><h3>See Also:</h3>  
          * <a
@@ -1346,6 +1398,32 @@ namespace AppStream
         void DescribeSessionsAsync(const DescribeSessionsRequestT& request, const DescribeSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AppStreamClient::DescribeSessions, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves license included application associations for a specified
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSoftwareAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeSoftwareAssociationsOutcome DescribeSoftwareAssociations(const Model::DescribeSoftwareAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeSoftwareAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeSoftwareAssociationsRequestT = Model::DescribeSoftwareAssociationsRequest>
+        Model::DescribeSoftwareAssociationsOutcomeCallable DescribeSoftwareAssociationsCallable(const DescribeSoftwareAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&AppStreamClient::DescribeSoftwareAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeSoftwareAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeSoftwareAssociationsRequestT = Model::DescribeSoftwareAssociationsRequest>
+        void DescribeSoftwareAssociationsAsync(const DescribeSoftwareAssociationsRequestT& request, const DescribeSoftwareAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppStreamClient::DescribeSoftwareAssociations, request, handler, context);
         }
 
         /**
@@ -1615,6 +1693,32 @@ namespace AppStream
         }
 
         /**
+         * <p>Removes license included application(s) association(s) from an image builder
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateSoftwareFromImageBuilder">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateSoftwareFromImageBuilderOutcome DisassociateSoftwareFromImageBuilder(const Model::DisassociateSoftwareFromImageBuilderRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateSoftwareFromImageBuilder that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateSoftwareFromImageBuilderRequestT = Model::DisassociateSoftwareFromImageBuilderRequest>
+        Model::DisassociateSoftwareFromImageBuilderOutcomeCallable DisassociateSoftwareFromImageBuilderCallable(const DisassociateSoftwareFromImageBuilderRequestT& request) const
+        {
+            return SubmitCallable(&AppStreamClient::DisassociateSoftwareFromImageBuilder, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateSoftwareFromImageBuilder that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateSoftwareFromImageBuilderRequestT = Model::DisassociateSoftwareFromImageBuilderRequest>
+        void DisassociateSoftwareFromImageBuilderAsync(const DisassociateSoftwareFromImageBuilderRequestT& request, const DisassociateSoftwareFromImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppStreamClient::DisassociateSoftwareFromImageBuilder, request, handler, context);
+        }
+
+        /**
          * <p>Enables a user in the user pool. After being enabled, users can sign in to
          * AppStream 2.0 and open applications from the stacks to which they are
          * assigned.</p><p><h3>See Also:</h3>   <a
@@ -1850,6 +1954,32 @@ namespace AppStream
         void StartImageBuilderAsync(const StartImageBuilderRequestT& request, const StartImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AppStreamClient::StartImageBuilder, request, handler, context);
+        }
+
+        /**
+         * <p>Initiates license included applications deployment to an image builder
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartSoftwareDeploymentToImageBuilder">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartSoftwareDeploymentToImageBuilderOutcome StartSoftwareDeploymentToImageBuilder(const Model::StartSoftwareDeploymentToImageBuilderRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartSoftwareDeploymentToImageBuilder that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartSoftwareDeploymentToImageBuilderRequestT = Model::StartSoftwareDeploymentToImageBuilderRequest>
+        Model::StartSoftwareDeploymentToImageBuilderOutcomeCallable StartSoftwareDeploymentToImageBuilderCallable(const StartSoftwareDeploymentToImageBuilderRequestT& request) const
+        {
+            return SubmitCallable(&AppStreamClient::StartSoftwareDeploymentToImageBuilder, request);
+        }
+
+        /**
+         * An Async wrapper for StartSoftwareDeploymentToImageBuilder that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartSoftwareDeploymentToImageBuilderRequestT = Model::StartSoftwareDeploymentToImageBuilderRequest>
+        void StartSoftwareDeploymentToImageBuilderAsync(const StartSoftwareDeploymentToImageBuilderRequestT& request, const StartSoftwareDeploymentToImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppStreamClient::StartSoftwareDeploymentToImageBuilder, request, handler, context);
         }
 
         /**

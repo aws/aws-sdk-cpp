@@ -26,7 +26,9 @@ namespace Model
     DELETING,
     FAILED,
     UPDATING,
-    PENDING_QUALIFICATION
+    PENDING_QUALIFICATION,
+    PENDING_SYNCING_APPS,
+    SYNCING_APPS
   };
 
 namespace ImageBuilderStateMapper

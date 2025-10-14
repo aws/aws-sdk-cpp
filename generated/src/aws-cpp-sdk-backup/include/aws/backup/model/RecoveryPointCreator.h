@@ -66,6 +66,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the backup plan that created this recovery point. This provides
+     * human-readable context about which backup plan was responsible for the backup
+     * job.</p>
+     */
+    inline const Aws::String& GetBackupPlanName() const { return m_backupPlanName; }
+    inline bool BackupPlanNameHasBeenSet() const { return m_backupPlanNameHasBeenSet; }
+    template<typename BackupPlanNameT = Aws::String>
+    void SetBackupPlanName(BackupPlanNameT&& value) { m_backupPlanNameHasBeenSet = true; m_backupPlanName = std::forward<BackupPlanNameT>(value); }
+    template<typename BackupPlanNameT = Aws::String>
+    RecoveryPointCreator& WithBackupPlanName(BackupPlanNameT&& value) { SetBackupPlanName(std::forward<BackupPlanNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Version IDs are unique, randomly generated, Unicode, UTF-8 encoded strings
      * that are at most 1,024 bytes long. They cannot be edited.</p>
      */
@@ -89,6 +103,45 @@ namespace Model
     template<typename BackupRuleIdT = Aws::String>
     RecoveryPointCreator& WithBackupRuleId(BackupRuleIdT&& value) { SetBackupRuleId(std::forward<BackupRuleIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The name of the backup rule within the backup plan that created this recovery
+     * point. This helps identify which specific rule triggered the backup job.</p>
+     */
+    inline const Aws::String& GetBackupRuleName() const { return m_backupRuleName; }
+    inline bool BackupRuleNameHasBeenSet() const { return m_backupRuleNameHasBeenSet; }
+    template<typename BackupRuleNameT = Aws::String>
+    void SetBackupRuleName(BackupRuleNameT&& value) { m_backupRuleNameHasBeenSet = true; m_backupRuleName = std::forward<BackupRuleNameT>(value); }
+    template<typename BackupRuleNameT = Aws::String>
+    RecoveryPointCreator& WithBackupRuleName(BackupRuleNameT&& value) { SetBackupRuleName(std::forward<BackupRuleNameT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The cron expression that defines the schedule for the backup rule. This shows
+     * the frequency and timing of when backups are automatically triggered.</p>
+     */
+    inline const Aws::String& GetBackupRuleCron() const { return m_backupRuleCron; }
+    inline bool BackupRuleCronHasBeenSet() const { return m_backupRuleCronHasBeenSet; }
+    template<typename BackupRuleCronT = Aws::String>
+    void SetBackupRuleCron(BackupRuleCronT&& value) { m_backupRuleCronHasBeenSet = true; m_backupRuleCron = std::forward<BackupRuleCronT>(value); }
+    template<typename BackupRuleCronT = Aws::String>
+    RecoveryPointCreator& WithBackupRuleCron(BackupRuleCronT&& value) { SetBackupRuleCron(std::forward<BackupRuleCronT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The timezone used for the backup rule schedule. This provides context for
+     * when backups are scheduled to run in the specified timezone.</p>
+     */
+    inline const Aws::String& GetBackupRuleTimezone() const { return m_backupRuleTimezone; }
+    inline bool BackupRuleTimezoneHasBeenSet() const { return m_backupRuleTimezoneHasBeenSet; }
+    template<typename BackupRuleTimezoneT = Aws::String>
+    void SetBackupRuleTimezone(BackupRuleTimezoneT&& value) { m_backupRuleTimezoneHasBeenSet = true; m_backupRuleTimezone = std::forward<BackupRuleTimezoneT>(value); }
+    template<typename BackupRuleTimezoneT = Aws::String>
+    RecoveryPointCreator& WithBackupRuleTimezone(BackupRuleTimezoneT&& value) { SetBackupRuleTimezone(std::forward<BackupRuleTimezoneT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_backupPlanId;
@@ -97,11 +150,23 @@ namespace Model
     Aws::String m_backupPlanArn;
     bool m_backupPlanArnHasBeenSet = false;
 
+    Aws::String m_backupPlanName;
+    bool m_backupPlanNameHasBeenSet = false;
+
     Aws::String m_backupPlanVersion;
     bool m_backupPlanVersionHasBeenSet = false;
 
     Aws::String m_backupRuleId;
     bool m_backupRuleIdHasBeenSet = false;
+
+    Aws::String m_backupRuleName;
+    bool m_backupRuleNameHasBeenSet = false;
+
+    Aws::String m_backupRuleCron;
+    bool m_backupRuleCronHasBeenSet = false;
+
+    Aws::String m_backupRuleTimezone;
+    bool m_backupRuleTimezoneHasBeenSet = false;
   };
 
 } // namespace Model

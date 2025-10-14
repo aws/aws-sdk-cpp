@@ -24,6 +24,7 @@
 #include <aws/connect/model/DisconnectDetails.h>
 #include <aws/connect/model/AdditionalEmailRecipients.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/connect/model/TaskTemplateInfoV2.h>
 #include <aws/connect/model/ContactDetails.h>
 #include <aws/connect/model/SegmentAttributeValue.h>
 #include <aws/connect/model/RecordingInfo.h>
@@ -591,6 +592,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>If this contact was created using a task template, this contains information
+     * about the task template.</p>
+     */
+    inline const TaskTemplateInfoV2& GetTaskTemplateInfo() const { return m_taskTemplateInfo; }
+    inline bool TaskTemplateInfoHasBeenSet() const { return m_taskTemplateInfoHasBeenSet; }
+    template<typename TaskTemplateInfoT = TaskTemplateInfoV2>
+    void SetTaskTemplateInfo(TaskTemplateInfoT&& value) { m_taskTemplateInfoHasBeenSet = true; m_taskTemplateInfo = std::forward<TaskTemplateInfoT>(value); }
+    template<typename TaskTemplateInfoT = TaskTemplateInfoV2>
+    Contact& WithTaskTemplateInfo(TaskTemplateInfoT&& value) { SetTaskTemplateInfo(std::forward<TaskTemplateInfoT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A map of string key/value pairs that contain user-defined attributes which
      * are lightly typed within the contact. This object is used only for task
      * contacts.</p>
@@ -742,6 +756,9 @@ namespace Model
 
     Aws::Map<Aws::String, ContactEvaluation> m_contactEvaluations;
     bool m_contactEvaluationsHasBeenSet = false;
+
+    TaskTemplateInfoV2 m_taskTemplateInfo;
+    bool m_taskTemplateInfoHasBeenSet = false;
 
     ContactDetails m_contactDetails;
     bool m_contactDetailsHasBeenSet = false;

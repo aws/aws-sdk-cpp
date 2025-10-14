@@ -35,6 +35,11 @@ RecoveryPointCreator& RecoveryPointCreator::operator =(JsonView jsonValue)
     m_backupPlanArn = jsonValue.GetString("BackupPlanArn");
     m_backupPlanArnHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("BackupPlanName"))
+  {
+    m_backupPlanName = jsonValue.GetString("BackupPlanName");
+    m_backupPlanNameHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("BackupPlanVersion"))
   {
     m_backupPlanVersion = jsonValue.GetString("BackupPlanVersion");
@@ -44,6 +49,21 @@ RecoveryPointCreator& RecoveryPointCreator::operator =(JsonView jsonValue)
   {
     m_backupRuleId = jsonValue.GetString("BackupRuleId");
     m_backupRuleIdHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("BackupRuleName"))
+  {
+    m_backupRuleName = jsonValue.GetString("BackupRuleName");
+    m_backupRuleNameHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("BackupRuleCron"))
+  {
+    m_backupRuleCron = jsonValue.GetString("BackupRuleCron");
+    m_backupRuleCronHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("BackupRuleTimezone"))
+  {
+    m_backupRuleTimezone = jsonValue.GetString("BackupRuleTimezone");
+    m_backupRuleTimezoneHasBeenSet = true;
   }
   return *this;
 }
@@ -64,6 +84,12 @@ JsonValue RecoveryPointCreator::Jsonize() const
 
   }
 
+  if(m_backupPlanNameHasBeenSet)
+  {
+   payload.WithString("BackupPlanName", m_backupPlanName);
+
+  }
+
   if(m_backupPlanVersionHasBeenSet)
   {
    payload.WithString("BackupPlanVersion", m_backupPlanVersion);
@@ -73,6 +99,24 @@ JsonValue RecoveryPointCreator::Jsonize() const
   if(m_backupRuleIdHasBeenSet)
   {
    payload.WithString("BackupRuleId", m_backupRuleId);
+
+  }
+
+  if(m_backupRuleNameHasBeenSet)
+  {
+   payload.WithString("BackupRuleName", m_backupRuleName);
+
+  }
+
+  if(m_backupRuleCronHasBeenSet)
+  {
+   payload.WithString("BackupRuleCron", m_backupRuleCron);
+
+  }
+
+  if(m_backupRuleTimezoneHasBeenSet)
+  {
+   payload.WithString("BackupRuleTimezone", m_backupRuleTimezone);
 
   }
 

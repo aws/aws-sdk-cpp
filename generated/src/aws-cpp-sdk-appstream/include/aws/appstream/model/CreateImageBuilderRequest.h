@@ -258,6 +258,84 @@ namespace Model
     template<typename AccessEndpointsT = AccessEndpoint>
     CreateImageBuilderRequest& AddAccessEndpoints(AccessEndpointsT&& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints.emplace_back(std::forward<AccessEndpointsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The list of license included applications to install on the image builder
+     * during creation.</p> <p>Possible values include the following:</p> <ul> <li>
+     * <p>Microsoft_Office_2021_LTSC_Professional_Plus_32Bit</p> </li> <li>
+     * <p>Microsoft_Office_2021_LTSC_Professional_Plus_64Bit</p> </li> <li>
+     * <p>Microsoft_Office_2024_LTSC_Professional_Plus_32Bit</p> </li> <li>
+     * <p>Microsoft_Office_2024_LTSC_Professional_Plus_64Bit</p> </li> <li>
+     * <p>Microsoft_Visio_2021_LTSC_Professional_32Bit</p> </li> <li>
+     * <p>Microsoft_Visio_2021_LTSC_Professional_64Bit</p> </li> <li>
+     * <p>Microsoft_Visio_2024_LTSC_Professional_32Bit</p> </li> <li>
+     * <p>Microsoft_Visio_2024_LTSC_Professional_64Bit</p> </li> <li>
+     * <p>Microsoft_Project_2021_Professional_32Bit</p> </li> <li>
+     * <p>Microsoft_Project_2021_Professional_64Bit</p> </li> <li>
+     * <p>Microsoft_Project_2024_Professional_32Bit</p> </li> <li>
+     * <p>Microsoft_Project_2024_Professional_64Bit</p> </li> <li>
+     * <p>Microsoft_Office_2021_LTSC_Standard_32Bit</p> </li> <li>
+     * <p>Microsoft_Office_2021_LTSC_Standard_64Bit</p> </li> <li>
+     * <p>Microsoft_Office_2024_LTSC_Standard_32Bit</p> </li> <li>
+     * <p>Microsoft_Office_2024_LTSC_Standard_64Bit</p> </li> <li>
+     * <p>Microsoft_Visio_2021_LTSC_Standard_32Bit</p> </li> <li>
+     * <p>Microsoft_Visio_2021_LTSC_Standard_64Bit</p> </li> <li>
+     * <p>Microsoft_Visio_2024_LTSC_Standard_32Bit</p> </li> <li>
+     * <p>Microsoft_Visio_2024_LTSC_Standard_64Bit</p> </li> <li>
+     * <p>Microsoft_Project_2021_Standard_32Bit</p> </li> <li>
+     * <p>Microsoft_Project_2021_Standard_64Bit</p> </li> <li>
+     * <p>Microsoft_Project_2024_Standard_32Bit</p> </li> <li>
+     * <p>Microsoft_Project_2024_Standard_64Bit</p> </li> </ul>
+     */
+    inline const Aws::Vector<Aws::String>& GetSoftwaresToInstall() const { return m_softwaresToInstall; }
+    inline bool SoftwaresToInstallHasBeenSet() const { return m_softwaresToInstallHasBeenSet; }
+    template<typename SoftwaresToInstallT = Aws::Vector<Aws::String>>
+    void SetSoftwaresToInstall(SoftwaresToInstallT&& value) { m_softwaresToInstallHasBeenSet = true; m_softwaresToInstall = std::forward<SoftwaresToInstallT>(value); }
+    template<typename SoftwaresToInstallT = Aws::Vector<Aws::String>>
+    CreateImageBuilderRequest& WithSoftwaresToInstall(SoftwaresToInstallT&& value) { SetSoftwaresToInstall(std::forward<SoftwaresToInstallT>(value)); return *this;}
+    template<typename SoftwaresToInstallT = Aws::String>
+    CreateImageBuilderRequest& AddSoftwaresToInstall(SoftwaresToInstallT&& value) { m_softwaresToInstallHasBeenSet = true; m_softwaresToInstall.emplace_back(std::forward<SoftwaresToInstallT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The list of license included applications to uninstall from the image builder
+     * during creation.</p> <p>Possible values include the following:</p> <ul> <li>
+     * <p>Microsoft_Office_2021_LTSC_Professional_Plus_32Bit</p> </li> <li>
+     * <p>Microsoft_Office_2021_LTSC_Professional_Plus_64Bit</p> </li> <li>
+     * <p>Microsoft_Office_2024_LTSC_Professional_Plus_32Bit</p> </li> <li>
+     * <p>Microsoft_Office_2024_LTSC_Professional_Plus_64Bit</p> </li> <li>
+     * <p>Microsoft_Visio_2021_LTSC_Professional_32Bit</p> </li> <li>
+     * <p>Microsoft_Visio_2021_LTSC_Professional_64Bit</p> </li> <li>
+     * <p>Microsoft_Visio_2024_LTSC_Professional_32Bit</p> </li> <li>
+     * <p>Microsoft_Visio_2024_LTSC_Professional_64Bit</p> </li> <li>
+     * <p>Microsoft_Project_2021_Professional_32Bit</p> </li> <li>
+     * <p>Microsoft_Project_2021_Professional_64Bit</p> </li> <li>
+     * <p>Microsoft_Project_2024_Professional_32Bit</p> </li> <li>
+     * <p>Microsoft_Project_2024_Professional_64Bit</p> </li> <li>
+     * <p>Microsoft_Office_2021_LTSC_Standard_32Bit</p> </li> <li>
+     * <p>Microsoft_Office_2021_LTSC_Standard_64Bit</p> </li> <li>
+     * <p>Microsoft_Office_2024_LTSC_Standard_32Bit</p> </li> <li>
+     * <p>Microsoft_Office_2024_LTSC_Standard_64Bit</p> </li> <li>
+     * <p>Microsoft_Visio_2021_LTSC_Standard_32Bit</p> </li> <li>
+     * <p>Microsoft_Visio_2021_LTSC_Standard_64Bit</p> </li> <li>
+     * <p>Microsoft_Visio_2024_LTSC_Standard_32Bit</p> </li> <li>
+     * <p>Microsoft_Visio_2024_LTSC_Standard_64Bit</p> </li> <li>
+     * <p>Microsoft_Project_2021_Standard_32Bit</p> </li> <li>
+     * <p>Microsoft_Project_2021_Standard_64Bit</p> </li> <li>
+     * <p>Microsoft_Project_2024_Standard_32Bit</p> </li> <li>
+     * <p>Microsoft_Project_2024_Standard_64Bit</p> </li> </ul>
+     */
+    inline const Aws::Vector<Aws::String>& GetSoftwaresToUninstall() const { return m_softwaresToUninstall; }
+    inline bool SoftwaresToUninstallHasBeenSet() const { return m_softwaresToUninstallHasBeenSet; }
+    template<typename SoftwaresToUninstallT = Aws::Vector<Aws::String>>
+    void SetSoftwaresToUninstall(SoftwaresToUninstallT&& value) { m_softwaresToUninstallHasBeenSet = true; m_softwaresToUninstall = std::forward<SoftwaresToUninstallT>(value); }
+    template<typename SoftwaresToUninstallT = Aws::Vector<Aws::String>>
+    CreateImageBuilderRequest& WithSoftwaresToUninstall(SoftwaresToUninstallT&& value) { SetSoftwaresToUninstall(std::forward<SoftwaresToUninstallT>(value)); return *this;}
+    template<typename SoftwaresToUninstallT = Aws::String>
+    CreateImageBuilderRequest& AddSoftwaresToUninstall(SoftwaresToUninstallT&& value) { m_softwaresToUninstallHasBeenSet = true; m_softwaresToUninstall.emplace_back(std::forward<SoftwaresToUninstallT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_name;
@@ -298,6 +376,12 @@ namespace Model
 
     Aws::Vector<AccessEndpoint> m_accessEndpoints;
     bool m_accessEndpointsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_softwaresToInstall;
+    bool m_softwaresToInstallHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_softwaresToUninstall;
+    bool m_softwaresToUninstallHasBeenSet = false;
   };
 
 } // namespace Model

@@ -320,6 +320,8 @@
 #include <aws/ec2/model/CopySnapshotRequest.h>
 #include <aws/ec2/model/CopySnapshotResponse.h>
 #include <aws/ec2/model/CopyTagsFromSource.h>
+#include <aws/ec2/model/CopyVolumesRequest.h>
+#include <aws/ec2/model/CopyVolumesResponse.h>
 #include <aws/ec2/model/CpuManufacturer.h>
 #include <aws/ec2/model/CpuOptions.h>
 #include <aws/ec2/model/CpuOptionsRequest.h>

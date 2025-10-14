@@ -30,6 +30,11 @@ PhysicalEndpoint& PhysicalEndpoint::operator =(JsonView jsonValue)
     m_awsLocation = jsonValue.GetObject("awsLocation");
     m_awsLocationHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("enableTrustedIdentityPropagation"))
+  {
+    m_enableTrustedIdentityPropagation = jsonValue.GetBool("enableTrustedIdentityPropagation");
+    m_enableTrustedIdentityPropagationHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("glueConnection"))
   {
     m_glueConnection = jsonValue.GetObject("glueConnection");
@@ -70,6 +75,12 @@ JsonValue PhysicalEndpoint::Jsonize() const
   if(m_awsLocationHasBeenSet)
   {
    payload.WithObject("awsLocation", m_awsLocation.Jsonize());
+
+  }
+
+  if(m_enableTrustedIdentityPropagationHasBeenSet)
+  {
+   payload.WithBool("enableTrustedIdentityPropagation", m_enableTrustedIdentityPropagation);
 
   }
 

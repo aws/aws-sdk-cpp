@@ -9,6 +9,9 @@
 #include <aws/awstransfer/model/As2ConnectorConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/awstransfer/model/SftpConnectorConfig.h>
+#include <aws/awstransfer/model/DescribedConnectorEgressConfig.h>
+#include <aws/awstransfer/model/ConnectorEgressType.h>
+#include <aws/awstransfer/model/ConnectorStatus.h>
 #include <aws/awstransfer/model/Tag.h>
 #include <utility>
 
@@ -68,7 +71,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+     * <p>The URL of the partner's AS2 or SFTP endpoint.</p> <p>When creating AS2
+     * connectors or service-managed SFTP connectors (connectors without egress
+     * configuration), you must provide a URL to specify the remote server endpoint.
+     * For VPC Lattice type connectors, the URL must be null.</p>
      */
     inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
@@ -191,6 +197,59 @@ namespace Model
     template<typename SecurityPolicyNameT = Aws::String>
     DescribedConnector& WithSecurityPolicyName(SecurityPolicyNameT&& value) { SetSecurityPolicyName(std::forward<SecurityPolicyNameT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Current egress configuration of the connector, showing how traffic is routed
+     * to the SFTP server. Contains VPC Lattice settings when using VPC_LATTICE egress
+     * type.</p> <p>When using the VPC_LATTICE egress type, Transfer Family uses a
+     * managed Service Network to simplify the resource sharing process.</p>
+     */
+    inline const DescribedConnectorEgressConfig& GetEgressConfig() const { return m_egressConfig; }
+    inline bool EgressConfigHasBeenSet() const { return m_egressConfigHasBeenSet; }
+    template<typename EgressConfigT = DescribedConnectorEgressConfig>
+    void SetEgressConfig(EgressConfigT&& value) { m_egressConfigHasBeenSet = true; m_egressConfig = std::forward<EgressConfigT>(value); }
+    template<typename EgressConfigT = DescribedConnectorEgressConfig>
+    DescribedConnector& WithEgressConfig(EgressConfigT&& value) { SetEgressConfig(std::forward<EgressConfigT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Type of egress configuration for the connector. SERVICE_MANAGED uses Transfer
+     * Family managed NAT gateways, while VPC_LATTICE routes traffic through customer
+     * VPCs using VPC Lattice.</p>
+     */
+    inline ConnectorEgressType GetEgressType() const { return m_egressType; }
+    inline bool EgressTypeHasBeenSet() const { return m_egressTypeHasBeenSet; }
+    inline void SetEgressType(ConnectorEgressType value) { m_egressTypeHasBeenSet = true; m_egressType = value; }
+    inline DescribedConnector& WithEgressType(ConnectorEgressType value) { SetEgressType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Error message providing details when the connector is in ERRORED status.
+     * Contains information to help troubleshoot connector creation or operation
+     * failures.</p>
+     */
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    DescribedConnector& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Current status of the connector. PENDING indicates creation/update in
+     * progress, ACTIVE means ready for operations, and ERRORED indicates a failure
+     * requiring attention.</p>
+     */
+    inline ConnectorStatus GetStatus() const { return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(ConnectorStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribedConnector& WithStatus(ConnectorStatus value) { SetStatus(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -222,6 +281,18 @@ namespace Model
 
     Aws::String m_securityPolicyName;
     bool m_securityPolicyNameHasBeenSet = false;
+
+    DescribedConnectorEgressConfig m_egressConfig;
+    bool m_egressConfigHasBeenSet = false;
+
+    ConnectorEgressType m_egressType{ConnectorEgressType::NOT_SET};
+    bool m_egressTypeHasBeenSet = false;
+
+    Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet = false;
+
+    ConnectorStatus m_status{ConnectorStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model
