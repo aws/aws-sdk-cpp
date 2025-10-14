@@ -39,6 +39,16 @@ namespace Aws
              */
             void SetFileName(const Aws::String& fileName) { m_fileName = fileName; }
 
+            /**
+             * Get service-specific endpoint URL for a given profile and service.
+             */
+            const Aws::String* GetServiceEndpointUrl(const Aws::String& profileName, const Aws::String& serviceId) const;
+
+            /**
+             * Get global endpoint URL for a given profile.
+             */
+            const Aws::String* GetGlobalEndpointUrl(const Aws::String& profileName) const;
+
         protected:
             virtual bool LoadInternal() override;
             virtual bool PersistInternal(const Aws::Map<Aws::String, Aws::Config::Profile>&) override;
