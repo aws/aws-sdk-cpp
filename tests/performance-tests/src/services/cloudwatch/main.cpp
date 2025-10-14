@@ -22,7 +22,7 @@
 int main(int argc, char** argv) {
   cxxopts::Options options("cloudwatch-perf-test", "CloudWatch Performance Test");
   options.add_options()("r,region", "AWS region", cxxopts::value<std::string>()->default_value("us-east-1"))(
-      "i,iterations", "Number of iterations", cxxopts::value<int>()->default_value("1"))(
+      "i,iterations", "Number of iterations", cxxopts::value<int>()->default_value("500"))(
       "c,commit-id", "Commit ID", cxxopts::value<std::string>()->default_value("unknown"))(
       "b,build-mode", "Build mode", cxxopts::value<std::string>()->default_value("unknown"));
 

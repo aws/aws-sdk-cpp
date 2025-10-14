@@ -113,6 +113,10 @@ void SecretsManagerPerformanceTest::RunPutSecretValueTests() {
     stringRequest.SetSecretString(GenerateRandomString(secretSize));
     stringRequest.SetAdditionalCustomHeaderValue("test-dimension-size", std::to_string(secretSize));
     stringRequest.SetAdditionalCustomHeaderValue("test-case-type", "Put string secret");
+    auto headers = stringRequest.GetHeaders();
+    if (headers.find(Aws::Http::SMITHY_PROTOCOL_HEADER) != headers.end()) {
+      stringRequest.SetAdditionalCustomHeaderValue("test-protocol-protocol", "CBOR");
+    }
     auto resp = m_secretsManager->PutSecretValue(stringRequest);
     if (!resp.IsSuccess()) {
       std::cout << "PutStringSecret failed: " << resp.GetError() << std::endl;
@@ -131,6 +135,10 @@ void SecretsManagerPerformanceTest::RunPutBinarySecretValueTests() {
     binaryRequest.SetSecretBinary(GenerateRandomBinary(secretSize));
     binaryRequest.SetAdditionalCustomHeaderValue("test-dimension-size", std::to_string(secretSize));
     binaryRequest.SetAdditionalCustomHeaderValue("test-case-type", "Put binary secret");
+    auto headers = binaryRequest.GetHeaders();
+    if (headers.find(Aws::Http::SMITHY_PROTOCOL_HEADER) != headers.end()) {
+      binaryRequest.SetAdditionalCustomHeaderValue("test-protocol-protocol", "CBOR");
+    }
     auto resp = m_secretsManager->PutSecretValue(binaryRequest);
     if (!resp.IsSuccess()) {
       std::cout << "PutBinarySecret failed: " << resp.GetError() << std::endl;
@@ -148,6 +156,10 @@ void SecretsManagerPerformanceTest::RunGetSecretValueTests() {
     stringRequest.SetSecretId("TestSecret_" + std::to_string(m_runStartTimestamp) + "_" + std::to_string(i));
     stringRequest.SetAdditionalCustomHeaderValue("test-dimension-size", std::to_string(secretSize));
     stringRequest.SetAdditionalCustomHeaderValue("test-case-type", "Get string secret");
+    auto headers = stringRequest.GetHeaders();
+    if (headers.find(Aws::Http::SMITHY_PROTOCOL_HEADER) != headers.end()) {
+      stringRequest.SetAdditionalCustomHeaderValue("test-protocol-protocol", "CBOR");
+    }
     auto resp = m_secretsManager->GetSecretValue(stringRequest);
     if (!resp.IsSuccess()) {
       std::cout << "GetStringSecret failed: " << resp.GetError() << std::endl;
@@ -165,6 +177,10 @@ void SecretsManagerPerformanceTest::RunGetBinarySecretValueTests() {
     binaryRequest.SetSecretId("TestBinarySecret_" + std::to_string(m_runStartTimestamp) + "_" + std::to_string(i));
     binaryRequest.SetAdditionalCustomHeaderValue("test-dimension-size", std::to_string(secretSize));
     binaryRequest.SetAdditionalCustomHeaderValue("test-case-type", "Get binary secret");
+    auto headers = binaryRequest.GetHeaders();
+    if (headers.find(Aws::Http::SMITHY_PROTOCOL_HEADER) != headers.end()) {
+      binaryRequest.SetAdditionalCustomHeaderValue("test-protocol-protocol", "CBOR");
+    }
     auto resp = m_secretsManager->GetSecretValue(binaryRequest);
     if (!resp.IsSuccess()) {
       std::cout << "GetBinarySecret failed: " << resp.GetError() << std::endl;
@@ -179,6 +195,10 @@ void SecretsManagerPerformanceTest::RunDescribeSecretTests() {
     request.SetSecretId("TestSecret_" + std::to_string(m_runStartTimestamp) + "_" + std::to_string(i));
     request.SetAdditionalCustomHeaderValue("test-dimension-size", TestConfig::GetSecretSizeLabel(m_testConfig.secretSize));
     request.SetAdditionalCustomHeaderValue("test-case-type", "Describe secret");
+    auto headers = request.GetHeaders();
+    if (headers.find(Aws::Http::SMITHY_PROTOCOL_HEADER) != headers.end()) {
+      request.SetAdditionalCustomHeaderValue("test-protocol-protocol", "CBOR");
+    }
     auto resp = m_secretsManager->DescribeSecret(request);
     if (!resp.IsSuccess()) {
       std::cout << "DescribeSecret failed: " << resp.GetError() << std::endl;
@@ -204,6 +224,10 @@ void SecretsManagerPerformanceTest::RunListSecretsTests() {
     request.AddFilters(valueFilter);
     request.SetAdditionalCustomHeaderValue("test-dimension-size", TestConfig::GetSecretSizeLabel(m_testConfig.secretSize));
     request.SetAdditionalCustomHeaderValue("test-case-type", "List secrets");
+    auto headers = request.GetHeaders();
+    if (headers.find(Aws::Http::SMITHY_PROTOCOL_HEADER) != headers.end()) {
+      request.SetAdditionalCustomHeaderValue("test-protocol-protocol", "CBOR");
+    }
     
     auto resp = m_secretsManager->ListSecrets(request);
     if (!resp.IsSuccess()) {

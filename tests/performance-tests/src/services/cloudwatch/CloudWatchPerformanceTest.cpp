@@ -79,6 +79,11 @@ void CloudWatchPerformanceTest::RunPutMetricDataTests() {
     }
     request.SetAdditionalCustomHeaderValue("test-dimension-size", std::to_string(metricCount));
     request.SetAdditionalCustomHeaderValue("test-case-type", "Put metric data");
+    auto headers = request.GetHeaders();
+    if (headers.find(Aws::Http::SMITHY_PROTOCOL_HEADER) != headers.end()) {
+      request.SetAdditionalCustomHeaderValue("test-protocol-protocol", "CBOR");
+    }
+
     request.SetMetricData(metricData);
 
     auto resp = m_cloudWatch->PutMetricData(request);
@@ -121,6 +126,10 @@ void CloudWatchPerformanceTest::RunGetMetricDataTests() {
 
     request.SetAdditionalCustomHeaderValue("test-dimension-size", std::to_string(metricCount));
     request.SetAdditionalCustomHeaderValue("test-case-type", "Get metric data");
+    auto headers = request.GetHeaders();
+    if (headers.find(Aws::Http::SMITHY_PROTOCOL_HEADER) != headers.end()) {
+      request.SetAdditionalCustomHeaderValue("test-protocol-protocol", "CBOR");
+    }
 
     metricStat.SetMetric(metric);
     query.SetMetricStat(metricStat);
@@ -145,6 +154,10 @@ void CloudWatchPerformanceTest::RunListMetricsTests() {
     request.SetNamespace("TestNamespace");
     request.SetAdditionalCustomHeaderValue("test-dimension-size", TestConfig::GetMetricCountLabel(m_testConfig.metricCount));
     request.SetAdditionalCustomHeaderValue("test-case-type", "List metrics");
+    auto headers = request.GetHeaders();
+    if (headers.find(Aws::Http::SMITHY_PROTOCOL_HEADER) != headers.end()) {
+      request.SetAdditionalCustomHeaderValue("test-protocol-protocol", "CBOR");
+    }
     auto resp = m_cloudWatch->ListMetrics(request);
     if (!resp.IsSuccess()) {
       std::cout << "ListMetric failed: " << resp.GetError() << std::endl;

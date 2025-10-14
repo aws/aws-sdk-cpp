@@ -26,12 +26,12 @@ struct PerformanceTest::Reporting::RequestContext {
   double payloadSize = 0.0;
   double responsePayloadSize = 0.0;
   bool failed = false;
-  std::chrono::steady_clock::time_point requestStartMs{};
-  std::chrono::steady_clock::time_point requestEndMs{};
-  std::chrono::steady_clock::time_point serializationStartMs{};
-  std::chrono::steady_clock::time_point serializationEndMs{};
-  std::chrono::steady_clock::time_point deserializationStartMs{};
-  std::chrono::steady_clock::time_point deserializationEndMs{};
+  std::chrono::system_clock::time_point requestStartMs{};
+  std::chrono::system_clock::time_point requestEndMs{};
+  std::chrono::system_clock::time_point serializationStartMs{};
+  std::chrono::system_clock::time_point serializationEndMs{};
+  std::chrono::system_clock::time_point deserializationStartMs{};
+  std::chrono::system_clock::time_point deserializationEndMs{};
 };
 
 JsonReportingMetric::JsonReportingMetric(const Aws::Set<Aws::String>& monitoredOperations, const Aws::String& outputFilename)
@@ -114,6 +114,9 @@ void JsonReportingMetric::AddMeasurement(const Aws::String& serviceName, const A
       if (header.first.find("test-case-") == 0) {
         key += ":" + header.first.substr(10) + "=" + header.second;
       }
+      if (header.first.find("test-protocol-") == 0) {
+        key += ":" + header.first.substr(14) + "=" + header.second;
+      }
     }
   }
 
@@ -135,6 +138,9 @@ void JsonReportingMetric::AddSizeMeasurement(const Aws::String& serviceName, con
       }
       if (header.first.find("test-case-") == 0) {
         key += ":" + header.first.substr(10) + "=" + header.second;
+      }
+      if (header.first.find("test-protocol-") == 0) {
+        key += ":" + header.first.substr(14) + "=" + header.second;
       }
     }
   }
@@ -158,6 +164,9 @@ void JsonReportingMetric::AddResponseSizeMeasurement(const Aws::String& serviceN
       if (header.first.find("test-case-") == 0) {
         key += ":" + header.first.substr(10) + "=" + header.second;
       }
+      if (header.first.find("test-protocol-") == 0) {
+        key += ":" + header.first.substr(14) + "=" + header.second;
+      }
     }
   }
 
@@ -180,6 +189,9 @@ void JsonReportingMetric::AddSerializationMeasurement(const Aws::String& service
       if (header.first.find("test-case-") == 0) {
         key += ":" + header.first.substr(10) + "=" + header.second;
       }
+      if (header.first.find("test-protocol-") == 0) {
+        key += ":" + header.first.substr(14) + "=" + header.second;
+      }
     }
   }
 
@@ -201,6 +213,9 @@ void JsonReportingMetric::AddDeserializationMeasurement(const Aws::String& servi
       }
       if (header.first.find("test-case-") == 0) {
         key += ":" + header.first.substr(10) + "=" + header.second;
+      }
+      if (header.first.find("test-protocol-") == 0) {
+        key += ":" + header.first.substr(14) + "=" + header.second;
       }
     }
   }

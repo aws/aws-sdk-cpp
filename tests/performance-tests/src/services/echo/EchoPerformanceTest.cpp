@@ -94,6 +94,10 @@ void EchoPerformanceTest::RunAllTypesTest() {
     
     request.SetComplexStructMember(complexStruct);
     request.SetAdditionalCustomHeaderValue("test-case-type", "AllTypes");
+    auto headers = request.GetHeaders();
+    if (headers.find(Aws::Http::SMITHY_PROTOCOL_HEADER) != headers.end()) {
+      request.SetAdditionalCustomHeaderValue("test-protocol-protocol", "CBOR");
+    }
 
     auto resp = m_echoClient->EchoOperation(request);
     if (!resp.IsSuccess()) {
@@ -114,6 +118,10 @@ void EchoPerformanceTest::RunLongListOfStringsTest() {
     }
     request.SetListOfStringsMember(stringList);
     request.SetAdditionalCustomHeaderValue("test-case-type", "LongListOfStrings");
+    auto headers = request.GetHeaders();
+    if (headers.find(Aws::Http::SMITHY_PROTOCOL_HEADER) != headers.end()) {
+      request.SetAdditionalCustomHeaderValue("test-protocol-protocol", "CBOR");
+    }
     
     auto resp = m_echoClient->EchoOperation(request);
     if (!resp.IsSuccess()) {
@@ -161,6 +169,10 @@ void EchoPerformanceTest::RunComplexObjectTest() {
     
     request.SetComplexStructMember(level1);
     request.SetAdditionalCustomHeaderValue("test-case-type", "ComplexObject");
+    auto headers = request.GetHeaders();
+    if (headers.find(Aws::Http::SMITHY_PROTOCOL_HEADER) != headers.end()) {
+      request.SetAdditionalCustomHeaderValue("test-protocol-protocol", "CBOR");
+    }
     auto resp = m_echoClient->EchoOperation(request);
     if (!resp.IsSuccess()) {
       std::cout << "EchoOperation failed: " << resp.GetError() << std::endl;
@@ -193,6 +205,10 @@ void EchoPerformanceTest::RunListOfComplexObjectsTest() {
     }
     request.SetListOfComplexObjectMember(complexList);
     request.SetAdditionalCustomHeaderValue("test-case-type", "ListOfComplexObjects");
+    auto headers = request.GetHeaders();
+    if (headers.find(Aws::Http::SMITHY_PROTOCOL_HEADER) != headers.end()) {
+      request.SetAdditionalCustomHeaderValue("test-protocol-protocol", "CBOR");
+    }
     
     auto resp = m_echoClient->EchoOperation(request);
     if (!resp.IsSuccess()) {
@@ -209,6 +225,10 @@ void EchoPerformanceTest::RunVeryLargeBlobTest() {
     // 262144 bytes (256KB) blob
     request.SetBlobMember(GenerateRandomBinary(262144));
     request.SetAdditionalCustomHeaderValue("test-case-type", "VeryLargeBlob");
+    auto headers = request.GetHeaders();
+    if (headers.find(Aws::Http::SMITHY_PROTOCOL_HEADER) != headers.end()) {
+      request.SetAdditionalCustomHeaderValue("test-protocol-protocol", "CBOR");
+    }
     
     auto resp = m_echoClient->EchoOperation(request);
     if (!resp.IsSuccess()) {
