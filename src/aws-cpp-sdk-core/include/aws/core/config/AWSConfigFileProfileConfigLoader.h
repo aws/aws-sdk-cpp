@@ -8,6 +8,7 @@
 #include <aws/core/config/AWSProfileConfigLoaderBase.h>
 
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 
 namespace Aws
 {
@@ -56,6 +57,7 @@ namespace Aws
         private:
             Aws::String m_fileName;
             bool m_useProfilePrefix;
+            Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_servicesDefinitions;
         };
     }
 }
