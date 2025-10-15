@@ -268,6 +268,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Specifies the DbInstance's roles in the cluster.</p>
+     */
+    inline const Aws::Vector<InstanceMode>& GetInstanceModes() const { return m_instanceModes; }
+    template<typename InstanceModesT = Aws::Vector<InstanceMode>>
+    void SetInstanceModes(InstanceModesT&& value) { m_instanceModesHasBeenSet = true; m_instanceModes = std::forward<InstanceModesT>(value); }
+    template<typename InstanceModesT = Aws::Vector<InstanceMode>>
+    DeleteDbInstanceResult& WithInstanceModes(InstanceModesT&& value) { SetInstanceModes(std::forward<InstanceModesT>(value)); return *this;}
+    inline DeleteDbInstanceResult& AddInstanceModes(InstanceMode value) { m_instanceModesHasBeenSet = true; m_instanceModes.push_back(value); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const { return m_requestId; }
     template<typename RequestIdT = Aws::String>
@@ -339,6 +351,9 @@ namespace Model
 
     InstanceMode m_instanceMode{InstanceMode::NOT_SET};
     bool m_instanceModeHasBeenSet = false;
+
+    Aws::Vector<InstanceMode> m_instanceModes;
+    bool m_instanceModesHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

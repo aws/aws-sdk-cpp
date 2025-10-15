@@ -18,7 +18,11 @@ namespace Model
     NOT_SET,
     PRIMARY,
     STANDBY,
-    REPLICA
+    REPLICA,
+    INGEST,
+    QUERY,
+    COMPACT,
+    PROCESS
   };
 
 namespace InstanceModeMapper

@@ -120,8 +120,9 @@ namespace Model
     ///@{
     /**
      * <p>The port number on which InfluxDB accepts connections.</p> <p>Valid Values:
-     * 1024-65535</p> <p>Default: 8086</p> <p>Constraints: The value can't be
-     * 2375-2376, 7788-7799, 8090, or 51678-51680</p>
+     * 1024-65535</p> <p>Default: 8086 for InfluxDB v2, 8181 for InfluxDB v3</p>
+     * <p>Constraints: The value can't be 2375-2376, 7788-7799, 8090, or
+     * 51678-51680</p>
      */
     inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }

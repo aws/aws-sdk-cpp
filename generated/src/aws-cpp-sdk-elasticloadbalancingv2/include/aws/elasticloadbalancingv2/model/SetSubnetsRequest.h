@@ -60,8 +60,10 @@ namespace Model
      * Availability Zones.</p> <p>[Application Load Balancers on Outposts] You must
      * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
      * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
-     * Balancers and Gateway Load Balancers] You can specify subnets from one or more
-     * Availability Zones.</p>
+     * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones. You must include all subnets that were enabled previously,
+     * with their existing configurations, plus any additional subnets.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnets() const { return m_subnets; }
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }

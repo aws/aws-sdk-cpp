@@ -11,6 +11,7 @@
 #include <aws/timestream-influxdb/model/DbInstanceType.h>
 #include <aws/timestream-influxdb/model/NetworkType.h>
 #include <aws/timestream-influxdb/model/DbStorageType.h>
+#include <aws/timestream-influxdb/model/EngineType.h>
 #include <utility>
 
 namespace Aws
@@ -176,6 +177,16 @@ namespace Model
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
     inline DbClusterSummary& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The engine type of your DB cluster.</p>
+     */
+    inline EngineType GetEngineType() const { return m_engineType; }
+    inline bool EngineTypeHasBeenSet() const { return m_engineTypeHasBeenSet; }
+    inline void SetEngineType(EngineType value) { m_engineTypeHasBeenSet = true; m_engineType = value; }
+    inline DbClusterSummary& WithEngineType(EngineType value) { SetEngineType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -213,6 +224,9 @@ namespace Model
 
     int m_allocatedStorage{0};
     bool m_allocatedStorageHasBeenSet = false;
+
+    EngineType m_engineType{EngineType::NOT_SET};
+    bool m_engineTypeHasBeenSet = false;
   };
 
 } // namespace Model

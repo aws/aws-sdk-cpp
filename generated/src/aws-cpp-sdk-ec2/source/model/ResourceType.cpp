@@ -117,6 +117,7 @@ namespace Aws
         static const int ipam_external_resource_verification_token_HASH = HashingUtils::HashString("ipam-external-resource-verification-token");
         static const int capacity_block_HASH = HashingUtils::HashString("capacity-block");
         static const int mac_modification_task_HASH = HashingUtils::HashString("mac-modification-task");
+        static const int capacity_manager_data_export_HASH = HashingUtils::HashString("capacity-manager-data-export");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -510,6 +511,10 @@ namespace Aws
           {
             return ResourceType::mac_modification_task;
           }
+          else if (hashCode == capacity_manager_data_export_HASH)
+          {
+            return ResourceType::capacity_manager_data_export;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -720,6 +725,8 @@ namespace Aws
             return "capacity-block";
           case ResourceType::mac_modification_task:
             return "mac-modification-task";
+          case ResourceType::capacity_manager_data_export:
+            return "capacity-manager-data-export";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

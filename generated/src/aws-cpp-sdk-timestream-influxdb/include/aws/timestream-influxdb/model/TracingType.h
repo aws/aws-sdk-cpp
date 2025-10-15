@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     log,
-    jaeger
+    jaeger,
+    disabled
   };
 
 namespace TracingTypeMapper

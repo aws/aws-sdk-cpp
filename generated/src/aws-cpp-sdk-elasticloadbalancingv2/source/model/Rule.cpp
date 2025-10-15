@@ -75,6 +75,19 @@ Rule& Rule::operator =(const XmlNode& xmlNode)
       m_isDefault = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDefaultNode.GetText()).c_str()).c_str());
       m_isDefaultHasBeenSet = true;
     }
+    XmlNode transformsNode = resultNode.FirstChild("Transforms");
+    if(!transformsNode.IsNull())
+    {
+      XmlNode transformsMember = transformsNode.FirstChild("member");
+      m_transformsHasBeenSet = !transformsMember.IsNull();
+      while(!transformsMember.IsNull())
+      {
+        m_transforms.push_back(transformsMember);
+        transformsMember = transformsMember.NextNode("member");
+      }
+
+      m_transformsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -119,6 +132,17 @@ void Rule::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
       oStream << location << index << locationValue << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
   }
 
+  if(m_transformsHasBeenSet)
+  {
+      unsigned transformsIdx = 1;
+      for(auto& item : m_transforms)
+      {
+        Aws::StringStream transformsSs;
+        transformsSs << location << index << locationValue << ".Transforms.member." << transformsIdx++;
+        item.OutputToStream(oStream, transformsSs.str().c_str());
+      }
+  }
+
 }
 
 void Rule::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -154,6 +178,16 @@ void Rule::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_isDefaultHasBeenSet)
   {
       oStream << location << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
+  }
+  if(m_transformsHasBeenSet)
+  {
+      unsigned transformsIdx = 1;
+      for(auto& item : m_transforms)
+      {
+        Aws::StringStream transformsSs;
+        transformsSs << location << ".Transforms.member." << transformsIdx++;
+        item.OutputToStream(oStream, transformsSs.str().c_str());
+      }
   }
 }
 

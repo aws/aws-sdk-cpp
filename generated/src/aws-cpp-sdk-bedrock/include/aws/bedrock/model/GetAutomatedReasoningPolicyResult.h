@@ -101,6 +101,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the automated
+     * reasoning policy and its associated artifacts. If a KMS key is not provided
+     * during the initial CreateAutomatedReasoningPolicyRequest, the kmsKeyArn won't be
+     * included in the GetAutomatedReasoningPolicyResponse. </p>
+     */
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    GetAutomatedReasoningPolicyResult& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The timestamp when the policy was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -148,6 +162,9 @@ namespace Model
 
     Aws::String m_definitionHash;
     bool m_definitionHashHasBeenSet = false;
+
+    Aws::String m_kmsKeyArn;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;

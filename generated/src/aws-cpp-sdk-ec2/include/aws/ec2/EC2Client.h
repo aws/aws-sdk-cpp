@@ -344,22 +344,26 @@ namespace EC2
          * you allocate the Elastic IP address you can associate it with an instance or
          * network interface. After you release an Elastic IP address, it is released to
          * the IP address pool and can be allocated to a different Amazon Web Services
-         * account.</p> <p>You can allocate an Elastic IP address from an address pool
-         * owned by Amazon Web Services or from an address pool created from a public IPv4
-         * address range that you have brought to Amazon Web Services for use with your
-         * Amazon Web Services resources using bring your own IP addresses (BYOIP). For
-         * more information, see <a
+         * account.</p> <p>You can allocate an Elastic IP address from one of the following
+         * address pools:</p> <ul> <li> <p>Amazon's pool of IPv4 addresses</p> </li> <li>
+         * <p>Public IPv4 address range that you own and bring to your Amazon Web Services
+         * account using <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
-         * Your Own IP Addresses (BYOIP)</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>If
-         * you release an Elastic IP address, you might be able to recover it. You cannot
-         * recover an Elastic IP address that you released after it is allocated to another
-         * Amazon Web Services account. To attempt to recover an Elastic IP address that
-         * you released, specify it in this operation.</p> <p>For more information, see <a
+         * Your Own IP Addresses (BYOIP)</a> </p> </li> <li> <p>An IPv4 IPAM pool with an
+         * Amazon-provided or BYOIP public IPv4 address range</p> </li> <li> <p>IPv4
+         * addresses from your on-premises network made available for use with an Outpost
+         * using a <a
+         * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">customer-owned
+         * IP address pool</a> (CoIP pool)</p> </li> </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-         * IP Addresses</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can allocate a
-         * carrier IP address which is a public IP address from a telecommunication
-         * carrier, to a network interface which resides in a subnet in a Wavelength Zone
-         * (for example an EC2 instance).</p><p><h3>See Also:</h3>   <a
+         * IP Addresses</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>If you release an
+         * Elastic IP address, you might be able to recover it. You cannot recover an
+         * Elastic IP address that you released after it is allocated to another Amazon Web
+         * Services account. To attempt to recover an Elastic IP address that you released,
+         * specify it in this operation.</p> <p>You can allocate a carrier IP address which
+         * is a public IP address from a telecommunication carrier, to a network interface
+         * which resides in a subnet in a Wavelength Zone (for example an EC2
+         * instance).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateAddress">AWS
          * API Reference</a></p>
          */
@@ -2046,6 +2050,35 @@ namespace EC2
         void CopyVolumesAsync(const CopyVolumesRequestT& request, const CopyVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::CopyVolumes, request, handler, context);
+        }
+
+        /**
+         * <p> Creates a new data export configuration for EC2 Capacity Manager. This
+         * allows you to automatically export capacity usage data to an S3 bucket on a
+         * scheduled basis. The exported data includes metrics for On-Demand, Spot, and
+         * Capacity Reservations usage across your organization. </p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityManagerDataExport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCapacityManagerDataExportOutcome CreateCapacityManagerDataExport(const Model::CreateCapacityManagerDataExportRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateCapacityManagerDataExport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateCapacityManagerDataExportRequestT = Model::CreateCapacityManagerDataExportRequest>
+        Model::CreateCapacityManagerDataExportOutcomeCallable CreateCapacityManagerDataExportCallable(const CreateCapacityManagerDataExportRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::CreateCapacityManagerDataExport, request);
+        }
+
+        /**
+         * An Async wrapper for CreateCapacityManagerDataExport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateCapacityManagerDataExportRequestT = Model::CreateCapacityManagerDataExportRequest>
+        void CreateCapacityManagerDataExportAsync(const CreateCapacityManagerDataExportRequestT& request, const CreateCapacityManagerDataExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::CreateCapacityManagerDataExport, request, handler, context);
         }
 
         /**
@@ -5098,6 +5131,33 @@ namespace EC2
         }
 
         /**
+         * <p> Deletes an existing Capacity Manager data export configuration. This stops
+         * future scheduled exports but does not delete previously exported files from S3.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCapacityManagerDataExport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCapacityManagerDataExportOutcome DeleteCapacityManagerDataExport(const Model::DeleteCapacityManagerDataExportRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCapacityManagerDataExport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteCapacityManagerDataExportRequestT = Model::DeleteCapacityManagerDataExportRequest>
+        Model::DeleteCapacityManagerDataExportOutcomeCallable DeleteCapacityManagerDataExportCallable(const DeleteCapacityManagerDataExportRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DeleteCapacityManagerDataExport, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteCapacityManagerDataExport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteCapacityManagerDataExportRequestT = Model::DeleteCapacityManagerDataExportRequest>
+        void DeleteCapacityManagerDataExportAsync(const DeleteCapacityManagerDataExportRequestT& request, const DeleteCapacityManagerDataExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DeleteCapacityManagerDataExport, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a carrier gateway.</p>  <p>If you do not delete the route
          * that contains the carrier gateway as the Target, the route is a blackhole route.
          * For information about how to delete a route, see <a
@@ -8039,6 +8099,33 @@ namespace EC2
         void DescribeCapacityBlocksAsync(const DescribeCapacityBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeCapacityBlocksRequestT& request = {}) const
         {
             return SubmitAsync(&EC2Client::DescribeCapacityBlocks, request, handler, context);
+        }
+
+        /**
+         * <p> Describes one or more Capacity Manager data export configurations. Returns
+         * information about export settings, delivery status, and recent export activity.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityManagerDataExports">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCapacityManagerDataExportsOutcome DescribeCapacityManagerDataExports(const Model::DescribeCapacityManagerDataExportsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeCapacityManagerDataExports that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeCapacityManagerDataExportsRequestT = Model::DescribeCapacityManagerDataExportsRequest>
+        Model::DescribeCapacityManagerDataExportsOutcomeCallable DescribeCapacityManagerDataExportsCallable(const DescribeCapacityManagerDataExportsRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::DescribeCapacityManagerDataExports, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeCapacityManagerDataExports that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeCapacityManagerDataExportsRequestT = Model::DescribeCapacityManagerDataExportsRequest>
+        void DescribeCapacityManagerDataExportsAsync(const DescribeCapacityManagerDataExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeCapacityManagerDataExportsRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::DescribeCapacityManagerDataExports, request, handler, context);
         }
 
         /**
@@ -13014,6 +13101,34 @@ namespace EC2
         }
 
         /**
+         * <p> Disables EC2 Capacity Manager for your account. This stops data ingestion
+         * and removes access to capacity analytics and optimization recommendations.
+         * Previously collected data is retained but no new data will be processed.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableCapacityManager">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableCapacityManagerOutcome DisableCapacityManager(const Model::DisableCapacityManagerRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DisableCapacityManager that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisableCapacityManagerRequestT = Model::DisableCapacityManagerRequest>
+        Model::DisableCapacityManagerOutcomeCallable DisableCapacityManagerCallable(const DisableCapacityManagerRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::DisableCapacityManager, request);
+        }
+
+        /**
+         * An Async wrapper for DisableCapacityManager that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisableCapacityManagerRequestT = Model::DisableCapacityManagerRequest>
+        void DisableCapacityManagerAsync(const DisableCapacityManagerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DisableCapacityManagerRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::DisableCapacityManager, request, handler, context);
+        }
+
+        /**
          * <p>Disables EBS encryption by default for your account in the current
          * Region.</p> <p>After you disable encryption by default, you can still create
          * encrypted volumes by enabling encryption when you create each volume.</p>
@@ -14101,6 +14216,34 @@ namespace EC2
         }
 
         /**
+         * <p> Enables EC2 Capacity Manager for your account. This starts data ingestion
+         * for your EC2 capacity usage across On-Demand, Spot, and Capacity Reservations.
+         * Initial data processing may take several hours to complete. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableCapacityManager">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableCapacityManagerOutcome EnableCapacityManager(const Model::EnableCapacityManagerRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for EnableCapacityManager that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EnableCapacityManagerRequestT = Model::EnableCapacityManagerRequest>
+        Model::EnableCapacityManagerOutcomeCallable EnableCapacityManagerCallable(const EnableCapacityManagerRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::EnableCapacityManager, request);
+        }
+
+        /**
+         * An Async wrapper for EnableCapacityManager that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EnableCapacityManagerRequestT = Model::EnableCapacityManagerRequest>
+        void EnableCapacityManagerAsync(const EnableCapacityManagerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const EnableCapacityManagerRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::EnableCapacityManager, request, handler, context);
+        }
+
+        /**
          * <p>Enables EBS encryption by default for your account in the current Region.</p>
          * <p>After you enable encryption by default, the EBS volumes that you create are
          * always encrypted, either using the default KMS key or the KMS key that you
@@ -14910,6 +15053,90 @@ namespace EC2
         void GetAwsNetworkPerformanceDataAsync(const GetAwsNetworkPerformanceDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAwsNetworkPerformanceDataRequestT& request = {}) const
         {
             return SubmitAsync(&EC2Client::GetAwsNetworkPerformanceData, request, handler, context);
+        }
+
+        /**
+         * <p> Retrieves the current configuration and status of EC2 Capacity Manager for
+         * your account, including enablement status, Organizations access settings, and
+         * data ingestion status. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerAttributes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCapacityManagerAttributesOutcome GetCapacityManagerAttributes(const Model::GetCapacityManagerAttributesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetCapacityManagerAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCapacityManagerAttributesRequestT = Model::GetCapacityManagerAttributesRequest>
+        Model::GetCapacityManagerAttributesOutcomeCallable GetCapacityManagerAttributesCallable(const GetCapacityManagerAttributesRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::GetCapacityManagerAttributes, request);
+        }
+
+        /**
+         * An Async wrapper for GetCapacityManagerAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCapacityManagerAttributesRequestT = Model::GetCapacityManagerAttributesRequest>
+        void GetCapacityManagerAttributesAsync(const GetCapacityManagerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetCapacityManagerAttributesRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::GetCapacityManagerAttributes, request, handler, context);
+        }
+
+        /**
+         * <p> Retrieves capacity usage metrics for your EC2 resources. Returns time-series
+         * data for metrics like unused capacity, utilization rates, and costs across
+         * On-Demand, Spot, and Capacity Reservations. Data can be grouped and filtered by
+         * various dimensions such as region, account, and instance family. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerMetricData">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCapacityManagerMetricDataOutcome GetCapacityManagerMetricData(const Model::GetCapacityManagerMetricDataRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCapacityManagerMetricData that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCapacityManagerMetricDataRequestT = Model::GetCapacityManagerMetricDataRequest>
+        Model::GetCapacityManagerMetricDataOutcomeCallable GetCapacityManagerMetricDataCallable(const GetCapacityManagerMetricDataRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::GetCapacityManagerMetricData, request);
+        }
+
+        /**
+         * An Async wrapper for GetCapacityManagerMetricData that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCapacityManagerMetricDataRequestT = Model::GetCapacityManagerMetricDataRequest>
+        void GetCapacityManagerMetricDataAsync(const GetCapacityManagerMetricDataRequestT& request, const GetCapacityManagerMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::GetCapacityManagerMetricData, request, handler, context);
+        }
+
+        /**
+         * <p> Retrieves the available dimension values for capacity metrics within a
+         * specified time range. This is useful for discovering what accounts, regions,
+         * instance families, and other dimensions have data available for filtering and
+         * grouping. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerMetricDimensions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCapacityManagerMetricDimensionsOutcome GetCapacityManagerMetricDimensions(const Model::GetCapacityManagerMetricDimensionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCapacityManagerMetricDimensions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCapacityManagerMetricDimensionsRequestT = Model::GetCapacityManagerMetricDimensionsRequest>
+        Model::GetCapacityManagerMetricDimensionsOutcomeCallable GetCapacityManagerMetricDimensionsCallable(const GetCapacityManagerMetricDimensionsRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::GetCapacityManagerMetricDimensions, request);
+        }
+
+        /**
+         * An Async wrapper for GetCapacityManagerMetricDimensions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCapacityManagerMetricDimensionsRequestT = Model::GetCapacityManagerMetricDimensionsRequest>
+        void GetCapacityManagerMetricDimensionsAsync(const GetCapacityManagerMetricDimensionsRequestT& request, const GetCapacityManagerMetricDimensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::GetCapacityManagerMetricDimensions, request, handler, context);
         }
 
         /**
@@ -21342,6 +21569,34 @@ namespace EC2
         void UnmonitorInstancesAsync(const UnmonitorInstancesRequestT& request, const UnmonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::UnmonitorInstances, request, handler, context);
+        }
+
+        /**
+         * <p> Updates the Organizations access setting for EC2 Capacity Manager. This
+         * controls whether Capacity Manager can aggregate data from all accounts in your
+         * Amazon Web Services Organization or only from the current account.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateCapacityManagerOrganizationsAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateCapacityManagerOrganizationsAccessOutcome UpdateCapacityManagerOrganizationsAccess(const Model::UpdateCapacityManagerOrganizationsAccessRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateCapacityManagerOrganizationsAccess that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateCapacityManagerOrganizationsAccessRequestT = Model::UpdateCapacityManagerOrganizationsAccessRequest>
+        Model::UpdateCapacityManagerOrganizationsAccessOutcomeCallable UpdateCapacityManagerOrganizationsAccessCallable(const UpdateCapacityManagerOrganizationsAccessRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::UpdateCapacityManagerOrganizationsAccess, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateCapacityManagerOrganizationsAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateCapacityManagerOrganizationsAccessRequestT = Model::UpdateCapacityManagerOrganizationsAccessRequest>
+        void UpdateCapacityManagerOrganizationsAccessAsync(const UpdateCapacityManagerOrganizationsAccessRequestT& request, const UpdateCapacityManagerOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::UpdateCapacityManagerOrganizationsAccess, request, handler, context);
         }
 
         /**

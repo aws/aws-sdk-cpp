@@ -50,6 +50,19 @@ HttpHeaderConditionConfig& HttpHeaderConditionConfig::operator =(const XmlNode& 
 
       m_valuesHasBeenSet = true;
     }
+    XmlNode regexValuesNode = resultNode.FirstChild("RegexValues");
+    if(!regexValuesNode.IsNull())
+    {
+      XmlNode regexValuesMember = regexValuesNode.FirstChild("member");
+      m_regexValuesHasBeenSet = !regexValuesMember.IsNull();
+      while(!regexValuesMember.IsNull())
+      {
+        m_regexValues.push_back(regexValuesMember.GetText());
+        regexValuesMember = regexValuesMember.NextNode("member");
+      }
+
+      m_regexValuesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -71,6 +84,15 @@ void HttpHeaderConditionConfig::OutputToStream(Aws::OStream& oStream, const char
       }
   }
 
+  if(m_regexValuesHasBeenSet)
+  {
+      unsigned regexValuesIdx = 1;
+      for(auto& item : m_regexValues)
+      {
+        oStream << location << index << locationValue << ".RegexValues.member." << regexValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void HttpHeaderConditionConfig::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -85,6 +107,14 @@ void HttpHeaderConditionConfig::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_values)
       {
         oStream << location << ".Values.member." << valuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_regexValuesHasBeenSet)
+  {
+      unsigned regexValuesIdx = 1;
+      for(auto& item : m_regexValues)
+      {
+        oStream << location << ".RegexValues.member." << regexValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

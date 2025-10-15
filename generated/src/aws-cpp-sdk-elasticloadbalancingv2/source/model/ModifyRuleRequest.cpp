@@ -53,6 +53,28 @@ Aws::String ModifyRuleRequest::SerializePayload() const
     }
   }
 
+  if(m_transformsHasBeenSet)
+  {
+    if (m_transforms.empty())
+    {
+      ss << "Transforms=&";
+    }
+    else
+    {
+      unsigned transformsCount = 1;
+      for(auto& item : m_transforms)
+      {
+        item.OutputToStream(ss, "Transforms.member.", transformsCount, "");
+        transformsCount++;
+      }
+    }
+  }
+
+  if(m_resetTransformsHasBeenSet)
+  {
+    ss << "ResetTransforms=" << std::boolalpha << m_resetTransforms << "&";
+  }
+
   ss << "Version=2015-12-01";
   return ss.str();
 }

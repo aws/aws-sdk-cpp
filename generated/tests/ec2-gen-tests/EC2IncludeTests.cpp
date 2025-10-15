@@ -236,6 +236,11 @@
 #include <aws/ec2/model/CapacityBlockOffering.h>
 #include <aws/ec2/model/CapacityBlockResourceState.h>
 #include <aws/ec2/model/CapacityBlockStatus.h>
+#include <aws/ec2/model/CapacityManagerCondition.h>
+#include <aws/ec2/model/CapacityManagerDataExportResponse.h>
+#include <aws/ec2/model/CapacityManagerDataExportStatus.h>
+#include <aws/ec2/model/CapacityManagerDimension.h>
+#include <aws/ec2/model/CapacityManagerStatus.h>
 #include <aws/ec2/model/CapacityReservation.h>
 #include <aws/ec2/model/CapacityReservationBillingRequest.h>
 #include <aws/ec2/model/CapacityReservationBillingRequestStatus.h>
@@ -258,6 +263,7 @@
 #include <aws/ec2/model/CapacityReservationTargetResponse.h>
 #include <aws/ec2/model/CapacityReservationTenancy.h>
 #include <aws/ec2/model/CapacityReservationType.h>
+#include <aws/ec2/model/CapacityTenancy.h>
 #include <aws/ec2/model/CarrierGateway.h>
 #include <aws/ec2/model/CarrierGatewayState.h>
 #include <aws/ec2/model/CertificateAuthentication.h>
@@ -298,6 +304,7 @@
 #include <aws/ec2/model/CoipAddressUsage.h>
 #include <aws/ec2/model/CoipCidr.h>
 #include <aws/ec2/model/CoipPool.h>
+#include <aws/ec2/model/Comparison.h>
 #include <aws/ec2/model/ConfirmProductInstanceRequest.h>
 #include <aws/ec2/model/ConfirmProductInstanceResponse.h>
 #include <aws/ec2/model/ConnectionLogOptions.h>
@@ -327,6 +334,8 @@
 #include <aws/ec2/model/CpuOptionsRequest.h>
 #include <aws/ec2/model/CpuPerformanceFactor.h>
 #include <aws/ec2/model/CpuPerformanceFactorRequest.h>
+#include <aws/ec2/model/CreateCapacityManagerDataExportRequest.h>
+#include <aws/ec2/model/CreateCapacityManagerDataExportResponse.h>
 #include <aws/ec2/model/CreateCapacityReservationBySplittingRequest.h>
 #include <aws/ec2/model/CreateCapacityReservationBySplittingResponse.h>
 #include <aws/ec2/model/CreateCapacityReservationFleetRequest.h>
@@ -541,6 +550,8 @@
 #include <aws/ec2/model/DefaultRouteTableAssociationValue.h>
 #include <aws/ec2/model/DefaultRouteTablePropagationValue.h>
 #include <aws/ec2/model/DefaultTargetCapacityType.h>
+#include <aws/ec2/model/DeleteCapacityManagerDataExportRequest.h>
+#include <aws/ec2/model/DeleteCapacityManagerDataExportResponse.h>
 #include <aws/ec2/model/DeleteCarrierGatewayRequest.h>
 #include <aws/ec2/model/DeleteCarrierGatewayResponse.h>
 #include <aws/ec2/model/DeleteClientVpnEndpointRequest.h>
@@ -743,6 +754,8 @@
 #include <aws/ec2/model/DescribeCapacityBlockStatusResponse.h>
 #include <aws/ec2/model/DescribeCapacityBlocksRequest.h>
 #include <aws/ec2/model/DescribeCapacityBlocksResponse.h>
+#include <aws/ec2/model/DescribeCapacityManagerDataExportsRequest.h>
+#include <aws/ec2/model/DescribeCapacityManagerDataExportsResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationBillingRequestsRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationBillingRequestsResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationFleetsRequest.h>
@@ -1080,6 +1093,7 @@
 #include <aws/ec2/model/DeviceType.h>
 #include <aws/ec2/model/DhcpConfiguration.h>
 #include <aws/ec2/model/DhcpOptions.h>
+#include <aws/ec2/model/DimensionCondition.h>
 #include <aws/ec2/model/DirectoryServiceAuthentication.h>
 #include <aws/ec2/model/DirectoryServiceAuthenticationRequest.h>
 #include <aws/ec2/model/DisableAddressTransferRequest.h>
@@ -1088,6 +1102,8 @@
 #include <aws/ec2/model/DisableAllowedImagesSettingsResponse.h>
 #include <aws/ec2/model/DisableAwsNetworkPerformanceMetricSubscriptionRequest.h>
 #include <aws/ec2/model/DisableAwsNetworkPerformanceMetricSubscriptionResponse.h>
+#include <aws/ec2/model/DisableCapacityManagerRequest.h>
+#include <aws/ec2/model/DisableCapacityManagerResponse.h>
 #include <aws/ec2/model/DisableEbsEncryptionByDefaultRequest.h>
 #include <aws/ec2/model/DisableEbsEncryptionByDefaultResponse.h>
 #include <aws/ec2/model/DisableFastLaunchRequest.h>
@@ -1208,6 +1224,8 @@
 #include <aws/ec2/model/EnableAllowedImagesSettingsResponse.h>
 #include <aws/ec2/model/EnableAwsNetworkPerformanceMetricSubscriptionRequest.h>
 #include <aws/ec2/model/EnableAwsNetworkPerformanceMetricSubscriptionResponse.h>
+#include <aws/ec2/model/EnableCapacityManagerRequest.h>
+#include <aws/ec2/model/EnableCapacityManagerResponse.h>
 #include <aws/ec2/model/EnableEbsEncryptionByDefaultRequest.h>
 #include <aws/ec2/model/EnableEbsEncryptionByDefaultResponse.h>
 #include <aws/ec2/model/EnableFastLaunchRequest.h>
@@ -1284,6 +1302,7 @@
 #include <aws/ec2/model/FederatedAuthentication.h>
 #include <aws/ec2/model/FederatedAuthenticationRequest.h>
 #include <aws/ec2/model/Filter.h>
+#include <aws/ec2/model/FilterByDimension.h>
 #include <aws/ec2/model/FilterPortRange.h>
 #include <aws/ec2/model/FindingsFound.h>
 #include <aws/ec2/model/FirewallStatefulRule.h>
@@ -1335,6 +1354,12 @@
 #include <aws/ec2/model/GetAssociatedIpv6PoolCidrsResponse.h>
 #include <aws/ec2/model/GetAwsNetworkPerformanceDataRequest.h>
 #include <aws/ec2/model/GetAwsNetworkPerformanceDataResponse.h>
+#include <aws/ec2/model/GetCapacityManagerAttributesRequest.h>
+#include <aws/ec2/model/GetCapacityManagerAttributesResponse.h>
+#include <aws/ec2/model/GetCapacityManagerMetricDataRequest.h>
+#include <aws/ec2/model/GetCapacityManagerMetricDataResponse.h>
+#include <aws/ec2/model/GetCapacityManagerMetricDimensionsRequest.h>
+#include <aws/ec2/model/GetCapacityManagerMetricDimensionsResponse.h>
 #include <aws/ec2/model/GetCapacityReservationUsageRequest.h>
 #include <aws/ec2/model/GetCapacityReservationUsageResponse.h>
 #include <aws/ec2/model/GetCoipPoolUsageRequest.h>
@@ -1440,6 +1465,7 @@
 #include <aws/ec2/model/GpuDeviceInfo.h>
 #include <aws/ec2/model/GpuDeviceMemoryInfo.h>
 #include <aws/ec2/model/GpuInfo.h>
+#include <aws/ec2/model/GroupBy.h>
 #include <aws/ec2/model/GroupIdentifier.h>
 #include <aws/ec2/model/HibernationOptions.h>
 #include <aws/ec2/model/HibernationOptionsRequest.h>
@@ -1509,6 +1535,7 @@
 #include <aws/ec2/model/InferenceAcceleratorInfo.h>
 #include <aws/ec2/model/InferenceDeviceInfo.h>
 #include <aws/ec2/model/InferenceDeviceMemoryInfo.h>
+#include <aws/ec2/model/IngestionStatus.h>
 #include <aws/ec2/model/InitializationStatusDetails.h>
 #include <aws/ec2/model/InitializationType.h>
 #include <aws/ec2/model/Instance.h>
@@ -1775,8 +1802,11 @@
 #include <aws/ec2/model/MemoryMiB.h>
 #include <aws/ec2/model/MemoryMiBRequest.h>
 #include <aws/ec2/model/MetadataDefaultHttpTokensState.h>
+#include <aws/ec2/model/Metric.h>
+#include <aws/ec2/model/MetricDataResponse.h>
 #include <aws/ec2/model/MetricPoint.h>
 #include <aws/ec2/model/MetricType.h>
+#include <aws/ec2/model/MetricValue.h>
 #include <aws/ec2/model/ModifyAddressAttributeRequest.h>
 #include <aws/ec2/model/ModifyAddressAttributeResponse.h>
 #include <aws/ec2/model/ModifyAvailabilityZoneGroupRequest.h>
@@ -1987,6 +2017,7 @@
 #include <aws/ec2/model/OperatorRequest.h>
 #include <aws/ec2/model/OperatorResponse.h>
 #include <aws/ec2/model/OutpostLag.h>
+#include <aws/ec2/model/OutputFormat.h>
 #include <aws/ec2/model/PacketHeaderStatement.h>
 #include <aws/ec2/model/PacketHeaderStatementRequest.h>
 #include <aws/ec2/model/PartitionLoadFrequency.h>
@@ -2144,8 +2175,10 @@
 #include <aws/ec2/model/RequestSpotInstancesResponse.h>
 #include <aws/ec2/model/RequestSpotLaunchSpecification.h>
 #include <aws/ec2/model/Reservation.h>
+#include <aws/ec2/model/ReservationEndDateType.h>
 #include <aws/ec2/model/ReservationFleetInstanceSpecification.h>
 #include <aws/ec2/model/ReservationState.h>
+#include <aws/ec2/model/ReservationType.h>
 #include <aws/ec2/model/ReservationValue.h>
 #include <aws/ec2/model/ReservedInstanceLimitPrice.h>
 #include <aws/ec2/model/ReservedInstanceReservationValue.h>
@@ -2237,6 +2270,7 @@
 #include <aws/ec2/model/S3ObjectTag.h>
 #include <aws/ec2/model/S3Storage.h>
 #include <aws/ec2/model/SSEType.h>
+#include <aws/ec2/model/Schedule.h>
 #include <aws/ec2/model/ScheduledInstance.h>
 #include <aws/ec2/model/ScheduledInstanceAvailability.h>
 #include <aws/ec2/model/ScheduledInstanceRecurrence.h>
@@ -2475,6 +2509,8 @@
 #include <aws/ec2/model/UnsuccessfulInstanceCreditSpecificationItemError.h>
 #include <aws/ec2/model/UnsuccessfulItem.h>
 #include <aws/ec2/model/UnsuccessfulItemError.h>
+#include <aws/ec2/model/UpdateCapacityManagerOrganizationsAccessRequest.h>
+#include <aws/ec2/model/UpdateCapacityManagerOrganizationsAccessResponse.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsEgressRequest.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsEgressResponse.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsIngressRequest.h>

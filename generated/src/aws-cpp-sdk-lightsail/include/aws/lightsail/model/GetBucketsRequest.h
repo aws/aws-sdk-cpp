@@ -75,6 +75,21 @@ namespace Model
     inline void SetIncludeConnectedResources(bool value) { m_includeConnectedResourcesHasBeenSet = true; m_includeConnectedResources = value; }
     inline GetBucketsRequest& WithIncludeConnectedResources(bool value) { SetIncludeConnectedResources(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A Boolean value that indicates whether to include Lightsail bucket CORS
+     * configuration in the response. For more information, see <a
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring
+     * cross-origin resource sharing (CORS)</a>.</p>  <p>This parameter is only
+     * supported when getting a single bucket with <code>bucketName</code> specified.
+     * The default value for this parameter is <code>False</code>.</p> 
+     */
+    inline bool GetIncludeCors() const { return m_includeCors; }
+    inline bool IncludeCorsHasBeenSet() const { return m_includeCorsHasBeenSet; }
+    inline void SetIncludeCors(bool value) { m_includeCorsHasBeenSet = true; m_includeCors = value; }
+    inline GetBucketsRequest& WithIncludeCors(bool value) { SetIncludeCors(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_bucketName;
@@ -85,6 +100,9 @@ namespace Model
 
     bool m_includeConnectedResources{false};
     bool m_includeConnectedResourcesHasBeenSet = false;
+
+    bool m_includeCors{false};
+    bool m_includeCorsHasBeenSet = false;
   };
 
 } // namespace Model

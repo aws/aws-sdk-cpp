@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/model/RuleCondition.h>
 #include <aws/elasticloadbalancingv2/model/Action.h>
+#include <aws/elasticloadbalancingv2/model/RuleTransform.h>
 #include <utility>
 
 namespace Aws
@@ -109,6 +110,20 @@ namespace Model
     inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
     inline Rule& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The transforms for the rule.</p>
+     */
+    inline const Aws::Vector<RuleTransform>& GetTransforms() const { return m_transforms; }
+    inline bool TransformsHasBeenSet() const { return m_transformsHasBeenSet; }
+    template<typename TransformsT = Aws::Vector<RuleTransform>>
+    void SetTransforms(TransformsT&& value) { m_transformsHasBeenSet = true; m_transforms = std::forward<TransformsT>(value); }
+    template<typename TransformsT = Aws::Vector<RuleTransform>>
+    Rule& WithTransforms(TransformsT&& value) { SetTransforms(std::forward<TransformsT>(value)); return *this;}
+    template<typename TransformsT = RuleTransform>
+    Rule& AddTransforms(TransformsT&& value) { m_transformsHasBeenSet = true; m_transforms.emplace_back(std::forward<TransformsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_ruleArn;
@@ -125,6 +140,9 @@ namespace Model
 
     bool m_isDefault{false};
     bool m_isDefaultHasBeenSet = false;
+
+    Aws::Vector<RuleTransform> m_transforms;
+    bool m_transformsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -85,6 +85,15 @@ DbInstanceForClusterSummary& DbInstanceForClusterSummary::operator =(JsonView js
     m_instanceMode = InstanceModeMapper::GetInstanceModeForName(jsonValue.GetString("instanceMode"));
     m_instanceModeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("instanceModes"))
+  {
+    Aws::Utils::Array<JsonView> instanceModesJsonList = jsonValue.GetArray("instanceModes");
+    for(unsigned instanceModesIndex = 0; instanceModesIndex < instanceModesJsonList.GetLength(); ++instanceModesIndex)
+    {
+      m_instanceModes.push_back(InstanceModeMapper::GetInstanceModeForName(instanceModesJsonList[instanceModesIndex].AsString()));
+    }
+    m_instanceModesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -156,6 +165,17 @@ JsonValue DbInstanceForClusterSummary::Jsonize() const
   if(m_instanceModeHasBeenSet)
   {
    payload.WithString("instanceMode", InstanceModeMapper::GetNameForInstanceMode(m_instanceMode));
+  }
+
+  if(m_instanceModesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> instanceModesJsonList(m_instanceModes.size());
+   for(unsigned instanceModesIndex = 0; instanceModesIndex < instanceModesJsonList.GetLength(); ++instanceModesIndex)
+   {
+     instanceModesJsonList[instanceModesIndex].AsString(InstanceModeMapper::GetNameForInstanceMode(m_instanceModes[instanceModesIndex]));
+   }
+   payload.WithArray("instanceModes", std::move(instanceModesJsonList));
+
   }
 
   return payload;

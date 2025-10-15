@@ -51,6 +51,12 @@ Aws::String UpdateBucketRequest::SerializePayload() const
 
   }
 
+  if(m_corsHasBeenSet)
+  {
+   payload.WithObject("cors", m_cors.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

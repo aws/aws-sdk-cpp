@@ -117,6 +117,11 @@ Bucket& Bucket::operator =(JsonView jsonValue)
     m_accessLogConfig = jsonValue.GetObject("accessLogConfig");
     m_accessLogConfigHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("cors"))
+  {
+    m_cors = jsonValue.GetObject("cors");
+    m_corsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -231,6 +236,12 @@ JsonValue Bucket::Jsonize() const
   if(m_accessLogConfigHasBeenSet)
   {
    payload.WithObject("accessLogConfig", m_accessLogConfig.Jsonize());
+
+  }
+
+  if(m_corsHasBeenSet)
+  {
+   payload.WithObject("cors", m_cors.Jsonize());
 
   }
 

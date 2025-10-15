@@ -55,6 +55,11 @@ GetAutomatedReasoningPolicyResult& GetAutomatedReasoningPolicyResult::operator =
     m_definitionHash = jsonValue.GetString("definitionHash");
     m_definitionHashHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("kmsKeyArn"))
+  {
+    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
+    m_kmsKeyArnHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");

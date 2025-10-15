@@ -16,9 +16,16 @@ namespace Model
   enum class ReservationState
   {
     NOT_SET,
+    active,
+    expired,
+    cancelled,
+    scheduled,
+    pending,
+    failed,
+    delayed,
+    unsupported,
     payment_pending,
     payment_failed,
-    active,
     retired
   };
 

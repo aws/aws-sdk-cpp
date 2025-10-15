@@ -93,6 +93,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The identifier of the KMS key to use for encrypting the automated reasoning
+     * policy and its associated artifacts. If you don't specify a KMS key, Amazon
+     * Bedrock uses an KMS managed key for encryption. For enhanced security and
+     * control, you can specify a customer managed KMS key.</p>
+     */
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    CreateAutomatedReasoningPolicyRequest& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A list of tags to associate with the Automated Reasoning policy. Tags help
      * you organize and manage your policies.</p>
      */
@@ -118,6 +133,9 @@ namespace Model
 
     AutomatedReasoningPolicyDefinition m_policyDefinition;
     bool m_policyDefinitionHasBeenSet = false;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

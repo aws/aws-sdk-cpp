@@ -85,6 +85,11 @@ GetDbClusterResult& GetDbClusterResult::operator =(const Aws::AmazonWebServiceRe
     m_allocatedStorage = jsonValue.GetInteger("allocatedStorage");
     m_allocatedStorageHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("engineType"))
+  {
+    m_engineType = EngineTypeMapper::GetEngineTypeForName(jsonValue.GetString("engineType"));
+    m_engineTypeHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("publiclyAccessible"))
   {
     m_publiclyAccessible = jsonValue.GetBool("publiclyAccessible");

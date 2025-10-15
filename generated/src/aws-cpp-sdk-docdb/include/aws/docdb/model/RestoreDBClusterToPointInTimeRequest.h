@@ -262,6 +262,24 @@ namespace Model
     template<typename StorageTypeT = Aws::String>
     RestoreDBClusterToPointInTimeRequest& WithStorageType(StorageTypeT&& value) { SetStorageType(std::forward<StorageTypeT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The network type of the cluster.</p> <p>The network type is determined by the
+     * <code>DBSubnetGroup</code> specified for the cluster. A
+     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
+     * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB
+     * clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p> <p>Valid
+     * Values: <code>IPV4</code> | <code>DUAL</code> </p>
+     */
+    inline const Aws::String& GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    template<typename NetworkTypeT = Aws::String>
+    void SetNetworkType(NetworkTypeT&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::forward<NetworkTypeT>(value); }
+    template<typename NetworkTypeT = Aws::String>
+    RestoreDBClusterToPointInTimeRequest& WithNetworkType(NetworkTypeT&& value) { SetNetworkType(std::forward<NetworkTypeT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_dBClusterIdentifier;
@@ -305,6 +323,9 @@ namespace Model
 
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet = false;
+
+    Aws::String m_networkType;
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

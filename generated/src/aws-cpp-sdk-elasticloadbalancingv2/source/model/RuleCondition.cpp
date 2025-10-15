@@ -86,6 +86,19 @@ RuleCondition& RuleCondition::operator =(const XmlNode& xmlNode)
       m_sourceIpConfig = sourceIpConfigNode;
       m_sourceIpConfigHasBeenSet = true;
     }
+    XmlNode regexValuesNode = resultNode.FirstChild("RegexValues");
+    if(!regexValuesNode.IsNull())
+    {
+      XmlNode regexValuesMember = regexValuesNode.FirstChild("member");
+      m_regexValuesHasBeenSet = !regexValuesMember.IsNull();
+      while(!regexValuesMember.IsNull())
+      {
+        m_regexValues.push_back(regexValuesMember.GetText());
+        regexValuesMember = regexValuesMember.NextNode("member");
+      }
+
+      m_regexValuesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -149,6 +162,15 @@ void RuleCondition::OutputToStream(Aws::OStream& oStream, const char* location, 
       m_sourceIpConfig.OutputToStream(oStream, sourceIpConfigLocationAndMemberSs.str().c_str());
   }
 
+  if(m_regexValuesHasBeenSet)
+  {
+      unsigned regexValuesIdx = 1;
+      for(auto& item : m_regexValues)
+      {
+        oStream << location << index << locationValue << ".RegexValues.member." << regexValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void RuleCondition::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -200,6 +222,14 @@ void RuleCondition::OutputToStream(Aws::OStream& oStream, const char* location) 
       Aws::String sourceIpConfigLocationAndMember(location);
       sourceIpConfigLocationAndMember += ".SourceIpConfig";
       m_sourceIpConfig.OutputToStream(oStream, sourceIpConfigLocationAndMember.c_str());
+  }
+  if(m_regexValuesHasBeenSet)
+  {
+      unsigned regexValuesIdx = 1;
+      for(auto& item : m_regexValues)
+      {
+        oStream << location << ".RegexValues.member." << regexValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 }
 

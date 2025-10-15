@@ -96,7 +96,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether health checks are enabled.</p>
+     * <p>Indicates whether health checks are enabled. If the target type is
+     * <code>lambda</code>, health checks are disabled by default but can be enabled.
+     * If the target type is <code>instance</code>, <code>ip</code>, or
+     * <code>alb</code>, health checks are always enabled and can't be disabled.</p>
      */
     inline bool GetHealthCheckEnabled() const { return m_healthCheckEnabled; }
     inline bool HealthCheckEnabledHasBeenSet() const { return m_healthCheckEnabledHasBeenSet; }

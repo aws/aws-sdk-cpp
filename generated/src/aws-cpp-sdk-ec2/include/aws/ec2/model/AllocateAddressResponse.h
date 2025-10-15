@@ -47,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of an address pool.</p>
+     * <p>The ID of an address pool that you own.</p>
      */
     inline const Aws::String& GetPublicIpv4Pool() const { return m_publicIpv4Pool; }
     template<typename PublicIpv4PoolT = Aws::String>
@@ -101,8 +101,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The carrier IP address. This option is only available for network interfaces
-     * that reside in a subnet in a Wavelength Zone.</p>
+     * <p>The carrier IP address. Available only for network interfaces that reside in
+     * a subnet in a Wavelength Zone.</p>
      */
     inline const Aws::String& GetCarrierIp() const { return m_carrierIp; }
     template<typename CarrierIpT = Aws::String>
@@ -113,7 +113,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Elastic IP address.</p>
+     * <p>The Amazon-owned IP address. Not available when using an address pool that
+     * you own.</p>
      */
     inline const Aws::String& GetPublicIp() const { return m_publicIp; }
     template<typename PublicIpT = Aws::String>

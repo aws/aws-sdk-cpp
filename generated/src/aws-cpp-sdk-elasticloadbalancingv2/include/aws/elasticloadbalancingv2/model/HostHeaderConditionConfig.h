@@ -42,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The host names. The maximum size of each name is 128 characters. The
+     * <p>The host names. The maximum length of each string is 128 characters. The
      * comparison is case insensitive. The following wildcard characters are supported:
      * * (matches 0 or more characters) and ? (matches exactly 1 character). You must
      * include at least one "." character. You can include only alphabetical characters
@@ -58,10 +58,28 @@ namespace Model
     template<typename ValuesT = Aws::String>
     HostHeaderConditionConfig& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The regular expressions to compare against the host header. The maximum
+     * length of each string is 128 characters.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRegexValues() const { return m_regexValues; }
+    inline bool RegexValuesHasBeenSet() const { return m_regexValuesHasBeenSet; }
+    template<typename RegexValuesT = Aws::Vector<Aws::String>>
+    void SetRegexValues(RegexValuesT&& value) { m_regexValuesHasBeenSet = true; m_regexValues = std::forward<RegexValuesT>(value); }
+    template<typename RegexValuesT = Aws::Vector<Aws::String>>
+    HostHeaderConditionConfig& WithRegexValues(RegexValuesT&& value) { SetRegexValues(std::forward<RegexValuesT>(value)); return *this;}
+    template<typename RegexValuesT = Aws::String>
+    HostHeaderConditionConfig& AddRegexValues(RegexValuesT&& value) { m_regexValuesHasBeenSet = true; m_regexValues.emplace_back(std::forward<RegexValuesT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_regexValues;
+    bool m_regexValuesHasBeenSet = false;
   };
 
 } // namespace Model

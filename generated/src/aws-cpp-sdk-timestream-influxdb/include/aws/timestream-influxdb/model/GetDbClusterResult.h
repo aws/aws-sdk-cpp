@@ -11,6 +11,7 @@
 #include <aws/timestream-influxdb/model/DbInstanceType.h>
 #include <aws/timestream-influxdb/model/NetworkType.h>
 #include <aws/timestream-influxdb/model/DbStorageType.h>
+#include <aws/timestream-influxdb/model/EngineType.h>
 #include <aws/timestream-influxdb/model/LogDeliveryConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/timestream-influxdb/model/FailoverMode.h>
@@ -164,6 +165,15 @@ namespace Model
 
     ///@{
     /**
+     * <p>The engine type of your DB cluster.</p>
+     */
+    inline EngineType GetEngineType() const { return m_engineType; }
+    inline void SetEngineType(EngineType value) { m_engineTypeHasBeenSet = true; m_engineType = value; }
+    inline GetDbClusterResult& WithEngineType(EngineType value) { SetEngineType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Indicates if the DB cluster has a public IP to facilitate access from outside
      * the VPC.</p>
      */
@@ -289,6 +299,9 @@ namespace Model
 
     int m_allocatedStorage{0};
     bool m_allocatedStorageHasBeenSet = false;
+
+    EngineType m_engineType{EngineType::NOT_SET};
+    bool m_engineTypeHasBeenSet = false;
 
     bool m_publiclyAccessible{false};
     bool m_publiclyAccessibleHasBeenSet = false;

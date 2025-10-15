@@ -12,6 +12,7 @@
 #include <aws/timestream-influxdb/model/DbStorageType.h>
 #include <aws/timestream-influxdb/model/DeploymentType.h>
 #include <aws/timestream-influxdb/model/InstanceMode.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -176,6 +177,19 @@ namespace Model
     inline void SetInstanceMode(InstanceMode value) { m_instanceModeHasBeenSet = true; m_instanceMode = value; }
     inline DbInstanceForClusterSummary& WithInstanceMode(InstanceMode value) { SetInstanceMode(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the DB instance's roles in the cluster.</p>
+     */
+    inline const Aws::Vector<InstanceMode>& GetInstanceModes() const { return m_instanceModes; }
+    inline bool InstanceModesHasBeenSet() const { return m_instanceModesHasBeenSet; }
+    template<typename InstanceModesT = Aws::Vector<InstanceMode>>
+    void SetInstanceModes(InstanceModesT&& value) { m_instanceModesHasBeenSet = true; m_instanceModes = std::forward<InstanceModesT>(value); }
+    template<typename InstanceModesT = Aws::Vector<InstanceMode>>
+    DbInstanceForClusterSummary& WithInstanceModes(InstanceModesT&& value) { SetInstanceModes(std::forward<InstanceModesT>(value)); return *this;}
+    inline DbInstanceForClusterSummary& AddInstanceModes(InstanceMode value) { m_instanceModesHasBeenSet = true; m_instanceModes.push_back(value); return *this; }
+    ///@}
   private:
 
     Aws::String m_id;
@@ -213,6 +227,9 @@ namespace Model
 
     InstanceMode m_instanceMode{InstanceMode::NOT_SET};
     bool m_instanceModeHasBeenSet = false;
+
+    Aws::Vector<InstanceMode> m_instanceModes;
+    bool m_instanceModesHasBeenSet = false;
   };
 
 } // namespace Model

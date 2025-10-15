@@ -85,6 +85,11 @@ DbClusterSummary& DbClusterSummary::operator =(JsonView jsonValue)
     m_allocatedStorage = jsonValue.GetInteger("allocatedStorage");
     m_allocatedStorageHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("engineType"))
+  {
+    m_engineType = EngineTypeMapper::GetEngineTypeForName(jsonValue.GetString("engineType"));
+    m_engineTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -157,6 +162,11 @@ JsonValue DbClusterSummary::Jsonize() const
   {
    payload.WithInteger("allocatedStorage", m_allocatedStorage);
 
+  }
+
+  if(m_engineTypeHasBeenSet)
+  {
+   payload.WithString("engineType", EngineTypeMapper::GetNameForEngineType(m_engineType));
   }
 
   return payload;

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/model/RuleCondition.h>
 #include <aws/elasticloadbalancingv2/model/Action.h>
+#include <aws/elasticloadbalancingv2/model/RuleTransform.h>
 #include <utility>
 
 namespace Aws
@@ -78,6 +79,33 @@ namespace Model
     template<typename ActionsT = Action>
     ModifyRuleRequest& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The transforms to apply to requests that match this rule. You can add one
+     * host header rewrite transform and one URL rewrite transform. If you specify
+     * <code>Transforms</code>, you can't specify <code>ResetTransforms</code>.</p>
+     */
+    inline const Aws::Vector<RuleTransform>& GetTransforms() const { return m_transforms; }
+    inline bool TransformsHasBeenSet() const { return m_transformsHasBeenSet; }
+    template<typename TransformsT = Aws::Vector<RuleTransform>>
+    void SetTransforms(TransformsT&& value) { m_transformsHasBeenSet = true; m_transforms = std::forward<TransformsT>(value); }
+    template<typename TransformsT = Aws::Vector<RuleTransform>>
+    ModifyRuleRequest& WithTransforms(TransformsT&& value) { SetTransforms(std::forward<TransformsT>(value)); return *this;}
+    template<typename TransformsT = RuleTransform>
+    ModifyRuleRequest& AddTransforms(TransformsT&& value) { m_transformsHasBeenSet = true; m_transforms.emplace_back(std::forward<TransformsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether to remove all transforms from the rule. If you specify
+     * <code>ResetTransforms</code>, you can't specify <code>Transforms</code>.</p>
+     */
+    inline bool GetResetTransforms() const { return m_resetTransforms; }
+    inline bool ResetTransformsHasBeenSet() const { return m_resetTransformsHasBeenSet; }
+    inline void SetResetTransforms(bool value) { m_resetTransformsHasBeenSet = true; m_resetTransforms = value; }
+    inline ModifyRuleRequest& WithResetTransforms(bool value) { SetResetTransforms(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_ruleArn;
@@ -88,6 +116,12 @@ namespace Model
 
     Aws::Vector<Action> m_actions;
     bool m_actionsHasBeenSet = false;
+
+    Aws::Vector<RuleTransform> m_transforms;
+    bool m_transformsHasBeenSet = false;
+
+    bool m_resetTransforms{false};
+    bool m_resetTransformsHasBeenSet = false;
   };
 
 } // namespace Model

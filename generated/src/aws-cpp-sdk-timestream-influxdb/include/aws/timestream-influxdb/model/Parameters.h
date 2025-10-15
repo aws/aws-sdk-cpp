@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
 #include <aws/timestream-influxdb/model/InfluxDBv2Parameters.h>
+#include <aws/timestream-influxdb/model/InfluxDBv3CoreParameters.h>
+#include <aws/timestream-influxdb/model/InfluxDBv3EnterpriseParameters.h>
 #include <utility>
 
 namespace Aws
@@ -50,10 +52,42 @@ namespace Model
     template<typename InfluxDBv2T = InfluxDBv2Parameters>
     Parameters& WithInfluxDBv2(InfluxDBv2T&& value) { SetInfluxDBv2(std::forward<InfluxDBv2T>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>All the customer-modifiable InfluxDB v3 Core parameters in Timestream for
+     * InfluxDB.</p>
+     */
+    inline const InfluxDBv3CoreParameters& GetInfluxDBv3Core() const { return m_influxDBv3Core; }
+    inline bool InfluxDBv3CoreHasBeenSet() const { return m_influxDBv3CoreHasBeenSet; }
+    template<typename InfluxDBv3CoreT = InfluxDBv3CoreParameters>
+    void SetInfluxDBv3Core(InfluxDBv3CoreT&& value) { m_influxDBv3CoreHasBeenSet = true; m_influxDBv3Core = std::forward<InfluxDBv3CoreT>(value); }
+    template<typename InfluxDBv3CoreT = InfluxDBv3CoreParameters>
+    Parameters& WithInfluxDBv3Core(InfluxDBv3CoreT&& value) { SetInfluxDBv3Core(std::forward<InfluxDBv3CoreT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>All the customer-modifiable InfluxDB v3 Enterprise parameters in Timestream
+     * for InfluxDB.</p>
+     */
+    inline const InfluxDBv3EnterpriseParameters& GetInfluxDBv3Enterprise() const { return m_influxDBv3Enterprise; }
+    inline bool InfluxDBv3EnterpriseHasBeenSet() const { return m_influxDBv3EnterpriseHasBeenSet; }
+    template<typename InfluxDBv3EnterpriseT = InfluxDBv3EnterpriseParameters>
+    void SetInfluxDBv3Enterprise(InfluxDBv3EnterpriseT&& value) { m_influxDBv3EnterpriseHasBeenSet = true; m_influxDBv3Enterprise = std::forward<InfluxDBv3EnterpriseT>(value); }
+    template<typename InfluxDBv3EnterpriseT = InfluxDBv3EnterpriseParameters>
+    Parameters& WithInfluxDBv3Enterprise(InfluxDBv3EnterpriseT&& value) { SetInfluxDBv3Enterprise(std::forward<InfluxDBv3EnterpriseT>(value)); return *this;}
+    ///@}
   private:
 
     InfluxDBv2Parameters m_influxDBv2;
     bool m_influxDBv2HasBeenSet = false;
+
+    InfluxDBv3CoreParameters m_influxDBv3Core;
+    bool m_influxDBv3CoreHasBeenSet = false;
+
+    InfluxDBv3EnterpriseParameters m_influxDBv3Enterprise;
+    bool m_influxDBv3EnterpriseHasBeenSet = false;
   };
 
 } // namespace Model

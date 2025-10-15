@@ -34,6 +34,12 @@ Aws::String GetBucketsRequest::SerializePayload() const
 
   }
 
+  if(m_includeCorsHasBeenSet)
+  {
+   payload.WithBool("includeCors", m_includeCors);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

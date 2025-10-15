@@ -122,6 +122,11 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const
     ss << "RotateMasterUserPassword=" << std::boolalpha << m_rotateMasterUserPassword << "&";
   }
 
+  if(m_networkTypeHasBeenSet)
+  {
+    ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
+  }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }
