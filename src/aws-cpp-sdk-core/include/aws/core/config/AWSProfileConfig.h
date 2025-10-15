@@ -7,8 +7,8 @@
 
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/StringUtils.h>
 #include <aws/core/auth/AWSCredentials.h>
+#include <aws/crt/Optional.h>
 
 namespace Aws
 {
@@ -94,11 +94,23 @@ namespace Aws
                 return iter->second;
             }
 
-            inline const Aws::String& GetServicesDefinitionName() const { return m_servicesDefinitionName; }
-            inline void SetServicesDefinitionName(const Aws::String& value) { m_servicesDefinitionName = value; }
+            inline Aws::Crt::Optional<Aws::String> GetServicesName() const {
+                const Aws::String& service = GetValue("services");
+                return service.empty() ? Aws::Crt::Optional<Aws::String>() : Aws::Crt::Optional<Aws::String>(service);
+            }
 
-            inline const Aws::String& GetEndpointUrl() const { return m_endpointUrl; }
-            inline void SetEndpointUrl(const Aws::String& value) { m_endpointUrl = value; }
+            inline Aws::Crt::Optional<Aws::String> GetEndpointUrl() const {
+                const Aws::String& endpoint = GetValue("endpoint_url");
+                return endpoint.empty() ? Aws::Crt::Optional<Aws::String>() : Aws::Crt::Optional<Aws::String>(endpoint);
+            }
+
+            /**
+             * Static helper that get service-specific endpoint URL for a given service.
+             */
+            static Aws::Crt::Optional<Aws::String> GetServiceEndpointUrl(
+                const Profile& profile,
+                const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& services,
+                const Aws::String& serviceId);
 
             inline bool IsSsoSessionSet() const { return m_ssoSessionSet; }
             inline const SsoSession& GetSsoSession() const { return m_ssoSession; }
@@ -118,8 +130,6 @@ namespace Aws
             Aws::String m_ssoAccountId;
             Aws::String m_ssoRoleName;
             Aws::String m_defaultsMode;
-            Aws::String m_servicesDefinitionName;
-            Aws::String m_endpointUrl;
             Aws::Map<Aws::String, Aws::String> m_allKeyValPairs;
 
             bool m_ssoSessionSet = false;
