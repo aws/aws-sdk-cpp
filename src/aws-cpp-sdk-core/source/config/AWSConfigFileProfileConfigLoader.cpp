@@ -42,6 +42,7 @@ namespace Aws
         static const char SSO_SESSION_SECTION[]              = "sso-session";
         static const char SERVICES_SECTION[]                 = "services";
         static const char ENDPOINT_URL_KEY[]                 = "endpoint_url";
+        static const char IGNORE_CONFIGURED_ENDPOINT_URLS_KEY[] = "ignore_configured_endpoint_urls";
         static const char DEFAULTS_MODE_KEY[]                = "defaults_mode";
         static const char EQ                                 = '=';
         static const char LEFT_BRACKET                       = '[';
@@ -76,8 +77,6 @@ namespace Aws
                  {EXTERNAL_ID_KEY, &Profile::SetExternalId, &Profile::GetExternalId},
                  {CREDENTIAL_PROCESS_COMMAND, &Profile::SetCredentialProcess, &Profile::GetCredentialProcess},
                  {SOURCE_PROFILE_KEY, &Profile::SetSourceProfile, &Profile::GetSourceProfile},
-                 {SERVICES_SECTION, &Profile::SetServicesDefinitionName, &Profile::GetServicesDefinitionName},
-                 {ENDPOINT_URL_KEY, &Profile::SetEndpointUrl, &Profile::GetEndpointUrl},
                  {DEFAULTS_MODE_KEY, &Profile::SetDefaultsMode, &Profile::GetDefaultsMode}};
 
         template<typename EntryT, size_t N>
@@ -117,7 +116,7 @@ namespace Aws
             {}
 
             const Aws::Map<String, Profile>& GetProfiles() const { return m_foundProfiles; }
-            const Aws::Map<String, Aws::Map<String, String>>& GetServicesDefinitions() const { return m_servicesDefinitions; }
+            const Aws::Map<String, Aws::Map<String, String>>& GetServices() const { return m_services; }
 
             void ParseStream(Aws::IStream& stream)
             {
@@ -177,12 +176,12 @@ namespace Aws
 
                         // New service block: "s3 =" (right hand side empty)
                         if (!left.empty() && right.empty()) {
-                            activeServiceId = StringUtils::ToLower(left.c_str());
+                            activeServiceId = StringUtils::ToUpper(left.c_str());
                             StringUtils::Replace(activeServiceId, " ", "_");
                             continue;
                         }
 
-                        // Ignore top-level endpoint_url in [services name] section
+                        // Ignore global endpoint_url in [services name] section
                         if (activeServiceId.empty() && StringUtils::CaselessCompare(left.c_str(), ENDPOINT_URL_KEY) == 0) {
                             AWS_LOGSTREAM_DEBUG(PARSER_TAG, "Ignoring global endpoint_url in [services " << currentSectionName << "]");
                             continue;
@@ -190,7 +189,7 @@ namespace Aws
 
                         // Property inside an active block: "endpoint_url = http://..."
                         if (!activeServiceId.empty() && left == ENDPOINT_URL_KEY) {
-                            m_servicesDefinitions[currentSectionName][activeServiceId] = right;
+                            m_services[currentSectionName][activeServiceId] = right;
                             continue;
                         }
                     }
@@ -627,7 +626,7 @@ namespace Aws
 
             Aws::Map<String, Profile> m_foundProfiles;
             Aws::Map<String, Profile::SsoSession> m_foundSsoSessions;
-            Aws::Map<String, Aws::Map<String, String>> m_servicesDefinitions;
+            Aws::Map<String, Aws::Map<String, String>> m_services;
         };
 
         static const char* const CONFIG_FILE_LOADER = "Aws::Config::AWSConfigFileProfileConfigLoader";
@@ -642,7 +641,7 @@ namespace Aws
         bool AWSConfigFileProfileConfigLoader::LoadInternal()
         {
             m_profiles.clear();
-            m_servicesDefinitions.clear();
+            m_services.clear();
 
             Aws::IFStream inputFile(m_fileName.c_str());
             if(inputFile)
@@ -650,7 +649,7 @@ namespace Aws
                 ConfigFileProfileFSM parser(m_useProfilePrefix);
                 parser.ParseStream(inputFile);
                 m_profiles = parser.GetProfiles();
-                m_servicesDefinitions = parser.GetServicesDefinitions();
+                m_services = parser.GetServices();
                 return m_profiles.size() > 0;
             }
 
@@ -739,39 +738,9 @@ namespace Aws
             return false;
         }
 
-        const Aws::String* AWSConfigFileProfileConfigLoader::GetServiceEndpointUrl(const Aws::String& profileName, const Aws::String& serviceId) const
+        const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& AWSConfigFileProfileConfigLoader::GetServices() const
         {
-            auto profileIter = m_profiles.find(profileName);
-            if (profileIter == m_profiles.end()) 
-            {
-                return nullptr;
-            }
-            
-            const auto& servicesDefName = profileIter->second.GetServicesDefinitionName();
-            if (servicesDefName.empty()) {
-                return nullptr;
-            }
-            
-            auto servicesDefIter = m_servicesDefinitions.find(servicesDefName);
-            if (servicesDefIter == m_servicesDefinitions.end()) {
-                return nullptr;
-            }
-            
-            Aws::String key = StringUtils::ToLower(serviceId.c_str());
-            StringUtils::Replace(key, " ", "_");
-            auto serviceIter = servicesDefIter->second.find(key);
-            return (serviceIter == servicesDefIter->second.end()) ? nullptr : &serviceIter->second;
-        }
-
-        const Aws::String* AWSConfigFileProfileConfigLoader::GetGlobalEndpointUrl(const Aws::String& profileName) const
-        {
-            auto profileIter = m_profiles.find(profileName);
-            if (profileIter == m_profiles.end()) 
-            {
-                return nullptr;
-            }
-            const Aws::String& endpointUrl = profileIter->second.GetEndpointUrl();
-            return endpointUrl.empty() ? nullptr : &endpointUrl;
+            return m_services;
         }
     } // Config namespace
 } // Aws namespace

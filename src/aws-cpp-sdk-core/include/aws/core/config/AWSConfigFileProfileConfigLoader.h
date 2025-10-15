@@ -41,14 +41,9 @@ namespace Aws
             void SetFileName(const Aws::String& fileName) { m_fileName = fileName; }
 
             /**
-             * Get service-specific endpoint URL for a given profile and service.
+             * Get services map for endpoint resolution.
              */
-            const Aws::String* GetServiceEndpointUrl(const Aws::String& profileName, const Aws::String& serviceId) const;
-
-            /**
-             * Get global endpoint URL for a given profile.
-             */
-            const Aws::String* GetGlobalEndpointUrl(const Aws::String& profileName) const;
+            const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& GetServices() const;
 
         protected:
             virtual bool LoadInternal() override;
@@ -57,7 +52,7 @@ namespace Aws
         private:
             Aws::String m_fileName;
             bool m_useProfilePrefix;
-            Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_servicesDefinitions;
+            Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_services;
         };
     }
 }
