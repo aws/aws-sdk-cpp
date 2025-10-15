@@ -94,20 +94,11 @@ namespace Aws
                 return iter->second;
             }
 
+            inline const Aws::String& GetServicesDefinitionName() const { return m_servicesDefinitionName; }
+            inline void SetServicesDefinitionName(const Aws::String& value) { m_servicesDefinitionName = value; }
+
             inline const Aws::String& GetEndpointUrl() const { return m_endpointUrl; }
             inline void SetEndpointUrl(const Aws::String& value) { m_endpointUrl = value; }
-            
-            inline const Aws::UnorderedMap<Aws::String, Aws::String>& GetServicesEndpointUrl() const { return m_servicesEndpointUrl; }
-            inline void SetServiceEndpointUrl(const Aws::String& serviceId, const Aws::String& endpointUrl) 
-            { 
-                m_servicesEndpointUrl[Aws::Utils::StringUtils::ToLower(serviceId.c_str())] = endpointUrl; 
-            }
-            
-            const Aws::String* GetServiceEndpointUrl(const Aws::String& serviceId) const 
-            {
-                auto it = m_servicesEndpointUrl.find(Aws::Utils::StringUtils::ToLower(serviceId.c_str()));
-                return (it == m_servicesEndpointUrl.end()) ? nullptr : &it->second;
-            }
 
             inline bool IsSsoSessionSet() const { return m_ssoSessionSet; }
             inline const SsoSession& GetSsoSession() const { return m_ssoSession; }
@@ -127,8 +118,8 @@ namespace Aws
             Aws::String m_ssoAccountId;
             Aws::String m_ssoRoleName;
             Aws::String m_defaultsMode;
+            Aws::String m_servicesDefinitionName;
             Aws::String m_endpointUrl;
-            Aws::UnorderedMap<Aws::String, Aws::String> m_servicesEndpointUrl;
             Aws::Map<Aws::String, Aws::String> m_allKeyValPairs;
 
             bool m_ssoSessionSet = false;
