@@ -75,6 +75,23 @@ Aws::String CreateRuleRequest::SerializePayload() const
     }
   }
 
+  if(m_transformsHasBeenSet)
+  {
+    if (m_transforms.empty())
+    {
+      ss << "Transforms=&";
+    }
+    else
+    {
+      unsigned transformsCount = 1;
+      for(auto& item : m_transforms)
+      {
+        item.OutputToStream(ss, "Transforms.member.", transformsCount, "");
+        transformsCount++;
+      }
+    }
+  }
+
   ss << "Version=2015-12-01";
   return ss.str();
 }

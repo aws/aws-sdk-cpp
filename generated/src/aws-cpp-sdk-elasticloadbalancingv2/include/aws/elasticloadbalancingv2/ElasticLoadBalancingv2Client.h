@@ -268,10 +268,11 @@ namespace ElasticLoadBalancingv2
         /**
          * <p>Creates a rule for the specified listener. The listener must be associated
          * with an Application Load Balancer.</p> <p>Each rule consists of a priority, one
-         * or more actions, and one or more conditions. Rules are evaluated in priority
-         * order, from the lowest value to the highest value. When the conditions for a
-         * rule are met, its actions are performed. If the conditions for no rules are met,
-         * the actions for the default rule are performed. For more information, see <a
+         * or more actions, one or more conditions, and up to two optional transforms.
+         * Rules are evaluated in priority order, from the lowest value to the highest
+         * value. When the conditions for a rule are met, its actions are performed. If the
+         * conditions for no rules are met, the actions for the default rule are performed.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
          * rules</a> in the <i>Application Load Balancers Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1561,11 +1562,8 @@ namespace ElasticLoadBalancingv2
         /**
          * <p>Enables the Availability Zones for the specified public subnets for the
          * specified Application Load Balancer, Network Load Balancer or Gateway Load
-         * Balancer. The specified subnets replace the previously enabled subnets.</p>
-         * <p>When you specify subnets for a Network Load Balancer, or Gateway Load
-         * Balancer you must include all subnets that were enabled previously, with their
-         * existing configurations, plus any additional subnets.</p><p><h3>See Also:</h3>  
-         * <a
+         * Balancer. The specified subnets replace the previously enabled
+         * subnets.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSubnets">AWS
          * API Reference</a></p>
          */

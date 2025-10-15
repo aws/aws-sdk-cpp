@@ -54,6 +54,8 @@
 #include <aws/lightsail/model/Bucket.h>
 #include <aws/lightsail/model/BucketAccessLogConfig.h>
 #include <aws/lightsail/model/BucketBundle.h>
+#include <aws/lightsail/model/BucketCorsConfig.h>
+#include <aws/lightsail/model/BucketCorsRule.h>
 #include <aws/lightsail/model/BucketMetricName.h>
 #include <aws/lightsail/model/BucketState.h>
 #include <aws/lightsail/model/Bundle.h>

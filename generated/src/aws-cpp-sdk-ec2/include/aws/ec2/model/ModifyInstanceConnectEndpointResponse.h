@@ -34,9 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The return value of the request. Returns <code>true</code> if the specified
-     * product code is owned by the requester and associated with the specified
-     * instance.</p>
+     * <p>Is <code>true</code> if the request succeeds and an error otherwise.</p>
      */
     inline bool GetReturn() const { return m_return; }
     inline void SetReturn(bool value) { m_returnHasBeenSet = true; m_return = value; }

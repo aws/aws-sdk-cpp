@@ -140,6 +140,11 @@ Aws::String RestoreDBClusterFromSnapshotRequest::SerializePayload() const
     ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
   }
 
+  if(m_networkTypeHasBeenSet)
+  {
+    ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
+  }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

@@ -148,7 +148,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The mutual authentication configuration information.</p>
+     * <p>[HTTPS listeners] The mutual authentication configuration information.</p>
      */
     inline const MutualAuthenticationAttributes& GetMutualAuthentication() const { return m_mutualAuthentication; }
     inline bool MutualAuthenticationHasBeenSet() const { return m_mutualAuthenticationHasBeenSet; }

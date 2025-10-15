@@ -104,6 +104,7 @@
 #include <aws/elasticloadbalancingv2/model/GetTrustStoreRevocationContentRequest.h>
 #include <aws/elasticloadbalancingv2/model/GetTrustStoreRevocationContentResult.h>
 #include <aws/elasticloadbalancingv2/model/HostHeaderConditionConfig.h>
+#include <aws/elasticloadbalancingv2/model/HostHeaderRewriteConfig.h>
 #include <aws/elasticloadbalancingv2/model/HttpHeaderConditionConfig.h>
 #include <aws/elasticloadbalancingv2/model/HttpRequestMethodConditionConfig.h>
 #include <aws/elasticloadbalancingv2/model/IpAddressType.h>
@@ -158,9 +159,11 @@
 #include <aws/elasticloadbalancingv2/model/ResponseMetadata.h>
 #include <aws/elasticloadbalancingv2/model/RevocationContent.h>
 #include <aws/elasticloadbalancingv2/model/RevocationType.h>
+#include <aws/elasticloadbalancingv2/model/RewriteConfig.h>
 #include <aws/elasticloadbalancingv2/model/Rule.h>
 #include <aws/elasticloadbalancingv2/model/RuleCondition.h>
 #include <aws/elasticloadbalancingv2/model/RulePriorityPair.h>
+#include <aws/elasticloadbalancingv2/model/RuleTransform.h>
 #include <aws/elasticloadbalancingv2/model/SetIpAddressTypeRequest.h>
 #include <aws/elasticloadbalancingv2/model/SetIpAddressTypeResult.h>
 #include <aws/elasticloadbalancingv2/model/SetRulePrioritiesRequest.h>
@@ -187,11 +190,13 @@
 #include <aws/elasticloadbalancingv2/model/TargetHealthReasonEnum.h>
 #include <aws/elasticloadbalancingv2/model/TargetHealthStateEnum.h>
 #include <aws/elasticloadbalancingv2/model/TargetTypeEnum.h>
+#include <aws/elasticloadbalancingv2/model/TransformTypeEnum.h>
 #include <aws/elasticloadbalancingv2/model/TrustStore.h>
 #include <aws/elasticloadbalancingv2/model/TrustStoreAssociation.h>
 #include <aws/elasticloadbalancingv2/model/TrustStoreAssociationStatusEnum.h>
 #include <aws/elasticloadbalancingv2/model/TrustStoreRevocation.h>
 #include <aws/elasticloadbalancingv2/model/TrustStoreStatus.h>
+#include <aws/elasticloadbalancingv2/model/UrlRewriteConfig.h>
 #include <aws/elasticloadbalancingv2/model/ZonalCapacityReservationState.h>
 
 using ElasticLoadBalancingv2IncludeTest = ::testing::Test;

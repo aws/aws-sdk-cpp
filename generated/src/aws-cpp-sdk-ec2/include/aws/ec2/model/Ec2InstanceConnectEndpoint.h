@@ -30,7 +30,7 @@ namespace Model
 {
 
   /**
-   * <p>The EC2 Instance Connect Endpoint.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes an EC2 Instance Connect Endpoint.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Ec2InstanceConnectEndpoint">AWS
    * API Reference</a></p>
    */
@@ -196,12 +196,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether your client's IP address is preserved as the source. The
-     * value is <code>true</code> or <code>false</code>.</p> <ul> <li> <p>If
-     * <code>true</code>, your client's IP address is used when you connect to a
-     * resource.</p> </li> <li> <p>If <code>false</code>, the elastic network interface
-     * IP address is used when you connect to a resource.</p> </li> </ul> <p>Default:
-     * <code>true</code> </p>
+     * <p>Indicates whether your client's IP address is preserved as the source when
+     * you connect to a resource. The following are the possible values.</p> <ul> <li>
+     * <p> <code>true</code> - Use the IP address of the client. Your instance must
+     * have an IPv4 address.</p> </li> <li> <p> <code>false</code> - Use the IP address
+     * of the network interface.</p> </li> </ul> <p>Default: <code>false</code> </p>
      */
     inline bool GetPreserveClientIp() const { return m_preserveClientIp; }
     inline bool PreserveClientIpHasBeenSet() const { return m_preserveClientIpHasBeenSet; }

@@ -23,6 +23,10 @@ namespace Aws
         static const int PRIMARY_HASH = HashingUtils::HashString("PRIMARY");
         static const int STANDBY_HASH = HashingUtils::HashString("STANDBY");
         static const int REPLICA_HASH = HashingUtils::HashString("REPLICA");
+        static const int INGEST_HASH = HashingUtils::HashString("INGEST");
+        static const int QUERY_HASH = HashingUtils::HashString("QUERY");
+        static const int COMPACT_HASH = HashingUtils::HashString("COMPACT");
+        static const int PROCESS_HASH = HashingUtils::HashString("PROCESS");
 
 
         InstanceMode GetInstanceModeForName(const Aws::String& name)
@@ -39,6 +43,22 @@ namespace Aws
           else if (hashCode == REPLICA_HASH)
           {
             return InstanceMode::REPLICA;
+          }
+          else if (hashCode == INGEST_HASH)
+          {
+            return InstanceMode::INGEST;
+          }
+          else if (hashCode == QUERY_HASH)
+          {
+            return InstanceMode::QUERY;
+          }
+          else if (hashCode == COMPACT_HASH)
+          {
+            return InstanceMode::COMPACT;
+          }
+          else if (hashCode == PROCESS_HASH)
+          {
+            return InstanceMode::PROCESS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +82,14 @@ namespace Aws
             return "STANDBY";
           case InstanceMode::REPLICA:
             return "REPLICA";
+          case InstanceMode::INGEST:
+            return "INGEST";
+          case InstanceMode::QUERY:
+            return "QUERY";
+          case InstanceMode::COMPACT:
+            return "COMPACT";
+          case InstanceMode::PROCESS:
+            return "PROCESS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

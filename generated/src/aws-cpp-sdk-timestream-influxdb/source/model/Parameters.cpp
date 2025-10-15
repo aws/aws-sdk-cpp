@@ -30,6 +30,16 @@ Parameters& Parameters::operator =(JsonView jsonValue)
     m_influxDBv2 = jsonValue.GetObject("InfluxDBv2");
     m_influxDBv2HasBeenSet = true;
   }
+  if(jsonValue.ValueExists("InfluxDBv3Core"))
+  {
+    m_influxDBv3Core = jsonValue.GetObject("InfluxDBv3Core");
+    m_influxDBv3CoreHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("InfluxDBv3Enterprise"))
+  {
+    m_influxDBv3Enterprise = jsonValue.GetObject("InfluxDBv3Enterprise");
+    m_influxDBv3EnterpriseHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +50,18 @@ JsonValue Parameters::Jsonize() const
   if(m_influxDBv2HasBeenSet)
   {
    payload.WithObject("InfluxDBv2", m_influxDBv2.Jsonize());
+
+  }
+
+  if(m_influxDBv3CoreHasBeenSet)
+  {
+   payload.WithObject("InfluxDBv3Core", m_influxDBv3Core.Jsonize());
+
+  }
+
+  if(m_influxDBv3EnterpriseHasBeenSet)
+  {
+   payload.WithObject("InfluxDBv3Enterprise", m_influxDBv3Enterprise.Jsonize());
 
   }
 

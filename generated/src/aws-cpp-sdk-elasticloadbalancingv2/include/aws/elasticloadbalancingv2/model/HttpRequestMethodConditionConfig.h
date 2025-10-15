@@ -46,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the request method. The maximum size is 40 characters. The
+     * <p>The name of the request method. The maximum length is 40 characters. The
      * allowed characters are A-Z, hyphen (-), and underscore (_). The comparison is
      * case sensitive. Wildcards are not supported; therefore, the method name must be
      * an exact match.</p> <p>If you specify multiple strings, the condition is

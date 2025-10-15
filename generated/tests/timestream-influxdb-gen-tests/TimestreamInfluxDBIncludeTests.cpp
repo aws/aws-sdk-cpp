@@ -23,6 +23,7 @@
 #include <aws/timestream-influxdb/model/CreateDbInstanceResult.h>
 #include <aws/timestream-influxdb/model/CreateDbParameterGroupRequest.h>
 #include <aws/timestream-influxdb/model/CreateDbParameterGroupResult.h>
+#include <aws/timestream-influxdb/model/DataFusionRuntimeType.h>
 #include <aws/timestream-influxdb/model/DbClusterSummary.h>
 #include <aws/timestream-influxdb/model/DbInstanceForClusterSummary.h>
 #include <aws/timestream-influxdb/model/DbInstanceSummary.h>
@@ -36,6 +37,7 @@
 #include <aws/timestream-influxdb/model/DeploymentType.h>
 #include <aws/timestream-influxdb/model/Duration.h>
 #include <aws/timestream-influxdb/model/DurationType.h>
+#include <aws/timestream-influxdb/model/EngineType.h>
 #include <aws/timestream-influxdb/model/FailoverMode.h>
 #include <aws/timestream-influxdb/model/GetDbClusterRequest.h>
 #include <aws/timestream-influxdb/model/GetDbClusterResult.h>
@@ -44,6 +46,8 @@
 #include <aws/timestream-influxdb/model/GetDbParameterGroupRequest.h>
 #include <aws/timestream-influxdb/model/GetDbParameterGroupResult.h>
 #include <aws/timestream-influxdb/model/InfluxDBv2Parameters.h>
+#include <aws/timestream-influxdb/model/InfluxDBv3CoreParameters.h>
+#include <aws/timestream-influxdb/model/InfluxDBv3EnterpriseParameters.h>
 #include <aws/timestream-influxdb/model/InstanceMode.h>
 #include <aws/timestream-influxdb/model/ListDbClustersRequest.h>
 #include <aws/timestream-influxdb/model/ListDbClustersResult.h>
@@ -56,9 +60,11 @@
 #include <aws/timestream-influxdb/model/ListTagsForResourceRequest.h>
 #include <aws/timestream-influxdb/model/ListTagsForResourceResult.h>
 #include <aws/timestream-influxdb/model/LogDeliveryConfiguration.h>
+#include <aws/timestream-influxdb/model/LogFormats.h>
 #include <aws/timestream-influxdb/model/LogLevel.h>
 #include <aws/timestream-influxdb/model/NetworkType.h>
 #include <aws/timestream-influxdb/model/Parameters.h>
+#include <aws/timestream-influxdb/model/PercentOrAbsoluteLong.h>
 #include <aws/timestream-influxdb/model/ResourceNotFoundException.h>
 #include <aws/timestream-influxdb/model/S3Configuration.h>
 #include <aws/timestream-influxdb/model/Status.h>

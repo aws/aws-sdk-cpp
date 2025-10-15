@@ -75,7 +75,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The password of the initial admin user created in InfluxDB. This password
+     * <p>The password of the initial admin user created in InfluxDB v2. This password
      * will allow you to access the InfluxDB UI to perform various administrative tasks
      * and also use the InfluxDB CLI to create an operator token. These attributes will
      * be stored in a Secret created in Secrets Manager in your account.</p>

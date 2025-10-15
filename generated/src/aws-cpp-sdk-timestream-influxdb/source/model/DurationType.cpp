@@ -24,6 +24,7 @@ namespace Aws
         static const int minutes_HASH = HashingUtils::HashString("minutes");
         static const int seconds_HASH = HashingUtils::HashString("seconds");
         static const int milliseconds_HASH = HashingUtils::HashString("milliseconds");
+        static const int days_HASH = HashingUtils::HashString("days");
 
 
         DurationType GetDurationTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == milliseconds_HASH)
           {
             return DurationType::milliseconds;
+          }
+          else if (hashCode == days_HASH)
+          {
+            return DurationType::days;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "seconds";
           case DurationType::milliseconds:
             return "milliseconds";
+          case DurationType::days:
+            return "days";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

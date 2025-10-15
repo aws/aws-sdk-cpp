@@ -230,9 +230,16 @@ namespace Model
     ///@{
     /**
      * <p>A value that indicates whether major version upgrades are allowed.</p>
-     * <p>Constraints: You must allow major version upgrades when specifying a value
-     * for the <code>EngineVersion</code> parameter that is a different major version
-     * than the DB cluster's current version.</p>
+     * <p>Constraints:</p> <ul> <li> <p>You must allow major version upgrades when
+     * specifying a value for the <code>EngineVersion</code> parameter that is a
+     * different major version than the cluster's current version.</p> </li> <li>
+     * <p>Since some parameters are version specific, changing them requires executing
+     * a new <code>ModifyDBCluster</code> API call after the in-place MVU
+     * completes.</p> </li> </ul>  <p>Performing an MVU directly impacts the
+     * following parameters:</p> <ul> <li> <p> <code>MasterUserPassword</code> </p>
+     * </li> <li> <p> <code>NewDBClusterIdentifier</code> </p> </li> <li> <p>
+     * <code>VpcSecurityGroupIds</code> </p> </li> <li> <p> <code>Port</code> </p>
+     * </li> </ul> 
      */
     inline bool GetAllowMajorVersionUpgrade() const { return m_allowMajorVersionUpgrade; }
     inline bool AllowMajorVersionUpgradeHasBeenSet() const { return m_allowMajorVersionUpgradeHasBeenSet; }
@@ -345,6 +352,24 @@ namespace Model
     inline void SetRotateMasterUserPassword(bool value) { m_rotateMasterUserPasswordHasBeenSet = true; m_rotateMasterUserPassword = value; }
     inline ModifyDBClusterRequest& WithRotateMasterUserPassword(bool value) { SetRotateMasterUserPassword(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The network type of the cluster.</p> <p>The network type is determined by the
+     * <code>DBSubnetGroup</code> specified for the cluster. A
+     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
+     * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB
+     * clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p> <p>Valid
+     * Values: <code>IPV4</code> | <code>DUAL</code> </p>
+     */
+    inline const Aws::String& GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    template<typename NetworkTypeT = Aws::String>
+    void SetNetworkType(NetworkTypeT&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::forward<NetworkTypeT>(value); }
+    template<typename NetworkTypeT = Aws::String>
+    ModifyDBClusterRequest& WithNetworkType(NetworkTypeT&& value) { SetNetworkType(std::forward<NetworkTypeT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_dBClusterIdentifier;
@@ -403,6 +428,9 @@ namespace Model
 
     bool m_rotateMasterUserPassword{false};
     bool m_rotateMasterUserPasswordHasBeenSet = false;
+
+    Aws::String m_networkType;
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

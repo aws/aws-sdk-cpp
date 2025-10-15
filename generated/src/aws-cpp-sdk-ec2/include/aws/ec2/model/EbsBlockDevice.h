@@ -238,19 +238,22 @@ namespace Model
      * initialization rate), in MiB/s, at which to download the snapshot blocks from
      * Amazon S3 to the volume. This is also known as <i>volume initialization</i>.
      * Specifying a volume initialization rate ensures that the volume is initialized
-     * at a predictable and consistent rate after creation.</p> <p>This parameter is
-     * supported only for volumes created from snapshots. Omit this parameter if:</p>
-     * <ul> <li> <p>You want to create the volume using fast snapshot restore. You must
-     * specify a snapshot that is enabled for fast snapshot restore. In this case, the
-     * volume is fully initialized at creation.</p>  <p>If you specify a snapshot
-     * that is enabled for fast snapshot restore and a volume initialization rate, the
-     * volume will be initialized at the specified rate instead of fast snapshot
-     * restore.</p>  </li> <li> <p>You want to create a volume that is
-     * initialized at the default rate.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html">
-     * Initialize Amazon EBS volumes</a> in the <i>Amazon EC2 User Guide</i>.</p>
-     * <p>This parameter is not supported when using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+     * at a predictable and consistent rate after creation. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html">Initialize
+     * Amazon EBS volumes</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>This
+     * parameter is supported only for volumes created from snapshots. Omit this
+     * parameter if:</p> <ul> <li> <p>You want to create the volume using fast snapshot
+     * restore. You must specify a snapshot that is enabled for fast snapshot restore.
+     * In this case, the volume is fully initialized at creation.</p>  <p>If you
+     * specify a snapshot that is enabled for fast snapshot restore and a volume
+     * initialization rate, the volume will be initialized at the specified rate
+     * instead of fast snapshot restore.</p>  </li> <li> <p>You want to create a
+     * volume that is initialized at the default rate.</p> </li> </ul> <p>This
+     * parameter is not supported when using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.</p>
      * <p>Valid range: 100 - 300 MiB/s</p>
      */
     inline int GetVolumeInitializationRate() const { return m_volumeInitializationRate; }

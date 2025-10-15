@@ -22,6 +22,7 @@ namespace Aws
 
         static const int log_HASH = HashingUtils::HashString("log");
         static const int jaeger_HASH = HashingUtils::HashString("jaeger");
+        static const int disabled_HASH = HashingUtils::HashString("disabled");
 
 
         TracingType GetTracingTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == jaeger_HASH)
           {
             return TracingType::jaeger;
+          }
+          else if (hashCode == disabled_HASH)
+          {
+            return TracingType::disabled;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "log";
           case TracingType::jaeger:
             return "jaeger";
+          case TracingType::disabled:
+            return "disabled";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

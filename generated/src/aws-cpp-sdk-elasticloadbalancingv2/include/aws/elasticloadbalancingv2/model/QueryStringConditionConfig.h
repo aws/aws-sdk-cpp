@@ -46,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The key/value pairs or values to find in the query string. The maximum size
+     * <p>The key/value pairs or values to find in the query string. The maximum length
      * of each string is 128 characters. The comparison is case insensitive. The
      * following wildcard characters are supported: * (matches 0 or more characters)
      * and ? (matches exactly 1 character). To search for a literal '*' or '?'

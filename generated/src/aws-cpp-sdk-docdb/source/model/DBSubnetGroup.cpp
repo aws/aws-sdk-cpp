@@ -74,6 +74,19 @@ DBSubnetGroup& DBSubnetGroup::operator =(const XmlNode& xmlNode)
       m_dBSubnetGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(dBSubnetGroupArnNode.GetText());
       m_dBSubnetGroupArnHasBeenSet = true;
     }
+    XmlNode supportedNetworkTypesNode = resultNode.FirstChild("SupportedNetworkTypes");
+    if(!supportedNetworkTypesNode.IsNull())
+    {
+      XmlNode supportedNetworkTypesMember = supportedNetworkTypesNode.FirstChild("member");
+      m_supportedNetworkTypesHasBeenSet = !supportedNetworkTypesMember.IsNull();
+      while(!supportedNetworkTypesMember.IsNull())
+      {
+        m_supportedNetworkTypes.push_back(supportedNetworkTypesMember.GetText());
+        supportedNetworkTypesMember = supportedNetworkTypesMember.NextNode("member");
+      }
+
+      m_supportedNetworkTypesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -117,6 +130,15 @@ void DBSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".DBSubnetGroupArn=" << StringUtils::URLEncode(m_dBSubnetGroupArn.c_str()) << "&";
   }
 
+  if(m_supportedNetworkTypesHasBeenSet)
+  {
+      unsigned supportedNetworkTypesIdx = 1;
+      for(auto& item : m_supportedNetworkTypes)
+      {
+        oStream << location << index << locationValue << ".SupportedNetworkTypes.member." << supportedNetworkTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void DBSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -150,6 +172,14 @@ void DBSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_dBSubnetGroupArnHasBeenSet)
   {
       oStream << location << ".DBSubnetGroupArn=" << StringUtils::URLEncode(m_dBSubnetGroupArn.c_str()) << "&";
+  }
+  if(m_supportedNetworkTypesHasBeenSet)
+  {
+      unsigned supportedNetworkTypesIdx = 1;
+      for(auto& item : m_supportedNetworkTypes)
+      {
+        oStream << location << ".SupportedNetworkTypes.member." << supportedNetworkTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 }
 

@@ -138,6 +138,15 @@ DeleteDbInstanceResult& DeleteDbInstanceResult::operator =(const Aws::AmazonWebS
     m_instanceMode = InstanceModeMapper::GetInstanceModeForName(jsonValue.GetString("instanceMode"));
     m_instanceModeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("instanceModes"))
+  {
+    Aws::Utils::Array<JsonView> instanceModesJsonList = jsonValue.GetArray("instanceModes");
+    for(unsigned instanceModesIndex = 0; instanceModesIndex < instanceModesJsonList.GetLength(); ++instanceModesIndex)
+    {
+      m_instanceModes.push_back(InstanceModeMapper::GetInstanceModeForName(instanceModesJsonList[instanceModesIndex].AsString()));
+    }
+    m_instanceModesHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

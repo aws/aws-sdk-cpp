@@ -11,6 +11,7 @@
 #include <aws/elasticloadbalancingv2/model/RuleCondition.h>
 #include <aws/elasticloadbalancingv2/model/Action.h>
 #include <aws/elasticloadbalancingv2/model/Tag.h>
+#include <aws/elasticloadbalancingv2/model/RuleTransform.h>
 #include <utility>
 
 namespace Aws
@@ -104,6 +105,21 @@ namespace Model
     template<typename TagsT = Tag>
     CreateRuleRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The transforms to apply to requests that match this rule. You can add one
+     * host header rewrite transform and one URL rewrite transform.</p>
+     */
+    inline const Aws::Vector<RuleTransform>& GetTransforms() const { return m_transforms; }
+    inline bool TransformsHasBeenSet() const { return m_transformsHasBeenSet; }
+    template<typename TransformsT = Aws::Vector<RuleTransform>>
+    void SetTransforms(TransformsT&& value) { m_transformsHasBeenSet = true; m_transforms = std::forward<TransformsT>(value); }
+    template<typename TransformsT = Aws::Vector<RuleTransform>>
+    CreateRuleRequest& WithTransforms(TransformsT&& value) { SetTransforms(std::forward<TransformsT>(value)); return *this;}
+    template<typename TransformsT = RuleTransform>
+    CreateRuleRequest& AddTransforms(TransformsT&& value) { m_transformsHasBeenSet = true; m_transforms.emplace_back(std::forward<TransformsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_listenerArn;
@@ -120,6 +136,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::Vector<RuleTransform> m_transforms;
+    bool m_transformsHasBeenSet = false;
   };
 
 } // namespace Model

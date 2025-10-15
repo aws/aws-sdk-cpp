@@ -40,6 +40,12 @@ Aws::String CreateAutomatedReasoningPolicyRequest::SerializePayload() const
 
   }
 
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("kmsKeyId", m_kmsKeyId);
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());

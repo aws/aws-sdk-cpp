@@ -10,6 +10,7 @@
 #include <aws/lightsail/model/AccessRules.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/model/BucketAccessLogConfig.h>
+#include <aws/lightsail/model/BucketCorsConfig.h>
 #include <utility>
 
 namespace Aws
@@ -106,6 +107,24 @@ namespace Model
     template<typename AccessLogConfigT = BucketAccessLogConfig>
     UpdateBucketRequest& WithAccessLogConfig(AccessLogConfigT&& value) { SetAccessLogConfig(std::forward<AccessLogConfigT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Sets the cross-origin resource sharing (CORS) configuration for your bucket.
+     * If a CORS configuration exists, it is replaced with the specified configuration.
+     * For AWS CLI operations, this parameter can also be passed as a file. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring
+     * cross-origin resource sharing (CORS)</a>.</p>  <p>CORS information is only
+     * returned in a response when you update the CORS policy.</p> 
+     */
+    inline const BucketCorsConfig& GetCors() const { return m_cors; }
+    inline bool CorsHasBeenSet() const { return m_corsHasBeenSet; }
+    template<typename CorsT = BucketCorsConfig>
+    void SetCors(CorsT&& value) { m_corsHasBeenSet = true; m_cors = std::forward<CorsT>(value); }
+    template<typename CorsT = BucketCorsConfig>
+    UpdateBucketRequest& WithCors(CorsT&& value) { SetCors(std::forward<CorsT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_bucketName;
@@ -122,6 +141,9 @@ namespace Model
 
     BucketAccessLogConfig m_accessLogConfig;
     bool m_accessLogConfigHasBeenSet = false;
+
+    BucketCorsConfig m_cors;
+    bool m_corsHasBeenSet = false;
   };
 
 } // namespace Model

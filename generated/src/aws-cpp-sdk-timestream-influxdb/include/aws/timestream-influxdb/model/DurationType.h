@@ -19,7 +19,8 @@ namespace Model
     hours,
     minutes,
     seconds,
-    milliseconds
+    milliseconds,
+    days
   };
 
 namespace DurationTypeMapper

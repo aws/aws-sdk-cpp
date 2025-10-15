@@ -35,8 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an
-     * error.</p>
+     * <p>Is <code>true</code> if the request succeeds and an error otherwise.</p>
      */
     inline bool GetReturn() const { return m_return; }
     inline void SetReturn(bool value) { m_returnHasBeenSet = true; m_return = value; }

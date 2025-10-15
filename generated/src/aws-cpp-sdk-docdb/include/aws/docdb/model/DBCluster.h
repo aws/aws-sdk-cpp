@@ -469,6 +469,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The next time you can modify the Amazon DocumentDB cluster to use the iopt1
+     * storage type.</p>
+     */
+    inline const Aws::Utils::DateTime& GetIOOptimizedNextAllowedModificationTime() const { return m_iOOptimizedNextAllowedModificationTime; }
+    inline bool IOOptimizedNextAllowedModificationTimeHasBeenSet() const { return m_iOOptimizedNextAllowedModificationTimeHasBeenSet; }
+    template<typename IOOptimizedNextAllowedModificationTimeT = Aws::Utils::DateTime>
+    void SetIOOptimizedNextAllowedModificationTime(IOOptimizedNextAllowedModificationTimeT&& value) { m_iOOptimizedNextAllowedModificationTimeHasBeenSet = true; m_iOOptimizedNextAllowedModificationTime = std::forward<IOOptimizedNextAllowedModificationTimeT>(value); }
+    template<typename IOOptimizedNextAllowedModificationTimeT = Aws::Utils::DateTime>
+    DBCluster& WithIOOptimizedNextAllowedModificationTime(IOOptimizedNextAllowedModificationTimeT&& value) { SetIOOptimizedNextAllowedModificationTime(std::forward<IOOptimizedNextAllowedModificationTimeT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Storage type associated with your cluster</p> <p>For information on storage
      * types for Amazon DocumentDB clusters, see Cluster storage configurations in the
      * <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage type -
@@ -506,6 +519,24 @@ namespace Model
     void SetMasterUserSecret(MasterUserSecretT&& value) { m_masterUserSecretHasBeenSet = true; m_masterUserSecret = std::forward<MasterUserSecretT>(value); }
     template<typename MasterUserSecretT = ClusterMasterUserSecret>
     DBCluster& WithMasterUserSecret(MasterUserSecretT&& value) { SetMasterUserSecret(std::forward<MasterUserSecretT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The network type of the cluster.</p> <p>The network type is determined by the
+     * <code>DBSubnetGroup</code> specified for the cluster. A
+     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
+     * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB
+     * clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p> <p>Valid
+     * Values: <code>IPV4</code> | <code>DUAL</code> </p>
+     */
+    inline const Aws::String& GetNetworkType() const { return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    template<typename NetworkTypeT = Aws::String>
+    void SetNetworkType(NetworkTypeT&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::forward<NetworkTypeT>(value); }
+    template<typename NetworkTypeT = Aws::String>
+    DBCluster& WithNetworkType(NetworkTypeT&& value) { SetNetworkType(std::forward<NetworkTypeT>(value)); return *this;}
     ///@}
   private:
 
@@ -605,6 +636,9 @@ namespace Model
     bool m_deletionProtection{false};
     bool m_deletionProtectionHasBeenSet = false;
 
+    Aws::Utils::DateTime m_iOOptimizedNextAllowedModificationTime{};
+    bool m_iOOptimizedNextAllowedModificationTimeHasBeenSet = false;
+
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet = false;
 
@@ -613,6 +647,9 @@ namespace Model
 
     ClusterMasterUserSecret m_masterUserSecret;
     bool m_masterUserSecretHasBeenSet = false;
+
+    Aws::String m_networkType;
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

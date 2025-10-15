@@ -179,6 +179,23 @@ namespace Model
     template<typename SourceIpConfigT = SourceIpConditionConfig>
     RuleCondition& WithSourceIpConfig(SourceIpConfigT&& value) { SetSourceIpConfig(std::forward<SourceIpConfigT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The regular expressions to match against the condition field. The maximum
+     * length of each string is 128 characters. Specify only when <code>Field</code> is
+     * <code>http-header</code>, <code>host-header</code>, or
+     * <code>path-pattern</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRegexValues() const { return m_regexValues; }
+    inline bool RegexValuesHasBeenSet() const { return m_regexValuesHasBeenSet; }
+    template<typename RegexValuesT = Aws::Vector<Aws::String>>
+    void SetRegexValues(RegexValuesT&& value) { m_regexValuesHasBeenSet = true; m_regexValues = std::forward<RegexValuesT>(value); }
+    template<typename RegexValuesT = Aws::Vector<Aws::String>>
+    RuleCondition& WithRegexValues(RegexValuesT&& value) { SetRegexValues(std::forward<RegexValuesT>(value)); return *this;}
+    template<typename RegexValuesT = Aws::String>
+    RuleCondition& AddRegexValues(RegexValuesT&& value) { m_regexValuesHasBeenSet = true; m_regexValues.emplace_back(std::forward<RegexValuesT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_field;
@@ -204,6 +221,9 @@ namespace Model
 
     SourceIpConditionConfig m_sourceIpConfig;
     bool m_sourceIpConfigHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_regexValues;
+    bool m_regexValuesHasBeenSet = false;
   };
 
 } // namespace Model

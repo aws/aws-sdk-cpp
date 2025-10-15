@@ -45,12 +45,13 @@ namespace Model
     ///@{
     /**
      * <p>The identifier of the cluster snapshot to copy. This parameter is not case
-     * sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid system
-     * snapshot in the <i>available</i> state.</p> </li> <li> <p>If the source snapshot
-     * is in the same Amazon Web Services Region as the copy, specify a valid snapshot
-     * identifier.</p> </li> <li> <p>If the source snapshot is in a different Amazon
-     * Web Services Region than the copy, specify a valid cluster snapshot ARN.</p>
-     * </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
+     * sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid cluster
+     * snapshot in the <i>available</i> state.</p> </li> <li> <p>If the source cluster
+     * snapshot is in the same Amazon Web Services Region as the copy, specify a valid
+     * snapshot identifier.</p> </li> <li> <p>If the source cluster snapshot is in a
+     * different Amazon Web Services Region or owned by another Amazon Web Services
+     * account, specify the snapshot ARN.</p> </li> </ul> <p>Example:
+     * <code>my-cluster-snapshot1</code> </p>
      */
     inline const Aws::String& GetSourceDBClusterSnapshotIdentifier() const { return m_sourceDBClusterSnapshotIdentifier; }
     inline bool SourceDBClusterSnapshotIdentifierHasBeenSet() const { return m_sourceDBClusterSnapshotIdentifierHasBeenSet; }
