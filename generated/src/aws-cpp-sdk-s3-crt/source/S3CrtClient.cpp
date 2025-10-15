@@ -283,7 +283,7 @@ S3CrtClient::S3CrtClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
             signPayloads,
             false),
     Aws::MakeShared<S3CrtErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration, signPayloads),
+    m_clientConfiguration(clientConfiguration),
     m_credProvider(credentialsProvider),
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {

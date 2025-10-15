@@ -177,7 +177,7 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
             false),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
-    m_clientConfiguration(clientConfiguration${signPayloadsParam}),
+    m_clientConfiguration(clientConfiguration),
     ${credentialsProviderMember},
 #else
     ${credentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
