@@ -84,6 +84,7 @@ namespace
     static std::string BASE_EVENT_STREAM_LARGE_FILE_TEST_BUCKET_NAME = "largeeventstream";
     static std::string BASE_EVENT_STREAM_ERRORS_IN_EVENT_TEST_BUCKET_NAME = "errorsinevent";
     static std::string BASE_CHECKSUMS_BUCKET_NAME = "checksums-crt";
+    static std::string BASE_CRT_CREDENTIALS_TEST_BUCKET_NAME = "crt-credentials-test";
     static const char* ALLOCATION_TAG = "BucketAndObjectOperationTest";
     static const char* TEST_OBJ_KEY = "TestObjectKey";
     static const char* TEST_NOT_MODIFIED_OBJ_KEY = "TestNotModifiedObjectKey";
@@ -123,7 +124,8 @@ namespace
               std::ref(BASE_EVENT_STREAM_TEST_BUCKET_NAME),
               std::ref(BASE_EVENT_STREAM_LARGE_FILE_TEST_BUCKET_NAME),
               std::ref(BASE_EVENT_STREAM_ERRORS_IN_EVENT_TEST_BUCKET_NAME),
-              std::ref(BASE_CHECKSUMS_BUCKET_NAME)
+              std::ref(BASE_CHECKSUMS_BUCKET_NAME),
+              std::ref(BASE_CRT_CREDENTIALS_TEST_BUCKET_NAME)
             };
 
         for (auto& testBucketName : TEST_BUCKETS)
@@ -171,6 +173,7 @@ namespace
             DeleteBucket(CalculateBucketName(BASE_EVENT_STREAM_LARGE_FILE_TEST_BUCKET_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_EVENT_STREAM_ERRORS_IN_EVENT_TEST_BUCKET_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_CHECKSUMS_BUCKET_NAME.c_str()));
+            DeleteBucket(CalculateBucketName(BASE_CRT_CREDENTIALS_TEST_BUCKET_NAME.c_str()));
 
             Client = nullptr;
             oregonClient = nullptr;
@@ -1563,6 +1566,46 @@ namespace
         request.SetBody(Aws::MakeShared<StringStream>(ALLOCATION_TAG, "bridges"));
         const auto response = client.PutObject(request);
         AWS_EXPECT_SUCCESS(response);
+    }
+
+    TEST_F(BucketAndObjectOperationTest, ExplicitCredentialsProviderShouldWork) {
+      const Aws::String fullBucketName = CalculateBucketName(BASE_CHECKSUMS_BUCKET_NAME.c_str());
+      const Aws::String testKey = "test-key.txt";
+      SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
+      CreateBucketRequest createBucketRequest;
+      createBucketRequest.SetBucket(fullBucketName);
+      createBucketRequest.SetACL(BucketCannedACL::private_);
+      CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+      AWS_ASSERT_SUCCESS(createBucketOutcome);
+
+      Aws::S3Crt::ClientConfiguration s3ClientConfig;
+      s3ClientConfig.region = Aws::Region::US_EAST_1;
+      s3ClientConfig.scheme = Scheme::HTTPS;
+      s3ClientConfig.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 4);
+      s3ClientConfig.throughputTargetGbps = 2.0;
+      s3ClientConfig.partSize = 5 * 1024 * 1024;
+      s3ClientConfig.contentLengthConfiguration = Aws::S3Crt::S3CrtClientConfiguration::CONTENT_LENGTH_CONFIGURATION::SKIP_CONTENT_LENGTH;
+
+      // Assume that something in the default credentials provider chain works
+      const auto credsProvder = Aws::MakeShared<Aws::Auth::DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG);
+      S3CrtClient client{credsProvder, s3ClientConfig};
+
+      auto request = PutObjectRequest{}.WithBucket(fullBucketName)
+        .WithKey(testKey);
+
+      // create 30 MiB test body
+      auto data = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
+      *data << Aws::String(30 * 1024 * 1024, '*');
+      request.SetBody(data);
+
+      const auto putObjectOutcome = client.PutObject(request);
+      AWS_EXPECT_SUCCESS(putObjectOutcome);
+
+      const auto headObjectResponse = client.HeadObject(HeadObjectRequest{}.WithBucket(fullBucketName)
+        .WithKey(testKey));
+      AWS_EXPECT_SUCCESS(headObjectResponse);
+      const int THIRTY_MiB{31457280};
+      EXPECT_EQ(THIRTY_MiB, headObjectResponse.GetResult().GetContentLength());
     }
 
     class TestMonitoring: public Aws::Monitoring::MonitoringInterface
