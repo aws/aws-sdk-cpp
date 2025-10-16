@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>The input doesn't match with the constraints specified by Amazon Web
-   * Services.</p><p><h3>See Also:</h3>   <a
+   * <p>The input doesn't match with the constraints specified by Amazon Web Services
+   * services.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ValidationException">AWS
    * API Reference</a></p>
    */

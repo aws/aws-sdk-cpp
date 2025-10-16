@@ -182,8 +182,7 @@ namespace Model
      * <code>SKU</code>, this attribute indicates which usage type the
      * <code>PricingRule</code> is modifying. For example,
      * <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double
-     * Extra Large</code> instance in the US West (Oregon) Region.
-     * <pre><code>&lt;/p&gt; </code></pre>
+     * Extra Large</code> instance in the US West (Oregon) Region. </p>
      */
     inline const Aws::String& GetUsageType() const { return m_usageType; }
     inline bool UsageTypeHasBeenSet() const { return m_usageTypeHasBeenSet; }

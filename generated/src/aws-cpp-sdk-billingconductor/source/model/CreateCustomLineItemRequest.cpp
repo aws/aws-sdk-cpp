@@ -64,6 +64,17 @@ Aws::String CreateCustomLineItemRequest::SerializePayload() const
 
   }
 
+  if(m_computationRuleHasBeenSet)
+  {
+   payload.WithString("ComputationRule", ComputationRuleEnumMapper::GetNameForComputationRuleEnum(m_computationRule));
+  }
+
+  if(m_presentationDetailsHasBeenSet)
+  {
+   payload.WithObject("PresentationDetails", m_presentationDetails.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

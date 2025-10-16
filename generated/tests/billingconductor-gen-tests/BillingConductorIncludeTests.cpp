@@ -34,6 +34,7 @@
 #include <aws/billingconductor/model/BillingGroupStatus.h>
 #include <aws/billingconductor/model/BillingPeriodRange.h>
 #include <aws/billingconductor/model/ComputationPreference.h>
+#include <aws/billingconductor/model/ComputationRuleEnum.h>
 #include <aws/billingconductor/model/ConflictException.h>
 #include <aws/billingconductor/model/ConflictExceptionReason.h>
 #include <aws/billingconductor/model/CreateBillingGroupRequest.h>
@@ -113,6 +114,7 @@
 #include <aws/billingconductor/model/ListTagsForResourceRequest.h>
 #include <aws/billingconductor/model/ListTagsForResourceResult.h>
 #include <aws/billingconductor/model/MatchOption.h>
+#include <aws/billingconductor/model/PresentationObject.h>
 #include <aws/billingconductor/model/PricingPlanListElement.h>
 #include <aws/billingconductor/model/PricingRuleListElement.h>
 #include <aws/billingconductor/model/PricingRuleScope.h>

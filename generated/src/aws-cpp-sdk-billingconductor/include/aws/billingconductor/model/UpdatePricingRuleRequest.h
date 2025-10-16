@@ -83,7 +83,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The new modifier to show pricing plan rates as a percentage. </p>
+     * <p> The new modifier to show pricing plan rates as a percentage. Your entry will
+     * be rounded to the nearest 2 decimal places. </p>
      */
     inline double GetModifierPercentage() const { return m_modifierPercentage; }
     inline bool ModifierPercentageHasBeenSet() const { return m_modifierPercentageHasBeenSet; }

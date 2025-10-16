@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/billingconductor/model/ListCustomLineItemChargeDetails.h>
 #include <aws/billingconductor/model/CurrencyCode.h>
+#include <aws/billingconductor/model/ComputationRuleEnum.h>
+#include <aws/billingconductor/model/PresentationObject.h>
 #include <utility>
 
 namespace Aws
@@ -167,6 +169,28 @@ namespace Model
     template<typename AccountIdT = Aws::String>
     CustomLineItemListElement& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The display settings of the custom line item</p>
+     */
+    inline ComputationRuleEnum GetComputationRule() const { return m_computationRule; }
+    inline bool ComputationRuleHasBeenSet() const { return m_computationRuleHasBeenSet; }
+    inline void SetComputationRule(ComputationRuleEnum value) { m_computationRuleHasBeenSet = true; m_computationRule = value; }
+    inline CustomLineItemListElement& WithComputationRule(ComputationRuleEnum value) { SetComputationRule(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The presentation configuration of the custom line item</p>
+     */
+    inline const PresentationObject& GetPresentationDetails() const { return m_presentationDetails; }
+    inline bool PresentationDetailsHasBeenSet() const { return m_presentationDetailsHasBeenSet; }
+    template<typename PresentationDetailsT = PresentationObject>
+    void SetPresentationDetails(PresentationDetailsT&& value) { m_presentationDetailsHasBeenSet = true; m_presentationDetails = std::forward<PresentationDetailsT>(value); }
+    template<typename PresentationDetailsT = PresentationObject>
+    CustomLineItemListElement& WithPresentationDetails(PresentationDetailsT&& value) { SetPresentationDetails(std::forward<PresentationDetailsT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -201,6 +225,12 @@ namespace Model
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
+
+    ComputationRuleEnum m_computationRule{ComputationRuleEnum::NOT_SET};
+    bool m_computationRuleHasBeenSet = false;
+
+    PresentationObject m_presentationDetails;
+    bool m_presentationDetailsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -42,6 +42,7 @@ namespace Aws
         static const int MISSING_PRICINGPLAN_HASH = HashingUtils::HashString("MISSING_PRICINGPLAN");
         static const int MISMATCHED_PRICINGRULE_ARN_HASH = HashingUtils::HashString("MISMATCHED_PRICINGRULE_ARN");
         static const int DUPLICATE_PRICINGRULE_ARNS_HASH = HashingUtils::HashString("DUPLICATE_PRICINGRULE_ARNS");
+        static const int MISSING_COSTCATEGORY_HASH = HashingUtils::HashString("MISSING_COSTCATEGORY");
         static const int ILLEGAL_EXPRESSION_HASH = HashingUtils::HashString("ILLEGAL_EXPRESSION");
         static const int ILLEGAL_SCOPE_HASH = HashingUtils::HashString("ILLEGAL_SCOPE");
         static const int ILLEGAL_SERVICE_HASH = HashingUtils::HashString("ILLEGAL_SERVICE");
@@ -80,6 +81,9 @@ namespace Aws
         static const int TOO_MANY_AUTO_ASSOCIATE_BILLING_GROUPS_HASH = HashingUtils::HashString("TOO_MANY_AUTO_ASSOCIATE_BILLING_GROUPS");
         static const int CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP_HASH = HashingUtils::HashString("CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP");
         static const int ILLEGAL_ACCOUNT_ID_HASH = HashingUtils::HashString("ILLEGAL_ACCOUNT_ID");
+        static const int BILLING_GROUP_ALREADY_EXIST_IN_CURRENT_BILLING_PERIOD_HASH = HashingUtils::HashString("BILLING_GROUP_ALREADY_EXIST_IN_CURRENT_BILLING_PERIOD");
+        static const int ILLEGAL_COMPUTATION_RULE_HASH = HashingUtils::HashString("ILLEGAL_COMPUTATION_RULE");
+        static const int ILLEGAL_LINE_ITEM_FILTER_HASH = HashingUtils::HashString("ILLEGAL_LINE_ITEM_FILTER");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
@@ -172,6 +176,10 @@ namespace Aws
           else if (hashCode == DUPLICATE_PRICINGRULE_ARNS_HASH)
           {
             return ValidationExceptionReason::DUPLICATE_PRICINGRULE_ARNS;
+          }
+          else if (hashCode == MISSING_COSTCATEGORY_HASH)
+          {
+            return ValidationExceptionReason::MISSING_COSTCATEGORY;
           }
           else if (hashCode == ILLEGAL_EXPRESSION_HASH)
           {
@@ -325,6 +333,18 @@ namespace Aws
           {
             return ValidationExceptionReason::ILLEGAL_ACCOUNT_ID;
           }
+          else if (hashCode == BILLING_GROUP_ALREADY_EXIST_IN_CURRENT_BILLING_PERIOD_HASH)
+          {
+            return ValidationExceptionReason::BILLING_GROUP_ALREADY_EXIST_IN_CURRENT_BILLING_PERIOD;
+          }
+          else if (hashCode == ILLEGAL_COMPUTATION_RULE_HASH)
+          {
+            return ValidationExceptionReason::ILLEGAL_COMPUTATION_RULE;
+          }
+          else if (hashCode == ILLEGAL_LINE_ITEM_FILTER_HASH)
+          {
+            return ValidationExceptionReason::ILLEGAL_LINE_ITEM_FILTER;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -385,6 +405,8 @@ namespace Aws
             return "MISMATCHED_PRICINGRULE_ARN";
           case ValidationExceptionReason::DUPLICATE_PRICINGRULE_ARNS:
             return "DUPLICATE_PRICINGRULE_ARNS";
+          case ValidationExceptionReason::MISSING_COSTCATEGORY:
+            return "MISSING_COSTCATEGORY";
           case ValidationExceptionReason::ILLEGAL_EXPRESSION:
             return "ILLEGAL_EXPRESSION";
           case ValidationExceptionReason::ILLEGAL_SCOPE:
@@ -461,6 +483,12 @@ namespace Aws
             return "CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP";
           case ValidationExceptionReason::ILLEGAL_ACCOUNT_ID:
             return "ILLEGAL_ACCOUNT_ID";
+          case ValidationExceptionReason::BILLING_GROUP_ALREADY_EXIST_IN_CURRENT_BILLING_PERIOD:
+            return "BILLING_GROUP_ALREADY_EXIST_IN_CURRENT_BILLING_PERIOD";
+          case ValidationExceptionReason::ILLEGAL_COMPUTATION_RULE:
+            return "ILLEGAL_COMPUTATION_RULE";
+          case ValidationExceptionReason::ILLEGAL_LINE_ITEM_FILTER:
+            return "ILLEGAL_LINE_ITEM_FILTER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
