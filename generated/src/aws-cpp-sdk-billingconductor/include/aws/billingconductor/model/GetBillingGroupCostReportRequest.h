@@ -65,7 +65,8 @@ namespace Model
     /**
      * <p>A list of strings that specify the attributes that are used to break down
      * costs in the margin summary reports for the billing group. For example, you can
-     * view your costs by the Amazon Web Service name or the billing period.</p>
+     * view your costs by the Amazon Web Services service name or the billing
+     * period.</p>
      */
     inline const Aws::Vector<GroupByAttributeName>& GetGroupBy() const { return m_groupBy; }
     inline bool GroupByHasBeenSet() const { return m_groupByHasBeenSet; }

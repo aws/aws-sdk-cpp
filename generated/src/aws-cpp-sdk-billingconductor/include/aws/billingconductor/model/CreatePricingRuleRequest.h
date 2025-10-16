@@ -41,8 +41,11 @@ namespace Model
 
     ///@{
     /**
-     * <p> The token that's needed to support idempotency. Idempotency isn't currently
-     * supported, but will be implemented in a future update. </p>
+     * <p>A unique, case-sensitive identifier that you specify to ensure idempotency of
+     * the request. Idempotency ensures that an API request completes no more than one
+     * time. With an idempotent request, if the original request completes
+     * successfully, any subsequent retries complete successfully without performing
+     * any further actions.</p>
      */
     inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
@@ -99,7 +102,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> A percentage modifier that's applied on the public pricing rates. </p>
+     * <p>A percentage modifier that's applied on the public pricing rates. Your entry
+     * will be rounded to the nearest 2 decimal places.</p>
      */
     inline double GetModifierPercentage() const { return m_modifierPercentage; }
     inline bool ModifierPercentageHasBeenSet() const { return m_modifierPercentageHasBeenSet; }
@@ -170,8 +174,7 @@ namespace Model
      * <code>SKU</code>, this attribute indicates which usage type the
      * <code>PricingRule</code> is modifying. For example,
      * <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double
-     * Extra Large</code> instance in the US West (Oregon) Region.
-     * <pre><code>&lt;/p&gt; </code></pre>
+     * Extra Large</code> instance in the US West (Oregon) Region. </p>
      */
     inline const Aws::String& GetUsageType() const { return m_usageType; }
     inline bool UsageTypeHasBeenSet() const { return m_usageTypeHasBeenSet; }

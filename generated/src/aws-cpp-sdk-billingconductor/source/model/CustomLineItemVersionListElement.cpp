@@ -95,6 +95,16 @@ CustomLineItemVersionListElement& CustomLineItemVersionListElement::operator =(J
     m_accountId = jsonValue.GetString("AccountId");
     m_accountIdHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("ComputationRule"))
+  {
+    m_computationRule = ComputationRuleEnumMapper::GetComputationRuleEnumForName(jsonValue.GetString("ComputationRule"));
+    m_computationRuleHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("PresentationDetails"))
+  {
+    m_presentationDetails = jsonValue.GetObject("PresentationDetails");
+    m_presentationDetailsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -182,6 +192,17 @@ JsonValue CustomLineItemVersionListElement::Jsonize() const
   if(m_accountIdHasBeenSet)
   {
    payload.WithString("AccountId", m_accountId);
+
+  }
+
+  if(m_computationRuleHasBeenSet)
+  {
+   payload.WithString("ComputationRule", ComputationRuleEnumMapper::GetNameForComputationRuleEnum(m_computationRule));
+  }
+
+  if(m_presentationDetailsHasBeenSet)
+  {
+   payload.WithObject("PresentationDetails", m_presentationDetails.Jsonize());
 
   }
 

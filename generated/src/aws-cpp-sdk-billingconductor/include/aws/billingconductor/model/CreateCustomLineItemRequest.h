@@ -10,6 +10,8 @@
 #include <aws/billingconductor/model/CustomLineItemBillingPeriodRange.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/billingconductor/model/CustomLineItemChargeDetails.h>
+#include <aws/billingconductor/model/ComputationRuleEnum.h>
+#include <aws/billingconductor/model/PresentationObject.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -40,8 +42,11 @@ namespace Model
 
     ///@{
     /**
-     * <p> The token that is needed to support idempotency. Idempotency isn't currently
-     * supported, but will be implemented in a future update. </p>
+     * <p>A unique, case-sensitive identifier that you specify to ensure idempotency of
+     * the request. Idempotency ensures that an API request completes no more than one
+     * time. With an idempotent request, if the original request completes
+     * successfully, any subsequent retries complete successfully without performing
+     * any further actions.</p>
      */
     inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
@@ -143,6 +148,24 @@ namespace Model
     template<typename AccountIdT = Aws::String>
     CreateCustomLineItemRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline ComputationRuleEnum GetComputationRule() const { return m_computationRule; }
+    inline bool ComputationRuleHasBeenSet() const { return m_computationRuleHasBeenSet; }
+    inline void SetComputationRule(ComputationRuleEnum value) { m_computationRuleHasBeenSet = true; m_computationRule = value; }
+    inline CreateCustomLineItemRequest& WithComputationRule(ComputationRuleEnum value) { SetComputationRule(value); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const PresentationObject& GetPresentationDetails() const { return m_presentationDetails; }
+    inline bool PresentationDetailsHasBeenSet() const { return m_presentationDetailsHasBeenSet; }
+    template<typename PresentationDetailsT = PresentationObject>
+    void SetPresentationDetails(PresentationDetailsT&& value) { m_presentationDetailsHasBeenSet = true; m_presentationDetails = std::forward<PresentationDetailsT>(value); }
+    template<typename PresentationDetailsT = PresentationObject>
+    CreateCustomLineItemRequest& WithPresentationDetails(PresentationDetailsT&& value) { SetPresentationDetails(std::forward<PresentationDetailsT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
@@ -168,6 +191,12 @@ namespace Model
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
+
+    ComputationRuleEnum m_computationRule{ComputationRuleEnum::NOT_SET};
+    bool m_computationRuleHasBeenSet = false;
+
+    PresentationObject m_presentationDetails;
+    bool m_presentationDetailsHasBeenSet = false;
   };
 
 } // namespace Model
