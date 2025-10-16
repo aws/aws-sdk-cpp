@@ -106,7 +106,7 @@
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("timestampMember"));
                 encoder.WriteTag(1); //1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
-encoder.WriteUInt(m_timestampMember.Millis());
+encoder.WriteUInt(m_timestampMember.Seconds());
      }
 
 
@@ -160,8 +160,8 @@ encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.second.c_str()));
         Aws::Http::HeaderValueCollection EchoOperationRequest::GetRequestSpecificHeaders() const
     {
         Aws::Http::HeaderValueCollection headers;
-                    headers.emplace("smithy-protocol", "rpc-v2-cbor");
                     headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+                    headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
                     headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
                         return headers;
     }

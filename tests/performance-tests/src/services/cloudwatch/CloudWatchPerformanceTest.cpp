@@ -82,6 +82,8 @@ void CloudWatchPerformanceTest::RunPutMetricDataTests() {
     auto headers = request.GetHeaders();
     if (headers.find(Aws::Http::SMITHY_PROTOCOL_HEADER) != headers.end()) {
       request.SetAdditionalCustomHeaderValue("test-protocol-protocol", "CBOR");
+    } else {
+      request.SetAdditionalCustomHeaderValue("test-protocol-protocol", "Query");
     }
 
     request.SetMetricData(metricData);
@@ -129,6 +131,8 @@ void CloudWatchPerformanceTest::RunGetMetricDataTests() {
     auto headers = request.GetHeaders();
     if (headers.find(Aws::Http::SMITHY_PROTOCOL_HEADER) != headers.end()) {
       request.SetAdditionalCustomHeaderValue("test-protocol-protocol", "CBOR");
+    } else {
+      request.SetAdditionalCustomHeaderValue("test-protocol-protocol", "Query");
     }
 
     metricStat.SetMetric(metric);
@@ -157,6 +161,8 @@ void CloudWatchPerformanceTest::RunListMetricsTests() {
     auto headers = request.GetHeaders();
     if (headers.find(Aws::Http::SMITHY_PROTOCOL_HEADER) != headers.end()) {
       request.SetAdditionalCustomHeaderValue("test-protocol-protocol", "CBOR");
+    } else {
+      request.SetAdditionalCustomHeaderValue("test-protocol-protocol", "Query");
     }
     auto resp = m_cloudWatch->ListMetrics(request);
     if (!resp.IsSuccess()) {

@@ -40,7 +40,6 @@ class EchoPerformanceTest : public PerformanceTestBase {
   void RunVeryLargeBlobTest();
 
   Aws::String GenerateRandomString(size_t size);
-  Aws::Utils::ByteBuffer GenerateRandomBinary(size_t size);
   bool GenerateRandomBool();
   int GenerateRandomInt();
   long long GenerateRandomLong();

@@ -13,8 +13,8 @@
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <performance-tests/reporting/JsonReportingMetric.h>
-#include <performance-tests/services/SecretsManager/SecretsManagerPerformanceTest.h>
-#include <performance-tests/services/SecretsManager/SecretsManagerTestConfig.h>
+#include <performance-tests/services/secretsmanager/SecretsManagerPerformanceTest.h>
+#include <performance-tests/services/secretsmanager/SecretsManagerTestConfig.h>
 
 #include <cxxopts.hpp>
 #include <string>
@@ -22,7 +22,7 @@
 int main(int argc, char** argv) {
   cxxopts::Options options("secretsmanager-perf-test", "SecretsManager Performance Test");
   options.add_options()("r,region", "AWS region", cxxopts::value<std::string>()->default_value("us-east-1"))(
-      "i,iterations", "Number of iterations", cxxopts::value<int>()->default_value("500"))(
+      "i,iterations", "Number of iterations", cxxopts::value<int>()->default_value("1"))(
       "c,commit-id", "Commit ID", cxxopts::value<std::string>()->default_value("unknown"))(
       "b,build-mode", "Build mode", cxxopts::value<std::string>()->default_value("unknown"));
 

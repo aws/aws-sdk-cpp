@@ -68,7 +68,7 @@ void EchoPerformanceTest::RunAllTypesTest() {
     request.SetFloatMember(GenerateRandomFloat());
     request.SetDoubleMember(GenerateRandomDouble());
     request.SetTimestampMember(Aws::Utils::DateTime(m_runStartTimestamp));
-    request.SetBlobMember(GenerateRandomBinary(128));
+    request.SetBlobMember(Aws::Utils::ByteBuffer(GenerateRandomString(128)));
     
     // List of 8 strings
     Aws::Vector<Aws::String> stringList;
@@ -93,7 +93,7 @@ void EchoPerformanceTest::RunAllTypesTest() {
     complexStruct.SetComplexStructMember(nestedStruct);
     
     request.SetComplexStructMember(complexStruct);
-    request.SetAdditionalCustomHeaderValue("test-case-type", "AllTypes");
+    request.SetAdditionalCustomHeaderValue("test-case-type", "All types");
     auto headers = request.GetHeaders();
     if (headers.find(Aws::Http::SMITHY_PROTOCOL_HEADER) != headers.end()) {
       request.SetAdditionalCustomHeaderValue("test-protocol-protocol", "CBOR");
@@ -117,7 +117,7 @@ void EchoPerformanceTest::RunLongListOfStringsTest() {
       stringList.push_back(GenerateRandomString(64));
     }
     request.SetListOfStringsMember(stringList);
-    request.SetAdditionalCustomHeaderValue("test-case-type", "LongListOfStrings");
+    request.SetAdditionalCustomHeaderValue("test-case-type", "Long list of strings");
     auto headers = request.GetHeaders();
     if (headers.find(Aws::Http::SMITHY_PROTOCOL_HEADER) != headers.end()) {
       request.SetAdditionalCustomHeaderValue("test-protocol-protocol", "CBOR");
@@ -138,7 +138,7 @@ void EchoPerformanceTest::RunComplexObjectTest() {
     // Deep nested complex structure
     Aws::Echo::Model::ComplexStructure level1;
     level1.SetBooleanMember(GenerateRandomBool());
-    level1.SetBlobMember(GenerateRandomBinary(128));
+    level1.SetBlobMember(GenerateRandomString(128));
     level1.SetStringMember(GenerateRandomString(32));
     
     Aws::Echo::Model::ComplexStructure level2;
@@ -168,7 +168,7 @@ void EchoPerformanceTest::RunComplexObjectTest() {
     level1.SetComplexStructMember(level2);
     
     request.SetComplexStructMember(level1);
-    request.SetAdditionalCustomHeaderValue("test-case-type", "ComplexObject");
+    request.SetAdditionalCustomHeaderValue("test-case-type", "Complex object");
     auto headers = request.GetHeaders();
     if (headers.find(Aws::Http::SMITHY_PROTOCOL_HEADER) != headers.end()) {
       request.SetAdditionalCustomHeaderValue("test-protocol-protocol", "CBOR");
@@ -204,7 +204,7 @@ void EchoPerformanceTest::RunListOfComplexObjectsTest() {
       complexList.push_back(complexObj);
     }
     request.SetListOfComplexObjectMember(complexList);
-    request.SetAdditionalCustomHeaderValue("test-case-type", "ListOfComplexObjects");
+    request.SetAdditionalCustomHeaderValue("test-case-type", "List of complex objects");
     auto headers = request.GetHeaders();
     if (headers.find(Aws::Http::SMITHY_PROTOCOL_HEADER) != headers.end()) {
       request.SetAdditionalCustomHeaderValue("test-protocol-protocol", "CBOR");
@@ -223,8 +223,8 @@ void EchoPerformanceTest::RunVeryLargeBlobTest() {
     Aws::Echo::Model::EchoOperationRequest request;
     
     // 262144 bytes (256KB) blob
-    request.SetBlobMember(GenerateRandomBinary(262144));
-    request.SetAdditionalCustomHeaderValue("test-case-type", "VeryLargeBlob");
+    request.SetBlobMember(GenerateRandomString(262144));
+    request.SetAdditionalCustomHeaderValue("test-case-type", "Very large blob");
     auto headers = request.GetHeaders();
     if (headers.find(Aws::Http::SMITHY_PROTOCOL_HEADER) != headers.end()) {
       request.SetAdditionalCustomHeaderValue("test-protocol-protocol", "CBOR");
@@ -250,18 +250,6 @@ Aws::String EchoPerformanceTest::GenerateRandomString(size_t size) {
     result += charset[dis(gen)];
   }
   return result;
-}
-
-Aws::Utils::ByteBuffer EchoPerformanceTest::GenerateRandomBinary(size_t size) {
-  static std::random_device rd;
-  static std::mt19937 gen(rd());
-  static std::uniform_int_distribution<> dis(0, 255);
-
-  Aws::Utils::ByteBuffer buffer(size);
-  for (size_t i = 0; i < size; ++i) {
-    buffer[i] = static_cast<unsigned char>(dis(gen));
-  }
-  return buffer;
 }
 
 bool EchoPerformanceTest::GenerateRandomBool() {

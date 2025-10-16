@@ -13,8 +13,8 @@
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <performance-tests/reporting/JsonReportingMetric.h>
-#include <performance-tests/services/Echo/EchoPerformanceTest.h>
-#include <performance-tests/services/Echo/EchoTestConfig.h>
+#include <performance-tests/services/echo/EchoPerformanceTest.h>
+#include <performance-tests/services/echo/EchoTestConfig.h>
 
 #include <cxxopts.hpp>
 #include <string>

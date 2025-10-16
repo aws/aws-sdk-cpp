@@ -34,7 +34,6 @@ int main(int argc, char** argv) {
   int const iterations = result["iterations"].as<int>();
 
   Aws::SDKOptions sdkOptions;
-  sdkOptions.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Debug;
   Aws::String const versionStr = Aws::Version::GetVersionString();
 
   Aws::InitAPI(sdkOptions);

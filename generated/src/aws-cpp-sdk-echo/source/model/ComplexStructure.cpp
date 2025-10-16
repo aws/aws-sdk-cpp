@@ -987,7 +987,7 @@ void ComplexStructure::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const
     {
         encoder.WriteText(Aws::Crt::ByteCursorFromCString("timestampMember"));
                 encoder.WriteTag(1); //1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
-encoder.WriteUInt(m_timestampMember.Millis());
+encoder.WriteUInt(m_timestampMember.Seconds());
      }
 
 

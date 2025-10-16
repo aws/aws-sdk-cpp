@@ -81,7 +81,9 @@ Aws::Utils::Outcome<Aws::NoResult, Aws::String> SecretsManagerPerformanceTest::S
 
 void SecretsManagerPerformanceTest::Run() {
   RunPutSecretValueTests();
+  RunPutBinarySecretValueTests();
   RunGetSecretValueTests();
+  RunGetBinarySecretValueTests();
   RunDescribeSecretTests();
   RunListSecretsTests();
 }
@@ -132,7 +134,8 @@ void SecretsManagerPerformanceTest::RunPutBinarySecretValueTests() {
     // Put binary secret value
     Aws::SecretsManager::Model::PutSecretValueRequest binaryRequest;
     binaryRequest.SetSecretId("TestBinarySecret_" + std::to_string(m_runStartTimestamp) + "_" + std::to_string(i));
-    binaryRequest.SetSecretBinary(GenerateRandomBinary(secretSize));
+    auto data = GenerateRandomString(secretSize);
+    binaryRequest.SetSecretBinary(Aws::Utils::ByteBuffer(data));
     binaryRequest.SetAdditionalCustomHeaderValue("test-dimension-size", std::to_string(secretSize));
     binaryRequest.SetAdditionalCustomHeaderValue("test-case-type", "Put binary secret");
     auto headers = binaryRequest.GetHeaders();
@@ -249,18 +252,6 @@ Aws::String SecretsManagerPerformanceTest::GenerateRandomString(size_t size) {
     result += charset[dis(gen)];
   }
   return result;
-}
-
-Aws::Utils::ByteBuffer SecretsManagerPerformanceTest::GenerateRandomBinary(size_t size) {
-  static std::random_device rd;
-  static std::mt19937 gen(rd());
-  static std::uniform_int_distribution<> dis(0, 255);
-
-  Aws::Utils::ByteBuffer buffer(size);
-  for (size_t i = 0; i < size; ++i) {
-    buffer[i] = static_cast<unsigned char>(dis(gen));
-  }
-  return buffer;
 }
 
 }  // namespace SecretsManager

@@ -41,7 +41,6 @@ class SecretsManagerPerformanceTest : public PerformanceTestBase {
   void RunListSecretsTests();
 
   Aws::String GenerateRandomString(size_t size);
-  Aws::Utils::ByteBuffer GenerateRandomBinary(size_t size);
 
   const Aws::UniquePtr<Aws::SecretsManager::SecretsManagerClient> m_secretsManager;
   const TestConfig::TestCase m_testConfig;
