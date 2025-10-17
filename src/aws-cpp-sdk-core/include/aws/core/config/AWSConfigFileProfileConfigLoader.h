@@ -39,12 +39,6 @@ namespace Aws
              * This can avoid creating new loader object if the file changed.
              */
             void SetFileName(const Aws::String& fileName) { m_fileName = fileName; }
-
-            /**
-             * Get services map for endpoint resolution.
-             */
-            const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& GetServices() const;
-
         protected:
             virtual bool LoadInternal() override;
             virtual bool PersistInternal(const Aws::Map<Aws::String, Aws::Config::Profile>&) override;
