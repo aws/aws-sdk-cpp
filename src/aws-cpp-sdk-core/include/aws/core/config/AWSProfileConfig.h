@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/auth/AWSCredentials.h>
+#include <aws/crt/Optional.h>
 
 namespace Aws
 {
@@ -91,6 +92,16 @@ namespace Aws
                 auto iter = m_allKeyValPairs.find(key);
                 if (iter == m_allKeyValPairs.end()) return {};
                 return iter->second;
+            }
+
+            inline Aws::Crt::Optional<Aws::String> GetServicesName() const {
+                const Aws::String& service = GetValue("services");
+                return service.empty() ? Aws::Crt::Optional<Aws::String>() : Aws::Crt::Optional<Aws::String>(service);
+            }
+
+            inline Aws::Crt::Optional<Aws::String> GetEndpointUrl() const {
+                const Aws::String& endpoint = GetValue("endpoint_url");
+                return endpoint.empty() ? Aws::Crt::Optional<Aws::String>() : Aws::Crt::Optional<Aws::String>(endpoint);
             }
 
             inline bool IsSsoSessionSet() const { return m_ssoSessionSet; }
