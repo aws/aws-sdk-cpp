@@ -45,9 +45,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Takes in two pairs of coordinates, [Lon, Lat], denoting south-westerly and
-     * north-easterly edges of the image. The underlying area becomes the view of the
-     * image. </p> <p>Example: -123.17075,49.26959,-123.08125,49.31429</p>
+     * <p>Takes in two pairs of coordinates in World Geodetic System (WGS 84) format:
+     * [longitude, latitude], denoting south-westerly and north-easterly edges of the
+     * image. The underlying area becomes the view of the image. </p> <p>Example:
+     * -123.17075,49.26959,-123.08125,49.31429</p>
      */
     inline const Aws::String& GetBoundingBox() const { return m_boundingBox; }
     inline bool BoundingBoxHasBeenSet() const { return m_boundingBoxHasBeenSet; }
@@ -59,11 +60,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Takes in two or more pair of coordinates, [Lon, Lat], with each coordinate
-     * separated by a comma. The API will generate an image to encompass all of the
-     * provided coordinates. </p>  <p>Cannot be used with <code>Zoom</code> and
-     * or <code>Radius</code> </p>  <p>Example:
-     * 97.170451,78.039098,99.045536,27.176178</p>
+     * <p>Takes in two or more pair of coordinates in World Geodetic System (WGS 84)
+     * format: [longitude, latitude], with each coordinate separated by a comma. The
+     * API will generate an image to encompass all of the provided coordinates. </p>
+     *  <p>Cannot be used with <code>Zoom</code> and or <code>Radius</code> </p>
+     *  <p>Example: 97.170451,78.039098,99.045536,27.176178</p>
      */
     inline const Aws::String& GetBoundedPositions() const { return m_boundedPositions; }
     inline bool BoundedPositionsHasBeenSet() const { return m_boundedPositionsHasBeenSet; }
@@ -75,10 +76,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Takes in a pair of coordinates, [Lon, Lat], which becomes the center point of
-     * the image. This parameter requires that either zoom or radius is set.</p> 
-     * <p>Cannot be used with <code>Zoom</code> and or <code>Radius</code> </p> 
-     * <p>Example: 49.295,-123.108</p>
+     * <p>Takes in a pair of coordinates in World Geodetic System (WGS 84) format:
+     * [longitude, latitude], which becomes the center point of the image. This
+     * parameter requires that either zoom or radius is set.</p>  <p>Cannot be
+     * used with <code>Zoom</code> and or <code>Radius</code> </p>  <p>Example:
+     * 49.295,-123.108</p>
      */
     inline const Aws::String& GetCenter() const { return m_center; }
     inline bool CenterHasBeenSet() const { return m_centerHasBeenSet; }

@@ -64,8 +64,8 @@ namespace Model
     /**
      * <p>The streaming capacity that is allocated and ready to handle stream requests
      * without delay. You pay for this capacity whether it's in use or not. Best for
-     * quickest time from streaming request to streaming session. Default is 1 when
-     * creating a stream group or adding a location.</p>
+     * quickest time from streaming request to streaming session. Default is 1 (2 for
+     * high stream classes) when creating a stream group or adding a location.</p>
      */
     inline int GetAlwaysOnCapacity() const { return m_alwaysOnCapacity; }
     inline bool AlwaysOnCapacityHasBeenSet() const { return m_alwaysOnCapacityHasBeenSet; }

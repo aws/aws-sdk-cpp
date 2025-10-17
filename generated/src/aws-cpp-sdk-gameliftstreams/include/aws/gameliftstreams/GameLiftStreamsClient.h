@@ -205,13 +205,15 @@ namespace GameLiftStreams
          * <b>Always-on</b>: The streaming capacity that is allocated and ready to handle
          * stream requests without delay. You pay for this capacity whether it's in use or
          * not. Best for quickest time from streaming request to streaming session. Default
-         * is 1 when creating a stream group or adding a location. </p> </li> <li> <p>
-         * <b>On-demand</b>: The streaming capacity that Amazon GameLift Streams can
-         * allocate in response to stream requests, and then de-allocate when the session
-         * has terminated. This offers a cost control measure at the expense of a greater
-         * startup time (typically under 5 minutes). Default is 0 when creating a stream
-         * group or adding a location. </p> </li> </ul> <p> To adjust the capacity of any
-         * <code>ACTIVE</code> stream group, call <a
+         * is 1 (2 for high stream classes) when creating a stream group or adding a
+         * location. </p> </li> <li> <p> <b>On-demand</b>: The streaming capacity that
+         * Amazon GameLift Streams can allocate in response to stream requests, and then
+         * de-allocate when the session has terminated. This offers a cost control measure
+         * at the expense of a greater startup time (typically under 5 minutes). Default is
+         * 0 when creating a stream group or adding a location. </p> </li> </ul> <p>Values
+         * for capacity must be whole number multiples of the tenancy value of the stream
+         * group's stream class.</p> <p> To adjust the capacity of any <code>ACTIVE</code>
+         * stream group, call <a
          * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateStreamGroup.html">UpdateStreamGroup</a>.
          * </p> <p> If the request is successful, Amazon GameLift Streams begins creating
          * the stream group. Amazon GameLift Streams assigns a unique ID to the stream
@@ -940,13 +942,15 @@ namespace GameLiftStreams
          * always-on and on-demand: </p> <ul> <li> <p> <b>Always-on</b>: The streaming
          * capacity that is allocated and ready to handle stream requests without delay.
          * You pay for this capacity whether it's in use or not. Best for quickest time
-         * from streaming request to streaming session. Default is 1 when creating a stream
-         * group or adding a location. </p> </li> <li> <p> <b>On-demand</b>: The streaming
-         * capacity that Amazon GameLift Streams can allocate in response to stream
-         * requests, and then de-allocate when the session has terminated. This offers a
-         * cost control measure at the expense of a greater startup time (typically under 5
-         * minutes). Default is 0 when creating a stream group or adding a location. </p>
-         * </li> </ul> <p>To update a stream group, specify the stream group's Amazon
+         * from streaming request to streaming session. Default is 1 (2 for high stream
+         * classes) when creating a stream group or adding a location. </p> </li> <li> <p>
+         * <b>On-demand</b>: The streaming capacity that Amazon GameLift Streams can
+         * allocate in response to stream requests, and then de-allocate when the session
+         * has terminated. This offers a cost control measure at the expense of a greater
+         * startup time (typically under 5 minutes). Default is 0 when creating a stream
+         * group or adding a location. </p> </li> </ul> <p>Values for capacity must be
+         * whole number multiples of the tenancy value of the stream group's stream
+         * class.</p> <p>To update a stream group, specify the stream group's Amazon
          * Resource Name (ARN) and provide the new values. If the request is successful,
          * Amazon GameLift Streams returns the complete updated metadata for the stream
          * group.</p><p><h3>See Also:</h3>   <a

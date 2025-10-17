@@ -1806,10 +1806,19 @@ namespace EC2
          * you choose to terminate the instances, the Spot Fleet request enters the
          * <code>cancelled_terminating</code> state. Otherwise, the Spot Fleet request
          * enters the <code>cancelled_running</code> state and the instances continue to
-         * run until they are interrupted or you terminate them manually.</p> <p
-         * class="title"> <b>Restrictions</b> </p> <ul> <li> <p>You can delete up to 100
-         * fleets in a single request. If you exceed the specified number, no fleets are
-         * deleted.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * run until they are interrupted or you terminate them manually.</p> 
+         * <p> <b>Terminating an instance is permanent and irreversible.</b> </p> <p>After
+         * you terminate an instance, you can no longer connect to it, and it can't be
+         * recovered. All attached Amazon EBS volumes that are configured to be deleted on
+         * termination are also permanently deleted and can't be recovered. All data stored
+         * on instance store volumes is permanently lost. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-ec2-instance-termination-works.html">
+         * How instance termination works</a>.</p> <p>Before you terminate an instance,
+         * ensure that you have backed up all data that you need to retain after the
+         * termination to persistent storage.</p>  <p class="title">
+         * <b>Restrictions</b> </p> <ul> <li> <p>You can delete up to 100 fleets in a
+         * single request. If you exceed the specified number, no fleets are deleted.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotFleetRequests">AWS
          * API Reference</a></p>
          */
@@ -4819,23 +4828,24 @@ namespace EC2
         }
 
         /**
-         * <p>Creates a VPC with the specified CIDR blocks. For more information, see <a
+         * <p>Creates a VPC with the specified CIDR blocks.</p> <p>A VPC must have an
+         * associated IPv4 CIDR block. You can choose an IPv4 CIDR block or an
+         * IPAM-allocated IPv4 CIDR block. You can optionally associate an IPv6 CIDR block
+         * with a VPC. You can choose an IPv6 CIDR block, an Amazon-provided IPv6 CIDR
+         * block, an IPAM-allocated IPv6 CIDR block, or an IPv6 CIDR block that you brought
+         * to Amazon Web Services. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html">IP
          * addressing for your VPCs and subnets</a> in the <i>Amazon VPC User
-         * Guide</i>.</p> <p>You can optionally request an IPv6 CIDR block for the VPC. You
-         * can request an Amazon-provided IPv6 CIDR block from Amazon's pool of IPv6
-         * addresses or an IPv6 CIDR block from an IPv6 address pool that you provisioned
-         * through bring your own IP addresses (<a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).</p>
-         * <p>By default, each instance that you launch in the VPC has the default DHCP
-         * options, which include only a default DNS server that we provide
+         * Guide</i>.</p> <p>By default, each instance that you launch in the VPC has the
+         * default DHCP options, which include only a default DNS server that we provide
          * (AmazonProvidedDNS). For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * option sets</a> in the <i>Amazon VPC User Guide</i>.</p> <p>You can specify the
-         * instance tenancy value for the VPC when you create it. You can't change this
-         * value for the VPC after you create it. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
-         * Instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * option sets</a> in the <i>Amazon VPC User Guide</i>.</p> <p>You can specify DNS
+         * options and tenancy for a VPC when you create it. You can't change the tenancy
+         * of a VPC after you create it. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/create-vpc-options.html">VPC
+         * configuration options</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpc">AWS API
          * Reference</a></p>
          */
@@ -5386,7 +5396,16 @@ namespace EC2
          * its instances. For fleets with more than 1000 instances, the deletion request
          * might fail. If your fleet has more than 1000 instances, first terminate most of
          * the instances manually, leaving 1000 or fewer. Then delete the fleet, and the
-         * remaining instances will be terminated automatically.</p> <p class="title">
+         * remaining instances will be terminated automatically.</p>  <p>
+         * <b>Terminating an instance is permanent and irreversible.</b> </p> <p>After you
+         * terminate an instance, you can no longer connect to it, and it can't be
+         * recovered. All attached Amazon EBS volumes that are configured to be deleted on
+         * termination are also permanently deleted and can't be recovered. All data stored
+         * on instance store volumes is permanently lost. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-ec2-instance-termination-works.html">
+         * How instance termination works</a>.</p> <p>Before you terminate an instance,
+         * ensure that you have backed up all data that you need to retain after the
+         * termination to persistent storage.</p>  <p class="title">
          * <b>Restrictions</b> </p> <ul> <li> <p>You can delete up to 25 fleets of type
          * <code>instant</code> in a single request.</p> </li> <li> <p>You can delete up to
          * 100 fleets of type <code>maintain</code> or <code>request</code> in a single
@@ -21355,19 +21374,28 @@ namespace EC2
         }
 
         /**
-         * <p>Shuts down the specified instances. This operation is <a
+         * <p>Terminates (deletes) the specified instances. This operation is <a
          * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">idempotent</a>;
-         * if you terminate an instance more than once, each call succeeds.</p> <p>If you
-         * specify multiple instances and the request fails (for example, because of a
-         * single incorrect instance ID), none of the instances are terminated.</p> <p>If
-         * you terminate multiple instances across multiple Availability Zones, and one or
-         * more of the specified instances are enabled for termination protection, the
-         * request fails with the following results:</p> <ul> <li> <p>The specified
-         * instances that are in the same Availability Zone as the protected instance are
-         * not terminated.</p> </li> <li> <p>The specified instances that are in different
-         * Availability Zones, where no other specified instances are protected, are
-         * successfully terminated.</p> </li> </ul> <p>For example, say you have the
-         * following instances:</p> <ul> <li> <p>Instance A: <code>us-east-1a</code>; Not
+         * if you terminate an instance more than once, each call succeeds.</p> 
+         * <p> <b>Terminating an instance is permanent and irreversible.</b> </p> <p>After
+         * you terminate an instance, you can no longer connect to it, and it can't be
+         * recovered. All attached Amazon EBS volumes that are configured to be deleted on
+         * termination are also permanently deleted and can't be recovered. All data stored
+         * on instance store volumes is permanently lost. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-ec2-instance-termination-works.html">
+         * How instance termination works</a>.</p> <p>Before you terminate an instance,
+         * ensure that you have backed up all data that you need to retain after the
+         * termination to persistent storage.</p>  <p>If you specify multiple
+         * instances and the request fails (for example, because of a single incorrect
+         * instance ID), none of the instances are terminated.</p> <p>If you terminate
+         * multiple instances across multiple Availability Zones, and one or more of the
+         * specified instances are enabled for termination protection, the request fails
+         * with the following results:</p> <ul> <li> <p>The specified instances that are in
+         * the same Availability Zone as the protected instance are not terminated.</p>
+         * </li> <li> <p>The specified instances that are in different Availability Zones,
+         * where no other specified instances are protected, are successfully
+         * terminated.</p> </li> </ul> <p>For example, say you have the following
+         * instances:</p> <ul> <li> <p>Instance A: <code>us-east-1a</code>; Not
          * protected</p> </li> <li> <p>Instance B: <code>us-east-1a</code>; Not
          * protected</p> </li> <li> <p>Instance C: <code>us-east-1b</code>; Protected</p>
          * </li> <li> <p>Instance D: <code>us-east-1b</code>; not protected</p> </li> </ul>

@@ -87,8 +87,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The path and file name of the executable file that launches the content for
-     * streaming.</p>
+     * <p>The relative path and file name of the executable file that launches the
+     * content for streaming.</p>
      */
     inline const Aws::String& GetExecutablePath() const { return m_executablePath; }
     template<typename ExecutablePathT = Aws::String>

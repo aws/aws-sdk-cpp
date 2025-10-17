@@ -19,7 +19,8 @@ namespace Model
     EntityId,
     ProductTitle,
     Visibility,
-    LastModifiedDate
+    LastModifiedDate,
+    DeliveryOptionTypes
   };
 
 namespace SaaSProductSortByMapper

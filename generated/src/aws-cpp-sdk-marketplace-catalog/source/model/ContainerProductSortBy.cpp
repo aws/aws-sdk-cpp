@@ -24,6 +24,7 @@ namespace Aws
         static const int LastModifiedDate_HASH = HashingUtils::HashString("LastModifiedDate");
         static const int ProductTitle_HASH = HashingUtils::HashString("ProductTitle");
         static const int Visibility_HASH = HashingUtils::HashString("Visibility");
+        static const int CompatibleAWSServices_HASH = HashingUtils::HashString("CompatibleAWSServices");
 
 
         ContainerProductSortBy GetContainerProductSortByForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == Visibility_HASH)
           {
             return ContainerProductSortBy::Visibility;
+          }
+          else if (hashCode == CompatibleAWSServices_HASH)
+          {
+            return ContainerProductSortBy::CompatibleAWSServices;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "ProductTitle";
           case ContainerProductSortBy::Visibility:
             return "Visibility";
+          case ContainerProductSortBy::CompatibleAWSServices:
+            return "CompatibleAWSServices";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

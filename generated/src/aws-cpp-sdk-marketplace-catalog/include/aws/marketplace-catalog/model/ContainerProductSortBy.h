@@ -19,7 +19,8 @@ namespace Model
     EntityId,
     LastModifiedDate,
     ProductTitle,
-    Visibility
+    Visibility,
+    CompatibleAWSServices
   };
 
 namespace ContainerProductSortByMapper

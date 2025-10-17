@@ -87,8 +87,11 @@ namespace GeoMaps
         virtual ~GeoMapsClient();
 
         /**
-         * <p> <code>GetGlyphs</code> returns the map's glyphs.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p> <code>GetGlyphs</code> returns the map's glyphs.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/location/latest/developerguide/styling-labels-with-glyphs.html">Style
+         * labels with glyphs</a> in the <i>Amazon Location Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/geo-maps-2020-11-19/GetGlyphs">AWS
          * API Reference</a></p>
          */
@@ -113,8 +116,11 @@ namespace GeoMaps
         }
 
         /**
-         * <p> <code>GetSprites</code> returns the map's sprites.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p> <code>GetSprites</code> returns the map's sprites.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/location/latest/developerguide/styling-iconography-with-sprites.html">Style
+         * iconography with sprites</a> in the <i>Amazon Location Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/geo-maps-2020-11-19/GetSprites">AWS
          * API Reference</a></p>
          */
@@ -142,7 +148,14 @@ namespace GeoMaps
          * <p> <code>GetStaticMap</code> provides high-quality static map images with
          * customizable options. You can modify the map's appearance and overlay additional
          * information. It's an ideal solution for applications requiring tailored static
-         * map snapshots.</p><p><h3>See Also:</h3>   <a
+         * map snapshots.</p> <p>For more information, see the following topics in the
+         * <i>Amazon Location Service Developer Guide</i>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/location/latest/developerguide/static-maps.html">Static
+         * maps</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/location/latest/developerguide/customizing-static-maps.html">Customize
+         * static maps</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/location/latest/developerguide/overlaying-static-map.html">Overlay
+         * on the static map</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/geo-maps-2020-11-19/GetStaticMap">AWS
          * API Reference</a></p>
          */
@@ -167,8 +180,11 @@ namespace GeoMaps
         }
 
         /**
-         * <p> <code>GetStyleDescriptor</code> returns information about the
-         * style.</p><p><h3>See Also:</h3>   <a
+         * <p> <code>GetStyleDescriptor</code> returns information about the style.</p>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/location/latest/developerguide/styling-dynamic-maps.html">Style
+         * dynamic maps</a> in the <i>Amazon Location Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/geo-maps-2020-11-19/GetStyleDescriptor">AWS
          * API Reference</a></p>
          */
@@ -195,8 +211,10 @@ namespace GeoMaps
         /**
          * <p> <code>GetTile</code> returns a tile. Map tiles are used by clients to render
          * a map. they're addressed using a grid arrangement with an X coordinate, Y
-         * coordinate, and Z (zoom) level.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/geo-maps-2020-11-19/GetTile">AWS
+         * coordinate, and Z (zoom) level.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/location/latest/developerguide/tiles.html">Tiles</a>
+         * in the <i>Amazon Location Service Developer Guide</i>.</p><p><h3>See Also:</h3> 
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/geo-maps-2020-11-19/GetTile">AWS
          * API Reference</a></p>
          */
         virtual Model::GetTileOutcome GetTile(const Model::GetTileRequest& request) const;
