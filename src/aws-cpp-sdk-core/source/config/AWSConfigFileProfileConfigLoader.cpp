@@ -737,10 +737,5 @@ namespace Aws
 
             return false;
         }
-
-        const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& AWSConfigFileProfileConfigLoader::GetServices() const
-        {
-            return m_services;
-        }
     } // Config namespace
 } // Aws namespace

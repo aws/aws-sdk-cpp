@@ -44,23 +44,10 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestServiceSpecificEndpoints)
     ASSERT_TRUE(globalEndpoint.has_value());
     ASSERT_STREQ("https://global.example.com", globalEndpoint->c_str());
     
-    // Test service-specific endpoints
-    auto s3Endpoint = Profile::GetServiceEndpointUrl(profile, loader.GetServices(), "s3");
-    ASSERT_TRUE(s3Endpoint.has_value());
-    ASSERT_STREQ("http://localhost:9000", s3Endpoint->c_str());
-    
-    auto dynamoEndpoint = Profile::GetServiceEndpointUrl(profile, loader.GetServices(), "dynamodb");
-    ASSERT_TRUE(dynamoEndpoint.has_value());
-    ASSERT_STREQ("http://localhost:8000", dynamoEndpoint->c_str());
-    
-    // Test case insensitive service lookup
-    auto s3EndpointUpper = Profile::GetServiceEndpointUrl(profile, loader.GetServices(), "S3");
-    ASSERT_TRUE(s3EndpointUpper.has_value());
-    ASSERT_STREQ("http://localhost:9000", s3EndpointUpper->c_str());
-    
-    // Test non-existent service
-    auto nonExistent = Profile::GetServiceEndpointUrl(profile, loader.GetServices(), "nonexistent");
-    ASSERT_FALSE(nonExistent.has_value());
+    // Test services name is parsed correctly
+    auto servicesName = profile.GetServicesName();
+    ASSERT_TRUE(servicesName.has_value());
+    ASSERT_STREQ("myservices", servicesName->c_str());
 
 }
 
@@ -85,15 +72,10 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestServiceSpecificEndpointsOnly)
     auto globalEndpoint = profile.GetEndpointUrl();
     ASSERT_FALSE(globalEndpoint.has_value());
     
-    // Test service-specific endpoint
-    auto s3Endpoint = Profile::GetServiceEndpointUrl(profile, loader.GetServices(), "s3");
-    ASSERT_TRUE(s3Endpoint.has_value());
-    ASSERT_STREQ("https://play.min.io:9000", s3Endpoint->c_str());
-    
-    // Test case insensitive lookup
-    auto s3EndpointUpper = Profile::GetServiceEndpointUrl(profile, loader.GetServices(), "S3");
-    ASSERT_TRUE(s3EndpointUpper.has_value());
-    ASSERT_STREQ("https://play.min.io:9000", s3EndpointUpper->c_str());
+    // Test services name is parsed correctly
+    auto servicesName = profile.GetServicesName();
+    ASSERT_TRUE(servicesName.has_value());
+    ASSERT_STREQ("s3-minio", servicesName->c_str());
 }
 
 TEST_F(ServiceEndpointsConfigFileLoaderTest, TestGlobalEndpointOnly)
@@ -115,9 +97,9 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestGlobalEndpointOnly)
     ASSERT_TRUE(globalEndpoint.has_value());
     ASSERT_STREQ("https://play.min.io:9000", globalEndpoint->c_str());
     
-    // Test that service-specific endpoint is null when not set
-    auto s3Endpoint = Profile::GetServiceEndpointUrl(profile, loader.GetServices(), "s3");
-    ASSERT_FALSE(s3Endpoint.has_value());
+    // Test that services name is not set
+    auto servicesName = profile.GetServicesName();
+    ASSERT_FALSE(servicesName.has_value());
 }
 
 TEST_F(ServiceEndpointsConfigFileLoaderTest, TestServiceSpecificAndGlobalEndpoints)
@@ -138,19 +120,15 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestServiceSpecificAndGlobalEndpoin
     auto profiles = loader.GetProfiles();
     const auto& profile = profiles["dev-s3-specific-and-global"];
     
-    // Test service-specific S3 endpoint
-    auto s3Endpoint = Profile::GetServiceEndpointUrl(profile, loader.GetServices(), "s3");
-    ASSERT_TRUE(s3Endpoint.has_value());
-    ASSERT_STREQ("https://play.min.io:9000", s3Endpoint->c_str());
+    // Test services name is parsed correctly
+    auto servicesName = profile.GetServicesName();
+    ASSERT_TRUE(servicesName.has_value());
+    ASSERT_STREQ("s3-specific-and-global", servicesName->c_str());
     
-    // Test global endpoint for other services
+    // Test global endpoint
     auto globalEndpoint = profile.GetEndpointUrl();
     ASSERT_TRUE(globalEndpoint.has_value());
     ASSERT_STREQ("http://localhost:1234", globalEndpoint->c_str());
-    
-    // Test that non-configured service returns null (would fall back to global)
-    auto dynamoEndpoint = Profile::GetServiceEndpointUrl(profile, loader.GetServices(), "dynamodb");
-    ASSERT_FALSE(dynamoEndpoint.has_value());
 }
 
 TEST_F(ServiceEndpointsConfigFileLoaderTest, TestMultipleServicesInDefinition)
@@ -172,20 +150,10 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestMultipleServicesInDefinition)
   auto profiles = loader.GetProfiles();
   const auto& profile = profiles["dev"];
 
-  // Test S3 endpoint
-  auto s3Endpoint = Profile::GetServiceEndpointUrl(profile, loader.GetServices(), "s3");
-  ASSERT_TRUE(s3Endpoint.has_value());
-  ASSERT_STREQ("http://localhost:4567", s3Endpoint->c_str());
-
-  // Test Elastic Beanstalk endpoint with normalized service ID
-  auto ebEndpoint = Profile::GetServiceEndpointUrl(profile, loader.GetServices(), "Elastic Beanstalk");
-  ASSERT_TRUE(ebEndpoint.has_value());
-  ASSERT_STREQ("http://localhost:8000", ebEndpoint->c_str());
-
-  // Test direct normalized lookup
-  auto ebEndpointDirect = Profile::GetServiceEndpointUrl(profile, loader.GetServices(), "elastic_beanstalk");
-  ASSERT_TRUE(ebEndpointDirect.has_value());
-  ASSERT_STREQ("http://localhost:8000", ebEndpointDirect->c_str());
+  // Test services name is parsed correctly
+  auto servicesName = profile.GetServicesName();
+  ASSERT_TRUE(servicesName.has_value());
+  ASSERT_STREQ("testing-s3-and-eb", servicesName->c_str());
 }
 
 TEST_F(ServiceEndpointsConfigFileLoaderTest, TestIgnoreGlobalEndpointInServicesSection)
@@ -208,9 +176,10 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestIgnoreGlobalEndpointInServicesS
     auto globalEndpoint = profile.GetEndpointUrl();
     ASSERT_FALSE(globalEndpoint.has_value());
     
-    // Test that service-specific endpoints return null (no services configured)
-    auto s3Endpoint = Profile::GetServiceEndpointUrl(profile, loader.GetServices(), "s3");
-    ASSERT_FALSE(s3Endpoint.has_value());
+    // Test that services name is parsed correctly
+    auto servicesName = profile.GetServicesName();
+    ASSERT_TRUE(servicesName.has_value());
+    ASSERT_STREQ("bad-service-definition", servicesName->c_str());
 }
 
 TEST_F(ServiceEndpointsConfigFileLoaderTest, TestSourceProfileEndpointIsolation)
@@ -236,10 +205,10 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestSourceProfileEndpointIsolation)
     const auto& profileB = profiles["B"];
     const auto& profileA = profiles["A"];
     
-    // Test that profile B gets EC2 endpoint from its own services definition
-    auto ec2Endpoint = Profile::GetServiceEndpointUrl(profileB, loader.GetServices(), "ec2");
-    ASSERT_TRUE(ec2Endpoint.has_value());
-    ASSERT_STREQ("https://profile-b-ec2-endpoint.aws", ec2Endpoint->c_str());
+    // Test that profile B has services name
+    auto servicesBName = profileB.GetServicesName();
+    ASSERT_TRUE(servicesBName.has_value());
+    ASSERT_STREQ("profileB", servicesBName->c_str());
     
     // Test that profile B has no global endpoint (doesn't inherit from profile A)
     auto globalEndpointB = profileB.GetEndpointUrl();
@@ -250,9 +219,9 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestSourceProfileEndpointIsolation)
     ASSERT_TRUE(globalEndpointA.has_value());
     ASSERT_STREQ("https://profile-a-endpoint.aws/", globalEndpointA->c_str());
     
-    // Test that other services in profile B return null (no chaining to profile A)
-    auto s3Endpoint = Profile::GetServiceEndpointUrl(profileB, loader.GetServices(), "s3");
-    ASSERT_FALSE(s3Endpoint.has_value());
+    // Test that profile A has no services name
+    auto servicesAName = profileA.GetServicesName();
+    ASSERT_FALSE(servicesAName.has_value());
 }
 TEST_F(ServiceEndpointsConfigFileLoaderTest, TestIgnoreConfiguredEndpointUrls)
 {

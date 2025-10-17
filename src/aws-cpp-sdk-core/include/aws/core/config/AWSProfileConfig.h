@@ -104,14 +104,6 @@ namespace Aws
                 return endpoint.empty() ? Aws::Crt::Optional<Aws::String>() : Aws::Crt::Optional<Aws::String>(endpoint);
             }
 
-            /**
-             * Static helper that get service-specific endpoint URL for a given service.
-             */
-            static Aws::Crt::Optional<Aws::String> GetServiceEndpointUrl(
-                const Profile& profile,
-                const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& services,
-                const Aws::String& serviceId);
-
             inline bool IsSsoSessionSet() const { return m_ssoSessionSet; }
             inline const SsoSession& GetSsoSession() const { return m_ssoSession; }
             inline void SetSsoSession(const SsoSession& value) { m_ssoSessionSet = true; m_ssoSession = value; }
