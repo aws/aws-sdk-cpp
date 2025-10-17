@@ -72,9 +72,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The path and file name of the executable file that launches the content for
-     * streaming. Enter a path value that is relative to the location set in
-     * <code>ApplicationSourceUri</code>.</p>
+     * <p>The relative path and file name of the executable file that Amazon GameLift
+     * Streams will stream. Specify a path relative to the location set in
+     * <code>ApplicationSourceUri</code>. The file must be contained within the
+     * application's root folder. For Windows applications, the file must be a valid
+     * Windows executable or batch file with a filename ending in .exe, .cmd, or .bat.
+     * For Linux applications, the file must be a valid Linux binary executable or a
+     * script that contains an initial interpreter line starting with a shebang
+     * ('<code>#!</code>').</p>
      */
     inline const Aws::String& GetExecutablePath() const { return m_executablePath; }
     inline bool ExecutablePathHasBeenSet() const { return m_executablePathHasBeenSet; }

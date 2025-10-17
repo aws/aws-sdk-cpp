@@ -87,7 +87,9 @@ namespace Model
      * will automatically terminate if there is no user input for 60 minutes, or if the
      * maximum length of a session specified by <code>SessionLengthSeconds</code> in
      * <code>StartStreamSession</code> is exceeded.</p> </li> <li> <p>
-     * <code>ERROR</code>: The stream session failed to activate.</p> </li> <li> <p>
+     * <code>ERROR</code>: The stream session failed to activate. See
+     * <code>StatusReason</code> (returned by <code>GetStreamSession</code> and
+     * <code>StartStreamSession</code>) for more information.</p> </li> <li> <p>
      * <code>PENDING_CLIENT_RECONNECTION</code>: A client has recently disconnected and
      * the stream session is waiting for the client to reconnect. A client has
      * <code>ConnectionTimeoutSeconds</code> (specified in

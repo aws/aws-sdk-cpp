@@ -28,8 +28,9 @@ namespace Model
 
   /**
    * <p>The filters that you can use with the ListEntities operation to filter
-   * machine learning products. You can filter by EntityId, LastModifiedDate,
-   * ProductTitle, and Visibility.</p><p><h3>See Also:</h3>   <a
+   * machine learning products. You can filter by <code>EntityId</code>,
+   * <code>astModifiedDate</code>, <code>ProductTitle</code>, and
+   * <code>Visibility</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/MachineLearningProductFilters">AWS
    * API Reference</a></p>
    */

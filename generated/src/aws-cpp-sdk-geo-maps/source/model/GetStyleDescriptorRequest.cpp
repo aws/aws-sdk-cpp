@@ -37,6 +37,37 @@ void GetStyleDescriptorRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
+    if(m_terrainHasBeenSet)
+    {
+      ss << TerrainMapper::GetNameForTerrain(m_terrain);
+      uri.AddQueryStringParameter("terrain", ss.str());
+      ss.str("");
+    }
+
+    if(m_contourDensityHasBeenSet)
+    {
+      ss << ContourDensityMapper::GetNameForContourDensity(m_contourDensity);
+      uri.AddQueryStringParameter("contour-density", ss.str());
+      ss.str("");
+    }
+
+    if(m_trafficHasBeenSet)
+    {
+      ss << TrafficMapper::GetNameForTraffic(m_traffic);
+      uri.AddQueryStringParameter("traffic", ss.str());
+      ss.str("");
+    }
+
+    if(m_travelModesHasBeenSet)
+    {
+      for(const auto& item : m_travelModes)
+      {
+        ss << TravelModeMapper::GetNameForTravelMode(item);
+        uri.AddQueryStringParameter("travel-modes", ss.str());
+        ss.str("");
+      }
+    }
+
     if(m_keyHasBeenSet)
     {
       ss << m_key;

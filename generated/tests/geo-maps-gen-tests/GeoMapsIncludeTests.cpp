@@ -15,6 +15,7 @@
 #include <aws/geo-maps/GeoMapsServiceClientModel.h>
 #include <aws/geo-maps/GeoMaps_EXPORTS.h>
 #include <aws/geo-maps/model/ColorScheme.h>
+#include <aws/geo-maps/model/ContourDensity.h>
 #include <aws/geo-maps/model/GetGlyphsRequest.h>
 #include <aws/geo-maps/model/GetGlyphsResult.h>
 #include <aws/geo-maps/model/GetSpritesRequest.h>
@@ -30,6 +31,9 @@
 #include <aws/geo-maps/model/MapStyle.h>
 #include <aws/geo-maps/model/ScaleBarUnit.h>
 #include <aws/geo-maps/model/StaticMapStyle.h>
+#include <aws/geo-maps/model/Terrain.h>
+#include <aws/geo-maps/model/Traffic.h>
+#include <aws/geo-maps/model/TravelMode.h>
 #include <aws/geo-maps/model/ValidationException.h>
 #include <aws/geo-maps/model/ValidationExceptionField.h>
 #include <aws/geo-maps/model/ValidationExceptionReason.h>

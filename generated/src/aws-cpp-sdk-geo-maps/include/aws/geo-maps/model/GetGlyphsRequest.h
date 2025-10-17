@@ -97,7 +97,7 @@ namespace Model
     ///@{
     /**
      * <p>A Unicode range of characters to download glyphs for. This must be aligned to
-     * multiples of 256. </p> <p>Example: <code>0-255.pdf</code> </p>
+     * multiples of 256. </p> <p>Example: <code>0-255.pbf</code> </p>
      */
     inline const Aws::String& GetFontUnicodeRange() const { return m_fontUnicodeRange; }
     inline bool FontUnicodeRangeHasBeenSet() const { return m_fontUnicodeRangeHasBeenSet; }

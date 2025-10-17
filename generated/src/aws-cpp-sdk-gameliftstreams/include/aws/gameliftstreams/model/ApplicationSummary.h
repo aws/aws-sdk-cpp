@@ -94,9 +94,10 @@ namespace Model
      * caching for future deployment in a stream group.</p> </li> <li> <p>
      * <code>READY</code>: The application is ready to deploy in a stream group.</p>
      * </li> <li> <p> <code>ERROR</code>: An error occurred when setting up the
-     * application. See <code>StatusReason</code> for more information.</p> </li> <li>
-     * <p> <code>DELETING</code>: Amazon GameLift Streams is in the process of deleting
-     * the application.</p> </li> </ul>
+     * application. For more information about the error, call
+     * <code>GetApplication</code> and refer to <code>StatusReason</code>.</p> </li>
+     * <li> <p> <code>DELETING</code>: Amazon GameLift Streams is in the process of
+     * deleting the application.</p> </li> </ul>
      */
     inline ApplicationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

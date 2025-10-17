@@ -9,6 +9,11 @@
 #include <aws/geo-maps/model/MapStyle.h>
 #include <aws/geo-maps/model/ColorScheme.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-maps/model/Terrain.h>
+#include <aws/geo-maps/model/ContourDensity.h>
+#include <aws/geo-maps/model/Traffic.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/geo-maps/model/TravelMode.h>
 #include <utility>
 
 namespace Aws
@@ -94,6 +99,61 @@ namespace Model
 
     ///@{
     /**
+     * <p>Adjusts how physical terrain details are rendered on the map.</p> <p>The
+     * following terrain styles are currently supported:</p> <ul> <li> <p>
+     * <code>Hillshade</code>: Displays the physical terrain details through shading
+     * and highlighting of elevation change and geographic features.</p> </li> </ul>
+     * <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+     */
+    inline Terrain GetTerrain() const { return m_terrain; }
+    inline bool TerrainHasBeenSet() const { return m_terrainHasBeenSet; }
+    inline void SetTerrain(Terrain value) { m_terrainHasBeenSet = true; m_terrain = value; }
+    inline GetStyleDescriptorRequest& WithTerrain(Terrain value) { SetTerrain(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Displays the shape and steepness of terrain features using elevation lines.
+     * The density value controls how densely the available contour line information is
+     * rendered on the map.</p> <p>This parameter is valid only for the
+     * <code>Standard</code> map style.</p>
+     */
+    inline ContourDensity GetContourDensity() const { return m_contourDensity; }
+    inline bool ContourDensityHasBeenSet() const { return m_contourDensityHasBeenSet; }
+    inline void SetContourDensity(ContourDensity value) { m_contourDensityHasBeenSet = true; m_contourDensity = value; }
+    inline GetStyleDescriptorRequest& WithContourDensity(ContourDensity value) { SetContourDensity(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Displays real-time traffic information overlay on map, such as incident
+     * events and flow events.</p> <p>This parameter is valid only for the
+     * <code>Standard</code> map style.</p>
+     */
+    inline Traffic GetTraffic() const { return m_traffic; }
+    inline bool TrafficHasBeenSet() const { return m_trafficHasBeenSet; }
+    inline void SetTraffic(Traffic value) { m_trafficHasBeenSet = true; m_traffic = value; }
+    inline GetStyleDescriptorRequest& WithTraffic(Traffic value) { SetTraffic(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Renders additional map information relevant to selected travel modes.
+     * Information for multiple travel modes can be displayed simultaneously, although
+     * this increases the overall information density rendered on the map.</p> <p>This
+     * parameter is valid only for the <code>Standard</code> map style.</p>
+     */
+    inline const Aws::Vector<TravelMode>& GetTravelModes() const { return m_travelModes; }
+    inline bool TravelModesHasBeenSet() const { return m_travelModesHasBeenSet; }
+    template<typename TravelModesT = Aws::Vector<TravelMode>>
+    void SetTravelModes(TravelModesT&& value) { m_travelModesHasBeenSet = true; m_travelModes = std::forward<TravelModesT>(value); }
+    template<typename TravelModesT = Aws::Vector<TravelMode>>
+    GetStyleDescriptorRequest& WithTravelModes(TravelModesT&& value) { SetTravelModes(std::forward<TravelModesT>(value)); return *this;}
+    inline GetStyleDescriptorRequest& AddTravelModes(TravelMode value) { m_travelModesHasBeenSet = true; m_travelModes.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Optional: The API key to be used for authorization. Either an API key or
      * valid SigV4 signature must be provided when making a request. </p>
      */
@@ -114,6 +174,18 @@ namespace Model
 
     Aws::String m_politicalView;
     bool m_politicalViewHasBeenSet = false;
+
+    Terrain m_terrain{Terrain::NOT_SET};
+    bool m_terrainHasBeenSet = false;
+
+    ContourDensity m_contourDensity{ContourDensity::NOT_SET};
+    bool m_contourDensityHasBeenSet = false;
+
+    Traffic m_traffic{Traffic::NOT_SET};
+    bool m_trafficHasBeenSet = false;
+
+    Aws::Vector<TravelMode> m_travelModes;
+    bool m_travelModesHasBeenSet = false;
 
     Aws::String m_key;
     bool m_keyHasBeenSet = false;
