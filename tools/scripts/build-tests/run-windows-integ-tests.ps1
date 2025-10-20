@@ -17,6 +17,10 @@ aws configure set aws_access_key_id (${sts}[1] -replace " " -replace "`"" -repla
 aws configure set aws_secret_access_key (${sts}[2] -replace " " -replace "`"" -replace ",")
 aws configure set aws_session_token (${sts}[3] -replace " " -replace "`"" -replace ",")
 aws configure list
+cd "${env:PREFIX_DIR}/aws-sdk-cpp"
+SERVICE_ID="$(git status generated/src/aws-cpp-sdk-* --porcelain | grep "generated/src/" | sed -n 's|.*generated/src/aws-cpp-sdk-\([^/]*\).*|\1|p' | sort -u | tr "\n" "," | sed "s/,$//")"
+echo "SERVICE_ID: $SERVICE_ID"
+cd "../.."
 # Run tests
 cd "${env:PREFIX_DIR}\\win-build"
 python3 ../aws-sdk-cpp/tools/scripts/run_integration_tests.py --testDir ./bin/Debug
