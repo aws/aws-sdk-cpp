@@ -21,7 +21,7 @@ AWS_ROLE_SESSION_NAME="$3"
 
 echo "Setting the run environment"
 export TEST_ASSUME_ROLE_ARN=arn:aws:iam::${AWS_ACCOUNT}:role/IntegrationTest
-cd PREFIX_DIR/aws-sdk-cpp
+cd S{PREFIX_DIR}/aws-sdk-cpp
 SERVICE_ID=$(git status generated/src/aws-cpp-sdk-* --porcelain | grep "generated/src/" | sed -n \'s|.*generated/src/aws-cpp-sdk-\\([^/]*\\).*|\\1|p\' | sort -u | tr "\\n" "," | sed "s/,$//")
 echo "SERVICE_ID: $SERVICE_ID"
 export TEST_LAMBDA_CODE_PATH=${PREFIX_DIR}/aws-sdk-cpp/tests/aws-cpp-sdk-lambda-integration-tests/resources
