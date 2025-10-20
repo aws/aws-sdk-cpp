@@ -17,9 +17,11 @@ def parse_arguments():
 
     parser = argparse.ArgumentParser(description="AWSNativeSDK Run all Integration Tests")
     parser.add_argument("--testDir", action="store")
+    parser.add_argument("--serviceId", action="store")
 
     args = vars(parser.parse_args())
     arg_map["testDir"] = args["testDir"] or "./build"
+    arg_map["serviceId"] = args["serviceId"] or ""
 
     return arg_map
 
@@ -35,7 +37,7 @@ def main():
     test_has_parent_dir = platform.system() != "Windows"
     exe_extension = ".exe" if platform.system() == "Windows" else ""
 
-    test_list = [
+    all_tests = [
         "aws-cpp-sdk-core-integration-tests",
         "aws-cpp-sdk-transcribestreaming-integ-tests",
         "aws-cpp-sdk-dynamodb-unit-tests",
@@ -58,6 +60,20 @@ def main():
         "aws-cpp-sdk-ec2-integration-tests",
         "aws-cpp-sdk-bedrock-runtime-integration-tests"
     ]
+
+    if arguments["serviceId"]:
+        service_ids = arguments["serviceId"].split(",")
+        test_list = []
+        for test in all_tests:
+            if "core" not in test:
+                for service_id in service_ids:
+                    if service_id in test:
+                        test_list.append(test)
+                        break
+            else:
+                test_list.append(test)
+    else:
+        test_list = all_tests.copy()
 
     # check for existence of these binaries before adding them to tests
     # as they will not always be present
