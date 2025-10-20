@@ -39,16 +39,20 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestServiceSpecificEndpoints)
     ASSERT_NE(profiles.end(), profiles.find("default"));
     
     // Test global endpoint
-    const auto& profile = profiles["default"];
+    auto profileIt = profiles.find("default");
+    ASSERT_NE(profiles.end(), profileIt);
+    const auto& profile = profileIt->second;
     auto globalEndpoint = profile.GetEndpointUrl();
     ASSERT_TRUE(globalEndpoint.has_value());
     ASSERT_STREQ("https://global.example.com", globalEndpoint->c_str());
     
-    // Test services name is parsed correctly
-    auto servicesName = profile.GetServicesName();
-    ASSERT_TRUE(servicesName.has_value());
-    ASSERT_STREQ("myservices", servicesName->c_str());
-
+    // Test services endpoints are parsed correctly
+    const auto& services = profile.GetServices();
+    ASSERT_TRUE(services.IsSet());
+    const auto& endpoints = services.GetEndpoints();
+    ASSERT_EQ(2u, endpoints.size());
+    ASSERT_EQ("http://localhost:9000", endpoints.at("S3"));
+    ASSERT_EQ("http://localhost:8000", endpoints.at("DYNAMODB"));
 }
 
 TEST_F(ServiceEndpointsConfigFileLoaderTest, TestServiceSpecificEndpointsOnly)
@@ -66,16 +70,20 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestServiceSpecificEndpointsOnly)
     AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
     ASSERT_TRUE(loader.Load());
     auto profiles = loader.GetProfiles();
-    const auto& profile = profiles["dev-minio"];
+    auto profileIt = profiles.find("dev-minio");
+    ASSERT_NE(profiles.end(), profileIt);
+    const auto& profile = profileIt->second;
     
     // Test that global endpoint is null when not set
     auto globalEndpoint = profile.GetEndpointUrl();
     ASSERT_FALSE(globalEndpoint.has_value());
     
-    // Test services name is parsed correctly
-    auto servicesName = profile.GetServicesName();
-    ASSERT_TRUE(servicesName.has_value());
-    ASSERT_STREQ("s3-minio", servicesName->c_str());
+    // Test services endpoints are parsed correctly
+    const auto& services = profile.GetServices();
+    ASSERT_TRUE(services.IsSet());
+    const auto& endpoints = services.GetEndpoints();
+    ASSERT_EQ(1u, endpoints.size());
+    ASSERT_EQ("https://play.min.io:9000", endpoints.at("S3"));
 }
 
 TEST_F(ServiceEndpointsConfigFileLoaderTest, TestGlobalEndpointOnly)
@@ -90,16 +98,18 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestGlobalEndpointOnly)
     AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
     ASSERT_TRUE(loader.Load());
     auto profiles = loader.GetProfiles();
-    const auto& profile = profiles["dev-global"];
+    auto profileIt = profiles.find("dev-global");
+    ASSERT_NE(profiles.end(), profileIt);
+    const auto& profile = profileIt->second;
     
     // Test global endpoint
     auto globalEndpoint = profile.GetEndpointUrl();
     ASSERT_TRUE(globalEndpoint.has_value());
     ASSERT_STREQ("https://play.min.io:9000", globalEndpoint->c_str());
     
-    // Test that services name is not set
-    auto servicesName = profile.GetServicesName();
-    ASSERT_FALSE(servicesName.has_value());
+    // Test that services endpoints are not set
+    const auto& services = profile.GetServices();
+    ASSERT_FALSE(services.IsSet());
 }
 
 TEST_F(ServiceEndpointsConfigFileLoaderTest, TestServiceSpecificAndGlobalEndpoints)
@@ -118,12 +128,16 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestServiceSpecificAndGlobalEndpoin
     AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
     ASSERT_TRUE(loader.Load());
     auto profiles = loader.GetProfiles();
-    const auto& profile = profiles["dev-s3-specific-and-global"];
+    auto profileIt = profiles.find("dev-s3-specific-and-global");
+    ASSERT_NE(profiles.end(), profileIt);
+    const auto& profile = profileIt->second;
     
-    // Test services name is parsed correctly
-    auto servicesName = profile.GetServicesName();
-    ASSERT_TRUE(servicesName.has_value());
-    ASSERT_STREQ("s3-specific-and-global", servicesName->c_str());
+    // Test services endpoints are parsed correctly
+    const auto& services = profile.GetServices();
+    ASSERT_TRUE(services.IsSet());
+    const auto& endpoints = services.GetEndpoints();
+    ASSERT_EQ(1u, endpoints.size());
+    ASSERT_EQ("https://play.min.io:9000", endpoints.at("S3"));
     
     // Test global endpoint
     auto globalEndpoint = profile.GetEndpointUrl();
@@ -148,12 +162,17 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestMultipleServicesInDefinition)
   AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
   ASSERT_TRUE(loader.Load());
   auto profiles = loader.GetProfiles();
-  const auto& profile = profiles["dev"];
+  auto profileIt = profiles.find("dev");
+  ASSERT_NE(profiles.end(), profileIt);
+  const auto& profile = profileIt->second;
 
-  // Test services name is parsed correctly
-  auto servicesName = profile.GetServicesName();
-  ASSERT_TRUE(servicesName.has_value());
-  ASSERT_STREQ("testing-s3-and-eb", servicesName->c_str());
+  // Test services endpoints are parsed correctly
+  const auto& services = profile.GetServices();
+  ASSERT_TRUE(services.IsSet());
+  const auto& endpoints = services.GetEndpoints();
+  ASSERT_EQ(2u, endpoints.size());
+  ASSERT_EQ("http://localhost:4567", endpoints.at("S3"));
+  ASSERT_EQ("http://localhost:8000", endpoints.at("ELASTIC_BEANSTALK"));
 }
 
 TEST_F(ServiceEndpointsConfigFileLoaderTest, TestIgnoreGlobalEndpointInServicesSection)
@@ -170,16 +189,19 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestIgnoreGlobalEndpointInServicesS
     AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
     ASSERT_TRUE(loader.Load());
     auto profiles = loader.GetProfiles();
-    const auto& profile = profiles["testing"];
+    auto profileIt = profiles.find("testing");
+    ASSERT_NE(profiles.end(), profileIt);
+    const auto& profile = profileIt->second;
     
     // Test that global endpoint in services section is ignored
     auto globalEndpoint = profile.GetEndpointUrl();
     ASSERT_FALSE(globalEndpoint.has_value());
     
-    // Test that services name is parsed correctly
-    auto servicesName = profile.GetServicesName();
-    ASSERT_TRUE(servicesName.has_value());
-    ASSERT_STREQ("bad-service-definition", servicesName->c_str());
+    // Test that services endpoints are empty (global endpoint_url ignored)
+    const auto& services = profile.GetServices();
+    ASSERT_TRUE(services.IsSet());
+    const auto& endpoints = services.GetEndpoints();
+    ASSERT_EQ(0u, endpoints.size());
 }
 
 TEST_F(ServiceEndpointsConfigFileLoaderTest, TestSourceProfileEndpointIsolation)
@@ -202,13 +224,19 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestSourceProfileEndpointIsolation)
     AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
     ASSERT_TRUE(loader.Load());
     auto profiles = loader.GetProfiles();
-    const auto& profileB = profiles["B"];
-    const auto& profileA = profiles["A"];
+    auto profileBIt = profiles.find("B");
+    ASSERT_NE(profiles.end(), profileBIt);
+    const auto& profileB = profileBIt->second;
+    auto profileAIt = profiles.find("A");
+    ASSERT_NE(profiles.end(), profileAIt);
+    const auto& profileA = profileAIt->second;
     
-    // Test that profile B has services name
-    auto servicesBName = profileB.GetServicesName();
-    ASSERT_TRUE(servicesBName.has_value());
-    ASSERT_STREQ("profileB", servicesBName->c_str());
+    // Test that profile B has services endpoints
+    const auto& servicesB = profileB.GetServices();
+    ASSERT_TRUE(servicesB.IsSet());
+    const auto& endpointsB = servicesB.GetEndpoints();
+    ASSERT_EQ(1u, endpointsB.size());
+    ASSERT_EQ("https://profile-b-ec2-endpoint.aws", endpointsB.at("EC2"));
     
     // Test that profile B has no global endpoint (doesn't inherit from profile A)
     auto globalEndpointB = profileB.GetEndpointUrl();
@@ -220,9 +248,10 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestSourceProfileEndpointIsolation)
     ASSERT_STREQ("https://profile-a-endpoint.aws/", globalEndpointA->c_str());
     
     // Test that profile A has no services name
-    auto servicesAName = profileA.GetServicesName();
-    ASSERT_FALSE(servicesAName.has_value());
+    const auto& servicesA = profileA.GetServices();
+    ASSERT_FALSE(servicesA.IsSet());
 }
+
 TEST_F(ServiceEndpointsConfigFileLoaderTest, TestIgnoreConfiguredEndpointUrls)
 {
     TempFile configFile(std::ios_base::out | std::ios_base::trunc);
@@ -242,18 +271,37 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestIgnoreConfiguredEndpointUrls)
     auto profiles = loader.GetProfiles();
     
     // Test flag is parsed and stored
-    ASSERT_STREQ("true", profiles["default"].GetValue("ignore_configured_endpoint_urls").c_str());
-    ASSERT_STREQ("TRUE", profiles["test"].GetValue("ignore_configured_endpoint_urls").c_str());
-    ASSERT_STREQ("", profiles["empty"].GetValue("ignore_configured_endpoint_urls").c_str());
-    
-    // Test absent key returns empty string
-    TempFile configFile2(std::ios_base::out | std::ios_base::trunc);
-    configFile2 << "[profile absent]\n";
-    configFile2 << "region = us-east-1\n";
-    configFile2.flush();
-    
-    AWSConfigFileProfileConfigLoader loader2(configFile2.GetFileName(), true);
-    ASSERT_TRUE(loader2.Load());
-    auto profiles2 = loader2.GetProfiles();
-    ASSERT_STREQ("", profiles2["absent"].GetValue("ignore_configured_endpoint_urls").c_str());
+    ASSERT_STREQ("true", profiles.find("default")->second.GetValue("ignore_configured_endpoint_urls").c_str());
+    ASSERT_STREQ("TRUE", profiles.find("test")->second.GetValue("ignore_configured_endpoint_urls").c_str());
+    ASSERT_STREQ("", profiles.find("empty")->second.GetValue("ignore_configured_endpoint_urls").c_str());
+}
+
+TEST_F(ServiceEndpointsConfigFileLoaderTest, TestMultipleServicesDefinitions)
+{
+    TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(configFile.good());
+
+    configFile << "[services foo]\n";
+    configFile << "s3 =\n";
+    configFile << "  endpoint_url = http://foo.com\n";
+    configFile << "\n[services bar]\n";
+    configFile << "s3 =\n";
+    configFile << "  endpoint_url = http://bar.com\n";
+    configFile << "\n[profile dev]\n";
+    configFile << "services = foo\n";
+    configFile.flush();
+
+    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
+    ASSERT_TRUE(loader.Load());
+    auto profiles = loader.GetProfiles();
+    auto profileIt = profiles.find("dev");
+    ASSERT_NE(profiles.end(), profileIt);
+    const auto& profile = profileIt->second;
+
+    // Test services endpoints are parsed correctly
+    const auto& services = profile.GetServices();
+    ASSERT_TRUE(services.IsSet());
+    const auto& endpoints = services.GetEndpoints();
+    ASSERT_EQ(1u, endpoints.size());
+    ASSERT_EQ("http://foo.com", endpoints.at("S3"));
 }

@@ -116,7 +116,6 @@ namespace Aws
             {}
 
             const Aws::Map<String, Profile>& GetProfiles() const { return m_foundProfiles; }
-            const Aws::Map<String, Aws::Map<String, String>>& GetServices() const { return m_services; }
 
             void ParseStream(Aws::IStream& stream)
             {
@@ -206,6 +205,22 @@ namespace Aws
                 }
 
                 FlushSection(currentState, currentSectionName, currentKeyValues);
+
+                // Resolve service endpoints
+                for (auto& profilePair : m_foundProfiles)
+                {
+                    Profile& profile = profilePair.second;
+                    const Aws::String& servicesRef = profile.GetValue("services");
+                    if (!servicesRef.empty())
+                    {
+                        auto servicesBlk = m_services.find(servicesRef);
+                        Aws::Map<Aws::String, Aws::String> endpoints;
+                        if (servicesBlk != m_services.end()) {
+                            endpoints = std::move(servicesBlk->second);
+                        }
+                        profile.m_services.SetEndpoints(std::move(endpoints), servicesRef);
+                    }
+                }
 
                 // Put sso-sessions into profiles
                 for(auto& profile : m_foundProfiles)
@@ -641,7 +656,6 @@ namespace Aws
         bool AWSConfigFileProfileConfigLoader::LoadInternal()
         {
             m_profiles.clear();
-            m_services.clear();
 
             Aws::IFStream inputFile(m_fileName.c_str());
             if(inputFile)
@@ -649,7 +663,6 @@ namespace Aws
                 ConfigFileProfileFSM parser(m_useProfilePrefix);
                 parser.ParseStream(inputFile);
                 m_profiles = parser.GetProfiles();
-                m_services = parser.GetServices();
                 return m_profiles.size() > 0;
             }
 
