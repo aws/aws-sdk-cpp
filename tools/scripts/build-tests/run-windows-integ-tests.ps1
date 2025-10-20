@@ -23,4 +23,5 @@ echo "SERVICE_ID: $SERVICE_ID"
 cd "../.."
 # Run tests
 cd "${env:PREFIX_DIR}\\win-build"
-python3 ../aws-sdk-cpp/tools/scripts/run_integration_tests.py --testDir ./bin/Debug --serviceId $SERVICE_ID
+$serviceIdArg = if ($SERVICE_ID) { "--serviceId $SERVICE_ID" } else { "" }
+python3 ../aws-sdk-cpp/tools/scripts/run_integration_tests.py --testDir ./bin/Debug serviceIdArg

@@ -35,4 +35,4 @@ export AWS_PROFILE=$profile
 export DYLD_LIBRARY_PATH="${CATAPULT_WORKSPACE_DIR}/mac-install/lib:${CATAPULT_WORKSPACE_DIR}/mac-build/tests/testing-resources/"
 cd "${PREFIX_DIR}/mac-build"
 if [ -f "${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt" ]; then export LSAN_OPTIONS=suppressions="${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt"; fi
-python3 ../aws-sdk-cpp/tools/scripts/run_integration_tests.py --testDir ./tests --serviceId ${SERVICE_ID}
+python3 ../aws-sdk-cpp/tools/scripts/run_integration_tests.py --testDir ./tests --serviceId ${SERVICE_ID:-""}
