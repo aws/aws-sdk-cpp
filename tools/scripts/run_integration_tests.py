@@ -65,9 +65,10 @@ def main():
         service_ids = arguments["serviceId"].split(",")
         test_list = []
         for test in all_tests:
-            if "core" not in test:
+            service = test.replace('aws-cpp-sdk-', '').replace('-integration-tests', '').replace('-unit-tests', '').replace('-tests', '')
+            if service != "core":
                 for service_id in service_ids:
-                    if service_id in test:
+                    if service_id == service:
                         test_list.append(test)
                         break
             else:
