@@ -22,6 +22,7 @@ static const int INVALID_CUSTOMER_IDENTIFIER_HASH = HashingUtils::HashString("In
 static const int INVALID_TOKEN_HASH = HashingUtils::HashString("InvalidTokenException");
 static const int INVALID_USAGE_DIMENSION_HASH = HashingUtils::HashString("InvalidUsageDimensionException");
 static const int INVALID_USAGE_ALLOCATIONS_HASH = HashingUtils::HashString("InvalidUsageAllocationsException");
+static const int IDEMPOTENCY_CONFLICT_HASH = HashingUtils::HashString("IdempotencyConflictException");
 static const int EXPIRED_TOKEN_HASH = HashingUtils::HashString("ExpiredTokenException");
 static const int INVALID_TAG_HASH = HashingUtils::HashString("InvalidTagException");
 static const int DISABLED_API_HASH = HashingUtils::HashString("DisabledApiException");
@@ -55,6 +56,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_USAGE_ALLOCATIONS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::INVALID_USAGE_ALLOCATIONS), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == IDEMPOTENCY_CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::IDEMPOTENCY_CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == EXPIRED_TOKEN_HASH)
   {

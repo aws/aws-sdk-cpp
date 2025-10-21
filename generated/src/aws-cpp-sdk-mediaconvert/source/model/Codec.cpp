@@ -34,12 +34,15 @@ namespace Aws
         static const int HEVC_HASH = HashingUtils::HashString("HEVC");
         static const int JPEG2000_HASH = HashingUtils::HashString("JPEG2000");
         static const int MJPEG_HASH = HashingUtils::HashString("MJPEG");
+        static const int MPEG1_HASH = HashingUtils::HashString("MPEG1");
         static const int MP4V_HASH = HashingUtils::HashString("MP4V");
         static const int MPEG2_HASH = HashingUtils::HashString("MPEG2");
         static const int PRORES_HASH = HashingUtils::HashString("PRORES");
         static const int THEORA_HASH = HashingUtils::HashString("THEORA");
+        static const int VFW_HASH = HashingUtils::HashString("VFW");
         static const int VP8_HASH = HashingUtils::HashString("VP8");
         static const int VP9_HASH = HashingUtils::HashString("VP9");
+        static const int QTRLE_HASH = HashingUtils::HashString("QTRLE");
         static const int C608_HASH = HashingUtils::HashString("C608");
         static const int C708_HASH = HashingUtils::HashString("C708");
         static const int WEBVTT_HASH = HashingUtils::HashString("WEBVTT");
@@ -104,6 +107,10 @@ namespace Aws
           {
             return Codec::MJPEG;
           }
+          else if (hashCode == MPEG1_HASH)
+          {
+            return Codec::MPEG1;
+          }
           else if (hashCode == MP4V_HASH)
           {
             return Codec::MP4V;
@@ -120,6 +127,10 @@ namespace Aws
           {
             return Codec::THEORA;
           }
+          else if (hashCode == VFW_HASH)
+          {
+            return Codec::VFW;
+          }
           else if (hashCode == VP8_HASH)
           {
             return Codec::VP8;
@@ -127,6 +138,10 @@ namespace Aws
           else if (hashCode == VP9_HASH)
           {
             return Codec::VP9;
+          }
+          else if (hashCode == QTRLE_HASH)
+          {
+            return Codec::QTRLE;
           }
           else if (hashCode == C608_HASH)
           {
@@ -184,6 +199,8 @@ namespace Aws
             return "JPEG2000";
           case Codec::MJPEG:
             return "MJPEG";
+          case Codec::MPEG1:
+            return "MPEG1";
           case Codec::MP4V:
             return "MP4V";
           case Codec::MPEG2:
@@ -192,10 +209,14 @@ namespace Aws
             return "PRORES";
           case Codec::THEORA:
             return "THEORA";
+          case Codec::VFW:
+            return "VFW";
           case Codec::VP8:
             return "VP8";
           case Codec::VP9:
             return "VP9";
+          case Codec::QTRLE:
+            return "QTRLE";
           case Codec::C608:
             return "C608";
           case Codec::C708:

@@ -26,6 +26,7 @@ namespace Aws
         static const int PSNR_HVS_HASH = HashingUtils::HashString("PSNR_HVS");
         static const int VMAF_HASH = HashingUtils::HashString("VMAF");
         static const int QVBR_HASH = HashingUtils::HashString("QVBR");
+        static const int SHOT_CHANGE_HASH = HashingUtils::HashString("SHOT_CHANGE");
 
 
         FrameMetricType GetFrameMetricTypeForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return FrameMetricType::QVBR;
           }
+          else if (hashCode == SHOT_CHANGE_HASH)
+          {
+            return FrameMetricType::SHOT_CHANGE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +88,8 @@ namespace Aws
             return "VMAF";
           case FrameMetricType::QVBR:
             return "QVBR";
+          case FrameMetricType::SHOT_CHANGE:
+            return "SHOT_CHANGE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

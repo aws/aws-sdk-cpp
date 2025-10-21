@@ -173,114 +173,6 @@ Aws::Vector<MarketplaceMeteringEndpointProviderEndpointTestCase> MarketplaceMete
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 11*/
-  {"For region us-gov-west-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://metering.marketplace-fips.us-gov-west-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 12*/
-  {"For region us-gov-west-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://metering.marketplace-fips.us-gov-west-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 13*/
-  {"For region us-gov-west-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://metering-marketplace.us-gov-west-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 14*/
-  {"For region us-gov-west-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://metering.marketplace.us-gov-west-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 15*/
-  {"For region us-iso-east-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://metering.marketplace-fips.us-iso-east-1.c2s.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 16*/
-  {"For region us-iso-east-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://metering.marketplace.us-iso-east-1.c2s.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 17*/
-  {"For region us-isob-east-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://metering.marketplace-fips.us-isob-east-1.sc2s.sgov.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 18*/
-  {"For region us-isob-east-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://metering.marketplace.us-isob-east-1.sc2s.sgov.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 19*/
-  {"For region eu-isoe-west-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-isoe-west-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://metering.marketplace-fips.eu-isoe-west-1.cloud.adc-e.uk",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 20*/
-  {"For region eu-isoe-west-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-isoe-west-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://metering.marketplace.eu-isoe-west-1.cloud.adc-e.uk",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 21*/
-  {"For region us-isof-south-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-isof-south-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://metering.marketplace-fips.us-isof-south-1.csp.hci.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 22*/
-  {"For region us-isof-south-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-isof-south-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://metering.marketplace.us-isof-south-1.csp.hci.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 23*/
   {"For region eusc-de-east-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "eusc-de-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -289,11 +181,119 @@ Aws::Vector<MarketplaceMeteringEndpointProviderEndpointTestCase> MarketplaceMete
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 24*/
+  /*TEST CASE 12*/
   {"For region eusc-de-east-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "eusc-de-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://metering.marketplace.eusc-de-east-1.amazonaws.eu",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 13*/
+  {"For region us-iso-east-1 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://metering.marketplace-fips.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 14*/
+  {"For region us-iso-east-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://metering.marketplace.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 15*/
+  {"For region us-isob-east-1 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://metering.marketplace-fips.us-isob-east-1.sc2s.sgov.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 16*/
+  {"For region us-isob-east-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://metering.marketplace.us-isob-east-1.sc2s.sgov.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 17*/
+  {"For region eu-isoe-west-1 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "eu-isoe-west-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://metering.marketplace-fips.eu-isoe-west-1.cloud.adc-e.uk",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 18*/
+  {"For region eu-isoe-west-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "eu-isoe-west-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://metering.marketplace.eu-isoe-west-1.cloud.adc-e.uk",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 19*/
+  {"For region us-isof-south-1 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-isof-south-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://metering.marketplace-fips.us-isof-south-1.csp.hci.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 20*/
+  {"For region us-isof-south-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-isof-south-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://metering.marketplace.us-isof-south-1.csp.hci.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 21*/
+  {"For region us-gov-west-1 with FIPS enabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://metering.marketplace-fips.us-gov-west-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 22*/
+  {"For region us-gov-west-1 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://metering.marketplace-fips.us-gov-west-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 23*/
+  {"For region us-gov-west-1 with FIPS disabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://metering-marketplace.us-gov-west-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 24*/
+  {"For region us-gov-west-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://metering.marketplace.us-gov-west-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect

@@ -45,10 +45,20 @@ InputVideoGenerator& InputVideoGenerator::operator =(JsonView jsonValue)
     m_framerateNumerator = jsonValue.GetInteger("framerateNumerator");
     m_framerateNumeratorHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("height"))
+  {
+    m_height = jsonValue.GetInteger("height");
+    m_heightHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("sampleRate"))
   {
     m_sampleRate = jsonValue.GetInteger("sampleRate");
     m_sampleRateHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("width"))
+  {
+    m_width = jsonValue.GetInteger("width");
+    m_widthHasBeenSet = true;
   }
   return *this;
 }
@@ -81,9 +91,21 @@ JsonValue InputVideoGenerator::Jsonize() const
 
   }
 
+  if(m_heightHasBeenSet)
+  {
+   payload.WithInteger("height", m_height);
+
+  }
+
   if(m_sampleRateHasBeenSet)
   {
    payload.WithInteger("sampleRate", m_sampleRate);
+
+  }
+
+  if(m_widthHasBeenSet)
+  {
+   payload.WithInteger("width", m_width);
 
   }
 

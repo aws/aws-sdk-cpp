@@ -160,10 +160,15 @@ namespace Model
 
     ///@{
     /**
-     * Indicates the language of the audio output track. The ISO 639 language specified
-     * in the 'Language Code' drop down will be used when 'Follow Input Language Code'
-     * is not selected or when 'Follow Input Language Code' is selected but there is no
-     * ISO 639 language code specified by the input.
+     * Specify the language for your output audio track. To follow the input language:
+     * Leave blank. When you do, also set Language code control to Follow input. If no
+     * input language is detected MediaConvert will not write an output language code.
+     * To follow the input langauge, but fall back to a specified language code if
+     * there is no input language to follow: Enter an ISO 639-2 three-letter language
+     * code in all capital letters. When you do, also set Language code control to
+     * Follow input. To specify the language code: Enter an ISO 639 three-letter
+     * language code in all capital letters. When you do, also set Language code
+     * control to Use configured.
      */
     inline LanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }

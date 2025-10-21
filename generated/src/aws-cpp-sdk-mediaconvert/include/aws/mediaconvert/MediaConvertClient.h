@@ -443,6 +443,32 @@ namespace MediaConvert
         }
 
         /**
+         * Retrieve a JSON array of up to twenty of your most recent jobs matched by a jobs
+         * query.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetJobsQueryResults">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetJobsQueryResultsOutcome GetJobsQueryResults(const Model::GetJobsQueryResultsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetJobsQueryResults that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetJobsQueryResultsRequestT = Model::GetJobsQueryResultsRequest>
+        Model::GetJobsQueryResultsOutcomeCallable GetJobsQueryResultsCallable(const GetJobsQueryResultsRequestT& request) const
+        {
+            return SubmitCallable(&MediaConvertClient::GetJobsQueryResults, request);
+        }
+
+        /**
+         * An Async wrapper for GetJobsQueryResults that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetJobsQueryResultsRequestT = Model::GetJobsQueryResultsRequest>
+        void GetJobsQueryResultsAsync(const GetJobsQueryResultsRequestT& request, const GetJobsQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConvertClient::GetJobsQueryResults, request, handler, context);
+        }
+
+        /**
          * Retrieve the JSON for your policy.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetPolicy">AWS
          * API Reference</a></p>
@@ -763,6 +789,33 @@ namespace MediaConvert
         void SearchJobsAsync(const SearchJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const SearchJobsRequestT& request = {}) const
         {
             return SubmitAsync(&MediaConvertClient::SearchJobs, request, handler, context);
+        }
+
+        /**
+         * Start an asynchronous jobs query using the provided filters. To receive the list
+         * of jobs that match your query, call the GetJobsQueryResults API using the query
+         * ID returned by this API.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/StartJobsQuery">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartJobsQueryOutcome StartJobsQuery(const Model::StartJobsQueryRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for StartJobsQuery that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartJobsQueryRequestT = Model::StartJobsQueryRequest>
+        Model::StartJobsQueryOutcomeCallable StartJobsQueryCallable(const StartJobsQueryRequestT& request = {}) const
+        {
+            return SubmitCallable(&MediaConvertClient::StartJobsQuery, request);
+        }
+
+        /**
+         * An Async wrapper for StartJobsQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartJobsQueryRequestT = Model::StartJobsQueryRequest>
+        void StartJobsQueryAsync(const StartJobsQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const StartJobsQueryRequestT& request = {}) const
+        {
+            return SubmitAsync(&MediaConvertClient::StartJobsQuery, request, handler, context);
         }
 
         /**

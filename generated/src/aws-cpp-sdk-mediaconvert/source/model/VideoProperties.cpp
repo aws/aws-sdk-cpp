@@ -35,6 +35,11 @@ VideoProperties& VideoProperties::operator =(JsonView jsonValue)
     m_bitRate = jsonValue.GetInt64("bitRate");
     m_bitRateHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("codecMetadata"))
+  {
+    m_codecMetadata = jsonValue.GetObject("codecMetadata");
+    m_codecMetadataHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("colorPrimaries"))
   {
     m_colorPrimaries = ColorPrimariesMapper::GetColorPrimariesForName(jsonValue.GetString("colorPrimaries"));
@@ -81,6 +86,12 @@ JsonValue VideoProperties::Jsonize() const
   if(m_bitRateHasBeenSet)
   {
    payload.WithInt64("bitRate", m_bitRate);
+
+  }
+
+  if(m_codecMetadataHasBeenSet)
+  {
+   payload.WithObject("codecMetadata", m_codecMetadata.Jsonize());
 
   }
 

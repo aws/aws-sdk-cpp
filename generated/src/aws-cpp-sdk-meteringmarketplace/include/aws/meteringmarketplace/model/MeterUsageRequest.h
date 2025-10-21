@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/meteringmarketplace/model/UsageAllocation.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -120,6 +121,27 @@ namespace Model
     template<typename UsageAllocationsT = UsageAllocation>
     MeterUsageRequest& AddUsageAllocations(UsageAllocationsT&& value) { m_usageAllocationsHasBeenSet = true; m_usageAllocations.emplace_back(std::forward<UsageAllocationsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies a unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. This lets you safely retry the request without
+     * accidentally performing the same operation a second time. Passing the same value
+     * to a later call to an operation requires that you also pass the same value for
+     * all other parameters. We recommend that you use a <a
+     * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value</a>.</p> <p>If you don't provide this value, then Amazon Web Services
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotencyConflictException</code> error.</p>
+     */
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    MeterUsageRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_productCode;
@@ -139,6 +161,9 @@ namespace Model
 
     Aws::Vector<UsageAllocation> m_usageAllocations;
     bool m_usageAllocationsHasBeenSet = false;
+
+    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+    bool m_clientTokenHasBeenSet = true;
   };
 
 } // namespace Model

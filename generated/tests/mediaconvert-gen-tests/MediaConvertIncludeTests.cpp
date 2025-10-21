@@ -155,6 +155,7 @@
 #include <aws/mediaconvert/model/CmfcTimedMetadata.h>
 #include <aws/mediaconvert/model/CmfcTimedMetadataBoxVersion.h>
 #include <aws/mediaconvert/model/Codec.h>
+#include <aws/mediaconvert/model/CodecMetadata.h>
 #include <aws/mediaconvert/model/ColorConversion3DLUTSetting.h>
 #include <aws/mediaconvert/model/ColorCorrector.h>
 #include <aws/mediaconvert/model/ColorMetadata.h>
@@ -290,6 +291,8 @@
 #include <aws/mediaconvert/model/GetJobResult.h>
 #include <aws/mediaconvert/model/GetJobTemplateRequest.h>
 #include <aws/mediaconvert/model/GetJobTemplateResult.h>
+#include <aws/mediaconvert/model/GetJobsQueryResultsRequest.h>
+#include <aws/mediaconvert/model/GetJobsQueryResultsResult.h>
 #include <aws/mediaconvert/model/GetPolicyRequest.h>
 #include <aws/mediaconvert/model/GetPolicyResult.h>
 #include <aws/mediaconvert/model/GetPresetRequest.h>
@@ -425,6 +428,9 @@
 #include <aws/mediaconvert/model/JobTemplate.h>
 #include <aws/mediaconvert/model/JobTemplateListBy.h>
 #include <aws/mediaconvert/model/JobTemplateSettings.h>
+#include <aws/mediaconvert/model/JobsQueryFilter.h>
+#include <aws/mediaconvert/model/JobsQueryFilterKey.h>
+#include <aws/mediaconvert/model/JobsQueryStatus.h>
 #include <aws/mediaconvert/model/KantarWatermarkSettings.h>
 #include <aws/mediaconvert/model/LanguageCode.h>
 #include <aws/mediaconvert/model/ListJobTemplatesRequest.h>
@@ -611,6 +617,8 @@
 #include <aws/mediaconvert/model/SpekeKeyProviderCmaf.h>
 #include <aws/mediaconvert/model/SrtDestinationSettings.h>
 #include <aws/mediaconvert/model/SrtStylePassthrough.h>
+#include <aws/mediaconvert/model/StartJobsQueryRequest.h>
+#include <aws/mediaconvert/model/StartJobsQueryResult.h>
 #include <aws/mediaconvert/model/StaticKeyProvider.h>
 #include <aws/mediaconvert/model/StatusUpdateInterval.h>
 #include <aws/mediaconvert/model/TagResourceRequest.h>

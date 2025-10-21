@@ -35,6 +35,7 @@
 #include <aws/mediaconvert/model/DisassociateCertificateRequest.h>
 #include <aws/mediaconvert/model/GetJobRequest.h>
 #include <aws/mediaconvert/model/GetJobTemplateRequest.h>
+#include <aws/mediaconvert/model/GetJobsQueryResultsRequest.h>
 #include <aws/mediaconvert/model/GetPolicyRequest.h>
 #include <aws/mediaconvert/model/GetPresetRequest.h>
 #include <aws/mediaconvert/model/GetQueueRequest.h>
@@ -47,6 +48,7 @@
 #include <aws/mediaconvert/model/ProbeRequest.h>
 #include <aws/mediaconvert/model/PutPolicyRequest.h>
 #include <aws/mediaconvert/model/SearchJobsRequest.h>
+#include <aws/mediaconvert/model/StartJobsQueryRequest.h>
 #include <aws/mediaconvert/model/TagResourceRequest.h>
 #include <aws/mediaconvert/model/UntagResourceRequest.h>
 #include <aws/mediaconvert/model/UpdateJobTemplateRequest.h>
@@ -616,6 +618,39 @@ GetJobTemplateOutcome MediaConvertClient::GetJobTemplate(const GetJobTemplateReq
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetJobsQueryResultsOutcome MediaConvertClient::GetJobsQueryResults(const GetJobsQueryResultsRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetJobsQueryResults);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetJobsQueryResults, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJobsQueryResults", "Required field: Id, is not set");
+    return GetJobsQueryResultsOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetJobsQueryResults, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetJobsQueryResults, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetJobsQueryResults",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetJobsQueryResultsOutcome>(
+    [&]()-> GetJobsQueryResultsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetJobsQueryResults, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/2017-08-29/jobsQueries/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+      return GetJobsQueryResultsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetPolicyOutcome MediaConvertClient::GetPolicy(const GetPolicyRequest& request) const
 {
   AWS_OPERATION_GUARD(GetPolicy);
@@ -952,6 +987,33 @@ SearchJobsOutcome MediaConvertClient::SearchJobs(const SearchJobsRequest& reques
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/2017-08-29/search");
       return SearchJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StartJobsQueryOutcome MediaConvertClient::StartJobsQuery(const StartJobsQueryRequest& request) const
+{
+  AWS_OPERATION_GUARD(StartJobsQuery);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartJobsQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartJobsQuery, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StartJobsQuery, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartJobsQuery",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StartJobsQueryOutcome>(
+    [&]()-> StartJobsQueryOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartJobsQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/2017-08-29/jobsQueries");
+      return StartJobsQueryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

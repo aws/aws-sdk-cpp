@@ -70,7 +70,8 @@ namespace Model
 
     ///@{
     /**
-     * The frame rate of the video or audio track.
+     * The frame rate of the video or audio track, expressed as a fraction with
+     * numerator and denominator values.
      */
     inline const FrameRate& GetFrameRate() const { return m_frameRate; }
     inline bool FrameRateHasBeenSet() const { return m_frameRateHasBeenSet; }

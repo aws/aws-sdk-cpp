@@ -59,7 +59,9 @@ namespace Model
 
     ///@{
     /**
-     * Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
+     * Optionally specify the language, using an ISO 639-2 or ISO 639-3 three-letter
+     * code in all capital letters. You can find a list of codes at:
+     * https://www.loc.gov/standards/iso639-2/php/code_list.php
      */
     inline LanguageCode GetRenditionLanguageCode() const { return m_renditionLanguageCode; }
     inline bool RenditionLanguageCodeHasBeenSet() const { return m_renditionLanguageCodeHasBeenSet; }
