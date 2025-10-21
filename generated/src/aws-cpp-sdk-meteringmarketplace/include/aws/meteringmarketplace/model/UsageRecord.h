@@ -46,7 +46,7 @@ namespace Model
     ///@{
     /**
      * <p>Timestamp, in UTC, for which the usage is being reported.</p> <p>Your
-     * application can meter usage for up to one hour in the past. Make sure the
+     * application can meter usage for up to six hours in the past. Make sure the
      * <code>timestamp</code> value is not before the start of the software usage.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }

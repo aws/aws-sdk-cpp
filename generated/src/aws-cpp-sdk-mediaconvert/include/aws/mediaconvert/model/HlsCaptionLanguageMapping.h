@@ -50,8 +50,9 @@ namespace Model
 
     ///@{
     /**
-     * Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3
-     * three-letter language code
+     * Specify the language, using an ISO 639-2 three-letter code in all capital
+     * letters. You can find a list of codes at:
+     * https://www.loc.gov/standards/iso639-2/php/code_list.php
      */
     inline const Aws::String& GetCustomLanguageCode() const { return m_customLanguageCode; }
     inline bool CustomLanguageCodeHasBeenSet() const { return m_customLanguageCodeHasBeenSet; }
@@ -63,8 +64,9 @@ namespace Model
 
     ///@{
     /**
-     * Specify the language, using the ISO 639-2 three-letter code listed at
-     * https://www.loc.gov/standards/iso639-2/php/code_list.php.
+     * Specify the language, using an ISO 639-2 three-letter code in all capital
+     * letters. You can find a list of codes at:
+     * https://www.loc.gov/standards/iso639-2/php/code_list.php
      */
     inline LanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }

@@ -19,6 +19,7 @@ namespace MediaConvertErrorMapper
 {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
+static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
@@ -33,6 +34,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == CONFLICT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConvertErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConvertErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_FOUND_HASH)
   {

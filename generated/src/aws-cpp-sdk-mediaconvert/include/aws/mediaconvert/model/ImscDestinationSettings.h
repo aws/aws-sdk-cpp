@@ -50,7 +50,7 @@ namespace Model
      * do, MediaConvert adds accessibility attributes to your output HLS or DASH
      * manifest. For HLS manifests, MediaConvert adds the following accessibility
      * attributes under EXT-X-MEDIA for this track:
-     * CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound"
+     * CHARACTERISTICS="public.accessibility.transcribes-spoken-dialog,public.accessibility.describes-music-and-sound"
      * and AUTOSELECT="YES". For DASH manifests, MediaConvert adds the following in the
      * adaptation set for this track: <Accessibility
      * schemeIdUri="urn:mpeg:dash:role:2011" value="caption"/>. If the captions track

@@ -141,8 +141,8 @@ namespace MarketplaceMetering
 
         /**
          *  <p> The <code>CustomerIdentifier</code> parameter is scheduled for
-         * deprecation. Use <code>CustomerAWSAccountID</code> instead.</p> <p>These
-         * parameters are mutually exclusive. You can't specify both
+         * deprecation on March 31, 2026. Use <code>CustomerAWSAccountID</code>
+         * instead.</p> <p>These parameters are mutually exclusive. You can't specify both
          * <code>CustomerIdentifier</code> and <code>CustomerAWSAccountID</code> in the
          * same request. </p>  <p>To post metering records for customers, SaaS
          * applications call <code>BatchMeterUsage</code>, which is used for metering SaaS
@@ -198,10 +198,16 @@ namespace MarketplaceMetering
          * Web Services account using credentials from the Amazon EC2 instance, Amazon ECS
          * task, or Amazon EKS pod.</p> <p> <code>MeterUsage</code> can optionally include
          * multiple usage allocations, to provide customers with usage data split into
-         * buckets by tags that you define (or allow the customer to define).</p> <p>Usage
-         * records are expected to be submitted as quickly as possible after the event that
-         * is being recorded, and are not accepted more than 6 hours after the event.</p>
-         * <p>For Amazon Web Services Regions that support <code>MeterUsage</code>, see <a
+         * buckets by tags that you define (or allow the customer to define).</p> <p>Submit
+         * usage records to report events from the previous hour. If you submit records
+         * that are greater than six hours after events occur, the records won’t be
+         * accepted. The timestamp in your request determines when an event is recorded.
+         * You can only report usage once per hour for each dimension. For AMI-based
+         * products, this is per dimension and per EC2 instance. For container products,
+         * this is per dimension and per ECS task or EKS pod. You can’t modify values after
+         * they’re recorded. If you report usage before the current hour ends, you will be
+         * unable to report additional usage until the next hour begins.</p> <p>For Amazon
+         * Web Services Regions that support <code>MeterUsage</code>, see <a
          * href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#meterusage-region-support-ec2">MeterUsage
          * Region support for Amazon EC2</a> and <a
          * href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#meterusage-region-support-ecs-eks">MeterUsage
