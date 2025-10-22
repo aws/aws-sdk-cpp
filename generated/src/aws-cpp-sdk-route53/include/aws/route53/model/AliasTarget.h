@@ -271,17 +271,42 @@ namespace Model
      * balancer, you configure settings for Elastic Load Balancing health checks;
      * they're not Route 53 health checks, but they perform a similar function. Do not
      * create Route 53 health checks for the EC2 instances that you register with an
-     * ELB load balancer. </p>  </dd> <dt>S3 buckets</dt> <dd> <p>There are no
-     * special requirements for setting <code>EvaluateTargetHealth</code> to
-     * <code>true</code> when the alias target is an S3 bucket.</p> </dd> <dt>Other
-     * records in the same hosted zone</dt> <dd> <p>If the Amazon Web Services resource
-     * that you specify in <code>DNSName</code> is a record or a group of records (for
-     * example, a group of weighted records) but is not another alias record, we
-     * recommend that you associate a health check with all of the records in the alias
-     * target. For more information, see <a
+     * ELB load balancer. </p>  </dd> <dt>API Gateway APIs</dt> <dd> <p>There
+     * are no special requirements for setting <code>EvaluateTargetHealth</code> to
+     * <code>true</code> when the alias target is an API Gateway API. However, because
+     * API Gateway is highly available by design, <code>EvaluateTargetHealth</code>
+     * provides no operational benefit and <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route
+     * 53 health checks</a> are recommended instead for failover scenarios.</p> </dd>
+     * <dt>S3 buckets</dt> <dd> <p>There are no special requirements for setting
+     * <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is
+     * an S3 bucket. However, because S3 buckets are highly available by design,
+     * <code>EvaluateTargetHealth</code> provides no operational benefit and <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route
+     * 53 health checks</a> are recommended instead for failover scenarios.</p> </dd>
+     * <dt>VPC interface endpoints</dt> <dd> <p>There are no special requirements for
+     * setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias
+     * target is a VPC interface endpoint. However, because VPC interface endpoints are
+     * highly available by design, <code>EvaluateTargetHealth</code> provides no
+     * operational benefit and <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route
+     * 53 health checks</a> are recommended instead for failover scenarios.</p> </dd>
+     * <dt>Other records in the same hosted zone</dt> <dd> <p>If the Amazon Web
+     * Services resource that you specify in <code>DNSName</code> is a record or a
+     * group of records (for example, a group of weighted records) but is not another
+     * alias record, we recommend that you associate a health check with all of the
+     * records in the alias target. For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What
      * Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer
-     * Guide</i>.</p> </dd> </dl> <p>For more information and examples, see <a
+     * Guide</i>.</p> </dd> </dl>  <p>While <code>EvaluateTargetHealth</code> can
+     * be set to <code>true</code> for highly available Amazon Web Services services
+     * (such as S3 buckets, VPC interface endpoints, and API Gateway), these services
+     * are designed for high availability and rarely experience outages that would be
+     * detected by this feature. For failover scenarios with these services, consider
+     * using <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route
+     * 53 health checks</a> that monitor your application's ability to access the
+     * service instead.</p>  <p>For more information and examples, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
      * Route 53 Health Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.</p>

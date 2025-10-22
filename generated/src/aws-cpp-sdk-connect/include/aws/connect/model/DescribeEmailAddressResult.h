@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/connect/model/AliasConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -112,6 +114,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>A list of alias configurations associated with this email address. Contains
+     * details about email addresses that forward to this primary email address. The
+     * list can contain at most one alias configuration per email address.</p>
+     */
+    inline const Aws::Vector<AliasConfiguration>& GetAliasConfigurations() const { return m_aliasConfigurations; }
+    template<typename AliasConfigurationsT = Aws::Vector<AliasConfiguration>>
+    void SetAliasConfigurations(AliasConfigurationsT&& value) { m_aliasConfigurationsHasBeenSet = true; m_aliasConfigurations = std::forward<AliasConfigurationsT>(value); }
+    template<typename AliasConfigurationsT = Aws::Vector<AliasConfiguration>>
+    DescribeEmailAddressResult& WithAliasConfigurations(AliasConfigurationsT&& value) { SetAliasConfigurations(std::forward<AliasConfigurationsT>(value)); return *this;}
+    template<typename AliasConfigurationsT = AliasConfiguration>
+    DescribeEmailAddressResult& AddAliasConfigurations(AliasConfigurationsT&& value) { m_aliasConfigurationsHasBeenSet = true; m_aliasConfigurations.emplace_back(std::forward<AliasConfigurationsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The tags used to organize, track, or control access for this resource. For
      * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
@@ -156,6 +173,9 @@ namespace Model
 
     Aws::String m_modifiedTimestamp;
     bool m_modifiedTimestampHasBeenSet = false;
+
+    Aws::Vector<AliasConfiguration> m_aliasConfigurations;
+    bool m_aliasConfigurationsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

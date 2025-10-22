@@ -447,6 +447,18 @@ namespace Model
     template<typename AssociatedSubnetsT = Aws::String>
     NetworkInterface& AddAssociatedSubnets(AssociatedSubnetsT&& value) { m_associatedSubnetsHasBeenSet = true; m_associatedSubnets.emplace_back(std::forward<AssociatedSubnetsT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Availability Zone.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+    inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value); }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    NetworkInterface& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) { SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value)); return *this;}
+    ///@}
   private:
 
     NetworkInterfaceAssociation m_association;
@@ -541,6 +553,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_associatedSubnets;
     bool m_associatedSubnetsHasBeenSet = false;
+
+    Aws::String m_availabilityZoneId;
+    bool m_availabilityZoneIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -76,10 +76,12 @@
 #include <aws/medialive/model/GetEventBridgeRuleTemplateResult.h>
 #include <aws/medialive/model/GetEventBridgeRuleTemplateGroupResult.h>
 #include <aws/medialive/model/GetSignalMapResult.h>
+#include <aws/medialive/model/ListAlertsResult.h>
 #include <aws/medialive/model/ListChannelPlacementGroupsSdkResult.h>
 #include <aws/medialive/model/ListChannelsResult.h>
 #include <aws/medialive/model/ListCloudWatchAlarmTemplateGroupsResult.h>
 #include <aws/medialive/model/ListCloudWatchAlarmTemplatesResult.h>
+#include <aws/medialive/model/ListClusterAlertsResult.h>
 #include <aws/medialive/model/ListClustersSdkResult.h>
 #include <aws/medialive/model/ListEventBridgeRuleTemplateGroupsResult.h>
 #include <aws/medialive/model/ListEventBridgeRuleTemplatesResult.h>
@@ -87,6 +89,7 @@
 #include <aws/medialive/model/ListInputDevicesResult.h>
 #include <aws/medialive/model/ListInputSecurityGroupsResult.h>
 #include <aws/medialive/model/ListInputsResult.h>
+#include <aws/medialive/model/ListMultiplexAlertsResult.h>
 #include <aws/medialive/model/ListMultiplexProgramsResult.h>
 #include <aws/medialive/model/ListMultiplexesResult.h>
 #include <aws/medialive/model/ListNetworksSdkResult.h>
@@ -265,10 +268,12 @@ namespace Aws
       class GetEventBridgeRuleTemplateRequest;
       class GetEventBridgeRuleTemplateGroupRequest;
       class GetSignalMapRequest;
+      class ListAlertsRequest;
       class ListChannelPlacementGroupsRequest;
       class ListChannelsRequest;
       class ListCloudWatchAlarmTemplateGroupsRequest;
       class ListCloudWatchAlarmTemplatesRequest;
+      class ListClusterAlertsRequest;
       class ListClustersRequest;
       class ListEventBridgeRuleTemplateGroupsRequest;
       class ListEventBridgeRuleTemplatesRequest;
@@ -276,6 +281,7 @@ namespace Aws
       class ListInputDevicesRequest;
       class ListInputSecurityGroupsRequest;
       class ListInputsRequest;
+      class ListMultiplexAlertsRequest;
       class ListMultiplexProgramsRequest;
       class ListMultiplexesRequest;
       class ListNetworksRequest;
@@ -388,10 +394,12 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetEventBridgeRuleTemplateResult, MediaLiveError> GetEventBridgeRuleTemplateOutcome;
       typedef Aws::Utils::Outcome<GetEventBridgeRuleTemplateGroupResult, MediaLiveError> GetEventBridgeRuleTemplateGroupOutcome;
       typedef Aws::Utils::Outcome<GetSignalMapResult, MediaLiveError> GetSignalMapOutcome;
+      typedef Aws::Utils::Outcome<ListAlertsResult, MediaLiveError> ListAlertsOutcome;
       typedef Aws::Utils::Outcome<ListChannelPlacementGroupsSdkResult, MediaLiveError> ListChannelPlacementGroupsOutcome;
       typedef Aws::Utils::Outcome<ListChannelsResult, MediaLiveError> ListChannelsOutcome;
       typedef Aws::Utils::Outcome<ListCloudWatchAlarmTemplateGroupsResult, MediaLiveError> ListCloudWatchAlarmTemplateGroupsOutcome;
       typedef Aws::Utils::Outcome<ListCloudWatchAlarmTemplatesResult, MediaLiveError> ListCloudWatchAlarmTemplatesOutcome;
+      typedef Aws::Utils::Outcome<ListClusterAlertsResult, MediaLiveError> ListClusterAlertsOutcome;
       typedef Aws::Utils::Outcome<ListClustersSdkResult, MediaLiveError> ListClustersOutcome;
       typedef Aws::Utils::Outcome<ListEventBridgeRuleTemplateGroupsResult, MediaLiveError> ListEventBridgeRuleTemplateGroupsOutcome;
       typedef Aws::Utils::Outcome<ListEventBridgeRuleTemplatesResult, MediaLiveError> ListEventBridgeRuleTemplatesOutcome;
@@ -399,6 +407,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListInputDevicesResult, MediaLiveError> ListInputDevicesOutcome;
       typedef Aws::Utils::Outcome<ListInputSecurityGroupsResult, MediaLiveError> ListInputSecurityGroupsOutcome;
       typedef Aws::Utils::Outcome<ListInputsResult, MediaLiveError> ListInputsOutcome;
+      typedef Aws::Utils::Outcome<ListMultiplexAlertsResult, MediaLiveError> ListMultiplexAlertsOutcome;
       typedef Aws::Utils::Outcome<ListMultiplexProgramsResult, MediaLiveError> ListMultiplexProgramsOutcome;
       typedef Aws::Utils::Outcome<ListMultiplexesResult, MediaLiveError> ListMultiplexesOutcome;
       typedef Aws::Utils::Outcome<ListNetworksSdkResult, MediaLiveError> ListNetworksOutcome;
@@ -511,10 +520,12 @@ namespace Aws
       typedef std::future<GetEventBridgeRuleTemplateOutcome> GetEventBridgeRuleTemplateOutcomeCallable;
       typedef std::future<GetEventBridgeRuleTemplateGroupOutcome> GetEventBridgeRuleTemplateGroupOutcomeCallable;
       typedef std::future<GetSignalMapOutcome> GetSignalMapOutcomeCallable;
+      typedef std::future<ListAlertsOutcome> ListAlertsOutcomeCallable;
       typedef std::future<ListChannelPlacementGroupsOutcome> ListChannelPlacementGroupsOutcomeCallable;
       typedef std::future<ListChannelsOutcome> ListChannelsOutcomeCallable;
       typedef std::future<ListCloudWatchAlarmTemplateGroupsOutcome> ListCloudWatchAlarmTemplateGroupsOutcomeCallable;
       typedef std::future<ListCloudWatchAlarmTemplatesOutcome> ListCloudWatchAlarmTemplatesOutcomeCallable;
+      typedef std::future<ListClusterAlertsOutcome> ListClusterAlertsOutcomeCallable;
       typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
       typedef std::future<ListEventBridgeRuleTemplateGroupsOutcome> ListEventBridgeRuleTemplateGroupsOutcomeCallable;
       typedef std::future<ListEventBridgeRuleTemplatesOutcome> ListEventBridgeRuleTemplatesOutcomeCallable;
@@ -522,6 +533,7 @@ namespace Aws
       typedef std::future<ListInputDevicesOutcome> ListInputDevicesOutcomeCallable;
       typedef std::future<ListInputSecurityGroupsOutcome> ListInputSecurityGroupsOutcomeCallable;
       typedef std::future<ListInputsOutcome> ListInputsOutcomeCallable;
+      typedef std::future<ListMultiplexAlertsOutcome> ListMultiplexAlertsOutcomeCallable;
       typedef std::future<ListMultiplexProgramsOutcome> ListMultiplexProgramsOutcomeCallable;
       typedef std::future<ListMultiplexesOutcome> ListMultiplexesOutcomeCallable;
       typedef std::future<ListNetworksOutcome> ListNetworksOutcomeCallable;
@@ -637,10 +649,12 @@ namespace Aws
     typedef std::function<void(const MediaLiveClient*, const Model::GetEventBridgeRuleTemplateRequest&, const Model::GetEventBridgeRuleTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventBridgeRuleTemplateResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::GetEventBridgeRuleTemplateGroupRequest&, const Model::GetEventBridgeRuleTemplateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventBridgeRuleTemplateGroupResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::GetSignalMapRequest&, const Model::GetSignalMapOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSignalMapResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::ListAlertsRequest&, const Model::ListAlertsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAlertsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListChannelPlacementGroupsRequest&, const Model::ListChannelPlacementGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelPlacementGroupsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListChannelsRequest&, const Model::ListChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListCloudWatchAlarmTemplateGroupsRequest&, const Model::ListCloudWatchAlarmTemplateGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCloudWatchAlarmTemplateGroupsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListCloudWatchAlarmTemplatesRequest&, const Model::ListCloudWatchAlarmTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCloudWatchAlarmTemplatesResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::ListClusterAlertsRequest&, const Model::ListClusterAlertsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClusterAlertsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListEventBridgeRuleTemplateGroupsRequest&, const Model::ListEventBridgeRuleTemplateGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventBridgeRuleTemplateGroupsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListEventBridgeRuleTemplatesRequest&, const Model::ListEventBridgeRuleTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventBridgeRuleTemplatesResponseReceivedHandler;
@@ -648,6 +662,7 @@ namespace Aws
     typedef std::function<void(const MediaLiveClient*, const Model::ListInputDevicesRequest&, const Model::ListInputDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInputDevicesResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListInputSecurityGroupsRequest&, const Model::ListInputSecurityGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInputSecurityGroupsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListInputsRequest&, const Model::ListInputsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInputsResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::ListMultiplexAlertsRequest&, const Model::ListMultiplexAlertsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMultiplexAlertsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListMultiplexProgramsRequest&, const Model::ListMultiplexProgramsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMultiplexProgramsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListMultiplexesRequest&, const Model::ListMultiplexesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMultiplexesResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListNetworksRequest&, const Model::ListNetworksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNetworksResponseReceivedHandler;

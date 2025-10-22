@@ -45,19 +45,20 @@ namespace Model
      * <code>CreateHealthCheck</code> request with the same
      * <code>CallerReference</code> and settings as a previous request, and if the
      * health check doesn't exist, Amazon Route 53 creates the health check. If the
-     * health check does exist, Route 53 returns the settings for the existing health
-     * check.</p> </li> <li> <p>If you send a <code>CreateHealthCheck</code> request
-     * with the same <code>CallerReference</code> as a deleted health check, regardless
-     * of the settings, Route 53 returns a <code>HealthCheckAlreadyExists</code>
-     * error.</p> </li> <li> <p>If you send a <code>CreateHealthCheck</code> request
-     * with the same <code>CallerReference</code> as an existing health check but with
-     * different settings, Route 53 returns a <code>HealthCheckAlreadyExists</code>
-     * error.</p> </li> <li> <p>If you send a <code>CreateHealthCheck</code> request
-     * with a unique <code>CallerReference</code> but settings identical to an existing
-     * health check, Route 53 creates the health check.</p> </li> </ul> <p> Route 53
-     * does not store the <code>CallerReference</code> for a deleted health check
-     * indefinitely. The <code>CallerReference</code> for a deleted health check will
-     * be deleted after a number of days.</p>
+     * health check does exist, Route 53 returns the health check configuration in the
+     * response. </p> </li> <li> <p>If you send a <code>CreateHealthCheck</code>
+     * request with the same <code>CallerReference</code> as a deleted health check,
+     * regardless of the settings, Route 53 returns a
+     * <code>HealthCheckAlreadyExists</code> error.</p> </li> <li> <p>If you send a
+     * <code>CreateHealthCheck</code> request with the same
+     * <code>CallerReference</code> as an existing health check but with different
+     * settings, Route 53 returns a <code>HealthCheckAlreadyExists</code> error.</p>
+     * </li> <li> <p>If you send a <code>CreateHealthCheck</code> request with a unique
+     * <code>CallerReference</code> but settings identical to an existing health check,
+     * Route 53 creates the health check.</p> </li> </ul> <p> Route 53 does not store
+     * the <code>CallerReference</code> for a deleted health check indefinitely. The
+     * <code>CallerReference</code> for a deleted health check will be deleted after a
+     * number of days.</p>
      */
     inline const Aws::String& GetCallerReference() const { return m_callerReference; }
     inline bool CallerReferenceHasBeenSet() const { return m_callerReferenceHasBeenSet; }

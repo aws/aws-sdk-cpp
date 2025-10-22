@@ -140,6 +140,11 @@ RemoteAccessSession& RemoteAccessSession::operator =(JsonView jsonValue)
     m_deviceProxy = jsonValue.GetObject("deviceProxy");
     m_deviceProxyHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("appUpload"))
+  {
+    m_appUpload = jsonValue.GetString("appUpload");
+    m_appUploadHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -275,6 +280,12 @@ JsonValue RemoteAccessSession::Jsonize() const
   if(m_deviceProxyHasBeenSet)
   {
    payload.WithObject("deviceProxy", m_deviceProxy.Jsonize());
+
+  }
+
+  if(m_appUploadHasBeenSet)
+  {
+   payload.WithString("appUpload", m_appUpload);
 
   }
 

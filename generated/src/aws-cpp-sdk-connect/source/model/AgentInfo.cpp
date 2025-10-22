@@ -30,6 +30,16 @@ AgentInfo& AgentInfo::operator =(JsonView jsonValue)
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AcceptedByAgentTimestamp"))
+  {
+    m_acceptedByAgentTimestamp = jsonValue.GetDouble("AcceptedByAgentTimestamp");
+    m_acceptedByAgentTimestampHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("PreviewEndTimestamp"))
+  {
+    m_previewEndTimestamp = jsonValue.GetDouble("PreviewEndTimestamp");
+    m_previewEndTimestampHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("ConnectedToAgentTimestamp"))
   {
     m_connectedToAgentTimestamp = jsonValue.GetDouble("ConnectedToAgentTimestamp");
@@ -95,6 +105,16 @@ JsonValue AgentInfo::Jsonize() const
   {
    payload.WithString("Id", m_id);
 
+  }
+
+  if(m_acceptedByAgentTimestampHasBeenSet)
+  {
+   payload.WithDouble("AcceptedByAgentTimestamp", m_acceptedByAgentTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_previewEndTimestampHasBeenSet)
+  {
+   payload.WithDouble("PreviewEndTimestamp", m_previewEndTimestamp.SecondsWithMSPrecision());
   }
 
   if(m_connectedToAgentTimestampHasBeenSet)

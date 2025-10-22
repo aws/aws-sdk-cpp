@@ -348,6 +348,18 @@ namespace Model
     template<typename DeviceProxyT = DeviceProxy>
     RemoteAccessSession& WithDeviceProxy(DeviceProxyT&& value) { SetDeviceProxy(std::forward<DeviceProxyT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ARN for the app to be installed onto your device.</p>
+     */
+    inline const Aws::String& GetAppUpload() const { return m_appUpload; }
+    inline bool AppUploadHasBeenSet() const { return m_appUploadHasBeenSet; }
+    template<typename AppUploadT = Aws::String>
+    void SetAppUpload(AppUploadT&& value) { m_appUploadHasBeenSet = true; m_appUpload = std::forward<AppUploadT>(value); }
+    template<typename AppUploadT = Aws::String>
+    RemoteAccessSession& WithAppUpload(AppUploadT&& value) { SetAppUpload(std::forward<AppUploadT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -418,6 +430,9 @@ namespace Model
 
     DeviceProxy m_deviceProxy;
     bool m_deviceProxyHasBeenSet = false;
+
+    Aws::String m_appUpload;
+    bool m_appUploadHasBeenSet = false;
   };
 
 } // namespace Model

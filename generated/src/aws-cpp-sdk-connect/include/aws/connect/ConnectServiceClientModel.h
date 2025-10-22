@@ -22,6 +22,7 @@
 #include <aws/connect/model/AssociateAnalyticsDataSetResult.h>
 #include <aws/connect/model/AssociateContactWithUserResult.h>
 #include <aws/connect/model/AssociateDefaultVocabularyResult.h>
+#include <aws/connect/model/AssociateEmailAddressAliasResult.h>
 #include <aws/connect/model/AssociateFlowResult.h>
 #include <aws/connect/model/AssociateInstanceStorageConfigResult.h>
 #include <aws/connect/model/AssociateSecurityKeyResult.h>
@@ -100,6 +101,7 @@
 #include <aws/connect/model/DescribeUserHierarchyStructureResult.h>
 #include <aws/connect/model/DescribeViewResult.h>
 #include <aws/connect/model/DescribeVocabularyResult.h>
+#include <aws/connect/model/DisassociateEmailAddressAliasResult.h>
 #include <aws/connect/model/DisassociateFlowResult.h>
 #include <aws/connect/model/DisassociateTrafficDistributionGroupUserResult.h>
 #include <aws/connect/model/DismissUserContactResult.h>
@@ -283,6 +285,7 @@ namespace Aws
       class AssociateBotRequest;
       class AssociateContactWithUserRequest;
       class AssociateDefaultVocabularyRequest;
+      class AssociateEmailAddressAliasRequest;
       class AssociateFlowRequest;
       class AssociateInstanceStorageConfigRequest;
       class AssociateLambdaFunctionRequest;
@@ -387,6 +390,7 @@ namespace Aws
       class DisassociateAnalyticsDataSetRequest;
       class DisassociateApprovedOriginRequest;
       class DisassociateBotRequest;
+      class DisassociateEmailAddressAliasRequest;
       class DisassociateFlowRequest;
       class DisassociateInstanceStorageConfigRequest;
       class DisassociateLambdaFunctionRequest;
@@ -571,6 +575,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateBotOutcome;
       typedef Aws::Utils::Outcome<AssociateContactWithUserResult, ConnectError> AssociateContactWithUserOutcome;
       typedef Aws::Utils::Outcome<AssociateDefaultVocabularyResult, ConnectError> AssociateDefaultVocabularyOutcome;
+      typedef Aws::Utils::Outcome<AssociateEmailAddressAliasResult, ConnectError> AssociateEmailAddressAliasOutcome;
       typedef Aws::Utils::Outcome<AssociateFlowResult, ConnectError> AssociateFlowOutcome;
       typedef Aws::Utils::Outcome<AssociateInstanceStorageConfigResult, ConnectError> AssociateInstanceStorageConfigOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateLambdaFunctionOutcome;
@@ -675,6 +680,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateAnalyticsDataSetOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateApprovedOriginOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateBotOutcome;
+      typedef Aws::Utils::Outcome<DisassociateEmailAddressAliasResult, ConnectError> DisassociateEmailAddressAliasOutcome;
       typedef Aws::Utils::Outcome<DisassociateFlowResult, ConnectError> DisassociateFlowOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateInstanceStorageConfigOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateLambdaFunctionOutcome;
@@ -859,6 +865,7 @@ namespace Aws
       typedef std::future<AssociateBotOutcome> AssociateBotOutcomeCallable;
       typedef std::future<AssociateContactWithUserOutcome> AssociateContactWithUserOutcomeCallable;
       typedef std::future<AssociateDefaultVocabularyOutcome> AssociateDefaultVocabularyOutcomeCallable;
+      typedef std::future<AssociateEmailAddressAliasOutcome> AssociateEmailAddressAliasOutcomeCallable;
       typedef std::future<AssociateFlowOutcome> AssociateFlowOutcomeCallable;
       typedef std::future<AssociateInstanceStorageConfigOutcome> AssociateInstanceStorageConfigOutcomeCallable;
       typedef std::future<AssociateLambdaFunctionOutcome> AssociateLambdaFunctionOutcomeCallable;
@@ -963,6 +970,7 @@ namespace Aws
       typedef std::future<DisassociateAnalyticsDataSetOutcome> DisassociateAnalyticsDataSetOutcomeCallable;
       typedef std::future<DisassociateApprovedOriginOutcome> DisassociateApprovedOriginOutcomeCallable;
       typedef std::future<DisassociateBotOutcome> DisassociateBotOutcomeCallable;
+      typedef std::future<DisassociateEmailAddressAliasOutcome> DisassociateEmailAddressAliasOutcomeCallable;
       typedef std::future<DisassociateFlowOutcome> DisassociateFlowOutcomeCallable;
       typedef std::future<DisassociateInstanceStorageConfigOutcome> DisassociateInstanceStorageConfigOutcomeCallable;
       typedef std::future<DisassociateLambdaFunctionOutcome> DisassociateLambdaFunctionOutcomeCallable;
@@ -1150,6 +1158,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::AssociateBotRequest&, const Model::AssociateBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateBotResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::AssociateContactWithUserRequest&, const Model::AssociateContactWithUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateContactWithUserResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::AssociateDefaultVocabularyRequest&, const Model::AssociateDefaultVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateDefaultVocabularyResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::AssociateEmailAddressAliasRequest&, const Model::AssociateEmailAddressAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateEmailAddressAliasResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::AssociateFlowRequest&, const Model::AssociateFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateFlowResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::AssociateInstanceStorageConfigRequest&, const Model::AssociateInstanceStorageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateInstanceStorageConfigResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::AssociateLambdaFunctionRequest&, const Model::AssociateLambdaFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateLambdaFunctionResponseReceivedHandler;
@@ -1254,6 +1263,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::DisassociateAnalyticsDataSetRequest&, const Model::DisassociateAnalyticsDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateAnalyticsDataSetResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DisassociateApprovedOriginRequest&, const Model::DisassociateApprovedOriginOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateApprovedOriginResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DisassociateBotRequest&, const Model::DisassociateBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateBotResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::DisassociateEmailAddressAliasRequest&, const Model::DisassociateEmailAddressAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateEmailAddressAliasResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DisassociateFlowRequest&, const Model::DisassociateFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateFlowResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DisassociateInstanceStorageConfigRequest&, const Model::DisassociateInstanceStorageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateInstanceStorageConfigResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DisassociateLambdaFunctionRequest&, const Model::DisassociateLambdaFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateLambdaFunctionResponseReceivedHandler;

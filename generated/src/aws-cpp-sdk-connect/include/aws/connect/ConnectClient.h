@@ -276,6 +276,75 @@ namespace Connect
         }
 
         /**
+         * <p>Associates an email address alias with an existing email address in an Amazon
+         * Connect instance. This creates a forwarding relationship where emails sent to
+         * the alias email address are automatically forwarded to the primary email
+         * address. </p> <p> <b>Use cases</b> </p> <p>Following are common uses cases for
+         * this API:</p> <ul> <li> <p> <b>Unified customer support</b>: Create multiple
+         * entry points (for example, support@example.com, help@example.com,
+         * customercare@example.com) that all forward to a single agent queue for
+         * streamlined management.</p> </li> <li> <p> <b>Department consolidation</b>:
+         * Forward emails from legacy department addresses (for example, sales@example.com,
+         * info@example.com) to a centralized customer service email during organizational
+         * restructuring.</p> </li> <li> <p> <b>Brand management</b>: Enable you to use
+         * familiar brand-specific email addresses that forward to the appropriate Amazon
+         * Connect instance email address.</p> </li> </ul> <p> <b>Important things to
+         * know</b> </p> <ul> <li> <p>Each email address can have a maximum of one alias.
+         * You cannot create multiple aliases for the same email address. </p> </li> <li>
+         * <p>If the alias email address already receives direct emails, it continues to
+         * receive direct emails plus forwarded emails.</p> </li> <li> <p>You cannot chain
+         * email aliases together (that is, create an alias of an alias).</p> </li> </ul>
+         * <p> <code>AssociateEmailAddressAlias</code> does not return the following
+         * information:</p> <ul> <li> <p>A confirmation of the alias relationship details
+         * (you must call <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>
+         * to verify).</p> </li> <li> <p>The timestamp of when the association
+         * occurred.</p> </li> <li> <p>The status of the forwarding configuration.</p>
+         * </li> </ul> <p> <b>Endpoints</b>: See <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+         * Connect endpoints and quotas</a>.</p> <p> <b>Related operations</b> </p> <ul>
+         * <li> <p> <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateEmailAddressAlias.html">DisassociateEmailAddressAlias</a>:
+         * Removes the alias association between two email addresses in an Amazon Connect
+         * instance.</p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>:
+         * View current alias configurations for an email address.</p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchEmailAddresses.html">SearchEmailAddresses</a>:
+         * Find email addresses and their alias relationships across an instance.</p> </li>
+         * <li> <p> <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateEmailAddress.html">CreateEmailAddress</a>:
+         * Create new email addresses that can participate in alias relationships.</p>
+         * </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteEmailAddress.html">DeleteEmailAddress</a>:
+         * Remove email addresses (automatically removes any alias relationships).</p>
+         * </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateEmailAddressMetadata.html">UpdateEmailAddressMetadata</a>:
+         * Modify email address properties (does not affect alias relationships).</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateEmailAddressAlias">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateEmailAddressAliasOutcome AssociateEmailAddressAlias(const Model::AssociateEmailAddressAliasRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateEmailAddressAlias that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateEmailAddressAliasRequestT = Model::AssociateEmailAddressAliasRequest>
+        Model::AssociateEmailAddressAliasOutcomeCallable AssociateEmailAddressAliasCallable(const AssociateEmailAddressAliasRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::AssociateEmailAddressAlias, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateEmailAddressAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateEmailAddressAliasRequestT = Model::AssociateEmailAddressAliasRequest>
+        void AssociateEmailAddressAliasAsync(const AssociateEmailAddressAliasRequestT& request, const AssociateEmailAddressAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::AssociateEmailAddressAlias, request, handler, context);
+        }
+
+        /**
          * <p>Associates a connect resource to a flow.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateFlow">AWS
          * API Reference</a></p>
@@ -2433,7 +2502,7 @@ namespace Connect
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to change.
-         * To request access to this API, contact Amazon Web Services Support.</p>
+         * To request access to this API, contact Amazon Web ServicesSupport.</p>
          * <p>Describes the target authentication profile.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeAuthenticationProfile">AWS
          * API Reference</a></p>
@@ -2785,7 +2854,7 @@ namespace Connect
         }
 
         /**
-         * <p>Gets details and status of a phone number that’s claimed to your Amazon
+         * <p>Gets details and status of a phone number that��s claimed to your Amazon
          * Connect instance or traffic distribution group.</p>  <p>If the number
          * is claimed to a traffic distribution group, and you are calling in the Amazon
          * Web Services Region where the traffic distribution group was created, you can
@@ -3263,6 +3332,75 @@ namespace Connect
         void DisassociateBotAsync(const DisassociateBotRequestT& request, const DisassociateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::DisassociateBot, request, handler, context);
+        }
+
+        /**
+         * <p>Removes the alias association between two email addresses in an Amazon
+         * Connect instance. After disassociation, emails sent to the former alias email
+         * address are no longer forwarded to the primary email address. Both email
+         * addresses continue to exist independently and can receive emails directly.</p>
+         * <p> <b>Use cases</b> </p> <p>Following are common uses cases for this API:</p>
+         * <ul> <li> <p> <b>Department separation</b>: Remove alias relationships when
+         * splitting a consolidated support queue back into separate department-specific
+         * queues.</p> </li> <li> <p> <b>Email address retirement</b>: Cleanly remove
+         * forwarding relationships before decommissioning old email addresses.</p> </li>
+         * <li> <p> <b>Organizational restructuring</b>: Reconfigure email routing when
+         * business processes change and aliases are no longer needed.</p> </li> </ul> <p>
+         * <b>Important things to know</b> </p> <ul> <li> <p>Concurrent operations: This
+         * API uses distributed locking, so concurrent operations on the same email
+         * addresses may be temporarily blocked.</p> </li> <li> <p>Emails sent to the
+         * former alias address are still delivered directly to that address if it
+         * exists.</p> </li> <li> <p>You do not need to delete the email addresses after
+         * disassociation. Both addresses remain active independently.</p> </li> <li>
+         * <p>After a successful disassociation, you can immediately create a new alias
+         * relationship with the same addresses.</p> </li> <li> <p>200 status means alias
+         * was successfully disassociated.</p> </li> </ul> <p>
+         * <code>DisassociateEmailAddressAlias</code> does not return the following
+         * information:</p> <ul> <li> <p>Details in the response about the email that was
+         * disassociated. The response returns an empty body.</p> </li> <li> <p>The
+         * timestamp of when the disassociation occurred.</p> </li> </ul> <p>
+         * <b>Endpoints</b>: See <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+         * Connect endpoints and quotas</a>.</p> <p> <b>Related operations</b> </p> <ul>
+         * <li> <p> <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateEmailAddressAlias.html">AssociateEmailAddressAlias</a>:
+         * Associates an email address alias with an existing email address in an Amazon
+         * Connect instance.</p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>:
+         * View current alias configurations for an email address.</p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchEmailAddresses.html">SearchEmailAddresses</a>:
+         * Find email addresses and their alias relationships across an instance.</p> </li>
+         * <li> <p> <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateEmailAddress.html">CreateEmailAddress</a>:
+         * Create new email addresses that can participate in alias relationships.</p>
+         * </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteEmailAddress.html">DeleteEmailAddress</a>:
+         * Remove email addresses (automatically removes any alias relationships).</p>
+         * </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateEmailAddressMetadata.html">UpdateEmailAddressMetadata</a>:
+         * Modify email address properties (does not affect alias relationships).</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateEmailAddressAlias">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateEmailAddressAliasOutcome DisassociateEmailAddressAlias(const Model::DisassociateEmailAddressAliasRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateEmailAddressAlias that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateEmailAddressAliasRequestT = Model::DisassociateEmailAddressAliasRequest>
+        Model::DisassociateEmailAddressAliasOutcomeCallable DisassociateEmailAddressAliasCallable(const DisassociateEmailAddressAliasRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DisassociateEmailAddressAlias, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateEmailAddressAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateEmailAddressAliasRequestT = Model::DisassociateEmailAddressAliasRequest>
+        void DisassociateEmailAddressAliasAsync(const DisassociateEmailAddressAliasRequestT& request, const DisassociateEmailAddressAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DisassociateEmailAddressAlias, request, handler, context);
         }
 
         /**
@@ -3999,7 +4137,7 @@ namespace Connect
          * service level quota of 99 phone numbers, and in any 180 day period you release
          * 99, claim 99, and then release 99, you will have exceeded the 200% limit. At
          * that point you are blocked from claiming any more numbers until you open an
-         * Amazon Web Services Support ticket. </p><p><h3>See Also:</h3>   <a
+         * Amazon Web ServicesSupport ticket. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ImportPhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -4155,7 +4293,7 @@ namespace Connect
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to change.
-         * To request access to this API, contact Amazon Web Services Support.</p>
+         * To request access to this API, contact Amazon Web ServicesSupport.</p>
          * <p>Provides summary information about the authentication profiles in a specified
          * Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAuthenticationProfiles">AWS
@@ -5526,7 +5664,7 @@ namespace Connect
          * <p>After releasing a phone number, the phone number enters into a cooldown
          * period for up to 180 days. It cannot be searched for or claimed again until the
          * period has ended. If you accidentally release a phone number, contact Amazon Web
-         * Services Support.</p>  <p>If you plan to claim and release numbers
+         * ServicesSupport.</p>  <p>If you plan to claim and release numbers
          * frequently, contact us for a service quota exception. Otherwise, it is possible
          * you will be blocked from claiming and releasing any more numbers until up to 180
          * days past the oldest number released has expired.</p> <p>By default you can
@@ -6258,7 +6396,7 @@ namespace Connect
          * <code>LimitExceededException</code>.</p> </li> </ul> <p>If you use the
          * <code>ChatDurationInMinutes</code> parameter and receive a 400 error, your
          * account may not support the ability to configure custom chat durations. For more
-         * information, contact Amazon Web Services Support. </p> <p>For more information
+         * information, contact Amazon Web ServicesSupport. </p> <p>For more information
          * about chat, see the following topics in the <i>Amazon Connect Administrator
          * Guide</i>: </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/web-and-mobile-chat.html">Concepts:
@@ -6978,7 +7116,7 @@ namespace Connect
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to change.
-         * To request access to this API, contact Amazon Web Services Support.</p>
+         * To request access to this API, contact Amazon Web ServicesSupport.</p>
          * <p>Updates the selected authentication profile.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateAuthenticationProfile">AWS
          * API Reference</a></p>

@@ -1742,6 +1742,32 @@ namespace MediaLive
         }
 
         /**
+         * List the alerts for a channel with optional filtering based on alert
+         * state.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListAlerts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAlertsOutcome ListAlerts(const Model::ListAlertsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAlerts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAlertsRequestT = Model::ListAlertsRequest>
+        Model::ListAlertsOutcomeCallable ListAlertsCallable(const ListAlertsRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::ListAlerts, request);
+        }
+
+        /**
+         * An Async wrapper for ListAlerts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAlertsRequestT = Model::ListAlertsRequest>
+        void ListAlertsAsync(const ListAlertsRequestT& request, const ListAlertsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::ListAlerts, request, handler, context);
+        }
+
+        /**
          * Retrieve the list of ChannelPlacementGroups in the specified Cluster.<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListChannelPlacementGroups">AWS
@@ -1840,6 +1866,32 @@ namespace MediaLive
         void ListCloudWatchAlarmTemplatesAsync(const ListCloudWatchAlarmTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCloudWatchAlarmTemplatesRequestT& request = {}) const
         {
             return SubmitAsync(&MediaLiveClient::ListCloudWatchAlarmTemplates, request, handler, context);
+        }
+
+        /**
+         * List the alerts for a cluster with optional filtering based on alert
+         * state.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListClusterAlerts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListClusterAlertsOutcome ListClusterAlerts(const Model::ListClusterAlertsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListClusterAlerts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListClusterAlertsRequestT = Model::ListClusterAlertsRequest>
+        Model::ListClusterAlertsOutcomeCallable ListClusterAlertsCallable(const ListClusterAlertsRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::ListClusterAlerts, request);
+        }
+
+        /**
+         * An Async wrapper for ListClusterAlerts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListClusterAlertsRequestT = Model::ListClusterAlertsRequest>
+        void ListClusterAlertsAsync(const ListClusterAlertsRequestT& request, const ListClusterAlertsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::ListClusterAlerts, request, handler, context);
         }
 
         /**
@@ -2018,6 +2070,32 @@ namespace MediaLive
         void ListInputsAsync(const ListInputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListInputsRequestT& request = {}) const
         {
             return SubmitAsync(&MediaLiveClient::ListInputs, request, handler, context);
+        }
+
+        /**
+         * List the alerts for a multiplex with optional filtering based on alert
+         * state.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListMultiplexAlerts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMultiplexAlertsOutcome ListMultiplexAlerts(const Model::ListMultiplexAlertsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListMultiplexAlerts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListMultiplexAlertsRequestT = Model::ListMultiplexAlertsRequest>
+        Model::ListMultiplexAlertsOutcomeCallable ListMultiplexAlertsCallable(const ListMultiplexAlertsRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::ListMultiplexAlerts, request);
+        }
+
+        /**
+         * An Async wrapper for ListMultiplexAlerts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListMultiplexAlertsRequestT = Model::ListMultiplexAlertsRequest>
+        void ListMultiplexAlertsAsync(const ListMultiplexAlertsRequestT& request, const ListMultiplexAlertsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::ListMultiplexAlerts, request, handler, context);
         }
 
         /**

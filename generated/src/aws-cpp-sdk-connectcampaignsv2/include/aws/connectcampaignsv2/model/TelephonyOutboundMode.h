@@ -8,6 +8,7 @@
 #include <aws/connectcampaignsv2/model/ProgressiveConfig.h>
 #include <aws/connectcampaignsv2/model/PredictiveConfig.h>
 #include <aws/connectcampaignsv2/model/AgentlessConfig.h>
+#include <aws/connectcampaignsv2/model/PreviewConfig.h>
 #include <utility>
 
 namespace Aws
@@ -68,6 +69,16 @@ namespace Model
     template<typename AgentlessT = AgentlessConfig>
     TelephonyOutboundMode& WithAgentless(AgentlessT&& value) { SetAgentless(std::forward<AgentlessT>(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const PreviewConfig& GetPreview() const { return m_preview; }
+    inline bool PreviewHasBeenSet() const { return m_previewHasBeenSet; }
+    template<typename PreviewT = PreviewConfig>
+    void SetPreview(PreviewT&& value) { m_previewHasBeenSet = true; m_preview = std::forward<PreviewT>(value); }
+    template<typename PreviewT = PreviewConfig>
+    TelephonyOutboundMode& WithPreview(PreviewT&& value) { SetPreview(std::forward<PreviewT>(value)); return *this;}
+    ///@}
   private:
 
     ProgressiveConfig m_progressive;
@@ -78,6 +89,9 @@ namespace Model
 
     AgentlessConfig m_agentless;
     bool m_agentlessHasBeenSet = false;
+
+    PreviewConfig m_preview;
+    bool m_previewHasBeenSet = false;
   };
 
 } // namespace Model

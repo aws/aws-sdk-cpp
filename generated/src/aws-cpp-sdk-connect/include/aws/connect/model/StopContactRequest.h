@@ -62,7 +62,11 @@ namespace Model
     ///@{
     /**
      * <p>The reason a contact can be disconnected. Only Amazon Connect outbound
-     * campaigns can provide this field.</p>
+     * campaigns can provide this field. For a list and description of all the possible
+     * disconnect reasons by channel (including outbound campaign voice contacts) see
+     * DisconnectReason under <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
+     * in the <i>Amazon Connect Administrator Guide</i>. </p>
      */
     inline const DisconnectReason& GetDisconnectReason() const { return m_disconnectReason; }
     inline bool DisconnectReasonHasBeenSet() const { return m_disconnectReasonHasBeenSet; }

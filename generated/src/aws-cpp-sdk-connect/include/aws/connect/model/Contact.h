@@ -26,6 +26,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/connect/model/TaskTemplateInfoV2.h>
 #include <aws/connect/model/ContactDetails.h>
+#include <aws/connect/model/OutboundStrategy.h>
 #include <aws/connect/model/SegmentAttributeValue.h>
 #include <aws/connect/model/RecordingInfo.h>
 #include <aws/connect/model/ContactEvaluation.h>
@@ -563,7 +564,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The disconnect reason for the contact.</p>
+     * <p>The disconnect reason for the contact. For a list and description of all the
+     * possible disconnect reasons by channel, see DisconnectReason under <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
+     * in the <i>Amazon Connect Administrator Guide</i>. </p>
      */
     inline const Aws::String& GetDisconnectReason() const { return m_disconnectReason; }
     inline bool DisconnectReasonHasBeenSet() const { return m_disconnectReasonHasBeenSet; }
@@ -615,6 +619,18 @@ namespace Model
     void SetContactDetails(ContactDetailsT&& value) { m_contactDetailsHasBeenSet = true; m_contactDetails = std::forward<ContactDetailsT>(value); }
     template<typename ContactDetailsT = ContactDetails>
     Contact& WithContactDetails(ContactDetailsT&& value) { SetContactDetails(std::forward<ContactDetailsT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Information about the outbound strategy.</p>
+     */
+    inline const OutboundStrategy& GetOutboundStrategy() const { return m_outboundStrategy; }
+    inline bool OutboundStrategyHasBeenSet() const { return m_outboundStrategyHasBeenSet; }
+    template<typename OutboundStrategyT = OutboundStrategy>
+    void SetOutboundStrategy(OutboundStrategyT&& value) { m_outboundStrategyHasBeenSet = true; m_outboundStrategy = std::forward<OutboundStrategyT>(value); }
+    template<typename OutboundStrategyT = OutboundStrategy>
+    Contact& WithOutboundStrategy(OutboundStrategyT&& value) { SetOutboundStrategy(std::forward<OutboundStrategyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -762,6 +778,9 @@ namespace Model
 
     ContactDetails m_contactDetails;
     bool m_contactDetailsHasBeenSet = false;
+
+    OutboundStrategy m_outboundStrategy;
+    bool m_outboundStrategyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet = false;

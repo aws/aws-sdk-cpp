@@ -256,6 +256,11 @@ Contact& Contact::operator =(JsonView jsonValue)
     m_contactDetails = jsonValue.GetObject("ContactDetails");
     m_contactDetailsHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("OutboundStrategy"))
+  {
+    m_outboundStrategy = jsonValue.GetObject("OutboundStrategy");
+    m_outboundStrategyHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
@@ -537,6 +542,12 @@ JsonValue Contact::Jsonize() const
   if(m_contactDetailsHasBeenSet)
   {
    payload.WithObject("ContactDetails", m_contactDetails.Jsonize());
+
+  }
+
+  if(m_outboundStrategyHasBeenSet)
+  {
+   payload.WithObject("OutboundStrategy", m_outboundStrategy.Jsonize());
 
   }
 

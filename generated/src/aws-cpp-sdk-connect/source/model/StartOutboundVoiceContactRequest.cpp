@@ -109,6 +109,12 @@ Aws::String StartOutboundVoiceContactRequest::SerializePayload() const
    payload.WithString("TrafficType", TrafficTypeMapper::GetNameForTrafficType(m_trafficType));
   }
 
+  if(m_outboundStrategyHasBeenSet)
+  {
+   payload.WithObject("OutboundStrategy", m_outboundStrategy.Jsonize());
+
+  }
+
   return payload.View().WriteReadable();
 }
 

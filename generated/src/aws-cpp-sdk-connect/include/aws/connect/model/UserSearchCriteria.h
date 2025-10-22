@@ -80,7 +80,7 @@ namespace Model
      * <p>The currently supported values for <code>FieldName</code> are
      * <code>Username</code>, <code>FirstName</code>, <code>LastName</code>,
      * <code>RoutingProfileId</code>, <code>SecurityProfileId</code>,
-     * <code>ResourceId</code>.</p>
+     * <code>resourceId</code>.</p>
      */
     inline const StringCondition& GetStringCondition() const { return m_stringCondition; }
     inline bool StringConditionHasBeenSet() const { return m_stringConditionHasBeenSet; }
