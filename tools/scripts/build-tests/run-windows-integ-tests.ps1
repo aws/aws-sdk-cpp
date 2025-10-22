@@ -18,10 +18,8 @@ aws configure set aws_secret_access_key (${sts}[2] -replace " " -replace "`"" -r
 aws configure set aws_session_token (${sts}[3] -replace " " -replace "`"" -replace ",")
 aws configure list
 cd "${env:PREFIX_DIR}/aws-sdk-cpp"
-SERVICE_ID="$(git status generated/src/aws-cpp-sdk-* --porcelain | grep "generated/src/" | sed -n 's|.*generated/src/aws-cpp-sdk-\([^/]*\).*|\1|p' | sort -u | tr "\n" "," | sed "s/,$//")"
-echo "SERVICE_ID: $SERVICE_ID"
+$SERVICE_ID = (git status generated/src/aws-cpp-sdk-* --porcelain | Select-String "generated/src/" | ForEach-Object { if($_ -match "generated/src/aws-cpp-sdk-([^/]*)") { $matches[1] } } | Sort-Object -Unique) -join ","
 cd "../.."
 # Run tests
 cd "${env:PREFIX_DIR}\\win-build"
-$serviceIdArg = if ($SERVICE_ID) { "--serviceId $SERVICE_ID" } else { "" }
-python3 ../aws-sdk-cpp/tools/scripts/run_integration_tests.py --testDir ./bin/Debug $serviceIdArg
+if ($SERVICE_ID) { & python ../aws-sdk-cpp/tools/scripts/run_integration_tests.py --testDir ./bin/Debug --serviceId $SERVICE_ID } else { & python ../aws-sdk-cpp/tools/scripts/run_integration_tests.py --testDir ./bin/Debug }
