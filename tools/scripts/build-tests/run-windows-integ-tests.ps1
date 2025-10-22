@@ -17,9 +17,10 @@ aws configure set aws_access_key_id (${sts}[1] -replace " " -replace "`"" -repla
 aws configure set aws_secret_access_key (${sts}[2] -replace " " -replace "`"" -replace ",")
 aws configure set aws_session_token (${sts}[3] -replace " " -replace "`"" -replace ",")
 aws configure list
-cd "${env:PREFIX_DIR}/aws-sdk-cpp"
+pushd cd "${env:PREFIX_DIR}/aws-sdk-cpp"
 $SERVICE_ID = (git status generated/src/aws-cpp-sdk-* --porcelain | Select-String "generated/src/" | ForEach-Object { if($_ -match "generated/src/aws-cpp-sdk-([^/]*)") { $matches[1] } } | Sort-Object -Unique) -join ","
-cd "../.."
+popd
+echo "Service ID: $SERVICE_ID"
 # Run tests
 cd "${env:PREFIX_DIR}\\win-build"
 if ($SERVICE_ID) { & python ../aws-sdk-cpp/tools/scripts/run_integration_tests.py --testDir ./bin/Debug --serviceId $SERVICE_ID } else { & python ../aws-sdk-cpp/tools/scripts/run_integration_tests.py --testDir ./bin/Debug }
