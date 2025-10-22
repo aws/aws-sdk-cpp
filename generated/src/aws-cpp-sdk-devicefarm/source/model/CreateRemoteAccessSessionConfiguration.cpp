@@ -25,6 +25,15 @@ CreateRemoteAccessSessionConfiguration::CreateRemoteAccessSessionConfiguration(J
 
 CreateRemoteAccessSessionConfiguration& CreateRemoteAccessSessionConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("auxiliaryApps"))
+  {
+    Aws::Utils::Array<JsonView> auxiliaryAppsJsonList = jsonValue.GetArray("auxiliaryApps");
+    for(unsigned auxiliaryAppsIndex = 0; auxiliaryAppsIndex < auxiliaryAppsJsonList.GetLength(); ++auxiliaryAppsIndex)
+    {
+      m_auxiliaryApps.push_back(auxiliaryAppsJsonList[auxiliaryAppsIndex].AsString());
+    }
+    m_auxiliaryAppsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("billingMethod"))
   {
     m_billingMethod = BillingMethodMapper::GetBillingMethodForName(jsonValue.GetString("billingMethod"));
@@ -50,6 +59,17 @@ CreateRemoteAccessSessionConfiguration& CreateRemoteAccessSessionConfiguration::
 JsonValue CreateRemoteAccessSessionConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_auxiliaryAppsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> auxiliaryAppsJsonList(m_auxiliaryApps.size());
+   for(unsigned auxiliaryAppsIndex = 0; auxiliaryAppsIndex < auxiliaryAppsJsonList.GetLength(); ++auxiliaryAppsIndex)
+   {
+     auxiliaryAppsJsonList[auxiliaryAppsIndex].AsString(m_auxiliaryApps[auxiliaryAppsIndex]);
+   }
+   payload.WithArray("auxiliaryApps", std::move(auxiliaryAppsJsonList));
+
+  }
 
   if(m_billingMethodHasBeenSet)
   {

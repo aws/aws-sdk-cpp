@@ -121,6 +121,8 @@
 #include <aws/medialive/model/CdiInputResolution.h>
 #include <aws/medialive/model/CdiInputSpecification.h>
 #include <aws/medialive/model/Channel.h>
+#include <aws/medialive/model/ChannelAlert.h>
+#include <aws/medialive/model/ChannelAlertState.h>
 #include <aws/medialive/model/ChannelClass.h>
 #include <aws/medialive/model/ChannelEgressEndpoint.h>
 #include <aws/medialive/model/ChannelEngineVersionRequest.h>
@@ -137,6 +139,8 @@
 #include <aws/medialive/model/CloudWatchAlarmTemplateSummary.h>
 #include <aws/medialive/model/CloudWatchAlarmTemplateTargetResourceType.h>
 #include <aws/medialive/model/CloudWatchAlarmTemplateTreatMissingData.h>
+#include <aws/medialive/model/ClusterAlert.h>
+#include <aws/medialive/model/ClusterAlertState.h>
 #include <aws/medialive/model/ClusterNetworkSettings.h>
 #include <aws/medialive/model/ClusterNetworkSettingsCreateRequest.h>
 #include <aws/medialive/model/ClusterNetworkSettingsUpdateRequest.h>
@@ -519,6 +523,8 @@
 #include <aws/medialive/model/IpPoolUpdateRequest.h>
 #include <aws/medialive/model/KeyProviderSettings.h>
 #include <aws/medialive/model/LastFrameClippingBehavior.h>
+#include <aws/medialive/model/ListAlertsRequest.h>
+#include <aws/medialive/model/ListAlertsResult.h>
 #include <aws/medialive/model/ListChannelPlacementGroupsRequest.h>
 #include <aws/medialive/model/ListChannelPlacementGroupsSdkResult.h>
 #include <aws/medialive/model/ListChannelsRequest.h>
@@ -527,6 +533,8 @@
 #include <aws/medialive/model/ListCloudWatchAlarmTemplateGroupsResult.h>
 #include <aws/medialive/model/ListCloudWatchAlarmTemplatesRequest.h>
 #include <aws/medialive/model/ListCloudWatchAlarmTemplatesResult.h>
+#include <aws/medialive/model/ListClusterAlertsRequest.h>
+#include <aws/medialive/model/ListClusterAlertsResult.h>
 #include <aws/medialive/model/ListClustersRequest.h>
 #include <aws/medialive/model/ListClustersSdkResult.h>
 #include <aws/medialive/model/ListEventBridgeRuleTemplateGroupsRequest.h>
@@ -541,6 +549,8 @@
 #include <aws/medialive/model/ListInputSecurityGroupsResult.h>
 #include <aws/medialive/model/ListInputsRequest.h>
 #include <aws/medialive/model/ListInputsResult.h>
+#include <aws/medialive/model/ListMultiplexAlertsRequest.h>
+#include <aws/medialive/model/ListMultiplexAlertsResult.h>
 #include <aws/medialive/model/ListMultiplexProgramsRequest.h>
 #include <aws/medialive/model/ListMultiplexProgramsResult.h>
 #include <aws/medialive/model/ListMultiplexesRequest.h>
@@ -630,6 +640,8 @@
 #include <aws/medialive/model/MulticastSourceCreateRequest.h>
 #include <aws/medialive/model/MulticastSourceUpdateRequest.h>
 #include <aws/medialive/model/Multiplex.h>
+#include <aws/medialive/model/MultiplexAlert.h>
+#include <aws/medialive/model/MultiplexAlertState.h>
 #include <aws/medialive/model/MultiplexContainerSettings.h>
 #include <aws/medialive/model/MultiplexGroupSettings.h>
 #include <aws/medialive/model/MultiplexM2tsSettings.h>

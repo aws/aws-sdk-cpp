@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
-#include <aws/devicefarm/model/BillingMethod.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/devicefarm/model/BillingMethod.h>
 #include <aws/devicefarm/model/DeviceProxy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -40,6 +40,21 @@ namespace Model
     AWS_DEVICEFARM_API CreateRemoteAccessSessionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>A list of upload ARNs for app packages to be installed onto your device.
+     * (Maximum 3)</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAuxiliaryApps() const { return m_auxiliaryApps; }
+    inline bool AuxiliaryAppsHasBeenSet() const { return m_auxiliaryAppsHasBeenSet; }
+    template<typename AuxiliaryAppsT = Aws::Vector<Aws::String>>
+    void SetAuxiliaryApps(AuxiliaryAppsT&& value) { m_auxiliaryAppsHasBeenSet = true; m_auxiliaryApps = std::forward<AuxiliaryAppsT>(value); }
+    template<typename AuxiliaryAppsT = Aws::Vector<Aws::String>>
+    CreateRemoteAccessSessionConfiguration& WithAuxiliaryApps(AuxiliaryAppsT&& value) { SetAuxiliaryApps(std::forward<AuxiliaryAppsT>(value)); return *this;}
+    template<typename AuxiliaryAppsT = Aws::String>
+    CreateRemoteAccessSessionConfiguration& AddAuxiliaryApps(AuxiliaryAppsT&& value) { m_auxiliaryAppsHasBeenSet = true; m_auxiliaryApps.emplace_back(std::forward<AuxiliaryAppsT>(value)); return *this; }
+    ///@}
 
     ///@{
     /**
@@ -78,6 +93,9 @@ namespace Model
     CreateRemoteAccessSessionConfiguration& WithDeviceProxy(DeviceProxyT&& value) { SetDeviceProxy(std::forward<DeviceProxyT>(value)); return *this;}
     ///@}
   private:
+
+    Aws::Vector<Aws::String> m_auxiliaryApps;
+    bool m_auxiliaryAppsHasBeenSet = false;
 
     BillingMethod m_billingMethod{BillingMethod::NOT_SET};
     bool m_billingMethodHasBeenSet = false;

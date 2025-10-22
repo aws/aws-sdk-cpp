@@ -68,6 +68,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) of the app to create the remote access
+     * session.</p>
+     */
+    inline const Aws::String& GetAppArn() const { return m_appArn; }
+    inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
+    template<typename AppArnT = Aws::String>
+    void SetAppArn(AppArnT&& value) { m_appArnHasBeenSet = true; m_appArn = std::forward<AppArnT>(value); }
+    template<typename AppArnT = Aws::String>
+    CreateRemoteAccessSessionRequest& WithAppArn(AppArnT&& value) { SetAppArn(std::forward<AppArnT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the device instance for which you want to
      * create a remote access session.</p>
      */
@@ -213,6 +226,9 @@ namespace Model
 
     Aws::String m_deviceArn;
     bool m_deviceArnHasBeenSet = false;
+
+    Aws::String m_appArn;
+    bool m_appArnHasBeenSet = false;
 
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet = false;

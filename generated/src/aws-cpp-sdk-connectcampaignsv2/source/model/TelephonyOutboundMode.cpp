@@ -40,6 +40,11 @@ TelephonyOutboundMode& TelephonyOutboundMode::operator =(JsonView jsonValue)
     m_agentless = jsonValue.GetObject("agentless");
     m_agentlessHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("preview"))
+  {
+    m_preview = jsonValue.GetObject("preview");
+    m_previewHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +67,12 @@ JsonValue TelephonyOutboundMode::Jsonize() const
   if(m_agentlessHasBeenSet)
   {
    payload.WithObject("agentless", m_agentless.Jsonize());
+
+  }
+
+  if(m_previewHasBeenSet)
+  {
+   payload.WithObject("preview", m_preview.Jsonize());
 
   }
 

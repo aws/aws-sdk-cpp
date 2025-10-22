@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/connect/model/AnswerMachineDetectionConfig.h>
 #include <aws/connect/model/TrafficType.h>
+#include <aws/connect/model/OutboundStrategy.h>
 #include <aws/connect/model/Reference.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -248,6 +249,18 @@ namespace Model
     inline void SetTrafficType(TrafficType value) { m_trafficTypeHasBeenSet = true; m_trafficType = value; }
     inline StartOutboundVoiceContactRequest& WithTrafficType(TrafficType value) { SetTrafficType(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Information about the outbound strategy.</p>
+     */
+    inline const OutboundStrategy& GetOutboundStrategy() const { return m_outboundStrategy; }
+    inline bool OutboundStrategyHasBeenSet() const { return m_outboundStrategyHasBeenSet; }
+    template<typename OutboundStrategyT = OutboundStrategy>
+    void SetOutboundStrategy(OutboundStrategyT&& value) { m_outboundStrategyHasBeenSet = true; m_outboundStrategy = std::forward<OutboundStrategyT>(value); }
+    template<typename OutboundStrategyT = OutboundStrategy>
+    StartOutboundVoiceContactRequest& WithOutboundStrategy(OutboundStrategyT&& value) { SetOutboundStrategy(std::forward<OutboundStrategyT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -291,6 +304,9 @@ namespace Model
 
     TrafficType m_trafficType{TrafficType::NOT_SET};
     bool m_trafficTypeHasBeenSet = false;
+
+    OutboundStrategy m_outboundStrategy;
+    bool m_outboundStrategyHasBeenSet = false;
   };
 
 } // namespace Model

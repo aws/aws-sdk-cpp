@@ -60,6 +60,15 @@ DescribeEmailAddressResult& DescribeEmailAddressResult::operator =(const Aws::Am
     m_modifiedTimestamp = jsonValue.GetString("ModifiedTimestamp");
     m_modifiedTimestampHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AliasConfigurations"))
+  {
+    Aws::Utils::Array<JsonView> aliasConfigurationsJsonList = jsonValue.GetArray("AliasConfigurations");
+    for(unsigned aliasConfigurationsIndex = 0; aliasConfigurationsIndex < aliasConfigurationsJsonList.GetLength(); ++aliasConfigurationsIndex)
+    {
+      m_aliasConfigurations.push_back(aliasConfigurationsJsonList[aliasConfigurationsIndex].AsObject());
+    }
+    m_aliasConfigurationsHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();

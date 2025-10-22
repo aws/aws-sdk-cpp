@@ -22,6 +22,7 @@
 #include <aws/connect/model/AgentAvailabilityTimer.h>
 #include <aws/connect/model/AgentConfig.h>
 #include <aws/connect/model/AgentContactReference.h>
+#include <aws/connect/model/AgentFirst.h>
 #include <aws/connect/model/AgentHierarchyGroup.h>
 #include <aws/connect/model/AgentHierarchyGroups.h>
 #include <aws/connect/model/AgentInfo.h>
@@ -35,7 +36,9 @@
 #include <aws/connect/model/AgentStatusSummary.h>
 #include <aws/connect/model/AgentStatusType.h>
 #include <aws/connect/model/AgentsCriteria.h>
+#include <aws/connect/model/AliasConfiguration.h>
 #include <aws/connect/model/AllowedCapabilities.h>
+#include <aws/connect/model/AllowedUserAction.h>
 #include <aws/connect/model/AnalyticsDataAssociationResult.h>
 #include <aws/connect/model/AnalyticsDataSetsResult.h>
 #include <aws/connect/model/AnswerMachineDetectionConfig.h>
@@ -52,6 +55,8 @@
 #include <aws/connect/model/AssociateContactWithUserResult.h>
 #include <aws/connect/model/AssociateDefaultVocabularyRequest.h>
 #include <aws/connect/model/AssociateDefaultVocabularyResult.h>
+#include <aws/connect/model/AssociateEmailAddressAliasRequest.h>
+#include <aws/connect/model/AssociateEmailAddressAliasResult.h>
 #include <aws/connect/model/AssociateFlowRequest.h>
 #include <aws/connect/model/AssociateFlowResult.h>
 #include <aws/connect/model/AssociateInstanceStorageConfigRequest.h>
@@ -320,6 +325,8 @@
 #include <aws/connect/model/DisassociateAnalyticsDataSetRequest.h>
 #include <aws/connect/model/DisassociateApprovedOriginRequest.h>
 #include <aws/connect/model/DisassociateBotRequest.h>
+#include <aws/connect/model/DisassociateEmailAddressAliasRequest.h>
+#include <aws/connect/model/DisassociateEmailAddressAliasResult.h>
 #include <aws/connect/model/DisassociateFlowRequest.h>
 #include <aws/connect/model/DisassociateFlowResult.h>
 #include <aws/connect/model/DisassociateInstanceStorageConfigRequest.h>
@@ -621,6 +628,9 @@
 #include <aws/connect/model/OutboundEmailContent.h>
 #include <aws/connect/model/OutboundMessageSourceType.h>
 #include <aws/connect/model/OutboundRawMessage.h>
+#include <aws/connect/model/OutboundStrategy.h>
+#include <aws/connect/model/OutboundStrategyConfig.h>
+#include <aws/connect/model/OutboundStrategyType.h>
 #include <aws/connect/model/OverrideDays.h>
 #include <aws/connect/model/OverrideTimeSlice.h>
 #include <aws/connect/model/ParticipantCapabilities.h>
@@ -645,11 +655,13 @@
 #include <aws/connect/model/PhoneNumberType.h>
 #include <aws/connect/model/PhoneNumberWorkflowStatus.h>
 #include <aws/connect/model/PhoneType.h>
+#include <aws/connect/model/PostAcceptTimeoutConfig.h>
 #include <aws/connect/model/PredefinedAttribute.h>
 #include <aws/connect/model/PredefinedAttributeConfiguration.h>
 #include <aws/connect/model/PredefinedAttributeSearchCriteria.h>
 #include <aws/connect/model/PredefinedAttributeSummary.h>
 #include <aws/connect/model/PredefinedAttributeValues.h>
+#include <aws/connect/model/Preview.h>
 #include <aws/connect/model/ProblemDetail.h>
 #include <aws/connect/model/Prompt.h>
 #include <aws/connect/model/PromptSearchCriteria.h>

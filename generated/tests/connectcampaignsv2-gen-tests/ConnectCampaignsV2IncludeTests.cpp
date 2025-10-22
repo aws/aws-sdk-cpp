@@ -15,6 +15,7 @@
 #include <aws/connectcampaignsv2/ConnectCampaignsV2ServiceClientModel.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2_EXPORTS.h>
 #include <aws/connectcampaignsv2/model/AccessDeniedException.h>
+#include <aws/connectcampaignsv2/model/AgentAction.h>
 #include <aws/connectcampaignsv2/model/AgentlessConfig.h>
 #include <aws/connectcampaignsv2/model/AnswerMachineDetectionConfig.h>
 #include <aws/connectcampaignsv2/model/Campaign.h>
@@ -97,6 +98,7 @@
 #include <aws/connectcampaignsv2/model/OutboundRequest.h>
 #include <aws/connectcampaignsv2/model/PauseCampaignRequest.h>
 #include <aws/connectcampaignsv2/model/PredictiveConfig.h>
+#include <aws/connectcampaignsv2/model/PreviewConfig.h>
 #include <aws/connectcampaignsv2/model/ProfileOutboundRequest.h>
 #include <aws/connectcampaignsv2/model/ProfileOutboundRequestFailureCode.h>
 #include <aws/connectcampaignsv2/model/ProgressiveConfig.h>
@@ -135,6 +137,7 @@
 #include <aws/connectcampaignsv2/model/ThrottlingException.h>
 #include <aws/connectcampaignsv2/model/TimeRange.h>
 #include <aws/connectcampaignsv2/model/TimeWindow.h>
+#include <aws/connectcampaignsv2/model/TimeoutConfig.h>
 #include <aws/connectcampaignsv2/model/UntagResourceRequest.h>
 #include <aws/connectcampaignsv2/model/UpdateCampaignChannelSubtypeConfigRequest.h>
 #include <aws/connectcampaignsv2/model/UpdateCampaignCommunicationLimitsRequest.h>

@@ -50,6 +50,15 @@ EmailAddressMetadata& EmailAddressMetadata::operator =(JsonView jsonValue)
     m_displayName = jsonValue.GetString("DisplayName");
     m_displayNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AliasConfigurations"))
+  {
+    Aws::Utils::Array<JsonView> aliasConfigurationsJsonList = jsonValue.GetArray("AliasConfigurations");
+    for(unsigned aliasConfigurationsIndex = 0; aliasConfigurationsIndex < aliasConfigurationsJsonList.GetLength(); ++aliasConfigurationsIndex)
+    {
+      m_aliasConfigurations.push_back(aliasConfigurationsJsonList[aliasConfigurationsIndex].AsObject());
+    }
+    m_aliasConfigurationsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -84,6 +93,17 @@ JsonValue EmailAddressMetadata::Jsonize() const
   if(m_displayNameHasBeenSet)
   {
    payload.WithString("DisplayName", m_displayName);
+
+  }
+
+  if(m_aliasConfigurationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> aliasConfigurationsJsonList(m_aliasConfigurations.size());
+   for(unsigned aliasConfigurationsIndex = 0; aliasConfigurationsIndex < aliasConfigurationsJsonList.GetLength(); ++aliasConfigurationsIndex)
+   {
+     aliasConfigurationsJsonList[aliasConfigurationsIndex].AsObject(m_aliasConfigurations[aliasConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("AliasConfigurations", std::move(aliasConfigurationsJsonList));
 
   }
 

@@ -58,6 +58,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>The timestamp when the contact was accepted by the agent.</p>
+     */
+    inline const Aws::Utils::DateTime& GetAcceptedByAgentTimestamp() const { return m_acceptedByAgentTimestamp; }
+    inline bool AcceptedByAgentTimestampHasBeenSet() const { return m_acceptedByAgentTimestampHasBeenSet; }
+    template<typename AcceptedByAgentTimestampT = Aws::Utils::DateTime>
+    void SetAcceptedByAgentTimestamp(AcceptedByAgentTimestampT&& value) { m_acceptedByAgentTimestampHasBeenSet = true; m_acceptedByAgentTimestamp = std::forward<AcceptedByAgentTimestampT>(value); }
+    template<typename AcceptedByAgentTimestampT = Aws::Utils::DateTime>
+    AgentInfo& WithAcceptedByAgentTimestamp(AcceptedByAgentTimestampT&& value) { SetAcceptedByAgentTimestamp(std::forward<AcceptedByAgentTimestampT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The timestamp when the agent finished previewing the contact.</p>
+     */
+    inline const Aws::Utils::DateTime& GetPreviewEndTimestamp() const { return m_previewEndTimestamp; }
+    inline bool PreviewEndTimestampHasBeenSet() const { return m_previewEndTimestampHasBeenSet; }
+    template<typename PreviewEndTimestampT = Aws::Utils::DateTime>
+    void SetPreviewEndTimestamp(PreviewEndTimestampT&& value) { m_previewEndTimestampHasBeenSet = true; m_previewEndTimestamp = std::forward<PreviewEndTimestampT>(value); }
+    template<typename PreviewEndTimestampT = Aws::Utils::DateTime>
+    AgentInfo& WithPreviewEndTimestamp(PreviewEndTimestampT&& value) { SetPreviewEndTimestamp(std::forward<PreviewEndTimestampT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The timestamp when the contact was connected to the agent.</p>
      */
     inline const Aws::Utils::DateTime& GetConnectedToAgentTimestamp() const { return m_connectedToAgentTimestamp; }
@@ -180,6 +204,12 @@ namespace Model
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    Aws::Utils::DateTime m_acceptedByAgentTimestamp{};
+    bool m_acceptedByAgentTimestampHasBeenSet = false;
+
+    Aws::Utils::DateTime m_previewEndTimestamp{};
+    bool m_previewEndTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_connectedToAgentTimestamp{};
     bool m_connectedToAgentTimestampHasBeenSet = false;

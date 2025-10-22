@@ -24,6 +24,7 @@ namespace Aws
         static const int INVALID_CUSTOMER_ENDPOINT_HASH = HashingUtils::HashString("INVALID_CUSTOMER_ENDPOINT");
         static const int INVALID_SYSTEM_ENDPOINT_HASH = HashingUtils::HashString("INVALID_SYSTEM_ENDPOINT");
         static const int INVALID_QUEUE_HASH = HashingUtils::HashString("INVALID_QUEUE");
+        static const int INVALID_OUTBOUND_STRATEGY_HASH = HashingUtils::HashString("INVALID_OUTBOUND_STRATEGY");
         static const int MISSING_CAMPAIGN_HASH = HashingUtils::HashString("MISSING_CAMPAIGN");
         static const int MISSING_CUSTOMER_ENDPOINT_HASH = HashingUtils::HashString("MISSING_CUSTOMER_ENDPOINT");
         static const int MISSING_QUEUE_ID_AND_SYSTEM_ENDPOINT_HASH = HashingUtils::HashString("MISSING_QUEUE_ID_AND_SYSTEM_ENDPOINT");
@@ -50,6 +51,10 @@ namespace Aws
           else if (hashCode == INVALID_QUEUE_HASH)
           {
             return FailureReasonCode::INVALID_QUEUE;
+          }
+          else if (hashCode == INVALID_OUTBOUND_STRATEGY_HASH)
+          {
+            return FailureReasonCode::INVALID_OUTBOUND_STRATEGY;
           }
           else if (hashCode == MISSING_CAMPAIGN_HASH)
           {
@@ -99,6 +104,8 @@ namespace Aws
             return "INVALID_SYSTEM_ENDPOINT";
           case FailureReasonCode::INVALID_QUEUE:
             return "INVALID_QUEUE";
+          case FailureReasonCode::INVALID_OUTBOUND_STRATEGY:
+            return "INVALID_OUTBOUND_STRATEGY";
           case FailureReasonCode::MISSING_CAMPAIGN:
             return "MISSING_CAMPAIGN";
           case FailureReasonCode::MISSING_CUSTOMER_ENDPOINT:

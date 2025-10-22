@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/connect/model/Campaign.h>
+#include <aws/connect/model/OutboundStrategy.h>
 #include <utility>
 
 namespace Aws
@@ -118,6 +119,18 @@ namespace Model
     template<typename CampaignT = Campaign>
     ContactDataRequest& WithCampaign(CampaignT&& value) { SetCampaign(std::forward<CampaignT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Information about the outbound strategy.</p>
+     */
+    inline const OutboundStrategy& GetOutboundStrategy() const { return m_outboundStrategy; }
+    inline bool OutboundStrategyHasBeenSet() const { return m_outboundStrategyHasBeenSet; }
+    template<typename OutboundStrategyT = OutboundStrategy>
+    void SetOutboundStrategy(OutboundStrategyT&& value) { m_outboundStrategyHasBeenSet = true; m_outboundStrategy = std::forward<OutboundStrategyT>(value); }
+    template<typename OutboundStrategyT = OutboundStrategy>
+    ContactDataRequest& WithOutboundStrategy(OutboundStrategyT&& value) { SetOutboundStrategy(std::forward<OutboundStrategyT>(value)); return *this;}
+    ///@}
   private:
 
     Endpoint m_systemEndpoint;
@@ -137,6 +150,9 @@ namespace Model
 
     Campaign m_campaign;
     bool m_campaignHasBeenSet = false;
+
+    OutboundStrategy m_outboundStrategy;
+    bool m_outboundStrategyHasBeenSet = false;
   };
 
 } // namespace Model

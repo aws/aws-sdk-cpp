@@ -131,12 +131,13 @@ namespace Model
      * (<code>attaching</code> | <code>attached</code> | <code>detaching</code> |
      * <code>detached</code>).</p> </li> <li> <p> <code>availability-zone</code> - The
      * Availability Zone of the network interface.</p> </li> <li> <p>
-     * <code>description</code> - The description of the network interface.</p> </li>
-     * <li> <p> <code>group-id</code> - The ID of a security group associated with the
-     * network interface.</p> </li> <li> <p> <code>ipv6-addresses.ipv6-address</code> -
-     * An IPv6 address associated with the network interface.</p> </li> <li> <p>
-     * <code>interface-type</code> - The type of network interface
-     * (<code>api_gateway_managed</code> |
+     * <code>availability-zone-id</code> - The ID of the Availability Zone of the
+     * network interface.</p> </li> <li> <p> <code>description</code> - The description
+     * of the network interface.</p> </li> <li> <p> <code>group-id</code> - The ID of a
+     * security group associated with the network interface.</p> </li> <li> <p>
+     * <code>ipv6-addresses.ipv6-address</code> - An IPv6 address associated with the
+     * network interface.</p> </li> <li> <p> <code>interface-type</code> - The type of
+     * network interface (<code>api_gateway_managed</code> |
      * <code>aws_codestar_connections_managed</code> | <code>branch</code> |
      * <code>ec2_instance_connect_endpoint</code> | <code>efa</code> |
      * <code>efa-only</code> | <code>efs</code> | <code>evs</code> |
