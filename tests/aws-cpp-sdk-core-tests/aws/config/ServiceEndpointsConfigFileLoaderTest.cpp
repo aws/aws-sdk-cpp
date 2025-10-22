@@ -42,7 +42,7 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestServiceSpecificEndpoints)
     auto profileIt = profiles.find("default");
     ASSERT_NE(profiles.end(), profileIt);
     const auto& profile = profileIt->second;
-    auto globalEndpoint = profile.GetEndpointUrl();
+    auto globalEndpoint = profile.GetGlobalEndpointUrl();
     ASSERT_TRUE(globalEndpoint.has_value());
     ASSERT_STREQ("https://global.example.com", globalEndpoint->c_str());
     
@@ -75,7 +75,7 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestServiceSpecificEndpointsOnly)
     const auto& profile = profileIt->second;
     
     // Test that global endpoint is null when not set
-    auto globalEndpoint = profile.GetEndpointUrl();
+    auto globalEndpoint = profile.GetGlobalEndpointUrl();
     ASSERT_FALSE(globalEndpoint.has_value());
     
     // Test services endpoints are parsed correctly
@@ -103,7 +103,7 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestGlobalEndpointOnly)
     const auto& profile = profileIt->second;
     
     // Test global endpoint
-    auto globalEndpoint = profile.GetEndpointUrl();
+    auto globalEndpoint = profile.GetGlobalEndpointUrl();
     ASSERT_TRUE(globalEndpoint.has_value());
     ASSERT_STREQ("https://play.min.io:9000", globalEndpoint->c_str());
     
@@ -140,7 +140,7 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestServiceSpecificAndGlobalEndpoin
     ASSERT_EQ("https://play.min.io:9000", endpoints.at("S3"));
     
     // Test global endpoint
-    auto globalEndpoint = profile.GetEndpointUrl();
+    auto globalEndpoint = profile.GetGlobalEndpointUrl();
     ASSERT_TRUE(globalEndpoint.has_value());
     ASSERT_STREQ("http://localhost:1234", globalEndpoint->c_str());
 }
@@ -194,7 +194,7 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestIgnoreGlobalEndpointInServicesS
     const auto& profile = profileIt->second;
     
     // Test that global endpoint in services section is ignored
-    auto globalEndpoint = profile.GetEndpointUrl();
+    auto globalEndpoint = profile.GetGlobalEndpointUrl();
     ASSERT_FALSE(globalEndpoint.has_value());
     
     // Test that services endpoints are empty (global endpoint_url ignored)
@@ -239,11 +239,11 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestSourceProfileEndpointIsolation)
     ASSERT_EQ("https://profile-b-ec2-endpoint.aws", endpointsB.at("EC2"));
     
     // Test that profile B has no global endpoint (doesn't inherit from profile A)
-    auto globalEndpointB = profileB.GetEndpointUrl();
+    auto globalEndpointB = profileB.GetGlobalEndpointUrl();
     ASSERT_FALSE(globalEndpointB.has_value());
     
     // Test that profile A still has its own global endpoint
-    auto globalEndpointA = profileA.GetEndpointUrl();
+    auto globalEndpointA = profileA.GetGlobalEndpointUrl();
     ASSERT_TRUE(globalEndpointA.has_value());
     ASSERT_STREQ("https://profile-a-endpoint.aws/", globalEndpointA->c_str());
     
@@ -304,4 +304,95 @@ TEST_F(ServiceEndpointsConfigFileLoaderTest, TestMultipleServicesDefinitions)
     const auto& endpoints = services.GetEndpoints();
     ASSERT_EQ(1u, endpoints.size());
     ASSERT_EQ("http://foo.com", endpoints.at("S3"));
+}
+
+TEST_F(ServiceEndpointsConfigFileLoaderTest, TestDuplicateGlobalEndpointUrl)
+{
+    TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(configFile.good());
+
+    configFile << "[profile dev-global]\n";
+    configFile << "endpoint_url = https://play.min.io:9000\n";
+    configFile << "endpoint_url = https://play2.min.io:9000\n";
+    configFile.flush();
+
+    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
+    ASSERT_TRUE(loader.Load());
+    auto profiles = loader.GetProfiles();
+    auto profileIt = profiles.find("dev-global");
+    ASSERT_NE(profiles.end(), profileIt);
+    const auto& profile = profileIt->second;
+    
+    // Test that last value wins for duplicate global endpoint_url
+    auto globalEndpoint = profile.GetGlobalEndpointUrl();
+    ASSERT_TRUE(globalEndpoint.has_value());
+    ASSERT_STREQ("https://play2.min.io:9000", globalEndpoint->c_str());
+}
+
+TEST_F(ServiceEndpointsConfigFileLoaderTest, TestDuplicateServiceEndpointUrl)
+{
+    TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(configFile.good());
+
+    configFile << "[services s3test]\n";
+    configFile << "s3 =\n";
+    configFile << "  endpoint_url = https://play.min.io:9000\n";
+    configFile << "s3 =\n";
+    configFile << "  endpoint_url = https://play2.min.io:9000\n";
+    configFile << "\n[profile dev]\n";
+    configFile << "services = s3test\n";
+    configFile.flush();
+
+    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
+    ASSERT_TRUE(loader.Load());
+    auto profiles = loader.GetProfiles();
+    auto profileIt = profiles.find("dev");
+    ASSERT_NE(profiles.end(), profileIt);
+    const auto& profile = profileIt->second;
+    
+    // Test that last value wins for duplicate service endpoint_url
+    const auto& services = profile.GetServices();
+    ASSERT_TRUE(services.IsSet());
+    const auto& endpoints = services.GetEndpoints();
+    ASSERT_EQ(1u, endpoints.size());
+    ASSERT_EQ("https://play2.min.io:9000", endpoints.at("S3"));
+}
+
+TEST_F(ServiceEndpointsConfigFileLoaderTest, TestMixedDuplicateEndpoints)
+{
+    TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(configFile.good());
+
+    configFile << "[profile dev-mixed]\n";
+    configFile << "endpoint_url = https://global1.example.com\n";
+    configFile << "services = mixed-services\n";
+    configFile << "endpoint_url = https://global2.example.com\n";
+    configFile << "\n[services mixed-services]\n";
+    configFile << "s3 =\n";
+    configFile << "  endpoint_url = https://s3-first.example.com\n";
+    configFile << "dynamodb =\n";
+    configFile << "  endpoint_url = https://dynamo.example.com\n";
+    configFile << "s3 =\n";
+    configFile << "  endpoint_url = https://s3-last.example.com\n";
+    configFile.flush();
+
+    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
+    ASSERT_TRUE(loader.Load());
+    auto profiles = loader.GetProfiles();
+    auto profileIt = profiles.find("dev-mixed");
+    ASSERT_NE(profiles.end(), profileIt);
+    const auto& profile = profileIt->second;
+    
+    // Test that last global endpoint_url wins
+    auto globalEndpoint = profile.GetGlobalEndpointUrl();
+    ASSERT_TRUE(globalEndpoint.has_value());
+    ASSERT_STREQ("https://global2.example.com", globalEndpoint->c_str());
+    
+    // Test that last service endpoint_url wins, but other services remain
+    const auto& services = profile.GetServices();
+    ASSERT_TRUE(services.IsSet());
+    const auto& endpoints = services.GetEndpoints();
+    ASSERT_EQ(2u, endpoints.size());
+    ASSERT_EQ("https://s3-last.example.com", endpoints.at("S3"));
+    ASSERT_EQ("https://dynamo.example.com", endpoints.at("DYNAMODB"));
 }

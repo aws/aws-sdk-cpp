@@ -218,7 +218,7 @@ namespace Aws
                         if (servicesBlk != m_services.end()) {
                             endpoints = std::move(servicesBlk->second);
                         }
-                        profile.m_services.SetEndpoints(std::move(endpoints), servicesRef);
+                        profile.SetServices(Profile::Services(std::move(endpoints), servicesRef));
                     }
                 }
 

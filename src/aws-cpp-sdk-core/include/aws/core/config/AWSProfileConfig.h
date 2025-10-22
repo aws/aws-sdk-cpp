@@ -26,15 +26,14 @@ namespace Aws
             class Services
             {
             public:
-                inline const Aws::Map<Aws::String, Aws::String>& GetEndpoints() const { return m_endpoints; }
-                inline const Aws::String& GetServiceBlockName() const { return m_name; }
+                Services() = default;
+                Services(Aws::Map<Aws::String, Aws::String>&& endpoints, Aws::String name)
+                    : m_endpoints(std::move(endpoints)), m_name(std::move(name)) {}
+                
+                inline Aws::Map<Aws::String, Aws::String> GetEndpoints() const { return m_endpoints; }
+                inline Aws::String GetServiceBlockName() const { return m_name; }
                 inline bool IsSet() const { return !m_name.empty(); }
             private:
-                friend class ConfigFileProfileFSM;
-                void SetEndpoints(Aws::Map<Aws::String, Aws::String>&& endpoints, Aws::String name) {
-                    m_endpoints = std::move(endpoints);
-                    m_name = std::move(name);
-                }
                 Aws::Map<Aws::String, Aws::String> m_endpoints;
                 Aws::String m_name;
             };
@@ -114,8 +113,9 @@ namespace Aws
             }
 
             inline const Services& GetServices() const { return m_services; }
+            inline void SetServices(Services&& services) { m_services = std::move(services); }
 
-            inline Aws::Crt::Optional<Aws::String> GetEndpointUrl() const {
+            inline Aws::Crt::Optional<Aws::String> GetGlobalEndpointUrl() const {
                 const Aws::String& endpoint = GetValue("endpoint_url");
                 return endpoint.empty() ? Aws::Crt::Optional<Aws::String>() : Aws::Crt::Optional<Aws::String>(endpoint);
             }
@@ -126,7 +126,6 @@ namespace Aws
             inline void SetSsoSession(SsoSession&& value) { m_ssoSessionSet = true; m_ssoSession = std::move(value); }
 
         private:
-            friend class ConfigFileProfileFSM;
             Aws::String m_name;
             Aws::String m_region;
             Aws::Auth::AWSCredentials m_credentials;
