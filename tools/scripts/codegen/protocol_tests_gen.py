@@ -13,8 +13,8 @@ import re
 import sys
 from concurrent.futures import ProcessPoolExecutor, wait, FIRST_COMPLETED, ALL_COMPLETED
 from subprocess import list2cmdline, run
-from tempfile import NamedTemporaryFile
 
+from codegen.format_util import format_directories
 from codegen.legacy_c2j_cpp_gen import LegacyC2jCppGen
 from codegen.model_utils import SERVICE_MODEL_FILENAME_PATTERN, ServiceModel, ModelUtils
 
@@ -30,9 +30,6 @@ PROTOCOL_GENERATED_TESTS_DIR = "generated/protocol-tests/tests"
 
 UNSUPPORTED_CLIENTS = {}
 UNSUPPORTED_TESTS = {}
-
-CLANG_FORMAT_VERSION = '18.1.6'
-CLANG_FORMAT_INCLUDE_REGEX = re.compile(r'^.*\.(cpp|h)$')
 
 # Regexp to parse C2J model filename to extract service name and date version
 TEST_DEFINITION_FILENAME_PATTERN = re.compile(
@@ -93,7 +90,7 @@ class ProtocolTestsGen(object):
         if self._generate_test_clients(executor, max_workers) == 0:
             result = self._generate_tests(executor, max_workers)
             if result == 0:
-                self._format_generated_files()
+                format_directories([self.generated_test_clients_dir, self.generated_tests_dir])
             return result
         return -1
 
@@ -316,22 +313,3 @@ class ProtocolTestsGen(object):
                                                                         dir_to_extract, dir_to_delete)
 
         return name_for_logging, status
-
-    def _format_generated_files(self):
-        """Format generated C++ files using clang-format"""
-        filepaths_file = NamedTemporaryFile(delete=False)
-        
-        for root_dir in [self.generated_test_clients_dir, self.generated_tests_dir]:
-            for dirpath, dirnames, filenames in os.walk(root_dir):
-                for filename in filenames:
-                    filepath = pathlib.Path(dirpath, filename).as_posix()
-                    if CLANG_FORMAT_INCLUDE_REGEX.match(filename):
-                        filepaths_file.write(f"{filepath}\n".encode())
-        
-        filepaths_file.close()
-        
-        cmd = ['pipx', 'run', f'clang-format=={CLANG_FORMAT_VERSION}',
-               f'--files={filepaths_file.name}', '-i', '-style=file:.clang-format']
-        
-        print(f"Formatting generated files: {list2cmdline(cmd)}")
-        run(cmd)
