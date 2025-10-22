@@ -93,6 +93,20 @@ Enter an
 
     ///@{
     /**
+     * Specify the height, in pixels, for your video generator input. This is useful
+     * for positioning when you include one or more video overlays for this input. To
+     * use the default resolution 540x360: Leave both width and height blank. To
+     * specify a height: Enter an even integer from 32 to 8192. When you do, you must
+     * also specify a value for width.
+     */
+    inline int GetHeight() const { return m_height; }
+    inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
+    inline void SetHeight(int value) { m_heightHasBeenSet = true; m_height = value; }
+    inline InputVideoGenerator& WithHeight(int value) { SetHeight(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * Specify the audio sample rate, in Hz, for the silent audio in your video
      * generator input.
 Enter an integer from 32000 to 48000.
@@ -101,6 +115,20 @@ Enter an integer from 32000 to 48000.
     inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
     inline void SetSampleRate(int value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
     inline InputVideoGenerator& WithSampleRate(int value) { SetSampleRate(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * Specify the width, in pixels, for your video generator input. This is useful for
+     * positioning when you include one or more video overlays for this input. To use
+     * the default resolution 540x360: Leave both width and height blank. To specify a
+     * width: Enter an even integer from 32 to 8192. When you do, you must also specify
+     * a value for height.
+     */
+    inline int GetWidth() const { return m_width; }
+    inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
+    inline void SetWidth(int value) { m_widthHasBeenSet = true; m_width = value; }
+    inline InputVideoGenerator& WithWidth(int value) { SetWidth(value); return *this;}
     ///@}
   private:
 
@@ -116,8 +144,14 @@ Enter an integer from 32000 to 48000.
     int m_framerateNumerator{0};
     bool m_framerateNumeratorHasBeenSet = false;
 
+    int m_height{0};
+    bool m_heightHasBeenSet = false;
+
     int m_sampleRate{0};
     bool m_sampleRateHasBeenSet = false;
+
+    int m_width{0};
+    bool m_widthHasBeenSet = false;
   };
 
 } // namespace Model

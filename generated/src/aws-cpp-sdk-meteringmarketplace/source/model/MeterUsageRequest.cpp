@@ -56,6 +56,12 @@ Aws::String MeterUsageRequest::SerializePayload() const
 
   }
 
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("ClientToken", m_clientToken);
+
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -21,7 +21,8 @@ namespace Model
     MS_SSIM,
     PSNR_HVS,
     VMAF,
-    QVBR
+    QVBR,
+    SHOT_CHANGE
   };
 
 namespace FrameMetricTypeMapper

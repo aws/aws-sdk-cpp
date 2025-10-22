@@ -22,7 +22,8 @@ namespace Model
 {
 
   /**
-   * The frame rate of the video or audio track.<p><h3>See Also:</h3>   <a
+   * The frame rate of the video or audio track, expressed as a fraction with
+   * numerator and denominator values.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/FrameRate">AWS
    * API Reference</a></p>
    */

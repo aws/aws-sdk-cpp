@@ -522,7 +522,7 @@ namespace Model
      * Multi-Scale Similarity Index Measure * PSNR_HVS: Peak Signal-to-Noise Ratio,
      * Human Visual System * VMAF: Video Multi-Method Assessment Fusion * QVBR:
      * Quality-Defined Variable Bitrate. This option is only available when your output
-     * uses the QVBR rate control mode.
+     * uses the QVBR rate control mode. * SHOT_CHANGE: Shot Changes
      */
     inline const Aws::Vector<FrameMetricType>& GetPerFrameMetrics() const { return m_perFrameMetrics; }
     inline bool PerFrameMetricsHasBeenSet() const { return m_perFrameMetricsHasBeenSet; }

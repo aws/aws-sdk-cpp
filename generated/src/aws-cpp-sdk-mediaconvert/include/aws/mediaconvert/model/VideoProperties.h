@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/CodecMetadata.h>
 #include <aws/mediaconvert/model/ColorPrimaries.h>
 #include <aws/mediaconvert/model/FrameRate.h>
 #include <aws/mediaconvert/model/MatrixCoefficients.h>
@@ -42,7 +43,9 @@ namespace Model
 
     ///@{
     /**
-     * The bit depth of the video track.
+     * The number of bits used per color component such as 8, 10, or 12 bits. Standard
+     * range (SDR) video typically uses 8-bit, while 10-bit is common for high dynamic
+     * range (HDR).
      */
     inline int GetBitDepth() const { return m_bitDepth; }
     inline bool BitDepthHasBeenSet() const { return m_bitDepthHasBeenSet; }
@@ -62,7 +65,25 @@ namespace Model
 
     ///@{
     /**
-     * The color space color primaries of the video track.
+     * Codec-specific parameters parsed from the video essence headers. This
+     * information provides detailed technical specifications about how the video was
+     * encoded, including profile settings, resolution details, and color space
+     * information that can help you understand the source video characteristics and
+     * make informed encoding decisions.
+     */
+    inline const CodecMetadata& GetCodecMetadata() const { return m_codecMetadata; }
+    inline bool CodecMetadataHasBeenSet() const { return m_codecMetadataHasBeenSet; }
+    template<typename CodecMetadataT = CodecMetadata>
+    void SetCodecMetadata(CodecMetadataT&& value) { m_codecMetadataHasBeenSet = true; m_codecMetadata = std::forward<CodecMetadataT>(value); }
+    template<typename CodecMetadataT = CodecMetadata>
+    VideoProperties& WithCodecMetadata(CodecMetadataT&& value) { SetCodecMetadata(std::forward<CodecMetadataT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * The color space primaries of the video track, defining the red, green, and blue
+     * color coordinates used for the video. This information helps ensure accurate
+     * color reproduction during playback and transcoding.
      */
     inline ColorPrimaries GetColorPrimaries() const { return m_colorPrimaries; }
     inline bool ColorPrimariesHasBeenSet() const { return m_colorPrimariesHasBeenSet; }
@@ -72,7 +93,8 @@ namespace Model
 
     ///@{
     /**
-     * The frame rate of the video or audio track.
+     * The frame rate of the video or audio track, expressed as a fraction with
+     * numerator and denominator values.
      */
     inline const FrameRate& GetFrameRate() const { return m_frameRate; }
     inline bool FrameRateHasBeenSet() const { return m_frameRateHasBeenSet; }
@@ -94,7 +116,9 @@ namespace Model
 
     ///@{
     /**
-     * The color space matrix coefficients of the video track.
+     * The color space matrix coefficients of the video track, defining how RGB color
+     * values are converted to and from YUV color space. This affects color accuracy
+     * during encoding and decoding processes.
      */
     inline MatrixCoefficients GetMatrixCoefficients() const { return m_matrixCoefficients; }
     inline bool MatrixCoefficientsHasBeenSet() const { return m_matrixCoefficientsHasBeenSet; }
@@ -104,7 +128,9 @@ namespace Model
 
     ///@{
     /**
-     * The color space transfer characteristics of the video track.
+     * The color space transfer characteristics of the video track, defining the
+     * relationship between linear light values and the encoded signal values. This
+     * affects brightness and contrast reproduction.
      */
     inline TransferCharacteristics GetTransferCharacteristics() const { return m_transferCharacteristics; }
     inline bool TransferCharacteristicsHasBeenSet() const { return m_transferCharacteristicsHasBeenSet; }
@@ -128,6 +154,9 @@ namespace Model
 
     long long m_bitRate{0};
     bool m_bitRateHasBeenSet = false;
+
+    CodecMetadata m_codecMetadata;
+    bool m_codecMetadataHasBeenSet = false;
 
     ColorPrimaries m_colorPrimaries{ColorPrimaries::NOT_SET};
     bool m_colorPrimariesHasBeenSet = false;
