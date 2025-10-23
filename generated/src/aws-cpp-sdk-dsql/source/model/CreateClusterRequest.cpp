@@ -51,6 +51,18 @@ Aws::String CreateClusterRequest::SerializePayload() const
 
   }
 
+  if(m_policyHasBeenSet)
+  {
+   payload.WithString("policy", m_policy);
+
+  }
+
+  if(m_bypassPolicyLockoutSafetyCheckHasBeenSet)
+  {
+   payload.WithBool("bypassPolicyLockoutSafetyCheck", m_bypassPolicyLockoutSafetyCheck);
+
+  }
+
   return payload.View().WriteReadable();
 }
 
