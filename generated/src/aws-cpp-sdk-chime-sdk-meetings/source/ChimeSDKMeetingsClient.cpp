@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsClient.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsErrorMarshaller.h>
@@ -172,6 +173,7 @@ void ChimeSDKMeetingsClient::init(const ChimeSDKMeetings::ChimeSDKMeetingsClient
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("chime", config.profileName, *m_endpointProvider);
 }
 
 void ChimeSDKMeetingsClient::OverrideEndpoint(const Aws::String& endpoint)

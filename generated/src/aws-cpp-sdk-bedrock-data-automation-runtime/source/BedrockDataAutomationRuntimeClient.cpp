@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntimeClient.h>
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntimeErrorMarshaller.h>
@@ -161,6 +162,7 @@ void BedrockDataAutomationRuntimeClient::init(const BedrockDataAutomationRuntime
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("bedrock", config.profileName, *m_endpointProvider);
 }
 
 void BedrockDataAutomationRuntimeClient::OverrideEndpoint(const Aws::String& endpoint)

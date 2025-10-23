@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/lex-models/LexModelBuildingServiceClient.h>
 #include <aws/lex-models/LexModelBuildingServiceErrorMarshaller.h>
@@ -198,6 +199,7 @@ void LexModelBuildingServiceClient::init(const LexModelBuildingService::LexModel
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("lex", config.profileName, *m_endpointProvider);
 }
 
 void LexModelBuildingServiceClient::OverrideEndpoint(const Aws::String& endpoint)

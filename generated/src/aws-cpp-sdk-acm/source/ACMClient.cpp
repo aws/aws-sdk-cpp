@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/acm/ACMClient.h>
 #include <aws/acm/ACMErrorMarshaller.h>
@@ -172,6 +173,7 @@ void ACMClient::init(const ACM::ACMClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("acm", config.profileName, *m_endpointProvider);
 }
 
 void ACMClient::OverrideEndpoint(const Aws::String& endpoint)

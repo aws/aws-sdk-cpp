@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/backup-gateway/BackupGatewayClient.h>
 #include <aws/backup-gateway/BackupGatewayErrorMarshaller.h>
@@ -181,6 +182,7 @@ void BackupGatewayClient::init(const BackupGateway::BackupGatewayClientConfigura
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("backup-gateway", config.profileName, *m_endpointProvider);
 }
 
 void BackupGatewayClient::OverrideEndpoint(const Aws::String& endpoint)

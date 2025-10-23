@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIClient.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIErrorMarshaller.h>
@@ -164,6 +165,7 @@ void ResourceGroupsTaggingAPIClient::init(const ResourceGroupsTaggingAPI::Resour
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("tagging", config.profileName, *m_endpointProvider);
 }
 
 void ResourceGroupsTaggingAPIClient::OverrideEndpoint(const Aws::String& endpoint)

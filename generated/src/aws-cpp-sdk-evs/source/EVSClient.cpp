@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/evs/EVSClient.h>
 #include <aws/evs/EVSErrorMarshaller.h>
@@ -169,6 +170,7 @@ void EVSClient::init(const EVS::EVSClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("evs", config.profileName, *m_endpointProvider);
 }
 
 void EVSClient::OverrideEndpoint(const Aws::String& endpoint)

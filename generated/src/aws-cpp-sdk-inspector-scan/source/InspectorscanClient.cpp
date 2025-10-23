@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/inspector-scan/InspectorscanClient.h>
 #include <aws/inspector-scan/InspectorscanErrorMarshaller.h>
@@ -157,6 +158,7 @@ void InspectorscanClient::init(const inspectorscan::InspectorscanClientConfigura
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("inspector-scan", config.profileName, *m_endpointProvider);
 }
 
 void InspectorscanClient::OverrideEndpoint(const Aws::String& endpoint)

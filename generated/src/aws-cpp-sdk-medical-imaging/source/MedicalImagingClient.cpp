@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/medical-imaging/MedicalImagingClient.h>
 #include <aws/medical-imaging/MedicalImagingErrorMarshaller.h>
@@ -174,6 +175,7 @@ void MedicalImagingClient::init(const MedicalImaging::MedicalImagingClientConfig
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("medical-imaging", config.profileName, *m_endpointProvider);
 }
 
 void MedicalImagingClient::OverrideEndpoint(const Aws::String& endpoint)

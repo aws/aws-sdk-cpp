@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/elasticfilesystem/EFSClient.h>
 #include <aws/elasticfilesystem/EFSErrorMarshaller.h>
@@ -184,6 +185,7 @@ void EFSClient::init(const EFS::EFSClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("elasticfilesystem", config.profileName, *m_endpointProvider);
 }
 
 void EFSClient::OverrideEndpoint(const Aws::String& endpoint)

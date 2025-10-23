@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/cognito-sync/CognitoSyncClient.h>
 #include <aws/cognito-sync/CognitoSyncErrorMarshaller.h>
@@ -173,6 +174,7 @@ void CognitoSyncClient::init(const CognitoSync::CognitoSyncClientConfiguration& 
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("cognito-sync", config.profileName, *m_endpointProvider);
 }
 
 void CognitoSyncClient::OverrideEndpoint(const Aws::String& endpoint)

@@ -19,6 +19,7 @@
 #include <aws/core/utils/logging/ErrorMacros.h>
 #include <aws/core/client/AWSClientEventStreamingAsyncTask.h>
 #include <aws/core/utils/event/EventStream.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/lexv2-runtime/LexRuntimeV2Client.h>
 #include <aws/lexv2-runtime/LexRuntimeV2ErrorMarshaller.h>
@@ -164,6 +165,7 @@ void LexRuntimeV2Client::init(const LexRuntimeV2::LexRuntimeV2ClientConfiguratio
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("lex", config.profileName, *m_endpointProvider);
 }
 
 void LexRuntimeV2Client::OverrideEndpoint(const Aws::String& endpoint)

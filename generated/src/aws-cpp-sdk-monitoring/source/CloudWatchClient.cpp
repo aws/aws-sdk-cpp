@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/monitoring/CloudWatchClient.h>
 #include <aws/monitoring/CloudWatchErrorMarshaller.h>
@@ -196,6 +197,7 @@ void CloudWatchClient::init(const CloudWatch::CloudWatchClientConfiguration& con
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("monitoring", config.profileName, *m_endpointProvider);
 }
 
 void CloudWatchClient::OverrideEndpoint(const Aws::String& endpoint)

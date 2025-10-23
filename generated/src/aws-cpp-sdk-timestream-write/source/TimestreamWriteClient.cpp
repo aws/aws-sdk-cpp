@@ -18,6 +18,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
 #include <aws/core/platform/Environment.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/timestream-write/TimestreamWriteClient.h>
 #include <aws/timestream-write/TimestreamWriteErrorMarshaller.h>
@@ -176,6 +177,7 @@ void TimestreamWriteClient::init(const TimestreamWrite::TimestreamWriteClientCon
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("timestream", config.profileName, *m_endpointProvider);
 }
 
 void TimestreamWriteClient::OverrideEndpoint(const Aws::String& endpoint)

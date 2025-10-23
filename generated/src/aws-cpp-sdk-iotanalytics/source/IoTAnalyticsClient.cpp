@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/iotanalytics/IoTAnalyticsClient.h>
 #include <aws/iotanalytics/IoTAnalyticsErrorMarshaller.h>
@@ -190,6 +191,7 @@ void IoTAnalyticsClient::init(const IoTAnalytics::IoTAnalyticsClientConfiguratio
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("iotanalytics", config.profileName, *m_endpointProvider);
 }
 
 void IoTAnalyticsClient::OverrideEndpoint(const Aws::String& endpoint)

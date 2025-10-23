@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/macie2/Macie2Client.h>
 #include <aws/macie2/Macie2ErrorMarshaller.h>
@@ -237,6 +238,7 @@ void Macie2Client::init(const Macie2::Macie2ClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("macie2", config.profileName, *m_endpointProvider);
 }
 
 void Macie2Client::OverrideEndpoint(const Aws::String& endpoint)

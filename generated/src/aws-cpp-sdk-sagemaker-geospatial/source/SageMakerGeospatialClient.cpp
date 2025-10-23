@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/sagemaker-geospatial/SageMakerGeospatialClient.h>
 #include <aws/sagemaker-geospatial/SageMakerGeospatialErrorMarshaller.h>
@@ -175,6 +176,7 @@ void SageMakerGeospatialClient::init(const SageMakerGeospatial::SageMakerGeospat
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("sagemaker-geospatial", config.profileName, *m_endpointProvider);
 }
 
 void SageMakerGeospatialClient::OverrideEndpoint(const Aws::String& endpoint)

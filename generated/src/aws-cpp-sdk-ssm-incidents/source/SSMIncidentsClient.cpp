@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/ssm-incidents/SSMIncidentsClient.h>
 #include <aws/ssm-incidents/SSMIncidentsErrorMarshaller.h>
@@ -187,6 +188,7 @@ void SSMIncidentsClient::init(const SSMIncidents::SSMIncidentsClientConfiguratio
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("ssm-incidents", config.profileName, *m_endpointProvider);
 }
 
 void SSMIncidentsClient::OverrideEndpoint(const Aws::String& endpoint)

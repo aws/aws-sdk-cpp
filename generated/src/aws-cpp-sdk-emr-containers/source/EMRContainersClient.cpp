@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/emr-containers/EMRContainersClient.h>
 #include <aws/emr-containers/EMRContainersErrorMarshaller.h>
@@ -179,6 +180,7 @@ void EMRContainersClient::init(const EMRContainers::EMRContainersClientConfigura
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("emr-containers", config.profileName, *m_endpointProvider);
 }
 
 void EMRContainersClient::OverrideEndpoint(const Aws::String& endpoint)

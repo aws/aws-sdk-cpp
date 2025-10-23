@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/codebuild/CodeBuildClient.h>
 #include <aws/codebuild/CodeBuildErrorMarshaller.h>
@@ -215,6 +216,7 @@ void CodeBuildClient::init(const CodeBuild::CodeBuildClientConfiguration& config
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("codebuild", config.profileName, *m_endpointProvider);
 }
 
 void CodeBuildClient::OverrideEndpoint(const Aws::String& endpoint)

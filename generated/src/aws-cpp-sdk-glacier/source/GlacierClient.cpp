@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/glacier/GlacierClient.h>
 #include <aws/glacier/GlacierErrorMarshaller.h>
@@ -189,6 +190,7 @@ void GlacierClient::init(const Glacier::GlacierClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("glacier", config.profileName, *m_endpointProvider);
 }
 
 void GlacierClient::OverrideEndpoint(const Aws::String& endpoint)

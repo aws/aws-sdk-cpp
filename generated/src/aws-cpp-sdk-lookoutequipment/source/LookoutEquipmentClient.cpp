@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/lookoutequipment/LookoutEquipmentClient.h>
 #include <aws/lookoutequipment/LookoutEquipmentErrorMarshaller.h>
@@ -205,6 +206,7 @@ void LookoutEquipmentClient::init(const LookoutEquipment::LookoutEquipmentClient
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("lookoutequipment", config.profileName, *m_endpointProvider);
 }
 
 void LookoutEquipmentClient::OverrideEndpoint(const Aws::String& endpoint)

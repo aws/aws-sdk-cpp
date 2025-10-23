@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/connectcases/ConnectCasesClient.h>
 #include <aws/connectcases/ConnectCasesErrorMarshaller.h>
@@ -198,6 +199,7 @@ void ConnectCasesClient::init(const ConnectCases::ConnectCasesClientConfiguratio
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("cases", config.profileName, *m_endpointProvider);
 }
 
 void ConnectCasesClient::OverrideEndpoint(const Aws::String& endpoint)

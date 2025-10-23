@@ -18,6 +18,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
 #include <aws/core/platform/Environment.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/s3control/S3ControlClient.h>
 #include <aws/s3control/S3ControlErrorMarshaller.h>
@@ -267,6 +268,7 @@ void S3ControlClient::init(const S3Control::S3ControlClientConfiguration& config
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("s3", config.profileName, *m_endpointProvider);
 }
 
 void S3ControlClient::OverrideEndpoint(const Aws::String& endpoint)

@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/route53profiles/Route53ProfilesClient.h>
 #include <aws/route53profiles/Route53ProfilesErrorMarshaller.h>
@@ -172,6 +173,7 @@ void Route53ProfilesClient::init(const Route53Profiles::Route53ProfilesClientCon
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("route53profiles", config.profileName, *m_endpointProvider);
 }
 
 void Route53ProfilesClient::OverrideEndpoint(const Aws::String& endpoint)

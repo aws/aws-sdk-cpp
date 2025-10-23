@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/elasticbeanstalk/ElasticBeanstalkClient.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkErrorMarshaller.h>
@@ -204,6 +205,7 @@ void ElasticBeanstalkClient::init(const ElasticBeanstalk::ElasticBeanstalkClient
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("elasticbeanstalk", config.profileName, *m_endpointProvider);
 }
 
 void ElasticBeanstalkClient::OverrideEndpoint(const Aws::String& endpoint)

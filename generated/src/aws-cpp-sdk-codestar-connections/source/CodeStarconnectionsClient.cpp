@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/codestar-connections/CodeStarconnectionsClient.h>
 #include <aws/codestar-connections/CodeStarconnectionsErrorMarshaller.h>
@@ -183,6 +184,7 @@ void CodeStarconnectionsClient::init(const CodeStarconnections::CodeStarconnecti
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("codestar-connections", config.profileName, *m_endpointProvider);
 }
 
 void CodeStarconnectionsClient::OverrideEndpoint(const Aws::String& endpoint)

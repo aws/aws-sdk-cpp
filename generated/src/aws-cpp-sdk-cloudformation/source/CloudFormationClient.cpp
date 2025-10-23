@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/cloudformation/CloudFormationClient.h>
 #include <aws/cloudformation/CloudFormationErrorMarshaller.h>
@@ -245,6 +246,7 @@ void CloudFormationClient::init(const CloudFormation::CloudFormationClientConfig
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("cloudformation", config.profileName, *m_endpointProvider);
 }
 
 void CloudFormationClient::OverrideEndpoint(const Aws::String& endpoint)

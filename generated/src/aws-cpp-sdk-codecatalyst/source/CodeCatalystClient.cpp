@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/codecatalyst/CodeCatalystClient.h>
 #include <aws/codecatalyst/CodeCatalystErrorMarshaller.h>
@@ -131,6 +132,7 @@ void CodeCatalystClient::init(const CodeCatalyst::CodeCatalystClientConfiguratio
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("codecatalyst", config.profileName, *m_endpointProvider);
 }
 
 void CodeCatalystClient::OverrideEndpoint(const Aws::String& endpoint)

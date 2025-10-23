@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/neptune-graph/NeptuneGraphClient.h>
 #include <aws/neptune-graph/NeptuneGraphErrorMarshaller.h>
@@ -190,6 +191,7 @@ void NeptuneGraphClient::init(const NeptuneGraph::NeptuneGraphClientConfiguratio
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("neptune-graph", config.profileName, *m_endpointProvider);
 }
 
 void NeptuneGraphClient::OverrideEndpoint(const Aws::String& endpoint)

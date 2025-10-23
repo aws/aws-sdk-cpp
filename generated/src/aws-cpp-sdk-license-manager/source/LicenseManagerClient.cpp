@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/license-manager/LicenseManagerClient.h>
 #include <aws/license-manager/LicenseManagerErrorMarshaller.h>
@@ -206,6 +207,7 @@ void LicenseManagerClient::init(const LicenseManager::LicenseManagerClientConfig
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("license-manager", config.profileName, *m_endpointProvider);
 }
 
 void LicenseManagerClient::OverrideEndpoint(const Aws::String& endpoint)

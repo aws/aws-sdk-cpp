@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/controlcatalog/ControlCatalogClient.h>
 #include <aws/controlcatalog/ControlCatalogErrorMarshaller.h>
@@ -162,6 +163,7 @@ void ControlCatalogClient::init(const ControlCatalog::ControlCatalogClientConfig
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("controlcatalog", config.profileName, *m_endpointProvider);
 }
 
 void ControlCatalogClient::OverrideEndpoint(const Aws::String& endpoint)

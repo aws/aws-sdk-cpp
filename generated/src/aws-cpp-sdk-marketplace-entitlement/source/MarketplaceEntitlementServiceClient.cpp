@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/marketplace-entitlement/MarketplaceEntitlementServiceClient.h>
 #include <aws/marketplace-entitlement/MarketplaceEntitlementServiceErrorMarshaller.h>
@@ -157,6 +158,7 @@ void MarketplaceEntitlementServiceClient::init(const MarketplaceEntitlementServi
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("aws-marketplace", config.profileName, *m_endpointProvider);
 }
 
 void MarketplaceEntitlementServiceClient::OverrideEndpoint(const Aws::String& endpoint)

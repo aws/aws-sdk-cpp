@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/cognito-identity/CognitoIdentityClient.h>
 #include <aws/cognito-identity/CognitoIdentityErrorMarshaller.h>
@@ -179,6 +180,7 @@ void CognitoIdentityClient::init(const CognitoIdentity::CognitoIdentityClientCon
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("cognito-identity", config.profileName, *m_endpointProvider);
 }
 
 void CognitoIdentityClient::OverrideEndpoint(const Aws::String& endpoint)

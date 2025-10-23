@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsClient.h>
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsErrorMarshaller.h>
@@ -157,6 +158,7 @@ void MarketplaceCommerceAnalyticsClient::init(const MarketplaceCommerceAnalytics
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("marketplacecommerceanalytics", config.profileName, *m_endpointProvider);
 }
 
 void MarketplaceCommerceAnalyticsClient::OverrideEndpoint(const Aws::String& endpoint)

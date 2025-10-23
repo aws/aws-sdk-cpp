@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfigClient.h>
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfigErrorMarshaller.h>
@@ -181,6 +182,7 @@ void Route53RecoveryControlConfigClient::init(const Route53RecoveryControlConfig
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("route53-recovery-control-config", config.profileName, *m_endpointProvider);
 }
 
 void Route53RecoveryControlConfigClient::OverrideEndpoint(const Aws::String& endpoint)

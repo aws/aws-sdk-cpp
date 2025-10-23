@@ -18,6 +18,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
 #include <aws/core/utils/event/EventStream.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/bedrock-agentcore/BedrockAgentCoreClient.h>
 #include <aws/bedrock-agentcore/BedrockAgentCoreErrorMarshaller.h>
@@ -189,6 +190,7 @@ void BedrockAgentCoreClient::init(const BedrockAgentCore::BedrockAgentCoreClient
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("bedrock-agentcore", config.profileName, *m_endpointProvider);
 }
 
 void BedrockAgentCoreClient::OverrideEndpoint(const Aws::String& endpoint)

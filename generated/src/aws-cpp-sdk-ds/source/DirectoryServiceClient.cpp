@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/ds/DirectoryServiceClient.h>
 #include <aws/ds/DirectoryServiceErrorMarshaller.h>
@@ -236,6 +237,7 @@ void DirectoryServiceClient::init(const DirectoryService::DirectoryServiceClient
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("ds", config.profileName, *m_endpointProvider);
 }
 
 void DirectoryServiceClient::OverrideEndpoint(const Aws::String& endpoint)

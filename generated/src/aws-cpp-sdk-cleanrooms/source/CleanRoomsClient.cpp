@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/cleanrooms/CleanRoomsClient.h>
 #include <aws/cleanrooms/CleanRoomsErrorMarshaller.h>
@@ -243,6 +244,7 @@ void CleanRoomsClient::init(const CleanRooms::CleanRoomsClientConfiguration& con
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("cleanrooms", config.profileName, *m_endpointProvider);
 }
 
 void CleanRoomsClient::OverrideEndpoint(const Aws::String& endpoint)

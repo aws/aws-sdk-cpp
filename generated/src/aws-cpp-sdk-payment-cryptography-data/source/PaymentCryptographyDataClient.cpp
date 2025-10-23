@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/payment-cryptography-data/PaymentCryptographyDataClient.h>
 #include <aws/payment-cryptography-data/PaymentCryptographyDataErrorMarshaller.h>
@@ -169,6 +170,7 @@ void PaymentCryptographyDataClient::init(const PaymentCryptographyData::PaymentC
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("payment-cryptography", config.profileName, *m_endpointProvider);
 }
 
 void PaymentCryptographyDataClient::OverrideEndpoint(const Aws::String& endpoint)

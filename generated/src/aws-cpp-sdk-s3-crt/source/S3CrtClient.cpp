@@ -19,6 +19,7 @@
 #include <aws/core/utils/logging/ErrorMacros.h>
 #include <aws/core/utils/event/EventStream.h>
 #include <aws/core/platform/Environment.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/s3-crt/S3CrtClient.h>
 #include <aws/s3-crt/S3CrtErrorMarshaller.h>

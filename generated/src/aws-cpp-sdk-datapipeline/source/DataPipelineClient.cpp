@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/datapipeline/DataPipelineClient.h>
 #include <aws/datapipeline/DataPipelineErrorMarshaller.h>
@@ -175,6 +176,7 @@ void DataPipelineClient::init(const DataPipeline::DataPipelineClientConfiguratio
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("datapipeline", config.profileName, *m_endpointProvider);
 }
 
 void DataPipelineClient::OverrideEndpoint(const Aws::String& endpoint)

@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/importexport/ImportExportClient.h>
 #include <aws/importexport/ImportExportErrorMarshaller.h>
@@ -163,6 +164,7 @@ void ImportExportClient::init(const ImportExport::ImportExportClientConfiguratio
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("importexport", config.profileName, *m_endpointProvider);
 }
 
 void ImportExportClient::OverrideEndpoint(const Aws::String& endpoint)

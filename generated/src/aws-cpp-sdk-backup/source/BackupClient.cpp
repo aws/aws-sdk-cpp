@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/backup/BackupClient.h>
 #include <aws/backup/BackupErrorMarshaller.h>
@@ -255,6 +256,7 @@ void BackupClient::init(const Backup::BackupClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("backup", config.profileName, *m_endpointProvider);
 }
 
 void BackupClient::OverrideEndpoint(const Aws::String& endpoint)

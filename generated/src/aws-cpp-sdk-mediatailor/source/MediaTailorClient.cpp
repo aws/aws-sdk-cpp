@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/mediatailor/MediaTailorClient.h>
 #include <aws/mediatailor/MediaTailorErrorMarshaller.h>
@@ -200,6 +201,7 @@ void MediaTailorClient::init(const MediaTailor::MediaTailorClientConfiguration& 
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("mediatailor", config.profileName, *m_endpointProvider);
 }
 
 void MediaTailorClient::OverrideEndpoint(const Aws::String& endpoint)

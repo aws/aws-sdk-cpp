@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/organizations/OrganizationsClient.h>
 #include <aws/organizations/OrganizationsErrorMarshaller.h>
@@ -213,6 +214,7 @@ void OrganizationsClient::init(const Organizations::OrganizationsClientConfigura
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("organizations", config.profileName, *m_endpointProvider);
 }
 
 void OrganizationsClient::OverrideEndpoint(const Aws::String& endpoint)

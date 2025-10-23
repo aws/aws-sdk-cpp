@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/devops-guru/DevOpsGuruClient.h>
 #include <aws/devops-guru/DevOpsGuruErrorMarshaller.h>
@@ -187,6 +188,7 @@ void DevOpsGuruClient::init(const DevOpsGuru::DevOpsGuruClientConfiguration& con
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("devops-guru", config.profileName, *m_endpointProvider);
 }
 
 void DevOpsGuruClient::OverrideEndpoint(const Aws::String& endpoint)

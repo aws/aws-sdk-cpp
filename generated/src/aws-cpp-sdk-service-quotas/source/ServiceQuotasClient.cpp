@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/service-quotas/ServiceQuotasClient.h>
 #include <aws/service-quotas/ServiceQuotasErrorMarshaller.h>
@@ -180,6 +181,7 @@ void ServiceQuotasClient::init(const ServiceQuotas::ServiceQuotasClientConfigura
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("servicequotas", config.profileName, *m_endpointProvider);
 }
 
 void ServiceQuotasClient::OverrideEndpoint(const Aws::String& endpoint)

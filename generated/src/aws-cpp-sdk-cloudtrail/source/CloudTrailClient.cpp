@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/cloudtrail/CloudTrailClient.h>
 #include <aws/cloudtrail/CloudTrailErrorMarshaller.h>
@@ -215,6 +216,7 @@ void CloudTrailClient::init(const CloudTrail::CloudTrailClientConfiguration& con
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("cloudtrail", config.profileName, *m_endpointProvider);
 }
 
 void CloudTrailClient::OverrideEndpoint(const Aws::String& endpoint)

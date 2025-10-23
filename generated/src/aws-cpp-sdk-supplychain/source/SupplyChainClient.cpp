@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/supplychain/SupplyChainClient.h>
 #include <aws/supplychain/SupplyChainErrorMarshaller.h>
@@ -186,6 +187,7 @@ void SupplyChainClient::init(const SupplyChain::SupplyChainClientConfiguration& 
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("scn", config.profileName, *m_endpointProvider);
 }
 
 void SupplyChainClient::OverrideEndpoint(const Aws::String& endpoint)

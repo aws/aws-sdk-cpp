@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/trustedadvisor/TrustedAdvisorClient.h>
 #include <aws/trustedadvisor/TrustedAdvisorErrorMarshaller.h>
@@ -167,6 +168,7 @@ void TrustedAdvisorClient::init(const TrustedAdvisor::TrustedAdvisorClientConfig
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("trustedadvisor", config.profileName, *m_endpointProvider);
 }
 
 void TrustedAdvisorClient::OverrideEndpoint(const Aws::String& endpoint)

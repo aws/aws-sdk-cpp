@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsClient.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsErrorMarshaller.h>
@@ -157,6 +158,7 @@ void BCMRecommendedActionsClient::init(const BCMRecommendedActions::BCMRecommend
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("bcm-recommended-actions", config.profileName, *m_endpointProvider);
 }
 
 void BCMRecommendedActionsClient::OverrideEndpoint(const Aws::String& endpoint)

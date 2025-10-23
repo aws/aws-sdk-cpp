@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/servicecatalog-appregistry/AppRegistryClient.h>
 #include <aws/servicecatalog-appregistry/AppRegistryErrorMarshaller.h>
@@ -180,6 +181,7 @@ void AppRegistryClient::init(const AppRegistry::AppRegistryClientConfiguration& 
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("servicecatalog", config.profileName, *m_endpointProvider);
 }
 
 void AppRegistryClient::OverrideEndpoint(const Aws::String& endpoint)

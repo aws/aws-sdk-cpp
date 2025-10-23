@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/workspaces-instances/WorkspacesInstancesClient.h>
 #include <aws/workspaces-instances/WorkspacesInstancesErrorMarshaller.h>
@@ -169,6 +170,7 @@ void WorkspacesInstancesClient::init(const WorkspacesInstances::WorkspacesInstan
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("workspaces-instances", config.profileName, *m_endpointProvider);
 }
 
 void WorkspacesInstancesClient::OverrideEndpoint(const Aws::String& endpoint)

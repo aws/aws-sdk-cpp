@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/bcm-pricing-calculator/BCMPricingCalculatorClient.h>
 #include <aws/bcm-pricing-calculator/BCMPricingCalculatorErrorMarshaller.h>
@@ -192,6 +193,7 @@ void BCMPricingCalculatorClient::init(const BCMPricingCalculator::BCMPricingCalc
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("bcm-pricing-calculator", config.profileName, *m_endpointProvider);
 }
 
 void BCMPricingCalculatorClient::OverrideEndpoint(const Aws::String& endpoint)

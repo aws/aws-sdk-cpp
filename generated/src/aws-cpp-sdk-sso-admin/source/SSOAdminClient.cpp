@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/sso-admin/SSOAdminClient.h>
 #include <aws/sso-admin/SSOAdminErrorMarshaller.h>
@@ -231,6 +232,7 @@ void SSOAdminClient::init(const SSOAdmin::SSOAdminClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("sso", config.profileName, *m_endpointProvider);
 }
 
 void SSOAdminClient::OverrideEndpoint(const Aws::String& endpoint)

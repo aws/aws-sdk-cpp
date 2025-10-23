@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/m2/MainframeModernizationClient.h>
 #include <aws/m2/MainframeModernizationErrorMarshaller.h>
@@ -193,6 +194,7 @@ void MainframeModernizationClient::init(const MainframeModernization::MainframeM
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("m2", config.profileName, *m_endpointProvider);
 }
 
 void MainframeModernizationClient::OverrideEndpoint(const Aws::String& endpoint)

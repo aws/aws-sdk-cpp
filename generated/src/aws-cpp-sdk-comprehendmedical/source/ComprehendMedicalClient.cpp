@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/comprehendmedical/ComprehendMedicalClient.h>
 #include <aws/comprehendmedical/ComprehendMedicalErrorMarshaller.h>
@@ -181,6 +182,7 @@ void ComprehendMedicalClient::init(const ComprehendMedical::ComprehendMedicalCli
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("comprehendmedical", config.profileName, *m_endpointProvider);
 }
 
 void ComprehendMedicalClient::OverrideEndpoint(const Aws::String& endpoint)

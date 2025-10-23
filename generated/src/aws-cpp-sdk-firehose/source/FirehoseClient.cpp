@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/firehose/FirehoseClient.h>
 #include <aws/firehose/FirehoseErrorMarshaller.h>
@@ -168,6 +169,7 @@ void FirehoseClient::init(const Firehose::FirehoseClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("firehose", config.profileName, *m_endpointProvider);
 }
 
 void FirehoseClient::OverrideEndpoint(const Aws::String& endpoint)

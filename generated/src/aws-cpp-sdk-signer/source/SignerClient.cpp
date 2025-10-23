@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/signer/SignerClient.h>
 #include <aws/signer/SignerErrorMarshaller.h>
@@ -175,6 +176,7 @@ void SignerClient::init(const signer::SignerClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("signer", config.profileName, *m_endpointProvider);
 }
 
 void SignerClient::OverrideEndpoint(const Aws::String& endpoint)

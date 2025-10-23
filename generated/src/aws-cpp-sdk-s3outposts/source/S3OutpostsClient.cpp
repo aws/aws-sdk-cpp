@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/s3outposts/S3OutpostsClient.h>
 #include <aws/s3outposts/S3OutpostsErrorMarshaller.h>
@@ -161,6 +162,7 @@ void S3OutpostsClient::init(const S3Outposts::S3OutpostsClientConfiguration& con
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("s3-outposts", config.profileName, *m_endpointProvider);
 }
 
 void S3OutpostsClient::OverrideEndpoint(const Aws::String& endpoint)

@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/finspace/FinspaceClient.h>
 #include <aws/finspace/FinspaceErrorMarshaller.h>
@@ -201,6 +202,7 @@ void FinspaceClient::init(const finspace::FinspaceClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("finspace", config.profileName, *m_endpointProvider);
 }
 
 void FinspaceClient::OverrideEndpoint(const Aws::String& endpoint)

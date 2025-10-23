@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/rolesanywhere/RolesAnywhereClient.h>
 #include <aws/rolesanywhere/RolesAnywhereErrorMarshaller.h>
@@ -186,6 +187,7 @@ void RolesAnywhereClient::init(const RolesAnywhere::RolesAnywhereClientConfigura
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("rolesanywhere", config.profileName, *m_endpointProvider);
 }
 
 void RolesAnywhereClient::OverrideEndpoint(const Aws::String& endpoint)

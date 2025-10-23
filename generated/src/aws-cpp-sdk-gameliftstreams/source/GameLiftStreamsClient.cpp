@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/gameliftstreams/GameLiftStreamsClient.h>
 #include <aws/gameliftstreams/GameLiftStreamsErrorMarshaller.h>
@@ -180,6 +181,7 @@ void GameLiftStreamsClient::init(const GameLiftStreams::GameLiftStreamsClientCon
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("gameliftstreams", config.profileName, *m_endpointProvider);
 }
 
 void GameLiftStreamsClient::OverrideEndpoint(const Aws::String& endpoint)

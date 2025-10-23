@@ -16,6 +16,7 @@
 #include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/core/platform/Environment.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/dynamodb/DynamoDBClient.h>
 #include <aws/dynamodb/DynamoDBErrorMarshaller.h>

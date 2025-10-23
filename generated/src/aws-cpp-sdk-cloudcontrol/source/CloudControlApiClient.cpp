@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/cloudcontrol/CloudControlApiClient.h>
 #include <aws/cloudcontrol/CloudControlApiErrorMarshaller.h>
@@ -164,6 +165,7 @@ void CloudControlApiClient::init(const CloudControlApi::CloudControlApiClientCon
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("cloudcontrolapi", config.profileName, *m_endpointProvider);
 }
 
 void CloudControlApiClient::OverrideEndpoint(const Aws::String& endpoint)

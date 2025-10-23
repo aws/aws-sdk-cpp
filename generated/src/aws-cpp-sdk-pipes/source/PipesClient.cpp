@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/pipes/PipesClient.h>
 #include <aws/pipes/PipesErrorMarshaller.h>
@@ -166,6 +167,7 @@ void PipesClient::init(const Pipes::PipesClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("pipes", config.profileName, *m_endpointProvider);
 }
 
 void PipesClient::OverrideEndpoint(const Aws::String& endpoint)

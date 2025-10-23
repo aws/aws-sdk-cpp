@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/rekognition/RekognitionClient.h>
 #include <aws/rekognition/RekognitionErrorMarshaller.h>
@@ -231,6 +232,7 @@ void RekognitionClient::init(const Rekognition::RekognitionClientConfiguration& 
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("rekognition", config.profileName, *m_endpointProvider);
 }
 
 void RekognitionClient::OverrideEndpoint(const Aws::String& endpoint)

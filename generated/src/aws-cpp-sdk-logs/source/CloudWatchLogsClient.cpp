@@ -18,6 +18,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
 #include <aws/core/utils/event/EventStream.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/logs/CloudWatchLogsClient.h>
 #include <aws/logs/CloudWatchLogsErrorMarshaller.h>
@@ -245,6 +246,7 @@ void CloudWatchLogsClient::init(const CloudWatchLogs::CloudWatchLogsClientConfig
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("logs", config.profileName, *m_endpointProvider);
 }
 
 void CloudWatchLogsClient::OverrideEndpoint(const Aws::String& endpoint)

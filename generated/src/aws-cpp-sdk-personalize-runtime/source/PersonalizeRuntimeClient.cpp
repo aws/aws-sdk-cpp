@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/personalize-runtime/PersonalizeRuntimeClient.h>
 #include <aws/personalize-runtime/PersonalizeRuntimeErrorMarshaller.h>
@@ -159,6 +160,7 @@ void PersonalizeRuntimeClient::init(const PersonalizeRuntime::PersonalizeRuntime
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("personalize", config.profileName, *m_endpointProvider);
 }
 
 void PersonalizeRuntimeClient::OverrideEndpoint(const Aws::String& endpoint)

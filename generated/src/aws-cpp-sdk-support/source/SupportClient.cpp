@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/support/SupportClient.h>
 #include <aws/support/SupportErrorMarshaller.h>
@@ -172,6 +173,7 @@ void SupportClient::init(const Support::SupportClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("support", config.profileName, *m_endpointProvider);
 }
 
 void SupportClient::OverrideEndpoint(const Aws::String& endpoint)

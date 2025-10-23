@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/sesv2/SESV2Client.h>
 #include <aws/sesv2/SESV2ErrorMarshaller.h>
@@ -265,6 +266,7 @@ void SESV2Client::init(const SESV2::SESV2ClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("ses", config.profileName, *m_endpointProvider);
 }
 
 void SESV2Client::OverrideEndpoint(const Aws::String& endpoint)

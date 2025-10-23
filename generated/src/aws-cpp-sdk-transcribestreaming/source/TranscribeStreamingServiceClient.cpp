@@ -19,6 +19,7 @@
 #include <aws/core/utils/logging/ErrorMacros.h>
 #include <aws/core/client/AWSClientEventStreamingAsyncTask.h>
 #include <aws/core/utils/event/EventStream.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/transcribestreaming/TranscribeStreamingServiceClient.h>
 #include <aws/transcribestreaming/TranscribeStreamingServiceErrorMarshaller.h>
@@ -163,6 +164,7 @@ void TranscribeStreamingServiceClient::init(const TranscribeStreamingService::Tr
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("transcribe", config.profileName, *m_endpointProvider);
 }
 
 void TranscribeStreamingServiceClient::OverrideEndpoint(const Aws::String& endpoint)

@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/pca-connector-ad/PcaConnectorAdClient.h>
 #include <aws/pca-connector-ad/PcaConnectorAdErrorMarshaller.h>
@@ -181,6 +182,7 @@ void PcaConnectorAdClient::init(const PcaConnectorAd::PcaConnectorAdClientConfig
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("pca-connector-ad", config.profileName, *m_endpointProvider);
 }
 
 void PcaConnectorAdClient::OverrideEndpoint(const Aws::String& endpoint)

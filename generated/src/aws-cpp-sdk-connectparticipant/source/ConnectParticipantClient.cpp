@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/connectparticipant/ConnectParticipantClient.h>
 #include <aws/connectparticipant/ConnectParticipantErrorMarshaller.h>
@@ -167,6 +168,7 @@ void ConnectParticipantClient::init(const ConnectParticipant::ConnectParticipant
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("execute-api", config.profileName, *m_endpointProvider);
 }
 
 void ConnectParticipantClient::OverrideEndpoint(const Aws::String& endpoint)

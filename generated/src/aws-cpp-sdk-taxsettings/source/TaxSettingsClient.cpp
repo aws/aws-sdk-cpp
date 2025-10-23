@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/taxsettings/TaxSettingsClient.h>
 #include <aws/taxsettings/TaxSettingsErrorMarshaller.h>
@@ -172,6 +173,7 @@ void TaxSettingsClient::init(const TaxSettings::TaxSettingsClientConfiguration& 
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("tax", config.profileName, *m_endpointProvider);
 }
 
 void TaxSettingsClient::OverrideEndpoint(const Aws::String& endpoint)

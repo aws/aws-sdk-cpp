@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/migrationhub-config/MigrationHubConfigClient.h>
 #include <aws/migrationhub-config/MigrationHubConfigErrorMarshaller.h>
@@ -160,6 +161,7 @@ void MigrationHubConfigClient::init(const MigrationHubConfig::MigrationHubConfig
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("mgh", config.profileName, *m_endpointProvider);
 }
 
 void MigrationHubConfigClient::OverrideEndpoint(const Aws::String& endpoint)

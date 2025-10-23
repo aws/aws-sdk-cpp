@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/amplify/AmplifyClient.h>
 #include <aws/amplify/AmplifyErrorMarshaller.h>
@@ -193,6 +194,7 @@ void AmplifyClient::init(const Amplify::AmplifyClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("amplify", config.profileName, *m_endpointProvider);
 }
 
 void AmplifyClient::OverrideEndpoint(const Aws::String& endpoint)

@@ -18,6 +18,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
 #include <aws/core/platform/Environment.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/timestream-query/TimestreamQueryClient.h>
 #include <aws/timestream-query/TimestreamQueryErrorMarshaller.h>
@@ -172,6 +173,7 @@ void TimestreamQueryClient::init(const TimestreamQuery::TimestreamQueryClientCon
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("timestream", config.profileName, *m_endpointProvider);
 }
 
 void TimestreamQueryClient::OverrideEndpoint(const Aws::String& endpoint)

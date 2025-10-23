@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/b2bi/B2BIClient.h>
 #include <aws/b2bi/B2BIErrorMarshaller.h>
@@ -186,6 +187,7 @@ void B2BIClient::init(const B2BI::B2BIClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("b2bi", config.profileName, *m_endpointProvider);
 }
 
 void B2BIClient::OverrideEndpoint(const Aws::String& endpoint)

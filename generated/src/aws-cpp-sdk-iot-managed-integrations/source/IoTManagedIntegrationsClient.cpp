@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/iot-managed-integrations/IoTManagedIntegrationsClient.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrationsErrorMarshaller.h>
@@ -238,6 +239,7 @@ void IoTManagedIntegrationsClient::init(const IoTManagedIntegrations::IoTManaged
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("iotmanagedintegrations", config.profileName, *m_endpointProvider);
 }
 
 void IoTManagedIntegrationsClient::OverrideEndpoint(const Aws::String& endpoint)

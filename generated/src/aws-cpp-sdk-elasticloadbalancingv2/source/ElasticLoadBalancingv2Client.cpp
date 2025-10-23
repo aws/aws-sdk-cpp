@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2Client.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2ErrorMarshaller.h>
@@ -208,6 +209,7 @@ void ElasticLoadBalancingv2Client::init(const ElasticLoadBalancingv2::ElasticLoa
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("elasticloadbalancing", config.profileName, *m_endpointProvider);
 }
 
 void ElasticLoadBalancingv2Client::OverrideEndpoint(const Aws::String& endpoint)

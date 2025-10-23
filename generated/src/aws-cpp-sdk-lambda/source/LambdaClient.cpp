@@ -18,6 +18,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
 #include <aws/core/utils/event/EventStream.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/lambda/LambdaClient.h>
 #include <aws/lambda/LambdaErrorMarshaller.h>
@@ -224,6 +225,7 @@ void LambdaClient::init(const Lambda::LambdaClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("lambda", config.profileName, *m_endpointProvider);
 }
 
 void LambdaClient::OverrideEndpoint(const Aws::String& endpoint)

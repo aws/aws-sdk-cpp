@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/partnercentral-selling/PartnerCentralSellingClient.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingErrorMarshaller.h>
@@ -194,6 +195,7 @@ void PartnerCentralSellingClient::init(const PartnerCentralSelling::PartnerCentr
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("partnercentral-selling", config.profileName, *m_endpointProvider);
 }
 
 void PartnerCentralSellingClient::OverrideEndpoint(const Aws::String& endpoint)

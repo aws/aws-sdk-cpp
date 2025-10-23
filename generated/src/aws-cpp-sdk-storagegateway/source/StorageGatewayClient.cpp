@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/storagegateway/StorageGatewayClient.h>
 #include <aws/storagegateway/StorageGatewayErrorMarshaller.h>
@@ -252,6 +253,7 @@ void StorageGatewayClient::init(const StorageGateway::StorageGatewayClientConfig
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("storagegateway", config.profileName, *m_endpointProvider);
 }
 
 void StorageGatewayClient::OverrideEndpoint(const Aws::String& endpoint)

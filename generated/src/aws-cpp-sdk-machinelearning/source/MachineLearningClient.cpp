@@ -16,6 +16,7 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/machinelearning/MachineLearningClient.h>
 #include <aws/machinelearning/MachineLearningErrorMarshaller.h>
@@ -184,6 +185,7 @@ void MachineLearningClient::init(const MachineLearning::MachineLearningClientCon
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("machinelearning", config.profileName, *m_endpointProvider);
 }
 
 void MachineLearningClient::OverrideEndpoint(const Aws::String& endpoint)

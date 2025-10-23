@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/networkmanager/NetworkManagerClient.h>
 #include <aws/networkmanager/NetworkManagerErrorMarshaller.h>
@@ -244,6 +245,7 @@ void NetworkManagerClient::init(const NetworkManager::NetworkManagerClientConfig
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("networkmanager", config.profileName, *m_endpointProvider);
 }
 
 void NetworkManagerClient::OverrideEndpoint(const Aws::String& endpoint)

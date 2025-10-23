@@ -17,6 +17,9 @@
 #if($arnEndpointSupported || $metadata.hasEndpointDiscoveryTrait)
 \#include <aws/core/platform/Environment.h>
 #end
+#if($serviceModel.endpointRules)
+\#include <aws/core/config/EndpointResolver.h>
+#end
 
 \#include <aws/${metadata.projectName}/${className}.h>
 #if(!$serviceModel.endpointRules)

@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/observabilityadmin/ObservabilityAdminClient.h>
 #include <aws/observabilityadmin/ObservabilityAdminErrorMarshaller.h>
@@ -185,6 +186,7 @@ void ObservabilityAdminClient::init(const ObservabilityAdmin::ObservabilityAdmin
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("observabilityadmin", config.profileName, *m_endpointProvider);
 }
 
 void ObservabilityAdminClient::OverrideEndpoint(const Aws::String& endpoint)

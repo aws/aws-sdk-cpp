@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/workdocs/WorkDocsClient.h>
 #include <aws/workdocs/WorkDocsErrorMarshaller.h>
@@ -200,6 +201,7 @@ void WorkDocsClient::init(const WorkDocs::WorkDocsClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("workdocs", config.profileName, *m_endpointProvider);
 }
 
 void WorkDocsClient::OverrideEndpoint(const Aws::String& endpoint)

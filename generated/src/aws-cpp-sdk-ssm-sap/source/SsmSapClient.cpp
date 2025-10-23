@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/ssm-sap/SsmSapClient.h>
 #include <aws/ssm-sap/SsmSapErrorMarshaller.h>
@@ -183,6 +184,7 @@ void SsmSapClient::init(const SsmSap::SsmSapClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("ssm-sap", config.profileName, *m_endpointProvider);
 }
 
 void SsmSapClient::OverrideEndpoint(const Aws::String& endpoint)

@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/migrationhuborchestrator/MigrationHubOrchestratorClient.h>
 #include <aws/migrationhuborchestrator/MigrationHubOrchestratorErrorMarshaller.h>
@@ -187,6 +188,7 @@ void MigrationHubOrchestratorClient::init(const MigrationHubOrchestrator::Migrat
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("migrationhub-orchestrator", config.profileName, *m_endpointProvider);
 }
 
 void MigrationHubOrchestratorClient::OverrideEndpoint(const Aws::String& endpoint)

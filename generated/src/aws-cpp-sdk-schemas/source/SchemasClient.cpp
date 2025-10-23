@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/schemas/SchemasClient.h>
 #include <aws/schemas/SchemasErrorMarshaller.h>
@@ -187,6 +188,7 @@ void SchemasClient::init(const Schemas::SchemasClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("schemas", config.profileName, *m_endpointProvider);
 }
 
 void SchemasClient::OverrideEndpoint(const Aws::String& endpoint)

@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/iottwinmaker/IoTTwinMakerClient.h>
 #include <aws/iottwinmaker/IoTTwinMakerErrorMarshaller.h>
@@ -196,6 +197,7 @@ void IoTTwinMakerClient::init(const IoTTwinMaker::IoTTwinMakerClientConfiguratio
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("iottwinmaker", config.profileName, *m_endpointProvider);
 }
 
 void IoTTwinMakerClient::OverrideEndpoint(const Aws::String& endpoint)

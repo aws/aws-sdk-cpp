@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/kafkaconnect/KafkaConnectClient.h>
 #include <aws/kafkaconnect/KafkaConnectErrorMarshaller.h>
@@ -174,6 +175,7 @@ void KafkaConnectClient::init(const KafkaConnect::KafkaConnectClientConfiguratio
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("kafkaconnect", config.profileName, *m_endpointProvider);
 }
 
 void KafkaConnectClient::OverrideEndpoint(const Aws::String& endpoint)

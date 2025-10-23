@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/pricing/PricingClient.h>
 #include <aws/pricing/PricingErrorMarshaller.h>
@@ -161,6 +162,7 @@ void PricingClient::init(const Pricing::PricingClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  Aws::Config::EndpointResolver::EndpointSource("pricing", config.profileName, *m_endpointProvider);
 }
 
 void PricingClient::OverrideEndpoint(const Aws::String& endpoint)
