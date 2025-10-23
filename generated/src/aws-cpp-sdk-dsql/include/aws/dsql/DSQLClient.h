@@ -84,7 +84,7 @@ namespace DSQL
         virtual ~DSQLClient();
 
         /**
-         * <p>The CreateCluster API allows you to create both single-region clusters and
+         * <p>The CreateCluster API allows you to create both single-Region clusters and
          * multi-Region clusters. With the addition of the <i>multiRegionProperties</i>
          * parameter, you can create a cluster with witness Region support and establish
          * peer relationships with clusters in other Regions during creation.</p> 
@@ -96,7 +96,7 @@ namespace DSQL
          * <dt>dsql:TagResource</dt> <dd> <p>Permission to add tags to a resource.</p>
          * <p>Resources: <code>arn:aws:dsql:region:account-id:cluster/ *</code> </p> </dd>
          * <dt>dsql:PutMultiRegionProperties</dt> <dd> <p>Permission to configure
-         * multi-region properties for a cluster.</p> <p>Resources:
+         * multi-Region properties for a cluster.</p> <p>Resources:
          * <code>arn:aws:dsql:region:account-id:cluster/ *</code> </p> </dd>
          * <dt>dsql:AddPeerCluster</dt> <dd> <p>When specifying
          * <code>multiRegionProperties.clusters</code>, permission to add peer
@@ -160,6 +160,33 @@ namespace DSQL
         }
 
         /**
+         * <p>Deletes the resource-based policy attached to a cluster. This removes all
+         * access permissions defined by the policy, reverting to default access
+         * controls.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/DeleteClusterPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteClusterPolicyOutcome DeleteClusterPolicy(const Model::DeleteClusterPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteClusterPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteClusterPolicyRequestT = Model::DeleteClusterPolicyRequest>
+        Model::DeleteClusterPolicyOutcomeCallable DeleteClusterPolicyCallable(const DeleteClusterPolicyRequestT& request) const
+        {
+            return SubmitCallable(&DSQLClient::DeleteClusterPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteClusterPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteClusterPolicyRequestT = Model::DeleteClusterPolicyRequest>
+        void DeleteClusterPolicyAsync(const DeleteClusterPolicyRequestT& request, const DeleteClusterPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DSQLClient::DeleteClusterPolicy, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves information about a cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/GetCluster">AWS API
          * Reference</a></p>
@@ -182,6 +209,33 @@ namespace DSQL
         void GetClusterAsync(const GetClusterRequestT& request, const GetClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DSQLClient::GetCluster, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the resource-based policy document attached to a cluster. This
+         * policy defines the access permissions and conditions for the
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/GetClusterPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetClusterPolicyOutcome GetClusterPolicy(const Model::GetClusterPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetClusterPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetClusterPolicyRequestT = Model::GetClusterPolicyRequest>
+        Model::GetClusterPolicyOutcomeCallable GetClusterPolicyCallable(const GetClusterPolicyRequestT& request) const
+        {
+            return SubmitCallable(&DSQLClient::GetClusterPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for GetClusterPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetClusterPolicyRequestT = Model::GetClusterPolicyRequest>
+        void GetClusterPolicyAsync(const GetClusterPolicyRequestT& request, const GetClusterPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DSQLClient::GetClusterPolicy, request, handler, context);
         }
 
         /**
@@ -260,6 +314,33 @@ namespace DSQL
         }
 
         /**
+         * <p>Attaches a resource-based policy to a cluster. This policy defines access
+         * permissions and conditions for the cluster, allowing you to control which
+         * principals can perform actions on the cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/PutClusterPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutClusterPolicyOutcome PutClusterPolicy(const Model::PutClusterPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutClusterPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutClusterPolicyRequestT = Model::PutClusterPolicyRequest>
+        Model::PutClusterPolicyOutcomeCallable PutClusterPolicyCallable(const PutClusterPolicyRequestT& request) const
+        {
+            return SubmitCallable(&DSQLClient::PutClusterPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for PutClusterPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutClusterPolicyRequestT = Model::PutClusterPolicyRequest>
+        void PutClusterPolicyAsync(const PutClusterPolicyRequestT& request, const PutClusterPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DSQLClient::PutClusterPolicy, request, handler, context);
+        }
+
+        /**
          * <p>Tags a resource with a map of key and value pairs.</p><p><h3>See Also:</h3>  
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/TagResource">AWS
          * API Reference</a></p>
@@ -314,7 +395,7 @@ namespace DSQL
          * multi-Region cluster configurations. With the <i>multiRegionProperties</i>
          * parameter, you can add or modify witness Region support and manage peer
          * relationships with clusters in other Regions.</p>  <p>Note that updating
-         * multi-region clusters requires additional IAM permissions beyond those needed
+         * multi-Region clusters requires additional IAM permissions beyond those needed
          * for standard cluster updates, as detailed in the Permissions section.</p>
          *  <p> <b>Required permissions</b> </p> <dl> <dt>dsql:UpdateCluster</dt>
          * <dd> <p>Permission to update a DSQL cluster.</p> <p>Resources:

@@ -19,11 +19,15 @@
 #include <aws/dsql/model/ConflictException.h>
 #include <aws/dsql/model/CreateClusterRequest.h>
 #include <aws/dsql/model/CreateClusterResult.h>
+#include <aws/dsql/model/DeleteClusterPolicyRequest.h>
+#include <aws/dsql/model/DeleteClusterPolicyResult.h>
 #include <aws/dsql/model/DeleteClusterRequest.h>
 #include <aws/dsql/model/DeleteClusterResult.h>
 #include <aws/dsql/model/EncryptionDetails.h>
 #include <aws/dsql/model/EncryptionStatus.h>
 #include <aws/dsql/model/EncryptionType.h>
+#include <aws/dsql/model/GetClusterPolicyRequest.h>
+#include <aws/dsql/model/GetClusterPolicyResult.h>
 #include <aws/dsql/model/GetClusterRequest.h>
 #include <aws/dsql/model/GetClusterResult.h>
 #include <aws/dsql/model/GetVpcEndpointServiceNameRequest.h>
@@ -34,6 +38,8 @@
 #include <aws/dsql/model/ListTagsForResourceRequest.h>
 #include <aws/dsql/model/ListTagsForResourceResult.h>
 #include <aws/dsql/model/MultiRegionProperties.h>
+#include <aws/dsql/model/PutClusterPolicyRequest.h>
+#include <aws/dsql/model/PutClusterPolicyResult.h>
 #include <aws/dsql/model/ResourceNotFoundException.h>
 #include <aws/dsql/model/ServiceQuotaExceededException.h>
 #include <aws/dsql/model/TagResourceRequest.h>

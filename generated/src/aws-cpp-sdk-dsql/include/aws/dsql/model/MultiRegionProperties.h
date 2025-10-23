@@ -41,8 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The that serves as the witness region for a multi-Region cluster. The witness
-     * region helps maintain cluster consistency and quorum.</p>
+     * <p>The Region that serves as the witness region for a multi-Region cluster. The
+     * witness Region helps maintain cluster consistency and quorum.</p>
      */
     inline const Aws::String& GetWitnessRegion() const { return m_witnessRegion; }
     inline bool WitnessRegionHasBeenSet() const { return m_witnessRegionHasBeenSet; }
@@ -54,8 +54,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The set of linked clusters that form the multi-Region cluster configuration.
-     * Each linked cluster represents a database instance in a different Region.</p>
+     * <p>The set of peered clusters that form the multi-Region cluster configuration.
+     * Each peered cluster represents a database instance in a different Region.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClusters() const { return m_clusters; }
     inline bool ClustersHasBeenSet() const { return m_clustersHasBeenSet; }

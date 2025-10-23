@@ -63,6 +63,7 @@ namespace Aws
         static const char US_ISO_EAST_1[] = "us-iso-east-1"; // US ISO East
         static const char US_ISO_WEST_1[] = "us-iso-west-1"; // US ISO WEST
         static const char US_ISOB_EAST_1[] = "us-isob-east-1"; // US ISOB East (Ohio)
+        static const char US_ISOB_WEST_1[] = "us-isob-west-1"; // US ISOB West
         static const char US_ISOF_EAST_1[] = "us-isof-east-1"; // US ISOF EAST
         static const char US_ISOF_SOUTH_1[] = "us-isof-south-1"; // US ISOF SOUTH
         static const char US_WEST_1[] = "us-west-1"; // US West (N. California)

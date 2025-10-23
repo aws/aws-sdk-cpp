@@ -110,7 +110,7 @@ namespace Model
      * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> – Default
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> – Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> �� Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> –
      * Default 100. Max 10,000.</p> </li> <li> <p> <b>DocumentDB</b> – Default 100. Max
      * 10,000.</p> </li> </ul>

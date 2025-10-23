@@ -379,9 +379,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Oracle license model that applies to the Autonomous VM cluster. Valid
-     * values are <code>LICENSE_INCLUDED</code> or
-     * <code>BRING_YOUR_OWN_LICENSE</code>.</p>
+     * <p>The Oracle license model that applies to the Autonomous VM cluster.</p>
      */
     inline LicenseModel GetLicenseModel() const { return m_licenseModel; }
     inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
