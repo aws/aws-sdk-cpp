@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/connect/model/AliasConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -97,6 +99,22 @@ namespace Model
     template<typename DisplayNameT = Aws::String>
     EmailAddressMetadata& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A list of alias configurations for this email address, showing which email
+     * addresses forward to this primary address. Each configuration contains the email
+     * address ID of an alias that forwards emails to this address.</p>
+     */
+    inline const Aws::Vector<AliasConfiguration>& GetAliasConfigurations() const { return m_aliasConfigurations; }
+    inline bool AliasConfigurationsHasBeenSet() const { return m_aliasConfigurationsHasBeenSet; }
+    template<typename AliasConfigurationsT = Aws::Vector<AliasConfiguration>>
+    void SetAliasConfigurations(AliasConfigurationsT&& value) { m_aliasConfigurationsHasBeenSet = true; m_aliasConfigurations = std::forward<AliasConfigurationsT>(value); }
+    template<typename AliasConfigurationsT = Aws::Vector<AliasConfiguration>>
+    EmailAddressMetadata& WithAliasConfigurations(AliasConfigurationsT&& value) { SetAliasConfigurations(std::forward<AliasConfigurationsT>(value)); return *this;}
+    template<typename AliasConfigurationsT = AliasConfiguration>
+    EmailAddressMetadata& AddAliasConfigurations(AliasConfigurationsT&& value) { m_aliasConfigurationsHasBeenSet = true; m_aliasConfigurations.emplace_back(std::forward<AliasConfigurationsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_emailAddressId;
@@ -113,6 +131,9 @@ namespace Model
 
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
+
+    Aws::Vector<AliasConfiguration> m_aliasConfigurations;
+    bool m_aliasConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

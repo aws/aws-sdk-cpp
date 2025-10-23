@@ -28,6 +28,12 @@ Aws::String CreateRemoteAccessSessionRequest::SerializePayload() const
 
   }
 
+  if(m_appArnHasBeenSet)
+  {
+   payload.WithString("appArn", m_appArn);
+
+  }
+
   if(m_instanceArnHasBeenSet)
   {
    payload.WithString("instanceArn", m_instanceArn);

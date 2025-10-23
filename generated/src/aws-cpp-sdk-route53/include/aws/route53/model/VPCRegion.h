@@ -59,7 +59,8 @@ namespace Model
     ap_southeast_7,
     ap_east_2,
     eu_isoe_west_1,
-    ap_southeast_6
+    ap_southeast_6,
+    us_isob_west_1
   };
 
 namespace VPCRegionMapper

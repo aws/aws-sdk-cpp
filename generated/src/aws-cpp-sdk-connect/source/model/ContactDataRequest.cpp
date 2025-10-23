@@ -59,6 +59,11 @@ ContactDataRequest& ContactDataRequest::operator =(JsonView jsonValue)
     m_campaign = jsonValue.GetObject("Campaign");
     m_campaignHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("OutboundStrategy"))
+  {
+    m_outboundStrategy = jsonValue.GetObject("OutboundStrategy");
+    m_outboundStrategyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -104,6 +109,12 @@ JsonValue ContactDataRequest::Jsonize() const
   if(m_campaignHasBeenSet)
   {
    payload.WithObject("Campaign", m_campaign.Jsonize());
+
+  }
+
+  if(m_outboundStrategyHasBeenSet)
+  {
+   payload.WithObject("OutboundStrategy", m_outboundStrategy.Jsonize());
 
   }
 
