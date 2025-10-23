@@ -11,17 +11,18 @@
 
 set -e
 
-if [ "$#" -ne 4 ]; then
-  echo "Usage: ${0} PREFIX_DIR AWS_ACCOUNT ROLE_SESSION_NAME BUILD_TYPE"
+if [ "$#" -ne 3 ]; then
+  echo "Usage: ${0} PREFIX_DIR AWS_ACCOUNT ROLE_SESSION_NAME"
   exit 1
 fi
 PREFIX_DIR="$1"
 AWS_ACCOUNT="$2"
 AWS_ROLE_SESSION_NAME="$3"
-BUILD_TYPE="$4"
 
 echo "Setting the run environment"
 export TEST_ASSUME_ROLE_ARN=arn:aws:iam::${AWS_ACCOUNT}:role/IntegrationTest
+BUILD_TYPE=$(cat build-request.json | jq .buildType | tr -d \\")
+echo "BUILD_TYPE=${BUILD_TYPE}"
 pushd ${PREFIX_DIR}/aws-sdk-cpp
 if [ "${BUILD_TYPE}" = "PREVIEW" ]; then SERVICE_ID=$(git status generated/src/aws-cpp-sdk-* --porcelain | grep "generated/src/" | sed -n 's|.*generated/src/aws-cpp-sdk-\([^/]*\).*|\1|p' | sort -u | tr "\n" "," | sed "s/,$//"); else SERVICE_ID=""; fi
 popd
