@@ -63,8 +63,8 @@ namespace Model
      * <code>AWS_IAM</code> if you want to restrict access to authenticated users only.
      * Set to <code>NONE</code> if you want to bypass IAM authentication to create a
      * public endpoint. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and
-     * auth model for Lambda function URLs</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control
+     * access to Lambda function URLs</a>.</p>
      */
     inline FunctionUrlAuthType GetAuthType() const { return m_authType; }
     inline void SetAuthType(FunctionUrlAuthType value) { m_authTypeHasBeenSet = true; m_authType = value; }

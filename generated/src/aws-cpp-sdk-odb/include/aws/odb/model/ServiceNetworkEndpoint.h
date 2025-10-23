@@ -53,8 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of the VPC endpoint.</p> <p>Valid Values: <code>Interface |
-     * Gateway</code> </p>
+     * <p>The type of the VPC endpoint.</p>
      */
     inline VpcEndpointType GetVpcEndpointType() const { return m_vpcEndpointType; }
     inline bool VpcEndpointTypeHasBeenSet() const { return m_vpcEndpointTypeHasBeenSet; }

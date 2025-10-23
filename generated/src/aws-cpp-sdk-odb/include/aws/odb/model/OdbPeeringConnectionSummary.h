@@ -67,8 +67,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the ODB peering connection.</p> <p>Valid Values:
-     * <code>provisioning | active | terminating | terminated | failed</code> </p>
+     * <p>The status of the ODB peering connection.</p>
      */
     inline ResourceStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

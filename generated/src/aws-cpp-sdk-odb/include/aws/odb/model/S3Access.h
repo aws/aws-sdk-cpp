@@ -42,8 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the Amazon S3 access.</p> <p>Valid Values: <code>enabled |
-     * disabled</code> </p>
+     * <p>The status of the Amazon S3 access.</p>
      */
     inline ManagedResourceStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

@@ -106,6 +106,31 @@ namespace Model
     template<typename MultiRegionPropertiesT = MultiRegionProperties>
     CreateClusterRequest& WithMultiRegionProperties(MultiRegionPropertiesT&& value) { SetMultiRegionProperties(std::forward<MultiRegionPropertiesT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An optional resource-based policy document in JSON format that defines access
+     * permissions for the cluster.</p>
+     */
+    inline const Aws::String& GetPolicy() const { return m_policy; }
+    inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
+    template<typename PolicyT = Aws::String>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::String>
+    CreateClusterRequest& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An optional field that controls whether to bypass the lockout prevention
+     * check. When set to true, this parameter allows you to apply a policy that might
+     * lock you out of the cluster. Use with caution.</p>
+     */
+    inline bool GetBypassPolicyLockoutSafetyCheck() const { return m_bypassPolicyLockoutSafetyCheck; }
+    inline bool BypassPolicyLockoutSafetyCheckHasBeenSet() const { return m_bypassPolicyLockoutSafetyCheckHasBeenSet; }
+    inline void SetBypassPolicyLockoutSafetyCheck(bool value) { m_bypassPolicyLockoutSafetyCheckHasBeenSet = true; m_bypassPolicyLockoutSafetyCheck = value; }
+    inline CreateClusterRequest& WithBypassPolicyLockoutSafetyCheck(bool value) { SetBypassPolicyLockoutSafetyCheck(value); return *this;}
+    ///@}
   private:
 
     bool m_deletionProtectionEnabled{false};
@@ -122,6 +147,12 @@ namespace Model
 
     MultiRegionProperties m_multiRegionProperties;
     bool m_multiRegionPropertiesHasBeenSet = false;
+
+    Aws::String m_policy;
+    bool m_policyHasBeenSet = false;
+
+    bool m_bypassPolicyLockoutSafetyCheck{false};
+    bool m_bypassPolicyLockoutSafetyCheckHasBeenSet = false;
   };
 
 } // namespace Model

@@ -56,7 +56,8 @@ namespace Model
     python3_12,
     java21,
     python3_13,
-    nodejs22_x
+    nodejs22_x,
+    nodejs24_x
   };
 
 namespace RuntimeMapper
