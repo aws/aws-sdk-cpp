@@ -78,7 +78,7 @@ TEST_F(EndpointResolverTest, GlobalEnvironmentVariable)
     EXPECT_EQ("https://global.example.com", provider.GetOverriddenEndpoint());
 }
 
-TEST_F(EndpointResolverTest, ServiceSpecificTakesPrecedenceOverGlobal)
+TEST_F(EndpointResolverTest, EnvironmentTakesPrecedenceOverGlobal)
 {
     MockEndpointProvider provider;
     setenv("AWS_ENDPOINT_URL", "https://global.example.com", 1);
@@ -86,16 +86,8 @@ TEST_F(EndpointResolverTest, ServiceSpecificTakesPrecedenceOverGlobal)
     EndpointResolver::EndpointSource("s3", "default", provider);
     EXPECT_EQ("https://s3.example.com", provider.GetOverriddenEndpoint());
 }
-TEST_F(EndpointResolverTest, ResolutionOrderServiceSpecificEnvOverGlobalEnv)
-{
-    MockEndpointProvider provider;
-    setenv("AWS_ENDPOINT_URL", "https://global-env.example.com", 1);
-    setenv("AWS_ENDPOINT_URL_S3", "https://s3-env.example.com", 1);
-    EndpointResolver::EndpointSource("s3", "default", provider);
-    EXPECT_EQ("https://s3-env.example.com", provider.GetOverriddenEndpoint());
-}
 
-TEST_F(EndpointResolverTest, ResolutionOrderGlobalEnvOverServiceProfile)
+TEST_F(EndpointResolverTest, GlobalEnvOverServiceProfile)
 {
     TempFile configFile(std::ios_base::out | std::ios_base::trunc);
     ASSERT_TRUE(configFile.good());
@@ -123,7 +115,7 @@ TEST_F(EndpointResolverTest, ResolutionOrderGlobalEnvOverServiceProfile)
     EXPECT_EQ("https://global-env.example.com", provider.GetOverriddenEndpoint());
 }
 
-TEST_F(EndpointResolverTest, ResolutionOrderServiceProfileOverGlobalProfile)
+TEST_F(EndpointResolverTest, ServiceProfileOverGlobalProfile)
 {
     TempFile configFile(std::ios_base::out | std::ios_base::trunc);
     ASSERT_TRUE(configFile.good());

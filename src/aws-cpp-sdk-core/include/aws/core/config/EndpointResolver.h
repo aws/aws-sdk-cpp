@@ -18,15 +18,13 @@ namespace Aws
     namespace Config
     {
         /**
-         * Middleware that sources configured endpoints and sets them on endpoint providers.
-         * Integrates with the endpoint resolution pipeline to honor configured endpoints
-         * from environment variables and shared config before rules-based resolution.
+         * Resolver that sources endpoints and sets them on endpoint providers.
          */
         class AWS_CORE_API EndpointResolver
         {
         public:
             /**
-             * Sources configured endpoint and sets it on the endpoint provider.
+             * Sources endpoint and sets it on the endpoint provider.
              * This should be called after InitBuiltInParameters but before ResolveEndpoint.
              * 
              * @param serviceId Service identifier (e.g., "s3", "Elastic Beanstalk")
